@@ -9,28 +9,6 @@
 ; CVector3f *      Stack[0xc]:4   ray_direction
 ; CVector3f *      Stack[0x10]:4   out_normal
 ; Local Variables:
-; undefined8       Stack[-0x108]:8  local_108
-; undefined8       Stack[-0x100]:8  local_100
-; undefined8       Stack[-0xf8]:8  local_f8
-; undefined8       Stack[-0xf0]:8  local_f0
-; undefined8       Stack[-0xe8]:8  local_e8
-; undefined8       Stack[-0xe0]:8  local_e0
-; undefined8       Stack[-0xd8]:8  local_d8
-; undefined8       Stack[-0xd0]:8  local_d0
-; undefined8       Stack[-0xc8]:8  local_c8
-; undefined8       Stack[-0xc0]:8  local_c0
-; undefined8       Stack[-0xb8]:8  local_b8
-; undefined8       Stack[-0xb0]:8  local_b0
-; undefined8       Stack[-0xa8]:8  local_a8
-; undefined8       Stack[-0xa0]:8  local_a0
-; undefined8       Stack[-0x98]:8  local_98
-; undefined8       Stack[-0x90]:8  local_90
-; undefined8       Stack[-0x88]:8  local_88
-; undefined8       Stack[-0x80]:8  local_80
-; undefined8       Stack[-0x78]:8  local_78
-; undefined8       Stack[-0x70]:8  local_70
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
 ; CVector3f[7]     Stack[-0x60]:84  local_60
 ;
 ; XREF[2]:

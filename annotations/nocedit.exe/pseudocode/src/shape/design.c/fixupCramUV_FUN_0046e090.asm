@@ -8,8 +8,6 @@
 ; float *          Stack[0x8]:4   u_coord
 ; float *          Stack[0xc]:4   v_coord
 ; Local Variables:
-; undefined8       Stack[-0xa4]:8  local_a4
-; undefined8       Stack[-0x9c]:8  local_9c
 ; char[100]        Stack[-0x94]:100  local_94
 ; double           Stack[-0x30]:8  local_30
 ; int              Stack[-0x28]:4  local_28

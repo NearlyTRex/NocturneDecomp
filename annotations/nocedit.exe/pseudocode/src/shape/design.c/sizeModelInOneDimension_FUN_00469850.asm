@@ -4,8 +4,6 @@
 ; void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0xfc]:4  local_fc
-; undefined4       Stack[-0xf8]:4  local_f8
 ; char[80]         Stack[-0xf4]:80  local_f4
 ; char[80]         Stack[-0xa4]:80  local_a4
 ; int              Stack[-0x54]:4  local_54

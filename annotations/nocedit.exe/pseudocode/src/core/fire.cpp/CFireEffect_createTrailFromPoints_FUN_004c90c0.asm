@@ -12,7 +12,6 @@
 ; float            Stack[0x18]:4   lifetime
 ; SMRGLTextureBasic * Stack[0x1c]:4   texture_ptr
 ; Local Variables:
-; undefined4       Stack[-0x38]:4  local_38
 ; CVector3f        Stack[-0x34]:12  local_34
 ; float            Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24

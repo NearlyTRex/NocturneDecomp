@@ -3,11 +3,6 @@
 ; *****************************************************************************
 ; float10 __fpureg crt_math_c_exp_FUN_006068e2(float10 x)
 ;
-; Local Variables:
-; undefined8       Stack[-0x1c]:8  local_1c
-; undefined8       Stack[-0x14]:8  local_14
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   crt_math.c_pow_FUN_005ffd76 at 005ffe94

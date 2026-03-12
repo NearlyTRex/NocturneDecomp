@@ -7,15 +7,11 @@
 ; CMotionController * Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   actor
 ; Local Variables:
-; undefined1       Stack[-0xa8]:1  local_a8
-; undefined1       Stack[-0xa7]:1  local_a7
 ; CBoundingBox3D   Stack[-0x44]:24  local_44
 ; CVector3i        Stack[-0x2c]:12  local_2c
 ; float            Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[9]:
 ;   core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0 at 00413c6e

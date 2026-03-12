@@ -9,8 +9,6 @@
 ; int              Stack[0xc]:4   x2
 ; int              Stack[0x10]:4   y2
 ; int              Stack[0x14]:4   color
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[31]:
 ;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043ca97

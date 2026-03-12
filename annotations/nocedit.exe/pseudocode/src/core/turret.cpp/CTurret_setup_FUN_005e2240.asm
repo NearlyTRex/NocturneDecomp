@@ -7,7 +7,6 @@
 ; CTurret *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; float            Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006565f8 = 0.200000000000000

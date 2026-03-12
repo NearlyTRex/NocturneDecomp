@@ -6,7 +6,6 @@
 ; Parameters:
 ; CProceduralTexture * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x134]:4  local_134
 ; char[256]        Stack[-0x130]:256  local_130
 ; CProceduralTexture * Stack[-0x30]:4  local_30
 ; CProceduralTexture * Stack[-0x2c]:4  local_2c

@@ -8,9 +8,6 @@
 ; int *            Stack[0x8]:4   edge2_vertices
 ; int              Stack[0xc]:4   vertex_count
 ; int *            Stack[0x10]:4   shared_edge_type
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_complexPolygonReduction_FUN_00463b30 at 00463d63

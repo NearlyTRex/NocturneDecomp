@@ -3,9 +3,6 @@
 ; *****************************************************************************
 ; ulonglong __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
 ;
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   _MMX_INTEGER g_RedMask16

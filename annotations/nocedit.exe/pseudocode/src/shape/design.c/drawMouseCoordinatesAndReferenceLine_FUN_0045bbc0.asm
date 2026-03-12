@@ -4,9 +4,6 @@
 ; void __cdecl shape_design_c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0(void)
 ;
 ; Local Variables:
-; undefined8       Stack[-0x88]:8  local_88
-; undefined8       Stack[-0x80]:8  local_80
-; undefined8       Stack[-0x78]:8  local_78
 ; char[80]         Stack[-0x70]:80  local_70
 ; float            Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c

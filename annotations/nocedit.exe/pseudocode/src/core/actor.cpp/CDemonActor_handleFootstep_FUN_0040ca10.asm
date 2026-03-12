@@ -9,7 +9,6 @@
 ; int              Stack[0xc]:4   surface_type
 ; float            Stack[0x10]:4   volume
 ; Local Variables:
-; undefined8       Stack[-0x94]:8  local_94
 ; char[100]        Stack[-0x8c]:100  local_8c
 ; float            Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24

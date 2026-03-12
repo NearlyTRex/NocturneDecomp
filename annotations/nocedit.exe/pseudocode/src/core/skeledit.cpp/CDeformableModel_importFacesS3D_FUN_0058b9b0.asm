@@ -7,7 +7,6 @@
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined8       Stack[-0x5c]:8  local_5c
 ; float            Stack[-0x54]:4  local_54
 ; undefined1[4]    Stack[-0x50]:4  local_50
 ; undefined1[4]    Stack[-0x4c]:4  local_4c

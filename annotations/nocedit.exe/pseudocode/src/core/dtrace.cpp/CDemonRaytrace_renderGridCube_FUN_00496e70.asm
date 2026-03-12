@@ -8,10 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   world_pos
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0xdc]:24  local_dc
-; undefined4       Stack[-0xc4]:4  local_c4
-; undefined4       Stack[-0xb8]:4  local_b8
-; undefined4       Stack[-0xac]:4  local_ac
-; undefined4       Stack[-0xa0]:4  local_a0
 ; CVector3i        Stack[-0x94]:12  local_94
 ; CVector3i        Stack[-0x88]:12  local_88
 ; CVector3i        Stack[-0x7c]:12  local_7c

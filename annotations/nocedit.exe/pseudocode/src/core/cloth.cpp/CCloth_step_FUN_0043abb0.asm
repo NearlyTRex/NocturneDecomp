@@ -12,7 +12,6 @@
 ; CDeformableModelInstance * Stack[0x18]:4   model_ptr
 ; Local Variables:
 ; float            Stack[-0x1e0]:4  local_1e0
-; undefined4       Stack[-0x1dc]:4  local_1dc
 ; CMatrix3x3f      Stack[-0x1d8]:36  local_1d8
 ; float            Stack[-0x1b0]:4  local_1b0
 ; float            Stack[-0x1ac]:4  local_1ac
@@ -76,11 +75,9 @@
 ; float            Stack[-0x7c]:4  local_7c
 ; float            Stack[-0x78]:4  local_78
 ; SClothVertex *   Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
 ; SClothVertex *   Stack[-0x6c]:4  local_6c
 ; float            Stack[-0x68]:4  local_68
 ; int              Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
 ; float *          Stack[-0x5c]:4  local_5c
 ; int              Stack[-0x58]:4  local_58
 ; float *          Stack[-0x54]:4  local_54

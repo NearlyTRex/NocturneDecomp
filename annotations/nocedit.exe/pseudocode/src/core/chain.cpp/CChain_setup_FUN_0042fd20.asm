@@ -10,11 +10,6 @@
 ; float            Stack[-0x30]:4  local_30
 ; float            Stack[-0x2c]:4  local_2c
 ; float            Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408bb0

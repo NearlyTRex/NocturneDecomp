@@ -9,14 +9,6 @@
 ; CVector3f *      Stack[0xc]:4   camera_rotation
 ; float            Stack[0x10]:4   projection_scale
 ; Local Variables:
-; undefined8       Stack[-0x4d0]:8  local_4d0
-; undefined8       Stack[-0x4c8]:8  local_4c8
-; undefined8       Stack[-0x4c0]:8  local_4c0
-; undefined4       Stack[-0x4b8]:4  local_4b8
-; undefined4       Stack[-0x4b4]:4  local_4b4
-; undefined4       Stack[-0x4b0]:4  local_4b0
-; undefined4       Stack[-0x4ac]:4  local_4ac
-; undefined4       Stack[-0x4a8]:4  local_4a8
 ; CMatrix3x4f      Stack[-0x4a4]:48  local_4a4
 ; CMatrix3x4f      Stack[-0x474]:48  local_474
 ; CMatrix3x4f      Stack[-0x444]:48  local_444

@@ -12,12 +12,12 @@ void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_00521160(SClipPlane *c
   float fVar7;
   CVector3f local_3c [3];
   float local_18;
+  float fVar6;
+  float fVar5;
   float fVar4;
   float fVar3;
   float fVar2;
   float fVar1;
-  float fVar6;
-  float fVar5;
   
   fVar7 = (vertex_b->z - vertex_a->z) * (float)clip_plane->C +
           (vertex_b->x - vertex_a->x) * (float)clip_plane->A +

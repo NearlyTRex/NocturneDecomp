@@ -7,11 +7,6 @@
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   emission_rate
 ; float            Stack[0xc]:4   delta_time
-; Local Variables:
-; undefined8       Stack[-0x1c]:8  local_1c
-; undefined8       Stack[-0x14]:8  local_14
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40 at 004d1b0c

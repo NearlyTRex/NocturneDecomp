@@ -3,8 +3,6 @@
 ; *****************************************************************************
 ; void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
 ;
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   void* PTR_caseD_3_0043641c = 00436565

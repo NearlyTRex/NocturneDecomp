@@ -6,15 +6,10 @@
 ; Parameters:
 ; CVector3i *      Stack[0x4]:4   input_vector
 ; Local Variables:
-; undefined1       Stack[-0x50]:1  local_50
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
 ; int              Stack[-0x38]:4  local_38
 ; double           Stack[-0x30]:8  local_30
 ; double           Stack[-0x28]:8  local_28
 ; double           Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[4]:
 ;   core_ground.cpp_CGround_getNormalAtPosition_FUN_004effb0 at 004f00b1

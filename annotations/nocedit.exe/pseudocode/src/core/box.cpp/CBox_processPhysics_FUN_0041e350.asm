@@ -7,11 +7,6 @@
 ; CBox *           Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined8       Stack[-0x440]:8  local_440
-; undefined8       Stack[-0x438]:8  local_438
-; undefined8       Stack[-0x430]:8  local_430
-; undefined4       Stack[-0x428]:4  local_428
-; undefined4       Stack[-0x424]:4  local_424
 ; CMatrix3x3f      Stack[-0x420]:36  local_420
 ; float            Stack[-0x3f8]:4  local_3f8
 ; float            Stack[-0x3f4]:4  local_3f4
@@ -85,7 +80,6 @@
 ; float            Stack[-0x60]:4  local_60
 ; float            Stack[-0x5c]:4  local_5c
 ; float            Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
 ; SScrape *        Stack[-0x50]:4  local_50
 ; float            Stack[-0x4c]:4  local_4c
 ; float            Stack[-0x48]:4  local_48

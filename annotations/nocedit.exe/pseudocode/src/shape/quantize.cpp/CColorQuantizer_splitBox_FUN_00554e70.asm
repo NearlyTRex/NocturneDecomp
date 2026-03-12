@@ -8,11 +8,7 @@
 ; int              Stack[0x8]:4   source_box_index
 ; int              Stack[0xc]:4   dest_box_index
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
 ; uchar *          Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40 at 00555c68

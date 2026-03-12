@@ -7,7 +7,6 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   save_filename
 ; Local Variables:
-; undefined8       Stack[-0x570]:8  local_570
 ; undefined8       Stack[-0x568]:8  local_568
 ; undefined1       Stack[-0x558]:1  local_558
 ; undefined1       Stack[-0x557]:1  local_557

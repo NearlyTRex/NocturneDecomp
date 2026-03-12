@@ -6,9 +6,6 @@
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   matrix_in
 ; CVector3f *      Stack[0x8]:4   vector_out
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[15]:
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 at 0042d1c4

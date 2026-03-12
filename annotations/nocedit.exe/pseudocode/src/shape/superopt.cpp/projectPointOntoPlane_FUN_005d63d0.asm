@@ -16,7 +16,6 @@
 ; double           Stack[-0x38]:8  local_38
 ; double           Stack[-0x30]:8  local_30
 ; double           Stack[-0x18]:8  local_18
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800 at 005d59f9

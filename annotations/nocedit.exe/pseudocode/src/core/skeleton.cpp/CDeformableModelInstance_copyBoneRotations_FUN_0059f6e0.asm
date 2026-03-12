@@ -7,8 +7,6 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; CQuaternion4f *  Stack[0x8]:4   source_quaternions
 ; int              Stack[0xc]:4   bone_index
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820

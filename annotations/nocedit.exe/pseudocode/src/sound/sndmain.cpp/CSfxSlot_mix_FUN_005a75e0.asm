@@ -7,10 +7,7 @@
 ; CSfxSlot *       Stack[0x4]:4   this_ptr
 ; SMixBuffer       Stack[0x8]:44   mix_buffer
 ; Local Variables:
-; undefined8       Stack[-0xc8]:8  local_c8
 ; double           Stack[-0xc0]:8  local_c0
-; undefined8       Stack[-0xb8]:8  local_b8
-; undefined8       Stack[-0xb0]:8  local_b0
 ; int              Stack[-0xa8]:4  local_a8
 ; int[8]           Stack[-0xa4]:32  aiStack_a4
 ; double           Stack[-0x84]:8  local_84

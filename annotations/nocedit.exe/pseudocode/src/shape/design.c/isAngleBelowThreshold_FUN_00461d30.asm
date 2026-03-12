@@ -8,7 +8,6 @@
 ; SShapeEditorPolygon * Stack[0x8]:4   polygon2
 ; double           Stack[0xc]:8   angle_threshold
 ; Local Variables:
-; undefined8       Stack[-0x1c]:8  local_1c
 ; uint             Stack[-0x14]:4  local_14
 ;
 ; Called Functions:

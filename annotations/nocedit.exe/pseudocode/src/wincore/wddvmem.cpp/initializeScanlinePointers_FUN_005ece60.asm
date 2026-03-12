@@ -3,8 +3,6 @@
 ; *****************************************************************************
 ; void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_005ece60(void)
 ;
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

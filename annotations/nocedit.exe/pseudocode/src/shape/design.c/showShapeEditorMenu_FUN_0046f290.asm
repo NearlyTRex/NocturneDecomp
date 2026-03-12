@@ -4,8 +4,6 @@
 ; void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
 ; char[80]         Stack[-0x64]:80  local_64
 ; int              Stack[-0x14]:4  local_14
 ;

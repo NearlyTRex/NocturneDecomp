@@ -6,8 +6,6 @@
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file_stream
 ; uint             Stack[0x8]:4   total_bytes
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   char[65536] g_FileIOBuffer

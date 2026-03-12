@@ -9,8 +9,6 @@
 ; float            Stack[0xc]:4   weight
 ; int              Stack[0x10]:4   distance
 ; CDeformableModelInstance * Stack[0x14]:4   instance
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60 at 005bffec

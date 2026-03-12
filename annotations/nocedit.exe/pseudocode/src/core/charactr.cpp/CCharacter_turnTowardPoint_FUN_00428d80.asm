@@ -9,11 +9,8 @@
 ; Local Variables:
 ; CVector3f        Stack[-0x30]:12  local_30
 ; CVector3f        Stack[-0x24]:12  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ; float            Stack[-0x10]:4  local_10
 ; float            Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_scat.cpp_CScat_updateAI_FUN_005578e0 at 00557ceb

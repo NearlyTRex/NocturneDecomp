@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; CMoon *          Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_menu.cpp_showMainGameMenu_FUN_00512f40 at 005131c6

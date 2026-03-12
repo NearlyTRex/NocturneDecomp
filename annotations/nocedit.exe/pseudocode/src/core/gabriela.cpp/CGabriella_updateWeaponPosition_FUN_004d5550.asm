@@ -30,7 +30,6 @@
 ; CVector3f        Stack[-0x34]:12  local_34
 ; CVector3f        Stack[-0x28]:12  local_28
 ; CInventory *     Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d35f3

@@ -10,7 +10,6 @@
 ; char *           Stack[0x10]:4   dest_filename
 ; int              Stack[0x14]:4   file_size_bytes
 ; Local Variables:
-; undefined4       Stack[-0x210]:4  local_210
 ; undefined4       Stack[-0x20c]:4  local_20c
 ; char[500]        Stack[-0x208]:500  local_208
 ; int              Stack[-0x14]:4  local_14

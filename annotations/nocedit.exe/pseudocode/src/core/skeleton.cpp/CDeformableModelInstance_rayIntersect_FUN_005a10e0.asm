@@ -7,9 +7,6 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   ray_origin
 ; CVector3f *      Stack[0xc]:4   ray_direction
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 00409787

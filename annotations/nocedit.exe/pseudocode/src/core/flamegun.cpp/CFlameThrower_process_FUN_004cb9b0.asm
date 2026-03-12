@@ -6,8 +6,6 @@
 ; Parameters:
 ; CFlameThrower *  Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
-; Local Variables:
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fl_throw_wav_0062a39b

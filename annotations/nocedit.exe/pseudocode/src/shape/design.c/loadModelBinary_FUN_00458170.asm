@@ -6,8 +6,6 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; Local Variables:
-; undefined8       Stack[-0x1a4]:8  local_1a4
-; undefined4       Stack[-0x19c]:4  local_19c
 ; SMRGLModelBounds Stack[-0x198]:52  local_198
 ; uint             Stack[-0x164]:4  local_164
 ; char[80]         Stack[-0x160]:80  local_160

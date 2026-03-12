@@ -7,11 +7,6 @@
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined8       Stack[-0xa210]:8  local_a210
-; undefined8       Stack[-0xa208]:8  local_a208
-; undefined8       Stack[-0xa200]:8  local_a200
-; undefined4       Stack[-0xa1f8]:4  local_a1f8
-; undefined4       Stack[-0xa1f4]:4  local_a1f4
 ; float            Stack[-0xa1f0]:4  local_a1f0
 ; char[32552]      Stack[-0xa1ec]:32552  local_a1ec
 ; undefined2[1018] Stack[-0x22c4]:2036  auStack_22c4
@@ -26,7 +21,6 @@
 ; char[100]        Stack[-0x388]:100  local_388
 ; CBoundingBox3D   Stack[-0x324]:24  local_324
 ; CBoundingBox3D   Stack[-0x30c]:24  local_30c
-; undefined4       Stack[-0x2f4]:4  local_2f4
 ; undefined1[4]    Stack[-0x2f0]:4  auStack_2f0
 ; undefined4       Stack[-0x2ec]:4  uStack_2ec
 ; undefined4       Stack[-0x2e8]:4  local_2e8

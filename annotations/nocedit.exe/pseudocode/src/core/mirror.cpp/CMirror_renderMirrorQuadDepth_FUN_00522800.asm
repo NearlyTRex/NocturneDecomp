@@ -7,10 +7,6 @@
 ; CMirror *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0x88]:24  SStack_88
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x4c]:4  local_4c
 ; CVector3i        Stack[-0x40]:12  local_40
 ; CVector3i        Stack[-0x34]:12  local_34
 ; CVector3i        Stack[-0x28]:12  local_28

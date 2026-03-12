@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270 at 004532db

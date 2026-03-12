@@ -6,15 +6,11 @@
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x148]:8  local_148
 ; float            Stack[-0x140]:4  local_140
 ; float            Stack[-0x13c]:4  local_13c
 ; float            Stack[-0x138]:4  local_138
 ; char[100]        Stack[-0x134]:100  local_134
 ; char[100]        Stack[-0xd0]:100  local_d0
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
 ; float            Stack[-0x60]:4  local_60
 ; float            Stack[-0x5c]:4  local_5c
 ; float            Stack[-0x58]:4  local_58

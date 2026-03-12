@@ -9,9 +9,6 @@
 ; int              Stack[0xc]:4   vertex_buffer_index
 ; float            Stack[0x10]:4   radius
 ; Local Variables:
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
 ; CVector3i[3]     Stack[-0x38]:36  local_38
 ; int              Stack[-0xc]:4  local_c
 ;

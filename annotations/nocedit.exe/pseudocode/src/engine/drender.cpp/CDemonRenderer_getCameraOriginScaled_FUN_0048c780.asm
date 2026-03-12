@@ -8,7 +8,6 @@
 ; float *          Stack[0x8]:4   output
 ; Local Variables:
 ; CVector3i        Stack[-0x20]:12  local_20
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[10]:
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400 at 00471428

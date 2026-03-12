@@ -3,9 +3,6 @@
 ; *****************************************************************************
 ; void __cdecl crt_exit_c_ProcessExitHandlers_FUN_0060ac88(uchar min_priority,uchar max_priority)
 ;
-; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[2]:
 ;   crt_exit.c_ExitProcess_FUN_00602700 at 00602730

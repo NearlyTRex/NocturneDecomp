@@ -7,21 +7,6 @@
 ; CVector3f *      Stack[0x4]:4   line_start
 ; CVector3f *      Stack[0x8]:4   line_end
 ; CVector3f *      Stack[0xc]:4   test_point
-; Local Variables:
-; undefined8       Stack[-0x80]:8  local_80
-; undefined8       Stack[-0x78]:8  local_78
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; *****************************************************************************
 

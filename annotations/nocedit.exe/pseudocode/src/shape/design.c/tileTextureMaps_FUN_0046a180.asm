@@ -7,14 +7,10 @@
 ; SCram *          Stack[0x4]:4   cram
 ; int              Stack[0x8]:4   prompt_for_model
 ; Local Variables:
-; undefined4       Stack[-0x1cc]:4  local_1cc
-; undefined4       Stack[-0x1c8]:4  local_1c8
-; undefined4       Stack[-0x1c4]:4  local_1c4
 ; float            Stack[-0x1c0]:4  local_1c0
 ; float            Stack[-0x1bc]:4  local_1bc
 ; float            Stack[-0x1b8]:4  local_1b8
 ; float            Stack[-0x1b4]:4  local_1b4
-; undefined4       Stack[-0x1b0]:4  local_1b0
 ; char[200]        Stack[-0x1ac]:200  local_1ac
 ; char[200]        Stack[-0xe4]:200  local_e4
 ; int              Stack[-0x1c]:4  local_1c

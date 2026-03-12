@@ -8,7 +8,6 @@
 ; SLodSamplePoint * Stack[0x8]:4   sample_point
 ; CLodFace *       Stack[0xc]:4   face
 ; Local Variables:
-; undefined8       Stack[-0xa0]:8  local_a0
 ; CVector3f        Stack[-0x98]:12  local_98
 ; CVector3f        Stack[-0x8c]:12  local_8c
 ; CVector3f        Stack[-0x80]:12  local_80

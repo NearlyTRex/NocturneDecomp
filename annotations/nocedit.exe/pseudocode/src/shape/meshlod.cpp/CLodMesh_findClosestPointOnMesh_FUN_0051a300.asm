@@ -8,8 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   output_closest_point
 ; CVector3f *      Stack[0xc]:4   target_point
 ; Local Variables:
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
 ; CVector3f[2]     Stack[-0x30]:24  local_30
 ; int              Stack[-0x18]:4  local_18
 ;

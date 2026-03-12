@@ -8,15 +8,7 @@
 ; Local Variables:
 ; undefined4[973]  Stack[-0x1088]:3892  auStackY_1088
 ; SMRGLHeaderPrimitive Stack[-0x144]:24  SStack_144
-; undefined4       Stack[-0x12c]:4  uStack_12c
-; undefined4       Stack[-0x128]:4  uStack_128
-; undefined4       Stack[-0x124]:4  uStack_124
-; undefined4       Stack[-0x120]:4  uStack_120
 ; SMRGLHeaderPrimitive Stack[-0x11c]:24  SStack_11c
-; undefined4       Stack[-0x104]:4  uStack_104
-; undefined4       Stack[-0x100]:4  uStack_100
-; undefined4       Stack[-0xfc]:4  uStack_fc
-; undefined4       Stack[-0xf8]:4  uStack_f8
 ; CBoundingBox3D   Stack[-0xf4]:24  local_f4
 ; CVector3i        Stack[-0xdc]:12  CStack_dc
 ; CVector3i        Stack[-0xd0]:12  CStack_d0

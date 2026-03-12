@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   output_buffer
-; Local Variables:
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sfx_slot_d_s_pos_7_1f_7__00650b33

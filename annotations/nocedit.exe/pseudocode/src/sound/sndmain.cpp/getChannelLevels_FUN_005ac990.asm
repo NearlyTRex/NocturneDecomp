@@ -10,7 +10,6 @@
 ; Local Variables:
 ; float            Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
 ;   int g_MixBufferSize

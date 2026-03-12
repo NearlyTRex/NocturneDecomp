@@ -9,9 +9,6 @@
 ; CVector3f *      Stack[0xc]:4   ray_direction
 ; CVector3f *      Stack[0x10]:4   out_normal
 ; Local Variables:
-; undefined4       Stack[-0xd8]:4  local_d8
-; undefined4       Stack[-0xd4]:4  local_d4
-; undefined4       Stack[-0xd0]:4  local_d0
 ; CBoundingBox3D   Stack[-0xcc]:24  local_cc
 ; CVector3f        Stack[-0xb4]:12  local_b4
 ; CVector3f        Stack[-0xa8]:12  local_a8

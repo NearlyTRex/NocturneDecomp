@@ -6,8 +6,6 @@
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
 ; CBoundingBox3D   Stack[-0x40]:24  local_40
 ; CVector3i        Stack[-0x28]:12  local_28
 ; float            Stack[-0x1c]:4  local_1c

@@ -7,8 +7,6 @@
 ; CEventList *     Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   command_buffer
 ; Local Variables:
-; undefined8       Stack[-0x1644]:8  local_1644
-; undefined1       Stack[-0x163c]:1  local_163c
 ; char[200]        Stack[-0x153d]:200  local_153d
 ; char[200]        Stack[-0x1475]:200  local_1475
 ; char[200]        Stack[-0x13ad]:200  local_13ad
@@ -45,7 +43,6 @@
 ; CVector3f        Stack[-0x128]:12  local_128
 ; CVector3f        Stack[-0x11c]:12  local_11c
 ; CVector3f        Stack[-0x110]:12  local_110
-; undefined4       Stack[-0xfc]:4  local_fc
 ; uint             Stack[-0xf8]:4  uStack_f8
 ; char *           Stack[-0xf4]:4  local_f4
 ; uint             Stack[-0xf0]:4  local_f0
@@ -103,7 +100,6 @@
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; uint             Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_executeCommandString_FUN_004aac00 at 004aac74

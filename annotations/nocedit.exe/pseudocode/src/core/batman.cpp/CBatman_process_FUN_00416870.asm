@@ -29,7 +29,6 @@
 ; CVector3f        Stack[-0xa4]:12  local_a4
 ; CVector3f        Stack[-0x98]:12  local_98
 ; float            Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
 ; float            Stack[-0x84]:4  local_84
 ; CVector3f        Stack[-0x80]:12  local_80
 ; CVector3f        Stack[-0x74]:12  local_74
@@ -49,7 +48,6 @@
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00002424

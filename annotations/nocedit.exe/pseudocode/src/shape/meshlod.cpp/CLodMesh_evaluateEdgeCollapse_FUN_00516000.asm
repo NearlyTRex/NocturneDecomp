@@ -8,8 +8,6 @@
 ; int              Stack[0x8]:4   edge_index
 ; int              Stack[0xc]:4   full_check
 ; Local Variables:
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
 ; CVector3f        Stack[-0x80]:12  local_80
 ; CVector3f        Stack[-0x74]:12  local_74
 ; int              Stack[-0x60]:4  local_60

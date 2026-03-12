@@ -8,8 +8,6 @@
 ; char *           Stack[0x8]:4   name
 ; int              Stack[0xc]:4   value
 ; float            Stack[0x10]:4   duration
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0 at 0042c4ea

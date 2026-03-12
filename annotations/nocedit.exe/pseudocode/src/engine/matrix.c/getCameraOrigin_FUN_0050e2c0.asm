@@ -3,10 +3,6 @@
 ; *****************************************************************************
 ; void __cdecl engine_matrix_c_getCameraOrigin_FUN_0050e2c0(CVector3i *output)
 ;
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[4]:
 ;   core_dcamera.cpp_CDemonCamera_saveAlphaTransform_FUN_00453950 at 00453957

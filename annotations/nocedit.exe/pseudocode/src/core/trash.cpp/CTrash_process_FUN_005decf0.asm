@@ -7,10 +7,6 @@
 ; CTrash *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x1bc]:4  local_1bc
-; undefined8       Stack[-0x1b8]:8  local_1b8
-; undefined4       Stack[-0x1b0]:4  local_1b0
-; undefined4       Stack[-0x1ac]:4  local_1ac
 ; CMatrix3x4f      Stack[-0x1a8]:48  local_1a8
 ; CMatrix3x4f      Stack[-0x178]:48  local_178
 ; CMatrix3x3f      Stack[-0x148]:36  local_148

@@ -10,8 +10,6 @@
 ; int              Stack[0x10]:4   direction_hint
 ; Local Variables:
 ; undefined4       Stack[-0x118]:4  local_118
-; undefined4       Stack[-0x114]:4  local_114
-; undefined4       Stack[-0x110]:4  local_110
 ; undefined1       Stack[-0x10c]:1  local_10c
 ; undefined4       Stack[-0x100]:4  local_100
 ; undefined4       Stack[-0xfc]:4  local_fc

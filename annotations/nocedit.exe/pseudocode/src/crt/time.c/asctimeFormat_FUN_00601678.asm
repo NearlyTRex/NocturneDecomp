@@ -6,9 +6,6 @@
 ; Parameters:
 ; _tm *            Stack[0x4]:4   timeptr
 ; char *           Stack[0x8]:4   buffer
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   crt_time.c__asctime_FUN_00601768 at 00601777

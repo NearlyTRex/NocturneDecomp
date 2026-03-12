@@ -7,8 +7,6 @@
 ; SIntersectXZCylinder * Stack[0x4]:4   cylinder
 ; CVector3f *      Stack[0x8]:4   vertex1
 ; CVector3f *      Stack[0xc]:4   vertex2
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80 at 0049b16d

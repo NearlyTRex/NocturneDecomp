@@ -9,12 +9,6 @@
 ; int              Stack[0xc]:4   lod_level
 ; CMatrix3x4f *    Stack[0x10]:4   bone_matrices
 ; Local Variables:
-; undefined8       Stack[-0x378]:8  local_378
-; undefined8       Stack[-0x370]:8  local_370
-; undefined8       Stack[-0x364]:8  local_364
-; undefined8       Stack[-0x358]:8  local_358
-; undefined8       Stack[-0x350]:8  local_350
-; undefined8       Stack[-0x348]:8  local_348
 ; char[512]        Stack[-0x340]:512  local_340
 ; int[30]          Stack[-0x140]:120  aiStack_140
 ; CStrList         Stack[-0xc8]:16  local_c8
@@ -55,7 +49,6 @@
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; uint             Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0 at 00598f06

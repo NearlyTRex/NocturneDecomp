@@ -11,12 +11,12 @@ CBoundingBox3D * __cdecl core_ladder_cpp_CLadder_getBoundingBox_FUN_005028c0(CLa
 {
   CKeyFramedModel *pCVar7;
   CKeyFramedModel *pCVar1;
-  float fVar2;
-  float fVar3;
   float fVar4;
   float fVar5;
   float fVar6;
   float fVar1;
+  float fVar2;
+  float fVar3;
   
   pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   if (pCVar7->poly_count < 1) {

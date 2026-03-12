@@ -6,9 +6,6 @@
 ; Parameters:
 ; CWeather *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined8       Stack[-0x38]:8  local_38
-; undefined4       Stack[-0x30]:4  local_30
 ; float            Stack[-0x2c]:4  local_2c
 ; CVector3f        Stack[-0x28]:12  local_28
 ; float            Stack[-0x1c]:4  local_1c

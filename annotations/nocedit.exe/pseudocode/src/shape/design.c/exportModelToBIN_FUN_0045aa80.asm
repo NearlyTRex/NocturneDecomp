@@ -10,10 +10,7 @@
 ; int              Stack[0x10]:4   export_format
 ; int              Stack[0x14]:4   include_textures
 ; Local Variables:
-; undefined4       Stack[-0xfc]:4  local_fc
 ; int              Stack[-0xf8]:4  local_f8
-; undefined4       Stack[-0xf4]:4  local_f4
-; undefined8       Stack[-0xf0]:8  local_f0
 ; undefined4       Stack[-0x98]:4  local_98
 ; undefined4       Stack[-0x94]:4  local_94
 ; char[16]         Stack[-0x90]:16  local_90

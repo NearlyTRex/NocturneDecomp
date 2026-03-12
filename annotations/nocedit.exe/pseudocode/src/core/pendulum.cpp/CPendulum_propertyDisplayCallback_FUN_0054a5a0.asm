@@ -7,8 +7,6 @@
 ; CPendulum *      Stack[0x4]:4   this_ptr
 ; CActorProperty * Stack[0x8]:4   property
 ; char *           Stack[0xc]:4   output_buffer
-; Local Variables:
-; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[1]:
 ;   core_pendulum.cpp_CPendulum_getPropertyList_FUN_0054a5f0 at 0054a6e3

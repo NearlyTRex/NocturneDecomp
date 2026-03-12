@@ -3,8 +3,6 @@
 ; *****************************************************************************
 ; void __cdecl crt_init_c_ProcessInitTermHandlers_FUN_0060ac30(int max_priority)
 ;
-; Local Variables:
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[2]:
 ;   crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8 at 006026e8

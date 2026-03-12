@@ -13,11 +13,9 @@
 ; float            Stack[-0x50]:4  local_50
 ; int[6]           Stack[-0x4c]:24  aiStack_4c
 ; CVector3i        Stack[-0x34]:12  local_34
-; undefined4       Stack[-0x28]:4  local_28
 ; uint             Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20
 ; uint             Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 at 00575a6b

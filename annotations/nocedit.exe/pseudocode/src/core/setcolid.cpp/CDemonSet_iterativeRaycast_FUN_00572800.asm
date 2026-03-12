@@ -8,11 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   start_pos
 ; CVector3f *      Stack[0xc]:4   direction
 ; Local Variables:
-; undefined8       Stack[-0x88]:8  local_88
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
 ; CVector3f        Stack[-0x70]:12  local_70
 ; float            Stack[-0x64]:4  local_64
 ; float            Stack[-0x60]:4  local_60
@@ -30,7 +25,6 @@
 ; float            Stack[-0x30]:4  local_30
 ; float            Stack[-0x2c]:4  local_2c
 ; CVector3f        Stack[-0x28]:12  local_28
-; undefined4       Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
 ; float            Stack[-0x10]:4  local_10

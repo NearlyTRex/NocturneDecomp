@@ -6,8 +6,6 @@
 ; Parameters:
 ; float            Stack[0x4]:4   a
 ; float            Stack[0x8]:4   b
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[2]:
 ;   core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00425b70 at 00425c62

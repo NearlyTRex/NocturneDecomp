@@ -8,8 +8,6 @@
 ; ushort           Stack[-0x28]:2  uStack_28
 ; uint             Stack[-0x20]:4  uStack_20
 ; ushort           Stack[-0x1c]:2  uStack_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   crt_math.c_atan2_FUN_00608e14 at 00608e27

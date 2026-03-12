@@ -8,7 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   position
 ; Local Variables:
 ; CVector3f        Stack[-0x18]:12  local_18
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_0042bd30 at 0042bf1a

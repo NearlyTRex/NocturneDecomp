@@ -8,10 +8,6 @@
 ; float            Stack[0x8]:4   angle_tolerance
 ; int              Stack[0xc]:4   ui_mode
 ; Local Variables:
-; undefined8       Stack[-0x14c]:8  local_14c
-; undefined4       Stack[-0x144]:4  local_144
-; undefined4       Stack[-0x140]:4  local_140
-; undefined8       Stack[-0x13c]:8  local_13c
 ; byte[256]        Stack[-0x134]:256  local_134
 ; int              Stack[-0x34]:4  local_34
 ; int              Stack[-0x30]:4  local_30

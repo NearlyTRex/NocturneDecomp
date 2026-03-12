@@ -7,7 +7,6 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined4       Stack[-0x148]:4  local_148
 ; char[300]        Stack[-0x144]:300  local_144
 ; double           Stack[-0x18]:8  local_18
 ;

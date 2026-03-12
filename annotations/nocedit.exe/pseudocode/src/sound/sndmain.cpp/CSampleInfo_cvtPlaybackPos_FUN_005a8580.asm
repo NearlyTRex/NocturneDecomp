@@ -8,9 +8,6 @@
 ; double           Stack[0x8]:8   position
 ; uint             Stack[0x10]:4   input_type
 ; uint             Stack[0x14]:4   output_type
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0 at 005a870d

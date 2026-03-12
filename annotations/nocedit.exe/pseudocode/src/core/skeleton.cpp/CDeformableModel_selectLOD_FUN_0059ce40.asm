@@ -6,9 +6,6 @@
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; CBoundingBox3D * Stack[0x8]:4   bounding_box
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60 at 0042b045

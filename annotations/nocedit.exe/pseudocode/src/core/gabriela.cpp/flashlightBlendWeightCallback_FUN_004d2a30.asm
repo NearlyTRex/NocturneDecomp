@@ -10,7 +10,6 @@
 ; int              Stack[0x10]:4   hierarchy_distance
 ; CDeformableModelInstance * Stack[0x14]:4   instance
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:

@@ -6,10 +6,6 @@
 ; Parameters:
 ; CLocation *      Stack[0x4]:4   location_ptr
 ; char *           Stack[0x8]:4   property_name
-; Local Variables:
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c1c0 at 0040c1d1

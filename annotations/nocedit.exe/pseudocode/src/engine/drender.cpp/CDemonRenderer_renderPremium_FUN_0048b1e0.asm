@@ -6,8 +6,6 @@
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 at 0057021f

@@ -23,12 +23,12 @@ void __cdecl shape_superopt_cpp_CPoly_projectUVPlanar_FUN_005ce0a0(CPoly *this_p
   double local_70;
   uint local_64;
   uint local_5c;
-  CPoly *pCVar4;
-  double dVar5;
   double dVar6;
   int iVar3;
   double dVar1;
   CVert *pCVar2;
+  CPoly *pCVar4;
+  double dVar5;
   
   dVar6 = 0.00390625;
   if (0.0 <= (this_ptr->normal).impl.z) {

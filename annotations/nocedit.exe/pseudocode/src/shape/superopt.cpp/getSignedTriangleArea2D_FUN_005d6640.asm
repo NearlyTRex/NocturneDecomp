@@ -9,9 +9,6 @@
 ; CVector2d *      Stack[0xc]:4   p3
 ; Local Variables:
 ; double           Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[3]:
 ;   shape_superopt.cpp_CComplexPolygon_isConvex_FUN_005cb3a0 at 005cb90e

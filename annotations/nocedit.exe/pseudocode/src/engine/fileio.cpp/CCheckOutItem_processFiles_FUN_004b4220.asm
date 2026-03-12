@@ -7,7 +7,6 @@
 ; CCheckOutItem *  Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined4       Stack[-0x13d0]:4  local_13d0
 ; CPickList        Stack[-0x13c8]:936  local_13c8
 ; SFoundFileInfo   Stack[-0x1020]:532  local_1020
 ; SFoundFileInfo   Stack[-0xe0c]:532  local_e0c

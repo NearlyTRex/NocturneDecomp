@@ -21,7 +21,6 @@
 ; SMpegSubbandScalefactors[2] Stack[-0x9c8]:768  local_9c8
 ; SMpegScalefactorBandData Stack[-0x6c8]:496  local_6c8
 ; char             Stack[-0x4d8]:1  local_4d8
-; undefined1       Stack[-0x4d0]:1  local_4d0
 ; SMpegLayer3SideInfo Stack[-0x4c0]:168  local_4c0
 ; SMpegSubbandSCFSI[2] Stack[-0x390]:256  local_390
 ; SMpegSubbandAllocation[2] Stack[-0x290]:256  local_290
@@ -34,7 +33,6 @@
 ; uint             Stack[-0xa4]:4  local_a4
 ; SMpegFrameHeader * Stack[-0xa0]:4  local_a0
 ; int              Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
 ; int              Stack[-0x94]:4  local_94
 ; int              Stack[-0x90]:4  local_90
 ; int              Stack[-0x8c]:4  local_8c

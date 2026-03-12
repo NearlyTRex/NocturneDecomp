@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CFlame *         Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[5]:
 ;   core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620 at 0041b628

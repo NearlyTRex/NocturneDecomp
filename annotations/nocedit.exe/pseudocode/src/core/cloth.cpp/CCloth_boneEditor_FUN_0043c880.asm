@@ -20,7 +20,6 @@
 ; CVector3i        Stack[-0x6c]:12  local_6c
 ; SClothVertex *   Stack[-0x60]:4  local_60
 ; float            Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
 ; CSlew            Stack[-0x50]:28  local_50
 ; CSkeleton *      Stack[-0x34]:4  local_34
 ; float            Stack[-0x30]:4  fStack_30

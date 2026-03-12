@@ -8,8 +8,6 @@
 ; int              Stack[0x8]:4   count
 ; int              Stack[0xc]:4   x_offset
 ; int              Stack[0x10]:4   y_offset
-; Local Variables:
-; undefined4       Stack[-0x16]:4  local_16
 ;
 ; Referenced Globals:
 ;   int g_ClipLeft

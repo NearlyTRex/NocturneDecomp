@@ -7,8 +7,6 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   blend_weight
 ; int              Stack[0xc]:4   blend_mode
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50

@@ -7,17 +7,6 @@
 ; CParticle *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; float[998]       Stack[-0x105c]:3992  afStackY_105c
-; undefined8       Stack[-0xb0]:8  local_b0
-; undefined4       Stack[-0xa8]:4  local_a8
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
 ; CVector3i        Stack[-0x74]:12  local_74
 ; undefined1[52]   Stack[-0x68]:52  local_68
 ; float[2]         Stack[-0x34]:8  afStack_34

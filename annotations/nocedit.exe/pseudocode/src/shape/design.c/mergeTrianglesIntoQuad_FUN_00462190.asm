@@ -7,9 +7,6 @@
 ; int              Stack[0x4]:4   first_polygon_index
 ; int              Stack[0x8]:4   second_polygon_index
 ; Local Variables:
-; undefined8       Stack[-0x1fc]:8  local_1fc
-; undefined4       Stack[-0x1f4]:4  local_1f4
-; undefined8       Stack[-0x1f0]:8  local_1f0
 ; SShapeEditorPolygon Stack[-0x1e8]:388  local_1e8
 ; float[4]         Stack[-0x64]:16  local_64
 ; float            Stack[-0x54]:4  local_54

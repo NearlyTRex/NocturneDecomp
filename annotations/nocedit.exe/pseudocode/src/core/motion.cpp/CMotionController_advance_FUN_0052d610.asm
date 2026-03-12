@@ -7,8 +7,6 @@
 ; CMotionController * Stack[0x4]:4   this_ptr
 ; float *          Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x54]:4  local_54
-; undefined8       Stack[-0x50]:8  local_50
 ; float            Stack[-0x48]:4  local_48
 ; float            Stack[-0x44]:4  local_44
 ; SMotionTransition Stack[-0x40]:24  local_40

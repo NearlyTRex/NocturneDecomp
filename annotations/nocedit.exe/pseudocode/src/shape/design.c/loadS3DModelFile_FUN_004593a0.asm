@@ -12,7 +12,6 @@
 ; int[500]         Stack[-0x8d8]:2000  local_8d8
 ; char[200]        Stack[-0x108]:200  local_108
 ; uint             Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
 ; void *           Stack[-0x38]:4  local_38
 ; _FILE *          Stack[-0x34]:4  local_34
 ; int[3]           Stack[-0x30]:12  local_30

@@ -7,9 +7,6 @@
 ; CTentacle *      Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   class_name
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

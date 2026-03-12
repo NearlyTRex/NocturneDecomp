@@ -8,14 +8,9 @@
 ; float            Stack[0x8]:4   delta_time
 ; int              Stack[0xc]:4   is_weapon_active
 ; Local Variables:
-; undefined8       Stack[-0x110]:8  local_110
-; undefined8       Stack[-0x108]:8  local_108
-; undefined8       Stack[-0x100]:8  local_100
 ; float            Stack[-0xf8]:4  local_f8
 ; float            Stack[-0xf4]:4  local_f4
 ; float            Stack[-0xf0]:4  fStack_f0
-; undefined4       Stack[-0xec]:4  local_ec
-; undefined4       Stack[-0xe8]:4  local_e8
 ; SCollisionInfo   Stack[-0xe4]:40  SStack_e4
 ; CVector3f        Stack[-0xbc]:12  local_bc
 ; CVector3f        Stack[-0xb0]:12  local_b0

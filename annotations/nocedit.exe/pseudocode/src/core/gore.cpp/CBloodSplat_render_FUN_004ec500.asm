@@ -9,15 +9,9 @@
 ; Local Variables:
 ; CVector3i        Stack[-0x8c]:12  local_8c
 ; CVector3i        Stack[-0x80]:12  local_80
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
 ; CVector3i        Stack[-0x68]:12  local_68
 ; CVector3i        Stack[-0x5c]:12  local_5c
 ; CVector3i        Stack[-0x50]:12  local_50
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
 ; CVector3i        Stack[-0x38]:12  local_38
 ; CVector3i        Stack[-0x2c]:12  local_2c
 ; CVector3i        Stack[-0x20]:12  local_20

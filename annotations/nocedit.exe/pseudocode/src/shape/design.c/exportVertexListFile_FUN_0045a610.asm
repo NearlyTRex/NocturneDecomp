@@ -4,12 +4,8 @@
 ; void __cdecl shape_design_c_exportVertexListFile_FUN_0045a610(void)
 ;
 ; Local Variables:
-; undefined8       Stack[-0x34]:8  local_34
-; undefined8       Stack[-0x2c]:8  local_2c
-; undefined8       Stack[-0x24]:8  local_24
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_handleEditorHotkeys_FUN_0045b990 at 0045ba44

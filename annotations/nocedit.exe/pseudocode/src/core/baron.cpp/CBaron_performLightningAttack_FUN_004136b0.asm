@@ -6,7 +6,6 @@
 ; Parameters:
 ; CBaron *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x150]:8  local_150
 ; CVector3f[10]    Stack[-0x148]:120  local_148
 ; SDamageInfo      Stack[-0xd0]:60  local_d0
 ; CVector3f        Stack[-0x94]:12  CStack_94

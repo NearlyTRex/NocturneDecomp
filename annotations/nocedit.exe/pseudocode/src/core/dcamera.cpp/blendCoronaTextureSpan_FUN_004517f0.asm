@@ -8,11 +8,6 @@
 ; int              Stack[0x8]:4   x_start
 ; int              Stack[0xc]:4   x_end
 ; int              Stack[0x10]:4   source_buffer_offset
-; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0 at 00451e6d

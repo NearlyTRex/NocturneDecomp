@@ -6,8 +6,6 @@
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x690]:8  local_690
-; undefined8       Stack[-0x688]:8  local_688
 ; float            Stack[-0x680]:4  local_680
 ; float            Stack[-0x67c]:4  local_67c
 ; char[256]        Stack[-0x678]:256  local_678

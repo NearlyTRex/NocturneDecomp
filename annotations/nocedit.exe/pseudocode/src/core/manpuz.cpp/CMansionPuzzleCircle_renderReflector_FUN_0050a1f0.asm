@@ -6,9 +6,6 @@
 ; Parameters:
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   reflector_index
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005090d0 at 00509184

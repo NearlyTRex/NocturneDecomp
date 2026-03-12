@@ -6,8 +6,6 @@
 ; Parameters:
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr
 ; uchar *          Stack[0x8]:4   palette_buffer
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_0054b3f0 at 0054b414

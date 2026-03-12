@@ -6,8 +6,6 @@
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   intensity
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190 at 0056a1bf

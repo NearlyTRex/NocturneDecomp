@@ -10,8 +10,6 @@
 ; int              Stack[0x10]:4   start_row
 ; int              Stack[0x14]:4   bytes_per_row
 ; int              Stack[0x18]:4   height
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140

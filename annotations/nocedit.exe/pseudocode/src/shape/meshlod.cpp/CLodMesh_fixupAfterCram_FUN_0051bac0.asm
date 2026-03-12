@@ -6,8 +6,6 @@
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x3c]:8  local_3c
-; undefined8       Stack[-0x34]:8  local_34
 ; float            Stack[-0x2c]:4  local_2c
 ; float            Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24

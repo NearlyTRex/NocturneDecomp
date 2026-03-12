@@ -6,11 +6,9 @@
 ; Parameters:
 ; int              Stack[0x4]:4   polygon_index
 ; Local Variables:
-; undefined4       Stack[-0xc8]:4  local_c8
 ; SMRGLHeaderPrimitive Stack[-0xc4]:24  local_c4
 ; uint[16]         Stack[-0xac]:64  auStack_ac
 ; SMRGLTextureBasic[3] Stack[-0x6c]:72  local_6c
-; undefined1       Stack[-0x24]:1  local_24
 ; uint             Stack[-0x20]:4  local_20
 ; uint             Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18

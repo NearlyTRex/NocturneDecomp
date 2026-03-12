@@ -8,7 +8,6 @@
 ; float            Stack[0x8]:4   scale_factor
 ; Local Variables:
 ; int              Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
 ;

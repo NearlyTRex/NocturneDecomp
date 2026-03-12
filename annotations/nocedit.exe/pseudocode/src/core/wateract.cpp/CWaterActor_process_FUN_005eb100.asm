@@ -6,8 +6,6 @@
 ; Parameters:
 ; CWaterActor *    Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   void* PTR_caseD_1_005eb0f0 = 005eb1ce

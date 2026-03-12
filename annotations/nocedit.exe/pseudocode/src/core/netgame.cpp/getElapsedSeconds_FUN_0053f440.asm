@@ -7,7 +7,6 @@
 ; uint             Stack[0x4]:4   timestamp
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0063d235 = 0.0000152587890625

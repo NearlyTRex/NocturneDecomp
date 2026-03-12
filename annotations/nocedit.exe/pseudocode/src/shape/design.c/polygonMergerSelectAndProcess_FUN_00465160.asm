@@ -6,8 +6,6 @@
 ; Parameters:
 ; int              Stack[0x4]:4   polygon_index
 ; float            Stack[0x8]:4   tolerance
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   shape_design.c_polygonToolModeManager_FUN_00464c90 at 00464ea8

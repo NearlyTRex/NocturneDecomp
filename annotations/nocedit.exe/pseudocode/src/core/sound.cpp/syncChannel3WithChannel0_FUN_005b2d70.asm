@@ -3,9 +3,6 @@
 ; *****************************************************************************
 ; void __cdecl core_sound_cpp_syncChannel3WithChannel0_FUN_005b2d70(void)
 ;
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
 ;   float g_CurrentVolumeMultiplier

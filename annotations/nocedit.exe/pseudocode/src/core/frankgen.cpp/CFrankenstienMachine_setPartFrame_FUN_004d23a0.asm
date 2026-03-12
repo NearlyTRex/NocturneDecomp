@@ -7,9 +7,6 @@
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   start_frame
 ; float            Stack[0xc]:4   end_frame
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190 at 004d22c4

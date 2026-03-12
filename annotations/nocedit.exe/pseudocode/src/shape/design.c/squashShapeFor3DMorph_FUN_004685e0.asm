@@ -5,8 +5,6 @@
 ;
 ; Local Variables:
 ; int              Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showShapeEditorMenu_FUN_0046f290 at 0046f6fa

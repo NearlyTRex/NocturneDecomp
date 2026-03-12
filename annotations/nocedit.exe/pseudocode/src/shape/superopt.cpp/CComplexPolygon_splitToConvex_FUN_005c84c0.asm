@@ -6,12 +6,6 @@
 ; Parameters:
 ; CComplexPolygon * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x15c]:8  local_15c
-; undefined8       Stack[-0x154]:8  local_154
-; undefined8       Stack[-0x14c]:8  local_14c
-; undefined8       Stack[-0x144]:8  local_144
-; undefined8       Stack[-0x13c]:8  local_13c
-; undefined8       Stack[-0x134]:8  local_134
 ; CVector3d        Stack[-0x12c]:24  local_12c
 ; CVector3d        Stack[-0x114]:24  local_114
 ; double           Stack[-0xfc]:8  local_fc
@@ -21,18 +15,6 @@
 ; double           Stack[-0xdc]:8  local_dc
 ; double           Stack[-0xd4]:8  local_d4
 ; CVector3d        Stack[-0xcc]:24  local_cc
-; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0xac]:4  local_ac
-; undefined4       Stack[-0xa8]:4  local_a8
-; undefined4       Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
 ; undefined4       Stack[-0x84]:4  local_84
 ; undefined4       Stack[-0x80]:4  uStack_80
 ; undefined4       Stack[-0x7c]:4  local_7c
@@ -53,7 +35,6 @@
 ; CVector3d *      Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   shape_superopt.cpp_COptimize_splitToConvex_FUN_005d7690 at 005d76aa

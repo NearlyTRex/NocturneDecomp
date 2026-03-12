@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CSfxSample *     Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   sound_sndmain.cpp_getSfxSample_FUN_005a4c80 at 005a4ea2

@@ -8,12 +8,6 @@
 ; CSkeleton *      Stack[0x8]:4   skeleton
 ; int              Stack[0xc]:4   target_bone_index
 ; Local Variables:
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
 ; CVector3f        Stack[-0x68]:12  local_68
 ; CVector3f        Stack[-0x5c]:12  local_5c
 ; float            Stack[-0x50]:4  local_50

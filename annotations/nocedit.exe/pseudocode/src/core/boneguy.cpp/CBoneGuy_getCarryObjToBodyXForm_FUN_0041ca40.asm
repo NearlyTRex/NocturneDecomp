@@ -22,7 +22,6 @@
 ; CVector3f        Stack[-0x30]:12  local_30
 ; CVector3f        Stack[-0x24]:12  local_24
 ; CVector3f        Stack[-0x18]:12  local_18
-; undefined1       Stack[-0xc]:1  local_c
 ;
 ; Referenced Globals:
 ;   float FLOAT_00616165 = 0.5

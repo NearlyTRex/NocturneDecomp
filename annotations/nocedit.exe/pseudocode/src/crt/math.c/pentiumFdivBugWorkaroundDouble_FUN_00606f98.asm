@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   param1
-; Local Variables:
-; undefined1[10]   Stack[-0x10]:10  local_10
 ;
 ; XREF[1]:
 ;   crt_unknown.c_FUN_0060dcf6 at 0060dd29

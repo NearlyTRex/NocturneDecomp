@@ -9,9 +9,6 @@
 ; int              Stack[0xc]:4   y1
 ; int              Stack[0x10]:4   x2
 ; int              Stack[0x14]:4   y2
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedCenteredRectangle_FUN_004889b0 at 00488a10

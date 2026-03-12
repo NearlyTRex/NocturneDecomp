@@ -7,7 +7,6 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined8       Stack[-0x38]:8  local_38
 ; float            Stack[-0x30]:4  local_30
 ; CVector3f        Stack[-0x2c]:12  local_2c
 ; float            Stack[-0x18]:4  local_18

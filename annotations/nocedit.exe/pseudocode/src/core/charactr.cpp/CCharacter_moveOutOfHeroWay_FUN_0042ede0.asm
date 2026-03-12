@@ -8,7 +8,6 @@
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; float            Stack[-0x118]:4  fStack_118
-; undefined4       Stack[-0x114]:4  local_114
 ; float            Stack[-0x110]:4  fStack_110
 ; CMatrix3x3f      Stack[-0x10c]:36  CStack_10c
 ; CMatrix3x3f      Stack[-0xe4]:36  CStack_e4

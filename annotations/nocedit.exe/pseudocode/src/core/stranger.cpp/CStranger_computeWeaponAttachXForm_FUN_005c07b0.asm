@@ -8,7 +8,6 @@
 ; CDemonActor *    Stack[0x8]:4   carried_actor
 ; int              Stack[0xc]:4   hand_index
 ; Local Variables:
-; undefined4       Stack[-0xd64]:4  local_d64
 ; CMatrix3x4f      Stack[-0xd5c]:48  local_d5c
 ; CMatrix3x4f      Stack[-0xd2c]:48  local_d2c
 ; CMatrix3x4f      Stack[-0xcfc]:48  local_cfc
@@ -125,7 +124,6 @@
 ; CMatrix3x4f *    Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ; float            Stack[-0x10]:4  local_10
-; undefined1       Stack[-0xc]:1  local_c
 ;
 ; XREF[2]:
 ;   core_stranger.cpp_CStranger_getCarryObjToBodyXForm_FUN_005c5170 at 005c5196

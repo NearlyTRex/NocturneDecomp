@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   timer_name
-; Local Variables:
-; undefined8       Stack[-0x1c]:8  local_1c
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_3_2f_ms_0062d3e9

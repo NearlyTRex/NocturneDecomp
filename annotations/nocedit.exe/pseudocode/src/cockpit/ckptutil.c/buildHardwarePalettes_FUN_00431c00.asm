@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   rgb_palette_data
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8

@@ -7,9 +7,6 @@
 ; CGlassParticle * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0x68]:24  SStack_68
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
 ; CVector3i        Stack[-0x40]:12  local_40
 ; CVector3i        Stack[-0x34]:12  local_34
 ; CVector3i        Stack[-0x28]:12  local_28

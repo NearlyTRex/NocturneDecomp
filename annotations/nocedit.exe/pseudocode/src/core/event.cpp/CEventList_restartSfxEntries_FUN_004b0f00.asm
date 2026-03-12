@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_sound.cpp_CSound_init_FUN_005b2dd0 at 005b2f40

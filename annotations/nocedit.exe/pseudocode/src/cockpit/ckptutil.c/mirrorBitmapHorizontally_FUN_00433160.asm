@@ -8,11 +8,6 @@
 ; int              Stack[0x8]:4   width
 ; int              Stack[0xc]:4   height
 ; int              Stack[0x10]:4   bytes_per_pixel
-; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; *****************************************************************************
 

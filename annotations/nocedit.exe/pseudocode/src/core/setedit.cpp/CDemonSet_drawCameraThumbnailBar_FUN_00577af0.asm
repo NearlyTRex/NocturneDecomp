@@ -7,33 +7,16 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; int *            Stack[0x8]:4   camera_flags
 ; Local Variables:
-; undefined4       Stack[-0xa0]:4  local_a0
 ; int              Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
 ; int              Stack[-0x90]:4  local_90
 ; int *            Stack[-0x8c]:4  local_8c
 ; CDemonSet *      Stack[-0x88]:4  local_88
 ; C3DSCamera *     Stack[-0x84]:4  local_84
 ; int              Stack[-0x80]:4  local_80
 ; int              Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
 ; int              Stack[-0x70]:4  local_70
 ; int              Stack[-0x6c]:4  local_6c
 ; int              Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
 ; int              Stack[-0x34]:4  local_34
 ; int              Stack[-0x30]:4  local_30
 ; int              Stack[-0x2c]:4  local_2c

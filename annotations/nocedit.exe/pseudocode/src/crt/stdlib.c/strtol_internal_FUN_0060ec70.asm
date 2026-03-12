@@ -8,10 +8,6 @@
 ; char * *         Stack[0x8]:4   endptr
 ; int              Stack[0xc]:4   base
 ; int              Stack[0x10]:4   is_signed
-; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined1       Stack[-0x18]:1  local_18
-; undefined1       Stack[-0x14]:1  local_14
 ;
 ; XREF[2]:
 ;   crt_stdlib.c_strtol_FUN_0060edfc at 0060ee0e

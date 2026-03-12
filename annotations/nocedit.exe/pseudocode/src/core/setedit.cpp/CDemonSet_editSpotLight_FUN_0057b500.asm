@@ -6,8 +6,6 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   light_index
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057ca09

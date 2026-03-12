@@ -6,9 +6,6 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   mdl_filename
 ; Local Variables:
-; undefined8       Stack[-0x84]:8  local_84
-; undefined8       Stack[-0x7c]:8  local_7c
-; undefined8       Stack[-0x74]:8  local_74
 ; char[80]         Stack[-0x6c]:80  local_6c
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18

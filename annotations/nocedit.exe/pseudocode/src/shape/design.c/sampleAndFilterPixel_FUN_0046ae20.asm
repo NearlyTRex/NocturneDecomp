@@ -17,13 +17,7 @@
 ; uchar *          Stack[0x3c]:4   blue_out
 ; uchar *          Stack[0x40]:4   alpha_out
 ; Local Variables:
-; undefined8       Stack[-0x80]:8  local_80
-; undefined8       Stack[-0x78]:8  local_78
-; undefined8       Stack[-0x70]:8  local_70
-; undefined8       Stack[-0x68]:8  local_68
 ; int              Stack[-0x60]:4  local_60
-; undefined8       Stack[-0x5c]:8  local_5c
-; undefined8       Stack[-0x54]:8  local_54
 ; double           Stack[-0x4c]:8  local_4c
 ; double           Stack[-0x44]:8  local_44
 ; double           Stack[-0x3c]:8  local_3c

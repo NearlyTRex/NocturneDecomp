@@ -49,7 +49,6 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70(C
   int local_1c;
   float local_18;
   float local_14;
-  int iVar8;
   float fVar7;
   float fVar6;
   float fVar5;
@@ -57,6 +56,7 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70(C
   float fVar3;
   float fVar2;
   float fVar1;
+  int iVar8;
   
   fVar1 = (ray_start->x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x;
   fVar2 = (ray_start->y - (this_ptr->bbox_min).y) / (this_ptr->cell_size).y;

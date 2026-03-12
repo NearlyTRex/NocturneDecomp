@@ -8,7 +8,6 @@
 ; CLodMeshPrecomputeEntry * Stack[0x8]:4   entry
 ; Local Variables:
 ; undefined4       Stack[-0xa228]:4  local_a228
-; undefined        Stack[-0xa224]:1  local_a224
 ; float[3279]      Stack[-0xa1d0]:13116  afStack_a1d0
 ; int[100]         Stack[-0x6e94]:400  aiStack_6e94
 ; undefined1[18404] Stack[-0x6d04]:18404  local_6d04

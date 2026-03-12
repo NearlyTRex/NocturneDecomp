@@ -6,8 +6,6 @@
 ; Parameters:
 ; CBat *           Stack[0x4]:4   this_ptr
 ; CBoundingBox3D * Stack[0x8]:4   out_box
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80

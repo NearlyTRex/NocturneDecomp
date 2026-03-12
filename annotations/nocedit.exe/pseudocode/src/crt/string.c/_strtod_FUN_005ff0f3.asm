@@ -5,11 +5,6 @@
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[13]:
 ;   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 at 0043c589

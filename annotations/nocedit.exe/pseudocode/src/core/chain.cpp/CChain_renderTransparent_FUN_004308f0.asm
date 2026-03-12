@@ -7,10 +7,6 @@
 ; CChain *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0xb8]:24  SStack_b8
-; undefined4       Stack[-0xa0]:4  uStack_a0
-; undefined4       Stack[-0x9c]:4  uStack_9c
-; undefined4       Stack[-0x98]:4  uStack_98
-; undefined4       Stack[-0x94]:4  uStack_94
 ; CBoundingBox3D   Stack[-0x90]:24  local_90
 ; CVector3i        Stack[-0x78]:12  CStack_78
 ; CVector3i        Stack[-0x6c]:12  CStack_6c

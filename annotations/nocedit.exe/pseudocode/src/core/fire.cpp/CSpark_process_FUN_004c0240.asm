@@ -5,10 +5,6 @@
 ;
 ; Parameters:
 ; CSpark *         Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00629c63 = 0.0000152587890625

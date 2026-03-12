@@ -7,9 +7,6 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   start_pos
 ; CVector3f *      Stack[0xc]:4   end_pos
-; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[6]:
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0 at 0042d939

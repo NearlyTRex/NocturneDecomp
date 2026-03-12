@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CGabriella *     Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d32e7

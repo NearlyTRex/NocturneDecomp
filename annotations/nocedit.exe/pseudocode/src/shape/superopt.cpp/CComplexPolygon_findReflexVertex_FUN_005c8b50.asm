@@ -8,12 +8,6 @@
 ; SExpandedEdge *  Stack[0x8]:4   buf_a
 ; SExpandedEdge *  Stack[0xc]:4   buf_b
 ; Local Variables:
-; undefined4       Stack[-0xe4]:4  local_e4
-; undefined4       Stack[-0xe0]:4  local_e0
-; undefined4       Stack[-0xdc]:4  local_dc
-; undefined4       Stack[-0xd8]:4  local_d8
-; undefined4       Stack[-0xd4]:4  local_d4
-; undefined4       Stack[-0xd0]:4  local_d0
 ; undefined4       Stack[-0xcc]:4  local_cc
 ; undefined4       Stack[-0xc8]:4  uStack_c8
 ; undefined4       Stack[-0xc4]:4  local_c4
@@ -28,13 +22,9 @@
 ; double           Stack[-0x7c]:8  local_7c
 ; double           Stack[-0x74]:8  local_74
 ; CVector3d        Stack[-0x6c]:24  local_6c
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  uStack_50
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  uStack_40
 ; undefined8       Stack[-0x3c]:8  local_3c
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  uStack_30
 ; int              Stack[-0x2c]:4  local_2c
 ; int              Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24
@@ -42,7 +32,6 @@
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; CVector3d *      Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0 at 005c8554

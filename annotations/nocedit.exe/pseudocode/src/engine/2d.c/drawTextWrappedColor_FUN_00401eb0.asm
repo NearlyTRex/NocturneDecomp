@@ -10,8 +10,6 @@
 ; int              Stack[0x10]:4   x_max
 ; int              Stack[0x14]:4   y_max
 ; int              Stack[0x18]:4   color
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_2d.c_drawTextColor_FUN_00402430 at 00402461

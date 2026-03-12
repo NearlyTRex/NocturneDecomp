@@ -6,7 +6,6 @@
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x339c]:1  local_339c
 ; CPickList        Stack[-0x1900]:936  local_1900
 ; CPickList        Stack[-0x1558]:936  local_1558
 ; CPickList        Stack[-0x11b0]:936  local_11b0
@@ -22,18 +21,6 @@
 ; char[100]        Stack[-0x46c]:100  local_46c
 ; char[100]        Stack[-0x408]:100  local_408
 ; SMRGLHeaderPrimitive Stack[-0x3a4]:24  local_3a4
-; undefined4       Stack[-0x38c]:4  local_38c
-; undefined4       Stack[-0x388]:4  local_388
-; undefined4       Stack[-0x384]:4  local_384
-; undefined4       Stack[-0x380]:4  local_380
-; undefined4       Stack[-0x37c]:4  local_37c
-; undefined4       Stack[-0x378]:4  local_378
-; undefined4       Stack[-0x374]:4  local_374
-; undefined4       Stack[-0x370]:4  local_370
-; undefined4       Stack[-0x36c]:4  local_36c
-; undefined4       Stack[-0x368]:4  local_368
-; undefined4       Stack[-0x364]:4  local_364
-; undefined4       Stack[-0x360]:4  local_360
 ; CSpotView        Stack[-0x35c]:60  local_35c
 ; CMatrix3x4f      Stack[-0x320]:48  local_320
 ; CMatrix3x4f      Stack[-0x2f0]:48  local_2f0
@@ -132,7 +119,6 @@
 ; int              Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18
 ; char[4]          Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[2]:
 ;   core_skeledit.cpp_previewModel_FUN_00598f10 at 00598f84

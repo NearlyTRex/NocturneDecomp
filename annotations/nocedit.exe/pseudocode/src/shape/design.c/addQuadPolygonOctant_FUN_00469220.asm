@@ -12,7 +12,6 @@
 ; float            Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_generateOctant_FUN_00469420 at 00469642

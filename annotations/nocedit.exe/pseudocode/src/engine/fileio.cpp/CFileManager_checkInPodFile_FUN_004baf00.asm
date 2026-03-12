@@ -9,7 +9,6 @@
 ; char *           Stack[0xc]:4   timestamp_file
 ; char *           Stack[0x10]:4   pod_filename
 ; Local Variables:
-; undefined4       Stack[-0x2608]:4  local_2608
 ; CPodFile         Stack[-0x2600]:1068  local_2600
 ; CPickList        Stack[-0x21d4]:936  local_21d4
 ; CPickList        Stack[-0x1e2c]:936  local_1e2c

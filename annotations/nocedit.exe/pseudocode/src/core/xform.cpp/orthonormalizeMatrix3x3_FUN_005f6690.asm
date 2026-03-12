@@ -22,17 +22,6 @@
 ; double           Stack[-0x90]:8  local_90
 ; double           Stack[-0x88]:8  local_88
 ; double           Stack[-0x80]:8  local_80
-; undefined8       Stack[-0x78]:8  local_78
-; undefined8       Stack[-0x70]:8  local_70
-; undefined8       Stack[-0x68]:8  local_68
-; undefined8       Stack[-0x60]:8  local_60
-; undefined8       Stack[-0x58]:8  local_58
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[3]:
 ;   core_course.cpp_CCourse_importMatrices_FUN_00442ea0 at 00442fae

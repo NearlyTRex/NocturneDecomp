@@ -4,7 +4,6 @@
 ; void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
 ;
 ; Local Variables:
-; undefined8       Stack[-0x26c]:8  local_26c
 ; SMRGLKeyframeModel Stack[-0x264]:344  local_264
 ; char[80]         Stack[-0x10c]:80  local_10c
 ; char[80]         Stack[-0xbc]:80  local_bc

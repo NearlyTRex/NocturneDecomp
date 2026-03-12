@@ -6,9 +6,6 @@
 ; Parameters:
 ; CDemonGlobe *    Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   radius
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[6]:
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422b5d

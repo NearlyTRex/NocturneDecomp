@@ -7,9 +7,6 @@
 ; CDrone *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined8       Stack[-0xfc]:8  local_fc
-; undefined8       Stack[-0xf4]:8  local_f4
-; undefined8       Stack[-0xec]:8  local_ec
 ; SDamageInfo      Stack[-0xdc]:60  local_dc
 ; CVector3f        Stack[-0xa0]:12  local_a0
 ; CVector3f        Stack[-0x94]:12  local_94
@@ -29,7 +26,6 @@
 ; int              Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00002424

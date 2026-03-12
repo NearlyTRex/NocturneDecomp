@@ -7,7 +7,6 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; SPoseData *      Stack[0x8]:4   out_pose
 ; Local Variables:
-; undefined4       Stack[-0x1ae0]:4  local_1ae0
 ; SPose            Stack[-0x1ad8]:6812  SStack_1ad8
 ; CQuaternion4f    Stack[-0x3c]:16  local_3c
 ; CQuaternion4f    Stack[-0x2c]:16  local_2c

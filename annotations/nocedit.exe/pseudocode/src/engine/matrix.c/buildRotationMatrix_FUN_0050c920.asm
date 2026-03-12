@@ -7,9 +7,6 @@
 ; int              Stack[0x4]:4   pitch
 ; int              Stack[0x8]:4   yaw
 ; int              Stack[0xc]:4   roll
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
 ;   engine_matrix.c_setCameraRotation_FUN_0050e290 at 0050e2b0

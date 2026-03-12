@@ -7,11 +7,6 @@
 ; CTommyGun *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined8       Stack[-0x1f8]:8  local_1f8
-; undefined8       Stack[-0x1f0]:8  local_1f0
-; undefined4       Stack[-0x1e8]:4  local_1e8
-; undefined4       Stack[-0x1e4]:4  local_1e4
-; undefined4       Stack[-0x1e0]:4  local_1e0
 ; CSfxSample       Stack[-0x1dc]:384  local_1dc
 ; double           Stack[-0x28]:8  local_28
 ; double           Stack[-0x20]:8  local_20

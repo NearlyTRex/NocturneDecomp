@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CVector3i *      Stack[0x4]:4   vector_ptr
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0

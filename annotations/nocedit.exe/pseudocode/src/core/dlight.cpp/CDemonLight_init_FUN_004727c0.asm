@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CDemonLight *    Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[6]:
 ;   core_boxactor.cpp_CLightActor_setup_FUN_00422a20 at 00422a3e

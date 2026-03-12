@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CGhoul *         Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_ghoul.cpp_factoryFunc_FUN_004e5ff0 at 004e600d

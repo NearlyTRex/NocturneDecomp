@@ -7,10 +7,6 @@
 ; CEmitter *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined8       Stack[-0x108]:8  local_108
-; undefined8       Stack[-0x100]:8  local_100
-; undefined8       Stack[-0xf8]:8  local_f8
-; undefined4       Stack[-0xec]:4  local_ec
 ; CBoundingBox3D   Stack[-0xe8]:24  CStack_e8
 ; CVector3f        Stack[-0xd0]:12  local_d0
 ; float            Stack[-0xc4]:4  fStack_c4

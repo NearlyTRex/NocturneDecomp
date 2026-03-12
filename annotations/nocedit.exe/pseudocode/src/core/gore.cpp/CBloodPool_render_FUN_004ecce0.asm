@@ -9,9 +9,6 @@
 ; Local Variables:
 ; CVector3i        Stack[-0x50]:12  local_50
 ; CVector3i        Stack[-0x44]:12  local_44
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
 ; CVector3i        Stack[-0x2c]:12  local_2c
 ; CVector3i        Stack[-0x20]:12  local_20
 ; int              Stack[-0x14]:4  local_14

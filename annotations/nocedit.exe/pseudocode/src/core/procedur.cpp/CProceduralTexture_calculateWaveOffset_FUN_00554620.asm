@@ -7,8 +7,6 @@
 ; CProceduralTexture * Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   wave_radius
 ; float            Stack[0xc]:4   frame_index
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_procedur.cpp_CProceduralTexture_createWaterFrames_FUN_005542b0 at 005543e5

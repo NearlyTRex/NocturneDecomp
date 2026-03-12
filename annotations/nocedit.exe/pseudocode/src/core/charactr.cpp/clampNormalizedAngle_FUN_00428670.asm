@@ -6,10 +6,6 @@
 ; Parameters:
 ; float            Stack[0x4]:4   angle
 ; float            Stack[0x8]:4   limit
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70

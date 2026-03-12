@@ -7,8 +7,6 @@
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   output_position
 ; int              Stack[0xc]:4   cube_index
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0 at 00494b1b

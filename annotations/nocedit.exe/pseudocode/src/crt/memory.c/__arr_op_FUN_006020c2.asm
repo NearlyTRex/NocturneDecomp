@@ -9,8 +9,6 @@
 ; int              Stack[0xc]:4   count
 ; int              Stack[0x10]:4   element_size
 ; void *           Stack[0x14]:4   copy_func
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0 at 0051f04a

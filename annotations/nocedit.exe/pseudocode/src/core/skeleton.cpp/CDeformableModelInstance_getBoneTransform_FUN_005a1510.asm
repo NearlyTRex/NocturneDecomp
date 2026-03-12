@@ -7,7 +7,6 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; SPose *          Stack[0x8]:4   bone_transform
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
 ; CDeformableModelInstance * Stack[-0x14]:4  local_14
 ; CDeformableModelInstance * Stack[-0x10]:4  local_10
 ; SPose *          Stack[-0xc]:4  local_c

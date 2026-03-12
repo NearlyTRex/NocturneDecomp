@@ -7,12 +7,6 @@
 ; CMatrix3x4f *    Stack[0x4]:4   output_matrix
 ; CVector3f *      Stack[0x8]:4   position
 ; CVector3f *      Stack[0xc]:4   euler_angles
-; Local Variables:
-; undefined8       Stack[-0x34]:8  local_34
-; undefined8       Stack[-0x2c]:8  local_2c
-; undefined8       Stack[-0x24]:8  local_24
-; undefined8       Stack[-0x1c]:8  local_1c
-; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[17]:
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a87b

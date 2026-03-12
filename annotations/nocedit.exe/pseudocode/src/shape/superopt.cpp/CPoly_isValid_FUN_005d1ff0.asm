@@ -6,9 +6,7 @@
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0xe8]:8  local_e8
 ; double           Stack[-0xe0]:8  local_e0
-; undefined8       Stack[-0xd8]:8  local_d8
 ; double           Stack[-0xc8]:8  local_c8
 ; double           Stack[-0xc0]:8  local_c0
 ; double           Stack[-0xb8]:8  local_b8

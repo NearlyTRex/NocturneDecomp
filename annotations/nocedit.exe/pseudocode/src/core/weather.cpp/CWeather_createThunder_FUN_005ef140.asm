@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CWeather *       Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_weather.cpp_CWeather_update_FUN_005eeaf0 at 005eedd4

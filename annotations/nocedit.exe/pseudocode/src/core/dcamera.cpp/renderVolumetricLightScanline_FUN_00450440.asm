@@ -7,14 +7,6 @@
 ; SSoftwareEdge *  Stack[0x4]:4   left_edge
 ; SSoftwareEdge *  Stack[0x8]:4   right_edge
 ; int              Stack[0xc]:4   scanline_y
-; Local Variables:
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0 at 00475ee5

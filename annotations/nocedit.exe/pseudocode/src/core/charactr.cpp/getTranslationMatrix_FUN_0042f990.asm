@@ -6,9 +6,6 @@
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   matrix
 ; CVector3f *      Stack[0x8]:4   out_translation
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; *****************************************************************************
 

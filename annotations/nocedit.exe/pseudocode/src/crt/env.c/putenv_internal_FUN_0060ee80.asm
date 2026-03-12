@@ -6,11 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   envstr
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
 ; LPCSTR           Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   crt_io.c_parseFileInfo_FUN_0060e3b0 at 0060e4de

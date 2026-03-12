@@ -8,8 +8,6 @@
 ; int              Stack[0x8]:4   vertex_index_1
 ; int              Stack[0xc]:4   vertex_index_2
 ; int              Stack[0x10]:4   vertex_index_3
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_generateGlobe_FUN_00468910 at 00468c23

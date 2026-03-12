@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CWavOutDevice *  Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined8       Stack[-0x14]:8  local_14
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00652387 = 0.333333333333333

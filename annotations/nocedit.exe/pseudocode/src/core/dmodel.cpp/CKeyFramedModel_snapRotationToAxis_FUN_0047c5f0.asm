@@ -8,7 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   rotation_angles
 ; Local Variables:
 ; int[1015]        Stack[-0x1070]:4060  aiStackY_1070
-; undefined8       Stack[-0x90]:8  local_90
 ; int              Stack[-0x88]:4  local_88
 ; int              Stack[-0x84]:4  local_84
 ; int              Stack[-0x80]:4  local_80

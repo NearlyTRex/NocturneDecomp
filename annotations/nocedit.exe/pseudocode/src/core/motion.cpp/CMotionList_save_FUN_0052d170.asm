@@ -7,8 +7,6 @@
 ; CMotionList *    Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined8       Stack[-0x2c]:8  local_2c
-; undefined8       Stack[-0x20]:8  local_20
 ; int              Stack[-0x18]:4  local_18
 ; SMotion *        Stack[-0x14]:4  local_14
 ;

@@ -10,11 +10,6 @@
 ; int              Stack[-0x30]:4  local_30
 ; int              Stack[-0x2c]:4  local_2c
 ; undefined1       Stack[-0x28]:1  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined1       Stack[-0x18]:1  local_18
-; undefined1       Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
 ;   shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0 at 0055643e

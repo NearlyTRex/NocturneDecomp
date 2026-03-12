@@ -8,7 +8,6 @@
 ; char *           Stack[0x8]:4   expression
 ; int *            Stack[0xc]:4   parse_position
 ; Local Variables:
-; undefined8       Stack[-0xa90]:8  local_a90
 ; float            Stack[-0xa88]:4  local_a88
 ; char[255]        Stack[-0xa84]:255  local_a84
 ; char[100]        Stack[-0x985]:100  local_985

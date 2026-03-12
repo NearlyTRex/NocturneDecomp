@@ -7,7 +7,6 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; C3DSCamera *     Stack[0x8]:4   camera
 ; Local Variables:
-; undefined4       Stack[-0x124]:4  local_124
 ; char[100]        Stack[-0x120]:100  local_120
 ; CVector3f        Stack[-0xbc]:12  local_bc
 ; CVector3i        Stack[-0xb0]:12  local_b0
@@ -24,7 +23,6 @@
 ; CVector3i        Stack[-0x2c]:12  local_2c
 ; CVector3f        Stack[-0x20]:12  local_20
 ; CVector3f *      Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[2]:
 ;   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 at 0057df1a

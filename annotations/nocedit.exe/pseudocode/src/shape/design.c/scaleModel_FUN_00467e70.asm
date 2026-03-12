@@ -4,10 +4,8 @@
 ; void __cdecl shape_design_c_scaleModel_FUN_00467e70(void)
 ;
 ; Local Variables:
-; undefined8       Stack[-0x70]:8  local_70
 ; char[80]         Stack[-0x68]:80  local_68
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showShapeEditorMenu_FUN_0046f290 at 0046f6b9

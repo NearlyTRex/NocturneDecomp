@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CExplosion *     Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_process_FUN_004c6ec0 at 004c704c

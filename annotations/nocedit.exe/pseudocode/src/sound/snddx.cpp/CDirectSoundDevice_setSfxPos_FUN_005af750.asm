@@ -8,9 +8,6 @@
 ; CSfxSlot *       Stack[0x8]:4   slot
 ; int              Stack[0xc]:4   update_flags
 ; Local Variables:
-; undefined4       Stack[-0xcd0]:4  local_cd0
-; undefined4       Stack[-0xccc]:4  local_ccc
-; undefined4       Stack[-0xcc8]:4  local_cc8
 ; float            Stack[-0xcb8]:4  local_cb8
 ; char[400]        Stack[-0xcb4]:400  acStack_cb4
 ; char[400]        Stack[-0xb24]:400  acStack_b24

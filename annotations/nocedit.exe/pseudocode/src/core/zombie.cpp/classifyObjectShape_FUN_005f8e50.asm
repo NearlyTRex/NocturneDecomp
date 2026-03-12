@@ -5,12 +5,6 @@
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   dimensions
-; Local Variables:
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
-; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[1]:
 ;   core_zombie.cpp_CZombie_processPickup_FUN_005fb530 at 005fbb6e

@@ -7,11 +7,6 @@
 ; CHostage *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x1c4]:4  local_1c4
-; undefined8       Stack[-0x1c0]:8  local_1c0
-; undefined8       Stack[-0x1b8]:8  local_1b8
-; undefined8       Stack[-0x1b0]:8  local_1b0
-; undefined8       Stack[-0x1a8]:8  local_1a8
 ; float            Stack[-0x1a0]:4  local_1a0
 ; float            Stack[-0x19c]:4  local_19c
 ; float            Stack[-0x198]:4  local_198
@@ -42,7 +37,6 @@
 ; CVector3f        Stack[-0xbc]:12  local_bc
 ; CVector3f        Stack[-0xb0]:12  local_b0
 ; float            Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
 ; float            Stack[-0x9c]:4  local_9c
 ; CVector3f        Stack[-0x98]:12  local_98
 ; CVector3f        Stack[-0x8c]:12  local_8c

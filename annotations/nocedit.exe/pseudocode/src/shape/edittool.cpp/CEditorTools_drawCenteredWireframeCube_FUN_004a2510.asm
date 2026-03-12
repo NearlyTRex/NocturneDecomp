@@ -8,9 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   dimensions
 ; int              Stack[0xc]:4   color_value
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ; CVector3f        Stack[-0x1c]:12  local_1c
 ; CVector3f        Stack[-0x10]:12  local_10
 ;

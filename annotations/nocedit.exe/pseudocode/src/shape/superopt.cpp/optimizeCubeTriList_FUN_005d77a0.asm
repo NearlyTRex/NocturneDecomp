@@ -5,9 +5,6 @@
 ;
 ; Local Variables:
 ; int[1009]        Stack[-0x114c]:4036  aiStackY_114c
-; undefined8       Stack[-0x180]:8  local_180
-; undefined8       Stack[-0x178]:8  local_178
-; undefined8       Stack[-0x170]:8  local_170
 ; CPoly            Stack[-0x168]:104  local_168
 ; char[100]        Stack[-0x100]:100  local_100
 ; COptimize        Stack[-0x9c]:68  local_9c

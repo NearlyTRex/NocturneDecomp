@@ -6,8 +6,6 @@
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   vertex_index
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 at 00518686

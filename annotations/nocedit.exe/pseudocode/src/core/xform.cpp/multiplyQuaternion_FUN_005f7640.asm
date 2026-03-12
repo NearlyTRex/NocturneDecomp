@@ -6,11 +6,6 @@
 ; Parameters:
 ; CQuaternion4f *  Stack[0x4]:4   quat1_in
 ; CQuaternion4f *  Stack[0x8]:4   quat2_in
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[11]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0 at 0042dd48

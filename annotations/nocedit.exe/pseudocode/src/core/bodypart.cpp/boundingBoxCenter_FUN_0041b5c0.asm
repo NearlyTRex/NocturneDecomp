@@ -6,10 +6,6 @@
 ; Parameters:
 ; CBoundingBox3D * Stack[0x4]:4   src
 ; CBoundingBox3D * Stack[0x8]:4   dst
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
 ;   float FLOAT_00615b78 = 0.5

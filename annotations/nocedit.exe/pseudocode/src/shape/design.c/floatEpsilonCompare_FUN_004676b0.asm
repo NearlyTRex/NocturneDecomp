@@ -9,7 +9,6 @@
 ; float            Stack[0xc]:4   epsilon
 ; Local Variables:
 ; uint             Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; *****************************************************************************
 

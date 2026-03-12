@@ -7,7 +7,6 @@
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; float[1387]      Stack[-0x18a8]:5548  afStackY_18a8
-; undefined8       Stack[-0x2f0]:8  local_2f0
 ; float            Stack[-0x2e8]:4  local_2e8
 ; CMatrix3x4f      Stack[-0x2e4]:48  CStack_2e4
 ; CMatrix3x4f      Stack[-0x2b4]:48  CStack_2b4

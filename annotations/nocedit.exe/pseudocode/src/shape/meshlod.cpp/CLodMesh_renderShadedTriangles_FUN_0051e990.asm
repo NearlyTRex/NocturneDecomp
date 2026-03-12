@@ -8,9 +8,6 @@
 ; int              Stack[0x8]:4   use_palette_coloring
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0x60]:24  SStack_60
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x30]:4  local_30
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;

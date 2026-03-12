@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_004a3f20 at 004a3fcd

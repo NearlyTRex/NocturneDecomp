@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; CTVBat *         Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_tvbat.cpp_factoryFunc_FUN_005e3e80 at 005e3e9a

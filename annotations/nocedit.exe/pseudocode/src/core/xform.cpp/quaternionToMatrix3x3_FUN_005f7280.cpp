@@ -10,14 +10,14 @@ CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(CMatri
 
 {
   float fVar9;
+  float fVar7;
+  float fVar8;
   float fVar1;
   float fVar2;
   float fVar5;
   float fVar6;
   float fVar3;
   float fVar4;
-  float fVar7;
-  float fVar8;
   
   fVar1 = quat_in->x;
   fVar4 = (float)2 /

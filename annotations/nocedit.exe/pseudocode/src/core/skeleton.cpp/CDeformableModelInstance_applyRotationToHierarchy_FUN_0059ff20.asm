@@ -11,7 +11,6 @@
 ; CDeformableModel_MotionBlendWeightFunc * Stack[0x14]:4   blend_callback
 ; Local Variables:
 ; float[1497]      Stack[-0x1860]:5988  afStackY_1860
-; undefined4       Stack[-0xf0]:4  local_f0
 ; float            Stack[-0xe8]:4  fStack_e8
 ; CMatrix3x4f      Stack[-0xe4]:48  local_e4
 ; CMatrix3x4f      Stack[-0xb4]:48  local_b4

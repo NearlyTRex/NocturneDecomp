@@ -10,7 +10,6 @@
 ; char[256]        Stack[-0x304]:256  local_304
 ; char[256]        Stack[-0x204]:256  local_204
 ; char[252]        Stack[-0x104]:252  local_104
-; undefined4       Stack[-0x8]:4  uStack_8
 ; char[4]          Stack[-0x4]:4  local_4
 ;
 ; Called Functions:

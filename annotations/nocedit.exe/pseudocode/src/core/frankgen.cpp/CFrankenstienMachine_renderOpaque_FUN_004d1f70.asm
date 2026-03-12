@@ -6,7 +6,6 @@
 ; Parameters:
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x34]:1  local_34
 ; float            Stack[-0x30]:4  fStack_30
 ;
 ; Referenced Globals:

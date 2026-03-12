@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CSampleInfo *    Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[1]:
 ;   core_sound.cpp_CSound_getSoundDuration_FUN_005b3ba0 at 005b3c1f

@@ -8,7 +8,6 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; char[255]        Stack[-0x188]:255  local_188
-; undefined1       Stack[-0x89]:1  uStack_89
 ; char[80]         Stack[-0x88]:80  acStack_88
 ; float            Stack[-0x38]:4  fStack_38
 ; float            Stack[-0x34]:4  fStack_34

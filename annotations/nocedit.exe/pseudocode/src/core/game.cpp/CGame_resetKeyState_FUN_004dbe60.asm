@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
 ;   core_game.cpp_CGame_processJoystickControls_FUN_004dc230 at 004dc236

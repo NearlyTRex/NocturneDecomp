@@ -8,21 +8,12 @@
 ; CVector3f *      Stack[0x8]:4   rayOrigin
 ; CVector3f *      Stack[0xc]:4   rayDirection
 ; Local Variables:
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
 ; float            Stack[-0x2c]:4  local_2c
 ; float            Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24
 ; float            Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[6]:
 ;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0 at 004783eb

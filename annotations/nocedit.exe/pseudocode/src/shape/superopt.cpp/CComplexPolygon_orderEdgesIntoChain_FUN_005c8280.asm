@@ -7,9 +7,6 @@
 ; CComplexPolygon * Stack[0x4]:4   this_ptr
 ; SExpandedEdge *  Stack[0x8]:4   edges
 ; int              Stack[0xc]:4   edge_count
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
 ;   shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20 at 005c7d87

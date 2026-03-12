@@ -9,8 +9,6 @@
 ; float *          Stack[0xc]:4   axis_value
 ; float            Stack[0x10]:4   ramp_time
 ; float            Stack[0x14]:4   max_value
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 02d81a9c

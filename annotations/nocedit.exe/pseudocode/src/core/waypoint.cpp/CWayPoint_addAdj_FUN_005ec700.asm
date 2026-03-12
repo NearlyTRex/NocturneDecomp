@@ -6,8 +6,6 @@
 ; Parameters:
 ; CWayPoint *      Stack[0x4]:4   this_ptr
 ; CWayPoint *      Stack[0x8]:4   target
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_waypoint.cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0 at 005ec5b2

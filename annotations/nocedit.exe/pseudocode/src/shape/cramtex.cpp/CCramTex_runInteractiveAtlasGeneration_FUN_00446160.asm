@@ -6,27 +6,17 @@
 ; Parameters:
 ; CCramTex *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0xac]:4  local_ac
 ; SIZE_T           Stack[-0xa8]:4  local_a8
 ; int              Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
 ; int              Stack[-0x9c]:4  local_9c
 ; int              Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
 ; int              Stack[-0x8c]:4  local_8c
 ; int              Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
 ; int              Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
 ; int              Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
 ; int              Stack[-0x70]:4  local_70
 ; int              Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
 ; int              Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
 ; int              Stack[-0x5c]:4  local_5c
 ; CCramTex *       Stack[-0x58]:4  local_58
 ; SCramRectangle * Stack[-0x54]:4  local_54
@@ -37,14 +27,8 @@
 ; SCramRectangle * Stack[-0x40]:4  local_40
 ; SCramRectangle * * Stack[-0x3c]:4  local_3c
 ; uint             Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
 ; int              Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
 ;   shape_cramtex.cpp_CCramTex_addTextureEntry_FUN_00446100 at 00446127

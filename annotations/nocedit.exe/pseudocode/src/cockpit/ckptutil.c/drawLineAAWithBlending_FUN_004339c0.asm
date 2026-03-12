@@ -12,18 +12,9 @@
 ; uchar            Stack[0x18]:1   blend_color
 ; int              Stack[0x1c]:4   blend_mode
 ; Local Variables:
-; undefined4       Stack[-0x50]:4  local_50
-; undefined8       Stack[-0x4c]:8  local_4c
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
 ; int              Stack[-0x2c]:4  local_2c
 ; uint             Stack[-0x28]:4  local_28
 ; uint             Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ; byte             Stack[-0x1c]:1  local_1c
 ; byte             Stack[-0x18]:1  local_18
 ;

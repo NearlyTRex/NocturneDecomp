@@ -6,11 +6,6 @@
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined8       Stack[-0x10]:8  local_10
-; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[1]:
 ;   crt_fpemu.c_staticInit_FUN_0060be80 at 0060bebb

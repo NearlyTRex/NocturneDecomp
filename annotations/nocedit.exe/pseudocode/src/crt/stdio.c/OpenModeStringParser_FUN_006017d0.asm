@@ -6,8 +6,6 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   mode_string
 ; char *           Stack[0x8]:4   output_flags
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   crt_stdio.c__freopen_FUN_00601b14 at 00601b27

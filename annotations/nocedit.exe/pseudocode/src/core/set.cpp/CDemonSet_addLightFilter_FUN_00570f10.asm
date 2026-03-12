@@ -8,8 +8,6 @@
 ; char *           Stack[0x8]:4   light_name
 ; C3DSLight * *    Stack[0xc]:4   out_light
 ; CDemonLight * *  Stack[0x10]:4   out_master_light
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 at 004af998

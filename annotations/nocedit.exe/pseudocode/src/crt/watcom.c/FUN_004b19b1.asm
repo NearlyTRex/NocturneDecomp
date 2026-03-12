@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; int *            Stack[0x4]:4   param_1
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; *****************************************************************************
 

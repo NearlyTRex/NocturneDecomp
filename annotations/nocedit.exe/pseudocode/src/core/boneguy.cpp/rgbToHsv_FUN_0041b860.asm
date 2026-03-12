@@ -11,9 +11,6 @@
 ; float            Stack[-0x34]:4  fStack_34
 ; float            Stack[-0x30]:4  local_30
 ; float            Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; *****************************************************************************
 

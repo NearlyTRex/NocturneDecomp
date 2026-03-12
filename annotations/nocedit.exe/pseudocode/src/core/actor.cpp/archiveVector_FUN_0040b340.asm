@@ -6,10 +6,6 @@
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   vector_ptr
 ; char *           Stack[0x8]:4   property_name
-; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
-; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[24]:
 ;   core_barrier.cpp_CBarrier_archive_FUN_00414340 at 0041435a

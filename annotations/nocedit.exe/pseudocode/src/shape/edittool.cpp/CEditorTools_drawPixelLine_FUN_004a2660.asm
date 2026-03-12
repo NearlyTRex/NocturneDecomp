@@ -8,8 +8,6 @@
 ; int              Stack[0x8]:4   start_x
 ; int              Stack[0xc]:4   start_y
 ; int              Stack[0x10]:4   length
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0 at 004a2906

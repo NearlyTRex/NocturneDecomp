@@ -9,10 +9,6 @@
 ; int              Stack[0xc]:4   motion_index
 ; float            Stack[0x10]:4   start_frame
 ; float            Stack[0x14]:4   end_frame
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0

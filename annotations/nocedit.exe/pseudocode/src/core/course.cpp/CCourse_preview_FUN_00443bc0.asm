@@ -7,7 +7,6 @@
 ; CCourse *        Stack[0x4]:4   this_ptr
 ; CKeyFramedModel * Stack[0x8]:4   model_ptr
 ; Local Variables:
-; undefined1       Stack[-0x130]:1  local_130
 ; undefined1[16]   Stack[-0xcc]:16  local_cc
 ; float            Stack[-0xbc]:4  local_bc
 ; float            Stack[-0xb8]:4  local_b8
@@ -31,7 +30,6 @@
 ; float            Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
-; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 00443332

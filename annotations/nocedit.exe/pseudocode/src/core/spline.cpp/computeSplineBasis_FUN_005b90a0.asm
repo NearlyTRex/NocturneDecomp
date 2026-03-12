@@ -7,16 +7,6 @@
 ; float *          Stack[0x4]:4   out_basis
 ; float            Stack[0x8]:4   t
 ; float            Stack[0xc]:4   tension
-; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[2]:
 ;   core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_004869a0 at 00486bbb

@@ -6,8 +6,6 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   haystack_str
 ; char *           Stack[0x8]:4   needle_str
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[9]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040fe68

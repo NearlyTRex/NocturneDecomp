@@ -8,7 +8,6 @@
 ; Local Variables:
 ; SCram            Stack[-0x8c]:116  local_8c
 ; SCram *          Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
 ;   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 at 0047a3fb

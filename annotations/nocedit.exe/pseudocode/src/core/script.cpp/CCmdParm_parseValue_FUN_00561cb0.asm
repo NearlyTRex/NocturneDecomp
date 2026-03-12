@@ -8,8 +8,6 @@
 ; char *           Stack[0x8]:4   input_text
 ; int *            Stack[0xc]:4   cursor
 ; int              Stack[0x10]:4   end_position
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_script.cpp_CCmdParse_parse_FUN_00561fd0 at 0056230e

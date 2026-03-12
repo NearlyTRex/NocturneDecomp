@@ -5,17 +5,6 @@
 ;
 ; Local Variables:
 ; int[965]         Stack[-0x10cc]:3860  aiStackY_10cc
-; undefined8       Stack[-0x1b8]:8  local_1b8
-; undefined8       Stack[-0x1b0]:8  local_1b0
-; undefined8       Stack[-0x1a8]:8  local_1a8
-; undefined8       Stack[-0x1a0]:8  local_1a0
-; undefined8       Stack[-0x198]:8  local_198
-; undefined8       Stack[-0x190]:8  local_190
-; undefined8       Stack[-0x188]:8  local_188
-; undefined8       Stack[-0x180]:8  local_180
-; undefined8       Stack[-0x178]:8  local_178
-; undefined8       Stack[-0x170]:8  local_170
-; undefined8       Stack[-0x168]:8  local_168
 ; float            Stack[-0x160]:4  local_160
 ; CMatrix3x3f      Stack[-0x15c]:36  local_15c
 ; float[10]        Stack[-0x134]:40  local_134

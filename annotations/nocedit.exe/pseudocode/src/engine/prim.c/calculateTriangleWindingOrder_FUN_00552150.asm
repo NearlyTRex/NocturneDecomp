@@ -12,7 +12,6 @@
 ; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[13]:
 ;   engine_3d.c_rasterizePolygon_FUN_005fd4e0 at 005fd743

@@ -7,9 +7,7 @@
 ; float            Stack[0x4]:4   angle_radians
 ; Local Variables:
 ; float[9]         Stack[-0x44]:36  local_44
-; undefined4       Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ; float            Stack[-0xc]:4  local_c
 ; float            Stack[-0x8]:4  local_8
 ;

@@ -7,7 +7,6 @@
 ; CGabriella *     Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x1e0]:4  local_1e0
 ; CMatrix3x3f      Stack[-0x1dc]:36  local_1dc
 ; CBoundingBox3D   Stack[-0x1b4]:24  local_1b4
 ; float            Stack[-0x19c]:4  local_19c
@@ -35,7 +34,6 @@
 ; CVector3f        Stack[-0xc4]:12  local_c4
 ; CVector3f        Stack[-0xb8]:12  local_b8
 ; float            Stack[-0xac]:4  local_ac
-; undefined4       Stack[-0xa8]:4  local_a8
 ; float            Stack[-0xa4]:4  local_a4
 ; CVector3f        Stack[-0xa0]:12  local_a0
 ; CVector3f        Stack[-0x94]:12  local_94
@@ -62,7 +60,6 @@
 ; CCharacter_full_vtable * Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18
 ; CCharacter_full_vtable * Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004d2e8c = 004d400d

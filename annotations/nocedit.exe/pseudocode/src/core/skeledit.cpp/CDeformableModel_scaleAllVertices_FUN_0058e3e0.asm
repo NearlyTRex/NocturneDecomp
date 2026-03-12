@@ -9,7 +9,6 @@
 ; Local Variables:
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00597f44

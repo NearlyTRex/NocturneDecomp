@@ -6,8 +6,6 @@
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e0de0

@@ -14,7 +14,6 @@
 ; float            Stack[0x20]:4   top_y
 ; Local Variables:
 ; double           Stack[-0x278]:8  dStack_278
-; undefined4       Stack[-0x208]:4  local_208
 ; SIntersectXZCylinder Stack[-0x204]:92  SStack_204
 ; SIntersectXZCylinder Stack[-0x1a8]:92  SStack_1a8
 ; SIntersectXZCylinder Stack[-0x14c]:92  local_14c

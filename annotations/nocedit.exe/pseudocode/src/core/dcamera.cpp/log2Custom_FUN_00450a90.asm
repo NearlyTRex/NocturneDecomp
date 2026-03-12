@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   val
-; Local Variables:
-; undefined8       Stack[-0x8]:8  local_8
 ;
 ; Referenced Globals:
 ;   double g_Log2CustomMultiplier = 3.32192809489000

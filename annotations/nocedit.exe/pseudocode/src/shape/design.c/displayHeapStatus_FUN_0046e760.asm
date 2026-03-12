@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   line_number
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0046e7d8 = 0046e779

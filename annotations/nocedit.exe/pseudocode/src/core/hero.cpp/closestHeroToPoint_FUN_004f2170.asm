@@ -7,7 +7,6 @@
 ; CLocation *      Stack[0x4]:4   location
 ; Local Variables:
 ; float            Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0 at 0042ee67

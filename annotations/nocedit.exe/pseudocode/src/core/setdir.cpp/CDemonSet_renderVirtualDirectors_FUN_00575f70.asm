@@ -6,7 +6,6 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0xa0]:8  local_a0
 ; char[100]        Stack[-0x98]:100  local_98
 ; C3DSCamera *     Stack[-0x34]:4  local_34
 ; int              Stack[-0x30]:4  local_30

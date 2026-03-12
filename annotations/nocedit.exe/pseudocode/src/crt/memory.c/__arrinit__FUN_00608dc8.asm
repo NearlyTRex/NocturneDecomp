@@ -7,10 +7,6 @@
 ; void *           Stack[0x4]:4   array_start
 ; int              Stack[0x8]:4   element_count
 ; WatcomTypeInfo * Stack[0xc]:4   type_info
-; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   crt_memory.c___arrinit_dispatch_FUN_00601200 at 00601221

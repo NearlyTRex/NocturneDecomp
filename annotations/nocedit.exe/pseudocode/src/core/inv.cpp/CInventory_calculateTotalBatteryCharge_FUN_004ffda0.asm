@@ -8,7 +8,6 @@
 ; float            Stack[0x8]:4   max_charge
 ; Local Variables:
 ; float            Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_lightgun.cpp_CLightGun_process_FUN_00506450 at 0050647e

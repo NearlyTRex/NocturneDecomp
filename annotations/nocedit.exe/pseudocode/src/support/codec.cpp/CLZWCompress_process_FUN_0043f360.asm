@@ -9,7 +9,6 @@
 ; int              Stack[0xc]:4   byte_count
 ; _ostream *       Stack[0x10]:4   ostream
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
 ; byte[4]          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

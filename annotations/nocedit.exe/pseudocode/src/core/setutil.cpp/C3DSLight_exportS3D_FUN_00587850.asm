@@ -6,13 +6,6 @@
 ; Parameters:
 ; C3DSLight *      Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
-; Local Variables:
-; undefined8       Stack[-0x3c]:8  local_3c
-; undefined8       Stack[-0x34]:8  local_34
-; undefined8       Stack[-0x2c]:8  local_2c
-; undefined8       Stack[-0x24]:8  local_24
-; undefined8       Stack[-0x1c]:8  local_1c
-; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_exportLightsAndCameras_FUN_0057a0c0 at 0057a1aa

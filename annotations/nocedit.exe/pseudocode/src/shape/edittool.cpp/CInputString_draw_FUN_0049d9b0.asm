@@ -7,8 +7,6 @@
 ; CInputString *   Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   x_pos
 ; int              Stack[0xc]:4   y_pos
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 at 0049fda2

@@ -6,9 +6,6 @@
 ; Parameters:
 ; float            Stack[0x4]:4   angle_radians
 ; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
-; undefined8       Stack[-0x10]:8  local_10
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[58]:

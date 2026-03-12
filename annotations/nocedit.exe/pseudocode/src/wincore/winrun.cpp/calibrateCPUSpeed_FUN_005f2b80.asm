@@ -4,7 +4,6 @@
 ; void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005f2b80(void)
 ;
 ; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;

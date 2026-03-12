@@ -9,8 +9,6 @@
 ; int              Stack[0xc]:4   vertex_idx_2
 ; float            Stack[0x10]:4   collapse_weight
 ; Local Variables:
-; undefined4       Stack[-0x4f0]:4  local_4f0
-; undefined4       Stack[-0x4ec]:4  local_4ec
 ; undefined4       Stack[-0x100]:4  local_100
 ; undefined4       Stack[-0xfc]:4  local_fc
 ; undefined4       Stack[-0xf8]:4  local_f8

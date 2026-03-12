@@ -6,9 +6,6 @@
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   hit_points
-; Local Variables:
-; undefined8       Stack[-0x14]:8  local_14
-; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[7]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040ab67

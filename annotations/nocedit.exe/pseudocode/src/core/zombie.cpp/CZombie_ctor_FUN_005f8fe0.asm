@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CZombie *        Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_zombie.cpp_factoryFunc_FUN_005f8fa0 at 005f8fbd

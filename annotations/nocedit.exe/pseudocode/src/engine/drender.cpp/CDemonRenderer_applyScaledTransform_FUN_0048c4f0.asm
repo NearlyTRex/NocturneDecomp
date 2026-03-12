@@ -7,10 +7,6 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; CVector3i *      Stack[0x8]:4   position
 ; CVector3i *      Stack[0xc]:4   rotation
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[62]:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 at 00408b28

@@ -5,10 +5,6 @@
 ;
 ; Parameters:
 ; CVector3i *      Stack[0x4]:4   input
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 at 0056ee64

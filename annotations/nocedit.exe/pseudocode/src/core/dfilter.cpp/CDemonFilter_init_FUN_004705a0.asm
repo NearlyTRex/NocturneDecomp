@@ -10,7 +10,6 @@
 ; Local Variables:
 ; float            Stack[-0x28]:4  local_28
 ; byte             Stack[-0x1c]:1  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060 at 00470155

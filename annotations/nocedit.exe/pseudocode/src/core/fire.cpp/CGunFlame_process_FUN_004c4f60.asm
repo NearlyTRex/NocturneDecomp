@@ -5,13 +5,6 @@
 ;
 ; Parameters:
 ; CGunFlame *      Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_process_FUN_004c6ec0 at 004c70b8

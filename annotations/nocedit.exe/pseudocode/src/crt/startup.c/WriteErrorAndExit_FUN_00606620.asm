@@ -6,8 +6,6 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   error_message
 ; int              Stack[0x8]:4   exit_code
-; Local Variables:
-; undefined1       Stack[-0x8]:1  local_8
 ;
 ; XREF[2]:
 ;   crt_cpp.c_reportPureVirtualError_FUN_00605b23 at 00605b57

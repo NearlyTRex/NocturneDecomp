@@ -8,8 +8,6 @@
 ; int              Stack[0x8]:4   polygon2_index
 ; float            Stack[0xc]:4   tolerance
 ; int              Stack[0x10]:4   enforce_part_match
-; Local Variables:
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:
 ;   shape_design.c_polygonMergerSelectAndProcess_FUN_00465160 at 00465194

@@ -14,9 +14,7 @@
 ; int              Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
 ; uint             Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawClippedDashedLine_FUN_00487a30 at 00487ab7

@@ -11,7 +11,6 @@
 ; char[80]         Stack[-0xf4]:80  local_f4
 ; int              Stack[-0xa4]:4  local_a4
 ; char[3]          Stack[-0xa0]:3  local_a0
-; undefined1       Stack[-0x9d]:1  local_9d
 ; uint             Stack[-0x9c]:4  local_9c
 ; int              Stack[-0x98]:4  local_98
 ; int              Stack[-0x94]:4  local_94

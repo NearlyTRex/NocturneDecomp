@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_005107c0 at 0051085f

@@ -10,15 +10,7 @@
 ; CVector3f *      Stack[0x10]:4   out_intersection_point
 ; int *            Stack[0x14]:4   out_intersection_type
 ; Local Variables:
-; undefined8       Stack[-0xb8]:8  local_b8
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0xac]:4  local_ac
-; undefined4       Stack[-0xa8]:4  local_a8
-; undefined4       Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
 ; float            Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
 ; CVector3f        Stack[-0x90]:12  local_90
 ; CVector3f        Stack[-0x84]:12  local_84
 ; double           Stack[-0x78]:8  local_78
@@ -28,7 +20,6 @@
 ; int              Stack[-0x60]:4  local_60
 ; int              Stack[-0x5c]:4  local_5c
 ; int              Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
 ; int              Stack[-0x50]:4  local_50
 ; int              Stack[-0x4c]:4  local_4c
 ; int              Stack[-0x48]:4  local_48

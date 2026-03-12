@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   x_max
-; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
 ;   void* PTR_caseD_1_0049bb18 = 0049bbda

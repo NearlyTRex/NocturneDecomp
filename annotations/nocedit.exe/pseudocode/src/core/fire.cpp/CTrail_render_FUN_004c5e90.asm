@@ -7,10 +7,6 @@
 ; CTrail *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0x78]:24  local_78
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
 ; CVector3i        Stack[-0x50]:12  local_50
 ; float            Stack[-0x44]:4  local_44
 ; float            Stack[-0x40]:4  local_40

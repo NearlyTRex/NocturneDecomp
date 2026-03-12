@@ -12,9 +12,6 @@
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0xd4]:24  SStack_d4
 ; int              Stack[-0xbc]:4  local_bc
-; undefined4       Stack[-0xb8]:4  local_b8
-; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xb0]:4  local_b0
 ; float            Stack[-0xac]:4  local_ac
 ; float            Stack[-0xa8]:4  local_a8
 ; float            Stack[-0xa4]:4  local_a4

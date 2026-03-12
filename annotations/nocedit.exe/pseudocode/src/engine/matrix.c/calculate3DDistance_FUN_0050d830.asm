@@ -10,9 +10,6 @@
 ; int              Stack[0x10]:4   x2
 ; int              Stack[0x14]:4   y2
 ; int              Stack[0x18]:4   z2
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0

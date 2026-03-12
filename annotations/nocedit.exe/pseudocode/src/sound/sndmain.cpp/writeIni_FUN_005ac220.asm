@@ -6,7 +6,6 @@
 ; Parameters:
 ; CIniFile *       Stack[0x4]:4   ini_file
 ; Local Variables:
-; undefined4       Stack[-0x2a0]:4  local_2a0
 ; SSoundDeviceInfo Stack[-0x29c]:280  local_29c
 ; char[256]        Stack[-0x184]:256  local_184
 ; char[100]        Stack[-0x84]:100  local_84

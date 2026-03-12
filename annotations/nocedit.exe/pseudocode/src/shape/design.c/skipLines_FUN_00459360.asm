@@ -6,8 +6,6 @@
 ; Parameters:
 ; _FILE *          Stack[0x4]:4   file
 ; int              Stack[0x8]:4   line_count
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_loadS3DModelFile_FUN_004593a0 at 004596c2

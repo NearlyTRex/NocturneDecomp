@@ -8,8 +8,6 @@
 ; double           Stack[0xc]:8   b
 ; Local Variables:
 ; double           Stack[-0x18]:8  local_18
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   engine_colquant.c_computeBoxStatistics_FUN_00441260 at 00441526

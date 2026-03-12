@@ -7,8 +7,6 @@
 ; CVector3f *      Stack[0x4]:4   position
 ; Local Variables:
 ; SLineStrip       Stack[-0xa0]:8  SStack_a0
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
 ; float            Stack[-0x90]:4  local_90
 ; float            Stack[-0x8c]:4  local_8c
 ; float            Stack[-0x88]:4  local_88
@@ -16,9 +14,6 @@
 ; CVector3i        Stack[-0x78]:12  local_78
 ; CVector3i        Stack[-0x6c]:12  local_6c
 ; CVector3i        Stack[-0x60]:12  local_60
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
 ; CVector3f        Stack[-0x48]:12  local_48
 ; CVector3i        Stack[-0x3c]:12  local_3c
 ; SMRGLHeaderPrimitive Stack[-0x30]:24  local_30

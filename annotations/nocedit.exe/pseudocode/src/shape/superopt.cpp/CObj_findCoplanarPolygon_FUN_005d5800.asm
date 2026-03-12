@@ -8,7 +8,6 @@
 ; double           Stack[0x8]:8   coplanar_threshold
 ; CPoly *          Stack[0x10]:4   search_polygon
 ; Local Variables:
-; undefined8       Stack[-0x60]:8  local_60
 ; undefined4       Stack[-0x58]:4  local_58
 ; undefined4       Stack[-0x54]:4  local_54
 ; undefined4       Stack[-0x50]:4  local_50

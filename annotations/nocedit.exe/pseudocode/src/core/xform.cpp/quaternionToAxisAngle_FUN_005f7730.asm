@@ -7,9 +7,6 @@
 ; CQuaternion4f *  Stack[0x4]:4   quat_in
 ; float *          Stack[0x8]:4   angle_out
 ; CVector3f *      Stack[0xc]:4   axis_out
-; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20 at 0059ff5a

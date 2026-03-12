@@ -6,9 +6,6 @@
 ; Parameters:
 ; CBox *           Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
-; Local Variables:
-; undefined8       Stack[-0x18]:8  local_18
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[5]:
 ;   core_bodypart.cpp_CBodyPart_process_FUN_00419be0 at 00419d1b

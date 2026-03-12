@@ -6,12 +6,6 @@
 ; Parameters:
 ; CDemonCubeTriangle * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x14]:4  local_14
 ; float            Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:

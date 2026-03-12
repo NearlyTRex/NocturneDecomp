@@ -7,9 +7,6 @@
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   cube_size
 ; Local Variables:
-; undefined4       Stack[-0xf4]:4  local_f4
-; undefined4       Stack[-0xf0]:4  local_f0
-; undefined4       Stack[-0xec]:4  local_ec
 ; float            Stack[-0xe8]:4  local_e8
 ; float            Stack[-0xe4]:4  local_e4
 ; float            Stack[-0xe0]:4  local_e0
@@ -60,7 +57,6 @@
 ; CDemonCube *     Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; float *          Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00579397

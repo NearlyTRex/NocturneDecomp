@@ -4,10 +4,6 @@
 ; int __cdecl shape_design_c_generateOctant_FUN_00469420(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined8       Stack[-0x94]:8  local_94
 ; char[80]         Stack[-0x8c]:80  local_8c
 ; uint             Stack[-0x3c]:4  local_3c
 ; int              Stack[-0x38]:4  local_38

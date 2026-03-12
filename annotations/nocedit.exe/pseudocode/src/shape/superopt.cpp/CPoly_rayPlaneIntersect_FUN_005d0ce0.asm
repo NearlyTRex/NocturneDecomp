@@ -7,9 +7,6 @@
 ; CPoly *          Stack[0x4]:4   this_ptr
 ; CVec *           Stack[0x8]:4   ray_origin
 ; CVec *           Stack[0xc]:4   ray_dir
-; Local Variables:
-; undefined8       Stack[-0x10]:8  local_10
-; undefined8       Stack[-0x8]:8  local_8
 ;
 ; Called Functions:
 ;   shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500

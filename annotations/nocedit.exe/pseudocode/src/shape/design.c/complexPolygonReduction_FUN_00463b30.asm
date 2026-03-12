@@ -6,10 +6,6 @@
 ; Parameters:
 ; int              Stack[0x4]:4   selected_polygon_index
 ; Local Variables:
-; undefined4       Stack[-0x2fc]:4  local_2fc
-; undefined8       Stack[-0x2f8]:8  local_2f8
-; undefined8       Stack[-0x2f0]:8  local_2f0
-; undefined4       Stack[-0x2e8]:4  local_2e8
 ; SShapeEditorPolygon Stack[-0x2e4]:388  local_2e4
 ; int[20]          Stack[-0x160]:80  local_160
 ; float[16]        Stack[-0x110]:64  afStack_110

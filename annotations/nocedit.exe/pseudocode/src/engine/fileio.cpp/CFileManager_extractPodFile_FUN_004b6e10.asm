@@ -9,7 +9,6 @@
 ; int              Stack[0xc]:4   offer_dismount
 ; Local Variables:
 ; time_t[2034]     Stack[-0x2e68]:8136  atStackY_2e68
-; undefined        Stack[-0xe84]:1  local_e84
 ; undefined1[2088] Stack[-0xe80]:2088  local_e80
 ; SFoundFileInfo   Stack[-0x658]:532  local_658
 ; char[256]        Stack[-0x444]:256  local_444

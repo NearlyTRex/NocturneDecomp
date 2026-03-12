@@ -6,20 +6,6 @@
 ; Parameters:
 ; CMatrix3x3f *    Stack[0x4]:4   matrix_out
 ; CQuaternion4f *  Stack[0x8]:4   quat_in
-; Local Variables:
-; undefined8       Stack[-0x70]:8  local_70
-; undefined8       Stack[-0x68]:8  local_68
-; undefined8       Stack[-0x60]:8  local_60
-; undefined8       Stack[-0x58]:8  local_58
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
-; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[7]:
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40 at 0059fba8

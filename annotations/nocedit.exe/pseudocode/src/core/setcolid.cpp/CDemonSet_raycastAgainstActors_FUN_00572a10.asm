@@ -25,7 +25,6 @@
 ; float            Stack[-0x3c]:4  fStack_3c
 ; float            Stack[-0x38]:4  fStack_38
 ; CVector3f        Stack[-0x34]:12  CStack_34
-; undefined4       Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24
 ; CDemonSet *      Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c

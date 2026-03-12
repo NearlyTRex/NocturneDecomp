@@ -6,12 +6,6 @@
 ; Parameters:
 ; C3DSLight *      Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_ptr
-; Local Variables:
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_save_FUN_0057a2a0 at 0057a4c4

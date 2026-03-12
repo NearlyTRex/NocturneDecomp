@@ -6,10 +6,6 @@
 ; Parameters:
 ; CFireball *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   collision_normal
-; Local Variables:
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rock_x_wav_00629cb3

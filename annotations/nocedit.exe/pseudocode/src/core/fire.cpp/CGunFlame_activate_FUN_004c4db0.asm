@@ -10,13 +10,9 @@
 ; int              Stack[0x10]:4   flame_type
 ; Local Variables:
 ; CMatrix3x3f      Stack[-0x6c]:36  local_6c
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
 ; CVector3f        Stack[-0x38]:12  local_38
 ; CVector3f        Stack[-0x2c]:12  local_2c
 ; CVector3f        Stack[-0x20]:12  local_20
-; undefined4       Stack[-0x14]:4  local_14
 ; float            Stack[-0x10]:4  local_10
 ; float            Stack[-0xc]:4  local_c
 ;

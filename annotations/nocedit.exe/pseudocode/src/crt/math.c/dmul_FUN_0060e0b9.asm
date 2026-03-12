@@ -3,9 +3,6 @@
 ; *****************************************************************************
 ; double __watcallRegister crt_math_c_dmul_FUN_0060e0b9(double a,double b)
 ;
-; Local Variables:
-; undefined8       Stack[-0x10]:8  local_10
-; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[1]:
 ;   crt_fpemu.c_staticInit_FUN_0060be80 at 0060bec7

@@ -7,7 +7,6 @@
 ; CGabriella *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; float[1521]      Stack[-0x19d0]:6084  afStackY_19d0
-; undefined4       Stack[-0x200]:4  local_200
 ; undefined4       Stack[-0x1f8]:4  local_1f8
 ; CQuaternion4f    Stack[-0x1f4]:16  local_1f4
 ; CQuaternion4f    Stack[-0x1e4]:16  local_1e4
@@ -42,10 +41,7 @@
 ; float            Stack[-0x4c]:4  local_4c
 ; CDeformableModelInstance * Stack[-0x44]:4  local_44
 ; float            Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
 ; float            Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
 ; float            Stack[-0x2c]:4  local_2c
 ; float            Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24
@@ -53,7 +49,6 @@
 ; CDeformableModelInstance * Stack[-0x1c]:4  local_1c
 ; CDeformableModelInstance * Stack[-0x18]:4  local_18
 ; CDeformableModelInstance * Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d34cf

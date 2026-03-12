@@ -4,19 +4,11 @@
 ; undefined8 crt_unknown_c_FUN_0060af5d(int param_1,int *param_2,int param_3)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
 ; int              Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
-; undefined1[10]   Stack[-0x24]:10  local_24
-; undefined8       Stack[-0x18]:8  local_18
-; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   crt_strtod.c_staticInit_FUN_00603bb0 at 00603bb1

@@ -13,7 +13,6 @@
 ; CVector3i        Stack[-0x38]:12  local_38
 ; CVector3f        Stack[-0x2c]:12  local_2c
 ; CVector3i        Stack[-0x20]:12  local_20
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_importActorsFrom_FUN_0053b9f0 at 0053baf8

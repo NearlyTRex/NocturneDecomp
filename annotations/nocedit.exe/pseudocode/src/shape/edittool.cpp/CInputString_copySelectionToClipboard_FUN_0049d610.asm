@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CInputString *   Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0049d6c0 at 0049d7e1

@@ -8,10 +8,6 @@
 ; Local Variables:
 ; int[987]         Stack[-0x10d8]:3948  aiStackY_10d8
 ; SMRGLHeaderPrimitive Stack[-0x160]:24  local_160
-; undefined4       Stack[-0x148]:4  local_148
-; undefined4       Stack[-0x144]:4  local_144
-; undefined4       Stack[-0x140]:4  local_140
-; undefined4       Stack[-0x13c]:4  local_13c
 ; CVector3f        Stack[-0x138]:12  local_138
 ; CVector3i        Stack[-0x12c]:12  local_12c
 ; CVector3f        Stack[-0x120]:12  local_120
@@ -58,7 +54,6 @@
 ; float            Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
-; undefined        Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0061f24b = 0.100000000000000

@@ -11,8 +11,6 @@
 ; CVector3i *      Stack[0x14]:4   skinned_vertices
 ; byte *           Stack[0x18]:4   part_visibility_flags
 ; Local Variables:
-; undefined8       Stack[-0x78]:8  local_78
-; undefined4       Stack[-0x70]:4  local_70
 ; CDemonTriangle   Stack[-0x6c]:56  local_6c
 ; float            Stack[-0x34]:4  local_34
 ; float            Stack[-0x30]:4  local_30

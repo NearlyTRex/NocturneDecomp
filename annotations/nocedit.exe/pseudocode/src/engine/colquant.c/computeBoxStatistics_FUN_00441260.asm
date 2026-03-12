@@ -8,8 +8,6 @@
 ; int              Stack[0x8]:4   box_index
 ; Local Variables:
 ; double           Stack[-0x90]:8  local_90
-; undefined8       Stack[-0x88]:8  local_88
-; undefined8       Stack[-0x80]:8  local_80
 ; double           Stack[-0x78]:8  local_78
 ; double           Stack[-0x70]:8  local_70
 ; double           Stack[-0x68]:8  local_68
@@ -17,14 +15,7 @@
 ; double           Stack[-0x58]:8  local_58
 ; double           Stack[-0x50]:8  local_50
 ; double           Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
 ; undefined8       Stack[-0x30]:8  local_30
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[6]:
 ;   engine_colquant.c_partitionByBlue_FUN_00440dc0 at 00440ebc

@@ -8,10 +8,6 @@
 ; Heap *           Stack[0x8]:4   in_stack_00000008
 ; uint             Stack[0xc]:4   in_stack_0000000c
 ; uint *           Stack[0x10]:4   in_stack_00000010
-; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   crt_heap.c_TryResizeInPlace_FUN_00609974 at 00609998

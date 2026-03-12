@@ -6,8 +6,6 @@
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   dest
 ; CVector3f *      Stack[0x8]:4   src
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10

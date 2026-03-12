@@ -6,8 +6,6 @@
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   actor
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040 at 0040d097

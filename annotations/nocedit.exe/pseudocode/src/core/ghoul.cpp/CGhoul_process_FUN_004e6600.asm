@@ -7,8 +7,6 @@
 ; CGhoul *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x38c]:4  local_38c
-; undefined4       Stack[-0x388]:4  local_388
 ; undefined4       Stack[-0x380]:4  local_380
 ; undefined4       Stack[-0x37c]:4  local_37c
 ; undefined1       Stack[-0x378]:1  local_378
@@ -123,7 +121,6 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00002424

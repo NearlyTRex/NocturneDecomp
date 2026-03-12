@@ -7,7 +7,6 @@
 ; _FILE *          Stack[0x4]:4   file
 ; Local Variables:
 ; STreeNode *      Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
 ; undefined1[4]    Stack[-0x2c]:4  local_2c
 ; int              Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24

@@ -15,10 +15,6 @@
 ; uint             Stack[0x24]:4   param_9
 ; undefined4       Stack[0x28]:4   param_10
 ; char *           Stack[0x2c]:4   param_11
-; Local Variables:
-; undefined2       Stack[-0xc]:2  local_c
-; undefined2       Stack[-0x8]:2  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
 ;   crt_unknown.c_FUN_0060411c at 00604130

@@ -9,13 +9,7 @@
 ; float            Stack[0xc]:4   fov
 ; float            Stack[0x10]:4   falloff
 ; Local Variables:
-; undefined4       Stack[-0xc0]:4  local_c0
-; undefined4       Stack[-0xbc]:4  local_bc
 ; SMRGLHeaderPrimitive Stack[-0xb8]:24  local_b8
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
 ; float            Stack[-0x90]:4  local_90
 ; float            Stack[-0x8c]:4  local_8c
 ; float            Stack[-0x88]:4  local_88

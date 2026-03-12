@@ -10,11 +10,6 @@
 ; CVector3f *      Stack[0x10]:4   ray_direction
 ; CVector3f *      Stack[0x14]:4   output_normal
 ; Local Variables:
-; undefined8       Stack[-0xf0]:8  local_f0
-; undefined8       Stack[-0xe8]:8  local_e8
-; undefined8       Stack[-0xe0]:8  local_e0
-; undefined4       Stack[-0xd8]:4  local_d8
-; undefined4       Stack[-0xd4]:4  local_d4
 ; CDemonTriangle   Stack[-0xd0]:56  local_d0
 ; CVector3f        Stack[-0x98]:12  local_98
 ; CVector3f        Stack[-0x8c]:12  local_8c

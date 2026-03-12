@@ -7,7 +7,6 @@
 ; CTurret *        Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x58]:4  local_58
 ; CBoundingBox3D   Stack[-0x54]:24  CStack_54
 ; float            Stack[-0x3c]:4  fStack_3c
 ; float            Stack[-0x38]:4  fStack_38

@@ -14,10 +14,10 @@ CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(CVec
   double local_30;
   double local_28;
   double local_20;
+  double dVar4;
   double dVar1;
   double dVar2;
   double dVar3;
-  double dVar4;
   
   dVar1 = (double)input_vector->x;
   dVar2 = (double)input_vector->y;

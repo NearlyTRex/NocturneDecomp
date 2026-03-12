@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   v
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
 ;   int INT_02d7a7b8

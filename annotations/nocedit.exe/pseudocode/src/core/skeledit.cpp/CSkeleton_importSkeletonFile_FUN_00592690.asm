@@ -172,7 +172,6 @@
 ; undefined4       Stack[-0xc8]:4  local_c8
 ; undefined4       Stack[-0xc4]:4  local_c4
 ; undefined4       Stack[-0xc0]:4  local_c0
-; undefined        Stack[-0xbc]:1  local_bc
 ; undefined4       Stack[-0xb8]:4  local_b8
 ; undefined4       Stack[-0xb4]:4  local_b4
 ; undefined4       Stack[-0xb0]:4  local_b0
@@ -207,7 +206,6 @@
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
-; undefined        Stack[-0x30]:1  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined        Stack[-0x28]:1  local_28
 ; undefined        Stack[-0x24]:1  local_24
@@ -215,7 +213,6 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ; undefined        Stack[-0x18]:1  local_18
 ; undefined        Stack[-0x14]:1  local_14
-; undefined        Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0059266c = 00593e65

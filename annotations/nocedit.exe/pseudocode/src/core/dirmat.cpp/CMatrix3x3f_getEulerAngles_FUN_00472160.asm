@@ -9,23 +9,12 @@
 ; Local Variables:
 ; undefined4       Stack[-0x98]:4  local_98
 ; undefined4       Stack[-0x94]:4  uStack_94
-; undefined8       Stack[-0x90]:8  local_90
 ; undefined4       Stack[-0x84]:4  uStack_84
 ; undefined4       Stack[-0x80]:4  local_80
-; undefined8       Stack[-0x78]:8  local_78
-; undefined8       Stack[-0x70]:8  local_70
 ; undefined4       Stack[-0x68]:4  local_68
 ; undefined4       Stack[-0x5c]:4  uStack_5c
-; undefined8       Stack[-0x58]:8  local_58
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
 ; float            Stack[-0x24]:4  fStack_24
 ; float            Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[13]:
 ;   core_box.cpp_CBox_processPhysics_FUN_0041e350 at 0041e8af

@@ -10,7 +10,6 @@
 ; SLaserInfo       Stack[-0x7c]:84  local_7c
 ; CVector3f        Stack[-0x28]:12  local_28
 ; CVector3f        Stack[-0x1c]:12  local_1c
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

@@ -6,9 +6,6 @@
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; CVector3i *      Stack[0x8]:4   point_ptr
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[16]:
 ;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 00443cf1

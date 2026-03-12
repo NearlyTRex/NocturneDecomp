@@ -8,8 +8,6 @@
 ; double           Stack[0x8]:8   ratio
 ; int              Stack[0x10]:4   sample_index
 ; float *          Stack[0x14]:4   ratio_buffer
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0 at 0053320f

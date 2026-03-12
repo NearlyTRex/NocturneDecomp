@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   model_ptr
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_applyVertexCentering_FUN_004680f0 at 0046810f

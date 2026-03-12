@@ -7,7 +7,6 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined4       Stack[-0x6c]:4  local_6c
 ; CVector3f        Stack[-0x5c]:12  CStack_5c
 ; CVector3f        Stack[-0x50]:12  CStack_50
 ; CVector3f        Stack[-0x44]:12  CStack_44

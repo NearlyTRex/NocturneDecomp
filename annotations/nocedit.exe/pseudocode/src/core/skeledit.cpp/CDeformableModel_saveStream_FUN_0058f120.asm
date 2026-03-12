@@ -7,22 +7,14 @@
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined8       Stack[-0x60]:8  local_60
-; undefined8       Stack[-0x58]:8  local_58
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
 ; int              Stack[-0x38]:4  local_38
 ; int              Stack[-0x34]:4  local_34
 ; CDeformableModel * Stack[-0x30]:4  local_30
 ; int              Stack[-0x2c]:4  local_2c
 ; int              Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModel_save_FUN_0058f040 at 0058f0be

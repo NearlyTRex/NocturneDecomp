@@ -8,14 +8,7 @@
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; int[935]         Stack[-0x1034]:3740  aiStackY_1034
-; undefined8       Stack[-0x188]:8  local_188
-; undefined8       Stack[-0x180]:8  local_180
-; undefined8       Stack[-0x174]:8  local_174
-; undefined8       Stack[-0x16c]:8  local_16c
-; undefined8       Stack[-0x160]:8  local_160
-; undefined8       Stack[-0x158]:8  local_158
 ; char[256]        Stack[-0x14c]:256  local_14c
-; undefined4       Stack[-0x4c]:4  local_4c
 ; int[4]           Stack[-0x48]:16  local_48
 ; int              Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34

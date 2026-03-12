@@ -8,11 +8,8 @@
 ; Local Variables:
 ; float[1515]      Stack[-0x18cc]:6060  afStackY_18cc
 ; undefined4       Stack[-0x10c]:4  local_10c
-; undefined8       Stack[-0x108]:8  local_108
 ; float            Stack[-0x100]:4  local_100
-; undefined4       Stack[-0xfc]:4  local_fc
 ; float            Stack[-0xf8]:4  local_f8
-; undefined4       Stack[-0xf4]:4  local_f4
 ; CQuaternion4f    Stack[-0xf0]:16  local_f0
 ; CQuaternion4f    Stack[-0xe0]:16  local_e0
 ; CQuaternion4f    Stack[-0xd0]:16  local_d0
@@ -27,8 +24,6 @@
 ; float            Stack[-0x38]:4  local_38
 ; float            Stack[-0x34]:4  local_34
 ; CDeformableModelInstance * Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c

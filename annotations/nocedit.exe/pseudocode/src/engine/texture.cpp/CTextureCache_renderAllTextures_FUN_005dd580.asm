@@ -7,27 +7,6 @@
 ; CTextureCache *  Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; SRenderVertex    Stack[-0xcc]:48  local_cc
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ;
 ; XREF[1]:
 ;   engine_texture.cpp_renderTextureAtlas_FUN_005dd990 at 005dd9a7

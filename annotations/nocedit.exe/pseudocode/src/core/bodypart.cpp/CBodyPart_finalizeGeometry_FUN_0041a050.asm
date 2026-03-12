@@ -6,12 +6,6 @@
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0xa0]:8  local_a0
-; undefined8       Stack[-0x98]:8  local_98
-; undefined8       Stack[-0x90]:8  local_90
-; undefined8       Stack[-0x88]:8  local_88
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
 ; CVector3f        Stack[-0x78]:12  local_78
 ; CVector3f        Stack[-0x6c]:12  local_6c
 ; CVector3i        Stack[-0x60]:12  local_60

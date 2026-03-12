@@ -10,8 +10,6 @@
 ; int              Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 at 0051b9da

@@ -3,8 +3,6 @@
 ; *****************************************************************************
 ; void __cdecl crt_unknown_c_FUN_00603c74(void)
 ;
-; Local Variables:
-; undefined1[10]   Stack[-0x1c]:10  local_1c
 ;
 ; XREF[1]:
 ;   crt_unknown.c_CondCallDoNothing_FUN_00603ccc at 00603d3a

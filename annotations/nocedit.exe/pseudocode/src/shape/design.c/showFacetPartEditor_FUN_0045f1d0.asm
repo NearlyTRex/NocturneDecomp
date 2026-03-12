@@ -4,20 +4,6 @@
 ; void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
 ;
 ; Local Variables:
-; undefined8       Stack[-0x108]:8  local_108
-; undefined8       Stack[-0x100]:8  local_100
-; undefined8       Stack[-0xf8]:8  local_f8
-; undefined8       Stack[-0xf0]:8  local_f0
-; undefined4       Stack[-0xe8]:4  local_e8
-; undefined8       Stack[-0xe4]:8  local_e4
-; undefined4       Stack[-0xdc]:4  local_dc
-; undefined4       Stack[-0xd8]:4  local_d8
-; undefined4       Stack[-0xd0]:4  local_d0
-; undefined4       Stack[-0xcc]:4  local_cc
-; undefined4       Stack[-0xc8]:4  local_c8
-; undefined4       Stack[-0xc4]:4  local_c4
-; undefined4       Stack[-0xc0]:4  local_c0
-; undefined4       Stack[-0xbc]:4  local_bc
 ; char[80]         Stack[-0xb8]:80  local_b8
 ; CQuaternion4f    Stack[-0x68]:16  local_68
 ; int              Stack[-0x58]:4  local_58

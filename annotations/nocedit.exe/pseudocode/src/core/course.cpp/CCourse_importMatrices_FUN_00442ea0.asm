@@ -9,8 +9,6 @@
 ; int              Stack[0xc]:4   count
 ; Local Variables:
 ; undefined4[1508] Stack[-0x1804]:6032  auStackY_1804
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
 ; CMatrix3x3f      Stack[-0x58]:36  local_58
 ; undefined1[4]    Stack[-0x34]:4  local_34
 ; undefined1[4]    Stack[-0x30]:4  local_30

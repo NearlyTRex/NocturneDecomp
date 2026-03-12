@@ -6,8 +6,6 @@
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
-; Local Variables:
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e0e68

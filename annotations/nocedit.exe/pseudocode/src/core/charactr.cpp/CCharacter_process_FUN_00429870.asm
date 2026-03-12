@@ -6,8 +6,6 @@
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[38]:
 ;   core_armour.cpp_CArmour_process_FUN_00412260 at 00412273

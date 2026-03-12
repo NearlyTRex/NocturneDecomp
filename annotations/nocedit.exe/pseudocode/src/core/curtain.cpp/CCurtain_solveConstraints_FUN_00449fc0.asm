@@ -7,32 +7,17 @@
 ; CCurtain *       Stack[0x4]:4   this_ptr
 ; SCurtainVertex * Stack[0x8]:4   vertex
 ; Local Variables:
-; undefined4       Stack[-0x158]:4  local_158
-; undefined4       Stack[-0x154]:4  local_154
-; undefined4       Stack[-0x150]:4  local_150
 ; float[3]         Stack[-0x14c]:12  local_14c
 ; float[15]        Stack[-0x140]:60  local_140
 ; float[2]         Stack[-0x104]:8  local_104
 ; float            Stack[-0xfc]:4  local_fc
-; undefined4       Stack[-0xf8]:4  local_f8
-; undefined4       Stack[-0xf4]:4  local_f4
-; undefined4       Stack[-0xf0]:4  local_f0
-; undefined4       Stack[-0xec]:4  local_ec
-; undefined4       Stack[-0xe8]:4  local_e8
-; undefined4       Stack[-0xe4]:4  local_e4
 ; float            Stack[-0xe0]:4  local_e0
 ; float            Stack[-0xdc]:4  local_dc
 ; float            Stack[-0xd8]:4  local_d8
 ; float[40]        Stack[-0xd4]:160  local_d4
 ; int              Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ; float *          Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_curtain.cpp_CCurtain_process_FUN_0044a920 at 0044b043

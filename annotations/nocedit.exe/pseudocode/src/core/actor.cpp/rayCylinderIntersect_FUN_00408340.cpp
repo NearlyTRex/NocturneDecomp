@@ -14,6 +14,8 @@ float __cdecl core_actor_cpp_rayCylinderIntersect_FUN_00408340(SCollisionInfo *c
   float fVar13;
   float fVar14;
   CVector3f local_60 [7];
+  float fVar7;
+  float fVar8;
   float fVar6;
   float fVar3;
   float fVar4;
@@ -23,8 +25,6 @@ float __cdecl core_actor_cpp_rayCylinderIntersect_FUN_00408340(SCollisionInfo *c
   float fVar9;
   float fVar10;
   float fVar5;
-  float fVar7;
-  float fVar8;
   
   fVar12 = collision_info->cylinder_radius * collision_info->cylinder_radius;
   if (fVar12 <= ray_origin->x * ray_origin->x + ray_origin->z * ray_origin->z) {

@@ -6,14 +6,6 @@
 ; Parameters:
 ; int              Stack[0x4]:4   input_parameter
 ; Local Variables:
-; undefined8       Stack[-0xe0]:8  local_e0
-; undefined8       Stack[-0xd8]:8  local_d8
-; undefined4       Stack[-0xd0]:4  local_d0
-; undefined4       Stack[-0xcc]:4  local_cc
-; undefined4       Stack[-0xc8]:4  local_c8
-; undefined4       Stack[-0xc4]:4  local_c4
-; undefined4       Stack[-0xc0]:4  local_c0
-; undefined4       Stack[-0xbc]:4  local_bc
 ; char[80]         Stack[-0xb8]:80  local_b8
 ; char[80]         Stack[-0x68]:80  local_68
 ; int              Stack[-0x18]:4  local_18

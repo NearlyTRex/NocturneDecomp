@@ -8,11 +8,8 @@
 ; Local Variables:
 ; float[6]         Stack[-0x48]:24  local_48
 ; float            Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24
 ; float            Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x10]:4  local_10
 ; float            Stack[-0xc]:4  local_c
 ;

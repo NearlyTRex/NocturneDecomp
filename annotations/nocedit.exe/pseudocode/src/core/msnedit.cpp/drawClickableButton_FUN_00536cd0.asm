@@ -10,10 +10,7 @@
 ; int              Stack[0x10]:4   consume_click
 ; int              Stack[0x14]:4   highlighted
 ; Local Variables:
-; undefined8       Stack[-0x28]:8  local_28
-; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 005398c0

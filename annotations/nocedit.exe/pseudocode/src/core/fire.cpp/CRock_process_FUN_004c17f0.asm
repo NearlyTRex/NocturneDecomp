@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CRock *          Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00629ccb = 32767.7000000000

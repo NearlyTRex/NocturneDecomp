@@ -6,8 +6,6 @@
 ; Parameters:
 ; int *            Stack[0x4]:4   sensitivity_value_ptr
 ; char *           Stack[0x8]:4   window_title
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_menu.cpp_configureCustomKeys_FUN_00511890 at 00511da1

@@ -17,7 +17,6 @@
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; CStranger *      Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   core_mimic.cpp_CMimic_renderOpaque_FUN_00520870 at 00520881

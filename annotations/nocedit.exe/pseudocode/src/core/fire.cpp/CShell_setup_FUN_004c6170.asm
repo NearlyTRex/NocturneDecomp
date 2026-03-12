@@ -9,8 +9,6 @@
 ; CVector3f *      Stack[0xc]:4   euler_angles
 ; CVector3f *      Stack[0x10]:4   velocity
 ; CKeyFramedModel * Stack[0x14]:4   model_ptr
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_createShell_FUN_004c91e0 at 004c9214

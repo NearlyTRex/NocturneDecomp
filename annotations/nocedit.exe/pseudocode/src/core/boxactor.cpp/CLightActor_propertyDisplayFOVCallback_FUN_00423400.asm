@@ -7,8 +7,6 @@
 ; CLightActor *    Stack[0x4]:4   this_ptr
 ; CActorProperty * Stack[0x8]:4   property
 ; char *           Stack[0xc]:4   output_buffer
-; Local Variables:
-; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[1]:
 ;   core_boxactor.cpp_CLightActor_getPropertyList_FUN_004234e0 at 00423560

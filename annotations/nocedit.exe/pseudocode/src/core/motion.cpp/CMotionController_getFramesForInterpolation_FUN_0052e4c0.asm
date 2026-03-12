@@ -10,8 +10,6 @@
 ; int *            Stack[0x10]:4   out_frame1
 ; int *            Stack[0x14]:4   out_frame2
 ; float *          Stack[0x18]:4   out_blend_weight
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 at 0059eb92

@@ -6,8 +6,6 @@
 ; Parameters:
 ; SSoftwareEdge *  Stack[0x4]:4   vertex_a
 ; SSoftwareEdge *  Stack[0x8]:4   vertex_b
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   int g_TexturesDisabled

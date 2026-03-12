@@ -6,8 +6,6 @@
 ; Parameters:
 ; double *         Stack[0x4]:4   in_stack_00000004
 ; float *          Stack[0x8]:4   in_stack_00000008
-; Local Variables:
-; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[1]:
 ;   crt_fltused.c_staticInit_FUN_005fde60 at 005fde67

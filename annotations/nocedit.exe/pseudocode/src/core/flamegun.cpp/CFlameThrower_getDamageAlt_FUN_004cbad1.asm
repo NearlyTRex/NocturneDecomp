@@ -6,8 +6,6 @@
 ; Parameters:
 ; undefined4       Stack[0x0]:4   local_res0
 ; CFlameThrower *  Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_flamegun.cpp_CFlameThrower_getDamage_FUN_004cbab0 at 004cbabe

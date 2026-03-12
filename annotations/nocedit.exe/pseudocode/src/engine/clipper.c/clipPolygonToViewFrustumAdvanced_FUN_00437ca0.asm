@@ -7,7 +7,6 @@
 ; int              Stack[0x4]:4   vertex_count
 ; int *            Stack[0x8]:4   vertex_indices
 ; Local Variables:
-; undefined4       Stack[-0x2c]:4  local_2c
 ; int              Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20

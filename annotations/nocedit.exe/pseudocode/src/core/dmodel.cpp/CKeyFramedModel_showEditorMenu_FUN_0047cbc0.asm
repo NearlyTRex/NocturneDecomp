@@ -6,8 +6,6 @@
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xeb0]:1  local_eb0
-; undefined1       Stack[-0xdb0]:1  local_db0
 ; int              Stack[-0xca8]:4  local_ca8
 ; char[260]        Stack[-0xc9c]:260  local_c9c
 ; char[256]        Stack[-0xb98]:256  local_b98
@@ -106,7 +104,6 @@
 ; float            Stack[-0x1c]:4  local_1c
 ; char[4]          Stack[-0x18]:4  local_18
 ; char[4]          Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[2]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005077f8

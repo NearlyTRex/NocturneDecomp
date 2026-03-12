@@ -6,9 +6,6 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   world_position
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
 ;   CDemonRaytrace g_CDemonRaytraceInstance

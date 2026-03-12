@@ -9,7 +9,6 @@
 ; Local Variables:
 ; int              Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ; char *           Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14

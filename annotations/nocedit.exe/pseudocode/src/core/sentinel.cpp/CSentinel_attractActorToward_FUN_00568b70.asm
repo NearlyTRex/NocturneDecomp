@@ -8,9 +8,6 @@
 ; CDemonActor *    Stack[0x8]:4   actor
 ; CVector3f *      Stack[0xc]:4   target_local_point
 ; Local Variables:
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
 ; CVector3f        Stack[-0x34]:12  local_34
 ; CVector3f        Stack[-0x28]:12  local_28
 ; CVector3f        Stack[-0x1c]:12  local_1c

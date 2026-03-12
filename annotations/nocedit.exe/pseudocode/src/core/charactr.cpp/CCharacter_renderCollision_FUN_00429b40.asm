@@ -6,10 +6,7 @@
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0xf8]:4  local_f8
-; undefined4       Stack[-0xf4]:4  local_f4
 ; int              Stack[-0xf0]:4  local_f0
-; undefined4       Stack[-0xec]:4  local_ec
 ; SMRGLHeaderPrimitive Stack[-0xe8]:24  local_e8
 ; int              Stack[-0xd0]:4  local_d0
 ; int              Stack[-0xcc]:4  local_cc

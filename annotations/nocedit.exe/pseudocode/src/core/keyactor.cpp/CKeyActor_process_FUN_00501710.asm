@@ -6,8 +6,6 @@
 ; Parameters:
 ; CKeyActor *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00630c3d = 3.14159265350000

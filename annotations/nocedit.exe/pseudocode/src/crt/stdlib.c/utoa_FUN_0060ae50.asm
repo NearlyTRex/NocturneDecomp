@@ -8,7 +8,6 @@
 ; char *           Stack[0x8]:4   buffer
 ; int              Stack[0xc]:4   base
 ; Local Variables:
-; undefined1       Stack[-0x38]:1  local_38
 ; char[39]         Stack[-0x37]:39  local_37
 ;
 ; XREF[1]:

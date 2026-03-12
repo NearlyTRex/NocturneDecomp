@@ -8,8 +8,6 @@
 ; int              Stack[0x8]:4   attack_flags
 ; SDamageInfo *    Stack[0xc]:4   out_damage_info
 ; CDemonActor *    Stack[0x10]:4   victim
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0

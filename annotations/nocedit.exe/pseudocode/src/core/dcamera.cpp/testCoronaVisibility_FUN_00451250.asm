@@ -9,9 +9,6 @@
 ; int              Stack[0xc]:4   depth_reciprocal
 ; Local Variables:
 ; uint             Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   int[76800] g_PrecomputedDepthBuffer

@@ -7,8 +7,6 @@
 ; CPoly *          Stack[0x4]:4   this_ptr
 ; CVector3d *      Stack[0x8]:4   out_min
 ; CVector3d *      Stack[0xc]:4   out_max
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; *****************************************************************************
 

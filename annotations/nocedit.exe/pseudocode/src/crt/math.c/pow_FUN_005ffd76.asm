@@ -4,9 +4,7 @@
 ; float10 __fpustack crt_math_c_pow_FUN_005ffd76(float10 base,float10 exp)
 ;
 ; Local Variables:
-; undefined8       Stack[-0x2c]:8  local_2c
 ; undefined8       Stack[-0x1c]:8  local_1c
-; undefined8       Stack[-0x14]:8  local_14
 ; short            Stack[-0xa]:2  sStack_a
 ; short            Stack[-0x8]:2  sStack_8
 ; ushort           Stack[-0x6]:2  uStack_6

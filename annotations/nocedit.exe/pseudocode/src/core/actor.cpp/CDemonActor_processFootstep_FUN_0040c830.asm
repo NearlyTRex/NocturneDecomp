@@ -6,10 +6,6 @@
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   volume
-; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; Referenced Globals:
 ;   float FLOAT_006142b8 = 10000

@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[16]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db1f1

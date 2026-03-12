@@ -17,10 +17,10 @@ int __cdecl core_dcube_cpp_intersectXZCylinder_FUN_004556b0(SIntersectXZCylinder
   float local_3c;
   float local_14;
   float local_10;
-  float fVar2;
   float fVar3;
   float fVar4;
   float fVar1;
+  float fVar2;
   
   fVar2 = cylinder->edge_z2 - cylinder->edge_z1;
   fVar6 = cylinder->edge_x2 - cylinder->edge_x1;

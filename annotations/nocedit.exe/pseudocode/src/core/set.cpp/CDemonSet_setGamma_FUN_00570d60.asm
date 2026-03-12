@@ -8,8 +8,6 @@
 ; int              Stack[0x8]:4   gamma
 ; Local Variables:
 ; float            Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd253

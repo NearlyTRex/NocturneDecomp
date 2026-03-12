@@ -5,7 +5,6 @@
 ;
 ; Local Variables:
 ; float            Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50 at 005aed74

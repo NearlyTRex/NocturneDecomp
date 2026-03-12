@@ -4,15 +4,12 @@
 ; void __cdecl shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x60]:4  local_60
-; undefined8       Stack[-0x5c]:8  local_5c
 ; char[40]         Stack[-0x54]:40  local_54
 ; int              Stack[-0x2c]:4  local_2c
 ; float            Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24
 ; float            Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:

@@ -9,11 +9,6 @@
 ; int              Stack[0xc]:4   x2
 ; int              Stack[0x10]:4   y2
 ; int              Stack[0x14]:4   dash_length
-; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEdButton_paint_FUN_004a65e0 at 004a6720

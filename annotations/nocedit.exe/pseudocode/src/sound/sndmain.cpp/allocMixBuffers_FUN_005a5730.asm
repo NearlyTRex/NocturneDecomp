@@ -6,11 +6,6 @@
 ; Parameters:
 ; int              Stack[0x4]:4   requested_size
 ; int              Stack[0x8]:4   num_buffers
-; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170 at 005ab1fa

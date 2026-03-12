@@ -10,12 +10,6 @@
 ; int              Stack[0x10]:4   tolerance
 ; Local Variables:
 ; int              Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_complexPolygonReduction_FUN_00463b30 at 00463c4b

@@ -6,7 +6,6 @@
 ; Parameters:
 ; CDemonLight *    Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0xa8]:4  local_a8
 ; SMRGLHeaderPrimitive Stack[-0xa4]:24  local_a4
 ; int              Stack[-0x8c]:4  local_8c
 ; int              Stack[-0x88]:4  local_88

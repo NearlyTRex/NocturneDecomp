@@ -6,9 +6,6 @@
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   light_direction
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   double g_LightDirectionalScale = 65536

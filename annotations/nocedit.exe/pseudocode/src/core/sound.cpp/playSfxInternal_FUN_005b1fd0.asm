@@ -12,9 +12,6 @@
 ; CVector3f *      Stack[0x18]:4   position_tracker
 ; uint             Stack[0x1c]:4   flags
 ; Local Variables:
-; undefined8       Stack[-0x198]:8  local_198
-; undefined8       Stack[-0x190]:8  local_190
-; undefined8       Stack[-0x188]:8  local_188
 ; undefined4       Stack[-0x180]:4  local_180
 ; undefined4       Stack[-0x17c]:4  local_17c
 ; undefined1       Stack[-0x178]:1  local_178

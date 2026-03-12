@@ -6,9 +6,6 @@
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x2fc]:4  local_2fc
-; undefined4       Stack[-0x2f8]:4  local_2f8
-; undefined4       Stack[-0x2f0]:4  local_2f0
 ; CMatrix3x4f      Stack[-0x2ec]:48  local_2ec
 ; CMatrix3x4f      Stack[-0x2bc]:48  local_2bc
 ; CMatrix3x4f      Stack[-0x28c]:48  local_28c

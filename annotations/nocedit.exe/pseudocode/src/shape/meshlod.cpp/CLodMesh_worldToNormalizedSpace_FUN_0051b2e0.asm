@@ -7,10 +7,6 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   output_point
 ; CVector3f *      Stack[0xc]:4   input_point
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[3]:
 ;   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 at 0051da1f

@@ -6,8 +6,6 @@
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   v0
 ; SRenderVertex *  Stack[0x8]:4   v1
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   int g_RasterizerDepthBias

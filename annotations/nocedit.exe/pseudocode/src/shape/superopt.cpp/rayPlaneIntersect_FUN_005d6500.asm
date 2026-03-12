@@ -10,16 +10,6 @@
 ; CVector3d *      Stack[0x10]:4   plane_normal
 ; Local Variables:
 ; double           Stack[-0x70]:8  local_70
-; undefined8       Stack[-0x68]:8  local_68
-; undefined8       Stack[-0x60]:8  local_60
-; undefined8       Stack[-0x58]:8  local_58
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
 ;
 ; XREF[2]:
 ;   shape_superopt.cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0 at 005d0d0c

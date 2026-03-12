@@ -11,10 +11,6 @@
 ; Local Variables:
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  uStack_34
-; undefined8       Stack[-0x30]:8  local_30
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ; SLodSamplePoint * Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ;

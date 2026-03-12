@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   matrix
-; Local Variables:
-; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[2]:
 ;   core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0 at 0058ade9

@@ -7,8 +7,6 @@
 ; CGabriella *     Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
 ; undefined4       Stack[-0x84]:4  local_84
 ; undefined4       Stack[-0x80]:4  local_80
 ; undefined4       Stack[-0x7c]:4  local_7c

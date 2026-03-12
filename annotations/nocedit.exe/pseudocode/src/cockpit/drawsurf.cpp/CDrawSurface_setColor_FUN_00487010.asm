@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   color_value
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30 at 00489df1

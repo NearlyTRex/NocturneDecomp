@@ -52,13 +52,10 @@
 ; undefined4       Stack[-0xcc]:4  local_cc
 ; float[3]         Stack[-0xc8]:12  afStack_c8
 ; CQuaternion4f[2] Stack[-0xbc]:32  local_bc
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
 ; float[3]         Stack[-0x94]:12  local_94
 ; int              Stack[-0x88]:4  local_88
 ; int              Stack[-0x84]:4  local_84
 ; int              Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
 ; int              Stack[-0x78]:4  local_78
 ; CQuaternion4f *  Stack[-0x74]:4  local_74
 ; int              Stack[-0x70]:4  local_70

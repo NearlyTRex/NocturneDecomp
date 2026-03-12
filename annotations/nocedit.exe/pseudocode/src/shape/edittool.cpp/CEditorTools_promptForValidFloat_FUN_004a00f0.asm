@@ -12,10 +12,6 @@
 ; float            Stack[0x18]:4   max_value
 ; int              Stack[0x1c]:4   show_current_value
 ; Local Variables:
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
 ; char[32]         Stack[-0x38]:32  local_38
 ; float            Stack[-0x18]:4  local_18
 ;

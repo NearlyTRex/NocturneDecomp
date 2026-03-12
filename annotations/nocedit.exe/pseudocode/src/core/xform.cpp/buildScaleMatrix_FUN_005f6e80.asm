@@ -7,12 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   scale_vector
 ; Local Variables:
 ; float[6]         Stack[-0x38]:24  local_38
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ; float            Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; *****************************************************************************
 

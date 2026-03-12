@@ -7,13 +7,6 @@
 ; CVampireBoss *   Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x260]:4  local_260
-; undefined4       Stack[-0x25c]:4  local_25c
-; undefined4       Stack[-0x258]:4  local_258
-; undefined4       Stack[-0x254]:4  local_254
-; undefined4       Stack[-0x250]:4  local_250
-; undefined4       Stack[-0x24c]:4  local_24c
-; undefined4       Stack[-0x248]:4  local_248
 ; SDamageInfo      Stack[-0x244]:60  local_244
 ; SDamageInfo      Stack[-0x208]:60  SStack_208
 ; CBoundingBox3D   Stack[-0x1cc]:24  local_1cc

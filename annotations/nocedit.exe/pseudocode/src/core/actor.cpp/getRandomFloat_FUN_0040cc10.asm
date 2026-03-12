@@ -6,11 +6,6 @@
 ; Parameters:
 ; float            Stack[0x4]:4   min_value
 ; float            Stack[0x8]:4   max_value
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[129]:
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 0041313f

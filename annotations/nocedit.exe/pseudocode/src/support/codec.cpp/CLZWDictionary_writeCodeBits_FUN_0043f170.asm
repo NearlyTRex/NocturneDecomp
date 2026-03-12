@@ -8,8 +8,6 @@
 ; int              Stack[0x8]:4   code_value
 ; SBitBuffer *     Stack[0xc]:4   bit_buffer
 ; _ostream *       Stack[0x10]:4   ostream
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   support_codec.cpp_CLZWCompress_finalize_FUN_0043f440 at 0043f474

@@ -7,10 +7,6 @@
 ; int              Stack[0x4]:4   row_index
 ; int              Stack[0x8]:4   column_start
 ; int              Stack[0xc]:4   column_end
-; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   CVector3i[15360] g_PrecomputedWorldPositions

@@ -12,7 +12,6 @@
 ; int              Stack[0x18]:4   bbox_type
 ; CBoundingBox3D * Stack[0x1c]:4   ray_bbox
 ; Local Variables:
-; undefined8       Stack[-0xb0]:8  local_b0
 ; float            Stack[-0xa0]:4  local_a0
 ; CBoundingBox3D   Stack[-0x9c]:24  local_9c
 ; CBoundingBox3D   Stack[-0x84]:24  local_84
@@ -22,7 +21,6 @@
 ; CVector3f        Stack[-0x3c]:12  local_3c
 ; CVector3f        Stack[-0x30]:12  local_30
 ; CVector3f        Stack[-0x24]:12  CStack_24
-; undefined4       Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:

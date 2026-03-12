@@ -12,7 +12,6 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined8       Stack[-0x10]:8  local_10
-; undefined1       Stack[-0x8]:1  local_8
 ;
 ; XREF[1]:
 ;   crt_math.c_pow_FUN_005ffd76 at 005ffd98

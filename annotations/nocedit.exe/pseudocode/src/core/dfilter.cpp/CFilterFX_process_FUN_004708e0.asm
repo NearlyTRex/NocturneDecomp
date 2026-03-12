@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CFilterFx *      Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e31f7

@@ -6,7 +6,6 @@
 ; Parameters:
 ; CDemonFileManager * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x799]:1  local_799
 ; char[512]        Stack[-0x798]:512  local_798
 ; char[499]        Stack[-0x598]:499  local_598
 ; char[256]        Stack[-0x3a5]:256  local_3a5

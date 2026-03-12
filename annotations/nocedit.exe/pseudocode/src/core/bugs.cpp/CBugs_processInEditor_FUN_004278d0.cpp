@@ -16,11 +16,11 @@ void __cdecl core_bugs_cpp_CBugs_processInEditor_FUN_004278d0(CBugs *this_ptr)
   int iVar6;
   CVector3f local_20;
   float *local_14;
-  CLocation *pCVar1;
-  float *pfVar2;
   float fVar5;
   float fVar3;
   float fVar4;
+  CLocation *pCVar1;
+  float *pfVar2;
   
   pCVar1 = &(this_ptr->base).base.base.location;
   fVar3 = (pCVar1->position).x;

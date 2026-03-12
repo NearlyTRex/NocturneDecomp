@@ -6,8 +6,6 @@
 ; Parameters:
 ; int              Stack[0x4]:4   ui_mode
 ; Local Variables:
-; undefined8       Stack[-0x84]:8  local_84
-; undefined8       Stack[-0x7c]:8  local_7c
 ; byte[80]         Stack[-0x74]:80  local_74
 ; int              Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20

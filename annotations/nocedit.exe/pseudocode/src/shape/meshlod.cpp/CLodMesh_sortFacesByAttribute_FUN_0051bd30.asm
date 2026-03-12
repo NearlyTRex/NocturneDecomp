@@ -8,7 +8,6 @@
 ; int              Stack[0x8]:4   attribute_index
 ; Local Variables:
 ; int[1522]        Stack[-0x189c]:6088  aiStackY_189c
-; undefined4       Stack[-0xc0]:4  uStack_c0
 ; undefined4       Stack[-0xb0]:4  local_b0
 ; undefined        Stack[-0xa4]:1  local_a4
 ; undefined4       Stack[-0x8c]:4  local_8c
@@ -18,7 +17,6 @@
 ; float            Stack[-0x74]:4  local_74
 ; undefined4       Stack[-0x70]:4  local_70
 ; CVector3f[3]     Stack[-0x6c]:36  local_6c
-; undefined4       Stack[-0x48]:4  local_48
 ; int[4]           Stack[-0x44]:16  aiStack_44
 ; int              Stack[-0x34]:4  local_34
 ; int              Stack[-0x30]:4  local_30

@@ -6,20 +6,9 @@
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   matrix
 ; Local Variables:
-; undefined8       Stack[-0x98]:8  local_98
-; undefined8       Stack[-0x90]:8  local_90
-; undefined8       Stack[-0x88]:8  local_88
-; undefined8       Stack[-0x80]:8  local_80
-; undefined8       Stack[-0x78]:8  local_78
-; undefined8       Stack[-0x70]:8  local_70
 ; double           Stack[-0x68]:8  local_68
 ; double           Stack[-0x60]:8  local_60
 ; double           Stack[-0x58]:8  local_58
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; *****************************************************************************
 

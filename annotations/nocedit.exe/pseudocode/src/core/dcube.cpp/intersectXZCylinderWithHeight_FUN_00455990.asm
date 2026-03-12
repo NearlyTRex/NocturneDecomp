@@ -7,8 +7,6 @@
 ; SIntersectXZCylinder * Stack[0x4]:4   cylinder
 ; CVector3f *      Stack[0x8]:4   segment_start
 ; CVector3f *      Stack[0xc]:4   segment_end
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_dcube.cpp_intersectTriangleWithXZCylinder_FUN_00455a30 at 00455ea3

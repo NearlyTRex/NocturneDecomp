@@ -6,10 +6,6 @@
 ; Parameters:
 ; int *            Stack[0x4]:4   first_value_ptr
 ; int *            Stack[0x8]:4   second_value_ptr
-; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_complexPolygonReduction_FUN_00463b30 at 00464744

@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   fd
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   crt_io.c_close_handle_safe_FUN_0060c2e0 at 0060c30f

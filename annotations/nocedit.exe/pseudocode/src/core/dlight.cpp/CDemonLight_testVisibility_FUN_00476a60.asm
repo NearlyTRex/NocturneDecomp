@@ -8,10 +8,6 @@
 ; CVector3i *      Stack[0x8]:4   corners
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0x38]:24  SStack_38
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

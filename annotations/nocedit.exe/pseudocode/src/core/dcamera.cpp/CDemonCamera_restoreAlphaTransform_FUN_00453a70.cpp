@@ -12,17 +12,17 @@ CVector3i * __cdecl core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_0045
   int iVar3;
   int iVar12;
   int iVar13;
-  longlong lVar11;
-  longlong lVar10;
-  longlong lVar9;
-  longlong lVar8;
-  longlong lVar3;
   int iVar2;
   int iVar1;
   longlong lVar7;
   longlong lVar6;
   longlong lVar5;
   longlong lVar4;
+  longlong lVar11;
+  longlong lVar10;
+  longlong lVar9;
+  longlong lVar8;
+  longlong lVar3;
   
   iVar1 = screen_pos->z;
   iVar12 = (int)(((longlong)(screen_pos->x - (this_ptr->saved_viewport_rect).right) *

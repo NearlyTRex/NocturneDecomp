@@ -12,11 +12,9 @@
 ; int              Stack[0x18]:4   start_face
 ; int              Stack[0x1c]:4   face_count
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
 ; SInputFace *     Stack[-0x24]:4  local_24
 ; int *            Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

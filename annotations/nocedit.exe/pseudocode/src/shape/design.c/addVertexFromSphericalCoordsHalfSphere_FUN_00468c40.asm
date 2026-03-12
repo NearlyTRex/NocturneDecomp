@@ -7,11 +7,6 @@
 ; float            Stack[0x4]:4   latitude_degrees
 ; float            Stack[0x8]:4   longitude_degrees
 ; float            Stack[0xc]:4   radius
-; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_generateShell_FUN_00468f20 at 00469104

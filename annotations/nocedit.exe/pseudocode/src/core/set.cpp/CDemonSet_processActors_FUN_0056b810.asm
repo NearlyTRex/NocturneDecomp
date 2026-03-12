@@ -6,7 +6,6 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0xa8]:4  local_a8
 ; CVector3f[3]     Stack[-0x94]:36  aCStack_94
 ; EDamageType      Stack[-0x70]:4  EStack_70
 ; CDemonActor *    Stack[-0x68]:4  local_68

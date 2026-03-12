@@ -4,18 +4,10 @@
 ; void __cdecl shape_design_c_groundCenterObject_FUN_00466a30(void)
 ;
 ; Local Variables:
-; undefined8       Stack[-0x64]:8  local_64
-; undefined8       Stack[-0x5c]:8  local_5c
-; undefined8       Stack[-0x54]:8  local_54
-; undefined8       Stack[-0x4c]:8  local_4c
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  uStack_40
-; undefined8       Stack[-0x3c]:8  local_3c
-; undefined8       Stack[-0x34]:8  local_34
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  uStack_28
-; undefined8       Stack[-0x24]:8  local_24
-; undefined8       Stack[-0x1c]:8  local_1c
 ; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

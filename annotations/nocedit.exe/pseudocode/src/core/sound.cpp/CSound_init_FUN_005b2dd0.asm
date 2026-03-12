@@ -5,12 +5,6 @@
 ;
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd448

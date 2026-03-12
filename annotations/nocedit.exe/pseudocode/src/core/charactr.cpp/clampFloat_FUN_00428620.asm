@@ -6,9 +6,6 @@
 ; Parameters:
 ; float            Stack[0x4]:4   value
 ; float            Stack[0x8]:4   limit
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; *****************************************************************************
 

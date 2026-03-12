@@ -3,8 +3,6 @@
 ; *****************************************************************************
 ; void __cdecl engine_matrix_c_initializeTrigTables_FUN_0050c530(void)
 ;
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507bc1

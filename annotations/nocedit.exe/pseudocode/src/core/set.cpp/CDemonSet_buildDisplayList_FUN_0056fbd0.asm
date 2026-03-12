@@ -7,7 +7,6 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   dirty_flags_mask
 ; Local Variables:
-; undefined8       Stack[-0x90]:8  local_90
 ; float[2]         Stack[-0x70]:8  local_70
 ; float            Stack[-0x68]:4  fStack_68
 ; CVector3i        Stack[-0x64]:12  local_64

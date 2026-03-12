@@ -5,10 +5,6 @@
 ;
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_waypoint.cpp_CWayPoint_processInEditor_FUN_005ec5e0 at 005ec5ef

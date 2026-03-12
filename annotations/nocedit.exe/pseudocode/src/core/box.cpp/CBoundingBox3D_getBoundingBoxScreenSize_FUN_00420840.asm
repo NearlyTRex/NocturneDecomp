@@ -6,16 +6,10 @@
 ; Parameters:
 ; CBoundingBox3D * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
 ; CVector3i        Stack[-0x34]:12  local_34
 ; float            Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24
 ; float            Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 0059777f

@@ -7,10 +7,6 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   u_offset
 ; int              Stack[0xc]:4   v_offset
-; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60 at 0042b061

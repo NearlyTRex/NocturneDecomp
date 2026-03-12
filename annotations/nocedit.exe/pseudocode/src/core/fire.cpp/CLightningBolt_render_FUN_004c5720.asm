@@ -7,10 +7,6 @@
 ; CLightningBolt * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0xdc]:24  local_dc
-; undefined4       Stack[-0xc4]:4  local_c4
-; undefined4       Stack[-0xc0]:4  local_c0
-; undefined4       Stack[-0xbc]:4  local_bc
-; undefined4       Stack[-0xb8]:4  local_b8
 ; float            Stack[-0xb4]:4  local_b4
 ; float            Stack[-0xb0]:4  local_b0
 ; float            Stack[-0xac]:4  local_ac

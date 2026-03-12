@@ -6,19 +6,6 @@
 ; Parameters:
 ; CBugs *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x84]:8  local_84
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
 ; CVector3f        Stack[-0x4c]:12  local_4c
 ; double           Stack[-0x40]:8  local_40
 ; int              Stack[-0x38]:4  local_38

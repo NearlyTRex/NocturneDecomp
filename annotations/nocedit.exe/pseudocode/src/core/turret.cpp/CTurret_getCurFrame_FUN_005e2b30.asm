@@ -7,10 +7,8 @@
 ; CTurret *        Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   model_index
 ; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
 ; float            Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
 ;   core_turret.cpp_CTurret_getBoundingBox_FUN_005e2910 at 005e2929

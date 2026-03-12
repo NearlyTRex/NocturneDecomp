@@ -8,7 +8,6 @@
 ; char *           Stack[0x8]:4   buffer
 ; int              Stack[0xc]:4   base
 ; Local Variables:
-; undefined1       Stack[-0x38]:1  local_38
 ; char[35]         Stack[-0x37]:35  local_37
 ; uint             Stack[-0x14]:4  local_14
 ;

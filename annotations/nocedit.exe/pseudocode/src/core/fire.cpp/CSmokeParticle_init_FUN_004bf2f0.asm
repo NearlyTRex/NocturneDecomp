@@ -9,8 +9,6 @@
 ; float            Stack[0xc]:4   drag_factor
 ; CVector3f *      Stack[0x10]:4   wind_influence
 ; int              Stack[0x14]:4   alpha_value
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0 at 004c77d4

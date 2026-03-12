@@ -3,10 +3,6 @@
 ; *****************************************************************************
 ; void __cdecl engine_matrix_c_getCameraRotation_FUN_0050e2f0(CVector3i *output)
 ;
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800 at 0048c810

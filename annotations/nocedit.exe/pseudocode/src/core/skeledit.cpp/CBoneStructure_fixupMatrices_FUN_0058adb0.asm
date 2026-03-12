@@ -7,8 +7,6 @@
 ; CBoneStructure * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; int              Stack[-0x28]:4  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 at 0058a467

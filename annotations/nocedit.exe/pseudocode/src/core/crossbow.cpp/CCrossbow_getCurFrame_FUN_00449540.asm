@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CCrossbow *      Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
 ;   core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00448e00 at 00448e45

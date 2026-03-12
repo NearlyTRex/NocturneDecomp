@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   scale
-; Local Variables:
-; undefined8       Stack[-0x10]:8  local_10
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sml_00630fbe

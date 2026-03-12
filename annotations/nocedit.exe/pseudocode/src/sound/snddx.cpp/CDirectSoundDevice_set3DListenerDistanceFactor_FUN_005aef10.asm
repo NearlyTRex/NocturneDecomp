@@ -6,8 +6,6 @@
 ; Parameters:
 ; CDirectSoundDevice * Stack[0x4]:4   this_ptr
 ; double           Stack[0x8]:8   distance_in_feet
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   double g_DirectSoundFeetToMeters = 0.304800000000000

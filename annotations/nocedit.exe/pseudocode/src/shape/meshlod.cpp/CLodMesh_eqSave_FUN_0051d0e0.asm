@@ -6,9 +6,6 @@
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
-; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:
 ;   shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50 at 00516ded

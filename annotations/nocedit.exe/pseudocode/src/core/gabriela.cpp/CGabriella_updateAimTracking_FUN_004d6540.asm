@@ -8,8 +8,6 @@
 ; float            Stack[0x8]:4   delta_time
 ; int              Stack[0xc]:4   is_holstering
 ; Local Variables:
-; undefined4       Stack[-0x13c]:4  local_13c
-; undefined4       Stack[-0x138]:4  local_138
 ; CVector3f[10]    Stack[-0x134]:120  local_134
 ; CBoundingBox3D   Stack[-0xbc]:24  CStack_bc
 ; float            Stack[-0xa4]:4  fStack_a4
@@ -22,11 +20,7 @@
 ; CVector3f        Stack[-0x68]:12  CStack_68
 ; CVector3f        Stack[-0x5c]:12  CStack_5c
 ; CVector3f        Stack[-0x50]:12  CStack_50
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
 ; float            Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
 ; CDemonActor *    Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20

@@ -8,7 +8,6 @@
 ; int              Stack[0x8]:4   in_stack_00000008
 ; CLodMesh *       Stack[0xc]:4   in_stack_0000000c
 ; Local Variables:
-; undefined4       Stack[-0x58]:4  local_58
 ; CBoundingBox3D   Stack[-0x54]:24  CStack_54
 ; float            Stack[-0x3c]:4  local_3c
 ; float            Stack[-0x38]:4  local_38

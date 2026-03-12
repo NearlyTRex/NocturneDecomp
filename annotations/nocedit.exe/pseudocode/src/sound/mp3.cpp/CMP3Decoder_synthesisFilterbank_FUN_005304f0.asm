@@ -9,7 +9,6 @@
 ; int              Stack[0xc]:4   channel_index
 ; short *          Stack[0x10]:4   pcm_output
 ; Local Variables:
-; undefined8       Stack[-0xf0]:8  local_f0
 ; int[32]          Stack[-0xe4]:128  aiStack_e4
 ; double           Stack[-0x64]:8  local_64
 ; double[2]        Stack[-0x5c]:16  local_5c
@@ -18,15 +17,10 @@
 ; float *          Stack[-0x44]:4  local_44
 ; float[32] *      Stack[-0x40]:4  local_40
 ; float *          Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
 ; int              Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
 ; float *          Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

@@ -9,7 +9,6 @@
 ; int              Stack[0x10]:4   remove_degenerate
 ; Local Variables:
 ; int              Stack[-0x108]:4  local_108
-; undefined4       Stack[-0x104]:4  local_104
 ; char[92]         Stack[-0x100]:92  acStack_100
 ; double           Stack[-0xa4]:8  dStack_a4
 ; double           Stack[-0x9c]:8  dStack_9c

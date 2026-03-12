@@ -30,7 +30,6 @@
 ; CVector3f        Stack[-0x28]:12  local_28
 ; CVector3f        Stack[-0x1c]:12  local_1c
 ; int              Stack[-0x10]:4  local_10
-; undefined1       Stack[-0xc]:1  local_c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_new_0065881d

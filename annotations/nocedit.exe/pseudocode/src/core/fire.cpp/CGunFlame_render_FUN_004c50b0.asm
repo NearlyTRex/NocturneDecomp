@@ -6,15 +6,8 @@
 ; Parameters:
 ; CGunFlame *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0xd8]:8  local_d8
 ; float            Stack[-0xd0]:4  local_d0
-; undefined4       Stack[-0xcc]:4  local_cc
-; undefined4       Stack[-0xc8]:4  local_c8
 ; SMRGLHeaderPrimitive Stack[-0xc4]:24  local_c4
-; undefined4       Stack[-0xac]:4  local_ac
-; undefined4       Stack[-0xa8]:4  local_a8
-; undefined4       Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
 ; float            Stack[-0x9c]:4  local_9c
 ; float            Stack[-0x98]:4  local_98
 ; float            Stack[-0x94]:4  local_94

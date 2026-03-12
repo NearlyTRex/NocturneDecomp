@@ -8,7 +8,6 @@
 ; char *           Stack[0x8]:4   key
 ; float *          Stack[0xc]:4   output
 ; Local Variables:
-; undefined8       Stack[-0x70]:8  local_70
 ; char[100]        Stack[-0x68]:100  local_68
 ;
 ; XREF[1]:

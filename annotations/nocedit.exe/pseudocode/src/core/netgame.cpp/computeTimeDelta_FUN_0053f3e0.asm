@@ -8,7 +8,6 @@
 ; int              Stack[0x8]:4   end_time
 ; Local Variables:
 ; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0063d21d = 0.0000152587890625

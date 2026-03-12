@@ -7,28 +7,12 @@
 ; CPoly *          Stack[0x4]:4   this_ptr
 ; CVector2d *      Stack[0x8]:4   uv_scale
 ; Local Variables:
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
 ; uint             Stack[-0x84]:4  local_84
 ; double           Stack[-0x80]:8  local_80
 ; double           Stack[-0x78]:8  local_78
 ; double           Stack[-0x70]:8  local_70
-; undefined4       Stack[-0x68]:4  local_68
 ; uint             Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
 ; uint             Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006542da = 0.00390625

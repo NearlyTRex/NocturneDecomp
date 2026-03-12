@@ -7,24 +7,12 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   edge_index
 ; Local Variables:
-; undefined8       Stack[-0x128]:8  local_128
-; undefined8       Stack[-0x120]:8  local_120
 ; undefined4       Stack[-0x118]:4  local_118
 ; undefined4       Stack[-0x114]:4  uStack_114
 ; undefined8       Stack[-0x110]:8  local_110
 ; undefined4       Stack[-0x108]:4  local_108
 ; undefined4       Stack[-0x104]:4  uStack_104
 ; int              Stack[-0x100]:4  local_100
-; undefined4       Stack[-0xfc]:4  local_fc
-; undefined4       Stack[-0xf8]:4  local_f8
-; undefined4       Stack[-0xf4]:4  local_f4
-; undefined4       Stack[-0xf0]:4  local_f0
-; undefined4       Stack[-0xec]:4  local_ec
-; undefined4       Stack[-0xe8]:4  local_e8
-; undefined4       Stack[-0xe4]:4  local_e4
-; undefined4       Stack[-0xe0]:4  local_e0
-; undefined4       Stack[-0xdc]:4  local_dc
-; undefined4       Stack[-0xd8]:4  local_d8
 ; CVector3f        Stack[-0xd4]:12  local_d4
 ; float            Stack[-0xc8]:4  local_c8
 ; float            Stack[-0xc4]:4  local_c4

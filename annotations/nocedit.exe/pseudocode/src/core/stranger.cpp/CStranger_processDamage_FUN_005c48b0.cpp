@@ -17,11 +17,11 @@ void __cdecl core_stranger_cpp_CStranger_processDamage_FUN_005c48b0(CStranger *t
   int iVar2;
   CDemonActor *pCVar6;
   uint uVar3;
+  CCharacter_full_vtable *pCVar1;
   CDeformableModelInstance *this_ptr_00;
   CConsole *this_ptr_01;
   CGame *pCVar2;
   float force_immediate;
-  CCharacter_full_vtable *pCVar1;
   
   if (g_CGamePtr->god_mode_enabled != 0) {
     damage_info->damage_amount = 0.0;

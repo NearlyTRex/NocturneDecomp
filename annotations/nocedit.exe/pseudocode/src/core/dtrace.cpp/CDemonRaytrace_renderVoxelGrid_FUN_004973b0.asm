@@ -10,9 +10,6 @@
 ; int              Stack[0x10]:4   grid_y
 ; int              Stack[0x14]:4   grid_z
 ; Local Variables:
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
 ; CVector3f        Stack[-0x34]:12  local_34
 ; int              Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24

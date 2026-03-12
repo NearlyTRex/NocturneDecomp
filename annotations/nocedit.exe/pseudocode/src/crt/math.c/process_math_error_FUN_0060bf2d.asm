@@ -9,11 +9,6 @@
 ; double *         Stack[0xc]:4   value2
 ; Local Variables:
 ; MathErrorContext Stack[-0x3c]:32  local_3c
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined1       Stack[-0xc]:1  local_c
 ;
 ; XREF[2]:
 ;   crt_math.c_math_domain_error_FUN_00606832 at 006068a6

@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   seconds
-; Local Variables:
-; undefined8       Stack[-0x10]:8  local_10
-; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[6]:
 ;   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 at 004b4ca6

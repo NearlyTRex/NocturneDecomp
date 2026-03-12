@@ -6,7 +6,6 @@
 ; Parameters:
 ; float            Stack[0x4]:4   value
 ; Local Variables:
-; undefined8       Stack[-0x10]:8  local_10
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:

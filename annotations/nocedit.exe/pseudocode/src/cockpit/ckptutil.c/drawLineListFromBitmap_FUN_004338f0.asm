@@ -9,10 +9,6 @@
 ; int              Stack[0xc]:4   line_count
 ; int              Stack[0x10]:4   offset_x
 ; int              Stack[0x14]:4   offset_y
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0

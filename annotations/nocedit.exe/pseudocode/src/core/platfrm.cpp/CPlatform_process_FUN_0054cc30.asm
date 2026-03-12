@@ -7,7 +7,6 @@
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x334]:4  local_334
 ; undefined1       Stack[-0x324]:1  local_324
 ; undefined1       Stack[-0x323]:1  local_323
 ; undefined1       Stack[-0x322]:1  local_322

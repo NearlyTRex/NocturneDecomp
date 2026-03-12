@@ -7,11 +7,6 @@
 ; CVector3f *      Stack[0x4]:4   point
 ; float            Stack[0x8]:4   horizontal_radius
 ; float            Stack[0xc]:4   vertical_tolerance
-; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_process_FUN_00429870 at 00429a71

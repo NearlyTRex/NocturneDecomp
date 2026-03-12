@@ -8,10 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   position
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0x44]:24  local_44
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ; CVector3i        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[1]:

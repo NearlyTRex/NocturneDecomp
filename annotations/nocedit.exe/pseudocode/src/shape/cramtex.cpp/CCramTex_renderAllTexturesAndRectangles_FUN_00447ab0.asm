@@ -10,9 +10,6 @@
 ; int              Stack[0x10]:4   width
 ; int              Stack[0x14]:4   height
 ; int              Stack[0x18]:4   render_mode
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   CCramTex[250] g_CramSortedTextureEntries

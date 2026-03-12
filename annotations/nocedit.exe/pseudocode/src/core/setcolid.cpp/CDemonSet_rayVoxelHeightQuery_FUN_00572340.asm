@@ -10,7 +10,6 @@
 ; float            Stack[-0x30]:4  local_30
 ; CVector3f        Stack[-0x2c]:12  local_2c
 ; CVector3f        Stack[-0x20]:12  local_20
-; undefined4       Stack[-0x14]:4  local_14
 ; float            Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:

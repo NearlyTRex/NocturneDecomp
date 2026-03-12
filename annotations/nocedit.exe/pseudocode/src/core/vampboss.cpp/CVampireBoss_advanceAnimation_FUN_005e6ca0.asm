@@ -7,8 +7,6 @@
 ; CVampireBoss *   Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined8       Stack[-0x88]:8  local_88
-; undefined8       Stack[-0x80]:8  local_80
 ; float            Stack[-0x78]:4  local_78
 ; char[104]        Stack[-0x74]:104  local_74
 ;

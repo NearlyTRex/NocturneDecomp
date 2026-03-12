@@ -6,11 +6,6 @@
 ; Parameters:
 ; int              Stack[0x4]:4   min_value
 ; int              Stack[0x8]:4   max_value
-; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[36]:
 ;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00416030 at 004160e4

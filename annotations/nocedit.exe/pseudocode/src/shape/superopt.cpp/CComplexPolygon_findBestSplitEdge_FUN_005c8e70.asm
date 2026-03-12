@@ -12,12 +12,6 @@
 ; double           Stack[-0xcc]:8  local_cc
 ; double           Stack[-0xc4]:8  local_c4
 ; double           Stack[-0xbc]:8  local_bc
-; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0xac]:4  local_ac
-; undefined4       Stack[-0xa8]:4  local_a8
-; undefined4       Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
 ; double           Stack[-0x9c]:8  local_9c
 ; double           Stack[-0x94]:8  local_94
 ; double           Stack[-0x8c]:8  local_8c
@@ -28,10 +22,6 @@
 ; undefined4       Stack[-0x74]:4  local_74
 ; undefined4       Stack[-0x70]:4  uStack_70
 ; CVector3d        Stack[-0x6c]:24  local_6c
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  uStack_50
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  uStack_40
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  uStack_38
 ; undefined8       Stack[-0x34]:8  local_34
@@ -42,7 +32,6 @@
 ; CVector3d *      Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0 at 005c879b

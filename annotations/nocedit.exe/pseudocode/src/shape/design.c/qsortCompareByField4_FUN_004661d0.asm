@@ -6,10 +6,6 @@
 ; Parameters:
 ; void *           Stack[0x4]:4   element_a
 ; void *           Stack[0x8]:4   element_b
-; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_qsortCompareByField4Wrapper_FUN_00466210 at 00466230

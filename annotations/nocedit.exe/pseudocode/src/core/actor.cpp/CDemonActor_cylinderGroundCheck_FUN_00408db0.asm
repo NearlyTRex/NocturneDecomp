@@ -7,9 +7,6 @@
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   radius
 ; CVector3f *      Stack[0xc]:4   out_normal
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_006137c2

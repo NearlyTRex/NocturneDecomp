@@ -9,9 +9,6 @@
 ; int              Stack[0xc]:4   render_mode
 ; Local Variables:
 ; int[989]         Stack[-0x1138]:3956  aiStackY_1138
-; undefined8       Stack[-0x1b0]:8  local_1b0
-; undefined8       Stack[-0x1a8]:8  local_1a8
-; undefined8       Stack[-0x1a0]:8  local_1a0
 ; int              Stack[-0x198]:4  local_198
 ; int              Stack[-0x194]:4  local_194
 ; int              Stack[-0x190]:4  local_190

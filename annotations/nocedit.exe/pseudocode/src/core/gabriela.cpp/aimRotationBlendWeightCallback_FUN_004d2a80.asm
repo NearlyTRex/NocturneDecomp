@@ -9,8 +9,6 @@
 ; float            Stack[0xc]:4   blend_weight
 ; int              Stack[0x10]:4   hierarchy_distance
 ; CDeformableModelInstance * Stack[0x14]:4   model_ptr
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 at 004d5462

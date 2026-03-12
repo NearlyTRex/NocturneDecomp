@@ -6,8 +6,6 @@
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0 at 004e9e31

@@ -8,7 +8,6 @@
 ; CCheckOutItem *  Stack[0x8]:4   checkout_item
 ; _FILE *          Stack[0xc]:4   optional_pod_file
 ; Local Variables:
-; undefined        Stack[-0x69c]:1  local_69c
 ; CCheckOutItem    Stack[-0x4a8]:360  local_4a8
 ; char[8]          Stack[-0x340]:8  local_340
 ; char[252]        Stack[-0x338]:252  acStack_338

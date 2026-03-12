@@ -7,11 +7,6 @@
 ; CColonel *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0xac]:4  local_ac
-; undefined8       Stack[-0xa8]:8  local_a8
-; undefined8       Stack[-0xa0]:8  local_a0
-; undefined8       Stack[-0x98]:8  local_98
-; undefined4       Stack[-0x90]:4  local_90
 ; float            Stack[-0x8c]:4  local_8c
 ; float            Stack[-0x88]:4  local_88
 ; CVector3f        Stack[-0x84]:12  local_84
@@ -24,7 +19,6 @@
 ; float            Stack[-0x30]:4  local_30
 ; float            Stack[-0x2c]:4  local_2c
 ; float            Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
 ; float            Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18

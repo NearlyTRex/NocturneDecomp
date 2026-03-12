@@ -11,17 +11,11 @@
 ; CVector3f *      Stack[0x14]:4   out_gradient
 ; float *          Stack[0x18]:4   out_offset
 ; Local Variables:
-; undefined8       Stack[-0xf8]:8  local_f8
 ; double           Stack[-0xf0]:8  local_f0
 ; double           Stack[-0xe8]:8  local_e8
 ; double           Stack[-0xe0]:8  local_e0
-; undefined8       Stack[-0xd8]:8  local_d8
 ; double           Stack[-0xd0]:8  local_d0
-; undefined8       Stack[-0xc8]:8  local_c8
 ; double           Stack[-0xc0]:8  local_c0
-; undefined8       Stack[-0xb8]:8  local_b8
-; undefined8       Stack[-0xb0]:8  local_b0
-; undefined8       Stack[-0xa8]:8  local_a8
 ; int              Stack[-0xa0]:4  local_a0
 ; CMatrix3x3f      Stack[-0x98]:36  local_98
 ; CVector3f        Stack[-0x70]:12  local_70

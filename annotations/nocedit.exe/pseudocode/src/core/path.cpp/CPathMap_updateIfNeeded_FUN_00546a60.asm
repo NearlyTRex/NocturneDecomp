@@ -9,9 +9,6 @@
 ; int              Stack[0xc]:4   force_update
 ; Local Variables:
 ; int[1013]        Stack[-0x1004]:4052  aiStackY_1004
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ; CVector3i        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[3]:

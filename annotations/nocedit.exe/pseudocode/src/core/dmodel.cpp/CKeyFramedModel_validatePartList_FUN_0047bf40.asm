@@ -7,11 +7,8 @@
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; int              Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
 ; CKeyFramedModel * Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
 ;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 00479efb

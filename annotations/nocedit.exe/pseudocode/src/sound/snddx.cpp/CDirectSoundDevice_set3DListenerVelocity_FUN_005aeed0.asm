@@ -8,10 +8,6 @@
 ; double           Stack[0x8]:8   x_velocity
 ; double           Stack[0x10]:8   y_velocity
 ; double           Stack[0x18]:8   z_velocity
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   IDirectSound3DListener* g_DirectSound3DListener

@@ -10,7 +10,6 @@
 ; int              Stack[0x10]:4   ground_type
 ; CDemonActor *    Stack[0x14]:4   hit_actor
 ; Local Variables:
-; undefined8       Stack[-0x68]:8  local_68
 ; char[52]         Stack[-0x60]:52  acStack_60
 ; float            Stack[-0x2c]:4  local_2c
 ; float            Stack[-0x28]:4  fStack_28

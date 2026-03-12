@@ -4,13 +4,9 @@
 ; void __cdecl core_menu_cpp_configureSoundOptions_FUN_00511e50(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0xa50]:4  local_a50
-; undefined4       Stack[-0xa4c]:4  local_a4c
 ; undefined4       Stack[-0xa44]:4  uStack_a44
 ; undefined4       Stack[-0xa40]:4  local_a40
-; undefined8       Stack[-0xa38]:8  local_a38
 ; float            Stack[-0xa30]:4  local_a30
-; undefined4       Stack[-0xa2c]:4  local_a2c
 ; float            Stack[-0xa28]:4  local_a28
 ; float            Stack[-0xa24]:4  local_a24
 ; CPickList        Stack[-0xa20]:936  local_a20

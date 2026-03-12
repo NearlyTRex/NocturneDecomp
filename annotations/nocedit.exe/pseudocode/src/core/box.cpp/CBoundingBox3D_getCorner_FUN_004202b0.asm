@@ -7,10 +7,6 @@
 ; CBoundingBox3D * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   out_point
 ; uint             Stack[0xc]:4   corner_index
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[14]:
 ;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270 at 004092b4

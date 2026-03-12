@@ -3,9 +3,6 @@
 ; *****************************************************************************
 ; undefined4 crt_unknown_c_FUN_0060fcf4(short *param_1)
 ;
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   crt_env.c_putenv_internal_FUN_0060ee80 at 0060f03c

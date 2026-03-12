@@ -8,11 +8,7 @@
 ; float            Stack[0x8]:4   min_size
 ; Local Variables:
 ; CVector3i        Stack[-0x34]:12  local_34
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
 ; float            Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ; float            Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:

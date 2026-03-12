@@ -13,8 +13,6 @@
 ; va_list_t        Stack[-0x28]:4  local_28
 ; va_list_t        Stack[-0x24]:4  local_24
 ; uint *           Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined1       Stack[-0x18]:1  local_18
 ;
 ; XREF[2]:
 ;   crt_stdio.c__vsprintf_FUN_005fdba8 at 005fdbbd

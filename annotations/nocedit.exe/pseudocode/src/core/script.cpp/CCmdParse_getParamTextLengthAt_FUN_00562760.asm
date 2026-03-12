@@ -6,8 +6,6 @@
 ; Parameters:
 ; CCmdParse *      Stack[0x4]:4   this_pointer
 ; int              Stack[0x8]:4   param_index
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_setParameterValue_FUN_00565f70 at 00566031

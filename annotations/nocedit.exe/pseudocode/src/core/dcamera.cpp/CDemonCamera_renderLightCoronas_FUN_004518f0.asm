@@ -11,7 +11,6 @@
 ; int[1014]        Stack[-0x107c]:4056  aiStackY_107c
 ; CVector3i        Stack[-0x94]:12  local_94
 ; int              Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
 ; char *           Stack[-0x80]:4  local_80
 ; char[320] *      Stack[-0x7c]:4  local_7c
 ; int[320] *       Stack[-0x78]:4  local_78
@@ -25,10 +24,8 @@
 ; int              Stack[-0x58]:4  local_58
 ; int              Stack[-0x54]:4  local_54
 ; int              Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
 ; int              Stack[-0x48]:4  local_48
 ; int              Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
 ; int              Stack[-0x3c]:4  local_3c
 ; uint *           Stack[-0x38]:4  local_38
 ; int *            Stack[-0x34]:4  local_34

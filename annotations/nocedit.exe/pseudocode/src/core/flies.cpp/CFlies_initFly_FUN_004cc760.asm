@@ -10,7 +10,6 @@
 ; CVector3f        Stack[-0x30]:12  local_30
 ; CVector3f        Stack[-0x24]:12  local_24
 ; SFly *           Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_flies.cpp_CFlies_process_FUN_004cbf00 at 004cc147

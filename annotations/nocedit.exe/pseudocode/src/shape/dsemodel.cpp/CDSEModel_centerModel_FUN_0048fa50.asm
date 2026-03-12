@@ -6,18 +6,10 @@
 ; Parameters:
 ; CDSEModel *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x64]:8  local_64
-; undefined8       Stack[-0x5c]:8  local_5c
-; undefined8       Stack[-0x54]:8  local_54
 ; undefined4       Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x48]:4  uStack_48
-; undefined8       Stack[-0x44]:8  local_44
-; undefined8       Stack[-0x3c]:8  local_3c
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  uStack_30
-; undefined8       Stack[-0x2c]:8  local_2c
-; undefined8       Stack[-0x24]:8  local_24
-; undefined8       Stack[-0x1c]:8  local_1c
 ; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

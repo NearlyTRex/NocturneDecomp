@@ -3,11 +3,6 @@
 ; *****************************************************************************
 ; void __cdecl crt_fpemu_c_staticInit_FUN_0060be80(void)
 ;
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   byte BYTE_00684acd = 0x0

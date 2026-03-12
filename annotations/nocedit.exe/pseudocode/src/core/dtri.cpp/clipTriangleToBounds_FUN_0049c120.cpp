@@ -23,8 +23,8 @@ int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0049c120(CVector3f *triangle_
   byte bVar8;
   CVector3f *pCVar9;
   CVector3f *point2_ptr;
-  int iVar2;
   float fVar1;
+  int iVar2;
   
   g_ClipInputVertexCount = 3;
   if (triangle_vertices != g_ClipInputVertices) {

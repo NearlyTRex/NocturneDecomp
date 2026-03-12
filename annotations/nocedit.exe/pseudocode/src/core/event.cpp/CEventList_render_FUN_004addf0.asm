@@ -6,7 +6,6 @@
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x3b4]:8  local_3b4
 ; char[200]        Stack[-0x3a8]:200  local_3a8
 ; char[200]        Stack[-0x2e0]:200  local_2e0
 ; char[200]        Stack[-0x218]:200  local_218

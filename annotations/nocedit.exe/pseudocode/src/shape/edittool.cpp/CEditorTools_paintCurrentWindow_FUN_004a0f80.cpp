@@ -17,11 +17,11 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   int iVar6;
   SWindow *pSVar7;
   int iVar8;
+  int color_mode;
+  int color_value;
   char *text;
   int iVar1;
   int iVar2;
-  int color_mode;
-  int color_value;
   
   if (g_EditorFont == (CBitFont *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";

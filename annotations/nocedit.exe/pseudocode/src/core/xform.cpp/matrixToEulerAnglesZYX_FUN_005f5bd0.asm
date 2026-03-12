@@ -8,31 +8,20 @@
 ; CVector3f *      Stack[0x8]:4   euler_out
 ; Local Variables:
 ; undefined4       Stack[-0xb0]:4  local_b0
-; undefined8       Stack[-0xa8]:8  local_a8
 ; undefined4       Stack[-0xa0]:4  local_a0
 ; undefined4       Stack[-0x9c]:4  uStack_9c
-; undefined8       Stack[-0x98]:8  local_98
 ; undefined4       Stack[-0x8c]:4  uStack_8c
 ; undefined4       Stack[-0x88]:4  local_88
 ; undefined4       Stack[-0x84]:4  uStack_84
 ; undefined4       Stack[-0x80]:4  local_80
-; undefined8       Stack[-0x78]:8  local_78
-; undefined8       Stack[-0x70]:8  local_70
 ; undefined4       Stack[-0x68]:4  local_68
 ; undefined4       Stack[-0x64]:4  uStack_64
-; undefined8       Stack[-0x60]:8  local_60
-; undefined8       Stack[-0x58]:8  local_58
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  uStack_3c
 ; undefined4       Stack[-0x34]:4  uStack_34
 ; undefined4       Stack[-0x30]:4  local_30
-; undefined8       Stack[-0x28]:8  local_28
 ; float            Stack[-0x20]:4  local_20
 ; float            Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a630 at 0041a8c4

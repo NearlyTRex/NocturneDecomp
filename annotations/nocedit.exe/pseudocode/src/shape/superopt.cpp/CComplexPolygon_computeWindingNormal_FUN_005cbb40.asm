@@ -10,16 +10,8 @@
 ; int              Stack[0x10]:4   edge_count
 ; Local Variables:
 ; undefined8       Stack[-0x110]:8  local_110
-; undefined8       Stack[-0x108]:8  local_108
 ; undefined4       Stack[-0x100]:4  local_100
 ; undefined4       Stack[-0xfc]:4  uStack_fc
-; undefined8       Stack[-0xf8]:8  local_f8
-; undefined8       Stack[-0xf0]:8  local_f0
-; undefined8       Stack[-0xe8]:8  local_e8
-; undefined8       Stack[-0xe0]:8  local_e0
-; undefined8       Stack[-0xd8]:8  local_d8
-; undefined8       Stack[-0xd0]:8  local_d0
-; undefined8       Stack[-0xc8]:8  local_c8
 ; double           Stack[-0xc0]:8  local_c0
 ; double           Stack[-0xb8]:8  local_b8
 ; double           Stack[-0xb0]:8  local_b0

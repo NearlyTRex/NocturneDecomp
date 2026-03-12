@@ -8,19 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   start_position
 ; CVector3f *      Stack[0xc]:4   end_position
 ; Local Variables:
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
 ; int              Stack[-0x48]:4  local_48
 ; int              Stack[-0x44]:4  local_44
 ; int              Stack[-0x40]:4  local_40
@@ -33,7 +20,6 @@
 ; int              Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_00572510 at 0057251f

@@ -13,8 +13,6 @@
 ; int              Stack[0x1c]:4   background_color
 ; int              Stack[0x2c]:4   in_stack_0000002c
 ; Local Variables:
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x28]:4  local_28
 ; COLORREF         Stack[-0x24]:4  CStack_24
 ; char *           Stack[-0x20]:4  pcStack_20
 ; char *           Stack[-0x1c]:4  pcStack_1c

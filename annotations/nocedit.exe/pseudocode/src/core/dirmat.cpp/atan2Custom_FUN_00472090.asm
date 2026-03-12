@@ -8,7 +8,6 @@
 ; double           Stack[0xc]:8   x
 ; Local Variables:
 ; float            Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   double g_Atan2SinCosThreshold = 0.707000000000000

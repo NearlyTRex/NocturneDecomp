@@ -10,10 +10,7 @@
 ; int              Stack[0x10]:4   count
 ; int              Stack[0x14]:4   blood_type
 ; Local Variables:
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined4       Stack[-0x78]:4  local_78
 ; CMatrix3x3f      Stack[-0x74]:36  local_74
-; undefined4       Stack[-0x50]:4  local_50
 ; CVector3f        Stack[-0x4c]:12  local_4c
 ; CVector3f        Stack[-0x40]:12  local_40
 ; CVector3f        Stack[-0x34]:12  local_34

@@ -10,8 +10,6 @@
 ; CVector3f *      Stack[0x10]:4   hit_normal
 ; uint *           Stack[0x14]:4   hit_material
 ; Local Variables:
-; undefined8       Stack[-0x38]:8  local_38
-; undefined4       Stack[-0x30]:4  local_30
 ; CVector3f        Stack[-0x2c]:12  local_2c
 ; int              Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c

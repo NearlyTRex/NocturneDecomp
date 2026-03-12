@@ -7,8 +7,6 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   force_rebuild
 ; Local Variables:
-; undefined4       Stack[-0x120]:4  local_120
-; undefined4       Stack[-0x11c]:4  local_11c
 ; char[256]        Stack[-0x118]:256  local_118
 ; CDemonSet *      Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14

@@ -7,7 +7,6 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; float            Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80 at 0053bc9b

@@ -9,12 +9,6 @@
 ; int              Stack[0xc]:4   render_flags
 ; Local Variables:
 ; STrianglePackedIndices Stack[-0x24]:6  local_24
-; undefined2       Stack[-0x1e]:2  local_1e
-; undefined2       Stack[-0x1c]:2  local_1c
-; undefined2       Stack[-0x1a]:2  local_1a
-; undefined2       Stack[-0x18]:2  local_18
-; undefined2       Stack[-0x16]:2  local_16
-; undefined2       Stack[-0x14]:2  local_14
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90 at 0048cec2

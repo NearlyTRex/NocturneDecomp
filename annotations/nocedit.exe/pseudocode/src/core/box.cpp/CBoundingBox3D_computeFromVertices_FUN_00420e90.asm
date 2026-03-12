@@ -12,8 +12,6 @@
 ; int              Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052bed4

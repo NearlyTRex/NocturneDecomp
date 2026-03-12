@@ -7,37 +7,9 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   point
 ; Local Variables:
-; undefined8       Stack[-0xd0]:8  local_d0
-; undefined8       Stack[-0xc8]:8  local_c8
-; undefined4       Stack[-0xc0]:4  local_c0
-; undefined4       Stack[-0xbc]:4  local_bc
-; undefined4       Stack[-0xb8]:4  local_b8
-; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0xac]:4  local_ac
-; undefined4       Stack[-0xa8]:4  local_a8
-; undefined4       Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x50]:4  local_50
 ; int              Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
 ; float            Stack[-0x40]:4  local_40
 ; CSkeleton *      Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_igniteBone_FUN_0042b5b0 at 0042b5f8

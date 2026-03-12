@@ -6,8 +6,6 @@
 ; Parameters:
 ; CPodFile *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x3d0]:4  local_3d0
-; undefined4       Stack[-0x3cc]:4  local_3cc
 ; CPickList        Stack[-0x3c8]:936  local_3c8
 ; uint             Stack[-0x20]:4  local_20
 ; _FILE *          Stack[-0x1c]:4  local_1c

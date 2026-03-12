@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   vert_index
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043cbdc

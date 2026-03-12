@@ -7,15 +7,6 @@
 ; CFlies *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0xa0]:24  SStack_a0
-; undefined4       Stack[-0x88]:4  uStack_88
-; undefined4       Stack[-0x84]:4  uStack_84
-; undefined4       Stack[-0x80]:4  uStack_80
-; undefined4       Stack[-0x7c]:4  uStack_7c
-; undefined4       Stack[-0x78]:4  uStack_78
-; undefined4       Stack[-0x74]:4  uStack_74
-; undefined4       Stack[-0x70]:4  uStack_70
-; undefined4       Stack[-0x6c]:4  uStack_6c
-; undefined4       Stack[-0x68]:4  uStack_68
 ; CBoundingBox3D   Stack[-0x58]:24  local_58
 ; CVector3f        Stack[-0x40]:12  CStack_40
 ; CVector3i        Stack[-0x34]:12  CStack_34

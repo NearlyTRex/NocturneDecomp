@@ -15,8 +15,6 @@ void __cdecl shape_design_c_realignObject_FUN_0045ee70(int rotation_x,int rotati
   float10 fVar13;
   float10 fVar10;
   int local_4c;
-  float fVar8;
-  float fVar9;
   float fVar4;
   float fVar5;
   float fVar6;
@@ -24,6 +22,8 @@ void __cdecl shape_design_c_realignObject_FUN_0045ee70(int rotation_x,int rotati
   float fVar1;
   float fVar2;
   float fVar3;
+  float fVar8;
+  float fVar9;
   
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("Realign object",0,0);

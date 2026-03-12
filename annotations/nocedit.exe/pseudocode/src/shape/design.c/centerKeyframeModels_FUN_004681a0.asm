@@ -6,8 +6,6 @@
 ; Parameters:
 ; SMRGLKeyframeModel * Stack[0x4]:4   keyframe_model
 ; Local Variables:
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
 ; char[80]         Stack[-0x74]:80  local_74
 ; int              Stack[-0x24]:4  local_24
 ; SMRGLHeaderExtended * Stack[-0x20]:4  local_20

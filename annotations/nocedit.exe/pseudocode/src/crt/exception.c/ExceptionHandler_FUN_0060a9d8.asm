@@ -10,7 +10,6 @@
 ; void *           Stack[0x10]:4   DispatcherContext
 ; Local Variables:
 ; PEXCEPTION_RECORD Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   crt_exception.c_installExceptionHandler_FUN_0060aba8 at 0060abd1

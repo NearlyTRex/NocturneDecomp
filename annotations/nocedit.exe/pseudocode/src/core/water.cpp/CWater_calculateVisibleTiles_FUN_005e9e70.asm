@@ -6,12 +6,7 @@
 ; Parameters:
 ; CWater *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0xbc]:8  local_bc
 ; SMRGLHeaderPrimitive Stack[-0xb4]:24  SStack_b4
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
 ; CVector3f        Stack[-0x8c]:12  local_8c
 ; CVector3i        Stack[-0x80]:12  local_80
 ; int              Stack[-0x74]:4  local_74

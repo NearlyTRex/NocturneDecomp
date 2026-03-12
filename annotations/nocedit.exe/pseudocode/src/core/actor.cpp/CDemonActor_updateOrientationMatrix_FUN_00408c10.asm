@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[45]:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004088b0 at 00408924

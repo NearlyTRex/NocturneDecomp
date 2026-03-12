@@ -8,15 +8,10 @@
 ; float            Stack[0x8]:4   angle_threshold_radians
 ; Local Variables:
 ; int[1006]        Stack[-0x10d8]:4024  aiStackY_10d8
-; undefined4       Stack[-0x118]:4  local_118
-; undefined4       Stack[-0x114]:4  local_114
-; undefined8       Stack[-0x110]:8  local_110
 ; undefined4       Stack[-0x108]:4  local_108
 ; undefined4       Stack[-0x104]:4  uStack_104
 ; undefined4       Stack[-0x100]:4  local_100
 ; undefined4       Stack[-0xfc]:4  uStack_fc
-; undefined4       Stack[-0xf8]:4  local_f8
-; undefined4       Stack[-0xf4]:4  local_f4
 ; undefined4       Stack[-0xf0]:4  local_f0
 ; undefined4       Stack[-0xe4]:4  local_e4
 ; undefined4       Stack[-0xd8]:4  local_d8

@@ -8,9 +8,6 @@
 ; int              Stack[0x8]:4   x
 ; int              Stack[0xc]:4   start_y
 ; int              Stack[0x10]:4   end_y
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0 at 0048850c

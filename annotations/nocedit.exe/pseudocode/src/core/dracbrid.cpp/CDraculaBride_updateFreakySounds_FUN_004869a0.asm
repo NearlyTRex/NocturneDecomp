@@ -7,9 +7,6 @@
 ; CDraculaBride *  Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined8       Stack[-0xa0]:8  local_a0
-; undefined8       Stack[-0x98]:8  local_98
-; undefined8       Stack[-0x90]:8  local_90
 ; undefined1       Stack[-0x88]:1  local_88
 ; undefined4       Stack[-0x68]:4  local_68
 ; undefined4       Stack[-0x64]:4  local_64

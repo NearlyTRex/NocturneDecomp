@@ -9,19 +9,14 @@
 ; CVector3f *      Stack[0xc]:4   ray_direction
 ; CVector3f *      Stack[0x10]:4   out_normal
 ; Local Variables:
-; undefined4       Stack[-0x60]:4  local_60
 ; CVector3f[2]     Stack[-0x5c]:24  local_5c
 ; float            Stack[-0x44]:4  local_44
 ; float            Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
 ; float            Stack[-0x38]:4  local_38
 ; float            Stack[-0x34]:4  local_34
 ; float            Stack[-0x30]:4  local_30
 ; float            Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
 ; float            Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[8]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 004095af

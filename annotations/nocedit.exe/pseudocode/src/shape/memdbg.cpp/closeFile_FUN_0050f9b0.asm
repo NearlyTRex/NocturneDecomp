@@ -7,8 +7,6 @@
 ; _FILE *          Stack[0x4]:4   file_ptr
 ; char *           Stack[0x8]:4   source_file
 ; int              Stack[0xc]:4   line_number
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[181]:
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0 at 00431bc8

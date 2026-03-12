@@ -7,8 +7,6 @@
 ; float *          Stack[0x4]:4   value
 ; float            Stack[0x8]:4   target
 ; float            Stack[0xc]:4   max_step
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; *****************************************************************************
 

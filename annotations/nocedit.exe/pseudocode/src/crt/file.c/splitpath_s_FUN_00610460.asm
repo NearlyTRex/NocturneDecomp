@@ -10,8 +10,6 @@
 ; char *           Stack[0x10]:4   dir
 ; char *           Stack[0x14]:4   fname
 ; char *           Stack[0x18]:4   ext
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   crt_process.c_spawnvp_FUN_0060f39c at 0060f583

@@ -38,9 +38,9 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00438420(int vertex_coun
   int local_1c;
   int local_18;
   int local_14;
+  uint uVar7;
   uint uVar1;
   int iVar2;
-  uint uVar7;
   
   bVar16 = 0;
   if (g_VertexProcessingEnabled == 0) {

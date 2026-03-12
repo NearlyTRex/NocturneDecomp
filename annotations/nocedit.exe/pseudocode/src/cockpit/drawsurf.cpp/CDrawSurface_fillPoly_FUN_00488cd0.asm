@@ -11,7 +11,6 @@
 ; int[1483]        Stack[-0x1818]:5932  aiStackY_1818
 ; int              Stack[-0xdc]:4  local_dc
 ; int[39]          Stack[-0xd8]:156  aiStack_d8
-; undefined4       Stack[-0x3c]:4  local_3c
 ; int[4]           Stack[-0x38]:16  aiStack_38
 ; SPoint2i *       Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24

@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   max_y_plane
-; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0 at 00456cf5

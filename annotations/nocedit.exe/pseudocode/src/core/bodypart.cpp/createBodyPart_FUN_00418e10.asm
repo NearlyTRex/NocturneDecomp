@@ -11,9 +11,6 @@
 ; int              Stack[0x14]:4   dont_use_normals
 ; int              Stack[0x18]:4   is_transparent
 ; int              Stack[0x1c]:4   blood_type
-; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[14]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415f25

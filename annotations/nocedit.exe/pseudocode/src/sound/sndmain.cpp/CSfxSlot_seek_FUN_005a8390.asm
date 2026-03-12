@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; CSfxSlot *       Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined8       Stack[-0x1c]:8  local_1c
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_startSfx_FUN_005a8e90 at 005a9042

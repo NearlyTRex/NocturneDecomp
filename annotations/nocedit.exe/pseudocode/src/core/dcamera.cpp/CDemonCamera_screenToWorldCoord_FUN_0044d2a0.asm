@@ -7,10 +7,6 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   screen_x
 ; int              Stack[0xc]:4   screen_y
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[9]:
 ;   core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060 at 00454408

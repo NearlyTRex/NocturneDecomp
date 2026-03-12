@@ -8,7 +8,6 @@
 ; char *           Stack[0x8]:4   key
 ; float            Stack[0xc]:4   value
 ; Local Variables:
-; undefined8       Stack[-0x6c]:8  local_6c
 ; char[4]          Stack[-0x64]:4  local_64
 ; char             Stack[-0x60]:1  local_60
 ;

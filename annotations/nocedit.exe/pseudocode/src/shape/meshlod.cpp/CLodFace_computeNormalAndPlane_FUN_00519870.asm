@@ -9,7 +9,6 @@
 ; CVector3f *      Stack[0xc]:4   vertex1_pos
 ; CVector3f *      Stack[0x10]:4   vertex2_pos
 ; Local Variables:
-; undefined4       Stack[-0x88]:4  local_88
 ; CVector3f        Stack[-0x84]:12  local_84
 ; CVector3f        Stack[-0x78]:12  local_78
 ; CVector3f        Stack[-0x6c]:12  local_6c

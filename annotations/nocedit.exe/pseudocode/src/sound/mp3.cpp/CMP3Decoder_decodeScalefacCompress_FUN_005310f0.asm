@@ -12,8 +12,6 @@
 ; SMpegFrame *     Stack[0x18]:4   frame
 ; Local Variables:
 ; uint[5]          Stack[-0x34]:20  local_34
-; undefined2       Stack[-0x20]:2  uStack_20
-; undefined2       Stack[-0x1e]:2  local_1e
 ; short            Stack[-0x1c]:2  sStack_1c
 ; undefined4       Stack[-0x1a]:4  local_1a
 ; undefined4       Stack[-0x16]:4  local_16

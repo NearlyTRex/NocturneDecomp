@@ -7,8 +7,6 @@
 ; CBloodPool *     Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
 ; int              Stack[0xc]:4   blood_type
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004ede30 at 004ede52

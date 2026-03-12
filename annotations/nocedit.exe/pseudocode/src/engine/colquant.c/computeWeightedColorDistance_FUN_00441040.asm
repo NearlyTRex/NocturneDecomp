@@ -7,10 +7,6 @@
 ; SColorQuantMapper * Stack[0x4]:4   workspace
 ; int              Stack[0x8]:4   box_index
 ; int              Stack[0xc]:4   color_index
-; Local Variables:
-; undefined8       Stack[-0x24]:8  local_24
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   engine_colquant.c_refinePartitionByDistance_FUN_00441110 at 00441162

@@ -19,7 +19,6 @@
 ; CVector3f        Stack[-0xf4]:12  local_f4
 ; CVector3f        Stack[-0xe8]:12  local_e8
 ; float            Stack[-0xdc]:4  local_dc
-; undefined4       Stack[-0xd8]:4  local_d8
 ; float            Stack[-0xd4]:4  local_d4
 ; float            Stack[-0xd0]:4  local_d0
 ; float            Stack[-0xcc]:4  local_cc
@@ -42,7 +41,6 @@
 ; float            Stack[-0x1c]:4  local_1c
 ; CDeformableModelInstance * Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   core_mimic.cpp_CMimic_process_FUN_0051f780 at 0051f802

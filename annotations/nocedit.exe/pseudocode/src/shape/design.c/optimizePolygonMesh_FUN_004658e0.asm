@@ -8,7 +8,6 @@
 ; int              Stack[0x8]:4   strict_mode
 ; int              Stack[0xc]:4   display_progress
 ; Local Variables:
-; undefined8       Stack[-0x78]:8  local_78
 ; char[80]         Stack[-0x70]:80  local_70
 ; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c

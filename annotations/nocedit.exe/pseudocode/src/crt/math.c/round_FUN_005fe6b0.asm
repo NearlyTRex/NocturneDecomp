@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; undefined        Stack[0x0]:1   local_res0
-; Local Variables:
-; undefined2       Stack[-0x8]:2  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[236]:
 ;   cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50 at 0043412c

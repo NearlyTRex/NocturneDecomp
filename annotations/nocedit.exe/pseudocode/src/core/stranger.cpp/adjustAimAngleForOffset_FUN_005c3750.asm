@@ -7,11 +7,6 @@
 ; float *          Stack[0x4]:4   angle
 ; float            Stack[0x8]:4   distance
 ; float            Stack[0xc]:4   offset
-; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00653c84 = 0.0100000000000000

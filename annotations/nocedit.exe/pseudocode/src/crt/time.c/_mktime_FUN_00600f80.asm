@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; _tm *            Stack[0x4]:4   timeptr
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
 ;   crt_time.c__time_FUN_006001f0 at 00600210

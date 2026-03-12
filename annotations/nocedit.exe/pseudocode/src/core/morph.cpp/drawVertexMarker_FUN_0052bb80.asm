@@ -6,9 +6,6 @@
 ; Parameters:
 ; SProjectedVertex * Stack[0x4]:4   vertex
 ; int              Stack[0x8]:4   radius
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052c2ea

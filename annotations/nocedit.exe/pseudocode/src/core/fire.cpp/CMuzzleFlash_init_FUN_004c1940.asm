@@ -8,9 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   position
 ; CMatrix3x3f *    Stack[0xc]:4   rotation_matrix
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
 ; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; XREF[1]:

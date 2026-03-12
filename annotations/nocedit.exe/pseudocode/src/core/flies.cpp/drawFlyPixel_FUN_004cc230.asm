@@ -7,8 +7,6 @@
 ; int              Stack[0x4]:4   screen_x
 ; int              Stack[0x8]:4   screen_y
 ; int              Stack[0xc]:4   z_depth
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_flies.cpp_CFlies_renderOpaque_FUN_004cc300 at 004cc6e6

@@ -12,7 +12,6 @@
 ; char[16]         Stack[-0x4c]:16  local_4c
 ; _FILE *          Stack[-0x3c]:4  local_3c
 ; SIZE_T           Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
 ; int              Stack[-0x30]:4  local_30
 ; SIZE_T           Stack[-0x2c]:4  local_2c
 ; int              Stack[-0x28]:4  local_28

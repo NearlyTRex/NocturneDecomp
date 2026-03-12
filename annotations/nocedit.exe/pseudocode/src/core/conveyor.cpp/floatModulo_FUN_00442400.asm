@@ -6,10 +6,6 @@
 ; Parameters:
 ; float            Stack[0x4]:4   value
 ; float            Stack[0x8]:4   divisor
-; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005feb90

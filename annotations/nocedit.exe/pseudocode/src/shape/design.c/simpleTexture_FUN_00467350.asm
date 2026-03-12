@@ -4,7 +4,6 @@
 ; void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x84]:4  local_84
 ; float            Stack[-0x80]:4  local_80
 ; float            Stack[-0x7c]:4  local_7c
 ; float            Stack[-0x78]:4  local_78

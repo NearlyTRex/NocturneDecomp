@@ -7,8 +7,6 @@
 ; CStairs *        Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; float            Stack[-0x18]:4  fStack_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006530ca = 0.5

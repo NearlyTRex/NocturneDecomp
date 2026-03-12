@@ -7,13 +7,9 @@
 ; CLarva *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined8       Stack[-0x200]:8  local_200
-; undefined8       Stack[-0x1f8]:8  local_1f8
 ; undefined1       Stack[-0x1f0]:1  local_1f0
 ; CVector3f        Stack[-0x128]:12  local_128
 ; CVector3f        Stack[-0x11c]:12  local_11c
-; undefined4       Stack[-0x110]:4  local_110
-; undefined4       Stack[-0x10c]:4  local_10c
 ; float            Stack[-0x108]:4  local_108
 ; float            Stack[-0x104]:4  local_104
 ; float            Stack[-0x100]:4  local_100
@@ -51,7 +47,6 @@
 ; float            Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00002424

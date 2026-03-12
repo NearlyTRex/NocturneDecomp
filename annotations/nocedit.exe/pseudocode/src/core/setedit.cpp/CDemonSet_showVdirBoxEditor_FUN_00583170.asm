@@ -6,32 +6,14 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined        Stack[-0x26c]:1  local_26c
 ; undefined4       Stack[-0x244]:4  local_244
 ; undefined4       Stack[-0x240]:4  local_240
 ; undefined4       Stack[-0x23c]:4  local_23c
-; undefined4       Stack[-0x238]:4  local_238
 ; undefined4       Stack[-0x234]:4  local_234
-; undefined4       Stack[-0x230]:4  local_230
-; undefined4       Stack[-0x22c]:4  local_22c
 ; undefined4       Stack[-0x228]:4  local_228
 ; undefined4       Stack[-0x224]:4  local_224
 ; undefined4       Stack[-0x220]:4  local_220
-; undefined4       Stack[-0x21c]:4  local_21c
-; undefined4       Stack[-0x218]:4  local_218
-; undefined4       Stack[-0x214]:4  local_214
-; undefined4       Stack[-0x20c]:4  local_20c
-; undefined4       Stack[-0x208]:4  local_208
-; undefined4       Stack[-0x204]:4  local_204
 ; undefined4       Stack[-0x200]:4  local_200
-; undefined4       Stack[-0x1fc]:4  local_1fc
-; undefined4       Stack[-0x1f8]:4  local_1f8
-; undefined4       Stack[-0x1f4]:4  local_1f4
-; undefined4       Stack[-0x1f0]:4  local_1f0
-; undefined4       Stack[-0x1ec]:4  local_1ec
-; undefined4       Stack[-0x1e8]:4  local_1e8
-; undefined4       Stack[-0x1e4]:4  local_1e4
-; undefined4       Stack[-0x1e0]:4  local_1e0
 ; undefined        Stack[-0x1dc]:1  local_1dc
 ; undefined4       Stack[-0x1d0]:4  local_1d0
 ; undefined4       Stack[-0x1cc]:4  local_1cc
@@ -128,7 +110,6 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
-; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584c38

@@ -29,7 +29,6 @@
 ; char *           Stack[-0x1c]:4  local_1c
 ; char *           Stack[-0x18]:4  local_18
 ; char             Stack[-0x14]:1  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[3]:
 ;   crt_process.c_execv_FUN_006101f0 at 00610202

@@ -6,9 +6,6 @@
 ; Parameters:
 ; CP2D *           Stack[0x4]:4   this_ptr
 ; double           Stack[0x8]:8   scale
-; Local Variables:
-; undefined8       Stack[-0x18]:8  local_18
-; undefined8       Stack[-0x10]:8  local_10
 ;
 ; *****************************************************************************
 

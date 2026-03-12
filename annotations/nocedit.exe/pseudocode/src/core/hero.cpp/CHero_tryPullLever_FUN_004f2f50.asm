@@ -6,10 +6,6 @@
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x50]:8  local_50
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
 ; CVector3f        Stack[-0x3c]:12  local_3c
 ; CVector3f        Stack[-0x30]:12  local_30
 ; CVector3f *      Stack[-0x1c]:4  local_1c

@@ -10,7 +10,6 @@
 ; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0 at 0048d9cf

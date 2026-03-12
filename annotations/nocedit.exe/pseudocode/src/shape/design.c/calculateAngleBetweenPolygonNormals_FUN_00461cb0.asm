@@ -6,10 +6,6 @@
 ; Parameters:
 ; SShapeEditorPolygon * Stack[0x4]:4   normal1_ptr
 ; SShapeEditorPolygon * Stack[0x8]:4   normal2_ptr
-; Local Variables:
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[2]:
 ;   shape_design.c_isAngleBelowThreshold_FUN_00461d30 at 00461d44

@@ -12,13 +12,13 @@ int __cdecl core_setcolid_cpp_intersectXZCylinder_FUN_00572e80(SIntersectXZCylin
   float fVar8;
   float fVar9;
   float fVar10;
+  float fVar2;
   float fVar6;
   float fVar1;
   float fVar4;
   float fVar5;
   float fVar7;
   float fVar3;
-  float fVar2;
   
   if ((collision_info->cylinder_bottom_y < cylinder->top_y) &&
      (cylinder->bottom_y < collision_info->cylinder_top_y)) {

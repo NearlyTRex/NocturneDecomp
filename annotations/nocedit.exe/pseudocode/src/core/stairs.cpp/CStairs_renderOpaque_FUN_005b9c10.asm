@@ -23,8 +23,6 @@
 ; int              Stack[-0x4c]:4  iStack_4c
 ; CVector3i        Stack[-0x48]:12  CStack_48
 ; int              Stack[-0x3c]:4  iStack_3c
-; undefined4       Stack[-0x38]:4  uStack_38
-; undefined4       Stack[-0x34]:4  uStack_34
 ; char *           Stack[-0x30]:4  pcStack_30
 ; float *          Stack[-0x2c]:4  pfStack_2c
 ; UOrientationVector * Stack[-0x28]:4  pUStack_28

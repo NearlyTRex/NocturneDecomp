@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CBoundingBox3D * Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
 ;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 at 00575421

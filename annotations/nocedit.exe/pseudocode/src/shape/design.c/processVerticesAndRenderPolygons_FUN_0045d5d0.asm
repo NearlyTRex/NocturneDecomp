@@ -4,10 +4,6 @@
 ; void __cdecl shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
 ; CVector3i        Stack[-0x28]:12  local_28
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18

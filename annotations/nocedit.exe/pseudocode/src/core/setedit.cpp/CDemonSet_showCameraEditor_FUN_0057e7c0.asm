@@ -6,7 +6,6 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x4790]:4  local_4790
 ; undefined4       Stack[-0x478c]:4  local_478c
 ; C3DSLight        Stack[-0x4788]:6296  local_4788
 ; C3DSLight        Stack[-0x2ef0]:6296  local_2ef0

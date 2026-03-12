@@ -16,7 +16,6 @@
 ; CVector3f        Stack[-0x34]:12  local_34
 ; CVector3f        Stack[-0x28]:12  local_28
 ; CVector3f        Stack[-0x1c]:12  local_1c
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   core_scat.cpp_CScat_process_FUN_005571f0 at 005575ab

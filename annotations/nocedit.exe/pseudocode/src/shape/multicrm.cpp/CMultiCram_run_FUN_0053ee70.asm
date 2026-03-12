@@ -6,8 +6,6 @@
 ; Parameters:
 ; CMultiCram *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x124]:4  local_124
-; undefined4       Stack[-0x120]:4  local_120
 ; char[256]        Stack[-0x11c]:256  local_11c
 ; uint             Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18

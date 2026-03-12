@@ -9,7 +9,6 @@
 ; Local Variables:
 ; undefined4       Stack[-0x240]:4  uStack_240
 ; char[255]        Stack[-0x23c]:255  local_23c
-; undefined1       Stack[-0x13d]:1  uStack_13d
 ; char[256]        Stack[-0x13c]:256  acStack_13c
 ; float            Stack[-0x3c]:4  fStack_3c
 ; float            Stack[-0x38]:4  fStack_38

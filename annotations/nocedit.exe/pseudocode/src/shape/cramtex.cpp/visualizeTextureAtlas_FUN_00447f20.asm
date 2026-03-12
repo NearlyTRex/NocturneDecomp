@@ -7,7 +7,6 @@
 ; int              Stack[0x4]:4   show_textures
 ; int              Stack[0x8]:4   is_complete
 ; Local Variables:
-; undefined8       Stack[-0x118]:8  local_118
 ; undefined8       Stack[-0x110]:8  local_110
 ; char[200]        Stack[-0x100]:200  local_100
 ; int              Stack[-0x38]:4  local_38
@@ -20,7 +19,6 @@
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[3]:
 ;   shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 at 00446946

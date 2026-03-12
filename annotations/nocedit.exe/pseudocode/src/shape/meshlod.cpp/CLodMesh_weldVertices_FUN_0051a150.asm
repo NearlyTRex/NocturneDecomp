@@ -7,14 +7,9 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   weld_threshold
 ; Local Variables:
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 at 0051ba39

@@ -8,9 +8,6 @@
 ; CDemonActor *    Stack[0x8]:4   actor
 ; int              Stack[0xc]:4   force_evaluation_mode
 ; Local Variables:
-; undefined4       Stack[-0x168]:4  local_168
-; undefined4       Stack[-0x164]:4  local_164
-; undefined4       Stack[-0x160]:4  local_160
 ; float            Stack[-0x15c]:4  fStack_15c
 ; CVector3i[7]     Stack[-0x158]:84  aCStack_158
 ; int              Stack[-0x100]:4  iStack_100

@@ -15,7 +15,6 @@
 ; CSkeleton *      Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   core_cloth.cpp_CCloth_setup_FUN_00439710 at 00439c9b

@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CConsole *       Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_console.cpp_CConsole_writeChar_FUN_00441970 at 00441a0c

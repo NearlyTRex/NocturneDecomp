@@ -10,7 +10,6 @@
 ; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
 ; undefined1       Stack[-0x18]:1  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:

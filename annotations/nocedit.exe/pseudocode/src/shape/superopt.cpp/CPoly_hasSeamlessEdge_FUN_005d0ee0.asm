@@ -6,9 +6,6 @@
 ; Parameters:
 ; CPoly *          Stack[0x4]:4   this_ptr
 ; CPoly *          Stack[0x8]:4   other
-; Local Variables:
-; undefined8       Stack[-0x140]:8  local_140
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00654312 = 0.00390625

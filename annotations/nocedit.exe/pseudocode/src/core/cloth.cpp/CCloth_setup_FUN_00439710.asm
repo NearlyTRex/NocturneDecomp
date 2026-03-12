@@ -9,9 +9,6 @@
 ; CVector3f *      Stack[0xc]:4   euler
 ; CDeformableModelInstance * Stack[0x10]:4   model_ptr
 ; Local Variables:
-; undefined4       Stack[-0xfc]:4  local_fc
-; undefined4       Stack[-0xf8]:4  local_f8
-; undefined4       Stack[-0xf4]:4  local_f4
 ; float            Stack[-0xf0]:4  local_f0
 ; float            Stack[-0xec]:4  local_ec
 ; float            Stack[-0xe8]:4  local_e8

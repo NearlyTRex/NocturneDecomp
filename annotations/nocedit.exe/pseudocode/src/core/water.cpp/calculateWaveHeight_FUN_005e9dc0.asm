@@ -6,9 +6,6 @@
 ; Parameters:
 ; int              Stack[0x4]:4   x
 ; int              Stack[0x8]:4   y
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006571af = 3.14159265350000

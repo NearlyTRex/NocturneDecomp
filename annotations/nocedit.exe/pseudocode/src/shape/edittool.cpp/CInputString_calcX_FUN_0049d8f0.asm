@@ -6,8 +6,6 @@
 ; Parameters:
 ; CInputString *   Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   char_index
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CInputString_draw_FUN_0049d9b0 at 0049da83

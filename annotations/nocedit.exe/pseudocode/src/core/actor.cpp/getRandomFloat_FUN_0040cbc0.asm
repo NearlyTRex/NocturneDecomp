@@ -3,9 +3,6 @@
 ; *****************************************************************************
 ; float __cdecl core_actor_cpp_getRandomFloat_FUN_0040cbc0(void)
 ;
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
 ;   float FLOAT_006142e8 = 0.00003051851

@@ -6,9 +6,6 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x600]:8  local_600
-; undefined8       Stack[-0x5f8]:8  local_5f8
-; undefined8       Stack[-0x5f0]:8  local_5f0
 ; CPickList        Stack[-0x5e8]:936  local_5e8
 ; char[256]        Stack[-0x240]:256  local_240
 ; char[256]        Stack[-0x140]:256  local_140

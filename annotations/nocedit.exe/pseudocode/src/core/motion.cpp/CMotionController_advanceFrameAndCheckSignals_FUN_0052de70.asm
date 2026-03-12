@@ -10,13 +10,8 @@
 ; float            Stack[0x10]:4   delta_time
 ; float            Stack[0x14]:4   scale_factor
 ; Local Variables:
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined8       Stack[-0x28]:8  local_28
 ; float            Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  fStack_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610 at 0052d749

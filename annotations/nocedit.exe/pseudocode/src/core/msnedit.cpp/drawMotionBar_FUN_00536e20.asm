@@ -4,7 +4,6 @@
 ; void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
 ;
 ; Local Variables:
-; undefined8       Stack[-0x100]:8  local_100
 ; float            Stack[-0xf8]:4  local_f8
 ; char[200]        Stack[-0xf4]:200  local_f4
 ; double           Stack[-0x2c]:8  local_2c

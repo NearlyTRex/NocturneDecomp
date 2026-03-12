@@ -9,20 +9,12 @@
 ; int *            Stack[0xc]:4   edge_count_ptr
 ; int              Stack[0x10]:4   is_secondary
 ; Local Variables:
-; undefined8       Stack[-0x330]:8  local_330
-; undefined8       Stack[-0x328]:8  local_328
-; undefined8       Stack[-0x320]:8  local_320
 ; undefined4       Stack[-0x318]:4  local_318
 ; undefined4       Stack[-0x314]:4  uStack_314
 ; undefined4       Stack[-0x310]:4  local_310
 ; undefined4       Stack[-0x30c]:4  uStack_30c
 ; undefined4       Stack[-0x308]:4  local_308
 ; undefined4       Stack[-0x304]:4  uStack_304
-; undefined8       Stack[-0x300]:8  local_300
-; undefined8       Stack[-0x2f8]:8  local_2f8
-; undefined8       Stack[-0x2f0]:8  local_2f0
-; undefined8       Stack[-0x2e8]:8  local_2e8
-; undefined8       Stack[-0x2e0]:8  local_2e0
 ; double           Stack[-0x2d8]:8  local_2d8
 ; double           Stack[-0x2d0]:8  local_2d0
 ; double           Stack[-0x2c8]:8  local_2c8

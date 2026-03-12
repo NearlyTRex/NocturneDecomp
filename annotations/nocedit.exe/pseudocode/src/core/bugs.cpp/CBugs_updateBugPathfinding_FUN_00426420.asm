@@ -9,7 +9,6 @@
 ; float            Stack[0xc]:4   delta_time
 ; CVector3f *      Stack[0x10]:4   dest_vertex
 ; Local Variables:
-; undefined4       Stack[-0x94]:4  local_94
 ; float            Stack[-0x90]:4  local_90
 ; float            Stack[-0x8c]:4  local_8c
 ; float            Stack[-0x88]:4  local_88

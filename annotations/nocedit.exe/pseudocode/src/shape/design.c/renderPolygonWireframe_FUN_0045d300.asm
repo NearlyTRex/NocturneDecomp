@@ -10,7 +10,6 @@
 ; SRenderVertex    Stack[-0x78]:48  local_78
 ; SRenderVertex    Stack[-0x48]:48  local_48
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0 at 0045d2db

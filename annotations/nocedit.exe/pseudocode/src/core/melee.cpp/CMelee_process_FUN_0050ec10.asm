@@ -7,7 +7,6 @@
 ; CMelee *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x24]:1  local_24
 ; CVector3f        Stack[-0x18]:12  CStack_18
 ;
 ; Referenced Globals:

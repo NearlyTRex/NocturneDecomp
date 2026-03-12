@@ -8,15 +8,8 @@
 ; CVector3f *      Stack[0x8]:4   velocity
 ; Local Variables:
 ; float[991]       Stack[-0x106c]:3964  afStackY_106c
-; undefined4       Stack[-0xdc]:4  local_dc
-; undefined4       Stack[-0xd8]:4  local_d8
-; undefined4       Stack[-0xd4]:4  local_d4
-; undefined8       Stack[-0xd0]:8  local_d0
 ; float            Stack[-0xc0]:4  local_c0
-; undefined4       Stack[-0xb8]:4  local_b8
-; undefined4       Stack[-0xb4]:4  local_b4
 ; float            Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0xac]:4  local_ac
 ; CVector3f        Stack[-0xa8]:12  local_a8
 ; CVector3f        Stack[-0x9c]:12  local_9c
 ; float            Stack[-0x90]:4  local_90

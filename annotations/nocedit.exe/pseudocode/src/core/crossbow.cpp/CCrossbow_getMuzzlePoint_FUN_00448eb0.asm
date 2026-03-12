@@ -6,13 +6,6 @@
 ; Parameters:
 ; CCrossbow *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   out_point
-; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80

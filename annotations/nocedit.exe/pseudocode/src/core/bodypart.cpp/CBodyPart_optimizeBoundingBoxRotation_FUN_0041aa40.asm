@@ -10,7 +10,6 @@
 ; Local Variables:
 ; int[1001]        Stack[-0x106c]:4004  aiStackY_106c
 ; int              Stack[-0xc0]:4  local_c0
-; undefined4       Stack[-0xbc]:4  local_bc
 ; CMatrix3x3f      Stack[-0xb8]:36  local_b8
 ; CVector3f        Stack[-0x90]:12  local_90
 ; int              Stack[-0x84]:4  local_84

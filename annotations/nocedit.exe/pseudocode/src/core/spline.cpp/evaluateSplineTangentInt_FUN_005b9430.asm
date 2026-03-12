@@ -9,10 +9,6 @@
 ; int              Stack[0xc]:4   v1
 ; int              Stack[0x10]:4   v2
 ; int              Stack[0x14]:4   v3
-; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; *****************************************************************************
 

@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[4]:
 ;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004f2a30 at 004f2a3d

@@ -7,10 +7,7 @@
 ; SRenderVertex *  Stack[0x4]:4   vertices
 ; int              Stack[0x8]:4   vertex_count
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ; SSoftwareEdge *  Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

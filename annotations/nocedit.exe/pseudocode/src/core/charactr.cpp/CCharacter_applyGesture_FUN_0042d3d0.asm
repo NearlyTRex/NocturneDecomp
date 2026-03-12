@@ -6,8 +6,6 @@
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ; float            Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:

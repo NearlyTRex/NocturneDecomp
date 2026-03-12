@@ -5,10 +5,6 @@
 ;
 ; Parameters:
 ; CVector3i *      Stack[0x4]:4   input_coords
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   engine_matrix.c_projectToScreen_FUN_0050e5b0 at 0050e5d6

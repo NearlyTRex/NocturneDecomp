@@ -7,9 +7,6 @@
 ; char *           Stack[0x4]:4   cheat_code
 ; char *           Stack[0x8]:4   class_name
 ; char *           Stack[0xc]:4   message
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cheat_1_wav_0062b9dd

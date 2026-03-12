@@ -9,8 +9,6 @@
 ; int              Stack[0xc]:4   y_start
 ; int              Stack[0x10]:4   x_max
 ; int              Stack[0x14]:4   y_max
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_2d.c_drawText_FUN_00401fd0 at 00402018

@@ -8,16 +8,11 @@
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined1       Stack[-0x320]:1  local_320
-; undefined4       Stack[-0x31c]:4  local_31c
-; undefined4       Stack[-0x2ec]:4  local_2ec
-; undefined4       Stack[-0x2e8]:4  local_2e8
 ; SDamageInfo      Stack[-0x2e4]:60  local_2e4
 ; SDamageInfo      Stack[-0x2a8]:60  local_2a8
 ; SDamageInfo      Stack[-0x26c]:60  local_26c
 ; SDamageInfo      Stack[-0x230]:60  local_230
 ; CVector3f        Stack[-0x1f4]:12  local_1f4
-; undefined4       Stack[-0x1e8]:4  local_1e8
-; undefined4       Stack[-0x1e4]:4  local_1e4
 ; float            Stack[-0x1e0]:4  local_1e0
 ; float            Stack[-0x1dc]:4  local_1dc
 ; float            Stack[-0x1d8]:4  local_1d8
@@ -77,7 +72,6 @@
 ; float            Stack[-0x1c]:4  local_1c
 ; uint             Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00002424

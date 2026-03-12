@@ -7,8 +7,6 @@
 ; SShapeEditorPolygon * Stack[0x4]:4   polygon_ptr
 ; Local Variables:
 ; float[2020]      Stack[-0x2034]:8080  afStackY_2034
-; undefined8       Stack[-0xa4]:8  local_a4
-; undefined8       Stack[-0x9c]:8  local_9c
 ; double           Stack[-0x94]:8  local_94
 ; double           Stack[-0x8c]:8  local_8c
 ; double           Stack[-0x84]:8  local_84
@@ -22,7 +20,6 @@
 ; float            Stack[-0x3c]:4  local_3c
 ; float[4]         Stack[-0x38]:16  local_38
 ; double           Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
 ; int              Stack[-0x18]:4  local_18
 ; uint             Stack[-0x14]:4  local_14
 ;

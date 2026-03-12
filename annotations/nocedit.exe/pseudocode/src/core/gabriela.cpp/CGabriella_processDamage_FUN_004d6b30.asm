@@ -6,9 +6,6 @@
 ; Parameters:
 ; CGabriella *     Stack[0x4]:4   this_ptr
 ; SDamageInfo *    Stack[0x8]:4   damage_info
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065e7c4 = 0.5

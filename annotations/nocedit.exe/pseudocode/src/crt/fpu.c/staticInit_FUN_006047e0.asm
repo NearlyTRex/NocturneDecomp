@@ -3,8 +3,6 @@
 ; *****************************************************************************
 ; void __cdecl crt_fpu_c_staticInit_FUN_006047e0(void)
 ;
-; Local Variables:
-; undefined2       Stack[-0x8]:2  local_8
 ;
 ; Referenced Globals:
 ;   byte BYTE_00684acc = 0x0

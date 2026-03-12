@@ -6,31 +6,15 @@
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x1f58]:4  local_1f58
-; undefined4       Stack[-0x1f54]:4  local_1f54
-; undefined8       Stack[-0x1f50]:8  local_1f50
-; undefined8       Stack[-0x1f48]:8  local_1f48
-; undefined8       Stack[-0x1f38]:8  local_1f38
-; undefined8       Stack[-0x1f30]:8  local_1f30
-; undefined8       Stack[-0x1f28]:8  local_1f28
-; undefined8       Stack[-0x1f20]:8  local_1f20
-; undefined8       Stack[-0x1f18]:8  local_1f18
 ; float            Stack[-0x1f0c]:4  local_1f0c
 ; CDeformableModelInstance * Stack[-0x1f08]:4  local_1f08
 ; float            Stack[-0x1f04]:4  local_1f04
-; undefined4       Stack[-0x1f00]:4  local_1f00
-; undefined4       Stack[-0x1efc]:4  local_1efc
 ; float            Stack[-0x1ef8]:4  local_1ef8
 ; float            Stack[-0x1ef4]:4  local_1ef4
 ; float            Stack[-0x1ef0]:4  local_1ef0
-; undefined4       Stack[-0x1eec]:4  local_1eec
-; undefined4       Stack[-0x1ee8]:4  local_1ee8
-; undefined4       Stack[-0x1ee4]:4  local_1ee4
 ; float            Stack[-0x1ee0]:4  local_1ee0
 ; float            Stack[-0x1edc]:4  local_1edc
 ; float            Stack[-0x1ed8]:4  fStack_1ed8
-; undefined4       Stack[-0x1ed4]:4  local_1ed4
-; undefined4       Stack[-0x1ed0]:4  local_1ed0
 ; char             Stack[-0x1ecc]:1  local_1ecc
 ; float            Stack[-0x1ec4]:4  local_1ec4
 ; float[1511]      Stack[-0x1bcc]:6044  afStack_1bcc
@@ -58,7 +42,6 @@
 ; undefined1[16]   Stack[-0x2c0]:16  local_2c0
 ; float[3]         Stack[-0x2b0]:12  local_2b0
 ; CQuaternion4f    Stack[-0x2a4]:16  CStack_2a4
-; undefined1       Stack[-0x294]:1  local_294
 ; CQuaternion4f    Stack[-0x290]:16  local_290
 ; CQuaternion4f    Stack[-0x280]:16  CStack_280
 ; CQuaternion4f    Stack[-0x270]:16  CStack_270

@@ -8,10 +8,6 @@
 ; uint             Stack[0x8]:4   vertex_count
 ; CVector2d *      Stack[0xc]:4   test_point
 ; Local Variables:
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
 ; double           Stack[-0x60]:8  local_60
 ; undefined4       Stack[-0x58]:4  local_58
 ; undefined4       Stack[-0x54]:4  uStack_54
@@ -23,8 +19,6 @@
 ; undefined4       Stack[-0x3c]:4  uStack_3c
 ; int              Stack[-0x38]:4  local_38
 ; int              Stack[-0x30]:4  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
 ; uint             Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:

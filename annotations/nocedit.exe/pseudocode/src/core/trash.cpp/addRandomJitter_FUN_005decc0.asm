@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; float *          Stack[0x4]:4   value
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10

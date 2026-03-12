@@ -8,8 +8,6 @@
 ; int              Stack[0x8]:4   vertex2_index
 ; int              Stack[0xc]:4   vertex3_index
 ; Local Variables:
-; undefined8       Stack[-0x94]:8  local_94
-; undefined8       Stack[-0x8c]:8  local_8c
 ; double           Stack[-0x84]:8  local_84
 ; double           Stack[-0x7c]:8  local_7c
 ; double           Stack[-0x74]:8  local_74
@@ -31,7 +29,6 @@
 ; float            Stack[-0x24]:4  local_24
 ; float            Stack[-0x20]:4  fStack_20
 ; float            Stack[-0x1c]:4  fStack_1c
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[2]:
 ;   shape_design.c_mergeAdjacentPolygons_FUN_00462b70 at 004633c0

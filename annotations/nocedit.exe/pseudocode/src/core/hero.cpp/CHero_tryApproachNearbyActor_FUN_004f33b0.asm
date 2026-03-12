@@ -6,7 +6,6 @@
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x84]:4  local_84
 ; SInteractionInfo Stack[-0x80]:32  SStack_80
 ; CVector3f        Stack[-0x60]:12  local_60
 ; CVector3f        Stack[-0x54]:12  CStack_54

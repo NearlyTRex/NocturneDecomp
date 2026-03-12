@@ -6,14 +6,6 @@
 ; Parameters:
 ; C3DSCamera *     Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
-; Local Variables:
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
-; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_exportLightsAndCameras_FUN_0057a0c0 at 0057a1ed

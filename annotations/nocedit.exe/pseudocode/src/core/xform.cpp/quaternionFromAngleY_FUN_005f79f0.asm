@@ -5,11 +5,6 @@
 ;
 ; Parameters:
 ; float            Stack[0x4]:4   angle_radians
-; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[9]:
 ;   core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0 at 0042dd2b

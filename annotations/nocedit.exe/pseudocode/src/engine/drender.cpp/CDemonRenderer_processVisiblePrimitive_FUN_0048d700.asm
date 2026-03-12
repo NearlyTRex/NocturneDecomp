@@ -9,12 +9,6 @@
 ; int              Stack[0xc]:4   render_flags
 ; Local Variables:
 ; STrianglePackedIndices Stack[-0x18]:6  local_18
-; undefined2       Stack[-0x12]:2  local_12
-; undefined2       Stack[-0x10]:2  local_10
-; undefined2       Stack[-0xe]:2  local_e
-; undefined2       Stack[-0xc]:2  local_c
-; undefined2       Stack[-0xa]:2  local_a
-; undefined2       Stack[-0x8]:2  local_8
 ;
 ; XREF[1]:
 ;   engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20 at 0048ce52

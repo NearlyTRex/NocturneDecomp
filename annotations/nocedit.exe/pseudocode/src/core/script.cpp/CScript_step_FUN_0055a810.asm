@@ -7,15 +7,6 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ; float *          Stack[0x8]:4   time_remaining
 ; Local Variables:
-; undefined4       Stack[-0x3fb8]:4  local_3fb8
-; undefined4       Stack[-0x3fb4]:4  local_3fb4
-; undefined4       Stack[-0x3fb0]:4  local_3fb0
-; undefined4       Stack[-0x3fac]:4  local_3fac
-; undefined8       Stack[-0x3fa8]:8  local_3fa8
-; undefined8       Stack[-0x3fa0]:8  local_3fa0
-; undefined8       Stack[-0x3f98]:8  local_3f98
-; undefined8       Stack[-0x3f90]:8  local_3f90
-; undefined8       Stack[-0x3f88]:8  local_3f88
 ; float            Stack[-0x3f80]:4  local_3f80
 ; float            Stack[-0x3f7c]:4  local_3f7c
 ; float            Stack[-0x3f78]:4  local_3f78

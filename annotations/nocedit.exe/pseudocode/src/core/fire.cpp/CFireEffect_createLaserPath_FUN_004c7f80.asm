@@ -15,12 +15,8 @@
 ; int              Stack[0x24]:4   green
 ; int              Stack[0x28]:4   blue
 ; Local Variables:
-; undefined4       Stack[-0x88]:4  local_88
 ; float            Stack[-0x84]:4  local_84
 ; float            Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
 ; CVector3f        Stack[-0x70]:12  local_70
 ; float            Stack[-0x64]:4  local_64
 ; float            Stack[-0x60]:4  local_60

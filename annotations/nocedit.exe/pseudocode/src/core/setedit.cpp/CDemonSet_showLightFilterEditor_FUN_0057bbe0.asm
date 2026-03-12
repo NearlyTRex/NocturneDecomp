@@ -7,7 +7,6 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   light_index
 ; Local Variables:
-; undefined8       Stack[-0x8b0]:8  local_8b0
 ; float            Stack[-0x8a8]:4  local_8a8
 ; CPickList        Stack[-0x8a4]:936  local_8a4
 ; CPickList        Stack[-0x4fc]:936  local_4fc

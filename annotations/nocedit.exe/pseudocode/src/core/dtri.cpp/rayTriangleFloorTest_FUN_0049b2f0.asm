@@ -9,8 +9,6 @@
 ; float            Stack[0xc]:4   search_radius
 ; float *          Stack[0x10]:4   out_height
 ; Local Variables:
-; undefined8       Stack[-0x88]:8  local_88
-; undefined4       Stack[-0x80]:4  local_80
 ; CVector3f        Stack[-0x7c]:12  local_7c
 ; CVector3f        Stack[-0x70]:12  local_70
 ; CVector3f        Stack[-0x64]:12  local_64

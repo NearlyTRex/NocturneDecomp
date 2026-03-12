@@ -8,8 +8,6 @@
 ; char *           Stack[0x8]:4   sound_name
 ; Local Variables:
 ; CSampleInfo      Stack[-0x160]:288  local_160
-; undefined8       Stack[-0x10]:8  local_10
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
 ;   core_mobster.cpp_CMobster_playTaunt_FUN_005279f0 at 00527a90

@@ -7,10 +7,6 @@
 ; CLarva *         Stack[0x4]:4   this_ptr
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
-; undefined8       Stack[-0x100]:8  local_100
-; undefined8       Stack[-0xf8]:8  local_f8
-; undefined4       Stack[-0xf0]:4  local_f0
-; undefined4       Stack[-0xec]:4  local_ec
 ; char[100]        Stack[-0xe8]:100  local_e8
 ; char[100]        Stack[-0x84]:100  local_84
 ; CVector3f        Stack[-0x20]:12  CStack_20

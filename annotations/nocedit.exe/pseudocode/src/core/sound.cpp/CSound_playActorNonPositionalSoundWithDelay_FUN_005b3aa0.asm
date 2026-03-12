@@ -8,8 +8,6 @@
 ; CDemonActor *    Stack[0x8]:4   actor
 ; char *           Stack[0xc]:4   sound_name
 ; float            Stack[0x10]:4   delay
-; Local Variables:
-; undefined8       Stack[-0xc]:8  local_c
 ;
 ; Called Functions:
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0

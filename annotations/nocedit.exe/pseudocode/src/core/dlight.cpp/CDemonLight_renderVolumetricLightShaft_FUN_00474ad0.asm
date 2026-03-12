@@ -7,14 +7,7 @@
 ; CDemonLight *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; int[990]         Stack[-0x10bc]:3960  aiStackY_10bc
-; undefined4       Stack[-0x138]:4  local_138
-; undefined4       Stack[-0x134]:4  local_134
-; undefined4       Stack[-0x130]:4  local_130
 ; SMRGLHeaderPrimitive Stack[-0x12c]:24  local_12c
-; undefined4       Stack[-0x114]:4  local_114
-; undefined4       Stack[-0x110]:4  local_110
-; undefined4       Stack[-0x10c]:4  local_10c
-; undefined4       Stack[-0x108]:4  local_108
 ; CVector3f        Stack[-0x104]:12  local_104
 ; CVector3i        Stack[-0xf8]:12  local_f8
 ; CVector3f        Stack[-0xec]:12  local_ec

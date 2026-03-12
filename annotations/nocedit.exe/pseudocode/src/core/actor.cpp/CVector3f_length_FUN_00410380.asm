@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; *****************************************************************************
 

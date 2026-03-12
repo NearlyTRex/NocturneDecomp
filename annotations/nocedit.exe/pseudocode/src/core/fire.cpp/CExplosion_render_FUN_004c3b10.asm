@@ -7,10 +7,6 @@
 ; CExplosion *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0x8c]:24  local_8c
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
 ; CVector3i        Stack[-0x64]:12  local_64
 ; CVector3i        Stack[-0x58]:12  local_58
 ; CVector3i        Stack[-0x4c]:12  local_4c

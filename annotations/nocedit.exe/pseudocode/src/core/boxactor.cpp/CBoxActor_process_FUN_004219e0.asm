@@ -13,7 +13,6 @@
 ; float            Stack[-0x88]:4  local_88
 ; float            Stack[-0x84]:4  local_84
 ; float            Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x70]:4  local_70
 ; CVector3f        Stack[-0x6c]:12  local_6c
 ; undefined1[52]   Stack[-0x60]:52  auStack_60
 ; CDemonActor *    Stack[-0x2c]:4  local_2c

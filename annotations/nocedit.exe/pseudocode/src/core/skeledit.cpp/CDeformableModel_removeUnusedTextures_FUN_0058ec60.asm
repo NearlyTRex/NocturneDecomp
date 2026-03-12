@@ -6,7 +6,6 @@
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
 ; SMRGLTextureLod * Stack[-0x20]:4  local_20
 ; STextureSet *    Stack[-0x1c]:4  local_1c
 ; CDeformableModel * Stack[-0x18]:4  local_18

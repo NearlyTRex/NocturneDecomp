@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CDemonLight *    Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 at 0056ab93

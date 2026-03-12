@@ -10,27 +10,6 @@
 ; SLaserInfo *     Stack[0x10]:4   laser_info
 ; int              Stack[0x14]:4   recursion_depth
 ; Local Variables:
-; undefined4       Stack[-0x290]:4  local_290
-; undefined4       Stack[-0x28c]:4  local_28c
-; undefined4       Stack[-0x288]:4  local_288
-; undefined4       Stack[-0x284]:4  local_284
-; undefined4       Stack[-0x280]:4  local_280
-; undefined4       Stack[-0x27c]:4  local_27c
-; undefined4       Stack[-0x278]:4  local_278
-; undefined4       Stack[-0x274]:4  local_274
-; undefined4       Stack[-0x270]:4  local_270
-; undefined4       Stack[-0x26c]:4  local_26c
-; undefined4       Stack[-0x268]:4  local_268
-; undefined4       Stack[-0x264]:4  local_264
-; undefined4       Stack[-0x260]:4  local_260
-; undefined4       Stack[-0x25c]:4  local_25c
-; undefined4       Stack[-0x258]:4  local_258
-; undefined4       Stack[-0x254]:4  local_254
-; undefined4       Stack[-0x250]:4  local_250
-; undefined4       Stack[-0x24c]:4  local_24c
-; undefined4       Stack[-0x248]:4  local_248
-; undefined4       Stack[-0x244]:4  local_244
-; undefined4       Stack[-0x240]:4  local_240
 ; SLaserInfo       Stack[-0x23c]:84  local_23c
 ; SLaserInfo       Stack[-0x1e8]:84  local_1e8
 ; float            Stack[-0x194]:4  local_194
@@ -104,7 +83,6 @@
 ; CVector3f *      Stack[-0x1c]:4  local_1c
 ; CVector3f *      Stack[-0x18]:4  local_18
 ; float *          Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[3]:
 ;   core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860 at 004a89bb

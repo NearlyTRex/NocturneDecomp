@@ -8,8 +8,6 @@
 ; int              Stack[0x8]:4   bit_count
 ; char * *         Stack[0xc]:4   output_pos
 ; int *            Stack[0x10]:4   bytes_remaining
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   support_codec.cpp_CLZWDictionary_readCodeFromBuffer_FUN_0043f0d0 at 0043f109

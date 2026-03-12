@@ -6,12 +6,7 @@
 ; Parameters:
 ; CBat *           Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
 ; float            Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined8       Stack[-0x18]:8  local_18
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
 ;   core_bat.cpp_CBat_processInEditor_FUN_00414f00 at 00414f96

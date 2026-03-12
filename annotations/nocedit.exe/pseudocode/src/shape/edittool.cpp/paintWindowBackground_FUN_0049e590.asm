@@ -3,9 +3,6 @@
 ; *****************************************************************************
 ; void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0049e590(void)
 ;
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80 at 004a1006

@@ -12,8 +12,6 @@
 ; float            Stack[0x18]:4   radius
 ; float            Stack[0x1c]:4   bottom_y
 ; float            Stack[0x20]:4   top_y
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_setcolid.cpp_CDemonSet_testCylinderCollision_FUN_00573470 at 00573caf

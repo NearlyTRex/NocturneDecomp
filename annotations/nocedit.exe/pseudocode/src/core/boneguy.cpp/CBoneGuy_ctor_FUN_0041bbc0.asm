@@ -8,7 +8,6 @@
 ; Local Variables:
 ; CVector3f        Stack[-0x20]:12  local_20
 ; CVector3f        Stack[-0x14]:12  local_14
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_boneguy.cpp_factoryFunc_FUN_0041b820 at 0041b83a

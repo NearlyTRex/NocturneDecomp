@@ -9,7 +9,6 @@
 ; dword            Stack[0xc]:4   share_mode
 ; va_list_t *      Stack[0x10]:4   extra_args
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
 ; DWORD            Stack[-0x24]:4  creation_disposition
 ; DWORD            Stack[-0x20]:4  flags_and_attributes
 ; DWORD            Stack[-0x1c]:4  share_mode_windows

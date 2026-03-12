@@ -8,7 +8,6 @@
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
 ; float            Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_bride.cpp_CBride_processDamage_FUN_00424830 at 004248a3

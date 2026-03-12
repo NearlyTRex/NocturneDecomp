@@ -6,7 +6,6 @@
 ; Parameters:
 ; STreeNode *      Stack[0x4]:4   node
 ; Local Variables:
-; undefined4       Stack[-0x218]:4  local_218
 ; SShapeEditorPolygon Stack[-0x214]:388  local_214
 ; byte[80]         Stack[-0x90]:80  local_90
 ; float            Stack[-0x40]:4  local_40
@@ -14,7 +13,6 @@
 ; float            Stack[-0x38]:4  local_38
 ; float            Stack[-0x34]:4  local_34
 ; STreeNode *      Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
 ; float            Stack[-0x28]:4  local_28
 ; uint             Stack[-0x24]:4  local_24
 ; uint             Stack[-0x20]:4  local_20

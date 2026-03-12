@@ -7,12 +7,6 @@
 ; CVector3f *      Stack[0x4]:4   start_point
 ; CVector3f *      Stack[0x8]:4   end_point
 ; Local Variables:
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
 ; CVector3i        Stack[-0x24]:12  local_24
 ; float            Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14

@@ -7,8 +7,6 @@
 ; CEditorTools *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   output_buffer
 ; Local Variables:
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
 ; _heapinfo        Stack[-0x28]:14  _Stack_28
 ; int              Stack[-0x18]:4  local_18
 ;

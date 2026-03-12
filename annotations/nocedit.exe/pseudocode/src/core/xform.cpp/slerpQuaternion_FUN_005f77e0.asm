@@ -11,12 +11,10 @@
 ; double           Stack[-0x80]:8  local_80
 ; double           Stack[-0x78]:8  local_78
 ; double           Stack[-0x70]:8  local_70
-; undefined8       Stack[-0x68]:8  local_68
 ; float            Stack[-0x60]:4  local_60
 ; float            Stack[-0x5c]:4  local_5c
 ; float            Stack[-0x58]:4  local_58
 ; float            Stack[-0x54]:4  local_54
-; undefined1       Stack[-0x50]:1  local_50
 ; CQuaternion4f[2] Stack[-0x40]:32  local_40
 ; double           Stack[-0x18]:8  local_18
 ;

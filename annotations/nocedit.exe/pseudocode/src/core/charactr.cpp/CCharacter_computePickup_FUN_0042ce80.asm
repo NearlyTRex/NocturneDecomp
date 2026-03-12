@@ -8,7 +8,6 @@
 ; int              Stack[0x8]:4   hand_index
 ; float            Stack[0xc]:4   blend_time
 ; Local Variables:
-; undefined8       Stack[-0x168]:8  local_168
 ; CMatrix3x4f      Stack[-0x160]:48  local_160
 ; CMatrix3x4f      Stack[-0x130]:48  local_130
 ; CMatrix3x4f      Stack[-0x100]:48  local_100

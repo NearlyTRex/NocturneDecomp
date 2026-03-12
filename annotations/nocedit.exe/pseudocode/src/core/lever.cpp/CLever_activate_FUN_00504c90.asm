@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[2]:
 ;   core_hero.cpp_CHero_executeLeverPull_FUN_004f30f0 at 004f3104

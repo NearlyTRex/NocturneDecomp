@@ -6,8 +6,6 @@
 ; Parameters:
 ; CGrave *         Stack[0x4]:4   this_ptr
 ; CBoundingBox3D * Stack[0x8]:4   out_box
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740

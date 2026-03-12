@@ -9,9 +9,6 @@
 ; CVector3f *      Stack[0xc]:4   result_ptr
 ; int              Stack[0x10]:4   show_current_value
 ; Local Variables:
-; undefined8       Stack[-0x58]:8  local_58
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
 ; char[40]         Stack[-0x40]:40  local_40
 ; CVector3f        Stack[-0x18]:12  local_18
 ;

@@ -7,11 +7,6 @@
 ; STreeNode *      Stack[0x4]:4   node
 ; _FILE *          Stack[0x8]:4   file
 ; int              Stack[0xc]:4   depth
-; Local Variables:
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:
 ;   shape_design.c_exportModelToMDL_FUN_00459e80 at 0045a1d9

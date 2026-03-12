@@ -6,8 +6,6 @@
 ; Parameters:
 ; uint *           Stack[0x4]:4   value1_ptr
 ; uint *           Stack[0x8]:4   value2_ptr
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190 at 004623a3

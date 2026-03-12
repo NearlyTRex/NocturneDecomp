@@ -8,9 +8,6 @@
 ; int              Stack[0x8]:4   box_index
 ; int              Stack[0xc]:4   new_box_index
 ; Local Variables:
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:

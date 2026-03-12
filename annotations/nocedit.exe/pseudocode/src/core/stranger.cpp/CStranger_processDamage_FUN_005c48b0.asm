@@ -6,9 +6,6 @@
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; SDamageInfo *    Stack[0x8]:4   damage_info
-; Local Variables:
-; undefined8       Stack[-0x1c]:8  local_1c
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBugs_00653d1c

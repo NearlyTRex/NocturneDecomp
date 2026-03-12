@@ -17,15 +17,15 @@ float __cdecl core_xform_cpp_computeOrthogonalityError_FUN_005f6460(CMatrix3x4f 
   double local_68;
   double local_60;
   double local_58;
+  double dVar9;
+  double dVar7;
+  double dVar8;
   float fVar5;
   float fVar6;
   float fVar3;
   float fVar4;
   float fVar1;
   float fVar2;
-  double dVar9;
-  double dVar7;
-  double dVar8;
   
   fVar1 = matrix->m[0].w;
   fVar2 = matrix->m[0].x;

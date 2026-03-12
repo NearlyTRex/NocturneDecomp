@@ -7,10 +7,7 @@
 ; CMobster *       Stack[0x4]:4   this_ptr
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
-; undefined8       Stack[-0x30]:8  local_30
-; undefined4       Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_mobster.cpp_CMobster_processDamage_FUN_00527740 at 0052776c

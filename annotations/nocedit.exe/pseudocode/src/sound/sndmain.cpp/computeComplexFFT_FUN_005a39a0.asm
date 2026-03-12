@@ -10,24 +10,9 @@
 ; float *          Stack[0x10]:4   output_imag
 ; int              Stack[0x14]:4   size
 ; Local Variables:
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined8       Stack[-0x98]:8  local_98
-; undefined8       Stack[-0x90]:8  local_90
-; undefined8       Stack[-0x88]:8  local_88
-; undefined8       Stack[-0x80]:8  local_80
-; undefined4       Stack[-0x78]:4  local_78
-; undefined8       Stack[-0x74]:8  local_74
-; undefined8       Stack[-0x6c]:8  local_6c
-; undefined8       Stack[-0x64]:8  local_64
-; undefined8       Stack[-0x5c]:8  local_5c
-; undefined8       Stack[-0x54]:8  local_54
-; undefined8       Stack[-0x4c]:8  local_4c
-; undefined8       Stack[-0x34]:8  local_34
 ; int              Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0064f397 = 2

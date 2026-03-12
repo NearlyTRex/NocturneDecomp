@@ -6,8 +6,6 @@
 ; Parameters:
 ; CMorph *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   morph_t
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
 ;   core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0 at 00418a5e

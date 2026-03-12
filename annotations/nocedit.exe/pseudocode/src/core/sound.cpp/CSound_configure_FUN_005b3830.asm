@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CSound *         Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[3]:
 ;   core_menu.cpp_configureSoundOptions_FUN_00511e50 at 00512aa1

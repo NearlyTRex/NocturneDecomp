@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_renderOverlay_FUN_004d8040 at 004d80eb

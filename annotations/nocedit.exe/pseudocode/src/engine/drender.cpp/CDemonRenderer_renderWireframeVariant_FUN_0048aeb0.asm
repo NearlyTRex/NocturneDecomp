@@ -7,8 +7,6 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ; int              Stack[0xc]:4   render_flags
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[7]:
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340 at 00419485

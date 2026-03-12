@@ -9,7 +9,6 @@
 ; int *            Stack[0xc]:4   hit_flag
 ; CVector3f *      Stack[0x10]:4   normal_out
 ; Local Variables:
-; undefined4       Stack[-0x60]:4  local_60
 ; CVector3f        Stack[-0x5c]:12  local_5c
 ; float            Stack[-0x50]:4  local_50
 ; float            Stack[-0x4c]:4  local_4c
@@ -17,7 +16,6 @@
 ; CVector3f        Stack[-0x44]:12  local_44
 ; CVector3f        Stack[-0x38]:12  local_38
 ; int              Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c

@@ -6,10 +6,8 @@
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
 ; CDeformableModel * Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0 at 0059c209

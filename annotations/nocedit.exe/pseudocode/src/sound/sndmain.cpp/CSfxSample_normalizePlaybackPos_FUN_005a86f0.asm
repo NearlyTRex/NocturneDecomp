@@ -7,9 +7,6 @@
 ; CSfxSample *     Stack[0x4]:4   this_ptr
 ; double           Stack[0x8]:8   position
 ; uint             Stack[0x10]:4   input_type
-; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0 at 005a65d1

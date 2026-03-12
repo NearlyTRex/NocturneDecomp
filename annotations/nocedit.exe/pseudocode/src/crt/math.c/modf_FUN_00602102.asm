@@ -6,8 +6,6 @@
 ; Parameters:
 ; double           Stack[0x4]:8   value
 ; double *         Stack[0xc]:4   integer_part
-; Local Variables:
-; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[3]:
 ;   crt_math.c_floor_FUN_005feb90 at 005feba3

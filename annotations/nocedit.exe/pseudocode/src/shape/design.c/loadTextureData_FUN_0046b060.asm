@@ -11,10 +11,6 @@
 ; int              Stack[0x14]:4   atlas_total_width
 ; int              Stack[0x18]:4   atlas_total_height
 ; Local Variables:
-; undefined8       Stack[-0x1b4]:8  local_1b4
-; undefined8       Stack[-0x1ac]:8  local_1ac
-; undefined8       Stack[-0x1a4]:8  local_1a4
-; undefined8       Stack[-0x19c]:8  local_19c
 ; uchar[4]         Stack[-0x184]:4  local_184
 ; uchar[4]         Stack[-0x180]:4  local_180
 ; uchar[4]         Stack[-0x17c]:4  local_17c

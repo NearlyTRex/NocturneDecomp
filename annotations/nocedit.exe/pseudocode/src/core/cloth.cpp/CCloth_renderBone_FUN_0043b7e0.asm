@@ -8,7 +8,6 @@
 ; int              Stack[0x8]:4   bone_index
 ; int              Stack[0xc]:4   show_labels
 ; Local Variables:
-; undefined4       Stack[-0x70]:4  local_70
 ; int              Stack[-0x68]:4  local_68
 ; CVector3i        Stack[-0x64]:12  local_64
 ; CVector3f        Stack[-0x58]:12  local_58

@@ -11,7 +11,6 @@
 ; Local Variables:
 ; CVector3f[3]     Stack[-0x3c]:36  local_3c
 ; float            Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_mirror.cpp_clipPolygonAgainstPlane_FUN_00521290 at 005213aa

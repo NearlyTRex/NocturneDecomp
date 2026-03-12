@@ -7,8 +7,6 @@
 ; CDSEModel *      Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined4       Stack[-0xcc]:4  local_cc
-; undefined4       Stack[-0xc8]:4  local_c8
 ; SMRGLModelBounds Stack[-0xc4]:52  local_c4
 ; int[13]          Stack[-0x90]:52  local_90
 ; int              Stack[-0x5c]:4  local_5c

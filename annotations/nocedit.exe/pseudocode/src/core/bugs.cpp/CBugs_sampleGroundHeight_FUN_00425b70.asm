@@ -9,11 +9,7 @@
 ; float            Stack[0xc]:4   z
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ; int              Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00426420 at 0042649b

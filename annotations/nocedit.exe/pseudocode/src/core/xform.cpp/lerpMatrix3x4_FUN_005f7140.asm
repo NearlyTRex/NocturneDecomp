@@ -9,7 +9,6 @@
 ; float            Stack[0xc]:4   t
 ; Local Variables:
 ; undefined4[1498] Stack[-0x184c]:5992  auStackY_184c
-; undefined8       Stack[-0xd8]:8  local_d8
 ; CMatrix3x4f      Stack[-0xd0]:48  local_d0
 ; float[12]        Stack[-0xa0]:48  local_a0
 ; CQuaternion4f    Stack[-0x70]:16  local_70

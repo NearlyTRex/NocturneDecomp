@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   texture_entry_index
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 at 0047a72d

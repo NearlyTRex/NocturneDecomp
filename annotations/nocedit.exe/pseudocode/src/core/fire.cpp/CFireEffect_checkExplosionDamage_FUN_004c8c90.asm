@@ -10,8 +10,6 @@
 ; CVector3f *      Stack[0x10]:4   out_force_dir
 ; int *            Stack[0x14]:4   out_damage
 ; Local Variables:
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
 ; float            Stack[-0x48]:4  local_48
 ; float            Stack[-0x44]:4  local_44
 ; float            Stack[-0x40]:4  local_40

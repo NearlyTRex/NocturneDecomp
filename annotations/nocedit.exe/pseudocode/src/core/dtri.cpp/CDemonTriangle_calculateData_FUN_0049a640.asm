@@ -6,10 +6,6 @@
 ; Parameters:
 ; CDemonTriangle * Stack[0x4]:4   triangle
 ; Local Variables:
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x14]:4  local_14
 ; float            Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:

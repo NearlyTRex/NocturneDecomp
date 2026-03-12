@@ -6,8 +6,6 @@
 ; Parameters:
 ; int              Stack[0x4]:4   coordinate
 ; int              Stack[0x8]:4   dimension
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_samplePixelAndAccumulate_FUN_0046ad00 at 0046ad27

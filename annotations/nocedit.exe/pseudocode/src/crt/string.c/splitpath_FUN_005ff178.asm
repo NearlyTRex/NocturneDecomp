@@ -9,8 +9,6 @@
 ; char *           Stack[0xc]:4   dir
 ; char *           Stack[0x10]:4   fname
 ; char *           Stack[0x14]:4   ext
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[34]:
 ;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043e04f

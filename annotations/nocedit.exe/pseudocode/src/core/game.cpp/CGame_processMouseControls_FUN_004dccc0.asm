@@ -9,11 +9,6 @@
 ; Local Variables:
 ; float            Stack[-0x40]:4  local_40
 ; float            Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_playerControls_FUN_004dbd80 at 004dbe06

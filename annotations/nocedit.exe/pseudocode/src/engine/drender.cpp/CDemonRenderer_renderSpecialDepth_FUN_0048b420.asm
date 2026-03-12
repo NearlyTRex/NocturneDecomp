@@ -6,8 +6,6 @@
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_water.cpp_CWater_render_FUN_005ea320 at 005ea801

@@ -111,12 +111,27 @@ def decompile_function(ifc, func, monitor, timeout=60):
     return res, code
 
 
-def commit_locals_for_function(res):
-    """Commit local names AND types from decompiler result to DB.
+def get_undefined_stack_offsets(func):
+    """Get the set of stack offsets that currently have undefined types in the DB."""
+    frame = func.getStackFrame()
+    if frame is None:
+        return set()
+    offsets = set()
+    for var in frame.getStackVariables():
+        if var.getStackOffset() >= 0:
+            continue
+        if is_undefined_type(var.getDataType().getName()):
+            offsets.add(var.getStackOffset())
+    return offsets
 
-    commitLocalNamesToDatabase only commits names (passes null for dataType,
-    which preserves existing DB types).  We need to call updateDBVariable
-    directly with the decompiler's resolved type to actually fix undefined types.
+
+def commit_locals_for_function(res):
+    """Commit local types from decompiler result to DB, but ONLY for variables
+    that currently have undefined types in the stack frame.
+
+    Variables that already have concrete types are left untouched — committing
+    all locals can cause the decompiler to regress on subsequent re-analysis
+    (e.g. splitting clean expressions into sub-piece operations).
 
     We skip variables with NO ADDRESS storage (dynamic/unassigned) since
     updateDBVariable throws IllegalArgumentException for those.
@@ -128,6 +143,11 @@ def commit_locals_for_function(res):
 
     hfunc = res.getHighFunction()
     if hfunc is None:
+        return 0
+
+    func = hfunc.getFunction()
+    undefined_offsets = get_undefined_stack_offsets(func)
+    if not undefined_offsets:
         return 0
 
     committed = 0
@@ -142,15 +162,18 @@ def commit_locals_for_function(res):
             if storage is None or storage.isUnassignedStorage():
                 continue
 
+            # Only commit types for variables that are currently undefined in DB
+            if not storage.isStackStorage():
+                continue
+            stack_offset = storage.getStackOffset()
+            if stack_offset not in undefined_offsets:
+                continue
+
             dt = sym.getDataType()
             if dt is not None and not is_undefined_type(dt.getName()):
                 HighFunctionDBUtil.updateDBVariable(
                     sym, sym.getName(), dt, SourceType.USER_DEFINED)
                 committed += 1
-            else:
-                # Still commit the name even if type is undefined
-                HighFunctionDBUtil.updateDBVariable(
-                    sym, None, None, SourceType.USER_DEFINED)
         except Exception as e:
             pass  # skip variables that can't be committed
 

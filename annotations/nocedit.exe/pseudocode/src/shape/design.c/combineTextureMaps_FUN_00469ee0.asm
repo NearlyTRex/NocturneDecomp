@@ -4,8 +4,6 @@
 ; void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x13c]:4  local_13c
-; undefined4       Stack[-0x138]:4  local_138
 ; char[80]         Stack[-0x134]:80  local_134
 ; char[80]         Stack[-0xe4]:80  local_e4
 ; char[80]         Stack[-0x94]:80  local_94

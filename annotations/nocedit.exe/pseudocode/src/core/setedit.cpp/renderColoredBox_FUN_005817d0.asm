@@ -12,13 +12,7 @@
 ; int              Stack[0x18]:4   b
 ; Local Variables:
 ; float            Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
 ; SMRGLHeaderPrimitive Stack[-0x54]:24  local_54
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
 ; CVector3i        Stack[-0x2c]:12  local_2c
 ; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c

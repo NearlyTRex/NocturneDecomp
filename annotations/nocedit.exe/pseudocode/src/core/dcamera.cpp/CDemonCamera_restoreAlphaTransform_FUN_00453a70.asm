@@ -7,15 +7,6 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; CVector3i *      Stack[0x8]:4   screen_pos
 ; int              Stack[0xc]:4   alpha_index
-; Local Variables:
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360 at 0044e48e

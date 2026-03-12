@@ -8,12 +8,6 @@
 ; int              Stack[0x8]:4   light_index
 ; Local Variables:
 ; undefined4[1443] Stack[-0x1838]:5772  auStackY_1838
-; undefined8       Stack[-0x1a4]:8  local_1a4
-; undefined8       Stack[-0x19c]:8  local_19c
-; undefined8       Stack[-0x194]:8  local_194
-; undefined8       Stack[-0x18c]:8  local_18c
-; undefined8       Stack[-0x184]:8  local_184
-; undefined8       Stack[-0x17c]:8  local_17c
 ; char[256]        Stack[-0x174]:256  local_174
 ; CVector3f[2]     Stack[-0x74]:24  local_74
 ; CRect            Stack[-0x5c]:16  local_5c

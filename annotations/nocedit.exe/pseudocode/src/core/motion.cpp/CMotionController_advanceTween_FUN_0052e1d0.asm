@@ -9,11 +9,7 @@
 ; float            Stack[0xc]:4   current_frame
 ; float *          Stack[0x10]:4   remaining_time
 ; Local Variables:
-; undefined8       Stack[-0x28]:8  local_28
 ; float            Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610 at 0052d822

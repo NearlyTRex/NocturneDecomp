@@ -6,8 +6,6 @@
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x170]:8  local_170
-; undefined4       Stack[-0x168]:4  local_168
 ; char[256]        Stack[-0x164]:256  local_164
 ; int              Stack[-0x64]:4  local_64
 ; int              Stack[-0x60]:4  local_60

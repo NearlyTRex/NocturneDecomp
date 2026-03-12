@@ -3,11 +3,6 @@
 ; *****************************************************************************
 ; double __fpureg crt_math_c_sqrt_FUN_0060710c(double value)
 ;
-; Local Variables:
-; undefined8       Stack[-0x1c]:8  local_1c
-; undefined8       Stack[-0x14]:8  local_14
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
 ;   crt_math.c_acos_FUN_00600162 at 00600184

@@ -8,9 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   start_pos
 ; CVector3f *      Stack[0xc]:4   end_pos
 ; Local Variables:
-; undefined8       Stack[-0xa8]:8  local_a8
-; undefined8       Stack[-0xa0]:8  local_a0
-; undefined4       Stack[-0x98]:4  local_98
 ; CVector3f        Stack[-0x94]:12  local_94
 ; CVector3f        Stack[-0x88]:12  local_88
 ; double           Stack[-0x7c]:8  local_7c

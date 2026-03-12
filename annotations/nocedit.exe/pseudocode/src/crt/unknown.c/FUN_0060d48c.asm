@@ -8,16 +8,8 @@
 ; undefined4 *     Stack[0x14]:4   in_stack_00000014
 ; undefined4       Stack[0x1c]:4   in_stack_0000001c
 ; Local Variables:
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
-; undefined1[10]   Stack[-0x24]:10  local_24
-; undefined8       Stack[-0x18]:8  local_18
-; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[2]:
 ;   crt_unknown.c_FUN_0060b106 at 0060b128

@@ -12,9 +12,6 @@
 ; double           Stack[-0x48]:8  local_48
 ; double           Stack[-0x40]:8  local_40
 ; double           Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
 ;
 ; XREF[2]:
 ;   shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 at 005d17a1

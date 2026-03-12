@@ -6,8 +6,6 @@
 ; Parameters:
 ; CP3D *           Stack[0x4]:4   this_ptr
 ; CP3D *           Stack[0x8]:4   other
-; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
 ;
 ; *****************************************************************************
 

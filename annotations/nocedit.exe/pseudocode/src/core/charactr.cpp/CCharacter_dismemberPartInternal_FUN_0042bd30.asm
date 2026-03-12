@@ -17,7 +17,6 @@
 ; CVector3f        Stack[-0x24]:12  local_24
 ; CMatrix3x4f *    Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[13]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415f74

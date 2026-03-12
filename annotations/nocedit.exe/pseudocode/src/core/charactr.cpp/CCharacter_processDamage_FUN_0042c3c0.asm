@@ -7,7 +7,6 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
-; undefined4       Stack[-0x30]:4  local_30
 ; CVector3f        Stack[-0x28]:12  local_28
 ; CVector3f        Stack[-0x1c]:12  local_1c
 ; int              Stack[-0x10]:4  local_10

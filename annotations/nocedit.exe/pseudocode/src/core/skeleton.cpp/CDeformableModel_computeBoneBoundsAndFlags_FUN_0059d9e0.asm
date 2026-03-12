@@ -10,11 +10,7 @@
 ; int              Stack[-0x30]:4  local_30
 ; int              Stack[-0x2c]:4  local_2c
 ; CDeformableModel * Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0 at 0059c200

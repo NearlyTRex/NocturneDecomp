@@ -13,7 +13,6 @@
 ; CVector3f        Stack[-0x5c]:12  CStack_5c
 ; CVector3f        Stack[-0x50]:12  CStack_50
 ; float            Stack[-0x44]:4  fStack_44
-; undefined4       Stack[-0x40]:4  uStack_40
 ; float            Stack[-0x3c]:4  fStack_3c
 ; CVector3f        Stack[-0x38]:12  CStack_38
 ; CVector3f        Stack[-0x2c]:12  CStack_2c

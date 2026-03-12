@@ -15,8 +15,6 @@
 ; Local Variables:
 ; CMatrix3x3f      Stack[-0xe0]:36  local_e0
 ; char             Stack[-0xb8]:1  local_b8
-; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xb0]:4  local_b0
 ; CVector3f        Stack[-0x94]:12  local_94
 ; CVector3f        Stack[-0x88]:12  local_88
 ; CVector3f        Stack[-0x7c]:12  local_7c

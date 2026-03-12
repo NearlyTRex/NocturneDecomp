@@ -6,7 +6,6 @@
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0xe8]:8  local_e8
 ; CBoundingBox3D   Stack[-0xe0]:24  local_e0
 ; float            Stack[-0xc8]:4  fStack_c8
 ; float            Stack[-0xc4]:4  fStack_c4

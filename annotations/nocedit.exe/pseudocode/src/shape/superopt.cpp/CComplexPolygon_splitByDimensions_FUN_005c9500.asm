@@ -33,36 +33,13 @@
 ; undefined4       Stack[-0xb8]:4  local_b8
 ; undefined4       Stack[-0xb4]:4  local_b4
 ; CVector3d        Stack[-0xb0]:24  local_b0
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
 ; CVector3d        Stack[-0x68]:24  local_68
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  uStack_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  uStack_2c
 ; int              Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24
 ; SExpandedEdge *  Stack[-0x20]:4  local_20
 ; SExpandedEdge *  Stack[-0x1c]:4  local_1c
 ; SExpandedEdge *  Stack[-0x18]:4  local_18
 ; SExpandedEdge *  Stack[-0x14]:4  local_14
-; undefined        Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0065423a = 0.5

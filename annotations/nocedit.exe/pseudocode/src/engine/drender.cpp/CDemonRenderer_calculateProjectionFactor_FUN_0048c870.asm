@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005709e0 at 00570a5a

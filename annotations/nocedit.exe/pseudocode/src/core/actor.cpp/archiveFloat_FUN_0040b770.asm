@@ -6,8 +6,6 @@
 ; Parameters:
 ; float *          Stack[0x4]:4   float_ptr
 ; char *           Stack[0x8]:4   property_name
-; Local Variables:
-; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[67]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c1c0 at 0040c20d

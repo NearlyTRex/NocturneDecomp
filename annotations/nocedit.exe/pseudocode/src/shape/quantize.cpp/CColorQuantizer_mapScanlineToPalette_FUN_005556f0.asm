@@ -11,24 +11,12 @@
 ; short            Stack[0x14]:2   end_x
 ; short            Stack[0x18]:2   num_palette_entries
 ; Local Variables:
-; undefined8       Stack[-0x78]:8  local_78
-; undefined8       Stack[-0x70]:8  local_70
-; undefined8       Stack[-0x68]:8  local_68
-; undefined8       Stack[-0x60]:8  local_60
 ; float            Stack[-0x58]:4  local_58
 ; float            Stack[-0x54]:4  local_54
 ; float            Stack[-0x50]:4  local_50
 ; float            Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
 ; int              Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
 ; float            Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 at 005562d1

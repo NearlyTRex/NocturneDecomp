@@ -7,8 +7,6 @@
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   pod_directory_path
 ; Local Variables:
-; undefined4       Stack[-0x2340]:4  local_2340
-; undefined4       Stack[-0x233c]:4  local_233c
 ; undefined        Stack[-0x2338]:1  local_2338
 ; undefined1       Stack[-0x2337]:1  local_2337
 ; undefined        Stack[-0x1b38]:1  local_1b38

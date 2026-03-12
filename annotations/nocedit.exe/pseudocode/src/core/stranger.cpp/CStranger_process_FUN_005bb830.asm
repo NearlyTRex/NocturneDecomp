@@ -6,9 +6,6 @@
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005bb7dc = 005bb84e

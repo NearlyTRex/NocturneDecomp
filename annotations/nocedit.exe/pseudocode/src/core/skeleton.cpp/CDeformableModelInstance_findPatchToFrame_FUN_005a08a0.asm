@@ -9,7 +9,6 @@
 ; float            Stack[0xc]:4   source_frame
 ; int              Stack[0x10]:4   target_motion_index
 ; Local Variables:
-; undefined4       Stack[-0x35a0]:4  local_35a0
 ; SPose            Stack[-0x3598]:6812  local_3598
 ; SPose            Stack[-0x1afc]:6812  local_1afc
 ; float            Stack[-0x60]:4  local_60

@@ -11,7 +11,6 @@
 ; double           Stack[-0x28]:8  local_28
 ; double           Stack[-0x20]:8  local_20
 ; double           Stack[-0x18]:8  local_18
-; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[2]:
 ;   shape_superopt.cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70 at 005c9064

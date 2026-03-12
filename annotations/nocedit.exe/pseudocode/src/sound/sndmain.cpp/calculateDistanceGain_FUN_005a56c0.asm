@@ -8,8 +8,6 @@
 ; float            Stack[0x8]:4   reference_distance
 ; float            Stack[0xc]:4   min_distance
 ; float            Stack[0x10]:4   max_distance
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0064fadf = 0.0500000000000000

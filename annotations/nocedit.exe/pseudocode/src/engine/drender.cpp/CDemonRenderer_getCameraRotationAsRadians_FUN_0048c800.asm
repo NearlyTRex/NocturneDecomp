@@ -8,7 +8,6 @@
 ; float *          Stack[0x8]:4   output
 ; Local Variables:
 ; CVector3i        Stack[-0x20]:12  local_20
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[11]:
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20 at 00473a64

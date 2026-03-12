@@ -7,7 +7,6 @@
 ; int              Stack[0x4]:4   selected_polygon_index
 ; Local Variables:
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 00460713

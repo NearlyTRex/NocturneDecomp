@@ -9,8 +9,6 @@
 ; CDemonActor *    Stack[0xc]:4   class_type
 ; char *           Stack[0x10]:4   class_name
 ; CActorPropertyFilterFunc * Stack[0x14]:4   filter_func
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_pickActorDialog_FUN_0053cad0 at 0053cb2c

@@ -45,7 +45,6 @@
 ; int              Stack[-0x1c]:4  local_1c
 ; char[4]          Stack[-0x18]:4  local_18
 ; byte[4]          Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d91b

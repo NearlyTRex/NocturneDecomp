@@ -11,17 +11,9 @@
 ; int              Stack[0x14]:4   filter_pos_y
 ; Local Variables:
 ; uchar            Stack[-0x40]:1  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
 ; uint             Stack[-0x38]:4  local_38
 ; uchar *          Stack[-0x34]:4  local_34
 ; int              Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422ae7

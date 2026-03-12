@@ -6,8 +6,6 @@
 ; Parameters:
 ; CWeather *       Stack[0x4]:4   this_ptr
 ; EWeatherType     Stack[0x8]:4   type
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[4]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ad2b5

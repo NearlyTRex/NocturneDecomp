@@ -7,9 +7,6 @@
 ; CDemonTriangle * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0x78]:24  SStack_78
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x48]:4  local_48
 ; CVector3i        Stack[-0x30]:12  local_30
 ; CVector3i        Stack[-0x24]:12  local_24
 ; CVector3i        Stack[-0x18]:12  local_18

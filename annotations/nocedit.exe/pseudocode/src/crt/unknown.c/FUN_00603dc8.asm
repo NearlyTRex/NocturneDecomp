@@ -4,9 +4,6 @@
 ; void __cdecl crt_unknown_c_FUN_00603dc8(void)
 ;
 ; Local Variables:
-; undefined2       Stack[-0xa4]:2  local_a4
-; undefined2       Stack[-0xa0]:2  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
 ; undefined1       Stack[-0x98]:1  local_98
 ; undefined1       Stack[-0x97]:1  local_97
 ; undefined1[12]   Stack[-0x4c]:12  local_4c

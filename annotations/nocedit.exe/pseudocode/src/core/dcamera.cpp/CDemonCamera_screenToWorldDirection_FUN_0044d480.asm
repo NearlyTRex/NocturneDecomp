@@ -8,12 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   output_ptr
 ; int              Stack[0xc]:4   screen_x
 ; int              Stack[0x10]:4   screen_y
-; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_raycastPickActor_FUN_0053c340 at 0053c3a5

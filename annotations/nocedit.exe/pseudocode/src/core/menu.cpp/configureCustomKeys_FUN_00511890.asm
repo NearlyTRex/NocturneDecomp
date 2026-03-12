@@ -4,7 +4,6 @@
 ; void __cdecl core_menu_cpp_configureCustomKeys_FUN_00511890(void)
 ;
 ; Local Variables:
-; undefined8       Stack[-0x11c]:8  local_11c
 ; char[256]        Stack[-0x114]:256  local_114
 ; int              Stack[-0x14]:4  local_14
 ;

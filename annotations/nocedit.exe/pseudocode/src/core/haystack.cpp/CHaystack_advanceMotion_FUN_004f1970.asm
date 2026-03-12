@@ -6,10 +6,6 @@
 ; Parameters:
 ; CHaystack *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
-; Local Variables:
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
 ;
 ; XREF[1]:
 ;   core_haystack.cpp_CHaystack_process_FUN_004f0e40 at 004f0edd

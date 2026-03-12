@@ -7,9 +7,6 @@
 ; CParticle *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
 ; CVector3f *      Stack[0xc]:4   velocity
-; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[3]:
 ;   core_fire.cpp_CRock_setup_FUN_004c17c0 at 004c17d6

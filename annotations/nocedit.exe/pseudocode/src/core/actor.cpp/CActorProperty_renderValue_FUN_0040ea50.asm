@@ -7,10 +7,6 @@
 ; CActorProperty * Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   actor
 ; char *           Stack[0xc]:4   output_buffer
-; Local Variables:
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[6]:
 ;   core_actor.cpp_CActorPropertyList_render_FUN_0040e850 at 0040e8b2

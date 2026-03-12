@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; double           Stack[0x4]:8   value
-; Local Variables:
-; undefined8       Stack[-0x14]:8  local_14
-; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[5]:
 ;   core_msnedit.cpp_drawMotionBar_FUN_00536e20 at 00537096

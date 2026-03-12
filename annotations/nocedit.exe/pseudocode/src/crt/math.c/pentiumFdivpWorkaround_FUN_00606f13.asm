@@ -3,9 +3,6 @@
 ; *****************************************************************************
 ; float10 __fpustack_safe crt_math_c_pentiumFdivpWorkaround_FUN_00606f13(float10 dividend,float10 divisor)
 ;
-; Local Variables:
-; undefined1[10]   Stack[-0x2c]:10  local_2c
-; undefined1[10]   Stack[-0x20]:10  local_20
 ;
 ; XREF[1]:
 ;   crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98 at 00606fcb

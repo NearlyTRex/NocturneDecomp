@@ -8,7 +8,6 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
-; undefined1       Stack[-0x8]:1  local_8
 ;
 ; XREF[2]:
 ;   crt_math.c_exp_FUN_006068e2 at 00606906

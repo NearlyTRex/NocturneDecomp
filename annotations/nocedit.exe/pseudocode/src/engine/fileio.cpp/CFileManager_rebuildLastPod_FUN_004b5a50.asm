@@ -8,8 +8,6 @@
 ; char *           Stack[0x8]:4   pod_filename
 ; char *           Stack[0xc]:4   volume_name
 ; Local Variables:
-; undefined4       Stack[-0x1840]:4  local_1840
-; undefined4       Stack[-0x183c]:4  local_183c
 ; CPodFile         Stack[-0x1838]:1068  local_1838
 ; CPickList        Stack[-0x140c]:936  local_140c
 ; CPickList        Stack[-0x1064]:936  local_1064

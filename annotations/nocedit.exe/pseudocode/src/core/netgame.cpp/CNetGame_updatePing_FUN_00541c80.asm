@@ -8,7 +8,6 @@
 ; int              Stack[0x8]:4   player_index
 ; float            Stack[0xc]:4   max_ping
 ; Local Variables:
-; undefined4       Stack[-0x30]:4  local_30
 ; float            Stack[-0x2c]:4  local_2c
 ; float            Stack[-0x28]:4  local_28
 ; SNetPacketHeader Stack[-0x24]:5  local_24

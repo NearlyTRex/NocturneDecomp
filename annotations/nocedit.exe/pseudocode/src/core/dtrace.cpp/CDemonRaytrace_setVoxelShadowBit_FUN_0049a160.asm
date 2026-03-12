@@ -8,7 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   world_position
 ; Local Variables:
 ; int[1014]        Stack[-0x1028]:4056  aiStackY_1028
-; undefined4       Stack[-0x40]:4  local_40
 ; int              Stack[-0x3c]:4  local_3c
 ; int              Stack[-0x38]:4  local_38
 ; int              Stack[-0x34]:4  local_34

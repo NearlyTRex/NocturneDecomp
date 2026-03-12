@@ -8,8 +8,6 @@
 ; Local Variables:
 ; char[1018]       Stack[-0x1406]:1018  acStackY_1406
 ; undefined2[2026] Stack[-0x100c]:4052  auStackY_100c
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
 ; char[4]          Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  uStack_20
 ; char[4]          Stack[-0x1c]:4  acStack_1c

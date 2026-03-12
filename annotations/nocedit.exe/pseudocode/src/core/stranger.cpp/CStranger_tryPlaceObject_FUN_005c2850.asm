@@ -6,15 +6,6 @@
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x108]:8  local_108
-; undefined8       Stack[-0x100]:8  local_100
-; undefined8       Stack[-0xf8]:8  local_f8
-; undefined8       Stack[-0xe8]:8  local_e8
-; undefined4       Stack[-0xe0]:4  local_e0
-; undefined4       Stack[-0xdc]:4  local_dc
-; undefined4       Stack[-0xd8]:4  local_d8
-; undefined4       Stack[-0xd4]:4  local_d4
-; undefined4       Stack[-0xd0]:4  local_d0
 ; CVector3f        Stack[-0xcc]:12  local_cc
 ; CVector3f        Stack[-0xc0]:12  CStack_c0
 ; CVector3f        Stack[-0xb4]:12  local_b4

@@ -8,16 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   segment_end
 ; float            Stack[0xc]:4   radius
 ; float *          Stack[0x10]:4   out_height
-; Local Variables:
-; undefined8       Stack[-0x60]:8  local_60
-; undefined8       Stack[-0x58]:8  local_58
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
 ;
 ; XREF[1]:
 ;   core_dcube.cpp_triangleCylinderCollision_FUN_00456040 at 00456222

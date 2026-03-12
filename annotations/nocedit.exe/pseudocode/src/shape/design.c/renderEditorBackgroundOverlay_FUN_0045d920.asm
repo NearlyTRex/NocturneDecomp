@@ -4,7 +4,6 @@
 ; void __cdecl shape_design_c_renderEditorBackgroundOverlay_FUN_0045d920(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x20]:1  local_20
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; int *            Stack[-0x14]:4  local_14

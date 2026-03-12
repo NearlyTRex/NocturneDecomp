@@ -4,10 +4,6 @@
 ; void __cdecl shape_design_c_generateGlobe_FUN_00468910(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined8       Stack[-0x90]:8  local_90
 ; char[80]         Stack[-0x88]:80  local_88
 ; int              Stack[-0x38]:4  local_38
 ; int              Stack[-0x34]:4  local_34

@@ -7,8 +7,6 @@
 ; CObj *           Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   update_adjacency
 ; Local Variables:
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
 ; void *           Stack[-0x68]:4  local_68
 ; int              Stack[-0x64]:4  local_64
 ; CP3D *           Stack[-0x60]:4  pCStack_60

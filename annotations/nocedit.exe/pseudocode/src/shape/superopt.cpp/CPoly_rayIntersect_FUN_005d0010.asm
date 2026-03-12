@@ -9,10 +9,7 @@
 ; CVector3d *      Stack[0xc]:4   ray_end
 ; CVector3d *      Stack[0x10]:4   out_hit_point
 ; Local Variables:
-; undefined8       Stack[-0xe8]:8  local_e8
-; undefined8       Stack[-0xe0]:8  local_e0
 ; double           Stack[-0xd8]:8  local_d8
-; undefined8       Stack[-0xd0]:8  local_d0
 ; undefined4[4]    Stack[-0xc8]:16  local_c8
 ; undefined4       Stack[-0xb8]:4  local_b8
 ; undefined4       Stack[-0xb4]:4  local_b4

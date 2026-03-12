@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CWerewolf *      Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Spine3_00657c5f

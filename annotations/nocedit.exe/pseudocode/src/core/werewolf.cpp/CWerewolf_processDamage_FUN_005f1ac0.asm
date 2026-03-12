@@ -7,7 +7,6 @@
 ; CWerewolf *      Stack[0x4]:4   this_ptr
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
-; undefined8       Stack[-0x30]:8  local_30
 ; CVector3f[2]     Stack[-0x28]:24  local_28
 ;
 ; Referenced Globals:

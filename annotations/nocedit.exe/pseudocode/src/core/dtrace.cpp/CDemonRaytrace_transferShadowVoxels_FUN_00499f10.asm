@@ -10,9 +10,6 @@
 ; CVector3f *      Stack[0x10]:4   start
 ; CVector3f *      Stack[0x14]:4   end
 ; Local Variables:
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
 ; CMatrix3x3f      Stack[-0x8c]:36  local_8c
 ; CVector3f        Stack[-0x64]:12  local_64
 ; float            Stack[-0x58]:4  local_58

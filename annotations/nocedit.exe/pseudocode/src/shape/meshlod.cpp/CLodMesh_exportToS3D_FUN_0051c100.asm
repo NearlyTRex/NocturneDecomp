@@ -6,13 +6,6 @@
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_ptr
-; Local Variables:
-; undefined8       Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x34]:8  local_34
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:
 ;   shape_meshlod.cpp_CLodMesh_exportToFile_FUN_0051c070 at 0051c0b2

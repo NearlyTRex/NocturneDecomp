@@ -6,9 +6,6 @@
 ; Parameters:
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ; CVector3i *      Stack[0x8]:4   voxel_coords
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0 at 00546c1d

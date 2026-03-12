@@ -6,12 +6,10 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24
 ; CVector3i *      Stack[-0x20]:4  local_20
 ; CVector3f *      Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00 at 0057fd0d

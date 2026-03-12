@@ -8,8 +8,6 @@
 ; float            Stack[0x8]:4   target_volume
 ; float            Stack[0xc]:4   fade_duration
 ; int              Stack[0x10]:4   stop_after_fade
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ab6ab

@@ -8,7 +8,6 @@
 ; Local Variables:
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520 at 0051d69e

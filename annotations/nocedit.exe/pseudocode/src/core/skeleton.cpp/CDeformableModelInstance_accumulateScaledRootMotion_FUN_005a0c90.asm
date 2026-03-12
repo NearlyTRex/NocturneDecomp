@@ -9,9 +9,6 @@
 ; float            Stack[0xc]:4   end_frame
 ; float            Stack[0x10]:4   scale_factor
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ; CVector3f        Stack[-0xc]:12  local_c
 ;
 ; Called Functions:

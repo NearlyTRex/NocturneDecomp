@@ -7,7 +7,6 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined8       Stack[-0x40]:8  local_40
 ; SIZE_T           Stack[-0x38]:4  local_38
 ; void *           Stack[-0x34]:4  local_34
 ; int              Stack[-0x30]:4  local_30

@@ -8,7 +8,6 @@
 ; Local Variables:
 ; int              Stack[-0x1c]:4  local_1c
 ; uint             Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; *****************************************************************************
 

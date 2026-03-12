@@ -7,8 +7,6 @@
 ; float *          Stack[0x4]:4   in_stack_00000004
 ; float            Stack[0x8]:4   in_stack_00000008
 ; float            Stack[0xc]:4   in_stack_0000000c
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 02d81a9c

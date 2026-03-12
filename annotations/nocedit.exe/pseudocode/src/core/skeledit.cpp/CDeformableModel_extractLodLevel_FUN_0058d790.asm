@@ -9,7 +9,6 @@
 ; CLodMesh *       Stack[0xc]:4   lod_mesh
 ; CMatrix3x4f *    Stack[0x10]:4   inverse_matrices
 ; Local Variables:
-; undefined8       Stack[-0x540]:8  local_540
 ; float            Stack[-0x538]:4  local_538
 ; CVector3f        Stack[-0x534]:12  local_534
 ; float[250]       Stack[-0x528]:1000  local_528
@@ -29,9 +28,7 @@
 ; int              Stack[-0x34]:4  local_34
 ; int              Stack[-0x30]:4  local_30
 ; int              Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
 ; float *          Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14

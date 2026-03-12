@@ -6,8 +6,6 @@
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   text
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[30]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00489d00 at 00489d10

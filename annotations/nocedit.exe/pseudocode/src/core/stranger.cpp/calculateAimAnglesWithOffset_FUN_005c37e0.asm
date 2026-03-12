@@ -8,17 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   direction
 ; float *          Stack[0xc]:4   offset_pair
 ; Local Variables:
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00653c8c = 0.0100000000000000

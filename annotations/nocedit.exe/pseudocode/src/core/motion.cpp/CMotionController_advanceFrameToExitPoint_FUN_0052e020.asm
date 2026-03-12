@@ -10,14 +10,8 @@
 ; float *          Stack[0x10]:4   inout_delta_time
 ; SMotionTransition * Stack[0x14]:4   out_transition
 ; Local Variables:
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined4       Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610 at 0052d91c

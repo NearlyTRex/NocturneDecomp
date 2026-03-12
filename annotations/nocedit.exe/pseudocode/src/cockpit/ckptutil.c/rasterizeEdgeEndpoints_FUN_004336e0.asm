@@ -11,7 +11,6 @@
 ; int              Stack[0x14]:4   buffer_height
 ; Local Variables:
 ; char[256]        Stack[-0x114]:256  local_114
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Edge_out_of_range_edge_d_00617dbc

@@ -5,10 +5,6 @@
 ;
 ; Parameters:
 ; MathErrorContext * Stack[0x4]:4   errorCtx
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined1       Stack[-0xc]:1  local_c
 ;
 ; XREF[1]:
 ;   crt_math.c_process_math_error_FUN_0060bf2d at 0060c004

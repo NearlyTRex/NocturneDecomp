@@ -7,10 +7,6 @@
 ; CDemonGlobe *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; SMRGLHeaderPrimitive Stack[-0x64]:24  local_64
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
 ; float            Stack[-0x3c]:4  local_3c
 ; float            Stack[-0x38]:4  local_38
 ; float            Stack[-0x34]:4  local_34

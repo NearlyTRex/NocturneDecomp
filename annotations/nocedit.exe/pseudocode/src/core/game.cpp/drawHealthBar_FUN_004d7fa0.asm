@@ -9,9 +9,6 @@
 ; int              Stack[0xc]:4   x2
 ; int              Stack[0x10]:4   y2
 ; float            Stack[0x14]:4   fill_percent
-; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062b255 = 0.600000000000000

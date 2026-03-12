@@ -7,7 +7,6 @@
 ; char *           Stack[0x4]:4   directory_path
 ; int              Stack[0x8]:4   mode
 ; Local Variables:
-; undefined4       Stack[-0x3fd0]:4  local_3fd0
 ; char[16000]      Stack[-0x3fcc]:16000  local_3fcc
 ; char[200]        Stack[-0x14c]:200  local_14c
 ; char[80]         Stack[-0x84]:80  local_84

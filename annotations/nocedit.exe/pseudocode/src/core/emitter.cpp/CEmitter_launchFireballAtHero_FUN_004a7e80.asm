@@ -6,8 +6,6 @@
 ; Parameters:
 ; CEmitter *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
 ; float            Stack[-0x6c]:4  local_6c
 ; float            Stack[-0x68]:4  local_68
 ; float            Stack[-0x64]:4  local_64
@@ -17,7 +15,6 @@
 ; CVector3f        Stack[-0x54]:12  local_54
 ; CVector3f        Stack[-0x48]:12  local_48
 ; double           Stack[-0x3c]:8  dStack_3c
-; undefined4       Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
 ; float            Stack[-0x10]:4  local_10

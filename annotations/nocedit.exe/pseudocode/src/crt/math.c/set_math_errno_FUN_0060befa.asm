@@ -6,11 +6,6 @@
 ; Parameters:
 ; int              Stack[0x4]:4   errorFlags
 ; double *         Stack[0x8]:4   valuePtr
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   crt_math.c_handle_math_error_FUN_0060c02b at 0060c08d

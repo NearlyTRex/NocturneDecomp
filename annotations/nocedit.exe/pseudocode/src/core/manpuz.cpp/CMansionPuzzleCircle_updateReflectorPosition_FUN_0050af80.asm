@@ -7,9 +7,6 @@
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   reflector_index
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ; float[7]         Stack[-0x1c]:28  local_1c
 ;
 ; XREF[1]:

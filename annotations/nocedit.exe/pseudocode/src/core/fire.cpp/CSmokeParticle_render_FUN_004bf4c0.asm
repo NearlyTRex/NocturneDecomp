@@ -10,7 +10,6 @@
 ; CVector3i        Stack[-0x64]:12  local_64
 ; float            Stack[-0x58]:4  local_58
 ; float            Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
 ; CVector3i        Stack[-0x4c]:12  local_4c
 ; CVector3i        Stack[-0x40]:12  local_40
 ; CVector3i        Stack[-0x34]:12  local_34

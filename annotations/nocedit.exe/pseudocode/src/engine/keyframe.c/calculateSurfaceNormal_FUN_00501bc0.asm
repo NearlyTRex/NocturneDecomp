@@ -7,15 +7,7 @@
 ; CVector3i *      Stack[0x4]:4   vertex_data
 ; SMRGLPrimitiveTriangle * Stack[0x8]:4   texture
 ; Local Variables:
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x24]:4  local_24
 ; float            Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_0041a050 at 0041a43a

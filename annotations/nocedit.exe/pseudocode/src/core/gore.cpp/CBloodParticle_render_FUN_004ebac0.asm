@@ -27,7 +27,6 @@
 ; CVector3i        Stack[-0x58]:12  local_58
 ; float            Stack[-0x4c]:4  local_4c
 ; float            Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
 ; int              Stack[-0x28]:4  local_28
 ; int              Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20

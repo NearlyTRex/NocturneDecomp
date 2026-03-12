@@ -6,8 +6,6 @@
 ; Parameters:
 ; CGabriella *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x12c]:4  local_12c
-; undefined8       Stack[-0x128]:8  local_128
 ; float            Stack[-0x120]:4  local_120
 ; float            Stack[-0x11c]:4  local_11c
 ; float            Stack[-0x118]:4  fStack_118
@@ -45,7 +43,6 @@
 ; float            Stack[-0x2c]:4  fStack_2c
 ; float            Stack[-0x28]:4  fStack_28
 ; float            Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
 ; float            Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18
 ;

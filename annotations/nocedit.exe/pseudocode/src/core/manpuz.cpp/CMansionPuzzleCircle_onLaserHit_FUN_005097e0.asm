@@ -6,8 +6,6 @@
 ; Parameters:
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ; SLaserInfo *     Stack[0x8]:4   laser_info
-; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006356fd = 0.00392156862745098

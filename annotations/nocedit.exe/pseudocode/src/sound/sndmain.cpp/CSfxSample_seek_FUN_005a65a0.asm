@@ -7,10 +7,6 @@
 ; CSfxSample *     Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   playback_position
 ; int              Stack[0xc]:4   dest_buffer_offset
-; Local Variables:
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x1c]:8  local_1c
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730 at 005a698f

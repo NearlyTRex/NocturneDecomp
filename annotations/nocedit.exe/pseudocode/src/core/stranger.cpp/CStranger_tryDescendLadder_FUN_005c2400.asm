@@ -8,7 +8,6 @@
 ; Local Variables:
 ; undefined4       Stack[-0xf8]:4  uStack_f8
 ; undefined4       Stack[-0xf4]:4  uStack_f4
-; undefined8       Stack[-0xf0]:8  local_f0
 ; CBoundingBox3D   Stack[-0xe8]:24  local_e8
 ; CVector3f        Stack[-0xd0]:12  local_d0
 ; CVector3f        Stack[-0xc4]:12  CStack_c4

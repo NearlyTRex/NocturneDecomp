@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960 at 005bc346

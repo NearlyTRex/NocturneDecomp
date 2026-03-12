@@ -26,11 +26,11 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440(SSoftwa
   int iVar15;
   int iVar16;
   char *pcVar17;
+  int iVar2;
+  int *piVar1;
   bool bVar4;
   uint *puVar3;
   byte bVar5;
-  int iVar2;
-  int *piVar1;
   
   iVar1 = scanline_y;
   uVar8 = (int)left_edge - g_ClipTop;

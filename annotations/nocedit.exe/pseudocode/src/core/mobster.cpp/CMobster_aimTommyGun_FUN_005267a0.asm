@@ -8,7 +8,6 @@
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; float[1519]      Stack[-0x185c]:6076  afStackY_185c
-; undefined4       Stack[-0x8c]:4  local_8c
 ; float            Stack[-0x88]:4  local_88
 ; float            Stack[-0x84]:4  local_84
 ; CQuaternion4f    Stack[-0x80]:16  local_80

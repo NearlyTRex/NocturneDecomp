@@ -8,7 +8,6 @@
 ; Local Variables:
 ; char[1018]       Stack[-0x146e]:1018  acStackY_146e
 ; undefined2[630]  Stack[-0x1074]:1260  auStackY_1074
-; undefined8       Stack[-0xb60]:8  local_b60
 ; char[260]        Stack[-0xb58]:260  local_b58
 ; _FILE *          Stack[-0xa54]:4  local_a54
 ; int              Stack[-0xa50]:4  local_a50
@@ -23,7 +22,6 @@
 ; uint             Stack[-0xa2c]:4  local_a2c
 ; int              Stack[-0xa28]:4  local_a28
 ; char[80]         Stack[-0xa24]:80  local_a24
-; undefined4       Stack[-0x9d4]:4  local_9d4
 ; char[80]         Stack[-0x9d0]:80  local_9d0
 ; int              Stack[-0x980]:4  local_980
 ; char[300]        Stack[-0x97c]:300  local_97c

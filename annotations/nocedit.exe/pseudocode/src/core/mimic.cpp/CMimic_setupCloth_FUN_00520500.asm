@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CMimic *         Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_mimic.cpp_CMimic_process_FUN_0051f780 at 0051f8db

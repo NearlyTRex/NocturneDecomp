@@ -9,8 +9,6 @@
 ; CVector3f *      Stack[0xc]:4   ray_direction
 ; CVector3f *      Stack[0x10]:4   out_normal
 ; Local Variables:
-; undefined8       Stack[-0x30]:8  local_30
-; undefined4       Stack[-0x28]:4  local_28
 ; CVector3f        Stack[-0x24]:12  local_24
 ; float            Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14

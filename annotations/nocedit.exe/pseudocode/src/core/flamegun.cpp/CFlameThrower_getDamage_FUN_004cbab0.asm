@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; CFlameThrower *  Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; *****************************************************************************
 

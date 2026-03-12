@@ -9,8 +9,6 @@
 ; float *          Stack[0xc]:4   p1
 ; float *          Stack[0x10]:4   p2
 ; float *          Stack[0x14]:4   p3
-; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
 ;
 ; *****************************************************************************
 

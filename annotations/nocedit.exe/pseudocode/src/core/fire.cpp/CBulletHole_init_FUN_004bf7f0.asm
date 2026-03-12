@@ -9,7 +9,6 @@
 ; CVector3f *      Stack[0xc]:4   surface_normal
 ; CDemonActor *    Stack[0x10]:4   hit_actor
 ; Local Variables:
-; undefined1       Stack[-0x114]:1  local_114
 ; CMatrix3x4f      Stack[-0x10c]:48  local_10c
 ; CMatrix3x4f      Stack[-0xdc]:48  local_dc
 ; CMatrix3x4f      Stack[-0xac]:48  local_ac

@@ -8,8 +8,6 @@
 ; char *           Stack[0x8]:4   prefix_string
 ; CSfxOptions *    Stack[0xc]:4   options
 ; uint             Stack[0x10]:4   format_flags
-; Local Variables:
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_006508fd

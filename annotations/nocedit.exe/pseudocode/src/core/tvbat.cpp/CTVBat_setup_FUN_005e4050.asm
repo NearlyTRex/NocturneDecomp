@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CTVBat *         Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10

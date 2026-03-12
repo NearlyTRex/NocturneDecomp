@@ -4,8 +4,6 @@
 ; void __cdecl shape_design_c_centerObject_FUN_00466610(void)
 ;
 ; Local Variables:
-; undefined8       Stack[-0xc4]:8  local_c4
-; undefined4       Stack[-0xbc]:4  local_bc
 ; char[80]         Stack[-0xb8]:80  local_b8
 ; double           Stack[-0x68]:8  local_68
 ; double           Stack[-0x60]:8  local_60
@@ -18,7 +16,6 @@
 ; double           Stack[-0x28]:8  local_28
 ; int              Stack[-0x20]:4  local_20
 ; int              Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

@@ -7,9 +7,6 @@
 ; CSuccubus *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
 ; CVector3f        Stack[-0x68]:12  local_68
 ; float            Stack[-0x5c]:4  local_5c
 ; float            Stack[-0x58]:4  local_58

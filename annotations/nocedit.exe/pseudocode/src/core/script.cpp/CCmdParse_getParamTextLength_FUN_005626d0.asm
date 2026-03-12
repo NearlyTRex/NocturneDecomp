@@ -6,8 +6,6 @@
 ; Parameters:
 ; CCmdParse *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   param_count
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; *****************************************************************************
 

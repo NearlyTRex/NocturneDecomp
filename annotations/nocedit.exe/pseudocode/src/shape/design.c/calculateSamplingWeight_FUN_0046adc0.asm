@@ -8,8 +8,6 @@
 ; double           Stack[0xc]:8   start_coord
 ; double           Stack[0x14]:8   end_coord
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
 ; double           Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:

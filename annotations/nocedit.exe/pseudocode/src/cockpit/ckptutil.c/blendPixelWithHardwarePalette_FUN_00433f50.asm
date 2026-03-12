@@ -9,14 +9,10 @@
 ; float            Stack[0xc]:4   alpha
 ; int              Stack[0x10]:4   color
 ; Local Variables:
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
 ; uint             Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
 ; _MMX_INTEGER     Stack[-0x30]:8  local_30
 ; _MMX_INTEGER     Stack[-0x28]:8  local_28
 ; _MMX_INTEGER     Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0 at 00433b43

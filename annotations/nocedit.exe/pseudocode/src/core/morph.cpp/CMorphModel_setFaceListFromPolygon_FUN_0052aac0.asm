@@ -13,12 +13,9 @@
 ; int              Stack[0x1c]:4   start_face
 ; int              Stack[0x20]:4   poly_count
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
 ; int *            Stack[-0x24]:4  local_24
 ; int              Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_0052a580 at 0052a6f8

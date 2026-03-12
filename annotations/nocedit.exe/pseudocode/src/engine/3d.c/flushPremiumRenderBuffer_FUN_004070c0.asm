@@ -6,7 +6,6 @@
 ; Local Variables:
 ; int              Stack[-0x10]:4  local_10
 ; int              Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8

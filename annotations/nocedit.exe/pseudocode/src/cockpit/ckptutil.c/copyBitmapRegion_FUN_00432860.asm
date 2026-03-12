@@ -12,8 +12,6 @@
 ; int              Stack[0x18]:4   num_rows
 ; int              Stack[0x1c]:4   src_x_offset
 ; int              Stack[0x20]:4   src_y_offset
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00431780

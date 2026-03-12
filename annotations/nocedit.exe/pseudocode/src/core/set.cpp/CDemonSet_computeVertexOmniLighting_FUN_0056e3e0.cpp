@@ -17,9 +17,9 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0(CDemo
   float local_40;
   float local_3c;
   float local_38;
+  float fVar2;
   int iVar1;
   float fVar3;
-  float fVar2;
   
   iVar5 = 0;
   local_3c = 0.0;

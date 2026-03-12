@@ -6,10 +6,6 @@
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   gamma_value
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0044c0f0 at 0044c101

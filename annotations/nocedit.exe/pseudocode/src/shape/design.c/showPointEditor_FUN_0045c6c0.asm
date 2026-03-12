@@ -4,16 +4,7 @@
 ; void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void)
 ;
 ; Local Variables:
-; undefined8       Stack[-0xa8]:8  local_a8
-; undefined8       Stack[-0xa0]:8  local_a0
-; undefined8       Stack[-0x98]:8  local_98
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
 ; char[104]        Stack[-0x84]:104  local_84
-; undefined1       Stack[-0x1c]:1  local_1c
-; undefined1       Stack[-0x18]:1  local_18
-; undefined1       Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showShapeEditorMenu_FUN_0046f290 at 0046f67d

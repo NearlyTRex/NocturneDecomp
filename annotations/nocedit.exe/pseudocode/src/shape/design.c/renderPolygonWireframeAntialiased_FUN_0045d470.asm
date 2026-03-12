@@ -8,7 +8,6 @@
 ; int              Stack[0x8]:4   line_color
 ; Local Variables:
 ; int              Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0 at 0045d2ed

@@ -7,10 +7,6 @@
 ; int              Stack[0x4]:4   polygon1_index
 ; int              Stack[0x8]:4   polygon2_index
 ; Local Variables:
-; undefined8       Stack[-0x21c]:8  local_21c
-; undefined4       Stack[-0x15c]:4  local_15c
-; undefined4       Stack[-0x158]:4  local_158
-; undefined4       Stack[-0x154]:4  local_154
 ; float[6]         Stack[-0x90]:24  local_90
 ; float            Stack[-0x78]:4  local_78
 ; float[6]         Stack[-0x74]:24  local_74

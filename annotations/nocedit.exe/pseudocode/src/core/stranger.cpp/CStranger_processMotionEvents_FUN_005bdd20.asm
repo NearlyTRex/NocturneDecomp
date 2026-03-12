@@ -7,8 +7,6 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0xb0]:1  local_b0
-; undefined4       Stack[-0xac]:4  local_ac
 ; undefined4       Stack[-0x94]:4  local_94
 ; undefined4       Stack[-0x90]:4  local_90
 ; undefined4       Stack[-0x8c]:4  local_8c

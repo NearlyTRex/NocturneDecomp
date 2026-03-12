@@ -7,10 +7,6 @@
 ; CBox *           Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; char *           Stack[0xc]:4   indent_prefix
-; Local Variables:
-; undefined8       Stack[-0x24]:8  local_24
-; undefined8       Stack[-0x1c]:8  local_1c
-; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[1]:
 ;   core_actor.cpp_archiveBox_FUN_0040bd70 at 0040be2c

@@ -6,8 +6,6 @@
 ; Parameters:
 ; CBulletTrail *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
 ; CVector3f        Stack[-0x78]:12  local_78
 ; float            Stack[-0x6c]:4  local_6c
 ; float            Stack[-0x68]:4  local_68

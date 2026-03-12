@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   primitive
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8

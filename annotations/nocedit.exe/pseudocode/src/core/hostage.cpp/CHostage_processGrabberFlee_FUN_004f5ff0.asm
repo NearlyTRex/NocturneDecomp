@@ -7,7 +7,6 @@
 ; CHostage *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
 ; CVector3f        Stack[-0x20]:12  local_20
 ; CVector3f        Stack[-0x14]:12  local_14
 ; float            Stack[-0x8]:4  local_8

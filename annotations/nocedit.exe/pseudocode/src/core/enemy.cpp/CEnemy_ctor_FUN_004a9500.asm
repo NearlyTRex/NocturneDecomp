@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CEnemy *         Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[27]:
 ;   core_armour.cpp_CArmour_ctor_FUN_004121a0 at 004121a8

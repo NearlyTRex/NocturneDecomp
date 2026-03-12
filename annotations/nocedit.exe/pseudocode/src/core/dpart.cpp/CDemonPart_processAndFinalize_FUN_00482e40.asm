@@ -7,8 +7,6 @@
 ; CDemonPart *     Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   enable_vertex_reduction
 ; int              Stack[0xc]:4   enable_polygon_optimize
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10 at 00482e0f

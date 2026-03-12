@@ -6,8 +6,6 @@
 ; Parameters:
 ; CDemonFilter *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60 at 0042302d

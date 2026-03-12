@@ -6,8 +6,6 @@
 ; Parameters:
 ; SRenderVertex *  Stack[0x4]:4   start_vertex
 ; SRenderVertex *  Stack[0x8]:4   end_vertex
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   int g_ProcessorType

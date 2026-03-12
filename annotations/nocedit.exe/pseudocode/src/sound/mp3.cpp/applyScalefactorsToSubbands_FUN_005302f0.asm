@@ -8,9 +8,6 @@
 ; int *            Stack[0x8]:4   scalefactor_band_indices
 ; SMpegFrame *     Stack[0xc]:4   frame_info
 ; int              Stack[0x10]:4   channel_or_granule_index
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 at 0053547d

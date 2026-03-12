@@ -8,14 +8,9 @@
 ; Local Variables:
 ; undefined4 *     Stack[-0x38]:4  local_38
 ; undefined4 *     Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
 ; uint             Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
 ; void *           Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
 ; uint             Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_superopt.cpp_CComplexPolygon_buildEdgeList_FUN_005c7b20 at 005c7d76

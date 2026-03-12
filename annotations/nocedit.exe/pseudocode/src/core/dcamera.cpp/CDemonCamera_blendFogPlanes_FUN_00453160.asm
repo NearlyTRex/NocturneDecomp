@@ -7,8 +7,6 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   plane_index
 ; uint             Stack[0xc]:4   blend_alpha
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130 at 00451196

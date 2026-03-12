@@ -7,7 +7,6 @@
 ; CWater *         Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   render_mode
 ; Local Variables:
-; undefined4       Stack[-0x70]:4  local_70
 ; CVector3f        Stack[-0x6c]:12  local_6c
 ; CVector3i        Stack[-0x60]:12  local_60
 ; CVector3i        Stack[-0x54]:12  local_54

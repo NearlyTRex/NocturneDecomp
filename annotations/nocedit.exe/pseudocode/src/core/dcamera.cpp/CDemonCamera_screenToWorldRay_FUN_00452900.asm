@@ -16,7 +16,6 @@
 ; CVector3i        Stack[-0x34]:12  local_34
 ; CVector3i        Stack[-0x28]:12  local_28
 ; CVector3i        Stack[-0x1c]:12  local_1c
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   double g_CameraFixedPointToFloatScale = 0.00390625

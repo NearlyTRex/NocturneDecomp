@@ -4,16 +4,12 @@
 ; void __cdecl core_sound_cpp_processTrainSounds_FUN_005b2770(void)
 ;
 ; Local Variables:
-; undefined8       Stack[-0x128]:8  local_128
 ; float            Stack[-0x120]:4  local_120
 ; float            Stack[-0x11c]:4  local_11c
 ; char[100]        Stack[-0x118]:100  local_118
 ; char[100]        Stack[-0xb4]:100  local_b4
 ; CVector3f        Stack[-0x50]:12  local_50
 ; CVector3f        Stack[-0x44]:12  local_44
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
 ; float            Stack[-0x2c]:4  local_2c
 ; float            Stack[-0x28]:4  local_28
 ; float            Stack[-0x24]:4  local_24

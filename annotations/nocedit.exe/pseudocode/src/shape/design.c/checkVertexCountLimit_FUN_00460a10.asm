@@ -6,7 +6,6 @@
 ; Local Variables:
 ; char[80]         Stack[-0x68]:80  local_68
 ; uint             Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0045f279

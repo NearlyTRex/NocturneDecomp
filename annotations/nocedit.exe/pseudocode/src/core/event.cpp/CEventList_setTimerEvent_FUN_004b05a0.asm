@@ -10,7 +10,6 @@
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  uStack_1c
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ad13e

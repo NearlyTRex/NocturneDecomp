@@ -5,9 +5,6 @@
 ;
 ; Parameters:
 ; CSfxSlot *       Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100 at 005a7262

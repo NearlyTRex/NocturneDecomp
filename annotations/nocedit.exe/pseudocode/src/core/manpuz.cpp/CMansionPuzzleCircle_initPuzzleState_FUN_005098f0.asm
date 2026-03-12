@@ -5,8 +5,6 @@
 ;
 ; Parameters:
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920 at 00508a55

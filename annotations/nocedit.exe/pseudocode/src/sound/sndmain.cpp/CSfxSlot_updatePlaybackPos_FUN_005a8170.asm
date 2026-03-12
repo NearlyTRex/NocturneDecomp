@@ -7,10 +7,7 @@
 ; CSfxSlot *       Stack[0x4]:4   this_ptr
 ; double           Stack[0x8]:8   hardware_playback_pos
 ; Local Variables:
-; undefined8       Stack[-0x30]:8  local_30
 ; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0 at 005a7970

@@ -8,8 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   direction
 ; CVector3f *      Stack[0xc]:4   rotation
 ; Local Variables:
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
 ; CVector3f        Stack[-0x50]:12  local_50
 ; CVector3f        Stack[-0x44]:12  local_44
 ; CVector3f        Stack[-0x38]:12  local_38

@@ -10,7 +10,6 @@
 ; Local Variables:
 ; CBoundingBox3D   Stack[-0x30]:24  CStack_30
 ; CVector3f        Stack[-0x18]:12  local_18
-; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10

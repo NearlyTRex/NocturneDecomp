@@ -7,8 +7,6 @@
 ; CDynamite *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined8       Stack[-0x68]:8  local_68
 ; CBoundingBox3D   Stack[-0x60]:24  CStack_60
 ; CBoundingBox3D   Stack[-0x48]:24  local_48
 ; CVector3f        Stack[-0x30]:12  CStack_30

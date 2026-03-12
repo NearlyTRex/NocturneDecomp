@@ -7,11 +7,6 @@
 ; float            Stack[0x4]:4   heading_angle
 ; float            Stack[0x8]:4   pitch_angle
 ; float            Stack[0xc]:4   radius
-; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_generateOctant_FUN_00469420 at 00469623

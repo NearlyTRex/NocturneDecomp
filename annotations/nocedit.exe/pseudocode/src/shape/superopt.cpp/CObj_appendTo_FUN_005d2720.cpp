@@ -19,8 +19,8 @@ int __cdecl shape_superopt_cpp_CObj_appendTo_FUN_005d2720(CObj *this_ptr,CObj *d
   CVert *pCVar8;
   byte bVar9;
   uint local_10;
-  int iVar2;
   int *piVar1;
+  int iVar2;
   
   bVar9 = 0;
   local_10 = this_ptr->poly_count;

@@ -12,8 +12,6 @@
 ; char * *         Stack[0x18]:4   out_buffer
 ; int *            Stack[0x1c]:4   out_bufsize
 ; int              Stack[0x20]:4   copy_program_flag
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   crt_process.c_spawnvp_FUN_0060f39c at 0060f4a4

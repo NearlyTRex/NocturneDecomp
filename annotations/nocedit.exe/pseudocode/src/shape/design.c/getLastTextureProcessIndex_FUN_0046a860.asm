@@ -3,8 +3,6 @@
 ; *****************************************************************************
 ; int __cdecl shape_design_c_getLastTextureProcessIndex_FUN_0046a860(void)
 ;
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 at 0047a784

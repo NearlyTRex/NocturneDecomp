@@ -7,7 +7,6 @@
 ; double           Stack[0x4]:8   input_value
 ; Local Variables:
 ; double[2]        Stack[-0x18]:16  local_18
-; undefined1       Stack[-0x8]:1  local_8
 ;
 ; XREF[39]:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70 at 0040cdf8

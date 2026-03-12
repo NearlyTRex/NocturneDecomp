@@ -7,8 +7,6 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   direction
 ; int              Stack[0xc]:4   count
-; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055cb1f

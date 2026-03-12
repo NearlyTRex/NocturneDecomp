@@ -8,15 +8,6 @@
 ; CVector3f *      Stack[0x8]:4   center_position
 ; float            Stack[0xc]:4   radius
 ; Local Variables:
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
 ; float            Stack[-0x54]:4  local_54
 ; float            Stack[-0x50]:4  local_50
 ; float            Stack[-0x4c]:4  local_4c

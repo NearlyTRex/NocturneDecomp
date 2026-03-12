@@ -9,8 +9,6 @@
 ; char *           Stack[0xc]:4   sound_name
 ; CVector3f *      Stack[0x10]:4   position_tracker
 ; float            Stack[0x14]:4   delay
-; Local Variables:
-; undefined8       Stack[-0xc]:8  local_c
 ;
 ; XREF[1]:
 ;   core_actor.cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408fd0 at 00408fea

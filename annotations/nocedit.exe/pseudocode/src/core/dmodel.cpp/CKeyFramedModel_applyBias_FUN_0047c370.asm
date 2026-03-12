@@ -6,12 +6,6 @@
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   bias_offset
-; Local Variables:
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
 ;   core_dmodel.cpp_CKeyFramedModel_recenter_FUN_0047c220 at 0047c2b5
