@@ -11,7 +11,7 @@
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
+; uint             Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
 ; _MMX_INTEGER     Stack[-0x30]:8  local_30
 ; _MMX_INTEGER     Stack[-0x28]:8  local_28

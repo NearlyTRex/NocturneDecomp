@@ -3,26 +3,14 @@
     "errors": [
       {
         "category": "other",
-        "column": 44,
-        "line": 94,
-        "message": "comparison between pointer and integer ('char *' and 'uint' (aka 'unsigned int'))"
-      },
-      {
-        "category": "other",
-        "column": 43,
-        "line": 95,
-        "message": "comparison between pointer and integer ('char *' and 'uint' (aka 'unsigned int'))"
-      },
-      {
-        "category": "other",
         "column": 82,
-        "line": 121,
+        "line": 125,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "format_error",
         "column": 193,
-        "line": 128,
+        "line": 132,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       }
     ],
@@ -31,17 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 157,
+    "complexity_score": 146,
     "cross_reference_count": 6,
     "function_call_count": 13,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 142,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 503
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 146,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 507
   },
   "cross_references": [
     {
@@ -276,71 +262,29 @@
         "is_param": false,
         "name": "local_53c",
         "offset": -1340,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_53b",
-        "offset": -1339,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_338",
-        "offset": -824,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_330",
-        "offset": -816,
-        "size": 4,
-        "type": "undefined4"
+        "size": 532,
+        "type": "SFoundFileInfo"
       },
       {
         "is_param": false,
         "name": "local_328",
         "offset": -808,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_327",
-        "offset": -807,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_124",
-        "offset": -292,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_11c",
-        "offset": -284,
-        "size": 4,
-        "type": "undefined4"
+        "size": 532,
+        "type": "SFoundFileInfo"
       },
       {
         "is_param": false,
         "name": "local_114",
         "offset": -276,
-        "size": 1,
-        "type": "undefined"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "char[4]"
       },
       {
         "is_param": true,
@@ -382,14 +326,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar6 = (char *)((int)pSVar7 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

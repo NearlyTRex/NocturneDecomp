@@ -10,11 +10,16 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this
 
 {
   int iVar1;
+  int iVar3;
   int iVar2;
+  int iVar4;
   CQuaternion4f *pCVar3;
   int *piVar4;
+  float *pfVar5;
   int iVar5;
+  int iVar6;
   float *pfVar6;
+  float *pfVar8;
   float *pfVar7;
   int local_24;
   int local_20;
@@ -46,76 +51,76 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this
               ("Skeleton version %d is newer than .EXE, which can only process up to version %d",local_24,g_CSkeletonVersion);
   }
   do {
-    iVar1 = _fgetc(file_handle);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
+    iVar3 = _fgetc(file_handle);
+    if (iVar3 < 0) break;
+  } while (iVar3 != 10);
   _fscanf(file_handle,"%d,%d\n",&local_20,&local_1c);
   core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(this_ptr,local_20,local_1c);
   do {
-    iVar1 = _fgetc(file_handle);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
-  iVar1 = 0;
+    iVar3 = _fgetc(file_handle);
+    if (iVar3 < 0) break;
+  } while (iVar3 != 10);
+  iVar3 = 0;
   if (0 < this_ptr->bone_count) {
     piVar4 = &this_ptr->bone_list[0].parent_index;
     do {
-      _fscanf(file_handle,"\"%[^\"]\",%d\n",this_ptr->bone_list + iVar1,piVar4);
-      iVar1 = iVar1 + 1;
+      _fscanf(file_handle,"\"%[^\"]\",%d\n",this_ptr->bone_list + iVar3,piVar4);
+      iVar3 = iVar3 + 1;
       piVar4 = piVar4 + 9;
-    } while (iVar1 < this_ptr->bone_count);
+    } while (iVar3 < this_ptr->bone_count);
   }
   do {
-    iVar1 = _fgetc(file_handle);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
+    iVar3 = _fgetc(file_handle);
+    if (iVar3 < 0) break;
+  } while (iVar3 != 10);
   local_18 = 0;
   pCVar3 = this_ptr->bone_angle_frames;
   if (0 < this_ptr->frame_count) {
     do {
-      iVar1 = 0;
+      iVar3 = 0;
       if (0 < this_ptr->bone_count) {
-        pfVar6 = &pCVar3->x;
+        pfVar5 = &pCVar3->x;
         local_14 = &pCVar3->y;
-        pfVar7 = &pCVar3->z;
+        pfVar8 = &pCVar3->z;
         do {
-          iVar1 = iVar1 + 1;
-          _fscanf(file_handle,"%f,%f,%f,%f\n",pCVar3,pfVar6,local_14,pfVar7);
-          pfVar6 = pfVar6 + 4;
+          iVar3 = iVar3 + 1;
+          _fscanf(file_handle,"%f,%f,%f,%f\n",pCVar3,pfVar5,local_14,pfVar8);
+          pfVar5 = pfVar5 + 4;
           pCVar3 = pCVar3 + 1;
           local_14 = local_14 + 4;
-          pfVar7 = pfVar7 + 4;
-        } while (iVar1 < this_ptr->bone_count);
+          pfVar8 = pfVar8 + 4;
+        } while (iVar3 < this_ptr->bone_count);
       }
       local_18 = local_18 + 1;
     } while (local_18 < this_ptr->frame_count);
   }
   do {
-    iVar1 = _fgetc(file_handle);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
-  iVar1 = 0;
+    iVar3 = _fgetc(file_handle);
+    if (iVar3 < 0) break;
+  } while (iVar3 != 10);
+  iVar3 = 0;
   if (0 < this_ptr->frame_count) {
     iVar5 = 0;
     do {
       iVar2 = (int)&this_ptr->frame_positions_1->x + iVar5;
       _fscanf(file_handle,"%f,%f,%f\n",iVar2,iVar2 + 4,iVar2 + 8);
-      iVar1 = iVar1 + 1;
+      iVar3 = iVar3 + 1;
       iVar5 = iVar5 + 0xc;
-    } while (iVar1 < this_ptr->frame_count);
+    } while (iVar3 < this_ptr->frame_count);
   }
   do {
-    iVar1 = _fgetc(file_handle);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
-  iVar1 = 0;
+    iVar3 = _fgetc(file_handle);
+    if (iVar3 < 0) break;
+  } while (iVar3 != 10);
+  iVar3 = 0;
   if (0 < this_ptr->frame_count) {
-    iVar5 = 0;
+    iVar6 = 0;
     do {
-      iVar2 = (int)&this_ptr->frame_positions_2->x + iVar5;
-      _fscanf(file_handle,"%f,%f,%f\n",iVar2,iVar2 + 4,iVar2 + 8);
-      iVar1 = iVar1 + 1;
-      iVar5 = iVar5 + 0xc;
-    } while (iVar1 < this_ptr->frame_count);
+      iVar4 = (int)&this_ptr->frame_positions_2->x + iVar6;
+      _fscanf(file_handle,"%f,%f,%f\n",iVar4,iVar4 + 4,iVar4 + 8);
+      iVar3 = iVar3 + 1;
+      iVar6 = iVar6 + 0xc;
+    } while (iVar3 < this_ptr->frame_count);
   }
   if ((file_handle->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
@@ -128,19 +133,19 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this
   }
   else {
     do {
-      iVar1 = _fgetc(file_handle);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    iVar1 = 0;
+      iVar3 = _fgetc(file_handle);
+      if (iVar3 < 0) break;
+    } while (iVar3 != 10);
+    iVar3 = 0;
     if (0 < this_ptr->bone_count) {
       pfVar6 = &this_ptr->bone_scales[0].y;
       pfVar7 = &this_ptr->bone_scales[0].z;
       do {
-        _fscanf(file_handle,"%f,%f,%f\n",this_ptr->bone_scales + iVar1,pfVar6,pfVar7);
+        _fscanf(file_handle,"%f,%f,%f\n",this_ptr->bone_scales + iVar3,pfVar6,pfVar7);
         pfVar7 = pfVar7 + 3;
-        iVar1 = iVar1 + 1;
+        iVar3 = iVar3 + 1;
         pfVar6 = pfVar6 + 3;
-      } while (iVar1 < this_ptr->bone_count);
+      } while (iVar3 < this_ptr->bone_count);
     }
   }
   if ((file_handle->_flag & 0x20) != 0) {

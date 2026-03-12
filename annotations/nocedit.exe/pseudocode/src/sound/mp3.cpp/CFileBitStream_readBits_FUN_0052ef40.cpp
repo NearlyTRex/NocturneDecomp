@@ -12,6 +12,7 @@ uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *
   SIZE_T SVar1;
   char *buffer;
   int iVar2;
+  int iVar1;
   uint local_14;
   
   local_14 = 0;
@@ -28,17 +29,17 @@ uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *
     }
     if (bitstream->bits_available == 0) {
       bitstream->bits_available = 8;
-      iVar2 = bitstream->current_byte_index + -1;
-      bitstream->current_byte_index = iVar2;
-      if ((iVar2 < 4) || (iVar2 < bitstream->end_of_stream_flag)) {
+      iVar1 = bitstream->current_byte_index + -1;
+      bitstream->current_byte_index = iVar1;
+      if ((iVar1 < 4) || (iVar1 < bitstream->end_of_stream_flag)) {
         if (bitstream->end_of_stream_flag == 0) {
-          for (iVar2 = bitstream->current_byte_index; -1 < iVar2; iVar2 = iVar2 + -1) {
+          for (iVar1 = bitstream->current_byte_index; -1 < iVar1; iVar1 = iVar1 + -1) {
             bitstream->buffer
-            [((bitstream->buffer_size + -1) - bitstream->current_byte_index) + iVar2] =
-                 bitstream->buffer[iVar2];
+            [((bitstream->buffer_size + -1) - bitstream->current_byte_index) + iVar1] =
+                 bitstream->buffer[iVar1];
           }
-          iVar2 = (bitstream->buffer_size + -2) - bitstream->current_byte_index;
-          if (iVar2 < 0) {
+          iVar1 = (bitstream->buffer_size + -2) - bitstream->current_byte_index;
+          if (iVar1 < 0) {
 LAB_0052f051:
             bitstream->current_byte_index = bitstream->buffer_size + -1;
           }
@@ -48,19 +49,19 @@ LAB_0052f051:
                 if (bitstream->end_of_stream_flag != 0) goto LAB_0052f051;
                 SVar1 = 0;
                 if (0 < bitstream->bytes_remaining) {
-                  buffer = bitstream->buffer + iVar2;
-                  iVar2 = iVar2 + -1;
+                  buffer = bitstream->buffer + iVar1;
+                  iVar1 = iVar1 + -1;
                   SVar1 = _fread(buffer,1,1,bitstream->file_handle);
                 }
                 if (SVar1 != 1) break;
                 bitstream->bytes_remaining = bitstream->bytes_remaining + -1;
-                if (iVar2 < 0) {
+                if (iVar1 < 0) {
                   bitstream->current_byte_index = bitstream->buffer_size + -1;
                   goto LAB_0052ef6c;
                 }
               }
-              bitstream->end_of_stream_flag = iVar2 + 1;
-            } while (-1 < iVar2);
+              bitstream->end_of_stream_flag = iVar1 + 1;
+            } while (-1 < iVar1);
             bitstream->current_byte_index = bitstream->buffer_size + -1;
           }
         }
@@ -70,12 +71,12 @@ LAB_0052f051:
       }
     }
 LAB_0052ef6c:
-    iVar2 = bitstream->bits_available;
-    if (num_bits < iVar2) {
-      iVar2 = num_bits;
+    iVar1 = bitstream->bits_available;
+    if (num_bits < iVar1) {
+      iVar1 = num_bits;
     }
-    num_bits = num_bits - iVar2;
-    iVar2 = bitstream->bits_available - iVar2;
+    num_bits = num_bits - iVar1;
+    iVar2 = bitstream->bits_available - iVar1;
     local_14 = local_14 |
                ((int)((uint)(byte)bitstream->buffer[bitstream->current_byte_index] &
                      g_MpegBitMaskTableMultiBit[bitstream->bits_available]) >> ((byte)iVar2 & 0x1f))

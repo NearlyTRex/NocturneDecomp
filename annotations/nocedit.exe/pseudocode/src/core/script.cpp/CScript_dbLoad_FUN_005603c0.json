@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 110,
+        "line": 116,
         "message": "assigning to 'SDialogEntry *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 292,
-    "complexity_score": 132,
+    "complexity_score": 138,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 26,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 117,
+    "pseudocode_lines": 123,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 409
+    "total_lines": 415
   },
   "cross_references": [
     {
@@ -313,71 +313,43 @@
         "is_param": false,
         "name": "local_334",
         "offset": -820,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_333",
-        "offset": -819,
-        "size": 1,
-        "type": "undefined1"
+        "size": 60,
+        "type": "char[60]"
       },
       {
         "is_param": false,
         "name": "local_2f8",
         "offset": -760,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2f7",
-        "offset": -759,
-        "size": 1,
-        "type": "undefined1"
+        "size": 60,
+        "type": "char[60]"
       },
       {
         "is_param": false,
         "name": "local_2bc",
         "offset": -700,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2bb",
-        "offset": -699,
-        "size": 1,
-        "type": "undefined1"
+        "size": 30,
+        "type": "char[30]"
       },
       {
         "is_param": false,
         "name": "local_29e",
         "offset": -670,
-        "size": 1,
-        "type": "undefined1"
+        "size": 402,
+        "type": "char[402]"
       },
       {
         "is_param": false,
         "name": "local_10c",
         "offset": -268,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_10b",
-        "offset": -267,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_c",
         "offset": -12,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -398,10 +370,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 122,
       "match": "(SDialogEntry *)((int)",
       "severity": "mild",
-      "text": "pSVar4 = (SDialogEntry *)((int)pSVar4 + (uint)bVar7 * -8 + 4);",
+      "text": "pSVar9 = (SDialogEntry *)((int)pSVar9 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

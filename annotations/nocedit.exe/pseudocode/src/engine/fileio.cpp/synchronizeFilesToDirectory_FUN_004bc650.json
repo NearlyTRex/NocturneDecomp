@@ -4,20 +4,8 @@
       {
         "category": "format_error",
         "column": 77,
-        "line": 66,
-        "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 50,
-        "line": 69,
-        "message": "comparison between pointer and integer ('uint' (aka 'unsigned int') and 'char *')"
-      },
-      {
-        "category": "other",
-        "column": 46,
         "line": 70,
-        "message": "comparison between pointer and integer ('char *' and 'uint' (aka 'unsigned int'))"
+        "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -25,17 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 319,
-    "complexity_score": 142,
+    "complexity_score": 121,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 24,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 117,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 436
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 121,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 440
   },
   "cross_references": [
     {
@@ -377,99 +363,50 @@
         "is_param": false,
         "name": "local_750",
         "offset": -1872,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_74f",
-        "offset": -1871,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_54c",
-        "offset": -1356,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_544",
-        "offset": -1348,
-        "size": 4,
-        "type": "undefined4"
+        "size": 532,
+        "type": "SFoundFileInfo"
       },
       {
         "is_param": false,
         "name": "local_53c",
         "offset": -1340,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_53b",
-        "offset": -1339,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_338",
-        "offset": -824,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_330",
-        "offset": -816,
-        "size": 4,
-        "type": "undefined4"
+        "size": 532,
+        "type": "SFoundFileInfo"
       },
       {
         "is_param": false,
         "name": "local_328",
         "offset": -808,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_327",
-        "offset": -807,
-        "size": 1,
-        "type": "undefined1"
+        "size": 260,
+        "type": "char[260]"
       },
       {
         "is_param": false,
         "name": "local_224",
         "offset": -548,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_124",
         "offset": -292,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
-        "size": 4,
-        "type": "undefined4"
+        "size": 16,
+        "type": "CStrList"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -518,22 +455,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(SFoundFileInfo *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SFoundFileInfo *)((int)pSVar5 + 2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

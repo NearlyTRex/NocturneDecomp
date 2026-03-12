@@ -9,20 +9,25 @@
 void __cdecl core_flies_cpp_CFlies_process_FUN_004cbf00(CFlies *this_ptr,float delta_time)
 
 {
-  float fVar1;
-  double input_value;
-  CDemonActor *pCVar2;
-  float fVar3;
+  float fVar2;
+  CDemonActor *pCVar3;
+  CVector3f *pCVar6;
+  CVector3f *pCVar7;
   CVector3f *pCVar4;
   CVector3f *pCVar5;
   SFly *pSVar6;
   int iVar7;
+  double dVar8;
   CVector3f local_50;
   CVector3f local_44;
   CVector3f local_38;
   CVector3f local_2c;
   double local_20;
   int local_18;
+  float fVar3;
+  CDemonActor *pCVar2;
+  double input_value;
+  float fVar1;
   
   if (this_ptr->is_visible != 0) {
     pCVar2 = this_ptr->follow_actor;
@@ -31,11 +36,11 @@ void __cdecl core_flies_cpp_CFlies_process_FUN_004cbf00(CFlies *this_ptr,float d
       local_38.y = (pCVar2->location).position.y - (this_ptr->base).location.position.y;
       local_38.z = (pCVar2->location).position.z - (this_ptr->base).location.position.z;
       if (0.0 < SQRT(local_38.z * local_38.z + local_38.x * local_38.x + local_38.y * local_38.y)) {
-        pCVar4 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+        pCVar6 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                            (&this_ptr->base,&local_2c,&local_38);
-        local_44.x = pCVar4->x * 0.5f;
-        local_44.y = pCVar4->y * 0.5f;
-        local_44.z = 0.5f * pCVar4->z;
+        local_44.x = pCVar6->x * 0.5f;
+        local_44.y = pCVar6->y * 0.5f;
+        local_44.z = 0.5f * pCVar6->z;
         if (&local_38 != &local_44) {
           local_38.x = local_44.x;
           local_38.y = local_44.y;
@@ -43,10 +48,10 @@ void __cdecl core_flies_cpp_CFlies_process_FUN_004cbf00(CFlies *this_ptr,float d
         }
         iVar7 = 0;
         if (0 < this_ptr->fly_count) {
-          pSVar6 = this_ptr->flies;
-          pCVar4 = this_ptr->flies[0].control_points + 2;
+          pCVar6 = (CVector3f *)this_ptr->flies;
+          pCVar7 = this_ptr->flies[0].control_points + 2;
           do {
-            pCVar5 = pSVar6->control_points;
+            pCVar5 = (CVector3f *)&pCVar6->y;
             pCVar5->x = pCVar5->x - local_38.x;
             pCVar5->y = pCVar5->y - local_38.y;
             fVar1 = pCVar5[1].x;
@@ -54,27 +59,27 @@ void __cdecl core_flies_cpp_CFlies_process_FUN_004cbf00(CFlies *this_ptr,float d
             pCVar5[1].x = fVar1 - local_38.x;
             pCVar5[1].y = pCVar5[1].y - local_38.y;
             pCVar5[1].z = pCVar5[1].z - local_38.z;
-            pCVar4->x = pCVar4->x - local_38.x;
-            pCVar4->y = pCVar4->y - local_38.y;
-            fVar1 = pCVar4[1].x;
-            pCVar4->z = pCVar4->z - local_38.z;
-            pCVar4[1].x = fVar1 - local_38.x;
-            pCVar4[1].y = pCVar4[1].y - local_38.y;
+            pCVar7->x = pCVar7->x - local_38.x;
+            pCVar7->y = pCVar7->y - local_38.y;
+            fVar2 = pCVar7[1].x;
+            pCVar7->z = pCVar7->z - local_38.z;
+            pCVar7[1].x = fVar2 - local_38.x;
+            pCVar7[1].y = pCVar7[1].y - local_38.y;
             iVar7 = iVar7 + 1;
-            pCVar4[1].z = pCVar4[1].z - local_38.z;
-            pSVar6 = (SFly *)(pCVar5 + 4);
-            pCVar4 = (CVector3f *)((int)(pCVar4 + 4) + 4);
+            pCVar7[1].z = pCVar7[1].z - local_38.z;
+            pCVar6 = pCVar5 + 4;
+            pCVar7 = (CVector3f *)((int)(pCVar7 + 4) + 4);
           } while (iVar7 < this_ptr->fly_count);
         }
       }
-      pCVar2 = this_ptr->follow_actor;
-      (this_ptr->base).location.position.x = (pCVar2->location).position.x;
-      (this_ptr->base).location.position.y = (pCVar2->location).position.y;
-      (this_ptr->base).location.position.z = (pCVar2->location).position.z;
-      (this_ptr->base).location.area_id = (pCVar2->location).area_id;
+      pCVar3 = this_ptr->follow_actor;
+      (this_ptr->base).location.position.x = (pCVar3->location).position.x;
+      (this_ptr->base).location.position.y = (pCVar3->location).position.y;
+      (this_ptr->base).location.position.z = (pCVar3->location).position.z;
+      (this_ptr->base).location.area_id = (pCVar3->location).area_id;
     }
     if ((0 < this_ptr->gather_count) &&
-       (fVar1 = this_ptr->gather_timer - delta_time, this_ptr->gather_timer = fVar1, fVar1 <= 0.0))
+       (fVar2 = this_ptr->gather_timer - delta_time, this_ptr->gather_timer = fVar2, fVar2 <= 0.0))
     {
       if (this_ptr->fly_count < 200) {
         core_flies_cpp_CFlies_initFly_FUN_004cc760(this_ptr,this_ptr->fly_count);
@@ -86,17 +91,17 @@ void __cdecl core_flies_cpp_CFlies_process_FUN_004cbf00(CFlies *this_ptr,float d
         this_ptr->gather_count = 0;
       }
     }
-    fVar1 = (float)2;
+    fVar2 = (float)2;
     local_18 = 0;
     if (0 < this_ptr->fly_count) {
       pSVar6 = this_ptr->flies;
       do {
-        fVar3 = pSVar6->t + delta_time * fVar1;
+        fVar3 = pSVar6->t + delta_time * fVar2;
         pSVar6->t = fVar3;
         input_value = (double)fVar3;
         if (1.0 <= input_value) {
-          local_20 = floor(input_value);
-          pSVar6->t = pSVar6->t - (float)local_20;
+          dVar8 = floor(input_value);
+          pSVar6->t = pSVar6->t - (float)dVar8;
           if (pSVar6->control_points != pSVar6->control_points + 1) {
             pSVar6->control_points[0].x = pSVar6->control_points[1].x;
             pSVar6->control_points[0].y = pSVar6->control_points[1].y;

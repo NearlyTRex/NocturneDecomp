@@ -7,7 +7,8 @@
 ; CCrossbow *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x10]:1  local_10
+; CVector3f        Stack[-0x1c]:12  CStack_1c
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

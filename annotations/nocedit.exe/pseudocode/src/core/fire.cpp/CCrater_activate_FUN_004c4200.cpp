@@ -9,9 +9,7 @@
 void __cdecl core_fire_cpp_CCrater_activate_FUN_004c4200(CCrater *this_ptr,CVector3f *center_position,float radius)
 
 {
-  float fVar1;
-  float fVar2;
-  CDemonSet *pCVar3;
+  CDemonSet *pCVar1;
   float fVar4;
   CCrater *pCVar5;
   CVector3f *pCVar6;
@@ -32,6 +30,9 @@ void __cdecl core_fire_cpp_CCrater_activate_FUN_004c4200(CCrater *this_ptr,CVect
   float local_1c;
   float local_18;
   float local_14;
+  CDemonSet *pCVar3;
+  float fVar2;
+  float fVar1;
   
   if (&this_ptr->center_position != center_position) {
     (this_ptr->center_position).x = center_position->x;
@@ -97,18 +98,18 @@ void __cdecl core_fire_cpp_CCrater_activate_FUN_004c4200(CCrater *this_ptr,CVect
   local_14 = local_30;
   local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                        (g_CDemonSetPtr,this_ptr->corner_positions,0.0);
-  pCVar3 = g_CDemonSetPtr;
+  pCVar1 = g_CDemonSetPtr;
   this_ptr->corner_positions[0].y = local_14 + (float)0.14999999999999999;
   local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
-                       (pCVar3,this_ptr->corner_positions + 1,0.0);
-  pCVar3 = g_CDemonSetPtr;
+                       (pCVar1,this_ptr->corner_positions + 1,0.0);
+  pCVar1 = g_CDemonSetPtr;
   this_ptr->corner_positions[1].y = local_14 + (float)0.14999999999999999;
   local_14 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
-                       (pCVar3,this_ptr->corner_positions + 2,0.0);
-  pCVar3 = g_CDemonSetPtr;
+                       (pCVar1,this_ptr->corner_positions + 2,0.0);
+  pCVar1 = g_CDemonSetPtr;
   this_ptr->corner_positions[2].y = local_14 + (float)0.14999999999999999;
   fVar4 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
-                    (pCVar3,this_ptr->corner_positions + 3,0.0);
+                    (pCVar1,this_ptr->corner_positions + 3,0.0);
   fVar1 = this_ptr->corner_positions[0].y;
   fVar2 = (this_ptr->center_position).y;
   this_ptr->corner_positions[3].y = fVar4 + (float)0.14999999999999999;

@@ -12,6 +12,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054a
   int iVar1;
   int width;
   int iVar2;
+  int height;
   int local_18;
   int local_14;
   
@@ -34,12 +35,12 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054a
       if (rect_right < iVar2) {
         width = width - (iVar2 - rect_right);
       }
-      iVar2 = this_ptr->height + -1;
+      height = this_ptr->height + -1;
       if (rect_bottom < iVar1) {
-        iVar2 = iVar2 - (iVar1 - rect_bottom);
+        height = height - (iVar1 - rect_bottom);
       }
       cockpit_pkbitmap_cpp_CPackedBitmap_renderWithGlobalClipping_FUN_0054acb0
-                (this_ptr,dest_x,dest_y,local_18,local_14,width,iVar2);
+                (this_ptr,dest_x,dest_y,local_18,local_14,width,height);
     }
   }
   return;

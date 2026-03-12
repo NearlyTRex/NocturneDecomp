@@ -6,9 +6,7 @@
 ; Parameters:
 ; SMRGLAnimatedTexture * Stack[0x4]:4   texture
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
-; undefined1       Stack[-0x20]:1  local_20
-; undefined1       Stack[-0x1f]:1  local_1f
+; SMRGLTextureBasic Stack[-0x28]:24  SStack_28
 ;
 ; Referenced Globals:
 ;   int g_GlobalDeltaTimeInt

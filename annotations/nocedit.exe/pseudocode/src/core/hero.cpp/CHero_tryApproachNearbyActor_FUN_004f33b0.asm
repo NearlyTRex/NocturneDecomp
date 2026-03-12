@@ -7,14 +7,15 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined1       Stack[-0x30]:1  local_30
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x14]:4  local_14
+; SInteractionInfo Stack[-0x80]:32  SStack_80
+; CVector3f        Stack[-0x60]:12  local_60
+; CVector3f        Stack[-0x54]:12  CStack_54
+; CVector3f        Stack[-0x48]:12  CStack_48
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  local_30
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_005c5b90 at 005c5e3d

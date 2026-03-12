@@ -9,6 +9,7 @@
 void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags)
 
 {
+  int iVar1;
   SMRGLPrimitiveQuad *pSVar1;
   int iVar2;
   SMRGLHeaderPrimitive local_38;
@@ -19,8 +20,8 @@ void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(CDemonSet 
   
   if (g_CGamePtr->scripted_sequence_active == 0) {
     if ((g_CGamePtr->render_mode != 0) &&
-       (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
-       iVar2 == 0)) {
+       (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+       iVar1 == 0)) {
       core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010
                 (this_ptr,&primitive_array->base,primitive_count,0xffff);
       return;
@@ -33,10 +34,6 @@ void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770(CDemonSet 
         local_38.surface_normal.B = (pSVar1->base).surface_normal.B;
         local_38.surface_normal.C = (pSVar1->base).surface_normal.C;
         local_38.surface_normal.D = (pSVar1->base).surface_normal.D;
-        local_20 = pSVar1->vertices[0].vertex_index;
-        local_1c = pSVar1->vertices[1].vertex_index;
-        local_18 = pSVar1->vertices[2].vertex_index;
-        local_14 = pSVar1->vertices[3].vertex_index;
         pSVar1 = pSVar1 + 1;
         iVar2 = iVar2 + 1;
         engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0

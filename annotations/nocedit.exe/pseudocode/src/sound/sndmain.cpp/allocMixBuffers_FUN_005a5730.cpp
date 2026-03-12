@@ -9,12 +9,13 @@
 void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(int requested_size,int num_buffers)
 
 {
-  float *pfVar1;
+  int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
   int iVar5;
   int iVar6;
+  float *pfVar1;
   
   g_MixBufferSize = 1;
   g_NumMixBuffers = num_buffers;
@@ -23,20 +24,20 @@ void __cdecl sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(int requested_size,i
       g_MixBufferSize = g_MixBufferSize * 2;
     } while (g_MixBufferSize < requested_size);
   }
-  iVar4 = g_MixBufferSize * 4;
+  iVar1 = g_MixBufferSize * 4;
   g_MixBufferReadIndex = 0;
   g_MixBufferWriteIndex = 0;
   g_PrimaryMixBuffer =
        shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                 (g_PrimaryMixBuffer,num_buffers * iVar4 * g_AudioChannelCount,
+                 (g_PrimaryMixBuffer,num_buffers * iVar1 * g_AudioChannelCount,
                   "..\\sound\\sndmain.cpp",0x4a2);
   g_SecondaryMixBuffer =
        shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                 (g_SecondaryMixBuffer,g_AudioChannelCount * iVar4 * 2,"..\\sound\\sndmain.cpp",
+                 (g_SecondaryMixBuffer,g_AudioChannelCount * iVar1 * 2,"..\\sound\\sndmain.cpp",
                   0x4a3);
   g_TertiaryMixBuffer =
        shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                 (g_TertiaryMixBuffer,iVar4 * g_AudioChannelCount,"..\\sound\\sndmain.cpp",0x4a4
+                 (g_TertiaryMixBuffer,iVar1 * g_AudioChannelCount,"..\\sound\\sndmain.cpp",0x4a4
                  );
   if (((g_PrimaryMixBuffer == (void *)0x0) || (g_SecondaryMixBuffer == (float *)0x0)) ||
      (g_TertiaryMixBuffer == (float *)0x0)) {

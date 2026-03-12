@@ -9,25 +9,25 @@
 CVector3f * __cdecl core_spline_cpp_evaluateSplinePoint3D_FUN_005b92d0(float *basis,CVector3f *out,CVector3f *p0,CVector3f *p1,CVector3f *p2,CVector3f *p3)
 
 {
-  float *pfVar1;
-  float *pfVar2;
-  float *pfVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
-  float fVar9;
-  float fVar10;
-  float fVar11;
   float fVar12;
-  float fVar13;
-  float fVar14;
-  float fVar15;
-  float fVar16;
-  float fVar17;
-  float fVar18;
+  float fVar11;
+  float fVar10;
+  float fVar9;
+  float fVar8;
+  float fVar7;
+  float fVar6;
+  float fVar5;
   float fVar19;
+  float fVar18;
+  float fVar17;
+  float fVar16;
+  float fVar15;
+  float fVar14;
+  float fVar13;
+  float fVar4;
+  float *pfVar3;
+  float *pfVar2;
+  float *pfVar1;
   
   pfVar1 = basis + 3;
   fVar4 = p3->y;

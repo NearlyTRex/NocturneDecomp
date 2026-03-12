@@ -9,8 +9,8 @@
 void __cdecl core_boxactor_cpp_CBoxActor_setup_FUN_00421830(CBoxActor *this_ptr)
 
 {
-  int iVar1;
   CKeyFramedModel *pCVar2;
+  int iVar1;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);

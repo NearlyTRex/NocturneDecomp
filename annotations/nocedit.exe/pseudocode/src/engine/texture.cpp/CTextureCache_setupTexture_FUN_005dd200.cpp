@@ -11,14 +11,15 @@
 void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache *cache,int texture_index)
 
 {
-  byte *pbVar1;
-  byte *pbVar2;
-  byte bVar3;
+  int iVar1;
   int iVar4;
   uint uVar5;
   byte *pbVar6;
   int iVar7;
   int local_14;
+  byte *pbVar1;
+  byte *pbVar2;
+  byte bVar3;
   
   g_CurrentTextureData = cache->texture_data_ptrs[texture_index];
   g_CurrentTextureOpacityData = cache->texture_opacity_ptrs[texture_index];
@@ -29,18 +30,18 @@ void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTexture
   g_CurrentPalette = pbVar6;
   if (g_UseExternalRenderer == 0) {
     if (g_BitsPerPixel == 0x20) {
-      iVar7 = 0;
+      iVar1 = 0;
       do {
         pbVar1 = pbVar6 + 1;
         bVar3 = *pbVar6;
         pbVar2 = pbVar6 + 2;
-        iVar4 = iVar7 + 4;
+        iVar4 = iVar1 + 4;
         pbVar6 = pbVar6 + 3;
-        *(uint *)((int)g_Hardware32BitPalette + iVar7) =
+        *(uint *)((int)g_Hardware32BitPalette + iVar1) =
              (uint)*pbVar2 << (g_BlueBitPosition.bytes[0] & 0x1f) |
              (uint)*pbVar1 << (g_GreenBitPosition.bytes[0] & 0x1f) |
              (uint)bVar3 << (g_RedBitPosition.bytes[0] & 0x1f);
-        iVar7 = iVar4;
+        iVar1 = iVar4;
       } while (iVar4 != 0x400);
     }
     else {

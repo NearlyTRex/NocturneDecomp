@@ -9,17 +9,19 @@
 CVector3f * __cdecl core_msnedit_cpp_screenToWorldPosition_FUN_00535c60(CVector3f *out_world_pos,int screen_x,int screen_y)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
+  float fVar5;
+  float fVar6;
   byte bVar5;
   int aiStackY_1044 [1015];
-  CVector3i *input_ptr;
   CVector3i local_5c [3];
   CVector3i local_38;
   CVector3f local_2c;
   CVector3i local_20;
+  float fVar2;
+  float fVar4;
+  float fVar3;
+  CVector3i *input_ptr;
+  float fVar1;
   
   bVar5 = 0;
   core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
@@ -44,11 +46,11 @@ CVector3f * __cdecl core_msnedit_cpp_screenToWorldPosition_FUN_00535c60(CVector3
       SQRT(out_world_pos->z * out_world_pos->z +
            out_world_pos->x * out_world_pos->x + out_world_pos->y * out_world_pos->y)) {
     fVar1 = out_world_pos->x - g_CDemonCameraInstance.base.position.f.x;
-    fVar2 = out_world_pos->y - g_CDemonCameraInstance.base.position.f.y;
-    fVar3 = out_world_pos->z - g_CDemonCameraInstance.base.position.f.z;
-    fVar4 = 10000.0f / SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);
-    fVar2 = g_CDemonCameraInstance.base.position.f.y + fVar2 * fVar4;
-    fVar3 = g_CDemonCameraInstance.base.position.f.z + fVar3 * fVar4;
+    fVar5 = out_world_pos->y - g_CDemonCameraInstance.base.position.f.y;
+    fVar6 = out_world_pos->z - g_CDemonCameraInstance.base.position.f.z;
+    fVar4 = 10000.0f / SQRT(fVar6 * fVar6 + fVar1 * fVar1 + fVar5 * fVar5);
+    fVar2 = g_CDemonCameraInstance.base.position.f.y + fVar5 * fVar4;
+    fVar3 = g_CDemonCameraInstance.base.position.f.z + fVar6 * fVar4;
     if (out_world_pos != &local_2c) {
       out_world_pos->x = g_CDemonCameraInstance.base.position.f.x + fVar1 * fVar4;
       out_world_pos->y = fVar2;

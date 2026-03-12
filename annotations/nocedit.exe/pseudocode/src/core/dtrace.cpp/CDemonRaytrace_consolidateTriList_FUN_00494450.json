@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 141,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 86,
+    "pseudocode_lines": 93,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 245
+    "total_lines": 252
   },
   "cross_references": [
     {
@@ -193,21 +193,21 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -228,7 +228,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 35,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "this_ptr->triangle_count + *(int *)((int)this_ptr->cube_list->voxel_data + iVar1);",
@@ -236,7 +236,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 43,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)this_ptr->cube_list->voxel_data + local_20 + -0x14);",
@@ -244,7 +244,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 50,
       "match": "(CDemonTriangle *)((int)",
       "severity": "mild",
       "text": "pCVar9 = (CDemonTriangle *)((int)pCVar9 + (uint)bVar11 * -8 + 4);",
@@ -252,18 +252,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(float *)((int)",
+      "line": 53,
+      "match": "(CDemonTriangle *)((int)",
       "severity": "mild",
-      "text": "pfVar7 = (float *)((int)pfVar7 + (uint)bVar11 * -2 + 1);",
+      "text": "pCVar9 = (CDemonTriangle *)((int)pCVar9 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(CDemonTriangle *)((int)",
+      "line": 54,
+      "match": "(float *)((int)",
       "severity": "mild",
-      "text": "pCVar9 = (CDemonTriangle *)((int)pCVar9 + (uint)bVar11 * -2 + 1);",
+      "text": "pfVar7 = (float *)((int)pfVar7 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     }
   ]

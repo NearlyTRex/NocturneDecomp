@@ -9,8 +9,11 @@
 void __cdecl core_msnedit_cpp_CDemonMission_hideActorsMenu_FUN_0053dcf0(CDemonMission *this_ptr)
 
 {
+  CDemonActor *pCVar2;
   char *name;
   CDemonActor *pCVar1;
+  int iVar4;
+  int iVar5;
   int iVar2;
   int iVar3;
   int initial_selected_index;
@@ -30,10 +33,10 @@ void __cdecl core_msnedit_cpp_CDemonMission_hideActorsMenu_FUN_0053dcf0(CDemonMi
     if (initial_selected_index < 0) break;
     if (initial_selected_index == 0) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3b8);
-      for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor
+      for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor
           ) {
-        if (pCVar1->is_editor_hidden == 0) {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3b8.base,pCVar1->actor_name);
+        if (pCVar2->is_editor_hidden == 0) {
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3b8.base,pCVar2->actor_name);
         }
       }
       iVar3 = 0;
@@ -54,38 +57,38 @@ void __cdecl core_msnedit_cpp_CDemonMission_hideActorsMenu_FUN_0053dcf0(CDemonMi
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3b8,0);
     }
     if ((initial_selected_index == 1) &&
-       (iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+       (iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                           (g_CEditorToolsPtr,"Hide actors by name using wildcard",
-                           g_HideActorsWildcardBuffer,100,1), iVar3 != 0)) {
-      iVar3 = 0;
-      for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor
+                           g_HideActorsWildcardBuffer,100,1), iVar4 != 0)) {
+      iVar4 = 0;
+      for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor
           ) {
-        if ((pCVar1->is_editor_hidden == 0) &&
-           (iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                              (g_HideActorsWildcardBuffer,pCVar1->actor_name,0), iVar2 != 0)) {
-          iVar3 = iVar3 + 1;
-          pCVar1->is_editor_hidden = 1;
+        if ((pCVar2->is_editor_hidden == 0) &&
+           (iVar5 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
+                              (g_HideActorsWildcardBuffer,pCVar2->actor_name,0), iVar5 != 0)) {
+          iVar4 = iVar4 + 1;
+          pCVar2->is_editor_hidden = 1;
         }
       }
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
-                (g_CEditorToolsPtr,"%d actors hidden",iVar3);
+                (g_CEditorToolsPtr,"%d actors hidden",iVar4);
     }
     if ((initial_selected_index == 2) &&
-       (iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+       (iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                           (g_CEditorToolsPtr,"Hide actors by type",
-                           g_MsnEditHideByTypeBuffer,100,1), iVar3 != 0)) {
-      iVar3 = 0;
-      for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor
+                           g_MsnEditHideByTypeBuffer,100,1), iVar4 != 0)) {
+      iVar4 = 0;
+      for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor
           ) {
-        if ((pCVar1->is_editor_hidden == 0) &&
-           (iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar1,g_MsnEditHideByTypeBuffer),
+        if ((pCVar2->is_editor_hidden == 0) &&
+           (iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar2,g_MsnEditHideByTypeBuffer),
            iVar2 != 0)) {
-          iVar3 = iVar3 + 1;
-          pCVar1->is_editor_hidden = 1;
+          iVar4 = iVar4 + 1;
+          pCVar2->is_editor_hidden = 1;
         }
       }
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
-                (g_CEditorToolsPtr,"%d actors hidden",iVar3);
+                (g_CEditorToolsPtr,"%d actors hidden",iVar4);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_760,0);
     }
     else {

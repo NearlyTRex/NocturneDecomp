@@ -11,15 +11,16 @@
 void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40(CBodyPart *this_ptr,CVector3i *out_bbox_min,CVector3i *out_bbox_max)
 
 {
-  longlong lVar1;
-  longlong lVar2;
-  longlong lVar3;
-  int iVar4;
+  longlong lVar4;
+  longlong lVar5;
+  longlong lVar6;
   int iVar5;
+  int iVar9;
   int iVar6;
   int iVar7;
   int iVar8;
   int *piVar9;
+  int *piVar10;
   byte bVar10;
   int aiStackY_106c [1001];
   int local_c0;
@@ -44,21 +45,21 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa4
   int local_20;
   int local_1c;
   int local_18;
+  int iVar4;
+  longlong lVar2;
+  longlong lVar3;
+  longlong lVar1;
   
   bVar10 = 0;
   local_44 = 0x7fffffff;
   local_48 = 0;
   do {
-    iVar4 = local_48;
     local_c0 = 0;
     do {
-      local_18 = iVar4;
       local_54.x = (float)local_c0 * (float)3.1415926535000001 * (float)0.083333333333333301;
-      local_54.y = (float)iVar4 * (float)3.1415926535000001 * (float)0.083333333333333301;
+      local_54.y = (float)local_48 * (float)3.1415926535000001 * (float)0.083333333333333301;
       local_54.z = 0.0;
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_b8,&local_54);
-      local_28 = (int)ROUND(ROUND(local_b8.m[0].x * 65536.0f));
-      local_24 = (int)ROUND(ROUND(local_b8.m[0].y * 65536.0f));
       local_58 = 0x7fffffff;
       local_5c = 0x7fffffff;
       local_60 = 0x7fffffff;
@@ -66,41 +67,37 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa4
       aiStack_80[3] = -0x7fffffff;
       aiStack_80[2] = -0x7fffffff;
       iVar8 = 0;
-      local_3c = (int)ROUND(ROUND(local_b8.m[0].z * 65536.0f));
-      local_20 = (int)ROUND(ROUND(local_b8.m[1].x * 65536.0f));
-      local_34 = (int)ROUND(ROUND(local_b8.m[1].y * 65536.0f));
-      local_2c = (int)ROUND(ROUND(local_b8.m[1].z * 65536.0f));
-      local_30 = (int)ROUND(ROUND(local_b8.m[2].x * 65536.0f));
-      local_38 = (int)ROUND(ROUND(local_b8.m[2].y * 65536.0f));
-      local_40 = (int)ROUND(ROUND(local_b8.m[2].z * 65536.0f));
       if (0 < this_ptr->vertex_count) {
         local_1c = 0;
         do {
-          piVar9 = (int *)((int)&this_ptr->vertices->x + local_1c);
-          lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[0].x * 65536.0f)) * (longlong)*piVar9;
+          piVar10 = (int *)((int)&this_ptr->vertices->x + local_1c);
+          lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[0].x * 65536.0f)) * (longlong)*piVar10
+          ;
           lVar2 = (longlong)(int)ROUND(ROUND(local_b8.m[1].x * 65536.0f)) *
-                  (longlong)piVar9[1];
+                  (longlong)piVar10[1];
           lVar3 = (longlong)(int)ROUND(ROUND(local_b8.m[2].x * 65536.0f)) *
-                  (longlong)piVar9[2];
+                  (longlong)piVar10[2];
           iVar6 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
                   ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
                   ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-          lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[0].y * 65536.0f)) * (longlong)*piVar9;
-          lVar2 = (longlong)(int)ROUND(ROUND(local_b8.m[1].y * 65536.0f)) *
-                  (longlong)piVar9[1];
-          lVar3 = (longlong)(int)ROUND(ROUND(local_b8.m[2].y * 65536.0f)) *
-                  (longlong)piVar9[2];
-          iVar7 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
-                  ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
-                  ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-          lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[0].z * 65536.0f)) * (longlong)*piVar9;
-          lVar2 = (longlong)(int)ROUND(ROUND(local_b8.m[1].z * 65536.0f)) *
-                  (longlong)piVar9[1];
-          local_18 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
-                     ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
-          lVar1 = (longlong)(int)ROUND(ROUND(local_b8.m[2].z * 65536.0f)) *
-                  (longlong)piVar9[2];
-          iVar5 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + local_18;
+          lVar4 = (longlong)(int)ROUND(ROUND(local_b8.m[0].y * 65536.0f)) * (longlong)*piVar10
+          ;
+          lVar5 = (longlong)(int)ROUND(ROUND(local_b8.m[1].y * 65536.0f)) *
+                  (longlong)piVar10[1];
+          lVar6 = (longlong)(int)ROUND(ROUND(local_b8.m[2].y * 65536.0f)) *
+                  (longlong)piVar10[2];
+          iVar7 = ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
+                  ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) +
+                  ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
+          lVar4 = (longlong)(int)ROUND(ROUND(local_b8.m[0].z * 65536.0f)) * (longlong)*piVar10
+          ;
+          lVar5 = (longlong)(int)ROUND(ROUND(local_b8.m[1].z * 65536.0f)) *
+                  (longlong)piVar10[1];
+          lVar6 = (longlong)(int)ROUND(ROUND(local_b8.m[2].z * 65536.0f)) *
+                  (longlong)piVar10[2];
+          iVar5 = ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) +
+                  ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
+                  ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
           if (iVar6 < local_60) {
             local_60 = iVar6;
           }
@@ -123,20 +120,20 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa4
           local_1c = local_1c + 0xc;
         } while (iVar8 < this_ptr->vertex_count);
       }
-      iVar8 = aiStack_80[2] - local_60;
+      iVar9 = aiStack_80[2] - local_60;
       if (aiStack_80[2] - local_60 < aiStack_80[3] - local_5c) {
-        iVar8 = aiStack_80[3] - local_5c;
+        iVar9 = aiStack_80[3] - local_5c;
       }
-      if (iVar8 < local_44) {
+      if (iVar9 < local_44) {
         local_84 = local_60;
-        aiStack_80[(uint)bVar10 * -2] = aiStack_80[(uint)bVar10 * -2 + 9];
+        aiStack_80[(uint)bVar10 * -2] = (&local_5c)[(uint)bVar10 * -2];
         aiStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-             aiStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10];
-        local_44 = iVar8;
+             (&local_58)[(uint)bVar10 * -2 + (uint)bVar10 * -2];
         aiStack_80[5] = aiStack_80[2];
         aiStack_80[(uint)bVar10 * -2 + 6] = aiStack_80[(uint)bVar10 * -2 + 3];
         aiStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7] =
              aiStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+        local_44 = iVar9;
         if (&local_90 != &local_54) {
           local_90.x = local_54.x;
           local_90.y = local_54.y;
@@ -151,10 +148,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa4
   out_bbox_min->x = local_84;
   *piVar9 = aiStack_80[(uint)bVar10 * -2];
   piVar9[(uint)bVar10 * -2 + 1] = aiStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
-  piVar9 = (int *)((int)out_bbox_max + (uint)bVar10 * -8 + 4);
+  piVar10 = (int *)((int)out_bbox_max + (uint)bVar10 * -8 + 4);
   out_bbox_max->x = aiStack_80[5];
-  *piVar9 = aiStack_80[(uint)bVar10 * -2 + 6];
-  piVar9[(uint)bVar10 * -2 + 1] = aiStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
+  *piVar10 = aiStack_80[(uint)bVar10 * -2 + 6];
+  piVar10[(uint)bVar10 * -2 + 1] = aiStack_80[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
   core_bodypart_cpp_CBodyPart_applyRotation_FUN_0041a630(this_ptr,&local_90);
   return;
 }

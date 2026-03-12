@@ -9,16 +9,20 @@
 int __cdecl core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(CDemonSet *this_ptr,int *camera_flags)
 
 {
-  int iVar1;
   CDemonSet *pCVar2;
+  int iVar2;
+  int iVar3;
   ushort *puVar3;
   uint uVar4;
   uint *puVar5;
+  uint uVar5;
   int iVar6;
   int iVar7;
+  int y1;
   uchar *puVar8;
   int iVar9;
   int iVar10;
+  int iVar8;
   int iVar11;
   int local_9c;
   int local_90;
@@ -39,9 +43,10 @@ int __cdecl core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(CDemo
   int local_1c;
   int local_18;
   int local_14;
+  int iVar1;
   
   local_9c = -1;
-  iVar6 = -1;
+  iVar2 = -1;
   if (0x1df < g_WindowHeight) {
     iVar6 = 0;
     iVar7 = 0;
@@ -91,13 +96,13 @@ int __cdecl core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(CDemo
             local_68 = 4;
             if (local_90 != 0) {
 LAB_00577d41:
-              iVar6 = local_7c - g_ThumbnailScrollBar.scroll_position;
-              if ((0 < iVar6 + local_68) &&
-                 (iVar6 < (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x40) -
+              iVar2 = local_7c - g_ThumbnailScrollBar.scroll_position;
+              if ((0 < iVar2 + local_68) &&
+                 (iVar2 < (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x40) -
                                (uint)((g_WindowWidth >> 0x1f) << 5 < 0)) >> 6)) {
-                iVar6 = iVar6 * 0x40;
+                iVar2 = iVar2 * 0x40;
                 g_ActiveRenderColor = 0;
-                iVar7 = g_WindowHeight + -10 + (4 - local_6c) * -0x30;
+                y1 = g_WindowHeight + -10 + (4 - local_6c) * -0x30;
                 if ((camera_flags != (int *)0x0) && (*local_8c != 0)) {
                   g_ActiveRenderColor = 2;
                 }
@@ -105,27 +110,27 @@ LAB_00577d41:
                   g_ActiveRenderColor = 1;
                 }
                 iVar11 = local_80;
-                for (iVar9 = iVar6; iVar9 < iVar6 + local_68 * 0x40; iVar9 = iVar9 + 0x40) {
-                  if ((((-1 < iVar9) && (-1 < iVar7)) && (iVar9 + 0x40 <= g_WindowWidth)) &&
-                     (iVar7 + 0x30 <= g_WindowHeight)) {
+                for (iVar3 = iVar2; iVar3 < iVar2 + local_68 * 0x40; iVar3 = iVar3 + 0x40) {
+                  if ((((-1 < iVar3) && (-1 < y1)) && (iVar3 + 0x40 <= g_WindowWidth)) &&
+                     (y1 + 0x30 <= g_WindowHeight)) {
                     local_1c = iVar11 * 0x3000;
                     iVar1 = local_1c + 0x3000;
-                    local_2c = iVar7 * 4;
+                    local_2c = y1 * 4;
                     local_34 = local_1c + 0x100;
                     local_20 = local_2c;
                     local_18 = local_1c;
                     if (g_BitsPerPixel == 8) {
                       do {
-                        puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar9);
+                        puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar3);
                         iVar10 = local_18;
                         do {
                           puVar8 = puVar8 + 1;
-                          uVar4 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar10);
+                          uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar10);
                           iVar10 = iVar10 + 4;
                           *puVar8 = g_ColorCubeLookup
-                                    [((uVar4 & 0xff) >> 3) * 0x400 +
-                                     ((uVar4 >> 8 & 0xff) >> 3) * 0x20 +
-                                     ((uVar4 >> 0x10 & 0xff) >> 3)];
+                                    [((uVar5 & 0xff) >> 3) * 0x400 +
+                                     ((uVar5 >> 8 & 0xff) >> 3) * 0x20 +
+                                     ((uVar5 >> 0x10 & 0xff) >> 3)];
                         } while (iVar10 != local_34);
                         local_20 = local_20 + 4;
                         local_18 = local_18 + 0x100;
@@ -137,16 +142,16 @@ LAB_00577d41:
                       local_14 = local_1c;
                       do {
                         puVar3 = (ushort *)
-                                 (*(int *)((int)g_ScreenBufferArray + local_2c) + iVar9 * 2);
-                        iVar10 = local_14;
+                                 (*(int *)((int)g_ScreenBufferArray + local_2c) + iVar3 * 2);
+                        iVar8 = local_14;
                         do {
                           puVar3 = puVar3 + 1;
-                          uVar4 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar10);
-                          iVar10 = iVar10 + 4;
+                          uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar8);
+                          iVar8 = iVar8 + 4;
                           uVar4 = engine_font_cpp_packPixelScaled_FUN_004d1110
-                                            (uVar4 & 0xff,uVar4 >> 8 & 0xff,uVar4 >> 0x10 & 0xff);
+                                            (uVar5 & 0xff,uVar5 >> 8 & 0xff,uVar5 >> 0x10 & 0xff);
                           *puVar3 = (short)uVar4;
-                        } while (iVar10 != local_28);
+                        } while (iVar8 != local_28);
                         local_2c = local_2c + 4;
                         local_14 = local_14 + 0x100;
                         local_28 = local_28 + 0x100;
@@ -156,17 +161,17 @@ LAB_00577d41:
                       local_30 = local_34;
                       local_24 = local_2c;
                       do {
-                        puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar9 * 4)
+                        puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar3 * 4)
                         ;
-                        iVar10 = local_1c;
+                        iVar8 = local_1c;
                         do {
                           puVar5 = puVar5 + 1;
-                          uVar4 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar10);
-                          iVar10 = iVar10 + 4;
-                          uVar4 = engine_font_cpp_packPixelNative_FUN_004d1170
-                                            (uVar4 & 0xff,uVar4 >> 8 & 0xff,uVar4 >> 0x10 & 0xff);
-                          *puVar5 = uVar4;
-                        } while (iVar10 != local_30);
+                          uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar8);
+                          iVar8 = iVar8 + 4;
+                          uVar5 = engine_font_cpp_packPixelNative_FUN_004d1170
+                                            (uVar5 & 0xff,uVar5 >> 8 & 0xff,uVar5 >> 0x10 & 0xff);
+                          *puVar5 = uVar5;
+                        } while (iVar8 != local_30);
                         local_24 = local_24 + 4;
                         local_1c = local_1c + 0x100;
                         local_30 = local_30 + 0x100;
@@ -175,15 +180,15 @@ LAB_00577d41:
                   }
                   iVar11 = iVar11 + 1;
                 }
-                iVar9 = local_68 * 0x40 + iVar6;
-                engine_2d_c_drawRect_FUN_00403120(iVar6,iVar7,iVar9 + -1,iVar7 + 0x2f);
-                if (((iVar6 <= g_MouseX) && (g_MouseX < iVar9)) &&
-                   ((iVar7 <= g_MouseY && (g_MouseY < iVar7 + 0x30)))) {
+                iVar3 = local_68 * 0x40 + iVar2;
+                engine_2d_c_drawRect_FUN_00403120(iVar2,y1,iVar3 + -1,y1 + 0x2f);
+                if (((iVar2 <= g_MouseX) && (g_MouseX < iVar3)) &&
+                   ((y1 <= g_MouseY && (g_MouseY < y1 + 0x30)))) {
                   local_9c = local_70;
-                  if (iVar6 < 0) {
-                    iVar6 = 0;
+                  if (iVar2 < 0) {
+                    iVar2 = 0;
                   }
-                  engine_2d_c_drawTextXY_FUN_00402130(iVar6,iVar7,local_84->name);
+                  engine_2d_c_drawTextXY_FUN_00402130(iVar2,y1,local_84->name);
                 }
               }
               local_6c = local_6c + 1;
@@ -210,7 +215,7 @@ LAB_00577d41:
       return -1;
     }
     g_MouseButtonFlags.dword = 0;
-    iVar6 = local_9c;
+    iVar2 = local_9c;
   }
-  return iVar6;
+  return iVar2;
 }

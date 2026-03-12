@@ -6,15 +6,15 @@
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x15c]:1  local_15c
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[300]        Stack[-0x15c]:300  local_15c
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004daae6

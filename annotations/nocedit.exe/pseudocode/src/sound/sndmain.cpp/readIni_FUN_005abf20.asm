@@ -6,18 +6,18 @@
 ; Parameters:
 ; CIniFile *       Stack[0x4]:4   ini_file
 ; Local Variables:
-; undefined1       Stack[-0x3b4]:1  local_3b4
-; undefined1       Stack[-0x29c]:1  local_29c
-; undefined1       Stack[-0x194]:1  local_194
-; undefined1       Stack[-0x94]:1  local_94
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SSoundDeviceInfo Stack[-0x3b4]:280  local_3b4
+; SRecordingDeviceInfo Stack[-0x29c]:264  local_29c
+; char[256]        Stack[-0x194]:256  local_194
+; char[100]        Stack[-0x94]:100  local_94
+; float            Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_inivar.cpp_readIniData_FUN_004fbd90 at 004fbfd9

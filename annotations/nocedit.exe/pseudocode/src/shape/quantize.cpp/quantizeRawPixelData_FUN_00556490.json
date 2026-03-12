@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 50,
-        "line": 38,
+        "line": 44,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 69,
+        "line": 75,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 72,
+        "line": 78,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 114,
+        "line": 120,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 122,
+        "line": 128,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 24,
-        "line": 141,
+        "line": 147,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       }
     ],
@@ -43,17 +43,17 @@
   },
   "complexity": {
     "assembly_lines": 373,
-    "complexity_score": 221,
+    "complexity_score": 228,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 156,
+    "pseudocode_lines": 163,
     "suspect_count": 6,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 529
+    "total_lines": 536
   },
   "cross_references": [
     {
@@ -357,15 +357,15 @@
         "is_param": false,
         "name": "local_dc",
         "offset": -220,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CBitmap *"
       },
       {
         "is_param": true,
@@ -428,7 +428,7 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 18,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "int unaff_ESI;",
@@ -436,7 +436,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 36,
+      "line": 42,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = 1;",
@@ -444,7 +444,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 45,
+      "line": 51,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = 2;",
@@ -452,7 +452,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 50,
+      "line": 56,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = 3;",
@@ -460,7 +460,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 54,
+      "line": 60,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = 4;",
@@ -468,7 +468,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 64,
+      "line": 70,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "uVar5 = width * height * unaff_ESI;",

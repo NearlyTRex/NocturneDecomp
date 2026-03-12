@@ -8,9 +8,9 @@
 ; SEdgeList *      Stack[0x8]:4   edge_lists
 ; int              Stack[0xc]:4   expected_count
 ; Local Variables:
-; undefined        Stack[-0x68]:1  local_68
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x68]:80  local_68
+; int              Stack[-0x18]:4  local_18
+; _FILE *          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440 at 00433455

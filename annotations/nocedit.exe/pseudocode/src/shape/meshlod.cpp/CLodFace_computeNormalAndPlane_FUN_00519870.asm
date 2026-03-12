@@ -10,33 +10,27 @@
 ; CVector3f *      Stack[0x10]:4   vertex2_pos
 ; Local Variables:
 ; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; CVector3f        Stack[-0x84]:12  local_84
+; CVector3f        Stack[-0x78]:12  local_78
+; CVector3f        Stack[-0x6c]:12  local_6c
+; float            Stack[-0x60]:4  local_60
+; float            Stack[-0x5c]:4  local_5c
+; float            Stack[-0x58]:4  local_58
+; float            Stack[-0x54]:4  local_54
+; float            Stack[-0x50]:4  local_50
+; float            Stack[-0x4c]:4  local_4c
+; float            Stack[-0x48]:4  local_48
+; float            Stack[-0x44]:4  local_44
+; float            Stack[-0x40]:4  local_40
+; float            Stack[-0x3c]:4  local_3c
+; float            Stack[-0x38]:4  local_38
+; float            Stack[-0x34]:4  local_34
+; float            Stack[-0x30]:4  local_30
+; float            Stack[-0x2c]:4  local_2c
+; float            Stack[-0x28]:4  local_28
+; int              Stack[-0x20]:4  local_20
+; CLodFace *       Stack[-0x1c]:4  local_1c
+; CVector3f *      Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   shape_meshlod.cpp_CLodMesh_validateFace_FUN_00519830 at 00519860

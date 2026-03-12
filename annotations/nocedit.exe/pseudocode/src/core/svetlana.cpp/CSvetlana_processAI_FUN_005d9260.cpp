@@ -11,16 +11,18 @@
 void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_ptr,float delta_time)
 
 {
-  CDeformableModelInstance *this_ptr_00;
-  float fVar1;
-  EHeroTask EVar2;
-  bool bVar3;
-  float fVar4;
+  CDeformableModelInstance *this_ptr_01;
+  float fVar2;
+  CHero *pCVar3;
   int iVar5;
   CHero *pCVar6;
   CVector3f *pCVar7;
+  CVector3f *pCVar4;
   SMotion *pSVar8;
+  SMotion *pSVar5;
+  int iVar6;
   uint uVar9;
+  uint uVar7;
   CHero *pCVar10;
   float fStack_98;
   float fStack_8c;
@@ -40,6 +42,11 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
   float local_1c;
   float fStack_18;
   float fStack_14;
+  bool bVar3;
+  float fVar4;
+  CDeformableModelInstance *this_ptr_00;
+  float fVar1;
+  EHeroTask EVar2;
   
   bVar3 = false;
   local_1c = 0.25;
@@ -47,13 +54,13 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
   pCVar10 = g_HeroActors[g_LocalHeroIndex];
   memset(&(this_ptr->base).player_control,0,0x2c);
   if ((this_ptr->base).ai_task != HERO_TASK_STAND) {
-    pCVar6 = g_HeroActors[g_LocalHeroIndex];
+    pCVar3 = g_HeroActors[g_LocalHeroIndex];
     local_6c.x = (this_ptr->base).base.base.location.position.x -
-                 (pCVar6->base).base.location.position.x;
+                 (pCVar3->base).base.location.position.x;
     local_6c.y = (this_ptr->base).base.base.location.position.y -
-                 (pCVar6->base).base.location.position.y;
+                 (pCVar3->base).base.location.position.y;
     local_6c.z = (this_ptr->base).base.base.location.position.z -
-                 (pCVar6->base).base.location.position.z;
+                 (pCVar3->base).base.location.position.z;
     local_30 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y);
     if ((this_ptr->base).ai_task == HERO_TASK_GUARD) {
       local_30 = 0.0;
@@ -91,10 +98,10 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
       local_6c.y = CStack_78.y;
       local_6c.z = CStack_78.z;
     }
-    fVar1 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y);
+    fVar2 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y);
     (this_ptr->base).base.turn_angle_accumulator = 0.0;
-    fStack_18 = fVar1;
-    if ((float)6 <= fVar1) {
+    fStack_18 = fVar2;
+    if ((float)6 <= fVar2) {
       pCStack_20 = (CPathMap *)0x0;
       if (bVar3) {
         (this_ptr->base).base.hero_proximity_timer = 0.0;
@@ -102,15 +109,15 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
       else {
         pCStack_20 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getPathMap)
                                ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
-        iVar5 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ue)->_ue).randomize)
+        iVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ue)->_ue).randomize)
                           ((CEnemy *)g_HeroActors[g_LocalHeroIndex]);
-        if ((iVar5 == 0) &&
-           (uVar9 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
-                              ((CCharacter *)this_ptr,delta_time), uVar9 != 0)) {
-          if (uVar9 < 2) {
+        if ((iVar6 == 0) &&
+           (uVar7 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
+                              ((CCharacter *)this_ptr,delta_time), uVar7 != 0)) {
+          if (uVar7 < 2) {
             (this_ptr->base).player_control.action_states[0] = 1;
           }
-          else if (uVar9 == 2) {
+          else if (uVar7 == 2) {
             (this_ptr->base).player_control.action_states[2] = 1;
             (this_ptr->base).player_control.action_states[0] = 1;
           }
@@ -119,10 +126,10 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
       if (pCStack_20 == (CPathMap *)0x0) {
         pCStack_20 = core_path_cpp_getPathMap_FUN_00548500(&(pCVar10->base).base.location);
       }
-      iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
+      iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (pCStack_20,&(this_ptr->base).base.base.location.position,&CStack_48,
                          (this_ptr->base).base.base.direction_hint);
-      if (iVar5 != 0) {
+      if (iVar6 != 0) {
         fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                               (CStack_48.y - (this_ptr->base).base.base.orient.vec.y);
         fVar4 = fStack_14 * (float)0.31830988619288902 * (float)4;
@@ -134,7 +141,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
         if (local_1c < (this_ptr->base).player_control.turn_speed) {
           (this_ptr->base).player_control.turn_speed = local_1c;
         }
-        if (((float)10 <= fVar1) || (bVar3)) {
+        if (((float)10 <= fVar2) || (bVar3)) {
           (this_ptr->base).player_control.action_states[2] = 1;
           (this_ptr->base).player_control.action_states[0] = 1;
         }
@@ -144,14 +151,14 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
       }
     }
     else {
-      this_ptr_00 = &(this_ptr->base).base.model;
+      this_ptr_01 = &(this_ptr->base).base.model;
       if (bVar3) {
         if (this_ptr->blades_drawn == 0) {
           (this_ptr->base).player_control.action_states[6] = 1;
         }
         else {
           pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                             (&this_ptr_00->motion_controller);
+                             (&this_ptr_01->motion_controller);
           if ((pSVar8->state_index != 2) && (pSVar8->state_index != 1)) {
             (this_ptr->base).player_control.action_states[3] = 1;
           }
@@ -159,14 +166,14 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
         (this_ptr->base).base.hero_proximity_timer = 0.0;
       }
       else {
-        pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                           (&this_ptr_00->motion_controller);
-        if ((pSVar8->state_index == 10) && (this_ptr->blades_drawn != 0)) {
+        pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                           (&this_ptr_01->motion_controller);
+        if ((pSVar5->state_index == 10) && (this_ptr->blades_drawn != 0)) {
           (this_ptr->base).player_control.action_states[6] = 1;
         }
-        iVar5 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ue)->_ue).randomize)
+        iVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ue)->_ue).randomize)
                           ((CEnemy *)g_HeroActors[g_LocalHeroIndex]);
-        if ((iVar5 == 0) &&
+        if ((iVar6 == 0) &&
            (uVar9 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                               ((CCharacter *)this_ptr,delta_time), uVar9 != 0)) {
           if (uVar9 < 2) {
@@ -183,10 +190,10 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
                            (&CStack_54,&local_6c);
         fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                               (pCVar7->y - (this_ptr->base).base.base.orient.vec.y);
-        fVar1 = fStack_14 * (float)0.31830988619288902 * (float)4;
+        fVar2 = fStack_14 * (float)0.31830988619288902 * (float)4;
         fStack_34 = -local_1c;
-        (this_ptr->base).player_control.turn_speed = fVar1;
-        if (fVar1 < fStack_34) {
+        (this_ptr->base).player_control.turn_speed = fVar2;
+        if (fVar2 < fStack_34) {
           (this_ptr->base).player_control.turn_speed = fStack_34;
         }
         if (local_1c < (this_ptr->base).player_control.turn_speed) {
@@ -199,9 +206,9 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
         }
       }
     }
-    fVar1 = (this_ptr->base).base.turn_angle_accumulator;
-    if (fVar1 <= 0.0) {
-      if (fVar1 < 0.0) {
+    fVar2 = (this_ptr->base).base.turn_angle_accumulator;
+    if (fVar2 <= 0.0) {
+      if (fVar2 < 0.0) {
         (this_ptr->base).base.turn_angle_accumulator = 0.0;
         (this_ptr->base).player_control.turn_speed = -local_1c;
       }
@@ -221,11 +228,11 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
       local_6c.y = CStack_60.y;
       local_6c.z = CStack_60.z;
     }
-    pCVar7 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_84,&local_6c);
-    if (&local_6c != pCVar7) {
-      local_6c.x = pCVar7->x;
-      local_6c.y = pCVar7->y;
-      local_6c.z = pCVar7->z;
+    pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_84,&local_6c);
+    if (&local_6c != pCVar4) {
+      local_6c.x = pCVar4->x;
+      local_6c.y = pCVar4->y;
+      local_6c.z = pCVar4->z;
     }
     fStack_8c = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (local_6c.y - (this_ptr->base).base.base.orient.vec.y);

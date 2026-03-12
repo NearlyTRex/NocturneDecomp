@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 60,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 44,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 146
+    "total_lines": 145
   },
   "cross_references": [
     {
@@ -136,57 +136,43 @@
         "is_param": false,
         "name": "local_2274",
         "offset": -8820,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_21a8",
-        "offset": -8616,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_21a4",
-        "offset": -8612,
-        "size": 1,
-        "type": "undefined1"
+        "size": 8488,
+        "type": "CCmdParse"
       },
       {
         "is_param": false,
         "name": "local_14c",
         "offset": -332,
-        "size": 1,
-        "type": "undefined1"
+        "size": 300,
+        "type": "char[300]"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -207,10 +193,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 33,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->parsed_lines->line_number + iVar1));",
+      "text": "*(uint *)((int)&this_ptr->parsed_lines->line_number + local_1c));",
       "type": "pointer_cast"
     }
   ]

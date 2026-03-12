@@ -11,6 +11,7 @@
 void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
+  int iVar2;
   int iVar1;
   CMatrix3x4f *pCVar2;
   byte bVar3;
@@ -24,7 +25,7 @@ void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *th
   CVector3f local_18;
   
   bVar3 = 0;
-  iVar1 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
+  iVar2 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   if (hand_index == 1) {
     local_60[0].y = -0.505;
     local_60[0].z = 0.389;
@@ -63,12 +64,13 @@ void __stack2_esi core_imp_cpp_CImp_getCarryObjToBodyXForm_FUN_004fa920(CImp *th
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&local_90,&local_18,&local_3c);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            (&local_90,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar1,
+            (&local_90,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2,
              &local_c0);
   pCVar2 = &local_c0;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar3 * -8 + 4);
     out_matrix->m[0].w = pCVar2->m[0].w;
-    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar3 * -2 + 1) * 4);
+    pCVar2 = pCVar2;
     out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar3 * -2 + 1) * 4);
   }
   return;

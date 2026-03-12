@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 27,
-        "line": 117,
+        "line": 122,
         "message": "assigning to 'CMorph *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 609,
-    "complexity_score": 226,
+    "complexity_score": 231,
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 58,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 211,
+    "pseudocode_lines": 216,
     "suspect_count": 1,
     "suspect_types": [
       "stack_alignment_array"
     ],
-    "total_lines": 820
+    "total_lines": 825
   },
   "cross_references": [
     {
@@ -692,88 +692,81 @@
     "pcode_op_count": 1878
   },
   "stack_frame": {
-    "frame_size": 1324,
-    "local_size": 1324,
+    "frame_size": 4108,
+    "local_size": 4108,
     "param_offset": 4,
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "aiStackY_1008",
+        "offset": -4104,
+        "size": 2760,
+        "type": "int[690]"
+      },
+      {
+        "is_param": false,
         "name": "local_528",
         "offset": -1320,
-        "size": 1,
-        "type": "undefined1"
+        "size": 512,
+        "type": "CIniFile"
       },
       {
         "is_param": false,
         "name": "local_328",
         "offset": -808,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_228",
         "offset": -552,
-        "size": 1,
-        "type": "undefined1"
+        "size": 228,
+        "type": "CEdButton"
       },
       {
         "is_param": false,
         "name": "local_144",
         "offset": -324,
-        "size": 1,
-        "type": "undefined1"
+        "size": 228,
+        "type": "CEdButton"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
+        "size": 52,
+        "type": "CEdScrollBar"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CCourse"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "char[4]"
       },
       {
         "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
+        "name": "aiStack_1c",
+        "offset": -28,
+        "size": 12,
+        "type": "int[3]"
       }
     ]
   },
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 19,
       "match": "aiStackY_1008",
       "severity": "moderate",
       "text": "int aiStackY_1008 [690];",

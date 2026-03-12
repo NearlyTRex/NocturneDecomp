@@ -6,8 +6,9 @@
 ; Parameters:
 ; CBoneGuy *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x14]:4  local_14
+; float[1525]      Stack[-0x1800]:6100  afStackY_1800
+; CQuaternion4f    Stack[-0x24]:16  local_24
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c054

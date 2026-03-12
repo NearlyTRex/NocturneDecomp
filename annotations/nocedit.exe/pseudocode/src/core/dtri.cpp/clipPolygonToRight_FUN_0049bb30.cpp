@@ -9,8 +9,8 @@
 void __cdecl core_dtri_cpp_clipPolygonToRight_FUN_0049bb30(float x_max)
 
 {
-  CVector3f *point2_ptr;
   byte bVar1;
+  CVector3f *point2_ptr;
   uint uVar2;
   int iVar3;
   CVector3f *point1_ptr;

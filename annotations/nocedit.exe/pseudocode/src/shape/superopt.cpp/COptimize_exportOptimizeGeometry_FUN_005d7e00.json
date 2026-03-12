@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 47,
+        "line": 55,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 220,
+    "complexity_score": 230,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 45,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 155,
+    "pseudocode_lines": 165,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 425
+    "total_lines": 435
   },
   "cross_references": [
     {
@@ -390,77 +390,77 @@
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint *"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -474,39 +474,39 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 70,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar6) =",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 72,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar6) =",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 74,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar6) =",
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar5) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 135,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7 + 4) = iVar6;",
+      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7 + 4) = iVar5;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 136,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)g_ModelPolygonData[0].uv_u + iVar7 + 4) =",
@@ -514,7 +514,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 142,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)g_ModelPolygonData[0].uv_v + iVar7 + 4) =",

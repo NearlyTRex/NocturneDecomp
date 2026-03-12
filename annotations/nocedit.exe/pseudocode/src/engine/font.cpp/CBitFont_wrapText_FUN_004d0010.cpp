@@ -9,18 +9,20 @@
 int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *this_ptr,char *source_text,char *dest_buffer,int max_lines,int line_width,int max_pixel_width)
 
 {
-  char cVar1;
-  bool bVar2;
   int iVar3;
   uint uVar4;
+  uint uVar1;
   uint uVar5;
   uint uVar6;
   char *pcVar7;
+  char *pcVar2;
   char *pcVar8;
   byte bVar9;
   char *local_24;
   int local_20;
   uint local_14;
+  bool bVar2;
+  char cVar1;
   
   bVar9 = 0;
   memset(dest_buffer,0,max_lines * line_width);
@@ -40,9 +42,9 @@ int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *this_ptr,ch
       uVar6 = 0;
       local_14 = 0xffffffff;
       local_20 = local_20 + 1;
-      pcVar7 = source_text;
+      pcVar2 = source_text;
       while( true ) {
-        cVar1 = *pcVar7;
+        cVar1 = *pcVar2;
         if ((cVar1 == '\n') || (cVar1 == '\0')) goto LAB_004d00c8;
         if ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2) != 0) {
           local_14 = uVar6;
@@ -58,7 +60,7 @@ int __cdecl engine_font_cpp_CBitFont_wrapText_FUN_004d0010(CBitFont *this_ptr,ch
         g_TempTextBuffer[uVar6] = cVar1;
         if (!bVar2) break;
         uVar6 = uVar6 + 1;
-        pcVar7 = pcVar7 + 1;
+        pcVar2 = pcVar2 + 1;
       }
       if (-1 < (int)local_14) {
         uVar6 = local_14;
@@ -73,17 +75,18 @@ LAB_004d00c8:
           pcVar7 = pcVar7 + -1;
         } while (0 < (int)uVar5);
       }
-      pcVar7 = source_text;
+      pcVar2 = source_text;
       pcVar8 = local_24;
       for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(uint *)pcVar8 = *(uint *)pcVar7;
-        pcVar7 = pcVar7 + (uint)bVar9 * -8 + 4;
+        *(uint *)pcVar8 = *(uint *)pcVar2;
+        pcVar2 = pcVar2 + (uint)bVar9 * -8 + 4;
         pcVar8 = pcVar8 + (uint)bVar9 * -8 + 4;
       }
-      for (uVar4 = uVar5 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *pcVar8 = *pcVar7;
-        pcVar7 = pcVar7 + (uint)bVar9 * -2 + 1;
+      for (uVar1 = uVar5 & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
         pcVar8 = pcVar8 + (uint)bVar9 * -2 + 1;
+        *pcVar8 = *pcVar2;
+        pcVar2 = pcVar2 + (uint)bVar9 * -2 + 1;
+        pcVar8 = pcVar8;
       }
       local_24[uVar5] = '\0';
       if (source_text[uVar6] == '\n') {

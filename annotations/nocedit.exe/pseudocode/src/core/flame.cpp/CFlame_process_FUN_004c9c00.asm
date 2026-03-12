@@ -8,9 +8,18 @@
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined1[12]   Stack[-0x114]:12  local_114
-; undefined1       Stack[-0xf8]:1  local_f8
+; double           Stack[-0xf8]:8  local_f8
+; double           Stack[-0xf0]:8  dStack_f0
 ; undefined1       Stack[-0x94]:1  local_94
-; undefined4       Stack[-0x14]:4  local_14
+; SCollisionInfo   Stack[-0x8c]:40  SStack_8c
+; SCollisionInfo   Stack[-0x64]:40  SStack_64
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; float            Stack[-0x28]:4  fStack_28
+; float            Stack[-0x24]:4  fStack_24
+; float            Stack[-0x20]:4  fStack_20
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   core_bodypart.cpp_CBodyPart_processFires_FUN_00419e10 at 00419efd

@@ -9,10 +9,9 @@
 void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0049cfb0(CDynamite *this_ptr,float delta_time)
 
 {
-  float fVar1;
-  CSound *this_ptr_00;
   int iVar2;
   CBoundingBox3D *pCVar3;
+  CBoundingBox3D *pCVar1;
   CVector3f *pCVar4;
   CBoundingBox3D CStack_60;
   CBoundingBox3D local_48;
@@ -21,6 +20,8 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0049cfb0(CDynamite *this_pt
   float fStack_20;
   float fStack_1c;
   CVector3f CStack_18;
+  CSound *this_ptr_00;
+  float fVar1;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   if (0.0 <= this_ptr->fuse_timer) {
@@ -38,15 +39,12 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0049cfb0(CDynamite *this_pt
       if (iVar2 != 0) {
         pCVar3 = (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
                            ((CDemonActor *)this_ptr,&local_48);
-        fStack_24 = (pCVar3->min).x + (pCVar3->max).x;
-        fStack_20 = (pCVar3->min).y + (pCVar3->max).y;
-        CStack_30.x = fStack_24 * 0.5f;
-        fStack_1c = (pCVar3->min).z + (pCVar3->max).z;
-        CStack_30.y = fStack_20 * 0.5f;
-        CStack_30.z = fStack_1c * 0.5f;
-        pCVar3 = (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
+        CStack_30.x = ((pCVar3->min).x + (pCVar3->max).x) * 0.5f;
+        CStack_30.y = ((pCVar3->min).y + (pCVar3->max).y) * 0.5f;
+        CStack_30.z = ((pCVar3->min).z + (pCVar3->max).z) * 0.5f;
+        pCVar1 = (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
                            ((CDemonActor *)this_ptr,&CStack_60);
-        CStack_30.z = (pCVar3->max).z;
+        CStack_30.z = (pCVar1->max).z;
         pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                            ((CDemonActor *)this_ptr,&CStack_18,&CStack_30);
         if (&CStack_30 != pCVar4) {

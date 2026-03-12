@@ -9,6 +9,7 @@
 int __cdecl wincore_windll_cpp_drawPolyList3_FUN_005b78c0(SRenderVertex *vertex_buffer,ushort *polygons,int polygon_count,int render_flags)
 
 {
+  int iVar2;
   int iVar1;
   SRenderVertex *local_1c;
   SRenderVertex *local_18;
@@ -19,8 +20,8 @@ int __cdecl wincore_windll_cpp_drawPolyList3_FUN_005b78c0(SRenderVertex *vertex_
   }
   g_RenderedTriangleCount = g_RenderedTriangleCount + polygon_count;
   if (g_APIDLL_drawPolyList3 != (APIDLL_drawPolyList3 *)0x0) {
-    iVar1 = (*g_APIDLL_drawPolyList3)(vertex_buffer,polygons,polygon_count,render_flags);
-    return iVar1;
+    iVar2 = (*g_APIDLL_drawPolyList3)(vertex_buffer,polygons,polygon_count,render_flags);
+    return iVar2;
   }
   iVar1 = 0;
   if (0 < polygon_count) {

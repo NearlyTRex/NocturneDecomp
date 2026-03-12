@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 280,
-    "complexity_score": 280,
+    "complexity_score": 282,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 135,
+    "pseudocode_lines": 137,
     "suspect_count": 14,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 415
+    "total_lines": 417
   },
   "cross_references": [
     {
@@ -160,64 +160,43 @@
         "is_param": false,
         "name": "local_34",
         "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
+        "size": 16,
+        "type": "CRect"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "CRect *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -231,26 +210,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if ((*(int *)((int)g_DirtySpanStarts + iVar7) <= pCVar4->top) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 88,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "(pCVar4->left <= *(int *)((int)g_DirtySpanEnds + iVar7))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 89,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if ((*(int *)((int)g_DirtySpanStarts + iVar7) <= pCVar4->left) &&",
+      "text": "if ((*(int *)((int)g_DirtySpanStarts + iVar1) <= pCVar2->top) &&",
       "type": "pointer_cast"
     },
     {
@@ -258,7 +221,7 @@
       "line": 90,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(pCVar4->top <= *(int *)((int)g_DirtySpanEnds + iVar7))) goto LAB_004730f9;",
+      "text": "(pCVar2->left <= *(int *)((int)g_DirtySpanEnds + iVar1))) {",
       "type": "pointer_cast"
     },
     {
@@ -266,7 +229,15 @@
       "line": 91,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (pCVar4->left < *(int *)((int)g_DirtySpanStarts + iVar7)) {",
+      "text": "if ((*(int *)((int)g_DirtySpanStarts + iVar1) <= pCVar2->left) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "(pCVar2->top <= *(int *)((int)g_DirtySpanEnds + iVar1))) goto LAB_004730f9;",
       "type": "pointer_cast"
     },
     {
@@ -274,7 +245,7 @@
       "line": 93,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_DirtySpanStarts + iVar7) = pCVar4->left;",
+      "text": "if (pCVar2->left < *(int *)((int)g_DirtySpanStarts + iVar1)) {",
       "type": "pointer_cast"
     },
     {
@@ -282,47 +253,47 @@
       "line": 95,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)g_DirtySpanEnds + iVar7) < pCVar4->top) {",
+      "text": "*(int *)((int)g_DirtySpanStarts + iVar1) = pCVar2->left;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 97,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_DirtySpanEnds + iVar7) = pCVar4->top;",
+      "text": "if (*(int *)((int)g_DirtySpanEnds + iVar1) < pCVar2->top) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 98,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_DirtySpanStarts + local_14) = pCVar4->left;",
+      "text": "*(int *)((int)g_DirtySpanEnds + iVar1) = pCVar2->top;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 107,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_DirtySpanEnds + local_14) = pCVar4->top;",
+      "text": "*(int *)((int)g_DirtySpanStarts + local_14) = pCVar2->left;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 108,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)g_DirtySpanStarts + iVar7);",
+      "text": "*(int *)((int)g_DirtySpanEnds + local_14) = pCVar2->top;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 122,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar5 = local_18 * this_ptr->shadow_map_width + *(int *)((int)g_DirtySpanStarts + iVar7)",
+      "text": "piVar1 = (int *)((int)g_DirtySpanStarts + iVar1);",
       "type": "pointer_cast"
     },
     {
@@ -330,12 +301,20 @@
       "line": 123,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar2 = (int *)((int)g_DirtySpanEnds + iVar7);",
+      "text": "iVar5 = local_18 * this_ptr->shadow_map_width + *(int *)((int)g_DirtySpanStarts + iVar1)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 125,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar2 = (int *)((int)g_DirtySpanEnds + iVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "(void *)((int)this_ptr->master_zbuffer + iVar5 * 2),",

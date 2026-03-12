@@ -6,7 +6,8 @@
 ; Parameters:
 ; CCryptVessel *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x30]:1  local_30
+; CBoundingBox3D   Stack[-0x30]:24  local_30
+; int              Stack[-0x18]:4  iStack_18
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

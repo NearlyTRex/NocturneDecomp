@@ -9,19 +9,22 @@
 void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(CDemonLight *this_ptr)
 
 {
-  int *piVar1;
-  int *piVar2;
-  bool bVar3;
   CRect *pCVar4;
+  int iVar1;
   int iVar5;
   int iVar6;
+  CRect *pCVar2;
   int iVar7;
+  int iVar3;
   CRect local_34;
   CRect *local_24;
   int local_20;
   int local_1c;
   int local_18;
   int local_14;
+  bool bVar3;
+  int *piVar2;
+  int *piVar1;
   
   if ((this_ptr->base).skip_clear_buffer_flag != 0) {
     if (0x100 < (this_ptr->base).rect_array_count) {
@@ -40,28 +43,28 @@ void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(CDemon
     }
     iVar6 = 0;
     if (0 < (this_ptr->base).rect_array_count) {
-      pCVar4 = (this_ptr->base).rect_array;
+      pCVar2 = (this_ptr->base).rect_array;
       do {
-        if (pCVar4->left < 0) {
-          pCVar4->left = 0;
+        if (pCVar2->left < 0) {
+          pCVar2->left = 0;
         }
         iVar7 = this_ptr->shadow_map_width + -1;
-        if (iVar7 < pCVar4->top) {
-          pCVar4->top = iVar7;
+        if (iVar7 < pCVar2->top) {
+          pCVar2->top = iVar7;
         }
-        if (pCVar4->right < 0) {
-          pCVar4->right = 0;
+        if (pCVar2->right < 0) {
+          pCVar2->right = 0;
         }
-        iVar7 = this_ptr->shadow_map_height + -1;
-        if (iVar7 < pCVar4->bottom) {
-          pCVar4->bottom = iVar7;
+        iVar3 = this_ptr->shadow_map_height + -1;
+        if (iVar3 < pCVar2->bottom) {
+          pCVar2->bottom = iVar3;
         }
         iVar6 = iVar6 + 1;
-        pCVar4 = pCVar4 + 1;
+        pCVar2 = pCVar2 + 1;
       } while (iVar6 < (this_ptr->base).rect_array_count);
     }
     local_18 = this_ptr->shadow_map_height;
-    iVar6 = 0;
+    iVar3 = 0;
     local_20 = 0;
     if (0 < (this_ptr->base).rect_array_count) {
       pCVar4 = (this_ptr->base).rect_array;
@@ -72,69 +75,68 @@ void __cdecl core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(CDemon
         if (local_20 < pCVar4->bottom) {
           local_20 = pCVar4->bottom;
         }
-        iVar6 = iVar6 + 1;
+        iVar3 = iVar3 + 1;
         pCVar4 = pCVar4 + 1;
-      } while (iVar6 < (this_ptr->base).rect_array_count);
+      } while (iVar3 < (this_ptr->base).rect_array_count);
     }
     if (local_18 <= local_20) {
-      local_24 = (this_ptr->base).rect_array;
       do {
         local_1c = 0;
         g_DirtySpanCount = 0;
         if (0 < (this_ptr->base).rect_array_count) {
           local_14 = 0;
-          pCVar4 = local_24;
+          pCVar2 = (this_ptr->base).rect_array;
           do {
-            if ((pCVar4->right <= local_18) && (local_18 <= pCVar4->bottom)) {
+            if ((pCVar2->right <= local_18) && (local_18 <= pCVar2->bottom)) {
               bVar3 = false;
               if (0 < g_DirtySpanCount) {
-                iVar6 = g_DirtySpanCount * 4;
-                iVar7 = 0;
+                iVar3 = g_DirtySpanCount * 4;
+                iVar1 = 0;
                 do {
-                  if ((*(int *)((int)g_DirtySpanStarts + iVar7) <= pCVar4->top) &&
-                     (pCVar4->left <= *(int *)((int)g_DirtySpanEnds + iVar7))) {
-                    if ((*(int *)((int)g_DirtySpanStarts + iVar7) <= pCVar4->left) &&
-                       (pCVar4->top <= *(int *)((int)g_DirtySpanEnds + iVar7))) goto LAB_004730f9;
-                    if (pCVar4->left < *(int *)((int)g_DirtySpanStarts + iVar7)) {
+                  if ((*(int *)((int)g_DirtySpanStarts + iVar1) <= pCVar2->top) &&
+                     (pCVar2->left <= *(int *)((int)g_DirtySpanEnds + iVar1))) {
+                    if ((*(int *)((int)g_DirtySpanStarts + iVar1) <= pCVar2->left) &&
+                       (pCVar2->top <= *(int *)((int)g_DirtySpanEnds + iVar1))) goto LAB_004730f9;
+                    if (pCVar2->left < *(int *)((int)g_DirtySpanStarts + iVar1)) {
                       bVar3 = true;
-                      *(int *)((int)g_DirtySpanStarts + iVar7) = pCVar4->left;
+                      *(int *)((int)g_DirtySpanStarts + iVar1) = pCVar2->left;
                     }
-                    if (*(int *)((int)g_DirtySpanEnds + iVar7) < pCVar4->top) {
-                      *(int *)((int)g_DirtySpanEnds + iVar7) = pCVar4->top;
+                    if (*(int *)((int)g_DirtySpanEnds + iVar1) < pCVar2->top) {
+                      *(int *)((int)g_DirtySpanEnds + iVar1) = pCVar2->top;
                       goto LAB_004730f9;
                     }
                     if (bVar3) break;
                   }
-                  iVar7 = iVar7 + 4;
-                } while (iVar7 < iVar6);
+                  iVar1 = iVar1 + 4;
+                } while (iVar1 < iVar3);
               }
               if (!bVar3) {
-                *(int *)((int)g_DirtySpanStarts + local_14) = pCVar4->left;
-                *(int *)((int)g_DirtySpanEnds + local_14) = pCVar4->top;
+                *(int *)((int)g_DirtySpanStarts + local_14) = pCVar2->left;
+                *(int *)((int)g_DirtySpanEnds + local_14) = pCVar2->top;
                 g_DirtySpanCount = g_DirtySpanCount + 1;
                 local_14 = local_14 + 4;
               }
             }
 LAB_004730f9:
-            pCVar4 = pCVar4 + 1;
+            pCVar2 = pCVar2 + 1;
             local_1c = local_1c + 1;
           } while (local_1c < (this_ptr->base).rect_array_count);
         }
-        iVar6 = 0;
+        iVar3 = 0;
         if (0 < g_DirtySpanCount) {
-          iVar7 = 0;
+          iVar1 = 0;
           do {
-            piVar1 = (int *)((int)g_DirtySpanStarts + iVar7);
-            iVar5 = local_18 * this_ptr->shadow_map_width + *(int *)((int)g_DirtySpanStarts + iVar7)
+            piVar1 = (int *)((int)g_DirtySpanStarts + iVar1);
+            iVar5 = local_18 * this_ptr->shadow_map_width + *(int *)((int)g_DirtySpanStarts + iVar1)
             ;
-            piVar2 = (int *)((int)g_DirtySpanEnds + iVar7);
-            iVar7 = iVar7 + 4;
-            iVar6 = iVar6 + 1;
+            piVar2 = (int *)((int)g_DirtySpanEnds + iVar1);
+            iVar1 = iVar1 + 4;
+            iVar3 = iVar3 + 1;
             core_dstrender_cpp_memcpyMMX_FUN_00492001
                       (this_ptr->shadow_depth_buffer + iVar5,
                        (void *)((int)this_ptr->master_zbuffer + iVar5 * 2),
                        (*piVar2 - *piVar1) * 2 + 2);
-          } while (iVar6 < g_DirtySpanCount);
+          } while (iVar3 < g_DirtySpanCount);
         }
         local_18 = local_18 + 1;
       } while (local_18 <= local_20);

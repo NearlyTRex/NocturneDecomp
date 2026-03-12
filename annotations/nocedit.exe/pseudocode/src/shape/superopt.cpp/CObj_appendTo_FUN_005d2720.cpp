@@ -9,22 +9,24 @@
 int __cdecl shape_superopt_cpp_CObj_appendTo_FUN_005d2720(CObj *this_ptr,CObj *dest_obj)
 
 {
-  int *piVar1;
-  int iVar2;
+  int *piVar2;
   int iVar3;
   int iVar4;
   uint uVar5;
+  int iVar5;
   CVert *pCVar6;
   int iVar7;
   CVert *pCVar8;
   byte bVar9;
   uint local_10;
+  int iVar2;
+  int *piVar1;
   
   bVar9 = 0;
   local_10 = this_ptr->poly_count;
   iVar2 = this_ptr->vertex_count;
   if ((dest_obj->vertex_count != 0) &&
-     (iVar3 = (*this_ptr->vtable->addVertices)(this_ptr,dest_obj->vertex_count), iVar3 == 0)) {
+     (iVar5 = (*this_ptr->vtable->addVertices)(this_ptr,dest_obj->vertex_count), iVar5 == 0)) {
     shape_superopt_cpp_logToFile_FUN_005c7910("Unable to add vertices to object");
     return 0;
   }
@@ -40,26 +42,28 @@ int __cdecl shape_superopt_cpp_CObj_appendTo_FUN_005d2720(CObj *this_ptr,CObj *d
     pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar9 * -8 + 4);
     pCVar8 = (CVert *)((int)pCVar8 + (uint)bVar9 * -8 + 4);
   }
-  for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(byte *)&(pCVar8->position).x = *(byte *)&(pCVar6->position).x;
-    pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar9 * -2 + 1);
+  for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
     pCVar8 = (CVert *)((int)pCVar8 + (uint)bVar9 * -2 + 1);
+    pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar9 * -2 + 1);
+    *(byte *)&(pCVar8->position).x = *(byte *)&(pCVar6->position).x;
+    pCVar6 = pCVar6;
+    pCVar8 = pCVar8;
   }
   if (local_10 < (uint)this_ptr->poly_count) {
-    iVar3 = 0;
+    iVar5 = 0;
     iVar7 = local_10 * 0x68;
     do {
       iVar4 = (int)&((CPoly *)(this_ptr->poly_array->uv_coords + -1))->parent_obj + iVar7;
       (**(code **)(*(int *)(iVar4 + 100) + 4))
-                (iVar4,(int)&((CPoly *)(dest_obj->poly_array->uv_coords + -1))->parent_obj + iVar3,
+                (iVar4,(int)&((CPoly *)(dest_obj->poly_array->uv_coords + -1))->parent_obj + iVar5,
                  this_ptr);
       piVar1 = (int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -0xc);
       *piVar1 = *piVar1 + iVar2;
-      piVar1 = (int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -8);
-      *piVar1 = *piVar1 + iVar2;
+      piVar2 = (int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -8);
+      *piVar2 = *piVar2 + iVar2;
       *(int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -4) =
            *(int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -4) + iVar2;
-      iVar3 = iVar3 + 0x68;
+      iVar5 = iVar5 + 0x68;
       local_10 = local_10 + 1;
       iVar7 = iVar7 + 0x68;
     } while (local_10 < (uint)this_ptr->poly_count);

@@ -6,7 +6,7 @@
 ; Parameters:
 ; int              Stack[0x4]:4   initialize_systems
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
+; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db88f

@@ -9,8 +9,8 @@
 CVector3f * __cdecl core_xform_cpp_getTranslation_FUN_005f6110(CMatrix3x4f *matrix_in,CVector3f *vector_out)
 
 {
-  float fVar1;
   float fVar2;
+  float fVar1;
   
   fVar1 = matrix_in->m[0].z;
   fVar2 = matrix_in->m[2].z;

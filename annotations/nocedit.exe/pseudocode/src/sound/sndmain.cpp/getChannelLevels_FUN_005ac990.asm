@@ -8,8 +8,8 @@
 ; float *          Stack[0x8]:4   out_peak
 ; float *          Stack[0xc]:4   out_average
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:

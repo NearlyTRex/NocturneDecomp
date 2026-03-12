@@ -9,37 +9,37 @@
 void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280(CDemonRaytrace *this_ptr,CVector3f *world_position)
 
 {
+  uchar *puVar1;
   CDemonCube *this_ptr_00;
   int iVar1;
   uchar *puVar2;
   byte bVar3;
   int aiStackY_1028 [1014];
-  CVector3i *in_stack_ffffffc0;
   int local_3c;
   int local_38;
   int local_34;
   int local_30;
   int local_2c;
   int local_28;
+  int aiStack_24 [2];
   CVector3i local_1c;
+  CVector3i *in_stack_ffffffc0;
   
   bVar3 = 0;
   core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
             (this_ptr,world_position,in_stack_ffffffc0);
   local_34 = local_28;
-  *(uint *)((int)&stack0xffffffd0 + (uint)bVar3 * -8) =
-       *(uint *)(&stack0xffffffdc + (uint)bVar3 * -8);
-  *(uint *)((int)&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-       *(uint *)(&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+  (&local_30)[(uint)bVar3 * -2] = aiStack_24[(uint)bVar3 * -2];
+  (&local_2c)[(uint)bVar3 * -2 + (uint)bVar3 * -2] =
+       aiStack_24[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
   if ((((-1 < local_34) && (-1 < local_30)) && (-1 < local_2c)) &&
      (((local_34 < (this_ptr->grid_coord).x && (local_30 < (this_ptr->grid_coord).y)) &&
       (local_2c < (this_ptr->grid_coord).z)))) {
     core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
               (this_ptr,world_position,&local_1c);
-    *(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8) =
-         *(uint *)((int)&local_1c + (uint)bVar3 * -8 + 4);
-    *(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-         *(uint *)((int)&local_1c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    (&local_3c)[(uint)bVar3 * -2] = *(int *)((int)&local_1c + (uint)bVar3 * -8 + 4);
+    (&local_38)[(uint)bVar3 * -2 + (uint)bVar3 * -2] =
+         *(int *)((int)&local_1c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
     iVar1 = local_1c.x % 8;
     local_3c = local_3c % 8;
     local_38 = local_38 % 8;
@@ -53,8 +53,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a
     if (this_ptr_00->voxel_buffer1 == (SVoxelGrid *)0x0) {
       core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_004567b0(this_ptr_00);
     }
-    puVar2 = this_ptr_00->voxel_buffer1->voxels[local_38] + local_3c;
-    *puVar2 = *puVar2 & (g_VoxelYBitMasks[iVar1] ^ 0xff);
+    puVar1 = this_ptr_00->voxel_buffer1->voxels[local_38] + local_3c;
+    *puVar1 = *puVar1 & (g_VoxelYBitMasks[iVar1] ^ 0xff);
     puVar2 = this_ptr_00->voxel_buffer1->voxels[local_38] + local_3c;
     *puVar2 = *puVar2 | this_ptr_00->voxel_buffer2->voxels[local_38][local_3c] &
                         g_VoxelYBitMasks[iVar1];

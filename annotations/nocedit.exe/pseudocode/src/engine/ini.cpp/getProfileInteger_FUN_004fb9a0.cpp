@@ -10,6 +10,7 @@ int __cdecl engine_ini_cpp_getProfileInteger_FUN_004fb9a0(char *section,char *ke
 
 {
   int iVar1;
+  int iVar2;
   char local_20c [256];
   char local_10c [256];
   
@@ -21,6 +22,6 @@ int __cdecl engine_ini_cpp_getProfileInteger_FUN_004fb9a0(char *section,char *ke
     g_CurrentLineNumber = 0x235;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Bad ini read!");
   }
-  iVar1 = atoi(local_20c);
-  return iVar1;
+  iVar2 = atoi(local_20c);
+  return iVar2;
 }

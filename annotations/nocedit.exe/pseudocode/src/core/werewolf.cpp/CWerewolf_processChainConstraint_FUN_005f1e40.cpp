@@ -11,9 +11,8 @@
 void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_005f1e40(CWerewolf *this_ptr)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
+  float fVar4;
+  float fVar5;
   CVector3f local_68;
   CVector3f local_5c;
   CVector3f local_50;
@@ -25,6 +24,9 @@ void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_005f1e40(CWe
   float local_1c;
   float local_18;
   float local_14;
+  float fVar2;
+  float fVar3;
+  float fVar1;
   
   if ((this_ptr->chain_anchor != (CDemonActor *)0x0) &&
      ((this_ptr->base).victim != (CCharacter *)0x0)) {
@@ -47,19 +49,17 @@ void __cdecl core_werewolf_cpp_CWerewolf_processChainConstraint_FUN_005f1e40(CWe
     fVar3 = local_68.y - local_5c.y;
     fVar1 = local_68.x - local_5c.x;
     fVar2 = local_68.z - local_5c.z;
-    local_1c = SQRT(fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3);
+    fVar4 = SQRT(fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3);
     engine_console_cpp_CConsole_printf_FUN_00441890
-              (g_CConsolePtr,"Chain stretched to %f\n",(double)local_1c);
-    if ((this_ptr->chain_length < local_1c) &&
-       (local_20 = this_ptr->chain_length * this_ptr->chain_length - fVar3 * fVar3,
-       local_2c = (double)local_20, 0.0 <= local_2c)) {
-      local_20 = SQRT(local_20);
-      local_14 = SQRT(fVar2 * fVar2 + fVar1 * fVar1);
-      if ((0.0 < local_14) && (local_18 = local_14 - local_20, 0.0 < local_18)) {
-        local_24 = local_18 / local_14;
-        local_38.x = fVar1 * local_24;
-        local_38.y = local_24 * 0.0;
-        local_38.z = fVar2 * local_24;
+              (g_CConsolePtr,"Chain stretched to %f\n",(double)fVar4);
+    if ((this_ptr->chain_length < fVar4) &&
+       (fVar4 = this_ptr->chain_length * this_ptr->chain_length - fVar3 * fVar3, 0.0 <= fVar4)) {
+      fVar5 = SQRT(fVar2 * fVar2 + fVar1 * fVar1);
+      if ((0.0 < fVar5) && (fVar4 = fVar5 - SQRT(fVar4), 0.0 < fVar4)) {
+        fVar4 = fVar4 / fVar5;
+        local_38.x = fVar1 * fVar4;
+        local_38.y = fVar4 * 0.0;
+        local_38.z = fVar2 * fVar4;
         core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_38);
         return;
       }

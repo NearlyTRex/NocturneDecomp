@@ -4,49 +4,49 @@
       {
         "category": "format_error",
         "column": 30,
-        "line": 28,
+        "line": 29,
         "message": "format specifies type 'int *' but the argument has type 'SIZE_T *' (aka 'unsigned long *') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 61,
-        "line": 42,
+        "line": 43,
         "message": "invalid suffix '._4_4_' on floating constant"
       },
       {
         "category": "other",
         "column": 90,
-        "line": 42,
+        "line": 43,
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
         "category": "format_error",
         "column": 61,
-        "line": 49,
+        "line": 50,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 70,
-        "line": 49,
+        "line": 50,
         "message": "format specifies type 'double *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 79,
-        "line": 49,
+        "line": 50,
         "message": "format specifies type 'float *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 45,
-        "line": 59,
+        "line": 60,
         "message": "invalid suffix '._0_4_' on floating constant"
       },
       {
         "category": "other",
         "column": 45,
-        "line": 60,
+        "line": 61,
         "message": "invalid suffix '._4_4_' on floating constant"
       }
     ],
@@ -55,19 +55,19 @@
   },
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 251,
+    "complexity_score": 252,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 106,
+    "pseudocode_lines": 107,
     "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 367
+    "total_lines": 368
   },
   "cross_references": [
     {
@@ -310,63 +310,63 @@
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "SIZE_T"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": true,
@@ -404,7 +404,7 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 35,
+      "line": 36,
       "match": "._4_4_",
       "severity": "mild",
       "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_)) *",
@@ -412,7 +412,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 35,
+      "line": 36,
       "match": "._0_4_",
       "severity": "mild",
       "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_)) *",
@@ -420,7 +420,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 36,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_)) *",
@@ -428,7 +428,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 42,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_18 = (int *)((int)local_34 + local_1c);",
@@ -436,7 +436,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 52,
+      "line": 53,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_18[2] = 9.9999999999999997e+34._0_4_;",
@@ -444,7 +444,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 53,
+      "line": 54,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_18[3] = 9.9999999999999997e+34._4_4_;",
@@ -452,7 +452,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 64,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_1c + -0x28) != *local_18",
@@ -460,7 +460,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 69,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_1c + -0x24)) {",
@@ -468,39 +468,39 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1[iVar3].collapse_cost = *(uint *)((int)pvVar5 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 92,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&pCVar1[iVar3].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&pCVar1[iVar3].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
+      "text": "*(uint *)&pCVar1[iVar1].collapse_cost = *(uint *)((int)pvVar5 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 93,
-      "match": "(float *)((int)",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "this_ptr->edges_ptr[iVar3].collapse_error = *(float *)((int)pvVar5 + 0x10);",
+      "text": "*(uint *)((int)&pCVar1[iVar1].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 93,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&pCVar1[iVar1].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "this_ptr->edges_ptr[iVar1].collapse_error = *(float *)((int)pvVar5 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "pvVar5 = (void *)((int)pvVar5 + 0xf0);",

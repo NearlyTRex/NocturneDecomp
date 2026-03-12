@@ -9,14 +9,16 @@
 ; int              Stack[0xc]:4   color_count
 ; int              Stack[0x10]:4   num_palette_entries
 ; Local Variables:
-; undefined8       Stack[-0x160]:8  local_160
-; undefined8       Stack[-0x158]:8  local_158
-; undefined        Stack[-0x150]:1  local_150
-; undefined        Stack[-0x50]:1  local_50
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; undefined4       Stack[-0x160]:4  local_160
+; undefined4       Stack[-0x15c]:4  uStack_15c
+; undefined4       Stack[-0x158]:4  local_158
+; undefined4       Stack[-0x154]:4  uStack_154
+; char[256]        Stack[-0x150]:256  local_150
+; undefined4[11]   Stack[-0x50]:44  local_50
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; uint             Stack[-0x1c]:4  local_1c
+; uint             Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180 at 00545431

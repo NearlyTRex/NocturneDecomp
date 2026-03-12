@@ -4,8 +4,8 @@
 ; char * crt_unknown_c_FUN_0060ade0(uint *param_1,char *param_2,int param_3)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; uint             Stack[-0x18]:4  local_18
+; uint             Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   crt_stdlib.c_i64toa_FUN_0060ad40

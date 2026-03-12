@@ -9,19 +9,20 @@
 void __cdecl core_fire_cpp_CSpark_process_FUN_004c0240(CSpark *this_ptr)
 
 {
+  longlong lVar2;
+  int iVar2;
   float delta_time;
   longlong lVar1;
-  int iVar2;
   
   if (this_ptr->first_update_flag == 0) {
     this_ptr->first_update_flag = 1;
   }
   else {
-    lVar1 = (longlong)g_GlobalDeltaTimeInt * (longlong)this_ptr->fade_rate;
-    lVar1 = (longlong)this_ptr->intensity_target *
-            (longlong)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+    lVar2 = (longlong)g_GlobalDeltaTimeInt * (longlong)this_ptr->fade_rate;
+    lVar2 = (longlong)this_ptr->intensity_target *
+            (longlong)(int)((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     iVar2 = this_ptr->intensity_current -
-            ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+            ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     this_ptr->intensity_current = iVar2;
     if (iVar2 < 0) {
       (this_ptr->base).lifetime_remaining = 0.0;

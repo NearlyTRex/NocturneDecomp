@@ -9,16 +9,14 @@
 void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_time)
 
 {
-  CDeformableModelInstance *pCVar1;
-  CVector3f *pCVar2;
-  uint uVar3;
-  float fVar4;
-  float fVar5;
+  CDeformableModelInstance *pCVar3;
+  CVector3f *pCVar4;
   int iVar6;
+  int iVar5;
   EDeathState EVar7;
   CVector3f *pCVar8;
   CMotionList *this_ptr_00;
-  char *pcVar9;
+  char *state_name;
   float local_58;
   CVector3f CStack_54;
   CVector3f CStack_48;
@@ -29,6 +27,12 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   float fStack_24;
   float fStack_20;
   float fStack_1c;
+  float fVar5;
+  char *pcVar9;
+  float fVar4;
+  uint uVar3;
+  CVector3f *pCVar2;
+  CDeformableModelInstance *pCVar1;
   
   iVar6 = core_charactr_cpp_CCharacter_process_FUN_00429870(&this_ptr->base,delta_time);
   if (iVar6 == 0) {
@@ -40,18 +44,18 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
        (this_ptr->base).model.accumulated_root_motion.z;
   (this_ptr->base).model.accumulated_root_motion.x =
        (this_ptr->base).model.accumulated_root_motion.y;
-  pCVar1 = &(this_ptr->base).model;
+  pCVar3 = &(this_ptr->base).model;
   local_58 = delta_time;
   while (0.0 < local_58) {
-    iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&pCVar1->motion_controller,&local_58);
-    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(&this_ptr->base,iVar6);
+    iVar5 = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                      (&pCVar3->motion_controller,&local_58);
+    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40(&this_ptr->base,iVar5);
   }
   EVar7 = (*(((this_ptr->base).base.vtable._uc)->_uc).getDeathState)(&this_ptr->base);
   if ((((1 < (int)EVar7) && ((this_ptr->base).base.lifecycle_state == ACTOR_CREATED)) &&
       (this_ptr->pool_me == 0)) && ((this_ptr->base).base.standing_platform == (CPlatform *)0x0)) {
     pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                       (pCVar1,&CStack_48,0);
+                       (pCVar3,&CStack_48,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&CStack_30,pCVar8);
     core_gore_cpp_CGore_createBloodPool_FUN_004ede30(g_CGorePtr,&CStack_30,0);
@@ -61,8 +65,8 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr,float delta_t
   fVar4 = (float)0.5;
   (this_ptr->base).walk_step_speed = (this_ptr->base).model.accumulated_root_motion.z;
   (this_ptr->base).turn_speed = delta_time * fVar5 * fVar4;
-  iVar6 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(&this_ptr->base,delta_time);
-  if (iVar6 == 0) goto LAB_00544a0c;
+  iVar5 = core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(&this_ptr->base,delta_time);
+  if (iVar5 == 0) goto LAB_00544a0c;
   uVar3 = (this_ptr->base).is_walking;
   if (uVar3 < 2) {
     if (uVar3 == 1) {
@@ -77,21 +81,21 @@ LAB_00544b62:
               (&(this_ptr->base).model.motion_controller,pcVar9,1);
   }
   else {
-    pCVar1 = &(this_ptr->base).model;
+    pCVar3 = &(this_ptr->base).model;
     if (uVar3 < 3) {
-      iVar6 = 0;
-      pcVar9 = "RUN";
+      iVar5 = 0;
+      state_name = "RUN";
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                              (&pCVar1->motion_controller);
-      iVar6 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00,pcVar9,iVar6);
-      if (iVar6 < 0) goto LAB_005449de;
+                              (&pCVar3->motion_controller);
+      iVar5 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00,state_name,iVar5);
+      if (iVar5 < 0) goto LAB_005449de;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&pCVar1->motion_controller,iVar6,1);
+                (&pCVar3->motion_controller,iVar5,1);
     }
     else {
       if (uVar3 != 3) goto LAB_00544b62;
       core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90
-                (&pCVar1->motion_controller,"STAND",1);
+                (&pCVar3->motion_controller,"STAND",1);
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
     }
@@ -103,20 +107,16 @@ LAB_00544b62:
        (this_ptr->base).model.accumulated_root_motion.y;
 LAB_00544a0c:
   (this_ptr->base).velocity.y = (this_ptr->base).velocity.y - delta_time * (float)32;
-  fStack_3c = (this_ptr->base).velocity.x * delta_time;
-  fStack_38 = (this_ptr->base).velocity.y * delta_time;
-  pCVar8 = &(this_ptr->base).position_delta;
-  fStack_34 = (this_ptr->base).velocity.z * delta_time;
+  pCVar4 = &(this_ptr->base).position_delta;
   pCVar2 = &(this_ptr->base).model.accumulated_root_motion;
-  fStack_24 = fStack_3c + pCVar8->x;
-  fStack_20 = fStack_38 + (this_ptr->base).position_delta.y;
-  fStack_1c = fStack_34 + (this_ptr->base).position_delta.z;
-  CStack_54.x = fStack_24 + pCVar2->x;
-  CStack_54.y = fStack_20 + (this_ptr->base).model.accumulated_root_motion.y;
-  CStack_54.z = fStack_1c + (this_ptr->base).model.accumulated_root_motion.z;
+  CStack_54.x = (this_ptr->base).velocity.x * delta_time + pCVar4->x + pCVar2->x;
+  CStack_54.y = (this_ptr->base).velocity.y * delta_time + (this_ptr->base).position_delta.y +
+                (this_ptr->base).model.accumulated_root_motion.y;
+  CStack_54.z = (this_ptr->base).velocity.z * delta_time + (this_ptr->base).position_delta.z +
+                (this_ptr->base).model.accumulated_root_motion.z;
   (this_ptr->base).position_delta.z = 0.0;
   (this_ptr->base).position_delta.y = (this_ptr->base).position_delta.z;
-  pCVar8->x = (this_ptr->base).position_delta.y;
+  pCVar4->x = (this_ptr->base).position_delta.y;
   (this_ptr->base).model.accumulated_root_motion.z = 0.0;
   (this_ptr->base).model.accumulated_root_motion.y =
        (this_ptr->base).model.accumulated_root_motion.z;

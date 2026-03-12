@@ -11,15 +11,13 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(CLodMesh *this_ptr,int use_palette_coloring)
 
 {
-  CLodFace *pCVar1;
+  CLodFace *pCVar2;
   uint uVar2;
   int iVar3;
   SMRGLHeaderPrimitive SStack_60;
-  uint local_48;
-  uint local_3c;
-  uint local_30;
   int local_18;
   int local_14;
+  CLodFace *pCVar1;
   
   SStack_60.base.count = 3;
   SStack_60.surface_normal.D = 0;
@@ -32,20 +30,17 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(CLodM
   if (0 < this_ptr->tri_count) {
     iVar3 = 0;
     do {
-      pCVar1 = this_ptr->tri_data;
-      if (*(int *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x14) == 0) {
-        local_48 = *(uint *)((int)(pCVar1->uv_coords + -2) + iVar3 + 4);
-        local_3c = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar3);
-        local_30 = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar3 + 4);
+      pCVar2 = this_ptr->tri_data;
+      if (*(int *)((int)pCVar2->edge_perpendiculars + iVar3 + -0x14) == 0) {
         if (use_palette_coloring == 0) {
-          local_18 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -8) *
-                                      127.0f + 127.0f));
-          local_14 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x10) *
-                                      127.0f + 127.0f));
           engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
-                    (g_CDemonRendererPtr2,local_14,
-                     (int)ROUND(ROUND(*(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar3) *
-                                      127.0f + 127.0f)),local_18);
+                    (g_CDemonRendererPtr2,
+                     (int)ROUND(ROUND(*(float *)((int)pCVar2->edge_perpendiculars + iVar3 + -0x10) *
+                                      127.0f + 127.0f)),
+                     (int)ROUND(ROUND(*(float *)((int)(pCVar2->edge_perpendiculars + -1) + iVar3) *
+                                      127.0f + 127.0f)),
+                     (int)ROUND(ROUND(*(float *)((int)pCVar2->edge_perpendiculars + iVar3 + -8) *
+                                      127.0f + 127.0f)));
         }
         else {
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960

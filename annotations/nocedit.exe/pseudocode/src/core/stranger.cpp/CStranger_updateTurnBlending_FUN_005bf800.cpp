@@ -9,11 +9,13 @@
 void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005bf800(CStranger *this_ptr,float delta_time)
 
 {
-  int iVar1;
-  float fVar2;
-  float fVar3;
+  float fVar1;
+  float fVar5;
   float fVar4;
   float local_34;
+  float fVar2;
+  float fVar3;
+  int iVar1;
   
   (this_ptr->pending_velocity).z = 0.0;
   (this_ptr->pending_velocity).y = (this_ptr->pending_velocity).z;
@@ -29,13 +31,13 @@ void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005bf800(CStrang
     return;
   }
   if (fVar4 < 1.0) {
-    fVar4 = (1.0 - fVar4) * delta_time * (float)10;
-    if (fVar4 <= ABS(this_ptr->turn_angle)) {
+    fVar1 = (1.0 - fVar4) * delta_time * (float)10;
+    if (fVar1 <= ABS(this_ptr->turn_angle)) {
       if (0.0 <= this_ptr->turn_angle) {
-        this_ptr->turn_angle = this_ptr->turn_angle - fVar4;
+        this_ptr->turn_angle = this_ptr->turn_angle - fVar1;
       }
       else {
-        this_ptr->turn_angle = this_ptr->turn_angle + fVar4;
+        this_ptr->turn_angle = this_ptr->turn_angle + fVar1;
       }
     }
     else {
@@ -65,29 +67,29 @@ void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005bf800(CStrang
     if (1.0 < local_34) {
       local_34 = 1.0;
     }
-    fVar4 = (local_34 - this_ptr->turn_blend_weight) + this_ptr->turn_blend_weight;
-    this_ptr->turn_blend_weight = fVar4;
-    if ((float)0.001 < fVar4) {
+    fVar1 = (local_34 - this_ptr->turn_blend_weight) + this_ptr->turn_blend_weight;
+    this_ptr->turn_blend_weight = fVar1;
+    if ((float)0.001 < fVar1) {
       this_ptr->turn_motion_index = iVar1;
       return;
     }
   }
   else {
-    fVar4 = this_ptr->turn_blend_timer;
-    fVar2 = fVar4 - delta_time;
-    this_ptr->turn_blend_timer = fVar2;
-    if (0.0 < fVar2) {
-      fVar4 = delta_time / fVar4;
+    fVar1 = this_ptr->turn_blend_timer;
+    fVar5 = fVar1 - delta_time;
+    this_ptr->turn_blend_timer = fVar5;
+    if (0.0 < fVar5) {
+      fVar1 = delta_time / fVar1;
     }
     else {
-      fVar4 = 1.0 - this_ptr->turn_blend_weight;
+      fVar1 = 1.0 - this_ptr->turn_blend_weight;
       this_ptr->turn_blend_timer = 0.0;
     }
     fVar2 = this_ptr->turn_blend_weight;
-    fVar3 = fVar2 + fVar4;
+    fVar3 = fVar2 + fVar1;
     this_ptr->turn_blend_weight = fVar3;
     if (fVar3 < 1.0) {
-      this_ptr->turn_angle = this_ptr->turn_angle - (this_ptr->turn_angle * fVar4) / (1.0 - fVar2);
+      this_ptr->turn_angle = this_ptr->turn_angle - (this_ptr->turn_angle * fVar1) / (1.0 - fVar2);
       return;
     }
     this_ptr->turn_angle = 0.0;

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 102,
+    "complexity_score": 103,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 67,
+    "pseudocode_lines": 68,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 231
+    "total_lines": 232
   },
   "cross_references": [],
   "function": {
@@ -173,8 +173,15 @@
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CBoundingBox3D"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_14",
+        "offset": -20,
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": true,
@@ -195,7 +202,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 59,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_14.x = (int)ROUND((this_ptr->base).location.position.x * 256.0f);",
@@ -203,7 +210,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 60,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_14.y = (int)ROUND((this_ptr->base).location.position.y * 256.0f);",
@@ -211,7 +218,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 61,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_14.z = (int)ROUND((this_ptr->base).location.position.z * 256.0f);",

@@ -9,19 +9,20 @@
 void __cdecl core_script_cpp_CScript_parseCommandList_FUN_00567010(CScript *this_ptr,char *commands,SScriptXRef *xref_data)
 
 {
-  char cVar1;
+  char cVar2;
   char *pcVar2;
   char local_200 [500];
+  char cVar1;
   
   cVar1 = *commands;
   while (cVar1 != '\0') {
-    cVar1 = *commands;
+    cVar2 = *commands;
     pcVar2 = local_200;
-    while ((cVar1 != ';' && (*commands != '\0'))) {
-      cVar1 = *commands;
+    while ((cVar2 != ';' && (*commands != '\0'))) {
+      cVar2 = *commands;
       commands = commands + 1;
-      *pcVar2 = cVar1;
-      cVar1 = *commands;
+      *pcVar2 = cVar2;
+      cVar2 = *commands;
       pcVar2 = pcVar2 + 1;
     }
     *pcVar2 = '\0';

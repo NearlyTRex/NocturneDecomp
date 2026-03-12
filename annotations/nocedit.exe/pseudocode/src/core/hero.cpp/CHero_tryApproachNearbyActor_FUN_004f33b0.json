@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 25,
-        "line": 55,
+        "line": 59,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 56,
+        "line": 60,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 108,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 63,
+    "pseudocode_lines": 67,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 240
+    "total_lines": 244
   },
   "cross_references": [
     {
@@ -198,59 +198,66 @@
       },
       {
         "is_param": false,
+        "name": "SStack_80",
+        "offset": -128,
+        "size": 32,
+        "type": "SInteractionInfo"
+      },
+      {
+        "is_param": false,
         "name": "local_60",
         "offset": -96,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_54",
+        "offset": -84,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_48",
+        "offset": -72,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -281,7 +288,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 36,
       "match": "ABS",
       "severity": "mild",
       "text": "if (((ABS((this_ptr_00->location).position.y - (this_ptr->base).base.location.position.y) <=",
@@ -289,7 +296,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 39,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(local_60.z * local_60.z + local_60.x * local_60.x) <= (float)10)) &&",
@@ -297,15 +304,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 45,
       "match": "ABS",
       "severity": "mild",
-      "text": "if (((ABS(local_14) <= (float)1.04719755116667) &&",
+      "text": "if (((ABS(fVar3) <= (float)1.04719755116667) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 58,
       "match": "SQRT",
       "severity": "mild",
       "text": "if ((SQRT(fVar2 * fVar2 + fVar1 * fVar1) <= (float)5) &&",

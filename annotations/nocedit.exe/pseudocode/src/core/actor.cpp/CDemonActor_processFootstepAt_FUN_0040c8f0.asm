@@ -8,15 +8,13 @@
 ; CVector3f *      Stack[0x8]:4   location
 ; float            Stack[0xc]:4   volume
 ; Local Variables:
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x8]:4  local_8
+; CVector3f        Stack[-0x34]:12  local_34
+; float            Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   float FLOAT_006142bc = 10000

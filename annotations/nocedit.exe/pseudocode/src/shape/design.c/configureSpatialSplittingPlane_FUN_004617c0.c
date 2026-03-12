@@ -9,8 +9,10 @@
 void __cdecl shape_design_c_configureSpatialSplittingPlane_FUN_004617c0(STreeNode *node)
 
 {
-  byte bVar1;
   int iVar2;
+  int iVar1;
+  uint uVar2;
+  STreeNode *pSVar4;
   STreeNode *pSVar3;
   uint uVar4;
   byte *pbVar5;
@@ -28,6 +30,7 @@ void __cdecl shape_design_c_configureSpatialSplittingPlane_FUN_004617c0(STreeNod
   uint local_1c;
   float local_18;
   int local_14;
+  byte bVar1;
   
   bVar6 = 0;
   engine_2d_c_getInputWithPrompt_FUN_004032c0((char *)local_90,0x13,0,0,"Connecting part : ");
@@ -38,8 +41,9 @@ void __cdecl shape_design_c_configureSpatialSplittingPlane_FUN_004617c0(STreeNod
     do {
       if (uVar4 == 0) break;
       uVar4 = uVar4 - 1;
-      bVar1 = *pbVar5;
       pbVar5 = pbVar5 + (uint)bVar6 * -2 + 1;
+      bVar1 = *pbVar5;
+      pbVar5 = pbVar5;
     } while (bVar1 != 0);
     if (~uVar4 - 1 <= (uint)local_28) break;
     iVar2 = toupper((uint)local_90[(int)local_28]);
@@ -54,9 +58,9 @@ LAB_0046186a:
       if (local_18 != -NAN) {
         engine_2d_c_drawText_FUN_00401fd0("Separation Method : (P)oint list (X) (Y) (Z)",0,0xb);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-        uVar4 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-        local_28 = (float)toupper(uVar4 & 0xff);
-        if (local_28 == 1.12104e-43) {
+        uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
+        uVar2 = toupper(uVar2 & 0xff);
+        if (uVar2 == 0x50) {
           engine_2d_c_getInputWithPrompt_FUN_004032c0
                     ((char *)local_90,0x46,0,0x16,"Enter in 3 points : ");
           sscanf
@@ -79,32 +83,32 @@ LAB_0046186a:
           local_38 = 0.0;
           local_3c = 0.0;
           local_40 = 0.0;
-          if ((uint)local_28 < 0x59) {
-            if (local_28 == 1.23314e-43) {
+          if (uVar2 < 0x59) {
+            if (uVar2 == 0x58) {
               local_40 = 1.0;
               local_34 = g_LoadedVertices[local_14].vertex.x;
             }
           }
-          else if ((uint)local_28 < 0x5a) {
+          else if (uVar2 < 0x5a) {
             local_3c = 1.0;
             local_34 = g_LoadedVertices[local_14].vertex.y;
           }
-          else if (local_28 == 1.26117e-43) {
+          else if (uVar2 == 0x5a) {
             local_38 = 1.0;
             local_34 = g_LoadedVertices[local_14].vertex.z;
           }
         }
-        local_30 = shape_design_c_allocateSpatialTreeNode_FUN_00457ed0();
-        local_30->left_child = (STreeNode *)0x0;
-        local_30->right_child = (STreeNode *)0x0;
-        local_30->node_type = 0;
-        local_30->data1 = node->data1;
+        pSVar4 = shape_design_c_allocateSpatialTreeNode_FUN_00457ed0();
+        pSVar4->left_child = (STreeNode *)0x0;
+        pSVar4->right_child = (STreeNode *)0x0;
+        pSVar4->node_type = 0;
+        pSVar4->data1 = node->data1;
         pSVar3 = shape_design_c_allocateSpatialTreeNode_FUN_00457ed0();
         pSVar3->left_child = (STreeNode *)0x0;
         pSVar3->right_child = (STreeNode *)0x0;
         pSVar3->node_type = 0;
         pSVar3->data1 = local_18;
-        node->left_child = local_30;
+        node->left_child = pSVar4;
         node->right_child = pSVar3;
         node->node_type = 1;
         node->data1 = local_40;
@@ -114,9 +118,9 @@ LAB_0046186a:
       }
       return;
     }
-    iVar2 = _strcmp((char *)local_90,g_ModelPartNames[(int)local_28].name)
+    iVar1 = _strcmp((char *)local_90,g_ModelPartNames[(int)local_28].name)
     ;
-    if (iVar2 == 0) {
+    if (iVar1 == 0) {
       local_18 = local_28;
       goto LAB_0046186a;
     }

@@ -7,8 +7,8 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ; SPlayerControl * Stack[0x8]:4   player_control
 ; Local Variables:
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
+; float            Stack[-0x40]:4  local_40
+; float            Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

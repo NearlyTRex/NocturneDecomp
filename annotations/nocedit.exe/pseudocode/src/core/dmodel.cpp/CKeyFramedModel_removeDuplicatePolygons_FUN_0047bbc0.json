@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 114,
+    "complexity_score": 115,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 89,
+    "pseudocode_lines": 90,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 274
+    "total_lines": 275
   },
   "cross_references": [
     {
@@ -132,14 +132,14 @@
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "CKeyFramedModel *"
       },
       {
         "is_param": false,
@@ -160,7 +160,7 @@
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -174,28 +174,28 @@
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMRGLPrimitiveQuad *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -216,7 +216,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 72,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "((void *)((int)&(((SMRGLPrimitiveQuad *)",
@@ -224,7 +224,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 75,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "(void *)((int)&(((SMRGLPrimitiveQuad *)",

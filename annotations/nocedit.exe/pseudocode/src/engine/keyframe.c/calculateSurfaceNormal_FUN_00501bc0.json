@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 111,
+    "complexity_score": 118,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 53,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 179
+    "total_lines": 186
   },
   "cross_references": [
     {
@@ -160,7 +160,7 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -202,15 +202,15 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 37,
       "match": "SQRT",
       "severity": "mild",
-      "text": "local_20 = SQRT(fVar7 * fVar7 + fVar5 * fVar5 + fVar6 * fVar6);",
+      "text": "local_20 = SQRT(fVar13 * fVar13 + fVar12 * fVar12 + fVar6 * fVar6);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 38,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(local_20) == 0.0) {",
@@ -218,34 +218,34 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 50,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(texture->base).surface_normal.A = (int)ROUND(fVar6);",
+      "text": "(texture->base).surface_normal.A = (int)ROUND(fVar16);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 51,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(texture->base).surface_normal.B = (int)ROUND(fVar5);",
+      "text": "(texture->base).surface_normal.B = (int)ROUND(fVar12);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 52,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(texture->base).surface_normal.C = (int)ROUND(fVar8);",
+      "text": "(texture->base).surface_normal.C = (int)ROUND(fVar15);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 54,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(int)ROUND((float)iVar4 * fVar8 + (float)iVar2 * fVar6 + (float)iVar3 * fVar5);",
+      "text": "(int)ROUND((float)iVar1 * fVar15 + (float)iVar2 * fVar16 + (float)iVar5 * fVar12);",
       "type": "decompiler_intrinsic"
     }
   ]

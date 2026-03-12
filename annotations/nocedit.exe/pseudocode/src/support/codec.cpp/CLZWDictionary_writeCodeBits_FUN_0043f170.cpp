@@ -9,9 +9,9 @@
 void __cdecl support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_0043f170(CLZWDictionary *this_ptr,int code_value,SBitBuffer *bit_buffer,_ostream *ostream)
 
 {
-  int iVar1;
-  uint uVar2;
   uint uVar3;
+  uint uVar2;
+  int iVar1;
   
   iVar1 = this_ptr->entry_count;
   uVar3 = 1 << ((char)this_ptr->current_num_bits - 1U & 0x1f);

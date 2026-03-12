@@ -8,13 +8,15 @@
 ; CVector3f *      Stack[0x8]:4   ray_origin
 ; CVector3f *      Stack[0xc]:4   ray_direction
 ; Local Variables:
-; undefined1       Stack[-0x60]:1  local_60
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
+; CBoundingBox3D   Stack[-0x60]:24  local_60
+; CVector3f        Stack[-0x48]:12  local_48
+; CVector3f        Stack[-0x3c]:12  CStack_3c
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; float            Stack[-0x28]:4  fStack_28
+; CVector3f        Stack[-0x24]:12  local_24
+; float            Stack[-0x18]:4  fStack_18
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; XREF[2]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d35e4

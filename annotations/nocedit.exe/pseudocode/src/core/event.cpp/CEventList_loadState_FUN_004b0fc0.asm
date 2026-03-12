@@ -7,11 +7,11 @@
 ; CEventList *     Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined1       Stack[-0x120]:1  local_120
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x120]:256  local_120
+; int              Stack[-0x20]:4  local_20
+; char[30] *       Stack[-0x1c]:4  local_1c
+; char[32] *       Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1a26

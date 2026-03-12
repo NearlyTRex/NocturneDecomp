@@ -9,10 +9,13 @@
 void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
 
 {
-  CDeformableModelInstance *this_ptr;
+  CDeformableModelInstance *this_ptr_00;
   int iVar1;
   SMotion *motion_name;
+  int iVar3;
+  int iVar4;
   int iVar2;
+  double dVar5;
   float local_f8;
   char local_f4 [200];
   double local_2c;
@@ -21,94 +24,82 @@ void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
   int local_1c;
   int local_18;
   int local_14;
+  CDeformableModelInstance *this_ptr;
   
   INT_02f7c538 = 0;
   if ((((g_CDemonMissionPtr->selected_actor != (CDemonActor *)0x0) &&
        (-1 < g_SelectedMotionPropertyIndex)) &&
       (g_SelectedMotionPropertyIndex < g_MsnEditPropertyList.count)) &&
      ((g_MsnEditPropertyList.properties[g_SelectedMotionPropertyIndex].type == PROP_MOTION &&
-      (this_ptr = g_MsnEditPropertyList.properties[g_SelectedMotionPropertyIndex].data.v_dfm_ptr,
-      this_ptr != (CDeformableModelInstance *)0x0)))) {
-    local_14 = 0x9b;
+      (this_ptr_00 = g_MsnEditPropertyList.properties[g_SelectedMotionPropertyIndex].data.v_dfm_ptr,
+      this_ptr_00 != (CDeformableModelInstance *)0x0)))) {
     iVar2 = (g_CDemonMissionPtr->viewport).bottom + -0x38;
+    iVar4 = (g_CDemonMissionPtr->viewport).bottom;
     iVar1 = (g_CDemonMissionPtr->viewport).bottom + -1;
-    local_20 = (g_CDemonMissionPtr->viewport).bottom + -0x33;
-    local_24 = 4;
     if (((0 < g_MouseX) && ((g_MouseX < 0x9c && (iVar2 <= g_MouseY)))) && (g_MouseY <= iVar1)) {
       INT_02f7c538 = 1;
     }
     engine_2d_c_fillRectWithBorder_FUN_00403200(1,iVar2,0x9b,iVar1,0,0xff);
     motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                            (&this_ptr->motion_controller);
-    local_f8 = (this_ptr->motion_controller).current_frame_number;
-    core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(&this_ptr->motion_controller)
-    ;
+                            (&this_ptr_00->motion_controller);
+    local_f8 = (this_ptr_00->motion_controller).current_frame_number;
+    core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0
+              (&this_ptr_00->motion_controller);
     _sprintf(local_f4,"%s (%s)",motion_name);
-    iVar1 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(local_f4,local_24,local_20,1,0);
-    if (iVar1 != 0) {
+    iVar3 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(local_f4,4,iVar4 + -0x33,1,0);
+    if (iVar3 != 0) {
       core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
                 (g_MsnEditPropertyList.properties + g_SelectedMotionPropertyIndex,
                  g_CDemonMissionPtr->selected_actor);
     }
-    iVar1 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
-                      (" X ",local_14 + -0x11,local_20,1,0);
-    if (iVar1 != 0) {
+    iVar3 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(" X ",0x8a,iVar4 + -0x33,1,0);
+    if (iVar3 != 0) {
       g_SelectedMotionPropertyIndex = -1;
     }
     _sprintf(local_f4,"%6.2f",(double)local_f8);
-    iVar1 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(local_f4,local_24,local_20 + 0x10,1,0)
-    ;
-    if (iVar1 != 0) {
-      local_18 = motion_name->frame_count + -1;
+    iVar3 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(local_f4,4,iVar4 + -0x23,1,0);
+    if (iVar3 != 0) {
       shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                (g_CEditorToolsPtr,"Enter frame number",&local_f8,1,0.0,(float)local_18,1);
+                (g_CEditorToolsPtr,"Enter frame number",&local_f8,1,0.0,
+                 (float)(motion_name->frame_count + -1),1);
     }
-    iVar1 = local_24;
-    local_1c = local_20 + 0x21;
-    iVar2 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
-                      (" << ",local_24 + 7,local_1c,1,0);
-    if (iVar2 != 0) {
+    iVar4 = iVar4 + -0x12;
+    iVar3 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(" << ",0xb,iVar4,1,0);
+    if (iVar3 != 0) {
       g_MotionPropertyEditState = 0;
       local_f8 = 0.0;
     }
-    iVar2 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
-                      (" < ",iVar1 + 0x23,local_1c,0,0);
-    if (iVar2 != 0) {
-      local_2c = ceil((double)local_f8);
-      local_f8 = (float)((float10)local_2c + (float10)-1);
-      if ((float10)local_2c + (float10)-1 < (float10)0) {
-        local_18 = motion_name->frame_count + -1;
-        local_f8 = (float)local_18;
+    iVar3 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(" < ",0x27,iVar4,0,0);
+    if (iVar3 != 0) {
+      dVar5 = ceil((double)local_f8);
+      local_f8 = (float)((float10)dVar5 + (float10)-1);
+      if ((float10)dVar5 + (float10)-1 < (float10)0) {
+        local_f8 = (float)(motion_name->frame_count + -1);
       }
       g_MotionPropertyEditState = 0;
     }
     if (g_MotionPropertyEditState == 0) {
-      iVar2 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
-                        (" |> ",iVar1 + 0x38,local_1c,1,0);
-      if (iVar2 != 0) {
+      iVar3 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(" |> ",0x3c,iVar4,1,0);
+      if (iVar3 != 0) {
         g_MotionPropertyEditState = 1;
       }
     }
     else {
-      iVar2 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
-                        (" || ",iVar1 + 0x38,local_1c,1,0);
-      if (iVar2 != 0) {
+      iVar3 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(" || ",0x3c,iVar4,1,0);
+      if (iVar3 != 0) {
         g_MotionPropertyEditState = 0;
       }
     }
-    iVar2 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
-                      (" > ",iVar1 + 0x54,local_1c,0,0);
-    if (iVar2 != 0) {
-      local_2c = floor((double)local_f8);
-      local_f8 = (float)local_2c + 1.0;
+    iVar3 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(" > ",0x58,iVar4,0,0);
+    if (iVar3 != 0) {
+      dVar5 = floor((double)local_f8);
+      local_f8 = (float)dVar5 + 1.0;
       g_MotionPropertyEditState = 0;
     }
-    iVar1 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0
-                      (" >> ",iVar1 + 0x69,local_1c,1,0);
-    if (iVar1 != 0) {
-      local_18 = motion_name->frame_count + -1;
+    iVar4 = core_msnedit_cpp_drawClickableButton_FUN_00536cd0(" >> ",0x6d,iVar4,1,0);
+    if (iVar4 != 0) {
       g_MotionPropertyEditState = 0;
-      local_f8 = (float)local_18;
+      local_f8 = (float)(motion_name->frame_count + -1);
     }
     if ((g_MotionPropertyEditState != 0) &&
        (local_f8 = g_CGamePtr->delta_time_float * motion_name->fps + local_f8,
@@ -116,8 +107,9 @@ void __cdecl core_msnedit_cpp_drawMotionBar_FUN_00536e20(void)
       local_f8 = 0.0;
     }
     core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
-              (&this_ptr->motion_controller,motion_name->motion_name,local_f8);
-    core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr);
+              (&this_ptr_00->motion_controller,motion_name->motion_name,local_f8);
+    core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000
+              (this_ptr_00);
   }
   return;
 }

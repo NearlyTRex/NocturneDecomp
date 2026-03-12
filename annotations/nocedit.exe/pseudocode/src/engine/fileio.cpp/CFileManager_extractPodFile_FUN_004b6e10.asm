@@ -8,31 +8,21 @@
 ; char *           Stack[0x8]:4   pod_filename
 ; int              Stack[0xc]:4   offer_dismount
 ; Local Variables:
+; time_t[2034]     Stack[-0x2e68]:8136  atStackY_2e68
 ; undefined        Stack[-0xe84]:1  local_e84
-; undefined        Stack[-0xe80]:1  local_e80
-; undefined        Stack[-0xd80]:1  local_d80
-; undefined4       Stack[-0xa74]:4  local_a74
-; undefined4       Stack[-0xa70]:4  local_a70
-; undefined        Stack[-0xa58]:1  local_a58
-; undefined        Stack[-0x658]:1  local_658
-; undefined1       Stack[-0x657]:1  local_657
-; undefined        Stack[-0x558]:1  local_558
-; undefined4       Stack[-0x454]:4  local_454
-; undefined        Stack[-0x44c]:1  local_44c
-; undefined        Stack[-0x444]:1  local_444
-; undefined        Stack[-0x344]:1  local_344
-; undefined        Stack[-0x244]:1  local_244
-; undefined1       Stack[-0x243]:1  local_243
-; undefined        Stack[-0x144]:1  local_144
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined        Stack[-0x38]:1  local_38
-; undefined        Stack[-0x30]:1  local_30
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; undefined1[2088] Stack[-0xe80]:2088  local_e80
+; SFoundFileInfo   Stack[-0x658]:532  local_658
+; char[256]        Stack[-0x444]:256  local_444
+; char[256]        Stack[-0x344]:256  local_344
+; char[256]        Stack[-0x244]:256  local_244
+; char[256]        Stack[-0x144]:256  local_144
+; char *           Stack[-0x44]:4  local_44
+; time_t[4]        Stack[-0x40]:16  local_40
+; undefined1[16]   Stack[-0x30]:16  local_30
+; _FILE *          Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Remounting_all_pods_0062759a

@@ -8,19 +8,13 @@
 ; char *           Stack[0x8]:4   directory_path
 ; char *           Stack[0xc]:4   file_pattern
 ; Local Variables:
-; undefined1       Stack[-0x844]:1  local_844
-; undefined1       Stack[-0x744]:1  local_744
-; undefined4       Stack[-0x640]:4  local_640
-; undefined4       Stack[-0x638]:4  local_638
-; undefined1       Stack[-0x528]:1  local_528
-; undefined4       Stack[-0x424]:4  local_424
-; undefined4       Stack[-0x420]:4  local_420
-; undefined1       Stack[-0x414]:1  local_414
-; undefined1       Stack[-0x310]:1  local_310
-; undefined1       Stack[-0x30f]:1  local_30f
-; undefined1       Stack[-0x210]:1  local_210
-; undefined1       Stack[-0x20f]:1  local_20f
-; undefined1       Stack[-0x110]:1  local_110
+; CPodSearchContext Stack[-0x844]:796  local_844
+; CFileFinder      Stack[-0x528]:276  local_528
+; char[260]        Stack[-0x414]:260  local_414
+; char[256]        Stack[-0x310]:256  local_310
+; char             Stack[-0x210]:1  local_210
+; undefined1[255]  Stack[-0x20f]:255  local_20f
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f2e3

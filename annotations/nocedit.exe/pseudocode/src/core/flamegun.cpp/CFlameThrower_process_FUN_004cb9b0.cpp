@@ -9,10 +9,11 @@
 void __cdecl core_flamegun_cpp_CFlameThrower_process_FUN_004cb9b0(CFlameThrower *this_ptr,float delta_time)
 
 {
-  float fVar1;
-  float fVar2;
   int iVar3;
   uint uVar4;
+  int iVar1;
+  float fVar1;
+  float fVar2;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   if (this_ptr->is_firing == 0) {
@@ -32,16 +33,16 @@ void __cdecl core_flamegun_cpp_CFlameThrower_process_FUN_004cb9b0(CFlameThrower 
     this_ptr->fire_rate_timer = fVar1;
     if (fVar1 < 0.0) {
       fVar2 = 1.0 / 4.0f;
-      iVar3 = (this_ptr->base).ammo_count + -1;
-      (this_ptr->base).ammo_count = iVar3;
+      iVar1 = (this_ptr->base).ammo_count + -1;
+      (this_ptr->base).ammo_count = iVar1;
       this_ptr->fire_rate_timer = fVar2 + fVar1;
-      if (iVar3 < 0) {
+      if (iVar1 < 0) {
         (this_ptr->base).ammo_count = 0;
       }
     }
   }
-  iVar3 = this_ptr->is_firing;
+  iVar1 = this_ptr->is_firing;
   this_ptr->is_firing = 0;
-  this_ptr->was_firing_prev_frame = iVar3;
+  this_ptr->was_firing_prev_frame = iVar1;
   return;
 }

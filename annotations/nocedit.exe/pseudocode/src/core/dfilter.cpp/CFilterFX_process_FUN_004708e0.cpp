@@ -13,6 +13,7 @@ void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFx *this_ptr
 {
   CDemonFilter *pCVar1;
   int iVar2;
+  int iVar1;
   uint *puVar3;
   uint *puVar4;
   byte bVar5;
@@ -36,10 +37,12 @@ void __cdecl core_dfilter_cpp_CFilterFX_process_FUN_004708e0(CFilterFx *this_ptr
       puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
-    for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(byte *)puVar4 = *(byte *)puVar3;
-      puVar3 = (uint *)((int)puVar3 + (uint)bVar5 * -2 + 1);
+    for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
       puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);
+      puVar3 = (uint *)((int)puVar3 + (uint)bVar5 * -2 + 1);
+      *(byte *)puVar4 = *(byte *)puVar3;
+      puVar3 = puVar3;
+      puVar4 = puVar4;
     }
   }
   return;

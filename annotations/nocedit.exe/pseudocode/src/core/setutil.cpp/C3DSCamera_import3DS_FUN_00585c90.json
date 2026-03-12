@@ -4,43 +4,43 @@
       {
         "category": "format_error",
         "column": 36,
-        "line": 71,
+        "line": 74,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 31,
-        "line": 71,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 72,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 25,
-        "line": 73,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 25,
         "line": 74,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 25,
+        "column": 31,
         "line": 75,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 76,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 77,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 78,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 69,
-        "line": 142,
+        "line": 145,
         "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       }
     ],
@@ -49,18 +49,18 @@
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 232,
+    "complexity_score": 234,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 152,
+    "pseudocode_lines": 154,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function"
     ],
-    "total_lines": 220
+    "total_lines": 222
   },
   "cross_references": [],
   "function": {
@@ -121,32 +121,102 @@
     "pcode_op_count": 328
   },
   "stack_frame": {
-    "frame_size": 584,
-    "local_size": 576,
+    "frame_size": 588,
+    "local_size": 580,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_23c",
-        "offset": -572,
-        "size": 1,
-        "type": "undefined"
+        "name": "uStack_240",
+        "offset": -576,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
-        "name": "local_23b",
-        "offset": -571,
+        "name": "local_23c",
+        "offset": -572,
+        "size": 255,
+        "type": "char[255]"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_13d",
+        "offset": -317,
         "size": 1,
         "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_13c",
+        "offset": -316,
+        "size": 256,
+        "type": "char[256]"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_38",
+        "offset": -56,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_34",
+        "offset": -52,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_30",
+        "offset": -48,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "C3DSCamera *"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -200,7 +270,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 72,
       "match": "ROUND",
       "severity": "mild",
       "text": "uStack_18 = (uint)ROUND(ROUND(uStack_240));",
@@ -208,34 +278,34 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 72,
       "match": "ROUND",
       "severity": "mild",
       "text": "uStack_18 = (uint)ROUND(ROUND(uStack_240));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 147,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar8 = (float10)fpatan((float10)fStack_3c,(float10)fStack_34);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 149,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar7 = (float10)fpatan((float10)fStack_38,",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 150,
+      "match": "fpatan",
+      "severity": "mild",
+      "text": "fVar8 = (float10)fpatan((float10)fVar3,(float10)(float)fVar7);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 152,
+      "match": "fpatan",
+      "severity": "mild",
+      "text": "fVar6 = (float10)fpatan((float10)(fStack_2c - fVar1),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 153,
       "match": "SQRT",
       "severity": "mild",
-      "text": "SQRT((float10)fStack_3c * (float10)fStack_3c + fVar7 * (float10)fStack_34)",
+      "text": "SQRT(fVar6 * fVar6 + fVar7 * (float10)(float)fVar7));",
       "type": "decompiler_intrinsic"
     }
   ]

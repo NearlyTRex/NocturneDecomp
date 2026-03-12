@@ -11,14 +11,11 @@
 void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,float delta_time)
 
 {
-  CLocation *pCVar1;
-  float fVar2;
-  CHero *pCVar3;
-  EHeroTask EVar4;
-  CHero *pCVar5;
   CPathMap *this_ptr_00;
   int iVar6;
+  float fVar1;
   CVector3f *pCVar7;
+  int iVar2;
   uint uVar8;
   float fStack_78;
   CVector3f local_74;
@@ -31,12 +28,15 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
   float local_24;
   float local_20;
   float fStack_18;
+  float fVar2;
+  CHero *pCVar3;
+  EHeroTask EVar4;
+  CHero *pCVar5;
+  CLocation *pCVar1;
   
-  local_20 = 0.25;
-  local_24 = 0.7853982;
   pCVar3 = g_HeroActors[g_LocalHeroIndex];
   memset(&(this_ptr->base).player_control,0,0x2c);
-  iVar6 = g_LocalHeroIndex;
+  iVar2 = g_LocalHeroIndex;
   EVar4 = (this_ptr->base).ai_task;
   if ((EVar4 != HERO_TASK_STAND) && (EVar4 == HERO_TASK_FOLLOW)) {
     pCVar5 = g_HeroActors[g_LocalHeroIndex];
@@ -59,9 +59,9 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
     (this_ptr->base).base.turn_angle_accumulator = 0.0;
     if (SQRT(local_74.z * local_74.z + local_74.x * local_74.x + local_74.y * local_74.y) <=
         (float)6) {
-      iVar6 = (*(((g_HeroActors[iVar6]->base).base.vtable._ue)->_ue).randomize)
-                        ((CEnemy *)g_HeroActors[iVar6]);
-      if ((iVar6 == 0) &&
+      iVar2 = (*(((g_HeroActors[iVar2]->base).base.vtable._ue)->_ue).randomize)
+                        ((CEnemy *)g_HeroActors[iVar2]);
+      if ((iVar2 == 0) &&
          (uVar8 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                             ((CCharacter *)this_ptr,delta_time), uVar8 != 0)) {
         if (uVar8 < 2) {
@@ -74,22 +74,21 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
       }
     }
     else {
-      this_ptr_00 = (*((g_HeroActors[iVar6]->base).base.vtable._ub)->getPathMap)
-                              ((CDemonActor *)g_HeroActors[iVar6]);
+      this_ptr_00 = (*((g_HeroActors[iVar2]->base).base.vtable._ub)->getPathMap)
+                              ((CDemonActor *)g_HeroActors[iVar2]);
       iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_68,
                          (this_ptr->base).base.base.direction_hint);
       if (iVar6 != 0) {
-        fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                              (CStack_68.y - (this_ptr->base).base.base.orient.vec.y);
-        fVar2 = fStack_18 * (float)0.31830988619288902 * (float)4;
-        fStack_28 = -local_20;
-        (this_ptr->base).player_control.turn_speed = fVar2;
-        if (fVar2 < fStack_28) {
-          (this_ptr->base).player_control.turn_speed = fStack_28;
+        fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                          (CStack_68.y - (this_ptr->base).base.base.orient.vec.y);
+        fVar1 = fVar1 * (float)0.31830988619288902 * (float)4;
+        (this_ptr->base).player_control.turn_speed = fVar1;
+        if (fVar1 < -0.25) {
+          (this_ptr->base).player_control.turn_speed = -0.25;
         }
-        if (local_20 < (this_ptr->base).player_control.turn_speed) {
-          (this_ptr->base).player_control.turn_speed = local_20;
+        if (0.25 < (this_ptr->base).player_control.turn_speed) {
+          (this_ptr->base).player_control.turn_speed = 0.25;
         }
         (this_ptr->base).player_control.action_states[0] = 1;
       }
@@ -99,12 +98,12 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
     if (fVar2 <= 0.0) {
       if (fVar2 < 0.0) {
         (this_ptr->base).base.turn_angle_accumulator = 0.0;
-        (this_ptr->base).player_control.turn_speed = -local_20;
+        (this_ptr->base).player_control.turn_speed = -0.25;
       }
     }
     else {
       (this_ptr->base).base.turn_angle_accumulator = 0.0;
-      (this_ptr->base).player_control.turn_speed = local_20;
+      (this_ptr->base).player_control.turn_speed = 0.25;
     }
     CStack_38.x = (pCVar3->base).base.location.position.x -
                   (this_ptr->base).base.base.location.position.x;
@@ -125,11 +124,11 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
     }
     fStack_58 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (local_74.y - (this_ptr->base).base.base.orient.vec.y);
-    if (local_24 < fStack_58) {
-      fStack_58 = local_24;
+    if (0.7853982 < fStack_58) {
+      fStack_58 = 0.7853982;
     }
-    if (fStack_58 < -local_24) {
-      fStack_58 = -local_24;
+    if (fStack_58 < -0.7853982) {
+      fStack_58 = -0.7853982;
     }
     fStack_78 = fStack_58 - this_ptr->aim_yaw;
     if (delta_time * (float)3.1415926535000001 < fStack_78) {

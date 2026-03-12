@@ -7,22 +7,18 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   unknown
 ; Local Variables:
-; undefined4       Stack[-0x6ec]:4  local_6ec
-; undefined1       Stack[-0x344]:1  local_344
-; undefined1       Stack[-0x144]:1  local_144
-; undefined1       Stack[-0x143]:1  local_143
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CPickList        Stack[-0x6ec]:936  local_6ec
+; CIniFile         Stack[-0x344]:512  local_344
+; char[260]        Stack[-0x144]:260  local_144
+; char *[4]        Stack[-0x40]:16  local_40
+; char *           Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; CBitFont *       Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 0050777b

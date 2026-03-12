@@ -9,7 +9,7 @@
 void __cdecl engine_2d_c_clipAndDrawLine_FUN_00402ca0(int x1,int y1,int x2,int y2,int x_min,int y_min,int x_max,int y_max)
 
 {
-  longlong lVar1;
+  longlong lVar2;
   uint uVar2;
   int iVar3;
   int new_x;
@@ -19,6 +19,7 @@ void __cdecl engine_2d_c_clipAndDrawLine_FUN_00402ca0(int x1,int y1,int x2,int y
   int local_1c;
   uint local_18;
   uint local_14;
+  longlong lVar1;
   
   local_14 = engine_2d_c_computeOutcode_FUN_00402c10(x1,y1,x_min,y_min,x_max,y_max);
   local_18 = engine_2d_c_computeOutcode_FUN_00402c10(x2,y2,x_min,y_min,x_max,y_max);
@@ -42,26 +43,26 @@ void __cdecl engine_2d_c_clipAndDrawLine_FUN_00402ca0(int x1,int y1,int x2,int y
       if ((uVar2 & 2) == 0) {
         if ((uVar2 & 4) == 0) {
           if (((uVar2 & 8) != 0) && (new_x = x_min, iVar3 != 0)) {
-            lVar1 = (longlong)(int)(((longlong)(x_min - x1) * 0x10000) / (longlong)iVar3) *
+            lVar2 = (longlong)(int)(((longlong)(x_min - x1) * 0x10000) / (longlong)iVar3) *
                     (longlong)iVar4;
-            new_y = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + y1;
+            new_y = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) + y1;
           }
         }
         else {
           new_x = x_max;
           if (iVar3 != 0) {
-            lVar1 = (longlong)(int)(((longlong)(x_max - x1) * 0x10000) / (longlong)iVar3) *
+            lVar2 = (longlong)(int)(((longlong)(x_max - x1) * 0x10000) / (longlong)iVar3) *
                     (longlong)iVar4;
-            new_y = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + y1;
+            new_y = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) + y1;
           }
         }
       }
       else {
         new_y = y_min;
         if (iVar4 != 0) {
-          lVar1 = (longlong)(int)(((longlong)(y_min - y1) * 0x10000) / (longlong)iVar4) *
+          lVar2 = (longlong)(int)(((longlong)(y_min - y1) * 0x10000) / (longlong)iVar4) *
                   (longlong)iVar3;
-          new_x = x1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+          new_x = x1 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
         }
       }
     }

@@ -6,7 +6,7 @@
 ; Parameters:
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004d25c8 = 004d2611

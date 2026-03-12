@@ -11,9 +11,9 @@
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(int color_value)
 
 {
-  int iVar1;
   byte bVar2;
   bool bVar3;
+  int iVar1;
   
   bVar3 = color_value < 0;
   if (bVar3) {

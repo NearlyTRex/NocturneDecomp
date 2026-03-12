@@ -9,14 +9,11 @@
 void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int y_top,int height_half)
 
 {
-  CDemonRenderer *this_ptr;
   int iVar1;
+  int iVar3;
   int iVar2;
   SMRGLHeaderPrimitive local_2c;
-  uint local_14;
-  uint local_10;
-  uint local_c;
-  uint local_8;
+  CDemonRenderer *this_ptr;
   
   this_ptr = g_CDemonRendererPtr2;
   if (0 < height_half * 2) {
@@ -27,10 +24,10 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int 
     this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_x = iVar2;
     this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_y = y_top << 0x10;
     this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_x = iVar2;
-    iVar2 = (y_top + height_half * -2) * 0x10000;
-    this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_y = iVar2;
+    iVar3 = (y_top + height_half * -2) * 0x10000;
+    this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_y = iVar3;
     this_ptr->vertex_buffer_ptr[3].projected_vertex.screen_x = iVar1;
-    this_ptr->vertex_buffer_ptr[3].projected_vertex.screen_y = iVar2;
+    this_ptr->vertex_buffer_ptr[3].projected_vertex.screen_y = iVar3;
     this_ptr->vertex_buffer_ptr->u = 0x80000;
     this_ptr->vertex_buffer_ptr->v = 0xf80000;
     this_ptr->vertex_buffer_ptr[1].u = 0xf80000;
@@ -44,10 +41,6 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int 
     local_2c.surface_normal.C = 0;
     local_2c.surface_normal.B = 0;
     local_2c.surface_normal.A = 0;
-    local_14 = 0;
-    local_c = 2;
-    local_8 = 3;
-    local_10 = 1;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(this_ptr,0x8000);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80

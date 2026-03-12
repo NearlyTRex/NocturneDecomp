@@ -6,26 +6,25 @@
 ; Parameters:
 ; CRainDrop *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
+; undefined4[984]  Stack[-0x1020]:3936  auStackY_1020
+; SMRGLHeaderPrimitive Stack[-0xa8]:24  SStack_a8
+; undefined4       Stack[-0x90]:4  uStack_90
+; undefined4       Stack[-0x8c]:4  uStack_8c
+; undefined4       Stack[-0x88]:4  uStack_88
+; undefined4       Stack[-0x84]:4  uStack_84
+; CVector3i        Stack[-0x80]:12  local_80
+; CVector3i        Stack[-0x74]:12  local_74
+; CVector3i        Stack[-0x68]:12  local_68
 ; undefined4       Stack[-0x5c]:4  local_5c
 ; undefined4       Stack[-0x58]:4  local_58
 ; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined1       Stack[-0x38]:1  local_38
-; undefined1       Stack[-0x20]:1  local_20
+; CVector3i        Stack[-0x50]:12  local_50
+; CVector3i        Stack[-0x44]:12  local_44
+; CVector3i        Stack[-0x38]:12  local_38
+; CVector3i        Stack[-0x2c]:12  CStack_2c
+; CVector3i        Stack[-0x20]:12  local_20
+; int              Stack[-0x14]:4  iStack_14
+; int              Stack[-0x10]:4  iStack_10
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00629ffb = 4

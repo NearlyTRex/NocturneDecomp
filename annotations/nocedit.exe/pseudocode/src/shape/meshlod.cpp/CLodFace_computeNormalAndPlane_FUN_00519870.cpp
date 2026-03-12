@@ -9,17 +9,9 @@
 int __cdecl shape_meshlod_cpp_CLodFace_computeNormalAndPlane_FUN_00519870(CLodFace *this_ptr,CVector3f *vertex0_pos,CVector3f *vertex1_pos,CVector3f *vertex2_pos)
 
 {
-  float *pfVar1;
-  float *pfVar2;
-  float *pfVar3;
-  float *pfVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float *pfVar8;
-  float *pfVar9;
-  CLodFace *pCVar10;
+  float fVar1;
   int iVar11;
+  CVector3f *pCVar2;
   CVector3f *pCVar12;
   int iVar13;
   CVector3f local_84;
@@ -43,6 +35,16 @@ int __cdecl shape_meshlod_cpp_CLodFace_computeNormalAndPlane_FUN_00519870(CLodFa
   int local_20;
   CLodFace *local_1c;
   CVector3f *local_18;
+  float *pfVar2;
+  float *pfVar1;
+  float *pfVar4;
+  float *pfVar8;
+  float fVar7;
+  float *pfVar3;
+  CLodFace *pCVar10;
+  float *pfVar9;
+  float fVar6;
+  float fVar5;
   
   local_48 = vertex1_pos->x - vertex0_pos->x;
   local_44 = vertex1_pos->y - vertex0_pos->y;
@@ -61,20 +63,20 @@ int __cdecl shape_meshlod_cpp_CLodFace_computeNormalAndPlane_FUN_00519870(CLodFa
   fVar5 = (this_ptr->normal).y;
   fVar6 = (this_ptr->normal).x;
   fVar7 = (this_ptr->normal).z;
-  fVar5 = SQRT(fVar7 * fVar7 + fVar6 * fVar6 + fVar5 * fVar5);
-  pCVar12 = &this_ptr->normal;
-  if (0.0 < fVar5) {
-    fVar5 = 1.0 / fVar5;
-    pCVar12->x = pCVar12->x * fVar5;
-    (this_ptr->normal).y = (this_ptr->normal).y * fVar5;
-    (this_ptr->normal).z = (this_ptr->normal).z * fVar5;
+  fVar1 = SQRT(fVar7 * fVar7 + fVar6 * fVar6 + fVar5 * fVar5);
+  pCVar2 = &this_ptr->normal;
+  if (0.0 < fVar1) {
+    fVar1 = 1.0 / fVar1;
+    pCVar2->x = pCVar2->x * fVar1;
+    (this_ptr->normal).y = (this_ptr->normal).y * fVar1;
+    (this_ptr->normal).z = (this_ptr->normal).z * fVar1;
     this_ptr->plane_distance =
          (vertex2_pos->z * (this_ptr->normal).z +
-          vertex2_pos->x * pCVar12->x + vertex2_pos->y * (this_ptr->normal).y +
+          vertex2_pos->x * pCVar2->x + vertex2_pos->y * (this_ptr->normal).y +
          vertex1_pos->z * (this_ptr->normal).z +
-         vertex1_pos->x * pCVar12->x + vertex1_pos->y * (this_ptr->normal).y +
+         vertex1_pos->x * pCVar2->x + vertex1_pos->y * (this_ptr->normal).y +
          vertex0_pos->z * (this_ptr->normal).z +
-         vertex0_pos->x * pCVar12->x + vertex0_pos->y * (this_ptr->normal).y) *
+         vertex0_pos->x * pCVar2->x + vertex0_pos->y * (this_ptr->normal).y) *
          (float)0.33333333333333298;
     __arrinit(&local_84,3,&g_CVectorTypeInfo);
     if (&local_84 != vertex0_pos) {

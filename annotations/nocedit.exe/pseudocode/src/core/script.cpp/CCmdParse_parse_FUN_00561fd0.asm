@@ -8,14 +8,13 @@
 ; char *           Stack[0x8]:4   input_text
 ; char *           Stack[0xc]:4   template_text
 ; Local Variables:
-; undefined1       Stack[-0x154]:1  local_154
-; undefined1       Stack[-0x153]:1  local_153
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[300]        Stack[-0x154]:300  local_154
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; CCmdParm *       Stack[-0x20]:4  local_20
+; char *           Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   core_script.cpp_CCmdParse_bestParse_FUN_00561db0 at 00561ed5

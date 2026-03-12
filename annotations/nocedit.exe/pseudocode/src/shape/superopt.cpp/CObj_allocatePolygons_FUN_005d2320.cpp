@@ -11,7 +11,9 @@ int __cdecl shape_superopt_cpp_CObj_allocatePolygons_FUN_005d2320(CObj *this_ptr
 {
   CPoly *pCVar1;
   int iVar2;
+  int iVar1;
   int iVar3;
+  CPoly *pCVar2;
   uint *puVar4;
   byte bVar5;
   CPoly local_78;
@@ -27,21 +29,22 @@ int __cdecl shape_superopt_cpp_CObj_allocatePolygons_FUN_005d2320(CObj *this_ptr
     if (this_ptr->poly_count != 0) {
       iVar3 = 0;
       do {
-        pCVar1 = &local_78;
+        pCVar2 = &local_78;
         puVar4 = (uint *)
                  ((int)&((CPoly *)(this_ptr->poly_array->uv_coords + -1))->parent_obj + iVar3);
         for (iVar2 = 0x1a; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *puVar4 = pCVar1->parent_obj;
-          pCVar1 = (CPoly *)((int)pCVar1 + ((uint)bVar5 * -2 + 1) * 4);
+          *puVar4 = pCVar2->parent_obj;
+          pCVar2 = (CPoly *)((int)pCVar2 + (uint)bVar5 * -8 + 4);
           puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
         }
-        for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *(byte *)puVar4 = *(byte *)&pCVar1->parent_obj;
-          pCVar1 = (CPoly *)((int)pCVar1 + (uint)bVar5 * -2 + 1);
+        for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
           puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);
+          *(byte *)puVar4 = *(byte *)&pCVar2->parent_obj;
+          pCVar2 = (CPoly *)((int)pCVar2 + (uint)bVar5 * -2 + 1);
+          puVar4 = puVar4;
         }
-        iVar2 = (int)&((CPoly *)(this_ptr->poly_array->uv_coords + -1))->parent_obj + iVar3;
-        (*(code *)**(uint **)(iVar2 + 100))(iVar2,this_ptr);
+        iVar1 = (int)&((CPoly *)(this_ptr->poly_array->uv_coords + -1))->parent_obj + iVar3;
+        (*(code *)**(uint **)(iVar1 + 100))(iVar1,this_ptr);
         iVar3 = iVar3 + 0x68;
         local_10 = local_10 + 1;
       } while (local_10 < (uint)this_ptr->poly_count);

@@ -4,8 +4,10 @@
 ; float10 __fpustack crt_math_c_atan2_FUN_0060c440(float10 y,float10 x)
 ;
 ; Local Variables:
-; undefined1[12]   Stack[-0x30]:12  local_30
-; undefined1[12]   Stack[-0x24]:12  local_24
+; uint             Stack[-0x2c]:4  uStack_2c
+; ushort           Stack[-0x28]:2  uStack_28
+; uint             Stack[-0x20]:4  uStack_20
+; ushort           Stack[-0x1c]:2  uStack_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;

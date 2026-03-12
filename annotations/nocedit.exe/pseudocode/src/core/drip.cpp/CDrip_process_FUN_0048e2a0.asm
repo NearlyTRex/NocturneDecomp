@@ -7,12 +7,16 @@
 ; CDrip *          Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x78]:1  local_78
-; undefined1       Stack[-0x54]:1  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
+; SDamageInfo      Stack[-0xb4]:60  SStack_b4
+; CBoundingBox3D   Stack[-0x78]:24  local_78
+; CVector3f        Stack[-0x60]:12  CStack_60
+; CVector3f        Stack[-0x54]:12  local_54
+; CVector3f        Stack[-0x48]:12  local_48
+; CVector3f[2]     Stack[-0x3c]:24  aCStack_3c
+; CLocation *      Stack[-0x20]:4  pCStack_20
+; float            Stack[-0x1c]:4  fStack_1c
+; float            Stack[-0x18]:4  fStack_18
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; Referenced Globals:
 ;   float FLOAT_006222a3 = -5000

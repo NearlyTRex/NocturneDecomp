@@ -4,26 +4,20 @@
       {
         "category": "other",
         "column": 16,
-        "line": 41,
+        "line": 45,
         "message": "C-style cast from 'UOrientationVector *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 42,
+        "line": 46,
         "message": "C-style cast from 'CLocation *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 44,
+        "line": 48,
         "message": "C-style cast from 'CMatrix3x4f *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 9,
-        "line": 47,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
       }
     ],
     "success": false,
@@ -31,19 +25,19 @@
   },
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 348,
+    "complexity_score": 353,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 123,
+    "pseudocode_lines": 128,
     "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 313
+    "total_lines": 318
   },
   "cross_references": [
     {
@@ -171,53 +165,130 @@
     "pcode_op_count": 835
   },
   "stack_frame": {
-    "frame_size": 460,
-    "local_size": 452,
+    "frame_size": 640,
+    "local_size": 632,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_1c0",
-        "offset": -448,
-        "size": 1,
-        "type": "undefined1"
+        "name": "CStack_274",
+        "offset": -628,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_244",
+        "offset": -580,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_214",
+        "offset": -532,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_1e4",
+        "offset": -484,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "afStack_1b4",
+        "offset": -436,
+        "size": 48,
+        "type": "float[12]"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_184",
+        "offset": -388,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_154",
+        "offset": -340,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_124",
+        "offset": -292,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_f4",
+        "offset": -244,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_c4",
+        "offset": -196,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_94",
+        "offset": -148,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_64",
+        "offset": -100,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_34",
+        "offset": -52,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_14",
+        "offset": -20,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": true,
@@ -255,7 +326,7 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 10,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "int unaff_EBP;",
@@ -263,7 +334,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 34,
       "match": "in_stack_fffffd80",
       "severity": "moderate",
       "text": "CMatrix3x4f *in_stack_fffffd80;",
@@ -271,7 +342,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 46,
       "match": "in_stack_fffffd80",
       "severity": "moderate",
       "text": "(this_ptr,(int)local_18,in_stack_fffffd80);",
@@ -279,15 +350,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 53,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 60,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "((CMatrix3x4f *)((int)pCVar4->x * 0x30 + iStack_14),&CStack_244);",
@@ -295,50 +366,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 65,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 66,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 73,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 74,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -346,52 +401,68 @@
       "line": 82,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
       "text": "(&CStack_184,(CMatrix3x4f *)((int)pCVar4->x * 0x30 + iStack_14),&CStack_124);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 90,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 91,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 107,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 108,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 106,
+      "line": 111,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "iVar3 = *(int *)(unaff_EBP + 8);",
+      "text": "iVar2 = *(int *)(unaff_EBP + 8);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 110,
+      "line": 115,
       "match": "in_stack_fffffd80",
       "severity": "moderate",
       "text": "in_stack_fffffd80 = (CMatrix3x4f *)0x42d1f9;",
@@ -399,15 +470,15 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 113,
+      "line": 118,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "iVar3 = *(int *)(unaff_EBP + 8);",
+      "text": "iVar2 = *(int *)(unaff_EBP + 8);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 120,
+      "line": 125,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "(*(CDemonActor **)(unaff_EBP + 8));",
@@ -415,7 +486,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 122,
+      "line": 127,
       "match": "(CVector3f *)((int)",
       "severity": "mild",
       "text": "local_18 = (CVector3f *)((int)&local_18->x + 1);",

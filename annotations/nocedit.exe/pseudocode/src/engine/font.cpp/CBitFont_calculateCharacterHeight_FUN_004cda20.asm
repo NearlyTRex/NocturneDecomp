@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   char_height
 ; int              Stack[0x14]:4   bitmap_stride
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550 at 004cd968

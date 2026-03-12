@@ -9,9 +9,13 @@
 void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CDeformableModel *this_ptr,char *output_filename,int lod_level,CMatrix3x4f *bone_matrices)
 
 {
-  _FILE *p_Var1;
+  _FILE *file;
   int *dest;
+  int iVar1;
+  int iVar2;
+  int iVar5;
   ushort *puVar2;
+  ushort *puVar6;
   int iVar3;
   int iVar4;
   int *piVar5;
@@ -56,12 +60,12 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   int local_1c;
   int local_18;
   uint local_14;
+  _FILE *p_Var1;
   
   __STK();
-  local_70 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       (output_filename,(char *)0x0,"wt","..\\core\\skeledit.cpp",
-                        0x155d);
-  if (local_70 == (_FILE *)0x0) {
+  file = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                   (output_filename,(char *)0x0,"wt","..\\core\\skeledit.cpp",0x155d);
+  if (file == (_FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't create %s");
     return;
@@ -73,74 +77,66 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
     g_CurrentLineNumber = 0x1566;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
-  local_94 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
-                       (g_CEditorToolsPtr,"Export capped faces?");
+  iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+                    (g_CEditorToolsPtr,"Export capped faces?");
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_b8);
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_c8);
   iVar4 = lod_level * 4;
   local_3c = 0;
-  iVar6 = (int)this_ptr->lod_info + iVar4 + -4;
-  local_40 = *(int *)(iVar6 + 0x54);
+  iVar5 = (int)this_ptr->lod_info + iVar4 + -4;
+  local_40 = *(int *)(iVar5 + 0x54);
   local_84 = 0;
   if (0 < this_ptr->num_parts) {
     local_80 = this_ptr;
     local_78 = 0;
-    local_98 = iVar6;
-    local_7c = iVar6;
-    local_74 = iVar6;
-    local_58 = iVar6;
-    local_54 = iVar4;
-    local_50 = iVar4;
-    local_18 = iVar6;
+    local_7c = iVar5;
+    local_74 = iVar5;
     do {
-      memset(dest,0,*(int *)(local_98 + 0x2c) << 2);
+      memset(dest,0,*(int *)(iVar5 + 0x2c) << 2);
       local_44 = local_3c;
-      local_68 = local_7c;
       local_24 = local_3c * 0x12;
       local_30 = 0;
       if (0 < *(int *)(local_7c + 0x7164)) {
         do {
-          iVar4 = 0;
+          iVar2 = 0;
           do {
-            puVar2 = (ushort *)(*(int *)(local_18 + 0x7c) + local_24 + iVar4);
-            iVar4 = iVar4 + 2;
-            dest[*puVar2] = 1;
-          } while (iVar4 != 6);
-          local_30 = local_30 + 1;
+            puVar6 = (ushort *)(*(int *)(iVar5 + 0x7c) + local_24 + iVar2);
+            iVar2 = iVar2 + 2;
+            dest[*puVar6] = 1;
+          } while (iVar2 != 6);
           local_44 = local_44 + 1;
+          local_30 = local_30 + 1;
           local_24 = local_24 + 0x12;
         } while (local_30 < *(int *)(local_7c + 0x7164));
       }
       local_48 = local_40;
-      if (local_94 != 0) {
+      if (iVar1 != 0) {
         local_20 = 0;
-        local_5c = local_74;
         local_34 = local_40 * 0x12;
         if (0 < *(int *)(local_74 + 0x7178)) {
           do {
-            iVar4 = 0;
+            iVar2 = 0;
             do {
-              puVar2 = (ushort *)(*(int *)(iVar6 + 0x7c) + local_34 + iVar4);
-              iVar4 = iVar4 + 2;
-              dest[*puVar2] = 1;
-            } while (iVar4 != 6);
-            local_20 = local_20 + 1;
+              puVar6 = (ushort *)(*(int *)(iVar5 + 0x7c) + local_34 + iVar2);
+              iVar2 = iVar2 + 2;
+              dest[*puVar6] = 1;
+            } while (iVar2 != 6);
             local_48 = local_48 + 1;
+            local_20 = local_20 + 1;
             local_34 = local_34 + 0x12;
           } while (local_20 < *(int *)(local_74 + 0x7178));
         }
       }
       *(uint *)((int)aiStack_140 + local_78) = 0;
       local_1c = 0;
-      if (0 < *(int *)(local_58 + 0x2c)) {
-        local_4c = local_78;
-        piVar5 = dest;
+      piVar5 = dest;
+      if (0 < *(int *)(iVar5 + 0x2c)) {
         do {
           if (*piVar5 == 0) {
             *piVar5 = -1;
           }
           else {
-            *(int *)((int)aiStack_140 + local_4c) = *(int *)((int)aiStack_140 + local_4c) + 1;
+            *(int *)((int)aiStack_140 + local_78) = *(int *)((int)aiStack_140 + local_78) + 1;
             *piVar5 = local_b8.item_count;
             core_skeleton_cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
                       (this_ptr,&local_a8,lod_level,local_1c,bone_matrices);
@@ -152,19 +148,18 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
           }
           local_1c = local_1c + 1;
           piVar5 = piVar5 + 1;
-        } while (local_1c < *(int *)(local_58 + 0x2c));
+        } while (local_1c < *(int *)(iVar5 + 0x2c));
       }
-      local_60 = local_80;
       local_28 = local_3c << 2;
       local_2c = local_3c * 0x12;
-      for (iVar4 = 0; iVar4 < *(int *)((int)local_60->parts[0].tri_counts + local_50);
-          iVar4 = iVar4 + 1) {
-        puVar2 = (ushort *)(*(int *)((int)this_ptr->tri_data_ptr + local_50) + local_2c);
-        local_14 = (uint)puVar2[3];
+      for (iVar2 = 0; iVar2 < local_80->parts[0].tri_counts[lod_level]; iVar2 = iVar2 + 1) {
+        puVar2 = (ushort *)
+                 ((int)&(this_ptr->tri_data_ptr[lod_level]->vertex_indices).vertex_index_0 +
+                 local_2c);
         _sprintf
                   (local_340,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
-                   *(uint *)(*(int *)((int)this_ptr->index_data_ptr + local_50) + local_28),
-                   dest[*puVar2],(double)local_14 * 0.00390625,
+                   *(uint *)((int)this_ptr->index_data_ptr[lod_level] + local_28),
+                   dest[*puVar2],(double)puVar2[3] * 0.00390625,
                    (double)puVar2[6] * 0.00390625,dest[puVar2[1]],
                    (double)puVar2[4] * 0.00390625,SUB84(__BITCAST_UINT64((double)puVar2[7] * 0.00390625),0),
                    (int)((ulonglong)((double)puVar2[7] * 0.00390625) >> 0x20),dest[puVar2[2]],
@@ -179,23 +174,20 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
         g_CurrentLineNumber = 0x15a8;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze");
       }
-      if (local_94 != 0) {
-        local_6c = local_3c << 2;
-        local_64 = local_80;
+      if (iVar1 != 0) {
         local_38 = local_40 * 0x12;
-        for (iVar4 = 0; iVar4 < *(int *)((int)local_64->parts[0].cap_tri_counts + local_54);
-            iVar4 = iVar4 + 1) {
-          puVar2 = (ushort *)(*(int *)((int)this_ptr->tri_data_ptr + local_54) + local_38);
-          local_14 = (uint)puVar2[3];
+        for (iVar2 = 0; iVar2 < local_80->parts[0].cap_tri_counts[lod_level]; iVar2 = iVar2 + 1) {
+          puVar6 = (ushort *)
+                   ((int)&(this_ptr->tri_data_ptr[lod_level]->vertex_indices).vertex_index_0 +
+                   local_38);
           _sprintf
                     (local_340,"%d, %d,%g,%g, %d,%g,%g, %d,%g,%g",
-                     *(uint *)(*(int *)((int)this_ptr->index_data_ptr + local_54) + local_6c),
-                     dest[*puVar2],(double)local_14 * 0.00390625,
-                     (double)puVar2[6] * 0.00390625,dest[puVar2[1]],
-                     (double)puVar2[4] * 0.00390625,
-                     SUB84(__BITCAST_UINT64((double)puVar2[7] * 0.00390625),0),
-                     (int)((ulonglong)((double)puVar2[7] * 0.00390625) >> 0x20),dest[puVar2[2]]
-                     ,(double)puVar2[5] * 0.00390625,(double)puVar2[8] * 0.00390625);
+                     this_ptr->index_data_ptr[lod_level][local_3c],dest[*puVar6],
+                     (double)puVar6[3] * 0.00390625,(double)puVar6[6] * 0.00390625,
+                     dest[puVar6[1]],(double)puVar6[4] * 0.00390625,
+                     SUB84(__BITCAST_UINT64((double)puVar6[7] * 0.00390625),0),
+                     (int)((ulonglong)((double)puVar6[7] * 0.00390625) >> 0x20),dest[puVar6[2]]
+                     ,(double)puVar6[5] * 0.00390625,(double)puVar6[8] * 0.00390625);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_c8,local_340);
           local_38 = local_38 + 0x12;
           local_40 = local_40 + 1;
@@ -216,62 +208,58 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0x15b9;
   shape_memdbg_cpp_free_FUN_005fe659(dest);
-  _fprintf(local_70,"// S3D version\n");
-  _fprintf(local_70,"103\n");
-  _fprintf(local_70,"// numTextures,numTris,numVerts,numParts,numFrames,numLights,numCameras\n");
-  _fprintf(local_70,"%d,%d,%d,%d,1,0,0\n",this_ptr->num_textures,local_c8.item_count,
+  _fprintf(file,"// S3D version\n");
+  _fprintf(file,"103\n");
+  _fprintf(file,"// numTextures,numTris,numVerts,numParts,numFrames,numLights,numCameras\n");
+  _fprintf(file,"%d,%d,%d,%d,1,0,0\n",this_ptr->num_textures,local_c8.item_count,
              local_b8.item_count);
   local_88 = 0;
-  _fprintf(local_70,"// partList: firstVert,numVerts,firstTri,numTris,\"name\"\n");
+  _fprintf(file,"// partList: firstVert,numVerts,firstTri,numTris,\"name\"\n");
   local_8c = 0;
   iVar6 = 0;
   if (0 < this_ptr->num_parts) {
-    local_90 = this_ptr->parts;
     iVar3 = (int)this_ptr->lod_info + lod_level * 4 + -4;
-    iVar4 = 0;
+    iVar1 = 0;
     do {
-      local_9c = *(int *)(iVar3 + 0x7164) + *(int *)(iVar3 + 0x7178);
+      iVar5 = *(int *)(iVar3 + 0x7164) + *(int *)(iVar3 + 0x7178);
       iVar3 = iVar3 + 0x60;
       iVar6 = iVar6 + 1;
-      _fprintf(local_70,"%d,%d,%d,%d,\"%s\"\n",local_88,*(uint *)((int)aiStack_140 + iVar4),
-                 local_8c,local_9c);
-      local_88 = local_88 + *(int *)((int)aiStack_140 + iVar4);
-      local_8c = local_8c + local_9c;
-      local_90 = local_90 + 1;
-      iVar4 = iVar4 + 4;
+      _fprintf(file,"%d,%d,%d,%d,\"%s\"\n",local_88,*(uint *)((int)aiStack_140 + iVar1),
+                 local_8c,iVar5);
+      local_88 = local_88 + *(int *)((int)aiStack_140 + iVar1);
+      local_8c = local_8c + iVar5;
+      iVar1 = iVar1 + 4;
     } while (iVar6 < this_ptr->num_parts);
   }
-  _fprintf(local_70,"// texture list: name\n");
-  iVar6 = 0;
+  _fprintf(file,"// texture list: name\n");
+  iVar1 = 0;
   if (0 < this_ptr->num_textures) {
     do {
-      _fprintf(local_70,"%s\n");
-      iVar6 = iVar6 + 1;
-    } while (iVar6 < this_ptr->num_textures);
+      _fprintf(file,"%s\n");
+      iVar1 = iVar1 + 1;
+    } while (iVar1 < this_ptr->num_textures);
   }
-  _fprintf(local_70,"// triList: materialIndex,vertices(index, texX, texY)\n");
-  p_Var1 = local_70;
-  iVar6 = 0;
+  _fprintf(file,"// triList: materialIndex,vertices(index, texX, texY)\n");
+  iVar1 = 0;
   if (0 < local_c8.item_count) {
     do {
-      shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_c8,iVar6);
-      iVar6 = iVar6 + 1;
-      _fprintf(p_Var1,"%s\n");
-    } while (iVar6 < local_c8.item_count);
+      shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_c8,iVar1);
+      iVar1 = iVar1 + 1;
+      _fprintf(file,"%s\n");
+    } while (iVar1 < local_c8.item_count);
   }
-  iVar6 = 0;
-  _fprintf(local_70,"// vertList: x,y,z\n");
-  p_Var1 = local_70;
+  iVar1 = 0;
+  _fprintf(file,"// vertList: x,y,z\n");
   if (0 < local_b8.item_count) {
     do {
-      shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_b8,iVar6);
-      iVar6 = iVar6 + 1;
-      _fprintf(p_Var1,"%s\n");
-    } while (iVar6 < local_b8.item_count);
+      shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_b8,iVar1);
+      iVar1 = iVar1 + 1;
+      _fprintf(file,"%s\n");
+    } while (iVar1 < local_b8.item_count);
   }
-  _fprintf(local_70,"// lightList: \"name\", type, x,y,z, r,g,b, (type-specific info)\n");
-  _fprintf(local_70,"// cameraList: \"name\", x,y,z, p,b,h, fov(rad)\n");
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_70,"..\\core\\skeledit.cpp",0x15ea);
+  _fprintf(file,"// lightList: \"name\", type, x,y,z, r,g,b, (type-specific info)\n");
+  _fprintf(file,"// cameraList: \"name\", x,y,z, p,b,h, fov(rad)\n");
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",0x15ea);
   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_c8,0);
   shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_b8,0);
   return;

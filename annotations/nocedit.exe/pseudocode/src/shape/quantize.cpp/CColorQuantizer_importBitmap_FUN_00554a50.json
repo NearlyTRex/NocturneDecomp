@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 27,
-        "line": 65,
+        "line": 68,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       }
     ],
@@ -13,19 +13,19 @@
   },
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 211,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 96,
+    "pseudocode_lines": 101,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 319
+    "total_lines": 324
   },
   "cross_references": [
     {
@@ -185,21 +185,21 @@
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 4,
-        "type": "undefined4"
+        "size": 1,
+        "type": "undefined1"
       },
       {
         "is_param": false,
@@ -263,23 +263,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar13 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
+      "line": 68,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar13 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar13 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 80,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(SQRT((double)((uint)bVar3 * (uint)bVar3 +",
@@ -287,7 +287,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 80,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(SQRT((double)((uint)bVar3 * (uint)bVar3 +",
@@ -295,7 +295,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 80,
       "match": "SQRT",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(SQRT((double)((uint)bVar3 * (uint)bVar3 +",
@@ -303,7 +303,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 83,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = bVar1;",
@@ -311,7 +311,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 84,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) = bVar2;",
@@ -319,7 +319,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 85,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) = bVar3;",
@@ -327,7 +327,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 86,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 3) =",

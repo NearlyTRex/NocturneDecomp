@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 59,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 112
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 114
   },
   "cross_references": [],
   "function": {
@@ -94,22 +92,8 @@
         "is_param": false,
         "name": "local_224",
         "offset": -548,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_223",
-        "offset": -547,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_124",
-        "offset": -292,
-        "size": 1,
-        "type": "undefined1"
+        "size": 532,
+        "type": "SFoundFileInfo"
       },
       {
         "is_param": true,
@@ -144,24 +128,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(SFoundFileInfo *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SFoundFileInfo *)((int)pSVar5 + 2);",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

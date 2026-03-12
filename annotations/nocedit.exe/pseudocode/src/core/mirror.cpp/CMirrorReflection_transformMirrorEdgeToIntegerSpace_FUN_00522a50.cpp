@@ -10,6 +10,7 @@ CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeTo
 
 {
   CVector3f *pCVar1;
+  CVector3f *pCVar2;
   int *piVar2;
   byte bVar3;
   int aiStackY_1024 [1006];
@@ -44,12 +45,12 @@ CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeTo
     local_24.y = pCVar1->y;
     local_24.z = pCVar1->z;
   }
-  pCVar1 = core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_005222f0
+  pCVar2 = core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_005222f0
                      (this_ptr,&local_18,&local_54);
-  if (&local_54 != pCVar1) {
-    local_54.x = pCVar1->x;
-    local_54.y = pCVar1->y;
-    local_54.z = pCVar1->z;
+  if (&local_54 != pCVar2) {
+    local_54.x = pCVar2->x;
+    local_54.y = pCVar2->y;
+    local_54.z = pCVar2->z;
   }
   local_30.y = local_54.y - local_24.y;
   local_30.z = local_54.z - local_24.z;
@@ -59,7 +60,6 @@ CVector3i * __stack3_esi core_mirror_cpp_CMirrorReflection_transformMirrorEdgeTo
     local_54.y = local_54.y - local_24.y;
     local_54.z = local_54.z - local_24.z;
   }
-  local_3c = (int)ROUND(local_54.x * 65536.0f);
   local_38[0] = (int)ROUND(local_54.y * 65536.0f);
   local_38[1] = (int)ROUND(local_54.z * 65536.0f);
   piVar2 = (int *)((int)output + (uint)bVar3 * -8 + 4);

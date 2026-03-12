@@ -5,14 +5,10 @@
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x144]:4  local_144
-; undefined1       Stack[-0x140]:1  local_140
-; undefined1       Stack[-0x13f]:1  local_13f
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x3f]:1  local_3f
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x140]:256  local_140
+; char[32]         Stack[-0x40]:32  local_40
+; int              Stack[-0x20]:4  local_20
+; int[3]           Stack[-0x1c]:12  local_1c
 ;
 ; XREF[1]:
 ;   core_menu.cpp_showOptionsScreen_FUN_00512d30 at 00512e5d

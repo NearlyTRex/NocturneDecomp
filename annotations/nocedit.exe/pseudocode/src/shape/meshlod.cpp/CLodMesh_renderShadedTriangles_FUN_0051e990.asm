@@ -7,16 +7,12 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   use_palette_coloring
 ; Local Variables:
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
+; SMRGLHeaderPrimitive Stack[-0x60]:24  SStack_60
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 at 0051dfb4

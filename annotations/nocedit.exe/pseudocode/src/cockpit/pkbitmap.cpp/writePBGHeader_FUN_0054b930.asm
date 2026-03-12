@@ -7,8 +7,7 @@
 ; CPackedBitmap *  Stack[0x4]:4   bitmap_ptr
 ; _FILE *          Stack[0x8]:4   file_header
 ; Local Variables:
-; undefined        Stack[-0x10]:1  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; CPackedBitmap *[2] Stack[-0x10]:8  local_10
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0063f250

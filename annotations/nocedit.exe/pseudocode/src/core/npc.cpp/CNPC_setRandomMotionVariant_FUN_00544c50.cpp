@@ -9,12 +9,14 @@
 int __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00544c50(CNPC *this_ptr,char *motion_name)
 
 {
-  char cVar1;
+  char cVar2;
   CMotionList *this_ptr_00;
   int iVar2;
+  int iVar4;
   int iVar3;
   char *pcVar4;
   char local_d8 [200];
+  char cVar1;
   
   iVar3 = 0;
   this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
@@ -31,20 +33,20 @@ int __cdecl core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00544c50(CNPC *this_ptr
       cVar1 = *motion_name;
       *pcVar4 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = motion_name[1];
+      cVar2 = motion_name[1];
       motion_name = motion_name + 2;
-      pcVar4[1] = cVar1;
+      pcVar4[1] = cVar2;
       pcVar4 = pcVar4 + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
   }
   else {
-    iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,iVar3);
-    _sprintf(local_d8,"%s_%d",motion_name,iVar3);
+    iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,iVar3);
+    _sprintf(local_d8,"%s_%d",motion_name,iVar4);
   }
-  iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00,local_d8,0);
-  if (-1 < iVar3) {
+  iVar4 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr_00,local_d8,0);
+  if (-1 < iVar4) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              ((CMotionController *)this_ptr,iVar3,1);
+              ((CMotionController *)this_ptr,iVar4,1);
     return 1;
   }
   return 0;

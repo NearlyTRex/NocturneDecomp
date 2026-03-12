@@ -8,22 +8,22 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined8       Stack[-0x5c]:8  local_5c
-; undefined4       Stack[-0x54]:4  local_54
-; undefined        Stack[-0x50]:1  local_50
-; undefined        Stack[-0x4c]:1  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined        Stack[-0x44]:1  local_44
-; undefined        Stack[-0x40]:1  local_40
-; undefined        Stack[-0x3c]:1  local_3c
-; undefined        Stack[-0x38]:1  local_38
-; undefined        Stack[-0x34]:1  local_34
-; undefined8       Stack[-0x30]:8  local_30
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0x54]:4  local_54
+; undefined1[4]    Stack[-0x50]:4  local_50
+; undefined1[4]    Stack[-0x4c]:4  local_4c
+; float            Stack[-0x48]:4  local_48
+; undefined1[4]    Stack[-0x44]:4  local_44
+; undefined1[4]    Stack[-0x40]:4  local_40
+; undefined2[2]    Stack[-0x3c]:4  local_3c
+; undefined1[4]    Stack[-0x38]:4  local_38
+; undefined1[4]    Stack[-0x34]:4  local_34
+; double           Stack[-0x30]:8  local_30
+; int              Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c327

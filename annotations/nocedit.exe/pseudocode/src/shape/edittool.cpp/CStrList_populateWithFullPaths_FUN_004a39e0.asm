@@ -8,15 +8,15 @@
 ; char *           Stack[0x8]:4   base_path
 ; char *           Stack[0xc]:4   search_path
 ; Local Variables:
-; undefined1       Stack[-0x828]:1  local_828
-; undefined1       Stack[-0x714]:1  local_714
-; undefined1       Stack[-0x610]:1  local_610
-; undefined1       Stack[-0x50c]:1  local_50c
-; undefined1       Stack[-0x408]:1  local_408
-; undefined1       Stack[-0x308]:1  local_308
-; undefined1       Stack[-0x208]:1  local_208
-; undefined1       Stack[-0x108]:1  local_108
-; undefined1       Stack[-0x8]:1  local_8
+; CFileFinder      Stack[-0x828]:276  local_828
+; char[260]        Stack[-0x714]:260  local_714
+; char[260]        Stack[-0x610]:260  local_610
+; char[260]        Stack[-0x50c]:260  local_50c
+; char[256]        Stack[-0x408]:256  local_408
+; char[256]        Stack[-0x308]:256  local_308
+; char[256]        Stack[-0x208]:256  local_208
+; char[256]        Stack[-0x108]:256  local_108
+; char[4]          Stack[-0x8]:4  local_8
 ;
 ; XREF[4]:
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd77f

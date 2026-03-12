@@ -7,20 +7,16 @@
 ; scanf_state_t *  Stack[0x4]:4   state
 ; va_list_t *      Stack[0x8]:4   args
 ; Local Variables:
-; undefined1       Stack[-0x80]:1  local_80
-; undefined1       Stack[-0x7f]:1  local_7f
-; undefined1       Stack[-0x7e]:1  local_7e
-; undefined1       Stack[-0x7d]:1  local_7d
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined1       Stack[-0x7b]:1  local_7b
-; undefined1       Stack[-0x7a]:1  local_7a
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
+; undefined8       Stack[-0x80]:8  local_80
+; float            Stack[-0x30]:4  local_30
+; float            Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; undefined2       Stack[-0x18]:2  local_18
+; undefined1       Stack[-0x16]:1  uStack_16
+; undefined1       Stack[-0x15]:1  uStack_15
 ;
 ; XREF[1]:
 ;   crt_stdio.c_doscan_FUN_00604950 at 00604b43

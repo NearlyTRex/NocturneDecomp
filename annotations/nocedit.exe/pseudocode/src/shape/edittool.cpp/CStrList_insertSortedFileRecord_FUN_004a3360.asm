@@ -10,18 +10,18 @@
 ; int              Stack[0x10]:4   file_size
 ; time_t           Stack[0x14]:4   file_timestamp
 ; Local Variables:
-; undefined1       Stack[-0xb04]:1  local_b04
-; undefined1       Stack[-0x904]:1  local_904
-; undefined1       Stack[-0x704]:1  local_704
-; undefined1       Stack[-0x600]:1  local_600
-; undefined1       Stack[-0x4fc]:1  local_4fc
-; undefined1       Stack[-0x3fc]:1  local_3fc
-; undefined1       Stack[-0x3fb]:1  local_3fb
-; undefined1       Stack[-0x2fc]:1  local_2fc
-; undefined1       Stack[-0x1fc]:1  local_1fc
-; undefined1       Stack[-0xfc]:1  local_fc
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x14]:4  local_14
+; char[512]        Stack[-0xb04]:512  local_b04
+; char[512]        Stack[-0x904]:512  local_904
+; char[260]        Stack[-0x704]:260  local_704
+; char[260]        Stack[-0x600]:260  local_600
+; char[256]        Stack[-0x4fc]:256  local_4fc
+; char             Stack[-0x3fc]:1  local_3fc
+; undefined1[255]  Stack[-0x3fb]:255  local_3fb
+; char[256]        Stack[-0x2fc]:256  local_2fc
+; char[256]        Stack[-0x1fc]:256  local_1fc
+; char[200]        Stack[-0xfc]:200  local_fc
+; char[32]         Stack[-0x34]:32  local_34
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0 at 004a372e

@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   player_index
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; uint *           Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 at 00542675

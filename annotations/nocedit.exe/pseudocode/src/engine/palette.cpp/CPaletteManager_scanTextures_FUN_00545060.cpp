@@ -13,40 +13,42 @@ void __cdecl engine_palette_cpp_CPaletteManager_scanTextures_FUN_00545060(CPalet
   SMRGLHeaderExtended *mrgl_data_00;
   int iVar2;
   SMRGLHeaderExtended *pSVar3;
+  SMRGLHeaderExtended *filename_00;
   int *filename;
+  int iVar1;
   SMRGLHeaderExtended *local_14;
   
-  iVar2 = (mrgl_data->base).type;
+  iVar1 = (mrgl_data->base).type;
   local_14 = mrgl_data;
-  if (iVar2 == 0x20) {
-    iVar2 = 0;
+  if (iVar1 == 0x20) {
+    iVar1 = 0;
     if (0 < mrgl_data->child_count) {
-      pSVar3 = mrgl_data + 2;
+      filename_00 = mrgl_data + 2;
       do {
-        mrgl_data_00 = engine_model_c_loadModelFile_FUN_00527ec0((char *)pSVar3);
+        mrgl_data_00 = engine_model_c_loadModelFile_FUN_00527ec0((char *)filename_00);
         engine_palette_cpp_CPaletteManager_scanTextures_FUN_00545060(this_ptr,mrgl_data_00);
         engine_model_c_freeMRGLData_FUN_005280b0(mrgl_data_00);
-        iVar2 = iVar2 + 1;
-        pSVar3 = (SMRGLHeaderExtended *)&pSVar3[1].base.count;
-      } while (iVar2 < mrgl_data->child_count);
+        iVar1 = iVar1 + 1;
+        filename_00 = (SMRGLHeaderExtended *)&filename_00[1].base.count;
+      } while (iVar1 < mrgl_data->child_count);
     }
   }
-  else if (iVar2 == 0x26) {
-    iVar2 = 0;
+  else if (iVar1 == 0x26) {
+    iVar1 = 0;
     if (0 < mrgl_data[2].base.type) {
       pSVar3 = mrgl_data + 3;
       do {
-        iVar2 = iVar2 + 1;
+        iVar1 = iVar1 + 1;
         engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0(this_ptr,(char *)pSVar3);
         pSVar3 = pSVar3 + 2;
-      } while (iVar2 < mrgl_data[2].base.type);
+      } while (iVar1 < mrgl_data[2].base.type);
       return;
     }
   }
   else {
-    for (; iVar2 = (local_14->base).type, iVar2 != 0;
+    for (; iVar1 = (local_14->base).type, iVar1 != 0;
         local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).type + (uVar1 & 0xfffffffc))) {
-      if ((iVar2 == 0xd) || (iVar2 == 0x40)) {
+      if ((iVar1 == 0xd) || (iVar1 == 0x40)) {
         engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0
                   (this_ptr,(char *)&local_14->child_count);
       }

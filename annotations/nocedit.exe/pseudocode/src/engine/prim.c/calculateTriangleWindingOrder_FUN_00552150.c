@@ -9,14 +9,14 @@
 int __cdecl engine_prim_c_calculateTriangleWindingOrder_FUN_00552150(SRenderVertex *v0,SRenderVertex *v1,SRenderVertex *v2)
 
 {
-  uint uVar1;
-  int iVar2;
   int iVar3;
   int iVar4;
   int local_24;
   int local_20;
   int local_1c;
   int local_18;
+  int iVar2;
+  uint uVar1;
   
   if (g_CullingMode == 1) {
     local_24 = (v1->projected_vertex).screen_x - (v0->projected_vertex).screen_x;

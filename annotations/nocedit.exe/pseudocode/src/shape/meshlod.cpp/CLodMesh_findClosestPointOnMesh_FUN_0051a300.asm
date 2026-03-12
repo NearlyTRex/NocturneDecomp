@@ -10,10 +10,8 @@
 ; Local Variables:
 ; undefined8       Stack[-0x40]:8  local_40
 ; undefined8       Stack[-0x38]:8  local_38
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x18]:4  local_18
+; CVector3f[2]     Stack[-0x30]:24  local_30
+; int              Stack[-0x18]:4  local_18
 ;
 ; Called Functions:
 ;   shape_meshlod.cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0

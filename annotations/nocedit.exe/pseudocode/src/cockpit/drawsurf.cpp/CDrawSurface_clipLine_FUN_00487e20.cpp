@@ -9,7 +9,7 @@
 int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom)
 
 {
-  longlong lVar1;
+  longlong lVar2;
   int in_EAX;
   byte bVar2;
   byte bVar3;
@@ -19,6 +19,7 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface
   int iVar6;
   int local_40;
   int local_20;
+  longlong lVar1;
   
   bVar2 = clip_bottom < *y1;
   if (*y1 < clip_top) {
@@ -60,26 +61,26 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface
       if ((bVar5 & 2) == 0) {
         if ((bVar5 & 4) == 0) {
           if (((bVar5 & 8) != 0) && (in_EDX = clip_left, iVar4 != 0)) {
-            lVar1 = (longlong)(int)(((longlong)(clip_left - *x1) * 0x10000) / (longlong)iVar4) *
+            lVar2 = (longlong)(int)(((longlong)(clip_left - *x1) * 0x10000) / (longlong)iVar4) *
                     (longlong)iVar6;
-            in_EAX = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + *y1;
+            in_EAX = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) + *y1;
           }
         }
         else {
           in_EDX = clip_right;
           if (iVar4 != 0) {
-            lVar1 = (longlong)(int)(((longlong)(clip_right - *x1) * 0x10000) / (longlong)iVar4) *
+            lVar2 = (longlong)(int)(((longlong)(clip_right - *x1) * 0x10000) / (longlong)iVar4) *
                     (longlong)iVar6;
-            in_EAX = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + *y1;
+            in_EAX = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) + *y1;
           }
         }
       }
       else {
         in_EAX = clip_top;
         if (iVar6 != 0) {
-          lVar1 = (longlong)(int)(((longlong)(clip_top - *y1) * 0x10000) / (longlong)iVar6) *
+          lVar2 = (longlong)(int)(((longlong)(clip_top - *y1) * 0x10000) / (longlong)iVar6) *
                   (longlong)iVar4;
-          in_EDX = *x1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+          in_EDX = *x1 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
         }
       }
     }

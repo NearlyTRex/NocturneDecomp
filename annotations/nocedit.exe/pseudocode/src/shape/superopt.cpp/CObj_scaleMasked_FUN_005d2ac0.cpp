@@ -9,10 +9,12 @@
 void __cdecl shape_superopt_cpp_CObj_scaleMasked_FUN_005d2ac0(CObj *this_ptr,uint flag_mask,CVector3d *scale,CVector3d *pivot)
 
 {
-  uint uVar1;
   int iVar2;
+  int iVar1;
   CVert *pCVar3;
+  double *pdVar2;
   double *pdVar4;
+  double *pdVar3;
   double *pdVar5;
   uint *puVar6;
   double local_c0;
@@ -40,6 +42,7 @@ void __cdecl shape_superopt_cpp_CObj_scaleMasked_FUN_005d2ac0(CObj *this_ptr,uin
   double local_28;
   double local_20;
   uint local_18;
+  uint uVar1;
   
   local_18 = 0;
   pCVar3 = this_ptr->vertex_data;
@@ -55,22 +58,22 @@ void __cdecl shape_superopt_cpp_CObj_scaleMasked_FUN_005d2ac0(CObj *this_ptr,uin
         local_50 = *(uint *)&scale->z;
         local_b0 = (pCVar3->position).z - pivot->z;
         uVar1 = *(uint *)((int)&scale->z + 4);
-        pdVar4 = &local_c0;
-        pdVar5 = &local_a8;
+        pdVar2 = &local_c0;
+        pdVar3 = &local_a8;
         for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *(uint *)pdVar5 = *(uint *)pdVar4;
-          pdVar4 = (double *)((int)pdVar4 + 4);
-          pdVar5 = (double *)((int)pdVar5 + 4);
+          *(uint *)pdVar3 = *(uint *)pdVar2;
+          pdVar2 = (double *)((int)pdVar2 + 4);
+          pdVar3 = (double *)((int)pdVar3 + 4);
         }
         uStack_4c = uVar1;
         local_90 = local_a8 * __BITCAST_DOUBLE(CONCAT44(uStack_5c,local_60));
         local_88 = local_a0 * __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));
         local_80 = local_98 * __BITCAST_DOUBLE(CONCAT44(uVar1,local_50));
-        pdVar4 = &local_90;
+        pdVar2 = &local_90;
         pdVar5 = &local_78;
-        for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *(uint *)pdVar5 = *(uint *)pdVar4;
-          pdVar4 = (double *)((int)pdVar4 + 4);
+        for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+          *(uint *)pdVar5 = *(uint *)pdVar2;
+          pdVar2 = (double *)((int)pdVar2 + 4);
           pdVar5 = (double *)((int)pdVar5 + 4);
         }
         local_30 = local_78 + pivot->x;
@@ -78,7 +81,7 @@ void __cdecl shape_superopt_cpp_CObj_scaleMasked_FUN_005d2ac0(CObj *this_ptr,uin
         local_20 = local_68 + pivot->z;
         pdVar4 = &local_30;
         puVar6 = local_48;
-        for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+        for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
           *puVar6 = *(uint *)pdVar4;
           pdVar4 = (double *)((int)pdVar4 + 4);
           puVar6 = puVar6 + 1;

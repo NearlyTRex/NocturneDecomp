@@ -7,12 +7,10 @@
 ; CCloth *         Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   euler
 ; Local Variables:
-; undefined        Stack[-0x5c]:1  local_5c
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined        Stack[-0x28]:1  local_28
-; undefined        Stack[-0x1c]:1  local_1c
+; CMatrix3x3f      Stack[-0x5c]:36  local_5c
+; CVector3f        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x28]:12  local_28
+; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[1]:
 ;   core_cloth.cpp_CClothList_applyRotation_FUN_0043c3a0 at 0043c3c2

@@ -8,23 +8,15 @@
 ; CVector3i *      Stack[0x8]:4   point_a
 ; CVector3i *      Stack[0xc]:4   point_b
 ; Local Variables:
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined1       Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined1       Stack[-0x18]:1  local_18
+; int[1006]        Stack[-0x1024]:4024  aiStackY_1024
+; CVector3f        Stack[-0x60]:12  local_60
+; CVector3f        Stack[-0x54]:12  local_54
+; CVector3f        Stack[-0x48]:12  local_48
+; int              Stack[-0x3c]:4  local_3c
+; int[2]           Stack[-0x38]:8  local_38
+; CVector3f        Stack[-0x30]:12  local_30
+; CVector3f        Stack[-0x24]:12  local_24
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80 at 0056dd84

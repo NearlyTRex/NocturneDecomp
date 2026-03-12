@@ -6,6 +6,7 @@
 ; Parameters:
 ; CParticle *      Stack[0x4]:4   this_ptr
 ; Local Variables:
+; float[998]       Stack[-0x105c]:3992  afStackY_105c
 ; undefined8       Stack[-0xb0]:8  local_b0
 ; undefined4       Stack[-0xa8]:4  local_a8
 ; undefined4       Stack[-0x98]:4  local_98
@@ -17,18 +18,13 @@
 ; undefined4       Stack[-0x80]:4  local_80
 ; undefined4       Stack[-0x7c]:4  local_7c
 ; undefined4       Stack[-0x78]:4  local_78
-; undefined1       Stack[-0x74]:1  local_74
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined1       Stack[-0x38]:1  local_38
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3i        Stack[-0x74]:12  local_74
+; undefined1[52]   Stack[-0x68]:52  local_68
+; float[2]         Stack[-0x34]:8  afStack_34
+; CVector3f        Stack[-0x2c]:12  local_2c
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
 ;   core_fire.cpp_CFireball_process_FUN_004c0b30 at 004c0b51

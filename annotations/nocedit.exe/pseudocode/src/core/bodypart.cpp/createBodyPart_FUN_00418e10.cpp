@@ -9,7 +9,6 @@
 CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,int blood_type)
 
 {
-  UOrientationVector *pUVar1;
   CBodyPart *this_ptr;
   CBodyPart *this_ptr_00;
   float fVar2;
@@ -19,6 +18,7 @@ CBodyPart * __cdecl core_bodypart_cpp_createBodyPart_FUN_00418e10(CVector3f *pos
   float10 fVar6;
   float10 fVar7;
   float10 fVar8;
+  UOrientationVector *pUVar1;
   
   this_ptr = (CBodyPart *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0xf30,"..\\core\\bodypart.cpp",0x31);
   this_ptr_00 = (CBodyPart *)0x0;

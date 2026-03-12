@@ -9,10 +9,11 @@
 int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_0041d1b0(CBoneGuy *this_ptr)
 
 {
-  CDemonRenderer *pCVar1;
+  CDemonRenderer *this_ptr_01;
   CBoundingBox3D *this_ptr_00;
   int iVar2;
   CBoundingBox3D local_20;
+  CDemonRenderer *pCVar1;
   
   if ((this_ptr->base).base.render_active != 0) {
     return 0;
@@ -27,9 +28,9 @@ int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_0041d1b0(CBoneGuy *t
     g_CDemonSetPtr->disable_directional_lighting = 1;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(pCVar1,0xffff);
     core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0((CCharacter *)this_ptr);
-    pCVar1 = g_CDemonRendererPtr2;
+    this_ptr_01 = g_CDemonRendererPtr2;
     g_CDemonSetPtr->disable_directional_lighting = 0;
-    engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(pCVar1);
+    engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(this_ptr_01);
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
   return iVar2;

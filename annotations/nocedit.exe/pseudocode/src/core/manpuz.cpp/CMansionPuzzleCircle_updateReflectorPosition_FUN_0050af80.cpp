@@ -9,16 +9,16 @@
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateReflectorPosition_FUN_0050af80(CMansionPuzzleCircle *this_ptr,int reflector_index)
 
 {
-  float *pfVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
   SReflector *pSVar9;
   float local_1c [7];
+  float *pfVar1;
+  float fVar2;
+  float fVar5;
+  float fVar6;
+  float fVar3;
+  float fVar4;
+  float fVar7;
+  float fVar8;
   
   pSVar9 = this_ptr->reflectors + reflector_index;
   pfVar1 = &pSVar9->interp_factor;

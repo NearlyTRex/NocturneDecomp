@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 256,
-    "complexity_score": 156,
+    "complexity_score": 157,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 111,
+    "pseudocode_lines": 112,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 367
+    "total_lines": 368
   },
   "cross_references": [
     {
@@ -179,28 +179,21 @@
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "aiStack_4c",
+        "offset": -76,
+        "size": 24,
+        "type": "int[6]"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
@@ -214,21 +207,21 @@
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
@@ -294,7 +287,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 40,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar3 = *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +",
@@ -302,7 +295,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 83,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "if ((*(byte *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +",
@@ -310,7 +303,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 86,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (0 < *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
@@ -318,7 +311,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 104,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)aiStack_4c + iVar8);",

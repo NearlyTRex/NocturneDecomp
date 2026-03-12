@@ -4,9 +4,13 @@
 ; int __cdecl core_menu_cpp_calibrateGamepad_FUN_005104d0(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x224]:1  local_224
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x224]:256  local_224
+; char[256]        Stack[-0x124]:256  acStack_124
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  iStack_20
+; DWORD            Stack[-0x1c]:4  DStack_1c
+; DWORD            Stack[-0x18]:4  DStack_18
+; DWORD            Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840 at 00511855

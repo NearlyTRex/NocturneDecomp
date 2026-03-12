@@ -11,12 +11,13 @@
 void __cdecl shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
 
 {
-  int iVar1;
+  int iVar3;
   int iVar2;
   CVector3i local_28;
   int local_1c;
   int local_18;
   int local_14;
+  int iVar1;
   
   for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {
     local_28.x = (int)ROUND(ROUND(g_LoadedVertices[local_1c].vertex.x * 256.0f));
@@ -58,23 +59,22 @@ void __cdecl shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
          transformed_z;
     for (local_18 = 1; local_18 < (int)g_ModelPolygonData[local_1c].vertex_indices_count;
         local_18 = local_18 + 1) {
-      local_14 = g_RenderVertexBuffer[g_ModelPolygonData[local_1c].vertex_indices[local_18]].
-                 projected_vertex.transformed_z;
-      if (local_14 < g_PolygonDepths[local_1c]) {
-        g_PolygonDepths[local_1c] = local_14;
+      iVar3 = g_RenderVertexBuffer[g_ModelPolygonData[local_1c].vertex_indices[local_18]].
+              projected_vertex.transformed_z;
+      if (iVar3 < g_PolygonDepths[local_1c]) {
+        g_PolygonDepths[local_1c] = iVar3;
       }
     }
   }
-  for (local_1c = 0; iVar2 = local_1c, local_1c < g_PolygonCount + -1; local_1c = local_1c + 1) {
-    while (local_18 = iVar2 + 1, local_18 < g_PolygonCount) {
-      iVar2 = local_18;
+  for (local_1c = 0; local_18 = local_1c, local_1c < g_PolygonCount + -1; local_1c = local_1c + 1) {
+    while (local_18 = local_18 + 1, local_18 < g_PolygonCount) {
       if (g_PolygonDepths[local_1c] < g_PolygonDepths[local_18]) {
         iVar1 = g_PolygonIndices[local_1c];
         g_PolygonIndices[local_1c] = g_PolygonIndices[local_18];
         g_PolygonIndices[local_18] = iVar1;
-        iVar1 = g_PolygonDepths[local_1c];
+        iVar3 = g_PolygonDepths[local_1c];
         g_PolygonDepths[local_1c] = g_PolygonDepths[local_18];
-        g_PolygonDepths[local_18] = iVar1;
+        g_PolygonDepths[local_18] = iVar3;
       }
     }
   }

@@ -7,7 +7,7 @@
 ; CInventory *     Stack[0x4]:4   inventory_ptr
 ; float            Stack[0x8]:4   max_charge
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
+; float            Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

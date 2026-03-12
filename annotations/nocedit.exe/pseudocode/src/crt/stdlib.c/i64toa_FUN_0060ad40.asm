@@ -9,14 +9,13 @@
 ; int              Stack[0xc]:4   base
 ; Local Variables:
 ; undefined1       Stack[-0x54]:1  local_54
-; undefined1       Stack[-0x53]:1  local_53
-; undefined4       Stack[-0x30]:4  local_30
+; char[35]         Stack[-0x53]:35  local_53
+; int              Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
+; int              Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; undefined8       Stack[-0x20]:8  local_20
+; char *           Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   crt_stdio.c_ConvertFormatSpec_FUN_00603238 at 00603668

@@ -4,8 +4,8 @@
 ; void crt_unknown_c_FUN_00604478(int *param_1,undefined4 *param_2,uint param_3,int param_4,undefined4 *param_5)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; uint             Stack[-0x18]:4  local_18
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   crt_unknown.c_FUN_0060411c at 00604254

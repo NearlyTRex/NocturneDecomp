@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 105,
+    "complexity_score": 106,
     "cross_reference_count": 74,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
+    "pseudocode_lines": 26,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function"
     ],
-    "total_lines": 92
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -525,18 +525,18 @@
     "pcode_op_count": 305
   },
   "stack_frame": {
-    "frame_size": 36,
-    "local_size": 28,
+    "frame_size": 32,
+    "local_size": 24,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 8,
-        "type": "undefined8"
+        "name": "uStack_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": true,
@@ -582,7 +582,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
+      "line": 12,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
@@ -590,7 +590,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
+      "line": 12,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {",
@@ -598,7 +598,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 20,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "out_euler_angles->x = (float)__BITCAST_DOUBLE(CONCAT44(uStack_14,0x54411744));",
@@ -606,15 +606,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 23,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar1 = (float10)fpatan((float10)in_direction_vector->x,(float10)in_direction_vector->z);",
+      "text": "fVar2 = (float10)fpatan((float10)in_direction_vector->x,(float10)in_direction_vector->z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 25,
       "match": "fpatan",
       "severity": "mild",
       "text": "fVar1 = (float10)fpatan((float10)in_direction_vector->y,",
@@ -622,7 +622,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 26,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT((float10)in_direction_vector->x * (float10)in_direction_vector->x +",

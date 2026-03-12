@@ -4,97 +4,97 @@
       {
         "category": "other",
         "column": 38,
-        "line": 18,
+        "line": 19,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 22,
+        "line": 23,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 59,
-        "line": 28,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 27,
         "line": 29,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 26,
+        "column": 27,
         "line": 30,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 26,
+        "line": 31,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 31,
+        "line": 32,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 36,
+        "line": 37,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 40,
+        "line": 41,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 59,
-        "line": 47,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 27,
         "line": 48,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 26,
+        "column": 27,
         "line": 49,
+        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 26,
+        "line": 50,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 50,
+        "line": 51,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 55,
+        "line": 56,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 59,
+        "line": 60,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 41,
-        "line": 77,
+        "line": 78,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 14,
-        "line": 78,
+        "line": 79,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -103,17 +103,17 @@
   },
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 125,
+    "complexity_score": 126,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 70,
+    "pseudocode_lines": 71,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 253
+    "total_lines": 254
   },
   "cross_references": [],
   "function": {
@@ -284,7 +284,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 23,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": ",*(uint *)((int)&(options->position).x + 4),",
@@ -292,7 +292,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 25,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(options->position).y + 4),",
@@ -300,7 +300,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 42,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": ",*(uint *)((int)&(options->velocity).x + 4),",
@@ -308,7 +308,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 44,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(options->velocity).y + 4),",
@@ -316,7 +316,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 72,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&options->delay_remaining + 4));",

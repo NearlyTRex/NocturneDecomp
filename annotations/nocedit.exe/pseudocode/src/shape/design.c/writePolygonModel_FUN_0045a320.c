@@ -11,14 +11,15 @@
 void __cdecl shape_design_c_writePolygonModel_FUN_0045a320(int polygon_index,_FILE *output_file,float scale_factor)
 
 {
-  int iVar1;
-  int iVar2;
-  int iVar3;
-  char cVar4;
+  char cVar1;
   int iVar5;
   char *pcVar6;
   char *pcVar7;
   int local_14;
+  int iVar3;
+  char cVar4;
+  int iVar1;
+  int iVar2;
   
   shape_design_c_calculatePolygonNormal_FUN_0045caa0(g_ModelPolygonData + polygon_index);
   iVar1 = (int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));
@@ -47,11 +48,11 @@ void __cdecl shape_design_c_writePolygonModel_FUN_0045a320(int polygon_index,_FI
         cVar4 = *pcVar6;
         *pcVar7 = cVar4;
         if (cVar4 == '\0') break;
-        cVar4 = pcVar6[1];
+        cVar1 = pcVar6[1];
         pcVar6 = pcVar6 + 2;
-        pcVar7[1] = cVar4;
+        pcVar7[1] = cVar1;
         pcVar7 = pcVar7 + 2;
-      } while (cVar4 != '\0');
+      } while (cVar1 != '\0');
       _fprintf(output_file,"\tTEXTURE\t'%s'\n");
     }
     _fprintf(output_file,"\tFACET%dTMAP\t%d,%d,%d,%d",

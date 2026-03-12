@@ -9,8 +9,8 @@
 void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
 
 {
-  char cVar1;
   uint uVar2;
+  int iVar1;
   int iVar3;
   char *pcVar4;
   byte bVar5;
@@ -30,6 +30,7 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
   float local_28;
   float local_24;
   float local_20 [4];
+  char cVar1;
   
   bVar5 = 0;
   local_38 = 999999.9;
@@ -75,14 +76,15 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
     do {
       if (iVar3 == 0) break;
       iVar3 = iVar3 + -1;
-      cVar1 = *pcVar4;
       pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
+      cVar1 = *pcVar4;
+      pcVar4 = pcVar4;
     } while (cVar1 != '\0');
     if (iVar3 != -2) {
-      local_54 = sscanf
-                           (local_a4,"%f,%d,%d",local_20,&local_4c,&local_50);
-      if (1 < local_54) {
-        if (local_54 != 3) {
+      iVar1 = sscanf
+                        (local_a4,"%f,%d,%d",local_20,&local_4c,&local_50);
+      if (1 < iVar1) {
+        if (iVar1 != 3) {
           engine_2d_c_drawText_FUN_00401fd0("Need distance and two points.",0,0x2c);
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
           wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();

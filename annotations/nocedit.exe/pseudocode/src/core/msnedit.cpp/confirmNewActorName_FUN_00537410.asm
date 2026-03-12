@@ -6,8 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   name
 ; Local Variables:
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined1       Stack[-0x2b]:1  local_2b
+; char[32]         Stack[-0x2c]:32  local_2c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Confirm_new_actor_name_0063b7b6

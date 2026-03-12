@@ -6,20 +6,16 @@
 ; Parameters:
 ; CScat *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x160]:1  local_160
-; undefined1       Stack[-0x130]:1  local_130
-; undefined1       Stack[-0x100]:1  local_100
-; undefined1       Stack[-0xd0]:1  local_d0
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined1       Stack[-0x70]:1  local_70
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined1       Stack[-0x1c]:1  local_1c
+; CMatrix3x4f      Stack[-0x160]:48  local_160
+; CMatrix3x4f      Stack[-0x130]:48  local_130
+; CMatrix3x4f      Stack[-0x100]:48  local_100
+; CMatrix3x4f      Stack[-0xd0]:48  local_d0
+; CMatrix3x4f      Stack[-0xa0]:48  local_a0
+; CMatrix3x4f      Stack[-0x70]:48  local_70
+; CVector3f        Stack[-0x40]:12  local_40
+; CVector3f        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x28]:12  local_28
+; CVector3f        Stack[-0x1c]:12  local_1c
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:

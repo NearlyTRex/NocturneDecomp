@@ -9,8 +9,8 @@
 void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_ptr,_FILE *file_handle,int count)
 
 {
-  CQuaternion4f *pCVar1;
   int iVar2;
+  int iVar1;
   CCourseFrame *pCVar3;
   float fVar4;
   uint unaff_ESI;
@@ -29,6 +29,7 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
   float local_14;
   float local_10;
   float local_c;
+  CQuaternion4f *pCVar1;
   
   bVar8 = 0;
   fVar4 = 0.0;
@@ -50,14 +51,14 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
           g_CurrentLineNumber = 0x1c2;
           core_main_c_displayErrorAndQuit_FUN_00506f10("CCourse::importMatrices - file is corrupt on frame %d!",fVar4);
 LAB_00442f35:
-          iVar2 = _fscanf(file_handle,"%f,%f,%f\n",&local_58.m[0].y,&local_58.m[1].z,local_34
+          iVar1 = _fscanf(file_handle,"%f,%f,%f\n",&local_58.m[0].y,&local_58.m[1].z,local_34
                              ,unaff_ESI,unaff_EDI);
-        } while (iVar2 != 3);
-        iVar2 = _fscanf(file_handle,"%f,%f,%f\n",&local_58.m[0].z,local_58.m + 2,local_30,
+        } while (iVar1 != 3);
+        iVar1 = _fscanf(file_handle,"%f,%f,%f\n",&local_58.m[0].z,local_58.m + 2,local_30,
                            unaff_ESI,unaff_EDI);
-      } while (iVar2 != 3);
-      iVar2 = _fscanf(file_handle,"%f,%f,%f\n",local_58.m + 1,&local_58.m[2].y,&local_2c);
-    } while (iVar2 != 3);
+      } while (iVar1 != 3);
+      iVar1 = _fscanf(file_handle,"%f,%f,%f\n",local_58.m + 1,&local_58.m[2].y,&local_2c);
+    } while (iVar1 != 3);
     core_xform_cpp_orthonormalizeMatrix3x3_FUN_005f6690(&local_58,0);
     local_18 = local_58.m[1].x;
     local_14 = local_58.m[2].y;

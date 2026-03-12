@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 152,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 13,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 117,
+    "pseudocode_lines": 119,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 356
+    "total_lines": 358
   },
   "cross_references": [
     {
@@ -185,52 +185,59 @@
       },
       {
         "is_param": false,
+        "name": "aiStack_e4",
+        "offset": -228,
+        "size": 128,
+        "type": "int[32]"
+      },
+      {
+        "is_param": false,
         "name": "local_64",
         "offset": -100,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
-        "size": 8,
-        "type": "undefined8"
+        "size": 16,
+        "type": "double[2]"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "float *"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "float[32] *"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "float *"
       },
       {
         "is_param": false,
@@ -251,7 +258,7 @@
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -272,21 +279,21 @@
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "float *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -300,7 +307,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -335,15 +342,15 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 42,
       "match": "fcos",
       "severity": "mild",
-      "text": "fVar10 = (float10)fcos((float10)iVar7 *",
+      "text": "fVar10 = (float10)fcos((float10)iVar8 *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 73,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((float)1.0000000000000001e-05 < ABS(subband_samples[iVar7])) {",
@@ -351,10 +358,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
+      "line": 109,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30 = (int)ROUND(fVar2 * 32768.0);",
+      "text": "local_30 = (int)ROUND(fVar3 * 32768.0);",
       "type": "decompiler_intrinsic"
     }
   ]

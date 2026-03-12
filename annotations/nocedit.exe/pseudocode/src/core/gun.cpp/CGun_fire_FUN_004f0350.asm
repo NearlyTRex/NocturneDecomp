@@ -6,7 +6,36 @@
 ; Parameters:
 ; CGun *           Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x60]:1  local_60
+; SDamageInfo      Stack[-0x148]:60  SStack_148
+; CMatrix3x3f      Stack[-0x10c]:36  CStack_10c
+; CVector3f        Stack[-0xe4]:12  CStack_e4
+; CVector3f        Stack[-0xd8]:12  CStack_d8
+; float            Stack[-0xcc]:4  fStack_cc
+; float            Stack[-0xc8]:4  fStack_c8
+; float            Stack[-0xc4]:4  fStack_c4
+; CVector3f        Stack[-0xc0]:12  CStack_c0
+; CVector3f        Stack[-0xb4]:12  CStack_b4
+; CVector3f        Stack[-0xa8]:12  CStack_a8
+; float            Stack[-0x9c]:4  fStack_9c
+; float            Stack[-0x98]:4  fStack_98
+; float            Stack[-0x94]:4  fStack_94
+; CVector3f        Stack[-0x90]:12  CStack_90
+; CVector3f        Stack[-0x84]:12  CStack_84
+; CVector3f        Stack[-0x78]:12  CStack_78
+; CVector3f        Stack[-0x6c]:12  CStack_6c
+; CVector3f        Stack[-0x60]:12  local_60
+; CVector3f        Stack[-0x54]:12  CStack_54
+; float            Stack[-0x48]:4  fStack_48
+; float            Stack[-0x44]:4  fStack_44
+; float            Stack[-0x40]:4  fStack_40
+; CVector3f        Stack[-0x3c]:12  CStack_3c
+; float            Stack[-0x30]:4  fStack_30
+; CTrigger *       Stack[-0x2c]:4  pCStack_2c
+; CCrate *         Stack[-0x28]:4  pCStack_28
+; int              Stack[-0x24]:4  iStack_24
+; float            Stack[-0x20]:4  fStack_20
+; CGlass *         Stack[-0x1c]:4  pCStack_1c
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_45_dry_wav_0062e7a0

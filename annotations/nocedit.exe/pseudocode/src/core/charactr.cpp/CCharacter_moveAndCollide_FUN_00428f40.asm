@@ -7,44 +7,46 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   velocity
 ; Local Variables:
+; float[991]       Stack[-0x106c]:3964  afStackY_106c
 ; undefined4       Stack[-0xdc]:4  local_dc
 ; undefined4       Stack[-0xd8]:4  local_d8
 ; undefined4       Stack[-0xd4]:4  local_d4
 ; undefined8       Stack[-0xd0]:8  local_d0
-; undefined4       Stack[-0xc0]:4  local_c0
+; float            Stack[-0xc0]:4  local_c0
 ; undefined4       Stack[-0xb8]:4  local_b8
 ; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xb0]:4  local_b0
+; float            Stack[-0xb0]:4  local_b0
 ; undefined4       Stack[-0xac]:4  local_ac
-; undefined4       Stack[-0xa8]:4  local_a8
-; undefined4       Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined1       Stack[-0x9c]:1  local_9c
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined1       Stack[-0x84]:1  local_84
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0xa8]:12  local_a8
+; CVector3f        Stack[-0x9c]:12  local_9c
+; float            Stack[-0x90]:4  local_90
+; float            Stack[-0x8c]:4  local_8c
+; float            Stack[-0x88]:4  local_88
+; char[4]          Stack[-0x84]:4  local_84
+; float[5]         Stack[-0x80]:20  afStack_80
+; float            Stack[-0x6c]:4  fStack_6c
+; float            Stack[-0x68]:4  fStack_68
+; float            Stack[-0x64]:4  fStack_64
+; float            Stack[-0x60]:4  local_60
+; float            Stack[-0x5c]:4  local_5c
+; float            Stack[-0x58]:4  local_58
+; float            Stack[-0x54]:4  local_54
+; CVector3f *      Stack[-0x50]:4  local_50
+; CVector3f *      Stack[-0x4c]:4  local_4c
+; CVector3f *      Stack[-0x48]:4  local_48
+; CVector3f *      Stack[-0x44]:4  local_44
+; float            Stack[-0x40]:4  local_40
+; float            Stack[-0x3c]:4  fStack_3c
+; int              Stack[-0x38]:4  local_38
+; float            Stack[-0x34]:4  local_34
+; CLocation *      Stack[-0x30]:4  local_30
+; CVector3f *      Stack[-0x2c]:4  local_2c
+; CLocation *      Stack[-0x28]:4  local_28
+; CVector3f *      Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; CVector3f *      Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  fStack_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[36]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 0041564d

@@ -16,12 +16,6 @@ CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationZ_FUN_005f6d40(float angle
   float10 fVar5;
   float local_48 [5];
   float local_34;
-  uint local_30;
-  uint local_2c;
-  uint local_28;
-  uint local_24;
-  uint local_20;
-  uint local_1c;
   float local_10;
   float local_c;
   
@@ -29,18 +23,9 @@ CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationZ_FUN_005f6d40(float angle
   fVar5 = (float10)fcos((float10)angle_radians);
   local_48[2] = 0.0;
   local_48[3] = 0.0;
-  local_30 = 0;
-  local_2c = 0;
-  local_28 = 0;
-  local_24 = 0;
-  local_1c = 0;
-  local_20 = 0x3f800000;
-  local_10 = (float)fVar5;
-  local_c = (float)fVar4;
-  local_48[0] = local_10;
-  local_48[4] = local_c;
-  local_34 = local_10;
-  local_48[1] = -local_c;
+  local_48[0] = (float)fVar5;
+  local_48[4] = (float)fVar4;
+  local_48[1] = -(float)fVar4;
   pfVar2 = local_48;
   pfVar3 = (float *)matrix_out;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

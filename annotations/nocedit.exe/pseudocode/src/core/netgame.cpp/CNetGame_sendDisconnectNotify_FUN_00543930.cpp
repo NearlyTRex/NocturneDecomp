@@ -13,7 +13,6 @@ void __cdecl core_netgame_cpp_CNetGame_sendDisconnectNotify_FUN_00543930(CNetGam
   int local_b;
   
   local_10.type = PACKET_DISCONNECT;
-  local_b = payload;
   local_10.size = 9;
   core_netgame_cpp_CNetGame_sendPacket_FUN_00541230(this_ptr,dest_addr,&local_10);
   return;

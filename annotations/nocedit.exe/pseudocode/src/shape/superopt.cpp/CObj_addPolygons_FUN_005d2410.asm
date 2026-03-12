@@ -7,8 +7,8 @@
 ; CObj *           Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   add_count
 ; Local Variables:
-; undefined1       Stack[-0x78]:1  local_78
-; undefined4       Stack[-0x10]:4  local_10
+; CPoly            Stack[-0x78]:104  local_78
+; uint             Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Unable_to_add_polygons_t_00654355

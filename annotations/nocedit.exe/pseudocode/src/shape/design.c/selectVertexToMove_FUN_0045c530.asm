@@ -4,8 +4,8 @@
 ; void __cdecl shape_design_c_selectVertexToMove_FUN_0045c530(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x28]:1  local_28
-; undefined4       Stack[-0x14]:4  local_14
+; char[20]         Stack[-0x28]:20  local_28
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showPointEditor_FUN_0045c6c0 at 0045c869

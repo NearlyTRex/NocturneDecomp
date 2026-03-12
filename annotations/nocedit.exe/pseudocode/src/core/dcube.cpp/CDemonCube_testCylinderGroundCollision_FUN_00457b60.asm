@@ -11,9 +11,7 @@
 ; CVector3f *      Stack[0x14]:4   output_normal
 ; uint *           Stack[0x18]:4   output_material
 ; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[1]:
 ;   core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950 at 00496ac1

@@ -1,35 +1,21 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 27,
-        "message": "use of undeclared identifier 'stack0xffffffdc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 19,
-        "line": 28,
-        "message": "use of undeclared identifier 'stack0xffffffe0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 101,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array",
-      "stack_ref"
+      "stack_alignment_array"
     ],
     "total_lines": 98
   },
@@ -114,53 +100,60 @@
     "pcode_op_count": 428
   },
   "stack_frame": {
-    "frame_size": 56,
-    "local_size": 44,
+    "frame_size": 4128,
+    "local_size": 4116,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "aiStackY_1010",
+        "offset": -4112,
+        "size": 4068,
+        "type": "int[1017]"
+      },
+      {
+        "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3i *"
       },
       {
         "is_param": true,
@@ -188,7 +181,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 7,
+      "line": 8,
       "match": "aiStackY_1010",
       "severity": "moderate",
       "text": "int aiStackY_1010 [1017];",
@@ -196,42 +189,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 19,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)(local_14 + reference_vertex_id) + (uint)bVar2 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xffffffdc",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar2 * -8) = *puVar1;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar2 * -8) = *puVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xffffffe0",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
       "type": "pointer_cast"
     }
   ]

@@ -10,7 +10,9 @@ int __cdecl chsize(int file_handle,long new_size)
 
 {
   int iVar1;
+  int iVar2;
   DWORD DVar2;
+  DWORD DVar3;
   BOOL BVar3;
   HANDLE unaff_EBP;
   int unaff_EDI;
@@ -21,33 +23,33 @@ int __cdecl chsize(int file_handle,long new_size)
   }
   else {
     (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file_handle);
-    iVar1 = lseek(file_handle,0,1);
+    iVar2 = lseek(file_handle,0,1);
     if (0x7fff < g_WindowsPlatformVersion) {
       unaff_EDI = lseek(file_handle,0,2);
     }
     DVar2 = (*g_SetFilePointerFunc)(unaff_EBP,new_size,(PLONG)0x0,0);
     if (DVar2 == 0xffffffff) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle);
-      DVar2 = __set_errno();
-      return DVar2;
+      DVar3 = __set_errno();
+      return DVar3;
     }
     BVar3 = (*g_SetEndOfFileFunc)(unaff_EBP);
     if (BVar3 == 0) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle);
-      DVar2 = __set_errno();
-      return DVar2;
+      DVar3 = __set_errno();
+      return DVar3;
     }
     if ((0x7fff < g_WindowsPlatformVersion) && (unaff_EDI < new_size)) {
       FUN_00600c80(file_handle,unaff_EDI,new_size - unaff_EDI);
     }
-    if (new_size < iVar1) {
-      iVar1 = new_size;
+    if (new_size < iVar2) {
+      iVar2 = new_size;
     }
-    iVar1 = lseek(file_handle,iVar1,0);
+    iVar2 = lseek(file_handle,iVar2,0);
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle);
-    if (iVar1 == -1) {
-      DVar2 = __set_errno();
-      return DVar2;
+    if (iVar2 == -1) {
+      DVar3 = __set_errno();
+      return DVar3;
     }
     iVar1 = 0;
   }

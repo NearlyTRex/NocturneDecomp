@@ -12,6 +12,7 @@ void __cdecl core_cloth_cpp_CCloth_save_FUN_00439260(CCloth *this_ptr,char *file
   _FILE *file;
   int iVar1;
   SClothBone *pSVar2;
+  int iVar2;
   
   file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"wt");
   if (file == (_FILE *)0x0) {
@@ -43,18 +44,18 @@ void __cdecl core_cloth_cpp_CCloth_save_FUN_00439260(CCloth *this_ptr,char *file
     } while (iVar1 < this_ptr->locked_vertex_count);
   }
   _fprintf(file,"collideBoneCount\n");
-  iVar1 = 0;
+  iVar2 = 0;
   _fprintf(file,"%d\n");
   if (0 < this_ptr->collide_bone_count) {
     pSVar2 = this_ptr->collide_bones;
     do {
-      iVar1 = iVar1 + 1;
+      iVar2 = iVar2 + 1;
       _fprintf(file,"\"%s\",%g,%g, %g,%g,%g, %g,%g,%g, %g\n",pSVar2,(double)pSVar2->radius1,
                  (double)pSVar2->radius2,(double)(pSVar2->euler1).x,(double)(pSVar2->euler1).y,
                  (double)(pSVar2->euler1).z,(double)(pSVar2->euler2).x,(double)(pSVar2->euler2).z,
                  (double)(pSVar2->euler2).y,(double)pSVar2->length);
       pSVar2 = pSVar2 + 1;
-    } while (iVar1 < this_ptr->collide_bone_count);
+    } while (iVar2 < this_ptr->collide_bone_count);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\cloth.cpp",0x17b);
   return;

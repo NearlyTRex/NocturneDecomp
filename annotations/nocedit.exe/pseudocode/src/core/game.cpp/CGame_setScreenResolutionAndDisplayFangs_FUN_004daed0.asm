@@ -6,7 +6,7 @@
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x18]:1  local_18
+; CAlphaBitmap     Stack[-0x18]:20  local_18
 ;
 ; XREF[6]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db886

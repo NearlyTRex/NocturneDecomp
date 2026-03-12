@@ -9,9 +9,10 @@
 void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr,int index,char *condition,char *event)
 
 {
-  char cVar1;
+  char cVar2;
   char (*src) [100];
   char (*src_00) [100];
+  char cVar1;
   
   if ((index < 0) || (this_ptr->list_size < index)) {
     g_CurrentFilename = "..\\core\\event.cpp";
@@ -34,21 +35,21 @@ void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr,in
     cVar1 = *condition;
     (*src)[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = condition[1];
+    cVar2 = condition[1];
     condition = condition + 2;
-    (*src)[1] = cVar1;
+    (*src)[1] = cVar2;
     src = (char (*) [100])(*src + 2);
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   do {
-    cVar1 = *event;
-    (*src_00)[0] = cVar1;
-    if (cVar1 == '\0') {
+    cVar2 = *event;
+    (*src_00)[0] = cVar2;
+    if (cVar2 == '\0') {
       return;
     }
-    cVar1 = event[1];
+    cVar2 = event[1];
     event = event + 2;
-    (*src_00)[1] = cVar1;
+    (*src_00)[1] = cVar2;
     src_00 = (char (*) [100])(*src_00 + 2);
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   return;
 }

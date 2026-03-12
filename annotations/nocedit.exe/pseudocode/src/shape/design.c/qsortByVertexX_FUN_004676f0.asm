@@ -7,7 +7,7 @@
 ; SVertexPair *    Stack[0x4]:4   a
 ; SVertexPair *    Stack[0x8]:4   b
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
+; int              Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

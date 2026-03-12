@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 52,
-        "line": 27,
+        "line": 29,
         "message": "format specifies type 'char *' but the argument has type 'SMRGLHeaderExtended *' [-Werror,-Wformat]"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 71,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 56,
+    "pseudocode_lines": 58,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 197
+    "total_lines": 199
   },
   "cross_references": [
     {
@@ -147,7 +147,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMRGLHeaderExtended *"
       },
       {
         "is_param": true,
@@ -168,7 +168,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 40,
       "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
       "text": "local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).type + (uVar1 & 0xfffffffc))) {",

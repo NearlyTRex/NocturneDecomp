@@ -6,26 +6,26 @@
 ; Parameters:
 ; CSfxSample *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x480]:8  local_480
-; undefined8       Stack[-0x478]:8  local_478
-; undefined8       Stack[-0x470]:8  local_470
-; undefined4       Stack[-0x468]:4  local_468
-; undefined1       Stack[-0x464]:1  local_464
-; undefined1       Stack[-0x463]:1  local_463
-; undefined1       Stack[-0x462]:1  local_462
-; undefined1       Stack[-0x461]:1  local_461
-; undefined1       Stack[-0x338]:1  local_338
-; undefined1       Stack[-0x238]:1  local_238
-; undefined1       Stack[-0x138]:1  local_138
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; undefined4       Stack[-0x480]:4  local_480
+; undefined4       Stack[-0x47c]:4  uStack_47c
+; undefined4       Stack[-0x478]:4  local_478
+; undefined4       Stack[-0x474]:4  uStack_474
+; undefined4       Stack[-0x470]:4  local_470
+; undefined4       Stack[-0x46c]:4  uStack_46c
+; float            Stack[-0x468]:4  local_468
+; char[300]        Stack[-0x464]:300  local_464
+; char[256]        Stack[-0x338]:256  local_338
+; char[256]        Stack[-0x238]:256  local_238
+; char[256]        Stack[-0x138]:256  local_138
+; int              Stack[-0x38]:4  local_38
+; float *          Stack[-0x34]:4  local_34
+; float *          Stack[-0x30]:4  local_30
+; float *          Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; _FILE *          Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0 at 005aa53d

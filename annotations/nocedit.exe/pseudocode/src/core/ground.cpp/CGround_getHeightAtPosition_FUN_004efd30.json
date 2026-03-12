@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 137,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 82,
+    "pseudocode_lines": 93,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 321
+    "total_lines": 332
   },
   "cross_references": [
     {
@@ -162,23 +162,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 59,
       "match": "(short *)((int)",
       "severity": "mild",
-      "text": "iVar10 = this_ptr->height_scale * (int)*(short *)((int)pvVar1 + (iVar9 + uVar11) * 4);",
+      "text": "iVar13 = this_ptr->height_scale * (int)*(short *)((int)pvVar3 + (iVar12 + uVar11) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 62,
       "match": "(short *)((int)",
       "severity": "mild",
-      "text": "((int)*(short *)((int)pvVar1 + (uVar12 + iVar9) * 4) * this_ptr->height_scale - iVar10);",
+      "text": "((int)*(short *)((int)pvVar3 + (uVar12 + iVar12) * 4) * this_ptr->height_scale - iVar13)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 71,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "iVar9 = this_ptr->height_scale * (int)*(short *)((int)pvVar1 + (uVar12 + iVar8) * 4);",
@@ -186,15 +186,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 72,
       "match": "(short *)((int)",
       "severity": "mild",
-      "text": "iVar8 = (int)*(short *)((int)pvVar1 + ((this_ptr->width_minus_1 & uVar11) + iVar8) * 4) *",
+      "text": "iVar14 = (int)*(short *)((int)pvVar1 + ((this_ptr->width_minus_1 & uVar2) + iVar8) * 4) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 78,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "(int)*(short *)((int)pvVar1 +",

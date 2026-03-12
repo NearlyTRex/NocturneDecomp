@@ -9,14 +9,15 @@
 void __cdecl splitpath(char *path,char *drive,char *dir,char *fname,char *ext)
 
 {
-  char cVar1;
-  char *str;
+  char cVar2;
   wchar_t wVar2;
   ushort extraout_var;
   char *pcVar4;
   char *src;
   char *src_00;
+  char cVar1;
   int iVar3;
+  char *str;
   
   cVar1 = *path;
   if ((cVar1 == '\0') || (path[1] != ':')) {
@@ -33,10 +34,10 @@ void __cdecl splitpath(char *path,char *drive,char *dir,char *fname,char *ext)
     path = path + 2;
   }
   src_00 = (char *)0x0;
-  cVar1 = *path;
+  cVar2 = *path;
   str = path;
   src = path;
-  while (cVar1 != '\0') {
+  while (cVar2 != '\0') {
     wVar2 = mbtowc_peek(str);
     iVar3 = CONCAT22(extraout_var,wVar2);
     if (iVar3 == 0x2e) {
@@ -51,7 +52,7 @@ void __cdecl splitpath(char *path,char *drive,char *dir,char *fname,char *ext)
       }
     }
     str = pcVar4;
-    cVar1 = *pcVar4;
+    cVar2 = *pcVar4;
   }
   strncpy_safe(dir,path,(int)src - (int)path,0xff);
   if (src_00 == (char *)0x0) {

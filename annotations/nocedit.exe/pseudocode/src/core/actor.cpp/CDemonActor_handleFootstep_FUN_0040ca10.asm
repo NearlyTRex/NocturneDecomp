@@ -10,10 +10,10 @@
 ; float            Stack[0x10]:4   volume
 ; Local Variables:
 ; undefined8       Stack[-0x94]:8  local_94
-; undefined1       Stack[-0x8c]:1  local_8c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
+; char[100]        Stack[-0x8c]:100  local_8c
+; float            Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_footstep_s_s_wav_f_006142c8

@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 101,
+    "complexity_score": 102,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 32,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "sub84_truncation"
     ],
-    "total_lines": 118
+    "total_lines": 119
   },
   "cross_references": [
     {
@@ -139,29 +139,29 @@
         "is_param": false,
         "name": "local_38",
         "offset": -56,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
@@ -182,7 +182,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 18,
       "match": "SQRT",
       "severity": "mild",
       "text": "dVar4 = SQRT(dVar3 * dVar3 + dVar2 * dVar2 + dVar1 * dVar1);",
@@ -190,7 +190,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 18,
+      "line": 19,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
@@ -198,7 +198,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 19,
       "match": "SUB84",
       "severity": "mild",
       "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
@@ -206,7 +206,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 31,
       "match": "ROUND",
       "severity": "mild",
       "text": "output_vector->x = (int)ROUND(local_30);",
@@ -214,7 +214,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 32,
       "match": "ROUND",
       "severity": "mild",
       "text": "output_vector->y = (int)ROUND(local_28);",
@@ -222,7 +222,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 33,
       "match": "ROUND",
       "severity": "mild",
       "text": "output_vector->z = (int)ROUND(local_20);",

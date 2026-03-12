@@ -16,7 +16,10 @@ int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *poin
   uint uVar5;
   uint uVar6;
   int iVar7;
+  int iVar1;
+  double *pdVar2;
   double *pdVar8;
+  uint *puVar3;
   uint *puVar9;
   uint local_f8;
   uint local_f0;
@@ -102,12 +105,12 @@ int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *poin
     local_a0 = point->x - seg_start->x;
     local_98 = point->y - seg_start->y;
     local_90 = point->z - seg_start->z;
-    pdVar8 = &local_a0;
-    puVar9 = local_58;
+    pdVar2 = &local_a0;
+    puVar3 = local_58;
     for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar9 = *(uint *)pdVar8;
-      pdVar8 = (double *)((int)pdVar8 + 4);
-      puVar9 = puVar9 + 1;
+      *puVar3 = *(uint *)pdVar2;
+      pdVar2 = (double *)((int)pdVar2 + 4);
+      puVar3 = puVar3 + 1;
     }
     local_88.x._0_4_ = local_58[0];
     local_88.x._4_4_ = local_58[1];
@@ -120,7 +123,7 @@ int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *poin
     local_30 = point->z - seg_end->z;
     pdVar8 = &local_40;
     puVar9 = local_70;
-    for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
       *puVar9 = *(uint *)pdVar8;
       pdVar8 = (double *)((int)pdVar8 + 4);
       puVar9 = puVar9 + 1;
@@ -131,8 +134,8 @@ int __cdecl shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d *poin
     local_28.y._4_4_ = local_70[3];
     local_28.z._0_4_ = local_60;
     local_28.z._4_4_ = local_5c;
-    iVar7 = shape_superopt_cpp_areVectorsCollinear_FUN_005d66e0(&local_88,&local_28);
-    return iVar7;
+    iVar1 = shape_superopt_cpp_areVectorsCollinear_FUN_005d66e0(&local_88,&local_28);
+    return iVar1;
   }
   return 0;
 }

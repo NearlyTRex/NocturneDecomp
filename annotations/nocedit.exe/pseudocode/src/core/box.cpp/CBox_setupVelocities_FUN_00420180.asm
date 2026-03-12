@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   linear_velocity
 ; CVector3f *      Stack[0xc]:4   angular_velocity
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; CVector3f        Stack[-0x14]:12  local_14
 ;
 ; XREF[3]:
 ;   core_bodypart.cpp_CBodyPart_onDropped_FUN_00419fd0 at 0041a023

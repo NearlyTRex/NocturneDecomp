@@ -9,12 +9,13 @@
 void __cdecl core_script_cpp_CScript_executeInitSection_FUN_0055a6c0(CScript *this_ptr)
 
 {
-  int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
+  int iVar5;
   float local_14;
   int local_10;
+  int iVar1;
   
   g_ScriptEventsEnabled = 0;
   if ((0 < this_ptr->parsed_line_count) && (this_ptr->parsed_lines != (SScriptLine *)0x0)) {
@@ -30,7 +31,7 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_0055a6c0(CScript *th
       local_10 = this_ptr->next_cmd;
       g_ScriptInputFlag = 0;
       this_ptr->next_cmd = iVar2;
-      iVar2 = 0;
+      iVar5 = 0;
       while( true ) {
         iVar1 = this_ptr->next_cmd;
         local_14 = 0.25;
@@ -43,8 +44,8 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_0055a6c0(CScript *th
                      this_ptr->parsed_lines[iVar1].text,g_ScriptErrorBuffer);
         }
         if (iVar3 == this_ptr->next_cmd) break;
-        iVar2 = iVar2 + 1;
-        if (10000 < iVar2) {
+        iVar5 = iVar5 + 1;
+        if (10000 < iVar5) {
           g_CurrentFilename = "..\\core\\script.cpp";
           g_CurrentLineNumber = 0x44a;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Infinite loop detected in initSection.\n");

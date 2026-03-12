@@ -20,8 +20,8 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet 
                      (g_CDemonRendererPtr2,local_20);
   if (pUVar1 != &g_SavedCameraOrigin) {
     g_SavedCameraOrigin.f.x = (pUVar1->f).x;
-    g_SavedCameraOrigin.f.z = *(float *)((int)pUVar1 + 8);
-    g_SavedCameraOrigin.f.y = *(float *)((int)pUVar1 + 4);
+    g_SavedCameraOrigin.f.z = (pUVar1->f).z;
+    g_SavedCameraOrigin.f.y = (pUVar1->f).y;
   }
   pCVar2 = (CVector3f *)
            engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
@@ -34,7 +34,6 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet 
   g_SavedProjectionFactor =
        engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870
                  (g_CDemonRendererPtr2);
-  local_14 = g_SavedProjectionFactor;
   core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0
             (&(this_ptr->mirror_glass_actors[mirror_index]->mirror).reflection,
              &g_SavedCameraOrigin.f,&g_SavedCameraRotation,g_SavedProjectionFactor);

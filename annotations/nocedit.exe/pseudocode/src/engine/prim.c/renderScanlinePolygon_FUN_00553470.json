@@ -1,20 +1,35 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 15,
+        "line": 144,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 145,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 652,
-    "complexity_score": 277,
+    "complexity_score": 312,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 34,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 277,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 929
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 287,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unknown_field"
+    ],
+    "total_lines": 939
   },
   "cross_references": [
     {
@@ -346,7 +361,7 @@
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -360,7 +375,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SSoftwareEdge *"
       },
       {
         "is_param": true,
@@ -378,5 +393,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 137,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "uVar11._0_2_ = (ushort)(pSVar7->projected_vertex).screen_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 138,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "uVar11._0_2_ = (ushort)uVar11 ^ 0xffff;",
+      "type": "unknown_field"
+    }
+  ]
 }

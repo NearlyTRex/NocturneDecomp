@@ -6,9 +6,22 @@
 ; Parameters:
 ; CLightActor *    Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xa8]:1  local_a8
-; undefined1       Stack[-0x90]:1  local_90
-; undefined4       Stack[-0x18]:4  local_18
+; char[40]         Stack[-0xd0]:40  acStack_d0
+; CBoundingBox3D   Stack[-0xa8]:24  local_a8
+; CBoundingBox3D   Stack[-0x90]:24  local_90
+; float            Stack[-0x6c]:4  fStack_6c
+; float            Stack[-0x68]:4  fStack_68
+; float            Stack[-0x64]:4  fStack_64
+; float            Stack[-0x54]:4  fStack_54
+; float            Stack[-0x50]:4  fStack_50
+; float            Stack[-0x4c]:4  fStack_4c
+; float            Stack[-0x48]:4  fStack_48
+; float            Stack[-0x44]:4  fStack_44
+; float            Stack[-0x40]:4  fStack_40
+; float            Stack[-0x3c]:4  fStack_3c
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; CDemonLight *    Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   core_boxactor.cpp_CLightActor_propertyActionTypeCallback_FUN_00423380 at 004233e9

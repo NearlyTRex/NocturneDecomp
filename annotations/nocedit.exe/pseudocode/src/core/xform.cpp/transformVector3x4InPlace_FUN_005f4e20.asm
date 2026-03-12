@@ -7,9 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   input_output_vector
 ; CMatrix3x4f *    Stack[0x8]:4   matrix
 ; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
+; CVector3f        Stack[-0xc]:12  local_c
 ;
 ; XREF[4]:
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_004268e0 at 00426ff4

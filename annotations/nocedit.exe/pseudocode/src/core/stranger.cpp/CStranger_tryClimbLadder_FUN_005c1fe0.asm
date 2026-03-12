@@ -7,13 +7,39 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0xe8]:8  local_e8
-; undefined1       Stack[-0xe0]:1  local_e0
-; undefined1       Stack[-0xa4]:1  local_a4
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CBoundingBox3D   Stack[-0xe0]:24  local_e0
+; float            Stack[-0xc8]:4  fStack_c8
+; float            Stack[-0xc4]:4  fStack_c4
+; float            Stack[-0xc0]:4  fStack_c0
+; float            Stack[-0xbc]:4  fStack_bc
+; float            Stack[-0xb8]:4  fStack_b8
+; float            Stack[-0xb4]:4  fStack_b4
+; float            Stack[-0xb0]:4  fStack_b0
+; float            Stack[-0xac]:4  fStack_ac
+; float            Stack[-0xa8]:4  fStack_a8
+; CVector3f        Stack[-0xa4]:12  local_a4
+; CVector3f        Stack[-0x98]:12  CStack_98
+; CVector3f        Stack[-0x8c]:12  CStack_8c
+; CVector3f        Stack[-0x80]:12  CStack_80
+; CVector3f        Stack[-0x74]:12  CStack_74
+; float            Stack[-0x68]:4  fStack_68
+; float            Stack[-0x64]:4  fStack_64
+; float            Stack[-0x60]:4  fStack_60
+; CVector3f        Stack[-0x5c]:12  CStack_5c
+; CVector3f        Stack[-0x50]:12  CStack_50
+; float            Stack[-0x44]:4  fStack_44
+; float            Stack[-0x40]:4  fStack_40
+; float            Stack[-0x3c]:4  fStack_3c
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; float            Stack[-0x28]:4  fStack_28
+; float            Stack[-0x24]:4  fStack_24
+; CVector3f *      Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_005c5b90 at 005c5def

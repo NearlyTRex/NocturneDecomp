@@ -9,11 +9,12 @@
 _ostream * __cdecl crt_iostream_cpp_ostream_put_FUN_005ff2d7(_ostream *this_ptr,int character)
 
 {
-  int iVar1;
-  byte *pbVar2;
+  int iVar2;
   BOOL BVar3;
   uint uVar4;
   byte local_c;
+  int iVar1;
+  byte *pbVar2;
   
   if ((*(int *)((this_ptr->_ios).padding +
                ((this_ptr->_ostream_core).layout_info)->offset_to_base + -0x1d) == 0) &&
@@ -22,17 +23,17 @@ _ostream * __cdecl crt_iostream_cpp_ostream_put_FUN_005ff2d7(_ostream *this_ptr,
        ((*(uint *)((this_ptr->_ios).padding + iVar1 + -0x21) & 0x4000) == 0)) ||
       (BVar3 = prepare_stream_for_write((_FILE *)this_ptr), BVar3 != 0))))
   {
-    iVar1 = *(int *)((this_ptr->_ios).padding +
+    iVar2 = *(int *)((this_ptr->_ios).padding +
                     ((this_ptr->_ostream_core).layout_info)->offset_to_base + -0x29);
-    pbVar2 = *(byte **)(iVar1 + 0x20);
-    if (pbVar2 < *(byte **)(iVar1 + 0x1c)) {
-      *(byte **)(iVar1 + 0x20) = pbVar2 + 1;
+    pbVar2 = *(byte **)(iVar2 + 0x20);
+    if (pbVar2 < *(byte **)(iVar2 + 0x1c)) {
+      *(byte **)(iVar2 + 0x20) = pbVar2 + 1;
       local_c = (byte)character;
       *pbVar2 = local_c;
       uVar4 = (uint)*pbVar2;
     }
     else {
-      uVar4 = (**(code **)(*(int *)(iVar1 + 0x28) + 0xc))(iVar1,character & 0xff);
+      uVar4 = (**(code **)(*(int *)(iVar2 + 0x28) + 0xc))(iVar2,character & 0xff);
     }
     if (uVar4 == 0xffffffff) {
       reportStreamError

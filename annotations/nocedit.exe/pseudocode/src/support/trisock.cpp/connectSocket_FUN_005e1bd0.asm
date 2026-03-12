@@ -7,8 +7,9 @@
 ; _SOCKET *        Stack[0x4]:4   socket_handle
 ; SNetworkAddr *   Stack[0x8]:4   dest_addr
 ; Local Variables:
-; undefined        Stack[-0x28]:1  local_28
-; undefined        Stack[-0x18]:1  local_18
+; undefined4[1524] Stack[-0x1804]:6096  auStackY_1804
+; SOCKADDR_IN      Stack[-0x28]:16  local_28
+; SOCKADDR_IN      Stack[-0x18]:16  local_18
 ;
 ; Called Functions:
 ;   crt_wsock32.c_connect

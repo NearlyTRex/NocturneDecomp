@@ -9,10 +9,11 @@
 void __cdecl core_setedit_cpp_blitThumbnailToScreen_FUN_00577430(int thumbnail_index,int screen_x,int screen_row)
 
 {
-  uint uVar1;
   int iVar2;
   uchar *puVar3;
   uint *puVar4;
+  int iVar1;
+  uint uVar2;
   int iVar5;
   uint uVar6;
   uint uVar7;
@@ -26,6 +27,7 @@ void __cdecl core_setedit_cpp_blitThumbnailToScreen_FUN_00577430(int thumbnail_i
   int local_20;
   int local_1c;
   ushort *local_14;
+  uint uVar1;
   
   if ((((-1 < screen_x) && (-1 < screen_row)) && (screen_x + 0x40 <= g_WindowWidth)) &&
      (screen_row + 0x30 <= g_WindowHeight)) {
@@ -37,15 +39,15 @@ void __cdecl core_setedit_cpp_blitThumbnailToScreen_FUN_00577430(int thumbnail_i
       local_30 = local_50;
       do {
         puVar3 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_30) + screen_x);
-        iVar5 = local_1c * 0x100 + iVar2;
+        iVar1 = local_1c * 0x100 + iVar2;
         do {
           puVar3 = puVar3 + 1;
-          uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);
-          iVar5 = iVar5 + 4;
+          uVar2 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar1);
+          iVar1 = iVar1 + 4;
           *puVar3 = g_ColorCubeLookup
-                    [((uVar1 >> 8 & 0xff) >> 3) * 0x20 + ((uVar1 & 0xff) >> 3) * 0x400 +
-                     ((uVar1 >> 0x10 & 0xff) >> 3)];
-        } while (iVar5 != local_54);
+                    [((uVar2 >> 8 & 0xff) >> 3) * 0x20 + ((uVar2 & 0xff) >> 3) * 0x400 +
+                     ((uVar2 >> 0x10 & 0xff) >> 3)];
+        } while (iVar1 != local_54);
         local_30 = local_30 + 4;
         local_1c = local_1c + 1;
         local_54 = local_54 + 0x100;
@@ -79,23 +81,23 @@ void __cdecl core_setedit_cpp_blitThumbnailToScreen_FUN_00577430(int thumbnail_i
       local_28 = local_50;
       do {
         puVar4 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_28) + screen_x * 4);
-        iVar5 = local_24 * 0x100 + iVar2;
+        iVar1 = local_24 * 0x100 + iVar2;
         do {
           puVar4 = puVar4 + 1;
-          uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);
-          uVar7 = uVar1 >> 8 & 0xff;
-          uVar6 = uVar1 >> 0x10 & 0xff;
+          uVar2 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar1);
+          uVar7 = uVar2 >> 8 & 0xff;
+          uVar6 = uVar2 >> 0x10 & 0xff;
           if (g_BitsPerPixel == 0x20) {
-            uVar6 = uVar6 << (g_BlueBitPosition.bytes[0] & 0x1f) |
+            uVar2 = uVar6 << (g_BlueBitPosition.bytes[0] & 0x1f) |
                     uVar7 << (g_GreenBitPosition.bytes[0] & 0x1f) |
-                    (uVar1 & 0xff) << (g_RedBitPosition.bytes[0] & 0x1f);
+                    (uVar2 & 0xff) << (g_RedBitPosition.bytes[0] & 0x1f);
           }
           else {
-            uVar6 = uVar7 << 8 | (uVar1 & 0xff) << 0x10 | uVar6;
+            uVar2 = uVar7 << 8 | (uVar2 & 0xff) << 0x10 | uVar6;
           }
-          iVar5 = iVar5 + 4;
-          *puVar4 = uVar6;
-        } while (iVar5 != local_2c);
+          iVar1 = iVar1 + 4;
+          *puVar4 = uVar2;
+        } while (iVar1 != local_2c);
         local_28 = local_28 + 4;
         local_24 = local_24 + 1;
         local_2c = local_2c + 0x100;

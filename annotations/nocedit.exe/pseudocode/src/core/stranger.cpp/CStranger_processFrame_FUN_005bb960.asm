@@ -7,8 +7,80 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x268]:1  local_268
-; undefined4       Stack[-0x1c]:4  local_1c
+; undefined4       Stack[-0x2dc]:4  uStack_2dc
+; float            Stack[-0x2d8]:4  fStack_2d8
+; float            Stack[-0x2d0]:4  fStack_2d0
+; float *          Stack[-0x2c4]:4  pfStack_2c4
+; float            Stack[-0x2c0]:4  fStack_2c0
+; SDamageInfo      Stack[-0x2bc]:60  SStack_2bc
+; undefined1[28]   Stack[-0x280]:28  auStack_280
+; float            Stack[-0x264]:4  fStack_264
+; float            Stack[-0x260]:4  fStack_260
+; float            Stack[-0x25c]:4  fStack_25c
+; CBoundingBox3D   Stack[-0x248]:24  CStack_248
+; CVector3f        Stack[-0x230]:12  CStack_230
+; CVector3f        Stack[-0x224]:12  CStack_224
+; CVector3f        Stack[-0x218]:12  CStack_218
+; CVector3f        Stack[-0x20c]:12  CStack_20c
+; CVector3f        Stack[-0x200]:12  CStack_200
+; CVector3f[2]     Stack[-0x1f4]:24  aCStack_1f4
+; undefined1[12]   Stack[-0x1dc]:12  auStack_1dc
+; undefined4       Stack[-0x1d0]:4  uStack_1d0
+; float            Stack[-0x1cc]:4  fStack_1cc
+; UOrientationVector Stack[-0x1c8]:12  UStack_1c8
+; float            Stack[-0x1bc]:4  fStack_1bc
+; float            Stack[-0x1b0]:4  fStack_1b0
+; CVector3f        Stack[-0x1ac]:12  CStack_1ac
+; float            Stack[-0x1a0]:4  fStack_1a0
+; float            Stack[-0x19c]:4  fStack_19c
+; float            Stack[-0x198]:4  fStack_198
+; CVector3f[2]     Stack[-0x194]:24  aCStack_194
+; CVector3f        Stack[-0x174]:12  CStack_174
+; undefined1[8]    Stack[-0x168]:8  auStack_168
+; float            Stack[-0x160]:4  fStack_160
+; float            Stack[-0x158]:4  fStack_158
+; float            Stack[-0x154]:4  fStack_154
+; float            Stack[-0x150]:4  fStack_150
+; CVector3f[2]     Stack[-0x14c]:24  aCStack_14c
+; undefined1[12]   Stack[-0x134]:12  auStack_134
+; CVector3f        Stack[-0x128]:12  CStack_128
+; CVector3f[2]     Stack[-0x114]:24  aCStack_114
+; CVector3f        Stack[-0xfc]:12  CStack_fc
+; float            Stack[-0xf0]:4  fStack_f0
+; CVector3f        Stack[-0xec]:12  CStack_ec
+; float            Stack[-0xd8]:4  fStack_d8
+; float            Stack[-0xd4]:4  fStack_d4
+; float            Stack[-0xd0]:4  fStack_d0
+; float            Stack[-0xc8]:4  fStack_c8
+; float            Stack[-0xc4]:4  fStack_c4
+; undefined1[8]    Stack[-0xc0]:8  auStack_c0
+; float            Stack[-0xb8]:4  fStack_b8
+; float            Stack[-0xb4]:4  fStack_b4
+; CVector3f        Stack[-0xb0]:12  CStack_b0
+; CVector3f[2]     Stack[-0x9c]:24  aCStack_9c
+; UOrientationVector Stack[-0x84]:12  UStack_84
+; CDemonActor *    Stack[-0x78]:4  pCStack_78
+; undefined4       Stack[-0x74]:4  uStack_74
+; CAmmoBox *       Stack[-0x70]:4  pCStack_70
+; float            Stack[-0x6c]:4  fStack_6c
+; CMotionController * Stack[-0x68]:4  pCStack_68
+; CMotionController * Stack[-0x64]:4  pCStack_64
+; int              Stack[-0x60]:4  iStack_60
+; CMotionController * Stack[-0x5c]:4  pCStack_5c
+; int              Stack[-0x58]:4  iStack_58
+; CMotionController * Stack[-0x54]:4  pCStack_54
+; CMotionController * Stack[-0x50]:4  pCStack_50
+; float            Stack[-0x4c]:4  fStack_4c
+; float            Stack[-0x48]:4  fStack_48
+; float            Stack[-0x44]:4  fStack_44
+; float            Stack[-0x3c]:4  fStack_3c
+; CDeformableModelInstance * Stack[-0x30]:4  pCStack_30
+; float *          Stack[-0x2c]:4  pfStack_2c
+; UOrientationVector * Stack[-0x24]:4  pUStack_24
+; float            Stack[-0x20]:4  fStack_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  iStack_18
+; int              Stack[-0x14]:4  iStack_14
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_process_FUN_005bb830 at 005bb880

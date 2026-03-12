@@ -9,8 +9,10 @@
 void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20(CDemonMission *this_ptr)
 
 {
+  CDemonActor *actor_ptr;
   int iVar1;
   CHeroPlaceholder *pCVar2;
+  int index;
   char *name;
   CDemonActor *pCVar3;
   CHeroPlaceholder *this_ptr_00;
@@ -19,18 +21,18 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20(C
   CPickList local_3b4;
   
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3b4);
-  pCVar3 = this_ptr->first_actor;
+  actor_ptr = this_ptr->first_actor;
   while( true ) {
-    if (pCVar3 == (CDemonActor *)0x0) {
+    if (actor_ptr == (CDemonActor *)0x0) {
       if (local_3b4.base.item_count < 1) {
         shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                   (g_CEditorToolsPtr,"Warning: mission has no hero placeholders, and no heros.");
       }
       else {
-        iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+        index = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                           (&local_3b4,"Mission has no hero placeholders.\n\nSelect a hero to convert into a hero placeholder, or\npress ESC to leave mission as is.\n\n(You will not be able to play the mission without a hero placeholder.)",-1,0);
-        if (-1 < iVar1) {
-          name = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b4.base,iVar1);
+        if (-1 < index) {
+          name = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_3b4.base,index);
           pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,name);
           if (pCVar3 == (CDemonActor *)0x0) {
             g_CurrentFilename = "..\\core\\mission.cpp";
@@ -66,15 +68,15 @@ void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20(C
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3b4,0);
       return;
     }
-    iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar3,"CHero");
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CHero");
     if (iVar1 != 0) {
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3b4.base,pCVar3->actor_name);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3b4.base,actor_ptr->actor_name);
     }
     pCVar2 = (CHeroPlaceholder *)
              core_actor_cpp_castToClassHash_FUN_0040c790
-                       (pCVar3,g_CHeroPlaceholderClassInfo.name_hash);
+                       (actor_ptr,g_CHeroPlaceholderClassInfo.name_hash);
     if ((pCVar2 != (CHeroPlaceholder *)0x0) && (pCVar2->index == 0)) break;
-    pCVar3 = pCVar3->next_actor;
+    actor_ptr = actor_ptr->next_actor;
   }
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3b4,0);
   return;

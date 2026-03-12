@@ -9,12 +9,12 @@
 int __cdecl shape_meshlod_cpp_CLodMesh_findMinimumCostEdge_FUN_00519680(CLodMesh *this_ptr)
 
 {
-  CLodEdge *pCVar1;
   int edge_index;
   int iVar2;
   uint local_20;
   uint uStack_1c;
   int local_18;
+  CLodEdge *pCVar1;
   
   edge_index = 0;
   local_20 = 9.9999999999999997e+34._0_4_;

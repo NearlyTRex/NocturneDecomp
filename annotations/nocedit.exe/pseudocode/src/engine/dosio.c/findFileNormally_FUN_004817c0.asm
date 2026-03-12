@@ -6,11 +6,8 @@
 ; Parameters:
 ; SFoundFileInfo * Stack[0x4]:4   info
 ; Local Variables:
-; undefined1       Stack[-0x14c]:1  local_14c
-; undefined1       Stack[-0x14b]:1  local_14b
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined4       Stack[-0x36]:4  local_36
-; undefined4       Stack[-0x2e]:4  local_2e
+; char[256]        Stack[-0x14c]:256  local_14c
+; _stat            Stack[-0x4c]:70  local_4c
 ;
 ; XREF[14]:
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd7cf

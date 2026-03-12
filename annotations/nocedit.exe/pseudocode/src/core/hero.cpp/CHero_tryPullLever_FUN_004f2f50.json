@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 97,
+    "complexity_score": 99,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 54,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 206
+    "total_lines": 208
   },
   "cross_references": [
     {
@@ -238,50 +238,36 @@
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -312,7 +298,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 29,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((((ABS(local_3c.y) <= (float)5) && (0.0 <= (double)local_3c.z)) &&",
@@ -320,7 +306,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 30,
       "match": "ABS",
       "severity": "mild",
       "text": "((double)local_3c.z <= 3)) && (ABS(local_3c.x) <= (float)3)) {",
@@ -328,7 +314,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 33,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(pCVar1->y) <= (float)1.04719755116667) {",
@@ -336,10 +322,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 37,
       "match": "SQRT",
       "severity": "mild",
-      "text": "local_14 = SQRT((local_3c.z + -2.0f) * (local_3c.z + -2.0f) +",
+      "text": "fVar1 = SQRT((local_3c.z + -2.0f) * (local_3c.z + -2.0f) +",
       "type": "decompiler_intrinsic"
     }
   ]

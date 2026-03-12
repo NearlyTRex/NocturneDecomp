@@ -11,17 +11,14 @@
 void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *this_ptr)
 
 {
-  uchar *puVar1;
-  float *pfVar2;
-  int iVar3;
-  float fVar4;
-  float fVar5;
   CSkeleton *pCVar6;
   CDeformableModel *pCVar7;
   int iVar8;
+  int iVar1;
   uchar *puVar9;
   int iVar10;
   CCharacter *pCVar11;
+  int iVar2;
   uchar *puVar12;
   uchar *puVar13;
   CDeformableModelInstance *this_ptr_00;
@@ -29,6 +26,11 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
   float local_30;
   int local_1c;
   int local_18;
+  float *pfVar2;
+  uchar *puVar1;
+  float fVar4;
+  int iVar3;
+  float fVar5;
   
   if (this_ptr->fire_count == 0) {
     return;
@@ -54,45 +56,45 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_0042ad00(CCharacter *th
     } while (iVar8 < pCVar6->bone_count);
   }
   fVar5 = 3.0f;
-  iVar8 = 0;
+  iVar1 = 0;
   if (0 < this_ptr->fire_count) {
     fVar4 = (float)65535;
     pCVar11 = this_ptr;
     do {
-      iVar10 = pCVar11->fire_effects[0].bone_index;
-      (&DAT_00823c54)[iVar10] =
-           (float)(&DAT_00823c54)[iVar10] + (pCVar11->fire_effects[0].size * fVar4) / fVar5;
-      iVar8 = iVar8 + 1;
+      iVar2 = pCVar11->fire_effects[0].bone_index;
+      (&DAT_00823c54)[iVar2] =
+           (float)(&DAT_00823c54)[iVar2] + (pCVar11->fire_effects[0].size * fVar4) / fVar5;
+      iVar1 = iVar1 + 1;
       pCVar11 = (CCharacter *)((pCVar11->base).actor_name + 0x18);
-    } while (iVar8 < this_ptr->fire_count);
+    } while (iVar1 < this_ptr->fire_count);
   }
-  iVar8 = 0;
-  iVar10 = 0;
+  iVar1 = 0;
+  iVar2 = 0;
   pCVar14 = pCVar7;
   if (0 < pCVar6->bone_count) {
     do {
-      if ((float)65535 <= (float)(&DAT_00823c54)[iVar8]) {
-        iVar10 = iVar10 + 1;
+      if ((float)65535 <= (float)(&DAT_00823c54)[iVar1]) {
+        iVar2 = iVar2 + 1;
       }
       if (pCVar14->farthest_child_bone[0] == -1) {
-        iVar10 = iVar10 + 1;
+        iVar2 = iVar2 + 1;
       }
-      iVar8 = iVar8 + 1;
+      iVar1 = iVar1 + 1;
       pCVar14 = (CDeformableModel *)pCVar14->lod_info;
-    } while (iVar8 < pCVar6->bone_count);
+    } while (iVar1 < pCVar6->bone_count);
   }
-  if (iVar10 == pCVar6->bone_count) {
+  if (iVar2 == pCVar6->bone_count) {
     this_ptr->burn_alpha = 1.0;
     this_ptr->is_fully_burned = 1;
   }
   local_1c = 0;
   local_18 = 0;
-  for (iVar8 = 0; iVar8 < pCVar7->vertex_count[iVar3]; iVar8 = iVar8 + 1) {
+  for (iVar1 = 0; iVar1 < pCVar7->vertex_count[iVar3]; iVar1 = iVar1 + 1) {
     puVar13 = pCVar7->vertex_data_ptr[iVar3]->bone_indices + local_1c + -1;
     local_30 = 0.0;
     puVar9 = puVar13;
     puVar12 = puVar13;
-    for (iVar10 = 0; iVar10 < (int)(uint)*puVar13; iVar10 = iVar10 + 1) {
+    for (iVar2 = 0; iVar2 < (int)(uint)*puVar13; iVar2 = iVar2 + 1) {
       puVar1 = puVar12 + 1;
       pfVar2 = (float *)(puVar9 + 4);
       puVar9 = puVar9 + 4;

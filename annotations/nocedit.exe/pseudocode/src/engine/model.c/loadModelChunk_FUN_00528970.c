@@ -9,11 +9,11 @@
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelChunk_FUN_00528970(char *filename,int model_size)
 
 {
-  char cVar1;
   _FILE *file;
   SMRGLHeaderExtended *buffer;
   SIZE_T SVar2;
   char local_60 [80];
+  char cVar1;
   
   file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rb");
   if (file == (_FILE *)0x0) {

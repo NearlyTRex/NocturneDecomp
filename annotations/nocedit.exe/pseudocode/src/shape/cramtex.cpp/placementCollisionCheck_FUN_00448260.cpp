@@ -12,6 +12,7 @@ void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id
   int iVar1;
   CCramTex *pCVar2;
   int iVar3;
+  int iVar2;
   int iVar4;
   int local_18;
   SCramRectangle *local_14;
@@ -30,10 +31,10 @@ void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id
   local_14 = g_CramRectangles + g_CramRectangleCount;
   local_18 = 0;
   do {
-    iVar1 = g_CramMinPlacementY;
+    iVar2 = g_CramMinPlacementY;
     iVar4 = g_CramMinPlacementX;
     if (local_18 != 0) {
-      iVar1 = g_CramMinPlacementX;
+      iVar2 = g_CramMinPlacementX;
       iVar4 = g_CramMinPlacementY;
     }
     iVar3 = g_CramPlacedTextureCount + -1;
@@ -43,7 +44,7 @@ void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id
         if (((pCVar2->assigned_map_number == layer_id) && (start_x < pCVar2->working_top)) &&
            ((start_y < pCVar2->working_width &&
             ((pCVar2->placement_bottom < iVar4 + start_x &&
-             (pCVar2->working_right < iVar1 + start_y)))))) break;
+             (pCVar2->working_right < iVar2 + start_y)))))) break;
         iVar3 = iVar3 + -1;
         pCVar2 = pCVar2 + -1;
       } while (-1 < iVar3);
@@ -56,7 +57,7 @@ void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id
       local_14->start_y = start_y;
       local_14->end_x = iVar4 + start_x;
       local_14->orientation = local_18;
-      local_14->end_y = iVar1 + start_y;
+      local_14->end_y = iVar2 + start_y;
       g_CramRectangleCount = g_CramRectangleCount + 1;
       local_14 = local_14 + 1;
     }

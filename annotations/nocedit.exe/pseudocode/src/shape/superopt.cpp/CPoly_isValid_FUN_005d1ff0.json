@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 162,
+    "complexity_score": 167,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 82,
+    "pseudocode_lines": 87,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 282
+    "total_lines": 287
   },
   "cross_references": [],
   "function": {
@@ -117,7 +117,7 @@
         "name": "local_e0",
         "offset": -224,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
@@ -131,126 +131,126 @@
         "name": "local_c8",
         "offset": -200,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_c0",
         "offset": -192,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_b8",
         "offset": -184,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_b0",
         "offset": -176,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_a8",
         "offset": -168,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_a0",
         "offset": -160,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_98",
         "offset": -152,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_90",
         "offset": -144,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_88",
         "offset": -136,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_80",
         "offset": -128,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_78",
         "offset": -120,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_70",
         "offset": -112,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_68",
         "offset": -104,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": true,
@@ -281,7 +281,31 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 50,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "pdVar10 = (double *)((int)pdVar10 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 53,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "dVar1 = 1.0 / SQRT(local_40 * local_40 + local_50 * local_50 + local_48 * local_48);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
@@ -289,7 +313,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 67,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
@@ -297,42 +321,18 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 69,
       "match": "SQRT",
       "severity": "mild",
-      "text": "dVar2 = 1.0 / SQRT(local_40 * local_40 + local_50 * local_50 + local_48 * local_48);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar9 = (double *)((int)pdVar9 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "local_88 = 1.0 / SQRT(local_70 * local_70 + local_80 * local_80 + local_78 * local_78);",
+      "text": "dVar5 = 1.0 / SQRT(local_70 * local_70 + local_80 * local_80 + local_78 * local_78);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 83,
       "match": "SQRT",
       "severity": "mild",
-      "text": "dVar2 = SQRT(dVar4 * dVar4 + dVar3 * dVar3 + dVar2 * dVar2);",
+      "text": "dVar1 = SQRT(dVar4 * dVar4 + dVar3 * dVar3 + dVar2 * dVar2);",
       "type": "decompiler_intrinsic"
     }
   ],

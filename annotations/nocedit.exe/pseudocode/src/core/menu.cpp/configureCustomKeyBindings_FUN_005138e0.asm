@@ -4,13 +4,12 @@
 ; void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0xa7c]:1  local_a7c
-; undefined1       Stack[-0x6d4]:1  local_6d4
-; undefined1       Stack[-0x6d3]:1  local_6d3
-; undefined1       Stack[-0x2d4]:1  local_2d4
-; undefined1       Stack[-0x2d3]:1  local_2d3
-; undefined1       Stack[-0xd4]:1  local_d4
-; undefined4       Stack[-0xc]:4  local_c
+; CPickList        Stack[-0xa7c]:936  local_a7c
+; char[512]        Stack[-0x6d4]:512  local_6d4
+; char[512]        Stack[-0x4d4]:512  acStack_4d4
+; char[512]        Stack[-0x2d4]:512  local_2d4
+; char[200]        Stack[-0xd4]:200  local_d4
+; int              Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
 ;   core_menu.cpp_configureCustomKeys_FUN_00511890 at 00511cec

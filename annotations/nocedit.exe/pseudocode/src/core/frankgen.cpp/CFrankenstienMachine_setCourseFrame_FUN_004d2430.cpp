@@ -9,8 +9,8 @@
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430(CFrankenstienMachine *this_ptr,float start_frame,float end_frame)
 
 {
-  int iVar1;
   float local_20;
+  int iVar1;
   
   iVar1 = (this_ptr->course).len;
   if (iVar1 < 1) {

@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 13,
-        "line": 192,
+        "line": 199,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 194,
+        "line": 201,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       }
     ],
@@ -19,12 +19,12 @@
   },
   "complexity": {
     "assembly_lines": 379,
-    "complexity_score": 377,
+    "complexity_score": 384,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 192,
+    "pseudocode_lines": 199,
     "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -33,7 +33,7 @@
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 571
+    "total_lines": 578
   },
   "cross_references": [],
   "function": {
@@ -241,12 +241,19 @@
     "pcode_op_count": 1724
   },
   "stack_frame": {
-    "frame_size": 268,
-    "local_size": 260,
+    "frame_size": 6264,
+    "local_size": 6256,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "afStackY_186c",
+        "offset": -6252,
+        "size": 5988,
+        "type": "float[1497]"
+      },
       {
         "is_param": false,
         "name": "local_100",
@@ -259,91 +266,84 @@
         "name": "local_f8",
         "offset": -248,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_f4",
         "offset": -244,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_90",
         "offset": -144,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_80",
         "offset": -128,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_70",
         "offset": -112,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 8,
-        "type": "undefined8"
+        "size": 20,
+        "type": "undefined1[20]"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -381,7 +381,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 17,
       "match": "afStackY_186c",
       "severity": "moderate",
       "text": "float afStackY_186c [1497];",
@@ -389,7 +389,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 39,
       "match": "NAN",
       "severity": "mild",
       "text": "(this_ptr->base).muzzle_flash_offset.x = -NAN;",
@@ -397,7 +397,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 63,
+      "line": 70,
       "match": "3.57331e-43",
       "severity": "mild",
       "text": "(this_ptr->base).muzzle_flash_offset.x = 3.57331e-43;",
@@ -405,7 +405,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 81,
+      "line": 88,
       "match": "3.57331e-43",
       "severity": "mild",
       "text": "(this_ptr->base).muzzle_flash_offset.y = 3.57331e-43;",
@@ -413,7 +413,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 120,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_90 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -421,7 +421,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 121,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_90 + (uint)bVar9 * -8 + 4) =",
@@ -429,7 +429,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 130,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar8 = (uint *)((int)&local_50 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -437,15 +437,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 131,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar7 = (uint *)((int)&local_70 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "text": "puVar6 = (uint *)((int)&local_70 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 132,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_50 + (uint)bVar9 * -8 + 4) =",
@@ -453,7 +453,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 133,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_70 + (uint)bVar9 * -8 + 4);",
@@ -461,23 +461,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 142,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar8 = (uint *)((int)&local_80 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "text": "puVar9 = (uint *)((int)&local_80 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 143,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar7 = (uint *)((int)&local_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
+      "text": "puVar6 = (uint *)((int)&local_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 137,
+      "line": 144,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_80 + (uint)bVar9 * -8 + 4) =",
@@ -485,7 +485,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 138,
+      "line": 145,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_60 + (uint)bVar9 * -8 + 4);",
@@ -493,7 +493,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 185,
+      "line": 192,
       "match": "._12_8_",
       "severity": "mild",
       "text": "local_30._12_8_ =",
@@ -501,7 +501,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 187,
+      "line": 194,
       "match": "._12_8_",
       "severity": "mild",
       "text": "if (0.0 <= (double)local_30._12_8_) {",

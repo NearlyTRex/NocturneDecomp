@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   buffer_width
 ; int              Stack[0x14]:4   buffer_height
 ; Local Variables:
-; undefined        Stack[-0x114]:1  local_114
+; char[256]        Stack[-0x114]:256  local_114
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:

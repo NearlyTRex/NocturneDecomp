@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 464,
-    "complexity_score": 401,
+    "complexity_score": 407,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 231,
+    "pseudocode_lines": 237,
     "suspect_count": 16,
     "suspect_types": [
       "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 695
+    "total_lines": 701
   },
   "cross_references": [
     {
@@ -256,7 +256,7 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "SSoftwareEdge *"
       },
       {
         "is_param": false,
@@ -291,7 +291,7 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
+      "line": 22,
       "match": "extraout_ESI",
       "severity": "moderate",
       "text": "SHardwareEdge *extraout_ESI;",
@@ -299,7 +299,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
+      "line": 25,
       "match": "extraout_EDI",
       "severity": "moderate",
       "text": "SSoftwareEdge *extraout_EDI;",
@@ -307,7 +307,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 79,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "puVar3 = (byte *)((int)&(local_18->base).y_min + 1);",
@@ -315,7 +315,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 149,
       "match": "(SSoftwareEdge *)((int)",
       "severity": "mild",
       "text": "local_18 = (SSoftwareEdge *)((int)&(local_18->base).y_min + 1);",
@@ -323,7 +323,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 219,
+      "line": 225,
       "match": "extraout_EDI",
       "severity": "moderate",
       "text": "(extraout_EDI->base).x_current =",
@@ -331,7 +331,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 220,
+      "line": 226,
       "match": "extraout_EDI",
       "severity": "moderate",
       "text": "(extraout_EDI->base).x_current + (extraout_EDI->base).x_gradient;",
@@ -339,7 +339,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 220,
+      "line": 226,
       "match": "extraout_EDI",
       "severity": "moderate",
       "text": "(extraout_EDI->base).x_current + (extraout_EDI->base).x_gradient;",
@@ -347,15 +347,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 221,
+      "line": 227,
       "match": "(SSoftwareEdge *)((int)",
       "severity": "mild",
-      "text": "local_18 = (SSoftwareEdge *)((int)&(local_18->base).y_min + 1);",
+      "text": "scanline_y = (SSoftwareEdge *)((int)&(local_18->base).y_min + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 222,
+      "line": 228,
       "match": "extraout_EDI",
       "severity": "moderate",
       "text": "(extraout_EDI->base).w_current =",
@@ -363,7 +363,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 223,
+      "line": 229,
       "match": "extraout_EDI",
       "severity": "moderate",
       "text": "(extraout_EDI->base).w_current + (extraout_EDI->base).w_gradient;",
@@ -371,7 +371,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 223,
+      "line": 229,
       "match": "extraout_EDI",
       "severity": "moderate",
       "text": "(extraout_EDI->base).w_current + (extraout_EDI->base).w_gradient;",
@@ -379,7 +379,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 224,
+      "line": 230,
       "match": "extraout_EDI",
       "severity": "moderate",
       "text": "(extraout_EDI->base).z_current =",
@@ -387,7 +387,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 225,
+      "line": 231,
       "match": "extraout_EDI",
       "severity": "moderate",
       "text": "(extraout_EDI->base).z_current + (extraout_EDI->base).z_gradient;",
@@ -395,7 +395,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 225,
+      "line": 231,
       "match": "extraout_EDI",
       "severity": "moderate",
       "text": "(extraout_EDI->base).z_current + (extraout_EDI->base).z_gradient;",
@@ -403,7 +403,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 227,
+      "line": 232,
       "match": "extraout_ESI",
       "severity": "moderate",
       "text": "right = extraout_ESI;",
@@ -411,7 +411,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 228,
+      "line": 233,
       "match": "extraout_EDI",
       "severity": "moderate",
       "text": "left = extraout_EDI;",

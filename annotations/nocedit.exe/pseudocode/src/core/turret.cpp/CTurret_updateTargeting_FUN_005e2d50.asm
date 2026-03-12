@@ -7,7 +7,28 @@
 ; CTurret *        Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0xb4]:1  local_b4
+; CVector3f[10]    Stack[-0x15c]:120  aCStack_15c
+; CBoundingBox3D   Stack[-0xe4]:24  CStack_e4
+; CBoundingBox3D   Stack[-0xcc]:24  CStack_cc
+; CBoundingBox3D   Stack[-0xb4]:24  local_b4
+; undefined4       Stack[-0x9c]:4  uStack_9c
+; undefined4       Stack[-0x98]:4  uStack_98
+; undefined4       Stack[-0x94]:4  uStack_94
+; CVector3f        Stack[-0x90]:12  CStack_90
+; CVector3f        Stack[-0x84]:12  CStack_84
+; CVector3f        Stack[-0x78]:12  CStack_78
+; CVector3f        Stack[-0x6c]:12  CStack_6c
+; float            Stack[-0x60]:4  fStack_60
+; float            Stack[-0x5c]:4  fStack_5c
+; float            Stack[-0x58]:4  fStack_58
+; CVector3f        Stack[-0x54]:12  CStack_54
+; CVector3f        Stack[-0x48]:12  CStack_48
+; CVector3f        Stack[-0x3c]:12  CStack_3c
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; float            Stack[-0x28]:4  fStack_28
+; CVector3f        Stack[-0x24]:12  CStack_24
+; char *           Stack[-0x14]:4  pcStack_14
 ;
 ; XREF[1]:
 ;   core_turret.cpp_CTurret_process_FUN_005e2430 at 005e2626

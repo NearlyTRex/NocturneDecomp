@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 54,
-        "line": 26,
+        "line": 27,
         "message": "use of undeclared identifier 'undefined6'"
       },
       {
         "category": "syntax_error",
         "column": 66,
-        "line": 26,
+        "line": 27,
         "message": "expected expression"
       }
     ],
@@ -19,12 +19,12 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 125,
+    "complexity_score": 126,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 36,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -32,7 +32,7 @@
       "undefined_ptr_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 122
+    "total_lines": 123
   },
   "cross_references": [
     {
@@ -176,7 +176,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 18,
       "match": "CONCAT26",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT26((short)((uint)*(uint *)",
@@ -184,7 +184,7 @@
     },
     {
       "description": "Cast to undefined pointer type",
-      "line": 19,
+      "line": 20,
       "match": "(undefined6 *)",
       "severity": "moderate",
       "text": "0x10),*(undefined6 *)&(this_ptr->options).trigger_time))",
@@ -192,7 +192,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 32,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4) =",
@@ -200,7 +200,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 33,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4);",
@@ -208,7 +208,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 37,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr_00,(int)ROUND(ROUND((this_ptr->options).trigger_time)),0);",
@@ -216,7 +216,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 37,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr_00,(int)ROUND(ROUND((this_ptr->options).trigger_time)),0);",

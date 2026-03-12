@@ -10,14 +10,13 @@
 ; SMRGLHeaderPrimitive * Stack[0x10]:4   primitives
 ; int              Stack[0x14]:4   apply_scaling
 ; Local Variables:
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
+; float            Stack[-0x50]:4  local_50
+; int[6]           Stack[-0x4c]:24  aiStack_4c
+; CVector3i        Stack[-0x34]:12  local_34
 ; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
+; uint             Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; uint             Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:

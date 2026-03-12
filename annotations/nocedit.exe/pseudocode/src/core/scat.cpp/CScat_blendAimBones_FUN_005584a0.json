@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "type_error",
-        "column": 3,
-        "line": 21,
-        "message": "unknown type name 'code'"
+        "category": "incompatible_types",
+        "column": 20,
+        "line": 153,
+        "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'"
       }
     ],
     "success": false,
@@ -13,20 +13,19 @@
   },
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 621,
+    "complexity_score": 609,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 151,
-    "suspect_count": 45,
+    "pseudocode_lines": 154,
+    "suspect_count": 44,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 357
+    "total_lines": 360
   },
   "cross_references": [
     {
@@ -168,172 +167,179 @@
     "pcode_op_count": 1137
   },
   "stack_frame": {
-    "frame_size": 364,
-    "local_size": 356,
+    "frame_size": 6468,
+    "local_size": 6460,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "afStackY_1938",
+        "offset": -6456,
+        "size": 6084,
+        "type": "float[1521]"
+      },
+      {
+        "is_param": false,
         "name": "local_160",
         "offset": -352,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_15c",
         "offset": -348,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_14c",
         "offset": -332,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_13c",
         "offset": -316,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_12c",
         "offset": -300,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_11c",
         "offset": -284,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_10c",
         "offset": -268,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_fc",
         "offset": -252,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_ec",
         "offset": -236,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_dc",
         "offset": -220,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_cc",
         "offset": -204,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_bc",
         "offset": -188,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_ac",
         "offset": -172,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_9c",
         "offset": -156,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_8c",
         "offset": -140,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_7c",
         "offset": -124,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -379,39 +385,31 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 13,
+      "line": 15,
       "match": "afStackY_1938",
       "severity": "moderate",
       "text": "float afStackY_1938 [1521];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "code *blend_callback;",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 49,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&local_fc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar2 = (uint *)((int)&local_fc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 50,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar3 = (uint *)((int)&local_cc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar1 = (uint *)((int)&local_cc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 51,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_fc + (uint)bVar6 * -8 + 4) =",
@@ -419,7 +417,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 52,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_cc + (uint)bVar6 * -8 + 4);",
@@ -427,23 +425,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 63,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&local_fc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar2 = (uint *)((int)&local_fc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 64,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar3 = (uint *)((int)&local_ac + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar1 = (uint *)((int)&local_ac + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 65,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_fc + (uint)bVar6 * -8 + 4) =",
@@ -451,7 +449,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 66,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_ac + (uint)bVar6 * -8 + 4);",
@@ -459,23 +457,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar3 = (uint *)((int)pCVar2 + ((uint)bVar6 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar5 = (uint *)((int)&local_13c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 72,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar3 = (uint *)((int)pCVar2 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)&local_13c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_13c + (uint)bVar6 * -8 + 4) = *puVar3;",
@@ -483,23 +481,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 85,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&local_10c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar2 = (uint *)((int)&local_10c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 86,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar3 = (uint *)((int)&local_7c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar1 = (uint *)((int)&local_7c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 87,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_10c + (uint)bVar6 * -8 + 4) =",
@@ -507,7 +505,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 88,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_7c + (uint)bVar6 * -8 + 4);",
@@ -515,23 +513,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 94,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&local_11c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar2 = (uint *)((int)&local_11c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 95,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar3 = (uint *)((int)&local_14c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar1 = (uint *)((int)&local_14c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 96,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_11c + (uint)bVar6 * -8 + 4) =",
@@ -539,7 +537,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 97,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_14c + (uint)bVar6 * -8 + 4);",
@@ -547,23 +545,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 102,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&local_12c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar2 = (uint *)((int)&local_12c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 103,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar3 = (uint *)((int)&local_15c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar1 = (uint *)((int)&local_15c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 104,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_12c + (uint)bVar6 * -8 + 4) =",
@@ -571,7 +569,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 105,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_15c + (uint)bVar6 * -8 + 4);",
@@ -579,23 +577,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 111,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&local_ec + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar2 = (uint *)((int)&local_ec + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 112,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar3 = (uint *)((int)&local_4c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar1 = (uint *)((int)&local_4c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 113,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_ec + (uint)bVar6 * -8 + 4) =",
@@ -603,7 +601,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 114,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_4c + (uint)bVar6 * -8 + 4);",
@@ -611,23 +609,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 119,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&local_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar2 = (uint *)((int)&local_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 120,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar3 = (uint *)((int)&local_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar1 = (uint *)((int)&local_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 121,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_2c + (uint)bVar6 * -8 + 4) =",
@@ -635,7 +633,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 122,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_3c + (uint)bVar6 * -8 + 4);",
@@ -643,50 +641,26 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar4 = (uint *)((int)pCVar2 + ((uint)bVar6 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 129,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar3 = (uint *)((int)&local_8c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "text": "puVar2 = (uint *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 132,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*puVar4 = *(uint *)((int)&local_8c + (uint)bVar6 * -8 + 4);",
+      "text": "puVar1 = (uint *)((int)&local_8c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 133,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&local_dc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 137,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar3 = (uint *)((int)&local_5c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 138,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_dc + (uint)bVar6 * -8 + 4) =",
+      "text": "*puVar2 = *(uint *)((int)&local_8c + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -694,23 +668,31 @@
       "line": 139,
       "match": "(uint *)((int)",
       "severity": "mild",
+      "text": "puVar2 = (uint *)((int)&local_dc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 140,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)&local_5c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 141,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_dc + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 142,
+      "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_5c + (uint)bVar6 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 146,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&local_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 147,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar3 = (uint *)((int)&local_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
@@ -718,12 +700,28 @@
       "line": 148,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&local_2c + (uint)bVar6 * -8 + 4) =",
+      "text": "puVar2 = (uint *)((int)&local_2c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 149,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar1 = (uint *)((int)&local_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_2c + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 151,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_6c + (uint)bVar6 * -8 + 4);",

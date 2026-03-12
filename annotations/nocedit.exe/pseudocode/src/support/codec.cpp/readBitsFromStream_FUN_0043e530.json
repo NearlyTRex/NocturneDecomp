@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 20,
-        "line": 58,
+        "line": 59,
         "message": "member reference base type 'int' is not a structure or union"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 173,
-    "complexity_score": 85,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 70,
+    "pseudocode_lines": 71,
     "suspect_count": 1,
     "suspect_types": [
       "unknown_field"
     ],
-    "total_lines": 243
+    "total_lines": 244
   },
   "cross_references": [
     {
@@ -97,15 +97,15 @@
         "is_param": false,
         "name": "local_18",
         "offset": -24,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "byte[4]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "byte[4]"
       },
       {
         "is_param": true,
@@ -140,7 +140,7 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 51,
+      "line": 52,
       "match": "._0_1_",
       "severity": "mild",
       "text": "bit_count._0_1_ = (byte)iVar3;",

@@ -25,8 +25,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0044c0f0(CDemonCa
   local_18 = 0x40;
   local_14 = 0;
   do {
-    iVar2 = 0;
     iVar4 = iVar6 << 6;
+    iVar2 = 0;
     do {
       iVar1 = (iVar2 + (iVar2 >> 0x1f) * -0x10) - (uint)((iVar2 >> 0x1f) << 3 < 0);
       iVar3 = iVar1 >> 0x1f;

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 86,
+    "complexity_score": 90,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 65,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 183
+    "total_lines": 187
   },
   "cross_references": [
     {
@@ -138,43 +138,22 @@
         "is_param": false,
         "name": "local_2374",
         "offset": -9076,
-        "size": 1,
-        "type": "undefined1"
+        "size": 8488,
+        "type": "CCmdParse"
       },
       {
         "is_param": false,
         "name": "local_24c",
         "offset": -588,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_24b",
-        "offset": -587,
-        "size": 1,
-        "type": "undefined1"
+        "size": 300,
+        "type": "byte[300]"
       },
       {
         "is_param": false,
         "name": "local_120",
         "offset": -288,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_11f",
-        "offset": -287,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
+        "size": 276,
+        "type": "SScriptXRef"
       },
       {
         "is_param": true,
@@ -202,7 +181,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 51,
       "match": "(SScriptXRef *)((int)",
       "severity": "mild",
       "text": "xref_data = (SScriptXRef *)((int)xref_data + (uint)bVar6 * -8 + 4);",
@@ -210,10 +189,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 52,
       "match": "(SScriptXRef *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SScriptXRef *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pSVar6 = (SScriptXRef *)((int)pSVar6 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

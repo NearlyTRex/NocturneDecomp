@@ -9,25 +9,26 @@
 void __cdecl engine_colquant_c_partitionByIntensity_FUN_00440f00(SColorQuantMapper *workspace,int box_index,int new_box_index)
 
 {
-  uint uVar1;
-  int iVar2;
+  int iVar1;
   int iVar3;
   char *pcVar4;
   int iVar5;
   int local_18;
   int local_14;
+  int iVar2;
+  uint uVar1;
   
   local_14 = workspace->boxes[box_index].start_index;
-  iVar2._0_2_ = workspace->boxes[box_index].avg_blue;
-  iVar2._2_2_ = workspace->boxes[box_index].avg_intensity;
+  iVar1._0_2_ = workspace->boxes[box_index].avg_blue;
+  iVar1._2_2_ = workspace->boxes[box_index].avg_intensity;
   iVar5 = local_14 + workspace->boxes[box_index].count + -1;
   if (local_14 < iVar5) {
     local_18 = local_14 << 2;
     do {
-      if (iVar2 >> 0x10 < (int)(uint)(byte)workspace->color_data[local_18 + 3]) {
+      if (iVar1 >> 0x10 < (int)(uint)(byte)workspace->color_data[local_18 + 3]) {
         iVar3 = iVar5 * 4;
         while ((local_14 * 4 < iVar3 &&
-               (iVar2 >> 0x10 < (int)(uint)(byte)workspace->color_data[iVar3 + 3]))) {
+               (iVar1 >> 0x10 < (int)(uint)(byte)workspace->color_data[iVar3 + 3]))) {
           iVar5 = iVar5 + -1;
           iVar3 = iVar3 + -4;
         }

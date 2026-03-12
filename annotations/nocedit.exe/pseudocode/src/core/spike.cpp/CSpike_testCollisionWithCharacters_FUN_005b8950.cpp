@@ -9,12 +9,13 @@
 void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpike *this_ptr)
 
 {
-  CLocation *input_world_point;
-  CCharacter *this_ptr_00;
-  float fVar1;
-  float fVar2;
-  float fVar3;
+  CLocation *input_world_point_00;
+  CCharacter *this_ptr_01;
+  float fVar4;
   CVector3f *pCVar4;
+  CVector3f *pCVar5;
+  ECollisionType bbox_type;
+  float fVar6;
   CVector3f *point;
   uint corner_index;
   CVector3f aCStack_1cc [8];
@@ -27,9 +28,6 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
   CVector3f CStack_b0;
   CVector3f CStack_a4;
   CVector3f CStack_98;
-  uint uStack_8c;
-  uint uStack_88;
-  uint uStack_84;
   CVector3f CStack_80;
   CVector3f CStack_74;
   CVector3f CStack_68;
@@ -46,11 +44,13 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
   CLocation *pCStack_20;
   int iStack_1c;
   float fStack_18;
+  float fVar3;
+  float fVar2;
+  float fVar1;
+  CCharacter *this_ptr_00;
+  CLocation *input_world_point;
   
   (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_ec);
-  uStack_8c = 0x3dcccccd;
-  uStack_88 = 0x3dcccccd;
-  uStack_84 = 0;
   local_ec.min.x = local_ec.min.x + -0.1f;
   local_ec.min.y = local_ec.min.y + -0.1f;
   local_ec.max.x = local_ec.max.x + 0.1f;
@@ -61,49 +61,45 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
   __arrinit(aCStack_1cc,8,&g_CVectorTypeInfo);
   do {
     pCVar4 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(&local_ec,&CStack_50,corner_index);
-    pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+    pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        (&this_ptr->base,&CStack_74,pCVar4);
-    if (point != pCVar4) {
-      point->x = pCVar4->x;
-      point->y = pCVar4->y;
-      point->z = pCVar4->z;
+    if (point != pCVar5) {
+      point->x = pCVar5->x;
+      point->y = pCVar5->y;
+      point->z = pCVar5->z;
     }
     corner_index = corner_index + 1;
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&CStack_d4,point);
     point = point + 1;
   } while ((int)corner_index < 8);
-  fStack_44 = SQRT(local_ec.min.z * local_ec.min.z +
+  fStack_30 = SQRT(local_ec.min.z * local_ec.min.z +
                    local_ec.min.x * local_ec.min.x + local_ec.min.y * local_ec.min.y);
-  fStack_34 = SQRT(local_ec.max.y * local_ec.max.y + local_ec.max.x * local_ec.max.x +
-                   local_ec.max.z * local_ec.max.z);
-  fStack_30 = fStack_44;
-  if (fStack_44 < fStack_34) {
-    fStack_30 = fStack_34;
+  fVar4 = SQRT(local_ec.max.y * local_ec.max.y + local_ec.max.x * local_ec.max.x +
+               local_ec.max.z * local_ec.max.z);
+  if (fStack_30 < fVar4) {
+    fStack_30 = fVar4;
   }
   CStack_bc.z = local_ec.max.z - local_ec.min.z;
-  fStack_30 = fStack_30 * 2.0f + 10.0f;
-  fStack_2c = fStack_30 * fStack_30;
+  fVar4 = fStack_30 * 2.0f + 10.0f;
   CStack_bc.x = 0.0;
   CStack_bc.y = 0.0;
-  fStack_18 = CStack_bc.z;
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(&this_ptr->base,&CStack_98,&CStack_bc);
-  pCStack_20 = &(this_ptr->base).location;
   iStack_24 = 0;
   for (iStack_1c = 0; iStack_1c < g_CDemonSetPtr->character_count; iStack_1c = iStack_1c + 1) {
-    this_ptr_00 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_24);
-    input_world_point = &(this_ptr_00->base).location;
-    fVar1 = (pCStack_20->position).x - (input_world_point->position).x;
-    fVar3 = (pCStack_20->position).y - (this_ptr_00->base).location.position.y;
-    fVar2 = (pCStack_20->position).z - (this_ptr_00->base).location.position.z;
-    if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= fStack_2c) {
+    this_ptr_01 = *(CCharacter **)((int)g_CDemonSetPtr->characters + iStack_24);
+    input_world_point_00 = &(this_ptr_01->base).location;
+    fVar1 = (this_ptr->base).location.position.x - (input_world_point_00->position).x;
+    fVar3 = (this_ptr->base).location.position.y - (this_ptr_01->base).location.position.y;
+    fVar2 = (this_ptr->base).location.position.z - (this_ptr_01->base).location.position.z;
+    if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= fVar4 * fVar4) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_130);
       SStack_130.ray_type = 0;
-      EStack_28 = (*((this_ptr_00->base).vtable._ub)->getCollisionType)
-                            (&this_ptr_00->base,&SStack_130);
-      if (EStack_28 != COLLISION_TYPE_NONE) {
+      bbox_type = (*((this_ptr_01->base).vtable._ub)->getCollisionType)
+                            (&this_ptr_01->base,&SStack_130);
+      if (bbox_type != COLLISION_TYPE_NONE) {
         SStack_130.cylinder_bottom_y = 0.0;
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                  (&this_ptr->base,&CStack_68,&input_world_point->position);
+                  (&this_ptr->base,&CStack_68,&input_world_point_00->position);
         if (CStack_68.x < local_ec.min.x) {
           CStack_68.x = local_ec.min.x;
         }
@@ -119,18 +115,15 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
         CStack_68.z = 0.0;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   (&this_ptr->base,&CStack_80,&CStack_68);
-        fStack_18 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
-                              (&this_ptr_00->base,&CStack_80,&CStack_98,aCStack_108,&SStack_130,
-                               EStack_28,&CStack_d4);
-        if ((0.0 <= fStack_18) && (fStack_18 <= 1.0)) {
-          fStack_5c = CStack_98.x * fStack_18;
-          fStack_58 = CStack_98.y * fStack_18;
-          fStack_54 = CStack_98.z * fStack_18;
-          CStack_b0.x = CStack_80.x + fStack_5c;
-          CStack_b0.y = CStack_80.y + fStack_58;
-          CStack_b0.z = CStack_80.z + fStack_54;
+        fVar6 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
+                          (&this_ptr_01->base,&CStack_80,&CStack_98,aCStack_108,&SStack_130,
+                           bbox_type,&CStack_d4);
+        if ((0.0 <= fVar6) && (fVar6 <= 1.0)) {
+          CStack_b0.x = CStack_80.x + CStack_98.x * fVar6;
+          CStack_b0.y = CStack_80.y + CStack_98.y * fVar6;
+          CStack_b0.z = CStack_80.z + CStack_98.z * fVar6;
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                    (&this_ptr_00->base,&CStack_a4,&CStack_b0);
+                    (&this_ptr_01->base,&CStack_a4,&CStack_b0);
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_16c);
           SStack_16c.damage_amount = this_ptr->damage_strength;
           SStack_16c.damage_type = DAMAGE_TYPE_MELEE;
@@ -141,7 +134,7 @@ void __cdecl core_spike_cpp_CSpike_testCollisionWithCharacters_FUN_005b8950(CSpi
           }
           SStack_16c.attacker = &this_ptr->base;
           SStack_16c.wielder = &this_ptr->base;
-          (*(((this_ptr_00->base).vtable._uc)->_uc).processDamage)(this_ptr_00,&SStack_16c);
+          (*(((this_ptr_01->base).vtable._uc)->_uc).processDamage)(this_ptr_01,&SStack_16c);
         }
       }
     }

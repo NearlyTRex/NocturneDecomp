@@ -7,17 +7,13 @@
 ; CSvetlana *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   bone_index
 ; Local Variables:
-; undefined1       Stack[-0x84]:1  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined1       Stack[-0x48]:1  local_48
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined1       Stack[-0x30]:1  local_30
-; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SDamageInfo      Stack[-0x84]:60  local_84
+; CVector3f        Stack[-0x48]:12  local_48
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  local_30
+; CVector3f        Stack[-0x24]:12  local_24
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_svetlana.cpp_CSvetlana_advanceMotion_FUN_005d9970 at 005d99a0

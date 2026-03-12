@@ -9,16 +9,25 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270(CDemonCamera *this_ptr)
 
 {
-  int *piVar1;
-  uint uVar2;
-  int iVar3;
+  int *piVar2;
+  uint screen_y;
+  int iVar5;
   int iVar4;
   char (*pacVar5) [320];
+  char (*lightmap_indices) [320];
   ulonglong *puVar6;
   ulonglong *puVar7;
   char (*pacVar8) [320];
+  int iVar6;
+  ulonglong *output_buffer;
+  ulonglong *texture_buffer;
+  char (*texture_indices) [320];
   uint uVar9;
+  uint uVar7;
   int iVar10;
+  int iVar3;
+  uint uVar2;
+  int *piVar1;
   
   g_ImageProcessingState2 = g_ImageProcessingState2 + g_GlobalDeltaTimeInt * 4;
   iVar10 = 0;
@@ -78,17 +87,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00
                      this_ptr->framebuffer_width);
         }
       }
-      iVar4 = iVar10 * 0xc;
+      iVar6 = iVar10 * 0xc;
       if (iVar10 < g_CameraEdgeCount) {
         do {
-          uVar2 = *(uint *)((int)g_CameraEdgeDetectionResults + iVar4 + 8);
+          uVar2 = *(uint *)((int)g_CameraEdgeDetectionResults + iVar6 + 8);
           if (uVar9 != uVar2) goto LAB_0045340c;
-          piVar1 = (int *)((int)g_CameraEdgeDetectionResults + iVar4);
-          iVar3 = iVar4 + 4;
-          iVar4 = iVar4 + 0xc;
+          piVar2 = (int *)((int)g_CameraEdgeDetectionResults + iVar6);
+          iVar3 = iVar6 + 4;
+          iVar6 = iVar6 + 0xc;
           iVar10 = iVar10 + 1;
           core_dcamera_cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0
-                    (this_ptr,*(int *)((int)g_CameraEdgeDetectionResults + iVar3),uVar2,*piVar1);
+                    (this_ptr,*(int *)((int)g_CameraEdgeDetectionResults + iVar3),uVar2,*piVar2);
         } while (iVar10 < g_CameraEdgeCount);
         uVar9 = uVar9 + 1;
       }
@@ -99,54 +108,58 @@ LAB_0045340c:
     }
   }
   else {
-    uVar9 = 1;
-    while ((int)uVar9 < this_ptr->framebuffer_height + -1) {
-      puVar6 = (ulonglong *)
-               ((int)g_ScreenBufferArray[uVar9 - g_CameraShakeOffsetY] + g_CameraShakeOffsetX * 4);
-      puVar7 = (ulonglong *)
-               ((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar9 * 4);
-      iVar4 = (int)uVar9 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
-      pacVar5 = g_CameraPlaneWorkBuffer.pixels + iVar4;
-      pacVar8 = g_CoronaBlurWorkBuffer + iVar4;
-      if ((uVar9 & 1) == 0) {
+    uVar7 = 1;
+    while ((int)uVar7 < this_ptr->framebuffer_height + -1) {
+      output_buffer =
+           (ulonglong *)
+           ((int)g_ScreenBufferArray[uVar7 - g_CameraShakeOffsetY] + g_CameraShakeOffsetX * 4);
+      texture_buffer =
+           (ulonglong *)
+           ((int)this_ptr->framebuffer_aligned + this_ptr->framebuffer_width * uVar7 * 4);
+      iVar6 = (int)uVar7 >> (g_CameraDownscaleIterations.bytes[0] & 0x1f);
+      lightmap_indices = g_CameraPlaneWorkBuffer.pixels + iVar6;
+      texture_indices = g_CoronaBlurWorkBuffer + iVar6;
+      if ((uVar7 & 1) == 0) {
         if (this_ptr->scale_factor == 1) {
           core_dstrender_cpp_blendLightmapToTexture32BitInputOutput_FUN_004926e1
-                    ((uint *)puVar6,(uint *)puVar7,(byte *)pacVar8,(byte *)pacVar5,
-                     this_ptr->framebuffer_width);
+                    ((uint *)output_buffer,(uint *)texture_buffer,(byte *)texture_indices,
+                     (byte *)lightmap_indices,this_ptr->framebuffer_width);
         }
         if (this_ptr->scale_factor == 2) {
           core_dstrender_cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc
-                    (puVar6,puVar7,(byte *)pacVar8,(byte *)pacVar5,this_ptr->framebuffer_width);
+                    (output_buffer,texture_buffer,(byte *)texture_indices,(byte *)lightmap_indices,
+                     this_ptr->framebuffer_width);
         }
       }
       else {
         if (this_ptr->scale_factor == 1) {
           core_dstrender_cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5
-                    ((uint *)puVar6,puVar7,(byte *)pacVar8,(byte *)pacVar5,
-                     this_ptr->framebuffer_width);
+                    ((uint *)output_buffer,texture_buffer,(byte *)texture_indices,
+                     (byte *)lightmap_indices,this_ptr->framebuffer_width);
         }
         if (this_ptr->scale_factor == 2) {
           core_dstrender_cpp_blendBilerpLightmapToTexture64BitOutput_FUN_00491c9a
-                    (puVar6,puVar7,(byte *)pacVar8,(byte *)pacVar5,this_ptr->framebuffer_width);
+                    (output_buffer,texture_buffer,(byte *)texture_indices,(byte *)lightmap_indices,
+                     this_ptr->framebuffer_width);
         }
       }
-      iVar4 = iVar10 * 0xc;
+      iVar6 = iVar10 * 0xc;
       if (iVar10 < g_CameraEdgeCount) {
         do {
-          uVar2 = *(uint *)((int)g_CameraEdgeDetectionResults + iVar4 + 8);
-          if (uVar9 != uVar2) goto LAB_00453583;
-          piVar1 = (int *)((int)g_CameraEdgeDetectionResults + iVar4);
-          iVar3 = iVar4 + 4;
-          iVar4 = iVar4 + 0xc;
+          screen_y = *(uint *)((int)g_CameraEdgeDetectionResults + iVar6 + 8);
+          if (uVar7 != screen_y) goto LAB_00453583;
+          piVar1 = (int *)((int)g_CameraEdgeDetectionResults + iVar6);
+          iVar5 = iVar6 + 4;
+          iVar6 = iVar6 + 0xc;
           iVar10 = iVar10 + 1;
           core_dcamera_cpp_CDemonCamera_blendLightmapPixel32_FUN_00453d10
-                    (this_ptr,*(int *)((int)g_CameraEdgeDetectionResults + iVar3),uVar2,*piVar1);
+                    (this_ptr,*(int *)((int)g_CameraEdgeDetectionResults + iVar5),screen_y,*piVar1);
         } while (iVar10 < g_CameraEdgeCount);
-        uVar9 = uVar9 + 1;
+        uVar7 = uVar7 + 1;
       }
       else {
 LAB_00453583:
-        uVar9 = uVar9 + 1;
+        uVar7 = uVar7 + 1;
       }
     }
   }

@@ -7,26 +7,28 @@
 ; int              Stack[0x4]:4   mode
 ; char *           Stack[0x8]:4   cmdname
 ; char * *         Stack[0xc]:4   argv
+; char * *         Stack[0x10]:4   in_stack_00000010
 ; Local Variables:
 ; undefined1       Stack[-0xc4]:1  local_c4
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined1       Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined1       Stack[-0x14]:1  local_14
+; char[104]        Stack[-0xc0]:104  acStack_c0
+; char *           Stack[-0x58]:4  local_58
+; char *           Stack[-0x54]:4  local_54
+; char *           Stack[-0x50]:4  local_50
+; char *           Stack[-0x4c]:4  local_4c
+; char[4]          Stack[-0x48]:4  local_48
+; char *           Stack[-0x44]:4  local_44
+; char *           Stack[-0x40]:4  local_40
+; char *           Stack[-0x3c]:4  local_3c
+; void *           Stack[-0x38]:4  local_38
+; uint             Stack[-0x34]:4  local_34
+; char *           Stack[-0x30]:4  local_30
+; char *           Stack[-0x2c]:4  local_2c
+; char *           Stack[-0x28]:4  local_28
+; ulong            Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; char *           Stack[-0x1c]:4  local_1c
+; char *           Stack[-0x18]:4  local_18
+; char             Stack[-0x14]:1  local_14
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[3]:

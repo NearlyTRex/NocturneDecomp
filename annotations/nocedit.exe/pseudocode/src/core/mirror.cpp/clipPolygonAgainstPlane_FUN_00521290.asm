@@ -10,7 +10,7 @@
 ; CVector3f *      Stack[0x10]:4   output_vertices
 ; int *            Stack[0x14]:4   output_count
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310 at 00522441

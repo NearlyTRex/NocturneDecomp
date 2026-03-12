@@ -7,7 +7,7 @@
 ; CMotionController * Stack[0x4]:4   this_ptr
 ; SMotionTransition * Stack[0x8]:4   transition
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   core_motion.cpp_CMotionController_advance_FUN_0052d610 at 0052d8d1

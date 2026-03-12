@@ -6,8 +6,23 @@
 ; Parameters:
 ; CWayPoint *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x94]:1  local_94
-; undefined4       Stack[-0x14]:4  local_14
+; CBoundingBox3D   Stack[-0xac]:24  CStack_ac
+; CBoundingBox3D   Stack[-0x94]:24  local_94
+; CVector3i        Stack[-0x7c]:12  CStack_7c
+; CVector3i        Stack[-0x70]:12  CStack_70
+; CVector3f        Stack[-0x64]:12  CStack_64
+; CVector3f        Stack[-0x58]:12  CStack_58
+; float            Stack[-0x4c]:4  fStack_4c
+; float            Stack[-0x48]:4  fStack_48
+; float            Stack[-0x44]:4  fStack_44
+; CVector3f        Stack[-0x40]:12  CStack_40
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; CVector3f        Stack[-0x28]:12  CStack_28
+; int              Stack[-0x1c]:4  iStack_1c
+; int              Stack[-0x18]:4  iStack_18
+; CWayPoint *      Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   float FLOAT_00657583 = 0.5

@@ -7,33 +7,25 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x228]:1  local_228
-; undefined1       Stack[-0x128]:1  local_128
-; undefined1       Stack[-0x127]:1  local_127
-; undefined1       Stack[-0xc4]:1  local_c4
-; undefined1       Stack[-0xc3]:1  local_c3
-; undefined1       Stack[-0xc1]:1  local_c1
-; undefined1       Stack[-0xc0]:1  local_c0
-; undefined1       Stack[-0x60]:1  local_60
-; undefined1       Stack[-0x5c]:1  local_5c
-; undefined1       Stack[-0x58]:1  local_58
-; undefined1       Stack[-0x54]:1  local_54
-; undefined1       Stack[-0x50]:1  local_50
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined1       Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x228]:256  local_228
+; char[100]        Stack[-0x128]:100  local_128
+; char[100]        Stack[-0xc4]:100  local_c4
+; CVector3f        Stack[-0x60]:12  local_60
+; CVector3f        Stack[-0x54]:12  local_54
+; undefined1[4]    Stack[-0x48]:4  local_48
+; float *          Stack[-0x44]:4  local_44
+; int *            Stack[-0x40]:4  local_40
+; float *          Stack[-0x3c]:4  local_3c
+; SRoom *          Stack[-0x38]:4  local_38
+; SVDBox *         Stack[-0x34]:4  local_34
+; float *          Stack[-0x30]:4  local_30
+; float *          Stack[-0x2c]:4  local_2c
+; float *          Stack[-0x28]:4  local_28
+; float *          Stack[-0x24]:4  local_24
+; float *          Stack[-0x20]:4  local_20
+; CVector3f *      Stack[-0x1c]:4  local_1c
+; CVector3f *      Stack[-0x18]:4  local_18
+; float *          Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_fileman.cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0 at 004bd909

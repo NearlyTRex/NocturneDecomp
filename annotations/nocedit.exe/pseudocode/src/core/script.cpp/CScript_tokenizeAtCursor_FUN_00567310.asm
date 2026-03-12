@@ -9,11 +9,10 @@
 ; CStrList *       Stack[0xc]:4   tokens_out
 ; int *            Stack[0x10]:4   cursor_pos
 ; Local Variables:
-; undefined1       Stack[-0x1ac]:1  local_1ac
-; undefined1       Stack[-0x1ab]:1  local_1ab
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[400]        Stack[-0x1ac]:400  local_1ac
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_extractCrossReferences_FUN_005671a0 at 005671df

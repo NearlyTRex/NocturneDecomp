@@ -6,12 +6,12 @@
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined        Stack[-0x30]:1  local_30
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x30]:12  local_30
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; SCurtainVertex * Stack[-0x18]:4  local_18
+; CMatrix3x3f *    Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0

@@ -9,14 +9,12 @@
 ; Local Variables:
 ; undefined1       Stack[-0xa8]:1  local_a8
 ; undefined1       Stack[-0xa7]:1  local_a7
-; undefined1       Stack[-0x44]:1  local_44
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
+; CBoundingBox3D   Stack[-0x44]:24  local_44
+; CVector3i        Stack[-0x2c]:12  local_2c
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[9]:

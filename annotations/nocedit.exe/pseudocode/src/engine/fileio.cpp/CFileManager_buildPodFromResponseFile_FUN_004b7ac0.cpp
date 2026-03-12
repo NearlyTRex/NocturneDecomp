@@ -9,13 +9,14 @@
 void __cdecl engine_fileio_cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0(CFileManager *this_ptr)
 
 {
-  int *piVar1;
-  _FILE *p_Var2;
-  byte *pbVar3;
+  byte *pbVar1;
   int iVar4;
   _FILE *file;
   uint character;
   char local_5c [80];
+  byte *pbVar3;
+  _FILE *p_Var2;
+  int *piVar1;
   
   iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                     (g_CEditorToolsPtr,"Enter response filename",local_5c,0x14,0);
@@ -44,8 +45,8 @@ void __cdecl engine_fileio_cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac
           _fputc(10,this_ptr->file_ptr);
         }
         else {
-          pbVar3 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);
-          *pbVar3 = *pbVar3 | 0x10;
+          pbVar1 = (byte *)((int)&this_ptr->file_ptr->_flag + 1);
+          *pbVar1 = *pbVar1 | 0x10;
           piVar1 = &this_ptr->file_ptr->_cnt;
           *piVar1 = *piVar1 + 1;
           this_ptr->file_ptr->_ptr = this_ptr->file_ptr->_ptr + 1;

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 336,
-    "complexity_score": 193,
+    "complexity_score": 199,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 138,
+    "pseudocode_lines": 144,
     "suspect_count": 5,
     "suspect_types": [
       "register_param"
     ],
-    "total_lines": 474
+    "total_lines": 480
   },
   "cross_references": [],
   "function": {
@@ -193,28 +193,28 @@
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CCramTex *"
       }
     ]
   },
   "suspects": [
     {
       "description": "Inferred register parameter",
-      "line": 5,
+      "line": 6,
       "match": "in_EAX",
       "severity": "mild",
       "text": "uint in_EAX;",
@@ -222,7 +222,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 126,
+      "line": 132,
       "match": "in_EAX",
       "severity": "mild",
       "text": "in_EAX = g_CramTextureCount;",
@@ -230,23 +230,23 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 133,
+      "line": 139,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "in_EAX = shape_cramtex_cpp_CCramTex_findLowestOverlappingY_FUN_00447930(pCVar3);",
+      "text": "in_EAX = shape_cramtex_cpp_CCramTex_findLowestOverlappingY_FUN_00447930(pCVar9);",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 135,
+      "line": 141,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "pCVar3->final_bottom = in_EAX;",
+      "text": "pCVar9->final_bottom = in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 140,
+      "line": 146,
       "match": "in_EAX",
       "severity": "mild",
       "text": "return in_EAX;",

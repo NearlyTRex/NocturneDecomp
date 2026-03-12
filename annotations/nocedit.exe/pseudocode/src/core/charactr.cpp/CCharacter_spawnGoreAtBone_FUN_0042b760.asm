@@ -9,12 +9,10 @@
 ; int              Stack[0xc]:4   bone_index
 ; float            Stack[0x10]:4   chance
 ; Local Variables:
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined1       Stack[-0x28]:1  local_28
-; undefined1       Stack[-0x1c]:1  local_1c
-; undefined1       Stack[-0x10]:1  local_10
+; CVector3f        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x28]:12  local_28
+; CVector3f        Stack[-0x1c]:12  local_1c
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; XREF[3]:
 ;   core_bride.cpp_CBride_process_FUN_00423a30 at 004244b1

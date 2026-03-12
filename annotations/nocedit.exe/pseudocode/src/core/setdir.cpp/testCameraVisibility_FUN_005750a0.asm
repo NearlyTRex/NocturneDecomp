@@ -12,7 +12,7 @@
 ; float            Stack[0x18]:4   radius
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
+; float            Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:

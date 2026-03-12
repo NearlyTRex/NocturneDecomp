@@ -9,9 +9,9 @@
 CQuaternion4f * __stack_esi core_xform_cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f *vector_in,CQuaternion4f *vector_out)
 
 {
-  float fVar1;
   float fVar2;
   float fVar3;
+  float fVar1;
   
   fVar1 = vector_in->x;
   fVar2 = vector_in->y;

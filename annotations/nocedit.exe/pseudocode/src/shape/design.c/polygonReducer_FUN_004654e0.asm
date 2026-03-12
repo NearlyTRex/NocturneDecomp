@@ -4,8 +4,8 @@
 ; void __cdecl shape_design_c_polygonReducer_FUN_004654e0(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x64]:1  local_64
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x64]:80  local_64
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showShapeEditorMenu_FUN_0046f290 at 0046f6dc

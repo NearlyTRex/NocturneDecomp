@@ -14,12 +14,10 @@
 ; undefined4       Stack[-0xc4]:4  local_c4
 ; undefined4       Stack[-0xc0]:4  local_c0
 ; undefined4       Stack[-0xbc]:4  local_bc
-; undefined1       Stack[-0xb8]:1  local_b8
-; undefined1       Stack[-0xb7]:1  local_b7
-; undefined1       Stack[-0x68]:1  local_68
-; undefined1       Stack[-0x67]:1  local_67
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0xb8]:80  local_b8
+; char[80]         Stack[-0x68]:80  local_68
+; int              Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 00460700

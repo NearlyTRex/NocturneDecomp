@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ; int              Stack[0xc]:4   file_version
 ; Local Variables:
-; undefined1       Stack[-0x108]:1  local_108
+; char[256]        Stack[-0x108]:256  local_108
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_load_FUN_00569410 at 00569e97

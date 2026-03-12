@@ -9,7 +9,6 @@
 void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730(void *bitmap_buffer,char *filename,int width,int height,void *span_data_buffer,int transparent_color_index)
 
 {
-  bool bVar1;
   int iVar2;
   int iVar3;
   byte *pbVar4;
@@ -24,6 +23,7 @@ void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730(void *bit
   int *local_1c;
   int local_18;
   int local_14;
+  bool bVar1;
   
   if (0xff < (uint)transparent_color_index) {
     _sprintf
@@ -34,8 +34,6 @@ void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730(void *bit
   }
   local_20 = 0;
   if (0 < (int)span_data_buffer) {
-    local_30 = height + -1;
-    local_2c = height;
     local_24 = bitmap_buffer;
     local_28 = 0;
     local_1c = (int *)width;
@@ -46,7 +44,6 @@ void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730(void *bit
       if (0 < height) {
         iVar5 = -1;
         iVar6 = 0;
-        local_18 = local_28;
         pbVar4 = local_24;
         do {
           iVar3 = width + local_28 + iVar6;
@@ -75,13 +72,13 @@ void __cdecl cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730(void *bit
         core_main_c_displayErrorAndQuit_FUN_00506f10(local_130);
       }
       if (bVar1) {
-        local_1c[local_14 + 0x11] = (local_30 - local_1c[local_14 + 1]) + 1;
+        local_1c[local_14 + 0x11] = height - local_1c[local_14 + 1];
         local_14 = local_14 + 1;
       }
       local_28 = local_28 + 0x84;
       local_20 = local_20 + 1;
       *local_1c = local_14;
-      local_24 = local_24 + local_2c;
+      local_24 = local_24 + height;
       local_1c = local_1c + 0x21;
     } while (local_20 < (int)span_data_buffer);
   }

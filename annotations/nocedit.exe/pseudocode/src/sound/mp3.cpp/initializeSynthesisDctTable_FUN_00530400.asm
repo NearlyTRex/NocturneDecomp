@@ -7,11 +7,11 @@
 ; float *          Stack[0x4]:4   output_dct_table
 ; Local Variables:
 ; undefined8       Stack[-0x44]:8  local_44
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; double           Stack[-0x38]:8  local_38
+; double           Stack[-0x30]:8  local_30
+; int              Stack[-0x28]:4  local_28
+; float *          Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0063ae2a = 0.0490873852120000

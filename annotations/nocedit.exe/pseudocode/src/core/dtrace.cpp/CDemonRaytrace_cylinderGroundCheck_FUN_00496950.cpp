@@ -11,10 +11,7 @@
 float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950(CDemonRaytrace *this_ptr,CVector3f *pos,float radius,int *hit_flag,CVector3f *normal_out)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  bool bVar4;
+  int iVar1;
   CDemonCube *this_ptr_00;
   int iVar5;
   int grid_z;
@@ -30,6 +27,10 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950(CD
   int local_1c;
   int local_18;
   int local_14;
+  float fVar3;
+  float fVar2;
+  bool bVar4;
+  float fVar1;
   
   local_4c.x = pos->x;
   local_4c.z = pos->z;
@@ -44,14 +45,14 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950(CD
   local_18 = (int)ROUND(ROUND((local_4c.y - (this_ptr->bbox_min).y) * fVar1));
   local_24 = (int)ROUND(ROUND((fVar3 - (this_ptr->bbox_min).y) * fVar1));
   local_3c.x = -1e+30;
-  local_40 = (int)ROUND(ROUND((local_3c.y - radius) * fVar2));
+  iVar1 = (int)ROUND(ROUND((local_3c.y - radius) * fVar2));
   local_1c = (int)ROUND(ROUND((local_3c.z - radius) * local_2c));
   local_20 = (int)ROUND(ROUND((local_3c.y + radius) * fVar2));
   local_14 = (int)ROUND(ROUND((local_3c.z + radius) * local_2c));
   if (local_24 <= local_18) {
     do {
-      grid_x = local_40;
-      if (local_40 <= local_20) {
+      grid_x = iVar1;
+      if (iVar1 <= local_20) {
         do {
           grid_z = local_1c;
           if (local_1c <= local_14) {

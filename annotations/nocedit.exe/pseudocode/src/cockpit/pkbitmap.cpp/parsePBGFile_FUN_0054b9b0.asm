@@ -10,11 +10,11 @@
 ; int              Stack[0x10]:4   skip_data_load
 ; int              Stack[0x14]:4   selected_bitmap_index
 ; Local Variables:
-; undefined        Stack[-0x44]:1  local_44
-; undefined        Stack[-0x20]:1  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CPackedBitmap    Stack[-0x44]:36  local_44
+; byte[4]          Stack[-0x20]:4  local_20
+; uint             Stack[-0x1c]:4  local_1c
+; CPackedBitmap *  Stack[-0x18]:4  local_18
+; CPackedBitmap *  Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40 at 0054bb8f

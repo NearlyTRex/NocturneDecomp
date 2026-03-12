@@ -9,9 +9,6 @@
 void __cdecl sound_mp3_cpp_requantizeSamples_FUN_005301b0(SMpegSubbandScalefactors *quantized_samples,SMpegSubbandScalefactors *dequantized_samples,SMpegSubbandAllocation *allocation,SMpegFrame *frame)
 
 {
-  int iVar1;
-  float fVar2;
-  byte bVar3;
   float *pfVar4;
   int *piVar5;
   float *pfVar6;
@@ -20,6 +17,9 @@ void __cdecl sound_mp3_cpp_requantizeSamples_FUN_005301b0(SMpegSubbandScalefacto
   uint *puVar9;
   int local_28;
   int local_18;
+  int iVar1;
+  byte bVar3;
+  float fVar2;
   
   iVar1 = frame->samples_per_granule;
   local_28 = 0;

@@ -9,10 +9,10 @@
 int __cdecl scanf_string(scanf_state_t *state,va_list_t *args)
 
 {
-  byte bVar1;
-  char *pcVar2;
+  char *pcVar1;
   uint character;
   int iVar3;
+  int iVar2;
   char cVar4;
   int iVar5;
   char *unaff_EDI;
@@ -20,6 +20,8 @@ int __cdecl scanf_string(scanf_state_t *state,va_list_t *args)
   char local_1c;
   byte local_1b;
   byte local_18;
+  byte bVar1;
+  char *pcVar2;
   
   if ((state->flags & 0x20) == 0) {
     local_18 = 1;
@@ -31,14 +33,14 @@ int __cdecl scanf_string(scanf_state_t *state,va_list_t *args)
   if ((bVar1 & 1) != 0) {
     if ((bVar1 & 4) == 0) {
       if ((bVar1 & 8) == 0) {
-        pcVar2 = args->value[0];
-        args->value[0] = pcVar2 + 4;
-        unaff_EDI = *(char **)pcVar2;
+        pcVar1 = args->value[0];
+        args->value[0] = pcVar1 + 4;
+        unaff_EDI = *(char **)pcVar1;
       }
       else {
-        pcVar2 = args->value[0];
-        args->value[0] = pcVar2 + 4;
-        unaff_EDI = *(char **)pcVar2;
+        pcVar1 = args->value[0];
+        args->value[0] = pcVar1 + 4;
+        unaff_EDI = *(char **)pcVar1;
       }
     }
     else {
@@ -53,9 +55,9 @@ int __cdecl scanf_string(scanf_state_t *state,va_list_t *args)
     iVar5 = iVar5 + 1;
   }
   if ((state->flags & 2) == 0) {
-    iVar3 = state->field_width;
-    state->field_width = iVar3 + -1;
-    if (iVar3 != 0) {
+    iVar2 = state->field_width;
+    state->field_width = iVar2 + -1;
+    if (iVar2 != 0) {
       do {
         iVar5 = iVar5 + 1;
         if ((state->flags & 1) != 0) {
@@ -69,13 +71,13 @@ int __cdecl scanf_string(scanf_state_t *state,va_list_t *args)
               iVar3 = scanf_getc_wrapper(state);
               local_1b = (byte)iVar3;
             }
-            iVar3 = mbtowc(local_20,&local_1c,2);
-            if (iVar3 == -1) {
+            iVar2 = mbtowc(local_20,&local_1c,2);
+            if (iVar2 == -1) {
               return 0;
             }
-            *(short *)unaff_EDI = local_20[0];
+            *(wchar_t *)unaff_EDI = local_20[0];
           }
-          unaff_EDI = unaff_EDI + local_18;
+          unaff_EDI = (char *)((int)unaff_EDI + (uint)local_18);
         }
         character = scanf_getc_with_width(state);
         if (character == 0xffffffff) goto LAB_00604f88;
@@ -92,8 +94,7 @@ LAB_00604f88:
       *unaff_EDI = '\0';
     }
     else {
-      unaff_EDI[0] = '\0';
-      unaff_EDI[1] = '\0';
+      *(wchar_t *)unaff_EDI = L'\0';
     }
   }
   return iVar5;

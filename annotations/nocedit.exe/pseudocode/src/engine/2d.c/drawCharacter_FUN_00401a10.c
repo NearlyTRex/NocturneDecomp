@@ -9,9 +9,11 @@
 int __cdecl engine_2d_c_drawCharacter_FUN_00401a10(int char_code,int x_pos,int y_pos,int color)
 
 {
+  int iVar1;
   uchar *puVar1;
   int iVar2;
   int iVar3;
+  int iVar4;
   uint *puVar4;
   uint uVar5;
   int iVar6;
@@ -26,7 +28,7 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401a10(int char_code,int x_pos,int y
   else {
     iVar6 = y_pos * 4;
     puVar1 = g_FontTable[char_code + -0x20].bitmap;
-    iVar3 = iVar6 + 0x2c;
+    iVar1 = iVar6 + 0x2c;
     if (g_BitsPerPixel == 8) {
       do {
         puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar6) + x_pos);
@@ -42,28 +44,28 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401a10(int char_code,int x_pos,int y
           } while (iVar2 < (int)uVar5);
         }
         iVar6 = iVar6 + 4;
-      } while (iVar6 != iVar3);
+      } while (iVar6 != iVar1);
     }
     else if (g_BitsPerPixel == 0x10) {
       do {
         puVar8 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar6) + x_pos * 2);
-        iVar2 = 0;
+        iVar4 = 0;
         if (uVar5 != 0) {
           do {
             if (*puVar1 != '\0') {
               *puVar8 = g_ColorTable16[color];
             }
             puVar1 = puVar1 + 1;
-            iVar2 = iVar2 + 1;
+            iVar4 = iVar4 + 1;
             puVar8 = puVar8 + 1;
-          } while (iVar2 < (int)uVar5);
+          } while (iVar4 < (int)uVar5);
         }
         iVar6 = iVar6 + 4;
-      } while (iVar6 != iVar3);
+      } while (iVar6 != iVar1);
     }
     else {
       do {
-        iVar2 = 0;
+        iVar4 = 0;
         puVar4 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar6) + x_pos * 4);
         if (uVar5 != 0) {
           do {
@@ -71,12 +73,12 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401a10(int char_code,int x_pos,int y
               *puVar4 = g_ColorTable32[color];
             }
             puVar1 = puVar1 + 1;
-            iVar2 = iVar2 + 1;
+            iVar4 = iVar4 + 1;
             puVar4 = puVar4 + 1;
-          } while (iVar2 < (int)uVar5);
+          } while (iVar4 < (int)uVar5);
         }
         iVar6 = iVar6 + 4;
-      } while (iVar6 != iVar3);
+      } while (iVar6 != iVar1);
     }
     iVar3 = uVar5 + 1;
   }

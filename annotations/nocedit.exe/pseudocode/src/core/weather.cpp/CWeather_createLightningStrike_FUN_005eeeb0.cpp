@@ -9,9 +9,7 @@
 void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeather *this_ptr,float flash_timer,int play_sound)
 
 {
-  float fVar1;
-  float fVar2;
-  CEventList *this_ptr_00;
+  float fVar3;
   CVector3f *pCVar3;
   int iVar4;
   float local_98;
@@ -29,31 +27,29 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeath
   float local_1c;
   float local_18;
   float local_14;
+  CEventList *this_ptr_00;
+  float fVar2;
+  float fVar1;
   
-  local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
-  this_ptr->lightning_countdown = local_14;
-  local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,this_ptr->max_flash_interval);
+  fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
+  this_ptr->lightning_countdown = fVar3;
+  fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,this_ptr->max_flash_interval);
   this_ptr->flash_timer = flash_timer;
   this_ptr->lightning_active = 1;
-  this_ptr->sub_flash_interval = local_14;
+  this_ptr->sub_flash_interval = fVar3;
   core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40(&g_CDemonRaytraceInstance,&local_30);
   core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00499b70(&g_CDemonRaytraceInstance,&local_54);
-  local_20 = (float)0.5;
-  local_60 = (local_30.x + local_54.x) * local_20;
-  local_58 = (local_30.z + local_54.z) * local_20;
-  local_20 = (local_54.x - local_30.x) * local_20;
+  fVar3 = (local_54.x - local_30.x) * (float)0.5;
   local_18 = 0.0;
-  local_5c = local_30.y;
-  if (0.0 < local_20) {
-    local_18 = local_20;
+  if (0.0 < fVar3) {
+    local_18 = fVar3;
   }
-  local_24 = local_54.y - local_30.y;
-  if (local_18 < local_24) {
-    local_18 = local_24;
+  if (local_18 < local_54.y - local_30.y) {
+    local_18 = local_54.y - local_30.y;
   }
-  local_1c = (local_54.z - local_30.z) * (float)0.5;
-  if (local_18 < local_1c) {
-    local_18 = local_1c;
+  fVar3 = (local_54.z - local_30.z) * (float)0.5;
+  if (local_18 < fVar3) {
+    local_18 = fVar3;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_94,&this_ptr->rotation);
   local_6c.z = local_18;
@@ -73,7 +69,6 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005eeeb0(CWeath
               (g_CFireEffectPtr,&local_6c,local_18,0,0.0);
   }
   this_ptr_00 = g_CEventListPtr;
-  local_14 = (float)g_CDemonCameraInstance.corona_blend_factor;
   fVar2 = (float)g_CDemonCameraInstance.corona_blend_factor;
   fVar1 = (float)1.5259021896696401e-05;
   this_ptr->base_ambient = fVar2 * fVar1;

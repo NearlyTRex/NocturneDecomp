@@ -7,11 +7,7 @@
 ; CAnvil *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; SDamageInfo      Stack[-0x48]:60  local_48
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00614d2b = 32

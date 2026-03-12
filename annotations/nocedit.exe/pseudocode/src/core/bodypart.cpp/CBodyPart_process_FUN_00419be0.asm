@@ -7,14 +7,11 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x54]:1  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; SDamageInfo      Stack[-0x54]:60  local_54
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
+; float            Stack[-0x10]:4  local_10
+; float            Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_disableBodyPartDamage_00615def

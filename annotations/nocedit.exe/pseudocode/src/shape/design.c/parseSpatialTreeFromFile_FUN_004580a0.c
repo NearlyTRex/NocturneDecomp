@@ -12,6 +12,7 @@ STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(_FILE *
 
 {
   STreeNode *pSVar1;
+  STreeNode *pSVar2;
   STreeNode *local_34;
   byte local_2c [4];
   int local_28;
@@ -39,8 +40,8 @@ STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(_FILE *
       local_34->data4 = local_14;
       pSVar1 = shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(file);
       local_34->left_child = pSVar1;
-      pSVar1 = shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(file);
-      local_34->right_child = pSVar1;
+      pSVar2 = shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(file);
+      local_34->right_child = pSVar2;
     }
   }
   return local_34;

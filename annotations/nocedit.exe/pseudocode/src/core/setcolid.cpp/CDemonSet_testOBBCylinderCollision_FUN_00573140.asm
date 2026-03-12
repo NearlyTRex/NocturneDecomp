@@ -10,28 +10,24 @@
 ; CVector3f *      Stack[0x10]:4   position
 ; CMatrix3x3f *    Stack[0x14]:4   orientation_matrix
 ; Local Variables:
-; undefined4       Stack[-0x1e8]:4  local_1e8
-; undefined4       Stack[-0x1e4]:4  local_1e4
-; undefined4       Stack[-0x1e0]:4  local_1e0
-; undefined1       Stack[-0x1dc]:1  local_1dc
-; undefined1       Stack[-0x1d0]:1  local_1d0
-; undefined1       Stack[-0x1c4]:1  local_1c4
-; undefined1       Stack[-0x1b8]:1  local_1b8
-; undefined1       Stack[-0x1ac]:1  local_1ac
-; undefined1       Stack[-0x1a0]:1  local_1a0
-; undefined1       Stack[-0x194]:1  local_194
-; undefined1       Stack[-0x188]:1  local_188
-; undefined1       Stack[-0x150]:1  local_150
-; undefined1       Stack[-0x118]:1  local_118
-; undefined1       Stack[-0xe0]:1  local_e0
-; undefined1       Stack[-0xa8]:1  local_a8
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0x38]:1  local_38
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x1e8]:12  local_1e8
+; CVector3f        Stack[-0x1dc]:12  local_1dc
+; CVector3f        Stack[-0x1d0]:12  local_1d0
+; CVector3f        Stack[-0x1c4]:12  local_1c4
+; CVector3f        Stack[-0x1b8]:12  local_1b8
+; CVector3f        Stack[-0x1ac]:12  local_1ac
+; CVector3f        Stack[-0x1a0]:12  local_1a0
+; CVector3f        Stack[-0x194]:12  local_194
+; CDemonTriangle   Stack[-0x188]:56  local_188
+; CDemonTriangle   Stack[-0x150]:56  local_150
+; CDemonTriangle   Stack[-0x118]:56  local_118
+; CDemonTriangle   Stack[-0xe0]:56  local_e0
+; CDemonTriangle   Stack[-0xa8]:56  local_a8
+; CDemonTriangle   Stack[-0x70]:56  local_70
+; CVector3f        Stack[-0x38]:12  local_38
+; CVector3f        Stack[-0x2c]:12  local_2c
+; CVector3f        Stack[-0x20]:12  local_20
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_customIntersectCylinderXZ_FUN_00509720 at 005097ac

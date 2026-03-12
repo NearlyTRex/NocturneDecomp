@@ -11,18 +11,21 @@
 int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr,int *pixel_heights,int *face_counts,int max_lods,int render_mode)
 
 {
-  float *pfVar1;
-  float fVar2;
+  int *piVar1;
   int iVar3;
   CBoundingBox3D *pCVar4;
   CVector3f *pCVar5;
+  float fVar3;
+  int iVar4;
+  int iVar5;
   int *piVar6;
   int *piVar7;
   int iVar8;
+  int iVar6;
+  int iVar7;
   int iVar9;
   SIZE_T n;
   bool bVar10;
-  char *text;
   CPickList CStack_780;
   float local_3d8 [100];
   char local_248 [200];
@@ -53,6 +56,9 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   int iStack_1c;
   int iStack_18;
   int *local_14;
+  char *text;
+  float *pfVar1;
+  float fVar2;
   
   if (this_ptr->next_lod == (CLodMesh *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
@@ -81,12 +87,9 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
     local_94.max.y = pCVar5->y;
     local_94.max.z = pCVar5->z;
   }
-  local_4c = local_94.min.x + local_94.max.x;
-  local_7c = local_4c * 0.5f;
-  local_48 = local_94.min.y + local_94.max.y;
-  local_44 = local_94.min.z + local_94.max.z;
-  local_78 = local_48 * 0.5f;
-  local_74 = local_44 * 0.5f;
+  local_7c = (local_94.min.x + local_94.max.x) * 0.5f;
+  local_78 = (local_94.min.y + local_94.max.y) * 0.5f;
+  local_74 = (local_94.min.z + local_94.max.z) * 0.5f;
   if (&local_d0.loat_at != (CVector3f *)&local_7c) {
     local_d0.loat_at.x = local_7c;
     local_d0.loat_at.y = local_78;
@@ -94,15 +97,12 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   }
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   shape_meshlod_cpp_CLodMesh_ctor_FUN_00515840(&local_180);
-  local_60 = local_94.max.y - local_94.min.y;
-  local_3d8[0] = local_60 * (float)0.75;
-  iVar3 = -1;
-  local_64 = local_94.max.x - local_94.min.x;
-  local_5c = local_94.max.z - local_94.min.z;
+  local_3d8[0] = (local_94.max.y - local_94.min.y) * (float)0.75;
+  iVar7 = -1;
   do {
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xfc);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
-    if (iVar3 == 0) {
+    if (iVar7 == 0) {
       local_d0.distance = local_3d8[0];
     }
     shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0(&local_10c);
@@ -126,70 +126,70 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
     shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(&local_10c);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&g_ZeroVector.f);
-    local_14 = (int *)core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(&local_94);
-    local_34 = (int)ROUND(ROUND((float)local_14));
+    fVar3 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(&local_94);
+    iVar5 = (int)ROUND(ROUND(fVar3));
     shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(&local_d0);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,&g_ZeroVector.f);
-    if (iVar3 < 0) {
-      iVar8 = local_30 + -1;
-      if (iVar8 < 1) {
+    if (iVar7 < 0) {
+      iVar6 = local_30 + -1;
+      if (iVar6 < 1) {
 LAB_0051e453:
-        iVar8 = face_counts[iVar8];
+        iVar6 = face_counts[iVar6];
       }
       else {
-        piVar6 = pixel_heights + iVar8;
+        piVar6 = pixel_heights + iVar6;
         do {
-          if (local_34 < *piVar6) goto LAB_0051e453;
-          iVar8 = iVar8 + -1;
+          if (iVar5 < *piVar6) goto LAB_0051e453;
+          iVar6 = iVar6 + -1;
           piVar6 = piVar6 + -1;
-        } while (0 < iVar8);
-        iVar8 = face_counts[iVar8];
+        } while (0 < iVar6);
+        iVar6 = face_counts[iVar6];
       }
     }
-    else if (iVar3 == 0) {
-      iVar8 = this_ptr->next_lod->tri_count;
+    else if (iVar7 == 0) {
+      iVar6 = this_ptr->next_lod->tri_count;
     }
     else {
-      iVar8 = face_counts[iVar3];
+      iVar6 = face_counts[iVar7];
     }
-    if (((local_180.tri_count < iVar8 + -1) || (iVar8 < local_180.tri_count)) &&
-       (shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(this_ptr), iVar8 = INT_0067d39c,
-       INT_0067d39c = iVar8, render_mode == 2)) {
+    if (((local_180.tri_count < iVar6 + -1) || (iVar6 < local_180.tri_count)) &&
+       (shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(this_ptr), iVar6 = INT_0067d39c,
+       INT_0067d39c = iVar6, render_mode == 2)) {
       INT_0067d39c = 0;
       shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(&local_180);
-      INT_0067d39c = iVar8;
+      INT_0067d39c = iVar6;
     }
-    if (0 < iVar3) {
-      face_counts[iVar3] = local_180.tri_count;
-      pixel_heights[iVar3] = local_34;
-      local_3d8[iVar3] = local_d0.distance;
+    if (0 < iVar7) {
+      face_counts[iVar7] = local_180.tri_count;
+      pixel_heights[iVar7] = iVar5;
+      local_3d8[iVar7] = local_d0.distance;
     }
-    if (iVar3 < 0) {
+    if (iVar7 < 0) {
       engine_2d_c_drawText_FUN_00401fd0("TEST MODE: Adjust view to test LODs.",0,0);
-      iVar8 = 0xb;
+      iVar6 = 0xb;
       text = "Press N to create a new LOD at this distance";
     }
-    else if (iVar3 == 0) {
+    else if (iVar7 == 0) {
       text = "Viewing LOD 0.  This LOD cannot be edited.";
-      iVar8 = 0;
+      iVar6 = 0;
     }
     else {
-      _sprintf(local_248,"Editing LOD %d of %d.",iVar3,local_30);
+      _sprintf(local_248,"Editing LOD %d of %d.",iVar7,local_30);
       engine_2d_c_drawText_FUN_00401fd0(local_248,0,0);
       engine_2d_c_drawText_FUN_00401fd0("Use LEFT/RIGHT to adjust face count.",0,0xb);
       engine_2d_c_drawText_FUN_00401fd0("Press T to go to test mode.",0,0x16);
-      iVar8 = 0x21;
+      iVar6 = 0x21;
       text = "Press TAB/SHIFT-TAB for prev/next LOD.";
     }
-    engine_2d_c_drawText_FUN_00401fd0(text,0,iVar8);
-    local_24 = g_WindowHeight + -0x18;
+    engine_2d_c_drawText_FUN_00401fd0(text,0,iVar6);
+    iVar6 = g_WindowHeight;
+    iVar4 = g_WindowHeight + -0x18;
     g_ActiveRenderColor = 1;
     engine_2d_c_drawLine_FUN_004011b0(0,0x2b,10,0x2b);
-    engine_2d_c_drawLine_FUN_004011b0(0,local_24 + 0xb,10,local_24 + 0xb);
+    engine_2d_c_drawLine_FUN_004011b0(0,iVar6 + -0xd,10,iVar6 + -0xd);
     iVar8 = 0;
     if (0 < local_30) {
-      local_38 = local_24 + -0x2c;
       local_2c = pixel_heights;
       local_20 = face_counts;
       do {
@@ -200,14 +200,14 @@ LAB_0051e453:
           _sprintf
                     (local_248,"LOD%d: P=%d F=%d",iVar8,pixel_heights[iVar8],*local_20);
         }
-        iVar9 = local_24 - (*local_2c * local_38) / 0x1e0;
+        iVar9 = iVar4 - (*local_2c * (iVar6 + -0x44)) / 0x1e0;
         if (iVar9 < 0x2c) {
           iVar9 = 0x2c;
         }
-        if (local_24 < iVar9) {
-          iVar9 = local_24;
+        if (iVar4 < iVar9) {
+          iVar9 = iVar4;
         }
-        if ((iVar3 == 0) && (iVar8 == 0)) {
+        if ((iVar7 == 0) && (iVar8 == 0)) {
           g_ActiveRenderColor =
                shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                          (g_CEditorToolsPtr);
@@ -225,17 +225,17 @@ LAB_0051e453:
         local_20 = local_20 + 1;
       } while (iVar8 < local_30);
     }
-    if (iVar3 != 0) {
-      iVar8 = local_24 - ((local_24 + -0x2c) * local_34) / 0x1e0;
-      if (iVar8 < 0x2c) {
-        iVar8 = 0x2c;
+    if (iVar7 != 0) {
+      iVar6 = iVar4 - ((iVar6 + -0x44) * iVar5) / 0x1e0;
+      if (iVar6 < 0x2c) {
+        iVar6 = 0x2c;
       }
-      if (local_24 < iVar8) {
-        iVar8 = local_24;
+      if (iVar4 < iVar6) {
+        iVar6 = iVar4;
       }
       g_ActiveRenderColor =
            shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
-      engine_2d_c_drawLine_FUN_004011b0(0,iVar8,10,iVar8);
+      engine_2d_c_drawLine_FUN_004011b0(0,iVar6,10,iVar6);
     }
     shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0(&local_180);
     if (render_mode == 0) {
@@ -244,153 +244,145 @@ LAB_0051e453:
     else if (((uint)render_mode < 2) || (render_mode == 2)) {
       shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(&local_180,0);
     }
-    iVar8 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(&local_180);
-    _sprintf(local_248,"Current: %d pixelHeight, %d faces",local_34,iVar8);
+    iVar6 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(&local_180);
+    _sprintf(local_248,"Current: %d pixelHeight, %d faces",iVar5,iVar6);
     engine_2d_c_drawText_FUN_00401fd0(local_248,0,g_WindowHeight + -0xb);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
-    iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_N);
-    iVar8 = local_30;
-    if (iVar9 != 0) {
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_N);
+    if (iVar6 != 0) {
       if (local_30 < max_lods) {
         face_counts[local_30] = local_180.tri_count;
-        pixel_heights[local_30] = local_34;
+        pixel_heights[local_30] = iVar5;
         pfVar1 = local_3d8 + local_30;
-        local_30 = local_30 + 1;
         *pfVar1 = local_d0.distance;
-        iVar3 = iVar8;
+        iVar7 = local_30;
+        local_30 = local_30 + 1;
       }
       else {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Can't have more than %d LODs.",max_lods);
       }
     }
-    if (0 < iVar3) {
-      iVar8 = face_counts[iVar3] / 0x14;
-      iVar9 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
-      if (iVar9 != 0) {
-        iVar8 = iVar8 * 3;
+    if (0 < iVar7) {
+      iVar5 = face_counts[iVar7] / 0x14;
+      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
+      if (iVar6 != 0) {
+        iVar5 = iVar5 * 3;
       }
-      iVar9 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
-      if ((iVar9 != 0) || (iVar8 < 2)) {
-        iVar8 = 2;
+      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
+      if ((iVar6 != 0) || (iVar5 < 2)) {
+        iVar5 = 2;
       }
-      iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
-      if (iVar9 != 0) {
-        face_counts[iVar3] = face_counts[iVar3] - iVar8;
+      iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
+      if (iVar6 != 0) {
+        face_counts[iVar7] = face_counts[iVar7] - iVar5;
       }
-      iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
-      if (iVar9 != 0) {
-        face_counts[iVar3] = face_counts[iVar3] + iVar8;
+      iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
+      if (iVar6 != 0) {
+        face_counts[iVar7] = face_counts[iVar7] + iVar5;
       }
-      iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F);
-      if (iVar8 != 0) {
+      iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F);
+      if (iVar5 != 0) {
         shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-                  (g_CEditorToolsPtr,"Enter face count",face_counts + iVar3,0,0,0,1);
+                  (g_CEditorToolsPtr,"Enter face count",face_counts + iVar7,0,0,0,1);
       }
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
-    if ((iVar8 != 0) && (0 < iVar3)) {
-      _sprintf(local_248,"Delete LOD %d?",iVar3);
-      iVar8 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+    iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D);
+    if ((iVar5 != 0) && (0 < iVar7)) {
+      _sprintf(local_248,"Delete LOD %d?",iVar7);
+      iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                         (g_CEditorToolsPtr,local_248);
-      if (iVar8 != 0) {
+      if (iVar5 != 0) {
         local_30 = local_30 + -1;
-        local_14 = (int *)(iVar3 * 4 + 4);
-        n = (local_30 - iVar3) * 4;
-        memmove(pixel_heights + iVar3,pixel_heights + iVar3 + 1,n);
-        memmove
-                  (face_counts + iVar3,(void *)((int)face_counts + (int)local_14),n);
-        memmove
-                  (local_3d8 + iVar3,(void *)((int)local_3d8 + (int)local_14),n);
+        n = (local_30 - iVar7) * 4;
+        memmove(pixel_heights + iVar7,pixel_heights + iVar7 + 1,n);
+        memmove(face_counts + iVar7,face_counts + iVar7 + 1,n);
+        memmove(local_3d8 + iVar7,local_3d8 + iVar7 + 1,n);
       }
     }
     iStack_28 = 0;
     if (0 < local_30) {
-      iStack_1c = local_30 + -1;
       do {
-        iVar9 = 1;
-        iVar8 = iVar3;
-        piVar6 = pixel_heights;
-        if (1 < iStack_1c) {
+        iVar6 = 1;
+        iVar5 = iVar7;
+        piVar1 = pixel_heights;
+        if (1 < local_30 + -1) {
           do {
-            piVar7 = piVar6 + 1;
-            iStack_18 = iVar9 * 4;
-            iVar3 = iVar8;
-            if (*piVar7 < piVar6[2]) {
-              iStack_40 = *piVar7;
-              *piVar7 = pixel_heights[iVar9 + 1];
-              pixel_heights[iVar9 + 1] = iStack_40;
-              local_14 = face_counts + iVar9 + 1;
-              iStack_3c = face_counts[iVar9];
-              face_counts[iVar9] = *local_14;
-              *local_14 = iStack_3c;
-              fVar2 = local_3d8[iVar9];
-              local_3d8[iVar9] = local_3d8[iVar9 + 1];
-              iVar3 = iVar9 + 1;
-              local_3d8[iVar9 + 1] = fVar2;
-              if ((iVar8 != iVar9) && (bVar10 = iVar8 == iVar3, iVar3 = iVar8, bVar10)) {
-                iVar3 = iVar9;
+            piVar7 = piVar1 + 1;
+            iVar7 = iVar5;
+            if (*piVar7 < piVar1[2]) {
+              iVar7 = *piVar7;
+              *piVar7 = pixel_heights[iVar6 + 1];
+              pixel_heights[iVar6 + 1] = iVar7;
+              iVar7 = face_counts[iVar6];
+              face_counts[iVar6] = face_counts[iVar6 + 1];
+              face_counts[iVar6 + 1] = iVar7;
+              fVar2 = local_3d8[iVar6];
+              local_3d8[iVar6] = local_3d8[iVar6 + 1];
+              iVar7 = iVar6 + 1;
+              local_3d8[iVar6 + 1] = fVar2;
+              if ((iVar5 != iVar6) && (bVar10 = iVar5 == iVar7, iVar7 = iVar5, bVar10)) {
+                iVar7 = iVar6;
               }
             }
-            iVar9 = iVar9 + 1;
-            iVar8 = iVar3;
-            piVar6 = piVar7;
-          } while (iVar9 < iStack_1c);
+            iVar6 = iVar6 + 1;
+            iVar5 = iVar7;
+            piVar1 = piVar7;
+          } while (iVar6 < local_30 + -1);
         }
         iStack_28 = iStack_28 + 1;
       } while (iStack_28 < local_30);
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB);
-    if (iVar8 != 0) {
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
-      if (iVar8 == 0) {
-        iVar3 = iVar3 + 1;
+    iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_TAB);
+    if (iVar5 != 0) {
+      iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
+      if (iVar5 == 0) {
+        iVar7 = iVar7 + 1;
       }
       else {
-        iVar3 = iVar3 + -1;
+        iVar7 = iVar7 + -1;
       }
-      if (iVar3 < 0) {
-        iVar3 = local_30 + -1;
+      if (iVar7 < 0) {
+        iVar7 = local_30 + -1;
       }
-      if (local_30 <= iVar3) {
-        iVar3 = 0;
+      if (local_30 <= iVar7) {
+        iVar7 = 0;
       }
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_T);
-    if (iVar8 != 0) {
-      if (iVar3 < 0) {
-        iVar3 = 0;
+    iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_T);
+    if (iVar5 != 0) {
+      if (iVar7 < 0) {
+        iVar7 = 0;
       }
       else {
-        iVar3 = -1;
+        iVar7 = -1;
       }
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
-    if (iVar8 != 0) {
+    iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
+    if (iVar5 != 0) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_780);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_780.base,"Accept LOD settings.");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_780.base,"Cancel LOD selection.")
       ;
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
                 (&CStack_780.base,"Oops, go back to editing the LODs.");
-      iVar9 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+      iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&CStack_780,"Accept or Cancel?",-1,0);
-      iVar8 = local_30;
-      if (iVar9 == 0) {
+      if (iVar5 == 0) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_780,0);
         shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_180,0);
-        return iVar8;
+        return local_30;
       }
-      if (iVar9 == 1) {
+      if (iVar5 == 1) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_780,0);
         shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_180,0);
         return -1;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_780,0);
     }
-    if (-1 < iVar3) {
-      local_d0.distance = local_3d8[iVar3];
+    if (-1 < iVar7) {
+      local_d0.distance = local_3d8[iVar7];
     }
     shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(&local_d0,0xf);
   } while( true );

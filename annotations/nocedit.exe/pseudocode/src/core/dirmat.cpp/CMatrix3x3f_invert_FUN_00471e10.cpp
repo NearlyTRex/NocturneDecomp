@@ -9,36 +9,37 @@
 void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_00471e10(CMatrix3x3f *this_ptr)
 
 {
+  float fVar1_00;
+  float fVar28;
+  float fVar29;
+  float fVar30;
   float fVar1;
   float fVar2;
   float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
   float fVar8;
   float fVar9;
-  float fVar10;
-  float fVar11;
-  float fVar12;
-  float fVar13;
-  float fVar14;
-  float fVar15;
-  float fVar16;
-  float fVar17;
-  float fVar18;
-  float fVar19;
-  float fVar20;
-  float fVar21;
-  float fVar22;
-  float fVar23;
   float fVar24;
   float fVar25;
   float fVar26;
   float fVar27;
-  float fVar28;
-  float fVar29;
-  float fVar30;
+  float fVar20;
+  float fVar21;
+  float fVar22;
+  float fVar23;
+  float fVar18;
+  float fVar19;
+  float fVar12;
+  float fVar13;
+  float fVar14;
+  float fVar15;
+  float fVar10;
+  float fVar11;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  float fVar16;
+  float fVar17;
   
   fVar30 = (this_ptr->m[1].x * this_ptr->m[2].y - this_ptr->m[1].y * this_ptr->m[2].x) *
            this_ptr->m[0].z +
@@ -64,7 +65,7 @@ void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_00471e10(CMatrix3x3f *this_p
   fVar11 = this_ptr->m[2].x;
   fVar12 = this_ptr->m[0].y;
   fVar13 = this_ptr->m[2].x;
-  fVar30 = 1.0 / fVar30;
+  fVar1_00 = 1.0 / fVar30;
   fVar14 = this_ptr->m[2].y;
   fVar15 = this_ptr->m[0].y;
   fVar16 = this_ptr->m[1].z;
@@ -82,14 +83,14 @@ void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_00471e10(CMatrix3x3f *this_p
   fVar28 = this_ptr->m[0].x;
   fVar29 = this_ptr->m[1].z;
   this_ptr->m[0].x =
-       (this_ptr->m[1].y * this_ptr->m[2].z - this_ptr->m[1].z * this_ptr->m[2].y) * fVar30;
-  this_ptr->m[0].y = -(this_ptr->m[0].y * fVar5 - this_ptr->m[0].z * fVar14) * fVar30;
-  this_ptr->m[0].z = (fVar15 * fVar16 - this_ptr->m[0].z * fVar21) * fVar30;
-  this_ptr->m[1].x = -(fVar1 * fVar2 - fVar8 * fVar9) * fVar30;
-  this_ptr->m[1].y = (fVar17 * fVar18 - fVar6 * fVar7) * fVar30;
-  this_ptr->m[1].z = -(fVar28 * fVar29 - fVar26 * fVar27) * fVar30;
-  this_ptr->m[2].x = (fVar3 * fVar4 - fVar10 * fVar11) * fVar30;
-  this_ptr->m[2].y = -(fVar22 * fVar23 - fVar12 * fVar13) * fVar30;
-  this_ptr->m[2].z = (fVar24 * fVar25 - fVar19 * fVar20) * fVar30;
+       (this_ptr->m[1].y * this_ptr->m[2].z - this_ptr->m[1].z * this_ptr->m[2].y) * fVar1_00;
+  this_ptr->m[0].y = -(this_ptr->m[0].y * fVar5 - this_ptr->m[0].z * fVar14) * fVar1_00;
+  this_ptr->m[0].z = (fVar15 * fVar16 - this_ptr->m[0].z * fVar21) * fVar1_00;
+  this_ptr->m[1].x = -(fVar1 * fVar2 - fVar8 * fVar9) * fVar1_00;
+  this_ptr->m[1].y = (fVar17 * fVar18 - fVar6 * fVar7) * fVar1_00;
+  this_ptr->m[1].z = -(fVar28 * fVar29 - fVar26 * fVar27) * fVar1_00;
+  this_ptr->m[2].x = (fVar3 * fVar4 - fVar10 * fVar11) * fVar1_00;
+  this_ptr->m[2].y = -(fVar22 * fVar23 - fVar12 * fVar13) * fVar1_00;
+  this_ptr->m[2].z = (fVar24 * fVar25 - fVar19 * fVar20) * fVar1_00;
   return;
 }

@@ -7,10 +7,10 @@
 ; CWayPoint *      Stack[0x4]:4   this_ptr
 ; CWayPoint *      Stack[0x8]:4   start_waypoint
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; int              Stack[-0xc]:4  local_c
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_processWalking_FUN_0042ca70 at 0042cce5

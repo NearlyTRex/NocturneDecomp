@@ -9,17 +9,6 @@
 void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
-  float fVar9;
-  float fVar10;
-  float fVar11;
   CVector3f *pCVar12;
   CVector3f *pCVar13;
   int iVar14;
@@ -28,6 +17,17 @@ void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0(CBox *this_ptr,CVect
   float local_1c;
   float local_18;
   SScrape *local_14;
+  float fVar7;
+  float fVar8;
+  float fVar5;
+  float fVar11;
+  float fVar9;
+  float fVar10;
+  float fVar6;
+  float fVar3;
+  float fVar4;
+  float fVar1;
+  float fVar2;
   
   if (this_ptr != (CBox *)new_position) {
     (this_ptr->position).x = new_position->x;
@@ -93,7 +93,7 @@ void __cdecl core_box_cpp_CBox_updateTransform_FUN_0041e0e0(CBox *this_ptr,CVect
         pCVar13->z = local_18;
       }
       iVar14 = iVar14 + 1;
-      pCVar13 = (CVector3f *)((int)(pCVar13 + 4) + 4);
+      pCVar13 = (CVector3f *)&pCVar13[4].y;
     } while (iVar14 < this_ptr->scrape_point_count);
   }
   this_ptr->is_valid = 1;

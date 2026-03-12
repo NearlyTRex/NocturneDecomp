@@ -9,8 +9,8 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(CKeyFramedModel *this_ptr)
 
 {
-  int iVar1;
   int iVar2;
+  int iVar7;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -18,19 +18,20 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(CKeyF
   int local_28;
   CKeyFramedModel *local_20;
   int local_18;
+  int iVar1;
   
   iVar4 = 0;
   iVar2 = 0;
   local_28 = 0;
   if (0 < this_ptr->part_count) {
     local_20 = this_ptr;
-    local_18 = iVar2;
+    iVar7 = iVar2;
     iVar5 = iVar4;
     do {
       iVar4 = local_20->part_list[0].vertex_count + iVar5;
-      iVar2 = local_20->part_list[0].poly_count + local_18;
-      if (local_18 < iVar2) {
-        local_18 = local_18 * 0x48;
+      iVar2 = local_20->part_list[0].poly_count + iVar7;
+      if (iVar7 < iVar2) {
+        local_18 = iVar7 * 0x48;
         do {
           iVar6 = 0;
           iVar3 = 0;
@@ -54,7 +55,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(CKeyF
       }
       local_20 = (CKeyFramedModel *)(local_20->model_filename + 8);
       local_28 = local_28 + 1;
-      local_18 = iVar2;
+      iVar7 = iVar2;
       iVar5 = iVar4;
     } while (local_28 < this_ptr->part_count);
   }

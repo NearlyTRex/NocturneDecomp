@@ -8,11 +8,10 @@
 ; int              Stack[0x8]:4   total_count
 ; int              Stack[0xc]:4   current_index
 ; Local Variables:
-; undefined        Stack[-0x78]:1  local_78
-; undefined1       Stack[-0x77]:1  local_77
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; char[100]        Stack[-0x78]:100  local_78
+; ulong            Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
+; int              Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_00641092

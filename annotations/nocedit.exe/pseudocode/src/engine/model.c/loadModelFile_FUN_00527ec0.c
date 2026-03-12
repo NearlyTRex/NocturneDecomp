@@ -9,15 +9,16 @@
 SMRGLHeaderExtended * __cdecl engine_model_c_loadModelFile_FUN_00527ec0(char *filename)
 
 {
-  char cVar1;
   SIZE_T count;
   _FILE *file;
   SMRGLHeaderExtended *pSVar2;
   SIZE_T SVar3;
   int iVar4;
+  SMRGLHeaderExtended *pSVar1;
   char *pcVar5;
   char *pcVar6;
   char local_5c [80];
+  char cVar1;
   
   pcVar6 = filename;
   do {
@@ -33,8 +34,8 @@ LAB_00527ee6:
   if (pcVar5 != (char *)0x0) {
     iVar4 = toupper((uint)(byte)pcVar5[1]);
     if (iVar4 == 0x54) {
-      pSVar2 = engine_boss_c_modelStructNotSupported_FUN_0041db80(filename);
-      return pSVar2;
+      pSVar1 = engine_boss_c_modelStructNotSupported_FUN_0041db80(filename);
+      return pSVar1;
     }
   }
   count = engine_dosio_c_getFileSize_FUN_00481880("models",filename);

@@ -9,16 +9,19 @@
 void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00559b20(CScript *this_ptr)
 
 {
-  int iVar1;
-  int iVar2;
   float fVar3;
   int iVar4;
   int iVar5;
   int iVar6;
+  int y;
   int iVar7;
+  float fVar1;
   int iVar8;
   char (*text) [1024];
   CBitFont *this_ptr_00;
+  int iVar3;
+  int iVar1;
+  int iVar2;
   
   if (g_CGamePtr->letterbox_mode == 0) {
     fVar3 = core_charactr_cpp_getGameDeltaTime_FUN_0042f9e0(g_CGamePtr);
@@ -26,10 +29,10 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00559b20(CScript *this_
   }
   else {
     g_PreviousLetterboxMode = g_CGamePtr->letterbox_mode;
-    fVar3 = core_charactr_cpp_getGameDeltaTime_FUN_0042f9e0(g_CGamePtr);
-    g_ScriptTimeScale = fVar3 / 0.35f + g_ScriptTimeScale;
+    fVar1 = core_charactr_cpp_getGameDeltaTime_FUN_0042f9e0(g_CGamePtr);
+    g_ScriptTimeScale = fVar1 / 0.35f + g_ScriptTimeScale;
   }
-  iVar8 = g_WindowHeight;
+  iVar3 = g_WindowHeight;
   iVar1 = g_WindowWidth;
   if (g_ScriptTimeScale < 0.0) {
     g_ScriptTimeScale = 0.0;
@@ -42,7 +45,7 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00559b20(CScript *this_
     if (g_PreviousLetterboxMode != 2) {
       engine_2d_c_fillRectColor_FUN_00403170(0,0,iVar1 + -1,iVar4 + -1,0);
     }
-    engine_2d_c_fillRectColor_FUN_00403170(0,iVar8 - iVar4,iVar1 + -1,iVar8 + -1,0);
+    engine_2d_c_fillRectColor_FUN_00403170(0,iVar3 - iVar4,iVar1 + -1,iVar3 + -1,0);
   }
   iVar2 = g_ClipTop;
   if ((this_ptr->current_message[0] != '\0') && (g_CGamePtr->subtitle_mode != 0)) {
@@ -57,23 +60,23 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_00559b20(CScript *this_
                       (this_ptr_00,this_ptr->current_message,g_ScriptSubtitleLines[0],10,0x400,
                        (g_WindowWidth * 9) / 10);
     iVar6 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(this_ptr_00,0x58);
-    iVar4 = ((iVar8 * 2 - iVar4) - iVar6 * iVar5) / 2;
-    iVar8 = iVar8 - iVar6 * iVar5;
-    if (iVar8 < iVar4) {
-      iVar4 = iVar8;
+    y = ((iVar3 * 2 - iVar4) - iVar6 * iVar5) / 2;
+    iVar8 = iVar3 - iVar6 * iVar5;
+    if (iVar8 < y) {
+      y = iVar8;
     }
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-    iVar8 = 0;
+    iVar3 = 0;
     if (0 < iVar5) {
       text = g_ScriptSubtitleLines;
       do {
         iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(this_ptr_00,*text);
-        iVar8 = iVar8 + 1;
+        iVar3 = iVar3 + 1;
         engine_font_cpp_CBitFont_drawText_FUN_004cda80
-                  (this_ptr_00,*text,(iVar1 - iVar7) / 2,iVar4,0xf8,0);
+                  (this_ptr_00,*text,(iVar1 - iVar7) / 2,y,0xf8,0);
         text = text + 1;
-        iVar4 = iVar4 + iVar6;
-      } while (iVar8 < iVar5);
+        y = y + iVar6;
+      } while (iVar3 < iVar5);
     }
   }
   g_ClipTop = iVar2;

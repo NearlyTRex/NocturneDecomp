@@ -9,6 +9,7 @@
 void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004ef3a0(CGround *this_ptr,int column,int row)
 
 {
+  int iVar3;
   int iVar1;
   int iVar2;
   CVector3i local_1c;
@@ -26,9 +27,9 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004ef3a0(CGroun
             (&g_RenderVertexBuffer[iVar1].projected_vertex,&local_1c);
   g_RenderVertexBuffer[iVar1].r = 0x3fff;
   g_RenderVertexBuffer[iVar1].g = 0x3fff;
-  iVar2 = g_RenderVertexBuffer[iVar1].projected_vertex.transformed_z;
+  iVar3 = g_RenderVertexBuffer[iVar1].projected_vertex.transformed_z;
   g_RenderVertexBuffer[iVar1].b = 0x3fff;
-  if (iVar2 < 0) {
+  if (iVar3 < 0) {
     g_RenderVertexBuffer[iVar1].a = 0;
   }
   else {

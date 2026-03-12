@@ -14,9 +14,6 @@ void __cdecl core_dcamera_cpp_transformAndStoreVertex_FUN_00452110(int vertex_in
   float local_c;
   float local_8;
   
-  local_10 = x;
-  local_c = y;
-  local_8 = z;
   local_1c.x = (int)ROUND(x * 256.0f);
   local_1c.y = (int)ROUND(y * 256.0f);
   local_1c.z = (int)ROUND(z * 256.0f);

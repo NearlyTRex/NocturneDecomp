@@ -13,16 +13,17 @@
 ; int              Stack[0x1c]:4   render_height
 ; float            Stack[0x20]:4   projection_scale
 ; Local Variables:
-; undefined4       Stack[-0x2670]:4  local_2670
-; undefined1       Stack[-0xf0]:1  local_f0
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined1       Stack[-0x50]:1  local_50
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; undefined4[1200] Stack[-0x2670]:4800  local_2670
+; undefined4[1200] Stack[-0x13b0]:4800  auStack_13b0
+; char[80]         Stack[-0xf0]:80  local_f0
+; char[80]         Stack[-0xa0]:80  local_a0
+; CMatrix3x3f      Stack[-0x50]:36  local_50
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; void *           Stack[-0x20]:4  local_20
+; void *           Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; _FILE *          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340 at 0057d4a0

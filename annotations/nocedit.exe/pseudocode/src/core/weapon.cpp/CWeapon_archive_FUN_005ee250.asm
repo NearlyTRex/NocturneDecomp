@@ -6,7 +6,7 @@
 ; Parameters:
 ; CWeapon *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x104]:1  local_104
+; char[256]        Stack[-0x104]:256  local_104
 ;
 ; XREF[2]:
 ;   core_melee.cpp_CMelee_archive_FUN_0050e920 at 0050e926

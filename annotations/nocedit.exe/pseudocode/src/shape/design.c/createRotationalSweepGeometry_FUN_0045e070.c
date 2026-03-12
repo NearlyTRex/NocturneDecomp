@@ -6,13 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 void __cdecl shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
 
 {
   uint uVar1;
+  uint uVar2;
   float10 fVar2;
+  float10 fVar3;
   char local_c4 [80];
   int local_74 [2];
   byte local_6c [4];
@@ -52,8 +52,8 @@ void __cdecl shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
   local_4c = atoi(local_c4);
   engine_2d_c_drawText_FUN_00401fd0("I)nside, O)utside, B)oth ?",0,0x21);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-  local_14 = toupper(uVar1 & 0xff);
+  uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
+  local_14 = toupper(uVar2 & 0xff);
   if (((0 < local_50) && (local_50 < 7)) && (0 < local_4c)) {
     local_48 = (float)360 / (float)local_4c;
     local_44 = local_48;
@@ -62,9 +62,9 @@ void __cdecl shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
       fVar2 = (float10)fsin((float10)local_44 * (float10)0.0055555555555555497 *
                             (float10)3.1415926535000001);
       local_34 = (float)fVar2;
-      fVar2 = (float10)fcos((float10)local_44 * (float10)0.0055555555555555497 *
+      fVar3 = (float10)fcos((float10)local_44 * (float10)0.0055555555555555497 *
                             (float10)3.1415926535000001);
-      local_30 = (float)fVar2;
+      local_30 = (float)fVar3;
       for (local_3c = 1; local_3c < local_50; local_3c = local_3c + 1) {
         if (local_54 == 0x58) {
           local_20 = g_LoadedVertices[local_74[local_3c]].vertex.y -

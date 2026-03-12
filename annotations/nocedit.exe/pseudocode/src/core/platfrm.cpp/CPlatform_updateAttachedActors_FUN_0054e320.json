@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 79,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 48,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 118
+    "total_lines": 122
   },
   "cross_references": [
     {
@@ -121,43 +121,43 @@
         "is_param": false,
         "name": "local_bc",
         "offset": -188,
-        "size": 1,
-        "type": "undefined1"
+        "size": 48,
+        "type": "CMatrix3x4f"
       },
       {
         "is_param": false,
         "name": "local_8c",
         "offset": -140,
-        "size": 1,
-        "type": "undefined1"
+        "size": 48,
+        "type": "CMatrix3x4f"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
-        "size": 1,
-        "type": "undefined1"
+        "size": 48,
+        "type": "CMatrix3x4f"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SPlatformAttachment *"
       },
       {
         "is_param": true,
@@ -171,26 +171,26 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(CMatrix3x4f *)((int)",
-      "severity": "mild",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 34,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 35,
+      "match": "(CMatrix3x4f *)((int)",
+      "severity": "mild",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar6 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
       "match": "(CPlatform *)((int)",
       "severity": "mild",
-      "text": "this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);",
+      "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
       "type": "pointer_cast"
     }
   ]

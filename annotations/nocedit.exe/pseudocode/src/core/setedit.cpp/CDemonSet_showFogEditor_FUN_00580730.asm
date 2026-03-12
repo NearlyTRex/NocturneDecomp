@@ -9,20 +9,19 @@
 ; undefined8       Stack[-0x600]:8  local_600
 ; undefined8       Stack[-0x5f8]:8  local_5f8
 ; undefined8       Stack[-0x5f0]:8  local_5f0
-; undefined1       Stack[-0x5e8]:1  local_5e8
-; undefined1       Stack[-0x240]:1  local_240
-; undefined1       Stack[-0x140]:1  local_140
-; undefined1       Stack[-0x13f]:1  local_13f
-; undefined8       Stack[-0x40]:8  local_40
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; CPickList        Stack[-0x5e8]:936  local_5e8
+; char[256]        Stack[-0x240]:256  local_240
+; char[256]        Stack[-0x140]:256  local_140
+; double           Stack[-0x40]:8  local_40
+; int *            Stack[-0x38]:4  local_38
+; char *           Stack[-0x34]:4  local_34
+; C3DSCamera *     Stack[-0x30]:4  local_30
+; uint             Stack[-0x2c]:4  local_2c
+; C3DSCamera *     Stack[-0x28]:4  local_28
+; SFog *           Stack[-0x24]:4  local_24
+; SFog *           Stack[-0x20]:4  local_20
+; SFog *           Stack[-0x1c]:4  local_1c
+; CVector3f *      Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584b9e

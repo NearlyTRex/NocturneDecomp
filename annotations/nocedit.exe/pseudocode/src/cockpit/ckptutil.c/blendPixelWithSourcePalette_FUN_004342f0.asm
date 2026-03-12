@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
-; undefined8       Stack[-0x34]:8  local_34
-; undefined8       Stack[-0x2c]:8  local_2c
+; uint             Stack[-0x34]:4  local_34
+; uint             Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;

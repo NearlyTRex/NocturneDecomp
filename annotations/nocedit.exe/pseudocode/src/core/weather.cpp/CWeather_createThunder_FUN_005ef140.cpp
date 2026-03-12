@@ -9,8 +9,8 @@
 void __cdecl core_weather_cpp_CWeather_createThunder_FUN_005ef140(CWeather *this_ptr)
 
 {
-  CSound *this_ptr_00;
   float fVar1;
+  CSound *this_ptr_00;
   
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,20.0);
   this_ptr_00 = g_CSoundPtr;

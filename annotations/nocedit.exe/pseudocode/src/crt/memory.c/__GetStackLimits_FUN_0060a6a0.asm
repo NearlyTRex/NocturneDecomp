@@ -7,8 +7,8 @@
 ; ThreadData *     Stack[0x4]:4   pStackBound
 ; uint *           Stack[0x8]:4   pHeapBound
 ; Local Variables:
-; undefined1       Stack[-0x28]:1  local_28
-; undefined1       Stack[-0xc]:1  local_c
+; _MEMORY_BASIC_INFORMATION Stack[-0x28]:28  local_28
+; undefined1[4]    Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
 ;   crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8 at 006026ce

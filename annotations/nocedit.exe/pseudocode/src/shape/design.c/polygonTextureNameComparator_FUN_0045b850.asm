@@ -7,7 +7,7 @@
 ; SShapeEditorPolygon * Stack[0x4]:4   polygon1
 ; SShapeEditorPolygon * Stack[0x8]:4   polygon2
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_sortPolygonsByTexture_FUN_0045b8b0 at 0045b90e

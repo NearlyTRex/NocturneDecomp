@@ -6,12 +6,11 @@
 ; Parameters:
 ; CConsole *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
+; CConsole *       Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined1       Stack[-0x14]:1  local_14
-; undefined1       Stack[-0x13]:1  local_13
+; int              Stack[-0x18]:4  local_18
+; char[4]          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004daad0

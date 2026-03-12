@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   start_frame
 ; float            Stack[0xc]:4   end_frame
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
+; float            Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;

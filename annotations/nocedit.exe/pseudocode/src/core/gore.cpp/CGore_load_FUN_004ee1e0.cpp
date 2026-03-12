@@ -9,6 +9,7 @@
 int __cdecl core_gore_cpp_CGore_load_FUN_004ee1e0(CGore *this_ptr,_FILE *file_handle)
 
 {
+  int iVar3;
   CBloodPool *this_ptr_00;
   CBloodSplat *this_ptr_01;
   int iVar1;
@@ -27,14 +28,14 @@ int __cdecl core_gore_cpp_CGore_load_FUN_004ee1e0(CGore *this_ptr,_FILE *file_ha
     } while (iVar1 < g_BloodPoolCount);
   }
   iVar2 = 0;
-  iVar1 = _fscanf(file_handle,"%d\n",&g_BloodSplatCount);
+  iVar3 = _fscanf(file_handle,"%d\n",&g_BloodSplatCount);
   if (0 < g_BloodSplatCount) {
     this_ptr_01 = g_BloodSplats;
     do {
       iVar2 = iVar2 + 1;
-      iVar1 = core_gore_cpp_CBloodSplat_load_FUN_004ecb00(this_ptr_01,file_handle);
+      iVar3 = core_gore_cpp_CBloodSplat_load_FUN_004ecb00(this_ptr_01,file_handle);
       this_ptr_01 = this_ptr_01 + 1;
     } while (iVar2 < g_BloodSplatCount);
   }
-  return iVar1;
+  return iVar3;
 }

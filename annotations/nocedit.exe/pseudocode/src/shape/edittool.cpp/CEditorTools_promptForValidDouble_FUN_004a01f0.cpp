@@ -10,6 +10,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CE
 
 {
   int iVar1;
+  int iVar2;
   uint local_48;
   uint uStack_44;
   ulonglong local_40;
@@ -37,8 +38,8 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0(CE
       if (iVar1 == 0) {
         return 0;
       }
-      iVar1 = sscanf(local_30,"%lf",&local_48);
-      if (iVar1 == 1) break;
+      iVar2 = sscanf(local_30,"%lf",&local_48);
+      if (iVar2 == 1) break;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (this_ptr,"Please enter a valid number.");
       min_value = local_40;

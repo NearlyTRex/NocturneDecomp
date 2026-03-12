@@ -4,8 +4,8 @@
 ; void __cdecl crt_io_c_parseFileInfo_FUN_0060e3b0(void)
 ;
 ; Local Variables:
-; undefined        Stack[-0x20]:1  local_20
-; undefined4       Stack[-0x14]:4  local_14
+; char[12]         Stack[-0x20]:12  local_20
+; long             Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   crt_environ.c_staticInit_FUN_0060c650 at 0060c729

@@ -4,10 +4,13 @@
 ; int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_005adff0(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x20]:1  local_20
-; undefined1       Stack[-0x1c]:1  local_1c
-; undefined1       Stack[-0x18]:1  local_18
-; undefined1       Stack[-0x14]:1  local_14
+; char[400]        Stack[-0x360]:400  acStack_360
+; char[400]        Stack[-0x1d0]:400  acStack_1d0
+; LPVOID[8]        Stack[-0x40]:32  apvStack_40
+; LPVOID           Stack[-0x20]:4  local_20
+; LPVOID           Stack[-0x1c]:4  local_1c
+; DWORD            Stack[-0x18]:4  local_18
+; DWORD            Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50 at 005aee0f

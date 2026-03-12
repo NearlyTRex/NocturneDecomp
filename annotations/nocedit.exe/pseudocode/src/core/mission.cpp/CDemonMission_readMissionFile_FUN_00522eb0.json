@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 34,
-        "line": 76,
+        "line": 82,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[256]' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 18,
-        "line": 212,
+        "line": 220,
         "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CHero *'"
       }
     ],
@@ -19,18 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 285,
+    "complexity_score": 278,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 39,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 245,
-    "suspect_count": 3,
+    "pseudocode_lines": 253,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast",
       "undefined_data"
     ],
-    "total_lines": 824
+    "total_lines": 832
   },
   "cross_references": [
     {
@@ -413,78 +412,71 @@
         "is_param": false,
         "name": "local_158",
         "offset": -344,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_f4",
         "offset": -244,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_f3",
-        "offset": -243,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_90",
         "offset": -144,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonActor *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -511,24 +503,16 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar10 = (char *)((int)pcVar10 + ((uint)bVar11 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 141,
       "match": "DAT_0067d5c0",
       "severity": "mild",
-      "text": "puVar8 = &DAT_0067d5c0;",
+      "text": "puVar5 = &DAT_0067d5c0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 141,
+      "line": 148,
       "match": "DAT_0067d628",
       "severity": "mild",
       "text": "puVar8 = &DAT_0067d628;",

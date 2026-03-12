@@ -9,10 +9,10 @@
 void __cdecl core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(CScript *this_ptr)
 
 {
-  uint *puVar1;
   int iVar2;
   int iVar3;
   SScriptXRef SStack_124;
+  uint *puVar1;
   
   this_ptr->xref_count = 0;
   core_script_cpp_CScript_buildParsedLines_FUN_0055a370(this_ptr);

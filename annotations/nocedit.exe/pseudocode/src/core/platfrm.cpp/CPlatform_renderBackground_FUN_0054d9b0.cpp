@@ -10,6 +10,7 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform 
 
 {
   int iVar1;
+  int iVar2;
   CBoundingBox3D *this_ptr_00;
   CBoundingBox3D local_2c;
   CVector3i CStack_14;
@@ -29,19 +30,19 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform 
        (this_ptr->state == 4)) {
       return;
     }
-    iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+    iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->to_end_event);
-    if (iVar1 != 0) {
+    if (iVar2 != 0) {
       return;
     }
-    iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+    iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->to_start_event);
-    if (iVar1 != 0) {
+    if (iVar2 != 0) {
       return;
     }
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-  if (iVar1 == 0) {
+  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  if (iVar2 == 0) {
     if (this_ptr->render_in_background_when_not_moving_flag == 0) {
       this_ptr->one_shot = 3;
     }
@@ -51,11 +52,11 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_0054d9b0(CPlatform 
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_2c);
-  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-  if (iVar1 != 0) {
+  iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
+  if (iVar2 != 0) {
     if ((this_ptr->recompute_fog == 0) ||
-       (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
-       iVar1 != 0)) {
+       (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+       iVar2 != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                 (&this_ptr->model,0.0,-1);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);

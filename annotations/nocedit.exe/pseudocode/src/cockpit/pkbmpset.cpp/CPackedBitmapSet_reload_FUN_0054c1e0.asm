@@ -8,12 +8,12 @@
 ; int              Stack[0x8]:4   apply_palette_flag
 ; int              Stack[0xc]:4   bitmap_index
 ; Local Variables:
-; undefined        Stack[-0x148]:1  local_148
-; undefined        Stack[-0xe4]:1  local_e4
-; undefined        Stack[-0x80]:1  local_80
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[100]        Stack[-0x148]:100  local_148
+; char[100]        Stack[-0xe4]:100  local_e4
+; char[100]        Stack[-0x80]:100  local_80
+; char *           Stack[-0x1c]:4  local_1c
+; uchar *          Stack[-0x18]:4  local_18
+; _FILE *          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadByFilenameAndIndex_FUN_0054c500 at 0054c5bd

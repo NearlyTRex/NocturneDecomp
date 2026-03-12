@@ -13,8 +13,8 @@
 ; int              Stack[0x1c]:4   line_number
 ; int              Stack[0x20]:4   show_progress
 ; Local Variables:
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined4       Stack[-0x14]:4  local_14
+; char[200]        Stack[-0xdc]:200  local_dc
+; CBitmap *        Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_cramTextureList_FUN_0046bb80 at 0046d2e0

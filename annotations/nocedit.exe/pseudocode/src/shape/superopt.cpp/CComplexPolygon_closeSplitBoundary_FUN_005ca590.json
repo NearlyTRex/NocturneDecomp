@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 134,
+        "line": 146,
         "message": "assigning to 'uint *' (aka 'unsigned int *') from incompatible type 'void *'"
       }
     ],
@@ -13,19 +13,19 @@
   },
   "complexity": {
     "assembly_lines": 1007,
-    "complexity_score": 1660,
+    "complexity_score": 1674,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 495,
+    "pseudocode_lines": 509,
     "suspect_count": 115,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation"
     ],
-    "total_lines": 1502
+    "total_lines": 1516
   },
   "cross_references": [
     {
@@ -196,22 +196,43 @@
         "is_param": false,
         "name": "local_318",
         "offset": -792,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_314",
+        "offset": -788,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_310",
         "offset": -784,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_30c",
+        "offset": -780,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_308",
         "offset": -776,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_304",
+        "offset": -772,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
@@ -253,483 +274,665 @@
         "name": "local_2d8",
         "offset": -728,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_2d0",
         "offset": -720,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_2c8",
         "offset": -712,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_2c0",
         "offset": -704,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_2bc",
+        "offset": -700,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_2b8",
         "offset": -696,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_2b4",
+        "offset": -692,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_2b0",
         "offset": -688,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_2a8",
         "offset": -680,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_2a0",
         "offset": -672,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_298",
         "offset": -664,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_290",
         "offset": -656,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_288",
         "offset": -648,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_280",
         "offset": -640,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_278",
         "offset": -632,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_270",
         "offset": -624,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_268",
         "offset": -616,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_260",
         "offset": -608,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_25c",
+        "offset": -604,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_258",
         "offset": -600,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_254",
+        "offset": -596,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_250",
         "offset": -592,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_24c",
+        "offset": -588,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_248",
         "offset": -584,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_244",
+        "offset": -580,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_240",
         "offset": -576,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_23c",
+        "offset": -572,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_238",
         "offset": -568,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_234",
+        "offset": -564,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_230",
         "offset": -560,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_228",
         "offset": -552,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_220",
         "offset": -544,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_218",
         "offset": -536,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_210",
         "offset": -528,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_208",
         "offset": -520,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_200",
         "offset": -512,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_1f8",
         "offset": -504,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_1f0",
         "offset": -496,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_1e8",
         "offset": -488,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1e4",
+        "offset": -484,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_1e0",
         "offset": -480,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1dc",
+        "offset": -476,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_1d8",
         "offset": -472,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1d4",
+        "offset": -468,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_1d0",
         "offset": -464,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1cc",
+        "offset": -460,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_1c8",
         "offset": -456,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1c4",
+        "offset": -452,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_1c0",
         "offset": -448,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1bc",
+        "offset": -444,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_1b8",
         "offset": -440,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1b4",
+        "offset": -436,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_1b0",
         "offset": -432,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1ac",
+        "offset": -428,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_1a8",
         "offset": -424,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1a4",
+        "offset": -420,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_1a0",
         "offset": -416,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_198",
         "offset": -408,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_190",
         "offset": -400,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_188",
         "offset": -392,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_180",
         "offset": -384,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_178",
         "offset": -376,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_170",
         "offset": -368,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_16c",
+        "offset": -364,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_168",
         "offset": -360,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_164",
+        "offset": -356,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_160",
         "offset": -352,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_15c",
+        "offset": -348,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_158",
         "offset": -344,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_154",
+        "offset": -340,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_150",
         "offset": -336,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_14c",
+        "offset": -332,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_148",
         "offset": -328,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_144",
+        "offset": -324,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_140",
         "offset": -320,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_138",
         "offset": -312,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_130",
         "offset": -304,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_128",
         "offset": -296,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_120",
         "offset": -288,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_118",
         "offset": -280,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_110",
         "offset": -272,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_108",
         "offset": -264,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_100",
         "offset": -256,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_f8",
         "offset": -248,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_f4",
+        "offset": -244,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_f0",
         "offset": -240,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_ec",
+        "offset": -236,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_e8",
         "offset": -232,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_e4",
+        "offset": -228,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -781,130 +984,90 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 124,
+      "line": 136,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_30c,local_310));",
+      "text": "dVar13 = __BITCAST_DOUBLE(CONCAT44(uStack_30c,local_310));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
+      "line": 153,
       "match": "SQRT",
       "severity": "mild",
-      "text": "dVar2 = SQRT(dVar3 * dVar3 + dVar4 * dVar4 + dVar2 * dVar2);",
+      "text": "dVar9 = SQRT(dVar3 * dVar3 + dVar4 * dVar4 + dVar2 * dVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 142,
+      "line": 154,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_308 = SUB84(__BITCAST_UINT64(dVar2),0);",
+      "text": "local_308 = SUB84(__BITCAST_UINT64(dVar9),0);",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 142,
+      "line": 154,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_308 = SUB84(__BITCAST_UINT64(dVar2),0);",
+      "text": "local_308 = SUB84(__BITCAST_UINT64(dVar9),0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 156,
+      "line": 168,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_314,local_318)) < dVar2) goto LAB_005ca66d;",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_314,local_318)) < dVar9) goto LAB_005ca66d;",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 178,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_244 = *(uint *)((int)&edges[uVar12].start_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 180,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_23c = *(uint *)((int)&edges[uVar12].start_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 182,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_234 = *(uint *)((int)&edges[uVar12].start_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 186,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_244 = *(uint *)((int)&edges[uVar12].end_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 188,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_23c = *(uint *)((int)&edges[uVar12].end_pos.y + 4);",
-      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 190,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_234 = *(uint *)((int)&edges[uVar12].end_pos.z + 4);",
+      "text": "uStack_244 = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
+      "line": 192,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_1cc = *(uint *)((int)&edges[uVar12].start_pos.x + 4);",
+      "text": "uStack_23c = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 201,
+      "line": 194,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_1c4 = *(uint *)((int)&edges[uVar12].start_pos.y + 4);",
+      "text": "uStack_234 = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 203,
+      "line": 198,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_1bc = *(uint *)((int)&edges[uVar12].start_pos.z + 4);",
+      "text": "uStack_244 = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 207,
+      "line": 200,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_1cc = *(uint *)((int)&edges[uVar12].end_pos.x + 4);",
+      "text": "uStack_23c = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 209,
+      "line": 202,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_1c4 = *(uint *)((int)&edges[uVar12].end_pos.y + 4);",
+      "text": "uStack_234 = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -912,36 +1075,68 @@
       "line": 211,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_1bc = *(uint *)((int)&edges[uVar12].end_pos.z + 4);",
+      "text": "uStack_1cc = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 213,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_1c4 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 215,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_1bc = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 219,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_1cc = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 221,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_1c4 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 223,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_1bc = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 213,
+      "line": 225,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar3 = __BITCAST_DOUBLE(CONCAT44(uStack_244,local_248)) - __BITCAST_DOUBLE(CONCAT44(uStack_1cc,local_1d0));",
+      "text": "dVar10 = __BITCAST_DOUBLE(CONCAT44(uStack_244,local_248)) - __BITCAST_DOUBLE(CONCAT44(uStack_1cc,local_1d0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 213,
+      "line": 225,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar3 = __BITCAST_DOUBLE(CONCAT44(uStack_244,local_248)) - __BITCAST_DOUBLE(CONCAT44(uStack_1cc,local_1d0));",
+      "text": "dVar10 = __BITCAST_DOUBLE(CONCAT44(uStack_244,local_248)) - __BITCAST_DOUBLE(CONCAT44(uStack_1cc,local_1d0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 214,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar5 = __BITCAST_DOUBLE(CONCAT44(uStack_23c,local_240)) - __BITCAST_DOUBLE(CONCAT44(uStack_1c4,local_1c8));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 214,
+      "line": 226,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar5 = __BITCAST_DOUBLE(CONCAT44(uStack_23c,local_240)) - __BITCAST_DOUBLE(CONCAT44(uStack_1c4,local_1c8));",
@@ -949,135 +1144,143 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 215,
+      "line": 226,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar4 = __BITCAST_DOUBLE(CONCAT44(uStack_234,local_238)) - __BITCAST_DOUBLE(CONCAT44(uStack_1bc,local_1c0));",
+      "text": "dVar5 = __BITCAST_DOUBLE(CONCAT44(uStack_23c,local_240)) - __BITCAST_DOUBLE(CONCAT44(uStack_1c4,local_1c8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 215,
+      "line": 227,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar4 = __BITCAST_DOUBLE(CONCAT44(uStack_234,local_238)) - __BITCAST_DOUBLE(CONCAT44(uStack_1bc,local_1c0));",
+      "text": "dVar11 = __BITCAST_DOUBLE(CONCAT44(uStack_234,local_238)) - __BITCAST_DOUBLE(CONCAT44(uStack_1bc,local_1c0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 216,
+      "line": 227,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "dVar11 = __BITCAST_DOUBLE(CONCAT44(uStack_234,local_238)) - __BITCAST_DOUBLE(CONCAT44(uStack_1bc,local_1c0));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 228,
       "match": "SQRT",
       "severity": "mild",
-      "text": "dVar3 = SQRT(dVar4 * dVar4 + dVar5 * dVar5 + dVar3 * dVar3);",
+      "text": "dVar10 = SQRT(dVar11 * dVar11 + dVar5 * dVar5 + dVar10 * dVar10);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 236,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1e4 = *(uint *)((int)&edges[uVar12].start_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 238,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1dc = *(uint *)((int)&edges[uVar12].start_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 240,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1d4 = *(uint *)((int)&edges[uVar12].start_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 244,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1e4 = *(uint *)((int)&edges[uVar12].end_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 246,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_1dc = *(uint *)((int)&edges[uVar12].end_pos.y + 4);",
-      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 248,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_1d4 = *(uint *)((int)&edges[uVar12].end_pos.z + 4);",
+      "text": "uStack_1e4 = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 250,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_1dc = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 252,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_1d4 = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 256,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_1e4 = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 258,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_1dc = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 260,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_1d4 = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 250,
+      "line": 262,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar3 = __BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) - __BITCAST_DOUBLE(CONCAT44(uStack_1e4,local_1e8));",
+      "text": "dVar10 = __BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) - __BITCAST_DOUBLE(CONCAT44(uStack_1e4,local_1e8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 250,
+      "line": 262,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar3 = __BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) - __BITCAST_DOUBLE(CONCAT44(uStack_1e4,local_1e8));",
+      "text": "dVar10 = __BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) - __BITCAST_DOUBLE(CONCAT44(uStack_1e4,local_1e8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 251,
+      "line": 263,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar5 = __BITCAST_DOUBLE(CONCAT44(uStack_14c,local_150)) - __BITCAST_DOUBLE(CONCAT44(uStack_1dc,local_1e0));",
+      "text": "dVar12 = __BITCAST_DOUBLE(CONCAT44(uStack_14c,local_150)) - __BITCAST_DOUBLE(CONCAT44(uStack_1dc,local_1e0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 251,
+      "line": 263,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar5 = __BITCAST_DOUBLE(CONCAT44(uStack_14c,local_150)) - __BITCAST_DOUBLE(CONCAT44(uStack_1dc,local_1e0));",
+      "text": "dVar12 = __BITCAST_DOUBLE(CONCAT44(uStack_14c,local_150)) - __BITCAST_DOUBLE(CONCAT44(uStack_1dc,local_1e0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 252,
+      "line": 264,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar4 = __BITCAST_DOUBLE(CONCAT44(uStack_144,local_148)) - __BITCAST_DOUBLE(CONCAT44(uStack_1d4,local_1d8));",
+      "text": "dVar11 = __BITCAST_DOUBLE(CONCAT44(uStack_144,local_148)) - __BITCAST_DOUBLE(CONCAT44(uStack_1d4,local_1d8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 252,
+      "line": 264,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar4 = __BITCAST_DOUBLE(CONCAT44(uStack_144,local_148)) - __BITCAST_DOUBLE(CONCAT44(uStack_1d4,local_1d8));",
+      "text": "dVar11 = __BITCAST_DOUBLE(CONCAT44(uStack_144,local_148)) - __BITCAST_DOUBLE(CONCAT44(uStack_1d4,local_1d8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 253,
+      "line": 265,
       "match": "SQRT",
       "severity": "mild",
-      "text": "dVar3 = SQRT(dVar4 * dVar4 + dVar5 * dVar5 + dVar3 * dVar3);",
+      "text": "dVar10 = SQRT(dVar11 * dVar11 + dVar12 * dVar12 + dVar10 * dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 266,
+      "line": 278,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_200 = __BITCAST_DOUBLE(CONCAT44(uStack_1b4,local_1b8)) - __BITCAST_DOUBLE(CONCAT44(uStack_154,local_158));",
@@ -1085,7 +1288,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 266,
+      "line": 278,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_200 = __BITCAST_DOUBLE(CONCAT44(uStack_1b4,local_1b8)) - __BITCAST_DOUBLE(CONCAT44(uStack_154,local_158));",
@@ -1093,7 +1296,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 267,
+      "line": 279,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_1f8 = __BITCAST_DOUBLE(CONCAT44(uStack_1ac,local_1b0)) - __BITCAST_DOUBLE(CONCAT44(uStack_14c,local_150));",
@@ -1101,7 +1304,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 267,
+      "line": 279,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_1f8 = __BITCAST_DOUBLE(CONCAT44(uStack_1ac,local_1b0)) - __BITCAST_DOUBLE(CONCAT44(uStack_14c,local_150));",
@@ -1109,7 +1312,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 268,
+      "line": 280,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_1f0 = __BITCAST_DOUBLE(CONCAT44(uStack_1a4,local_1a8)) - __BITCAST_DOUBLE(CONCAT44(uStack_144,local_148));",
@@ -1117,7 +1320,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 268,
+      "line": 280,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_1f0 = __BITCAST_DOUBLE(CONCAT44(uStack_1a4,local_1a8)) - __BITCAST_DOUBLE(CONCAT44(uStack_144,local_148));",
@@ -1125,31 +1328,31 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 273,
+      "line": 285,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar15 = (double *)((int)pdVar15 + (uint)bVar17 * -8 + 4);",
+      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 274,
+      "line": 286,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar16 = (double *)((int)pdVar16 + (uint)bVar17 * -8 + 4);",
+      "text": "pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 276,
+      "line": 288,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar2 = (__BITCAST_DOUBLE(CONCAT44(uStack_314,local_318)) * 10) /",
+      "text": "dVar9 = (__BITCAST_DOUBLE(CONCAT44(uStack_314,local_318)) * 10) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 277,
+      "line": 289,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(local_190 * local_190 + local_1a0 * local_1a0 + local_198 * local_198);",
@@ -1157,106 +1360,74 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 282,
+      "line": 294,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "local_128 = __BITCAST_DOUBLE(CONCAT44(uStack_1b4,local_1b8)) + local_1a0 * dVar2;",
+      "text": "local_128 = __BITCAST_DOUBLE(CONCAT44(uStack_1b4,local_1b8)) + local_1a0 * dVar9;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 283,
+      "line": 295,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "local_120 = __BITCAST_DOUBLE(CONCAT44(uStack_1ac,local_1b0)) + local_198 * dVar2;",
+      "text": "local_120 = __BITCAST_DOUBLE(CONCAT44(uStack_1ac,local_1b0)) + local_198 * dVar9;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 284,
+      "line": 296,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "local_118 = __BITCAST_DOUBLE(CONCAT44(uStack_1a4,local_1a8)) + local_190 * dVar2;",
+      "text": "local_118 = __BITCAST_DOUBLE(CONCAT44(uStack_1a4,local_1a8)) + local_190 * dVar9;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 289,
+      "line": 301,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar15 = (double *)((int)pdVar15 + (uint)bVar17 * -8 + 4);",
+      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 290,
+      "line": 302,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar16 = (double *)((int)pdVar16 + (uint)bVar17 * -8 + 4);",
+      "text": "pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 305,
+      "line": 317,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_2bc = *(uint *)((int)&edges[uVar12].end_pos.x + 4);",
+      "text": "uStack_2bc = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 307,
+      "line": 319,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_2b4 = *(uint *)((int)&edges[uVar12].end_pos.y + 4);",
+      "text": "uStack_2b4 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 309,
+      "line": 321,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar11 = *(uint *)((int)&edges[uVar12].end_pos.z + 4);",
+      "text": "uVar11 = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 316,
+      "line": 328,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_2bc = *(uint *)((int)&edges[uVar12].start_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 318,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_2b4 = *(uint *)((int)&edges[uVar12].start_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 320,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uVar11 = *(uint *)((int)&edges[uVar12].start_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 327,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_f4 = *(uint *)((int)&edges[uVar1].end_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 329,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_ec = *(uint *)((int)&edges[uVar1].end_pos.y + 4);",
+      "text": "uStack_2bc = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1264,23 +1435,31 @@
       "line": 330,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_e4 = *(uint *)((int)&edges[uVar1].end_pos.z + 4);",
+      "text": "uStack_2b4 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 338,
+      "line": 332,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_f4 = *(uint *)((int)&edges[uVar1].start_pos.x + 4);",
+      "text": "uVar11 = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 340,
+      "line": 339,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_ec = *(uint *)((int)&edges[uVar1].start_pos.y + 4);",
+      "text": "uStack_f4 = *(uint *)((int)&edges[uVar1].end_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 341,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_ec = *(uint *)((int)&edges[uVar1].end_pos.y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1288,12 +1467,36 @@
       "line": 342,
       "match": "(uint *)((int)",
       "severity": "mild",
+      "text": "uStack_e4 = *(uint *)((int)&edges[uVar1].end_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 350,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_f4 = *(uint *)((int)&edges[uVar1].start_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 352,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_ec = *(uint *)((int)&edges[uVar1].start_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 354,
+      "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "uStack_e4 = *(uint *)((int)&edges[uVar1].start_pos.z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 344,
+      "line": 356,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_290 = __BITCAST_DOUBLE(CONCAT44(uStack_2bc,local_2c0)) - local_2a8;",
@@ -1301,7 +1504,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 345,
+      "line": 357,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_288 = __BITCAST_DOUBLE(CONCAT44(uStack_2b4,local_2b8)) - local_2a0;",
@@ -1309,7 +1512,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 346,
+      "line": 358,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_280 = __BITCAST_DOUBLE(CONCAT44(uVar11,local_2b0)) - local_298;",
@@ -1317,23 +1520,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 351,
+      "line": 363,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar15 = (double *)((int)pdVar15 + (uint)bVar17 * -8 + 4);",
+      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 352,
+      "line": 364,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar16 = (double *)((int)pdVar16 + (uint)bVar17 * -8 + 4);",
+      "text": "pdVar18 = (double *)((int)pdVar18 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 354,
+      "line": 366,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_218 = __BITCAST_DOUBLE(CONCAT44(uStack_f4,local_f8)) - local_2d8;",
@@ -1341,7 +1544,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 355,
+      "line": 367,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_210 = __BITCAST_DOUBLE(CONCAT44(uStack_ec,local_f0)) - local_2d0;",
@@ -1349,7 +1552,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 356,
+      "line": 368,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_208 = __BITCAST_DOUBLE(CONCAT44(uStack_e4,local_e8)) - local_2c8;",
@@ -1357,290 +1560,218 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 361,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar15 = (double *)((int)pdVar15 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 362,
+      "line": 372,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar16 = (double *)((int)pdVar16 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 364,
-      "match": "SQRT",
+      "description": "Complex pointer cast",
+      "line": 373,
+      "match": "(double *)((int)",
       "severity": "mild",
-      "text": "dVar2 = dVar8 / SQRT(local_220 * local_220 + local_230 * local_230 + local_228 * local_228",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 369,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "dVar2 = dVar8 / SQRT(local_178 * local_178 + local_188 * local_188 + local_180 * local_180",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 377,
-      "match": "SQRT",
-      "severity": "mild",
-      "text": "if (SQRT(dVar2 * dVar2 + dVar5 * dVar5 + dVar4 * dVar4) <",
-      "type": "decompiler_intrinsic"
+      "text": "pdVar15 = (double *)((int)pdVar15 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 378,
       "match": "SQRT",
       "severity": "mild",
-      "text": "SQRT(dVar6 * dVar6 + dVar7 * dVar7 + dVar3 * dVar3)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 405,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_25c = *(uint *)((int)&edges[uVar12].start_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 407,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_254 = *(uint *)((int)&edges[uVar12].start_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 409,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_24c = *(uint *)((int)&edges[uVar12].start_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 413,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_25c = *(uint *)((int)&edges[uVar12].end_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 415,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_254 = *(uint *)((int)&edges[uVar12].end_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 417,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_24c = *(uint *)((int)&edges[uVar12].end_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 422,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_16c = *(uint *)((int)&edges[uVar12].start_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 424,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_164 = *(uint *)((int)&edges[uVar12].start_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 426,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_15c = *(uint *)((int)&edges[uVar12].start_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 430,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_16c = *(uint *)((int)&edges[uVar12].end_pos.x + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 432,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_164 = *(uint *)((int)&edges[uVar12].end_pos.y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 434,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_15c = *(uint *)((int)&edges[uVar12].end_pos.z + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 436,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_16c,local_170)) - __BITCAST_DOUBLE(CONCAT44(uStack_25c,local_260));",
+      "text": "dVar9 = dVar13 / SQRT(local_220 * local_220 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 436,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_16c,local_170)) - __BITCAST_DOUBLE(CONCAT44(uStack_25c,local_260));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 437,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar3 = __BITCAST_DOUBLE(CONCAT44(uStack_164,local_168)) - __BITCAST_DOUBLE(CONCAT44(uStack_254,local_258));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 437,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar3 = __BITCAST_DOUBLE(CONCAT44(uStack_164,local_168)) - __BITCAST_DOUBLE(CONCAT44(uStack_254,local_258));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 438,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) - __BITCAST_DOUBLE(CONCAT44(uStack_24c,local_250));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 438,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) - __BITCAST_DOUBLE(CONCAT44(uStack_24c,local_250));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 439,
+      "line": 383,
       "match": "SQRT",
       "severity": "mild",
-      "text": "if (9.9999999999999995e-08 <= SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar8 * dVar8)) {",
+      "text": "dVar9 = dVar13 / SQRT(local_178 * local_178 +",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 391,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "if (SQRT(dVar9 * dVar9 + dVar12 * dVar12 + dVar11 * dVar11) <",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 392,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "SQRT(dVar6 * dVar6 + dVar7 * dVar7 + dVar10 * dVar10)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 454,
+      "line": 419,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar12].start_pos.x + 4) =",
+      "text": "uStack_25c = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 455,
+      "line": 421,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar1].end_pos.x + 4);",
+      "text": "uStack_254 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 457,
+      "line": 423,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar12].start_pos.y + 4) =",
+      "text": "uStack_24c = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 458,
+      "line": 427,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar1].end_pos.y + 4);",
+      "text": "uStack_25c = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 460,
+      "line": 429,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar12].start_pos.z + 4) =",
+      "text": "uStack_254 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 461,
+      "line": 431,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar1].end_pos.z + 4);",
+      "text": "uStack_24c = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 463,
+      "line": 436,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)edges[uVar12].start_uv + 4) =",
+      "text": "uStack_16c = *(uint *)((int)&edges[uVar2].start_pos.x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 464,
+      "line": 438,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)edges[uVar1].end_uv + 4);",
+      "text": "uStack_164 = *(uint *)((int)&edges[uVar2].start_pos.y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 466,
+      "line": 440,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)edges[uVar12].start_uv + 0xc) =",
+      "text": "uStack_15c = *(uint *)((int)&edges[uVar2].start_pos.z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 467,
+      "line": 444,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)edges[uVar1].end_uv + 0xc);",
+      "text": "uStack_16c = *(uint *)((int)&edges[uVar2].end_pos.x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 470,
+      "line": 446,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar12].end_pos.x + 4) =",
+      "text": "uStack_164 = *(uint *)((int)&edges[uVar2].end_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 448,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_15c = *(uint *)((int)&edges[uVar2].end_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 450,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_16c,local_170)) - __BITCAST_DOUBLE(CONCAT44(uStack_25c,local_260));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 450,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_16c,local_170)) - __BITCAST_DOUBLE(CONCAT44(uStack_25c,local_260));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 451,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "dVar9 = __BITCAST_DOUBLE(CONCAT44(uStack_164,local_168)) - __BITCAST_DOUBLE(CONCAT44(uStack_254,local_258));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 451,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "dVar9 = __BITCAST_DOUBLE(CONCAT44(uStack_164,local_168)) - __BITCAST_DOUBLE(CONCAT44(uStack_254,local_258));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 452,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "dVar13 = __BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) - __BITCAST_DOUBLE(CONCAT44(uStack_24c,local_250));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 452,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "dVar13 = __BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) - __BITCAST_DOUBLE(CONCAT44(uStack_24c,local_250));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 453,
+      "match": "SQRT",
+      "severity": "mild",
+      "text": "if (9.9999999999999995e-08 <= SQRT(dVar13 * dVar13 + dVar9 * dVar9 + dVar8 * dVar8)) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 468,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar2].start_pos.x + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 469,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar3].end_pos.x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1648,15 +1779,15 @@
       "line": 471,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar1].start_pos.x + 4);",
+      "text": "*(uint *)((int)&edges[uVar2].start_pos.y + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 473,
+      "line": 472,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar12].end_pos.y + 4) =",
+      "text": "*(uint *)((int)&edges[uVar3].end_pos.y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1664,15 +1795,15 @@
       "line": 474,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar1].start_pos.y + 4);",
+      "text": "*(uint *)((int)&edges[uVar2].start_pos.z + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 476,
+      "line": 475,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar12].end_pos.z + 4) =",
+      "text": "*(uint *)((int)&edges[uVar3].end_pos.z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1680,7 +1811,15 @@
       "line": 477,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&edges[uVar1].start_pos.z + 4);",
+      "text": "*(uint *)((int)edges[uVar2].start_uv + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 478,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)edges[uVar3].end_uv + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1688,7 +1827,7 @@
       "line": 480,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)edges[uVar12].end_uv + 4) =",
+      "text": "*(uint *)((int)edges[uVar2].start_uv + 0xc) =",
       "type": "pointer_cast"
     },
     {
@@ -1696,7 +1835,71 @@
       "line": 481,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)edges[uVar1].start_uv + 4);",
+      "text": "*(uint *)((int)edges[uVar3].end_uv + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 484,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar2].end_pos.x + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 485,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar3].start_pos.x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 487,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar2].end_pos.y + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 488,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar3].start_pos.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 490,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar2].end_pos.z + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 491,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&edges[uVar3].start_pos.z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 494,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)edges[uVar2].end_uv + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 495,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)edges[uVar3].start_uv + 4);",
       "type": "pointer_cast"
     }
   ]

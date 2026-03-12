@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 10,
-        "line": 81,
+        "line": 89,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 82,
+        "line": 90,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 85,
+        "line": 93,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 86,
+        "line": 94,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 91,
+        "line": 99,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 92,
+        "line": 100,
         "message": "member reference base type 'int' is not a structure or union"
       }
     ],
@@ -43,12 +43,12 @@
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 304,
+    "complexity_score": 312,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 124,
+    "pseudocode_lines": 132,
     "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -56,7 +56,7 @@
       "unknown_field",
       "warning_inlined_function"
     ],
-    "total_lines": 446
+    "total_lines": 454
   },
   "cross_references": [
     {
@@ -207,56 +207,56 @@
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -327,7 +327,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 60,
       "match": "ROUND",
       "severity": "mild",
       "text": "(short)(int)ROUND(ROUND(local_44 / (float)(uint)this_ptr->boxes[box_index].pixel_count));",
@@ -335,7 +335,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 60,
       "match": "ROUND",
       "severity": "mild",
       "text": "(short)(int)ROUND(ROUND(local_44 / (float)(uint)this_ptr->boxes[box_index].pixel_count));",
@@ -343,7 +343,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 62,
       "match": "ROUND",
       "severity": "mild",
       "text": "(short)(int)ROUND(ROUND(local_30 / (float)(uint)this_ptr->boxes[box_index].pixel_count));",
@@ -351,7 +351,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 62,
       "match": "ROUND",
       "severity": "mild",
       "text": "(short)(int)ROUND(ROUND(local_30 / (float)(uint)this_ptr->boxes[box_index].pixel_count));",
@@ -359,7 +359,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 64,
       "match": "ROUND",
       "severity": "mild",
       "text": "(short)(int)ROUND(ROUND(local_3c / (float)(uint)this_ptr->boxes[box_index].pixel_count));",
@@ -367,7 +367,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 64,
       "match": "ROUND",
       "severity": "mild",
       "text": "(short)(int)ROUND(ROUND(local_3c / (float)(uint)this_ptr->boxes[box_index].pixel_count));",
@@ -375,23 +375,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 75,
       "match": "ROUND",
       "severity": "mild",
-      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_38 / (float)uVar11));",
+      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_38 / (float)uVar13));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 75,
       "match": "ROUND",
       "severity": "mild",
-      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_38 / (float)uVar11));",
+      "text": "this_ptr->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_38 / (float)uVar13));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 78,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "uVar11 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -",
@@ -399,7 +399,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 74,
+      "line": 82,
       "match": "._0_2_",
       "severity": "mild",
       "text": "iVar2._0_2_ = this_ptr->boxes[box_index].avg_red;",
@@ -407,7 +407,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 83,
       "match": "._2_2_",
       "severity": "mild",
       "text": "iVar2._2_2_ = this_ptr->boxes[box_index].avg_green;",
@@ -415,7 +415,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 78,
+      "line": 86,
       "match": "._0_2_",
       "severity": "mild",
       "text": "iVar3._0_2_ = this_ptr->boxes[box_index].avg_green;",
@@ -423,7 +423,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 79,
+      "line": 87,
       "match": "._2_2_",
       "severity": "mild",
       "text": "iVar3._2_2_ = this_ptr->boxes[box_index].avg_blue;",
@@ -431,7 +431,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 84,
+      "line": 92,
       "match": "._0_2_",
       "severity": "mild",
       "text": "iVar4._0_2_ = this_ptr->boxes[box_index].avg_blue;",
@@ -439,7 +439,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 85,
+      "line": 93,
       "match": "._2_2_",
       "severity": "mild",
       "text": "iVar4._2_2_ = this_ptr->boxes[box_index].avg_intensity;",

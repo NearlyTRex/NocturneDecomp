@@ -104,7 +104,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00608da2: MOV ESI,ESP
 
   crt_thread.c_create_thread_with_sync_FUN_0060f960
-    File: crt/thread.c, Suspects: 3
+    File: crt/thread.c, Suspects: 2
     - [alt_frame_pointer] at 0060f9a0: MOV EDI,ESP
 
   crt_time.c_formatTwoDigits_FUN_00601640
@@ -155,7 +155,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 005e1be6: MOV EDI,ESP
 
   engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
-    File: engine/matrix.c, Suspects: 7
+    File: engine/matrix.c, Suspects: 3
     - [alt_frame_pointer] at 0050d9d4: MOV ESI,ESP
 
   engine_matrix.c_getCameraOrigin_FUN_0050e2c0
@@ -194,7 +194,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00548d49: MOV ESI,ESP
 
   engine_pod.cpp_CPod_dismount_FUN_00550b90
-    File: engine/pod.cpp, Suspects: 2
+    File: engine/pod.cpp, Suspects: 0
     - [alt_frame_pointer] at 00550ba8: MOV EDI,ESP
 
   engine_pod.cpp_CPod_remount_FUN_00550af0
@@ -245,7 +245,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 004fb536: MOV ESI,ESP
 
   engine_model.c_loadMRGLTextures_FUN_00528870
-    File: engine/model.c, Suspects: 2
+    File: engine/model.c, Suspects: 3
     - [alt_frame_pointer] at 00528913: MOV EDI,ESP
 
   engine_3d.c_drawLineStrip3D_FUN_00404600
@@ -294,5 +294,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 10.4 suspects/function
-  Without stack patterns: avg 2.1 suspects/function
+  With stack patterns:    avg 9.8 suspects/function
+  Without stack patterns: avg 2.0 suspects/function

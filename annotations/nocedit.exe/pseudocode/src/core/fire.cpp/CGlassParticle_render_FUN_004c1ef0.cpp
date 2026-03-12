@@ -10,9 +10,6 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *th
 
 {
   SMRGLHeaderPrimitive SStack_68;
-  uint local_50;
-  uint local_4c;
-  uint local_48;
   CVector3i local_40;
   CVector3i local_34;
   CVector3i local_28;
@@ -44,9 +41,6 @@ void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004c1ef0(CGlassParticle *th
   SStack_68.surface_normal.C = 0;
   SStack_68.surface_normal.B = 0;
   SStack_68.surface_normal.A = 0;
-  local_50 = 0;
-  local_4c = 1;
-  local_48 = 2;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
             (g_CDemonRendererPtr2,this_ptr->lifetime);
   local_40.x = (int)ROUND((this_ptr->base).position.x * 256.0f);

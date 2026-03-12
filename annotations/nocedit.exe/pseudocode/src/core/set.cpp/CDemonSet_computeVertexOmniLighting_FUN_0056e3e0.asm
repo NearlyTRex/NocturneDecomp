@@ -9,9 +9,9 @@
 ; CVector3f *      Stack[0xc]:4   position_offset
 ; int              Stack[0x10]:4   vertex_index
 ; Local Variables:
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
+; float            Stack[-0x40]:4  local_40
+; float            Stack[-0x3c]:4  local_3c
+; float            Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c

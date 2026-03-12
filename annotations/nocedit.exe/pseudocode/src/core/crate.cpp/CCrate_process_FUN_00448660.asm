@@ -7,7 +7,9 @@
 ; CCrate *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
+; CBoundingBox3D   Stack[-0x24]:24  CStack_24
+; float            Stack[-0xc]:4  local_c
+; float            Stack[-0x8]:4  fStack_8
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10

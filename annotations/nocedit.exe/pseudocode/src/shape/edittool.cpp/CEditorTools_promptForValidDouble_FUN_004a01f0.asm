@@ -12,10 +12,11 @@
 ; double           Stack[0x1c]:8   max_value
 ; int              Stack[0x24]:4   show_current_value
 ; Local Variables:
-; undefined8       Stack[-0x48]:8  local_48
+; undefined4       Stack[-0x48]:4  local_48
+; undefined4       Stack[-0x44]:4  uStack_44
 ; undefined8       Stack[-0x40]:8  local_40
 ; undefined8       Stack[-0x38]:8  local_38
-; undefined1       Stack[-0x30]:1  local_30
+; char[32]         Stack[-0x30]:32  local_30
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_15g_00623258

@@ -9,9 +9,11 @@
 void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0(CDemonCube *this_ptr)
 
 {
-  CVector3f *pCVar1;
   int iVar2;
+  int iVar1;
   int iVar3;
+  int iVar6;
+  int iVar7;
   int iVar4;
   int iVar5;
   char *local_24;
@@ -19,54 +21,55 @@ void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
   int local_1c;
   byte local_18;
   int local_10;
+  CVector3f *pCVar1;
   
   this_ptr->triangle_count = g_PolygonCount;
   shape_superopt_cpp_optimizeCubeTriList_FUN_005d77a0();
-  iVar2 = g_VertexCount;
+  iVar6 = g_VertexCount;
   this_ptr->triangle_count = 0;
-  iVar3 = g_PolygonCount;
-  this_ptr->vertex_count = iVar2;
+  iVar1 = g_PolygonCount;
+  this_ptr->vertex_count = iVar6;
   iVar2 = 0;
-  if (0 < iVar3) {
+  if (0 < iVar1) {
     iVar3 = 0;
     do {
-      iVar4 = g_PolygonCount;
-      iVar5 = iVar3 + -0x14;
+      iVar1 = g_PolygonCount;
+      iVar6 = iVar3 + -0x14;
       iVar3 = iVar3 + 0x184;
       iVar2 = iVar2 + 1;
       this_ptr->triangle_count =
            this_ptr->triangle_count +
-           *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5) + -2;
-    } while (iVar2 < iVar4);
+           *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6) + -2;
+    } while (iVar2 < iVar1);
   }
   if ((this_ptr->triangle_count != 0) && (this_ptr->vertex_count != 0)) {
     core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00456840(this_ptr);
-    iVar2 = 0;
+    iVar6 = 0;
     if (0 < this_ptr->vertex_count) {
       iVar5 = 0;
-      iVar3 = 0;
+      iVar1 = 0;
       do {
-        iVar2 = iVar2 + 1;
-        *(uint *)((int)&this_ptr->vertex_buffer->x + iVar3) =
+        iVar6 = iVar6 + 1;
+        *(uint *)((int)&this_ptr->vertex_buffer->x + iVar1) =
              *(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar5);
-        *(uint *)((int)&this_ptr->vertex_buffer->y + iVar3) =
+        *(uint *)((int)&this_ptr->vertex_buffer->y + iVar1) =
              *(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar5);
-        *(uint *)((int)&this_ptr->vertex_buffer->z + iVar3) =
+        *(uint *)((int)&this_ptr->vertex_buffer->z + iVar1) =
              *(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar5);
         iVar5 = iVar5 + 0x14;
-        iVar3 = iVar3 + 0xc;
-      } while (iVar2 < this_ptr->vertex_count);
+        iVar1 = iVar1 + 0xc;
+      } while (iVar6 < this_ptr->vertex_count);
     }
-    iVar2 = 0;
+    iVar6 = 0;
     local_20 = 0;
     if (0 < g_PolygonCount) {
       local_1c = 0;
       local_24 = g_ModelPolygonData[0].texture_name;
       do {
-        iVar3 = atoi(local_24);
-        local_10 = iVar2 << 5;
+        iVar1 = atoi(local_24);
+        local_10 = iVar6 << 5;
         iVar4 = 2;
-        iVar5 = local_1c + 8;
+        iVar7 = local_1c + 8;
         if (2 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_1c + -0x14)) {
           do {
             pCVar1 = this_ptr->vertex_buffer;
@@ -74,14 +77,14 @@ void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0
                       ((CDemonCubeTriangle *)
                        ((int)(this_ptr->triangle_buffer->triangle).vertices + local_10),
                        pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_1c),
-                       pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + -4),
-                       pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5));
-            local_18 = (byte)iVar3;
-            *(byte *)(iVar2 + (int)this_ptr->ground_type_memory) = local_18;
+                       pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7 + -4),
+                       pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar7));
+            local_18 = (byte)iVar1;
+            *(byte *)(iVar6 + (int)this_ptr->ground_type_memory) = local_18;
             local_10 = local_10 + 0x20;
-            iVar2 = iVar2 + 1;
+            iVar6 = iVar6 + 1;
             iVar4 = iVar4 + 1;
-            iVar5 = iVar5 + 4;
+            iVar7 = iVar7 + 4;
           } while (iVar4 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_1c + -0x14));
         }
         local_1c = local_1c + 0x184;

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 261,
+    "complexity_score": 266,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 106,
+    "pseudocode_lines": 111,
     "suspect_count": 15,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 346
+    "total_lines": 351
   },
   "cross_references": [
     {
@@ -118,14 +118,14 @@
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -174,7 +174,7 @@
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -195,21 +195,21 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegSubbandScalefactors *"
       },
       {
         "is_param": false,
@@ -251,7 +251,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 38,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_1c = (int *)((int)allocation_array->granules + local_48);",
@@ -259,26 +259,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 47,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar8 = (uint *)((int)local_18->codes[0] + local_48);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "} while (puVar8 != (uint *)((int)local_18[1].codes[0] + local_48));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar4 = (uint *)((int)pvVar2 + *local_1c * 0x10 + local_2c * 0x100);",
+      "text": "puVar9 = (uint *)((int)local_18->codes[0] + local_48);",
       "type": "pointer_cast"
     },
     {
@@ -286,12 +270,28 @@
       "line": 51,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)local_18->codes[0] + local_48);",
+      "text": "} while (puVar9 != (uint *)((int)local_18[1].codes[0] + local_48));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar4 = (uint *)((int)pvVar2 + *local_1c * 0x10 + local_2c * 0x100);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar11 = (uint *)((int)local_18->codes[0] + local_48);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(this_ptr,*(int *)((int)local_4c +",
@@ -299,7 +299,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 61,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)allocation_array[local_20].granules",
@@ -307,7 +307,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 65,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "} while (puVar10 != (uint *)((int)local_18[1].codes[0] + local_48));",
@@ -315,26 +315,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar4 = (uint *)((int)local_18->codes[0] + local_48);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 70,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "} while (puVar4 != (uint *)((int)local_18[1].codes[0] + local_48));",
+      "text": "puVar11 = (uint *)((int)local_18->codes[0] + local_48);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 75,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar8 = (uint *)((int)sample_array->codes[0] + local_48);",
+      "text": "} while (puVar11 != (uint *)((int)local_18[1].codes[0] + local_48));",
       "type": "pointer_cast"
     },
     {
@@ -342,12 +334,20 @@
       "line": 79,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "} while (puVar7 != (uint *)((int)sample_array[1].codes[0] + local_48));",
+      "text": "puVar8 = (uint *)((int)sample_array->codes[0] + local_48);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 84,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "} while (puVar8 != (uint *)((int)sample_array[1].codes[0] + local_48));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "local_4c = (void *)((int)local_4c + 0x100);",
@@ -355,15 +355,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 101,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar8 = (uint *)((int)sample_array[iVar9].codes[0] + iVar11);",
+      "text": "puVar7 = (uint *)((int)sample_array[iVar9].codes[0] + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 106,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "} while (puVar7 != (uint *)((int)sample_array[iVar9 + 1].codes[0] + iVar11));",

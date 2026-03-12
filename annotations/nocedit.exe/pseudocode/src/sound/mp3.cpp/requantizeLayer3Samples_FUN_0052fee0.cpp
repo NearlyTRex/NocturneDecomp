@@ -9,10 +9,10 @@
 void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_0052fee0(int *scalefactor_indices,uint *quantized_samples,float *dequantized_output,SMpegFrame *frame_info)
 
 {
-  int iVar1;
   byte bVar2;
   uint *puVar3;
   int iVar4;
+  int iVar2;
   int iVar5;
   int iVar6;
   SBitAllocationTable *local_58;
@@ -26,11 +26,12 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_0052fee0(int *scalefactor
   int *local_20;
   int local_1c;
   float *local_18;
+  int iVar1;
   
   iVar1 = frame_info->samples_per_granule;
-  iVar6 = frame_info->sblimit;
+  iVar2 = frame_info->sblimit;
   local_58 = frame_info->allocation_table;
-  if (0 < iVar6) {
+  if (0 < iVar2) {
     local_54 = 0;
     do {
       local_40 = 0;
@@ -84,24 +85,24 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_0052fee0(int *scalefactor
       } while (local_40 != 0x180);
       local_54 = local_54 + 4;
       local_58 = (SBitAllocationTable *)&local_58[9].num_lines;
-    } while (local_54 < iVar6 * 4);
+    } while (local_54 < iVar2 * 4);
   }
-  if (iVar6 < 0x20) {
-    iVar6 = iVar6 * 4;
+  if (iVar2 < 0x20) {
+    iVar6 = iVar2 * 4;
     do {
-      iVar4 = 0;
+      iVar2 = 0;
       do {
         iVar5 = 0;
         if (0 < iVar1) {
-          puVar3 = (uint *)(iVar6 + iVar4 + (int)dequantized_output);
+          puVar3 = (uint *)(iVar6 + iVar2 + (int)dequantized_output);
           do {
             iVar5 = iVar5 + 1;
             *puVar3 = 0;
             puVar3 = puVar3 + 0x60;
           } while (iVar5 < iVar1);
         }
-        iVar4 = iVar4 + 0x80;
-      } while (iVar4 != 0x180);
+        iVar2 = iVar2 + 0x80;
+      } while (iVar2 != 0x180);
       iVar6 = iVar6 + 4;
     } while (iVar6 < 0x80);
   }

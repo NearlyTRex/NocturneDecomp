@@ -9,16 +9,18 @@
 void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_ptr,SBug *bug_data)
 
 {
-  int *piVar1;
-  int iVar2;
+  int *piVar2;
+  int iVar6;
   int iVar3;
   int iVar4;
   int iVar5;
   SSwarmVertex *pSVar6;
   int iVar7;
   int *piVar8;
+  int *piVar7;
   byte bVar9;
   int aiStackY_1030 [1008];
+  int local_68 [8];
   int local_48;
   int local_44;
   int local_40;
@@ -32,6 +34,8 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_pt
   int local_20;
   int local_1c;
   uint local_18;
+  int *piVar1;
+  int iVar2;
   
   bVar9 = 0;
   local_2c = bug_data->current_vertex;
@@ -54,15 +58,14 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_pt
                             iVar2 * 0xc + 4);
         local_18 = 1;
         if ((local_20 != 0) ||
-           ((iVar4 = iVar3, iVar2 != local_2c &&
-            ((bug_data->downward_bias < 1 || (local_28 <= local_1c)))))) {
+           ((iVar2 != local_2c && ((bug_data->downward_bias < 1 || (local_28 <= local_1c)))))) {
           iVar4 = iVar3 + 4;
           iVar7 = iVar7 + 1;
-          *(int *)(&stack0xffffff98 + iVar3) = iVar2;
+          *(int *)((int)local_68 + iVar3) = iVar2;
+          iVar3 = iVar4;
         }
         iVar5 = iVar5 + 1;
         pSVar6 = (SSwarmVertex *)&pSVar6->first_edge_data;
-        iVar3 = iVar4;
       } while (iVar5 < local_24->edge_count);
     }
   } while ((iVar7 < 1) && (local_20 = local_20 + 1, local_20 < 2));
@@ -76,22 +79,20 @@ void __cdecl core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_004270f0(CBugs *this_pt
     }
   }
   else {
-    iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,iVar7 + -1);
-    bug_data->dest_vertex = *(int *)(&stack0xffffff98 + iVar5 * 4);
+    iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,iVar7 + -1);
+    bug_data->dest_vertex = local_68[iVar6];
   }
-  iVar5 = this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4];
-  piVar1 = (int *)(iVar5 + bug_data->current_vertex * 0xc);
+  iVar6 = this_ptr->deformable_model_ptr[0x17].part_visibility_flags[4];
+  piVar1 = (int *)(iVar6 + bug_data->current_vertex * 0xc);
   piVar8 = piVar1 + (uint)bVar9 * -2 + 1;
   local_3c = *piVar1;
-  *(int *)((int)&stack0xffffffc8 + (uint)bVar9 * -8) = *piVar8;
-  *(int *)((int)&stack0xffffffcc + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
-       piVar8[(uint)bVar9 * -2 + 1];
-  piVar1 = (int *)(iVar5 + bug_data->dest_vertex * 0xc);
-  piVar8 = piVar1 + (uint)bVar9 * -2 + 1;
-  local_48 = *piVar1;
-  *(int *)((int)&stack0xffffffbc + (uint)bVar9 * -8) = *piVar8;
-  *(int *)((int)&stack0xffffffc0 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
-       piVar8[(uint)bVar9 * -2 + 1];
+  (&local_38)[(uint)bVar9 * -2] = *piVar8;
+  (&local_34)[(uint)bVar9 * -2 + (uint)bVar9 * -2] = piVar8[(uint)bVar9 * -2 + 1];
+  piVar2 = (int *)(iVar6 + bug_data->dest_vertex * 0xc);
+  piVar7 = piVar2 + (uint)bVar9 * -2 + 1;
+  local_48 = *piVar2;
+  (&local_44)[(uint)bVar9 * -2] = *piVar7;
+  (&local_40)[(uint)bVar9 * -2 + (uint)bVar9 * -2] = piVar7[(uint)bVar9 * -2 + 1];
   bug_data->crawl_duration =
        SQRT((float)((local_34 - local_40) * (local_34 - local_40) +
                    (local_3c - local_48) * (local_3c - local_48) +

@@ -12,19 +12,24 @@
 void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
 
 {
-  longlong lVar1;
-  longlong lVar2;
-  int iVar3;
+  longlong lVar3;
   byte bVar4;
   int iVar5;
   uint uVar6;
+  int iVar4;
   int iVar7;
+  int iVar6;
   SRenderVertex *v1;
   int *piVar8;
+  SRenderVertex *pSVar7;
   SRenderVertex *pSVar9;
   int *piVar10;
+  SRenderVertex *pSVar8;
   SRenderVertex *pSVar11;
   byte bVar12;
+  int iVar3;
+  longlong lVar1;
+  longlong lVar2;
   
   bVar12 = 0;
   iVar7 = 0;
@@ -41,23 +46,23 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
     }
     if (g_NearPlaneDistance <= iVar7) {
       g_SecondaryClipVertexCount = g_ClippedVertexCount;
-      iVar5 = 0;
+      iVar6 = 0;
       piVar10 = &g_SecondaryClipVertexBuffer[0].projected_vertex.transformed_y;
       piVar8 = &g_ClippedVertexBuffer[0].projected_vertex.transformed_y;
       g_SecondaryClipVertexBuffer[0].projected_vertex.transformed_x =
            g_ClippedVertexBuffer[0].projected_vertex.transformed_x;
-      iVar7 = g_ClippedVertexCount * 0x30 + -4;
-      if (iVar7 != 0 && 3 < g_ClippedVertexCount * 0x30) {
-        while (7 < iVar7) {
+      iVar4 = g_ClippedVertexCount * 0x30 + -4;
+      if (iVar4 != 0 && 3 < g_ClippedVertexCount * 0x30) {
+        while (7 < iVar4) {
           lVar1 = *(longlong *)piVar8;
           piVar8 = piVar8 + 2;
           *(longlong *)piVar10 = (longlong)ROUND((float10)lVar1);
           piVar10 = piVar10 + 2;
-          iVar7 = iVar7 + -8;
+          iVar4 = iVar4 + -8;
         }
-        if (iVar7 != 0 && -9 < iVar7 + -8) {
+        if (iVar4 != 0 && -9 < iVar4 + -8) {
           *piVar10 = *piVar8;
-          if (4 < iVar7) {
+          if (4 < iVar4) {
             piVar10[1] = piVar8[1];
           }
         }
@@ -66,7 +71,7 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
       if (0 < g_SecondaryClipVertexCount) {
         v1 = g_SecondaryClipVertexBuffer;
         do {
-          uVar6 = iVar5 + 1;
+          uVar6 = iVar6 + 1;
           if (uVar6 == g_SecondaryClipVertexCount) {
             uVar6 = uVar6 ^ g_SecondaryClipVertexCount;
           }
@@ -77,24 +82,24 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
           }
           switch(bVar4) {
           case 0:
-            pSVar11 = g_ClippedVertexBuffer + g_ClippedVertexCount;
-            iVar7 = 0x30;
-            pSVar9 = v1;
-            while (7 < iVar7) {
-              lVar2._0_4_ = (pSVar9->projected_vertex).transformed_x;
-              lVar2._4_4_ = (pSVar9->projected_vertex).transformed_y;
-              pSVar9 = (SRenderVertex *)&(pSVar9->projected_vertex).transformed_z;
-              (pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);
-              (pSVar11->projected_vertex).transformed_y =
+            pSVar8 = g_ClippedVertexBuffer + g_ClippedVertexCount;
+            iVar4 = 0x30;
+            pSVar7 = v1;
+            while (7 < iVar4) {
+              lVar2._0_4_ = (pSVar7->projected_vertex).transformed_x;
+              lVar2._4_4_ = (pSVar7->projected_vertex).transformed_y;
+              pSVar7 = (SRenderVertex *)&(pSVar7->projected_vertex).transformed_z;
+              (pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);
+              (pSVar8->projected_vertex).transformed_y =
                    (int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);
-              pSVar11 = (SRenderVertex *)&(pSVar11->projected_vertex).transformed_z;
-              iVar7 = iVar7 + -8;
+              pSVar8 = (SRenderVertex *)&(pSVar8->projected_vertex).transformed_z;
+              iVar4 = iVar4 + -8;
             }
-            if (iVar7 != 0 && -9 < iVar7 + -8) {
-              (pSVar11->projected_vertex).transformed_x = (pSVar9->projected_vertex).transformed_x;
-              if (4 < iVar7) {
-                *(uint *)((int)pSVar11 + (uint)bVar12 * -8 + 4) =
-                     *(uint *)((int)pSVar9 + (uint)bVar12 * -8 + 4);
+            if (iVar4 != 0 && -9 < iVar4 + -8) {
+              (pSVar8->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
+              if (4 < iVar4) {
+                *(uint *)((int)pSVar8 + (uint)bVar12 * -8 + 4) =
+                     *(uint *)((int)pSVar7 + (uint)bVar12 * -8 + 4);
               }
             }
             g_ClippedVertexCount = g_ClippedVertexCount + 1;
@@ -107,21 +112,21 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
             break;
           case 2:
             pSVar11 = g_ClippedVertexBuffer + g_ClippedVertexCount;
-            iVar7 = 0x30;
+            iVar4 = 0x30;
             pSVar9 = v1;
-            while (7 < iVar7) {
-              lVar1._0_4_ = (pSVar9->projected_vertex).transformed_x;
-              lVar1._4_4_ = (pSVar9->projected_vertex).transformed_y;
+            while (7 < iVar4) {
+              lVar3._0_4_ = (pSVar9->projected_vertex).transformed_x;
+              lVar3._4_4_ = (pSVar9->projected_vertex).transformed_y;
               pSVar9 = (SRenderVertex *)&(pSVar9->projected_vertex).transformed_z;
-              (pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar1);
+              (pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar3);
               (pSVar11->projected_vertex).transformed_y =
-                   (int)((ulonglong)(longlong)ROUND((float10)lVar1) >> 0x20);
+                   (int)((ulonglong)(longlong)ROUND((float10)lVar3) >> 0x20);
               pSVar11 = (SRenderVertex *)&(pSVar11->projected_vertex).transformed_z;
-              iVar7 = iVar7 + -8;
+              iVar4 = iVar4 + -8;
             }
-            if (iVar7 != 0 && -9 < iVar7 + -8) {
+            if (iVar4 != 0 && -9 < iVar4 + -8) {
               (pSVar11->projected_vertex).transformed_x = (pSVar9->projected_vertex).transformed_x;
-              if (4 < iVar7) {
+              if (4 < iVar4) {
                 *(uint *)((int)pSVar11 + (uint)bVar12 * -8 + 4) =
                      *(uint *)((int)pSVar9 + (uint)bVar12 * -8 + 4);
               }
@@ -132,9 +137,9 @@ void __cdecl engine_clipper_c_clipPolygonNearPlane_FUN_00436420(void)
                        g_ClippedVertexBuffer + g_ClippedVertexCount);
             g_ClippedVertexCount = g_ClippedVertexCount + 1;
           }
-          iVar5 = iVar5 + 1;
+          iVar6 = iVar6 + 1;
           v1 = v1 + 1;
-        } while (iVar5 < g_SecondaryClipVertexCount);
+        } while (iVar6 < g_SecondaryClipVertexCount);
       }
     }
   }

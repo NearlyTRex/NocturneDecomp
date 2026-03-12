@@ -7,14 +7,42 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   camera_index
 ; Local Variables:
-; undefined1       Stack[-0x1f0]:1  local_1f0
-; undefined1       Stack[-0x1ef]:1  local_1ef
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x54]:4  local_54
+; uint[261]        Stack[-0xd80]:1044  auStack_d80
+; uint[254]        Stack[-0x96c]:1016  auStack_96c
+; CPickList        Stack[-0x574]:936  CStack_574
+; char[92]         Stack[-0xf0]:92  acStack_f0
+; float            Stack[-0x94]:4  fStack_94
+; float            Stack[-0x90]:4  fStack_90
+; float            Stack[-0x8c]:4  fStack_8c
+; float            Stack[-0x88]:4  fStack_88
+; float            Stack[-0x84]:4  fStack_84
+; float            Stack[-0x80]:4  fStack_80
+; float            Stack[-0x7c]:4  fStack_7c
+; float            Stack[-0x78]:4  fStack_78
+; float            Stack[-0x74]:4  fStack_74
+; undefined4       Stack[-0x70]:4  uStack_70
+; undefined4       Stack[-0x6c]:4  uStack_6c
+; undefined4       Stack[-0x68]:4  uStack_68
+; float            Stack[-0x64]:4  fStack_64
+; float            Stack[-0x60]:4  local_60
+; float            Stack[-0x5c]:4  local_5c
+; float            Stack[-0x58]:4  fStack_58
+; float            Stack[-0x54]:4  local_54
+; float            Stack[-0x50]:4  fStack_50
+; int              Stack[-0x4c]:4  iStack_4c
+; int              Stack[-0x48]:4  iStack_48
+; int              Stack[-0x44]:4  iStack_44
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c
+; uint             Stack[-0x38]:4  uStack_38
+; C3DSCamera *     Stack[-0x34]:4  pCStack_34
+; int *            Stack[-0x30]:4  piStack_30
+; uint             Stack[-0x2c]:4  uStack_2c
 ; undefined4       Stack[-0x28]:4  local_28
+; void *           Stack[-0x24]:4  pvStack_24
+; _FILE *          Stack[-0x20]:4  p_Stack_20
+; void *           Stack[-0x1c]:4  pvStack_1c
+; byte *           Stack[-0x18]:4  pbStack_18
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 at 0057eb24

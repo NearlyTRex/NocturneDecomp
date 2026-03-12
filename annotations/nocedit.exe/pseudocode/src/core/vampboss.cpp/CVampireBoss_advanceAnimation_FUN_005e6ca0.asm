@@ -9,8 +9,8 @@
 ; Local Variables:
 ; undefined8       Stack[-0x88]:8  local_88
 ; undefined8       Stack[-0x80]:8  local_80
-; undefined4       Stack[-0x78]:4  local_78
-; undefined1       Stack[-0x74]:1  local_74
+; float            Stack[-0x78]:4  local_78
+; char[104]        Stack[-0x74]:104  local_74
 ;
 ; XREF[1]:
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_005e5970 at 005e59c2

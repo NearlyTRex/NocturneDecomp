@@ -7,18 +7,14 @@
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   pod_filename
 ; Local Variables:
-; undefined1       Stack[-0xd00]:1  local_d00
-; undefined1       Stack[-0xcfc]:1  local_cfc
-; undefined4       Stack[-0x8f0]:4  local_8f0
-; undefined4       Stack[-0x8ec]:4  local_8ec
-; undefined1       Stack[-0x8d4]:1  local_8d4
-; undefined1       Stack[-0x52c]:1  local_52c
-; undefined1       Stack[-0x52b]:1  local_52b
-; undefined1       Stack[-0x32c]:1  local_32c
-; undefined1       Stack[-0x32b]:1  local_32b
-; undefined1       Stack[-0x22c]:1  local_22c
-; undefined1       Stack[-0x12c]:1  local_12c
-; undefined1       Stack[-0x2c]:1  local_2c
+; CPodFile         Stack[-0xd00]:1068  local_d00
+; CPickList        Stack[-0x8d4]:936  local_8d4
+; char[512]        Stack[-0x52c]:512  local_52c
+; char             Stack[-0x32c]:1  local_32c
+; undefined1[255]  Stack[-0x32b]:255  local_32b
+; char[256]        Stack[-0x22c]:256  local_22c
+; char[256]        Stack[-0x12c]:256  local_12c
+; char[32]         Stack[-0x2c]:32  local_2c
 ;
 ; XREF[2]:
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be446

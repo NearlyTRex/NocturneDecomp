@@ -9,10 +9,10 @@
 CBoundingBox3D * __cdecl core_trash_cpp_CTrash_getBoundingBox_FUN_005df610(CTrash *this_ptr,CBoundingBox3D *out_box)
 
 {
-  CVector3f *pCVar1;
   CKeyFramedModel *pCVar2;
   CVector3f local_20;
   CVector3f local_14;
+  CVector3f *pCVar1;
   
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   pCVar1 = pCVar2->frame_bounds;

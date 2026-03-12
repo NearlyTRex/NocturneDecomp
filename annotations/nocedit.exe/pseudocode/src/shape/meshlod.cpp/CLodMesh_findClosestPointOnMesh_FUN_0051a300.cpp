@@ -9,14 +9,15 @@
 CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300(CLodMesh *this_ptr,CVector3f *output_closest_point,CVector3f *target_point)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
+  float fVar5;
   CLodFace *triangle_ptr;
   int iVar5;
   CVector3f local_30 [2];
   int local_18;
+  float fVar3;
+  float fVar1;
+  float fVar4;
+  float fVar2;
   
   iVar5 = 0;
   local_18 = 0;
@@ -30,9 +31,9 @@ CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a3
         fVar1 = target_point->x - local_30[0].x;
         fVar3 = target_point->y - local_30[0].y;
         fVar2 = target_point->z - local_30[0].z;
-        fVar1 = SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);
-        if (fVar1 < fVar4) {
-          fVar4 = fVar1;
+        fVar5 = SQRT(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);
+        if (fVar5 < fVar4) {
+          fVar4 = fVar5;
           if (output_closest_point != local_30) {
             output_closest_point->x = local_30[0].x;
             output_closest_point->y = local_30[0].y;

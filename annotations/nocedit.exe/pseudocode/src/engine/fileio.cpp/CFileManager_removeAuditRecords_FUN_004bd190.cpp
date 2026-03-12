@@ -9,14 +9,20 @@
 void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFileManager *this_ptr,char *pod_file_path,time_t cutoff_timestamp)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
+  int iVar3;
   CPodAuditRecord *pCVar3;
   int iVar4;
+  int iVar5;
   int record_index;
   _FILE *file;
+  uint *puVar6;
   uint *puVar5;
   char *pcVar6;
+  char *pcVar7;
+  char *pcVar8;
+  uint *puVar9;
   uint *puVar7;
   CPodAuditRecord *pCVar8;
   char *pcVar9;
@@ -35,6 +41,7 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
   int local_1c;
   int local_18;
   int local_14;
+  char cVar1;
   
   bVar10 = 0;
   if (pod_file_path == (char *)0x0) {
@@ -46,20 +53,20 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
     }
   }
   else {
-    pcVar9 = local_204;
+    pcVar7 = local_204;
     do {
-      cVar1 = *pod_file_path;
-      *pcVar9 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pod_file_path[1];
+      cVar2 = *pod_file_path;
+      *pcVar7 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pod_file_path[1];
       pod_file_path = pod_file_path + 2;
-      pcVar9[1] = cVar1;
-      pcVar9 = pcVar9 + 2;
-    } while (cVar1 != '\0');
+      pcVar7[1] = cVar2;
+      pcVar7 = pcVar7 + 2;
+    } while (cVar2 != '\0');
   }
   engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0(&local_9d8);
-  iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(&local_9d8,local_204);
-  if (iVar2 == 0) {
+  iVar3 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(&local_9d8,local_204);
+  if (iVar3 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't mount %s!",local_204);
     engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8,0);
@@ -71,7 +78,7 @@ void __cdecl engine_fileio_cpp_CFileManager_removeAuditRecords_FUN_004bd190(CFil
   }
   if (cutoff_timestamp != 0) {
 LAB_004bd3c3:
-    iVar2 = 0;
+    iVar3 = 0;
     g_AuditRecordCount = 0;
     if (g_AuditRecordsArray != (CPodAuditRecord *)0x0) {
       shape_memdbg_cpp_debugFree_FUN_0050f460
@@ -82,23 +89,24 @@ LAB_004bd3c3:
     if (0 < local_9d8.audit_count) {
       do {
         engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(&local_9d8,record_index,local_33c);
-        puVar5 = local_33c;
-        puVar7 = local_5ac;
+        puVar6 = local_33c;
+        puVar9 = local_5ac;
         for (iVar4 = 0x4e; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *puVar7 = *puVar5;
-          puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
-          puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
+          *puVar9 = *puVar6;
+          puVar6 = puVar6 + (uint)bVar10 * -2 + 1;
+          puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
         }
         if (local_58c < (uint)cutoff_timestamp) {
-          iVar2 = iVar2 + 1;
+          iVar3 = iVar3 + 1;
         }
         else {
-          puVar5 = local_33c;
+          puVar6 = local_33c;
           puVar7 = local_474;
-          for (iVar4 = 0x4e; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *puVar7 = *puVar5;
-            puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
+          for (iVar5 = 0x4e; iVar5 != 0; iVar5 = iVar5 + -1) {
             puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
+            *puVar7 = *puVar6;
+            puVar6 = puVar6 + (uint)bVar10 * -2 + 1;
+            puVar7 = puVar7;
           }
           g_AuditRecordCount = g_AuditRecordCount + 1;
           g_AuditRecordsArray =
@@ -113,10 +121,12 @@ LAB_004bd3c3:
           pCVar3 = g_AuditRecordsArray + g_AuditRecordCount + -1;
           puVar5 = local_474;
           pCVar8 = pCVar3;
-          for (iVar4 = 0x4e; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *(uint *)pCVar8->user_path = *puVar5;
-            puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
+          for (iVar5 = 0x4e; iVar5 != 0; iVar5 = iVar5 + -1) {
             pCVar8 = (CPodAuditRecord *)((int)pCVar8 + (uint)bVar10 * -8 + 4);
+            puVar5 = puVar5 + (uint)bVar10 * -2 + 1;
+            *(uint *)pCVar8->user_path = *puVar5;
+            puVar5 = puVar5;
+            pCVar8 = pCVar8;
           }
           memset(pCVar3->filename,0,0x100);
           pcVar6 = local_44c;
@@ -125,17 +135,17 @@ LAB_004bd3c3:
             cVar1 = *pcVar6;
             *pcVar9 = cVar1;
             if (cVar1 == '\0') break;
-            cVar1 = pcVar6[1];
+            cVar2 = pcVar6[1];
             pcVar6 = pcVar6 + 2;
-            pcVar9[1] = cVar1;
+            pcVar9[1] = cVar2;
             pcVar9 = pcVar9 + 2;
-          } while (cVar1 != '\0');
+          } while (cVar2 != '\0');
         }
         record_index = record_index + 1;
       } while (record_index < local_9d8.audit_count);
     }
     file = (_FILE *)0x0;
-    if (iVar2 == 0) {
+    if (iVar3 == 0) {
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                 (g_CEditorToolsPtr,"No audit records removed");
     }
@@ -183,23 +193,23 @@ LAB_004bd3c3:
     engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8,0);
     return;
   }
-  pcVar9 = g_DefaultAuditRecordPath;
-  pcVar6 = local_104;
-  for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(uint *)pcVar6 = *(uint *)pcVar9;
-    pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
-    pcVar6 = pcVar6 + ((uint)bVar10 * -2 + 1) * 4;
+  pcVar7 = g_DefaultAuditRecordPath;
+  pcVar8 = local_104;
+  for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *(uint *)pcVar8 = *(uint *)pcVar7;
+    pcVar7 = pcVar7 + ((uint)bVar10 * -2 + 1) * 4;
+    pcVar8 = pcVar8 + (uint)bVar10 * -8 + 4;
   }
   do {
-    iVar2 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+    iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                       (g_CEditorToolsPtr,"Remove audit records earlier than this date (MM/DD/YYYY)",local_104,100,1);
-    if (iVar2 == 0) {
+    if (iVar3 == 0) {
       engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_9d8,0);
       return;
     }
-    iVar2 = sscanf
+    iVar3 = sscanf
                       (local_104,"%d %*c %d %*c %d",&local_1c,&local_18,&local_14);
-    if (iVar2 == 3) {
+    if (iVar3 == 3) {
       if (local_14 < 0x32) {
         local_14 = local_14 + 2000;
       }

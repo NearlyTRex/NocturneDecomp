@@ -11,13 +11,13 @@
 CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f *quat1_in,CQuaternion4f *quat2_in,float t,CQuaternion4f *quat_out)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
+  float fVar4;
   CQuaternion4f *pCVar4;
   float10 fVar5;
   float10 fVar6;
+  float10 fVar8;
   float10 fVar7;
+  float10 fVar9;
   double local_80;
   double local_78;
   double local_70;
@@ -27,6 +27,9 @@ CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuater
   float local_54;
   CQuaternion4f local_40 [2];
   double local_18;
+  float fVar2;
+  float fVar3;
+  float fVar1;
   
   pCVar4 = quat1_in;
   if ((0.0 < t) && (pCVar4 = quat2_in, t < 1.0)) {
@@ -47,24 +50,22 @@ CQuaternion4f * __stack3_esi core_xform_cpp_slerpQuaternion_FUN_005f77e0(CQuater
     if (local_80 <= 0.99999000000000005) {
       fVar5 = (float10)local_80;
       fVar6 = SQRT((float10)1 - fVar5 * fVar5);
-      fVar7 = (float10)fpatan(fVar6,fVar5);
-      fVar5 = (float10)fsin(((float10)1 - (float10)t) * fVar7);
-      fVar7 = (float10)fsin((float10)t * fVar7);
-      fVar6 = (float10)1 / fVar6;
-      local_70 = (double)(fVar5 * fVar6);
-      local_78 = (double)(fVar7 * fVar6);
+      fVar9 = (float10)fpatan(fVar6,fVar5);
+      fVar8 = (float10)fsin(((float10)1 - (float10)t) * fVar9);
+      fVar7 = (float10)fsin((float10)t * fVar9);
+      local_70 = (double)(fVar8 * ((float10)1 / fVar6));
+      local_78 = (double)(fVar7 * ((float10)1 / fVar6));
     }
     else {
       local_78 = (double)t;
-      local_18 = local_78;
       local_70 = 1.0 - local_78;
     }
-    fVar1 = (float)local_70;
-    local_40[0].y = local_60 * (float)local_78 + quat1_in->y * fVar1;
-    local_40[0].z = local_54 * (float)local_78 + quat1_in->z * fVar1;
-    local_40[0].w = local_5c * (float)local_78 + quat1_in->w * fVar1;
-    local_40[0].x = local_58 * (float)local_78 + quat1_in->x * fVar1;
+    fVar4 = (float)local_70;
     pCVar4 = local_40;
+    local_40[0].y = local_60 * (float)local_78 + quat1_in->y * fVar4;
+    local_40[0].z = local_54 * (float)local_78 + quat1_in->z * fVar4;
+    local_40[0].w = local_5c * (float)local_78 + quat1_in->w * fVar4;
+    local_40[0].x = local_58 * (float)local_78 + quat1_in->x * fVar4;
   }
   fVar1 = pCVar4->x;
   fVar2 = pCVar4->y;

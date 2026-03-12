@@ -6,7 +6,17 @@
 ; Parameters:
 ; CElephantGun *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x44]:1  local_44
+; CVector3f        Stack[-0x74]:12  CStack_74
+; CVector3f[2]     Stack[-0x68]:24  aCStack_68
+; float            Stack[-0x50]:4  fStack_50
+; float            Stack[-0x4c]:4  fStack_4c
+; float            Stack[-0x48]:4  fStack_48
+; CVector3f        Stack[-0x44]:12  local_44
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  fStack_30
+; CVector3f        Stack[-0x2c]:12  CStack_2c
+; CVector3f        Stack[-0x20]:12  CStack_20
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0062403a = 3.14159265350000

@@ -6,19 +6,16 @@
 ; Parameters:
 ; int              Stack[0x4]:4   color
 ; Local Variables:
-; undefined1       Stack[-0xc0]:1  local_c0
-; undefined4       Stack[-0xb8]:4  local_b8
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0xac]:4  local_ac
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
+; SRenderVertex    Stack[-0xc0]:48  local_c0
+; int              Stack[-0x88]:4  local_88
+; int              Stack[-0x80]:4  local_80
+; int              Stack[-0x7c]:4  local_7c
+; int              Stack[-0x58]:4  local_58
+; int              Stack[-0x50]:4  local_50
+; int              Stack[-0x4c]:4  local_4c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
 ;
 ; XREF[2]:
 ;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0045f3de

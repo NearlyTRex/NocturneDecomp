@@ -9,8 +9,8 @@
 void __cdecl core_fire_cpp_CShell_process_FUN_004c6300(CShell *this_ptr)
 
 {
-  float fVar1;
   float fVar2;
+  float fVar1;
   float fVar3;
   
   if ((this_ptr->base).lifetime_remaining <= 0.0) {

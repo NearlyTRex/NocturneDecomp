@@ -6,9 +6,9 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x118]:1  local_118
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x118]:256  local_118
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e3329

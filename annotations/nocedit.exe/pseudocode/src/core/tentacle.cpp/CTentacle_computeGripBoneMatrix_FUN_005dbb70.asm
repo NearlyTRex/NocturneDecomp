@@ -6,11 +6,11 @@
 ; Parameters:
 ; CTentacle *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xfc]:1  local_fc
-; undefined1       Stack[-0xcc]:1  local_cc
-; undefined1       Stack[-0x9c]:1  local_9c
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined1       Stack[-0x3c]:1  local_3c
+; CMatrix3x4f      Stack[-0xfc]:48  local_fc
+; CMatrix3x4f      Stack[-0xcc]:48  local_cc
+; CMatrix3x4f      Stack[-0x9c]:48  local_9c
+; CMatrix3x4f      Stack[-0x6c]:48  local_6c
+; CMatrix3x4f      Stack[-0x3c]:48  local_3c
 ;
 ; XREF[2]:
 ;   core_tentacle.cpp_CTentacle_process_FUN_005db050 at 005db204

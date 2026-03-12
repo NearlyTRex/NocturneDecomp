@@ -8,7 +8,7 @@
 ; void *           Stack[0x8]:4   buffer
 ; int              Stack[0xc]:4   size
 ; Local Variables:
-; undefined1       Stack[-0x60]:1  local_60
+; char[80]         Stack[-0x60]:80  local_60
 ;
 ; XREF[5]:
 ;   cockpit_ckptutil.c_applyColorPalette_FUN_004319b0 at 0043184a

@@ -11,8 +11,8 @@
 int __cdecl core_frankgen_cpp_CFrankenstienMachine_accumulateParticles_FUN_004d1ec0(CFrankenstienMachine *this_ptr,float emission_rate,float delta_time)
 
 {
-  float fVar1;
   double dVar2;
+  float fVar1;
   
   fVar1 = emission_rate * delta_time + this_ptr->particle_accumulator;
   this_ptr->particle_accumulator = fVar1;

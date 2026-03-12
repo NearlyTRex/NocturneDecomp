@@ -9,11 +9,11 @@
 CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 
 {
+  int iVar5;
   int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
-  int iVar5;
   
   iVar1 = input_ptr->z;
   iVar2 = (this_ptr->saved_viewport_rect).top;

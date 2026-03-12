@@ -6,8 +6,8 @@
 ; Parameters:
 ; CBoneStructure * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined        Stack[-0x44]:1  local_44
-; undefined4       Stack[-0x14]:4  local_14
+; CMatrix3x4f      Stack[-0x44]:48  local_44
+; SBoneData *      Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10

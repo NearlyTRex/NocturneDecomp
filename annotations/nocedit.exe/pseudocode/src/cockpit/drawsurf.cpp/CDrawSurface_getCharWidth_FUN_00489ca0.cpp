@@ -10,6 +10,7 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCharWidth_FUN_00489ca0(CDrawSur
 
 {
   int iVar1;
+  int iVar2;
   char local_4 [4];
   
   if (g_CurrentFont != (CBitFont *)0x0) {
@@ -17,7 +18,7 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getCharWidth_FUN_00489ca0(CDrawSur
     return iVar1;
   }
   local_4[0] = (char)char_code;
-  local_4[1] = 0;
-  iVar1 = engine_2d_c_getStringWidth_FUN_004018a0(local_4);
-  return iVar1 + -1;
+  local_4[1] = '\0';
+  iVar2 = engine_2d_c_getStringWidth_FUN_004018a0(local_4);
+  return iVar2 + -1;
 }

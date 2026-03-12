@@ -8,12 +8,12 @@
 ; Local Variables:
 ; undefined4       Stack[-0x7c]:4  local_7c
 ; undefined4       Stack[-0x78]:4  local_78
-; undefined1       Stack[-0x74]:1  local_74
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x74]:80  local_74
+; int              Stack[-0x24]:4  local_24
+; SMRGLHeaderExtended * Stack[-0x20]:4  local_20
+; SMRGLHeaderExtended * Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; CVector3i *      Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_createKeyframeModel_FUN_00468320 at 004685c8

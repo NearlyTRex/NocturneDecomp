@@ -7,42 +7,38 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   output_bounds
 ; Local Variables:
-; undefined1       Stack[-0xec]:1  local_ec
-; undefined1       Stack[-0xe0]:1  local_e0
-; undefined1       Stack[-0xd4]:1  local_d4
-; undefined1       Stack[-0xc8]:1  local_c8
-; undefined4       Stack[-0xc0]:4  local_c0
-; undefined1       Stack[-0xbc]:1  local_bc
-; undefined1       Stack[-0xb0]:1  local_b0
-; undefined4       Stack[-0xa8]:4  local_a8
-; undefined4       Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined1       Stack[-0x98]:1  local_98
-; undefined4       Stack[-0x90]:4  local_90
-; undefined1       Stack[-0x8c]:1  local_8c
-; undefined1       Stack[-0x80]:1  local_80
-; undefined4       Stack[-0x78]:4  local_78
-; undefined1       Stack[-0x74]:1  local_74
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined1       Stack[-0x50]:1  local_50
-; undefined1       Stack[-0x44]:1  local_44
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int[1015]        Stack[-0x10d4]:4060  aiStackY_10d4
+; CVector3i        Stack[-0xec]:12  local_ec
+; CVector3i        Stack[-0xe0]:12  local_e0
+; CVector3i        Stack[-0xd4]:12  local_d4
+; int              Stack[-0xc8]:4  local_c8
+; int[2]           Stack[-0xc4]:8  aiStack_c4
+; CVector3i        Stack[-0xbc]:12  local_bc
+; int              Stack[-0xb0]:4  local_b0
+; int[2]           Stack[-0xac]:8  aiStack_ac
+; float            Stack[-0xa4]:4  local_a4
+; float            Stack[-0xa0]:4  local_a0
+; float            Stack[-0x9c]:4  local_9c
+; int              Stack[-0x98]:4  local_98
+; int[2]           Stack[-0x94]:8  aiStack_94
+; CVector3i        Stack[-0x8c]:12  local_8c
+; CVector3i        Stack[-0x80]:12  local_80
+; int              Stack[-0x74]:4  local_74
+; int[4]           Stack[-0x70]:16  aiStack_70
+; int              Stack[-0x60]:4  local_60
+; CVector3f        Stack[-0x5c]:12  local_5c
+; CVector3f        Stack[-0x50]:12  local_50
+; CVector3i        Stack[-0x44]:12  local_44
+; int              Stack[-0x38]:4  local_38
+; CMatrix3x3f *    Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; UVector3 *       Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a7c6

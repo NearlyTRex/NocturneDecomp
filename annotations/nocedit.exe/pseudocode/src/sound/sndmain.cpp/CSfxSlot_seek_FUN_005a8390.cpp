@@ -11,8 +11,9 @@
 void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
 
 {
-  CSfxSample *this_ptr_00;
   double dVar1;
+  double dVar2;
+  CSfxSample *this_ptr_00;
   
   if (this_ptr->sample == (CSfxSample *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -27,11 +28,11 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
                      ,(this_ptr->options).trigger_id,0);
   (this_ptr->options).trigger_id = 0;
   (this_ptr->options).trigger_time = dVar1;
-  dVar1 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0
+  dVar2 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0
                     (this_ptr->sample,(this_ptr->options).trigger_time,
                      (this_ptr->options).trigger_id);
   this_ptr_00 = this_ptr->sample;
-  (this_ptr->options).trigger_time = dVar1;
+  (this_ptr->options).trigger_time = dVar2;
   if (this_ptr_00->streaming_slot_index < 0) {
     *(uint *)&this_ptr->prev_hardware_playback_pos =
          *(uint *)&(this_ptr->options).trigger_time;

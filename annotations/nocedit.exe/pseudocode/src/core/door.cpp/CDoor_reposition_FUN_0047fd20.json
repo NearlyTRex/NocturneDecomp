@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 281,
-    "complexity_score": 151,
+    "complexity_score": 152,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 126,
+    "pseudocode_lines": 127,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 407
+    "total_lines": 408
   },
   "cross_references": [
     {
@@ -200,8 +200,134 @@
         "is_param": false,
         "name": "local_c8",
         "offset": -200,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CBoundingBox3D"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_a4",
+        "offset": -164,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_98",
+        "offset": -152,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_8c",
+        "offset": -140,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_80",
+        "offset": -128,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_78",
+        "offset": -120,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_74",
+        "offset": -116,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_68",
+        "offset": -104,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_5c",
+        "offset": -92,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_50",
+        "offset": -80,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_44",
+        "offset": -68,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_38",
+        "offset": -56,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2c",
+        "offset": -44,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_20",
+        "offset": -32,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_14",
+        "offset": -20,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": true,
@@ -232,7 +358,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 49,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(local_c8.min.x) <= ABS(local_c8.max.x)) {",
@@ -240,7 +366,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 49,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(local_c8.min.x) <= ABS(local_c8.max.x)) {",

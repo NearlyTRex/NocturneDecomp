@@ -6,14 +6,12 @@
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined1       Stack[-0x38]:1  local_38
-; undefined4       Stack[-0x37]:4  local_37
-; undefined1       Stack[-0x33]:1  local_33
-; undefined1       Stack[-0x32]:1  local_32
-; undefined4       Stack[-0x1f]:4  local_1f
-; undefined4       Stack[-0x1b]:4  local_1b
-; undefined4       Stack[-0x17]:4  local_17
+; SNetPacketHeader Stack[-0x3c]:5  local_3c
+; uint             Stack[-0x37]:4  local_37
+; char[20]         Stack[-0x33]:20  local_33
+; int              Stack[-0x1f]:4  local_1f
+; EHeroType        Stack[-0x1b]:4  local_1b
+; int              Stack[-0x17]:4  local_17
 ;
 ; XREF[2]:
 ;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470 at 005429e5

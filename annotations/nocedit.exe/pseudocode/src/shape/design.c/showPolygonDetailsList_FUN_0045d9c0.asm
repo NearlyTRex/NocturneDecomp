@@ -4,16 +4,13 @@
 ; void __cdecl shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
 ;
 ; Local Variables:
-; undefined        Stack[-0x11c]:1  local_11c
-; undefined1       Stack[-0x11b]:1  local_11b
-; undefined        Stack[-0x7c]:1  local_7c
-; undefined1       Stack[-0x7b]:1  local_7b
-; undefined        Stack[-0x2c]:1  local_2c
-; undefined1       Stack[-0x2b]:1  local_2b
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[160]        Stack[-0x11c]:160  local_11c
+; char[80]         Stack[-0x7c]:80  local_7c
+; char[12]         Stack[-0x2c]:12  local_2c
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Poly_d_0061b416

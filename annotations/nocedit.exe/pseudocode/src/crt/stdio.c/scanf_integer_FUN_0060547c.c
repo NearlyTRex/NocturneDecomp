@@ -9,16 +9,21 @@
 int __cdecl scanf_integer(scanf_state_t *state,va_list_t *args,int base,int is_signed)
 
 {
-  byte bVar1;
-  char *pcVar2;
+  byte bVar2;
+  int iVar3;
+  char *pcVar4;
+  uint *puVar5;
   uint uVar3;
+  uint uVar6;
   int iVar4;
   int iVar5;
   int *piVar6;
+  int iVar8;
   int iVar7;
   uint *puVar8;
   byte bVar9;
   ulonglong uVar10;
+  ulonglong uVar9;
   ulonglong local_3c;
   uint local_34;
   int local_30;
@@ -28,6 +33,8 @@ int __cdecl scanf_integer(scanf_state_t *state,va_list_t *args,int base,int is_s
   int local_20;
   int local_1c;
   int local_18;
+  char *pcVar2;
+  byte bVar1;
   
   bVar9 = 0;
   iVar7 = 0;
@@ -36,16 +43,16 @@ int __cdecl scanf_integer(scanf_state_t *state,va_list_t *args,int base,int is_s
   local_1c = 0;
   while( true ) {
     local_24 = scanf_getc_wrapper(state);
-    iVar5 = local_24;
+    iVar8 = local_24;
     if ((g_CharacterClassificationTable[(byte)((char)local_24 + 1)] & 2) == 0) break;
     local_1c = local_1c + 1;
-    local_24 = iVar5;
+    local_24 = iVar8;
   }
   if ((state->flags & 2) == 0) {
-    iVar4 = state->field_width;
-    state->field_width = iVar4 + -1;
-    local_24 = iVar5;
-    if (iVar4 == 0) {
+    iVar3 = state->field_width;
+    state->field_width = iVar3 + -1;
+    local_24 = iVar8;
+    if (iVar3 == 0) {
 LAB_00605786:
       scanf_ungetc_wrapper(local_24,state);
     }
@@ -63,9 +70,9 @@ LAB_00605786:
           iVar7 = 1;
           if (local_24 == -1) goto LAB_00605798;
           if ((local_24 == 0x78) || (local_24 == 0x58)) {
-            iVar7 = local_1c + 2;
+            iVar8 = local_1c + 2;
             local_24 = scanf_getc_with_width(state);
-            local_1c = iVar7;
+            local_1c = iVar8;
             iVar7 = 0;
             if (local_24 == -1) goto LAB_00605798;
             base = 0x10;
@@ -83,19 +90,19 @@ LAB_00605786:
         iVar7 = 1;
         if (local_24 == -1) goto LAB_00605798;
         if ((local_24 == 0x78) || (local_24 == 0x58)) {
-          iVar7 = local_1c + 2;
+          iVar8 = local_1c + 2;
           local_24 = scanf_getc_with_width(state);
-          local_1c = iVar7;
+          local_1c = iVar8;
           iVar7 = 0;
           if (local_24 == -1) goto LAB_00605798;
         }
       }
       if ((state->flags & 0x40) == 0) {
         do {
-          iVar5 = local_24;
+          iVar8 = local_24;
           iVar4 = char_to_digit(local_24);
           if (base <= iVar4) {
-            if ((iVar5 != 0x3a) || ((state->flags & 0x80) == 0)) goto LAB_00605786;
+            if ((iVar8 != 0x3a) || ((state->flags & 0x80) == 0)) goto LAB_00605786;
             goto LAB_00605753;
           }
           local_18 = local_18 * base + iVar4;
@@ -131,25 +138,25 @@ LAB_00605798:
       local_18 = -local_18;
     }
     if (0 < iVar7) {
-      bVar9 = state->flags;
+      bVar2 = state->flags;
       iVar7 = iVar7 + local_1c;
-      if ((bVar9 & 1) != 0) {
-        if ((bVar9 & 4) == 0) {
-          if ((bVar9 & 8) == 0) {
-            pcVar2 = args->value[0];
-            args->value[0] = pcVar2 + 4;
-            piVar6 = *(int **)pcVar2;
+      if ((bVar2 & 1) != 0) {
+        if ((bVar2 & 4) == 0) {
+          if ((bVar2 & 8) == 0) {
+            pcVar4 = args->value[0];
+            args->value[0] = pcVar4 + 4;
+            piVar6 = *(int **)pcVar4;
           }
           else {
-            pcVar2 = args->value[0];
-            args->value[0] = pcVar2 + 4;
-            piVar6 = *(int **)pcVar2;
+            pcVar4 = args->value[0];
+            args->value[0] = pcVar4 + 4;
+            piVar6 = *(int **)pcVar4;
           }
         }
         else {
-          pcVar2 = args->value[0];
-          args->value[0] = pcVar2 + 8;
-          piVar6 = (int *)*(undefined6 *)pcVar2;
+          pcVar4 = args->value[0];
+          args->value[0] = pcVar4 + 8;
+          piVar6 = (int *)*(undefined6 *)pcVar4;
         }
         if ((state->flags & 0x10) != 0) {
           *(short *)piVar6 = (short)local_18;
@@ -169,16 +176,16 @@ LAB_00605798:
       if ((bVar1 & 1) != 0) {
         if ((bVar1 & 4) == 0) {
           if ((bVar1 & 8) != 0) {
-            pcVar2 = args->value[0];
-            args->value[0] = pcVar2 + 4;
-            puVar8 = *(uint **)pcVar2;
-            *puVar8 = (uint)local_3c;
-            puVar8[(uint)bVar9 * -2 + 1] = *(uint *)((int)&local_3c + (uint)bVar9 * -8 + 4);
+            pcVar4 = args->value[0];
+            args->value[0] = pcVar4 + 4;
+            puVar5 = *(uint **)pcVar4;
+            *puVar5 = (uint)local_3c;
+            puVar5[(uint)bVar9 * -2 + 1] = *(uint *)((int)&local_3c + (uint)bVar9 * -8 + 4);
             return iVar7;
           }
-          pcVar2 = args->value[0];
-          args->value[0] = pcVar2 + 4;
-          puVar8 = *(uint **)pcVar2;
+          pcVar4 = args->value[0];
+          args->value[0] = pcVar4 + 4;
+          puVar8 = *(uint **)pcVar4;
         }
         else {
           pcVar2 = args->value[0];
@@ -204,13 +211,13 @@ LAB_0060569e:
   local_24 = scanf_getc_with_width(state);
   iVar7 = iVar7 + 1;
   if (local_24 == -1) goto LAB_00605798;
-  uVar3 = char_to_digit(local_24);
-  if (base <= (int)uVar3) goto LAB_00605786;
+  uVar6 = char_to_digit(local_24);
+  if (base <= (int)uVar6) goto LAB_00605786;
   local_30 = 0;
-  local_34 = uVar3;
-  uVar10 = multiply64(local_3c,CONCAT44(local_28,local_2c));
-  local_3c._4_4_ = (int)(uVar10 >> 0x20);
-  local_3c._0_4_ = (uint)uVar10;
+  local_34 = uVar6;
+  uVar9 = multiply64(local_3c,CONCAT44(local_28,local_2c));
+  local_3c._4_4_ = (int)(uVar9 >> 0x20);
+  local_3c._0_4_ = (uint)uVar9;
   local_3c = CONCAT44(local_3c._4_4_ + local_30 + (uint)CARRY4((uint)local_3c,local_34),
                       (uint)local_3c + local_34);
   goto LAB_0060569e;

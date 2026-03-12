@@ -11,7 +11,9 @@ int __watcallStack crt_iostream_cpp_streambuf_do_sputn_FUN_00606780(streambuf *b
 {
   uint uVar1;
   int iVar2;
+  int iVar1;
   uint uVar3;
+  uint uVar2;
   char *pcVar4;
   char *pcVar5;
   byte bVar6;
@@ -24,8 +26,8 @@ int __watcallStack crt_iostream_cpp_streambuf_do_sputn_FUN_00606780(streambuf *b
       return local_14;
     }
     if (buffer->__put_base == (char *)0x0) {
-      iVar2 = (**(code **)((int)buffer[1].__b_lock + 0xc))(buffer,*(char *)input_buffer);
-      if (iVar2 == -1) {
+      iVar1 = (**(code **)((int)buffer[1].__b_lock + 0xc))(buffer,*(char *)input_buffer);
+      if (iVar1 == -1) {
         return local_14;
       }
       uVar1 = 1;
@@ -49,10 +51,12 @@ int __watcallStack crt_iostream_cpp_streambuf_do_sputn_FUN_00606780(streambuf *b
         pcVar4 = pcVar4 + (uint)bVar6 * -8 + 4;
         pcVar5 = pcVar5 + (uint)bVar6 * -8 + 4;
       }
-      for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-        *pcVar5 = *pcVar4;
-        pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
+      for (uVar2 = uVar1 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
         pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+        pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
+        *pcVar5 = *pcVar4;
+        pcVar4 = pcVar4;
+        pcVar5 = pcVar5;
       }
       buffer->__put_ptr = buffer->__put_ptr + uVar1;
     }

@@ -9,7 +9,7 @@
 ; SRenderVertex    Stack[-0xa8]:48  local_a8
 ; SRenderVertex    Stack[-0x78]:48  local_78
 ; SRenderVertex    Stack[-0x48]:48  local_48
-; undefined4       Stack[-0x18]:4  local_18
+; int              Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

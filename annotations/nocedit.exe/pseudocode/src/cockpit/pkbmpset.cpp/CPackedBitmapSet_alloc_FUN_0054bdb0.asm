@@ -7,7 +7,7 @@
 ; CPackedBitmapSet * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   bitmap_count
 ; Local Variables:
-; undefined        Stack[-0xd0]:1  local_d0
+; char[200]        Stack[-0xd0]:200  local_d0
 ;
 ; XREF[3]:
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70 at 0054bea2

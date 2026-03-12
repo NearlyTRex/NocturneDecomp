@@ -9,12 +9,15 @@
 uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_005507f0(CPodFile *this_ptr,int file_index)
 
 {
-  uchar uVar1;
+  uchar data_byte;
   _FILE *file;
   uint uVar2;
+  char *pcVar1;
   uint current_crc;
   char *pcVar3;
+  uint uVar3;
   SIZE_T size;
+  uchar uVar1;
   
   if ((file_index < 0) || (this_ptr->file_count <= file_index)) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
@@ -43,16 +46,16 @@ uint __cdecl engine_pod_cpp_CPodFile_computeFileCRC_FUN_005507f0(CPodFile *this_
       current_crc = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(current_crc,uVar1);
     } while (uVar2 < 0x10000);
   }
-  pcVar3 = g_FileIOBuffer;
+  pcVar1 = g_FileIOBuffer;
   _fread(g_FileIOBuffer,size,1,file);
-  uVar2 = 0;
+  uVar3 = 0;
   if (size != 0) {
     do {
-      uVar1 = *pcVar3;
-      pcVar3 = (char *)((uchar *)pcVar3 + 1);
-      uVar2 = uVar2 + 1;
-      current_crc = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(current_crc,uVar1);
-    } while (uVar2 < size);
+      data_byte = *pcVar1;
+      pcVar1 = (char *)((uchar *)pcVar1 + 1);
+      uVar3 = uVar3 + 1;
+      current_crc = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(current_crc,data_byte);
+    } while (uVar3 < size);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pod.cpp",0x365);
   return current_crc;

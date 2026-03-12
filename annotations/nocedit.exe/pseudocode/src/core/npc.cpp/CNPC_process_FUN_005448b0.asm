@@ -7,7 +7,16 @@
 ; CNPC *           Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x58]:4  local_58
+; float            Stack[-0x58]:4  local_58
+; CVector3f        Stack[-0x54]:12  CStack_54
+; CVector3f        Stack[-0x48]:12  CStack_48
+; float            Stack[-0x3c]:4  fStack_3c
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; CVector3f        Stack[-0x30]:12  CStack_30
+; float            Stack[-0x24]:4  fStack_24
+; float            Stack[-0x20]:4  fStack_20
+; float            Stack[-0x1c]:4  fStack_1c
 ;
 ; XREF[1]:
 ;   core_hpriest.cpp_CHighPriestOfGardath_process_FUN_004f7c00 at 004f7c0a

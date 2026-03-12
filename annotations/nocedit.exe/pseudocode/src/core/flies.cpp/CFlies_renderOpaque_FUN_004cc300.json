@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 306,
+    "complexity_score": 298,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 18,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 161,
+    "pseudocode_lines": 153,
     "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 483
+    "total_lines": 475
   },
   "cross_references": [],
   "function": {
@@ -259,18 +259,137 @@
     "pcode_op_count": 1353
   },
   "stack_frame": {
-    "frame_size": 96,
-    "local_size": 92,
+    "frame_size": 168,
+    "local_size": 164,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "SStack_a0",
+        "offset": -160,
+        "size": 24,
+        "type": "SMRGLHeaderPrimitive"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_74",
+        "offset": -116,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
         "name": "local_58",
         "offset": -88,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CBoundingBox3D"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_40",
+        "offset": -64,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_34",
+        "offset": -52,
+        "size": 12,
+        "type": "CVector3i"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pSStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "SFly *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": true,
@@ -309,7 +428,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 92,
       "match": "ROUND",
       "severity": "mild",
       "text": "iStack_1c = (int)ROUND(ROUND(pSStack_20->t * 64.0f));",
@@ -317,7 +436,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 92,
       "match": "ROUND",
       "severity": "mild",
       "text": "iStack_1c = (int)ROUND(ROUND(pSStack_20->t * 64.0f));",
@@ -325,7 +444,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 116,
+      "line": 103,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_34.x = (int)ROUND(CStack_40.x * 256.0f);",
@@ -333,7 +452,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 117,
+      "line": 104,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_34.y = (int)ROUND(CStack_40.y * 256.0f);",
@@ -341,7 +460,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 118,
+      "line": 105,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_34.z = (int)ROUND(CStack_40.z * 256.0f);",
@@ -349,7 +468,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 127,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar9 * -8 + 4);",
@@ -357,15 +484,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 147,
+      "line": 135,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "vertices = (SRenderVertex *)((int)vertices + (uint)bVar9 * -8 + 4);",
@@ -373,34 +492,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 138,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 140,
       "match": "(short *)((int)",
       "severity": "mild",
-      "text": "psVar1 = (short *)((int)&pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x + 2);",
+      "text": "psVar1 = (short *)((int)&this_ptr_01->vertex_buffer_ptr[1].projected_vertex.screen_x + 2",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 143,
       "match": "(short *)((int)",
       "severity": "mild",
-      "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =",
+      "text": "*(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 144,
       "match": "(short *)((int)",
       "severity": "mild",
-      "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) + 1;",
+      "text": "*(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) +",
       "type": "pointer_cast"
     }
   ],

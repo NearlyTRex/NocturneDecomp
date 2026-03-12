@@ -9,14 +9,14 @@
 void __cdecl shape_design_c_normalizeUVCoordinates_FUN_0046e340(void)
 
 {
-  float10 fVar1;
-  float10 fVar2;
   double dVar3;
   double dVar4;
   float local_24;
   float local_20;
   int local_18;
   int local_14;
+  float10 fVar2;
+  float10 fVar1;
   
   for (local_18 = 0; local_18 < g_PolygonCount; local_18 = local_18 + 1) {
     local_24 = 1e+30;

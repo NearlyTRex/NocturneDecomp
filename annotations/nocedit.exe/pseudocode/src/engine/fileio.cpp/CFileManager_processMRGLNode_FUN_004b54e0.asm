@@ -8,7 +8,7 @@
 ; SMRGLHeaderExtended * Stack[0x8]:4   mrgl_node
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SMRGLHeaderExtended * Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610 at 004b5626

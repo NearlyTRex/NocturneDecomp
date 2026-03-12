@@ -9,11 +9,10 @@
 ; char *           Stack[0xc]:4   format_string
 ; _tm *            Stack[0x10]:4   time_ptr
 ; Local Variables:
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined1       Stack[-0x9f]:1  local_9f
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[132]        Stack[-0xa0]:132  local_a0
+; uint             Stack[-0x1c]:4  local_1c
+; uint             Stack[-0x18]:4  local_18
+; char *           Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
 ;   engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460 at 004b7548

@@ -7,19 +7,13 @@
 ; CBox *           Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined1       Stack[-0x144]:1  local_144
-; undefined1       Stack[-0x44]:1  local_44
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined1       Stack[-0x38]:1  local_38
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined1       Stack[-0x28]:1  local_28
-; undefined1       Stack[-0x24]:1  local_24
-; undefined1       Stack[-0x20]:1  local_20
-; undefined1       Stack[-0x1c]:1  local_1c
-; undefined1       Stack[-0x18]:1  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
+; char[256]        Stack[-0x144]:256  local_144
+; CVector3f        Stack[-0x44]:12  local_44
+; CVector3f        Stack[-0x38]:12  local_38
+; CVector3f        Stack[-0x2c]:12  local_2c
+; CVector3f        Stack[-0x20]:12  local_20
+; float            Stack[-0x14]:4  local_14
+; undefined1[4]    Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_actor.cpp_archiveBox_FUN_0040bd70 at 0040bda9

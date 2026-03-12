@@ -8,8 +8,9 @@
 ; int              Stack[0x8]:4   mirror_index
 ; int              Stack[0xc]:4   enable_flag
 ; Local Variables:
-; undefined1       Stack[-0x20]:1  local_20
-; undefined4       Stack[-0x14]:4  local_14
+; float[3]         Stack[-0x2c]:12  afStack_2c
+; float[3]         Stack[-0x20]:12  local_20
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
 ;   core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60 at 0056ce92

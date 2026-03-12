@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 173,
-    "complexity_score": 200,
+    "complexity_score": 203,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 105,
+    "pseudocode_lines": 108,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 278
+    "total_lines": 281
   },
   "cross_references": [
     {
@@ -126,28 +126,28 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -161,7 +161,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 23,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar2 + -8) = 0;",
@@ -169,23 +169,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 32,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)this_ptr->tri_data->edge_perpendiculars + iVar3 + -0x14) == 0) {",
+      "text": "if (*(int *)((int)this_ptr->tri_data->edge_perpendiculars + iVar6 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 37,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "this_ptr->vertex_data[*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar4 + 4)].",
+      "text": "this_ptr->vertex_data[*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar5 + 4)].",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 51,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)pCVar1->adjacent_edge_indices + iVar4 + -8) == 0) {",
@@ -193,7 +193,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 52,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)pCVar1->adjacent_edge_indices + iVar4 + -8) = 0xffffffff;",
@@ -201,34 +201,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 55,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)pCVar1->adjacent_edge_indices + iVar4 + -8) = iVar3;",
+      "text": "*(int *)((int)pCVar1->adjacent_edge_indices + iVar4 + -8) = iVar6;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 66,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)this_ptr->tri_data->edge_perpendiculars + iVar3 + -0x14) == 0) {",
+      "text": "if (*(int *)((int)this_ptr->tri_data->edge_perpendiculars + iVar6 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 70,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar2 + iVar3 + 4) =",
+      "text": "*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar1 + iVar6 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 72,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "[*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar2 + iVar3 + 4)].",
+      "text": "[*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar1 + iVar6 + 4)].",
       "type": "pointer_cast"
     }
   ]

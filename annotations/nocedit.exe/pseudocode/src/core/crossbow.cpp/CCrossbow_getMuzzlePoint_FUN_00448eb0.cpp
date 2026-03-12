@@ -9,9 +9,9 @@
 CVector3f * __cdecl core_crossbow_cpp_CCrossbow_getMuzzlePoint_FUN_00448eb0(CCrossbow *this_ptr,CVector3f *out_point)
 
 {
-  float fVar1;
-  float fVar2;
   CKeyFramedModel *pCVar3;
+  float fVar2;
+  float fVar1;
   
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&(this_ptr->base).model)
   ;

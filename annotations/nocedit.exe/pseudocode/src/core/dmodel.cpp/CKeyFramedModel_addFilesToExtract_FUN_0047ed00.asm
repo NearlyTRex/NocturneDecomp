@@ -8,8 +8,7 @@
 ; _FILE *          Stack[0x8]:4   dependency_file
 ; int              Stack[0xc]:4   skip_raw_files
 ; Local Variables:
-; undefined1       Stack[-0xd8]:1  local_d8
-; undefined1       Stack[-0xd7]:1  local_d7
+; char[200]        Stack[-0xd8]:200  local_d8
 ;
 ; XREF[10]:
 ;   core_anvil.cpp_CAnvil_addFilesToExtract_FUN_00412090 at 004120cf

@@ -1,32 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 33,
-        "line": 120,
-        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 312,
-    "complexity_score": 293,
+    "complexity_score": 259,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 113,
-    "suspect_count": 16,
+    "pseudocode_lines": 104,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
-      "pointer_cast",
-      "unknown_field"
+      "pointer_cast"
     ],
-    "total_lines": 425
+    "total_lines": 416
   },
   "cross_references": [
     {
@@ -127,43 +119,29 @@
         "is_param": false,
         "name": "local_34",
         "offset": -52,
-        "size": 4,
-        "type": "undefined4"
+        "size": 20,
+        "type": "uint[5]"
       },
       {
         "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
+        "name": "uStack_20",
+        "offset": -32,
+        "size": 2,
+        "type": "undefined2"
       },
       {
         "is_param": false,
         "name": "local_1e",
         "offset": -30,
-        "size": 4,
-        "type": "undefined4"
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "sStack_1c",
+        "offset": -28,
+        "size": 2,
+        "type": "short"
       },
       {
         "is_param": false,
@@ -226,18 +204,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 21,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar3 = *(uint *)((int)granule_info->granules + iVar2 + -0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if ((*(int *)((int)granule_info->granules + iVar2 + -4) == 2) &&",
+      "text": "uVar2 = *(uint *)((int)granule_info->granules + iVar1 + -0xc);",
       "type": "pointer_cast"
     },
     {
@@ -245,15 +215,15 @@
       "line": 22,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)granule_info->granules + iVar2) == 0)) {",
+      "text": "if ((*(int *)((int)granule_info->granules + iVar1 + -4) == 2) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if ((*(int *)((int)granule_info->granules + iVar2 + -4) == 2) &&",
+      "text": "(*(int *)((int)granule_info->granules + iVar1) == 0)) {",
       "type": "pointer_cast"
     },
     {
@@ -261,20 +231,28 @@
       "line": 26,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)granule_info->granules + iVar2) == 1)) {",
+      "text": "if ((*(int *)((int)granule_info->granules + iVar1 + -4) == 2) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 27,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "(*(int *)((int)granule_info->granules + iVar1) == 1)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)granule_info->granules + iVar2 + 0x3c) = 0;",
+      "text": "*(uint *)((int)granule_info->granules + iVar1 + 0x3c) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 47,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "local_1a = CONCAT22(1,(ushort)local_1a);",
@@ -282,15 +260,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 48,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)granule_info->granules + iVar2 + 0x3c) = 0;",
+      "text": "*(uint *)((int)granule_info->granules + iVar1 + 0x3c) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 55,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "local_1a = CONCAT22(2,(ushort)local_1a);",
@@ -298,15 +276,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 56,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)granule_info->granules + iVar2 + 0x3c) = 1;",
+      "text": "*(uint *)((int)granule_info->granules + iVar1 + 0x3c) = 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 73,
+      "line": 67,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "local_1a = CONCAT22(3,(ushort)local_1a);",
@@ -314,7 +292,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 76,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "local_1a = CONCAT22(4,(ushort)local_1a);",
@@ -322,26 +300,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 84,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "local_1a = CONCAT22(5,(ushort)local_1a);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 113,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "local_16 = CONCAT22(local_16._2_2_ + 1,(ushort)local_16);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 113,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "local_16 = CONCAT22(local_16._2_2_ + 1,(ushort)local_16);",
       "type": "decompiler_intrinsic"
     },
     {

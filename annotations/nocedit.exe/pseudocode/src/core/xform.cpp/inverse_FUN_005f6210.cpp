@@ -9,6 +9,13 @@
 CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_005f6210(CMatrix3x4f *matrix_in,CMatrix3x4f *matrix_out)
 
 {
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  double dVar7;
   int iVar1;
   float *pfVar2;
   CMatrix3x4f *pCVar3;
@@ -47,32 +54,32 @@ CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_005f6210(CMatrix3x4f *matri
     g_CurrentLineNumber = 0x23e;
     core_main_c_displayErrorAndQuit_FUN_00506f10("inverse() - Singular matrix");
   }
-  local_90 = matrix_in->m[1].x * matrix_in->m[2].y - matrix_in->m[1].y * matrix_in->m[2].x;
-  local_60 = (double)local_90;
-  local_80 = -(matrix_in->m[1].w * matrix_in->m[2].y - matrix_in->m[1].y * matrix_in->m[2].w);
-  local_28 = (double)local_80;
-  dVar5 = 1.0 / dVar5;
-  local_70 = matrix_in->m[1].w * matrix_in->m[2].x - matrix_in->m[1].x * matrix_in->m[2].w;
-  local_48 = (double)local_70;
-  local_8c = -(matrix_in->m[0].x * matrix_in->m[2].y - matrix_in->m[0].y * matrix_in->m[2].x);
-  local_58 = (double)local_8c;
-  local_7c = matrix_in->m[0].w * matrix_in->m[2].y - matrix_in->m[0].y * matrix_in->m[2].w;
-  local_50 = (double)local_7c;
-  local_6c = -(matrix_in->m[0].w * matrix_in->m[2].x - matrix_in->m[0].x * matrix_in->m[2].w);
-  local_18 = (double)local_6c;
-  local_90 = local_90 * (float)dVar5;
-  local_8c = local_8c * (float)dVar5;
+  fVar1 = matrix_in->m[1].x * matrix_in->m[2].y - matrix_in->m[1].y * matrix_in->m[2].x;
+  local_60 = (double)fVar1;
+  fVar2 = -(matrix_in->m[1].w * matrix_in->m[2].y - matrix_in->m[1].y * matrix_in->m[2].w);
+  local_28 = (double)fVar2;
+  dVar7 = 1.0 / dVar5;
+  fVar3 = matrix_in->m[1].w * matrix_in->m[2].x - matrix_in->m[1].x * matrix_in->m[2].w;
+  local_48 = (double)fVar3;
+  fVar4 = -(matrix_in->m[0].x * matrix_in->m[2].y - matrix_in->m[0].y * matrix_in->m[2].x);
+  local_58 = (double)fVar4;
+  fVar5 = matrix_in->m[0].w * matrix_in->m[2].y - matrix_in->m[0].y * matrix_in->m[2].w;
+  local_50 = (double)fVar5;
+  fVar6 = -(matrix_in->m[0].w * matrix_in->m[2].x - matrix_in->m[0].x * matrix_in->m[2].w);
+  local_18 = (double)fVar6;
+  local_90 = fVar1 * (float)dVar7;
+  local_8c = fVar4 * (float)dVar7;
   local_88 = (matrix_in->m[0].x * matrix_in->m[1].y - matrix_in->m[0].y * matrix_in->m[1].x) *
-             (float)dVar5;
-  local_80 = local_80 * (float)dVar5;
-  local_68 = matrix_in->m[0].w * matrix_in->m[1].x - matrix_in->m[0].x * matrix_in->m[1].w;
-  local_30 = (double)local_68;
-  local_7c = local_7c * (float)dVar5;
+             (float)dVar7;
+  local_80 = fVar2 * (float)dVar7;
+  fVar1 = matrix_in->m[0].w * matrix_in->m[1].x - matrix_in->m[0].x * matrix_in->m[1].w;
+  local_30 = (double)fVar1;
+  local_7c = fVar5 * (float)dVar7;
   local_78 = -(matrix_in->m[0].w * matrix_in->m[1].y - matrix_in->m[0].y * matrix_in->m[1].w) *
-             (float)dVar5;
-  local_70 = local_70 * (float)dVar5;
-  local_6c = local_6c * (float)dVar5;
-  local_68 = local_68 * (float)dVar5;
+             (float)dVar7;
+  local_70 = fVar3 * (float)dVar7;
+  local_6c = fVar6 * (float)dVar7;
+  local_68 = fVar1 * (float)dVar7;
   local_84 = -(matrix_in->m[2].z * local_88 +
               matrix_in->m[0].z * local_90 + matrix_in->m[1].z * local_8c);
   local_74 = -(matrix_in->m[2].z * local_78 +
@@ -82,9 +89,11 @@ CMatrix3x4f * __stack_esi core_xform_cpp_inverse_FUN_005f6210(CMatrix3x4f *matri
   pfVar2 = &local_90;
   pCVar3 = local_10;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar3->m[0].w = *pfVar2;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
     pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
+    pCVar3->m[0].w = *pfVar2;
+    pfVar2 = pfVar2;
+    pCVar3 = pCVar3;
   }
   return local_10;
 }

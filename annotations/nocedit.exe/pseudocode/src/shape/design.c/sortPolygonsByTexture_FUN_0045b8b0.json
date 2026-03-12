@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 103,
+    "complexity_score": 109,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 49,
     "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast"
     ],
-    "total_lines": 120
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -140,56 +140,56 @@
         "is_param": false,
         "name": "local_19c",
         "offset": -412,
-        "size": 1,
-        "type": "undefined1"
+        "size": 388,
+        "type": "uint[97]"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 28,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar2 = (SShapeEditorPolygon *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);",
+      "text": "pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 34,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar2 = (SShapeEditorPolygon *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);",
+      "text": "pSVar4 = (SShapeEditorPolygon *)((int)pSVar4 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 35,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar4 = (SShapeEditorPolygon *)((int)pSVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "text": "pSVar2 = (SShapeEditorPolygon *)((int)pSVar2 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 46,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar2 = (SShapeEditorPolygon *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);",
+      "text": "pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {

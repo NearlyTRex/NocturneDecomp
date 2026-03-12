@@ -130,50 +130,15 @@
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
+        "size": 24,
+        "type": "int[6]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -212,14 +177,14 @@
     {
       "description": "Complex pointer cast",
       "line": 16,
-      "match": "(int *)((int)",
+      "match": "(char *)((int)",
       "severity": "mild",
-      "text": "piVar3 = (int *)((int)piVar3 + 4);",
+      "text": "pcVar2 = (char *)((int)pcVar2 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 22,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar3 = (int *)((int)piVar3 + 1);",

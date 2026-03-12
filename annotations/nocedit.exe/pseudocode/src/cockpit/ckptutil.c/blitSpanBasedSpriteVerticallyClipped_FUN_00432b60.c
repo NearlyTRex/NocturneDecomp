@@ -9,20 +9,27 @@
 void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60(void *sprite_data,void *span_data)
 
 {
-  int iVar1;
-  int iVar2;
-  int iVar3;
+  int iVar4;
+  int iVar6;
+  int iVar9;
   ColorConversionFunc *pCVar4;
   int iVar5;
   int *piVar6;
+  int iVar10;
+  int *piVar11;
   int iVar7;
+  int iVar12;
   int iVar8;
+  int iVar13;
   int local_40;
   int local_3c;
   int local_38;
   int local_34;
   int local_30;
   int local_2c;
+  int iVar1;
+  int iVar2;
+  int iVar3;
   
   pCVar4 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00431760();
   if (g_BitsPerPixel == 8) {
@@ -54,16 +61,16 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b6
       local_3c = g_ClipTop * 0x84;
       local_40 = g_ClipTop << 2;
       do {
-        iVar2 = *(int *)((int)g_ScreenBufferArray + local_40);
-        iVar5 = local_30 * g_WindowWidth;
-        iVar7 = 0;
-        for (iVar8 = 0; piVar6 = (int *)(local_3c + (int)span_data), iVar8 < *piVar6;
-            iVar8 = iVar8 + 1) {
-          iVar1 = iVar7 + 0x44;
-          iVar3 = *(int *)(iVar7 + 4 + (int)piVar6);
-          iVar7 = iVar7 + 4;
-          (*pCVar4)((void *)(iVar3 * 2 + iVar2),(void *)((int)sprite_data + iVar3 + iVar5),
-                    *(int *)(iVar1 + (int)piVar6));
+        iVar6 = *(int *)((int)g_ScreenBufferArray + local_40);
+        iVar10 = local_30 * g_WindowWidth;
+        iVar12 = 0;
+        for (iVar13 = 0; piVar11 = (int *)(local_3c + (int)span_data), iVar13 < *piVar11;
+            iVar13 = iVar13 + 1) {
+          iVar4 = iVar12 + 0x44;
+          iVar9 = *(int *)(iVar12 + 4 + (int)piVar11);
+          iVar12 = iVar12 + 4;
+          (*pCVar4)((void *)(iVar9 * 2 + iVar6),(void *)((int)sprite_data + iVar9 + iVar10),
+                    *(int *)(iVar4 + (int)piVar11));
         }
         local_3c = local_3c + 0x84;
         local_40 = local_40 + 4;

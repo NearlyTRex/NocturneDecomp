@@ -11,8 +11,8 @@
 ; int *            Stack[0x14]:4   output_length
 ; int              Stack[0x18]:4   enable_callback
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char *           Stack[-0x18]:4  local_18
+; char *           Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0 at 0044f6e9

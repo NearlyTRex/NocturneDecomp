@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 203,
+    "complexity_score": 205,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 98,
+    "pseudocode_lines": 100,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 302
+    "total_lines": 304
   },
   "cross_references": [
     {
@@ -215,102 +215,81 @@
     "pcode_op_count": 752
   },
   "stack_frame": {
-    "frame_size": 128,
-    "local_size": 120,
+    "frame_size": 132,
+    "local_size": 124,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_74",
-        "offset": -116,
-        "size": 4,
-        "type": "undefined4"
+        "name": "SStack_78",
+        "offset": -120,
+        "size": 24,
+        "type": "SMRGLHeaderPrimitive"
       },
       {
         "is_param": false,
-        "name": "local_70",
-        "offset": -112,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_6c",
-        "offset": -108,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
+        "name": "aiStack_60",
+        "offset": -96,
+        "size": 48,
+        "type": "int[12]"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": true,
@@ -339,7 +318,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 39,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_18 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);",
@@ -347,15 +326,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 52,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)aiStack_60 + iVar3) = piVar5[4];",
+      "text": "*(int *)((int)aiStack_60 + iVar4) = piVar5[4];",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 60,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28 = (int)ROUND(ROUND(local_2c * 65535.0f));",
@@ -363,34 +342,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 60,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28 = (int)ROUND(ROUND(local_2c * 65535.0f));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)aiStack_60 + iVar3 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*(int *)((int)aiStack_60 + iVar3 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "*(int *)((int)aiStack_60 + iVar3 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -398,7 +353,31 @@
       "line": 61,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)aiStack_60 + iVar3 + 8) = local_28;",
+      "text": "*(int *)((int)aiStack_60 + iVar4 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "*(int *)((int)aiStack_60 + iVar4 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 61,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "*(int *)((int)aiStack_60 + iVar4 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)aiStack_60 + iVar4 + 8) = local_28;",
       "type": "pointer_cast"
     }
   ]

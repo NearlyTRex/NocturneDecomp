@@ -4,9 +4,9 @@
 ; void __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533f80(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; int              Stack[-0x10]:4  local_10
+; SHuffmanTable *  Stack[-0xc]:4  local_c
+; int              Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0063af26

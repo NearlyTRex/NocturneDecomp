@@ -10,6 +10,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00574580(CDemonSet *t
 
 {
   CDemonActor *this_ptr_00;
+  int iVar2;
   int iVar1;
   CDemonSet *pCVar2;
   CBoundingBox3D CStack_34;
@@ -37,10 +38,10 @@ int __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00574580(CDemonSet *t
         pCVar2 = (CDemonSet *)pCVar2->cameras;
       } while (iVar1 < this_ptr->actor_count);
     }
-    iVar1 = 0;
+    iVar2 = 0;
   }
   else {
-    iVar1 = 1;
+    iVar2 = 1;
   }
-  return iVar1;
+  return iVar2;
 }

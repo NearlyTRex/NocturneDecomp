@@ -8,8 +8,8 @@
 ; uchar *          Stack[0x8]:4   raw_bitmap_data
 ; int              Stack[0xc]:4   row_stride
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080 at 0054b0a8

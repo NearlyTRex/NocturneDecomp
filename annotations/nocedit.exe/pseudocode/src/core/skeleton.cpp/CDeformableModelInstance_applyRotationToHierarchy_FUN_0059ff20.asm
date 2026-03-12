@@ -10,16 +10,22 @@
 ; int              Stack[0x10]:4   bone_index
 ; CDeformableModel_MotionBlendWeightFunc * Stack[0x14]:4   blend_callback
 ; Local Variables:
+; float[1497]      Stack[-0x1860]:5988  afStackY_1860
 ; undefined4       Stack[-0xf0]:4  local_f0
-; undefined1       Stack[-0xe4]:1  local_e4
-; undefined1       Stack[-0xb4]:1  local_b4
-; undefined1       Stack[-0x74]:1  local_74
-; undefined1       Stack[-0x54]:1  local_54
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
+; float            Stack[-0xe8]:4  fStack_e8
+; CMatrix3x4f      Stack[-0xe4]:48  local_e4
+; CMatrix3x4f      Stack[-0xb4]:48  local_b4
+; CQuaternion4f    Stack[-0x84]:16  CStack_84
+; CQuaternion4f    Stack[-0x74]:16  local_74
+; CQuaternion4f    Stack[-0x64]:16  CStack_64
+; CQuaternion4f    Stack[-0x54]:16  local_54
+; CQuaternion4f    Stack[-0x44]:16  CStack_44
+; CVector3f        Stack[-0x34]:12  local_34
+; float            Stack[-0x28]:4  local_28
+; CSkeleton *      Stack[-0x24]:4  local_24
+; CDeformableModelInstance * Stack[-0x20]:4  local_20
+; CQuaternion4f *  Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; XREF[6]:
 ;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80 at 004d5483

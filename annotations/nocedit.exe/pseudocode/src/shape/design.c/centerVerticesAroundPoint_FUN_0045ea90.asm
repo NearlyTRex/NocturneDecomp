@@ -6,14 +6,14 @@
 ; Local Variables:
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined8       Stack[-0x5c]:8  local_5c
-; undefined        Stack[-0x54]:1  local_54
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
+; char[40]         Stack[-0x54]:40  local_54
+; int              Stack[-0x2c]:4  local_2c
+; float            Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bias_around_what_point_o_0061b5be

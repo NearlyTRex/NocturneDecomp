@@ -11,13 +11,16 @@
 void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_005c6b60(CSuccubus *this_ptr)
 
 {
-  UOrientationVector *euler;
-  CLocation *position;
-  CDeformableModelInstance *pCVar1;
-  CDeformableModelInstance *this_ptr_00;
-  CMorph *this_ptr_01;
+  UOrientationVector *euler_00;
+  CLocation *position_00;
+  CDeformableModelInstance *this_ptr_03;
   CSkeleton *this_ptr_02;
   char *model_name;
+  CDeformableModelInstance *this_ptr_00;
+  CDeformableModelInstance *pCVar1;
+  CMorph *this_ptr_01;
+  CLocation *position;
+  UOrientationVector *euler;
   
   pCVar1 = &(this_ptr->base).base.model;
   if (g_CGamePtr->nudity_flag == 0) {
@@ -31,19 +34,19 @@ void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_005c6b60(CSuccubus *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(&this_ptr->hotdemon_model,model_name)
   ;
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
-  pCVar1 = &(this_ptr->base).base.model;
-  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(pCVar1);
+  this_ptr_03 = &(this_ptr->base).base.model;
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_03);
   this_ptr_00 = &this_ptr->hotdemon_model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
   core_cloth_cpp_CClothList_load_FUN_0043bfa0(&this_ptr->hotdemon_cloth_list);
-  euler = &(this_ptr->base).base.base.orient;
-  position = &(this_ptr->base).base.base.location;
+  euler_00 = &(this_ptr->base).base.base.orient;
+  position_00 = &(this_ptr->base).base.base.location;
   core_cloth_cpp_CClothList_setup_FUN_0043c290
-            (&this_ptr->hotdemon_cloth_list,&position->position,&euler->vec,this_ptr_00);
+            (&this_ptr->hotdemon_cloth_list,&position_00->position,&euler_00->vec,this_ptr_00);
   core_cloth_cpp_CClothList_process_FUN_0043c2d0
-            (&(this_ptr->base).base.cloth_list,&position->position,&euler->vec,0.05,
+            (&(this_ptr->base).base.cloth_list,&position_00->position,&euler_00->vec,0.05,
              (this_ptr->base).base.closest_distance_threshold,this_ptr_00);
-  this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCVar1);
+  this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr_03);
   INT_03f6bb68 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_02,"Bip01 Head",1);
   INT_03f6bb74 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
@@ -79,13 +82,13 @@ void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_005c6b60(CSuccubus *this_ptr)
   INT_03f6bb94 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_02,"Bip01 Spine2",1);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_00);
-  core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(pCVar1);
+  core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_03);
   (this_ptr->base).base.model.bone_transform.root_position.z =
        (this_ptr->base).base.model.bone_transform.root_position.z + 0.4f;
-  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(pCVar1);
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_03);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_00);
   this_ptr_01 = &this_ptr->morph;
-  core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(this_ptr_01,0,pCVar1);
+  core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(this_ptr_01,0,this_ptr_03);
   core_morph_cpp_CMorph_setupModelFromDeformable_FUN_0052b430(this_ptr_01,1,this_ptr_00);
   INT_02f43974 = 0;
   core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_0052b580
@@ -101,6 +104,6 @@ void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_005c6b60(CSuccubus *this_ptr)
   this_ptr->sfx_handle = 0;
   this_ptr->ambient_sfx_cooldown = 5.0;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr_00);
-  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(pCVar1);
+  core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000(this_ptr_03);
   return;
 }

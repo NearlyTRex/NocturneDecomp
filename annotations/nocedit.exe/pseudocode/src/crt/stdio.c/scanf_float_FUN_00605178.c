@@ -9,14 +9,14 @@
 int __cdecl scanf_float(scanf_state_t *state,va_list_t *args)
 
 {
-  char *pcVar1;
-  byte bVar2;
+  int iVar1;
   int character;
   uint uVar3;
   float fVar4;
   char *pcVar5;
   float *pfVar6;
   char *pcVar7;
+  char *pcVar2;
   int iVar8;
   int iVar9;
   ulonglong local_80;
@@ -29,6 +29,8 @@ int __cdecl scanf_float(scanf_state_t *state,va_list_t *args)
   ushort local_18;
   byte uStack_16;
   byte uStack_15;
+  byte bVar2;
+  char *pcVar1;
   
   pcVar7 = (char *)&local_80;
   iVar8 = 0;
@@ -39,10 +41,10 @@ int __cdecl scanf_float(scanf_state_t *state,va_list_t *args)
     local_24 = local_24 + 1;
   }
   if ((state->flags & 2) != 0) goto LAB_006053ad;
-  iVar9 = state->field_width;
-  state->field_width = iVar9 + -1;
+  iVar1 = state->field_width;
+  state->field_width = iVar1 + -1;
   pcVar7 = (char *)&local_80;
-  if (iVar9 != 0) {
+  if (iVar1 != 0) {
     if ((character == 0x2b) || (pcVar7 = (char *)&local_80, character == 0x2d)) {
       local_24 = local_24 + 1;
       pcVar7 = (char *)((int)&local_80 + 1);
@@ -68,7 +70,7 @@ int __cdecl scanf_float(scanf_state_t *state,va_list_t *args)
           if (character == -1) goto LAB_006053ad;
         } while ((g_CharacterClassificationTable[(byte)((char)character + 1)] & 0x20) != 0);
       }
-      pcVar5 = pcVar7;
+      pcVar2 = pcVar7;
       iVar9 = iVar8;
       if (character == 0x2e) {
         *pcVar7 = '.';
@@ -102,22 +104,22 @@ int __cdecl scanf_float(scanf_state_t *state,va_list_t *args)
           }
           local_1c._0_2_ = local_18;
         }
-        pcVar5 = pcVar7;
+        pcVar2 = pcVar7;
         iVar9 = iVar8;
         if (character == -1) goto LAB_006053ad;
       }
-      pcVar7 = pcVar5;
+      pcVar7 = pcVar2;
       iVar8 = iVar9;
       if (((state->flags & 0x10) == 0) && ((character == 0x65 || (character == 0x45)))) {
         iVar8 = iVar9 + 1;
-        *pcVar5 = (char)character;
-        pcVar7 = pcVar5 + 1;
+        *pcVar2 = (char)character;
+        pcVar7 = pcVar2 + 1;
         character = scanf_getc_with_width(state);
         if (character == -1) goto LAB_006053ad;
         if ((character == 0x2b) || (character == 0x2d)) {
           iVar8 = iVar9 + 2;
           *pcVar7 = (char)character;
-          pcVar7 = pcVar5 + 2;
+          pcVar7 = pcVar2 + 2;
           character = scanf_getc_with_width(state);
           if (character == -1) goto LAB_006053ad;
         }
@@ -152,20 +154,20 @@ LAB_006053ad:
     }
     if ((state->flags & 4) == 0) {
       if ((state->flags & 8) == 0) {
-        pcVar7 = args->value[0];
-        args->value[0] = pcVar7 + 4;
-        pfVar6 = *(float **)pcVar7;
+        pcVar2 = args->value[0];
+        args->value[0] = pcVar2 + 4;
+        pfVar6 = *(float **)pcVar2;
       }
       else {
-        pcVar7 = args->value[0];
-        args->value[0] = pcVar7 + 4;
-        pfVar6 = *(float **)pcVar7;
+        pcVar2 = args->value[0];
+        args->value[0] = pcVar2 + 4;
+        pfVar6 = *(float **)pcVar2;
       }
     }
     else {
-      pcVar7 = args->value[0];
-      args->value[0] = pcVar7 + 8;
-      pfVar6 = (float *)*(undefined6 *)pcVar7;
+      pcVar2 = args->value[0];
+      args->value[0] = pcVar2 + 8;
+      pfVar6 = (float *)*(undefined6 *)pcVar2;
     }
     bVar2 = state->flags;
     if ((bVar2 & 0x10) == 0) {

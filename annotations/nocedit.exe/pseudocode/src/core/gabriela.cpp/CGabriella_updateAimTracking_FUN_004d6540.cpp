@@ -9,13 +9,13 @@
 void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabriella *this_ptr,float delta_time,int is_holstering)
 
 {
-  CDemonActor *target_actor;
-  float fVar1;
-  float fVar2;
   SMotion *pSVar3;
+  float fVar3;
   int iVar4;
   CVector3f *pCVar5;
+  CVector3f *pCVar4;
   CBoundingBox3D *pCVar6;
+  int iVar5;
   CVector3f local_134 [10];
   CBoundingBox3D CStack_bc;
   float fStack_a4;
@@ -28,13 +28,15 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabrie
   CVector3f CStack_68;
   CVector3f CStack_5c;
   CVector3f CStack_50;
-  uint local_3c;
   float local_30;
   CDemonActor *local_28;
   float local_24;
   int local_20;
   float local_1c;
   float local_18;
+  float fVar1;
+  CDemonActor *target_actor;
+  float fVar2;
   
   if ((is_holstering == 0) &&
      (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -48,18 +50,18 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabrie
       this_ptr->aim_target = (CDemonActor *)0x0;
     }
     else if (this_ptr->fire_state == 0) {
-      iVar4 = 0;
+      iVar5 = 0;
       local_24 = 1e+30;
       local_28 = (CDemonActor *)0x0;
       for (local_20 = 0; local_20 < g_CDemonSetPtr->actor_count; local_20 = local_20 + 1) {
-        target_actor = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar4);
-        local_18 = core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004d6260
-                             (this_ptr,target_actor,(uint)(target_actor == this_ptr->aim_target));
-        if ((0.0 <= local_18) && (local_18 < local_24)) {
+        target_actor = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);
+        fVar3 = core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004d6260
+                          (this_ptr,target_actor,(uint)(target_actor == this_ptr->aim_target));
+        if ((0.0 <= fVar3) && (fVar3 < local_24)) {
           local_28 = target_actor;
-          local_24 = local_18;
+          local_24 = fVar3;
         }
-        iVar4 = iVar4 + 4;
+        iVar5 = iVar5 + 4;
       }
       this_ptr->aim_target = local_28;
     }
@@ -70,11 +72,11 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabrie
         this_ptr->target_aim_yaw = this_ptr->aim_pitch;
         this_ptr->target_aim_pitch = this_ptr->target_aim_yaw;
       }
-      fVar1 = delta_time / (0.3f * (float)0.5) + this_ptr->aim_weight;
+      fVar3 = delta_time / (0.3f * (float)0.5) + this_ptr->aim_weight;
     }
     else if (this_ptr->aim_target == (CDemonActor *)0x0) {
       if (0.0 < this_ptr->fire_cooldown_timer) goto LAB_004d65dd;
-      fVar1 = this_ptr->aim_weight - delta_time / 0.3f;
+      fVar3 = this_ptr->aim_weight - delta_time / 0.3f;
     }
     else {
       __arrinit(local_134,10,&g_CVectorTypeInfo);
@@ -83,12 +85,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004d6540(CGabrie
       if (iVar4 < 1) {
         pCVar6 = (*((this_ptr->aim_target->vtable)._ub)->getBoundingBox)
                            (this_ptr->aim_target,&CStack_bc);
-        fStack_a4 = (pCVar6->min).x + (pCVar6->max).x;
-        fStack_a0 = (pCVar6->min).y + (pCVar6->max).y;
-        CStack_8c.x = fStack_a4 * 0.5f;
-        fStack_9c = (pCVar6->min).z + (pCVar6->max).z;
-        CStack_8c.y = fStack_a0 * 0.5f;
-        local_134[0].z = fStack_9c * 0.5f;
+        CStack_8c.x = ((pCVar6->min).x + (pCVar6->max).x) * 0.5f;
+        CStack_8c.y = ((pCVar6->min).y + (pCVar6->max).y) * 0.5f;
+        local_134[0].z = ((pCVar6->min).z + (pCVar6->max).z) * 0.5f;
         CStack_8c.z = local_134[0].z;
         fVar1 = CStack_8c.x;
         fVar2 = CStack_8c.y;
@@ -108,33 +107,32 @@ LAB_004d6841:
                          (this_ptr->aim_target,&CStack_68,&CStack_50);
       core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                 ((CDemonActor *)this_ptr,&CStack_74,pCVar5);
-      pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+      pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                          (&(this_ptr->base).base.model,&CStack_80,INT_02d7b860);
-      CStack_98.x = CStack_74.x - pCVar5->x;
-      CStack_98.y = CStack_74.y - pCVar5->y;
-      CStack_98.z = CStack_74.z - pCVar5->z;
+      CStack_98.x = CStack_74.x - pCVar4->x;
+      CStack_98.y = CStack_74.y - pCVar4->y;
+      CStack_98.z = CStack_74.z - pCVar4->z;
       core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_5c,&CStack_98);
-      fVar1 = delta_time / 0.3f;
+      fVar3 = delta_time / 0.3f;
       this_ptr->target_aim_pitch = CStack_5c.x;
-      fVar1 = fVar1 + this_ptr->aim_weight;
+      fVar3 = fVar3 + this_ptr->aim_weight;
       this_ptr->target_aim_yaw = CStack_5c.y;
     }
   }
   else {
-    fVar1 = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
+    fVar3 = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
             (float)2 * delta_time + this_ptr->target_aim_pitch;
-    local_3c = 0x3fc90fdb;
-    this_ptr->target_aim_pitch = fVar1;
-    if (fVar1 < -1.570796f) {
+    this_ptr->target_aim_pitch = fVar3;
+    if (fVar3 < -1.570796f) {
       this_ptr->target_aim_pitch = -1.5707964;
     }
     if (1.5707964 < this_ptr->target_aim_pitch) {
       this_ptr->target_aim_pitch = 1.5707964;
     }
-    fVar1 = delta_time / 0.3f + this_ptr->aim_weight;
+    fVar3 = delta_time / 0.3f + this_ptr->aim_weight;
     this_ptr->target_aim_yaw = 0.0;
   }
-  this_ptr->aim_weight = fVar1;
+  this_ptr->aim_weight = fVar3;
 LAB_004d65dd:
   if (1.0 < this_ptr->aim_weight) {
     this_ptr->aim_weight = 1.0;
@@ -147,21 +145,20 @@ LAB_004d65dd:
   if (0.0 < this_ptr->aim_weight) {
     local_1c = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                          (this_ptr->target_aim_yaw - this_ptr->aim_yaw);
-    local_18 = local_1c;
     local_30 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                          (this_ptr->target_aim_pitch - this_ptr->aim_pitch);
-    fVar1 = delta_time * (float)3.1415926535000001 * (float)1.5;
-    if (local_1c < -fVar1) {
-      local_1c = -fVar1;
+    fVar3 = delta_time * (float)3.1415926535000001 * (float)1.5;
+    if (local_1c < -fVar3) {
+      local_1c = -fVar3;
     }
-    if (fVar1 < local_1c) {
-      local_1c = fVar1;
+    if (fVar3 < local_1c) {
+      local_1c = fVar3;
     }
-    if (local_30 < -fVar1) {
-      local_30 = -fVar1;
+    if (local_30 < -fVar3) {
+      local_30 = -fVar3;
     }
-    if (fVar1 < local_30) {
-      local_30 = fVar1;
+    if (fVar3 < local_30) {
+      local_30 = fVar3;
     }
     this_ptr->aim_pitch = this_ptr->aim_pitch + local_30;
     this_ptr->aim_yaw = this_ptr->aim_yaw + local_1c;

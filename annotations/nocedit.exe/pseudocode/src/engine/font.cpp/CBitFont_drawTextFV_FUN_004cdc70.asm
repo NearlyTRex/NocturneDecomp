@@ -12,7 +12,7 @@
 ; char *           Stack[0x18]:4   format_string
 ; va_list_t        Stack[0x1c]:4   args
 ; Local Variables:
-; undefined        Stack[-0x1010]:1  local_1010
+; char[4096]       Stack[-0x1010]:4096  local_1010
 ;
 ; XREF[1]:
 ;   engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20 at 004cdc4f

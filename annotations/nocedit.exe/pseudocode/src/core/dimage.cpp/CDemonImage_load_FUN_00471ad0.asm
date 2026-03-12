@@ -6,12 +6,13 @@
 ; Parameters:
 ; CDemonImage *    Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
+; SIZE_T           Stack[0xc]:4   in_stack_0000000c
+; SIZE_T           Stack[0x10]:4   in_stack_00000010
 ; Local Variables:
-; undefined1       Stack[-0x11c]:1  local_11c
-; undefined1       Stack[-0x11b]:1  local_11b
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x11c]:256  local_11c
+; uint             Stack[-0x1c]:4  local_1c
+; uint             Stack[-0x18]:4  local_18
+; CDemonImage *    Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rb_0061ecbd

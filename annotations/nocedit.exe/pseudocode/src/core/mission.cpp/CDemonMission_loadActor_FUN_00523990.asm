@@ -9,8 +9,8 @@
 ; CDemonActor *    Stack[0xc]:4   current_actor
 ; char *           Stack[0x10]:4   property_description
 ; Local Variables:
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined4       Stack[-0x14]:4  local_14
+; char[200]        Stack[-0xdc]:200  local_dc
+; CDemonActor *    Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_actor.cpp_archiveActor_FUN_0040b870 at 0040b896

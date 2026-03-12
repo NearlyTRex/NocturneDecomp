@@ -7,11 +7,11 @@
 ; CGargoyle *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ; Local Variables:
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x34]:1  local_34
-; undefined1       Stack[-0x28]:1  local_28
-; undefined1       Stack[-0x1c]:1  local_1c
+; CVector3f        Stack[-0x4c]:12  local_4c
+; CVector3f        Stack[-0x40]:12  local_40
+; CVector3f        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x28]:12  local_28
+; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; Referenced Globals:
 ;   int INT_02d83200

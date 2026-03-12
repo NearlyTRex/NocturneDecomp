@@ -9,8 +9,6 @@
 void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemonSet *this_ptr)
 
 {
-  int iVar1;
-  CDemonRenderer *this_ptr_00;
   int *piVar2;
   int iVar3;
   int iVar4;
@@ -19,6 +17,8 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(CDemon
   CVector3i *local_20;
   CVector3f *local_1c;
   int local_18;
+  int iVar1;
+  CDemonRenderer *this_ptr_00;
   
   if ((g_CameraDepthData == (void *)0x0) && (0 < this_ptr->camera_count)) {
     g_CameraDepthData =

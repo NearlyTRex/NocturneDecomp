@@ -5,17 +5,13 @@
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x26c]:8  local_26c
-; undefined4       Stack[-0x264]:4  local_264
-; undefined4       Stack[-0x25c]:4  local_25c
-; undefined4       Stack[-0x258]:4  local_258
-; undefined1       Stack[-0x24c]:1  local_24c
-; undefined1       Stack[-0x10c]:1  local_10c
-; undefined1       Stack[-0xbc]:1  local_bc
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined1       Stack[-0x6b]:1  local_6b
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SMRGLKeyframeModel Stack[-0x264]:344  local_264
+; char[80]         Stack[-0x10c]:80  local_10c
+; char[80]         Stack[-0xbc]:80  local_bc
+; byte[80]         Stack[-0x6c]:80  local_6c
+; _FILE *          Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showShapeEditorMenu_FUN_0046f290 at 0046f6f0

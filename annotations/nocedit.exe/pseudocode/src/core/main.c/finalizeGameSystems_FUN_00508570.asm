@@ -4,7 +4,7 @@
 ; void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x110]:1  local_110
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[1]:
 ;   wincore_winrun.cpp_winMain_FUN_005f3680 at 005f3905

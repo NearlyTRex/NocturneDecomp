@@ -9,11 +9,11 @@
 CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_rayIntersection_FUN_00495aa0(CDemonRaytrace *this_ptr,CVector3f *output_point,CVector3f *ray_start,CVector3f *ray_end)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
   float fVar5;
+  float fVar4;
+  float fVar3;
+  float fVar2;
+  float fVar1;
   
   fVar5 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
                     (this_ptr,ray_start,ray_end,(CVector3f *)0x0,(int *)0x0);

@@ -4,12 +4,10 @@
 ; char * __cdecl crt_process_c_build_file_info_env_FUN_0060ffd0(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x44]:1  local_44
-; undefined1       Stack[-0x43]:1  local_43
-; undefined1       Stack[-0x28]:1  local_28
-; undefined1       Stack[-0x27]:1  local_27
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; char[28]         Stack[-0x44]:28  local_44
+; char[12]         Stack[-0x28]:12  local_28
+; int              Stack[-0x1c]:4  local_1c
+; char *           Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   crt_process.c_spawnvp_FUN_0060f39c at 0060f3d0

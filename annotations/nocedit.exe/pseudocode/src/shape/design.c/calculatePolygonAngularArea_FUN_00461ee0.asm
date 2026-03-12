@@ -6,27 +6,25 @@
 ; Parameters:
 ; SShapeEditorPolygon * Stack[0x4]:4   polygon_ptr
 ; Local Variables:
+; float[2020]      Stack[-0x2034]:8080  afStackY_2034
 ; undefined8       Stack[-0xa4]:8  local_a4
 ; undefined8       Stack[-0x9c]:8  local_9c
-; undefined8       Stack[-0x94]:8  local_94
-; undefined8       Stack[-0x8c]:8  local_8c
-; undefined8       Stack[-0x84]:8  local_84
-; undefined8       Stack[-0x7c]:8  local_7c
-; undefined8       Stack[-0x74]:8  local_74
-; undefined8       Stack[-0x6c]:8  local_6c
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined8       Stack[-0x28]:8  local_28
+; double           Stack[-0x94]:8  local_94
+; double           Stack[-0x8c]:8  local_8c
+; double           Stack[-0x84]:8  local_84
+; double           Stack[-0x7c]:8  local_7c
+; double           Stack[-0x74]:8  local_74
+; double           Stack[-0x6c]:8  local_6c
+; float            Stack[-0x64]:4  local_64
+; float[4]         Stack[-0x60]:16  local_60
+; float            Stack[-0x50]:4  local_50
+; float[4]         Stack[-0x4c]:16  local_4c
+; float            Stack[-0x3c]:4  local_3c
+; float[4]         Stack[-0x38]:16  local_38
+; double           Stack[-0x28]:8  local_28
 ; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x18]:4  local_18
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   shape_design.c_complexPolygonReduction_FUN_00463b30 at 00464576

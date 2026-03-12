@@ -4,37 +4,37 @@
       {
         "category": "format_error",
         "column": 35,
-        "line": 38,
+        "line": 42,
         "message": "format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 45,
-        "line": 38,
+        "line": 42,
         "message": "format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 55,
-        "line": 38,
+        "line": 42,
         "message": "format specifies type 'unsigned int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 37,
-        "line": 59,
+        "line": 60,
         "message": "format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 47,
-        "line": 59,
+        "line": 60,
         "message": "format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 57,
-        "line": 59,
+        "line": 60,
         "message": "format specifies type 'unsigned int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]"
       }
     ],
@@ -43,15 +43,15 @@
   },
   "complexity": {
     "assembly_lines": 252,
-    "complexity_score": 85,
+    "complexity_score": 86,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 19,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 85,
+    "pseudocode_lines": 86,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 337
+    "total_lines": 338
   },
   "cross_references": [
     {
@@ -290,22 +290,50 @@
         "is_param": false,
         "name": "local_224",
         "offset": -548,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_124",
+        "offset": -292,
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "DStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "DWORD"
+      },
+      {
+        "is_param": false,
+        "name": "DStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "DWORD"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "DWORD"
       }
     ]
   },

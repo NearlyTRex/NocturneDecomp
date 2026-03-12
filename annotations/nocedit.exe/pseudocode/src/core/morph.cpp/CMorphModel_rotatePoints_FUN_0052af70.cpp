@@ -9,20 +9,20 @@
 void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_0052af70(CMorphModel *this_ptr,float blend_factor,SMorphPoint *ref_points)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  int iVar5;
-  SMorphPoint *pSVar6;
-  uint uVar7;
-  float fVar8;
   int iVar9;
   CVector3i *input;
   int iVar10;
   int local_20;
   int local_18;
   uint local_14;
+  float fVar2;
+  int iVar5;
+  float fVar1;
+  uint uVar7;
+  float fVar8;
+  float fVar4;
+  SMorphPoint *pSVar6;
+  float fVar3;
   
   if (2000 < this_ptr->num_points) {
     g_CurrentFilename = "..\\core\\morph.cpp";

@@ -10,6 +10,7 @@ void __cdecl core_setedit_cpp_CDemonSet_deleteLight_FUN_0057b910(CDemonSet *this
 
 {
   int iVar1;
+  int iVar2;
   CVector3f *pCVar2;
   CVector3f *pCVar3;
   C3DSLight *pCVar4;
@@ -46,7 +47,7 @@ void __cdecl core_setedit_cpp_CDemonSet_deleteLight_FUN_0057b910(CDemonSet *this
             pCVar4 = (C3DSLight *)pCVar4->name;
             if (iVar1 == 0) break;
             iVar1 = iVar1 + -1;
-            *(uint *)pCVar10 = *(uint *)pCVar4;
+            pCVar10->light_type = pCVar4->light_type;
           }
           if (pCVar2 != pCVar3) {
             pCVar2->x = pCVar3->x;
@@ -63,7 +64,7 @@ void __cdecl core_setedit_cpp_CDemonSet_deleteLight_FUN_0057b910(CDemonSet *this
           local_c->intensity = local_8->intensity;
           pcVar5 = local_8->visible_flags;
           pcVar11 = local_c->visible_flags;
-          for (iVar1 = 0x3e; iVar1 != 0; iVar1 = iVar1 + -1) {
+          for (iVar2 = 0x3e; iVar2 != 0; iVar2 = iVar2 + -1) {
             *(uint *)pcVar11 = *(uint *)pcVar5;
             pcVar5 = pcVar5 + 4;
             pcVar11 = pcVar11 + 4;
@@ -87,21 +88,21 @@ void __cdecl core_setedit_cpp_CDemonSet_deleteLight_FUN_0057b910(CDemonSet *this
           local_c->blend_filter = local_8->blend_filter;
           pacVar6 = local_8->filter_names;
           pacVar12 = local_c->filter_names;
-          for (iVar1 = 0x140; iVar1 != 0; iVar1 = iVar1 + -1) {
+          for (iVar2 = 0x140; iVar2 != 0; iVar2 = iVar2 + -1) {
             *(uint *)*pacVar12 = *(uint *)*pacVar6;
             pacVar6 = (char (*) [40])(*pacVar6 + 4);
             pacVar12 = (char (*) [40])(*pacVar12 + 4);
           }
           pfVar7 = local_8->filter_durations;
           pfVar13 = local_c->filter_durations;
-          for (iVar1 = 0x20; iVar1 != 0; iVar1 = iVar1 + -1) {
+          for (iVar2 = 0x20; iVar2 != 0; iVar2 = iVar2 + -1) {
             *pfVar13 = *pfVar7;
             pfVar7 = pfVar7 + 1;
             pfVar13 = pfVar13 + 1;
           }
           piVar8 = local_8->filter_indices;
           piVar14 = local_c->filter_indices;
-          for (iVar1 = 0x20; iVar1 != 0; iVar1 = iVar1 + -1) {
+          for (iVar2 = 0x20; iVar2 != 0; iVar2 = iVar2 + -1) {
             *piVar14 = *piVar8;
             piVar8 = piVar8 + 1;
             piVar14 = piVar14 + 1;
@@ -113,15 +114,15 @@ void __cdecl core_setedit_cpp_CDemonSet_deleteLight_FUN_0057b910(CDemonSet *this
           (local_c->filter_pos).y = (local_8->filter_pos).y;
           (local_c->size).x = (local_8->size).x;
           (local_c->size).y = (local_8->size).y;
-          pCVar3 = (CVector3f *)((int)(pCVar3 + 0x20c) + 8);
+          pCVar3 = (CVector3f *)&pCVar3[0x20c].z;
           ppCVar9 = local_8->filters;
           ppCVar15 = local_c->filters;
-          for (iVar1 = 0x20; iVar1 != 0; iVar1 = iVar1 + -1) {
+          for (iVar2 = 0x20; iVar2 != 0; iVar2 = iVar2 + -1) {
             *ppCVar15 = *ppCVar9;
             ppCVar9 = ppCVar9 + 1;
             ppCVar15 = ppCVar15 + 1;
           }
-          pCVar2 = (CVector3f *)((int)(pCVar2 + 0x20c) + 8);
+          pCVar2 = (CVector3f *)&pCVar2[0x20c].z;
           local_c->current_filter_frame = local_8->current_filter_frame;
           local_c->filter_frame_elapsed = local_8->filter_frame_elapsed;
           local_10 = local_10 + 1;

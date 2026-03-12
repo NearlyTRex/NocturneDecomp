@@ -4,16 +4,15 @@
 ; void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x528]:1  local_528
-; undefined1       Stack[-0x328]:1  local_328
-; undefined1       Stack[-0x228]:1  local_228
-; undefined1       Stack[-0x144]:1  local_144
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined1       Stack[-0x20]:1  local_20
-; undefined4       Stack[-0x14]:4  local_14
+; int[690]         Stack[-0x1008]:2760  aiStackY_1008
+; CIniFile         Stack[-0x528]:512  local_528
+; char[256]        Stack[-0x328]:256  local_328
+; CEdButton        Stack[-0x228]:228  local_228
+; CEdButton        Stack[-0x144]:228  local_144
+; CEdScrollBar     Stack[-0x60]:52  local_60
+; CCourse          Stack[-0x2c]:12  local_2c
+; char[4]          Stack[-0x20]:4  local_20
+; int[3]           Stack[-0x1c]:12  aiStack_1c
 ;
 ; XREF[1]:
 ;   core_menu.cpp_showMainGameMenu_FUN_00512f40 at 005132c8

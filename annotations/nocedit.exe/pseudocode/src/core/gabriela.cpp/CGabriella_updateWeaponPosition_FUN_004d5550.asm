@@ -7,30 +7,29 @@
 ; CGabriella *     Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x3ac]:1  local_3ac
-; undefined1       Stack[-0x37c]:1  local_37c
-; undefined1       Stack[-0x34c]:1  local_34c
-; undefined1       Stack[-0x31c]:1  local_31c
-; undefined1       Stack[-0x2ec]:1  local_2ec
-; undefined1       Stack[-0x2bc]:1  local_2bc
-; undefined1       Stack[-0x28c]:1  local_28c
-; undefined1       Stack[-0x25c]:1  local_25c
-; undefined1       Stack[-0x22c]:1  local_22c
-; undefined1       Stack[-0x1fc]:1  local_1fc
-; undefined1       Stack[-0x1cc]:1  local_1cc
-; undefined1       Stack[-0x19c]:1  local_19c
-; undefined1       Stack[-0x16c]:1  local_16c
-; undefined1       Stack[-0x13c]:1  local_13c
-; undefined1       Stack[-0x10c]:1  local_10c
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined1       Stack[-0xac]:1  local_ac
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined1       Stack[-0x28]:1  local_28
-; undefined4       Stack[-0x14]:4  local_14
+; CMatrix3x4f      Stack[-0x3ac]:48  local_3ac
+; CMatrix3x4f      Stack[-0x37c]:48  local_37c
+; CMatrix3x4f      Stack[-0x34c]:48  local_34c
+; CMatrix3x4f      Stack[-0x31c]:48  local_31c
+; CMatrix3x4f      Stack[-0x2ec]:48  local_2ec
+; CMatrix3x4f      Stack[-0x2bc]:48  local_2bc
+; CMatrix3x4f      Stack[-0x28c]:48  local_28c
+; CMatrix3x4f      Stack[-0x25c]:48  local_25c
+; CMatrix3x4f      Stack[-0x22c]:48  local_22c
+; CMatrix3x4f      Stack[-0x1fc]:48  local_1fc
+; CMatrix3x4f      Stack[-0x1cc]:48  local_1cc
+; CMatrix3x4f      Stack[-0x19c]:48  local_19c
+; CMatrix3x4f      Stack[-0x16c]:48  local_16c
+; CMatrix3x4f      Stack[-0x13c]:48  local_13c
+; CMatrix3x4f      Stack[-0x10c]:48  local_10c
+; CMatrix3x4f      Stack[-0xdc]:48  local_dc
+; CMatrix3x4f      Stack[-0xac]:48  local_ac
+; CMatrix3x4f      Stack[-0x7c]:48  local_7c
+; CVector3f        Stack[-0x4c]:12  local_4c
+; CVector3f        Stack[-0x40]:12  local_40
+; CVector3f        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x28]:12  local_28
+; CInventory *     Stack[-0x14]:4  local_14
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:

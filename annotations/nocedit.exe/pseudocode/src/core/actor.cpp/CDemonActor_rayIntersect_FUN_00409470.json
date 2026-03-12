@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 142,
+        "line": 139,
         "message": "use of undeclared identifier 'stack0x00000000'"
       }
     ],
@@ -13,19 +13,19 @@
   },
   "complexity": {
     "assembly_lines": 343,
-    "complexity_score": 241,
+    "complexity_score": 238,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 146,
+    "pseudocode_lines": 143,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 489
+    "total_lines": 486
   },
   "cross_references": [
     {
@@ -262,105 +262,63 @@
         "name": "local_a0",
         "offset": -160,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_9c",
         "offset": -156,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
         "name": "local_84",
         "offset": -132,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
+        "size": 24,
+        "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_24",
+        "offset": -36,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
@@ -374,7 +332,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -447,7 +405,7 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 28,
       "match": "in_stack_ffffff48",
       "severity": "moderate",
       "text": "ulonglong in_stack_ffffff48;",
@@ -455,15 +413,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 65,
       "match": "in_stack_ffffff48",
       "severity": "moderate",
-      "text": "(this_ptr_00,pCVar3,(CVector3f *)in_stack_ffffff48,",
+      "text": "(this_ptr_00,pCVar2,(CVector3f *)in_stack_ffffff48,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 64,
+      "line": 66,
       "match": "in_stack_ffffff48",
       "severity": "moderate",
       "text": "(CVector3f *)((ulonglong)in_stack_ffffff48 >> 0x20));",
@@ -471,7 +429,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 89,
       "match": "NAN",
       "severity": "mild",
       "text": "out_hit_normal[1].y = -NAN;",
@@ -479,7 +437,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 90,
       "match": "NAN",
       "severity": "mild",
       "text": "out_hit_normal[1].z = -NAN;",
@@ -487,7 +445,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 91,
       "match": "NAN",
       "severity": "mild",
       "text": "out_hit_normal[2].x = -NAN;",
@@ -495,7 +453,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 93,
       "match": "NAN",
       "severity": "mild",
       "text": "out_hit_normal[1].x = -NAN;",
@@ -503,7 +461,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 135,
+      "line": 132,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_DeformableModelPool[0].lod_info[2].shadow_only_flag) {",

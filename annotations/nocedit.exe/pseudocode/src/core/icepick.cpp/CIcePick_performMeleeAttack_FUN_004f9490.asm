@@ -7,15 +7,11 @@
 ; CIcePick *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   bone_index
 ; Local Variables:
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined1       Stack[-0x30]:1  local_30
-; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SDamageInfo      Stack[-0x6c]:60  local_6c
+; CVector3f        Stack[-0x30]:12  local_30
+; CVector3f        Stack[-0x24]:12  local_24
+; int              Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_icepick.cpp_CIcePick_processMotionEvents_FUN_004f93a0 at 004f940b

@@ -7,9 +7,9 @@
 ; CDraculaBride *  Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ; Local Variables:
-; undefined1       Stack[-0x30]:1  local_30
-; undefined1       Stack[-0x24]:1  local_24
-; undefined1       Stack[-0x18]:1  local_18
+; CVector3f        Stack[-0x30]:12  local_30
+; CVector3f        Stack[-0x24]:12  local_24
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; Referenced Globals:
 ;   int INT_02c6d0a0

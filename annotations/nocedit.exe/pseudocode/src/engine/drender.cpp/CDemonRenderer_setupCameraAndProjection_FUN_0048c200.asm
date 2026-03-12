@@ -7,9 +7,7 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; CMatrix3x3f *    Stack[0x8]:4   transform_matrix
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; CVector3f        Stack[-0x20]:12  local_20
 ;
 ; XREF[5]:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430 at 0044c639

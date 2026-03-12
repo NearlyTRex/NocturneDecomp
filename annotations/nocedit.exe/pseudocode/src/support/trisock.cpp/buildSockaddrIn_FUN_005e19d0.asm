@@ -6,7 +6,9 @@
 ; Parameters:
 ; SNetworkAddr *   Stack[0x4]:4   net_addr
 ; Local Variables:
-; undefined2       Stack[-0x18]:2  local_18
+; undefined4[1524] Stack[-0x17f4]:6096  auStackY_17f4
+; undefined4       Stack[-0x18]:4  local_18
+; undefined4[2]    Stack[-0x10]:8  auStack_10
 ;
 ; XREF[2]:
 ;   support_trisock.cpp_connectSocket_FUN_005e1bd0 at 005e1bde

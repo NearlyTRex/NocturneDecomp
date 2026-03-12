@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 217,
+    "complexity_score": 227,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 97,
+    "pseudocode_lines": 107,
     "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 276
+    "total_lines": 286
   },
   "cross_references": [
     {
@@ -126,91 +126,91 @@
         "name": "local_c0",
         "offset": -192,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_b8",
         "offset": -184,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_b0",
         "offset": -176,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_a8",
         "offset": -168,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_a0",
         "offset": -160,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_98",
         "offset": -152,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_90",
         "offset": -144,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_88",
         "offset": -136,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_80",
         "offset": -128,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_78",
         "offset": -120,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_70",
         "offset": -112,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_68",
         "offset": -104,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -263,7 +263,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 45,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1) < 1e-10) {",
@@ -271,47 +271,55 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(CVector3d *)((int)",
-      "severity": "mild",
-      "text": "pCVar8 = (CVector3d *)((int)pCVar8 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 55,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar9 = (double *)((int)pdVar9 + ((uint)bVar10 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(CVector3d *)((int)",
-      "severity": "mild",
-      "text": "pCVar8 = (CVector3d *)((int)pCVar8 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 62,
-      "match": "(double *)((int)",
+      "match": "(CVector3d *)((int)",
       "severity": "mild",
-      "text": "pdVar9 = (double *)((int)pdVar9 + (uint)bVar10 * -8 + 4);",
+      "text": "pCVar10 = (CVector3d *)((int)pCVar10 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(CVector3d *)((int)",
+      "line": 63,
+      "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pCVar8 = (CVector3d *)((int)pCVar8 + (uint)bVar10 * -8 + 4);",
+      "text": "pdVar11 = (double *)((int)pdVar11 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 69,
+      "match": "(CVector3d *)((int)",
+      "severity": "mild",
+      "text": "pCVar10 = (CVector3d *)((int)pCVar10 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "pdVar11 = (double *)((int)pdVar11 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(CVector3d *)((int)",
+      "severity": "mild",
+      "text": "pCVar10 = (CVector3d *)((int)pCVar10 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "pdVar11 = (double *)((int)pdVar11 + (uint)bVar10 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar9 = (double *)((int)pdVar9 + (uint)bVar10 * -8 + 4);",
@@ -319,31 +327,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 86,
       "match": "(CVector3d *)((int)",
       "severity": "mild",
       "text": "pCVar8 = (CVector3d *)((int)pCVar8 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar9 = (double *)((int)pdVar9 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 91,
       "match": "SQRT",
       "severity": "mild",
-      "text": "if ((1e-10 < SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1)) ||",
+      "text": "if ((1e-10 < SQRT(dVar5 * dVar5 + dVar6 * dVar6 + dVar4 * dVar4)) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 93,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT((local_80 - local_b0) * (local_80 - local_b0) +",

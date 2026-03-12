@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   value_name
 ; char *           Stack[0xc]:4   value_data
 ; Local Variables:
-; undefined1       Stack[-0xc]:1  local_c
-; undefined1       Stack[-0x8]:1  local_8
+; HKEY             Stack[-0xc]:4  local_c
+; DWORD            Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 005081e2
@@ -22,7 +22,6 @@
 ;
 ; Called Functions:
 ;   RegCloseKey
-;   RegCreateKeyExA
 ;   RegSetValueExA
 ;
 ; *****************************************************************************

@@ -11,13 +11,13 @@
 void __cdecl core_glass_cpp_CGlass_onLaserHit_FUN_004eb250(CGlass *this_ptr,SLaserInfo *laser_info)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
   int local_18;
   int local_14;
+  float fVar5;
+  float fVar4;
+  float fVar3;
+  float fVar2;
+  float fVar1;
   
   core_actor_cpp_CDemonActor_onLaserHit_FUN_00409840(&this_ptr->base,laser_info);
   if (this_ptr->mirror_flag == 0) {

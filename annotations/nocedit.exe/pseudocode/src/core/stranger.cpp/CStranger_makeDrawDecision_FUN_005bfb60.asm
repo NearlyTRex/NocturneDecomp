@@ -6,32 +6,33 @@
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
+; float[1515]      Stack[-0x18cc]:6060  afStackY_18cc
 ; undefined4       Stack[-0x10c]:4  local_10c
 ; undefined8       Stack[-0x108]:8  local_108
-; undefined4       Stack[-0x100]:4  local_100
+; float            Stack[-0x100]:4  local_100
 ; undefined4       Stack[-0xfc]:4  local_fc
-; undefined4       Stack[-0xf8]:4  local_f8
+; float            Stack[-0xf8]:4  local_f8
 ; undefined4       Stack[-0xf4]:4  local_f4
-; undefined1       Stack[-0xf0]:1  local_f0
-; undefined1       Stack[-0xe0]:1  local_e0
-; undefined1       Stack[-0xd0]:1  local_d0
-; undefined1       Stack[-0xc0]:1  local_c0
-; undefined1       Stack[-0xb0]:1  local_b0
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined1       Stack[-0x90]:1  local_90
-; undefined1       Stack[-0x80]:1  local_80
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0x60]:1  local_60
-; undefined1       Stack[-0x50]:1  local_50
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
+; CQuaternion4f    Stack[-0xf0]:16  local_f0
+; CQuaternion4f    Stack[-0xe0]:16  local_e0
+; CQuaternion4f    Stack[-0xd0]:16  local_d0
+; CQuaternion4f    Stack[-0xc0]:16  local_c0
+; CQuaternion4f    Stack[-0xb0]:16  local_b0
+; CQuaternion4f    Stack[-0xa0]:16  local_a0
+; CQuaternion4f    Stack[-0x90]:16  local_90
+; CQuaternion4f    Stack[-0x80]:16  local_80
+; CQuaternion4f    Stack[-0x70]:16  local_70
+; CQuaternion4f    Stack[-0x60]:16  local_60
+; CQuaternion4f    Stack[-0x50]:16  local_50
+; float            Stack[-0x38]:4  local_38
+; float            Stack[-0x34]:4  local_34
+; CDeformableModelInstance * Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 at 005be603

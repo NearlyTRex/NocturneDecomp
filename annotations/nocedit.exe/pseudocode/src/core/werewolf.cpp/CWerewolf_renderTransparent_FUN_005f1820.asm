@@ -6,9 +6,9 @@
 ; Parameters:
 ; CWerewolf *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x50]:1  local_50
-; undefined1       Stack[-0x20]:1  local_20
-; undefined1       Stack[-0x14]:1  local_14
+; CMatrix3x4f      Stack[-0x50]:48  local_50
+; CVector3f        Stack[-0x20]:12  local_20
+; CVector3f        Stack[-0x14]:12  local_14
 ;
 ; Referenced Globals:
 ;   float FLOAT_00657db0 = -1

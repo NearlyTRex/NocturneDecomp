@@ -7,8 +7,7 @@
 ; CEventList *     Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   command_string
 ; Local Variables:
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined1       Stack[-0x6b]:1  local_6b
+; char[100]        Stack[-0x6c]:100  local_6c
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0 at 004aabf3

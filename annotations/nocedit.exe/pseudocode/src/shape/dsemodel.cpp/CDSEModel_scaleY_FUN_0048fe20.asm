@@ -7,10 +7,10 @@
 ; CDSEModel *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   scale_factor
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
+; int              Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0 at 0048ffdd

@@ -9,6 +9,8 @@
 int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_0042c010(CCharacter *this_ptr,CDemonActor *actor,CVector3f *target_local_point)
 
 {
+  float fVar1;
+  float fVar2;
   int iVar1;
   CVector3f *pCVar2;
   CVector3f local_44;
@@ -29,13 +31,13 @@ int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_0042c010(CCharac
     local_2c = local_20.x - pCVar2->x;
     local_24 = local_20.z - pCVar2->z;
     local_28 = 0.0;
-    local_10 = SQRT(local_24 * local_24 + local_2c * local_2c);
-    local_14 = g_CGamePtr->delta_time_float * (float)5;
-    if (local_14 < local_10) {
-      local_c = local_14 / local_10;
-      local_2c = local_2c * local_c;
-      local_28 = local_c * 0.0;
-      local_24 = local_24 * local_c;
+    fVar1 = SQRT(local_24 * local_24 + local_2c * local_2c);
+    fVar2 = g_CGamePtr->delta_time_float * (float)5;
+    if (fVar2 < fVar1) {
+      fVar2 = fVar2 / fVar1;
+      local_2c = local_2c * fVar2;
+      local_28 = fVar2 * 0.0;
+      local_24 = local_24 * fVar2;
     }
     local_38.x = (actor->location).position.x + local_2c;
     local_38.y = (actor->location).position.y + local_28;

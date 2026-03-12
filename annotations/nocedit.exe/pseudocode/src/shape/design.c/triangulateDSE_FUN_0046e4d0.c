@@ -9,8 +9,6 @@
 void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(int max_vertices)
 
 {
-  int iVar1;
-  int iVar2;
   int iVar3;
   SShapeEditorPolygon *pSVar4;
   SShapeEditorPolygon *pSVar5;
@@ -20,6 +18,8 @@ void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(int max_vertices)
   int local_24;
   int local_1c;
   int local_14;
+  int iVar1;
+  int iVar2;
   
   iVar1 = g_PolygonCount;
   bVar8 = 0;
@@ -39,9 +39,11 @@ void __cdecl shape_design_c_triangulateDSE_FUN_0046e4d0(int max_vertices)
         pSVar6 = pSVar4;
         pSVar7 = pSVar5;
         for (iVar3 = 0x61; iVar3 != 0; iVar3 = iVar3 + -1) {
+          pSVar7 = (SShapeEditorPolygon *)((int)pSVar7 + (uint)bVar8 * -8 + 4);
+          pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar8 * -8 + 4);
           pSVar7->polygon_type = pSVar6->polygon_type;
-          pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);
-          pSVar7 = (SShapeEditorPolygon *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);
+          pSVar6 = pSVar6;
+          pSVar7 = pSVar7;
         }
         g_ModelPolygonData[iVar2].vertex_indices[1] = pSVar4->vertex_indices[local_1c];
         g_ModelPolygonData[iVar2].uv_u[1] = pSVar4->uv_u[local_1c];

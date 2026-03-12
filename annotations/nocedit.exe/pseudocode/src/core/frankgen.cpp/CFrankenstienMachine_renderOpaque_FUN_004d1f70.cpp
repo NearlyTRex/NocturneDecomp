@@ -9,13 +9,14 @@
 int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70(CFrankenstienMachine *this_ptr)
 
 {
-  float fVar1;
+  float fVar2;
   CDemonActor *pCVar2;
   CBoundingBox3D *this_ptr_00;
   int iVar3;
   float10 fVar4;
   double dVar5;
   float fStack_30;
+  float fVar1;
   
   if (g_CDemonMissionPtr->is_in_editor != 0) {
     pCVar2 = core_frankgen_cpp_findLeader_FUN_004d2330();
@@ -44,9 +45,9 @@ int __cdecl core_frankgen_cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70(CFr
         fStack_30 = 100.0;
       }
       else {
-        fVar1 = (this_ptr->master_frame + -2000.0f) * (float)3;
-        dVar5 = floor((double)(fVar1 * 0.005f));
-        fVar4 = (float10)fVar1 - (float10)dVar5 * (float10)200;
+        fVar2 = (this_ptr->master_frame + -2000.0f) * (float)3;
+        dVar5 = floor((double)(fVar2 * 0.005f));
+        fVar4 = (float10)fVar2 - (float10)dVar5 * (float10)200;
         fStack_30 = (float)fVar4;
         if ((float10)100.0f < fVar4) {
           fStack_30 = 200.0f - fStack_30;

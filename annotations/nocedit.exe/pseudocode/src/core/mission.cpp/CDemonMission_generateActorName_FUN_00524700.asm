@@ -7,8 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   actor
 ; Local Variables:
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined1       Stack[-0x2b]:1  local_2b
+; char[32]         Stack[-0x2c]:32  local_2c
 ;
 ; XREF[17]:
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00413f20 at 00413f92

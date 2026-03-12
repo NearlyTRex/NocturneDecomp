@@ -13,6 +13,7 @@ void __cdecl engine_2d_c_drawLine_FUN_004011b0(int x1,int y1,int x2,int y2)
   int iVar2;
   int x;
   int iVar3;
+  int iVar4;
   int local_20;
   int local_1c;
   int local_18;
@@ -50,17 +51,17 @@ void __cdecl engine_2d_c_drawLine_FUN_004011b0(int x1,int y1,int x2,int y2)
   }
   else {
     local_1c = 0;
-    iVar3 = iVar1 * 2 - iVar2;
+    iVar4 = iVar1 * 2 - iVar2;
     if (-1 < iVar2) {
       do {
         engine_2d_c_plotPixel_FUN_00401140(x,y1);
-        if (0 < iVar3) {
-          iVar3 = iVar3 - iVar2;
+        if (0 < iVar4) {
+          iVar4 = iVar4 - iVar2;
           x = x + local_20;
         }
         y1 = y1 + 1;
         local_1c = local_1c + 1;
-        iVar3 = iVar3 + iVar1;
+        iVar4 = iVar4 + iVar1;
       } while (local_1c <= iVar2);
     }
   }

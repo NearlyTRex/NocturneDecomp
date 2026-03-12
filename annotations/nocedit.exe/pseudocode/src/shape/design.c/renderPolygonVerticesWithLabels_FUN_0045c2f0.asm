@@ -6,14 +6,12 @@
 ; Parameters:
 ; int              Stack[0x4]:4   polygon_index
 ; Local Variables:
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x7c]:80  local_7c
+; CVector3i        Stack[-0x2c]:12  local_2c
+; int              Stack[-0x20]:4  local_20
+; uint             Stack[-0x1c]:4  local_1c
+; uint             Stack[-0x18]:4  local_18
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showFacetPartEditor_FUN_0045f1d0 at 0045f562

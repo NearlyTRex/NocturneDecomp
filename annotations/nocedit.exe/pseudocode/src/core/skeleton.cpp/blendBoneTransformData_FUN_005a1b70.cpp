@@ -9,6 +9,8 @@
 void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *result_root_pos,SPose *bone_data_out,SPose *bone_data_in,float blend_weight,CDeformableModelInstance *instance_ptr)
 
 {
+  float fVar1;
+  CSkeleton *pCVar2;
   CVector3f *pCVar1;
   int iVar2;
   uint *puVar3;
@@ -36,24 +38,21 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *re
   if (1.0 < blend_weight) {
     blend_weight = 1.0;
   }
-  local_38 = (bone_data_in->root_position).x * blend_weight;
-  local_34 = (bone_data_in->root_position).y * blend_weight;
-  local_20 = 1.0 - blend_weight;
-  local_30 = (bone_data_in->root_position).z * blend_weight;
-  local_2c = (bone_data_out->root_position).x * local_20;
-  local_28 = (bone_data_out->root_position).y * local_20;
-  local_24 = (bone_data_out->root_position).z * local_20;
-  local_44.x = local_2c + local_38;
-  local_44.y = local_28 + local_34;
-  local_44.z = local_24 + local_30;
+  fVar1 = 1.0 - blend_weight;
+  local_44.x = (bone_data_out->root_position).x * fVar1 +
+               (bone_data_in->root_position).x * blend_weight;
+  local_44.y = (bone_data_out->root_position).y * fVar1 +
+               (bone_data_in->root_position).y * blend_weight;
+  local_44.z = (bone_data_out->root_position).z * fVar1 +
+               (bone_data_in->root_position).z * blend_weight;
   if (&local_44 != result_root_pos) {
     result_root_pos->x = local_44.x;
     result_root_pos->y = local_44.y;
     result_root_pos->z = local_44.z;
   }
-  local_1c = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(instance_ptr);
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(instance_ptr);
   iVar2 = 0;
-  if (0 < local_1c->bone_count) {
+  if (0 < pCVar2->bone_count) {
     local_14 = bone_data_out->bone_rotations;
     local_18 = bone_data_in->bone_rotations;
     pCVar1 = result_root_pos;
@@ -70,7 +69,7 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *re
       iVar2 = iVar2 + 1;
       local_14 = local_14 + 1;
       pCVar1 = (CVector3f *)&pCVar1[1].y;
-    } while (iVar2 < local_1c->bone_count);
+    } while (iVar2 < pCVar2->bone_count);
   }
   core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950((SPose *)result_root_pos,instance_ptr);
   return;

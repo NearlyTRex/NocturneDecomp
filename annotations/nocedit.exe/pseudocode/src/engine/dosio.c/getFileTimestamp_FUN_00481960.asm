@@ -7,9 +7,8 @@
 ; char *           Stack[0x4]:4   directory
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x32c]:1  local_32c
-; undefined1       Stack[-0x118]:1  local_118
-; undefined4       Stack[-0x18]:4  local_18
+; char[532]        Stack[-0x32c]:532  local_32c
+; CFileFinder      Stack[-0x118]:276  local_118
 ;
 ; XREF[8]:
 ;   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 at 004b39a6

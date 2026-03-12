@@ -6,7 +6,7 @@
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   header
 ; Local Variables:
-; undefined1       Stack[-0x100]:1  local_100
+; char[256]        Stack[-0x100]:256  local_100
 ;
 ; XREF[10]:
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 at 00407af0

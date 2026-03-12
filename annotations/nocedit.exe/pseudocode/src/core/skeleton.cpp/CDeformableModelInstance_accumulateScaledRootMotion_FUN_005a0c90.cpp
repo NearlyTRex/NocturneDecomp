@@ -9,10 +9,10 @@
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_005a0c90(CDeformableModelInstance *this_ptr,float start_frame,float end_frame,float scale_factor)
 
 {
-  float fVar1;
-  float fVar2;
   CVector3f *pCVar3;
   CVector3f local_c;
+  float fVar1;
+  float fVar2;
   
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10
                      (this_ptr,&local_c,start_frame,end_frame);

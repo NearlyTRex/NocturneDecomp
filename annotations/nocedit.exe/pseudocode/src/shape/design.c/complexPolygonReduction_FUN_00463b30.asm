@@ -10,25 +10,26 @@
 ; undefined8       Stack[-0x2f8]:8  local_2f8
 ; undefined8       Stack[-0x2f0]:8  local_2f0
 ; undefined4       Stack[-0x2e8]:4  local_2e8
-; undefined1       Stack[-0x2e4]:1  local_2e4
-; undefined4       Stack[-0x240]:4  local_240
-; undefined1       Stack[-0x160]:1  local_160
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SShapeEditorPolygon Stack[-0x2e4]:388  local_2e4
+; int[20]          Stack[-0x160]:80  local_160
+; float[16]        Stack[-0x110]:64  afStack_110
+; uint[16]         Stack[-0xd0]:64  auStack_d0
+; float[17]        Stack[-0x90]:68  afStack_90
+; int              Stack[-0x4c]:4  local_4c
+; uint             Stack[-0x48]:4  local_48
+; uint             Stack[-0x44]:4  local_44
+; int              Stack[-0x40]:4  local_40
+; uint             Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; void *           Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int *            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_mouseWheelPolygonReducer_FUN_004648e0 at 00464bf0

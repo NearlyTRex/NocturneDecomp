@@ -9,19 +9,23 @@
 int __watcallRegister ResizeBlockInPlace(ushort segment,void *ptr,ulong new_size,ulong *pExtraNeeded)
 
 {
-  Heap **ppHVar1;
-  uint uVar2;
-  Heap *pHVar3;
+  uint uVar1;
+  uint uVar3;
+  Heap *pHVar4;
   uint uVar4;
   int iVar5;
   uint uVar6;
   uint uVar7;
   uint *puVar8;
+  uint *puVar5;
   short in_DS;
   short in_stack_00000004;
   Heap *in_stack_00000008;
   uint in_stack_0000000c;
   uint *in_stack_00000010;
+  Heap **ppHVar1;
+  uint uVar2;
+  Heap *pHVar3;
   
   uVar4 = in_stack_0000000c + 0xb & 0xfffffff8;
   if (uVar4 < in_stack_0000000c) {
@@ -34,12 +38,12 @@ int __watcallRegister ResizeBlockInPlace(ushort segment,void *ptr,ulong new_size
   uVar7 = (uint)*ppHVar1 & 0xfffffffe;
   if (uVar7 < uVar4) {
     *in_stack_00000010 = uVar4 - uVar7;
-    for (puVar8 = (uint *)((int)ppHVar1 + uVar7); uVar4 = *puVar8, uVar4 != 0xffffffff;
-        puVar8 = (uint *)((int)puVar8 + uVar4)) {
-      if ((uVar4 & 1) != 0) {
+    for (puVar8 = (uint *)((int)ppHVar1 + uVar7); uVar1 = *puVar8, uVar1 != 0xffffffff;
+        puVar8 = (uint *)((int)puVar8 + uVar1)) {
+      if ((uVar1 & 1) != 0) {
         return 1;
       }
-      uVar7 = puVar8[2];
+      uVar3 = puVar8[2];
       uVar2 = puVar8[1];
       if (in_DS == in_stack_00000004) {
         pHVar3 = g_MainHeap->next_heap_block;
@@ -55,28 +59,28 @@ int __watcallRegister ResizeBlockInPlace(ushort segment,void *ptr,ulong new_size
       if (puVar8 == (uint *)((Heap *)(new_size + 0xc))->heap_size) {
         ((Heap *)(new_size + 0xc))->heap_size = ((uint *)((Heap *)(new_size + 0xc))->heap_size)[1];
       }
-      if (*in_stack_00000010 <= uVar4) {
-        uVar6 = uVar4 - *in_stack_00000010;
+      if (*in_stack_00000010 <= uVar1) {
+        uVar6 = uVar1 - *in_stack_00000010;
         if (0xf < uVar6) {
-          puVar8 = (uint *)((int)puVar8 + *in_stack_00000010);
-          *puVar8 = uVar6;
-          puVar8[1] = uVar2;
-          puVar8[2] = uVar7;
-          *(uint **)(uVar2 + 8) = puVar8;
-          *(uint **)(uVar7 + 4) = puVar8;
+          puVar5 = (uint *)((int)puVar8 + *in_stack_00000010);
+          *puVar5 = uVar6;
+          puVar5[1] = uVar2;
+          puVar5[2] = uVar3;
+          *(uint **)(uVar2 + 8) = puVar5;
+          *(uint **)(uVar3 + 4) = puVar5;
           *ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + *in_stack_00000010);
           DAT_03f9b851 = 0;
           goto LAB_00609968;
         }
       }
-      *(uint *)(uVar2 + 8) = uVar7;
-      *(uint *)(uVar7 + 4) = uVar2;
-      *ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + uVar4);
+      *(uint *)(uVar2 + 8) = uVar3;
+      *(uint *)(uVar3 + 4) = uVar2;
+      *ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + uVar1);
       ((Heap *)(new_size + 0x18))->heap_base =
            (void *)((int)((Heap *)(new_size + 0x18))->heap_base + -1);
       DAT_03f9b851 = 0;
-      if (*in_stack_00000010 <= uVar4) goto LAB_00609968;
-      *in_stack_00000010 = *in_stack_00000010 - uVar4;
+      if (*in_stack_00000010 <= uVar1) goto LAB_00609968;
+      *in_stack_00000010 = *in_stack_00000010 - uVar1;
     }
     iVar5 = 2;
   }
@@ -85,14 +89,14 @@ int __watcallRegister ResizeBlockInPlace(ushort segment,void *ptr,ulong new_size
       *ppHVar1 = (Heap *)(uVar4 | 1);
       *(uint *)(uVar4 + (int)ppHVar1) = uVar7 - uVar4 | 1;
       if (in_DS == in_stack_00000004) {
-        pHVar3 = g_MainHeap->next_heap_block;
+        pHVar4 = g_MainHeap->next_heap_block;
         new_size = (ulong)g_MainHeap;
-        while ((pHVar3 != (Heap *)0x0 &&
+        while ((pHVar4 != (Heap *)0x0 &&
                ((in_stack_00000008 < new_size ||
                 ((Heap *)((int)&((Heap *)new_size)->heap_size + ((Heap *)new_size)->heap_size) <=
                  in_stack_00000008))))) {
           new_size = (ulong)((Heap *)new_size)->next_heap_block;
-          pHVar3 = ((Heap *)new_size)->next_heap_block;
+          pHVar4 = ((Heap *)new_size)->next_heap_block;
         }
       }
       ((Heap *)(new_size + 0x18))->heap_size = ((Heap *)(new_size + 0x18))->heap_size + 1;

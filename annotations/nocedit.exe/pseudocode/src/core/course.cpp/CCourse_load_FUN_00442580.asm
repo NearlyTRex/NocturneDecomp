@@ -7,7 +7,8 @@
 ; CCourse *        Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; undefined1[4]    Stack[-0x18]:4  auStack_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
 ;   core_bat.cpp_CBat_setup_FUN_004148a0 at 004148c5

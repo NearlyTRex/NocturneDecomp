@@ -13,8 +13,10 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
 {
   int iVar1;
   CBoundingBox3D *this_ptr_00;
+  int iVar2;
   CVector3i *rotation;
   CVector3i *position;
+  int iVar3;
   CBoundingBox3D local_44;
   CVector3f CStack_2c;
   CVector3f CStack_20;
@@ -29,16 +31,13 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
       this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
                               ((CDemonActor *)this_ptr,&local_44);
-      iStack_14 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-      if (iStack_14 != 0) {
-        iVar1 = 0;
+      iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
+      if (iVar2 != 0) {
+        iVar3 = 0;
         if (0 < this_ptr->count) {
-          pCStack_10 = this_ptr->models;
-          pSStack_c = this_ptr->bugs;
           position = (CVector3i *)&this_ptr->bugs[0].orientation;
           rotation = (CVector3i *)&this_ptr->bugs[0].position;
           do {
-            pSStack_8 = pSStack_c + iVar1;
             engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                       (g_CDemonRendererPtr2,position,rotation);
             CStack_20.x = (this_ptr->base).base.base.location.position.x + (float)rotation->x;
@@ -53,17 +52,17 @@ int __cdecl core_bugs_cpp_CBugs_renderOpaque_FUN_004251b0(CBugs *this_ptr)
             engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
                       (g_CDemonRendererPtr2,0xffff);
             core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-                      (pCStack_10 + pSStack_8->model_index,0.0,0x2e7);
+                      (this_ptr->models + this_ptr->bugs[iVar3].model_index,0.0,0x2e7);
             engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
             position = (CVector3i *)&position[5].y;
-            iVar1 = iVar1 + 1;
+            iVar3 = iVar3 + 1;
             rotation = (CVector3i *)&rotation[5].y;
-          } while (iVar1 < this_ptr->count);
+          } while (iVar3 < this_ptr->count);
         }
         core_set_cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0(g_CDemonSetPtr,(CVector3f *)0x0);
       }
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
-      return iStack_14;
+      return iVar2;
     }
   }
   return 0;

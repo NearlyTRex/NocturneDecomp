@@ -10,14 +10,16 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
 
 {
   int iVar1;
+  CVector3f *direction;
+  int iVar2;
   uint text_color;
-  SLaserInfo *laser_info;
-  CVector3f *pCVar2;
-  UOrientationVector *orientation;
   SLaserInfo local_d0;
   SLaserInfo local_7c;
   CVector3f local_28;
   CVector3f local_1c;
+  SLaserInfo *laser_info;
+  CVector3f *pCVar2;
+  UOrientationVector *orientation;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
@@ -31,7 +33,7 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
       local_d0.color.b = (this_ptr->laser_color).b;
       local_7c.is_hero_weapon = 0;
       local_7c.is_damaging = 0;
-      iVar1 = 0;
+      iVar2 = 0;
       local_d0.beam_width = local_7c.beam_width;
       local_d0.local_origin.x = local_7c.local_origin.x;
       local_d0.local_origin.y = local_7c.local_origin.y;
@@ -58,16 +60,16 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
       local_7c.color.r = local_d0.color.r;
       local_7c.color.g = local_d0.color.g;
       local_7c.color.b = local_d0.color.b;
-      pCVar2 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                         (&this_ptr->base,&local_28,&local_1c);
+      direction = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                            (&this_ptr->base,&local_28,&local_1c);
       core_fire_cpp_CFireEffect_traceLaser_FUN_004c8230
-                (g_CFireEffectPtr,&(this_ptr->base).location.position,pCVar2,laser_info,iVar1);
+                (g_CFireEffectPtr,&(this_ptr->base).location.position,direction,laser_info,iVar2);
       core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
       return 1;
     }
     if (g_CDemonMissionPtr->is_in_editor != 0) {
-      iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-      if (iVar1 == 0) {
+      iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+      if (iVar2 == 0) {
         core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(&this_ptr->base,0xfb);
         if ((((this_ptr->emitter_type == 3) && (g_SlewTargetMode != 0)) &&
             (this_ptr == PTR_02cf2b78)) &&

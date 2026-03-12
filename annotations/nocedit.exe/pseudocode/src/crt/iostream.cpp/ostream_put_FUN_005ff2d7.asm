@@ -7,7 +7,7 @@
 ; _ostream *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   character
 ; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
+; byte             Stack[-0xc]:1  local_c
 ;
 ; XREF[4]:
 ;   support_codec.cpp_CCodec_process_FUN_0043ea10 at 0043ea6c

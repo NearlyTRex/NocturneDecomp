@@ -6,7 +6,8 @@
 ; Parameters:
 ; CSuccubus *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x24]:1  local_24
+; CBoundingBox3D   Stack[-0x24]:24  local_24
+; int              Stack[-0xc]:4  iStack_c
 ;
 ; Referenced Globals:
 ;   float FLOAT_00663938 = 4

@@ -11,7 +11,7 @@
 ; int *            Stack[0x14]:4   v_out
 ; int *            Stack[0x18]:4   w_out
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680 at 00531804

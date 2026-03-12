@@ -11,6 +11,7 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
 {
   CMP3Decoder *pCVar1;
   CMP3Decoder *this_ptr;
+  CMP3Decoder *pCVar2;
   SIZE_T samples_requested;
   SIZE_T size;
   int iVar2;
@@ -34,13 +35,13 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
     local_24 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(pCVar1);
   }
   this_ptr = (CMP3Decoder *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x8630,"..\\sound\\mp3.cpp",0xdc8);
-  pCVar1 = (CMP3Decoder *)0x0;
+  pCVar2 = (CMP3Decoder *)0x0;
   if (this_ptr != (CMP3Decoder *)0x0) {
-    pCVar1 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(this_ptr);
+    pCVar2 = sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(this_ptr);
   }
-  local_2c = pCVar1;
+  local_2c = pCVar2;
   sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(local_24,"pixies.mp3");
-  sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(pCVar1,"pixies.mp3");
+  sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(pCVar2,"pixies.mp3");
   local_1c = local_24->num_channels * 2;
   samples_requested = (SIZE_T)(0x20000 / (longlong)(int)local_1c);
   local_28 = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -78,13 +79,13 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_30,"..\\sound\\mp3.cpp",0xde9);
   g_CurrentDebugFilename = "..\\sound\\mp3.cpp";
   g_CurrentDebugLine = 0xdeb;
-  pCVar1 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(local_24,0);
-  shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
+  pCVar2 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(local_24,0);
+  shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar2);
   g_CurrentDebugFilename = "..\\sound\\mp3.cpp";
   g_CurrentDebugLine = 0xdec;
   if (local_2c != (CMP3Decoder *)0x0) {
-    pCVar1 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(local_2c,0);
-    shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
+    pCVar2 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(local_2c,0);
+    shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar2);
   }
   _time(&local_34);
   local_14 = local_34 - local_38;

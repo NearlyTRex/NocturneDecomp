@@ -9,15 +9,29 @@
 void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float delta_time)
 
 {
-  CLocation *pCVar1;
-  float *pfVar2;
-  float fVar3;
-  bool bVar4;
-  CDemonSet *pCVar5;
+  CLocation *pCVar2;
+  UOrientationVector *euler_angles;
+  float *pfVar3;
+  CVector3f *pCVar4;
+  float fVar5;
+  float fVar6;
+  float fVar8;
+  float fVar9;
+  float fVar10;
+  float fVar11;
+  float fVar12;
+  float fVar13;
+  float fVar14;
+  float fVar15;
+  float fVar16;
+  CDemonSet *pCVar17;
   int iVar6;
+  float fVar18;
   float fVar7;
   CVector3f *pCVar8;
   CVector3f *pCVar9;
+  int iVar19;
+  CVector3f *pCVar20;
   CMatrix3x4f *pCVar10;
   CMatrix3x3f *pCVar11;
   byte bVar12;
@@ -73,120 +87,119 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
   float local_1c;
   CVector3f *local_18;
   float local_14;
+  bool bVar4;
+  CDemonSet *pCVar5;
+  CLocation *pCVar1;
+  float *pfVar2;
+  float fVar3;
   
   bVar12 = 0;
-  pCVar1 = &(this_ptr->base).location;
-  iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220(&pCVar1->position,100.0);
+  pCVar2 = &(this_ptr->base).location;
+  iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220(&pCVar2->position,100.0);
   if (iVar6 == 0) {
-    iVar6 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220(&this_ptr->home_pos,100.0);
-    if (iVar6 != 0) {
+    iVar19 = core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220(&this_ptr->home_pos,100.0);
+    if (iVar19 != 0) {
       return;
     }
-    (pCVar1->position).x = (this_ptr->home_pos).x;
+    (pCVar2->position).x = (this_ptr->home_pos).x;
     (this_ptr->base).location.position.y = (this_ptr->home_pos).y;
     (this_ptr->base).location.position.z = (this_ptr->home_pos).z;
     return;
   }
-  local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
-  (this_ptr->drift).x = local_14 + (this_ptr->drift).x;
-  local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
-  pfVar2 = &(this_ptr->drift).y;
-  *pfVar2 = local_14 + *pfVar2;
-  local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
-  pfVar2 = &(this_ptr->drift).z;
-  *pfVar2 = local_14 + *pfVar2;
+  fVar18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
+  (this_ptr->drift).x = fVar18 + (this_ptr->drift).x;
+  fVar18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
+  pfVar3 = &(this_ptr->drift).y;
+  *pfVar3 = fVar18 + *pfVar3;
+  fVar18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
+  pfVar3 = &(this_ptr->drift).z;
+  *pfVar3 = fVar18 + *pfVar3;
   pCVar5 = g_CDemonSetPtr;
   local_d0 = 0x40800000;
   local_cc = 0;
-  pCVar9 = &(g_CDemonSetPtr->active_fog).scroll;
+  pCVar20 = &(g_CDemonSetPtr->active_fog).scroll;
   local_c8 = 0;
-  if (pCVar9 != (CVector3f *)&local_d0) {
-    pCVar9->x = 4.0;
+  if (pCVar20 != (CVector3f *)&local_d0) {
+    pCVar20->x = 4.0;
     (pCVar5->active_fog).scroll.y = 0.0;
     (pCVar5->active_fog).scroll.z = 0.0;
   }
-  fVar7 = this_ptr->animation_timer - delta_time;
-  this_ptr->animation_timer = fVar7;
-  pCVar5 = g_CDemonSetPtr;
-  if (fVar7 <= 0.0) {
-    pCVar9 = &(g_CDemonSetPtr->active_fog).scroll;
-    if (&this_ptr->drift_target != pCVar9) {
-      (this_ptr->drift_target).x = pCVar9->x;
-      (this_ptr->drift_target).y = (pCVar5->active_fog).scroll.y;
-      (this_ptr->drift_target).z = (pCVar5->active_fog).scroll.z;
+  fVar18 = this_ptr->animation_timer - delta_time;
+  this_ptr->animation_timer = fVar18;
+  pCVar17 = g_CDemonSetPtr;
+  if (fVar18 <= 0.0) {
+    pCVar20 = &(g_CDemonSetPtr->active_fog).scroll;
+    if (&this_ptr->drift_target != pCVar20) {
+      (this_ptr->drift_target).x = pCVar20->x;
+      (this_ptr->drift_target).y = (pCVar17->active_fog).scroll.y;
+      (this_ptr->drift_target).z = (pCVar17->active_fog).scroll.z;
     }
-    local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-10.0,10.0);
-    (this_ptr->drift_target).x = local_14 + (this_ptr->drift_target).x;
-    local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
-    (this_ptr->drift_target).y = local_14 + (this_ptr->drift_target).y;
-    local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-10.0,10.0);
-    (this_ptr->drift_target).z = local_14 + (this_ptr->drift_target).z;
+    fVar18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-10.0,10.0);
+    (this_ptr->drift_target).x = fVar18 + (this_ptr->drift_target).x;
+    fVar18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
+    (this_ptr->drift_target).y = fVar18 + (this_ptr->drift_target).y;
+    fVar18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-10.0,10.0);
+    (this_ptr->drift_target).z = fVar18 + (this_ptr->drift_target).z;
     fVar7 = core_actor_cpp_getRandomFloat_FUN_0040cc10(6.0,20.0);
     this_ptr->animation_timer = fVar7;
   }
-  pCVar9 = &this_ptr->drift_target;
-  local_28 = (g_CDemonSetPtr->active_fog).scroll.x - pCVar9->x;
-  local_24 = (g_CDemonSetPtr->active_fog).scroll.y - (this_ptr->drift_target).y;
-  local_ac = local_28 * 0.05f;
-  local_20 = (g_CDemonSetPtr->active_fog).scroll.z - (this_ptr->drift_target).z;
-  local_a8 = local_24 * 0.05f;
-  local_a4 = local_20 * 0.05f;
-  pCVar8 = &this_ptr->drift;
-  pCVar9->x = pCVar9->x + local_ac;
+  pCVar20 = &this_ptr->drift_target;
+  local_ac = ((g_CDemonSetPtr->active_fog).scroll.x - pCVar20->x) * 0.05f;
+  local_a8 = ((g_CDemonSetPtr->active_fog).scroll.y - (this_ptr->drift_target).y) * 0.05f;
+  local_a4 = ((g_CDemonSetPtr->active_fog).scroll.z - (this_ptr->drift_target).z) * 0.05f;
+  pCVar4 = &this_ptr->drift;
+  pCVar20->x = pCVar20->x + local_ac;
   (this_ptr->drift_target).y = (this_ptr->drift_target).y + local_a8;
   (this_ptr->drift_target).z = (this_ptr->drift_target).z + local_a4;
-  local_94 = pCVar9->x - pCVar8->x;
+  local_94 = pCVar20->x - pCVar4->x;
   local_90 = (this_ptr->drift_target).y - (this_ptr->drift).y;
-  local_40 = local_94 * 0.07f;
   local_8c = (this_ptr->drift_target).z - (this_ptr->drift).z;
-  local_3c = local_90 * 0.07f;
-  local_38 = local_8c * 0.07f;
-  pCVar8->x = pCVar8->x + local_40;
-  (this_ptr->drift).y = (this_ptr->drift).y + local_3c;
-  (this_ptr->drift).z = (this_ptr->drift).z + local_38;
+  fVar18 = local_90 * 0.07f;
+  fVar5 = local_8c * 0.07f;
+  pCVar4->x = pCVar4->x + local_94 * 0.07f;
+  (this_ptr->drift).y = (this_ptr->drift).y + fVar18;
+  (this_ptr->drift).z = (this_ptr->drift).z + fVar5;
   local_c4 = (this_ptr->base).location.position.x;
   local_c0 = (this_ptr->base).location.position.y;
   local_bc = (this_ptr->base).location.position.z;
-  local_14 = -this_ptr->gravity;
-  pCVar9 = &this_ptr->velocity;
-  local_e8 = pCVar8->x - pCVar9->x;
-  local_e4 = (this_ptr->drift).y - (this_ptr->velocity).y;
+  fVar18 = this_ptr->gravity;
+  pCVar20 = &this_ptr->velocity;
+  fVar5 = pCVar4->x;
+  fVar6 = pCVar20->x;
+  fVar8 = (this_ptr->drift).y;
+  fVar9 = (this_ptr->velocity).y;
   pfVar2 = &this_ptr->damping_factor;
-  local_e0 = (this_ptr->drift).z - (this_ptr->velocity).z;
-  local_dc = local_e8 * *pfVar2;
-  local_48 = local_e4 * *pfVar2;
-  local_d4 = local_e0 * *pfVar2;
-  local_d8 = local_14 + local_48;
-  local_4c = local_dc;
-  local_44 = local_d4;
+  fVar10 = (this_ptr->drift).z;
+  fVar11 = (this_ptr->velocity).z;
+  fVar12 = *pfVar2;
+  fVar13 = *pfVar2;
+  fVar14 = *pfVar2;
   pCVar8 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-                     (&this_ptr->base,&local_70,pCVar8);
+                     (&this_ptr->base,&local_70,pCVar4);
   local_a0 = pCVar8->x * 0.5f;
   local_9c = pCVar8->y * 0.5f;
   local_98 = 0.5f * pCVar8->z;
-  pCVar8 = &this_ptr->acceleration;
-  fVar7 = (this_ptr->acceleration).y * 0.8f;
-  fVar3 = (this_ptr->acceleration).z * 0.8f;
-  pCVar8->x = pCVar8->x * 0.8f;
-  (this_ptr->acceleration).y = fVar7;
-  (this_ptr->acceleration).z = fVar3;
-  pCVar8->x = pCVar8->x + local_a0;
+  pCVar4 = &this_ptr->acceleration;
+  fVar15 = (this_ptr->acceleration).y * 0.8f;
+  fVar16 = (this_ptr->acceleration).z * 0.8f;
+  pCVar4->x = pCVar4->x * 0.8f;
+  (this_ptr->acceleration).y = fVar15;
+  (this_ptr->acceleration).z = fVar16;
+  pCVar4->x = pCVar4->x + local_a0;
   (this_ptr->acceleration).y = (this_ptr->acceleration).y + local_9c;
   (this_ptr->acceleration).z = (this_ptr->acceleration).z + local_98;
-  local_7c = local_dc * delta_time;
-  local_78 = local_d8 * delta_time;
-  local_74 = local_d4 * delta_time;
-  pCVar9->x = pCVar9->x + local_7c;
-  (this_ptr->velocity).y = (this_ptr->velocity).y + local_78;
-  (this_ptr->velocity).z = (this_ptr->velocity).z + local_74;
-  fVar7 = (this_ptr->acceleration).y;
+  pCVar20->x = pCVar20->x + (fVar5 - fVar6) * fVar12 * delta_time;
+  (this_ptr->velocity).y =
+       (this_ptr->velocity).y + (-fVar18 + (fVar8 - fVar9) * fVar13) * delta_time;
+  (this_ptr->velocity).z = (this_ptr->velocity).z + (fVar10 - fVar11) * fVar14 * delta_time;
+  fVar18 = (this_ptr->acceleration).y;
   fVar3 = (this_ptr->acceleration).z;
-  fVar7 = SQRT(fVar3 * fVar3 + pCVar8->x * pCVar8->x + fVar7 * fVar7) * (float)0.15915494309644401;
-  if (1.0 < fVar7) {
-    fVar7 = 1.0 / fVar7;
-    pCVar8->x = pCVar8->x * fVar7;
-    (this_ptr->acceleration).y = (this_ptr->acceleration).y * fVar7;
-    (this_ptr->acceleration).z = (this_ptr->acceleration).z * fVar7;
+  fVar18 = SQRT(fVar3 * fVar3 + pCVar4->x * pCVar4->x + fVar18 * fVar18) * (float)0.15915494309644401;
+  if (1.0 < fVar18) {
+    fVar18 = 1.0 / fVar18;
+    pCVar4->x = pCVar4->x * fVar18;
+    (this_ptr->acceleration).y = (this_ptr->acceleration).y * fVar18;
+    (this_ptr->acceleration).z = (this_ptr->acceleration).z * fVar18;
   }
   local_58 = (this_ptr->velocity).x * delta_time;
   local_54 = (this_ptr->velocity).y * delta_time;
@@ -194,77 +207,75 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr,float d
   local_34.x = (this_ptr->acceleration).x * delta_time;
   local_34.y = (this_ptr->acceleration).y * delta_time;
   local_34.z = delta_time * (this_ptr->acceleration).z;
-  local_14 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470
-                       (g_CDemonSetPtr,(this_ptr->base).location.position.x,
-                        (this_ptr->base).location.position.z,local_58,local_50,
-                        this_ptr->collision_radius,this_ptr->collision_bottom_y,
-                        this_ptr->collision_top_y);
+  fVar18 = core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470
+                     (g_CDemonSetPtr,(this_ptr->base).location.position.x,
+                      (this_ptr->base).location.position.z,local_58,local_50,
+                      this_ptr->collision_radius,this_ptr->collision_bottom_y,
+                      this_ptr->collision_top_y);
   bVar4 = false;
-  if ((0.0 <= local_14) && (local_14 < 1.0)) {
-    local_58 = local_58 * local_14;
-    local_54 = local_54 * local_14;
-    local_50 = local_50 * local_14;
+  if ((0.0 <= fVar18) && (fVar18 < 1.0)) {
+    local_58 = local_58 * fVar18;
+    local_54 = local_54 * fVar18;
+    local_50 = local_50 * fVar18;
     bVar4 = true;
   }
-  pCVar1 = &(this_ptr->base).location;
-  fVar7 = (this_ptr->base).location.position.y;
-  (pCVar1->position).x = (pCVar1->position).x + local_58;
-  fVar3 = (this_ptr->base).location.position.z;
-  (this_ptr->base).location.position.y = fVar7 + local_54;
-  (this_ptr->base).location.position.z = fVar3 + local_50;
-  local_1c = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
-                       (g_CDemonSetPtr,&pCVar1->position,
-                        this_ptr->collision_radius * (float)0.90000000000000002);
-  if (local_1c <= (this_ptr->base).location.position.y) {
+  pCVar2 = &(this_ptr->base).location;
+  fVar18 = (this_ptr->base).location.position.y;
+  (pCVar2->position).x = (pCVar2->position).x + local_58;
+  fVar5 = (this_ptr->base).location.position.z;
+  (this_ptr->base).location.position.y = fVar18 + local_54;
+  (this_ptr->base).location.position.z = fVar5 + local_50;
+  fVar18 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
+                     (g_CDemonSetPtr,&pCVar2->position,
+                      this_ptr->collision_radius * (float)0.90000000000000002);
+  if (fVar18 <= (this_ptr->base).location.position.y) {
     if (!bVar4) goto LAB_005df3d0;
   }
   else {
-    fVar7 = this_ptr->collision_radius;
-    fVar3 = (float)1.5;
-    (this_ptr->base).location.position.y = local_1c;
-    if (fVar7 * fVar3 + local_c0 < (this_ptr->base).location.position.y) {
-      (pCVar1->position).x = local_c4;
+    fVar5 = this_ptr->collision_radius;
+    fVar6 = (float)1.5;
+    (this_ptr->base).location.position.y = fVar18;
+    if (fVar5 * fVar6 + local_c0 < (this_ptr->base).location.position.y) {
+      (pCVar2->position).x = local_c4;
       (this_ptr->base).location.position.y = local_c0;
       (this_ptr->base).location.position.z = local_bc;
     }
   }
-  fVar7 = (this_ptr->acceleration).y * 0.7f;
-  fVar3 = (this_ptr->acceleration).z * 0.7f;
+  fVar18 = (this_ptr->acceleration).y * 0.7f;
+  fVar5 = (this_ptr->acceleration).z * 0.7f;
   (this_ptr->acceleration).x = (this_ptr->acceleration).x * 0.7f;
-  (this_ptr->acceleration).y = fVar7;
-  (this_ptr->acceleration).z = fVar3;
+  (this_ptr->acceleration).y = fVar18;
+  (this_ptr->acceleration).z = fVar5;
 LAB_005df3d0:
-  local_64 = (this_ptr->base).location.position.x - local_c4;
-  local_60 = (this_ptr->base).location.position.y - local_c0;
-  local_b0 = 1.0 / delta_time;
-  local_b8 = local_64 * local_b0;
-  local_5c = (this_ptr->base).location.position.z - local_bc;
-  local_b4 = local_60 * local_b0;
-  local_b0 = local_5c * local_b0;
+  fVar18 = 1.0 / delta_time;
+  local_b8 = ((this_ptr->base).location.position.x - local_c4) * fVar18;
+  local_b4 = ((this_ptr->base).location.position.y - local_c0) * fVar18;
+  local_b0 = ((this_ptr->base).location.position.z - local_bc) * fVar18;
   if (&this_ptr->velocity != (CVector3f *)&local_b8) {
     (this_ptr->velocity).x = local_b8;
     (this_ptr->velocity).y = local_b4;
     (this_ptr->velocity).z = local_b0;
   }
-  local_18 = (CVector3f *)&(this_ptr->base).orient;
-  local_14 = local_1c;
+  euler_angles = &(this_ptr->base).orient;
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            (&local_1a8,&g_ZeroVector.f,local_18);
+            (&local_1a8,&g_ZeroVector.f,&euler_angles->vec);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_118,&g_ZeroVector.f,&local_34);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_118,&local_1a8,&local_178);
   pCVar10 = &local_178;
   pCVar11 = &local_148;
-  for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+  for (iVar19 = 0xc; iVar19 != 0; iVar19 = iVar19 + -1) {
+    pCVar11 = (CMatrix3x3f *)((int)pCVar11 + (uint)bVar12 * -8 + 4);
+    pCVar10 = (CMatrix3x4f *)((int)pCVar10 + (uint)bVar12 * -8 + 4);
     pCVar11->m[0].x = pCVar10->m[0].w;
-    pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);
-    pCVar11 = (CMatrix3x3f *)((int)pCVar11 + ((uint)bVar12 * -2 + 1) * 4);
+    pCVar10 = pCVar10;
+    pCVar11 = pCVar11;
   }
   pCVar9 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_148,&local_88);
-  if (pCVar9 != local_18) {
-    local_18->x = pCVar9->x;
-    local_18->y = pCVar9->y;
-    local_18->z = pCVar9->z;
+  if (pCVar9 != (CVector3f *)euler_angles) {
+    (euler_angles->vec).x = pCVar9->x;
+    (this_ptr->base).orient.vec.y = pCVar9->y;
+    (this_ptr->base).orient.vec.z = pCVar9->z;
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   return;

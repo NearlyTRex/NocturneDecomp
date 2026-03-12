@@ -1,20 +1,35 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 10,
+        "line": 54,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 55,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 116,
+    "complexity_score": 147,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 23,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 116,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 355
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 122,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unknown_field"
+    ],
+    "total_lines": 361
   },
   "cross_references": [],
   "function": {
@@ -233,7 +248,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -251,5 +266,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "uVar8._0_2_ = (ushort)(vertex0->projected_vertex).screen_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 48,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "uVar8._0_2_ = (ushort)uVar8 ^ 0xffff;",
+      "type": "unknown_field"
+    }
+  ]
 }

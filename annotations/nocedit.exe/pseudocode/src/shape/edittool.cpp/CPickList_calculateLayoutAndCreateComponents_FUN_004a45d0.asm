@@ -8,16 +8,16 @@
 ; char *           Stack[0x8]:4   dialog_title
 ; uint             Stack[0xc]:4   window_flags
 ; Local Variables:
-; undefined1       Stack[-0x160]:1  local_160
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[300]        Stack[-0x160]:300  local_160
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; uint             Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_edittool.cpp_CPickList_initializeDialog_FUN_004a3ef0 at 004a3f00

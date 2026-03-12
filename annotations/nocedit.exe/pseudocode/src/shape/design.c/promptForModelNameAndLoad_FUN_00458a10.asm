@@ -4,9 +4,7 @@
 ; int __cdecl shape_design_c_promptForModelNameAndLoad_FUN_00458a10(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x64]:1  local_64
-; undefined1       Stack[-0x63]:1  local_63
-; undefined4       Stack[-0x14]:4  local_14
+; char[84]         Stack[-0x64]:84  local_64
 ;
 ; XREF[2]:
 ;   shape_design.c_handleEditorHotkeys_FUN_0045b990 at 0045b9bc

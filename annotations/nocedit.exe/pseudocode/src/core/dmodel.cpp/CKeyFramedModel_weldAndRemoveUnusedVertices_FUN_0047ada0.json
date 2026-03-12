@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 11,
-        "line": 33,
+        "line": 36,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 165,
+    "complexity_score": 168,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 16,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 140,
+    "pseudocode_lines": 143,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 490
+    "total_lines": 493
   },
   "cross_references": [
     {
@@ -274,21 +274,21 @@
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "CKeyFramedModel *"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -309,14 +309,14 @@
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
@@ -337,7 +337,7 @@
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -351,7 +351,7 @@
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -386,7 +386,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 76,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar6 = (int *)((int)&this_ptr->vertex_list->x + local_1c);",
@@ -394,7 +394,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 78,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar4 = (int *)((int)&this_ptr->vertex_list->x + local_34);",

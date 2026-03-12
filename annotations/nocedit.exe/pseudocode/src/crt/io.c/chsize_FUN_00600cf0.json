@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 145,
+    "complexity_score": 147,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 47,
     "suspect_count": 9,
     "suspect_types": [
       "special_crt_function",
       "unaffected_reg"
     ],
-    "total_lines": 182
+    "total_lines": 184
   },
   "cross_references": [
     {
@@ -174,7 +174,7 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 10,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "HANDLE unaff_EBP;",
@@ -182,7 +182,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 11,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "int unaff_EDI;",
@@ -190,7 +190,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 19,
+      "line": 21,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "unaff_EDI = lseek(file_handle,0,2);",
@@ -198,7 +198,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 21,
+      "line": 23,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "DVar2 = (*g_SetFilePointerFunc)(unaff_EBP,new_size,(PLONG)0x0,0);",
@@ -206,7 +206,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 27,
+      "line": 29,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "BVar3 = (*g_SetEndOfFileFunc)(unaff_EBP);",
@@ -214,7 +214,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 33,
+      "line": 35,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "if ((0x7fff < g_WindowsPlatformVersion) && (unaff_EDI < new_size)) {",
@@ -222,7 +222,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 36,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "FUN_00600c80(file_handle,unaff_EDI,new_size - unaff_EDI);",
@@ -230,7 +230,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 36,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "FUN_00600c80(file_handle,unaff_EDI,new_size - unaff_EDI);",

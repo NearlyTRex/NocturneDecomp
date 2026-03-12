@@ -9,10 +9,9 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,_FILE *file_handle)
 
 {
-  CLodEdge *pCVar1;
-  double dVar2;
   int iVar3;
   int iVar4;
+  int iVar1;
   void *pvVar5;
   SIZE_T local_38;
   void *local_34;
@@ -23,6 +22,8 @@ void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,_
   int local_20;
   int local_1c;
   int *local_18;
+  double dVar2;
+  CLodEdge *pCVar1;
   
   local_20 = 1;
   _fscanf(file_handle,"%d\n",&local_38);
@@ -60,11 +61,11 @@ LAB_0051d075:
         local_18[3] = 9.9999999999999997e+34._4_4_;
         local_18[4] = 0;
         if (iVar3 != 3) goto LAB_0051d075;
-        iVar3 = 1;
+        iVar1 = 1;
         do {
           iVar4 = _fgetc(file_handle);
           if (iVar4 < 0) break;
-        } while ((iVar4 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
+        } while ((iVar4 != 10) || (iVar1 = iVar1 + -1, 0 < iVar1));
       }
       if (local_20 != 0) {
         if (*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_1c + -0x28) != *local_18
@@ -90,25 +91,25 @@ LAB_0051d075:
     shape_meshlod_cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710(this_ptr);
   }
   else {
-    iVar3 = 0;
+    iVar1 = 0;
     pvVar5 = local_34;
     if (0 < this_ptr->edge_count) {
       do {
         pCVar1 = this_ptr->edges_ptr;
-        *(uint *)&pCVar1[iVar3].collapse_cost = *(uint *)((int)pvVar5 + 8);
-        *(uint *)((int)&pCVar1[iVar3].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);
-        this_ptr->edges_ptr[iVar3].collapse_error = *(float *)((int)pvVar5 + 0x10);
-        this_ptr->edges_ptr[iVar3].needs_recalc_flag = 0;
-        iVar3 = iVar3 + 1;
+        *(uint *)&pCVar1[iVar1].collapse_cost = *(uint *)((int)pvVar5 + 8);
+        *(uint *)((int)&pCVar1[iVar1].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);
+        this_ptr->edges_ptr[iVar1].collapse_error = *(float *)((int)pvVar5 + 0x10);
+        this_ptr->edges_ptr[iVar1].needs_recalc_flag = 0;
+        iVar1 = iVar1 + 1;
         pvVar5 = (void *)((int)pvVar5 + 0xf0);
-      } while (iVar3 < this_ptr->edge_count);
+      } while (iVar1 < this_ptr->edge_count);
     }
-    iVar3 = 0;
+    iVar1 = 0;
     if (0 < this_ptr->edge_count) {
       do {
-        shape_meshlod_cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000(this_ptr,iVar3,1);
-        iVar3 = iVar3 + 1;
-      } while (iVar3 < this_ptr->edge_count);
+        shape_meshlod_cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000(this_ptr,iVar1,1);
+        iVar1 = iVar1 + 1;
+      } while (iVar1 < this_ptr->edge_count);
     }
   }
   shape_memdbg_cpp_debugFree_FUN_0050f460(local_34,"..\\shape\\meshlod.cpp",0x141f);

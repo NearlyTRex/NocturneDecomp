@@ -11,12 +11,12 @@
 void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_00525650(CMobster *this_ptr)
 
 {
-  float fVar1;
   CVector3f *pCVar2;
   CVector3f local_3c;
   CVector3f local_30;
   CVector3f local_24;
   CVector3f local_18;
+  float fVar1;
   
   if (this_ptr->side_of_car == 0) {
     local_3c.y = -2.35;

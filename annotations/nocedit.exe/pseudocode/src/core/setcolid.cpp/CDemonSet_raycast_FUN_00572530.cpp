@@ -9,18 +9,19 @@
 float __cdecl core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(CDemonSet *this_ptr,CVector3f *ray_origin,CVector3f *ray_target)
 
 {
+  float fVar1;
+  float fVar9;
+  float local_20 [3];
+  float local_14;
+  float fVar2;
   CVector3f *out_intersection_point;
   float *pfVar1;
-  float fVar2;
+  float fVar7;
+  float fVar8;
   float fVar3;
   float fVar4;
   float fVar5;
   float fVar6;
-  float fVar7;
-  float fVar8;
-  float fVar9;
-  float local_20 [3];
-  float local_14;
   
   if (&this_ptr->ray_origin != ray_origin) {
     (this_ptr->ray_origin).x = ray_origin->x;
@@ -33,10 +34,10 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(CDemonSet *this_p
     (this_ptr->ray_target).z = ray_target->z;
   }
   out_intersection_point = &this_ptr->voxel_hit_point;
-  local_14 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
-                       (&g_CDemonRaytraceInstance,ray_origin,ray_target,out_intersection_point,
-                        &this_ptr->voxel_surface_type);
-  this_ptr->voxel_distance = (int)local_14;
+  fVar1 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
+                    (&g_CDemonRaytraceInstance,ray_origin,ray_target,out_intersection_point,
+                     &this_ptr->voxel_surface_type);
+  this_ptr->voxel_distance = (int)fVar1;
   if (&this_ptr->collision_normal != out_intersection_point) {
     (this_ptr->collision_normal).x = out_intersection_point->x;
     (this_ptr->collision_normal).y = (this_ptr->voxel_hit_point).y;
@@ -50,7 +51,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(CDemonSet *this_p
                     (this_ptr,-1.0,ray_origin,ray_target,(float)this_ptr->voxel_distance);
   this_ptr->raycast_distance = fVar9;
   if (this_ptr->raycast_distance <= 1.0) {
-    fVar9 = ray_target->y;
+    fVar1 = ray_target->y;
     fVar2 = ray_origin->y;
     pfVar1 = &this_ptr->raycast_distance;
     fVar3 = ray_target->z;
@@ -62,7 +63,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(CDemonSet *this_p
     if (&this_ptr->collision_impact_position != (CVector3f *)local_20) {
       (this_ptr->collision_impact_position).x =
            ray_origin->x + (ray_target->x - ray_origin->x) * *pfVar1;
-      (this_ptr->collision_impact_position).y = fVar7 + (fVar9 - fVar2) * fVar5;
+      (this_ptr->collision_impact_position).y = fVar7 + (fVar1 - fVar2) * fVar5;
       (this_ptr->collision_impact_position).z = fVar8 + (fVar3 - fVar4) * fVar6;
       return this_ptr->raycast_distance;
     }

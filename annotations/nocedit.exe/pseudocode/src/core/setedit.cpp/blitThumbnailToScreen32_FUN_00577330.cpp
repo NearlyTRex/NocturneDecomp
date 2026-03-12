@@ -9,6 +9,7 @@
 void __cdecl core_setedit_cpp_blitThumbnailToScreen32_FUN_00577330(int thumbnail_index,int screen_x,int screen_row)
 
 {
+  uint uVar1;
   uint *puVar1;
   int iVar2;
   uint uVar3;
@@ -27,16 +28,16 @@ void __cdecl core_setedit_cpp_blitThumbnailToScreen32_FUN_00577330(int thumbnail
     iVar2 = local_14 * 0x100 + thumbnail_index * 0x3000;
     do {
       puVar1 = puVar1 + 1;
-      uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);
-      uVar4 = uVar5 >> 8 & 0xff;
-      uVar3 = uVar5 >> 0x10 & 0xff;
+      uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);
+      uVar4 = uVar1 >> 8 & 0xff;
+      uVar3 = uVar1 >> 0x10 & 0xff;
       if (g_BitsPerPixel == 0x20) {
-        uVar5 = (uVar5 & 0xff) << (g_RedBitPosition.bytes[0] & 0x1f) |
+        uVar5 = (uVar1 & 0xff) << (g_RedBitPosition.bytes[0] & 0x1f) |
                 uVar4 << (g_GreenBitPosition.bytes[0] & 0x1f);
         uVar3 = uVar3 << (g_BlueBitPosition.bytes[0] & 0x1f);
       }
       else {
-        uVar5 = (uVar5 & 0xff) << 0x10 | uVar4 << 8;
+        uVar5 = (uVar1 & 0xff) << 0x10 | uVar4 << 8;
       }
       iVar2 = iVar2 + 4;
       *puVar1 = uVar5 | uVar3;

@@ -9,22 +9,24 @@
 void __cdecl core_cloth_cpp_CCloth_showMenu_FUN_0043ddf0(CCloth *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
   int iVar3;
+  int iVar4;
   char *pcVar4;
   char *pcVar5;
+  char *pcVar7;
   byte bVar7;
   char local_278 [256];
   char local_178 [256];
   char local_78 [100];
   float *local_14;
   char *pcVar6;
+  char cVar1;
   
   bVar7 = 0;
   local_178[0] = '\0';
   local_278[0] = '\0';
-  local_14 = &this_ptr->transparency;
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demented(R) Cloth Editor",0,0);
@@ -39,18 +41,18 @@ void __cdecl core_cloth_cpp_CCloth_showMenu_FUN_0043ddf0(CCloth *this_ptr)
     iVar2 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
     switch(iVar2) {
     case 0x31:
-      iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+      iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                         (g_CEditorToolsPtr,"Load cloth file","models",
                          "*.cth",(int)local_178,0);
-      if (iVar3 != 0) {
+      if (iVar4 != 0) {
         core_cloth_cpp_CCloth_load_FUN_00438cf0(this_ptr,local_178);
       }
       break;
     case 0x32:
-      iVar3 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
+      iVar4 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                         (g_CEditorToolsPtr,"Save cloth file","models",
                          "cth",local_178,1);
-      if (iVar3 != 0) {
+      if (iVar4 != 0) {
         core_cloth_cpp_CCloth_save_FUN_00439260(this_ptr,local_178);
       }
       break;
@@ -58,10 +60,10 @@ void __cdecl core_cloth_cpp_CCloth_showMenu_FUN_0043ddf0(CCloth *this_ptr)
       core_cloth_cpp_CCloth_lockedVertexEditor_FUN_0043d590(this_ptr);
       break;
     case 0x34:
-      iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+      iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                         (g_CEditorToolsPtr,"Select deformable model","models",
                          "*.dfm",(int)local_278,0);
-      if (iVar3 != 0) {
+      if (iVar4 != 0) {
         core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
                   (&g_CDeformableModelInstanceInstance,local_278);
         core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
@@ -75,7 +77,8 @@ void __cdecl core_cloth_cpp_CCloth_showMenu_FUN_0043ddf0(CCloth *this_ptr)
       break;
     case 0x36:
       shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                (g_CEditorToolsPtr,"Enter transparency (0..1.0)",local_14,1,0.0,1.0,1);
+                (g_CEditorToolsPtr,"Enter transparency (0..1.0)",&this_ptr->transparency,1,0.0
+                 ,1.0,1);
       break;
     case 0x37:
       iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
@@ -84,26 +87,26 @@ void __cdecl core_cloth_cpp_CCloth_showMenu_FUN_0043ddf0(CCloth *this_ptr)
       if (iVar3 != 0) {
         splitpath(local_78,(char *)0x0,(char *)0x0,local_178,(char *)0x0);
         pcVar4 = ".cth";
-        iVar3 = -1;
-        pcVar6 = local_178;
+        iVar4 = -1;
+        pcVar5 = local_178;
         do {
-          pcVar5 = pcVar6;
-          if (iVar3 == 0) break;
-          iVar3 = iVar3 + -1;
-          pcVar5 = pcVar6 + (uint)bVar7 * -2 + 1;
-          cVar1 = *pcVar6;
-          pcVar6 = pcVar5;
+          pcVar5 = pcVar5;
+          if (iVar4 == 0) break;
+          iVar4 = iVar4 + -1;
+          pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
+          cVar1 = *pcVar5;
+          pcVar5 = pcVar5;
         } while (cVar1 != '\0');
-        pcVar5 = pcVar5 + -1;
+        pcVar7 = pcVar5 + -1;
         do {
-          cVar1 = *pcVar4;
-          *pcVar5 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar1 = pcVar4[1];
+          cVar2 = *pcVar4;
+          *pcVar7 = cVar2;
+          if (cVar2 == '\0') break;
+          cVar2 = pcVar4[1];
           pcVar4 = pcVar4 + 2;
-          pcVar5[1] = cVar1;
-          pcVar5 = pcVar5 + 2;
-        } while (cVar1 != '\0');
+          pcVar7[1] = cVar2;
+          pcVar7 = pcVar7 + 2;
+        } while (cVar2 != '\0');
         core_cloth_cpp_CCloth_createFromKFM_FUN_0043dcc0(this_ptr,local_78);
       }
     }

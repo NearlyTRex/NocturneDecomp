@@ -9,12 +9,14 @@
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load)
 
 {
-  void *size;
   SIZE_T SVar1;
   int iVar2;
   void **ppvVar3;
+  SIZE_T SVar2;
+  void **ppvVar4;
   char *buffer;
   int iVar4;
+  int iVar5;
   byte *pbVar5;
   byte *pbVar6;
   bool bVar7;
@@ -27,6 +29,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
   int local_1c;
   int local_18;
   int local_14;
+  void *size;
   
   bVar9 = 0;
   cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_0054a8e0(this_ptr);
@@ -42,10 +45,12 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
     do {
       if (iVar4 == 0) break;
       iVar4 = iVar4 + -1;
+      pbVar6 = pbVar6 + (uint)bVar9 * -2 + 1;
+      pbVar5 = pbVar5 + (uint)bVar9 * -2 + 1;
       bVar7 = *pbVar5 < *pbVar6;
       bVar8 = *pbVar5 == *pbVar6;
-      pbVar5 = pbVar5 + (uint)bVar9 * -2 + 1;
-      pbVar6 = pbVar6 + (uint)bVar9 * -2 + 1;
+      pbVar5 = pbVar5;
+      pbVar6 = pbVar6;
     } while (bVar8);
     if (!bVar8) {
       iVar2 = (1 - (uint)bVar7) - (uint)(bVar7 != 0);
@@ -60,16 +65,16 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
                           ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x4c6);
       this_ptr->row_pointers = ppvVar3;
       if (ppvVar3 != (void **)0x0) {
-        SVar1 = _fread(this_ptr->row_pointers,(this_ptr->height + 1) * 4,1,file_handle);
-        if (SVar1 == 1) {
-          iVar2 = 0;
+        SVar2 = _fread(this_ptr->row_pointers,(this_ptr->height + 1) * 4,1,file_handle);
+        if (SVar2 == 1) {
+          iVar5 = 0;
           if (0 < this_ptr->height) {
-            ppvVar3 = this_ptr->row_pointers;
+            ppvVar4 = this_ptr->row_pointers;
             do {
-              if ((int)ppvVar3[1] < (int)*ppvVar3) goto LAB_0054b6da;
-              iVar2 = iVar2 + 1;
-              ppvVar3 = ppvVar3 + 1;
-            } while (iVar2 < this_ptr->height);
+              if ((int)ppvVar4[1] < (int)*ppvVar4) goto LAB_0054b6da;
+              iVar5 = iVar5 + 1;
+              ppvVar4 = ppvVar4 + 1;
+            } while (iVar5 < this_ptr->height);
           }
           size = this_ptr->row_pointers[this_ptr->height];
           if (skip_data_load != 0) {
@@ -80,8 +85,8 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
                              ((int)size,"..\\cockpit\\pkbitmap.cpp",0x4de);
           this_ptr->packed_data = buffer;
           if (buffer == (char *)0x0) goto LAB_0054b6fd;
-          SVar1 = _fread(buffer,(SIZE_T)size,1,file_handle);
-          if (SVar1 == 1) {
+          SVar2 = _fread(buffer,(SIZE_T)size,1,file_handle);
+          if (SVar2 == 1) {
             return;
           }
         }

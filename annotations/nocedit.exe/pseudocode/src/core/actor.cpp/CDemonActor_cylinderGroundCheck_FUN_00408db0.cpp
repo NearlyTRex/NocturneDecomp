@@ -9,9 +9,9 @@
 float __cdecl core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0(CDemonActor *this_ptr,float radius,CVector3f *out_normal)
 
 {
-  CDemonSet *pCVar1;
   float fVar2;
   CPlatform *pCVar3;
+  CDemonSet *pCVar1;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (this_ptr,"..\\core\\actor.cpp",0x2b6);

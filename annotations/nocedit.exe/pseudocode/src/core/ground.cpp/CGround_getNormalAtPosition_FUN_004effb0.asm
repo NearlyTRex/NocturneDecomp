@@ -8,19 +8,18 @@
 ; int              Stack[0x8]:4   world_x
 ; int              Stack[0xc]:4   world_z
 ; Local Variables:
-; undefined        Stack[-0x60]:1  local_60
-; undefined        Stack[-0x54]:1  local_54
-; undefined        Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined        Stack[-0x30]:1  local_30
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; undefined4[1008] Stack[-0x1024]:4032  auStackY_1024
+; CVector3i        Stack[-0x60]:12  local_60
+; CVector3i        Stack[-0x54]:12  local_54
+; CVector3i        Stack[-0x48]:12  local_48
+; CVector3i        Stack[-0x3c]:12  local_3c
+; CVector3i        Stack[-0x30]:12  local_30
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; void *           Stack[-0x1c]:4  local_1c
+; void *           Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
 ;
 ; Called Functions:
 ;   engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0

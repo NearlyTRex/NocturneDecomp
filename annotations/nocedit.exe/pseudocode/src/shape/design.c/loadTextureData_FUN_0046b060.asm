@@ -15,31 +15,31 @@
 ; undefined8       Stack[-0x1ac]:8  local_1ac
 ; undefined8       Stack[-0x1a4]:8  local_1a4
 ; undefined8       Stack[-0x19c]:8  local_19c
-; undefined        Stack[-0x184]:1  local_184
-; undefined        Stack[-0x180]:1  local_180
-; undefined        Stack[-0x17c]:1  local_17c
-; undefined8       Stack[-0x178]:8  local_178
-; undefined8       Stack[-0x170]:8  local_170
-; undefined8       Stack[-0x168]:8  local_168
-; undefined8       Stack[-0x160]:8  local_160
-; undefined4       Stack[-0x158]:4  local_158
-; undefined        Stack[-0x154]:1  local_154
-; undefined4       Stack[-0x150]:4  local_150
-; undefined4       Stack[-0x14c]:4  local_14c
-; undefined        Stack[-0x148]:1  local_148
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; uchar[4]         Stack[-0x184]:4  local_184
+; uchar[4]         Stack[-0x180]:4  local_180
+; uchar[4]         Stack[-0x17c]:4  local_17c
+; double           Stack[-0x178]:8  local_178
+; double           Stack[-0x170]:8  local_170
+; double           Stack[-0x168]:8  local_168
+; double           Stack[-0x160]:8  local_160
+; int              Stack[-0x158]:4  local_158
+; uchar[4]         Stack[-0x154]:4  local_154
+; int              Stack[-0x150]:4  local_150
+; int              Stack[-0x14c]:4  local_14c
+; char[260]        Stack[-0x148]:260  local_148
+; int              Stack[-0x44]:4  local_44
+; int              Stack[-0x40]:4  local_40
+; uint             Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; void *           Stack[-0x28]:4  local_28
+; void *           Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; _FILE *          Stack[-0x1c]:4  local_1c
+; uint             Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_cramTextureList_FUN_0046bb80 at 0046d2ac

@@ -10,9 +10,6 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_004c4620(CCrater *this_ptr)
 
 {
   SMRGLHeaderPrimitive local_6c;
-  uint local_54;
-  uint local_50;
-  uint local_4c;
   CVector3i local_38;
   CVector3i local_2c;
   CVector3i local_20;
@@ -70,15 +67,9 @@ void __cdecl core_fire_cpp_CCrater_render_FUN_004c4620(CCrater *this_ptr)
   local_6c.surface_normal.C = 0;
   local_6c.base.count = 3;
   local_6c.surface_normal.D = 0;
-  local_54 = 0;
-  local_50 = 1;
-  local_4c = 2;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
             (g_CDemonRendererPtr2,&local_6c);
-  local_54 = 0;
-  local_50 = 2;
-  local_4c = 3;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
             (g_CDemonRendererPtr2,&local_6c);

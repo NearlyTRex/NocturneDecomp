@@ -9,10 +9,11 @@
 int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0049d8f0(CInputString *this_ptr,int char_index)
 
 {
+  int iVar2;
+  int iVar1;
+  char *pcVar3;
   char cVar1;
   CBitFont *this_ptr_00;
-  int iVar2;
-  char *pcVar3;
   
   this_ptr_00 = g_EditorFont;
   if (char_index < 0) {
@@ -26,9 +27,9 @@ int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0049d8f0(CInputString *thi
       pcVar3 = this_ptr->string_data + char_index;
       cVar1 = *pcVar3;
       *pcVar3 = '\0';
-      iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(this_ptr_00,this_ptr->string_data);
+      iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(this_ptr_00,this_ptr->string_data);
       *pcVar3 = cVar1;
-      return iVar2;
+      return iVar1;
     }
     if (0x3ff < (uint)char_index) {
       g_CurrentFilename = "..\\shape\\edittool.cpp";

@@ -7,10 +7,11 @@
 ; char *           Stack[0x4]:4   reference_path
 ; char *           Stack[0x8]:4   target_path
 ; Local Variables:
-; undefined        Stack[-0x304]:1  local_304
-; undefined        Stack[-0x204]:1  local_204
-; undefined        Stack[-0x104]:1  local_104
-; undefined        Stack[-0x4]:1  local_4
+; char[256]        Stack[-0x304]:256  local_304
+; char[256]        Stack[-0x204]:256  local_204
+; char[252]        Stack[-0x104]:252  local_104
+; undefined4       Stack[-0x8]:4  uStack_8
+; char[4]          Stack[-0x4]:4  local_4
 ;
 ; Called Functions:
 ;   crt_file.c_makepath_FUN_005febfc

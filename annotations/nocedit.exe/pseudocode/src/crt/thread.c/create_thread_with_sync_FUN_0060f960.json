@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 108,
+    "complexity_score": 93,
     "cross_reference_count": 2,
-    "function_call_count": 9,
+    "function_call_count": 7,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 63,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "special_crt_function",
-      "stack_alignment_array",
-      "stack_ref"
+      "stack_alignment_array"
     ],
     "total_lines": 161
   },
@@ -53,11 +52,6 @@
       "name": "CreateEventA"
     },
     {
-      "addr": "EXTERNAL:00000052",
-      "is_variadic": false,
-      "name": "CreateThread"
-    },
-    {
       "addr": "00607d18",
       "is_variadic": false,
       "name": "crt_stdio.c_IntegerToString_FUN_00607d18"
@@ -76,11 +70,6 @@
       "addr": "EXTERNAL:0000006d",
       "is_variadic": false,
       "name": "GetCurrentThread"
-    },
-    {
-      "addr": "EXTERNAL:0000006c",
-      "is_variadic": false,
-      "name": "GetCurrentThreadId"
     },
     {
       "addr": "EXTERNAL:000000a6",
@@ -197,25 +186,102 @@
     "pcode_op_count": 316
   },
   "stack_frame": {
-    "frame_size": 64,
-    "local_size": 48,
+    "frame_size": 4168,
+    "local_size": 4152,
     "param_offset": 4,
     "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "acStackY_1034",
+        "offset": -4148,
+        "size": 4048,
+        "type": "char[4048]"
+      },
+      {
+        "is_param": false,
+        "name": "cStack_4c",
+        "offset": -76,
+        "size": 1,
+        "type": "char"
+      },
+      {
+        "is_param": false,
+        "name": "cStack_4b",
+        "offset": -75,
+        "size": 1,
+        "type": "char"
+      },
+      {
+        "is_param": false,
+        "name": "cStack_4a",
+        "offset": -74,
+        "size": 1,
+        "type": "char"
+      },
+      {
+        "is_param": false,
+        "name": "cStack_49",
+        "offset": -73,
+        "size": 1,
+        "type": "char"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_44",
+        "offset": -68,
+        "size": 24,
+        "type": "char[24]"
+      },
+      {
+        "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "LPVOID"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "LPVOID"
+      },
+      {
+        "is_param": false,
+        "name": "pvStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "HANDLE"
+      },
+      {
+        "is_param": false,
+        "name": "pvStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "HANDLE"
+      },
+      {
+        "is_param": false,
+        "name": "puStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4 *"
+      },
+      {
+        "is_param": false,
+        "name": "DStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "DWORD"
       },
       {
         "is_param": true,
@@ -272,14 +338,6 @@
       "severity": "moderate",
       "text": "char acStackY_1034 [4048];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0xffffffb4",
-      "severity": "moderate",
-      "text": "pvStack_20 = (*g_CreateEventAFunc)((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);",
-      "type": "stack_ref"
     },
     {
       "address": "0060f960",

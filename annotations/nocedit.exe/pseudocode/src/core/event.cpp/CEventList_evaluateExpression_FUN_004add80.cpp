@@ -9,11 +9,12 @@
 int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_004add80(CEventList *this_ptr,char *expression)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
   char *pcVar3;
   char *pcVar4;
   int local_8;
+  char cVar1;
   
   g_EventErrorMessageBuffer[0] = '\0';
   local_8 = 0;
@@ -27,11 +28,11 @@ int __cdecl core_event_cpp_CEventList_evaluateExpression_FUN_004add80(CEventList
       if (cVar1 == '\0') {
         return -1;
       }
-      cVar1 = pcVar3[1];
+      cVar2 = pcVar3[1];
       pcVar3 = pcVar3 + 2;
-      pcVar4[1] = cVar1;
+      pcVar4[1] = cVar2;
       pcVar4 = pcVar4 + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
     return -1;
   }
   return iVar2;

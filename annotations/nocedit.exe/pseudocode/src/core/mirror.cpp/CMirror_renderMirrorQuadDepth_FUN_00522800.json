@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 244,
+    "complexity_score": 237,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 57,
     "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 196
+    "total_lines": 189
   },
   "cross_references": [
     {
@@ -106,46 +106,18 @@
     "pcode_op_count": 780
   },
   "stack_frame": {
-    "frame_size": 140,
-    "local_size": 136,
+    "frame_size": 144,
+    "local_size": 140,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_84",
-        "offset": -132,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_80",
-        "offset": -128,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_7c",
-        "offset": -124,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_78",
-        "offset": -120,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_74",
-        "offset": -116,
-        "size": 4,
-        "type": "undefined4"
+        "name": "SStack_88",
+        "offset": -136,
+        "size": 24,
+        "type": "SMRGLHeaderPrimitive"
       },
       {
         "is_param": false,
@@ -179,85 +151,29 @@
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": true,
@@ -271,7 +187,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 15,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34.x = (int)ROUND((this_ptr->reflection).corner1.x * 256.0f);",
@@ -279,7 +195,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 16,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34.y = (int)ROUND((this_ptr->reflection).corner1.y * 256.0f);",
@@ -287,7 +203,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 17,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34.z = (int)ROUND((this_ptr->reflection).corner1.z * 256.0f);",
@@ -295,7 +211,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 20,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_40.x = (int)ROUND((this_ptr->reflection).corner2.x * 256.0f);",
@@ -303,7 +219,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 21,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_40.y = (int)ROUND((this_ptr->reflection).corner2.y * 256.0f);",
@@ -311,7 +227,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 22,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_40.z = (int)ROUND((this_ptr->reflection).corner2.z * 256.0f);",
@@ -319,7 +235,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 25,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.x = (int)ROUND((this_ptr->reflection).corner3.x * 256.0f);",
@@ -327,7 +243,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 26,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.y = (int)ROUND((this_ptr->reflection).corner3.y * 256.0f);",
@@ -335,7 +251,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 27,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.z = (int)ROUND((this_ptr->reflection).corner3.z * 256.0f);",
@@ -343,7 +259,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 30,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28.x = (int)ROUND((this_ptr->reflection).corner4.x * 256.0f);",
@@ -351,7 +267,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 31,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28.y = (int)ROUND((this_ptr->reflection).corner4.y * 256.0f);",
@@ -359,7 +275,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 32,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28.z = (int)ROUND((this_ptr->reflection).corner4.z * 256.0f);",
@@ -367,7 +283,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 37,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x",
@@ -375,23 +291,23 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_y",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 43,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_y",
+      "text": "piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_z",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar1 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_z",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
+      "line": 47,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).inv_z + iVar2) =",
@@ -399,7 +315,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 48,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).inv_z + iVar2)",

@@ -1,22 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 360,
+    "complexity_score": 373,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "severe",
-    "pseudocode_lines": 40,
-    "suspect_count": 29,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 43,
+    "suspect_count": 30,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
-      "fnstsw_flag_artifact",
       "register_param",
       "special_crt_function",
+      "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 167
+    "total_lines": 170
   },
   "cross_references": [
     {
@@ -130,7 +130,7 @@
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -226,7 +226,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = *param_2 + 8;",
@@ -234,18 +234,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = *param_2 + 8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x28) = local_34;",
       "type": "unnamed_param"
     },
     {
@@ -253,7 +245,7 @@
       "line": 18,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x2c) = local_30;",
+      "text": "*(uint *)(param_3 + 0x28) = local_34;",
       "type": "unnamed_param"
     },
     {
@@ -261,7 +253,7 @@
       "line": 19,
       "match": "param_3",
       "severity": "mild",
-      "text": "*(uint *)(param_3 + 0x30) = local_2c;",
+      "text": "*(uint *)(param_3 + 0x2c) = local_30;",
       "type": "unnamed_param"
     },
     {
@@ -269,12 +261,20 @@
       "line": 20,
       "match": "param_3",
       "severity": "mild",
+      "text": "*(uint *)(param_3 + 0x30) = local_2c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_3",
+      "severity": "mild",
       "text": "*(uint *)(param_3 + 0x34) = local_28;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 23,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar1 = *(int *)(param_3 + 0x20);",
@@ -282,7 +282,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 25,
       "match": "param_3",
       "severity": "mild",
       "text": "*(int *)(param_3 + 0x20) = iVar2;",
@@ -290,7 +290,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "*(byte *)(param_1 + iVar1) = 0x2d;",
@@ -298,7 +298,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_3",
       "severity": "mild",
       "text": "else if ((*(byte *)(param_3 + 0x1e) & 4) == 0) {",
@@ -306,7 +306,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
+      "line": 29,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "iVar2 = extraout_EDX;",
@@ -314,7 +314,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 30,
       "match": "param_3",
       "severity": "mild",
       "text": "if ((*(byte *)(param_3 + 0x1e) & 2) != 0) {",
@@ -322,39 +322,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_3",
       "severity": "mild",
-      "text": "iVar1 = *(int *)(param_3 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(int *)(param_3 + 0x20) = iVar2;",
+      "text": "iVar3 = *(int *)(param_3 + 0x20);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 33,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(byte *)(param_1 + iVar1) = 0x20;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(param_3 + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
       "match": "param_3",
       "severity": "mild",
       "text": "*(int *)(param_3 + 0x20) = iVar2;",
@@ -362,50 +338,82 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte *)(param_1 + iVar1) = 0x2b;",
+      "text": "*(byte *)(param_1 + iVar3) = 0x20;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 42,
-      "match": "in_DS",
-      "severity": "mild",
-      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),param_1);",
-      "type": "register_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
-      "match": "param_1",
+      "line": 38,
+      "match": "param_3",
       "severity": "mild",
-      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),param_1);",
+      "text": "iVar3 = *(int *)(param_3 + 0x20);",
       "type": "unnamed_param"
     },
     {
-      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
-      "line": 42,
-      "match": "CONCAT22((short)((uint)iVar2 >> 0x10",
-      "severity": "severe",
-      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),param_1);",
-      "type": "fnstsw_flag_artifact"
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(int *)(param_3 + 0x20) = iVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)(param_1 + iVar3) = 0x2b;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 43,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "iVar2._2_2_ = (ushort)((uint)iVar2 >> 0x10);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 44,
+      "match": "in_DS",
+      "severity": "mild",
+      "text": "iVar2 = CONCAT22(iVar2._2_2_,in_DS);",
+      "type": "register_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 44,
+      "match": "._2_2_",
+      "severity": "mild",
+      "text": "iVar2 = CONCAT22(iVar2._2_2_,in_DS);",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
-      "match": "CONCAT44",
+      "line": 44,
+      "match": "CONCAT22",
       "severity": "mild",
-      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),param_1);",
+      "text": "iVar2 = CONCAT22(iVar2._2_2_,in_DS);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
-      "match": "CONCAT22",
+      "description": "Unnamed function parameter",
+      "line": 45,
+      "match": "param_1",
       "severity": "mild",
-      "text": "return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),param_1);",
+      "text": "return CONCAT44(iVar2,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "return CONCAT44(iVar2,param_1);",
       "type": "decompiler_intrinsic"
     },
     {

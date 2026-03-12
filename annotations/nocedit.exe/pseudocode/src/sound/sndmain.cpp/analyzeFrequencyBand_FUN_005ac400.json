@@ -3,8 +3,8 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 15,
-        "line": 60,
+        "column": 14,
+        "line": 71,
         "message": "assigning to 'float *' from incompatible type 'void *'"
       }
     ],
@@ -13,19 +13,19 @@
   },
   "complexity": {
     "assembly_lines": 429,
-    "complexity_score": 298,
+    "complexity_score": 309,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 163,
+    "pseudocode_lines": 174,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function",
       "warning_unreachable"
     ],
-    "total_lines": 592
+    "total_lines": 603
   },
   "cross_references": [
     {
@@ -296,14 +296,14 @@
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -317,14 +317,14 @@
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -352,7 +352,7 @@
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -420,7 +420,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 91,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar4 = (float10)fcos(fVar22);",
@@ -428,7 +428,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 92,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar23 = (float10)fsin(fVar22);",
@@ -436,23 +436,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 94,
       "match": "fsin",
       "severity": "mild",
-      "text": "fVar25 = (float10)fsin(fVar22);",
+      "text": "fVar25 = (float10)fsin(fVar22 * fVar24);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 95,
       "match": "fcos",
       "severity": "mild",
-      "text": "fVar22 = (float10)fcos(fVar22);",
+      "text": "fVar8 = (float10)fcos(fVar22 * fVar24);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 135,
+      "line": 146,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_38 = (int)ROUND(ROUND(dVar29));",
@@ -460,7 +460,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 135,
+      "line": 146,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_38 = (int)ROUND(ROUND(dVar29));",
@@ -468,23 +468,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
+      "line": 149,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_3c = (int)ROUND(ROUND(dVar29));",
+      "text": "local_3c = (int)ROUND(ROUND(dVar11));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
+      "line": 149,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_3c = (int)ROUND(ROUND(dVar29));",
+      "text": "local_3c = (int)ROUND(ROUND(dVar11));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 161,
+      "line": 172,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar5 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) + fVar5;",
@@ -492,10 +492,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 164,
+      "line": 175,
       "match": "SQRT",
       "severity": "mild",
-      "text": "return SQRT((fVar5 / (float)iVar21) / (float)iVar13) * (float)2;",
+      "text": "return SQRT((fVar5 / (float)iVar6) / (float)iVar1) * (float)2;",
       "type": "decompiler_intrinsic"
     }
   ]

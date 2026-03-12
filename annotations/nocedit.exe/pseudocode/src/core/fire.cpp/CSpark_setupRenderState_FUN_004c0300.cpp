@@ -13,15 +13,18 @@ int __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr)
 {
   CVector3i *pCVar1;
   int iVar2;
+  int iVar1;
   CMatrix3x3f *pCVar3;
   uint *puVar4;
   float *pfVar5;
   uint *puVar6;
   byte bVar7;
   float afStackY_1000 [997];
+  uint auStack_68 [2];
   float local_60;
   float local_54;
   float local_48;
+  float local_40 [10];
   CVector3i local_18;
   
   bVar7 = 0;
@@ -51,18 +54,22 @@ int __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004c0300(CSpark *this_ptr)
        *(uint *)((int)&local_18 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
   g_BillboardCameraRight.y = 0;
   pCVar3 = &(g_CurrentSceneCamera->base).rotation_matrix;
-  pfVar5 = (float *)&stack0xffffffc0;
+  pfVar5 = local_40;
   for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *pfVar5 = pCVar3->m[0].x;
-    pCVar3 = (CMatrix3x3f *)((int)pCVar3 + (uint)bVar7 * -8 + 4);
     pfVar5 = pfVar5 + (uint)bVar7 * -2 + 1;
+    pCVar3 = (CMatrix3x3f *)((int)pCVar3 + (uint)bVar7 * -8 + 4);
+    *pfVar5 = pCVar3->m[0].x;
+    pCVar3 = pCVar3;
+    pfVar5 = pfVar5;
   }
-  puVar4 = (uint *)&stack0xffffffc0;
-  puVar6 = (uint *)&stack0xffffff98;
-  for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar6 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
+  puVar4 = local_40;
+  puVar6 = auStack_68;
+  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
     puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
+    *puVar6 = *puVar4;
+    puVar4 = puVar4;
+    puVar6 = puVar6;
   }
   g_BillboardCameraUp.x = (int)ROUND(ROUND((double)local_60 * -65536));
   g_BillboardCameraUp.y = (int)ROUND(ROUND((double)local_54 * -65536));

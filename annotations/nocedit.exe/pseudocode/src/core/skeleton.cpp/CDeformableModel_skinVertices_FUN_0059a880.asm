@@ -9,19 +9,17 @@
 ; CMatrix3x4f *    Stack[0xc]:4   bone_matrices
 ; int *            Stack[0x10]:4   output_buffer
 ; Local Variables:
-; undefined1       Stack[-0x54]:1  local_54
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x54]:12  local_54
+; float            Stack[-0x48]:4  local_48
+; float            Stack[-0x44]:4  local_44
+; float            Stack[-0x40]:4  local_40
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  local_30
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int *            Stack[-0x18]:4  local_18
+; float *          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0 at 005a01f9

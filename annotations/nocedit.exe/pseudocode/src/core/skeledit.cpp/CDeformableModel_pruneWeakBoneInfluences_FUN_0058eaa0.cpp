@@ -9,9 +9,12 @@
 void __cdecl core_skeledit_cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0(CDeformableModel *this_ptr)
 
 {
+  float *pfVar4;
   float *pfVar1;
   float *pfVar2;
+  int iVar5;
   float *pfVar3;
+  float *pfVar6;
   int iVar4;
   float *pfVar5;
   int local_40;
@@ -69,16 +72,16 @@ void __cdecl core_skeledit_cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058
           if (local_1c < (int)(uint)*(byte *)pfVar1) {
             local_24 = 0.0;
             *(byte *)pfVar1 = (byte)local_1c;
-            pfVar2 = pfVar1;
-            for (iVar4 = 0; iVar4 < (int)(uint)*(byte *)pfVar1; iVar4 = iVar4 + 1) {
-              pfVar2 = pfVar2 + 1;
-              local_24 = local_24 + *pfVar2;
+            pfVar6 = pfVar1;
+            for (iVar5 = 0; iVar5 < (int)(uint)*(byte *)pfVar1; iVar5 = iVar5 + 1) {
+              pfVar6 = pfVar6 + 1;
+              local_24 = local_24 + *pfVar6;
             }
-            pfVar2 = pfVar1;
-            for (iVar4 = 0; iVar4 < (int)(uint)*(byte *)pfVar1; iVar4 = iVar4 + 1) {
-              pfVar3 = pfVar2 + 1;
-              pfVar2 = pfVar2 + 1;
-              *pfVar2 = *pfVar3 / local_24;
+            pfVar6 = pfVar1;
+            for (iVar5 = 0; iVar5 < (int)(uint)*(byte *)pfVar1; iVar5 = iVar5 + 1) {
+              pfVar4 = pfVar6 + 1;
+              pfVar6 = pfVar6 + 1;
+              *pfVar6 = *pfVar4 / local_24;
             }
           }
         }

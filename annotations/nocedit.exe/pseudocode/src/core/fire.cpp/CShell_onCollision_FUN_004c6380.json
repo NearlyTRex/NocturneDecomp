@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 64,
+    "complexity_score": 67,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 52,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 77
+    "total_lines": 80
   },
   "cross_references": [],
   "function": {
@@ -98,7 +98,7 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -126,7 +126,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 29,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "(*(uint *)((int)g_ShellBounceSoundHandles + iVar4));",

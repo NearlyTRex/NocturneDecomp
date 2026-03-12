@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 87,
+    "complexity_score": 65,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 13,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 62,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 232
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 65,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 235
   },
   "cross_references": [
     {
@@ -246,64 +244,50 @@
         "is_param": false,
         "name": "local_29c",
         "offset": -668,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_29b",
-        "offset": -667,
-        "size": 1,
-        "type": "undefined1"
+        "size": 280,
+        "type": "SSoundDeviceInfo"
       },
       {
         "is_param": false,
         "name": "local_184",
         "offset": -388,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_183",
-        "offset": -387,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_84",
         "offset": -132,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -331,22 +315,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "cVar1 = *(char *)((int)pSVar3 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(SSoundDeviceInfo *)((int)",
-      "severity": "mild",
-      "text": "pSVar3 = (SSoundDeviceInfo *)((int)pSVar3 + 2);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

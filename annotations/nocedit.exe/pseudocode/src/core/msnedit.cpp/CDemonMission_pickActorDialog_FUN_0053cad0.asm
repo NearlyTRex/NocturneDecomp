@@ -13,7 +13,7 @@
 ; CActorPropertyFilterFunc * Stack[0x1c]:4   filter_func
 ; int              Stack[0x20]:4   preselect
 ; Local Variables:
-; undefined4       Stack[-0x3b8]:4  local_3b8
+; CPickList        Stack[-0x3b8]:936  local_3b8
 ;
 ; XREF[1]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f233

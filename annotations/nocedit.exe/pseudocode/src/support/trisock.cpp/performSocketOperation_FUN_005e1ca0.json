@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 86,
+    "complexity_score": 87,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 27,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 88
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -101,25 +101,32 @@
     "pcode_op_count": 244
   },
   "stack_frame": {
-    "frame_size": 64,
-    "local_size": 48,
+    "frame_size": 6172,
+    "local_size": 6156,
     "param_offset": 4,
     "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "auStackY_1808",
+        "offset": -6152,
+        "size": 6084,
+        "type": "undefined4[1521]"
+      },
+      {
+        "is_param": false,
         "name": "local_2c",
         "offset": -44,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "SOCKADDR_IN"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "SOCKADDR_IN"
       },
       {
         "is_param": true,
@@ -154,7 +161,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 9,
+      "line": 10,
       "match": "auStackY_1808",
       "severity": "moderate",
       "text": "uint auStackY_1808 [1521];",
@@ -162,7 +169,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 22,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)&local_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
@@ -170,7 +177,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 23,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
@@ -178,7 +185,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 24,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_1c + (uint)bVar4 * -8 + 4) =",
@@ -186,7 +193,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 25,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);",

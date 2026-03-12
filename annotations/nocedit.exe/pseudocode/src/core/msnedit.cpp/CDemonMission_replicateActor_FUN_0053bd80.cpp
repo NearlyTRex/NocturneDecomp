@@ -9,16 +9,20 @@
 void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMission *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
   _FILE *p_Var2;
   char *class_name;
   CDemonActor *this_ptr_00;
+  _FILE *file_handle;
   int iVar3;
   CDemonActor *pCVar4;
   CDemonActor *pCVar5;
   int iVar7;
+  int iVar4;
   uint uVar8;
+  CDemonActor *pCVar6;
   char *pcVar9;
+  char *pcVar7;
   byte bVar10;
   char local_a4 [100];
   char local_40 [32];
@@ -27,6 +31,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
   char acStack_18 [4];
   char cStack_14;
   float *pfVar6;
+  char cVar1;
   
   bVar10 = 0;
   pcVar9 = local_a4;
@@ -34,9 +39,6 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
     return;
   }
   local_20 = (char  [4])"DUPACTOR.TMP"._0_4_;
-  acStack_1c = (char  [4])"DUPACTOR.TMP"._4_4_;
-  acStack_18 = (char  [4])"DUPACTOR.TMP"._8_4_;
-  cStack_14 = "DUPACTOR.TMP"[0xc];
   core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0();
   p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (local_20,(char *)0x0,"wt","..\\core\\msnedit.cpp",0x965);
@@ -49,40 +51,40 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\msnedit.cpp",0x96b);
   class_name = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr->selected_actor);
   this_ptr_00 = core_actor_cpp_createActorByName_FUN_0040c430(class_name);
-  p_Var2 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (local_20,(char *)0x0,"rt","..\\core\\msnedit.cpp",0x973);
-  if (p_Var2 == (_FILE *)0x0) {
+  file_handle = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                          (local_20,(char *)0x0,"rt","..\\core\\msnedit.cpp",0x973);
+  if (file_handle == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\msnedit.cpp";
     g_CurrentLineNumber = 0x974;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't reopen %s",local_20);
   }
-  core_actor_cpp_CDemonActor_load_FUN_0040b050(this_ptr_00,p_Var2);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\msnedit.cpp",0x976);
+  core_actor_cpp_CDemonActor_load_FUN_0040b050(this_ptr_00,file_handle);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\msnedit.cpp",0x976);
   remove(local_20);
-  pCVar4 = this_ptr->selected_actor;
+  pCVar6 = this_ptr->selected_actor;
   do {
-    cVar1 = pCVar4->actor_name[0];
+    cVar1 = pCVar6->actor_name[0];
     *pcVar9 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pCVar4->actor_name[1];
-    pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
-    pcVar9[1] = cVar1;
+    cVar2 = pCVar6->actor_name[1];
+    pCVar6 = (CDemonActor *)(pCVar6->actor_name + 2);
+    pcVar9[1] = cVar2;
     pcVar9 = pcVar9 + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   uVar8 = 0xffffffff;
-  pcVar9 = local_a4;
+  pcVar7 = local_a4;
   do {
     if (uVar8 == 0) break;
     uVar8 = uVar8 - 1;
-    cVar1 = *pcVar9;
-    pcVar9 = pcVar9 + (uint)bVar10 * -2 + 1;
-  } while (cVar1 != '\0');
-  iVar7 = ~uVar8 - 1;
-  while ((iVar3 = iVar7, 0 < iVar7 &&
-         (iVar3 = iVar7 + -1,
-         (g_CharacterClassificationTable[(byte)(local_a4[iVar7 + -1] + 1)] & 0x20) != 0))) {
-    local_a4[iVar7 + -1] = '\0';
-    iVar7 = iVar3;
+    cVar2 = *pcVar7;
+    pcVar7 = pcVar7 + (uint)bVar10 * -2 + 1;
+  } while (cVar2 != '\0');
+  iVar4 = ~uVar8 - 1;
+  while ((iVar3 = iVar4, 0 < iVar4 &&
+         (iVar3 = iVar4 + -1,
+         (g_CharacterClassificationTable[(byte)(local_a4[iVar4 + -1] + 1)] & 0x20) != 0))) {
+    local_a4[iVar4 + -1] = '\0';
+    iVar4 = iVar3;
   }
   if (iVar3 < 1) {
     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,this_ptr_00);
@@ -92,17 +94,17 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
               (this_ptr,this_ptr_00->actor_name,local_a4);
   }
   if (g_ConfirmNewActorNames != 0) {
-    pcVar9 = local_40;
-    pCVar4 = this_ptr_00;
+    pcVar7 = local_40;
+    pCVar6 = this_ptr_00;
     do {
-      cVar1 = pCVar4->actor_name[0];
-      *pcVar9 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pCVar4->actor_name[1];
-      pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
-      pcVar9[1] = cVar1;
-      pcVar9 = pcVar9 + 2;
-    } while (cVar1 != '\0');
+      cVar2 = pCVar6->actor_name[0];
+      *pcVar7 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pCVar6->actor_name[1];
+      pCVar6 = (CDemonActor *)(pCVar6->actor_name + 2);
+      pcVar7[1] = cVar2;
+      pcVar7 = pcVar7 + 2;
+    } while (cVar2 != '\0');
     do {
       iVar7 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                         (g_CEditorToolsPtr,"Confirm new actor name",local_40,0x1e,1);
@@ -116,20 +118,20 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
         (*((this_ptr_00->vtable)._ub)->dtor)(this_ptr_00,2);
         return;
       }
-      iVar7 = core_msnedit_cpp_CDemonMission_validateNewActorName_FUN_0053d220
+      iVar4 = core_msnedit_cpp_CDemonMission_validateNewActorName_FUN_0053d220
                         (g_CDemonMissionPtr,this_ptr_00->actor_name,local_40);
-    } while (iVar7 == 0);
-    pcVar9 = local_40;
-    pCVar4 = this_ptr_00;
+    } while (iVar4 == 0);
+    pcVar7 = local_40;
+    pCVar6 = this_ptr_00;
     do {
-      cVar1 = *pcVar9;
-      pCVar4->actor_name[0] = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      pCVar4->actor_name[1] = cVar1;
-      pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
-    } while (cVar1 != '\0');
+      cVar2 = *pcVar7;
+      pCVar6->actor_name[0] = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar7[1];
+      pcVar7 = pcVar7 + 2;
+      pCVar6->actor_name[1] = cVar2;
+      pCVar6 = (CDemonActor *)(pCVar6->actor_name + 2);
+    } while (cVar2 != '\0');
   }
   core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,this_ptr_00);
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(this_ptr);
@@ -137,10 +139,10 @@ void __cdecl core_msnedit_cpp_CDemonMission_replicateActor_FUN_0053bd80(CDemonMi
   if (pCVar4 != (CDemonActor *)0x0) {
     pCVar5 = pCVar4;
     do {
-      pfVar6 = &(pCVar5->orient_matrix).m[0].z;
+      pCVar5 = (CDemonActor *)&(pCVar5->orient_matrix).m[0].z;
       pCVar5[0x1b].direction_hint = 0;
-      pCVar5 = (CDemonActor *)pfVar6;
-    } while (pfVar6 != (float *)(pCVar4->create_event + 0x10));
+      pCVar5 = pCVar5;
+    } while (pCVar5 != (CDemonActor *)(pCVar4->create_event + 0x10));
   }
   (*((this_ptr_00->vtable)._ub)->setup)(this_ptr_00);
   (*((this_ptr_00->vtable)._ub)->onDropped)(this_ptr_00,(CVector3f *)0x0);

@@ -8,38 +8,31 @@
 ; SNetworkAddr *   Stack[0x8]:4   source_addr
 ; UNetPacket *     Stack[0xc]:4   packet
 ; Local Variables:
-; undefined4       Stack[-0xf0]:4  local_f0
-; undefined4       Stack[-0xec]:4  local_ec
-; undefined4       Stack[-0xe8]:4  local_e8
-; undefined4       Stack[-0xe4]:4  local_e4
-; undefined1       Stack[-0xe0]:1  local_e0
-; undefined1       Stack[-0xdf]:1  local_df
-; undefined1       Stack[-0xde]:1  local_de
-; undefined1       Stack[-0xcb]:1  local_cb
-; undefined1       Stack[-0xca]:1  local_ca
-; undefined1       Stack[-0x7b]:1  local_7b
-; undefined4       Stack[-0x70]:4  local_70
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined4       Stack[-0x6b]:4  local_6b
-; undefined4       Stack[-0x64]:4  local_64
-; undefined1       Stack[-0x60]:1  local_60
-; undefined4       Stack[-0x5f]:4  local_5f
-; undefined4       Stack[-0x58]:4  local_58
-; undefined1       Stack[-0x54]:1  local_54
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined1       Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x47]:4  local_47
-; undefined4       Stack[-0x40]:4  local_40
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined4       Stack[-0x3b]:4  local_3b
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
+; float            Stack[-0xf0]:4  local_f0
+; float            Stack[-0xec]:4  local_ec
+; float            Stack[-0xe8]:4  local_e8
+; SNetPacketHeader Stack[-0xe4]:5  local_e4
+; char[20]         Stack[-0xdf]:20  local_df
+; char[80]         Stack[-0xcb]:80  local_cb
+; uint             Stack[-0x7b]:4  local_7b
+; undefined4       Stack[-0x77]:4  uStack_77
+; SNetPacketHeader Stack[-0x70]:5  local_70
+; uint             Stack[-0x6b]:4  local_6b
+; SNetPacketHeader Stack[-0x64]:5  local_64
+; int              Stack[-0x5f]:4  local_5f
+; SNetPacketHeader[2] Stack[-0x58]:10  local_58
+; SNetPacketHeader Stack[-0x4c]:5  local_4c
+; int              Stack[-0x47]:4  local_47
+; SNetPacketHeader Stack[-0x40]:5  local_40
+; uint             Stack[-0x3b]:4  local_3b
+; SNetworkAddr     Stack[-0x34]:8  local_34
+; uint             Stack[-0x2c]:4  local_2c
+; UNetPacket *     Stack[-0x28]:4  local_28
+; SSimFrame *      Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SNetPlayer *     Stack[-0x1c]:4  local_1c
+; UNetPacket *     Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_005405b0 at 0054063a

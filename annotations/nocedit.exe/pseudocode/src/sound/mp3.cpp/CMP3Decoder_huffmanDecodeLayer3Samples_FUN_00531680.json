@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 570,
-    "complexity_score": 429,
+    "complexity_score": 438,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 38,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 204,
+    "pseudocode_lines": 213,
     "suspect_count": 22,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 774
+    "total_lines": 783
   },
   "cross_references": [
     {
@@ -372,98 +372,98 @@
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "SHuffmanTable *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "SHuffmanTable *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -519,15 +519,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 50,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_HuffmanTables[0].table_size + iVar8) =",
+      "text": "*(uint *)((int)&g_HuffmanTables[0].table_size + iVar12) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 51,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&g_HuffmanTableSources[0].table_size + local_18);",
@@ -535,7 +535,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 53,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&g_HuffmanTableSources[0].xlen + local_18);",
@@ -543,7 +543,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 55,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&g_HuffmanTableSources[0].ylen + local_18);",
@@ -551,7 +551,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 57,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&g_HuffmanTableSources[0].bits + local_18);",
@@ -559,79 +559,79 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + local_18);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 67,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar10 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + local_18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar9 = *(uint *)((int)&g_HuffmanTables[0].table_size + iVar8);",
+      "text": "uVar4 = *(uint *)((int)&g_HuffmanTables[0].table_size + iVar12);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 90,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)&g_HuffmanTables[0].table_size + iVar8) != 0) {",
+      "text": "if (*(int *)((int)&g_HuffmanTables[0].table_size + iVar12) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 97,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "} while (uVar9 < *(uint *)((int)&g_HuffmanTables[0].table_size + iVar8));",
+      "text": "} while (uVar4 < *(uint *)((int)&g_HuffmanTables[0].table_size + iVar12));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 115,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_HuffmanTables[0].table_size + iVar8) = g_HuffmanTables[iVar7].table_size;",
+      "text": "*(int *)((int)&g_HuffmanTables[0].table_size + iVar12) = g_HuffmanTables[iVar10].table_size;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 139,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if ((*(int *)((int)side_info->granules + iVar8 + 0x10) == 0) ||",
+      "text": "if ((*(int *)((int)side_info->granules + iVar12 + 0x10) == 0) ||",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 140,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)side_info->granules + iVar8 + 0x14) != 2)) {",
+      "text": "(*(int *)((int)side_info->granules + iVar12 + 0x14) != 2)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 142,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar8 = *(int *)((int)side_info->granules + iVar6 + 0x34);",
+      "text": "iVar12 = *(int *)((int)side_info->granules + iVar11 + 0x34);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 145,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)side_info->granules + iVar6 + 0x38) + iVar8) * 4);",
+      "text": "(*(int *)((int)side_info->granules + iVar11 + 0x38) + iVar12) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 147,
+      "line": 156,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "uVar9 < (uint)(*(int *)((int)local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {",
@@ -639,7 +639,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 158,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x34);",
@@ -647,7 +647,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 161,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x38);",
@@ -655,7 +655,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
+      "line": 164,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "pSVar4 = g_HuffmanTables + *(int *)((int)local_24 + local_30 + 0x3c);",
@@ -663,34 +663,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 175,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "local_28 = g_HuffmanTables + *(int *)((int)piVar1 + iVar7 + 0x5c) + 0x20;",
+      "text": "local_28 = g_HuffmanTables + *(int *)((int)piVar2 + iVar12 + 0x5c) + 0x20;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 190,
+      "line": 199,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar8 = *(int *)((int)side_info->granules + iVar6);",
+      "text": "iVar12 = *(int *)((int)side_info->granules + iVar11);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 205,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(this_ptr,(uVar2 - frame_bit_offset) - *(int *)((int)side_info->granules + iVar6));",
+      "text": "(this_ptr,(uVar4 - frame_bit_offset) - *(int *)((int)side_info->granules + iVar11));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 207,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar8 = frame_bit_offset + *(int *)((int)side_info->granules + granule * 0x48 + channel * 0xa0);",
+      "text": "iVar12 = frame_bit_offset + *(int *)((int)side_info->granules + granule * 0x48 + channel * 0xa0);",
       "type": "pointer_cast"
     }
   ]

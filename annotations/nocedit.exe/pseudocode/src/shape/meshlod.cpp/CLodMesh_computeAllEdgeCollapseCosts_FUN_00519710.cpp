@@ -9,8 +9,9 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710(CLodMesh *this_ptr)
 
 {
-  int iVar1;
   int iVar2;
+  int edge_index;
+  int iVar1;
   
   iVar2 = 0;
   if (0 < this_ptr->edge_count) {
@@ -21,15 +22,15 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710
   }
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
             (g_CEditorToolsPtr,"Computing initial edge collapse costs...");
-  iVar2 = 0;
+  edge_index = 0;
   if (0 < this_ptr->edge_count) {
     do {
-      shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(this_ptr,iVar2);
-      iVar1 = iVar2 + 1;
-      iVar2 = iVar2 + 1;
+      shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(this_ptr,edge_index);
+      iVar1 = edge_index + 1;
+      edge_index = edge_index + 1;
       shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                 (g_CEditorToolsPtr,(float)iVar1,(float)this_ptr->edge_count);
-    } while (iVar2 < this_ptr->edge_count);
+    } while (edge_index < this_ptr->edge_count);
   }
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
   return;

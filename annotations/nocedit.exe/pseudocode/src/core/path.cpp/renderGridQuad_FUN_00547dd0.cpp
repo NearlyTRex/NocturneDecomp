@@ -11,7 +11,8 @@
 void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int grid_z,int red,int green,int blue,int alpha)
 
 {
-  CDemonRenderer *this_ptr;
+  float fVar1;
+  float fVar2;
   int iVar1;
   int iVar2;
   int iVar3;
@@ -21,28 +22,27 @@ void __cdecl core_path_cpp_renderGridQuad_FUN_00547dd0(int grid_x,int grid_y,int
   float local_20;
   float local_1c;
   int local_10;
+  CDemonRenderer *this_ptr;
   
-  local_24 = g_CDemonRaytraceInstance.adjusted_size.x * 256.0f;
-  local_20 = g_CDemonRaytraceInstance.adjusted_size.y * 256.0f;
-  local_1c = g_CDemonRaytraceInstance.adjusted_size.z * 256.0f;
+  fVar1 = g_CDemonRaytraceInstance.adjusted_size.x * 256.0f;
+  fVar2 = g_CDemonRaytraceInstance.adjusted_size.z * 256.0f;
   iVar1 = alpha << 8;
-  local_30.x = (int)ROUND(ROUND((float)grid_x * local_24));
-  local_30.z = (int)ROUND(ROUND((float)grid_z * local_1c));
+  local_30.x = (int)ROUND(ROUND((float)grid_x * fVar1));
+  local_30.z = (int)ROUND(ROUND((float)grid_z * fVar2));
   local_30.y = (int)ROUND(ROUND(256 +
                                 (double)g_CDemonRaytraceInstance.bbox_min.y * 256 +
-                                (double)grid_y * (double)local_20));
+                                (double)grid_y *
+                                (double)(g_CDemonRaytraceInstance.adjusted_size.y * 256.0f))
+                         );
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_30);
-  local_10 = local_30.x;
-  local_30.x = (int)ROUND(ROUND((float)local_30.x + local_24));
+  local_30.x = (int)ROUND(ROUND((float)local_30.x + fVar1));
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_30);
-  local_10 = local_30.z;
-  local_30.z = (int)ROUND(ROUND((float)local_30.z + local_1c));
+  local_30.z = (int)ROUND(ROUND((float)local_30.z + fVar2));
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_30);
-  local_10 = local_30.x;
-  local_30.x = (int)ROUND(ROUND((float)local_30.x - local_24));
+  local_30.x = (int)ROUND(ROUND((float)local_30.x - fVar1));
   iVar2 = red << 8;
   iVar3 = green << 8;
   iVar4 = blue << 8;

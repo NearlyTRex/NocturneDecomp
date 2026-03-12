@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 105,
+    "complexity_score": 106,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 55,
+    "pseudocode_lines": 56,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_many"
     ],
-    "total_lines": 226
+    "total_lines": 227
   },
   "cross_references": [
     {
@@ -215,42 +215,42 @@
         "name": "local_74",
         "offset": -116,
         "size": 4,
-        "type": "undefined4"
+        "type": "SShapeEditorPolygon *"
       },
       {
         "is_param": false,
         "name": "local_70",
         "offset": -112,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "char[80]"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -264,18 +264,10 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((ABS(g_LoadedVertices[local_14].vertex.x - g_LoadedVertices[local_20].vertex.x) <",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 38,
       "match": "ABS",
       "severity": "mild",
-      "text": "(ABS(g_LoadedVertices[local_14].vertex.y - g_LoadedVertices[local_20].vertex.y) <",
+      "text": "if (((ABS(g_LoadedVertices[uVar1].vertex.x - g_LoadedVertices[local_20].vertex.x) <",
       "type": "decompiler_intrinsic"
     },
     {
@@ -283,7 +275,15 @@
       "line": 40,
       "match": "ABS",
       "severity": "mild",
-      "text": "(ABS(g_LoadedVertices[local_14].vertex.z - g_LoadedVertices[local_20].vertex.z) <",
+      "text": "(ABS(g_LoadedVertices[uVar1].vertex.y - g_LoadedVertices[local_20].vertex.y) < tolerance",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ABS",
+      "severity": "mild",
+      "text": ")) && (ABS(g_LoadedVertices[uVar1].vertex.z - g_LoadedVertices[local_20].vertex.z) <",
       "type": "decompiler_intrinsic"
     },
     {

@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 63,
+    "complexity_score": 37,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 10,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 38,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 127
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 37,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -183,25 +181,32 @@
     "pcode_op_count": 385
   },
   "stack_frame": {
-    "frame_size": 48,
-    "local_size": 36,
+    "frame_size": 60,
+    "local_size": 48,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "afStack_2c",
+        "offset": -44,
+        "size": 12,
+        "type": "float[3]"
+      },
+      {
+        "is_param": false,
         "name": "local_20",
         "offset": -32,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "float[3]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -226,22 +231,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "g_SavedCameraOrigin.f.z = *(float *)((int)pUVar1 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "g_SavedCameraOrigin.f.y = *(float *)((int)pUVar1 + 4);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

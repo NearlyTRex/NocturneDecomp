@@ -9,6 +9,8 @@
 void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_005ba700(CStairs *this_ptr)
 
 {
+  float fVar1;
+  float fVar2;
   CDemonTriangle *this_ptr_00;
   int iVar1;
   CDemonTriangle *this_ptr_01;
@@ -24,8 +26,8 @@ void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_005ba700(CStairs *this_p
   float local_14;
   int local_10;
   
-  local_18 = this_ptr->width * (float)0.5;
-  local_14 = -this_ptr->width * (float)0.5;
+  fVar1 = this_ptr->width * (float)0.5;
+  fVar2 = -this_ptr->width * (float)0.5;
   iVar1 = 0;
   if (0 < this_ptr->stair_count) {
     this_ptr_01 = this_ptr->collision_triangles;
@@ -36,19 +38,14 @@ void __cdecl core_stairs_cpp_CStairs_buildCollision_FUN_005ba700(CStairs *this_p
       local_58.z = this_ptr->run * (float)iVar1;
       local_40.z = local_58.z - this_ptr->bevel_z;
       local_40.y = local_58.y - this_ptr->bevel_y;
-      local_58.x = local_14;
-      local_4c.x = local_18;
-      local_34.x = local_18;
-      local_40.x = local_14;
+      local_58.x = fVar2;
+      local_4c.x = fVar1;
       local_4c.y = local_58.y;
       local_4c.z = local_58.z;
+      local_40.x = fVar2;
+      local_34.x = fVar1;
       local_34.y = local_40.y;
       local_34.z = local_40.z;
-      local_28 = local_40.z;
-      local_24 = local_58.y;
-      local_20 = local_40.y;
-      local_1c = local_58.z;
-      local_10 = iVar1;
       core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                 (this_ptr_01,&local_58,&local_4c,&local_34);
       this_ptr_01 = this_ptr_01 + 2;

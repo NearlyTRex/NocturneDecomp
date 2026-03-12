@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 160,
+    "complexity_score": 127,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 90,
-    "suspect_count": 6,
+    "pseudocode_lines": 92,
+    "suspect_count": 3,
     "suspect_types": [
-      "negative_offset",
-      "pointer_cast"
+      "negative_offset"
     ],
-    "total_lines": 240
+    "total_lines": 242
   },
   "cross_references": [],
   "function": {
@@ -184,14 +183,14 @@
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -205,14 +204,14 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "CKeyFramedModelInstance *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
@@ -250,7 +249,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 77,
+      "line": 79,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar10->x = pCVar7[-1].x;",
@@ -258,7 +257,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 78,
+      "line": 80,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar10->y = pCVar7[-1].y;",
@@ -266,35 +265,11 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 79,
+      "line": 81,
       "match": "pCVar7[-1].",
       "severity": "mild",
       "text": "pCVar10->z = pCVar7[-1].z;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(CVector3f *)((int)",
-      "severity": "mild",
-      "text": "pCVar10 = (CVector3f *)((int)(pCVar10 + 5) + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(CVector3f *)((int)",
-      "severity": "mild",
-      "text": "pCVar7 = (CVector3f *)((int)(pCVar7 + 5) + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 83,
-      "match": "(CVector3f *)((int)",
-      "severity": "mild",
-      "text": "local_2c = (CVector3f *)((int)(local_2c + 5) + 4);",
-      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

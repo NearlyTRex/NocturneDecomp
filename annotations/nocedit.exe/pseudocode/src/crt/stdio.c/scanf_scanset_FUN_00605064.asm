@@ -8,9 +8,10 @@
 ; va_list_t *      Stack[0x8]:4   args
 ; char * *         Stack[0xc]:4   format_ptr
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; byte[32]         Stack[-0x40]:32  abStack_40
+; uint             Stack[-0x20]:4  local_20
+; uint             Stack[-0x1c]:4  local_1c
+; uint             Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   crt_stdio.c_doscan_FUN_00604950 at 00604b64

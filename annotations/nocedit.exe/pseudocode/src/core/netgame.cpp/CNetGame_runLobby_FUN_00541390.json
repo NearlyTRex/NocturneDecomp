@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 13,
-        "line": 68,
+        "line": 76,
         "message": "C-style cast from 'uint' (aka 'unsigned int') to 'uchar[4]' (aka 'unsigned char[4]') is not allowed"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 837,
-    "complexity_score": 321,
+    "complexity_score": 329,
     "cross_reference_count": 2,
     "function_call_count": 26,
     "global_count": 64,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 281,
+    "pseudocode_lines": 289,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function"
     ],
-    "total_lines": 1118
+    "total_lines": 1126
   },
   "cross_references": [
     {
@@ -629,77 +629,70 @@
         "name": "local_138",
         "offset": -312,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_134",
         "offset": -308,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_130",
         "offset": -304,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_12f",
-        "offset": -303,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "uchar[256]"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -738,18 +731,18 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 107,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND(*(float *)(local_1c + 0x28) * 1000.0f));",
+      "text": "(int)ROUND(ROUND(*(float *)(pcVar10 + 0x28) * 1000.0f)));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 107,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND(*(float *)(local_1c + 0x28) * 1000.0f));",
+      "text": "(int)ROUND(ROUND(*(float *)(pcVar10 + 0x28) * 1000.0f)));",
       "type": "decompiler_intrinsic"
     }
   ]

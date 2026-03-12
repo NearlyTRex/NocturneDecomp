@@ -9,15 +9,20 @@
 void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures,int is_complete)
 
 {
-  int *piVar1;
-  int *piVar2;
-  int *piVar3;
-  int *piVar4;
+  int iVar1;
   CCramTex *pCVar5;
   char *pcVar6;
+  int draw_bottom;
+  int iVar2;
+  int draw_right;
   int iVar7;
+  int iVar3;
   SCramRectangle *pSVar8;
+  int iVar4;
+  CCramTex *this_ptr;
+  int x;
   int y;
+  char *text;
   char local_100 [200];
   int local_38;
   int local_34;
@@ -29,10 +34,14 @@ void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textu
   int local_1c;
   int local_18;
   int local_14;
+  int *piVar2;
+  int *piVar3;
+  int *piVar1;
+  int *piVar4;
   
   __STK();
   g_CramMapNumber = g_CramMapNumber % g_CramTotalMaps;
-  local_14 = 0;
+  iVar4 = 0;
   iVar7 = 0;
   if (0 < g_CramTextureCount) {
     pCVar5 = g_CramSortedTextureEntries;
@@ -43,12 +52,10 @@ void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textu
       piVar4 = &pCVar5->final_bottom;
       pCVar5 = pCVar5 + 1;
       iVar7 = iVar7 + 1;
-      local_14 = local_14 +
-                 ((*piVar4 - *piVar3) - g_CramPaddingCalculation) *
-                 ((*piVar1 - *piVar2) - g_CramPaddingCalculation);
+      iVar4 = iVar4 + ((*piVar4 - *piVar3) - g_CramPaddingCalculation) *
+                      ((*piVar1 - *piVar2) - g_CramPaddingCalculation);
     } while (iVar7 < g_CramTextureCount);
   }
-  local_18 = g_CramCurrentAcceptableSize * g_CramCurrentAcceptableSize * g_CramTotalMaps;
   if (is_complete == 0) {
     pcVar6 = "progress";
   }
@@ -58,51 +65,52 @@ void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textu
   _sprintf
             (local_100,"CramTex II %s:  N=%d  Map %d/%d  Coverage: %4.1f%%  Shrink: %4.1f%%  Size: %u (%u)\n",pcVar6,g_CramTextureCount,
              g_CramMapNumber + 1,g_CramTotalMaps,
-             ((double)local_14 * 100) / (double)local_18,
+             ((double)iVar4 * 100) /
+             (double)(g_CramCurrentAcceptableSize * g_CramCurrentAcceptableSize * g_CramTotalMaps),
              ((double)g_CramAtlasDimension * 100) /
              (double)g_CramCurrentAcceptableSize,g_CramCurrentAcceptableSize,g_CramAcceptableSize);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0(local_100,0,0);
   if (is_complete == 0) {
-    pcVar6 = "Hit <Esc> when you've had enough...";
+    text = "Hit <Esc> when you've had enough...";
   }
   else {
-    pcVar6 = "Done.  Press a key...";
+    text = "Done.  Press a key...";
   }
-  engine_2d_c_drawText_FUN_00401fd0(pcVar6,0,0x16);
-  local_20 = g_WindowWidth + -10;
-  local_2c = g_WindowHeight + -10;
-  local_28 = 10;
-  local_24 = 0x36;
+  engine_2d_c_drawText_FUN_00401fd0(text,0,0x16);
+  iVar1 = g_WindowHeight;
+  iVar4 = g_WindowWidth;
+  draw_right = g_WindowWidth + -10;
+  draw_bottom = g_WindowHeight + -10;
   if (g_CramVisualizationFlag != 0) {
     engine_2d_c_fillRectColor_FUN_00403170(10,0x36,g_WindowWidth + -0xb,g_WindowHeight + -0xb,1);
-    local_34 = g_CramPlacedTextureCount;
+    iVar2 = g_CramPlacedTextureCount;
     if (show_textures != 0) {
-      local_34 = g_CramTextureCount;
+      iVar2 = g_CramTextureCount;
     }
-    iVar7 = 0;
-    if (0 < local_34) {
-      pCVar5 = g_CramSortedTextureEntries;
+    iVar3 = 0;
+    if (0 < iVar2) {
+      this_ptr = g_CramSortedTextureEntries;
       do {
-        iVar7 = iVar7 + 1;
+        iVar3 = iVar3 + 1;
         shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20
-                  (pCVar5,show_textures,local_28,local_24,local_20,local_2c);
-        pCVar5 = pCVar5 + 1;
-      } while (iVar7 < local_34);
+                  (this_ptr,show_textures,10,0x36,draw_right,draw_bottom);
+        this_ptr = this_ptr + 1;
+      } while (iVar3 < iVar2);
     }
     if ((show_textures == 0) && (local_1c = show_textures, 0 < g_CramRectangleCount)) {
-      local_38 = local_20 - local_28;
-      local_30 = local_2c - local_24;
       pSVar8 = g_CramRectangles;
       do {
         if ((g_CramMapNumber == pSVar8->map_id) && (-1 < pSVar8->active_flag)) {
-          iVar7 = local_28 + (pSVar8->start_x * local_38) / g_CramCurrentAcceptableSize;
-          y = local_24 + (pSVar8->start_y * local_30) / g_CramCurrentAcceptableSize;
-          if ((iVar7 < local_20) && (y < local_2c)) {
+          iVar2 = (pSVar8->start_x * (iVar4 + -0x14)) / g_CramCurrentAcceptableSize;
+          x = iVar2 + 10;
+          iVar3 = (pSVar8->start_y * (iVar1 + -0x40)) / g_CramCurrentAcceptableSize;
+          y = iVar3 + 0x36;
+          if ((x < draw_right) && (y < draw_bottom)) {
             g_ActiveRenderColor = pSVar8->active_flag;
-            engine_2d_c_plotPixel_FUN_00401140(iVar7,y);
-            engine_2d_c_plotPixel_FUN_00401140(iVar7 + 1,y);
-            engine_2d_c_plotPixel_FUN_00401140(iVar7,y + 1);
+            engine_2d_c_plotPixel_FUN_00401140(x,y);
+            engine_2d_c_plotPixel_FUN_00401140(iVar2 + 0xb,y);
+            engine_2d_c_plotPixel_FUN_00401140(x,iVar3 + 0x37);
           }
         }
         local_1c = local_1c + 1;

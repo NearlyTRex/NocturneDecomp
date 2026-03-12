@@ -9,18 +9,21 @@
 void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr,_FILE *file_handle)
 
 {
-  int *piVar1;
-  float *pfVar2;
-  float *pfVar3;
-  int *piVar4;
-  EMotionTransitionCmd *pEVar5;
-  int *piVar6;
+  int *piVar2;
   int iVar7;
   SMotionTransition *pSVar8;
+  SMotion *pSVar3;
   SMotion *pSVar9;
+  int iVar4;
   char (*pacVar10) [30];
   int local_18;
   SMotion *local_14;
+  int *piVar4;
+  int *piVar1;
+  float *pfVar2;
+  EMotionTransitionCmd *pEVar5;
+  float *pfVar3;
+  int *piVar6;
   
   _fprintf(file_handle,"// motion list version\n");
   _fprintf(file_handle,"%d\n",2);
@@ -53,7 +56,7 @@ void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr
                  SUB84(__BITCAST_UINT64((double)local_14->exit_backward_to_frame),0),
                  (int)((ulonglong)(double)local_14->exit_backward_to_frame >> 0x20));
       _fprintf(file_handle,"// motion %d transition count, list: desiredState, cmd, toMotionNumber, toFrameNumber, tweenTime, setNewStateAsDesired\n",local_18);
-      iVar7 = 0;
+      iVar4 = 0;
       _fprintf(file_handle,"%d\n",local_14->transition_count);
       if (0 < local_14->transition_count) {
         pSVar8 = local_14->transitions;
@@ -65,33 +68,34 @@ void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr
           pEVar5 = &pSVar8->cmd;
           piVar6 = &pSVar8->desired_state;
           pSVar8 = pSVar8 + 1;
-          iVar7 = iVar7 + 1;
+          iVar4 = iVar4 + 1;
           _fprintf(file_handle,"%d,%d,%d,%g,%g,%d\n",*piVar6,*pEVar5,*piVar4,(double)*pfVar3,
                      SUB84(__BITCAST_UINT64((double)*pfVar2),0),(int)((ulonglong)(double)*pfVar2 >> 0x20),*piVar1);
-        } while (iVar7 < local_14->transition_count);
+        } while (iVar4 < local_14->transition_count);
       }
       _fprintf(file_handle,"// motion %d signal count, list: frameNumber, value\n",local_18);
-      iVar7 = 0;
+      iVar4 = 0;
       _fprintf(file_handle,"%d\n",local_14->signal_count);
-      pSVar9 = local_14;
+      pSVar3 = local_14;
       if (0 < local_14->signal_count) {
         do {
-          iVar7 = iVar7 + 1;
-          _fprintf(file_handle,"%d,%d\n",pSVar9->signals[0].frame_number,
-                     pSVar9->signals[0].value);
-          pSVar9 = (SMotion *)(pSVar9->motion_name + 8);
-        } while (iVar7 < local_14->signal_count);
+          iVar4 = iVar4 + 1;
+          _fprintf(file_handle,"%d,%d\n",pSVar3->signals[0].frame_number,
+                     pSVar3->signals[0].value);
+          pSVar3 = (SMotion *)(pSVar3->motion_name + 8);
+        } while (iVar4 < local_14->signal_count);
       }
       _fprintf(file_handle,"// motion %d marker count, list\n",local_18);
-      iVar7 = 0;
+      iVar4 = 0;
       _fprintf(file_handle,"%d",local_14->marker_count);
       pSVar9 = local_14;
       if (0 < local_14->marker_count) {
         do {
-          iVar7 = iVar7 + 1;
-          _fprintf(file_handle," %d",pSVar9->markers[0]);
+          piVar2 = pSVar9->markers;
           pSVar9 = (SMotion *)(pSVar9->motion_name + 4);
-        } while (iVar7 < local_14->marker_count);
+          iVar4 = iVar4 + 1;
+          _fprintf(file_handle," %d",*piVar2);
+        } while (iVar4 < local_14->marker_count);
       }
       _fprintf(file_handle,"\n");
       local_14 = local_14 + 1;

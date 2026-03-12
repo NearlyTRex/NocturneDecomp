@@ -14,7 +14,7 @@ float __cdecl core_vampboss_cpp_clampAngle_FUN_005e58d0(float angle,float max_an
   
   fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(angle);
   fVar2 = -max_angle;
-  if ((-max_angle <= fVar1) && (fVar2 = max_angle, fVar1 <= max_angle)) {
+  if ((fVar2 <= fVar1) && (fVar2 = max_angle, fVar1 <= max_angle)) {
     return fVar1;
   }
   return fVar2;

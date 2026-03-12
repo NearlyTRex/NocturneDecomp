@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 122,
+    "complexity_score": 128,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 21,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 77,
+    "pseudocode_lines": 83,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 214
+    "total_lines": 220
   },
   "cross_references": [],
   "function": {
@@ -244,23 +244,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 56,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 57,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 77,
       "match": "(SMRGLTextureBasic *)((int)",
       "severity": "mild",
       "text": "pSVar4 = (SMRGLTextureBasic *)((int)pSVar4 + (uint)bVar10 * -8 + 4);",
@@ -268,7 +268,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 85,
       "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
       "text": "return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);",

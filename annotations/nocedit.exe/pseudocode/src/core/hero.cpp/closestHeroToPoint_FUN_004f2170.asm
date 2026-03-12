@@ -6,7 +6,7 @@
 ; Parameters:
 ; CLocation *      Stack[0x4]:4   location
 ; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
+; float            Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:

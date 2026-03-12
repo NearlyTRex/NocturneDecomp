@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 413,
-    "complexity_score": 174,
+    "complexity_score": 154,
     "cross_reference_count": 2,
     "function_call_count": 25,
     "global_count": 23,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 134,
-    "suspect_count": 3,
+    "pseudocode_lines": 139,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "pointer_cast"
+      "param_count_too_few"
     ],
-    "total_lines": 547
+    "total_lines": 552
   },
   "cross_references": [
     {
@@ -388,36 +387,36 @@
         "is_param": false,
         "name": "local_320",
         "offset": -800,
-        "size": 1,
-        "type": "undefined1"
+        "size": 320,
+        "type": "CInputString"
       },
       {
         "is_param": false,
         "name": "local_1e0",
         "offset": -480,
-        "size": 1,
-        "type": "undefined1"
+        "size": 228,
+        "type": "CEdButton"
       },
       {
         "is_param": false,
         "name": "local_fc",
         "offset": -252,
-        "size": 1,
-        "type": "undefined1"
+        "size": 228,
+        "type": "CEdButton"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -474,22 +473,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 120,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "cVar1 = *(char *)((int)pCVar6 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 121,
-      "match": "(CInputString *)((int)",
-      "severity": "mild",
-      "text": "pCVar6 = (CInputString *)((int)pCVar6 + 2);",
-      "type": "pointer_cast"
-    },
     {
       "call_site_count": 2,
       "declared_params": 5,

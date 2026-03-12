@@ -8,11 +8,12 @@
 ; void *           Stack[0x8]:4   result
 ; char * *         Stack[0xc]:4   endptr
 ; Local Variables:
+; undefined4       Stack[-0x44]:4  uStackY_44
 ; undefined1       Stack[-0x40]:1  local_40
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
+; ushort           Stack[-0x24]:2  local_24
+; byte *           Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined1       Stack[-0x14]:1  local_14

@@ -4,9 +4,9 @@
 ; void __cdecl core_msnedit_cpp_showEditorHelpScreen_FUN_00535e70(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x110]:1  local_110
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x14]:4  local_14
+; char[200]        Stack[-0x110]:200  local_110
+; CEdScrollBar     Stack[-0x48]:52  local_48
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a9cb

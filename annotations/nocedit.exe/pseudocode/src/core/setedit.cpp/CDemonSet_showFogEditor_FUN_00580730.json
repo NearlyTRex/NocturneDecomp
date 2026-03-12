@@ -4,55 +4,55 @@
       {
         "category": "other",
         "column": 58,
-        "line": 57,
+        "line": 63,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 64,
+        "line": 70,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 20,
-        "line": 89,
+        "line": 95,
         "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 88,
+        "line": 94,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 94,
+        "line": 100,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 109,
+        "line": 115,
         "message": "no matching function for call to 'core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0'"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 172,
+        "line": 180,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 190,
+        "line": 198,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 53,
-        "line": 269,
+        "line": 276,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -61,18 +61,18 @@
   },
   "complexity": {
     "assembly_lines": 1019,
-    "complexity_score": 423,
+    "complexity_score": 421,
     "cross_reference_count": 1,
     "function_call_count": 36,
     "global_count": 55,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 373,
-    "suspect_count": 4,
+    "pseudocode_lines": 381,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "undefined_data"
     ],
-    "total_lines": 1392
+    "total_lines": 1400
   },
   "cross_references": [
     {
@@ -692,99 +692,92 @@
         "is_param": false,
         "name": "local_5e8",
         "offset": -1512,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_240",
         "offset": -576,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_140",
         "offset": -320,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_13f",
-        "offset": -319,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "C3DSCamera *"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "C3DSCamera *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "SFog *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "SFog *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "SFog *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
@@ -815,7 +808,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 102,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&DAT_03659388 + iVar6) = pCVar3->cameras[0].fog_enabled;",
@@ -823,7 +816,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 102,
       "match": "DAT_03659388",
       "severity": "mild",
       "text": "*(int *)((int)&DAT_03659388 + iVar6) = pCVar3->cameras[0].fog_enabled;",
@@ -831,19 +824,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 108,
       "match": "DAT_03659388",
       "severity": "mild",
-      "text": "iVar9 = core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(this_ptr,&DAT_03659388)",
+      "text": "iVar5 = core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(this_ptr,&DAT_03659388)",
       "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 243,
-      "match": "(SFog *)((int)",
-      "severity": "mild",
-      "text": "pSVar7 = (SFog *)((int)(pSVar7 + 0xb) + 0x18);",
-      "type": "pointer_cast"
     }
   ]
 }

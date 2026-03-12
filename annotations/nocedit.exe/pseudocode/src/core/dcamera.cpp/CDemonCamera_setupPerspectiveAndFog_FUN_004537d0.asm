@@ -8,9 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   position
 ; float            Stack[0xc]:4   max_distance
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; CVector3i        Stack[-0x10]:12  local_10
 ;
 ; XREF[2]:
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0 at 00420638

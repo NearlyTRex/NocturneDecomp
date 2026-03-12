@@ -9,17 +9,21 @@
 void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemonMission *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
+  int iVar3;
   char *pcVar2;
   CDemonActor *actor;
   CVector3f *pCVar3;
   int iVar4;
   CDemonActor *pCVar5;
   int iVar6;
+  char *pcVar4;
+  CDemonActor *pCVar6;
   CPickList CStack_448;
   char local_a0 [100];
   char local_3c [32];
   CVector3f local_1c;
+  char cVar1;
   
   iVar4 = 0;
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_448);
@@ -35,11 +39,11 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
     } while (iVar4 < g_NumActorClassTypes);
   }
   shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&CStack_448.base);
-  iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+  iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                     (&CStack_448,"Choose type of actor to create",INT_00680648,0);
-  if (-1 < iVar4) {
-    INT_00680648 = iVar4;
-    pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_448.base,iVar4);
+  if (-1 < iVar3) {
+    INT_00680648 = iVar3;
+    pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_448.base,iVar3);
     _sprintf(local_a0,"C%s",pcVar2);
     actor = core_actor_cpp_createActorByName_FUN_0040c430(local_a0);
     core_mission_cpp_CDemonMission_generateActorName_FUN_00524700(this_ptr,actor);
@@ -53,21 +57,21 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
     (actor->location).position.z = pCVar3->z;
     core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
     if (g_ConfirmNewActorNames != 0) {
-      pcVar2 = local_3c;
+      pcVar4 = local_3c;
       pCVar5 = actor;
       do {
         cVar1 = pCVar5->actor_name[0];
-        *pcVar2 = cVar1;
+        *pcVar4 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pCVar5->actor_name[1];
+        cVar2 = pCVar5->actor_name[1];
         pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
-        pcVar2[1] = cVar1;
-        pcVar2 = pcVar2 + 2;
-      } while (cVar1 != '\0');
+        pcVar4[1] = cVar2;
+        pcVar4 = pcVar4 + 2;
+      } while (cVar2 != '\0');
       do {
-        iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+        iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                           (g_CEditorToolsPtr,"Confirm new actor name",local_3c,0x1e,1);
-        if (iVar4 == 0) {
+        if (iVar3 == 0) {
           g_CurrentDebugLine = 0x8ff;
           g_CurrentDebugFilename = "..\\core\\msnedit.cpp";
           if (actor != (CDemonActor *)0x0) {
@@ -75,23 +79,23 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActorsFrom_FUN_0053b9f0(CDemon
           }
           goto LAB_0053bc0f;
         }
-        iVar4 = core_msnedit_cpp_CDemonMission_validateNewActorName_FUN_0053d220
+        iVar3 = core_msnedit_cpp_CDemonMission_validateNewActorName_FUN_0053d220
                           (g_CDemonMissionPtr,actor->actor_name,local_3c);
-      } while (iVar4 == 0);
-      pcVar2 = local_3c;
-      pCVar5 = actor;
+      } while (iVar3 == 0);
+      pcVar4 = local_3c;
+      pCVar6 = actor;
       do {
-        cVar1 = *pcVar2;
-        pCVar5->actor_name[0] = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar2[1];
-        pcVar2 = pcVar2 + 2;
-        pCVar5->actor_name[1] = cVar1;
-        pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
-      } while (cVar1 != '\0');
+        cVar2 = *pcVar4;
+        pCVar6->actor_name[0] = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar4[1];
+        pcVar4 = pcVar4 + 2;
+        pCVar6->actor_name[1] = cVar2;
+        pCVar6 = (CDemonActor *)(pCVar6->actor_name + 2);
+      } while (cVar2 != '\0');
     }
-    iVar4 = (*((actor->vtable)._ub)->initializeInEditor)(actor);
-    if (iVar4 == 0) {
+    iVar3 = (*((actor->vtable)._ub)->initializeInEditor)(actor);
+    if (iVar3 == 0) {
       g_CurrentDebugLine = 0x906;
       g_CurrentDebugFilename = "..\\core\\msnedit.cpp";
       (*((actor->vtable)._ub)->dtor)(actor,2);

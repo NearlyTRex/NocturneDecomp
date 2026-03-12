@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 188,
+    "complexity_score": 157,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 88,
+    "pseudocode_lines": 57,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 278
+    "total_lines": 247
   },
   "cross_references": [
     {
@@ -162,18 +162,88 @@
     "pcode_op_count": 799
   },
   "stack_frame": {
-    "frame_size": 100,
-    "local_size": 80,
+    "frame_size": 140,
+    "local_size": 120,
     "param_offset": 4,
     "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "SStack_74",
+        "offset": -116,
+        "size": 24,
+        "type": "SMRGLHeaderPrimitive"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
         "name": "local_4c",
         "offset": -76,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CBoundingBox3D"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_34",
+        "offset": -52,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_28",
+        "offset": -40,
+        "size": 12,
+        "type": "CVector3i"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_14",
+        "offset": -20,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": true,
@@ -215,7 +285,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 22,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_28.x = (int)ROUND(CStack_34.x * 256.0f);",
@@ -223,7 +293,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 23,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_28.y = (int)ROUND(CStack_34.y * 256.0f);",
@@ -231,7 +301,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 24,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_28.z = (int)ROUND(CStack_34.z * 256.0f);",
@@ -239,23 +309,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 30,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar1) = iStack_18;",
+      "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->r + iVar1) = red << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 31,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->g + iVar1) = iStack_14;",
+      "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->g + iVar1) = green << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 32,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->b + iVar1) = blue << 8;",
@@ -263,15 +333,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 33,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->a + iVar1) = iStack_1c;",
+      "text": "*(int *)((int)&this_ptr_00->vertex_buffer_ptr->a + iVar1) = alpha << 8;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 34,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&this_ptr_00->vertex_buffer_ptr->u + iVar1) = 0x800000;",
@@ -279,7 +349,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 36,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar1) = 0x800000;",

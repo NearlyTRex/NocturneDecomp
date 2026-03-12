@@ -7,12 +7,7 @@
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ; SIntersectXZCylinder * Stack[0x8]:4   cylinder
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; CBoundingBox3D   Stack[-0x24]:24  local_24
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278

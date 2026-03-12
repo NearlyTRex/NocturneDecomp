@@ -20,12 +20,12 @@
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
+; int              Stack[-0x2c]:4  local_2c
+; uint             Stack[-0x28]:4  local_28
+; uint             Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
-; undefined1       Stack[-0x1c]:1  local_1c
-; undefined1       Stack[-0x18]:1  local_18
+; byte             Stack[-0x1c]:1  local_1c
+; byte             Stack[-0x18]:1  local_18
 ;
 ; XREF[2]:
 ;   cockpit_ckptutil.c_drawLineListFromBitmap_FUN_004338f0 at 00433997

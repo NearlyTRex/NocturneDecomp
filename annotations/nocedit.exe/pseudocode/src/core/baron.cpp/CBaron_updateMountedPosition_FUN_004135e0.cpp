@@ -9,15 +9,15 @@
 void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_004135e0(CBaron *this_ptr)
 
 {
-  CDemonActor_vtable *pCVar1;
-  CDemonActor *pCVar2;
   CVector3f *pCVar3;
   CCharacter *this_ptr_00;
   EDeathState EVar4;
-  CVector3f *new_orientation;
   CVector3f local_34;
   CVector3f local_28;
   CVector3f local_1c;
+  CDemonActor_vtable *pCVar1;
+  CVector3f *new_orientation;
+  CDemonActor *pCVar2;
   
   if (this_ptr->target_actor != (CDemonActor *)0x0) {
     new_orientation = (CVector3f *)&this_ptr->target_actor->orient;

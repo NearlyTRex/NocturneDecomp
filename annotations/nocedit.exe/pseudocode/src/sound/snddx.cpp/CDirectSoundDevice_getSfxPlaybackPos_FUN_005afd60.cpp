@@ -9,12 +9,13 @@
 double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 {
-  int iVar1;
   uint uVar2;
+  uint uVar1;
   char *pcVar3;
   char acStack_1b0 [408];
   DWORD local_18;
   uint local_14;
+  int iVar1;
   
   iVar1 = slot->hardware_buffer_handle;
   if ((((iVar1 < 1) || (0x1e < iVar1)) ||
@@ -34,6 +35,6 @@ double __cdecl sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
     sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1b0);
     return -1.0;
   }
-  uVar2 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(slot->sample);
-  return (double)(local_14 / uVar2);
+  uVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(slot->sample);
+  return (double)(local_14 / uVar1);
 }

@@ -9,11 +9,11 @@
 void __cdecl core_texlist_cpp_CTextureList_setMasterTextureSelection_FUN_005dc6c0(CTextureList *this_ptr,char *filename)
 
 {
-  int iVar1;
   int iVar2;
   int iVar3;
   char (*str2) [16];
   int local_14;
+  int iVar1;
   
   iVar3 = 0;
   local_14 = -1;

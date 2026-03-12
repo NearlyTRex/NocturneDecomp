@@ -9,8 +9,8 @@
 float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,float *output)
 
 {
-  float fVar1;
   CVector3i local_20;
+  float fVar1;
   
   engine_matrix_c_getCameraOrigin_FUN_0050e2c0(&local_20);
   fVar1 = (float)0.00390625;

@@ -8,8 +8,7 @@
 ; char *           Stack[0x8]:4   commands
 ; SScriptXRef *    Stack[0xc]:4   xref_data
 ; Local Variables:
-; undefined1       Stack[-0x200]:1  local_200
-; undefined1       Stack[-0x1ff]:1  local_1ff
+; char[500]        Stack[-0x200]:500  local_200
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_buildScriptCrossReferences_FUN_0053ea30 at 0053eb24

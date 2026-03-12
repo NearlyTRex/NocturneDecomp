@@ -11,8 +11,9 @@
 ; undefined8       Stack[-0xf8]:8  local_f8
 ; undefined4       Stack[-0xf0]:4  local_f0
 ; undefined4       Stack[-0xec]:4  local_ec
-; undefined1       Stack[-0xe8]:1  local_e8
-; undefined1       Stack[-0x84]:1  local_84
+; char[100]        Stack[-0xe8]:100  local_e8
+; char[100]        Stack[-0x84]:100  local_84
+; CVector3f        Stack[-0x20]:12  CStack_20
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sml_00630fbe

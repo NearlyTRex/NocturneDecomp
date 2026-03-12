@@ -7,14 +7,15 @@
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   world_position
 ; Local Variables:
+; int[1014]        Stack[-0x1028]:4056  aiStackY_1028
 ; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined1       Stack[-0x28]:1  local_28
-; undefined1       Stack[-0x1c]:1  local_1c
+; int              Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; CVector3i        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[1]:
 ;   core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00499c20 at 00499e26

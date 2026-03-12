@@ -9,7 +9,6 @@
 int __cdecl updateEnvironTable(char *envstr)
 
 {
-  char cVar1;
   char *in_EAX;
   char **ptr;
   int iVar2;
@@ -21,6 +20,7 @@ int __cdecl updateEnvironTable(char *envstr)
   char **ppcVar6;
   bool bVar7;
   byte bVar8;
+  char cVar1;
   
   ptr = g_EnvironmentBlock;
   bVar8 = 0;
@@ -73,9 +73,11 @@ int __cdecl updateEnvironTable(char *envstr)
           ppcVar6 = ppcVar6 + (uint)bVar8 * -2 + 1;
         }
         for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *(byte *)ppcVar6 = *(byte *)ppcVar5;
-          ppcVar5 = (char **)((int)ppcVar5 + (uint)bVar8 * -2 + 1);
           ppcVar6 = (char **)((int)ppcVar6 + (uint)bVar8 * -2 + 1);
+          ppcVar5 = (char **)((int)ppcVar5 + (uint)bVar8 * -2 + 1);
+          *(byte *)ppcVar6 = *(byte *)ppcVar5;
+          ppcVar5 = ppcVar5;
+          ppcVar6 = ppcVar6;
         }
         g_EnvironStringArea = ptr + (2 - iVar2);
         memset(g_EnvironStringArea,0,n + 1);

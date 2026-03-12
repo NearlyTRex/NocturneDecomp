@@ -6,7 +6,7 @@
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined        Stack[-0x10]:1  local_10
+; SNetworkAddr     Stack[-0x10]:8  local_10
 ;
 ; XREF[1]:
 ;   core_game.cpp_hostNetworkGame_FUN_004e2f10 at 004e2f1a

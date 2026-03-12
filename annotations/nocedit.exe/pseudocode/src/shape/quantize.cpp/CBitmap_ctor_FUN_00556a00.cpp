@@ -12,6 +12,7 @@ CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr
   void *pvVar1;
   void **ppvVar2;
   int iVar3;
+  void *pvVar2;
   int iVar4;
   ushort uVar5;
   char local_68 [92];
@@ -80,9 +81,9 @@ LAB_00556a6b:
     iVar4 = iVar4 + 4;
   }
   if (this_ptr->bit_depth == '\b') {
-    pvVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x300,"..\\shape\\quantize.cpp",0x4ac);
-    this_ptr->palette = pvVar1;
-    if (pvVar1 == (void *)0x0) {
+    pvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x300,"..\\shape\\quantize.cpp",0x4ac);
+    this_ptr->palette = pvVar2;
+    if (pvVar2 == (void *)0x0) {
       g_CurrentFilename = "..\\shape\\quantize.cpp";
       g_CurrentLineNumber = 0x67;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to allocate memory for palette.");

@@ -6,9 +6,9 @@
 ; Parameters:
 ; CDemonPod *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x170]:1  local_170
-; undefined1       Stack[-0x5c]:1  local_5c
-; undefined4       Stack[-0xc]:4  local_c
+; CFileFinder      Stack[-0x170]:276  local_170
+; char[80]         Stack[-0x5c]:80  local_5c
+; int              Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_podmain_cpp_006408f7

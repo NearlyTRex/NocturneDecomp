@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 23,
-        "line": 29,
+        "line": 30,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 30,
-        "line": 29,
+        "line": 30,
         "message": "expected expression"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 50,
+    "complexity_score": 51,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
+    "pseudocode_lines": 36,
     "suspect_count": 1,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 115
+    "total_lines": 116
   },
   "cross_references": [],
   "function": {
@@ -93,14 +93,14 @@
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
@@ -121,10 +121,10 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 22,
+      "line": 23,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)(iVar1 + 100) + 0x70))",
+      "text": "iVar1 = (**(code **)(*(int *)(iVar4 + 100) + 0x70))",
       "type": "unresolved_funcptr"
     }
   ],

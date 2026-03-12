@@ -11,6 +11,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar *t
 {
   int iVar1;
   int width;
+  int iVar4;
   int iVar2;
   int border_style_flag;
   int top;
@@ -28,14 +29,14 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar *t
   iVar3 = this_ptr->bounds_top + 1;
   height = this_ptr->bounds_bottom + -1;
   if (this_ptr->orientation == 0) {
-    iVar2 = iVar1;
-    top = this_ptr->thumb_start;
-    local_20 = width;
     local_1c = this_ptr->thumb_end;
+    top = this_ptr->thumb_start;
+    iVar4 = iVar1;
+    local_20 = width;
   }
   else {
     local_20 = this_ptr->thumb_end;
-    iVar2 = this_ptr->thumb_start;
+    iVar4 = this_ptr->thumb_start;
     top = iVar3;
     local_1c = height;
   }
@@ -45,15 +46,15 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar *t
   else {
     border_style_flag = 0;
   }
-  shape_edittool_cpp_draw3DBorder_FUN_004a58f0(iVar2,top,local_20,local_1c,border_style_flag);
+  shape_edittool_cpp_draw3DBorder_FUN_004a58f0(iVar4,top,local_20,local_1c,border_style_flag);
   if (this_ptr->orientation != 0) {
     if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 1)) {
-      iVar2 = 1;
+      iVar4 = 1;
     }
     else {
-      iVar2 = 0;
+      iVar4 = 0;
     }
-    shape_edittool_cpp_draw3DBorder_FUN_004a58f0(iVar1,iVar3,this_ptr->track_start,height,iVar2);
+    shape_edittool_cpp_draw3DBorder_FUN_004a58f0(iVar1,iVar3,this_ptr->track_start,height,iVar4);
     if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 1)) {
       iVar2 = 1;
     }
@@ -63,50 +64,50 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar *t
     shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0
               (iVar1,iVar3,this_ptr->track_start,height,iVar2,2);
     if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 2)) {
-      iVar1 = 1;
+      iVar4 = 1;
     }
     else {
-      iVar1 = 0;
+      iVar4 = 0;
     }
-    shape_edittool_cpp_draw3DBorder_FUN_004a58f0(this_ptr->track_end,iVar3,width,height,iVar1);
+    shape_edittool_cpp_draw3DBorder_FUN_004a58f0(this_ptr->track_end,iVar3,width,height,iVar4);
     if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 2)) {
-      iVar1 = 1;
+      iVar4 = 1;
     }
     else {
-      iVar1 = 0;
+      iVar4 = 0;
     }
     shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0
-              (this_ptr->track_end,iVar3,width,height,iVar1,3);
+              (this_ptr->track_end,iVar3,width,height,iVar4,3);
     return;
   }
   if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 1)) {
-    iVar2 = 1;
+    iVar4 = 1;
   }
   else {
-    iVar2 = 0;
+    iVar4 = 0;
   }
-  shape_edittool_cpp_draw3DBorder_FUN_004a58f0(iVar1,iVar3,width,this_ptr->track_start,iVar2);
+  shape_edittool_cpp_draw3DBorder_FUN_004a58f0(iVar1,iVar3,width,this_ptr->track_start,iVar4);
   if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 1)) {
-    iVar2 = 1;
+    iVar4 = 1;
   }
   else {
-    iVar2 = 0;
+    iVar4 = 0;
   }
-  shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0(iVar1,iVar3,width,this_ptr->track_start,iVar2,0)
+  shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0(iVar1,iVar3,width,this_ptr->track_start,iVar4,0)
   ;
   if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 2)) {
-    iVar3 = 1;
+    iVar4 = 1;
   }
   else {
-    iVar3 = 0;
+    iVar4 = 0;
   }
-  shape_edittool_cpp_draw3DBorder_FUN_004a58f0(iVar1,this_ptr->track_end,width,height,iVar3);
+  shape_edittool_cpp_draw3DBorder_FUN_004a58f0(iVar1,this_ptr->track_end,width,height,iVar4);
   if ((this_ptr == g_ActiveControl) && (g_ScrollAction == 2)) {
-    iVar3 = 1;
+    iVar4 = 1;
   }
   else {
-    iVar3 = 0;
+    iVar4 = 0;
   }
-  shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0(iVar1,this_ptr->track_end,width,height,iVar3,1);
+  shape_edittool_cpp_draw3DInsetBorder_FUN_004a59a0(iVar1,this_ptr->track_end,width,height,iVar4,1);
   return;
 }

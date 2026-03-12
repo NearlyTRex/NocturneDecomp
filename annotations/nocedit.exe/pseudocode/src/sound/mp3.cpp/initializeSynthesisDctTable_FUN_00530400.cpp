@@ -9,7 +9,6 @@
 void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_00530400(float *output_dct_table)
 
 {
-  double dVar1;
   float *pfVar2;
   int iVar3;
   float *pfVar4;
@@ -19,6 +18,7 @@ void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_00530400(float *outpu
   int local_28;
   float *local_1c;
   int local_18;
+  double dVar1;
   
   local_28 = 0;
   local_1c = output_dct_table;

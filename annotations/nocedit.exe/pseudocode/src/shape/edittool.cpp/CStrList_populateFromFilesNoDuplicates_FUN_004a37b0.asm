@@ -8,14 +8,13 @@
 ; char *           Stack[0x8]:4   directory_path
 ; char *           Stack[0xc]:4   file_pattern
 ; Local Variables:
-; undefined1       Stack[-0x844]:1  local_844
-; undefined1       Stack[-0x528]:1  local_528
-; undefined1       Stack[-0x414]:1  local_414
-; undefined1       Stack[-0x310]:1  local_310
-; undefined1       Stack[-0x30f]:1  local_30f
-; undefined1       Stack[-0x210]:1  local_210
-; undefined1       Stack[-0x110]:1  local_110
-; undefined1       Stack[-0x10f]:1  local_10f
+; CPodSearchContext Stack[-0x844]:796  local_844
+; CFileFinder      Stack[-0x528]:276  local_528
+; char[260]        Stack[-0x414]:260  local_414
+; char             Stack[-0x310]:1  local_310
+; undefined1[255]  Stack[-0x30f]:255  local_30f
+; char[256]        Stack[-0x210]:256  local_210
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[4]:
 ;   core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00 at 005b2d2f

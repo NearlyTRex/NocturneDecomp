@@ -9,7 +9,10 @@
 int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426420(CBugs *this_ptr,SBug *bug_data,float delta_time,CVector3f *dest_vertex)
 
 {
-  CVector3f *pCVar1;
+  CVector3f *pCVar2;
+  float max_value;
+  float fVar3;
+  float fVar4;
   float fVar2;
   float local_90;
   float local_8c;
@@ -35,6 +38,7 @@ int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426420(CBugs *this_pt
   float local_1c;
   float local_18;
   float local_14;
+  CVector3f *pCVar1;
   
   if (bug_data->state != 0) {
     return 0;
@@ -44,21 +48,20 @@ int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426420(CBugs *this_pt
   local_68.y = (bug_data->dest_position).y - (bug_data->position).y;
   local_68.z = (bug_data->dest_position).z - (bug_data->position).z;
   local_90 = SQRT(local_68.z * local_68.z + local_68.x * local_68.x + local_68.y * local_68.y);
-  local_44 = local_90;
   if (local_90 < 0.5f) {
-    local_14 = core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00425b70
-                         (this_ptr,(bug_data->position).x,(bug_data->position).z);
-    (bug_data->position).y = local_14;
+    fVar3 = core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00425b70
+                      (this_ptr,(bug_data->position).x,(bug_data->position).z);
+    (bug_data->position).y = fVar3;
     if (dest_vertex == (CVector3f *)0x0) {
-      local_40 = 0.5f * 12.0f * (float)0.5;
-      local_18 = 0.5f * 1.6018581507970269e-314._0_4_ * (float)0.5;
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_18,local_40);
-      (bug_data->dest_position).x = local_14;
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_18,local_40);
-      (bug_data->dest_position).z = local_14;
-      local_14 = core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00425b70
-                           (this_ptr,(bug_data->dest_position).x,(bug_data->dest_position).z);
-      (bug_data->dest_position).y = local_14;
+      max_value = 0.5f * 12.0f * (float)0.5;
+      fVar3 = 0.5f * 1.6018581507970269e-314._0_4_ * (float)0.5;
+      fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fVar3,max_value);
+      (bug_data->dest_position).x = fVar4;
+      fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fVar3,max_value);
+      (bug_data->dest_position).z = fVar3;
+      fVar3 = core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00425b70
+                        (this_ptr,(bug_data->dest_position).x,(bug_data->dest_position).z);
+      (bug_data->dest_position).y = fVar3;
       local_50.x = pCVar1->x - (bug_data->position).x;
       local_50.y = (bug_data->dest_position).y - (bug_data->position).y;
       local_50.z = (bug_data->dest_position).z - (bug_data->position).z;
@@ -84,7 +87,6 @@ int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426420(CBugs *this_pt
         local_68.z = local_74.z;
       }
       local_90 = SQRT(local_68.z * local_68.z + local_68.x * local_68.x + local_68.y * local_68.y);
-      local_3c = local_90;
       if (local_90 < 0.5f) {
         return 1;
       }
@@ -98,23 +100,23 @@ int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426420(CBugs *this_pt
   if (local_90 < local_1c) {
     local_1c = local_90;
   }
-  local_2c = local_1c / local_90;
-  local_68.x = local_68.x * local_2c;
-  local_68.y = local_68.y * local_2c;
-  local_68.z = local_68.z * local_2c;
-  pCVar1 = &bug_data->position;
-  local_8c = pCVar1->x + local_68.x;
+  fVar3 = local_1c / local_90;
+  local_68.x = local_68.x * fVar3;
+  local_68.y = local_68.y * fVar3;
+  local_68.z = local_68.z * fVar3;
+  pCVar2 = &bug_data->position;
+  local_8c = pCVar2->x + local_68.x;
   local_88 = (bug_data->position).y + local_68.y;
   local_84 = (bug_data->position).z + local_68.z;
-  local_30 = core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00425b70(this_ptr,local_8c,local_84);
-  if (local_30 - (bug_data->position).y <= local_90 * (float)0.40000000000000002) {
-    if (pCVar1 != (CVector3f *)&local_8c) {
-      pCVar1->x = local_8c;
+  fVar3 = core_bugs_cpp_CBugs_sampleGroundHeight_FUN_00425b70(this_ptr,local_8c,local_84);
+  if (fVar3 - (bug_data->position).y <= local_90 * (float)0.40000000000000002) {
+    if (pCVar2 != (CVector3f *)&local_8c) {
+      pCVar2->x = local_8c;
       (bug_data->position).y = local_88;
       (bug_data->position).z = local_84;
     }
-    if ((bug_data->position).y < local_30) {
-      (bug_data->position).y = local_30;
+    if ((bug_data->position).y < fVar3) {
+      (bug_data->position).y = fVar3;
     }
   }
   else if (local_68.y <= 0.0) {
@@ -125,32 +127,25 @@ int __cdecl core_bugs_cpp_CBugs_updateBugPathfinding_FUN_00426420(CBugs *this_pt
     (bug_data->position).y = (bug_data->position).y + local_1c;
     local_80.x = -1.5707964;
   }
-  local_5c = local_80.x - (bug_data->orientation).x;
-  local_58 = local_80.y - (bug_data->orientation).y;
-  local_54 = local_80.z - (bug_data->orientation).z;
-  local_14 = local_30;
-  local_24 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_58);
-  local_14 = local_24;
-  local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_5c);
-  local_20 = delta_time * (float)3.1415926535000001 * (float)4;
-  local_38 = -local_20;
-  if (local_24 < local_38) {
-    local_24 = local_38;
+  fVar3 = local_80.x - (bug_data->orientation).x;
+  local_24 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_80.y - (bug_data->orientation).y);
+  local_28 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(fVar3);
+  fVar3 = delta_time * (float)3.1415926535000001 * (float)4;
+  if (local_24 < -fVar3) {
+    local_24 = -fVar3;
   }
-  if (local_20 < local_24) {
-    local_24 = local_20;
+  if (fVar3 < local_24) {
+    local_24 = fVar3;
   }
-  local_34 = -local_20;
-  local_28 = local_14;
-  if (local_14 < local_34) {
-    local_28 = local_34;
+  if (local_28 < -fVar3) {
+    local_28 = -fVar3;
   }
-  if (local_20 < local_28) {
-    local_28 = local_20;
+  if (fVar3 < local_28) {
+    local_28 = fVar3;
   }
-  local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((bug_data->orientation).y + local_24);
+  fVar3 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((bug_data->orientation).y + local_24);
   (bug_data->orientation).z = 0.0;
-  (bug_data->orientation).y = local_14;
+  (bug_data->orientation).y = fVar3;
   fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70((bug_data->orientation).x + local_28);
   (bug_data->orientation).x = fVar2;
   return 0;

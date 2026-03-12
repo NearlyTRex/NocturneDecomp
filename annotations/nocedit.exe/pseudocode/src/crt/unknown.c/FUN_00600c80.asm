@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   param_2
 ; SIZE_T           Stack[0xc]:4   param_3
 ; Local Variables:
-; undefined        Stack[-0x20c]:1  local_20c
+; undefined1[512]  Stack[-0x20c]:512  local_20c
 ;
 ; XREF[1]:
 ;   crt_io.c_chsize_FUN_00600cf0 at 00600dca

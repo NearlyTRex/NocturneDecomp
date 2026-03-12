@@ -8,19 +8,18 @@
 ; int              Stack[0x8]:4   mode
 ; Local Variables:
 ; undefined4       Stack[-0x3fd0]:4  local_3fd0
-; undefined1       Stack[-0x3fcc]:1  local_3fcc
-; undefined1       Stack[-0x14c]:1  local_14c
-; undefined1       Stack[-0x84]:1  local_84
-; undefined1       Stack[-0x83]:1  local_83
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[16000]      Stack[-0x3fcc]:16000  local_3fcc
+; char[200]        Stack[-0x14c]:200  local_14c
+; char[80]         Stack[-0x84]:80  local_84
+; int              Stack[-0x34]:4  local_34
+; uint             Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; uint             Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; char *           Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_design.c_handleEditorHotkeys_FUN_0045b990 at 0045b9cd

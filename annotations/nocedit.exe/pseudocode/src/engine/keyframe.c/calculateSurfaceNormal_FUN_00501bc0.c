@@ -9,48 +9,55 @@
 void __cdecl engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0(CVector3i *vertex_data,SMRGLPrimitiveTriangle *texture)
 
 {
-  CVector3i *pCVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
+  int iVar1;
+  int iVar5;
+  float fVar12;
+  float fVar13;
+  float fVar14;
+  float fVar15;
+  float fVar16;
+  float local_20;
+  float fVar9;
+  float fVar10;
+  float fVar11;
   float fVar5;
   float fVar6;
   float fVar7;
   float fVar8;
-  float fVar9;
-  float fVar10;
-  float fVar11;
-  float local_20;
+  CVector3i *pCVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
   
   pCVar1 = vertex_data + texture->vertices[1].vertex_index;
   iVar3 = texture->vertices[0].vertex_index;
   fVar9 = (float)(pCVar1->x - vertex_data[iVar3].x);
   fVar11 = (float)(pCVar1->y - vertex_data[iVar3].y);
   fVar5 = (float)(pCVar1->z - vertex_data[iVar3].z);
-  iVar3 = texture->vertices[2].vertex_index;
-  fVar7 = (float)(vertex_data[iVar3].z - pCVar1->z);
-  fVar8 = (float)(vertex_data[iVar3].y - pCVar1->y);
+  iVar5 = texture->vertices[2].vertex_index;
+  fVar7 = (float)(vertex_data[iVar5].z - pCVar1->z);
+  fVar8 = (float)(vertex_data[iVar5].y - pCVar1->y);
   fVar6 = fVar11 * fVar7 - fVar8 * fVar5;
-  fVar10 = (float)(vertex_data[iVar3].x - pCVar1->x);
-  fVar5 = fVar10 * fVar5 - fVar9 * fVar7;
-  fVar7 = fVar9 * fVar8 - fVar10 * fVar11;
-  local_20 = SQRT(fVar7 * fVar7 + fVar5 * fVar5 + fVar6 * fVar6);
+  fVar10 = (float)(vertex_data[iVar5].x - pCVar1->x);
+  fVar12 = fVar10 * fVar5 - fVar9 * fVar7;
+  fVar13 = fVar9 * fVar8 - fVar10 * fVar11;
+  local_20 = SQRT(fVar13 * fVar13 + fVar12 * fVar12 + fVar6 * fVar6);
   if (ABS(local_20) == 0.0) {
     local_20 = 65535.0;
   }
-  local_20 = 1.0 / local_20;
-  fVar8 = (float)65535;
-  fVar6 = fVar6 * local_20 * fVar8;
-  fVar5 = fVar5 * local_20 * fVar8;
-  fVar8 = fVar8 * fVar7 * local_20;
+  fVar14 = 1.0 / local_20;
+  fVar15 = (float)65535;
+  fVar16 = fVar6 * fVar14 * fVar15;
+  fVar12 = fVar12 * fVar14 * fVar15;
+  fVar15 = fVar15 * fVar13 * fVar14;
   iVar4 = texture->vertices[0].vertex_index;
-  iVar3 = vertex_data[iVar4].y;
+  iVar5 = vertex_data[iVar4].y;
   iVar2 = vertex_data[iVar4].x;
-  iVar4 = vertex_data[iVar4].z;
-  (texture->base).surface_normal.A = (int)ROUND(fVar6);
-  (texture->base).surface_normal.B = (int)ROUND(fVar5);
-  (texture->base).surface_normal.C = (int)ROUND(fVar8);
+  iVar1 = vertex_data[iVar4].z;
+  (texture->base).surface_normal.A = (int)ROUND(fVar16);
+  (texture->base).surface_normal.B = (int)ROUND(fVar12);
+  (texture->base).surface_normal.C = (int)ROUND(fVar15);
   (texture->base).surface_normal.D =
-       (int)ROUND((float)iVar4 * fVar8 + (float)iVar2 * fVar6 + (float)iVar3 * fVar5);
+       (int)ROUND((float)iVar1 * fVar15 + (float)iVar2 * fVar16 + (float)iVar5 * fVar12);
   return;
 }

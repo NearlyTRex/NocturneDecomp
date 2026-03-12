@@ -9,11 +9,12 @@
 float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  float fVar8;
   CVector3f *pCVar5;
+  CVector3f *pCVar9;
   float *in_stack_00000008;
   float *in_stack_0000000c;
   CVector3f *in_stack_00000010;
@@ -24,6 +25,10 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
   CVector3f local_38;
   CVector3f local_2c;
   CVector3f local_20;
+  float fVar3;
+  float fVar4;
+  float fVar1;
+  float fVar2;
   
   local_5c.x = *in_stack_0000000c;
   local_5c.y = in_stack_0000000c[1];
@@ -45,29 +50,29 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
     pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                        (&this_ptr->base,&local_2c,in_stack_00000010);
     if (pCVar5->z <= 0.0) {
-      pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+      pCVar9 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                          (&this_ptr->base,&local_20,&local_5c);
-      fVar1 = (this_ptr->open_position).y;
-      fVar2 = pCVar5->y;
-      fVar3 = (this_ptr->open_position).z;
-      fVar4 = pCVar5->z;
+      fVar5 = (this_ptr->open_position).y;
+      fVar6 = pCVar9->y;
+      fVar7 = (this_ptr->open_position).z;
+      fVar8 = pCVar9->z;
       if (in_stack_00000008 != local_50) {
-        *in_stack_00000008 = (this_ptr->open_position).x - pCVar5->x;
-        in_stack_00000008[1] = fVar1 - fVar2;
-        in_stack_00000008[2] = fVar3 - fVar4;
+        *in_stack_00000008 = (this_ptr->open_position).x - pCVar9->x;
+        in_stack_00000008[1] = fVar5 - fVar6;
+        in_stack_00000008[2] = fVar7 - fVar8;
         in_stack_00000008[1] = (this_ptr->base).location.position.y;
         return in_stack_00000008;
       }
     }
     else {
-      pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+      pCVar9 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                          (&this_ptr->base,&local_68,&local_5c);
       fVar1 = (this_ptr->open_position).y;
-      fVar2 = pCVar5->y;
+      fVar2 = pCVar9->y;
       fVar3 = (this_ptr->open_position).z;
-      fVar4 = pCVar5->z;
+      fVar4 = pCVar9->z;
       if (in_stack_00000008 != local_44) {
-        *in_stack_00000008 = (this_ptr->open_position).x + pCVar5->x;
+        *in_stack_00000008 = (this_ptr->open_position).x + pCVar9->x;
         in_stack_00000008[1] = fVar1 + fVar2;
         in_stack_00000008[2] = fVar3 + fVar4;
         in_stack_00000008[1] = (this_ptr->base).location.position.y;

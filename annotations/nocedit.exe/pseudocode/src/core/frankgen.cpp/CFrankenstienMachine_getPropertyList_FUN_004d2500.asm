@@ -8,7 +8,7 @@
 ; CActorPropertyList * Stack[0x8]:4   property_list
 ; Local Variables:
 ; undefined8       Stack[-0x70]:8  local_70
-; undefined1       Stack[-0x68]:1  local_68
+; char[100]        Stack[-0x68]:100  local_68
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Master_frame_0_g_0062abdf

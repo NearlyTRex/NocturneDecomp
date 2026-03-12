@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 215,
+    "complexity_score": 217,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 16,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 80,
+    "pseudocode_lines": 82,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "pointer_cast"
     ],
-    "total_lines": 229
+    "total_lines": 231
   },
   "cross_references": [
     {
@@ -216,71 +216,43 @@
         "is_param": false,
         "name": "local_94",
         "offset": -148,
-        "size": 4,
-        "type": "undefined4"
+        "size": 96,
+        "type": "CVector3i[8]"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -294,7 +266,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 28,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28.x = (int)ROUND(local_34.x * 256.0f);",
@@ -302,7 +274,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 29,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28.y = (int)ROUND(local_34.y * 256.0f);",
@@ -310,7 +282,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 30,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28.z = (int)ROUND(local_34.z * 256.0f);",
@@ -318,7 +290,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 35,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "if ((*(byte *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x +",
@@ -326,7 +298,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 40,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar4 = uVar4 & *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).",
@@ -334,50 +306,50 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)((int)&(pSVar1->projected_vertex).transformed_x + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "local_18 = *(int *)((int)&(pSVar1->projected_vertex).transformed_y + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "local_14 = *(int *)((int)&(pSVar1->projected_vertex).transformed_z + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 51,
-      "match": "(uint *)((int)",
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&local_94[0].x + iVar6) =",
+      "text": "iVar1 = *(int *)((int)&(pSVar1->projected_vertex).transformed_x + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(uint *)((int)",
+      "line": 52,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&local_94[0].y + iVar6) =",
+      "text": "iVar4 = *(int *)((int)&(pSVar1->projected_vertex).transformed_y + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 53,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar7 = *(int *)((int)&(pSVar1->projected_vertex).transformed_z + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 54,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&local_94[0].z + iVar6) =",
+      "text": "*(uint *)((int)&local_94[0].x + iVar8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_94[0].y + iVar8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_94[0].z + iVar8) =",
       "type": "pointer_cast"
     },
     {

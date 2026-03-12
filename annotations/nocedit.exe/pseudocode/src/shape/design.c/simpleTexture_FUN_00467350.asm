@@ -5,15 +5,15 @@
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined1       Stack[-0x70]:1  local_70
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0x80]:4  local_80
+; float            Stack[-0x7c]:4  local_7c
+; float            Stack[-0x78]:4  local_78
+; float            Stack[-0x74]:4  local_74
+; char[80]         Stack[-0x70]:80  local_70
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; _FILE *          Stack[-0x18]:4  local_18
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showShapeEditorMenu_FUN_0046f290 at 0046f6af

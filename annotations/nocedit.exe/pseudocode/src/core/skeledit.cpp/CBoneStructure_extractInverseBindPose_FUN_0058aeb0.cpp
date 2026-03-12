@@ -18,7 +18,6 @@ void __cdecl core_skeledit_cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb
   int local_8;
   
   bVar4 = 0;
-  local_8 = 0x58aeba;
   __STK();
   local_8 = 0;
   if (0 < this_ptr->bone_count) {
@@ -28,9 +27,11 @@ void __cdecl core_skeledit_cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb
       pCVar2 = &local_38;
       pCVar3 = inverse_matrices;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
+        pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar4 * -8 + 4);
         pCVar3->m[0].w = pCVar2->m[0].w;
-        pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
-        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
+        pCVar2 = pCVar2;
+        pCVar3 = pCVar3;
       }
       core_xform_cpp_clearTranslation_FUN_005f5370(inverse_matrices);
       core_xform_cpp_setRotationScaleIdentity_FUN_005f5190(matrix_in);

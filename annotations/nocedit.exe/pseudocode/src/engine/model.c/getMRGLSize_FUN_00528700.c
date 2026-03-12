@@ -9,8 +9,8 @@
 int __cdecl engine_model_c_getMRGLSize_FUN_00528700(SMRGLHeaderExtended *header)
 
 {
-  int iVar1;
   char local_100 [256];
+  int iVar1;
   
   iVar1 = (header->base).type;
   switch(iVar1) {

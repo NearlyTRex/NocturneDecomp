@@ -9,13 +9,15 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *primitive_array,int primitive_count,int primitive_stride,int render_flags)
 
 {
-  SMRGLHeaderBasic *pSVar1;
+  int iVar1;
   int iVar2;
   int iVar3;
+  int polygon_count;
   CVector3i local_28;
   int local_1c;
   int local_18;
   int local_14;
+  SMRGLHeaderBasic *pSVar1;
   
   if (((this_ptr->face_capture_enabled == 0) && (this_ptr->plane_culling_enabled == 0)) &&
      (g_CullingMode != 0)) {
@@ -55,7 +57,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048c
         }
       }
       else {
-        iVar3 = 0;
+        polygon_count = 0;
         local_14 = 0;
         if (0 < primitive_count) {
           local_18 = 0;
@@ -63,15 +65,15 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048c
             iVar2 = engine_prim_c_getTriangleWindingFromIndices_FUN_00552210
                               ((SMRGLPrimitiveTriangle *)primitive_array);
             if (iVar2 != 0) {
-              iVar3 = iVar3 + 1;
-              iVar2 = local_18 + 4;
+              polygon_count = polygon_count + 1;
+              iVar1 = local_18 + 4;
               *(SMRGLHeaderPrimitive **)((int)g_VisibleFacePointers + local_18) = primitive_array;
-              local_18 = iVar2;
-              if (1999 < iVar3) {
+              local_18 = iVar1;
+              if (1999 < polygon_count) {
                 g_CurrentFilename = "..\\engine\\drender.cpp";
                 g_CurrentLineNumber = 0x9b6;
                 core_main_c_displayErrorAndQuit_FUN_00506f10
-                          ("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",iVar3);
+                          ("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",polygon_count);
               }
             }
             local_14 = local_14 + 1;
@@ -82,10 +84,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048c
                         type + primitive_stride);
           } while (local_14 < primitive_count);
         }
-        if (0 < iVar3) {
+        if (0 < polygon_count) {
           wincore_windll_cpp_drawPolyList_FUN_005b7640
                     (this_ptr->vertex_buffer_ptr,(SMRGLPrimitiveTriangle **)g_VisibleFacePointers,
-                     iVar3,g_RenderStateFlags.dword);
+                     polygon_count,g_RenderStateFlags.dword);
           return;
         }
       }
@@ -98,9 +100,6 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048c
         local_28.x = primitive_array[1].base.type;
         local_28.y = primitive_array[1].surface_normal.B;
         local_28.z = primitive_array[2].base.type;
-        if ((primitive_array->base).count == 4) {
-          local_1c = primitive_array[2].surface_normal.B;
-        }
         pSVar1 = &primitive_array->base;
         primitive_array =
              (SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);

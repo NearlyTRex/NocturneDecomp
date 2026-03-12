@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 163,
+    "complexity_score": 165,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
+    "pseudocode_lines": 25,
     "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function"
     ],
-    "total_lines": 111
+    "total_lines": 113
   },
   "cross_references": [
     {
@@ -91,7 +91,7 @@
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -176,7 +176,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
+      "line": 13,
       "match": "ROUND",
       "severity": "mild",
       "text": "uVar1 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).x)) -",
@@ -184,7 +184,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
+      "line": 13,
       "match": "ROUND",
       "severity": "mild",
       "text": "uVar1 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).x)) -",
@@ -192,7 +192,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
+      "line": 14,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((float)(int)scale_factor * (polygon2_ptr->normal).x));",
@@ -200,7 +200,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
+      "line": 14,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((float)(int)scale_factor * (polygon2_ptr->normal).x));",
@@ -208,31 +208,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
+      "line": 17,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(uVar1 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).y)) -",
+      "text": "(uVar3 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).y)) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
+      "line": 17,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(uVar1 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).y)) -",
+      "text": "(uVar3 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).y)) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "(int)ROUND(ROUND((float)(int)scale_factor * (polygon2_ptr->normal).y)),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 18,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((float)(int)scale_factor * (polygon2_ptr->normal).y)),",
@@ -243,20 +235,28 @@
       "line": 18,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(uVar1 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).z)) -",
+      "text": "(int)ROUND(ROUND((float)(int)scale_factor * (polygon2_ptr->normal).y)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 20,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(uVar1 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).z)) -",
+      "text": "(uVar3 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).z)) -",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 20,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "(uVar3 = (int)ROUND(ROUND((float)(int)scale_factor * (polygon1_ptr->normal).z)) -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 21,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((float)(int)scale_factor * (polygon2_ptr->normal).z)),",
@@ -264,7 +264,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 21,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND((float)(int)scale_factor * (polygon2_ptr->normal).z)),",

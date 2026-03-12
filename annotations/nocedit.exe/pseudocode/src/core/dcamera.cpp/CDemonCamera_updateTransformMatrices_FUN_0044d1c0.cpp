@@ -9,11 +9,11 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(CDemonCamera *this_ptr)
 
 {
-  CDemonRenderer *this_ptr_00;
   uint *puVar1;
   byte bVar2;
   int aiStackY_1000 [1017];
   CVector3i local_18;
+  CDemonRenderer *this_ptr_00;
   
   bVar2 = 0;
   (this_ptr->source_matrix).m[0].x = g_TransformMatrix.m[0].x;

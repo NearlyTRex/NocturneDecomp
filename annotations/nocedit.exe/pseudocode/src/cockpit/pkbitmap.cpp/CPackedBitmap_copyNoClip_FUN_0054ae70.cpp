@@ -9,14 +9,14 @@
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0054ae70(CPackedBitmap *this_ptr,uchar *dest_buffer,int bits_per_pixel,int row_stride)
 
 {
-  ushort uVar1;
-  char *pcVar2;
-  int iVar3;
   int iVar4;
   ushort *puVar5;
   int local_1c;
   int local_18;
   OptimizedMemcpyFunc *local_14;
+  char *pcVar2;
+  ushort uVar1;
+  int iVar3;
   
   if (this_ptr->row_pointers == (void **)0x0) {
     return;

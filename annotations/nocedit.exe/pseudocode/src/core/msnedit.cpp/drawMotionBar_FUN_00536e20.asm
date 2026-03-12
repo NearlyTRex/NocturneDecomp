@@ -5,14 +5,14 @@
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x100]:8  local_100
-; undefined4       Stack[-0xf8]:4  local_f8
-; undefined1       Stack[-0xf4]:1  local_f4
-; undefined8       Stack[-0x2c]:8  local_2c
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0xf8]:4  local_f8
+; char[200]        Stack[-0xf4]:200  local_f4
+; double           Stack[-0x2c]:8  local_2c
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0 at 0053c6a7

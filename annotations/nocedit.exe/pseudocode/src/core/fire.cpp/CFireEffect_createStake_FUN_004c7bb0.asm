@@ -10,14 +10,10 @@
 ; CVector3f *      Stack[0x10]:4   surface_normal
 ; int              Stack[0x14]:4   ground_type
 ; Local Variables:
-; undefined1       Stack[-0x5c]:1  local_5c
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined1       Stack[-0x28]:1  local_28
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CMatrix3x3f      Stack[-0x5c]:36  local_5c
+; CVector3f        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x28]:12  local_28
+; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[1]:
 ;   core_crossbow.cpp_CCrossbow_fire_FUN_00448f20 at 0044952e

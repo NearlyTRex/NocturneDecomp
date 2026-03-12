@@ -6,7 +6,7 @@
 ; Parameters:
 ; int *            Stack[0x4]:4   time
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
+; _tm              Stack[-0x28]:36  local_28
 ;
 ; XREF[9]:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10 at 0050704f

@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   str
 ; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
+; int              Stack[-0x4]:4  local_4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_00624449

@@ -8,11 +8,10 @@
 ; CDemonActor *    Stack[0x8]:4   parent_class
 ; int              Stack[0xc]:4   indent_level
 ; Local Variables:
-; undefined1       Stack[-0x80]:1  local_80
-; undefined1       Stack[-0x7f]:1  local_7f
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[100]        Stack[-0x80]:100  local_80
+; char *           Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 005388c2

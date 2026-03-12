@@ -9,14 +9,14 @@
 void * __cdecl InternalHeapAlloc(ulong size)
 
 {
-  Heap *pHVar1;
-  bool bVar2;
   void *pvVar3;
   int iVar4;
   Heap *pHVar5;
   ushort in_DS;
-  void *pvVar6;
   Heap *local_24;
+  bool bVar2;
+  Heap *pHVar1;
+  void *pvVar6;
   
   if ((size == 0) || (0xffffffd4 < size)) {
     return (void *)0x0;

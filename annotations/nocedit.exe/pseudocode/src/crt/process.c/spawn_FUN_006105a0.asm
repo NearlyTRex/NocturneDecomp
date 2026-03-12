@@ -8,10 +8,12 @@
 ; char *           Stack[0x8]:4   cmdline
 ; char *           Stack[0xc]:4   envblock
 ; void *           Stack[0x10]:4   reserved
+; char * *         Stack[0x14]:4   in_stack_00000014
 ; Local Variables:
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined2       Stack[-0x3c]:2  local_3c
-; undefined1       Stack[-0x28]:1  local_28
+; _STARTUPINFOA    Stack[-0x6c]:68  local_6c
+; _PROCESS_INFORMATION Stack[-0x28]:16  local_28
+; HANDLE           Stack[-0x18]:4  pvStack_18
+; HANDLE           Stack[-0x14]:4  pvStack_14
 ;
 ; XREF[1]:
 ;   crt_process.c_spawnvp_FUN_0060f39c at 0060f74f
@@ -30,15 +32,12 @@
 ;
 ; Called Functions:
 ;   CloseHandle
-;   CreateProcessA
 ;   crt_errno.c___set_errno_FUN_006083fc
 ;   crt_errno.c_convertWindowsErrorToErrno_FUN_00608390
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_process.c_build_command_line_FUN_006103a4
 ;   DuplicateHandle
-;   GetCurrentProcess
 ;   GetExitCodeProcess
-;   GetLastError
 ;   Sleep
 ;   WaitForSingleObject
 ;

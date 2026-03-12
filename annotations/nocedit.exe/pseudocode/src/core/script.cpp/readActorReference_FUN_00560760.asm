@@ -7,7 +7,7 @@
 ; _FILE *          Stack[0x4]:4   file_handle
 ; CDemonActor *    Stack[0x8]:4   actor_out
 ; Local Variables:
-; undefined1       Stack[-0xd0]:1  local_d0
+; char[200]        Stack[-0xd0]:200  local_d0
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_loadState_FUN_00560820 at 005609ec

@@ -6,13 +6,14 @@
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x74]:1  local_74
-; undefined1       Stack[-0x64]:1  local_64
-; undefined1       Stack[-0x54]:1  local_54
-; undefined1       Stack[-0x44]:1  local_44
-; undefined1       Stack[-0x34]:1  local_34
-; undefined1       Stack[-0x24]:1  local_24
-; undefined1       Stack[-0x14]:1  local_14
+; float[1522]      Stack[-0x1850]:6088  afStackY_1850
+; CQuaternion4f    Stack[-0x74]:16  local_74
+; CQuaternion4f    Stack[-0x64]:16  local_64
+; CQuaternion4f    Stack[-0x54]:16  local_54
+; CQuaternion4f    Stack[-0x44]:16  local_44
+; CQuaternion4f    Stack[-0x34]:16  local_34
+; CQuaternion4f    Stack[-0x24]:16  local_24
+; CQuaternion4f    Stack[-0x14]:16  local_14
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 at 0042dfcf

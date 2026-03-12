@@ -8,10 +8,15 @@
 ; float            Stack[0x8]:4   delta_time
 ; int              Stack[0xc]:4   has_carried_objects
 ; Local Variables:
-; undefined1       Stack[-0x50]:1  local_50
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
+; CBoundingBox3D   Stack[-0x68]:24  CStack_68
+; CBoundingBox3D   Stack[-0x50]:24  local_50
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  fStack_30
+; CVector3f        Stack[-0x2c]:12  local_2c
+; float            Stack[-0x20]:4  fStack_20
+; float            Stack[-0x1c]:4  fStack_1c
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; XREF[1]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d34e9

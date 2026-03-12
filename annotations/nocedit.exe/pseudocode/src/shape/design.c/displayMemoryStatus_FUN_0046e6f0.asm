@@ -6,7 +6,7 @@
 ; Parameters:
 ; int              Stack[0x4]:4   line_number
 ; Local Variables:
-; undefined        Stack[-0x60]:1  local_60
+; char[80]         Stack[-0x60]:80  local_60
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Memory_available_d_0061dea9

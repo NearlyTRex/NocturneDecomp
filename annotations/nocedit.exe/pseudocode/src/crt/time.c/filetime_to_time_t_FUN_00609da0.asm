@@ -6,7 +6,9 @@
 ; Parameters:
 ; FILETIME *       Stack[0x4]:4   filetime
 ; Local Variables:
-; undefined        Stack[-0xc]:1  local_c
+; _tm              Stack[-0x40]:36  _Stack_40
+; _SYSTEMTIME      Stack[-0x1c]:16  _Stack_1c
+; _FILETIME        Stack[-0xc]:8  local_c
 ;
 ; XREF[1]:
 ;   crt_io.c_convertFileInfo_FUN_00602264 at 006022a1

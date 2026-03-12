@@ -12,17 +12,16 @@
 ; undefined4       Stack[-0x144]:4  local_144
 ; undefined4       Stack[-0x140]:4  local_140
 ; undefined8       Stack[-0x13c]:8  local_13c
-; undefined1       Stack[-0x134]:1  local_134
-; undefined1       Stack[-0x133]:1  local_133
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; byte[256]        Stack[-0x134]:256  local_134
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; SShapeEditorPolygon * Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; void *           Stack[-0x18]:4  local_18
+; void *           Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0 at 004572b1

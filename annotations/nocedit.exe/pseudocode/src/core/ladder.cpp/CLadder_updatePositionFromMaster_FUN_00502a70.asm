@@ -6,17 +6,15 @@
 ; Parameters:
 ; CLadder *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined1       Stack[-0xac]:1  local_ac
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x50]:4  local_50
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
+; CMatrix3x4f      Stack[-0xdc]:48  local_dc
+; CMatrix3x4f      Stack[-0xac]:48  local_ac
+; CMatrix3x3f      Stack[-0x7c]:36  local_7c
+; float            Stack[-0x50]:4  local_50
+; CMatrix3x4f      Stack[-0x4c]:48  local_4c
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; XREF[1]:
 ;   core_ladder.cpp_CLadder_process_FUN_00502610 at 00502615

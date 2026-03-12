@@ -7,8 +7,8 @@
 ; int              Stack[0x4]:4   paused_mode
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_processAudio_FUN_005abe20 at 005abe6f

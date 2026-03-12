@@ -9,13 +9,13 @@
 void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290(char *key_path,char *value_name,char *value_data)
 
 {
-  char cVar1;
   LSTATUS LVar2;
   uint uVar3;
   char *pcVar4;
   byte bVar5;
   HKEY local_c;
   DWORD local_8;
+  char cVar1;
   
   bVar5 = 0;
   LVar2 = (*g_RegCreateKeyExAFunc)
@@ -29,8 +29,9 @@ void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290(char *key_pa
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    cVar1 = *pcVar4;
     pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
+    cVar1 = *pcVar4;
+    pcVar4 = pcVar4;
   } while (cVar1 != '\0');
   (*g_RegSetValueExAFunc)(local_c,value_name,0,1,(BYTE *)value_data,~uVar3);
   (*g_RegCloseKeyFunc)(local_c);

@@ -6,9 +6,9 @@
 ; Parameters:
 ; CGunFlame *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x40]:1  local_40
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
+; CVector3f[2]     Stack[-0x40]:24  local_40
+; CVector3f *      Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CGunFlame_process_FUN_004c4f60 at 004c5066

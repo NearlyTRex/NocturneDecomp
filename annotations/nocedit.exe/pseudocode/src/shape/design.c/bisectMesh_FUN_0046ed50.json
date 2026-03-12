@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 333,
-    "complexity_score": 236,
+    "complexity_score": 242,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 24,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 136,
+    "pseudocode_lines": 142,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 469
+    "total_lines": 475
   },
   "cross_references": [
     {
@@ -424,7 +424,7 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -438,74 +438,74 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 52,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar4 = SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);",
+      "text": "fVar1 = SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 53,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar5 = SQRT(fVar9 * fVar9 + fVar8 * fVar8 + fVar7 * fVar7);",
+      "text": "fVar2 = SQRT(fVar9 * fVar9 + fVar8 * fVar8 + fVar7 * fVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 54,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar6 = SQRT(fVar12 * fVar12 + fVar11 * fVar11 + fVar10 * fVar10);",
+      "text": "fVar3 = SQRT(fVar12 * fVar12 + fVar11 * fVar11 + fVar10 * fVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 71,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + ((uint)bVar18 * -2 + 1) * 4);",
+      "text": "pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 72,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + ((uint)bVar18 * -2 + 1) * 4);",
+      "text": "pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 102,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + ((uint)bVar18 * -2 + 1) * 4);",
+      "text": "pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 103,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + ((uint)bVar18 * -2 + 1) * 4);",
+      "text": "pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 131,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + ((uint)bVar18 * -2 + 1) * 4);",
+      "text": "pSVar16 = (SShapeEditorPolygon *)((int)pSVar16 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 132,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + ((uint)bVar18 * -2 + 1) * 4);",
+      "text": "pSVar17 = (SShapeEditorPolygon *)((int)pSVar17 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

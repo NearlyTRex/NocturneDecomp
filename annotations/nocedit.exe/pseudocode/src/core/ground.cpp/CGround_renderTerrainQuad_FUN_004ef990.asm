@@ -8,16 +8,15 @@
 ; int              Stack[0x8]:4   world_column
 ; int              Stack[0xc]:4   world_row
 ; Local Variables:
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x14]:4  local_14
+; SMRGLHeaderPrimitive Stack[-0x84]:24  SStack_84
+; int              Stack[-0x6c]:4  local_6c
+; int              Stack[-0x68]:4  local_68
+; int              Stack[-0x64]:4  local_64
+; SMRGLHeaderPrimitive Stack[-0x4c]:24  local_4c
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_ground.cpp_CGround_renderVisibleTerrain_FUN_004efb70 at 004efc72

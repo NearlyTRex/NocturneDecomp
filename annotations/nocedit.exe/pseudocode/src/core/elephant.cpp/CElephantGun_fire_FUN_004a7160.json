@@ -1,47 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 20,
-        "line": 88,
-        "message": "cannot cast from type 'float' to pointer type 'CFlameCan *'"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 89,
-        "message": "C-style cast from 'CFlameCan *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 90,
-        "message": "C-style cast from 'CFlameCan *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 33,
-        "line": 91,
-        "message": "C-style cast from 'CFlameCan *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 254,
+    "complexity_score": 258,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 209,
+    "pseudocode_lines": 213,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 314
+    "total_lines": 318
   },
   "cross_references": [],
   "function": {
@@ -189,18 +164,151 @@
     "pcode_op_count": 395
   },
   "stack_frame": {
-    "frame_size": 112,
-    "local_size": 108,
+    "frame_size": 292,
+    "local_size": 288,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "SStack_11c",
+        "offset": -284,
+        "size": 60,
+        "type": "SDamageInfo"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_e0",
+        "offset": -224,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_d4",
+        "offset": -212,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_c8",
+        "offset": -200,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_bc",
+        "offset": -188,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_b0",
+        "offset": -176,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_98",
+        "offset": -152,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_94",
+        "offset": -148,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_90",
+        "offset": -144,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_8c",
+        "offset": -140,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_80",
+        "offset": -128,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_74",
+        "offset": -116,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_70",
+        "offset": -112,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
         "name": "local_68",
         "offset": -104,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CVector3f[2]"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_48",
+        "offset": -72,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_44",
+        "offset": -68,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
@@ -218,10 +326,66 @@
       },
       {
         "is_param": false,
+        "name": "fStack_38",
+        "offset": -56,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_34",
+        "offset": -52,
+        "size": 4,
+        "type": "CTrigger *"
+      },
+      {
+        "is_param": false,
         "name": "pCStack_30",
         "offset": -48,
         "size": 4,
         "type": "CGlass *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "CFlameCan *"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "CGlass *"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": true,
@@ -252,7 +416,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 66,
       "match": "fptan",
       "severity": "mild",
       "text": "fVar6 = (float10)fptan((float10)this_ptr->spread_angle * (float10)3.1415926535000001 *",
@@ -260,23 +424,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 75,
       "match": "fcos",
       "severity": "mild",
-      "text": "fVar6 = (float10)fcos((float10)fStack_48);",
+      "text": "fVar11 = (float10)fcos((float10)fVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 76,
       "match": "fsin",
       "severity": "mild",
-      "text": "fVar7 = (float10)fsin((float10)fStack_48);",
+      "text": "fVar7 = (float10)fsin((float10)fVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
+      "line": 173,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(fStack_90 * fStack_90 + fStack_98 * fStack_98 + fStack_94 * fStack_94);",

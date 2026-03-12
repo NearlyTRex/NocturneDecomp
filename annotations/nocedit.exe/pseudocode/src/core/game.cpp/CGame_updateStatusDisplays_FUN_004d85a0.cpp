@@ -9,12 +9,13 @@
 void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_004d85a0(CGame *this_ptr)
 
 {
-  float fVar1;
+  float fVar2;
   int iVar2;
   int iVar3;
   CGame *pCVar4;
   char (*local_1c) [256];
   char (*local_18) [256];
+  float fVar1;
   
   fVar1 = this_ptr->message_timer - this_ptr->delta_time_float;
   this_ptr->message_timer = fVar1;
@@ -32,9 +33,9 @@ void __cdecl core_game_cpp_CGame_updateStatusDisplays_FUN_004d85a0(CGame *this_p
     pCVar4 = this_ptr;
     do {
       while( true ) {
-        fVar1 = pCVar4->status_bar_timers[0] - this_ptr->delta_time_float;
-        pCVar4->status_bar_timers[0] = fVar1;
-        if (0.0 < fVar1) break;
+        fVar2 = pCVar4->status_bar_timers[0] - this_ptr->delta_time_float;
+        pCVar4->status_bar_timers[0] = fVar2;
+        if (0.0 < fVar2) break;
         iVar2 = this_ptr->status_display_count + -1;
         this_ptr->status_display_count = iVar2;
         memmove(local_18,local_1c,(iVar2 - iVar3) * 0x100);

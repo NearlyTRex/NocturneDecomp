@@ -10,9 +10,9 @@ void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_005e6ca0(CVampi
 
 {
   uint uVar1;
-  char *sound_name;
   float local_78;
   char local_74 [104];
+  char *sound_name;
   
   if (0.0 < delta_time) {
     do {

@@ -7,8 +7,7 @@
 ; CLever *         Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   world_position
 ; Local Variables:
-; undefined1       Stack[-0x20]:1  local_20
-; undefined4       Stack[-0x18]:4  local_18
+; CVector3f        Stack[-0x20]:12  local_20
 ;
 ; XREF[1]:
 ;   core_hero.cpp_CHero_tryPullLever_FUN_004f2f50 at 004f3055

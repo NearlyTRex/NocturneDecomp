@@ -10,7 +10,10 @@ void __cdecl core_event_cpp_CEventList_render_FUN_004addf0(CEventList *this_ptr)
 
 {
   int y;
+  int y_00;
   int iVar1;
+  char (*pacVar1) [32];
+  int iVar2;
   char (*pacVar2) [32];
   char *pcVar3;
   int iVar4;
@@ -30,77 +33,73 @@ void __cdecl core_event_cpp_CEventList_render_FUN_004addf0(CEventList *this_ptr)
   y = 0x2c;
   iVar4 = 0;
   if (0 < (this_ptr->game_flags).count) {
-    pacVar2 = (this_ptr->game_flags).names;
-    iVar1 = y;
+    pacVar1 = (this_ptr->game_flags).names;
+    iVar2 = y;
     do {
-      _sprintf(local_218,"Game Flag: %s",pacVar2);
+      _sprintf(local_218,"Game Flag: %s",pacVar1);
       iVar4 = iVar4 + 1;
-      pacVar2 = pacVar2 + 1;
-      y = iVar1 + 0xb;
-      engine_2d_c_drawText_FUN_00401fd0(local_218,0,iVar1);
-      iVar1 = y;
+      pacVar1 = pacVar1 + 1;
+      y = iVar2 + 0xb;
+      engine_2d_c_drawText_FUN_00401fd0(local_218,0,iVar2);
+      iVar2 = y;
     } while (iVar4 < (this_ptr->game_flags).count);
   }
-  iVar4 = 0;
+  iVar2 = 0;
   if (0 < (this_ptr->persistent_events).count) {
-    pacVar2 = (this_ptr->persistent_events).names;
-    iVar1 = y;
+    pacVar1 = (this_ptr->persistent_events).names;
+    y_00 = y;
     do {
-      _sprintf(local_3a8,"Persistent: %s",pacVar2);
-      iVar4 = iVar4 + 1;
-      pacVar2 = pacVar2 + 1;
-      y = iVar1 + 0xb;
-      engine_2d_c_drawText_FUN_00401fd0(local_3a8,0,iVar1);
-      iVar1 = y;
-    } while (iVar4 < (this_ptr->persistent_events).count);
+      _sprintf(local_3a8,"Persistent: %s",pacVar1);
+      iVar2 = iVar2 + 1;
+      pacVar1 = pacVar1 + 1;
+      y = y_00 + 0xb;
+      engine_2d_c_drawText_FUN_00401fd0(local_3a8,0,y_00);
+      y_00 = y;
+    } while (iVar2 < (this_ptr->persistent_events).count);
   }
-  iVar4 = 0;
+  iVar2 = 0;
   if (0 < (this_ptr->timers).count) {
     pacVar2 = (this_ptr->timers).names;
     local_24 = this_ptr;
     do {
       _sprintf
                 (local_2e0,"Timer: %5.2f %s",(double)(local_24->timers).durations[0],pacVar2);
-      iVar4 = iVar4 + 1;
+      iVar2 = iVar2 + 1;
       engine_2d_c_drawText_FUN_00401fd0(local_2e0,0,y);
       pacVar2 = pacVar2 + 1;
       y = y + 0xb;
       local_24 = (CEventList *)(local_24->events).names;
-    } while (iVar4 < (this_ptr->timers).count);
+    } while (iVar2 < (this_ptr->timers).count);
   }
-  iVar4 = 0;
+  iVar2 = 0;
   if (0 < (this_ptr->current_events).count) {
-    pacVar2 = (this_ptr->current_events).names;
+    pacVar1 = (this_ptr->current_events).names;
     iVar1 = y;
     do {
-      iVar4 = iVar4 + 1;
+      iVar2 = iVar2 + 1;
       y = iVar1 + 0xb;
-      engine_2d_c_drawText_FUN_00401fd0(*pacVar2,0,iVar1);
-      pacVar2 = pacVar2 + 1;
+      engine_2d_c_drawText_FUN_00401fd0(*pacVar1,0,iVar1);
+      pacVar1 = pacVar1 + 1;
       iVar1 = y;
-    } while (iVar4 < (this_ptr->current_events).count);
+    } while (iVar2 < (this_ptr->current_events).count);
   }
-  iVar4 = 0;
+  iVar2 = 0;
   if (0 < (this_ptr->counters).count) {
-    local_1c = (this_ptr->counters).names;
     do {
       _sprintf(local_88,"%s=%d");
       engine_2d_c_drawText_FUN_00401fd0(local_88,0,y);
-      iVar4 = iVar4 + 1;
+      iVar2 = iVar2 + 1;
       y = y + 0xb;
-      local_1c = local_1c + 1;
-    } while (iVar4 < (this_ptr->counters).count);
+    } while (iVar2 < (this_ptr->counters).count);
   }
-  iVar4 = 0;
+  iVar2 = 0;
   if (0 < (this_ptr->actor_vars).count) {
-    local_18 = (this_ptr->actor_vars).var_names;
     do {
       _sprintf(local_ec,"%s=%s");
-      iVar4 = iVar4 + 1;
+      iVar2 = iVar2 + 1;
       engine_2d_c_drawText_FUN_00401fd0(local_ec,0,y);
       y = y + 0xb;
-      local_18 = local_18 + 1;
-    } while (iVar4 < (this_ptr->actor_vars).count);
+    } while (iVar2 < (this_ptr->actor_vars).count);
   }
   core_event_cpp_CEventList_updateSfxEntries_FUN_004b0db0(this_ptr);
   local_14 = 0;

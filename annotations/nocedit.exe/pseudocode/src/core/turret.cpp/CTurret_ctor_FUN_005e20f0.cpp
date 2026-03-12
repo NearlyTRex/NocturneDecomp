@@ -9,7 +9,7 @@
 CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
   CTurret *pCVar2;
   CTurret_ptr_1412 this_ptr_00;
   CVector3f *pCVar3;
@@ -17,6 +17,7 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
   char *pcVar5;
   CVector3f local_24;
   CVector3f local_18;
+  char cVar1;
   
   pCVar2 = (CTurret *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->model);
@@ -41,11 +42,11 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
     cVar1 = *pcVar4;
     *pcVar5 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
+    cVar2 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar1;
+    pcVar5[1] = cVar2;
     pcVar5 = pcVar5 + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   local_18.x = 0.0;
   local_18.y = 0.0;
   local_18.z = 1.0;

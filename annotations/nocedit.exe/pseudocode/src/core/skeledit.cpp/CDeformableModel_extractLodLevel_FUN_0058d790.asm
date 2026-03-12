@@ -10,34 +10,31 @@
 ; CMatrix3x4f *    Stack[0x10]:4   inverse_matrices
 ; Local Variables:
 ; undefined8       Stack[-0x540]:8  local_540
-; undefined4       Stack[-0x538]:4  local_538
-; undefined4       Stack[-0x534]:4  local_534
-; undefined4       Stack[-0x530]:4  local_530
-; undefined4       Stack[-0x52c]:4  local_52c
-; undefined        Stack[-0x528]:1  local_528
-; undefined4       Stack[-0x140]:4  local_140
-; undefined4       Stack[-0x13c]:4  local_13c
-; undefined        Stack[-0x138]:1  local_138
-; undefined        Stack[-0x70]:1  local_70
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
+; float            Stack[-0x538]:4  local_538
+; CVector3f        Stack[-0x534]:12  local_534
+; float[250]       Stack[-0x528]:1000  local_528
+; int              Stack[-0x140]:4  local_140
+; int              Stack[-0x13c]:4  local_13c
+; float[50]        Stack[-0x138]:200  local_138
+; CVector3f[2]     Stack[-0x70]:24  local_70
+; int              Stack[-0x58]:4  local_58
+; int              Stack[-0x54]:4  local_54
+; int              Stack[-0x50]:4  local_50
+; int              Stack[-0x4c]:4  local_4c
+; int              Stack[-0x48]:4  local_48
+; CDeformableModel * Stack[-0x44]:4  local_44
+; int              Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
+; float *          Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058d419

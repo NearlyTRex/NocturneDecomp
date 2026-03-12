@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 26,
-        "line": 26,
+        "line": 31,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 28,
+        "line": 33,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 43,
-        "line": 34,
+        "line": 39,
         "message": "format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 34,
+        "line": 39,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -31,17 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 262,
-    "complexity_score": 162,
+    "complexity_score": 167,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 97,
+    "pseudocode_lines": 102,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 359
+    "total_lines": 364
   },
   "cross_references": [
     {
@@ -277,21 +277,21 @@
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -312,50 +312,50 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 64,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "_fprintf(file_handle,\"%g,%g,%g\\n\",(double)*(float *)((int)&pCVar7->x + iVar8),",
+      "text": "_fprintf(file_handle,\"%g,%g,%g\\n\",(double)*(float *)((int)&pCVar8->x + iVar10),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 65,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "(double)*(float *)((int)&pCVar7->y + iVar8),",
+      "text": "(double)*(float *)((int)&pCVar8->y + iVar10),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 66,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "(double)*(float *)((int)&pCVar7->z + iVar8));",
+      "text": "(double)*(float *)((int)&pCVar8->z + iVar10));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 77,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "_fprintf(file_handle,\"%g,%g,%g\\n\",(double)*(float *)((int)&pCVar7->x + iVar8),",
+      "text": "_fprintf(file_handle,\"%g,%g,%g\\n\",(double)*(float *)((int)&pCVar8->x + iVar10),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 78,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "(double)*(float *)((int)&pCVar7->y + iVar8),",
+      "text": "(double)*(float *)((int)&pCVar8->y + iVar10),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 79,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "(double)*(float *)((int)&pCVar7->z + iVar8));",
+      "text": "(double)*(float *)((int)&pCVar8->z + iVar10));",
       "type": "pointer_cast"
     }
   ]

@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 172,
+    "complexity_score": 169,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 19,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 122,
+    "pseudocode_lines": 119,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 381
+    "total_lines": 378
   },
   "cross_references": [
     {
@@ -280,64 +280,64 @@
         "is_param": false,
         "name": "local_130",
         "offset": -304,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "CProceduralTexture *"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "CProceduralTexture *"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "uchar *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "uchar *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "CProceduralTexture *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CProceduralTexture *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -351,15 +351,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 68,
       "match": "(CProceduralTexture *)((int)",
       "severity": "mild",
-      "text": "pCVar10 = (CProceduralTexture *)((int)&pCVar9->width + 1);",
+      "text": "pCVar3 = (CProceduralTexture *)((int)&pCVar9->width + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 69,
       "match": "(CProceduralTexture *)((int)",
       "severity": "mild",
       "text": "pCVar7 = (CProceduralTexture *)((int)&pCVar7->width + 1);",
@@ -367,7 +367,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 110,
       "match": "(CProceduralTexture *)((int)",
       "severity": "mild",
       "text": "pCVar10 = (CProceduralTexture *)((int)&pCVar10->width + 1);",
@@ -375,7 +375,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 113,
+      "line": 111,
       "match": "CONCAT11",
       "severity": "mild",
       "text": "*piVar8 = (uint)bVar3 * 0x10000 + (uint)CONCAT11(bVar3,bVar3);",

@@ -9,13 +9,13 @@
 int __cdecl support_trisock_cpp_getSocketName_FUN_005e1df0(_SOCKET *socket_handle,SNetworkAddr *out_address)
 
 {
-  uint uVar1;
   int iVar2;
   SOCKADDR_IN *pSVar3;
   byte bVar4;
   SOCKADDR local_1c;
   SNetworkAddr SStack_c;
   int local_4;
+  uint uVar1;
   
   bVar4 = 0;
   local_4 = 0x10;

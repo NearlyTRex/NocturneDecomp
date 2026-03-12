@@ -7,7 +7,7 @@
 ; CZombie *        Stack[0x4]:4   this_ptr
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_zombie.cpp_CZombie_processDamage_FUN_005fc4f0 at 005fc4fd

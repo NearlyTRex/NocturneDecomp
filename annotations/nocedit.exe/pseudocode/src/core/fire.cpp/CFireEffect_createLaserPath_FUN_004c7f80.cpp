@@ -9,7 +9,7 @@
 void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue)
 
 {
-  float cone_angle;
+  float fVar1;
   float local_84;
   float local_80;
   CVector3f local_70;
@@ -30,6 +30,7 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80(CFireEffect 
   float local_24;
   float local_20;
   float local_14;
+  float cone_angle;
   
   local_80 = total_time;
   cone_angle = total_time * 0.05f;
@@ -47,20 +48,11 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80(CFireEffect 
     if (cone_angle < local_80) {
       local_84 = cone_angle;
     }
-    local_34 = local_28 * local_84;
-    local_30 = local_24 * local_84;
-    local_2c = local_20 * local_84;
-    local_14 = local_84 * (float)0.5 * local_84;
-    local_64 = local_14 * 0.0;
-    local_60 = local_14 * -32.0;
-    local_5c = local_14 * 0.0;
+    fVar1 = local_84 * (float)0.5 * local_84;
     local_80 = local_80 - local_84;
-    local_58 = local_70.x + local_34;
-    local_54 = local_70.y + local_30;
-    local_50 = local_70.z + local_2c;
-    local_40.x = local_58 + local_64;
-    local_40.y = local_54 + local_60;
-    local_40.z = local_50 + local_5c;
+    local_40.x = local_70.x + local_28 * local_84 + fVar1 * 0.0;
+    local_40.y = local_70.y + local_24 * local_84 + fVar1 * -32.0;
+    local_40.z = local_70.z + local_20 * local_84 + fVar1 * 0.0;
     if (local_80 <= 0.0) break;
     core_fire_cpp_CFireEffect_createLaserSegment_FUN_004c7eb0
               (this_ptr,&local_70,&local_40,beam_width,0.0,reflection_normal,red,green,blue,
@@ -70,12 +62,9 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80(CFireEffect 
       local_70.y = local_40.y;
       local_70.z = local_40.z;
     }
-    local_4c = local_84 * 0.0;
-    local_48 = local_84 * -32.0;
-    local_44 = local_84 * 0.0;
-    local_28 = local_28 + local_4c;
-    local_24 = local_24 + local_48;
-    local_20 = local_20 + local_44;
+    local_28 = local_28 + local_84 * 0.0;
+    local_24 = local_24 + local_84 * -32.0;
+    local_20 = local_20 + local_84 * 0.0;
   }
   core_fire_cpp_CFireEffect_createLaserSegment_FUN_004c7eb0
             (this_ptr,&local_70,&local_40,beam_width,reticle_intensity,reflection_normal,red,green,

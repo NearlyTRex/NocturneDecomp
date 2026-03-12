@@ -18,10 +18,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEd
   CStack_28.y = (float)(int)ROUND(world_position->y * 256.0f);
   CStack_28.z = (float)(int)ROUND(world_position->z * 256.0f);
   engine_3d_c_processCameraRelativePoint_FUN_004037e0(&CStack_28);
-  local_18 = (int)ROUND((orientation->vec).x * 10430.38f);
-  local_14 = (int)ROUND((orientation->vec).z * 10430.38f);
-  local_10 = (int)ROUND((orientation->vec).y * 10430.38f);
-  engine_matrix_c_matrixPushAndTransform_FUN_0050cee0(local_18,local_14,local_10,0,0,0);
+  engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
+            ((int)ROUND((orientation->vec).x * 10430.38f),
+             (int)ROUND((orientation->vec).z * 10430.38f),
+             (int)ROUND((orientation->vec).y * 10430.38f),0,0,0);
   shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(this_ptr,scale_factor,text_color);
   engine_matrix_c_pop_FUN_0050d720();
   return;

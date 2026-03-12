@@ -9,17 +9,18 @@
 int __cdecl support_codec_cpp_CLZWDictionary_readCodeFromBuffer_FUN_0043f0d0(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,char **input_buffer,int *bytes_remaining)
 
 {
+  int iVar3;
   int iVar1;
   int iVar2;
   uint uVar3;
   uint uVar4;
   
   uVar4 = 0;
-  iVar2 = this_ptr->entry_count;
+  iVar3 = this_ptr->entry_count;
   uVar3 = 1 << ((char)this_ptr->current_num_bits - 1U & 0x1f);
   if (uVar3 == 0) goto LAB_0043f119;
   do {
-    if ((iVar2 - 1U & uVar3) != 0) {
+    if ((iVar3 - 1U & uVar3) != 0) {
       iVar1 = support_codec_cpp_extractBitsFromBuffer_FUN_0043e840
                         (bit_buffer,1,input_buffer,bytes_remaining);
       if (iVar1 < 0) {

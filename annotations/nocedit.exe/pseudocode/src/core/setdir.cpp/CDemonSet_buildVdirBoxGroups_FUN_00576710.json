@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 65,
+    "complexity_score": 67,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 52,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 166
+    "total_lines": 168
   },
   "cross_references": [
     {
@@ -106,14 +106,14 @@
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -155,7 +155,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 37,
       "match": "(SVDBox *)((int)",
       "severity": "mild",
       "text": "obb_a = (SVDBox *)((int)(this_ptr->vdir_boxes[0].rotation_matrix.m + -2) + local_28);",

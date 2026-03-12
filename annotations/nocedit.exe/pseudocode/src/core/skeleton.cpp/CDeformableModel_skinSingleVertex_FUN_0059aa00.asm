@@ -10,14 +10,14 @@
 ; int              Stack[0x10]:4   vertex_index
 ; CMatrix3x4f *    Stack[0x14]:4   bone_matrices
 ; Local Variables:
-; undefined1       Stack[-0x38]:1  local_38
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x38]:12  local_38
+; float            Stack[-0x2c]:4  local_2c
+; float            Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; SVert *          Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 at 0059623a

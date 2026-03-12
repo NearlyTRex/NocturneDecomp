@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 26,
-        "line": 95,
+        "line": 93,
         "message": "use of undeclared identifier 'uint3'"
       },
       {
         "category": "syntax_error",
         "column": 33,
-        "line": 95,
+        "line": 93,
         "message": "expected expression"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 351,
-    "complexity_score": 184,
+    "complexity_score": 180,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 37,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 144,
+    "pseudocode_lines": 140,
     "suspect_count": 3,
     "suspect_types": [
       "nonstandard_int",
       "pointer_cast"
     ],
-    "total_lines": 495
+    "total_lines": 491
   },
   "cross_references": [
     {
@@ -377,29 +377,29 @@
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "char[16]"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "char[16]"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "_FILE *"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "SIZE_T"
       },
       {
         "is_param": false,
@@ -413,56 +413,56 @@
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "SIZE_T"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "SIZE_T"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -490,15 +490,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 85,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5) =",
+      "text": "*(uint *)((int)g_ThumbnailImageBuffer[0] + iVar3) =",
       "type": "pointer_cast"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 88,
+      "line": 86,
       "match": "uint3",
       "severity": "mild",
       "text": "(uint)*(uint3 *)(g_ThumbnailPalette +",
@@ -506,10 +506,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 137,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_ThumbnailImageBuffer[0] + iVar6) = 0xff00ff;",
+      "text": "*(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2) = 0xff00ff;",
       "type": "pointer_cast"
     }
   ]

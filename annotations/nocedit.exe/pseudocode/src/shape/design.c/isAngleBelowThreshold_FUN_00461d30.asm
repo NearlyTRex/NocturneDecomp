@@ -9,7 +9,7 @@
 ; double           Stack[0xc]:8   angle_threshold
 ; Local Variables:
 ; undefined8       Stack[-0x1c]:8  local_1c
-; undefined4       Stack[-0x14]:4  local_14
+; uint             Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0

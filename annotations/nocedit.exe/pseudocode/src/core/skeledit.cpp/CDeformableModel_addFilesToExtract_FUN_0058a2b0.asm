@@ -7,11 +7,9 @@
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined1       Stack[-0x2b]:1  local_2b
-; undefined1       Stack[-0x29]:1  local_29
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[20]         Stack[-0x2c]:20  local_2c
+; int              Stack[-0x18]:4  local_18
+; STextureSet *    Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070 at 004be0fe

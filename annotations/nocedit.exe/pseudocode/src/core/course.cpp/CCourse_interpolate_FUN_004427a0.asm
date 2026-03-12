@@ -9,30 +9,25 @@
 ; CVector3f *      Stack[0xc]:4   out_pos
 ; CQuaternion4f *  Stack[0x10]:4   out_orient
 ; Local Variables:
+; float[1517]      Stack[-0x1850]:6068  afStackY_1850
 ; undefined8       Stack[-0x98]:8  local_98
 ; undefined8       Stack[-0x90]:8  local_90
 ; undefined8       Stack[-0x88]:8  local_88
 ; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
+; float            Stack[-0x7c]:4  local_7c
+; float            Stack[-0x78]:4  local_78
 ; undefined1       Stack[-0x74]:1  local_74
-; undefined1       Stack[-0x64]:1  local_64
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined8       Stack[-0x24]:8  local_24
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CQuaternion4f    Stack[-0x64]:16  local_64
+; float            Stack[-0x54]:4  local_54
+; float            Stack[-0x50]:4  local_50
+; float            Stack[-0x4c]:4  local_4c
+; float            Stack[-0x48]:4  local_48
+; float            Stack[-0x44]:4  local_44
+; float            Stack[-0x40]:4  local_40
+; undefined1[32]   Stack[-0x3c]:32  local_3c
+; float            Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_course.cpp_CCourse_evaluate_FUN_00442710 at 00442739

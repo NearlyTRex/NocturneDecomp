@@ -7,7 +7,7 @@
 ; CQuaternion4f *  Stack[0x4]:4   quat_in
 ; CVector3f *      Stack[0x8]:4   vector_out
 ; Local Variables:
-; undefined1       Stack[-0x34]:1  local_34
+; CMatrix3x3f      Stack[-0x34]:36  local_34
 ;
 ; XREF[7]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c169

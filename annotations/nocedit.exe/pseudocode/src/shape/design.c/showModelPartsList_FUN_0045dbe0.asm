@@ -4,10 +4,10 @@
 ; void __cdecl shape_design_c_showModelPartsList_FUN_0045dbe0(void)
 ;
 ; Local Variables:
-; undefined        Stack[-0xcc]:1  local_cc
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; char[172]        Stack[-0xcc]:172  local_cc
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Part_d_s_0061b43b

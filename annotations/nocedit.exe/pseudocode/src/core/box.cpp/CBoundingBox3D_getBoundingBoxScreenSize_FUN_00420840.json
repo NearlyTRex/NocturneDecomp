@@ -174,43 +174,29 @@
         "is_param": false,
         "name": "local_34",
         "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -262,10 +248,18 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 11,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_34.x = (int)ROUND(local_28 * 256.0f);",
+      "text": "local_34.x = (int)ROUND(((this_ptr->min).x + (this_ptr->max).x) * 0.5f *",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_34.y = (int)ROUND(((this_ptr->min).y + (this_ptr->max).y) * 0.5f *",
       "type": "decompiler_intrinsic"
     },
     {
@@ -273,15 +267,7 @@
       "line": 15,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_34.y = (int)ROUND(local_24 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_34.z = (int)ROUND(local_20 * 256.0f);",
+      "text": "local_34.z = (int)ROUND(((this_ptr->min).z + (this_ptr->max).z) * 0.5f *",
       "type": "decompiler_intrinsic"
     },
     {

@@ -6,7 +6,7 @@
 ; Parameters:
 ; CGrave *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
+; int              Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_model_name_0062e48c

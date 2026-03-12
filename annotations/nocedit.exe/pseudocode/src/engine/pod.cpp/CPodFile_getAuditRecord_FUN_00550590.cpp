@@ -42,9 +42,11 @@ void * __stack2_esi engine_pod_cpp_CPodFile_getAuditRecord_FUN_00550590(CPodFile
   puVar2 = local_144;
   puVar3 = output_buffer;
   for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
+    *puVar3 = *puVar2;
+    puVar2 = puVar2;
+    puVar3 = puVar3;
   }
   return output_buffer;
 }

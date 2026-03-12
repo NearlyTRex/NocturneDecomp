@@ -9,10 +9,11 @@
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet *this_ptr,SInputFace *face_data,int count,int alpha)
 
 {
-  short *psVar1;
-  longlong lVar2;
+  short *psVar2;
   int iVar3;
+  int iVar6;
   int iVar4;
+  int iVar7;
   int iVar5;
   byte bVar6;
   int aiStackY_1020 [960];
@@ -26,6 +27,8 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet
   CVector3i local_38;
   int local_2c;
   int local_28 [6];
+  short *psVar1;
+  longlong lVar2;
   
   bVar6 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -66,22 +69,22 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet
         local_28[3] = 0;
         local_28[5] = 0;
         do {
-          iVar3 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_28[3]);
+          iVar6 = *(int *)((int)&SStack_118.vertices[0].vertex_index + local_28[3]);
           if ((((this_ptr->skip_normal_normalization == 0) ||
-               (1.0 <= ABS(g_VertexNormalArray[iVar3].x))) ||
-              (1.0 <= ABS(g_VertexNormalArray[iVar3].y))) ||
-             (1.0 <= ABS(g_VertexNormalArray[iVar3].z))) {
-            local_2c = (int)ROUND(g_VertexNormalArray[iVar3].x);
-            local_28[0] = (int)ROUND(g_VertexNormalArray[iVar3].y);
-            local_28[1] = (int)ROUND(g_VertexNormalArray[iVar3].z);
+               (1.0 <= ABS(g_VertexNormalArray[iVar6].x))) ||
+              (1.0 <= ABS(g_VertexNormalArray[iVar6].y))) ||
+             (1.0 <= ABS(g_VertexNormalArray[iVar6].z))) {
+            local_2c = (int)ROUND(g_VertexNormalArray[iVar6].x);
+            local_28[0] = (int)ROUND(g_VertexNormalArray[iVar6].y);
+            local_28[1] = (int)ROUND(g_VertexNormalArray[iVar6].z);
           }
           else {
             local_50.x = (int)ROUND(g_LightingReferencePosition.x * 256.0f) -
-                         g_TransformedVertexArray[iVar3].x;
+                         g_TransformedVertexArray[iVar6].x;
             local_50.y = (int)ROUND(g_LightingReferencePosition.y * 256.0f) -
-                         g_TransformedVertexArray[iVar3].y;
+                         g_TransformedVertexArray[iVar6].y;
             local_50.z = (int)ROUND(g_LightingReferencePosition.z * 256.0f) -
-                         g_TransformedVertexArray[iVar3].z;
+                         g_TransformedVertexArray[iVar6].z;
             engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&local_50,&local_38);
             local_2c = local_38.x;
             local_28[(uint)bVar6 * -2] = *(int *)((int)&local_38 + (uint)bVar6 * -8 + 4);
@@ -98,38 +101,38 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0(CDemonSet
         } while (iVar5 < SStack_118.base.base.count);
       }
       if (1 < SStack_118.base.base.count) {
-        iVar3 = 4;
+        iVar6 = 4;
         do {
-          if ((0x8000 < local_d0) && (*(int *)((int)&local_d0 + iVar3) < -0x8000)) {
-            psVar1 = (short *)((int)&local_d0 + iVar3 + 2);
+          if ((0x8000 < local_d0) && (*(int *)((int)&local_d0 + iVar6) < -0x8000)) {
+            psVar1 = (short *)((int)&local_d0 + iVar6 + 2);
             *psVar1 = *psVar1 + 1;
           }
-          if ((local_d0 < -0x8000) && (0x8000 < *(int *)((int)&local_d0 + iVar3))) {
-            *(int *)((int)&local_d0 + iVar3) = *(int *)((int)&local_d0 + iVar3) + -0x10000;
+          if ((local_d0 < -0x8000) && (0x8000 < *(int *)((int)&local_d0 + iVar6))) {
+            *(int *)((int)&local_d0 + iVar6) = *(int *)((int)&local_d0 + iVar6) + -0x10000;
           }
-          if ((0x8000 < local_90) && (*(int *)((int)&local_90 + iVar3) < -0x8000)) {
-            psVar1 = (short *)((int)&local_90 + iVar3 + 2);
-            *psVar1 = *psVar1 + 1;
+          if ((0x8000 < local_90) && (*(int *)((int)&local_90 + iVar6) < -0x8000)) {
+            psVar2 = (short *)((int)&local_90 + iVar6 + 2);
+            *psVar2 = *psVar2 + 1;
           }
-          if ((local_90 < -0x8000) && (0x8000 < *(int *)((int)&local_90 + iVar3))) {
-            *(int *)((int)&local_90 + iVar3) = *(int *)((int)&local_90 + iVar3) + -0x10000;
+          if ((local_90 < -0x8000) && (0x8000 < *(int *)((int)&local_90 + iVar6))) {
+            *(int *)((int)&local_90 + iVar6) = *(int *)((int)&local_90 + iVar6) + -0x10000;
           }
-          iVar3 = iVar3 + 4;
-        } while (iVar3 < SStack_118.base.base.count * 4);
+          iVar6 = iVar6 + 4;
+        } while (iVar6 < SStack_118.base.base.count * 4);
       }
-      iVar3 = 0;
+      iVar6 = 0;
       if (0 < SStack_118.base.base.count) {
         iVar4 = 0;
-        iVar5 = 0;
+        iVar7 = 0;
         do {
-          *(int *)((int)&SStack_118.vertices[0].texture_u + iVar5) =
+          *(int *)((int)&SStack_118.vertices[0].texture_u + iVar7) =
                *(int *)((int)&local_d0 + iVar4) << 8;
-          *(int *)((int)&SStack_118.vertices[0].texture_v + iVar5) =
+          *(int *)((int)&SStack_118.vertices[0].texture_v + iVar7) =
                *(int *)((int)&local_90 + iVar4) << 8;
-          iVar3 = iVar3 + 1;
+          iVar6 = iVar6 + 1;
           iVar4 = iVar4 + 4;
-          iVar5 = iVar5 + 0xc;
-        } while (iVar3 < SStack_118.base.base.count);
+          iVar7 = iVar7 + 0xc;
+        } while (iVar6 < SStack_118.base.base.count);
       }
       if (this_ptr->skip_normal_normalization != 0) {
         SStack_118.base.surface_normal.C = 0;

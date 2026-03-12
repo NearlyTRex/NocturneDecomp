@@ -11,6 +11,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_commitShadowBuffer_FUN_00499e70(CDem
 {
   CDemonCube *pCVar1;
   int iVar2;
+  int iVar1;
   int grid_z;
   SVoxelGrid *pSVar3;
   SVoxelGrid *pSVar4;
@@ -39,10 +40,12 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_commitShadowBuffer_FUN_00499e70(CDem
                   pSVar3 = (SVoxelGrid *)((int)pSVar3 + (uint)bVar5 * -8 + 4);
                   pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -8 + 4);
                 }
-                for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-                  pSVar4->voxels[0][0] = pSVar3->voxels[0][0];
-                  pSVar3 = (SVoxelGrid *)((int)pSVar3 + (uint)bVar5 * -2 + 1);
+                for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
                   pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -2 + 1);
+                  pSVar3 = (SVoxelGrid *)((int)pSVar3 + (uint)bVar5 * -2 + 1);
+                  pSVar4->voxels[0][0] = pSVar3->voxels[0][0];
+                  pSVar3 = pSVar3;
+                  pSVar4 = pSVar4;
                 }
               }
               grid_z = grid_z + 1;

@@ -9,14 +9,15 @@
 int __cdecl support_trisock_cpp_connectSocket_FUN_005e1bd0(_SOCKET *socket_handle,SNetworkAddr *dest_addr)
 
 {
+  int iVar1;
   uint *puVar1;
   uint *puVar2;
   byte bVar3;
   uint auStackY_1804 [1524];
   SOCKADDR_IN *name;
-  int iVar4;
   SOCKADDR_IN local_28;
   SOCKADDR_IN local_18;
+  int iVar4;
   
   bVar3 = 0;
   support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(dest_addr,&local_18);
@@ -30,6 +31,6 @@ int __cdecl support_trisock_cpp_connectSocket_FUN_005e1bd0(_SOCKET *socket_handl
        *(uint *)((int)&local_18 + (uint)bVar3 * -8 + 4);
   *puVar2 = *puVar1;
   puVar2[(uint)bVar3 * -2 + 1] = puVar1[(uint)bVar3 * -2 + 1];
-  iVar4 = connect(*socket_handle,(SOCKADDR *)name,iVar4);
-  return (uint)(iVar4 == 0);
+  iVar1 = connect(*socket_handle,(SOCKADDR *)name,iVar4);
+  return (uint)(iVar1 == 0);
 }

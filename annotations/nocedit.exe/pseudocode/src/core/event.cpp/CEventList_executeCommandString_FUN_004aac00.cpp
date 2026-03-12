@@ -9,11 +9,11 @@
 int __cdecl core_event_cpp_CEventList_executeCommandString_FUN_004aac00(CEventList *this_ptr,char *command_string)
 
 {
-  char cVar1;
   char *pcVar2;
   int iVar3;
   char *pcVar4;
   char local_6c [100];
+  char cVar1;
   
   do {
     while ((g_CharacterClassificationTable[(byte)(*command_string + 1)] & 2) != 0) {

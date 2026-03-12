@@ -11,25 +11,26 @@
 int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_00533c50(SMpegFrame frame_info)
 
 {
+  int iVar1;
   int local_10;
   
-  local_10 = (int)ROUND(ROUND((double)(*(int *)((frame_info.header)->mpeg_version * 0xb4 + 0x67e2d0
-                                               + (frame_info.header)->bitrate_index * 4) * 0x90) /
-                              g_MpegSampleRateTable[(frame_info.header)->mpeg_version]
-                              [(frame_info.header)->sampling_rate_index]));
+  iVar1 = (int)ROUND(ROUND((double)(*(int *)((frame_info.header)->mpeg_version * 0xb4 + 0x67e2d0 +
+                                            (frame_info.header)->bitrate_index * 4) * 0x90) /
+                           g_MpegSampleRateTable[(frame_info.header)->mpeg_version]
+                           [(frame_info.header)->sampling_rate_index]));
   if ((frame_info.header)->mpeg_version == 0) {
     if (frame_info.samples_per_granule == 1) {
-      local_10 = local_10 / 2 + -9;
+      local_10 = iVar1 / 2 + -9;
     }
     else {
-      local_10 = local_10 / 2 + -0x11;
+      local_10 = iVar1 / 2 + -0x11;
     }
   }
   else if (frame_info.samples_per_granule == 1) {
-    local_10 = local_10 + -0x11;
+    local_10 = iVar1 + -0x11;
   }
   else {
-    local_10 = local_10 + -0x20;
+    local_10 = iVar1 + -0x20;
   }
   if ((frame_info.header)->padding != 0) {
     local_10 = local_10 + 1;

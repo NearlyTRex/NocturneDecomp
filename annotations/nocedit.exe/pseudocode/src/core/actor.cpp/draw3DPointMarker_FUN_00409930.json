@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 100,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 65,
+    "pseudocode_lines": 67,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 312
+    "total_lines": 314
   },
   "cross_references": [],
   "function": {
@@ -131,22 +131,8 @@
         "is_param": false,
         "name": "local_14",
         "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_10",
-        "offset": -16,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c",
-        "offset": -12,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": true,
@@ -167,7 +153,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
+      "line": 14,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_14.x = (int)ROUND(world_position->x * 256.0f);",
@@ -175,7 +161,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
+      "line": 15,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_14.y = (int)ROUND(world_position->y * 256.0f);",
@@ -183,7 +169,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 16,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_14.z = (int)ROUND(world_position->z * 256.0f);",

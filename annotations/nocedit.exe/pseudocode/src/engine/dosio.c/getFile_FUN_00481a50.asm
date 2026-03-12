@@ -8,10 +8,7 @@
 ; char *           Stack[0x8]:4   filename
 ; char *           Stack[0xc]:4   mode
 ; Local Variables:
-; undefined1       Stack[-0x220]:1  local_220
-; undefined1       Stack[-0x120]:1  local_120
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x18]:4  local_18
+; SFoundFileInfo   Stack[-0x220]:532  local_220
 ;
 ; XREF[94]:
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0 at 00431b61

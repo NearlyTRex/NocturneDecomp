@@ -8,10 +8,10 @@
 ; Local Variables:
 ; undefined4       Stack[-0x80]:4  local_80
 ; undefined8       Stack[-0x74]:8  local_74
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; byte[80]         Stack[-0x6c]:80  local_6c
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_polygonReducer_FUN_004654e0 at 0046553f

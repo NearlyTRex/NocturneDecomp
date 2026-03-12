@@ -8,9 +8,9 @@
 ; CLodMeshPrecomputeEntry * Stack[0x8]:4   entry
 ; int              Stack[0xc]:4   render_mode
 ; Local Variables:
-; undefined        Stack[-0xa70]:1  local_a70
-; undefined        Stack[-0x6c8]:1  local_6c8
-; undefined        Stack[-0x320]:1  local_320
+; CPickList        Stack[-0xa70]:936  local_a70
+; CPickList        Stack[-0x6c8]:936  local_6c8
+; CLodMeshPrecomputeEntry Stack[-0x320]:784  local_320
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058d2d0

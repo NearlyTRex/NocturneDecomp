@@ -9,18 +9,10 @@
 int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160(CDeformableModelInstance *this_ptr,CVector3f *point)
 
 {
-  int iVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
-  float fVar9;
-  float fVar10;
-  float fVar11;
-  float fVar12;
+  float fVar1;
+  float fVar2_00;
+  float fVar13;
+  float fVar14;
   CSkeleton *pCVar13;
   CMatrix3x4f *pCVar14;
   CMatrix3x4f *pCVar15;
@@ -28,6 +20,18 @@ int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_005a1
   int local_4c;
   float local_40;
   CSkeleton *local_3c;
+  float fVar11;
+  float fVar6;
+  float fVar9;
+  float fVar12;
+  float fVar10;
+  float fVar3;
+  int iVar1;
+  float fVar4;
+  float fVar7;
+  float fVar2;
+  float fVar5;
+  float fVar8;
   
   iVar16 = 0;
   pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
@@ -52,36 +56,36 @@ int __cdecl core_skeleton_cpp_CDeformableModelInstance_findClosestBone_FUN_005a1
         fVar10 = SQRT(fVar11 * fVar11 + fVar8 * fVar8 + fVar9 * fVar9);
         if (fVar10 <= 0.0) {
 LAB_005a1348:
-          fVar2 = point->x - fVar2;
-          fVar3 = point->y - fVar3;
-          fVar2 = fVar3 * fVar3 + fVar2 * fVar2;
-          fVar7 = point->z - fVar4;
+          fVar1 = point->x - fVar2;
+          fVar2_00 = point->y - fVar3;
+          fVar1 = fVar2_00 * fVar2_00 + fVar1 * fVar1;
+          fVar2_00 = point->z - fVar4;
         }
         else {
           fVar12 = 1.0 / fVar10;
-          fVar8 = fVar8 * fVar12;
-          fVar9 = fVar9 * fVar12;
-          fVar11 = fVar11 * fVar12;
-          fVar12 = (point->z * fVar11 + point->x * fVar8 + point->y * fVar9) -
-                   (fVar4 * fVar11 + fVar2 * fVar8 + fVar3 * fVar9);
-          if (fVar12 <= 0.0) goto LAB_005a1348;
-          if (fVar12 < fVar10) {
-            fVar2 = point->x - (fVar2 + fVar8 * fVar12);
-            fVar3 = point->y - (fVar3 + fVar9 * fVar12);
-            fVar2 = fVar3 * fVar3 + fVar2 * fVar2;
-            fVar7 = point->z - (fVar4 + fVar11 * fVar12);
+          fVar1 = fVar8 * fVar12;
+          fVar2_00 = fVar9 * fVar12;
+          fVar13 = fVar11 * fVar12;
+          fVar14 = (point->z * fVar13 + point->x * fVar1 + point->y * fVar2_00) -
+                   (fVar4 * fVar13 + fVar2 * fVar1 + fVar3 * fVar2_00);
+          if (fVar14 <= 0.0) goto LAB_005a1348;
+          if (fVar14 < fVar10) {
+            fVar1 = point->x - (fVar2 + fVar1 * fVar14);
+            fVar2_00 = point->y - (fVar3 + fVar2_00 * fVar14);
+            fVar1 = fVar2_00 * fVar2_00 + fVar1 * fVar1;
+            fVar2_00 = point->z - (fVar4 + fVar13 * fVar14);
           }
           else {
-            fVar5 = point->x - fVar5;
-            fVar6 = point->y - fVar6;
-            fVar2 = fVar6 * fVar6 + fVar5 * fVar5;
-            fVar7 = point->z - fVar7;
+            fVar1 = point->x - fVar5;
+            fVar2_00 = point->y - fVar6;
+            fVar1 = fVar2_00 * fVar2_00 + fVar1 * fVar1;
+            fVar2_00 = point->z - fVar7;
           }
         }
-        fVar2 = SQRT(fVar7 * fVar7 + fVar2);
-        if (fVar2 < local_40) {
+        fVar1 = SQRT(fVar2_00 * fVar2_00 + fVar1);
+        if (fVar1 < local_40) {
           local_4c = iVar1;
-          local_40 = fVar2;
+          local_40 = fVar1;
         }
       }
       local_3c = (CSkeleton *)((local_3c->motion_list).state_names[1] + 2);

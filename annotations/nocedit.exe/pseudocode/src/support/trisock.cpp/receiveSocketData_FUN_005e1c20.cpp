@@ -9,13 +9,13 @@
 int __cdecl support_trisock_cpp_receiveSocketData_FUN_005e1c20(_SOCKET *socket_handle,char *buffer,int length,SNetworkAddr *source_addr)
 
 {
-  uint uVar1;
   int iVar2;
   SOCKADDR_IN *pSVar3;
   byte bVar4;
   SOCKADDR local_2c;
   SNetworkAddr SStack_1c;
   int local_14;
+  uint uVar1;
   
   bVar4 = 0;
   if (source_addr == (SNetworkAddr *)0x0) {

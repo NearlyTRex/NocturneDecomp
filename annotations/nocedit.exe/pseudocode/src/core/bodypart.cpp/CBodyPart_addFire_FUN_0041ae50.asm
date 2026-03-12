@@ -7,7 +7,7 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
 ; Local Variables:
-; undefined1       Stack[-0x18]:1  local_18
+; CVector3f        Stack[-0x18]:12  local_18
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:

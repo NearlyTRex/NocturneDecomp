@@ -9,13 +9,14 @@
 void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *this_ptr,char *name,float duration)
 
 {
-  double dVar1;
-  char cVar2;
+  char cVar1;
   int iVar3;
   int iVar4;
   char (*pacVar5) [32];
   uint local_20;
   uint uStack_1c;
+  double dVar1;
+  char cVar2;
   
   dVar1 = (double)duration;
   if (dVar1 < 0.0) {
@@ -39,11 +40,11 @@ void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_004b05a0(CEventList *th
         cVar2 = *name;
         (*pacVar5)[0] = cVar2;
         if (cVar2 == '\0') break;
-        cVar2 = name[1];
+        cVar1 = name[1];
         name = name + 2;
-        (*pacVar5)[1] = cVar2;
+        (*pacVar5)[1] = cVar1;
         pacVar5 = (char (*) [32])(*pacVar5 + 2);
-      } while (cVar2 != '\0');
+      } while (cVar1 != '\0');
       (this_ptr->timers).durations[(this_ptr->timers).count] = duration;
       (this_ptr->timers).count = (this_ptr->timers).count + 1;
       return;

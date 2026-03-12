@@ -7,8 +7,8 @@
 ; CBitFont *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   screen_height
 ; Local Variables:
-; undefined        Stack[-0x30]:1  local_30
-; undefined4       Stack[-0x14]:4  local_14
+; char[28]         Stack[-0x30]:28  local_30
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_one_0062a762

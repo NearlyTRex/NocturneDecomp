@@ -7,13 +7,24 @@
 ; CSvetlana *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x1c]:4  local_1c
+; float            Stack[-0x98]:4  fStack_98
+; float            Stack[-0x8c]:4  fStack_8c
+; CVector3f        Stack[-0x84]:12  CStack_84
+; CVector3f        Stack[-0x78]:12  CStack_78
+; CVector3f        Stack[-0x6c]:12  local_6c
+; CVector3f        Stack[-0x60]:12  CStack_60
+; CVector3f        Stack[-0x54]:12  CStack_54
+; CVector3f        Stack[-0x48]:12  CStack_48
+; float            Stack[-0x3c]:4  fStack_3c
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  local_30
+; float            Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; CPathMap *       Stack[-0x20]:4  pCStack_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  fStack_18
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; XREF[1]:
 ;   core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0 at 005d8f54

@@ -13,6 +13,7 @@ void __cdecl core_setedit_cpp_CDemonSet_exportLightsAndCameras_FUN_0057a0c0(CDem
   int iVar1;
   C3DSCamera *this_ptr_00;
   C3DSLight *this_ptr_01;
+  int iVar2;
   char local_214 [260];
   char local_110 [256];
   
@@ -42,15 +43,15 @@ void __cdecl core_setedit_cpp_CDemonSet_exportLightsAndCameras_FUN_0057a0c0(CDem
       this_ptr_01 = this_ptr_01 + 1;
     } while (iVar1 < this_ptr->light_count);
   }
-  iVar1 = 0;
+  iVar2 = 0;
   _fprintf(file,"// camera list\n");
   if (0 < this_ptr->camera_count) {
     this_ptr_00 = this_ptr->cameras;
     do {
-      iVar1 = iVar1 + 1;
+      iVar2 = iVar2 + 1;
       core_setutil_cpp_C3DSCamera_exportS3D_FUN_00586190(this_ptr_00,file);
       this_ptr_00 = this_ptr_00 + 1;
-    } while (iVar1 < this_ptr->camera_count);
+    } while (iVar2 < this_ptr->camera_count);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x672);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790

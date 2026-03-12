@@ -9,7 +9,7 @@
 void __cdecl core_skeledit_cpp_CDeformableModel_cramModelTexture_FUN_0058de70(CDeformableModel *this_ptr,char *base_name,int num_crams,int atlas_dimension,int texture_set_index,int max_iterations)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
   uint uVar3;
   uint uVar4;
@@ -23,6 +23,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_cramModelTexture_FUN_0058de70(CD
   int local_1c;
   int local_18;
   int local_14;
+  char cVar1;
   
   __STK();
   shape_design_c_initializeTextureManager_FUN_0046a880(1);
@@ -75,11 +76,11 @@ void __cdecl core_skeledit_cpp_CDeformableModel_cramModelTexture_FUN_0058de70(CD
     cVar1 = *base_name;
     pSVar8->filename[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = base_name[1];
+    cVar2 = base_name[1];
     base_name = base_name + 2;
-    *(char *)((int)pSVar8 + 1) = cVar1;
-    pSVar8 = (SCram *)((int)pSVar8 + 2);
-  } while (cVar1 != '\0');
+    pSVar8->filename[1] = cVar2;
+    pSVar8 = (SCram *)(pSVar8->filename + 2);
+  } while (cVar2 != '\0');
   local_98.coverage_threshold = 0x5f;
   local_98.atlas_dimension = atlas_dimension;
   local_98.min_atlas_size = 1;

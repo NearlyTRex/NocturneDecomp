@@ -11,17 +11,14 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
 {
   int iVar1;
   int iVar2;
-  CVector3i *rotation;
   CVector3i local_70;
   CVector3i local_64;
-  uint local_58;
-  uint local_54;
-  uint local_50;
   CVector3i local_4c;
   CVector3i local_40;
   CVector3f local_34;
   CVector3i local_28;
   CVector3i local_1c;
+  CVector3i *rotation;
   
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -35,14 +32,11 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)&this_ptr->euler_angles,rotation);
   iVar2 = (this_ptr->texture_index & 1U) * 0x800000;
-  local_50 = 0;
   g_RenderVertexBuffer[0].u = iVar2 + 0x80000;
   iVar1 = (this_ptr->texture_index & 2U) * 0x400000;
   g_RenderVertexBuffer[1].u = iVar2 + 0x780000;
   g_RenderVertexBuffer[0].v = iVar1 + 0x780000;
   g_RenderVertexBuffer[2].v = iVar1 + 0x80000;
-  local_58 = 0xbe2e147b;
-  local_54 = 0xbe2e147b;
   local_40.x = (int)ROUND(256.0f * -0.17);
   local_40.y = (int)ROUND(256.0f * -0.17);
   local_40.z = (int)ROUND(256.0f * 0.0);
@@ -52,25 +46,16 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004bfac0(CBulletHole *this_ptr
   g_RenderVertexBuffer[3].v = g_RenderVertexBuffer[2].v;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_40);
-  local_58 = 0x3e2e147b;
-  local_54 = 0xbe2e147b;
-  local_50 = 0;
   local_70.x = (int)ROUND(256.0f * 0.17);
   local_70.y = (int)ROUND(256.0f * -0.17);
   local_70.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_70);
-  local_58 = 0x3e2e147b;
-  local_54 = 0x3e2e147b;
-  local_50 = 0;
   local_1c.x = (int)ROUND(256.0f * 0.17);
   local_1c.y = (int)ROUND(256.0f * 0.17);
   local_1c.z = (int)ROUND(256.0f * 0.0);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_1c);
-  local_58 = 0xbe2e147b;
-  local_50 = 0;
-  local_54 = 0x3e2e147b;
   local_28.x = (int)ROUND(256.0f * -0.17);
   local_28.y = (int)ROUND(256.0f * 0.17);
   local_28.z = (int)ROUND(256.0f * 0.0);

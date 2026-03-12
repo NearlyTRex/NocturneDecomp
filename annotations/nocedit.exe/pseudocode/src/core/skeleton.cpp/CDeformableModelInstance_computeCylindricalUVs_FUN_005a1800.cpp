@@ -12,17 +12,19 @@
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(CDeformableModelInstance *this_ptr,int u_offset,int v_offset)
 
 {
-  int iVar1;
-  CVector3i *pCVar2;
   CDeformableModel *pCVar3;
   SRenderVertex *pSVar4;
+  int iVar2;
   int iVar5;
   int iVar6;
   int *piVar7;
   int iVar8;
   int iVar9;
   int iVar10;
+  int iVar3;
   float10 fVar11;
+  CVector3i *pCVar2;
+  int iVar1;
   
   if (this_ptr->cached_skinned_lod_index < 0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
@@ -35,16 +37,16 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FU
   iVar10 = 1;
   iVar8 = pCVar2->y;
   iVar9 = iVar8;
-  iVar5 = iVar8;
+  iVar3 = iVar8;
   if (1 < iVar1) {
     do {
-      iVar6 = pCVar2[1].y;
-      iVar9 = iVar6;
-      if ((iVar5 <= iVar6) && (iVar9 = iVar5, iVar8 < iVar6)) {
-        iVar8 = iVar6;
+      iVar2 = pCVar2[1].y;
+      iVar9 = iVar2;
+      if ((iVar3 <= iVar2) && (iVar9 = iVar3, iVar8 < iVar2)) {
+        iVar8 = iVar2;
       }
       iVar10 = iVar10 + 1;
-      iVar5 = iVar9;
+      iVar3 = iVar9;
       pCVar2 = pCVar2 + 1;
     } while (iVar10 < iVar1);
   }
@@ -53,24 +55,24 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FU
     iVar8 = 1;
   }
   if (0 < iVar1) {
-    iVar10 = 0;
     iVar5 = 0;
+    iVar3 = 0;
     do {
-      piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar10);
+      piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar3);
       if ((*piVar7 == 0) && (piVar7[2] == 0)) {
         pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
-        iVar6 = u_offset;
+        iVar2 = u_offset;
       }
       else {
         fVar11 = (float10)fpatan((float10)*piVar7,(float10)piVar7[2]);
-        iVar6 = u_offset + (int)ROUND(ROUND(fVar11 * (float10)2670176.8577967598));
+        iVar2 = u_offset + (int)ROUND(ROUND(fVar11 * (float10)2670176.8577967598));
         pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
       }
-      *(int *)((int)&pSVar4->u + iVar5) = iVar6;
+      *(int *)((int)&pSVar4->u + iVar5) = iVar2;
       iVar6 = iVar5 + 0x30;
       *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar5) =
            v_offset + (int)(((longlong)(piVar7[1] - iVar9) * 0x1000000) / (longlong)iVar8);
-      iVar10 = iVar10 + 0xc;
+      iVar3 = iVar3 + 0xc;
       iVar5 = iVar6;
     } while (iVar6 < iVar1 * 0x30);
   }

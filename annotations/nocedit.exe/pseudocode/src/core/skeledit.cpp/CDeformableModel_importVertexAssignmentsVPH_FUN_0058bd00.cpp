@@ -9,12 +9,11 @@
 void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00(CDeformableModel *this_ptr,char *filename,CBoneStructure *bone_structure)
 
 {
-  byte *pbVar1;
-  float fVar2;
-  _FILE *file;
   int iVar3;
   CVector3f *pCVar4;
+  int iVar1;
   char (*bone_name) [50];
+  int iVar2;
   CVector3f *pCVar5;
   int iVar6;
   CMatrix3x4f *pCVar7;
@@ -43,6 +42,9 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   uchar *local_1c;
   int local_18;
   SIZE_T local_14;
+  float fVar2;
+  _FILE *file;
+  byte *pbVar1;
   
   bVar10 = 0;
   __STK();
@@ -93,37 +95,35 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
       local_20 = this_ptr->vertex_data_ptr[0]->bone_indices + local_30 + -1;
       _fread(local_78,0x20,1,local_28);
       if (local_68 == 0) {
-        iVar8 = 0;
+        iVar2 = 0;
       }
       else {
-        iVar6 = local_68;
+        iVar1 = local_68;
         if (local_68 < 0) {
-          iVar6 = local_78[0];
+          iVar1 = local_78[0];
         }
-        iVar8 = aiStack_430[iVar6];
-        if (iVar8 < 0) {
+        iVar2 = aiStack_430[iVar1];
+        if (iVar2 < 0) {
           g_CurrentFilename = "..\\core\\skeledit.cpp";
           g_CurrentLineNumber = 0x5cc;
           core_main_c_displayErrorAndQuit_FUN_00506f10
-                    ("vertex %d is influenced by bone %s, but this bone isn't in the .BON file!",local_2c,g_SkeletonBoneNames + iVar6);
+                    ("vertex %d is influenced by bone %s, but this bone isn't in the .BON file!",local_2c,g_SkeletonBoneNames + iVar1);
         }
       }
-      if ((bone_structure->bones[iVar8].parent_index < 1) || (local_68 < 1)) {
-        pbVar1 = local_20 + 4;
-        pbVar1[0] = 0;
-        pbVar1[1] = 0;
-        pbVar1[2] = 0x80;
-        pbVar1[3] = 0x3f;
-        *local_20 = 1;
-        local_20[1] = (byte)iVar8;
+      if ((bone_structure->bones[iVar2].parent_index < 1) || (local_68 < 1)) {
+        local_20[4] = '\0';
+        local_20[5] = '\0';
+        local_20[6] = 0x80;
+        local_20[7] = '?';
+        *local_20 = '\x01';
+        local_20[1] = (uchar)iVar2;
       }
       else {
-        *local_20 = 2;
-        local_34 = local_64;
+        *local_20 = '\x02';
         fVar2 = local_64 * local_64 * local_64;
-        local_20[1] = (byte)iVar8;
+        local_20[1] = (uchar)iVar2;
         *(float *)(local_20 + 4) = fVar2;
-        local_20[2] = (byte)bone_structure->bones[iVar8].parent_index;
+        local_20[2] = (uchar)bone_structure->bones[iVar2].parent_index;
         *(float *)(local_20 + 8) = 1.0 - fVar2;
       }
       local_58.x = *(float *)(local_20 + 0x10);
@@ -135,10 +135,12 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
         core_xform_cpp_inverse_FUN_005f6210(&local_24[local_1c[1]].world_matrix,&local_d8);
         pCVar7 = &local_d8;
         pCVar9 = &local_a8;
-        for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+        for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+          pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar10 * -8 + 4);
+          pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar10 * -8 + 4);
           pCVar9->m[0].w = pCVar7->m[0].w;
-          pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar10 * -2 + 1) * 4);
-          pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar10 * -2 + 1) * 4);
+          pCVar7 = pCVar7;
+          pCVar9 = pCVar9;
         }
         pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_4c,&local_58,&local_a8);
         if (pCVar5 != pCVar4) {

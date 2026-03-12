@@ -9,11 +9,11 @@
 double __cdecl shape_meshlod_cpp_computeDistanceSquaredToEdge_FUN_00515110(CVector3f *query_point,CVector3f *edge_vertex_0,CVector3f *edge_vertex_1)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
   CVector3f *pCVar4;
   CVector3f local_24 [2];
+  float fVar3;
+  float fVar1;
+  float fVar2;
   
   pCVar4 = shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
                      (local_24,query_point,edge_vertex_0,edge_vertex_1);

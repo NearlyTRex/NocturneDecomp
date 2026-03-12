@@ -1,20 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 231,
+    "complexity_score": 312,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
-    "suspect_count": 15,
+    "pseudocode_lines": 67,
+    "suspect_count": 22,
     "suspect_types": [
+      "decompiler_intrinsic",
       "pointer_cast",
       "special_crt_function",
       "unaffected_reg",
       "unknown_field"
     ],
-    "total_lines": 184
+    "total_lines": 190
   },
   "cross_references": [
     {
@@ -135,50 +136,8 @@
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 8,
-        "type": "undefined8"
+        "size": 32,
+        "type": "MathErrorContext"
       },
       {
         "is_param": false,
@@ -241,7 +200,7 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 5,
+      "line": 6,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "int unaff_EBX;",
@@ -249,7 +208,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 9,
+      "line": 10,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_3c.inputValue1._0_4_ = *(uint *)value1;",
@@ -257,7 +216,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 10,
+      "line": 11,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_3c.inputValue1._4_4_ = *(uint *)((int)value1 + 4);",
@@ -265,7 +224,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 10,
+      "line": 11,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_3c.inputValue1._4_4_ = *(uint *)((int)value1 + 4);",
@@ -273,7 +232,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 11,
+      "line": 12,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_3c.inputValue2._0_4_ = *(uint *)value2;",
@@ -281,7 +240,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 12,
+      "line": 13,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_3c.inputValue2._4_4_ = *(uint *)((int)value2 + 4);",
@@ -289,7 +248,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 12,
+      "line": 13,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_3c.inputValue2._4_4_ = *(uint *)((int)value2 + 4);",
@@ -297,7 +256,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 19,
+      "line": 20,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = 5;",
@@ -305,7 +264,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 23,
+      "line": 24,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = 6;",
@@ -313,7 +272,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 27,
+      "line": 28,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = 4;",
@@ -321,7 +280,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 31,
+      "line": 32,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = 3;",
@@ -329,7 +288,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 35,
+      "line": 36,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = 2;",
@@ -337,15 +296,71 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 39,
+      "line": 40,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = 1;",
       "type": "unaffected_reg"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_3c.resultValue._0_4_ = *(uint *)value2;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uVar1 = *(uint *)((int)value2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 51,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_3c.resultValue._0_4_ = INFINITY._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 51,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_3c.resultValue._0_4_ = INFINITY._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 52,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "uVar1 = INFINITY._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 54,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_3c.resultValue = __BITCAST_DOUBLE(CONCAT44(uVar1,local_3c.resultValue._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 54,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "local_3c.resultValue = __BITCAST_DOUBLE(CONCAT44(uVar1,local_3c.resultValue._0_4_));",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 61,
+      "line": 67,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "local_3c.errorType = unaff_EBX;",

@@ -7,7 +7,7 @@
 ; CGargoyle *      Stack[0x4]:4   this_ptr
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
-; undefined1       Stack[-0x1c]:1  local_1c
+; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gargoyle_shatter_wav_0062da1f

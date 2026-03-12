@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 94,
+    "complexity_score": 98,
     "cross_reference_count": 1,
-    "function_call_count": 2,
+    "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 54,
+    "pseudocode_lines": 58,
     "suspect_count": 3,
     "suspect_types": [
       "negative_offset",
       "pointer_cast"
     ],
-    "total_lines": 129
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -44,11 +44,6 @@
       "addr": "005441f0",
       "is_variadic": false,
       "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0"
-    },
-    {
-      "addr": "EXTERNAL:0000001f",
-      "is_variadic": false,
-      "name": "waveOutGetDevCapsA"
     }
   ],
   "globals": [
@@ -121,8 +116,8 @@
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
-        "size": 1,
-        "type": "undefined1"
+        "size": 52,
+        "type": "tagWAVEOUTCAPSA"
       },
       {
         "is_param": true,
@@ -143,26 +138,26 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 44,
       "match": "(SSoundDeviceInfo *)((int)",
       "severity": "mild",
-      "text": "pSVar6 = (SSoundDeviceInfo *)((int)device_info + (uint)bVar7 * -2 + 1);",
+      "text": "pSVar6 = (SSoundDeviceInfo *)((int)pSVar6 + (uint)bVar7 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 44,
+      "line": 48,
       "match": "pSVar6[-1].",
       "severity": "mild",
-      "text": "pcVar3 = (char *)((int)&pSVar6[-1].is_emulated + 3);",
+      "text": "pcVar4 = (char *)((int)&pSVar6[-1].is_emulated + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 48,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "pcVar3 = (char *)((int)&pSVar6[-1].is_emulated + 3);",
+      "text": "pcVar4 = (char *)((int)&pSVar6[-1].is_emulated + 3);",
       "type": "pointer_cast"
     }
   ]

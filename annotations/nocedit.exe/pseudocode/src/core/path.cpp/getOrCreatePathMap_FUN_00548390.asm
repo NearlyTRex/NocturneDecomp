@@ -6,13 +6,11 @@
 ; Parameters:
 ; CLocation *      Stack[0x4]:4   location
 ; Local Variables:
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int[1015]        Stack[-0x101c]:4060  aiStackY_101c
+; CVector3i        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x28]:12  local_28
+; int              Stack[-0x1c]:4  local_1c
+; int[2]           Stack[-0x18]:8  local_18
 ;
 ; XREF[1]:
 ;   core_path.cpp_getPathMap_FUN_00548500 at 00548505

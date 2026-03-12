@@ -11,6 +11,7 @@ int __cdecl sound_sndmain_cpp_findBestSoundDevice_FUN_005ab3d0(void)
 {
   int iVar1;
   int iVar2;
+  int iVar3;
   SSoundDeviceInfo SStack_468;
   SSoundDeviceInfo SStack_350;
   SSoundDeviceInfo SStack_238;
@@ -30,36 +31,36 @@ int __cdecl sound_sndmain_cpp_findBestSoundDevice_FUN_005ab3d0(void)
       iVar2 = iVar2 + 1;
     } while (iVar2 < iVar1);
   }
-  iVar2 = 0;
+  iVar3 = 0;
   if (0 < iVar1) {
     do {
-      sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar2,&SStack_468);
+      sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar3,&SStack_468);
       if (((SStack_468.api_type == 1) && (SStack_468.is_primary_device != 0)) &&
          (SStack_468.is_emulated == 0)) {
-        return iVar2;
+        return iVar3;
       }
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < iVar1);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < iVar1);
   }
-  iVar2 = 0;
+  iVar3 = 0;
   if (0 < iVar1) {
     do {
-      sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar2,&SStack_120);
+      sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar3,&SStack_120);
       if ((SStack_120.api_type == 1) && (SStack_120.is_emulated == 0)) {
-        return iVar2;
+        return iVar3;
       }
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < iVar1);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < iVar1);
   }
-  iVar2 = 0;
+  iVar3 = 0;
   if (0 < iVar1) {
     do {
-      sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar2,&SStack_350);
+      sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar3,&SStack_350);
       if (SStack_350.api_type == 0) {
-        return iVar2;
+        return iVar3;
       }
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < iVar1);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < iVar1);
   }
   return 0;
 }

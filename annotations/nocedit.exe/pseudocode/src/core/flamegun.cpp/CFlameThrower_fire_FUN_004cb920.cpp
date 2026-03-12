@@ -9,11 +9,11 @@
 int __cdecl core_flamegun_cpp_CFlameThrower_fire_FUN_004cb920(CFlameThrower *this_ptr)
 
 {
-  int *piVar1;
-  float fVar2;
   CVector3f *input_local_point;
   CVector3f local_1c;
   CVector3f CStack_10;
+  int *piVar1;
+  float fVar2;
   
   if ((this_ptr->base).ammo_count < 1) {
     return 0;

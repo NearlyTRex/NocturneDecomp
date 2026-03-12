@@ -9,15 +9,18 @@
 void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_004a3270(CStrList *this_ptr)
 
 {
-  char cVar1;
-  CEditorTools *this_ptr_00;
   char *pcVar2;
+  char *text_data;
   char *pcVar3;
+  int iVar1;
   uint uVar4;
   int iVar5;
   int iVar6;
+  int index;
   char *buffer;
   byte bVar7;
+  char cVar1;
+  CEditorTools *this_ptr_00;
   
   bVar7 = 0;
   iVar6 = 0;
@@ -36,28 +39,29 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_004a3270(CStrList *
       iVar5 = iVar5 + ~uVar4;
     } while (iVar6 < this_ptr->item_count);
   }
-  pcVar2 = (char *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0(iVar5 + 1,"..\\shape\\edittool.cpp",0xc50);
-  if (pcVar2 == (char *)0x0) {
+  text_data = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                        (iVar5 + 1,"..\\shape\\edittool.cpp",0xc50);
+  if (text_data == (char *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 0xc51;
     core_main_c_displayErrorAndQuit_FUN_00506f10
               ("CStrList::copyToClipboard - out of memory for %d items, %d bytes",this_ptr->item_count,iVar5 + 1);
   }
-  iVar5 = 0;
-  buffer = pcVar2;
+  index = 0;
+  buffer = text_data;
   if (0 < this_ptr->item_count) {
     do {
-      pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,iVar5);
-      iVar5 = iVar5 + 1;
-      iVar6 = _sprintf(buffer,"%s\n",pcVar3);
-      buffer = buffer + iVar6;
-    } while (iVar5 < this_ptr->item_count);
+      pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,index);
+      index = index + 1;
+      iVar1 = _sprintf(buffer,"%s\n",pcVar3);
+      buffer = buffer + iVar1;
+    } while (index < this_ptr->item_count);
   }
   this_ptr_00 = g_CEditorToolsPtr;
   *buffer = '\0';
-  shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(this_ptr_00,pcVar2);
+  shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0(this_ptr_00,text_data);
   g_CurrentDebugFilename = "..\\shape\\edittool.cpp";
   g_CurrentDebugLine = 0xc61;
-  shape_memdbg_cpp_free_FUN_005fe659(pcVar2);
+  shape_memdbg_cpp_free_FUN_005fe659(text_data);
   return;
 }

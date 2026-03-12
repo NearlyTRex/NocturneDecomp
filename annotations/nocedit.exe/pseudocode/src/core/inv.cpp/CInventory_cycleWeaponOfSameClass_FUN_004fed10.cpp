@@ -9,7 +9,7 @@
 void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInventory *this_ptr,int direction)
 
 {
-  CWeapon *this_ptr_00;
+  CWeapon *this_ptr_02;
   CWeapon *this_ptr_01;
   char *str2;
   char *str1;
@@ -17,6 +17,7 @@ void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInvent
   int iVar2;
   int iVar3;
   CInventory *pCVar4;
+  CWeapon *this_ptr_00;
   
   core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0(this_ptr,1);
   if (this_ptr->selected_weapon != (CWeapon *)0x0) {
@@ -50,12 +51,12 @@ void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInvent
         ;
         iVar1 = _strcmp(str1,str2);
         if (iVar1 == 0) {
-          this_ptr_00 = this_ptr->selected_weapon;
-          if (this_ptr_01 == this_ptr_00) {
+          this_ptr_02 = this_ptr->selected_weapon;
+          if (this_ptr_01 == this_ptr_02) {
             return;
           }
-          if (this_ptr_00 != (CWeapon *)0x0) {
-            (*((this_ptr_00->base).vtable._ub)->process)(&this_ptr_00->base,0.1);
+          if (this_ptr_02 != (CWeapon *)0x0) {
+            (*((this_ptr_02->base).vtable._ub)->process)(&this_ptr_02->base,0.1);
           }
           this_ptr->selected_weapon = this_ptr_01;
           core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(this_ptr);

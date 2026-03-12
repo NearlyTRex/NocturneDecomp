@@ -6,7 +6,7 @@
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   vertex
 ; Local Variables:
-; undefined8       Stack[-0x18]:8  local_18
+; double           Stack[-0x18]:8  local_18
 ;
 ; XREF[2]:
 ;   shape_design.c_calculatePolygonAngularArea_FUN_00461ee0 at 00461fe4

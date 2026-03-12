@@ -9,7 +9,7 @@
 ; CONTEXT *        Stack[0xc]:4   ContextRecord
 ; void *           Stack[0x10]:4   DispatcherContext
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; PEXCEPTION_RECORD Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
@@ -26,8 +26,6 @@
 ; Called Functions:
 ;   crt_fpu.c_ClearFPUExceptions_FUN_0060ce50
 ;   crt_signal.c_raiseFPE_FUN_0060d028
-;   ExitProcess
-;   UnhandledExceptionFilter
 ;
 ; *****************************************************************************
 
@@ -219,8 +217,7 @@ section .text
     JZ 0x0060ab9a                       ; 0060ab8f
         ;   XREF to: 0060ab9a (CONDITIONAL_JUMP)  ; LAB_0060ab9a
     PUSH -0x1                           ; 0060ab91
-    CALL dword ptr CS:[0x611534]        ; 0060ab93
-        ;   XREF to: EXTERNAL:00000058 (UNCONDITIONAL_CALL)  ; g_ExitProcessFunc
+    CALL dword ptr CS:[0x611534]        ; 0060ab93 | g_ExitProcessFunc
     MOV EAX,0x1                         ; 0060ab9a
         ;   Label: LAB_0060ab9a
     ADD ESP,0x8                         ; 0060ab9f

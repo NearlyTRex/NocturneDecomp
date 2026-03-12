@@ -11,8 +11,8 @@
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_00488630(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 
 {
-  float fVar1;
   float fVar2;
+  float fVar1;
   
   fVar2 = g_DashAnimationThreshold;
   fVar1 = (float)g_DashLength;

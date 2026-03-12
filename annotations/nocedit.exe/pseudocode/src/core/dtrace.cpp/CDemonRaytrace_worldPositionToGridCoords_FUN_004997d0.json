@@ -1,37 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 52,
-        "line": 36,
-        "message": "use of undeclared identifier 'stack0xffffffe8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 23,
-        "line": 38,
-        "message": "use of undeclared identifier 'stack0xffffffec'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 234,
+    "complexity_score": 184,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
-    "suspect_count": 17,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
-      "pointer_cast",
       "stack_alignment_array",
-      "stack_ref",
       "unaffected_reg",
       "warning_inlined_function"
     ],
@@ -132,12 +117,19 @@
     "pcode_op_count": 347
   },
   "stack_frame": {
-    "frame_size": 52,
-    "local_size": 40,
+    "frame_size": 4116,
+    "local_size": 4104,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "aiStackY_1004",
+        "offset": -4100,
+        "size": 4064,
+        "type": "int[1016]"
+      },
       {
         "is_param": false,
         "name": "local_24",
@@ -157,21 +149,21 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": true,
@@ -207,7 +199,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 7,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "int *unaff_ESI;",
@@ -215,7 +207,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
+      "line": 9,
       "match": "aiStackY_1004",
       "severity": "moderate",
       "text": "int aiStackY_1004 [1016];",
@@ -278,28 +270,12 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 29,
-      "match": "&stack0xffffffe8",
-      "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 29,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);",
+      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = (&local_18)[(uint)bVar2 * -2];",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
@@ -308,22 +284,6 @@
       "severity": "moderate",
       "text": "(unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xffffffec",
-      "severity": "moderate",
-      "text": "*(int *)((int)&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
-      "type": "pointer_cast"
     },
     {
       "call_site_count": 2,

@@ -9,13 +9,13 @@
 long __cdecl strtol_internal(char *str,char **endptr,int base,int is_signed)
 
 {
-  char cVar1;
-  bool bVar2;
   int iVar3;
   char *pcVar4;
   char *pcVar5;
   void *pvVar6;
   void *pvVar7;
+  char cVar1;
+  bool bVar2;
   
   pcVar4 = str;
   if (endptr != (char **)0x0) {
@@ -51,9 +51,9 @@ long __cdecl strtol_internal(char *str,char **endptr,int base,int is_signed)
     pcVar4 = pcVar4 + 2;
   }
 LAB_0060ed14:
+  pvVar7 = (void *)0x0;
   bVar2 = false;
   pcVar5 = pcVar4;
-  pvVar7 = (void *)0x0;
   while (iVar3 = charToDigit(*pcVar5), iVar3 < base) {
     if ((&PTR_crt_thread_c_exit_thread_FUN_0060fa58_00685598)[base] < pvVar7) {
       bVar2 = true;

@@ -11,35 +11,42 @@
 ; int              Stack[0x14]:4   bone_index
 ; CDeformableModel_MotionBlendWeightFunc * Stack[0x18]:4   callback_func
 ; Local Variables:
-; undefined4       Stack[-0x938]:4  local_938
-; undefined1       Stack[-0x934]:1  local_934
-; undefined1       Stack[-0x134]:1  local_134
-; undefined1       Stack[-0x124]:1  local_124
-; undefined1       Stack[-0x114]:1  local_114
-; undefined1       Stack[-0x104]:1  local_104
-; undefined1       Stack[-0xf4]:1  local_f4
-; undefined1       Stack[-0xe4]:1  local_e4
-; undefined1       Stack[-0xd4]:1  local_d4
-; undefined1       Stack[-0xc4]:1  local_c4
-; undefined1       Stack[-0xb4]:1  local_b4
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float[1020]      Stack[-0x1940]:4080  afStackY_1940
+; float            Stack[-0x938]:4  local_938
+; CQuaternion4f[100] Stack[-0x934]:1600  local_934
+; int[100]         Stack[-0x2f4]:400  aiStack_2f4
+; float            Stack[-0x164]:4  fStack_164
+; float[3]         Stack[-0x160]:12  afStack_160
+; CQuaternion4f    Stack[-0x154]:16  CStack_154
+; CQuaternion4f    Stack[-0x144]:16  CStack_144
+; CQuaternion4f    Stack[-0x134]:16  local_134
+; undefined4       Stack[-0x124]:4  local_124
+; float[3]         Stack[-0x120]:12  afStack_120
+; CQuaternion4f    Stack[-0x114]:16  local_114
+; CQuaternion4f    Stack[-0x104]:16  local_104
+; float            Stack[-0xf4]:4  local_f4
+; float[3]         Stack[-0xf0]:12  afStack_f0
+; CQuaternion4f    Stack[-0xe4]:16  local_e4
+; CQuaternion4f    Stack[-0xd4]:16  local_d4
+; CQuaternion4f    Stack[-0xc4]:16  local_c4
+; CQuaternion4f[4] Stack[-0xb4]:64  local_b4
+; float[3]         Stack[-0x68]:12  afStack_68
+; int              Stack[-0x5c]:4  local_5c
+; int[3]           Stack[-0x58]:12  local_58
+; CQuaternion4f *  Stack[-0x4c]:4  local_4c
+; int              Stack[-0x48]:4  local_48
+; int              Stack[-0x44]:4  local_44
+; CQuaternion4f *  Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; CDeformableModelInstance * Stack[-0x38]:4  local_38
+; CDeformableModelInstance * Stack[-0x34]:4  local_34
+; CSkeleton *      Stack[-0x30]:4  local_30
+; CQuaternion4f *  Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[14]:
 ;   core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0 at 0042d495

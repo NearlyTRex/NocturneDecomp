@@ -9,18 +9,14 @@
 ; int              Stack[0xc]:4   part_index
 ; int              Stack[0x10]:4   render_in_background
 ; Local Variables:
-; undefined1       Stack[-0x9c]:1  local_9c
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x70]:4  local_70
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined1       Stack[-0x30]:1  local_30
-; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CMatrix3x3f      Stack[-0x9c]:36  local_9c
+; int              Stack[-0x70]:4  local_70
+; CMatrix3x4f      Stack[-0x6c]:48  local_6c
+; CVector3i        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  local_30
+; CVector3f        Stack[-0x24]:12  local_24
+; CMatrix3x4f *    Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[13]:

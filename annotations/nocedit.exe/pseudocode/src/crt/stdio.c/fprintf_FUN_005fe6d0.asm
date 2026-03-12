@@ -7,7 +7,7 @@
 ; _FILE *          Stack[0x4]:4   file
 ; char *           Stack[0x8]:4   format
 ; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
+; undefined1 *     Stack[-0x8]:4  local_8
 ;
 ; XREF[117]:
 ;   cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480 at 004334ed

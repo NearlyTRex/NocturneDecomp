@@ -7,17 +7,18 @@
 ; CCloth *         Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x138]:1  local_138
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x238]:256  acStack_238
+; char[256]        Stack[-0x138]:256  local_138
+; float *          Stack[-0x38]:4  local_38
+; SClothBone *     Stack[-0x34]:4  local_34
+; _FILE *          Stack[-0x30]:4  local_30
+; float *          Stack[-0x2c]:4  local_2c
+; float *          Stack[-0x28]:4  local_28
+; CVector3f *      Stack[-0x24]:4  local_24
+; float *          Stack[-0x20]:4  local_20
+; float *          Stack[-0x1c]:4  local_1c
+; CVector3f *      Stack[-0x18]:4  local_18
+; float *          Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
 ;   core_cloth.cpp_CClothList_load_FUN_0043bfa0 at 0043c03b

@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 155,
+    "complexity_score": 157,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 95,
+    "pseudocode_lines": 97,
     "suspect_count": 5,
     "suspect_types": [
       "special_crt_function",
       "unaffected_reg"
     ],
-    "total_lines": 334
+    "total_lines": 336
   },
   "cross_references": [],
   "function": {
@@ -99,8 +99,8 @@
         "is_param": false,
         "name": "local_14",
         "offset": -20,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "char[4]"
       },
       {
         "is_param": true,
@@ -129,7 +129,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 51,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "((unaff_EDI = tell(this_ptr->__file_handle), -1 < unaff_EDI &&",
@@ -137,7 +137,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 51,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "((unaff_EDI = tell(this_ptr->__file_handle), -1 < unaff_EDI &&",
@@ -145,10 +145,10 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 92,
+      "line": 94,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "(iVar3 = lseek(this_ptr->__file_handle,unaff_EDI,0), -1 < iVar3))",
+      "text": "(iVar2 = lseek(this_ptr->__file_handle,unaff_EDI,0), -1 < iVar2))",
       "type": "unaffected_reg"
     },
     {

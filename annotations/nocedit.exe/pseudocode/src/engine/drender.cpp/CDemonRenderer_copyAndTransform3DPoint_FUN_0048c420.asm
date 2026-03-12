@@ -7,9 +7,7 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   input_point
 ; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
+; CQuaternion4f    Stack[-0x10]:16  CStack_10
 ;
 ; XREF[3]:
 ;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50 at 004983e2

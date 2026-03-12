@@ -8,15 +8,14 @@
 ; int              Stack[0x8]:4   screen_x
 ; int              Stack[0xc]:4   screen_y
 ; Local Variables:
-; undefined1       Stack[-0x64]:1  local_64
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CBoundingBox3D   Stack[-0x64]:24  local_64
+; CVector3f        Stack[-0x4c]:12  local_4c
+; CVector3f        Stack[-0x40]:12  CStack_40
+; CVector3f        Stack[-0x34]:12  CStack_34
+; CVector3f        Stack[-0x28]:12  local_28
+; float            Stack[-0x1c]:4  fStack_1c
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a3e1

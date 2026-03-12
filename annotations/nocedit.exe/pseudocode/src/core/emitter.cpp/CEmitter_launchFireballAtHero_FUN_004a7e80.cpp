@@ -11,8 +11,8 @@
 void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004a7e80(CEmitter *this_ptr)
 
 {
-  float fVar1;
   int iVar2;
+  float fVar2;
   CLocation *location;
   float10 fVar3;
   float10 fVar4;
@@ -20,6 +20,7 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004a7e80(CEmitte
   float10 fVar6;
   float10 fVar7;
   unkbyte10 Var8;
+  float10 fVar8;
   float local_6c;
   float local_68;
   float local_64;
@@ -32,6 +33,7 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004a7e80(CEmitte
   float local_18;
   float local_14;
   float local_10;
+  float fVar1;
   
   location = &(this_ptr->base).location;
   iVar2 = core_hero_cpp_closestHeroToPoint_FUN_004f2170(location);
@@ -44,29 +46,27 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004a7e80(CEmitte
     local_64 = local_58;
   }
   local_68 = local_68 + 5.0f;
-  local_10 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-8.0,8.0);
-  local_6c = local_10 + local_6c;
-  local_10 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-8.0,8.0);
+  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-8.0,8.0);
+  local_6c = fVar2 + local_6c;
+  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-8.0,8.0);
   fVar3 = (float10)fsin((float10)-1.30899693895833);
   fVar4 = (float10)fptan((float10)1.30899693895833);
-  fVar5 = (float10)local_64;
-  local_64 = (float)((float10)local_10 + fVar5);
-  Var8 = fpatan((float10)local_6c,(float10)local_10 + fVar5);
-  fVar1 = SQRT(local_6c * local_6c + local_64 * local_64);
+  fVar8 = (float10)local_64;
+  local_64 = (float)((float10)fVar2 + fVar8);
+  Var8 = fpatan((float10)local_6c,(float10)fVar2 + fVar8);
+  fVar2 = SQRT(local_6c * local_6c + local_64 * local_64);
   fVar5 = (float10)fcos((float10)-1.30899693895833);
   fVar6 = (float10)fsin(Var8);
   fVar7 = (float10)fcos(Var8);
-  dStack_3c = (double)fVar1;
-  local_18 = fVar1 * (float)32 * fVar1;
-  fVar4 = fVar5 * (float10)2.0f * fVar5 * (fVar4 * (float10)fVar1 - (float10)local_68);
+  fVar8 = fVar5 * (float10)2.0f * fVar5 * (fVar4 * (float10)fVar2 - (float10)local_68);
   local_48.y = (float)-fVar3;
   local_48.x = (float)(fVar6 * fVar5);
   local_48.z = (float)(fVar7 * fVar5);
-  if ((float10)0 < fVar4) {
-    local_14 = SQRT(local_18 / (float)fVar4);
-    local_54.x = local_48.x * local_14;
-    local_54.y = local_48.y * local_14;
-    local_54.z = local_48.z * local_14;
+  if ((float10)0 < fVar8) {
+    fVar2 = SQRT((fVar2 * (float)32 * fVar2) / (float)fVar8);
+    local_54.x = local_48.x * fVar2;
+    local_54.y = local_48.y * fVar2;
+    local_54.z = local_48.z * fVar2;
     if (&local_48 != &local_54) {
       local_48.x = local_54.x;
       local_48.y = local_54.y;

@@ -15,52 +15,41 @@
 ; CPickList        Stack[-0x25a4]:936  local_25a4
 ; CPickList        Stack[-0x21fc]:936  local_21fc
 ; CPickList        Stack[-0x1e54]:936  local_1e54
-; undefined        Stack[-0x1aac]:1  local_1aac
-; undefined        Stack[-0x18ac]:1  local_18ac
-; undefined        Stack[-0x16ac]:1  local_16ac
-; undefined        Stack[-0x14ac]:1  local_14ac
-; undefined        Stack[-0x12ac]:1  local_12ac
-; undefined        Stack[-0x10ac]:1  local_10ac
-; undefined        Stack[-0xeac]:1  local_eac
-; undefined        Stack[-0xcac]:1  local_cac
-; undefined        Stack[-0xaac]:1  local_aac
-; undefined1       Stack[-0xaab]:1  local_aab
-; undefined        Stack[-0x980]:1  local_980
-; undefined        Stack[-0x854]:1  local_854
-; undefined1       Stack[-0x853]:1  local_853
-; undefined        Stack[-0x750]:1  local_750
-; undefined1       Stack[-0x74f]:1  local_74f
-; undefined        Stack[-0x64c]:1  local_64c
-; undefined1       Stack[-0x64b]:1  local_64b
-; undefined        Stack[-0x548]:1  local_548
-; undefined1       Stack[-0x547]:1  local_547
-; undefined        Stack[-0x444]:1  local_444
-; undefined1       Stack[-0x443]:1  local_443
-; undefined        Stack[-0x368]:1  local_368
-; undefined        Stack[-0x2a0]:1  local_2a0
-; undefined        Stack[-0x1d8]:1  local_1d8
-; undefined1       Stack[-0x1d7]:1  local_1d7
-; undefined1       Stack[-0x175]:1  local_175
-; undefined        Stack[-0x174]:1  local_174
-; undefined1       Stack[-0x173]:1  local_173
-; undefined        Stack[-0x110]:1  local_110
-; undefined1       Stack[-0x10f]:1  local_10f
-; undefined        Stack[-0xac]:1  local_ac
-; undefined1       Stack[-0xab]:1  local_ab
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[512]        Stack[-0x1aac]:512  local_1aac
+; char[512]        Stack[-0x18ac]:512  local_18ac
+; char[512]        Stack[-0x16ac]:512  local_16ac
+; char[512]        Stack[-0x14ac]:512  local_14ac
+; char[512]        Stack[-0x12ac]:512  local_12ac
+; char[512]        Stack[-0x10ac]:512  local_10ac
+; char[512]        Stack[-0xeac]:512  local_eac
+; char[512]        Stack[-0xcac]:512  local_cac
+; undefined1[300]  Stack[-0xaac]:300  local_aac
+; char[300]        Stack[-0x980]:300  local_980
+; CActorProperty   Stack[-0x854]:236  local_854
+; undefined1[260]  Stack[-0x750]:260  local_750
+; char[260]        Stack[-0x64c]:260  local_64c
+; CActorProperty   Stack[-0x548]:236  local_548
+; char[220]        Stack[-0x444]:220  local_444
+; char[200]        Stack[-0x368]:200  local_368
+; char[199]        Stack[-0x2a0]:199  local_2a0
+; char[100]        Stack[-0x1d9]:100  acStack_1d9
+; char[101]        Stack[-0x175]:101  local_175
+; char             Stack[-0x110]:1  local_110
+; undefined1[99]   Stack[-0x10f]:99  local_10f
+; char             Stack[-0xac]:1  local_ac
+; undefined1[99]   Stack[-0xab]:99  local_ab
+; CVector3f        Stack[-0x48]:12  local_48
+; float            Stack[-0x3c]:4  local_3c
+; float            Stack[-0x38]:4  local_38
+; float            Stack[-0x34]:4  local_34
+; CActorProperty * Stack[-0x30]:4  local_30
+; CActorProperty * Stack[-0x2c]:4  local_2c
+; CDemonActor *    Stack[-0x28]:4  local_28
+; CMotionList *    Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; char[30] *       Stack[-0x1c]:4  local_1c
+; CMotionList *    Stack[-0x18]:4  local_18
+; char *           Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730 at 0053c8a4

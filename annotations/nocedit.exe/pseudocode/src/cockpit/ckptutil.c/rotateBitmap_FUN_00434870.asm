@@ -9,13 +9,13 @@
 ; int              Stack[0xc]:4   height
 ; int              Stack[0x10]:4   bytes_per_pixel
 ; Local Variables:
-; undefined        Stack[-0x78]:1  local_78
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x78]:80  local_78
+; uint             Stack[-0x28]:4  local_28
+; uchar *          Stack[-0x24]:4  local_24
+; uint             Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; uint             Stack[-0x18]:4  local_18
+; uint             Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_ckptutil_c_00617f25

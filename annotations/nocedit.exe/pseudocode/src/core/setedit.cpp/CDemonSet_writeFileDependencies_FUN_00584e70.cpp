@@ -9,15 +9,18 @@
 void __cdecl core_setedit_cpp_CDemonSet_writeFileDependencies_FUN_00584e70(CDemonSet *this_ptr,_FILE *file_handle)
 
 {
-  char cVar1;
+  char cVar2;
   _FILE *file_ptr;
   C3DSCamera *pCVar2;
   char *pcVar3;
+  char *pcVar5;
+  char *pcVar6;
   char *pcVar4;
   char local_218 [256];
   char local_118 [256];
   CDemonSet *local_18;
   int local_14;
+  char cVar1;
   
   _fprintf(file_handle,"data\\%s\n",this_ptr->geometry_filename);
   if (this_ptr->use_enviro_model != 0) {
@@ -30,30 +33,30 @@ void __cdecl core_setedit_cpp_CDemonSet_writeFileDependencies_FUN_00584e70(CDemo
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
+    cVar2 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
+    pcVar4[1] = cVar2;
     pcVar4 = pcVar4 + 2;
-  } while (cVar1 != '\0');
-  pcVar3 = local_118;
+  } while (cVar2 != '\0');
+  pcVar6 = local_118;
   do {
-    pcVar4 = pcVar3;
-    if (*pcVar3 == '.') goto LAB_00584f0b;
-    if (*pcVar3 == '\0') break;
-    pcVar4 = pcVar3 + 1;
-    if (*pcVar4 == '.') goto LAB_00584f0b;
-    pcVar3 = pcVar3 + 2;
-  } while (*pcVar4 != '\0');
-  pcVar4 = (char *)0x0;
+    pcVar5 = pcVar6;
+    if (*pcVar6 == '.') goto LAB_00584f0b;
+    if (*pcVar6 == '\0') break;
+    pcVar5 = pcVar6 + 1;
+    if (*pcVar5 == '.') goto LAB_00584f0b;
+    pcVar6 = pcVar6 + 2;
+  } while (*pcVar5 != '\0');
+  pcVar5 = (char *)0x0;
 LAB_00584f0b:
-  if (pcVar4 == (char *)0x0) {
+  if (pcVar5 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0x1756;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to find ext in geomName");
   }
-  _sprintf(pcVar4,".zth");
+  _sprintf(pcVar5,".zth");
   _fprintf(file_handle,"data\\%s\n",local_118);
-  _sprintf(pcVar4,".thm");
+  _sprintf(pcVar5,".thm");
   _fprintf(file_handle,"data\\%s\n",local_118);
   local_14 = 0;
   if (0 < this_ptr->camera_count) {
@@ -64,35 +67,35 @@ LAB_00584f0b:
         _sprintf(local_118,"%s.raw",pCVar2);
         file_ptr = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_118,"rb");
         if (file_ptr == (_FILE *)0x0) {
-          pcVar4 = "art";
-          pcVar3 = local_218;
+          pcVar5 = "art";
+          pcVar6 = local_218;
           do {
-            cVar1 = *pcVar4;
-            *pcVar3 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar4[1];
-            pcVar4 = pcVar4 + 2;
-            pcVar3[1] = cVar1;
-            pcVar3 = pcVar3 + 2;
-          } while (cVar1 != '\0');
+            cVar2 = *pcVar5;
+            *pcVar6 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar5[1];
+            pcVar5 = pcVar5 + 2;
+            pcVar6[1] = cVar2;
+            pcVar6 = pcVar6 + 2;
+          } while (cVar2 != '\0');
         }
         else {
-          pcVar4 = "backdrop";
-          pcVar3 = local_218;
+          pcVar5 = "backdrop";
+          pcVar6 = local_218;
           do {
-            cVar1 = *pcVar4;
-            *pcVar3 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar4[1];
-            pcVar4 = pcVar4 + 2;
-            pcVar3[1] = cVar1;
-            pcVar3 = pcVar3 + 2;
-          } while (cVar1 != '\0');
+            cVar2 = *pcVar5;
+            *pcVar6 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar5[1];
+            pcVar5 = pcVar5 + 2;
+            pcVar6[1] = cVar2;
+            pcVar6 = pcVar6 + 2;
+          } while (cVar2 != '\0');
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",0x177e);
         }
         _fprintf(file_handle,"%s\\%s.raw\n",local_218,pCVar2);
         _fprintf(file_handle,"%s\\%s.act\n",local_218,pCVar2);
-        pcVar3 = "backdrop\\%s.fog\n";
+        pcVar6 = "backdrop\\%s.fog\n";
       }
       else {
         _fprintf(file_handle,"backdrop\\%sn.raw\n",pCVar2);
@@ -107,9 +110,9 @@ LAB_00584f0b:
         _fprintf(file_handle,"backdrop\\%su.act\n",pCVar2);
         _fprintf(file_handle,"backdrop\\%sd.raw\n",pCVar2);
         _fprintf(file_handle,"backdrop\\%sd.act\n",pCVar2);
-        pcVar3 = "backdrop\\%s.cm\n";
+        pcVar6 = "backdrop\\%s.cm\n";
       }
-      _fprintf(file_handle,pcVar3,pCVar2);
+      _fprintf(file_handle,pcVar6,pCVar2);
       local_18 = (CDemonSet *)&local_18->cameras[0].enabled;
       pCVar2 = pCVar2 + 1;
       local_14 = local_14 + 1;

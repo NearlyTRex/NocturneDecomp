@@ -4,9 +4,8 @@
 ; void __cdecl wincore_winrun_cpp_getJoystickState_FUN_005f43a0(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined1       Stack[-0x1c]:1  local_1c
+; JOYINFOEX        Stack[-0x50]:52  local_50
+; joyinfo_tag      Stack[-0x1c]:16  local_1c
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_resetKeyState_FUN_004dbe60 at 004dbe7e

@@ -194,64 +194,43 @@
         "is_param": false,
         "name": "local_34",
         "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
+        "size": 16,
+        "type": "CRect"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "CRect *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -268,7 +247,7 @@
       "line": 87,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if ((*(int *)((int)g_ScanlineSpanLeft + iVar7) <= pCVar6->top) &&",
+      "text": "if ((*(int *)((int)g_ScanlineSpanLeft + iVar7) <= pCVar2->top) &&",
       "type": "pointer_cast"
     },
     {
@@ -276,7 +255,7 @@
       "line": 88,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(pCVar6->left <= *(int *)((int)g_ScanlineSpanRight + iVar7))) {",
+      "text": "(pCVar2->left <= *(int *)((int)g_ScanlineSpanRight + iVar7))) {",
       "type": "pointer_cast"
     },
     {
@@ -284,7 +263,7 @@
       "line": 89,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if ((*(int *)((int)g_ScanlineSpanLeft + iVar7) <= pCVar6->left) &&",
+      "text": "if ((*(int *)((int)g_ScanlineSpanLeft + iVar7) <= pCVar2->left) &&",
       "type": "pointer_cast"
     },
     {
@@ -292,7 +271,7 @@
       "line": 90,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(pCVar6->top <= *(int *)((int)g_ScanlineSpanRight + iVar7))) goto LAB_0044c9e6;",
+      "text": "(pCVar2->top <= *(int *)((int)g_ScanlineSpanRight + iVar7))) goto LAB_0044c9e6;",
       "type": "pointer_cast"
     },
     {
@@ -300,7 +279,7 @@
       "line": 91,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (pCVar6->left < *(int *)((int)g_ScanlineSpanLeft + iVar7)) {",
+      "text": "if (pCVar2->left < *(int *)((int)g_ScanlineSpanLeft + iVar7)) {",
       "type": "pointer_cast"
     },
     {
@@ -308,7 +287,7 @@
       "line": 93,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_ScanlineSpanLeft + iVar7) = pCVar6->left;",
+      "text": "*(int *)((int)g_ScanlineSpanLeft + iVar7) = pCVar2->left;",
       "type": "pointer_cast"
     },
     {
@@ -316,7 +295,7 @@
       "line": 95,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)g_ScanlineSpanRight + iVar7) < pCVar6->top) {",
+      "text": "if (*(int *)((int)g_ScanlineSpanRight + iVar7) < pCVar2->top) {",
       "type": "pointer_cast"
     },
     {
@@ -324,7 +303,7 @@
       "line": 96,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_ScanlineSpanRight + iVar7) = pCVar6->top;",
+      "text": "*(int *)((int)g_ScanlineSpanRight + iVar7) = pCVar2->top;",
       "type": "pointer_cast"
     },
     {
@@ -332,7 +311,7 @@
       "line": 105,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_ScanlineSpanLeft + iVar9) = pCVar6->left;",
+      "text": "*(int *)((int)g_ScanlineSpanLeft + iVar9) = pCVar2->left;",
       "type": "pointer_cast"
     },
     {
@@ -340,7 +319,7 @@
       "line": 107,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_ScanlineSpanRight + iVar9) = pCVar6->top;",
+      "text": "*(int *)((int)g_ScanlineSpanRight + iVar9) = pCVar2->top;",
       "type": "pointer_cast"
     },
     {
@@ -380,7 +359,7 @@
       "line": 127,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "((void *)(*(int *)((int)g_ZBufferScanlineArray + iVar8) + *piVar1 * 4),",
+      "text": "((void *)(*(int *)((int)g_ZBufferScanlineArray + local_20) + *piVar1 * 4),",
       "type": "pointer_cast"
     }
   ]

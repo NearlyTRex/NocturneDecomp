@@ -9,19 +9,19 @@
 void __cdecl shape_design_c_groundCenterObject_FUN_00466a30(void)
 
 {
-  float fVar1;
-  float fVar2;
-  double dVar3;
-  double dVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
   uint local_44;
   uint uStack_40;
   uint local_2c;
   uint uStack_28;
   int local_14;
+  double dVar4;
+  float fVar1;
+  float fVar2;
+  float fVar7;
+  float fVar8;
+  float fVar5;
+  float fVar6;
+  double dVar3;
   
   fVar6 = 999999.9;
   fVar8 = 999999.9;

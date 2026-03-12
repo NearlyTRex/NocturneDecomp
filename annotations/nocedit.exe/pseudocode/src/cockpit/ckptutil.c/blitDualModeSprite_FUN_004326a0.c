@@ -9,18 +9,24 @@
 void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_004326a0(void *sprite_data,void *span_data,int dest_x,int dest_y,int width,int height)
 
 {
-  int iVar1;
-  int iVar2;
-  int iVar3;
+  int iVar5;
+  int iVar6;
+  int iVar9;
   int iVar4;
   ColorConversionFunc *pCVar5;
   int *piVar6;
+  int *piVar10;
   int iVar7;
+  int iVar11;
   int iVar8;
+  int iVar12;
   int local_28;
   int local_24;
   void *local_18;
   void *local_14;
+  int iVar1;
+  int iVar2;
+  int iVar3;
   
   iVar4 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
   if (sprite_data != (void *)0x0) {
@@ -61,16 +67,16 @@ void __cdecl cockpit_ckptutil_c_blitDualModeSprite_FUN_004326a0(void *sprite_dat
             (*pCVar5)(local_14,sprite_data,width);
           }
           else {
-            iVar8 = 0;
-            for (iVar7 = 0; piVar6 = (int *)((int)span_data + local_24), iVar7 < *piVar6;
-                iVar7 = iVar7 + 1) {
-              iVar1 = iVar8 + 0x44;
-              iVar2 = iVar8 + 4;
-              iVar3 = iVar8 + 4;
-              iVar8 = iVar8 + 4;
-              (*pCVar5)((void *)(*(int *)(iVar3 + (int)piVar6) * 2 + (int)local_14),
-                        (void *)(*(int *)(iVar2 + (int)piVar6) + (int)sprite_data),
-                        *(int *)(iVar1 + (int)piVar6));
+            iVar12 = 0;
+            for (iVar11 = 0; piVar10 = (int *)((int)span_data + local_24), iVar11 < *piVar10;
+                iVar11 = iVar11 + 1) {
+              iVar5 = iVar12 + 0x44;
+              iVar6 = iVar12 + 4;
+              iVar9 = iVar12 + 4;
+              iVar12 = iVar12 + 4;
+              (*pCVar5)((void *)(*(int *)(iVar9 + (int)piVar10) * 2 + (int)local_14),
+                        (void *)(*(int *)(iVar6 + (int)piVar10) + (int)sprite_data),
+                        *(int *)(iVar5 + (int)piVar10));
             }
           }
           local_24 = local_24 + 0x84;

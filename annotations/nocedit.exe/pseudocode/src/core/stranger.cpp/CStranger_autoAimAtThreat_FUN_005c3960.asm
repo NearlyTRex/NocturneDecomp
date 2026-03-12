@@ -8,10 +8,40 @@
 ; int              Stack[0x8]:4   hand_index
 ; float            Stack[0xc]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x24]:4  local_24
+; float            Stack[-0x1a8]:4  fStack_1a8
+; CVector3f[10]    Stack[-0x1a0]:120  aCStack_1a0
+; CMatrix3x3f      Stack[-0x128]:36  CStack_128
+; CVector3f        Stack[-0x100]:12  CStack_100
+; CVector3f[2]     Stack[-0xf4]:24  aCStack_f4
+; CVector3f        Stack[-0xdc]:12  CStack_dc
+; CVector3f        Stack[-0xd0]:12  CStack_d0
+; CVector3f        Stack[-0xc4]:12  CStack_c4
+; CVector3f        Stack[-0xb8]:12  CStack_b8
+; CVector3f        Stack[-0xac]:12  CStack_ac
+; CVector3f        Stack[-0xa0]:12  CStack_a0
+; CVector3f        Stack[-0x94]:12  CStack_94
+; CVector3f        Stack[-0x88]:12  CStack_88
+; EAimMode         Stack[-0x7c]:4  EStack_7c
+; EAimMode         Stack[-0x78]:4  EStack_78
+; EAimMode         Stack[-0x74]:4  EStack_74
+; CVector3f[2]     Stack[-0x70]:24  aCStack_70
+; float            Stack[-0x58]:4  fStack_58
+; float            Stack[-0x54]:4  fStack_54
+; float            Stack[-0x50]:4  fStack_50
+; float            Stack[-0x4c]:4  fStack_4c
+; int              Stack[-0x48]:4  local_48
+; float            Stack[-0x44]:4  fStack_44
+; int              Stack[-0x40]:4  iStack_40
+; int              Stack[-0x3c]:4  iStack_3c
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  local_30
+; float            Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  iStack_28
+; SArmAimData *    Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  fStack_20
+; CDemonActor *    Stack[-0x1c]:4  pCStack_1c
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960 at 005bc4e5

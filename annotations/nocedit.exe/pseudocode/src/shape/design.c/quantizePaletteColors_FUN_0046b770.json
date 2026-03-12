@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 89,
+    "complexity_score": 90,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 64,
+    "pseudocode_lines": 65,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 267
+    "total_lines": 268
   },
   "cross_references": [
     {
@@ -212,21 +212,21 @@
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
@@ -253,8 +253,8 @@
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 4,
-        "type": "undefined4"
+        "size": 1,
+        "type": "byte"
       },
       {
         "is_param": false,
@@ -268,7 +268,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -317,7 +317,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 48,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar2 = SQRT((float)(uVar6 * uVar6 + uVar5 * uVar5 + uVar4 * uVar4)) *",
@@ -325,7 +325,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 50,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT((float)(uVar9 * uVar9 + uVar8 * uVar8 + uVar7 * uVar7)) *",

@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   desired_state_index
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
-; undefined4       Stack[-0x10]:4  local_10
+; float            Stack[-0x10]:4  local_10
 ;
 ; XREF[19]:
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_0042de50 at 0042deac

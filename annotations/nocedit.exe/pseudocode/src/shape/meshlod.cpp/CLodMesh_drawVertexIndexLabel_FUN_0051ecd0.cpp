@@ -9,10 +9,10 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0(CLodMesh *this_ptr,int vertex_index)
 
 {
+  char local_28 [40];
+  int iVar3;
   SRenderVertex *pSVar1;
   int iVar2;
-  int iVar3;
-  char local_28 [40];
   
   pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   if ((int)(pSVar1[vertex_index].projected_vertex.screen_x & -0x80000000) != 0) {

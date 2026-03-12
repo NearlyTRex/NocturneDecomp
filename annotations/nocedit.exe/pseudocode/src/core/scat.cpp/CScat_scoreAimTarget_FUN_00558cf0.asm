@@ -8,7 +8,21 @@
 ; CDemonActor *    Stack[0x8]:4   target
 ; int              Stack[0xc]:4   hand_index
 ; Local Variables:
-; undefined1       Stack[-0xf8]:1  local_f8
+; CVector3f[10]    Stack[-0xf8]:120  local_f8
+; CBoundingBox3D   Stack[-0x80]:24  CStack_80
+; CVector3f        Stack[-0x68]:12  CStack_68
+; CVector3f        Stack[-0x5c]:12  CStack_5c
+; CVector3f        Stack[-0x50]:12  CStack_50
+; CVector3f        Stack[-0x44]:12  CStack_44
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; float            Stack[-0x28]:4  fStack_28
+; float            Stack[-0x24]:4  fStack_24
+; float            Stack[-0x20]:4  fStack_20
+; float            Stack[-0x1c]:4  fStack_1c
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; XREF[1]:
 ;   core_scat.cpp_CScat_updateAiming_FUN_00558720 at 00558a17

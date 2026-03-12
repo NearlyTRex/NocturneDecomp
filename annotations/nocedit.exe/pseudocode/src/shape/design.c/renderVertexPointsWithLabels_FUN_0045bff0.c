@@ -11,6 +11,10 @@
 void __cdecl shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0(void)
 
 {
+  int iVar1;
+  uint uVar2;
+  uint x;
+  uint y;
   char local_88 [80];
   CVector3i local_38;
   int local_2c;
@@ -38,28 +42,28 @@ void __cdecl shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0(void)
       while (local_20 = local_20 + 1, (int)local_20 < g_VertexCount) {
         if (g_LoadedVertices[g_VertexDepthSortedIndices[local_24]].vertex.z <
             g_LoadedVertices[g_VertexDepthSortedIndices[local_20]].vertex.z) {
-          local_14 = g_VertexDepthSortedIndices[local_24];
+          iVar1 = g_VertexDepthSortedIndices[local_24];
           g_VertexDepthSortedIndices[local_24] = g_VertexDepthSortedIndices[local_20];
-          g_VertexDepthSortedIndices[local_20] = local_14;
+          g_VertexDepthSortedIndices[local_20] = iVar1;
         }
       }
     }
     for (local_24 = 0; local_24 < g_VertexCount; local_24 = local_24 + 1) {
-      local_20 = g_VertexDepthSortedIndices[local_24];
+      uVar2 = g_VertexDepthSortedIndices[local_24];
       if ((g_WireframeMode == 0) || (g_CurrentPartIndex == -1)) {
 LAB_0045c20a:
         g_ActiveRenderColor = 7;
-        local_1c = g_RenderVertexBuffer[local_20].projected_vertex.screen_x >> 0x10;
-        local_18 = g_RenderVertexBuffer[local_20].projected_vertex.screen_y >> 0x10;
-        if ((int)(g_RenderVertexBuffer[local_20].projected_vertex.screen_x & -0x80000000) == 0) {
-          if (((local_1c < (uint)g_WindowWidth) && (local_18 < (uint)g_WindowHeight)) &&
-             (0 < g_RenderVertexBuffer[local_20].projected_vertex.transformed_z)) {
-            engine_2d_c_plotPixel_FUN_00401140(local_1c,local_18);
+        x = g_RenderVertexBuffer[uVar2].projected_vertex.screen_x >> 0x10;
+        y = g_RenderVertexBuffer[uVar2].projected_vertex.screen_y >> 0x10;
+        if ((int)(g_RenderVertexBuffer[uVar2].projected_vertex.screen_x & -0x80000000) == 0) {
+          if (((x < (uint)g_WindowWidth) && (y < (uint)g_WindowHeight)) &&
+             (0 < g_RenderVertexBuffer[uVar2].projected_vertex.transformed_z)) {
+            engine_2d_c_plotPixel_FUN_00401140(x,y);
           }
-          if (((local_1c + 8 < (uint)g_WindowWidth) && (local_18 + 0xc < (uint)g_WindowHeight)) &&
-             (0 < g_RenderVertexBuffer[local_20].projected_vertex.transformed_z)) {
-            _sprintf(local_88,"%d",local_20);
-            engine_2d_c_drawTextColor_FUN_00402430(local_88,local_1c + 1,local_18 + 1);
+          if (((x + 8 < (uint)g_WindowWidth) && (y + 0xc < (uint)g_WindowHeight)) &&
+             (0 < g_RenderVertexBuffer[uVar2].projected_vertex.transformed_z)) {
+            _sprintf(local_88,"%d",uVar2);
+            engine_2d_c_drawTextColor_FUN_00402430(local_88,x + 1,y + 1);
           }
         }
       }
@@ -68,8 +72,7 @@ LAB_0045c20a:
           if (g_ModelPolygonData[local_2c].part_assignment == g_CurrentPartIndex) {
             for (local_28 = 0; local_28 < (int)g_ModelPolygonData[local_2c].vertex_indices_count;
                 local_28 = local_28 + 1) {
-              if (g_ModelPolygonData[local_2c].vertex_indices[local_28] == local_20)
-              goto LAB_0045c20a;
+              if (g_ModelPolygonData[local_2c].vertex_indices[local_28] == uVar2) goto LAB_0045c20a;
             }
           }
         }

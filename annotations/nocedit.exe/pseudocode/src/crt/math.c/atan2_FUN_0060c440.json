@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 322,
+    "complexity_score": 323,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
+    "pseudocode_lines": 43,
     "suspect_count": 24,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -18,7 +18,7 @@
       "warning_indirect_jump",
       "warning_jumptable"
     ],
-    "total_lines": 174
+    "total_lines": 175
   },
   "cross_references": [
     {
@@ -182,25 +182,39 @@
     "pcode_op_count": 808
   },
   "stack_frame": {
-    "frame_size": 48,
-    "local_size": 48,
+    "frame_size": 44,
+    "local_size": 44,
     "param_offset": 0,
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 12,
-        "type": "undefined1[12]"
+        "name": "uStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "uint"
       },
       {
         "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 12,
-        "type": "undefined1[12]"
+        "name": "uStack_28",
+        "offset": -40,
+        "size": 2,
+        "type": "ushort"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1c",
+        "offset": -28,
+        "size": 2,
+        "type": "ushort"
       },
       {
         "is_param": false,
@@ -237,7 +251,7 @@
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 17,
+      "line": 18,
       "match": "unkuint10",
       "severity": "mild",
       "text": "uStack_20 = (uint)((unkuint10)y >> 0x20);",
@@ -245,7 +259,7 @@
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 18,
+      "line": 19,
       "match": "unkuint10",
       "severity": "mild",
       "text": "uStack_1c = (ushort)((unkuint10)y >> 0x40);",
@@ -253,7 +267,7 @@
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 19,
+      "line": 20,
       "match": "unkuint10",
       "severity": "mild",
       "text": "uStack_2c = (uint)((unkuint10)x >> 0x20);",
@@ -261,7 +275,7 @@
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 20,
+      "line": 21,
       "match": "unkuint10",
       "severity": "mild",
       "text": "uStack_28 = (ushort)((unkuint10)x >> 0x40);",
@@ -269,7 +283,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 22,
       "match": "CARRY4",
       "severity": "mild",
       "text": "if ((((CARRY4(uStack_2c,uStack_2c)) && (CARRY4(uStack_20,uStack_20))) &&",
@@ -277,7 +291,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 21,
+      "line": 22,
       "match": "CARRY4",
       "severity": "mild",
       "text": "if ((((CARRY4(uStack_2c,uStack_2c)) && (CARRY4(uStack_20,uStack_20))) &&",
@@ -285,7 +299,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 26,
       "match": "ABS",
       "severity": "mild",
       "text": "uVar2 = (uint)(ABS(y) <= ABS(x));",
@@ -293,7 +307,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 26,
       "match": "ABS",
       "severity": "mild",
       "text": "uVar2 = (uint)(ABS(y) <= ABS(x));",
@@ -301,7 +315,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
+      "line": 28,
       "match": "extraout_ST0",
       "severity": "moderate",
       "text": "iVar1 = (int)ROUND((float10)16.0f * extraout_ST0) << 4;",
@@ -309,7 +323,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 28,
       "match": "ROUND",
       "severity": "mild",
       "text": "iVar1 = (int)ROUND((float10)16.0f * extraout_ST0) << 4;",
@@ -317,7 +331,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
+      "line": 30,
       "match": "extraout_ST0_00",
       "severity": "moderate",
       "text": "fVar3 = extraout_ST0_00 * extraout_ST0_00;",
@@ -325,7 +339,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
+      "line": 30,
       "match": "extraout_ST0_00",
       "severity": "moderate",
       "text": "fVar3 = extraout_ST0_00 * extraout_ST0_00;",
@@ -333,15 +347,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 33,
       "match": "DAT_0068755c",
       "severity": "mild",
-      "text": "fVar3 = *(float10 *)(&DAT_0068755c + iVar1) +",
+      "text": "fVar1 = *(float10 *)(&DAT_0068755c + iVar1) +",
       "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 35,
+      "line": 36,
       "match": "extraout_ST0_00",
       "severity": "moderate",
       "text": "-0.33333333f * fVar3) * extraout_ST0_00 + extraout_ST0_00;",
@@ -349,7 +363,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 35,
+      "line": 36,
       "match": "extraout_ST0_00",
       "severity": "moderate",
       "text": "-0.33333333f * fVar3) * extraout_ST0_00 + extraout_ST0_00;",
@@ -357,7 +371,7 @@
     },
     {
       "description": "Jump table recovery failed",
-      "line": 36,
+      "line": 37,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x0060c599. Too many branches */",
@@ -365,7 +379,7 @@
     },
     {
       "description": "Indirect jump treated as call",
-      "line": 37,
+      "line": 38,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
@@ -373,7 +387,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 40,
       "match": "CARRY4",
       "severity": "mild",
       "text": "[(uVar2 * 2 + (uint)CARRY4((uint)uStack_1c << 0x10,(uint)uStack_1c << 0x10)) * 2 +",
@@ -381,7 +395,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 41,
       "match": "CARRY4",
       "severity": "mild",
       "text": "(uint)CARRY4((uint)uStack_28 << 0x10,(uint)uStack_28 << 0x10)])();",
@@ -389,10 +403,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 44,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar3 = (float10)fpatan(x,y);",
+      "text": "fVar1 = (float10)fpatan(x,y);",
       "type": "decompiler_intrinsic"
     },
     {

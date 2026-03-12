@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 113,
-        "line": 189,
+        "line": 193,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 363,
+    "complexity_score": 367,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 25,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 213,
+    "pseudocode_lines": 217,
     "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 838
+    "total_lines": 842
   },
   "cross_references": [
     {
@@ -417,78 +417,71 @@
         "is_param": false,
         "name": "local_134",
         "offset": -308,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_133",
-        "offset": -307,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "byte[256]"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "SShapeEditorPolygon *"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": true,
@@ -516,26 +509,18 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 106,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)local_18 + local_34 * 8) = local_34;",
+      "text": "*(int *)((int)base + local_34 * 8) = local_34;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 107,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)local_18 + local_34 * 8 + 4) = local_34;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 120,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)local_14 + local_2c->vertex_indices[local_30] * 4) = local_34;",
+      "text": "*(int *)((int)base + local_34 * 8 + 4) = local_34;",
       "type": "pointer_cast"
     },
     {
@@ -543,15 +528,7 @@
       "line": 125,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)local_18 + local_34 * 8 + 4) == *(int *)((int)local_18 + local_34 * 8)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 125,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)((int)local_18 + local_34 * 8 + 4) == *(int *)((int)local_18 + local_34 * 8)) {",
+      "text": "*(int *)((int)local_14 + g_ModelPolygonData[local_34].vertex_indices[local_30] * 4) =",
       "type": "pointer_cast"
     },
     {
@@ -559,7 +536,7 @@
       "line": 131,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)local_18 + local_30 * 8 + 4) == *(int *)((int)local_18 + local_30 * 8)",
+      "text": "if (*(int *)((int)base + local_34 * 8 + 4) == *(int *)((int)base + local_34 * 8)) {",
       "type": "pointer_cast"
     },
     {
@@ -567,36 +544,52 @@
       "line": 131,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)local_18 + local_30 * 8 + 4) == *(int *)((int)local_18 + local_30 * 8)",
+      "text": "if (*(int *)((int)base + local_34 * 8 + 4) == *(int *)((int)base + local_34 * 8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 136,
+      "line": 141,
       "match": "ABS",
       "severity": "mild",
-      "text": "if (((ABS(g_LoadedVertices[iVar2].vertex.x - g_LoadedVertices[iVar3].vertex.x) <",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS(g_LoadedVertices[iVar2].vertex.y - g_LoadedVertices[iVar3].vertex.y) <",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 140,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "(ABS(g_LoadedVertices[iVar2].vertex.z - g_LoadedVertices[iVar3].vertex.z) <",
+      "text": "if (((ABS(g_LoadedVertices[iVar4].vertex.x - g_LoadedVertices[iVar5].vertex.x) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 143,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "(ABS(g_LoadedVertices[iVar4].vertex.y - g_LoadedVertices[iVar5].vertex.y) <",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 145,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "(ABS(g_LoadedVertices[iVar4].vertex.z - g_LoadedVertices[iVar5].vertex.z) <",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 148,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar8 = (float10)fcos((float10)angle_tolerance *",
@@ -604,26 +597,26 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 159,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)local_18 + local_30 * 8 + 4) =",
+      "text": "*(uint *)((int)base + local_30 * 8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
+      "line": 160,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)local_18 + local_34 * 8);",
+      "text": "*(uint *)((int)base + local_34 * 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 174,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)local_18 + local_2c->vertex_indices[local_30] * 8 + 4);",
+      "text": "*(uint *)((int)base + g_ModelPolygonData[local_34].vertex_indices[local_30] * 8 + 4);",
       "type": "pointer_cast"
     }
   ]

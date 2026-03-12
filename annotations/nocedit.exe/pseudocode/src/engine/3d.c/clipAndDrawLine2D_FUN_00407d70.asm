@@ -7,7 +7,7 @@
 ; SRenderVertex    Stack[0x4]:48   vertex1
 ; SRenderVertex    Stack[0x34]:48   vertex2
 ; Local Variables:
-; undefined1       Stack[-0x40]:1  local_40
+; SRenderVertex    Stack[-0x40]:48  local_40
 ;
 ; XREF[17]:
 ;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 at 0040dcef

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 59,
+    "complexity_score": 60,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 35,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 92
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -138,15 +138,15 @@
         "is_param": false,
         "name": "local_38",
         "offset": -56,
-        "size": 1,
-        "type": "undefined"
+        "size": 48,
+        "type": "CMatrix3x4f"
       },
       {
         "is_param": false,
         "name": "local_8",
         "offset": -8,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -167,18 +167,18 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 23,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 24,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

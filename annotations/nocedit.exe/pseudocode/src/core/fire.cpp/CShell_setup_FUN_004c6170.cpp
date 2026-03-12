@@ -10,6 +10,7 @@ void __cdecl core_fire_cpp_CShell_setup_FUN_004c6170(CShell *this_ptr,CVector3f 
 
 {
   float fVar1;
+  float fVar2;
   
   core_particle_cpp_CParticle_setup_FUN_00545680(&this_ptr->base,position,velocity);
   if (&this_ptr->euler_angles != euler_angles) {
@@ -20,9 +21,9 @@ void __cdecl core_fire_cpp_CShell_setup_FUN_004c6170(CShell *this_ptr,CVector3f 
   this_ptr->model_ptr = model_ptr;
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-6.2831855,6.2831855);
   (this_ptr->angular_velocity).x = fVar1;
-  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
+  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
   this_ptr->bounce_count = 0;
   (this_ptr->base).lifetime_remaining = 3.0;
-  (this_ptr->angular_velocity).y = fVar1;
+  (this_ptr->angular_velocity).y = fVar2;
   return;
 }

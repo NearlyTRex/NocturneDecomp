@@ -11,11 +11,14 @@ void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0049e590(void)
 {
   uint uVar1;
   uint uVar2;
+  uint uVar3;
   int iVar3;
   int iVar4;
   int iVar5;
+  int iVar7;
   int iVar6;
   uint *puVar7;
+  int iVar8;
   uint *puVar8;
   uint *puVar9;
   byte bVar10;
@@ -32,28 +35,30 @@ void __cdecl shape_edittool_cpp_paintWindowBackground_FUN_0049e590(void)
     iVar4 = g_WindowStack[iVar3].backup_width * g_BitsPerPixel;
     iVar5 = iVar4 >> 0x1f;
     uVar1 = (int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3;
-    iVar4 = 0;
+    iVar8 = 0;
     if (0 < g_WindowStack[iVar3].backup_height) {
       do {
-        iVar5 = g_WindowStack[iVar3].backup_x_offset * g_BitsPerPixel;
-        iVar6 = iVar5 >> 0x1f;
+        iVar7 = g_WindowStack[iVar3].backup_x_offset * g_BitsPerPixel;
+        iVar6 = iVar7 >> 0x1f;
         puVar8 = puVar7;
         puVar9 = (uint *)
-                 ((int)g_ScreenBufferArray[g_WindowStack[iVar3].backup_y_offset + iVar4] +
-                 ((int)((iVar5 + iVar6 * -8) - (uint)(iVar6 << 2 < 0)) >> 3));
+                 ((int)g_ScreenBufferArray[g_WindowStack[iVar3].backup_y_offset + iVar8] +
+                 ((int)((iVar7 + iVar6 * -8) - (uint)(iVar6 << 2 < 0)) >> 3));
         for (uVar2 = uVar1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
           *puVar9 = *puVar8;
           puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
           puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
         }
-        for (uVar2 = uVar1 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
-          *(byte *)puVar9 = *(byte *)puVar8;
-          puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);
+        for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
           puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);
+          puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);
+          *(byte *)puVar9 = *(byte *)puVar8;
+          puVar8 = puVar8;
+          puVar9 = puVar9;
         }
-        iVar4 = iVar4 + 1;
+        iVar8 = iVar8 + 1;
         puVar7 = (uint *)((int)puVar7 + uVar1);
-      } while (iVar4 < g_WindowStack[iVar3].backup_height);
+      } while (iVar8 < g_WindowStack[iVar3].backup_height);
     }
   }
   return;

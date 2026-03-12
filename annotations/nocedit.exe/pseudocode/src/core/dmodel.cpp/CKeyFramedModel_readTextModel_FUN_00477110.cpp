@@ -9,9 +9,13 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFramedModel *this_ptr,_FILE *file)
 
 {
+  SMRGLPrimitiveQuad *pSVar1;
   int iVar1;
+  int iVar2;
+  int iVar4;
   uchar *puVar2;
   int iVar3;
+  int iVar5;
   char *pcVar4;
   int *piVar5;
   int iVar6;
@@ -47,87 +51,86 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
     g_CurrentLineNumber = 299;
     core_main_c_displayErrorAndQuit_FUN_00506f10("KFM file is version %d, this .exe can only handle up to version %d",local_44,8);
   }
-  iVar3 = 1;
+  iVar5 = 1;
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
   _fscanf(file,"%d,%d,%d,%d,%d\n",&local_40,&local_3c,&local_38,&local_34,&local_30);
   core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0
             (this_ptr,local_40,local_3c,local_38,local_34,local_30);
-  iVar3 = 1;
+  iVar5 = 1;
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
   _fscanf(file,"%d\n",&local_48);
   if (local_44 < 6) {
     this_ptr->transparent_pixel_flag = 0;
   }
   else {
-    iVar3 = 1;
+    iVar5 = 1;
     do {
-      iVar1 = _fgetc(file);
-      if (iVar1 < 0) break;
-    } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
+      iVar2 = _fgetc(file);
+      if (iVar2 < 0) break;
+    } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
     _fscanf(file,"%d\n",&this_ptr->transparent_pixel_flag);
   }
   if (local_44 < 8) {
     this_ptr->disable_backface_culling = 0;
   }
   else {
-    iVar3 = 1;
+    iVar5 = 1;
     do {
-      iVar1 = _fgetc(file);
-      if (iVar1 < 0) break;
-    } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
+      iVar2 = _fgetc(file);
+      if (iVar2 < 0) break;
+    } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
     _fscanf(file,"%d\n",&this_ptr->disable_backface_culling);
   }
   local_2c = 0;
   if (6 < local_44) {
-    iVar3 = 1;
+    iVar5 = 1;
     do {
-      iVar1 = _fgetc(file);
-      if (iVar1 < 0) break;
-    } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
+      iVar2 = _fgetc(file);
+      if (iVar2 < 0) break;
+    } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
     _fscanf(file,"%d\n",&local_2c);
   }
-  iVar3 = 1;
+  iVar5 = 1;
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-  iVar1 = 0;
-  for (iVar3 = 0; iVar3 < this_ptr->vertex_count * this_ptr->frame_count; iVar3 = iVar3 + 1) {
-    iVar6 = (int)&this_ptr->vertex_list->x + iVar1;
-    iVar1 = iVar1 + 0xc;
-    _fscanf(file,"%d,%d,%d\n",iVar6,iVar6 + 4,iVar6 + 8);
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
+  iVar2 = 0;
+  for (iVar5 = 0; iVar5 < this_ptr->vertex_count * this_ptr->frame_count; iVar5 = iVar5 + 1) {
+    iVar4 = (int)&this_ptr->vertex_list->x + iVar2;
+    iVar2 = iVar2 + 0xc;
+    _fscanf(file,"%d,%d,%d\n",iVar4,iVar4 + 4,iVar4 + 8);
   }
-  iVar3 = 1;
+  iVar5 = 1;
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
   local_1c = 0;
   if (0 < this_ptr->poly_count) {
     local_20 = 0;
     local_24 = 0;
     do {
-      local_14 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).
-                       base.type + local_20;
-      _fscanf(file,"%d,%d",(int)this_ptr->poly_texture_index_list + local_24,local_14 + 4)
-      ;
-      iVar3 = 0;
-      if (0 < *(int *)(local_14 + 4)) {
-        local_18 = local_14 + 0x18;
-        iVar1 = local_14 + 0x1c;
-        iVar6 = local_14 + 0x20;
+      pSVar1 = this_ptr->poly_vert_list;
+      _fscanf(file,"%d,%d",(int)this_ptr->poly_texture_index_list + local_24,
+                 (int)pSVar1->vertices + local_20 + -0x14);
+      iVar5 = 0;
+      if (0 < *(int *)((int)pSVar1->vertices + local_20 + -0x14)) {
+        iVar2 = (int)&pSVar1->vertices[0].texture_u + local_20;
+        iVar6 = (int)&pSVar1->vertices[0].texture_v + local_20;
         do {
-          _fscanf(file,", %d,%d,%d",iVar3 * 0xc + local_18,iVar1,iVar6);
+          _fscanf(file,", %d,%d,%d",(int)&pSVar1->vertices[iVar5].vertex_index + local_20,
+                     iVar2,iVar6);
           iVar6 = iVar6 + 0xc;
-          iVar3 = iVar3 + 1;
-          iVar1 = iVar1 + 0xc;
-        } while (iVar3 < *(int *)(local_14 + 4));
+          iVar5 = iVar5 + 1;
+          iVar2 = iVar2 + 0xc;
+        } while (iVar5 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));
       }
       _fscanf(file,"\n");
       local_24 = local_24 + 4;
@@ -144,47 +147,47 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00477110(CKeyFram
       g_CurrentLineNumber = 0x178;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for envMapOpacList");
     }
-    iVar3 = 1;
+    iVar5 = 1;
     do {
-      iVar1 = _fgetc(file);
-      if (iVar1 < 0) break;
-    } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-    iVar3 = 0;
+      iVar2 = _fgetc(file);
+      if (iVar2 < 0) break;
+    } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
+    iVar5 = 0;
     if (0 < this_ptr->poly_count) {
       do {
         _fscanf(file,"%d\n",local_28);
-        this_ptr->env_map_opac_list[iVar3] = local_28[0];
-        iVar3 = iVar3 + 1;
-      } while (iVar3 < this_ptr->poly_count);
+        this_ptr->env_map_opac_list[iVar5] = local_28[0];
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < this_ptr->poly_count);
     }
   }
-  iVar3 = 1;
+  iVar5 = 1;
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-  iVar3 = 0;
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
+  iVar5 = 0;
   if (0 < this_ptr->texture_count) {
     pcVar4 = this_ptr->texture_list[0].textures[0].texture_name;
     do {
       _fscanf(file,"%[^\n]\n",pcVar4);
-      iVar3 = iVar3 + 1;
+      iVar5 = iVar5 + 1;
       pcVar4 = pcVar4 + 0x48;
-    } while (iVar3 < this_ptr->texture_count);
+    } while (iVar5 < this_ptr->texture_count);
   }
-  iVar3 = 1;
+  iVar5 = 1;
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-  iVar3 = 0;
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
+  iVar5 = 0;
   if (0 < this_ptr->part_count) {
     piVar5 = &this_ptr->part_list[0].poly_count;
     do {
-      _fscanf(file,"%d,%d\n",this_ptr->part_list + iVar3,piVar5);
-      iVar3 = iVar3 + 1;
+      _fscanf(file,"%d,%d\n",this_ptr->part_list + iVar5,piVar5);
+      iVar5 = iVar5 + 1;
       piVar5 = piVar5 + 2;
-    } while (iVar3 < this_ptr->part_count);
+    } while (iVar5 < this_ptr->part_count);
   }
   if ((file->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";

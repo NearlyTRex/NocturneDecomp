@@ -6,8 +6,8 @@
 ; Parameters:
 ; _EXCEPTION_POINTERS * Stack[0x4]:4   ExceptionInfo
 ; Local Variables:
-; undefined1       Stack[-0x114]:1  local_114
-; undefined        Stack[-0x14]:1  local_14
+; char[256]        Stack[-0x114]:256  local_114
+; DWORD            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   crt_exception.c_installExceptionHandler_FUN_0060aba8 at 0060abe6

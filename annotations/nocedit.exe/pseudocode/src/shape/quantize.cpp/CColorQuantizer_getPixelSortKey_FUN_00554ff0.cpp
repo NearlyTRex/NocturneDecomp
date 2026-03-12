@@ -9,13 +9,13 @@
 float __cdecl shape_quantize_cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0(CColorQuantizer *this_ptr,SColorBox *box_ptr,uchar *pixel_ptr)
 
 {
-  int iVar1;
   int iVar2;
-  int iVar3;
-  float fVar4;
+  float fVar7;
+  int iVar1;
   float fVar5;
   float fVar6;
-  float fVar7;
+  int iVar3;
+  float fVar4;
   
   iVar1._0_2_ = box_ptr->avg_red;
   iVar1._2_2_ = box_ptr->avg_green;

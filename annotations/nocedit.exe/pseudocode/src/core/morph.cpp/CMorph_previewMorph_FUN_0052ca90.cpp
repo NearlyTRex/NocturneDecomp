@@ -10,6 +10,7 @@ void __cdecl core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(CMorph *this_ptr)
 
 {
   int iVar1;
+  int iVar2;
   float fStack_18;
   float local_14;
   
@@ -35,16 +36,16 @@ void __cdecl core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(CMorph *this_ptr)
     iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar1 != 0) break;
     fStack_18 = g_CGamePtr->delta_time_float * (float)2;
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
-    if (iVar1 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
+    if (iVar2 != 0) {
       fStack_18 = fStack_18 * (float)0.33333333333333298;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_COMMA);
-    if (iVar1 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_COMMA);
+    if (iVar2 != 0) {
       local_14 = local_14 - fStack_18;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_PERIOD);
-    if (iVar1 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_PERIOD);
+    if (iVar2 != 0) {
       local_14 = local_14 + fStack_18;
     }
   }

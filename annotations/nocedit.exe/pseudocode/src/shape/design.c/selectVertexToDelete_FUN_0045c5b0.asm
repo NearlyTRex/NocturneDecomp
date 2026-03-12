@@ -4,10 +4,10 @@
 ; void __cdecl shape_design_c_selectVertexToDelete_FUN_0045c5b0(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x30]:1  local_30
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[20]         Stack[-0x30]:20  local_30
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showPointEditor_FUN_0045c6c0 at 0045c854

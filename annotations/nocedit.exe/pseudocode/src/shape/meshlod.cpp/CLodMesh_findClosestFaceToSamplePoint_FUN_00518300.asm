@@ -7,9 +7,10 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   sample_point_index
 ; Local Variables:
-; undefined8       Stack[-0x28]:8  local_28
+; undefined4       Stack[-0x28]:4  local_28
+; undefined4       Stack[-0x24]:4  uStack_24
 ; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
+; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630 at 005182a7

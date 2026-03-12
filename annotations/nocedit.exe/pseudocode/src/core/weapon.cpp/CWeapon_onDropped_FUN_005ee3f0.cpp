@@ -9,9 +9,10 @@
 void __cdecl core_weapon_cpp_CWeapon_onDropped_FUN_005ee3f0(CWeapon *this_ptr,CVector3f *drop_position)
 
 {
-  CVector3f *pCVar1;
+  CVector3f *pCVar3;
   CVector3f *pCVar2;
   CVector3f local_14;
+  CVector3f *pCVar1;
   
   this_ptr->carried_by_actor = (CDemonActor *)0x0;
   core_weapon_cpp_CWeapon_setupPhysicsBox_FUN_005ee740(this_ptr);
@@ -24,9 +25,9 @@ void __cdecl core_weapon_cpp_CWeapon_onDropped_FUN_005ee3f0(CWeapon *this_ptr,CV
       (this_ptr->physics_box).linear_velocity_local.y = pCVar2->y;
       (this_ptr->physics_box).linear_velocity_local.z = pCVar2->z;
     }
-    pCVar1 = &(this_ptr->physics_box).linear_velocity;
-    if (pCVar1 != drop_position) {
-      pCVar1->x = drop_position->x;
+    pCVar3 = &(this_ptr->physics_box).linear_velocity;
+    if (pCVar3 != drop_position) {
+      pCVar3->x = drop_position->x;
       (this_ptr->physics_box).linear_velocity.y = drop_position->y;
       (this_ptr->physics_box).linear_velocity.z = drop_position->z;
     }

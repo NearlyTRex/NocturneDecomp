@@ -9,15 +9,16 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
-  int iVar1;
   int iVar2;
+  int iVar3;
   SMRGLHeaderPrimitive *pSVar3;
   int iVar4;
   int local_18;
   uint local_14;
+  int iVar1;
   
   if ((this_ptr->plane_culling_enabled == 0) ||
-     (iVar4 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar4 != 0)) {
+     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar3 != 0)) {
     iVar4 = 0;
     local_14 = 0xffffffff;
     local_18 = 0;
@@ -38,8 +39,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a9
       } while (iVar4 < (prim->base).count);
     }
     if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
-      iVar4 = this_ptr->face_capture_enabled;
-      if ((iVar4 != 0) && (this_ptr->face_count != 0)) {
+      iVar3 = this_ptr->face_capture_enabled;
+      if ((iVar3 != 0) && (this_ptr->face_count != 0)) {
         this_ptr->face_capture_enabled = local_18;
       }
       if (this_ptr->face_count == 0) {
@@ -54,7 +55,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a9
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
                 (this_ptr,(prim->base).count,g_VertexIndexBuffer);
-      this_ptr->face_capture_enabled = iVar4;
+      this_ptr->face_capture_enabled = iVar3;
     }
   }
   return;

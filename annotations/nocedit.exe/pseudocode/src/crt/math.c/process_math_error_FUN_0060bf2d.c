@@ -9,6 +9,7 @@
 double __cdecl process_math_error(int errorFlags,double *value1,double *value2)
 
 {
+  uint uVar1;
   int unaff_EBX;
   double dVar1;
   MathErrorContext local_3c;
@@ -49,10 +50,15 @@ double __cdecl process_math_error(int errorFlags,double *value1,double *value2)
   if ((errorFlags & 0x1000U) == 0) {
     if ((errorFlags & 0x2000U) == 0) {
       if ((errorFlags & 0x4000U) == 0) {
-        local_3c.resultValue = INFINITY;
         if ((errorFlags & 0x8000U) == 0) {
-          local_3c.resultValue = *value2;
+          local_3c.resultValue._0_4_ = *(uint *)value2;
+          uVar1 = *(uint *)((int)value2 + 4);
         }
+        else {
+          local_3c.resultValue._0_4_ = INFINITY._0_4_;
+          uVar1 = INFINITY._4_4_;
+        }
+        local_3c.resultValue = __BITCAST_DOUBLE(CONCAT44(uVar1,local_3c.resultValue._0_4_));
       }
       else {
         local_3c.resultValue = 1.0;

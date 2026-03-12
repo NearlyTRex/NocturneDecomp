@@ -9,21 +9,23 @@
 void __cdecl core_bugs_cpp_CBugs_setup_FUN_00424e50(CBugs *this_ptr)
 
 {
-  float fVar1;
-  float fVar2;
-  float min_value;
   float fVar3;
   float fVar4;
+  float fVar5;
   int iVar5;
   int iVar6;
   CVector3f *pCVar7;
   SBug *pSVar8;
   char *pcVar9;
+  int iVar7;
   CVector3f *pCVar10;
   CVector3f *local_2c;
   int local_28;
   CKeyFramedModelInstance *local_20;
   char *local_1c;
+  float fVar2;
+  float min_value;
+  float fVar1;
   
   (this_ptr->base).base.base.orient.vec.z = 0.0;
   (this_ptr->base).base.base.orient.vec.y = (this_ptr->base).base.base.orient.vec.z;
@@ -40,13 +42,13 @@ void __cdecl core_bugs_cpp_CBugs_setup_FUN_00424e50(CBugs *this_ptr)
         if (iVar6 < iVar5) {
           local_20 = this_ptr->models + iVar6;
           local_1c = this_ptr->models[iVar6 + 1].model_name;
-          iVar5 = iVar6;
+          iVar7 = iVar6;
           do {
             core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(local_20,local_1c);
-            iVar5 = iVar5 + 1;
+            iVar7 = iVar7 + 1;
             local_20 = local_20 + 1;
             local_1c = local_1c + 0x17c;
-          } while (iVar5 < this_ptr->model_count);
+          } while (iVar7 < this_ptr->model_count);
         }
       }
       else {
@@ -66,28 +68,28 @@ void __cdecl core_bugs_cpp_CBugs_setup_FUN_00424e50(CBugs *this_ptr)
     do {
       pSVar8 = this_ptr->bugs + local_28;
       pSVar8->state = 0;
-      iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,this_ptr->model_count + -1);
-      fVar4 = fVar1 * (float)0.5;
+      iVar7 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,this_ptr->model_count + -1);
+      fVar5 = fVar1 * (float)0.5;
       min_value = fVar2 * (float)0.5;
-      pSVar8->model_index = iVar6;
-      fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(min_value,fVar4);
+      pSVar8->model_index = iVar7;
+      fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(min_value,fVar5);
       (pSVar8->position).y = 0.0;
       (pSVar8->position).x = fVar3;
-      fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(min_value,fVar4);
+      fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(min_value,fVar5);
       (pSVar8->position).z = fVar4;
       pCVar7->z = 0.0;
       pCVar7->y = pCVar7->z;
       pCVar7->x = pCVar7->y;
-      fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
-      (pSVar8->orientation).y = fVar4;
+      fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
+      (pSVar8->orientation).y = fVar5;
       if (pCVar10 != local_2c) {
         pCVar10->x = pCVar7[-1].x;
         pCVar10->y = pCVar7[-1].y;
         pCVar10->z = pCVar7[-1].z;
       }
-      pCVar10 = (CVector3f *)((int)(pCVar10 + 5) + 4);
-      pCVar7 = (CVector3f *)((int)(pCVar7 + 5) + 4);
-      local_2c = (CVector3f *)((int)(local_2c + 5) + 4);
+      pCVar10 = (CVector3f *)&pCVar10[5].y;
+      pCVar7 = (CVector3f *)&pCVar7[5].y;
+      local_2c = (CVector3f *)&local_2c[5].y;
       local_28 = local_28 + 1;
     } while (local_28 < this_ptr->count);
   }

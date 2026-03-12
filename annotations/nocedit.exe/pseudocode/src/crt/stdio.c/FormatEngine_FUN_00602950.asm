@@ -9,23 +9,10 @@
 ; va_list_t        Stack[0xc]:4   args
 ; OUTPUT_CALLBACK  Stack[0x10]:4   callback
 ; Local Variables:
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x78]:4  local_78
-; undefined1       Stack[-0x73]:1  local_73
-; undefined1       Stack[-0x72]:1  local_72
-; undefined2       Stack[-0x6c]:2  local_6c
-; undefined2       Stack[-0x6a]:2  local_6a
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined1       Stack[-0x50]:1  local_50
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
+; FormatSpec       Stack[-0x88]:60  local_88
+; va_list_t        Stack[-0x28]:4  local_28
+; va_list_t        Stack[-0x24]:4  local_24
+; uint *           Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined1       Stack[-0x18]:1  local_18
 ;

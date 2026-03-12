@@ -7,7 +7,7 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   hand_index
 ; Local Variables:
-; undefined1       Stack[-0x38]:1  local_38
+; CMatrix3x4f      Stack[-0x38]:48  local_38
 ;
 ; Called Functions:
 ;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0

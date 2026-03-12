@@ -9,18 +9,20 @@
 CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0(CLodMesh *this_ptr,CVector3f *output_point,CVector3f *target_point,CLodFace *triangle_ptr )
 
 {
+  CLodVert *edge_vertex_0_00;
+  CLodVert *pCVar1;
+  byte bVar4;
+  CLodVert *edge_vertex_1;
+  CLodVert *pCVar5;
   CLodVert *edge_vertex_0;
   float fVar1;
   float fVar2;
   float fVar3;
-  byte bVar4;
-  CLodVert *edge_vertex_1;
-  CLodVert *pCVar5;
   
-  pCVar5 = this_ptr->vertex_data;
-  edge_vertex_1 = pCVar5 + triangle_ptr->vertex_idx_0;
-  edge_vertex_0 = pCVar5 + triangle_ptr->vertex_idx_1;
-  pCVar5 = pCVar5 + triangle_ptr->vertex_idx_2;
+  pCVar1 = this_ptr->vertex_data;
+  edge_vertex_1 = pCVar1 + triangle_ptr->vertex_idx_0;
+  edge_vertex_0_00 = pCVar1 + triangle_ptr->vertex_idx_1;
+  pCVar5 = pCVar1 + triangle_ptr->vertex_idx_2;
   bVar4 = triangle_ptr->edge_dot_products[0] <
           target_point->z * triangle_ptr->edge_perpendiculars[0].z +
           target_point->x * triangle_ptr->edge_perpendiculars[0].x +
@@ -51,16 +53,16 @@ CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeClosestPointOnTriangle_FUN
     return output_point;
   case 1:
     shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
-              (output_point,target_point,&edge_vertex_1->position,&edge_vertex_0->position);
+              (output_point,target_point,&edge_vertex_1->position,&edge_vertex_0_00->position);
     return output_point;
   case 2:
     shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
-              (output_point,target_point,&edge_vertex_0->position,&pCVar5->position);
+              (output_point,target_point,&edge_vertex_0_00->position,&pCVar5->position);
     return output_point;
   case 3:
-    output_point->x = (edge_vertex_0->position).x;
-    output_point->y = (edge_vertex_0->position).y;
-    output_point->z = (edge_vertex_0->position).z;
+    output_point->x = (edge_vertex_0_00->position).x;
+    output_point->y = (edge_vertex_0_00->position).y;
+    output_point->z = (edge_vertex_0_00->position).z;
     return output_point;
   case 4:
     shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90

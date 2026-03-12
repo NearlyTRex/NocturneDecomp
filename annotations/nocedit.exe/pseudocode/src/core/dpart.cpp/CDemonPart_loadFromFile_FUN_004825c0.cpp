@@ -11,17 +11,21 @@
 void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *this_ptr,_FILE *file_handle,CVector3f *offset_position)
 
 {
-  int *piVar1;
-  int iVar2;
+  int *piVar2;
+  int iVar4;
+  int iVar5;
+  int iVar8;
+  int iVar9;
+  int iVar6;
+  int iVar10;
+  char *buffer;
+  float fVar7;
   int iVar3;
   double dVar4;
   double dVar5;
   double dVar6;
-  float fVar7;
-  int iVar8;
-  int iVar9;
-  int iVar10;
-  char *buffer;
+  int *piVar1;
+  int iVar2;
   
   _fread(this_ptr,0x20,1,file_handle);
   _fread(&this_ptr->vertex_count,4,1,file_handle);
@@ -44,12 +48,12 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *thi
   _fread(&this_ptr->vertex_group_size,4,1,file_handle);
   _fread(this_ptr->vertex_positions,0xc,this_ptr->vertex_count,file_handle);
   _fread(this_ptr->vertex_normals,0xc,this_ptr->vertex_count,file_handle);
-  iVar10 = _strcmp(this_ptr->format,"newformat");
-  if (iVar10 == 0) {
+  iVar5 = _strcmp(this_ptr->format,"newformat");
+  if (iVar5 == 0) {
     _fread(this_ptr->face_data,0x20,this_ptr->face_count,file_handle);
   }
   else {
-    iVar10 = 0;
+    iVar5 = 0;
     _fread(g_PolyDataConversionBuffer,0x48,this_ptr->face_count,file_handle)
     ;
     if (0 < this_ptr->face_count) {
@@ -78,41 +82,41 @@ void __cdecl core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0(CDemonPart *thi
                *(uint *)(g_PolyDataConversionBuffer + iVar9 + 0x3c);
         }
         iVar8 = iVar8 + 0x20;
-        iVar10 = iVar10 + 1;
+        iVar5 = iVar5 + 1;
         iVar9 = iVar9 + 0x48;
-      } while (iVar10 < this_ptr->face_count);
+      } while (iVar5 < this_ptr->face_count);
     }
   }
   if (offset_position != (CVector3f *)0x0) {
     dVar4 = (double)offset_position->x * 256;
     dVar5 = (double)offset_position->y * 256;
     dVar6 = (double)offset_position->z * 256;
-    iVar10 = 0;
+    iVar5 = 0;
     if (0 < this_ptr->vertex_count) {
-      iVar8 = 0;
+      iVar6 = 0;
       do {
-        piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar8);
+        piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar6);
         *piVar1 = *piVar1 - (int)ROUND(ROUND(dVar4));
-        piVar1 = (int *)((int)&this_ptr->vertex_positions->y + iVar8);
-        *piVar1 = *piVar1 - (int)ROUND(ROUND(dVar5));
-        piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar8);
-        *piVar1 = *piVar1 - (int)ROUND(ROUND(dVar6));
-        iVar10 = iVar10 + 1;
-        iVar8 = iVar8 + 0xc;
-      } while (iVar10 < this_ptr->vertex_count);
+        piVar2 = (int *)((int)&this_ptr->vertex_positions->y + iVar6);
+        *piVar2 = *piVar2 - (int)ROUND(ROUND(dVar5));
+        piVar2 = (int *)((int)&this_ptr->vertex_positions->z + iVar6);
+        *piVar2 = *piVar2 - (int)ROUND(ROUND(dVar6));
+        iVar5 = iVar5 + 1;
+        iVar6 = iVar6 + 0xc;
+      } while (iVar5 < this_ptr->vertex_count);
     }
   }
   core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_004824f0(this_ptr);
   fVar7 = (float)0.00390625;
-  iVar10 = (this_ptr->bbox3).y;
-  iVar8 = (this_ptr->bbox3).z;
-  iVar9 = (this_ptr->bbox4).x;
+  iVar5 = (this_ptr->bbox3).y;
+  iVar6 = (this_ptr->bbox3).z;
+  iVar4 = (this_ptr->bbox4).x;
   iVar2 = (this_ptr->bbox4).y;
   iVar3 = (this_ptr->bbox4).z;
   (this_ptr->bbox1_float).x = (float)(this_ptr->bbox3).x * fVar7;
-  (this_ptr->bbox1_float).y = (float)iVar10 * fVar7;
-  (this_ptr->bbox1_float).z = (float)iVar8 * fVar7;
-  (this_ptr->bbox2_float).x = (float)iVar9 * fVar7;
+  (this_ptr->bbox1_float).y = (float)iVar5 * fVar7;
+  (this_ptr->bbox1_float).z = (float)iVar6 * fVar7;
+  (this_ptr->bbox2_float).x = (float)iVar4 * fVar7;
   (this_ptr->bbox2_float).y = (float)iVar2 * fVar7;
   (this_ptr->bbox2_float).z = (float)iVar3 * fVar7;
   return;

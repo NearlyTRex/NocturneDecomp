@@ -7,8 +7,10 @@
 ; CColor3f *       Stack[0x4]:4   out_hsv
 ; CColor3f *       Stack[0x8]:4   in_rgb
 ; Local Variables:
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x20]:4  local_20
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  local_30
+; float            Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

@@ -10,6 +10,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *t
 
 {
   int iVar1;
+  int iVar3;
   int iVar2;
   float (*pafVar3) [18];
   float local_94 [18];
@@ -23,15 +24,16 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0(CMP3Decoder *t
     iVar1 = 0;
   }
   sound_mp3_cpp_applyPolyphaseWindow_FUN_00533690(input_samples,local_94,iVar1);
-  iVar1 = 0;
+  iVar3 = 0;
   pafVar3 = this_ptr->synthesis_history[channel] + subband_index;
   do {
-    iVar2 = iVar1 + 1;
-    *output_buffer = local_94[iVar1] + (*pafVar3)[0];
-    (*pafVar3)[0] = local_94[iVar1 + 0x12];
-    iVar1 = iVar2;
-    output_buffer = output_buffer + 1;
     pafVar3 = (float (*) [18])(*pafVar3 + 1);
+    iVar2 = iVar3 + 1;
+    *output_buffer = local_94[iVar3] + (*pafVar3)[0];
+    (*pafVar3)[0] = local_94[iVar3 + 0x12];
+    iVar3 = iVar2;
+    output_buffer = output_buffer + 1;
+    pafVar3 = pafVar3;
   } while (iVar2 < 0x12);
   return;
 }

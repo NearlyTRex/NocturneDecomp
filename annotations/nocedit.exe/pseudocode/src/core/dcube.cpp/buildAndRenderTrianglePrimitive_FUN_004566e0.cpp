@@ -19,9 +19,6 @@ void __cdecl core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_004566e0(CVector
   local_30.surface_normal.C = 0;
   local_30.surface_normal.B = 0;
   local_30.surface_normal.A = 0;
-  local_18 = (uint)((int)*triangle_vertex_pointers - (int)vertex_buffer) / 0xc;
-  local_14 = (uint)((int)triangle_vertex_pointers[1] - (int)vertex_buffer) / 0xc;
-  local_10 = (uint)((int)triangle_vertex_pointers[2] - (int)vertex_buffer) / 0xc;
   core_set_cpp_CDemonSet_renderPrimitiveList_FUN_005708e0(g_CDemonSetPtr,&local_30,1);
   return;
 }

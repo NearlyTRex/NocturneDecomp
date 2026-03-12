@@ -14,22 +14,11 @@
 ; char * *         Stack[0x20]:4   templates
 ; int              Stack[0x24]:4   template_count
 ; Local Variables:
-; undefined1       Stack[-0x2148]:1  local_2148
-; undefined1       Stack[-0x2144]:1  local_2144
-; undefined1       Stack[-0x2143]:1  local_2143
-; undefined1       Stack[-0x20e0]:1  local_20e0
-; undefined1       Stack[-0x20df]:1  local_20df
-; undefined4       Stack[-0x207c]:4  local_207c
-; undefined1       Stack[-0x2078]:1  local_2078
-; undefined1       Stack[-0x2077]:1  local_2077
-; undefined1       Stack[-0x2014]:1  local_2014
-; undefined1       Stack[-0x2013]:1  local_2013
-; undefined1       Stack[-0xe8]:1  local_e8
-; undefined1       Stack[-0xe7]:1  local_e7
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CCmdParse        Stack[-0x2148]:8488  local_2148
+; int              Stack[-0x20]:4  local_20
+; ECmdParmType     Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; char *           Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_script.cpp_parseCommandWithDefaultTemplates_FUN_00561c70 at 00561c9e

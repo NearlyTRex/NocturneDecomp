@@ -9,21 +9,24 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim,int render_flags)
 
 {
-  int iVar1;
+  SMRGLHeaderPrimitive *pSVar1;
   SMRGLHeaderPrimitive *pSVar2;
   int iVar3;
+  int iVar2;
   int iVar4;
+  int iVar5;
+  int iVar1;
   
   if (render_flags == -1) {
     render_flags = RENDER_ENGINE_CORE_PREMIUM;
   }
   if (this_ptr->texture_capture_enabled == 0) {
     if ((this_ptr->plane_culling_enabled == 0) ||
-       (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar3 != 0)) {
+       (iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar2 != 0)) {
       if (this_ptr->face_count == 0) {
-        iVar3 = 0;
+        iVar2 = 0;
         if (0 < (prim->base).count) {
-          iVar4 = 0;
+          iVar5 = 0;
           pSVar2 = prim;
           do {
             iVar1 = pSVar2[1].base.type;
@@ -31,23 +34,23 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048ae
               this_ptr->vertex_buffer_ptr[iVar1].u = pSVar2[1].base.count;
               this_ptr->vertex_buffer_ptr[iVar1].v = pSVar2[1].surface_normal.A;
             }
-            *(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;
+            *(int *)((int)g_VertexIndexBuffer + iVar5) = iVar1;
             pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
-            iVar3 = iVar3 + 1;
-            iVar4 = iVar4 + 4;
-          } while (iVar3 < (prim->base).count);
+            iVar2 = iVar2 + 1;
+            iVar5 = iVar5 + 4;
+          } while (iVar2 < (prim->base).count);
         }
       }
       else {
         iVar3 = 0;
         if (0 < (prim->base).count) {
           iVar4 = 0;
-          pSVar2 = prim;
+          pSVar1 = prim;
           do {
-            *(int *)((int)g_VertexIndexBuffer + iVar4) = pSVar2[1].base.type;
+            *(int *)((int)g_VertexIndexBuffer + iVar4) = pSVar1[1].base.type;
             iVar4 = iVar4 + 4;
             iVar3 = iVar3 + 1;
-            pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
+            pSVar1 = (SMRGLHeaderPrimitive *)&(pSVar1->surface_normal).B;
           } while (iVar3 < (prim->base).count);
         }
       }

@@ -6,12 +6,43 @@
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ; Local Variables:
+; float[1387]      Stack[-0x18a8]:5548  afStackY_18a8
 ; undefined8       Stack[-0x2f0]:8  local_2f0
-; undefined4       Stack[-0x2e8]:4  local_2e8
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x2e8]:4  local_2e8
+; CMatrix3x4f      Stack[-0x2e4]:48  CStack_2e4
+; CMatrix3x4f      Stack[-0x2b4]:48  CStack_2b4
+; CMatrix3x4f      Stack[-0x284]:48  CStack_284
+; CMatrix3x4f      Stack[-0x254]:48  CStack_254
+; CMatrix3x4f      Stack[-0x224]:48  CStack_224
+; CMatrix3x4f      Stack[-0x1f4]:48  CStack_1f4
+; CMatrix3x4f      Stack[-0x1c4]:48  CStack_1c4
+; CMatrix3x4f      Stack[-0x194]:48  CStack_194
+; CMatrix3x4f      Stack[-0x164]:48  CStack_164
+; CMatrix3x4f      Stack[-0x134]:48  CStack_134
+; undefined1[16]   Stack[-0x104]:16  auStack_104
+; float            Stack[-0xf4]:4  fStack_f4
+; float            Stack[-0xf0]:4  fStack_f0
+; undefined1[16]   Stack[-0xe8]:16  auStack_e8
+; float            Stack[-0xd8]:4  fStack_d8
+; float            Stack[-0xd4]:4  fStack_d4
+; CQuaternion4f    Stack[-0xcc]:16  CStack_cc
+; CQuaternion4f    Stack[-0xbc]:16  CStack_bc
+; CQuaternion4f    Stack[-0xac]:16  CStack_ac
+; CQuaternion4f    Stack[-0x9c]:16  CStack_9c
+; CQuaternion4f    Stack[-0x8c]:16  CStack_8c
+; CQuaternion4f    Stack[-0x7c]:16  CStack_7c
+; float            Stack[-0x6c]:4  fStack_6c
+; float            Stack[-0x68]:4  fStack_68
+; CQuaternion4f    Stack[-0x64]:16  CStack_64
+; float            Stack[-0x54]:4  fStack_54
+; float            Stack[-0x50]:4  fStack_50
+; float            Stack[-0x4c]:4  local_4c
+; float            Stack[-0x48]:4  local_48
+; float            Stack[-0x44]:4  local_44
+; undefined1[32]   Stack[-0x40]:32  auStack_40
+; CVector3f *      Stack[-0x20]:4  pCStack_20
+; CVector3f *      Stack[-0x1c]:4  pCStack_1c
+; CVector3f *      Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_conveyor.cpp_CConveyor_processInEditor_FUN_004421c0 at 004422db

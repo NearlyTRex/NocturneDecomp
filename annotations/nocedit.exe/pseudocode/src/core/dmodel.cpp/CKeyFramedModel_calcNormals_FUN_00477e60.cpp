@@ -11,18 +11,20 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramedModel *this_ptr)
 
 {
-  double dVar1;
-  double dVar2;
-  double dVar3;
-  double dVar4;
+  double dVar5;
   CVector3i *pCVar5;
   SMRGLPrimitiveTriangle *pSVar6;
   int iVar7;
   int iVar8;
   int *piVar9;
   SMRGLPrimitiveTriangle *texture;
+  int iVar6;
   int local_18;
   int local_14;
+  double dVar1;
+  double dVar2;
+  double dVar3;
+  double dVar4;
   
   if (this_ptr->frame_count == 1) {
     if (this_ptr->vertex_normal_list == (CVector3i *)0x0) {
@@ -55,7 +57,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
         local_14 = local_14 + 1;
       } while (local_14 < this_ptr->poly_count);
     }
-    iVar8 = 0;
+    iVar6 = 0;
     if (0 < this_ptr->vertex_count) {
       iVar7 = 0;
       do {
@@ -65,19 +67,19 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
         dVar3 = (double)piVar9[2];
         dVar2 = SQRT(dVar3 * dVar3 + dVar4 * dVar4 + dVar1 * dVar1);
         if (0.0 < dVar2) {
-          dVar2 = 65535 / dVar2;
-          *piVar9 = (int)ROUND(ROUND(dVar1 * dVar2));
-          piVar9[1] = (int)ROUND(ROUND(dVar4 * dVar2));
-          piVar9[2] = (int)ROUND(ROUND(dVar3 * dVar2));
+          dVar5 = 65535 / dVar2;
+          *piVar9 = (int)ROUND(ROUND(dVar1 * dVar5));
+          piVar9[1] = (int)ROUND(ROUND(dVar4 * dVar5));
+          piVar9[2] = (int)ROUND(ROUND(dVar3 * dVar5));
         }
         else {
           piVar9[2] = 0;
           piVar9[1] = piVar9[2];
           *piVar9 = piVar9[2];
         }
-        iVar8 = iVar8 + 1;
+        iVar6 = iVar6 + 1;
         iVar7 = iVar7 + 0xc;
-      } while (iVar8 < this_ptr->vertex_count);
+      } while (iVar6 < this_ptr->vertex_count);
     }
   }
   return;

@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 50,
-        "line": 40,
+        "line": 44,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 52,
+        "line": 56,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 55,
+        "line": 59,
         "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'LPDIRECTSOUND' (aka 'IDirectSound *')"
       }
     ],
@@ -25,18 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 113,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 16,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 83,
+    "pseudocode_lines": 87,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "warning_max_restarts"
     ],
-    "total_lines": 271
+    "total_lines": 275
   },
   "cross_references": [
     {
@@ -224,18 +224,39 @@
     "pcode_op_count": 894
   },
   "stack_frame": {
-    "frame_size": 36,
-    "local_size": 20,
+    "frame_size": 932,
+    "local_size": 916,
     "param_offset": 4,
     "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "acStack_390",
+        "offset": -912,
+        "size": 400,
+        "type": "char[400]"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_200",
+        "offset": -512,
+        "size": 400,
+        "type": "char[400]"
+      },
+      {
+        "is_param": false,
+        "name": "DStack_70",
+        "offset": -112,
+        "size": 96,
+        "type": "DSCAPS"
+      },
+      {
+        "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "LPDIRECTSOUND"
       },
       {
         "is_param": true,
@@ -278,7 +299,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 63,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar5 = (uint *)((int)device_guid + (uint)bVar10 * -8 + 4);",

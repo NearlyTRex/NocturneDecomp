@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   target_tri_count
 ; int              Stack[0xc]:4   render_mode
 ; Local Variables:
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x24]:4  local_24
+; float            Stack[-0x30]:4  local_30
+; int              Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

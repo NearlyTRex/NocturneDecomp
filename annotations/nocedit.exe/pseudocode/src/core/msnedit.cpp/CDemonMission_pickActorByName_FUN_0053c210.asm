@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   title
 ; char *           Stack[0xc]:4   current_name
 ; Local Variables:
-; undefined4       Stack[-0x3b4]:4  local_3b4
+; CPickList        Stack[-0x3b4]:936  local_3b4
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a904

@@ -9,13 +9,20 @@
 int __cdecl shape_design_c_loadModelFile_FUN_00458ac0(char *filename)
 
 {
-  byte bVar1;
-  char cVar2;
+  byte bVar2;
+  char cVar3;
   int iVar3;
+  int iVar4;
+  _FILE *file;
+  uint uVar5;
   uint uVar4;
+  byte *str1;
+  byte *pbVar6;
   byte *pbVar5;
   char *pcVar6;
+  char *pcVar8;
   char *pcVar7;
+  char *pcVar9;
   SModelPartName *pSVar8;
   byte bVar9;
   char local_170 [84];
@@ -27,6 +34,8 @@ int __cdecl shape_design_c_loadModelFile_FUN_00458ac0(char *filename)
   int local_1c;
   _FILE *local_18;
   byte *local_14;
+  byte bVar1;
+  char cVar2;
   
   bVar9 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -37,91 +46,91 @@ int __cdecl shape_design_c_loadModelFile_FUN_00458ac0(char *filename)
     bVar1 = *filename;
     *pbVar5 = bVar1;
     if (bVar1 == 0) break;
-    bVar1 = ((byte *)filename)[1];
+    bVar2 = ((byte *)filename)[1];
     filename = (char *)((byte *)filename + 2);
-    pbVar5[1] = bVar1;
+    pbVar5[1] = bVar2;
     pbVar5 = pbVar5 + 2;
-  } while (bVar1 != 0);
+  } while (bVar2 != 0);
   local_20 = 0;
   do {
     uVar4 = 0xffffffff;
-    pbVar5 = local_74;
+    pbVar6 = local_74;
     do {
       if (uVar4 == 0) break;
       uVar4 = uVar4 - 1;
-      bVar1 = *pbVar5;
-      pbVar5 = pbVar5 + (uint)bVar9 * -2 + 1;
-    } while (bVar1 != 0);
+      bVar2 = *pbVar6;
+      pbVar6 = pbVar6 + (uint)bVar9 * -2 + 1;
+    } while (bVar2 != 0);
     if (~uVar4 - 1 <= local_20) break;
     iVar3 = toupper((uint)local_74[local_20]);
     local_74[local_20] = (byte)iVar3;
     local_20 = local_20 + 1;
   } while( true );
-  pbVar5 = local_74;
+  pbVar6 = local_74;
   do {
-    local_14 = pbVar5;
-    if (*pbVar5 == 0x2e) goto LAB_00458b67;
-    if (*pbVar5 == 0) break;
-    local_14 = pbVar5 + 1;
-    if (*local_14 == 0x2e) goto LAB_00458b67;
-    pbVar5 = pbVar5 + 2;
-  } while (*local_14 != 0);
-  local_14 = (byte *)0x0;
+    str1 = pbVar6;
+    if (*pbVar6 == 0x2e) goto LAB_00458b67;
+    if (*pbVar6 == 0) break;
+    str1 = pbVar6 + 1;
+    if (*str1 == 0x2e) goto LAB_00458b67;
+    pbVar6 = pbVar6 + 2;
+  } while (*str1 != 0);
+  str1 = (byte *)0x0;
 LAB_00458b67:
-  if (local_14 != (byte *)0x0) {
-    iVar3 = _strcmp((char *)local_14,".BIN");
-    if (iVar3 == 0) {
-      iVar3 = shape_design_c_loadModelBinary_FUN_00458170((char *)local_74);
-      if (iVar3 == 0) {
+  if (str1 != (byte *)0x0) {
+    iVar4 = _strcmp((char *)str1,".BIN");
+    if (iVar4 == 0) {
+      iVar4 = shape_design_c_loadModelBinary_FUN_00458170((char *)local_74);
+      if (iVar4 == 0) {
         return 0;
       }
-      pbVar5 = local_74;
+      pbVar6 = local_74;
       pcVar6 = g_LoadedModelName;
       do {
-        bVar9 = *pbVar5;
-        *pcVar6 = bVar9;
-        if (bVar9 == 0) {
+        bVar2 = *pbVar6;
+        *pcVar6 = bVar2;
+        if (bVar2 == 0) {
           g_VertexOptimizationPasses = 0;
           g_PolygonOptimizationPasses = 0;
-          return iVar3;
+          return iVar4;
         }
-        bVar9 = pbVar5[1];
-        pbVar5 = pbVar5 + 2;
-        ((byte *)pcVar6)[1] = bVar9;
+        bVar2 = pbVar6[1];
+        pbVar6 = pbVar6 + 2;
+        ((byte *)pcVar6)[1] = bVar2;
         pcVar6 = (char *)((byte *)pcVar6 + 2);
-      } while (bVar9 != 0);
+      } while (bVar2 != 0);
       g_VertexOptimizationPasses = 0;
       g_PolygonOptimizationPasses = 0;
-      return iVar3;
+      return iVar4;
     }
-    iVar3 = _strcmp((char *)local_14,".S3D");
-    if (iVar3 == 0) {
-      iVar3 = shape_design_c_loadS3DModelFile_FUN_004593a0((char *)local_74);
-      if (iVar3 == 0) {
+    iVar4 = _strcmp((char *)str1,".S3D");
+    if (iVar4 == 0) {
+      iVar4 = shape_design_c_loadS3DModelFile_FUN_004593a0((char *)local_74);
+      if (iVar4 == 0) {
         return 0;
       }
-      pbVar5 = local_74;
-      pcVar6 = g_LoadedModelName;
+      pbVar6 = local_74;
+      pcVar8 = g_LoadedModelName;
       do {
-        bVar9 = *pbVar5;
-        *pcVar6 = bVar9;
-        if (bVar9 == 0) {
+        bVar2 = *pbVar6;
+        *pcVar8 = bVar2;
+        if (bVar2 == 0) {
           g_VertexOptimizationPasses = 0;
           g_PolygonOptimizationPasses = 0;
-          return iVar3;
+          return iVar4;
         }
-        bVar9 = pbVar5[1];
-        pbVar5 = pbVar5 + 2;
-        ((byte *)pcVar6)[1] = bVar9;
-        pcVar6 = (char *)((byte *)pcVar6 + 2);
-      } while (bVar9 != 0);
+        bVar2 = pbVar6[1];
+        pbVar6 = pbVar6 + 2;
+        ((byte *)pcVar8)[1] = bVar2;
+        pcVar8 = (char *)((byte *)pcVar8 + 2);
+      } while (bVar2 != 0);
       g_VertexOptimizationPasses = 0;
       g_PolygonOptimizationPasses = 0;
-      return iVar3;
+      return iVar4;
     }
   }
-  local_18 = engine_dosio_c_getFile_FUN_00481a50("models",(char *)local_74,"rt");
-  if (local_18 == (_FILE *)0x0) {
+  file = engine_dosio_c_getFile_FUN_00481a50("models",(char *)local_74,"rt");
+  if (file == (_FILE *)0x0) {
     engine_2d_c_drawText_FUN_00401fd0("FILE ERROR! Nothing changed!",0,0x16);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
@@ -129,63 +138,61 @@ LAB_00458b67:
     local_24 = 0;
   }
   else {
-    pbVar5 = local_74;
-    pcVar6 = g_LoadedModelName;
+    pbVar6 = local_74;
+    pcVar8 = g_LoadedModelName;
     do {
-      bVar9 = *pbVar5;
-      *pcVar6 = bVar9;
-      if (bVar9 == 0) break;
-      bVar9 = pbVar5[1];
-      pbVar5 = pbVar5 + 2;
-      ((byte *)pcVar6)[1] = bVar9;
-      pcVar6 = (char *)((byte *)pcVar6 + 2);
-    } while (bVar9 != 0);
+      bVar2 = *pbVar6;
+      *pcVar8 = bVar2;
+      if (bVar2 == 0) break;
+      bVar2 = pbVar6[1];
+      pbVar6 = pbVar6 + 2;
+      ((byte *)pcVar8)[1] = bVar2;
+      pcVar8 = (char *)((byte *)pcVar8 + 2);
+    } while (bVar2 != 0);
     g_PolygonOptimizationPasses = 0;
     g_VertexOptimizationPasses = 0;
-    _fscanf(local_18,"%d\n",&g_VertexCount);
+    _fscanf(file,"%d\n",&g_VertexCount);
     if (g_VertexCount < 0x4e21) {
       for (local_20 = 0; (int)local_20 < g_VertexCount; local_20 = local_20 + 1) {
-        _fscanf(local_18,"%f,%f,%f\n",g_LoadedVertices + local_20,local_20 * 0x14 + 0x1626410
-                   ,local_20 * 0x14 + 0x1626414);
+        _fscanf(file,"%f,%f,%f\n",g_LoadedVertices + local_20,local_20 * 0x14 + 0x1626410,
+                   local_20 * 0x14 + 0x1626414);
       }
-      _fscanf(local_18,"%d\n",&g_PolygonCount);
+      _fscanf(file,"%d\n",&g_PolygonCount);
       if (g_PolygonCount < 0x4e21) {
         for (local_20 = 0; (int)local_20 < g_PolygonCount; local_20 = local_20 + 1) {
-          _fgets(local_170,0x51,local_18);
-          local_14 = (byte *)strtok(local_170,",");
-          uVar4 = atoi((char *)local_14);
-          g_ModelPolygonData[local_20].polygon_type = uVar4;
-          local_14 = (byte *)strtok((char *)0x0,",");
-          uVar4 = atoi((char *)local_14);
-          g_ModelPolygonData[local_20].vertex_indices_count = uVar4;
-          local_14 = (byte *)strtok((char *)0x0,",\n");
-          pcVar6 = g_ModelPolygonData[local_20].texture_name;
-          pcVar7 = (char *)local_14;
+          _fgets(local_170,0x51,file);
+          pcVar8 = strtok(local_170,",");
+          uVar5 = atoi(pcVar8);
+          g_ModelPolygonData[local_20].polygon_type = uVar5;
+          pcVar8 = strtok((char *)0x0,",");
+          uVar5 = atoi(pcVar8);
+          g_ModelPolygonData[local_20].vertex_indices_count = uVar5;
+          pcVar9 = strtok((char *)0x0,",\n");
+          pcVar8 = g_ModelPolygonData[local_20].texture_name;
           do {
-            cVar2 = *pcVar7;
-            *pcVar6 = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = pcVar7[1];
-            pcVar7 = pcVar7 + 2;
-            pcVar6[1] = cVar2;
-            pcVar6 = pcVar6 + 2;
-          } while (cVar2 != '\0');
-          local_14 = (byte *)strtok((char *)0x0,",\n");
-          if (local_14 == (byte *)0x0) {
+            cVar3 = *pcVar9;
+            *pcVar8 = cVar3;
+            if (cVar3 == '\0') break;
+            cVar3 = pcVar9[1];
+            pcVar9 = pcVar9 + 2;
+            pcVar8[1] = cVar3;
+            pcVar8 = pcVar8 + 2;
+          } while (cVar3 != '\0');
+          pcVar8 = strtok((char *)0x0,",\n");
+          if (pcVar8 == (char *)0x0) {
             g_ModelPolygonData[local_20].lightmap_name[0] = '\0';
           }
           else {
-            pcVar6 = g_ModelPolygonData[local_20].lightmap_name;
-            pbVar5 = local_14;
+            pcVar9 = g_ModelPolygonData[local_20].lightmap_name;
             do {
-              bVar9 = *pbVar5;
-              *pcVar6 = bVar9;
-              if (bVar9 == 0) break;
-              bVar9 = pbVar5[1];
-              pbVar5 = pbVar5 + 2;
-              pcVar6[1] = bVar9;
-              pcVar6 = pcVar6 + 2;
-            } while (bVar9 != 0);
+              cVar3 = *pcVar8;
+              *pcVar9 = cVar3;
+              if (cVar3 == '\0') break;
+              cVar3 = pcVar8[1];
+              pcVar8 = pcVar8 + 2;
+              pcVar9[1] = cVar3;
+              pcVar9 = pcVar9 + 2;
+            } while (cVar3 != '\0');
           }
           if ((g_ModelPolygonData[local_20].texture_name[0] == 'x') &&
              (g_ModelPolygonData[local_20].texture_name[1] == '\0')) {
@@ -193,7 +200,7 @@ LAB_00458b67:
           }
           for (local_1c = 0; local_1c < (int)g_ModelPolygonData[local_20].vertex_indices_count;
               local_1c = local_1c + 1) {
-            _fscanf(local_18,"%d,%f,%f\n",local_20 * 0x184 + 0x16e99c8 + local_1c * 4,
+            _fscanf(file,"%d,%f,%f\n",local_20 * 0x184 + 0x16e99c8 + local_1c * 4,
                        local_20 * 0x184 + 0x16e9a08 + local_1c * 4,
                        local_20 * 0x184 + 0x16e9a48 + local_1c * 4);
             if (g_ModelPolygonData[local_20].uv_u[local_1c] < 0.0) {
@@ -211,38 +218,38 @@ LAB_00458b67:
           }
         }
         g_PartsCount = 0;
-        _fscanf(local_18,"%d\n",&g_PartsCount);
+        _fscanf(file,"%d\n",&g_PartsCount);
         for (local_20 = 0; (int)local_20 < g_PartsCount; local_20 = local_20 + 1) {
-          _fscanf(local_18,"%s\n",g_ModelPartNames + local_20);
+          _fscanf(file,"%s\n",g_ModelPartNames + local_20);
         }
         for (local_20 = 0; (int)local_20 < g_PolygonCount; local_20 = local_20 + 1) {
-          _fscanf(local_18,"%d\n",local_20 * 0x184 + 0x16e9a88);
+          _fscanf(file,"%d\n",local_20 * 0x184 + 0x16e9a88);
         }
         if (g_PartsCount == 0) {
           for (local_20 = 0; (int)local_20 < g_PolygonCount; local_20 = local_20 + 1) {
             g_ModelPolygonData[local_20].part_assignment = 0;
           }
           g_PartsCount = 1;
-          pcVar6 = "BODY";
+          pcVar8 = "BODY";
           pSVar8 = g_ModelPartNames;
           do {
-            cVar2 = *pcVar6;
-            pSVar8->name[0] = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = pcVar6[1];
-            pcVar6 = pcVar6 + 2;
-            *(char *)((int)pSVar8 + 1) = cVar2;
+            cVar3 = *pcVar8;
+            pSVar8->name[0] = cVar3;
+            if (cVar3 == '\0') break;
+            cVar3 = pcVar8[1];
+            pcVar8 = pcVar8 + 2;
+            *(char *)((int)pSVar8 + 1) = cVar3;
             pSVar8 = (SModelPartName *)((int)pSVar8 + 2);
-          } while (cVar2 != '\0');
+          } while (cVar3 != '\0');
         }
         for (local_20 = 0; (int)local_20 < g_PolygonCount; local_20 = local_20 + 1) {
           g_ModelPolygonData[local_20].material_id = 0;
-          _fscanf(local_18,"%d\n",local_20 * 0x184 + 0x16e9a8c);
+          _fscanf(file,"%d\n",local_20 * 0x184 + 0x16e9a8c);
           g_ModelPolygonData[local_20].material_id_backup = g_ModelPolygonData[local_20].material_id
           ;
         }
-        g_SpatialTreeRoot = shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(local_18);
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\shape\\design.c",0x371);
+        g_SpatialTreeRoot = shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(file);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x371);
         shape_design_c_calculateVertexNormals_FUN_0045be40();
         local_24 = 1;
       }
@@ -252,22 +259,22 @@ LAB_00458b67:
         engine_2d_c_drawText_FUN_00401fd0(local_11c,0,0x16);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-        pcVar6 = &s_EmptyChar_0061aaa3;
-        pcVar7 = g_LoadedModelName;
+        pcVar8 = &s_EmptyChar_0061aaa3;
+        pcVar9 = g_LoadedModelName;
         do {
-          cVar2 = *pcVar6;
-          *pcVar7 = cVar2;
-          if (cVar2 == '\0') break;
-          cVar2 = pcVar6[1];
-          pcVar6 = pcVar6 + 2;
-          pcVar7[1] = cVar2;
-          pcVar7 = pcVar7 + 2;
-        } while (cVar2 != '\0');
+          cVar3 = *pcVar8;
+          *pcVar9 = cVar3;
+          if (cVar3 == '\0') break;
+          cVar3 = pcVar8[1];
+          pcVar8 = pcVar8 + 2;
+          pcVar9[1] = cVar3;
+          pcVar9 = pcVar9 + 2;
+        } while (cVar3 != '\0');
         g_PartsCount = 0;
         g_PolygonCount = 0;
         g_VertexCount = 0;
         g_SelectedPolygonIndex = -1;
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\shape\\design.c",0x33b);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x33b);
         local_24 = 0;
       }
     }
@@ -277,22 +284,22 @@ LAB_00458b67:
       engine_2d_c_drawText_FUN_00401fd0(local_cc,0,0x16);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-      pcVar6 = &s_EmptyChar_0061aa4e;
+      pcVar8 = &s_EmptyChar_0061aa4e;
       pcVar7 = g_LoadedModelName;
       do {
-        cVar2 = *pcVar6;
+        cVar2 = *pcVar8;
         *pcVar7 = cVar2;
         if (cVar2 == '\0') break;
-        cVar2 = pcVar6[1];
-        pcVar6 = pcVar6 + 2;
-        pcVar7[1] = cVar2;
+        cVar3 = pcVar8[1];
+        pcVar8 = pcVar8 + 2;
+        pcVar7[1] = cVar3;
         pcVar7 = pcVar7 + 2;
-      } while (cVar2 != '\0');
+      } while (cVar3 != '\0');
       g_PartsCount = 0;
       g_PolygonCount = 0;
       g_VertexCount = 0;
       g_SelectedPolygonIndex = -1;
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\shape\\design.c",0x329);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\shape\\design.c",0x329);
       local_24 = 0;
     }
   }

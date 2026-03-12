@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 368,
-    "complexity_score": 403,
+    "complexity_score": 387,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 188,
-    "suspect_count": 21,
+    "pseudocode_lines": 192,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 556
+    "total_lines": 560
   },
   "cross_references": [
     {
@@ -149,22 +149,8 @@
         "is_param": false,
         "name": "local_124",
         "offset": -292,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_123",
-        "offset": -291,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
+        "size": 276,
+        "type": "SScriptXRef"
       },
       {
         "is_param": true,
@@ -356,170 +342,154 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 20,
       "match": "(SScriptXRef *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SScriptXRef *)((int)pSVar5 + 4);",
+      "text": "pSVar6 = (SScriptXRef *)((int)pSVar6 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 36,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
+      "text": "*(char *)((int)pSVar6 + 1) = cVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 37,
       "match": "(SScriptXRef *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SScriptXRef *)((int)pSVar5 + 2);",
+      "text": "pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 60,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
+      "text": "*(char *)((int)pSVar6 + 1) = cVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 61,
       "match": "(SScriptXRef *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SScriptXRef *)((int)pSVar5 + 2);",
+      "text": "pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 75,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
+      "text": "*(char *)((int)pSVar6 + 1) = cVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 76,
       "match": "(SScriptXRef *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SScriptXRef *)((int)pSVar5 + 2);",
+      "text": "pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 90,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
+      "text": "*(char *)((int)pSVar6 + 1) = cVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 91,
       "match": "(SScriptXRef *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SScriptXRef *)((int)pSVar5 + 2);",
+      "text": "pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 105,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
+      "text": "*(char *)((int)pSVar6 + 1) = cVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 106,
       "match": "(SScriptXRef *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SScriptXRef *)((int)pSVar5 + 2);",
+      "text": "pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 120,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
+      "text": "*(char *)((int)pSVar6 + 1) = cVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 121,
       "match": "(SScriptXRef *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SScriptXRef *)((int)pSVar5 + 2);",
+      "text": "pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 139,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
+      "text": "*(char *)((int)pSVar6 + 1) = cVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 140,
       "match": "(SScriptXRef *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SScriptXRef *)((int)pSVar5 + 2);",
+      "text": "pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 154,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
+      "text": "*(char *)((int)pSVar6 + 1) = cVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
+      "line": 155,
       "match": "(SScriptXRef *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SScriptXRef *)((int)pSVar5 + 2);",
+      "text": "pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 165,
+      "line": 169,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
+      "text": "*(char *)((int)pSVar6 + 1) = cVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 170,
       "match": "(SScriptXRef *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SScriptXRef *)((int)pSVar5 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 180,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 181,
-      "match": "(SScriptXRef *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SScriptXRef *)((int)pSVar5 + 2);",
+      "text": "pSVar6 = (SScriptXRef *)((int)pSVar6 + 2);",
       "type": "pointer_cast"
     }
   ]

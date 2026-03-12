@@ -9,11 +9,13 @@
 int __cdecl engine_2d_c_drawCharacterHighlighted_FUN_00401b70(int char_code,int x_pos,int y_pos)
 
 {
+  int iVar1;
   uchar *puVar1;
   int iVar2;
   byte *puVar3;
   ushort *puVar4;
   int iVar5;
+  int iVar3;
   uint uVar6;
   int iVar7;
   
@@ -25,10 +27,10 @@ int __cdecl engine_2d_c_drawCharacterHighlighted_FUN_00401b70(int char_code,int 
   else {
     iVar7 = y_pos * 4;
     puVar1 = g_FontTable[char_code + -0x20].bitmap;
-    iVar5 = iVar7 + 0x2c;
+    iVar1 = iVar7 + 0x2c;
     if (g_BitsPerPixel == 8) {
       do {
-        iVar2 = 0;
+        iVar3 = 0;
         puVar3 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar7) + x_pos);
         if (uVar6 != 0) {
           do {
@@ -36,12 +38,12 @@ int __cdecl engine_2d_c_drawCharacterHighlighted_FUN_00401b70(int char_code,int 
               *puVar3 = 0xff;
             }
             puVar1 = puVar1 + 1;
-            iVar2 = iVar2 + 1;
+            iVar3 = iVar3 + 1;
             puVar3 = puVar3 + 1;
-          } while (iVar2 < (int)uVar6);
+          } while (iVar3 < (int)uVar6);
         }
         iVar7 = iVar7 + 4;
-      } while (iVar7 != iVar5);
+      } while (iVar7 != iVar1);
     }
     else {
       do {
@@ -58,7 +60,7 @@ int __cdecl engine_2d_c_drawCharacterHighlighted_FUN_00401b70(int char_code,int 
           } while (iVar2 < (int)uVar6);
         }
         iVar7 = iVar7 + 4;
-      } while (iVar7 != iVar5);
+      } while (iVar7 != iVar1);
     }
     iVar5 = uVar6 + 1;
   }

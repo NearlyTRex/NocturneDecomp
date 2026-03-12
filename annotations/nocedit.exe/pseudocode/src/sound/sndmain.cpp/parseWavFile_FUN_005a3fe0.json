@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 30,
-        "line": 68,
+        "line": 71,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 68,
+        "line": 71,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       },
       {
         "category": "other",
         "column": 105,
-        "line": 70,
+        "line": 73,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 75,
+        "line": 78,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 113,
+        "line": 116,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 116,
+        "line": 119,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       }
     ],
@@ -43,17 +43,17 @@
   },
   "complexity": {
     "assembly_lines": 371,
-    "complexity_score": 191,
+    "complexity_score": 194,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 126,
+    "pseudocode_lines": 129,
     "suspect_count": 6,
     "suspect_types": [
       "unknown_field"
     ],
-    "total_lines": 497
+    "total_lines": 500
   },
   "cross_references": [
     {
@@ -283,28 +283,28 @@
         "name": "local_88",
         "offset": -136,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       },
       {
         "is_param": false,
         "name": "local_87",
         "offset": -135,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       },
       {
         "is_param": false,
         "name": "local_86",
         "offset": -134,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       },
       {
         "is_param": false,
         "name": "local_85",
         "offset": -133,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       },
       {
         "is_param": false,
@@ -318,49 +318,49 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       },
       {
         "is_param": false,
         "name": "local_17",
         "offset": -23,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       },
       {
         "is_param": false,
         "name": "local_16",
         "offset": -22,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       },
       {
         "is_param": false,
         "name": "local_15",
         "offset": -21,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -388,7 +388,7 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 61,
+      "line": 64,
       "match": "._2_2_",
       "severity": "mild",
       "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
@@ -396,7 +396,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 61,
+      "line": 64,
       "match": "._2_2_",
       "severity": "mild",
       "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
@@ -404,7 +404,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 63,
+      "line": 66,
       "match": "._2_2_",
       "severity": "mild",
       "text": "(&local_88,\"Invalid number of channels: %u  (must be 1 or 2)\",(uint)local_24._2_2_);",
@@ -412,7 +412,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 68,
+      "line": 71,
       "match": "._2_2_",
       "severity": "mild",
       "text": "sVar1 = local_24._2_2_ * (short)local_20;",
@@ -420,7 +420,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 106,
+      "line": 109,
       "match": "._2_2_",
       "severity": "mild",
       "text": "(sfx_sample->sample_info).num_channels = (uint)local_24._2_2_;",
@@ -428,7 +428,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 109,
+      "line": 112,
       "match": "._2_2_",
       "severity": "mild",
       "text": "(int)(((ulonglong)local_14 / (ulonglong)local_24._2_2_) /",

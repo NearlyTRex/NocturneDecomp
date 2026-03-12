@@ -9,6 +9,7 @@
 int * __cdecl core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(CScript *this_ptr,int *error_line_out)
 
 {
+  int iVar3;
   int iVar1;
   int iVar2;
   float local_10;
@@ -18,14 +19,14 @@ int * __cdecl core_script_cpp_CScript_validateSyntax_FUN_0055a4b0(CScript *this_
   shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_ScriptPickList);
   if (this_ptr->next_cmd < this_ptr->parsed_line_count) {
     do {
-      iVar2 = this_ptr->next_cmd;
+      iVar3 = this_ptr->next_cmd;
       local_10 = 0.25;
       iVar1 = core_script_cpp_CScript_step_FUN_0055a810(this_ptr,&local_10);
       if (iVar1 < 0) {
-        *error_line_out = this_ptr->parsed_lines[iVar2].line_number + -1;
+        *error_line_out = this_ptr->parsed_lines[iVar3].line_number + -1;
         return (int *)g_ScriptErrorBuffer;
       }
-      iVar2 = iVar2 + 1;
+      iVar2 = iVar3 + 1;
       this_ptr->next_cmd = iVar2;
     } while (iVar2 < this_ptr->parsed_line_count);
   }

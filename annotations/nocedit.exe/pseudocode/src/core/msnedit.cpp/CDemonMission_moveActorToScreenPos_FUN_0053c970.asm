@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   screen_x
 ; int              Stack[0x10]:4   screen_y
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; CVector3f        Stack[-0x14]:12  local_14
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_moveActorToMousePos_FUN_0053ca00 at 0053ca1a

@@ -9,7 +9,10 @@
 ; CVector3f *      Stack[0xc]:4   line_end
 ; CVector3f *      Stack[0x10]:4   out_intersection_point
 ; Local Variables:
-; undefined4       Stack[-0x6c]:4  local_6c
+; SCollisionInfo   Stack[-0x6c]:40  local_6c
+; CVector3f        Stack[-0x38]:12  CStack_38
+; CVector3f        Stack[-0x2c]:12  CStack_2c
+; CVector3f        Stack[-0x20]:12  CStack_20
 ;
 ; XREF[1]:
 ;   core_hero.cpp_CHero_testLineIntersection_FUN_004f25c0 at 004f25f5

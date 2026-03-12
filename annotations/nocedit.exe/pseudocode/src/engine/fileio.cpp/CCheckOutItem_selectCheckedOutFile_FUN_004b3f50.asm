@@ -10,9 +10,8 @@
 ; char *           Stack[0x10]:4   dialog_title
 ; char *           Stack[0x14]:4   wildcard_pattern
 ; Local Variables:
-; undefined4       Stack[-0x3c0]:4  local_3c0
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CPickList        Stack[-0x3c0]:936  local_3c0
+; CCheckOutList    Stack[-0x18]:8  local_18
 ;
 ; XREF[4]:
 ;   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 at 004b4273

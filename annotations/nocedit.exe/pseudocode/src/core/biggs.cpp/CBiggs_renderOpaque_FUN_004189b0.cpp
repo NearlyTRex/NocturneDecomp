@@ -9,13 +9,14 @@
 int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs *this_ptr)
 
 {
-  CMorph *this_ptr_00;
   CBoundingBox3D *this_ptr_01;
   int iVar1;
   CKeyFramedModel *model_ptr;
+  int iVar3;
+  CBoundingBox3D local_20;
+  CMorph *this_ptr_00;
   int iVar2;
   int part_index;
-  CBoundingBox3D local_20;
   
   if ((this_ptr->base).base.render_active != 0) {
     return 0;
@@ -25,9 +26,9 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs *this_ptr)
                           ((CDemonActor *)this_ptr,&local_20);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
   if (iVar1 != 0) {
-    iVar2 = this_ptr->morphing;
+    iVar3 = this_ptr->morphing;
     (this_ptr->base).base.was_rendered_opaque = 1;
-    if (iVar2 == 0) {
+    if (iVar3 == 0) {
       core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0((CCharacter *)this_ptr);
     }
     else {
@@ -43,8 +44,8 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs *this_ptr)
       core_morph_cpp_CMorph_render_FUN_0052bae0(this_ptr_00,this_ptr->morph_timer / 4.0f);
     }
     if (INT_02f43978 != 0) {
-      iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-      if (iVar2 == 0) {
+      iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+      if (iVar3 == 0) {
         core_motion_cpp_CMotionController_render_FUN_0052e700
                   (&(this_ptr->base).base.model.motion_controller,(CDemonActor *)this_ptr);
         (*((this_ptr->base).base.base.vtable._ub)->renderTargetPoints)((CDemonActor *)this_ptr);

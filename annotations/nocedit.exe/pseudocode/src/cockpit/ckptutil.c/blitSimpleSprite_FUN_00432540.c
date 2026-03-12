@@ -12,6 +12,7 @@ void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_00432540(void *sprite_data,
   ColorConversionFunc *pCVar1;
   int iVar2;
   void *pvVar3;
+  void *pvVar1;
   int local_1c;
   int local_18;
   int local_14;
@@ -33,27 +34,27 @@ void __cdecl cockpit_ckptutil_c_blitSimpleSprite_FUN_00432540(void *sprite_data,
       }
     }
     else if (g_BitsPerPixel == 0x10) {
-      pvVar3 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);
+      pvVar1 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);
       local_14 = 0;
       if (0 < height) {
         do {
-          (*pCVar1)(pvVar3,sprite_data,width);
+          (*pCVar1)(pvVar1,sprite_data,width);
           sprite_data = (void *)((int)sprite_data + width);
           local_14 = local_14 + 1;
-          pvVar3 = (void *)((int)pvVar3 + (iVar2 / 2) * 2);
+          pvVar1 = (void *)((int)pvVar1 + (iVar2 / 2) * 2);
         } while (local_14 < height);
         return;
       }
     }
     else {
-      pvVar3 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 4);
+      pvVar1 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 4);
       local_1c = 0;
       if (0 < height) {
         do {
-          (*pCVar1)(pvVar3,sprite_data,width);
+          (*pCVar1)(pvVar1,sprite_data,width);
           sprite_data = (void *)((int)sprite_data + width);
           local_1c = local_1c + 1;
-          pvVar3 = (void *)((int)pvVar3 +
+          pvVar1 = (void *)((int)pvVar1 +
                            ((int)((iVar2 + (iVar2 >> 0x1f) * -4) - (uint)((iVar2 >> 0x1f) << 1 < 0))
                            >> 2) * 4);
         } while (local_1c < height);

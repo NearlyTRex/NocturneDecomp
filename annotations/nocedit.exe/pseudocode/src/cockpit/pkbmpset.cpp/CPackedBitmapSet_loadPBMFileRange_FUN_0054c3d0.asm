@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   end_index
 ; int              Stack[0x14]:4   apply_palette_flag
 ; Local Variables:
-; undefined        Stack[-0x74]:1  local_74
+; char[100]        Stack[-0x74]:100  local_74
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860

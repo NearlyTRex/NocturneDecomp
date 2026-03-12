@@ -9,17 +9,17 @@
 void __cdecl shape_superopt_cpp_CComplexPolygon_removedSharedEdges_FUN_005c8160(CComplexPolygon *this_ptr)
 
 {
-  int *piVar1;
-  int iVar2;
-  int iVar3;
-  bool bVar4;
-  int iVar5;
   int iVar6;
   int *src;
   int *dest;
   uint uVar7;
   int *local_28;
   uint local_14;
+  int iVar3;
+  int iVar2;
+  bool bVar4;
+  int iVar5;
+  int *piVar1;
   
   piVar1 = this_ptr->expanded_edges;
   do {

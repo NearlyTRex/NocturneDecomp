@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 97,
-        "line": 78,
+        "line": 81,
         "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 102,
-        "line": 86,
+        "line": 89,
         "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 234,
-    "complexity_score": 123,
+    "complexity_score": 126,
     "cross_reference_count": 2,
     "function_call_count": 16,
     "global_count": 23,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 98,
+    "pseudocode_lines": 101,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 332
+    "total_lines": 335
   },
   "cross_references": [
     {
@@ -324,21 +324,21 @@
         "name": "local_114",
         "offset": -276,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       },
       {
         "is_param": false,
         "name": "local_113",
         "offset": -275,
-        "size": 1,
-        "type": "undefined1"
+        "size": 255,
+        "type": "undefined1[255]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "long"
       },
       {
         "is_param": true,
@@ -369,7 +369,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 22,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (0 < *(int *)((int)g_SfxSamples[0].loop_endpoints + iVar4 + -0x18)) {",
@@ -377,7 +377,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 30,
       "match": "(CSfxSample *)((int)",
       "severity": "mild",
       "text": "out_sample = (CSfxSample *)((int)out_sample + (uint)bVar6 * -8 + 4);",

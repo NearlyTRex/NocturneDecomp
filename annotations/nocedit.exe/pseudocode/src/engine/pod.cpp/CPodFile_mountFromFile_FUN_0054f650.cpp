@@ -9,17 +9,23 @@
 int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_ptr,char *pod_filename)
 
 {
-  char cVar1;
-  _FILE *file;
+  char cVar2;
+  bool bVar3;
+  _FILE *file_handle;
   int iVar2;
   _FILE *p_Var3;
+  int iVar4;
   CPodDirectoryEntry *pCVar4;
   int *piVar5;
+  CPodDirectoryEntry *pCVar5;
   uint uVar6;
+  uint uVar7;
   int iVar7;
   SIZE_T size;
   char *pcVar8;
+  char *pcVar10;
   char *pcVar9;
+  char *pcVar11;
   byte bVar10;
   bool bVar11;
   SFoundFileInfo local_6a4;
@@ -62,9 +68,11 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_pt
   int local_1c;
   int local_18;
   int local_14;
+  char cVar1;
+  _FILE *file;
   
   bVar10 = 0;
-  local_34 = 0;
+  bVar3 = false;
   engine_pod_cpp_CPodFile_cleanup_FUN_00550090(this_ptr);
   engine_dosio_c_getRelativeFilePath_FUN_004816c0(local_6a4.found_path,(char *)0x0,pod_filename);
   iVar2 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_6a4);
@@ -77,33 +85,33 @@ int __cdecl engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile *this_pt
     cVar1 = *pcVar8;
     *pcVar9 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar8[1];
+    cVar2 = pcVar8[1];
     pcVar8 = pcVar8 + 2;
-    pcVar9[1] = cVar1;
+    pcVar9[1] = cVar2;
     pcVar9 = pcVar9 + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   this_ptr->timestamp = local_6a4.timestamp;
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (this_ptr->filename,(char *)0x0,"rb","..\\engine\\pod.cpp",0x150);
   local_20 = p_Var3;
   if (p_Var3 == (_FILE *)0x0) goto LAB_0054f6fe;
   engine_dosio_c_splitPath_FUN_00481f20(pod_filename,(char *)0x0,(char *)0x0,(char *)0x0,local_260);
-  iVar2 = _stricmp(local_260,"epd");
-  if (iVar2 == 0) {
+  iVar4 = _stricmp(local_260,"epd");
+  if (iVar4 == 0) {
 LAB_0054f786:
     _fread(local_370,1,0x110,local_20);
-    pcVar9 = local_36c;
-    pcVar8 = this_ptr->description;
+    pcVar10 = local_36c;
+    pcVar11 = this_ptr->description;
     this_ptr->file_count = local_26c;
     do {
-      cVar1 = *pcVar9;
-      *pcVar8 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      pcVar8[1] = cVar1;
-      pcVar8 = pcVar8 + 2;
-    } while (cVar1 != '\0');
+      cVar2 = *pcVar10;
+      *pcVar11 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar10[1];
+      pcVar10 = pcVar10 + 2;
+      pcVar11[1] = cVar2;
+      pcVar11 = pcVar11 + 2;
+    } while (cVar2 != '\0');
     pCVar4 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                        (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x16c);
     this_ptr->directory_entries = pCVar4;
@@ -118,126 +126,127 @@ LAB_0054f6fe:
     size = 0;
     local_2c = 0;
     local_28 = 0;
+    local_384 = size;
     if (0 < this_ptr->file_count) {
       local_18 = 0;
       do {
         _fread(local_ac,1,0x50,local_20);
         *(SIZE_T *)((int)&this_ptr->directory_entries->name + local_18) = size;
         uVar6 = 0xffffffff;
-        pcVar8 = local_ac;
+        pcVar11 = local_ac;
         do {
           if (uVar6 == 0) break;
           uVar6 = uVar6 - 1;
-          cVar1 = *pcVar8;
-          pcVar8 = pcVar8 + (uint)bVar10 * -2 + 1;
-        } while (cVar1 != '\0');
-        size = size + ~uVar6;
-        if (local_2c < (int)size) {
-          local_2c = (this_ptr->file_count - local_28) * 0x30 + size;
-          pcVar8 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                             (this_ptr->file_data_buffer,local_2c,"..\\engine\\pod.cpp",0x17b);
-          this_ptr->file_data_buffer = pcVar8;
-          if (pcVar8 == (char *)0x0) {
+          cVar2 = *pcVar11;
+          pcVar11 = pcVar11 + (uint)bVar10 * -2 + 1;
+        } while (cVar2 != '\0');
+        local_384 = size + ~uVar6;
+        if (local_2c < (int)local_384) {
+          local_2c = (this_ptr->file_count - local_28) * 0x30 + local_384;
+          pcVar11 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                              (this_ptr->file_data_buffer,local_2c,"..\\engine\\pod.cpp",0x17b);
+          this_ptr->file_data_buffer = pcVar11;
+          if (pcVar11 == (char *)0x0) {
             g_CurrentFilename = "..\\engine\\pod.cpp";
             g_CurrentLineNumber = 0x17c;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
           }
         }
-        pcVar8 = local_ac;
-        pcVar9 = this_ptr->file_data_buffer +
-                 *(int *)((int)&this_ptr->directory_entries->name + local_18);
+        pcVar11 = local_ac;
+        pcVar10 = this_ptr->file_data_buffer +
+                  *(int *)((int)&this_ptr->directory_entries->name + local_18);
         do {
-          cVar1 = *pcVar8;
-          *pcVar9 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar1 = pcVar8[1];
-          pcVar8 = pcVar8 + 2;
-          pcVar9[1] = cVar1;
-          pcVar9 = pcVar9 + 2;
-        } while (cVar1 != '\0');
+          cVar2 = *pcVar11;
+          *pcVar10 = cVar2;
+          if (cVar2 == '\0') break;
+          cVar2 = pcVar11[1];
+          pcVar11 = pcVar11 + 2;
+          pcVar10[1] = cVar2;
+          pcVar10 = pcVar10 + 2;
+        } while (cVar2 != '\0');
         *(uint *)((int)&this_ptr->directory_entries->size + local_18) = local_6c;
         *(uint *)((int)&this_ptr->directory_entries->offset + local_18) = local_68;
         *(uint *)((int)&this_ptr->directory_entries->checksum + local_18) = local_60;
         local_28 = local_28 + 1;
         *(uint *)((int)&this_ptr->directory_entries->timestamp + local_18) = this_ptr->timestamp;
         local_18 = local_18 + 0x14;
+        size = local_384;
       } while (local_28 < this_ptr->file_count);
     }
-    bVar11 = SBORROW4(size,local_2c);
-    iVar2 = size - local_2c;
+    bVar11 = SBORROW4(local_384,local_2c);
+    iVar4 = local_384 - local_2c;
   }
   else {
-    iVar2 = _stricmp(local_260,".epd");
-    if (iVar2 == 0) goto LAB_0054f786;
+    iVar4 = _stricmp(local_260,".epd");
+    if (iVar4 == 0) goto LAB_0054f786;
     _fread(&local_30,1,4,p_Var3);
     _fseek(p_Var3,0,0);
     file = local_20;
     if ((((local_30 == 'P') && (local_2f == 'O')) && (local_2e == 'D')) && (local_2d == '3')) {
-      pcVar9 = local_488;
+      pcVar10 = local_488;
       _fread(local_490,1,0x120,p_Var3);
-      pcVar8 = this_ptr->description;
+      pcVar11 = this_ptr->description;
       this_ptr->pod_format_version = 200;
       do {
-        cVar1 = *pcVar9;
-        *pcVar8 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar9[1];
-        pcVar9 = pcVar9 + 2;
-        pcVar8[1] = cVar1;
-        pcVar8 = pcVar8 + 2;
-      } while (cVar1 != '\0');
-      pcVar9 = local_434;
-      pcVar8 = this_ptr->author_info;
+        cVar2 = *pcVar10;
+        *pcVar11 = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar10[1];
+        pcVar10 = pcVar10 + 2;
+        pcVar11[1] = cVar2;
+        pcVar11 = pcVar11 + 2;
+      } while (cVar2 != '\0');
+      pcVar10 = local_434;
+      pcVar11 = this_ptr->author_info;
       do {
-        cVar1 = *pcVar9;
-        *pcVar8 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar9[1];
-        pcVar9 = pcVar9 + 2;
-        pcVar8[1] = cVar1;
-        pcVar8 = pcVar8 + 2;
-      } while (cVar1 != '\0');
-      pcVar9 = local_3e4;
-      pcVar8 = this_ptr->copyright_info;
+        cVar2 = *pcVar10;
+        *pcVar11 = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar10[1];
+        pcVar10 = pcVar10 + 2;
+        pcVar11[1] = cVar2;
+        pcVar11 = pcVar11 + 2;
+      } while (cVar2 != '\0');
+      pcVar10 = local_3e4;
+      pcVar11 = this_ptr->copyright_info;
       do {
-        cVar1 = *pcVar9;
-        *pcVar8 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar9[1];
-        pcVar9 = pcVar9 + 2;
-        pcVar8[1] = cVar1;
-        pcVar8 = pcVar8 + 2;
-      } while (cVar1 != '\0');
+        cVar2 = *pcVar10;
+        *pcVar11 = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar10[1];
+        pcVar10 = pcVar10 + 2;
+        pcVar11[1] = cVar2;
+        pcVar11 = pcVar11 + 2;
+      } while (cVar2 != '\0');
       this_ptr->file_count = local_394;
       this_ptr->audit_count = local_378;
       this_ptr->dependency_count = local_380;
       this_ptr->mount_priority = local_388;
-      pCVar4 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+      pCVar5 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                          (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x1ab);
-      this_ptr->directory_entries = pCVar4;
-      if (pCVar4 != (CPodDirectoryEntry *)0x0) {
+      this_ptr->directory_entries = pCVar5;
+      if (pCVar5 != (CPodDirectoryEntry *)0x0) {
         _fseek(p_Var3,local_390,0);
         _fread(this_ptr->directory_entries,this_ptr->file_count,0x14,p_Var3)
         ;
         if ((p_Var3->_flag & 0x20) == 0) {
           if ((this_ptr->file_count <= (int)local_384) &&
              ((int)local_384 <= this_ptr->file_count * 0x100)) {
-            pcVar8 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                               (local_384,"..\\engine\\pod.cpp",0x1ba);
-            this_ptr->file_data_buffer = pcVar8;
-            if (pcVar8 == (char *)0x0) {
+            pcVar11 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+                                (local_384,"..\\engine\\pod.cpp",0x1ba);
+            this_ptr->file_data_buffer = pcVar11;
+            if (pcVar11 == (char *)0x0) {
               g_CurrentFilename = "..\\engine\\pod.cpp";
               g_CurrentLineNumber = 0x1bb;
               core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
             }
-            p_Var3 = local_20;
+            file_handle = local_20;
             _fread(this_ptr->file_data_buffer,local_384,1,local_20);
-            if ((p_Var3->_flag & 0x20) == 0) {
-              uVar6 = _ftell(p_Var3);
-              this_ptr->dependency_records_offset = uVar6;
+            if ((file_handle->_flag & 0x20) == 0) {
+              uVar7 = _ftell(file_handle);
+              this_ptr->dependency_records_offset = uVar7;
               this_ptr->total_file_size =
                    this_ptr->dependency_records_offset + this_ptr->dependency_count * 0x108;
-              size = local_384;
               goto LAB_0054f9a8;
             }
           }
@@ -246,40 +255,41 @@ LAB_0054f6fe:
       goto LAB_0054f6fe;
     }
     if (((local_30 == 'P') && (local_2f == 'O')) && ((local_2e == 'D' && (local_2d == '2')))) {
-      pcVar9 = local_158;
+      pcVar10 = local_158;
       _fread(local_160,1,0x60,local_20);
-      pcVar8 = this_ptr->description;
+      pcVar11 = this_ptr->description;
       this_ptr->pod_format_version = 200;
       do {
-        cVar1 = *pcVar9;
-        *pcVar8 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar9[1];
-        pcVar9 = pcVar9 + 2;
-        pcVar8[1] = cVar1;
-        pcVar8 = pcVar8 + 2;
-      } while (cVar1 != '\0');
+        cVar2 = *pcVar10;
+        *pcVar11 = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar10[1];
+        pcVar10 = pcVar10 + 2;
+        pcVar11[1] = cVar2;
+        pcVar11 = pcVar11 + 2;
+      } while (cVar2 != '\0');
       this_ptr->file_count = local_108;
       this_ptr->audit_count = local_104;
-      pCVar4 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+      pCVar5 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                          (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x1da);
-      this_ptr->directory_entries = pCVar4;
-      if (pCVar4 != (CPodDirectoryEntry *)0x0) {
-        _fread(pCVar4,this_ptr->file_count,0x14,file);
-        iVar2 = this_ptr->file_count;
-        size = (this_ptr->directory_entries->offset - 0x60) + iVar2 * -0x14;
-        if (((int)size < iVar2) || (iVar2 * 0x100 < (int)size)) goto LAB_0054f6fe;
-        pcVar8 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\engine\\pod.cpp",0x1e7);
-        this_ptr->file_data_buffer = pcVar8;
-        if (pcVar8 == (char *)0x0) {
+      this_ptr->directory_entries = pCVar5;
+      if (pCVar5 != (CPodDirectoryEntry *)0x0) {
+        _fread(pCVar5,this_ptr->file_count,0x14,file);
+        iVar4 = this_ptr->file_count;
+        local_384 = (this_ptr->directory_entries->offset - 0x60) + iVar4 * -0x14;
+        if (((int)local_384 < iVar4) || (iVar4 * 0x100 < (int)local_384)) goto LAB_0054f6fe;
+        pcVar11 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+                            (local_384,"..\\engine\\pod.cpp",0x1e7);
+        this_ptr->file_data_buffer = pcVar11;
+        if (pcVar11 == (char *)0x0) {
           g_CurrentFilename = "..\\engine\\pod.cpp";
           g_CurrentLineNumber = 0x1e8;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
         }
-        _fread(this_ptr->file_data_buffer,size,1,local_20);
-        iVar2 = this_ptr->file_count + -1;
+        _fread(this_ptr->file_data_buffer,local_384,1,local_20);
+        iVar4 = this_ptr->file_count + -1;
         this_ptr->total_file_size =
-             this_ptr->directory_entries[iVar2].offset + this_ptr->directory_entries[iVar2].size;
+             this_ptr->directory_entries[iVar4].offset + this_ptr->directory_entries[iVar4].size;
         goto LAB_0054f9a8;
       }
       goto LAB_0054f6fe;
@@ -287,99 +297,99 @@ LAB_0054f6fe:
     this_ptr->pod_format_version = 1;
     _fread(&local_100,1,0x54,local_20);
     if ((local_100 < 1) || (99999 < local_100)) goto LAB_0054f6fe;
-    pcVar9 = local_fc;
-    pcVar8 = this_ptr->description;
+    pcVar10 = local_fc;
+    pcVar11 = this_ptr->description;
     this_ptr->file_count = local_100;
     do {
-      cVar1 = *pcVar9;
-      *pcVar8 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      pcVar8[1] = cVar1;
-      pcVar8 = pcVar8 + 2;
-    } while (cVar1 != '\0');
-    pCVar4 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+      cVar2 = *pcVar10;
+      *pcVar11 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar10[1];
+      pcVar10 = pcVar10 + 2;
+      pcVar11[1] = cVar2;
+      pcVar11 = pcVar11 + 2;
+    } while (cVar2 != '\0');
+    pCVar5 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                        (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x20a);
-    this_ptr->directory_entries = pCVar4;
-    if (pCVar4 == (CPodDirectoryEntry *)0x0) goto LAB_0054f6fe;
-    size = 0;
+    this_ptr->directory_entries = pCVar5;
+    if (pCVar5 == (CPodDirectoryEntry *)0x0) goto LAB_0054f6fe;
+    local_384 = 0;
     local_1c = 0;
     local_24 = 0;
     if (0 < this_ptr->file_count) {
       local_14 = 0;
       do {
         _fread(local_5c,1,0x28,local_20);
-        *(SIZE_T *)((int)&this_ptr->directory_entries->name + local_14) = size;
-        uVar6 = 0xffffffff;
-        pcVar8 = local_5c;
+        *(SIZE_T *)((int)&this_ptr->directory_entries->name + local_14) = local_384;
+        uVar7 = 0xffffffff;
+        pcVar11 = local_5c;
         do {
-          if (uVar6 == 0) break;
-          uVar6 = uVar6 - 1;
-          cVar1 = *pcVar8;
-          pcVar8 = pcVar8 + (uint)bVar10 * -2 + 1;
-        } while (cVar1 != '\0');
-        size = size + ~uVar6;
-        if (local_1c < (int)size) {
-          local_1c = (this_ptr->file_count - local_24) * 0x30 + size;
-          pcVar8 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                             (this_ptr->file_data_buffer,local_1c,"..\\engine\\pod.cpp",0x219);
-          this_ptr->file_data_buffer = pcVar8;
-          if (pcVar8 == (char *)0x0) {
+          if (uVar7 == 0) break;
+          uVar7 = uVar7 - 1;
+          cVar2 = *pcVar11;
+          pcVar11 = pcVar11 + (uint)bVar10 * -2 + 1;
+        } while (cVar2 != '\0');
+        local_384 = local_384 + ~uVar7;
+        if (local_1c < (int)local_384) {
+          local_1c = (this_ptr->file_count - local_24) * 0x30 + local_384;
+          pcVar11 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                              (this_ptr->file_data_buffer,local_1c,"..\\engine\\pod.cpp",0x219);
+          this_ptr->file_data_buffer = pcVar11;
+          if (pcVar11 == (char *)0x0) {
             g_CurrentFilename = "..\\engine\\pod.cpp";
             g_CurrentLineNumber = 0x21a;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
           }
         }
-        pcVar8 = local_5c;
-        pcVar9 = this_ptr->file_data_buffer +
-                 *(int *)((int)&this_ptr->directory_entries->name + local_14);
+        pcVar11 = local_5c;
+        pcVar10 = this_ptr->file_data_buffer +
+                  *(int *)((int)&this_ptr->directory_entries->name + local_14);
         do {
-          cVar1 = *pcVar8;
-          *pcVar9 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar1 = pcVar8[1];
-          pcVar8 = pcVar8 + 2;
-          pcVar9[1] = cVar1;
-          pcVar9 = pcVar9 + 2;
-        } while (cVar1 != '\0');
+          cVar2 = *pcVar11;
+          *pcVar10 = cVar2;
+          if (cVar2 == '\0') break;
+          cVar2 = pcVar11[1];
+          pcVar11 = pcVar11 + 2;
+          pcVar10[1] = cVar2;
+          pcVar10 = pcVar10 + 2;
+        } while (cVar2 != '\0');
         *(uint *)((int)&this_ptr->directory_entries->size + local_14) = local_3c;
         *(uint *)((int)&this_ptr->directory_entries->offset + local_14) = local_38;
         *(uint *)((int)&this_ptr->directory_entries->checksum + local_14) = 0;
-        iVar2 = local_14 + 0x14;
+        iVar4 = local_14 + 0x14;
         *(uint *)((int)&this_ptr->directory_entries->timestamp + local_14) = this_ptr->timestamp;
         local_24 = local_24 + 1;
-        local_14 = iVar2;
+        local_14 = iVar4;
       } while (local_24 < this_ptr->file_count);
     }
-    bVar11 = SBORROW4(size,local_1c);
-    iVar2 = size - local_1c;
+    bVar11 = SBORROW4(local_384,local_1c);
+    iVar4 = local_384 - local_1c;
   }
-  if (bVar11 != iVar2 < 0) {
-    local_34 = 1;
+  if (bVar11 != iVar4 < 0) {
+    bVar3 = true;
   }
 LAB_0054f9a8:
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\pod.cpp",0x22d);
-  if (local_34 != 0) {
-    pcVar8 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                       (this_ptr->file_data_buffer,size,"..\\engine\\pod.cpp",0x233);
-    this_ptr->file_data_buffer = pcVar8;
-    if (pcVar8 == (char *)0x0) {
+  if (bVar3) {
+    pcVar11 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                        (this_ptr->file_data_buffer,local_384,"..\\engine\\pod.cpp",0x233);
+    this_ptr->file_data_buffer = pcVar11;
+    if (pcVar11 == (char *)0x0) {
       g_CurrentFilename = "..\\engine\\pod.cpp";
       g_CurrentLineNumber = 0x235;
       core_main_c_displayErrorAndQuit_FUN_00506f10("realloc returns NULL shrinking filenameBlockSize to fit.");
     }
   }
-  iVar2 = 0;
+  iVar4 = 0;
   if (0 < this_ptr->file_count) {
     iVar7 = 0;
     do {
       piVar5 = (int *)((int)&this_ptr->directory_entries->name + iVar7);
-      if ((*piVar5 < 0) || ((int)size <= *piVar5)) goto LAB_0054f6fe;
+      if ((*piVar5 < 0) || ((int)local_384 <= *piVar5)) goto LAB_0054f6fe;
       *piVar5 = (int)(this_ptr->file_data_buffer + *piVar5);
-      iVar2 = iVar2 + 1;
+      iVar4 = iVar4 + 1;
       iVar7 = iVar7 + 0x14;
-    } while (iVar2 < this_ptr->file_count);
+    } while (iVar4 < this_ptr->file_count);
   }
   _qsort
             (this_ptr->directory_entries,this_ptr->file_count,0x14,

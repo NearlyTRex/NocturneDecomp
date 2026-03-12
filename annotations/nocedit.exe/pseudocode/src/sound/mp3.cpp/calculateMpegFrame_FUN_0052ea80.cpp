@@ -11,30 +11,32 @@
 void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_0052ea80(SMpegFrame *frame)
 
 {
-  SMpegFrameHeader *pSVar1;
-  int iVar2;
-  SMpegFrameHeader *pSVar3;
-  int iVar4;
+  int iVar1;
+  int iVar3;
   int iVar5;
   int iVar6;
+  SMpegFrameHeader *pSVar1;
+  SMpegFrameHeader *pSVar3;
+  int iVar2;
+  int iVar4;
   
   pSVar1 = frame->header;
-  iVar6 = pSVar1->channel_mode;
-  frame->channel_mode = iVar6;
-  frame->samples_per_granule = (iVar6 != 3) + 1;
+  iVar1 = pSVar1->channel_mode;
+  frame->channel_mode = iVar1;
+  frame->samples_per_granule = (iVar1 != 3) + 1;
   if (pSVar1->layer == 2) {
-    iVar2 = frame->sblimit;
+    iVar3 = frame->sblimit;
     pSVar3 = frame->header;
     iVar4 = pSVar3->mpeg_version;
     iVar5 = g_MpegBitrateTable[iVar4 + -1][pSVar3->layer + 2][pSVar3->bitrate_index] /
             frame->samples_per_granule;
-    iVar6 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar4][pSVar3->sampling_rate_index]));
+    iVar1 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar4][pSVar3->sampling_rate_index]));
     if (iVar4 == 1) {
-      if (((iVar6 == 0x30) && (0x37 < iVar5)) || ((0x37 < iVar5 && (iVar5 < 0x51)))) {
+      if (((iVar1 == 0x30) && (0x37 < iVar5)) || ((0x37 < iVar5 && (iVar5 < 0x51)))) {
         iVar6 = 0;
       }
-      else if ((iVar6 == 0x30) || (iVar5 < 0x60)) {
-        if ((iVar6 == 0x20) || (0x30 < iVar5)) {
+      else if ((iVar1 == 0x30) || (iVar5 < 0x60)) {
+        if ((iVar1 == 0x20) || (0x30 < iVar5)) {
           iVar6 = 3;
         }
         else {
@@ -54,7 +56,7 @@ void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_0052ea80(SMpegFrame *frame)
       core_main_c_displayErrorAndQuit_FUN_00506f10
                 ("MPEG Layer 2 - pick_table - can't load tables!  File: %s",g_CurrentMp3Filename);
     }
-    frame->sblimit = iVar2;
+    frame->sblimit = iVar3;
   }
   else {
     frame->sblimit = 0x20;
@@ -63,14 +65,14 @@ void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_0052ea80(SMpegFrame *frame)
     frame->js_bound = frame->sblimit;
     return;
   }
-  iVar6 = pSVar1->layer;
+  iVar1 = pSVar1->layer;
   iVar2 = pSVar1->mode_extension;
-  if ((((iVar6 < 1) || (3 < iVar6)) || (iVar2 < 0)) || (3 < iVar2)) {
+  if ((((iVar1 < 1) || (3 < iVar1)) || (iVar2 < 0)) || (3 < iVar2)) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
     g_CurrentLineNumber = 0x1b2;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("js_bound bad layer/modext (%d/%d)  File: %s",iVar6,iVar2,g_CurrentMp3Filename);
+              ("js_bound bad layer/modext (%d/%d)  File: %s",iVar1,iVar2,g_CurrentMp3Filename);
   }
-  frame->js_bound = g_MpegLayer2AllocationTables[iVar6][iVar2];
+  frame->js_bound = g_MpegLayer2AllocationTables[iVar1][iVar2];
   return;
 }

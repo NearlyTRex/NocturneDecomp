@@ -11,6 +11,8 @@
 CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004e6030(CGhoul *this_ptr)
 
 {
+  float fVar1;
+  float fVar4;
   CGhoul *pCVar1;
   float fVar2;
   float fVar3;
@@ -25,10 +27,10 @@ CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004e6030(CGhoul *this_ptr)
   fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(4.0,10.0);
   pCVar1->arise_timer = 0xa0000;
   pCVar1->pending_eat_state = -1;
-  fVar2 = (float)65536;
+  fVar1 = (float)65536;
   pCVar1->flinch_blend_weight = 0.0;
   pCVar1->spasm_count = 2;
-  pCVar1->spasm_timer = (int)ROUND(ROUND(fVar3 * fVar2));
+  pCVar1->spasm_timer = (int)ROUND(ROUND(fVar3 * fVar1));
   iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,3);
   (pCVar1->base).base.collision_cylinder_height = 0.75;
   (pCVar1->base).base.collision_cylinder_radius = 1.5;
@@ -36,11 +38,11 @@ CGhoul * __cdecl core_ghoul_cpp_CGhoul_ctor_FUN_004e6030(CGhoul *this_ptr)
   pCVar1->dark_waypoint = (CDemonActor *)0x0;
   pCVar1->heal_timer = 0.0;
   pCVar1->is_berserk = 0;
-  fVar2 = 50.0f;
+  fVar1 = 50.0f;
   pCVar1->stuck_timer = 0.0;
-  fVar3 = 100.0f;
+  fVar4 = 100.0f;
   pCVar1->lives_left = iVar4;
-  (pCVar1->base).base.ai_detection_range_min = fVar2;
-  (pCVar1->base).base.ai_detection_range_max = fVar3;
+  (pCVar1->base).base.ai_detection_range_min = fVar1;
+  (pCVar1->base).base.ai_detection_range_max = fVar4;
   return pCVar1;
 }

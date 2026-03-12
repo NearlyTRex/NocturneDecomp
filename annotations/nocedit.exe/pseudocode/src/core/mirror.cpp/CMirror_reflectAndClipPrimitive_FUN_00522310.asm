@@ -7,7 +7,7 @@
 ; CMirror *        Stack[0x4]:4   this_ptr
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   primitive
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560 at 0052256a

@@ -7,9 +7,9 @@
 ; CCourse *        Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x17c]:1  local_17c
-; undefined1       Stack[-0x14]:1  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; char[360]        Stack[-0x17c]:360  local_17c
+; undefined1[4]    Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 00443278

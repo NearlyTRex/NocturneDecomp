@@ -9,12 +9,12 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0(CLodMesh *this_ptr)
 
 {
-  CDemonRenderer *pCVar1;
   int iVar2;
   int iVar3;
   int iVar4;
   CVector3i local_1c;
   CVector3f local_10;
+  CDemonRenderer *pCVar1;
   
   iVar2 = 0;
   if (0 < this_ptr->vertex_count) {

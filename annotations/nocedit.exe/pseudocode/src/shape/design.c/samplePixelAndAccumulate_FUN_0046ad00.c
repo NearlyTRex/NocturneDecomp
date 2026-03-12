@@ -9,16 +9,18 @@
 void __cdecl shape_design_c_samplePixelAndAccumulate_FUN_0046ad00(void *rgb_buffer,void *alpha_buffer,int atlas_width,int atlas_height,int pixel_x,int pixel_y,double weight,double *red_accumulator,double *green_accumulator,double *blue_accumulator,double *alpha_accumulator)
 
 {
+  int iVar3;
   int iVar1;
   int iVar2;
+  int iVar4;
   
   iVar1 = shape_design_c_wrapCoordinate_FUN_0046acc0(pixel_x,atlas_width);
   iVar2 = shape_design_c_wrapCoordinate_FUN_0046acc0(pixel_y,atlas_height);
-  iVar1 = iVar1 + iVar2 * atlas_width;
-  iVar2 = iVar1 * 3;
-  *red_accumulator = (double)*(byte *)((int)rgb_buffer + iVar2 + 2) * weight + *red_accumulator;
-  *green_accumulator = (double)*(byte *)((int)rgb_buffer + iVar2 + 1) * weight + *green_accumulator;
-  *blue_accumulator = (double)*(byte *)((int)rgb_buffer + iVar2) * weight + *blue_accumulator;
-  *alpha_accumulator = (double)*(byte *)((int)alpha_buffer + iVar1) * weight + *alpha_accumulator;
+  iVar4 = iVar1 + iVar2 * atlas_width;
+  iVar3 = iVar4 * 3;
+  *red_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3 + 2) * weight + *red_accumulator;
+  *green_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3 + 1) * weight + *green_accumulator;
+  *blue_accumulator = (double)*(byte *)((int)rgb_buffer + iVar3) * weight + *blue_accumulator;
+  *alpha_accumulator = (double)*(byte *)((int)alpha_buffer + iVar4) * weight + *alpha_accumulator;
   return;
 }

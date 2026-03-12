@@ -9,18 +9,18 @@
 CVector3f * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_005f4e20(CVector3f *input_output_vector,CMatrix3x4f *matrix)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
+  CVector3f local_c;
+  float fVar11;
   float fVar9;
   float fVar10;
-  float fVar11;
-  CVector3f local_c;
+  float fVar1;
+  float fVar7;
+  float fVar8;
+  float fVar5;
+  float fVar6;
+  float fVar3;
+  float fVar4;
+  float fVar2;
   
   fVar1 = matrix->m[1].x;
   fVar2 = input_output_vector->x;

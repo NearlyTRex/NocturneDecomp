@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 110,
+    "complexity_score": 117,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 65,
+    "pseudocode_lines": 72,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 215
+    "total_lines": 222
   },
   "cross_references": [],
   "function": {
@@ -130,42 +130,42 @@
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -228,7 +228,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 34,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar2 = *(int *)((int)g_ScreenBufferArray + local_38);",
@@ -236,7 +236,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 42,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "(*pCVar4)((void *)(iVar2 + iVar3),(void *)((int)sprite_data + iVar3 + iVar5),",
@@ -244,18 +244,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 57,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar2 = *(int *)((int)g_ScreenBufferArray + local_40);",
+      "text": "iVar6 = *(int *)((int)g_ScreenBufferArray + local_40);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 65,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "(*pCVar4)((void *)(iVar3 * 2 + iVar2),(void *)((int)sprite_data + iVar3 + iVar5),",
+      "text": "(*pCVar4)((void *)(iVar9 * 2 + iVar6),(void *)((int)sprite_data + iVar9 + iVar10),",
       "type": "pointer_cast"
     }
   ]

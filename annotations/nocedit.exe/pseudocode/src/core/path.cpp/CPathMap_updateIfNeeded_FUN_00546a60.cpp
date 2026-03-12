@@ -9,8 +9,10 @@
 void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60(CPathMap *this_ptr,CVector3f *source_position,int force_update)
 
 {
+  int iVar1;
   uint uVar1;
   int iVar2;
+  uint *puVar2;
   uint *puVar3;
   uint *puVar4;
   byte bVar5;
@@ -55,13 +57,13 @@ void __cdecl core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60(CPathMap *this_p
     return;
   }
   puVar4 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x138b4);
-  puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);
+  puVar2 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);
   (this_ptr->cached_voxel_coords).x = (this_ptr->voxel_coords).x;
-  *puVar4 = *puVar3;
-  puVar4[(uint)bVar5 * -2 + 1] = puVar3[(uint)bVar5 * -2 + 1];
-  iVar2 = (this_ptr->voxel_coords).z;
+  *puVar4 = *puVar2;
+  puVar4[(uint)bVar5 * -2 + 1] = puVar2[(uint)bVar5 * -2 + 1];
+  iVar1 = (this_ptr->voxel_coords).z;
   (this_ptr->grid_origin).x = (this_ptr->voxel_coords).x + -0x32;
-  (this_ptr->grid_origin).z = iVar2 + -0x32;
+  (this_ptr->grid_origin).z = iVar1 + -0x32;
   (this_ptr->grid_origin).y = (this_ptr->voxel_coords).y;
   core_path_cpp_CPathMap_reset_FUN_00548510(this_ptr);
   return;

@@ -1,22 +1,36 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 15,
+        "line": 146,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 147,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 514,
-    "complexity_score": 244,
+    "complexity_score": 280,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 30,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 219,
-    "suspect_count": 2,
+    "pseudocode_lines": 230,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "unknown_field"
     ],
-    "total_lines": 733
+    "total_lines": 744
   },
   "cross_references": [
     {
@@ -346,7 +360,7 @@
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -360,7 +374,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SSoftwareEdge *"
       },
       {
         "is_param": true,
@@ -380,8 +394,24 @@
   },
   "suspects": [
     {
+      "description": "Unknown/mangled field access",
+      "line": 139,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "uVar10._0_2_ = (ushort)(pSVar7->projected_vertex).screen_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 140,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "uVar10._0_2_ = (ushort)uVar10 ^ 0xffff;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 185,
+      "line": 196,
       "match": "SBORROW4",
       "severity": "mild",
       "text": "bVar12 = SBORROW4(g_SoftwareMinScanline,g_MaxViewportScanline);",
@@ -389,10 +419,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 218,
+      "line": 229,
       "match": "SBORROW4",
       "severity": "mild",
-      "text": "bVar12 = SBORROW4(local_1c,iVar8);",
+      "text": "bVar12 = SBORROW4(local_1c,iVar5);",
       "type": "decompiler_intrinsic"
     }
   ]

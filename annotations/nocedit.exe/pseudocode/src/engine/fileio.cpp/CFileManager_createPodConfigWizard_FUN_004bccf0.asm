@@ -6,9 +6,9 @@
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x4d0]:1  local_4d0
-; undefined1       Stack[-0x128]:1  local_128
-; undefined1       Stack[-0x14]:1  local_14
+; CPickList        Stack[-0x4d0]:936  local_4d0
+; CFileFinder      Stack[-0x128]:276  local_128
+; CStrList         Stack[-0x14]:16  local_14
 ;
 ; XREF[5]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005073af

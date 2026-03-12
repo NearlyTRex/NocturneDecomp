@@ -9,12 +9,17 @@
 void __cdecl shape_superopt_cpp_CPoly_scale_FUN_005cc7c0(CPoly *this_ptr,CVector3d *scale,CVector3d *pivot)
 
 {
-  double dVar1;
-  double dVar2;
-  double dVar3;
+  double dVar4;
+  double dVar5;
+  double dVar6;
   int iVar4;
+  int iVar7;
   CVert *pCVar5;
+  CVert *pCVar8;
+  double *pdVar9;
   double *pdVar6;
+  uint *puVar10;
+  double *pdVar11;
   double *pdVar7;
   uint *puVar8;
   double local_210;
@@ -90,6 +95,9 @@ void __cdecl shape_superopt_cpp_CPoly_scale_FUN_005cc7c0(CPoly *this_ptr,CVector
   double local_28;
   double local_20;
   CVert *local_18;
+  double dVar3;
+  double dVar2;
+  double dVar1;
   
   local_18 = this_ptr->parent_obj->vertex_data;
   local_c0 = *(uint *)&scale->x;
@@ -102,32 +110,32 @@ void __cdecl shape_superopt_cpp_CPoly_scale_FUN_005cc7c0(CPoly *this_ptr,CVector
   local_108 = (pCVar5->position).x - pivot->x;
   local_100 = (pCVar5->position).y - pivot->y;
   local_f8 = (pCVar5->position).z - pivot->z;
-  pdVar6 = &local_108;
-  pdVar7 = &local_210;
+  pdVar9 = &local_108;
+  pdVar11 = &local_210;
   for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *(uint *)pdVar7 = *(uint *)pdVar6;
-    pdVar6 = (double *)((int)pdVar6 + 4);
-    pdVar7 = (double *)((int)pdVar7 + 4);
+    *(uint *)pdVar11 = *(uint *)pdVar9;
+    pdVar9 = (double *)((int)pdVar9 + 4);
+    pdVar11 = (double *)((int)pdVar11 + 4);
   }
   local_60 = local_210 * __BITCAST_DOUBLE(CONCAT44(uStack_bc,local_c0));
   local_58 = local_208 * __BITCAST_DOUBLE(CONCAT44(uStack_b4,local_b8));
   local_50 = local_200 * __BITCAST_DOUBLE(CONCAT44(uStack_ac,local_b0));
-  pdVar6 = &local_60;
-  pdVar7 = &local_a8;
-  for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *(uint *)pdVar7 = *(uint *)pdVar6;
-    pdVar6 = (double *)((int)pdVar6 + 4);
-    pdVar7 = (double *)((int)pdVar7 + 4);
+  pdVar9 = &local_60;
+  pdVar11 = &local_a8;
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *(uint *)pdVar11 = *(uint *)pdVar9;
+    pdVar9 = (double *)((int)pdVar9 + 4);
+    pdVar11 = (double *)((int)pdVar11 + 4);
   }
   local_f0 = local_a8 + pivot->x;
   local_e8 = local_a0 + pivot->y;
   local_e0 = local_98 + pivot->z;
-  pdVar6 = &local_f0;
-  puVar8 = local_90;
-  for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar8 = *(uint *)pdVar6;
-    pdVar6 = (double *)((int)pdVar6 + 4);
-    puVar8 = puVar8 + 1;
+  pdVar9 = &local_f0;
+  puVar10 = local_90;
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *puVar10 = *(uint *)pdVar9;
+    pdVar9 = (double *)((int)pdVar9 + 4);
+    puVar10 = puVar10 + 1;
   }
   *(uint *)&(pCVar5->position).x = local_90[0];
   *(uint *)((int)&(pCVar5->position).x + 4) = local_90[1];
@@ -144,71 +152,71 @@ void __cdecl shape_superopt_cpp_CPoly_scale_FUN_005cc7c0(CPoly *this_ptr,CVector
   local_170 = *(uint *)&scale->z;
   dVar3 = scale->z;
   uStack_16c = *(uint *)((int)&scale->z + 4);
-  pCVar5 = local_18 + this_ptr->vertex_idx_1;
-  local_168 = (pCVar5->position).x - pivot->x;
-  local_160 = (pCVar5->position).y - pivot->y;
-  local_158 = (pCVar5->position).z - pivot->z;
-  pdVar6 = &local_168;
-  pdVar7 = &local_78;
-  for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *(uint *)pdVar7 = *(uint *)pdVar6;
-    pdVar6 = (double *)((int)pdVar6 + 4);
-    pdVar7 = (double *)((int)pdVar7 + 4);
+  pCVar8 = local_18 + this_ptr->vertex_idx_1;
+  local_168 = (pCVar8->position).x - pivot->x;
+  local_160 = (pCVar8->position).y - pivot->y;
+  local_158 = (pCVar8->position).z - pivot->z;
+  pdVar9 = &local_168;
+  pdVar11 = &local_78;
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *(uint *)pdVar11 = *(uint *)pdVar9;
+    pdVar9 = (double *)((int)pdVar9 + 4);
+    pdVar11 = (double *)((int)pdVar11 + 4);
   }
   local_138 = local_78 * dVar1;
   local_130 = local_70 * dVar2;
   local_128 = local_68 * dVar3;
-  pdVar6 = &local_138;
-  pdVar7 = &local_d8;
-  for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *(uint *)pdVar7 = *(uint *)pdVar6;
-    pdVar6 = (double *)((int)pdVar6 + 4);
-    pdVar7 = (double *)((int)pdVar7 + 4);
+  pdVar9 = &local_138;
+  pdVar11 = &local_d8;
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *(uint *)pdVar11 = *(uint *)pdVar9;
+    pdVar9 = (double *)((int)pdVar9 + 4);
+    pdVar11 = (double *)((int)pdVar11 + 4);
   }
   local_48 = local_d8 + pivot->x;
   local_40 = local_d0 + pivot->y;
   local_38 = local_c8 + pivot->z;
-  pdVar6 = &local_48;
-  puVar8 = local_150;
-  for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar8 = *(uint *)pdVar6;
-    pdVar6 = (double *)((int)pdVar6 + 4);
-    puVar8 = puVar8 + 1;
+  pdVar9 = &local_48;
+  puVar10 = local_150;
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *puVar10 = *(uint *)pdVar9;
+    pdVar9 = (double *)((int)pdVar9 + 4);
+    puVar10 = puVar10 + 1;
   }
-  *(uint *)&(pCVar5->position).x = local_150[0];
-  *(uint *)((int)&(pCVar5->position).x + 4) = local_150[1];
-  *(uint *)&(pCVar5->position).y = local_150[2];
-  *(uint *)((int)&(pCVar5->position).y + 4) = local_150[3];
-  *(uint *)&(pCVar5->position).z = local_140;
-  *(uint *)((int)&(pCVar5->position).z + 4) = local_13c;
+  *(uint *)&(pCVar8->position).x = local_150[0];
+  *(uint *)((int)&(pCVar8->position).x + 4) = local_150[1];
+  *(uint *)&(pCVar8->position).y = local_150[2];
+  *(uint *)((int)&(pCVar8->position).y + 4) = local_150[3];
+  *(uint *)&(pCVar8->position).z = local_140;
+  *(uint *)((int)&(pCVar8->position).z + 4) = local_13c;
   local_1b0 = *(uint *)&scale->x;
-  dVar1 = scale->x;
+  dVar4 = scale->x;
   uStack_1ac = *(uint *)((int)&scale->x + 4);
   local_1a8 = *(uint *)&scale->y;
-  dVar2 = scale->y;
+  dVar5 = scale->y;
   uStack_1a4 = *(uint *)((int)&scale->y + 4);
   local_1a0 = *(uint *)&scale->z;
-  dVar3 = scale->z;
+  dVar6 = scale->z;
   uStack_19c = *(uint *)((int)&scale->z + 4);
-  pCVar5 = local_18 + this_ptr->vertex_idx_2;
-  local_1f8 = (pCVar5->position).x - pivot->x;
-  local_1f0 = (pCVar5->position).y - pivot->y;
-  local_1e8 = (pCVar5->position).z - pivot->z;
-  pdVar6 = &local_1f8;
-  pdVar7 = &local_30;
-  for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *(uint *)pdVar7 = *(uint *)pdVar6;
-    pdVar6 = (double *)((int)pdVar6 + 4);
-    pdVar7 = (double *)((int)pdVar7 + 4);
+  pCVar8 = local_18 + this_ptr->vertex_idx_2;
+  local_1f8 = (pCVar8->position).x - pivot->x;
+  local_1f0 = (pCVar8->position).y - pivot->y;
+  local_1e8 = (pCVar8->position).z - pivot->z;
+  pdVar9 = &local_1f8;
+  pdVar11 = &local_30;
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *(uint *)pdVar11 = *(uint *)pdVar9;
+    pdVar9 = (double *)((int)pdVar9 + 4);
+    pdVar11 = (double *)((int)pdVar11 + 4);
   }
-  local_1e0 = local_30 * dVar1;
-  local_1d8 = local_28 * dVar2;
-  local_1d0 = local_20 * dVar3;
-  pdVar6 = &local_1e0;
+  local_1e0 = local_30 * dVar4;
+  local_1d8 = local_28 * dVar5;
+  local_1d0 = local_20 * dVar6;
+  pdVar9 = &local_1e0;
   pdVar7 = &local_120;
-  for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *(uint *)pdVar7 = *(uint *)pdVar6;
-    pdVar6 = (double *)((int)pdVar6 + 4);
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+    *(uint *)pdVar7 = *(uint *)pdVar9;
+    pdVar9 = (double *)((int)pdVar9 + 4);
     pdVar7 = (double *)((int)pdVar7 + 4);
   }
   local_198 = local_120 + pivot->x;
@@ -216,16 +224,16 @@ void __cdecl shape_superopt_cpp_CPoly_scale_FUN_005cc7c0(CPoly *this_ptr,CVector
   local_188 = local_110 + pivot->z;
   pdVar6 = &local_198;
   puVar8 = local_1c8;
-  for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+  for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
     *puVar8 = *(uint *)pdVar6;
     pdVar6 = (double *)((int)pdVar6 + 4);
     puVar8 = puVar8 + 1;
   }
-  *(uint *)&(pCVar5->position).x = local_1c8[0];
-  *(uint *)((int)&(pCVar5->position).x + 4) = local_1c8[1];
-  *(uint *)&(pCVar5->position).y = local_1c8[2];
-  *(uint *)((int)&(pCVar5->position).y + 4) = local_1c8[3];
-  *(uint *)&(pCVar5->position).z = local_1b8;
-  *(uint *)((int)&(pCVar5->position).z + 4) = local_1b4;
+  *(uint *)&(pCVar8->position).x = local_1c8[0];
+  *(uint *)((int)&(pCVar8->position).x + 4) = local_1c8[1];
+  *(uint *)&(pCVar8->position).y = local_1c8[2];
+  *(uint *)((int)&(pCVar8->position).y + 4) = local_1c8[3];
+  *(uint *)&(pCVar8->position).z = local_1b8;
+  *(uint *)((int)&(pCVar8->position).z + 4) = local_1b4;
   return;
 }

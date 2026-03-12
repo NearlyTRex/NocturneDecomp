@@ -6,8 +6,8 @@
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x10c]:1  local_10c
-; undefined4       Stack[-0xc]:4  local_c
+; char[256]        Stack[-0x10c]:256  local_10c
+; int              Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
 ;   core_boxactor.cpp_CLightActor_archive_FUN_00422c80 at 00422c8a

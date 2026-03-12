@@ -9,12 +9,13 @@
 void __cdecl core_stairs_cpp_CStairs_processInEditor_FUN_005ba900(CStairs *this_ptr)
 
 {
-  float fVar1;
-  float fVar2;
+  int iVar5;
+  int iVar1;
+  float fStack_18;
   float fVar3;
   float fVar4;
-  int iVar5;
-  float fStack_18;
+  float fVar1;
+  float fVar2;
   
   fVar3 = this_ptr->run;
   fVar4 = this_ptr->rise;
@@ -24,32 +25,32 @@ void __cdecl core_stairs_cpp_CStairs_processInEditor_FUN_005ba900(CStairs *this_
   }
   else {
     fStack_18 = g_CGamePtr->delta_time_float * (float)0.5;
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
-    if (iVar5 != 0) {
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU);
+    if (iVar1 != 0) {
       fStack_18 = fStack_18 * (float)0.10000000000000001;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
-    if (iVar5 != 0) {
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD4);
+    if (iVar1 != 0) {
       this_ptr->width = this_ptr->width - fStack_18;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
-    if (iVar5 != 0) {
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD6);
+    if (iVar1 != 0) {
       this_ptr->width = this_ptr->width + fStack_18;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
-    if (iVar5 != 0) {
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_A);
+    if (iVar1 != 0) {
       this_ptr->rise = this_ptr->rise - fStack_18;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
-    if (iVar5 != 0) {
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_Q);
+    if (iVar1 != 0) {
       this_ptr->rise = this_ptr->rise + fStack_18;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
-    if (iVar5 != 0) {
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD2);
+    if (iVar1 != 0) {
       this_ptr->run = this_ptr->run - fStack_18;
     }
-    iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
-    if (iVar5 != 0) {
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_NUMPAD8);
+    if (iVar1 != 0) {
       this_ptr->run = this_ptr->run + fStack_18;
     }
   }

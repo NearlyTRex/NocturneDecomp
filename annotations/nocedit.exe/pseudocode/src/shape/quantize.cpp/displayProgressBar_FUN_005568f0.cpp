@@ -11,6 +11,7 @@
 int __cdecl shape_quantize_cpp_displayProgressBar_FUN_005568f0(char *label,int total_count,int current_index)
 
 {
+  double dVar1;
   char *pcVar1;
   char *pcVar2;
   char local_78 [100];
@@ -18,10 +19,8 @@ int __cdecl shape_quantize_cpp_displayProgressBar_FUN_005568f0(char *label,int t
   int local_10;
   int local_c;
   
-  local_10 = current_index;
-  local_c = total_count;
+  dVar1 = ((double)current_index / (double)total_count) * 20;
   pcVar2 = local_78;
-  local_14 = (ulong)ROUND(ROUND(((double)current_index / (double)total_count) * 20));
   _sprintf(local_78,"\r%s [                    ]\r",label);
   do {
     pcVar1 = pcVar2;
@@ -33,7 +32,7 @@ int __cdecl shape_quantize_cpp_displayProgressBar_FUN_005568f0(char *label,int t
   } while (*pcVar1 != '\0');
   pcVar1 = (char *)0x0;
 LAB_0055695d:
-  memset(pcVar1 + 1,0x2e,local_14);
+  memset(pcVar1 + 1,0x2e,(int)ROUND(ROUND(dVar1)));
   engine_2d_c_drawText_FUN_00401fd0(local_78,0,(g_QuantizeCurrentLineNumber + 4) * 0xb);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   if (total_count + -1 != current_index) {

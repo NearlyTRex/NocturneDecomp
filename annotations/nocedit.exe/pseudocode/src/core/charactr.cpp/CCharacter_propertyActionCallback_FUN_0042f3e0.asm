@@ -7,17 +7,20 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; CActorProperty * Stack[0x8]:4   property
 ; Local Variables:
-; undefined        Stack[-0x930]:1  local_930
-; undefined4       Stack[-0x588]:4  local_588
-; undefined        Stack[-0x1e0]:1  local_1e0
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CPickList        Stack[-0x930]:936  local_930
+; CPickList        Stack[-0x588]:936  local_588
+; char[400]        Stack[-0x1e0]:400  local_1e0
+; CVector3f        Stack[-0x50]:12  CStack_50
+; CVector3f        Stack[-0x44]:12  CStack_44
+; int[2]           Stack[-0x38]:8  aiStack_38
+; SCarryHand *     Stack[-0x30]:4  local_30
+; CDeformableModelInstance * Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; UOrientationVector * Stack[-0x20]:4  local_20
+; CDeformableModelInstance * Stack[-0x1c]:4  local_1c
+; SCarryHand *     Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730 at 0042f77b

@@ -10,6 +10,7 @@ void __cdecl core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDem
 
 {
   uint uVar1;
+  uint uVar2;
   int iVar2;
   char local_110 [256];
   
@@ -35,51 +36,51 @@ void __cdecl core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDem
     engine_2d_c_drawText_FUN_00401fd0("S. Search for files in mounted PODs",0,0x134);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-    uVar1 = toupper(uVar1 & 0xff);
+    uVar2 = toupper(uVar1 & 0xff);
     core_dmodel_cpp_freeAllModels_FUN_00478cb0();
     core_skeleton_cpp_freeAllModels_FUN_005a1dc0();
     core_skeleton_cpp_freeAllSkeletons_FUN_005a1ea0();
-    if (uVar1 < 0x43) {
-      if (uVar1 < 0x35) {
-        if (uVar1 < 0x32) {
-          if (uVar1 == 0x31) {
+    if (uVar2 < 0x43) {
+      if (uVar2 < 0x35) {
+        if (uVar2 < 0x32) {
+          if (uVar2 == 0x31) {
             engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
                       (&this_ptr->base,(char *)0x0,(char *)0x0);
           }
         }
-        else if (uVar1 < 0x33) {
+        else if (uVar2 < 0x33) {
           (*((this_ptr->base).vtable)->extractPodFile)(&this_ptr->base,(char *)0x0);
         }
-        else if (uVar1 == 0x34) {
+        else if (uVar2 == 0x34) {
           engine_fileio_cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0(&this_ptr->base);
         }
       }
-      else if (uVar1 < 0x36) {
+      else if (uVar2 < 0x36) {
         engine_fileio_cpp_CFileManager_catalogPodFile_FUN_004b7460(&this_ptr->base,(char *)0x0);
       }
-      else if (uVar1 < 0x39) {
-        if (uVar1 == 0x37) {
+      else if (uVar2 < 0x39) {
+        if (uVar2 == 0x37) {
           core_fileman_cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930(this_ptr);
         }
       }
-      else if (uVar1 < 0x3a) {
+      else if (uVar2 < 0x3a) {
         engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0(&this_ptr->base);
       }
-      else if (uVar1 == 0x41) {
+      else if (uVar2 == 0x41) {
         core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20(this_ptr);
       }
     }
-    else if (uVar1 < 0x44) {
+    else if (uVar2 < 0x44) {
       engine_fileio_cpp_CFileManager_managePodMounts_FUN_004bcec0(&this_ptr->base);
     }
-    else if (uVar1 < 0x53) {
-      if (uVar1 < 0x51) {
-        if (uVar1 == 0x4c) {
+    else if (uVar2 < 0x53) {
+      if (uVar2 < 0x51) {
+        if (uVar2 == 0x4c) {
           engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(&this_ptr->base,(char *)0x0)
           ;
         }
       }
-      else if (uVar1 < 0x52) {
+      else if (uVar2 < 0x52) {
         sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0();
       }
       else {
@@ -92,22 +93,22 @@ void __cdecl core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDem
         }
       }
     }
-    else if (uVar1 < 0x54) {
+    else if (uVar2 < 0x54) {
       engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70(&this_ptr->base,(char *)0x0);
     }
-    else if (uVar1 < 0x56) {
-      if (uVar1 == 0x54) {
+    else if (uVar2 < 0x56) {
+      if (uVar2 == 0x54) {
         engine_fileio_cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50(&this_ptr->base,(char *)0x0);
       }
     }
-    else if (uVar1 < 0x57) {
+    else if (uVar2 < 0x57) {
       engine_fileio_cpp_CFileManager_verifyPodCRC_FUN_004b7c90(&this_ptr->base,(char *)0x0);
     }
-    else if (uVar1 == 0x58) {
+    else if (uVar2 == 0x58) {
       engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
                 (&this_ptr->base,(char *)0x0);
     }
-  } while (uVar1 != 0x1b);
+  } while (uVar2 != 0x1b);
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;
 }

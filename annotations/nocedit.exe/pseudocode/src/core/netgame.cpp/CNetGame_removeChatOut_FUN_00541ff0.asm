@@ -6,25 +6,23 @@
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x158]:4  local_158
-; undefined4       Stack[-0x154]:4  local_154
-; undefined4       Stack[-0x150]:4  local_150
-; undefined4       Stack[-0x14c]:4  local_14c
-; undefined1       Stack[-0x148]:1  local_148
-; undefined4       Stack[-0x147]:4  local_147
-; undefined1       Stack[-0x143]:1  local_143
-; undefined1       Stack[-0x142]:1  local_142
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x158]:4  local_158
+; float            Stack[-0x154]:4  local_154
+; float            Stack[-0x150]:4  local_150
+; SNetPacketHeader Stack[-0x14c]:5  local_14c
+; uint             Stack[-0x147]:4  local_147
+; char[259]        Stack[-0x143]:259  local_143
+; SNetPlayer *     Stack[-0x40]:4  local_40
+; SChatOutMessage * Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; char *           Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; SChatOutMessage * Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; CNetGame *       Stack[-0x24]:4  local_24
+; SChatOutMessage * Stack[-0x20]:4  local_20
+; SNetworkAddr *   Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_005405b0 at 00540645

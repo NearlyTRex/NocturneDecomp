@@ -4,103 +4,103 @@
       {
         "category": "other",
         "column": 47,
-        "line": 238,
+        "line": 256,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 244,
+        "line": 262,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 277,
+        "line": 295,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 280,
+        "line": 298,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 286,
+        "line": 304,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 290,
+        "line": 308,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 294,
+        "line": 312,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 18,
-        "line": 304,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+        "line": 316,
+        "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 376,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 30,
         "line": 388,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
+        "column": 30,
+        "line": 400,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
         "column": 48,
-        "line": 394,
+        "line": 406,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 407,
+        "line": 419,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 426,
+        "line": 438,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 41,
-        "line": 431,
+        "line": 443,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 51,
-        "line": 435,
+        "line": 447,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 435,
+        "line": 447,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 464,
+        "line": 476,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -109,20 +109,19 @@
   },
   "complexity": {
     "assembly_lines": 1620,
-    "complexity_score": 770,
+    "complexity_score": 759,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 135,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 590,
-    "suspect_count": 16,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 604,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "sub84_truncation",
       "warning_inlined_function"
     ],
-    "total_lines": 2210
+    "total_lines": 2224
   },
   "cross_references": [
     {
@@ -1281,8 +1280,8 @@
         "is_param": false,
         "name": "local_d8",
         "offset": -216,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
@@ -1330,162 +1329,141 @@
         "is_param": false,
         "name": "local_b8",
         "offset": -184,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "char[80]"
       },
       {
         "is_param": false,
         "name": "local_68",
         "offset": -104,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "undefined4"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       }
     ]
   },
@@ -1500,7 +1478,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 56,
       "match": "fptan",
       "severity": "mild",
       "text": "fVar8 = (float10)fptan((float10)60.0 * (float10)3.1415926535000001 * (float10)0.0055555555555555497",
@@ -1508,79 +1486,63 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 60,
       "match": "fptan",
       "severity": "mild",
-      "text": "fVar8 = (float10)fptan((float10)60.0 * (float10)3.1415926535000001 * (float10)0.0055555555555555497",
+      "text": "fVar17 = (float10)fptan((float10)60.0 * (float10)3.1415926535000001 * (float10)0.0055555555555555497",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 132,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar4 = (int)ROUND(ROUND(local_20));",
+      "text": "iVar12 = (int)ROUND(ROUND(((float)((fVar16 * fVar2) / fVar8) / (fVar6 * fVar5)) * fVar4));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 132,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar4 = (int)ROUND(ROUND(local_20));",
+      "text": "iVar12 = (int)ROUND(ROUND(((float)((fVar16 * fVar2) / fVar8) / (fVar6 * fVar5)) * fVar4));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 115,
+      "line": 133,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar1 = (int)ROUND(ROUND(local_48));",
+      "text": "iVar1 = (int)ROUND(ROUND(((float)((fVar18 * fVar3) / fVar17) / (fVar10 * fVar9)) * fVar7));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 115,
+      "line": 133,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar1 = (int)ROUND(ROUND(local_48));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 293,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "local_d8 = SUB84(__BITCAST_UINT64((double)local_2c),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 293,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "local_d8 = SUB84(__BITCAST_UINT64((double)local_2c),0);",
+      "text": "iVar1 = (int)ROUND(ROUND(((float)((fVar18 * fVar3) / fVar17) / (fVar10 * fVar9)) * fVar7));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 474,
+      "line": 486,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pSVar14 = (SShapeEditorPolygon *)((int)pSVar14 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 475,
+      "line": 487,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pSVar15 = (SShapeEditorPolygon *)((int)pSVar15 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 480,
+      "line": 492,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ModelPolygonData +",
@@ -1588,7 +1550,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 483,
+      "line": 495,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)g_ModelPolygonData +",
@@ -1596,7 +1558,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 486,
+      "line": 498,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)g_ModelPolygonData +",
@@ -1604,18 +1566,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 545,
+      "line": 556,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 546,
+      "line": 557,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

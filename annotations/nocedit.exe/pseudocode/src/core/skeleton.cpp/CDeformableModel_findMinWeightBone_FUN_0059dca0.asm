@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   lod_level
 ; int              Stack[0xc]:4   triangle_index
 ; Local Variables:
-; undefined4       Stack[-0x1a4]:4  local_1a4
-; undefined4       Stack[-0x14]:4  local_14
+; float[100]       Stack[-0x1a4]:400  local_1a4
+; ushort *         Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 004097f5

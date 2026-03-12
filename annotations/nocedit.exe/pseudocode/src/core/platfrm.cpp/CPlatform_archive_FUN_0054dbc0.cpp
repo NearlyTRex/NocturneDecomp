@@ -11,6 +11,8 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0054dbc0(CPlatform *this_ptr
 {
   CPlatform *pCVar1;
   int iVar2;
+  CPlatform *pCVar2;
+  int iVar3;
   int local_1c;
   CDemonActor *local_18;
   int local_14;
@@ -73,15 +75,15 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0054dbc0(CPlatform *this_ptr
         g_CurrentLineNumber = 0x316;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CPlatform::archive - too many attached actors.");
       }
-      iVar2 = 0;
-      pCVar1 = this_ptr;
+      iVar3 = 0;
+      pCVar2 = this_ptr;
       if (0 < local_1c) {
         do {
           core_actor_cpp_archiveActor_FUN_0040b870(&local_18,"attach actor");
-          pCVar1->attach_actors[0].actor = local_18;
-          iVar2 = iVar2 + 1;
-          pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
-        } while (iVar2 < local_1c);
+          pCVar2->attach_actors[0].actor = local_18;
+          iVar3 = iVar3 + 1;
+          pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
+        } while (iVar3 < local_1c);
       }
     }
     else {
@@ -95,14 +97,14 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_0054dbc0(CPlatform *this_ptr
       } while (pCVar1 != (CPlatform *)((this_ptr->model).model_name + 0x38));
       iVar2 = 0;
       core_actor_cpp_archiveInteger_FUN_0040b7f0(&local_14,"attachCount");
-      pCVar1 = this_ptr;
+      pCVar2 = this_ptr;
       do {
-        if (pCVar1->attach_actors[0].actor != (CDemonActor *)0x0) {
+        if (pCVar2->attach_actors[0].actor != (CDemonActor *)0x0) {
           core_actor_cpp_archiveActor_FUN_0040b870
                     (&this_ptr->attach_actors[iVar2].actor,"attach actor");
         }
         iVar2 = iVar2 + 1;
-        pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);
+        pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
       } while (iVar2 < 10);
     }
   }

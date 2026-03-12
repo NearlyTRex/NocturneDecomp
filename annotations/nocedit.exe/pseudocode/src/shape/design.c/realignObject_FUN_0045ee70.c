@@ -9,20 +9,21 @@
 void __cdecl shape_design_c_realignObject_FUN_0045ee70(int rotation_x,int rotation_y,int rotation_z)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
-  float fVar9;
   uint uVar10;
   uint uVar11;
   uint uVar12;
   float10 fVar13;
+  float10 fVar10;
   int local_4c;
+  float fVar8;
+  float fVar9;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  float fVar1;
+  float fVar2;
+  float fVar3;
   
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("Realign object",0,0);
@@ -33,21 +34,21 @@ void __cdecl shape_design_c_realignObject_FUN_0045ee70(int rotation_x,int rotati
   fVar13 = (float10)fsin((float10)uVar10 * (float10)3.0517578125e-05 *
                          (float10)3.1415926535000001);
   fVar1 = (float)fVar13;
-  fVar13 = (float10)fcos((float10)uVar10 * (float10)3.0517578125e-05 *
+  fVar10 = (float10)fcos((float10)uVar10 * (float10)3.0517578125e-05 *
                          (float10)3.1415926535000001);
-  fVar2 = (float)fVar13;
-  fVar13 = (float10)fsin((float10)uVar11 * (float10)3.0517578125e-05 *
+  fVar2 = (float)fVar10;
+  fVar10 = (float10)fsin((float10)uVar11 * (float10)3.0517578125e-05 *
                          (float10)3.1415926535000001);
-  fVar3 = (float)fVar13;
-  fVar13 = (float10)fcos((float10)uVar11 * (float10)3.0517578125e-05 *
+  fVar3 = (float)fVar10;
+  fVar10 = (float10)fcos((float10)uVar11 * (float10)3.0517578125e-05 *
                          (float10)3.1415926535000001);
-  fVar4 = (float)fVar13;
-  fVar13 = (float10)fsin((float10)uVar12 * (float10)3.0517578125e-05 *
+  fVar4 = (float)fVar10;
+  fVar10 = (float10)fsin((float10)uVar12 * (float10)3.0517578125e-05 *
                          (float10)3.1415926535000001);
-  fVar5 = (float)fVar13;
-  fVar13 = (float10)fcos((float10)uVar12 * (float10)3.0517578125e-05 *
+  fVar5 = (float)fVar10;
+  fVar10 = (float10)fcos((float10)uVar12 * (float10)3.0517578125e-05 *
                          (float10)3.1415926535000001);
-  fVar6 = (float)fVar13;
+  fVar6 = (float)fVar10;
   for (local_4c = 0; local_4c < g_VertexCount; local_4c = local_4c + 1) {
     fVar7 = g_LoadedVertices[local_4c].vertex.x;
     fVar8 = g_LoadedVertices[local_4c].vertex.y;

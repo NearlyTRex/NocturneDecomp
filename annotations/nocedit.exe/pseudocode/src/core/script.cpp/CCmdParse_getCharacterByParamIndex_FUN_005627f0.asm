@@ -7,7 +7,7 @@
 ; CCmdParse *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   param_index
 ; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
+; int              Stack[-0x4]:4  local_4
 ;
 ; XREF[2]:
 ;   core_script.cpp_CCmdParse_getMotionListByParamIndex_FUN_00562860 at 0056286a

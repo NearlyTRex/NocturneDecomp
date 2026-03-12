@@ -6,7 +6,8 @@
 ; Parameters:
 ; CDraculaBride *  Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x2c]:1  local_2c
+; float            Stack[-0x30]:4  fStack_30
+; CBoundingBox3D   Stack[-0x2c]:24  local_2c
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00621b16 = 0.5

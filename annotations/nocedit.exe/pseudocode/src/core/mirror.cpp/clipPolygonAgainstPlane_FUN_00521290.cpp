@@ -9,13 +9,14 @@
 void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_00521290(SClipPlane *clip_plane,CVector3f *input_vertices,int input_count,CVector3f *output_vertices,int *output_count)
 
 {
-  int iVar1;
   byte bVar2;
   uint uVar3;
+  CVector3f *pCVar1;
   CVector3f *pCVar4;
   CVector3f *pCVar5;
   CVector3f *vertex_a;
   int local_14;
+  int iVar1;
   
   *output_count = 0;
   local_14 = 0;
@@ -37,11 +38,11 @@ void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_00521290(SClipPlane *cl
       }
       switch(bVar2) {
       case 0:
-        pCVar5 = output_vertices + *output_count;
-        if (pCVar5 != vertex_a) {
-          pCVar5->x = vertex_a->x;
-          pCVar5->y = vertex_a->y;
-          pCVar5->z = vertex_a->z;
+        pCVar1 = output_vertices + *output_count;
+        if (pCVar1 != vertex_a) {
+          pCVar1->x = vertex_a->x;
+          pCVar1->y = vertex_a->y;
+          pCVar1->z = vertex_a->z;
         }
         *output_count = *output_count + 1;
         break;

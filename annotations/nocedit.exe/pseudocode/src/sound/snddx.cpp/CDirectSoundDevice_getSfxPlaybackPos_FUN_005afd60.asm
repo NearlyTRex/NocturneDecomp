@@ -7,8 +7,9 @@
 ; CDirectSoundDevice * Stack[0x4]:4   this_ptr
 ; CSfxSlot *       Stack[0x8]:4   slot
 ; Local Variables:
-; undefined1       Stack[-0x18]:1  local_18
-; undefined1       Stack[-0x14]:1  local_14
+; char[408]        Stack[-0x1b0]:408  acStack_1b0
+; DWORD            Stack[-0x18]:4  local_18
+; uint             Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c

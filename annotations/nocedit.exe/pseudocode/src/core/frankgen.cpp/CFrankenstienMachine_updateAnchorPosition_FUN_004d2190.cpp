@@ -11,21 +11,22 @@
 CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004d2190(CFrankenstienMachine *this_ptr)
 
 {
-  int iVar1;
+  int iVar2;
   CKeyFramedModel *this_ptr_00;
   CVector3i *pCVar2;
   CVector3f *pCVar3;
   int *piVar4;
   byte bVar5;
   int aiStackY_1014 [1012];
-  float start_frame;
-  float end_frame;
-  int frame_index;
   CVector3f local_38;
   int local_2c;
   int local_28 [2];
   CVector3f local_20;
   int local_14;
+  int frame_index;
+  int iVar1;
+  float end_frame;
+  float start_frame;
   
   bVar5 = 0;
   switch(this_ptr->which_part) {
@@ -50,12 +51,12 @@ CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_
     break;
   case 6:
   case 7:
-    start_frame = 1701.0;
     end_frame = 1930.0;
+    start_frame = 1701.0;
     goto LAB_004d21b9;
   case 8:
-    start_frame = 1949.0;
     end_frame = 2300.0;
+    start_frame = 1949.0;
 LAB_004d21b9:
     core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430
               (this_ptr,start_frame,end_frame);
@@ -68,15 +69,14 @@ LAB_004d21b9:
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   frame_index = (int)ROUND(ROUND(this_ptr->part_frame));
   iVar1 = this_ptr->anchor_vertex_index;
-  local_14 = frame_index;
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                           (&this_ptr->bed_model);
   pCVar2 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890(this_ptr_00,frame_index);
   piVar4 = (int *)((int)(pCVar2 + iVar1) + (uint)bVar5 * -8 + 4);
-  local_2c = pCVar2[iVar1].x;
+  iVar2 = pCVar2[iVar1].x;
   local_28[(uint)bVar5 * -2] = *piVar4;
   local_28[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] = piVar4[(uint)bVar5 * -2 + 1];
-  local_20.x = (float)local_2c * 0.00390625f;
+  local_20.x = (float)iVar2 * 0.00390625f;
   local_20.y = (float)local_28[0] * 0.00390625f;
   local_20.z = (float)local_28[1] * 0.00390625f;
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0

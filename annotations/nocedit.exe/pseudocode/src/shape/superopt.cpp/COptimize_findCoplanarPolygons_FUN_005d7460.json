@@ -4,73 +4,73 @@
       {
         "category": "undeclared_identifier",
         "column": 31,
-        "line": 40,
+        "line": 43,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 38,
-        "line": 40,
+        "line": 43,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
-        "column": 41,
-        "line": 53,
+        "column": 37,
+        "line": 56,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
-        "column": 48,
-        "line": 53,
+        "column": 44,
+        "line": 56,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 33,
-        "line": 59,
+        "line": 62,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 40,
-        "line": 59,
+        "line": 62,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 68,
+        "line": 71,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 47,
-        "line": 68,
+        "line": 71,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 41,
-        "line": 70,
+        "line": 73,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 48,
-        "line": 70,
+        "line": 73,
         "message": "expected expression"
       },
       {
         "category": "undeclared_identifier",
         "column": 41,
-        "line": 72,
+        "line": 75,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 48,
-        "line": 72,
+        "line": 75,
         "message": "expected expression"
       }
     ],
@@ -79,18 +79,18 @@
   },
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 167,
+    "complexity_score": 170,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
+    "pseudocode_lines": 90,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 319
+    "total_lines": 322
   },
   "cross_references": [],
   "function": {
@@ -191,17 +191,24 @@
       },
       {
         "is_param": false,
+        "name": "dStack_40",
+        "offset": -64,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -212,10 +219,31 @@
       },
       {
         "is_param": false,
+        "name": "uStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_14",
+        "offset": -20,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": true,
@@ -260,7 +288,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 24,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "pbVar1 = (byte *)((int)&polygon->flags + 1);",
@@ -268,7 +296,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
+      "line": 36,
       "match": "code *",
       "severity": "moderate",
       "text": "dVar3 = (double)(**(code **)(*(int *)(iVar7 + 100) + 0x84))(iVar7);",
@@ -276,15 +304,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 46,
+      "line": 49,
       "match": "code *",
       "severity": "moderate",
-      "text": "dStack_40 = (double)(**(code **)(*(int *)(iVar8 + 100) + 0x84))(iVar8);",
+      "text": "dVar1 = (double)(**(code **)(*(int *)(iVar8 + 100) + 0x84))(iVar8);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 52,
+      "line": 55,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar5 = (**(code **)(*(int *)(iVar7 + 100) + 0x74))(iVar7,iVar8), iVar5 != 0)) {",
@@ -292,26 +320,26 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 61,
+      "line": 64,
       "match": "code *",
       "severity": "moderate",
-      "text": "((iVar6 = (**(code **)(*(int *)(iVar8 + 100) + 0x7c))(iVar8,iVar5),",
+      "text": "((iVar6 = (**(code **)(*(int *)(iVar8 + 100) + 0x7c))(iVar8,iVar3),",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 63,
+      "line": 66,
       "match": "code *",
       "severity": "moderate",
-      "text": "((iVar6 = (**(code **)(*(int *)(iVar8 + 100) + 0x78))(iVar8,iVar5),",
+      "text": "((iVar2 = (**(code **)(*(int *)(iVar8 + 100) + 0x78))(iVar8,iVar3),",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 65,
+      "line": 68,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar5 = (**(code **)(*(int *)(iVar8 + 100) + 0x80))(iVar8,iVar5),",
+      "text": "(iVar3 = (**(code **)(*(int *)(iVar8 + 100) + 0x80))(iVar8,iVar3),",
       "type": "unresolved_funcptr"
     }
   ],

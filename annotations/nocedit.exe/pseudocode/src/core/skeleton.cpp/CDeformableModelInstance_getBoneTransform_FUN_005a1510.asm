@@ -8,9 +8,9 @@
 ; SPose *          Stack[0x8]:4   bone_transform
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; CDeformableModelInstance * Stack[-0x14]:4  local_14
+; CDeformableModelInstance * Stack[-0x10]:4  local_10
+; SPose *          Stack[-0xc]:4  local_c
 ;
 ; XREF[5]:
 ;   core_charactr.cpp_CCharacter_renderEthereal_FUN_0042af60 at 0042b013

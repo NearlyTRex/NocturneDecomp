@@ -7,7 +7,7 @@
 ; CZombieCow *     Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ; Local Variables:
-; undefined1       Stack[-0x10]:1  local_10
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00

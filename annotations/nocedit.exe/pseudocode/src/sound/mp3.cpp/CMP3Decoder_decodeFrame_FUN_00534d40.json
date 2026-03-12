@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 1125,
-    "complexity_score": 1034,
+    "complexity_score": 1032,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 539,
+    "pseudocode_lines": 537,
     "suspect_count": 45,
     "suspect_types": [
       "byvalue_struct_passing",
@@ -24,7 +24,7 @@
       "warning_deadcode_restart",
       "warning_inlined_function"
     ],
-    "total_lines": 1664
+    "total_lines": 1662
   },
   "cross_references": [
     {
@@ -346,91 +346,91 @@
         "name": "local_60d0",
         "offset": -24784,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_60cc",
         "offset": -24780,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_60c8",
         "offset": -24776,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4608,
+        "type": "SMpegStereoSubbandSamples"
       },
       {
         "is_param": false,
         "name": "local_4ec8",
         "offset": -20168,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4608,
+        "type": "SMpegStereoSubbandSamples"
       },
       {
         "is_param": false,
         "name": "local_3cc8",
         "offset": -15560,
-        "size": 1,
-        "type": "undefined1"
+        "size": 2304,
+        "type": "SMpegSubbandQuantizedSamples"
       },
       {
         "is_param": false,
         "name": "local_33c8",
         "offset": -13256,
-        "size": 1,
-        "type": "undefined1"
+        "size": 2304,
+        "type": "short[1152]"
       },
       {
         "is_param": false,
         "name": "local_2ac8",
         "offset": -10952,
-        "size": 1,
-        "type": "undefined1"
+        "size": 2304,
+        "type": "float[576]"
       },
       {
         "is_param": false,
         "name": "local_21c8",
         "offset": -8648,
-        "size": 1,
-        "type": "undefined1"
+        "size": 2304,
+        "type": "SMpegSubbandSamples"
       },
       {
         "is_param": false,
         "name": "local_18c8",
         "offset": -6344,
-        "size": 1,
-        "type": "undefined1"
+        "size": 2304,
+        "type": "float[576]"
       },
       {
         "is_param": false,
         "name": "local_fc8",
         "offset": -4040,
-        "size": 1,
-        "type": "undefined1"
+        "size": 768,
+        "type": "SMpegSubbandScalefactors[2]"
       },
       {
         "is_param": false,
         "name": "local_cc8",
         "offset": -3272,
-        "size": 1,
-        "type": "undefined1"
+        "size": 768,
+        "type": "SMpegSubbandScalefactors[2]"
       },
       {
         "is_param": false,
         "name": "local_9c8",
         "offset": -2504,
-        "size": 1,
-        "type": "undefined1"
+        "size": 768,
+        "type": "SMpegSubbandScalefactors[2]"
       },
       {
         "is_param": false,
         "name": "local_6c8",
         "offset": -1736,
-        "size": 1,
-        "type": "undefined1"
+        "size": 496,
+        "type": "SMpegScalefactorBandData"
       },
       {
         "is_param": false,
@@ -450,197 +450,85 @@
         "is_param": false,
         "name": "local_4c0",
         "offset": -1216,
-        "size": 1,
-        "type": "undefined1"
+        "size": 168,
+        "type": "SMpegLayer3SideInfo"
       },
       {
         "is_param": false,
         "name": "local_390",
         "offset": -912,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "SMpegSubbandSCFSI[2]"
       },
       {
         "is_param": false,
         "name": "local_290",
         "offset": -656,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "SMpegSubbandAllocation[2]"
       },
       {
         "is_param": false,
         "name": "local_190",
         "offset": -400,
-        "size": 1,
-        "type": "undefined1"
+        "size": 128,
+        "type": "float[32]"
       },
       {
         "is_param": false,
         "name": "local_110",
         "offset": -272,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_10c",
-        "offset": -268,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_104",
-        "offset": -260,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_100",
-        "offset": -256,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_fc",
-        "offset": -252,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_f4",
-        "offset": -244,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_f0",
-        "offset": -240,
-        "size": 4,
-        "type": "undefined4"
+        "size": 48,
+        "type": "SMpegFrameHeader"
       },
       {
         "is_param": false,
         "name": "local_e0",
         "offset": -224,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_dc",
-        "offset": -220,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_d8",
-        "offset": -216,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_d4",
-        "offset": -212,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_d0",
-        "offset": -208,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_cc",
-        "offset": -204,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c8",
-        "offset": -200,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c4",
-        "offset": -196,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_bc",
-        "offset": -188,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b8",
-        "offset": -184,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b4",
-        "offset": -180,
-        "size": 4,
-        "type": "undefined4"
+        "size": 48,
+        "type": "SMpegFrameHeader"
       },
       {
         "is_param": false,
         "name": "local_b0",
         "offset": -176,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_ac",
         "offset": -172,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_a8",
         "offset": -168,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_a4",
         "offset": -164,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_a0",
         "offset": -160,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegFrameHeader *"
       },
       {
         "is_param": false,
         "name": "local_9c",
         "offset": -156,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -654,231 +542,231 @@
         "name": "local_94",
         "offset": -148,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_90",
         "offset": -144,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_8c",
         "offset": -140,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_88",
         "offset": -136,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_84",
         "offset": -132,
         "size": 4,
-        "type": "undefined4"
+        "type": "CFileBitStream *"
       },
       {
         "is_param": false,
         "name": "local_80",
         "offset": -128,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegSubbandScalefactors *"
       },
       {
         "is_param": false,
         "name": "local_7c",
         "offset": -124,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegSubbandScalefactors *"
       },
       {
         "is_param": false,
         "name": "local_78",
         "offset": -120,
         "size": 4,
-        "type": "undefined4"
+        "type": "CFileBitStream *"
       },
       {
         "is_param": false,
         "name": "local_74",
         "offset": -116,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_70",
         "offset": -112,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
         "size": 4,
-        "type": "undefined4"
+        "type": "CFileBitStream *"
       },
       {
         "is_param": false,
         "name": "local_68",
         "offset": -104,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_64",
         "offset": -100,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegFrame *"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegSubbandSamples *"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "float *"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegFrame *"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegSubbandSamples *"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegFrame *"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "short *"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegLayer3SideInfo *"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "short *"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -947,7 +835,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 33,
       "match": "in_stack_ffff9f14",
       "severity": "moderate",
       "text": "int in_stack_ffff9f14;",
@@ -955,7 +843,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 34,
       "match": "in_stack_ffff9f18",
       "severity": "moderate",
       "text": "uint in_stack_ffff9f18;",
@@ -963,47 +851,47 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 138,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_90 = (int)ROUND(ROUND(g_MpegSampleRateTable[local_8c]",
+      "text": "iVar2 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar9]",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 138,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_90 = (int)ROUND(ROUND(g_MpegSampleRateTable[local_8c]",
+      "text": "iVar2 = (int)ROUND(ROUND(g_MpegSampleRateTable[iVar9]",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
+      "line": 200,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar10 = (int *)((int)local_7c->codes[0] + local_5c);",
+      "text": "piVar10 = (int *)((int)local_fc8[0].codes[0] + local_5c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 200,
+      "line": 201,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "pfVar5 = (float *)((int)local_80->codes[0] + local_5c);",
+      "text": "pfVar5 = (float *)((int)local_9c8[0].codes[0] + local_5c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 250,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "pfVar15 = (float *)((int)local_9c8[0].codes[0] + local_2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 251,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "pfVar5 = (float *)((int)local_9c8[0].codes[0] + local_2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 252,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "local_30 = (short *)((int)local_33c8 + local_28);",
@@ -1011,34 +899,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 276,
+      "line": 275,
       "match": "(short *)((int)",
       "severity": "mild",
-      "text": "*psVar11 = *(short *)((int)local_33c8 + iVar8);",
+      "text": "*psVar12 = *(short *)((int)local_33c8 + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 300,
+      "line": 299,
       "match": "SUB41",
       "severity": "mild",
-      "text": "uVar18 = SUB41(local_6c,0);",
+      "text": "uVar18 = SUB41(pCVar13,0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Direct stack address reference",
-      "line": 309,
+      "line": 308,
       "match": "&stack0xffff9f14",
       "severity": "moderate",
-      "text": "piVar10 = (int *)&stack0xffff9f14;",
+      "text": "piVar14 = (int *)&stack0xffff9f14;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 314,
+      "line": 312,
       "match": "(SMpegFrameHeader *)((int)",
       "severity": "mild",
-      "text": "pSVar12 = (SMpegFrameHeader *)((int)pSVar12 + ((uint)bVar15 * -2 + 1) * 4);",
+      "text": "pSVar12 = (SMpegFrameHeader *)((int)pSVar12 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1086,7 +974,7 @@
       "line": 324,
       "match": "._0_2_",
       "severity": "mild",
-      "text": "frame_info.js_bound._0_2_ = (short)pSVar14;",
+      "text": "frame_info.js_bound._0_2_ = (short)side_info_array;",
       "type": "unknown_field"
     },
     {
@@ -1094,12 +982,12 @@
       "line": 325,
       "match": "._2_2_",
       "severity": "mild",
-      "text": "frame_info.js_bound._2_2_ = (short)((uint)pSVar14 >> 0x10);",
+      "text": "frame_info.js_bound._2_2_ = (short)((uint)side_info_array >> 0x10);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 332,
+      "line": 331,
       "match": "SUB41",
       "severity": "mild",
       "text": "uVar18 = SUB41(this_ptr,0);",
@@ -1107,7 +995,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 343,
+      "line": 342,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "pCVar22 = (CMP3Decoder *)CONCAT22(uVar23,uVar21);",
@@ -1115,18 +1003,18 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 366,
+      "line": 365,
       "match": "&stack0xffff9f14",
       "severity": "moderate",
-      "text": "piVar10 = (int *)&stack0xffff9f14;",
+      "text": "piVar14 = (int *)&stack0xffff9f14;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 371,
+      "line": 369,
       "match": "(SMpegFrameHeader *)((int)",
       "severity": "mild",
-      "text": "pSVar13 = (SMpegFrameHeader *)((int)pSVar13 + ((uint)bVar15 * -2 + 1) * 4);",
+      "text": "pSVar13 = (SMpegFrameHeader *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1203,23 +1091,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 459,
+      "line": 457,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)local_18c8 + iVar7) = -*(float *)((int)local_18c8 + iVar7);",
+      "text": "*(float *)((int)local_18c8 + iVar2) = -*(float *)((int)local_18c8 + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 459,
+      "line": 457,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)local_18c8 + iVar7) = -*(float *)((int)local_18c8 + iVar7);",
+      "text": "*(float *)((int)local_18c8 + iVar2) = -*(float *)((int)local_18c8 + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 474,
+      "line": 472,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)local_18c8 + iVar8);",
@@ -1227,23 +1115,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 476,
+      "line": 474,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)local_190 + iVar4) = *puVar1;",
+      "text": "*(uint *)((int)local_190 + iVar6) = *puVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 502,
+      "line": 500,
       "match": "(short *)((int)",
       "severity": "mild",
-      "text": "*psVar11 = *(short *)((int)local_33c8 + iVar8);",
+      "text": "*psVar11 = *(short *)((int)local_33c8 + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 520,
+      "line": 518,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_60 = (int)ROUND(ROUND((((double)local_60cc /",
@@ -1251,7 +1139,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 520,
+      "line": 518,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_60 = (int)ROUND(ROUND((((double)local_60cc /",
@@ -1270,7 +1158,7 @@
       "expected_args": 1,
       "format_string": "MPEG Layer 2 - pick_table - can't load tables!  File: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 157,
+      "line_number": 162,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"MPEG Layer 2 - pick_table - can't load tables!  File: ",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -1281,7 +1169,7 @@
       "expected_args": 3,
       "format_string": "js_bound bad layer/modext (%d/%d)  File: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 171,
+      "line_number": 175,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"js_bound bad layer/modext (%d/%d)  File: %s\");",
       "text": "Format string expects 3 args but got 0",
       "type": "format_string_mismatch"

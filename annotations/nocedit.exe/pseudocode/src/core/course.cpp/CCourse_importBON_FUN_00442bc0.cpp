@@ -11,6 +11,7 @@ int __cdecl core_course_cpp_CCourse_importBON_FUN_00442bc0(CCourse *this_ptr,cha
 {
   _FILE *file;
   int iVar1;
+  int iVar2;
   char local_184 [360];
   byte local_1c [4];
   int local_18;
@@ -29,9 +30,9 @@ int __cdecl core_course_cpp_CCourse_importBON_FUN_00442bc0(CCourse *this_ptr,cha
   } while (iVar1 != 10);
   _fscanf(file,"%d\n",local_1c);
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while (iVar2 != 10);
   _fscanf(file,"%d,%d\n",&local_18,&local_14);
   if (local_18 != 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -40,17 +41,17 @@ int __cdecl core_course_cpp_CCourse_importBON_FUN_00442bc0(CCourse *this_ptr,cha
     return 0;
   }
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while (iVar2 != 10);
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while (iVar2 != 10);
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while (iVar2 != 10);
   _sprintf(local_184,"Importing %s",filename);
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
             (g_CEditorToolsPtr,local_184);

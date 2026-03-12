@@ -9,11 +9,11 @@
 void __cdecl core_waypoint_cpp_CWayPoint_cleanupAdjacency_FUN_005ec830(CWayPoint *this_ptr)
 
 {
-  CWayPoint *pCVar1;
   CWayPoint *pCVar2;
   int index;
   char *pcVar3;
   int local_14;
+  CWayPoint *pCVar1;
   
   local_14 = 0;
   pCVar2 = this_ptr;

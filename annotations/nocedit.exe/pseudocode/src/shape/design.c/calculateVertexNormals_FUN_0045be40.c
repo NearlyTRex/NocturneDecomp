@@ -9,7 +9,6 @@
 void __cdecl shape_design_c_calculateVertexNormals_FUN_0045be40(void)
 
 {
-  float fVar1;
   uint local_40;
   int local_3c;
   int local_38;
@@ -17,6 +16,7 @@ void __cdecl shape_design_c_calculateVertexNormals_FUN_0045be40(void)
   float local_20;
   float local_1c;
   float local_18;
+  float fVar1;
   
   for (local_40 = 0; (int)local_40 < g_PolygonCount; local_40 = local_40 + 1) {
     shape_design_c_calculatePolygonNormal_FUN_0045caa0(g_ModelPolygonData + local_40);

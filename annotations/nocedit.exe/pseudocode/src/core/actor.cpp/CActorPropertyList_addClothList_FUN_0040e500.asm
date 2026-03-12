@@ -9,7 +9,7 @@
 ; CClothList *     Stack[0xc]:4   data_ptr
 ; int              Stack[0x10]:4   max_count
 ; Local Variables:
-; undefined1       Stack[-0xd8]:1  local_d8
+; char[200]        Stack[-0xd8]:200  local_d8
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_getPropertyList_FUN_0042f730 at 0042f753

@@ -6,12 +6,12 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0xbdc]:1  local_bdc
-; undefined1       Stack[-0x834]:1  local_834
-; undefined1       Stack[-0x48c]:1  local_48c
-; undefined1       Stack[-0x2fc]:1  local_2fc
-; undefined1       Stack[-0x16c]:1  local_16c
-; undefined1       Stack[-0x6c]:1  local_6c
+; CPickList        Stack[-0xbdc]:936  local_bdc
+; CPickList        Stack[-0x834]:936  local_834
+; char[400]        Stack[-0x48c]:400  local_48c
+; char[400]        Stack[-0x2fc]:400  local_2fc
+; char[256]        Stack[-0x16c]:256  local_16c
+; char[100]        Stack[-0x6c]:100  local_6c
 ;
 ; XREF[2]:
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 005798ed

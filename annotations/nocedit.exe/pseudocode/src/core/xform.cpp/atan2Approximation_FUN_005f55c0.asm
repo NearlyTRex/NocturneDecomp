@@ -7,7 +7,7 @@
 ; double           Stack[0x4]:8   sin_value
 ; double           Stack[0xc]:8   cos_value
 ; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
+; float            Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:

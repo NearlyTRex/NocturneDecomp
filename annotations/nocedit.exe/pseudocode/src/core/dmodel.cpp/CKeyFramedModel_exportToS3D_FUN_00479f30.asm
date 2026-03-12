@@ -7,29 +7,27 @@
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
+; int[935]         Stack[-0x1034]:3740  aiStackY_1034
 ; undefined8       Stack[-0x188]:8  local_188
 ; undefined8       Stack[-0x180]:8  local_180
 ; undefined8       Stack[-0x174]:8  local_174
 ; undefined8       Stack[-0x16c]:8  local_16c
 ; undefined8       Stack[-0x160]:8  local_160
 ; undefined8       Stack[-0x158]:8  local_158
-; undefined1       Stack[-0x14c]:1  local_14c
+; char[256]        Stack[-0x14c]:256  local_14c
 ; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
+; int[4]           Stack[-0x48]:16  local_48
+; int              Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; _FILE *          Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047de1a

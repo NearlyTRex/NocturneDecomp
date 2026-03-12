@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 92,
-        "line": 38,
+        "line": 41,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 106,
+    "complexity_score": 109,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 76,
+    "pseudocode_lines": 79,
     "suspect_count": 2,
     "suspect_types": [
       "format_string_mismatch",
       "pointer_cast"
     ],
-    "total_lines": 271
+    "total_lines": 274
   },
   "cross_references": [
     {
@@ -204,49 +204,49 @@
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -260,7 +260,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 27,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);",
@@ -272,7 +272,7 @@
       "expected_args": 1,
       "format_string": "LodMesh::fixupAfterCram - texture %s not found in cram list.",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 31,
+      "line_number": 34,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"LodMesh::fixupAfterCram - texture %s not found in cram",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

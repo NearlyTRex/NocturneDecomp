@@ -7,11 +7,11 @@
 ; undefined8       Stack[-0x88]:8  local_88
 ; undefined8       Stack[-0x80]:8  local_80
 ; undefined8       Stack[-0x78]:8  local_78
-; undefined1       Stack[-0x70]:1  local_70
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x70]:80  local_70
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showPointEditor_FUN_0045c6c0 at 0045c86e

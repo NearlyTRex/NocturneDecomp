@@ -9,12 +9,12 @@
 void __cdecl shape_design_c_selectVertexToMove_FUN_0045c530(void)
 
 {
-  char cVar1;
   int iVar2;
   char *pcVar3;
   byte bVar4;
   char local_28 [20];
   int local_14;
+  char cVar1;
   
   bVar4 = 0;
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_28,0x13,0,0xb,"Point to move : ");
@@ -24,8 +24,9 @@ void __cdecl shape_design_c_selectVertexToMove_FUN_0045c530(void)
   do {
     if (iVar2 == 0) break;
     iVar2 = iVar2 + -1;
-    cVar1 = *pcVar3;
     pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
+    cVar1 = *pcVar3;
+    pcVar3 = pcVar3;
   } while (cVar1 != '\0');
   if (iVar2 != -2) {
     local_14 = atoi(local_28);

@@ -2,10 +2,52 @@
   "compilation_status": {
     "errors": [
       {
+        "category": "type_error",
+        "column": 3,
+        "line": 13,
+        "message": "unknown type name 'code'"
+      },
+      {
         "category": "format_error",
         "column": 59,
-        "line": 61,
+        "line": 67,
         "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 29,
+        "line": 119,
+        "message": "cast from pointer to smaller type 'char' loses information"
+      },
+      {
+        "category": "other",
+        "column": 29,
+        "line": 122,
+        "message": "subscript of pointer to function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
+      },
+      {
+        "category": "pointer_arithmetic",
+        "column": 37,
+        "line": 123,
+        "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
+      },
+      {
+        "category": "other",
+        "column": 21,
+        "line": 124,
+        "message": "subscript of pointer to function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
+      },
+      {
+        "category": "pointer_arithmetic",
+        "column": 76,
+        "line": 125,
+        "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 38,
+        "line": 126,
+        "message": "use of undeclared identifier 'code'"
       }
     ],
     "success": false,
@@ -13,17 +55,18 @@
   },
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 196,
+    "complexity_score": 224,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 171,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 174,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unresolved_funcptr"
     ],
-    "total_lines": 564
+    "total_lines": 567
   },
   "cross_references": [
     {
@@ -230,39 +273,81 @@
     "pcode_op_count": 1309
   },
   "stack_frame": {
-    "frame_size": 1580,
-    "local_size": 1576,
+    "frame_size": 20532,
+    "local_size": 20528,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "CStack_502c",
+        "offset": -20524,
+        "size": 9476,
+        "type": "CActorPropertyList"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2b28",
+        "offset": -11048,
+        "size": 9476,
+        "type": "CActorPropertyList"
+      },
+      {
+        "is_param": false,
         "name": "local_624",
         "offset": -1572,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_27c",
         "offset": -636,
-        "size": 1,
-        "type": "undefined1"
+        "size": 500,
+        "type": "char[500]"
       },
       {
         "is_param": false,
         "name": "local_88",
         "offset": -136,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "CActorProperty *"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_14",
+        "offset": -20,
+        "size": 4,
+        "type": "char *"
       },
       {
         "is_param": true,
@@ -275,8 +360,16 @@
   },
   "suspects": [
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 6,
+      "match": "code",
+      "severity": "moderate",
+      "text": "code cVar3;",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 42,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 0x2c) != 0) {",
@@ -284,11 +377,19 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 49,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(&local_624.base,(char *)(*(int *)((int)g_ActorClassRegistrations + iVar8) + 1))",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 119,
+      "match": "code",
+      "severity": "moderate",
+      "text": "} while (cVar3 != (code)0x0);",
+      "type": "unresolved_funcptr"
     }
   ]
 }

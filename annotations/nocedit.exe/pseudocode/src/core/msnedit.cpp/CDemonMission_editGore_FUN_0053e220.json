@@ -4,43 +4,43 @@
       {
         "category": "other",
         "column": 19,
-        "line": 158,
+        "line": 161,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 159,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 19,
-        "line": 160,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 50,
         "line": 162,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 50,
+        "column": 19,
         "line": 163,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 164,
+        "line": 165,
+        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 166,
+        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 50,
+        "line": 167,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 215,
+        "line": 212,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       }
     ],
@@ -49,19 +49,19 @@
   },
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 409,
+    "complexity_score": 406,
     "cross_reference_count": 1,
     "function_call_count": 43,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 234,
+    "pseudocode_lines": 231,
     "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
       "unknown_field"
     ],
-    "total_lines": 859
+    "total_lines": 856
   },
   "cross_references": [
     {
@@ -620,32 +620,179 @@
     "pcode_op_count": 2518
   },
   "stack_frame": {
-    "frame_size": 208,
-    "local_size": 204,
+    "frame_size": 4168,
+    "local_size": 4164,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "afStackY_1040",
+        "offset": -4160,
+        "size": 3936,
+        "type": "float[984]"
+      },
+      {
+        "is_param": false,
         "name": "local_c8",
         "offset": -200,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_c0",
         "offset": -192,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_bc",
         "offset": -188,
-        "size": 1,
-        "type": "undefined1"
+        "size": 28,
+        "type": "CSlew"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_a0",
+        "offset": -160,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_94",
+        "offset": -148,
+        "size": 16,
+        "type": "undefined1[16]"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_84",
+        "offset": -132,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_80",
+        "offset": -128,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_7c",
+        "offset": -124,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_70",
+        "offset": -112,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_68",
+        "offset": -104,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_64",
+        "offset": -100,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_58",
+        "offset": -88,
+        "size": 12,
+        "type": "CVector3i"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_4c",
+        "offset": -76,
+        "size": 12,
+        "type": "CVector3i"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_40",
+        "offset": -64,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_38",
+        "offset": -56,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_34",
+        "offset": -52,
+        "size": 12,
+        "type": "CVector3i"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "CLocation *"
+      },
+      {
+        "is_param": false,
+        "name": "pUStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "UOrientationVector *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "CBoxActor *"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": true,
@@ -676,7 +823,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 12,
+      "line": 14,
       "match": "afStackY_1040",
       "severity": "moderate",
       "text": "float afStackY_1040 [984];",
@@ -684,7 +831,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 143,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + 4) =",
@@ -692,7 +839,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 144,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_4c + (uint)bVar5 * -8 + 4);",
@@ -700,7 +847,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 145,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
@@ -708,7 +855,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 146,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_4c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
@@ -716,7 +863,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 147,
+      "line": 150,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + 4) =",
@@ -724,7 +871,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 151,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_58 + (uint)bVar5 * -8 + 4);",
@@ -732,7 +879,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 152,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_34 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
@@ -740,7 +887,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 153,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
@@ -748,7 +895,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 151,
+      "line": 154,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_94._0_4_ = (float)CStack_34.x * 0.00390625f;",
@@ -756,7 +903,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 152,
+      "line": 155,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_94._4_4_ = (float)CStack_34.y * 0.00390625f;",
@@ -764,7 +911,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 153,
+      "line": 156,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_94._8_4_ = (float)CStack_34.z * 0.00390625f;",
@@ -772,7 +919,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 155,
+      "line": 158,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_bc.position.x = (float)auStack_94._0_4_;",
@@ -780,7 +927,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 156,
+      "line": 159,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_bc.position.y = (float)auStack_94._4_4_;",
@@ -788,7 +935,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 157,
+      "line": 160,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_bc.position.z = (float)auStack_94._8_4_;",
@@ -796,10 +943,10 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 208,
+      "line": 205,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "auStack_94._12_4_ = CStack_7c.x + fStack_70;",
+      "text": "auStack_94._12_4_ = CStack_7c.x + (CStack_a0.x - CStack_7c.x) * fVar4;",
       "type": "unknown_field"
     }
   ]

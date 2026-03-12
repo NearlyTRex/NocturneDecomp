@@ -4,7 +4,7 @@
 ; void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005f35e0(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x28]:1  local_28
+; tagMSG           Stack[-0x28]:28  local_28
 ;
 ; XREF[5]:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d810
@@ -28,7 +28,6 @@
 ;
 ; Called Functions:
 ;   DispatchMessageA
-;   PeekMessageA
 ;   Sleep
 ;   TranslateMessage
 ;

@@ -7,8 +7,13 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ; float *          Stack[0x8]:4   out_distance
 ; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f[10]    Stack[-0xa8]:120  aCStack_a8
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; float            Stack[-0x28]:4  fStack_28
+; CEnemy *         Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  fStack_18
+; CLocation *      Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 at 004136cb

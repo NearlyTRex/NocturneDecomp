@@ -9,7 +9,6 @@
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480(CDeformableModelInstance *this_ptr,CDeformableModel *model_ptr)
 
 {
-  CDeformableModel *pCVar1;
   CSkeleton *motion_list;
   CVector3f *pCVar2;
   CVector3f *pCVar3;
@@ -20,6 +19,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_
   float local_1c;
   CDeformableModelInstance *local_18;
   int local_14;
+  CDeformableModel *pCVar1;
   
   this_ptr->model_ptr = model_ptr;
   motion_list = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);

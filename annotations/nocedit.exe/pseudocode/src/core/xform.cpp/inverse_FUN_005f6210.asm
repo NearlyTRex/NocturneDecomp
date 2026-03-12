@@ -6,28 +6,28 @@
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   matrix_in
 ; Local Variables:
-; undefined8       Stack[-0x98]:8  local_98
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined8       Stack[-0x60]:8  local_60
-; undefined8       Stack[-0x58]:8  local_58
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
-; undefined4       Stack[-0x10]:4  local_10
+; int              Stack[-0x98]:4  local_98
+; float            Stack[-0x90]:4  local_90
+; float            Stack[-0x8c]:4  local_8c
+; float            Stack[-0x88]:4  local_88
+; float            Stack[-0x84]:4  local_84
+; float            Stack[-0x80]:4  local_80
+; float            Stack[-0x7c]:4  local_7c
+; float            Stack[-0x78]:4  local_78
+; float            Stack[-0x74]:4  local_74
+; float            Stack[-0x70]:4  local_70
+; float            Stack[-0x6c]:4  local_6c
+; float            Stack[-0x68]:4  local_68
+; float            Stack[-0x64]:4  local_64
+; double           Stack[-0x60]:8  local_60
+; double           Stack[-0x58]:8  local_58
+; double           Stack[-0x50]:8  local_50
+; double           Stack[-0x48]:8  local_48
+; double           Stack[-0x30]:8  local_30
+; double           Stack[-0x28]:8  local_28
+; double           Stack[-0x20]:8  local_20
+; double           Stack[-0x18]:8  local_18
+; CMatrix3x4f *    Stack[-0x10]:4  local_10
 ;
 ; XREF[13]:
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80 at 0042cf63

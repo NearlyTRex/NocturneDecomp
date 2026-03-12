@@ -9,11 +9,9 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0(CKeyFramedModel *this_ptr)
 
 {
-  int *piVar1;
-  bool bVar2;
-  int iVar3;
   int iVar4;
   int iVar5;
+  int iVar1;
   int iVar6;
   int iVar7;
   int local_34;
@@ -22,6 +20,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bd
   int local_1c;
   int local_18;
   int local_14;
+  int iVar3;
+  bool bVar2;
+  int *piVar1;
   
   core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
   local_18 = 0;
@@ -33,27 +34,27 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bd
       local_1c = local_18 * 0x48;
       local_20 = local_1c + 0x48;
       while (local_18 < iVar3 + local_30->part_list[0].poly_count) {
-        iVar7 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base
+        iVar1 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base
                       .type + local_1c;
         bVar2 = false;
         iVar6 = 0;
-        local_14 = iVar7;
-        if (0 < *(int *)(iVar7 + 4)) {
+        local_14 = iVar1;
+        if (0 < *(int *)(iVar1 + 4)) {
           do {
             iVar4 = iVar6 + 1;
-            if (iVar4 < *(int *)(iVar7 + 4)) {
-              iVar5 = iVar4 * 0xc + iVar7;
+            if (iVar4 < *(int *)(iVar1 + 4)) {
+              iVar5 = iVar4 * 0xc + iVar1;
               do {
                 if (*(int *)(local_14 + 0x18) == *(int *)(iVar5 + 0x18)) {
                   bVar2 = true;
                 }
                 iVar4 = iVar4 + 1;
                 iVar5 = iVar5 + 0xc;
-              } while (iVar4 < *(int *)(iVar7 + 4));
+              } while (iVar4 < *(int *)(iVar1 + 4));
             }
             iVar6 = iVar6 + 1;
             local_14 = local_14 + 0xc;
-          } while (iVar6 < *(int *)(iVar7 + 4));
+          } while (iVar6 < *(int *)(iVar1 + 4));
         }
         if (bVar2) {
           iVar7 = this_ptr->poly_count + -1;

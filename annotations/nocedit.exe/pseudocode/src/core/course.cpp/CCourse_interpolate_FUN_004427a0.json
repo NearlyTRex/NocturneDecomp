@@ -4,43 +4,49 @@
       {
         "category": "other",
         "column": 15,
-        "line": 59,
-        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 48,
-        "line": 60,
-        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 63,
-        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 41,
         "line": 64,
         "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 80,
+        "column": 48,
+        "line": 65,
         "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 81,
+        "line": 68,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 41,
+        "line": 69,
         "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 82,
+        "line": 85,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 86,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 87,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 13,
+        "line": 95,
         "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
       },
       {
@@ -57,8 +63,14 @@
       },
       {
         "category": "other",
-        "column": 13,
-        "line": 98,
+        "column": 15,
+        "line": 99,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 32,
+        "line": 99,
         "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
       },
       {
@@ -87,33 +99,21 @@
       },
       {
         "category": "other",
-        "column": 15,
-        "line": 102,
+        "column": 33,
+        "line": 116,
         "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 32,
-        "line": 102,
+        "column": 33,
+        "line": 117,
         "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 112,
-        "message": "use of undeclared identifier 'stack0xffffff90'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 14,
-        "line": 113,
-        "message": "use of undeclared identifier 'stack0xffffff94'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 115,
-        "message": "use of undeclared identifier 'stack0xffffff94'"
+        "category": "other",
+        "column": 33,
+        "line": 118,
+        "message": "member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union"
       }
     ],
     "success": false,
@@ -121,22 +121,21 @@
   },
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 531,
+    "complexity_score": 439,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 131,
-    "suspect_count": 37,
+    "pseudocode_lines": 124,
+    "suspect_count": 29,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
-      "stack_ref",
       "unknown_field",
       "warning_inlined_function"
     ],
-    "total_lines": 408
+    "total_lines": 401
   },
   "cross_references": [
     {
@@ -235,12 +234,19 @@
     "pcode_op_count": 1851
   },
   "stack_frame": {
-    "frame_size": 172,
-    "local_size": 156,
+    "frame_size": 6244,
+    "local_size": 6228,
     "param_offset": 4,
     "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "afStackY_1850",
+        "offset": -6224,
+        "size": 6068,
+        "type": "float[1517]"
+      },
       {
         "is_param": false,
         "name": "local_98",
@@ -274,14 +280,14 @@
         "name": "local_7c",
         "offset": -124,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_78",
         "offset": -120,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -294,120 +300,78 @@
         "is_param": false,
         "name": "local_64",
         "offset": -100,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 8,
-        "type": "undefined8"
+        "size": 32,
+        "type": "undefined1[32]"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -467,7 +431,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 17,
       "match": "afStackY_1850",
       "severity": "moderate",
       "text": "float afStackY_1850 [1517];",
@@ -475,7 +439,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 40,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND(time));",
@@ -483,47 +447,47 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 40,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND(time));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 52,
-      "match": "._24_8_",
-      "severity": "mild",
-      "text": "local_3c._24_8_ = floor((double)(time / fVar1));",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._24_8_",
-      "severity": "mild",
-      "text": "local_7c = time - (float)(double)local_3c._24_8_ * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 56,
-      "match": "._24_8_",
-      "severity": "mild",
-      "text": "local_3c._24_8_ = floor((double)(-time / fVar1));",
-      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 57,
       "match": "._24_8_",
       "severity": "mild",
-      "text": "local_7c = (float)(double)local_3c._24_8_ * fVar1 + time;",
+      "text": "local_3c._24_8_ = floor((double)(time / fVar2));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 58,
+      "match": "._24_8_",
+      "severity": "mild",
+      "text": "local_7c = time - (float)(double)local_3c._24_8_ * fVar2;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 61,
+      "match": "._24_8_",
+      "severity": "mild",
+      "text": "local_3c._24_8_ = floor((double)(-time / fVar2));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._24_8_",
+      "severity": "mild",
+      "text": "local_7c = (float)(double)local_3c._24_8_ * fVar2 + time;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 67,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND(local_7c));",
@@ -531,7 +495,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 67,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND(local_7c));",
@@ -539,55 +503,55 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 73,
+      "line": 78,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_3c._0_4_ = (pCVar2->pos).x;",
+      "text": "local_3c._0_4_ = (pCVar4->pos).x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 74,
+      "line": 79,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "local_3c._4_4_ = (pCVar2->pos).y;",
+      "text": "local_3c._4_4_ = (pCVar4->pos).y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 80,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "local_3c._8_4_ = (pCVar2->pos).z;",
+      "text": "local_3c._8_4_ = (pCVar4->pos).z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 88,
+      "match": "._12_4_",
+      "severity": "mild",
+      "text": "local_3c._12_4_ = pCVar4[local_18].pos.x * local_1c + (pCVar2->pos).x * local_78;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 89,
-      "match": "._12_4_",
+      "match": "._16_4_",
       "severity": "mild",
-      "text": "local_3c._12_4_ = local_54 + local_48;",
+      "text": "local_3c._16_4_ = pCVar4[local_18].pos.y * local_1c + (pCVar2->pos).y * local_78;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 90,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "local_3c._16_4_ = local_50 + local_44;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 91,
       "match": "._20_4_",
       "severity": "mild",
-      "text": "local_3c._20_4_ = local_4c + local_40;",
+      "text": "local_3c._20_4_ = pCVar4[local_18].pos.z * local_1c + local_78 * (pCVar2->pos).z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 93,
+      "line": 92,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_3c._0_4_ = local_3c._12_4_;",
@@ -595,7 +559,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 93,
+      "line": 92,
       "match": "._12_4_",
       "severity": "mild",
       "text": "local_3c._0_4_ = local_3c._12_4_;",
@@ -603,7 +567,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 94,
+      "line": 93,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_3c._4_4_ = local_3c._16_4_;",
@@ -611,7 +575,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 94,
+      "line": 93,
       "match": "._16_4_",
       "severity": "mild",
       "text": "local_3c._4_4_ = local_3c._16_4_;",
@@ -619,7 +583,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 95,
+      "line": 94,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_3c._8_4_ = local_3c._20_4_;",
@@ -627,7 +591,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 95,
+      "line": 94,
       "match": "._20_4_",
       "severity": "mild",
       "text": "local_3c._8_4_ = local_3c._20_4_;",
@@ -635,39 +599,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
-      "match": "(uint *)((int)",
+      "line": 101,
+      "match": "(CQuaternion4f *)((int)",
       "severity": "mild",
-      "text": "puVar6 = (uint *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CQuaternion4f *)((int)pCVar3 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 105,
-      "match": "&stack0xffffff90",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff90 + (uint)bVar7 * -8) = *puVar6;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 106,
-      "match": "&stack0xffffff94",
-      "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffff94 + (uint)bVar7 * -8 + (uint)bVar7 * -8) = *puVar4;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 108,
-      "match": "&stack0xffffff94",
-      "severity": "moderate",
-      "text": "((int)(&stack0xffffff94 + (uint)bVar7 * -8 + (uint)bVar7 * -8) + ((uint)bVar7 * -2 + 1) * 4) =",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 103,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "puVar4 = (uint *)((int)pCVar3 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 111,
+      "line": 109,
       "match": "._0_4_",
       "severity": "mild",
       "text": "out_pos->x = (float)local_3c._0_4_;",
@@ -675,7 +623,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 112,
+      "line": 110,
       "match": "._4_4_",
       "severity": "mild",
       "text": "out_pos->y = (float)local_3c._4_4_;",
@@ -683,7 +631,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 113,
+      "line": 111,
       "match": "._8_4_",
       "severity": "mild",
       "text": "out_pos->z = (float)local_3c._8_4_;",
@@ -691,67 +639,19 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
-      "match": "(uint *)((int)",
+      "line": 112,
+      "match": "(float *)((int)",
       "severity": "mild",
-      "text": "puVar6 = (uint *)((int)out_orient + (uint)bVar7 * -8 + 4);",
+      "text": "pfVar5 = (float *)((int)out_orient + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 117,
-      "match": "&stack0xffffff90",
-      "severity": "moderate",
-      "text": "*puVar6 = *(uint *)(&stack0xffffff90 + (uint)bVar7 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 118,
-      "match": "&stack0xffffff94",
-      "severity": "moderate",
-      "text": "*puVar4 = *(uint *)(&stack0xffffff94 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 121,
-      "match": "&stack0xffffff94",
-      "severity": "moderate",
-      "text": "((int)(&stack0xffffff94 + (uint)bVar7 * -8 + (uint)bVar7 * -8) +",
-      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 121,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)out_orient + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 128,
-      "match": "&stack0xffffff90",
-      "severity": "moderate",
-      "text": "*puVar6 = *(uint *)(&stack0xffffff90 + (uint)bVar7 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 129,
-      "match": "&stack0xffffff94",
-      "severity": "moderate",
-      "text": "*puVar4 = *(uint *)(&stack0xffffff94 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 132,
-      "match": "&stack0xffffff94",
-      "severity": "moderate",
-      "text": "((int)(&stack0xffffff94 + (uint)bVar7 * -8 + (uint)bVar7 * -8) + ((uint)bVar7 * -2 + 1) * 4)",
-      "type": "stack_ref"
     }
   ]
 }

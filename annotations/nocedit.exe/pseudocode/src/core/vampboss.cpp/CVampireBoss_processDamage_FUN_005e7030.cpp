@@ -9,24 +9,26 @@
 void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireBoss *this_ptr,SDamageInfo *damage_info)
 
 {
-  float fVar1;
   int iVar2;
   uint uVar3;
   CDemonActor *this_ptr_00;
   CDemonActor *pCVar4;
+  CDemonActor *pCVar1;
   CDemonActor *pCVar5;
+  int iVar3;
   CVector3f local_24;
+  float fVar1;
   
   if (damage_info->ammo_type == AMMO_TYPE_LITHIUM) {
-    iVar2 = 0;
+    iVar3 = 0;
     damage_info->damage_amount = damage_info->damage_amount * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_24,&damage_info->impact_direction);
     do {
-      iVar2 = iVar2 + 1;
+      iVar3 = iVar3 + 1;
       core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
                 (g_CFireEffectPtr,&local_24,(CVector3f *)0x0,0x4000,0x4000,0,0xffff);
-    } while (iVar2 < 5);
+    } while (iVar3 < 5);
   }
   if (this_ptr->form == 0) {
     if ((damage_info->ammo_type == AMMO_TYPE_HOLY) &&
@@ -38,14 +40,14 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireB
       pCVar4 = (*((this_ptr_00->vtable)._ub)->getCarrier)(this_ptr_00);
       if (pCVar4 != (CDemonActor *)0x0) {
         (*((pCVar4->vtable)._ub)->drop)(pCVar4,this_ptr_00,(CVector3f *)0x0);
-        pCVar4 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar4,g_CHeroClassInfo.name_hash);
-        if (pCVar4 != (CDemonActor *)0x0) {
+        pCVar1 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar4,g_CHeroClassInfo.name_hash);
+        if (pCVar1 != (CDemonActor *)0x0) {
           pCVar5 = core_inv_cpp_CInventory_findItemByName_FUN_004fe9d0
-                             ((CInventory *)(pCVar4[0x176].create_event + 0x30),
+                             ((CInventory *)(pCVar1[0x176].create_event + 0x30),
                               this_ptr_00->actor_name);
           if (pCVar5 == this_ptr_00) {
             core_inv_cpp_CInventory_removeItem_FUN_004fea70
-                      ((CInventory *)(pCVar4[0x176].create_event + 0x30),this_ptr_00,0);
+                      ((CInventory *)(pCVar1[0x176].create_event + 0x30),this_ptr_00,0);
             core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70
                       (g_CDemonMissionPtr,this_ptr_00);
           }
@@ -74,18 +76,18 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005e7030(CVampireB
     }
     iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
     if (iVar2 == 0) {
-      iVar2 = 3;
+      iVar3 = 3;
     }
     else if (iVar2 == 1) {
-      iVar2 = 4;
+      iVar3 = 4;
     }
     else {
-      iVar2 = 5;
+      iVar3 = 5;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&(this_ptr->model).motion_controller,iVar2,1);
-    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
-    if (iVar2 == 0) {
+              (&(this_ptr->model).motion_controller,iVar3,1);
+    iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr->sfx_handle);
+    if (iVar3 == 0) {
       uVar3 = (*((this_ptr->base).base.base.vtable._ub)->playSound)
                         ((CDemonActor *)this_ptr,"voicuhurt.wav");
       this_ptr->sfx_handle = uVar3;

@@ -7,8 +7,8 @@
 ; CBoneStructure * Stack[0x4]:4   this_ptr
 ; CMatrix3x4f *    Stack[0x8]:4   inverse_matrices
 ; Local Variables:
-; undefined        Stack[-0x38]:1  local_38
-; undefined4       Stack[-0x8]:4  local_8
+; CMatrix3x4f      Stack[-0x38]:48  local_38
+; int              Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c37c

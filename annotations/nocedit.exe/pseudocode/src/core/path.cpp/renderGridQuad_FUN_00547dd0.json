@@ -157,50 +157,36 @@
         "is_param": false,
         "name": "local_30",
         "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -264,18 +250,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 23,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.x = (int)ROUND(ROUND((float)grid_x * local_24));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_30.x = (int)ROUND(ROUND((float)grid_x * local_24));",
+      "text": "local_30.x = (int)ROUND(ROUND((float)grid_x * fVar1));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -283,15 +261,7 @@
       "line": 23,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.z = (int)ROUND(ROUND((float)grid_z * local_1c));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_30.z = (int)ROUND(ROUND((float)grid_z * local_1c));",
+      "text": "local_30.x = (int)ROUND(ROUND((float)grid_x * fVar1));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -299,7 +269,7 @@
       "line": 24,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.y = (int)ROUND(ROUND(256 +",
+      "text": "local_30.z = (int)ROUND(ROUND((float)grid_z * fVar2));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -307,39 +277,55 @@
       "line": 24,
       "match": "ROUND",
       "severity": "mild",
+      "text": "local_30.z = (int)ROUND(ROUND((float)grid_z * fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ROUND",
+      "severity": "mild",
       "text": "local_30.y = (int)ROUND(ROUND(256 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 25,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x + local_24));",
+      "text": "local_30.y = (int)ROUND(ROUND(256 +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 32,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x + local_24));",
+      "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x + fVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 32,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.z = (int)ROUND(ROUND((float)local_30.z + local_1c));",
+      "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x + fVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 35,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.z = (int)ROUND(ROUND((float)local_30.z + local_1c));",
+      "text": "local_30.z = (int)ROUND(ROUND((float)local_30.z + fVar2));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30.z = (int)ROUND(ROUND((float)local_30.z + fVar2));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -347,7 +333,7 @@
       "line": 38,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x - local_24));",
+      "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x - fVar1));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -355,7 +341,7 @@
       "line": 38,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x - local_24));",
+      "text": "local_30.x = (int)ROUND(ROUND((float)local_30.x - fVar1));",
       "type": "decompiler_intrinsic"
     }
   ]

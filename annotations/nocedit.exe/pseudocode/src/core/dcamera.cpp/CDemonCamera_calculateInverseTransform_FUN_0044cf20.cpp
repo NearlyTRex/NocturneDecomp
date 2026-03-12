@@ -11,19 +11,19 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_calculateInverseTransform_FUN_0044cf20(CDemonCamera *this_ptr)
 
 {
-  float fVar1;
+  float fVar5;
   float fVar2;
   float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
   float fVar8;
   float fVar9;
-  float fVar10;
-  float fVar11;
+  float fVar6;
+  float fVar7;
+  float fVar1;
   float fVar12;
   float fVar13;
+  float fVar10;
+  float fVar11;
+  float fVar4;
   
   fVar2 = (float)(this_ptr->source_matrix).m[0].x * (float)1.52587890625e-05;
   fVar10 = (float)(this_ptr->source_matrix).m[0].y * (float)1.52587890625e-05;

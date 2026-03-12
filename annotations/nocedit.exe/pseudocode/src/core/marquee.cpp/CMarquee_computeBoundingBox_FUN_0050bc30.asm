@@ -6,11 +6,10 @@
 ; Parameters:
 ; CMarquee *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; CVector3f        Stack[-0x2c]:12  CStack_2c
+; CVector3f        Stack[-0x20]:12  local_20
+; float            Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_evaluate_FUN_00442710

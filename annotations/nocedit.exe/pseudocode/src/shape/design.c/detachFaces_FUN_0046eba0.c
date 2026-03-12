@@ -9,12 +9,13 @@
 void __cdecl shape_design_c_detachFaces_FUN_0046eba0(void)
 
 {
-  uint uVar1;
-  SVertexData *pSVar2;
-  int iVar3;
+  int iVar1;
   int iVar4;
   int local_20;
   int local_1c;
+  uint uVar1;
+  SVertexData *pSVar2;
+  int iVar3;
   
   iVar3 = g_VertexCount;
   local_20 = 0;
@@ -34,16 +35,16 @@ void __cdecl shape_design_c_detachFaces_FUN_0046eba0(void)
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       return;
     }
-    for (local_1c = 0; iVar4 = g_VertexCount,
+    for (local_1c = 0; iVar1 = g_VertexCount,
         local_1c < (int)g_ModelPolygonData[local_20].vertex_indices_count; local_1c = local_1c + 1)
     {
       uVar1 = g_ModelPolygonData[local_20].vertex_indices[local_1c];
       pSVar2 = g_LoadedVertices + g_VertexCount;
       g_LoadedVertices[g_VertexCount].vertex.x = g_LoadedVertices[uVar1].vertex.x;
       (pSVar2->vertex).y = g_LoadedVertices[uVar1].vertex.y;
-      g_LoadedVertices[iVar4].vertex.z = g_LoadedVertices[uVar1].vertex.z;
-      g_LoadedVertices[iVar4].u = g_LoadedVertices[uVar1].u;
-      g_LoadedVertices[iVar4].v = g_LoadedVertices[uVar1].v;
+      g_LoadedVertices[iVar1].vertex.z = g_LoadedVertices[uVar1].vertex.z;
+      g_LoadedVertices[iVar1].u = g_LoadedVertices[uVar1].u;
+      g_LoadedVertices[iVar1].v = g_LoadedVertices[uVar1].v;
       g_ModelPolygonData[local_20].vertex_indices[local_1c] = g_VertexCount - iVar3;
       g_VertexCount = g_VertexCount + 1;
       if (20000 < g_VertexCount) {

@@ -9,7 +9,6 @@
 void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet *this_ptr,_FILE *file_handle)
 
 {
-  int iVar1;
   int iVar2;
   uint unaff_ESI;
   uint uVar3;
@@ -21,6 +20,7 @@ void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet *this_p
   CVector3f CStack_2c;
   CVector3f CStack_20;
   CVector3f CStack_14;
+  int iVar1;
   
   core_setdir_cpp_CDemonSet_freeThumbs_FUN_00575df0(this_ptr);
   iVar2 = 0;

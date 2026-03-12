@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 183,
+    "complexity_score": 177,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 52,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 214
+    "total_lines": 208
   },
   "cross_references": [],
   "function": {
@@ -180,46 +180,18 @@
     "pcode_op_count": 676
   },
   "stack_frame": {
-    "frame_size": 108,
-    "local_size": 104,
+    "frame_size": 112,
+    "local_size": 108,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 4,
-        "type": "undefined4"
+        "name": "SStack_68",
+        "offset": -104,
+        "size": 24,
+        "type": "SMRGLHeaderPrimitive"
       },
       {
         "is_param": false,
@@ -246,85 +218,29 @@
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": true,
@@ -338,7 +254,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 15,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28.x = (int)ROUND((this_ptr->triangle_delta).vertices[0].x * 256.0f);",
@@ -346,7 +262,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 16,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28.y = (int)ROUND((this_ptr->triangle_delta).vertices[0].y * 256.0f);",
@@ -354,7 +270,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 17,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28.z = (int)ROUND((this_ptr->triangle_delta).vertices[0].z * 256.0f);",
@@ -362,7 +278,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 20,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.x = (int)ROUND((this_ptr->triangle_delta).vertices[1].x * 256.0f);",
@@ -370,7 +286,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 21,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.y = (int)ROUND((this_ptr->triangle_delta).vertices[1].y * 256.0f);",
@@ -378,7 +294,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 25,
+      "line": 22,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.z = (int)ROUND((this_ptr->triangle_delta).vertices[1].z * 256.0f);",
@@ -386,7 +302,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 25,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34.x = (int)ROUND((this_ptr->triangle_delta).vertices[2].x * 256.0f);",
@@ -394,7 +310,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 26,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34.y = (int)ROUND((this_ptr->triangle_delta).vertices[2].y * 256.0f);",
@@ -402,7 +318,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 27,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34.z = (int)ROUND((this_ptr->triangle_delta).vertices[2].z * 256.0f);",
@@ -410,7 +326,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 39,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_40.x = (int)ROUND((this_ptr->base).position.x * 256.0f);",
@@ -418,7 +334,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 40,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_40.y = (int)ROUND((this_ptr->base).position.y * 256.0f);",
@@ -426,7 +342,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 41,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_40.z = (int)ROUND((this_ptr->base).position.z * 256.0f);",

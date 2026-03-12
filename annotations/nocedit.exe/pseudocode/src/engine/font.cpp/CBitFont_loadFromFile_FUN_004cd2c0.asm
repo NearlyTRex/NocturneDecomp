@@ -7,16 +7,16 @@
 ; CBitFont *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   font_path
 ; Local Variables:
-; undefined        Stack[-0x22c]:1  local_22c
-; undefined        Stack[-0x12c]:1  local_12c
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; char[256]        Stack[-0x22c]:256  local_22c
+; char[256]        Stack[-0x12c]:256  local_12c
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_0062a582

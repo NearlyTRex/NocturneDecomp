@@ -8,10 +8,11 @@
 ; CVector3d *      Stack[0x8]:4   segEnd
 ; CVector3d *      Stack[0xc]:4   point
 ; Local Variables:
-; undefined        Stack[-0x48]:1  local_48
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x20]:8  local_20
+; undefined4[1524] Stack[-0x1824]:6096  auStackY_1824
+; undefined4       Stack[-0x48]:4  local_48
+; undefined4       Stack[-0x38]:4  local_38
+; undefined4       Stack[-0x34]:4  uStack_34
+; double[4]        Stack[-0x30]:32  local_30
 ;
 ; Called Functions:
 ;   shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020

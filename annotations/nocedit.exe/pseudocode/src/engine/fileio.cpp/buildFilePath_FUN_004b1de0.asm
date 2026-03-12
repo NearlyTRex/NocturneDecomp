@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   filename
 ; char *           Stack[0xc]:4   dest_path
 ; Local Variables:
-; undefined        Stack[-0x10c]:1  local_10c
-; undefined        Stack[-0xc]:1  local_c
+; char[256]        Stack[-0x10c]:256  local_10c
+; char[4]          Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
 ;   engine_dosio.c_ensureTrailingSlash_FUN_00481f80

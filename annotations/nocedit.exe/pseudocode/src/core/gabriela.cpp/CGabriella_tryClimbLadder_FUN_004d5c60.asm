@@ -8,27 +8,21 @@
 ; Local Variables:
 ; undefined8       Stack[-0xa0]:8  local_a0
 ; undefined8       Stack[-0x98]:8  local_98
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined1       Stack[-0x78]:1  local_78
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined1       Stack[-0x54]:1  local_54
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined1       Stack[-0x30]:1  local_30
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; CVector3f        Stack[-0x90]:12  local_90
+; CVector3f        Stack[-0x84]:12  local_84
+; CVector3f        Stack[-0x78]:12  local_78
+; CVector3f        Stack[-0x6c]:12  local_6c
+; float            Stack[-0x60]:4  local_60
+; float            Stack[-0x5c]:4  local_5c
+; float            Stack[-0x58]:4  local_58
+; CVector3f        Stack[-0x54]:12  local_54
+; CVector3f        Stack[-0x48]:12  local_48
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  local_30
+; CLadder *        Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d4067

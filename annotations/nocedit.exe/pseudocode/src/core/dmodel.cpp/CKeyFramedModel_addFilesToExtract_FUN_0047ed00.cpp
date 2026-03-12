@@ -9,31 +9,33 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_addFilesToExtract_FUN_0047ed00(CKeyFramedModel *this_ptr,_FILE *dependency_file,int skip_raw_files)
 
 {
-  char cVar1;
+  char cVar2;
   char *pcVar2;
   int iVar3;
   char *pcVar4;
   char *pcVar5;
   char *pcVar6;
+  char *pcVar3;
   char local_d8 [200];
+  char cVar1;
   
   iVar3 = 0;
   if (0 < this_ptr->texture_count) {
     pcVar4 = this_ptr->texture_list[0].textures[0].texture_name;
-    pcVar6 = local_d8;
+    pcVar3 = local_d8;
     pcVar2 = pcVar4;
 LAB_0047ed2e:
     do {
       cVar1 = *pcVar4;
-      *pcVar6 = cVar1;
+      *pcVar3 = cVar1;
       pcVar5 = local_d8;
       if (cVar1 != '\0') {
-        cVar1 = pcVar4[1];
+        cVar2 = pcVar4[1];
         pcVar4 = pcVar4 + 2;
-        pcVar6[1] = cVar1;
+        pcVar3[1] = cVar2;
         pcVar5 = local_d8;
-        pcVar6 = pcVar6 + 2;
-        if (cVar1 != '\0') goto LAB_0047ed2e;
+        pcVar3 = pcVar3 + 2;
+        if (cVar2 != '\0') goto LAB_0047ed2e;
       }
       do {
         pcVar6 = pcVar5;
@@ -54,7 +56,7 @@ LAB_0047ed61:
       _fprintf(dependency_file,"ART\\%s.ACT\n",local_d8);
       iVar3 = iVar3 + 1;
       pcVar4 = pcVar2 + 0x48;
-      pcVar6 = local_d8;
+      pcVar3 = local_d8;
       pcVar2 = pcVar4;
     } while (iVar3 < this_ptr->texture_count);
   }

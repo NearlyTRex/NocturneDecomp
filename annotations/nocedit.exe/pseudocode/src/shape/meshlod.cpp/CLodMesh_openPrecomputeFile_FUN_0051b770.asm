@@ -7,13 +7,13 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   mode
 ; Local Variables:
-; undefined        Stack[-0x514]:1  local_514
-; undefined        Stack[-0x410]:1  local_410
-; undefined        Stack[-0x310]:1  local_310
-; undefined        Stack[-0x210]:1  local_210
-; undefined        Stack[-0x110]:1  local_110
-; undefined4       Stack[-0x10]:4  local_10
-; undefined        Stack[-0xc]:1  local_c
+; char[260]        Stack[-0x514]:260  local_514
+; char[256]        Stack[-0x410]:256  local_410
+; char[256]        Stack[-0x310]:256  local_310
+; char[256]        Stack[-0x210]:256  local_210
+; char[256]        Stack[-0x110]:256  local_110
+; uint             Stack[-0x10]:4  local_10
+; char[4]          Stack[-0xc]:4  local_c
 ;
 ; XREF[6]:
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058d11e

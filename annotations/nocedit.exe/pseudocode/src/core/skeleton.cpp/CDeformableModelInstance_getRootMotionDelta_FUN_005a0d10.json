@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 158,
+    "complexity_score": 161,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 63,
+    "pseudocode_lines": 66,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 241
+    "total_lines": 244
   },
   "cross_references": [
     {
@@ -190,21 +190,21 @@
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -289,7 +289,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 37,
       "match": "ROUND",
       "severity": "mild",
       "text": "iVar1 = (int)ROUND(ROUND(dVar15));",
@@ -297,7 +297,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 37,
       "match": "ROUND",
       "severity": "mild",
       "text": "iVar1 = (int)ROUND(ROUND(dVar15));",
@@ -305,23 +305,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 39,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar2 = (int)ROUND(ROUND(dVar15));",
+      "text": "iVar2 = (int)ROUND(ROUND(dVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 39,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar2 = (int)ROUND(ROUND(dVar15));",
+      "text": "iVar2 = (int)ROUND(ROUND(dVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 47,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_30 = local_30 + *(float *)((int)&pCVar9->x + iVar14);",
@@ -329,7 +329,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 48,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_2c = local_2c + *(float *)((int)&pCVar9->y + iVar14);",
@@ -337,7 +337,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 49,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_28 = local_28 + *(float *)((int)&pCVar9->z + iVar14);",

@@ -10,9 +10,14 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130(char *title,
 
 {
   int iVar1;
+  int iVar5;
   int iVar2;
   int iVar3;
+  int iVar6;
+  int left;
   int iVar4;
+  int iVar7;
+  int iVar8;
   CEdButton local_108;
   int local_24;
   int local_20;
@@ -28,41 +33,40 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130(char *title,
   g_FontCharacterHeight = g_EditorFont->max_char_width;
   g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
   iVar1 = g_WindowHeight / 0x60;
-  local_18 = shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0("Cancel");
+  iVar5 = shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0("Cancel");
   iVar2 = shape_edittool_cpp_calculateButtonHeight_FUN_004a6970((char *)0x0);
-  iVar2 = iVar1 * 2 + iVar2;
-  iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,title);
-  local_14 = iVar1;
+  iVar8 = iVar1 * 2 + iVar2;
+  local_14 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,title);
   iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,message);
-  if (iVar1 < iVar3) {
+  if (local_14 < iVar3) {
     local_14 = iVar3;
   }
-  if (local_14 < local_18) {
-    local_14 = local_18;
+  if (local_14 < iVar5) {
+    local_14 = iVar5;
   }
-  iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,message);
+  iVar5 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,message);
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
             (g_CEditorToolsPtr,g_FontCharacterHeight * 4 + local_14,
-             iVar1 + g_FontCharacterWidth * 2 + iVar2,title,0);
-  local_1c = shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0("Cancel");
-  local_24 = ((g_ClipRight + g_ClipLeft) - local_1c) / 2 + 1;
+             iVar5 + g_FontCharacterWidth * 2 + iVar8,title,0);
+  iVar6 = shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0("Cancel");
+  left = ((g_ClipRight + g_ClipLeft) - iVar6) / 2 + 1;
   iVar4 = shape_edittool_cpp_calculateButtonHeight_FUN_004a6970((char *)0x0);
-  local_20 = (g_ClipBottom - iVar4) + 1;
+  iVar7 = g_ClipBottom - iVar4;
   shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&local_108);
   shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_004a6590
-            (&local_108,local_24,local_20,local_24 + local_1c + -1,g_ClipBottom,"OK");
+            (&local_108,left,iVar7 + 1,left + iVar6 + -1,g_ClipBottom,"OK");
   engine_2d_c_clearInputAndWait_FUN_00403260();
   while( true ) {
-    iVar4 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
-    if (iVar4 != 0) break;
-    iVar4 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_108);
-    if (iVar4 != 0) break;
+    iVar6 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
+    if (iVar6 != 0) break;
+    iVar6 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_108);
+    if (iVar6 != 0) break;
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(g_CEditorToolsPtr);
     shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(g_CEditorToolsPtr,1);
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_EditorFont,message,((g_ClipLeft + g_ClipRight) - iVar3) / 2,
-               (((g_ClipTop + g_ClipBottom) - iVar1) - iVar2) / 2,color,-1);
+               (((g_ClipTop + g_ClipBottom) - iVar5) - iVar8) / 2,color,-1);
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_108,1);
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

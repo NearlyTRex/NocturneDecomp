@@ -9,8 +9,8 @@
 ; _istream *       Stack[0xc]:4   istream
 ; int *            Stack[0x10]:4   bytes_remaining
 ; Local Variables:
-; undefined1       Stack[-0x18]:1  local_18
-; undefined1       Stack[-0x14]:1  local_14
+; byte[4]          Stack[-0x18]:4  local_18
+; byte[4]          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030 at 0043f069

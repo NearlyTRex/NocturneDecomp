@@ -11,8 +11,10 @@ void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_004339c0(int x0,int y
 {
   bool bVar1;
   uint uVar2;
+  uint uVar1;
   uint uVar3;
   uint uVar4;
+  uint uVar5;
   int local_2c;
   uint local_28;
   uint local_24;
@@ -55,14 +57,14 @@ void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_004339c0(int x0,int y
           local_18 = blend_color;
         }
         uVar2 = (local_28 * 0x10000) / local_24;
-        uVar4 = 0;
+        uVar1 = 0;
         while (local_24 = local_24 - 1, local_24 != 0) {
-          uVar3 = uVar4 + uVar2 & 0xffff;
-          if (uVar3 <= uVar4) {
+          uVar3 = uVar1 + uVar2 & 0xffff;
+          if (uVar3 <= uVar1) {
             y0 = y0 + 1;
           }
           x0 = x0 + local_2c;
-          uVar4 = uVar3;
+          uVar1 = uVar3;
           if (blend_mode == 0) {
             cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00433f50
                       (x0,y0,((float)(uVar3 >> 8) + 1.0) * 0.00390625,(uint)local_18);
@@ -83,22 +85,22 @@ void __cdecl cockpit_ckptutil_c_drawLineAAWithBlending_FUN_004339c0(int x0,int y
         if (!bVar1) {
           local_1c = blend_color;
         }
-        uVar2 = (local_24 << 0x10) / local_28;
+        uVar1 = (local_24 << 0x10) / local_28;
         uVar4 = 0;
         while (local_28 = local_28 - 1, local_28 != 0) {
-          uVar3 = uVar4 + uVar2 & 0xffff;
-          if (uVar3 <= uVar4) {
+          uVar5 = uVar4 + uVar1 & 0xffff;
+          if (uVar5 <= uVar4) {
             x0 = x0 + local_2c;
           }
           y0 = y0 + 1;
-          uVar4 = uVar3;
+          uVar4 = uVar5;
           if (bVar1) {
             cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00433f50
-                      (x0,y0,((float)(uVar3 >> 8) + 1.0) * 0.00390625,(uint)local_1c);
+                      (x0,y0,((float)(uVar5 >> 8) + 1.0) * 0.00390625,(uint)local_1c);
           }
           else {
             cockpit_ckptutil_c_blendPixelWithHardwarePalette_FUN_00433f50
-                      (local_2c + x0,y0,(float)(uVar3 >> 8 ^ 0xff) * 0.00390625,(uint)local_1c);
+                      (local_2c + x0,y0,(float)(uVar5 >> 8 ^ 0xff) * 0.00390625,(uint)local_1c);
           }
         }
       }

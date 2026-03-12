@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 310,
+    "complexity_score": 311,
     "cross_reference_count": 1,
-    "function_call_count": 7,
+    "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 40,
+    "pseudocode_lines": 41,
     "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
@@ -16,7 +16,7 @@
       "unresolved_funcptr",
       "warning_spacebase"
     ],
-    "total_lines": 107
+    "total_lines": 108
   },
   "cross_references": [
     {
@@ -54,11 +54,6 @@
       "addr": "00602458",
       "is_variadic": false,
       "name": "crt_sync.c_CriticalSectionStub_FUN_00602458"
-    },
-    {
-      "addr": "0060242c",
-      "is_variadic": false,
-      "name": "crt_thread.c_GetTLS_FUN_0060242c"
     },
     {
       "addr": "0060a2d8",
@@ -141,25 +136,39 @@
     "pcode_op_count": 225
   },
   "stack_frame": {
-    "frame_size": 48,
-    "local_size": 44,
+    "frame_size": 64,
+    "local_size": 60,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "uStackY_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "aiStackY_34",
+        "offset": -52,
+        "size": 8,
+        "type": "int[2]"
+      },
+      {
+        "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 1,
-        "type": "undefined"
+        "size": 8,
+        "type": "ExceptionFrame"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "undefined *"
       },
       {
         "is_param": true,
@@ -197,6 +206,14 @@
       "type": "warning_spacebase"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 7,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcVar1;",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 10,
       "match": "uStackY_38",
@@ -213,16 +230,8 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "code *local_20;",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 18,
+      "line": 19,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(DWORD *)(&stack0xffffffd4 + iVar1) = g_RuntimeBufferSize;",
@@ -230,7 +239,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 20,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)aiStackY_34 + iVar1 + 4) = 0;",
@@ -238,7 +247,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 19,
+      "line": 20,
       "match": "aiStackY_34",
       "severity": "moderate",
       "text": "*(uint *)((int)aiStackY_34 + iVar1 + 4) = 0;",
@@ -246,7 +255,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 21,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)aiStackY_34 + iVar1) = (int)&local_28 + iVar1;",
@@ -254,7 +263,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 20,
+      "line": 21,
       "match": "aiStackY_34",
       "severity": "moderate",
       "text": "*(int *)((int)aiStackY_34 + iVar1) = (int)&local_28 + iVar1;",
@@ -262,7 +271,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 22,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&uStackY_38 + iVar1) = 0x60f8ff;",
@@ -270,7 +279,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 21,
+      "line": 22,
       "match": "uStackY_38",
       "severity": "moderate",
       "text": "*(uint *)((int)&uStackY_38 + iVar1) = 0x60f8ff;",
@@ -278,7 +287,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 24,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(*(void **)((int)aiStackY_34 + iVar1),*(int *)((int)aiStackY_34 + iVar1 + 4),",
@@ -286,7 +295,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 23,
+      "line": 24,
       "match": "aiStackY_34",
       "severity": "moderate",
       "text": "(*(void **)((int)aiStackY_34 + iVar1),*(int *)((int)aiStackY_34 + iVar1 + 4),",
@@ -294,7 +303,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 23,
+      "line": 24,
       "match": "aiStackY_34",
       "severity": "moderate",
       "text": "(*(void **)((int)aiStackY_34 + iVar1),*(int *)((int)aiStackY_34 + iVar1 + 4),",
@@ -302,7 +311,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 24,
+      "line": 25,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(ulong *)(&stack0xffffffd4 + iVar1));",
@@ -310,7 +319,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 25,
+      "line": 26,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "*(int *)(&stack0xffffffd4 + iVar1) = (int)&local_28 + iVar1;",
@@ -318,7 +327,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 26,
+      "line": 27,
       "match": "&stack0x000000c8",
       "severity": "moderate",
       "text": "*(DWORD *)(&stack0x000000c8 + iVar1) = g_RuntimeBufferSize;",
@@ -326,7 +335,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 28,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)aiStackY_34 + iVar1 + 4) = 0x60f913;",
@@ -334,7 +343,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 27,
+      "line": 28,
       "match": "aiStackY_34",
       "severity": "moderate",
       "text": "*(uint *)((int)aiStackY_34 + iVar1 + 4) = 0x60f913;",
@@ -342,7 +351,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 28,
+      "line": 29,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
       "text": "BVar2 = initialize_thread_tls_data(*(void **)(&stack0xffffffd4 + iVar1));",
@@ -350,7 +359,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 35,
+      "line": 36,
       "match": "aiStackY_34",
       "severity": "moderate",
       "text": "aiStackY_34[1] = 0x60f933;",
@@ -358,7 +367,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 37,
+      "line": 38,
       "match": "aiStackY_34",
       "severity": "moderate",
       "text": "aiStackY_34[1] = 0x60f93c;",
@@ -366,7 +375,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 40,
+      "line": 41,
       "match": "aiStackY_34",
       "severity": "moderate",
       "text": "aiStackY_34[1] = 0x60f949;",

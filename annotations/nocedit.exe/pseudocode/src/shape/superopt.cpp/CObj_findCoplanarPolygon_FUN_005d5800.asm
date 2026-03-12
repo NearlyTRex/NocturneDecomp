@@ -15,13 +15,13 @@
 ; undefined4       Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44
-; undefined1       Stack[-0x40]:1  local_40
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; undefined4[6]    Stack[-0x40]:24  local_40
+; int              Stack[-0x28]:4  local_28
+; CP3D *           Stack[-0x24]:4  local_24
+; uint             Stack[-0x20]:4  local_20
+; uint             Stack[-0x1c]:4  local_1c
+; CPoly *          Stack[-0x18]:4  local_18
+; CP3D *           Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0

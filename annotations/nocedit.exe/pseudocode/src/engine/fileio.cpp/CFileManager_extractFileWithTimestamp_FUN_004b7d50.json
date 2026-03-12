@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 227,
-    "complexity_score": 126,
+    "complexity_score": 133,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 101,
+    "pseudocode_lines": 108,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 328
+    "total_lines": 335
   },
   "cross_references": [
     {
@@ -173,15 +173,15 @@
         "is_param": false,
         "name": "local_114",
         "offset": -276,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "byte *"
       },
       {
         "is_param": true,
@@ -237,7 +237,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 78,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&file_ptr->_flag + 1) = *(byte *)((int)&file_ptr->_flag + 1) | 0x10;",
@@ -245,7 +245,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 78,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&file_ptr->_flag + 1) = *(byte *)((int)&file_ptr->_flag + 1) | 0x10;",

@@ -10,12 +10,10 @@
 ; int              Stack[0x10]:4   max_u
 ; int              Stack[0x14]:4   max_v
 ; Local Variables:
-; undefined1       Stack[-0x1e4]:1  local_1e4
-; undefined1       Stack[-0x11c]:1  local_11c
-; undefined1       Stack[-0x11b]:1  local_11b
-; undefined1       Stack[-0x119]:1  local_119
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[200]        Stack[-0x1e4]:200  local_1e4
+; char[260]        Stack[-0x11c]:260  local_11c
+; char *           Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 at 0047a51b

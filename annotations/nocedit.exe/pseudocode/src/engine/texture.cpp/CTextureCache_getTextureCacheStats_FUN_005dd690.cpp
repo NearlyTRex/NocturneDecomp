@@ -10,6 +10,7 @@ int __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_005dd690(C
 
 {
   CTextureCache *pCVar1;
+  int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
@@ -51,11 +52,11 @@ int __cdecl engine_texture_cpp_CTextureCache_getTextureCacheStats_FUN_005dd690(C
         pCVar1 = (CTextureCache *)&pCVar1->max_texture_count;
       } while (iVar3 < this_ptr->current_texture_count);
     }
-    iVar2 = _sprintf
+    iVar1 = _sprintf
                       (output_buffer,"Total: %d, 32: %d, 64: %d, 128: %d, 256: %d, 512: %d, 1024: %d",
                        this_ptr->current_texture_count,iVar5,iVar6,iVar2,local_14,iVar4,local_18);
-    return iVar2;
+    return iVar1;
   }
-  iVar2 = _sprintf(output_buffer,"Texture cache has wrapped.  Make it bigger, please.");
-  return iVar2;
+  iVar1 = _sprintf(output_buffer,"Texture cache has wrapped.  Make it bigger, please.");
+  return iVar1;
 }

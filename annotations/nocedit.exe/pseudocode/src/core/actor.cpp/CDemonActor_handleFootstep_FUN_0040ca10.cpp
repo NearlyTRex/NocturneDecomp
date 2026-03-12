@@ -9,20 +9,18 @@
 void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
   int iVar4;
+  int iVar1;
   char *pcVar5;
-  double dVar6;
   char local_8c [100];
   float local_28;
   float local_24;
   float local_20;
+  float fVar3;
+  float fVar2;
+  float fVar1;
+  double dVar6;
   
-  local_28 = g_CDemonCameraInstance.base.position.f.x;
-  local_24 = g_CDemonCameraInstance.base.position.f.y;
-  local_20 = g_CDemonCameraInstance.base.position.f.z;
   fVar1 = position->x - g_CDemonCameraInstance.base.position.f.x;
   fVar3 = position->y - g_CDemonCameraInstance.base.position.f.y;
   fVar2 = position->z - g_CDemonCameraInstance.base.position.f.z;
@@ -33,9 +31,9 @@ void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor 
   if (iVar4 != 0) {
     surface_type = GROUND_TYPE_WATER;
   }
-  iVar4 = core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0
+  iVar1 = core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0
                     (g_CGorePtr,position,(int *)&this_ptr->blood_effect_color);
-  if (iVar4 == 0) {
+  if (iVar1 == 0) {
     if (this_ptr->blood_effect_timer < 1) {
       if (surface_type == GROUND_TYPE_DIRT) {
         core_gore_cpp_CGore_createFootstep_FUN_004ee070
@@ -50,9 +48,9 @@ void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor 
   core_gore_cpp_CGore_createFootstep_FUN_004ee070
             (g_CGorePtr,position,&this_ptr->orient,0xb,this_ptr->blood_effect_timer,
              this_ptr->blood_effect_color);
-  iVar4 = this_ptr->blood_effect_timer + -0x2000;
-  this_ptr->blood_effect_timer = iVar4;
-  if (iVar4 < 0) {
+  iVar1 = this_ptr->blood_effect_timer + -0x2000;
+  this_ptr->blood_effect_timer = iVar1;
+  if (iVar1 < 0) {
     this_ptr->blood_effect_timer = 0;
   }
 LAB_0040cb07:

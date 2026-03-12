@@ -7,9 +7,9 @@
 ; C3DSCamera *     Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined1       Stack[-0x18]:1  local_18
-; undefined1       Stack[-0x14]:1  local_14
-; undefined1       Stack[-0x10]:1  local_10
+; undefined1[4]    Stack[-0x18]:4  local_18
+; undefined1[4]    Stack[-0x14]:4  local_14
+; undefined1[4]    Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 005791eb

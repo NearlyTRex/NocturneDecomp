@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 47,
+        "line": 54,
         "message": "assigning to 'SVertexData *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 55,
+        "line": 62,
         "message": "assigning to 'SShapeEditorPolygon *' from incompatible type 'void *'"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 306,
-    "complexity_score": 322,
+    "complexity_score": 333,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 39,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 157,
+    "pseudocode_lines": 168,
     "suspect_count": 16,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 463
+    "total_lines": 474
   },
   "cross_references": [
     {
@@ -413,7 +413,7 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -434,71 +434,71 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 92,
       "match": "(SVertexData *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (SVertexData *)((int)pSVar5 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pSVar7 = (SVertexData *)((int)pSVar7 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 93,
       "match": "(SVertexData *)((int)",
       "severity": "mild",
-      "text": "pSVar8 = (SVertexData *)((int)pSVar8 + (uint)bVar10 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 90,
-      "match": "(SVertexData *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SVertexData *)((int)pSVar5 + (uint)bVar10 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 91,
-      "match": "(SVertexData *)((int)",
-      "severity": "mild",
-      "text": "pSVar8 = (SVertexData *)((int)pSVar8 + (uint)bVar10 * -2 + 1);",
+      "text": "pSVar11 = (SVertexData *)((int)pSVar11 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 97,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SVertexData *)((int)",
       "severity": "mild",
-      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pSVar7 = (SVertexData *)((int)pSVar7 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 98,
-      "match": "(SShapeEditorPolygon *)((int)",
+      "match": "(SVertexData *)((int)",
       "severity": "mild",
-      "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + (uint)bVar10 * -8 + 4);",
+      "text": "pSVar11 = (SVertexData *)((int)pSVar11 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 104,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -2 + 1);",
+      "text": "pSVar10 = (SShapeEditorPolygon *)((int)pSVar10 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 105,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + (uint)bVar10 * -2 + 1);",
+      "text": "pSVar12 = (SShapeEditorPolygon *)((int)pSVar12 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 109,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "severity": "mild",
+      "text": "pSVar10 = (SShapeEditorPolygon *)((int)pSVar10 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 110,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "severity": "mild",
+      "text": "pSVar12 = (SShapeEditorPolygon *)((int)pSVar12 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 127,
       "match": "(SVertexData *)((int)",
       "severity": "mild",
       "text": "pSVar5 = (SVertexData *)((int)pSVar5 + (uint)bVar10 * -8 + 4);",
@@ -506,23 +506,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 128,
       "match": "(SVertexData *)((int)",
       "severity": "mild",
-      "text": "pSVar8 = (SVertexData *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pSVar8 = (SVertexData *)((int)pSVar8 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
-      "match": "(SVertexData *)((int)",
-      "severity": "mild",
-      "text": "pSVar5 = (SVertexData *)((int)pSVar5 + (uint)bVar10 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 126,
+      "line": 131,
       "match": "(SVertexData *)((int)",
       "severity": "mild",
       "text": "pSVar8 = (SVertexData *)((int)pSVar8 + (uint)bVar10 * -2 + 1);",
@@ -531,6 +523,14 @@
     {
       "description": "Complex pointer cast",
       "line": 132,
+      "match": "(SVertexData *)((int)",
+      "severity": "mild",
+      "text": "pSVar5 = (SVertexData *)((int)pSVar5 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 141,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
@@ -538,26 +538,26 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 142,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 137,
-      "match": "(SShapeEditorPolygon *)((int)",
-      "severity": "mild",
-      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 138,
+      "line": 145,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
       "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 146,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "severity": "mild",
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     }
   ]

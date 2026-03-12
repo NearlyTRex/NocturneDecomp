@@ -12,23 +12,17 @@
 ; undefined8       Stack[-0x88]:8  local_88
 ; undefined4       Stack[-0x80]:4  local_80
 ; undefined4       Stack[-0x7c]:4  local_7c
-; undefined1       Stack[-0x78]:1  local_78
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined1       Stack[-0x48]:1  local_48
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; CVector3f        Stack[-0x78]:12  local_78
+; CVector3f        Stack[-0x6c]:12  local_6c
+; CVector3i        Stack[-0x60]:12  local_60
+; CVector3i        Stack[-0x54]:12  local_54
+; CVector3f        Stack[-0x48]:12  local_48
+; CVector3f        Stack[-0x3c]:12  local_3c
+; SBodyPartFire *  Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[16]:
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00415dd0 at 00415ff7

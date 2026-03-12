@@ -16,12 +16,12 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820(CKeyFramedModel *model_ptr)
 
 {
-  int iVar1;
-  int iVar2;
   int iVar3;
   CKeyFramedModel *local_2c;
   int local_28;
   int local_24;
+  int iVar1;
+  int iVar2;
   
   core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(model_ptr);
   local_24 = 0;

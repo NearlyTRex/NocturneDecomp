@@ -4,13 +4,11 @@
 ; int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
 ;
 ; Local Variables:
-; undefined        Stack[-0x410]:1  local_410
-; undefined        Stack[-0x210]:1  local_210
-; undefined        Stack[-0x12c]:1  local_12c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x14]:4  local_14
+; CIniFile         Stack[-0x410]:512  local_410
+; CEdButton        Stack[-0x210]:228  local_210
+; CEdButton        Stack[-0x12c]:228  local_12c
+; CEdScrollBar     Stack[-0x48]:52  local_48
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Editor_0063169a

@@ -11,21 +11,23 @@
 char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *workspace,char *color_data,int color_count,int num_palette_entries)
 
 {
-  short sVar1;
-  double dVar2;
-  double dVar3;
-  char *pcVar4;
-  double dVar5;
-  double dVar6;
-  double dVar7;
+  double dVar1;
+  double dVar4;
+  double dVar8;
+  int iVar9;
   SColorQuantMapper *pSVar8;
+  int iVar10;
   SColorQuantMapper *pSVar9;
   SColorQuantMapper *pSVar10;
+  SColorQuantMapper *pSVar11;
   int iVar11;
   uint uVar12;
+  SColorQuantMapper *pSVar12;
   int iVar13;
+  SColorQuantCentroid *pSVar13;
   SColorQuantCentroid *pSVar14;
   uint *puVar15;
+  uint *puVar14;
   SColorQuantCentroid *pSVar16;
   byte bVar17;
   uint local_160;
@@ -38,6 +40,13 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *
   int local_20;
   uint local_1c;
   uint local_18;
+  short sVar1;
+  double dVar2;
+  double dVar5;
+  double dVar6;
+  double dVar3;
+  char *pcVar4;
+  double dVar7;
   
   bVar17 = 0;
   memset(workspace->sort_keys,0,0x2000);
@@ -48,19 +57,19 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *
   workspace->num_palette_entries = num_palette_entries;
   dVar7 = 0.57735027000000005;
   if (0 < color_count) {
-    iVar13 = 0;
+    iVar9 = 0;
     do {
       pcVar4 = workspace->color_data;
-      local_1c = (uint)(byte)pcVar4[iVar13 + 1];
-      dVar5 = (double)(byte)pcVar4[iVar13 + 1];
-      local_18 = (uint)(byte)pcVar4[iVar13 + 2];
-      dVar6 = (double)(byte)pcVar4[iVar13 + 2];
+      local_1c = (uint)(byte)pcVar4[iVar9 + 1];
+      dVar5 = (double)(byte)pcVar4[iVar9 + 1];
+      local_18 = (uint)(byte)pcVar4[iVar9 + 2];
+      dVar6 = (double)(byte)pcVar4[iVar9 + 2];
       local_20 = (int)ROUND(ROUND(SQRT(dVar6 * dVar6 +
-                                       (double)(byte)pcVar4[iVar13] * (double)(byte)pcVar4[iVar13] +
+                                       (double)(byte)pcVar4[iVar9] * (double)(byte)pcVar4[iVar9] +
                                        dVar5 * dVar5) * dVar7));
-      iVar11 = iVar13 + 4;
-      pcVar4[iVar13 + 3] = (char)local_20;
-      iVar13 = iVar11;
+      iVar11 = iVar9 + 4;
+      pcVar4[iVar9 + 3] = (char)local_20;
+      iVar9 = iVar11;
     } while (iVar11 < color_count * 4);
   }
   workspace->boxes[0].start_index = 0;
@@ -71,11 +80,11 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *
   engine_2d_c_drawText_FUN_00401fd0(local_150,0,0x16);
   do {
     while( true ) {
-      dVar6 = 0.11;
-      dVar5 = 0.29999999999999999;
-      dVar7 = 0.58999999999999997;
+      dVar8 = 0.11;
+      dVar4 = 0.29999999999999999;
+      dVar1 = 0.58999999999999997;
       if (workspace->num_palette_entries + -1 <= (int)uVar12) {
-        iVar13 = 0;
+        iVar9 = 0;
         pSVar8 = workspace;
         pSVar9 = workspace;
         if (0 < workspace->num_palette_entries) {
@@ -95,65 +104,68 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *
             *(uint *)(pSVar9->sort_keys[0] + 3) = 0;
             pSVar9->centroids[0].blue = (double)sVar1;
             pSVar10->num_palette_entries = 0;
-            iVar13 = iVar13 + 1;
+            iVar9 = iVar9 + 1;
             pSVar9->centroids[0].weighted_intensity =
-                 (double)sVar1 * dVar6 + dVar3 * dVar5 + dVar2 * dVar7;
+                 (double)sVar1 * dVar8 + dVar3 * dVar4 + dVar2 * dVar1;
             pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[1] + 0x1c);
             pSVar9 = pSVar10;
-          } while (iVar13 < workspace->num_palette_entries);
+          } while (iVar9 < workspace->num_palette_entries);
         }
         local_24 = 0;
         if (0 < workspace->num_palette_entries) {
           do {
-            iVar13 = 0;
-            pSVar8 = workspace;
-            while (iVar13 < workspace->num_palette_entries + -1) {
-              if (pSVar8->centroids[1].weighted_intensity < pSVar8->centroids[0].weighted_intensity)
-              {
-                pSVar14 = pSVar8->centroids;
-                puVar15 = local_50;
-                for (iVar11 = 8; iVar11 != 0; iVar11 = iVar11 + -1) {
-                  *puVar15 = *(uint *)&pSVar14->red;
-                  pSVar14 = (SColorQuantCentroid *)((int)pSVar14 + (uint)bVar17 * -8 + 4);
-                  puVar15 = puVar15 + (uint)bVar17 * -2 + 1;
+            iVar9 = 0;
+            pSVar11 = workspace;
+            while (iVar9 < workspace->num_palette_entries + -1) {
+              if (pSVar11->centroids[1].weighted_intensity <
+                  pSVar11->centroids[0].weighted_intensity) {
+                pSVar13 = pSVar11->centroids;
+                puVar14 = local_50;
+                for (iVar10 = 8; iVar10 != 0; iVar10 = iVar10 + -1) {
+                  *puVar14 = *(uint *)&pSVar13->red;
+                  pSVar13 = (SColorQuantCentroid *)((int)pSVar13 + (uint)bVar17 * -8 + 4);
+                  puVar14 = puVar14 + (uint)bVar17 * -2 + 1;
                 }
-                pSVar14 = pSVar8->centroids + 1;
-                pSVar16 = pSVar8->centroids;
-                for (iVar11 = 8; iVar11 != 0; iVar11 = iVar11 + -1) {
-                  *(uint *)&pSVar16->red = *(uint *)&pSVar14->red;
-                  pSVar14 = (SColorQuantCentroid *)((int)pSVar14 + (uint)bVar17 * -8 + 4);
+                pSVar14 = pSVar11->centroids + 1;
+                pSVar16 = pSVar11->centroids;
+                for (iVar10 = 8; iVar10 != 0; iVar10 = iVar10 + -1) {
                   pSVar16 = (SColorQuantCentroid *)((int)pSVar16 + (uint)bVar17 * -8 + 4);
+                  pSVar14 = (SColorQuantCentroid *)((int)pSVar14 + (uint)bVar17 * -8 + 4);
+                  *(uint *)&pSVar16->red = *(uint *)&pSVar14->red;
+                  pSVar14 = pSVar14;
+                  pSVar16 = pSVar16;
                 }
                 puVar15 = local_50;
-                pSVar14 = pSVar8->centroids + 1;
-                for (iVar11 = 8; iVar11 != 0; iVar11 = iVar11 + -1) {
-                  *(uint *)&pSVar14->red = *puVar15;
+                pSVar13 = pSVar11->centroids + 1;
+                for (iVar10 = 8; iVar10 != 0; iVar10 = iVar10 + -1) {
                   puVar15 = puVar15 + (uint)bVar17 * -2 + 1;
-                  pSVar14 = (SColorQuantCentroid *)((int)pSVar14 + (uint)bVar17 * -8 + 4);
+                  *(uint *)&pSVar13->red = *puVar15;
+                  puVar15 = puVar15;
+                  pSVar13 = (SColorQuantCentroid *)((int)pSVar13 + (uint)bVar17 * -8 + 4);
                 }
-                iVar13 = iVar13 + 1;
-                pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[0] + 0x1c);
+                iVar9 = iVar9 + 1;
+                pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);
               }
               else {
-                iVar13 = iVar13 + 1;
-                pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[0] + 0x1c);
+                iVar9 = iVar9 + 1;
+                pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);
               }
             }
             local_24 = local_24 + 1;
           } while (local_24 < workspace->num_palette_entries);
         }
-        pSVar8 = workspace;
-        pSVar9 = workspace;
+        pSVar11 = workspace;
+        pSVar12 = workspace;
         do {
-          local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].red));
-          pSVar9->output_palette[0] = (char)local_20;
-          local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].green));
-          pSVar9->output_palette[1] = (char)local_20;
-          local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].blue));
-          pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[0] + 0x1c);
-          pSVar9->output_palette[2] = (char)local_20;
-          pSVar9 = (SColorQuantMapper *)((int)&pSVar9->num_palette_entries + 3);
-        } while (pSVar8 != (SColorQuantMapper *)((int)workspace->sort_keys[0xff] + 0x1c));
+          local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].red));
+          pSVar12->output_palette[0] = (char)local_20;
+          local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].green));
+          pSVar12->output_palette[1] = (char)local_20;
+          local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].blue));
+          pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);
+          pSVar12->output_palette[2] = (char)local_20;
+          pSVar12 = (SColorQuantMapper *)((int)&pSVar12->num_palette_entries + 3);
+        } while (pSVar11 != (SColorQuantMapper *)((int)workspace->sort_keys[0xff] + 0x1c));
         return workspace->output_palette;
       }
       _sprintf(local_150,"%6.6d",uVar12);
@@ -164,40 +176,40 @@ char * __cdecl engine_colquant_c_quantizeColors_FUN_004406c0(SColorQuantMapper *
       local_160 = *(uint *)&workspace->boxes[0].total_weighted_error;
       uStack_15c = *(uint *)((int)&workspace->boxes[0].total_weighted_error + 4);
       local_158 = *(uint *)&workspace->boxes[0].max_spread;
-      iVar11 = 1;
+      iVar9 = 1;
       uStack_154 = *(uint *)((int)&workspace->boxes[0].max_spread + 4);
       iVar13 = 0;
-      pSVar8 = workspace;
+      pSVar11 = workspace;
       if (0 < (int)uVar12) {
         do {
-          if (__BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) < pSVar8->boxes[1].total_weighted_error) {
-            local_160 = *(uint *)&pSVar8->boxes[1].total_weighted_error;
-            uStack_15c = *(uint *)((int)&pSVar8->boxes[1].total_weighted_error + 4);
-            local_158 = *(uint *)&pSVar8->boxes[1].max_spread;
-            uStack_154 = *(uint *)((int)&pSVar8->boxes[1].max_spread + 4);
-            iVar13 = iVar11;
+          if (__BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) < pSVar11->boxes[1].total_weighted_error) {
+            local_160 = *(uint *)&pSVar11->boxes[1].total_weighted_error;
+            uStack_15c = *(uint *)((int)&pSVar11->boxes[1].total_weighted_error + 4);
+            local_158 = *(uint *)&pSVar11->boxes[1].max_spread;
+            uStack_154 = *(uint *)((int)&pSVar11->boxes[1].max_spread + 4);
+            iVar13 = iVar9;
           }
-          iVar11 = iVar11 + 1;
-          pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[1] + 0x1c);
-        } while (iVar11 <= (int)uVar12);
+          iVar9 = iVar9 + 1;
+          pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[1] + 0x1c);
+        } while (iVar9 <= (int)uVar12);
       }
-      iVar11 = uVar12 + 1;
+      iVar9 = uVar12 + 1;
       if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_red) break;
-      engine_colquant_c_partitionByRed_FUN_00440b40(workspace,iVar13,iVar11);
+      engine_colquant_c_partitionByRed_FUN_00440b40(workspace,iVar13,iVar9);
 LAB_0044091a:
       uVar12 = uVar12 + 1;
     }
     if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_green) {
-      engine_colquant_c_partitionByGreen_FUN_00440c80(workspace,iVar13,iVar11);
+      engine_colquant_c_partitionByGreen_FUN_00440c80(workspace,iVar13,iVar9);
       goto LAB_0044091a;
     }
     if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_blue) {
-      engine_colquant_c_partitionByBlue_FUN_00440dc0(workspace,iVar13,iVar11);
+      engine_colquant_c_partitionByBlue_FUN_00440dc0(workspace,iVar13,iVar9);
       goto LAB_0044091a;
     }
     if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_intensity)
     goto LAB_0044091a;
-    engine_colquant_c_partitionByIntensity_FUN_00440f00(workspace,iVar13,iVar11);
+    engine_colquant_c_partitionByIntensity_FUN_00440f00(workspace,iVar13,iVar9);
     uVar12 = uVar12 + 1;
   } while( true );
 }

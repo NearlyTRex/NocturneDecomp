@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 267,
+    "complexity_score": 270,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 172,
+    "pseudocode_lines": 175,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 541
+    "total_lines": 544
   },
   "cross_references": [
     {
@@ -189,123 +189,123 @@
     "pcode_op_count": 1532
   },
   "stack_frame": {
-    "frame_size": 204,
-    "local_size": 188,
+    "frame_size": 212,
+    "local_size": 196,
     "param_offset": 4,
     "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "fStack_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
         "name": "local_b8",
         "offset": -184,
-        "size": 1,
-        "type": "undefined1"
+        "size": 116,
+        "type": "SCram"
       },
       {
         "is_param": false,
-        "name": "local_b7",
-        "offset": -183,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
+        "name": "iStack_44",
+        "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
-        "name": "local_64",
-        "offset": -100,
+        "name": "pSStack_40",
+        "offset": -64,
         "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
+        "type": "SMRGLTextureLod *"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_38",
+        "offset": -56,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_34",
+        "offset": -52,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_30",
+        "offset": -48,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -365,7 +365,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 112,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar4 = (int *)((int)model_ptr->poly_texture_index_list + iStack_2c);",
@@ -373,50 +373,50 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 118,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "[*(int *)((int)model_ptr->poly_texture_index_list + iStack_2c)].",
+      "text": "[*(int *)((int)model_ptr->poly_texture_index_list + iStack_2c)].textures[0]",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
+      "line": 142,
       "match": "ROUND",
       "severity": "mild",
-      "text": "*(int *)(iVar6 + 0x1c) = (int)ROUND(ROUND((double)fStack_bc * 65536));",
+      "text": "*(int *)(iVar5 + 0x1c) = (int)ROUND(ROUND((double)fStack_bc * 65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
+      "line": 142,
       "match": "ROUND",
       "severity": "mild",
-      "text": "*(int *)(iVar6 + 0x1c) = (int)ROUND(ROUND((double)fStack_bc * 65536));",
+      "text": "*(int *)(iVar5 + 0x1c) = (int)ROUND(ROUND((double)fStack_bc * 65536));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 139,
+      "line": 143,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iStack_44 = (int)ROUND(ROUND(dVar2 * (double)fStack_c0));",
+      "text": "*(int *)(iVar5 + 0x20) = (int)ROUND(ROUND(dVar2 * (double)fStack_c0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 139,
+      "line": 143,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iStack_44 = (int)ROUND(ROUND(dVar2 * (double)fStack_c0));",
+      "text": "*(int *)(iVar5 + 0x20) = (int)ROUND(ROUND(dVar2 * (double)fStack_c0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 147,
+      "line": 150,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)model_ptr->poly_texture_index_list + iStack_2c) = iVar6;",
+      "text": "*(int *)((int)model_ptr->poly_texture_index_list + iStack_2c) = iVar5;",
       "type": "pointer_cast"
     }
   ]

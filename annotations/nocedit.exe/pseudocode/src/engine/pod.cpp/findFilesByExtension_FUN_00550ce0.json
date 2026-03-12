@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 125,
+    "complexity_score": 126,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 110,
+    "pseudocode_lines": 111,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 301
+    "total_lines": 302
   },
   "cross_references": [],
   "function": {
@@ -105,92 +105,85 @@
         "is_param": false,
         "name": "local_50",
         "offset": -80,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4f",
-        "offset": -79,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "char[12]"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
-        "size": 1,
-        "type": "undefined"
+        "size": 12,
+        "type": "char[12]"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "SIZE_T"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -249,10 +242,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 63,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "for (local_18 = 0; iVar3 = *(int *)((int)pod_array + local_2c + 4),",
+      "text": "for (local_18 = 0; iVar7 = *(int *)((int)pod_array + local_34 + 4),",
       "type": "pointer_cast"
     }
   ]

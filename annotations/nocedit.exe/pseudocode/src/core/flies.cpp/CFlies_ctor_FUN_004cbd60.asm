@@ -6,9 +6,7 @@
 ; Parameters:
 ; CFlies *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
+; undefined4[3]    Stack[-0xc]:12  local_c
 ;
 ; XREF[2]:
 ;   core_flies.cpp_factoryFunc_FUN_004cbd20 at 004cbd3a

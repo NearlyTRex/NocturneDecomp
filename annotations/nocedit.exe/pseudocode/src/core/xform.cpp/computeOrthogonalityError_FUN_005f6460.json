@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 85,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 54,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 245
+    "total_lines": 249
   },
   "cross_references": [],
   "function": {
@@ -132,21 +132,21 @@
         "name": "local_68",
         "offset": -104,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
@@ -212,7 +212,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 32,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_60 = SQRT(dVar9 * dVar9 + dVar8 * dVar8 + dVar7 * dVar7);",
@@ -220,7 +220,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 33,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_58 = (double)SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1);",
@@ -228,7 +228,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 34,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_68 = (double)SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4);",

@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 37,
+        "line": 41,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 337,
-    "complexity_score": 192,
+    "complexity_score": 196,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 13,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 167,
+    "pseudocode_lines": 171,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 504
+    "total_lines": 508
   },
   "cross_references": [
     {
@@ -247,14 +247,14 @@
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "CKeyFramedModelPart *"
       },
       {
         "is_param": false,
@@ -275,21 +275,21 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMRGLPrimitiveQuad *"
       },
       {
         "is_param": true,
@@ -303,7 +303,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 110,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar11 = (uint *)((int)pCVar7 + (uint)bVar13 * -8 + 4);",
@@ -311,7 +311,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 111,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar9 = (uint *)((int)pCVar5 + (uint)bVar13 * -8 + 4);",

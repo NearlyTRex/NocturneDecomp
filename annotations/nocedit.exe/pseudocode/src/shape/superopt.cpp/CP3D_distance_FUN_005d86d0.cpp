@@ -9,8 +9,8 @@
 double __cdecl shape_superopt_cpp_CP3D_distance_FUN_005d86d0(CP3D *this_ptr,CP3D *other)
 
 {
-  double dVar1;
   double dVar2;
+  double dVar1;
   double dVar3;
   
   dVar1 = (other->impl).x - (this_ptr->impl).x;

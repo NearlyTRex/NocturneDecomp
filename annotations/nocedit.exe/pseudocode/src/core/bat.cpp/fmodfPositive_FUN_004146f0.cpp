@@ -10,6 +10,7 @@ float __cdecl core_bat_cpp_fmodfPositive_FUN_004146f0(float value,float modulus)
 
 {
   double dVar1;
+  double dVar2;
   
   if (value < 0.0) {
     dVar1 = floor((double)(-value / modulus));
@@ -19,6 +20,6 @@ float __cdecl core_bat_cpp_fmodfPositive_FUN_004146f0(float value,float modulus)
     }
     return value;
   }
-  dVar1 = floor((double)(value / modulus));
-  return value - (float)dVar1 * modulus;
+  dVar2 = floor((double)(value / modulus));
+  return value - (float)dVar2 * modulus;
 }

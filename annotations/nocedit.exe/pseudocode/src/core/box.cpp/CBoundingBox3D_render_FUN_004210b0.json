@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 286,
-    "complexity_score": 227,
+    "complexity_score": 205,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 132,
+    "pseudocode_lines": 110,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 418
+    "total_lines": 396
   },
   "cross_references": [
     {
@@ -218,64 +218,15 @@
         "is_param": false,
         "name": "local_b0",
         "offset": -176,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_ac",
-        "offset": -172,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a8",
-        "offset": -168,
-        "size": 4,
-        "type": "undefined4"
+        "size": 96,
+        "type": "CVector3i[8]"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
+        "size": 24,
+        "type": "SMRGLHeaderPrimitive"
       },
       {
         "is_param": false,
@@ -310,63 +261,49 @@
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_c",
         "offset": -12,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_8",
         "offset": -8,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -380,7 +317,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 30,
       "match": "ROUND",
       "severity": "mild",
       "text": "pCVar3->x = (int)ROUND(local_1c.x * 256.0f);",
@@ -388,7 +325,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 31,
       "match": "ROUND",
       "severity": "mild",
       "text": "pCVar3->y = (int)ROUND(local_1c.y * 256.0f);",
@@ -396,7 +333,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 32,
       "match": "ROUND",
       "severity": "mild",
       "text": "pCVar3->z = (int)ROUND(local_1c.z * 256.0f);",
@@ -404,50 +341,50 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 79,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_28 = (int)ROUND((this_ptr->min).x * 256.0f);",
+      "text": "local_50.surface_normal.D = -(int)ROUND(fVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 85,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_24 = (int)ROUND((this_ptr->min).y * 256.0f);",
+      "text": "local_50.surface_normal.D = (int)ROUND(fVar4);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
+      "line": 91,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_20 = (int)ROUND((this_ptr->min).z * 256.0f);",
+      "text": "local_50.surface_normal.D = -(int)ROUND(fVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 97,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_10 = (int)ROUND((this_ptr->max).x * 256.0f);",
+      "text": "local_50.surface_normal.D = (int)ROUND(fVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 103,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_c = (int)ROUND((this_ptr->max).y * 256.0f);",
+      "text": "local_50.surface_normal.D = -(int)ROUND(fVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 109,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_8 = (int)ROUND((this_ptr->max).z * 256.0f);",
+      "text": "local_50.surface_normal.D = (int)ROUND(fVar6);",
       "type": "decompiler_intrinsic"
     }
   ]

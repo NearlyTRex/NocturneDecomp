@@ -7,9 +7,8 @@
 ; CTextureCache *  Stack[0x4]:4   cache
 ; char *           Stack[0x8]:4   texture_name
 ; Local Variables:
-; undefined1       Stack[-0x114]:1  local_114
-; undefined1       Stack[-0x113]:1  local_113
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x114]:256  local_114
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_005dd800 at 005dd84c

@@ -7,12 +7,12 @@
 ; char *           Stack[0x4]:4   str
 ; char * *         Stack[0x8]:4   endptr
 ; Local Variables:
-; undefined1[12]   Stack[-0x34]:12  local_34
+; undefined8       Stack[-0x34]:8  local_34
+; undefined1       Stack[-0x2c]:1  uStack_2c
+; byte             Stack[-0x2b]:1  bStack_2b
 ; undefined8       Stack[-0x28]:8  local_28
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; undefined8       Stack[-0x20]:8  local_20
+; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[2]:
 ;   crt_string.c__strtod_FUN_005ff0f3 at 005ff0ff

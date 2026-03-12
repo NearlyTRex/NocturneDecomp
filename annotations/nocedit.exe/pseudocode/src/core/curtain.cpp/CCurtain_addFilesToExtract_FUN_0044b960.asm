@@ -7,9 +7,7 @@
 ; CCurtain *       Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined1       Stack[-0x108]:1  local_108
-; undefined1       Stack[-0x107]:1  local_107
-; undefined1       Stack[-0x105]:1  local_105
+; char[256]        Stack[-0x108]:256  local_108
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ART_s_00619e8b

@@ -8,15 +8,13 @@
 ; int              Stack[0x8]:4   bone_index
 ; CDeformableModelInstance * Stack[0xc]:4   model_ptr
 ; Local Variables:
-; undefined1       Stack[-0x94]:1  local_94
-; undefined1       Stack[-0x64]:1  local_64
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CMatrix3x4f      Stack[-0x94]:48  local_94
+; CMatrix3x4f      Stack[-0x64]:48  local_64
+; CVector3f        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x28]:12  local_28
+; CSkeleton *      Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:

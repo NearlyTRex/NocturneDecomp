@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 120,
-    "complexity_score": 205,
+    "complexity_score": 233,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 70,
-    "suspect_count": 12,
+    "pseudocode_lines": 73,
+    "suspect_count": 14,
     "suspect_types": [
+      "pointer_cast",
       "special_crt_function",
       "unaffected_reg",
       "undefined_ptr_cast"
     ],
-    "total_lines": 190
+    "total_lines": 193
   },
   "cross_references": [
     {
@@ -119,14 +120,14 @@
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "wchar_t[2]"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       },
       {
         "is_param": false,
@@ -154,7 +155,7 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 11,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "char *unaff_EBX;",
@@ -162,23 +163,23 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 23,
+      "line": 26,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX = *(char **)pcVar2;",
+      "text": "unaff_EBX = *(char **)pcVar3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 28,
+      "line": 31,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX = *(char **)pcVar2;",
+      "text": "unaff_EBX = *(char **)pcVar3;",
       "type": "unaffected_reg"
     },
     {
       "description": "Cast to undefined pointer type",
-      "line": 34,
+      "line": 37,
       "match": "(undefined6 *)",
       "severity": "moderate",
       "text": "unaff_EBX = (char *)*(undefined6 *)pcVar2;",
@@ -186,7 +187,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 37,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = (char *)*(undefined6 *)pcVar2;",
@@ -194,7 +195,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 54,
+      "line": 57,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*unaff_EBX = cVar3;",
@@ -202,43 +203,59 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
+      "line": 58,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX = unaff_EBX + 1;",
+      "text": "unaff_EBX = (char *)((int)unaff_EBX + 1);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
+      "line": 58,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX = unaff_EBX + 1;",
+      "text": "unaff_EBX = (char *)((int)unaff_EBX + 1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(char *)((int)",
+      "severity": "mild",
+      "text": "unaff_EBX = (char *)((int)unaff_EBX + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 70,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(wchar_t *)unaff_EBX = local_1c[0];",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 67,
+      "line": 71,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(short *)unaff_EBX = local_1c[0];",
+      "text": "unaff_EBX = (char *)((int)unaff_EBX + 2);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 68,
+      "line": 71,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "unaff_EBX = unaff_EBX + 2;",
+      "text": "unaff_EBX = (char *)((int)unaff_EBX + 2);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 68,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "unaff_EBX = unaff_EBX + 2;",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(char *)((int)",
+      "severity": "mild",
+      "text": "unaff_EBX = (char *)((int)unaff_EBX + 2);",
+      "type": "pointer_cast"
     },
     {
       "address": "00604d54",

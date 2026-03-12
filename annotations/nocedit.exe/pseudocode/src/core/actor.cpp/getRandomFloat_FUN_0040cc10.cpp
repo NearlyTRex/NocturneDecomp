@@ -9,9 +9,9 @@
 float __cdecl core_actor_cpp_getRandomFloat_FUN_0040cc10(float min_value,float max_value)
 
 {
-  float fVar1;
   uint uVar2;
   int iVar3;
+  float fVar1;
   
   if (g_CGamePtr->is_processing == 0) {
     iVar3 = rand();

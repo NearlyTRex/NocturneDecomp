@@ -7,7 +7,7 @@
 ; CBeast *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
+; float            Stack[-0x10]:4  local_10
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0

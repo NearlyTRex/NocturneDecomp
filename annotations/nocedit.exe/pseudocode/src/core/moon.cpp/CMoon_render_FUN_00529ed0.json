@@ -49,12 +49,12 @@
   },
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 333,
+    "complexity_score": 334,
     "cross_reference_count": 5,
     "function_call_count": 16,
     "global_count": 35,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 123,
+    "pseudocode_lines": 124,
     "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -62,7 +62,7 @@
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 394
+    "total_lines": 395
   },
   "cross_references": [
     {
@@ -516,120 +516,85 @@
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "undefined8 *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -651,7 +616,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 62,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar5)) {",
@@ -659,7 +624,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 64,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar5),",
@@ -667,7 +632,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 65,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&g_MoonBats[0].course_position + iVar5),&local_44,&local_50);",
@@ -675,7 +640,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 66,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_44.x = local_44.x + *(float *)((int)&g_MoonBats[0].random_offset.x + iVar5);",
@@ -683,7 +648,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 67,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_44.y = local_44.y + *(float *)((int)&g_MoonBats[0].random_offset.y + iVar5);",
@@ -691,7 +656,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 68,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_44.z = local_44.z + *(float *)((int)&g_MoonBats[0].random_offset.z + iVar5);",
@@ -699,39 +664,39 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 76,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5)));",
+      "text": "(int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5))),",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 76,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5)));",
+      "text": "(int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5))),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 76,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5)));",
+      "text": "(int)ROUND(ROUND(*(float *)((int)&g_MoonBats[0].animation_frame + iVar5))),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 79,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_18 = *(float *)((int)&g_MoonBats[0].course_position + iVar5) /",
+      "text": "fVar1 = *(float *)((int)&g_MoonBats[0].course_position + iVar5) /",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 80,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar5)].len;",
@@ -739,23 +704,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 87,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND(dVar1));",
+      "text": "g_CDemonSetPtr->ambient_base_quick = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 87,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND(dVar1));",
+      "text": "g_CDemonSetPtr->ambient_base_quick = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 101,
+      "line": 102,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "uVar7 = paddusb(*puVar6,CONCAT44(g_Hardware32BitPalette",
@@ -763,7 +728,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
+      "line": 108,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "uVar7 = paddusb(uVar7,CONCAT44(g_Hardware32BitPalette",
@@ -771,7 +736,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 120,
+      "line": 121,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c = (int)ROUND(ROUND(g_MoonAnimationTimer));",
@@ -779,7 +744,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 120,
+      "line": 121,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c = (int)ROUND(ROUND(g_MoonAnimationTimer));",

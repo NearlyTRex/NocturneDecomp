@@ -25,11 +25,11 @@
 ; undefined4       Stack[-0x8c]:4  local_8c
 ; undefined4       Stack[-0x88]:4  local_88
 ; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
+; int              Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
+; float            Stack[-0x40]:4  local_40
+; CSkeleton *      Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c

@@ -7,7 +7,7 @@
 ; SRenderVertex    Stack[0x4]:48   vertex1
 ; SRenderVertex    Stack[0x34]:48   vertex2
 ; Local Variables:
-; undefined        Stack[-0x40]:1  local_40
+; SRenderVertex    Stack[-0x40]:48  local_40
 ;
 ; XREF[2]:
 ;   engine_3d.c_drawLine3DFromIndices_FUN_00407ff0 at 00408055

@@ -9,11 +9,11 @@
 void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_005c4c20(CStranger *this_ptr,float delta_time,int is_weapon_active)
 
 {
-  CStranger *this_ptr_00;
-  float fVar1;
   EDeathState EVar2;
   ECollisionType EVar3;
   CVector3f *pCVar4;
+  CVector3f *pCVar1;
+  float fVar2;
   int iVar5;
   int iVar6;
   float local_f8;
@@ -35,6 +35,8 @@ void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_005c4c20(CStra
   float local_20;
   float local_1c;
   float local_18;
+  CStranger *this_ptr_00;
+  float fVar1;
   
   if ((this_ptr->weapon == (CWeapon *)0x0) || (this_ptr->weapon->weapon_type != 0)) {
     is_weapon_active = 0;
@@ -86,9 +88,9 @@ LAB_005c50a7:
     }
   }
   else {
-    fVar1 = -delta_time * (1.0 / 0.5f);
-    if (local_f4 < fVar1) {
-      local_f4 = fVar1;
+    fVar2 = -delta_time * (1.0 / 0.5f);
+    if (local_f4 < fVar2) {
+      local_f4 = fVar2;
     }
   }
   this_ptr->arm_recoil_blend = this_ptr->arm_recoil_blend + local_f4;
@@ -98,8 +100,6 @@ LAB_005c4d62:
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
   local_a4.x = 0.0;
   local_a4.y = 0.0;
-  local_20 = 3.5;
-  local_1c = 1.5;
   local_a4.z = 3.5;
   pCVar4 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                      ((CDemonActor *)this_ptr,&local_b0,&local_a4);
@@ -108,14 +108,14 @@ LAB_005c4d62:
     local_8c.y = pCVar4->y;
     local_8c.z = pCVar4->z;
   }
-  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                      (&(this_ptr->base).base.model,&local_bc,INT_03f6bad0);
-  pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     ((CDemonActor *)this_ptr,&local_80,pCVar4);
-  if (&local_5c != pCVar4) {
-    local_5c.x = pCVar4->x;
-    local_5c.y = pCVar4->y;
-    local_5c.z = pCVar4->z;
+  pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                     ((CDemonActor *)this_ptr,&local_80,pCVar1);
+  if (&local_5c != pCVar1) {
+    local_5c.x = pCVar1->x;
+    local_5c.y = pCVar1->y;
+    local_5c.z = pCVar1->z;
   }
   local_74.x = local_5c.x + local_8c.x;
   local_74.y = local_5c.y + local_8c.y;
@@ -125,19 +125,19 @@ LAB_005c4d62:
     local_98.y = local_74.y;
     local_98.z = local_74.z;
   }
-  local_18 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&local_5c,&local_98);
-  if (((0.0 <= local_18) && (local_18 < 1.0)) &&
-     (fVar1 = 1.0 - (local_18 * local_20 - local_1c) / (local_20 - local_1c), local_f8 < fVar1)) {
+  fVar2 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&local_5c,&local_98);
+  if (((0.0 <= fVar2) && (fVar2 < 1.0)) &&
+     (fVar1 = 1.0 - (fVar2 * 3.5 - 1.5) / 2.0, local_f8 < fVar1)) {
     local_f8 = fVar1;
   }
-  pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
                      (&(this_ptr->base).base.model,&local_50,INT_03f6bad4);
-  pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     ((CDemonActor *)this_ptr,&local_44,pCVar4);
-  if (&local_5c != pCVar4) {
-    local_5c.x = pCVar4->x;
-    local_5c.y = pCVar4->y;
-    local_5c.z = pCVar4->z;
+  pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                     ((CDemonActor *)this_ptr,&local_44,pCVar1);
+  if (&local_5c != pCVar1) {
+    local_5c.x = pCVar1->x;
+    local_5c.y = pCVar1->y;
+    local_5c.z = pCVar1->z;
   }
   local_38[0].x = local_5c.x + local_8c.x;
   local_38[0].y = local_5c.y + local_8c.y;
@@ -147,10 +147,10 @@ LAB_005c4d62:
     local_98.y = local_38[0].y;
     local_98.z = local_38[0].z;
   }
-  local_18 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&local_5c,&local_98);
-  if (((0.0 <= local_18) && (local_18 < 1.0)) &&
-     (fVar1 = 1.0 - (local_18 * local_20 - local_1c) / (local_20 - local_1c), local_f8 < fVar1)) {
-    local_f8 = fVar1;
+  fVar2 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&local_5c,&local_98);
+  if (((0.0 <= fVar2) && (fVar2 < 1.0)) &&
+     (fVar2 = 1.0 - (fVar2 * 3.5 - 1.5) / 2.0, local_f8 < fVar2)) {
+    local_f8 = fVar2;
   }
   core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   goto LAB_005c50a7;

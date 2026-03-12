@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 314,
+    "complexity_score": 135,
     "cross_reference_count": 17,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 89,
-    "suspect_count": 22,
+    "pseudocode_lines": 90,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 229
+    "total_lines": 230
   },
   "cross_references": [
     {
@@ -187,81 +187,74 @@
     "pcode_op_count": 771
   },
   "stack_frame": {
-    "frame_size": 64,
-    "local_size": 60,
+    "frame_size": 68,
+    "local_size": 64,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_3c",
+        "offset": -60,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "CSkeleton *"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "CMatrix3x4f *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "CSkeleton *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "CQuaternion4f *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CMatrix3x4f *"
       },
       {
         "is_param": true,
@@ -273,150 +266,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].w + local_28) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].w + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].x + local_28) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].x + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].y + local_28) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].y + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].w + local_28) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].w + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].x + local_28) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].x + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 49,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].y + local_28) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 51,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].y + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].w + local_28) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].w + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 55,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].x + local_28) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].x + local_28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 58,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].y + local_28) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].y + local_28);",
-      "type": "pointer_cast"
-    },
     {
       "description": "Complex pointer cast",
       "line": 65,
@@ -446,7 +295,7 @@
       "line": 76,
       "match": "(CVector3f *)((int)",
       "severity": "mild",
-      "text": "(&CStack_3c,(CVector3f *)((int)&local_30->x + local_18),local_14 + iVar1);",
+      "text": "(&CStack_3c,(CVector3f *)((int)&this_ptr->transformed_vertices[0].x + local_18),",
       "type": "pointer_cast"
     }
   ]

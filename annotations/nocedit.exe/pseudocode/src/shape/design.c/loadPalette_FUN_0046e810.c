@@ -9,17 +9,23 @@
 void __cdecl shape_design_c_loadPalette_FUN_0046e810(void)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
+  int iVar3;
   uint uVar3;
+  uint uVar4;
   char *pcVar4;
+  char *pcVar7;
+  char *pcVar8;
   char *pcVar5;
   char *pcVar6;
+  char *pcVar9;
   byte bVar7;
   char local_b8 [80];
   char local_68 [80];
   char *local_18;
   int local_14;
+  char cVar1;
   
   bVar7 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -32,15 +38,15 @@ void __cdecl shape_design_c_loadPalette_FUN_0046e810(void)
     return;
   }
   local_14 = 1;
-  iVar2 = -1;
-  pcVar5 = local_b8;
+  iVar3 = -1;
+  pcVar8 = local_b8;
   do {
-    if (iVar2 == 0) break;
-    iVar2 = iVar2 + -1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
+    if (iVar3 == 0) break;
+    iVar3 = iVar3 + -1;
+    cVar1 = *pcVar8;
+    pcVar8 = pcVar8 + (uint)bVar7 * -2 + 1;
   } while (cVar1 != '\0');
-  if (iVar2 != -2) {
+  if (iVar3 != -2) {
     local_14 = atoi(local_b8);
   }
   if (local_14 == 1) {
@@ -54,73 +60,72 @@ void __cdecl shape_design_c_loadPalette_FUN_0046e810(void)
     pcVar4 = g_LoadedModelName;
     pcVar5 = local_68;
     do {
-      cVar1 = *pcVar4;
-      *pcVar5 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar4[1];
+      cVar2 = *pcVar4;
+      *pcVar5 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar4[1];
       pcVar4 = pcVar4 + 2;
-      pcVar5[1] = cVar1;
+      pcVar5[1] = cVar2;
       pcVar5 = pcVar5 + 2;
-    } while (cVar1 != '\0');
-    pcVar5 = local_68;
+    } while (cVar2 != '\0');
+    pcVar8 = local_68;
     do {
-      pcVar4 = pcVar5;
-      if (*pcVar5 == '.') goto LAB_0046e929;
-      if (*pcVar5 == '\0') break;
-      pcVar4 = pcVar5 + 1;
-      if (*pcVar4 == '.') goto LAB_0046e929;
-      pcVar5 = pcVar5 + 2;
-    } while (*pcVar4 != '\0');
-    pcVar4 = (char *)0x0;
+      pcVar7 = pcVar8;
+      if (*pcVar8 == '.') goto LAB_0046e929;
+      if (*pcVar8 == '\0') break;
+      pcVar7 = pcVar8 + 1;
+      if (*pcVar7 == '.') goto LAB_0046e929;
+      pcVar8 = pcVar8 + 2;
+    } while (*pcVar7 != '\0');
+    pcVar7 = (char *)0x0;
 LAB_0046e929:
-    local_18 = pcVar4;
-    if (pcVar4 == (char *)0x0) {
+    if (pcVar7 == (char *)0x0) {
       uVar3 = 0xffffffff;
-      pcVar5 = local_68;
+      pcVar8 = local_68;
       do {
         if (uVar3 == 0) break;
         uVar3 = uVar3 - 1;
-        cVar1 = *pcVar5;
-        pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
-      } while (cVar1 != '\0');
+        cVar2 = *pcVar8;
+        pcVar8 = pcVar8 + (uint)bVar7 * -2 + 1;
+      } while (cVar2 != '\0');
       if (~uVar3 - 1 < 9) {
-        pcVar4 = ".ACT";
-        iVar2 = -1;
-        pcVar5 = local_68;
+        pcVar8 = ".ACT";
+        iVar3 = -1;
+        pcVar6 = local_68;
         do {
-          pcVar6 = pcVar5;
-          if (iVar2 == 0) break;
-          iVar2 = iVar2 + -1;
-          pcVar6 = pcVar5 + (uint)bVar7 * -2 + 1;
-          cVar1 = *pcVar5;
-          pcVar5 = pcVar6;
-        } while (cVar1 != '\0');
-        pcVar6 = pcVar6 + -1;
+          pcVar6 = pcVar6;
+          if (iVar3 == 0) break;
+          iVar3 = iVar3 + -1;
+          pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
+          cVar2 = *pcVar6;
+          pcVar6 = pcVar6;
+        } while (cVar2 != '\0');
+        pcVar7 = pcVar6 + -1;
         do {
-          cVar1 = *pcVar4;
-          *pcVar6 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar1 = pcVar4[1];
-          pcVar4 = pcVar4 + 2;
-          pcVar6[1] = cVar1;
-          pcVar6 = pcVar6 + 2;
-        } while (cVar1 != '\0');
+          cVar2 = *pcVar8;
+          *pcVar7 = cVar2;
+          if (cVar2 == '\0') break;
+          cVar2 = pcVar8[1];
+          pcVar8 = pcVar8 + 2;
+          pcVar7[1] = cVar2;
+          pcVar7 = pcVar7 + 2;
+        } while (cVar2 != '\0');
       }
     }
     else {
-      pcVar5 = ".ACT";
+      pcVar8 = ".ACT";
       do {
-        cVar1 = *pcVar5;
-        *pcVar4 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar4[1] = cVar1;
-        pcVar4 = pcVar4 + 2;
-      } while (cVar1 != '\0');
+        cVar2 = *pcVar8;
+        *pcVar7 = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar8[1];
+        pcVar8 = pcVar8 + 2;
+        pcVar7[1] = cVar2;
+        pcVar7 = pcVar7 + 2;
+      } while (cVar2 != '\0');
     }
-    iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",local_68);
-    if (iVar2 == -1) {
+    iVar3 = engine_dosio_c_getFileSize_FUN_00481880("art",local_68);
+    if (iVar3 == -1) {
       engine_2d_c_drawText_FUN_00401fd0("File not found.  Hit a key...",0,0x42);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
@@ -134,65 +139,64 @@ LAB_0046e929:
   }
   else if (local_14 == 2) {
     engine_2d_c_getInputWithPrompt_FUN_004032c0(local_68,0x4f,0,0x42,"Enter .ACT filename : ");
-    pcVar5 = local_68;
+    pcVar8 = local_68;
     do {
-      pcVar4 = pcVar5;
-      if (*pcVar5 == '.') goto LAB_0046ea46;
-      if (*pcVar5 == '\0') break;
-      pcVar4 = pcVar5 + 1;
-      if (*pcVar4 == '.') goto LAB_0046ea46;
-      pcVar5 = pcVar5 + 2;
-    } while (*pcVar4 != '\0');
-    pcVar4 = (char *)0x0;
+      pcVar7 = pcVar8;
+      if (*pcVar8 == '.') goto LAB_0046ea46;
+      if (*pcVar8 == '\0') break;
+      pcVar7 = pcVar8 + 1;
+      if (*pcVar7 == '.') goto LAB_0046ea46;
+      pcVar8 = pcVar8 + 2;
+    } while (*pcVar7 != '\0');
+    pcVar7 = (char *)0x0;
 LAB_0046ea46:
-    local_18 = pcVar4;
-    if (pcVar4 == (char *)0x0) {
-      uVar3 = 0xffffffff;
-      pcVar5 = local_68;
+    if (pcVar7 == (char *)0x0) {
+      uVar4 = 0xffffffff;
+      pcVar8 = local_68;
       do {
-        if (uVar3 == 0) break;
-        uVar3 = uVar3 - 1;
-        cVar1 = *pcVar5;
-        pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
-      } while (cVar1 != '\0');
-      if (~uVar3 - 1 < 9) {
-        pcVar4 = ".ACT";
-        iVar2 = -1;
-        pcVar5 = local_68;
+        if (uVar4 == 0) break;
+        uVar4 = uVar4 - 1;
+        cVar2 = *pcVar8;
+        pcVar8 = pcVar8 + (uint)bVar7 * -2 + 1;
+      } while (cVar2 != '\0');
+      if (~uVar4 - 1 < 9) {
+        pcVar7 = ".ACT";
+        iVar3 = -1;
+        pcVar8 = local_68;
         do {
-          pcVar6 = pcVar5;
-          if (iVar2 == 0) break;
-          iVar2 = iVar2 + -1;
-          pcVar6 = pcVar5 + (uint)bVar7 * -2 + 1;
-          cVar1 = *pcVar5;
-          pcVar5 = pcVar6;
-        } while (cVar1 != '\0');
-        pcVar6 = pcVar6 + -1;
+          pcVar9 = pcVar8;
+          if (iVar3 == 0) break;
+          iVar3 = iVar3 + -1;
+          pcVar9 = pcVar8 + (uint)bVar7 * -2 + 1;
+          cVar2 = *pcVar8;
+          pcVar8 = pcVar9;
+        } while (cVar2 != '\0');
+        pcVar9 = pcVar9 + -1;
         do {
-          cVar1 = *pcVar4;
-          *pcVar6 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar1 = pcVar4[1];
-          pcVar4 = pcVar4 + 2;
-          pcVar6[1] = cVar1;
-          pcVar6 = pcVar6 + 2;
-        } while (cVar1 != '\0');
+          cVar2 = *pcVar7;
+          *pcVar9 = cVar2;
+          if (cVar2 == '\0') break;
+          cVar2 = pcVar7[1];
+          pcVar7 = pcVar7 + 2;
+          pcVar9[1] = cVar2;
+          pcVar9 = pcVar9 + 2;
+        } while (cVar2 != '\0');
       }
     }
     else {
-      pcVar5 = ".ACT";
+      pcVar8 = ".ACT";
       do {
-        cVar1 = *pcVar5;
-        *pcVar4 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
-        pcVar5 = pcVar5 + 2;
-        pcVar4[1] = cVar1;
-        pcVar4 = pcVar4 + 2;
-      } while (cVar1 != '\0');
+        cVar2 = *pcVar8;
+        *pcVar7 = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar8[1];
+        pcVar8 = pcVar8 + 2;
+        pcVar7[1] = cVar2;
+        pcVar7 = pcVar7 + 2;
+      } while (cVar2 != '\0');
     }
-    iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",local_68);
-    if (iVar2 == -1) {
+    iVar3 = engine_dosio_c_getFileSize_FUN_00481880("art",local_68);
+    if (iVar3 == -1) {
       engine_2d_c_drawText_FUN_00401fd0("File not found.  Hit a key...",0,0x58);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();

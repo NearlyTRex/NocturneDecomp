@@ -9,16 +9,19 @@
 char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030(_FILE *source_file,_FILE *dest_file,char *source_filename,char *dest_filename,int file_size_bytes)
 
 {
-  bool bVar1;
   SIZE_T SVar2;
   int *piVar3;
   char *pcVar4;
+  SIZE_T SVar1;
+  int *piVar2;
   SIZE_T count;
   int iVar5;
   char *pcVar6;
   char *buffer;
+  int errnum;
   char local_208 [500];
   int local_14;
+  bool bVar1;
   
   g_FileTransferErrorMessage[0] = '\0';
   bVar1 = 0xc800 < file_size_bytes;
@@ -41,26 +44,25 @@ char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030(_FILE *source
         _sprintf
                   (g_FileTransferErrorMessage,"Error reading %s",source_filename);
         piVar3 = (int *)_errno();
-        iVar5 = *piVar3;
+        errnum = *piVar3;
 LAB_004b20b4:
-        pcVar4 = strerror(iVar5);
+        pcVar4 = strerror(errnum);
         if (pcVar4 != (char *)0x0) {
           pcVar6 = g_FileTransferErrorMessage;
           goto LAB_004b20cd;
         }
         break;
       }
-      SVar2 = _fwrite(g_FileTransferBuffer,1,count,dest_file);
-      if (SVar2 != count) {
+      SVar1 = _fwrite(g_FileTransferBuffer,1,count,dest_file);
+      if (SVar1 != count) {
         _sprintf
                   (g_FileTransferErrorMessage,"Error writing %s",dest_filename);
-        piVar3 = (int *)_errno();
-        iVar5 = *piVar3;
+        piVar2 = (int *)_errno();
+        errnum = *piVar2;
         goto LAB_004b20b4;
       }
       iVar5 = iVar5 + count;
       if (bVar1) {
-        local_14 = iVar5;
         shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                   (g_CEditorToolsPtr,(float)iVar5,(float)file_size_bytes);
       }

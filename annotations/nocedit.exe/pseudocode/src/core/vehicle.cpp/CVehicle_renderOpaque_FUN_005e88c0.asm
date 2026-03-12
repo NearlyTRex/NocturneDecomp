@@ -6,7 +6,14 @@
 ; Parameters:
 ; CVehicle *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x60]:1  local_60
+; CBoundingBox3D   Stack[-0x78]:24  CStack_78
+; CBoundingBox3D   Stack[-0x60]:24  local_60
+; CVector3f        Stack[-0x48]:12  CStack_48
+; CVector3f        Stack[-0x3c]:12  CStack_3c
+; CVector3f        Stack[-0x30]:12  CStack_30
+; CVector3f        Stack[-0x24]:12  CStack_24
+; int              Stack[-0x18]:4  iStack_18
+; CVector3i *      Stack[-0x14]:4  pCStack_14
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

@@ -6,7 +6,7 @@
 ; Parameters:
 ; CBarrier *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x20]:1  local_20
+; CBoundingBox3D   Stack[-0x20]:24  local_20
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

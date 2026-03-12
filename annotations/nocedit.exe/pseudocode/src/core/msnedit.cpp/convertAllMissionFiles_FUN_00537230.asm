@@ -4,7 +4,7 @@
 ; void __cdecl core_msnedit_cpp_convertAllMissionFiles_FUN_00537230(void)
 ;
 ; Local Variables:
-; undefined        Stack[-0x124]:1  local_124
+; CFileFinder      Stack[-0x124]:276  local_124
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_world_msn_0063b744

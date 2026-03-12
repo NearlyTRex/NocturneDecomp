@@ -9,19 +9,23 @@
 float __cdecl core_xform_cpp_computeOrthogonalityError_FUN_005f6460(CMatrix3x4f *matrix)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  double dVar7;
-  double dVar8;
-  double dVar9;
+  double dVar1;
+  double dVar2;
+  double dVar3;
+  float10 fVar7;
   float10 fVar10;
   double local_68;
   double local_60;
   double local_58;
+  float fVar5;
+  float fVar6;
+  float fVar3;
+  float fVar4;
+  float fVar1;
+  float fVar2;
+  double dVar9;
+  double dVar7;
+  double dVar8;
   
   fVar1 = matrix->m[0].w;
   fVar2 = matrix->m[0].x;
@@ -44,17 +48,17 @@ float __cdecl core_xform_cpp_computeOrthogonalityError_FUN_005f6460(CMatrix3x4f 
   if (local_68 <= 0.0) {
     local_68 = 1.0;
   }
-  local_58 = 1.0 / local_58;
-  local_60 = 1.0 / local_60;
-  local_68 = 1.0 / local_68;
-  fVar10 = (float10)((double)fVar3 * local_58) * (float10)(dVar9 * local_60) +
-           (float10)((double)fVar2 * local_58) * (float10)(dVar8 * local_60) +
-           (float10)((double)fVar1 * local_58) * (float10)(dVar7 * local_60);
-  fVar10 = (float10)((double)fVar2 * local_58) * (float10)((double)fVar5 * local_68) +
-           (float10)((double)fVar1 * local_58) * (float10)((double)fVar4 * local_68) +
-           (float10)((double)fVar3 * local_58) * (float10)((double)fVar6 * local_68);
-  fVar10 = (float10)(dVar8 * local_60) * (float10)((double)fVar5 * local_68) +
-           (float10)(dVar7 * local_60) * (float10)((double)fVar4 * local_68) +
-           (float10)(dVar9 * local_60) * (float10)((double)fVar6 * local_68);
-  return (float)(fVar10 * fVar10 + fVar10 * fVar10 + fVar10 * fVar10);
+  dVar1 = 1.0 / local_58;
+  dVar2 = 1.0 / local_60;
+  dVar3 = 1.0 / local_68;
+  fVar10 = (float10)((double)fVar3 * dVar1) * (float10)(dVar9 * dVar2) +
+           (float10)((double)fVar2 * dVar1) * (float10)(dVar8 * dVar2) +
+           (float10)((double)fVar1 * dVar1) * (float10)(dVar7 * dVar2);
+  fVar7 = (float10)((double)fVar2 * dVar1) * (float10)((double)fVar5 * dVar3) +
+          (float10)((double)fVar1 * dVar1) * (float10)((double)fVar4 * dVar3) +
+          (float10)((double)fVar3 * dVar1) * (float10)((double)fVar6 * dVar3);
+  fVar7 = (float10)(dVar8 * dVar2) * (float10)((double)fVar5 * dVar3) +
+          (float10)(dVar7 * dVar2) * (float10)((double)fVar4 * dVar3) +
+          (float10)(dVar9 * dVar2) * (float10)((double)fVar6 * dVar3);
+  return (float)(fVar7 * fVar7 + fVar10 * fVar10 + fVar7 * fVar7);
 }

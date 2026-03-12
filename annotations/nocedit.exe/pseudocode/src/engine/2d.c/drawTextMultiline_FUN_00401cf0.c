@@ -9,12 +9,12 @@
 void __cdecl engine_2d_c_drawTextMultiline_FUN_00401cf0(char *text,int x_start,int y_start,int x_max,int y_max)
 
 {
-  char cVar1;
   uint uVar2;
   uint char_code;
   int x_pos;
   char *pcVar3;
   int iVar4;
+  char cVar1;
   
   uVar2 = 0xffffffff;
   pcVar3 = text;

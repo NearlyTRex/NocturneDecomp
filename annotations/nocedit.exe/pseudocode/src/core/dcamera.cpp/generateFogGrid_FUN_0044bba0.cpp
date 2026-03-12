@@ -9,13 +9,13 @@
 void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0044bba0(SFogGrid *fog)
 
 {
-  byte bVar1;
   int iVar2;
   uint uVar3;
   char *pcVar4;
   char *pcVar5;
   int iVar6;
   char *pcVar7;
+  char *pcVar1;
   uint uVar8;
   int iVar9;
   uint uVar10;
@@ -28,6 +28,7 @@ void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0044bba0(SFogGrid *fog)
   int local_20;
   int local_1c;
   uint local_14;
+  byte bVar1;
   
   iVar6 = 0;
   memset(fog,0,0x1000);
@@ -35,20 +36,20 @@ void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0044bba0(SFogGrid *fog)
   do {
     iVar9 = 0;
     do {
-      pcVar7 = fog->planes[0].grid[iVar9] + local_3c;
-      pcVar5 = fog->planes[0].grid[iVar9] + iVar6;
+      pcVar1 = fog->planes[0].grid[iVar9] + local_3c;
+      pcVar4 = fog->planes[0].grid[iVar9] + iVar6;
       do {
-        pcVar4 = pcVar5 + 0x100;
+        pcVar4 = pcVar4 + 0x100;
         iVar2 = rand();
-        *pcVar5 = (char)iVar2;
-        pcVar5 = pcVar4;
-      } while (pcVar4 != pcVar7);
+        *pcVar4 = (char)iVar2;
+        pcVar4 = pcVar4;
+      } while (pcVar4 != pcVar1);
       iVar9 = iVar9 + 1;
     } while (iVar9 < 0x10);
     local_3c = local_3c + 1;
     iVar6 = iVar6 + 1;
   } while (iVar6 < 0x10);
-  local_14 = (uint)pcVar4 ^ (uint)pcVar7;
+  local_14 = (uint)pcVar4 ^ (uint)pcVar1;
   local_30 = 0xffffffff;
   do {
     local_24 = 0xffffffff;
@@ -68,7 +69,7 @@ void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0044bba0(SFogGrid *fog)
         bVar1 = *pcVar7;
         pcVar7 = pcVar7 + 0x100;
         uVar10 = uVar10 + 1;
-        *pcVar5 = (byte)((ulonglong)
+        *pcVar5 = (char)((ulonglong)
                          ((uint)(byte)*local_40 +
                          (uint)bVar1 +
                          (uint)(byte)*local_4c +

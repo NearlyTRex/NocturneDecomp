@@ -4,85 +4,85 @@
       {
         "category": "other",
         "column": 22,
-        "line": 111,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 112,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 113,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 22,
         "line": 119,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 55,
-        "line": 125,
+        "column": 22,
+        "line": 120,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 55,
-        "line": 126,
+        "column": 22,
+        "line": 121,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 55,
+        "column": 22,
         "line": 127,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 21,
-        "line": 140,
+        "column": 55,
+        "line": 133,
+        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 55,
+        "line": 134,
+        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 55,
+        "line": 135,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 141,
+        "line": 148,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 142,
+        "line": 149,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 147,
+        "line": 150,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "other",
-        "column": 52,
-        "line": 153,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 52,
-        "line": 154,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 52,
+        "column": 21,
         "line": 155,
+        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 161,
+        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 162,
+        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 52,
+        "line": 163,
         "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       }
     ],
@@ -91,12 +91,12 @@
   },
   "complexity": {
     "assembly_lines": 510,
-    "complexity_score": 694,
+    "complexity_score": 700,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 264,
+    "pseudocode_lines": 270,
     "suspect_count": 41,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -104,7 +104,7 @@
       "stack_alignment_array",
       "unknown_field"
     ],
-    "total_lines": 774
+    "total_lines": 780
   },
   "cross_references": [
     {
@@ -272,12 +272,19 @@
     "pcode_op_count": 2026
   },
   "stack_frame": {
-    "frame_size": 760,
-    "local_size": 756,
+    "frame_size": 6320,
+    "local_size": 6316,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "afStackY_18a8",
+        "offset": -6312,
+        "size": 5548,
+        "type": "float[1387]"
+      },
       {
         "is_param": false,
         "name": "local_2f0",
@@ -290,35 +297,245 @@
         "name": "local_2e8",
         "offset": -744,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2e4",
+        "offset": -740,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2b4",
+        "offset": -692,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_284",
+        "offset": -644,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_254",
+        "offset": -596,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_224",
+        "offset": -548,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_1f4",
+        "offset": -500,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_1c4",
+        "offset": -452,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_194",
+        "offset": -404,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_164",
+        "offset": -356,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_134",
+        "offset": -308,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_104",
+        "offset": -260,
+        "size": 16,
+        "type": "undefined1[16]"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_f4",
+        "offset": -244,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_f0",
+        "offset": -240,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_e8",
+        "offset": -232,
+        "size": 16,
+        "type": "undefined1[16]"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_d8",
+        "offset": -216,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_d4",
+        "offset": -212,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_cc",
+        "offset": -204,
+        "size": 16,
+        "type": "CQuaternion4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_bc",
+        "offset": -188,
+        "size": 16,
+        "type": "CQuaternion4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_ac",
+        "offset": -172,
+        "size": 16,
+        "type": "CQuaternion4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_9c",
+        "offset": -156,
+        "size": 16,
+        "type": "CQuaternion4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_8c",
+        "offset": -140,
+        "size": 16,
+        "type": "CQuaternion4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_7c",
+        "offset": -124,
+        "size": 16,
+        "type": "CQuaternion4f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_68",
+        "offset": -104,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_64",
+        "offset": -100,
+        "size": 16,
+        "type": "CQuaternion4f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_54",
+        "offset": -84,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_50",
+        "offset": -80,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_40",
+        "offset": -64,
+        "size": 32,
+        "type": "undefined1[32]"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
@@ -349,7 +566,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
+      "line": 24,
       "match": "afStackY_18a8",
       "severity": "moderate",
       "text": "float afStackY_18a8 [1387];",
@@ -357,15 +574,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 68,
       "match": "SQRT",
       "severity": "mild",
-      "text": "local_2e8 = SQRT(local_44 * local_44 + local_4c * local_4c + local_48 * local_48);",
+      "text": "fVar1 = SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 91,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x348);",
@@ -373,15 +590,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 93,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&CStack_9c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "text": "puVar9 = (uint *)((int)&CStack_9c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 94,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*puVar6 = *(uint *)((int)&CStack_9c + (uint)bVar10 * -8 + 4);",
@@ -389,7 +606,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 97,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x338);",
@@ -397,7 +614,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 98,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar4 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x348);",
@@ -405,7 +622,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 104,
+      "line": 112,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_104._0_4_ = (this_ptr->start_pos).x;",
@@ -413,7 +630,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 105,
+      "line": 113,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_104._4_4_ = (this_ptr->start_pos).y;",
@@ -421,7 +638,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 106,
+      "line": 114,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_104._8_4_ = (this_ptr->start_pos).z;",
@@ -429,15 +646,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 112,
+      "line": 120,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "auStack_104._12_4_ = pCVar3->x;",
+      "text": "auStack_104._12_4_ = pCVar6->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 118,
+      "line": 126,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(this_ptr->start_pos).x = (float)auStack_104._0_4_;",
@@ -445,7 +662,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 119,
+      "line": 127,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(this_ptr->start_pos).y = (float)auStack_104._4_4_;",
@@ -453,7 +670,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 120,
+      "line": 128,
       "match": "._8_4_",
       "severity": "mild",
       "text": "(this_ptr->start_pos).z = (float)auStack_104._8_4_;",
@@ -461,31 +678,31 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 131,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar6 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x338);",
+      "text": "puVar13 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x338);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 134,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&CStack_bc + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "text": "puVar9 = (uint *)((int)&CStack_bc + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 135,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*puVar6 = *(uint *)((int)&CStack_bc + (uint)bVar10 * -8 + 4);",
+      "text": "*puVar13 = *(uint *)((int)&CStack_bc + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 133,
+      "line": 141,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_e8._0_4_ = (this_ptr->end_pos).x;",
@@ -493,7 +710,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 134,
+      "line": 142,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_e8._4_4_ = (this_ptr->end_pos).y;",
@@ -501,7 +718,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 135,
+      "line": 143,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_e8._8_4_ = (this_ptr->end_pos).z;",
@@ -509,15 +726,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 140,
+      "line": 148,
       "match": "._12_4_",
       "severity": "mild",
-      "text": "auStack_e8._12_4_ = pCVar3->x;",
+      "text": "auStack_e8._12_4_ = pCVar6->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 146,
+      "line": 154,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(this_ptr->end_pos).x = (float)auStack_e8._0_4_;",
@@ -525,7 +742,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 147,
+      "line": 155,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(this_ptr->end_pos).y = (float)auStack_e8._4_4_;",
@@ -533,7 +750,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 148,
+      "line": 156,
       "match": "._8_4_",
       "severity": "mild",
       "text": "(this_ptr->end_pos).z = (float)auStack_e8._8_4_;",
@@ -541,138 +758,138 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
+      "line": 159,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar6 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x348);",
+      "text": "puVar13 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x348);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 162,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&CStack_ac + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "text": "puVar9 = (uint *)((int)&CStack_ac + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
+      "line": 163,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*puVar6 = *(uint *)((int)&CStack_ac + (uint)bVar10 * -8 + 4);",
+      "text": "*puVar13 = *(uint *)((int)&CStack_ac + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 174,
+      "line": 182,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 175,
+      "line": 183,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 186,
+      "line": 194,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 187,
+      "line": 195,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 197,
+      "line": 205,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 206,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 209,
+      "line": 215,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar6 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x338);",
+      "text": "puVar13 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x338);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 212,
+      "line": 218,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&CStack_8c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "text": "puVar9 = (uint *)((int)&CStack_8c + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 213,
+      "line": 219,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*puVar6 = *(uint *)((int)&CStack_8c + (uint)bVar10 * -8 + 4);",
+      "text": "*puVar13 = *(uint *)((int)&CStack_8c + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 221,
+      "line": 226,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 222,
+      "line": 227,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + ((uint)bVar10 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 233,
+      "line": 239,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar6 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x348);",
+      "text": "puVar13 = (uint *)((int)this_ptr + (uint)bVar10 * -8 + 0x348);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 236,
+      "line": 242,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar4 = (uint *)((int)&CStack_cc + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
+      "text": "puVar9 = (uint *)((int)&CStack_cc + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 237,
+      "line": 243,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*puVar6 = *(uint *)((int)&CStack_cc + (uint)bVar10 * -8 + 4);",
+      "text": "*puVar13 = *(uint *)((int)&CStack_cc + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     }
   ],

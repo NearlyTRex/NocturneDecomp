@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x30]:1  local_30
+; CBoundingBox3D   Stack[-0x30]:24  local_30
 ;
 ; XREF[1]:
 ;   core_bodypart.cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_0041b1f0 at 0041b201

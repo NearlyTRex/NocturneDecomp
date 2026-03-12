@@ -13,10 +13,13 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_004bf7f0(CBulletHole *this_ptr,C
 {
   int iVar1;
   CVector3f *pCVar2;
+  CVector3f *pCVar1;
+  int iVar2;
   CMatrix3x4f *pCVar3;
   CMatrix3x4f *pCVar4;
   byte bVar5;
   float10 fVar6;
+  float10 fVar3;
   CMatrix3x4f local_10c;
   CMatrix3x4f local_dc;
   CMatrix3x4f local_ac;
@@ -37,22 +40,19 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_004bf7f0(CBulletHole *this_ptr,C
     (this_ptr->position).y = hit_position->y;
     (this_ptr->position).z = hit_position->z;
   }
-  local_4c = surface_normal->x * 0.1f;
-  local_48 = surface_normal->y * 0.1f;
-  local_44 = 0.1f * surface_normal->z;
-  local_34 = (this_ptr->position).x + local_4c;
-  local_30 = (this_ptr->position).y + local_48;
-  local_2c = (this_ptr->position).z + local_44;
+  local_34 = (this_ptr->position).x + surface_normal->x * 0.1f;
+  local_30 = (this_ptr->position).y + surface_normal->y * 0.1f;
+  local_2c = (this_ptr->position).z + 0.1f * surface_normal->z;
   if (this_ptr != (CBulletHole *)&local_34) {
     (this_ptr->position).x = local_34;
     (this_ptr->position).y = local_30;
     (this_ptr->position).z = local_2c;
   }
-  fVar6 = (float10)fpatan((float10)surface_normal->y,
+  fVar3 = (float10)fpatan((float10)surface_normal->y,
                           SQRT((float10)surface_normal->x * (float10)surface_normal->x +
                                (float10)surface_normal->z * (float10)surface_normal->z));
   (this_ptr->euler_angles).z = 0.0;
-  (this_ptr->euler_angles).x = (float)-fVar6;
+  (this_ptr->euler_angles).x = (float)-fVar3;
   fVar6 = (float10)fpatan((float10)surface_normal->x,(float10)surface_normal->z);
   (this_ptr->euler_angles).y = (float)fVar6;
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,3);
@@ -68,10 +68,12 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_004bf7f0(CBulletHole *this_ptr,C
     core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_10c,&local_dc,&local_7c);
     pCVar3 = &local_7c;
     pCVar4 = &local_ac;
-    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);
+      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
       pCVar4->m[0].w = pCVar3->m[0].w;
-      pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-      pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+      pCVar3 = pCVar3;
+      pCVar4 = pCVar4;
     }
     pCVar2 = core_xform_cpp_getTranslation_FUN_005f6110(&local_ac,&local_40);
     if (&this_ptr->transformed_pos != pCVar2) {
@@ -79,18 +81,18 @@ void __cdecl core_fire_cpp_CBulletHole_init_FUN_004bf7f0(CBulletHole *this_ptr,C
       (this_ptr->transformed_pos).y = pCVar2->y;
       (this_ptr->transformed_pos).z = pCVar2->z;
     }
-    pCVar2 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_ac,&local_1c);
-    if (&this_ptr->euler_angles != pCVar2) {
-      (this_ptr->euler_angles).x = pCVar2->x;
-      (this_ptr->euler_angles).y = pCVar2->y;
-      (this_ptr->euler_angles).z = pCVar2->z;
+    pCVar1 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_ac,&local_1c);
+    if (&this_ptr->euler_angles != pCVar1) {
+      (this_ptr->euler_angles).x = pCVar1->x;
+      (this_ptr->euler_angles).y = pCVar1->y;
+      (this_ptr->euler_angles).z = pCVar1->z;
     }
-    pCVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
+    pCVar1 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                        (this_ptr->actor_ptr,&local_28,surface_normal);
-    if (&this_ptr->actor_local_space != pCVar2) {
-      (this_ptr->actor_local_space).x = pCVar2->x;
-      (this_ptr->actor_local_space).y = pCVar2->y;
-      (this_ptr->actor_local_space).z = pCVar2->z;
+    if (&this_ptr->actor_local_space != pCVar1) {
+      (this_ptr->actor_local_space).x = pCVar1->x;
+      (this_ptr->actor_local_space).y = pCVar1->y;
+      (this_ptr->actor_local_space).z = pCVar1->z;
       return;
     }
   }

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 254,
-    "complexity_score": 124,
+    "complexity_score": 128,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 17,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 99,
+    "pseudocode_lines": 103,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 353
+    "total_lines": 357
   },
   "cross_references": [
     {
@@ -262,39 +262,39 @@
     "pcode_op_count": 930
   },
   "stack_frame": {
-    "frame_size": 168,
-    "local_size": 164,
+    "frame_size": 1104,
+    "local_size": 1100,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "CStack_448",
+        "offset": -1096,
+        "size": 936,
+        "type": "CPickList"
+      },
+      {
+        "is_param": false,
         "name": "local_a0",
         "offset": -160,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_3b",
-        "offset": -59,
-        "size": 1,
-        "type": "undefined1"
+        "size": 32,
+        "type": "char[32]"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": true,
@@ -308,7 +308,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 26,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)(*(int *)((int)g_ActorClassRegistrations + iVar6) + 0x2c) != 0) {",
@@ -316,7 +316,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 28,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(&CStack_448.base,(char *)(*(int *)((int)g_ActorClassRegistrations + iVar6) + 1));",

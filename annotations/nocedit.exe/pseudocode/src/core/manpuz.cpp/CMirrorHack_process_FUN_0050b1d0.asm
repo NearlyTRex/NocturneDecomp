@@ -7,7 +7,7 @@
 ; CMirrorHack *    Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
+; float            Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00635925 = 6.28318530700000

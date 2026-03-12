@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 98,
+    "complexity_score": 99,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 73,
+    "pseudocode_lines": 74,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 218
+    "total_lines": 219
   },
   "cross_references": [
     {
@@ -100,14 +100,14 @@
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "CKeyFramedModel *"
       },
       {
         "is_param": false,
@@ -135,28 +135,28 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -170,7 +170,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 56,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "((void *)((int)&(((SMRGLPrimitiveQuad *)",
@@ -178,7 +178,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 59,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "(void *)((int)&(((SMRGLPrimitiveQuad *)",

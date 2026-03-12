@@ -9,7 +9,7 @@
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0(CMansionPuzzleCircle *this_ptr)
 
 {
-  float fVar1;
+  int iVar1;
   CMansionPuzzleCircle *pCVar2;
   CMansionPuzzleCircle *pCVar3;
   CMansionPuzzleCircle *pCVar4;
@@ -17,6 +17,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0(C
   float *out_b;
   int iVar5;
   float *out_g;
+  float fVar1;
   
   pCVar2 = this_ptr;
   pCVar4 = this_ptr;
@@ -36,7 +37,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0(C
     pCVar2 = pCVar3;
   } while (pCVar3 != (CMansionPuzzleCircle *)&(this_ptr->base).orient);
   this_ptr->panels[0].color.b = 0xff;
-  iVar5 = this_ptr->panels[0].color.b;
+  iVar1 = this_ptr->panels[0].color.b;
   this_ptr->panels[1].color.r = 0xff;
   this_ptr->panels[2].color.r = 0xff;
   this_ptr->panels[3].exists = 0;
@@ -59,7 +60,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0(C
   this_ptr->laser_color_b[8] = 0xff;
   this_ptr->laser_color_b[9] = 0xff;
   this_ptr->laser_color_r[10] = 0xff;
-  this_ptr->panels[0].color.r = iVar5;
+  this_ptr->panels[0].color.r = iVar1;
   iVar5 = 0;
   this_ptr->laser_color_r[0] = this_ptr->laser_color_b[0];
   this_ptr->laser_color_r[0xb] = 0xff;

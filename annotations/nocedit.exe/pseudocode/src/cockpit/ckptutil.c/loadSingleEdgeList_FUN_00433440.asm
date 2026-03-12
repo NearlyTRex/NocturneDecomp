@@ -8,8 +8,7 @@
 ; void * *         Stack[0x8]:4   edge_data_out
 ; int *            Stack[0xc]:4   edge_count_out
 ; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
+; SEdgeList        Stack[-0x8]:8  local_8
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0

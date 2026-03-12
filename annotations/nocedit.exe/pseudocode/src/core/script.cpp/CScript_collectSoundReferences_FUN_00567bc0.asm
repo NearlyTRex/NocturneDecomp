@@ -7,14 +7,12 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ; CStrList *       Stack[0x8]:4   sounds_out
 ; Local Variables:
-; undefined1       Stack[-0x2274]:1  local_2274
-; undefined4       Stack[-0x21a8]:4  local_21a8
-; undefined1       Stack[-0x21a4]:1  local_21a4
-; undefined1       Stack[-0x14c]:1  local_14c
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CCmdParse        Stack[-0x2274]:8488  local_2274
+; char[300]        Stack[-0x14c]:300  local_14c
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80 at 0053edb1

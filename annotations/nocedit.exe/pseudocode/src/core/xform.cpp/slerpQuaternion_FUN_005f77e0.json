@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 126,
+    "complexity_score": 127,
     "cross_reference_count": 15,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 67,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function"
     ],
-    "total_lines": 246
+    "total_lines": 247
   },
   "cross_references": [
     {
@@ -192,21 +192,21 @@
         "name": "local_80",
         "offset": -128,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_78",
         "offset": -120,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_70",
         "offset": -112,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
@@ -220,28 +220,28 @@
         "name": "local_60",
         "offset": -96,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -254,36 +254,15 @@
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
+        "size": 32,
+        "type": "CQuaternion4f[2]"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": true,
@@ -336,7 +315,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 45,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar6 = SQRT((float10)1 - fVar5 * fVar5);",
@@ -344,26 +323,26 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 46,
       "match": "fpatan",
       "severity": "mild",
-      "text": "fVar7 = (float10)fpatan(fVar6,fVar5);",
+      "text": "fVar9 = (float10)fpatan(fVar6,fVar5);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 47,
       "match": "fsin",
       "severity": "mild",
-      "text": "fVar5 = (float10)fsin(((float10)1 - (float10)t) * fVar7);",
+      "text": "fVar8 = (float10)fsin(((float10)1 - (float10)t) * fVar9);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 48,
       "match": "fsin",
       "severity": "mild",
-      "text": "fVar7 = (float10)fsin((float10)t * fVar7);",
+      "text": "fVar7 = (float10)fsin((float10)t * fVar9);",
       "type": "decompiler_intrinsic"
     }
   ]

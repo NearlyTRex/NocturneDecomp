@@ -9,10 +9,8 @@
 void __cdecl shape_superopt_cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0(CComplexPolygon *this_ptr)
 
 {
-  SExpandedEdge *edge_a;
-  void *pvVar1;
-  bool bVar2;
   int iVar3;
+  int iVar1;
   SExpandedEdge *edge_b;
   uint *puVar4;
   uint *local_38;
@@ -20,6 +18,9 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0(
   uint local_2c;
   void *local_20;
   uint local_18;
+  SExpandedEdge *edge_a;
+  void *pvVar1;
+  bool bVar2;
   
   do {
     pvVar1 = this_ptr->expanded_edges;
@@ -39,9 +40,9 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0(
           edge_a = (SExpandedEdge *)((int)pvVar1 + local_2c * 0x60);
           do {
             if (!bVar2) break;
-            iVar3 = shape_superopt_cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0
+            iVar1 = shape_superopt_cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0
                               (this_ptr,edge_a,edge_b);
-            if (iVar3 != 0) {
+            if (iVar1 != 0) {
               if ((((edge_a->end_pos).x == (edge_b->start_pos).x) &&
                   ((edge_a->end_pos).y == (edge_b->start_pos).y)) &&
                  ((edge_a->end_pos).z == (edge_b->start_pos).z)) {

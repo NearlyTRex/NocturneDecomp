@@ -10,12 +10,13 @@ int __cdecl core_event_cpp_parseIntOrCounter_FUN_004aa3c0(char *str)
 
 {
   int iVar1;
+  int iVar2;
   int local_4;
   
   iVar1 = sscanf(str,"%d",&local_4);
   if (iVar1 == 1) {
     return local_4;
   }
-  iVar1 = core_event_cpp_CEventList_getCounterValue_FUN_004b0830(g_CEventListPtr,str);
-  return iVar1;
+  iVar2 = core_event_cpp_CEventList_getCounterValue_FUN_004b0830(g_CEventListPtr,str);
+  return iVar2;
 }

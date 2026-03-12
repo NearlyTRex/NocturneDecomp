@@ -11,10 +11,39 @@
 ; undefined4       Stack[-0x168]:4  local_168
 ; undefined4       Stack[-0x164]:4  local_164
 ; undefined4       Stack[-0x160]:4  local_160
-; undefined1       Stack[-0xcc]:1  local_cc
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
+; float            Stack[-0x15c]:4  fStack_15c
+; CVector3i[7]     Stack[-0x158]:84  aCStack_158
+; int              Stack[-0x100]:4  iStack_100
+; int              Stack[-0xfc]:4  iStack_fc
+; int              Stack[-0xf8]:4  iStack_f8
+; undefined1[20]   Stack[-0xe8]:20  auStack_e8
+; undefined1[12]   Stack[-0xd4]:12  auStack_d4
+; float            Stack[-0xc8]:4  fStack_c8
+; CBoundingBox3D   Stack[-0xc4]:24  CStack_c4
+; CVector3f        Stack[-0xa4]:12  CStack_a4
+; undefined1[16]   Stack[-0x98]:16  auStack_98
+; float            Stack[-0x88]:4  fStack_88
+; float            Stack[-0x84]:4  fStack_84
+; float            Stack[-0x80]:4  fStack_80
+; float            Stack[-0x74]:4  fStack_74
+; float            Stack[-0x70]:4  fStack_70
+; float            Stack[-0x6c]:4  fStack_6c
+; float            Stack[-0x68]:4  fStack_68
+; int              Stack[-0x5c]:4  iStack_5c
+; int              Stack[-0x54]:4  iStack_54
+; int              Stack[-0x48]:4  local_48
+; int              Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  local_40
+; int              Stack[-0x38]:4  iStack_38
+; int              Stack[-0x34]:4  iStack_34
+; int              Stack[-0x30]:4  iStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; float            Stack[-0x28]:4  fStack_28
+; uint             Stack[-0x24]:4  uStack_24
+; C3DSCamera *     Stack[-0x20]:4  pCStack_20
+; int              Stack[-0x1c]:4  iStack_1c
+; CVector3f *      Stack[-0x18]:4  pCStack_18
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; XREF[8]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd39d

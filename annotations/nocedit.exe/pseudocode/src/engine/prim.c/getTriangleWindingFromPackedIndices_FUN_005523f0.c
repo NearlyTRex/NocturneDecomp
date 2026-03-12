@@ -9,17 +9,17 @@
 int __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_005523f0(STrianglePackedIndices *triangle)
 
 {
-  ushort uVar1;
-  ushort uVar2;
-  ushort uVar3;
-  uint uVar4;
-  int iVar5;
   int iVar6;
   int iVar7;
   int local_24;
   int local_20;
   int local_1c;
   int local_18;
+  ushort uVar3;
+  uint uVar4;
+  ushort uVar1;
+  ushort uVar2;
+  int iVar5;
   
   uVar1 = triangle->vertex_index_0;
   uVar2 = triangle->vertex_index_1;

@@ -9,17 +9,17 @@
 void __cdecl core_course_cpp_CCourse_save_FUN_00442a90(CCourse *this_ptr,char *filename)
 
 {
-  float *pfVar1;
-  float *pfVar2;
-  float *pfVar3;
-  float *pfVar4;
-  float *pfVar5;
-  float *pfVar6;
-  float *pfVar7;
-  CCourseFrame *pCVar8;
   _FILE *file;
   int iVar9;
   int iVar10;
+  CCourseFrame *pCVar8;
+  float *pfVar1;
+  float *pfVar7;
+  float *pfVar4;
+  float *pfVar3;
+  float *pfVar6;
+  float *pfVar5;
+  float *pfVar2;
   
   file = engine_dosio_c_getFile_FUN_00481a50("data",filename,"wt");
   if (file == (_FILE *)0x0) {

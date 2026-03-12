@@ -6,14 +6,43 @@
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
+; undefined4       Stack[-0xf8]:4  uStack_f8
+; undefined4       Stack[-0xf4]:4  uStack_f4
 ; undefined8       Stack[-0xf0]:8  local_f0
-; undefined1       Stack[-0xe8]:1  local_e8
-; undefined1       Stack[-0xd0]:1  local_d0
-; undefined4       Stack[-0xc8]:4  local_c8
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; CBoundingBox3D   Stack[-0xe8]:24  local_e8
+; CVector3f        Stack[-0xd0]:12  local_d0
+; CVector3f        Stack[-0xc4]:12  CStack_c4
+; float            Stack[-0xb8]:4  fStack_b8
+; float            Stack[-0xb4]:4  fStack_b4
+; float            Stack[-0xb0]:4  fStack_b0
+; float            Stack[-0xac]:4  fStack_ac
+; float            Stack[-0xa8]:4  fStack_a8
+; float            Stack[-0xa4]:4  fStack_a4
+; CVector3f        Stack[-0xa0]:12  CStack_a0
+; float            Stack[-0x94]:4  fStack_94
+; float            Stack[-0x90]:4  fStack_90
+; float            Stack[-0x8c]:4  fStack_8c
+; CVector3f        Stack[-0x88]:12  CStack_88
+; float            Stack[-0x7c]:4  fStack_7c
+; float            Stack[-0x78]:4  fStack_78
+; float            Stack[-0x74]:4  fStack_74
+; CVector3f        Stack[-0x70]:12  CStack_70
+; float            Stack[-0x64]:4  fStack_64
+; float            Stack[-0x60]:4  fStack_60
+; float            Stack[-0x5c]:4  fStack_5c
+; CVector3f        Stack[-0x58]:12  CStack_58
+; CVector3f        Stack[-0x4c]:12  CStack_4c
+; float            Stack[-0x40]:4  fStack_40
+; float            Stack[-0x3c]:4  fStack_3c
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; CVector3f *      Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  fStack_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_005c5b90 at 005c5e23

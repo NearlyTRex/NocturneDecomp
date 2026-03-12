@@ -9,14 +9,16 @@
 void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0(CDemonSet *this_ptr,int vertex_count)
 
 {
-  int iVar1;
+  int iVar4;
   int iVar2;
+  int iVar6;
   int iVar3;
   SRenderVertex *pSVar4;
   int iVar5;
   int local_10;
   int local_c;
   int local_8;
+  int iVar1;
   
   if (g_SkipClearBuffersSceneCamera != (CDemonCamera *)0x0) {
     pSVar4 = g_CDemonRendererPtr2->vertex_buffer_ptr;
@@ -28,27 +30,27 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0(CDemon
     if (0 < vertex_count) {
       do {
         if ((int)((pSVar4->projected_vertex).screen_x & -0x80000000) == 0) {
-          iVar2 = (pSVar4->projected_vertex).screen_x;
-          if (iVar2 < iVar5) {
-            iVar5 = iVar2;
+          iVar6 = (pSVar4->projected_vertex).screen_x;
+          if (iVar6 < iVar5) {
+            iVar5 = iVar6;
           }
-          iVar2 = (pSVar4->projected_vertex).screen_x;
-          if (local_c < iVar2) {
-            local_c = iVar2;
+          iVar6 = (pSVar4->projected_vertex).screen_x;
+          if (local_c < iVar6) {
+            local_c = iVar6;
           }
-          iVar2 = (pSVar4->projected_vertex).screen_y;
-          if (iVar2 < iVar3) {
-            iVar3 = iVar2;
+          iVar6 = (pSVar4->projected_vertex).screen_y;
+          if (iVar6 < iVar3) {
+            iVar3 = iVar6;
           }
-          iVar2 = (pSVar4->projected_vertex).screen_y;
-          if (local_8 < iVar2) {
-            local_8 = iVar2;
+          iVar6 = (pSVar4->projected_vertex).screen_y;
+          if (local_8 < iVar6) {
+            local_8 = iVar6;
           }
         }
         else {
-          iVar2 = (pSVar4->projected_vertex).transformed_x;
-          if ((-(pSVar4->projected_vertex).transformed_z < iVar2) &&
-             (iVar1 = (pSVar4->projected_vertex).transformed_z, iVar2 < iVar1)) {
+          iVar6 = (pSVar4->projected_vertex).transformed_x;
+          if ((-(pSVar4->projected_vertex).transformed_z < iVar6) &&
+             (iVar1 = (pSVar4->projected_vertex).transformed_z, iVar6 < iVar1)) {
             iVar2 = (int)(((longlong)(pSVar4->projected_vertex).transformed_x *
                           (longlong)g_ViewportCenterXFixed) / (longlong)iVar1) +
                     g_ViewportRightFixed;
@@ -59,17 +61,17 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0056e5d0(CDemon
               iVar5 = iVar2;
             }
           }
-          iVar2 = (pSVar4->projected_vertex).transformed_y;
-          if ((-(pSVar4->projected_vertex).transformed_z < iVar2) &&
-             (iVar1 = (pSVar4->projected_vertex).transformed_z, iVar2 < iVar1)) {
-            iVar2 = (int)(((longlong)(pSVar4->projected_vertex).transformed_y *
-                          (longlong)g_ViewportCenterYFixed) / (longlong)iVar1) +
+          iVar6 = (pSVar4->projected_vertex).transformed_y;
+          if ((-(pSVar4->projected_vertex).transformed_z < iVar6) &&
+             (iVar4 = (pSVar4->projected_vertex).transformed_z, iVar6 < iVar4)) {
+            iVar6 = (int)(((longlong)(pSVar4->projected_vertex).transformed_y *
+                          (longlong)g_ViewportCenterYFixed) / (longlong)iVar4) +
                     g_ViewportBottomFixed;
-            if (local_8 < iVar2) {
-              local_8 = iVar2;
+            if (local_8 < iVar6) {
+              local_8 = iVar6;
             }
-            if (iVar2 < iVar3) {
-              iVar3 = iVar2;
+            if (iVar6 < iVar3) {
+              iVar3 = iVar6;
             }
           }
           if ((pSVar4->projected_vertex).transformed_z <= (pSVar4->projected_vertex).transformed_x)

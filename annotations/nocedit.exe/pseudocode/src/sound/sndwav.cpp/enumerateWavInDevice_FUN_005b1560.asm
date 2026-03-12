@@ -7,7 +7,7 @@
 ; UINT             Stack[0x4]:4   device_id
 ; SRecordingDeviceInfo * Stack[0x8]:4   device_info
 ; Local Variables:
-; undefined1       Stack[-0x38]:1  local_38
+; tagWAVEINCAPSA   Stack[-0x38]:48  local_38
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720 at 005ab757
@@ -18,7 +18,6 @@
 ;
 ; Called Functions:
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
-;   waveInGetDevCapsA
 ;
 ; *****************************************************************************
 

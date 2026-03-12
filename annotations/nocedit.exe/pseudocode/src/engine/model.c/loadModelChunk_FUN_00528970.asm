@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   filename
 ; int              Stack[0x8]:4   model_size
 ; Local Variables:
-; undefined1       Stack[-0x60]:1  local_60
+; char[80]         Stack[-0x60]:80  local_60
 ;
 ; XREF[1]:
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40 at 00501d98

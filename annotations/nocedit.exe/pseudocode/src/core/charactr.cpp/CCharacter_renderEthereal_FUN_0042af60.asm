@@ -6,7 +6,7 @@
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x1aac]:1  local_1aac
+; SPose            Stack[-0x1aac]:6812  local_1aac
 ;
 ; XREF[1]:
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0 at 00429ae3

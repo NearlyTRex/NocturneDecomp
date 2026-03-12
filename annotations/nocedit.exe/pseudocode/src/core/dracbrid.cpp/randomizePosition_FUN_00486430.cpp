@@ -10,13 +10,14 @@ CVector3f * __cdecl core_dracbrid_cpp_randomizePosition_FUN_00486430(CVector3f *
 
 {
   float fVar1;
+  float fVar2;
   
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
   src->x = fVar1 + src->x;
-  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
-  src->y = fVar1 + src->y;
-  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
-  src->z = fVar1 + src->z;
+  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
+  src->y = fVar2 + src->y;
+  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+  src->z = fVar2 + src->z;
   dest->x = src->x;
   dest->y = src->y;
   dest->z = src->z;

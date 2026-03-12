@@ -11,17 +11,18 @@
 void __cdecl sound_sndmain_cpp_convertDoubleToFixed_FUN_005a5e10(double input,int *out_integer_part,int *out_fractional_part)
 
 {
-  int iVar1;
+  double dVar1;
   double dVar2;
   ulonglong local_c;
+  int iVar1;
   
   dVar2 = floor(input);
   local_c._0_4_ = (int)(longlong)ROUND(ROUND(dVar2));
   iVar1 = (int)local_c;
   local_c = (longlong)ROUND(ROUND(dVar2)) & 0xffffffff;
-  dVar2 = (input - (double)local_c) * 4294967296;
+  dVar1 = (input - (double)local_c) * 4294967296;
   *out_integer_part = iVar1;
-  local_c._0_4_ = (int)(longlong)ROUND(ROUND(dVar2));
+  local_c._0_4_ = (int)(longlong)ROUND(ROUND(dVar1));
   *out_fractional_part = (int)local_c;
   return;
 }

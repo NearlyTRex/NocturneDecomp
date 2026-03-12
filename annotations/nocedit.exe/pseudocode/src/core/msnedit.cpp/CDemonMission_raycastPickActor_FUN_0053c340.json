@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 175,
-    "complexity_score": 66,
+    "complexity_score": 67,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 52,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 226
+    "total_lines": 227
   },
   "cross_references": [
     {
@@ -162,64 +162,57 @@
         "is_param": false,
         "name": "local_64",
         "offset": -100,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_40",
+        "offset": -64,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_34",
+        "offset": -52,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_24",
-        "offset": -36,
+        "name": "fStack_1c",
+        "offset": -28,
         "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -264,7 +257,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 27,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(local_4c.z * local_4c.z + local_4c.x * local_4c.x + local_4c.y * local_4c.y);",

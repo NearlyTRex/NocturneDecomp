@@ -3,116 +3,116 @@
     "errors": [
       {
         "category": "other",
+        "column": 76,
+        "line": 184,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 78,
+        "line": 226,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
         "column": 75,
-        "line": 173,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 77,
-        "line": 215,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 74,
-        "line": 234,
+        "line": 246,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 91,
-        "line": 241,
+        "line": 253,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 255,
+        "line": 267,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 55,
-        "line": 263,
+        "line": 276,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 263,
+        "line": 276,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 265,
+        "line": 278,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 315,
+        "line": 329,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 65,
-        "line": 383,
+        "line": 398,
         "message": "use of undeclared identifier 'stack0xffffe9c4'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 68,
-        "line": 393,
+        "column": 69,
+        "line": 408,
         "message": "use of undeclared identifier 'stack0xffffe9c4'"
       },
       {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 405,
+        "line": 421,
         "message": "use of undeclared identifier 'stack0xffffe9c4'"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 418,
+        "line": 434,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 440,
+        "line": 456,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 576,
+        "line": 592,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 72,
-        "line": 649,
+        "column": 73,
+        "line": 665,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 69,
-        "line": 670,
+        "line": 686,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 56,
-        "line": 726,
+        "line": 742,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 96,
-        "line": 725,
+        "line": 741,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -121,21 +121,19 @@
   },
   "complexity": {
     "assembly_lines": 5057,
-    "complexity_score": 2304,
+    "complexity_score": 2294,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 177,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 2169,
-    "suspect_count": 11,
+    "pseudocode_lines": 2189,
+    "suspect_count": 9,
     "suspect_types": [
       "format_string_mismatch",
-      "pointer_cast",
       "stack_ref",
-      "undefined_data",
-      "warning_type_propagation"
+      "undefined_data"
     ],
-    "total_lines": 7226
+    "total_lines": 7246
   },
   "cross_references": [
     {
@@ -1557,1016 +1555,659 @@
         "is_param": false,
         "name": "local_153d",
         "offset": -5437,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_153c",
-        "offset": -5436,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_153b",
-        "offset": -5435,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_1475",
         "offset": -5237,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1474",
-        "offset": -5236,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1473",
-        "offset": -5235,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_13ad",
         "offset": -5037,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_13ac",
-        "offset": -5036,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_13ab",
-        "offset": -5035,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_12e5",
         "offset": -4837,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_12e4",
-        "offset": -4836,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_12e3",
-        "offset": -4835,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_121d",
         "offset": -4637,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_121c",
-        "offset": -4636,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_121b",
-        "offset": -4635,
-        "size": 1,
-        "type": "undefined1"
+        "size": 201,
+        "type": "char[201]"
       },
       {
         "is_param": false,
         "name": "local_1154",
         "offset": -4436,
-        "size": 1,
-        "type": "undefined1"
+        "size": 199,
+        "type": "char[199]"
       },
       {
         "is_param": false,
         "name": "local_108d",
         "offset": -4237,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_108c",
-        "offset": -4236,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_108b",
-        "offset": -4235,
-        "size": 1,
-        "type": "undefined1"
+        "size": 201,
+        "type": "char[201]"
       },
       {
         "is_param": false,
         "name": "local_fc4",
         "offset": -4036,
-        "size": 1,
-        "type": "undefined1"
+        "size": 199,
+        "type": "char[199]"
       },
       {
         "is_param": false,
         "name": "local_efd",
         "offset": -3837,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_efc",
-        "offset": -3836,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_efb",
-        "offset": -3835,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_e35",
         "offset": -3637,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_e34",
-        "offset": -3636,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_e33",
-        "offset": -3635,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_d6d",
         "offset": -3437,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_d6c",
-        "offset": -3436,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_d6b",
-        "offset": -3435,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_ca5",
         "offset": -3237,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_ca4",
-        "offset": -3236,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_ca3",
-        "offset": -3235,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_bdd",
         "offset": -3037,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_bdc",
-        "offset": -3036,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_bdb",
-        "offset": -3035,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_b15",
         "offset": -2837,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_b14",
-        "offset": -2836,
-        "size": 1,
-        "type": "undefined1"
+        "size": 2,
+        "type": "char[2]"
       },
       {
         "is_param": false,
         "name": "local_b13",
         "offset": -2835,
-        "size": 1,
-        "type": "undefined1"
+        "size": 196,
+        "type": "undefined4[49]"
       },
       {
         "is_param": false,
         "name": "local_a4d",
         "offset": -2637,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_a4c",
-        "offset": -2636,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_a4b",
-        "offset": -2635,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_985",
         "offset": -2437,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_984",
-        "offset": -2436,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_983",
-        "offset": -2435,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_8bd",
         "offset": -2237,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_8bc",
-        "offset": -2236,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_8bb",
-        "offset": -2235,
-        "size": 1,
-        "type": "undefined1"
+        "size": 201,
+        "type": "char[201]"
       },
       {
         "is_param": false,
         "name": "local_7f4",
         "offset": -2036,
-        "size": 1,
-        "type": "undefined1"
+        "size": 199,
+        "type": "char[199]"
       },
       {
         "is_param": false,
         "name": "local_72d",
         "offset": -1837,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_72c",
-        "offset": -1836,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_72b",
-        "offset": -1835,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_665",
         "offset": -1637,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_664",
-        "offset": -1636,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_663",
-        "offset": -1635,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_59d",
         "offset": -1437,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_59c",
-        "offset": -1436,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_59b",
-        "offset": -1435,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_4d5",
         "offset": -1237,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4d4",
-        "offset": -1236,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_4d3",
-        "offset": -1235,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_40d",
         "offset": -1037,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_40c",
-        "offset": -1036,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_40b",
-        "offset": -1035,
-        "size": 1,
-        "type": "undefined1"
+        "size": 201,
+        "type": "char[201]"
       },
       {
         "is_param": false,
         "name": "local_344",
         "offset": -836,
-        "size": 1,
-        "type": "undefined1"
+        "size": 99,
+        "type": "char[99]"
       },
       {
         "is_param": false,
         "name": "local_2e1",
         "offset": -737,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2e0",
-        "offset": -736,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2df",
-        "offset": -735,
-        "size": 1,
-        "type": "undefined1"
+        "size": 101,
+        "type": "char[101]"
       },
       {
         "is_param": false,
         "name": "local_27c",
         "offset": -636,
-        "size": 1,
-        "type": "undefined1"
+        "size": 99,
+        "type": "char[99]"
       },
       {
         "is_param": false,
         "name": "local_219",
         "offset": -537,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_218",
-        "offset": -536,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_217",
-        "offset": -535,
-        "size": 1,
-        "type": "undefined1"
+        "size": 101,
+        "type": "char[101]"
       },
       {
         "is_param": false,
         "name": "local_1b4",
         "offset": -436,
-        "size": 1,
-        "type": "undefined1"
+        "size": 32,
+        "type": "char[32]"
       },
       {
         "is_param": false,
         "name": "local_194",
         "offset": -404,
-        "size": 1,
-        "type": "undefined1"
+        "size": 32,
+        "type": "char[32]"
       },
       {
         "is_param": false,
         "name": "local_174",
         "offset": -372,
-        "size": 1,
-        "type": "undefined1"
+        "size": 32,
+        "type": "char[32]"
       },
       {
         "is_param": false,
         "name": "local_154",
         "offset": -340,
-        "size": 1,
-        "type": "undefined1"
+        "size": 32,
+        "type": "char[32]"
       },
       {
         "is_param": false,
         "name": "local_134",
         "offset": -308,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_130",
-        "offset": -304,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_12c",
-        "offset": -300,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_128",
         "offset": -296,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_124",
-        "offset": -292,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_120",
-        "offset": -288,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_11c",
         "offset": -284,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_118",
-        "offset": -280,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_114",
-        "offset": -276,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_110",
         "offset": -272,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_10c",
-        "offset": -268,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_108",
-        "offset": -264,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_fc",
         "offset": -252,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_f8",
+        "offset": -248,
+        "size": 4,
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_f4",
         "offset": -244,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_f0",
         "offset": -240,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_ec",
         "offset": -236,
         "size": 4,
-        "type": "undefined4"
+        "type": "byte *"
       },
       {
         "is_param": false,
         "name": "local_e8",
         "offset": -232,
         "size": 4,
-        "type": "undefined4"
+        "type": "C3DSLight *"
       },
       {
         "is_param": false,
         "name": "local_e4",
         "offset": -228,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_e0",
         "offset": -224,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_dc",
-        "offset": -220,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "float[2]"
       },
       {
         "is_param": false,
         "name": "local_d8",
         "offset": -216,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_d4",
         "offset": -212,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_d0",
         "offset": -208,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_cc",
         "offset": -204,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_c8",
         "offset": -200,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_c4",
         "offset": -196,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_c0",
         "offset": -192,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_bc",
         "offset": -188,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_b8",
         "offset": -184,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_b4",
         "offset": -180,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_b0",
         "offset": -176,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_ac",
         "offset": -172,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_a8",
         "offset": -168,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_a4",
         "offset": -164,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_a0",
         "offset": -160,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_9c",
         "offset": -156,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_98",
         "offset": -152,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_94",
         "offset": -148,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_90",
         "offset": -144,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_8c",
         "offset": -140,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_88",
         "offset": -136,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_84",
         "offset": -132,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_80",
         "offset": -128,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_7c",
         "offset": -124,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_78",
         "offset": -120,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_74",
         "offset": -116,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_70",
         "offset": -112,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_68",
         "offset": -104,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_64",
         "offset": -100,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "C3DSLight *"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonLight *"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonLight *"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
@@ -2593,16 +2234,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 376,
+      "line": 391,
       "match": "&stack0xffffe9c4",
       "severity": "moderate",
       "text": "((char *)local_ec,\"( %[^ ,], %d, %d )%n\",&stack0xffffe9c4,&local_d8,&local_d4);",
@@ -2610,15 +2243,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 386,
+      "line": 401,
       "match": "&stack0xffffe9c4",
       "severity": "moderate",
-      "text": "iVar2 = engine_dosio_c_getFileSize_FUN_00481880(\"art\",&stack0xffffe9c4);",
+      "text": "iVar19 = engine_dosio_c_getFileSize_FUN_00481880(\"art\",&stack0xffffe9c4);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 398,
+      "line": 414,
       "match": "&stack0xffffe9c4",
       "severity": "moderate",
       "text": "(g_CGamePtr,&stack0xffffe9c4,local_d8,local_d4);",
@@ -2626,23 +2259,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1018,
+      "line": 1034,
       "match": "DAT_006793d8",
       "severity": "mild",
-      "text": "puVar17 = &DAT_006793d8;",
+      "text": "puVar18 = &DAT_006793d8;",
       "type": "undefined_data"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 1023,
-      "match": "(char *)((int)",
-      "severity": "mild",
-      "text": "pcVar16 = (char *)((int)pcVar16 +",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 1894,
+      "line": 1913,
       "match": "DAT_006794a0",
       "severity": "mild",
       "text": "puVar17 = &DAT_006794a0;",
@@ -2654,8 +2279,8 @@
       "expected_args": 1,
       "format_string": "Event name %s is too long",
       "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
-      "line_number": 166,
-      "match": "iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is too long\");",
+      "line_number": 177,
+      "match": "iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is too long\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -2665,8 +2290,8 @@
       "expected_args": 1,
       "format_string": "Event name %s is not valid",
       "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
-      "line_number": 208,
-      "match": "iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is not valid\");",
+      "line_number": 219,
+      "match": "iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is not valid\")",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -2676,8 +2301,8 @@
       "expected_args": 1,
       "format_string": "SpotLight %s doesn't exist.",
       "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
-      "line_number": 227,
-      "match": "iVar2 = core_event_cpp_formatEventError_FUN_004aa2a0(\"SpotLight %s doesn't exist.\");",
+      "line_number": 239,
+      "match": "iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0(\"SpotLight %s doesn't exist.\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -2687,7 +2312,7 @@
       "expected_args": 1,
       "format_string": "Can't find CDemonLight for light %s in advanceLightFilter meta-command",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 234,
+      "line_number": 246,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't find CDemonLight for light %s in advanceLightFil",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

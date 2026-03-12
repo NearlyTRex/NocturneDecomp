@@ -8,31 +8,20 @@
 ; char *           Stack[0x8]:4   pod_file_path
 ; time_t           Stack[0xc]:4   cutoff_timestamp
 ; Local Variables:
-; undefined4       Stack[-0x9d8]:4  local_9d8
-; undefined        Stack[-0x9d4]:1  local_9d4
-; undefined4       Stack[-0x5bc]:4  local_5bc
-; undefined4       Stack[-0x5b8]:4  local_5b8
-; undefined        Stack[-0x5ac]:1  local_5ac
-; undefined4       Stack[-0x58c]:4  local_58c
-; undefined        Stack[-0x474]:1  local_474
-; undefined        Stack[-0x44c]:1  local_44c
-; undefined1       Stack[-0x44b]:1  local_44b
-; undefined        Stack[-0x33c]:1  local_33c
-; undefined        Stack[-0x204]:1  local_204
-; undefined1       Stack[-0x203]:1  local_203
-; undefined        Stack[-0x104]:1  local_104
-; undefined        Stack[-0xa0]:1  local_a0
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CPodFile         Stack[-0x9d8]:1068  local_9d8
+; undefined4[8]    Stack[-0x5ac]:32  local_5ac
+; uint             Stack[-0x58c]:4  local_58c
+; undefined4[10]   Stack[-0x474]:40  local_474
+; char[272]        Stack[-0x44c]:272  local_44c
+; undefined4[78]   Stack[-0x33c]:312  local_33c
+; char[256]        Stack[-0x204]:256  local_204
+; char[100]        Stack[-0x104]:100  local_104
+; undefined1[92]   Stack[-0xa0]:92  local_a0
+; int              Stack[-0x44]:4  local_44
+; _tm              Stack[-0x40]:36  local_40
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_fileio_cpp_006276ab

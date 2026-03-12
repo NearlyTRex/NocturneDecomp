@@ -9,16 +9,18 @@
 int __cdecl shape_superopt_cpp_CComplexPolygon_processEdgeSubLoops_FUN_005c91e0(CComplexPolygon *this_ptr,SExpandedEdge *edges,int *edge_count_ptr)
 
 {
-  double dVar1;
-  double dVar2;
-  double dVar3;
+  int edge_count;
   int iVar4;
   int iVar5;
+  int iVar1;
   int extraout_EAX;
   uint uVar6;
   CVector3d *pCVar7;
   SExpandedEdge *edges_00;
   uint uVar8;
+  double dVar2;
+  double dVar1;
+  double dVar3;
   
   iVar4 = shape_superopt_cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280
                     (this_ptr,edges,*edge_count_ptr);
@@ -47,23 +49,24 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_processEdgeSubLoops_FUN_005c91e0(
     if (uVar6 == *edge_count_ptr) {
       return uVar6 ^ *edge_count_ptr;
     }
-    iVar4 = (uVar6 - uVar8) + 1;
+    edge_count = (uVar6 - uVar8) + 1;
     edges_00 = edges + uVar8;
-    iVar5 = shape_superopt_cpp_CComplexPolygon_isConvex_FUN_005cb3a0(this_ptr,edges_00,iVar4);
+    iVar5 = shape_superopt_cpp_CComplexPolygon_isConvex_FUN_005cb3a0(this_ptr,edges_00,edge_count);
     if ((iVar5 == 0) ||
-       (iVar5 = shape_superopt_cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
-                          (this_ptr,&this_ptr->normal,edges_00,iVar4,edges,*edge_count_ptr),
-       iVar5 != 0)) {
-      uVar8 = uVar8 + iVar4;
+       (iVar1 = shape_superopt_cpp_CComplexPolygon_validateSubChainVisibility_FUN_005cbf90
+                          (this_ptr,&this_ptr->normal,edges_00,edge_count,edges,*edge_count_ptr),
+       iVar1 != 0)) {
+      uVar8 = uVar8 + edge_count;
     }
     else {
-      shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(this_ptr,edges_00,iVar4);
+      shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20
+                (this_ptr,edges_00,edge_count);
       if (extraout_EAX == 0) {
         return 0;
       }
       memmove
-                (edges_00,edges_00 + iVar4,(*edge_count_ptr - (uVar8 + iVar4)) * 0x60);
-      *edge_count_ptr = *edge_count_ptr - iVar4;
+                (edges_00,edges_00 + edge_count,(*edge_count_ptr - (uVar8 + edge_count)) * 0x60);
+      *edge_count_ptr = *edge_count_ptr - edge_count;
     }
     if ((uint)*edge_count_ptr <= uVar8) {
       return 1;

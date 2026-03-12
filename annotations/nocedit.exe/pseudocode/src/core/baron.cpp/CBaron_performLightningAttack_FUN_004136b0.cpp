@@ -11,11 +11,13 @@
 void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_004136b0(CBaron *this_ptr)
 
 {
-  CLocation *start_position;
+  CLocation *start_position_00;
   CEnemy *this_ptr_00;
   CVector3f *pCVar1;
   int iVar2;
   int iVar3;
+  CVector3f *pCVar2;
+  int iVar4;
   CVector3f local_148 [10];
   SDamageInfo local_d0;
   CVector3f CStack_94;
@@ -31,6 +33,7 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_004136b0(CBaron *t
   float local_1c;
   int iStack_18;
   float local_14;
+  CLocation *start_position;
   
   this_ptr_00 = core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(&this_ptr->base,&local_1c);
   if (this_ptr_00 == (CEnemy *)0x0) {
@@ -47,11 +50,11 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_004136b0(CBaron *t
   local_40.y = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_40.y);
   local_14 = local_40.y;
   if ((local_40.y < (float)-0.78539816337500001) || (0.78539816337500001 < (double)local_40.y)) {
-    start_position = &(this_ptr_00->base).base.location;
+    start_position_00 = &(this_ptr_00->base).base.location;
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_004c8f50
-              (g_CFireEffectPtr,&start_position->position,16.0,1,0.0);
+              (g_CFireEffectPtr,&start_position_00->position,16.0,1,0.0);
     core_fire_cpp_CFireEffect_createCrater_FUN_004c8ea0
-              (g_CFireEffectPtr,&start_position->position,4.0);
+              (g_CFireEffectPtr,&start_position_00->position,4.0);
   }
   else {
     __arrinit(local_148,10,&g_CVectorTypeInfo);
@@ -59,33 +62,33 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_004136b0(CBaron *t
                       ((CDemonActor *)this_ptr_00,local_148);
     iStack_18 = iVar2;
     iVar3 = rand();
-    pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+    pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                        ((CDemonActor *)this_ptr_00,&CStack_94,local_148 + iVar3 % iVar2);
-    if (&CStack_28 != pCVar1) {
-      CStack_28.x = pCVar1->x;
-      CStack_28.y = pCVar1->y;
-      CStack_28.z = pCVar1->z;
+    if (&CStack_28 != pCVar2) {
+      CStack_28.x = pCVar2->x;
+      CStack_28.y = pCVar2->y;
+      CStack_28.z = pCVar2->z;
     }
-    iVar2 = rand();
-    pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                       ((CDemonActor *)this_ptr_00,&CStack_58,local_148 + iVar2 % iStack_18);
-    if (&CStack_4c != pCVar1) {
-      CStack_4c.x = pCVar1->x;
-      CStack_4c.y = pCVar1->y;
-      CStack_4c.z = pCVar1->z;
+    iVar4 = rand();
+    pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                       ((CDemonActor *)this_ptr_00,&CStack_58,local_148 + iVar4 % iStack_18);
+    if (&CStack_4c != pCVar2) {
+      CStack_4c.x = pCVar2->x;
+      CStack_4c.y = pCVar2->y;
+      CStack_4c.z = pCVar2->z;
     }
-    pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+    pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                        (&CStack_64,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                         INT_008224cc);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,&CStack_70,pCVar1);
-    pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+              ((CDemonActor *)this_ptr,&CStack_70,pCVar2);
+    pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                        (&CStack_88,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_world_matrices +
                         INT_008224d0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,&CStack_34,pCVar1);
+              ((CDemonActor *)this_ptr,&CStack_34,pCVar2);
     core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004c8fd0
               (g_CFireEffectPtr,&CStack_70,&CStack_28,1,0.5,4.0);
     core_fire_cpp_CFireEffect_createLightningBoltDirectional_FUN_004c8fd0
@@ -98,7 +101,7 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_004136b0(CBaron *t
   local_d0.damage_amount = 100.0;
   local_d0.attacker = (CDemonActor *)this_ptr;
   local_d0.wielder = this_ptr->target_actor;
-  if ((CBaron *)local_d0.wielder == (CBaron *)0x0) {
+  if (local_d0.wielder == (CDemonActor *)0x0) {
     local_d0.wielder = (CDemonActor *)this_ptr;
   }
   (*(((this_ptr_00->base).base.vtable._uc)->_uc).processDamage)(&this_ptr_00->base,&local_d0);

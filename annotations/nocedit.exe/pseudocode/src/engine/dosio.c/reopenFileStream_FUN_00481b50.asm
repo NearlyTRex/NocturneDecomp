@@ -7,11 +7,10 @@
 ; char *           Stack[0x4]:4   directory_path
 ; char *           Stack[0x8]:4   filename
 ; byte             Stack[0xc]:1   file_mode_flags
+; undefined3       Stack[0xd]:3   in_stack_0000000d
 ; ifstream *       Stack[0x10]:4   file_stream
 ; Local Variables:
-; undefined        Stack[-0x220]:1  local_220
-; undefined        Stack[-0x120]:1  local_120
-; undefined4       Stack[-0x20]:4  local_20
+; SFoundFileInfo   Stack[-0x220]:532  local_220
 ;
 ; Referenced Globals:
 ;   int g_DefaultStreamBufferSize = 0x1a4

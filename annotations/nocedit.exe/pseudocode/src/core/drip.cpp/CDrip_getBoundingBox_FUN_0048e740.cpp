@@ -9,12 +9,12 @@
 CBoundingBox3D * __cdecl core_drip_cpp_CDrip_getBoundingBox_FUN_0048e740(CDrip *this_ptr,CBoundingBox3D *out_box)
 
 {
+  CKeyFramedModel *pCVar6;
+  float *pfVar4;
+  CVector3f *pCVar5;
   float *pfVar1;
   float *pfVar2;
   float *pfVar3;
-  float *pfVar4;
-  CVector3f *pCVar5;
-  CKeyFramedModel *pCVar6;
   
   pfVar1 = &(out_box->min).y;
   pfVar2 = &(out_box->min).z;

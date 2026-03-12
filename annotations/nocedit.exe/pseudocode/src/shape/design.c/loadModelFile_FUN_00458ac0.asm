@@ -6,18 +6,15 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x170]:1  local_170
-; undefined1       Stack[-0x11c]:1  local_11c
-; undefined1       Stack[-0xcc]:1  local_cc
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined1       Stack[-0x74]:1  local_74
-; undefined1       Stack[-0x73]:1  local_73
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[84]         Stack[-0x170]:84  local_170
+; char[80]         Stack[-0x11c]:80  local_11c
+; char[88]         Stack[-0xcc]:88  local_cc
+; byte[80]         Stack[-0x74]:80  local_74
+; int              Stack[-0x24]:4  local_24
+; uint             Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; _FILE *          Stack[-0x18]:4  local_18
+; byte *           Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_design.c_promptForModelNameAndLoad_FUN_00458a10 at 00458a9f

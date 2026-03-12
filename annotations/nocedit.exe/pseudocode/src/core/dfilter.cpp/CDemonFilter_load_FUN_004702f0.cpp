@@ -11,10 +11,13 @@
 void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_ptr,char *filename)
 
 {
-  char cVar1;
+  char cVar2;
   _FILE *p_Var2;
   int iVar3;
+  _FILE *file;
+  int iVar4;
   char *pcVar4;
+  char cVar1;
   
   p_Var2 = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
   if (p_Var2 == (_FILE *)0x0) {
@@ -45,17 +48,17 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
               ("CDemonFilter::load - Bad filter size %d",this_ptr->count);
   }
   core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00470260(this_ptr);
-  p_Var2 = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
-  if (p_Var2 == (_FILE *)0x0) {
+  file = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
+  if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";
     g_CurrentLineNumber = 0xc6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonFilter::load - Bad filename");
   }
-  _fread(this_ptr->data_buffer,this_ptr->size,this_ptr->count,p_Var2);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var2,"..\\core\\dfilter.cpp",0xce);
-  for (iVar3 = 0; iVar3 < this_ptr->size * this_ptr->count; iVar3 = iVar3 + 1) {
-    *(char *)(iVar3 + (int)this_ptr->data_buffer) =
-         (char)((int)(uint)*(byte *)(iVar3 + (int)this_ptr->data_buffer) >> 2);
+  _fread(this_ptr->data_buffer,this_ptr->size,this_ptr->count,file);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\dfilter.cpp",0xce);
+  for (iVar4 = 0; iVar4 < this_ptr->size * this_ptr->count; iVar4 = iVar4 + 1) {
+    *(char *)(iVar4 + (int)this_ptr->data_buffer) =
+         (char)((int)(uint)*(byte *)(iVar4 + (int)this_ptr->data_buffer) >> 2);
   }
   pcVar4 = this_ptr->name;
   do {
@@ -64,10 +67,10 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
     if (cVar1 == '\0') {
       return;
     }
-    cVar1 = filename[1];
+    cVar2 = filename[1];
     filename = filename + 2;
-    pcVar4[1] = cVar1;
+    pcVar4[1] = cVar2;
     pcVar4 = pcVar4 + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   return;
 }

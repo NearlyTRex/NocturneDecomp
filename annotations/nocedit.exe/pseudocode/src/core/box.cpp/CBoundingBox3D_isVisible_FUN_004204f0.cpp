@@ -10,6 +10,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(CBoundingBox3D *t
 
 {
   int iVar1;
+  int iVar2;
   SProjectedVertex local_74 [2];
   CVector3i local_44;
   float local_38;
@@ -27,8 +28,8 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(CBoundingBox3D *t
   if (iVar1 == 0) {
     return 0;
   }
-  iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-  if (iVar1 == 0) {
+  iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  if (iVar2 == 0) {
     local_2c = (this_ptr->min).x + (this_ptr->max).x;
     local_28 = (this_ptr->min).y + (this_ptr->max).y;
     local_38 = local_2c * 0.5f;
@@ -62,8 +63,8 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(CBoundingBox3D *t
     }
   }
   else {
-    iVar1 = core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_00420320(this_ptr);
-    if (iVar1 == 0) {
+    iVar2 = core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_00420320(this_ptr);
+    if (iVar2 == 0) {
       return 0;
     }
   }

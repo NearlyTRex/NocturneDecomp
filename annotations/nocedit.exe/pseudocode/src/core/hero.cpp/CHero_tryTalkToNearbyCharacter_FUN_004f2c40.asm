@@ -6,16 +6,12 @@
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined1       Stack[-0x44]:1  local_44
-; undefined1       Stack[-0x38]:1  local_38
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x50]:12  local_50
+; CVector3f        Stack[-0x44]:12  local_44
+; CVector3f        Stack[-0x38]:12  local_38
+; CVector3f        Stack[-0x2c]:12  local_2c
+; CVector3f        Stack[-0x20]:12  local_20
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
 ;   core_colonel.cpp_CColonel_process_FUN_0043fa00 at 0043fde7

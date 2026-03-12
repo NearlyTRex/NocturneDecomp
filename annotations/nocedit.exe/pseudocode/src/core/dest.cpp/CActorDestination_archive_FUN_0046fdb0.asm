@@ -6,7 +6,7 @@
 ; Parameters:
 ; CActorDestination * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined        Stack[-0x104]:1  local_104
+; char[256]        Stack[-0x104]:256  local_104
 ;
 ; XREF[1]:
 ;   core_filmreel.cpp_CFilmProjector_archive_FUN_004bede0 at 004bede6

@@ -9,13 +9,13 @@
 void __cdecl sound_mp3_cpp_applyScalefactorsToSubbands_FUN_005302f0(float *spectral_samples,int *scalefactor_band_indices,SMpegFrame *frame_info,int channel_or_granule_index)
 
 {
-  int iVar1;
-  int iVar2;
-  int iVar3;
   float *pfVar4;
   int iVar5;
   int *piVar6;
   int iVar7;
+  int iVar1;
+  int iVar3;
+  int iVar2;
   
   iVar1 = frame_info->samples_per_granule;
   iVar2 = frame_info->sblimit;

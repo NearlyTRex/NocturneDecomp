@@ -6,10 +6,10 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   format
 ; Local Variables:
-; undefined1       Stack[-0x528]:1  local_528
-; undefined1       Stack[-0x128]:1  local_128
-; undefined4       Stack[-0x10]:4  local_10
-; undefined1       Stack[-0xc]:1  local_c
+; char[1024]       Stack[-0x528]:1024  local_528
+; SSoundDeviceInfo Stack[-0x128]:280  local_128
+; undefined1 *     Stack[-0x10]:4  local_10
+; int              Stack[-0xc]:4  local_c
 ;
 ; XREF[39]:
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_005aef40 at 005af112

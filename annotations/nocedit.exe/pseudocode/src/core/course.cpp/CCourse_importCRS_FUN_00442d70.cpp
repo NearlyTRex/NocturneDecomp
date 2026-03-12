@@ -11,6 +11,7 @@ int __cdecl core_course_cpp_CCourse_importCRS_FUN_00442d70(CCourse *this_ptr,cha
 {
   _FILE *file;
   int iVar1;
+  int iVar2;
   char local_17c [360];
   byte local_14 [4];
   int local_10;
@@ -28,14 +29,14 @@ int __cdecl core_course_cpp_CCourse_importCRS_FUN_00442d70(CCourse *this_ptr,cha
   } while (iVar1 != 10);
   _fscanf(file,"%d\n",local_14);
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while (iVar2 != 10);
   _fscanf(file,"%d\n",&local_10);
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
+    iVar2 = _fgetc(file);
+    if (iVar2 < 0) break;
+  } while (iVar2 != 10);
   _sprintf(local_17c,"Importing %s",filename);
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
             (g_CEditorToolsPtr,local_17c);

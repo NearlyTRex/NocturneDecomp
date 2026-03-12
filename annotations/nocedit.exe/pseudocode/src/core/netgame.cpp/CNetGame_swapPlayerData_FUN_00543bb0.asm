@@ -7,31 +7,36 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ; SNetPlayer *     Stack[0x8]:4   other
 ; Local Variables:
+; EConnectionType  Stack[-0x88]:4  EStack_88
+; ENetworkMode     Stack[-0x84]:4  EStack_84
+; undefined4       Stack[-0x80]:4  uStack_80
+; undefined4       Stack[-0x7c]:4  uStack_7c
+; undefined4       Stack[-0x78]:4  uStack_78
 ; undefined4       Stack[-0x74]:4  local_74
 ; undefined4       Stack[-0x70]:4  local_70
-; undefined        Stack[-0x6c]:1  local_6c
+; int              Stack[-0x6c]:4  local_6c
 ; undefined2       Stack[-0x68]:2  local_68
 ; undefined4       Stack[-0x64]:4  local_64
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined4       Stack[-0x5c]:4  local_5c
 ; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
+; EHeroType        Stack[-0x54]:4  local_54
+; int              Stack[-0x50]:4  local_50
+; uint             Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; uint             Stack[-0x44]:4  local_44
+; float            Stack[-0x40]:4  local_40
+; uint             Stack[-0x3c]:4  local_3c
+; uint             Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; uint             Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; uint             Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   core_netgame.cpp_copyInteger_FUN_00543e30

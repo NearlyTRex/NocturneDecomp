@@ -9,6 +9,7 @@
 void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_00441a80(CConsole *this_ptr)
 
 {
+  uint uVar1;
   int iVar1;
   uint uVar2;
   uint uVar3;
@@ -23,16 +24,16 @@ void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_00441a80(CConsole *this_pt
   pcVar4 = this_ptr->console_buffer;
   while (pcVar5 = pcVar5 + GAME_CONSOLE_ROW_STRIDE, iVar1 = this_ptr->console_height + -1,
         iVar6 < iVar1) {
-    uVar3 = this_ptr->console_width;
+    uVar1 = this_ptr->console_width;
     iVar6 = iVar6 + 1;
     pcVar7 = pcVar5;
     pcVar8 = pcVar4;
-    for (uVar2 = uVar3 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
+    for (uVar2 = uVar1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
       *(uint *)pcVar8 = *(uint *)pcVar7;
       pcVar7 = pcVar7 + 4;
       pcVar8 = pcVar8 + 4;
     }
-    for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
+    for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
       *pcVar8 = *pcVar7;
       pcVar7 = pcVar7 + 1;
       pcVar8 = pcVar8 + 1;

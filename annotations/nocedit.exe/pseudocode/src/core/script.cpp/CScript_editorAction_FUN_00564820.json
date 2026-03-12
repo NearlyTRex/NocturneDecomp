@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 148,
+        "line": 156,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
         "category": "other",
         "column": 100,
-        "line": 426,
+        "line": 434,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 937,
-    "complexity_score": 438,
+    "complexity_score": 446,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 34,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 423,
+    "pseudocode_lines": 431,
     "suspect_count": 1,
     "suspect_types": [
       "format_string_mismatch"
     ],
-    "total_lines": 1360
+    "total_lines": 1368
   },
   "cross_references": [
     {
@@ -416,49 +416,49 @@
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CStrList *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": true,
@@ -483,7 +483,7 @@
       "expected_args": 2,
       "format_string": "CScript::editorAction - unknown action: %d parm %d",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 419,
+      "line_number": 427,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CScript::editorAction - unknown action: %d parm %d\",ac",
       "text": "Format string expects 2 args but got 1",
       "type": "format_string_mismatch"

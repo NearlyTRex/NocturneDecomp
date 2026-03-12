@@ -4,7 +4,7 @@
 ; void __cdecl shape_meshlod_cpp_testLodGeneration_FUN_0051ed60(void)
 ;
 ; Local Variables:
-; undefined        Stack[-0x74]:1  local_74
+; CLodMesh         Stack[-0x74]:116  local_74
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_hsw737_mdl_00638530

@@ -7,15 +7,13 @@
 ; CLightActor *    Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0xe4]:1  local_e4
-; undefined1       Stack[-0xb4]:1  local_b4
-; undefined1       Stack[-0x84]:1  local_84
-; undefined1       Stack[-0x54]:1  local_54
-; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; CMatrix3x4f      Stack[-0xe4]:48  local_e4
+; CMatrix3x4f      Stack[-0xb4]:48  local_b4
+; CMatrix3x3f      Stack[-0x84]:36  local_84
+; CMatrix3x4f      Stack[-0x54]:48  local_54
+; CVector3f        Stack[-0x24]:12  local_24
+; CVector3f        Stack[-0x18]:12  local_18
+; float            Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278

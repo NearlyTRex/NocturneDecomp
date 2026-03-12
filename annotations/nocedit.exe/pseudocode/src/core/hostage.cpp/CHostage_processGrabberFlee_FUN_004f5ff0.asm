@@ -8,11 +8,9 @@
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined1       Stack[-0x14]:1  local_14
-; undefined4       Stack[-0x8]:4  local_8
+; CVector3f        Stack[-0x20]:12  local_20
+; CVector3f        Stack[-0x14]:12  local_14
+; float            Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f54e7

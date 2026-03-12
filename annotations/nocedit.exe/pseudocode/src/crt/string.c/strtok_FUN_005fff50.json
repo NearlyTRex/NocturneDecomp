@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 78,
+    "complexity_score": 82,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 42,
     "suspect_count": 3,
     "suspect_types": [
       "special_crt_function",
       "undefined_data"
     ],
-    "total_lines": 124
+    "total_lines": 128
   },
   "cross_references": [
     {
@@ -102,8 +102,8 @@
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 1,
-        "type": "undefined1"
+        "size": 32,
+        "type": "byte[32]"
       },
       {
         "is_param": true,
@@ -124,7 +124,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 22,
       "match": "DAT_00665f28",
       "severity": "mild",
       "text": "while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVar1 & 7]) != 0))) {",
@@ -132,10 +132,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 26,
+      "line": 29,
       "match": "DAT_00665f28",
       "severity": "mild",
-      "text": "if ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVar1 & 7]) != 0) {",
+      "text": "if ((local_28[bVar2 >> 3] & (&DAT_00665f28)[bVar2 & 7]) != 0) {",
       "type": "undefined_data"
     },
     {

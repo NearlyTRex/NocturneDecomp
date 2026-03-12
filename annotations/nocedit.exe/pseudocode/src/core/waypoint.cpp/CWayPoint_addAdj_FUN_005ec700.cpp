@@ -9,9 +9,9 @@
 void __cdecl core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(CWayPoint *this_ptr,CWayPoint *target)
 
 {
-  float fVar1;
-  float fVar2;
   float fVar3;
+  float fVar2;
+  float fVar1;
   
   core_waypoint_cpp_CWayPoint_cleanupAdjacency_FUN_005ec830(this_ptr);
   core_waypoint_cpp_CWayPoint_removeAllAdjTo_FUN_005ec640(this_ptr,target);

@@ -12,6 +12,8 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_loadPBGFile_FUN_0054bb40(CPackedBit
   _FILE *file_handle;
   CPackedBitmap *pCVar1;
   int iVar2;
+  int iVar1;
+  CPackedBitmap *pCVar2;
   uchar auStack_178 [256];
   char local_78 [100];
   CPackedBitmap *local_14;
@@ -26,35 +28,35 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_loadPBGFile_FUN_0054bb40(CPackedBit
   pCVar1 = cockpit_pkbitmap_cpp_parsePBGFile_FUN_0054b9b0
                      (bitmap_set_ptr,file_handle,frames_per_bitmap,skip_data_load,
                       selected_bitmap_index);
-  local_14 = pCVar1;
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\cockpit\\pkbitmap.cpp",0x59a);
   iVar2 = 0;
+  pCVar2 = pCVar1;
   if (0 < bitmap_set_ptr->bitmap_count) {
     do {
       iVar2 = iVar2 + 1;
-      cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_0054a990(pCVar1,pbg_filename);
-      pCVar1 = pCVar1 + 1;
+      cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_0054a990(pCVar2,pbg_filename);
+      pCVar2 = pCVar2 + 1;
     } while (iVar2 < bitmap_set_ptr->bitmap_count);
   }
   if (apply_palette_flag != 0) {
-    iVar2 = 0;
+    iVar1 = 0;
     cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(pbg_filename,auStack_178);
-    pCVar1 = local_14;
+    pCVar2 = pCVar1;
     if (0 < bitmap_set_ptr->bitmap_count) {
       do {
-        while ((-1 < selected_bitmap_index && (iVar2 != selected_bitmap_index))) {
-          iVar2 = iVar2 + 1;
-          pCVar1 = pCVar1 + 1;
-          if (bitmap_set_ptr->bitmap_count <= iVar2) {
-            return local_14;
+        while ((-1 < selected_bitmap_index && (iVar1 != selected_bitmap_index))) {
+          iVar1 = iVar1 + 1;
+          pCVar2 = pCVar2 + 1;
+          if (bitmap_set_ptr->bitmap_count <= iVar1) {
+            return pCVar1;
           }
         }
-        cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440(pCVar1,auStack_178)
+        cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440(pCVar2,auStack_178)
         ;
-        iVar2 = iVar2 + 1;
-        pCVar1 = pCVar1 + 1;
-      } while (iVar2 < bitmap_set_ptr->bitmap_count);
+        iVar1 = iVar1 + 1;
+        pCVar2 = pCVar2 + 1;
+      } while (iVar1 < bitmap_set_ptr->bitmap_count);
     }
   }
-  return local_14;
+  return pCVar1;
 }

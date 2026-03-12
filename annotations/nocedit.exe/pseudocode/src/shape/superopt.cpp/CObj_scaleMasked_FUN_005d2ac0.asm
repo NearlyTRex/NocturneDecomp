@@ -9,31 +9,31 @@
 ; CVector3d *      Stack[0xc]:4   scale
 ; CVector3d *      Stack[0x10]:4   pivot
 ; Local Variables:
-; undefined8       Stack[-0xc0]:8  local_c0
-; undefined8       Stack[-0xb8]:8  local_b8
-; undefined8       Stack[-0xb0]:8  local_b0
-; undefined8       Stack[-0xa8]:8  local_a8
-; undefined8       Stack[-0xa0]:8  local_a0
-; undefined8       Stack[-0x98]:8  local_98
-; undefined8       Stack[-0x90]:8  local_90
-; undefined8       Stack[-0x88]:8  local_88
-; undefined8       Stack[-0x80]:8  local_80
-; undefined8       Stack[-0x78]:8  local_78
-; undefined8       Stack[-0x70]:8  local_70
-; undefined8       Stack[-0x68]:8  local_68
-; undefined8       Stack[-0x60]:8  local_60
-; undefined8       Stack[-0x58]:8  local_58
-; undefined8       Stack[-0x50]:8  local_50
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
+; double           Stack[-0xc0]:8  local_c0
+; double           Stack[-0xb8]:8  local_b8
+; double           Stack[-0xb0]:8  local_b0
+; double           Stack[-0xa8]:8  local_a8
+; double           Stack[-0xa0]:8  local_a0
+; double           Stack[-0x98]:8  local_98
+; double           Stack[-0x90]:8  local_90
+; double           Stack[-0x88]:8  local_88
+; double           Stack[-0x80]:8  local_80
+; double           Stack[-0x78]:8  local_78
+; double           Stack[-0x70]:8  local_70
+; double           Stack[-0x68]:8  local_68
+; undefined4       Stack[-0x60]:4  local_60
+; undefined4       Stack[-0x5c]:4  uStack_5c
+; undefined4       Stack[-0x58]:4  local_58
+; undefined4       Stack[-0x54]:4  uStack_54
+; undefined4       Stack[-0x50]:4  local_50
+; undefined4       Stack[-0x4c]:4  uStack_4c
+; undefined4[4]    Stack[-0x48]:16  local_48
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
+; double           Stack[-0x30]:8  local_30
+; double           Stack[-0x28]:8  local_28
+; double           Stack[-0x20]:8  local_20
+; uint             Stack[-0x18]:4  local_18
 ;
 ; *****************************************************************************
 

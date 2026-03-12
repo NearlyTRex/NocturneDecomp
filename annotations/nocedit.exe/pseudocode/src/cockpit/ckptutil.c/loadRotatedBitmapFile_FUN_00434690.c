@@ -9,7 +9,9 @@
 char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filename,char *buffer,int width,int height,void *optional_param)
 
 {
+  int size;
   _FILE *file;
+  int iVar1;
   uint uVar1;
   char *pcVar2;
   int in_stack_00000018;
@@ -18,13 +20,11 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filen
   uint local_18;
   int local_14;
   
-  local_1c = width * height;
+  size = width * height;
   if (buffer == (char *)0x0) {
-    buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250(local_1c,"..\\cockpit\\ckptutil.c",0x7bd)
-    ;
+    buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250(size,"..\\cockpit\\ckptutil.c",0x7bd);
     if (buffer == (char *)0x0) {
-      _sprintf
-                (local_6c,"Unable to allocate %u bytes for rotated bitmap file (%s).",local_1c,filename);
+      _sprintf(local_6c,"Unable to allocate %u bytes for rotated bitmap file (%s).",size,filename);
       g_CurrentLineNumber = 0x7c0;
       g_CurrentFilename = "..\\cockpit\\ckptutil.c";
       core_main_c_displayErrorAndQuit_FUN_00506f10(local_6c);
@@ -44,8 +44,8 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filen
       pcVar2 = buffer + (height - local_18) + -1;
       if (width != 0) {
         do {
-          local_14 = _fgetc(file);
-          if (local_14 == -1) {
+          iVar1 = _fgetc(file);
+          if (iVar1 == -1) {
             _sprintf(local_6c,"Unable to read bitmap file (%s).",filename)
             ;
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\ckptutil.c",0x7d5);
@@ -53,6 +53,7 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filen
             g_CurrentFilename = "..\\cockpit\\ckptutil.c";
             core_main_c_displayErrorAndQuit_FUN_00506f10(local_6c);
           }
+          local_14._0_1_ = (char)iVar1;
           uVar1 = uVar1 + 1;
           *pcVar2 = (char)local_14;
           pcVar2 = pcVar2 + height;
@@ -65,6 +66,6 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filen
   if (optional_param == (void *)0x0) {
     return buffer;
   }
-  cockpit_ckptutil_c_applyActPalette_FUN_004319b0(filename,buffer,local_1c,in_stack_00000018);
+  cockpit_ckptutil_c_applyActPalette_FUN_004319b0(filename,buffer,size,in_stack_00000018);
   return buffer;
 }

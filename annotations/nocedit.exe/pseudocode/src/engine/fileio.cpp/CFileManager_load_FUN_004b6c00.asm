@@ -6,13 +6,12 @@
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x224]:1  local_224
-; undefined1       Stack[-0x223]:1  local_223
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; byte[512]        Stack[-0x224]:512  local_224
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; char[128] *      Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 at 004b5abc

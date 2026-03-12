@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 71,
-        "line": 51,
+        "line": 59,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 474,
-    "complexity_score": 254,
+    "complexity_score": 259,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 35,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 189,
+    "pseudocode_lines": 194,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 663
+    "total_lines": 668
   },
   "cross_references": [
     {
@@ -417,88 +417,95 @@
     "pcode_op_count": 2058
   },
   "stack_frame": {
-    "frame_size": 1592,
-    "local_size": 1588,
+    "frame_size": 2616,
+    "local_size": 2612,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "auStack_a30",
+        "offset": -2608,
+        "size": 1024,
+        "type": "uint[256]"
+      },
+      {
+        "is_param": false,
         "name": "local_630",
         "offset": -1584,
-        "size": 1,
-        "type": "undefined1"
+        "size": 768,
+        "type": "byte[768]"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_330",
+        "offset": -816,
+        "size": 512,
+        "type": "ushort[256]"
       },
       {
         "is_param": false,
         "name": "local_130",
         "offset": -304,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_12f",
-        "offset": -303,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "ushort *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -512,18 +519,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 92,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*(ushort *)((int)auStack_330 + iVar3) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)auStack_a30 + local_20) =",
+      "text": "*(ushort *)((int)auStack_330 + iVar8) =",
       "type": "pointer_cast"
     },
     {
@@ -536,26 +535,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 107,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)auStack_a30 + local_20) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 146,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "pbVar5 = (byte *)((int)local_18 +",
+      "text": "pbVar5 = (byte *)((int)buffer +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 149,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "local_28 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar7);",
+      "text": "*(ushort *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar7) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 153,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(uint *)(iVar3 + *(int *)((int)g_ScreenBufferArray + local_24)) =",
+      "text": "*(uint *)(iVar6 + *(int *)((int)g_ScreenBufferArray + local_24)) =",
       "type": "pointer_cast"
     }
   ]

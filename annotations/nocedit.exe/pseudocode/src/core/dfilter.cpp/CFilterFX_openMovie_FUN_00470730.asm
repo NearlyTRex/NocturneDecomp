@@ -7,7 +7,7 @@
 ; CFilterFx *      Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x10c]:1  local_10c
+; char[256]        Stack[-0x10c]:256  local_10c
 ;
 ; XREF[1]:
 ;   core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40 at 004bec99

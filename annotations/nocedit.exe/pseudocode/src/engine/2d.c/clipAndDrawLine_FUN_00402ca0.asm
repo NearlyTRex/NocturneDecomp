@@ -13,10 +13,10 @@
 ; int              Stack[0x1c]:4   x_max
 ; int              Stack[0x20]:4   y_max
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; uint             Stack[-0x18]:4  local_18
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_2d.c_clipLineGlobal_FUN_00402c50 at 00402c84

@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 212,
-    "complexity_score": 182,
+    "complexity_score": 181,
     "cross_reference_count": 132,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 122,
+    "pseudocode_lines": 121,
     "suspect_count": 5,
     "suspect_types": [
       "mmx_assembly",
       "pointer_cast"
     ],
-    "total_lines": 334
+    "total_lines": 333
   },
   "cross_references": [
     {
@@ -1003,57 +1003,43 @@
         "is_param": false,
         "name": "local_8c",
         "offset": -140,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_7c",
-        "offset": -124,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 4,
-        "type": "undefined4"
+        "size": 108,
+        "type": "DDSURFACEDESC"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "undefined8 *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "undefined8 *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 57,
       "match": "(ulonglong *)((int)",
       "severity": "mild",
       "text": "*(ulonglong *)((int)local_8c.lpSurface + 8) = uVar1;",
@@ -1061,7 +1047,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 58,
       "match": "(ulonglong *)((int)",
       "severity": "mild",
       "text": "*(ulonglong *)((int)local_8c.lpSurface + 0x10) = uVar2;",
@@ -1069,7 +1055,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 59,
       "match": "(ulonglong *)((int)",
       "severity": "mild",
       "text": "*(ulonglong *)((int)local_8c.lpSurface + 0x18) = uVar3;",
@@ -1077,10 +1063,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 66,
       "match": "(ulonglong *)((int)",
       "severity": "mild",
-      "text": "puVar11 = (ulonglong *)((int)local_20 + local_1c);",
+      "text": "puVar11 = (ulonglong *)((int)local_20 + iVar4);",
       "type": "pointer_cast"
     },
     {

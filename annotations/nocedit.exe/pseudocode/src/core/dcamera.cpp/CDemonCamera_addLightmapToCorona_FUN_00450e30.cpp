@@ -11,11 +11,14 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30(CDemonCamera *this_ptr,CDemonLight *light_source)
 
 {
-  bool bVar1;
+  bool bVar2;
   int iVar2;
   uint *puVar3;
   int *piVar4;
   int iVar5;
+  int iVar3;
+  int iVar4;
+  int iVar8;
   int iVar6;
   int iVar7;
   uint *puVar8;
@@ -24,6 +27,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30(CDem
   int local_1c;
   int local_18;
   CDemonLight *local_14;
+  bool bVar1;
   
   local_1c = 0;
   if (0 < this_ptr->display_height) {
@@ -41,24 +45,24 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30(CDem
                         local_14->left_extent[0] * 4 + local_18);
         pcVar9 = *local_20 + local_14->left_extent[0];
         g_CoronaLightingTextureData = (char *)light_source->precomputed_lighting_textures;
-        iVar7 = iVar2;
+        iVar8 = iVar2;
         do {
-          iVar5 = iVar7 + -8;
-          bVar1 = 7 < iVar7;
-          iVar6 = iVar2;
-          iVar7 = iVar5;
+          iVar5 = iVar8 + -8;
+          bVar1 = 7 < iVar8;
+          iVar3 = iVar2;
+          iVar8 = iVar5;
         } while (iVar5 != 0 && bVar1);
         do {
-          iVar5 = iVar6 + -8;
-          bVar1 = 7 < iVar6;
-          iVar7 = iVar2;
-          iVar6 = iVar5;
-        } while (iVar5 != 0 && bVar1);
+          iVar4 = iVar3 + -8;
+          bVar2 = 7 < iVar3;
+          iVar8 = iVar2;
+          iVar3 = iVar4;
+        } while (iVar4 != 0 && bVar2);
         do {
-          iVar6 = iVar7 + -8;
-          bVar1 = 7 < iVar7;
-          iVar7 = iVar6;
-        } while (iVar6 != 0 && bVar1);
+          iVar6 = iVar8 + -8;
+          bVar2 = 7 < iVar8;
+          iVar8 = iVar6;
+        } while (iVar6 != 0 && bVar2);
         do {
           if ((*puVar3 != 0) && (*puVar3 <= (uint)*(ushort *)*puVar8)) {
             *pcVar9 = *pcVar9 + g_CoronaLightingTextureData[*piVar4];
@@ -68,9 +72,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addLightmapToCorona_FUN_00450e30(CDem
           piVar4 = piVar4 + 1;
           pcVar9 = pcVar9 + 1;
           iVar7 = iVar2 + -1;
-          bVar1 = 0 < iVar2;
+          bVar2 = 0 < iVar2;
           iVar2 = iVar7;
-        } while (iVar7 != 0 && bVar1);
+        } while (iVar7 != 0 && bVar2);
       }
       local_14 = (CDemonLight *)&(local_14->base).base.position;
       local_20 = local_20 + 1;

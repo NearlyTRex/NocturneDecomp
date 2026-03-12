@@ -12,8 +12,10 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004eb9d0(CBloodPa
 
 {
   int iVar1;
+  int iVar2;
   CMatrix3x3f *pCVar2;
   float *pfVar3;
+  float *pfVar5;
   float *pfVar4;
   byte bVar5;
   int aiStackY_1000 [997];
@@ -42,18 +44,21 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004eb9d0(CBloodPa
        *(int *)((int)&local_18 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
   INT_02d83394 = 0;
   pCVar2 = &(g_CurrentSceneCamera->base).rotation_matrix;
-  pfVar3 = local_40;
+  pfVar5 = local_40;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *pfVar3 = pCVar2->m[0].x;
     pCVar2 = (CMatrix3x3f *)((int)pCVar2 + (uint)bVar5 * -8 + 4);
-    pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+    *pfVar5 = pCVar2->m[0].x;
+    pCVar2 = pCVar2;
+    pfVar5 = pfVar5 + (uint)bVar5 * -2 + 1;
   }
   pfVar3 = local_40;
   pfVar4 = afStack_68;
-  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *pfVar4 = *pfVar3;
-    pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+  for (iVar2 = 10; iVar2 != 0; iVar2 = iVar2 + -1) {
     pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
+    pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+    *pfVar4 = *pfVar3;
+    pfVar3 = pfVar3;
+    pfVar4 = pfVar4;
   }
   INT_02d8339c = (int)ROUND(ROUND((double)local_60 * -65536));
   INT_02d833a0 = (int)ROUND(ROUND((double)local_54 * -65536));

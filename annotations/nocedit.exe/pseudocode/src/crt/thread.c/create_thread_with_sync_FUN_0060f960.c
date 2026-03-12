@@ -14,8 +14,6 @@ HANDLE __cdecl create_thread_with_sync(LPVOID thread_param,SIZE_T stack_size_hin
   HANDLE hObject;
   byte bVar2;
   char acStackY_1034 [4048];
-  char *buffer;
-  int base;
   char cStack_4c;
   char cStack_4b;
   char cStack_4a;
@@ -28,6 +26,8 @@ HANDLE __cdecl create_thread_with_sync(LPVOID thread_param,SIZE_T stack_size_hin
   HANDLE pvStack_20;
   uint *puStack_1c;
   DWORD DStack_18;
+  char *buffer;
+  int base;
   
   bVar2 = 0;
   if (g_TLSIndex == 0xffffffff) {
@@ -52,7 +52,7 @@ HANDLE __cdecl create_thread_with_sync(LPVOID thread_param,SIZE_T stack_size_hin
        "__bgnthd"[(uint)bVar2 * -8 + (uint)bVar2 * -8 + 8];
   value = (*g_GetCurrentThreadIdFunc)();
   IntegerToString(value,buffer,base);
-  pvStack_20 = (*g_CreateEventAFunc)((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);
+  pvStack_20 = (*g_CreateEventAFunc)((LPSECURITY_ATTRIBUTES)0x0,0,0,&cStack_4c);
   hObject = (*g_CreateThreadFunc)
                       ((LPSECURITY_ATTRIBUTES)0x0,(stack_size_hint + 0xfff >> 8 & 0xfffff0) << 8,
                        threadStartupWrapper,&local_2c,0,&DStack_18);

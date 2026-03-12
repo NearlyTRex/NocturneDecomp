@@ -9,11 +9,12 @@
 void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(CBodyPart *this_ptr,int render_flags)
 
 {
-  int iVar1;
   int iVar2;
+  int iVar4;
   int iVar3;
   int local_18;
   int local_14;
+  int iVar1;
   
   core_set_cpp_CDemonSet_rotateVerticies_FUN_0056e7c0
             (g_CDemonSetPtr,this_ptr->vertex_count,this_ptr->vertices);
@@ -23,8 +24,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(CBodyPart *
   if ((this_ptr->texture_count == 1) ||
      (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
      iVar2 != 0)) {
-    iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-    if (iVar2 == 0) {
+    iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+    if (iVar4 == 0) {
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                 (g_CDemonRendererPtr2,this_ptr->textures);
     }
@@ -32,7 +33,7 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(CBodyPart *
               (g_CDemonRendererPtr2,&this_ptr->faces->base,this_ptr->tri_count,render_flags);
   }
   else {
-    iVar2 = 0;
+    iVar4 = 0;
     local_18 = -1;
     if (0 < this_ptr->tri_count) {
       local_14 = 0;
@@ -49,10 +50,10 @@ void __cdecl core_bodypart_cpp_CBodyPart_renderGeometry_FUN_00419340(CBodyPart *
                    (SMRGLHeaderPrimitive *)
                    ((int)&(((SMRGLPrimitiveTriangle *)(this_ptr->faces->vertices + -2))->base).base.
                           type + iVar3),render_flags);
-        iVar2 = iVar2 + 1;
+        iVar4 = iVar4 + 1;
         iVar3 = iVar3 + 0x3c;
         local_14 = local_14 + 4;
-      } while (iVar2 < this_ptr->tri_count);
+      } while (iVar4 < this_ptr->tri_count);
     }
   }
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr2,1);

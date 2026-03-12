@@ -9,9 +9,9 @@
 ; CVector2d *      Stack[0xc]:4   point_c
 ; CVector2d *      Stack[0x10]:4   point_d
 ; Local Variables:
-; undefined8       Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
+; double           Stack[-0x48]:8  local_48
+; double           Stack[-0x40]:8  local_40
+; double           Stack[-0x38]:8  local_38
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined8       Stack[-0x20]:8  local_20

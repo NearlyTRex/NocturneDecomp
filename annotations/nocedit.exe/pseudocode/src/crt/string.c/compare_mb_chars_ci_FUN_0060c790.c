@@ -10,6 +10,7 @@ int __cdecl compare_mb_chars_ci(char *str1,char *str2)
 
 {
   int iVar1;
+  int iVar2;
   char local_10 [4];
   char local_c [4];
   
@@ -17,10 +18,10 @@ int __cdecl compare_mb_chars_ci(char *str1,char *str2)
   iVar1 = mblen(str1);
   local_c[iVar1] = '\0';
   copyMbChar(local_10,str2);
-  iVar1 = mblen(str2);
-  local_10[iVar1] = '\0';
+  iVar2 = mblen(str2);
+  local_10[iVar2] = '\0';
   SomethingWithUppercaseCharacterConvert(local_c);
   SomethingWithUppercaseCharacterConvert(local_10);
-  iVar1 = mbcmp(local_c,local_10);
-  return iVar1;
+  iVar2 = mbcmp(local_c,local_10);
+  return iVar2;
 }

@@ -10,12 +10,10 @@
 ; CVector3f *      Stack[0x10]:4   world_position
 ; UOrientationVector * Stack[0x14]:4   orientation
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; CQuaternion4f    Stack[-0x28]:16  CStack_28
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
 ;   core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860 at 004a8a60

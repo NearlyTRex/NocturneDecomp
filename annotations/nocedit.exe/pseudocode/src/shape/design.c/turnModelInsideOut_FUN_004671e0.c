@@ -9,9 +9,9 @@
 void __cdecl shape_design_c_turnModelInsideOut_FUN_004671e0(void)
 
 {
-  uint uVar1;
   int local_1c;
   int local_18;
+  uint uVar1;
   
   for (local_1c = 0; local_1c < g_PolygonCount; local_1c = local_1c + 1) {
     uVar1 = g_ModelPolygonData[local_1c].vertex_indices_count;

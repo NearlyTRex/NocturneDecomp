@@ -9,19 +9,21 @@
 ; float            Stack[0xc]:4   spread_angle
 ; int              Stack[0x10]:4   render_in_background
 ; Local Variables:
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined1       Stack[-0xac]:1  local_ac
-; undefined1       Stack[-0x84]:1  local_84
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined1       Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0xb0]:4  local_b0
+; CMatrix3x3f      Stack[-0xac]:36  local_ac
+; CBoundingBox3D   Stack[-0x84]:24  local_84
+; CVector3f        Stack[-0x6c]:12  local_6c
+; CVector3f        Stack[-0x60]:12  CStack_60
+; CVector3f        Stack[-0x54]:12  CStack_54
+; CVector3f        Stack[-0x48]:12  local_48
+; CVector3f        Stack[-0x3c]:12  local_3c
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; float            Stack[-0x28]:4  fStack_28
+; int              Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 at 00484575

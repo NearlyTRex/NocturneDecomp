@@ -42,7 +42,7 @@ void __cdecl core_curtain_cpp_CCurtain_updateWorldPositions_FUN_00449e40(CCurtai
         input[5].y = input[3].y;
       }
       iVar3 = iVar3 + 1;
-      pCVar2 = (CVector3f *)((int)(pCVar2 + 9) + 8);
+      pCVar2 = (CVector3f *)&pCVar2[9].z;
     } while (iVar3 < this_ptr->vertex_count);
   }
   return;

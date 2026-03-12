@@ -9,9 +9,10 @@
 void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3SideInfo *side_info,int channel_index,SMpegFrame *frame)
 
 {
-  int iVar1;
   int iVar2;
+  int iVar3;
   float *pfVar3;
+  int iVar4;
   uint uVar4;
   int iVar5;
   int iVar6;
@@ -19,6 +20,7 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuan
   int iVar8;
   float10 base;
   float10 fVar9;
+  float10 fVar5;
   float10 extraout_ST1;
   float10 extraout_ST1_00;
   float10 extraout_ST2;
@@ -35,6 +37,7 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuan
   float *local_20;
   float *local_1c;
   float *local_18;
+  int iVar1;
   
   iVar6 = 0;
   iVar7 = frame->header->sampling_rate_index + frame->header->mpeg_version * 3;
@@ -50,28 +53,28 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuan
     local_1c = (float *)g_Layer3BandIndex[iVar7].l[1];
   }
   if (g_MpegRequantTablesInitialized == 0) {
-    fVar9 = (float10)1.3333333333333299;
-    iVar5 = 0;
-    iVar8 = 0;
+    fVar5 = (float10)1.3333333333333299;
+    iVar3 = 0;
+    iVar4 = 0;
     do {
-      fVar9 = pow((float10)iVar5,fVar9);
-      iVar5 = iVar5 + 1;
-      *(double *)((int)g_MpegRequantPowerTable + iVar8) = (double)fVar9;
-      iVar8 = iVar8 + 8;
-      fVar9 = extraout_ST1;
-    } while (iVar5 < 200);
-    iVar8 = 0;
+      fVar5 = pow((float10)iVar3,fVar5);
+      iVar3 = iVar3 + 1;
+      *(double *)((int)g_MpegRequantPowerTable + iVar4) = (double)fVar5;
+      iVar4 = iVar4 + 8;
+      fVar5 = extraout_ST1;
+    } while (iVar3 < 200);
+    iVar4 = 0;
     base = (float10)2;
-    fVar9 = (float10)0.25;
-    iVar5 = 0;
+    fVar5 = (float10)0.25;
+    iVar3 = 0;
     do {
-      fVar9 = pow(base,(float10)-iVar8 * fVar9);
-      iVar8 = iVar8 + 1;
-      *(double *)((int)g_MpegRequantGainTable + iVar5) = (double)fVar9;
-      iVar5 = iVar5 + 8;
-      fVar9 = extraout_ST1_00;
+      fVar5 = pow(base,(float10)-iVar4 * fVar5);
+      iVar4 = iVar4 + 1;
+      *(double *)((int)g_MpegRequantGainTable + iVar3) = (double)fVar5;
+      iVar3 = iVar3 + 8;
+      fVar5 = extraout_ST1_00;
       base = extraout_ST2;
-    } while (iVar8 < 200);
+    } while (iVar4 < 200);
     g_MpegRequantTablesInitialized = 1;
   }
   local_44 = 0;
@@ -86,36 +89,36 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuan
     local_18 = local_64;
     local_30 = local_70;
     iVar8 = 0;
-    iVar5 = iVar6;
+    iVar3 = iVar6;
     do {
-      iVar6 = iVar5;
+      iVar6 = iVar3;
       if (local_20 == local_1c) {
         if ((side_info->scfsi[2] == 0) || (side_info->scfsi[3] != 2)) {
-          iVar6 = iVar5 + 1;
-          local_1c = (float *)g_Layer3BandIndex[iVar7].l[iVar5 + 2];
+          iVar6 = iVar3 + 1;
+          local_1c = (float *)g_Layer3BandIndex[iVar7].l[iVar3 + 2];
         }
         else {
-          iVar6 = iVar5 + 1;
+          iVar6 = iVar3 + 1;
           if (side_info->granules[0].part_2_3_length == 0) {
 LAB_00532050:
-            iVar2 = g_Layer3BandIndex[iVar7].s[iVar5 + 2];
-            iVar1 = g_Layer3BandIndex[iVar7].s[iVar5 + 1];
-            local_28 = g_Layer3BandIndex[iVar7].s[iVar5 + 2] - iVar1;
+            iVar4 = g_Layer3BandIndex[iVar7].s[iVar3 + 2];
+            iVar1 = g_Layer3BandIndex[iVar7].s[iVar3 + 1];
+            local_28 = g_Layer3BandIndex[iVar7].s[iVar3 + 2] - iVar1;
           }
           else {
             if (local_20 != (float *)g_Layer3BandIndex[iVar7].l[8]) {
               if ((int)local_20 < g_Layer3BandIndex[iVar7].l[8]) {
-                local_1c = (float *)g_Layer3BandIndex[iVar7].l[iVar5 + 2];
+                local_1c = (float *)g_Layer3BandIndex[iVar7].l[iVar3 + 2];
                 goto LAB_00531ee0;
               }
               goto LAB_00532050;
             }
-            iVar2 = g_Layer3BandIndex[iVar7].s[4];
+            iVar4 = g_Layer3BandIndex[iVar7].s[4];
             iVar1 = g_Layer3BandIndex[iVar7].s[3];
             local_28 = g_Layer3BandIndex[iVar7].s[4] - iVar1;
             iVar6 = 3;
           }
-          local_1c = (float *)(iVar2 * 3);
+          local_1c = (float *)(iVar4 * 3);
           local_2c = iVar1 * 3;
         }
       }
@@ -129,35 +132,35 @@ LAB_00531ee0:
            (((side_info->scfsi[3] != 2 || (side_info->granules[0].part_2_3_length != 0)) &&
             ((side_info->scfsi[3] != 2 ||
              ((side_info->granules[0].part_2_3_length == 0 || (local_44 < 2)))))))) {
-          iVar2 = (side_info->granules[0].subblock_gain[0] + 1) * -2 *
+          iVar3 = (side_info->granules[0].subblock_gain[0] + 1) * -2 *
                   (scalefactor_data[channel_index * 0x3e + iVar6] +
                   side_info->granules[0].table_select[2] * g_Layer3Pretab[iVar6]);
         }
         else {
           iVar2 = ((int)local_38 - local_2c) / local_28;
           iVar5 = iVar5 + side_info->granules[0].table_select[iVar2 + -3] * -8;
-          iVar2 = (side_info->granules[0].subblock_gain[0] + 1) * -2 *
+          iVar3 = (side_info->granules[0].subblock_gain[0] + 1) * -2 *
                   scalefactor_data[channel_index * 0x3e + iVar2 * 0xd + iVar6 + 0x17];
         }
-        iVar5 = iVar5 + iVar2;
-        if ((iVar5 < 1) && (-200 < iVar5)) {
-          fVar9 = (float10)g_MpegRequantGainTable[-iVar5];
+        iVar3 = iVar5 + iVar3;
+        if ((iVar3 < 1) && (-200 < iVar3)) {
+          fVar9 = (float10)g_MpegRequantGainTable[-iVar3];
           pfVar3 = local_3c;
         }
         else {
           fVar9 = pow
-                            ((float10)2,(float10)iVar5 * (float10)0.25);
+                            ((float10)2,(float10)iVar3 * (float10)0.25);
           pfVar3 = local_38;
         }
         *pfVar3 = (float)fVar9;
         uVar4 = *local_30 >> 0x1f;
-        iVar5 = (*local_30 ^ uVar4) - uVar4;
-        if (iVar5 < 200) {
-          *local_18 = *local_18 * (float)g_MpegRequantPowerTable[iVar5];
+        iVar3 = (*local_30 ^ uVar4) - uVar4;
+        if (iVar3 < 200) {
+          *local_18 = *local_18 * (float)g_MpegRequantPowerTable[iVar3];
         }
         else {
-          fVar9 = pow((float10)iVar5,(float10)1.3333333333333299);
-          *local_1c = (float)(fVar9 * (float10)*local_1c);
+          fVar5 = pow((float10)iVar3,(float10)1.3333333333333299);
+          *local_1c = (float)(fVar5 * (float10)*local_1c);
         }
         if (*(int *)((int)quantized_samples->samples[0] + iVar8 + local_68) < 0) {
           *(float *)((int)output_samples->samples[0] + iVar8 + local_68) =
@@ -170,7 +173,7 @@ LAB_00531ee0:
       local_3c = local_3c + 1;
       local_18 = local_18 + 1;
       local_30 = local_30 + 1;
-      iVar5 = iVar6;
+      iVar3 = iVar6;
     } while (iVar8 != 0x48);
     local_6c = (float *)((int)local_6c + 0x12);
     local_68 = local_68 + 0x48;

@@ -9,10 +9,10 @@
 void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
 
 {
-  byte bVar1;
+  byte bVar2;
   _FILE *file;
   int iVar2;
-  uint character;
+  int iVar3;
   byte local_88;
   byte local_87;
   byte local_86;
@@ -26,6 +26,8 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
   ushort local_44;
   short local_42;
   short local_40;
+  byte bVar1;
+  uint character;
   
   if (g_BitsPerPixel == 0x10) {
     engine_pcx_c_saveScreenRaw16_FUN_00548d20(filename);
@@ -74,23 +76,23 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
   if (((file->_flag & 0x400) == 0) && (1 < file->_bufsize - file->_cnt)) {
     *file->_ptr = '\f';
     if (*file->_ptr != '\n') {
-      bVar1 = *(byte *)((int)&file->_flag + 1);
+      bVar2 = *(byte *)((int)&file->_flag + 1);
       file->_cnt = file->_cnt + 1;
       file->_ptr = file->_ptr + 1;
-      *(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;
+      *(byte *)((int)&file->_flag + 1) = bVar2 | 0x10;
       goto LAB_0054923a;
     }
-    iVar2 = 10;
+    iVar3 = 10;
   }
   else {
-    iVar2 = 0xc;
+    iVar3 = 0xc;
   }
-  _fputc(iVar2,file);
+  _fputc(iVar3,file);
 LAB_0054923a:
-  iVar2 = 0;
+  iVar3 = 0;
   do {
     if (((file->_flag & 0x400) == 0) && (1 < file->_bufsize - file->_cnt)) {
-      *file->_ptr = g_SourcePaletteData[iVar2];
+      *file->_ptr = g_SourcePaletteData[iVar3];
       if (*file->_ptr == '\n') {
         character = 10;
         goto LAB_00549250;
@@ -101,12 +103,12 @@ LAB_0054923a:
       *(byte *)((int)&file->_flag + 1) = bVar1 | 0x10;
     }
     else {
-      character = (uint)(byte)g_SourcePaletteData[iVar2];
+      character = (uint)(byte)g_SourcePaletteData[iVar3];
 LAB_00549250:
       _fputc(character,file);
     }
-    iVar2 = iVar2 + 1;
-    if (0x2ff < iVar2) {
+    iVar3 = iVar3 + 1;
+    if (0x2ff < iVar3) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pcx.c",0x104);
       return;
     }

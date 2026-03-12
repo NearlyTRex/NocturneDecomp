@@ -9,9 +9,6 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyFramedModel *this_ptr,CKeyFramedModelInstance *instance,int render_flags)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -21,6 +18,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyF
   int local_24;
   CKeyFramedModelInstance *local_20;
   CKeyFramedModel *local_1c;
+  float fVar1;
+  float fVar3;
+  float fVar2;
   
   if (0 < this_ptr->poly_count) {
     if (this_ptr->disable_backface_culling == 0) {
@@ -37,12 +37,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980(CKeyF
       engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,0);
     }
     iVar9 = -1;
+    iVar8 = 0;
     iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     local_24 = 0;
     if (0 < this_ptr->part_count) {
       local_1c = this_ptr;
       local_20 = instance;
-      iVar8 = 0;
       do {
         iVar5 = local_1c->part_list[0].poly_count + iVar8;
         if ((instance == (CKeyFramedModelInstance *)0x0) ||

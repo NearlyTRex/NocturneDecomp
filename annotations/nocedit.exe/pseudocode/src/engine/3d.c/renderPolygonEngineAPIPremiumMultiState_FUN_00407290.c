@@ -9,20 +9,22 @@
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290(SMRGLHeaderPrimitive *prim)
 
 {
-  uint uVar1;
-  int iVar2;
   int iVar3;
   SMRGLHeaderPrimitive *pSVar4;
   SRenderBufferEntry *pSVar5;
   SMRGLTextureBasic *pSVar6;
   int *piVar7;
   int iVar8;
+  int iVar1;
+  int iVar4;
   int iVar9;
   SRenderVertex *pSVar10;
   SRenderVertex *pSVar11;
   SMRGLTextureBasic **ppSVar12;
   byte bVar13;
   int local_14;
+  int iVar2;
+  uint uVar1;
   
   bVar13 = 0;
   iVar3 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);
@@ -45,8 +47,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiStat
     g_RenderStateFlags.dword = RENDER_ENGINE_PREMIUM_QUALITY;
     g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
     pSVar4 = prim + 1;
-    for (iVar3 = 0; iVar2 = g_RenderBufferCount, uVar1 = g_ProcessedVertexOffset,
-        iVar3 < (prim->base).count * 3; iVar3 = iVar3 + 3) {
+    for (iVar4 = 0; iVar2 = g_RenderBufferCount, uVar1 = g_ProcessedVertexOffset,
+        iVar4 < (prim->base).count * 3; iVar4 = iVar4 + 3) {
       *piVar7 = (pSVar4->base).type + g_ProcessedVertexOffset;
       g_RenderVertexBuffer[(pSVar4->base).type + uVar1].u = (pSVar4->base).count;
       piVar7 = piVar7 + 1;
@@ -54,7 +56,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiStat
       pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
     }
     if (((g_RenderBufferEnabled == 0) || (0x9c3 < g_RenderBufferCount)) ||
-       (iVar3 = (prim->base).count, 4 < iVar3)) {
+       (iVar4 = (prim->base).count, 4 < iVar4)) {
       engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,g_ProcessedVertexIndices);
     }
     else {
@@ -62,35 +64,38 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineAPIPremiumMultiStat
       local_14 = 0x7fffffff;
       pSVar5 = g_RenderBufferPool + g_RenderBufferCount;
       g_RenderBufferCount = g_RenderBufferCount + 1;
-      pSVar5->vertex_count = iVar3;
-      if (0 < iVar3) {
-        iVar3 = 0;
+      pSVar5->vertex_count = iVar4;
+      if (0 < iVar4) {
+        iVar4 = 0;
         do {
-          pSVar10 = g_RenderVertexBuffer + *(int *)((int)g_ProcessedVertexIndices + iVar3);
+          pSVar10 = g_RenderVertexBuffer + *(int *)((int)g_ProcessedVertexIndices + iVar4);
           pSVar11 = pSVar5->vertices;
           for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {
+            pSVar11 = (SRenderVertex *)((int)pSVar11 + (uint)bVar13 * -8 + 4);
+            pSVar10 = (SRenderVertex *)((int)pSVar10 + (uint)bVar13 * -8 + 4);
             (pSVar11->projected_vertex).transformed_x = (pSVar10->projected_vertex).transformed_x;
-            pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar13 * -2 + 1) * 4);
-            pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar13 * -2 + 1) * 4);
+            pSVar10 = pSVar10;
+            pSVar11 = pSVar11;
           }
-          iVar8 = pSVar5->vertices[0].projected_vertex.transformed_z;
-          if (iVar8 < local_14) {
-            local_14 = iVar8;
+          iVar1 = pSVar5->vertices[0].projected_vertex.transformed_z;
+          if (iVar1 < local_14) {
+            local_14 = iVar1;
           }
           pSVar5 = (SRenderBufferEntry *)&pSVar5->vertices[0].a;
           iVar9 = iVar9 + 1;
-          iVar3 = iVar3 + 4;
+          iVar4 = iVar4 + 4;
         } while (iVar9 < (prim->base).count);
       }
       pSVar6 = engine_texture_cpp_getCurrentTexture_FUN_005dd9c0();
-      iVar3 = g_CurrentAlphaValue;
+      iVar4 = g_CurrentAlphaValue;
       ppSVar12 = g_RenderBufferPool[iVar2].texture_data;
-      for (iVar9 = 0x12; iVar9 != 0; iVar9 = iVar9 + -1) {
+      for (iVar1 = 0x12; iVar1 != 0; iVar1 = iVar1 + -1) {
+        ppSVar12 = ppSVar12 + (uint)bVar13 * -2 + 1;
         *ppSVar12 = (SMRGLTextureBasic *)(pSVar6->base).type;
         pSVar6 = (SMRGLTextureBasic *)((int)pSVar6 + (uint)bVar13 * -8 + 4);
-        ppSVar12 = ppSVar12 + (uint)bVar13 * -2 + 1;
+        ppSVar12 = ppSVar12;
       }
-      g_RenderBufferPool[iVar2].alpha_value = iVar3;
+      g_RenderBufferPool[iVar2].alpha_value = iVar4;
       g_RenderBufferPool[iVar2].blend_mode = g_BlendMode;
       g_RenderBufferPool[iVar2].min_z_value = local_14;
     }

@@ -9,10 +9,10 @@
 void __cdecl core_fire_cpp_CMuzzleFlash_init_FUN_004c1940(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f *rotation_matrix)
 
 {
-  CDemonGlobe *this_ptr_00;
-  CDemonSet *this_ptr_01;
   CVector3f *pCVar1;
   CVector3f local_18;
+  CDemonSet *this_ptr_01;
+  CDemonGlobe *this_ptr_00;
   
   this_ptr_00 = &this_ptr->light;
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310(this_ptr_00,position);

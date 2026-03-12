@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 52,
-        "line": 34,
+        "line": 36,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 63,
+        "line": 65,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 75,
+    "complexity_score": 77,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 62,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 230
+    "total_lines": 232
   },
   "cross_references": [
     {
@@ -184,46 +184,67 @@
     "pcode_op_count": 742
   },
   "stack_frame": {
-    "frame_size": 36,
-    "local_size": 36,
+    "frame_size": 868,
+    "local_size": 868,
     "param_offset": 4,
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "acStack_360",
+        "offset": -864,
+        "size": 400,
+        "type": "char[400]"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_1d0",
+        "offset": -464,
+        "size": 400,
+        "type": "char[400]"
+      },
+      {
+        "is_param": false,
+        "name": "apvStack_40",
+        "offset": -64,
+        "size": 32,
+        "type": "LPVOID[8]"
+      },
+      {
+        "is_param": false,
         "name": "local_20",
         "offset": -32,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "LPVOID"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "LPVOID"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "DWORD"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "DWORD"
       }
     ]
   },
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 39,
       "match": "(LPVOID *)((int)",
       "severity": "mild",
       "text": "*(LPVOID *)((int)apvStack_40 + iVar3) = pvVar5;",

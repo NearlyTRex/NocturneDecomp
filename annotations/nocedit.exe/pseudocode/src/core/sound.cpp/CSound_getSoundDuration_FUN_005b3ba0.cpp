@@ -9,20 +9,21 @@
 float __cdecl core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(CSound *this_ptr,char *sound_name)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
   CSampleInfo *pCVar3;
   double dVar4;
   CSampleInfo local_160;
+  char cVar1;
   
   sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&local_160);
   pCVar3 = &local_160;
   cVar1 = *sound_name;
-  while ((((cVar1 != '\0' && (cVar1 = *sound_name, cVar1 != '@')) && (cVar1 != '*')) &&
-         ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2) == 0))) {
-    cVar1 = *sound_name;
+  while ((((cVar1 != '\0' && (cVar2 = *sound_name, cVar2 != '@')) && (cVar2 != '*')) &&
+         ((g_CharacterClassificationTable[(byte)(cVar2 + 1)] & 2) == 0))) {
+    cVar2 = *sound_name;
     sound_name = sound_name + 1;
-    pCVar3->name[0] = cVar1;
+    pCVar3->name[0] = cVar2;
     cVar1 = *sound_name;
     pCVar3 = (CSampleInfo *)(pCVar3->name + 1);
   }

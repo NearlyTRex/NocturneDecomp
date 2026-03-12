@@ -9,15 +9,15 @@
 ulonglong __cdecl wincore_wddvmem_cpp_initializeColorMasks_FUN_004f3ff0(void)
 
 {
-  byte *pbVar1;
-  int iVar2;
-  int iVar3;
   uint uVar4;
   int iVar5;
   uint uVar6;
   int iVar7;
   int iVar8;
   uint uVar9;
+  int iVar2;
+  byte *pbVar1;
+  int iVar3;
   
   iVar5 = 0;
   iVar7 = 0;

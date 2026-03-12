@@ -9,14 +9,14 @@
 int __cdecl core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point)
 
 {
-  float fVar1;
-  float fVar2;
   ECollisionType EVar3;
   float fVar4;
   SCollisionInfo local_6c;
   CVector3f CStack_38;
   CVector3f CStack_2c;
   CVector3f CStack_20;
+  float fVar1;
+  float fVar2;
   
   core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_6c);
   local_6c.ray_type = 0;

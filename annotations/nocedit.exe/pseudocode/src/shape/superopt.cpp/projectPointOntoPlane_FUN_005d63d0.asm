@@ -8,16 +8,14 @@
 ; CVector3d *      Stack[0x8]:4   plane_point
 ; CVector3d *      Stack[0xc]:4   plane_normal
 ; Local Variables:
-; undefined8       Stack[-0x70]:8  local_70
-; undefined8       Stack[-0x68]:8  local_68
-; undefined8       Stack[-0x60]:8  local_60
-; undefined8       Stack[-0x58]:8  local_58
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined8       Stack[-0x18]:8  local_18
+; CVector3d        Stack[-0x70]:24  local_70
+; double           Stack[-0x58]:8  local_58
+; double           Stack[-0x50]:8  local_50
+; double           Stack[-0x48]:8  local_48
+; double           Stack[-0x40]:8  local_40
+; double           Stack[-0x38]:8  local_38
+; double           Stack[-0x30]:8  local_30
+; double           Stack[-0x18]:8  local_18
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:

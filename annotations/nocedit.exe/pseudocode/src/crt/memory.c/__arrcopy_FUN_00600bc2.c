@@ -9,9 +9,9 @@
 void * __cdecl __arrcopy(void *dest,void *source,int count,WatcomTypeInfo *type_info)
 
 {
-  WATCOM_COPY_CONSTRUCTOR_FUNC *pWVar1;
-  int iVar2;
   void *param0;
+  int iVar2;
+  WATCOM_COPY_CONSTRUCTOR_FUNC *pWVar1;
   
   pWVar1 = type_info->copy;
   iVar2 = type_info->instance_size;

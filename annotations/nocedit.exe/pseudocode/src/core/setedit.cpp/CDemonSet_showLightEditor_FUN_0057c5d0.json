@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 20,
-        "line": 93,
+        "line": 98,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 818,
-    "complexity_score": 364,
+    "complexity_score": 369,
     "cross_reference_count": 1,
     "function_call_count": 32,
     "global_count": 41,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 299,
+    "pseudocode_lines": 304,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 1117
+    "total_lines": 1122
   },
   "cross_references": [
     {
@@ -526,105 +526,98 @@
         "name": "local_fd8",
         "offset": -4056,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_fd4",
         "offset": -4052,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_c2c",
         "offset": -3116,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_884",
         "offset": -2180,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_4dc",
         "offset": -1244,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_134",
         "offset": -308,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_133",
-        "offset": -307,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -655,15 +648,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 71,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "((char *)(*(int *)((int)g_MasterLightList + local_18) + 0x40),iVar8,iVar5);",
+      "text": "((char *)(*(int *)((int)g_MasterLightList + local_18) + 0x40),iVar6,iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 91,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_MasterLightList + local_20) + 0x40);",
@@ -671,34 +664,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 148,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)g_MasterLightList + iVar7);",
+      "text": "piVar2 = (int *)((int)g_MasterLightList + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 169,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)g_MasterLightList + iVar7);",
+      "text": "piVar2 = (int *)((int)g_MasterLightList + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 218,
+      "line": 223,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)g_MasterLightList + iVar7);",
+      "text": "piVar1 = (int *)((int)g_MasterLightList + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 238,
+      "line": 243,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)g_MasterLightList + iVar7);",
+      "text": "piVar2 = (int *)((int)g_MasterLightList + iVar4);",
       "type": "pointer_cast"
     }
   ]

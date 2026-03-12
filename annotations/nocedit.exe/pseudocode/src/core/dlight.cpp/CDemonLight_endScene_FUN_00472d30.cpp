@@ -9,11 +9,12 @@
 void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this_ptr)
 
 {
-  ushort uVar1;
+  int iVar1;
   ushort *puVar2;
   int iVar3;
   CDemonLight *pCVar4;
   ushort uVar5;
+  ushort uVar1;
   
   if ((this_ptr->base).scene_open_flag == 0) {
     g_CurrentFilename = "..\\core\\dlight.cpp";
@@ -35,14 +36,14 @@ void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this
   }
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr2,0);
   engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
-  iVar3 = 0;
+  iVar1 = 0;
   pCVar4 = this_ptr;
   if (0 < this_ptr->shadow_map_height) {
     do {
-      g_ScreenBufferArray[iVar3] = pCVar4->saved_screen_buffer_rows[0];
-      iVar3 = iVar3 + 1;
+      g_ScreenBufferArray[iVar1] = pCVar4->saved_screen_buffer_rows[0];
+      iVar1 = iVar1 + 1;
       pCVar4 = (CDemonLight *)&(pCVar4->base).base.position;
-    } while (iVar3 < this_ptr->shadow_map_height);
+    } while (iVar1 < this_ptr->shadow_map_height);
   }
   core_dcamera_cpp_CDemonCamera_resetSceneCamera_FUN_0044c410(&this_ptr->base);
   (this_ptr->base).scene_open_flag = 0;

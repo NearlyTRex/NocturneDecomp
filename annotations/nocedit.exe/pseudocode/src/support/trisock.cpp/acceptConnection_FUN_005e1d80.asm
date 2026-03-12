@@ -8,8 +8,9 @@
 ; SNetworkAddr *   Stack[0x8]:4   client_addr
 ; _SOCKET *        Stack[0xc]:4   new_socket
 ; Local Variables:
-; undefined        Stack[-0x20]:1  local_20
-; undefined4       Stack[-0x8]:4  local_8
+; SOCKADDR         Stack[-0x20]:16  local_20
+; SNetworkAddr     Stack[-0x10]:8  SStack_10
+; int              Stack[-0x8]:4  local_8
 ;
 ; Called Functions:
 ;   crt_wsock32.c_accept

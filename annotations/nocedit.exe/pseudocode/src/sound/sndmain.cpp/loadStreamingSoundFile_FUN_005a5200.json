@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 108,
+        "line": 112,
         "message": "no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 267,
-    "complexity_score": 179,
+    "complexity_score": 183,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 17,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 119,
+    "pseudocode_lines": 123,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function"
     ],
-    "total_lines": 386
+    "total_lines": 390
   },
   "cross_references": [],
   "function": {
@@ -274,15 +274,15 @@
         "is_param": false,
         "name": "local_114",
         "offset": -276,
-        "size": 1,
-        "type": "undefined"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CSfxSample *"
       },
       {
         "is_param": true,
@@ -311,34 +311,34 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 85,
       "match": "ROUND",
       "severity": "mild",
-      "text": "sfx_sample->streaming_buffer_size = (int)ROUND(ROUND(fVar2));",
+      "text": "local_14->streaming_buffer_size = (int)ROUND(ROUND(fVar2));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 85,
       "match": "ROUND",
       "severity": "mild",
-      "text": "sfx_sample->streaming_buffer_size = (int)ROUND(ROUND(fVar2));",
+      "text": "local_14->streaming_buffer_size = (int)ROUND(ROUND(fVar2));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
+      "line": 116,
       "match": "ROUND",
       "severity": "mild",
-      "text": "sfx_sample->streaming_buffer_size = (int)ROUND(ROUND(fVar2));",
+      "text": "local_14->streaming_buffer_size = (int)ROUND(ROUND(fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
+      "line": 116,
       "match": "ROUND",
       "severity": "mild",
-      "text": "sfx_sample->streaming_buffer_size = (int)ROUND(ROUND(fVar2));",
+      "text": "local_14->streaming_buffer_size = (int)ROUND(ROUND(fVar5));",
       "type": "decompiler_intrinsic"
     }
   ]

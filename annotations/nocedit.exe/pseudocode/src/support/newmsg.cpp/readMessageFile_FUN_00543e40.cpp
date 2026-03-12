@@ -9,25 +9,31 @@
 void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
 
 {
-  char cVar1;
-  uint uVar2;
+  char cVar2;
+  int iVar4;
   int iVar3;
   _FILE *file_handle;
   long lVar4;
+  long lVar5;
+  int iVar6;
   int iVar5;
   char (*pacVar6) [256];
   int iVar7;
   int iVar8;
   char (*pacVar9) [128];
   char *pcVar10;
+  char *pcVar7;
   int iVar11;
   char *pcVar12;
+  char *pcVar8;
   char local_31c [256];
   char local_21c [256];
   char local_11c [256];
   int local_1c;
   int local_18;
   int local_14;
+  char cVar1;
+  uint uVar2;
   
   local_1c = 0;
   iVar3 = engine_dosio_c_getFileSize_FUN_00481880(&s_EmptyChar_0063e145,message_file);
@@ -52,38 +58,38 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
   _fscanf(file_handle,"\"%[^\"]\"\n",g_OSFontName);
   do {
     _fscanf(file_handle," ");
-    lVar4 = _ftell(file_handle);
-    if (local_18 <= lVar4) {
+    lVar5 = _ftell(file_handle);
+    if (local_18 <= lVar5) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\support\\newmsg.cpp",0x72);
       if (0 < g_LocalizedStringCount) {
         pacVar9 = g_MessageKeyStorage;
         pacVar6 = g_MessageTextStorage;
         iVar7 = g_LocalizedStringCount * 4;
-        iVar3 = 0;
+        iVar6 = 0;
         do {
-          *(char (**) [128])((int)g_MessageKeys + iVar3) = pacVar9;
-          *(char (**) [256])((int)g_MessageTexts + iVar3) = pacVar6;
-          iVar3 = iVar3 + 4;
+          *(char (**) [128])((int)g_MessageKeys + iVar6) = pacVar9;
+          *(char (**) [256])((int)g_MessageTexts + iVar6) = pacVar6;
+          iVar6 = iVar6 + 4;
           pacVar6 = pacVar6 + 1;
           pacVar9 = pacVar9 + 1;
-        } while (iVar3 < iVar7);
+        } while (iVar6 < iVar7);
       }
       local_14 = 0;
-      for (iVar3 = 0; iVar7 = local_14, iVar3 < g_LocalizedStringCount + -1; iVar3 = iVar3 + 1) {
-        iVar11 = iVar3 + 1;
+      for (iVar6 = 0; iVar4 = local_14, iVar6 < g_LocalizedStringCount + -1; iVar6 = iVar6 + 1) {
+        iVar11 = iVar6 + 1;
         if (iVar11 < g_LocalizedStringCount) {
           iVar8 = iVar11 * 4;
           do {
             iVar5 = _strcmp
-                              (*(char **)((int)g_MessageKeys + iVar7),
+                              (*(char **)((int)g_MessageKeys + iVar4),
                                *(char **)((int)g_MessageKeys + iVar8));
             if (0 < iVar5) {
-              uVar2 = *(uint *)((int)g_MessageKeys + iVar7);
-              *(uint *)((int)g_MessageKeys + iVar7) =
+              uVar2 = *(uint *)((int)g_MessageKeys + iVar4);
+              *(uint *)((int)g_MessageKeys + iVar4) =
                    *(uint *)((int)g_MessageKeys + iVar8);
               *(uint *)((int)g_MessageKeys + iVar8) = uVar2;
-              uVar2 = *(uint *)((int)g_MessageTexts + iVar7);
-              *(uint *)((int)g_MessageTexts + iVar7) =
+              uVar2 = *(uint *)((int)g_MessageTexts + iVar4);
+              *(uint *)((int)g_MessageTexts + iVar4) =
                    *(uint *)((int)g_MessageTexts + iVar8);
               *(uint *)((int)g_MessageTexts + iVar8) = uVar2;
             }
@@ -96,8 +102,8 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
       g_LocalizationLoaded = 1;
       return;
     }
-    iVar3 = _fscanf(file_handle,"\"%[^\"]\", \"%[^\"]\"\n",local_21c,local_11c);
-    if (iVar3 != 2) {
+    iVar6 = _fscanf(file_handle,"\"%[^\"]\", \"%[^\"]\"\n",local_21c,local_11c);
+    if (iVar6 != 2) {
       g_CurrentFilename = "..\\support\\newmsg.cpp";
       g_CurrentLineNumber = 0x65;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Error reading %s",message_file);
@@ -111,24 +117,24 @@ void __cdecl support_newmsg_cpp_readMessageFile_FUN_00543e40(char *message_file)
     pcVar12 = g_MessageKeyStorage[g_LocalizedStringCount];
     do {
       cVar1 = *pcVar10;
-      *pcVar12 = cVar1;
+      (*(char (*) [128])pcVar12)[0] = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar10[1];
+      cVar2 = pcVar10[1];
       pcVar10 = pcVar10 + 2;
-      pcVar12[1] = cVar1;
-      pcVar12 = pcVar12 + 2;
-    } while (cVar1 != '\0');
-    pcVar10 = local_11c;
-    pcVar12 = g_MessageTextStorage[g_LocalizedStringCount];
+      (*(char (*) [128])pcVar12)[1] = cVar2;
+      pcVar12 = *(char (*) [128])pcVar12 + 2;
+    } while (cVar2 != '\0');
+    pcVar7 = local_11c;
+    pcVar8 = g_MessageTextStorage[g_LocalizedStringCount];
     do {
-      cVar1 = *pcVar10;
-      *pcVar12 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar10[1];
-      pcVar10 = pcVar10 + 2;
-      pcVar12[1] = cVar1;
-      pcVar12 = pcVar12 + 2;
-    } while (cVar1 != '\0');
+      cVar2 = *pcVar7;
+      *pcVar8 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar7[1];
+      pcVar7 = pcVar7 + 2;
+      pcVar8[1] = cVar2;
+      pcVar8 = pcVar8 + 2;
+    } while (cVar2 != '\0');
     g_LocalizedStringCount = g_LocalizedStringCount + 1;
   } while( true );
 }

@@ -9,7 +9,8 @@
 ; CVector3f *      Stack[0xc]:4   end
 ; SDamageInfo *    Stack[0x10]:4   damage_info
 ; Local Variables:
-; undefined        Stack[-0x20]:1  local_20
+; CVector3f        Stack[-0x20]:12  local_20
+; int              Stack[-0x14]:4  iStack_14
 ;
 ; XREF[1]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c803

@@ -9,35 +9,37 @@
 int __cdecl shape_edittool_cpp_CStrList_findByFirstField_FUN_004a3070(CStrList *this_ptr,char *search_field)
 
 {
-  char cVar1;
+  char cVar2;
   char *pcVar2;
   int iVar3;
+  char *pcVar3;
   char *pcVar4;
   int index;
   char local_19c [200];
   char local_d4 [200];
+  char cVar1;
   
-  pcVar2 = local_d4;
+  pcVar3 = local_d4;
   cVar1 = *search_field;
   while ((cVar1 != '\0' && (*search_field != '\t'))) {
-    cVar1 = *search_field;
+    cVar2 = *search_field;
     search_field = search_field + 1;
-    *pcVar2 = cVar1;
+    *pcVar3 = cVar2;
     cVar1 = *search_field;
-    pcVar2 = pcVar2 + 1;
+    pcVar3 = pcVar3 + 1;
   }
-  *pcVar2 = '\0';
+  *pcVar3 = '\0';
   index = 0;
   if (0 < this_ptr->item_count) {
     do {
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,index);
-      cVar1 = *pcVar2;
+      cVar2 = *pcVar2;
       pcVar4 = local_19c;
-      while ((cVar1 != '\0' && (*pcVar2 != '\t'))) {
-        cVar1 = *pcVar2;
+      while ((cVar2 != '\0' && (*pcVar2 != '\t'))) {
+        cVar2 = *pcVar2;
         pcVar2 = pcVar2 + 1;
-        *pcVar4 = cVar1;
-        cVar1 = *pcVar2;
+        *pcVar4 = cVar2;
+        cVar2 = *pcVar2;
         pcVar4 = pcVar4 + 1;
       }
       *pcVar4 = '\0';

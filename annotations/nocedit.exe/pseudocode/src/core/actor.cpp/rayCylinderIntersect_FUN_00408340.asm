@@ -31,10 +31,7 @@
 ; undefined8       Stack[-0x70]:8  local_70
 ; undefined4       Stack[-0x68]:4  local_68
 ; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f[7]     Stack[-0x60]:84  local_60
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 at 0040969a

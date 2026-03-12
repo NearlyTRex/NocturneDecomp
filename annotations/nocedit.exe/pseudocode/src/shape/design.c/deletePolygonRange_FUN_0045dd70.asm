@@ -4,11 +4,11 @@
 ; void __cdecl shape_design_c_deletePolygonRange_FUN_0045dd70(void)
 ;
 ; Local Variables:
-; undefined        Stack[-0x70]:1  local_70
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x70]:80  local_70
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Polygon_range_s_to_delet_0061b45f

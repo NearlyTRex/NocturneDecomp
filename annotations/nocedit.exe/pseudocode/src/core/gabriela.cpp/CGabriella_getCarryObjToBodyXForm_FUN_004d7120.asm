@@ -7,31 +7,27 @@
 ; CGabriella *     Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   hand_index
 ; Local Variables:
-; undefined1       Stack[-0x160]:1  local_160
-; undefined4       Stack[-0x154]:4  local_154
-; undefined4       Stack[-0x144]:4  local_144
-; undefined4       Stack[-0x134]:4  local_134
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined1       Stack[-0x70]:1  local_70
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; CMatrix3x4f      Stack[-0x190]:48  CStack_190
+; CMatrix3x4f      Stack[-0x160]:48  local_160
+; CMatrix3x4f      Stack[-0x130]:48  CStack_130
+; CMatrix3x4f      Stack[-0x100]:48  CStack_100
+; CMatrix3x4f      Stack[-0xd0]:48  CStack_d0
+; CBoundingBox3D   Stack[-0xa0]:24  local_a0
+; CVector3f        Stack[-0x88]:12  CStack_88
+; CVector3f        Stack[-0x7c]:12  local_7c
+; CVector3f        Stack[-0x70]:12  local_70
+; CVector3f        Stack[-0x64]:12  local_64
+; CVector3f        Stack[-0x58]:12  local_58
+; CVector3f        Stack[-0x4c]:12  CStack_4c
+; float            Stack[-0x40]:4  local_40
+; float            Stack[-0x3c]:4  local_3c
+; float            Stack[-0x38]:4  local_38
+; CVector3f        Stack[-0x34]:12  local_34
+; float            Stack[-0x28]:4  fStack_28
+; float            Stack[-0x24]:4  fStack_24
+; float            Stack[-0x20]:4  fStack_20
+; CVector3f        Stack[-0x1c]:12  local_1c
+; int              Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_gabriela_cpp_0062b10d

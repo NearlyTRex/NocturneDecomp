@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 75,
-        "line": 184,
+        "line": 195,
         "message": "format specifies type 'char *' but the argument has type 'CSuccubus *' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 233,
+        "line": 242,
         "message": "assigning to 'CHotDemon *' from incompatible type 'void *'"
       }
     ],
@@ -19,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 628,
-    "complexity_score": 354,
+    "complexity_score": 363,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 299,
+    "pseudocode_lines": 308,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 927
+    "total_lines": 936
   },
   "cross_references": [],
   "function": {
@@ -376,141 +376,113 @@
         "is_param": false,
         "name": "local_68",
         "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMotion *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CHotDemon *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -547,18 +519,18 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 99,
+      "line": 110,
       "match": "SQRT",
       "severity": "mild",
-      "text": "if (SQRT(local_30 * local_30 + local_38 * local_38 + local_34 * local_34) <",
+      "text": "if (SQRT(fVar11 * fVar11 + fVar4 * fVar4 + fVar10 * fVar10) <",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
+      "line": 157,
       "match": "SQRT",
       "severity": "mild",
-      "text": "SQRT(fVar7 * fVar7 + fVar18 * fVar18 + fVar19 * fVar19) < 15.0f)) &&",
+      "text": "SQRT(fVar7 * fVar7 + fVar4 * fVar4 + fVar10 * fVar10) < 15.0f)) &&",
       "type": "decompiler_intrinsic"
     }
   ],

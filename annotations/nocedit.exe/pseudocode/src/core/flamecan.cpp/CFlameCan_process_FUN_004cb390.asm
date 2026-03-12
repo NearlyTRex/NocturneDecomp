@@ -7,7 +7,16 @@
 ; CFlameCan *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x40]:1  local_40
+; CBoundingBox3D   Stack[-0x40]:24  local_40
+; float            Stack[-0x28]:4  fStack_28
+; float            Stack[-0x24]:4  fStack_24
+; float            Stack[-0x20]:4  fStack_20
+; float            Stack[-0x1c]:4  fStack_1c
+; float            Stack[-0x18]:4  fStack_18
+; float            Stack[-0x14]:4  fStack_14
+; float            Stack[-0x10]:4  fStack_10
+; float            Stack[-0xc]:4  fStack_c
+; float            Stack[-0x8]:4  fStack_8
 ;
 ; Referenced Globals:
 ;   float FLOAT_0062a2e8 = 0.5

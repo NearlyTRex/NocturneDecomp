@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   text
 ; int              Stack[0xc]:4   update_cursor
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char *           Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_script.cpp_CScript_editorAction_FUN_00564820 at 00564bc0

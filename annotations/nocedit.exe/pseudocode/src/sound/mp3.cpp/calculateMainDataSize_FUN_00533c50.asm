@@ -6,7 +6,7 @@
 ; Parameters:
 ; SMpegFrame       Stack[0x4]:28   frame_info
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
+; int              Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:

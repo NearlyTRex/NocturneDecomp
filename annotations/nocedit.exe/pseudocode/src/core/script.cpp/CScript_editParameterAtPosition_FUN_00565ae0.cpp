@@ -9,112 +9,117 @@
 void __cdecl core_script_cpp_CScript_editParameterAtPosition_FUN_00565ae0(CScript *this_ptr,int column,int line)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
+  int iVar3;
   char *input_text;
   uint uVar3;
   uint uVar4;
   char *pcVar5;
+  char *pcVar4;
   char *pcVar6;
   char *pcVar7;
+  char *pcVar8;
+  char *pcVar9;
   byte bVar8;
-  CCmdParm *parm_out;
   CCmdParse *parse_out;
   CCmdParse CStack_2a38;
   CCmdParm local_910;
   char local_5e8 [500];
   char local_3f4 [500];
   char local_200 [500];
+  char cVar1;
+  CCmdParm *parm_out;
   
   bVar8 = 0;
   if (-1 < line) {
     iVar2 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text);
     if (line < iVar2) {
-      iVar2 = core_script_cpp_CScript_editorX2Index_FUN_00566a90(this_ptr,line,column);
+      iVar3 = core_script_cpp_CScript_editorX2Index_FUN_00566a90(this_ptr,line,column);
       parse_out = &CStack_2a38;
       parm_out = &local_910;
-      pcVar5 = local_5e8;
-      pcVar6 = local_3f4;
-      pcVar7 = local_200;
+      pcVar4 = local_5e8;
+      pcVar8 = local_3f4;
+      pcVar9 = local_200;
       input_text = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&this_ptr->script_text,line)
       ;
-      iVar2 = core_script_cpp_parseCommandWithDefaultTemplates_FUN_00561c70
-                        (input_text,pcVar7,pcVar6,pcVar5,iVar2,parm_out,parse_out);
-      if (0 < iVar2) {
-        iVar2 = core_script_cpp_editParameterValue_FUN_00562920
-                          (local_3f4,iVar2,&local_910,(char *)&CStack_2a38);
-        if (iVar2 != 0) {
+      iVar3 = core_script_cpp_parseCommandWithDefaultTemplates_FUN_00561c70
+                        (input_text,pcVar9,pcVar8,pcVar4,iVar3,parm_out,parse_out);
+      if (0 < iVar3) {
+        iVar3 = core_script_cpp_editParameterValue_FUN_00562920
+                          (local_3f4,iVar3,&local_910,(char *)&CStack_2a38);
+        if (iVar3 != 0) {
           pcVar5 = local_200;
           pcVar6 = g_CurrentLineBuffer + 1;
           do {
             cVar1 = *pcVar5;
             *pcVar6 = cVar1;
             if (cVar1 == '\0') break;
-            cVar1 = pcVar5[1];
+            cVar2 = pcVar5[1];
             pcVar5 = pcVar5 + 2;
-            pcVar6[1] = cVar1;
+            pcVar6[1] = cVar2;
             pcVar6 = pcVar6 + 2;
-          } while (cVar1 != '\0');
-          pcVar5 = local_3f4;
-          iVar2 = -1;
-          pcVar6 = g_CurrentLineBuffer + 1;
+          } while (cVar2 != '\0');
+          pcVar4 = local_3f4;
+          iVar3 = -1;
+          pcVar7 = g_CurrentLineBuffer + 1;
           do {
-            pcVar7 = pcVar6;
-            if (iVar2 == 0) break;
-            iVar2 = iVar2 + -1;
-            pcVar7 = pcVar6 + (uint)bVar8 * -2 + 1;
-            cVar1 = *pcVar6;
-            pcVar6 = pcVar7;
-          } while (cVar1 != '\0');
-          pcVar7 = pcVar7 + -1;
+            pcVar7 = pcVar7;
+            if (iVar3 == 0) break;
+            iVar3 = iVar3 + -1;
+            pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
+            cVar2 = *pcVar7;
+            pcVar7 = pcVar7;
+          } while (cVar2 != '\0');
+          pcVar8 = pcVar7 + -1;
           do {
-            cVar1 = *pcVar5;
-            *pcVar7 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar5[1];
-            pcVar5 = pcVar5 + 2;
-            pcVar7[1] = cVar1;
-            pcVar7 = pcVar7 + 2;
-          } while (cVar1 != '\0');
-          pcVar5 = local_5e8;
-          iVar2 = -1;
-          pcVar6 = g_CurrentLineBuffer + 1;
+            cVar2 = *pcVar4;
+            *pcVar8 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar4[1];
+            pcVar4 = pcVar4 + 2;
+            pcVar8[1] = cVar2;
+            pcVar8 = pcVar8 + 2;
+          } while (cVar2 != '\0');
+          pcVar4 = local_5e8;
+          iVar3 = -1;
+          pcVar8 = g_CurrentLineBuffer + 1;
           do {
-            pcVar7 = pcVar6;
-            if (iVar2 == 0) break;
-            iVar2 = iVar2 + -1;
-            pcVar7 = pcVar6 + (uint)bVar8 * -2 + 1;
-            cVar1 = *pcVar6;
-            pcVar6 = pcVar7;
-          } while (cVar1 != '\0');
-          pcVar7 = pcVar7 + -1;
+            pcVar9 = pcVar8;
+            if (iVar3 == 0) break;
+            iVar3 = iVar3 + -1;
+            pcVar9 = pcVar8 + (uint)bVar8 * -2 + 1;
+            cVar2 = *pcVar8;
+            pcVar8 = pcVar9;
+          } while (cVar2 != '\0');
+          pcVar9 = pcVar9 + -1;
           do {
-            cVar1 = *pcVar5;
-            *pcVar7 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar5[1];
-            pcVar5 = pcVar5 + 2;
-            pcVar7[1] = cVar1;
-            pcVar7 = pcVar7 + 2;
-          } while (cVar1 != '\0');
+            cVar2 = *pcVar4;
+            *pcVar9 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar4[1];
+            pcVar4 = pcVar4 + 2;
+            pcVar9[1] = cVar2;
+            pcVar9 = pcVar9 + 2;
+          } while (cVar2 != '\0');
           core_script_cpp_CScript_editorPutLine_FUN_005662a0(this_ptr,line);
           g_CurrentEditingLine = line;
           uVar3 = 0xffffffff;
-          pcVar5 = local_200;
+          pcVar4 = local_200;
           do {
             if (uVar3 == 0) break;
             uVar3 = uVar3 - 1;
-            cVar1 = *pcVar5;
-            pcVar5 = pcVar5 + (uint)bVar8 * -2 + 1;
-          } while (cVar1 != '\0');
+            cVar2 = *pcVar4;
+            pcVar4 = pcVar4 + (uint)bVar8 * -2 + 1;
+          } while (cVar2 != '\0');
           uVar4 = 0xffffffff;
-          pcVar5 = local_3f4;
+          pcVar4 = local_3f4;
           do {
             if (uVar4 == 0) break;
             uVar4 = uVar4 - 1;
-            cVar1 = *pcVar5;
-            pcVar5 = pcVar5 + (uint)bVar8 * -2 + 1;
-          } while (cVar1 != '\0');
+            cVar2 = *pcVar4;
+            pcVar4 = pcVar4 + (uint)bVar8 * -2 + 1;
+          } while (cVar2 != '\0');
           g_CurrentEditingColumn =
                core_script_cpp_CScript_editorIndex2X_FUN_00566b30
                          (this_ptr,line,~uVar4 + (~uVar3 - 2));

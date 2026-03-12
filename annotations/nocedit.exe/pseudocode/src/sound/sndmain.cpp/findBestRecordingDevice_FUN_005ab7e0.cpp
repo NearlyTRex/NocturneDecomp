@@ -11,6 +11,7 @@ int __cdecl sound_sndmain_cpp_findBestRecordingDevice_FUN_005ab7e0(void)
 {
   int iVar1;
   int iVar2;
+  int index;
   SRecordingDeviceInfo SStack_218;
   SRecordingDeviceInfo local_110;
   
@@ -28,15 +29,15 @@ int __cdecl sound_sndmain_cpp_findBestRecordingDevice_FUN_005ab7e0(void)
       iVar2 = iVar2 + 1;
     } while (iVar2 < iVar1);
   }
-  iVar2 = 0;
+  index = 0;
   if (0 < iVar1) {
     do {
-      sound_sndmain_cpp_getRecordingDeviceInfo_FUN_005ab780(iVar2,&SStack_218);
+      sound_sndmain_cpp_getRecordingDeviceInfo_FUN_005ab780(index,&SStack_218);
       if (SStack_218.api_type == 0) {
-        return iVar2;
+        return index;
       }
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < iVar1);
+      index = index + 1;
+    } while (index < iVar1);
   }
   return 0;
 }

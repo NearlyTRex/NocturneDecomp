@@ -9,32 +9,35 @@
 int __cdecl parseFloatString(char *str,void *result,char **endptr)
 
 {
-  byte bVar1;
-  bool bVar2;
-  bool bVar3;
-  bool bVar4;
-  bool bVar5;
+  byte bVar6;
+  bool bVar7;
   byte *pbVar6;
   byte *pbVar7;
   byte bVar8;
   int iVar9;
   int iVar10;
+  int iVar8;
   int iVar11;
   uint uStackY_44;
-  byte *in_stack_ffffffc0;
-  ulonglong *in_stack_ffffffc4;
   uint local_2c;
   uint local_28;
   ushort local_24;
   byte *local_20;
+  byte bVar1;
+  ulonglong *in_stack_ffffffc4;
+  byte *in_stack_ffffffc0;
+  bool bVar2;
+  bool bVar4;
+  bool bVar3;
+  bool bVar5;
   
   local_20 = (byte *)str;
-  for (; (bVar8 = *str, bVar8 == 0x20 || ((8 < bVar8 && (bVar8 < 0xe))));
+  for (; (bVar6 = *str, bVar6 == 0x20 || ((8 < bVar6 && (bVar6 < 0xe))));
       str = (char *)((byte *)str + 1)) {
   }
   bVar5 = false;
   pbVar6 = (byte *)str + 1;
-  if ((bVar8 != 0x2b) && (pbVar6 = (byte *)str, bVar8 == 0x2d)) {
+  if ((bVar6 != 0x2b) && (pbVar6 = (byte *)str, bVar6 == 0x2d)) {
     bVar5 = true;
     pbVar6 = (byte *)str + 1;
   }
@@ -75,43 +78,43 @@ LAB_00605c23:
       bVar4 = true;
       local_20 = pbVar6 + 2;
     }
-    bVar2 = false;
-    for (; (bVar8 = *local_20, 0x2f < bVar8 && (bVar8 < 0x3a)); local_20 = local_20 + 1) {
+    bVar7 = false;
+    for (; (bVar6 = *local_20, 0x2f < bVar6 && (bVar6 < 0x3a)); local_20 = local_20 + 1) {
       if (iVar10 < 1000) {
-        iVar10 = (uint)bVar8 + iVar10 * 10 + -0x30;
+        iVar10 = (uint)bVar6 + iVar10 * 10 + -0x30;
       }
-      bVar2 = true;
+      bVar7 = true;
     }
     if (bVar4) {
       iVar10 = -iVar10;
     }
-    if (!bVar2) {
+    if (!bVar7) {
       local_20 = pbVar6;
     }
   }
   if (endptr != (char **)0x0) {
     *endptr = (char *)local_20;
   }
-  iVar10 = iVar10 - iVar11;
+  iVar8 = iVar10 - iVar11;
   if (0x13 < iVar9) {
-    iVar10 = iVar10 + iVar9 + -0x13;
+    iVar8 = iVar8 + iVar9 + -0x13;
     iVar9 = 0x13;
   }
   for (; (0 < iVar9 && (*(char *)((int)&uStackY_44 + iVar9 + 3) == '0')); iVar9 = iVar9 + -1) {
-    iVar10 = iVar10 + 1;
+    iVar8 = iVar8 + 1;
   }
   if (iVar9 == 0) {
     *(ushort *)((int)result + 8) = 0;
     *(uint *)((int)result + 4) = 0;
     *(uint *)result = 0;
-    iVar9 = 0;
+    iVar8 = 0;
   }
   else {
     (&stack0xffffffc0)[iVar9] = 0;
     uStackY_44 = 0x605d00;
     FUN_0060b586(in_stack_ffffffc0,in_stack_ffffffc4);
-    if (iVar10 != 0) {
-      uStackY_44 = iVar10;
+    if (iVar8 != 0) {
+      uStackY_44 = iVar8;
       FUN_00603d60();
     }
     if (bVar5) {
@@ -120,18 +123,18 @@ LAB_00605c23:
     *(ushort *)((int)result + 8) = local_24;
     *(uint *)((int)result + 4) = local_28;
     *(uint *)result = local_2c;
-    iVar9 = iVar10 + -1 + iVar9;
-    if (iVar9 < 0x135) {
-      if (iVar9 < -0x134) {
-        iVar9 = 2;
+    iVar8 = iVar8 + -1 + iVar9;
+    if (iVar8 < 0x135) {
+      if (iVar8 < -0x134) {
+        iVar8 = 2;
       }
       else {
-        iVar9 = 1;
+        iVar8 = 1;
       }
     }
     else {
-      iVar9 = 3;
+      iVar8 = 3;
     }
   }
-  return iVar9;
+  return iVar8;
 }

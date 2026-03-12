@@ -11,15 +11,18 @@
 int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_ptr,double coplanar_threshold,CPoly *search_polygon)
 
 {
-  CVert *point;
+  CVert *point_00;
   int iVar1;
+  int iVar2;
   int *piVar2;
   CPoly *other;
   CPoly *pCVar3;
   CP3D *pCVar4;
   uint uVar5;
+  uint uVar3;
   uint *puVar6;
   int *piVar7;
+  CPoly *this_ptr_00;
   uint *puVar8;
   byte bVar9;
   uint local_58;
@@ -35,6 +38,7 @@ int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_
   uint local_1c;
   CPoly *local_18;
   CP3D *local_14;
+  CVert *point;
   
   bVar9 = 0;
   if (search_polygon == (CPoly *)0x0) {
@@ -62,30 +66,33 @@ int __cdecl shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800(CObj *this_
           (pCVar4->impl).z * (search_polygon->normal).impl.z +
           (pCVar4->impl).x * (local_24->impl).x + (pCVar4->impl).y * (search_polygon->normal).impl.y
          )) {
-        local_28 = 0xffffffff;
+        local_28 = -1;
         if ((((*piVar7 == search_polygon->vertex_idx_1) && (piVar7[1] == *piVar2)) ||
             ((*piVar7 == search_polygon->vertex_idx_2 && (piVar7[1] == search_polygon->vertex_idx_1)
              ))) || ((*piVar7 == *piVar2 && (piVar7[1] == search_polygon->vertex_idx_2)))) {
           local_28 = 2;
 LAB_005d59af:
-          point = this_ptr->vertex_data + *(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);
+          point_00 = this_ptr->vertex_data +
+                     *(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);
           local_14 = &search_polygon->normal;
           shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0
-                    (&point->position,&this_ptr->vertex_data[search_polygon->vertex_idx_0].position,
-                     &local_14->impl);
+                    (&point_00->position,
+                     &this_ptr->vertex_data[search_polygon->vertex_idx_0].position,&local_14->impl);
           puVar6 = local_40;
           puVar8 = &local_58;
-          for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *puVar8 = *puVar6;
-            puVar6 = puVar6 + (uint)bVar9 * -2 + 1;
+          for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
             puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
+            puVar6 = puVar6 + (uint)bVar9 * -2 + 1;
+            *puVar8 = *puVar6;
+            puVar6 = puVar6;
+            puVar8 = puVar8;
           }
-          *(uint *)&(point->position).x = local_58;
-          *(uint *)((int)&(point->position).x + 4) = local_54;
-          *(uint *)&(point->position).y = local_50;
-          *(uint *)((int)&(point->position).y + 4) = local_4c;
-          *(uint *)&(point->position).z = local_48;
-          *(uint *)((int)&(point->position).z + 4) = local_44;
+          *(uint *)&(point_00->position).x = local_58;
+          *(uint *)((int)&(point_00->position).x + 4) = local_54;
+          *(uint *)&(point_00->position).y = local_50;
+          *(uint *)((int)&(point_00->position).y + 4) = local_4c;
+          *(uint *)&(point_00->position).z = local_48;
+          *(uint *)((int)&(point_00->position).z + 4) = local_44;
           (local_18->normal).impl.x = (local_14->impl).x;
           *(uint *)&(local_18->normal).impl.y = *(uint *)&(local_14->impl).y;
           *(uint *)((int)&(local_18->normal).impl.y + 4) =
@@ -93,8 +100,8 @@ LAB_005d59af:
           *(uint *)&(local_18->normal).impl.z = *(uint *)&(local_14->impl).z;
           *(uint *)((int)&(local_18->normal).impl.z + 4) =
                *(uint *)((int)&(local_14->impl).z + 4);
-          iVar1 = (*this_ptr->vtable->findCoplanarPolygon)(this_ptr,coplanar_threshold,local_18);
-          return iVar1;
+          iVar2 = (*this_ptr->vtable->findCoplanarPolygon)(this_ptr,coplanar_threshold,local_18);
+          return iVar2;
         }
         if ((piVar7[1] == search_polygon->vertex_idx_2) &&
            (piVar7[2] == search_polygon->vertex_idx_1)) {
@@ -124,45 +131,45 @@ LAB_005d59af:
         }
       }
       local_18 = local_18 + 1;
-      pCVar4 = (CP3D *)((int)(pCVar4 + 4) + 8);
+      pCVar4 = (CP3D *)&pCVar4[4].impl.y;
       piVar7 = piVar7 + 0x1a;
       local_20 = local_20 + 1;
     } while (local_20 < (uint)this_ptr->poly_count);
   }
   local_1c = 0;
-  pCVar3 = this_ptr->poly_array;
+  this_ptr_00 = this_ptr->poly_array;
   if (this_ptr->poly_count != 0) {
     do {
-      if ((pCVar3->flags & 0x2000) != 0) {
+      if ((this_ptr_00->flags & 0x2000) != 0) {
         uVar5 = 0;
         other = this_ptr->poly_array;
         if (this_ptr->poly_count != 0) {
           do {
             if (((other->flags & 0x2000) == 0) &&
-               (iVar1 = (*pCVar3->vtable->hasSharedEdge)(pCVar3,other), iVar1 != 0)) {
-              iVar1 = (*this_ptr->vtable->findCoplanarPolygon)(this_ptr,coplanar_threshold,other);
-              return iVar1;
+               (iVar2 = (*this_ptr_00->vtable->hasSharedEdge)(this_ptr_00,other), iVar2 != 0)) {
+              iVar2 = (*this_ptr->vtable->findCoplanarPolygon)(this_ptr,coplanar_threshold,other);
+              return iVar2;
             }
             uVar5 = uVar5 + 1;
             other = other + 1;
           } while (uVar5 < (uint)this_ptr->poly_count);
         }
       }
-      pCVar3 = pCVar3 + 1;
+      this_ptr_00 = this_ptr_00 + 1;
       local_1c = local_1c + 1;
     } while (local_1c < (uint)this_ptr->poly_count);
   }
-  uVar5 = 0;
+  uVar3 = 0;
   pCVar3 = this_ptr->poly_array;
   if (this_ptr->poly_count != 0) {
     do {
       if ((pCVar3->flags & 0x2000) == 0) {
-        iVar1 = (*this_ptr->vtable->findCoplanarPolygon)(this_ptr,coplanar_threshold,pCVar3);
-        return iVar1;
+        iVar2 = (*this_ptr->vtable->findCoplanarPolygon)(this_ptr,coplanar_threshold,pCVar3);
+        return iVar2;
       }
-      uVar5 = uVar5 + 1;
+      uVar3 = uVar3 + 1;
       pCVar3 = pCVar3 + 1;
-    } while (uVar5 < (uint)this_ptr->poly_count);
+    } while (uVar3 < (uint)this_ptr->poly_count);
   }
   return 1;
 }

@@ -9,21 +9,20 @@
 void __cdecl core_setedit_cpp_loadCameraThumbnail_FUN_005769a0(char *prefix,char *name,int thumbnail_index)
 
 {
-  SIZE_T SVar1;
   int iVar2;
   uint uVar3;
   _FILE *file;
+  void *buffer;
   int iVar4;
+  int iVar1;
   int iVar5;
   SIZE_T count;
+  int iVar3;
   int iVar6;
-  char *directory;
-  char *mode;
   char local_5c [16];
   char local_4c [16];
   _FILE *local_3c;
   SIZE_T local_38;
-  uint local_34;
   int local_30;
   SIZE_T local_2c;
   int local_28;
@@ -32,6 +31,9 @@ void __cdecl core_setedit_cpp_loadCameraThumbnail_FUN_005769a0(char *prefix,char
   SIZE_T local_1c;
   void *local_18;
   int local_14;
+  char *directory;
+  char *mode;
+  SIZE_T SVar1;
   
   if (0xf9 < thumbnail_index) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
@@ -70,41 +72,35 @@ void __cdecl core_setedit_cpp_loadCameraThumbnail_FUN_005769a0(char *prefix,char
         count = 0x100;
         local_2c = 0x100;
 LAB_00576b4f:
-        local_18 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                             (local_2c * count,"..\\core\\setedit.cpp",0x121);
-        if (local_18 == (void *)0x0) {
+        buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+                           (local_2c * count,"..\\core\\setedit.cpp",0x121);
+        if (buffer == (void *)0x0) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0x122;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
         }
-        SVar1 = local_2c;
-        _fread(local_18,local_2c,count,local_3c);
+        _fread(buffer,local_2c,count,local_3c);
         local_20 = 0;
-        local_30 = thumbnail_index * 0x3000;
-        local_28 = local_30 + 0x100;
-        local_1c = SVar1;
         local_24 = 0;
-        local_34 = 0;
+        local_28 = thumbnail_index * 0x3000;
         do {
-          iVar4 = 0;
-          local_14 = local_28;
-          iVar5 = local_30 + local_20 * 0x100;
+          local_28 = local_28 + 0x100;
+          iVar1 = 0;
+          iVar3 = thumbnail_index * 0x3000 + local_20 * 0x100;
           do {
-            iVar6 = iVar5 + 4;
-            *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5) =
+            iVar6 = iVar3 + 4;
+            *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar3) =
                  (uint)*(uint3 *)(g_ThumbnailPalette +
-                                 (uint)*(byte *)(((int)((iVar4 + (iVar4 >> 0x1f) * -0x40) -
-                                                       (uint)((iVar4 >> 0x1f) << 5 < 0)) >> 6) +
-                                                 local_2c * (local_24 / 0x30) + (int)local_18) * 3);
-            iVar4 = iVar4 + SVar1;
-            iVar5 = iVar6;
+                                 (uint)*(byte *)(((int)((iVar1 + (iVar1 >> 0x1f) * -0x40) -
+                                                       (uint)((iVar1 >> 0x1f) << 5 < 0)) >> 6) +
+                                                 local_2c * (local_24 / 0x30) + (int)buffer) * 3);
+            iVar1 = iVar1 + local_2c;
+            iVar3 = iVar6;
           } while (iVar6 != local_28);
           local_20 = local_20 + 1;
           local_24 = local_24 + count;
-          local_28 = local_28 + 0x100;
         } while (local_20 < 0x30);
-        local_38 = count;
-        shape_memdbg_cpp_debugFree_FUN_0050f460(local_18,"..\\core\\setedit.cpp",0x133);
+        shape_memdbg_cpp_debugFree_FUN_0050f460(buffer,"..\\core\\setedit.cpp",0x133);
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_3c,"..\\core\\setedit.cpp",0x134);
         return;
       }
@@ -142,11 +138,11 @@ LAB_00576a3d:
   iVar4 = thumbnail_index * 0x3000;
   do {
     iVar4 = iVar4 + 0x100;
-    iVar6 = iVar5 * 0x100 + thumbnail_index * 0x3000;
+    iVar2 = iVar5 * 0x100 + thumbnail_index * 0x3000;
     do {
-      iVar2 = iVar6 + 4;
-      *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar6) = 0xff00ff;
-      iVar6 = iVar2;
+      iVar2 = iVar2 + 4;
+      *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2) = 0xff00ff;
+      iVar2 = iVar2;
     } while (iVar2 != iVar4);
     iVar5 = iVar5 + 1;
   } while (iVar5 < 0x30);

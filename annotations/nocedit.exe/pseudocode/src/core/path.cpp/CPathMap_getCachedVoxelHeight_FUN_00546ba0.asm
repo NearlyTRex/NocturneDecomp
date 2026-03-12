@@ -9,9 +9,7 @@
 ; int              Stack[0xc]:4   grid_x
 ; int              Stack[0x10]:4   current_height
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; CVector3i        Stack[-0x18]:12  local_18
 ;
 ; XREF[4]:
 ;   core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90 at 00547060

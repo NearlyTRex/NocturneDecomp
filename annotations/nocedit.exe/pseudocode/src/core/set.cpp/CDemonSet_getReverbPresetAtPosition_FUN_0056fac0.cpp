@@ -18,10 +18,9 @@ float __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0(CDem
   
   iVar2 = 0;
   if (0 < this_ptr->room_count) {
-    local_18 = this_ptr->rooms;
     this_ptr_00 = &this_ptr->rooms[0].rotation_matrix;
     do {
-      pSVar1 = local_18 + iVar2;
+      pSVar1 = this_ptr->rooms + iVar2;
       local_24.x = position->x - (pSVar1->position).x;
       local_24.y = position->y - (pSVar1->position).y;
       local_24.z = position->z - (pSVar1->position).z;
@@ -32,7 +31,7 @@ float __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0056fac0(CDem
         return (float)pSVar1->reverb_size;
       }
       iVar2 = iVar2 + 1;
-      this_ptr_00 = (CMatrix3x3f *)((int)(this_ptr_00 + 1) + 0x20);
+      this_ptr_00 = (CMatrix3x3f *)&this_ptr_00[1].m[2].z;
     } while (iVar2 < this_ptr->room_count);
   }
   return (float)this_ptr->default_room_size;

@@ -10,14 +10,15 @@ void __cdecl reportStreamError(FileEmbeddedData *embedded_data,uint error_flags)
 
 {
   uint uVar1;
+  uint error_state;
   uint local_8;
   
   uVar1 = embedded_data->state_field | error_flags;
   embedded_data->state_field = uVar1;
-  uVar1 = uVar1 & embedded_data->error_mask;
-  if (uVar1 == 0) {
+  error_state = uVar1 & embedded_data->error_mask;
+  if (error_state == 0) {
     return;
   }
-  storeErrorState(&local_8,uVar1);
+  storeErrorState(&local_8,error_state);
   return;
 }

@@ -8,8 +8,7 @@
 ; char *           Stack[0x8]:4   output_buffer
 ; int              Stack[0xc]:4   max_length
 ; Local Variables:
-; undefined        Stack[-0x108]:1  local_108
-; undefined1       Stack[-0x107]:1  local_107
+; char[256]        Stack[-0x108]:256  local_108
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgets_FUN_005fefd0

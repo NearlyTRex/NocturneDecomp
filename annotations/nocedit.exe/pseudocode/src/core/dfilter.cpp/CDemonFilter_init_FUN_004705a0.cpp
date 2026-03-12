@@ -11,13 +11,14 @@
 void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_ptr,float init_value,int flags)
 
 {
-  float fVar1;
-  float fVar2;
+  float fVar3;
   int iVar3;
   int iVar4;
   int iVar5;
   float local_28;
   byte local_1c;
+  float fVar1;
+  float fVar2;
   
   if (flags == 0) {
     core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00470260(this_ptr);
@@ -35,15 +36,15 @@ void __cdecl core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_
           if (1.0 < local_28) {
             local_28 = 1.0;
           }
-          fVar1 = (1.0 - local_28) * init_value;
+          fVar3 = (1.0 - local_28) * init_value;
           if (flags == 0) {
-            fVar1 = fVar1 * (float)256 * (float)0.25;
+            fVar3 = fVar3 * (float)256 * (float)0.25;
           }
           else {
-            fVar1 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *
-                    fVar1;
+            fVar3 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *
+                    fVar3;
           }
-          local_1c = (byte)(int)ROUND(ROUND(fVar1));
+          local_1c = (byte)(int)ROUND(ROUND(fVar3));
           if (0x3f < local_1c) {
             local_1c = 0x3f;
           }

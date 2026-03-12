@@ -13,13 +13,17 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(C
   int iVar1;
   int *piVar2;
   int iVar3;
+  int iVar2;
   int iVar4;
+  int *piVar3;
   CVector3i *pCVar5;
   int iVar6;
+  int iVar5;
   CVector3i *pCVar7;
   int iVar8;
   uint *puVar9;
   int iVar10;
+  int iVar7;
   uint *puVar11;
   SMRGLPrimitiveQuad *pSVar12;
   byte bVar13;
@@ -47,22 +51,22 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(C
     if (0 < this_ptr->poly_count) {
       iVar10 = 0;
       do {
-        iVar3 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base
+        iVar5 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base
                       .type + iVar10;
         iVar1 = 0;
-        iVar4 = iVar3;
-        if (0 < *(int *)(iVar3 + 4)) {
+        iVar7 = iVar5;
+        if (0 < *(int *)(iVar5 + 4)) {
           do {
-            dest[*(int *)(iVar4 + 0x18)] = 1;
+            dest[*(int *)(iVar7 + 0x18)] = 1;
             iVar1 = iVar1 + 1;
-            iVar4 = iVar4 + 0xc;
-          } while (iVar1 < *(int *)(iVar3 + 4));
+            iVar7 = iVar7 + 0xc;
+          } while (iVar1 < *(int *)(iVar5 + 4));
         }
         iVar6 = iVar6 + 1;
         iVar10 = iVar10 + 0x48;
       } while (iVar6 < this_ptr->poly_count);
     }
-    iVar6 = 0;
+    iVar7 = 0;
     local_14 = 0;
     piVar2 = dest;
     if (0 < this_ptr->vertex_count) {
@@ -74,41 +78,41 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(C
           *piVar2 = local_14;
           local_14 = local_14 + 1;
         }
-        iVar6 = iVar6 + 1;
+        iVar7 = iVar7 + 1;
         piVar2 = piVar2 + 1;
-      } while (iVar6 < this_ptr->vertex_count);
+      } while (iVar7 < this_ptr->vertex_count);
     }
-    iVar6 = local_14;
+    iVar7 = local_14;
     if (local_14 < this_ptr->vertex_count) {
-      iVar10 = 0;
+      iVar5 = 0;
       if (0 < this_ptr->poly_count) {
         iVar4 = 0;
         do {
           iVar8 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).
                         base.type + iVar4;
           iVar3 = 0;
-          iVar1 = iVar8;
+          iVar2 = iVar8;
           if (0 < *(int *)(iVar8 + 4)) {
             do {
-              *(int *)(iVar1 + 0x18) = dest[*(int *)(iVar1 + 0x18)];
+              *(int *)(iVar2 + 0x18) = dest[*(int *)(iVar2 + 0x18)];
               iVar3 = iVar3 + 1;
-              iVar1 = iVar1 + 0xc;
+              iVar2 = iVar2 + 0xc;
             } while (iVar3 < *(int *)(iVar8 + 4));
           }
-          iVar10 = iVar10 + 1;
+          iVar5 = iVar5 + 1;
           iVar4 = iVar4 + 0x48;
-        } while (iVar10 < this_ptr->poly_count);
+        } while (iVar5 < this_ptr->poly_count);
       }
-      iVar10 = 0;
+      iVar5 = 0;
       pCVar5 = this_ptr->vertex_list;
       pCVar7 = pCVar5;
       if (0 < this_ptr->frame_count) {
         do {
-          iVar4 = 0;
-          piVar2 = dest;
+          iVar2 = 0;
+          piVar3 = dest;
           if (0 < this_ptr->vertex_count) {
             do {
-              if (-1 < *piVar2) {
+              if (-1 < *piVar3) {
                 if (pCVar7 < pCVar5) {
                   puVar11 = (uint *)((int)pCVar7 + (uint)bVar13 * -8 + 4);
                   puVar9 = (uint *)((int)pCVar5 + (uint)bVar13 * -8 + 4);
@@ -119,50 +123,50 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30(C
                 pCVar7 = pCVar7 + 1;
               }
               pCVar5 = pCVar5 + 1;
-              iVar4 = iVar4 + 1;
-              piVar2 = piVar2 + 1;
-            } while (iVar4 < this_ptr->vertex_count);
+              iVar2 = iVar2 + 1;
+              piVar3 = piVar3 + 1;
+            } while (iVar2 < this_ptr->vertex_count);
           }
-          iVar10 = iVar10 + 1;
-        } while (iVar10 < this_ptr->frame_count);
+          iVar5 = iVar5 + 1;
+        } while (iVar5 < this_ptr->frame_count);
       }
       local_14 = 0;
-      this_ptr->vertex_count = iVar6;
+      this_ptr->vertex_count = iVar7;
       local_28 = 0;
       local_10 = this_ptr->poly_vert_list;
       if (0 < this_ptr->part_count) {
         local_24 = this_ptr->part_list;
         do {
-          iVar6 = -1;
+          iVar7 = -1;
           local_18 = 0;
           if (0 < local_24->poly_count) {
             do {
-              iVar10 = 0;
+              iVar5 = 0;
               pSVar12 = local_10;
               if (0 < (local_10->base).base.count) {
                 do {
-                  iVar4 = pSVar12->vertices[0].vertex_index;
-                  if (iVar4 < local_14) {
+                  iVar2 = pSVar12->vertices[0].vertex_index;
+                  if (iVar2 < local_14) {
                     g_CurrentFilename = "..\\core\\dmodel.cpp";
                     g_CurrentLineNumber = 0x8ae;
                     core_main_c_displayErrorAndQuit_FUN_00506f10
                               ("Part vertex overlap detected!");
                   }
-                  if (iVar6 <= iVar4) {
-                    iVar6 = iVar4 + 1;
+                  if (iVar7 <= iVar2) {
+                    iVar7 = iVar2 + 1;
                   }
-                  iVar10 = iVar10 + 1;
+                  iVar5 = iVar5 + 1;
                   pSVar12 = (SMRGLPrimitiveQuad *)&(pSVar12->base).surface_normal.B;
-                } while (iVar10 < (local_10->base).base.count);
+                } while (iVar5 < (local_10->base).base.count);
               }
               local_10 = local_10 + 1;
               local_18 = local_18 + 1;
             } while (local_18 < local_24->poly_count);
           }
-          local_24->vertex_count = iVar6 - local_14;
+          local_24->vertex_count = iVar7 - local_14;
           local_24 = local_24 + 1;
           local_28 = local_28 + 1;
-          local_14 = iVar6;
+          local_14 = iVar7;
         } while (local_28 < this_ptr->part_count);
       }
     }

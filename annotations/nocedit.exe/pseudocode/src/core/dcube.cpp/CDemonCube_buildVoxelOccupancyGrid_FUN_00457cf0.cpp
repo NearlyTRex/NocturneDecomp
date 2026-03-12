@@ -9,9 +9,8 @@
 void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(CDemonCube *this_ptr)
 
 {
-  uchar *puVar1;
-  int iVar2;
   int iVar3;
+  int iVar1;
   int iVar4;
   int iVar5;
   SVoxelGrid *pSVar6;
@@ -36,6 +35,8 @@ void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(CDem
   int local_14;
   int local_10;
   int local_c;
+  int iVar2;
+  uchar *puVar1;
   
   bVar8 = 0;
   if (this_ptr->voxel_buffer1 != (SVoxelGrid *)0x0) {
@@ -90,15 +91,17 @@ void __cdecl core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(CDem
     } while (local_18 < 8);
     pSVar6 = this_ptr->voxel_buffer1;
     pSVar7 = this_ptr->voxel_buffer2;
-    for (iVar5 = 0x10; iVar5 != 0; iVar5 = iVar5 + -1) {
+    for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {
       *(uint *)pSVar7->voxels[0] = *(uint *)pSVar6->voxels[0];
       pSVar6 = (SVoxelGrid *)((int)pSVar6 + (uint)bVar8 * -8 + 4);
       pSVar7 = (SVoxelGrid *)((int)pSVar7 + (uint)bVar8 * -8 + 4);
     }
-    for (iVar5 = 0; iVar5 != 0; iVar5 = iVar5 + -1) {
-      pSVar7->voxels[0][0] = pSVar6->voxels[0][0];
-      pSVar6 = (SVoxelGrid *)((int)pSVar6 + (uint)bVar8 * -2 + 1);
+    for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
       pSVar7 = (SVoxelGrid *)((int)pSVar7 + (uint)bVar8 * -2 + 1);
+      pSVar6 = (SVoxelGrid *)((int)pSVar6 + (uint)bVar8 * -2 + 1);
+      pSVar7->voxels[0][0] = pSVar6->voxels[0][0];
+      pSVar6 = pSVar6;
+      pSVar7 = pSVar7;
     }
   }
   return;

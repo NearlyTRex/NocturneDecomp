@@ -5,9 +5,8 @@
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x11c]:8  local_11c
-; undefined1       Stack[-0x114]:1  local_114
-; undefined1       Stack[-0x113]:1  local_113
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x114]:256  local_114
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_menu.cpp_showOptionsScreen_FUN_00512d30 at 00512ec4

@@ -9,12 +9,14 @@
 CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a9500(CEnemy *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
   CEnemy *pCVar2;
   float fVar3;
   int iVar4;
+  int iVar3;
   char *pcVar5;
   char *pcVar6;
+  char cVar1;
   
   pCVar2 = (CEnemy *)core_charactr_cpp_CCharacter_ctor_FUN_00427e20(&this_ptr->base);
   (pCVar2->base).base.vtable._ub = &g_CEnemyVTable;
@@ -35,22 +37,22 @@ CEnemy * __cdecl core_enemy_cpp_CEnemy_ctor_FUN_004a9500(CEnemy *this_ptr)
   pCVar2->speed = fVar3;
   iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(-0x1fff,0x1fff);
   (pCVar2->base).base.scale.x = iVar4 + 0x10000;
-  iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(-0x1fff,0x1fff);
+  iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc70(-0x1fff,0x1fff);
   pcVar5 = "ene";
-  (pCVar2->base).base.scale.y = iVar4 + 0x10000;
-  iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(-0x1fff,0x1fff);
+  (pCVar2->base).base.scale.y = iVar3 + 0x10000;
+  iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc70(-0x1fff,0x1fff);
   pcVar6 = (pCVar2->base).base.footstep_sound_code;
-  (pCVar2->base).base.scale.z = iVar4 + 0x10000;
+  (pCVar2->base).base.scale.z = iVar3 + 0x10000;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;
     if (cVar1 == '\0') {
       return pCVar2;
     }
-    cVar1 = pcVar5[1];
+    cVar2 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
-    pcVar6[1] = cVar1;
+    pcVar6[1] = cVar2;
     pcVar6 = pcVar6 + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   return pCVar2;
 }

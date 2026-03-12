@@ -10,7 +10,9 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_005abf20(CIniFile *ini_file)
 
 {
   int iVar1;
+  int iVar3;
   int iVar2;
+  int iVar4;
   char *pcVar3;
   char *pcVar4;
   SSoundDeviceInfo local_3b4;
@@ -35,23 +37,23 @@ void __cdecl sound_sndmain_cpp_readIni_FUN_005abf20(CIniFile *ini_file)
   }
   engine_ini_cpp_CIniFile_getString_FUN_004fbb20(ini_file,"DeviceName",local_194,0x100);
   sound_sndmain_cpp_closeSoundDevice_FUN_005ab660();
-  for (iVar2 = 0; iVar1 = sound_sndmain_cpp_getSoundDeviceCount_FUN_005ab2e0(), iVar2 < iVar1;
-      iVar2 = iVar2 + 1) {
-    sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar2,&local_3b4);
-    iVar1 = _stricmp(local_3b4.device_name,local_194);
-    if (iVar1 == 0) {
-      sound_sndmain_cpp_selectSoundDevice_FUN_005ab4c0(iVar2);
+  for (iVar4 = 0; iVar1 = sound_sndmain_cpp_getSoundDeviceCount_FUN_005ab2e0(), iVar4 < iVar1;
+      iVar4 = iVar4 + 1) {
+    sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar4,&local_3b4);
+    iVar3 = _stricmp(local_3b4.device_name,local_194);
+    if (iVar3 == 0) {
+      sound_sndmain_cpp_selectSoundDevice_FUN_005ab4c0(iVar4);
       break;
     }
   }
   local_194[0] = '\0';
   engine_ini_cpp_CIniFile_getString_FUN_004fbb20
             (ini_file,"RecordingDeviceName",local_194,0x100);
-  iVar2 = 0;
+  iVar4 = 0;
   sound_sndmain_cpp_releaseRecordingDevice_FUN_005ab930();
   do {
-    iVar1 = sound_sndmain_cpp_getRecordingDeviceCount_FUN_005ab720();
-    if (iVar1 <= iVar2) {
+    iVar3 = sound_sndmain_cpp_getRecordingDeviceCount_FUN_005ab720();
+    if (iVar3 <= iVar4) {
 LAB_005ac012:
       local_20 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005ab590();
       engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(ini_file,"HwMixingEnabled",&local_20)
@@ -68,30 +70,30 @@ LAB_005ac012:
       sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170(local_24,local_2c,local_28);
       local_20 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
       engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(ini_file,"Mute",&local_20);
-      iVar2 = 0;
+      iVar4 = 0;
       sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(local_20);
       if (0 < g_MaxSoundChannels) {
         do {
-          _sprintf(local_94,"SfxChannel%dEnabled",iVar2);
-          local_1c = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(iVar2);
+          _sprintf(local_94,"SfxChannel%dEnabled",iVar4);
+          local_1c = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(iVar4);
           engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30(ini_file,local_94,&local_1c);
-          sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(iVar2,local_1c);
-          _sprintf(local_94,"SfxChannel%dVol",iVar2);
-          local_18 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(iVar2);
+          sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(iVar4,local_1c);
+          _sprintf(local_94,"SfxChannel%dVol",iVar4);
+          local_18 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(iVar4);
           local_14 = local_18;
           engine_ini_cpp_CIniFile_getFloat_FUN_004fbcd0(ini_file,local_94,&local_18);
-          sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(iVar2,local_18);
-          iVar2 = iVar2 + 1;
-        } while (iVar2 < g_MaxSoundChannels);
+          sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(iVar4,local_18);
+          iVar4 = iVar4 + 1;
+        } while (iVar4 < g_MaxSoundChannels);
       }
       return;
     }
-    sound_sndmain_cpp_getRecordingDeviceInfo_FUN_005ab780(iVar2,&local_29c);
-    iVar1 = _stricmp(local_29c.device_name,local_194);
-    if (iVar1 == 0) {
-      sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860(iVar2);
+    sound_sndmain_cpp_getRecordingDeviceInfo_FUN_005ab780(iVar4,&local_29c);
+    iVar3 = _stricmp(local_29c.device_name,local_194);
+    if (iVar3 == 0) {
+      sound_sndmain_cpp_selectRecordingDevice_FUN_005ab860(iVar4);
       goto LAB_005ac012;
     }
-    iVar2 = iVar2 + 1;
+    iVar4 = iVar4 + 1;
   } while( true );
 }

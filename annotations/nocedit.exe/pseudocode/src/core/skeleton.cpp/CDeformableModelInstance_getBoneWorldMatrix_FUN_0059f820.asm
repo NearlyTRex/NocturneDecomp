@@ -7,24 +7,22 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   bone_index
 ; Local Variables:
-; undefined1       Stack[-0xac]:1  local_ac
+; CMatrix3x4f      Stack[-0xac]:48  local_ac
 ; int              Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; float            Stack[-0x78]:4  local_78
+; float            Stack[-0x74]:4  local_74
+; float            Stack[-0x70]:4  local_70
+; float            Stack[-0x6c]:4  local_6c
+; float            Stack[-0x68]:4  local_68
+; float            Stack[-0x64]:4  local_64
+; float            Stack[-0x60]:4  local_60
+; float            Stack[-0x5c]:4  local_5c
+; float            Stack[-0x58]:4  local_58
+; float            Stack[-0x54]:4  local_54
+; float            Stack[-0x50]:4  local_50
+; CMatrix3x4f      Stack[-0x4c]:48  local_4c
+; CVector3f        Stack[-0x1c]:12  local_1c
+; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[6]:
 ;   core_bride.cpp_CBride_getTargetPoint_FUN_00424aa0 at 00424ac3

@@ -9,12 +9,14 @@
 int __cdecl core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0(CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius)
 
 {
+  float fVar1;
+  float fVar2;
+  float fVar3;
   CVector3f local_20 [2];
   
   core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(this_ptr,local_20,sphere_center);
-  local_20[0].x = local_20[0].x - sphere_center->x;
-  local_20[0].y = local_20[0].y - sphere_center->y;
-  local_20[0].z = local_20[0].z - sphere_center->z;
-  return (uint)(local_20[0].z * local_20[0].z +
-                local_20[0].y * local_20[0].y + local_20[0].x * local_20[0].x <= radius * radius);
+  fVar1 = local_20[0].x - sphere_center->x;
+  fVar3 = local_20[0].y - sphere_center->y;
+  fVar2 = local_20[0].z - sphere_center->z;
+  return (uint)(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= radius * radius);
 }

@@ -6,12 +6,10 @@
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x30]:12  local_30
+; CVector3f        Stack[-0x24]:12  local_24
+; CMatrix3x3f *    Stack[-0x18]:4  local_18
+; SCurtainVertex * Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_curtain.cpp_CCurtain_process_FUN_0044a920 at 0044ad89

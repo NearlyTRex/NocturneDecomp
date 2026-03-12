@@ -9,14 +9,18 @@
 int __cdecl shape_design_c_promptForModelNameAndLoad_FUN_00458a10(void)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
   uint uVar3;
+  int iVar3;
   char *pcVar4;
   char *pcVar5;
+  char *pcVar7;
   char *pcVar6;
+  char *pcVar8;
   byte bVar7;
   char local_64 [84];
+  char cVar1;
   
   bVar7 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -34,35 +38,35 @@ int __cdecl shape_design_c_promptForModelNameAndLoad_FUN_00458a10(void)
 LAB_00458a59:
   if (pcVar4 == (char *)0x0) {
     uVar3 = 0xffffffff;
-    pcVar5 = local_64;
+    pcVar7 = local_64;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
+      cVar1 = *pcVar7;
+      pcVar7 = pcVar7 + (uint)bVar7 * -2 + 1;
     } while (cVar1 != '\0');
     if (~uVar3 - 1 < 9) {
-      pcVar4 = ".MDL";
-      iVar2 = -1;
-      pcVar5 = local_64;
+      pcVar7 = ".MDL";
+      iVar3 = -1;
+      pcVar6 = local_64;
       do {
-        pcVar6 = pcVar5;
-        if (iVar2 == 0) break;
-        iVar2 = iVar2 + -1;
-        pcVar6 = pcVar5 + (uint)bVar7 * -2 + 1;
-        cVar1 = *pcVar5;
-        pcVar5 = pcVar6;
-      } while (cVar1 != '\0');
-      pcVar6 = pcVar6 + -1;
+        pcVar6 = pcVar6;
+        if (iVar3 == 0) break;
+        iVar3 = iVar3 + -1;
+        pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
+        cVar2 = *pcVar6;
+        pcVar6 = pcVar6;
+      } while (cVar2 != '\0');
+      pcVar8 = pcVar6 + -1;
       do {
-        cVar1 = *pcVar4;
-        *pcVar6 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar4[1];
-        pcVar4 = pcVar4 + 2;
-        pcVar6[1] = cVar1;
-        pcVar6 = pcVar6 + 2;
-      } while (cVar1 != '\0');
+        cVar2 = *pcVar7;
+        *pcVar8 = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar7[1];
+        pcVar7 = pcVar7 + 2;
+        pcVar8[1] = cVar2;
+        pcVar8 = pcVar8 + 2;
+      } while (cVar2 != '\0');
     }
   }
   iVar2 = shape_design_c_loadModelFile_FUN_00458ac0(local_64);

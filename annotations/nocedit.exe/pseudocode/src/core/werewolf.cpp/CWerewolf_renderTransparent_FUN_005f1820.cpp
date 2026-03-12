@@ -11,6 +11,7 @@
 int __cdecl core_werewolf_cpp_CWerewolf_renderTransparent_FUN_005f1820(CWerewolf *this_ptr)
 
 {
+  int iVar2;
   int iVar1;
   CMatrix3x4f *pCVar2;
   CMatrix3x4f *pCVar3;
@@ -33,9 +34,11 @@ int __cdecl core_werewolf_cpp_CWerewolf_renderTransparent_FUN_005f1820(CWerewolf
                this_ptr->bone_indices[4];
       pCVar3 = &local_50;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
+        pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar4 * -8 + 4);
         pCVar3->m[0].w = pCVar2->m[0].w;
-        pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
-        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
+        pCVar2 = pCVar2;
+        pCVar3 = pCVar3;
       }
       core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CMatrix3x3f *)&local_50,&local_14);
       core_xform_cpp_getTranslation_FUN_005f6110(&local_50,&local_20);
@@ -52,6 +55,6 @@ int __cdecl core_werewolf_cpp_CWerewolf_renderTransparent_FUN_005f1820(CWerewolf
     core_charactr_cpp_CCharacter_renderTransparent_FUN_0042b0e0((CCharacter *)this_ptr);
     return (this_ptr->base).base.was_rendered_opaque;
   }
-  iVar1 = core_charactr_cpp_CCharacter_renderTransparent_FUN_0042b0e0((CCharacter *)this_ptr);
-  return iVar1;
+  iVar2 = core_charactr_cpp_CCharacter_renderTransparent_FUN_0042b0e0((CCharacter *)this_ptr);
+  return iVar2;
 }

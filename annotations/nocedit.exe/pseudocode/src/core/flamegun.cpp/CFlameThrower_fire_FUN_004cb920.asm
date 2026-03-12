@@ -6,7 +6,8 @@
 ; Parameters:
 ; CFlameThrower *  Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x1c]:1  local_1c
+; CVector3f        Stack[-0x1c]:12  local_1c
+; CVector3f        Stack[-0x10]:12  CStack_10
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065e270 = 4

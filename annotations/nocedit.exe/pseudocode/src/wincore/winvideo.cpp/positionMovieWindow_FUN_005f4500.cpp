@@ -9,13 +9,13 @@
 void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_005f4500(HWND parent_window)
 
 {
-  byte *pbVar1;
-  byte bVar2;
   byte *pbVar3;
   byte bStack_a4;
   byte abStack_a3 [127];
   tagRECT local_24;
   tagRECT tStack_14;
+  byte bVar2;
+  byte *pbVar1;
   
   if (g_MoviePlaying == 0) {
     return;

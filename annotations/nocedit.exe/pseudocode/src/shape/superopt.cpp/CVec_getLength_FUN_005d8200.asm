@@ -6,7 +6,7 @@
 ; Parameters:
 ; CVec *           Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x8]:8  local_8
+; int              Stack[-0x8]:4  local_8
 ;
 ; *****************************************************************************
 

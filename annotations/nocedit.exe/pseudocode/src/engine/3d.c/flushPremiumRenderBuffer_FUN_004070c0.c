@@ -9,29 +9,30 @@
 void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070c0(void)
 
 {
-  int *piVar1;
   int iVar2;
   int iVar3;
   int iVar4;
   SRenderBufferEntry *pSVar5;
   int *piVar6;
+  int iVar1;
   int *piVar7;
   SRenderVertex *pSVar8;
   byte bVar9;
   int local_10;
   int local_c;
+  int *piVar1;
   
   bVar9 = 0;
   if (g_RenderBufferEnabled != 0) {
     if (0 < g_RenderBufferCount) {
       pSVar5 = g_RenderBufferPool;
-      iVar3 = g_RenderBufferCount * 4;
+      iVar1 = g_RenderBufferCount * 4;
       iVar2 = 0;
       do {
         *(SRenderBufferEntry **)((int)g_RenderBufferSortArray + iVar2) = pSVar5;
         iVar2 = iVar2 + 4;
         pSVar5 = pSVar5 + 1;
-      } while (iVar2 < iVar3);
+      } while (iVar2 < iVar1);
     }
     _qsort
               (g_RenderBufferSortArray,g_RenderBufferCount,4,
@@ -60,21 +61,23 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_004070c0(void)
         iVar3 = 0;
         if (0 < *piVar1) {
           piVar6 = piVar1;
-          iVar2 = 0;
+          iVar1 = 0;
           do {
             piVar7 = piVar6 + 1;
             pSVar8 = g_RenderVertexBuffer + iVar3;
             for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-              (pSVar8->projected_vertex).transformed_x = *piVar7;
+              pSVar8 = (SRenderVertex *)((int)pSVar8 + (uint)bVar9 * -8 + 4);
               piVar7 = piVar7 + (uint)bVar9 * -2 + 1;
-              pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);
+              (pSVar8->projected_vertex).transformed_x = *piVar7;
+              piVar7 = piVar7;
+              pSVar8 = pSVar8;
             }
             *(ushort *)&g_RenderVertexBuffer[iVar3].a =
                  (ushort)g_RenderVertexBuffer[iVar3].a ^ 0xffff;
-            *(int *)((int)g_ProcessedVertexIndices + iVar2) = iVar3;
+            *(int *)((int)g_ProcessedVertexIndices + iVar1) = iVar3;
             iVar3 = iVar3 + 1;
             piVar6 = piVar6 + 0xc;
-            iVar2 = iVar2 + 4;
+            iVar1 = iVar1 + 4;
           } while (iVar3 < *piVar1);
         }
         engine_texture_cpp_loadTextureAndGetData_FUN_005dd8c0((SMRGLTextureBasic *)(piVar1 + 0x31));

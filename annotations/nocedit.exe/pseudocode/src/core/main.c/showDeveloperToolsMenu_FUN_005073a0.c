@@ -11,21 +11,21 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
 {
   int iVar1;
   uint uVar2;
+  uint uVar1;
   char *pcVar3;
   int iVar4;
   int iVar5;
   CKeyFramedModel *this_ptr;
   CKeyFramedModel *pCVar6;
+  CKeyFramedModel *ptr;
   CMorph *this_ptr_00;
   CMorph *pCVar7;
+  CMorph *morph;
   _FILE *output_file;
   byte bVar8;
   int aiStackY_1008 [690];
-  char *directory;
-  char *mode;
-  int right_pos;
-  char *source_file;
-  int bottom_pos;
+  char *filename;
+  int iVar2;
   CIniFile local_528;
   char local_328 [256];
   CEdButton local_228;
@@ -34,6 +34,11 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   CCourse local_2c;
   char local_20 [4];
   int aiStack_1c [3];
+  int right_pos;
+  char *source_file;
+  int bottom_pos;
+  char *directory;
+  char *mode;
   
   bVar8 = 0;
   iVar1 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0
@@ -64,22 +69,22 @@ LAB_0050740e:
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();
       uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-      uVar2 = toupper(uVar2 & 0xff);
-      if (uVar2 < 0x37) {
-        if (uVar2 < 0x34) {
-          if (0x30 < uVar2) {
-            if (uVar2 < 0x32) {
+      uVar1 = toupper(uVar2 & 0xff);
+      if (uVar1 < 0x37) {
+        if (uVar1 < 0x34) {
+          if (0x30 < uVar1) {
+            if (uVar1 < 0x32) {
               core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(g_CGamePtr,0);
             }
-            else if (uVar2 == 0x32) {
+            else if (uVar1 == 0x32) {
               shape_design_c_showShapeEditorMenu_FUN_0046f290();
             }
           }
         }
-        else if (uVar2 < 0x35) {
+        else if (uVar1 < 0x35) {
           core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(g_CDemonSetPtr);
         }
-        else if (uVar2 < 0x36) {
+        else if (uVar1 < 0x36) {
           this_ptr = (CKeyFramedModel *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x56d8,"..\\core\\main.c",0x274);
           pCVar6 = (CKeyFramedModel *)0x0;
           if (this_ptr != (CKeyFramedModel *)0x0) {
@@ -94,59 +99,59 @@ LAB_0050740e:
           g_CurrentDebugLine = 0x277;
           g_CurrentDebugFilename = "..\\core\\main.c";
           if (pCVar6 != (CKeyFramedModel *)0x0) {
-            pCVar6 = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(pCVar6,0);
-            shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar6);
+            ptr = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(pCVar6,0);
+            shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
           }
         }
         else {
           core_procedur_cpp_CProceduralTexture_showMenu_FUN_00554880(g_CProceduralTexturePtr);
         }
       }
-      else if (uVar2 < 0x38) {
+      else if (uVar1 < 0x38) {
         core_course_cpp_CCourse_ctor_FUN_004424c0(&local_2c);
         core_course_cpp_CCourse_showEditorMenu_FUN_00443040(&local_2c);
         core_course_cpp_CCourse_dtor_FUN_004424e0(&local_2c,0);
       }
-      else if (uVar2 < 0x4d) {
-        if (0x40 < uVar2) {
-          if (uVar2 < 0x42) {
+      else if (uVar1 < 0x4d) {
+        if (0x40 < uVar1) {
+          if (uVar1 < 0x42) {
             core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270
                       (&g_CDemonFileManagerInstance);
           }
-          else if (uVar2 == 0x42) {
+          else if (uVar1 == 0x42) {
             this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
                                     (0xc2c,"..\\core\\main.c",0x292);
-            pCVar7 = (CMorph *)0x0;
+            morph = (CMorph *)0x0;
             if (this_ptr_00 != (CMorph *)0x0) {
-              pCVar7 = core_morph_cpp_CMorph_ctor_FUN_0052b310(this_ptr_00);
+              morph = core_morph_cpp_CMorph_ctor_FUN_0052b310(this_ptr_00);
             }
-            if (pCVar7 != (CMorph *)0x0) {
-              core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(pCVar7);
+            if (morph != (CMorph *)0x0) {
+              core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(morph);
               g_CurrentDebugLine = 0x295;
               g_CurrentDebugFilename = "..\\core\\main.c";
-              if (pCVar7 != (CMorph *)0x0) {
-                pCVar7 = core_morph_cpp_CMorph_dtor_FUN_0052b330(pCVar7,0);
+              if (morph != (CMorph *)0x0) {
+                pCVar7 = core_morph_cpp_CMorph_dtor_FUN_0052b330(morph,0);
                 shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar7);
               }
             }
           }
         }
       }
-      else if (uVar2 < 0x4e) {
+      else if (uVar1 < 0x4e) {
         core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(g_CDemonMissionPtr);
       }
-      else if (0x52 < uVar2) {
-        if (uVar2 < 0x54) {
+      else if (0x52 < uVar1) {
+        if (uVar1 < 0x54) {
           core_skeledit_cpp_viewModel_FUN_00598fc0();
         }
-        else if (uVar2 == 0x5a) {
+        else if (uVar1 == 0x5a) {
           shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590
                     (g_CEditorToolsPtr,local_328);
-          iVar1 = 0x2c0;
+          iVar2 = 0x2c0;
           source_file = "..\\core\\main.c";
           mode = "wt";
           directory = (char *)0x0;
-          pcVar3 = local_20;
+          filename = local_20;
           local_20[0] = "memdump.txt"[0];
           local_20[1] = "memdump.txt"[1];
           local_20[2] = "memdump.txt"[2];
@@ -155,7 +160,7 @@ LAB_0050740e:
           aiStack_1c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
                *(int *)("memdump.txt" + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
           output_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                                  (pcVar3,directory,mode,source_file,iVar1);
+                                  (filename,directory,mode,source_file,iVar2);
           if (output_file == (_FILE *)0x0) {
             g_CurrentFilename = "..\\core\\main.c";
             g_CurrentLineNumber = 0x2c1;
@@ -167,19 +172,19 @@ LAB_0050740e:
                     (g_CEditorToolsPtr,"%s\nAlso dumped memory usage to %s",local_328,local_20);
         }
       }
-    } while (uVar2 != 0x1b);
+    } while (uVar1 != 0x1b);
     engine_2d_c_clearInputAndWait_FUN_00403260();
     return;
   }
   pcVar3 = support_newmsg_cpp_decryptMessage_FUN_00544270(g_LicenseAgreement);
   iVar4 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,pcVar3);
   shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&local_60);
-  iVar1 = g_ClipTop;
+  iVar2 = g_ClipTop;
   right_pos = g_ClipRight;
   bottom_pos = g_ClipBottom;
   iVar5 = shape_edittool_cpp_calculateGridWidth_FUN_004a6490();
   shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
-            (&local_60,g_WindowWidth - iVar5,iVar1,right_pos,bottom_pos);
+            (&local_60,g_WindowWidth - iVar5,iVar2,right_pos,bottom_pos);
   local_60.max_value = g_WindowHeight;
   local_60.current_value = iVar4 + 100;
   shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&local_228);
@@ -194,8 +199,8 @@ LAB_0050740e:
     shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_004a6550
               (&local_144,0x1e,(iVar4 - local_60.scroll_position) + 0x28,
                "I DO NOT accept the terms of the license agreement");
-    iVar1 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_228);
-    if (iVar1 != 0) {
+    iVar2 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_228);
+    if (iVar2 != 0) {
       engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
                 (&local_528,"AcceptedLicenseAgreement",1);
       engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -204,16 +209,16 @@ LAB_0050740e:
       shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_60,0);
       goto LAB_0050740e;
     }
-    iVar1 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_144);
-    if (iVar1 != 0) break;
+    iVar2 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_144);
+    if (iVar2 != 0) break;
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_EditorFont,pcVar3,0x1e,-local_60.scroll_position,0xff,-1);
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_228,0);
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_144,0);
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
-  } while (iVar1 == 0);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
+  } while (iVar2 == 0);
   shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_144,0);
   shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_228,0);
   shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_60,0);

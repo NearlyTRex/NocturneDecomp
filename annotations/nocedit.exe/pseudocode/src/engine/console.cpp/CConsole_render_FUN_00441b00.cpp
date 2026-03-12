@@ -9,7 +9,9 @@
 void __cdecl engine_console_cpp_CConsole_render_FUN_00441b00(CConsole *this_ptr)
 
 {
-  int iVar1;
+  int x2;
+  int x1;
+  int iVar4;
   int iVar2;
   int iVar3;
   CConsole *pCVar4;
@@ -19,8 +21,9 @@ void __cdecl engine_console_cpp_CConsole_render_FUN_00441b00(CConsole *this_ptr)
   int local_20;
   int local_18;
   char local_14 [4];
+  int iVar1;
   
-  local_14[1] = 0;
+  local_14[1] = '\0';
   local_20 = 0;
   if (0 < this_ptr->console_height) {
     local_24 = this_ptr;
@@ -46,16 +49,16 @@ void __cdecl engine_console_cpp_CConsole_render_FUN_00441b00(CConsole *this_ptr)
       local_20 = local_20 + 1;
     } while (local_20 < this_ptr->console_height);
   }
-  iVar5 = this_ptr->screen_x;
-  iVar2 = this_ptr->screen_y;
+  x1 = this_ptr->screen_x;
+  iVar4 = this_ptr->screen_y;
   iVar1 = this_ptr->console_height;
-  iVar3 = iVar5 + this_ptr->console_width * 7;
-  y1 = iVar2 + -1;
+  x2 = x1 + this_ptr->console_width * 7;
+  y1 = iVar4 + -1;
   g_ActiveRenderColor = 0xf8;
-  engine_2d_c_drawLine_FUN_004011b0(iVar5,y1,iVar3,y1);
-  iVar2 = iVar2 + iVar1 * 0xb + 1;
-  engine_2d_c_drawLine_FUN_004011b0(iVar5,iVar2,iVar3,iVar2);
-  engine_2d_c_drawLine_FUN_004011b0(iVar5 + -1,y1,iVar5 + -1,iVar2);
-  engine_2d_c_drawLine_FUN_004011b0(iVar3 + 1,y1,iVar3 + 1,iVar2);
+  engine_2d_c_drawLine_FUN_004011b0(x1,y1,x2,y1);
+  iVar2 = iVar4 + iVar1 * 0xb + 1;
+  engine_2d_c_drawLine_FUN_004011b0(x1,iVar2,x2,iVar2);
+  engine_2d_c_drawLine_FUN_004011b0(x1 + -1,y1,x1 + -1,iVar2);
+  engine_2d_c_drawLine_FUN_004011b0(x2 + 1,y1,x2 + 1,iVar2);
   return;
 }

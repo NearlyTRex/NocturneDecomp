@@ -9,8 +9,13 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950(CKeyFramedModel *this_ptr,CVector3f *transform_vector)
 
 {
+  CVector3i *pCVar3;
+  SMRGLPrimitiveQuad *pSVar4;
+  int iVar5;
   CVector3i *pCVar1;
+  CVector3i *pCVar6;
   CVector3f *pCVar2;
+  CVector3f *pCVar7;
   CMatrix3x3f *this_ptr_00;
   CDemonTriangle *this_ptr_01;
   int iVar3;
@@ -40,54 +45,51 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950(
             (this_ptr_00,&this_ptr->transform_vector);
   local_30 = 0;
   this_ptr_01 = this_ptr->collision_triangle_list;
-  local_2c = this_ptr_00;
-  local_28 = this_ptr_00;
-  local_1c = this_ptr_00;
   if (0 < this_ptr->frame_count) {
     do {
-      local_18 = this_ptr->vertex_list + this_ptr->vertex_count * local_30;
+      iVar5 = this_ptr->vertex_count * local_30;
+      pCVar3 = this_ptr->vertex_list;
       local_20 = 0;
       if (0 < this_ptr->poly_count) {
         local_24 = 0;
         do {
-          local_14 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base)
-                           .base.type + local_24;
-          pCVar1 = local_18 + *(int *)(local_14 + 0x18);
+          pSVar4 = this_ptr->poly_vert_list;
+          pCVar1 = pCVar3 + iVar5 + *(int *)((int)&pSVar4->vertices[0].vertex_index + local_24);
           local_48.x = (float)pCVar1->x * 0.00390625f;
           local_48.y = (float)pCVar1->y * 0.00390625f;
           local_48.z = (float)pCVar1->z * 0.00390625f;
-          pCVar1 = local_18 + *(int *)(local_14 + 0x24);
-          local_54.x = (float)pCVar1->x * 0.00390625f;
-          local_54.y = (float)pCVar1->y * 0.00390625f;
-          local_54.z = (float)pCVar1->z * 0.00390625f;
+          pCVar6 = pCVar3 + iVar5 + *(int *)((int)&pSVar4->vertices[1].vertex_index + local_24);
+          local_54.x = (float)pCVar6->x * 0.00390625f;
+          local_54.y = (float)pCVar6->y * 0.00390625f;
+          local_54.z = (float)pCVar6->z * 0.00390625f;
           pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                             (local_28,&local_3c,&local_48);
+                             (this_ptr_00,&local_3c,&local_48);
           if (&local_48 != pCVar2) {
             local_48.x = pCVar2->x;
             local_48.y = pCVar2->y;
             local_48.z = pCVar2->z;
           }
-          pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                             (local_2c,&local_78,&local_54);
-          if (&local_54 != pCVar2) {
-            local_54.x = pCVar2->x;
-            local_54.y = pCVar2->y;
-            local_54.z = pCVar2->z;
+          pCVar7 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+                             (this_ptr_00,&local_78,&local_54);
+          if (&local_54 != pCVar7) {
+            local_54.x = pCVar7->x;
+            local_54.y = pCVar7->y;
+            local_54.z = pCVar7->z;
           }
           iVar4 = 2;
-          if (2 < *(int *)(local_14 + 4)) {
-            iVar3 = local_14 + 0x18;
+          if (2 < *(int *)((int)pSVar4->vertices + local_24 + -0x14)) {
+            iVar3 = (int)&pSVar4->vertices[0].vertex_index + local_24;
             do {
-              pCVar1 = local_18 + *(int *)(iVar3 + 0x18);
-              local_60.x = (float)pCVar1->x * 0.00390625f;
-              local_60.y = (float)pCVar1->y * 0.00390625f;
-              local_60.z = (float)pCVar1->z * 0.00390625f;
-              pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                                 (local_1c,&local_6c,&local_60);
-              if (&local_60 != pCVar2) {
-                local_60.x = pCVar2->x;
-                local_60.y = pCVar2->y;
-                local_60.z = pCVar2->z;
+              pCVar6 = pCVar3 + iVar5 + *(int *)(iVar3 + 0x18);
+              local_60.x = (float)pCVar6->x * 0.00390625f;
+              local_60.y = (float)pCVar6->y * 0.00390625f;
+              local_60.z = (float)pCVar6->z * 0.00390625f;
+              pCVar7 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+                                 (this_ptr_00,&local_6c,&local_60);
+              if (&local_60 != pCVar7) {
+                local_60.x = pCVar7->x;
+                local_60.y = pCVar7->y;
+                local_60.z = pCVar7->z;
               }
               core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                         (this_ptr_01,&local_48,&local_54,&local_60);
@@ -99,7 +101,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950(
               }
               iVar4 = iVar4 + 1;
               iVar3 = iVar3 + 0xc;
-            } while (iVar4 < *(int *)(local_14 + 4));
+            } while (iVar4 < *(int *)((int)pSVar4->vertices + local_24 + -0x14));
           }
           local_24 = local_24 + 0x48;
           local_20 = local_20 + 1;

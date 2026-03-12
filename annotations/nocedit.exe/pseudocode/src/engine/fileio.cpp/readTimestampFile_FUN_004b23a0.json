@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 76,
+        "line": 80,
         "message": "assigning to 'STimestampRecord *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 105,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 90,
+    "pseudocode_lines": 95,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 308
+    "total_lines": 313
   },
   "cross_references": [
     {
@@ -182,36 +182,29 @@
         "is_param": false,
         "name": "local_560",
         "offset": -1376,
-        "size": 1,
-        "type": "undefined"
+        "size": 1024,
+        "type": "char[1024]"
       },
       {
         "is_param": false,
         "name": "local_160",
         "offset": -352,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_15f",
-        "offset": -351,
-        "size": 1,
-        "type": "undefined1"
+        "size": 328,
+        "type": "STimestampRecord"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -246,10 +239,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 90,
       "match": "(STimestampRecord *)((int)",
       "severity": "mild",
-      "text": "pSVar5 = (STimestampRecord *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pSVar5 = (STimestampRecord *)((int)pSVar5 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

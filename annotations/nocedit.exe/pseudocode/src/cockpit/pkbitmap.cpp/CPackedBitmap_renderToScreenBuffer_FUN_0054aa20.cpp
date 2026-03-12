@@ -9,10 +9,6 @@
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20(CPackedBitmap *this_ptr,int dest_x,int dest_y)
 
 {
-  ushort uVar1;
-  char *pcVar2;
-  int iVar3;
-  int iVar4;
   ColorConversionFunc *pCVar5;
   int iVar6;
   int iVar7;
@@ -21,6 +17,10 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa2
   int local_20;
   int local_1c;
   int local_18;
+  char *pcVar2;
+  ushort uVar1;
+  int iVar4;
+  int iVar3;
   
   if ((this_ptr->row_pointers != (void **)0x0) && (this_ptr->packed_data != (char *)0x0)) {
     iVar6 = dest_x * g_BitsPerPixel;

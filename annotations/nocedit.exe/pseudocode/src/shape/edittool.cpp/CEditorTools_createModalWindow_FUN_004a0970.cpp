@@ -9,16 +9,17 @@
 void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content,uint window_flags)
 
 {
-  SWindow *pSVar1;
-  CBitFont *this_ptr_00;
-  int iVar2;
   int iVar3;
   int iVar4;
   int iVar5;
   int iVar6;
+  int iVar1;
   uint uVar7;
   void *pvVar8;
   uint uVar9;
+  uint uVar2;
+  int iVar7;
+  int iVar8;
   SWindow *pSVar10;
   char *buffer;
   int iVar11;
@@ -28,6 +29,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
   byte bVar15;
   int local_24;
   uint *local_14;
+  SWindow *pSVar1;
+  CBitFont *this_ptr_00;
+  int iVar2;
   
   bVar15 = 0;
   if (g_EditorFont == (CBitFont *)0x0) {
@@ -79,12 +83,12 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
     this_ptr_00 = g_EditorFont;
     if (0 < iVar5) {
       buffer[-1] = 0;
-      local_24 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40
-                           (this_ptr_00,g_WindowStack[iVar2].text_buffer);
-      local_24 = g_FontCharacterWidth + local_24;
-      iVar5 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,"j");
-      if (local_24 < iVar5 + g_FontCharacterWidth) {
-        local_24 = iVar5 + g_FontCharacterWidth;
+      iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40
+                        (this_ptr_00,g_WindowStack[iVar2].text_buffer);
+      local_24 = g_FontCharacterWidth + iVar1;
+      iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,"j");
+      if (local_24 < iVar1 + g_FontCharacterWidth) {
+        local_24 = iVar1 + g_FontCharacterWidth;
       }
       bottom = bottom + local_24 / 2;
       top = top - local_24 / 2;
@@ -101,15 +105,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
       shape_edittool_cpp_CEditorTools_backupScreen_FUN_0049e410(this_ptr);
     }
     g_WindowStack[iVar2].backup_width = g_WindowWidth;
-    iVar5 = g_WindowStack[iVar2].backup_width * g_BitsPerPixel;
+    iVar1 = g_WindowStack[iVar2].backup_width * g_BitsPerPixel;
     g_WindowStack[iVar2].backup_height = g_WindowHeight;
-    iVar11 = iVar5 >> 0x1f;
-    uVar7 = (int)((iVar5 + iVar11 * -8) - (uint)(iVar11 << 2 < 0)) >> 3;
-    iVar5 = g_WindowStack[iVar2].backup_height;
+    iVar7 = iVar1 >> 0x1f;
+    uVar7 = (int)((iVar1 + iVar7 * -8) - (uint)(iVar7 << 2 < 0)) >> 3;
+    iVar1 = g_WindowStack[iVar2].backup_height;
     g_WindowStack[iVar2].backup_x_offset = 0;
     g_WindowStack[iVar2].backup_y_offset = 0;
     pvVar8 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                       (iVar5 * uVar7,"..\\shape\\edittool.cpp",0x807);
+                       (iVar1 * uVar7,"..\\shape\\edittool.cpp",0x807);
     g_WindowStack[iVar2].screen_backup_buffer = pvVar8;
     if (pvVar8 == (void *)0x0) {
       g_CurrentFilename = "..\\shape\\edittool.cpp";
@@ -117,28 +121,30 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEdi
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory to open editor window.");
     }
     local_14 = g_WindowStack[iVar2].screen_backup_buffer;
-    iVar5 = 0;
+    iVar1 = 0;
     if (0 < g_WindowStack[iVar2].backup_height) {
       do {
-        iVar11 = g_WindowStack[iVar2].backup_x_offset * g_BitsPerPixel;
-        iVar6 = iVar11 >> 0x1f;
+        iVar7 = g_WindowStack[iVar2].backup_x_offset * g_BitsPerPixel;
+        iVar8 = iVar7 >> 0x1f;
         puVar12 = (uint *)
-                  ((int)g_ScreenBufferArray[g_WindowStack[iVar2].backup_y_offset + iVar5] +
-                  ((int)((iVar11 + iVar6 * -8) - (uint)(iVar6 << 2 < 0)) >> 3));
+                  ((int)g_ScreenBufferArray[g_WindowStack[iVar2].backup_y_offset + iVar1] +
+                  ((int)((iVar7 + iVar8 * -8) - (uint)(iVar8 << 2 < 0)) >> 3));
         puVar14 = local_14;
         for (uVar9 = uVar7 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
           *puVar14 = *puVar12;
           puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
           puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
         }
-        for (uVar9 = uVar7 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-          *(byte *)puVar14 = *(byte *)puVar12;
-          puVar12 = (uint *)((int)puVar12 + (uint)bVar15 * -2 + 1);
+        for (uVar2 = uVar7 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
           puVar14 = (uint *)((int)puVar14 + (uint)bVar15 * -2 + 1);
+          puVar12 = (uint *)((int)puVar12 + (uint)bVar15 * -2 + 1);
+          *(byte *)puVar14 = *(byte *)puVar12;
+          puVar12 = puVar12;
+          puVar14 = puVar14;
         }
         local_14 = (uint *)((int)local_14 + uVar7);
-        iVar5 = iVar5 + 1;
-      } while (iVar5 < g_WindowStack[iVar2].backup_height);
+        iVar1 = iVar1 + 1;
+      } while (iVar1 < g_WindowStack[iVar2].backup_height);
     }
   }
   else {

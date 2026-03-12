@@ -29,9 +29,11 @@ void __cdecl core_skeledit_cpp_CBoneStructure_applyMatrixArray_FUN_0058af40(CBon
       pCVar2 = &local_40;
       pCVar3 = &local_c->bones[0].world_matrix;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        pCVar3->m[0].w = pCVar2->m[0].w;
-        pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
         pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
+        pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar4 * -8 + 4);
+        pCVar3->m[0].w = pCVar2->m[0].w;
+        pCVar2 = pCVar2;
+        pCVar3 = pCVar3;
       }
       local_c = (CBoneStructure *)&local_c->bones[0].world_matrix.m[2].z;
       local_10 = local_10 + 1;

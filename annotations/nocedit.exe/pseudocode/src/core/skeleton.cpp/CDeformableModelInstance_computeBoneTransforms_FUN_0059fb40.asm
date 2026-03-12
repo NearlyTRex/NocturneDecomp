@@ -6,16 +6,15 @@
 ; Parameters:
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x3c]:12  CStack_3c
+; CVector3f *      Stack[-0x30]:4  local_30
+; CSkeleton *      Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; CMatrix3x4f *    Stack[-0x24]:4  local_24
+; CSkeleton *      Stack[-0x20]:4  local_20
+; CQuaternion4f *  Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; CMatrix3x4f *    Stack[-0x14]:4  local_14
 ;
 ; XREF[17]:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 at 0042dfde

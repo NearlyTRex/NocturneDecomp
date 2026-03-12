@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 327,
+    "complexity_score": 330,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 127,
+    "pseudocode_lines": 130,
     "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
@@ -16,7 +16,7 @@
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 374
+    "total_lines": 377
   },
   "cross_references": [
     {
@@ -104,12 +104,19 @@
     "pcode_op_count": 836
   },
   "stack_frame": {
-    "frame_size": 80,
-    "local_size": 68,
+    "frame_size": 84,
+    "local_size": 72,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "uStackY_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
         "is_param": false,
         "name": "local_40",
@@ -135,15 +142,15 @@
         "is_param": false,
         "name": "local_24",
         "offset": -36,
-        "size": 4,
-        "type": "undefined4"
+        "size": 2,
+        "type": "ushort"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "byte *"
       },
       {
         "is_param": false,
@@ -199,7 +206,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 14,
       "match": "uStackY_44",
       "severity": "moderate",
       "text": "uint uStackY_44;",
@@ -207,23 +214,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_ffffffc0",
-      "severity": "moderate",
-      "text": "byte *in_stack_ffffffc0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 20,
       "match": "in_stack_ffffffc4",
       "severity": "moderate",
       "text": "ulonglong *in_stack_ffffffc4;",
       "type": "stack_param"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_ffffffc0",
+      "severity": "moderate",
+      "text": "byte *in_stack_ffffffc0;",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 56,
+      "line": 59,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "(&stack0xffffffc0)[iVar9] = bVar1;",
@@ -231,7 +238,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 96,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "for (; (0 < iVar9 && (*(char *)((int)&uStackY_44 + iVar9 + 3) == '0')); iVar9 = iVar9 + -1) {",
@@ -239,7 +246,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 93,
+      "line": 96,
       "match": "uStackY_44",
       "severity": "moderate",
       "text": "for (; (0 < iVar9 && (*(char *)((int)&uStackY_44 + iVar9 + 3) == '0')); iVar9 = iVar9 + -1) {",
@@ -247,7 +254,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 100,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "*(ushort *)((int)result + 8) = 0;",
@@ -255,7 +262,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 101,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)result + 4) = 0;",
@@ -263,7 +270,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 103,
+      "line": 106,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "(&stack0xffffffc0)[iVar9] = 0;",
@@ -271,7 +278,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 104,
+      "line": 107,
       "match": "uStackY_44",
       "severity": "moderate",
       "text": "uStackY_44 = 0x605d00;",
@@ -279,7 +286,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 105,
+      "line": 108,
       "match": "in_stack_ffffffc0",
       "severity": "moderate",
       "text": "FUN_0060b586(in_stack_ffffffc0,in_stack_ffffffc4);",
@@ -287,7 +294,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 105,
+      "line": 108,
       "match": "in_stack_ffffffc4",
       "severity": "moderate",
       "text": "FUN_0060b586(in_stack_ffffffc0,in_stack_ffffffc4);",
@@ -295,15 +302,15 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 107,
+      "line": 110,
       "match": "uStackY_44",
       "severity": "moderate",
-      "text": "uStackY_44 = iVar10;",
+      "text": "uStackY_44 = iVar8;",
       "type": "stack_alignment_array"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 116,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "*(ushort *)((int)result + 8) = local_24;",
@@ -311,7 +318,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 117,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)result + 4) = local_28;",

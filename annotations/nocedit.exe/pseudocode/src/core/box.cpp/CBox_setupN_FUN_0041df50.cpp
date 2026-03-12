@@ -10,7 +10,9 @@ void __cdecl core_box_cpp_CBox_setupN_FUN_0041df50(CBox *this_ptr,CVector3f *pos
 
 {
   int iVar1;
+  int iVar2;
   CVector3f *pCVar2;
+  CVector3f *pCVar3;
   float fStack_34;
   float fStack_30;
   float fStack_2c;
@@ -66,20 +68,20 @@ void __cdecl core_box_cpp_CBox_setupN_FUN_0041df50(CBox *this_ptr,CVector3f *pos
     (this_ptr->extents).y = fStack_30;
     (this_ptr->extents).z = fStack_2c;
   }
-  iVar1 = 0;
+  iVar2 = 0;
   this_ptr->scrape_point_count = point_count;
   if (0 < point_count) {
-    pCVar2 = &this_ptr->scrape_points[0].local_position;
+    pCVar3 = &this_ptr->scrape_points[0].local_position;
     do {
-      if (pCVar2 != point_array) {
-        ((CVector3f *)&pCVar2->x)->x = point_array->x;
-        pCVar2->y = point_array->y;
-        pCVar2->z = point_array->z;
+      if (pCVar3 != point_array) {
+        ((CVector3f *)&pCVar3->x)->x = point_array->x;
+        pCVar3->y = point_array->y;
+        pCVar3->z = point_array->z;
       }
-      pCVar2 = (CVector3f *)&pCVar2[4].y;
-      iVar1 = iVar1 + 1;
+      pCVar3 = (CVector3f *)&pCVar3[4].y;
+      iVar2 = iVar2 + 1;
       point_array = point_array + 1;
-    } while (iVar1 < point_count);
+    } while (iVar2 < point_count);
   }
   core_box_cpp_CBox_updateTransform_FUN_0041e0e0(this_ptr,position,orientation,volume);
   return;

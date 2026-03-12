@@ -6,8 +6,17 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; char[256]        Stack[-0x138]:256  acStack_138
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; float            Stack[-0x28]:4  fStack_28
+; float            Stack[-0x24]:4  fStack_24
+; void *           Stack[-0x20]:4  pvStack_20
+; char *           Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; C3DSCamera *     Stack[-0x14]:4  pCStack_14
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584b77

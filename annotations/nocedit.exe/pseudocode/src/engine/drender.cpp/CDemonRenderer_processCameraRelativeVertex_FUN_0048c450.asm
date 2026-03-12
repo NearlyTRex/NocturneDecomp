@@ -7,9 +7,7 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   world_position
 ; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
+; CQuaternion4f    Stack[-0x10]:16  CStack_10
 ;
 ; XREF[77]:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00 at 00408b0f

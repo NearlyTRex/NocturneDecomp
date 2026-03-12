@@ -7,18 +7,21 @@
 ; CBaron *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x150]:8  local_150
-; undefined1       Stack[-0x148]:1  local_148
-; undefined1       Stack[-0xd0]:1  local_d0
-; undefined4       Stack[-0xcc]:4  local_cc
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined1       Stack[-0x1c]:1  local_1c
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f[10]    Stack[-0x148]:120  local_148
+; SDamageInfo      Stack[-0xd0]:60  local_d0
+; CVector3f        Stack[-0x94]:12  CStack_94
+; CVector3f        Stack[-0x88]:12  CStack_88
+; CVector3f        Stack[-0x7c]:12  local_7c
+; CVector3f        Stack[-0x70]:12  CStack_70
+; CVector3f        Stack[-0x64]:12  CStack_64
+; CVector3f        Stack[-0x58]:12  CStack_58
+; CVector3f        Stack[-0x4c]:12  CStack_4c
+; CVector3f        Stack[-0x40]:12  local_40
+; CVector3f        Stack[-0x34]:12  CStack_34
+; CVector3f        Stack[-0x28]:12  CStack_28
+; float            Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  iStack_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_baron.cpp_CBaron_advanceMotion_FUN_00413a00 at 00413a36

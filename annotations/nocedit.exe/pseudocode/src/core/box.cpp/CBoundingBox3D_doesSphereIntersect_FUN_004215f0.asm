@@ -8,9 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   sphere_center
 ; float            Stack[0xc]:4   radius
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; CVector3f[2]     Stack[-0x20]:24  local_20
 ;
 ; XREF[1]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a664

@@ -6,7 +6,9 @@
 ; Parameters:
 ; CDirectSoundDevice * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined8       Stack[-0x338]:8  local_338
+; double           Stack[-0x338]:8  local_338
+; char[400]        Stack[-0x330]:400  acStack_330
+; char[400]        Stack[-0x1a0]:400  acStack_1a0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c

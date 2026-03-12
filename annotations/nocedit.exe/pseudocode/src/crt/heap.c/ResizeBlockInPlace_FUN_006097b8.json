@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 500,
+    "complexity_score": 504,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 95,
+    "pseudocode_lines": 99,
     "suspect_count": 37,
     "suspect_types": [
       "negative_offset",
@@ -17,7 +17,7 @@
       "stack_param",
       "undefined_data"
     ],
-    "total_lines": 296
+    "total_lines": 300
   },
   "cross_references": [
     {
@@ -137,13 +137,41 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "in_stack_00000004",
+        "offset": 4,
+        "size": 2,
+        "type": "short"
+      },
+      {
+        "is_param": true,
+        "name": "in_stack_00000008",
+        "offset": 8,
+        "size": 4,
+        "type": "Heap *"
+      },
+      {
+        "is_param": true,
+        "name": "in_stack_0000000c",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": true,
+        "name": "in_stack_00000010",
+        "offset": 16,
+        "size": 4,
+        "type": "uint *"
       }
     ]
   },
   "suspects": [
     {
       "description": "Inferred register parameter",
-      "line": 13,
+      "line": 14,
       "match": "in_DS",
       "severity": "mild",
       "text": "short in_DS;",
@@ -151,7 +179,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 15,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "short in_stack_00000004;",
@@ -159,7 +187,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "Heap *in_stack_00000008;",
@@ -167,7 +195,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 17,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "uint in_stack_0000000c;",
@@ -175,7 +203,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 18,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "uint *in_stack_00000010;",
@@ -183,7 +211,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 23,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "uVar4 = in_stack_0000000c + 0xb & 0xfffffff8;",
@@ -191,7 +219,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 24,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "if (uVar4 < in_stack_0000000c) {",
@@ -199,7 +227,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 30,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "ppHVar1 = &in_stack_00000008[-1].next_heap_block;",
@@ -207,7 +235,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 26,
+      "line": 30,
       "match": "in_stack_00000008[-1].",
       "severity": "mild",
       "text": "ppHVar1 = &in_stack_00000008[-1].next_heap_block;",
@@ -215,7 +243,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 33,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "*in_stack_00000010 = uVar4 - uVar7;",
@@ -223,23 +251,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 34,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "for (puVar8 = (uint *)((int)ppHVar1 + uVar7); uVar4 = *puVar8, uVar4 != 0xffffffff;",
+      "text": "for (puVar8 = (uint *)((int)ppHVar1 + uVar7); uVar1 = *puVar8, uVar1 != 0xffffffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 35,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar8 = (uint *)((int)puVar8 + uVar4)) {",
+      "text": "puVar8 = (uint *)((int)puVar8 + uVar1)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 41,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "if (in_DS == in_stack_00000004) {",
@@ -247,7 +275,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 37,
+      "line": 41,
       "match": "in_DS",
       "severity": "mild",
       "text": "if (in_DS == in_stack_00000004) {",
@@ -255,7 +283,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 45,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "((in_stack_00000008 < new_size ||",
@@ -263,7 +291,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 46,
       "match": "(Heap *)((int)",
       "severity": "mild",
       "text": "((Heap *)((int)&((Heap *)new_size)->heap_size + ((Heap *)new_size)->heap_size) <=",
@@ -271,7 +299,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 47,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "in_stack_00000008))))) {",
@@ -279,39 +307,39 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 55,
       "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "if (*in_stack_00000010 <= uVar4) {",
+      "text": "if (*in_stack_00000010 <= uVar1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 56,
       "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "uVar6 = uVar4 - *in_stack_00000010;",
+      "text": "uVar6 = uVar1 - *in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 58,
       "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "puVar8 = (uint *)((int)puVar8 + *in_stack_00000010);",
+      "text": "puVar5 = (uint *)((int)puVar8 + *in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 58,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar8 = (uint *)((int)puVar8 + *in_stack_00000010);",
+      "text": "puVar5 = (uint *)((int)puVar8 + *in_stack_00000010);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 64,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "*ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + *in_stack_00000010);",
@@ -319,7 +347,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 64,
       "match": "(Heap *)((int)",
       "severity": "mild",
       "text": "*ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + *in_stack_00000010);",
@@ -327,7 +355,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 65,
       "match": "DAT_03f9b851",
       "severity": "mild",
       "text": "DAT_03f9b851 = 0;",
@@ -335,15 +363,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 71,
       "match": "(Heap *)((int)",
       "severity": "mild",
-      "text": "*ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + uVar4);",
+      "text": "*ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + uVar1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 73,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "(void *)((int)((Heap *)(new_size + 0x18))->heap_base + -1);",
@@ -351,7 +379,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 74,
       "match": "DAT_03f9b851",
       "severity": "mild",
       "text": "DAT_03f9b851 = 0;",
@@ -359,31 +387,31 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 75,
       "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "if (*in_stack_00000010 <= uVar4) goto LAB_00609968;",
+      "text": "if (*in_stack_00000010 <= uVar1) goto LAB_00609968;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 76,
       "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "*in_stack_00000010 = *in_stack_00000010 - uVar4;",
+      "text": "*in_stack_00000010 = *in_stack_00000010 - uVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 76,
       "match": "in_stack_00000010",
       "severity": "moderate",
-      "text": "*in_stack_00000010 = *in_stack_00000010 - uVar4;",
+      "text": "*in_stack_00000010 = *in_stack_00000010 - uVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 84,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "if (in_DS == in_stack_00000004) {",
@@ -391,7 +419,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 80,
+      "line": 84,
       "match": "in_DS",
       "severity": "mild",
       "text": "if (in_DS == in_stack_00000004) {",
@@ -399,7 +427,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 88,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "((in_stack_00000008 < new_size ||",
@@ -407,7 +435,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 89,
       "match": "(Heap *)((int)",
       "severity": "mild",
       "text": "((Heap *)((int)&((Heap *)new_size)->heap_size + ((Heap *)new_size)->heap_size) <=",
@@ -415,7 +443,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 86,
+      "line": 90,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "in_stack_00000008))))) {",

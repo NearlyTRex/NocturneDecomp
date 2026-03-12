@@ -9,12 +9,12 @@
 void __cdecl core_motion_cpp_CMotionController_advanceTween_FUN_0052e1d0(CMotionController *this_ptr,int motion_index,float current_frame,float *remaining_time)
 
 {
-  float fVar1;
-  float fVar2;
   int iVar3;
   SMotion *pSVar4;
   SMotion *pSVar5;
   float local_20;
+  float fVar1;
+  float fVar2;
   
   pSVar5 = this_ptr->motion_list_ptr->motions + motion_index;
   fVar1 = *remaining_time * pSVar5->fps + current_frame;

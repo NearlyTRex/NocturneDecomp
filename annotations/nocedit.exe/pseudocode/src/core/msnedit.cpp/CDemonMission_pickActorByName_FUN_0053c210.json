@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 61,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 49,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 184
+    "total_lines": 187
   },
   "cross_references": [
     {
@@ -175,8 +175,8 @@
         "is_param": false,
         "name": "local_3b4",
         "offset": -948,
-        "size": 4,
-        "type": "undefined4"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": true,
@@ -204,7 +204,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 25,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)g_CDemonSetPtr->actors + iVar6);",

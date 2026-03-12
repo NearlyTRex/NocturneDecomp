@@ -9,7 +9,7 @@
 void __cdecl shape_dsemodel_cpp_CDSEModel_processModelPart_FUN_0048f770(CDSEModel *this_ptr,uint part_index)
 
 {
-  char cVar1;
+  char cVar2;
   uint uVar2;
   int iVar3;
   char *pcVar4;
@@ -23,6 +23,7 @@ void __cdecl shape_dsemodel_cpp_CDSEModel_processModelPart_FUN_0048f770(CDSEMode
   byte bVar12;
   int local_18;
   int local_14;
+  char cVar1;
   
   bVar12 = 0;
   this_ptr->vertex_count = 0;
@@ -30,14 +31,14 @@ void __cdecl shape_dsemodel_cpp_CDSEModel_processModelPart_FUN_0048f770(CDSEMode
   pcVar4 = g_ModelPartNames[part_index].name;
   pcVar8 = this_ptr->model_name;
   do {
-    cVar1 = *pcVar4;
+    cVar1 = ((SModelPartName *)pcVar4)->name[0];
     *pcVar8 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pcVar8[1] = cVar1;
+    cVar2 = ((SModelPartName *)pcVar4)->name[1];
+    pcVar4 = ((SModelPartName *)pcVar4)->name + 2;
+    pcVar8[1] = cVar2;
     pcVar8 = pcVar8 + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   for (local_18 = 0; local_18 < g_PolygonCount; local_18 = local_18 + 1) {
     if (g_ModelPolygonData[local_18].part_assignment == part_index) {
       pSVar5 = g_ModelPolygonData + local_18;

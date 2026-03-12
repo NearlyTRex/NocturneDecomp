@@ -8,12 +8,8 @@
 ; CQuaternion4f *  Stack[0x8]:4   world_point
 ; int              Stack[0xc]:4   line_length
 ; Local Variables:
-; undefined1       Stack[-0x40]:1  local_40
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; SProjectedVertex[2] Stack[-0x40]:48  local_40
+; CVector3i        Stack[-0x10]:12  local_10
 ;
 ; XREF[2]:
 ;   core_door.cpp_CDoor_renderOpaque_FUN_004807d0 at 00480946

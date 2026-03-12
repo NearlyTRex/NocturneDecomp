@@ -6,7 +6,35 @@
 ; Parameters:
 ; CSpike *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xec]:1  local_ec
+; CVector3f[8]     Stack[-0x1cc]:96  aCStack_1cc
+; SDamageInfo      Stack[-0x16c]:60  SStack_16c
+; SCollisionInfo   Stack[-0x130]:40  SStack_130
+; CVector3f[2]     Stack[-0x108]:24  aCStack_108
+; CBoundingBox3D   Stack[-0xec]:24  local_ec
+; CBoundingBox3D   Stack[-0xd4]:24  CStack_d4
+; CVector3f        Stack[-0xbc]:12  CStack_bc
+; CVector3f        Stack[-0xb0]:12  CStack_b0
+; CVector3f        Stack[-0xa4]:12  CStack_a4
+; CVector3f        Stack[-0x98]:12  CStack_98
+; undefined4       Stack[-0x8c]:4  uStack_8c
+; undefined4       Stack[-0x88]:4  uStack_88
+; undefined4       Stack[-0x84]:4  uStack_84
+; CVector3f        Stack[-0x80]:12  CStack_80
+; CVector3f        Stack[-0x74]:12  CStack_74
+; CVector3f        Stack[-0x68]:12  CStack_68
+; float            Stack[-0x5c]:4  fStack_5c
+; float            Stack[-0x58]:4  fStack_58
+; float            Stack[-0x54]:4  fStack_54
+; CVector3f        Stack[-0x50]:12  CStack_50
+; float            Stack[-0x44]:4  fStack_44
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; ECollisionType   Stack[-0x28]:4  EStack_28
+; int              Stack[-0x24]:4  iStack_24
+; CLocation *      Stack[-0x20]:4  pCStack_20
+; int              Stack[-0x1c]:4  iStack_1c
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; XREF[1]:
 ;   core_spike.cpp_CSpike_process_FUN_005b8410 at 005b8717

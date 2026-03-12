@@ -11,14 +11,14 @@
 float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170(CDemonRaytrace *this_ptr,CVector3f *world_position)
 
 {
-  int grid_x;
-  int grid_z;
-  int iVar1;
-  int iVar2;
   CDemonCube *pCVar3;
   float local_2c;
   int local_1c;
   int local_18;
+  int grid_x;
+  int iVar2;
+  int iVar1;
+  int grid_z;
   
   grid_x = (int)ROUND(ROUND((world_position->x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x))
   ;

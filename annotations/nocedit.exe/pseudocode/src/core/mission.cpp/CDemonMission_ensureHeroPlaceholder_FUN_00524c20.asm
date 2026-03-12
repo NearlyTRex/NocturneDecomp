@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x3b4]:4  local_3b4
+; CPickList        Stack[-0x3b4]:936  local_3b4
 ;
 ; XREF[1]:
 ;   core_mission.cpp_CDemonMission_load_FUN_00522d90 at 00522dfa

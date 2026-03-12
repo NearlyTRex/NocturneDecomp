@@ -4,9 +4,9 @@
 ; void __cdecl shape_design_c_sortPolygonsByTexture_FUN_0045b8b0(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x19c]:1  local_19c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; uint[97]         Stack[-0x19c]:388  local_19c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_design.c_exportModelToBIN_FUN_0045aa80 at 0045aa8c

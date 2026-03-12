@@ -9,15 +9,16 @@
 int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
-  int iVar1;
   int iVar2;
+  int iVar4;
   int iVar3;
   SMRGLHeaderPrimitive *pSVar4;
   uint local_14;
+  int iVar1;
   
   g_RenderPixelCounter = 0;
   if ((this_ptr->plane_culling_enabled != 0) &&
-     (iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar2 == 0)) {
+     (iVar4 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar4 == 0)) {
     return 0;
   }
   iVar2 = 0;
@@ -47,10 +48,10 @@ int __cdecl engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa5
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
               (this_ptr,(prim->base).count,g_VertexIndexBuffer);
-    iVar2 = g_RenderPixelCounter;
+    iVar4 = g_RenderPixelCounter;
   }
   else {
-    iVar2 = 0;
+    iVar4 = 0;
   }
-  return iVar2;
+  return iVar4;
 }

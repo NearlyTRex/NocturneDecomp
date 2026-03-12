@@ -9,7 +9,7 @@
 ; char *           Stack[0xc]:4   filename
 ; int *            Stack[0x10]:4   file_index_out
 ; Local Variables:
-; undefined1       Stack[-0x224]:1  local_224
+; char[532]        Stack[-0x224]:532  local_224
 ;
 ; XREF[6]:
 ;   core_msnedit.cpp_CDemonMission_saveMissionAndScript_FUN_0053d190 at 0053d1ae

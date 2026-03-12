@@ -8,7 +8,7 @@
 ; time_t           Stack[0x8]:4   seconds
 ; time_t           Stack[0xc]:4   timezone_offset
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; short *          Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   crt_time.c__mktime_FUN_00600f80 at 00601093

@@ -14,9 +14,13 @@ void __cdecl FUN_0060403f(uint param_1,float10 *param_2,uint param_3,char *param
   int iVar3;
   float10 *in_EDX;
   int iVar4;
+  int iVar1;
+  int iVar5;
   int unaff_EBP;
   int *unaff_ESI;
   int unaff_EDI;
+  int iVar6;
+  char *pcVar7;
   char *unaff_retaddr;
   
   iVar2 = *(int *)(unaff_EBP + -0x18);
@@ -44,21 +48,21 @@ void __cdecl FUN_0060403f(uint param_1,float10 *param_2,uint param_3,char *param
     return;
   }
 LAB_00604135:
-  iVar2 = *(int *)(unaff_EBP + -0x24);
+  iVar6 = *(int *)(unaff_EBP + -0x24);
   iVar4 = *(int *)(unaff_EBP + -0x20) + 7;
   for (pcVar1 = (char *)(unaff_EBP + -0x93); *(int *)(unaff_EBP + -0x20) = iVar4, *pcVar1 == '0';
       pcVar1 = pcVar1 + 1) {
-    iVar2 = iVar2 + -1;
+    iVar6 = iVar6 + -1;
     iVar4 = *(int *)(unaff_EBP + -0x20) + -1;
   }
-  iVar4 = *unaff_ESI;
+  iVar1 = *unaff_ESI;
   if ((*(byte *)(unaff_ESI + 2) & 2) == 0) {
     if ((*(byte *)(unaff_ESI + 2) & 1) != 0) {
       if (unaff_ESI[1] < 1) {
-        iVar4 = iVar4 + unaff_ESI[1];
+        iVar1 = iVar1 + unaff_ESI[1];
       }
       else {
-        iVar4 = iVar4 + 1;
+        iVar1 = iVar1 + 1;
       }
       *(int *)(unaff_EBP + -0x20) = (*(int *)(unaff_EBP + -0x20) + 1) - unaff_ESI[1];
     }
@@ -66,43 +70,43 @@ LAB_00604135:
   else {
     iVar3 = *(int *)(unaff_EBP + -0x20) + unaff_ESI[1];
     *(int *)(unaff_EBP + -0x20) = iVar3;
-    iVar4 = iVar4 + iVar3 + 1;
+    iVar1 = iVar1 + iVar3 + 1;
   }
-  if (-1 < iVar4) {
-    if (iVar2 < iVar4) {
-      iVar4 = iVar2;
+  if (-1 < iVar1) {
+    if (iVar6 < iVar1) {
+      iVar1 = iVar6;
     }
-    iVar3 = 0xf;
+    iVar5 = 0xf;
     if ((*(byte *)(unaff_ESI + 2) & 0x20) != 0) {
-      iVar3 = 0x14;
+      iVar5 = 0x14;
     }
     if ((*(byte *)(unaff_ESI + 2) & 0x40) != 0) {
-      iVar3 = iVar3 * 2;
+      iVar5 = iVar5 * 2;
     }
-    if (iVar3 < iVar4) {
-      iVar4 = iVar3 + 1;
+    if (iVar5 < iVar1) {
+      iVar1 = iVar5 + 1;
     }
     *(byte *)(unaff_EBP + -0x10) = 0x30;
-    if ((iVar4 < iVar2) && (0x34 < (byte)pcVar1[iVar4])) {
+    if ((iVar1 < iVar6) && (0x34 < (byte)pcVar1[iVar1])) {
       *(byte *)(unaff_EBP + -0x10) = 0x39;
     }
-    pcVar1 = pcVar1 + iVar4;
-    iVar2 = iVar4;
+    pcVar7 = pcVar1 + iVar1;
+    iVar6 = iVar1;
     while( true ) {
-      pcVar1 = pcVar1 + -1;
-      iVar2 = iVar2 + -1;
-      if (*pcVar1 != *(char *)(unaff_EBP + -0x10)) break;
-      iVar4 = iVar4 + -1;
+      pcVar7 = pcVar7 + -1;
+      iVar6 = iVar6 + -1;
+      if (*pcVar7 != *(char *)(unaff_EBP + -0x10)) break;
+      iVar1 = iVar1 + -1;
     }
     if (*(char *)(unaff_EBP + -0x10) == '9') {
-      *pcVar1 = *pcVar1 + '\x01';
+      *pcVar7 = *pcVar7 + '\x01';
     }
-    if (iVar2 < 0) {
-      iVar4 = iVar4 + 1;
+    if (iVar6 < 0) {
+      iVar1 = iVar1 + 1;
       *(int *)(unaff_EBP + -0x20) = *(int *)(unaff_EBP + -0x20) + 1;
     }
   }
-  if (iVar4 < 1) {
+  if (iVar1 < 1) {
     *(uint *)(unaff_EBP + -0x20) = 0;
     *(byte *)(unaff_EBP + -0x94) = 0x30;
     unaff_ESI[5] = 0;

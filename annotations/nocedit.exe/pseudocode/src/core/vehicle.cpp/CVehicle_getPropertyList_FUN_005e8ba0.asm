@@ -7,9 +7,9 @@
 ; CVehicle *       Stack[0x4]:4   this_ptr
 ; CActorPropertyList * Stack[0x8]:4   property_list
 ; Local Variables:
-; undefined1       Stack[-0x110]:1  local_110
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; char[256]        Stack[-0x110]:256  local_110
+; CVector3f *      Stack[-0x10]:4  local_10
+; CTire *          Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Model_file_kfm_00656f69

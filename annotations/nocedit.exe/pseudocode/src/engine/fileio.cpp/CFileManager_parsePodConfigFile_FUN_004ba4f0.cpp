@@ -38,9 +38,11 @@ void __cdecl engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0(CFil
       pcVar3 = g_FilenameBufferTemplate;
       pcVar4 = local_10c;
       for (iVar1 = 0x41; iVar1 != 0; iVar1 = iVar1 + -1) {
+        pcVar4 = pcVar4 + (uint)bVar5 * -8 + 4;
+        pcVar3 = pcVar3 + (uint)bVar5 * -8 + 4;
         *(uint *)pcVar4 = *(uint *)pcVar3;
-        pcVar3 = pcVar3 + ((uint)bVar5 * -2 + 1) * 4;
-        pcVar4 = pcVar4 + ((uint)bVar5 * -2 + 1) * 4;
+        pcVar3 = pcVar3;
+        pcVar4 = pcVar4;
       }
       _fscanf(file,"%s\n",local_10c);
       if (local_10c[0] == '\0') {

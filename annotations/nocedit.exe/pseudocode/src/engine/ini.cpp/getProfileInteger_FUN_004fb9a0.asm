@@ -9,8 +9,8 @@
 ; char *           Stack[0xc]:4   default_value
 ; char *           Stack[0x10]:4   filename
 ; Local Variables:
-; undefined        Stack[-0x20c]:1  local_20c
-; undefined        Stack[-0x10c]:1  local_10c
+; char[256]        Stack[-0x20c]:256  local_20c
+; char[256]        Stack[-0x10c]:256  local_10c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0062fc6e

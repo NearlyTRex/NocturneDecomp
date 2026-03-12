@@ -9,16 +9,19 @@
 void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_004b0db0(CEventList *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
+  int iVar3;
   int iVar2;
   SSfxEntry *dest;
   char *pcVar3;
   char *pcVar4;
   double dVar5;
   char local_170 [336];
-  ulonglong local_20;
+  int local_20;
+  int iStack_1c;
   SSfxEntry *local_18;
   int local_14;
+  char cVar1;
   
   local_14 = 0;
   if (0 < (this_ptr->sfx_handles).count) {
@@ -26,33 +29,32 @@ void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_004b0db0(CEventList 
     local_18 = (this_ptr->sfx_handles).entries + 1;
     do {
       dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(dest->sfx_handle,1);
-      local_20._0_4_ = SUB84(__BITCAST_UINT64(dVar5),0);
-      *(int *)&dest->playback_position = (int)local_20;
-      local_20._4_4_ = (int)((ulonglong)dVar5 >> 0x20);
-      *(int *)((int)&dest->playback_position + 4) = local_20._4_4_;
-      local_20 = dVar5;
+      local_20 = SUB84(__BITCAST_UINT64(dVar5),0);
+      *(int *)&dest->playback_position = local_20;
+      iStack_1c = (int)((ulonglong)dVar5 >> 0x20);
+      *(int *)((int)&dest->playback_position + 4) = iStack_1c;
       if (0.0 <= dest->playback_position) {
         sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)local_170);
-        iVar2 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
+        iVar3 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
                           (dest->sfx_handle,(CSfxSample *)local_170);
-        if (iVar2 == 0) goto LAB_004b0e30;
+        if (iVar3 == 0) goto LAB_004b0ebe;
         pcVar4 = dest->sound_filename;
         pcVar3 = local_170;
         do {
           cVar1 = *pcVar3;
           *pcVar4 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar3[1];
+          cVar2 = pcVar3[1];
           pcVar3 = pcVar3 + 2;
-          pcVar4[1] = cVar1;
+          pcVar4[1] = cVar2;
           pcVar4 = pcVar4 + 2;
-        } while (cVar1 != '\0');
+        } while (cVar2 != '\0');
         dest = dest + 1;
         local_18 = local_18 + 1;
         local_14 = local_14 + 1;
       }
       else {
-LAB_004b0e30:
+LAB_004b0ebe:
         iVar2 = (this_ptr->sfx_handles).count + -1;
         (this_ptr->sfx_handles).count = iVar2;
         memmove(dest,local_18,(iVar2 - local_14) * 0x120);

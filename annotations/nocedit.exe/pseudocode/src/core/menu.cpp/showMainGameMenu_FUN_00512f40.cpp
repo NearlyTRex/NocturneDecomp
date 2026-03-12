@@ -9,123 +9,138 @@
 int __cdecl core_menu_cpp_showMainGameMenu_FUN_00512f40(void)
 
 {
-  char cVar1;
-  CGame *pCVar2;
+  char cVar3;
+  char *pcVar4;
+  char *pcVar5;
+  int iVar6;
+  int iVar8;
   char *pcVar3;
   int iVar4;
+  char (*pacVar9) [256];
+  int iVar7;
   int iVar5;
+  int iVar10;
+  CAlphaBitmap *this_ptr_00;
   CAlphaBitmap *this_ptr;
+  char (*pacVar8) [256];
+  char *pcVar9;
+  char *pcVar11;
   char (*pacVar6) [256];
   char *pcVar7;
-  int local_c;
-  int local_8;
+  int iStack_c;
+  int iStack_8;
+  char cVar1;
+  CGame *pCVar2;
+  CGame *pCVar3;
+  char cVar2;
   
-  pCVar2 = g_CGamePtr;
+  pCVar3 = g_CGamePtr;
   if (g_WindowHeight < GAME_WINDOW_RESOLUTION_480) {
     return 1;
   }
   if ((g_FullscreenMode == 0) && (GAME_WINDOW_RESOLUTION_480 < g_CGamePtr->game_pixy)) {
     g_CGamePtr->game_pixy = GAME_WINDOW_RESOLUTION_480;
-    pCVar2->game_pixx = GAME_WINDOW_RESOLUTION_640;
+    pCVar3->game_pixx = GAME_WINDOW_RESOLUTION_640;
   }
-  this_ptr = g_MenuBitmaps;
-  iVar5 = 0;
+  this_ptr_00 = g_MenuBitmaps;
+  iVar7 = 0;
   do {
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
-              (this_ptr,*(char **)((int)g_MenuBitmapFilenames + iVar5),0x40,0x40);
-    iVar5 = iVar5 + 4;
-    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_00410c20(this_ptr,2,1);
-    this_ptr = this_ptr + 1;
-  } while (iVar5 != 0x20);
+              (this_ptr_00,*(char **)((int)g_MenuBitmapFilenames + iVar7),0x40,0x40);
+    iVar7 = iVar7 + 4;
+    engine_alphabit_cpp_CAlphaBitmap_scale_FUN_00410c20(this_ptr_00,2,1);
+    this_ptr_00 = this_ptr_00 + 1;
+  } while (iVar7 != 0x20);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&g_MenuBlurLeft,"fblurl",0x68,0x46);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&g_MenuBlurMiddle,"fblurm",0x20,0x46);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&g_MenuBlurRight,"fblurr",0x68,0x46);
-  iVar5 = 0;
+  iVar10 = 0;
   engine_2d_c_clearInputAndWait_FUN_00403260();
   engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
-  local_c = 0;
+  iStack_c = 0;
   core_moon_cpp_CMoon_init_FUN_00529ae0(&g_CMoonInstance);
-  local_8 = 1;
+  iStack_8 = 1;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   do {
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
-    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("S T A R T");
-    pacVar6 = g_MainMenuTextBuffers;
+    pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("S T A R T");
+    pacVar8 = g_MainMenuTextBuffers;
     do {
-      cVar1 = *pcVar3;
-      (*pacVar6)[0] = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      *(char *)((int)pacVar6 + 1) = cVar1;
-      pacVar6 = (char (*) [256])((int)pacVar6 + 2);
-    } while (cVar1 != '\0');
-    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("O P T I O N S");
-    pcVar7 = g_MainMenuTextBuffers[1];
+      cVar2 = *pcVar4;
+      (*pacVar8)[0] = cVar2;
+      if (cVar2 == '\0') break;
+      cVar3 = pcVar4[1];
+      pcVar4 = pcVar4 + 2;
+      *(char *)((int)pacVar8 + 1) = cVar3;
+      pacVar8 = (char (*) [256])((int)pacVar8 + 2);
+    } while (cVar3 != '\0');
+    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("O P T I O N S");
+    pcVar9 = g_MainMenuTextBuffers[1];
     do {
-      cVar1 = *pcVar3;
-      *pcVar7 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar7[1] = cVar1;
-      pcVar7 = pcVar7 + 2;
-    } while (cVar1 != '\0');
-    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("L O A D");
-    pcVar7 = g_MainMenuTextBuffers[2];
+      cVar3 = *pcVar5;
+      (*(char (*) [256])pcVar9)[0] = cVar3;
+      if (cVar3 == '\0') break;
+      cVar3 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
+      (*(char (*) [256])pcVar9)[1] = cVar3;
+      pcVar9 = *(char (*) [256])pcVar9 + 2;
+    } while (cVar3 != '\0');
+    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("L O A D");
+    pcVar11 = g_MainMenuTextBuffers[2];
     do {
-      cVar1 = *pcVar3;
-      *pcVar7 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar7[1] = cVar1;
-      pcVar7 = pcVar7 + 2;
-    } while (cVar1 != '\0');
-    pcVar7 = g_MainMenuTextBuffers[3];
-    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Q U I T");
-    pacVar6 = g_MainMenuTextBuffers;
+      cVar3 = *pcVar5;
+      *pcVar11 = cVar3;
+      if (cVar3 == '\0') break;
+      cVar3 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
+      pcVar11[1] = cVar3;
+      pcVar11 = pcVar11 + 2;
+    } while (cVar3 != '\0');
+    pcVar11 = g_MainMenuTextBuffers[3];
+    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Q U I T");
+    pacVar9 = g_MainMenuTextBuffers;
     do {
-      cVar1 = *pcVar3;
-      *pcVar7 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar3[1];
-      pcVar3 = pcVar3 + 2;
-      pcVar7[1] = cVar1;
-      pcVar7 = pcVar7 + 2;
-    } while (cVar1 != '\0');
-    iVar4 = 0;
+      cVar3 = *pcVar5;
+      *pcVar11 = cVar3;
+      if (cVar3 == '\0') break;
+      cVar3 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
+      pcVar11[1] = cVar3;
+      pcVar11 = pcVar11 + 2;
+    } while (cVar3 != '\0');
+    iVar6 = 0;
     do {
-      *(char (**) [256])((int)g_MenuTextPointers + iVar4) = pacVar6;
-      iVar4 = iVar4 + 4;
-      pacVar6 = pacVar6 + 1;
-    } while (iVar4 != 0x10);
-    iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(g_MenuTextPointers,4,&local_c,0xfa,0);
-    if (local_8 != 0) {
+      *(char (**) [256])((int)g_MenuTextPointers + iVar6) = pacVar9;
+      iVar6 = iVar6 + 4;
+      pacVar9 = pacVar9 + 1;
+    } while (iVar6 != 0x10);
+    iVar8 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000(g_MenuTextPointers,4,&iStack_c,0xfa,0)
+    ;
+    if (iStack_8 != 0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    switch(iVar4) {
+    switch(iVar8) {
     case 0:
       core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);
       core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
-      iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
-      if ((iVar4 == 0) ||
-         (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL), iVar4 == 0)) {
-        iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
-        if (iVar4 == 0) {
-          iVar4 = 0;
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
+      if ((iVar8 == 0) ||
+         (iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL), iVar8 == 0)) {
+        iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
+        if (iVar8 == 0) {
+          iVar8 = 0;
         }
         else {
-          iVar4 = 1;
+          iVar8 = 1;
         }
       }
       else {
-        iVar4 = 2;
+        iVar8 = 2;
       }
-      core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(g_CGamePtr,iVar4);
+      core_game_cpp_CGame_showChapterSelect_FUN_004e1cb0(g_CGamePtr,iVar8);
       engine_2d_c_clearInputAndWait_FUN_00403260();
       engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
       core_moon_cpp_CMoon_init_FUN_00529ae0(&g_CMoonInstance);
@@ -144,23 +159,23 @@ LAB_005131d5:
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
       break;
     case 3:
-      iVar5 = 99;
+      iVar10 = 99;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
-    if (iVar4 != 0) {
-      iVar5 = 99;
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
+    if (iVar8 != 0) {
+      iVar10 = 99;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
-    if ((iVar4 != 0) &&
-       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M), iVar4 != 0)) {
-      iVar4 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
-      sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0((uint)(iVar4 == 0));
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
+    if ((iVar8 != 0) &&
+       (iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M), iVar8 != 0)) {
+      iVar8 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
+      sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0((uint)(iVar8 == 0));
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
-    if ((iVar4 != 0) &&
-       ((iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D), iVar4 != 0 ||
-        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_L), iVar4 != 0)))) {
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
+    if ((iVar8 != 0) &&
+       ((iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_D), iVar8 != 0 ||
+        (iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_L), iVar8 != 0)))) {
       if (g_FullscreenMode != 0) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0("3D acceleration has been turned off!",0,0);
@@ -174,22 +189,22 @@ LAB_005131d5:
       core_main_c_showDeveloperToolsMenu_FUN_005073a0();
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
-    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
-    if ((iVar4 != 0) &&
-       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F), iVar4 != 0)) {
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
+    if ((iVar8 != 0) &&
+       (iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F), iVar8 != 0)) {
       core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
       core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(&g_CDemonFileManagerInstance);
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
-    if (local_8 != 0) {
-      local_8 = 0;
+    if (iStack_8 != 0) {
+      iStack_8 = 0;
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
-    if (iVar5 != 0) {
+    if (iVar10 != 0) {
       core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
       core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);
-      return iVar5;
+      return iVar10;
     }
   } while( true );
 }

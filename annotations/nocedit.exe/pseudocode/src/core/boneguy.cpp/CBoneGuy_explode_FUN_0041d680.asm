@@ -6,17 +6,16 @@
 ; Parameters:
 ; CBoneGuy *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float[1520]      Stack[-0x1824]:6080  afStackY_1824
+; CQuaternion4f    Stack[-0x48]:16  local_48
+; CVector3f        Stack[-0x38]:12  local_38
+; UOrientationVector * Stack[-0x2c]:4  local_2c
+; CVector3f *      Stack[-0x28]:4  local_28
+; CDeformableModel * Stack[-0x24]:4  local_24
+; SBoneGuyBox *    Stack[-0x20]:4  local_20
+; CBoneGuy *       Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_0041d4d0 at 0041d50b

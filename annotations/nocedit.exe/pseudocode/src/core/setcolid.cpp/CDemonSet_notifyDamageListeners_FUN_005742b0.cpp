@@ -20,23 +20,18 @@ void __cdecl core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0(CDem
   
   iVar1 = 0;
   if (0 < this_ptr->character_count) {
-    local_14 = (float *)((int)unknown_param + 0xc);
-    local_10 = (float *)((int)unknown_param + 0x10);
-    local_1c = (float *)((int)unknown_param + 0x1c);
-    local_18 = (float *)((int)unknown_param + 0x20);
-    local_20 = (float *)((int)unknown_param + 0x24);
     pCVar2 = this_ptr;
     do {
       local_5c.hit_part_index = *(int *)unknown_param;
       local_5c.damage_amount = *(float *)((int)unknown_param + 4);
       local_5c.gore_multiplier = *(float *)((int)unknown_param + 8);
-      local_5c.impact_point.x = *local_14;
-      local_5c.impact_point.y = *local_10;
+      local_5c.impact_point.x = *(float *)((int)unknown_param + 0xc);
+      local_5c.impact_point.y = *(float *)((int)unknown_param + 0x10);
       local_5c.impact_point.z = *(float *)((int)unknown_param + 0x14);
       local_5c.impact_force = *(float *)((int)unknown_param + 0x18);
-      local_5c.impact_direction.x = *local_1c;
-      local_5c.impact_direction.y = *local_18;
-      local_5c.impact_direction.z = *local_20;
+      local_5c.impact_direction.x = *(float *)((int)unknown_param + 0x1c);
+      local_5c.impact_direction.y = *(float *)((int)unknown_param + 0x20);
+      local_5c.impact_direction.z = *(float *)((int)unknown_param + 0x24);
       local_5c.ammo_type = *(EAmmoType *)((int)unknown_param + 0x28);
       local_5c.dismember_prob = *(float *)((int)unknown_param + 0x2c);
       local_5c.damage_type = *(EDamageType *)((int)unknown_param + 0x30);

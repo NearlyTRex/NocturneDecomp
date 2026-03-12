@@ -8,7 +8,7 @@
 ; CObj *           Stack[0x8]:4   dest_obj
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; uint             Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   shape_superopt.cpp_COptimize_setGeometry_FUN_005d71e0 at 005d722a

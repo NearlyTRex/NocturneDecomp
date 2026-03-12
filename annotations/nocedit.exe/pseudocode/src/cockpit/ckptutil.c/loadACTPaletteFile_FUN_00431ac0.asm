@@ -7,11 +7,8 @@
 ; char *           Stack[0x4]:4   base_filename
 ; uchar *          Stack[0x8]:4   output_buffer
 ; Local Variables:
-; undefined1       Stack[-0xac]:1  local_ac
-; undefined1       Stack[-0xab]:1  local_ab
-; undefined1       Stack[-0xa9]:1  local_a9
-; undefined1       Stack[-0xa8]:1  local_a8
-; undefined        Stack[-0x5c]:1  local_5c
+; char[80]         Stack[-0xac]:80  local_ac
+; char[80]         Stack[-0x5c]:80  local_5c
 ;
 ; XREF[1]:
 ;   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30 at 00431a44

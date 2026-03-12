@@ -9,14 +9,17 @@
 void __cdecl shape_design_c_saveCurrentModel_FUN_00459de0(void)
 
 {
-  char cVar1;
+  char cVar2;
   uint uVar2;
   int iVar3;
   char *pcVar4;
   char *pcVar5;
+  char *pcVar3;
   char *pcVar6;
+  char *pcVar7;
   byte bVar7;
   char local_60 [80];
+  char cVar1;
   
   bVar7 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -34,35 +37,35 @@ void __cdecl shape_design_c_saveCurrentModel_FUN_00459de0(void)
 LAB_00459e29:
   if (pcVar4 == (char *)0x0) {
     uVar2 = 0xffffffff;
-    pcVar5 = local_60;
+    pcVar3 = local_60;
     do {
       if (uVar2 == 0) break;
       uVar2 = uVar2 - 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
+      cVar1 = *pcVar3;
+      pcVar3 = pcVar3 + (uint)bVar7 * -2 + 1;
     } while (cVar1 != '\0');
     if (~uVar2 - 1 < 9) {
-      pcVar4 = ".MDL";
+      pcVar3 = ".MDL";
       iVar3 = -1;
-      pcVar5 = local_60;
+      pcVar6 = local_60;
       do {
-        pcVar6 = pcVar5;
+        pcVar6 = pcVar6;
         if (iVar3 == 0) break;
         iVar3 = iVar3 + -1;
-        pcVar6 = pcVar5 + (uint)bVar7 * -2 + 1;
-        cVar1 = *pcVar5;
-        pcVar5 = pcVar6;
-      } while (cVar1 != '\0');
-      pcVar6 = pcVar6 + -1;
+        pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
+        cVar2 = *pcVar6;
+        pcVar6 = pcVar6;
+      } while (cVar2 != '\0');
+      pcVar7 = pcVar6 + -1;
       do {
-        cVar1 = *pcVar4;
-        *pcVar6 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar4[1];
-        pcVar4 = pcVar4 + 2;
-        pcVar6[1] = cVar1;
-        pcVar6 = pcVar6 + 2;
-      } while (cVar1 != '\0');
+        cVar2 = *pcVar3;
+        *pcVar7 = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar3[1];
+        pcVar3 = pcVar3 + 2;
+        pcVar7[1] = cVar2;
+        pcVar7 = pcVar7 + 2;
+      } while (cVar2 != '\0');
     }
   }
   shape_design_c_exportModelToMDL_FUN_00459e80(local_60);

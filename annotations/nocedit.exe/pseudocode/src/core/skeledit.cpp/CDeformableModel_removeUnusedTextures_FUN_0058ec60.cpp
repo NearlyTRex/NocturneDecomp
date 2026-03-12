@@ -12,6 +12,8 @@ void __cdecl core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec6
   int *piVar1;
   int iVar2;
   int iVar3;
+  int iVar1;
+  int iVar6;
   int iVar4;
   int iVar5;
   CDeformableModel *pCVar6;
@@ -50,26 +52,25 @@ void __cdecl core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec6
           local_18 = (CDeformableModel *)local_18->lod_info;
         } while (iVar5 < this_ptr->num_lods);
       }
-      iVar5 = this_ptr->num_textures + -1;
-      this_ptr->num_textures = iVar5;
-      memmove(local_1c,local_20,(iVar5 - iVar4) * 0x48);
+      iVar6 = this_ptr->num_textures + -1;
+      this_ptr->num_textures = iVar6;
+      memmove(local_1c,local_20,(iVar6 - iVar4) * 0x48);
       local_14 = 0;
       pCVar6 = this_ptr;
       if (0 < this_ptr->num_lods) {
         do {
-          iVar2 = 0;
-          iVar5 = 0;
-          while (iVar5 < pCVar6->tri_count[0] + pCVar6->cap_tri_count[0]) {
-            piVar1 = (int *)((int)pCVar6->index_data_ptr[0] + iVar2);
-            iVar3 = *piVar1;
-            if (iVar4 < iVar3) {
-              *piVar1 = iVar3 + -1;
-              iVar5 = iVar5 + 1;
-              iVar2 = iVar2 + 4;
+          iVar1 = 0;
+          iVar6 = 0;
+          while (iVar6 < pCVar6->tri_count[0] + pCVar6->cap_tri_count[0]) {
+            piVar1 = (int *)((int)pCVar6->index_data_ptr[0] + iVar1);
+            if (iVar4 < *piVar1) {
+              *piVar1 = *piVar1 + -1;
+              iVar6 = iVar6 + 1;
+              iVar1 = iVar1 + 4;
             }
             else {
-              iVar5 = iVar5 + 1;
-              iVar2 = iVar2 + 4;
+              iVar6 = iVar6 + 1;
+              iVar1 = iVar1 + 4;
             }
           }
           pCVar6 = (CDeformableModel *)pCVar6->lod_info;

@@ -8,15 +8,13 @@
 ; char *           Stack[0x8]:4   file_pattern
 ; char *           Stack[0xc]:4   output_filename_buffer
 ; Local Variables:
-; undefined        Stack[-0x86c]:1  local_86c
-; undefined        Stack[-0x4c4]:1  local_4c4
-; undefined        Stack[-0x334]:1  local_334
-; undefined        Stack[-0x220]:1  local_220
-; undefined1       Stack[-0x21f]:1  local_21f
-; undefined        Stack[-0x11c]:1  local_11c
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined        Stack[-0x14]:1  local_14
+; CPickList        Stack[-0x86c]:936  local_86c
+; char[400]        Stack[-0x4c4]:400  local_4c4
+; CFileFinder      Stack[-0x334]:276  local_334
+; char[260]        Stack[-0x220]:260  local_220
+; char[256]        Stack[-0x11c]:256  local_11c
+; CCheckOutList    Stack[-0x1c]:8  local_1c
+; char[4]          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740 at 004ba7e8

@@ -4,19 +4,19 @@
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 62,
+        "line": 69,
         "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 105,
+        "line": 112,
         "message": "assigning to 'int' from incompatible type 'void'"
       },
       {
         "category": "incompatible_types",
         "column": 17,
-        "line": 167,
+        "line": 174,
         "message": "assigning to 'int' from incompatible type 'void'"
       }
     ],
@@ -25,18 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 277,
+    "complexity_score": 284,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 237,
+    "pseudocode_lines": 244,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_type_propagation"
     ],
-    "total_lines": 784
+    "total_lines": 791
   },
   "cross_references": [
     {
@@ -224,60 +224,137 @@
     "pcode_op_count": 2638
   },
   "stack_frame": {
-    "frame_size": 120,
-    "local_size": 112,
+    "frame_size": 164,
+    "local_size": 156,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "fStack_98",
+        "offset": -152,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_84",
+        "offset": -132,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_78",
+        "offset": -120,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
         "name": "local_6c",
         "offset": -108,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_60",
+        "offset": -96,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_64",
-        "offset": -100,
+        "name": "CStack_54",
+        "offset": -84,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_48",
+        "offset": -72,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_3c",
+        "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_38",
+        "offset": -56,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_34",
+        "offset": -52,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "CPathMap *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_14",
+        "offset": -20,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": true,
@@ -323,7 +400,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 57,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_30 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y);",
@@ -331,10 +408,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 94,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar1 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y);",
+      "text": "fVar2 = SQRT(local_6c.z * local_6c.z + local_6c.x * local_6c.x + local_6c.y * local_6c.y);",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -9,11 +9,12 @@
 int __cdecl shape_meshlod_cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480(CLodMesh *this_ptr,int edge_idx,int vertex_idx)
 
 {
-  CLodVert *pCVar1;
-  int iVar2;
-  int iVar3;
-  CLodVert *pCVar4;
-  float fVar5;
+  CLodVert *pCVar2;
+  int iVar4;
+  float fVar6;
+  float fVar7;
+  float fVar8;
+  float fVar9;
   CLodEdge *pCVar6;
   CLodVert *pCVar7;
   int iVar8;
@@ -23,20 +24,25 @@ int __cdecl shape_meshlod_cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480(CLodM
   float local_24;
   float local_20;
   float local_1c;
+  int iVar3;
+  CLodVert *pCVar4;
+  CLodVert *pCVar1;
+  int iVar2;
+  float fVar5;
   
-  pCVar7 = this_ptr->vertex_data;
-  pCVar1 = pCVar7 + vertex_idx;
-  iVar8 = this_ptr->edges_ptr[edge_idx].vertex_idx_1;
+  pCVar2 = this_ptr->vertex_data;
+  pCVar1 = pCVar2 + vertex_idx;
+  iVar4 = this_ptr->edges_ptr[edge_idx].vertex_idx_1;
   iVar2 = this_ptr->edges_ptr[edge_idx].vertex_idx_2;
-  local_24 = pCVar7[iVar8].position.x - pCVar7[iVar2].position.x;
-  local_20 = pCVar7[iVar8].position.y - pCVar7[iVar2].position.y;
-  local_1c = pCVar7[iVar8].position.z - pCVar7[iVar2].position.z;
-  fVar5 = SQRT(local_1c * local_1c + local_24 * local_24 + local_20 * local_20);
+  fVar6 = pCVar2[iVar4].position.x - pCVar2[iVar2].position.x;
+  fVar7 = pCVar2[iVar4].position.y - pCVar2[iVar2].position.y;
+  fVar8 = pCVar2[iVar4].position.z - pCVar2[iVar2].position.z;
+  fVar5 = SQRT(fVar8 * fVar8 + fVar6 * fVar6 + fVar7 * fVar7);
   if (0.0 < fVar5) {
-    fVar5 = 1.0 / fVar5;
-    local_24 = local_24 * fVar5;
-    local_20 = local_20 * fVar5;
-    local_1c = local_1c * fVar5;
+    fVar9 = 1.0 / fVar5;
+    local_24 = fVar6 * fVar9;
+    local_20 = fVar7 * fVar9;
+    local_1c = fVar8 * fVar9;
   }
   else {
     local_20 = 0.0;
@@ -53,23 +59,23 @@ int __cdecl shape_meshlod_cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480(CLodM
           return 1;
         }
         if ((pCVar6->collapse_viability != 0) || (pCVar6->collapse_curvature != 0)) {
-          iVar2 = pCVar6->vertex_idx_2;
+          iVar4 = pCVar6->vertex_idx_2;
           iVar3 = pCVar6->vertex_idx_1;
           pCVar4 = this_ptr->vertex_data;
-          local_30 = pCVar4[iVar3].position.x - pCVar4[iVar2].position.x;
-          local_2c = pCVar4[iVar3].position.y - pCVar4[iVar2].position.y;
-          local_28 = pCVar4[iVar3].position.z - pCVar4[iVar2].position.z;
-          fVar5 = SQRT(local_28 * local_28 + local_30 * local_30 + local_2c * local_2c);
-          if (fVar5 <= 0.0) {
+          fVar6 = pCVar4[iVar3].position.x - pCVar4[iVar4].position.x;
+          fVar7 = pCVar4[iVar3].position.y - pCVar4[iVar4].position.y;
+          fVar9 = pCVar4[iVar3].position.z - pCVar4[iVar4].position.z;
+          fVar8 = SQRT(fVar9 * fVar9 + fVar6 * fVar6 + fVar7 * fVar7);
+          if (fVar8 <= 0.0) {
             local_2c = 0.0;
             local_30 = 0.0;
             local_28 = 0.0;
           }
           else {
-            fVar5 = 1.0 / fVar5;
-            local_30 = local_30 * fVar5;
-            local_2c = local_2c * fVar5;
-            local_28 = local_28 * fVar5;
+            fVar8 = 1.0 / fVar8;
+            local_30 = fVar6 * fVar8;
+            local_2c = fVar7 * fVar8;
+            local_28 = fVar9 * fVar8;
           }
           if (ABS(local_1c * local_28 + local_24 * local_30 + local_20 * local_2c) <
               (float)0.90000000000000002) {

@@ -11,9 +11,7 @@ float __cdecl core_zombie_cpp_getObjectHeightScale_FUN_005f8cc0(CDemonActor *act
 {
   CBoundingBox3D *pCVar1;
   CBoundingBox3D CStack_30;
-  uint local_c;
   
-  local_c = 0x3f800000;
   if (actor == (CDemonActor *)0x0) {
     return 1.0;
   }

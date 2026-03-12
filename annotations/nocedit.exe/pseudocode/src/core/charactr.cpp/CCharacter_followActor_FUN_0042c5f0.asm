@@ -10,17 +10,15 @@
 ; float            Stack[0x10]:4   max_dist
 ; int *            Stack[0x14]:4   out_state
 ; Local Variables:
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined1       Stack[-0x44]:1  local_44
-; undefined1       Stack[-0x38]:1  local_38
-; undefined4       Stack[-0x2c]:4  local_2c
+; CVector3f        Stack[-0x50]:12  local_50
+; CVector3f        Stack[-0x44]:12  local_44
+; CVector3f        Stack[-0x38]:12  local_38
+; float            Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:

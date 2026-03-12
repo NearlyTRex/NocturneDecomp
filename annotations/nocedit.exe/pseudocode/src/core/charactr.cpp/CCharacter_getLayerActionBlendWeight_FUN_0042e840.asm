@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   state_index
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[11]:
 ;   core_scat.cpp_CScat_renderOpaque_FUN_00557df0 at 00557e4d

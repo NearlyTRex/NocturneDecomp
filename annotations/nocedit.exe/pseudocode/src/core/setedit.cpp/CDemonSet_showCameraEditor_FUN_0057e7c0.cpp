@@ -9,17 +9,26 @@
 void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet *this_ptr)
 
 {
-  CVector3f *pCVar1;
-  char cVar2;
-  byte bVar3;
-  int *ptr;
-  CEditorTools *this_ptr_00;
+  CVector3f *pCVar2;
+  char cVar3;
+  byte bVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  C3DSCamera *pCVar9;
+  int iVar10;
+  int iVar11;
+  byte *pbVar12;
+  int character;
   _FILE *p_Var4;
   _FILE *p_Var5;
+  _FILE *p_Var13;
+  _FILE *p_Var14;
   uint uVar6;
   C3DSCamera *pCVar7;
   CVector3f *pCVar8;
   int iVar9;
+  C3DSCamera *pCVar15;
   C3DSCamera *pCVar10;
   C3DSCamera *pCVar11;
   CDemonSet *pCVar12;
@@ -29,8 +38,9 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
   byte *pbVar16;
   byte *pbVar17;
   C3DSCamera *pCVar18;
+  char *pcVar16;
   byte bVar19;
-  _FILE *p_Var20;
+  _FILE *p_Var17;
   C3DSLight local_4788;
   C3DSLight local_2ef0;
   CPickList local_1658;
@@ -83,30 +93,33 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
   int local_1c;
   int local_18;
   int local_14;
+  _FILE *p_Var20;
+  CEditorTools *this_ptr_00;
+  char cVar2;
+  CVector3f *pCVar1;
+  int *ptr;
+  byte bVar3;
   
   bVar19 = 0;
   core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(this_ptr,0);
-  local_80 = this_ptr->cameras;
-  local_74 = this_ptr->geometry_filename;
-  local_7c = local_80;
-  local_78 = local_80;
-  local_70 = local_80;
-  local_60 = local_80;
-  local_5c = local_80;
-  local_44 = local_80;
-  local_40 = local_80;
-  local_3c = local_80;
-  local_38 = local_80;
-  local_34 = local_80;
+  pCVar9 = this_ptr->cameras;
+  local_60 = pCVar9;
+  local_5c = pCVar9;
+  local_44 = pCVar9;
+  local_40 = pCVar9;
+  local_3c = pCVar9;
+  local_38 = pCVar9;
+  local_34 = pCVar9;
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demented Camera Editor",0,0);
     iVar15 = 0x16;
     iVar13 = 0;
     iVar9 = 0;
+    pCVar15 = pCVar9;
     if (0 < this_ptr->camera_count) {
-      local_30 = local_80;
       do {
+        local_30 = pCVar15;
         _sprintf((char *)(abStack_4be + 2),"%s",local_30);
         engine_2d_c_drawText_FUN_00401fd0((char *)(abStack_4be + 2),iVar13,iVar15);
         iVar15 = iVar15 + 0xb;
@@ -116,31 +129,32 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
         }
         local_30 = local_30 + 1;
         iVar9 = iVar9 + 1;
+        pCVar15 = local_30;
       } while (iVar9 < this_ptr->camera_count);
     }
-    iVar13 = g_WindowHeight / 2;
-    engine_2d_c_drawText_FUN_00401fd0("1.  Add new camera",0,iVar13);
-    iVar9 = iVar13 + 0xb;
-    engine_2d_c_drawText_FUN_00401fd0("2.  Delete existing camera",0,iVar9);
-    engine_2d_c_drawText_FUN_00401fd0("3.  Edit existing camera",0,iVar13 + 0x16);
-    local_14 = iVar13 + 0x21;
+    iVar10 = g_WindowHeight / 2;
+    engine_2d_c_drawText_FUN_00401fd0("1.  Add new camera",0,iVar10);
+    iVar11 = iVar10 + 0xb;
+    engine_2d_c_drawText_FUN_00401fd0("2.  Delete existing camera",0,iVar11);
+    engine_2d_c_drawText_FUN_00401fd0("3.  Edit existing camera",0,iVar10 + 0x16);
+    local_14 = iVar10 + 0x21;
     engine_2d_c_drawText_FUN_00401fd0("4.  Save set",0,local_14);
-    engine_2d_c_drawText_FUN_00401fd0("5.  Rename all cameras",g_WindowWidth / 3,iVar13);
-    engine_2d_c_drawText_FUN_00401fd0("6.  Clone a camera",g_WindowWidth / 3,iVar9);
-    engine_2d_c_drawText_FUN_00401fd0("7.  Merge .LC file",g_WindowWidth / 3,iVar13 + 0x16);
+    engine_2d_c_drawText_FUN_00401fd0("5.  Rename all cameras",g_WindowWidth / 3,iVar10);
+    engine_2d_c_drawText_FUN_00401fd0("6.  Clone a camera",g_WindowWidth / 3,iVar11);
+    engine_2d_c_drawText_FUN_00401fd0("7.  Merge .LC file",g_WindowWidth / 3,iVar10 + 0x16);
     engine_2d_c_drawText_FUN_00401fd0("8.  Precompute all PVS",g_WindowWidth / 3,local_14);
-    engine_2d_c_drawText_FUN_00401fd0("9.  Merge2",(g_WindowWidth * 2) / 3,iVar13);
-    engine_2d_c_drawText_FUN_00401fd0("A.  Rename2",(g_WindowWidth * 2) / 3,iVar9);
-    iVar9 = core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(this_ptr,(int *)0x0);
-    if ((iVar9 != -1) &&
-       (iVar9 = core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(this_ptr,iVar9),
-       iVar9 != 0)) {
+    engine_2d_c_drawText_FUN_00401fd0("9.  Merge2",(g_WindowWidth * 2) / 3,iVar10);
+    engine_2d_c_drawText_FUN_00401fd0("A.  Rename2",(g_WindowWidth * 2) / 3,iVar11);
+    iVar11 = core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(this_ptr,(int *)0x0);
+    if ((iVar11 != -1) &&
+       (iVar11 = core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(this_ptr,iVar11),
+       iVar11 != 0)) {
       core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(this_ptr,1);
     }
     wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar9 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
-    if (iVar9 == 0) {
+    iVar11 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
+    if (iVar11 == 0) {
       local_84 = -1;
     }
     else {
@@ -152,28 +166,28 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
         core_setutil_cpp_C3DSCamera_reset_FUN_005853b0(local_44 + this_ptr->camera_count);
         engine_2d_c_getInputWithPrompt_FUN_004032c0
                   ((char *)(abStack_4be + 2),8,0,0,"Name this new camera : ");
-        pbVar17 = abStack_4be;
-        pCVar10 = local_44 + this_ptr->camera_count;
+        pbVar12 = abStack_4be;
+        pCVar15 = local_44 + this_ptr->camera_count;
         do {
-          pbVar17 = pbVar17 + 2;
-          bVar3 = *pbVar17;
-          pCVar10->name[0] = bVar3;
-          if (bVar3 == 0) break;
-          bVar3 = pbVar17[1];
-          pCVar10->name[1] = bVar3;
-          pCVar10 = (C3DSCamera *)(pCVar10->name + 2);
-        } while (bVar3 != 0);
-        iVar9 = -1;
-        pbVar17 = abStack_4be + 2;
+          pbVar12 = pbVar12 + 2;
+          bVar4 = *pbVar12;
+          pCVar15->name[0] = bVar4;
+          if (bVar4 == 0) break;
+          bVar4 = pbVar12[1];
+          pCVar15->name[1] = bVar4;
+          pCVar15 = (C3DSCamera *)(pCVar15->name + 2);
+        } while (bVar4 != 0);
+        iVar11 = -1;
+        pbVar12 = abStack_4be + 2;
         do {
-          if (iVar9 == 0) break;
-          iVar9 = iVar9 + -1;
-          bVar3 = *pbVar17;
-          pbVar17 = pbVar17 + (uint)bVar19 * -2 + 1;
-        } while (bVar3 != 0);
-        if ((iVar9 != -2) &&
-           (iVar9 = core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660
-                              (this_ptr,this_ptr->camera_count), iVar9 != 0)) {
+          if (iVar11 == 0) break;
+          iVar11 = iVar11 + -1;
+          bVar4 = *pbVar12;
+          pbVar12 = pbVar12 + (uint)bVar19 * -2 + 1;
+        } while (bVar4 != 0);
+        if ((iVar11 != -2) &&
+           (iVar11 = core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660
+                               (this_ptr,this_ptr->camera_count), iVar11 != 0)) {
           this_ptr->camera_count = this_ptr->camera_count + 1;
           goto LAB_0057eb3b;
         }
@@ -181,39 +195,39 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
       break;
     case 0x32:
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_f08);
-      iVar9 = 0;
-      pCVar10 = local_7c;
+      iVar11 = 0;
+      pCVar15 = pCVar9;
       if (0 < this_ptr->camera_count) {
         do {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_f08.base,pCVar10->name);
-          iVar9 = iVar9 + 1;
-          pCVar10 = pCVar10 + 1;
-        } while (iVar9 < this_ptr->camera_count);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_f08.base,pCVar15->name);
+          iVar11 = iVar11 + 1;
+          pCVar15 = pCVar15 + 1;
+        } while (iVar11 < this_ptr->camera_count);
       }
-      iVar9 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        (&local_f08,"Delete which camera",-1,0);
-      if (-1 < iVar9) {
-        core_setedit_cpp_CDemonSet_deleteCamera_FUN_0057e430(this_ptr,iVar9);
+      iVar11 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                         (&local_f08,"Delete which camera",-1,0);
+      if (-1 < iVar11) {
+        core_setedit_cpp_CDemonSet_deleteCamera_FUN_0057e430(this_ptr,iVar11);
         core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(this_ptr,1);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_f08,0);
       break;
     case 0x33:
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_1658);
-      iVar9 = 0;
-      pCVar10 = local_78;
+      iVar11 = 0;
+      pCVar15 = pCVar9;
       if (0 < this_ptr->camera_count) {
         do {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1658.base,pCVar10->name);
-          iVar9 = iVar9 + 1;
-          pCVar10 = pCVar10 + 1;
-        } while (iVar9 < this_ptr->camera_count);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_1658.base,pCVar15->name);
+          iVar11 = iVar11 + 1;
+          pCVar15 = pCVar15 + 1;
+        } while (iVar11 < this_ptr->camera_count);
       }
-      iVar9 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        (&local_1658,"Move which camera",-1,0);
-      if ((-1 < iVar9) &&
-         (iVar9 = core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(this_ptr,iVar9),
-         iVar9 != 0)) {
+      iVar11 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                         (&local_1658,"Move which camera",-1,0);
+      if ((-1 < iVar11) &&
+         (iVar11 = core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(this_ptr,iVar11),
+         iVar11 != 0)) {
         core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(this_ptr,1);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_1658,0);
@@ -224,58 +238,59 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
       }
       else {
         engine_dosio_c_splitPath_FUN_00481f20
-                  (local_74,(char *)0x0,(char *)0x0,(char *)(abStack_4be + 2),(char *)0x0);
+                  (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,(char *)(abStack_4be + 2),
+                   (char *)0x0);
         pcVar14 = ".set";
-        iVar9 = -1;
-        pbVar17 = abStack_4be + 2;
+        iVar11 = -1;
+        pbVar16 = abStack_4be + 2;
         do {
-          pbVar16 = pbVar17;
-          if (iVar9 == 0) break;
-          iVar9 = iVar9 + -1;
-          pbVar16 = pbVar17 + (uint)bVar19 * -2 + 1;
-          bVar3 = *pbVar17;
-          pbVar17 = pbVar16;
-        } while (bVar3 != 0);
-        pbVar16 = pbVar16 + -1;
+          pbVar16 = pbVar16;
+          if (iVar11 == 0) break;
+          iVar11 = iVar11 + -1;
+          pbVar16 = pbVar16 + (uint)bVar19 * -2 + 1;
+          bVar4 = *pbVar16;
+          pbVar16 = pbVar16;
+        } while (bVar4 != 0);
+        pbVar12 = pbVar16 + -1;
         do {
-          bVar3 = *pcVar14;
-          *pbVar16 = bVar3;
-          if (bVar3 == 0) break;
-          bVar3 = ((byte *)pcVar14)[1];
+          bVar4 = *pcVar14;
+          *pbVar12 = bVar4;
+          if (bVar4 == 0) break;
+          bVar4 = ((byte *)pcVar14)[1];
           pcVar14 = (char *)((byte *)pcVar14 + 2);
-          pbVar16[1] = bVar3;
-          pbVar16 = pbVar16 + 2;
-        } while (bVar3 != 0);
+          pbVar12[1] = bVar4;
+          pbVar12 = pbVar12 + 2;
+        } while (bVar4 != 0);
         strupr((char *)(abStack_4be + 2));
       }
-      iVar9 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
-                        (g_CEditorToolsPtr,"Save set","models","set",
-                         (char *)(abStack_4be + 2),1);
-      if (iVar9 != 0) {
+      iVar11 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
+                         (g_CEditorToolsPtr,"Save set","models","set",
+                          (char *)(abStack_4be + 2),1);
+      if (iVar11 != 0) {
         core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(this_ptr,(char *)(abStack_4be + 2));
       }
       break;
     case 0x35:
       local_bc[0] = '\0';
       engine_2d_c_getInputWithPrompt_FUN_004032c0(local_bc,5,0,0,"Enter new base name : ");
-      iVar9 = -1;
-      pcVar14 = local_bc;
+      iVar11 = -1;
+      pcVar16 = local_bc;
       do {
-        if (iVar9 == 0) break;
-        iVar9 = iVar9 + -1;
-        cVar2 = *pcVar14;
-        pcVar14 = pcVar14 + (uint)bVar19 * -2 + 1;
-      } while (cVar2 != '\0');
-      if (iVar9 != -2) {
-        iVar9 = 0;
-        pCVar10 = local_70;
+        if (iVar11 == 0) break;
+        iVar11 = iVar11 + -1;
+        cVar3 = *pcVar16;
+        pcVar16 = pcVar16 + (uint)bVar19 * -2 + 1;
+      } while (cVar3 != '\0');
+      if (iVar11 != -2) {
+        iVar11 = 0;
+        pCVar10 = pCVar9;
         if (0 < this_ptr->camera_count) {
           do {
-            _sprintf(pCVar10->name,"%s%d",local_bc,iVar9);
+            _sprintf(pCVar10->name,"%s%d",local_bc,iVar11);
             core_setedit_cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340(this_ptr,pCVar10);
-            iVar9 = iVar9 + 1;
+            iVar11 = iVar11 + 1;
             pCVar10 = pCVar10 + 1;
-          } while (iVar9 < this_ptr->camera_count);
+          } while (iVar11 < this_ptr->camera_count);
         }
 LAB_0057eb3b:
         core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(this_ptr,1);
@@ -284,85 +299,86 @@ LAB_0057eb3b:
     case 0x36:
       if (this_ptr->camera_count < 0xfa) {
         shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_12b0);
-        iVar9 = 0;
-        pCVar10 = local_44;
+        iVar11 = 0;
+        pCVar15 = local_44;
         if (0 < this_ptr->camera_count) {
           do {
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_12b0.base,pCVar10->name);
-            iVar9 = iVar9 + 1;
-            pCVar10 = pCVar10 + 1;
-          } while (iVar9 < this_ptr->camera_count);
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_12b0.base,pCVar15->name);
+            iVar11 = iVar11 + 1;
+            pCVar15 = pCVar15 + 1;
+          } while (iVar11 < this_ptr->camera_count);
         }
         local_1c = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                              (&local_12b0,"Clone which camera",-1,0);
         if (-1 < local_1c) {
-          pbVar17 = abStack_4be;
-          pCVar10 = local_44 + local_1c;
+          pbVar12 = abStack_4be;
+          pCVar15 = local_44 + local_1c;
           do {
-            pbVar17 = pbVar17 + 2;
-            bVar3 = pCVar10->name[0];
-            *pbVar17 = bVar3;
+            pbVar12 = pbVar12 + 2;
+            bVar3 = pCVar15->name[0];
+            *pbVar12 = bVar3;
             if (bVar3 == 0) break;
-            bVar3 = pCVar10->name[1];
-            pCVar10 = (C3DSCamera *)(pCVar10->name + 2);
-            pbVar17[1] = bVar3;
-          } while (bVar3 != 0);
+            bVar4 = pCVar15->name[1];
+            pCVar15 = (C3DSCamera *)(pCVar15->name + 2);
+            pbVar12[1] = bVar4;
+          } while (bVar4 != 0);
           uVar6 = 0xffffffff;
-          pbVar17 = abStack_4be + 2;
+          pbVar12 = abStack_4be + 2;
           do {
             if (uVar6 == 0) break;
             uVar6 = uVar6 - 1;
-            bVar3 = *pbVar17;
-            pbVar17 = pbVar17 + (uint)bVar19 * -2 + 1;
-          } while (bVar3 != 0);
-          iVar9 = ~uVar6 - 2;
-          if (0 < iVar9) {
-            pbVar17 = abStack_4be + ~uVar6;
+            bVar4 = *pbVar12;
+            pbVar12 = pbVar12 + (uint)bVar19 * -2 + 1;
+          } while (bVar4 != 0);
+          iVar11 = ~uVar6 - 2;
+          if (0 < iVar11) {
+            pbVar12 = abStack_4be + ~uVar6;
             do {
-              if ((*pbVar17 < 0x30) || (0x39 < *pbVar17)) break;
-              iVar9 = iVar9 + -1;
-              pbVar17 = pbVar17 + -1;
-            } while (0 < iVar9);
+              if ((*pbVar12 < 0x30) || (0x39 < *pbVar12)) break;
+              iVar11 = iVar11 + -1;
+              pbVar12 = pbVar12 + -1;
+            } while (0 < iVar11);
           }
-          iVar13 = atoi((char *)(abStack_4be + iVar9 + 3));
+          iVar10 = atoi((char *)(abStack_4be + iVar11 + 3));
           _sprintf
-                    ((char *)(abStack_4be + iVar9 + 3),"%d",iVar13 + 1);
-          iVar9 = 0;
+                    ((char *)(abStack_4be + iVar11 + 3),"%d",iVar10 + 1);
+          iVar11 = 0;
           if (0 < this_ptr->camera_count) {
             do {
-              iVar13 = _strcmp
-                                 (local_44[iVar9].name,(char *)(abStack_4be + 2));
-              if (iVar13 == 0) {
-                pbVar16 = abStack_4be;
+              iVar10 = _strcmp
+                                 (local_44[iVar11].name,(char *)(abStack_4be + 2));
+              if (iVar10 == 0) {
+                pbVar12 = abStack_4be;
                 pbVar17 = local_7bc;
                 do {
-                  pbVar16 = pbVar16 + 2;
-                  bVar3 = *pbVar16;
-                  *pbVar17 = bVar3;
-                  if (bVar3 == 0) break;
-                  bVar3 = pbVar16[1];
-                  pbVar17[1] = bVar3;
+                  pbVar12 = pbVar12 + 2;
+                  bVar4 = *pbVar12;
+                  *pbVar17 = bVar4;
+                  if (bVar4 == 0) break;
+                  bVar4 = pbVar12[1];
+                  pbVar17[1] = bVar4;
                   pbVar17 = pbVar17 + 2;
-                } while (bVar3 != 0);
-                iVar9 = -1;
+                } while (bVar4 != 0);
+                iVar11 = -1;
                 _sprintf((char *)(abStack_4be + 2),"%s1",local_7bc)
                 ;
               }
-              iVar9 = iVar9 + 1;
-            } while (iVar9 < this_ptr->camera_count);
+              iVar11 = iVar11 + 1;
+            } while (iVar11 < this_ptr->camera_count);
           }
-          iVar9 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                            (g_CEditorToolsPtr,"Enter name of clone",
-                             (char *)(abStack_4be + 2),0x1f,1);
-          if (iVar9 != 0) {
+          iVar11 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+                             (g_CEditorToolsPtr,"Enter name of clone",
+                              (char *)(abStack_4be + 2),0x1f,1);
+          if (iVar11 != 0) {
             pCVar7 = local_44 + local_1c;
             pCVar11 = local_44 + this_ptr->camera_count;
-            pCVar10 = pCVar7;
+            pCVar15 = pCVar7;
             pCVar18 = pCVar11;
-            for (iVar9 = 0x40; iVar9 != 0; iVar9 = iVar9 + -1) {
-              *(uint *)pCVar18->name = *(uint *)pCVar10->name;
-              pCVar10 = (C3DSCamera *)((int)pCVar10 + (uint)bVar19 * -8 + 4);
+            for (iVar11 = 0x40; iVar11 != 0; iVar11 = iVar11 + -1) {
               pCVar18 = (C3DSCamera *)((int)pCVar18 + (uint)bVar19 * -8 + 4);
+              *(uint *)pCVar18->name = *(uint *)pCVar15->name;
+              pCVar15 = (C3DSCamera *)((int)pCVar15 + (uint)bVar19 * -8 + 4);
+              pCVar18 = pCVar18;
             }
             if (&pCVar11->position != &pCVar7->position) {
               (pCVar11->position).x = (pCVar7->position).x;
@@ -391,11 +407,11 @@ LAB_0057eb3b:
             pCVar11->fog_enabled = pCVar7->fog_enabled;
             (pCVar11->fog).color_index.r = (pCVar7->fog).color_index.r;
             (pCVar11->fog).color_index.g = (pCVar7->fog).color_index.g;
-            pCVar8 = &(pCVar11->fog).scroll;
+            pCVar2 = &(pCVar11->fog).scroll;
             pCVar1 = &(pCVar7->fog).scroll;
             (pCVar11->fog).color_index.b = (pCVar7->fog).color_index.b;
-            if (pCVar8 != pCVar1) {
-              pCVar8->x = pCVar1->x;
+            if (pCVar2 != pCVar1) {
+              pCVar2->x = pCVar1->x;
               (pCVar11->fog).scroll.y = (pCVar7->fog).scroll.y;
               (pCVar11->fog).scroll.z = (pCVar7->fog).scroll.z;
             }
@@ -419,20 +435,20 @@ LAB_0057eb3b:
             pCVar11->enabled = pCVar7->enabled;
             this_ptr->cameras[this_ptr->camera_count].pvs_count = 0;
             this_ptr->cameras[this_ptr->camera_count].pvs_list = (int *)0x0;
-            pbVar17 = abStack_4be;
-            pCVar10 = local_44 + this_ptr->camera_count;
+            pbVar12 = abStack_4be;
+            pCVar15 = local_44 + this_ptr->camera_count;
             do {
-              pbVar17 = pbVar17 + 2;
-              bVar3 = *pbVar17;
-              pCVar10->name[0] = bVar3;
-              if (bVar3 == 0) break;
-              bVar3 = pbVar17[1];
-              pCVar10->name[1] = bVar3;
-              pCVar10 = (C3DSCamera *)(pCVar10->name + 2);
-            } while (bVar3 != 0);
-            iVar9 = core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660
-                              (this_ptr,this_ptr->camera_count);
-            if (iVar9 != 0) {
+              pbVar12 = pbVar12 + 2;
+              bVar4 = *pbVar12;
+              pCVar15->name[0] = bVar4;
+              if (bVar4 == 0) break;
+              bVar4 = pbVar12[1];
+              pCVar15->name[1] = bVar4;
+              pCVar15 = (C3DSCamera *)(pCVar15->name + 2);
+            } while (bVar4 != 0);
+            iVar11 = core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660
+                               (this_ptr,this_ptr->camera_count);
+            if (iVar11 != 0) {
               this_ptr->camera_count = this_ptr->camera_count + 1;
               core_setedit_cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0(this_ptr,1);
             }
@@ -442,55 +458,55 @@ LAB_0057eb3b:
       }
       break;
     case 0x37:
-      iVar9 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-                        (g_CEditorToolsPtr,"Merge .LC","models","*.lc",
-                         (int)local_9bc,0);
-      if (iVar9 != 0) {
-        p_Var4 = engine_dosio_c_getFile_FUN_00481a50("models",local_9bc,"rt");
-        if (p_Var4 == (_FILE *)0x0) {
+      iVar11 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+                         (g_CEditorToolsPtr,"Merge .LC","models","*.lc",
+                          (int)local_9bc,0);
+      if (iVar11 != 0) {
+        p_Var13 = engine_dosio_c_getFile_FUN_00481a50("models",local_9bc,"rt");
+        if (p_Var13 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xe68;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open LC file");
         }
-        _fgets((char *)(abStack_4be + 2),0xff,p_Var4);
+        _fgets((char *)(abStack_4be + 2),0xff,p_Var13);
         local_6c = -1;
-        _fscanf(p_Var4,"%d\n",&local_6c);
+        _fscanf(p_Var13,"%d\n",&local_6c);
         if (local_6c != 1) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xe6c;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't merge version %d LC file",local_6c)
           ;
         }
-        _fgets((char *)(abStack_4be + 2),0xff,p_Var4);
-        _fscanf(p_Var4,"%d,%d\n",&local_68,&local_64);
-        _fgets((char *)(abStack_4be + 2),0xff,p_Var4);
-        iVar9 = 0;
+        _fgets((char *)(abStack_4be + 2),0xff,p_Var13);
+        _fscanf(p_Var13,"%d,%d\n",&local_68,&local_64);
+        _fgets((char *)(abStack_4be + 2),0xff,p_Var13);
+        iVar11 = 0;
         if (0 < local_68) {
           do {
             core_setutil_cpp_C3DSLight_ctor_FUN_005862f0(&local_2ef0);
-            core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_2ef0,p_Var4);
-            iVar9 = iVar9 + 1;
-          } while (iVar9 < local_68);
+            core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_2ef0,p_Var13);
+            iVar11 = iVar11 + 1;
+          } while (iVar11 < local_68);
         }
-        _fgets((char *)(abStack_4be + 2),0xff,p_Var4);
-        iVar9 = this_ptr->camera_count;
-        for (; (iVar9 < 0xfa && (0 < local_64)); local_64 = local_64 + -1) {
+        _fgets((char *)(abStack_4be + 2),0xff,p_Var13);
+        iVar11 = this_ptr->camera_count;
+        for (; (iVar11 < 0xfa && (0 < local_64)); local_64 = local_64 + -1) {
           core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0
-                    (local_60 + this_ptr->camera_count,p_Var4);
-          pCVar10 = local_60;
+                    (local_60 + this_ptr->camera_count,p_Var13);
+          pCVar15 = local_60;
           _sprintf
                     (local_60[this_ptr->camera_count].name,"ncam%d",this_ptr->camera_count)
           ;
           core_setedit_cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340
-                    (this_ptr,pCVar10 + this_ptr->camera_count);
-          iVar9 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
-                            (g_CEditorToolsPtr,"Import this camera?");
-          if (iVar9 != 0) {
+                    (this_ptr,pCVar15 + this_ptr->camera_count);
+          iVar11 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+                             (g_CEditorToolsPtr,"Import this camera?");
+          if (iVar11 != 0) {
             this_ptr->camera_count = this_ptr->camera_count + 1;
           }
-          iVar9 = this_ptr->camera_count;
+          iVar11 = this_ptr->camera_count;
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xe7f);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\core\\setedit.cpp",0xe7f);
         goto LAB_0057eb3b;
       }
       break;
@@ -502,7 +518,7 @@ LAB_0057eb3b:
       this_ptr->disable_spotlight_shadows = 1;
       shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                 (this_ptr_00,"Recomputing all PVS");
-      iVar9 = 0;
+      iVar11 = 0;
       if (0 < this_ptr->camera_count) {
         local_2c = local_5c;
         pCVar12 = this_ptr;
@@ -515,14 +531,14 @@ LAB_0057eb3b:
             shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\setedit.cpp",0xe97);
             pCVar12->cameras[0].pvs_list = (int *)0x0;
           }
-          core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,iVar9);
-          iVar9 = iVar9 + 1;
-          local_14 = iVar9;
+          core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,iVar11);
+          iVar11 = iVar11 + 1;
+          local_14 = iVar11;
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                    (g_CEditorToolsPtr,(float)iVar9,(float)this_ptr->camera_count);
+                    (g_CEditorToolsPtr,(float)iVar11,(float)this_ptr->camera_count);
           pCVar12 = (CDemonSet *)&pCVar12->cameras[0].enabled;
           local_2c = local_2c + 1;
-        } while (iVar9 < this_ptr->camera_count);
+        } while (iVar11 < this_ptr->camera_count);
       }
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       this_ptr->disable_spotlight_shadows = 0;
@@ -531,20 +547,20 @@ LAB_0057eb3b:
       core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
       break;
     case 0x39:
-      iVar9 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-                        (g_CEditorToolsPtr,"Merge2 .LC","models","*.lc",
-                         (int)local_2bc,0);
-      if (iVar9 != 0) {
+      iVar11 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+                         (g_CEditorToolsPtr,"Merge2 .LC","models","*.lc",
+                          (int)local_2bc,0);
+      if (iVar11 != 0) {
         local_58 = engine_dosio_c_getFile_FUN_00481a50("models",local_2bc,"rt");
         if (local_58 == (_FILE *)0x0) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xeae;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open LC file");
         }
-        p_Var4 = local_58;
+        p_Var13 = local_58;
         _fgets((char *)(abStack_4be + 2),0xff,local_58);
         local_54 = -1;
-        _fscanf(p_Var4,"%d\n",&local_54);
+        _fscanf(p_Var13,"%d\n",&local_54);
         if (local_54 != 1) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xeb2;
@@ -554,67 +570,64 @@ LAB_0057eb3b:
         _fgets((char *)(abStack_4be + 2),0xff,local_58);
         _fscanf(local_58,"%d,%d\n",&local_50,&local_4c);
         _fgets((char *)(abStack_4be + 2),0xff,local_58);
-        p_Var4 = local_58;
-        iVar9 = 0;
+        p_Var13 = local_58;
+        iVar11 = 0;
         if (0 < local_50) {
           do {
             core_setutil_cpp_C3DSLight_ctor_FUN_005862f0(&local_4788);
-            core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_4788,p_Var4);
-            iVar9 = iVar9 + 1;
-          } while (iVar9 < local_50);
+            core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_4788,p_Var13);
+            iVar11 = iVar11 + 1;
+          } while (iVar11 < local_50);
         }
         _fgets((char *)(abStack_4be + 2),0xff,local_58);
         while (0 < local_4c) {
           core_setutil_cpp_C3DSCamera_ctor_FUN_00585310(&local_b60);
           core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(&local_b60,local_58);
-          iVar9 = 0;
+          iVar11 = 0;
           if (0 < this_ptr->camera_count) {
             pCVar8 = &local_34->position;
 LAB_0057f7c1:
-            local_90 = local_b60.position.x - pCVar8->x;
-            local_8c = local_b60.position.y - pCVar8->y;
-            local_88 = local_b60.position.z - pCVar8->z;
-            pCVar10 = local_34 + iVar9;
-            if ((float)0.10000000000000001 <=
-                SQRT(local_88 * local_88 + local_90 * local_90 + local_8c * local_8c))
-            goto LAB_0057fa69;
-            local_9c = local_b60.orientation.x - (pCVar10->orientation).x;
-            local_98 = local_b60.orientation.y - (pCVar10->orientation).y;
-            local_94 = local_b60.orientation.z - (pCVar10->orientation).z;
-            if ((float)0.10000000000000001 <=
-                SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98))
+            fVar5 = local_b60.position.x - pCVar8->x;
+            fVar6 = local_b60.position.y - pCVar8->y;
+            fVar7 = local_b60.position.z - pCVar8->z;
+            pCVar15 = local_34 + iVar11;
+            if (((float)0.10000000000000001 <= SQRT(fVar7 * fVar7 + fVar5 * fVar5 + fVar6 * fVar6)) ||
+               (fVar5 = local_b60.orientation.x - (pCVar15->orientation).x,
+               fVar6 = local_b60.orientation.y - (pCVar15->orientation).y,
+               fVar7 = local_b60.orientation.z - (pCVar15->orientation).z,
+               (float)0.10000000000000001 <= SQRT(fVar7 * fVar7 + fVar5 * fVar5 + fVar6 * fVar6)))
             goto LAB_0057fa69;
             _sprintf(local_6bc,"%s.raw",&local_b60);
             local_48 = engine_dosio_c_getFile_FUN_00481a50
                                  ("backdrop",local_6bc,"rb");
-            _sprintf(local_5bc,"%s.raw",pCVar10);
-            iVar13 = 0;
-            p_Var4 = engine_dosio_c_getFile_FUN_00481a50
-                               ("backdrop",local_5bc,"wb");
+            _sprintf(local_5bc,"%s.raw",pCVar15);
+            iVar10 = 0;
+            p_Var13 = engine_dosio_c_getFile_FUN_00481a50
+                                ("backdrop",local_5bc,"wb");
             do {
-              p_Var5 = p_Var4;
-              iVar15 = _fgetc(local_48);
-              iVar13 = iVar13 + 1;
-              _fputc(iVar15,p_Var5);
-            } while (iVar13 < 0x4b000);
+              p_Var14 = p_Var13;
+              character = _fgetc(local_48);
+              iVar10 = iVar10 + 1;
+              _fputc(character,p_Var14);
+            } while (iVar10 < 0x4b000);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_48,"..\\core\\setedit.cpp",0xecd);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xece);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\core\\setedit.cpp",0xece);
             _sprintf(local_6bc,"%s.act",&local_b60);
             local_48 = engine_dosio_c_getFile_FUN_00481a50
                                  ("backdrop",local_6bc,"rb");
-            _sprintf(local_5bc,"%s.act",local_44 + iVar9);
-            iVar9 = 0;
-            p_Var5 = engine_dosio_c_getFile_FUN_00481a50
-                               ("backdrop",local_5bc,"wb");
-            p_Var4 = local_48;
+            _sprintf(local_5bc,"%s.act",local_44 + iVar11);
+            iVar11 = 0;
+            p_Var14 = engine_dosio_c_getFile_FUN_00481a50
+                                ("backdrop",local_5bc,"wb");
+            p_Var13 = local_48;
             do {
-              p_Var20 = p_Var5;
-              iVar13 = _fgetc(p_Var4);
-              iVar9 = iVar9 + 1;
-              _fputc(iVar13,p_Var20);
-            } while (iVar9 < 0x300);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xed6);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\setedit.cpp",0xed7);
+              p_Var17 = p_Var14;
+              iVar10 = _fgetc(p_Var13);
+              iVar11 = iVar11 + 1;
+              _fputc(iVar10,p_Var17);
+            } while (iVar11 < 0x300);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\core\\setedit.cpp",0xed6);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var14,"..\\core\\setedit.cpp",0xed7);
           }
 LAB_0057fa1d:
           local_4c = local_4c + -1;
@@ -628,15 +641,15 @@ LAB_0057fa1d:
       local_ac[0] = '\0';
       engine_2d_c_getInputWithPrompt_FUN_004032c0
                 (local_ac,5,0,0,"Enter new unique base name : ");
-      iVar9 = -1;
-      pcVar14 = local_ac;
+      iVar11 = -1;
+      pcVar16 = local_ac;
       do {
-        if (iVar9 == 0) break;
-        iVar9 = iVar9 + -1;
-        cVar2 = *pcVar14;
-        pcVar14 = pcVar14 + (uint)bVar19 * -2 + 1;
+        if (iVar11 == 0) break;
+        iVar11 = iVar11 + -1;
+        cVar2 = *pcVar16;
+        pcVar16 = pcVar16 + (uint)bVar19 * -2 + 1;
       } while (cVar2 != '\0');
-      if (iVar9 != -2) {
+      if (iVar11 != -2) {
         local_18 = 0;
         if (0 < this_ptr->camera_count) {
           local_28 = local_40;
@@ -647,40 +660,40 @@ LAB_0057fa1d:
             _sprintf(local_1bc,"%s%d.raw",local_ac,local_18 + 1);
             p_Var4 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_8bc,"rb");
-            iVar9 = 0;
+            iVar11 = 0;
             p_Var5 = engine_dosio_c_getFile_FUN_00481a50
                                ("backdrop",local_1bc,"wb");
             do {
               p_Var20 = p_Var5;
-              iVar13 = _fgetc(p_Var4);
-              iVar9 = iVar9 + 1;
-              _fputc(iVar13,p_Var20);
-            } while (iVar9 < 0x4b000);
+              iVar10 = _fgetc(p_Var4);
+              iVar11 = iVar11 + 1;
+              _fputc(iVar10,p_Var20);
+            } while (iVar11 < 0x4b000);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xef5);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\setedit.cpp",0xef6);
             _sprintf(local_8bc,"%s.act",local_24);
             _sprintf(local_1bc,"%s%d.act",local_ac,local_18 + 1);
-            p_Var4 = engine_dosio_c_getFile_FUN_00481a50
-                               ("backdrop",local_8bc,"rb");
-            iVar9 = 0;
-            p_Var5 = engine_dosio_c_getFile_FUN_00481a50
-                               ("backdrop",local_1bc,"wb");
+            p_Var13 = engine_dosio_c_getFile_FUN_00481a50
+                                ("backdrop",local_8bc,"rb");
+            iVar11 = 0;
+            p_Var14 = engine_dosio_c_getFile_FUN_00481a50
+                                ("backdrop",local_1bc,"wb");
             do {
-              p_Var20 = p_Var5;
-              iVar13 = _fgetc(p_Var4);
-              iVar9 = iVar9 + 1;
-              _fputc(iVar13,p_Var20);
-            } while (iVar9 < 0x300);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xefe);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var5,"..\\core\\setedit.cpp",0xeff);
-            pCVar10 = local_20;
-            iVar9 = local_18 + 1;
-            _sprintf(local_20->name,"%s%d",local_ac,iVar9);
-            local_20 = pCVar10 + 1;
+              p_Var17 = p_Var14;
+              iVar10 = _fgetc(p_Var13);
+              iVar11 = iVar11 + 1;
+              _fputc(iVar10,p_Var17);
+            } while (iVar11 < 0x300);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var13,"..\\core\\setedit.cpp",0xefe);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var14,"..\\core\\setedit.cpp",0xeff);
+            pCVar15 = local_20;
+            iVar11 = local_18 + 1;
+            _sprintf(local_20->name,"%s%d",local_ac,iVar11);
+            local_20 = pCVar15 + 1;
             local_24 = local_24 + 1;
             local_28 = local_28 + 1;
-            local_18 = iVar9;
-          } while (iVar9 < this_ptr->camera_count);
+            local_18 = iVar11;
+          } while (iVar11 < this_ptr->camera_count);
         }
         goto LAB_0057eb3b;
       }
@@ -692,8 +705,8 @@ LAB_0057fa1d:
     }
   } while( true );
 LAB_0057fa69:
-  iVar9 = iVar9 + 1;
+  iVar11 = iVar11 + 1;
   pCVar8 = pCVar8 + 0x23;
-  if (this_ptr->camera_count <= iVar9) goto LAB_0057fa1d;
+  if (this_ptr->camera_count <= iVar11) goto LAB_0057fa1d;
   goto LAB_0057f7c1;
 }

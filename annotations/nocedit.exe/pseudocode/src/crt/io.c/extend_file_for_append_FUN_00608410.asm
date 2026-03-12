@@ -6,7 +6,7 @@
 ; Parameters:
 ; int              Stack[0x4]:4   fd
 ; Local Variables:
-; undefined1       Stack[-0x20c]:1  local_20c
+; undefined1[512]  Stack[-0x20c]:512  local_20c
 ;
 ; XREF[1]:
 ;   crt_io.c_write_FUN_006084ec at 006085a3

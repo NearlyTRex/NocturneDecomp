@@ -9,7 +9,8 @@
 void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_ptr,CVector3f *position)
 
 {
-  char cVar1;
+  char cVar2;
+  int iVar4;
   CVector3f *pCVar2;
   int iVar3;
   float fVar4;
@@ -18,11 +19,12 @@ void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_pt
   char *pcVar6;
   char *pcVar7;
   CVector3f local_18;
+  char cVar1;
   
-  iVar5 = this_ptr->fire_count;
-  if (iVar5 < 2) {
-    input_local_point = &this_ptr->fires[iVar5].local_position;
-    this_ptr->fire_count = iVar5 + 1;
+  iVar4 = this_ptr->fire_count;
+  if (iVar4 < 2) {
+    input_local_point = &this_ptr->fires[iVar4].local_position;
+    this_ptr->fire_count = iVar4 + 1;
     if (input_local_point != position) {
       input_local_point->x = position->x;
       input_local_point->y = position->y;
@@ -46,11 +48,11 @@ void __cdecl core_bodypart_cpp_CBodyPart_addFire_FUN_0041ae50(CBodyPart *this_pt
       cVar1 = *pcVar6;
       *pcVar7 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar6[1];
+      cVar2 = pcVar6[1];
       pcVar6 = pcVar6 + 2;
-      pcVar7[1] = cVar1;
+      pcVar7[1] = cVar2;
       pcVar7 = pcVar7 + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
     iVar5 = 0;
     if (0 < this_ptr->tri_count) {
       iVar3 = 0;

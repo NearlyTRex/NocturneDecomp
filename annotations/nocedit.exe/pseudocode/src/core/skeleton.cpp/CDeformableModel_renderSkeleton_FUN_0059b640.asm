@@ -9,17 +9,13 @@
 ; CMatrix3x4f *    Stack[0xc]:4   bone_matrices
 ; int              Stack[0x10]:4   render_flags
 ; Local Variables:
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3i        Stack[-0x4c]:12  local_4c
+; CVector3f        Stack[-0x40]:12  local_40
+; CVector3f        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x28]:12  local_28
+; int              Stack[-0x1c]:4  local_1c
+; CSkeleton *      Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModelInstance_renderSkeleton_FUN_005a17b0 at 005a17d0

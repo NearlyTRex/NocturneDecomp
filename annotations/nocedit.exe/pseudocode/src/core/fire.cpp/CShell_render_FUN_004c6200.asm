@@ -6,9 +6,7 @@
 ; Parameters:
 ; CShell *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3i        Stack[-0x1c]:12  local_1c
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065dca8 = 256

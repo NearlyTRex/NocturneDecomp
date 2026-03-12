@@ -9,12 +9,15 @@
 void __cdecl core_script_cpp_expandTemplateText_FUN_005643d0(char *buffer,char *template_text)
 
 {
-  char cVar1;
+  char *pcVar1;
+  char cVar2;
   int iVar2;
+  int iVar4;
   int iVar3;
   char *pcVar4;
   CCmdParm local_33c;
   int local_14;
+  char cVar1;
   
   iVar3 = 0;
   local_14 = 0;
@@ -25,16 +28,16 @@ void __cdecl core_script_cpp_expandTemplateText_FUN_005643d0(char *buffer,char *
         return;
       }
       if (template_text[local_14] == '<') break;
-      pcVar4 = buffer + iVar3;
+      pcVar1 = buffer + iVar3;
       iVar3 = iVar3 + 1;
-      *pcVar4 = template_text[local_14];
+      *pcVar1 = template_text[local_14];
       local_14 = local_14 + 1;
     }
     iVar2 = core_script_cpp_CCmdParm_setTemplateText_FUN_00560de0
                       (&local_33c,template_text,&local_14);
     if (iVar2 == 0) break;
-    iVar2 = _sprintf(buffer + iVar3,"<%s>",local_33c.default_value);
-    iVar3 = iVar3 + iVar2;
+    iVar4 = _sprintf(buffer + iVar3,"<%s>",local_33c.default_value);
+    iVar3 = iVar3 + iVar4;
   }
   pcVar4 = "Template bug, can't show usage";
   do {
@@ -43,10 +46,10 @@ void __cdecl core_script_cpp_expandTemplateText_FUN_005643d0(char *buffer,char *
     if (cVar1 == '\0') {
       return;
     }
-    cVar1 = pcVar4[1];
+    cVar2 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    buffer[1] = cVar1;
+    buffer[1] = cVar2;
     buffer = buffer + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   return;
 }

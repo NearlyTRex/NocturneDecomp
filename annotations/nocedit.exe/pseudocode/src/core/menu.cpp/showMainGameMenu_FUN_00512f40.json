@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 517,
-    "complexity_score": 200,
+    "complexity_score": 215,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 49,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 185,
+    "pseudocode_lines": 200,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 702
+    "total_lines": 717
   },
   "cross_references": [
     {
@@ -515,27 +515,27 @@
       },
       {
         "is_param": false,
-        "name": "local_c",
+        "name": "iStack_c",
         "offset": -12,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
-        "name": "local_8",
+        "name": "iStack_8",
         "offset": -8,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 69,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "*(char *)((int)pacVar6 + 1) = cVar1;",
+      "text": "*(char *)((int)pacVar8 + 1) = cVar3;",
       "type": "pointer_cast"
     }
   ]

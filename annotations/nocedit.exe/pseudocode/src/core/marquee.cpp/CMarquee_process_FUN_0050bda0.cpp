@@ -9,6 +9,7 @@
 void __cdecl core_marquee_cpp_CMarquee_process_FUN_0050bda0(CMarquee *this_ptr,float delta_time)
 
 {
+  float fVar3;
   float fVar1;
   float fVar2;
   
@@ -22,9 +23,9 @@ void __cdecl core_marquee_cpp_CMarquee_process_FUN_0050bda0(CMarquee *this_ptr,f
     }
   }
   else if (this_ptr->type == 0) {
-    fVar1 = delta_time / this_ptr->total_time + this_ptr->param;
-    this_ptr->param = fVar1;
-    if ((float)this_ptr->phase < fVar1) {
+    fVar3 = delta_time / this_ptr->total_time + this_ptr->param;
+    this_ptr->param = fVar3;
+    if ((float)this_ptr->phase < fVar3) {
       this_ptr->param = this_ptr->param - (float)this_ptr->phase;
       return;
     }

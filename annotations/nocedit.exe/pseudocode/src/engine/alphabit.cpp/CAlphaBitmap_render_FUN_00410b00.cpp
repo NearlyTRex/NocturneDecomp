@@ -10,6 +10,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *
 
 {
   int pixelCount;
+  int iVar3;
   int iVar1;
   int iVar2;
   uchar *srcAlpha;
@@ -24,7 +25,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *
   srcIndices = (uchar *)(this_ptr->raw + iVar2);
   srcAlpha = (uchar *)(this_ptr->opa + iVar2);
   local_18 = dest_y * 4;
-  iVar2 = iVar1 * 4 + local_18;
+  iVar3 = iVar1 * 4 + local_18;
   if (g_BitsPerPixel == 0x20) {
     if (0 < iVar1) {
       do {
@@ -34,7 +35,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *
         srcIndices = srcIndices + this_ptr->width;
         local_18 = local_18 + 4;
         srcAlpha = srcAlpha + this_ptr->width;
-      } while (local_18 < iVar2);
+      } while (local_18 < iVar3);
     }
   }
   else if (0 < iVar1) {
@@ -46,7 +47,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00(CAlphaBitmap *
       srcIndices = srcIndices + this_ptr->width;
       local_14 = local_14 + 4;
       srcAlpha = srcAlpha + this_ptr->width;
-    } while (local_14 < iVar2);
+    } while (local_14 < iVar3);
     return;
   }
   return;

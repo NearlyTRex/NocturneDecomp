@@ -8,11 +8,11 @@
 ; Local Variables:
 ; undefined4       Stack[-0x3d0]:4  local_3d0
 ; undefined4       Stack[-0x3cc]:4  local_3cc
-; undefined4       Stack[-0x3c8]:4  local_3c8
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CPickList        Stack[-0x3c8]:936  local_3c8
+; uint             Stack[-0x20]:4  local_20
+; _FILE *          Stack[-0x1c]:4  local_1c
+; SIZE_T           Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10 at 004b6ea2

@@ -10,6 +10,7 @@ void __cdecl shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void)
 
 {
   uint uVar1;
+  uint uVar2;
   
   engine_2d_c_clearInputAndWait_FUN_00403260();
   do {
@@ -86,8 +87,8 @@ void __cdecl shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void)
     engine_2d_c_drawText_FUN_00401fd0("Display palette",0,0x155);
     engine_2d_c_drawText_FUN_00401fd0("Shift + P",0x78,0x155);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-    if ((uVar1 & 0xff) == 0x1b) break;
+    uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
+    if ((uVar2 & 0xff) == 0x1b) break;
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Facet/Part Editor Keys",0,0);
     engine_2d_c_drawText_FUN_00401fd0("Select polygon",0,0x16);
@@ -123,8 +124,8 @@ void __cdecl shape_design_c_showFacetPartEditorHelp_FUN_00460ac0(void)
     engine_2d_c_drawText_FUN_00401fd0("Decrement detail level",0,0xdc);
     engine_2d_c_drawText_FUN_00401fd0("Keypad -",0x78,0xdc);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-  } while ((uVar1 & 0xff) != 0x1b);
+    uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
+  } while ((uVar2 & 0xff) != 0x1b);
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;
 }

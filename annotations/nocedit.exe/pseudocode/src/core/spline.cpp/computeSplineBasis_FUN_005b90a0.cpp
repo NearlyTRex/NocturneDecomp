@@ -9,17 +9,19 @@
 void __cdecl core_spline_cpp_computeSplineBasis_FUN_005b90a0(float *out_basis,float t,float tension)
 
 {
+  float fVar1_00;
+  float fVar12;
+  float fVar8;
+  float fVar7;
   float fVar1;
+  float fVar11;
+  float fVar5;
   float fVar2;
   float fVar3;
-  float fVar4;
-  float fVar5;
   float fVar6;
-  float fVar7;
-  float fVar8;
-  float fVar9;
   float fVar10;
-  float fVar11;
+  float fVar9;
+  float fVar4;
   
   fVar1 = t * t;
   fVar3 = (1.0 - tension) * (float)0.5;
@@ -34,14 +36,14 @@ void __cdecl core_spline_cpp_computeSplineBasis_FUN_005b90a0(float *out_basis,fl
   fVar10 = fVar3 + -2.0f;
   out_basis[3] = fVar3 * fVar2 - fVar3 * fVar1;
   fVar11 = fVar3 * 3.0f;
-  fVar6 = fVar6 * 3.0f;
+  fVar1_00 = fVar6 * 3.0f;
   out_basis[4] = (fVar8 * t + fVar7 * fVar1) - fVar3;
-  fVar7 = fVar9 * 2.0f;
-  out_basis[5] = fVar5 * 2.0f * t + fVar6 * fVar1;
-  fVar5 = fVar10 * 3.0f;
+  fVar12 = fVar9 * 2.0f;
+  out_basis[5] = fVar5 * 2.0f * t + fVar1_00 * fVar1;
+  fVar1_00 = fVar10 * 3.0f;
   out_basis[7] = fVar11 * fVar1 - fVar4 * t;
   *out_basis = (-fVar3 * fVar2 + fVar4 * fVar1) - fVar3 * t;
   out_basis[2] = fVar9 * fVar1 + fVar10 * fVar2 + fVar3 * t;
-  out_basis[6] = fVar5 * fVar1 + fVar7 * t + fVar3;
+  out_basis[6] = fVar1_00 * fVar1 + fVar12 * t + fVar3;
   return;
 }

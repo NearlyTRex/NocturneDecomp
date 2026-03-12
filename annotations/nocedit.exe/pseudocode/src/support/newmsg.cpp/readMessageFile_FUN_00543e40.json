@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 276,
-    "complexity_score": 209,
+    "complexity_score": 215,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 36,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 124,
+    "pseudocode_lines": 130,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 400
+    "total_lines": 406
   },
   "cross_references": [
     {
@@ -358,57 +358,43 @@
         "is_param": false,
         "name": "local_31c",
         "offset": -796,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_21c",
         "offset": -540,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_21b",
-        "offset": -539,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_11c",
         "offset": -284,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_11b",
-        "offset": -283,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -422,23 +408,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 80,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar2 = *(uint *)((int)g_MessageKeys + iVar7);",
+      "text": "uVar2 = *(uint *)((int)g_MessageKeys + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 81,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_MessageKeys + iVar7) =",
+      "text": "*(uint *)((int)g_MessageKeys + iVar4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 82,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_MessageKeys + iVar8);",
@@ -446,7 +432,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 83,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_MessageKeys + iVar8) = uVar2;",
@@ -454,23 +440,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 84,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar2 = *(uint *)((int)g_MessageTexts + iVar7);",
+      "text": "uVar2 = *(uint *)((int)g_MessageTexts + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 85,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_MessageTexts + iVar7) =",
+      "text": "*(uint *)((int)g_MessageTexts + iVar4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 86,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_MessageTexts + iVar8);",
@@ -478,7 +464,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 87,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_MessageTexts + iVar8) = uVar2;",

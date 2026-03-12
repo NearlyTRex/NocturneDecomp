@@ -8,8 +8,9 @@
 ; char *           Stack[0x8]:4   drive
 ; char *           Stack[0xc]:4   output_path
 ; Local Variables:
-; undefined1       Stack[-0x208]:1  local_208
-; undefined1       Stack[-0x108]:1  local_108
+; char[256]        Stack[-0x308]:256  acStack_308
+; char[256]        Stack[-0x208]:256  local_208
+; char[256]        Stack[-0x108]:256  local_108
 ;
 ; XREF[13]:
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00579692

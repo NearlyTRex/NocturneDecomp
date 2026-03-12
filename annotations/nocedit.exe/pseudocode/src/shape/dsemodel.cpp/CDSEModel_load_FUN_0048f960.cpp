@@ -9,13 +9,14 @@
 void __cdecl shape_dsemodel_cpp_CDSEModel_load_FUN_0048f960(CDSEModel *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
   char *pcVar3;
   SShapeEditorPolygon *pSVar4;
   SModelPartName *pSVar5;
   SShapeEditorPolygon *pSVar6;
   int local_14;
+  char cVar1;
   
   g_PartsCount = 1;
   pcVar3 = this_ptr->model_name;
@@ -24,11 +25,11 @@ void __cdecl shape_dsemodel_cpp_CDSEModel_load_FUN_0048f960(CDSEModel *this_ptr)
     cVar1 = *pcVar3;
     pSVar5->name[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
+    cVar2 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    *(char *)((int)pSVar5 + 1) = cVar1;
+    *(char *)((int)pSVar5 + 1) = cVar2;
     pSVar5 = (SModelPartName *)((int)pSVar5 + 2);
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   g_VertexCount = this_ptr->vertex_count;
   for (local_14 = 0; local_14 < this_ptr->vertex_count; local_14 = local_14 + 1) {
     g_LoadedVertices[local_14].vertex.x = this_ptr->vertices[local_14].vertex.x;

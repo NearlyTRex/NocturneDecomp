@@ -6,13 +6,11 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0x6f]:1  local_6f
-; undefined1       Stack[-0x6d]:1  local_6d
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x70]:80  local_70
+; uint             Stack[-0x20]:4  local_20
+; uint             Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_pcx.c_saveScreenshotGeneral_FUN_005490c0 at 00549280

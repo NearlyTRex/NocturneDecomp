@@ -9,11 +9,7 @@
 int __cdecl shape_superopt_cpp_pointInPolygon2D_FUN_005d5e60(CVector2d *vertices,uint vertex_count,CVector2d *test_point)
 
 {
-  uint uVar1;
-  uint uVar2;
-  uint uVar3;
-  double dVar4;
-  double dVar5;
+  CVector2d *pCVar1;
   CVector2d *pCVar6;
   byte bVar7;
   CVector2d *pCVar8;
@@ -29,13 +25,19 @@ int __cdecl shape_superopt_cpp_pointInPolygon2D_FUN_005d5e60(CVector2d *vertices
   int local_38;
   int local_30;
   uint local_18;
+  double dVar4;
+  double dVar5;
+  uint uVar1;
+  uint uVar2;
+  uint uVar3;
   
   bVar7 = 0;
   local_18 = 0;
   pCVar8 = vertices + (vertex_count - 1);
+  pCVar1 = vertices;
   if (vertex_count != 0) {
     do {
-      pCVar6 = vertices;
+      pCVar6 = pCVar1;
       uVar1 = *(uint *)((int)&pCVar8->x + 4);
       uVar2 = *(uint *)&pCVar8->y;
       uVar3 = *(uint *)((int)&pCVar8->y + 4);
@@ -80,7 +82,7 @@ int __cdecl shape_superopt_cpp_pointInPolygon2D_FUN_005d5e60(CVector2d *vertices
       }
 LAB_005d5ef4:
       local_18 = local_18 + 1;
-      vertices = pCVar6 + 1;
+      pCVar1 = pCVar6 + 1;
       pCVar8 = pCVar6;
     } while (local_18 < vertex_count);
   }

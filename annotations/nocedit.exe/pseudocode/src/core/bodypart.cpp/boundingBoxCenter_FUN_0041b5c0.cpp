@@ -9,11 +9,11 @@
 CBoundingBox3D * __cdecl core_bodypart_cpp_boundingBoxCenter_FUN_0041b5c0(CBoundingBox3D *src,CBoundingBox3D *dst)
 
 {
-  float fVar1;
-  float fVar2;
   float fVar3;
-  float fVar4;
   float fVar5;
+  float fVar2;
+  float fVar1;
+  float fVar4;
   
   fVar5 = 0.5f;
   fVar1 = (src->min).y;

@@ -6,8 +6,8 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   dest_buffer
 ; Local Variables:
-; undefined        Stack[-0x10c]:1  local_10c
-; undefined        Stack[-0xc]:1  local_c
+; char[256]        Stack[-0x10c]:256  local_10c
+; char[4]          Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_fileio_cpp_00626060

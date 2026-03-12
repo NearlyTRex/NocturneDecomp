@@ -7,7 +7,8 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   point
 ; Local Variables:
-; undefined1       Stack[-0x1c]:1  local_1c
+; CBoundingBox3D   Stack[-0x34]:24  CStack_34
+; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[2]:
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10 at 0040ca8a

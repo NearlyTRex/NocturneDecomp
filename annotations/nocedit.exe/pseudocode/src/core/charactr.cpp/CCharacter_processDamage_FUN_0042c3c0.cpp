@@ -11,15 +11,17 @@
 void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter *this_ptr,SDamageInfo *damage_info)
 
 {
-  int iVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  EDamageType EVar5;
+  float fVar1;
+  float fVar5;
   CVector3f *impact_point;
   CVector3f local_28;
   CVector3f local_1c;
   int local_10;
+  float fVar3;
+  float fVar2;
+  int iVar1;
+  EDamageType EVar5;
+  float fVar4;
   
   if (damage_info->damage_amount <= 0.0) {
     return;
@@ -70,12 +72,13 @@ LAB_0042c429:
               (this_ptr,&local_28,damage_info->hit_part_index,0.0,0x3f800000,0);
   }
   if (0.0 < damage_info->gore_multiplier) {
-    iVar1 = (int)ROUND(ROUND(damage_info->damage_amount * damage_info->gore_multiplier));
-    local_10 = iVar1;
+    fVar1 = damage_info->damage_amount;
+    fVar5 = damage_info->gore_multiplier;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               (&this_ptr->base,&local_1c,&damage_info->impact_direction);
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004edbb0
-              (g_CGorePtr,&local_1c,&damage_info->impact_point,iVar1 + 1,this_ptr->blood_type);
+              (g_CGorePtr,&local_1c,&damage_info->impact_point,(int)ROUND(ROUND(fVar1 * fVar5)) + 1,
+               this_ptr->blood_type);
   }
   if ((this_ptr->health_bar_mode == 1) && ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004e0bf0

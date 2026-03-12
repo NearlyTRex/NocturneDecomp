@@ -7,9 +7,10 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; CBoundingBox3D   Stack[-0x28]:24  CStack_28
+; float            Stack[-0x10]:4  local_10
+; float            Stack[-0xc]:4  local_c
+; float            Stack[-0x8]:4  local_8
 ;
 ; XREF[4]:
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058d072

@@ -9,10 +9,10 @@
 void __cdecl shape_superopt_cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj *this_ptr,int update_adjacency)
 
 {
-  int iVar1;
-  int iVar2;
-  int iVar3;
+  CPoly *pCVar1;
+  uint uVar2;
   byte bVar11;
+  byte bVar3;
   uint uVar4;
   uint uVar5;
   uint uVar6;
@@ -33,6 +33,9 @@ void __cdecl shape_superopt_cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj 
   CPoly *local_54;
   uint uStack_2c;
   double *pdStack_1c;
+  int iVar1;
+  int iVar2;
+  int iVar3;
   
   local_68 = (void *)0x0;
   pCVar12 = this_ptr->poly_array;
@@ -59,21 +62,21 @@ void __cdecl shape_superopt_cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj 
       local_58 = &local_54->adjacency_flags;
       do {
         if ((*local_58 & 0x38U) != 0x38) {
-          pCVar12 = this_ptr->poly_array;
+          pCVar1 = this_ptr->poly_array;
           iVar1 = local_54->vertex_idx_0;
           iVar2 = local_54->vertex_idx_1;
           iVar3 = local_54->vertex_idx_2;
           uStack_2c = local_5c + 1;
           if (uStack_2c < (uint)this_ptr->poly_count) {
-            puVar13 = (uint *)((int)(pCVar12->uv_coords + 4) + local_64 + 8);
-            pdStack_1c = (double *)((int)&(((CP3D *)(pCVar12->uv_coords + 3))->impl).x + local_64);
-            piVar15 = (int *)((int)pCVar12->uv_coords + local_64 + -0xc);
+            puVar13 = (uint *)((int)(pCVar1->uv_coords + 4) + local_64 + 8);
+            pdStack_1c = (double *)((int)&(((CP3D *)(pCVar1->uv_coords + 3))->impl).x + local_64);
+            piVar15 = (int *)((int)pCVar1->uv_coords + local_64 + -0xc);
             do {
               if (((*puVar13 & 0x38) != 0x38) &&
                  (0.9999 <= (pCStack_60->impl).z * pdStack_1c[2] +
                             (pCStack_60->impl).x * *pdStack_1c +
                             (pCStack_60->impl).y * pdStack_1c[1])) {
-                uVar14 = (uint)(iVar1 == *piVar15) * 2;
+                uVar2 = (uint)(iVar1 == *piVar15) * 2;
                 uVar4 = (uint)(iVar2 == *piVar15) << 2;
                 uVar5 = (uint)(iVar3 == *piVar15) << 3;
                 uVar6 = (uint)(iVar1 == piVar15[1]) << 4;
@@ -94,7 +97,7 @@ void __cdecl shape_superopt_cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj 
                   *(byte *)puVar13 = (byte)*puVar13 & 0xed;
                   *(byte *)puVar13 = (byte)*puVar13 | 0x10;
                 }
-                else if ((uVar14 | uVar9) == 0x102) {
+                else if ((uVar2 | uVar9) == 0x102) {
                   *(byte *)local_58 = (byte)*local_58 & 0xf6;
                   *(byte *)local_58 = (byte)*local_58 | 8;
                   *(byte *)puVar13 = (byte)*puVar13 & 0xdb;
@@ -122,25 +125,25 @@ void __cdecl shape_superopt_cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj 
                   bVar11 = (byte)*local_58 & 0xdb;
                   *(byte *)local_58 = bVar11;
                   *(byte *)local_58 = bVar11 | 0x20;
-                  bVar11 = (byte)*puVar13 & 0xdb;
-                  *(byte *)puVar13 = bVar11;
-                  *(byte *)puVar13 = bVar11 | 0x20;
+                  bVar3 = (byte)*puVar13 & 0xdb;
+                  *(byte *)puVar13 = bVar3;
+                  *(byte *)puVar13 = bVar3 | 0x20;
                 }
-                else if ((uVar8 | uVar14) == 0x42) {
-                  bVar11 = (byte)*local_58 & 0xdb;
-                  *(byte *)local_58 = bVar11;
-                  *(byte *)local_58 = bVar11 | 0x20;
-                  bVar11 = (byte)*puVar13 & 0xf6;
-                  *(byte *)puVar13 = bVar11;
-                  *(byte *)puVar13 = bVar11 | 8;
+                else if ((uVar8 | uVar2) == 0x42) {
+                  bVar3 = (byte)*local_58 & 0xdb;
+                  *(byte *)local_58 = bVar3;
+                  *(byte *)local_58 = bVar3 | 0x20;
+                  bVar3 = (byte)*puVar13 & 0xf6;
+                  *(byte *)puVar13 = bVar3;
+                  *(byte *)puVar13 = bVar3 | 8;
                 }
                 else if ((uVar10 | uVar6) == 0x210) {
-                  bVar11 = (byte)*local_58 & 0xdb;
-                  *(byte *)local_58 = bVar11;
-                  *(byte *)local_58 = bVar11 | 0x20;
-                  bVar11 = (byte)*puVar13 & 0xed;
-                  *(byte *)puVar13 = bVar11;
-                  *(byte *)puVar13 = bVar11 | 0x10;
+                  bVar3 = (byte)*local_58 & 0xdb;
+                  *(byte *)local_58 = bVar3;
+                  *(byte *)local_58 = bVar3 | 0x20;
+                  bVar3 = (byte)*puVar13 & 0xed;
+                  *(byte *)puVar13 = bVar3;
+                  *(byte *)puVar13 = bVar3 | 0x10;
                 }
               }
               puVar13 = puVar13 + 0x1a;
@@ -151,7 +154,7 @@ void __cdecl shape_superopt_cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj 
           }
         }
         local_64 = local_64 + 0x68;
-        pCStack_60 = (CP3D *)((int)(pCStack_60 + 4) + 8);
+        pCStack_60 = (CP3D *)&pCStack_60[4].impl.y;
         *local_58 = *local_58 & 7;
         local_54 = local_54 + 1;
         local_5c = local_5c + 1;

@@ -9,15 +9,17 @@
 void __cdecl core_skeledit_cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0(CDeformableModel *this_ptr,_FILE *file_handle)
 
 {
-  char cVar1;
+  char cVar2;
   char *pcVar2;
   int iVar3;
   char *pcVar4;
   char *pcVar5;
   char *pcVar6;
+  char *pcVar3;
   char local_2c [20];
   int local_18;
   STextureSet *local_14;
+  char cVar1;
   
   __STK();
   _fprintf(file_handle,"DATA\\%s\n",this_ptr->model_name);
@@ -28,20 +30,20 @@ void __cdecl core_skeledit_cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0(C
       iVar3 = 0;
       if (0 < this_ptr->num_textures) {
         pcVar4 = local_14->textures[0].textures[0].texture_name;
-        pcVar6 = local_2c;
+        pcVar3 = local_2c;
         pcVar2 = pcVar4;
 LAB_0058a322:
         do {
           cVar1 = *pcVar4;
-          *pcVar6 = cVar1;
+          *pcVar3 = cVar1;
           pcVar5 = local_2c;
           if (cVar1 != '\0') {
-            cVar1 = pcVar4[1];
+            cVar2 = pcVar4[1];
             pcVar4 = pcVar4 + 2;
-            pcVar6[1] = cVar1;
+            pcVar3[1] = cVar2;
             pcVar5 = local_2c;
-            pcVar6 = pcVar6 + 2;
-            if (cVar1 != '\0') goto LAB_0058a322;
+            pcVar3 = pcVar3 + 2;
+            if (cVar2 != '\0') goto LAB_0058a322;
           }
           do {
             pcVar6 = pcVar5;
@@ -60,12 +62,12 @@ LAB_0058a355:
           _fprintf(file_handle,"ART\\%s.ACT\n",local_2c);
           iVar3 = iVar3 + 1;
           pcVar4 = pcVar2 + 0x48;
-          pcVar6 = local_2c;
+          pcVar3 = local_2c;
           pcVar2 = pcVar4;
         } while (iVar3 < this_ptr->num_textures);
       }
-      local_18 = local_18 + 1;
       local_14 = local_14 + 1;
+      local_18 = local_18 + 1;
     } while (local_18 < this_ptr->num_texture_sets);
   }
   return;

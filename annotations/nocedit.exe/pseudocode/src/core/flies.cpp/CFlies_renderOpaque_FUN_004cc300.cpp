@@ -11,28 +11,22 @@
 int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
 
 {
-  short *psVar1;
-  CDemonRenderer *pCVar2;
-  float fVar3;
+  float fVar1;
+  CDemonRenderer *this_ptr_01;
   int iVar4;
   CBoundingBox3D *this_ptr_00;
+  int iVar2;
   uint uVar5;
+  int iVar3;
   int iVar6;
   float (*out_basis) [8];
   SRenderVertex *pSVar7;
   SRenderVertex *vertices;
+  int screen_y;
   SRenderVertex *pSVar8;
+  SRenderVertex *pSVar4;
   byte bVar9;
   SMRGLHeaderPrimitive SStack_a0;
-  uint uStack_88;
-  uint uStack_84;
-  uint uStack_80;
-  uint uStack_7c;
-  uint uStack_78;
-  uint uStack_74;
-  uint uStack_70;
-  uint uStack_6c;
-  uint uStack_68;
   CBoundingBox3D local_58;
   CVector3f CStack_40;
   CVector3i CStack_34;
@@ -41,6 +35,9 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
   SFly *pSStack_20;
   int iStack_1c;
   int iStack_18;
+  CDemonRenderer *pCVar2;
+  short *psVar1;
+  float fVar3;
   
   bVar9 = 0;
   iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
@@ -50,20 +47,19 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
   this_ptr->is_visible = 0;
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_58);
-  iStack_28 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-  iVar4 = INT_02d7a7c0;
-  if (iStack_28 != 0) {
+  iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
+  iVar3 = INT_02d7a7c0;
+  if (iVar2 != 0) {
     this_ptr->is_visible = 1;
-    if (iVar4 == 0) {
+    if (iVar3 == 0) {
       out_basis = g_SplineBasisTable;
-      iVar4 = 0;
+      iVar6 = 0;
       do {
-        iVar6 = iVar4 + 1;
-        iStack_18 = iVar4;
+        fVar1 = (float)iVar6;
+        iVar6 = iVar6 + 1;
         core_spline_cpp_computeSplineBasis_FUN_005b90a0
-                  (*out_basis,((float)iVar4 + (float)0.5) * (float)0.015625,0.0);
+                  (*out_basis,(fVar1 + (float)0.5) * (float)0.015625,0.0);
         out_basis = out_basis + 1;
-        iVar4 = iVar6;
       } while (iVar6 < 0x40);
       INT_02d7a7c0 = 1;
     }
@@ -80,15 +76,6 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
       SStack_a0.surface_normal.C = 0;
       SStack_a0.surface_normal.B = 0;
       SStack_a0.surface_normal.A = 0;
-      uStack_88 = 0;
-      uStack_84 = 0x800000;
-      uStack_80 = 0x800000;
-      uStack_78 = 0x800000;
-      uStack_74 = 0x800000;
-      uStack_6c = 0x800000;
-      uStack_68 = 0x800000;
-      uStack_7c = 1;
-      uStack_70 = 2;
       g_CDemonRendererPtr2->vertex_buffer_ptr->r = 0;
       pCVar2->vertex_buffer_ptr->g = 0;
       pCVar2->vertex_buffer_ptr->b = 0;
@@ -99,10 +86,10 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
       pCVar2->vertex_buffer_ptr[2].g = 0;
       fVar3 = g_PerspectiveReciprocal;
       pCVar2->vertex_buffer_ptr[2].b = 0;
-      iVar4 = 0xffff - (int)fVar3;
-      pCVar2->vertex_buffer_ptr->a = iVar4;
-      pCVar2->vertex_buffer_ptr[1].a = iVar4;
-      pCVar2->vertex_buffer_ptr[2].a = iVar4;
+      iVar3 = 0xffff - (int)fVar3;
+      pCVar2->vertex_buffer_ptr->a = iVar3;
+      pCVar2->vertex_buffer_ptr[1].a = iVar3;
+      pCVar2->vertex_buffer_ptr[2].a = iVar3;
       engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&SMRGLTextureBasic_0067b514);
     }
     iStack_24 = 0;
@@ -125,41 +112,46 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
         CStack_34.z = (int)ROUND(CStack_40.z * 256.0f);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&CStack_34);
-        pCVar2 = g_CDemonRendererPtr2;
+        this_ptr_01 = g_CDemonRendererPtr2;
         vertices = g_CDemonRendererPtr2->vertex_buffer_ptr;
         if ((int)((vertices->projected_vertex).screen_x & -0x80000000) == 0) {
-          iVar6 = (vertices->projected_vertex).screen_y >> 0x10;
-          iVar4 = (vertices->projected_vertex).screen_x >> 0x10;
+          screen_y = (vertices->projected_vertex).screen_y >> 0x10;
+          iVar3 = (vertices->projected_vertex).screen_x >> 0x10;
           if (g_UseExternalRenderer == 0) {
             engine_prim_c_replaceWWithDepth_FUN_00552110(vertices,1);
-            if ((((-1 < iVar4) && (iVar4 < g_WindowWidth)) && (-1 < iVar6)) &&
-               (iVar6 < g_WindowHeight)) {
+            if ((((-1 < iVar3) && (iVar3 < g_WindowWidth)) && (-1 < screen_y)) &&
+               (screen_y < g_WindowHeight)) {
               core_flies_cpp_drawFlyPixel_FUN_004cc230
-                        (iVar4,iVar6,(vertices->projected_vertex).transformed_z);
+                        (iVar3,screen_y,(vertices->projected_vertex).transformed_z);
             }
           }
-          else if ((iVar4 < g_WindowWidth + -1) && (iVar6 < g_WindowHeight + -1)) {
+          else if ((iVar3 < g_WindowWidth + -1) && (screen_y < g_WindowHeight + -1)) {
             *(ushort *)&(vertices->projected_vertex).screen_x = 0;
             *(ushort *)&(vertices->projected_vertex).screen_y = 0;
             pSVar7 = vertices;
-            pSVar8 = pCVar2->vertex_buffer_ptr + 1;
-            for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-              (pSVar8->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
+            pSVar8 = this_ptr_01->vertex_buffer_ptr + 1;
+            for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+              pSVar8 = (SRenderVertex *)((int)pSVar8 + (uint)bVar9 * -8 + 4);
               pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar9 * -8 + 4);
-              pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);
+              (pSVar8->projected_vertex).transformed_x = (pSVar7->projected_vertex).transformed_x;
+              pSVar7 = pSVar7;
+              pSVar8 = pSVar8;
             }
-            pSVar7 = pCVar2->vertex_buffer_ptr + 2;
-            for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-              (pSVar7->projected_vertex).transformed_x = (vertices->projected_vertex).transformed_x;
+            pSVar4 = this_ptr_01->vertex_buffer_ptr + 2;
+            for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
               vertices = (SRenderVertex *)((int)vertices + (uint)bVar9 * -8 + 4);
-              pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);
+              (pSVar4->projected_vertex).transformed_x = (vertices->projected_vertex).transformed_x;
+              vertices = vertices;
+              pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar9 * -2 + 1) * 4);
             }
-            psVar1 = (short *)((int)&pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x + 2);
+            psVar1 = (short *)((int)&this_ptr_01->vertex_buffer_ptr[1].projected_vertex.screen_x + 2
+                              );
             *psVar1 = *psVar1 + 1;
-            *(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =
-                 *(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) + 1;
+            *(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =
+                 *(short *)((int)&this_ptr_01->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) +
+                 1;
             engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                      (pCVar2,&SStack_a0,999);
+                      (this_ptr_01,&SStack_a0,999);
           }
         }
         pSStack_20 = pSStack_20 + 1;
@@ -168,5 +160,5 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004cc300(CFlies *this_ptr)
     }
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
-  return iStack_28;
+  return iVar2;
 }

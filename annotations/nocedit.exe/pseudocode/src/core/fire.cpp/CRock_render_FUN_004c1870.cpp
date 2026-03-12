@@ -9,9 +9,9 @@
 void __cdecl core_fire_cpp_CRock_render_FUN_004c1870(CRock *this_ptr)
 
 {
-  CVector3f *pCVar1;
   int iVar2;
   CBoundingBox3D local_20;
+  CVector3f *pCVar1;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,(CVector3f *)this_ptr);

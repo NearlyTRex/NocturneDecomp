@@ -6,18 +6,22 @@
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined        Stack[-0x46]:1  local_46
-; undefined        Stack[-0x40]:1  local_40
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; undefined2[1018] Stack[-0x201c]:2036  auStack_201c
+; undefined4[1528] Stack[-0x1828]:6112  auStack_1828
+; undefined1[4]    Stack[-0x48]:4  auStack_48
+; undefined4       Stack[-0x44]:4  uStack_44
+; undefined4       Stack[-0x40]:4  local_40
+; undefined2[2]    Stack[-0x3c]:4  auStack_3c
+; CDeformableModel * Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; CDeformableModel * Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModel_importGeometryS3D_FUN_0058b660 at 0058b8b3

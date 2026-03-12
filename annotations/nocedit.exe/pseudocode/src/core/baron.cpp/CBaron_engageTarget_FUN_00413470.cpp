@@ -11,8 +11,11 @@
 void __cdecl core_baron_cpp_CBaron_engageTarget_FUN_00413470(CBaron *this_ptr,CDemonActor *target)
 
 {
-  UOrientationVector *pUVar1;
-  CDemonActor *pCVar2;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  CDemonActor *pCVar5;
   CCharacter *this_ptr_00;
   CVector3f *pCVar3;
   EDeathState EVar4;
@@ -21,6 +24,8 @@ void __cdecl core_baron_cpp_CBaron_engageTarget_FUN_00413470(CBaron *this_ptr,CD
   float local_24;
   float local_20;
   CVector3f local_1c;
+  UOrientationVector *pUVar1;
+  CDemonActor *pCVar2;
   
   if ((((target != (CDemonActor *)0x0) && (target != this_ptr->target_actor)) &&
       (this_ptr->target_actor == (CDemonActor *)0x0)) &&
@@ -37,18 +42,19 @@ void __cdecl core_baron_cpp_CBaron_engageTarget_FUN_00413470(CBaron *this_ptr,CD
     pCVar3 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                        (this_ptr->target_actor,&local_34,&local_1c);
     pCVar2 = this_ptr->target_actor;
-    local_28 = (pCVar2->location).position.x + pCVar3->x;
-    local_24 = (pCVar2->location).position.y + pCVar3->y;
-    local_20 = (pCVar2->location).position.z + pCVar3->z;
-    (this_ptr->base).base.base.location.position.x = local_28;
-    (this_ptr->base).base.base.location.position.y = local_24;
-    (this_ptr->base).base.base.location.position.z = local_20;
-    pCVar2 = this_ptr->target_actor;
+    fVar1 = (pCVar2->location).position.y;
+    fVar2 = pCVar3->y;
+    fVar3 = (pCVar2->location).position.z;
+    fVar4 = pCVar3->z;
+    (this_ptr->base).base.base.location.position.x = (pCVar2->location).position.x + pCVar3->x;
+    (this_ptr->base).base.base.location.position.y = fVar1 + fVar2;
+    (this_ptr->base).base.base.location.position.z = fVar3 + fVar4;
+    pCVar5 = this_ptr->target_actor;
     pUVar1 = &(this_ptr->base).base.base.orient;
-    if (pUVar1 != &pCVar2->orient) {
-      (pUVar1->vec).x = (pCVar2->orient).vec.x;
-      (this_ptr->base).base.base.orient.vec.y = (pCVar2->orient).vec.y;
-      (this_ptr->base).base.base.orient.vec.z = (pCVar2->orient).vec.z;
+    if (pUVar1 != &pCVar5->orient) {
+      (pUVar1->vec).x = (pCVar5->orient).vec.x;
+      (this_ptr->base).base.base.orient.vec.y = (pCVar5->orient).vec.y;
+      (this_ptr->base).base.base.orient.vec.z = (pCVar5->orient).vec.z;
     }
     memset(&(this_ptr->base).player_control,0,0x2c);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

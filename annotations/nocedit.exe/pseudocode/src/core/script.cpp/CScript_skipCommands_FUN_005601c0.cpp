@@ -9,10 +9,11 @@
 int __cdecl core_script_cpp_CScript_skipCommands_FUN_005601c0(CScript *this_ptr,int direction,int count)
 
 {
-  char *str1;
-  bool bVar1;
   int iVar2;
+  int iVar1;
   int iVar3;
+  bool bVar1;
+  char *str1;
   
   iVar3 = 0;
   bVar1 = true;
@@ -36,7 +37,7 @@ int __cdecl core_script_cpp_CScript_skipCommands_FUN_005601c0(CScript *this_ptr,
       else if (((iVar3 < 1) && (!bVar1)) ||
               (iVar2 = _strnicmp(str1,"if",2), iVar2 != 0)) {
         if (((iVar3 < 1) && (count == 0)) ||
-           (iVar2 = _strnicmp(str1,"else",4), iVar2 != 0)) {
+           (iVar1 = _strnicmp(str1,"else",4), iVar1 != 0)) {
           if (iVar3 == 0) {
             if (!bVar1) {
               return direction;

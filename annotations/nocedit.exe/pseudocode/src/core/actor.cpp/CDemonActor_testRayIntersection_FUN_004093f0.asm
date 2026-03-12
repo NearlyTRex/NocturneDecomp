@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   ray_type
 ; CBoundingBox3D * Stack[0x18]:4   clip_bounds
 ; Local Variables:
-; undefined4       Stack[-0x34]:4  local_34
+; SCollisionInfo   Stack[-0x34]:40  local_34
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470

@@ -9,7 +9,7 @@
 ; FormatSpec *     Stack[0xc]:4   spec_info
 ; OUTPUT_CALLBACK  Stack[0x10]:4   output_func
 ; Local Variables:
-; undefined1       Stack[-0x18]:1  local_18
+; undefined1[4]    Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   crt_stdio.c_FormatEngine_FUN_00602950 at 00602c62

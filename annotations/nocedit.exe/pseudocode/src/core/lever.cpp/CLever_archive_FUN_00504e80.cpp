@@ -9,10 +9,11 @@
 void __cdecl core_lever_cpp_CLever_archive_FUN_00504e80(CLever *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
   char *pcVar2;
   char *pcVar3;
   char local_d4 [200];
+  char cVar1;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040c1c0(&this_ptr->base);
   pcVar3 = local_d4;
@@ -26,11 +27,11 @@ void __cdecl core_lever_cpp_CLever_archive_FUN_00504e80(CLever *this_ptr)
       cVar1 = *pcVar2;
       *pcVar3 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar2[1];
+      cVar2 = pcVar2[1];
       pcVar2 = pcVar2 + 2;
-      pcVar3[1] = cVar1;
+      pcVar3[1] = cVar2;
       pcVar3 = pcVar3 + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
     core_actor_cpp_archiveString_FUN_0040b5c0(local_d4,"modelName");
   }
   core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->lever_type,"leverType");

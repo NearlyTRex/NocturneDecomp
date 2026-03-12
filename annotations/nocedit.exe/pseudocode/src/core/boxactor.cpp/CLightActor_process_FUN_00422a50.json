@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 103,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 78,
+    "pseudocode_lines": 82,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 256
+    "total_lines": 260
   },
   "cross_references": [],
   "function": {
@@ -191,64 +191,50 @@
         "is_param": false,
         "name": "local_e4",
         "offset": -228,
-        "size": 1,
-        "type": "undefined1"
+        "size": 48,
+        "type": "CMatrix3x4f"
       },
       {
         "is_param": false,
         "name": "local_b4",
         "offset": -180,
-        "size": 1,
-        "type": "undefined1"
+        "size": 48,
+        "type": "CMatrix3x4f"
       },
       {
         "is_param": false,
         "name": "local_84",
         "offset": -132,
-        "size": 1,
-        "type": "undefined1"
+        "size": 36,
+        "type": "CMatrix3x3f"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
-        "size": 1,
-        "type": "undefined1"
+        "size": 48,
+        "type": "CMatrix3x4f"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_10",
-        "offset": -16,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_c",
         "offset": -12,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -269,18 +255,18 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(CMatrix3x4f *)((int)",
+      "line": 62,
+      "match": "(CMatrix3x3f *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CMatrix3x3f *)((int)pCVar6 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
-      "match": "(CMatrix3x3f *)((int)",
+      "line": 63,
+      "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     }
   ],

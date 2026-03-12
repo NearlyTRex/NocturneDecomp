@@ -10,6 +10,7 @@ void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather *thi
 
 {
   float fVar1;
+  float fVar2;
   
   this_ptr->weather_type = type;
   if (type == WEATHER_TYPE_RAIN) {
@@ -23,7 +24,7 @@ void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005ef8c0(CWeather *thi
   this_ptr->max_flash_interval = 10.0;
   this_ptr->flash_timer = 0.0;
   this_ptr->lightning_countdown = fVar1;
-  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,this_ptr->max_flash_interval);
-  this_ptr->sub_flash_interval = fVar1;
+  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,this_ptr->max_flash_interval);
+  this_ptr->sub_flash_interval = fVar2;
   return;
 }

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 161,
+    "complexity_score": 163,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 14,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 96,
+    "pseudocode_lines": 98,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 342
+    "total_lines": 344
   },
   "cross_references": [],
   "function": {
@@ -179,14 +179,14 @@
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -235,49 +235,49 @@
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -291,7 +291,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "ushort *"
       },
       {
         "is_param": true,
@@ -319,7 +319,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 34,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_30) + screen_x);",
@@ -327,15 +327,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 38,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);",
+      "text": "uVar2 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 53,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_14 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_50) + screen_x * 2);",
@@ -343,7 +343,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 57,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);",
@@ -351,7 +351,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 76,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "puVar4 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_28) + screen_x * 4);",
@@ -359,10 +359,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 80,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar5);",
+      "text": "uVar2 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar1);",
       "type": "pointer_cast"
     }
   ]

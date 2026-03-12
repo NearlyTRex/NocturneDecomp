@@ -10,6 +10,7 @@ float __cdecl core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10
 
 {
   CDeformableModel *pCVar1;
+  CDeformableModel *this_ptr_00;
   float fVar2;
   int lod_index;
   CVector3i *skinned_vertices;
@@ -25,9 +26,9 @@ float __cdecl core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10
   }
   part_visibility_flags = &this_ptr->part_data;
   skinned_vertices = this_ptr->skinned_vertices_buffer;
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   fVar2 = core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0
-                    (pCVar1,lod_index,ray_origin,ray_direction,skinned_vertices,
+                    (this_ptr_00,lod_index,ray_origin,ray_direction,skinned_vertices,
                      (byte *)part_visibility_flags);
   return fVar2;
 }

@@ -7,9 +7,8 @@
 ; char *           Stack[0x4]:4   source_file
 ; char *           Stack[0x8]:4   dest_file
 ; Local Variables:
-; undefined4       Stack[-0x36]:4  local_36
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
+; _stat            Stack[-0x50]:70  _Stack_50
+; utimbuf          Stack[-0x8]:8  local_8
 ;
 ; XREF[7]:
 ;   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 at 004b4a04

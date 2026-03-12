@@ -6,13 +6,7 @@
 ; Parameters:
 ; CTextureCache *  Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0xcc]:4  local_cc
-; undefined4       Stack[-0xc8]:4  local_c8
-; undefined4       Stack[-0xc4]:4  local_c4
-; undefined4       Stack[-0xbc]:4  local_bc
-; undefined4       Stack[-0xb8]:4  local_b8
-; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xb0]:4  local_b0
+; SRenderVertex    Stack[-0xcc]:48  local_cc
 ; undefined4       Stack[-0x9c]:4  local_9c
 ; undefined4       Stack[-0x98]:4  local_98
 ; undefined4       Stack[-0x94]:4  local_94

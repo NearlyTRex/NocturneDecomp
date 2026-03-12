@@ -8,8 +8,8 @@
 ; CVector3f *      Stack[0x8]:4   out_position
 ; int              Stack[0xc]:4   bone_index
 ; Local Variables:
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0x40]:1  local_40
+; CMatrix3x4f      Stack[-0x70]:48  local_70
+; CMatrix3x4f      Stack[-0x40]:48  local_40
 ;
 ; XREF[36]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 004156ff

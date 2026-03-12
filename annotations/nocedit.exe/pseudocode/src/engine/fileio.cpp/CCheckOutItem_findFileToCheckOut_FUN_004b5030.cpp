@@ -9,12 +9,15 @@
 int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CCheckOutItem *this_ptr,char *file_pattern,char *output_filename_buffer)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
+  int iVar4;
   int iVar3;
+  int iVar5;
   CCheckOutItem *pCVar4;
   char *pcVar5;
   char *pcVar6;
+  char *pcVar7;
   byte bVar7;
   CPickList local_86c;
   char local_4c4 [400];
@@ -23,6 +26,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CChe
   char local_11c [256];
   CCheckOutList local_1c;
   char local_14 [4];
+  char cVar1;
   
   bVar7 = 0;
   iVar2 = engine_fileio_cpp_establishUserIdentity_FUN_004b1c00();
@@ -31,43 +35,43 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CChe
   }
   local_1c.count = 0;
   local_1c.items = (CCheckOutItem *)0x0;
-  iVar2 = engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(&local_1c);
-  if (iVar2 == 0) {
+  iVar4 = engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(&local_1c);
+  if (iVar4 == 0) {
     engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_1c);
     return 0;
   }
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(this_ptr->name,local_14,local_11c);
   engine_dosio_c_makePath_FUN_00481f50(local_220,local_14,local_11c,(char *)0x0,(char *)0x0);
-  iVar2 = -1;
-  pcVar5 = local_220;
+  iVar4 = -1;
+  pcVar6 = local_220;
   do {
-    pcVar6 = pcVar5;
-    if (iVar2 == 0) break;
-    iVar2 = iVar2 + -1;
-    pcVar6 = pcVar5 + (uint)bVar7 * -2 + 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar6;
+    pcVar6 = pcVar6;
+    if (iVar4 == 0) break;
+    iVar4 = iVar4 + -1;
+    pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
+    cVar1 = *pcVar6;
+    pcVar6 = pcVar6;
   } while (cVar1 != '\0');
-  pcVar6 = pcVar6 + -1;
+  pcVar7 = pcVar6 + -1;
   do {
-    cVar1 = *file_pattern;
-    *pcVar6 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = file_pattern[1];
+    cVar2 = *file_pattern;
+    *pcVar7 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = file_pattern[1];
     file_pattern = file_pattern + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
-  } while (cVar1 != '\0');
+    pcVar7[1] = cVar2;
+    pcVar7 = pcVar7 + 2;
+  } while (cVar2 != '\0');
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_86c);
   shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_86c,1);
   engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_334);
   engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_334,local_220);
   while (local_334.filename[0] != '\0') {
-    iVar2 = _sprintf(local_4c4,"%s\t",&local_334);
+    iVar4 = _sprintf(local_4c4,"%s\t",&local_334);
     iVar3 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_1c,local_334.filename);
     if (-1 < iVar3) {
       _sprintf
-                (local_4c4 + iVar2,"Checked out by %s",local_1c.items[iVar3].value);
+                (local_4c4 + iVar4,"Checked out by %s",local_1c.items[iVar3].value);
     }
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_86c.base,local_4c4);
     engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&local_334);
@@ -85,13 +89,13 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CChe
     }
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
               (&local_86c.base,(int)output_filename_buffer,pcVar5,0);
-    iVar2 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_1c,output_filename_buffer)
+    iVar4 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_1c,output_filename_buffer)
     ;
-    if (iVar2 < 0) break;
-    iVar3 = _stricmp
-                      (local_1c.items[iVar2].value,g_VersionControlSession.primary_username);
-    pCVar4 = local_1c.items + iVar2;
-    if (iVar3 == 0) {
+    if (iVar4 < 0) break;
+    iVar5 = _stricmp
+                      (local_1c.items[iVar4].value,g_VersionControlSession.primary_username);
+    pCVar4 = local_1c.items + iVar4;
+    if (iVar5 == 0) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"You already have %s checked out",pCVar4);
     }

@@ -11,12 +11,22 @@
 ; undefined4       Stack[-0xcd0]:4  local_cd0
 ; undefined4       Stack[-0xccc]:4  local_ccc
 ; undefined4       Stack[-0xcc8]:4  local_cc8
-; undefined4       Stack[-0xcb8]:4  local_cb8
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0xcb8]:4  local_cb8
+; char[400]        Stack[-0xcb4]:400  acStack_cb4
+; char[400]        Stack[-0xb24]:400  acStack_b24
+; char[400]        Stack[-0x994]:400  acStack_994
+; char[400]        Stack[-0x804]:400  acStack_804
+; char[400]        Stack[-0x674]:400  acStack_674
+; char[400]        Stack[-0x4e4]:400  acStack_4e4
+; char[400]        Stack[-0x354]:400  acStack_354
+; char[400]        Stack[-0x1c4]:400  acStack_1c4
+; double           Stack[-0x34]:8  dStack_34
+; float            Stack[-0x2c]:4  local_2c
+; float            Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; IDirectSoundBuffer * Stack[-0x20]:4  local_20
+; long             Stack[-0x1c]:4  lStack_1c
+; float            Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c

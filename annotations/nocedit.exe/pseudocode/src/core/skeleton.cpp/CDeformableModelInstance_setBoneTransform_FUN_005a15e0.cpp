@@ -9,7 +9,6 @@
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(CDeformableModelInstance *this_ptr,SPose *bone_transform)
 
 {
-  int iVar1;
   CSkeleton *pCVar2;
   CDeformableModelInstance *pCVar3;
   int iVar4;
@@ -25,6 +24,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005
   SPose *local_14;
   SPose *local_10;
   CDeformableModelInstance *local_c;
+  int iVar1;
   
   bVar13 = 0;
   if (&this_ptr->bone_transform != bone_transform) {
@@ -56,9 +56,11 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005
       pCVar9 = local_10->bone_world_matrices;
       pCVar12 = (pCVar3->bone_transform).bone_world_matrices;
       for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-        pCVar12->m[0].w = pCVar9->m[0].w;
-        pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar13 * -8 + 4);
         pCVar12 = (CMatrix3x4f *)((int)pCVar12 + (uint)bVar13 * -8 + 4);
+        pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar13 * -8 + 4);
+        pCVar12->m[0].w = pCVar9->m[0].w;
+        pCVar9 = pCVar9;
+        pCVar12 = pCVar12;
       }
       iVar5 = iVar5 + 1;
       local_10 = (SPose *)&local_10->bone_rotations[2].x;

@@ -6,7 +6,7 @@
 ; Parameters:
 ; CLeakChecker *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x64]:1  local_64
+; char[100]        Stack[-0x64]:100  local_64
 ;
 ; XREF[1]:
 ;   shape_memdbg.cpp_staticInit_FUN_0050ee40 at 0050ee45

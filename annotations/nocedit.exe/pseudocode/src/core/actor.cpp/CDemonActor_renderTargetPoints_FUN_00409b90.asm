@@ -6,7 +6,10 @@
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x9c]:1  local_9c
+; CVector3f[10]    Stack[-0x9c]:120  local_9c
+; CVector3i        Stack[-0x24]:12  CStack_24
+; int              Stack[-0x18]:4  iStack_18
+; uint             Stack[-0x14]:4  uStack_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_006138e0

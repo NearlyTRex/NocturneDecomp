@@ -7,15 +7,15 @@
 ; CProceduralTexture * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0x134]:4  local_134
-; undefined1       Stack[-0x130]:1  local_130
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x130]:256  local_130
+; CProceduralTexture * Stack[-0x30]:4  local_30
+; CProceduralTexture * Stack[-0x2c]:4  local_2c
+; uchar *          Stack[-0x28]:4  local_28
+; uchar *          Stack[-0x24]:4  local_24
+; CProceduralTexture * Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; CProceduralTexture * Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880 at 005548e4

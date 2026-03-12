@@ -12,8 +12,8 @@
 ; SMpegFrame *     Stack[0x18]:4   frame_info
 ; SMpegFrameHeader * Stack[0x1c]:4   header
 ; Local Variables:
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x4c]:4  local_4c
+; float[18]        Stack[-0x94]:72  local_94
+; float[18]        Stack[-0x4c]:72  local_4c
 ;
 ; XREF[1]:
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 at 005359c7

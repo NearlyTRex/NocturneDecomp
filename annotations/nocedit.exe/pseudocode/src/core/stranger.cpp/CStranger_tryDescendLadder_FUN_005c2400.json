@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 60,
-        "line": 123,
+        "line": 111,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 123,
+        "line": 111,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -19,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 330,
-    "complexity_score": 233,
+    "complexity_score": 220,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 148,
+    "pseudocode_lines": 135,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "sub84_truncation",
       "warning_type_propagation"
     ],
-    "total_lines": 478
+    "total_lines": 465
   },
   "cross_references": [
     {
@@ -231,12 +231,26 @@
     "pcode_op_count": 1732
   },
   "stack_frame": {
-    "frame_size": 248,
-    "local_size": 244,
+    "frame_size": 256,
+    "local_size": 252,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "uStack_f8",
+        "offset": -248,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_f4",
+        "offset": -244,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
         "is_param": false,
         "name": "local_f0",
@@ -248,50 +262,239 @@
         "is_param": false,
         "name": "local_e8",
         "offset": -232,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
         "name": "local_d0",
         "offset": -208,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_c8",
-        "offset": -200,
+        "name": "CStack_c4",
+        "offset": -196,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_b8",
+        "offset": -184,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_a0",
+        "offset": -160,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_94",
+        "offset": -148,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_90",
+        "offset": -144,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_88",
+        "offset": -136,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_78",
+        "offset": -120,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_74",
+        "offset": -116,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_70",
+        "offset": -112,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_64",
+        "offset": -100,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_60",
+        "offset": -96,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_58",
+        "offset": -88,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_4c",
+        "offset": -76,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_40",
+        "offset": -64,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_38",
+        "offset": -56,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_34",
+        "offset": -52,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_30",
+        "offset": -48,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -330,7 +533,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 64,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS((this_ptr->base).base.base.location.position.y -",
@@ -338,7 +541,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 70,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(local_d0.z) <= (float)4) && (local_d0.z <= 0.0)) {",
@@ -346,7 +549,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 99,
+      "line": 89,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar4 = (float10)fcos((float10)0.261799387791667);",
@@ -354,26 +557,26 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 90,
       "match": "ABS",
       "severity": "mild",
-      "text": "fVar2 = ABS(fStack_a4 * fStack_b0 + fStack_ac * fStack_b8 + fStack_a8 * fStack_b4);",
+      "text": "fVar2 = ABS((this_ptr->base).base.base.orient_matrix.m[2].z *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 114,
+      "line": 102,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "uStack_f8 = SUB84(__BITCAST_UINT64(dVar1),0);",
+      "text": "uStack_f8 = SUB84(__BITCAST_UINT64((double)fVar2),0);",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 114,
+      "line": 102,
       "match": "SUB84",
       "severity": "mild",
-      "text": "uStack_f8 = SUB84(__BITCAST_UINT64(dVar1),0);",
+      "text": "uStack_f8 = SUB84(__BITCAST_UINT64((double)fVar2),0);",
       "type": "decompiler_intrinsic"
     }
   ]

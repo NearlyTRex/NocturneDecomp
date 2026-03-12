@@ -4,8 +4,8 @@
 ; int __cdecl shape_design_c_checkVertexCountLimit_FUN_00460a10(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x68]:1  local_68
-; undefined4       Stack[-0x18]:4  local_18
+; char[80]         Stack[-0x68]:80  local_68
+; uint             Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

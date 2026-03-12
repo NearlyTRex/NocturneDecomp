@@ -7,11 +7,11 @@
 ; CImp *           Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ; Local Variables:
-; undefined1       Stack[-0x48]:1  local_48
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined1       Stack[-0x30]:1  local_30
-; undefined1       Stack[-0x24]:1  local_24
-; undefined1       Stack[-0x18]:1  local_18
+; CVector3f        Stack[-0x48]:12  local_48
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  local_30
+; CVector3f        Stack[-0x24]:12  local_24
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; Referenced Globals:
 ;   int INT_02db89f4

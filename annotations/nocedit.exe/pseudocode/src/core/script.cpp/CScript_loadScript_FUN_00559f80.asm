@@ -8,14 +8,13 @@
 ; char *           Stack[0x8]:4   filename
 ; int              Stack[0xc]:4   skip_validation
 ; Local Variables:
-; undefined1       Stack[-0x790]:1  local_790
-; undefined1       Stack[-0x3e8]:1  local_3e8
-; undefined1       Stack[-0x1e8]:1  local_1e8
-; undefined1       Stack[-0x1e7]:1  local_1e7
-; undefined1       Stack[-0xe4]:1  local_e4
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CPickList        Stack[-0x790]:936  local_790
+; char[512]        Stack[-0x3e8]:512  local_3e8
+; char[260]        Stack[-0x1e8]:260  local_1e8
+; char[200]        Stack[-0xe4]:200  local_e4
+; int              Stack[-0x1c]:4  local_1c
+; CStrList *       Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_mission.cpp_CDemonMission_loadScript_FUN_005235b0 at 005235eb

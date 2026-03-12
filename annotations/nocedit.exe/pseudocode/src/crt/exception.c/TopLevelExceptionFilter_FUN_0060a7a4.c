@@ -9,17 +9,19 @@
 long __cdecl TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
 
 {
-  char cVar1;
-  PEXCEPTION_RECORD pEVar2;
-  PCONTEXT pCVar3;
+  uint uVar1;
   BOOL BVar4;
   HANDLE pvVar5;
   uint uVar6;
+  char *pcVar2;
   byte bVar7;
-  char *pcVar8;
-  PVOID value;
   char local_114 [256];
   DWORD local_14;
+  PVOID value;
+  char *pcVar8;
+  PCONTEXT pCVar3;
+  char cVar1;
+  PEXCEPTION_RECORD pEVar2;
   
   bVar7 = 0;
   pEVar2 = ExceptionInfo->ExceptionRecord;
@@ -30,14 +32,14 @@ long __cdecl TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
     return 0;
   }
   local_114[0] = '\0';
-  uVar6 = pEVar2->ExceptionCode;
-  if (uVar6 < 0xc0000090) {
-    if (0xc000008c < uVar6) {
-      if (uVar6 < 0xc000008e) {
+  uVar1 = pEVar2->ExceptionCode;
+  if (uVar1 < 0xc0000090) {
+    if (0xc000008c < uVar1) {
+      if (uVar1 < 0xc000008e) {
         value = pEVar2->ExceptionAddress;
         pcVar8 = "The instruction at 0x00000000 caused a denormal operand floating point\nexception.\n";
       }
-      else if (uVar6 < 0xc000008f) {
+      else if (uVar1 < 0xc000008f) {
         value = pEVar2->ExceptionAddress;
         pcVar8 = "The instruction at 0x00000000 caused a division by zero floating point\nexception.\n";
       }
@@ -47,8 +49,8 @@ long __cdecl TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
       }
       goto LAB_0060a968;
     }
-    if (0xc0000004 < uVar6) {
-      if (uVar6 < 0xc0000006) {
+    if (0xc0000004 < uVar1) {
+      if (uVar1 < 0xc0000006) {
         FormatHexString
                   (local_114,"The instruction at 0x00000000 referenced memory ",(DWORD)pEVar2->ExceptionAddress);
         FormatHexString
@@ -63,7 +65,7 @@ long __cdecl TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
         }
         goto LAB_0060a968;
       }
-      if (uVar6 == 0xc000001d) {
+      if (uVar1 == 0xc000001d) {
         value = pEVar2->ExceptionAddress;
         pcVar8 = "An illegal instruction was executed at address 0x00000000.\n";
         goto LAB_0060a968;
@@ -71,13 +73,13 @@ long __cdecl TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
     }
   }
   else {
-    if (uVar6 < 0xc0000091) {
+    if (uVar1 < 0xc0000091) {
       value = pEVar2->ExceptionAddress;
       pcVar8 = "The instruction at 0x00000000 caused an invalid operation floating point\nexception.\n";
       goto LAB_0060a968;
     }
-    if (uVar6 < 0xc0000093) {
-      if (uVar6 < 0xc0000092) {
+    if (uVar1 < 0xc0000093) {
+      if (uVar1 < 0xc0000092) {
         value = pEVar2->ExceptionAddress;
         pcVar8 = "The instruction at 0x00000000 caused an overflow floating point exception.\n";
       }
@@ -91,25 +93,25 @@ long __cdecl TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
       }
       goto LAB_0060a968;
     }
-    if (uVar6 < 0xc0000094) {
+    if (uVar1 < 0xc0000094) {
       value = pEVar2->ExceptionAddress;
       pcVar8 = "The instruction at 0x00000000 caused an underflow floating point exception.\n";
       goto LAB_0060a968;
     }
-    if (uVar6 < 0xc0000096) {
-      if (uVar6 == 0xc0000094) {
+    if (uVar1 < 0xc0000096) {
+      if (uVar1 == 0xc0000094) {
         value = pEVar2->ExceptionAddress;
         pcVar8 = "An integer divide by zero was encountered at address 0x00000000.\n";
         goto LAB_0060a968;
       }
     }
     else {
-      if (uVar6 < 0xc0000097) {
+      if (uVar1 < 0xc0000097) {
         value = pEVar2->ExceptionAddress;
         pcVar8 = "A privileged instruction was executed at address 0x00000000.\n";
         goto LAB_0060a968;
       }
-      if (uVar6 == 0xc00000fd) {
+      if (uVar1 == 0xc00000fd) {
         value = pEVar2->ExceptionAddress;
         pcVar8 = "A stack overflow was encountered at address 0x00000000.\n";
         goto LAB_0060a968;
@@ -123,12 +125,12 @@ long __cdecl TopLevelExceptionFilter(_EXCEPTION_POINTERS *ExceptionInfo)
 LAB_0060a968:
   FormatHexString(local_114,pcVar8,(DWORD)value);
   uVar6 = 0xffffffff;
-  pcVar8 = local_114;
+  pcVar2 = local_114;
   do {
     if (uVar6 == 0) break;
     uVar6 = uVar6 - 1;
-    cVar1 = *pcVar8;
-    pcVar8 = pcVar8 + (uint)bVar7 * -2 + 1;
+    cVar1 = *pcVar2;
+    pcVar2 = pcVar2 + (uint)bVar7 * -2 + 1;
   } while (cVar1 != '\0');
   (*g_WriteFileFunc)(g_IOControlBlock->standard_handles[2],local_114,~uVar6 - 1,&local_14,
                      (LPOVERLAPPED)0x0);

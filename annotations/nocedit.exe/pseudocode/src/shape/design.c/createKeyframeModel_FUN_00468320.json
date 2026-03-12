@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 286,
-    "complexity_score": 169,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 14,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 114,
-    "suspect_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 118,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
-      "warning_inlined_function",
-      "warning_type_propagation"
+      "warning_inlined_function"
     ],
-    "total_lines": 400
+    "total_lines": 404
   },
   "cross_references": [
     {
@@ -270,78 +269,50 @@
         "is_param": false,
         "name": "local_264",
         "offset": -612,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_25c",
-        "offset": -604,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_258",
-        "offset": -600,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24c",
-        "offset": -588,
-        "size": 1,
-        "type": "undefined1"
+        "size": 344,
+        "type": "SMRGLKeyframeModel"
       },
       {
         "is_param": false,
         "name": "local_10c",
         "offset": -268,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "char[80]"
       },
       {
         "is_param": false,
         "name": "local_bc",
         "offset": -188,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "char[80]"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_6b",
-        "offset": -107,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "byte[80]"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "_FILE *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       }
     ]
   },
@@ -355,16 +326,8 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Type propagation did not converge",
-      "line": 3,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 98,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_264.cycle_length = (int)ROUND(ROUND(local_14 * (float)65536));",
@@ -372,7 +335,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 98,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_264.cycle_length = (int)ROUND(ROUND(local_14 * (float)65536));",

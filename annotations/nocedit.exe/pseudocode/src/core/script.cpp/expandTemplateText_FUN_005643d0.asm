@@ -7,9 +7,8 @@
 ; char *           Stack[0x4]:4   buffer
 ; char *           Stack[0x8]:4   template_text
 ; Local Variables:
-; undefined1       Stack[-0x33c]:1  local_33c
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined4       Stack[-0x14]:4  local_14
+; CCmdParm         Stack[-0x33c]:808  local_33c
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_showSyntaxHelp_FUN_00565e70 at 00565efd

@@ -9,9 +9,9 @@
 float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer *this_ptr,float *output)
 
 {
+  CVector3i local_20;
   float fVar1;
   float fVar2;
-  CVector3i local_20;
   
   engine_matrix_c_getCameraRotation_FUN_0050e2f0(&local_20);
   fVar2 = (float)3.0517578125e-05;

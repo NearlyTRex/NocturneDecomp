@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 36,
-        "line": 98,
+        "line": 102,
         "message": "format specifies type 'int' but the argument has type 'char *' [-Werror,-Wformat]"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 405,
-    "complexity_score": 214,
+    "complexity_score": 209,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 18,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 144,
+    "pseudocode_lines": 139,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function"
     ],
-    "total_lines": 549
+    "total_lines": 544
   },
   "cross_references": [
     {
@@ -303,155 +303,155 @@
         "is_param": false,
         "name": "local_164",
         "offset": -356,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_64",
         "offset": -100,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "CBitFont *"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "CBitFont *"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "char[256] *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CGame *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -490,7 +490,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 47,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(this_ptr->message_timer) != 0.0) {",
@@ -498,34 +498,34 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 52,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar3 = (int)ROUND(ROUND((double)this_ptr->message_timer * 65535));",
+      "text": "iVar8 = (int)ROUND(ROUND((double)this_ptr->message_timer * 65535));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 52,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar3 = (int)ROUND(ROUND((double)this_ptr->message_timer * 65535));",
+      "text": "iVar8 = (int)ROUND(ROUND((double)this_ptr->message_timer * 65535));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
+      "line": 130,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_2c = (int)ROUND(ROUND((float)local_14 * fVar1));",
+      "text": "iVar6 = (int)ROUND(ROUND((float)((iVar1 - iVar8) + 1) * fVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
+      "line": 130,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_2c = (int)ROUND(ROUND((float)local_14 * fVar1));",
+      "text": "iVar6 = (int)ROUND(ROUND((float)((iVar1 - iVar8) + 1) * fVar1));",
       "type": "decompiler_intrinsic"
     }
   ]

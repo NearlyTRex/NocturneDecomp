@@ -7,7 +7,8 @@
 ; CSimBox *        Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x18]:1  local_18
+; CVector3f        Stack[-0x18]:12  local_18
+; int              Stack[-0xc]:4  iStack_c
 ;
 ; Referenced Globals:
 ;   float FLOAT_00649c02 = 0.00003051851

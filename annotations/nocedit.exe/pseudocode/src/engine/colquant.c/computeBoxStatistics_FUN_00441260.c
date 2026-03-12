@@ -11,22 +11,19 @@
 void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantMapper *workspace,int box_index)
 
 {
-  double dVar1;
-  uint uVar2;
-  int iVar3;
-  int iVar4;
-  int iVar5;
-  double dVar6;
-  double b;
-  double b_00;
-  double b_01;
-  undefined5 uVar7;
+  double dVar2;
+  double dVar3;
+  double b_02;
   int iVar8;
   uint uVar9;
   uint uVar10;
+  uint uVar4;
+  uint uVar5;
   int iVar11;
   byte *pbVar12;
+  int iVar6;
   double dVar13;
+  double dVar7;
   double dVar14;
   double local_90;
   double local_78;
@@ -37,6 +34,16 @@ void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantMapp
   double local_50;
   double local_48;
   ulonglong local_30;
+  double dVar6;
+  double b_01;
+  int iVar4;
+  int iVar5;
+  double dVar1;
+  int iVar3;
+  double b;
+  double b_00;
+  uint uVar2;
+  undefined5 uVar7;
   
   local_70 = 0.0;
   local_50 = 0.0;
@@ -45,6 +52,9 @@ void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantMapp
   iVar11 = workspace->boxes[box_index].start_index;
   iVar8 = workspace->boxes[box_index].start_index + workspace->boxes[box_index].count;
   if (iVar11 < iVar8) {
+    local_48 = 0.0;
+    local_50 = 0.0;
+    local_78 = 0.0;
     pbVar12 = (byte *)(workspace->color_data + iVar11 * 4);
     do {
       iVar11 = iVar11 + 1;
@@ -76,34 +86,34 @@ void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantMapp
   local_60 = 0.0;
   *(uint *)&workspace->boxes[box_index].total_weighted_error = 0;
   workspace->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_48 / (double)local_30));
-  iVar11 = workspace->boxes[box_index].start_index;
+  iVar6 = workspace->boxes[box_index].start_index;
   *(uint *)((int)&workspace->boxes[box_index].total_weighted_error + 4) = 0;
-  for (iVar11 = iVar11 * 4; iVar11 < iVar8 * 4; iVar11 = iVar11 + 4) {
+  for (iVar6 = iVar6 * 4; iVar6 < iVar8 * 4; iVar6 = iVar6 + 4) {
     uVar9 = (*(int *)((int)&workspace->boxes[box_index + -1].count + 2) >> 0x10) -
-            (uint)(byte)workspace->color_data[iVar11];
+            (uint)(byte)workspace->color_data[iVar6];
     uVar10 = (int)uVar9 >> 0x1f;
     dVar6 = (double)(int)((uVar9 ^ uVar10) - uVar10);
     iVar3._0_2_ = workspace->boxes[box_index].avg_red;
     iVar3._2_2_ = workspace->boxes[box_index].avg_green;
-    uVar9 = (iVar3 >> 0x10) - (uint)(byte)workspace->color_data[iVar11 + 1];
-    uVar10 = (int)uVar9 >> 0x1f;
-    b = (double)(int)((uVar9 ^ uVar10) - uVar10);
+    uVar4 = (iVar3 >> 0x10) - (uint)(byte)workspace->color_data[iVar6 + 1];
+    uVar5 = (int)uVar4 >> 0x1f;
+    b = (double)(int)((uVar4 ^ uVar5) - uVar5);
     iVar4._0_2_ = workspace->boxes[box_index].avg_green;
     iVar4._2_2_ = workspace->boxes[box_index].avg_blue;
-    uVar9 = (iVar4 >> 0x10) - (uint)(byte)workspace->color_data[iVar11 + 2];
-    uVar10 = (int)uVar9 >> 0x1f;
+    uVar4 = (iVar4 >> 0x10) - (uint)(byte)workspace->color_data[iVar6 + 2];
+    uVar5 = (int)uVar4 >> 0x1f;
     iVar5._0_2_ = workspace->boxes[box_index].avg_blue;
     iVar5._2_2_ = workspace->boxes[box_index].avg_intensity;
-    b_00 = (double)(int)((uVar9 ^ uVar10) - uVar10);
-    uVar9 = (iVar5 >> 0x10) - (uint)(byte)workspace->color_data[iVar11 + 3];
-    uVar10 = (int)uVar9 >> 0x1f;
-    dVar14 = workspace->boxes[box_index].spread_green;
-    dVar13 = workspace->boxes[box_index].spread_blue;
+    b_00 = (double)(int)((uVar4 ^ uVar5) - uVar5);
+    uVar4 = (iVar5 >> 0x10) - (uint)(byte)workspace->color_data[iVar6 + 3];
+    uVar5 = (int)uVar4 >> 0x1f;
+    dVar2 = workspace->boxes[box_index].spread_green;
+    dVar7 = workspace->boxes[box_index].spread_blue;
     dVar1 = workspace->boxes[box_index].spread_intensity;
-    b_01 = (double)(int)((uVar9 ^ uVar10) - uVar10);
+    b_01 = (double)(int)((uVar4 ^ uVar5) - uVar5);
     workspace->boxes[box_index].spread_red = workspace->boxes[box_index].spread_red + dVar6;
-    workspace->boxes[box_index].spread_green = dVar14 + b;
-    workspace->boxes[box_index].spread_blue = dVar13 + b_00;
+    workspace->boxes[box_index].spread_green = dVar2 + b;
+    workspace->boxes[box_index].spread_blue = dVar7 + b_00;
     workspace->boxes[box_index].spread_intensity = dVar1 + b_01;
     local_68 = engine_colquant_c_doubleMax_FUN_00441790(local_68,dVar6);
     local_58 = engine_colquant_c_doubleMax_FUN_00441790(local_58,b);
@@ -113,36 +123,36 @@ void __cdecl engine_colquant_c_computeBoxStatistics_FUN_00441260(SColorQuantMapp
          b_00 * b_00 * 0.11 + b * b * 0.58999999999999997 + dVar6 * dVar6 * 0.29999999999999999 +
          b_01 * b_01 * 0.69999999999999996 + workspace->boxes[box_index].total_weighted_error;
   }
-  dVar14 = workspace->boxes[box_index].spread_red * 0.33000000000000002;
-  dVar13 = workspace->boxes[box_index].spread_blue * 0.11;
-  dVar1 = workspace->boxes[box_index].spread_intensity * 0.69999999999999996;
+  dVar2 = workspace->boxes[box_index].spread_red * 0.33000000000000002;
+  dVar7 = workspace->boxes[box_index].spread_blue * 0.11;
+  dVar3 = workspace->boxes[box_index].spread_intensity * 0.69999999999999996;
   workspace->boxes[box_index].spread_green =
        workspace->boxes[box_index].spread_green * 0.58999999999999997 * local_58;
-  dVar6 = workspace->boxes[box_index].spread_green;
-  workspace->boxes[box_index].spread_red = dVar14 * local_68;
+  b_02 = workspace->boxes[box_index].spread_green;
+  workspace->boxes[box_index].spread_red = dVar2 * local_68;
   uVar2 = *(uint *)((int)&workspace->boxes[box_index].spread_red + 4);
   uVar7 = *(undefined5 *)&workspace->boxes[box_index].spread_red;
-  workspace->boxes[box_index].spread_blue = dVar13 * local_90;
-  workspace->boxes[box_index].spread_intensity = dVar1 * local_60;
+  workspace->boxes[box_index].spread_blue = dVar7 * local_90;
+  workspace->boxes[box_index].spread_intensity = dVar3 * local_60;
   dVar13 = engine_colquant_c_doubleMax_FUN_00441790
                      (__BITCAST_DOUBLE(CONCAT26((short)((uint)uVar2 >> 0x10),
-                                       CONCAT15((char)((uint)uVar2 >> 8),uVar7))),dVar6);
-  dVar14 = workspace->boxes[box_index].spread_blue;
+                                       CONCAT15((char)((uint)uVar2 >> 8),uVar7))),b_02);
+  dVar2 = workspace->boxes[box_index].spread_blue;
   workspace->boxes[box_index].max_spread = dVar13;
   uVar2 = *(uint *)((int)&workspace->boxes[box_index].max_spread + 4);
-  dVar13 = engine_colquant_c_doubleMax_FUN_00441790
-                     (__BITCAST_DOUBLE(CONCAT26((short)((uint)uVar2 >> 0x10),
-                                       CONCAT15((char)((uint)uVar2 >> 8),
-                                                *(undefined5 *)
-                                                 &workspace->boxes[box_index].max_spread))),dVar14);
-  dVar14 = workspace->boxes[box_index].spread_intensity;
-  workspace->boxes[box_index].max_spread = dVar13;
+  dVar7 = engine_colquant_c_doubleMax_FUN_00441790
+                    (__BITCAST_DOUBLE(CONCAT26((short)((uint)uVar2 >> 0x10),
+                                      CONCAT15((char)((uint)uVar2 >> 8),
+                                               *(undefined5 *)
+                                                &workspace->boxes[box_index].max_spread))),dVar2);
+  dVar2 = workspace->boxes[box_index].spread_intensity;
+  workspace->boxes[box_index].max_spread = dVar7;
   uVar2 = *(uint *)((int)&workspace->boxes[box_index].max_spread + 4);
   dVar14 = engine_colquant_c_doubleMax_FUN_00441790
                      (__BITCAST_DOUBLE(CONCAT26((short)((uint)uVar2 >> 0x10),
                                        CONCAT15((char)((uint)uVar2 >> 8),
                                                 *(undefined5 *)
-                                                 &workspace->boxes[box_index].max_spread))),dVar14);
+                                                 &workspace->boxes[box_index].max_spread))),dVar2);
   local_30._0_4_ = SUB84(__BITCAST_UINT64(dVar14),0);
   *(uint *)&workspace->boxes[box_index].max_spread = (uint)local_30;
   local_30._4_4_ = (uint)((ulonglong)dVar14 >> 0x20);

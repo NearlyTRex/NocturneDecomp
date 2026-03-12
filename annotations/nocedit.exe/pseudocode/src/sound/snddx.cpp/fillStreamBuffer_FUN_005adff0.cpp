@@ -12,6 +12,8 @@ int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_005adff0(void)
   uint uVar1;
   int iVar2;
   int iVar3;
+  uint error_code;
+  char *pcVar1;
   char *pcVar4;
   LPVOID pvVar5;
   char acStack_360 [400];
@@ -27,10 +29,10 @@ int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_005adff0(void)
                       (g_DirectSoundSecondaryBuffer,g_StreamCurrentBlock * g_StreamBlockSizeBytes,
                        g_StreamBlockSizeBytes,&local_1c,&local_18,&local_20,&local_14,0);
     if (uVar1 != 0) {
-      pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
+      pcVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
       _sprintf
                 (acStack_360,"DirectSux: Unable to %s.  (%s)","Lock secondary buffer",
-                 pcVar4);
+                 pcVar1);
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_360);
       return 0;
     }
@@ -53,10 +55,10 @@ int __cdecl sound_snddx_cpp_fillStreamBuffer_FUN_005adff0(void)
       if (g_StreamBlockCount <= g_StreamCurrentBlock) {
         g_StreamCurrentBlock = 0;
       }
-      uVar1 = (*g_DirectSoundSecondaryBuffer->vtable->Unlock)
-                        (g_DirectSoundSecondaryBuffer,local_1c,local_18,local_20,local_14);
-      if (uVar1 != 0) {
-        pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
+      error_code = (*g_DirectSoundSecondaryBuffer->vtable->Unlock)
+                             (g_DirectSoundSecondaryBuffer,local_1c,local_18,local_20,local_14);
+      if (error_code != 0) {
+        pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
         _sprintf
                   (acStack_1d0,"DirectSux: Unable to %s.  (%s)","Unlock secondary buffer"
                    ,pcVar4);

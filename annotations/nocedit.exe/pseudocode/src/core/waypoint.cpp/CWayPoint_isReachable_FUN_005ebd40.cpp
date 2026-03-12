@@ -9,6 +9,9 @@
 int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005ebd40(CWayPoint *this_ptr,CLocation *from_location,int use_tight_bounds)
 
 {
+  float fVar1;
+  float fVar2;
+  float fVar3;
   CPathMap *this_ptr_00;
   int iVar1;
   CVector3f local_30;
@@ -17,19 +20,19 @@ int __cdecl core_waypoint_cpp_CWayPoint_isReachable_FUN_005ebd40(CWayPoint *this
   float local_1c;
   CVector3f local_18;
   
-  local_24 = *(float *)(this_ptr->base).base.actor_name - (from_location->position).x;
-  local_20 = *(float *)((this_ptr->base).base.actor_name + 4) - (from_location->position).y;
-  local_1c = *(float *)((this_ptr->base).base.actor_name + 8) - (from_location->position).z;
+  fVar1 = *(float *)(this_ptr->base).base.actor_name - (from_location->position).x;
+  fVar2 = *(float *)((this_ptr->base).base.actor_name + 4) - (from_location->position).y;
+  fVar3 = *(float *)((this_ptr->base).base.actor_name + 8) - (from_location->position).z;
   if (use_tight_bounds == 0) {
-    if ((ABS(local_20) <= (float)10) && (ABS(local_24) <= (float)30)) {
-      if ((float)30 < ABS(local_1c)) {
+    if ((ABS(fVar2) <= (float)10) && (ABS(fVar1) <= (float)30)) {
+      if ((float)30 < ABS(fVar3)) {
         return 0;
       }
       goto LAB_005ebde7;
     }
   }
-  else if (((ABS(local_20) <= (float)8) && (ABS(local_24) <= (float)25))
-          && (ABS(local_1c) <= (float)25)) {
+  else if (((ABS(fVar2) <= (float)8) && (ABS(fVar1) <= (float)25)) &&
+          (ABS(fVar3) <= (float)25)) {
 LAB_005ebde7:
     local_18.x = *(float *)(this_ptr->base).base.actor_name;
     local_18.y = *(float *)((this_ptr->base).base.actor_name + 4);

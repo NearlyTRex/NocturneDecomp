@@ -9,13 +9,13 @@
 void __cdecl core_msnedit_cpp_CDemonMission_showSoundFilesInMission_FUN_0053ec80(CDemonMission *this_ptr)
 
 {
-  CDemonActor *this_ptr_00;
   CActorProperty *this_ptr_01;
   int iVar1;
   CActorPropertyList CStack_2ab0;
   CPickList local_5ac;
   char acStack_204 [300];
   char acStack_d8 [200];
+  CDemonActor *this_ptr_00;
   
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_5ac);
   if (this_ptr->actors_prepared == 0) {

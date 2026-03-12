@@ -7,17 +7,17 @@
 ; CEventList *     Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x3b4]:8  local_3b4
-; undefined1       Stack[-0x3a8]:1  local_3a8
-; undefined1       Stack[-0x2e0]:1  local_2e0
-; undefined1       Stack[-0x218]:1  local_218
-; undefined1       Stack[-0x150]:1  local_150
-; undefined1       Stack[-0xec]:1  local_ec
-; undefined1       Stack[-0x88]:1  local_88
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[200]        Stack[-0x3a8]:200  local_3a8
+; char[200]        Stack[-0x2e0]:200  local_2e0
+; char[200]        Stack[-0x218]:200  local_218
+; char[100]        Stack[-0x150]:100  local_150
+; char[100]        Stack[-0xec]:100  local_ec
+; char[100]        Stack[-0x88]:100  local_88
+; CEventList *     Stack[-0x24]:4  local_24
+; char *           Stack[-0x20]:4  local_20
+; char[32] *       Stack[-0x1c]:4  local_1c
+; char[30] *       Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da997

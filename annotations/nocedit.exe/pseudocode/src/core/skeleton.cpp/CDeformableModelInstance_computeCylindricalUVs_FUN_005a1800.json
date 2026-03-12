@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 162,
+    "complexity_score": 164,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 67,
+    "pseudocode_lines": 69,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 198
+    "total_lines": 200
   },
   "cross_references": [
     {
@@ -240,15 +240,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 54,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar10);",
+      "text": "piVar7 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 60,
       "match": "fpatan",
       "severity": "mild",
       "text": "fVar11 = (float10)fpatan((float10)*piVar7,(float10)piVar7[2]);",
@@ -256,31 +256,31 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 61,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar6 = u_offset + (int)ROUND(ROUND(fVar11 * (float10)2670176.8577967598));",
+      "text": "iVar2 = u_offset + (int)ROUND(ROUND(fVar11 * (float10)2670176.8577967598));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 61,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar6 = u_offset + (int)ROUND(ROUND(fVar11 * (float10)2670176.8577967598));",
+      "text": "iVar2 = u_offset + (int)ROUND(ROUND(fVar11 * (float10)2670176.8577967598));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 64,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&pSVar4->u + iVar5) = iVar6;",
+      "text": "*(int *)((int)&pSVar4->u + iVar5) = iVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 66,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar5) =",

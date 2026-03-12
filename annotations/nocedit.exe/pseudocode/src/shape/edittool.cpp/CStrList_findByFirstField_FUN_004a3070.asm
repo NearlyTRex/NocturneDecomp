@@ -7,8 +7,8 @@
 ; CStrList *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   search_field
 ; Local Variables:
-; undefined1       Stack[-0x19c]:1  local_19c
-; undefined1       Stack[-0xd4]:1  local_d4
+; char[200]        Stack[-0x19c]:200  local_19c
+; char[200]        Stack[-0xd4]:200  local_d4
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730 at 0053c82f

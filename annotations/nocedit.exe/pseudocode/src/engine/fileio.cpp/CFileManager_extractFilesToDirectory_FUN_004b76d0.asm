@@ -6,24 +6,17 @@
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x1108]:1  local_1108
-; undefined1       Stack[-0x1104]:1  local_1104
-; undefined4       Stack[-0xcf8]:4  local_cf8
-; undefined4       Stack[-0xcf4]:4  local_cf4
-; undefined1       Stack[-0xcdc]:1  local_cdc
-; undefined4       Stack[-0x8dc]:4  local_8dc
-; undefined1       Stack[-0x534]:1  local_534
-; undefined1       Stack[-0x533]:1  local_533
-; undefined1       Stack[-0x434]:1  local_434
-; undefined4       Stack[-0x330]:4  local_330
-; undefined1       Stack[-0x328]:1  local_328
-; undefined1       Stack[-0x320]:1  local_320
-; undefined1       Stack[-0x220]:1  local_220
-; undefined1       Stack[-0x120]:1  local_120
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined1       Stack[-0x14]:1  local_14
-; undefined4       Stack[-0xc]:4  local_c
+; time_t[2034]     Stack[-0x30f4]:8136  atStackY_30f4
+; CPodFile         Stack[-0x1108]:1068  local_1108
+; SFoundFileInfo   Stack[-0xcdc]:532  local_cdc
+; CPickList        Stack[-0x8dc]:936  local_8dc
+; SFoundFileInfo   Stack[-0x534]:532  local_534
+; char[256]        Stack[-0x320]:256  local_320
+; char[256]        Stack[-0x220]:256  local_220
+; char[256]        Stack[-0x120]:256  local_120
+; char *           Stack[-0x20]:4  local_20
+; time_t[4]        Stack[-0x1c]:16  local_1c
+; _FILE *          Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be45c

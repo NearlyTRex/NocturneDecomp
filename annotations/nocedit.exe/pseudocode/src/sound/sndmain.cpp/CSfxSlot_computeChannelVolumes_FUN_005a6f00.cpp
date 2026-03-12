@@ -9,7 +9,9 @@
 void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxSlot *this_ptr)
 
 {
+  float fVar2;
   float fVar1;
+  int iVar3;
   int iVar2;
   CSfxSlot *pCVar3;
   float local_30;
@@ -20,11 +22,11 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxS
     g_CurrentLineNumber = 0x924;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::kill - must be locked!");
   }
-  iVar2 = (this_ptr->sample->sample_info).bit_depth;
+  iVar3 = (this_ptr->sample->sample_info).bit_depth;
   fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90((this_ptr->options).channel_index);
-  fVar1 = (fVar1 * (this_ptr->options).current_volume) / (float)(1 << ((char)iVar2 - 1U & 0x1f));
+  fVar2 = (fVar1 * (this_ptr->options).current_volume) / (float)(1 << ((char)iVar3 - 1U & 0x1f));
   if (((this_ptr->options).flags & 1) == 0) {
-    iVar2 = 0;
+    iVar3 = 0;
     pCVar3 = this_ptr;
     if (0 < g_AudioChannelCount) {
       do {
@@ -41,10 +43,10 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxS
         else {
           local_20 = 20.0;
         }
-        iVar2 = iVar2 + 1;
-        pCVar3->channel_volumes[0] = fVar1 * local_20;
+        iVar3 = iVar3 + 1;
+        pCVar3->channel_volumes[0] = fVar2 * local_20;
         pCVar3 = (CSfxSlot *)&(pCVar3->options).position;
-      } while (iVar2 < g_AudioChannelCount);
+      } while (iVar3 < g_AudioChannelCount);
     }
   }
   else {
@@ -52,7 +54,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfxS
     if (0 < g_AudioChannelCount) {
       do {
         iVar2 = iVar2 + 1;
-        this_ptr->channel_volumes[0] = fVar1;
+        this_ptr->channel_volumes[0] = fVar2;
         this_ptr = (CSfxSlot *)&(this_ptr->options).position;
       } while (iVar2 < g_AudioChannelCount);
     }

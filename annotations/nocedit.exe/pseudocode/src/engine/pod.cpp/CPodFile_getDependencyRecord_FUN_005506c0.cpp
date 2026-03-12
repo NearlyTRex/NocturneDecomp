@@ -42,9 +42,11 @@ CPodDependencyRecord * __stack2_esi engine_pod_cpp_CPodFile_getDependencyRecord_
   puVar2 = local_114;
   pCVar3 = output_record;
   for (iVar1 = 0x42; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pCVar3->filename = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     pCVar3 = (CPodDependencyRecord *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
+    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
+    *(uint *)pCVar3->filename = *puVar2;
+    puVar2 = puVar2;
+    pCVar3 = pCVar3;
   }
   return output_record;
 }

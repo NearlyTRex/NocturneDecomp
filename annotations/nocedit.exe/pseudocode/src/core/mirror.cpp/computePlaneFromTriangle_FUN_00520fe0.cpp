@@ -9,17 +9,18 @@
 void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0(SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c)
 
 {
-  float fVar1;
+  float fVar2;
   float local_54;
   float local_50;
   float local_4c;
   SClipPlane local_48;
   float local_38;
   float local_34;
-  uint local_30 [3];
+  byte local_30 [12];
   float local_24 [5];
+  float fVar1;
   
-  if (&local_48.D != local_30) {
+  if (&local_48.D != (int *)local_30) {
     local_48.D = (int)(vertex_b->x - vertex_a->x);
     local_38 = vertex_b->y - vertex_a->y;
     local_34 = vertex_b->z - vertex_a->z;
@@ -43,10 +44,10 @@ void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0(SClipPlane *o
     out_plane->A = out_plane->B;
   }
   else {
-    fVar1 = 1.0 / fVar1;
-    out_plane->A = (int)((float)out_plane->A * fVar1);
-    out_plane->B = (int)((float)out_plane->B * fVar1);
-    out_plane->C = (int)((float)out_plane->C * fVar1);
+    fVar2 = 1.0 / fVar1;
+    out_plane->A = (int)((float)out_plane->A * fVar2);
+    out_plane->B = (int)((float)out_plane->B * fVar2);
+    out_plane->C = (int)((float)out_plane->C * fVar2);
   }
   out_plane->D = (int)-((float)out_plane->C * vertex_a->z +
                        (float)out_plane->A * vertex_a->x + (float)out_plane->B * vertex_a->y);

@@ -9,18 +9,23 @@
 int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004fb250(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename)
 
 {
-  char cVar1;
-  byte bVar2;
-  bool bVar3;
+  char cVar2;
   _FILE *stream;
   char *pcVar4;
   char *pcVar5;
+  int iVar3;
   int iVar6;
   uint uVar7;
+  uint uVar4;
   char *unaff_EBP;
+  char *pcVar6;
+  char *pcVar7;
   byte bVar8;
   char local_210 [256];
   char local_110 [256];
+  char cVar1;
+  byte bVar2;
+  bool bVar3;
   
   bVar8 = 0;
   bVar3 = false;
@@ -36,21 +41,21 @@ int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004fb250(CIni *this_ptr,cha
     if (((stream->_flag & 0x10) != 0) ||
        (pcVar5 = _fgets(local_210,0xff,stream), pcVar5 == (char *)0x0))
     goto LAB_004fb2d7;
-    iVar6 = _strcmp(local_210,local_110);
-  } while (iVar6 != 0);
+    iVar3 = _strcmp(local_210,local_110);
+  } while (iVar3 != 0);
   bVar2 = (byte)stream->_flag;
   bVar3 = false;
   do {
     if (((bVar2 & 0x10) != 0) ||
-       (pcVar4 = _fgets(local_210,0xff,stream), pcVar5 = local_210,
+       (pcVar4 = _fgets(local_210,0xff,stream), pcVar7 = local_210,
        pcVar4 == (char *)0x0)) goto LAB_004fb2d7;
     do {
-      unaff_EBP = pcVar5;
-      if (*pcVar5 == '=') goto LAB_004fb3b0;
-      if (*pcVar5 == '\0') break;
-      unaff_EBP = pcVar5 + 1;
+      unaff_EBP = pcVar7;
+      if (*pcVar7 == '=') goto LAB_004fb3b0;
+      if (*pcVar7 == '\0') break;
+      unaff_EBP = pcVar7 + 1;
       if (*unaff_EBP == '=') goto LAB_004fb3b0;
-      pcVar5 = pcVar5 + 2;
+      pcVar7 = pcVar7 + 2;
     } while (*unaff_EBP != '\0');
     unaff_EBP = (char *)0x0;
 LAB_004fb3b0:
@@ -65,52 +70,52 @@ LAB_004fb3b0:
 LAB_004fb2d7:
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\engine\\ini.cpp",0x99);
   if (bVar3) {
-    pcVar4 = unaff_EBP + 1;
+    pcVar6 = unaff_EBP + 1;
     uVar7 = 0xffffffff;
-    pcVar5 = pcVar4;
+    pcVar7 = pcVar6;
     do {
       if (uVar7 == 0) break;
       uVar7 = uVar7 - 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar5 + (uint)bVar8 * -2 + 1;
+      cVar1 = *pcVar7;
+      pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
     } while (cVar1 != '\0');
-    pcVar4[~uVar7 - 2] = '\0';
+    pcVar6[~uVar7 - 2] = '\0';
     if ((int)(~uVar7 - 2) < buffer_size) {
       do {
-        cVar1 = *pcVar4;
-        *output_buffer = cVar1;
-        if (cVar1 == '\0') {
+        cVar2 = *pcVar6;
+        *output_buffer = cVar2;
+        if (cVar2 == '\0') {
           return 1;
         }
-        cVar1 = pcVar4[1];
-        pcVar4 = pcVar4 + 2;
-        output_buffer[1] = cVar1;
+        cVar2 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        output_buffer[1] = cVar2;
         output_buffer = output_buffer + 2;
-      } while (cVar1 != '\0');
+      } while (cVar2 != '\0');
       return 1;
     }
   }
   else {
-    uVar7 = 0xffffffff;
-    pcVar5 = default_value;
+    uVar4 = 0xffffffff;
+    pcVar7 = default_value;
     do {
-      if (uVar7 == 0) break;
-      uVar7 = uVar7 - 1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar5 + (uint)bVar8 * -2 + 1;
-    } while (cVar1 != '\0');
-    if ((int)(~uVar7 - 1) < buffer_size) {
+      if (uVar4 == 0) break;
+      uVar4 = uVar4 - 1;
+      cVar2 = *pcVar7;
+      pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
+    } while (cVar2 != '\0');
+    if ((int)(~uVar4 - 1) < buffer_size) {
       do {
-        cVar1 = *default_value;
-        *output_buffer = cVar1;
-        if (cVar1 == '\0') {
+        cVar2 = *default_value;
+        *output_buffer = cVar2;
+        if (cVar2 == '\0') {
           return 1;
         }
-        cVar1 = default_value[1];
+        cVar2 = default_value[1];
         default_value = default_value + 2;
-        output_buffer[1] = cVar1;
+        output_buffer[1] = cVar2;
         output_buffer = output_buffer + 2;
-      } while (cVar1 != '\0');
+      } while (cVar2 != '\0');
       return 1;
     }
   }

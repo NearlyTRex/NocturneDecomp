@@ -4,9 +4,8 @@
 ; int __cdecl sound_sndmain_cpp_findBestRecordingDevice_FUN_005ab7e0(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x118]:4  local_118
-; undefined1       Stack[-0x110]:1  local_110
-; undefined4       Stack[-0x10]:4  local_10
+; SRecordingDeviceInfo Stack[-0x218]:264  SStack_218
+; SRecordingDeviceInfo Stack[-0x110]:264  local_110
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860 at 005ab881

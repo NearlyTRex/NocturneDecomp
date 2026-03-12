@@ -10,6 +10,7 @@ int __cdecl core_dmodel_cpp_copyTextureFiles_FUN_0047ca50(char *filename,char *s
 
 {
   int iVar1;
+  int iVar2;
   char local_318 [260];
   char local_214 [260];
   char local_110 [256];
@@ -25,14 +26,14 @@ int __cdecl core_dmodel_cpp_copyTextureFiles_FUN_0047ca50(char *filename,char *s
               (local_318,source_drive,source_directory,local_110,"act");
     makepath
               (local_214,destination_drive,destination_directory,local_110,"act");
-    iVar1 = core_dmodel_cpp_copyFile_FUN_0047c930(local_318,local_214,1);
-    if (iVar1 != 0) {
+    iVar2 = core_dmodel_cpp_copyFile_FUN_0047c930(local_318,local_214,1);
+    if (iVar2 != 0) {
       makepath
                 (local_318,source_drive,source_directory,local_110,"opa");
       makepath
                 (local_214,destination_drive,destination_directory,local_110,"opa");
-      iVar1 = core_dmodel_cpp_copyFile_FUN_0047c930(local_318,local_214,0);
-      if (iVar1 != 0) {
+      iVar2 = core_dmodel_cpp_copyFile_FUN_0047c930(local_318,local_214,0);
+      if (iVar2 != 0) {
         return 1;
       }
     }

@@ -4,7 +4,7 @@
 ; void __cdecl core_skeledit_cpp_loadIni_FUN_005897b0(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
+; int              Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeledit_cpp_00649d0a

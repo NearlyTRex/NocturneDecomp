@@ -6,7 +6,8 @@
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
+; CActorPropertyList Stack[-0x2628]:9476  CStack_2628
+; SScriptXRef      Stack[-0x124]:276  SStack_124
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_rebuildEventXRefs_FUN_00567630 at 005676a7

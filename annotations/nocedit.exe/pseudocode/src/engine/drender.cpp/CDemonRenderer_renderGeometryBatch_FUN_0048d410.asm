@@ -10,9 +10,9 @@
 ; int              Stack[0x10]:4   vertices_per_face
 ; int              Stack[0x14]:4   render_mode
 ; Local Variables:
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3i[6]     Stack[-0x68]:72  local_68
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_00622147

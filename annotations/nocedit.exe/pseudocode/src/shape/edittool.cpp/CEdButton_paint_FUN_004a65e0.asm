@@ -7,9 +7,8 @@
 ; CEdButton *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   draw_border_flag
 ; Local Variables:
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined1       Stack[-0xdb]:1  local_db
-; undefined4       Stack[-0x14]:4  local_14
+; byte[200]        Stack[-0xdc]:200  local_dc
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005076ec

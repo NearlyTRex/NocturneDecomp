@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 87,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 63,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 232
+    "total_lines": 233
   },
   "cross_references": [],
   "function": {
@@ -143,18 +143,88 @@
     "pcode_op_count": 884
   },
   "stack_frame": {
-    "frame_size": 76,
-    "local_size": 72,
+    "frame_size": 124,
+    "local_size": 120,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "CStack_74",
+        "offset": -116,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "aCStack_68",
+        "offset": -104,
+        "size": 24,
+        "type": "CVector3f[2]"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_50",
+        "offset": -80,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_48",
+        "offset": -72,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
         "name": "local_44",
         "offset": -68,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_38",
+        "offset": -56,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_34",
+        "offset": -52,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_30",
+        "offset": -48,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2c",
+        "offset": -44,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_20",
+        "offset": -32,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": true,
@@ -185,7 +255,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 45,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar1 = SQRT(fStack_48 * fStack_48 + fStack_50 * fStack_50 + fStack_4c * fStack_4c);",
@@ -193,7 +263,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 62,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT((CStack_2c.z - aCStack_68[0].z) * (CStack_2c.z - aCStack_68[0].z) +",

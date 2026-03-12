@@ -9,19 +9,19 @@
 void __cdecl shape_dsemodel_cpp_CDSEModel_centerModel_FUN_0048fa50(CDSEModel *this_ptr)
 
 {
-  double dVar1;
-  double dVar2;
-  double dVar3;
-  double dVar4;
-  double dVar5;
-  double dVar6;
-  double dVar7;
-  double dVar8;
   uint local_4c;
   uint uStack_48;
   uint local_34;
   uint uStack_30;
   int local_14;
+  double dVar3;
+  double dVar6;
+  double dVar5;
+  double dVar8;
+  double dVar7;
+  double dVar2;
+  double dVar1;
+  double dVar4;
   
   dVar7 = 999999.9;
   dVar8 = 999999.9;

@@ -9,25 +9,26 @@
 void __cdecl engine_colquant_c_partitionByBlue_FUN_00440dc0(SColorQuantMapper *workspace,int box_index,int new_box_index)
 
 {
-  uint uVar1;
-  int iVar2;
+  int iVar1;
   int iVar3;
   char *pcVar4;
   int iVar5;
   int local_18;
   int local_14;
+  int iVar2;
+  uint uVar1;
   
   local_14 = workspace->boxes[box_index].start_index;
-  iVar2._0_2_ = workspace->boxes[box_index].avg_green;
-  iVar2._2_2_ = workspace->boxes[box_index].avg_blue;
+  iVar1._0_2_ = workspace->boxes[box_index].avg_green;
+  iVar1._2_2_ = workspace->boxes[box_index].avg_blue;
   iVar5 = local_14 + workspace->boxes[box_index].count + -1;
   if (local_14 < iVar5) {
     local_18 = local_14 << 2;
     do {
-      if (iVar2 >> 0x10 < (int)(uint)(byte)workspace->color_data[local_18 + 2]) {
+      if (iVar1 >> 0x10 < (int)(uint)(byte)workspace->color_data[local_18 + 2]) {
         iVar3 = iVar5 * 4;
         while ((local_14 * 4 < iVar3 &&
-               (iVar2 >> 0x10 < (int)(uint)(byte)workspace->color_data[iVar3 + 2]))) {
+               (iVar1 >> 0x10 < (int)(uint)(byte)workspace->color_data[iVar3 + 2]))) {
           iVar5 = iVar5 + -1;
           iVar3 = iVar3 + -4;
         }

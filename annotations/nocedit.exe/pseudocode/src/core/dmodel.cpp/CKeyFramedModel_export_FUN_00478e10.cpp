@@ -9,22 +9,26 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10(CKeyFramedModel *this_ptr,char *output_filename)
 
 {
-  uint *puVar1;
-  uint *puVar2;
-  uint *puVar3;
-  CDemonTriangle *pCVar4;
-  CVector3i *pCVar5;
   _FILE *file;
   uint uVar6;
   CKeyFramedModel *pCVar7;
   int iVar8;
+  int iVar1;
   char *pcVar9;
   char *pcVar10;
+  char *pcVar2;
   int iVar11;
   int iVar12;
+  int iVar3;
+  char *pcVar4;
   int local_1c;
   int local_18;
   int local_14;
+  CVector3i *pCVar5;
+  CDemonTriangle *pCVar4;
+  uint *puVar3;
+  uint *puVar2;
+  uint *puVar1;
   
   pcVar10 = output_filename;
   do {
@@ -37,19 +41,19 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10(CKeyFramedModel
   } while (*pcVar9 != '\0');
   pcVar9 = (char *)0x0;
 LAB_00478e35:
-  pcVar10 = output_filename;
+  pcVar4 = output_filename;
   if (pcVar9 == (char *)0x0) {
     do {
-      pcVar9 = pcVar10;
-      if (*pcVar10 == '\\') goto LAB_00478e57;
-      if (*pcVar10 == '\0') break;
-      pcVar9 = pcVar10 + 1;
-      if (*pcVar9 == '\\') goto LAB_00478e57;
-      pcVar10 = pcVar10 + 2;
-    } while (*pcVar9 != '\0');
-    pcVar9 = (char *)0x0;
+      pcVar2 = pcVar4;
+      if (*pcVar4 == '\\') goto LAB_00478e57;
+      if (*pcVar4 == '\0') break;
+      pcVar2 = pcVar4 + 1;
+      if (*pcVar2 == '\\') goto LAB_00478e57;
+      pcVar4 = pcVar4 + 2;
+    } while (*pcVar2 != '\0');
+    pcVar2 = (char *)0x0;
 LAB_00478e57:
-    if (pcVar9 == (char *)0x0) {
+    if (pcVar2 == (char *)0x0) {
       file = engine_dosio_c_getFile_FUN_00481a50("models",output_filename,"wt");
       goto LAB_00478e7f;
     }
@@ -94,20 +98,20 @@ LAB_00478e7f:
     local_18 = 0;
     local_1c = 0;
     do {
-      iVar11 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.
-                     type + local_18;
+      iVar1 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base.
+                    type + local_18;
       iVar12 = 0;
       _fprintf(file,"%d,%d",
                  *(uint *)((int)this_ptr->poly_texture_index_list + local_1c),
-                 *(uint *)(iVar11 + 4));
-      iVar8 = iVar11;
-      if (0 < *(int *)(iVar11 + 4)) {
+                 *(uint *)(iVar1 + 4));
+      iVar3 = iVar1;
+      if (0 < *(int *)(iVar1 + 4)) {
         do {
           iVar12 = iVar12 + 1;
-          _fprintf(file,", %d,%d,%d",*(uint *)(iVar8 + 0x18),
-                     *(uint *)(iVar8 + 0x1c),*(uint *)(iVar8 + 0x20));
-          iVar8 = iVar8 + 0xc;
-        } while (iVar12 < *(int *)(iVar11 + 4));
+          _fprintf(file,", %d,%d,%d",*(uint *)(iVar3 + 0x18),
+                     *(uint *)(iVar3 + 0x1c),*(uint *)(iVar3 + 0x20));
+          iVar3 = iVar3 + 0xc;
+        } while (iVar12 < *(int *)(iVar1 + 4));
       }
       _fprintf(file,"\n");
       local_1c = local_1c + 4;
@@ -117,35 +121,35 @@ LAB_00478e7f:
   }
   if (uVar6 != 0) {
     _fprintf(file,"// envMapOpacity list\n");
-    iVar8 = 0;
+    iVar3 = 0;
     if (0 < this_ptr->poly_count) {
       do {
-        _fprintf(file,"%d\n",(uint)this_ptr->env_map_opac_list[iVar8])
+        _fprintf(file,"%d\n",(uint)this_ptr->env_map_opac_list[iVar3])
         ;
-        iVar8 = iVar8 + 1;
-      } while (iVar8 < this_ptr->poly_count);
+        iVar3 = iVar3 + 1;
+      } while (iVar3 < this_ptr->poly_count);
     }
   }
   _fprintf(file,"// texture list\n");
-  iVar8 = 0;
+  iVar3 = 0;
   if (0 < this_ptr->texture_count) {
-    pcVar10 = this_ptr->texture_list[0].textures[0].texture_name;
+    pcVar4 = this_ptr->texture_list[0].textures[0].texture_name;
     do {
-      _fprintf(file,"%s\n",pcVar10);
-      iVar8 = iVar8 + 1;
-      pcVar10 = pcVar10 + 0x48;
-    } while (iVar8 < this_ptr->texture_count);
+      _fprintf(file,"%s\n",pcVar4);
+      iVar3 = iVar3 + 1;
+      pcVar4 = pcVar4 + 0x48;
+    } while (iVar3 < this_ptr->texture_count);
   }
   _fprintf(file,"// part list (vertexCount, polyCount)\n");
-  iVar8 = 0;
+  iVar3 = 0;
   pCVar7 = this_ptr;
   if (0 < this_ptr->part_count) {
     do {
       _fprintf(file,"%d,%d\n",pCVar7->part_list[0].vertex_count,
                  pCVar7->part_list[0].poly_count);
-      iVar8 = iVar8 + 1;
+      iVar3 = iVar3 + 1;
       pCVar7 = (CKeyFramedModel *)(pCVar7->model_filename + 8);
-    } while (iVar8 < this_ptr->part_count);
+    } while (iVar3 < this_ptr->part_count);
   }
   if ((file->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";

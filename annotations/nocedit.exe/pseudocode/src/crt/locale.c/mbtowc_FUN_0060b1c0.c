@@ -12,6 +12,7 @@ int __watcallStack mbtowc(wchar_t *wide_char,char *mb_string,SIZE_T max_bytes)
   int iVar1;
   uint uVar2;
   uint cbMultiByte;
+  int iVar2;
   wchar_t local_14 [2];
   
   if (mb_string == (char *)0x0) {
@@ -32,8 +33,8 @@ int __watcallStack mbtowc(wchar_t *wide_char,char *mb_string,SIZE_T max_bytes)
         if (max_bytes < uVar2) {
           cbMultiByte = max_bytes;
         }
-        iVar1 = (*g_MultiByteToWideCharFunc)(g_CodePage,8,mb_string,cbMultiByte,local_14,1);
-        if (iVar1 != 0) {
+        iVar2 = (*g_MultiByteToWideCharFunc)(g_CodePage,8,mb_string,cbMultiByte,local_14,1);
+        if (iVar2 != 0) {
           if (wide_char != (wchar_t *)0x0) {
             *wide_char = local_14[0];
           }

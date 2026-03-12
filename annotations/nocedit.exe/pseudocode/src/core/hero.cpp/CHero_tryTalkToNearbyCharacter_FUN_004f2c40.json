@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 81,
+    "complexity_score": 82,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 47,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 167
+    "total_lines": 168
   },
   "cross_references": [
     {
@@ -198,71 +198,43 @@
         "is_param": false,
         "name": "local_50",
         "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -293,7 +265,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 31,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS((pCVar1->base).location.position.y - (this_ptr->base).base.location.position.y) <=",
@@ -301,7 +273,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 34,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (SQRT(local_20.z * local_20.z + local_20.x * local_20.x) <= (float)5) {",
@@ -309,10 +281,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 39,
       "match": "ABS",
       "severity": "mild",
-      "text": "if (ABS(pCVar2->y) <= (float)0.34906585038888899) {",
+      "text": "if (ABS(pCVar3->y) <= (float)0.34906585038888899) {",
       "type": "decompiler_intrinsic"
     }
   ]

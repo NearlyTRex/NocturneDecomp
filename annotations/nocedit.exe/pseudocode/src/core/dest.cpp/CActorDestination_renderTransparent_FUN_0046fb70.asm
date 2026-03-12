@@ -6,7 +6,8 @@
 ; Parameters:
 ; CActorDestination * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x24]:1  local_24
+; CBoundingBox3D   Stack[-0x3c]:24  CStack_3c
+; CBoundingBox3D   Stack[-0x24]:24  local_24
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CBoxActor_0061e3b2

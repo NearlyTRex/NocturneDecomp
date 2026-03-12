@@ -10,9 +10,9 @@
 ; char *           Stack[0x10]:4   destination_drive
 ; char *           Stack[0x14]:4   destination_directory
 ; Local Variables:
-; undefined1       Stack[-0x318]:1  local_318
-; undefined1       Stack[-0x214]:1  local_214
-; undefined1       Stack[-0x110]:1  local_110
+; char[260]        Stack[-0x318]:260  local_318
+; char[260]        Stack[-0x214]:260  local_214
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[1]:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047dad6

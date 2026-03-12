@@ -9,15 +9,18 @@
 void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytrace *this_ptr,_FILE *file_handle)
 
 {
-  SIZE_T SVar1;
-  SVoxelCubeMetadata *pSVar2;
+  int iVar1;
   SIZE_T *pSVar3;
   SIZE_T *pSVar4;
   void *pvVar5;
   CDemonPart *pCVar6;
   CDemonPart *pCVar7;
+  CDemonPart *this_ptr_00;
+  CDemonPart *pCVar2;
   uchar *puVar8;
+  int iVar3;
   uint cube_index;
+  int *piVar4;
   int iVar9;
   int *piVar10;
   int iVar11;
@@ -35,6 +38,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
   int local_1c;
   int local_18;
   int local_14;
+  SVoxelCubeMetadata *pSVar2;
+  SIZE_T SVar1;
   
   local_18 = 0;
   core_dtrace_cpp_CDemonRaytrace_freeNewCubeList_FUN_00494400(this_ptr);
@@ -69,8 +74,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
     if (local_2c < 3) {
       local_24 = 0;
       for (local_1c = 0;
-          iVar9 = (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z,
-          iVar9 - local_1c != 0 && local_1c <= iVar9; local_1c = local_1c + 1) {
+          iVar1 = (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z,
+          iVar1 - local_1c != 0 && local_1c <= iVar1; local_1c = local_1c + 1) {
         buffer = (SIZE_T *)((int)this_ptr->cube_list->voxel_data + local_24 + -0x14);
         _fread(buffer,4,1,file_handle);
         SVar1 = *buffer;
@@ -91,15 +96,15 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
             g_CurrentLineNumber = 0x175;
             core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::loadBinary - out of memory!");
           }
-          iVar9 = 0;
+          iVar1 = 0;
           if (0 < (int)*buffer) {
-            iVar11 = 0;
+            iVar3 = 0;
             do {
-              iVar9 = iVar9 + 1;
+              iVar1 = iVar1 + 1;
               core_dtri_cpp_CDemonTriangle_readDataBinary_FUN_0049a5a0
-                        ((CDemonTriangle *)(buffer[1] + iVar11),file_handle);
-              iVar11 = iVar11 + 0x38;
-            } while (iVar9 < (int)*buffer);
+                        ((CDemonTriangle *)(buffer[1] + iVar3),file_handle);
+              iVar3 = iVar3 + 0x38;
+            } while (iVar1 < (int)*buffer);
           }
           pCVar6 = (CDemonPart *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x388,"..\\core\\dtrace.cpp",0x17a);
           pCVar7 = (CDemonPart *)0x0;
@@ -123,69 +128,70 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
       core_dtrace_cpp_CDemonRaytrace_consolidateTriList_FUN_00494450(this_ptr);
     }
     else {
-      iVar11 = 0;
-      iVar9 = 0;
-      while (iVar9 < (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z)
+      iVar3 = 0;
+      iVar1 = 0;
+      while (iVar1 < (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z)
       {
-        piVar10 = (int *)((int)this_ptr->cube_list->voxel_data + iVar11 + -0x14);
-        _fread(piVar10,4,1,file_handle);
-        if (*piVar10 < 1) {
-          memset(piVar10 + 5,0,0x40);
-          iVar9 = iVar9 + 1;
-          iVar11 = iVar11 + 0x58;
+        piVar4 = (int *)((int)this_ptr->cube_list->voxel_data + iVar3 + -0x14);
+        _fread(piVar4,4,1,file_handle);
+        if (*piVar4 < 1) {
+          memset(piVar4 + 5,0,0x40);
+          iVar1 = iVar1 + 1;
+          iVar3 = iVar3 + 0x58;
         }
         else {
-          pCVar6 = (CDemonPart *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x388,"..\\core\\dtrace.cpp",0x19a);
-          pCVar7 = (CDemonPart *)0x0;
-          if (pCVar6 != (CDemonPart *)0x0) {
-            pCVar7 = core_dpart_cpp_CDemonPart_ctor_FUN_00482110(pCVar6);
+          this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
+                                  (0x388,"..\\core\\dtrace.cpp",0x19a);
+          pCVar2 = (CDemonPart *)0x0;
+          if (this_ptr_00 != (CDemonPart *)0x0) {
+            pCVar2 = core_dpart_cpp_CDemonPart_ctor_FUN_00482110(this_ptr_00);
           }
-          piVar10[3] = (int)pCVar7;
-          if (pCVar7 == (CDemonPart *)0x0) {
+          piVar4[3] = (int)pCVar2;
+          if (pCVar2 == (CDemonPart *)0x0) {
             g_CurrentFilename = "..\\core\\dtrace.cpp";
             g_CurrentLineNumber = 0x19b;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for cube model loading dtrace database");
           }
           core_dtrace_cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710
-                    (this_ptr,(void *)piVar10[3],iVar9,file_handle);
-          _fread(piVar10 + 5,0x40,1,file_handle);
-          local_18 = local_18 + *piVar10;
-          iVar9 = iVar9 + 1;
-          iVar11 = iVar11 + 0x58;
+                    (this_ptr,(void *)piVar4[3],iVar1,file_handle);
+          _fread(piVar4 + 5,0x40,1,file_handle);
+          local_18 = local_18 + *piVar4;
+          iVar1 = iVar1 + 1;
+          iVar3 = iVar3 + 0x58;
         }
       }
-      iVar9 = 0;
+      iVar1 = 0;
       this_ptr->triangle_count = local_18;
       core_dtrace_cpp_CDemonRaytrace_allocTriList_FUN_00494600(this_ptr);
       if (0 < this_ptr->triangle_count) {
-        iVar11 = 0;
+        iVar3 = 0;
         do {
-          iVar9 = iVar9 + 1;
+          iVar1 = iVar1 + 1;
           core_dtri_cpp_CDemonTriangle_readDataBinary_FUN_0049a5a0
-                    ((CDemonTriangle *)((int)&(this_ptr->triangle_list->vertex1).x + iVar11),
+                    ((CDemonTriangle *)((int)&(this_ptr->triangle_list->vertex1).x + iVar3),
                      file_handle);
-          iVar11 = iVar11 + 0x38;
-        } while (iVar9 < this_ptr->triangle_count);
+          iVar3 = iVar3 + 0x38;
+        } while (iVar1 < this_ptr->triangle_count);
       }
-      iVar11 = 0;
+      iVar3 = 0;
       iVar12 = 0;
       _fread(this_ptr->triangle_flags,this_ptr->triangle_count,1,file_handle);
-      iVar9 = 0;
-      while (iVar11 < (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z
-            ) {
-        piVar10 = (int *)((int)this_ptr->cube_list->voxel_data + iVar12 + -0x14);
-        if (*piVar10 < 1) {
-          piVar10[0x15] = 0;
-          piVar10[1] = 0;
-          iVar11 = iVar11 + 1;
+      iVar1 = 0;
+      while (iVar3 < (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z)
+      {
+        piVar4 = (int *)((int)this_ptr->cube_list->voxel_data + iVar12 + -0x14);
+        if (*piVar4 < 1) {
+          piVar4[0x15] = 0;
+          piVar4[1] = 0;
+          iVar3 = iVar3 + 1;
           iVar12 = iVar12 + 0x58;
         }
         else {
-          piVar10[1] = (int)(this_ptr->triangle_list + iVar9);
-          puVar8 = this_ptr->triangle_flags + iVar9;
-          iVar9 = iVar9 + *piVar10;
-          piVar10[0x15] = (int)puVar8;
-          iVar11 = iVar11 + 1;
+          piVar4[1] = (int)(this_ptr->triangle_list + iVar1);
+          puVar8 = this_ptr->triangle_flags + iVar1;
+          iVar1 = iVar1 + *piVar4;
+          piVar4[0x15] = (int)puVar8;
+          iVar3 = iVar3 + 1;
           iVar12 = iVar12 + 0x58;
         }
       }
@@ -195,14 +201,14 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
     shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
               (g_CEditorToolsPtr,"Converting .GEO file to version 4");
     local_28 = &this_ptr->cell_size;
-    iVar9 = 0;
+    iVar1 = 0;
     local_20 = 0;
     while ((int)cube_index <
            (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * (this_ptr->grid_coord).z) {
       pSVar2 = this_ptr->cube_list;
       core_dtrace_cpp_CDemonRaytrace_convertCubeIndexToPosition_FUN_00499ba0
                 (this_ptr,&local_44,cube_index);
-      piVar10 = (int *)((int)pSVar2->voxel_data + iVar9 + -0x14);
+      piVar10 = (int *)((int)pSVar2->voxel_data + iVar1 + -0x14);
       local_50.x = local_44.x + local_28->x;
       local_50.y = local_44.y + local_28->y;
       local_50.z = local_44.z + local_28->z;
@@ -216,12 +222,12 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_loadBinary_FUN_004947a0(CDemonRaytra
                   (g_CEditorToolsPtr,(float)local_14,
                    (float)((this_ptr->grid_coord).x * (this_ptr->grid_coord).y *
                           (this_ptr->grid_coord).z));
-        iVar9 = iVar9 + 0x58;
+        iVar1 = iVar1 + 0x58;
         local_20 = local_20 + 0x34;
         cube_index = cube_index + 1;
       }
       else {
-        iVar9 = iVar9 + 0x58;
+        iVar1 = iVar1 + 0x58;
         local_20 = local_20 + 0x34;
         cube_index = cube_index + 1;
       }

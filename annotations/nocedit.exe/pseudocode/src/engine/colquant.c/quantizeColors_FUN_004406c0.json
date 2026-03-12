@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 19,
-        "line": 148,
+        "line": 160,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 150,
+        "line": 162,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 152,
+        "line": 164,
         "message": "member reference base type 'int' is not a structure or union"
       }
     ],
@@ -25,12 +25,12 @@
   },
   "complexity": {
     "assembly_lines": 388,
-    "complexity_score": 582,
+    "complexity_score": 594,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 192,
+    "pseudocode_lines": 204,
     "suspect_count": 37,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -38,7 +38,7 @@
       "unknown_field",
       "warning_inlined_function"
     ],
-    "total_lines": 580
+    "total_lines": 592
   },
   "cross_references": [
     {
@@ -204,57 +204,71 @@
         "is_param": false,
         "name": "local_160",
         "offset": -352,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_15c",
+        "offset": -348,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_158",
         "offset": -344,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_154",
+        "offset": -340,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_150",
         "offset": -336,
-        "size": 1,
-        "type": "undefined"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
-        "size": 1,
-        "type": "undefined"
+        "size": 44,
+        "type": "undefined4[11]"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -314,7 +328,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 60,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND(SQRT(dVar6 * dVar6 +",
@@ -322,7 +336,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 60,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND(SQRT(dVar6 * dVar6 +",
@@ -330,7 +344,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 60,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND(SQRT(dVar6 * dVar6 +",
@@ -338,7 +352,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 86,
       "match": "(SColorQuantMapper *)((int)",
       "severity": "mild",
       "text": "pSVar10 = (SColorQuantMapper *)((int)pSVar9->sort_keys[0] + 0x1c);",
@@ -346,7 +360,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 90,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)pSVar9->sort_keys[0] + 4) = 0;",
@@ -354,7 +368,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 92,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)pSVar9->sort_keys[0] + 0xc) = 0;",
@@ -362,7 +376,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 95,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)pSVar9->sort_keys[0] + 0x14) = 0;",
@@ -370,7 +384,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 103,
       "match": "(SColorQuantMapper *)((int)",
       "severity": "mild",
       "text": "pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[1] + 0x1c);",
@@ -378,26 +392,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 119,
       "match": "(SColorQuantCentroid *)((int)",
       "severity": "mild",
-      "text": "pSVar14 = (SColorQuantCentroid *)((int)pSVar14 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 117,
-      "match": "(SColorQuantCentroid *)((int)",
-      "severity": "mild",
-      "text": "pSVar14 = (SColorQuantCentroid *)((int)pSVar14 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 118,
-      "match": "(SColorQuantCentroid *)((int)",
-      "severity": "mild",
-      "text": "pSVar16 = (SColorQuantCentroid *)((int)pSVar16 + (uint)bVar17 * -8 + 4);",
+      "text": "pSVar13 = (SColorQuantCentroid *)((int)pSVar13 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -405,151 +403,135 @@
       "line": 125,
       "match": "(SColorQuantCentroid *)((int)",
       "severity": "mild",
+      "text": "pSVar16 = (SColorQuantCentroid *)((int)pSVar16 + (uint)bVar17 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(SColorQuantCentroid *)((int)",
+      "severity": "mild",
       "text": "pSVar14 = (SColorQuantCentroid *)((int)pSVar14 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
-      "match": "(SColorQuantMapper *)((int)",
+      "line": 137,
+      "match": "(SColorQuantCentroid *)((int)",
       "severity": "mild",
-      "text": "pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[0] + 0x1c);",
+      "text": "pSVar13 = (SColorQuantCentroid *)((int)pSVar13 + (uint)bVar17 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 140,
       "match": "(SColorQuantMapper *)((int)",
       "severity": "mild",
-      "text": "pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[0] + 0x1c);",
+      "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 144,
+      "match": "(SColorQuantMapper *)((int)",
+      "severity": "mild",
+      "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 141,
+      "line": 153,
       "match": "._0_1_",
       "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].red));",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].red));",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
+      "line": 153,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].red));",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].red));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
+      "line": 153,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].red));",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].red));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 143,
+      "line": 155,
       "match": "._0_1_",
       "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].green));",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].green));",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 143,
+      "line": 155,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].green));",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].green));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 143,
+      "line": 155,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].green));",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].green));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 145,
+      "line": 157,
       "match": "._0_1_",
       "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].blue));",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].blue));",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 145,
+      "line": 157,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].blue));",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].blue));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 145,
+      "line": 157,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar8->centroids[0].blue));",
+      "text": "local_20._0_1_ = (char)(int)ROUND(ROUND(pSVar11->centroids[0].blue));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 146,
-      "match": "(SColorQuantMapper *)((int)",
-      "severity": "mild",
-      "text": "pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[0] + 0x1c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 148,
-      "match": "(SColorQuantMapper *)((int)",
-      "severity": "mild",
-      "text": "pSVar9 = (SColorQuantMapper *)((int)&pSVar9->num_palette_entries + 3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 149,
-      "match": "(SColorQuantMapper *)((int)",
-      "severity": "mild",
-      "text": "} while (pSVar8 != (SColorQuantMapper *)((int)workspace->sort_keys[0xff] + 0x1c));",
-      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 158,
-      "match": "(uint *)((int)",
+      "match": "(SColorQuantMapper *)((int)",
       "severity": "mild",
-      "text": "uStack_15c = *(uint *)((int)&workspace->boxes[0].total_weighted_error + 4);",
+      "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[0] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 160,
+      "match": "(SColorQuantMapper *)((int)",
+      "severity": "mild",
+      "text": "pSVar12 = (SColorQuantMapper *)((int)&pSVar12->num_palette_entries + 3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 161,
-      "match": "(uint *)((int)",
+      "match": "(SColorQuantMapper *)((int)",
       "severity": "mild",
-      "text": "uStack_154 = *(uint *)((int)&workspace->boxes[0].max_spread + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 166,
-      "match": "CONCAT44",
-      "severity": "mild",
-      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) < pSVar8->boxes[1].total_weighted_error) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 168,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uStack_15c = *(uint *)((int)&pSVar8->boxes[1].total_weighted_error + 4);",
+      "text": "} while (pSVar11 != (SColorQuantMapper *)((int)workspace->sort_keys[0xff] + 0x1c));",
       "type": "pointer_cast"
     },
     {
@@ -557,15 +539,15 @@
       "line": 170,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_154 = *(uint *)((int)&pSVar8->boxes[1].max_spread + 4);",
+      "text": "uStack_15c = *(uint *)((int)&workspace->boxes[0].total_weighted_error + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 174,
-      "match": "(SColorQuantMapper *)((int)",
+      "line": 173,
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "pSVar8 = (SColorQuantMapper *)((int)pSVar8->sort_keys[1] + 0x1c);",
+      "text": "uStack_154 = *(uint *)((int)&workspace->boxes[0].max_spread + 4);",
       "type": "pointer_cast"
     },
     {
@@ -573,12 +555,44 @@
       "line": 178,
       "match": "CONCAT44",
       "severity": "mild",
+      "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_15c,local_160)) < pSVar11->boxes[1].total_weighted_error) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 180,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_15c = *(uint *)((int)&pSVar11->boxes[1].total_weighted_error + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 182,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uStack_154 = *(uint *)((int)&pSVar11->boxes[1].max_spread + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 186,
+      "match": "(SColorQuantMapper *)((int)",
+      "severity": "mild",
+      "text": "pSVar11 = (SColorQuantMapper *)((int)pSVar11->sort_keys[1] + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 190,
+      "match": "CONCAT44",
+      "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_red) break;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 183,
+      "line": 195,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_green) {",
@@ -586,7 +600,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 187,
+      "line": 199,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) == workspace->boxes[iVar13].spread_blue) {",
@@ -594,7 +608,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 191,
+      "line": 203,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(uStack_154,local_158)) != workspace->boxes[iVar13].spread_intensity)",

@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   key_name
 ; int *            Stack[0xc]:4   value_ptr
 ; Local Variables:
-; undefined1       Stack[-0x6c]:1  local_6c
+; char[100]        Stack[-0x6c]:100  local_6c
 ;
 ; XREF[7]:
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e1e21

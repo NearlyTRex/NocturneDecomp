@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 87,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 28,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 114
+    "total_lines": 110
   },
   "cross_references": [
     {
@@ -152,22 +152,8 @@
         "is_param": false,
         "name": "local_34",
         "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
@@ -188,7 +174,7 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -209,7 +195,7 @@
         "name": "local_8",
         "offset": -8,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -230,7 +216,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 13,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34.x = (int)ROUND(256.0f * 0.0);",
@@ -238,7 +224,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 14,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34.y = (int)ROUND(256.0f * 0.0);",
@@ -246,7 +232,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 15,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34.z = (int)ROUND(depth * 256.0f);",
@@ -254,7 +240,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 22,
       "match": "ABS",
       "severity": "mild",
       "text": "fVar3 = ABS(fVar1 / ((float)g_ViewportCenterXFixed * fVar2));",
@@ -262,10 +248,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 23,
       "match": "ABS",
       "severity": "mild",
-      "text": "fVar1 = ABS(fVar1 / ((float)g_ViewportCenterYFixed * fVar2));",
+      "text": "fVar4 = ABS(fVar1 / ((float)g_ViewportCenterYFixed * fVar2));",
       "type": "decompiler_intrinsic"
     }
   ]

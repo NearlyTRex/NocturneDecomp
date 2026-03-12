@@ -9,12 +9,12 @@
 void __cdecl core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0(CFireEffect *this_ptr,CVector3f *impact_position,CVector3f *orientation_angles,CVector3f *surface_normal,int ground_type)
 
 {
-  bool bVar1;
   CVector3f *pCVar2;
   CMatrix3x3f local_5c;
   CVector3f local_34;
   CVector3f local_28;
   CVector3f local_1c;
+  bool bVar1;
   
   bVar1 = false;
   switch(ground_type) {

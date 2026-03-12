@@ -6,11 +6,10 @@
 ; Parameters:
 ; CVector3f *      Stack[0x4]:4   euler_angles
 ; Local Variables:
-; undefined        Stack[-0x58]:1  local_58
-; undefined        Stack[-0x28]:1  local_28
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; undefined4[1512] Stack[-0x1804]:6048  auStackY_1804
+; CMatrix3x4f      Stack[-0x58]:48  local_58
+; CQuaternion4f    Stack[-0x28]:16  local_28
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; Called Functions:
 ;   core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390

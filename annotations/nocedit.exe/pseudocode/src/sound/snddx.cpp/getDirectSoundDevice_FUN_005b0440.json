@@ -4,19 +4,19 @@
       {
         "category": "other",
         "column": 58,
-        "line": 45,
+        "line": 48,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 77,
-        "line": 61,
+        "line": 64,
         "message": "cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectSound3DListener **'"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 80,
+        "line": 83,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -25,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 91,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 13,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 76,
+    "pseudocode_lines": 79,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 276
+    "total_lines": 279
   },
   "cross_references": [
     {
@@ -211,18 +211,53 @@
     "pcode_op_count": 773
   },
   "stack_frame": {
-    "frame_size": 320,
-    "local_size": 316,
+    "frame_size": 1920,
+    "local_size": 1916,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "acStack_778",
+        "offset": -1912,
+        "size": 400,
+        "type": "char[400]"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_5e8",
+        "offset": -1512,
+        "size": 400,
+        "type": "char[400]"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_458",
+        "offset": -1112,
+        "size": 400,
+        "type": "char[400]"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_2c8",
+        "offset": -712,
+        "size": 400,
+        "type": "char[400]"
+      },
+      {
+        "is_param": false,
         "name": "local_138",
         "offset": -312,
-        "size": 1,
-        "type": "undefined1"
+        "size": 280,
+        "type": "SSoundDeviceInfo"
+      },
+      {
+        "is_param": false,
+        "name": "DStack_20",
+        "offset": -32,
+        "size": 20,
+        "type": "DSBUFFERDESC"
       },
       {
         "is_param": true,
@@ -236,7 +271,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 57,
       "match": "DAT_00686d58",
       "severity": "mild",
       "text": "((IUnknown *)g_DirectSoundPrimaryBuffer,&DAT_00686d58,&g_DirectSound3DListener",

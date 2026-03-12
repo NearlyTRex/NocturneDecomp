@@ -9,10 +9,8 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0(CKeyFramedModel *this_ptr)
 
 {
-  int *piVar1;
-  bool bVar2;
-  int iVar3;
   int iVar4;
+  int iVar1;
   int iVar5;
   int iVar6;
   int iVar7;
@@ -24,6 +22,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc
   int local_20;
   SMRGLPrimitiveQuad *local_1c;
   int local_18;
+  int iVar3;
+  bool bVar2;
+  int *piVar1;
   
   core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
   local_20 = 0;
@@ -37,33 +38,33 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc
       while (local_20 < iVar3 + local_38->part_list[0].poly_count) {
         bVar2 = false;
         local_18 = iVar3;
-        iVar5 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base
+        iVar1 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base).base
                       .type + local_24;
         if (iVar3 < local_20) {
           local_1c = this_ptr->poly_vert_list + iVar3;
           do {
-            if (*(int *)(iVar5 + 4) == (local_1c->base).base.count) {
+            if (*(int *)(iVar1 + 4) == (local_1c->base).base.count) {
               iVar6 = 0;
-              if (0 < *(int *)(iVar5 + 4)) {
+              if (0 < *(int *)(iVar1 + 4)) {
                 do {
                   iVar8 = 0;
                   bVar2 = true;
                   iVar4 = iVar6;
-                  iVar7 = iVar5;
-                  if (0 < *(int *)(iVar5 + 4)) {
+                  iVar7 = iVar1;
+                  if (0 < *(int *)(iVar1 + 4)) {
                     do {
                       if (*(int *)(iVar7 + 0x18) !=
-                          *(int *)(iVar5 + (iVar4 % *(int *)(iVar5 + 4)) * 0xc + 0x18)) {
+                          *(int *)(iVar1 + (iVar4 % *(int *)(iVar1 + 4)) * 0xc + 0x18)) {
                         bVar2 = false;
                         break;
                       }
                       iVar8 = iVar8 + 1;
                       iVar4 = iVar4 + 1;
                       iVar7 = iVar7 + 0xc;
-                    } while (iVar8 < *(int *)(iVar5 + 4));
+                    } while (iVar8 < *(int *)(iVar1 + 4));
                   }
                   iVar6 = iVar6 + 1;
-                } while (iVar6 < *(int *)(iVar5 + 4));
+                } while (iVar6 < *(int *)(iVar1 + 4));
               }
               if (bVar2) break;
             }

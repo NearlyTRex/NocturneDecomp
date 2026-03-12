@@ -4,19 +4,19 @@
       {
         "category": "format_error",
         "column": 47,
-        "line": 30,
+        "line": 35,
         "message": "format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 168,
-        "line": 90,
+        "line": 96,
         "message": "format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 106,
+        "line": 112,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -25,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 119,
+    "complexity_score": 125,
     "cross_reference_count": 6,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 104,
+    "pseudocode_lines": 110,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 381
+    "total_lines": 387
   },
   "cross_references": [
     {
@@ -236,36 +236,8 @@
         "is_param": false,
         "name": "local_178",
         "offset": -376,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_177",
-        "offset": -375,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_75",
-        "offset": -117,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_74",
-        "offset": -116,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_73",
-        "offset": -115,
-        "size": 1,
-        "type": "undefined"
+        "size": 360,
+        "type": "CCheckOutItem"
       },
       {
         "is_param": true,
@@ -303,7 +275,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 42,
       "match": "(CCheckOutItem *)((int)",
       "severity": "mild",
       "text": "pCVar5 = (CCheckOutItem *)((int)pCVar5 + (uint)bVar6 * -2 + 1);",

@@ -6,7 +6,15 @@
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x54]:1  local_54
+; CBoundingBox3D   Stack[-0x6c]:24  CStack_6c
+; CBoundingBox3D   Stack[-0x54]:24  local_54
+; float            Stack[-0x3c]:4  fStack_3c
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; undefined1[24]   Stack[-0x30]:24  auStack_30
+; float            Stack[-0x18]:4  fStack_18
+; float            Stack[-0x14]:4  fStack_14
+; float            Stack[-0x10]:4  fStack_10
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

@@ -9,15 +9,16 @@
 int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60(CDemonCube *this_ptr,CVector3f *cylinder_position,float cylinder_radius,CVector3f *output_height,CVector3f *output_normal,uint *output_material)
 
 {
-  float fVar1;
-  float fVar2;
-  CVector3f *pCVar3;
-  CDemonCubeTriangle *pCVar4;
+  CVector3f *pCVar1;
   uint uVar5;
   int iVar6;
   int iVar7;
   int iVar8;
   CVector3f local_1c;
+  float fVar1;
+  CDemonCubeTriangle *pCVar4;
+  CVector3f *pCVar3;
+  float fVar2;
   
   iVar7 = -1;
   iVar6 = 0;
@@ -42,17 +43,17 @@ int __cdecl core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60(C
       g_TempNormal0.z = pCVar3->z;
       g_TempNormal0.y = pCVar3->y;
     }
-    pCVar3 = this_ptr->triangle_buffer[iVar7].triangle.vertices[1];
-    if (pCVar3 != &g_TempNormal1) {
-      g_TempNormal1.x = pCVar3->x;
-      g_TempNormal1.z = pCVar3->z;
-      g_TempNormal1.y = pCVar3->y;
+    pCVar1 = this_ptr->triangle_buffer[iVar7].triangle.vertices[1];
+    if (pCVar1 != &g_TempNormal1) {
+      g_TempNormal1.x = pCVar1->x;
+      g_TempNormal1.z = pCVar1->z;
+      g_TempNormal1.y = pCVar1->y;
     }
-    pCVar3 = this_ptr->triangle_buffer[iVar7].triangle.vertices[2];
-    if (pCVar3 != &g_TempNormal2) {
-      g_TempNormal2.x = pCVar3->x;
-      g_TempNormal2.z = pCVar3->z;
-      g_TempNormal2.y = pCVar3->y;
+    pCVar1 = this_ptr->triangle_buffer[iVar7].triangle.vertices[2];
+    if (pCVar1 != &g_TempNormal2) {
+      g_TempNormal2.x = pCVar1->x;
+      g_TempNormal2.z = pCVar1->z;
+      g_TempNormal2.y = pCVar1->y;
     }
     *output_material = (uint)*(byte *)((int)this_ptr->ground_type_memory + iVar7);
     pCVar4 = this_ptr->triangle_buffer;

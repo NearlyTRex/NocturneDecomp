@@ -6,11 +6,15 @@
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; Local Variables:
+; char[1018]       Stack[-0x1406]:1018  acStackY_1406
+; undefined2[2026] Stack[-0x100c]:4052  auStackY_100c
 ; undefined4       Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
-; undefined        Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[4]          Stack[-0x24]:4  local_24
+; undefined4       Stack[-0x20]:4  uStack_20
+; char[4]          Stack[-0x1c]:4  acStack_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_meshlod_cpp_00637781

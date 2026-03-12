@@ -10,63 +10,46 @@
 ; char *           Stack[0x10]:4   pod_filename
 ; Local Variables:
 ; undefined4       Stack[-0x2608]:4  local_2608
-; undefined        Stack[-0x2600]:1  local_2600
-; undefined4       Stack[-0x21f0]:4  local_21f0
-; undefined4       Stack[-0x21ec]:4  local_21ec
-; undefined        Stack[-0x21d4]:1  local_21d4
-; undefined        Stack[-0x1e2c]:1  local_1e2c
-; undefined        Stack[-0x1a84]:1  local_1a84
-; undefined        Stack[-0x16dc]:1  local_16dc
-; undefined1       Stack[-0x16db]:1  local_16db
-; undefined4       Stack[-0x14d8]:4  local_14d8
-; undefined4       Stack[-0x14d0]:4  local_14d0
-; undefined        Stack[-0x14c8]:1  local_14c8
-; undefined1       Stack[-0x14c7]:1  local_14c7
-; undefined4       Stack[-0x12c4]:4  local_12c4
-; undefined4       Stack[-0x12bc]:4  local_12bc
-; undefined        Stack[-0x12b4]:1  local_12b4
-; undefined1       Stack[-0x12b3]:1  local_12b3
-; undefined4       Stack[-0x10b0]:4  local_10b0
-; undefined4       Stack[-0x10a8]:4  local_10a8
-; undefined        Stack[-0x10a0]:1  local_10a0
-; undefined        Stack[-0xeac]:1  local_eac
-; undefined        Stack[-0xd1c]:1  local_d1c
-; undefined        Stack[-0xb8c]:1  local_b8c
-; undefined1       Stack[-0xb8b]:1  local_b8b
-; undefined        Stack[-0xa88]:1  local_a88
-; undefined        Stack[-0x984]:1  local_984
-; undefined1       Stack[-0x983]:1  local_983
-; undefined        Stack[-0x880]:1  local_880
-; undefined1       Stack[-0x87f]:1  local_87f
-; undefined        Stack[-0x77c]:1  local_77c
-; undefined        Stack[-0x678]:1  local_678
-; undefined1       Stack[-0x677]:1  local_677
-; undefined        Stack[-0x574]:1  local_574
-; undefined1       Stack[-0x573]:1  local_573
-; undefined        Stack[-0x470]:1  local_470
-; undefined        Stack[-0x370]:1  local_370
-; undefined        Stack[-0x270]:1  local_270
-; undefined        Stack[-0x170]:1  local_170
-; undefined        Stack[-0x70]:1  local_70
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined        Stack[-0x24]:1  local_24
-; undefined        Stack[-0x20]:1  local_20
-; undefined        Stack[-0x1c]:1  local_1c
-; undefined        Stack[-0x18]:1  local_18
+; CPodFile         Stack[-0x2600]:1068  local_2600
+; CPickList        Stack[-0x21d4]:936  local_21d4
+; CPickList        Stack[-0x1e2c]:936  local_1e2c
+; CPickList        Stack[-0x1a84]:936  local_1a84
+; SFoundFileInfo   Stack[-0x16dc]:532  local_16dc
+; SFoundFileInfo   Stack[-0x14c8]:532  local_14c8
+; SFoundFileInfo   Stack[-0x12b4]:532  local_12b4
+; char[500]        Stack[-0x10a0]:500  local_10a0
+; char[400]        Stack[-0xeac]:400  local_eac
+; char[400]        Stack[-0xd1c]:400  local_d1c
+; char[260]        Stack[-0xb8c]:260  local_b8c
+; char[260]        Stack[-0xa88]:260  local_a88
+; char[260]        Stack[-0x984]:260  local_984
+; char[260]        Stack[-0x880]:260  local_880
+; char[260]        Stack[-0x77c]:260  local_77c
+; char[260]        Stack[-0x678]:260  local_678
+; char[260]        Stack[-0x574]:260  local_574
+; char[256]        Stack[-0x470]:256  local_470
+; char[256]        Stack[-0x370]:256  local_370
+; char[256]        Stack[-0x270]:256  local_270
+; char[256]        Stack[-0x170]:256  local_170
+; CStrList         Stack[-0x70]:16  local_70
+; CCheckOutList    Stack[-0x60]:8  local_60
+; time_t           Stack[-0x58]:4  local_58
+; _FILE *          Stack[-0x54]:4  local_54
+; char *           Stack[-0x50]:4  local_50
+; int              Stack[-0x4c]:4  local_4c
+; int              Stack[-0x48]:4  local_48
+; _FILE *          Stack[-0x44]:4  local_44
+; _FILE *          Stack[-0x40]:4  local_40
+; char *           Stack[-0x3c]:4  local_3c
+; _FILE *          Stack[-0x38]:4  local_38
+; _FILE *          Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; char[4]          Stack[-0x24]:4  local_24
+; char[4]          Stack[-0x20]:4  local_20
+; char[4]          Stack[-0x1c]:4  local_1c
+; char[8]          Stack[-0x18]:8  local_18
 ;
 ; Referenced Globals:
 ;   SLEEP_FUNC* g_SleepFunc = 00212228

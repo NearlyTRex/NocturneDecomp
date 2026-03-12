@@ -12,7 +12,7 @@
 ; double           Stack[0x20]:8   plane_nz
 ; double           Stack[0x28]:8   plane_d
 ; Local Variables:
-; undefined8       Stack[-0x28]:8  local_28
+; int              Stack[-0x28]:4  local_28
 ;
 ; XREF[7]:
 ;   core_dtri.cpp_clipPolygonToBottom_FUN_0049b9c0 at 0049baa2

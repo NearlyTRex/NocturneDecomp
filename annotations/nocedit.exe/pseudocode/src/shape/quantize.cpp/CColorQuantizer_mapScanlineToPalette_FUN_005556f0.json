@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 150,
+    "complexity_score": 152,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 115,
+    "pseudocode_lines": 117,
     "suspect_count": 3,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 409
+    "total_lines": 411
   },
   "cross_references": [
     {
@@ -160,28 +160,28 @@
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -202,7 +202,7 @@
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -216,7 +216,7 @@
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -317,7 +317,7 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 11,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "int unaff_EBX;",
@@ -325,7 +325,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 88,
+      "line": 90,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = iVar7;",
@@ -333,7 +333,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 96,
+      "line": 98,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "dest_indices[local_30] = (uchar)unaff_EBX;",

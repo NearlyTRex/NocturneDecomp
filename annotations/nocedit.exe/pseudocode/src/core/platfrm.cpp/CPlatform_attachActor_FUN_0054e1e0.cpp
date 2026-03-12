@@ -9,15 +9,18 @@
 void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this_ptr,CDemonActor *actor)
 
 {
-  CDemonActor *pCVar1;
-  CPlatform *pCVar2;
+  CDemonActor *pCVar3;
+  CPlatform *pCVar6;
   int iVar3;
+  int iVar7;
   CMatrix3x4f *pCVar4;
   CMatrix3x4f *pCVar5;
   byte bVar6;
   CMatrix3x4f local_a0;
   CMatrix3x4f local_70;
   CMatrix3x4f local_40;
+  CDemonActor *pCVar1;
+  CPlatform *pCVar2;
   
   bVar6 = 0;
   if (actor != (CDemonActor *)0x0) {
@@ -27,30 +30,32 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_0054e1e0(CPlatform *this
     while (actor != pCVar1) {
       iVar3 = iVar3 + 1;
       if (9 < iVar3) {
-        pCVar1 = this_ptr->attach_actors[0].actor;
-        iVar3 = 0;
-        pCVar2 = this_ptr;
+        pCVar3 = this_ptr->attach_actors[0].actor;
+        iVar7 = 0;
+        pCVar6 = this_ptr;
         while( true ) {
-          if (pCVar1 == (CDemonActor *)0x0) {
+          if (pCVar3 == (CDemonActor *)0x0) {
             core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                       (&local_a0,&(actor->location).position,&(actor->orient).vec);
             core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                       (&local_40,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
-            pCVar2->attach_actors[0].actor = actor;
+            pCVar6->attach_actors[0].actor = actor;
             core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_a0,&local_40,&local_70);
             pCVar4 = &local_70;
-            pCVar5 = &pCVar2->attach_actors[0].matrix;
-            for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-              pCVar5->m[0].w = pCVar4->m[0].w;
-              pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+            pCVar5 = &pCVar6->attach_actors[0].matrix;
+            for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
               pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
+              pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar6 * -8 + 4);
+              pCVar5->m[0].w = pCVar4->m[0].w;
+              pCVar4 = pCVar4;
+              pCVar5 = pCVar5;
             }
             return;
           }
-          iVar3 = iVar3 + 1;
-          if (9 < iVar3) break;
-          pCVar1 = pCVar2->attach_actors[1].actor;
-          pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);
+          iVar7 = iVar7 + 1;
+          if (9 < iVar7) break;
+          pCVar3 = pCVar6->attach_actors[1].actor;
+          pCVar6 = (CPlatform *)((int)&(pCVar6->base).orient + 4);
         }
         g_CurrentFilename = "..\\core\\platfrm.cpp";
         g_CurrentLineNumber = 0x3d0;

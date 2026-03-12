@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 438,
-    "complexity_score": 283,
+    "complexity_score": 292,
     "cross_reference_count": 12,
     "function_call_count": 21,
     "global_count": 23,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 203,
+    "pseudocode_lines": 212,
     "suspect_count": 7,
     "suspect_types": [
       "negative_offset",
       "pointer_cast"
     ],
-    "total_lines": 641
+    "total_lines": 650
   },
   "cross_references": [
     {
@@ -395,57 +395,29 @@
         "is_param": false,
         "name": "local_360",
         "offset": -864,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_35f",
-        "offset": -863,
-        "size": 1,
-        "type": "undefined1"
+        "size": 520,
+        "type": "char[520]"
       },
       {
         "is_param": false,
         "name": "local_158",
         "offset": -344,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_157",
-        "offset": -343,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
+        "size": 320,
+        "type": "CInputString"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -518,58 +490,58 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 138,
       "match": "(CInputString *)((int)",
       "severity": "mild",
-      "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "text": "pCVar12 = (CInputString *)((int)pCVar10 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 133,
-      "match": "pCVar7[-1].",
+      "line": 142,
+      "match": "pCVar12[-1].",
       "severity": "mild",
-      "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
+      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 142,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
+      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 159,
       "match": "(CInputString *)((int)",
       "severity": "mild",
-      "text": "pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "text": "pCVar12 = (CInputString *)((int)pCVar10 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 154,
-      "match": "pCVar7[-1].",
+      "line": 163,
+      "match": "pCVar12[-1].",
       "severity": "mild",
-      "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
+      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 163,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);",
+      "text": "pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 180,
       "match": "(CInputString *)((int)",
       "severity": "mild",
-      "text": "pCVar6 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "text": "pCVar10 = (CInputString *)((int)pCVar10 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     }
   ]

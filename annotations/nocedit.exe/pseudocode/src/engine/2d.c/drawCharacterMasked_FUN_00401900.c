@@ -9,9 +9,11 @@
 int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401900(int char_code,int x_pos,int y_pos)
 
 {
+  int iVar1;
   uchar *puVar1;
   int iVar2;
   int iVar3;
+  int iVar4;
   ushort *puVar4;
   byte *puVar5;
   ushort uVar6;
@@ -26,10 +28,10 @@ int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401900(int char_code,int x_pos
   else {
     iVar8 = y_pos * 4;
     puVar1 = g_FontTable[char_code + -0x20].bitmap;
-    iVar3 = iVar8 + 0x2c;
+    iVar1 = iVar8 + 0x2c;
     if (g_BitsPerPixel == 8) {
       do {
-        iVar2 = 0;
+        iVar4 = 0;
         puVar5 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar8) + x_pos);
         if (uVar7 != 0) {
           do {
@@ -40,13 +42,13 @@ int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401900(int char_code,int x_pos
               *puVar5 = 2;
             }
             puVar1 = puVar1 + 1;
-            iVar2 = iVar2 + 1;
+            iVar4 = iVar4 + 1;
             puVar5 = puVar5 + 1;
-          } while (iVar2 < (int)uVar7);
+          } while (iVar4 < (int)uVar7);
         }
         iVar8 = iVar8 + 4;
         *puVar5 = 0;
-      } while (iVar8 != iVar3);
+      } while (iVar8 != iVar1);
     }
     else {
       do {
@@ -66,7 +68,7 @@ int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401900(int char_code,int x_pos
         }
         iVar8 = iVar8 + 4;
         *puVar4 = g_ColorTable16[0];
-      } while (iVar8 != iVar3);
+      } while (iVar8 != iVar1);
     }
     iVar3 = uVar7 + 1;
   }

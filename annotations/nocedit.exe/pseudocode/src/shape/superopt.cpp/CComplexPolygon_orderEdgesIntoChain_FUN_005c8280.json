@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 9,
-        "line": 23,
+        "line": 26,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 231,
-    "complexity_score": 242,
+    "complexity_score": 245,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 107,
+    "pseudocode_lines": 110,
     "suspect_count": 13,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 338
+    "total_lines": 341
   },
   "cross_references": [
     {
@@ -176,7 +176,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 39,
       "match": "(SExpandedEdge *)((int)",
       "severity": "mild",
       "text": "edges = (SExpandedEdge *)((int)edges + (uint)bVar8 * -8 + 4);",
@@ -184,15 +184,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 43,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3 = (int *)((int)piVar3 + (uint)bVar8 * -2 + 1);",
+      "text": "piVar2 = (int *)((int)piVar2 + (uint)bVar8 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 44,
       "match": "(SExpandedEdge *)((int)",
       "severity": "mild",
       "text": "edges = (SExpandedEdge *)((int)edges + (uint)bVar8 * -2 + 1);",
@@ -200,66 +200,58 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 56,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[5] = *(int *)((int)&(pSVar2->start_pos).x + 4);",
+      "text": "piVar2[5] = *(int *)((int)&(pSVar1->start_pos).x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 58,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[7] = *(int *)((int)&(pSVar2->start_pos).y + 4);",
+      "text": "piVar2[7] = *(int *)((int)&(pSVar1->start_pos).y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 60,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[9] = *(int *)((int)&(pSVar2->start_pos).z + 4);",
+      "text": "piVar2[9] = *(int *)((int)&(pSVar1->start_pos).z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 62,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[0xb] = *(int *)((int)&(pSVar2->end_pos).x + 4);",
+      "text": "piVar2[0xb] = *(int *)((int)&(pSVar1->end_pos).x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 64,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[0xd] = *(int *)((int)&(pSVar2->end_pos).y + 4);",
+      "text": "piVar2[0xd] = *(int *)((int)&(pSVar1->end_pos).y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 66,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[0xf] = *(int *)((int)&(pSVar2->end_pos).z + 4);",
+      "text": "piVar2[0xf] = *(int *)((int)&(pSVar1->end_pos).z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 68,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[0x11] = *(int *)((int)pSVar2->start_uv + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar3[0x13] = *(int *)((int)pSVar2->start_uv + 0xc);",
+      "text": "piVar2[0x11] = *(int *)((int)pSVar1->start_uv + 4);",
       "type": "pointer_cast"
     },
     {
@@ -267,15 +259,23 @@
       "line": 70,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[0x15] = *(int *)((int)pSVar2->end_uv + 4);",
+      "text": "piVar2[0x13] = *(int *)((int)pSVar1->start_uv + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 73,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[0x17] = *(int *)((int)pSVar2->end_uv + 0xc);",
+      "text": "piVar2[0x15] = *(int *)((int)pSVar1->end_uv + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar2[0x17] = *(int *)((int)pSVar1->end_uv + 0xc);",
       "type": "pointer_cast"
     }
   ]

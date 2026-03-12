@@ -12,6 +12,7 @@ CVector3f * __cdecl core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e
 
 {
   float10 fVar1;
+  float10 fVar2;
   uint uStack_14;
   
   out_euler_angles->z = 0.0;
@@ -26,8 +27,8 @@ CVector3f * __cdecl core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e
     out_euler_angles->x = (float)__BITCAST_DOUBLE(CONCAT44(uStack_14,0x54411744));
     return out_euler_angles;
   }
-  fVar1 = (float10)fpatan((float10)in_direction_vector->x,(float10)in_direction_vector->z);
-  out_euler_angles->y = (float)fVar1;
+  fVar2 = (float10)fpatan((float10)in_direction_vector->x,(float10)in_direction_vector->z);
+  out_euler_angles->y = (float)fVar2;
   fVar1 = (float10)fpatan((float10)in_direction_vector->y,
                           SQRT((float10)in_direction_vector->x * (float10)in_direction_vector->x +
                                (float10)in_direction_vector->z * (float10)in_direction_vector->z));

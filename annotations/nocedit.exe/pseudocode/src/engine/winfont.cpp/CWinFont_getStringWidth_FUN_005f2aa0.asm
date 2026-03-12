@@ -7,14 +7,13 @@
 ; CWinFont *       Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   text_string
 ; Local Variables:
-; undefined1       Stack[-0xc]:1  local_c
+; tagSIZE          Stack[-0xc]:8  local_c
 ;
 ; Referenced Globals:
 ;   GET_TEXT_EXTENT_POINT32_A_FUNC* g_GetTextExtentPoint32A = 002117b2
 ;
 ; Called Functions:
 ;   engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860
-;   GetTextExtentPoint32A
 ;
 ; *****************************************************************************
 

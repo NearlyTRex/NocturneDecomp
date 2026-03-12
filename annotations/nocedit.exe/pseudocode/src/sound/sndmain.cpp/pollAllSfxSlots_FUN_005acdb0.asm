@@ -4,7 +4,7 @@
 ; void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_005acdb0(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

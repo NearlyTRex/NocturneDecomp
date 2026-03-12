@@ -31,7 +31,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_0050adf0(CMansionP
       core_actor_cpp_archiveInteger_FUN_0040b7f0(&int_ptr_00->r,"r");
       core_actor_cpp_archiveInteger_FUN_0040b7f0(int_ptr_01,"g");
       iVar1 = iVar1 + 1;
-      int_ptr_00 = (CColor3i *)((int)(int_ptr_00 + 8) + 4);
+      int_ptr_00 = (CColor3i *)&int_ptr_00[8].g;
       int_ptr_01 = int_ptr_01 + 0x19;
       core_actor_cpp_archiveInteger_FUN_0040b7f0(int_ptr,"b");
       int_ptr = int_ptr + 0x19;

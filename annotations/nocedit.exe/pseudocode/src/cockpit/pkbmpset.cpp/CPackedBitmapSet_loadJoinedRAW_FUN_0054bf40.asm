@@ -11,12 +11,12 @@
 ; int              Stack[0x14]:4   transparency_color
 ; int              Stack[0x18]:4   apply_palette_flag
 ; Local Variables:
-; undefined        Stack[-0x1a8]:1  local_1a8
-; undefined        Stack[-0x144]:1  local_144
-; undefined        Stack[-0xe0]:1  local_e0
-; undefined        Stack[-0x7c]:1  local_7c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[100]        Stack[-0x1a8]:100  local_1a8
+; char[100]        Stack[-0x144]:100  local_144
+; char[100]        Stack[-0xe0]:100  local_e0
+; char[100]        Stack[-0x7c]:100  local_7c
+; _FILE *          Stack[-0x18]:4  local_18
+; SIZE_T           Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_art_0063f433

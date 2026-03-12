@@ -6,14 +6,12 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   message_file
 ; Local Variables:
-; undefined1       Stack[-0x31c]:1  local_31c
-; undefined1       Stack[-0x21c]:1  local_21c
-; undefined1       Stack[-0x21b]:1  local_21b
-; undefined1       Stack[-0x11c]:1  local_11c
-; undefined1       Stack[-0x11b]:1  local_11b
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x31c]:256  local_31c
+; char[256]        Stack[-0x21c]:256  local_21c
+; char[256]        Stack[-0x11c]:256  local_11c
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507b7f

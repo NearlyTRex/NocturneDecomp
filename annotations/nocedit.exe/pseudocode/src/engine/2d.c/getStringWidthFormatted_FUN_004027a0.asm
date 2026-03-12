@@ -6,8 +6,8 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   format_string
 ; Local Variables:
-; undefined        Stack[-0x1004]:1  local_1004
-; undefined4       Stack[-0x4]:4  local_4
+; char[4096]       Stack[-0x1004]:4096  local_1004
+; undefined1 *     Stack[-0x4]:4  local_4
 ;
 ; Called Functions:
 ;   crt_stdio.c__vsprintf_FUN_005fdba8

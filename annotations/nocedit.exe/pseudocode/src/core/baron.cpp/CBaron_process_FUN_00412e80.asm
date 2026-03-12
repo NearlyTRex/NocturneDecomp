@@ -7,28 +7,23 @@
 ; CBaron *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0xa4]:1  local_a4
-; undefined1       Stack[-0x94]:1  local_94
-; undefined1       Stack[-0x84]:1  local_84
-; undefined1       Stack[-0x78]:1  local_78
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined1       Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x10]:4  local_10
+; float[1519]      Stack[-0x1880]:6076  afStackY_1880
+; CQuaternion4f    Stack[-0xa4]:16  local_a4
+; CQuaternion4f    Stack[-0x94]:16  local_94
+; CVector3f        Stack[-0x84]:12  local_84
+; CVector3f        Stack[-0x78]:12  local_78
+; float            Stack[-0x6c]:4  local_6c
+; float            Stack[-0x68]:4  local_68
+; float            Stack[-0x64]:4  local_64
+; CVector3f        Stack[-0x60]:12  local_60
+; CVector3f        Stack[-0x54]:12  local_54
+; CVector3f        Stack[-0x48]:12  local_48
+; float            Stack[-0x3c]:4  local_3c
+; float            Stack[-0x38]:4  local_38
+; float            Stack[-0x34]:4  local_34
+; CVector3f        Stack[-0x30]:12  local_30
+; CVector3f        Stack[-0x24]:12  local_24
+; float            Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00412e68 = 004133c2

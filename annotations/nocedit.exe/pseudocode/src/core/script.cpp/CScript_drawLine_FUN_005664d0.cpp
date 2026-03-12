@@ -9,15 +9,16 @@
 void __cdecl core_script_cpp_CScript_drawLine_FUN_005664d0(CScript *this_ptr,int line_number)
 
 {
-  bool bVar1;
   int iVar2;
   byte *pbVar3;
   int color_mode;
   uint character_code;
   uint uVar4;
+  int x;
   int local_1c;
   int local_18;
   int local_14;
+  bool bVar1;
   
   if (-1 < line_number) {
     iVar2 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text);
@@ -37,10 +38,10 @@ void __cdecl core_script_cpp_CScript_drawLine_FUN_005664d0(CScript *this_ptr,int
                    g_ScriptTextAreaLeft + -1,local_14 + g_ScriptEditorLineHeight + -1,4);
       }
       bVar1 = false;
-      iVar2 = g_ScriptTextAreaLeft +
-              -g_ScriptEditorHScrollBar.scroll_position * g_ScriptEditorCharWidth;
+      x = g_ScriptTextAreaLeft + -g_ScriptEditorHScrollBar.scroll_position * g_ScriptEditorCharWidth
+      ;
       uVar4 = 0;
-      if (iVar2 < g_ScriptTextAreaRight) {
+      if (x < g_ScriptTextAreaRight) {
         while( true ) {
           character_code = (uint)*pbVar3;
           if (character_code == 0) break;
@@ -55,13 +56,13 @@ void __cdecl core_script_cpp_CScript_drawLine_FUN_005664d0(CScript *this_ptr,int
             color_mode = 2;
           }
           engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0
-                    (g_ScriptEditorFont,character_code,iVar2,local_14,color_mode,-1);
+                    (g_ScriptEditorFont,character_code,x,local_14,color_mode,-1);
           if ((character_code != 9) || ((uVar4 & 7) == 7)) {
             pbVar3 = pbVar3 + 1;
           }
-          iVar2 = iVar2 + g_ScriptEditorCharWidth;
+          x = x + g_ScriptEditorCharWidth;
           uVar4 = uVar4 + 1;
-          if (g_ScriptTextAreaRight <= iVar2) {
+          if (g_ScriptTextAreaRight <= x) {
             return;
           }
         }

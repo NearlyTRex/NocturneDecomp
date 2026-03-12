@@ -7,11 +7,9 @@
 ; CHaystack *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   bone_index
 ; Local Variables:
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined1       Stack[-0x28]:1  local_28
-; undefined1       Stack[-0x1c]:1  local_1c
+; SDamageInfo      Stack[-0x64]:60  SStack_64
+; CVector3f        Stack[-0x28]:12  local_28
+; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[1]:
 ;   core_haystack.cpp_CHaystack_advanceMotion_FUN_004f1970 at 004f19e5

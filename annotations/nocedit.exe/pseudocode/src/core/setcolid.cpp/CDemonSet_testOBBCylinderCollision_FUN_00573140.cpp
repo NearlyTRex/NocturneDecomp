@@ -9,7 +9,9 @@
 int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CDemonSet *this_ptr,SIntersectXZCylinder *cylinder,CBoundingBox3D *bounding_box,CVector3f *position,CMatrix3x3f *orientation_matrix)
 
 {
+  float fVar1;
   CVector3f *pCVar1;
+  CVector3f *pCVar3;
   CVector3f *pCVar2;
   uint corner_index;
   CVector3f local_1e8;
@@ -37,11 +39,11 @@ int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CD
   do {
     pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(bounding_box,&local_38,corner_index)
     ;
-    pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+    pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (orientation_matrix,&local_2c,pCVar1);
-    local_20.x = pCVar1->x + position->x;
-    local_20.y = pCVar1->y + position->y;
-    local_20.z = pCVar1->z + position->z;
+    local_20.x = pCVar3->x + position->x;
+    local_20.y = pCVar3->y + position->y;
+    local_20.z = pCVar3->z + position->z;
     if (pCVar2 != &local_20) {
       pCVar2->x = local_20.x;
       pCVar2->y = local_20.y;
@@ -50,7 +52,7 @@ int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CD
     corner_index = corner_index + 1;
     pCVar2 = pCVar2 + 1;
   } while ((int)corner_index < 8);
-  local_14 = cylinder->closest_t;
+  fVar1 = cylinder->closest_t;
   core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
             (&local_70,&local_1e8,&local_1b8,&local_1a0);
   core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80(&local_70,cylinder);
@@ -87,5 +89,5 @@ int __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140(CD
   core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
             (&local_a8,&local_1b8,&local_194,&local_1a0);
   core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80(&local_a8,cylinder);
-  return (uint)(cylinder->closest_t < local_14);
+  return (uint)(cylinder->closest_t < fVar1);
 }

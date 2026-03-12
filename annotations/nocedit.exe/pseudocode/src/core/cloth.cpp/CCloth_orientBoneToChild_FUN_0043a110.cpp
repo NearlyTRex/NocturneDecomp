@@ -9,11 +9,14 @@
 void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr)
 
 {
+  float fVar1;
   CSkeleton *this_ptr_00;
   int iVar1;
+  int iVar2;
   SClothBone *bone_name;
   CVector3f *pCVar2;
   CMatrix3x4f *pCVar3;
+  CSkeleton *pCVar5;
   CMatrix3x4f *pCVar4;
   byte bVar5;
   CMatrix3x4f local_94;
@@ -27,25 +30,25 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110(CCloth *this_p
   bVar5 = 0;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(model_ptr);
   bone_name = this_ptr->collide_bones + bone_index;
-  local_1c = this_ptr_00;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_00,bone_name->name,1);
   bone_name->child_distance = 0.0;
   local_18 = -1;
   bone_name->parent_bone_index = iVar1;
-  iVar1 = 0;
+  iVar2 = 0;
   if (0 < this_ptr_00->bone_count) {
     pCVar2 = model_ptr->transformed_vertices;
+    pCVar5 = this_ptr_00;
     do {
-      if ((bone_name->parent_bone_index == this_ptr_00->bone_list[0].parent_index) &&
-         (local_14 = SQRT(pCVar2->z * pCVar2->z + pCVar2->x * pCVar2->x + pCVar2->y * pCVar2->y),
-         bone_name->child_distance < local_14)) {
-        bone_name->child_distance = local_14;
-        local_18 = iVar1;
+      if ((bone_name->parent_bone_index == pCVar5->bone_list[0].parent_index) &&
+         (fVar1 = SQRT(pCVar2->z * pCVar2->z + pCVar2->x * pCVar2->x + pCVar2->y * pCVar2->y),
+         bone_name->child_distance < fVar1)) {
+        bone_name->child_distance = fVar1;
+        local_18 = iVar2;
       }
-      this_ptr_00 = (CSkeleton *)((this_ptr_00->motion_list).state_names[1] + 2);
-      iVar1 = iVar1 + 1;
+      pCVar5 = (CSkeleton *)((pCVar5->motion_list).state_names[1] + 2);
+      iVar2 = iVar2 + 1;
       pCVar2 = pCVar2 + 1;
-    } while (iVar1 < local_1c->bone_count);
+    } while (iVar2 < this_ptr_00->bone_count);
   }
   if (local_18 < 0) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
@@ -64,10 +67,12 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_0043a110(CCloth *this_p
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&bone_name->world_matrix,&local_94,&local_64);
   pCVar3 = &local_64;
   pCVar4 = &bone_name->world_matrix;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar4->m[0].w = pCVar3->m[0].w;
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
     pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
+    pCVar4->m[0].w = pCVar3->m[0].w;
+    pCVar3 = pCVar3;
+    pCVar4 = pCVar4;
   }
   bone_name->inv_radius1 = 1.0 / bone_name->radius1;
   bone_name->inv_radius2 = 1.0 / bone_name->radius2;

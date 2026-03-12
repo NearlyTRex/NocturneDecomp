@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 96,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 71,
+    "pseudocode_lines": 75,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 220
+    "total_lines": 224
   },
   "cross_references": [
     {
@@ -223,15 +223,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 58,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)puVar3 + iVar16 + (iVar14 << bVar5) * 4) < iVar6) {",
+      "text": "if (*(int *)((int)puVar3 + iVar5 + (iVar14 << bVar5) * 4) < iVar6) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 59,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)g_DitherPatternTable + g_DitherPatternOffset);",

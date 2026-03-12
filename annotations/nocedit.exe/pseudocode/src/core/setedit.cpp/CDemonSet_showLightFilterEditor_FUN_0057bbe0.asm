@@ -8,25 +8,25 @@
 ; int              Stack[0x8]:4   light_index
 ; Local Variables:
 ; undefined8       Stack[-0x8b0]:8  local_8b0
-; undefined4       Stack[-0x8a8]:4  local_8a8
-; undefined1       Stack[-0x8a4]:1  local_8a4
-; undefined1       Stack[-0x4fc]:1  local_4fc
-; undefined1       Stack[-0x154]:1  local_154
-; undefined8       Stack[-0x54]:8  local_54
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x8a8]:4  local_8a8
+; CPickList        Stack[-0x8a4]:936  local_8a4
+; CPickList        Stack[-0x4fc]:936  local_4fc
+; char[256]        Stack[-0x154]:256  local_154
+; double           Stack[-0x54]:8  local_54
+; char[40] *       Stack[-0x4c]:4  local_4c
+; float *          Stack[-0x48]:4  local_48
+; float *          Stack[-0x44]:4  local_44
+; float *          Stack[-0x40]:4  local_40
+; float *          Stack[-0x3c]:4  local_3c
+; char *           Stack[-0x38]:4  local_38
+; char[40] *       Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; float *          Stack[-0x2c]:4  local_2c
+; char[40] *       Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; char[40] *       Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; C3DSLight *      Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0 at 0057cc1f

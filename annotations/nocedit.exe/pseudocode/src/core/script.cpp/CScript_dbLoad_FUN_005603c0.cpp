@@ -9,13 +9,19 @@
 void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char *filename)
 
 {
-  char cVar1;
+  char cVar2;
+  int iVar4;
   _FILE *file_handle;
   long lVar2;
+  long lVar5;
   int iVar3;
+  int iVar6;
   SDialogEntry *pSVar4;
   char *pcVar5;
+  char *pcVar7;
   char *pcVar6;
+  char *pcVar8;
+  SDialogEntry *pSVar9;
   byte bVar7;
   char local_334 [60];
   char local_2f8 [60];
@@ -23,11 +29,12 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
   char local_29e [402];
   char local_10c [256];
   int local_c;
+  char cVar1;
   
   bVar7 = 0;
   this_ptr->dialog_entry_count = 0;
-  local_c = engine_dosio_c_getFileSize_FUN_00481880("world",filename);
-  if (local_c < 1) {
+  iVar4 = engine_dosio_c_getFileSize_FUN_00481880("world",filename);
+  if (iVar4 < 1) {
     return;
   }
   file_handle = engine_dosio_c_getFile_FUN_00481a50("world",filename,"rt");
@@ -37,11 +44,10 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open world\\%s",filename);
   }
   lVar2 = _ftell(file_handle);
-  local_c = local_c + lVar2;
   do {
     _fscanf(file_handle," ");
-    lVar2 = _ftell(file_handle);
-    if (local_c <= lVar2) {
+    lVar5 = _ftell(file_handle);
+    if (iVar4 + lVar2 <= lVar5) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\script.cpp",0xf02);
       return;
     }
@@ -55,73 +61,73 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
     core_script_cpp_trimString_FUN_00559360(local_334);
     core_script_cpp_trimString_FUN_00559360(local_2bc);
     core_script_cpp_trimString_FUN_00559360(local_29e);
-    iVar3 = _stricmp(local_2bc,"stranger");
-    if (iVar3 == 0) {
+    iVar6 = _stricmp(local_2bc,"stranger");
+    if (iVar6 == 0) {
       pcVar5 = "$";
       pcVar6 = local_2bc;
       do {
         cVar1 = *pcVar5;
         *pcVar6 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
+        cVar2 = pcVar5[1];
         pcVar5 = pcVar5 + 2;
-        pcVar6[1] = cVar1;
+        pcVar6[1] = cVar2;
         pcVar6 = pcVar6 + 2;
-      } while (cVar1 != '\0');
+      } while (cVar2 != '\0');
     }
     splitpath(local_334,(char *)0x0,(char *)0x0,local_10c,(char *)0x0);
-    pcVar5 = local_10c;
-    pcVar6 = local_334;
+    pcVar7 = local_10c;
+    pcVar8 = local_334;
     do {
-      cVar1 = *pcVar5;
-      *pcVar6 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar5[1];
-      pcVar5 = pcVar5 + 2;
-      pcVar6[1] = cVar1;
-      pcVar6 = pcVar6 + 2;
-    } while (cVar1 != '\0');
-    iVar3 = core_script_cpp_CScript_findDialogEntry_FUN_005606e0(this_ptr,local_334);
-    if (-1 < iVar3) {
+      cVar2 = *pcVar7;
+      *pcVar8 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar7[1];
+      pcVar7 = pcVar7 + 2;
+      pcVar8[1] = cVar2;
+      pcVar8 = pcVar8 + 2;
+    } while (cVar2 != '\0');
+    iVar6 = core_script_cpp_CScript_findDialogEntry_FUN_005606e0(this_ptr,local_334);
+    if (-1 < iVar6) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (g_CEditorToolsPtr,"Warning! Duplicate wav string %s detected in %s",local_334,filename);
     }
     _sprintf(local_2f8,"%s.wav",local_334);
-    iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_2f8);
-    if (iVar3 < 1) {
+    iVar6 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_2f8);
+    if (iVar6 < 1) {
       _sprintf(local_2f8,"%s.mp3",local_334);
-      iVar3 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_2f8);
-      if (iVar3 < 1) {
-        pcVar6 = local_334;
-        pcVar5 = local_2f8;
+      iVar6 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_2f8);
+      if (iVar6 < 1) {
+        pcVar8 = local_334;
+        pcVar7 = local_2f8;
         do {
-          cVar1 = *pcVar6;
-          *pcVar5 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar1 = pcVar6[1];
-          pcVar6 = pcVar6 + 2;
-          pcVar5[1] = cVar1;
-          pcVar5 = pcVar5 + 2;
-        } while (cVar1 != '\0');
+          cVar2 = *pcVar8;
+          *pcVar7 = cVar2;
+          if (cVar2 == '\0') break;
+          cVar2 = pcVar8[1];
+          pcVar8 = pcVar8 + 2;
+          pcVar7[1] = cVar2;
+          pcVar7 = pcVar7 + 2;
+        } while (cVar2 != '\0');
       }
     }
-    iVar3 = this_ptr->dialog_entry_count + 1;
-    this_ptr->dialog_entry_count = iVar3;
+    iVar6 = this_ptr->dialog_entry_count + 1;
+    this_ptr->dialog_entry_count = iVar6;
     pSVar4 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                       (this_ptr->dialog_entries,iVar3 * 0x226,"..\\core\\script.cpp",0xefa);
+                       (this_ptr->dialog_entries,iVar6 * 0x226,"..\\core\\script.cpp",0xefa);
     this_ptr->dialog_entries = pSVar4;
     if (pSVar4 == (SDialogEntry *)0x0) {
       g_CurrentFilename = "..\\core\\script.cpp";
       g_CurrentLineNumber = 0xefb;
       core_main_c_displayErrorAndQuit_FUN_00506f10("SCScipt::dbLoad - out of memory");
     }
-    pcVar6 = local_334;
-    pSVar4 = this_ptr->dialog_entries + this_ptr->dialog_entry_count + -1;
-    for (iVar3 = 0x89; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(uint *)pSVar4->data = *(uint *)pcVar6;
-      pcVar6 = pcVar6 + ((uint)bVar7 * -2 + 1) * 4;
-      pSVar4 = (SDialogEntry *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
+    pcVar8 = local_334;
+    pSVar9 = this_ptr->dialog_entries + this_ptr->dialog_entry_count + -1;
+    for (iVar6 = 0x89; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *(uint *)pSVar9->data = *(uint *)pcVar8;
+      pcVar8 = pcVar8 + (uint)bVar7 * -8 + 4;
+      pSVar9 = (SDialogEntry *)((int)pSVar9 + (uint)bVar7 * -8 + 4);
     }
-    *(ushort *)pSVar4->data = *(ushort *)pcVar6;
+    *(ushort *)pSVar9->data = *(ushort *)pcVar8;
   } while( true );
 }

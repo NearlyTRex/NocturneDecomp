@@ -9,9 +9,9 @@
 void * __cdecl __arrinit_(void *array_start,int element_count,WatcomTypeInfo *type_info)
 
 {
-  WATCOM_DEFAULT_CONSTRUCTOR_FUNC *pWVar1;
-  int iVar2;
   void *param0;
+  int iVar2;
+  WATCOM_DEFAULT_CONSTRUCTOR_FUNC *pWVar1;
   uint uVar3;
   
   pWVar1 = type_info->ctor;

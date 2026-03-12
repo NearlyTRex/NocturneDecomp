@@ -7,7 +7,7 @@
 ; EInputCodeType   Stack[0x4]:4   key_code
 ; char *           Stack[0x8]:4   action_name
 ; Local Variables:
-; undefined        Stack[-0x110]:1  local_110
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_0062b28d

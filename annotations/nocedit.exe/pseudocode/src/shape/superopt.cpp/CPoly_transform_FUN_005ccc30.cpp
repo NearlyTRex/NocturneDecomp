@@ -10,7 +10,11 @@ void __cdecl shape_superopt_cpp_CPoly_transform_FUN_005ccc30(CPoly *this_ptr,CMa
 
 {
   int iVar1;
+  int iVar2;
+  double *pdVar4;
   double *pdVar2;
+  uint *puVar5;
+  double *pdVar6;
   double *pdVar3;
   uint *puVar4;
   double local_1d0;
@@ -76,32 +80,32 @@ void __cdecl shape_superopt_cpp_CPoly_transform_FUN_005ccc30(CPoly *this_ptr,CMa
   local_68 = (local_18->position).x - pivot->x;
   local_60 = (local_18->position).y - pivot->y;
   local_58 = (local_18->position).z - pivot->z;
-  pdVar2 = &local_68;
-  pdVar3 = &local_158;
+  pdVar4 = &local_68;
+  pdVar6 = &local_158;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pdVar3 = *(uint *)pdVar2;
-    pdVar2 = (double *)((int)pdVar2 + 4);
-    pdVar3 = (double *)((int)pdVar3 + 4);
+    *(uint *)pdVar6 = *(uint *)pdVar4;
+    pdVar4 = (double *)((int)pdVar4 + 4);
+    pdVar6 = (double *)((int)pdVar6 + 4);
   }
   local_98 = matrix->m[0].z * local_148 + matrix->m[0].x * local_158 + matrix->m[0].y * local_150;
   local_90 = matrix->m[1].z * local_148 + matrix->m[1].x * local_158 + matrix->m[1].y * local_150;
   local_88 = matrix->m[2].z * local_148 + matrix->m[2].x * local_158 + matrix->m[2].y * local_150;
-  pdVar2 = &local_98;
-  pdVar3 = &local_140;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pdVar3 = *(uint *)pdVar2;
-    pdVar2 = (double *)((int)pdVar2 + 4);
-    pdVar3 = (double *)((int)pdVar3 + 4);
+  pdVar4 = &local_98;
+  pdVar6 = &local_140;
+  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *(uint *)pdVar6 = *(uint *)pdVar4;
+    pdVar4 = (double *)((int)pdVar4 + 4);
+    pdVar6 = (double *)((int)pdVar6 + 4);
   }
   local_50 = local_140 + pivot->x;
   local_48 = local_138 + pivot->y;
   local_40 = local_130 + pivot->z;
-  pdVar2 = &local_50;
-  puVar4 = local_128;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar4 = *(uint *)pdVar2;
-    pdVar2 = (double *)((int)pdVar2 + 4);
-    puVar4 = puVar4 + 1;
+  pdVar4 = &local_50;
+  puVar5 = local_128;
+  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar5 = *(uint *)pdVar4;
+    pdVar4 = (double *)((int)pdVar4 + 4);
+    puVar5 = puVar5 + 1;
   }
   *(uint *)&(local_18->position).x = local_128[0];
   *(uint *)((int)&(local_18->position).x + 4) = local_128[1];
@@ -113,32 +117,32 @@ void __cdecl shape_superopt_cpp_CPoly_transform_FUN_005ccc30(CPoly *this_ptr,CMa
   local_1b8 = (local_18->position).x - pivot->x;
   local_1b0 = (local_18->position).y - pivot->y;
   local_1a8 = (local_18->position).z - pivot->z;
-  pdVar2 = &local_1b8;
-  pdVar3 = &local_b0;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pdVar3 = *(uint *)pdVar2;
-    pdVar2 = (double *)((int)pdVar2 + 4);
-    pdVar3 = (double *)((int)pdVar3 + 4);
+  pdVar4 = &local_1b8;
+  pdVar6 = &local_b0;
+  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *(uint *)pdVar6 = *(uint *)pdVar4;
+    pdVar4 = (double *)((int)pdVar4 + 4);
+    pdVar6 = (double *)((int)pdVar6 + 4);
   }
   local_1d0 = matrix->m[0].z * local_a0 + matrix->m[0].x * local_b0 + matrix->m[0].y * local_a8;
   local_1c8 = matrix->m[1].z * local_a0 + matrix->m[1].x * local_b0 + matrix->m[1].y * local_a8;
   local_1c0 = matrix->m[2].z * local_a0 + matrix->m[2].x * local_b0 + matrix->m[2].y * local_a8;
-  pdVar2 = &local_1d0;
-  pdVar3 = &local_110;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pdVar3 = *(uint *)pdVar2;
-    pdVar2 = (double *)((int)pdVar2 + 4);
-    pdVar3 = (double *)((int)pdVar3 + 4);
+  pdVar4 = &local_1d0;
+  pdVar6 = &local_110;
+  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *(uint *)pdVar6 = *(uint *)pdVar4;
+    pdVar4 = (double *)((int)pdVar4 + 4);
+    pdVar6 = (double *)((int)pdVar6 + 4);
   }
   local_c8 = local_110 + pivot->x;
   local_c0 = local_108 + pivot->y;
   local_b8 = local_100 + pivot->z;
-  pdVar2 = &local_c8;
-  puVar4 = local_e0;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar4 = *(uint *)pdVar2;
-    pdVar2 = (double *)((int)pdVar2 + 4);
-    puVar4 = puVar4 + 1;
+  pdVar4 = &local_c8;
+  puVar5 = local_e0;
+  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar5 = *(uint *)pdVar4;
+    pdVar4 = (double *)((int)pdVar4 + 4);
+    puVar5 = puVar5 + 1;
   }
   *(uint *)&(local_18->position).x = local_e0[0];
   *(uint *)((int)&(local_18->position).x + 4) = local_e0[1];
@@ -150,21 +154,21 @@ void __cdecl shape_superopt_cpp_CPoly_transform_FUN_005ccc30(CPoly *this_ptr,CMa
   local_170 = (local_1c->position).x - pivot->x;
   local_168 = (local_1c->position).y - pivot->y;
   local_160 = (local_1c->position).z - pivot->z;
-  pdVar2 = &local_170;
-  pdVar3 = &local_80;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pdVar3 = *(uint *)pdVar2;
-    pdVar2 = (double *)((int)pdVar2 + 4);
-    pdVar3 = (double *)((int)pdVar3 + 4);
+  pdVar4 = &local_170;
+  pdVar6 = &local_80;
+  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *(uint *)pdVar6 = *(uint *)pdVar4;
+    pdVar4 = (double *)((int)pdVar4 + 4);
+    pdVar6 = (double *)((int)pdVar6 + 4);
   }
   local_f8 = matrix->m[0].z * local_70 + matrix->m[0].x * local_80 + matrix->m[0].y * local_78;
   local_f0 = matrix->m[1].z * local_70 + matrix->m[1].x * local_80 + matrix->m[1].y * local_78;
   local_e8 = matrix->m[2].z * local_70 + matrix->m[2].x * local_80 + matrix->m[2].y * local_78;
-  pdVar2 = &local_f8;
+  pdVar4 = &local_f8;
   pdVar3 = &local_188;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pdVar3 = *(uint *)pdVar2;
-    pdVar2 = (double *)((int)pdVar2 + 4);
+  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *(uint *)pdVar3 = *(uint *)pdVar4;
+    pdVar4 = (double *)((int)pdVar4 + 4);
     pdVar3 = (double *)((int)pdVar3 + 4);
   }
   local_38 = local_188 + pivot->x;
@@ -172,7 +176,7 @@ void __cdecl shape_superopt_cpp_CPoly_transform_FUN_005ccc30(CPoly *this_ptr,CMa
   local_28 = local_178 + pivot->z;
   pdVar2 = &local_38;
   puVar4 = local_1a0;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar4 = *(uint *)pdVar2;
     pdVar2 = (double *)((int)pdVar2 + 4);
     puVar4 = puVar4 + 1;

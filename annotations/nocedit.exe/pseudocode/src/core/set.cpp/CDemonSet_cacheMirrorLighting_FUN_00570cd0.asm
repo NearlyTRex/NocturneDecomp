@@ -7,9 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; CVector3i        Stack[-0x10]:12  local_10
 ;
 ; XREF[1]:
 ;   core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0 at 004252af

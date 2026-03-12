@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 331,
-    "complexity_score": 211,
+    "complexity_score": 219,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 141,
+    "pseudocode_lines": 149,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -19,7 +19,7 @@
       "warning_inlined_function",
       "warning_type_propagation"
     ],
-    "total_lines": 472
+    "total_lines": 480
   },
   "cross_references": [],
   "function": {
@@ -206,15 +206,15 @@
         "is_param": false,
         "name": "local_78",
         "offset": -120,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -251,26 +251,26 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 99,
       "match": "(CGhoul *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CGhoul *)((int)&(pCVar5->base).base.base.orient + 8);",
+      "text": "pCVar6 = (CGhoul *)((int)&(pCVar6->base).base.base.orient + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
+      "line": 115,
       "match": "ROUND",
       "severity": "mild",
-      "text": "this_ptr->spasm_timer = (int)ROUND(ROUND(local_14 * fVar4));",
+      "text": "this_ptr->spasm_timer = (int)ROUND(ROUND(fVar2 * fVar4));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
+      "line": 115,
       "match": "ROUND",
       "severity": "mild",
-      "text": "this_ptr->spasm_timer = (int)ROUND(ROUND(local_14 * fVar4));",
+      "text": "this_ptr->spasm_timer = (int)ROUND(ROUND(fVar2 * fVar4));",
       "type": "decompiler_intrinsic"
     }
   ],

@@ -9,11 +9,10 @@
 ; char *           Stack[0xc]:4   directory
 ; char *           Stack[0x10]:4   filename
 ; Local Variables:
-; undefined        Stack[-0x560]:1  local_560
-; undefined        Stack[-0x160]:1  local_160
-; undefined1       Stack[-0x15f]:1  local_15f
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[1024]       Stack[-0x560]:1024  local_560
+; STimestampRecord Stack[-0x160]:328  local_160
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_fileio.cpp_findMaxFieldInTimestampFile_FUN_004b2640 at 004b26a6

@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 132,
+    "complexity_score": 134,
     "cross_reference_count": 1,
-    "function_call_count": 12,
+    "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 77,
+    "pseudocode_lines": 79,
     "suspect_count": 4,
     "suspect_types": [
       "param_count_too_few",
       "special_crt_function",
       "stack_param"
     ],
-    "total_lines": 249
+    "total_lines": 251
   },
   "cross_references": [
     {
@@ -42,11 +42,6 @@
       "name": "CloseHandle"
     },
     {
-      "addr": "EXTERNAL:00000051",
-      "is_variadic": false,
-      "name": "CreateProcessA"
-    },
-    {
       "addr": "006083fc",
       "is_variadic": false,
       "name": "crt_errno.c___set_errno_FUN_006083fc"
@@ -72,19 +67,9 @@
       "name": "DuplicateHandle"
     },
     {
-      "addr": "EXTERNAL:0000006a",
-      "is_variadic": false,
-      "name": "GetCurrentProcess"
-    },
-    {
       "addr": "EXTERNAL:0000006f",
       "is_variadic": false,
       "name": "GetExitCodeProcess"
-    },
-    {
-      "addr": "EXTERNAL:00000074",
-      "is_variadic": false,
-      "name": "GetLastError"
     },
     {
       "addr": "EXTERNAL:0000009c",
@@ -221,32 +206,39 @@
     "pcode_op_count": 502
   },
   "stack_frame": {
-    "frame_size": 128,
+    "frame_size": 112,
     "local_size": 112,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 0,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 2,
-        "type": "undefined2"
+        "size": 68,
+        "type": "_STARTUPINFOA"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "_PROCESS_INFORMATION"
+      },
+      {
+        "is_param": false,
+        "name": "pvStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "HANDLE"
+      },
+      {
+        "is_param": false,
+        "name": "pvStack_14",
+        "offset": -20,
+        "size": 4,
+        "type": "HANDLE"
       },
       {
         "is_param": true,
@@ -275,13 +267,20 @@
         "offset": 16,
         "size": 4,
         "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "in_stack_00000014",
+        "offset": 20,
+        "size": 4,
+        "type": "char * *"
       }
     ]
   },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 11,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "char **in_stack_00000014;",
@@ -289,7 +288,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 20,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "build_command_line(cmdline,in_stack_00000014,envblock,0);",

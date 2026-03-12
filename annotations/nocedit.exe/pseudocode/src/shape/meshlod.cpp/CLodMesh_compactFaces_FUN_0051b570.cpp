@@ -9,12 +9,14 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh *this_ptr)
 
 {
-  CLodFace *pCVar1;
   uint *puVar2;
+  int iVar1;
   int iVar3;
   uint *puVar4;
   int iVar5;
+  uint *puVar3;
   uint *puVar6;
+  uint *puVar5;
   uint *puVar7;
   byte bVar8;
   int local_24;
@@ -22,6 +24,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh *this
   int local_1c;
   int local_18;
   int local_14;
+  CLodFace *pCVar1;
   
   bVar8 = 0;
   iVar3 = 0;
@@ -51,23 +54,25 @@ void __cdecl shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh *this
       if (-1 < (int)puVar2[0x10]) {
         if (local_20 < local_14) {
           puVar4 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_18);
-          puVar7 = puVar4 + (uint)bVar8 * -2 + 1;
-          puVar6 = puVar2 + (uint)bVar8 * -2 + 1;
+          puVar5 = puVar4 + (uint)bVar8 * -2 + 1;
+          puVar3 = puVar2 + (uint)bVar8 * -2 + 1;
           *puVar4 = *puVar2;
-          *puVar7 = *puVar6;
-          puVar7[(uint)bVar8 * -2 + 1] = puVar6[(uint)bVar8 * -2 + 1];
-          (puVar7 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1] =
-               (puVar6 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1];
+          *puVar5 = *puVar3;
+          puVar5[(uint)bVar8 * -2 + 1] = puVar3[(uint)bVar8 * -2 + 1];
+          (puVar5 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1] =
+               (puVar3 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1];
           puVar4[4] = puVar2[4];
           puVar4[(uint)bVar8 * -2 + 5] = puVar2[(uint)bVar8 * -2 + 5];
           (puVar4 + (uint)bVar8 * -2 + 5)[(uint)bVar8 * -2 + 1] =
                (puVar2 + (uint)bVar8 * -2 + 5)[(uint)bVar8 * -2 + 1];
           puVar6 = puVar2 + 7;
           puVar7 = puVar4 + 7;
-          for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-            *puVar7 = *puVar6;
-            puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+          for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
             puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
+            puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+            *puVar7 = *puVar6;
+            puVar6 = puVar6;
+            puVar7 = puVar7;
           }
           puVar4[0xd] = puVar2[0xd];
           puVar4[(uint)bVar8 * -2 + 0xe] = puVar2[(uint)bVar8 * -2 + 0xe];

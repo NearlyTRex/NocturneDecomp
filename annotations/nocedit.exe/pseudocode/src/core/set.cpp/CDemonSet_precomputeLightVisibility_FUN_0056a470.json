@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 44,
-        "line": 143,
+        "line": 133,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 173,
+        "line": 161,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 398,
-    "complexity_score": 269,
+    "complexity_score": 236,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 179,
-    "suspect_count": 8,
+    "pseudocode_lines": 166,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 577
+    "total_lines": 564
   },
   "cross_references": [
     {
@@ -295,12 +295,19 @@
     "pcode_op_count": 1559
   },
   "stack_frame": {
-    "frame_size": 432,
-    "local_size": 424,
+    "frame_size": 6212,
+    "local_size": 6204,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "auStackY_1838",
+        "offset": -6200,
+        "size": 5772,
+        "type": "undefined4[1443]"
+      },
       {
         "is_param": false,
         "name": "local_1a4",
@@ -354,22 +361,22 @@
         "is_param": false,
         "name": "local_74",
         "offset": -116,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CVector3f[2]"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CRect"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
@@ -383,91 +390,91 @@
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "C3DSCamera *"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonSet *"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "C3DSLight *"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "C3DSLight *"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonSet *"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonSet *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -488,7 +495,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 18,
+      "line": 17,
       "match": "auStackY_1838",
       "severity": "moderate",
       "text": "uint auStackY_1838 [1443];",
@@ -496,7 +503,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 97,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "((char *)(*(int *)((int)g_MasterLightList + iVar6) + 0x40),",
@@ -504,7 +511,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 121,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_5c + (uint)bVar11 * -8 + (uint)bVar11 * -8 + 8);",
@@ -512,7 +519,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 122,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*puVar8 = *(uint *)((int)&local_5c + (uint)bVar11 * -8 + 4);",
@@ -520,34 +527,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 137,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->lights[iVar6].camera_light_bounds[0].left + local_2c) =",
+      "text": "*(uint *)((int)&this_ptr->lights[local_14].camera_light_bounds[0].left + local_40)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 139,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->lights[iVar6].camera_light_bounds[0].top + local_2c) = 0",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 152,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->lights[iVar6].camera_light_bounds[0].right + local_2c) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 154,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&this_ptr->lights[iVar6].camera_light_bounds[0].bottom + local_2c)",
+      "text": "*(uint *)((int)&this_ptr->lights[local_14].camera_light_bounds[0].top + local_40)",
       "type": "pointer_cast"
     }
   ]

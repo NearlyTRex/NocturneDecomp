@@ -9,10 +9,10 @@
 int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004f22a0(CVector3f *point,float horizontal_radius,float vertical_tolerance)
 
 {
+  int iVar4;
   int iVar1;
   float fVar2;
   float fVar3;
-  int iVar4;
   
   if (0 < g_HeroCount) {
     iVar4 = 0;

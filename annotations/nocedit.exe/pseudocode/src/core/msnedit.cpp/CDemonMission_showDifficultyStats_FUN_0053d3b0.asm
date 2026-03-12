@@ -8,18 +8,18 @@
 ; Local Variables:
 ; undefined8       Stack[-0x10d8]:8  local_10d8
 ; undefined8       Stack[-0x10cc]:8  local_10cc
-; undefined1       Stack[-0x10c4]:1  local_10c4
-; undefined1       Stack[-0xd1c]:1  local_d1c
-; undefined1       Stack[-0x974]:1  local_974
-; undefined1       Stack[-0x5cc]:1  local_5cc
-; undefined1       Stack[-0x224]:1  local_224
-; undefined8       Stack[-0x30]:8  local_30
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CPickList        Stack[-0x10c4]:936  local_10c4
+; CPickList        Stack[-0xd1c]:936  local_d1c
+; CPickList        Stack[-0x974]:936  local_974
+; CPickList        Stack[-0x5cc]:936  local_5cc
+; char[500]        Stack[-0x224]:500  local_224
+; double           Stack[-0x30]:8  local_30
+; int              Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; char *           Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 0053883c

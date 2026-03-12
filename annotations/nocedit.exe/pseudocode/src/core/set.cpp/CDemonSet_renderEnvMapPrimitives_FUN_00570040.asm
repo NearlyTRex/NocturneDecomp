@@ -10,14 +10,17 @@
 ; int              Stack[0x10]:4   alpha
 ; int              Stack[0x14]:4   stride
 ; Local Variables:
-; undefined4       Stack[-0xf0]:4  local_f0
+; SMRGLHeaderPrimitive Stack[-0xf4]:24  SStack_f4
+; int[12]          Stack[-0xdc]:48  aiStack_dc
 ; undefined4       Stack[-0xac]:4  local_ac
+; undefined4       Stack[-0xa8]:4  uStack_a8
 ; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined1       Stack[-0x20]:1  local_20
-; undefined4       Stack[-0x14]:4  local_14
+; undefined4       Stack[-0x68]:4  uStack_68
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; CVector3i        Stack[-0x20]:12  local_20
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00570010 at 00570028

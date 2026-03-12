@@ -7,8 +7,7 @@
 ; CNPC *           Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   motion_name
 ; Local Variables:
-; undefined1       Stack[-0xd8]:1  local_d8
-; undefined1       Stack[-0xd7]:1  local_d7
+; char[200]        Stack[-0xd8]:200  local_d8
 ;
 ; XREF[1]:
 ;   core_npc.cpp_CNPC_processDamage_FUN_00544d30 at 00544de7

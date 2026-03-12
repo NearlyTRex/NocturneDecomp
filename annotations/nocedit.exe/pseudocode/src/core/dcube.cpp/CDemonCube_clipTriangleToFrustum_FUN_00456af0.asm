@@ -10,7 +10,7 @@
 ; CVector3f *      Stack[0x10]:4   vertex3
 ; uchar            Stack[0x14]:1   texture_id
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310 at 004957d1

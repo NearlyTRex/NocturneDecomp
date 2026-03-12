@@ -9,17 +9,21 @@
 void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filename,char *extension)
 
 {
-  char cVar1;
+  char cVar2;
   wchar_t wVar2;
+  wchar_t wVar3;
   int iVar3;
   byte *pbVar4;
   ushort extraout_var;
+  int iVar4;
   uint uVar5;
   char *pcVar6;
   char *pcVar7;
-  wchar_t *pwVar8;
+  wchar_t *preferred_separator;
   uint local_18;
   char *local_14;
+  wchar_t *pwVar8;
+  char cVar1;
   
   local_14 = path_buffer;
   local_18 = 0;
@@ -29,18 +33,18 @@ void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filena
         cVar1 = *pcVar6;
         *pcVar7 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar6[1];
-        pcVar7[1] = cVar1;
+        cVar2 = pcVar6[1];
         pcVar6 = pcVar6 + 2;
+        pcVar7[1] = cVar2;
         pcVar7 = pcVar7 + 2;
-      } while (cVar1 != '\0');
+      } while (cVar2 != '\0');
       uVar5 = 0xffffffff;
       do {
         if (uVar5 == 0) break;
         uVar5 = uVar5 - 1;
-        cVar1 = *drive;
+        cVar2 = *drive;
         drive = drive + 1;
-      } while (cVar1 != '\0');
+      } while (cVar2 != '\0');
       path_buffer = path_buffer + (~uVar5 - 1);
     }
     else {
@@ -54,8 +58,8 @@ void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filena
     do {
       pwVar8 = (wchar_t *)&local_18;
       wVar2 = mbtowc_peek(directory);
-      wVar2 = normalize_path_separator(wVar2,pwVar8);
-      wchar_to_bytes(wVar2,path_buffer);
+      wVar3 = normalize_path_separator(wVar2,pwVar8);
+      wchar_to_bytes(wVar3,path_buffer);
       iVar3 = mblen(path_buffer);
       ((byte *)path_buffer)[iVar3] = 0;
       path_buffer = mbtowc_next(path_buffer);
@@ -81,18 +85,18 @@ void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filena
     }
   }
   else {
-    wVar2 = mbtowc_peek(filename);
-    wVar2 = normalize_path_separator(wVar2,(wchar_t *)&local_18);
-    if ((CONCAT22(extraout_var,wVar2) != local_18) && ((byte)*path_buffer == local_18)) {
+    wVar3 = mbtowc_peek(filename);
+    wVar3 = normalize_path_separator(wVar3,(wchar_t *)&local_18);
+    if ((CONCAT22(extraout_var,wVar3) != local_18) && ((byte)*path_buffer == local_18)) {
       path_buffer = (char *)((byte *)path_buffer + 1);
     }
     for (; *filename != '\0'; filename = mbtowc_next(filename)) {
-      pwVar8 = (wchar_t *)&local_18;
-      wVar2 = mbtowc_peek(filename);
-      wVar2 = normalize_path_separator(wVar2,pwVar8);
-      wchar_to_bytes(wVar2,path_buffer);
-      iVar3 = mblen(path_buffer);
-      ((byte *)path_buffer)[iVar3] = 0;
+      preferred_separator = (wchar_t *)&local_18;
+      wVar3 = mbtowc_peek(filename);
+      wVar3 = normalize_path_separator(wVar3,preferred_separator);
+      wchar_to_bytes(wVar3,path_buffer);
+      iVar4 = mblen(path_buffer);
+      ((byte *)path_buffer)[iVar4] = 0;
       path_buffer = mbtowc_next(path_buffer);
     }
   }

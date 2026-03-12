@@ -11,13 +11,17 @@ void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemon
 {
   int iVar1;
   char (*pacVar2) [307200];
+  char (*pacVar1) [307200];
   CDemonLight *pCVar3;
+  int iVar2;
   ushort *puVar4;
   uint uVar5;
   uint uVar6;
   int *piVar7;
   int *piVar8;
+  int iVar3;
   int iVar9;
+  int iVar4;
   byte bVar10;
   void *apvStackY_185c [1523];
   int local_80;
@@ -46,10 +50,8 @@ void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemon
   
   bVar10 = 0;
   local_40 = 0x80;
-  local_3c = 0;
   iVar1 = _strcmp(light_source->filter_name,"movscrn.raw");
   if (iVar1 == 0) {
-    local_3c = 1;
     local_40 = 0x100;
   }
   if (rect == (CRect *)0x0) {
@@ -64,18 +66,18 @@ void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemon
   g_LightBufferPoolIndex = uVar6;
   light_source->corona_visibility_buffers = (int *)pacVar2;
   uVar5 = g_LightBufferPoolIndex + 1;
-  pacVar2 = g_LightBufferPool + uVar6;
+  pacVar1 = g_LightBufferPool + uVar6;
   if (0x18 < uVar5) {
-    pacVar2 = (char (*) [307200])0x0;
+    pacVar1 = (char (*) [307200])0x0;
   }
   g_LightBufferPoolIndex = uVar5;
-  light_source->corona_depth_buffer = (int *)pacVar2;
+  light_source->corona_depth_buffer = (int *)pacVar1;
   g_LightBufferPoolIndex = g_LightBufferPoolIndex + 1;
-  pacVar2 = g_LightBufferPool + uVar5;
+  pacVar1 = g_LightBufferPool + uVar5;
   if (0x18 < (uint)g_LightBufferPoolIndex) {
-    pacVar2 = (char (*) [307200])0x0;
+    pacVar1 = (char (*) [307200])0x0;
   }
-  light_source->corona_lightmap_indices = (int *)pacVar2;
+  light_source->corona_lightmap_indices = (int *)pacVar1;
   if (((light_source->corona_visibility_buffers == (int *)0x0) ||
       (light_source->corona_depth_buffer == (int *)0x0)) ||
      (light_source->corona_lightmap_indices == (int *)0x0)) {
@@ -99,54 +101,54 @@ void * __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10(CDemon
     (&local_78)[(uint)bVar10 * -2 + (uint)bVar10 * -2] = (void *)*piVar8;
     (&local_78 + (uint)bVar10 * -2 + (uint)bVar10 * -2)[(uint)bVar10 * -2 + 1] =
          (void *)piVar8[(uint)bVar10 * -2 + 1];
-    iVar1 = 0;
+    iVar3 = 0;
     pCVar3 = light_source;
     if (0 < (int)local_78) {
       do {
-        pCVar3->left_extent[0] = 999;
-        iVar1 = iVar1 + 1;
-        pCVar3->right_extent[0] = 0;
         pCVar3 = (CDemonLight *)&(pCVar3->base).base.position;
-      } while (iVar1 < (int)local_78);
+        pCVar3->left_extent[0] = 999;
+        iVar3 = iVar3 + 1;
+        pCVar3->right_extent[0] = 0;
+        pCVar3 = pCVar3;
+      } while (iVar3 < (int)local_78);
     }
-    iVar1 = local_74 + 1;
-    if (iVar1 < this_ptr->display_height) {
-      iVar9 = (int)((light_source->base).base.rotation_matrix.m + -1) + local_74 * 4;
+    iVar3 = local_74 + 1;
+    if (iVar3 < this_ptr->display_height) {
+      iVar2 = (int)((light_source->base).base.rotation_matrix.m + -1) + local_74 * 4;
       do {
-        *(uint *)(iVar9 + 0x14c8) = 999;
-        *(uint *)(iVar9 + 0x1888) = 0;
-        iVar1 = iVar1 + 1;
-        iVar9 = iVar9 + 4;
-      } while (iVar1 < this_ptr->display_height);
+        *(uint *)(iVar2 + 0x14c8) = 999;
+        *(uint *)(iVar2 + 0x1888) = 0;
+        iVar3 = iVar3 + 1;
+        iVar2 = iVar2 + 4;
+      } while (iVar3 < this_ptr->display_height);
     }
   }
   local_2c = local_78;
   local_48 = local_78;
   if ((int)local_78 <= local_74) {
-    local_58 = local_80 * 0xc;
-    local_4c = local_80 * 4;
+    iVar3 = local_80 * 4;
     local_44 = (int)local_78 * 0x500;
     local_50 = g_PrecomputedWorldPositions + (int)local_78 * 0x140;
     local_54 = g_PrecomputedSurfaceNormals + (int)local_78 * 0x140;
     local_48 = (void *)((int)(light_source->base).base.rotation_matrix.m + (int)local_78 * 4 + -0x10
                        );
     do {
-      local_30 = (CVector3i *)((int)&local_50->x + local_58);
+      local_30 = local_50 + local_80;
       local_34 = 999;
-      local_28 = (float *)((int)&local_54->x + local_58);
-      local_20 = (int *)((int)light_source->corona_visibility_buffers + local_4c + local_44);
-      local_1c = (uint *)((int)light_source->corona_depth_buffer + local_4c + local_44);
+      local_28 = &local_54[local_80].x;
+      local_20 = (int *)((int)light_source->corona_visibility_buffers + iVar3 + local_44);
+      local_1c = (uint *)((int)light_source->corona_depth_buffer + iVar3 + local_44);
       local_38 = 0;
-      local_24 = (int *)((int)light_source->corona_lightmap_indices + local_4c + local_44);
+      local_24 = (int *)((int)light_source->corona_lightmap_indices + iVar3 + local_44);
       local_18 = local_80;
       if (local_80 <= local_7c) {
         do {
           if ((((local_18 < 1) || ((int)local_2c < 1)) ||
-              ((iVar1 = local_18 * this_ptr->scale_factor, iVar9 = this_ptr->framebuffer_width + -2,
-               iVar1 - iVar9 != 0 && iVar9 <= iVar1 ||
-               (iVar9 = (int)local_2c * this_ptr->scale_factor,
-               iVar1 = this_ptr->framebuffer_height + -2, iVar9 - iVar1 != 0 && iVar1 <= iVar9))))
-             || ((local_3c == 0 &&
+              ((iVar2 = local_18 * this_ptr->scale_factor, iVar9 = this_ptr->framebuffer_width + -2,
+               iVar2 - iVar9 != 0 && iVar9 <= iVar2 ||
+               (iVar4 = (int)local_2c * this_ptr->scale_factor,
+               iVar2 = this_ptr->framebuffer_height + -2, iVar4 - iVar2 != 0 && iVar2 <= iVar4))))
+             || ((iVar1 != 0 &&
                  (local_28[2] * (light_source->base).base.rotation_matrix.m[2].z +
                   *local_28 * (light_source->base).base.rotation_matrix.m[0].z +
                   local_28[1] * (light_source->base).base.rotation_matrix.m[1].z < 0.0)))) {

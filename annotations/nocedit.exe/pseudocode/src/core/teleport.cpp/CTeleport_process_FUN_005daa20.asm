@@ -7,7 +7,8 @@
 ; CTeleport *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; CBoundingBox3D   Stack[-0x2c]:24  CStack_2c
+; CVector3f        Stack[-0x14]:12  local_14
 ;
 ; Referenced Globals:
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740

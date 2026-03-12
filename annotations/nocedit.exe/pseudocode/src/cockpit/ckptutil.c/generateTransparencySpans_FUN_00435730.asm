@@ -11,15 +11,15 @@
 ; void *           Stack[0x14]:4   span_data_buffer
 ; int              Stack[0x18]:4   transparent_color_index
 ; Local Variables:
-; undefined        Stack[-0x130]:1  local_130
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x130]:256  local_130
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; byte *           Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int *            Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0 at 00431802

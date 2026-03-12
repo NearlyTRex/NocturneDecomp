@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   output_world_point
 ; CVector3f *      Stack[0xc]:4   input_local_point
 ; Local Variables:
-; undefined1       Stack[-0x10]:1  local_10
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; XREF[146]:
 ;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040c8f0 at 0040c903

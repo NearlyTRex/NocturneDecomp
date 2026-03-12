@@ -9,13 +9,13 @@
 int __cdecl engine_winfont_cpp_CWinFont_getStringHeight_FUN_005f2b00(CWinFont *this_ptr,char *text_string)
 
 {
-  char cVar1;
   int iVar2;
   BOOL BVar3;
   uint uVar4;
   char *pcVar5;
   byte bVar6;
   tagSIZE local_10;
+  char cVar1;
   
   bVar6 = 0;
   iVar2 = engine_winfont_cpp_CWinFont_createTextBackground_FUN_005f2860(this_ptr,-1,-1);
@@ -27,8 +27,9 @@ int __cdecl engine_winfont_cpp_CWinFont_getStringHeight_FUN_005f2b00(CWinFont *t
   do {
     if (uVar4 == 0) break;
     uVar4 = uVar4 - 1;
-    cVar1 = *pcVar5;
     pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+    cVar1 = *pcVar5;
+    pcVar5 = pcVar5;
   } while (cVar1 != '\0');
   BVar3 = (*g_GetTextExtentPoint32A)
                     (this_ptr->device_context_handle,text_string,~uVar4 - 1,&local_10);

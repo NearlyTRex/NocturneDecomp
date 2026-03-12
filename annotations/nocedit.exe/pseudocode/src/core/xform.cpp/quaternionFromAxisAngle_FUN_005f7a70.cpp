@@ -9,11 +9,11 @@
 CQuaternion4f * __stack2_esi core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70(float angle_radians,CVector3f *axis_ptr,CQuaternion4f *quat_out)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
   float10 fVar4;
   float10 fVar5;
+  float fVar3;
+  float fVar1;
+  float fVar2;
   
   fVar4 = (float10)fsin((float10)angle_radians * (float10)0.5);
   fVar5 = (float10)fcos((float10)angle_radians * (float10)0.5);

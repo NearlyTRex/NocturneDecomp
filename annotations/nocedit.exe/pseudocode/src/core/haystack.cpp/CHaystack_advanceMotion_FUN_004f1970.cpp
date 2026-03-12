@@ -12,6 +12,7 @@ void __cdecl core_haystack_cpp_CHaystack_advanceMotion_FUN_004f1970(CHaystack *t
 
 {
   int iVar1;
+  int iVar2;
   
   do {
     iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
@@ -19,22 +20,22 @@ void __cdecl core_haystack_cpp_CHaystack_advanceMotion_FUN_004f1970(CHaystack *t
     switch(iVar1) {
     case 0x65:
       core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004f1ab0(this_ptr,INT_02db8734);
-      iVar1 = this_ptr->attack_side;
+      iVar2 = this_ptr->attack_side;
       goto LAB_004f19bc;
     case 0x66:
       core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004f1ab0(this_ptr,INT_02db8738);
-      iVar1 = this_ptr->attack_side;
+      iVar2 = this_ptr->attack_side;
 LAB_004f19bc:
-      this_ptr->attack_side = (uint)(iVar1 == 0);
+      this_ptr->attack_side = (uint)(iVar2 == 0);
       break;
     case 0x67:
     case 0x69:
     case 0x6b:
-      iVar1 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
+      iVar2 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
                         ((double)(this_ptr->base).base.base.location.position.x,
                          (double)(this_ptr->base).base.base.location.position.y,
                          (double)(this_ptr->base).base.base.location.position.z,40.0);
-      if (iVar1 != 0) {
+      if (iVar2 != 0) {
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"box-swing?.wav");
       }
@@ -42,11 +43,11 @@ LAB_004f19bc:
     case 0x68:
     case 0x6a:
     case 0x6c:
-      iVar1 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
+      iVar2 = sound_sndmain_cpp_isWithinListenerRadius_FUN_005aa290
                         ((double)(this_ptr->base).base.base.location.position.x,
                          (double)(this_ptr->base).base.base.location.position.y,
                          (double)(this_ptr->base).base.base.location.position.z,40.0);
-      if ((iVar1 != 0) && (iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.4), iVar1 != 0)) {
+      if ((iVar2 != 0) && (iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.4), iVar2 != 0)) {
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"box-punch?.wav");
       }

@@ -6,8 +6,7 @@
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0x6f]:1  local_6f
+; char[100]        Stack[-0x70]:100  local_70
 ;
 ; XREF[3]:
 ;   core_mission.cpp_CDemonMission_startMission_FUN_00524760 at 00524864

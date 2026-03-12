@@ -11,60 +11,61 @@
 EXCEPTION_DISPOSITION __cdecl ExceptionHandler(EXCEPTION_RECORD *ExceptionRecord,void *EstablisherFrame,CONTEXT *ContextRecord,void *DispatcherContext)
 
 {
-  byte *pbVar1;
   int iVar2;
   long lVar3;
   EXCEPTION_DISPOSITION EVar4;
+  int iVar1;
   int iVar5;
   PEXCEPTION_RECORD local_14;
+  byte *pbVar1;
   
   if ((ExceptionRecord->ExceptionFlags & 6) != 0) {
     return ExceptionContinueSearch;
   }
   switch(ExceptionRecord->ExceptionCode) {
   case 0xc000008d:
-    iVar5 = 0x82;
+    iVar1 = 0x82;
     break;
   case 0xc000008e:
 switchD_0060aa00_caseD_c000008e:
-    iVar5 = 0x83;
+    iVar1 = 0x83;
     break;
   case 0xc000008f:
-    iVar5 = 0x86;
+    iVar1 = 0x86;
     break;
   case 0xc0000090:
     pbVar1 = (byte *)(ContextRecord->FloatSave).ErrorOffset;
-    iVar5 = 0x81;
+    iVar1 = 0x81;
     if (*(short *)pbVar1 == -0x527) {
-      iVar5 = 0x88;
+      iVar1 = 0x88;
     }
     else if (*(short *)pbVar1 == -0xe27) {
-      iVar5 = 0x8e;
+      iVar1 = 0x8e;
     }
     else {
       if (((*pbVar1 == 0xdb) || (*pbVar1 == 0xdf)) && ((pbVar1[1] & 0x30) == 0x10)) {
-        iVar5 = 0x8d;
+        iVar1 = 0x8d;
       }
       if ((((*pbVar1 & 1) == 0) && ((pbVar1[1] & 0x30) == 0x30)) &&
          ((((ContextRecord->FloatSave).TagWord & 0xffff) >>
            ((byte)((((ContextRecord->FloatSave).StatusWord & 0xffff) << 2) >> 0xd) & 7) * '\x02' & 1
           ) == 1)) goto switchD_0060aa00_caseD_c000008e;
-      if (iVar5 == -1) goto switchD_0060aa00_default;
+      if (iVar1 == -1) goto switchD_0060aa00_default;
     }
     break;
   case 0xc0000091:
-    iVar5 = 0x84;
+    iVar1 = 0x84;
     break;
   case 0xc0000092:
     if (((ContextRecord->FloatSave).StatusWord & 0x200) == 0) {
-      iVar5 = 0x8b;
+      iVar1 = 0x8b;
     }
     else {
-      iVar5 = 0x8a;
+      iVar1 = 0x8a;
     }
     break;
   case 0xc0000093:
-    iVar5 = 0x85;
+    iVar1 = 0x85;
     break;
   default:
 switchD_0060aa00_default:
@@ -88,8 +89,8 @@ switchD_0060aa00_default:
   }
   g_SignalHandlingActive = '\x01';
   ClearFPUExceptions();
-  iVar5 = raiseFPE(iVar5);
-  if ((iVar5 != -1) && (g_SignalHandlingActive != '\0')) {
+  iVar1 = raiseFPE(iVar1);
+  if ((iVar1 != -1) && (g_SignalHandlingActive != '\0')) {
     *(ushort *)&(ContextRecord->FloatSave).StatusWord =
          ((ushort)(ContextRecord->FloatSave).StatusWord >> 8 & 0x7f) << 8;
     return ExceptionContinueExecution;

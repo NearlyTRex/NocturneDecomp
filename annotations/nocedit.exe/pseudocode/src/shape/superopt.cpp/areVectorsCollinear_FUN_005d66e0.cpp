@@ -9,8 +9,7 @@
 int __cdecl shape_superopt_cpp_areVectorsCollinear_FUN_005d66e0(CVector3d *vec1,CVector3d *vec2)
 
 {
-  double dVar1;
-  double dVar2;
+  double dVar3;
   double local_158;
   double local_150;
   double local_148;
@@ -23,6 +22,8 @@ int __cdecl shape_superopt_cpp_areVectorsCollinear_FUN_005d66e0(CVector3d *vec1,
   double local_50;
   double local_48;
   double local_40;
+  double dVar1;
+  double dVar2;
   
   local_50 = vec1->x;
   local_48 = vec1->y;
@@ -33,16 +34,16 @@ int __cdecl shape_superopt_cpp_areVectorsCollinear_FUN_005d66e0(CVector3d *vec1,
   dVar1 = SQRT(local_50 * local_50 + local_48 * local_48 + local_40 * local_40);
   dVar2 = SQRT(local_68 * local_68 + local_60 * local_60 + local_58 * local_58);
   if (dVar1 < dVar2) {
-    dVar1 = dVar1 / dVar2;
-    local_68 = local_68 * dVar1;
-    local_60 = local_60 * dVar1;
-    local_58 = local_58 * dVar1;
+    dVar3 = dVar1 / dVar2;
+    local_68 = local_68 * dVar3;
+    local_60 = local_60 * dVar3;
+    local_58 = local_58 * dVar3;
   }
   else {
-    dVar2 = dVar2 / dVar1;
-    local_50 = local_50 * dVar2;
-    local_48 = local_48 * dVar2;
-    local_40 = local_40 * dVar2;
+    dVar3 = dVar2 / dVar1;
+    local_50 = local_50 * dVar3;
+    local_48 = local_48 * dVar3;
+    local_40 = local_40 * dVar3;
   }
   local_c0 = local_48 - local_60;
   local_148 = local_40 - local_58;

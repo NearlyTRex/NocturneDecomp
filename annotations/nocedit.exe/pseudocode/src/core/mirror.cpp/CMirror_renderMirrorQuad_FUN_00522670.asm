@@ -6,28 +6,15 @@
 ; Parameters:
 ; CMirror *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined        Stack[-0x64]:1  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
+; SMRGLHeaderPrimitive Stack[-0x64]:24  local_64
 ; undefined4       Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; CVector3i        Stack[-0x3c]:12  local_3c
+; CVector3i        Stack[-0x30]:12  local_30
+; CVector3i        Stack[-0x24]:12  local_24
+; CVector3i        Stack[-0x18]:12  local_18
 ;
 ; Referenced Globals:
 ;   float g_MirrorProjectionScale = 256

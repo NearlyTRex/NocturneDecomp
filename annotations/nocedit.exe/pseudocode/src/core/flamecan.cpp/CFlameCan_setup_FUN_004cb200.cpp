@@ -9,12 +9,13 @@
 void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004cb200(CFlameCan *this_ptr)
 
 {
-  CVector3f *pCVar1;
-  float fVar2;
-  float fVar3;
-  CDemonActor_vtable *pCVar4;
+  float fVar1;
   CBoundingBox3D local_38;
   float afStack_20 [6];
+  float fVar2;
+  CVector3f *pCVar1;
+  CDemonActor_vtable *pCVar4;
+  float fVar3;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
@@ -35,11 +36,11 @@ void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004cb200(CFlameCan *this_ptr)
   }
   fVar2 = (this_ptr->flame).flame_size.x;
   (this_ptr->flame).which_flame = 0;
-  fVar2 = fVar2 * (float)2;
+  fVar1 = (float)2;
   fVar3 = (this_ptr->flame).flame_size.y;
   (this_ptr->flame).globe_scalar = 0.0;
-  if (fVar3 < fVar2) {
-    (this_ptr->flame).flame_size.y = fVar2;
+  if (fVar3 < fVar2 * fVar1) {
+    (this_ptr->flame).flame_size.y = fVar2 * fVar1;
   }
   this_ptr->is_visible = 0;
   (this_ptr->base).is_transparent = 1;

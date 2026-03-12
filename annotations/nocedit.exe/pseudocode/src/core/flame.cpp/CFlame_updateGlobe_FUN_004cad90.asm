@@ -8,10 +8,8 @@
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x28]:12  local_28
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_flame.cpp_CFlame_processInEditor_FUN_004caf60 at 004cb08a

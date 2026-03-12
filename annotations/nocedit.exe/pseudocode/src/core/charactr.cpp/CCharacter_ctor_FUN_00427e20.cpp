@@ -66,12 +66,12 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   ADJ(pvVar4)->look_at_head_bone = -1;
   pCVar4 = ADJ(pvVar4);
   do {
-    pfVar5 = &(pCVar4->base).orient_matrix.m[0].z;
+    pCVar4 = (CCharacter *)&(pCVar4->base).orient_matrix.m[0].z;
     pCVar4->carry_hands[0].bone_index = -1;
     pCVar4->carry_hands[0].secondary_bone_index = -1;
     pCVar4->carry_hands[0].carry_actor = (CDemonActor *)0x0;
-    pCVar4 = (CCharacter *)pfVar5;
-  } while (pfVar5 != (float *)(ADJ(pvVar4)->base.create_event + 0x10));
+    pCVar4 = pCVar4;
+  } while (pCVar4 != (CCharacter *)(ADJ(pvVar4)->base.create_event + 0x10));
   ADJ(pvVar4)->look_at_yaw = 0.0;
   ADJ(pvVar4)->look_at_pitch = 0.0;
   ADJ(pvVar4)->look_at_weight = 0.0;

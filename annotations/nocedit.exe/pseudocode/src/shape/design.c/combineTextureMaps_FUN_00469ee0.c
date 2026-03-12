@@ -9,11 +9,11 @@
 void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
 
 {
-  float fVar1;
-  char cVar2;
-  float fVar3;
+  char cVar1;
+  int iVar2;
   int iVar4;
   char *pcVar5;
+  char *pcVar3;
   char *pcVar6;
   byte bVar7;
   char local_134 [80];
@@ -30,17 +30,20 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
   float local_1c;
   float local_18;
   float local_14;
+  float fVar3;
+  char cVar2;
+  float fVar1;
   
   bVar7 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_94,0x46,0,0,"Enter response file :");
   iVar4 = -1;
-  pcVar5 = local_94;
+  pcVar3 = local_94;
   do {
     if (iVar4 == 0) break;
     iVar4 = iVar4 + -1;
-    cVar2 = *pcVar5;
-    pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
+    cVar2 = *pcVar3;
+    pcVar3 = pcVar3 + (uint)bVar7 * -2 + 1;
   } while (cVar2 != '\0');
   if (iVar4 != -2) {
     local_40 = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -57,20 +60,20 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
       _fscanf(local_40,"%s\n",local_e4);
       _fscanf(local_40,"%f,%f,%f,%f\n",&local_20,&local_1c,&local_18,&local_14);
       for (local_34 = 0; local_34 < g_PolygonCount; local_34 = local_34 + 1) {
-        iVar4 = _strcmp
+        iVar2 = _strcmp
                           (g_ModelPolygonData[local_34].texture_name,local_e4);
-        if (iVar4 == 0) {
+        if (iVar2 == 0) {
           pcVar5 = local_134;
           pcVar6 = g_ModelPolygonData[local_34].texture_name;
           do {
-            cVar2 = *pcVar5;
-            *pcVar6 = cVar2;
-            if (cVar2 == '\0') break;
-            cVar2 = pcVar5[1];
+            cVar1 = *pcVar5;
+            *pcVar6 = cVar1;
+            if (cVar1 == '\0') break;
+            cVar1 = pcVar5[1];
             pcVar5 = pcVar5 + 2;
-            pcVar6[1] = cVar2;
+            pcVar6[1] = cVar1;
             pcVar6 = pcVar6 + 2;
-          } while (cVar2 != '\0');
+          } while (cVar1 != '\0');
           for (local_3c = 0; local_3c < 4; local_3c = local_3c + 1) {
             fVar1 = g_ModelPolygonData[local_34].uv_v[local_3c];
             fVar3 = (float)0.0039215686274509803;

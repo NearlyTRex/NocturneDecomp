@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 63,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 38,
+    "pseudocode_lines": 39,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 124
+    "total_lines": 125
   },
   "cross_references": [],
   "function": {
@@ -145,21 +145,21 @@
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -187,7 +187,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 20,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_1c) + screen_x * 4);",
@@ -195,10 +195,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 24,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);",
+      "text": "uVar1 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar2);",
       "type": "pointer_cast"
     }
   ]

@@ -9,12 +9,12 @@
 void __cdecl core_cloth_cpp_drawVertexMarker_FUN_0043c6e0(int vert_index)
 
 {
-  SRenderVertex *pSVar1;
   int y;
   int iVar2;
   int x;
   int y_00;
   int x_00;
+  SRenderVertex *pSVar1;
   
   pSVar1 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   if ((int)(pSVar1[vert_index].projected_vertex.screen_x & -0x80000000) == 0) {

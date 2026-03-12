@@ -7,12 +7,48 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   class_name
 ; Local Variables:
-; undefined1       Stack[-0x16c]:1  local_16c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CBoundingBox3D   Stack[-0x16c]:24  local_16c
+; CBoundingBox3D   Stack[-0x154]:24  CStack_154
+; CVector3f        Stack[-0x13c]:12  CStack_13c
+; CVector3f        Stack[-0x130]:12  CStack_130
+; float            Stack[-0x124]:4  fStack_124
+; float            Stack[-0x120]:4  fStack_120
+; float            Stack[-0x11c]:4  fStack_11c
+; CVector3f        Stack[-0x118]:12  CStack_118
+; CVector3f        Stack[-0x10c]:12  CStack_10c
+; float            Stack[-0x100]:4  fStack_100
+; float            Stack[-0xfc]:4  fStack_fc
+; float            Stack[-0xf8]:4  fStack_f8
+; CVector3f        Stack[-0xf4]:12  CStack_f4
+; CVector3f        Stack[-0xe8]:12  CStack_e8
+; CVector3f        Stack[-0xdc]:12  CStack_dc
+; float            Stack[-0xd0]:4  fStack_d0
+; float            Stack[-0xcc]:4  fStack_cc
+; float            Stack[-0xc8]:4  fStack_c8
+; CVector3f        Stack[-0xc4]:12  CStack_c4
+; CVector3f        Stack[-0xb8]:12  CStack_b8
+; CVector3f        Stack[-0xac]:12  CStack_ac
+; CVector3f        Stack[-0xa0]:12  CStack_a0
+; CVector3f        Stack[-0x94]:12  CStack_94
+; CVector3f        Stack[-0x88]:12  CStack_88
+; CVector3f        Stack[-0x7c]:12  CStack_7c
+; float            Stack[-0x70]:4  fStack_70
+; float            Stack[-0x6c]:4  fStack_6c
+; float            Stack[-0x68]:4  fStack_68
+; float            Stack[-0x64]:4  fStack_64
+; float            Stack[-0x60]:4  fStack_60
+; float            Stack[-0x5c]:4  fStack_5c
+; CVector3f        Stack[-0x58]:12  CStack_58
+; CVector3f        Stack[-0x4c]:12  CStack_4c
+; CVector3f        Stack[-0x40]:12  CStack_40
+; int              Stack[-0x30]:4  iStack_30
+; int              Stack[-0x2c]:4  iStack_2c
+; float            Stack[-0x28]:4  local_28
+; CVector3f *      Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  fStack_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_handleActionButton_FUN_005c5b90 at 005c5d36

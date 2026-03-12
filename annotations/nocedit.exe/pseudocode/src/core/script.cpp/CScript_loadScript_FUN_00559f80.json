@@ -3,14 +3,14 @@
     "errors": [
       {
         "category": "format_error",
-        "column": 46,
-        "line": 108,
+        "column": 44,
+        "line": 113,
         "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 31,
-        "line": 123,
+        "line": 128,
         "message": "format specifies type 'char *' but the argument has type 'int *' [-Werror,-Wformat]"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 383,
-    "complexity_score": 168,
+    "complexity_score": 173,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 26,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 143,
+    "pseudocode_lines": 148,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 526
+    "total_lines": 531
   },
   "cross_references": [
     {
@@ -390,57 +390,50 @@
         "is_param": false,
         "name": "local_790",
         "offset": -1936,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_3e8",
         "offset": -1000,
-        "size": 1,
-        "type": "undefined1"
+        "size": 512,
+        "type": "char[512]"
       },
       {
         "is_param": false,
         "name": "local_1e8",
         "offset": -488,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1e7",
-        "offset": -487,
-        "size": 1,
-        "type": "undefined1"
+        "size": 260,
+        "type": "char[260]"
       },
       {
         "is_param": false,
         "name": "local_e4",
         "offset": -228,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CStrList *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -468,18 +461,18 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 102,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar2 = (uint *)((int)&this_ptr->parsed_lines->text + iVar10);",
+      "text": "puVar2 = (uint *)((int)&this_ptr->parsed_lines->text + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 103,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar1 = (uint *)((int)&this_ptr->parsed_lines->line_number + iVar10);",
+      "text": "puVar1 = (uint *)((int)&this_ptr->parsed_lines->line_number + iVar2);",
       "type": "pointer_cast"
     }
   ]

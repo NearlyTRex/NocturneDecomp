@@ -10,16 +10,17 @@ void __cdecl core_crossbow_cpp_CCrossbow_process_FUN_00448d30(CCrossbow *this_pt
 
 {
   CVector3f *pCVar1;
+  CVector3f *pCVar2;
   CVector3f CStack_1c;
   CVector3f local_10;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   pCVar1 = (*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,&local_10);
-  pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+  pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)this_ptr,&CStack_1c,pCVar1);
-  (this_ptr->bolt_flame).base.location.position.x = pCVar1->x;
-  (this_ptr->bolt_flame).base.location.position.y = pCVar1->y;
-  (this_ptr->bolt_flame).base.location.position.z = pCVar1->z;
+  (this_ptr->bolt_flame).base.location.position.x = pCVar2->x;
+  (this_ptr->bolt_flame).base.location.position.y = pCVar2->y;
+  (this_ptr->bolt_flame).base.location.position.z = pCVar2->z;
   if (((((this_ptr->base).weapon_state != 2) || ((this_ptr->base).ammo_count < 1)) ||
       ((this_ptr->base).ammo_type != 5)) || (0.0 < (this_ptr->base).fire_cooldown_timer)) {
     core_flame_cpp_CFlame_hide_FUN_004caa70(&this_ptr->bolt_flame);

@@ -12,8 +12,10 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310(CMirro
   SRenderVertex *pSVar1;
   int *piVar2;
   SMRGLHeaderPrimitive *pSVar3;
+  int iVar1;
   CVector3f *pCVar4;
   int iVar5;
+  CVector3f *pCVar2;
   int local_14;
   
   g_MirrorInputVertexCount = (primitive->base).count;
@@ -48,29 +50,29 @@ uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310(CMirro
       (core_mirror_cpp_clipPolygonAgainstPlane_FUN_00521290
                  (this_ptr->clip_planes + 4,g_MirrorInputVertices,g_MirrorInputVertexCount,
                   g_MirrorOutputVertices,&g_MirrorOutputVertexCount),
-      iVar5 = g_MirrorOutputVertexCount, 2 < g_MirrorOutputVertexCount)))) {
+      iVar1 = g_MirrorOutputVertexCount, 2 < g_MirrorOutputVertexCount)))) {
     (this_ptr->clip_primitive).base.base.count = g_MirrorOutputVertexCount;
     (this_ptr->clip_primitive).base.surface_normal.A = (primitive->surface_normal).A;
     (this_ptr->clip_primitive).base.surface_normal.B = (primitive->surface_normal).B;
     (this_ptr->clip_primitive).base.surface_normal.C = (primitive->surface_normal).C;
     local_14 = 0;
     (this_ptr->clip_primitive).base.surface_normal.D = (primitive->surface_normal).D;
-    if (0 < iVar5) {
-      pCVar4 = g_MirrorOutputVertices;
-      iVar5 = 0xea000;
+    if (0 < iVar1) {
+      pCVar2 = g_MirrorOutputVertices;
+      iVar1 = 0xea000;
       do {
         piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-                               transformed_x + iVar5);
-        *piVar2 = (int)ROUND(pCVar4->x * 256.0f);
-        piVar2[1] = (int)ROUND(pCVar4->y * 256.0f);
-        piVar2[2] = (int)ROUND(pCVar4->z * 256.0f);
+                               transformed_x + iVar1);
+        *piVar2 = (int)ROUND(pCVar2->x * 256.0f);
+        piVar2[1] = (int)ROUND(pCVar2->y * 256.0f);
+        piVar2[2] = (int)ROUND(pCVar2->z * 256.0f);
         *(uint *)
-         ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x + iVar5) =
+         ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x + iVar1) =
              0xffffffff;
         (this_ptr->clip_primitive).vertices[0] = local_14 + 0x4e00;
         engine_matrix_c_projectCachedPoint_FUN_0050cda0(local_14 + 0x4e00);
-        pCVar4 = pCVar4 + 1;
-        iVar5 = iVar5 + 0x30;
+        pCVar2 = pCVar2 + 1;
+        iVar1 = iVar1 + 0x30;
         local_14 = local_14 + 1;
         this_ptr = (CMirror *)&(this_ptr->reflection).corner1.y;
       } while (local_14 < g_MirrorOutputVertexCount);

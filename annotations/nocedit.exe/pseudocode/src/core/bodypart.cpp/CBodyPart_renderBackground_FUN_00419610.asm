@@ -7,7 +7,7 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   layer_flag
 ; Local Variables:
-; undefined1       Stack[-0x20]:1  local_20
+; CBoundingBox3D   Stack[-0x20]:24  local_20
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_going_into_background_00615cdf

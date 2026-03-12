@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 79,
-        "line": 84,
+        "line": 85,
         "message": "use of undeclared identifier 'stack0xffffffdc'"
       },
       {
         "category": "undeclared_identifier",
         "column": 77,
-        "line": 103,
+        "line": 104,
         "message": "use of undeclared identifier 'stack0xffffffdc'"
       }
     ],
@@ -19,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 330,
-    "complexity_score": 267,
+    "complexity_score": 268,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 29,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 102,
+    "pseudocode_lines": 103,
     "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_ref",
       "warning_inlined_function"
     ],
-    "total_lines": 432
+    "total_lines": 433
   },
   "cross_references": [
     {
@@ -348,71 +348,22 @@
         "is_param": false,
         "name": "local_c4",
         "offset": -196,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "SMRGLHeaderPrimitive"
       },
       {
         "is_param": false,
-        "name": "local_c0",
-        "offset": -192,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_bc",
-        "offset": -188,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b8",
-        "offset": -184,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b4",
-        "offset": -180,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b0",
-        "offset": -176,
-        "size": 4,
-        "type": "undefined4"
+        "name": "auStack_ac",
+        "offset": -172,
+        "size": 64,
+        "type": "uint[16]"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_63",
-        "offset": -99,
-        "size": 1,
-        "type": "undefined1"
+        "size": 72,
+        "type": "SMRGLTextureBasic[3]"
       },
       {
         "is_param": false,
@@ -426,28 +377,28 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -469,7 +420,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 27,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));",
@@ -477,7 +428,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 27,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.x * 65535.0f));",
@@ -485,7 +436,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 29,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.y * 65535.0f));",
@@ -493,7 +444,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 29,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.y * 65535.0f));",
@@ -501,7 +452,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 31,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.z * 65535.0f));",
@@ -509,7 +460,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 31,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].normal.z * 65535.0f));",
@@ -517,7 +468,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 33,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].plane_distance * 65535.0f *",
@@ -525,7 +476,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 33,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].plane_distance * 65535.0f *",
@@ -533,7 +484,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 59,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].uv_u[local_18] *",
@@ -541,7 +492,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 59,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].uv_u[local_18] *",
@@ -549,7 +500,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 62,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].uv_v[local_18] *",
@@ -557,7 +508,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 62,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[polygon_index].uv_v[local_18] *",
@@ -565,7 +516,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 77,
+      "line": 78,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);",
@@ -573,7 +524,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 96,
+      "line": 97,
       "match": "&stack0xffffffdc",
       "severity": "moderate",
       "text": "engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);",

@@ -10,8 +10,10 @@ int __cdecl shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel
 
 {
   int iVar1;
+  int iVar2;
   SMRGLModelBounds *pSVar2;
   int *piVar3;
+  int *piVar5;
   int *piVar4;
   byte bVar5;
   SMRGLModelBounds local_c4;
@@ -39,18 +41,21 @@ int __cdecl shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel
     local_20 = engine_model_c_loadModelFile_FUN_00527ec0(filename);
     engine_model_c_getMRGLBounds_FUN_00528140(local_20,&local_c4);
     pSVar2 = &local_c4;
-    piVar3 = local_90;
+    piVar5 = local_90;
     for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *piVar3 = (pSVar2->min_scaled).x;
-      pSVar2 = (SMRGLModelBounds *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);
-      piVar3 = piVar3 + (uint)bVar5 * -2 + 1;
+      pSVar2 = (SMRGLModelBounds *)((int)pSVar2 + (uint)bVar5 * -8 + 4);
+      *piVar5 = (pSVar2->min_scaled).x;
+      pSVar2 = pSVar2;
+      piVar5 = piVar5 + (uint)bVar5 * -2 + 1;
     }
     piVar3 = local_90;
     piVar4 = &local_5c;
-    for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *piVar4 = *piVar3;
-      piVar3 = piVar3 + (uint)bVar5 * -2 + 1;
+    for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
       piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
+      piVar3 = piVar3 + (uint)bVar5 * -2 + 1;
+      *piVar4 = *piVar3;
+      piVar3 = piVar3;
+      piVar4 = piVar4;
     }
     local_1c = (float)(local_50 - local_5c) * (float)0.00390625;
     local_18 = (float)(local_48 - local_54) * (float)0.00390625;

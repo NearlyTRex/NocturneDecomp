@@ -20,7 +20,6 @@
 ;   crt_math.c_print_error_message_FUN_0060e298
 ;   crt_math.c_set_domain_error_errno_FUN_006027a0
 ;   crt_math.c_set_range_error_errno_FUN_006027ac
-;   crt_operation.c_always_zero_FUN_0060fa8b
 ;
 ; *****************************************************************************
 

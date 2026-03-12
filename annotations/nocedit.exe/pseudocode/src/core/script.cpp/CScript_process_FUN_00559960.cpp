@@ -9,13 +9,13 @@
 void __cdecl core_script_cpp_CScript_process_FUN_00559960(CScript *this_ptr)
 
 {
-  CCharacter *this_ptr_00;
-  int iVar1;
   int iVar2;
   EDeathState EVar3;
   int iVar4;
   float local_18;
   float local_14;
+  int iVar1;
+  CCharacter *this_ptr_00;
   
   g_ScriptEventsEnabled = 0;
   if ((0 < this_ptr->parsed_line_count) && (this_ptr->parsed_lines != (SScriptLine *)0x0)) {

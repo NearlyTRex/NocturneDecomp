@@ -10,10 +10,8 @@
 ; CVector3f *      Stack[0x10]:4   aabb_min
 ; CVector3f *      Stack[0x14]:4   aabb_max
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined1       Stack[-0x18]:1  local_18
+; CVector3f        Stack[-0x24]:12  local_24
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0 at 0056d807

@@ -6,9 +6,7 @@
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
+; UOrientationVector Stack[-0xc]:12  local_c
 ;
 ; XREF[34]:
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 004130c5

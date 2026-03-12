@@ -8,8 +8,9 @@
 ; short *          Stack[0x8]:4   output_buffer
 ; int              Stack[0xc]:4   num_samples
 ; Local Variables:
-; undefined1       Stack[-0xc]:1  local_c
-; undefined1       Stack[-0x8]:1  local_8
+; char[400]        Stack[-0x19c]:400  acStack_19c
+; uint             Stack[-0xc]:4  local_c
+; DWORD            Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c

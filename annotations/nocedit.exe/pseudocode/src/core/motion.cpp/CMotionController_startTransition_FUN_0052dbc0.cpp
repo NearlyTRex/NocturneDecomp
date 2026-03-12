@@ -9,11 +9,11 @@
 void __cdecl core_motion_cpp_CMotionController_startTransition_FUN_0052dbc0(CMotionController *this_ptr,SMotionTransition *transition)
 
 {
-  float fVar1;
-  EMotionTransitionCmd EVar2;
   int iVar3;
   SMotion *pSVar4;
   float local_18;
+  EMotionTransitionCmd EVar2;
+  float fVar1;
   
   local_18 = transition->to_frame_number;
   if (local_18 == -1.0f) {

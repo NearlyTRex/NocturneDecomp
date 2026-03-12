@@ -11,6 +11,7 @@ double __cdecl sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0(CS
 {
   int iVar1;
   double dVar2;
+  double dVar1;
   
   position = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
                        (&this_ptr->sample_info,position,input_type,2);
@@ -24,8 +25,8 @@ double __cdecl sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0(CS
     }
   }
   else {
-    dVar2 = floor(position);
-    position = position - dVar2;
+    dVar1 = floor(position);
+    position = position - dVar1;
   }
   dVar2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
                     (&this_ptr->sample_info,position,2,input_type);

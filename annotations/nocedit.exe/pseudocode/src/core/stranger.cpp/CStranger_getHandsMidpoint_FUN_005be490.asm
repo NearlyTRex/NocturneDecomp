@@ -7,11 +7,8 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   out_position
 ; Local Variables:
-; undefined1       Stack[-0x30]:1  local_30
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined1       Stack[-0x18]:1  local_18
+; CVector3f[2]     Stack[-0x30]:24  local_30
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_processFrame_FUN_005bb960 at 005bbb2d

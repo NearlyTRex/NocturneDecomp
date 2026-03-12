@@ -10,6 +10,7 @@ int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(_FILE *file_ptr,char *source
 
 {
   int iVar1;
+  int iVar3;
   int iVar2;
   
   if (g_RecursiveCallFlag == 0) {
@@ -51,8 +52,8 @@ int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(_FILE *file_ptr,char *source
                   (g_FileRegistry + iVar2,g_FileRegistry + iVar2 + 1,
                    (g_OpenFileCount - iVar2) * 0x328);
         wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
-        iVar2 = _fclose(file_ptr);
-        return iVar2;
+        iVar3 = _fclose(file_ptr);
+        return iVar3;
       }
       iVar1 = iVar1 + 0x328;
       iVar2 = iVar2 + 1;

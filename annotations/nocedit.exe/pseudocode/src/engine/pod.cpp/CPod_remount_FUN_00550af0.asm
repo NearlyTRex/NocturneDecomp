@@ -6,8 +6,7 @@
 ; Parameters:
 ; CPod *           Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x110]:1  local_110
-; undefined1       Stack[-0x10f]:1  local_10f
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pod_cpp_00640722

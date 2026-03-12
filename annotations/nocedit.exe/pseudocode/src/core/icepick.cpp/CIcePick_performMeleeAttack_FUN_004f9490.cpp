@@ -9,7 +9,7 @@
 void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004f9490(CIcePick *this_ptr,int bone_index)
 
 {
-  CIcePick *this_ptr_00;
+  bool bVar1;
   CVector3f *input_local_point;
   int iVar1;
   int iVar2;
@@ -19,6 +19,7 @@ void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004f9490(CIcePick 
   CVector3f local_24;
   int local_18;
   float local_14;
+  CIcePick *this_ptr_00;
   
   input_local_point =
        core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
@@ -27,11 +28,11 @@ void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004f9490(CIcePick 
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&local_30,input_local_point);
   iVar2 = 0;
-  local_18 = 0;
+  bVar1 = false;
   do {
     while( true ) {
       if (g_CDemonSetPtr->character_count <= iVar3) {
-        if (local_18 == 0) {
+        if (!bVar1) {
           return;
         }
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
@@ -50,11 +51,10 @@ LAB_004f94e9:
     local_6c.hit_part_index = -1;
     local_6c.attacker = (CDemonActor *)this_ptr;
     local_6c.wielder = (CDemonActor *)this_ptr;
-    local_14 = local_6c.damage_amount;
     iVar1 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).checkCylinderCollisionWorld)
                       ((CCharacter *)this_ptr_00,&local_30,1.0,&local_6c);
     if (iVar1 == 0) goto LAB_004f94e9;
-    local_18 = 1;
+    bVar1 = true;
     iVar3 = iVar3 + 1;
     iVar2 = iVar2 + 4;
   } while( true );

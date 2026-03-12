@@ -4,32 +4,8 @@
       {
         "category": "format_error",
         "column": 81,
-        "line": 114,
+        "line": 122,
         "message": "format specifies type 'char *' but the argument has type 'CMoloch *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 158,
-        "message": "cannot cast from type 'float' to pointer type 'SMotion *'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 159,
-        "message": "C-style cast from 'SMotion *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 160,
-        "message": "C-style cast from 'SMotion *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 161,
-        "message": "C-style cast from 'SMotion *' to 'float' is not allowed"
       }
     ],
     "success": false,
@@ -37,17 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 264,
+    "complexity_score": 250,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 21,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 249,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 831
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 250,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 832
   },
   "cross_references": [],
   "function": {
@@ -383,119 +357,126 @@
         "name": "local_1b18",
         "offset": -6936,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_1b14",
         "offset": -6932,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "SStack_1b10",
+        "offset": -6928,
+        "size": 6812,
+        "type": "SPose"
       },
       {
         "is_param": false,
         "name": "local_74",
         "offset": -116,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_70",
         "offset": -112,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_68",
         "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMotion *"
       },
       {
         "is_param": true,
@@ -530,16 +511,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 175,
-      "match": "(CCharacter_vtable *)((int)",
-      "severity": "mild",
-      "text": "iVar6 = (*((CCharacter_vtable *)((int)local_14 + 0xec))->attractActorToward)",
-      "type": "pointer_cast"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

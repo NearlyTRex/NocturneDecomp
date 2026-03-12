@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   title
 ; int              Stack[0xc]:4   selected_index
 ; Local Variables:
-; undefined1       Stack[-0x3b8]:1  local_3b8
+; CPickList        Stack[-0x3b8]:936  local_3b8
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538665

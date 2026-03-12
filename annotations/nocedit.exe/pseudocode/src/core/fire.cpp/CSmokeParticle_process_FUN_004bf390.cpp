@@ -9,11 +9,13 @@
 void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004bf390(CSmokeParticle *this_ptr)
 
 {
-  CVector3f *pCVar1;
+  float fVar1;
+  float fVar5;
+  float fVar4;
+  CDemonSet *pCVar4;
   float fVar2;
   float fVar3;
-  CDemonSet *pCVar4;
-  float fVar5;
+  CVector3f *pCVar1;
   
   fVar3 = g_CGamePtr->delta_time_float;
   this_ptr->age = fVar3 * 30.0f + this_ptr->age;
@@ -25,19 +27,19 @@ void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004bf390(CSmokeParticle *t
        fVar3 * this_ptr->vertical_accel * this_ptr->drag_factor + (this_ptr->position).y;
   fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,1.0);
   (this_ptr->position).x = fVar5 * fVar3 + (this_ptr->position).x;
-  fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,1.0);
-  (this_ptr->position).z = fVar5 * fVar3 + (this_ptr->position).z;
-  fVar5 = (this_ptr->wind_influence).y;
+  fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,1.0);
+  (this_ptr->position).z = fVar4 * fVar3 + (this_ptr->position).z;
+  fVar4 = (this_ptr->wind_influence).y;
   fVar2 = (this_ptr->wind_influence).z;
   pCVar1 = &this_ptr->position;
   pCVar1->x = pCVar1->x + (this_ptr->wind_influence).x * fVar3;
-  (this_ptr->position).y = (this_ptr->position).y + fVar5 * fVar3;
+  (this_ptr->position).y = (this_ptr->position).y + fVar4 * fVar3;
   pCVar4 = g_CDemonSetPtr;
   (this_ptr->position).z = (this_ptr->position).z + fVar2 * fVar3;
-  fVar5 = (pCVar4->active_fog).scroll.y;
-  fVar2 = (pCVar4->active_fog).scroll.z;
+  fVar4 = (pCVar4->active_fog).scroll.y;
+  fVar1 = (pCVar4->active_fog).scroll.z;
   pCVar1->x = pCVar1->x + (pCVar4->active_fog).scroll.x * fVar3;
-  (this_ptr->position).y = (this_ptr->position).y + fVar5 * fVar3;
-  (this_ptr->position).z = (this_ptr->position).z + fVar2 * fVar3;
+  (this_ptr->position).y = (this_ptr->position).y + fVar4 * fVar3;
+  (this_ptr->position).z = (this_ptr->position).z + fVar1 * fVar3;
   return;
 }

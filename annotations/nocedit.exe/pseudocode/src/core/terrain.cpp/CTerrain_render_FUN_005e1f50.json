@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 104,
+    "complexity_score": 105,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
+    "pseudocode_lines": 25,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function"
     ],
-    "total_lines": 121
+    "total_lines": 122
   },
   "cross_references": [
     {
@@ -156,50 +156,22 @@
         "is_param": false,
         "name": "local_30",
         "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -238,15 +210,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_24.x = local_24.x + (int)ROUND(ROUND((double)(float)local_30.x * 256));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 20,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_24.x = local_24.x + (int)ROUND(ROUND((double)(float)local_30.x * 256));",
@@ -257,15 +221,7 @@
       "line": 20,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_24.y = (int)ROUND(ROUND((double)(float)local_30.y * 256)) + local_24.y;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_24.y = (int)ROUND(ROUND((double)(float)local_30.y * 256)) + local_24.y;",
+      "text": "local_24.x = local_24.x + (int)ROUND(ROUND((double)(float)local_30.x * 256));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -273,7 +229,7 @@
       "line": 21,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND((double)(float)local_30.z * 256));",
+      "text": "local_24.y = (int)ROUND(ROUND((double)(float)local_30.y * 256)) + iVar1;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -281,7 +237,23 @@
       "line": 21,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND((double)(float)local_30.z * 256));",
+      "text": "local_24.y = (int)ROUND(ROUND((double)(float)local_30.y * 256)) + iVar1;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_24.z = (local_24.z + (int)ROUND(ROUND((double)(float)local_30.z * 256))) -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_24.z = (local_24.z + (int)ROUND(ROUND((double)(float)local_30.z * 256))) -",
       "type": "decompiler_intrinsic"
     }
   ]

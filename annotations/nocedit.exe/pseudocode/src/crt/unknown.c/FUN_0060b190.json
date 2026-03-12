@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 103,
+    "complexity_score": 138,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 18,
-    "suspect_count": 7,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "nan_function_artifact",
-      "special_crt_function"
+      "special_crt_function",
+      "unknown_field"
     ],
     "total_lines": 39
   },
@@ -82,11 +83,19 @@
   },
   "suspects": [
     {
+      "description": "Unknown/mangled field access",
+      "line": 12,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "uVar1._1_1_ = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
+      "type": "unknown_field"
+    },
+    {
       "description": "NAN() function call (FNSTSW comparison artifact)",
       "line": 12,
       "match": "NAN(",
       "severity": "severe",
-      "text": "bVar2 = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
+      "text": "uVar1._1_1_ = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
       "type": "nan_function_artifact"
     },
     {
@@ -94,7 +103,7 @@
       "line": 12,
       "match": "NAN(",
       "severity": "severe",
-      "text": "bVar2 = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
+      "text": "uVar1._1_1_ = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
       "type": "nan_function_artifact"
     },
     {
@@ -102,7 +111,7 @@
       "line": 12,
       "match": "NAN",
       "severity": "mild",
-      "text": "bVar2 = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
+      "text": "uVar1._1_1_ = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
       "type": "decompiler_intrinsic"
     },
     {
@@ -110,23 +119,39 @@
       "line": 12,
       "match": "NAN",
       "severity": "mild",
-      "text": "bVar2 = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
+      "text": "uVar1._1_1_ = fVar3 < fVar4 | (byte)((ushort)((ushort)(NAN(fVar3) || NAN(fVar4)) << 10) >> 8) |",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 14,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "uVar1 = CONCAT11(uVar1._1_1_,2);",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 14,
       "match": "CONCAT11",
       "severity": "mild",
-      "text": "uVar1 = CONCAT11(bVar2,2);",
+      "text": "uVar1 = CONCAT11(uVar1._1_1_,2);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 16,
+      "match": "._1_1_",
+      "severity": "mild",
+      "text": "uVar1 = CONCAT11(uVar1._1_1_,3);",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 16,
       "match": "CONCAT11",
       "severity": "mild",
-      "text": "uVar1 = CONCAT11(bVar2,3);",
+      "text": "uVar1 = CONCAT11(uVar1._1_1_,3);",
       "type": "decompiler_intrinsic"
     },
     {

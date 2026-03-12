@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   prompt
 ; int              Stack[0xc]:4   default_yes
 ; Local Variables:
-; undefined1       Stack[-0x2cc]:1  local_2cc
-; undefined1       Stack[-0x13c]:1  local_13c
+; char[400]        Stack[-0x2cc]:400  local_2cc
+; char[300]        Stack[-0x13c]:300  local_13c
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00578d98

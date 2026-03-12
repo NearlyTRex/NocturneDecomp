@@ -12,8 +12,8 @@ void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStruct
   CBoneStructure *this_ptr_00;
   int iVar1;
   int iVar2;
-  int in_stack_ffffffe8;
   int local_14;
+  int in_stack_ffffffe8;
   
   __STK();
   this_ptr_00 = (CBoneStructure *)

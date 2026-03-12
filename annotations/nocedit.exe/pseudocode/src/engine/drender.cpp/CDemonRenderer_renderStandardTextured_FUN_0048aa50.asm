@@ -7,7 +7,7 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0 at 00574d94

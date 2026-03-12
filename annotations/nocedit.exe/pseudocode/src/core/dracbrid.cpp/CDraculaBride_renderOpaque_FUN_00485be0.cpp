@@ -12,9 +12,11 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
   int iVar1;
   int iVar2;
   CBoundingBox3D *this_ptr_00;
-  uint render_flags;
+  int iVar3;
+  int iVar4;
   float fStack_30;
   CBoundingBox3D local_2c;
+  uint render_flags;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr2);
   if (iVar1 == 0) {
@@ -27,17 +29,17 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
       this_ptr_00 = (*((this_ptr->base).base.base.vtable._ub)->getBoundingBox)
                               ((CDemonActor *)this_ptr,&local_2c);
-      iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-      if (iVar1 != 0) {
-        iVar2 = this_ptr->mist_state;
+      iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
+      if (iVar3 != 0) {
+        iVar4 = this_ptr->mist_state;
         (this_ptr->base).base.was_rendered_opaque = 1;
-        if (iVar2 == 0) {
+        if (iVar4 == 0) {
           if (this_ptr->exploded == 0) {
             core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0((CCharacter *)this_ptr);
           }
         }
         else {
-          if (iVar2 == 1) {
+          if (iVar4 == 1) {
             fStack_30 = (1.0 - this_ptr->vanish_timer) / 1.0f;
           }
           else {
@@ -65,8 +67,8 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
           }
         }
         if (INT_02f43978 != 0) {
-          iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-          if (iVar2 == 0) {
+          iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+          if (iVar4 == 0) {
             core_motion_cpp_CMotionController_render_FUN_0052e700
                       (&(this_ptr->base).base.model.motion_controller,(CDemonActor *)this_ptr);
             (*((this_ptr->base).base.base.vtable._ub)->renderTargetPoints)((CDemonActor *)this_ptr);
@@ -74,7 +76,7 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
         }
       }
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
-      return iVar1;
+      return iVar3;
     }
   }
   return 0;

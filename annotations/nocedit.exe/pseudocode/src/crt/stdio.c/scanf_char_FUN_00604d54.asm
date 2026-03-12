@@ -7,8 +7,8 @@
 ; scanf_state_t *  Stack[0x4]:4   state
 ; va_list_t *      Stack[0x8]:4   args
 ; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined1       Stack[-0x18]:1  local_18
+; wchar_t[2]       Stack[-0x1c]:4  local_1c
+; char             Stack[-0x18]:1  local_18
 ; undefined1       Stack[-0x17]:1  local_17
 ;
 ; XREF[1]:

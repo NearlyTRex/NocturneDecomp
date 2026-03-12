@@ -9,12 +9,12 @@
 void __cdecl core_setedit_cpp_blitThumbnailToScreen16_FUN_00577200(int thumbnail_index,int screen_x,int screen_row)
 
 {
-  uint uVar1;
   int iVar2;
   ushort *local_24;
   int local_1c;
   int local_18;
   int local_14;
+  uint uVar1;
   
   local_1c = screen_row << 2;
   local_14 = 0;

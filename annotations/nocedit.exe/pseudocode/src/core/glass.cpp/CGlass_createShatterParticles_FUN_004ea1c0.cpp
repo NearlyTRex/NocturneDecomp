@@ -10,7 +10,9 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *t
 
 {
   int iVar1;
+  int iVar3;
   int iVar2;
+  int iVar4;
   SQuadVertices local_1e4;
   CVector4i local_1b4;
   CVector4i local_1a4;
@@ -162,15 +164,15 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *t
     }
     local_1b4.x = quad_uv_u->x;
     local_1b4.y = (local_1b4.x + quad_uv_u->y) / 2;
-    iVar1 = quad_uv_u->w + quad_uv_u->x + quad_uv_u->y + quad_uv_u->z;
-    iVar2 = iVar1 >> 0x1f;
-    local_1b4.z = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    iVar3 = quad_uv_u->w + quad_uv_u->x + quad_uv_u->y + quad_uv_u->z;
+    iVar2 = iVar3 >> 0x1f;
+    local_1b4.z = (int)((iVar3 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
     local_1b4.w = (quad_uv_u->x + quad_uv_u->w) / 2;
     local_1a4.x = quad_uv_v->x;
     local_1a4.y = (local_1a4.x + quad_uv_v->y) / 2;
-    iVar1 = quad_uv_v->w + quad_uv_v->x + quad_uv_v->y + quad_uv_v->z;
-    iVar2 = iVar1 >> 0x1f;
-    local_1a4.z = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    iVar3 = quad_uv_v->w + quad_uv_v->x + quad_uv_v->y + quad_uv_v->z;
+    iVar4 = iVar3 >> 0x1f;
+    local_1a4.z = (int)((iVar3 + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2;
     local_1a4.w = (quad_uv_v->x + quad_uv_v->w) / 2;
     core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
               (this_ptr,&local_1e4,&local_1b4,&local_1a4,subdivision_level + 1);
@@ -221,15 +223,15 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *t
     local_1b4.x = (quad_uv_u->x + quad_uv_u->y) / 2;
     local_1b4.y = quad_uv_u->y;
     local_1b4.z = (local_1b4.y + quad_uv_u->z) / 2;
-    iVar1 = quad_uv_u->z + quad_uv_u->x + quad_uv_u->y + quad_uv_u->w;
-    iVar2 = iVar1 >> 0x1f;
-    local_1b4.w = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    iVar3 = quad_uv_u->z + quad_uv_u->x + quad_uv_u->y + quad_uv_u->w;
+    iVar4 = iVar3 >> 0x1f;
+    local_1b4.w = (int)((iVar3 + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2;
     local_1a4.x = (quad_uv_v->x + quad_uv_v->y) / 2;
     local_1a4.y = quad_uv_v->y;
     local_1a4.z = (local_1a4.y + quad_uv_v->z) / 2;
-    iVar1 = quad_uv_v->w + quad_uv_v->x + quad_uv_v->y + quad_uv_v->z;
-    iVar2 = iVar1 >> 0x1f;
-    local_1a4.w = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    iVar3 = quad_uv_v->w + quad_uv_v->x + quad_uv_v->y + quad_uv_v->z;
+    iVar4 = iVar3 >> 0x1f;
+    local_1a4.w = (int)((iVar3 + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2;
     core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0
               (this_ptr,&local_1e4,&local_1b4,&local_1a4,subdivision_level + 1);
     local_188 = quad_vertices->vertices[0].x + quad_vertices->vertices[1].x;
@@ -276,15 +278,15 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *t
       local_1e4.vertices[3].y = local_190;
       local_1e4.vertices[3].z = local_18c;
     }
-    iVar1 = quad_uv_u->z + quad_uv_u->x + quad_uv_u->y + quad_uv_u->w;
-    iVar2 = iVar1 >> 0x1f;
-    local_1b4.x = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    iVar3 = quad_uv_u->z + quad_uv_u->x + quad_uv_u->y + quad_uv_u->w;
+    iVar4 = iVar3 >> 0x1f;
+    local_1b4.x = (int)((iVar3 + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2;
     local_1b4.y = (quad_uv_u->y + quad_uv_u->z) / 2;
     local_1b4.z = quad_uv_u->z;
     local_1b4.w = (local_1b4.z + quad_uv_u->w) / 2;
-    iVar1 = quad_uv_v->w + quad_uv_v->x + quad_uv_v->y + quad_uv_v->z;
-    iVar2 = iVar1 >> 0x1f;
-    local_1a4.x = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    iVar3 = quad_uv_v->w + quad_uv_v->x + quad_uv_v->y + quad_uv_v->z;
+    iVar4 = iVar3 >> 0x1f;
+    local_1a4.x = (int)((iVar3 + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2;
     local_1a4.y = (quad_uv_v->y + quad_uv_v->z) / 2;
     local_1a4.z = quad_uv_v->z;
     local_1a4.w = (local_1a4.z + quad_uv_v->w) / 2;
@@ -335,15 +337,15 @@ void __cdecl core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0(CGlass *t
       local_1e4.vertices[3].z = quad_vertices->vertices[3].z;
     }
     local_1b4.x = (quad_uv_u->x + quad_uv_u->w) / 2;
-    iVar1 = quad_uv_u->z + quad_uv_u->x + quad_uv_u->y + quad_uv_u->w;
-    iVar2 = iVar1 >> 0x1f;
-    local_1b4.y = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    iVar3 = quad_uv_u->z + quad_uv_u->x + quad_uv_u->y + quad_uv_u->w;
+    iVar4 = iVar3 >> 0x1f;
+    local_1b4.y = (int)((iVar3 + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2;
     local_1b4.z = (quad_uv_u->z + quad_uv_u->w) / 2;
     local_1b4.w = quad_uv_u->w;
     local_1a4.x = (quad_uv_v->x + quad_uv_v->w) / 2;
-    iVar1 = quad_uv_v->z + quad_uv_v->x + quad_uv_v->y + quad_uv_v->w;
-    iVar2 = iVar1 >> 0x1f;
-    local_1a4.y = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    iVar3 = quad_uv_v->z + quad_uv_v->x + quad_uv_v->y + quad_uv_v->w;
+    iVar4 = iVar3 >> 0x1f;
+    local_1a4.y = (int)((iVar3 + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2;
     local_1a4.z = (quad_uv_v->z + quad_uv_v->w) / 2;
     local_1a4.w = quad_uv_v->w;
     core_glass_cpp_CGlass_createShatterParticles_FUN_004ea1c0

@@ -8,7 +8,7 @@
 ; SShapeEditorPolygon * Stack[0x8]:4   polygon2
 ; double           Stack[0xc]:8   cos_tolerance
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
 ;   shape_design.c_configureSinglePassPolygonReduction_FUN_00465560 at 004656c3

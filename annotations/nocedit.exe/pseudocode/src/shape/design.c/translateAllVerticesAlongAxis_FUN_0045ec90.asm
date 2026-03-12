@@ -6,11 +6,11 @@
 ; Local Variables:
 ; undefined4       Stack[-0x54]:4  local_54
 ; undefined8       Stack[-0x50]:8  local_50
-; undefined        Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
+; char[40]         Stack[-0x48]:40  local_48
+; int              Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Enter_distance_or_locati_0061b633

@@ -10,6 +10,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEd
 
 {
   int iVar1;
+  int iVar2;
   char local_38 [32];
   float local_18;
   
@@ -26,8 +27,8 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEd
       if (iVar1 == 0) {
         return 0;
       }
-      iVar1 = sscanf(local_38,"%f");
-      if (iVar1 == 1) break;
+      iVar2 = sscanf(local_38,"%f");
+      if (iVar2 == 1) break;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (this_ptr,"Please enter a valid number.");
     }

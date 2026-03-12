@@ -9,16 +9,17 @@
 void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *this_ptr)
 
 {
-  char cVar1;
-  char *pcVar2;
   int iVar3;
   int iVar4;
   int iVar5;
   int iVar6;
+  int iVar1;
   char *pcVar7;
   int iVar8;
   char *pcVar9;
   int *piVar10;
+  int x2;
+  int y2;
   char local_15c [300];
   int local_30;
   int local_2c;
@@ -28,6 +29,8 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
   int local_1c;
   int local_18;
   int local_14;
+  char cVar1;
+  char *pcVar2;
   
   shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(g_CEditorToolsPtr);
   shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(g_CEditorToolsPtr,1);
@@ -40,31 +43,29 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
       local_2c = 0;
       if (0 < this_ptr->vertical_page_size) {
         do {
-          iVar8 = local_1c;
           if ((this_ptr->base).item_count <= local_24) break;
           if (local_24 == this_ptr->current_index) {
-            iVar3 = local_28 + this_ptr->total_content_width + -1;
-            iVar5 = local_1c + this_ptr->character_width + -1;
-            iVar4 = g_SelectionHighlightColor;
+            x2 = local_28 + this_ptr->total_content_width + -1;
+            y2 = local_1c + this_ptr->character_width + -1;
+            iVar1 = g_SelectionHighlightColor;
             if (this_ptr->confirmed_flag != 0) {
-              iVar4 = g_ConfirmedSelectionColor;
+              iVar1 = g_ConfirmedSelectionColor;
             }
-            engine_2d_c_fillRectColor_FUN_00403170(local_28,local_1c,iVar3,iVar5,iVar4);
+            engine_2d_c_fillRectColor_FUN_00403170(local_28,local_1c,x2,y2,iVar1);
             if (this_ptr->selection_state == -1) {
               g_ActiveRenderColor = 0;
-              shape_edittool_cpp_drawDashedLine_FUN_0049d290(local_28,iVar8,iVar3,iVar5,1);
+              shape_edittool_cpp_drawDashedLine_FUN_0049d290(local_28,local_1c,x2,y2,1);
             }
           }
-          iVar8 = local_24;
-          local_18 = 0;
           pcVar7 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&this_ptr->base,local_24);
           local_14 = local_28 + this_ptr->column_padding;
           local_20 = g_EnabledTextColor;
-          iVar8 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_004a54e0(this_ptr,iVar8);
+          iVar8 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_004a54e0(this_ptr,local_24);
+          piVar10 = (int *)this_ptr;
           if (iVar8 == 0) {
             local_20 = g_DisabledTextColor;
+            piVar10 = (int *)this_ptr;
           }
-          piVar10 = this_ptr->tab_column_widths + local_18 + -4;
           do {
             cVar1 = *pcVar7;
             pcVar2 = pcVar7;
@@ -79,7 +80,6 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
             engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
             engine_font_cpp_CBitFont_drawText_FUN_004cda80
                       (g_EditorFont,local_15c,local_14,local_1c,local_20,-1);
-            local_18 = local_18 + 1;
             local_14 = local_14 + piVar10[4];
             piVar10 = piVar10 + 1;
           } while (*pcVar7 != '\0');
@@ -88,7 +88,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
           local_2c = local_2c + 1;
         } while (local_2c < this_ptr->vertical_page_size);
       }
-      iVar8 = g_ActiveRenderColor;
+      iVar1 = g_ActiveRenderColor;
       if (0 < local_30) {
         g_ActiveRenderColor = g_PickListSeparatorColor;
         iVar3 = shape_edittool_cpp_calculateGridHeight_FUN_004a64b0();
@@ -108,7 +108,7 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
       }
       local_30 = local_30 + 1;
       local_28 = local_28 + this_ptr->total_content_width;
-      g_ActiveRenderColor = iVar8;
+      g_ActiveRenderColor = iVar1;
     } while (local_30 < this_ptr->column_count);
   }
   if (this_ptr->dialog_result == 1) {

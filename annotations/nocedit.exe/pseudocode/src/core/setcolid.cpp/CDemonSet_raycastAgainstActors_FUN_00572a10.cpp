@@ -9,11 +9,11 @@
 float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDemonSet *this_ptr,float min_t,CVector3f *ray_origin,CVector3f *ray_target,float max_t)
 
 {
-  CDemonActor *pCVar1;
-  float fVar2;
+  CDemonActor *this_ptr_00;
   CDeformableModelInstance *pCVar3;
   EGroundType EVar4;
   ECollisionType bbox_type;
+  float fVar1;
   SCollisionInfo local_cc;
   CVector3f CStack_a4;
   int iStack_98;
@@ -34,6 +34,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
   int local_1c;
   CVector3f *local_18;
   float fStack_14;
+  float fVar2;
+  CDemonActor *pCVar1;
   
   this_ptr->collision_part_index = -1;
   this_ptr->collision_triangle_index = -1;
@@ -49,12 +51,9 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
     if (1.0 < max_t) {
       local_24 = 1.0;
     }
-    local_70 = ray_target->x - ray_origin->x;
-    local_6c = ray_target->y - ray_origin->y;
-    local_64.x = local_70 * local_24;
-    local_68 = ray_target->z - ray_origin->z;
-    local_64.y = local_6c * local_24;
-    local_64.z = local_68 * local_24;
+    local_64.x = (ray_target->x - ray_origin->x) * local_24;
+    local_64.y = (ray_target->y - ray_origin->y) * local_24;
+    local_64.z = (ray_target->z - ray_origin->z) * local_24;
     if (&local_88 != (CBoundingBox3D *)ray_origin) {
       local_88.min.x = ray_origin->x;
       local_88.min.y = ray_origin->y;
@@ -77,7 +76,6 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
     local_cc.laser_color.b = (this_ptr->laser_color).b;
     local_1c = 0;
     if (0 < this_ptr->collidable_actor_count) {
-      local_18 = &this_ptr->collision_normal;
       local_20 = this_ptr;
       do {
         pCVar1 = local_20->collidable_actors[0];
@@ -88,25 +86,21 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
           local_cc.keyframed_model = (CKeyFramedModelInstance *)pCVar3;
           bbox_type = (*((pCVar1->vtable)._ub)->getCollisionType)(pCVar1,&local_cc);
           if (bbox_type != COLLISION_TYPE_NONE) {
-            fStack_14 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
-                                  (pCVar1,ray_origin,&local_64,&CStack_a4,&local_cc,bbox_type,
-                                   &local_88);
-            if (((fStack_14 <= 1.0) && (fVar2 = fStack_14 * local_24, fVar2 < max_t)) &&
-               (min_t < fVar2)) {
-              if (&CStack_a4 != local_18) {
-                local_18->x = CStack_a4.x;
-                local_18->y = CStack_a4.y;
-                local_18->z = CStack_a4.z;
+            fVar1 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
+                              (pCVar1,ray_origin,&local_64,&CStack_a4,&local_cc,bbox_type,&local_88)
+            ;
+            if (((fVar1 <= 1.0) && (fVar1 = fVar1 * local_24, fVar1 < max_t)) && (min_t < fVar1)) {
+              if (&CStack_a4 != &this_ptr->collision_normal) {
+                (this_ptr->collision_normal).x = CStack_a4.x;
+                (this_ptr->collision_normal).y = CStack_a4.y;
+                (this_ptr->collision_normal).z = CStack_a4.z;
               }
               this_ptr->collision_actor = pCVar1;
               this_ptr->collision_part_index = iStack_98;
               this_ptr->collision_triangle_index = iStack_8c;
-              fStack_40 = ray_target->x - ray_origin->x;
-              fStack_3c = ray_target->y - ray_origin->y;
-              CStack_58.x = fStack_40 * fVar2;
-              fStack_38 = ray_target->z - ray_origin->z;
-              CStack_58.y = fStack_3c * fVar2;
-              CStack_58.z = fStack_38 * fVar2;
+              CStack_58.x = (ray_target->x - ray_origin->x) * fVar1;
+              CStack_58.y = (ray_target->y - ray_origin->y) * fVar1;
+              CStack_58.z = (ray_target->z - ray_origin->z) * fVar1;
               if (&local_64 != &CStack_58) {
                 local_64.x = CStack_58.x;
                 local_64.y = CStack_58.y;
@@ -125,9 +119,9 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
               CStack_34.x = ray_origin->x + local_64.x;
               CStack_34.y = ray_origin->y + local_64.y;
               CStack_34.z = ray_origin->z + local_64.z;
-              local_24 = fVar2;
               core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_88,&CStack_34);
-              max_t = fVar2;
+              max_t = fVar1;
+              local_24 = fVar1;
             }
           }
         }
@@ -135,9 +129,9 @@ float __cdecl core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10(CDem
         local_1c = local_1c + 1;
       } while (local_1c < this_ptr->collidable_actor_count);
     }
-    pCVar1 = this_ptr->collision_actor;
-    if (pCVar1 != (CDemonActor *)0x0) {
-      EVar4 = (*((pCVar1->vtable)._ub)->getGroundType)(pCVar1);
+    this_ptr_00 = this_ptr->collision_actor;
+    if (this_ptr_00 != (CDemonActor *)0x0) {
+      EVar4 = (*((this_ptr_00->vtable)._ub)->getGroundType)(this_ptr_00);
       this_ptr->ground_type = EVar4;
     }
   }

@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 219,
+    "complexity_score": 220,
     "cross_reference_count": 2,
     "function_call_count": 30,
     "global_count": 18,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 154,
+    "pseudocode_lines": 155,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 519
+    "total_lines": 520
   },
   "cross_references": [
     {
@@ -384,71 +384,64 @@
         "is_param": false,
         "name": "local_1134",
         "offset": -4404,
-        "size": 4,
-        "type": "undefined4"
+        "size": 4096,
+        "type": "undefined4[1024]"
       },
       {
         "is_param": false,
         "name": "local_134",
         "offset": -308,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_133",
-        "offset": -307,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
-        "size": 1,
-        "type": "undefined1"
+        "size": 20,
+        "type": "CAlphaBitmap"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_c",
         "offset": -12,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -470,26 +463,26 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 42,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)local_1134 + iVar7) = 0;",
+      "text": "*(uint *)((int)local_1134 + iVar3) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 105,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_10 = (int)ROUND(ROUND(local_18));",
+      "text": "iVar5 = (int)ROUND(ROUND(local_18));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 102,
+      "line": 105,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_10 = (int)ROUND(ROUND(local_18));",
+      "text": "iVar5 = (int)ROUND(ROUND(local_18));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -497,7 +490,7 @@
       "line": 140,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar1 = (uint *)((int)local_1134 + iVar7);",
+      "text": "puVar1 = (uint *)((int)local_1134 + iVar2);",
       "type": "pointer_cast"
     }
   ]

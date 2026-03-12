@@ -11,18 +11,18 @@
 void __cdecl core_stranger_cpp_CStranger_extractTurnPoseData_FUN_005bf720(CStranger *this_ptr,SPoseData *out_pose)
 
 {
-  CDeformableModelInstance *this_ptr_00;
   CVector3f *pCVar1;
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
-  float blend_weight;
-  int bone_index;
-  code *blend_callback;
   SPose SStack_1ad8;
   CQuaternion4f local_3c;
   CQuaternion4f local_2c;
   CQuaternion4f local_1c;
+  int bone_index;
+  float blend_weight;
+  byte *blend_callback;
+  CDeformableModelInstance *this_ptr_00;
   
   bVar4 = 0;
   this_ptr_00 = &(this_ptr->base).base.model;
@@ -48,7 +48,8 @@ void __cdecl core_stranger_cpp_CStranger_extractTurnPoseData_FUN_005bf720(CStran
   *puVar3 = *puVar2;
   puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
-            (this_ptr_00,&local_3c,blend_weight,bone_index,blend_callback);
+            (this_ptr_00,&local_3c,blend_weight,bone_index,
+             (CDeformableModel_MotionBlendWeightFunc *)blend_callback);
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
             (this_ptr_00,(SPose *)out_pose);
   core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(this_ptr_00,&SStack_1ad8)

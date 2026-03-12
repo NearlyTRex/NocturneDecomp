@@ -9,18 +9,14 @@
 void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *this_ptr,float delta_time)
 
 {
-  UVector3 *pUVar1;
-  float fVar2;
-  CDemonSet *this_ptr_00;
+  int iVar1;
+  float fVar3;
   uint uVar3;
   int iVar4;
   CDemonGlobe *this_ptr_01;
   CMatrix3x4f *pCVar5;
   CMatrix3x3f *pCVar6;
   byte bVar7;
-  int filter_index;
-  int filter_pos_x;
-  int filter_pos_y;
   CMatrix3x4f local_e4;
   CMatrix3x4f local_b4;
   CMatrix3x3f local_84;
@@ -28,6 +24,12 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *thi
   CVector3f local_24;
   CVector3f local_18;
   float local_c;
+  int filter_index;
+  int filter_pos_x;
+  int filter_pos_y;
+  CDemonSet *this_ptr_00;
+  UVector3 *pUVar1;
+  float fVar2;
   
   bVar7 = 0;
   core_boxactor_cpp_CBoxActor_process_FUN_004219e0(&this_ptr->base,delta_time);
@@ -37,12 +39,12 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *thi
     filter_pos_y = 0;
     filter_pos_x = 0;
     filter_index = 0;
-    iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,7);
+    iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,7);
     core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
-              (&this_ptr->light,CDemonFilter_ARRAY_008229ec + iVar4,filter_index,filter_pos_x,
+              (&this_ptr->light,CDemonFilter_ARRAY_008229ec + iVar1,filter_index,filter_pos_x,
                filter_pos_y);
-    local_c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,0.15);
-    this_ptr->flicker_timer = local_c;
+    fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,0.15);
+    this_ptr->flicker_timer = fVar3;
   }
   if (this_ptr->light_actor_type != LIGHT_TYPE_GLOBE) {
     if ((this_ptr->light).light_enabled_flag == 0) {
@@ -51,7 +53,7 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *thi
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&local_18,&this_ptr->blight_pos);
     pUVar1 = &(this_ptr->light).base.base.position;
-    if ((CVector3f *)pUVar1 != &local_18) {
+    if (pUVar1 != (UVector3 *)&local_18) {
       (pUVar1->f).x = local_18.x;
       (this_ptr->light).base.base.position.f.y = local_18.y;
       (this_ptr->light).base.base.position.f.z = local_18.z;
@@ -64,9 +66,11 @@ void __cdecl core_boxactor_cpp_CLightActor_process_FUN_00422a50(CLightActor *thi
     pCVar5 = &local_e4;
     pCVar6 = &local_84;
     for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-      pCVar6->m[0].x = *(float *)pCVar5;
-      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
-      pCVar6 = (CMatrix3x3f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
+      pCVar6 = (CMatrix3x3f *)((int)pCVar6 + (uint)bVar7 * -8 + 4);
+      pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar7 * -8 + 4);
+      pCVar6->m[0].x = pCVar5->m[0].w;
+      pCVar5 = pCVar5;
+      pCVar6 = pCVar6;
     }
     core_xform_cpp_matrixToEulerAngles_FUN_005f5690(&local_84,&local_24);
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30

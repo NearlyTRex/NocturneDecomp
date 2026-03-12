@@ -6,7 +6,7 @@
 ; Parameters:
 ; CObj *           Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x6c]:1  local_6c
+; char[92]         Stack[-0x6c]:92  local_6c
 ;
 ; XREF[1]:
 ;   shape_superopt.cpp_COptimize_optimize_FUN_005d7290 at 005d72ad

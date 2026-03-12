@@ -11,10 +11,11 @@
 void __cdecl core_smiley_cpp_CSmiley_processDismemberment_FUN_005a32a0(CSmiley *this_ptr,SDamageInfo *damage_info)
 
 {
-  CVector3f *initial_velocity;
+  int iVar2;
   CBodyPart *body_part;
   int iVar1;
   float local_14;
+  CVector3f *initial_velocity;
   
   if ((int)damage_info->damage_type < 0xc) {
     return;
@@ -26,43 +27,43 @@ void __cdecl core_smiley_cpp_CSmiley_processDismemberment_FUN_005a32a0(CSmiley *
     if (2 < iVar1) {
       damage_info->dismember_prob = 1.0;
       if ((0.0 < damage_info->dismember_prob) && (damage_info->hit_part_index == -1)) {
-        iVar1 = rand();
-        switch(iVar1 % 6) {
+        iVar2 = rand();
+        switch(iVar2 % 6) {
         case 0:
-          iVar1 = this_ptr->part_indices[0];
+          iVar2 = this_ptr->part_indices[0];
           break;
         case 1:
-          iVar1 = this_ptr->part_indices[1];
+          iVar2 = this_ptr->part_indices[1];
           break;
         case 2:
-          iVar1 = this_ptr->part_indices[2];
+          iVar2 = this_ptr->part_indices[2];
           break;
         case 3:
-          iVar1 = this_ptr->part_indices[3];
+          iVar2 = this_ptr->part_indices[3];
           break;
         case 4:
-          iVar1 = this_ptr->part_indices[10];
+          iVar2 = this_ptr->part_indices[10];
           break;
         case 5:
-          iVar1 = this_ptr->part_indices[9];
+          iVar2 = this_ptr->part_indices[9];
           break;
         default:
           goto switchD_005a3329_default;
         }
-        damage_info->hit_part_index = iVar1;
+        damage_info->hit_part_index = iVar2;
       }
 switchD_005a3329_default:
-      iVar1 = damage_info->hit_part_index;
-      if (((((iVar1 == this_ptr->part_indices[0]) || (iVar1 == this_ptr->part_indices[1])) ||
-           (iVar1 == this_ptr->part_indices[2])) ||
-          ((iVar1 == this_ptr->part_indices[3] || (iVar1 == this_ptr->part_indices[9])))) ||
-         (iVar1 == this_ptr->part_indices[10])) {
+      iVar2 = damage_info->hit_part_index;
+      if (((((iVar2 == this_ptr->part_indices[0]) || (iVar2 == this_ptr->part_indices[1])) ||
+           (iVar2 == this_ptr->part_indices[2])) ||
+          ((iVar2 == this_ptr->part_indices[3] || (iVar2 == this_ptr->part_indices[9])))) ||
+         (iVar2 == this_ptr->part_indices[10])) {
         local_14 = damage_info->dismember_prob;
         if (g_CGamePtr->gratuitous_dismemberment != 0) {
           local_14 = 1.0;
         }
-        iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(local_14);
-        if (iVar1 != 0) {
+        iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(local_14);
+        if (iVar2 != 0) {
           body_part = core_bodypart_cpp_createBodyPart_FUN_00418e10
                                 (&(this_ptr->base).base.base.location.position,
                                  &(this_ptr->base).base.base.orient,&damage_info->impact_point,
@@ -100,9 +101,9 @@ switchD_005a3329_default:
           damage_info->gore_multiplier = damage_info->gore_multiplier * (float)7;
         }
       }
-      iVar1 = damage_info->hit_part_index;
-      if (iVar1 != this_ptr->part_indices[10]) {
-        if ((iVar1 != this_ptr->part_indices[8]) && (iVar1 != this_ptr->part_indices[9])) {
+      iVar2 = damage_info->hit_part_index;
+      if (iVar2 != this_ptr->part_indices[10]) {
+        if ((iVar2 != this_ptr->part_indices[8]) && (iVar2 != this_ptr->part_indices[9])) {
           damage_info->damage_amount = damage_info->damage_amount * (float)0.5;
           return;
         }

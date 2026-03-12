@@ -133,53 +133,39 @@
     "pcode_op_count": 279
   },
   "stack_frame": {
-    "frame_size": 60,
-    "local_size": 40,
+    "frame_size": 64,
+    "local_size": 44,
     "param_offset": 4,
     "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_28",
+        "offset": -40,
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -245,18 +231,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_18 = (int)ROUND((orientation->vec).x * 10430.38f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 15,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_14 = (int)ROUND((orientation->vec).z * 10430.38f);",
+      "text": "((int)ROUND((orientation->vec).x * 10430.38f),",
       "type": "decompiler_intrinsic"
     },
     {
@@ -264,7 +242,15 @@
       "line": 16,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_10 = (int)ROUND((orientation->vec).y * 10430.38f);",
+      "text": "(int)ROUND((orientation->vec).z * 10430.38f),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 17,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "(int)ROUND((orientation->vec).y * 10430.38f),0,0,0);",
       "type": "decompiler_intrinsic"
     },
     {

@@ -11,12 +11,12 @@
 void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int render_mode,int scale_mode,int export_format,int include_textures )
 
 {
-  char cVar1;
-  uint uVar2;
-  bool bVar3;
+  char cVar2;
   int iVar4;
   char *pcVar5;
+  char *pcVar3;
   char *pcVar6;
+  char *pcVar4;
   double dVar7;
   int local_f8;
   uint local_98;
@@ -47,6 +47,9 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int ren
   _FILE *local_1c;
   int local_18;
   float local_14;
+  bool bVar3;
+  uint uVar2;
+  char cVar1;
   
   shape_design_c_sortPolygonsByTexture_FUN_0045b8b0();
   if (export_format == 0) {
@@ -247,22 +250,22 @@ void __cdecl shape_design_c_exportModelToBIN_FUN_0045aa80(char *filename,int ren
             cVar1 = *pcVar5;
             *pcVar6 = cVar1;
             if (cVar1 == '\0') break;
-            cVar1 = pcVar5[1];
+            cVar2 = pcVar5[1];
             pcVar5 = pcVar5 + 2;
-            pcVar6[1] = cVar1;
+            pcVar6[1] = cVar2;
             pcVar6 = pcVar6 + 2;
-          } while (cVar1 != '\0');
-          pcVar6 = g_TempTextureName;
-          pcVar5 = local_90;
+          } while (cVar2 != '\0');
+          pcVar3 = g_TempTextureName;
+          pcVar4 = local_90;
           do {
-            cVar1 = *pcVar6;
-            *pcVar5 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar6[1];
-            pcVar6 = pcVar6 + 2;
-            pcVar5[1] = cVar1;
-            pcVar5 = pcVar5 + 2;
-          } while (cVar1 != '\0');
+            cVar2 = *pcVar3;
+            *pcVar4 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar3[1];
+            pcVar3 = pcVar3 + 2;
+            pcVar4[1] = cVar2;
+            pcVar4 = pcVar4 + 2;
+          } while (cVar2 != '\0');
           local_94 = 0;
           local_98 = 0xd;
           if (include_textures == 0x59) {

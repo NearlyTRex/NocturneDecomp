@@ -12,6 +12,7 @@ void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,v
 
 {
   double dVar1;
+  double dVar3;
   double dVar2;
   int local_60;
   double local_4c;
@@ -32,21 +33,21 @@ void __cdecl shape_design_c_sampleAndFilterPixel_FUN_0046ae20(void *rgb_buffer,v
   local_2c = 0.0;
   dVar1 = floor(coord_y1);
   local_24 = (int)ROUND(ROUND(dVar1));
-  dVar1 = ceil(coord_y2);
-  local_20 = (int)ROUND(ROUND(dVar1));
-  dVar1 = floor(coord_x1);
-  local_1c = (int)ROUND(ROUND(dVar1));
-  dVar1 = ceil(coord_x2);
-  local_18 = (int)ROUND(ROUND(dVar1));
+  dVar3 = ceil(coord_y2);
+  local_20 = (int)ROUND(ROUND(dVar3));
+  dVar3 = floor(coord_x1);
+  local_1c = (int)ROUND(ROUND(dVar3));
+  dVar3 = ceil(coord_x2);
+  local_18 = (int)ROUND(ROUND(dVar3));
   for (local_14 = local_24; local_14 < local_20; local_14 = local_14 + 1) {
-    dVar1 = shape_design_c_calculateSamplingWeight_FUN_0046adc0((double)local_14,coord_y1,coord_y2);
+    dVar3 = shape_design_c_calculateSamplingWeight_FUN_0046adc0((double)local_14,coord_y1,coord_y2);
     for (local_60 = local_1c; local_60 < local_18; local_60 = local_60 + 1) {
       dVar2 = shape_design_c_calculateSamplingWeight_FUN_0046adc0
                         ((double)local_60,coord_x1,coord_x2);
       shape_design_c_samplePixelAndAccumulate_FUN_0046ad00
-                (rgb_buffer,alpha_buffer,atlas_width,atlas_height,local_60,local_14,dVar2 * dVar1,
+                (rgb_buffer,alpha_buffer,atlas_width,atlas_height,local_60,local_14,dVar2 * dVar3,
                  &local_4c,&local_44,&local_3c,&local_34);
-      local_2c = local_2c + dVar2 * dVar1;
+      local_2c = local_2c + dVar2 * dVar3;
     }
   }
   if (0.0 < local_2c) {

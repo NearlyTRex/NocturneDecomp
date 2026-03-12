@@ -6,7 +6,7 @@
 ; Parameters:
 ; CMatrix3x4f *    Stack[0x4]:4   matrix
 ; Local Variables:
-; undefined        Stack[-0x38]:1  local_38
+; CMatrix3x4f      Stack[-0x38]:48  local_38
 ;
 ; Called Functions:
 ;   core_xform.cpp_inverse_FUN_005f6210

@@ -7,7 +7,9 @@
 ; CFileFinder *    Stack[0x4]:4   finder
 ; LPWIN32_FIND_DATAA Stack[0x8]:4   find_data
 ; Local Variables:
-; undefined1       Stack[-0x18]:1  local_18
+; _tm              Stack[-0x4c]:36  _Stack_4c
+; _SYSTEMTIME      Stack[-0x28]:16  _Stack_28
+; _FILETIME        Stack[-0x18]:8  local_18
 ;
 ; XREF[2]:
 ;   engine_dosio.c_CFileFinder_findNext_FUN_00481cf0 at 00481d46
@@ -26,7 +28,6 @@
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_string.c__strncpy_FUN_00600f40
 ;   crt_time.c__mktime_FUN_00600f80
-;   FileTimeToLocalFileTime
 ;   FileTimeToSystemTime
 ;
 ; *****************************************************************************

@@ -6,7 +6,17 @@
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x64]:1  local_64
+; CBoundingBox3D   Stack[-0x64]:24  local_64
+; CVector3f        Stack[-0x4c]:12  CStack_4c
+; CVector3f        Stack[-0x40]:12  CStack_40
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; float            Stack[-0x28]:4  fStack_28
+; float            Stack[-0x24]:4  fStack_24
+; float            Stack[-0x20]:4  fStack_20
+; float            Stack[-0x1c]:4  fStack_1c
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; XREF[6]:
 ;   core_colonel.cpp_CColonel_process_FUN_0043fa00 at 0043fdb7

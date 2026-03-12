@@ -7,7 +7,7 @@
 ; HRESULT          Stack[0x4]:4   error_code
 ; char *           Stack[0x8]:4   operation_description
 ; Local Variables:
-; undefined        Stack[-0x190]:1  local_190
+; char[400]        Stack[-0x190]:400  local_190
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c

@@ -10,6 +10,7 @@ int __cdecl core_enemy_cpp_CEnemy_canSeeTarget_FUN_004a9a50(CEnemy *this_ptr,CDe
 
 {
   CVector3f *pCVar1;
+  CVector3f *pCVar2;
   int iVar2;
   CBoundingBox3D CStack_5c;
   CVector3f CStack_44;
@@ -25,9 +26,9 @@ int __cdecl core_enemy_cpp_CEnemy_canSeeTarget_FUN_004a9a50(CEnemy *this_ptr,CDe
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&CStack_38,pCVar1);
   (*((target->vtable)._ub)->getBoundingBox)(target,&CStack_5c);
-  pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(target,&CStack_14,&CStack_38);
-  pCVar1 = core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(&CStack_5c,&CStack_20,pCVar1);
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(target,&CStack_44,pCVar1);
+  pCVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(target,&CStack_14,&CStack_38);
+  pCVar2 = core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(&CStack_5c,&CStack_20,pCVar2);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(target,&CStack_44,pCVar2);
   iVar2 = core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_00572510
                     (g_CDemonSetPtr,&CStack_38,&CStack_44);
   return (uint)(iVar2 == 0);

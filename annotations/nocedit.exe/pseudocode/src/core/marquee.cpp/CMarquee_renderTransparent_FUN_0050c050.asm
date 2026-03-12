@@ -6,29 +6,23 @@
 ; Parameters:
 ; CMarquee *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x94]:1  local_94
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined1       Stack[-0x70]:1  local_70
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined1       Stack[-0x58]:1  local_58
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; CVector3f        Stack[-0x94]:12  local_94
+; CVector3f        Stack[-0x88]:12  local_88
+; CVector3f        Stack[-0x7c]:12  local_7c
+; CVector3f        Stack[-0x70]:12  local_70
+; CVector3f        Stack[-0x64]:12  local_64
+; CVector3f        Stack[-0x58]:12  local_58
+; CVector3f        Stack[-0x4c]:12  local_4c
+; CVector3f        Stack[-0x40]:12  local_40
+; CVector3f        Stack[-0x34]:12  local_34
+; float            Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; CCourse *        Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
+; int              Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

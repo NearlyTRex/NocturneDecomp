@@ -7,12 +7,7 @@
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; CBoneStructure * Stack[0x8]:4   bone_structure
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; undefined4[6]    Stack[-0x24]:24  local_24
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c388

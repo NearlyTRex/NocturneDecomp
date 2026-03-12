@@ -1,39 +1,25 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 37,
-        "message": "use of undeclared identifier 'stack0xffffffe8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 39,
-        "message": "use of undeclared identifier 'stack0xffffffec'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 185,
+    "complexity_score": 139,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
-    "suspect_count": 13,
+    "pseudocode_lines": 29,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
-      "stack_ref",
       "warning_inlined_function"
     ],
-    "total_lines": 89
+    "total_lines": 88
   },
   "cross_references": [
     {
@@ -134,12 +120,19 @@
     "pcode_op_count": 347
   },
   "stack_frame": {
-    "frame_size": 48,
-    "local_size": 40,
+    "frame_size": 4112,
+    "local_size": 4104,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "aiStackY_1004",
+        "offset": -4100,
+        "size": 4064,
+        "type": "int[1016]"
+      },
       {
         "is_param": false,
         "name": "local_24",
@@ -159,21 +152,21 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": true,
@@ -202,7 +195,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
+      "line": 9,
       "match": "aiStackY_1004",
       "severity": "moderate",
       "text": "int aiStackY_1004 [1016];",
@@ -263,38 +256,6 @@
       "severity": "mild",
       "text": "output_voxel_coords->x = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 30,
-      "match": "&stack0xffffffe8",
-      "severity": "moderate",
-      "text": "*puVar2 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar3 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*puVar2 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar3 * -8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 32,
-      "match": "&stack0xffffffec",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
-      "type": "pointer_cast"
     }
   ]
 }

@@ -12,9 +12,6 @@ void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void)
 
 {
   char local_84 [104];
-  byte local_1c;
-  byte local_18;
-  byte local_14;
   
   g_ZoomLevel = 0x10000;
   wincore_winrun_cpp_clearMouseClicks_FUN_005f30c0();
@@ -69,21 +66,6 @@ void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void)
     g_ActiveRenderColor = 0x10;
     engine_2d_c_drawLine_FUN_004011b0(g_WindowWidth / 2,0,g_WindowWidth / 2,g_WindowHeight + -1);
     engine_2d_c_drawLine_FUN_004011b0(0,g_WindowHeight / 2,g_WindowWidth + -1,g_WindowHeight / 2);
-    if (g_PolygonScreenCache[19999].view_mode == 0) {
-      local_18 = 0x58;
-      local_14 = 0x5a;
-      local_1c = 0x59;
-    }
-    else if ((uint)g_PolygonScreenCache[19999].view_mode < 2) {
-      local_18 = 0x5a;
-      local_14 = 0x59;
-      local_1c = 0x58;
-    }
-    else if (g_PolygonScreenCache[19999].view_mode == 2) {
-      local_18 = 0x58;
-      local_14 = 0x59;
-      local_1c = 0x5a;
-    }
     _sprintf(local_84,"%c");
     engine_2d_c_drawText_FUN_00401fd0(local_84,g_WindowWidth / 2 + 2,0);
     _sprintf(local_84,"%c");

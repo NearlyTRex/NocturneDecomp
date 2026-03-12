@@ -7,12 +7,45 @@
 ; CCurtain *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0xac]:4  local_ac
-; undefined4       Stack[-0xa8]:4  local_a8
-; undefined4       Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
+; float            Stack[-0xe0]:4  fStack_e0
+; float            Stack[-0xc4]:4  fStack_c4
+; float            Stack[-0xc0]:4  fStack_c0
+; float            Stack[-0xbc]:4  fStack_bc
+; float            Stack[-0xb8]:4  fStack_b8
+; float            Stack[-0xb4]:4  fStack_b4
+; float            Stack[-0xb0]:4  fStack_b0
+; float            Stack[-0xac]:4  local_ac
+; float            Stack[-0xa8]:4  local_a8
+; float            Stack[-0xa4]:4  local_a4
+; float            Stack[-0xa0]:4  fStack_a0
+; float            Stack[-0x9c]:4  fStack_9c
+; float            Stack[-0x98]:4  fStack_98
+; float            Stack[-0x94]:4  fStack_94
+; float            Stack[-0x90]:4  fStack_90
+; float            Stack[-0x8c]:4  fStack_8c
+; float            Stack[-0x7c]:4  local_7c
+; float            Stack[-0x78]:4  local_78
+; float            Stack[-0x74]:4  local_74
+; float            Stack[-0x70]:4  fStack_70
+; float            Stack[-0x6c]:4  fStack_6c
+; float            Stack[-0x68]:4  fStack_68
+; float            Stack[-0x64]:4  fStack_64
+; float            Stack[-0x60]:4  fStack_60
+; float            Stack[-0x5c]:4  fStack_5c
+; float            Stack[-0x58]:4  fStack_58
+; float            Stack[-0x54]:4  fStack_54
+; float            Stack[-0x50]:4  fStack_50
+; float            Stack[-0x4c]:4  fStack_4c
+; float            Stack[-0x48]:4  fStack_48
+; float            Stack[-0x44]:4  fStack_44
+; SCurtainVertex * Stack[-0x30]:4  pSStack_30
+; SCurtainVertex * Stack[-0x2c]:4  pSStack_2c
+; int              Stack[-0x28]:4  iStack_28
+; int              Stack[-0x24]:4  iStack_24
+; int              Stack[-0x20]:4  iStack_20
+; int              Stack[-0x1c]:4  iStack_1c
+; float            Stack[-0x18]:4  fStack_18
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_00619c1a

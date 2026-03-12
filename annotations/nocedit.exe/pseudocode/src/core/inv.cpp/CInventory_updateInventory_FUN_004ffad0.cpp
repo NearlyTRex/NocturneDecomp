@@ -9,20 +9,25 @@
 void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *this_ptr)
 
 {
-  CWeapon *actor_ptr;
-  float fVar1;
-  float fVar2;
+  CWeapon *actor_ptr_00;
+  float fVar3;
   CDemonActor *pCVar3;
+  CDemonActor *pCVar4;
   int iVar4;
+  int iVar5;
+  CInventory *pCVar6;
   CInventory *pCVar5;
   float local_20;
   float local_1c;
+  float fVar2;
+  CWeapon *actor_ptr;
+  float fVar1;
   
-  actor_ptr = this_ptr->selected_weapon;
-  if (actor_ptr != (CWeapon *)0x0) {
-    if ((this_ptr->cached_ammo_count != actor_ptr->ammo_count) &&
+  actor_ptr_00 = this_ptr->selected_weapon;
+  if (actor_ptr_00 != (CWeapon *)0x0) {
+    if ((this_ptr->cached_ammo_count != actor_ptr_00->ammo_count) &&
        (pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (&actor_ptr->base,g_CLightGunClassInfo.name_hash),
+                           (&actor_ptr_00->base,g_CLightGunClassInfo.name_hash),
        pCVar3 == (CDemonActor *)0x0)) {
       core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0(this_ptr,0);
     }
@@ -30,39 +35,39 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
   }
   if ((g_CGamePtr->auto_save_blocked == 0) && (g_CGamePtr->block_auto_save == 0)) {
     local_20 = 1.0 / 120.0f;
-    iVar4 = 0;
+    iVar5 = 0;
     pCVar5 = this_ptr;
     if (0 < this_ptr->item_count) {
       do {
-        pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
+        pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
                            (pCVar5->items[0],g_CBatteryClassInfo.name_hash);
-        if (pCVar3 != (CDemonActor *)0x0) {
-          local_20 = 1.0 / pCVar3[2].location.position.z + local_20;
+        if (pCVar4 != (CDemonActor *)0x0) {
+          local_20 = 1.0 / pCVar4[2].location.position.z + local_20;
         }
-        iVar4 = iVar4 + 1;
+        iVar5 = iVar5 + 1;
         pCVar5 = (CInventory *)&pCVar5->owner;
-      } while (iVar4 < this_ptr->item_count);
+      } while (iVar5 < this_ptr->item_count);
     }
     fVar2 = (float)100;
-    fVar1 = g_CGamePtr->delta_time_float * fVar2 * local_20 + this_ptr->battery_charge;
-    this_ptr->battery_charge = fVar1;
-    if (fVar2 < fVar1) {
+    fVar3 = g_CGamePtr->delta_time_float * fVar2 * local_20 + this_ptr->battery_charge;
+    this_ptr->battery_charge = fVar3;
+    if (fVar2 < fVar3) {
       this_ptr->battery_charge = 100.0;
     }
   }
   else {
     iVar4 = 0;
     local_1c = 30.0f;
-    pCVar5 = this_ptr;
+    pCVar6 = this_ptr;
     if (0 < this_ptr->item_count) {
       do {
-        pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (pCVar5->items[0],g_CBatteryClassInfo.name_hash);
-        if (pCVar3 != (CDemonActor *)0x0) {
-          local_1c = local_1c + (float)pCVar3[2].location.area_id;
+        pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
+                           (pCVar6->items[0],g_CBatteryClassInfo.name_hash);
+        if (pCVar4 != (CDemonActor *)0x0) {
+          local_1c = local_1c + (float)pCVar4[2].location.area_id;
         }
         iVar4 = iVar4 + 1;
-        pCVar5 = (CInventory *)&pCVar5->owner;
+        pCVar6 = (CInventory *)&pCVar6->owner;
       } while (iVar4 < this_ptr->item_count);
     }
     fVar1 = this_ptr->battery_charge -
@@ -72,18 +77,18 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004ffad0(CInventory *th
       this_ptr->battery_charge = 0.0;
     }
   }
-  iVar4 = 0;
-  pCVar5 = this_ptr;
+  iVar5 = 0;
+  pCVar6 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
-                         (pCVar5->items[0],g_CLightGunClassInfo.name_hash);
-      if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.position.y != 2.8026e-45)) {
-        (*((pCVar3->vtable)._ub)->process)(pCVar3,g_CGamePtr->delta_time_float);
+      pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790
+                         (pCVar6->items[0],g_CLightGunClassInfo.name_hash);
+      if ((pCVar4 != (CDemonActor *)0x0) && (pCVar4[2].location.position.y != 2.8026e-45)) {
+        (*((pCVar4->vtable)._ub)->process)(pCVar4,g_CGamePtr->delta_time_float);
       }
-      iVar4 = iVar4 + 1;
-      pCVar5 = (CInventory *)&pCVar5->owner;
-    } while (iVar4 < this_ptr->item_count);
+      iVar5 = iVar5 + 1;
+      pCVar6 = (CInventory *)&pCVar6->owner;
+    } while (iVar5 < this_ptr->item_count);
   }
   this_ptr->weapon_highlight_timer = this_ptr->weapon_highlight_timer - g_CGamePtr->delta_time_float
   ;

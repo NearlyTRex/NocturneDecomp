@@ -10,11 +10,11 @@
 ; int *            Stack[0x10]:4   result_cameras
 ; int              Stack[0x14]:4   exclude_camera_index
 ; Local Variables:
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x34]:1  local_34
-; undefined1       Stack[-0x28]:1  local_28
-; undefined1       Stack[-0x1c]:1  local_1c
-; undefined4       Stack[-0x14]:4  local_14
+; int[1015]        Stack[-0x1028]:4060  aiStackY_1028
+; CVector3i        Stack[-0x40]:12  local_40
+; CVector3i        Stack[-0x34]:12  local_34
+; CVector3i        Stack[-0x28]:12  local_28
+; CVector3i        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[2]:
 ;   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 at 0057dff0

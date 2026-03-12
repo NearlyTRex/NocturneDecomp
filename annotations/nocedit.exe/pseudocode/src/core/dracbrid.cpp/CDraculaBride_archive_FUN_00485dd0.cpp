@@ -10,10 +10,11 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_00485dd0(CDraculaBride 
 
 {
   int iVar1;
+  int iVar2;
   char (*string_buffer) [40];
   CDemonActor **actor_ptr;
-  char *motion_name;
   int local_14;
+  char *motion_name;
   
   core_enemy_cpp_CEnemy_archive_FUN_004a9660(&this_ptr->base);
   if (g_CDraculaBrideClassVersion < 2) {
@@ -63,15 +64,15 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_00485dd0(CDraculaBride 
   if (7 < g_CDraculaBrideClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->exploded,"exploded");
     core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->part_count,"partCount");
-    iVar1 = 0;
+    iVar2 = 0;
     core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->fade_timer,"fadeTimer");
     if (0 < this_ptr->part_count) {
       actor_ptr = this_ptr->part_list;
       do {
-        iVar1 = iVar1 + 1;
+        iVar2 = iVar2 + 1;
         core_actor_cpp_archiveActor_FUN_0040b870(actor_ptr,"partList");
         actor_ptr = actor_ptr + 1;
-      } while (iVar1 < this_ptr->part_count);
+      } while (iVar2 < this_ptr->part_count);
     }
   }
   if (8 < g_CDraculaBrideClassVersion) {

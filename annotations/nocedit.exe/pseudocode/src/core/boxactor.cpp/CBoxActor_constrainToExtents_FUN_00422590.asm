@@ -6,9 +6,10 @@
 ; Parameters:
 ; CBoxActor *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x1c]:1  local_1c
-; undefined1       Stack[-0x10]:1  local_10
+; CBoundingBox3D   Stack[-0x40]:24  local_40
+; CVector3f        Stack[-0x28]:12  CStack_28
+; CVector3f        Stack[-0x1c]:12  local_1c
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; XREF[1]:
 ;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422390 at 00422498

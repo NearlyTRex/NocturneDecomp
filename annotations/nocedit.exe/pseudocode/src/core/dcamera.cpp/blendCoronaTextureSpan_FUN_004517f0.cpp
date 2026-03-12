@@ -9,13 +9,11 @@
 void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y,int x_start,int x_end,int source_buffer_offset)
 
 {
-  uint uVar1;
-  bool bVar2;
-  ushort uVar3;
-  uint uVar4;
+  bool bVar1;
   byte *pbVar5;
   int iVar6;
   int iVar7;
+  int iVar2;
   uint uVar8;
   char *pcVar9;
   ushort uVar10;
@@ -25,6 +23,10 @@ void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y
   uint5 uVar13;
   ushort uVar15;
   uint7 uVar16;
+  uint uVar4;
+  ushort uVar3;
+  bool bVar2;
+  uint uVar1;
   
   pcVar9 = g_CoronaBlurOutputBuffer[scanline_y] + x_start;
   pbVar5 = (byte *)(scanline_y * 0x140 + source_buffer_offset + 0x784 + x_start);
@@ -45,9 +47,10 @@ void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y
   }
   while (3 < iVar7) {
     uVar1 = *(uint *)pbVar5;
-    uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>
-                                                   0x28),CONCAT14((char)((uint)uVar1 >> 0x10),uVar1)
-                                           ) >> 0x20),uVar1) >> 0x18);
+    uVar13._0_1_ = (byte)((uint)uVar1 >> 0x18);
+    uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)uVar13 << 0x30) >> 0x28),
+                                            CONCAT14((char)((uint)uVar1 >> 0x10),uVar1)) >> 0x20),
+                            uVar1) >> 0x18);
     uVar13 = (uint5)uVar4 & 0xffffffff00;
     uVar10 = (ushort)(((ushort)uVar1 & 0xff) * (ushort)(byte)uVar8) >> 6;
     uVar12 = (ushort)(((ushort)(CONCAT43(uVar4,CONCAT12((char)((uint)uVar1 >> 8),(ushort)uVar1)) >>
@@ -73,9 +76,9 @@ void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_004517f0(int scanline_y
     *pcVar9 = *pcVar9 + g_CameraLookupTable[(uint)*pbVar5 * 0x40 + uVar8];
     pbVar5 = pbVar5 + 1;
     pcVar9 = pcVar9 + 1;
-    iVar6 = iVar7 + -1;
-    bVar2 = 0 < iVar7;
-    iVar7 = iVar6;
-  } while (iVar6 != 0 && bVar2);
+    iVar2 = iVar7 + -1;
+    bVar1 = 0 < iVar7;
+    iVar7 = iVar2;
+  } while (iVar2 != 0 && bVar1);
   return;
 }

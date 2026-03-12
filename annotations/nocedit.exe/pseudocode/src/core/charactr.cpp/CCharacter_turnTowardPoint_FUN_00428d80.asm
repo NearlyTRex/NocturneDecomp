@@ -7,12 +7,12 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   target
 ; Local Variables:
-; undefined1       Stack[-0x30]:1  local_30
-; undefined1       Stack[-0x24]:1  local_24
+; CVector3f        Stack[-0x30]:12  local_30
+; CVector3f        Stack[-0x24]:12  local_24
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; float            Stack[-0x10]:4  local_10
+; float            Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:

@@ -9,9 +9,8 @@
 void __cdecl core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90(CBoundingBox3D *this_ptr,int vertex_count,CVector3i *vertices)
 
 {
-  int iVar1;
-  float fVar2;
-  int iVar3;
+  int iVar2;
+  int iVar7;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -19,6 +18,9 @@ void __cdecl core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90(CBound
   int local_24;
   int local_20;
   int local_1c;
+  int iVar1;
+  float fVar2;
+  int iVar3;
   
   iVar5 = 1;
   iVar6 = vertices->x;
@@ -35,18 +37,18 @@ void __cdecl core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90(CBound
         iVar6 = iVar1;
       }
       local_28 = iVar3;
-      iVar1 = vertices[1].y;
-      iVar3 = iVar1;
-      if ((local_24 <= iVar1) && (iVar3 = local_24, iVar4 < iVar1)) {
-        iVar4 = iVar1;
+      iVar2 = vertices[1].y;
+      iVar7 = iVar2;
+      if ((local_24 <= iVar2) && (iVar7 = local_24, iVar4 < iVar2)) {
+        iVar4 = iVar2;
       }
-      local_24 = iVar3;
-      iVar1 = vertices[1].z;
-      iVar3 = iVar1;
-      if ((local_20 <= iVar1) && (iVar3 = local_20, iVar4 < iVar1)) {
-        local_1c = iVar1;
+      local_24 = iVar7;
+      iVar2 = vertices[1].z;
+      iVar7 = iVar2;
+      if ((local_20 <= iVar2) && (iVar7 = local_20, iVar4 < iVar2)) {
+        local_1c = iVar2;
       }
-      local_20 = iVar3;
+      local_20 = iVar7;
       iVar5 = iVar5 + 1;
       vertices = vertices + 1;
     } while (iVar5 < vertex_count);

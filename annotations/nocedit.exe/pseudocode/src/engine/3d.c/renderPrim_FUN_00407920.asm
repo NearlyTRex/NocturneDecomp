@@ -6,7 +6,7 @@
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   primitive
 ; Local Variables:
-; undefined        Stack[-0x104]:1  local_104
+; char[256]        Stack[-0x104]:256  local_104
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_3d_c_006134a9

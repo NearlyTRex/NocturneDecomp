@@ -6,8 +6,8 @@
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
 ; undefined4       Stack[-0x68]:4  local_68
-; undefined1       Stack[-0x64]:1  local_64
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x64]:80  local_64
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e3d4

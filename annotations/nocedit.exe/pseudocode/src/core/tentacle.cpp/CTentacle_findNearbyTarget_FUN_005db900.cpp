@@ -11,13 +11,13 @@
 int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_005db900(CTentacle *this_ptr,char *class_name)
 
 {
-  CTentacle *actor_ptr;
-  float fVar1;
-  float fVar2;
-  float fVar3;
   int iVar4;
   int iVar5;
   int local_14;
+  CTentacle *actor_ptr;
+  float fVar2;
+  float fVar1;
+  float fVar3;
   
   iVar5 = 0;
   local_14 = 0;

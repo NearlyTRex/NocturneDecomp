@@ -7,12 +7,12 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   coverage_map
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char *           Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 at 0057dfca

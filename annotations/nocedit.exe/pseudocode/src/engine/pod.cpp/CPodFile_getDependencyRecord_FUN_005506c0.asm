@@ -7,7 +7,7 @@
 ; CPodFile *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   dependency_index
 ; Local Variables:
-; undefined1       Stack[-0x114]:1  local_114
+; undefined4[66]   Stack[-0x114]:264  local_114
 ;
 ; XREF[1]:
 ;   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0 at 00551523

@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 122,
+        "line": 127,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 28,
-        "line": 122,
+        "line": 127,
         "message": "expected expression"
       }
     ],
@@ -19,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 335,
+    "complexity_score": 340,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 280,
+    "pseudocode_lines": 285,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 931
+    "total_lines": 936
   },
   "cross_references": [],
   "function": {
@@ -239,53 +239,284 @@
     "pcode_op_count": 3459
   },
   "stack_frame": {
-    "frame_size": 184,
-    "local_size": 176,
+    "frame_size": 236,
+    "local_size": 228,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "fStack_e0",
+        "offset": -224,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_c4",
+        "offset": -196,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
         "name": "local_ac",
         "offset": -172,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_a8",
         "offset": -168,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_a4",
         "offset": -164,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_98",
+        "offset": -152,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_94",
+        "offset": -148,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_90",
+        "offset": -144,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_7c",
         "offset": -124,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_78",
         "offset": -120,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_74",
         "offset": -116,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_70",
+        "offset": -112,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_68",
+        "offset": -104,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_64",
+        "offset": -100,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_60",
+        "offset": -96,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_58",
+        "offset": -88,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_54",
+        "offset": -84,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_50",
+        "offset": -80,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_48",
+        "offset": -72,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_44",
+        "offset": -68,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "pSStack_30",
+        "offset": -48,
+        "size": 4,
+        "type": "SCurtainVertex *"
+      },
+      {
+        "is_param": false,
+        "name": "pSStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "SCurtainVertex *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_14",
+        "offset": -20,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": true,
@@ -323,31 +554,31 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 112,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar10 = *(int *)((int)g_CDemonSetPtr->characters + iStack_28);",
+      "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iStack_28);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 115,
+      "line": 120,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar7 = (**(code **)(*(int *)(iVar10 + 0x154) + 0x34))(iVar10,pSVar11);",
+      "text": "iVar7 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x34))(iVar2,pSVar11);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 142,
+      "line": 147,
       "match": "SQRT",
       "severity": "mild",
-      "text": "if ((float)0.10000000000000001 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar5 * fVar5)) {",
+      "text": "if ((float)0.10000000000000001 < SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar1 * fVar1)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 150,
+      "line": 155,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(fStack_b0 * fStack_b0 + fStack_b8 * fStack_b8 + fStack_b4 * fStack_b4)) {",

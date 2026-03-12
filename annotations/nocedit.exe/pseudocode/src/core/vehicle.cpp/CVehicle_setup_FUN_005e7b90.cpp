@@ -9,23 +9,26 @@
 void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_005e7b90(CVehicle *this_ptr)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
+  float fVar9;
+  CVector3f *pCVar13;
   CKeyFramedModel *pCVar9;
   CVector3f *pCVar10;
   CTire *pCVar11;
   CVector3f *pCVar12;
   CKeyFramedModelInstance *this_ptr_00;
+  int iVar14;
   int iVar13;
   float local_1c;
   float local_18;
   float local_14;
+  float fVar3;
+  float fVar1;
+  float fVar8;
+  float fVar6;
+  float fVar7;
+  float fVar4;
+  float fVar5;
+  float fVar2;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   iVar13 = 0;
@@ -39,10 +42,10 @@ void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_005e7b90(CVehicle *this_ptr)
     } while (iVar13 < this_ptr->tire_count);
   }
   pCVar9 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
-  pCVar12 = pCVar9->frame_bounds;
-  local_1c = pCVar12[1].x - pCVar12->x;
-  local_18 = pCVar12[1].y - pCVar12->y;
-  local_14 = pCVar12[1].z - pCVar12->z;
+  pCVar13 = pCVar9->frame_bounds;
+  local_1c = pCVar13[1].x - pCVar13->x;
+  local_18 = pCVar13[1].y - pCVar13->y;
+  local_14 = pCVar13[1].z - pCVar13->z;
   if (&this_ptr->bound_size != (CVector3f *)&local_1c) {
     (this_ptr->bound_size).x = local_1c;
     (this_ptr->bound_size).y = local_18;
@@ -81,28 +84,28 @@ void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_005e7b90(CVehicle *this_ptr)
   (this_ptr->world_velocity).z = 0.0;
   (this_ptr->world_velocity).y = (this_ptr->world_velocity).z;
   (this_ptr->world_velocity).x = (this_ptr->world_velocity).y;
-  iVar13 = 0;
+  iVar14 = 0;
   if (0 < this_ptr->tire_count) {
     pCVar12 = &this_ptr->tires[0].runtime_position;
     pCVar10 = &this_ptr->tires[0].spin_angle;
     do {
-      pCVar11 = this_ptr->tires + iVar13;
+      pCVar11 = this_ptr->tires + iVar14;
       if ((CTire *)pCVar12 != pCVar11) {
         pCVar12->x = (pCVar11->static_bpos).x;
         pCVar12->y = (pCVar11->static_bpos).y;
         pCVar12->z = (pCVar11->static_bpos).z;
       }
       pCVar10->z = 0.0;
-      pCVar12 = (CVector3f *)((int)(pCVar12 + 0x24) + 4);
+      pCVar12 = (CVector3f *)&pCVar12[0x24].y;
       pCVar10[2].z = 0.0;
-      iVar13 = iVar13 + 1;
-      fVar1 = pCVar10[2].z;
+      iVar14 = iVar14 + 1;
+      fVar9 = pCVar10[2].z;
       pCVar10->y = pCVar10->z;
-      pCVar10[2].y = fVar1;
+      pCVar10[2].y = fVar9;
       pCVar10->x = pCVar10->y;
-      pCVar10[2].x = fVar1;
-      pCVar10 = (CVector3f *)((int)(pCVar10 + 0x24) + 4);
-    } while (iVar13 < this_ptr->tire_count);
+      pCVar10[2].x = fVar9;
+      pCVar10 = (CVector3f *)&pCVar10[0x24].y;
+    } while (iVar14 < this_ptr->tire_count);
   }
   (this_ptr->ground_normal).x = 0.0;
   (this_ptr->ground_normal).y = 1.0;

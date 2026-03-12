@@ -11,11 +11,12 @@
 void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr,float delta_time)
 
 {
-  CHero *pCVar1;
-  float fVar2;
-  int iVar3;
+  int iVar1;
   int iVar4;
   SDamageInfo local_48;
+  float fVar2;
+  CHero *pCVar1;
+  int iVar3;
   
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,this_ptr->drop_condition);
@@ -33,11 +34,11 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr,float d
   if (this_ptr->triggered != 0) {
     fVar2 = this_ptr->yvel - delta_time * (float)32;
     this_ptr->yvel = fVar2;
-    iVar3 = g_LocalHeroIndex;
+    iVar1 = g_LocalHeroIndex;
     (this_ptr->base).location.position.y = fVar2 + (this_ptr->base).location.position.y;
-    if ((this_ptr->base).location.position.y < (g_HeroActors[iVar3]->base).base.location.position.y)
+    if ((this_ptr->base).location.position.y < (g_HeroActors[iVar1]->base).base.location.position.y)
     {
-      (this_ptr->base).location.position.y = (g_HeroActors[iVar3]->base).base.location.position.y;
+      (this_ptr->base).location.position.y = (g_HeroActors[iVar1]->base).base.location.position.y;
       this_ptr->yvel = 0.0;
     }
     if ((this_ptr->base).location.position.y <

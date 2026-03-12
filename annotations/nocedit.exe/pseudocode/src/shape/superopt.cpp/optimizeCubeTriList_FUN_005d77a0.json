@@ -4,55 +4,61 @@
       {
         "category": "other",
         "column": 38,
-        "line": 42,
+        "line": 47,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 28,
-        "line": 56,
+        "column": 24,
+        "line": 61,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 33,
-        "line": 153,
+        "column": 29,
+        "line": 156,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "other",
-        "column": 51,
-        "line": 166,
-        "message": "member reference base type 'double' is not a structure or union"
+        "category": "incompatible_types",
+        "column": 31,
+        "line": 162,
+        "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'"
       },
       {
         "category": "other",
-        "column": 51,
-        "line": 167,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 168,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 51,
-        "line": 169,
-        "message": "member reference base type 'double' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 51,
+        "column": 49,
         "line": 170,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 51,
+        "column": 49,
         "line": 171,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 49,
+        "line": 172,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 49,
+        "line": 173,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 49,
+        "line": 174,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 49,
+        "line": 175,
         "message": "member reference base type 'double' is not a structure or union"
       }
     ],
@@ -61,13 +67,13 @@
   },
   "complexity": {
     "assembly_lines": 511,
-    "complexity_score": 557,
+    "complexity_score": 551,
     "cross_reference_count": 1,
     "function_call_count": 27,
     "global_count": 51,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 202,
-    "suspect_count": 33,
+    "pseudocode_lines": 206,
+    "suspect_count": 32,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
@@ -75,7 +81,7 @@
       "stack_alignment_array",
       "unknown_field"
     ],
-    "total_lines": 713
+    "total_lines": 717
   },
   "cross_references": [
     {
@@ -600,12 +606,19 @@
     "pcode_op_count": 2088
   },
   "stack_frame": {
-    "frame_size": 388,
-    "local_size": 388,
+    "frame_size": 4432,
+    "local_size": 4432,
     "param_offset": 4,
     "param_size": 0,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "aiStackY_114c",
+        "offset": -4428,
+        "size": 4036,
+        "type": "int[1009]"
+      },
       {
         "is_param": false,
         "name": "local_180",
@@ -631,239 +644,99 @@
         "is_param": false,
         "name": "local_168",
         "offset": -360,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_164",
-        "offset": -356,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_160",
-        "offset": -352,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_15c",
-        "offset": -348,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_158",
-        "offset": -344,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_150",
-        "offset": -336,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_148",
-        "offset": -328,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_140",
-        "offset": -320,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_138",
-        "offset": -312,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_130",
-        "offset": -304,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_128",
-        "offset": -296,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_124",
-        "offset": -292,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_120",
-        "offset": -288,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_11c",
-        "offset": -284,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_118",
-        "offset": -280,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_114",
-        "offset": -276,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_110",
-        "offset": -272,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_10c",
-        "offset": -268,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_108",
-        "offset": -264,
-        "size": 4,
-        "type": "undefined4"
+        "size": 104,
+        "type": "CPoly"
       },
       {
         "is_param": false,
         "name": "local_100",
         "offset": -256,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_9c",
         "offset": -156,
-        "size": 1,
-        "type": "undefined1"
+        "size": 68,
+        "type": "COptimize"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
+        "size": 28,
+        "type": "CObj"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "_FILE *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       }
     ]
   },
@@ -887,7 +760,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 14,
+      "line": 18,
       "match": "aiStackY_114c",
       "severity": "moderate",
       "text": "int aiStackY_114c [1009];",
@@ -895,15 +768,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 49,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar5 = iVar5 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar3) + -2;",
+      "text": "iVar5 = iVar5 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6) + -2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 66,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "*(double *)((int)&((local_58.vertex_data)->position).x + iVar3) =",
@@ -911,15 +784,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 67,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar2);",
+      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 68,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "*(double *)((int)&((local_58.vertex_data)->position).y + iVar3) =",
@@ -927,15 +800,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 69,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar2);",
+      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 70,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "*(double *)((int)&((local_58.vertex_data)->position).z + iVar3) =",
@@ -943,39 +816,39 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar2),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 71,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar2));",
+      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 74,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_168.vertex_idx_0 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28);",
@@ -983,7 +856,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 96,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + local_28) * 0.00390625;",
@@ -991,7 +864,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 98,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_v + local_28) * 0.00390625;",
@@ -999,7 +872,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 135,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (2 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28 + -0x14)) {",
@@ -1007,114 +880,74 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + 0x3c) *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 138,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar2 + 0x3c) * 0.00390625;",
+      "text": "(double)*(float *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 0x3c) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 141,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar2) * 0.00390625;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 142,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar2) * 0.00390625;",
+      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar4 + 0x3c) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 143,
-      "match": "(int *)((int)",
+      "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_168.vertex_idx_1 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + -4);",
+      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar4) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
-      "match": "(int *)((int)",
+      "line": 145,
+      "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_168.vertex_idx_2 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2);",
+      "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar4) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 146,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "local_34 = (int *)((int)&((CPoly *)((local_58.poly_array)->uv_coords + -1))->parent_obj +",
+      "text": "local_168.vertex_idx_1 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 147,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "local_34[(uint)bVar7 * -2 + 2] = *(int *)((int)&local_168 + (uint)bVar7 * -8 + 8);",
+      "text": "local_168.vertex_idx_2 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
-      "match": "(int *)((int)",
+      "line": 157,
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&local_168 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 0xc);",
+      "text": "puVar3[(uint)bVar7 * -2 + 2] = *(uint *)((int)&local_168 + (uint)bVar7 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
+      "description": "Complex pointer cast",
       "line": 159,
-      "match": "._0_4_",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "local_34[0x10] = local_168.normal.impl.x._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 160,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_34[0x11] = local_168.normal.impl.x._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 161,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_34[0x12] = local_168.normal.impl.y._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 162,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_34[0x13] = local_168.normal.impl.y._4_4_;",
-      "type": "unknown_field"
+      "text": "*(uint *)((int)&local_168 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 0xc);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 163,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_34[0x14] = local_168.normal.impl.z._0_4_;",
+      "text": "puVar3[0x10] = local_168.normal.impl.x._0_4_;",
       "type": "unknown_field"
     },
     {
@@ -1122,20 +955,52 @@
       "line": 164,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "local_34[0x15] = local_168.normal.impl.z._4_4_;",
+      "text": "puVar3[0x11] = local_168.normal.impl.x._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 165,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "puVar3[0x12] = local_168.normal.impl.y._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 166,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "puVar3[0x13] = local_168.normal.impl.y._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 167,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "puVar3[0x14] = local_168.normal.impl.z._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 168,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "puVar3[0x15] = local_168.normal.impl.z._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 172,
+      "line": 176,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "} while (local_18 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_24 + -0x14));",
+      "text": "} while (local_18 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28 + -0x14));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 184,
+      "line": 188,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar8 = (float10)fcos((float10)0.069813169999999994);",

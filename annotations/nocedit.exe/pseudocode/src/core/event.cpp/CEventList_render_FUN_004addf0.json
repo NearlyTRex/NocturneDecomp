@@ -4,25 +4,25 @@
       {
         "category": "format_error",
         "column": 42,
-        "line": 36,
+        "line": 39,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 43,
-        "line": 49,
+        "line": 52,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 86,
-        "line": 63,
+        "line": 66,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 27,
-        "line": 87,
+        "line": 89,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
@@ -34,13 +34,13 @@
       {
         "category": "format_error",
         "column": 18,
-        "line": 114,
+        "line": 113,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 115,
+        "line": 114,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -49,17 +49,17 @@
   },
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 130,
+    "complexity_score": 129,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 115,
+    "pseudocode_lines": 114,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 381
+    "total_lines": 380
   },
   "cross_references": [
     {
@@ -181,78 +181,78 @@
         "is_param": false,
         "name": "local_3a8",
         "offset": -936,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_2e0",
         "offset": -736,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_218",
         "offset": -536,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_150",
         "offset": -336,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_ec",
         "offset": -236,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_88",
         "offset": -136,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "CEventList *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "char[32] *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "char[30] *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -266,7 +266,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 107,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(pCVar5->sfx_handles).entries[0].playback_position + 4));",

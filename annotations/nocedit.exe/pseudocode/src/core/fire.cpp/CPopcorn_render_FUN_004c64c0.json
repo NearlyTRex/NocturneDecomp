@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 254,
-    "complexity_score": 359,
+    "complexity_score": 338,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 93,
     "suspect_count": 23,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 368
+    "total_lines": 347
   },
   "cross_references": [],
   "function": {
@@ -264,109 +264,95 @@
     "pcode_op_count": 1131
   },
   "stack_frame": {
-    "frame_size": 128,
-    "local_size": 124,
+    "frame_size": 4200,
+    "local_size": 4196,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "auStackY_1060",
+        "offset": -4192,
+        "size": 4008,
+        "type": "undefined4[1002]"
+      },
+      {
+        "is_param": false,
+        "name": "SStack_a0",
+        "offset": -160,
+        "size": 24,
+        "type": "SMRGLHeaderPrimitive"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_88",
+        "offset": -136,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
         "name": "local_78",
         "offset": -120,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
@@ -391,24 +377,17 @@
       },
       {
         "is_param": false,
+        "name": "CStack_24",
+        "offset": -36,
+        "size": 12,
+        "type": "CVector3i"
+      },
+      {
+        "is_param": false,
         "name": "local_18",
         "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_10",
-        "offset": -16,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": true,
@@ -430,7 +409,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 23,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_48.x = (int)ROUND((this_ptr->base).position.x * 256.0f);",
@@ -438,7 +417,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 30,
+      "line": 24,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_48.y = (int)ROUND((this_ptr->base).position.y * 256.0f);",
@@ -446,7 +425,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 25,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_48.z = (int)ROUND((this_ptr->base).position.z * 256.0f);",
@@ -454,7 +433,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 38,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_60 + (uint)bVar2 * -8 + 4) =",
@@ -462,7 +441,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 39,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_78 + (uint)bVar2 * -8 + 4);",
@@ -470,7 +449,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 40,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_60 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
@@ -478,7 +457,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 41,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
@@ -486,7 +465,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 44,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18.x = (int)ROUND(256.0f * -0.125);",
@@ -494,7 +473,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 45,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18.y = (int)ROUND(256.0f * -0.125);",
@@ -502,7 +481,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 46,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18.z = (int)ROUND(256.0f * 0.0);",
@@ -510,7 +489,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 49,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_3c.x = (int)ROUND(256.0f * 0.125);",
@@ -518,7 +497,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 50,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_3c.y = (int)ROUND(256.0f * -0.125);",
@@ -526,7 +505,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 51,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_3c.z = (int)ROUND(256.0f * 0.0);",
@@ -534,7 +513,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 54,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_6c.x = (int)ROUND(256.0f * 0.125);",
@@ -542,7 +521,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 55,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_6c.y = (int)ROUND(256.0f * 0.125);",
@@ -550,7 +529,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 56,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_6c.z = (int)ROUND(256.0f * 0.0);",
@@ -558,7 +537,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 59,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_54.x = (int)ROUND(256.0f * -0.125);",
@@ -566,7 +545,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 77,
+      "line": 60,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_54.y = (int)ROUND(256.0f * 0.125);",
@@ -574,7 +553,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 61,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_54.z = (int)ROUND(256.0f * 0.0);",
@@ -582,7 +561,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
+      "line": 77,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_24.x = (int)ROUND((this_ptr->base).position.x * 256.0f);",
@@ -590,7 +569,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 78,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_24.y = (int)ROUND((this_ptr->base).position.y * 256.0f);",
@@ -598,7 +577,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 79,
       "match": "ROUND",
       "severity": "mild",
       "text": "CStack_24.z = (int)ROUND((this_ptr->base).position.z * 256.0f);",

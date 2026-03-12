@@ -9,15 +9,21 @@
 void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform *this_ptr)
 
 {
-  CLocation *out_pos;
-  UOrientationVector *out_euler;
-  float *pfVar1;
+  CLocation *out_pos_00;
+  UOrientationVector *out_euler_00;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
   CVector3f *pCVar2;
   uint *puVar3;
   uint *puVar4;
   byte bVar5;
   float afStackY_1844 [1523];
-  CQuaternion4f *quat_in;
+  CVector3f *vector_out;
   CQuaternion4f local_68;
   CVector3f local_58;
   float local_48;
@@ -31,6 +37,10 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform 
   float local_1c;
   float local_18;
   int local_14;
+  CLocation *out_pos;
+  float *pfVar1;
+  CQuaternion4f *quat_in;
+  UOrientationVector *out_euler;
   
   bVar5 = 0;
   if (this_ptr->param < 0.0) {
@@ -39,26 +49,24 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform 
   if (1.0 < this_ptr->param) {
     this_ptr->param = 1.0;
   }
-  out_pos = &(this_ptr->base).location;
-  out_euler = &(this_ptr->base).orient;
+  out_pos_00 = &(this_ptr->base).location;
+  out_euler_00 = &(this_ptr->base).orient;
   if (this_ptr->course_filename[0] == '\0') {
     pfVar1 = &this_ptr->param;
-    local_48 = (this_ptr->end_pos).x * *pfVar1;
-    local_44 = (this_ptr->end_pos).y * *pfVar1;
-    local_40 = (this_ptr->end_pos).z * *pfVar1;
-    local_18 = 1.0 - this_ptr->param;
-    local_30.z = (this_ptr->start_pos).x * local_18;
-    local_20 = (this_ptr->start_pos).y * local_18;
-    local_1c = (this_ptr->start_pos).z * local_18;
-    local_3c = local_30.z + local_48;
-    local_38 = local_20 + local_44;
-    local_34 = local_1c + local_40;
-    (out_pos->position).x = local_3c;
-    (this_ptr->base).location.position.y = local_38;
-    (this_ptr->base).location.position.z = local_34;
+    fVar1 = (this_ptr->end_pos).y;
+    fVar2 = *pfVar1;
+    fVar3 = (this_ptr->end_pos).z;
+    fVar4 = *pfVar1;
+    fVar7 = 1.0 - this_ptr->param;
+    local_30.z = (this_ptr->start_pos).x * fVar7;
+    fVar5 = (this_ptr->start_pos).y;
+    fVar6 = (this_ptr->start_pos).z;
+    (out_pos_00->position).x = local_30.z + (this_ptr->end_pos).x * *pfVar1;
+    (this_ptr->base).location.position.y = fVar5 * fVar7 + fVar1 * fVar2;
+    (this_ptr->base).location.position.z = fVar6 * fVar7 + fVar3 * fVar4;
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
               (&this_ptr->orig_orient,&this_ptr->end_orient,this_ptr->param,&local_68);
-    pCVar2 = &local_58;
+    vector_out = &local_58;
     quat_in = &local_30;
     local_58.x = local_68.w;
     puVar4 = (uint *)((int)&local_58 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
@@ -67,19 +75,18 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_0054cab0(CPlatform 
          *(uint *)((int)&local_68 + (uint)bVar5 * -8 + 4);
     *puVar4 = *puVar3;
     puVar4[(uint)bVar5 * -2 + 1] = puVar3[(uint)bVar5 * -2 + 1];
-    pCVar2 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(quat_in,pCVar2);
-    if ((CVector3f *)out_euler != pCVar2) {
-      (out_euler->vec).x = pCVar2->x;
+    pCVar2 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(quat_in,vector_out);
+    if ((CVector3f *)out_euler_00 != pCVar2) {
+      (out_euler_00->vec).x = pCVar2->x;
       (this_ptr->base).orient.vec.y = pCVar2->y;
       (this_ptr->base).orient.vec.z = pCVar2->z;
       return;
     }
   }
   else {
-    local_14 = (this_ptr->course).len;
     core_course_cpp_CCourse_evaluate_FUN_00442710
-              (&this_ptr->course,(float)local_14 * this_ptr->param,&out_pos->position,
-               &out_euler->vec);
+              (&this_ptr->course,(float)(this_ptr->course).len * this_ptr->param,
+               &out_pos_00->position,&out_euler_00->vec);
   }
   return;
 }

@@ -11,7 +11,7 @@
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined8       Stack[-0x20]:8  local_20
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   engine_colquant.c_partitionByBlue_FUN_00440dc0 at 00440ee4

@@ -10,6 +10,7 @@ void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_00482180(CDemonPart *this_ptr)
 
 {
   CVector3i *pCVar1;
+  CVector3i *pCVar2;
   SSurfacePlane *pSVar2;
   char local_10c [256];
   
@@ -25,10 +26,10 @@ void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_00482180(CDemonPart *this_ptr)
       g_CurrentFilename = "..\\core\\dpart.cpp";
       core_main_c_displayErrorAndQuit_FUN_00506f10(local_10c);
     }
-    pCVar1 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
+    pCVar2 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
                        (this_ptr->vertex_count,0xc,"..\\core\\dpart.cpp",0x90);
-    this_ptr->vertex_normals = pCVar1;
-    if (pCVar1 == (CVector3i *)0x0) {
+    this_ptr->vertex_normals = pCVar2;
+    if (pCVar2 == (CVector3i *)0x0) {
       g_CurrentFilename = "..\\core\\dpart.cpp";
       g_CurrentLineNumber = 0x91;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonPart::alloc - Out of normal memory!");

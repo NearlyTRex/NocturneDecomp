@@ -6,9 +6,10 @@
 ; Parameters:
 ; CVector3i *      Stack[0x4]:4   input_vector
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; int[1017]        Stack[-0x1000]:4068  aiStackY_1000
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
 ;   engine_3d.c_renderPolygonPerspectiveNormalized_FUN_004055b0 at 004055da

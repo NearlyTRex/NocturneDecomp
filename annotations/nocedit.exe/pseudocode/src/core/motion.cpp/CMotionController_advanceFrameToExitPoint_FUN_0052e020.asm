@@ -14,8 +14,8 @@
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
+; float            Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;

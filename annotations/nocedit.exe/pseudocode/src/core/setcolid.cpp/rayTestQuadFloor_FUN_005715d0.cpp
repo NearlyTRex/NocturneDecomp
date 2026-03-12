@@ -11,6 +11,7 @@ int __cdecl core_setcolid_cpp_rayTestQuadFloor_FUN_005715d0(float x,float z,CVec
 {
   uint uVar1;
   uint uVar2;
+  uint uVar3;
   CDemonTriangle local_54;
   CVector3f local_1c;
   
@@ -20,14 +21,14 @@ int __cdecl core_setcolid_cpp_rayTestQuadFloor_FUN_005715d0(float x,float z,CVec
   core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790(&local_54,vertex1,vertex3,vertex4);
   uVar2 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(&local_54,(CVector3f *)x,z,&out_height->x)
   ;
-  uVar1 = uVar1 | uVar2;
-  if (uVar1 != 0) {
+  uVar3 = uVar1 | uVar2;
+  if (uVar3 != 0) {
     if (out_transformed_normal != &local_1c) {
       out_transformed_normal->x = -local_54.normal.x;
       out_transformed_normal->y = -local_54.normal.y;
       out_transformed_normal->z = -local_54.normal.z;
-      return uVar1;
+      return uVar3;
     }
   }
-  return uVar1;
+  return uVar3;
 }

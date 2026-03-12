@@ -4,73 +4,73 @@
       {
         "category": "other",
         "column": 86,
-        "line": 39,
+        "line": 41,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 18,
-        "line": 68,
+        "line": 70,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 59,
-        "line": 83,
+        "line": 85,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 56,
-        "line": 97,
+        "line": 99,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 99,
+        "line": 101,
         "message": "no matching literal operator for call to 'operator\"\"_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
       },
       {
         "category": "other",
         "column": 57,
-        "line": 99,
+        "line": 101,
         "message": "no matching literal operator for call to 'operator\"\"_0_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
       },
       {
         "category": "other",
         "column": 39,
-        "line": 103,
+        "line": 105,
         "message": "no matching literal operator for call to 'operator\"\"_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 103,
+        "line": 105,
         "message": "no matching literal operator for call to 'operator\"\"_0_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 104,
+        "line": 106,
         "message": "no matching literal operator for call to 'operator\"\"_4_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 104,
+        "line": 106,
         "message": "no matching literal operator for call to 'operator\"\"_0_4_' with argument of type 'long double' or 'const char *', and no matching literal operator template"
       },
       {
         "category": "format_error",
         "column": 66,
-        "line": 108,
+        "line": 110,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 75,
-        "line": 149,
+        "line": 152,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -79,12 +79,12 @@
   },
   "complexity": {
     "assembly_lines": 464,
-    "complexity_score": 323,
+    "complexity_score": 326,
     "cross_reference_count": 12,
     "function_call_count": 8,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 143,
+    "pseudocode_lines": 146,
     "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -92,7 +92,7 @@
       "sub84_truncation",
       "unknown_field"
     ],
-    "total_lines": 607
+    "total_lines": 610
   },
   "cross_references": [
     {
@@ -539,8 +539,8 @@
         "is_param": false,
         "name": "local_38",
         "offset": -56,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
@@ -561,7 +561,7 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -606,7 +606,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 39,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(this_ptr->stop_after_fade) != 0.0) goto LAB_005a73d3;",
@@ -614,31 +614,31 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 72,
+      "line": 74,
       "match": "SQRT",
       "severity": "mild",
-      "text": "dVar4 = SQRT(dVar6 * dVar6 + dVar5 * dVar5 + dVar7 * dVar7);",
+      "text": "dVar2 = SQRT(dVar6 * dVar6 + dVar5 * dVar5 + dVar7 * dVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 74,
+      "line": 76,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
+      "text": "local_38 = SUB84(__BITCAST_UINT64(dVar2),0);",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 76,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
+      "text": "local_38 = SUB84(__BITCAST_UINT64(dVar2),0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 84,
       "match": "SQRT",
       "severity": "mild",
       "text": "dVar4 = SQRT(dVar10 * dVar10 + dVar9 * dVar9 + dVar8 * dVar8);",
@@ -646,31 +646,31 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 92,
+      "line": 94,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "dVar4 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
+      "text": "dVar2 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 92,
+      "line": 94,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "dVar4 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
+      "text": "dVar2 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 94,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dVar4 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
+      "text": "dVar2 = 1.0 / __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 96,
+      "line": 98,
       "match": "._4_4_",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_)) < local_60) {",
@@ -678,7 +678,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 96,
+      "line": 98,
       "match": "._0_4_",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_)) < local_60) {",
@@ -686,7 +686,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 98,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if (__BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_)) < local_60) {",
@@ -694,7 +694,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 97,
+      "line": 99,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_60 = __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
@@ -702,7 +702,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 97,
+      "line": 99,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_60 = __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
@@ -710,7 +710,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 99,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_60 = __BITCAST_DOUBLE(CONCAT44(4._4_4_,4._0_4_));",
@@ -722,7 +722,7 @@
       "expected_args": 1,
       "format_string": "SFXDBG: sample = %s\\n",
       "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 32,
+      "line_number": 34,
       "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"SFXDBG: sample = %s\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -733,7 +733,7 @@
       "expected_args": 1,
       "format_string": "Killing %s in compute()\\n",
       "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 142,
+      "line_number": 145,
       "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Killing %s in compute()\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

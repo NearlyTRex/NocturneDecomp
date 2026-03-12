@@ -7,9 +7,15 @@
 ; C3DSLight *      Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined        Stack[-0x188]:1  local_188
-; undefined1       Stack[-0x187]:1  local_187
-; undefined4       Stack[-0x14]:4  local_14
+; char[255]        Stack[-0x188]:255  local_188
+; undefined1       Stack[-0x89]:1  uStack_89
+; char[80]         Stack[-0x88]:80  acStack_88
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; float[4]         Stack[-0x30]:16  afStack_30
+; float[2]         Stack[-0x20]:8  afStack_20
+; undefined1[4]    Stack[-0x18]:4  auStack_18
+; char *           Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   crt_stdio.c_fgets_FUN_005fefd0

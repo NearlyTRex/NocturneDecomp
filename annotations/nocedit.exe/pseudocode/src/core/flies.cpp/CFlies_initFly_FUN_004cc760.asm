@@ -7,9 +7,9 @@
 ; CFlies *         Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   fly_index
 ; Local Variables:
-; undefined1       Stack[-0x30]:1  local_30
-; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x18]:4  local_18
+; CVector3f        Stack[-0x30]:12  local_30
+; CVector3f        Stack[-0x24]:12  local_24
+; SFly *           Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

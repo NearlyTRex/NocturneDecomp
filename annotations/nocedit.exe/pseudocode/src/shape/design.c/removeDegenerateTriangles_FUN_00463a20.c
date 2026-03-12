@@ -9,12 +9,12 @@
 void __cdecl shape_design_c_removeDegenerateTriangles_FUN_00463a20(void)
 
 {
-  bool bVar1;
   int iVar2;
   SShapeEditorPolygon *pSVar3;
   SShapeEditorPolygon *pSVar4;
   int local_20;
   int local_1c;
+  bool bVar1;
   
   do {
     bVar1 = false;

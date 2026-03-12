@@ -6,11 +6,12 @@
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xa4]:1  local_a4
-; undefined1       Stack[-0xa3]:1  local_a3
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x3f]:1  local_3f
-; undefined1       Stack[-0x20]:1  local_20
+; char[100]        Stack[-0xa4]:100  local_a4
+; char[32]         Stack[-0x40]:32  local_40
+; char[4]          Stack[-0x20]:4  local_20
+; char[4]          Stack[-0x1c]:4  acStack_1c
+; char[4]          Stack[-0x18]:4  acStack_18
+; char             Stack[-0x14]:1  cStack_14
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a710

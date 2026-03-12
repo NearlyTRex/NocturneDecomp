@@ -9,7 +9,7 @@
 void __cdecl core_shotgun_cpp_CShotgun_fireProjectile_FUN_005888f0(CShotgun *this_ptr)
 
 {
-  float fVar1;
+  float fVar2;
   int iVar2;
   CVector3f *input_local_point;
   CVector3f CStack_74;
@@ -23,6 +23,7 @@ void __cdecl core_shotgun_cpp_CShotgun_fireProjectile_FUN_005888f0(CShotgun *thi
   float fStack_30;
   CVector3f CStack_2c;
   CVector3f CStack_20;
+  float fVar1;
   
   iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar2 != 0) {
@@ -55,10 +56,10 @@ void __cdecl core_shotgun_cpp_CShotgun_fireProjectile_FUN_005888f0(CShotgun *thi
     fStack_48 = 0.0;
   }
   else {
-    fVar1 = 1.0 / fVar1;
-    fStack_50 = fStack_50 * fVar1;
-    fStack_4c = fStack_4c * fVar1;
-    fStack_48 = fStack_48 * fVar1;
+    fVar2 = 1.0 / fVar1;
+    fStack_50 = fStack_50 * fVar2;
+    fStack_4c = fStack_4c * fVar2;
+    fStack_48 = fStack_48 * fVar2;
   }
   core_fire_cpp_CFireEffect_createLaserCone_FUN_004c7f20
             (g_CFireEffectPtr,aCStack_68,&CStack_2c,1.0,0,0xff,0,

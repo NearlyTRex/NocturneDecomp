@@ -11,8 +11,8 @@
 ; int              Stack[0x14]:4   skip_lighting_calculation
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; uint             Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_00570cd0 at 00570d1e

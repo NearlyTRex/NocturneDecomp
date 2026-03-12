@@ -13,14 +13,14 @@
 ; undefined8       Stack[-0x44]:8  local_44
 ; undefined8       Stack[-0x3c]:8  local_3c
 ; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
+; ushort *         Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
+; undefined1       Stack[-0x28]:1  local_28
 ; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
+; ushort           Stack[-0x20]:2  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90 at 005acd01

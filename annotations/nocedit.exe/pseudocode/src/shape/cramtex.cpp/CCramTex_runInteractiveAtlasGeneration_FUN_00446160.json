@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 1962,
-    "complexity_score": 966,
+    "complexity_score": 988,
     "cross_reference_count": 3,
     "function_call_count": 15,
     "global_count": 101,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 811,
+    "pseudocode_lines": 833,
     "suspect_count": 15,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 2773
+    "total_lines": 2795
   },
   "cross_references": [
     {
@@ -806,14 +806,14 @@
         "name": "local_a8",
         "offset": -168,
         "size": 4,
-        "type": "undefined4"
+        "type": "SIZE_T"
       },
       {
         "is_param": false,
         "name": "local_a4",
         "offset": -164,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -827,14 +827,14 @@
         "name": "local_9c",
         "offset": -156,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_98",
         "offset": -152,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -855,14 +855,14 @@
         "name": "local_8c",
         "offset": -140,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_88",
         "offset": -136,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -876,7 +876,7 @@
         "name": "local_80",
         "offset": -128,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -890,7 +890,7 @@
         "name": "local_78",
         "offset": -120,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -904,14 +904,14 @@
         "name": "local_70",
         "offset": -112,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -925,7 +925,7 @@
         "name": "local_64",
         "offset": -100,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -939,70 +939,70 @@
         "name": "local_5c",
         "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "CCramTex *"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "SCramRectangle *"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "CCramTex *"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "SCramRectangle *"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "SCramRectangle *"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "CCramTex *"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "SCramRectangle *"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "SCramRectangle * *"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
@@ -1016,7 +1016,7 @@
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -1037,7 +1037,7 @@
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -1089,122 +1089,122 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 211,
+      "line": 233,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (((iVar18 == *(int *)((int)&g_CramRectangles[0].map_id + iVar13)) &&",
+      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar13)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 212,
+      "line": 234,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(iVar12 == *(int *)((int)&g_CramRectangles[0].start_x + iVar13))) &&",
+      "text": "(iVar23 == *(int *)((int)&g_CramRectangles[0].start_x + iVar13))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 213,
+      "line": 235,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(iVar21 == *(int *)((int)&g_CramRectangles[0].start_y + iVar13)))",
+      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_y + iVar13)))",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 265,
+      "line": 287,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (((iVar18 == *(int *)((int)&g_CramRectangles[0].map_id + iVar12)) &&",
+      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar23)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 266,
+      "line": 288,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(local_80 == *(int *)((int)&g_CramRectangles[0].start_x + iVar12))) &&",
+      "text": "(local_80 == *(int *)((int)&g_CramRectangles[0].start_x + iVar23))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 267,
+      "line": 289,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(iVar21 == *(int *)((int)&g_CramRectangles[0].start_y + iVar12)))",
+      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_y + iVar23)))",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 343,
+      "line": 365,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (((iVar18 == *(int *)((int)&g_CramRectangles[0].map_id + iVar13)) &&",
+      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar25)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 344,
+      "line": 366,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(iVar21 == *(int *)((int)&g_CramRectangles[0].start_x + iVar13))) &&",
+      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_x + iVar25))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 345,
+      "line": 367,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(iVar12 == *(int *)((int)&g_CramRectangles[0].start_y + iVar13)))",
+      "text": "(iVar23 == *(int *)((int)&g_CramRectangles[0].start_y + iVar25)))",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 397,
+      "line": 419,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (((iVar18 == *(int *)((int)&g_CramRectangles[0].map_id + iVar12)) &&",
+      "text": "if (((iVar32 == *(int *)((int)&g_CramRectangles[0].map_id + iVar23)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 398,
+      "line": 420,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(iVar21 == *(int *)((int)&g_CramRectangles[0].start_x + iVar12))) &&",
+      "text": "(iVar22 == *(int *)((int)&g_CramRectangles[0].start_x + iVar23))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 399,
+      "line": 421,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(local_6c == *(int *)((int)&g_CramRectangles[0].start_y + iVar12)))",
+      "text": "(local_6c == *(int *)((int)&g_CramRectangles[0].start_y + iVar23)))",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 456,
+      "line": 478,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_CramRectangles[0].occupant + iVar21) = 0;",
+      "text": "*(uint *)((int)&g_CramRectangles[0].occupant + iVar22) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 742,
+      "line": 764,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_top + iVar18)) ||",
+      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_top + iVar32)) ||",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 744,
+      "line": 766,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_width + iVar18))) {",
+      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_width + iVar32))) {",
       "type": "pointer_cast"
     }
   ]

@@ -9,8 +9,8 @@
 ; Local Variables:
 ; undefined8       Stack[-0x2c]:8  local_2c
 ; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x18]:4  local_18
+; SMotion *        Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0 at 0058b5c2

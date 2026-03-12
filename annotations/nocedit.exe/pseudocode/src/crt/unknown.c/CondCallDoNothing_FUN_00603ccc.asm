@@ -3,6 +3,9 @@
 ; *****************************************************************************
 ; void __cdecl crt_unknown_c_CondCallDoNothing_FUN_00603ccc(void)
 ;
+; Parameters:
+; float10 *        Stack[0x4]:4   in_stack_00000004
+; int              Stack[0x8]:4   in_stack_00000008
 ; Local Variables:
 ; undefined2       Stack[-0x20]:2  local_20
 ; undefined1[10]   Stack[-0x1c]:10  local_1c

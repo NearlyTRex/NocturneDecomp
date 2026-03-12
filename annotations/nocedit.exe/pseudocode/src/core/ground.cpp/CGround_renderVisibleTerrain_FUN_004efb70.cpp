@@ -9,7 +9,9 @@
 void __cdecl core_ground_cpp_CGround_renderVisibleTerrain_FUN_004efb70(CGround *this_ptr)
 
 {
+  int iVar5;
   int iVar1;
+  int iVar6;
   int iVar2;
   int iVar3;
   int iVar4;
@@ -42,14 +44,14 @@ void __cdecl core_ground_cpp_CGround_renderVisibleTerrain_FUN_004efb70(CGround *
                 (this_ptr,this_ptr->camera_x + iVar3,this_ptr->camera_y + iVar4);
     }
   }
-  while (local_20 = local_20 + -1, iVar4 = iVar1, -1 < local_20) {
-    for (; iVar2 = local_1c, iVar4 < 0; iVar4 = iVar4 + 1) {
+  while (local_20 = local_20 + -1, iVar6 = iVar1, -1 < local_20) {
+    for (; iVar5 = local_1c, iVar6 < 0; iVar6 = iVar6 + 1) {
       core_ground_cpp_CGround_renderTerrainQuad_FUN_004ef990
-                (this_ptr,this_ptr->camera_x + iVar4,this_ptr->camera_y + local_20);
+                (this_ptr,this_ptr->camera_x + iVar6,this_ptr->camera_y + local_20);
     }
-    while (iVar2 = iVar2 + -1, -1 < iVar2) {
+    while (iVar5 = iVar5 + -1, -1 < iVar5) {
       core_ground_cpp_CGround_renderTerrainQuad_FUN_004ef990
-                (this_ptr,this_ptr->camera_x + iVar2,this_ptr->camera_y + local_20);
+                (this_ptr,this_ptr->camera_x + iVar5,this_ptr->camera_y + local_20);
     }
   }
   return;

@@ -9,11 +9,12 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(CKeyFramedModel *model_ptr)
 
 {
-  float this_ptr;
+  float fVar1;
   CVector3i *pCVar1;
   int iVar2;
   CBoundingBox3D *this_ptr_00;
   CBoundingBox3D local_28;
+  float this_ptr;
   
   local_28.max.y = 0.0;
   if (0 < model_ptr->frame_count) {
@@ -22,10 +23,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(C
     do {
       this_ptr_00 = (CBoundingBox3D *)((int)&model_ptr->frame_bounds->x + (int)local_28.max.x);
       pCVar1 = model_ptr->vertex_list + (int)local_28.max.y * model_ptr->vertex_count;
-      local_28.min.z = (float)0.00390625;
-      local_28.min.x = (float)pCVar1->x * local_28.min.z;
-      local_28.min.y = (float)pCVar1->y * local_28.min.z;
-      local_28.min.z = (float)pCVar1->z * local_28.min.z;
+      fVar1 = (float)0.00390625;
+      local_28.min.x = (float)pCVar1->x * fVar1;
+      local_28.min.y = (float)pCVar1->y * fVar1;
+      local_28.min.z = (float)pCVar1->z * fVar1;
       if (this_ptr_00 != &local_28) {
         (this_ptr_00->min).x = local_28.min.x;
         (this_ptr_00->min).y = local_28.min.y;
@@ -50,14 +51,14 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(C
       this_ptr = local_28.max.z;
       if (local_28.max.y == 0.0) {
         if (this_ptr_00 != (CBoundingBox3D *)local_28.max.z) {
-          ((CVector3f *)local_28.max.z)->x = (this_ptr_00->min).x;
-          ((CVector3f *)local_28.max.z)->y = (this_ptr_00->min).y;
-          ((CVector3f *)local_28.max.z)->z = (this_ptr_00->min).z;
+          *(float *)local_28.max.z = (this_ptr_00->min).x;
+          *(float *)((int)local_28.max.z + 4) = (this_ptr_00->min).y;
+          *(float *)((int)local_28.max.z + 8) = (this_ptr_00->min).z;
         }
         if ((CBoundingBox3D *)((int)local_28.max.z + 0xc) != this_ptr_00) {
-          ((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_00->min).x;
-          ((CVector3f *)((int)local_28.max.z + 0xc))->y = (this_ptr_00->min).y;
-          ((CVector3f *)((int)local_28.max.z + 0xc))->z = (this_ptr_00->min).z;
+          (((CBoundingBox3D *)((int)local_28.max.z + 0xc))->min).x = (this_ptr_00->min).x;
+          *(float *)((int)local_28.max.z + 0x10) = (this_ptr_00->min).y;
+          *(float *)((int)local_28.max.z + 0x14) = (this_ptr_00->min).z;
         }
       }
       core_box_cpp_CBoundingBox3D_expand_FUN_00420240

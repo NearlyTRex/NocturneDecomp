@@ -6,8 +6,11 @@
 ; Parameters:
 ; CDirectSoundDevice * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined        Stack[-0x2c]:1  local_2c
-; undefined4       Stack[-0x18]:4  local_18
+; char[400]        Stack[-0x1d0]:400  acStack_1d0
+; DSBUFFERDESC     Stack[-0x40]:20  DStack_40
+; undefined1[12]   Stack[-0x2c]:12  local_2c
+; undefined4 *     Stack[-0x20]:4  puStack_20
+; IDirectSoundBuffer * Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:

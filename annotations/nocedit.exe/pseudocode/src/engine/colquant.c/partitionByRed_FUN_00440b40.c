@@ -9,13 +9,14 @@
 void __cdecl engine_colquant_c_partitionByRed_FUN_00440b40(SColorQuantMapper *workspace,int box_index,int new_box_index)
 
 {
-  uint uVar1;
+  int iVar1;
   int iVar2;
   char *pcVar3;
   int iVar4;
   int iVar5;
   int local_18;
   int local_14;
+  uint uVar1;
   
   local_14 = workspace->boxes[box_index].start_index;
   iVar4 = local_14 + workspace->boxes[box_index].count + -1;
@@ -39,12 +40,12 @@ void __cdecl engine_colquant_c_partitionByRed_FUN_00440b40(SColorQuantMapper *wo
     } while (local_14 < iVar4);
   }
   workspace->boxes[new_box_index].start_index = iVar4;
-  iVar5 = workspace->boxes[box_index].count;
-  workspace->boxes[new_box_index].count = iVar5 - (iVar4 - workspace->boxes[box_index].start_index);
+  iVar1 = workspace->boxes[box_index].count;
+  workspace->boxes[new_box_index].count = iVar1 - (iVar4 - workspace->boxes[box_index].start_index);
   workspace->boxes[box_index].count = iVar4 - workspace->boxes[box_index].start_index;
   engine_colquant_c_computeBoxStatistics_FUN_00441260(workspace,box_index);
   engine_colquant_c_computeBoxStatistics_FUN_00441260(workspace,new_box_index);
-  workspace->boxes[box_index].count = iVar5;
+  workspace->boxes[box_index].count = iVar1;
   engine_colquant_c_refinePartitionByDistance_FUN_00441110(workspace,box_index,new_box_index);
   return;
 }

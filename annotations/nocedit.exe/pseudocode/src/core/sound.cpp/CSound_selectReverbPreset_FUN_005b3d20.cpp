@@ -9,9 +9,10 @@
 int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20(CSound *this_ptr,char *title,int *selection_inout)
 
 {
-  uint *puVar1;
+  int iVar1;
   int iVar2;
   CPickList local_3ac;
+  uint *puVar1;
   
   iVar2 = 0;
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3ac);
@@ -20,10 +21,10 @@ int __cdecl core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20(CSound *this_p
     iVar2 = iVar2 + 0x10;
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3ac.base,(char *)*puVar1);
   } while (iVar2 != 0x1b0);
-  iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+  iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                     (&local_3ac,title,*selection_inout,0);
-  if (-1 < iVar2) {
-    *selection_inout = iVar2;
+  if (-1 < iVar1) {
+    *selection_inout = iVar1;
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3ac,0);
     return 1;
   }

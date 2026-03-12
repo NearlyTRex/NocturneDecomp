@@ -7,10 +7,24 @@
 ; CBoneGuy *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x18]:4  local_18
+; undefined4[10]   Stack[-0xd4]:40  auStack_d4
+; CBoundingBox3D   Stack[-0xac]:24  CStack_ac
+; CBoundingBox3D   Stack[-0x94]:24  CStack_94
+; CVector3f        Stack[-0x7c]:12  CStack_7c
+; CVector3f        Stack[-0x70]:12  CStack_70
+; float            Stack[-0x64]:4  fStack_64
+; float            Stack[-0x60]:4  fStack_60
+; float            Stack[-0x5c]:4  fStack_5c
+; CVector3f        Stack[-0x58]:12  CStack_58
+; CVector3f        Stack[-0x4c]:12  CStack_4c
+; float            Stack[-0x40]:4  fStack_40
+; float            Stack[-0x3c]:4  fStack_3c
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x30]:4  fStack_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c8fa

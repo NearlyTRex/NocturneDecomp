@@ -6,9 +6,9 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x114]:1  local_114
-; undefined1       Stack[-0x113]:1  local_113
-; undefined4       Stack[-0x14]:4  local_14
+; char             Stack[-0x114]:1  local_114
+; undefined1[255]  Stack[-0x113]:255  local_113
+; _FILE *          Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_isSampleLoaded_FUN_005aa3c0 at 005aa3cd

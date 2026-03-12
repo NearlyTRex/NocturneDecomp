@@ -7,20 +7,20 @@
 ; CTurret *        Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
+; float[1497]      Stack[-0x186c]:5988  afStackY_186c
 ; undefined8       Stack[-0x100]:8  local_100
-; undefined4       Stack[-0xf8]:4  local_f8
-; undefined1       Stack[-0xf4]:1  local_f4
-; undefined1       Stack[-0x90]:1  local_90
-; undefined1       Stack[-0x80]:1  local_80
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0x60]:1  local_60
-; undefined1       Stack[-0x50]:1  local_50
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x30]:1  local_30
-; undefined8       Stack[-0x24]:8  local_24
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0xf8]:4  local_f8
+; char[100]        Stack[-0xf4]:100  local_f4
+; CQuaternion4f    Stack[-0x90]:16  local_90
+; CVector3f        Stack[-0x80]:12  local_80
+; CQuaternion4f    Stack[-0x70]:16  local_70
+; CQuaternion4f    Stack[-0x60]:16  local_60
+; CQuaternion4f    Stack[-0x50]:16  local_50
+; CQuaternion4f    Stack[-0x40]:16  local_40
+; undefined1[20]   Stack[-0x30]:20  local_30
+; CVector3f *      Stack[-0x1c]:4  local_1c
+; CVector3f *      Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005e241c = 005e2462

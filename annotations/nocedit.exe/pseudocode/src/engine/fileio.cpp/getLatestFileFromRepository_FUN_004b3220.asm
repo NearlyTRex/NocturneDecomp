@@ -7,16 +7,10 @@
 ; char *           Stack[0x4]:4   base_directory
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined        Stack[-0x53c]:1  local_53c
-; undefined1       Stack[-0x53b]:1  local_53b
-; undefined4       Stack[-0x338]:4  local_338
-; undefined4       Stack[-0x330]:4  local_330
-; undefined        Stack[-0x328]:1  local_328
-; undefined1       Stack[-0x327]:1  local_327
-; undefined4       Stack[-0x124]:4  local_124
-; undefined4       Stack[-0x11c]:4  local_11c
-; undefined        Stack[-0x114]:1  local_114
-; undefined        Stack[-0x14]:1  local_14
+; SFoundFileInfo   Stack[-0x53c]:532  local_53c
+; SFoundFileInfo   Stack[-0x328]:532  local_328
+; char[256]        Stack[-0x114]:256  local_114
+; char[4]          Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
 ;   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 at 004b3eae

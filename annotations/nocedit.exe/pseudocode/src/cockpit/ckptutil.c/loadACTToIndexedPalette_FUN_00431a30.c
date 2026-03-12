@@ -11,12 +11,12 @@
 void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(char *filename,uchar *output_palette)
 
 {
-  byte *pbVar1;
-  byte *pbVar2;
-  byte bVar3;
   byte *pbVar4;
   byte local_30c [768];
   uchar local_c;
+  byte bVar3;
+  byte *pbVar1;
+  byte *pbVar2;
   
   cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(filename,local_30c);
   pbVar4 = local_30c;

@@ -5,8 +5,8 @@
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x70]:8  local_70
-; undefined1       Stack[-0x68]:1  local_68
-; undefined4       Stack[-0x18]:4  local_18
+; char[80]         Stack[-0x68]:80  local_68
+; int              Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

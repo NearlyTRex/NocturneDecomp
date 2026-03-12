@@ -8,10 +8,8 @@
 ; int              Stack[0x8]:4   hand_index
 ; CVector3f *      Stack[0xc]:4   drop_direction
 ; Local Variables:
-; undefined1       Stack[-0x1c]:1  local_1c
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; CVector3f        Stack[-0x1c]:12  local_1c
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_dropCarriedObject_FUN_005c67f0 at 005c681b

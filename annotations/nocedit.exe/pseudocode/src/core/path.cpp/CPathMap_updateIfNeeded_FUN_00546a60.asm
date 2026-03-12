@@ -8,10 +8,11 @@
 ; CVector3f *      Stack[0x8]:4   source_position
 ; int              Stack[0xc]:4   force_update
 ; Local Variables:
+; int[1013]        Stack[-0x1004]:4052  aiStackY_1004
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
-; undefined1       Stack[-0x1c]:1  local_1c
+; CVector3i        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[3]:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408bb0 at 00408bf8

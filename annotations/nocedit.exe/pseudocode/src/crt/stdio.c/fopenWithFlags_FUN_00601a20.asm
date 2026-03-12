@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   mode
 ; int              Stack[0xc]:4   flags
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
+; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   crt_stdio.c_fopen_FUN_00601a7c at 00601a89

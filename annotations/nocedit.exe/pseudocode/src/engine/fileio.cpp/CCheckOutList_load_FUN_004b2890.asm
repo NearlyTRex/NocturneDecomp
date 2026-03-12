@@ -6,11 +6,10 @@
 ; Parameters:
 ; CCheckOutList *  Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x21c]:1  local_21c
-; undefined1       Stack[-0x21b]:1  local_21b
-; undefined        Stack[-0x118]:1  local_118
-; undefined4       Stack[-0x18]:4  local_18
-; undefined        Stack[-0x14]:1  local_14
+; char[260]        Stack[-0x21c]:260  local_21c
+; char[256]        Stack[-0x118]:256  local_118
+; _FILE *          Stack[-0x18]:4  local_18
+; char[4]          Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
 ;   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 at 004b396d

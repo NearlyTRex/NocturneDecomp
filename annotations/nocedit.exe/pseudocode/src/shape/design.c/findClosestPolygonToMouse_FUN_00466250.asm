@@ -4,29 +4,24 @@
 ; int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x104]:4  local_104
-; undefined4       Stack[-0x100]:4  local_100
-; undefined4       Stack[-0xfc]:4  local_fc
-; undefined4       Stack[-0xf0]:4  local_f0
-; undefined4       Stack[-0xec]:4  local_ec
-; undefined4       Stack[-0xe8]:4  local_e8
-; undefined4       Stack[-0xe4]:4  local_e4
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
+; CVector3i        Stack[-0x104]:12  local_104
+; SClipPlane[5]    Stack[-0xf0]:80  local_f0
+; char[80]         Stack[-0xa0]:80  local_a0
+; int              Stack[-0x50]:4  local_50
+; int              Stack[-0x4c]:4  local_4c
+; int              Stack[-0x48]:4  local_48
+; int              Stack[-0x44]:4  local_44
+; int              Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_design.c_mouseWheelPolygonReducer_FUN_004648e0 at 00464b4f

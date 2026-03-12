@@ -9,13 +9,13 @@
 ; float            Stack[0xc]:4   blend_time
 ; Local Variables:
 ; undefined8       Stack[-0x168]:8  local_168
-; undefined1       Stack[-0x160]:1  local_160
-; undefined1       Stack[-0x130]:1  local_130
-; undefined1       Stack[-0x100]:1  local_100
-; undefined1       Stack[-0xd0]:1  local_d0
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0x40]:1  local_40
+; CMatrix3x4f      Stack[-0x160]:48  local_160
+; CMatrix3x4f      Stack[-0x130]:48  local_130
+; CMatrix3x4f      Stack[-0x100]:48  local_100
+; CMatrix3x4f      Stack[-0xd0]:48  local_d0
+; CMatrix3x4f      Stack[-0xa0]:48  local_a0
+; CMatrix3x4f      Stack[-0x70]:48  local_70
+; CMatrix3x4f      Stack[-0x40]:48  local_40
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0 at 0042ce6c

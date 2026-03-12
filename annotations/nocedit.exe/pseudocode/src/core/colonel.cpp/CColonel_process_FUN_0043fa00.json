@@ -2,46 +2,22 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "type_error",
-        "column": 3,
-        "line": 31,
-        "message": "unknown type name 'code'"
-      },
-      {
         "category": "format_error",
         "column": 81,
-        "line": 157,
+        "line": 164,
         "message": "format specifies type 'char *' but the argument has type 'CColonel *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 18,
-        "line": 201,
-        "message": "cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'"
-      },
-      {
-        "category": "other",
-        "column": 18,
-        "line": 203,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 11,
-        "line": 204,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 205,
-        "message": "C-style cast from 'CCharacter_full_vtable *' to 'float' is not allowed"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 205,
+        "column": 54,
+        "line": 206,
         "message": "invalid suffix '._0_4_' on floating constant"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 22,
+        "line": 245,
+        "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'"
       }
     ],
     "success": false,
@@ -49,18 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 358,
+    "complexity_score": 343,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 253,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
       "unknown_field",
-      "unresolved_funcptr",
       "warning_type_propagation"
     ],
     "total_lines": 737
@@ -326,130 +301,144 @@
     "pcode_op_count": 2007
   },
   "stack_frame": {
-    "frame_size": 164,
-    "local_size": 156,
+    "frame_size": 6268,
+    "local_size": 6260,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "afStackY_1870",
+        "offset": -6256,
+        "size": 6084,
+        "type": "float[1521]"
+      },
+      {
+        "is_param": false,
         "name": "local_98",
         "offset": -152,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_94",
+        "offset": -148,
+        "size": 16,
+        "type": "CQuaternion4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_84",
+        "offset": -132,
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_74",
         "offset": -116,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_68",
         "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CCharacter_full_vtable *"
       },
       {
         "is_param": true,
@@ -495,31 +484,23 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 20,
+      "line": 21,
       "match": "afStackY_1870",
       "severity": "moderate",
       "text": "float afStackY_1870 [1521];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 24,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "code *blend_callback;",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 198,
+      "line": 199,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_98 = (float)local_14 + 5.3286462644388174e-315._0_4_;",
+      "text": "local_98 = local_98 + 5.3286462644388174e-315._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 245,
+      "line": 244,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar11 = (uint *)((int)&CStack_84 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
@@ -527,7 +508,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 246,
+      "line": 245,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar10 = (uint *)((int)&CStack_94 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
@@ -535,7 +516,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 247,
+      "line": 246,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_84 + (uint)bVar12 * -8 + 4) =",
@@ -543,7 +524,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 248,
+      "line": 247,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_94 + (uint)bVar12 * -8 + 4);",

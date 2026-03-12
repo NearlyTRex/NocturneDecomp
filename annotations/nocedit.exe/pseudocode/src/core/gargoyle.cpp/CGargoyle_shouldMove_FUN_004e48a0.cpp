@@ -11,15 +11,16 @@
 int __cdecl core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004e48a0(CGargoyle *this_ptr)
 
 {
-  CLocation *pCVar1;
-  CCharacter *pCVar2;
-  CDemonActor *pCVar3;
-  float fVar4;
-  float fVar5;
+  float fVar1;
   CVector3f *pCVar6;
   float fVar7;
   CVector3f local_24;
   CVector3f local_18;
+  CCharacter *pCVar2;
+  CDemonActor *pCVar3;
+  float fVar4;
+  float fVar5;
+  CLocation *pCVar1;
   
   pCVar2 = (this_ptr->base).victim;
   this_ptr->returning_home = 0;
@@ -48,10 +49,10 @@ int __cdecl core_gargoyle_cpp_CGargoyle_shouldMove_FUN_004e48a0(CGargoyle *this_
     else {
       pCVar3 = this_ptr->home_base;
       if (pCVar3 != (CDemonActor *)0x0) {
-        fVar7 = (pCVar3->location).position.x - (pCVar1->position).x;
+        fVar1 = (pCVar3->location).position.x - (pCVar1->position).x;
         fVar4 = (pCVar3->location).position.y - (this_ptr->base).base.base.location.position.y;
         fVar5 = (pCVar3->location).position.z - (this_ptr->base).base.base.location.position.z;
-        if (1.0 <= SQRT(fVar5 * fVar5 + fVar7 * fVar7 + fVar4 * fVar4)) {
+        if (1.0 <= SQRT(fVar5 * fVar5 + fVar1 * fVar1 + fVar4 * fVar4)) {
           this_ptr->returning_home = 1;
           return 1;
         }

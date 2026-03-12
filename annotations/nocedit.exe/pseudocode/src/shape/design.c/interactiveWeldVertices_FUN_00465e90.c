@@ -9,7 +9,6 @@
 void __cdecl shape_design_c_interactiveWeldVertices_FUN_00465e90(int polygon_index,float tolerance)
 
 {
-  char cVar1;
   int iVar2;
   char *pcVar3;
   byte bVar4;
@@ -18,6 +17,7 @@ void __cdecl shape_design_c_interactiveWeldVertices_FUN_00465e90(int polygon_ind
   uint local_1c;
   int local_18;
   int local_14;
+  char cVar1;
   
   bVar4 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -28,8 +28,9 @@ void __cdecl shape_design_c_interactiveWeldVertices_FUN_00465e90(int polygon_ind
   do {
     if (iVar2 == 0) break;
     iVar2 = iVar2 + -1;
-    cVar1 = *pcVar3;
     pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
+    cVar1 = *pcVar3;
+    pcVar3 = pcVar3;
   } while (cVar1 != '\0');
   if ((iVar2 != -2) &&
      (local_18 = sscanf(local_70,"%d,%d",&local_20,&local_1c),

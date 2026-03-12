@@ -9,12 +9,6 @@
 void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_00433480(char *filename,SEdgeList *edge_lists,int edge_list_count)
 
 {
-  short *psVar1;
-  int iVar2;
-  int iVar3;
-  ushort uVar4;
-  int iVar5;
-  int iVar6;
   _FILE *file;
   int *piVar7;
   int iVar8;
@@ -23,6 +17,12 @@ void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_00433480(char *filename,SEd
   int local_1c;
   SEdgeList *local_18;
   int local_14;
+  short *psVar1;
+  int iVar2;
+  int iVar3;
+  ushort uVar4;
+  int iVar5;
+  int iVar6;
   
   if (edge_lists == (SEdgeList *)0x0) {
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
@@ -38,14 +38,12 @@ void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_00433480(char *filename,SEd
   }
   _fprintf(file,"%d\n",edge_list_count);
   if (0 < edge_list_count) {
-    local_1c = edge_list_count << 3;
     local_18 = edge_lists;
     local_14 = 0;
     do {
       _fprintf(file,"%d\n",local_18->edge_count);
-      iVar6 = local_14;
       iVar9 = 0;
-      for (iVar8 = 0; piVar7 = (int *)((int)&edge_lists->edge_data + iVar6), iVar8 < piVar7[1];
+      for (iVar8 = 0; piVar7 = (int *)((int)&edge_lists->edge_data + local_14), iVar8 < piVar7[1];
           iVar8 = iVar8 + 1) {
         iVar5 = *piVar7;
         uVar4 = *(ushort *)(iVar9 + 6 + iVar5);
@@ -59,7 +57,7 @@ void __cdecl cockpit_ckptutil_c_saveEdgeListFile_FUN_00433480(char *filename,SEd
       }
       local_14 = local_14 + 8;
       local_18 = local_18 + 1;
-    } while (local_14 < local_1c);
+    } while (local_14 < edge_list_count << 3);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\ckptutil.c",0x522);
   return;

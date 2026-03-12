@@ -8,10 +8,10 @@
 ; Local Variables:
 ; undefined4       Stack[-0x124]:4  local_124
 ; undefined4       Stack[-0x120]:4  local_120
-; undefined1       Stack[-0x11c]:1  local_11c
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x11c]:256  local_11c
+; uint             Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_multicramTextures_FUN_0046eb80 at 0046eb92

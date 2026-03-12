@@ -9,24 +9,30 @@
 void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_00501d40(SMRGLKeyframeModel *keyframe_model)
 
 {
-  SMRGLKeyframe *pSVar1;
-  SMRGLKeyframe *pSVar2;
-  uint uVar3;
+  SMRGLKeyframe *pSVar3;
+  SMRGLKeyframe *pSVar4;
   int iVar4;
   int iVar5;
   SMRGLHeaderExtended *pSVar6;
+  SMRGLHeaderExtended *pSVar5;
   uint uVar7;
   uint uVar8;
+  uint uVar6;
   int *piVar9;
   uint uVar10;
   SMRGLKeyframeModel *pSVar11;
+  int iVar7;
+  SMRGLKeyframeModel *pSVar8;
   int iVar12;
   char (*filename) [16];
   int local_14;
+  SMRGLKeyframe *pSVar1;
+  SMRGLKeyframe *pSVar2;
+  uint uVar3;
   
   if (keyframe_model->base_keyframes == (SMRGLKeyframe *)0x0) {
-    pSVar6 = engine_model_c_loadModelFile_FUN_00527ec0(keyframe_model->filenames[0]);
-    keyframe_model->base_keyframes = (SMRGLKeyframe *)pSVar6;
+    pSVar5 = engine_model_c_loadModelFile_FUN_00527ec0(keyframe_model->filenames[0]);
+    keyframe_model->base_keyframes = (SMRGLKeyframe *)pSVar5;
   }
   iVar4 = engine_model_c_getMRGLSize_FUN_00528700(&keyframe_model->base_keyframes->header);
   iVar5 = engine_model_c_getMRGLSize_FUN_00528700
@@ -46,12 +52,12 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_00501d40(SMRGLKey
       filename = filename + 1;
     } while (iVar12 < (keyframe_model->header).child_count);
   }
-  iVar4 = 0;
+  iVar7 = 0;
   pSVar1 = keyframe_model->base_keyframes;
-  pSVar11 = keyframe_model;
+  pSVar8 = keyframe_model;
   if (0 < (keyframe_model->header).child_count) {
     do {
-      pSVar2 = pSVar11->loaded_frames[0];
+      pSVar2 = pSVar8->loaded_frames[0];
       if ((pSVar2->header).child_count != 2) {
         g_CurrentFilename = "..\\engine\\keyframe.c";
         g_CurrentLineNumber = 0xfd;
@@ -62,46 +68,46 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_00501d40(SMRGLKey
         g_CurrentLineNumber = 0xfe;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Key frame vertex mismatch");
       }
-      iVar4 = iVar4 + 1;
-      pSVar11 = (SMRGLKeyframeModel *)&(pSVar11->header).base.count;
-    } while (iVar4 < (keyframe_model->header).child_count);
+      iVar7 = iVar7 + 1;
+      pSVar8 = (SMRGLKeyframeModel *)&(pSVar8->header).base.count;
+    } while (iVar7 < (keyframe_model->header).child_count);
   }
-  pSVar1 = keyframe_model->base_keyframes;
+  pSVar3 = keyframe_model->base_keyframes;
   local_14 = 0;
-  pSVar11 = keyframe_model;
+  pSVar8 = keyframe_model;
   if (0 < (keyframe_model->header).child_count) {
     do {
-      uVar3 = (pSVar11->loaded_frames[0]->header).base.count;
-      if ((pSVar1->header).base.count != uVar3) {
-        uVar7 = (pSVar1->header).base.count;
-        uVar10 = (int)uVar7 >> 0x1f;
-        uVar7 = uVar7 ^ uVar10;
+      uVar3 = (pSVar8->loaded_frames[0]->header).base.count;
+      if ((pSVar3->header).base.count != uVar3) {
+        uVar6 = (pSVar3->header).base.count;
+        uVar10 = (int)uVar6 >> 0x1f;
+        uVar7 = uVar6 ^ uVar10;
         uVar8 = uVar7 / uVar3;
         if (0x7ffe < uVar8) {
           uVar8 = 0x7fff;
         }
-        uVar10 = ((uint)(((ulonglong)uVar7 % (ulonglong)uVar3 << 0x20) / (ulonglong)uVar3) >> 0x10 |
-                 uVar8 << 0x10) ^ uVar10;
-        iVar4 = 0;
-        pSVar2 = pSVar11->loaded_frames[0];
-        piVar9 = &pSVar11->loaded_frames[0][1].header.child_count;
-        if (0 < pSVar2[1].header.base.count) {
+        uVar6 = ((uint)(((ulonglong)uVar7 % (ulonglong)uVar3 << 0x20) / (ulonglong)uVar3) >> 0x10 |
+                uVar8 << 0x10) ^ uVar10;
+        iVar7 = 0;
+        pSVar4 = pSVar8->loaded_frames[0];
+        piVar9 = &pSVar8->loaded_frames[0][1].header.child_count;
+        if (0 < pSVar4[1].header.base.count) {
           do {
-            *piVar9 = (uint)((longlong)(int)uVar10 * (longlong)*piVar9) >> 0x10 |
-                      (int)((ulonglong)((longlong)(int)uVar10 * (longlong)*piVar9) >> 0x20) << 0x10;
-            piVar9[1] = (uint)((longlong)(int)uVar10 * (longlong)piVar9[1]) >> 0x10 |
-                        (int)((ulonglong)((longlong)(int)uVar10 * (longlong)piVar9[1]) >> 0x20) <<
+            *piVar9 = (uint)((longlong)(int)uVar6 * (longlong)*piVar9) >> 0x10 |
+                      (int)((ulonglong)((longlong)(int)uVar6 * (longlong)*piVar9) >> 0x20) << 0x10;
+            piVar9[1] = (uint)((longlong)(int)uVar6 * (longlong)piVar9[1]) >> 0x10 |
+                        (int)((ulonglong)((longlong)(int)uVar6 * (longlong)piVar9[1]) >> 0x20) <<
                         0x10;
-            piVar9[2] = (uint)((longlong)(int)uVar10 * (longlong)piVar9[2]) >> 0x10 |
-                        (int)((ulonglong)((longlong)(int)uVar10 * (longlong)piVar9[2]) >> 0x20) <<
+            piVar9[2] = (uint)((longlong)(int)uVar6 * (longlong)piVar9[2]) >> 0x10 |
+                        (int)((ulonglong)((longlong)(int)uVar6 * (longlong)piVar9[2]) >> 0x20) <<
                         0x10;
-            iVar4 = iVar4 + 1;
+            iVar7 = iVar7 + 1;
             piVar9 = piVar9 + 3;
-          } while (iVar4 < pSVar2[1].header.base.count);
+          } while (iVar7 < pSVar4[1].header.base.count);
         }
       }
       local_14 = local_14 + 1;
-      pSVar11 = (SMRGLKeyframeModel *)&(pSVar11->header).base.count;
+      pSVar8 = (SMRGLKeyframeModel *)&(pSVar8->header).base.count;
     } while (local_14 < (keyframe_model->header).child_count);
   }
   return;

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 71,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 48,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 187
+    "total_lines": 189
   },
   "cross_references": [
     {
@@ -150,7 +150,7 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "uchar *"
       },
       {
         "is_param": false,
@@ -199,7 +199,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 17,
       "match": "(uchar *)((int)",
       "severity": "mild",
       "text": "local_20 = (uchar *)((int)this_ptr->pixel_data + iVar4 * 4);",
@@ -207,7 +207,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 18,
       "match": "(uchar *)((int)",
       "severity": "mild",
       "text": "pixel_ptr = (uchar *)((int)this_ptr->pixel_data + iVar5 * 4);",

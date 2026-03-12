@@ -8,8 +8,8 @@
 ; CVector3f *      Stack[0x8]:4   aabb_min
 ; CVector3f *      Stack[0xc]:4   aabb_max
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; uint             Stack[-0x18]:4  local_18
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_dcube.cpp_CDemonCube_testAABBIntersection_FUN_00457ca0 at 00457cc3

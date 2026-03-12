@@ -7,7 +7,10 @@
 ; CTrap *          Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x34]:1  local_34
+; SDamageInfo      Stack[-0x98]:60  SStack_98
+; SCollisionInfo   Stack[-0x5c]:40  SStack_5c
+; CBoundingBox3D   Stack[-0x34]:24  local_34
+; CVector3f        Stack[-0x1c]:12  CStack_1c
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278

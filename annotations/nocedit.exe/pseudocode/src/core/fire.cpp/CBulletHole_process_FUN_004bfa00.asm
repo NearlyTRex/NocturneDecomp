@@ -6,7 +6,7 @@
 ; Parameters:
 ; CBulletHole *    Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x10]:1  local_10
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_process_FUN_004c6ec0 at 004c7021

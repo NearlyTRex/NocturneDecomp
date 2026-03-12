@@ -7,15 +7,23 @@
 ; CTrigger *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0xb8]:1  local_b8
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
+; CBoundingBox3D   Stack[-0xb8]:24  local_b8
+; CBoundingBox3D   Stack[-0xa0]:24  local_a0
+; float            Stack[-0x88]:4  fStack_88
+; float            Stack[-0x84]:4  fStack_84
+; float            Stack[-0x80]:4  fStack_80
+; CVector3i        Stack[-0x7c]:12  CStack_7c
+; CVector3f        Stack[-0x70]:12  CStack_70
+; CVector3f        Stack[-0x64]:12  CStack_64
+; CVector3f[3]     Stack[-0x58]:36  aCStack_58
+; int              Stack[-0x34]:4  local_34
+; char *           Stack[-0x30]:4  local_30
+; char *           Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; CLocation *      Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  iStack_18
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005dfa84 = 005dfaf3

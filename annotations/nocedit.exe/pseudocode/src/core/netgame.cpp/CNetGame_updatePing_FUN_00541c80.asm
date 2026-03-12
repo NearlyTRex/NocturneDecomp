@@ -9,12 +9,11 @@
 ; float            Stack[0xc]:4   max_ping
 ; Local Variables:
 ; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined1       Stack[-0x20]:1  local_20
-; undefined4       Stack[-0x1f]:4  local_1f
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x2c]:4  local_2c
+; float            Stack[-0x28]:4  local_28
+; SNetPacketHeader Stack[-0x24]:5  local_24
+; uint             Stack[-0x1f]:4  local_1f
+; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
 ;   core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0 at 005435e9

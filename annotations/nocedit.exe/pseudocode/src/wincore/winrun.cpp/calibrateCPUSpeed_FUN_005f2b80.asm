@@ -5,8 +5,8 @@
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00507bd0
@@ -32,8 +32,6 @@
 ; Called Functions:
 ;   MessageBoxA
 ;   QueryPerformanceCounter
-;   QueryPerformanceFrequency
-;   timeBeginPeriod
 ;   wincore_winrun.cpp_getTime_FUN_005f2dc0
 ;
 ; *****************************************************************************

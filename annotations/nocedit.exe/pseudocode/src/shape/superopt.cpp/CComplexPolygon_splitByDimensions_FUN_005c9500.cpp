@@ -9,21 +9,24 @@
 CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_splitByDimensions_FUN_005c9500(CComplexPolygon *this_ptr,double *max_dimensions)
 
 {
-  void *pvVar1;
-  bool bVar2;
-  bool bVar3;
+  SExpandedEdge *ptr;
   SExpandedEdge *pSVar4;
+  SExpandedEdge *pSVar1;
   SExpandedEdge *pSVar5;
   CComplexPolygon *this_ptr_00;
   CComplexPolygon *pCVar6;
   int iVar7;
+  int iVar2;
   double *pdVar8;
   uint uVar9;
   uint *puVar10;
+  double *pdVar3;
+  uint *puVar4;
+  uint *puVar5;
   uint *puVar11;
   CVector3d *pCVar12;
+  CVector3d *pCVar7;
   byte bVar13;
-  CVector3d *plane_normal;
   uint local_188 [4];
   uint local_178;
   uint uStack_174;
@@ -50,51 +53,33 @@ CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_splitByDimensions_F
   uint local_b8;
   uint local_b4;
   CVector3d local_b0;
-  uint local_98;
-  uint local_94;
-  uint local_90;
-  uint local_8c;
-  uint local_88;
-  uint local_84;
-  uint local_80;
-  uint local_7c;
-  uint local_78;
-  uint local_74;
-  uint local_70;
-  uint local_6c;
   CVector3d local_68;
-  uint local_50;
-  uint local_4c;
-  uint local_48;
-  uint local_44;
-  uint local_40;
-  uint local_3c;
-  uint local_38;
-  uint uStack_34;
-  uint local_30;
-  uint uStack_2c;
   int local_28;
   int local_24;
   SExpandedEdge *local_20;
   SExpandedEdge *local_1c;
   SExpandedEdge *local_18;
   SExpandedEdge *local_14;
+  bool bVar2;
+  void *pvVar1;
+  bool bVar3;
+  CVector3d *plane_normal;
   
   bVar13 = 0;
   if ((this_ptr->expanded_edge_count != 0) &&
      (pvVar1 = this_ptr->expanded_edges, pvVar1 != (void *)0x0)) {
-    puVar10 = (uint *)((int)pvVar1 + 0x10);
-    puVar11 = local_e0;
+    puVar4 = (uint *)((int)pvVar1 + 0x10);
+    puVar5 = local_e0;
     for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar11 = *puVar10;
-      puVar10 = puVar10 + 1;
-      puVar11 = puVar11 + 1;
+      *puVar5 = *puVar4;
+      puVar4 = puVar4 + 1;
+      puVar5 = puVar5 + 1;
     }
-    puVar10 = local_e0;
+    puVar4 = local_e0;
     puVar11 = local_188;
-    for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar11 = *puVar10;
-      puVar10 = puVar10 + 1;
+    for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+      *puVar11 = *puVar4;
+      puVar4 = puVar4 + 1;
       puVar11 = puVar11 + 1;
     }
     uVar9 = 0;
@@ -143,12 +128,6 @@ CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_splitByDimensions_F
       }
       if (*max_dimensions + 0.5 <
           __BITCAST_DOUBLE(CONCAT44(local_188[1],local_188[0])) - __BITCAST_DOUBLE(CONCAT44(local_e0[1],local_e0[0]))) {
-        local_80 = 0;
-        local_78 = 0;
-        local_74 = 0;
-        local_70 = 0;
-        local_6c = 0;
-        local_7c = 0x3ff00000;
         local_f0 = local_e0[2];
         local_ec = local_e0[3];
         local_28 = 0;
@@ -156,15 +135,15 @@ CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_splitByDimensions_F
         local_24 = 0;
         local_e4 = uStack_cc;
         local_f8 = *max_dimensions + __BITCAST_DOUBLE(CONCAT44(local_e0[1],local_e0[0]));
-        pdVar8 = &local_f8;
-        pCVar12 = &local_158;
-        for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *(uint *)&pCVar12->x = *(uint *)pdVar8;
-          pdVar8 = (double *)((int)pdVar8 + (uint)bVar13 * -8 + 4);
-          pCVar12 = (CVector3d *)((int)pCVar12 + ((uint)bVar13 * -2 + 1) * 4);
+        pdVar3 = &local_f8;
+        pCVar7 = &local_158;
+        for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+          *(uint *)&pCVar7->x = *(uint *)pdVar3;
+          pdVar3 = (double *)((int)pdVar3 + (uint)bVar13 * -8 + 4);
+          pCVar7 = (CVector3d *)((int)pCVar7 + (uint)bVar13 * -8 + 4);
         }
         local_140.x._0_4_ = 0;
-        pCVar12 = &local_140;
+        pCVar7 = &local_140;
         local_140.x._4_4_ = 0x3ff00000;
         plane_normal = &local_158;
         local_140.y._0_4_ = 0;
@@ -176,29 +155,21 @@ CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_splitByDimensions_F
       else if (max_dimensions[1] + 0.5 <
                __BITCAST_DOUBLE(CONCAT44(local_188[3],local_188[2])) -
                __BITCAST_DOUBLE(CONCAT44(local_e0[3],local_e0[2]))) {
-        local_50 = 0;
-        local_4c = 0;
-        local_48 = 0;
-        local_40 = 0;
-        local_3c = 0;
-        local_44 = 0x3ff00000;
-        local_38 = *(uint *)(max_dimensions + 1);
-        uStack_34 = *(uint *)((int)max_dimensions + 0xc);
         local_c8 = local_e0[0];
         local_c4 = local_e0[1];
         local_b8 = local_d0;
         local_b4 = uStack_cc;
         local_28 = 0;
         local_c0 = __BITCAST_DOUBLE(CONCAT44(local_e0[3],local_e0[2])) + max_dimensions[1];
-        puVar10 = &local_c8;
-        pCVar12 = &local_170;
-        for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *(uint *)&pCVar12->x = *puVar10;
-          puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
-          pCVar12 = (CVector3d *)((int)pCVar12 + ((uint)bVar13 * -2 + 1) * 4);
+        puVar4 = &local_c8;
+        pCVar7 = &local_170;
+        for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+          *(uint *)&pCVar7->x = *puVar4;
+          puVar4 = puVar4 + (uint)bVar13 * -2 + 1;
+          pCVar7 = (CVector3d *)((int)pCVar7 + (uint)bVar13 * -8 + 4);
         }
         local_128.x._0_4_ = 0;
-        pCVar12 = &local_128;
+        pCVar7 = &local_128;
         local_128.x._4_4_ = 0;
         plane_normal = &local_170;
         local_128.y._0_4_ = 0;
@@ -214,14 +185,6 @@ CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_splitByDimensions_F
           shape_memdbg_cpp_free_FUN_005fe659(local_20);
           return (CComplexPolygon *)0x0;
         }
-        local_98 = 0;
-        local_94 = 0;
-        local_90 = 0;
-        local_8c = 0;
-        local_88 = 0;
-        local_84 = 0x3ff00000;
-        local_30 = *(uint *)(max_dimensions + 2);
-        uStack_2c = *(uint *)((int)max_dimensions + 0x14);
         local_110 = local_e0[0];
         local_10c = local_e0[1];
         local_108 = local_e0[2];
@@ -229,13 +192,15 @@ CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_splitByDimensions_F
         local_100 = __BITCAST_DOUBLE(CONCAT44(uStack_cc,local_d0)) + max_dimensions[2];
         puVar10 = &local_110;
         pCVar12 = &local_68;
-        for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *(uint *)&pCVar12->x = *puVar10;
+        for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+          pCVar12 = (CVector3d *)((int)pCVar12 + (uint)bVar13 * -8 + 4);
           puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
-          pCVar12 = (CVector3d *)((int)pCVar12 + ((uint)bVar13 * -2 + 1) * 4);
+          *(uint *)&pCVar12->x = *puVar10;
+          puVar10 = puVar10;
+          pCVar12 = pCVar12;
         }
         local_28 = 0;
-        pCVar12 = &local_b0;
+        pCVar7 = &local_b0;
         local_b0.x._0_4_ = 0;
         plane_normal = &local_68;
         local_b0.x._4_4_ = 0;
@@ -245,18 +210,18 @@ CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_splitByDimensions_F
         local_b0.z._4_4_ = 0x3ff00000;
       }
       shape_superopt_cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0
-                (this_ptr,plane_normal,pCVar12,local_18,pSVar4,&local_28,&local_24);
-      pSVar4 = local_1c;
+                (this_ptr,plane_normal,pCVar7,local_18,pSVar4,&local_28,&local_24);
+      ptr = local_1c;
       bVar2 = false;
       if (local_28 != 0) {
-        pSVar5 = local_1c;
+        pSVar1 = local_1c;
         do {
-          if ((pSVar5->start_side == 0) || (pSVar5->end_side == 0)) {
+          if ((pSVar1->start_side == 0) || (pSVar1->end_side == 0)) {
             bVar2 = true;
             break;
           }
-          pSVar5 = pSVar5 + 1;
-        } while (pSVar5 < local_1c + local_28);
+          pSVar1 = pSVar1 + 1;
+        } while (pSVar1 < local_1c + local_28);
       }
       bVar3 = false;
       if (local_24 != 0) {
@@ -270,17 +235,17 @@ CComplexPolygon * __cdecl shape_superopt_cpp_CComplexPolygon_splitByDimensions_F
         } while (pSVar5 < local_14 + local_24);
       }
       if ((bVar2) || (bVar3)) {
-        iVar7 = shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
+        iVar2 = shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
                           (this_ptr,local_1c,&local_28,0);
-        if (iVar7 == 0) {
-          shape_memdbg_cpp_free_FUN_005fe659(pSVar4);
+        if (iVar2 == 0) {
+          shape_memdbg_cpp_free_FUN_005fe659(ptr);
           shape_memdbg_cpp_free_FUN_005fe659(local_14);
           return (CComplexPolygon *)0x0;
         }
-        iVar7 = shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
+        iVar2 = shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
                           (this_ptr,local_14,&local_24,0);
-        if (iVar7 == 0) {
-          shape_memdbg_cpp_free_FUN_005fe659(pSVar4);
+        if (iVar2 == 0) {
+          shape_memdbg_cpp_free_FUN_005fe659(ptr);
           shape_memdbg_cpp_free_FUN_005fe659(local_14);
           return (CComplexPolygon *)0x0;
         }

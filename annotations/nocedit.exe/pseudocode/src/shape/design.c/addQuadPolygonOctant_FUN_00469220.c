@@ -9,11 +9,11 @@
 void __cdecl shape_design_c_addQuadPolygonOctant_FUN_00469220(uint vertex_index_1,uint vertex_index_2,uint vertex_index_3,uint vertex_index_4)
 
 {
-  int iVar1;
   SShapeEditorPolygon *pSVar2;
   float local_20;
   float local_1c;
   int local_18;
+  int iVar1;
   
   iVar1 = g_PolygonCount;
   pSVar2 = g_ModelPolygonData + g_PolygonCount;

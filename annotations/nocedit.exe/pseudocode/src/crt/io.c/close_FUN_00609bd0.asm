@@ -21,7 +21,6 @@
 ;   SPECIAL_DEVICE_CLOSE_FUNC* g_SpecialDeviceCloseFunc = 00000000
 ;
 ; Called Functions:
-;   CloseHandle
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_io.c_setFileDescriptorFlags_FUN_00608908
 ;

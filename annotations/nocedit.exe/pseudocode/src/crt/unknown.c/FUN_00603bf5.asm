@@ -3,6 +3,9 @@
 ; *****************************************************************************
 ; int __cdecl crt_unknown_c_FUN_00603bf5(void)
 ;
+; Parameters:
+; double *         Stack[0x4]:4   in_stack_00000004
+; float *          Stack[0x8]:4   in_stack_00000008
 ; Local Variables:
 ; undefined8       Stack[-0x8]:8  local_8
 ;

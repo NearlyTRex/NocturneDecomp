@@ -7,7 +7,7 @@
 ; FileEmbeddedData * Stack[0x4]:4   embedded_data
 ; uint             Stack[0x8]:4   error_flags
 ; Local Variables:
-; undefined1       Stack[-0x8]:1  local_8
+; uint             Stack[-0x8]:4  local_8
 ;
 ; XREF[12]:
 ;   crt_fstream.cpp_fstreambase_ctor_FUN_00606456 at 006064e7

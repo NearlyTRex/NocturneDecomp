@@ -9,17 +9,14 @@
 int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_ptr)
 
 {
-  int *piVar1;
-  CDemonRenderer *pCVar2;
+  int *piVar2;
+  CDemonRenderer *pCVar3;
   int iVar3;
   CBoundingBox3D *this_ptr_00;
+  int iVar4;
   SChainVertex *pSVar4;
   SChainVertex *pSVar5;
   SMRGLHeaderPrimitive SStack_b8;
-  uint uStack_a0;
-  uint uStack_9c;
-  uint uStack_98;
-  uint uStack_94;
   CBoundingBox3D local_90;
   CVector3i CStack_78;
   CVector3i CStack_6c;
@@ -30,13 +27,15 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
   CVector3i CStack_30;
   CVector3i CStack_24;
   CVector3i CStack_18;
+  CDemonRenderer *pCVar2;
+  int *piVar1;
   
   iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
     this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_90);
-    iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-    this_ptr->is_visible = iVar3;
+    iVar4 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
+    this_ptr->is_visible = iVar4;
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
     if (this_ptr->is_visible != 0) {
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -47,15 +46,11 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
       SStack_b8.surface_normal.C = 0;
       SStack_b8.surface_normal.B = 0;
       SStack_b8.surface_normal.A = 0;
-      uStack_a0 = 0;
-      uStack_9c = 1;
-      uStack_98 = 2;
-      uStack_94 = 3;
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
       pSVar5 = this_ptr->vertices;
       pSVar4 = this_ptr->vertices;
-      for (iVar3 = 0; pSVar4 = pSVar4 + 1, iVar3 < this_ptr->vertex_count + -1; iVar3 = iVar3 + 1) {
+      for (iVar4 = 0; pSVar4 = pSVar4 + 1, iVar4 < this_ptr->vertex_count + -1; iVar4 = iVar4 + 1) {
         CStack_3c.x = (int)ROUND((pSVar5->position).x * 256.0f);
         CStack_3c.y = (int)ROUND((pSVar5->position).y * 256.0f);
         CStack_3c.z = (int)ROUND((pSVar5->position).z * 256.0f);
@@ -79,12 +74,12 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
         pCVar2 = g_CDemonRendererPtr2;
         piVar1 = &(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_y;
         *piVar1 = *piVar1 + -0x40;
-        piVar1 = &pCVar2->vertex_buffer_ptr[1].projected_vertex.transformed_y;
-        *piVar1 = *piVar1 + 0x40;
-        piVar1 = &pCVar2->vertex_buffer_ptr[2].projected_vertex.transformed_y;
-        *piVar1 = *piVar1 + 0x40;
-        piVar1 = &pCVar2->vertex_buffer_ptr[3].projected_vertex.transformed_y;
-        *piVar1 = *piVar1 + -0x40;
+        piVar2 = &pCVar2->vertex_buffer_ptr[1].projected_vertex.transformed_y;
+        *piVar2 = *piVar2 + 0x40;
+        piVar2 = &pCVar2->vertex_buffer_ptr[2].projected_vertex.transformed_y;
+        *piVar2 = *piVar2 + 0x40;
+        piVar2 = &pCVar2->vertex_buffer_ptr[3].projected_vertex.transformed_y;
+        *piVar2 = *piVar2 + -0x40;
         (pCVar2->vertex_buffer_ptr->projected_vertex).screen_x = -0x80000000;
         pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x = -0x80000000;
         pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_x = -0x80000000;
@@ -129,27 +124,27 @@ int __cdecl core_chain_cpp_CChain_renderTransparent_FUN_004308f0(CChain *this_pt
         CStack_24.z = (int)ROUND((pSVar4->position).z * 256.0f);
         wincore_windll_cpp_transformPoint_FUN_005b5a25
                   (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&CStack_24);
-        pCVar2 = g_CDemonRendererPtr2;
+        pCVar3 = g_CDemonRendererPtr2;
         (g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x =
              (g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x + -0x40;
-        pCVar2->vertex_buffer_ptr[1].projected_vertex.transformed_x =
-             pCVar2->vertex_buffer_ptr[1].projected_vertex.transformed_x + 0x40;
-        pCVar2->vertex_buffer_ptr[2].projected_vertex.transformed_x =
-             pCVar2->vertex_buffer_ptr[2].projected_vertex.transformed_x + 0x40;
-        pCVar2->vertex_buffer_ptr[3].projected_vertex.transformed_x =
-             pCVar2->vertex_buffer_ptr[3].projected_vertex.transformed_x + -0x40;
-        (pCVar2->vertex_buffer_ptr->projected_vertex).screen_x = -0x80000000;
-        pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x = -0x80000000;
-        pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_x = -0x80000000;
-        pCVar2->vertex_buffer_ptr[3].projected_vertex.screen_x = -0x80000000;
-        pCVar2->vertex_buffer_ptr->u = 0x80000;
-        pCVar2->vertex_buffer_ptr->v = 0x80000;
-        pCVar2->vertex_buffer_ptr[1].u = 0x80000;
-        pCVar2->vertex_buffer_ptr[1].v = 0xf80000;
-        pCVar2->vertex_buffer_ptr[2].u = 0xf80000;
-        pCVar2->vertex_buffer_ptr[2].v = 0xf80000;
-        pCVar2->vertex_buffer_ptr[3].u = 0xf80000;
-        pCVar2->vertex_buffer_ptr[3].v = 0x80000;
+        pCVar3->vertex_buffer_ptr[1].projected_vertex.transformed_x =
+             pCVar3->vertex_buffer_ptr[1].projected_vertex.transformed_x + 0x40;
+        pCVar3->vertex_buffer_ptr[2].projected_vertex.transformed_x =
+             pCVar3->vertex_buffer_ptr[2].projected_vertex.transformed_x + 0x40;
+        pCVar3->vertex_buffer_ptr[3].projected_vertex.transformed_x =
+             pCVar3->vertex_buffer_ptr[3].projected_vertex.transformed_x + -0x40;
+        (pCVar3->vertex_buffer_ptr->projected_vertex).screen_x = -0x80000000;
+        pCVar3->vertex_buffer_ptr[1].projected_vertex.screen_x = -0x80000000;
+        pCVar3->vertex_buffer_ptr[2].projected_vertex.screen_x = -0x80000000;
+        pCVar3->vertex_buffer_ptr[3].projected_vertex.screen_x = -0x80000000;
+        pCVar3->vertex_buffer_ptr->u = 0x80000;
+        pCVar3->vertex_buffer_ptr->v = 0x80000;
+        pCVar3->vertex_buffer_ptr[1].u = 0x80000;
+        pCVar3->vertex_buffer_ptr[1].v = 0xf80000;
+        pCVar3->vertex_buffer_ptr[2].u = 0xf80000;
+        pCVar3->vertex_buffer_ptr[2].v = 0xf80000;
+        pCVar3->vertex_buffer_ptr[3].u = 0xf80000;
+        pCVar3->vertex_buffer_ptr[3].v = 0x80000;
         CStack_6c.x = (int)ROUND((pSVar5->position).x * 256.0f);
         CStack_6c.y = (int)ROUND((pSVar5->position).y * 256.0f);
         CStack_6c.z = (int)ROUND((pSVar5->position).z * 256.0f);

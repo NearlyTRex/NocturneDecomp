@@ -6,7 +6,7 @@
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x10]:1  local_10
+; SNetworkAddr     Stack[-0x10]:8  local_10
 ;
 ; XREF[6]:
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0053fd00 at 0053ff6a

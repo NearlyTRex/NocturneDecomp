@@ -6,9 +6,9 @@
 ; Parameters:
 ; CSfxSample *     Stack[0x4]:4   out_sample
 ; Local Variables:
-; undefined1       Stack[-0x114]:1  local_114
-; undefined1       Stack[-0x113]:1  local_113
-; undefined4       Stack[-0x14]:4  local_14
+; char             Stack[-0x114]:1  local_114
+; undefined1[255]  Stack[-0x113]:255  local_113
+; long             Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_sound.cpp_CSound_getSoundDuration_FUN_005b3ba0 at 005b3bd5

@@ -6,12 +6,7 @@
 ; Parameters:
 ; C3DSLight *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
+; CBoundingBox3D   Stack[-0x18]:24  local_18
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a989

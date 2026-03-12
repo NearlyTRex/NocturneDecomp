@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 10,
-        "line": 28,
+        "line": 33,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 110,
+        "line": 115,
         "message": "assigning to 'CVert *' from incompatible type 'void *'"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 265,
+    "complexity_score": 270,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 110,
+    "pseudocode_lines": 115,
     "suspect_count": 15,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 336
+    "total_lines": 341
   },
   "cross_references": [],
   "function": {
@@ -175,43 +175,43 @@
         "is_param": false,
         "name": "local_7c",
         "offset": -124,
-        "size": 1,
-        "type": "undefined1"
+        "size": 92,
+        "type": "char[92]"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -225,7 +225,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 39,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "dest[*(int *)((int)pCVar1->uv_coords + iVar8 + -0xc)] =",
@@ -233,7 +233,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 40,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pCVar1->uv_coords + iVar8 + -0xc);",
@@ -241,7 +241,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 41,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "dest[*(int *)((int)pCVar1->uv_coords + iVar8 + -8)] =",
@@ -249,7 +249,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 42,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pCVar1->uv_coords + iVar8 + -8);",
@@ -257,50 +257,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 43,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar6 = *(int *)((int)pCVar1->uv_coords + iVar8 + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)pCVar1->uv_coords + iVar6 + -0xc) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)pCVar1->uv_coords + iVar6 + -0xc) -",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "dest[*(int *)((int)pCVar1->uv_coords + iVar6 + -0xc)];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)pCVar1->uv_coords + iVar6 + -8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)pCVar1->uv_coords + iVar6 + -8) -",
+      "text": "iVar7 = *(int *)((int)pCVar1->uv_coords + iVar8 + -4);",
       "type": "pointer_cast"
     },
     {
@@ -308,7 +268,7 @@
       "line": 69,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "dest[*(int *)((int)pCVar1->uv_coords + iVar6 + -8)];",
+      "text": "*(int *)((int)pCVar2->uv_coords + iVar6 + -0xc) =",
       "type": "pointer_cast"
     },
     {
@@ -316,7 +276,7 @@
       "line": 70,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar2 = (int *)((int)pCVar1->uv_coords + iVar6 + -4);",
+      "text": "*(int *)((int)pCVar2->uv_coords + iVar6 + -0xc) -",
       "type": "pointer_cast"
     },
     {
@@ -324,12 +284,52 @@
       "line": 71,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*piVar2 = *piVar2 - dest[*(int *)((int)pCVar1->uv_coords + iVar6 + -4)];",
+      "text": "dest[*(int *)((int)pCVar2->uv_coords + iVar6 + -0xc)];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 72,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)pCVar2->uv_coords + iVar6 + -8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)pCVar2->uv_coords + iVar6 + -8) -",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "dest[*(int *)((int)pCVar2->uv_coords + iVar6 + -8)];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar4 = (int *)((int)pCVar2->uv_coords + iVar6 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 76,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*piVar4 = *piVar4 - dest[*(int *)((int)pCVar2->uv_coords + iVar6 + -4)];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar7 = (double *)((int)&(this_ptr->vertex_data->position).x + local_18);",
@@ -337,10 +337,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 103,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)pdVar7 + 0x34) = pCVar4->state_flags;",
+      "text": "*(uint *)((int)pdVar7 + 0x34) = pCVar5->state_flags;",
       "type": "pointer_cast"
     }
   ],

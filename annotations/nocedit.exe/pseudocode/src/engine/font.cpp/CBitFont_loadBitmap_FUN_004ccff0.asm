@@ -10,10 +10,10 @@
 ; int              Stack[0x10]:4   height
 ; int              Stack[0x14]:4   first_char
 ; Local Variables:
-; undefined1       Stack[-0x43c]:1  local_43c
-; undefined1       Stack[-0x310]:1  local_310
-; undefined1       Stack[-0x210]:1  local_210
-; undefined1       Stack[-0x110]:1  local_110
+; char[300]        Stack[-0x43c]:300  local_43c
+; char[256]        Stack[-0x310]:256  local_310
+; char[256]        Stack[-0x210]:256  local_210
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[1]:
 ;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004cd280 at 004cd2af

@@ -8,12 +8,13 @@
 ; CVector3i *      Stack[0x8]:4   reference_vertex_list
 ; int              Stack[0xc]:4   reference_vertex_id
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int[1017]        Stack[-0x1010]:4068  aiStackY_1010
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; CVector3i *      Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_centerKeyframeModels_FUN_004681a0 at 00468257

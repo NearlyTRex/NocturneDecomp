@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 147,
+    "complexity_score": 148,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 53,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 212
+    "total_lines": 213
   },
   "cross_references": [
     {
@@ -166,21 +166,21 @@
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -303,7 +303,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 23,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar1 = *(int *)((int)g_OmniLights + iVar5);",
@@ -311,15 +311,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "g_RenderVertexBuffer[vertex_index].r = (int)ROUND(ROUND(local_3c)) << 8;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 53,
       "match": "ROUND",
       "severity": "mild",
       "text": "g_RenderVertexBuffer[vertex_index].r = (int)ROUND(ROUND(local_3c)) << 8;",
@@ -330,12 +322,12 @@
       "line": 53,
       "match": "ROUND",
       "severity": "mild",
-      "text": "g_RenderVertexBuffer[vertex_index].g = (int)ROUND(ROUND(local_40)) << 8;",
+      "text": "g_RenderVertexBuffer[vertex_index].r = (int)ROUND(ROUND(local_3c)) << 8;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 54,
       "match": "ROUND",
       "severity": "mild",
       "text": "g_RenderVertexBuffer[vertex_index].g = (int)ROUND(ROUND(local_40)) << 8;",
@@ -344,6 +336,14 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 54,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "g_RenderVertexBuffer[vertex_index].g = (int)ROUND(ROUND(local_40)) << 8;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 55,
       "match": "ROUND",
       "severity": "mild",
       "text": "g_RenderVertexBuffer[vertex_index].b = (int)ROUND(ROUND(local_38)) << 8;",
@@ -351,7 +351,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 55,
       "match": "ROUND",
       "severity": "mild",
       "text": "g_RenderVertexBuffer[vertex_index].b = (int)ROUND(ROUND(local_38)) << 8;",

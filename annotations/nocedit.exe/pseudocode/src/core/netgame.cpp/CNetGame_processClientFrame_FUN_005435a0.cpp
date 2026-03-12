@@ -12,6 +12,8 @@ void __cdecl core_netgame_cpp_CNetGame_processClientFrame_FUN_005435a0(CNetGame 
   int iVar1;
   int iVar2;
   int iVar3;
+  int iVar4;
+  int iVar5;
   float local_20;
   SSimFrame *local_18;
   
@@ -38,42 +40,42 @@ LAB_00543605:
                                   ((int)g_SimFrameHistory[0].player_controls[0].action_states +
                                   iVar1 + -0xc));
               core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(this_ptr);
-              iVar1 = 0;
-              iVar2 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
+              iVar5 = 0;
+              iVar4 = this_ptr->players[this_ptr->local_player_index].sim_frame_index;
               if (0 < g_SimFrameCount) {
                 iVar3 = 0;
                 local_18 = g_SimFrameHistory + 1;
                 do {
                   if (*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
-                              iVar3 + -0xc) < iVar2) {
+                              iVar3 + -0xc) < iVar4) {
                     g_SimFrameCount = g_SimFrameCount + -1;
                     memmove
                               ((void *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
-                                       iVar3 + -0xc),local_18,(g_SimFrameCount - iVar1) * 100);
+                                       iVar3 + -0xc),local_18,(g_SimFrameCount - iVar5) * 100);
                   }
                   else {
-                    iVar1 = iVar1 + 1;
+                    iVar5 = iVar5 + 1;
                     local_18 = local_18 + 1;
                     iVar3 = iVar3 + 100;
                   }
-                } while (iVar1 < g_SimFrameCount);
+                } while (iVar5 < g_SimFrameCount);
               }
               this_ptr->has_pending_sim_frame = 0;
-              iVar2 = 0;
+              iVar4 = 0;
               if (g_SimFrameCount < 1) {
                 return;
               }
-              iVar1 = 0;
+              iVar5 = 0;
               while (this_ptr->players[this_ptr->local_player_index].sim_frame_index !=
                      *(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +
-                             iVar1 + -0xc)) {
-                iVar1 = iVar1 + 100;
-                iVar2 = iVar2 + 1;
-                if (g_SimFrameCount * 100 <= iVar1) {
+                             iVar5 + -0xc)) {
+                iVar5 = iVar5 + 100;
+                iVar4 = iVar4 + 1;
+                if (g_SimFrameCount * 100 <= iVar5) {
                   return;
                 }
               }
-              if (iVar2 < 0) {
+              if (iVar4 < 0) {
                 return;
               }
               this_ptr->has_pending_sim_frame = 1;

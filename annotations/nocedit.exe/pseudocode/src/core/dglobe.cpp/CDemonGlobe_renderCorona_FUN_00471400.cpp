@@ -11,13 +11,11 @@
 void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *this_ptr)
 
 {
+  int iVar3;
+  int iVar4;
   int iVar1;
   int iVar2;
   SMRGLHeaderPrimitive local_64;
-  uint local_4c;
-  uint local_48;
-  uint local_44;
-  uint local_40;
   float local_3c;
   float local_38;
   float local_34;
@@ -47,12 +45,12 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *
     iVar2 = 0;
     iVar1 = 0;
     do {
-      local_3c = (float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar1) * local_c;
-      local_38 = (float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * local_c;
-      local_34 = (float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * local_c;
-      local_30.x = (int)ROUND(local_3c * 256.0f);
-      local_30.y = (int)ROUND(local_38 * 256.0f);
-      local_30.z = (int)ROUND(local_34 * 256.0f);
+      local_30.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar1) * local_c
+                              * 256.0f);
+      local_30.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * local_c
+                              * 256.0f);
+      local_30.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * local_c
+                              * 256.0f);
       iVar1 = iVar1 + 0xc;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
@@ -60,25 +58,21 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *
                  iVar2),&local_30);
       iVar2 = iVar2 + 0x30;
     } while (iVar1 != 0x2e8);
-    iVar1 = 0;
+    iVar4 = 0;
     do {
-      local_64.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0x14);
-      local_64.surface_normal.A = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0x10);
-      local_64.surface_normal.B = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -0xc);
-      local_64.surface_normal.C = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + -8);
-      iVar2 = iVar1 + -4;
-      local_4c = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1);
-      local_48 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + 4);
-      local_44 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + 8);
-      local_40 = *(uint *)((int)g_CoronaFacePrimitives[0].vertices + iVar1 + 0xc);
-      iVar1 = iVar1 + 0x24;
+      local_64.base.count = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x14);
+      local_64.surface_normal.A = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0x10);
+      local_64.surface_normal.B = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -0xc);
+      local_64.surface_normal.C = *(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar4 + -8);
+      iVar3 = iVar4 + -4;
+      iVar4 = iVar4 + 0x24;
       local_64.surface_normal.D =
-           (int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar2) *
+           (int)ROUND(ROUND((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *
                             this_ptr->radius));
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
                 (g_CDemonRendererPtr1,&local_64,
                  core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320);
-    } while (iVar1 != 0xbd0);
+    } while (iVar4 != 0xbd0);
     return;
   }
   core_dcamera_cpp_initializeCoronaBuffers_FUN_004502e0();

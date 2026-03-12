@@ -7,9 +7,8 @@
 ; char *           Stack[0x4]:4   str
 ; CStrList *       Stack[0x8]:4   word_list
 ; Local Variables:
-; undefined1       Stack[-0xd8]:1  local_d8
-; undefined1       Stack[-0xd7]:1  local_d7
-; undefined4       Stack[-0x10]:4  local_10
+; char[200]        Stack[-0xd8]:200  local_d8
+; uint             Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_0063b6e0

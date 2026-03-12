@@ -12,6 +12,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_p
   int iVar1;
   int iVar2;
   int iVar3;
+  int buffer_index;
   int iVar4;
   bool bVar5;
   
@@ -45,20 +46,20 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_p
     if (num_samples < 1) {
       return iVar4;
     }
-    iVar1 = g_WaveInCurrentBufferIndex + 1;
-    if (g_WaveInNumBuffers <= iVar1) {
-      iVar1 = 0;
+    buffer_index = g_WaveInCurrentBufferIndex + 1;
+    if (g_WaveInNumBuffers <= buffer_index) {
+      buffer_index = 0;
     }
-    if (g_WaveInHeaders[iVar1] == (LPWAVEHDR)0x0) {
+    if (g_WaveInHeaders[buffer_index] == (LPWAVEHDR)0x0) {
       return -1;
     }
-    if ((g_WaveInHeaders[iVar1]->dwFlags & 1) == 0) {
+    if ((g_WaveInHeaders[buffer_index]->dwFlags & 1) == 0) {
       return iVar4;
     }
-    iVar2 = sound_sndwav_cpp_writeWavInBuffer_FUN_005b0cc0(iVar1);
+    iVar2 = sound_sndwav_cpp_writeWavInBuffer_FUN_005b0cc0(buffer_index);
     if (iVar2 == 0) break;
     g_WaveInCurrentSampleOffset = 0;
-    g_WaveInCurrentBufferIndex = iVar1;
+    g_WaveInCurrentBufferIndex = buffer_index;
   }
   sound_sndmain_cpp_logSoundError_FUN_005adba0("WavInDevice::poll - queueWavInBuffer failed");
   return -1;

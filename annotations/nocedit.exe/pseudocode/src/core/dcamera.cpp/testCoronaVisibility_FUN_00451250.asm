@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   start_y
 ; int              Stack[0xc]:4   depth_reciprocal
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
+; uint             Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c

@@ -8,7 +8,8 @@
 ; char *           Stack[0x8]:4   name
 ; float            Stack[0xc]:4   duration
 ; Local Variables:
-; undefined8       Stack[-0x20]:8  local_20
+; undefined4       Stack[-0x20]:4  local_20
+; undefined4       Stack[-0x1c]:4  uStack_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:

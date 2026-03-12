@@ -11,11 +11,7 @@
 void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float progress_min,float progress_max)
 
 {
-  int iVar1;
-  float fVar2;
-  double dVar3;
-  int iVar4;
-  int iVar5;
+  int iVar2;
   int iVar6;
   int y;
   int y2;
@@ -23,6 +19,11 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEdit
   int x1;
   int x2;
   float local_34;
+  int iVar1;
+  int iVar5;
+  int iVar4;
+  double dVar3;
+  float fVar2;
   
   if (g_WindowStackCount < 1) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
@@ -50,7 +51,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEdit
               (g_EditorFont,g_ClipLeft,g_ClipRight,g_ClipTop,g_WindowStatusTextColor,-1,
                "%d%% complete",iVar1);
     iVar4 = g_ClipRight;
-    iVar7 = g_ClipLeft;
+    iVar2 = g_ClipLeft;
     y = g_FontCharacterWidth * 2 + g_ClipTop;
     y2 = g_FontCharacterWidth * 4 + g_ClipTop + -1;
     x2 = g_ClipRight + -1;
@@ -59,8 +60,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEdit
               (x1,y + 1,x2,y2,g_ProgressBarBackgroundColor,g_ProgressBarBorderColor);
     iVar5 = g_ActiveRenderColor;
     g_ActiveRenderColor = g_ProgressBarTextColor;
-    engine_2d_c_drawHLine_FUN_00402ee0(iVar7,y,x2);
-    engine_2d_c_drawVLine_FUN_00402ff0(iVar7,y,y2);
+    engine_2d_c_drawHLine_FUN_00402ee0(iVar2,y,x2);
+    engine_2d_c_drawVLine_FUN_00402ff0(iVar2,y,y2);
     iVar7 = (int)ROUND(ROUND((float)((x2 - x1) + 1) * local_34 + (float)0.5))
             + x1;
     g_ActiveRenderColor = iVar5;
@@ -74,23 +75,23 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEdit
       fVar2 = (float)(iVar6 - g_WindowStack[g_WindowStackCount + -1].progress_start_time) *
               (float)8.4771050347222196e-07;
       if ((float)5 < fVar2) {
-        iVar7 = (int)ROUND(ROUND(((progress_max - progress_min) * fVar2) / progress_min +
+        iVar2 = (int)ROUND(ROUND(((progress_max - progress_min) * fVar2) / progress_min +
                                  (float)0.5));
-        if (0 < iVar7) {
+        if (0 < iVar2) {
           dVar3 = (double)fVar2 + 0.5;
           engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30
                     (g_EditorFont,g_ClipLeft,g_ClipRight,g_ClipBottom - g_FontCharacterWidth,
                      g_WindowStatusTextColor,-1,"%d:%02d elapsed, approximately %d:%02d remaining",
-                     (int)ROUND(ROUND(dVar3)) / 0x3c,(int)ROUND(ROUND(dVar3)) % 0x3c,iVar7 / 0x3c,
-                     iVar7 % 0x3c);
+                     (int)ROUND(ROUND(dVar3)) / 0x3c,(int)ROUND(ROUND(dVar3)) % 0x3c,iVar2 / 0x3c,
+                     iVar2 % 0x3c);
         }
       }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar7 = g_WindowStackCount + -1;
-    g_WindowStack[iVar7].progress_percentage = iVar1;
-    g_WindowStack[iVar7].progress_timestamp = iVar6;
+    iVar2 = g_WindowStackCount + -1;
+    g_WindowStack[iVar2].progress_percentage = iVar1;
+    g_WindowStack[iVar2].progress_timestamp = iVar6;
   }
   return;
 }

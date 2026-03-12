@@ -9,17 +9,21 @@
 int __cdecl engine_fileio_cpp_readTimestampFile_FUN_004b23a0(_FILE *file_handle,STimestampRecord **records,char *directory,char *filename)
 
 {
-  char cVar1;
+  char cVar2;
   char *pcVar2;
   int iVar3;
   STimestampRecord *pSVar4;
+  int iVar4;
   int new_size;
+  char *pcVar5;
   STimestampRecord *pSVar5;
+  STimestampRecord *pSVar6;
   byte bVar6;
   char local_560 [1024];
   STimestampRecord local_160;
   int local_18;
   int local_14;
+  char cVar1;
   
   bVar6 = 0;
   new_size = 0x148;
@@ -62,17 +66,17 @@ LAB_004b246f:
                 (g_CEditorToolsPtr,"Error parsing %s, record %d",filename,local_18);
       goto LAB_004b246f;
     }
-    pSVar4 = &local_160;
-    pcVar2 = directory;
+    pSVar6 = &local_160;
+    pcVar5 = directory;
     do {
-      cVar1 = *pcVar2;
-      pSVar4->filename[0] = cVar1;
+      cVar1 = *pcVar5;
+      pSVar6->filename[0] = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar2[1];
-      pcVar2 = pcVar2 + 2;
-      pSVar4->filename[1] = cVar1;
-      pSVar4 = (STimestampRecord *)(pSVar4->filename + 2);
-    } while (cVar1 != '\0');
+      cVar2 = pcVar5[1];
+      pcVar5 = pcVar5 + 2;
+      pSVar6->filename[1] = cVar2;
+      pSVar6 = (STimestampRecord *)(pSVar6->filename + 2);
+    } while (cVar2 != '\0');
     pSVar4 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                        (*records,new_size,"..\\engine\\fileio.cpp",0x1c2);
     *records = pSVar4;
@@ -88,11 +92,12 @@ LAB_004b246f:
     }
     new_size = new_size + 0x148;
     pSVar5 = &local_160;
-    pcVar2 = pSVar4->filename + local_14;
-    for (iVar3 = 0x52; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(uint *)pcVar2 = *(uint *)pSVar5->filename;
-      pSVar5 = (STimestampRecord *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);
-      pcVar2 = pcVar2 + ((uint)bVar6 * -2 + 1) * 4;
+    pcVar5 = pSVar4->filename + local_14;
+    for (iVar4 = 0x52; iVar4 != 0; iVar4 = iVar4 + -1) {
+      pSVar5 = (STimestampRecord *)((int)pSVar5 + (uint)bVar6 * -8 + 4);
+      *(uint *)pcVar5 = *(uint *)pSVar5->filename;
+      pSVar5 = pSVar5;
+      pcVar5 = pcVar5 + ((uint)bVar6 * -2 + 1) * 4;
     }
     local_18 = local_18 + 1;
     local_14 = local_14 + 0x148;

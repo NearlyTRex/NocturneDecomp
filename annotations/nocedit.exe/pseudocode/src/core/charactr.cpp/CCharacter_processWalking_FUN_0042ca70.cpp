@@ -9,28 +9,33 @@
 int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter *this_ptr,float delta_time)
 
 {
-  UOrientationVector *pUVar1;
-  CDemonActor *pCVar2;
-  CCharacter_full_vtable *pCVar3;
+  float fVar1;
+  CDemonActor *pCVar6;
   CPathMap *path_map;
   int iVar4;
   CVector3f *pCVar5;
+  CVector3f *pCVar7;
+  float fVar8;
+  float fVar9;
   CWayPoint *pCVar4;
   CWayPoint *actor_ptr;
-  UVector3 *direction;
-  float fVar6;
-  float fVar7;
   CVector3f CStack_48;
   CVector3f local_3c;
   CVector3f CStack_30;
   float fStack_1c;
   float fStack_18;
+  CDemonActor *pCVar2;
+  CCharacter_full_vtable *pCVar3;
+  UVector3 *direction;
+  float fVar7;
+  float fVar6;
+  UOrientationVector *pUVar1;
   
   if ((this_ptr->walk_to_target == (CDemonActor *)0x0) && (this_ptr->door_target == (CDoor *)0x0)) {
     return 0;
   }
   if ((0.0 <= this_ptr->walk_timeout) &&
-     (fVar6 = this_ptr->walk_timeout - delta_time, this_ptr->walk_timeout = fVar6, fVar6 <= 0.0)) {
+     (fVar1 = this_ptr->walk_timeout - delta_time, this_ptr->walk_timeout = fVar1, fVar1 <= 0.0)) {
     this_ptr->walk_timeout = 0.0;
     pCVar2 = this_ptr->walk_to_target;
     this_ptr->is_walking = 0;
@@ -38,12 +43,12 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter 
     (this_ptr->base).location.position.y = (pCVar2->location).position.y;
     (this_ptr->base).location.position.z = (pCVar2->location).position.z;
     (this_ptr->base).location.area_id = (pCVar2->location).area_id;
-    pCVar2 = this_ptr->walk_to_target;
+    pCVar6 = this_ptr->walk_to_target;
     pUVar1 = &(this_ptr->base).orient;
-    if (pUVar1 != &pCVar2->orient) {
-      (pUVar1->vec).x = (pCVar2->orient).vec.x;
-      (this_ptr->base).orient.vec.y = (pCVar2->orient).vec.y;
-      (this_ptr->base).orient.vec.z = (pCVar2->orient).vec.z;
+    if (pUVar1 != &pCVar6->orient) {
+      (pUVar1->vec).x = (pCVar6->orient).vec.x;
+      (this_ptr->base).orient.vec.y = (pCVar6->orient).vec.y;
+      (this_ptr->base).orient.vec.z = (pCVar6->orient).vec.z;
     }
     if (this_ptr->door_target != (CDoor *)0x0) {
       (*(((this_ptr->base).vtable._uc)->_uc).clearDoorTarget)(this_ptr);
@@ -88,10 +93,10 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter 
   }
   pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                      (&this_ptr->base,&CStack_30,&this_ptr->door_target->open_position);
-  pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_48,pCVar5);
-  fVar6 = pCVar5->y;
-  this_ptr->turn_angle_accumulator = fVar6;
-  if ((float)0.62831853069999999 <= fVar6) {
+  pCVar7 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_48,pCVar5);
+  fVar1 = pCVar7->y;
+  this_ptr->turn_angle_accumulator = fVar1;
+  if ((float)0.62831853069999999 <= fVar1) {
     this_ptr->is_walking = 1;
   }
   else {
@@ -99,13 +104,12 @@ int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_0042ca70(CCharacter 
     this_ptr->is_walking = 0;
     (*(pCVar3->_uc).clearDoorTarget)(this_ptr);
   }
-  fStack_18 = this_ptr->turn_angle_accumulator;
-  fStack_1c = this_ptr->turn_speed;
-  fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(fStack_18);
-  fVar6 = -fStack_1c;
-  if ((fVar6 <= fVar7) && (fVar6 = fVar7, fStack_1c < fVar7)) {
-    fVar6 = fStack_1c;
+  fVar1 = this_ptr->turn_speed;
+  fVar8 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(this_ptr->turn_angle_accumulator);
+  fVar9 = -fVar1;
+  if ((fVar9 <= fVar8) && (fVar9 = fVar8, fVar1 < fVar8)) {
+    fVar9 = fVar1;
   }
-  this_ptr->turn_angle_accumulator = fVar6;
+  this_ptr->turn_angle_accumulator = fVar9;
   return 1;
 }

@@ -8,9 +8,7 @@
 ; SProjectedVertex * Stack[0x8]:4   output
 ; CVector3f *      Stack[0xc]:4   world_position
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; CVector3i        Stack[-0x10]:12  local_10
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065dca8 = 256

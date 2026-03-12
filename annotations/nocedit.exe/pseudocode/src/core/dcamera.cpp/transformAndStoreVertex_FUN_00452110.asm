@@ -9,12 +9,10 @@
 ; float            Stack[0xc]:4   y
 ; float            Stack[0x10]:4   z
 ; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; CVector3i        Stack[-0x1c]:12  local_1c
+; float            Stack[-0x10]:4  local_10
+; float            Stack[-0xc]:4  local_c
+; float            Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   float g_CameraFixedPointScale_0065c63c = 256

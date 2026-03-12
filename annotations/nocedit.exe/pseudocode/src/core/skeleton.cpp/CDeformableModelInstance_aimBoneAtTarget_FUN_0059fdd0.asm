@@ -11,20 +11,18 @@
 ; CQuaternion4f *  Stack[0x14]:4   base_orientation
 ; CDeformableModel_MotionBlendWeightFunc * Stack[0x18]:4   blend_callback
 ; Local Variables:
-; undefined        Stack[-0xac]:1  local_ac
-; undefined        Stack[-0x9c]:1  local_9c
-; undefined        Stack[-0x8c]:1  local_8c
-; undefined        Stack[-0x7c]:1  local_7c
-; undefined        Stack[-0x6c]:1  local_6c
-; undefined        Stack[-0x5c]:1  local_5c
-; undefined        Stack[-0x4c]:1  local_4c
-; undefined        Stack[-0x3c]:1  local_3c
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined        Stack[-0x14]:1  local_14
+; float[1521]      Stack[-0x1888]:6084  afStackY_1888
+; CQuaternion4f    Stack[-0xac]:16  local_ac
+; CQuaternion4f    Stack[-0x9c]:16  local_9c
+; CQuaternion4f    Stack[-0x8c]:16  local_8c
+; CQuaternion4f    Stack[-0x7c]:16  local_7c
+; CQuaternion4f    Stack[-0x6c]:16  local_6c
+; CQuaternion4f    Stack[-0x5c]:16  local_5c
+; CQuaternion4f    Stack[-0x4c]:16  local_4c
+; CQuaternion4f    Stack[-0x3c]:16  local_3c
+; CVector3f        Stack[-0x2c]:12  local_2c
+; CVector3f        Stack[-0x20]:12  local_20
+; CVector3f        Stack[-0x14]:12  local_14
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0064ee28 = 0.00100000000000000

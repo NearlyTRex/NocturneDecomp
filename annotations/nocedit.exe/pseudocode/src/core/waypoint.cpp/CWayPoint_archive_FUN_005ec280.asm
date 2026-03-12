@@ -6,7 +6,7 @@
 ; Parameters:
 ; CWayPoint *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; CDemonActor *    Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_nextWayPoint_00657587

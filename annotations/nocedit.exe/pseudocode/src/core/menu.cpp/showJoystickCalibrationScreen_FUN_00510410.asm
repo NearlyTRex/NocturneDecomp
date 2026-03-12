@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   instruction_text
 ; char *           Stack[0x8]:4   message_text
 ; Local Variables:
-; undefined        Stack[-0x110]:1  local_110
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_d_x_006365f8

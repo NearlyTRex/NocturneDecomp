@@ -7,13 +7,11 @@
 ; CBaron *         Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   target
 ; Local Variables:
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x34]:12  local_34
+; float            Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
+; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[1]:
 ;   core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00413e90 at 00413ef9

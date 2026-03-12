@@ -7,24 +7,31 @@
 ; CVehicle *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x14]:4  local_14
+; SDamageInfo      Stack[-0x104]:60  SStack_104
+; SCollisionInfo   Stack[-0xc8]:40  SStack_c8
+; CBoundingBox3D   Stack[-0xa0]:24  local_a0
+; float            Stack[-0x88]:4  local_88
+; float            Stack[-0x84]:4  local_84
+; float            Stack[-0x80]:4  local_80
+; CVector3f        Stack[-0x7c]:12  local_7c
+; CVector3f        Stack[-0x70]:12  local_70
+; CVector3f        Stack[-0x64]:12  CStack_64
+; float            Stack[-0x58]:4  local_58
+; float            Stack[-0x54]:4  local_54
+; float            Stack[-0x50]:4  local_50
+; CVector3f        Stack[-0x4c]:12  local_4c
+; float            Stack[-0x40]:4  fStack_40
+; float            Stack[-0x3c]:4  fStack_3c
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  local_34
+; float            Stack[-0x30]:4  local_30
+; float            Stack[-0x2c]:4  local_2c
+; float            Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  iStack_20
+; int              Stack[-0x1c]:4  iStack_1c
+; int              Stack[-0x18]:4  iStack_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_model_t_horn_wav_00656e26

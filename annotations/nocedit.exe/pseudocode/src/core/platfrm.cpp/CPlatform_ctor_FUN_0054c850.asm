@@ -6,7 +6,8 @@
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; float[1523]      Stack[-0x17f0]:6092  afStackY_17f0
+; CQuaternion4f    Stack[-0x14]:16  local_14
 ;
 ; XREF[4]:
 ;   core_conveyor.cpp_CConveyor_ctor_FUN_00441ca0 at 00441ca7

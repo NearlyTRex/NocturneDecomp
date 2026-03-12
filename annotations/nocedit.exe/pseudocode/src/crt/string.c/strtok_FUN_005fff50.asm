@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   str
 ; char *           Stack[0x8]:4   delimiters
 ; Local Variables:
-; undefined1       Stack[-0x28]:1  local_28
+; byte[32]         Stack[-0x28]:32  local_28
 ;
 ; XREF[1]:
 ;   shape_design.c_loadModelFile_FUN_00458ac0 at 00458f4a

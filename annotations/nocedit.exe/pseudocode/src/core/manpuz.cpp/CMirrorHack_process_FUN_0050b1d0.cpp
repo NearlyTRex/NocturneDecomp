@@ -10,6 +10,7 @@ void __cdecl core_manpuz_cpp_CMirrorHack_process_FUN_0050b1d0(CMirrorHack *this_
 
 {
   int iVar1;
+  int iVar2;
   float local_10;
   
   local_10 = (delta_time * (float)6.2831853070000001) / (float)30;
@@ -17,12 +18,12 @@ void __cdecl core_manpuz_cpp_CMirrorHack_process_FUN_0050b1d0(CMirrorHack *this_
   if (iVar1 != 0) {
     local_10 = local_10 * (float)0.20000000000000001;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_COMMA);
-  if (iVar1 != 0) {
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_COMMA);
+  if (iVar2 != 0) {
     (this_ptr->base).orient.vec.y = (this_ptr->base).orient.vec.y - local_10;
   }
-  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_PERIOD);
-  if (iVar1 != 0) {
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_PERIOD);
+  if (iVar2 != 0) {
     (this_ptr->base).orient.vec.y = (this_ptr->base).orient.vec.y + local_10;
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);

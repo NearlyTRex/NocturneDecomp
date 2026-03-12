@@ -1,0 +1,146 @@
+================================================================================
+COMMIT LOCALS - BROKEN FUNCTIONS REPORT
+================================================================================
+
+After running commit_locals.py --apply --only-undefined, 13 functions that
+were previously compiling now fail.  These are cases where the decompiler
+resolved undefined types to incorrect concrete types (e.g. undefined4 -> uint
+when it should be a struct pointer).
+
+Overall result: +32 newly compiling, -13 broke = net +19
+
+These 13 need manual Ghidra fixes (retype the offending local variables).
+
+================================================================================
+GROUP 1: uint member access (should be struct pointer)  [10 functions]
+================================================================================
+
+The decompiler resolved undefined4 -> uint for a local that the code does
+member access (.field) on.  These are likely software rendering vertex/edge
+structs that share a common type.  Fixing the struct type in one place may
+fix all of them.
+
+  1. setupBasicSoftwareEdge_FUN_00551ba0
+     Address: 00551ba0
+     File:    engine/prim.c
+     Errors:
+       line 52: member reference base type 'uint' is not a structure or union
+       line 53: member reference base type 'uint' is not a structure or union
+
+  2. setupSoftwareEdgeWithZMode_FUN_00551d60
+     Address: 00551d60
+     File:    engine/prim.c
+     Errors:
+       line 53: member reference base type 'uint' is not a structure or union
+       line 54: member reference base type 'uint' is not a structure or union
+
+  3. renderPolygonSoftware_FUN_00552510
+     Address: 00552510
+     File:    engine/prim.c
+     Errors:
+       line 146: member reference base type 'uint' is not a structure or union
+       line 147: member reference base type 'uint' is not a structure or union
+
+  4. renderIndexedPolygonSoftware_FUN_00552a40
+     Address: 00552a40
+     File:    engine/prim.c
+     Errors:
+       line 117: member reference base type 'uint' is not a structure or union
+       line 118: member reference base type 'uint' is not a structure or union
+
+  5. setupAdvancedSoftwareEdge_FUN_00552f70
+     Address: 00552f70
+     File:    engine/prim.c
+     Errors:
+       line 52: member reference base type 'uint' is not a structure or union
+       line 53: member reference base type 'uint' is not a structure or union
+
+  6. setupColoredSoftwareEdge_FUN_00553190
+     Address: 00553190
+     File:    engine/prim.c
+     Errors:
+       line 54: member reference base type 'uint' is not a structure or union
+       line 55: member reference base type 'uint' is not a structure or union
+
+  7. renderScanlinePolygon_FUN_00553470
+     Address: 00553470
+     File:    engine/prim.c
+     Errors:
+       line 144: member reference base type 'uint' is not a structure or union
+       line 145: member reference base type 'uint' is not a structure or union
+
+  8. renderIndexedPolygonAdvanced_FUN_00553b10
+     Address: 00553b10
+     File:    engine/prim.c
+     Errors:
+       line 176: member reference base type 'uint' is not a structure or union
+       line 177: member reference base type 'uint' is not a structure or union
+
+  9. renderTriangleTextured_FUN_00483370
+     Address: 00483370
+     File:    engine/drender.cpp
+     Errors:
+       line 91: member reference base type 'uint' is not a structure or union
+       line 92: member reference base type 'uint' is not a structure or union
+
+  10. setupTriangleEdgeInterpolation_FUN_00482fb0
+      Address: 00482fb0
+      File:    core/dpart.cpp
+      Errors:
+        line 53: member reference base type 'uint' is not a structure or union
+        line 54: member reference base type 'uint' is not a structure or union
+
+  Suggested fix: Find the software edge/vertex struct these functions operate
+  on (likely has x/y or u/v fields at offset 0 and 4).  Retype the uint local
+  to the correct struct pointer type in Ghidra.  Since all 10 functions share
+  the same error pattern, they likely share the same struct.
+
+
+================================================================================
+GROUP 2: double member access (should be struct)  [1 function]
+================================================================================
+
+The decompiler resolved undefined8 -> double for a local that the code does
+member access (.field) on.  Should be a struct with two float/int fields.
+
+  11. generateOctant_FUN_00469420
+      Address: 00469420
+      File:    shape/design.c
+      Errors:
+        line 54:  member reference base type 'double' is not a structure or union
+        line 61:  member reference base type 'double' is not a structure or union
+        line 74:  member reference base type 'double' is not a structure or union
+        line 85:  member reference base type 'double' is not a structure or union
+        line 107: member reference base type 'double' is not a structure or union
+        line 112: member reference base type 'double' is not a structure or union
+
+  Suggested fix: The undefined8 at that stack offset is likely a struct with
+  two 4-byte fields (e.g. CVector2f, a point, or a pair of ints).  Retype
+  the local in Ghidra.
+
+
+================================================================================
+GROUP 3: Pointer type mismatches  [2 functions]
+================================================================================
+
+  12. CStrList_copyToClipboard_FUN_004a3270
+      Address: 004a3270
+      File:    shape/edittool.cpp
+      Errors:
+        line 42: assigning to 'char *' from incompatible type 'void *'
+
+      Suggested fix: The local was resolved as char * but receives a void *
+      return value (likely from malloc/GlobalLock).  This compiled before
+      because undefined4 was cast-compatible.  Fix by retyping the local
+      or adding an explicit cast in a transform.
+
+  13. CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
+      Address: 0059f260
+      File:    core/skeleton.cpp
+      Errors:
+        line 97:  incompatible pointer types assigning to 'uint *' from 'float *'
+        line 118: incompatible pointer types assigning to 'uint *' from 'float *'
+
+      Suggested fix: The decompiler resolved a local as uint * but it gets
+      assigned a float * value (quaternion/bone data pointer).  Retype the
+      local as float * in Ghidra.

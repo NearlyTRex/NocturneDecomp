@@ -8,7 +8,7 @@
 ; SMRGLHeaderExtended * Stack[0x8]:4   mrgl_data
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SMRGLHeaderExtended * Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   engine_model.c_freeMRGLData_FUN_005280b0

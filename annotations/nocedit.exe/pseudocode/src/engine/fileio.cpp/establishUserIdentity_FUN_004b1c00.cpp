@@ -9,30 +9,33 @@
 int __cdecl engine_fileio_cpp_establishUserIdentity_FUN_004b1c00(void)
 
 {
-  char cVar1;
+  char cVar2;
   char *pcVar2;
   int iVar3;
   SVersionControlSession *pSVar4;
+  char *pcVar3;
+  SVersionControlSession *pSVar5;
   char local_204 [512];
+  char cVar1;
   
   if (g_VersionControlSession.primary_username[0] != '\0') {
     return 1;
   }
   wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(local_204);
   if (local_204[0] != '\0') {
-    pcVar2 = local_204;
-    pSVar4 = &g_VersionControlSession;
+    pcVar3 = local_204;
+    pSVar5 = &g_VersionControlSession;
     do {
-      cVar1 = *pcVar2;
-      pSVar4->primary_username[0] = cVar1;
+      cVar1 = *pcVar3;
+      pSVar5->primary_username[0] = cVar1;
       if (cVar1 == '\0') {
         return 1;
       }
-      cVar1 = pcVar2[1];
-      pcVar2 = pcVar2 + 2;
-      pSVar4->primary_username[1] = cVar1;
-      pSVar4 = (SVersionControlSession *)(pSVar4->primary_username + 2);
-    } while (cVar1 != '\0');
+      cVar2 = pcVar3[1];
+      pcVar3 = pcVar3 + 2;
+      pSVar5->primary_username[1] = cVar2;
+      pSVar5 = (SVersionControlSession *)(pSVar5->primary_username + 2);
+    } while (cVar2 != '\0');
     return 1;
   }
   pcVar2 = getenv("USERNAME");
@@ -57,9 +60,9 @@ int __cdecl engine_fileio_cpp_establishUserIdentity_FUN_004b1c00(void)
     while ((pSVar4->primary_username[0] == '_' ||
            ((g_CharacterClassificationTable[(byte)(pSVar4->primary_username[0] + 1)] & 0xe0) != 0)))
     {
-      pcVar2 = pSVar4->primary_username;
+      pcVar3 = pSVar4->primary_username;
       pSVar4 = (SVersionControlSession *)(pSVar4->primary_username + 1);
-      if (pcVar2[1] == '\0') {
+      if (pcVar3[1] == '\0') {
         return 1;
       }
     }

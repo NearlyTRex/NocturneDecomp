@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 541,
-    "complexity_score": 271,
+    "complexity_score": 276,
     "cross_reference_count": 4,
     "function_call_count": 9,
     "global_count": 18,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 206,
+    "pseudocode_lines": 211,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 747
+    "total_lines": 752
   },
   "cross_references": [
     {
@@ -272,7 +272,7 @@
         "name": "local_9c",
         "offset": -156,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -293,42 +293,42 @@
         "name": "local_90",
         "offset": -144,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_8c",
         "offset": -140,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_88",
         "offset": -136,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonSet *"
       },
       {
         "is_param": false,
         "name": "local_84",
         "offset": -132,
         "size": 4,
-        "type": "undefined4"
+        "type": "C3DSCamera *"
       },
       {
         "is_param": false,
         "name": "local_80",
         "offset": -128,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_7c",
         "offset": -124,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -349,21 +349,21 @@
         "name": "local_70",
         "offset": -112,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_68",
         "offset": -104,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -454,63 +454,63 @@
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -531,50 +531,50 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 117,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar9);",
+      "text": "puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 121,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar4 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar10);",
+      "text": "uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 138,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)g_ScreenBufferArray + local_2c) + iVar9 * 2);",
+      "text": "(*(int *)((int)g_ScreenBufferArray + local_2c) + iVar3 * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 137,
+      "line": 142,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar4 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 152,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar9 * 4)",
+      "text": "uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 157,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar3 * 4)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 162,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar4 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar10);",
+      "text": "uVar5 = *(uint *)((int)g_ThumbnailImageBuffer[0] + iVar8);",
       "type": "pointer_cast"
     }
   ]

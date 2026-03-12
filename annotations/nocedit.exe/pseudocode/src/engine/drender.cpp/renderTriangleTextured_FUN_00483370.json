@@ -1,20 +1,35 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 17,
+        "line": 91,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 92,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 594,
-    "complexity_score": 273,
+    "complexity_score": 303,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 40,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 273,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 867
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 278,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unknown_field"
+    ],
+    "total_lines": 872
   },
   "cross_references": [
     {
@@ -356,57 +371,57 @@
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
-        "size": 4,
-        "type": "undefined4"
+        "size": 64,
+        "type": "SRenderVertex *[16]"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "SRenderVertex *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "SSoftwareEdge *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SSoftwareEdge *"
       },
       {
         "is_param": true,
@@ -424,5 +439,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 84,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "uVar10._0_2_ = (ushort)(pSVar9->projected_vertex).screen_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "uVar10._0_2_ = (ushort)uVar10 ^ 0xffff;",
+      "type": "unknown_field"
+    }
+  ]
 }

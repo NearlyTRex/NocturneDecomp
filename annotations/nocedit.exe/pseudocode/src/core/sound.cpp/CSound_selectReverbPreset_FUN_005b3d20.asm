@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   title
 ; int *            Stack[0xc]:4   selection_inout
 ; Local Variables:
-; undefined1       Stack[-0x3ac]:1  local_3ac
+; CPickList        Stack[-0x3ac]:936  local_3ac
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00580f40

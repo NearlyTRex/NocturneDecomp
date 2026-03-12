@@ -4,67 +4,67 @@
       {
         "category": "format_error",
         "column": 31,
-        "line": 104,
+        "line": 108,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 37,
-        "line": 104,
+        "line": 108,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 47,
-        "line": 104,
+        "line": 108,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 28,
-        "line": 118,
+        "line": 121,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 78,
-        "line": 118,
+        "column": 18,
+        "line": 122,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 37,
-        "line": 126,
+        "line": 128,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 60,
-        "line": 126,
+        "column": 22,
+        "line": 129,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 66,
-        "line": 126,
+        "column": 28,
+        "line": 129,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 139,
+        "line": 142,
         "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       },
       {
         "category": "format_error",
         "column": 29,
-        "line": 155,
+        "line": 158,
         "message": "format specifies type 'int *' but the argument has type 'uchar *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 184,
+        "line": 187,
         "message": "format specifies type 'int *' but the argument has type 'CKeyFramedModelPart *' [-Werror,-Wformat]"
       }
     ],
@@ -73,15 +73,17 @@
   },
   "complexity": {
     "assembly_lines": 584,
-    "complexity_score": 189,
+    "complexity_score": 217,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 24,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 189,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 773
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 192,
+    "suspect_count": 2,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 776
   },
   "cross_references": [
     {
@@ -342,98 +344,98 @@
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "uchar[4]"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -451,5 +453,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 117,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if (0 < *(int *)((int)pSVar1->vertices + local_20 + -0x14)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "} while (iVar5 < *(int *)((int)pSVar1->vertices + local_20 + -0x14));",
+      "type": "pointer_cast"
+    }
+  ]
 }

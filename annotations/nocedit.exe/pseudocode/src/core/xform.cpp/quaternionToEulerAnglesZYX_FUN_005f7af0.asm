@@ -7,7 +7,7 @@
 ; CQuaternion4f *  Stack[0x4]:4   quat_in
 ; CVector3f *      Stack[0x8]:4   vector_out
 ; Local Variables:
-; undefined        Stack[-0x34]:1  local_34
+; CMatrix3x3f      Stack[-0x34]:36  local_34
 ;
 ; Called Functions:
 ;   core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0

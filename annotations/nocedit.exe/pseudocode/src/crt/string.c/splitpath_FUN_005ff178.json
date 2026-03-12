@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 108,
+    "complexity_score": 109,
     "cross_reference_count": 34,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
+    "pseudocode_lines": 54,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "special_crt_function"
     ],
-    "total_lines": 166
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -331,7 +331,7 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 7,
       "match": "extraout_var",
       "severity": "moderate",
       "text": "ushort extraout_var;",
@@ -339,7 +339,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 34,
+      "line": 35,
       "match": "extraout_var",
       "severity": "moderate",
       "text": "iVar3 = CONCAT22(extraout_var,wVar2);",
@@ -347,7 +347,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 35,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "iVar3 = CONCAT22(extraout_var,wVar2);",

@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   filename
 ; int              Stack[0xc]:4   apply_palette_flag
 ; Local Variables:
-; undefined        Stack[-0x6c]:1  local_6c
+; char[100]        Stack[-0x6c]:100  local_6c
 ;
 ; XREF[2]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_0054b910 at 0054b91b

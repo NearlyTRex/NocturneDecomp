@@ -6,7 +6,7 @@
 ; Parameters:
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x3ac]:1  local_3ac
+; CPickList        Stack[-0x3ac]:936  local_3ac
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bed_0062ac28

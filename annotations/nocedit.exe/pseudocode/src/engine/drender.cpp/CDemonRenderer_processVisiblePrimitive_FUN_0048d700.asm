@@ -8,9 +8,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   primitive
 ; int              Stack[0xc]:4   render_flags
 ; Local Variables:
-; undefined2       Stack[-0x18]:2  local_18
-; undefined2       Stack[-0x16]:2  local_16
-; undefined2       Stack[-0x14]:2  local_14
+; STrianglePackedIndices Stack[-0x18]:6  local_18
 ; undefined2       Stack[-0x12]:2  local_12
 ; undefined2       Stack[-0x10]:2  local_10
 ; undefined2       Stack[-0xe]:2  local_e

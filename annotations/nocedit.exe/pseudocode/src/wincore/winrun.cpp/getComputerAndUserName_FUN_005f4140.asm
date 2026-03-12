@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   buffer
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
+; DWORD            Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   engine_fileio.cpp_establishUserIdentity_FUN_004b1c00 at 004b1c20

@@ -9,13 +9,14 @@
 void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0(CCharacter *this_ptr,UOrientationVector *orientation)
 
 {
-  UOrientationVector *pUVar1;
+  CVector3f *pCVar1;
   CVector3f *pCVar2;
   CVector3f *pCVar3;
   CVector3f local_38;
   CVector3f local_2c;
   CVector3f local_20;
   CVector3f local_14;
+  UOrientationVector *pUVar1;
   
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
             (&this_ptr->base,&local_20,&(this_ptr->model).accumulated_root_motion);
@@ -30,9 +31,9 @@ void __cdecl core_charactr_cpp_CCharacter_setOrientation_FUN_0042ded0(CCharacter
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   pCVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base,&local_38,&local_20);
-  pCVar3 = &(this_ptr->model).accumulated_root_motion;
-  if (pCVar3 != pCVar2) {
-    pCVar3->x = pCVar2->x;
+  pCVar1 = &(this_ptr->model).accumulated_root_motion;
+  if (pCVar1 != pCVar2) {
+    pCVar1->x = pCVar2->x;
     (this_ptr->model).accumulated_root_motion.y = pCVar2->y;
     (this_ptr->model).accumulated_root_motion.z = pCVar2->z;
   }

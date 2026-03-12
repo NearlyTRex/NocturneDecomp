@@ -9,10 +9,9 @@
 void __cdecl core_setedit_cpp_CDemonSet_deleteCamera_FUN_0057e430(CDemonSet *this_ptr,int camera_index)
 
 {
-  CVector3f *pCVar1;
-  CVector3f *pCVar2;
   char *pcVar3;
   int iVar4;
+  int iVar1;
   char *pcVar5;
   C3DSCamera *pCVar6;
   C3DSCamera *pCVar7;
@@ -22,12 +21,14 @@ void __cdecl core_setedit_cpp_CDemonSet_deleteCamera_FUN_0057e430(CDemonSet *thi
   int local_10;
   C3DSCamera *local_c;
   int local_8;
+  CVector3f *pCVar1;
+  CVector3f *pCVar2;
   
   if ((-1 < camera_index) && (camera_index < this_ptr->camera_count)) {
-    iVar4 = this_ptr->camera_count + -1;
+    iVar1 = this_ptr->camera_count + -1;
     local_8 = camera_index;
-    this_ptr->camera_count = iVar4;
-    if (camera_index < iVar4) {
+    this_ptr->camera_count = iVar1;
+    if (camera_index < iVar1) {
       local_1c = &this_ptr->cameras[camera_index + 1].position;
       local_18 = &this_ptr->cameras[camera_index].position;
       local_10 = camera_index << 4;
@@ -94,20 +95,20 @@ void __cdecl core_setedit_cpp_CDemonSet_deleteCamera_FUN_0057e430(CDemonSet *thi
         local_20->pvs_list = local_c->pvs_list;
         local_20->vdir_zone = local_c->vdir_zone;
         local_20->enabled = local_c->enabled;
-        iVar4 = 0;
+        iVar1 = 0;
         if (0 < this_ptr->light_count) {
           pcVar5 = this_ptr->lights[0].name + local_8 + -4;
           pcVar3 = this_ptr->lights[0].name + local_10 + -4;
           do {
             pcVar5[0x128] = pcVar5[0x129];
-            *(int *)(pcVar3 + 0x224) = *(int *)(pcVar3 + 0x234);
-            *(int *)(pcVar3 + 0x228) = *(int *)(pcVar3 + 0x238);
-            *(int *)(pcVar3 + 0x22c) = *(int *)(pcVar3 + 0x23c);
-            ((CRect *)(pcVar3 + 0x230))->left = ((CRect *)(pcVar3 + 0x240))->left;
-            iVar4 = iVar4 + 1;
+            *(uint *)(pcVar3 + 0x224) = *(uint *)(pcVar3 + 0x234);
+            *(uint *)(pcVar3 + 0x228) = *(uint *)(pcVar3 + 0x238);
+            *(uint *)(pcVar3 + 0x22c) = *(uint *)(pcVar3 + 0x23c);
+            *(uint *)(pcVar3 + 0x230) = *(uint *)(pcVar3 + 0x240);
+            iVar1 = iVar1 + 1;
             pcVar5 = pcVar5 + 0x1898;
             pcVar3 = pcVar3 + 0x1898;
-          } while (iVar4 < this_ptr->light_count);
+          } while (iVar1 < this_ptr->light_count);
         }
         local_1c = local_1c + 0x23;
         local_18 = local_18 + 0x23;

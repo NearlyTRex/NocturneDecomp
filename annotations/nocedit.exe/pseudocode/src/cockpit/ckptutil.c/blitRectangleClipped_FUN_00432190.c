@@ -15,6 +15,8 @@ void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_00432190(void *sprite_d
   int iVar4;
   int iVar5;
   int iVar6;
+  int iVar3;
+  int iVar8;
   int iVar7;
   void *pvVar8;
   
@@ -26,15 +28,15 @@ void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_00432190(void *sprite_d
     iVar4 = width + -1;
     if (g_BitsPerPixel == 8) {
       iVar7 = (int)g_ScreenBufferArray[dest_y] + dest_x;
-      iVar5 = 0;
-      if (((iVar6 < 1) || (iVar5 = iVar6, iVar6 <= iVar4)) &&
-         (((iVar4 <= iVar1 || (iVar4 = iVar1, iVar5 <= iVar1)) && (iVar1 = 0, 0 < height)))) {
+      iVar8 = 0;
+      if (((iVar6 < 1) || (iVar8 = iVar6, iVar6 <= iVar4)) &&
+         (((iVar4 <= iVar1 || (iVar4 = iVar1, iVar8 <= iVar1)) && (iVar3 = 0, 0 < height)))) {
         do {
-          (*pCVar3)((void *)(iVar7 + iVar5),(void *)((int)sprite_data + iVar5),(iVar4 - iVar5) + 1);
-          iVar1 = iVar1 + 1;
+          (*pCVar3)((void *)(iVar7 + iVar8),(void *)((int)sprite_data + iVar8),(iVar4 - iVar8) + 1);
+          iVar3 = iVar3 + 1;
           iVar7 = iVar7 + iVar2;
           sprite_data = (void *)((int)sprite_data + width);
-        } while (iVar1 < height);
+        } while (iVar3 < height);
         return;
       }
     }
@@ -43,15 +45,15 @@ void __cdecl cockpit_ckptutil_c_blitRectangleClipped_FUN_00432190(void *sprite_d
       iVar5 = 0;
       if (((iVar6 < 1) || (iVar5 = iVar6, iVar6 <= iVar4)) &&
          ((iVar4 <= iVar1 || (iVar4 = iVar1, iVar5 <= iVar1)))) {
-        iVar1 = 0;
+        iVar8 = 0;
         if (0 < height) {
           do {
             (*pCVar3)((void *)(iVar5 * 2 + (int)pvVar8),(void *)((int)sprite_data + iVar5),
                       (iVar4 - iVar5) + 1);
-            iVar1 = iVar1 + 1;
+            iVar8 = iVar8 + 1;
             pvVar8 = (void *)((int)pvVar8 + (iVar2 / 2) * 2);
             sprite_data = (void *)((int)sprite_data + width);
-          } while (iVar1 < height);
+          } while (iVar8 < height);
           return;
         }
       }

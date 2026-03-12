@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 73,
+    "complexity_score": 75,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 60,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 196
+    "total_lines": 198
   },
   "cross_references": [],
   "function": {
@@ -112,7 +112,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMRGLHeaderExtended *"
       },
       {
         "is_param": true,
@@ -133,7 +133,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 43,
       "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
       "text": "local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).type + (uVar1 & 0xfffffffc))) {",

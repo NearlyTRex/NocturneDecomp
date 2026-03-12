@@ -7,9 +7,9 @@
 ; CBoneStructure * Stack[0x4]:4   this_ptr
 ; CMatrix3x4f *    Stack[0x8]:4   matrices
 ; Local Variables:
-; undefined1       Stack[-0x40]:1  local_40
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; CMatrix3x4f      Stack[-0x40]:48  local_40
+; int              Stack[-0x10]:4  local_10
+; CBoneStructure * Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 005954fc

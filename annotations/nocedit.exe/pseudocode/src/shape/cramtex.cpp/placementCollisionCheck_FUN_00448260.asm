@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   width
 ; int              Stack[0x14]:4   height
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x18]:4  local_18
+; SCramRectangle * Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0083c1a0

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 162,
+    "complexity_score": 163,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 37,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 127,
+    "pseudocode_lines": 128,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 386
+    "total_lines": 387
   },
   "cross_references": [
     {
@@ -326,22 +326,8 @@
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": true,
@@ -362,7 +348,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 35,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.x = (int)ROUND(pCVar2->x * 256.0f);",
@@ -370,7 +356,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 36,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.y = (int)ROUND(pCVar2->y * 256.0f);",
@@ -378,7 +364,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 37,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.z = (int)ROUND(pCVar2->z * 256.0f);",

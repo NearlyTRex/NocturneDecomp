@@ -8,13 +8,12 @@
 ; char *           Stack[0x8]:4   output_filename
 ; int              Stack[0xc]:4   num_palette_entries
 ; Local Variables:
-; undefined        Stack[-0x6c]:1  local_6c
-; undefined1       Stack[-0x6b]:1  local_6b
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; char[80]         Stack[-0x6c]:80  local_6c
+; int              Stack[-0x1c]:4  local_1c
+; SColorQuantMapper * Stack[-0x18]:4  local_18
+; char *           Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
+; uint             Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_palette_cpp_0063e4c8

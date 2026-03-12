@@ -7,16 +7,13 @@
 ; CMirrorReflection * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   input_vertex
 ; Local Variables:
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined1       Stack[-0x18]:1  local_18
+; float[1009]      Stack[-0x100c]:4036  afStackY_100c
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  local_30
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80 at 0056dcb9

@@ -9,15 +9,15 @@
 int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_ptr,char *dialog_title,char *selected_name)
 
 {
-  char cVar1;
-  int iVar2;
-  CDemonActor *actor;
+  char cVar2;
   int iVar3;
   int iVar4;
+  int iVar5;
   SScriptXRef *pSVar5;
+  char *pcVar8;
+  int iVar9;
   char *pcVar6;
   char *pcVar7;
-  uint window_flags;
   CActorPropertyList CStack_2c4c;
   CPickList local_748;
   char local_3a0 [500];
@@ -26,22 +26,26 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
   int local_1c;
   int local_18;
   char *local_14;
+  int iVar2;
+  char cVar1;
+  uint window_flags;
+  CDemonActor *actor;
   
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_748);
   local_18 = 0;
   if (0 < this_ptr->xref_count) {
     local_1c = 0;
     do {
-      local_14 = this_ptr->xref_entries->name + local_1c;
-      iVar3 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_748.base,local_14);
+      pcVar8 = this_ptr->xref_entries->name + local_1c;
+      iVar3 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_748.base,pcVar8);
       if (iVar3 < 0) {
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_748.base,local_14);
-        iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&local_748.base);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_748.base,pcVar8);
+        iVar5 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&local_748.base);
       }
       else {
-        iVar3 = iVar3 + 1;
+        iVar5 = iVar3 + 1;
       }
-      switch(*(int *)(local_14 + 0x100)) {
+      switch(*(int *)(pcVar8 + 0x100)) {
       case 0:
         pcVar6 = "Event tested";
         break;
@@ -87,31 +91,30 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
         cVar1 = *pcVar6;
         *pcVar7 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar6[1];
+        cVar2 = pcVar6[1];
         pcVar6 = pcVar6 + 2;
-        pcVar7[1] = cVar1;
+        pcVar7[1] = cVar2;
         pcVar7 = pcVar7 + 2;
-      } while (cVar1 != '\0');
-      if (*(CDemonActor **)(local_14 + 0x104) == (CDemonActor *)0x0) {
-        _sprintf
-                  (local_e4,"Script\tLn %d",*(int *)(local_14 + 0x10c));
+      } while (cVar2 != '\0');
+      if (*(CDemonActor **)(pcVar8 + 0x104) == (CDemonActor *)0x0) {
+        _sprintf(local_e4,"Script\tLn %d",*(int *)(pcVar8 + 0x10c));
       }
       else {
         core_actor_cpp_CActorPropertyList_init_FUN_0040e130(&CStack_2c4c);
-        (*(((*(CDemonActor **)(local_14 + 0x104))->vtable)._ub)->getPropertyList)
-                  (*(CDemonActor **)(local_14 + 0x104),&CStack_2c4c);
+        (*(((*(CDemonActor **)(pcVar8 + 0x104))->vtable)._ub)->getPropertyList)
+                  (*(CDemonActor **)(pcVar8 + 0x104),&CStack_2c4c);
         _sprintf
-                  (local_e4,"%s\t%s",*(CDemonActor **)(local_14 + 0x104),
-                   CStack_2c4c.properties[*(int *)(local_14 + 0x108)].name);
+                  (local_e4,"%s\t%s",*(CDemonActor **)(pcVar8 + 0x104),
+                   CStack_2c4c.properties[*(int *)(pcVar8 + 0x108)].name);
       }
       _sprintf(local_3a0,"\t%s\t%s",local_1ac,local_e4);
-      shape_edittool_cpp_CPickList_insert_FUN_004a5670(&local_748,iVar3,(int)local_3a0);
-      *(int *)(local_14 + 0x110) = iVar3;
+      shape_edittool_cpp_CPickList_insert_FUN_004a5670(&local_748,iVar5,(int)local_3a0);
+      *(int *)(pcVar8 + 0x110) = iVar5;
       if (0 < local_18) {
         iVar4 = 0;
         do {
           iVar2 = *(int *)((int)&this_ptr->xref_entries->display_index + iVar4);
-          if (iVar3 <= iVar2) {
+          if (iVar5 <= iVar2) {
             *(int *)((int)&this_ptr->xref_entries->display_index + iVar4) = iVar2 + 1;
           }
           iVar4 = iVar4 + 0x114;
@@ -121,29 +124,29 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
       local_18 = local_18 + 1;
     } while (local_18 < this_ptr->xref_count);
   }
-  iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&local_748.base);
-  if (iVar3 < 1) {
+  iVar5 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&local_748.base);
+  if (iVar5 < 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Nothing to choose from!");
   }
   else {
     shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_748,1);
     window_flags = 0;
-    iVar3 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_748.base,selected_name);
-    iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                      (&local_748,dialog_title,iVar3,window_flags);
-    if (-1 < iVar3) {
-      iVar4 = 0;
+    iVar5 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(&local_748.base,selected_name);
+    iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                      (&local_748,dialog_title,iVar5,window_flags);
+    if (-1 < iVar5) {
+      iVar9 = 0;
       if (0 < this_ptr->xref_count) {
         pSVar5 = this_ptr->xref_entries;
         do {
-          if (iVar3 == pSVar5->display_index) {
+          if (iVar5 == pSVar5->display_index) {
             actor = pSVar5->actor;
             if (actor == (CDemonActor *)0x0) {
-              iVar3 = pSVar5->line_number + -1;
-              if (iVar3 != g_CurrentEditingLine) {
+              iVar5 = pSVar5->line_number + -1;
+              if (iVar5 != g_CurrentEditingLine) {
                 g_CurrentEditingColumn = (int)actor;
-                g_CurrentEditingLine = iVar3;
+                g_CurrentEditingLine = iVar5;
                 core_script_cpp_clearSelections_FUN_005644e0();
                 core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);
                 core_script_cpp_CScript_updateScrollPosition_FUN_005669a0(this_ptr);
@@ -154,27 +157,27 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
             }
             goto LAB_005679f9;
           }
-          iVar4 = iVar4 + 1;
+          iVar9 = iVar9 + 1;
           pSVar5 = pSVar5 + 1;
-        } while (iVar4 < this_ptr->xref_count);
+        } while (iVar9 < this_ptr->xref_count);
       }
-      pcVar6 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_748.base,iVar3);
+      pcVar8 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_748.base,iVar5);
       do {
-        cVar1 = *pcVar6;
-        *selected_name = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar6[1];
-        pcVar6 = pcVar6 + 2;
-        selected_name[1] = cVar1;
+        cVar2 = *pcVar8;
+        *selected_name = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar8[1];
+        pcVar8 = pcVar8 + 2;
+        selected_name[1] = cVar2;
         selected_name = selected_name + 2;
-      } while (cVar1 != '\0');
-      iVar3 = 1;
+      } while (cVar2 != '\0');
+      iVar5 = 1;
       goto LAB_00567a01;
     }
   }
 LAB_005679f9:
-  iVar3 = 0;
+  iVar5 = 0;
 LAB_00567a01:
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_748,0);
-  return iVar3;
+  return iVar5;
 }

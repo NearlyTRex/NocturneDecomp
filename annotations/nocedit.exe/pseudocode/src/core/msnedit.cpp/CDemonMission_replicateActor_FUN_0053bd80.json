@@ -4,43 +4,19 @@
       {
         "category": "other",
         "column": 39,
-        "line": 36,
+        "line": 41,
         "message": "member reference base type 'const char[13]' is not a structure or union"
       },
       {
         "category": "other",
         "column": 12,
-        "line": 36,
-        "message": "array type 'char[4]' is not assignable"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 37,
-        "message": "member reference base type 'const char[13]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 37,
-        "message": "array type 'char[4]' is not assignable"
-      },
-      {
-        "category": "other",
-        "column": 41,
-        "line": 38,
-        "message": "member reference base type 'const char[13]' is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 14,
-        "line": 38,
+        "line": 41,
         "message": "array type 'char[4]' is not assignable"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 136,
+        "line": 138,
         "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CCharacter *'"
       }
     ],
@@ -49,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 174,
+    "complexity_score": 156,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 26,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 139,
-    "suspect_count": 3,
+    "pseudocode_lines": 141,
+    "suspect_count": 1,
     "suspect_types": [
       "unknown_field"
     ],
-    "total_lines": 461
+    "total_lines": 463
   },
   "cross_references": [
     {
@@ -375,36 +351,43 @@
         "is_param": false,
         "name": "local_a4",
         "offset": -164,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_a3",
-        "offset": -163,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_3f",
-        "offset": -63,
-        "size": 1,
-        "type": "undefined1"
+        "size": 32,
+        "type": "char[32]"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
+        "size": 4,
+        "type": "char[4]"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "char[4]"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "char[4]"
+      },
+      {
+        "is_param": false,
+        "name": "cStack_14",
+        "offset": -20,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       },
       {
         "is_param": true,
@@ -442,26 +425,10 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 29,
+      "line": 34,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_20 = (char  [4])\"DUPACTOR.TMP\"._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "acStack_1c = (char  [4])\"DUPACTOR.TMP\"._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 31,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "acStack_18 = (char  [4])\"DUPACTOR.TMP\"._8_4_;",
       "type": "unknown_field"
     }
   ]

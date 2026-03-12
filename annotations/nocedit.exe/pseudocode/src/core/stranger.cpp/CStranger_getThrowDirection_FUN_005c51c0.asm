@@ -7,13 +7,9 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   out_direction
 ; Local Variables:
-; undefined1       Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; CMatrix3x3f      Stack[-0x48]:36  local_48
+; CVector3f        Stack[-0x20]:12  local_20
+; CVector3f        Stack[-0x14]:12  local_14
 ;
 ; XREF[2]:
 ;   core_stranger.cpp_CStranger_renderOpaque_FUN_005c3150 at 005c322c

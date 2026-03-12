@@ -8,21 +8,20 @@
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0xe8]:8  local_e8
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
+; undefined1[56]   Stack[-0xcc]:56  auStack_cc
+; CBoxActor *      Stack[-0x94]:4  pCStack_94
+; float            Stack[-0x88]:4  local_88
+; float            Stack[-0x84]:4  local_84
+; float            Stack[-0x80]:4  local_80
 ; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined8       Stack[-0x28]:8  local_28
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x6c]:12  local_6c
+; undefined1[52]   Stack[-0x60]:52  auStack_60
+; CDemonActor *    Stack[-0x2c]:4  local_2c
+; double           Stack[-0x28]:8  local_28
+; float            Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_boxactor.cpp_CLightActor_process_FUN_00422a50 at 00422a67

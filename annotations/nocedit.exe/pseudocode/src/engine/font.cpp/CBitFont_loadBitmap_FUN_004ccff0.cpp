@@ -9,18 +9,21 @@
 void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr,char *filename,int width,int height,int first_char)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
   void *pvVar3;
   _FILE *file;
+  int iVar3;
   char *pcVar4;
   int iVar5;
+  int iVar4;
   int iVar6;
   char (*pacVar7) [80];
   char local_43c [300];
   char local_310 [256];
   char local_210 [256];
   char local_110 [256];
+  char cVar1;
   
   if (3 < this_ptr->bitmap_count) {
     g_CurrentFilename = "..\\engine\\font.cpp";
@@ -33,11 +36,11 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr
     cVar1 = *pcVar4;
     (*pacVar7)[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
+    cVar2 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    (*pacVar7)[1] = cVar1;
+    (*pacVar7)[1] = cVar2;
     pacVar7 = (char (*) [80])(*pacVar7 + 2);
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   strupr(this_ptr->bitmap_files[this_ptr->bitmap_count]);
   iVar5 = width * height;
   this_ptr->bitmap_widths[this_ptr->bitmap_count] = width;
@@ -62,16 +65,16 @@ void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(CBitFont *this_ptr
   engine_dosio_c_makePath_FUN_00481f50(local_310,(char *)0x0,local_210,local_110,"act");
   file = engine_dosio_c_getFile_FUN_00481a50("art",local_310,"rb");
   if (file != (_FILE *)0x0) {
-    iVar2 = 0;
+    iVar4 = 0;
     do {
-      iVar5 = _fgetc(file);
-      this_ptr->palette_data[iVar2 + this_ptr->bitmap_count * 0x300] = (char)iVar5;
-      iVar5 = _fgetc(file);
-      this_ptr->palette_data[iVar2 + this_ptr->bitmap_count * 0x300 + 1] = (char)iVar5;
-      iVar5 = _fgetc(file);
-      iVar6 = iVar2 + 3;
-      this_ptr->palette_data[iVar2 + this_ptr->bitmap_count * 0x300 + 2] = (char)iVar5;
-      iVar2 = iVar6;
+      iVar3 = _fgetc(file);
+      this_ptr->palette_data[iVar4 + this_ptr->bitmap_count * 0x300] = (char)iVar3;
+      iVar3 = _fgetc(file);
+      this_ptr->palette_data[iVar4 + this_ptr->bitmap_count * 0x300 + 1] = (char)iVar3;
+      iVar3 = _fgetc(file);
+      iVar6 = iVar4 + 3;
+      this_ptr->palette_data[iVar4 + this_ptr->bitmap_count * 0x300 + 2] = (char)iVar3;
+      iVar4 = iVar6;
     } while (iVar6 != 0x300);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\font.cpp",0x10a);
   }

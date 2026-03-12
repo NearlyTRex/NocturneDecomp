@@ -13,23 +13,17 @@
 ; CBoundingBox3D * Stack[0x1c]:4   ray_bbox
 ; Local Variables:
 ; undefined8       Stack[-0xb0]:8  local_b0
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined1       Stack[-0x9c]:1  local_9c
-; undefined1       Stack[-0x84]:1  local_84
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined1       Stack[-0x54]:1  local_54
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined1       Stack[-0x30]:1  local_30
+; float            Stack[-0xa0]:4  local_a0
+; CBoundingBox3D   Stack[-0x9c]:24  local_9c
+; CBoundingBox3D   Stack[-0x84]:24  local_84
+; CBoundingBox3D   Stack[-0x6c]:24  local_6c
+; CVector3f        Stack[-0x54]:12  local_54
+; CVector3f        Stack[-0x48]:12  local_48
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  local_30
+; CVector3f        Stack[-0x24]:12  CStack_24
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_actor.cpp_CDemonActor_testRayIntersection_FUN_004093f0 at 0040944c

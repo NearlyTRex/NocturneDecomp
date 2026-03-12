@@ -4,31 +4,31 @@
       {
         "category": "undeclared_identifier",
         "column": 89,
-        "line": 43,
+        "line": 47,
         "message": "use of undeclared identifier 'DAT_02f79820'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 45,
+        "line": 49,
         "message": "use of undeclared identifier 'DAT_02f79c20'"
       },
       {
         "category": "undeclared_identifier",
         "column": 50,
-        "line": 45,
+        "line": 49,
         "message": "use of undeclared identifier 'DAT_02f79820'"
       },
       {
         "category": "undeclared_identifier",
         "column": 74,
-        "line": 48,
+        "line": 52,
         "message": "use of undeclared identifier 'DAT_02f79c20'"
       },
       {
         "category": "format_error",
         "column": 51,
-        "line": 52,
+        "line": 56,
         "message": "format specifies type 'char *' but the argument has type 'struct CDemonActor *' [-Werror,-Wformat]"
       }
     ],
@@ -37,17 +37,17 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 113,
+    "complexity_score": 117,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 15,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 68,
+    "pseudocode_lines": 72,
     "suspect_count": 4,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 224
+    "total_lines": 228
   },
   "cross_references": [
     {
@@ -242,18 +242,32 @@
     "pcode_op_count": 550
   },
   "stack_frame": {
-    "frame_size": 116,
-    "local_size": 112,
+    "frame_size": 1352,
+    "local_size": 1348,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "CStack_540",
+        "offset": -1344,
+        "size": 936,
+        "type": "CPickList"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_198",
+        "offset": -408,
+        "size": 300,
+        "type": "char[300]"
+      },
+      {
+        "is_param": false,
         "name": "local_6c",
         "offset": -108,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": true,
@@ -267,15 +281,15 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 40,
       "match": "DAT_02f79820",
       "severity": "mild",
-      "text": "(g_MsnEditPropertyList.properties + iVar2,this_ptr->selected_actor,&DAT_02f79820",
+      "text": "(g_MsnEditPropertyList.properties + iVar5,this_ptr->selected_actor,&DAT_02f79820",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 42,
       "match": "DAT_02f79c20",
       "severity": "mild",
       "text": "_sprintf(&DAT_02f79c20,\"%s\\t%s\",iVar4,&DAT_02f79820);",
@@ -283,7 +297,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 42,
       "match": "DAT_02f79820",
       "severity": "mild",
       "text": "_sprintf(&DAT_02f79c20,\"%s\\t%s\",iVar4,&DAT_02f79820);",
@@ -291,7 +305,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 45,
       "match": "DAT_02f79c20",
       "severity": "mild",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_540.base,&DAT_02f79c20);",

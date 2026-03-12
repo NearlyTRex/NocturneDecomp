@@ -9,14 +9,15 @@
 void __cdecl FormatWideString(wchar_t *wide_string_offset,ushort segment,FormatSpec *spec_info,OUTPUT_CALLBACK output_func)
 
 {
-  wchar_t wVar1;
+  int iVar1;
   int iVar2;
   byte *puVar3;
   byte local_18 [4];
+  wchar_t wVar1;
   
-  iVar2 = spec_info->content_length;
+  iVar1 = spec_info->content_length;
   do {
-    if (iVar2 < 1) {
+    if (iVar1 < 1) {
       return;
     }
     puVar3 = local_18;
@@ -35,6 +36,6 @@ void __cdecl FormatWideString(wchar_t *wide_string_offset,ushort segment,FormatS
         spec_info->content_length = spec_info->content_length + -1;
       }
     }
-    iVar2 = spec_info->content_length;
+    iVar1 = spec_info->content_length;
   } while( true );
 }

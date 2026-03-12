@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   bit_value
 ; _ostream *       Stack[0x10]:4   ostream
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; byte             Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
 ;   support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170 at 0043f1e0

@@ -11,20 +11,26 @@
 void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *this_ptr)
 
 {
-  double dVar1;
-  char cVar2;
+  char cVar1;
+  int iVar2;
   CDemonActor *pCVar3;
+  int iVar3;
   int iVar4;
   char *pcVar5;
   char *pcVar6;
+  int iVar5;
+  CDemonActor *pCVar6;
   int iVar7;
+  char *pcVar7;
+  int iVar10;
   int iVar8;
+  int iVar11;
   CAlphaBitmap *this_ptr_00;
   int iVar9;
+  int y;
   char *pcVar10;
   byte bVar11;
-  CBitFont *pCVar12;
-  ulonglong uVar13;
+  char *pcVar12;
   float local_680;
   float local_67c;
   char local_678 [256];
@@ -59,6 +65,10 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   int local_1c;
   CBitFont *local_18;
   int local_14;
+  char cVar2;
+  double dVar1;
+  CBitFont *pCVar12;
+  ulonglong uVar13;
   
   bVar11 = 0;
   if (g_CGamePtr->letterbox_mode != 0) {
@@ -70,7 +80,7 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   if (g_WindowHeight != g_InventoryScreenHeight) {
     core_inv_cpp_loadAssets_FUN_004fd220();
   }
-  local_6c = g_UseExternalRenderer;
+  iVar2 = g_UseExternalRenderer;
   g_UseExternalRenderer = 0;
   local_44 = (int)g_SmallEditorFont;
   if ((g_WindowHeight < 0x180) && (this_ptr->render_mode_flag == 0)) {
@@ -97,30 +107,30 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (&this_ptr->selected_weapon->base,g_CLightGunClassInfo.name_hash);
   if (pCVar3 == (CDemonActor *)0x0) {
-    iVar4 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
+    iVar3 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
                       (this_ptr,&this_ptr->selected_weapon->base,3);
-    if (iVar4 == 0) {
-      iVar9 = g_WindowWidth - iVar8;
-      iVar8 = g_WindowHeight - iVar8;
-      iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0
+    if (iVar3 == 0) {
+      iVar10 = g_WindowWidth - iVar8;
+      iVar5 = g_WindowHeight - iVar8;
+      iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
                         (&this_ptr->selected_weapon->base,"CTommyGun");
       this_ptr_00 = (CAlphaBitmap *)0x0;
-      if (iVar4 != 0) {
+      if (iVar3 != 0) {
         this_ptr_00 = &g_TommyClipIconBitmap;
       }
-      iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0
+      iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
                         (&this_ptr->selected_weapon->base,"CShotgun");
-      if (iVar4 != 0) {
+      if (iVar3 != 0) {
         this_ptr_00 = &g_ShotShellIconBitmap;
       }
-      iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0
+      iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
                         (&this_ptr->selected_weapon->base,"CElephantGun");
-      if (iVar4 != 0) {
+      if (iVar3 != 0) {
         this_ptr_00 = &g_ShotShellIconBitmap;
       }
-      iVar4 = core_actor_cpp_isOfClass_FUN_0040c6d0
+      iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0
                         (&this_ptr->selected_weapon->base,"CGun");
-      if (iVar4 != 0) {
+      if (iVar3 != 0) {
         if (this_ptr->selected_weapon->ammo_type == 0) {
           this_ptr_00 = &g_BulletIconBitmap;
         }
@@ -138,171 +148,168 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
         }
       }
       if (this_ptr_00 != (CAlphaBitmap *)0x0) {
-        engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(this_ptr_00,iVar9,iVar8,local_68);
+        engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(this_ptr_00,iVar10,iVar5,local_68);
       }
       if ((this_ptr->ammo_detail_timer <= 0.0) || (this_ptr->render_mode_flag != 0)) {
         _sprintf(local_678,"%d");
       }
       else {
-        pcVar5 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->ammo_ptr->base);
-        _sprintf(local_678,"%s %d",pcVar5);
+        pcVar12 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->ammo_ptr->base);
+        _sprintf(local_678,"%s %d",pcVar12);
       }
-      iVar8 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
-      pCVar12 = (CBitFont *)local_44;
-      iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_44,local_678);
-      iVar8 = (g_WindowHeight - local_48) - iVar8;
-      iVar4 = (g_WindowWidth - local_48) - iVar4;
-      pcVar5 = local_678;
+      iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
+      iVar10 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_44,local_678);
+      iVar3 = (g_WindowHeight - local_48) - iVar3;
+      iVar10 = (g_WindowWidth - local_48) - iVar10;
+      pcVar12 = local_678;
       goto LAB_00500870;
     }
   }
   else {
-    local_14 = (int)ROUND(ROUND(pCVar3[4].location.position.y * (float)100));
     _sprintf(local_478,"%d%%");
-    pCVar12 = (CBitFont *)local_44;
-    iVar8 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
-    iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(pCVar12,local_478);
-    iVar8 = (g_WindowHeight - local_48) - iVar8;
-    iVar4 = (g_WindowWidth - local_48) - iVar4;
-    pcVar5 = local_478;
+    iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
+    iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_44,local_478);
+    iVar3 = (g_WindowHeight - local_48) - iVar3;
+    iVar10 = (g_WindowWidth - local_48) - iVar4;
+    pcVar12 = local_478;
 LAB_00500870:
-    engine_font_cpp_CBitFont_drawText_FUN_004cda80(pCVar12,pcVar5,iVar4,iVar8,0xf8,0);
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80((CBitFont *)local_44,pcVar12,iVar10,iVar3,0xf8,0)
+    ;
   }
   if (this_ptr->render_mode_flag == 0) goto LAB_005009c0;
-  iVar8 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
+  iVar3 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
                     (this_ptr,&this_ptr->selected_weapon->base,3);
-  if (iVar8 == 0) {
-    iVar8 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
+  if (iVar3 == 0) {
+    iVar3 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
                       (this_ptr,&this_ptr->selected_weapon->base,0);
-    if ((iVar8 == 0) &&
-       (iVar8 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
-                          (this_ptr,&this_ptr->selected_weapon->base,1), iVar8 == 0)) {
-      pcVar5 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
-      pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
-      uVar13 = CONCAT44(pcVar5,pcVar6);
-      pcVar5 = "%s\n\n%s";
+    if ((iVar3 == 0) &&
+       (iVar3 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
+                          (this_ptr,&this_ptr->selected_weapon->base,1), iVar3 == 0)) {
+      pcVar12 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
+      pcVar7 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
+      uVar13 = CONCAT44(pcVar12,pcVar7);
+      pcVar12 = "%s\n\n%s";
       goto LAB_005008cd;
     }
-    pcVar5 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->ammo_ptr->base);
-    pcVar6 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
-    uVar13 = CONCAT44(pcVar5,pcVar6);
-    pcVar5 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
-    _sprintf(local_178,"%s\n\n%s %s",pcVar5,uVar13);
-    pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(" are loaded.");
-    iVar8 = -1;
-    pcVar5 = local_178;
+    pcVar12 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->ammo_ptr->base);
+    pcVar7 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
+    uVar13 = CONCAT44(pcVar12,pcVar7);
+    pcVar12 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
+    _sprintf(local_178,"%s\n\n%s %s",pcVar12,uVar13);
+    pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(" are loaded.");
+    iVar3 = -1;
+    pcVar10 = local_178;
     do {
-      pcVar10 = pcVar5;
-      if (iVar8 == 0) break;
-      iVar8 = iVar8 + -1;
-      pcVar10 = pcVar5 + (uint)bVar11 * -2 + 1;
-      cVar2 = *pcVar5;
-      pcVar5 = pcVar10;
+      pcVar10 = pcVar10;
+      if (iVar3 == 0) break;
+      iVar3 = iVar3 + -1;
+      pcVar10 = pcVar10 + (uint)bVar11 * -2 + 1;
+      cVar2 = *pcVar10;
+      pcVar10 = pcVar10;
     } while (cVar2 != '\0');
-    pcVar10 = pcVar10 + -1;
+    pcVar7 = pcVar10 + -1;
     do {
-      cVar2 = *pcVar6;
-      *pcVar10 = cVar2;
-      if (cVar2 == '\0') break;
-      cVar2 = pcVar6[1];
-      pcVar6 = pcVar6 + 2;
-      pcVar10[1] = cVar2;
-      pcVar10 = pcVar10 + 2;
-    } while (cVar2 != '\0');
+      cVar1 = *pcVar12;
+      *pcVar7 = cVar1;
+      if (cVar1 == '\0') break;
+      cVar1 = pcVar12[1];
+      pcVar12 = pcVar12 + 2;
+      pcVar7[1] = cVar1;
+      pcVar7 = pcVar7 + 2;
+    } while (cVar1 != '\0');
   }
   else {
     pcVar5 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
     pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
     uVar13 = CONCAT44(pcVar5,pcVar6);
-    pcVar5 = "%s\n\n%s";
+    pcVar12 = "%s\n\n%s";
 LAB_005008cd:
-    _sprintf(local_178,pcVar5,uVar13);
+    _sprintf(local_178,pcVar12,uVar13);
   }
-  local_28 = (CBitFont *)local_44;
-  iVar8 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
+  iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
                     ((CBitFont *)local_44,local_178,CHAR_ARRAY_02db8c70,10,0x100,local_50 - local_58
                     );
-  local_30 = iVar8;
-  local_34 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
-  iVar4 = (g_WindowHeight - local_54) + local_48;
-  local_2c = local_48 + (g_WindowWidth - local_50);
+  iVar10 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
+  iVar5 = g_WindowWidth - local_50;
+  iVar11 = (g_WindowHeight - local_54) + local_48;
   iVar9 = 0;
-  if (0 < iVar8) {
-    pcVar5 = CHAR_ARRAY_02db8c70;
+  if (0 < iVar3) {
+    pcVar12 = CHAR_ARRAY_02db8c70;
     do {
       iVar9 = iVar9 + 1;
-      engine_font_cpp_CBitFont_drawText_FUN_004cda80(local_28,pcVar5,local_2c,iVar4,0xf8,0);
-      pcVar5 = pcVar5 + 0x100;
-      iVar4 = iVar4 + local_34;
-    } while (iVar9 < local_30);
+      engine_font_cpp_CBitFont_drawText_FUN_004cda80
+                ((CBitFont *)local_44,pcVar12,local_48 + iVar5,iVar11,0xf8,0);
+      pcVar12 = pcVar12 + 0x100;
+      iVar11 = iVar11 + iVar10;
+    } while (iVar9 < iVar3);
   }
 LAB_005009c0:
   if ((this_ptr->selected_item != (CDemonActor *)0x0) && (0.0 < this_ptr->item_highlight_timer)) {
     local_5c = 0x70;
     local_4c = 0x10;
-    iVar8 = g_InventoryWidth;
-    iVar4 = g_InventoryHeight;
+    iVar3 = g_InventoryWidth;
+    iVar10 = g_InventoryHeight;
     if ((g_WindowHeight < 0x180) && (this_ptr->render_mode_flag == 0)) {
-      iVar8 = g_InventoryWidth / 2;
-      iVar4 = g_InventoryHeight / 2;
+      iVar3 = g_InventoryWidth / 2;
+      iVar10 = g_InventoryHeight / 2;
       local_5c = 0x28;
       local_4c = 8;
     }
-    pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (this_ptr->selected_item,g_CHealthItemClassInfo.name_hash);
-    if (pCVar3 != (CDemonActor *)0x0) {
+    if (pCVar6 != (CDemonActor *)0x0) {
       _sprintf
-                (local_378,"%d x%3.0f%%",pCVar3[2].location.position.y,
-                 (double)pCVar3[2].location.position.z);
-      iVar9 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
+                (local_378,"%d x%3.0f%%",pCVar6[2].location.position.y,
+                 (double)pCVar6[2].location.position.z);
+      iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
       iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_44,local_378);
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
                 ((CBitFont *)local_44,local_378,(g_WindowWidth - local_4c) - iVar7,
-                 (g_WindowHeight - local_4c) - iVar9,0xf8,0);
+                 (g_WindowHeight - local_4c) - iVar5,0xf8,0);
     }
-    pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (this_ptr->selected_item,g_CFilmReelClassInfo.name_hash);
-    if (pCVar3 != (CDemonActor *)0x0) {
-      core_inv_cpp_getItemDisplayName_FUN_004fcf00(pCVar3);
+    if (pCVar6 != (CDemonActor *)0x0) {
+      core_inv_cpp_getItemDisplayName_FUN_004fcf00(pCVar6);
       _sprintf(local_278,"%s");
-      iVar9 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
-      iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_44,local_278);
+      iVar5 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
+      iVar11 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_44,local_278);
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
-                ((CBitFont *)local_44,local_278,(g_WindowWidth - local_4c) - iVar7,
-                 (g_WindowHeight - local_4c) - iVar9,0xf8,0);
+                ((CBitFont *)local_44,local_278,(g_WindowWidth - local_4c) - iVar11,
+                 (g_WindowHeight - local_4c) - iVar5,0xf8,0);
     }
     if (this_ptr->render_mode_flag != 0) {
       core_inv_cpp_getItemIconName_FUN_004fcf70(this_ptr->selected_item);
-      pcVar5 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(this_ptr->selected_item);
-      _sprintf(local_578,"%s\n\n%s",pcVar5);
-      local_24 = (CBitFont *)local_44;
-      local_40 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
-                           ((CBitFont *)local_44,local_578,DAT_02db9670,10,0x100,iVar8 - local_5c);
-      local_14 = local_40;
-      local_3c = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
-      iVar4 = (g_WindowHeight - iVar4) + local_4c;
-      local_38 = local_4c + (g_WindowWidth - iVar8);
-      iVar8 = 0;
-      if (0 < local_14) {
-        pcVar5 = DAT_02db9670;
+      pcVar12 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(this_ptr->selected_item);
+      _sprintf(local_578,"%s\n\n%s",pcVar12);
+      iVar5 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
+                        ((CBitFont *)local_44,local_578,DAT_02db9670,10,0x100,iVar3 - local_5c);
+      iVar11 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
+      y = (g_WindowHeight - iVar10) + local_4c;
+      iVar3 = g_WindowWidth - iVar3;
+      iVar10 = 0;
+      if (0 < iVar5) {
+        pcVar12 = DAT_02db9670;
         do {
-          iVar8 = iVar8 + 1;
-          engine_font_cpp_CBitFont_drawText_FUN_004cda80(local_24,pcVar5,local_38,iVar4,0xf8,0);
-          pcVar5 = pcVar5 + 0x100;
-          iVar4 = iVar4 + local_3c;
-        } while (iVar8 < local_40);
+          iVar10 = iVar10 + 1;
+          engine_font_cpp_CBitFont_drawText_FUN_004cda80
+                    ((CBitFont *)local_44,pcVar12,local_4c + iVar3,y,0xf8,0);
+          pcVar12 = pcVar12 + 0x100;
+          y = y + iVar11;
+        } while (iVar10 < iVar5);
       }
     }
   }
-  iVar8 = g_WindowHeight;
+  iVar3 = g_WindowHeight;
   if ((g_CGamePtr->auto_save_blocked != 0) || (g_CGamePtr->block_auto_save != 0)) {
-    local_14 = g_WindowHeight + -6;
-    local_78 = (int)ROUND(ROUND((float)local_14 +
-                                (float)((g_WindowHeight + -0x21) - local_14) *
-                                this_ptr->battery_charge * (float)0.01));
-    engine_2d_c_fillRectColor_FUN_00403170(6,local_78,0x10,local_14,2);
+    iVar10 = g_WindowHeight + -6;
+    engine_2d_c_fillRectColor_FUN_00403170
+              (6,(int)ROUND(ROUND((float)iVar10 +
+                                  (float)((g_WindowHeight + -0x21) - iVar10) *
+                                  this_ptr->battery_charge * (float)0.01)),0x10,iVar10,2)
+    ;
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950
-              (&g_BatteryIconBitmap,4,iVar8 + -0x24,0xffff);
+              (&g_BatteryIconBitmap,4,iVar3 + -0x24,0xffff);
   }
   if ((0.0 < this_ptr->item_highlight_timer) || (0.0 < this_ptr->inventory_display_timer)) {
     local_67c = this_ptr->inventory_display_timer;
@@ -320,18 +327,18 @@ LAB_005009c0:
     if (1.0 < local_680) {
       local_680 = 1.0;
     }
-    local_14 = 0x3f;
-    iVar8 = 0x1b;
+    iVar3 = 0x3f;
+    iVar10 = 0x1b;
     if (g_WindowHeight < 0x180) {
-      local_14 = 0x1f;
-      iVar8 = 0xd;
+      iVar3 = 0x1f;
+      iVar10 = 0xd;
     }
-    local_74 = (g_WindowWidth + -4) - iVar8;
-    iVar4 = local_64 / 2;
-    local_70 = (int)ROUND(ROUND((float)local_14 - (float)local_14 * local_680));
+    iVar11 = (g_WindowWidth + -4) - iVar10;
+    iVar5 = (int)ROUND(ROUND((float)iVar3 - (float)iVar3 * local_680));
     engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00
-              (&g_HealthBar1Bitmap,local_74,local_70 + 4,0,local_70,iVar8 + -1,local_14,iVar4);
-    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&g_HealthBar2Bitmap,local_74,4,iVar4);
+              (&g_HealthBar1Bitmap,iVar11,iVar5 + 4,0,iVar5,iVar10 + -1,iVar3,local_64 / 2);
+    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&g_HealthBar2Bitmap,iVar11,4,local_64 / 2)
+    ;
   }
   dVar1 = (double)this_ptr->message_display_timer;
   if (0.0 < dVar1) {
@@ -341,28 +348,26 @@ LAB_005009c0:
     }
     engine_3d_c_setRenderAlpha_FUN_00406d80(local_60);
     local_18 = g_SmallEditorFont;
-    iVar8 = g_InventoryHeight;
+    iVar3 = g_InventoryHeight;
     if (g_WindowHeight < 0x180) {
-      iVar8 = g_InventoryHeight / 2;
+      iVar3 = g_InventoryHeight / 2;
       local_18 = g_MicroFont;
     }
-    pCVar12 = local_18;
-    iVar8 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
+    iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
                       (local_18,this_ptr->message_text,CHAR_ARRAY_02dba070,10,0x100,
-                       (g_WindowWidth - iVar8) + -4);
-    local_1c = iVar8;
-    local_20 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(pCVar12,0x58);
-    iVar8 = (g_WindowHeight + -4) - local_20 * iVar8;
-    if (((g_MicroFont != local_18) || (g_MessageCount == 0)) && (iVar4 = 0, 0 < local_1c)) {
-      pcVar5 = CHAR_ARRAY_02dba070;
+                       (g_WindowWidth - iVar3) + -4);
+    iVar10 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_18,0x58);
+    iVar5 = (g_WindowHeight + -4) - iVar10 * iVar3;
+    if (((g_MicroFont != local_18) || (g_MessageCount == 0)) && (iVar11 = 0, 0 < iVar3)) {
+      pcVar12 = CHAR_ARRAY_02dba070;
       do {
-        iVar4 = iVar4 + 1;
-        engine_font_cpp_CBitFont_drawText_FUN_004cda80(local_18,pcVar5,4,iVar8,0xf8,0);
-        pcVar5 = pcVar5 + 0x100;
-        iVar8 = iVar8 + local_20;
-      } while (iVar4 < local_1c);
+        iVar11 = iVar11 + 1;
+        engine_font_cpp_CBitFont_drawText_FUN_004cda80(local_18,pcVar12,4,iVar5,0xf8,0);
+        pcVar12 = pcVar12 + 0x100;
+        iVar5 = iVar5 + iVar10;
+      } while (iVar11 < iVar3);
     }
   }
-  g_UseExternalRenderer = local_6c;
+  g_UseExternalRenderer = iVar2;
   return;
 }

@@ -7,14 +7,14 @@
 ; int *            Stack[0x4]:4   vertex_indices
 ; int              Stack[0x8]:4   vertex_count
 ; Local Variables:
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SRenderVertex *[16] Stack[-0x6c]:64  local_6c
+; uint             Stack[-0x2c]:4  local_2c
+; int *            Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; SRenderVertex *  Stack[-0x1c]:4  local_1c
+; SSoftwareEdge *  Stack[-0x18]:4  local_18
+; SSoftwareEdge *  Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740 at 0048a7aa

@@ -9,8 +9,10 @@
 void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
+  bool bVar3;
   int iVar2;
+  int iVar4;
   int iVar3;
   SChatOutMessage *pSVar4;
   char *pcVar5;
@@ -32,10 +34,11 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this
   SChatOutMessage *local_20;
   SNetworkAddr *local_1c;
   int local_18;
+  char cVar1;
   
   iVar2 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-  iVar2 = iVar2 / 0x12;
-  iVar3 = iVar2 - g_LastPingTime;
+  iVar4 = iVar2 / 0x12;
+  iVar3 = iVar4 - g_LastPingTime;
   if (iVar3 < 0) {
     iVar3 = 0;
   }
@@ -44,15 +47,12 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this
   }
   g_CurrentGameTime = g_CurrentGameTime + iVar3;
   local_38 = 0;
-  g_LastPingTime = iVar2;
+  g_LastPingTime = iVar4;
   if (0 < g_ChatOutCount) {
-    local_40 = this_ptr->players;
     local_3c = g_ChatOutMessages;
     do {
-      local_2c = local_3c;
-      local_18 = g_CurrentGameTime - local_3c->timestamp;
-      local_154 = (float)local_18 * (float)1.52587890625e-05;
-      local_30 = 1;
+      local_154 = (float)(int)(g_CurrentGameTime - local_3c->timestamp) * (float)1.52587890625e-05;
+      bVar3 = true;
       if (local_154 < 0.0) {
         local_154 = 0.0;
       }
@@ -60,23 +60,22 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this
         local_154 = 30.0;
       }
       if ((local_154 < (float)20) && (local_28 = 0, 0 < this_ptr->player_count)) {
-        local_34 = local_3c->message;
         local_20 = local_3c;
         local_24 = this_ptr;
-        local_1c = &local_40->addr;
+        local_1c = &this_ptr->players[0].addr;
         pSVar4 = local_3c;
         do {
           if ((local_20->ack_flags).bytes[0] == '\0') {
             local_150 = local_24->players[0].ping_quality * (float)4;
-            local_30 = 0;
+            bVar3 = false;
             if (local_150 < (float)2) {
               local_150 = 2.0;
             }
             if ((float)5 < local_150) {
               local_150 = 5.0;
             }
-            local_18 = g_CurrentGameTime - pSVar4->player_timestamps[0];
-            local_158 = (float)local_18 * (float)1.52587890625e-05;
+            local_158 = (float)(int)(g_CurrentGameTime - pSVar4->player_timestamps[0]) *
+                        (float)1.52587890625e-05;
             if (local_158 < 0.0) {
               local_158 = 0.0;
             }
@@ -87,17 +86,16 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this
               local_14c.size = 0x109;
               local_14c.type = PACKET_CHAT_MESSAGE;
               pcVar6 = local_143;
-              local_147 = local_2c->sequence_number;
-              pcVar5 = local_34;
+              pcVar5 = local_3c->message;
               do {
                 cVar1 = *pcVar5;
                 *pcVar6 = cVar1;
                 if (cVar1 == '\0') break;
-                cVar1 = pcVar5[1];
+                cVar2 = pcVar5[1];
                 pcVar5 = pcVar5 + 2;
-                pcVar6[1] = cVar1;
+                pcVar6[1] = cVar2;
                 pcVar6 = pcVar6 + 2;
-              } while (cVar1 != '\0');
+              } while (cVar2 != '\0');
               core_netgame_cpp_CNetGame_sendPacket_FUN_00541230(this_ptr,local_1c,&local_14c);
               pSVar4->player_timestamps[0] = g_CurrentGameTime;
             }
@@ -109,12 +107,7 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this
           local_28 = local_28 + 1;
         } while (local_28 < this_ptr->player_count);
       }
-      iVar2 = local_38;
-      if (local_30 == 0) {
-        local_38 = local_38 + 1;
-        local_3c = local_3c + 1;
-      }
-      else {
+      if (bVar3) {
         if ((local_38 < 0) || (g_ChatOutCount <= local_38)) {
           g_CurrentFilename = "..\\core\\netgame.cpp";
           g_CurrentLineNumber = 0x107;
@@ -122,8 +115,12 @@ void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(CNetGame *this
         }
         g_ChatOutCount = g_ChatOutCount + -1;
         memmove
-                  (g_ChatOutMessages + iVar2,g_ChatOutMessages + iVar2 + 1,
-                   (g_ChatOutCount - iVar2) * 0x114);
+                  (g_ChatOutMessages + local_38,g_ChatOutMessages + local_38 + 1,
+                   (g_ChatOutCount - local_38) * 0x114);
+      }
+      else {
+        local_38 = local_38 + 1;
+        local_3c = local_3c + 1;
       }
     } while (local_38 < g_ChatOutCount);
   }

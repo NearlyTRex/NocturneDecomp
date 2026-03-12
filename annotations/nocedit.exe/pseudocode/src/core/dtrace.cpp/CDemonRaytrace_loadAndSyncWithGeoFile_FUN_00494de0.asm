@@ -7,10 +7,7 @@
 ; CDemonRaytrace * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x224]:1  local_224
-; undefined1       Stack[-0x124]:1  local_124
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x1c]:4  local_1c
+; SFoundFileInfo   Stack[-0x224]:532  local_224
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_load_FUN_00569410 at 00569d38

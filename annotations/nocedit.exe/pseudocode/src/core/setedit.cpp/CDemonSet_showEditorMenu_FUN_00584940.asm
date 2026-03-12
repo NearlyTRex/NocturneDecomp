@@ -6,15 +6,13 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x714]:1  local_714
-; undefined1       Stack[-0x36c]:1  local_36c
-; undefined1       Stack[-0x36b]:1  local_36b
-; undefined1       Stack[-0x268]:1  local_268
-; undefined1       Stack[-0x168]:1  local_168
-; undefined1       Stack[-0x68]:1  local_68
-; undefined1       Stack[-0x67]:1  local_67
-; undefined4       Stack[-0x18]:4  local_18
-; undefined1       Stack[-0x14]:1  local_14
+; CPickList        Stack[-0x714]:936  local_714
+; char[260]        Stack[-0x36c]:260  local_36c
+; char[256]        Stack[-0x268]:256  local_268
+; char[256]        Stack[-0x168]:256  local_168
+; char[80]         Stack[-0x68]:80  local_68
+; char *           Stack[-0x18]:4  local_18
+; char[4]          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 00507799

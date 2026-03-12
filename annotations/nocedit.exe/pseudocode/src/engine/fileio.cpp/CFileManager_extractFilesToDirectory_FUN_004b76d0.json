@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 48,
-        "line": 52,
+        "line": 62,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 61,
+        "line": 71,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 69,
+        "line": 79,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 120,
-        "line": 128,
+        "line": 142,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 133,
+        "line": 147,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 152,
+        "line": 165,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -43,18 +43,18 @@
   },
   "complexity": {
     "assembly_lines": 345,
-    "complexity_score": 203,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 153,
+    "pseudocode_lines": 166,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 498
+    "total_lines": 511
   },
   "cross_references": [
     {
@@ -350,137 +350,88 @@
     "pcode_op_count": 1217
   },
   "stack_frame": {
-    "frame_size": 4368,
-    "local_size": 4364,
+    "frame_size": 12540,
+    "local_size": 12536,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "atStackY_30f4",
+        "offset": -12532,
+        "size": 8136,
+        "type": "time_t[2034]"
+      },
+      {
+        "is_param": false,
         "name": "local_1108",
         "offset": -4360,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1104",
-        "offset": -4356,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_cf8",
-        "offset": -3320,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_cf4",
-        "offset": -3316,
-        "size": 4,
-        "type": "undefined4"
+        "size": 1068,
+        "type": "CPodFile"
       },
       {
         "is_param": false,
         "name": "local_cdc",
         "offset": -3292,
-        "size": 1,
-        "type": "undefined1"
+        "size": 532,
+        "type": "SFoundFileInfo"
       },
       {
         "is_param": false,
         "name": "local_8dc",
         "offset": -2268,
-        "size": 4,
-        "type": "undefined4"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_534",
         "offset": -1332,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_533",
-        "offset": -1331,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_434",
-        "offset": -1076,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_330",
-        "offset": -816,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_328",
-        "offset": -808,
-        "size": 1,
-        "type": "undefined1"
+        "size": 532,
+        "type": "SFoundFileInfo"
       },
       {
         "is_param": false,
         "name": "local_320",
         "offset": -800,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_220",
         "offset": -544,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_120",
         "offset": -288,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "time_t[4]"
       },
       {
         "is_param": false,
         "name": "local_c",
         "offset": -12,
         "size": 4,
-        "type": "undefined4"
+        "type": "_FILE *"
       },
       {
         "is_param": true,
@@ -511,7 +462,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 22,
       "match": "atStackY_30f4",
       "severity": "moderate",
       "text": "time_t atStackY_30f4 [2034];",
@@ -519,23 +470,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 102,
       "match": "(time_t *)((int)",
       "severity": "mild",
-      "text": "ptVar5 = (time_t *)((int)(local_1108.directory_entries + iVar2) + (uint)bVar10 * -8 + 4);",
+      "text": "ptVar5 = (time_t *)((int)(local_1108.directory_entries + iVar4) + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 144,
       "match": "(time_t *)((int)",
       "severity": "mild",
-      "text": "ptVar6 = (time_t *)((int)&local_1108 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -0x14);",
+      "text": "ptVar9 = (time_t *)((int)&local_1108 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + -0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 146,
       "match": "(time_t *)((int)",
       "severity": "mild",
       "text": "*(time_t *)((int)&local_1108 + (uint)bVar10 * -8 + -0x18) = local_1c[(uint)bVar10 * -2];",

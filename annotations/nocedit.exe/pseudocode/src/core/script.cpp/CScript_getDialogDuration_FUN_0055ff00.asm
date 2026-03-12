@@ -9,11 +9,12 @@
 ; char *           Stack[0xc]:4   sound_name
 ; char *           Stack[0x10]:4   dialog_text
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
-; undefined8       Stack[-0x24]:8  local_24
+; float            Stack[-0x28]:4  local_28
+; uint             Stack[-0x24]:4  local_24
+; undefined4       Stack[-0x20]:4  uStack_20
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055c587

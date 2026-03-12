@@ -9,7 +9,11 @@
 float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00509330(CMansionPuzzleCircle *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal)
 
 {
+  CMatrix3x3f *this_ptr_00;
   CKeyFramedModel *pCVar1;
+  float fVar1;
+  CKeyFramedModel *pCVar3;
+  CVector3f *pCVar4;
   CVector3f *pCVar2;
   int iVar3;
   SReflector *pSVar4;
@@ -42,7 +46,6 @@ float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_005093
   local_cc.max.x = (pCVar1->bounds_max).x;
   local_cc.max.y = (pCVar1->bounds_max).y;
   local_cc.max.z = (pCVar1->bounds_max).z;
-  local_28 = this_ptr->gems;
   local_1c = 1.01;
   local_2c = this_ptr->panels;
   local_20 = 0;
@@ -55,30 +58,28 @@ float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_005093
       core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(pCVar5,&local_6c,&local_b4);
       core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                 (pCVar5,&local_3c,ray_direction);
-      local_18 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                           (&local_cc,&local_6c,&local_3c,&local_a8);
-      if ((0.0 <= local_18) && (local_18 < local_1c)) {
-        local_1c = local_18;
-        pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+      fVar1 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
+                        (&local_cc,&local_6c,&local_3c,&local_a8);
+      if ((0.0 <= fVar1) && (fVar1 < local_1c)) {
+        pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                            (pCVar5,&local_90,&local_a8);
-        if (out_normal != pCVar2) {
-          out_normal->x = pCVar2->x;
-          out_normal->y = pCVar2->y;
-          out_normal->z = pCVar2->z;
+        local_1c = fVar1;
+        if (out_normal != pCVar4) {
+          out_normal->x = pCVar4->x;
+          out_normal->y = pCVar4->y;
+          out_normal->z = pCVar4->z;
         }
       }
     }
-    local_30 = (int)&(local_28->color).r + local_20;
     iVar3 = 0;
     do {
-      triangle = (CDemonTriangle *)(local_30 + 0x3c + iVar3);
-      local_18 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
-                           (triangle,ray_origin,ray_direction);
-      if ((0.0 <= local_18) && (local_18 < local_1c)) {
+      triangle = (CDemonTriangle *)((int)this_ptr->gems[0].sfx_handles + iVar3 + local_20 + -0x70);
+      fVar1 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800(triangle,ray_origin,ray_direction);
+      if ((0.0 <= fVar1) && (fVar1 < local_1c)) {
         local_48.x = -(triangle->normal).x;
         local_48.y = -(triangle->normal).y;
         local_48.z = -(triangle->normal).z;
-        local_1c = local_18;
+        local_1c = fVar1;
         if (out_normal != &local_48) {
           out_normal->x = local_48.x;
           out_normal->y = local_48.y;
@@ -90,35 +91,35 @@ float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_005093
     local_20 = local_20 + 0xb8;
     local_2c = local_2c + 1;
   } while (local_20 != 0x8a0);
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      (&this_ptr->reflector_model);
-  if (&local_cc != (CBoundingBox3D *)&pCVar1->bounds_min) {
-    local_cc.min.x = (pCVar1->bounds_min).x;
-    local_cc.min.y = (pCVar1->bounds_min).y;
-    local_cc.min.z = (pCVar1->bounds_min).z;
+  if (&local_cc != (CBoundingBox3D *)&pCVar3->bounds_min) {
+    local_cc.min.x = (pCVar3->bounds_min).x;
+    local_cc.min.y = (pCVar3->bounds_min).y;
+    local_cc.min.z = (pCVar3->bounds_min).z;
   }
-  if (&local_cc.max != &pCVar1->bounds_max) {
-    local_cc.max.x = (pCVar1->bounds_max).x;
-    local_cc.max.y = (pCVar1->bounds_max).y;
-    local_cc.max.z = (pCVar1->bounds_max).z;
+  if (&local_cc.max != &pCVar3->bounds_max) {
+    local_cc.max.x = (pCVar3->bounds_max).x;
+    local_cc.max.y = (pCVar3->bounds_max).y;
+    local_cc.max.z = (pCVar3->bounds_max).z;
   }
   pSVar4 = this_ptr->reflectors;
-  local_24 = this_ptr->laser_color_r;
   do {
     if (0.0 < pSVar4->interp_factor) {
       local_9c.x = ray_origin->x - (pSVar4->position).x;
       local_9c.y = ray_origin->y - (pSVar4->position).y;
       local_9c.z = ray_origin->z - (pSVar4->position).z;
-      pCVar5 = &pSVar4->rotation_matrix;
-      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(pCVar5,&local_60,&local_9c);
+      this_ptr_00 = &pSVar4->rotation_matrix;
       core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                (pCVar5,&local_78,ray_direction);
-      local_18 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                           (&local_cc,&local_60,&local_78,&local_54);
-      if ((0.0 <= local_18) && (local_18 < local_1c)) {
-        local_1c = local_18;
+                (this_ptr_00,&local_60,&local_9c);
+      core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+                (this_ptr_00,&local_78,ray_direction);
+      fVar1 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
+                        (&local_cc,&local_60,&local_78,&local_54);
+      if ((0.0 <= fVar1) && (fVar1 < local_1c)) {
         pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                           (pCVar5,&local_84,&local_54);
+                           (this_ptr_00,&local_84,&local_54);
+        local_1c = fVar1;
         if (out_normal != pCVar2) {
           out_normal->x = pCVar2->x;
           out_normal->y = pCVar2->y;
@@ -127,6 +128,6 @@ float __cdecl core_manpuz_cpp_CMansionPuzzleCircle_customRayIntersect_FUN_005093
       }
     }
     pSVar4 = pSVar4 + 1;
-  } while (pSVar4 != (SReflector *)local_24);
+  } while (pSVar4 != (SReflector *)this_ptr->laser_color_r);
   return local_1c;
 }

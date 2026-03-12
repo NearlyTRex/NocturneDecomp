@@ -9,18 +9,19 @@
 int __cdecl engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90(char *dialog_title,int *overwrite_state)
 
 {
+  int iVar2;
   int iVar1;
   CPickList local_3b4;
   
-  iVar1 = *overwrite_state;
-  if (iVar1 == 1) {
+  iVar2 = *overwrite_state;
+  if (iVar2 == 1) {
     iVar1 = 1;
   }
-  else if (iVar1 < 0) {
+  else if (iVar2 < 0) {
     iVar1 = -1;
   }
   else {
-    if (iVar1 != 3) {
+    if (iVar2 != 3) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_3b4);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3b4.base,"[Y]es");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3b4.base,"Yes to [A]ll");
@@ -31,15 +32,15 @@ int __cdecl engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90(char 
       shape_edittool_cpp_CPickList_setItemHotKey_FUN_004a5540(&local_3b4,1,0x1e);
       shape_edittool_cpp_CPickList_setItemHotKey_FUN_004a5540(&local_3b4,2,0x31);
       shape_edittool_cpp_CPickList_setItemHotKey_FUN_004a5540(&local_3b4,3,0x18);
-      iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+      iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&local_3b4,dialog_title,*overwrite_state,0);
-      *overwrite_state = iVar1;
-      if (iVar1 == 0) {
+      *overwrite_state = iVar2;
+      if (iVar2 == 0) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3b4,0);
         return 1;
       }
-      if (iVar1 != 1) {
-        if ((iVar1 != 2) && (iVar1 != 3)) {
+      if (iVar2 != 1) {
+        if ((iVar2 != 2) && (iVar2 != 3)) {
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3b4,0);
           return -1;
         }

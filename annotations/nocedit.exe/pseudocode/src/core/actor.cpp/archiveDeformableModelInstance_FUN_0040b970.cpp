@@ -9,10 +9,11 @@
 void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040b970(CDeformableModelInstance *model_ptr,char *property_name)
 
 {
-  char cVar1;
+  char cVar2;
   char *pcVar2;
   char *pcVar3;
   char local_d0 [200];
+  char cVar1;
   
   pcVar3 = local_d0;
   if (g_ActorReadingMode == 1) {
@@ -25,11 +26,11 @@ void __cdecl core_actor_cpp_archiveDeformableModelInstance_FUN_0040b970(CDeforma
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar2[1];
+    cVar2 = pcVar2[1];
     pcVar2 = pcVar2 + 2;
-    pcVar3[1] = cVar1;
+    pcVar3[1] = cVar2;
     pcVar3 = pcVar3 + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   core_actor_cpp_archiveString_FUN_0040b5c0(local_d0,property_name);
   return;
 }

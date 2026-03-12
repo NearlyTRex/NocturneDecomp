@@ -11,7 +11,9 @@ int __cdecl shape_meshlod_cpp_CLodMesh_buildEdges_FUN_00515ba0(CLodMesh *this_pt
 {
   int iVar1;
   int iVar2;
+  int iVar6;
   int iVar3;
+  int iVar7;
   int iVar4;
   int iVar5;
   int local_1c;
@@ -31,22 +33,22 @@ int __cdecl shape_meshlod_cpp_CLodMesh_buildEdges_FUN_00515ba0(CLodMesh *this_pt
   if (0 < this_ptr->tri_count) {
     local_1c = 0;
     do {
-      iVar3 = (int)this_ptr->tri_data->attribute_indices + local_1c;
-      if (*(int *)(iVar3 + 0x40) == 0) {
+      iVar7 = (int)this_ptr->tri_data->attribute_indices + local_1c;
+      if (*(int *)(iVar7 + 0x40) == 0) {
         iVar4 = 0;
-        iVar5 = iVar3;
+        iVar5 = iVar7;
         do {
           iVar1 = iVar4 + 1;
           if (2 < iVar1) {
             iVar1 = 0;
           }
           iVar2 = shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
-                            (this_ptr,*(int *)(iVar5 + 0x10),*(int *)(iVar1 * 4 + iVar3 + 0x10),1);
-          iVar1 = iVar4 + -1;
-          if (iVar1 < 0) {
-            iVar1 = 2;
+                            (this_ptr,*(int *)(iVar5 + 0x10),*(int *)(iVar1 * 4 + iVar7 + 0x10),1);
+          iVar6 = iVar4 + -1;
+          if (iVar6 < 0) {
+            iVar6 = 2;
           }
-          *(int *)(iVar1 * 4 + iVar3 + 0x34) = iVar2;
+          *(int *)(iVar6 * 4 + iVar7 + 0x34) = iVar2;
           iVar5 = iVar5 + 4;
           iVar4 = iVar4 + 1;
           shape_meshlod_cpp_CLodEdge_addAdjacentFace_FUN_00515ca0

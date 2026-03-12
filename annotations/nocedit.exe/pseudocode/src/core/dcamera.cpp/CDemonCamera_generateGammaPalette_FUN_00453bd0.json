@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 166,
+    "complexity_score": 167,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 32,
     "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -20,7 +20,7 @@
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 95
+    "total_lines": 96
   },
   "cross_references": [
     {
@@ -255,31 +255,31 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
+      "line": 23,
       "match": "extraout_ST3",
       "severity": "moderate",
-      "text": "uVar1 = (uint)ROUND(ROUND(fVar4 * extraout_ST3));",
+      "text": "uVar1 = (uint)ROUND(ROUND(fVar1 * extraout_ST3));",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 23,
       "match": "ROUND",
       "severity": "mild",
-      "text": "uVar1 = (uint)ROUND(ROUND(fVar4 * extraout_ST3));",
+      "text": "uVar1 = (uint)ROUND(ROUND(fVar1 * extraout_ST3));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 23,
       "match": "ROUND",
       "severity": "mild",
-      "text": "uVar1 = (uint)ROUND(ROUND(fVar4 * extraout_ST3));",
+      "text": "uVar1 = (uint)ROUND(ROUND(fVar1 * extraout_ST3));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 25,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_LightmapTexturePalette + iVar2) =",
@@ -287,7 +287,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
+      "line": 28,
       "match": "extraout_ST1",
       "severity": "moderate",
       "text": "fVar4 = extraout_ST1;",
@@ -295,7 +295,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
+      "line": 29,
       "match": "extraout_ST2",
       "severity": "moderate",
       "text": "exp = extraout_ST2;",

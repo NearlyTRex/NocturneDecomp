@@ -7,47 +7,32 @@
 ; CComplexPolygon * Stack[0x4]:4   this_ptr
 ; double *         Stack[0x8]:4   max_dimensions
 ; Local Variables:
-; undefined8       Stack[-0x188]:8  local_188
-; undefined8       Stack[-0x180]:8  local_180
-; undefined8       Stack[-0x178]:8  local_178
-; undefined        Stack[-0x170]:1  local_170
-; undefined        Stack[-0x158]:1  local_158
-; undefined4       Stack[-0x140]:4  local_140
-; undefined4       Stack[-0x13c]:4  local_13c
-; undefined4       Stack[-0x138]:4  local_138
-; undefined4       Stack[-0x134]:4  local_134
-; undefined4       Stack[-0x130]:4  local_130
-; undefined4       Stack[-0x12c]:4  local_12c
-; undefined4       Stack[-0x128]:4  local_128
-; undefined4       Stack[-0x124]:4  local_124
-; undefined4       Stack[-0x120]:4  local_120
-; undefined4       Stack[-0x11c]:4  local_11c
-; undefined4       Stack[-0x118]:4  local_118
-; undefined4       Stack[-0x114]:4  local_114
+; undefined4[4]    Stack[-0x188]:16  local_188
+; undefined4       Stack[-0x178]:4  local_178
+; undefined4       Stack[-0x174]:4  uStack_174
+; CVector3d        Stack[-0x170]:24  local_170
+; CVector3d        Stack[-0x158]:24  local_158
+; CVector3d        Stack[-0x140]:24  local_140
+; CVector3d        Stack[-0x128]:24  local_128
 ; undefined4       Stack[-0x110]:4  local_110
 ; undefined4       Stack[-0x10c]:4  local_10c
 ; undefined4       Stack[-0x108]:4  local_108
 ; undefined4       Stack[-0x104]:4  local_104
-; undefined8       Stack[-0x100]:8  local_100
-; undefined8       Stack[-0xf8]:8  local_f8
+; double           Stack[-0x100]:8  local_100
+; double           Stack[-0xf8]:8  local_f8
 ; undefined4       Stack[-0xf0]:4  local_f0
 ; undefined4       Stack[-0xec]:4  local_ec
 ; undefined4       Stack[-0xe8]:4  local_e8
 ; undefined4       Stack[-0xe4]:4  local_e4
-; undefined8       Stack[-0xe0]:8  local_e0
-; undefined8       Stack[-0xd8]:8  local_d8
-; undefined8       Stack[-0xd0]:8  local_d0
+; undefined4[4]    Stack[-0xe0]:16  local_e0
+; undefined4       Stack[-0xd0]:4  local_d0
+; undefined4       Stack[-0xcc]:4  uStack_cc
 ; undefined4       Stack[-0xc8]:4  local_c8
 ; undefined4       Stack[-0xc4]:4  local_c4
-; undefined8       Stack[-0xc0]:8  local_c0
+; double           Stack[-0xc0]:8  local_c0
 ; undefined4       Stack[-0xb8]:4  local_b8
 ; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0xac]:4  local_ac
-; undefined4       Stack[-0xa8]:4  local_a8
-; undefined4       Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
+; CVector3d        Stack[-0xb0]:24  local_b0
 ; undefined4       Stack[-0x98]:4  local_98
 ; undefined4       Stack[-0x94]:4  local_94
 ; undefined4       Stack[-0x90]:4  local_90
@@ -60,21 +45,23 @@
 ; undefined4       Stack[-0x74]:4  local_74
 ; undefined4       Stack[-0x70]:4  local_70
 ; undefined4       Stack[-0x6c]:4  local_6c
-; undefined        Stack[-0x68]:1  local_68
+; CVector3d        Stack[-0x68]:24  local_68
 ; undefined4       Stack[-0x50]:4  local_50
 ; undefined4       Stack[-0x4c]:4  local_4c
 ; undefined4       Stack[-0x48]:4  local_48
 ; undefined4       Stack[-0x44]:4  local_44
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c
-; undefined8       Stack[-0x38]:8  local_38
-; undefined8       Stack[-0x30]:8  local_30
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; undefined4       Stack[-0x38]:4  local_38
+; undefined4       Stack[-0x34]:4  uStack_34
+; undefined4       Stack[-0x30]:4  local_30
+; undefined4       Stack[-0x2c]:4  uStack_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; SExpandedEdge *  Stack[-0x20]:4  local_20
+; SExpandedEdge *  Stack[-0x1c]:4  local_1c
+; SExpandedEdge *  Stack[-0x18]:4  local_18
+; SExpandedEdge *  Stack[-0x14]:4  local_14
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:

@@ -9,27 +9,28 @@
 double __cdecl shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)
 
 {
-  double *pdVar1;
-  CVector3d *pCVar2;
-  double *pdVar3;
-  double *pdVar4;
-  double *pdVar5;
-  CVector3d *pCVar6;
-  CVector3d *pCVar7;
-  double *pdVar8;
-  CVector3d *pCVar9;
-  CVector3d *pCVar10;
-  double *pdVar11;
-  CVector3d *pCVar12;
   CVector3d *pCVar13;
   double local_28;
   double local_20;
   double local_18;
+  double *pdVar5;
+  CVector3d *pCVar6;
+  double *pdVar3;
+  double *pdVar4;
+  double *pdVar1;
+  CVector3d *pCVar2;
+  double *pdVar11;
+  CVector3d *pCVar12;
+  CVector3d *pCVar9;
+  CVector3d *pCVar10;
+  CVector3d *pCVar7;
+  double *pdVar8;
   
   local_28 = 0.0;
   local_18 = 0.0;
   local_20 = 0.0;
   if (edge_count != 0) {
+    local_18 = 0.0;
     pCVar13 = &edges->start_pos;
     do {
       pdVar1 = &pCVar13->y;

@@ -9,21 +9,23 @@
 void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
 
 {
+  _FILE *file;
   _FILE *p_Var1;
   _tm *timeptr;
   int *piVar2;
   uint *puVar3;
   char *pcVar4;
   char *pcVar5;
+  char *pcVar1;
   byte *local_14;
   int local_10;
   
   if (g_RecursiveCallFlag != 0) {
-    p_Var1 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       ("gtfo.txt",(char *)0x0,"at","..\\core\\main.c",0x80);
-    if (p_Var1 != (_FILE *)0x0) {
-      _fprintf(p_Var1,"Recursive GTFO!\n");
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\main.c",0x83);
+    file = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                     ("gtfo.txt",(char *)0x0,"at","..\\core\\main.c",0x80);
+    if (file != (_FILE *)0x0) {
+      _fprintf(file,"Recursive GTFO!\n");
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\main.c",0x83);
     }
     notifyAbnormalTermination();
   }
@@ -31,14 +33,14 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
   g_RecursiveCallFlag = 1;
   _vsprintf(g_ErrorMessageBuffer_02dd3130,format,(va_list_t)&local_14);
   local_14 = (byte *)0x0;
-  pcVar5 = g_CurrentFilename;
+  pcVar1 = g_CurrentFilename;
   do {
-    pcVar4 = pcVar5;
-    if (*pcVar5 == '\\') goto LAB_00506f71;
-    if (*pcVar5 == '\0') goto LAB_00506f6f;
-    pcVar4 = pcVar5 + 1;
+    pcVar4 = pcVar1;
+    if (*pcVar1 == '\\') goto LAB_00506f71;
+    if (*pcVar1 == '\0') goto LAB_00506f6f;
+    pcVar4 = pcVar1 + 1;
     if (*pcVar4 == '\\') goto LAB_00506f71;
-    pcVar5 = pcVar5 + 2;
+    pcVar1 = pcVar1 + 2;
     if (*pcVar4 == '\0') {
 LAB_00506f6f:
       pcVar4 = (char *)0x0;
@@ -53,11 +55,11 @@ LAB_00506f71:
           _fprintf(p_Var1,"Msg: %s\n",g_ErrorMessageBuffer_02dd3130);
           _fprintf(p_Var1,"File: %s line %d\n",g_CurrentFilename,g_CurrentLineNumber);
           timeptr = _localtime(&local_10);
-          pcVar5 = _asctime(timeptr);
-          _fprintf(p_Var1,"Time: %s",pcVar5);
+          pcVar1 = _asctime(timeptr);
+          _fprintf(p_Var1,"Time: %s",pcVar1);
           piVar2 = (int *)_errno();
-          pcVar5 = strerror(*piVar2);
-          puVar3 = (uint *)_errno(pcVar5);
+          pcVar1 = strerror(*piVar2);
+          puVar3 = (uint *)_errno(pcVar1);
           _fprintf(p_Var1,"errno = %d (%s)\n",*puVar3);
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\main.c",0xad);
         }
@@ -77,8 +79,8 @@ LAB_00506f71:
       } while (*pcVar5 != '\0');
       pcVar5 = (char *)0x0;
 LAB_00506f93:
-      pcVar5 = pcVar5 + 1;
-      g_CurrentFilename = pcVar5;
+      pcVar1 = pcVar5 + 1;
+      g_CurrentFilename = pcVar1;
     }
   } while( true );
 }

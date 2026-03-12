@@ -13,7 +13,7 @@
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char *           Stack[-0x14]:4  local_14
 ;
 ; XREF[28]:
 ;   core_game.cpp_CGame_renderOverlay_FUN_004d8040 at 004d83a7

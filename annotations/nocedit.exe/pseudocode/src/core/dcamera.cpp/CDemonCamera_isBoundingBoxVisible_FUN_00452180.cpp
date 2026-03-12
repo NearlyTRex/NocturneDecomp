@@ -11,10 +11,9 @@
 int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDemonCamera *this_ptr,CVector3f *position,CVector3f *orientation,CVector3f *bbox_min ,CVector3f *bbox_max)
 
 {
-  uint *puVar1;
-  float fVar2;
   int iVar3;
   uint uVar4;
+  int iVar1;
   CVector3i local_130;
   float local_124;
   float local_120;
@@ -71,6 +70,8 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
   float local_1c;
   float local_18;
   float local_14;
+  uint *puVar1;
+  float fVar2;
   
   engine_drender_cpp_CDemonRenderer_matrixPush_FUN_0050d620();
   fVar2 = (float)256;
@@ -88,92 +89,44 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
   g_RelativeZ = (int)ROUND(ROUND(((this_ptr->base).position.f.z - position->z) * fVar2));
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,(CVector3i *)orientation,(CVector3i *)0x0);
-  local_118 = bbox_max->x;
-  local_114 = bbox_min->y;
-  local_110 = bbox_max->z;
-  local_e8.x = (int)ROUND(local_118 * 256.0f);
-  local_e8.y = (int)ROUND(local_114 * 256.0f);
-  local_e8.z = (int)ROUND(local_110 * 256.0f);
-  local_6c = local_118;
-  local_68 = local_114;
-  local_54 = local_110;
+  local_e8.x = (int)ROUND(bbox_max->x * 256.0f);
+  local_e8.y = (int)ROUND(bbox_min->y * 256.0f);
+  local_e8.z = (int)ROUND(bbox_max->z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e18].projected_vertex,&local_e8);
-  local_dc = bbox_min->x;
-  local_d8 = bbox_min->y;
-  local_d4 = bbox_max->z;
-  local_d0.x = (int)ROUND(local_dc * 256.0f);
-  local_d0.y = (int)ROUND(local_d8 * 256.0f);
-  local_d0.z = (int)ROUND(local_d4 * 256.0f);
-  local_70 = local_dc;
-  local_64 = local_d8;
-  local_60 = local_d4;
+  local_d0.x = (int)ROUND(bbox_min->x * 256.0f);
+  local_d0.y = (int)ROUND(bbox_min->y * 256.0f);
+  local_d0.z = (int)ROUND(bbox_max->z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e19].projected_vertex,&local_d0);
-  local_88 = bbox_min->x;
-  local_84 = bbox_min->y;
-  local_80 = bbox_min->z;
-  local_f4.x = (int)ROUND(local_88 * 256.0f);
-  local_f4.y = (int)ROUND(local_84 * 256.0f);
-  local_f4.z = (int)ROUND(local_80 * 256.0f);
-  local_5c = local_88;
-  local_4c = local_84;
-  local_28 = local_80;
+  local_f4.x = (int)ROUND(bbox_min->x * 256.0f);
+  local_f4.y = (int)ROUND(bbox_min->y * 256.0f);
+  local_f4.z = (int)ROUND(bbox_min->z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1a].projected_vertex,&local_f4);
-  local_124 = bbox_max->x;
-  local_120 = bbox_min->y;
-  local_11c = bbox_min->z;
-  local_10c.x = (int)ROUND(local_124 * 256.0f);
-  local_10c.y = (int)ROUND(local_120 * 256.0f);
-  local_10c.z = (int)ROUND(local_11c * 256.0f);
-  local_58 = local_120;
-  local_18 = local_124;
-  local_14 = local_11c;
+  local_10c.x = (int)ROUND(bbox_max->x * 256.0f);
+  local_10c.y = (int)ROUND(bbox_min->y * 256.0f);
+  local_10c.z = (int)ROUND(bbox_min->z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1b].projected_vertex,&local_10c);
-  local_a0 = bbox_max->x;
-  local_9c = bbox_max->y;
-  local_98 = bbox_max->z;
-  local_130.x = (int)ROUND(local_a0 * 256.0f);
-  local_130.y = (int)ROUND(local_9c * 256.0f);
-  local_130.z = (int)ROUND(local_98 * 256.0f);
-  local_50 = local_98;
-  local_3c = local_a0;
-  local_38 = local_9c;
+  local_130.x = (int)ROUND(bbox_max->x * 256.0f);
+  local_130.y = (int)ROUND(bbox_max->y * 256.0f);
+  local_130.z = (int)ROUND(bbox_max->z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1c].projected_vertex,&local_130);
-  local_94 = bbox_min->x;
-  local_90 = bbox_max->y;
-  local_8c = bbox_max->z;
-  local_ac.x = (int)ROUND(local_94 * 256.0f);
-  local_ac.y = (int)ROUND(local_90 * 256.0f);
-  local_ac.z = (int)ROUND(local_8c * 256.0f);
-  local_48 = local_94;
-  local_44 = local_90;
-  local_40 = local_8c;
+  local_ac.x = (int)ROUND(bbox_min->x * 256.0f);
+  local_ac.y = (int)ROUND(bbox_max->y * 256.0f);
+  local_ac.z = (int)ROUND(bbox_max->z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1d].projected_vertex,&local_ac);
-  local_100 = bbox_min->x;
-  local_fc = bbox_max->y;
-  local_f8 = bbox_min->z;
-  local_7c.x = (int)ROUND(local_100 * 256.0f);
-  local_7c.y = (int)ROUND(local_fc * 256.0f);
-  local_7c.z = (int)ROUND(local_f8 * 256.0f);
-  local_24 = local_100;
-  local_20 = local_fc;
-  local_1c = local_f8;
+  local_7c.x = (int)ROUND(bbox_min->x * 256.0f);
+  local_7c.y = (int)ROUND(bbox_max->y * 256.0f);
+  local_7c.z = (int)ROUND(bbox_min->z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[0x4e1e].projected_vertex,&local_7c);
-  local_c4 = bbox_max->x;
-  local_c0 = bbox_max->y;
-  local_bc = bbox_min->z;
-  local_b8.x = (int)ROUND(local_c4 * 256.0f);
-  local_b8.y = (int)ROUND(local_c0 * 256.0f);
-  local_b8.z = (int)ROUND(local_bc * 256.0f);
-  local_34 = local_c4;
-  local_30 = local_c0;
-  local_2c = local_bc;
+  local_b8.x = (int)ROUND(bbox_max->x * 256.0f);
+  local_b8.y = (int)ROUND(bbox_max->y * 256.0f);
+  local_b8.z = (int)ROUND(bbox_min->z * 256.0f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[19999].projected_vertex,&local_b8);
   uVar4 = 0xffffffff;
@@ -184,11 +137,11 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180(CDem
     iVar3 = iVar3 + 0x30;
     uVar4 = uVar4 & *puVar1;
   } while (iVar3 != 960000);
-  iVar3 = 1;
+  iVar1 = 1;
   if (((uVar4 & 0x80000000) != 0) && ((char)uVar4 != '\0')) {
-    iVar3 = 0;
+    iVar1 = 0;
   }
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-  return iVar3;
+  return iVar1;
 }

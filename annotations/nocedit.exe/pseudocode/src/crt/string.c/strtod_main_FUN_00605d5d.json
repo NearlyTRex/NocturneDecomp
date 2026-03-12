@@ -1,20 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 269,
+    "complexity_score": 280,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
-    "suspect_count": 19,
+    "pseudocode_lines": 60,
+    "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "special_crt_function",
       "unknown_field"
     ],
-    "total_lines": 166
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -134,8 +134,22 @@
         "is_param": false,
         "name": "local_34",
         "offset": -52,
-        "size": 12,
-        "type": "undefined1[12]"
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_2c",
+        "offset": -44,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "bStack_2b",
+        "offset": -43,
+        "size": 1,
+        "type": "byte"
       },
       {
         "is_param": false,
@@ -148,29 +162,15 @@
         "is_param": false,
         "name": "local_20",
         "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "undefined8"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "undefined8"
       },
       {
         "is_param": true,
@@ -198,16 +198,24 @@
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 26,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "uVar6._0_2_ = CONCAT11(bStack_2b,uStack_2c) & 0x7fff;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 26,
       "match": "CONCAT11",
       "severity": "mild",
-      "text": "uVar6 = (uint)(CONCAT11(bStack_2b,uStack_2c) & 0x7fff);",
+      "text": "uVar6._0_2_ = CONCAT11(bStack_2b,uStack_2c) & 0x7fff;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 29,
+      "line": 30,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uVar5 = INFINITY._4_4_;",
@@ -215,7 +223,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 30,
+      "line": 31,
       "match": "._0_4_",
       "severity": "mild",
       "text": "uVar1 = INFINITY._0_4_;",
@@ -223,7 +231,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 32,
+      "line": 33,
       "match": "._4_4_",
       "severity": "mild",
       "text": "return -__BITCAST_DOUBLE(CONCAT44(INFINITY._4_4_,INFINITY._0_4_));",
@@ -231,7 +239,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 32,
+      "line": 33,
       "match": "._0_4_",
       "severity": "mild",
       "text": "return -__BITCAST_DOUBLE(CONCAT44(INFINITY._4_4_,INFINITY._0_4_));",
@@ -239,7 +247,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 33,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "return -__BITCAST_DOUBLE(CONCAT44(INFINITY._4_4_,INFINITY._0_4_));",
@@ -247,7 +255,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 42,
       "match": "CONCAT19",
       "severity": "mild",
       "text": "local_28 = (double)(float10)CONCAT19(bStack_2b,CONCAT18(uStack_2c,local_34));",
@@ -255,7 +263,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 42,
       "match": "CONCAT18",
       "severity": "mild",
       "text": "local_28 = (double)(float10)CONCAT19(bStack_2b,CONCAT18(uStack_2c,local_34));",
@@ -263,7 +271,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 42,
+      "line": 43,
       "match": "._4_4_",
       "severity": "mild",
       "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(local_18._4_4_,(uint)local_18));",
@@ -271,7 +279,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 43,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar2 = __BITCAST_DOUBLE(CONCAT44(local_18._4_4_,(uint)local_18));",
@@ -279,7 +287,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 45,
+      "line": 46,
       "match": "._4_4_",
       "severity": "mild",
       "text": "(local_20 = local_28, local_18 = __BITCAST_DOUBLE(CONCAT44(local_18._4_4_,(uint)local_18)),",
@@ -287,7 +295,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 46,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "(local_20 = local_28, local_18 = __BITCAST_DOUBLE(CONCAT44(local_18._4_4_,(uint)local_18)),",
@@ -295,7 +303,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 50,
       "match": "CONCAT19",
       "severity": "mild",
       "text": "local_28 = (double)(float10)CONCAT19(bStack_2b,CONCAT18(uStack_2c,local_34));",
@@ -303,7 +311,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 50,
       "match": "CONCAT18",
       "severity": "mild",
       "text": "local_28 = (double)(float10)CONCAT19(bStack_2b,CONCAT18(uStack_2c,local_34));",
@@ -311,7 +319,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 51,
+      "line": 52,
       "match": "._4_4_",
       "severity": "mild",
       "text": "dVar3 = __BITCAST_DOUBLE(CONCAT44(local_20._4_4_,(uint)local_20));",
@@ -319,7 +327,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 52,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar3 = __BITCAST_DOUBLE(CONCAT44(local_20._4_4_,(uint)local_20));",

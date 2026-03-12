@@ -11,9 +11,11 @@
 void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
-  CDemonActor *this_ptr_00;
   CVector3f *pCVar1;
+  CVector3f *pCVar2;
   int iVar2;
+  int iVar3;
+  CMatrix3x4f *pCVar5;
   CMatrix3x4f *pCVar3;
   CMatrix3x4f *pCVar4;
   byte bVar5;
@@ -32,10 +34,11 @@ void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(
   CVector3f local_30;
   CVector3f local_24;
   CVector3f local_18;
+  CDemonActor *this_ptr_00;
   
   bVar5 = 0;
   this_ptr_00 = (this_ptr->base).base.carry_hands[hand_index].carry_actor;
-  iVar2 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
+  iVar3 = (this_ptr->base).base.carry_hands[hand_index].bone_index;
   local_60.z = 2.536;
   local_60.x = -0.771;
   local_60.y = -2.536;
@@ -60,33 +63,32 @@ void __stack2_esi core_boneguy_cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40(
   local_6c.y = 0.209;
   pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                      (&local_78,&local_6c,
-                      (this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2);
+                      (this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar3);
   if (&local_18 != pCVar1) {
     local_18.x = pCVar1->x;
     local_18.y = pCVar1->y;
     local_18.z = pCVar1->z;
   }
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            (&local_120,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar2,
+            (&local_120,(this_ptr->base).base.model.bone_transform.bone_world_matrices + iVar3,
              &local_c0);
-  pCVar3 = &local_c0;
+  pCVar5 = &local_c0;
   pCVar4 = &local_f0;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pCVar4->m[0].w = pCVar3->m[0].w;
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar5 * -8 + 4);
+    pCVar4->m[0].w = pCVar5->m[0].w;
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar4 = pCVar4;
   }
-  pCVar1 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_24,&local_48,&local_f0);
-  local_3c = local_18.x - pCVar1->x;
-  local_38 = local_18.y - pCVar1->y;
-  local_34 = local_18.z - pCVar1->z;
-  local_f0.m[0].z = local_f0.m[0].z + local_3c;
-  local_f0.m[1].z = local_f0.m[1].z + local_38;
-  local_f0.m[2].z = local_f0.m[2].z + local_34;
+  pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_24,&local_48,&local_f0);
+  local_f0.m[0].z = local_f0.m[0].z + (local_18.x - pCVar2->x);
+  local_f0.m[1].z = local_f0.m[1].z + (local_18.y - pCVar2->y);
+  local_f0.m[2].z = local_f0.m[2].z + (local_18.z - pCVar2->z);
   pCVar3 = &local_f0;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar5 * -8 + 4);
     out_matrix->m[0].w = pCVar3->m[0].w;
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
+    pCVar3 = pCVar3;
     out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar5 * -2 + 1) * 4);
   }
   return;

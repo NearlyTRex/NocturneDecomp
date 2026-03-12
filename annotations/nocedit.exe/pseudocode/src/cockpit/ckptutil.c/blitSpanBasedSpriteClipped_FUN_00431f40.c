@@ -12,12 +12,16 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_00431f40(void *sp
   int iVar1;
   ColorConversionFunc *pCVar2;
   int *piVar3;
+  int *piVar1;
   int iVar4;
   int iVar5;
+  int iVar2;
   int iVar6;
   int iVar7;
+  int iVar3;
   int iVar8;
   int iVar9;
+  int iVar10;
   int local_30;
   int local_2c;
   void *local_1c;
@@ -37,16 +41,16 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_00431f40(void *sp
           iVar7 = 0;
           iVar9 = 0;
           while (piVar3 = (int *)((int)span_data + local_30), iVar9 < *piVar3) {
-            iVar4 = *(int *)((int)piVar3 + iVar7 + 4);
-            iVar5 = *(int *)((int)piVar3 + iVar7 + 0x44) + iVar4 + -1;
-            if (((iVar4 < iVar6) && (iVar4 = iVar6, iVar5 < iVar6)) ||
-               ((iVar8 < iVar5 && (iVar5 = iVar8, iVar8 < iVar4)))) {
+            iVar3 = *(int *)((int)piVar3 + iVar7 + 4);
+            iVar5 = *(int *)((int)piVar3 + iVar7 + 0x44) + iVar3 + -1;
+            if (((iVar3 < iVar6) && (iVar3 = iVar6, iVar5 < iVar6)) ||
+               ((iVar8 < iVar5 && (iVar5 = iVar8, iVar8 < iVar3)))) {
               iVar9 = iVar9 + 1;
               iVar7 = iVar7 + 4;
             }
             else {
-              (*pCVar2)((void *)((iVar4 + local_18) - src_x),(void *)((int)sprite_data + iVar4),
-                        (iVar5 - iVar4) + 1);
+              (*pCVar2)((void *)((iVar3 + local_18) - src_x),(void *)((int)sprite_data + iVar3),
+                        (iVar5 - iVar3) + 1);
               iVar9 = iVar9 + 1;
               iVar7 = iVar7 + 4;
             }
@@ -62,21 +66,21 @@ void __cdecl cockpit_ckptutil_c_blitSpanBasedSpriteClipped_FUN_00431f40(void *sp
       if (screen_y < height) {
         local_2c = local_30;
         do {
-          iVar7 = 0;
-          iVar9 = 0;
-          while (piVar3 = (int *)((int)span_data + local_2c), iVar9 < *piVar3) {
-            iVar4 = *(int *)((int)piVar3 + iVar7 + 4);
-            iVar5 = *(int *)((int)piVar3 + iVar7 + 0x44) + iVar4 + -1;
-            if (((iVar4 < iVar6) && (iVar4 = iVar6, iVar5 < iVar6)) ||
-               ((iVar8 < iVar5 && (iVar5 = iVar8, iVar8 < iVar4)))) {
-              iVar9 = iVar9 + 1;
-              iVar7 = iVar7 + 4;
+          iVar3 = 0;
+          iVar10 = 0;
+          while (piVar1 = (int *)((int)span_data + local_2c), iVar10 < *piVar1) {
+            iVar4 = *(int *)((int)piVar1 + iVar3 + 4);
+            iVar2 = *(int *)((int)piVar1 + iVar3 + 0x44) + iVar4 + -1;
+            if (((iVar4 < iVar6) && (iVar4 = iVar6, iVar2 < iVar6)) ||
+               ((iVar8 < iVar2 && (iVar2 = iVar8, iVar8 < iVar4)))) {
+              iVar10 = iVar10 + 1;
+              iVar3 = iVar3 + 4;
             }
             else {
               (*pCVar2)((void *)((int)local_1c + src_x * -2 + iVar4 * 2),
-                        (void *)((int)sprite_data + iVar4),(iVar5 - iVar4) + 1);
-              iVar9 = iVar9 + 1;
-              iVar7 = iVar7 + 4;
+                        (void *)((int)sprite_data + iVar4),(iVar2 - iVar4) + 1);
+              iVar10 = iVar10 + 1;
+              iVar3 = iVar3 + 4;
             }
           }
           local_2c = local_2c + 0x84;

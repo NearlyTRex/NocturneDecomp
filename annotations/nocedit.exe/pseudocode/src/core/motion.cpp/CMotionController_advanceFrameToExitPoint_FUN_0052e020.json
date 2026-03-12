@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 95,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 65,
-    "suspect_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 69,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "warning_type_propagation"
+      "pointer_cast"
     ],
-    "total_lines": 221
+    "total_lines": 225
   },
   "cross_references": [
     {
@@ -155,14 +154,14 @@
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -234,16 +233,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 57,
       "match": "(SMotionTransition *)((int)",
       "severity": "mild",
       "text": "pSVar7 = (SMotionTransition *)((int)pSVar7 + (uint)bVar8 * -8 + 4);",

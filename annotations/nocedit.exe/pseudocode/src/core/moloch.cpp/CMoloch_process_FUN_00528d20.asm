@@ -7,23 +7,24 @@
 ; CMoloch *        Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x1b18]:4  local_1b18
-; undefined4       Stack[-0x1b14]:4  local_1b14
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined1       Stack[-0x5c]:1  local_5c
-; undefined1       Stack[-0x50]:1  local_50
-; undefined1       Stack[-0x44]:1  local_44
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0x1b18]:4  local_1b18
+; float            Stack[-0x1b14]:4  local_1b14
+; SPose            Stack[-0x1b10]:6812  SStack_1b10
+; float            Stack[-0x74]:4  local_74
+; float            Stack[-0x70]:4  local_70
+; float            Stack[-0x6c]:4  local_6c
+; CVector3f        Stack[-0x68]:12  local_68
+; CVector3f        Stack[-0x5c]:12  local_5c
+; CVector3f        Stack[-0x50]:12  local_50
+; CVector3f        Stack[-0x44]:12  local_44
+; float            Stack[-0x38]:4  local_38
+; float            Stack[-0x34]:4  local_34
+; float            Stack[-0x30]:4  local_30
+; float            Stack[-0x24]:4  fStack_24
+; char *           Stack[-0x20]:4  pcStack_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; SMotion *        Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_confused_while_walking_00639da5

@@ -11,32 +11,37 @@
 void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0(void)
 
 {
+  byte *pbVar2;
+  int iVar4;
+  int iVar7;
+  uint uVar4;
+  int iVar5;
+  int iVar9;
+  int iVar6;
+  uint uVar7;
+  int iVar10;
+  int iVar8;
+  uint uVar9;
   byte *pbVar1;
   int iVar2;
   int iVar3;
-  uint uVar4;
-  int iVar5;
-  int iVar6;
-  uint uVar7;
-  int iVar8;
-  uint uVar9;
   
   if (g_BitsPerPixel == 0x10) {
     iVar6 = 0;
-    iVar5 = 0;
+    iVar10 = 0;
     do {
       pbVar1 = (byte *)(g_SourcePaletteData + iVar6);
       iVar2 = iVar6 + 1;
       iVar3 = iVar6 + 2;
-      iVar8 = iVar5 + 2;
+      iVar8 = iVar10 + 2;
       iVar6 = iVar6 + 3;
-      *(ushort *)((int)g_ColorTable16 + iVar5) =
+      *(ushort *)((int)g_ColorTable16 + iVar10) =
            (ushort)((uint)(byte)g_SourcePaletteData[iVar3] / (uint)g_BlueScaleFactor <<
                    (g_BlueBitPosition.bytes[0] & 0x1f)) |
            (ushort)((uint)*pbVar1 / (uint)g_RedScaleFactor << (g_RedBitPosition.bytes[0] & 0x1f)) |
            (ushort)((uint)(byte)g_SourcePaletteData[iVar2] / (uint)g_GreenScaleFactor <<
                    (g_GreenBitPosition.bytes[0] & 0x1f));
-      iVar5 = iVar8;
+      iVar10 = iVar8;
     } while (iVar8 != 0x200);
     uVar4 = 0xff >> (g_RedBitCount.bytes[0] & 0x1f);
     g_RedMask16.u32[0] = uVar4 << (g_RedBitPosition.bytes[0] & 0x1f);
@@ -52,20 +57,20 @@ void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0(void)
     g_GreenBlueBits.u32[0] = g_GreenBitCount.dword + g_BlueBitCount.dword;
   }
   if (g_BitsPerPixel == 0x20) {
-    iVar6 = 0;
+    iVar10 = 0;
     iVar5 = 0;
     do {
-      iVar2 = iVar6 + 1;
-      iVar3 = iVar6 + 2;
-      pbVar1 = (byte *)(g_SourcePaletteData + iVar6);
-      iVar8 = iVar5 + 4;
-      iVar6 = iVar6 + 3;
+      iVar4 = iVar10 + 1;
+      iVar7 = iVar10 + 2;
+      pbVar2 = (byte *)(g_SourcePaletteData + iVar10);
+      iVar9 = iVar5 + 4;
+      iVar10 = iVar10 + 3;
       *(uint *)((int)g_ColorTable32 + iVar5) =
-           (uint)(byte)g_SourcePaletteData[iVar3] << (g_BlueBitPosition.bytes[0] & 0x1f) |
-           (uint)(byte)g_SourcePaletteData[iVar2] << (g_GreenBitPosition.bytes[0] & 0x1f) |
-           (uint)*pbVar1 << (g_RedBitPosition.bytes[0] & 0x1f);
-      iVar5 = iVar8;
-    } while (iVar8 != 0x400);
+           (uint)(byte)g_SourcePaletteData[iVar7] << (g_BlueBitPosition.bytes[0] & 0x1f) |
+           (uint)(byte)g_SourcePaletteData[iVar4] << (g_GreenBitPosition.bytes[0] & 0x1f) |
+           (uint)*pbVar2 << (g_RedBitPosition.bytes[0] & 0x1f);
+      iVar5 = iVar9;
+    } while (iVar9 != 0x400);
   }
   return;
 }

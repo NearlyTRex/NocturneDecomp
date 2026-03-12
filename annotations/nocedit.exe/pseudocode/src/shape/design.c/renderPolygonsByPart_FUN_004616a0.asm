@@ -6,7 +6,7 @@
 ; Parameters:
 ; int              Stack[0x4]:4   part_id
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_traverseSpatialTree_FUN_004616f0 at 00461715

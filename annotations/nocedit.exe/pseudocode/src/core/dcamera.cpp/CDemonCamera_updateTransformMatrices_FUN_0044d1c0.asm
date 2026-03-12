@@ -6,7 +6,8 @@
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x18]:1  local_18
+; int[1017]        Stack[-0x1000]:4068  aiStackY_1000
+; CVector3i        Stack[-0x18]:12  local_18
 ;
 ; XREF[2]:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430 at 0044c671

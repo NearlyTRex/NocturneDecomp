@@ -9,20 +9,26 @@
 void __cdecl shape_superopt_cpp_CPoly_projectUVPlanar_FUN_005ce0a0(CPoly *this_ptr,CVector2d *uv_scale)
 
 {
-  double dVar1;
-  CVert *pCVar2;
-  int iVar3;
-  CPoly *pCVar4;
-  double dVar5;
-  double dVar6;
+  double dVar2;
+  int iVar4;
+  CPoly *pCVar5;
+  double dVar7;
   CP2D *pCVar7;
+  CP2D *pCVar8;
   int *piVar8;
+  int *piVar9;
   uint local_84;
   double local_80;
   double local_78;
   double local_70;
   uint local_64;
   uint local_5c;
+  CPoly *pCVar4;
+  double dVar5;
+  double dVar6;
+  int iVar3;
+  double dVar1;
+  CVert *pCVar2;
   
   dVar6 = 0.00390625;
   if (0.0 <= (this_ptr->normal).impl.z) {
@@ -81,36 +87,36 @@ void __cdecl shape_superopt_cpp_CPoly_projectUVPlanar_FUN_005ce0a0(CPoly *this_p
     return;
   }
   if ((local_78 <= local_80) && (local_70 <= local_80)) {
-    piVar8 = &this_ptr->vertex_idx_2;
-    pCVar4 = this_ptr;
+    piVar9 = &this_ptr->vertex_idx_2;
+    pCVar5 = this_ptr;
     do {
-      pCVar7 = pCVar4->uv_coords;
-      iVar3 = this_ptr->vertex_idx_0;
-      (pCVar7->impl).x = pCVar2[iVar3].position.x * uv_scale->x;
-      dVar5 = -pCVar2[iVar3].position.z * uv_scale->y * (double)((ulonglong)local_64 << 0x20);
-      dVar1 = (pCVar7->impl).x;
-      pCVar4->uv_coords[0].impl.y = dVar5;
+      pCVar8 = pCVar5->uv_coords;
+      iVar4 = this_ptr->vertex_idx_0;
+      (pCVar8->impl).x = pCVar2[iVar4].position.x * uv_scale->x;
+      dVar7 = -pCVar2[iVar4].position.z * uv_scale->y * (double)((ulonglong)local_64 << 0x20);
+      dVar2 = (pCVar8->impl).x;
+      pCVar5->uv_coords[0].impl.y = dVar7;
       this_ptr = (CPoly *)&this_ptr->vertex_idx_0;
-      (pCVar7->impl).x = dVar1 * dVar6;
-      pCVar4->uv_coords[0].impl.y = dVar5 * dVar6;
-      pCVar4 = (CPoly *)pCVar7;
-    } while (this_ptr != (CPoly *)piVar8);
+      (pCVar8->impl).x = dVar2 * dVar6;
+      pCVar5->uv_coords[0].impl.y = dVar7 * dVar6;
+      pCVar5 = (CPoly *)pCVar8;
+    } while (this_ptr != (CPoly *)piVar9);
     return;
   }
-  piVar8 = &this_ptr->vertex_idx_2;
-  pCVar4 = this_ptr;
+  piVar9 = &this_ptr->vertex_idx_2;
+  pCVar5 = this_ptr;
   do {
-    pCVar7 = pCVar4->uv_coords;
-    iVar3 = this_ptr->vertex_idx_0;
-    (pCVar7->impl).x =
-         -pCVar2[iVar3].position.x * uv_scale->x * (double)((ulonglong)local_5c << 0x20);
-    dVar5 = -pCVar2[iVar3].position.y * uv_scale->y;
-    dVar1 = (pCVar7->impl).x;
-    pCVar4->uv_coords[0].impl.y = dVar5;
+    pCVar8 = pCVar5->uv_coords;
+    iVar4 = this_ptr->vertex_idx_0;
+    (pCVar8->impl).x =
+         -pCVar2[iVar4].position.x * uv_scale->x * (double)((ulonglong)local_5c << 0x20);
+    dVar7 = -pCVar2[iVar4].position.y * uv_scale->y;
+    dVar2 = (pCVar8->impl).x;
+    pCVar5->uv_coords[0].impl.y = dVar7;
     this_ptr = (CPoly *)&this_ptr->vertex_idx_0;
-    (pCVar7->impl).x = dVar1 * dVar6;
-    pCVar4->uv_coords[0].impl.y = dVar5 * dVar6;
-    pCVar4 = (CPoly *)pCVar7;
-  } while (this_ptr != (CPoly *)piVar8);
+    (pCVar8->impl).x = dVar2 * dVar6;
+    pCVar5->uv_coords[0].impl.y = dVar7 * dVar6;
+    pCVar5 = (CPoly *)pCVar8;
+  } while (this_ptr != (CPoly *)piVar9);
   return;
 }

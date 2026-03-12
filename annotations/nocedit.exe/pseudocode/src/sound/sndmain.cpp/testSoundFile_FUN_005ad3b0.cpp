@@ -9,16 +9,20 @@
 char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
   uint sfx_handle;
+  int iVar3;
+  char *pcVar5;
   char *pcVar3;
   char *pcVar4;
+  double dVar6;
   char local_170 [272];
   int local_60;
   double local_20;
   float local_18;
   float fStack_14;
+  char cVar1;
   
   sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)local_170);
   pcVar4 = local_170;
@@ -27,21 +31,21 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
+    cVar2 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
+    pcVar4[1] = cVar2;
     pcVar4 = pcVar4 + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)local_170);
   if (iVar2 == 0) {
     _sprintf
               (g_SoundTestErrorBuffer,"Can't get sample info for %s",sample_name);
-    pcVar3 = g_SoundTestErrorBuffer;
+    pcVar5 = g_SoundTestErrorBuffer;
   }
   else if (local_60 < 1) {
     _sprintf
               (g_SoundTestErrorBuffer,"Sample %s has unknown or invalid length",sample_name);
-    pcVar3 = g_SoundTestErrorBuffer;
+    pcVar5 = g_SoundTestErrorBuffer;
   }
   else {
     sound_sndmain_cpp_set3DListenerPos_FUN_005aa020(0.0,0.0,0.0);
@@ -54,26 +58,25 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
     if (sfx_handle == 0) {
       _sprintf
                 (g_SoundTestErrorBuffer,"Error playing %s",sample_name);
-      pcVar3 = g_SoundTestErrorBuffer;
+      pcVar5 = g_SoundTestErrorBuffer;
     }
     else {
-      local_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(sfx_handle,0);
-      local_18 = (float)local_20;
+      dVar6 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(sfx_handle,0);
+      local_18 = (float)dVar6;
       if (0.0 <= local_18) {
-        while (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle), iVar2 != 0) {
-          iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
-          if (iVar2 != 0) {
+        while (iVar3 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle), iVar3 != 0) {
+          iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
+          if (iVar3 != 0) {
             return "Canceled";
           }
-          local_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(sfx_handle,0);
-          fStack_14 = (float)local_20;
-          if (fStack_14 < local_18) break;
-          local_18 = fStack_14;
+          dVar6 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(sfx_handle,0);
+          if ((float)dVar6 < local_18) break;
           wincore_winrun_cpp_sleep_FUN_005f40e0(0.05);
+          local_18 = (float)dVar6;
         }
       }
-      pcVar3 = (char *)0x0;
+      pcVar5 = (char *)0x0;
     }
   }
-  return pcVar3;
+  return pcVar5;
 }

@@ -7,7 +7,8 @@
 ; CArmour *        Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
+; float            Stack[-0x20]:4  local_20
+; CVector3f        Stack[-0x1c]:12  CStack_1c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_armour_wav_00614dcb

@@ -9,10 +9,11 @@
 CVector3d * __stack_esi shape_superopt_cpp_CPoly_getCentroid_FUN_005d0d30(CPoly *this_ptr,CVector3d *out_centroid)
 
 {
-  CVert *pCVar1;
-  CVert *pCVar2;
   int iVar3;
+  int iVar1;
+  double *pdVar2;
   double *pdVar4;
+  double *pdVar3;
   double *pdVar5;
   CVector3d *pCVar6;
   double local_88;
@@ -31,29 +32,31 @@ CVector3d * __stack_esi shape_superopt_cpp_CPoly_getCentroid_FUN_005d0d30(CPoly 
   double local_20;
   double local_18;
   CVert *local_10;
+  CVert *pCVar2;
+  CVert *pCVar1;
   
   pCVar2 = this_ptr->parent_obj->vertex_data;
   local_10 = pCVar2 + this_ptr->vertex_idx_2;
   pCVar1 = pCVar2 + this_ptr->vertex_idx_1;
-  iVar3 = this_ptr->vertex_idx_0;
-  local_40 = pCVar2[iVar3].position.x + (pCVar1->position).x;
-  local_38 = pCVar2[iVar3].position.y + (pCVar1->position).y;
-  local_30 = pCVar2[iVar3].position.z + (pCVar1->position).z;
-  pdVar4 = &local_40;
-  pdVar5 = &local_58;
+  iVar1 = this_ptr->vertex_idx_0;
+  local_40 = pCVar2[iVar1].position.x + (pCVar1->position).x;
+  local_38 = pCVar2[iVar1].position.y + (pCVar1->position).y;
+  local_30 = pCVar2[iVar1].position.z + (pCVar1->position).z;
+  pdVar2 = &local_40;
+  pdVar3 = &local_58;
   for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(uint *)pdVar5 = *(uint *)pdVar4;
-    pdVar4 = (double *)((int)pdVar4 + 4);
-    pdVar5 = (double *)((int)pdVar5 + 4);
+    *(uint *)pdVar3 = *(uint *)pdVar2;
+    pdVar2 = (double *)((int)pdVar2 + 4);
+    pdVar3 = (double *)((int)pdVar3 + 4);
   }
   local_88 = local_58 + (local_10->position).x;
   local_80 = local_50 + (local_10->position).y;
   local_78 = local_48 + (local_10->position).z;
-  pdVar4 = &local_88;
+  pdVar2 = &local_88;
   pdVar5 = &local_28;
-  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(uint *)pdVar5 = *(uint *)pdVar4;
-    pdVar4 = (double *)((int)pdVar4 + 4);
+  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *(uint *)pdVar5 = *(uint *)pdVar2;
+    pdVar2 = (double *)((int)pdVar2 + 4);
     pdVar5 = (double *)((int)pdVar5 + 4);
   }
   local_70 = local_28 * 0.33333333333333298;
@@ -61,7 +64,7 @@ CVector3d * __stack_esi shape_superopt_cpp_CPoly_getCentroid_FUN_005d0d30(CPoly 
   local_60 = local_18 * 0.33333333333333298;
   pdVar4 = &local_70;
   pCVar6 = out_centroid;
-  for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
+  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(uint *)&pCVar6->x = *(uint *)pdVar4;
     pdVar4 = (double *)((int)pdVar4 + 4);
     pCVar6 = (CVector3d *)((int)&pCVar6->x + 4);

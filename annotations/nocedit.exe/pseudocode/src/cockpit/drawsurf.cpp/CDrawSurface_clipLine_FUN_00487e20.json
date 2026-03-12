@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 309,
-    "complexity_score": 306,
+    "complexity_score": 307,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 121,
+    "pseudocode_lines": 122,
     "suspect_count": 18,
     "suspect_types": [
       "register_param"
     ],
-    "total_lines": 430
+    "total_lines": 431
   },
   "cross_references": [
     {
@@ -194,7 +194,7 @@
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -250,7 +250,7 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -357,7 +357,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 55,
+      "line": 56,
       "match": "in_EDX",
       "severity": "mild",
       "text": "if (((bVar5 & 8) != 0) && (in_EDX = clip_left, iVar4 != 0)) {",
@@ -365,15 +365,15 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 58,
+      "line": 59,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "in_EAX = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + *y1;",
+      "text": "in_EAX = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) + *y1;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 62,
+      "line": 63,
       "match": "in_EDX",
       "severity": "mild",
       "text": "in_EDX = clip_right;",
@@ -381,15 +381,15 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 66,
+      "line": 67,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "in_EAX = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + *y1;",
+      "text": "in_EAX = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) + *y1;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 71,
+      "line": 72,
       "match": "in_EAX",
       "severity": "mild",
       "text": "in_EAX = clip_top;",
@@ -397,15 +397,15 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 75,
+      "line": 76,
       "match": "in_EDX",
       "severity": "mild",
-      "text": "in_EDX = *x1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
+      "text": "in_EDX = *x1 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 80,
+      "line": 81,
       "match": "in_EAX",
       "severity": "mild",
       "text": "in_EAX = clip_bottom;",
@@ -413,7 +413,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 84,
+      "line": 85,
       "match": "in_EDX",
       "severity": "mild",
       "text": "in_EDX = *x1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
@@ -421,7 +421,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 88,
+      "line": 89,
       "match": "in_EDX",
       "severity": "mild",
       "text": "*x2 = in_EDX;",
@@ -429,7 +429,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 89,
+      "line": 90,
       "match": "in_EAX",
       "severity": "mild",
       "text": "*y2 = in_EAX;",
@@ -437,7 +437,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 90,
+      "line": 91,
       "match": "in_EAX",
       "severity": "mild",
       "text": "bVar3 = clip_bottom < in_EAX;",
@@ -445,7 +445,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 91,
+      "line": 92,
       "match": "in_EAX",
       "severity": "mild",
       "text": "if (in_EAX < clip_top) {",
@@ -453,7 +453,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 102,
+      "line": 103,
       "match": "in_EDX",
       "severity": "mild",
       "text": "*x1 = in_EDX;",
@@ -461,7 +461,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 103,
+      "line": 104,
       "match": "in_EAX",
       "severity": "mild",
       "text": "*y1 = in_EAX;",
@@ -469,7 +469,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 104,
+      "line": 105,
       "match": "in_EAX",
       "severity": "mild",
       "text": "bVar2 = clip_bottom < in_EAX;",
@@ -477,7 +477,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 105,
+      "line": 106,
       "match": "in_EAX",
       "severity": "mild",
       "text": "if (in_EAX < clip_top) {",

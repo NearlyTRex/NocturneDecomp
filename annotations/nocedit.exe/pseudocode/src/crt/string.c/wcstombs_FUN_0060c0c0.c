@@ -12,6 +12,7 @@ int __cdecl wcstombs(char *dest,wchar_t *src,SIZE_T dest_size)
   uint uVar1;
   int iVar2;
   uint uVar3;
+  uint uVar2;
   int iVar4;
   char *pcVar5;
   char *pcVar6;
@@ -49,10 +50,12 @@ int __cdecl wcstombs(char *dest,wchar_t *src,SIZE_T dest_size)
         pcVar5 = pcVar5 + (uint)bVar7 * -8 + 4;
         pcVar6 = pcVar6 + (uint)bVar7 * -8 + 4;
       }
-      for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-        *pcVar6 = *pcVar5;
-        pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
+      for (uVar2 = uVar1 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
         pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
+        pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
+        *pcVar6 = *pcVar5;
+        pcVar5 = pcVar5;
+        pcVar6 = pcVar6;
       }
       src = src + 1;
       iVar4 = iVar4 + uVar1;

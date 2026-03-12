@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 340,
-    "complexity_score": 309,
+    "complexity_score": 314,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 134,
+    "pseudocode_lines": 139,
     "suspect_count": 17,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 474
+    "total_lines": 479
   },
   "cross_references": [
     {
@@ -172,63 +172,63 @@
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -256,21 +256,21 @@
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -333,7 +333,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 32,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if ((*(int *)((int)granule_info->granules + iVar1 + -8) != 0) &&",
@@ -341,7 +341,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 33,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(*(int *)((int)granule_info->granules + iVar1 + -4) == 2)) {",
@@ -349,7 +349,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 35,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)granule_info->granules + iVar1) == 0) {",
@@ -357,7 +357,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 39,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_1c = *(int *)((int)g_Layer3ShortBandGroupCounts + local_34);",
@@ -365,7 +365,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 41,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (local_1c < *(int *)((int)g_Layer3ShortBandGroupCounts + local_34 + 4)) {",
@@ -373,7 +373,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 48,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "(this_ptr,*(uint *)((int)g_Layer3ScalefacLengths1 +",
@@ -381,7 +381,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 49,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)granule_info->granules +",
@@ -389,7 +389,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 57,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "} while (local_1c < *(int *)((int)g_Layer3ShortBandGroupCounts + local_34 + 4));",
@@ -397,7 +397,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 75,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "[*(int *)((int)granule_info->granules + iVar1 + -0xc)]);",
@@ -405,7 +405,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 87,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "[*(int *)((int)granule_info->granules + iVar1 + -0xc)]);",
@@ -413,7 +413,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 90,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "} while (piVar6 != (int *)((int)scalefactor_dest + local_54 + granule_index * 0xf8));",
@@ -421,7 +421,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 102,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "[*(int *)((int)granule_info->granules + iVar1 + -0xc)]);",
@@ -429,15 +429,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 105,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "} while (piVar6 != (int *)((int)scalefactor_dest + local_4c + granule_index * 0xf8));",
+      "text": "} while (piVar5 != (int *)((int)scalefactor_dest + local_4c + granule_index * 0xf8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 122,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar4 = *(int *)((int)g_Layer3LongBandGroupCounts + local_38);",
@@ -445,7 +445,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 124,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (iVar4 < *(int *)((int)g_Layer3LongBandGroupCounts + local_38 + 4)) {",
@@ -453,7 +453,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 129,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)granule_info->granules + iVar1 + -0xc)]);",
@@ -461,7 +461,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 133,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "} while (iVar4 < *(int *)((int)g_Layer3LongBandGroupCounts + local_38 + 4));",

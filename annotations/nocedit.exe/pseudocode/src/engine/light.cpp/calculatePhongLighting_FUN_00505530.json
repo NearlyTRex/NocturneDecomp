@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 162,
+    "complexity_score": 168,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 97,
+    "pseudocode_lines": 103,
     "suspect_count": 5,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 297
+    "total_lines": 303
   },
   "cross_references": [
     {
@@ -232,32 +232,39 @@
     "pcode_op_count": 1496
   },
   "stack_frame": {
-    "frame_size": 52,
-    "local_size": 40,
+    "frame_size": 4124,
+    "local_size": 4112,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "aiStackY_100c",
+        "offset": -4108,
+        "size": 4068,
+        "type": "int[1017]"
+      },
+      {
+        "is_param": false,
         "name": "local_24",
         "offset": -36,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -285,7 +292,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 11,
+      "line": 17,
       "match": "aiStackY_100c",
       "severity": "moderate",
       "text": "int aiStackY_100c [1017];",
@@ -293,7 +300,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 67,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&g_NormalizedViewVector + (uint)bVar6 * -8 + 4) =",
@@ -301,7 +308,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 68,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + 4);",
@@ -309,7 +316,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 70,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);",

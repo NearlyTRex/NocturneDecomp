@@ -9,15 +9,9 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_buildSpatialGrid_FUN_00516620(CLodMesh *this_ptr)
 
 {
-  CLodFace *pCVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
   SSpatialGrid *pSVar8;
   int *piVar9;
+  CLodVert *pCVar2;
   CLodVert *pCVar10;
   int iVar11;
   int iVar12;
@@ -44,6 +38,13 @@ void __cdecl shape_meshlod_cpp_CLodMesh_buildSpatialGrid_FUN_00516620(CLodMesh *
   int local_1c;
   int local_18;
   int local_14;
+  float fVar7;
+  float fVar6;
+  float fVar5;
+  float fVar4;
+  float fVar3;
+  float fVar2;
+  CLodFace *pCVar1;
   
   local_24 = 0;
   pSVar8 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
@@ -97,10 +98,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_buildSpatialGrid_FUN_00516620(CLodMesh *
             }
             iVar11 = (int)pCVar1->attribute_indices + local_20 + 4;
             do {
-              pCVar10 = this_ptr->vertex_data + *(int *)(iVar11 + 0x10);
-              local_3c = (pCVar10->position).x;
-              local_38 = (pCVar10->position).y;
-              local_34 = (pCVar10->position).z;
+              pCVar2 = this_ptr->vertex_data + *(int *)(iVar11 + 0x10);
+              local_3c = (pCVar2->position).x;
+              local_38 = (pCVar2->position).y;
+              local_34 = (pCVar2->position).z;
               if (local_3c < local_60) {
                 local_60 = local_3c;
               }

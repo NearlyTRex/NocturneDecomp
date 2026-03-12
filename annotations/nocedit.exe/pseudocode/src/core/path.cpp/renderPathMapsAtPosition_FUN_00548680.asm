@@ -10,10 +10,11 @@
 ; int              Stack[0x10]:4   green
 ; int              Stack[0x14]:4   fog
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined        Stack[-0x1c]:1  local_1c
+; int[1013]        Stack[-0x1010]:4052  aiStackY_1010
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; CVector3i        Stack[-0x1c]:12  local_1c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0063eaa8

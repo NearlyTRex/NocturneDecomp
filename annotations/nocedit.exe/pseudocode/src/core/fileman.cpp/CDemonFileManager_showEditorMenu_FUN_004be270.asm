@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDemonFileManager * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x110]:1  local_110
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[2]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 0050786e

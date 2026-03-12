@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 71,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 56,
+    "pseudocode_lines": 61,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 169
+    "total_lines": 174
   },
   "cross_references": [
     {
@@ -193,99 +193,99 @@
         "is_param": false,
         "name": "local_c4",
         "offset": -196,
-        "size": 1,
-        "type": "undefined1"
+        "size": 52,
+        "type": "SMRGLModelBounds"
       },
       {
         "is_param": false,
         "name": "local_90",
         "offset": -144,
-        "size": 1,
-        "type": "undefined1"
+        "size": 52,
+        "type": "int[13]"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "_FILE *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMRGLHeaderExtended *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -306,10 +306,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 39,
       "match": "(SMRGLModelBounds *)((int)",
       "severity": "mild",
-      "text": "pSVar2 = (SMRGLModelBounds *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);",
+      "text": "pSVar2 = (SMRGLModelBounds *)((int)pSVar2 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

@@ -9,8 +9,9 @@
 ; int              Stack[0xc]:4   length
 ; SNetworkAddr *   Stack[0x10]:4   dest_addr
 ; Local Variables:
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined1       Stack[-0x1c]:1  local_1c
+; undefined4[1521] Stack[-0x1808]:6084  auStackY_1808
+; SOCKADDR_IN      Stack[-0x2c]:16  local_2c
+; SOCKADDR_IN      Stack[-0x1c]:16  local_1c
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_sendPacket_FUN_00541230 at 0054124d

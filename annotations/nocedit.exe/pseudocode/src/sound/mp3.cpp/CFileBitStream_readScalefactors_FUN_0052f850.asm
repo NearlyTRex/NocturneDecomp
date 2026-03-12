@@ -9,7 +9,7 @@
 ; SMpegSubbandScalefactors * Stack[0xc]:4   scalefactors
 ; SBitAllocationTable * Stack[0x10]:4   alloc_info
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 at 00535093

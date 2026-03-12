@@ -2,10 +2,10 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "type_error",
-        "column": 3,
-        "line": 21,
-        "message": "unknown type name 'code'"
+        "category": "incompatible_types",
+        "column": 20,
+        "line": 38,
+        "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'"
       }
     ],
     "success": false,
@@ -13,19 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 121,
+    "complexity_score": 107,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
-    "suspect_count": 6,
+    "pseudocode_lines": 47,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "unresolved_funcptr",
       "warning_type_propagation"
     ],
-    "total_lines": 120
+    "total_lines": 121
   },
   "cross_references": [
     {
@@ -141,31 +140,31 @@
       },
       {
         "is_param": false,
+        "name": "SStack_1ad8",
+        "offset": -6872,
+        "size": 6812,
+        "type": "SPose"
+      },
+      {
+        "is_param": false,
         "name": "local_3c",
         "offset": -60,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_10",
-        "offset": -16,
-        "size": 4,
-        "type": "undefined4"
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": true,
@@ -191,14 +190,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "code *blend_callback;",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",

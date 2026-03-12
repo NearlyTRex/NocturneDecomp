@@ -4,7 +4,7 @@
 ; void __cdecl shape_design_c_clearAllTextureNames_FUN_0046e6b0(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_cramTextureList_FUN_0046bb80 at 0046cc44

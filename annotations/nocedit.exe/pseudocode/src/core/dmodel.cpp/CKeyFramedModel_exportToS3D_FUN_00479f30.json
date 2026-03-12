@@ -4,43 +4,43 @@
       {
         "category": "format_error",
         "column": 24,
-        "line": 105,
+        "line": 109,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 24,
-        "line": 106,
+        "line": 110,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 107,
+        "line": 111,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
         "column": 38,
-        "line": 127,
+        "line": 131,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 71,
-        "line": 127,
+        "line": 131,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 18,
-        "line": 128,
+        "line": 132,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 128,
+        "line": 132,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -49,12 +49,12 @@
   },
   "complexity": {
     "assembly_lines": 329,
-    "complexity_score": 299,
+    "complexity_score": 303,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 129,
+    "pseudocode_lines": 133,
     "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -62,7 +62,7 @@
       "stack_alignment_array",
       "sub84_truncation"
     ],
-    "total_lines": 458
+    "total_lines": 462
   },
   "cross_references": [
     {
@@ -280,12 +280,19 @@
     "pcode_op_count": 1483
   },
   "stack_frame": {
-    "frame_size": 404,
-    "local_size": 396,
+    "frame_size": 4160,
+    "local_size": 4152,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "aiStackY_1034",
+        "offset": -4148,
+        "size": 3740,
+        "type": "int[935]"
+      },
       {
         "is_param": false,
         "name": "local_188",
@@ -332,8 +339,8 @@
         "is_param": false,
         "name": "local_14c",
         "offset": -332,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
@@ -346,36 +353,15 @@
         "is_param": false,
         "name": "local_48",
         "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
+        "size": 16,
+        "type": "int[4]"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -389,63 +375,63 @@
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "_FILE *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -466,7 +452,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 17,
       "match": "aiStackY_1034",
       "severity": "moderate",
       "text": "int aiStackY_1034 [935];",
@@ -474,15 +460,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 98,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)this_ptr->poly_texture_index_list + local_1c),local_4c,",
+      "text": "*(uint *)((int)this_ptr->poly_texture_index_list + local_1c),uVar1,",
       "type": "pointer_cast"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 98,
+      "line": 102,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)local_30 * 1.52587890625e-05),0),",
@@ -490,7 +476,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 102,
       "match": "SUB84",
       "severity": "mild",
       "text": "SUB84(__BITCAST_UINT64((double)local_30 * 1.52587890625e-05),0),",
@@ -498,7 +484,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 100,
+      "line": 104,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)local_2c * 1.52587890625e-05),0),",
@@ -506,7 +492,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 104,
       "match": "SUB84",
       "severity": "mild",
       "text": "SUB84(__BITCAST_UINT64((double)local_2c * 1.52587890625e-05),0),",
@@ -514,31 +500,31 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 120,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "dVar2 = (double)*(int *)((int)&pCVar1->z + iVar6) * 0.00390625;",
+      "text": "dVar2 = (double)*(int *)((int)&pCVar1->z + iVar3) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 121,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "dVar3 = (double)*(int *)((int)&pCVar1->y + iVar6) * 0.00390625;",
+      "text": "dVar3 = (double)*(int *)((int)&pCVar1->y + iVar3) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 122,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "dVar4 = (double)*(int *)((int)&pCVar1->x + iVar6) * 0.00390625;",
+      "text": "dVar4 = (double)*(int *)((int)&pCVar1->x + iVar3) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 120,
+      "line": 124,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "_fprintf(local_18,\"%g,%g,%g\\n\",SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20),",
@@ -546,7 +532,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 120,
+      "line": 124,
       "match": "SUB84",
       "severity": "mild",
       "text": "_fprintf(local_18,\"%g,%g,%g\\n\",SUB84(__BITCAST_UINT64(dVar4),0),(int)((ulonglong)dVar4 >> 0x20),",
@@ -554,7 +540,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 121,
+      "line": 125,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar2),0),",
@@ -562,7 +548,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 121,
+      "line": 125,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar2),0),",
@@ -570,7 +556,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 125,
       "match": "SUB84",
       "severity": "mild",
       "text": "SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar2),0),",
@@ -578,7 +564,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 125,
       "match": "SUB84",
       "severity": "mild",
       "text": "SUB84(__BITCAST_UINT64(dVar3),0),(int)((ulonglong)dVar3 >> 0x20),SUB84(__BITCAST_UINT64(dVar2),0),",

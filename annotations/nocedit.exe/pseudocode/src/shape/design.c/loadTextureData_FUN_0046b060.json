@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 52,
-        "line": 86,
+        "line": 93,
         "message": "format specifies type 'char *' but the argument has type 'STextureAtlasEntry *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 90,
+        "line": 97,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -19,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 535,
-    "complexity_score": 263,
+    "complexity_score": 269,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 22,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 148,
+    "pseudocode_lines": 154,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 683
+    "total_lines": 689
   },
   "cross_references": [
     {
@@ -349,176 +349,176 @@
         "is_param": false,
         "name": "local_184",
         "offset": -388,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "uchar[4]"
       },
       {
         "is_param": false,
         "name": "local_180",
         "offset": -384,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "uchar[4]"
       },
       {
         "is_param": false,
         "name": "local_17c",
         "offset": -380,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "uchar[4]"
       },
       {
         "is_param": false,
         "name": "local_178",
         "offset": -376,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_170",
         "offset": -368,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_168",
         "offset": -360,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_160",
         "offset": -352,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_158",
         "offset": -344,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_154",
         "offset": -340,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "uchar[4]"
       },
       {
         "is_param": false,
         "name": "local_150",
         "offset": -336,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14c",
         "offset": -332,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_148",
         "offset": -328,
-        "size": 1,
-        "type": "undefined"
+        "size": 260,
+        "type": "char[260]"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "_FILE *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -575,55 +575,47 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 95,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "iVar1 - local_44 != 0 && local_44 <= iVar1 && (*(char *)((int)local_24 + local_44) == '\\0'));",
+      "text": "iVar1 - local_44 != 0 && local_44 <= iVar1 && (*(char *)((int)dest + local_44) == '\\0'));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 102,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_38 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_width) /",
+      "text": "iVar5 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_width) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 95,
+      "line": 102,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_38 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_width) /",
+      "text": "iVar5 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_width) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 104,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_34 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_height) /",
+      "text": "iVar2 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_height) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 104,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_34 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_height) /",
+      "text": "iVar2 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_height) /",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 101,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_30 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_x) /",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 101,
+      "line": 108,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_x) /",
@@ -631,7 +623,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 108,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_30 = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_x) /",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 110,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_2c = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_y) /",
@@ -639,7 +639,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 103,
+      "line": 110,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_2c = (int)ROUND(ROUND(((double)g_TextureAtlasDimension * (double)entry->atlas_y) /",

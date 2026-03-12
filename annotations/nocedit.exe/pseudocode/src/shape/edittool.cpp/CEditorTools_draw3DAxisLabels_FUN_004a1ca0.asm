@@ -8,11 +8,9 @@
 ; float            Stack[0x8]:4   scale_factor
 ; int              Stack[0xc]:4   text_color
 ; Local Variables:
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[20]         Stack[-0x34]:20  local_34
+; CVector3i        Stack[-0x20]:12  local_20
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
 ;   core_cloth.cpp_CCloth_renderBone_FUN_0043b7e0 at 0043b9e0

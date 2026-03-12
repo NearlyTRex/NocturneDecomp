@@ -9,9 +9,9 @@
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004d23a0(CFrankenstienMachine *this_ptr,float start_frame,float end_frame)
 
 {
+  CKeyFramedModel *pCVar3;
   int iVar1;
   float fVar2;
-  CKeyFramedModel *pCVar3;
   
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->bed_model);
   iVar1 = pCVar3->frame_count;
@@ -20,10 +20,9 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setPartFrame_FUN_004d23a0(CF
   if (fVar2 < 0.0) {
     this_ptr->part_frame = 0.0;
   }
-  fVar2 = (float)(iVar1 + -1);
-  if (this_ptr->part_frame <= fVar2) {
+  if (this_ptr->part_frame <= (float)(iVar1 + -1)) {
     return;
   }
-  this_ptr->part_frame = fVar2;
+  this_ptr->part_frame = (float)(iVar1 + -1);
   return;
 }

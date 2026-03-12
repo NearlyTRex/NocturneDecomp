@@ -9,18 +9,19 @@
 float __cdecl core_setdir_cpp_testCameraVisibility_FUN_005750a0(CDemonActor *actor,CVector3i *bbox_vertices,SMRGLHeaderPrimitive *primitives,int camera_index,C3DSCamera *camera,float radius)
 
 {
-  float fVar1;
-  float fVar2;
   int iVar3;
   float fVar4;
+  float fVar3;
   CZThumb *this_ptr;
   float local_20;
+  float fVar2;
+  float fVar1;
   
   if ((camera->enabled != 0) &&
-     (fVar4 = (camera->position).x - (actor->location).position.x,
+     (fVar3 = (camera->position).x - (actor->location).position.x,
      fVar2 = (camera->position).y - (actor->location).position.y,
      fVar1 = (camera->position).z - (actor->location).position.z,
-     fVar1 * fVar1 + fVar2 * fVar2 + fVar4 * fVar4 <=
+     fVar1 * fVar1 + fVar2 * fVar2 + fVar3 * fVar3 <=
      200.0f * 200.0f)) {
     iVar3 = core_setutil_cpp_C3DSCamera_testSphereInFrustum_FUN_00585970
                       (camera,&(actor->location).position,radius);
@@ -28,9 +29,9 @@ float __cdecl core_setdir_cpp_testCameraVisibility_FUN_005750a0(CDemonActor *act
     if (iVar3 != 0) {
       this_ptr = g_CZThumbPool + camera_index * 6;
       if (camera->is_panning == 0) {
-        fVar4 = core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0
+        fVar3 = core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0
                           (this_ptr,actor,bbox_vertices,primitives,1);
-        return fVar4;
+        return fVar3;
       }
       local_20 = 0.0;
       do {

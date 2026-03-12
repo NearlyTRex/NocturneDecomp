@@ -9,10 +9,8 @@
 ; int              Stack[0xc]:4   linear_index
 ; void *           Stack[0x10]:4   user_data
 ; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; CVector3f        Stack[-0x1c]:12  local_1c
+; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0 at 00494c26

@@ -6,32 +6,26 @@
 ; Parameters:
 ; CGabriella *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xbc]:1  local_bc
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0xac]:4  local_ac
-; undefined4       Stack[-0xa8]:4  local_a8
-; undefined4       Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined1       Stack[-0x80]:1  local_80
-; undefined1       Stack[-0x74]:1  local_74
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined1       Stack[-0x38]:1  local_38
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x18]:4  local_18
+; float[3]         Stack[-0xbc]:12  local_bc
+; CVector3f        Stack[-0xb0]:12  local_b0
+; CVector3f        Stack[-0xa4]:12  local_a4
+; CVector3f        Stack[-0x98]:12  local_98
+; CVector3f        Stack[-0x8c]:12  local_8c
+; CVector3f        Stack[-0x80]:12  local_80
+; CVector3f        Stack[-0x74]:12  local_74
+; CVector3f        Stack[-0x68]:12  CStack_68
+; CVector3f        Stack[-0x5c]:12  local_5c
+; CVector3f        Stack[-0x50]:12  local_50
+; float            Stack[-0x44]:4  fStack_44
+; float            Stack[-0x40]:4  fStack_40
+; float            Stack[-0x3c]:4  fStack_3c
+; CVector3f        Stack[-0x38]:12  local_38
+; CVector3f *      Stack[-0x2c]:4  local_2c
+; uint             Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; uint             Stack[-0x20]:4  uStack_20
+; float            Stack[-0x1c]:4  fStack_1c
+; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d3ba1

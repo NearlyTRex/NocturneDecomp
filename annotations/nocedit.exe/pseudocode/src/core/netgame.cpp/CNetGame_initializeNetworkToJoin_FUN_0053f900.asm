@@ -7,19 +7,18 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ; uint32_t *       Stack[0x8]:4   server_ip
 ; Local Variables:
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined1       Stack[-0x58]:1  local_58
-; undefined        Stack[-0x57]:1  local_57
-; undefined        Stack[-0x4f]:1  local_4f
-; undefined1       Stack[-0x4e]:1  local_4e
-; undefined4       Stack[-0x3b]:4  local_3b
-; undefined4       Stack[-0x37]:4  local_37
-; undefined        Stack[-0x30]:1  local_30
-; undefined        Stack[-0x28]:1  local_28
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x60]:4  local_60
+; SNetPacketHeader Stack[-0x5c]:5  local_5c
+; uint             Stack[-0x57]:4  local_57
+; undefined4       Stack[-0x53]:4  uStack_53
+; char[20]         Stack[-0x4f]:20  local_4f
+; EHeroType        Stack[-0x3b]:4  local_3b
+; int              Stack[-0x37]:4  local_37
+; SNetworkAddr     Stack[-0x30]:8  local_30
+; SNetworkAddr     Stack[-0x28]:8  local_28
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; char *           Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_game.cpp_joinNetworkGame_FUN_004e2fc0 at 004e3016

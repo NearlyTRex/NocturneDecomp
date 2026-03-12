@@ -9,14 +9,15 @@
 void __cdecl shape_superopt_cpp_CPoly_getBounds_FUN_005ce3e0(CPoly *this_ptr,CVector3d *out_min,CVector3d *out_max)
 
 {
-  CVert *pCVar1;
-  CVert *pCVar2;
-  int iVar3;
+  CVert *pCVar3;
   CVert *pCVar4;
+  CVert *pCVar1;
+  int iVar3;
+  CVert *pCVar2;
   
-  pCVar4 = this_ptr->parent_obj->vertex_data;
-  pCVar1 = pCVar4 + this_ptr->vertex_idx_0;
-  pCVar2 = pCVar4 + this_ptr->vertex_idx_1;
+  pCVar3 = this_ptr->parent_obj->vertex_data;
+  pCVar1 = pCVar3 + this_ptr->vertex_idx_0;
+  pCVar2 = pCVar3 + this_ptr->vertex_idx_1;
   iVar3 = this_ptr->vertex_idx_2;
   out_min->x = (pCVar1->position).x;
   *(uint *)&out_min->y = *(uint *)&(pCVar1->position).y;
@@ -27,7 +28,7 @@ void __cdecl shape_superopt_cpp_CPoly_getBounds_FUN_005ce3e0(CPoly *this_ptr,CVe
   *(uint *)((int)&out_max->x + 4) = *(uint *)((int)&(pCVar1->position).x + 4);
   out_max->y = (pCVar1->position).y;
   out_max->z = (pCVar1->position).z;
-  pCVar4 = pCVar4 + iVar3;
+  pCVar4 = pCVar3 + iVar3;
   if ((pCVar2->position).x < out_min->x) {
     *(uint *)&out_min->x = *(uint *)&(pCVar2->position).x;
     *(uint *)((int)&out_min->x + 4) = *(uint *)((int)&(pCVar2->position).x + 4);

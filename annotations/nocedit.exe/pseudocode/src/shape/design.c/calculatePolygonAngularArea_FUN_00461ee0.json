@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 88,
+    "complexity_score": 92,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
+    "pseudocode_lines": 77,
     "suspect_count": 1,
     "suspect_types": [
       "stack_alignment_array"
     ],
-    "total_lines": 200
+    "total_lines": 204
   },
   "cross_references": [
     {
@@ -177,12 +177,19 @@
     "pcode_op_count": 1029
   },
   "stack_frame": {
-    "frame_size": 172,
-    "local_size": 168,
+    "frame_size": 8252,
+    "local_size": 8248,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "afStackY_2034",
+        "offset": -8244,
+        "size": 8080,
+        "type": "float[2020]"
+      },
       {
         "is_param": false,
         "name": "local_a4",
@@ -202,112 +209,91 @@
         "name": "local_94",
         "offset": -148,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_8c",
         "offset": -140,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_84",
         "offset": -132,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_7c",
         "offset": -124,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_74",
         "offset": -116,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_64",
         "offset": -100,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "undefined4"
+        "size": 16,
+        "type": "float[4]"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
+        "size": 16,
+        "type": "float[4]"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
+        "size": 16,
+        "type": "float[4]"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
@@ -321,14 +307,14 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -342,7 +328,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
+      "line": 16,
       "match": "afStackY_2034",
       "severity": "moderate",
       "text": "float afStackY_2034 [2020];",

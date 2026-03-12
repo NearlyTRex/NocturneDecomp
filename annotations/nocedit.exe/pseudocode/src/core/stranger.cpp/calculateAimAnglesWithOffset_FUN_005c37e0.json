@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 78,
+    "complexity_score": 81,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 46,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 204
+    "total_lines": 207
   },
   "cross_references": [],
   "function": {
@@ -166,7 +166,7 @@
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -232,26 +232,26 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
+      "line": 15,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar2 = SQRT(direction->z * direction->z +",
+      "text": "fVar1 = SQRT(direction->z * direction->z +",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 20,
       "match": "SQRT",
       "severity": "mild",
-      "text": "(dVar4 = (double)(SQRT(fVar2 * fVar2 - -*offset_pair * -*offset_pair) / fVar2), dVar4 < 1.0)",
+      "text": "(dVar5 = (double)(SQRT(fVar1 * fVar1 - -*offset_pair * -*offset_pair) / fVar1), dVar5 < 1.0)",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 34,
       "match": "SQRT",
       "severity": "mild",
-      "text": "(dVar4 = (double)(SQRT(fVar2 * fVar2 - offset_pair[1] * offset_pair[1]) / fVar2),",
+      "text": "(dVar5 = (double)(SQRT(fVar1 * fVar1 - offset_pair[1] * offset_pair[1]) / fVar1),",
       "type": "decompiler_intrinsic"
     }
   ]

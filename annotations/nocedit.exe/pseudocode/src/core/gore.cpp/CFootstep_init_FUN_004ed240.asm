@@ -11,13 +11,9 @@
 ; int              Stack[0x14]:4   alpha
 ; int              Stack[0x18]:4   blood_type
 ; Local Variables:
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x18]:4  local_18
+; CVector3f        Stack[-0x40]:12  local_40
+; CVector3f[2]     Stack[-0x34]:24  local_34
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_gore.cpp_CGore_createFootstep_FUN_004ee070 at 004ee0d0

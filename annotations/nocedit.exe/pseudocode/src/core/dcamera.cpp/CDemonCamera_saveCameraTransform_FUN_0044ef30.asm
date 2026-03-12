@@ -9,10 +9,8 @@
 ; CMatrix3x3f *    Stack[0xc]:4   rotation_matrix
 ; CMatrix3x3f *    Stack[0x10]:4   transform_matrix
 ; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined        Stack[-0x10]:1  local_10
+; CVector3f        Stack[-0x1c]:12  local_1c
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; Referenced Globals:
 ;   float g_CameraFixedPointScale_0065c63c = 256

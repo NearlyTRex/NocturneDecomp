@@ -9,11 +9,13 @@
 void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_00432a10(void *sprite_data,void *unused_param,int start_x,int start_y,int end_x,int end_y)
 
 {
-  int *piVar1;
+  int *piVar2;
   int count;
   ColorConversionFunc *pCVar2;
   int iVar3;
+  int iVar5;
   int iVar4;
+  int *piVar1;
   
   count = (end_x - start_x) + 1;
   if (sprite_data != (void *)0x0) {
@@ -23,21 +25,21 @@ void __cdecl cockpit_ckptutil_c_blitVerticalColumn_FUN_00432a10(void *sprite_dat
       if (start_y < end_y) {
         do {
           iVar3 = g_WindowWidth * start_y;
-          piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);
+          piVar2 = (int *)((int)g_ScreenBufferArray + iVar4);
           iVar4 = iVar4 + 4;
           start_y = start_y + 1;
-          (*pCVar2)((void *)(*piVar1 + start_x),(void *)((int)sprite_data + iVar3 + start_x),count);
+          (*pCVar2)((void *)(*piVar2 + start_x),(void *)((int)sprite_data + iVar3 + start_x),count);
         } while (start_y < end_y);
         return;
       }
     }
     else if (start_y < end_y) {
       do {
-        iVar3 = g_WindowWidth * start_y;
+        iVar5 = g_WindowWidth * start_y;
         piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);
         iVar4 = iVar4 + 4;
         start_y = start_y + 1;
-        (*pCVar2)((void *)(*piVar1 + start_x * 2),(void *)(iVar3 + start_x + (int)sprite_data),count
+        (*pCVar2)((void *)(*piVar1 + start_x * 2),(void *)(iVar5 + start_x + (int)sprite_data),count
                  );
       } while (start_y < end_y);
       return;

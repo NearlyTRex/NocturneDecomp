@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   out_buf
 ; char *           Stack[0xc]:4   base_name
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_00524700 at 0052472d

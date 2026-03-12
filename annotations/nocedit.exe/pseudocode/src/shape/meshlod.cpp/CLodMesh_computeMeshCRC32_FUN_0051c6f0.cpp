@@ -13,6 +13,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0(CLodMesh *
   int iVar2;
   char *pcVar3;
   uint uVar4;
+  uint uVar1;
+  int iVar3;
+  byte *pbVar4;
+  int iVar6;
   int iVar5;
   uint local_4c;
   uint local_48;
@@ -40,72 +44,72 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0(CLodMesh *
         local_1c = this_ptr;
         do {
           if (local_1c->attribute_enabled_flags[0] != 0) {
-            iVar2 = 4;
+            iVar3 = 4;
             local_4c = *(uint *)(iVar5 * 4 + local_28);
-            pbVar1 = (byte *)&local_4c;
+            pbVar4 = (byte *)&local_4c;
             do {
               while( true ) {
-                uVar4 = *out_crc ^ (uint)*pbVar1 << 0x18;
-                *out_crc = uVar4;
+                uVar1 = *out_crc ^ (uint)*pbVar4 << 0x18;
+                *out_crc = uVar1;
                 if ((*out_crc & 0x80000000) == 0) {
-                  uVar4 = uVar4 * 2;
+                  uVar1 = uVar1 * 2;
                 }
                 else {
-                  uVar4 = uVar4 * 2 ^ 0x4c11db7;
+                  uVar1 = uVar1 * 2 ^ 0x4c11db7;
                 }
-                *out_crc = uVar4;
+                *out_crc = uVar1;
                 if ((*out_crc & 0x80000000) == 0) {
-                  uVar4 = *out_crc * 2;
+                  uVar1 = *out_crc * 2;
                 }
                 else {
-                  uVar4 = *out_crc * 2 ^ 0x4c11db7;
+                  uVar1 = *out_crc * 2 ^ 0x4c11db7;
                 }
-                *out_crc = uVar4;
+                *out_crc = uVar1;
                 if ((*out_crc & 0x80000000) == 0) {
-                  uVar4 = *out_crc * 2;
+                  uVar1 = *out_crc * 2;
                 }
                 else {
-                  uVar4 = *out_crc * 2 ^ 0x4c11db7;
+                  uVar1 = *out_crc * 2 ^ 0x4c11db7;
                 }
-                *out_crc = uVar4;
+                *out_crc = uVar1;
                 if ((*out_crc & 0x80000000) == 0) {
-                  uVar4 = *out_crc * 2;
+                  uVar1 = *out_crc * 2;
                 }
                 else {
-                  uVar4 = *out_crc * 2 ^ 0x4c11db7;
+                  uVar1 = *out_crc * 2 ^ 0x4c11db7;
                 }
-                *out_crc = uVar4;
+                *out_crc = uVar1;
                 if ((*out_crc & 0x80000000) == 0) {
-                  uVar4 = *out_crc * 2;
+                  uVar1 = *out_crc * 2;
                 }
                 else {
-                  uVar4 = *out_crc * 2 ^ 0x4c11db7;
+                  uVar1 = *out_crc * 2 ^ 0x4c11db7;
                 }
-                *out_crc = uVar4;
+                *out_crc = uVar1;
                 if ((*out_crc & 0x80000000) == 0) {
-                  uVar4 = *out_crc * 2;
+                  uVar1 = *out_crc * 2;
                 }
                 else {
-                  uVar4 = *out_crc * 2 ^ 0x4c11db7;
+                  uVar1 = *out_crc * 2 ^ 0x4c11db7;
                 }
-                *out_crc = uVar4;
+                *out_crc = uVar1;
                 if ((*out_crc & 0x80000000) == 0) {
-                  uVar4 = *out_crc * 2;
+                  uVar1 = *out_crc * 2;
                 }
                 else {
-                  uVar4 = *out_crc * 2 ^ 0x4c11db7;
+                  uVar1 = *out_crc * 2 ^ 0x4c11db7;
                 }
-                *out_crc = uVar4;
+                *out_crc = uVar1;
                 if ((*out_crc & 0x80000000) != 0) break;
-                pbVar1 = pbVar1 + 1;
-                iVar2 = iVar2 + -1;
+                pbVar4 = pbVar4 + 1;
+                iVar3 = iVar3 + -1;
                 *out_crc = *out_crc * 2;
-                if (iVar2 < 1) goto LAB_0051c748;
+                if (iVar3 < 1) goto LAB_0051c748;
               }
-              pbVar1 = pbVar1 + 1;
-              iVar2 = iVar2 + -1;
+              pbVar4 = pbVar4 + 1;
+              iVar3 = iVar3 + -1;
               *out_crc = *out_crc * 2 ^ 0x4c11db7;
-            } while (0 < iVar2);
+            } while (0 < iVar3);
           }
 LAB_0051c748:
           iVar5 = iVar5 + 1;
@@ -116,143 +120,143 @@ LAB_0051c748:
       local_18 = local_28;
       local_2c = local_28 + 0xc;
       do {
-        iVar5 = 4;
+        iVar3 = 4;
         pbVar1 = (byte *)&local_48;
         local_48 = *(uint *)(local_18 + 0x10);
         do {
           *out_crc = *out_crc ^ (uint)*pbVar1 << 0x18;
-          uVar4 = *out_crc;
-          if ((uVar4 & 0x80000000) == 0) {
-            uVar4 = uVar4 * 2;
+          uVar1 = *out_crc;
+          if ((uVar1 & 0x80000000) == 0) {
+            uVar4 = uVar1 * 2;
           }
           else {
-            uVar4 = uVar4 * 2 ^ 0x4c11db7;
+            uVar4 = uVar1 * 2 ^ 0x4c11db7;
           }
           *out_crc = uVar4;
           if ((uVar4 & 0x80000000) == 0) {
-            uVar4 = uVar4 * 2;
+            uVar1 = uVar4 * 2;
           }
           else {
-            uVar4 = uVar4 * 2 ^ 0x4c11db7;
+            uVar1 = uVar4 * 2 ^ 0x4c11db7;
           }
-          *out_crc = uVar4;
-          if ((uVar4 & 0x80000000) == 0) {
-            uVar4 = uVar4 * 2;
-          }
-          else {
-            uVar4 = uVar4 * 2 ^ 0x4c11db7;
-          }
-          *out_crc = uVar4;
-          if ((uVar4 & 0x80000000) == 0) {
-            uVar4 = uVar4 * 2;
+          *out_crc = uVar1;
+          if ((uVar1 & 0x80000000) == 0) {
+            uVar1 = uVar1 * 2;
           }
           else {
-            uVar4 = uVar4 * 2 ^ 0x4c11db7;
+            uVar1 = uVar1 * 2 ^ 0x4c11db7;
           }
-          *out_crc = uVar4;
-          if ((uVar4 & 0x80000000) == 0) {
-            uVar4 = uVar4 * 2;
-          }
-          else {
-            uVar4 = uVar4 * 2 ^ 0x4c11db7;
-          }
-          *out_crc = uVar4;
-          if ((uVar4 & 0x80000000) == 0) {
-            uVar4 = uVar4 * 2;
+          *out_crc = uVar1;
+          if ((uVar1 & 0x80000000) == 0) {
+            uVar1 = uVar1 * 2;
           }
           else {
-            uVar4 = uVar4 * 2 ^ 0x4c11db7;
+            uVar1 = uVar1 * 2 ^ 0x4c11db7;
           }
-          *out_crc = uVar4;
-          if ((uVar4 & 0x80000000) == 0) {
-            uVar4 = uVar4 * 2;
-          }
-          else {
-            uVar4 = uVar4 * 2 ^ 0x4c11db7;
-          }
-          *out_crc = uVar4;
-          if ((uVar4 & 0x80000000) == 0) {
-            uVar4 = uVar4 * 2;
+          *out_crc = uVar1;
+          if ((uVar1 & 0x80000000) == 0) {
+            uVar1 = uVar1 * 2;
           }
           else {
-            uVar4 = uVar4 * 2 ^ 0x4c11db7;
+            uVar1 = uVar1 * 2 ^ 0x4c11db7;
+          }
+          *out_crc = uVar1;
+          if ((uVar1 & 0x80000000) == 0) {
+            uVar1 = uVar1 * 2;
+          }
+          else {
+            uVar1 = uVar1 * 2 ^ 0x4c11db7;
+          }
+          *out_crc = uVar1;
+          if ((uVar1 & 0x80000000) == 0) {
+            uVar1 = uVar1 * 2;
+          }
+          else {
+            uVar1 = uVar1 * 2 ^ 0x4c11db7;
+          }
+          *out_crc = uVar1;
+          if ((uVar1 & 0x80000000) == 0) {
+            uVar1 = uVar1 * 2;
+          }
+          else {
+            uVar1 = uVar1 * 2 ^ 0x4c11db7;
           }
           pbVar1 = pbVar1 + 1;
-          iVar5 = iVar5 + -1;
-          *out_crc = uVar4;
-        } while (0 < iVar5);
-        iVar5 = 0;
+          iVar3 = iVar3 + -1;
+          *out_crc = uVar1;
+        } while (0 < iVar3);
+        iVar3 = 0;
         if (0 < this_ptr->sort_attribute_count) {
           local_14 = local_20;
           do {
             iVar2 = 4;
-            pbVar1 = (byte *)&local_44;
+            pbVar4 = (byte *)&local_44;
             local_44 = *(uint *)(local_14 + 0x1c);
             do {
-              uVar4 = *out_crc ^ (uint)*pbVar1 << 0x18;
-              *out_crc = uVar4;
+              uVar1 = *out_crc ^ (uint)*pbVar4 << 0x18;
+              *out_crc = uVar1;
               if ((*out_crc & 0x80000000) == 0) {
-                uVar4 = uVar4 * 2;
+                uVar1 = uVar1 * 2;
               }
               else {
-                uVar4 = uVar4 * 2 ^ 0x4c11db7;
+                uVar1 = uVar1 * 2 ^ 0x4c11db7;
               }
-              *out_crc = uVar4;
+              *out_crc = uVar1;
               if ((*out_crc & 0x80000000) == 0) {
-                uVar4 = *out_crc * 2;
+                uVar1 = *out_crc * 2;
               }
               else {
-                uVar4 = *out_crc * 2 ^ 0x4c11db7;
+                uVar1 = *out_crc * 2 ^ 0x4c11db7;
               }
-              *out_crc = uVar4;
+              *out_crc = uVar1;
               if ((*out_crc & 0x80000000) == 0) {
-                uVar4 = *out_crc * 2;
+                uVar1 = *out_crc * 2;
               }
               else {
-                uVar4 = *out_crc * 2 ^ 0x4c11db7;
+                uVar1 = *out_crc * 2 ^ 0x4c11db7;
               }
-              *out_crc = uVar4;
+              *out_crc = uVar1;
               if ((*out_crc & 0x80000000) == 0) {
-                uVar4 = *out_crc * 2;
+                uVar1 = *out_crc * 2;
               }
               else {
-                uVar4 = *out_crc * 2 ^ 0x4c11db7;
+                uVar1 = *out_crc * 2 ^ 0x4c11db7;
               }
-              *out_crc = uVar4;
+              *out_crc = uVar1;
               if ((*out_crc & 0x80000000) == 0) {
-                uVar4 = *out_crc * 2;
+                uVar1 = *out_crc * 2;
               }
               else {
-                uVar4 = *out_crc * 2 ^ 0x4c11db7;
+                uVar1 = *out_crc * 2 ^ 0x4c11db7;
               }
-              *out_crc = uVar4;
+              *out_crc = uVar1;
               if ((*out_crc & 0x80000000) == 0) {
-                uVar4 = *out_crc * 2;
+                uVar1 = *out_crc * 2;
               }
               else {
-                uVar4 = *out_crc * 2 ^ 0x4c11db7;
+                uVar1 = *out_crc * 2 ^ 0x4c11db7;
               }
-              *out_crc = uVar4;
+              *out_crc = uVar1;
               if ((*out_crc & 0x80000000) == 0) {
-                uVar4 = *out_crc * 2;
+                uVar1 = *out_crc * 2;
               }
               else {
-                uVar4 = *out_crc * 2 ^ 0x4c11db7;
+                uVar1 = *out_crc * 2 ^ 0x4c11db7;
               }
-              *out_crc = uVar4;
+              *out_crc = uVar1;
               if ((*out_crc & 0x80000000) == 0) {
-                uVar4 = *out_crc * 2;
+                uVar1 = *out_crc * 2;
               }
               else {
-                uVar4 = *out_crc * 2 ^ 0x4c11db7;
+                uVar1 = *out_crc * 2 ^ 0x4c11db7;
               }
-              pbVar1 = pbVar1 + 1;
+              pbVar4 = pbVar4 + 1;
               iVar2 = iVar2 + -1;
-              *out_crc = uVar4;
+              *out_crc = uVar1;
             } while (0 < iVar2);
-            iVar5 = iVar5 + 1;
+            iVar3 = iVar3 + 1;
             local_14 = local_14 + 4;
-          } while (iVar5 < this_ptr->sort_attribute_count);
+          } while (iVar3 < this_ptr->sort_attribute_count);
         }
         local_18 = local_18 + 4;
         local_20 = local_20 + 8;
@@ -266,141 +270,141 @@ LAB_0051c748:
     local_3c = 0;
     do {
       local_24 = this_ptr->vertex_data->lod_workspace + local_3c + -0x10;
-      iVar5 = 0xc;
+      iVar3 = 0xc;
       pcVar3 = local_24;
       do {
-        uVar4 = *out_crc ^ (uint)(byte)*pcVar3 << 0x18;
-        *out_crc = uVar4;
+        uVar1 = *out_crc ^ (uint)(byte)*pcVar3 << 0x18;
+        *out_crc = uVar1;
         if ((*out_crc & 0x80000000) == 0) {
-          uVar4 = uVar4 * 2;
+          uVar1 = uVar1 * 2;
         }
         else {
-          uVar4 = uVar4 * 2 ^ 0x4c11db7;
+          uVar1 = uVar1 * 2 ^ 0x4c11db7;
         }
-        *out_crc = uVar4;
+        *out_crc = uVar1;
         if ((*out_crc & 0x80000000) == 0) {
-          uVar4 = *out_crc * 2;
+          uVar1 = *out_crc * 2;
         }
         else {
-          uVar4 = *out_crc * 2 ^ 0x4c11db7;
+          uVar1 = *out_crc * 2 ^ 0x4c11db7;
         }
-        *out_crc = uVar4;
+        *out_crc = uVar1;
         if ((*out_crc & 0x80000000) == 0) {
-          uVar4 = *out_crc * 2;
+          uVar1 = *out_crc * 2;
         }
         else {
-          uVar4 = *out_crc * 2 ^ 0x4c11db7;
+          uVar1 = *out_crc * 2 ^ 0x4c11db7;
         }
-        *out_crc = uVar4;
+        *out_crc = uVar1;
         if ((*out_crc & 0x80000000) == 0) {
-          uVar4 = *out_crc * 2;
+          uVar1 = *out_crc * 2;
         }
         else {
-          uVar4 = *out_crc * 2 ^ 0x4c11db7;
+          uVar1 = *out_crc * 2 ^ 0x4c11db7;
         }
-        *out_crc = uVar4;
+        *out_crc = uVar1;
         if ((*out_crc & 0x80000000) == 0) {
-          uVar4 = *out_crc * 2;
+          uVar1 = *out_crc * 2;
         }
         else {
-          uVar4 = *out_crc * 2 ^ 0x4c11db7;
+          uVar1 = *out_crc * 2 ^ 0x4c11db7;
         }
-        *out_crc = uVar4;
+        *out_crc = uVar1;
         if ((*out_crc & 0x80000000) == 0) {
-          uVar4 = *out_crc * 2;
+          uVar1 = *out_crc * 2;
         }
         else {
-          uVar4 = *out_crc * 2 ^ 0x4c11db7;
+          uVar1 = *out_crc * 2 ^ 0x4c11db7;
         }
-        *out_crc = uVar4;
+        *out_crc = uVar1;
         if ((*out_crc & 0x80000000) == 0) {
-          uVar4 = *out_crc * 2;
+          uVar1 = *out_crc * 2;
         }
         else {
-          uVar4 = *out_crc * 2 ^ 0x4c11db7;
+          uVar1 = *out_crc * 2 ^ 0x4c11db7;
         }
-        *out_crc = uVar4;
+        *out_crc = uVar1;
         if ((*out_crc & 0x80000000) == 0) {
-          uVar4 = *out_crc * 2;
+          uVar1 = *out_crc * 2;
         }
         else {
-          uVar4 = *out_crc * 2 ^ 0x4c11db7;
+          uVar1 = *out_crc * 2 ^ 0x4c11db7;
         }
         pcVar3 = pcVar3 + 1;
-        iVar5 = iVar5 + -1;
-        *out_crc = uVar4;
-      } while (0 < iVar5);
-      iVar5 = 0;
+        iVar3 = iVar3 + -1;
+        *out_crc = uVar1;
+      } while (0 < iVar3);
+      iVar3 = 0;
       if (0 < this_ptr->extra_attribute_count) {
         do {
-          iVar2 = 4;
-          pbVar1 = (byte *)&local_40;
+          iVar6 = 4;
+          pbVar4 = (byte *)&local_40;
           local_40 = *(uint *)(local_24 + 0xc);
           do {
-            uVar4 = *out_crc ^ (uint)*pbVar1 << 0x18;
-            *out_crc = uVar4;
+            uVar1 = *out_crc ^ (uint)*pbVar4 << 0x18;
+            *out_crc = uVar1;
             if ((*out_crc & 0x80000000) == 0) {
-              uVar4 = uVar4 * 2;
+              uVar1 = uVar1 * 2;
             }
             else {
-              uVar4 = uVar4 * 2 ^ 0x4c11db7;
+              uVar1 = uVar1 * 2 ^ 0x4c11db7;
             }
-            *out_crc = uVar4;
+            *out_crc = uVar1;
             if ((*out_crc & 0x80000000) == 0) {
-              uVar4 = *out_crc * 2;
+              uVar1 = *out_crc * 2;
             }
             else {
-              uVar4 = *out_crc * 2 ^ 0x4c11db7;
+              uVar1 = *out_crc * 2 ^ 0x4c11db7;
             }
-            *out_crc = uVar4;
+            *out_crc = uVar1;
             if ((*out_crc & 0x80000000) == 0) {
-              uVar4 = *out_crc * 2;
+              uVar1 = *out_crc * 2;
             }
             else {
-              uVar4 = *out_crc * 2 ^ 0x4c11db7;
+              uVar1 = *out_crc * 2 ^ 0x4c11db7;
             }
-            *out_crc = uVar4;
+            *out_crc = uVar1;
             if ((*out_crc & 0x80000000) == 0) {
-              uVar4 = *out_crc * 2;
+              uVar1 = *out_crc * 2;
             }
             else {
-              uVar4 = *out_crc * 2 ^ 0x4c11db7;
+              uVar1 = *out_crc * 2 ^ 0x4c11db7;
             }
-            *out_crc = uVar4;
+            *out_crc = uVar1;
             if ((*out_crc & 0x80000000) == 0) {
-              uVar4 = *out_crc * 2;
+              uVar1 = *out_crc * 2;
             }
             else {
-              uVar4 = *out_crc * 2 ^ 0x4c11db7;
+              uVar1 = *out_crc * 2 ^ 0x4c11db7;
             }
-            *out_crc = uVar4;
+            *out_crc = uVar1;
             if ((*out_crc & 0x80000000) == 0) {
-              uVar4 = *out_crc * 2;
+              uVar1 = *out_crc * 2;
             }
             else {
-              uVar4 = *out_crc * 2 ^ 0x4c11db7;
+              uVar1 = *out_crc * 2 ^ 0x4c11db7;
             }
-            *out_crc = uVar4;
+            *out_crc = uVar1;
             if ((*out_crc & 0x80000000) == 0) {
-              uVar4 = *out_crc * 2;
+              uVar1 = *out_crc * 2;
             }
             else {
-              uVar4 = *out_crc * 2 ^ 0x4c11db7;
+              uVar1 = *out_crc * 2 ^ 0x4c11db7;
             }
-            *out_crc = uVar4;
+            *out_crc = uVar1;
             if ((*out_crc & 0x80000000) == 0) {
-              uVar4 = *out_crc * 2;
+              uVar1 = *out_crc * 2;
             }
             else {
-              uVar4 = *out_crc * 2 ^ 0x4c11db7;
+              uVar1 = *out_crc * 2 ^ 0x4c11db7;
             }
-            pbVar1 = pbVar1 + 1;
-            iVar2 = iVar2 + -1;
-            *out_crc = uVar4;
-          } while (0 < iVar2);
-          iVar5 = iVar5 + 1;
+            pbVar4 = pbVar4 + 1;
+            iVar6 = iVar6 + -1;
+            *out_crc = uVar1;
+          } while (0 < iVar6);
+          iVar3 = iVar3 + 1;
           local_24 = local_24 + 4;
-        } while (iVar5 < this_ptr->extra_attribute_count);
+        } while (iVar3 < this_ptr->extra_attribute_count);
       }
       local_30 = local_30 + 1;
       local_3c = local_3c + 0x4c4;

@@ -10,6 +10,7 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
 
 {
   uint uVar1;
+  int iVar1;
   char local_64 [80];
   int local_14;
   
@@ -79,11 +80,11 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
     engine_2d_c_drawText_FUN_00401fd0("U. Bisect mesh",0,0x155);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-    local_14 = toupper(uVar1 & 0xff);
-    if (local_14 == 0x48) {
+    iVar1 = toupper(uVar1 & 0xff);
+    if (iVar1 == 0x48) {
       shape_design_c_showHelpFile_FUN_00457f00("editmain.hlp");
     }
-    switch(local_14) {
+    switch(iVar1) {
     case 0x31:
       shape_design_c_showPointEditor_FUN_0045c6c0();
       break;
@@ -175,7 +176,7 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
     }
     engine_2d_c_clearInputAndWait_FUN_00403260();
     shape_design_c_handleEditorHotkeys_FUN_0045b990();
-  } while (local_14 != 0x1b);
+  } while (iVar1 != 0x1b);
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;
 }

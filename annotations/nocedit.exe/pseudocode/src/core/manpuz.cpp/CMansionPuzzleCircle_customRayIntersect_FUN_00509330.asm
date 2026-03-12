@@ -12,36 +12,25 @@
 ; undefined4       Stack[-0xd8]:4  local_d8
 ; undefined4       Stack[-0xd4]:4  local_d4
 ; undefined4       Stack[-0xd0]:4  local_d0
-; undefined4       Stack[-0xcc]:4  local_cc
-; undefined4       Stack[-0xc8]:4  local_c8
-; undefined4       Stack[-0xc4]:4  local_c4
-; undefined4       Stack[-0xc0]:4  local_c0
-; undefined4       Stack[-0xbc]:4  local_bc
-; undefined4       Stack[-0xb8]:4  local_b8
-; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0xac]:4  local_ac
-; undefined1       Stack[-0xa8]:1  local_a8
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined1       Stack[-0x90]:1  local_90
-; undefined1       Stack[-0x84]:1  local_84
-; undefined1       Stack[-0x78]:1  local_78
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined1       Stack[-0x60]:1  local_60
-; undefined1       Stack[-0x54]:1  local_54
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; CBoundingBox3D   Stack[-0xcc]:24  local_cc
+; CVector3f        Stack[-0xb4]:12  local_b4
+; CVector3f        Stack[-0xa8]:12  local_a8
+; CVector3f        Stack[-0x9c]:12  local_9c
+; CVector3f        Stack[-0x90]:12  local_90
+; CVector3f        Stack[-0x84]:12  local_84
+; CVector3f        Stack[-0x78]:12  local_78
+; CVector3f        Stack[-0x6c]:12  local_6c
+; CVector3f        Stack[-0x60]:12  local_60
+; CVector3f        Stack[-0x54]:12  local_54
+; CVector3f        Stack[-0x48]:12  local_48
+; CVector3f        Stack[-0x3c]:12  local_3c
+; int              Stack[-0x30]:4  local_30
+; SPanel *         Stack[-0x2c]:4  local_2c
+; SGem *           Stack[-0x28]:4  local_28
+; int *            Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940

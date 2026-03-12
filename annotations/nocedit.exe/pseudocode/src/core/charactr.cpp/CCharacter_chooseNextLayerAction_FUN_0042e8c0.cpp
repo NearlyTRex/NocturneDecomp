@@ -9,11 +9,12 @@
 void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCharacter *this_ptr,int layer_action_index)
 
 {
-  float fVar1;
+  float fVar2;
   int iVar2;
   int iVar3;
   SLayerAction *pSVar4;
   float local_14;
+  float fVar1;
   
   if ((this_ptr->layer_action_index < 0) ||
      (this_ptr->layer_action_count <= this_ptr->layer_action_index)) {
@@ -39,12 +40,12 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCh
         if ((pSVar4->direction < 0) || (pSVar4->from_bone_index != iVar2)) {
           if ((pSVar4->direction < 1) &&
              ((pSVar4->to_bone_index == iVar2 &&
-              (fVar1 = pSVar4->duration +
+              (fVar2 = pSVar4->duration +
                        this_ptr->motion_transition_costs[pSVar4->from_bone_index]
-                       [layer_action_index], fVar1 < local_14)))) {
+                       [layer_action_index], fVar2 < local_14)))) {
             this_ptr->layer_action_t = 1.0;
             this_ptr->layer_action_index = iVar3;
-            local_14 = fVar1;
+            local_14 = fVar2;
           }
         }
         else {

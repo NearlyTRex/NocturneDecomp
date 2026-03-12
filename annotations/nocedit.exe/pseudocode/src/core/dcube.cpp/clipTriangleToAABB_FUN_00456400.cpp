@@ -9,6 +9,7 @@
 uint __cdecl core_dcube_cpp_clipTriangleToAABB_FUN_00456400(CVector3f **triangle_vertices,CVector3f *aabb_min,CVector3f *aabb_max)
 
 {
+  CVector3f *pCVar1;
   byte bVar1;
   CVector3f *pCVar2;
   int iVar3;
@@ -16,23 +17,23 @@ uint __cdecl core_dcube_cpp_clipTriangleToAABB_FUN_00456400(CVector3f **triangle
   uint local_14;
   
   g_CubeInputTriangleCount = 3;
-  pCVar2 = *triangle_vertices;
-  if (pCVar2 != g_CubeInputTriangleBuffer) {
-    g_CubeInputTriangleBuffer[0].x = pCVar2->x;
-    g_CubeInputTriangleBuffer[0].z = pCVar2->z;
-    g_CubeInputTriangleBuffer[0].y = pCVar2->y;
+  pCVar1 = *triangle_vertices;
+  if (pCVar1 != g_CubeInputTriangleBuffer) {
+    g_CubeInputTriangleBuffer[0].x = pCVar1->x;
+    g_CubeInputTriangleBuffer[0].z = pCVar1->z;
+    g_CubeInputTriangleBuffer[0].y = pCVar1->y;
   }
-  pCVar2 = triangle_vertices[1];
-  if (pCVar2 != g_CubeInputTriangleBuffer + 1) {
-    g_CubeInputTriangleBuffer[1].x = pCVar2->x;
-    g_CubeInputTriangleBuffer[1].z = pCVar2->z;
-    g_CubeInputTriangleBuffer[1].y = pCVar2->y;
+  pCVar1 = triangle_vertices[1];
+  if (pCVar1 != g_CubeInputTriangleBuffer + 1) {
+    g_CubeInputTriangleBuffer[1].x = pCVar1->x;
+    g_CubeInputTriangleBuffer[1].z = pCVar1->z;
+    g_CubeInputTriangleBuffer[1].y = pCVar1->y;
   }
-  pCVar2 = triangle_vertices[2];
-  if (pCVar2 != g_CubeInputTriangleBuffer + 2) {
-    g_CubeInputTriangleBuffer[2].x = pCVar2->x;
-    g_CubeInputTriangleBuffer[2].z = pCVar2->z;
-    g_CubeInputTriangleBuffer[2].y = pCVar2->y;
+  pCVar1 = triangle_vertices[2];
+  if (pCVar1 != g_CubeInputTriangleBuffer + 2) {
+    g_CubeInputTriangleBuffer[2].x = pCVar1->x;
+    g_CubeInputTriangleBuffer[2].z = pCVar1->z;
+    g_CubeInputTriangleBuffer[2].y = pCVar1->y;
   }
   iVar3 = 0;
   local_18 = 0;
@@ -61,24 +62,24 @@ uint __cdecl core_dcube_cpp_clipTriangleToAABB_FUN_00456400(CVector3f **triangle
     local_18 = local_18 | bVar1;
   } while (iVar3 < 3);
   if (local_18 == 0) {
-    pCVar2 = *triangle_vertices;
+    pCVar1 = *triangle_vertices;
     g_CubeClippedTriangleCount = 3;
-    if (pCVar2 != g_CubeClippedTriangleBuffer) {
-      g_CubeClippedTriangleBuffer[0].x = pCVar2->x;
-      g_CubeClippedTriangleBuffer[0].z = pCVar2->z;
-      g_CubeClippedTriangleBuffer[0].y = pCVar2->y;
+    if (pCVar1 != g_CubeClippedTriangleBuffer) {
+      g_CubeClippedTriangleBuffer[0].x = pCVar1->x;
+      g_CubeClippedTriangleBuffer[0].z = pCVar1->z;
+      g_CubeClippedTriangleBuffer[0].y = pCVar1->y;
     }
-    pCVar2 = triangle_vertices[1];
-    if (pCVar2 != g_CubeClippedTriangleBuffer + 1) {
-      g_CubeClippedTriangleBuffer[1].x = pCVar2->x;
-      g_CubeClippedTriangleBuffer[1].z = pCVar2->z;
-      g_CubeClippedTriangleBuffer[1].y = pCVar2->y;
+    pCVar1 = triangle_vertices[1];
+    if (pCVar1 != g_CubeClippedTriangleBuffer + 1) {
+      g_CubeClippedTriangleBuffer[1].x = pCVar1->x;
+      g_CubeClippedTriangleBuffer[1].z = pCVar1->z;
+      g_CubeClippedTriangleBuffer[1].y = pCVar1->y;
     }
-    pCVar2 = triangle_vertices[2];
-    if (pCVar2 != g_CubeClippedTriangleBuffer + 2) {
-      g_CubeClippedTriangleBuffer[2].x = pCVar2->x;
-      g_CubeClippedTriangleBuffer[2].z = pCVar2->z;
-      g_CubeClippedTriangleBuffer[2].y = pCVar2->y;
+    pCVar1 = triangle_vertices[2];
+    if (pCVar1 != g_CubeClippedTriangleBuffer + 2) {
+      g_CubeClippedTriangleBuffer[2].x = pCVar1->x;
+      g_CubeClippedTriangleBuffer[2].z = pCVar1->z;
+      g_CubeClippedTriangleBuffer[2].y = pCVar1->y;
     }
   }
   else {

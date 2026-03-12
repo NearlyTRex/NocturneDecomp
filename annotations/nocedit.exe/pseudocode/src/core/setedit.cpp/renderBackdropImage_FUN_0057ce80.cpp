@@ -9,12 +9,18 @@
 void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *position,CVector3f *orientation,char *name,int output_width,int output_height,int render_width,int render_height,float projection_scale)
 
 {
+  int iVar1;
+  int iVar3;
   void *pvVar1;
   int iVar2;
+  _FILE *p_Var4;
   uint character;
+  void *pvVar5;
   void *pvVar3;
   uint *puVar4;
+  int iVar6;
   int iVar5;
+  int iVar7;
   uint local_2670 [1200];
   uint auStack_13b0 [1200];
   char local_f0 [80];
@@ -27,14 +33,13 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
   int local_18;
   _FILE *local_14;
   
+  iVar3 = g_WindowHeight;
+  iVar1 = g_WindowWidth;
   local_20 = (void *)0x0;
-  local_24 = g_WindowWidth;
-  local_28 = g_WindowHeight;
   local_1c = (void *)0x0;
   if ((g_WindowWidth <= render_width) || (g_WindowHeight <= render_height)) {
     iVar5 = (render_height + 3) * render_width * 4;
     pvVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(iVar5,"..\\core\\setedit.cpp",0xbac);
-    local_1c = pvVar1;
     local_20 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(iVar5,"..\\core\\setedit.cpp",0xbad);
     if ((pvVar1 == (void *)0x0) || (local_20 == (void *)0x0)) {
       g_CurrentFilename = "..\\core\\setedit.cpp";
@@ -42,24 +47,25 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
       core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
     }
     if (0 < render_height) {
-      iVar5 = 0;
-      pvVar1 = local_20;
-      pvVar3 = local_1c;
+      iVar2 = 0;
+      pvVar5 = local_20;
+      pvVar3 = pvVar1;
       do {
-        iVar2 = iVar5 + 4;
-        *(uint *)((int)local_2670 + iVar5) = *(uint *)((int)g_ScreenBufferArray + iVar5)
+        iVar2 = iVar2 + 4;
+        *(uint *)((int)local_2670 + iVar2) = *(uint *)((int)g_ScreenBufferArray + iVar2)
         ;
-        *(void **)((int)g_ScreenBufferArray + iVar5) = pvVar3;
+        *(void **)((int)g_ScreenBufferArray + iVar2) = pvVar3;
         pvVar3 = (void *)((int)pvVar3 + render_width * 4);
-        *(uint *)((int)auStack_13b0 + iVar5) =
-             *(uint *)((int)g_ZBufferScanlineArray + iVar5);
-        *(void **)((int)g_ZBufferScanlineArray + iVar5) = pvVar1;
-        pvVar1 = (void *)((int)pvVar1 + render_width * 4);
-        iVar5 = iVar2;
+        *(uint *)((int)auStack_13b0 + iVar2) =
+             *(uint *)((int)g_ZBufferScanlineArray + iVar2);
+        *(void **)((int)g_ZBufferScanlineArray + iVar2) = pvVar5;
+        pvVar5 = (void *)((int)pvVar5 + render_width * 4);
+        iVar2 = iVar2;
       } while (iVar2 < render_height * 4);
     }
     g_WindowWidth = render_width;
     g_WindowHeight = render_height;
+    local_1c = pvVar1;
   }
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
             (g_CDemonRendererPtr2,0,0,render_width + -1,render_height + -1);
@@ -75,21 +81,21 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
   wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(g_CDemonSetPtr,9999.9,0);
   _sprintf(local_f0,"%s.raw",name);
-  local_14 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_f0,"wb");
-  if (local_14 == (_FILE *)0x0) {
+  p_Var4 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_f0,"wb");
+  if (p_Var4 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0xbd9;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write backdrop");
   }
-  iVar5 = 0;
+  iVar6 = 0;
   if (0 < output_height) {
     local_18 = 0;
     do {
-      iVar2 = 0;
+      iVar7 = 0;
       puVar4 = *(uint **)((int)g_ScreenBufferArray + local_18);
       if (0 < output_width) {
         do {
-          if ((iVar2 < render_width) && (iVar5 < render_height)) {
+          if ((iVar7 < render_width) && (iVar6 < render_height)) {
             character = (uint)g_ColorCubeLookup
                               [((*puVar4 >> (g_BlueBitPosition.bytes[0] & 0x1f) & 0xff) >> 3) +
                                ((*puVar4 >> (g_GreenBitPosition.bytes[0] & 0x1f) & 0xff) >> 3) *
@@ -99,42 +105,42 @@ void __cdecl core_setedit_cpp_renderBackdropImage_FUN_0057ce80(CVector3i *positi
           else {
             character = 0;
           }
-          _fputc(character,local_14);
-          iVar2 = iVar2 + 1;
+          _fputc(character,p_Var4);
+          iVar7 = iVar7 + 1;
           puVar4 = puVar4 + 1;
-        } while (iVar2 < output_width);
+        } while (iVar7 < output_width);
       }
       local_18 = local_18 + 4;
-      iVar5 = iVar5 + 1;
-    } while (iVar5 < output_height);
+      iVar6 = iVar6 + 1;
+    } while (iVar6 < output_height);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\core\\setedit.cpp",0xbeb);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xbeb);
   _sprintf(local_a0,"%s.act",name);
-  local_14 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_a0,"wb");
-  if (local_14 == (_FILE *)0x0) {
+  p_Var4 = engine_dosio_c_getFile_FUN_00481a50("backdrop",local_a0,"wb");
+  if (p_Var4 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0xbef;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to write act");
   }
-  _fwrite(g_SourcePaletteData,0x100,3,local_14);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\core\\setedit.cpp",0xbf1);
+  _fwrite(g_SourcePaletteData,0x100,3,p_Var4);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var4,"..\\core\\setedit.cpp",0xbf1);
   engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
   if (local_1c != (void *)0x0) {
     if (0 < render_height) {
-      iVar5 = 0;
+      iVar6 = 0;
       do {
-        iVar2 = iVar5 + 4;
-        *(uint *)((int)g_ScreenBufferArray + iVar5) = *(uint *)((int)local_2670 + iVar5)
+        iVar7 = iVar6 + 4;
+        *(uint *)((int)g_ScreenBufferArray + iVar6) = *(uint *)((int)local_2670 + iVar6)
         ;
-        *(uint *)((int)g_ZBufferScanlineArray + iVar5) =
-             *(uint *)((int)auStack_13b0 + iVar5);
-        iVar5 = iVar2;
-      } while (iVar2 < render_height * 4);
+        *(uint *)((int)g_ZBufferScanlineArray + iVar6) =
+             *(uint *)((int)auStack_13b0 + iVar6);
+        iVar6 = iVar7;
+      } while (iVar7 < render_height * 4);
     }
     shape_memdbg_cpp_debugFree_FUN_0050f460(local_1c,"..\\core\\setedit.cpp",0xbfc);
     shape_memdbg_cpp_debugFree_FUN_0050f460(local_20,"..\\core\\setedit.cpp",0xbfd);
-    g_WindowWidth = local_24;
-    g_WindowHeight = local_28;
+    g_WindowWidth = iVar1;
+    g_WindowHeight = iVar3;
   }
   return;
 }

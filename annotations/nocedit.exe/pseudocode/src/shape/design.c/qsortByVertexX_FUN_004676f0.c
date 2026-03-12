@@ -9,11 +9,11 @@
 int __cdecl shape_design_c_qsortByVertexX_FUN_004676f0(SVertexPair *a,SVertexPair *b)
 
 {
-  int iVar1;
+  int local_24;
   int iVar2;
   float fVar3;
   float fVar4;
-  int local_24;
+  int iVar1;
   
   if (a == b) {
     local_24 = 0;

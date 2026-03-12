@@ -11,25 +11,25 @@
 ; int              Stack[0x14]:4   bone_index
 ; CDeformableModel_MotionBlendWeightFunc * Stack[0x18]:4   blend_callback
 ; Local Variables:
-; undefined1       Stack[-0xd8]:1  local_d8
-; undefined1       Stack[-0xc8]:1  local_c8
-; undefined1       Stack[-0xb8]:1  local_b8
-; undefined1       Stack[-0xa8]:1  local_a8
-; undefined1       Stack[-0x98]:1  local_98
-; undefined1       Stack[-0x88]:1  local_88
-; undefined1       Stack[-0x78]:1  local_78
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float[1522]      Stack[-0x18c4]:6088  afStackY_18c4
+; CQuaternion4f    Stack[-0xe8]:16  CStack_e8
+; CQuaternion4f    Stack[-0xd8]:16  local_d8
+; CQuaternion4f    Stack[-0xc8]:16  local_c8
+; CQuaternion4f    Stack[-0xb8]:16  local_b8
+; CQuaternion4f    Stack[-0xa8]:16  local_a8
+; CQuaternion4f    Stack[-0x98]:16  local_98
+; CQuaternion4f    Stack[-0x88]:16  local_88
+; CQuaternion4f[3] Stack[-0x78]:48  local_78
+; float[4]         Stack[-0x44]:16  afStack_44
+; CQuaternion4f *  Stack[-0x34]:4  local_34
+; CQuaternion4f *  Stack[-0x30]:4  local_30
+; CQuaternion4f *  Stack[-0x2c]:4  local_2c
+; CDeformableModelInstance * Stack[-0x28]:4  local_28
+; CDeformableModelInstance * Stack[-0x24]:4  local_24
+; CSkeleton *      Stack[-0x20]:4  local_20
+; CQuaternion4f *  Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendWithPoseData_FUN_0059f230 at 0059f24d

@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 108,
+    "complexity_score": 112,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
+    "pseudocode_lines": 57,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function",
       "unresolved_funcptr"
     ],
-    "total_lines": 144
+    "total_lines": 148
   },
   "cross_references": [],
   "function": {
@@ -81,7 +81,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -109,15 +109,15 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 22,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar2 = (**(code **)((int)buffer[1].__b_lock + 0xc))(buffer,*(char *)input_buffer);",
+      "text": "iVar1 = (**(code **)((int)buffer[1].__b_lock + 0xc))(buffer,*(char *)input_buffer);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 29,
+      "line": 31,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)((int)buffer[1].__b_lock + 0xc))(buffer,0xffffffff);",
@@ -125,7 +125,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 56,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "input_buffer = (void *)((int)input_buffer + uVar1);",

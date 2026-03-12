@@ -7,18 +7,15 @@
 ; CGround *        Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0xcc]:1  local_cc
-; undefined1       Stack[-0xcb]:1  local_cb
-; undefined1       Stack[-0xc8]:1  local_c8
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined1       Stack[-0x7b]:1  local_7b
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0xcc]:80  local_cc
+; char[80]         Stack[-0x7c]:80  local_7c
+; char *           Stack[-0x2c]:4  local_2c
+; char *           Stack[-0x28]:4  local_28
+; char *           Stack[-0x24]:4  local_24
+; char *           Stack[-0x20]:4  local_20
+; _FILE *          Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_terrain.cpp_CTerrain_init_FUN_005e1ef0 at 005e1f1b

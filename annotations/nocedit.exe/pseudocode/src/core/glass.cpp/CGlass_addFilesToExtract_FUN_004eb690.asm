@@ -7,8 +7,7 @@
 ; CGlass *         Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined1       Stack[-0x110]:1  local_110
-; undefined1       Stack[-0x10f]:1  local_10f
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; Referenced Globals:
 ;   undefined4 s_change_the_thickness_(z-size)_0062e22e

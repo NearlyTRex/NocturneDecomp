@@ -6,15 +6,14 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x390]:1  local_390
-; undefined1       Stack[-0x38f]:1  local_38f
-; undefined1       Stack[-0x290]:1  local_290
-; undefined1       Stack[-0x190]:1  local_190
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x390]:256  local_390
+; char[256]        Stack[-0x290]:256  local_290
+; char[256]        Stack[-0x190]:256  local_190
+; CSfxOptions      Stack[-0x90]:112  local_90
+; uint             Stack[-0x20]:4  local_20
+; uint             Stack[-0x1c]:4  local_1c
+; CSfxSample *     Stack[-0x18]:4  local_18
+; CSfxSample *     Stack[-0x14]:4  local_14
 ;
 ; XREF[23]:
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004b0f00 at 004b0f59

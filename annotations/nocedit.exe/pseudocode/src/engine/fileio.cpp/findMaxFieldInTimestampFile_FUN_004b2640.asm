@@ -7,8 +7,8 @@
 ; char *           Stack[0x4]:4   directory
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; _FILE *          Stack[-0x18]:4  local_18
+; STimestampRecord * Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 at 004b446b

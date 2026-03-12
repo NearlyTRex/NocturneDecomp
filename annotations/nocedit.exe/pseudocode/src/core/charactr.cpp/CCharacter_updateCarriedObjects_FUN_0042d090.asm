@@ -7,12 +7,23 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x1c0]:1  local_1c0
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; CMatrix3x4f      Stack[-0x274]:48  CStack_274
+; CMatrix3x4f      Stack[-0x244]:48  CStack_244
+; CMatrix3x4f      Stack[-0x214]:48  CStack_214
+; CMatrix3x4f      Stack[-0x1e4]:48  CStack_1e4
+; float[12]        Stack[-0x1b4]:48  afStack_1b4
+; CMatrix3x4f      Stack[-0x184]:48  CStack_184
+; CMatrix3x4f      Stack[-0x154]:48  CStack_154
+; CMatrix3x4f      Stack[-0x124]:48  CStack_124
+; CMatrix3x4f      Stack[-0xf4]:48  CStack_f4
+; CMatrix3x4f      Stack[-0xc4]:48  CStack_c4
+; CMatrix3x4f      Stack[-0x94]:48  CStack_94
+; CMatrix3x4f      Stack[-0x64]:48  CStack_64
+; CVector3f        Stack[-0x34]:12  CStack_34
+; CVector3f        Stack[-0x28]:12  local_28
+; CVector3f *      Stack[-0x1c]:4  local_1c
+; CVector3f *      Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  iStack_14
 ;
 ; XREF[5]:
 ;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0 at 0042dff4

@@ -6,8 +6,8 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x214]:1  local_214
-; undefined1       Stack[-0x110]:1  local_110
+; char[260]        Stack[-0x214]:260  local_214
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584c2a

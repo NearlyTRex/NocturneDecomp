@@ -8,13 +8,11 @@
 ; CLocation *      Stack[0x8]:4   from_location
 ; int              Stack[0xc]:4   use_tight_bounds
 ; Local Variables:
-; undefined1       Stack[-0x30]:1  local_30
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; CVector3f        Stack[-0x30]:12  local_30
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; XREF[2]:
 ;   core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005ec320 at 005ec340

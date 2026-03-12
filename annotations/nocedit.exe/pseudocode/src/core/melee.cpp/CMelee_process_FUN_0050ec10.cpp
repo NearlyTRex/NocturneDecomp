@@ -9,20 +9,21 @@
 void __cdecl core_melee_cpp_CMelee_process_FUN_0050ec10(CMelee *this_ptr,float delta_time)
 
 {
-  CCharacter_full_vtable *pCVar1;
-  float fVar2;
+  float fVar1;
   CVector3f *input_local_point;
   CVector3f CStack_18;
+  CCharacter_full_vtable *pCVar1;
+  float fVar2;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   if ((0 < this_ptr->blood_spurt_count) &&
      (fVar2 = this_ptr->blood_spurt_timer - delta_time, this_ptr->blood_spurt_timer = fVar2,
      fVar2 <= 0.0)) {
-    fVar2 = this_ptr->blood_spurt_interval * (float)1.1499999999999999;
+    fVar1 = this_ptr->blood_spurt_interval * (float)1.1499999999999999;
     pCVar1 = (this_ptr->base).base.vtable._uc;
     this_ptr->blood_spurt_count = this_ptr->blood_spurt_count + -1;
-    this_ptr->blood_spurt_interval = fVar2;
-    this_ptr->blood_spurt_timer = fVar2;
+    this_ptr->blood_spurt_interval = fVar1;
+    this_ptr->blood_spurt_timer = fVar1;
     input_local_point = (CVector3f *)(*(pCVar1->_uc).canWalk)((CCharacter *)this_ptr);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,&CStack_18,input_local_point);

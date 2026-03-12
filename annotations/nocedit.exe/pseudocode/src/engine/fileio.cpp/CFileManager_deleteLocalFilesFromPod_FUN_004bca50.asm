@@ -9,10 +9,8 @@
 ; Local Variables:
 ; undefined4       Stack[-0x448]:4  local_448
 ; undefined4       Stack[-0x444]:4  local_444
-; undefined        Stack[-0x438]:1  local_438
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0xc]:4  local_c
+; CPodFile         Stack[-0x438]:1068  local_438
+; int              Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
 ;   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 at 004bb4f8

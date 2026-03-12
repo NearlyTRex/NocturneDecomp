@@ -4,37 +4,37 @@
       {
         "category": "other",
         "column": 89,
-        "line": 31,
+        "line": 37,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 36,
+        "line": 42,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 95,
-        "line": 54,
+        "line": 60,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 138,
-        "line": 79,
+        "line": 86,
         "message": "format specifies type 'unsigned int' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 124,
-        "line": 109,
+        "line": 118,
         "message": "format specifies type 'unsigned int' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 110,
+        "line": 119,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -43,19 +43,19 @@
   },
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 222,
+    "complexity_score": 231,
     "cross_reference_count": 50,
     "function_call_count": 2,
     "global_count": 17,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 107,
+    "pseudocode_lines": 116,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
       "pointer_cast"
     ],
-    "total_lines": 335
+    "total_lines": 344
   },
   "cross_references": [
     {
@@ -596,23 +596,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 45,
       "match": "(CDemonActor *)((int)",
       "severity": "mild",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
+      "text": "pCVar2 = (CDemonActor *)((int)pCVar2 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 50,
       "match": "(CDemonActor *)((int)",
       "severity": "mild",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "text": "pCVar2 = (CDemonActor *)((int)pCVar2 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 52,
+      "line": 58,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (99999.0f < SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1)) {",
@@ -620,7 +620,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 69,
       "match": "(CDemonActor *)((int)",
       "severity": "mild",
       "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
@@ -628,7 +628,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 73,
       "match": "(CDemonActor *)((int)",
       "severity": "mild",
       "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
@@ -636,7 +636,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 99,
       "match": "(CDemonActor *)((int)",
       "severity": "mild",
       "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
@@ -644,7 +644,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 104,
       "match": "(CDemonActor *)((int)",
       "severity": "mild",
       "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -2 + 1);",
@@ -656,7 +656,7 @@
       "expected_args": 2,
       "format_string": "NULL actor pointer detected, %s line %d",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 24,
+      "line_number": 30,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"NULL actor pointer detected, %s line %d\",context_file)",
       "text": "Format string expects 2 args but got 1",
       "type": "format_string_mismatch"
@@ -667,7 +667,7 @@
       "expected_args": 3,
       "format_string": "Invalid actor pointer %08X detected at %s, line %d",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 29,
+      "line_number": 35,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid actor pointer %08X detected at %s, line %d\");",
       "text": "Format string expects 3 args but got 0",
       "type": "format_string_mismatch"
@@ -678,7 +678,7 @@
       "expected_args": 5,
       "format_string": "Dangling/corrupt actor pointer detected at %s line %d:\\nptr = %08X\\nname = %s\\ncreateStatus = %d",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 47,
+      "line_number": 53,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Dangling/corrupt actor pointer detected at %s line %d:",
       "text": "Format string expects 5 args but got 0",
       "type": "format_string_mismatch"

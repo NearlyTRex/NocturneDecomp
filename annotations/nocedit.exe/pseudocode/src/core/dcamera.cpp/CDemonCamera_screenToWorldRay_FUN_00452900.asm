@@ -9,12 +9,13 @@
 ; CVector3i *      Stack[0xc]:4   screen_coords
 ; int              Stack[0x10]:4   depth
 ; Local Variables:
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined        Stack[-0x34]:1  local_34
-; undefined        Stack[-0x28]:1  local_28
-; undefined        Stack[-0x1c]:1  local_1c
+; int[1015]        Stack[-0x1028]:4060  aiStackY_1028
+; int              Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; CVector3i        Stack[-0x34]:12  local_34
+; CVector3i        Stack[-0x28]:12  local_28
+; CVector3i        Stack[-0x1c]:12  local_1c
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:

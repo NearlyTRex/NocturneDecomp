@@ -7,11 +7,9 @@
 ; CBride *         Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   out_point
 ; Local Variables:
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CMatrix3x4f      Stack[-0x7c]:48  local_7c
+; CMatrix3x4f      Stack[-0x4c]:48  local_4c
+; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; Referenced Globals:
 ;   int INT_00822cdc

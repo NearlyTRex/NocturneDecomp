@@ -9,13 +9,14 @@
 int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70(CMotionController *this_ptr,int *inout_motion_index,float *inout_frame_number,float delta_time,float scale_factor)
 
 {
-  int iVar1;
+  int iVar3;
   int iVar2;
   SMotion *pSVar3;
   SMotion *pSVar4;
   int iVar5;
   float local_20;
   float fStack_18;
+  int iVar1;
   
   pSVar4 = this_ptr->motion_list_ptr->motions + *inout_motion_index;
   iVar5 = 0;
@@ -54,10 +55,10 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00
   }
   fStack_18 = pSVar4->exit_forward_to_frame;
   if (fStack_18 == -1.0f) {
-    iVar2 = (*this_ptr->vtable->findPatchToFrame)
+    iVar3 = (*this_ptr->vtable->findPatchToFrame)
                       (this_ptr,*inout_motion_index,(float)(pSVar4->frame_count + -1),
                        pSVar4->exit_forward_to_motion);
-    fStack_18 = (float)iVar2;
+    fStack_18 = (float)iVar3;
   }
   *inout_motion_index = pSVar4->exit_forward_to_motion;
   *inout_frame_number = fStack_18;

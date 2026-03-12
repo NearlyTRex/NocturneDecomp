@@ -6,16 +6,12 @@
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x8c]:1  local_8c
-; undefined1       Stack[-0x5c]:1  local_5c
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x30]:4  local_30
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CMatrix3x4f      Stack[-0x8c]:48  local_8c
+; CMatrix3x3f      Stack[-0x5c]:36  local_5c
+; int              Stack[-0x30]:4  local_30
+; CVector3f        Stack[-0x2c]:12  local_2c
+; CVector3i        Stack[-0x20]:12  local_20
+; CMatrix3x4f *    Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0 at 00429aec

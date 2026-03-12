@@ -1,22 +1,36 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 17,
+        "line": 117,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 17,
+        "line": 118,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 489,
-    "complexity_score": 253,
+    "complexity_score": 286,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 34,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 228,
-    "suspect_count": 2,
+    "pseudocode_lines": 236,
+    "suspect_count": 4,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "unknown_field"
     ],
-    "total_lines": 717
+    "total_lines": 725
   },
   "cross_references": [
     {
@@ -332,43 +346,43 @@
         "is_param": false,
         "name": "local_64",
         "offset": -100,
-        "size": 4,
-        "type": "undefined4"
+        "size": 64,
+        "type": "SRenderVertex *[16]"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SSoftwareEdge *"
       },
       {
         "is_param": true,
@@ -388,8 +402,24 @@
   },
   "suspects": [
     {
+      "description": "Unknown/mangled field access",
+      "line": 110,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "uVar10._0_2_ = (ushort)(pSVar8->projected_vertex).screen_y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 111,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "uVar10._0_2_ = (ushort)uVar10 ^ 0xffff;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 179,
+      "line": 187,
       "match": "SBORROW4",
       "severity": "mild",
       "text": "bVar13 = SBORROW4(g_SoftwareMinScanline,g_MaxViewportScanline);",
@@ -397,7 +427,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 212,
+      "line": 220,
       "match": "SBORROW4",
       "severity": "mild",
       "text": "bVar13 = SBORROW4(local_1c,g_MaxViewportScanline);",

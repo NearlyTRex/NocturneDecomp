@@ -10,7 +10,7 @@
 ; _ostream *       Stack[0x10]:4   ostream
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined1       Stack[-0x14]:1  local_14
+; byte[4]          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e108c

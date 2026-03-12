@@ -6,18 +6,18 @@
 ; Parameters:
 ; CBitFont *       Stack[0x4]:4   test_font
 ; Local Variables:
-; undefined        Stack[-0xc4]:1  local_c4
-; undefined        Stack[-0xa4]:1  local_a4
-; undefined        Stack[-0x84]:1  local_84
-; undefined        Stack[-0x64]:1  local_64
-; undefined        Stack[-0x44]:1  local_44
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; CDrawSurface     Stack[-0xc4]:32  local_c4
+; CDrawSurface     Stack[-0xa4]:32  local_a4
+; CDrawSurface     Stack[-0x84]:32  local_84
+; CDrawSurface     Stack[-0x64]:32  local_64
+; CDrawSurface     Stack[-0x44]:32  local_44
+; char[4]          Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
+; int              Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00412b41

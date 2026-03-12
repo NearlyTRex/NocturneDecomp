@@ -7,13 +7,13 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ; CBoundingBox3D * Stack[0x8]:4   output_bbox
 ; Local Variables:
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined1       Stack[-0x30]:1  local_30
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  local_30
+; int              Stack[-0x24]:4  local_24
+; CBoundingBox3D * Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; CDeformableModel * Stack[-0x18]:4  local_18
+; CMatrix3x4f *    Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_0042d530 at 0042d552

@@ -10,8 +10,8 @@ int __cdecl vsscanf(char *str,char *format,va_list_t args)
 
 {
   int iVar1;
-  code *local_1c;
-  code *local_18;
+  byte *local_1c;
+  byte *local_18;
   char *local_14;
   
   local_14 = str;

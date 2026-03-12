@@ -9,11 +9,11 @@
 void __cdecl core_msnedit_cpp_CDemonMission_buildScriptCrossReferences_FUN_0053ea30(CDemonMission *this_ptr)
 
 {
-  CDemonActor *this_ptr_00;
   CActorProperty *this_ptr_01;
   int iVar1;
   CActorPropertyList CStack_2628;
   SScriptXRef SStack_124;
+  CDemonActor *this_ptr_00;
   
   for (this_ptr_00 = this_ptr->first_actor; this_ptr_00 != (CDemonActor *)0x0;
       this_ptr_00 = this_ptr_00->next_actor) {

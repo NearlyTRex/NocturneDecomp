@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 105,
+        "line": 113,
         "message": "assigning to 'CPodAuditRecord *' from incompatible type 'void *'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 148,
+        "line": 158,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 228,
+    "complexity_score": 238,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 28,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 213,
+    "pseudocode_lines": 223,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 697
+    "total_lines": 707
   },
   "cross_references": [],
   "function": {
@@ -371,176 +371,99 @@
         "is_param": false,
         "name": "local_9d8",
         "offset": -2520,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_9d4",
-        "offset": -2516,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_5bc",
-        "offset": -1468,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_5b8",
-        "offset": -1464,
-        "size": 4,
-        "type": "undefined4"
+        "size": 1068,
+        "type": "CPodFile"
       },
       {
         "is_param": false,
         "name": "local_5ac",
         "offset": -1452,
-        "size": 1,
-        "type": "undefined"
+        "size": 32,
+        "type": "undefined4[8]"
       },
       {
         "is_param": false,
         "name": "local_58c",
         "offset": -1420,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_474",
         "offset": -1140,
-        "size": 1,
-        "type": "undefined"
+        "size": 40,
+        "type": "undefined4[10]"
       },
       {
         "is_param": false,
         "name": "local_44c",
         "offset": -1100,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_44b",
-        "offset": -1099,
-        "size": 1,
-        "type": "undefined1"
+        "size": 272,
+        "type": "char[272]"
       },
       {
         "is_param": false,
         "name": "local_33c",
         "offset": -828,
-        "size": 1,
-        "type": "undefined"
+        "size": 312,
+        "type": "undefined4[78]"
       },
       {
         "is_param": false,
         "name": "local_204",
         "offset": -516,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_203",
-        "offset": -515,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_104",
         "offset": -260,
-        "size": 1,
-        "type": "undefined"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_a0",
         "offset": -160,
-        "size": 1,
-        "type": "undefined"
+        "size": 92,
+        "type": "undefined1[92]"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
+        "size": 36,
+        "type": "_tm"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -568,7 +491,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 118,
       "match": "(CPodAuditRecord *)((int)",
       "severity": "mild",
       "text": "pCVar8 = (CPodAuditRecord *)((int)pCVar8 + (uint)bVar10 * -8 + 4);",

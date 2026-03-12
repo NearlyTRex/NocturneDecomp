@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 207,
+    "complexity_score": 172,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 52,
-    "suspect_count": 14,
+    "pseudocode_lines": 47,
+    "suspect_count": 11,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 179
+    "total_lines": 174
   },
   "cross_references": [
     {
@@ -127,46 +127,18 @@
     "pcode_op_count": 492
   },
   "stack_frame": {
-    "frame_size": 104,
-    "local_size": 96,
+    "frame_size": 108,
+    "local_size": 100,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_5c",
-        "offset": -92,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
+        "name": "SStack_60",
+        "offset": -96,
+        "size": 24,
+        "type": "SMRGLHeaderPrimitive"
       },
       {
         "is_param": false,
@@ -194,14 +166,14 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -230,106 +202,82 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 27,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x14) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "local_48 = *(uint *)((int)(pCVar1->uv_coords + -2) + iVar3 + 4);",
+      "text": "if (*(int *)((int)pCVar2->edge_perpendiculars + iVar3 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 31,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "local_3c = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "local_30 = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar3 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -8) *",
+      "text": "(int)ROUND(ROUND(*(float *)((int)pCVar2->edge_perpendiculars + iVar3 + -0x10) *",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 31,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -8) *",
+      "text": "(int)ROUND(ROUND(*(float *)((int)pCVar2->edge_perpendiculars + iVar3 + -0x10) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 31,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_18 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -8) *",
+      "text": "(int)ROUND(ROUND(*(float *)((int)pCVar2->edge_perpendiculars + iVar3 + -0x10) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 33,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x10) *",
+      "text": "(int)ROUND(ROUND(*(float *)((int)(pCVar2->edge_perpendiculars + -1) + iVar3) *",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 33,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x10) *",
+      "text": "(int)ROUND(ROUND(*(float *)((int)(pCVar2->edge_perpendiculars + -1) + iVar3) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 33,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND(*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x10) *",
+      "text": "(int)ROUND(ROUND(*(float *)((int)(pCVar2->edge_perpendiculars + -1) + iVar3) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 35,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "(int)ROUND(ROUND(*(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar3) *",
+      "text": "(int)ROUND(ROUND(*(float *)((int)pCVar2->edge_perpendiculars + iVar3 + -8) *",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 35,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(int)ROUND(ROUND(*(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar3) *",
+      "text": "(int)ROUND(ROUND(*(float *)((int)pCVar2->edge_perpendiculars + iVar3 + -8) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 35,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(int)ROUND(ROUND(*(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar3) *",
+      "text": "(int)ROUND(ROUND(*(float *)((int)pCVar2->edge_perpendiculars + iVar3 + -8) *",
       "type": "decompiler_intrinsic"
     }
   ]

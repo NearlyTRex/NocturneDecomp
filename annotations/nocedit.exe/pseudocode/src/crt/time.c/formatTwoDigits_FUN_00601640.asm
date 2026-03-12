@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   position
 ; char *           Stack[0xc]:4   buffer
 ; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; char             Stack[-0xc]:1  local_c
+; char             Stack[-0x8]:1  local_8
 ;
 ; XREF[1]:
 ;   crt_time.c_asctimeFormat_FUN_00601678 at 00601703

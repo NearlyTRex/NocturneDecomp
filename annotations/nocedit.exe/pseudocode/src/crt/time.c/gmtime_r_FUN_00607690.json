@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 165,
+    "complexity_score": 167,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 47,
     "suspect_count": 11,
     "suspect_types": [
       "special_crt_function",
       "unnamed_param"
     ],
-    "total_lines": 187
+    "total_lines": 189
   },
   "cross_references": [
     {
@@ -111,7 +111,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "short *"
       },
       {
         "is_param": true,
@@ -147,7 +147,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 22,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[2] = (int)(((ulonglong)seconds % 0x15180) / 0xe10);",
@@ -155,7 +155,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 24,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[1] = (int)(uVar1 / 0x3c);",
@@ -163,7 +163,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 25,
       "match": "param_4",
       "severity": "mild",
       "text": "*param_4 = (int)(uVar1 % 0x3c);",
@@ -171,7 +171,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 35,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[5] = uVar2;",
@@ -179,7 +179,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 36,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[7] = uVar4;",
@@ -187,23 +187,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[4] = uVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4[3] = (uVar4 - (int)local_14[uVar2]) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 46,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_4[4] = uVar3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_4[3] = (uVar4 - (int)local_14[uVar3]) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 48,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4[6] = (uVar5 + 1) % 7;",
@@ -211,7 +211,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 49,
       "match": "param_4",
       "severity": "mild",
       "text": "return param_4;",

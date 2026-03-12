@@ -7,9 +7,11 @@
 ; CPoly *          Stack[0x4]:4   this_ptr
 ; CPoly *          Stack[0x8]:4   other
 ; Local Variables:
-; undefined1       Stack[-0x74]:1  local_74
-; undefined1       Stack[-0x44]:1  local_44
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3d        Stack[-0x74]:24  local_74
+; CVector3d        Stack[-0x5c]:24  CStack_5c
+; CVector2d        Stack[-0x44]:16  local_44
+; CVector2d        Stack[-0x2c]:16  CStack_2c
+; CPoly_vtable *   Stack[-0x14]:4  local_14
 ;
 ; *****************************************************************************
 

@@ -9,9 +9,9 @@
 void __cdecl shape_design_c_weldNearbyVertices_FUN_00465c50(int polygon_index,float tolerance)
 
 {
-  uint uVar1;
   int local_1c;
   uint local_18;
+  uint uVar1;
   
   for (local_1c = 0; local_1c < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
       local_1c = local_1c + 1) {

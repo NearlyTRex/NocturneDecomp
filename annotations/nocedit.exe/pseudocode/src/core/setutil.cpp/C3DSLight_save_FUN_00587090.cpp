@@ -9,8 +9,10 @@
 void __cdecl core_setutil_cpp_C3DSLight_save_FUN_00587090(C3DSLight *this_ptr,_FILE *file_ptr)
 
 {
+  C3DSLight *pCVar2;
   C3DSLight *pCVar1;
   int iVar2;
+  int iVar3;
   
   _fprintf(file_ptr,"-- light name ------------------------\n");
   _fprintf(file_ptr,"%s\n");
@@ -38,13 +40,13 @@ void __cdecl core_setutil_cpp_C3DSLight_save_FUN_00587090(C3DSLight *this_ptr,_F
   _fprintf(file_ptr,"blendFilter\n");
   _fprintf(file_ptr,"%d\n");
   iVar2 = 0;
-  pCVar1 = this_ptr;
+  pCVar2 = this_ptr;
   if (0 < this_ptr->filter_count) {
     do {
-      _fprintf(file_ptr,"%f,%d,%s\n",(double)pCVar1->filter_durations[0],
-                 pCVar1->filter_indices[0]);
+      _fprintf(file_ptr,"%f,%d,%s\n",(double)pCVar2->filter_durations[0],
+                 pCVar2->filter_indices[0]);
       iVar2 = iVar2 + 1;
-      pCVar1 = (C3DSLight *)pCVar1->name;
+      pCVar2 = (C3DSLight *)pCVar2->name;
     } while (iVar2 < this_ptr->filter_count);
   }
   _fprintf(file_ptr,"filterFrame\n");
@@ -59,13 +61,13 @@ void __cdecl core_setutil_cpp_C3DSLight_save_FUN_00587090(C3DSLight *this_ptr,_F
     pCVar1 = (C3DSLight *)((int)&pCVar1->light_type + 1);
   } while (pCVar1 != (C3DSLight *)(this_ptr->name + 0xf6));
   _fprintf(file_ptr,"%d\n");
-  iVar2 = 0;
+  iVar3 = 0;
   do {
     if (this_ptr->visible_flags[0] != '\0') {
       _fprintf(file_ptr,"%d,%d,%d,%d,%d\n");
     }
-    iVar2 = iVar2 + 1;
+    iVar3 = iVar3 + 1;
     this_ptr = (C3DSLight *)((int)&this_ptr->light_type + 1);
-  } while (iVar2 < 0xfa);
+  } while (iVar3 < 0xfa);
   return;
 }

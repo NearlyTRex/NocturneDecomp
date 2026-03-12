@@ -1,55 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 38,
-        "message": "use of undeclared identifier 'stack0xffffffa0'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 28,
-        "line": 50,
-        "message": "use of undeclared identifier 'stack0xffffffa8'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 29,
-        "line": 51,
-        "message": "use of undeclared identifier 'stack0xffffffac'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 21,
-        "line": 54,
-        "message": "use of undeclared identifier 'stack0xffffffac'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 17,
-        "line": 68,
-        "message": "use of undeclared identifier 'stack0xffffffc0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 156,
+    "complexity_score": 99,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 71,
-    "suspect_count": 7,
+    "pseudocode_lines": 69,
+    "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array",
-      "stack_ref"
+      "stack_alignment_array"
     ],
-    "total_lines": 225
+    "total_lines": 223
   },
   "cross_references": [
     {
@@ -126,25 +94,32 @@
     "pcode_op_count": 788
   },
   "stack_frame": {
-    "frame_size": 116,
-    "local_size": 100,
+    "frame_size": 6220,
+    "local_size": 6204,
     "param_offset": 4,
     "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "afStackY_1838",
+        "offset": -6200,
+        "size": 6080,
+        "type": "float[1520]"
+      },
+      {
+        "is_param": false,
         "name": "local_60",
         "offset": -96,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
@@ -214,42 +189,35 @@
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "float[2]"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "CSkeleton *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "SPose *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SPose *"
       },
       {
         "is_param": true,
@@ -301,19 +269,11 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
+      "line": 10,
       "match": "afStackY_1838",
       "severity": "moderate",
       "text": "float afStackY_1838 [1520];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xffffffa0",
-      "severity": "moderate",
-      "text": "(int *)local_24,&stack0xffffffa0);",
-      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
@@ -322,38 +282,6 @@
       "severity": "mild",
       "text": "puVar9 = (uint *)((int)local_18 + (uint)bVar11 * -8 + 0x10);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 43,
-      "match": "&stack0xffffffa8",
-      "severity": "moderate",
-      "text": "*puVar9 = *(uint *)(&stack0xffffffa8 + (uint)bVar11 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0xffffffac",
-      "severity": "moderate",
-      "text": "*puVar10 = *(uint *)(&stack0xffffffac + (uint)bVar11 * -8 + (uint)bVar11 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xffffffac",
-      "severity": "moderate",
-      "text": "((int)(&stack0xffffffac + (uint)bVar11 * -8 + (uint)bVar11 * -8) +",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 61,
-      "match": "&stack0xffffffc0",
-      "severity": "moderate",
-      "text": "if ((SPose *)&stack0xffffffc0 != output_bone_data) {",
-      "type": "stack_ref"
     }
   ]
 }

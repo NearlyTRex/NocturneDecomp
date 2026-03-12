@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   part_names
 ; int *            Stack[0xc]:4   part_mask
 ; Local Variables:
-; undefined1       Stack[-0x74]:1  local_74
-; undefined4       Stack[-0x10]:4  local_10
+; char[100]        Stack[-0x74]:100  local_74
+; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055c881

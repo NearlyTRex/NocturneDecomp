@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   format
 ; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
+; undefined1 *     Stack[-0x8]:4  local_8
 ;
 ; XREF[11]:
 ;   shape_superopt.cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590 at 005cb062

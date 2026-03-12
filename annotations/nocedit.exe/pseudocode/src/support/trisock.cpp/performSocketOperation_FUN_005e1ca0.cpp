@@ -10,6 +10,7 @@ int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(_SOCKET *soc
 
 {
   int iVar1;
+  int iVar2;
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
@@ -31,6 +32,6 @@ int __cdecl support_trisock_cpp_performSocketOperation_FUN_005e1ca0(_SOCKET *soc
        *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);
   *puVar3 = *puVar2;
   puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
-  iVar1 = sendto(*socket_handle,buffer,length,0,(SOCKADDR *)&local_1c,0x10);
-  return iVar1;
+  iVar2 = sendto(*socket_handle,buffer,length,0,(SOCKADDR *)&local_1c,0x10);
+  return iVar2;
 }

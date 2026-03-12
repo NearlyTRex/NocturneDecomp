@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 454,
-    "complexity_score": 758,
+    "complexity_score": 763,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 55,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 268,
+    "pseudocode_lines": 273,
     "suspect_count": 48,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 722
+    "total_lines": 727
   },
   "cross_references": [
     {
@@ -425,46 +425,53 @@
     "pcode_op_count": 2673
   },
   "stack_frame": {
-    "frame_size": 84,
-    "local_size": 72,
+    "frame_size": 172,
+    "local_size": 160,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "aiStack_9c",
+        "offset": -156,
+        "size": 88,
+        "type": "int[22]"
+      },
+      {
+        "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "float *"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "double[18] *"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "double *"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "double[36] *"
       },
       {
         "is_param": false,
@@ -478,49 +485,49 @@
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -548,7 +555,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 41,
+      "line": 54,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);",
@@ -556,242 +563,218 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 56,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "*(double *)((int)g_Mp3WindowTables[0] + iVar11) = (double)fVar14;",
+      "text": "*(double *)((int)g_Mp3WindowTables[0] + iVar16) = (double)fVar14;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 64,
       "match": "fsin",
       "severity": "mild",
-      "text": "fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);",
+      "text": "fVar21 = (float10)fsin(((float10)iVar15 + fVar20) * fVar19);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 66,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "*(double *)((int)g_Mp3WindowTables[1] + iVar11) = (double)fVar14;",
+      "text": "*(double *)((int)g_Mp3WindowTables[1] + iVar16) = (double)fVar21;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 72,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar11 + 4) = 0x3ff00000;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar16 + 4) = 0x3ff00000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 73,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar11) = 0;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar16) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 82,
       "match": "fsin",
       "severity": "mild",
-      "text": "fVar15 = (float10)fsin(((float10)iVar10 + fVar14 + fVar13) * fVar12);",
+      "text": "fVar15 = (float10)fsin(((float10)iVar15 + fVar21 + fVar20) * fVar19);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "*(double *)((int)g_Mp3WindowTables[1] + iVar11) = (double)fVar15;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar11) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar11 + 4) = 0;",
-      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 84,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)g_Mp3WindowTables[3] + iVar11) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 85,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)g_Mp3WindowTables[3] + iVar11 + 4) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
-      "match": "fsin",
-      "severity": "mild",
-      "text": "fVar15 = (float10)fsin(((float10)iVar10 + fVar14 + fVar13) * fVar12);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 96,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "*(double *)((int)g_Mp3WindowTables[3] + iVar11) = (double)fVar15;",
+      "text": "*(double *)((int)g_Mp3WindowTables[1] + iVar16) = (double)fVar15;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 90,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_Mp3WindowTables[3] + iVar11 + 4) = 0x3ff00000;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar16) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 91,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_Mp3WindowTables[3] + iVar11) = 0;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[1] + iVar16 + 4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_Mp3WindowTables[3] + iVar16) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 98,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_Mp3WindowTables[3] + iVar16 + 4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
+      "line": 107,
       "match": "fsin",
       "severity": "mild",
-      "text": "fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);",
+      "text": "fVar22 = (float10)fsin(((float10)iVar15 + fVar21 + fVar20) * fVar19);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 109,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "*(double *)((int)g_Mp3WindowTables[3] + iVar11) = (double)fVar14;",
+      "text": "*(double *)((int)g_Mp3WindowTables[3] + iVar16) = (double)fVar22;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 115,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_Mp3WindowTables[3] + iVar16 + 4) = 0x3ff00000;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 116,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_Mp3WindowTables[3] + iVar16) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 124,
       "match": "fsin",
       "severity": "mild",
-      "text": "fVar14 = (float10)fsin(((float10)iVar10 + fVar13) * fVar12);",
+      "text": "fVar21 = (float10)fsin(((float10)iVar15 + fVar20) * fVar19);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 126,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "*(double *)((int)g_Mp3WindowTables[2] + iVar11) = (double)fVar14;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 129,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)g_Mp3WindowTables[2] + iVar11) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 130,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)g_Mp3WindowTables[2] + iVar11 + 4) = 0;",
+      "text": "*(double *)((int)g_Mp3WindowTables[3] + iVar16) = (double)fVar21;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
-      "match": "fcos",
+      "line": 134,
+      "match": "fsin",
       "severity": "mild",
-      "text": "fVar13 = (float10)fcos((float10)iVar8 * (float10)(iVar11 + 6) * fVar12);",
+      "text": "fVar21 = (float10)fsin(((float10)iVar15 + fVar20) * fVar19);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 136,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "*(double *)((int)g_Mp3WindowTables[2] + iVar16) = (double)fVar21;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 142,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_Mp3WindowTables[2] + iVar16) = 0;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 143,
-      "match": "(double *)((int)",
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(double *)((int)g_Mp3DctMatrix[0] + iVar10) = (double)fVar13;",
+      "text": "*(uint *)((int)g_Mp3WindowTables[2] + iVar16 + 4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 158,
+      "line": 153,
       "match": "fcos",
       "severity": "mild",
-      "text": "fVar13 = (float10)fcos((float10)(iVar10 % 0x90) * fVar12);",
+      "text": "fVar20 = (float10)fcos((float10)iVar8 * (float10)(iVar11 + 6) * fVar19);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 155,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "*(double *)((int)g_Mp3PolyCoefficients[0] + iVar11) = (double)fVar13;",
+      "text": "*(double *)((int)g_Mp3DctMatrix[0] + iVar16) = (double)fVar20;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 175,
-      "match": "ABS",
+      "line": 169,
+      "match": "fcos",
       "severity": "mild",
-      "text": "if ((float)1.0000000000000001e-05 < ABS(input_samples[iVar11])) {",
+      "text": "fVar20 = (float10)fcos((float10)(iVar15 % 0x90) * fVar19);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 209,
+      "line": 172,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar1 = (double *)((int)g_Mp3DctMatrix[0] + iVar11);",
+      "text": "*(double *)((int)g_Mp3PolyCoefficients[0] + iVar16) = (double)fVar20;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 185,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if ((float)1.0000000000000001e-05 < ABS(input_samples[iVar16])) {",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
       "line": 214,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar2 = (double *)((int)g_Mp3WindowTables[2] + iVar10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 217,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pfVar9[6] = (input_samples[0xf] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar7) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 218,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "input_samples[0xc] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar6) +",
+      "text": "pdVar1 = (double *)((int)g_Mp3DctMatrix[0] + iVar16);",
       "type": "pointer_cast"
     },
     {
@@ -799,15 +782,7 @@
       "line": 219,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "input_samples[9] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar5) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 220,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "input_samples[6] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar4) +",
+      "text": "pdVar2 = (double *)((int)g_Mp3WindowTables[2] + iVar15);",
       "type": "pointer_cast"
     },
     {
@@ -815,15 +790,39 @@
       "line": 222,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "input_samples[3] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar8)) *",
+      "text": "pfVar17[6] = (input_samples[0xf] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar7) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 231,
+      "line": 223,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar1 = (double *)((int)g_Mp3DctMatrix[0] + iVar11);",
+      "text": "input_samples[0xc] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar6) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 224,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "input_samples[9] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar5) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 225,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "input_samples[6] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar4) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 227,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "input_samples[3] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar18)) *",
       "type": "pointer_cast"
     },
     {
@@ -831,23 +830,7 @@
       "line": 236,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar2 = (double *)((int)g_Mp3WindowTables[2] + iVar10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 239,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pfVar9[0xc] = (input_samples[0x10] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar7) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 240,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "input_samples[0xd] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar6) +",
+      "text": "pdVar3 = (double *)((int)g_Mp3DctMatrix[0] + iVar16);",
       "type": "pointer_cast"
     },
     {
@@ -855,15 +838,7 @@
       "line": 241,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "input_samples[10] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar5) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 242,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "input_samples[7] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar4) +",
+      "text": "pdVar4 = (double *)((int)g_Mp3WindowTables[2] + iVar15);",
       "type": "pointer_cast"
     },
     {
@@ -871,15 +846,39 @@
       "line": 244,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "input_samples[4] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar8)) *",
+      "text": "pfVar9[0xc] = (input_samples[0x10] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar14) +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 252,
+      "line": 245,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar1 = (double *)((int)g_Mp3DctMatrix[0] + iVar11);",
+      "text": "input_samples[0xd] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar13) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 246,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "input_samples[10] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar12) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 247,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "input_samples[7] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar9) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 249,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "input_samples[4] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar18)) *",
       "type": "pointer_cast"
     },
     {
@@ -887,15 +886,7 @@
       "line": 257,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar2 = (double *)((int)g_Mp3WindowTables[2] + iVar10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 261,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "(input_samples[0x11] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar7) +",
+      "text": "pdVar3 = (double *)((int)g_Mp3DctMatrix[0] + iVar16);",
       "type": "pointer_cast"
     },
     {
@@ -903,23 +894,7 @@
       "line": 262,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "input_samples[0xe] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar6) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 263,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "input_samples[0xb] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar5) +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 264,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "input_samples[8] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar4) +",
+      "text": "pdVar4 = (double *)((int)g_Mp3WindowTables[2] + iVar15);",
       "type": "pointer_cast"
     },
     {
@@ -927,7 +902,39 @@
       "line": 266,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "input_samples[5] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar8)) * (float)*pdVar2 +",
+      "text": "(input_samples[0x11] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar14) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 267,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "input_samples[0xe] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar13) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 268,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "input_samples[0xb] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar12) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 269,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "input_samples[8] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar9) +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 271,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "input_samples[5] * (float)*(double *)((int)g_Mp3DctMatrix[0] + iVar18)) * (float)*pdVar4 +",
       "type": "pointer_cast"
     }
   ]

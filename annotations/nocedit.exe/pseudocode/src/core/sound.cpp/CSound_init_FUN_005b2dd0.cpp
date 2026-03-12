@@ -10,6 +10,7 @@ void __cdecl core_sound_cpp_CSound_init_FUN_005b2dd0(CSound *this_ptr)
 
 {
   int iVar1;
+  int iVar2;
   float fVar2;
   
   CVector3f_03f6af7c.x = 0.0;
@@ -31,8 +32,8 @@ void __cdecl core_sound_cpp_CSound_init_FUN_005b2dd0(CSound *this_ptr)
   g_CurrentVolumeMultiplier = 1.0;
   g_TargetVolumeMultiplier = 1.0;
   g_VolumeFadeTimeRemaining = 0.0;
-  iVar1 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(0);
-  if (iVar1 == 0) {
+  iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(0);
+  if (iVar2 == 0) {
     sound_sndmain_cpp_enableSfxChannel_FUN_005a9e20(3,0);
   }
   else {

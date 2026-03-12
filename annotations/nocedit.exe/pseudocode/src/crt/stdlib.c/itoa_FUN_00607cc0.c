@@ -9,25 +9,27 @@
 char * __cdecl itoa(int value,char *buffer,int base)
 
 {
-  char cVar1;
+  uint uVar1;
   char *pcVar2;
   char *pcVar3;
   char local_37 [35];
   uint local_14;
+  char cVar1;
   
   pcVar2 = local_37;
   do {
-    local_14 = (uint)value / (uint)base;
+    uVar1 = (uint)value / (uint)base;
     *pcVar2 = "0123456789abcdefghijklmnopqrstuvwxyz"[(uint)value % (uint)base];
     pcVar2 = pcVar2 + 1;
-    value = local_14;
+    value = uVar1;
     pcVar3 = buffer;
-  } while (local_14 != 0);
+  } while (uVar1 != 0);
   do {
+    pcVar3 = pcVar3 + 1;
     cVar1 = pcVar2[-1];
     pcVar2 = pcVar2 + -1;
     *pcVar3 = cVar1;
-    pcVar3 = pcVar3 + 1;
+    pcVar3 = pcVar3;
   } while (cVar1 != '\0');
   return buffer;
 }

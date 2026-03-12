@@ -9,9 +9,7 @@
 int __cdecl core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,int *out_damage)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
+  float fVar4;
   int iVar4;
   CExplosion *pCVar5;
   float local_48;
@@ -19,6 +17,9 @@ int __cdecl core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90(CFireEff
   float local_40;
   CVector3f local_3c [2];
   float local_24 [5];
+  float fVar1;
+  float fVar2;
+  float fVar3;
   
   pCVar5 = g_ExplosionPool;
   iVar4 = 0;
@@ -32,11 +33,11 @@ int __cdecl core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90(CFireEff
       fVar1 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);
       if (fVar1 < pCVar5->scale * (float)0.5 + radius) {
         if (out_force_dir != (CVector3f *)0x0) {
-          fVar1 = 1.0 / fVar1;
-          fVar2 = local_44 * fVar1 * 40.0f;
-          fVar3 = local_40 * fVar1 * 40.0f;
+          fVar4 = 1.0 / fVar1;
+          fVar2 = local_44 * fVar4 * 40.0f;
+          fVar3 = local_40 * fVar4 * 40.0f;
           if (local_3c != out_force_dir) {
-            out_force_dir->x = local_48 * fVar1 * 40.0f;
+            out_force_dir->x = local_48 * fVar4 * 40.0f;
             out_force_dir->y = fVar2;
             out_force_dir->z = fVar3;
           }

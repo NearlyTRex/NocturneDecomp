@@ -10,6 +10,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0(CPacke
 
 {
   int iVar1;
+  int iVar2;
   char *pcVar2;
   int *piVar3;
   int local_2c [6];
@@ -18,11 +19,11 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0(CPacke
   pcVar2 = "PBM\032PBG\032";
   piVar3 = local_2c;
   for (iVar1 = 1; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *piVar3 = *(uint *)pcVar2;
-    pcVar2 = pcVar2 + 4;
-    piVar3 = (int *)((int)piVar3 + 4);
+    *piVar3 = *(int *)pcVar2;
+    pcVar2 = (char *)((int)pcVar2 + 4);
+    piVar3 = piVar3 + 1;
   }
-  for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
+  for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(char *)piVar3 = *pcVar2;
     pcVar2 = pcVar2 + 1;
     piVar3 = (int *)((int)piVar3 + 1);
@@ -32,7 +33,6 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0(CPacke
   local_2c[3] = 0;
   local_2c[4] = 0;
   local_2c[5] = this_ptr->width + -1;
-  local_14 = this_ptr->height + -1;
   _fwrite(local_2c,0x1c,1,file_handle);
   _fwrite(this_ptr->row_pointers,4,this_ptr->height + 1,file_handle);
   _fwrite(this_ptr->packed_data,(SIZE_T)this_ptr->row_pointers[this_ptr->height],1,file_handle);

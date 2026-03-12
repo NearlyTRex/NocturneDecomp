@@ -9,6 +9,8 @@
 char * __watcallStack asctimeFormat(_tm *timeptr,char *buffer)
 
 {
+  char cVar2;
+  int iVar3;
   char cVar1;
   int iVar2;
   
@@ -18,12 +20,12 @@ char * __watcallStack asctimeFormat(_tm *timeptr,char *buffer)
   cVar1 = g_WeekdayThirdInitial[iVar2];
   buffer[3] = ' ';
   buffer[2] = cVar1;
-  iVar2 = timeptr->tm_mon;
-  buffer[4] = g_MonthInitial[iVar2];
-  buffer[5] = g_MonthSecondInitial[iVar2];
-  cVar1 = g_MonthThirdInitial[iVar2];
+  iVar3 = timeptr->tm_mon;
+  buffer[4] = g_MonthInitial[iVar3];
+  buffer[5] = g_MonthSecondInitial[iVar3];
+  cVar2 = g_MonthThirdInitial[iVar3];
   buffer[7] = ' ';
-  buffer[6] = cVar1;
+  buffer[6] = cVar2;
   formatTwoDigits(timeptr->tm_mday,8,buffer);
   if (buffer[8] == '0') {
     buffer[8] = ' ';
@@ -35,9 +37,9 @@ char * __watcallStack asctimeFormat(_tm *timeptr,char *buffer)
   buffer[0x10] = ':';
   formatTwoDigits(timeptr->tm_sec,0x11,buffer);
   buffer[0x13] = ' ';
-  iVar2 = timeptr->tm_year;
-  formatTwoDigits(iVar2 / 100 + 0x13,0x14,buffer);
-  formatTwoDigits(iVar2 % 100,0x16,buffer);
+  iVar3 = timeptr->tm_year;
+  formatTwoDigits(iVar3 / 100 + 0x13,0x14,buffer);
+  formatTwoDigits(iVar3 % 100,0x16,buffer);
   buffer[0x18] = '\n';
   buffer[0x19] = '\0';
   return buffer;

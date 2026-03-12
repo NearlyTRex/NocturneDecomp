@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined4       Stack[-0x148]:4  local_148
-; undefined1       Stack[-0x144]:1  local_144
-; undefined8       Stack[-0x18]:8  local_18
+; char[300]        Stack[-0x144]:300  local_144
+; double           Stack[-0x18]:8  local_18
 ;
 ; XREF[2]:
 ;   core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50 at 0053afe4

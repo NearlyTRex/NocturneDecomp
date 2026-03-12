@@ -7,12 +7,14 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; CVector3i *      Stack[0x8]:4   input_ptr
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; int[1017]        Stack[-0x1018]:4068  aiStackY_1018
+; int              Stack[-0x30]:4  iStack_30
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[5]:
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10 at 0044e265

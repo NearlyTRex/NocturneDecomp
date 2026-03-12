@@ -7,8 +7,8 @@
 ; CGhoul *         Stack[0x4]:4   this_ptr
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
-; undefined1       Stack[-0x78]:1  local_78
-; undefined4       Stack[-0x14]:4  local_14
+; char[100]        Stack[-0x78]:100  local_78
+; float            Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_go_berzerk_0062de82

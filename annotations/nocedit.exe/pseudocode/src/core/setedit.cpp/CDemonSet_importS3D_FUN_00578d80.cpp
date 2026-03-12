@@ -9,10 +9,12 @@
 void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_ptr,_FILE *file_handle)
 
 {
-  CEditorTools *this_ptr_00;
+  int iVar4;
   uchar triangle_flags;
   int iVar1;
   int iVar2;
+  int iVar5;
+  int iVar6;
   int iVar3;
   uint uVar4;
   _FILE *file;
@@ -20,13 +22,21 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   C3DSCamera *pCVar6;
   CDemonSet *pCVar7;
   int iVar8;
+  CDemonSet *pCVar8;
   C3DSLight *pCVar9;
+  C3DSLight *pCVar10;
+  C3DSCamera *pCVar11;
   char *pcVar10;
   char *pcVar11;
+  char *pcVar12;
+  char *pcVar13;
   char (*pacVar12) [40];
   uint *puVar13;
+  char (*pacVar14) [40];
   float *pfVar14;
+  int *piVar15;
   CDemonFilter **ppCVar15;
+  int *piVar16;
   C3DSLight *dest;
   uint *puVar16;
   uint *puVar17;
@@ -81,6 +91,7 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   C3DSLight *local_1c;
   int local_18;
   char local_14 [4];
+  CEditorTools *this_ptr_00;
   
   bVar22 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -108,13 +119,13 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
     return;
   }
   if (((local_68 == 0) && (this_ptr->light_count < 1)) &&
-     (iVar1 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                        (g_CEditorToolsPtr,"There are currently no lights currently in the set, and you have chosen not to import any.  Continue anyway?"), iVar1 == 0)) {
+     (iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+                        (g_CEditorToolsPtr,"There are currently no lights currently in the set, and you have chosen not to import any.  Continue anyway?"), iVar5 == 0)) {
     return;
   }
   if (((local_6c == 0) && (this_ptr->camera_count < 1)) &&
-     (iVar1 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                        (g_CEditorToolsPtr,"There are currently no cameras currently in the set, and you have chosen not to import any.  Continue anyway?"), iVar1 == 0)) {
+     (iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+                        (g_CEditorToolsPtr,"There are currently no cameras currently in the set, and you have chosen not to import any.  Continue anyway?"), iVar5 == 0)) {
     return;
   }
   local_64 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
@@ -124,9 +135,9 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Reading S3D header, parts, and materials");
   do {
-    iVar1 = _fgetc(file_handle);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
+    iVar5 = _fgetc(file_handle);
+    if (iVar5 < 0) break;
+  } while (iVar5 != 10);
   _fscanf(file_handle,"%d\n",&local_5c);
   if (local_5c != 0x67) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
@@ -134,9 +145,9 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't import S3D file version %d, I can only do version %d.",local_5c,0x67);
   }
   do {
-    iVar1 = _fgetc(file_handle);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
+    iVar5 = _fgetc(file_handle);
+    if (iVar5 < 0) break;
+  } while (iVar5 != 10);
   _fscanf(file_handle,"%d,%d,%d,%d,%d,%d,%d\n",&local_58,&local_54,&local_50,&local_48,&local_4c,
              &local_44,&local_40);
   if (local_4c != 1) {
@@ -152,24 +163,24 @@ void __cdecl core_setedit_cpp_CDemonSet_importS3D_FUN_00578d80(CDemonSet *this_p
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Skipping part list");
   do {
-    iVar1 = _fgetc(file_handle);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
-  iVar1 = 0;
+    iVar5 = _fgetc(file_handle);
+    if (iVar5 < 0) break;
+  } while (iVar5 != 10);
+  iVar5 = 0;
   if (0 < local_48) {
 LAB_00578fc0:
     do {
-      iVar2 = _fgetc(file_handle);
-      if (-1 < iVar2) {
-        if (iVar2 != 10) goto LAB_00578fc0;
+      iVar6 = _fgetc(file_handle);
+      if (-1 < iVar6) {
+        if (iVar6 != 10) goto LAB_00578fc0;
       }
-      iVar1 = iVar1 + 1;
-    } while (iVar1 < local_48);
+      iVar5 = iVar5 + 1;
+    } while (iVar5 < local_48);
   }
   do {
-    iVar1 = _fgetc(file_handle);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
+    iVar5 = _fgetc(file_handle);
+    if (iVar5 < 0) break;
+  } while (iVar5 != 10);
   if (local_78 != 0) {
     local_34 = _ftell(file_handle);
     local_28 = this_ptr->geometry_filename;
@@ -186,11 +197,11 @@ LAB_00578fc0:
         g_CurrentLineNumber = 0x4cc;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Too many textures!");
       }
-      iVar1 = 0;
+      iVar5 = 0;
       local_2c = 0;
       local_30 = 0;
       if (0 < local_58) {
-        iVar2 = 0;
+        iVar6 = 0;
         do {
           _fgets(local_5a4,0x104,file_handle);
           pcVar11 = local_5a4;
@@ -205,18 +216,18 @@ LAB_00578fc0:
           pcVar10 = (char *)0x0;
 LAB_0057979a:
           if (pcVar10 != (char *)0x0) {
-            pcVar11 = local_5a4;
+            pcVar13 = local_5a4;
             do {
-              pcVar10 = pcVar11;
-              if (*pcVar11 == '\n') goto LAB_005797bd;
-              if (*pcVar11 == '\0') break;
-              pcVar10 = pcVar11 + 1;
-              if (*pcVar10 == '\n') goto LAB_005797bd;
-              pcVar11 = pcVar11 + 2;
-            } while (*pcVar10 != '\0');
-            pcVar10 = (char *)0x0;
+              pcVar12 = pcVar13;
+              if (*pcVar13 == '\n') goto LAB_005797bd;
+              if (*pcVar13 == '\0') break;
+              pcVar12 = pcVar13 + 1;
+              if (*pcVar12 == '\n') goto LAB_005797bd;
+              pcVar13 = pcVar13 + 2;
+            } while (*pcVar12 != '\0');
+            pcVar12 = (char *)0x0;
 LAB_005797bd:
-            *pcVar10 = '\0';
+            *pcVar12 = '\0';
           }
           iVar8 = 0;
           engine_dosio_c_splitPath_FUN_00481f20
@@ -238,7 +249,7 @@ LAB_005797bd:
           }
           uVar4 = 0xffffffff;
 LAB_0057981a:
-          *(uint *)((int)&DAT_03364d18 + iVar2) = uVar4;
+          *(uint *)((int)&DAT_03364d18 + iVar6) = uVar4;
           if ((int)uVar4 < 0) {
             file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                              (local_6a8,(char *)0x0,"a+t","..\\core\\setedit.cpp",0x4e1
@@ -253,20 +264,20 @@ LAB_0057981a:
             else {
               engine_dosio_c_splitPath_FUN_00481f20
                         (local_5a4,(char *)0x0,(char *)0x0,local_3a0,(char *)0x0);
-              pcVar11 = core_ground_cpp_getGroundTypeName_FUN_004eed80(GROUND_TYPE_DEFAULT);
-              _fprintf(file,"%s, %s\n",local_3a0,pcVar11);
+              pcVar13 = core_ground_cpp_getGroundTypeName_FUN_004eed80(GROUND_TYPE_DEFAULT);
+              _fprintf(file,"%s, %s\n",local_3a0,pcVar13);
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x4eb);
             }
-            *(uint *)((int)&DAT_03364d18 + iVar2) = 0;
+            *(uint *)((int)&DAT_03364d18 + iVar6) = 0;
             core_setedit_cpp_addGroundType_FUN_00578290(local_5a4,0);
             local_30 = 1;
           }
           else if (uVar4 == 0) {
             local_2c = 1;
           }
-          iVar1 = iVar1 + 1;
-          iVar2 = iVar2 + 4;
-        } while (iVar1 < local_58);
+          iVar5 = iVar5 + 1;
+          iVar6 = iVar6 + 4;
+        } while (iVar5 < local_58);
       }
       if ((local_30 == 0) && (local_2c == 0)) goto LAB_0057904b;
       if (local_30 == 0) {
@@ -280,14 +291,14 @@ LAB_0057981a:
                 (&local_be0.base,"Edit the gound types now.");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
                 (&local_be0.base,"Just leave the default assignments for now.  I can always fix this later.");
-      iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+      iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                         (&local_be0,local_838,-1,0);
-      if (iVar1 < 0) {
+      if (iVar5 < 0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\setedit.cpp",0x516);
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_be0,0);
         return;
       }
-      if (iVar1 != 0) goto LAB_00579a7e;
+      if (iVar5 != 0) goto LAB_00579a7e;
       core_setedit_cpp_editGroundTypes_FUN_00578630(local_6a8);
       _fseek(file_handle,local_34,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_be0,0);
@@ -295,54 +306,54 @@ LAB_0057981a:
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Skipping textures");
-  iVar1 = 0;
+  iVar5 = 0;
   if (0 < local_58) {
 LAB_0057902d:
     do {
-      iVar2 = _fgetc(file_handle);
-      if (-1 < iVar2) {
-        if (iVar2 != 10) goto LAB_0057902d;
+      iVar6 = _fgetc(file_handle);
+      if (-1 < iVar6) {
+        if (iVar6 != 10) goto LAB_0057902d;
       }
-      iVar1 = iVar1 + 1;
-    } while (iVar1 < local_58);
+      iVar5 = iVar5 + 1;
+    } while (iVar5 < local_58);
   }
 LAB_0057904b:
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Skipping polygons");
   do {
-    iVar1 = _fgetc(file_handle);
-    if (iVar1 < 0) break;
-  } while (iVar1 != 10);
+    iVar5 = _fgetc(file_handle);
+    if (iVar5 < 0) break;
+  } while (iVar5 != 10);
   local_3c = _ftell(file_handle);
-  iVar1 = 0;
+  iVar5 = 0;
   if (0 < local_54) {
 LAB_005790a3:
     do {
-      iVar2 = _fgetc(file_handle);
-      if (-1 < iVar2) {
-        if (iVar2 != 10) goto LAB_005790a3;
+      iVar6 = _fgetc(file_handle);
+      if (-1 < iVar6) {
+        if (iVar6 != 10) goto LAB_005790a3;
       }
-      iVar1 = iVar1 + 1;
-    } while (iVar1 < local_54);
+      iVar5 = iVar5 + 1;
+    } while (iVar5 < local_54);
   }
   local_38 = (int *)0x0;
   if (local_78 == 0) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Locating lights");
     do {
-      iVar1 = _fgetc(file_handle);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    iVar1 = 0;
+      iVar5 = _fgetc(file_handle);
+      if (iVar5 < 0) break;
+    } while (iVar5 != 10);
+    iVar5 = 0;
     if (0 < local_50) {
 LAB_0057911a:
       do {
-        iVar2 = _fgetc(file_handle);
-        if (-1 < iVar2) {
-          if (iVar2 != 10) goto LAB_0057911a;
+        iVar6 = _fgetc(file_handle);
+        if (-1 < iVar6) {
+          if (iVar6 != 10) goto LAB_0057911a;
         }
-        iVar1 = iVar1 + 1;
-      } while (iVar1 < local_50);
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < local_50);
     }
   }
   else {
@@ -365,89 +376,89 @@ LAB_0057911a:
       core_main_c_displayErrorAndQuit_FUN_00506f10("Can't allocate memory for %d vertices",local_50);
     }
     do {
-      iVar1 = _fgetc(file_handle);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    iVar1 = 0;
+      iVar5 = _fgetc(file_handle);
+      if (iVar5 < 0) break;
+    } while (iVar5 != 10);
+    iVar5 = 0;
     if (0 < local_50) {
-      piVar5 = local_38 + 2;
-      piVar20 = local_38 + 1;
+      piVar15 = local_38 + 2;
+      piVar16 = local_38 + 1;
       do {
-        iVar2 = _fscanf(file_handle,"%f,%f,%f\n",local_38 + iVar1 * 3,piVar20,piVar5);
-        if (iVar2 != 3) {
+        iVar6 = _fscanf(file_handle,"%f,%f,%f\n",local_38 + iVar5 * 3,piVar16,piVar15);
+        if (iVar6 != 3) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0x54f;
           core_main_c_displayErrorAndQuit_FUN_00506f10
-                    ("File is corrupt on vertex %d of %d",iVar1,local_50);
+                    ("File is corrupt on vertex %d of %d",iVar5,local_50);
         }
-        piVar20 = piVar20 + 3;
-        iVar1 = iVar1 + 1;
-        piVar5 = piVar5 + 3;
-      } while (iVar1 < local_50);
+        piVar16 = piVar16 + 3;
+        iVar5 = iVar5 + 1;
+        piVar15 = piVar15 + 3;
+      } while (iVar5 < local_50);
     }
   }
   if (local_68 == 0) {
     do {
-      iVar1 = _fgetc(file_handle);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    iVar1 = 0;
+      iVar5 = _fgetc(file_handle);
+      if (iVar5 < 0) break;
+    } while (iVar5 != 10);
+    iVar5 = 0;
     if (0 < local_44) {
 LAB_00579173:
       do {
-        iVar2 = _fgetc(file_handle);
-        if (-1 < iVar2) {
-          if (iVar2 != 10) goto LAB_00579173;
+        iVar6 = _fgetc(file_handle);
+        if (-1 < iVar6) {
+          if (iVar6 != 10) goto LAB_00579173;
         }
-        iVar1 = iVar1 + 1;
-      } while (iVar1 < local_44);
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < local_44);
     }
   }
   else {
-    iVar1 = 0;
+    iVar5 = 0;
     if (0 < this_ptr->light_count) {
       dest = this_ptr->lights;
       pCVar9 = this_ptr->lights + 1;
-      pCVar7 = this_ptr;
+      pCVar8 = this_ptr;
       do {
-        iVar2 = pCVar7->lights[0].light_type;
-        iVar8 = local_70;
-        if ((iVar2 != 0) && (iVar8 = local_74, iVar2 != 1)) {
+        iVar6 = pCVar8->lights[0].light_type;
+        iVar4 = local_70;
+        if ((iVar6 != 0) && (iVar4 = local_74, iVar6 != 1)) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0x56b;
           core_main_c_displayErrorAndQuit_FUN_00506f10
-                    ("unknown light type: %d",pCVar7->lights[0].light_type);
-          iVar8 = local_24;
+                    ("unknown light type: %d",pCVar8->lights[0].light_type);
+          iVar4 = local_24;
         }
-        local_24 = iVar8;
+        local_24 = iVar4;
         if (local_24 == 0) {
           dest = dest + 1;
           pCVar9 = pCVar9 + 1;
-          iVar1 = iVar1 + 1;
-          pCVar7 = (CDemonSet *)&pCVar7->cameras[0xe].vdir_zone;
+          iVar5 = iVar5 + 1;
+          pCVar8 = (CDemonSet *)&pCVar8->cameras[0xe].vdir_zone;
         }
         else {
-          iVar2 = this_ptr->light_count + -1;
-          this_ptr->light_count = iVar2;
-          memmove(dest,pCVar9,(iVar2 - iVar1) * 0x1898);
+          iVar6 = this_ptr->light_count + -1;
+          this_ptr->light_count = iVar6;
+          memmove(dest,pCVar9,(iVar6 - iVar5) * 0x1898);
         }
-      } while (iVar1 < this_ptr->light_count);
+      } while (iVar5 < this_ptr->light_count);
     }
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Reading lights");
     do {
-      iVar1 = _fgetc(file_handle);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
+      iVar5 = _fgetc(file_handle);
+      if (iVar5 < 0) break;
+    } while (iVar5 != 10);
     local_7c = 0;
     if (0 < local_44) {
       local_1c = this_ptr->lights;
       do {
         core_setutil_cpp_C3DSLight_ctor_FUN_005862f0(&local_2478);
         core_setutil_cpp_C3DSLight_importS3D_FUN_00587710(&local_2478,file_handle);
-        iVar1 = local_70;
-        if ((local_2478.light_type == 0) || (iVar1 = local_74, local_2478.light_type == 1)) {
-          local_20 = iVar1;
+        iVar5 = local_70;
+        if ((local_2478.light_type == 0) || (iVar5 = local_74, local_2478.light_type == 1)) {
+          local_20 = iVar5;
         }
         else {
           g_CurrentFilename = "..\\core\\setedit.cpp";
@@ -461,93 +472,99 @@ LAB_00579173:
             g_CurrentLineNumber = 0x58f;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Too many lights!");
           }
-          pCVar9 = local_1c + this_ptr->light_count;
-          pCVar9->light_type = local_2478.light_type;
-          pcVar11 = local_2478.name;
-          pcVar10 = pCVar9->name;
-          for (iVar1 = 0x40; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *(uint *)pcVar10 = *(uint *)pcVar11;
-            pcVar11 = pcVar11 + ((uint)bVar22 * -2 + 1) * 4;
-            pcVar10 = pcVar10 + (uint)bVar22 * -8 + 4;
+          pCVar10 = local_1c + this_ptr->light_count;
+          pCVar10->light_type = local_2478.light_type;
+          pcVar13 = local_2478.name;
+          pcVar12 = pCVar10->name;
+          for (iVar5 = 0x40; iVar5 != 0; iVar5 = iVar5 + -1) {
+            *(uint *)pcVar12 = *(uint *)pcVar13;
+            pcVar13 = pcVar13 + (uint)bVar22 * -8 + 4;
+            pcVar12 = pcVar12 + (uint)bVar22 * -8 + 4;
           }
-          if (&pCVar9->pos != &local_2478.pos) {
-            (pCVar9->pos).x = local_2478.pos.x;
-            (pCVar9->pos).y = local_2478.pos.y;
-            (pCVar9->pos).z = local_2478.pos.z;
+          if (&pCVar10->pos != &local_2478.pos) {
+            (pCVar10->pos).x = local_2478.pos.x;
+            (pCVar10->pos).y = local_2478.pos.y;
+            (pCVar10->pos).z = local_2478.pos.z;
           }
-          if (&pCVar9->orient != &local_2478.orient) {
-            (pCVar9->orient).x = local_2478.orient.x;
-            (pCVar9->orient).y = local_2478.orient.y;
-            (pCVar9->orient).z = local_2478.orient.z;
+          if (&pCVar10->orient != &local_2478.orient) {
+            (pCVar10->orient).x = local_2478.orient.x;
+            (pCVar10->orient).y = local_2478.orient.y;
+            (pCVar10->orient).z = local_2478.orient.z;
           }
-          pCVar9->fov = local_2478.fov;
-          pCVar9->aspect = local_2478.aspect;
-          pCVar9->intensity = local_2478.intensity;
-          pcVar11 = local_2478.visible_flags;
-          pcVar10 = pCVar9->visible_flags;
-          for (iVar1 = 0x3e; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *(uint *)pcVar10 = *(uint *)pcVar11;
-            pcVar11 = pcVar11 + ((uint)bVar22 * -2 + 1) * 4;
-            pcVar10 = pcVar10 + (uint)bVar22 * -8 + 4;
+          pCVar10->fov = local_2478.fov;
+          pCVar10->aspect = local_2478.aspect;
+          pCVar10->intensity = local_2478.intensity;
+          pcVar13 = local_2478.visible_flags;
+          pcVar12 = pCVar10->visible_flags;
+          for (iVar5 = 0x3e; iVar5 != 0; iVar5 = iVar5 + -1) {
+            *(uint *)pcVar12 = *(uint *)pcVar13;
+            pcVar13 = pcVar13 + (uint)bVar22 * -8 + 4;
+            pcVar12 = pcVar12 + (uint)bVar22 * -8 + 4;
           }
-          *(ushort *)pcVar10 = *(ushort *)pcVar11;
-          puVar16 = (uint *)((int)pCVar9 + (uint)bVar22 * -8 + 0x228);
-          pCVar9->camera_light_bounds[0].left = local_2478.camera_light_bounds[0].left;
+          *(ushort *)pcVar12 = *(ushort *)pcVar13;
+          puVar16 = (uint *)((int)pCVar10 + (uint)bVar22 * -8 + 0x228);
+          pCVar10->camera_light_bounds[0].left = local_2478.camera_light_bounds[0].left;
           puVar17 = puVar16 + (uint)bVar22 * -2 + 1;
           puVar13 = (uint *)((int)&local_2478 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 0x22c)
           ;
           *puVar16 = *(uint *)((int)&local_2478 + (uint)bVar22 * -8 + 0x228);
           *puVar17 = *puVar13;
           puVar17[(uint)bVar22 * -2 + 1] = puVar13[(uint)bVar22 * -2 + 1];
-          (pCVar9->color).r = local_2478.color.r;
-          (pCVar9->color).g = local_2478.color.g;
-          (pCVar9->color).b = local_2478.color.b;
-          pCVar9->atten_start = local_2478.atten_start;
-          pCVar9->atten_end = local_2478.atten_end;
-          pCVar9->atten_end_squared = local_2478.atten_end_squared;
-          pCVar9->atten_end_reciprocal = local_2478.atten_end_reciprocal;
-          pCVar9->on_time = local_2478.on_time;
-          pCVar9->cycle_time = local_2478.cycle_time;
-          pCVar9->cycle_elapsed = local_2478.cycle_elapsed;
-          pCVar9->filter_count = local_2478.filter_count;
-          pCVar9->blend_filter = local_2478.blend_filter;
-          pacVar12 = local_2478.filter_names;
-          pacVar18 = pCVar9->filter_names;
-          for (iVar1 = 0x140; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *(uint *)*pacVar18 = *(uint *)*pacVar12;
-            pacVar12 = (char (*) [40])((int)pacVar12 + ((uint)bVar22 * -2 + 1) * 4);
+          (pCVar10->color).r = local_2478.color.r;
+          (pCVar10->color).g = local_2478.color.g;
+          (pCVar10->color).b = local_2478.color.b;
+          pCVar10->atten_start = local_2478.atten_start;
+          pCVar10->atten_end = local_2478.atten_end;
+          pCVar10->atten_end_squared = local_2478.atten_end_squared;
+          pCVar10->atten_end_reciprocal = local_2478.atten_end_reciprocal;
+          pCVar10->on_time = local_2478.on_time;
+          pCVar10->cycle_time = local_2478.cycle_time;
+          pCVar10->cycle_elapsed = local_2478.cycle_elapsed;
+          pCVar10->filter_count = local_2478.filter_count;
+          pCVar10->blend_filter = local_2478.blend_filter;
+          pacVar14 = local_2478.filter_names;
+          pacVar18 = pCVar10->filter_names;
+          for (iVar5 = 0x140; iVar5 != 0; iVar5 = iVar5 + -1) {
             pacVar18 = (char (*) [40])((int)pacVar18 + (uint)bVar22 * -8 + 4);
+            *(uint *)*pacVar18 = *(uint *)*pacVar14;
+            pacVar14 = (char (*) [40])((int)pacVar14 + (uint)bVar22 * -8 + 4);
+            pacVar18 = pacVar18;
           }
           pfVar14 = local_2478.filter_durations;
-          pfVar19 = pCVar9->filter_durations;
-          for (iVar1 = 0x20; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *pfVar19 = *pfVar14;
-            pfVar14 = pfVar14 + (uint)bVar22 * -2 + 1;
+          pfVar19 = pCVar10->filter_durations;
+          for (iVar5 = 0x20; iVar5 != 0; iVar5 = iVar5 + -1) {
             pfVar19 = pfVar19 + (uint)bVar22 * -2 + 1;
+            pfVar14 = pfVar14 + (uint)bVar22 * -2 + 1;
+            *pfVar19 = *pfVar14;
+            pfVar14 = pfVar14;
+            pfVar19 = pfVar19;
           }
-          piVar5 = local_2478.filter_indices;
-          piVar20 = pCVar9->filter_indices;
-          for (iVar1 = 0x20; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *piVar20 = *piVar5;
-            piVar5 = piVar5 + (uint)bVar22 * -2 + 1;
+          piVar15 = local_2478.filter_indices;
+          piVar20 = pCVar10->filter_indices;
+          for (iVar5 = 0x20; iVar5 != 0; iVar5 = iVar5 + -1) {
             piVar20 = piVar20 + (uint)bVar22 * -2 + 1;
+            *piVar20 = *piVar15;
+            piVar15 = piVar15 + (uint)bVar22 * -2 + 1;
+            piVar20 = piVar20;
           }
-          pCVar9->move_filter = local_2478.move_filter;
-          (pCVar9->filter_vel).x = local_2478.filter_vel.x;
-          (pCVar9->filter_vel).y = local_2478.filter_vel.y;
-          (pCVar9->filter_pos).x = local_2478.filter_pos.x;
-          (pCVar9->filter_pos).y = local_2478.filter_pos.y;
-          (pCVar9->size).x = local_2478.size.x;
-          (pCVar9->size).y = local_2478.size.y;
+          pCVar10->move_filter = local_2478.move_filter;
+          (pCVar10->filter_vel).x = local_2478.filter_vel.x;
+          (pCVar10->filter_vel).y = local_2478.filter_vel.y;
+          (pCVar10->filter_pos).x = local_2478.filter_pos.x;
+          (pCVar10->filter_pos).y = local_2478.filter_pos.y;
+          (pCVar10->size).x = local_2478.size.x;
+          (pCVar10->size).y = local_2478.size.y;
           ppCVar15 = local_2478.filters;
-          ppCVar21 = pCVar9->filters;
-          for (iVar1 = 0x20; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *ppCVar21 = *ppCVar15;
-            ppCVar15 = ppCVar15 + (uint)bVar22 * -2 + 1;
+          ppCVar21 = pCVar10->filters;
+          for (iVar5 = 0x20; iVar5 != 0; iVar5 = iVar5 + -1) {
             ppCVar21 = ppCVar21 + (uint)bVar22 * -2 + 1;
+            ppCVar15 = ppCVar15 + (uint)bVar22 * -2 + 1;
+            *ppCVar21 = *ppCVar15;
+            ppCVar15 = ppCVar15;
+            ppCVar21 = ppCVar21;
           }
-          pCVar9->current_filter_frame = local_2478.current_filter_frame;
-          pCVar9->filter_frame_elapsed = local_2478.filter_frame_elapsed;
+          pCVar10->current_filter_frame = local_2478.current_filter_frame;
+          pCVar10->filter_frame_elapsed = local_2478.filter_frame_elapsed;
           this_ptr->light_count = this_ptr->light_count + 1;
         }
         local_7c = local_7c + 1;
@@ -556,36 +573,36 @@ LAB_00579173:
   }
   if (local_6c == 0) {
     do {
-      iVar1 = _fgetc(file_handle);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    iVar1 = 0;
+      iVar5 = _fgetc(file_handle);
+      if (iVar5 < 0) break;
+    } while (iVar5 != 10);
+    iVar5 = 0;
     if (0 < local_40) {
 LAB_0057a07e:
       do {
-        iVar2 = _fgetc(file_handle);
-        if (-1 < iVar2) {
-          if (iVar2 != 10) goto LAB_0057a07e;
+        iVar6 = _fgetc(file_handle);
+        if (-1 < iVar6) {
+          if (iVar6 != 10) goto LAB_0057a07e;
         }
-        iVar1 = iVar1 + 1;
-      } while (iVar1 < local_40);
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < local_40);
     }
   }
   else {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Reading cameras");
     do {
-      iVar1 = _fgetc(file_handle);
-      if (iVar1 < 0) break;
-    } while (iVar1 != 10);
-    iVar1 = 0;
+      iVar5 = _fgetc(file_handle);
+      if (iVar5 < 0) break;
+    } while (iVar5 != 10);
+    iVar5 = 0;
     if (0 < local_40) {
       pCVar6 = this_ptr->cameras;
       do {
         core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(pCVar6,file_handle);
-        iVar1 = iVar1 + 1;
+        iVar5 = iVar5 + 1;
         pCVar6 = pCVar6 + 1;
-      } while (iVar1 < local_40);
+      } while (iVar5 < local_40);
     }
     this_ptr->camera_count = local_40;
   }
@@ -593,16 +610,16 @@ LAB_0057a07e:
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Reading polygons");
     _fseek(file_handle,local_3c,0);
-    iVar1 = 0;
+    iVar5 = 0;
     if (0 < local_54) {
       do {
-        iVar2 = _fscanf(file_handle,"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n",&local_18,&local_88,local_94,
+        iVar6 = _fscanf(file_handle,"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n",&local_18,&local_88,local_94,
                            local_a0,&local_84,local_90,local_9c,&local_80,local_8c,local_98);
-        if (iVar2 != 10) {
+        if (iVar6 != 10) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0x5ed;
           core_main_c_displayErrorAndQuit_FUN_00506f10
-                    ("File is corrupt on poly %d of %d",iVar1,local_54);
+                    ("File is corrupt on poly %d of %d",iVar5,local_54);
         }
         triangle_flags = '\0';
         if (-1 < local_18) {
@@ -612,8 +629,8 @@ LAB_0057a07e:
                   (&g_CDemonRaytraceInstance,(CVector3f *)(local_38 + local_88 * 3),
                    (CVector3f *)(local_38 + local_84 * 3),(CVector3f *)(local_38 + local_80 * 3),
                    triangle_flags);
-        iVar1 = iVar1 + 1;
-      } while (iVar1 < local_54);
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < local_54);
     }
     g_CurrentDebugLine = 0x601;
     g_CurrentDebugFilename = "..\\core\\setedit.cpp";
@@ -637,25 +654,25 @@ LAB_0057a07e:
     core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(this_ptr);
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Deleting possibly out-of-date fog files");
-    iVar1 = 0;
+    iVar5 = 0;
     if (0 < this_ptr->camera_count) {
-      pCVar6 = this_ptr->cameras;
+      pCVar11 = this_ptr->cameras;
       pCVar7 = this_ptr;
       do {
-        _sprintf(local_2a0,"backdrop\\%s.fog",pCVar6);
+        _sprintf(local_2a0,"backdrop\\%s.fog",pCVar11);
         remove(local_2a0);
-        _sprintf(local_2a0,"backdrop\\%s.pvs",pCVar6);
+        _sprintf(local_2a0,"backdrop\\%s.pvs",pCVar11);
         remove(local_2a0);
-        piVar5 = pCVar7->cameras[0].pvs_list;
+        piVar15 = pCVar7->cameras[0].pvs_list;
         pCVar7->cameras[0].pvs_count = 0;
-        if (piVar5 != (int *)0x0) {
-          shape_memdbg_cpp_debugFree_FUN_0050f460(piVar5,"..\\core\\setedit.cpp",0x634);
+        if (piVar15 != (int *)0x0) {
+          shape_memdbg_cpp_debugFree_FUN_0050f460(piVar15,"..\\core\\setedit.cpp",0x634);
           pCVar7->cameras[0].pvs_list = (int *)0x0;
         }
         pCVar7 = (CDemonSet *)&pCVar7->cameras[0].enabled;
-        iVar1 = iVar1 + 1;
-        pCVar6 = pCVar6 + 1;
-      } while (iVar1 < this_ptr->camera_count);
+        iVar5 = iVar5 + 1;
+        pCVar11 = pCVar11 + 1;
+      } while (iVar5 < this_ptr->camera_count);
     }
   }
   if (local_60 != 0) {

@@ -9,13 +9,14 @@
 int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(CLocation *location)
 
 {
-  int iVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
+  float fVar1;
   int iVar5;
   int iVar6;
   float local_1c;
+  float fVar4;
+  float fVar3;
+  float fVar2;
+  int iVar1;
   
   iVar6 = 0;
   local_1c = 1e+30;
@@ -27,9 +28,9 @@ int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(CLocation *location)
          (fVar2 = *(float *)(iVar1 + 0x20) - (location->position).x,
          fVar4 = *(float *)(iVar1 + 0x24) - (location->position).y,
          fVar3 = *(float *)(iVar1 + 0x28) - (location->position).z,
-         fVar2 = fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2, fVar2 < local_1c)) {
+         fVar1 = fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2, fVar1 < local_1c)) {
         iVar6 = iVar1;
-        local_1c = fVar2;
+        local_1c = fVar1;
       }
       iVar5 = iVar5 + 4;
     } while (iVar5 < g_HeroCount * 4);

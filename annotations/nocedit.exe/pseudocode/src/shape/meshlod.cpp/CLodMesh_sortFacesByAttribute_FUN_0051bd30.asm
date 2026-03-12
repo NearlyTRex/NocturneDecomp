@@ -7,27 +7,28 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   attribute_index
 ; Local Variables:
-; undefined        Stack[-0xb0]:1  local_b0
+; int[1522]        Stack[-0x189c]:6088  aiStackY_189c
+; undefined4       Stack[-0xc0]:4  uStack_c0
+; undefined4       Stack[-0xb0]:4  local_b0
 ; undefined        Stack[-0xa4]:1  local_a4
-; undefined        Stack[-0x8c]:1  local_8c
+; undefined4       Stack[-0x8c]:4  local_8c
 ; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
+; float            Stack[-0x7c]:4  local_7c
+; float            Stack[-0x78]:4  local_78
+; float            Stack[-0x74]:4  local_74
 ; undefined4       Stack[-0x70]:4  local_70
-; undefined        Stack[-0x6c]:1  local_6c
-; undefined        Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f[3]     Stack[-0x6c]:36  local_6c
+; undefined4       Stack[-0x48]:4  local_48
+; int[4]           Stack[-0x44]:16  aiStack_44
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; undefined4 *     Stack[-0x20]:4  local_20
+; undefined4 *     Stack[-0x1c]:4  local_1c
+; float *          Stack[-0x18]:4  local_18
+; undefined4 *     Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 at 0058d9fa

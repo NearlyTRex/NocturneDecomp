@@ -11,20 +11,21 @@
 void __cdecl core_bugs_cpp_CBugs_processInEditor_FUN_004278d0(CBugs *this_ptr)
 
 {
-  CLocation *pCVar1;
-  float *pfVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
+  float *pfVar1;
   SBug *bug_data;
   int iVar6;
   CVector3f local_20;
   float *local_14;
+  CLocation *pCVar1;
+  float *pfVar2;
+  float fVar5;
+  float fVar3;
+  float fVar4;
   
   pCVar1 = &(this_ptr->base).base.base.location;
   fVar3 = (pCVar1->position).x;
-  local_14 = &(this_ptr->base).base.base.location.position.y;
-  fVar4 = *local_14;
+  pfVar1 = &(this_ptr->base).base.base.location.position.y;
+  fVar4 = *pfVar1;
   pfVar2 = &(this_ptr->base).base.base.location.position.z;
   fVar5 = *pfVar2;
   core_charactr_cpp_CCharacter_processInEditor_FUN_0042f800((CCharacter *)this_ptr);
@@ -33,7 +34,7 @@ void __cdecl core_bugs_cpp_CBugs_processInEditor_FUN_004278d0(CBugs *this_ptr)
   (this_ptr->base).base.base.orient.vec.x = (this_ptr->base).base.base.orient.vec.y;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
   local_20.x = (pCVar1->position).x;
-  local_20.y = *local_14;
+  local_20.y = *pfVar1;
   local_20.z = *pfVar2;
   (pCVar1->position).x = fVar3;
   (this_ptr->base).base.base.location.position.y = fVar4;

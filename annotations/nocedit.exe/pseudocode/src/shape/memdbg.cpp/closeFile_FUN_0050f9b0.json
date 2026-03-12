@@ -4,31 +4,31 @@
       {
         "category": "format_error",
         "column": 46,
-        "line": 39,
+        "line": 40,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 64,
-        "line": 39,
+        "line": 40,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 95,
-        "line": 44,
-        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 81,
         "line": 45,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 22,
+        "column": 81,
         "line": 46,
+        "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 22,
+        "line": 47,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       }
     ],
@@ -37,17 +37,17 @@
   },
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 84,
+    "complexity_score": 85,
     "cross_reference_count": 181,
     "function_call_count": 7,
     "global_count": 23,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 60,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 239
+    "total_lines": 240
   },
   "cross_references": [
     {
@@ -1397,7 +1397,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 34,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&g_FileRegistry[0].line_number + iVar1));",
@@ -1405,7 +1405,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 40,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "iVar1 + 0x2f0db68,*(uint *)((int)&g_FileRegistry[0].line_number + iVar1))",

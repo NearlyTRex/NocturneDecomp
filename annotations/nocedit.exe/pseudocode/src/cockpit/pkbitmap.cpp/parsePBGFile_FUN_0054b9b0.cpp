@@ -13,19 +13,22 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_0054b9b0(CPackedBi
   int iVar2;
   uint uVar3;
   void *array_memory;
+  CPackedBitmap *pCVar1;
+  int iVar3;
   int iVar4;
   byte *pbVar5;
   byte *pbVar6;
+  int iVar5;
   bool bVar7;
   bool bVar8;
   byte bVar9;
-  uint element_count;
-  WatcomTypeInfo *type_info;
   CPackedBitmap local_44;
   byte local_20 [4];
   uint local_1c;
   CPackedBitmap *local_18;
   CPackedBitmap *local_14;
+  uint element_count;
+  WatcomTypeInfo *type_info;
   
   bVar9 = 0;
   do {
@@ -40,10 +43,12 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_0054b9b0(CPackedBi
       do {
         if (iVar4 == 0) break;
         iVar4 = iVar4 + -1;
+        pbVar6 = pbVar6 + (uint)bVar9 * -2 + 1;
+        pbVar5 = pbVar5 + (uint)bVar9 * -2 + 1;
         bVar7 = *pbVar5 < *pbVar6;
         bVar8 = *pbVar5 == *pbVar6;
-        pbVar5 = pbVar5 + (uint)bVar9 * -2 + 1;
-        pbVar6 = pbVar6 + (uint)bVar9 * -2 + 1;
+        pbVar5 = pbVar5;
+        pbVar6 = pbVar6;
       } while (bVar8);
       if (!bVar8) {
         iVar2 = (1 - (uint)bVar7) - (uint)(bVar7 != 0);
@@ -54,33 +59,33 @@ CPackedBitmap * __cdecl cockpit_pkbitmap_cpp_parsePBGFile_FUN_0054b9b0(CPackedBi
       element_count = uVar3;
       array_memory = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                                (uVar3 * 0x24 + 4,"..\\cockpit\\pkbitmap.cpp",0x562);
-      local_18 = __vec_new(array_memory,element_count,type_info);
-      if (local_18 != (CPackedBitmap *)0x0) {
-        iVar2 = 0;
-        local_14 = local_18;
+      pCVar1 = __vec_new(array_memory,element_count,type_info);
+      if (pCVar1 != (CPackedBitmap *)0x0) {
+        iVar5 = 0;
+        local_14 = pCVar1;
         if (0 < (int)uVar3) {
           do {
-            iVar4 = skip_data_load;
-            if ((-1 < selected_bitmap_index) && (iVar2 != selected_bitmap_index)) {
-              iVar4 = 1;
+            iVar3 = skip_data_load;
+            if ((-1 < selected_bitmap_index) && (iVar5 != selected_bitmap_index)) {
+              iVar3 = 1;
             }
-            cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(local_14,file_handle,iVar4);
-            iVar4 = 1;
+            cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(local_14,file_handle,iVar3);
+            iVar3 = 1;
             if (1 < frames_per_bitmap) {
               do {
                 cockpit_pkbitmap_cpp_CPackedBitmap_ctor_FUN_0054a820(&local_44);
                 cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(&local_44,file_handle,1)
                 ;
                 cockpit_pkbitmap_cpp_CPackedBitmap_dtor_FUN_0054a890(&local_44,0);
-                iVar4 = iVar4 + 1;
-              } while (iVar4 < frames_per_bitmap);
+                iVar3 = iVar3 + 1;
+              } while (iVar3 < frames_per_bitmap);
             }
+            iVar5 = iVar5 + 1;
             local_14 = local_14 + 1;
-            iVar2 = iVar2 + 1;
-          } while (iVar2 < (int)uVar3);
+          } while (iVar5 < (int)uVar3);
         }
         bitmap_set_ptr->bitmap_count = uVar3;
-        return local_18;
+        return pCVar1;
       }
     }
     else {

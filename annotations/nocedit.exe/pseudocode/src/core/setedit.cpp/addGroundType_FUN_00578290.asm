@@ -7,9 +7,8 @@
 ; char *           Stack[0x4]:4   filename
 ; int              Stack[0x8]:4   ground_type
 ; Local Variables:
-; undefined1       Stack[-0x20c]:1  local_20c
-; undefined1       Stack[-0x10c]:1  local_10c
-; undefined1       Stack[-0x10b]:1  local_10b
+; char[256]        Stack[-0x20c]:256  local_20c
+; char[256]        Stack[-0x10c]:256  local_10c
 ;
 ; XREF[2]:
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00579987

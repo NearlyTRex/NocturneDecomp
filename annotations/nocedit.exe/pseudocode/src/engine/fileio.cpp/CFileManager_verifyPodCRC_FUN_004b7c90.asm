@@ -7,8 +7,7 @@
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   pod_filename
 ; Local Variables:
-; undefined1       Stack[-0x108]:1  local_108
-; undefined1       Stack[-0x107]:1  local_107
+; char[256]        Stack[-0x108]:256  local_108
 ;
 ; XREF[2]:
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be485

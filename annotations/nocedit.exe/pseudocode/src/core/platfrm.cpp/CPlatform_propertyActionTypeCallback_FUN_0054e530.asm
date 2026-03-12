@@ -7,9 +7,9 @@
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ; CActorProperty * Stack[0x8]:4   property
 ; Local Variables:
-; undefined        Stack[-0x544]:1  local_544
-; undefined        Stack[-0x19c]:1  local_19c
-; undefined        Stack[-0xd4]:1  local_d4
+; CPickList        Stack[-0x544]:936  local_544
+; char[200]        Stack[-0x19c]:200  local_19c
+; char[200]        Stack[-0xd4]:200  local_d4
 ;
 ; XREF[1]:
 ;   core_platfrm.cpp_CPlatform_getPropertyList_FUN_0054e7d0 at 0054e8bc

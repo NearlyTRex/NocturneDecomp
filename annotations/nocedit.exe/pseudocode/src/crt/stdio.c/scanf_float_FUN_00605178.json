@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 344,
-    "complexity_score": 368,
+    "complexity_score": 370,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 173,
+    "pseudocode_lines": 175,
     "suspect_count": 17,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -15,7 +15,7 @@
       "undefined_ptr_cast",
       "unknown_field"
     ],
-    "total_lines": 517
+    "total_lines": 519
   },
   "cross_references": [
     {
@@ -144,78 +144,36 @@
         "is_param": false,
         "name": "local_80",
         "offset": -128,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_7f",
-        "offset": -127,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_7e",
-        "offset": -126,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_7d",
-        "offset": -125,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_7c",
-        "offset": -124,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_7b",
-        "offset": -123,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_7a",
-        "offset": -122,
-        "size": 1,
-        "type": "undefined1"
+        "size": 8,
+        "type": "undefined8"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -235,8 +193,22 @@
         "is_param": false,
         "name": "local_18",
         "offset": -24,
-        "size": 4,
-        "type": "undefined4"
+        "size": 2,
+        "type": "undefined2"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_16",
+        "offset": -22,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_15",
+        "offset": -21,
+        "size": 1,
+        "type": "undefined1"
       },
       {
         "is_param": true,
@@ -274,7 +246,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 43,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar7 = (char *)((int)&local_80 + 1);",
@@ -282,7 +254,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 42,
+      "line": 44,
       "match": "._0_1_",
       "severity": "mild",
       "text": "local_80._0_1_ = (char)character;",
@@ -290,7 +262,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 48,
+      "line": 50,
       "match": "._0_2_",
       "severity": "mild",
       "text": "local_1c._0_2_ = 0;",
@@ -298,7 +270,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 49,
+      "line": 51,
       "match": "._2_2_",
       "severity": "mild",
       "text": "local_1c._2_2_ = 0;",
@@ -306,7 +278,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 57,
+      "line": 59,
       "match": "._2_2_",
       "severity": "mild",
       "text": "local_1c._2_2_ = (short)character + local_1c._2_2_ * 10 + -0x30;",
@@ -314,7 +286,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 57,
+      "line": 59,
       "match": "._2_2_",
       "severity": "mild",
       "text": "local_1c._2_2_ = (short)character + local_1c._2_2_ * 10 + -0x30;",
@@ -322,7 +294,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 94,
       "match": "CONCAT12",
       "severity": "mild",
       "text": "uVar3 = CONCAT12(*pcVar1 + -0x30,local_18) / 10;",
@@ -330,7 +302,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 96,
+      "line": 98,
       "match": "._0_2_",
       "severity": "mild",
       "text": "local_1c._0_2_ = local_18;",
@@ -338,7 +310,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 137,
+      "line": 139,
       "match": "._2_2_",
       "severity": "mild",
       "text": "fVar4 = __BITCAST_FLOAT(CONCAT22(local_1c._2_2_,(ushort)local_1c));",
@@ -346,7 +318,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 137,
+      "line": 139,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "fVar4 = __BITCAST_FLOAT(CONCAT22(local_1c._2_2_,(ushort)local_1c));",
@@ -354,7 +326,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 141,
+      "line": 143,
       "match": "._2_2_",
       "severity": "mild",
       "text": "fVar4 = __BITCAST_FLOAT(CONCAT22(local_1c._2_2_,(ushort)local_1c));",
@@ -362,7 +334,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 141,
+      "line": 143,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "fVar4 = __BITCAST_FLOAT(CONCAT22(local_1c._2_2_,(ushort)local_1c));",
@@ -370,7 +342,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 144,
+      "line": 146,
       "match": "._2_2_",
       "severity": "mild",
       "text": "fVar4 = (float)-CONCAT22(local_1c._2_2_,(ushort)local_1c);",
@@ -378,7 +350,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 144,
+      "line": 146,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "fVar4 = (float)-CONCAT22(local_1c._2_2_,(ushort)local_1c);",
@@ -386,15 +358,15 @@
     },
     {
       "description": "Cast to undefined pointer type",
-      "line": 161,
+      "line": 163,
       "match": "(undefined6 *)",
       "severity": "moderate",
-      "text": "pfVar6 = (float *)*(undefined6 *)pcVar7;",
+      "text": "pfVar6 = (float *)*(undefined6 *)pcVar2;",
       "type": "undefined_ptr_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
+      "line": 173,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "fVar4 = doubleToFloat(__BITCAST_DOUBLE(CONCAT44(local_2c,local_30)));",

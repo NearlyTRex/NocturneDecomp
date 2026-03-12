@@ -6,41 +6,29 @@
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x22c]:1  local_22c
-; undefined1       Stack[-0x1fc]:1  local_1fc
-; undefined1       Stack[-0x1cc]:1  local_1cc
-; undefined1       Stack[-0x19c]:1  local_19c
-; undefined1       Stack[-0x16c]:1  local_16c
-; undefined1       Stack[-0x13c]:1  local_13c
-; undefined1       Stack[-0x10c]:1  local_10c
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined1       Stack[-0xac]:1  local_ac
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined1       Stack[-0x94]:1  local_94
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined1       Stack[-0x70]:1  local_70
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined1       Stack[-0x40]:1  local_40
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CMatrix3x4f      Stack[-0x22c]:48  local_22c
+; CMatrix3x4f      Stack[-0x1fc]:48  local_1fc
+; CMatrix3x4f      Stack[-0x1cc]:48  local_1cc
+; CMatrix3x4f      Stack[-0x19c]:48  local_19c
+; CMatrix3x4f      Stack[-0x16c]:48  local_16c
+; CMatrix3x4f      Stack[-0x13c]:48  local_13c
+; CMatrix3x4f      Stack[-0x10c]:48  local_10c
+; CMatrix3x4f      Stack[-0xdc]:48  local_dc
+; CVector3f        Stack[-0xac]:12  local_ac
+; CVector3f        Stack[-0xa0]:12  local_a0
+; CVector3f        Stack[-0x94]:12  local_94
+; CVector3f        Stack[-0x88]:12  local_88
+; CVector3f        Stack[-0x7c]:12  local_7c
+; CVector3f        Stack[-0x70]:12  local_70
+; CVector3f        Stack[-0x64]:12  local_64
+; CVector3f        Stack[-0x58]:12  local_58
+; CVector3f        Stack[-0x4c]:12  local_4c
+; CVector3f        Stack[-0x40]:12  local_40
+; CVector3f        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x28]:12  local_28
+; CLightGun *      Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ; undefined1       Stack[-0x10]:1  local_10
 ;
 ; Referenced Globals:

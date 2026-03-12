@@ -9,11 +9,15 @@
 int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *this_ptr,CVector3f *target_pos,CPathMap *path_map,CVector3f *direction,float min_distance,float max_distance)
 
 {
-  float *pfVar1;
-  float fVar2;
-  float fVar3;
+  float *pfVar2;
+  float fVar4;
+  float fVar5;
+  bool bVar6;
   CVector3f *pCVar4;
+  CVector3f *pCVar7;
   int iVar5;
+  float fVar8;
+  float fVar9;
   float fVar6;
   float fVar7;
   float local_fc;
@@ -45,33 +49,35 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
   float local_20;
   float local_1c;
   float local_18;
+  float fVar3;
+  float fVar2;
+  float *pfVar1;
   
-  fVar6 = this_ptr->walk_step_speed;
-  local_1c = this_ptr->turn_speed;
+  fVar9 = this_ptr->walk_step_speed;
+  fVar4 = this_ptr->turn_speed;
   fVar2 = SQRT(direction->x * direction->x + direction->z * direction->z);
   pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_b0,direction);
-  fVar7 = pCVar4->y;
+  fVar5 = pCVar4->y;
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(&this_ptr->base,&local_bc,target_pos);
   fVar3 = SQRT(local_bc.x * local_bc.x + local_bc.z * local_bc.z);
-  pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_d4,&local_bc);
-  local_20 = pCVar4->y;
-  local_4c = 0;
+  pCVar7 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_d4,&local_bc);
+  bVar6 = false;
   local_fc = 0.0;
   if (0.0 < SQRT(direction->z * direction->z +
                  direction->x * direction->x + direction->y * direction->y)) {
-    local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_20 - fVar7);
-    local_fc = ABS(local_18);
+    fVar8 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar7->y - fVar5);
+    local_fc = ABS(fVar8);
   }
   if (((ABS(fVar3 - fVar2) < min_distance + (float)0.01) &&
       (local_fc < max_distance + (float)0.01)) &&
      (ABS(local_bc.y) < (float)5)) {
-    local_4c = 1;
+    bVar6 = true;
   }
   (this_ptr->model).accumulated_root_motion.z = 0.0;
   (this_ptr->model).accumulated_root_motion.y = (this_ptr->model).accumulated_root_motion.z;
   (this_ptr->model).accumulated_root_motion.x = (this_ptr->model).accumulated_root_motion.y;
   if ((fVar2 * (float)1.5 + (float)0.5 +
-       ABS(fVar7) * (float)0.31830988619288902 * (float)2 <= fVar3) ||
+       ABS(fVar5) * (float)0.31830988619288902 * (float)2 <= fVar3) ||
      (1.0 < ABS(local_bc.y))) {
     if (path_map == (CPathMap *)0x0) {
       path_map = core_path_cpp_getPathMap_FUN_00548500((CLocation *)target_pos);
@@ -80,7 +86,7 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
                       (path_map,&(this_ptr->base).location.position,&local_74,
                        (this_ptr->base).direction_hint);
     if (iVar5 == 0) {
-      if (local_4c != 0) {
+      if (bVar6) {
         return 1;
       }
       engine_console_cpp_CConsole_printf_FUN_00441890
@@ -88,79 +94,74 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
       return -1;
     }
     pfVar1 = &(this_ptr->position_delta).z;
-    local_54 = -fVar6;
-    local_50 = fVar3 - fVar2;
-    local_44 = local_54;
-    if ((local_54 <= local_50) && (local_44 = local_50, fVar6 < local_50)) {
-      local_44 = fVar6;
+    fVar8 = -fVar9;
+    fVar5 = fVar3 - fVar2;
+    if ((fVar8 <= fVar5) && (fVar8 = fVar5, fVar9 < fVar5)) {
+      fVar8 = fVar9;
     }
-    *pfVar1 = *pfVar1 + local_44;
-    local_18 = local_74.y - (this_ptr->base).orient.vec.y;
-    fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_18);
-    fVar6 = -local_1c;
-    if ((fVar6 <= fVar7) && (fVar6 = fVar7, local_1c < fVar7)) {
-      fVar6 = local_1c;
+    *pfVar1 = *pfVar1 + fVar8;
+    fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                      (local_74.y - (this_ptr->base).orient.vec.y);
+    fVar9 = -fVar4;
+    if ((fVar9 <= fVar7) && (fVar9 = fVar7, fVar4 < fVar7)) {
+      fVar9 = fVar4;
     }
-    this_ptr->turn_angle_accumulator = this_ptr->turn_angle_accumulator + fVar6;
+    this_ptr->turn_angle_accumulator = this_ptr->turn_angle_accumulator + fVar9;
   }
   else {
-    if (fVar6 * (float)4 + fVar2 <= fVar3) {
-      pfVar1 = &(this_ptr->position_delta).z;
-      local_64 = -fVar6;
-      local_3c = fVar3 - fVar2;
-      local_30 = local_64;
-      if ((local_64 <= local_3c) && (local_30 = local_3c, fVar6 < local_3c)) {
-        local_30 = fVar6;
+    if (fVar9 * (float)4 + fVar2 <= fVar3) {
+      pfVar2 = &(this_ptr->position_delta).z;
+      fVar8 = -fVar9;
+      fVar5 = fVar3 - fVar2;
+      if ((fVar8 <= fVar5) && (fVar8 = fVar5, fVar9 < fVar5)) {
+        fVar8 = fVar9;
       }
-      *pfVar1 = *pfVar1 + local_30;
+      *pfVar2 = *pfVar2 + fVar8;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 (&this_ptr->base,&local_8c,&this_ptr->position_delta);
-      pCVar4 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+      pCVar7 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                          (&this_ptr->base,&local_f8,direction);
-      local_a4 = target_pos->x - pCVar4->x;
-      local_a0 = target_pos->y - pCVar4->y;
-      local_98.x = local_a4 - local_8c.x;
-      local_9c = target_pos->z - pCVar4->z;
-      local_98.y = local_a0 - local_8c.y;
-      local_98.z = local_9c - local_8c.z;
-      pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_ec,&local_98)
+      local_98.x = (target_pos->x - pCVar7->x) - local_8c.x;
+      local_98.y = (target_pos->y - pCVar7->y) - local_8c.y;
+      local_98.z = (target_pos->z - pCVar7->z) - local_8c.z;
+      pCVar7 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_ec,&local_98)
       ;
-      fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                        (pCVar4->y - (this_ptr->base).orient.vec.y);
-      fVar6 = -local_1c;
-      if ((-local_1c <= fVar7) && (fVar6 = fVar7, local_1c < fVar7)) {
-        fVar6 = local_1c;
+      fVar9 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                        (pCVar7->y - (this_ptr->base).orient.vec.y);
+      fVar6 = -fVar4;
+      if ((-fVar4 <= fVar9) && (fVar6 = fVar9, fVar4 < fVar9)) {
+        fVar6 = fVar4;
       }
     }
     else {
       local_e0 = local_bc.x - direction->x;
       local_d8 = local_bc.z - direction->z;
-      local_60 = SQRT(local_d8 * local_d8 + local_e0 * local_e0);
+      fVar8 = SQRT(local_d8 * local_d8 + local_e0 * local_e0);
       local_dc = 0.0;
-      if (fVar6 < local_60) {
-        local_48 = fVar6 / local_60;
-        local_e0 = local_e0 * local_48;
-        local_dc = local_48 * 0.0;
-        local_d8 = local_d8 * local_48;
+      if (fVar9 < fVar8) {
+        fVar9 = fVar9 / fVar8;
+        local_e0 = local_e0 * fVar9;
+        local_dc = fVar9 * 0.0;
+        local_d8 = local_d8 * fVar9;
       }
-      pCVar4 = &this_ptr->position_delta;
-      pCVar4->x = pCVar4->x + local_e0;
+      pCVar7 = &this_ptr->position_delta;
+      pCVar7->x = pCVar7->x + local_e0;
       (this_ptr->position_delta).y = (this_ptr->position_delta).y + local_dc;
       (this_ptr->position_delta).z = (this_ptr->position_delta).z + local_d8;
-      local_80.x = local_bc.x - pCVar4->x;
+      local_80.x = local_bc.x - pCVar7->x;
       local_80.y = local_bc.y - (this_ptr->position_delta).y;
       local_80.z = local_bc.z - (this_ptr->position_delta).z;
-      pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_c8,&local_80)
+      pCVar7 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_c8,&local_80)
       ;
-      fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar4->y - fVar7);
-      fVar6 = -local_1c;
-      if ((fVar6 <= fVar7) && (fVar6 = fVar7, local_1c < fVar7)) {
-        fVar6 = local_1c;
+      fVar9 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar7->y - fVar5);
+      fVar6 = -fVar4;
+      if ((fVar6 <= fVar9) && (fVar6 = fVar9, fVar4 < fVar9)) {
+        fVar6 = fVar4;
       }
     }
     this_ptr->turn_angle_accumulator = fVar6;
   }
-  if (local_4c == 0) {
+  if (!bVar6) {
     return 0;
   }
   return 1;

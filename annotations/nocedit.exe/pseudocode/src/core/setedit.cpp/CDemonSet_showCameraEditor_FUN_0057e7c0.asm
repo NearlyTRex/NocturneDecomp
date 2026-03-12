@@ -8,67 +8,58 @@
 ; Local Variables:
 ; undefined4       Stack[-0x4790]:4  local_4790
 ; undefined4       Stack[-0x478c]:4  local_478c
-; undefined1       Stack[-0x4788]:1  local_4788
-; undefined1       Stack[-0x2ef0]:1  local_2ef0
-; undefined1       Stack[-0x1658]:1  local_1658
-; undefined1       Stack[-0x12b0]:1  local_12b0
-; undefined1       Stack[-0xf08]:1  local_f08
-; undefined1       Stack[-0xb60]:1  local_b60
-; undefined4       Stack[-0xa60]:4  local_a60
-; undefined4       Stack[-0xa5c]:4  local_a5c
-; undefined4       Stack[-0xa58]:4  local_a58
-; undefined4       Stack[-0xa54]:4  local_a54
-; undefined4       Stack[-0xa50]:4  local_a50
-; undefined4       Stack[-0xa4c]:4  local_a4c
-; undefined1       Stack[-0x9bc]:1  local_9bc
-; undefined1       Stack[-0x8bc]:1  local_8bc
-; undefined1       Stack[-0x7bc]:1  local_7bc
-; undefined1       Stack[-0x7bb]:1  local_7bb
-; undefined1       Stack[-0x6bc]:1  local_6bc
-; undefined1       Stack[-0x5bc]:1  local_5bc
-; undefined1       Stack[-0x4bd]:1  local_4bd
-; undefined1       Stack[-0x4bc]:1  local_4bc
-; undefined1       Stack[-0x4bb]:1  local_4bb
-; undefined1       Stack[-0x3bc]:1  local_3bc
-; undefined1       Stack[-0x2bc]:1  local_2bc
-; undefined1       Stack[-0x1bc]:1  local_1bc
-; undefined1       Stack[-0xbc]:1  local_bc
-; undefined1       Stack[-0xac]:1  local_ac
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; C3DSLight        Stack[-0x4788]:6296  local_4788
+; C3DSLight        Stack[-0x2ef0]:6296  local_2ef0
+; CPickList        Stack[-0x1658]:936  local_1658
+; CPickList        Stack[-0x12b0]:936  local_12b0
+; CPickList        Stack[-0xf08]:936  local_f08
+; C3DSCamera       Stack[-0xb60]:420  local_b60
+; char[256]        Stack[-0x9bc]:256  local_9bc
+; char[256]        Stack[-0x8bc]:256  local_8bc
+; byte[256]        Stack[-0x7bc]:256  local_7bc
+; char[256]        Stack[-0x6bc]:256  local_6bc
+; char[254]        Stack[-0x5bc]:254  local_5bc
+; byte[258]        Stack[-0x4be]:258  abStack_4be
+; char[256]        Stack[-0x3bc]:256  local_3bc
+; char[256]        Stack[-0x2bc]:256  local_2bc
+; char[256]        Stack[-0x1bc]:256  local_1bc
+; char[16]         Stack[-0xbc]:16  local_bc
+; char[16]         Stack[-0xac]:16  local_ac
+; float            Stack[-0x9c]:4  local_9c
+; float            Stack[-0x98]:4  local_98
+; float            Stack[-0x94]:4  local_94
+; float            Stack[-0x90]:4  local_90
+; float            Stack[-0x8c]:4  local_8c
+; float            Stack[-0x88]:4  local_88
+; int              Stack[-0x84]:4  local_84
+; C3DSCamera *     Stack[-0x80]:4  local_80
+; C3DSCamera *     Stack[-0x7c]:4  local_7c
+; C3DSCamera *     Stack[-0x78]:4  local_78
+; char *           Stack[-0x74]:4  local_74
+; C3DSCamera *     Stack[-0x70]:4  local_70
+; int              Stack[-0x6c]:4  local_6c
+; int              Stack[-0x68]:4  local_68
+; int              Stack[-0x64]:4  local_64
+; C3DSCamera *     Stack[-0x60]:4  local_60
+; C3DSCamera *     Stack[-0x5c]:4  local_5c
+; _FILE *          Stack[-0x58]:4  local_58
+; int              Stack[-0x54]:4  local_54
+; int              Stack[-0x50]:4  local_50
+; int              Stack[-0x4c]:4  local_4c
+; _FILE *          Stack[-0x48]:4  local_48
+; C3DSCamera *     Stack[-0x44]:4  local_44
+; C3DSCamera *     Stack[-0x40]:4  local_40
+; C3DSCamera *     Stack[-0x3c]:4  local_3c
+; C3DSCamera *     Stack[-0x38]:4  local_38
+; C3DSCamera *     Stack[-0x34]:4  local_34
+; C3DSCamera *     Stack[-0x30]:4  local_30
+; C3DSCamera *     Stack[-0x2c]:4  local_2c
+; C3DSCamera *     Stack[-0x28]:4  local_28
+; C3DSCamera *     Stack[-0x24]:4  local_24
+; C3DSCamera *     Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940 at 00584b90

@@ -8,10 +8,10 @@
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined8       Stack[-0x38]:8  local_38
-; undefined4       Stack[-0x30]:4  local_30
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0x30]:4  local_30
+; CVector3f        Stack[-0x2c]:12  local_2c
+; float            Stack[-0x18]:4  local_18
+; SBodyPartFire *  Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_bodypart.cpp_CBodyPart_process_FUN_00419be0 at 00419cd5

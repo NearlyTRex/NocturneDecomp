@@ -7,9 +7,7 @@
 ; CCmdParse *      Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   actor
 ; Local Variables:
-; undefined1       Stack[-0x124]:1  local_124
-; undefined1       Stack[-0x123]:1  local_123
-; undefined4       Stack[-0x24]:4  local_24
+; SScriptXRef      Stack[-0x124]:276  local_124
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_parseActionTemplate_FUN_00567490 at 005674f2

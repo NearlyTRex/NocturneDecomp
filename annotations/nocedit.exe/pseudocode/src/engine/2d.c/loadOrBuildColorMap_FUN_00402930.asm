@@ -6,8 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x5c]:1  local_5c
-; undefined1       Stack[-0x5b]:1  local_5b
+; char[80]         Stack[-0x5c]:80  local_5c
 ;
 ; XREF[3]:
 ;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 00401069

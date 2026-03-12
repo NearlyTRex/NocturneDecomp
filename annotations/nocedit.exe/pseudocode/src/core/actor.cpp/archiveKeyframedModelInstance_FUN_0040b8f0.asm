@@ -7,8 +7,7 @@
 ; CKeyFramedModelInstance * Stack[0x4]:4   model_ptr
 ; char *           Stack[0x8]:4   property_name
 ; Local Variables:
-; undefined1       Stack[-0xd0]:1  model_filename_buffer
-; undefined1       Stack[-0xcf]:1  local_cf
+; char[200]        Stack[-0xd0]:200  model_filename_buffer
 ;
 ; XREF[29]:
 ;   core_ammo.cpp_CAmmo_archive_FUN_00410f40 at 00410f5a

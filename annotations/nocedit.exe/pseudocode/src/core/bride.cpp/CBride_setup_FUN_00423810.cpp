@@ -9,11 +9,12 @@
 void __cdecl core_bride_cpp_CBride_setup_FUN_00423810(CBride *this_ptr)
 
 {
-  CDeformableModelInstance *this_ptr_00;
   CSkeleton *this_ptr_01;
   CDeformableModel *this_ptr_02;
   int iVar1;
+  int iVar2;
   float fVar2;
+  CDeformableModelInstance *this_ptr_00;
   
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
@@ -44,30 +45,30 @@ void __cdecl core_bride_cpp_CBride_setup_FUN_00423810(CBride *this_ptr)
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lshoulderpiece",1);
   this_ptr->part_indices[0] = iVar1;
-  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+  iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"l4armpiece",1);
-  this_ptr->part_indices[1] = iVar1;
-  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+  this_ptr->part_indices[1] = iVar2;
+  iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rshoulderpiece",1);
-  this_ptr->part_indices[2] = iVar1;
-  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+  this_ptr->part_indices[2] = iVar2;
+  iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"r4armpiece",1);
-  this_ptr->part_indices[3] = iVar1;
-  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+  this_ptr->part_indices[3] = iVar2;
+  iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lshinpiece",1);
-  this_ptr->part_indices[4] = iVar1;
-  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+  this_ptr->part_indices[4] = iVar2;
+  iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"rshinpiece",1);
-  this_ptr->part_indices[5] = iVar1;
-  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+  this_ptr->part_indices[5] = iVar2;
+  iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"torsopiece",1);
-  this_ptr->part_indices[6] = iVar1;
-  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+  this_ptr->part_indices[6] = iVar2;
+  iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"lowerbodypiece",1);
-  this_ptr->part_indices[7] = iVar1;
-  iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
+  this_ptr->part_indices[7] = iVar2;
+  iVar2 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"headpiece",1);
-  this_ptr->part_indices[8] = iVar1;
+  this_ptr->part_indices[8] = iVar2;
   core_enemy_cpp_CEnemy_setup_FUN_004a9650(&this_ptr->base);
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(2.0,20.0);
   this_ptr->sfx_handles[0] = 0;

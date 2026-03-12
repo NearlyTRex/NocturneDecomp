@@ -7,9 +7,9 @@
 ; CBoneStructure * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   model_name
 ; Local Variables:
-; undefined4       Stack[-0x484]:4  local_484
-; undefined        Stack[-0xdc]:1  local_dc
-; undefined4       Stack[-0x14]:4  local_14
+; CPickList        Stack[-0x484]:936  local_484
+; char[200]        Stack[-0xdc]:200  local_dc
+; SBoneData *      Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c74a

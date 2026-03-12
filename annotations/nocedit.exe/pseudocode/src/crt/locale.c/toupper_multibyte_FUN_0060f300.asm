@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   mb_char
 ; char *           Stack[0x8]:4   output_buffer
 ; Local Variables:
-; undefined1       Stack[-0xc]:1  local_c
+; byte[4]          Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0 at 0060e5f2

@@ -7,7 +7,11 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x3c]:1  local_3c
+; CVector3f        Stack[-0x48]:12  CStack_48
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  CStack_30
+; float            Stack[-0x1c]:4  fStack_1c
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; XREF[31]:
 ;   core_armour.cpp_CArmour_process_FUN_00412260 at 004122ed

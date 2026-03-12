@@ -16,8 +16,8 @@
 ; undefined8       Stack[-0x48]:8  local_48
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c
-; undefined1       Stack[-0x38]:1  local_38
-; undefined4       Stack[-0x18]:4  local_18
+; char[32]         Stack[-0x38]:32  local_38
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[15]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040efc4

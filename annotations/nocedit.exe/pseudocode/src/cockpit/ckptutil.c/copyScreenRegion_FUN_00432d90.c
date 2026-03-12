@@ -11,6 +11,7 @@ void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_00432d90(void *dest_buffer,
 {
   int iVar1;
   uint uVar2;
+  uint uVar1;
   int iVar3;
   uint *puVar4;
   uint *puVar5;
@@ -27,7 +28,7 @@ void __cdecl cockpit_ckptutil_c_copyScreenRegion_FUN_00432d90(void *dest_buffer,
         puVar4 = puVar4 + 1;
         puVar5 = puVar5 + 1;
       }
-      for (uVar2 = bytes_per_row & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
+      for (uVar1 = bytes_per_row & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
         *(byte *)puVar5 = *(byte *)puVar4;
         puVar4 = (uint *)((int)puVar4 + 1);
         puVar5 = (uint *)((int)puVar5 + 1);

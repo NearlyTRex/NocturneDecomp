@@ -9,11 +9,12 @@
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description )
 
 {
-  CDemonActor *pCVar1;
   int iVar2;
+  int iVar1;
   CDemonActor *unaff_ESI;
   char local_dc [200];
   CDemonActor *local_14;
+  CDemonActor *pCVar1;
   
   if (current_actor == (CDemonActor *)0x0) {
     current_actor = (CDemonActor *)"(unknown)";
@@ -25,13 +26,13 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDem
     iVar2 = _fgetc(file);
   } while ((g_CharacterClassificationTable[(byte)((char)iVar2 + 1)] & 2) != 0);
   if (iVar2 == 0x22) {
-    iVar2 = _fgetc(file);
-    if (iVar2 != 0x22) {
-      _fputc(iVar2,file);
-      iVar2 = _fscanf(file,"%[^\"]",local_dc);
-      if (iVar2 == 1) {
-        iVar2 = _stricmp(local_dc,"(none)");
-        if (iVar2 == 0) {
+    iVar1 = _fgetc(file);
+    if (iVar1 != 0x22) {
+      _fputc(iVar1,file);
+      iVar1 = _fscanf(file,"%[^\"]",local_dc);
+      if (iVar1 == 1) {
+        iVar1 = _stricmp(local_dc,"(none)");
+        if (iVar1 == 0) {
           unaff_ESI = (CDemonActor *)0x0;
         }
         else {
@@ -43,17 +44,17 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDem
                        property_description);
           }
         }
-        iVar2 = _fgetc(file);
+        iVar1 = _fgetc(file);
         pCVar1 = unaff_ESI;
-        if (iVar2 == 0x22) goto LAB_00523a18;
+        if (iVar1 == 0x22) goto LAB_00523a18;
       }
     }
   }
   else {
     _fputc(iVar2,file);
-    iVar2 = _fscanf(file,"%x",&local_14);
+    iVar1 = _fscanf(file,"%x",&local_14);
     pCVar1 = local_14;
-    if (iVar2 == 1) goto LAB_00523a18;
+    if (iVar1 == 1) goto LAB_00523a18;
   }
   do {
     g_CurrentFilename = "..\\core\\mission.cpp";
@@ -62,9 +63,9 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_00523990(CDem
               ("Error reading actor pointer.\nOwner: %s\nDescription: %s\n",current_actor,property_description);
     pCVar1 = unaff_ESI;
 LAB_00523a18:
-    while (unaff_ESI = pCVar1, iVar2 = _fgetc(file), iVar2 != -1) {
+    while (unaff_ESI = pCVar1, iVar1 = _fgetc(file), iVar1 != -1) {
       pCVar1 = unaff_ESI;
-      if (iVar2 == 10) {
+      if (iVar1 == 10) {
         return unaff_ESI;
       }
     }

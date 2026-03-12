@@ -7,35 +7,30 @@
 ; CSound *         Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0x148]:8  local_148
-; undefined4       Stack[-0x140]:4  local_140
-; undefined4       Stack[-0x13c]:4  local_13c
-; undefined4       Stack[-0x138]:4  local_138
-; undefined1       Stack[-0x134]:1  local_134
-; undefined1       Stack[-0xd0]:1  local_d0
-; undefined1       Stack[-0xcf]:1  local_cf
+; float            Stack[-0x140]:4  local_140
+; float            Stack[-0x13c]:4  local_13c
+; float            Stack[-0x138]:4  local_138
+; char[100]        Stack[-0x134]:100  local_134
+; char[100]        Stack[-0xd0]:100  local_d0
 ; undefined4       Stack[-0x6c]:4  local_6c
 ; undefined4       Stack[-0x68]:4  local_68
 ; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0x60]:4  local_60
+; float            Stack[-0x5c]:4  local_5c
+; float            Stack[-0x58]:4  local_58
+; CVector3f        Stack[-0x54]:12  local_54
+; CVector3f        Stack[-0x48]:12  local_48
+; float            Stack[-0x3c]:4  local_3c
+; float            Stack[-0x38]:4  local_38
+; float            Stack[-0x34]:4  local_34
+; float            Stack[-0x30]:4  local_30
+; float            Stack[-0x2c]:4  local_2c
+; float            Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
+; STrainNoise *    Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004dab51

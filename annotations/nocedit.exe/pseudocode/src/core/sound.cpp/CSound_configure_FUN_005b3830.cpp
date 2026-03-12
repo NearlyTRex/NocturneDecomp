@@ -10,18 +10,20 @@ void __cdecl core_sound_cpp_CSound_configure_FUN_005b3830(CSound *this_ptr)
 
 {
   float fVar1;
+  float fVar2;
   int iVar2;
+  int iVar3;
   
   fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(1);
   if (0.25f < fVar1) {
     sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(1,0.25f);
   }
-  fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(0);
-  if (0.25f < fVar1) {
+  fVar2 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(0);
+  if (0.25f < fVar2) {
     sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(0,0.25f);
   }
-  fVar1 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(2);
-  if (1.0f < fVar1) {
+  fVar2 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90(2);
+  if (1.0f < fVar2) {
     sound_sndmain_cpp_setSfxChannelVol_FUN_005a9cf0(2,1.0f);
   }
   iVar2 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
@@ -35,8 +37,8 @@ void __cdecl core_sound_cpp_CSound_configure_FUN_005b3830(CSound *this_ptr)
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(1);
     sound_sndmain_cpp_setNextSfxFlagBits_FUN_005a8b90(1);
-    iVar2 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
-    if (iVar2 < 0x7531) {
+    iVar3 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
+    if (iVar3 < 0x7531) {
       sound_sndmain_cpp_startSfx_FUN_005a8e90("splash-music-22.wav");
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       return;

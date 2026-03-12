@@ -9,13 +9,13 @@
 void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004f1ab0(CHaystack *this_ptr,int bone_index)
 
 {
-  CHaystack *this_ptr_00;
   CVector3f *input_local_point;
   int iVar1;
   int iVar2;
   SDamageInfo SStack_64;
   CVector3f local_28;
   CVector3f local_1c;
+  CHaystack *this_ptr_00;
   
   input_local_point =
        core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00

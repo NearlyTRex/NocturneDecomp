@@ -9,12 +9,12 @@
 void __cdecl shape_superopt_cpp_CObj_updatePolyFlagsFromVerts_FUN_005d36b0(CObj *this_ptr,uint mask)
 
 {
-  bool bVar1;
   CPoly *pCVar2;
   int iVar3;
   CPoly *pCVar4;
   uint local_1c;
   int *local_18;
+  bool bVar1;
   
   pCVar4 = this_ptr->poly_array;
   bVar1 = true;

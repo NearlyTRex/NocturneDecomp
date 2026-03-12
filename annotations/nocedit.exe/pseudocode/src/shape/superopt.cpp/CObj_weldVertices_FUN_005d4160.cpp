@@ -9,12 +9,14 @@
 int __cdecl shape_superopt_cpp_CObj_weldVertices_FUN_005d4160(CObj *this_ptr,double weld_tolerance,int remove_degenerate)
 
 {
-  CPoly *pCVar1;
   int iVar2;
+  int iVar1;
   double *pdVar3;
   uint uVar4;
   uint uVar5;
+  double *pdVar2;
   double *pdVar6;
+  double *pdVar4;
   double *pdVar7;
   byte bVar8;
   int local_108;
@@ -37,6 +39,7 @@ int __cdecl shape_superopt_cpp_CObj_weldVertices_FUN_005d4160(CObj *this_ptr,dou
   int iStack_20;
   double *pdStack_1c;
   uint uStack_18;
+  CPoly *pCVar1;
   
   bVar8 = 0;
   (*this_ptr->vtable->clearStateFlags)(this_ptr,0x8000);
@@ -60,63 +63,65 @@ int __cdecl shape_superopt_cpp_CObj_weldVertices_FUN_005d4160(CObj *this_ptr,dou
         dStack_5c = *pdVar3 - weld_tolerance;
         dStack_54 = pdVar3[1] - weld_tolerance;
         dStack_4c = pdVar3[2] - weld_tolerance;
-        pdVar6 = &dStack_5c;
-        pdVar7 = &dStack_a4;
-        for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *(uint *)pdVar7 = *(uint *)pdVar6;
-          pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);
-          pdVar7 = (double *)((int)pdVar7 + (uint)bVar8 * -8 + 4);
+        pdVar2 = &dStack_5c;
+        pdVar4 = &dStack_a4;
+        for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+          *(uint *)pdVar4 = *(uint *)pdVar2;
+          pdVar2 = (double *)((int)pdVar2 + (uint)bVar8 * -8 + 4);
+          pdVar4 = (double *)((int)pdVar4 + (uint)bVar8 * -8 + 4);
         }
         dStack_8c = *pdVar3 + weld_tolerance;
         dStack_84 = pdVar3[1] + weld_tolerance;
         dStack_7c = pdVar3[2] + weld_tolerance;
         pdVar6 = &dStack_8c;
         pdVar7 = &dStack_74;
-        for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *(uint *)pdVar7 = *(uint *)pdVar6;
-          pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);
+        for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
           pdVar7 = (double *)((int)pdVar7 + (uint)bVar8 * -8 + 4);
+          pdVar6 = (double *)((int)pdVar6 + (uint)bVar8 * -8 + 4);
+          *(uint *)pdVar7 = *(uint *)pdVar6;
+          pdVar6 = pdVar6;
+          pdVar7 = pdVar7;
         }
         *(byte *)((int)pdVar3 + 0x35) = *(byte *)((int)pdVar3 + 0x35) | 0x80;
         uVar4 = uStack_18 + 1;
         if (uVar4 < (uint)this_ptr->vertex_count) {
           iStack_2c = uVar4 * 0x38;
           do {
-            pdVar3 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_2c);
-            if ((*(byte *)((int)pdVar3 + 0x35) & 0x80) == 0) {
+            pdVar2 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_2c);
+            if ((*(byte *)((int)pdVar2 + 0x35) & 0x80) == 0) {
               if ((((ulonglong)weld_tolerance & 0x7fffffff00000000) == 0) && (local_108 == 0)) {
-                if (((*pdStack_1c == *pdVar3) && (pdStack_1c[1] == pdVar3[1])) &&
-                   (pdStack_1c[2] == pdVar3[2])) {
+                if (((*pdStack_1c == *pdVar2) && (pdStack_1c[1] == pdVar2[1])) &&
+                   (pdStack_1c[2] == pdVar2[2])) {
 LAB_005d43a8:
                   uVar5 = 0;
                   if (this_ptr->poly_count != 0) {
-                    iVar2 = 0;
+                    iVar1 = 0;
                     do {
                       pCVar1 = this_ptr->poly_array;
-                      if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar2 + -0xc)) {
-                        *(uint *)((int)pCVar1->uv_coords + iVar2 + -0xc) = uStack_18;
+                      if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar1 + -0xc)) {
+                        *(uint *)((int)pCVar1->uv_coords + iVar1 + -0xc) = uStack_18;
                       }
-                      if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar2 + -8)) {
-                        *(uint *)((int)pCVar1->uv_coords + iVar2 + -8) = uStack_18;
+                      if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar1 + -8)) {
+                        *(uint *)((int)pCVar1->uv_coords + iVar1 + -8) = uStack_18;
                       }
-                      if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar2 + -4)) {
-                        *(uint *)((int)pCVar1->uv_coords + iVar2 + -4) = uStack_18;
+                      if (uVar4 == *(uint *)((int)pCVar1->uv_coords + iVar1 + -4)) {
+                        *(uint *)((int)pCVar1->uv_coords + iVar1 + -4) = uStack_18;
                       }
                       uVar5 = uVar5 + 1;
-                      iVar2 = iVar2 + 0x68;
+                      iVar1 = iVar1 + 0x68;
                     } while (uVar5 < (uint)this_ptr->poly_count);
                   }
                   iStack_20 = iStack_20 + 1;
-                  *(byte *)((int)pdVar3 + 0x35) = *(byte *)((int)pdVar3 + 0x35) | 0x80;
+                  *(byte *)((int)pdVar2 + 0x35) = *(byte *)((int)pdVar2 + 0x35) | 0x80;
                 }
               }
-              else if (((dStack_a4 <= *pdVar3) &&
-                       ((((*pdVar3 <= dStack_74 && (dStack_9c <= pdVar3[1])) &&
-                         (pdVar3[1] <= dStack_6c)) &&
-                        ((dStack_94 <= pdVar3[2] && (pdVar3[2] <= dStack_64)))))) &&
-                      (SQRT((pdVar3[2] - pdStack_1c[2]) * (pdVar3[2] - pdStack_1c[2]) +
-                            (pdVar3[1] - pdStack_1c[1]) * (pdVar3[1] - pdStack_1c[1]) +
-                            (*pdVar3 - *pdStack_1c) * (*pdVar3 - *pdStack_1c)) <= weld_tolerance))
+              else if (((dStack_a4 <= *pdVar2) &&
+                       ((((*pdVar2 <= dStack_74 && (dStack_9c <= pdVar2[1])) &&
+                         (pdVar2[1] <= dStack_6c)) &&
+                        ((dStack_94 <= pdVar2[2] && (pdVar2[2] <= dStack_64)))))) &&
+                      (SQRT((pdVar2[2] - pdStack_1c[2]) * (pdVar2[2] - pdStack_1c[2]) +
+                            (pdVar2[1] - pdStack_1c[1]) * (pdVar2[1] - pdStack_1c[1]) +
+                            (*pdVar2 - *pdStack_1c) * (*pdVar2 - *pdStack_1c)) <= weld_tolerance))
               goto LAB_005d43a8;
             }
             iStack_2c = iStack_2c + 0x38;

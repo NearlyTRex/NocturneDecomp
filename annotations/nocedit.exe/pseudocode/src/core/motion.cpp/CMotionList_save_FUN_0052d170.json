@@ -4,49 +4,49 @@
       {
         "category": "format_error",
         "column": 35,
-        "line": 34,
+        "line": 37,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 51,
-        "line": 45,
+        "line": 48,
         "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 48,
+        "line": 51,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 50,
+        "line": 53,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 18,
-        "line": 53,
+        "line": 56,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 18,
-        "line": 54,
+        "line": 57,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
         "column": 22,
-        "line": 70,
+        "line": 73,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 107,
-        "line": 70,
+        "line": 73,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -55,18 +55,18 @@
   },
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 142,
+    "complexity_score": 146,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 92,
+    "pseudocode_lines": 96,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "sub84_truncation"
     ],
-    "total_lines": 386
+    "total_lines": 390
   },
   "cross_references": [
     {
@@ -300,14 +300,14 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMotion *"
       },
       {
         "is_param": true,
@@ -328,7 +328,7 @@
   "suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 46,
+      "line": 49,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)local_14->exit_backward_to_frame),0),",
@@ -336,7 +336,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 46,
+      "line": 49,
       "match": "SUB84",
       "severity": "mild",
       "text": "SUB84(__BITCAST_UINT64((double)local_14->exit_backward_to_frame),0),",
@@ -344,7 +344,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 63,
+      "line": 66,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)*pfVar2),0),(int)((ulonglong)(double)*pfVar2 >> 0x20),*piVar1);",
@@ -352,7 +352,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 66,
       "match": "SUB84",
       "severity": "mild",
       "text": "SUB84(__BITCAST_UINT64((double)*pfVar2),0),(int)((ulonglong)(double)*pfVar2 >> 0x20),*piVar1);",

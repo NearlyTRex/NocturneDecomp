@@ -9,25 +9,36 @@
 void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
 
 {
-  CVector3f *pCVar1;
-  CVector3f *pCVar2;
-  CSpotView *this_ptr;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  bool bVar4;
   int iVar3;
+  int iVar5;
   CVector3i *pCVar4;
+  int iVar6;
+  int iVar7;
   SProjectedVertex *vertex;
+  int iVar8;
   CMotionList *pCVar5;
+  CMotionList *pCVar9;
+  char *string_data;
+  CVector3i *pCVar10;
   CBoundingBox3D *pCVar6;
   int *piVar7;
   char *pcVar8;
   int iVar9;
   float *pfVar10;
+  int iVar12;
   int iVar11;
+  int iVar16;
   CBoundingBox3D *pCVar12;
+  int iVar17;
   int iVar13;
   int iVar14;
+  int iVar18;
   int iVar15;
   CDeformableModelInstance *pCVar16;
-  float frame_number;
   CDeformableModelInstance local_4db8 [2];
   CPickList CStack_850;
   SMorphControlPoint local_4a8 [20];
@@ -93,6 +104,10 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
   int local_10;
   int local_c;
   int local_8;
+  float frame_number;
+  CVector3f *pCVar1;
+  CVector3f *pCVar2;
+  CSpotView *this_ptr;
   
   __arrinit(local_4db8,2,&g_CDeformableModelInstanceTypeInfo);
   iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
@@ -100,10 +115,10 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
                      "*.dfm",(int)local_228,0);
   if (iVar3 != 0) {
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(local_4db8,local_228);
-    iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+    iVar5 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,"Select 2nd model file","models",
                        "*.dfm",(int)local_228,0);
-    if (iVar3 != 0) {
+    if (iVar5 != 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(local_4db8 + 1,local_228);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Loading...");
@@ -114,17 +129,17 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
                               (local_4db8 + 1);
       __arrinit(local_4a8,0x14,&g_SMorphControlPointTypeInfo);
       this_ptr = g_CSpotViewPtr;
-      local_80 = g_CDemonSetPtr->lighting_quality_mode;
+      iVar5 = g_CDemonSetPtr->lighting_quality_mode;
       g_CDemonSetPtr->lighting_quality_mode = 1;
       shape_spotview_cpp_CSpotView_reset_FUN_005b9620(this_ptr,0x1f);
-      iVar3 = 0;
       core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
       g_MouseButtonFlags.dword = 0;
-      local_5c = 0;
+      bVar4 = false;
       local_78.dword = 0;
       local_6c = -1;
       local_70 = -1;
       local_74 = 0;
+      iVar8 = 0;
       while( true ) {
         __arrinit(local_128,2,&g_CBoundingBox3DTypeInfo);
         local_30 = 0;
@@ -133,28 +148,27 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
         local_28 = local_4db8;
         local_48 = 0;
         do {
-          pCVar16 = local_28;
-          iVar15 = local_30;
           core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_28);
-          core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(pCVar16);
-          core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(pCVar16,0);
+          core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_28);
+          core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(local_28,0);
           core_box_cpp_CBoundingBox3D_computeFromVertices_FUN_00420e90
                     (local_3c,*(int *)(*(int *)((int)local_8c + local_34) + 0x2c),
-                     local_4db8[iVar15].skinned_vertices_buffer);
+                     local_4db8[local_30].skinned_vertices_buffer);
           iVar9 = 0;
-          if (0 < iVar3) {
+          if (0 < iVar8) {
             pfVar10 = (float *)((int)&local_4a8[0].position[0].x + local_48);
-            iVar14 = local_34;
+            iVar6 = local_34;
             do {
-              piVar7 = (int *)((int)local_4a8[0].vertex_index + iVar14);
-              iVar14 = iVar14 + 0x20;
-              pCVar4 = local_4db8[iVar15].skinned_vertices_buffer + *piVar7;
+              iVar14 = iVar6 + 0x20;
+              pCVar4 = local_4db8[local_30].skinned_vertices_buffer +
+                       *(int *)((int)local_4a8[0].vertex_index + iVar6);
               iVar9 = iVar9 + 1;
               *pfVar10 = (float)pCVar4->x * 0.00390625f;
               pfVar10[1] = (float)pCVar4->y * 0.00390625f;
               pfVar10[2] = (float)pCVar4->z * 0.00390625f;
               pfVar10 = pfVar10 + 8;
-            } while (iVar9 < iVar3);
+              iVar6 = iVar14;
+            } while (iVar9 < iVar8);
           }
           local_34 = local_34 + 4;
           local_28 = local_28 + 1;
@@ -164,184 +178,146 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
         } while (local_30 < 2);
         engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,4);
         wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
-        local_54 = (int)((g_WindowHeight + (g_WindowHeight >> 0x1f) * -4) -
-                        (uint)((g_WindowHeight >> 0x1f) << 1 < 0)) >> 2;
+        iVar6 = (int)((g_WindowHeight + (g_WindowHeight >> 0x1f) * -4) -
+                     (uint)((g_WindowHeight >> 0x1f) << 1 < 0)) >> 2;
         iVar15 = -1;
-        iVar9 = 0;
-        local_58 = g_WindowHeight + local_54 * -2;
+        iVar18 = 0;
+        iVar12 = g_WindowHeight + iVar6 * -2;
         local_40 = local_4db8;
         local_8 = 0;
         local_44 = 0;
         do {
           engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
-                    (g_CDemonRendererPtr2,(g_WindowWidth / 2) * iVar9,local_54,g_WindowWidth / 2,
-                     local_58);
+                    (g_CDemonRendererPtr2,(g_WindowWidth / 2) * iVar18,iVar6,g_WindowWidth / 2,
+                     iVar12);
           shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(g_CSpotViewPtr);
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                     (g_CDemonRendererPtr2,&g_ZeroVector.f);
           core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_40,0);
-          local_14 = (g_MouseX + -5) * 0x10000;
-          local_20 = (g_MouseX + 5) * 0x10000;
-          local_18 = (g_MouseY + -5) * 0x10000;
-          local_10 = (g_MouseY + 5) * 0x10000;
           iVar13 = 0;
-          local_1c = local_44;
-          iVar14 = 0;
-          while (iVar11 = iVar14, iVar11 < *(int *)(*(int *)((int)local_8c + local_44) + 0x2c)) {
-            iVar14 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
+          iVar16 = 0;
+          while (iVar11 = iVar16, iVar11 < *(int *)(*(int *)((int)local_8c + local_44) + 0x2c)) {
+            iVar16 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
                                     screen_x + iVar13);
-            if ((((iVar14 < local_14) || (local_20 < iVar14)) ||
-                (iVar14 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex)
-                                         .screen_y + iVar13), iVar14 < local_18)) ||
-               (local_10 < iVar14)) {
+            if ((((iVar16 < (g_MouseX + -5) * 0x10000) || ((g_MouseX + 5) * 0x10000 < iVar16)) ||
+                (iVar16 = *(int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex)
+                                         .screen_y + iVar13), iVar16 < (g_MouseY + -5) * 0x10000))
+               || ((g_MouseY + 5) * 0x10000 < iVar16)) {
               iVar13 = iVar13 + 0x30;
-              iVar14 = iVar11 + 1;
+              iVar16 = iVar11 + 1;
             }
             else {
-              local_8 = iVar9;
               iVar13 = iVar13 + 0x30;
-              iVar14 = iVar11 + 1;
+              iVar16 = iVar11 + 1;
               iVar15 = iVar11;
+              local_8 = iVar18;
             }
           }
           engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
-          iVar9 = iVar9 + 1;
+          iVar18 = iVar18 + 1;
           local_44 = local_44 + 4;
           local_40 = local_40 + 1;
-        } while (iVar9 < 2);
+        } while (iVar18 < 2);
         local_50 = -1;
         if (-1 < iVar15) {
-          local_7c = 1 - local_8;
-          iVar9 = local_8 << 2;
-          if (0 < iVar3) {
-            local_68 = local_7c * 4;
-            iVar14 = 0;
+          iVar18 = 1 - local_8;
+          iVar16 = local_8 << 2;
+          if (0 < iVar8) {
+            iVar7 = 0;
             do {
-              if (iVar15 == *(int *)((int)local_4a8[0].vertex_index + iVar9)) {
-                local_50 = *(int *)((int)local_4a8 + local_7c * 4 + iVar14);
+              if (iVar15 == *(int *)((int)local_4a8[0].vertex_index + iVar16)) {
+                local_50 = *(int *)((int)local_4a8 + iVar18 * 4 + iVar7);
               }
-              iVar14 = iVar14 + 0x20;
-              iVar9 = iVar9 + 0x20;
-            } while (iVar14 < iVar3 * 0x20);
+              iVar7 = iVar7 + 0x20;
+              iVar16 = iVar16 + 0x20;
+            } while (iVar7 < iVar8 * 0x20);
           }
           if (local_50 < 0) {
-            pCVar4 = local_4db8[local_8].skinned_vertices_buffer + iVar15;
-            local_d4 = (float)pCVar4->x * 0.00390625f;
-            local_d0 = (float)pCVar4->y * 0.00390625f;
-            local_cc = (float)pCVar4->z * 0.00390625f;
+            pCVar10 = local_4db8[local_8].skinned_vertices_buffer + iVar15;
             pCVar12 = local_128 + local_8;
-            local_d4 = local_d4 - (pCVar12->min).x;
-            local_d0 = local_d0 - local_128[local_8].min.y;
-            pCVar6 = local_128 + local_7c;
-            local_cc = local_cc - local_128[local_8].min.z;
-            pCVar1 = &local_128[local_7c].max;
-            local_f8 = pCVar1->x - (pCVar6->min).x;
-            local_f4 = local_128[local_7c].max.y - local_128[local_7c].min.y;
-            pCVar2 = &local_128[local_8].max;
-            local_f0 = local_128[local_7c].max.z - local_128[local_7c].min.z;
-            local_a4 = pCVar2->x - (pCVar12->min).x;
-            local_a0 = local_128[local_8].max.y - local_128[local_8].min.y;
-            local_d4 = (local_f8 / local_a4) * local_d4;
-            local_9c = local_128[local_8].max.z - local_128[local_8].min.z;
-            local_bc = pCVar1->x - (pCVar6->min).x;
-            local_b8 = local_128[local_7c].max.y - local_128[local_7c].min.y;
-            local_b4 = local_128[local_7c].max.z - local_128[local_7c].min.z;
-            local_e0 = pCVar2->x - (pCVar12->min).x;
-            local_dc = local_128[local_8].max.y - local_128[local_8].min.y;
-            local_d0 = (local_b8 / local_dc) * local_d0;
-            local_d8 = local_128[local_8].max.z - local_128[local_8].min.z;
-            local_ec = pCVar1->x - (pCVar6->min).x;
-            local_e8 = local_128[local_7c].max.y - local_128[local_7c].min.y;
-            local_e4 = local_128[local_7c].max.z - local_128[local_7c].min.z;
-            local_c8 = pCVar2->x - (pCVar12->min).x;
-            local_c4 = local_128[local_8].max.y - local_128[local_8].min.y;
-            local_c0 = local_128[local_8].max.z - local_128[local_8].min.z;
-            local_cc = (local_e4 / local_c0) * local_cc;
-            iVar9 = 0;
+            pCVar6 = local_128 + iVar18;
+            iVar7 = 0;
             local_84 = 1e+30;
-            local_d4 = local_d4 + (pCVar6->min).x;
-            iVar14 = 0;
-            local_d0 = local_d0 + local_128[local_7c].min.y;
-            local_cc = local_cc + local_128[local_7c].min.z;
-            while (iVar14 < local_8c[1 - local_8]->vertex_count[0]) {
-              piVar7 = (int *)((int)&(local_4db8[1 - local_8].skinned_vertices_buffer)->x + iVar9);
-              local_b0 = (float)*piVar7 * 0.00390625f;
-              local_ac = (float)piVar7[1] * 0.00390625f;
-              local_a8 = (float)piVar7[2] * 0.00390625f;
-              local_94 = local_d0 - (float)piVar7[1] * 0.00390625f;
-              local_98 = local_d4 - (float)*piVar7 * 0.00390625f;
-              local_90 = local_cc - (float)piVar7[2] * 0.00390625f;
-              local_4c = local_90 * local_90 + local_98 * local_98 + local_94 * local_94;
-              if (local_4c < local_84) {
-                local_50 = iVar14;
-                local_84 = local_4c;
-                iVar14 = iVar14 + 1;
-                iVar9 = iVar9 + 0xc;
+            iVar16 = 0;
+            while (iVar17 = iVar16, iVar17 < local_8c[1 - local_8]->vertex_count[0]) {
+              piVar7 = (int *)((int)&(local_4db8[1 - local_8].skinned_vertices_buffer)->x + iVar7);
+              fVar3 = (((local_128[iVar18].max.y - local_128[iVar18].min.y) /
+                       (local_128[local_8].max.y - local_128[local_8].min.y)) *
+                       ((float)pCVar10->y * 0.00390625f - local_128[local_8].min.y) +
+                      local_128[iVar18].min.y) - (float)piVar7[1] * 0.00390625f;
+              fVar1 = (((local_128[iVar18].max.x - (pCVar6->min).x) /
+                       (local_128[local_8].max.x - (pCVar12->min).x)) *
+                       ((float)pCVar10->x * 0.00390625f - (pCVar12->min).x) + (pCVar6->min).x) -
+                      (float)*piVar7 * 0.00390625f;
+              fVar2 = (((local_128[iVar18].max.z - local_128[iVar18].min.z) /
+                       (local_128[local_8].max.z - local_128[local_8].min.z)) *
+                       ((float)pCVar10->z * 0.00390625f - local_128[local_8].min.z) +
+                      local_128[iVar18].min.z) - (float)piVar7[2] * 0.00390625f;
+              fVar1 = fVar2 * fVar2 + fVar1 * fVar1 + fVar3 * fVar3;
+              if (fVar1 < local_84) {
+                iVar7 = iVar7 + 0xc;
+                iVar16 = iVar17 + 1;
+                local_84 = fVar1;
+                local_50 = iVar17;
               }
               else {
-                iVar14 = iVar14 + 1;
-                iVar9 = iVar9 + 0xc;
+                iVar7 = iVar7 + 0xc;
+                iVar16 = iVar17 + 1;
               }
             }
           }
         }
         local_c = 0;
-        local_64 = iVar15 * 0x30;
-        local_60 = local_50 * 0x30;
         local_38 = 0;
         local_2c = local_4db8;
         local_24 = -1;
         do {
           engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
-                    (g_CDemonRendererPtr2,(g_WindowWidth / 2) * local_c,local_54,g_WindowWidth / 2,
-                     local_58);
+                    (g_CDemonRendererPtr2,(g_WindowWidth / 2) * local_c,iVar6,g_WindowWidth / 2,
+                     iVar12);
           shape_spotview_cpp_CSpotView_applyCamera_FUN_005b9a20(g_CSpotViewPtr);
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                     (g_CDemonRendererPtr2,&g_ZeroVector.f);
           core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(local_2c,0);
-          if (local_5c == 0) {
-            core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(local_2c,-1,0);
-          }
-          else {
+          if (bVar4) {
             core_skeleton_cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0(local_2c);
           }
-          iVar14 = 0;
+          else {
+            core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(local_2c,-1,0);
+          }
+          iVar16 = 0;
           g_ActiveRenderColor = 0xff;
-          iVar9 = local_38;
-          if (0 < iVar3) {
+          iVar18 = local_38;
+          if (0 < iVar8) {
             do {
-              iVar13 = *(int *)((int)local_4a8[0].vertex_index + iVar9);
-              if ((local_8 == local_c) && (iVar15 == iVar13)) {
-                local_24 = iVar14;
+              iVar7 = *(int *)((int)local_4a8[0].vertex_index + iVar18);
+              if ((local_8 == local_c) && (iVar15 == iVar7)) {
+                local_24 = iVar16;
               }
-              iVar14 = iVar14 + 1;
+              iVar16 = iVar16 + 1;
               core_morph_cpp_drawVertexMarker_FUN_0052bb80
-                        (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar13].projected_vertex,5);
-              iVar9 = iVar9 + 0x20;
-            } while (iVar14 < iVar3);
+                        (&g_CDemonRendererPtr2->vertex_buffer_ptr[iVar7].projected_vertex,5);
+              iVar18 = iVar18 + 0x20;
+            } while (iVar16 < iVar8);
           }
           if (-1 < iVar15) {
             g_ActiveRenderColor =
                  shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                            (g_CEditorToolsPtr);
             if (local_8 == local_c) {
-              vertex = (SProjectedVertex *)
-                       ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-                              transformed_x + local_64);
+              vertex = &g_CDemonRendererPtr2->vertex_buffer_ptr[iVar15].projected_vertex;
             }
             else {
-              vertex = (SProjectedVertex *)
-                       ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).
-                              transformed_x + local_60);
+              vertex = &g_CDemonRendererPtr2->vertex_buffer_ptr[local_50].projected_vertex;
             }
             core_morph_cpp_drawVertexMarker_FUN_0052bb80(vertex,5);
           }
           engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480();
-          iVar9 = local_8;
           local_2c = local_2c + 1;
           local_38 = local_38 + 4;
           local_c = local_c + 1;
         } while (local_c < 2);
+        iVar6 = iVar8;
         if (g_MouseButtonFlags.dword == 1) {
           if (local_78.dword == 1) {
             if (((-1 < local_6c) && (local_70 == local_8)) && (local_24 < 0)) {
@@ -351,13 +327,14 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
           else if (local_78.dword == 0) {
             if (local_24 < 0) {
               if (-1 < iVar15) {
-                if (iVar3 < 0x14) {
+                if (iVar8 < 0x14) {
                   local_70 = local_8;
                   *(int *)((int)local_4a8[0].vertex_index + local_8 * 4 + local_74) = iVar15;
-                  local_6c = iVar3;
-                  *(int *)((int)local_4a8 + (1 - iVar9) * 4 + local_74) = local_50;
-                  iVar3 = iVar3 + 1;
+                  iVar6 = (1 - local_8) * 4 + local_74;
                   local_74 = local_74 + 0x20;
+                  *(int *)((int)local_4a8 + iVar6) = local_50;
+                  iVar6 = iVar8 + 1;
+                  local_6c = iVar8;
                 }
                 else {
                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -382,10 +359,10 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
         shape_spotview_cpp_CSpotView_handleInput_FUN_005b9670(g_CSpotViewPtr,0x1f);
-        iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
-        if (iVar15 != 0) break;
-        iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_T);
-        if (iVar15 != 0) {
+        iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
+        if (iVar8 != 0) break;
+        iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_T);
+        if (iVar8 != 0) {
           core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_4db8);
           core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(local_4db8 + 1);
           core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_4db8);
@@ -397,37 +374,38 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
           core_morph_cpp_CMorph_previewMorph_FUN_0052ca90(morph);
           core_morph_cpp_CMorph_free_FUN_0052b350(morph);
         }
-        iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M);
-        if (iVar15 != 0) {
+        iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M);
+        if (iVar8 != 0) {
           shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_850);
-          iVar15 = 0;
+          iVar8 = 0;
           pCVar16 = local_4db8 + local_8;
-          for (iVar9 = 0;
+          for (iVar12 = 0;
               pCVar5 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                                 (&pCVar16->motion_controller), iVar9 < pCVar5->motion_count;
-              iVar9 = iVar9 + 1) {
-            pCVar5 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
+                                 (&pCVar16->motion_controller), iVar12 < pCVar5->motion_count;
+              iVar12 = iVar12 + 1) {
+            pCVar9 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                                (&pCVar16->motion_controller);
-            pcVar8 = pCVar5->motions[0].motion_name + iVar15;
-            iVar15 = iVar15 + 0x54c;
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_850.base,pcVar8);
+            string_data = pCVar9->motions[0].motion_name + iVar8;
+            iVar8 = iVar8 + 0x54c;
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_850.base,string_data);
           }
-          iVar15 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                             (&CStack_850,"Select motion",-1,0);
-          if (-1 < iVar15) {
+          iVar8 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                            (&CStack_850,"Select motion",-1,0);
+          if (-1 < iVar8) {
             frame_number = 0.0;
-            pcVar8 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_850.base,iVar15);
+            pcVar8 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_850.base,iVar8);
             core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
                       (&pCVar16->motion_controller,pcVar8,frame_number);
           }
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&CStack_850,0);
         }
-        iVar15 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_O);
-        if (iVar15 != 0) {
-          local_5c = (uint)(local_5c == 0);
+        iVar12 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_O);
+        iVar8 = iVar6;
+        if (iVar12 != 0) {
+          bVar4 = !bVar4;
         }
       }
-      g_CDemonSetPtr->lighting_quality_mode = local_80;
+      g_CDemonSetPtr->lighting_quality_mode = iVar5;
       engine_2d_c_clearInputAndWait_FUN_00403260();
       core_morph_cpp_SMorphControlPoint_arrdtor_FUN_0052ccb0(local_4a8,0);
       core_morph_cpp_CDeformableModelInstance_arrdtor_FUN_0052ccd0(local_4db8,0);

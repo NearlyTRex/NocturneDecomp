@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 111,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 15,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 51,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 152
+    "total_lines": 157
   },
   "cross_references": [
     {
@@ -185,8 +185,8 @@
         "is_param": false,
         "name": "local_110",
         "offset": -272,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": true,
@@ -200,7 +200,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 22,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)g_LightDebugScreenY + iVar4);",
@@ -208,7 +208,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 23,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar2 = (int *)((int)g_LightDebugScreenX + iVar4);",
@@ -216,7 +216,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 24,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)g_SpotLightList + iVar4);",
@@ -224,26 +224,26 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 36,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)g_LightDebugScreenY + iVar5);",
+      "text": "piVar3 = (int *)((int)g_LightDebugScreenY + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 37,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar2 = (int *)((int)g_LightDebugScreenX + iVar5);",
+      "text": "piVar4 = (int *)((int)g_LightDebugScreenX + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 38,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar3 = (uint *)((int)g_DynamicLights + iVar6);",
+      "text": "puVar5 = (uint *)((int)g_DynamicLights + iVar6);",
       "type": "pointer_cast"
     }
   ]

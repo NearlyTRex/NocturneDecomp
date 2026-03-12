@@ -9,23 +9,24 @@
 int __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CComplexPolygon *this_ptr,SExpandedEdge *buf_a,SExpandedEdge *buf_b)
 
 {
+  double dVar1;
+  double dVar2;
+  double dVar3;
+  int iVar4;
   int iVar1;
+  int iVar5;
   int iVar2;
   uint *puVar3;
   double *pdVar4;
   CVector3d *pCVar5;
+  uint *puVar6;
   byte bVar6;
   double dVar7;
+  double dVar8;
   CVector3d local_e4;
   double local_cc;
   double local_c4;
   double local_bc;
-  uint local_b4;
-  uint local_b0;
-  uint local_ac;
-  uint local_a8;
-  uint local_a4;
-  uint local_a0;
   double local_9c;
   double local_94;
   double local_8c;
@@ -36,13 +37,10 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CC
   uint local_74;
   uint uStack_70;
   CVector3d local_6c;
-  uint local_54;
-  uint uStack_50;
-  uint local_44;
-  uint uStack_40;
   uint local_3c;
   uint uStack_38;
-  ulonglong local_34;
+  uint local_34;
+  uint uStack_30;
   int local_2c;
   int local_28;
   uint local_24;
@@ -64,80 +62,65 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_findBestSplitEdge_FUN_005c8e70(CC
       puVar3 = (uint *)(iVar2 + 0x10);
       pCVar5 = &local_6c;
       for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *(uint *)&pCVar5->x = *puVar3;
+        pCVar5 = (CVector3d *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
         puVar3 = puVar3 + (uint)bVar6 * -2 + 1;
-        pCVar5 = (CVector3d *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
+        *(uint *)&pCVar5->x = *puVar3;
+        puVar3 = puVar3;
+        pCVar5 = pCVar5;
       }
       local_9c = *(double *)(iVar2 + 0x28) - *(double *)(iVar2 + 0x10);
       local_94 = *(double *)(iVar2 + 0x30) - *(double *)(iVar2 + 0x18);
       local_8c = *(double *)(iVar2 + 0x38) - *(double *)(iVar2 + 0x20);
       pdVar4 = &local_9c;
-      puVar3 = &local_84;
-      for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *puVar3 = *(uint *)pdVar4;
+      puVar6 = &local_84;
+      for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
         pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);
-        puVar3 = puVar3 + (uint)bVar6 * -2 + 1;
+        *puVar6 = *(uint *)pdVar4;
+        pdVar4 = pdVar4;
+        puVar6 = puVar6 + (uint)bVar6 * -2 + 1;
       }
-      local_b4 = local_84;
-      local_b0 = uStack_80;
-      local_ac = local_7c;
-      local_a8 = uStack_78;
-      local_a4 = local_74;
-      local_a0 = uStack_70;
-      local_cc = __BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c->z -
-                 __BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * local_1c->y;
-      local_c4 = __BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * local_1c->x -
-                 __BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c->z;
-      local_bc = __BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c->y -
-                 __BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c->x;
-      dVar7 = 1.0 / SQRT(local_bc * local_bc + local_cc * local_cc + local_c4 * local_c4);
-      local_cc = local_cc * dVar7;
-      local_c4 = local_c4 * dVar7;
+      dVar8 = __BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c->z -
+              __BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * local_1c->y;
+      dVar1 = __BITCAST_DOUBLE(CONCAT44(uStack_70,local_74)) * local_1c->x -
+              __BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c->z;
+      dVar2 = __BITCAST_DOUBLE(CONCAT44(uStack_80,local_84)) * local_1c->y -
+              __BITCAST_DOUBLE(CONCAT44(uStack_78,local_7c)) * local_1c->x;
+      dVar3 = 1.0 / SQRT(dVar2 * dVar2 + dVar8 * dVar8 + dVar1 * dVar1);
+      local_e4.x = dVar8 * dVar3;
+      local_e4.y = dVar1 * dVar3;
       local_2c = 0;
       local_14 = 0;
-      local_bc = local_bc * dVar7;
+      local_e4.z = dVar2 * dVar3;
       local_20 = iVar2;
-      local_e4.x = local_cc;
-      local_e4.y = local_c4;
-      local_e4.z = local_bc;
       shape_superopt_cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0
                 (this_ptr,&local_6c,&local_e4,buf_a,buf_b,&local_2c,&local_14);
-      dVar7 = local_34;
       if ((local_2c != 0) && (local_14 != 0)) {
-        iVar1 = shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
+        iVar5 = shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
                           (this_ptr,buf_a,&local_2c,1);
-        iVar2 = shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
+        iVar4 = shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590
                           (this_ptr,buf_b,&local_14,1);
-        if ((iVar1 == 0) && (iVar2 == 0)) {
+        if ((iVar5 == 0) && (iVar4 == 0)) {
           return 0;
         }
         dVar7 = shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(this_ptr,buf_a,local_2c)
         ;
-        local_34._0_4_ = SUB84(__BITCAST_UINT64(dVar7),0);
-        local_44 = (uint)local_34;
-        local_34._4_4_ = (uint)((ulonglong)dVar7 >> 0x20);
-        uStack_40 = local_34._4_4_;
+        local_34 = SUB84(__BITCAST_UINT64(dVar7),0);
+        uStack_30 = (uint)((ulonglong)dVar7 >> 0x20);
         if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < dVar7) {
-          local_3c = (uint)local_34;
-          uStack_38 = local_34._4_4_;
+          local_3c = local_34;
+          uStack_38 = uStack_30;
           local_18 = local_20;
         }
-        local_34 = dVar7;
-        dVar7 = shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(this_ptr,buf_b,local_14)
+        dVar8 = shape_superopt_cpp_CComplexPolygon_computeArea_FUN_005c9100(this_ptr,buf_b,local_14)
         ;
-        local_34 = dVar7;
-        dVar7 = local_34;
-        local_34._0_4_ = SUB84(__BITCAST_UINT64(dVar7),0);
-        local_54 = (uint)local_34;
-        local_34._4_4_ = (uint)((ulonglong)dVar7 >> 0x20);
-        uStack_50 = local_34._4_4_;
-        if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < dVar7) {
-          local_3c = (uint)local_34;
-          uStack_38 = local_34._4_4_;
+        local_34 = SUB84(__BITCAST_UINT64(dVar8),0);
+        uStack_30 = (uint)((ulonglong)dVar8 >> 0x20);
+        if (__BITCAST_DOUBLE(CONCAT44(uStack_38,local_3c)) < dVar8) {
+          local_3c = local_34;
+          uStack_38 = uStack_30;
           local_18 = local_20;
         }
       }
-      local_34 = dVar7;
       local_24 = local_24 + 1;
       local_28 = local_28 + 0x60;
     } while (local_24 < (uint)this_ptr->expanded_edge_count);

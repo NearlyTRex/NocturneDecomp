@@ -7,7 +7,7 @@
 ; CGore *          Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined1       Stack[-0x110]:1  local_110
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1a58

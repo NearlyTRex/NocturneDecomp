@@ -32,14 +32,14 @@
 ; char[256]        Stack[-0x270]:256  local_270
 ; char[200]        Stack[-0x170]:200  local_170
 ; uint[30]         Stack[-0xa8]:120  local_a8
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x30]:4  local_30
+; CMotionList *    Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; char[30] *       Stack[-0x24]:4  local_24
+; CDeformableModel * Stack[-0x20]:4  local_20
+; char *           Stack[-0x1c]:4  local_1c
+; char *           Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_editParameterAtPosition_FUN_00565ae0 at 00565b76

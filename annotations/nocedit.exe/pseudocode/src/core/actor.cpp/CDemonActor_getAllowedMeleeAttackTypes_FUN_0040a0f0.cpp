@@ -9,12 +9,12 @@
 int __cdecl core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(CDemonActor *this_ptr)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
   CBoundingBox3D *pCVar4;
   uint uVar5;
   CBoundingBox3D local_30;
+  float fVar1;
+  float fVar3;
+  float fVar2;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (this_ptr,"..\\core\\actor.cpp",0x5ae);

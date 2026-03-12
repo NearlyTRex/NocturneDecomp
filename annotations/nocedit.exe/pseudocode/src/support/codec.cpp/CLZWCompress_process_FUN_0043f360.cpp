@@ -9,10 +9,12 @@
 int __cdecl support_codec_cpp_CLZWCompress_process_FUN_0043f360(CLZWCompress *this_ptr,_istream *istream,int byte_count,_ostream *ostream)
 
 {
-  CLZWDictionary *this_ptr_00;
   uint uVar1;
   int iVar2;
+  int iVar1;
+  uint search_code;
   byte local_14 [4];
+  CLZWDictionary *this_ptr_00;
   
   this_ptr_00 = &this_ptr->dictionary;
 LAB_0043f378:
@@ -32,9 +34,9 @@ LAB_0043f37e:
     if ((int)uVar1 < 0) {
       return 1;
     }
-    uVar1 = (this_ptr->char_mask).dword & uVar1;
+    search_code = (this_ptr->char_mask).dword & uVar1;
     iVar2 = support_codec_cpp_CLZWDictionary_findCode_FUN_0043ef50
-                      (this_ptr_00,uVar1,this_ptr->current_code);
+                      (this_ptr_00,search_code,this_ptr->current_code);
     if (-1 < iVar2) {
       this_ptr->current_code = iVar2;
       goto LAB_0043f378;
@@ -42,17 +44,17 @@ LAB_0043f37e:
     support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_0043f170
               (this_ptr_00,this_ptr->current_code,&(this_ptr->dictionary).bit_state,ostream);
     if (-1 < this_ptr->prev_code) {
-      iVar2 = support_codec_cpp_CLZWDictionary_addNode_FUN_0043ef90
+      iVar1 = support_codec_cpp_CLZWDictionary_addNode_FUN_0043ef90
                         (this_ptr_00,this_ptr->prev_char_code,this_ptr->prev_code);
-      if (iVar2 != 0) {
+      if (iVar1 != 0) {
         this_ptr->prev_code = -1;
-        this_ptr->current_code = uVar1;
-        this_ptr->prev_char_code = uVar1;
+        this_ptr->current_code = search_code;
+        this_ptr->prev_char_code = search_code;
         goto LAB_0043f378;
       }
     }
     this_ptr->prev_code = this_ptr->current_code;
-    this_ptr->current_code = uVar1;
-    this_ptr->prev_char_code = uVar1;
+    this_ptr->current_code = search_code;
+    this_ptr->prev_char_code = search_code;
   } while( true );
 }

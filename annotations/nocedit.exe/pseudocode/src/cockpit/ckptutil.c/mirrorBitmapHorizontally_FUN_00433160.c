@@ -9,12 +9,12 @@
 void __cdecl cockpit_ckptutil_c_mirrorBitmapHorizontally_FUN_00433160(uchar *bitmap_data,int width,int height,int bytes_per_pixel)
 
 {
-  uchar uVar1;
   int iVar2;
   uchar *puVar3;
   uchar *puVar4;
   uchar *puVar5;
   uint uVar6;
+  uchar uVar1;
   
   iVar2 = width * bytes_per_pixel;
   uVar6 = 0;

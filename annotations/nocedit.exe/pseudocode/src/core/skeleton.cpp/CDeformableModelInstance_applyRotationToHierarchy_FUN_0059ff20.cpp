@@ -11,11 +11,14 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
 {
   CSkeleton *pCVar1;
   int hierarchy_distance;
+  int iVar1;
   int iVar2;
   uint *puVar3;
   CMatrix3x4f *pCVar4;
+  uint *puVar2;
   uint *puVar5;
   uint *puVar6;
+  uint *puVar4;
   CMatrix3x4f *pCVar7;
   byte bVar8;
   float afStackY_1860 [1497];
@@ -47,24 +50,24 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
            core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(local_24,iVar2,bone_index);
       if (-1 < hierarchy_distance) {
         fStack_18 = (*blend_callback)(iVar2,bone_index,blend_weight,hierarchy_distance,this_ptr);
-        fStack_e8 = fStack_18 * local_28;
-        if ((float)1.0000000000000001e-05 < ABS(fStack_e8)) {
-          core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70(fStack_e8,&local_34,&CStack_44);
+        if ((float)1.0000000000000001e-05 < ABS(fStack_18 * local_28)) {
+          core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70
+                    (fStack_18 * local_28,&local_34,&CStack_44);
           CStack_64.w = CStack_44.w;
-          puVar5 = (uint *)((int)&CStack_64 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+          puVar2 = (uint *)((int)&CStack_64 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
           puVar3 = (uint *)((int)&CStack_44 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
           *(uint *)((int)&CStack_64 + (uint)bVar8 * -8 + 4) =
                *(uint *)((int)&CStack_44 + (uint)bVar8 * -8 + 4);
-          *puVar5 = *puVar3;
-          puVar5[(uint)bVar8 * -2 + 1] = puVar3[(uint)bVar8 * -2 + 1];
+          *puVar2 = *puVar3;
+          puVar2[(uint)bVar8 * -2 + 1] = puVar3[(uint)bVar8 * -2 + 1];
           core_xform_cpp_multiplyQuaternion_FUN_005f7640(local_1c,&CStack_64,&CStack_84);
           puVar5 = (uint *)((int)local_20 + (uint)bVar8 * -8 + 0x6b4);
           (local_20->bone_transform).bone_rotations[0].w = CStack_84.w;
           puVar6 = puVar5 + (uint)bVar8 * -2 + 1;
-          puVar3 = (uint *)((int)&CStack_84 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+          puVar2 = (uint *)((int)&CStack_84 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
           *puVar5 = *(uint *)((int)&CStack_84 + (uint)bVar8 * -8 + 4);
-          *puVar6 = *puVar3;
-          puVar6[(uint)bVar8 * -2 + 1] = puVar3[(uint)bVar8 * -2 + 1];
+          *puVar6 = *puVar2;
+          puVar6[(uint)bVar8 * -2 + 1] = puVar2[(uint)bVar8 * -2 + 1];
         }
       }
       local_20 = (CDeformableModelInstance *)&(local_20->motion_controller).tween_speed;
@@ -77,19 +80,21 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   }
   core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70(local_28 * blend_weight,&local_34,&local_74);
   local_54.w = local_74.w;
-  puVar5 = (uint *)((int)&local_54 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
-  puVar3 = (uint *)((int)&local_74 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+  puVar4 = (uint *)((int)&local_54 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+  puVar2 = (uint *)((int)&local_74 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
   *(uint *)((int)&local_54 + (uint)bVar8 * -8 + 4) =
        *(uint *)((int)&local_74 + (uint)bVar8 * -8 + 4);
-  *puVar5 = *puVar3;
-  puVar5[(uint)bVar8 * -2 + 1] = puVar3[(uint)bVar8 * -2 + 1];
+  *puVar4 = *puVar2;
+  puVar4[(uint)bVar8 * -2 + 1] = puVar2[(uint)bVar8 * -2 + 1];
   core_xform_cpp_quaternionToMatrix3x4_FUN_005f73e0(&local_54,&local_b4);
   pCVar4 = &local_b4;
   pCVar7 = &local_e4;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar8 * -8 + 4);
     pCVar7->m[0].w = pCVar4->m[0].w;
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar8 * -2 + 1) * 4);
-    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
+    pCVar4 = pCVar4;
+    pCVar7 = pCVar7;
   }
   core_xform_cpp_transformVector3x4InPlace_FUN_005f4e20
             (&(this_ptr->bone_transform).root_position,&local_e4);

@@ -6,13 +6,9 @@
 ; Parameters:
 ; int              Stack[0x4]:4   input_value
 ; Local Variables:
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined        Stack[-0x44]:1  local_44
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; int[1017]        Stack[-0x1038]:4068  aiStackY_1038
+; CVector3i        Stack[-0x50]:12  local_50
+; CVector3i[4]     Stack[-0x44]:48  local_44
 ;
 ; Referenced Globals:
 ;   int g_ProjectionScale = 0x10000

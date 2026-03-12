@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 51,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
+    "pseudocode_lines": 13,
     "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 52
+    "total_lines": 49
   },
   "cross_references": [],
   "function": {
@@ -108,43 +108,29 @@
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_c",
         "offset": -12,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_8",
         "offset": -8,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -179,7 +165,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
+      "line": 10,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.x = (int)ROUND(x * 256.0f);",
@@ -187,7 +173,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
+      "line": 11,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.y = (int)ROUND(y * 256.0f);",
@@ -195,7 +181,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
+      "line": 12,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_1c.z = (int)ROUND(z * 256.0f);",

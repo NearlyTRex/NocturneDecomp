@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 65,
+    "complexity_score": 66,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 51,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 186
+    "total_lines": 187
   },
   "cross_references": [
     {
@@ -163,14 +163,14 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -191,7 +191,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 35,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar1 = *(int *)((int)this_ptr->face_texture_indices + local_14);",

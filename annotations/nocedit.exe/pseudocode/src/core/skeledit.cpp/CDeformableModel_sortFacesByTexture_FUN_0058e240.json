@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 80,
+        "line": 82,
         "message": "use of undeclared identifier 'stack0xffffffba'"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 184,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 116,
     "suspect_count": 6,
     "suspect_types": [
       "bare_stack_ref",
       "pointer_cast"
     ],
-    "total_lines": 267
+    "total_lines": 269
   },
   "cross_references": [
     {
@@ -106,95 +106,123 @@
     "pcode_op_count": 742
   },
   "stack_frame": {
-    "frame_size": 78,
-    "local_size": 74,
+    "frame_size": 8228,
+    "local_size": 8224,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_46",
-        "offset": -70,
-        "size": 1,
-        "type": "undefined"
+        "name": "auStack_201c",
+        "offset": -8220,
+        "size": 2036,
+        "type": "undefined2[1018]"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_1828",
+        "offset": -6184,
+        "size": 6112,
+        "type": "undefined4[1528]"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined1[4]"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined2[2]"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDeformableModel *"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDeformableModel *"
       },
       {
         "is_param": true,
@@ -232,7 +260,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 60,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)local_14->index_data_ptr[0] + iVar7);",
@@ -240,7 +268,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 62,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar6 = (int *)((int)local_14->index_data_ptr[0] + iVar7 + 4);",
@@ -248,23 +276,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 75,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "stack0xffffffba = *(uint *)((int)puVar9 + 6);",
+      "text": "stack0xffffffba = *(uint *)((int)puVar1 + 6);",
       "type": "pointer_cast"
     },
     {
       "description": "Bare stack address reference (hidden stack variable)",
-      "line": 73,
+      "line": 75,
       "match": "stack0xffffffba",
       "severity": "moderate",
-      "text": "stack0xffffffba = *(uint *)((int)puVar9 + 6);",
+      "text": "stack0xffffffba = *(uint *)((int)puVar1 + 6);",
       "type": "bare_stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 76,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "*(ushort *)((int)&uStack_44 + (uint)bVar13 * -8 + 2) =",
@@ -272,10 +300,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 77,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*(ushort *)((int)puVar9 + (uint)bVar13 * -8 + 10);",
+      "text": "*(ushort *)((int)puVar1 + (uint)bVar13 * -8 + 10);",
       "type": "pointer_cast"
     }
   ]

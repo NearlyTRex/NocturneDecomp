@@ -9,10 +9,12 @@
 void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(char *buffer)
 
 {
-  char cVar1;
+  char cVar2;
+  char *pcVar3;
   char *pcVar2;
   LPSTR lpBuffer;
   DWORD local_10;
+  char cVar1;
   
   memset(buffer,0,0x200);
   lpBuffer = buffer + 0x100;
@@ -21,16 +23,16 @@ void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(char *buffer
   local_10 = 0x100;
   (*g_GetUserNameAFunc)(buffer,&local_10);
   if ((buffer[0x100] == '\0') &&
-     (pcVar2 = getenv("COMPUTERNAME"), pcVar2 != (char *)0x0)) {
+     (pcVar3 = getenv("COMPUTERNAME"), pcVar3 != (char *)0x0)) {
     do {
-      cVar1 = *pcVar2;
-      *lpBuffer = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar2[1];
-      pcVar2 = pcVar2 + 2;
-      lpBuffer[1] = cVar1;
+      cVar2 = *pcVar3;
+      *lpBuffer = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar3[1];
+      pcVar3 = pcVar3 + 2;
+      lpBuffer[1] = cVar2;
       lpBuffer = lpBuffer + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
     if (*buffer != '\0') {
       return;
     }
@@ -48,10 +50,10 @@ void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(char *buffer
     if (cVar1 == '\0') {
       return;
     }
-    cVar1 = pcVar2[1];
+    cVar2 = pcVar2[1];
     pcVar2 = pcVar2 + 2;
-    buffer[1] = cVar1;
+    buffer[1] = cVar2;
     buffer = buffer + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   return;
 }

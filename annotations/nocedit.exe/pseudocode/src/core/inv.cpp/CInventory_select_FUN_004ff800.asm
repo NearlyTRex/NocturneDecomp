@@ -7,9 +7,8 @@
 ; CInventory *     Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   actor_ptr
 ; Local Variables:
-; undefined1       Stack[-0x114]:1  local_114
-; undefined1       Stack[-0x113]:1  local_113
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x114]:256  local_114
+; CHealthItem *    Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_hero.cpp_CHero_tryUseSelectedItem_FUN_004f3760 at 004f37b0

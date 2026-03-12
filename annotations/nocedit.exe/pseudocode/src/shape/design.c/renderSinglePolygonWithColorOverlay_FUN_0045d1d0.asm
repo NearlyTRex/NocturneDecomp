@@ -7,13 +7,9 @@
 ; int              Stack[0x4]:4   polygon_index
 ; int *            Stack[0x8]:4   color_value
 ; Local Variables:
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x14]:4  local_14
+; SMRGLHeaderPrimitive Stack[-0x6c]:24  local_6c
+; uint[16]         Stack[-0x54]:64  auStack_54
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920 at 0045d9a7

@@ -6,66 +6,65 @@
 ; Parameters:
 ; SCram *          Stack[0x4]:4   cram
 ; Local Variables:
+; char[1018]       Stack[-0x146e]:1018  acStackY_146e
+; undefined2[630]  Stack[-0x1074]:1260  auStackY_1074
 ; undefined8       Stack[-0xb60]:8  local_b60
-; undefined1       Stack[-0xb58]:1  local_b58
-; undefined4       Stack[-0xa54]:4  local_a54
-; undefined4       Stack[-0xa50]:4  local_a50
-; undefined4       Stack[-0xa4c]:4  local_a4c
-; undefined4       Stack[-0xa48]:4  local_a48
-; undefined4       Stack[-0xa44]:4  local_a44
-; undefined4       Stack[-0xa40]:4  local_a40
-; undefined4       Stack[-0xa3c]:4  local_a3c
-; undefined4       Stack[-0xa38]:4  local_a38
-; undefined4       Stack[-0xa34]:4  local_a34
-; undefined4       Stack[-0xa30]:4  local_a30
-; undefined4       Stack[-0xa2c]:4  local_a2c
-; undefined4       Stack[-0xa28]:4  local_a28
+; char[260]        Stack[-0xb58]:260  local_b58
+; _FILE *          Stack[-0xa54]:4  local_a54
+; int              Stack[-0xa50]:4  local_a50
+; int              Stack[-0xa4c]:4  local_a4c
+; int              Stack[-0xa48]:4  local_a48
+; int              Stack[-0xa44]:4  local_a44
+; int              Stack[-0xa40]:4  local_a40
+; int              Stack[-0xa3c]:4  local_a3c
+; int              Stack[-0xa38]:4  local_a38
+; uint             Stack[-0xa34]:4  local_a34
+; uint             Stack[-0xa30]:4  local_a30
+; uint             Stack[-0xa2c]:4  local_a2c
+; int              Stack[-0xa28]:4  local_a28
 ; char[80]         Stack[-0xa24]:80  local_a24
 ; undefined4       Stack[-0x9d4]:4  local_9d4
-; undefined1       Stack[-0x9d0]:1  local_9d0
-; undefined4       Stack[-0x980]:4  local_980
-; undefined1       Stack[-0x97c]:1  local_97c
-; undefined4       Stack[-0x850]:4  local_850
-; undefined1       Stack[-0x84c]:1  local_84c
-; undefined1       Stack[-0x460]:1  local_460
-; undefined1       Stack[-0x45f]:1  local_45f
-; undefined1       Stack[-0x45d]:1  local_45d
-; undefined1       Stack[-0x35c]:1  local_35c
-; undefined1       Stack[-0x35b]:1  local_35b
-; undefined1       Stack[-0x359]:1  local_359
-; undefined1       Stack[-0x258]:1  local_258
-; undefined1       Stack[-0x257]:1  local_257
-; undefined1       Stack[-0x255]:1  local_255
+; char[80]         Stack[-0x9d0]:80  local_9d0
+; int              Stack[-0x980]:4  local_980
+; char[300]        Stack[-0x97c]:300  local_97c
+; _FILE *          Stack[-0x850]:4  local_850
+; byte[4]          Stack[-0x84c]:4  local_84c
+; uint[250]        Stack[-0x848]:1000  auStack_848
+; char[260]        Stack[-0x460]:260  local_460
+; char[260]        Stack[-0x35c]:260  local_35c
+; char[260]        Stack[-0x258]:260  local_258
 ; char[200]        Stack[-0x154]:200  local_154
-; undefined1       Stack[-0x8c]:1  local_8c
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[4]          Stack[-0x8c]:4  local_8c
+; undefined4       Stack[-0x88]:4  uStack_88
+; char[4]          Stack[-0x84]:4  acStack_84
+; uchar * *        Stack[-0x80]:4  local_80
+; uchar * *        Stack[-0x7c]:4  local_7c
+; int              Stack[-0x78]:4  local_78
+; uint             Stack[-0x74]:4  local_74
+; int              Stack[-0x70]:4  local_70
+; char *           Stack[-0x6c]:4  local_6c
+; int              Stack[-0x68]:4  local_68
+; int              Stack[-0x64]:4  local_64
+; uint             Stack[-0x60]:4  local_60
+; int              Stack[-0x5c]:4  local_5c
+; int              Stack[-0x58]:4  local_58
+; int              Stack[-0x54]:4  local_54
+; int              Stack[-0x50]:4  local_50
+; int              Stack[-0x4c]:4  local_4c
+; int              Stack[-0x48]:4  local_48
+; int              Stack[-0x44]:4  local_44
+; int              Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; uchar *          Stack[-0x2c]:4  local_2c
+; uchar *          Stack[-0x28]:4  local_28
+; uchar *          Stack[-0x24]:4  local_24
+; uchar *          Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 at 0047a5bc

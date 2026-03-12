@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 31,
-        "line": 174,
+        "line": 180,
         "message": "C-style cast from 'struct CKeyFramedModelInstance *' to 'float' is not allowed"
       },
       {
         "category": "format_error",
         "column": 106,
-        "line": 208,
+        "line": 214,
         "message": "format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 670,
-    "complexity_score": 323,
+    "complexity_score": 329,
     "cross_reference_count": 4,
     "function_call_count": 13,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 248,
+    "pseudocode_lines": 254,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 918
+    "total_lines": 924
   },
   "cross_references": [
     {
@@ -232,12 +232,19 @@
     "pcode_op_count": 3638
   },
   "stack_frame": {
-    "frame_size": 556,
-    "local_size": 524,
+    "frame_size": 668,
+    "local_size": 636,
     "param_offset": 4,
     "param_size": 32,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "dStack_278",
+        "offset": -632,
+        "size": 8,
+        "type": "double"
+      },
       {
         "is_param": false,
         "name": "local_208",
@@ -247,185 +254,101 @@
       },
       {
         "is_param": false,
+        "name": "SStack_204",
+        "offset": -516,
+        "size": 92,
+        "type": "SIntersectXZCylinder"
+      },
+      {
+        "is_param": false,
+        "name": "SStack_1a8",
+        "offset": -424,
+        "size": 92,
+        "type": "SIntersectXZCylinder"
+      },
+      {
+        "is_param": false,
         "name": "local_14c",
         "offset": -332,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_148",
-        "offset": -328,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_144",
-        "offset": -324,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_140",
-        "offset": -320,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_13c",
-        "offset": -316,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_138",
-        "offset": -312,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_134",
-        "offset": -308,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_130",
-        "offset": -304,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_12c",
-        "offset": -300,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_128",
-        "offset": -296,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_124",
-        "offset": -292,
-        "size": 4,
-        "type": "undefined4"
+        "size": 92,
+        "type": "SIntersectXZCylinder"
       },
       {
         "is_param": false,
         "name": "local_f0",
         "offset": -240,
-        "size": 4,
-        "type": "undefined4"
+        "size": 40,
+        "type": "SCollisionInfo"
       },
       {
         "is_param": false,
-        "name": "local_ec",
-        "offset": -236,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_c8",
+        "offset": -200,
+        "size": 24,
+        "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
-        "name": "local_e8",
-        "offset": -232,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_e4",
-        "offset": -228,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_e0",
-        "offset": -224,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_d0",
-        "offset": -208,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_cc",
-        "offset": -204,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_b0",
+        "offset": -176,
+        "size": 24,
+        "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
         "name": "local_98",
         "offset": -152,
-        "size": 4,
-        "type": "undefined4"
+        "size": 24,
+        "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
-        "name": "local_94",
-        "offset": -148,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_80",
+        "offset": -128,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_90",
-        "offset": -144,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_74",
+        "offset": -116,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_8c",
-        "offset": -140,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_68",
+        "offset": -104,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_88",
-        "offset": -136,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_5c",
+        "offset": -92,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_84",
-        "offset": -132,
-        "size": 4,
-        "type": "undefined4"
+        "name": "aCStack_50",
+        "offset": -80,
+        "size": 48,
+        "type": "CVector3f[4]"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonSet *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -505,7 +428,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 45,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(dir_x) != 0.0) || (ABS(dir_z) != 0.0)) {",
@@ -513,7 +436,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 38,
+      "line": 45,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(dir_x) != 0.0) || (ABS(dir_z) != 0.0)) {",
@@ -521,15 +444,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 129,
+      "line": 135,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar3 = SQRT(fVar7 - fVar3);",
+      "text": "fVar8 = SQRT(fVar7 - fVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 138,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(local_14c.dir_x) <= ABS(local_14c.dir_z)) {",
@@ -537,7 +460,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
+      "line": 138,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(local_14c.dir_x) <= ABS(local_14c.dir_z)) {",
@@ -545,7 +468,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 149,
+      "line": 155,
       "match": "SQRT",
       "severity": "mild",
       "text": "dStack_278 = SQRT((double)fVar4) - (double)fVar6;",
@@ -553,10 +476,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 229,
+      "line": 235,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar1 = SQRT(local_14c.push_normal.z * local_14c.push_normal.z +",
+      "text": "fVar8 = SQRT(local_14c.push_normal.z * local_14c.push_normal.z +",
       "type": "decompiler_intrinsic"
     }
   ]

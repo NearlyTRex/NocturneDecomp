@@ -10,23 +10,19 @@
 ; CDemonActor *    Stack[0x10]:4   hit_actor
 ; Local Variables:
 ; undefined1       Stack[-0x114]:1  local_114
-; undefined1       Stack[-0x10c]:1  local_10c
-; undefined1       Stack[-0xe4]:1  local_e4
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined1       Stack[-0xb4]:1  local_b4
-; undefined1       Stack[-0xac]:1  local_ac
-; undefined1       Stack[-0x84]:1  local_84
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined1       Stack[-0x40]:1  local_40
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined1       Stack[-0x28]:1  local_28
-; undefined1       Stack[-0x24]:1  local_24
-; undefined1       Stack[-0x1c]:1  local_1c
+; CMatrix3x4f      Stack[-0x10c]:48  local_10c
+; CMatrix3x4f      Stack[-0xdc]:48  local_dc
+; CMatrix3x4f      Stack[-0xac]:48  local_ac
+; CMatrix3x4f      Stack[-0x7c]:48  local_7c
+; float            Stack[-0x4c]:4  local_4c
+; float            Stack[-0x48]:4  local_48
+; float            Stack[-0x44]:4  local_44
+; CVector3f        Stack[-0x40]:12  local_40
+; float            Stack[-0x34]:4  local_34
+; float            Stack[-0x30]:4  local_30
+; float            Stack[-0x2c]:4  local_2c
+; CVector3f        Stack[-0x28]:12  local_28
+; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0 at 004c7861

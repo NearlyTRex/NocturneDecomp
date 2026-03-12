@@ -8,9 +8,9 @@
 ; char *           Stack[0x8]:4   output_filename
 ; int              Stack[0xc]:4   texture_size
 ; Local Variables:
-; undefined1       Stack[-0x4dc]:1  local_4dc
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined1       Stack[-0x14]:1  local_14
+; char[1024]       Stack[-0x4dc]:1024  local_4dc
+; char[200]        Stack[-0xdc]:200  local_dc
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_cramTextureList_FUN_0046bb80 at 0046dab5

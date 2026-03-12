@@ -6,7 +6,7 @@
 ; Parameters:
 ; int              Stack[0x4]:4   character
 ; Local Variables:
-; undefined1       Stack[-0x8]:1  local_8
+; undefined1[4]    Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   crt_stdio.c_SetupConsoleInputMode_FUN_006059b0 at 006059c9

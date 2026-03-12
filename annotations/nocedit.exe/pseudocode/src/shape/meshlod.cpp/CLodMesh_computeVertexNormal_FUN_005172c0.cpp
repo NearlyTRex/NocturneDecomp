@@ -9,20 +9,22 @@
 CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeVertexNormal_FUN_005172c0(CLodMesh *this_ptr,CVector3f *out_normal,int vertex_index)
 
 {
-  CLodEdge *pCVar1;
-  int iVar2;
-  CLodFace *pCVar3;
-  float fVar4;
+  CLodVert *pCVar2;
+  float fVar3;
   CLodVert *pCVar5;
   CLodEdge *pCVar6;
   int iVar7;
   CLodVert *local_1c;
   int local_18;
+  CLodFace *pCVar3;
+  float fVar4;
+  CLodEdge *pCVar1;
+  int iVar2;
   
-  pCVar5 = this_ptr->vertex_data;
+  pCVar2 = this_ptr->vertex_data;
   out_normal->x = 0.0;
   out_normal->y = 0.0;
-  pCVar5 = pCVar5 + vertex_index;
+  pCVar5 = pCVar2 + vertex_index;
   out_normal->z = 0.0;
   local_18 = 0;
   local_1c = pCVar5;
@@ -42,8 +44,8 @@ CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeVertexNormal_FUN_005172c0(
           pCVar6 = (CLodEdge *)&pCVar6->vertex_idx_2;
         } while (iVar7 < pCVar1->adjacent_tri_count);
       }
-      local_18 = local_18 + 1;
       local_1c = (CLodVert *)&(local_1c->position).y;
+      local_18 = local_18 + 1;
     } while (local_18 < pCVar5->adjacent_edge_count);
   }
   fVar4 = SQRT(out_normal->z * out_normal->z +
@@ -54,9 +56,9 @@ CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeVertexNormal_FUN_005172c0(
     out_normal->x = out_normal->y;
     return out_normal;
   }
-  fVar4 = 1.0 / fVar4;
-  out_normal->x = out_normal->x * fVar4;
-  out_normal->y = out_normal->y * fVar4;
-  out_normal->z = out_normal->z * fVar4;
+  fVar3 = 1.0 / fVar4;
+  out_normal->x = out_normal->x * fVar3;
+  out_normal->y = out_normal->y * fVar3;
+  out_normal->z = out_normal->z * fVar3;
   return out_normal;
 }

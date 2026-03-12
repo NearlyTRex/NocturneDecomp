@@ -7,21 +7,14 @@
 ; int              Stack[0x4]:4   polygon_index
 ; Local Variables:
 ; undefined4       Stack[-0xc8]:4  local_c8
-; undefined1       Stack[-0xc4]:1  local_c4
-; undefined4       Stack[-0xc0]:4  local_c0
-; undefined4       Stack[-0xbc]:4  local_bc
-; undefined4       Stack[-0xb8]:4  local_b8
-; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined1       Stack[-0x64]:1  local_64
-; undefined1       Stack[-0x63]:1  local_63
+; SMRGLHeaderPrimitive Stack[-0xc4]:24  local_c4
+; uint[16]         Stack[-0xac]:64  auStack_ac
+; SMRGLTextureBasic[3] Stack[-0x6c]:72  local_6c
 ; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; uint             Stack[-0x20]:4  local_20
+; uint             Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0 at 0045d908

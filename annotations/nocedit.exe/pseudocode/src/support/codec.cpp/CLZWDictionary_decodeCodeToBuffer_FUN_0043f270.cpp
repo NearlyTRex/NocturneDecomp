@@ -9,10 +9,10 @@
 int __cdecl support_codec_cpp_CLZWDictionary_decodeCodeToBuffer_FUN_0043f270(CLZWDictionary *this_ptr,int code,char **buffer_ptr_ptr)
 
 {
-  int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
+  int iVar1;
   
   iVar4 = 0;
   iVar2 = code;

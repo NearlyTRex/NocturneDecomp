@@ -9,22 +9,24 @@
 int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,char *movie_filename)
 
 {
-  byte *pbVar1;
-  byte bVar2;
+  HWND hWnd;
   _FILE *file_ptr;
   MCIERROR MVar3;
+  MCIERROR mcierr;
   byte *pbVar4;
   HANDLE hThread;
   int iVar5;
   bool bVar6;
-  char *lpstrCommand;
-  HWND pHVar7;
   char local_1f8 [260];
   byte bStack_f4;
   byte abStack_f3 [127];
   char local_74 [80];
   tagRECT tStack_24;
   tagRECT tStack_14;
+  char *lpstrCommand;
+  HWND pHVar7;
+  byte bVar2;
+  byte *pbVar1;
   
   _sprintf(local_74,"%s\\%s",directory_path,movie_filename);
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -35,24 +37,24 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\wincore\\winvideo.cpp",0x132);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  pHVar7 = g_MainWindowHandle;
+  hWnd = g_MainWindowHandle;
   if (g_MoviePlaying != 0) {
     wincore_winvideo_cpp_closeMovie_FUN_005f46b0(g_MainWindowHandle);
   }
-  _sprintf(local_1f8,"open \"%s\" alias mov style child parent %d",local_74,pHVar7);
+  _sprintf(local_1f8,"open \"%s\" alias mov style child parent %d",local_74,hWnd);
   MVar3 = (*g_mciSendStringAFunc)(local_1f8,(LPSTR)0x0,0,(HWND)0x0);
   if (MVar3 == 0) {
     g_MoviePlaying = 1;
-    MVar3 = (*g_mciSendStringAFunc)("status mov window handle",local_1f8,0x104,(HWND)0x0);
-    if (MVar3 == 0) {
+    mcierr = (*g_mciSendStringAFunc)("status mov window handle",local_1f8,0x104,(HWND)0x0);
+    if (mcierr == 0) {
       g_MovieWindowHandle = (HWND)atoi(local_1f8);
     }
     else {
-      (*g_mciGetErrorStringAFunc)(MVar3,local_1f8,0x104);
-      (*g_MessageBoxAFunc)(pHVar7,local_1f8,(LPCSTR)0x0,0x30);
+      (*g_mciGetErrorStringAFunc)(mcierr,local_1f8,0x104);
+      (*g_MessageBoxAFunc)(hWnd,local_1f8,(LPCSTR)0x0,0x30);
     }
     if ((g_FullscreenMovie == 0) && (g_MoviePlaying != 0)) {
-      (*g_GetClientRectFunc)(pHVar7,&tStack_14);
+      (*g_GetClientRectFunc)(hWnd,&tStack_14);
       (*g_mciSendStringAFunc)("where mov source",(LPSTR)&bStack_f4,0x80,(HWND)0x0);
       (*g_SetRectEmptyFunc)(&tStack_24);
       pbVar4 = &bStack_f4;
@@ -87,7 +89,7 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
     }
   }
   else {
-    (*g_MessageBoxAFunc)(pHVar7,"Unable to open .AVI!",(LPCSTR)0x0,0x30);
+    (*g_MessageBoxAFunc)(hWnd,"Unable to open .AVI!",(LPCSTR)0x0,0x30);
     g_MoviePlaying = 0;
   }
   bVar6 = g_MovieHandle == 0;

@@ -15,13 +15,15 @@ void __cdecl core_stranger_cpp_CStranger_handleFireButton_FUN_005c5f10(CStranger
   uint uVar3;
   uint uVar4;
   int iVar5;
+  int iVar1;
+  SArmAimData *pSVar2;
   SArmAimData *pSVar6;
   uint uVar7;
   int iVar8;
   
-  iVar5 = (this_ptr->base).player_control.action_states[3];
+  iVar1 = (this_ptr->base).player_control.action_states[3];
   this_ptr->can_grab_weapon = 0;
-  if (iVar5 == 0) {
+  if (iVar1 == 0) {
     return;
   }
   if ((this_ptr->base).base.grabbed_by != (CDemonActor *)0x0) {
@@ -40,7 +42,7 @@ LAB_005c5f6e:
     if ((this_ptr_00 != (CWeapon *)0x0) &&
        (uVar3 = (*((this_ptr_00->base).vtable._ub)->getAllowedMeleeAttackTypes)(&this_ptr_00->base),
        uVar3 != 0)) {
-      iVar5 = 0;
+      iVar1 = 0;
       while( true ) {
         iVar8 = this_ptr->melee_attack_index + 1;
         this_ptr->melee_attack_index = iVar8;
@@ -58,8 +60,8 @@ LAB_005c5f6e:
           }
         }
         if ((uVar4 & uVar3) != 0) break;
-        iVar5 = iVar5 + 1;
-        if (0x13 < iVar5) {
+        iVar1 = iVar1 + 1;
+        if (0x13 < iVar1) {
           return;
         }
       }
@@ -73,18 +75,18 @@ LAB_005c5f6e:
   if (this_ptr->weapon == (CWeapon *)0x0) {
     return;
   }
-  iVar5 = this_ptr->weapon->weapon_type;
-  if (iVar5 == 3) {
+  iVar1 = this_ptr->weapon->weapon_type;
+  if (iVar1 == 3) {
     return;
   }
-  if (((this_ptr->base).aim_mode == AIM_MODE_AUTO) && (iVar5 == 0)) {
-    pSVar6 = &this_ptr->right_arm_aim;
+  if (((this_ptr->base).aim_mode == AIM_MODE_AUTO) && (iVar1 == 0)) {
+    pSVar2 = &this_ptr->right_arm_aim;
     pSVar1 = &this_ptr->left_arm_aim;
     if (this_ptr->dual_wield_side != 0) {
-      pSVar1 = pSVar6;
-      pSVar6 = &this_ptr->left_arm_aim;
+      pSVar1 = pSVar2;
+      pSVar2 = &this_ptr->left_arm_aim;
     }
-    if ((pSVar1->aim_lock_state == 2) && (pSVar6->aim_lock_state != 2)) {
+    if ((pSVar1->aim_lock_state == 2) && (pSVar2->aim_lock_state != 2)) {
       this_ptr->dual_wield_side = (uint)(this_ptr->dual_wield_side == 0);
     }
   }
@@ -121,16 +123,16 @@ switchD_005c5ffd_caseD_8:
       pSVar6 = &this_ptr->left_arm_aim;
     }
     if (((1.0 <= pSVar6->kickback_factor) && (pSVar6->recoil_timer <= 0.0)) &&
-       (iVar5 = (*(((this_ptr->weapon->base).vtable._uw)->_uw).isReadyToFire)(this_ptr->weapon),
-       iVar5 != 0)) {
+       (iVar1 = (*(((this_ptr->weapon->base).vtable._uw)->_uw).isReadyToFire)(this_ptr->weapon),
+       iVar1 != 0)) {
       if (this_ptr->weapon->weapon_type == 0) {
         core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0
                   (this_ptr,this_ptr->dual_wield_side);
         this_ptr->dual_wield_side = (uint)(this_ptr->dual_wield_side == 0);
       }
       this_ptr->can_grab_weapon = 0;
-      iVar5 = (*(((this_ptr->weapon->base).vtable._uw)->_uw).fire)(this_ptr->weapon);
-      if (iVar5 != 0) {
+      iVar1 = (*(((this_ptr->weapon->base).vtable._uw)->_uw).fire)(this_ptr->weapon);
+      if (iVar1 != 0) {
         this_ptr->can_grab_weapon = 1;
       }
       core_stranger_cpp_CStranger_updateWeaponPosition_FUN_005c06b0(this_ptr,0);

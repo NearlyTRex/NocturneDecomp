@@ -7,8 +7,7 @@
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   texture_filename
 ; Local Variables:
-; undefined1       Stack[-0x58]:1  local_58
-; undefined1       Stack[-0x57]:1  local_57
+; char[80]         Stack[-0x58]:80  local_58
 ;
 ; XREF[1]:
 ;   engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0 at 004b5531

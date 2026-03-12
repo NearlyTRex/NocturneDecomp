@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 144,
+    "complexity_score": 149,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 27,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 89,
+    "pseudocode_lines": 94,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 251
+    "total_lines": 256
   },
   "cross_references": [
     {
@@ -290,7 +290,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -304,18 +304,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 64,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "pSVar10 = g_RenderVertexBuffer + *(int *)((int)g_ProcessedVertexIndices + iVar3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pSVar10 = g_RenderVertexBuffer + *(int *)((int)g_ProcessedVertexIndices + iVar4);",
       "type": "pointer_cast"
     },
     {
@@ -323,12 +315,20 @@
       "line": 67,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + (uint)bVar13 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 68,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
       "match": "(SMRGLTextureBasic *)((int)",
       "severity": "mild",
       "text": "pSVar6 = (SMRGLTextureBasic *)((int)pSVar6 + (uint)bVar13 * -8 + 4);",
@@ -336,7 +336,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 96,
       "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
       "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",

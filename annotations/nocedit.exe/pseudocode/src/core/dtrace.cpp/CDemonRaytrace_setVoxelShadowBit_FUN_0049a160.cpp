@@ -13,32 +13,31 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160(CDemo
   uchar *puVar1;
   byte bVar2;
   int aiStackY_1028 [1014];
-  CVector3i *in_stack_ffffffc0;
   int local_3c;
   int local_38;
   int local_34;
   int local_30;
   int local_2c;
   int local_28;
+  int aiStack_24 [2];
   CVector3i local_1c;
+  CVector3i *in_stack_ffffffc0;
   
   bVar2 = 0;
   core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
             (this_ptr,world_position,in_stack_ffffffc0);
-  *(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8);
-  *(uint *)((int)&stack0xffffffc8 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+  (&local_3c)[(uint)bVar2 * -2] = aiStack_24[(uint)bVar2 * -2];
+  (&local_38)[(uint)bVar2 * -2 + (uint)bVar2 * -2] =
+       aiStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
   if ((((-1 < local_28) && (-1 < local_3c)) && (-1 < local_38)) &&
      (((local_28 < (this_ptr->grid_coord).x && (local_3c < (this_ptr->grid_coord).y)) &&
       (local_38 < (this_ptr->grid_coord).z)))) {
     core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
               (this_ptr,world_position,&local_1c);
     local_34 = local_1c.x;
-    *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8) =
-         *(uint *)((int)&local_1c + (uint)bVar2 * -8 + 4);
-    *(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-         *(uint *)((int)&local_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+    (&local_30)[(uint)bVar2 * -2] = *(int *)((int)&local_1c + (uint)bVar2 * -8 + 4);
+    (&local_2c)[(uint)bVar2 * -2 + (uint)bVar2 * -2] =
+         *(int *)((int)&local_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
     local_34 = local_34 % 8;
     local_30 = local_30 % 8;
     local_2c = local_2c % 8;

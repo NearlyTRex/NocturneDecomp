@@ -6,7 +6,7 @@
 ; Parameters:
 ; CSvetlana *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x84]:4  local_84
+; int[30]          Stack[-0x84]:120  local_84
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

@@ -11,17 +11,18 @@
 void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(CVampireBoss *this_ptr)
 
 {
-  CHero *pCVar1;
-  CDemonActor *pCVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
+  float fVar1;
   int iVar9;
   CVampireBoss *pCVar10;
   float local_20;
+  CHero *pCVar1;
+  float fVar8;
+  float fVar7;
+  float fVar6;
+  float fVar4;
+  float fVar5;
+  CDemonActor *pCVar2;
+  float fVar3;
   
   this_ptr->waypoint_index = 0;
   iVar9 = 0;
@@ -41,11 +42,11 @@ void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005e7510(CVam
     fVar5 = (pCVar2->location).position.y - (this_ptr->base).base.base.location.position.y;
     fVar6 = (pCVar2->location).position.z - (this_ptr->base).base.base.location.position.z;
     fVar7 = (pCVar2->location).position.z - (pCVar1->base).base.location.position.z;
-    fVar3 = fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4 +
+    fVar1 = fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4 +
             fVar7 * fVar7 + fVar8 * fVar8 + fVar3 * fVar3;
-    if (local_20 < fVar3) {
+    if (local_20 < fVar1) {
       this_ptr->waypoint_index = iVar9;
-      local_20 = fVar3;
+      local_20 = fVar1;
     }
     iVar9 = iVar9 + 1;
     pCVar10 = (CVampireBoss *)((pCVar10->base).base.base.actor_name + 4);

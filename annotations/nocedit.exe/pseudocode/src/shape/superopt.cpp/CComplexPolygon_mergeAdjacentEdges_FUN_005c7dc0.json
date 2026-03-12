@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 175,
+    "complexity_score": 176,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 80,
+    "pseudocode_lines": 81,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 270
+    "total_lines": 271
   },
   "cross_references": [
     {
@@ -118,14 +118,14 @@
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "undefined4 *"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "undefined4 *"
       },
       {
         "is_param": false,
@@ -139,7 +139,7 @@
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
@@ -160,7 +160,7 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": false,
@@ -174,7 +174,7 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
@@ -195,7 +195,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 23,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_38 = (uint *)((int)pvVar1 + 0x10);",
@@ -203,7 +203,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 24,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_34 = (uint *)((int)pvVar1 + 0x28);",
@@ -211,7 +211,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 31,
       "match": "(SExpandedEdge *)((int)",
       "severity": "mild",
       "text": "edge_b = (SExpandedEdge *)((int)pvVar1 + iVar3);",
@@ -219,7 +219,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 33,
       "match": "(SExpandedEdge *)((int)",
       "severity": "mild",
       "text": "edge_a = (SExpandedEdge *)((int)pvVar1 + local_2c * 0x60);",
@@ -227,7 +227,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 43,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_34[1] = *(uint *)((int)&(edge_b->end_pos).x + 4);",
@@ -235,7 +235,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 45,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_34[3] = *(uint *)((int)&(edge_b->end_pos).y + 4);",
@@ -243,7 +243,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 48,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_34[0xb] = *(uint *)((int)edge_b->end_uv + 4);",
@@ -251,7 +251,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 50,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "local_34[0xd] = *(uint *)((int)edge_b->end_uv + 0xc);",
@@ -259,7 +259,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 71,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "local_20 = (void *)((int)local_20 + 0x60);",

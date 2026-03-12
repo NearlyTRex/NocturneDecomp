@@ -9,9 +9,8 @@
 void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_00422d60(CLightActor *this_ptr)
 
 {
-  CKeyFramedModelInstance *this_ptr_00;
-  ELightActorType EVar1;
-  float fVar2;
+  float fVar1;
+  int iVar2;
   int iVar3;
   CDemonFilter *this_ptr_01;
   char acStack_d0 [40];
@@ -30,10 +29,12 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_00422d60(CLightAc
   float fStack_38;
   float fStack_34;
   CDemonLight *local_18;
+  float fVar2;
+  CKeyFramedModelInstance *this_ptr_00;
+  ELightActorType EVar1;
   
   EVar1 = this_ptr->light_actor_type;
   if (EVar1 != LIGHT_TYPE_CUSTOM) {
-    local_18 = &this_ptr->light;
     this_ptr_00 = &(this_ptr->base).model;
     if (EVar1 < LIGHT_TYPE_LANTERN) {
       core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
@@ -48,7 +49,7 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_00422d60(CLightAc
       (this_ptr->light_orient).vec.y = (this_ptr->light_orient).vec.z;
       (this_ptr->light_orient).vec.x = (this_ptr->light_orient).vec.y;
       (this_ptr->light).light_enabled_flag = 0;
-      (local_18->base).base.focal_length = 56.0;
+      (this_ptr->light).base.base.focal_length = 56.0;
       (this_ptr->light).base.max_distance = 32.0;
       (this_ptr->base).pickup_type = 3;
       return;
@@ -58,32 +59,20 @@ void __cdecl core_boxactor_cpp_CLightActor_setupLightModel_FUN_00422d60(CLightAc
                 (this_ptr_00,"lantern.kfm");
       core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(this_ptr_00);
       (*((this_ptr->base).base.vtable._ub)->getBoundingBox)((CDemonActor *)this_ptr,&local_a8);
-      fStack_4c = 0.5f;
-      fStack_48 = local_a8.min.x + local_a8.max.x;
-      fStack_3c = fStack_48 * 0.5f;
-      fStack_44 = local_a8.min.y + local_a8.max.y;
-      fStack_40 = local_a8.min.z + local_a8.max.z;
-      fStack_38 = fStack_44 * 0.5f;
-      fStack_34 = fStack_40 * 0.5f;
-      (this_ptr->blight_pos).x = fStack_3c;
-      fStack_6c = local_a8.min.x + local_a8.max.x;
-      fStack_54 = fStack_6c * fStack_4c;
-      fStack_68 = local_a8.min.y + local_a8.max.y;
-      fStack_64 = local_a8.min.z + local_a8.max.z;
-      fStack_50 = fStack_68 * fStack_4c;
-      fStack_4c = fStack_64 * fStack_4c;
-      (this_ptr->blight_pos).y = fStack_50;
+      fVar1 = 0.5f;
+      (this_ptr->blight_pos).x = (local_a8.min.x + local_a8.max.x) * 0.5f;
+      (this_ptr->blight_pos).y = (local_a8.min.y + local_a8.max.y) * fVar1;
       (this_ptr->blight_pos).z = local_a8.max.z;
       (this_ptr->light_orient).vec.z = 0.0;
       (this_ptr->light_orient).vec.y = (this_ptr->light_orient).vec.z;
       (this_ptr->light_orient).vec.x = (this_ptr->light_orient).vec.y;
       (this_ptr->light_orient).vec.x = 0.2617994;
       (this_ptr->light).light_enabled_flag = 0;
-      (local_18->base).base.focal_length = 56.0;
+      (this_ptr->light).base.base.focal_length = 56.0;
       (this_ptr->light).base.max_distance = 32.0;
-      iVar3 = INT_008229ac;
+      iVar2 = INT_008229ac;
       (this_ptr->base).pickup_type = 3;
-      if (iVar3 == 0) {
+      if (iVar2 == 0) {
         this_ptr_01 = CDemonFilter_ARRAY_008229ec;
         iVar3 = 0;
         do {

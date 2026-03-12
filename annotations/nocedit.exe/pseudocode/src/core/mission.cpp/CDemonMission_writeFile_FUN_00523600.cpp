@@ -9,14 +9,17 @@
 void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission *this_ptr,_FILE *file_handle)
 
 {
-  int *piVar1;
-  CDemonActor *pCVar2;
+  CDemonActor *pCVar1;
   CDemonActor *pCVar3;
   char *pcVar4;
+  CDemonActor *pCVar4;
   int iVar5;
+  int iVar6;
   CInventory *pCVar6;
   char (*pacVar7) [256];
   int iVar8;
+  int *piVar1;
+  CDemonActor *pCVar2;
   
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",0x1ae);
   if (this_ptr->actors_prepared == 0) {
@@ -43,48 +46,48 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
   _fprintf(file_handle,"// actorTypeList\n");
   _fprintf(file_handle,"%d\n",g_NumActorClassTypes);
   core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0();
-  iVar5 = 0;
+  iVar6 = 0;
   if (0 < g_NumActorClassTypes) {
     iVar8 = 0;
     do {
       piVar1 = (int *)((int)g_ActorClassRegistrations + iVar8);
       iVar8 = iVar8 + 4;
-      iVar5 = iVar5 + 1;
+      iVar6 = iVar6 + 1;
       _fprintf(file_handle,"%s %d\n",*piVar1,*(uint *)(*piVar1 + 0x34));
-    } while (iVar5 < g_NumActorClassTypes);
+    } while (iVar6 < g_NumActorClassTypes);
   }
   _fprintf(file_handle,"// actor count\n");
-  iVar5 = core_mission_cpp_CDemonMission_countActors_FUN_00523cc0(this_ptr);
-  _fprintf(file_handle,"%d\n",iVar5);
-  iVar5 = 0;
+  iVar6 = core_mission_cpp_CDemonMission_countActors_FUN_00523cc0(this_ptr);
+  _fprintf(file_handle,"%d\n",iVar6);
+  iVar6 = 0;
   _fprintf(file_handle,"// inventory actor count\n");
   for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor) {
     pCVar3 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,g_CHeroClassInfo.name_hash);
     if (pCVar3 != (CDemonActor *)0x0) {
-      iVar5 = iVar5 + *(int *)(pCVar3[0x176].create_event + 0x38);
+      iVar6 = iVar6 + *(int *)(pCVar3[0x176].create_event + 0x38);
     }
   }
-  _fprintf(file_handle,"%d\n",iVar5);
+  _fprintf(file_handle,"%d\n",iVar6);
   _fprintf(file_handle,"// actor name list\n");
-  pCVar2 = this_ptr->first_actor;
+  pCVar1 = this_ptr->first_actor;
   this_ptr->actor_lookup_count = 0;
-  for (; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor) {
-    pCVar3 = pCVar2;
-    pcVar4 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar2);
-    _fprintf(file_handle,"%s \"%s\"\n",pcVar4,pCVar3);
+  for (; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor) {
+    pCVar4 = pCVar1;
+    pcVar4 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar1);
+    _fprintf(file_handle,"%s \"%s\"\n",pcVar4,pCVar4);
     if (1999 < this_ptr->actor_lookup_count) {
       g_CurrentFilename = "..\\core\\mission.cpp";
       g_CurrentLineNumber = 0x1e9;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Too many actors");
     }
-    this_ptr->actor_lookup_table[this_ptr->actor_lookup_count] = pCVar2;
+    this_ptr->actor_lookup_table[this_ptr->actor_lookup_count] = pCVar1;
     this_ptr->actor_lookup_count = this_ptr->actor_lookup_count + 1;
   }
-  for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor) {
-    pCVar3 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,g_CHeroClassInfo.name_hash);
-    if (pCVar3 != (CDemonActor *)0x0) {
-      pCVar6 = (CInventory *)(pCVar3[0x176].create_event + 0x30);
-      for (iVar5 = 0; iVar5 < *(int *)(pCVar3[0x176].create_event + 0x38); iVar5 = iVar5 + 1) {
+  for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor) {
+    pCVar4 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(pCVar1,g_CHeroClassInfo.name_hash);
+    if (pCVar4 != (CDemonActor *)0x0) {
+      pCVar6 = (CInventory *)(pCVar4[0x176].create_event + 0x30);
+      for (iVar6 = 0; iVar6 < *(int *)(pCVar4[0x176].create_event + 0x38); iVar6 = iVar6 + 1) {
         if (1999 < this_ptr->actor_lookup_count) {
           g_CurrentFilename = "..\\core\\mission.cpp";
           g_CurrentLineNumber = 500;
@@ -95,12 +98,12 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_00523600(CDemonMission
         this_ptr->actor_lookup_count = this_ptr->actor_lookup_count + 1;
       }
       core_inv_cpp_CInventory_saveItems_FUN_004ff3b0
-                ((CInventory *)(pCVar3[0x176].create_event + 0x30),file_handle);
+                ((CInventory *)(pCVar4[0x176].create_event + 0x30),file_handle);
     }
   }
   _fprintf(file_handle,"// actor data list\n");
-  for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor) {
-    core_actor_cpp_CDemonActor_save_FUN_0040af30(pCVar2,file_handle);
+  for (pCVar1 = this_ptr->first_actor; pCVar1 != (CDemonActor *)0x0; pCVar1 = pCVar1->next_actor) {
+    core_actor_cpp_CDemonActor_save_FUN_0040af30(pCVar1,file_handle);
   }
   core_gore_cpp_CGore_save_FUN_004ee290(g_CGorePtr,file_handle);
   this_ptr->actor_lookup_count = 0;

@@ -9,9 +9,12 @@
 double __cdecl shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400(CLodMesh *this_ptr,SLodSamplePoint *sample_point,CLodFace *face)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
+  CLodVert *edge_vertex_0;
+  CLodVert *pCVar1;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  CVector3f *pCVar7;
   CVector3f *pCVar4;
   CLodVert *pCVar5;
   byte bVar6;
@@ -21,11 +24,14 @@ double __cdecl shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a40
   CVector3f local_80;
   CVector3f local_74 [5];
   CLodVert *local_38;
+  float fVar2;
+  float fVar3;
+  float fVar1;
   
-  pCVar5 = this_ptr->vertex_data;
-  edge_vertex_1 = pCVar5 + face->vertex_idx_0;
-  local_38 = pCVar5 + face->vertex_idx_1;
-  pCVar5 = pCVar5 + face->vertex_idx_2;
+  pCVar1 = this_ptr->vertex_data;
+  edge_vertex_1 = pCVar1 + face->vertex_idx_0;
+  edge_vertex_0 = pCVar1 + face->vertex_idx_1;
+  pCVar5 = pCVar1 + face->vertex_idx_2;
   bVar6 = face->edge_dot_products[0] <
           (sample_point->position).z * face->edge_perpendiculars[0].z +
           (sample_point->position).x * face->edge_perpendiculars[0].x +
@@ -50,51 +56,52 @@ double __cdecl shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a40
             (sample_point->position).y * (face->normal).y);
     return (double)(fVar1 * fVar1);
   case 1:
-    pCVar4 = shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
+    pCVar7 = shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
                        (local_74,&sample_point->position,&edge_vertex_1->position,
-                        &local_38->position);
-    fVar1 = (sample_point->position).x - pCVar4->x;
-    fVar3 = (sample_point->position).y - pCVar4->y;
-    fVar2 = (sample_point->position).z - pCVar4->z;
-    return (double)(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);
+                        &edge_vertex_0->position);
+    fVar4 = (sample_point->position).x - pCVar7->x;
+    fVar3 = (sample_point->position).y - pCVar7->y;
+    fVar2 = (sample_point->position).z - pCVar7->z;
+    return (double)(fVar2 * fVar2 + fVar3 * fVar3 + fVar4 * fVar4);
   case 2:
-    pCVar4 = shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
-                       (&local_8c,&sample_point->position,&local_38->position,&pCVar5->position);
-    fVar1 = (sample_point->position).x - pCVar4->x;
-    fVar3 = (sample_point->position).y - pCVar4->y;
-    fVar2 = (sample_point->position).z - pCVar4->z;
-    return (double)(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);
+    pCVar7 = shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
+                       (&local_8c,&sample_point->position,&edge_vertex_0->position,&pCVar5->position
+                       );
+    fVar4 = (sample_point->position).x - pCVar7->x;
+    fVar6 = (sample_point->position).y - pCVar7->y;
+    fVar5 = (sample_point->position).z - pCVar7->z;
+    return (double)(fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4);
   case 3:
-    fVar1 = (sample_point->position).x - (local_38->position).x;
-    fVar3 = (sample_point->position).y - (local_38->position).y;
-    fVar2 = (sample_point->position).z - (local_38->position).z;
-    return (double)(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);
+    fVar4 = (sample_point->position).x - (edge_vertex_0->position).x;
+    fVar6 = (sample_point->position).y - (edge_vertex_0->position).y;
+    fVar5 = (sample_point->position).z - (edge_vertex_0->position).z;
+    return (double)(fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4);
   case 4:
-    pCVar4 = shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
+    pCVar7 = shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
                        (&local_98,&sample_point->position,&pCVar5->position,&edge_vertex_1->position
                        );
-    fVar1 = (sample_point->position).x - pCVar4->x;
-    fVar3 = (sample_point->position).y - pCVar4->y;
-    fVar2 = (sample_point->position).z - pCVar4->z;
-    return (double)(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);
+    fVar4 = (sample_point->position).x - pCVar7->x;
+    fVar6 = (sample_point->position).y - pCVar7->y;
+    fVar5 = (sample_point->position).z - pCVar7->z;
+    return (double)(fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4);
   case 5:
-    fVar1 = (sample_point->position).x - (edge_vertex_1->position).x;
-    fVar3 = (sample_point->position).y - (edge_vertex_1->position).y;
-    fVar2 = (sample_point->position).z - (edge_vertex_1->position).z;
-    return (double)(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);
+    fVar4 = (sample_point->position).x - (edge_vertex_1->position).x;
+    fVar6 = (sample_point->position).y - (edge_vertex_1->position).y;
+    fVar5 = (sample_point->position).z - (edge_vertex_1->position).z;
+    return (double)(fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4);
   case 6:
-    fVar1 = (sample_point->position).x - (pCVar5->position).x;
-    fVar3 = (sample_point->position).y - (pCVar5->position).y;
-    fVar2 = (sample_point->position).z - (pCVar5->position).z;
-    return (double)(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);
+    fVar4 = (sample_point->position).x - (pCVar5->position).x;
+    fVar6 = (sample_point->position).y - (pCVar5->position).y;
+    fVar5 = (sample_point->position).z - (pCVar5->position).z;
+    return (double)(fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4);
   default:
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
     g_CurrentLineNumber = 0xec8;
     core_main_c_displayErrorAndQuit_FUN_00506f10("!");
     pCVar4 = shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870(this_ptr,&local_80,face);
-    fVar1 = (sample_point->position).x - pCVar4->x;
-    fVar3 = (sample_point->position).y - pCVar4->y;
-    fVar2 = (sample_point->position).z - pCVar4->z;
-    return (double)(fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1);
+    fVar4 = (sample_point->position).x - pCVar4->x;
+    fVar6 = (sample_point->position).y - pCVar4->y;
+    fVar5 = (sample_point->position).z - pCVar4->z;
+    return (double)(fVar5 * fVar5 + fVar6 * fVar6 + fVar4 * fVar4);
   }
 }

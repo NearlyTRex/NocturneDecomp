@@ -9,18 +9,20 @@
 void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_ptr,float delta_time)
 
 {
-  CLocation *pCVar1;
-  UOrientationVector *pUVar2;
-  CVector3f *pCVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
+  CVector3f *pCVar2;
+  float fVar3;
   int iVar7;
   SDamageInfo local_54;
   float local_18;
   float local_14;
   float local_10;
   float local_c;
+  CVector3f *pCVar3;
+  UOrientationVector *pUVar2;
+  float fVar5;
+  float fVar4;
+  float fVar6;
+  CLocation *pCVar1;
   
   if ((this_ptr->vertex_count < 3) || (this_ptr->tri_count < 1)) {
     (this_ptr->base).lifecycle_state = ACTOR_DESTROYED;
@@ -48,9 +50,9 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
       core_bodypart_cpp_CBodyPart_spawnGore_FUN_0041b1b0(this_ptr);
     }
     if (this_ptr->carried_by_actor == (CDemonActor *)0x0) {
-      fVar4 = this_ptr->physics_timer - delta_time;
-      this_ptr->physics_timer = fVar4;
-      if (0.0 <= fVar4) {
+      fVar3 = this_ptr->physics_timer - delta_time;
+      this_ptr->physics_timer = fVar3;
+      if (0.0 <= fVar3) {
         pCVar1 = &(this_ptr->base).location;
         local_18 = (pCVar1->position).x;
         local_14 = (this_ptr->base).location.position.y;
@@ -60,9 +62,9 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
         (this_ptr->base).location.position.y = (this_ptr->physics_box).position.y;
         (this_ptr->base).location.position.z = (this_ptr->physics_box).position.z;
         pUVar2 = &(this_ptr->base).orient;
-        pCVar3 = &(this_ptr->physics_box).orientation;
-        if ((CVector3f *)pUVar2 != pCVar3) {
-          (pUVar2->vec).x = pCVar3->x;
+        pCVar2 = &(this_ptr->physics_box).orientation;
+        if ((CVector3f *)pUVar2 != pCVar2) {
+          (pUVar2->vec).x = pCVar2->x;
           (this_ptr->base).orient.vec.y = (this_ptr->physics_box).orientation.y;
           (this_ptr->base).orient.vec.z = (this_ptr->physics_box).orientation.z;
         }

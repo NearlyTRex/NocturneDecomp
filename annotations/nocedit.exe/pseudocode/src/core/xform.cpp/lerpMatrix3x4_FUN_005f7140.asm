@@ -8,18 +8,16 @@
 ; CMatrix3x4f *    Stack[0x8]:4   matrix_b
 ; float            Stack[0xc]:4   t
 ; Local Variables:
+; undefined4[1498] Stack[-0x184c]:5992  auStackY_184c
 ; undefined8       Stack[-0xd8]:8  local_d8
-; undefined1       Stack[-0xd0]:1  local_d0
-; undefined4       Stack[-0xc4]:4  local_c4
-; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xa4]:4  local_a4
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0x60]:1  local_60
-; undefined1       Stack[-0x50]:1  local_50
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x30]:1  local_30
-; undefined1       Stack[-0x20]:1  local_20
+; CMatrix3x4f      Stack[-0xd0]:48  local_d0
+; float[12]        Stack[-0xa0]:48  local_a0
+; CQuaternion4f    Stack[-0x70]:16  local_70
+; CQuaternion4f    Stack[-0x60]:16  local_60
+; CQuaternion4f    Stack[-0x50]:16  local_50
+; CQuaternion4f    Stack[-0x40]:16  local_40
+; CQuaternion4f    Stack[-0x30]:16  local_30
+; CQuaternion4f    Stack[-0x20]:16  local_20
 ;
 ; XREF[4]:
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090 at 0042d2ac

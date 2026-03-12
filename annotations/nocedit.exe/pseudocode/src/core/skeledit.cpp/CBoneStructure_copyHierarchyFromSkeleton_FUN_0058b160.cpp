@@ -9,8 +9,7 @@
 void __cdecl core_skeledit_cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058b160(CBoneStructure *this_ptr,CSkeleton *skeleton)
 
 {
-  char cVar1;
-  int iVar2;
+  char cVar2;
   SBoneData *pSVar3;
   SBone *pSVar4;
   int iVar5;
@@ -18,6 +17,8 @@ void __cdecl core_skeledit_cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058
   SBone *pSVar7;
   SBoneData *pSVar8;
   CSkeleton *local_10;
+  int iVar2;
+  char cVar1;
   
   __STK();
   iVar2 = skeleton->bone_count;
@@ -35,11 +36,11 @@ LAB_0058b1a1:
       cVar1 = pSVar7->bone_name[0];
       pSVar8->name[0] = cVar1;
       if (cVar1 != '\0') {
-        cVar1 = pSVar7->bone_name[1];
+        cVar2 = pSVar7->bone_name[1];
         pSVar7 = (SBone *)(pSVar7->bone_name + 2);
-        pSVar8->name[1] = cVar1;
+        pSVar8->name[1] = cVar2;
         pSVar8 = (SBoneData *)(pSVar8->name + 2);
-        if (cVar1 != '\0') goto LAB_0058b1a1;
+        if (cVar2 != '\0') goto LAB_0058b1a1;
       }
       iVar5 = iVar5 + 1;
       pSVar8 = pSVar3 + 1;

@@ -6,8 +6,8 @@
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xc]:1  local_c
-; undefined1       Stack[-0x8]:1  local_8
+; int              Stack[-0xc]:4  local_c
+; int              Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053997a

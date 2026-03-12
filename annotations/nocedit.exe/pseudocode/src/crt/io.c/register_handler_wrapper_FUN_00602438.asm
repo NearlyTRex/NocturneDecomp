@@ -7,7 +7,7 @@
 ; HANDLE           Stack[0x4]:4   file_handle
 ;
 ; XREF[1]:
-;   crt_stdio.c_CreateFileImpl_FUN_006090a0 at 00609141
+;   crt_stdio.c_CreateFileImpl_FUN_006090a0 at 0060923e
 ;
 ; Called Functions:
 ;   crt_io.c_register_handle_FUN_00608990

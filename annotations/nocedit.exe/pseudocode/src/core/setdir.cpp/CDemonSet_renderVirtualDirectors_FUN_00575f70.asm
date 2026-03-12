@@ -7,16 +7,16 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0xa0]:8  local_a0
-; undefined1       Stack[-0x98]:1  local_98
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[100]        Stack[-0x98]:100  local_98
+; C3DSCamera *     Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; CZThumb *        Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 at 0056c7ae

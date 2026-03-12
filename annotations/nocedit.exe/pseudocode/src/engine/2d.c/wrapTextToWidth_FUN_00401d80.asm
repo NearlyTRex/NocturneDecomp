@@ -8,7 +8,8 @@
 ; int              Stack[0x8]:4   max_width
 ; char *           Stack[0xc]:4   output_buffer
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x114]:256  acStack_114
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   uchar[257] g_CharacterClassificationTable

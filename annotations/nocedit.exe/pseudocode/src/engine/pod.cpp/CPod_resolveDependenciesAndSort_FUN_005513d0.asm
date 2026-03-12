@@ -6,29 +6,29 @@
 ; Parameters:
 ; CPod *           Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0xab0]:4  local_ab0
-; undefined1       Stack[-0x470]:1  local_470
-; undefined1       Stack[-0x368]:1  local_368
-; undefined4       Stack[-0x264]:4  local_264
-; undefined1       Stack[-0x260]:1  local_260
-; undefined1       Stack[-0x158]:1  local_158
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int[400]         Stack[-0xab0]:1600  local_ab0
+; CPodDependencyRecord Stack[-0x470]:264  local_470
+; char[260]        Stack[-0x368]:260  local_368
+; int              Stack[-0x264]:4  local_264
+; CPodDependencyRecord Stack[-0x260]:264  local_260
+; char[256]        Stack[-0x158]:256  local_158
+; int              Stack[-0x58]:4  local_58
+; CPod *           Stack[-0x50]:4  local_50
+; CPod *           Stack[-0x4c]:4  local_4c
+; int              Stack[-0x48]:4  local_48
+; int              Stack[-0x44]:4  local_44
+; int              Stack[-0x40]:4  local_40
+; CPod *           Stack[-0x3c]:4  local_3c
+; CPodFile * *     Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; CPodFile *       Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; CPodFile * *     Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; CPodFile *       Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_podmain.cpp_CDemonPod_load_FUN_005519c0 at 00551ae2

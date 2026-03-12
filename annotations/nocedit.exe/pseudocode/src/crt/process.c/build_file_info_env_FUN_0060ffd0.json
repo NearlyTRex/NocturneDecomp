@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 231,
+    "complexity_score": 239,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 14,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 201,
+    "pseudocode_lines": 209,
     "suspect_count": 2,
     "suspect_types": [
       "special_crt_function",
       "unknown_field"
     ],
-    "total_lines": 495
+    "total_lines": 503
   },
   "cross_references": [
     {
@@ -186,43 +186,29 @@
         "is_param": false,
         "name": "local_44",
         "offset": -68,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_43",
-        "offset": -67,
-        "size": 1,
-        "type": "undefined1"
+        "size": 28,
+        "type": "char[28]"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_27",
-        "offset": -39,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "char[12]"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       }
     ]
   },
@@ -288,10 +274,10 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 35,
+      "line": 43,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "*(uint *)local_18 = \"C_FILE_INFO=\"._0_4_;",
+      "text": "*(uint *)pcVar3 = \"C_FILE_INFO=\"._0_4_;",
       "type": "unknown_field"
     },
     {

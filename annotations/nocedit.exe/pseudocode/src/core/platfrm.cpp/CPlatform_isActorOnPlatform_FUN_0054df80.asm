@@ -7,7 +7,13 @@
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   actor
 ; Local Variables:
-; undefined4       Stack[-0x88]:4  local_88
+; SCollisionInfo   Stack[-0x88]:40  local_88
+; CBoundingBox3D   Stack[-0x60]:24  CStack_60
+; CVector3f        Stack[-0x48]:12  CStack_48
+; CVector3f        Stack[-0x3c]:12  CStack_3c
+; CVector3f        Stack[-0x30]:12  CStack_30
+; CVector3f        Stack[-0x24]:12  CStack_24
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; XREF[1]:
 ;   core_platfrm.cpp_CPlatform_process_FUN_0054cc30 at 0054d4ce

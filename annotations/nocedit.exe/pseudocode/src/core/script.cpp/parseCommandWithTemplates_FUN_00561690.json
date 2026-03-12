@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 373,
-    "complexity_score": 371,
+    "complexity_score": 364,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 276,
-    "suspect_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 284,
+    "suspect_count": 7,
     "suspect_types": [
       "param_count_too_many",
-      "pointer_cast",
-      "warning_type_propagation"
+      "pointer_cast"
     ],
-    "total_lines": 649
+    "total_lines": 657
   },
   "cross_references": [
     {
@@ -137,113 +136,36 @@
         "is_param": false,
         "name": "local_2148",
         "offset": -8520,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2144",
-        "offset": -8516,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2143",
-        "offset": -8515,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_20e0",
-        "offset": -8416,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_20df",
-        "offset": -8415,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_207c",
-        "offset": -8316,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2078",
-        "offset": -8312,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2077",
-        "offset": -8311,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2014",
-        "offset": -8212,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_2013",
-        "offset": -8211,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_e8",
-        "offset": -232,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_e7",
-        "offset": -231,
-        "size": 1,
-        "type": "undefined1"
+        "size": 8488,
+        "type": "CCmdParse"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "ECmdParmType"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": true,
@@ -329,24 +251,8 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(CCmdParse *)((int)",
-      "severity": "mild",
-      "text": "pCVar6 = (CCmdParse *)((int)pCVar6 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
+      "line": 41,
       "match": "(CCmdParse *)((int)",
       "severity": "mild",
       "text": "pCVar9 = (CCmdParse *)((int)pCVar9 + (uint)bVar12 * -8 + 4);",
@@ -354,15 +260,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 162,
-      "match": "(CCmdParm *)((int)",
+      "line": 42,
+      "match": "(CCmdParse *)((int)",
       "severity": "mild",
-      "text": "pCVar8 = (CCmdParm *)((int)pCVar8 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pCVar6 = (CCmdParse *)((int)pCVar6 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 163,
+      "line": 169,
+      "match": "(CCmdParm *)((int)",
+      "severity": "mild",
+      "text": "pCVar10 = (CCmdParm *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 170,
       "match": "(CCmdParm *)((int)",
       "severity": "mild",
       "text": "parm_out = (CCmdParm *)((int)parm_out + (uint)bVar12 * -8 + 4);",
@@ -370,15 +284,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 202,
+      "line": 209,
       "match": "(CCmdParm *)((int)",
       "severity": "mild",
-      "text": "pCVar8 = (CCmdParm *)((int)pCVar8 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pCVar10 = (CCmdParm *)((int)pCVar10 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 203,
+      "line": 210,
       "match": "(CCmdParm *)((int)",
       "severity": "mild",
       "text": "parm_out = (CCmdParm *)((int)parm_out + (uint)bVar12 * -8 + 4);",

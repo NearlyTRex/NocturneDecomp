@@ -4,110 +4,116 @@
       {
         "category": "other",
         "column": 15,
-        "line": 294,
+        "line": 334,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 295,
+        "line": 335,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 296,
+        "line": 336,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 297,
+        "line": 337,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 298,
+        "line": 338,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 299,
+        "line": 339,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 315,
+        "line": 355,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 316,
+        "line": 356,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 317,
+        "line": 357,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 318,
+        "line": 358,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 73,
-        "line": 347,
+        "line": 388,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 348,
+        "line": 389,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 65,
-        "line": 349,
+        "line": 390,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 78,
-        "line": 399,
+        "line": 440,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 77,
-        "line": 400,
+        "line": 441,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 77,
-        "line": 401,
+        "line": 442,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
-        "column": 77,
-        "line": 719,
-        "message": "member reference base type 'double' is not a structure or union"
+        "column": 19,
+        "line": 508,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 28,
+        "line": 508,
+        "message": "invalid operands to binary expression ('double' and 'int')"
       },
       {
         "category": "other",
-        "column": 82,
-        "line": 724,
-        "message": "member reference base type 'double' is not a structure or union"
+        "column": 19,
+        "line": 587,
+        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
     "success": false,
@@ -115,20 +121,21 @@
   },
   "complexity": {
     "assembly_lines": 1738,
-    "complexity_score": 2707,
+    "complexity_score": 2751,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 937,
-    "suspect_count": 175,
+    "pseudocode_lines": 926,
+    "suspect_count": 180,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
+      "sub84_truncation",
       "unknown_field"
     ],
-    "total_lines": 2675
+    "total_lines": 2664
   },
   "cross_references": [],
   "function": {
@@ -233,25 +240,1530 @@
     "pcode_op_count": 11666
   },
   "stack_frame": {
-    "frame_size": 1128,
-    "local_size": 1116,
+    "frame_size": 6612,
+    "local_size": 6600,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "aiStackY_19c4",
+        "offset": -6596,
+        "size": 5044,
+        "type": "int[1261]"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5e0",
+        "offset": -1504,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5d8",
+        "offset": -1496,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5d0",
+        "offset": -1488,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5c8",
+        "offset": -1480,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5c4",
+        "offset": -1476,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5c0",
+        "offset": -1472,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5bc",
+        "offset": -1468,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5b8",
+        "offset": -1464,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5b4",
+        "offset": -1460,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5b0",
+        "offset": -1456,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5ac",
+        "offset": -1452,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5a8",
+        "offset": -1448,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5a4",
+        "offset": -1444,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5a0",
+        "offset": -1440,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_59c",
+        "offset": -1436,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_568",
+        "offset": -1384,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_560",
+        "offset": -1376,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_558",
+        "offset": -1368,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_554",
+        "offset": -1364,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_550",
+        "offset": -1360,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_54c",
+        "offset": -1356,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_548",
+        "offset": -1352,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_544",
+        "offset": -1348,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_540",
+        "offset": -1344,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_53c",
+        "offset": -1340,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_518",
+        "offset": -1304,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_510",
+        "offset": -1296,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_508",
+        "offset": -1288,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_500",
+        "offset": -1280,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_4f8",
+        "offset": -1272,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_4f0",
+        "offset": -1264,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_4e8",
+        "offset": -1256,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_4e0",
+        "offset": -1248,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_4d8",
+        "offset": -1240,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_4d0",
+        "offset": -1232,
+        "size": 24,
+        "type": "CVector3d"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_4b8",
+        "offset": -1208,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_4b0",
+        "offset": -1200,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_4a8",
+        "offset": -1192,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_4a0",
+        "offset": -1184,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_498",
+        "offset": -1176,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_490",
+        "offset": -1168,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_488",
+        "offset": -1160,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_480",
+        "offset": -1152,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_478",
+        "offset": -1144,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_470",
+        "offset": -1136,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_468",
+        "offset": -1128,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_460",
+        "offset": -1120,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
         "name": "local_458",
         "offset": -1112,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CVector3d"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_440",
+        "offset": -1088,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_43c",
+        "offset": -1084,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_438",
+        "offset": -1080,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_434",
+        "offset": -1076,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_430",
+        "offset": -1072,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_42c",
+        "offset": -1068,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_428",
+        "offset": -1064,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_420",
+        "offset": -1056,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_418",
+        "offset": -1048,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_410",
+        "offset": -1040,
+        "size": 24,
+        "type": "CVector3d"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_3f8",
+        "offset": -1016,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_3f0",
+        "offset": -1008,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_3e8",
+        "offset": -1000,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_3e0",
+        "offset": -992,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_3dc",
+        "offset": -988,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_3d8",
+        "offset": -984,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_3d4",
+        "offset": -980,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_3d0",
+        "offset": -976,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_3cc",
+        "offset": -972,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_3c8",
         "offset": -968,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CVector3d"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_3b0",
+        "offset": -944,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_3a8",
+        "offset": -936,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_3a0",
+        "offset": -928,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_398",
+        "offset": -920,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_390",
+        "offset": -912,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_388",
+        "offset": -904,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_380",
+        "offset": -896,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_378",
+        "offset": -888,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_370",
+        "offset": -880,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_368",
+        "offset": -872,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_360",
+        "offset": -864,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_358",
+        "offset": -856,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_350",
+        "offset": -848,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_34c",
+        "offset": -844,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_348",
+        "offset": -840,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_344",
+        "offset": -836,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_340",
+        "offset": -832,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_33c",
+        "offset": -828,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_338",
+        "offset": -824,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_330",
+        "offset": -816,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_328",
+        "offset": -808,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_320",
+        "offset": -800,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_318",
+        "offset": -792,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_310",
+        "offset": -784,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_308",
+        "offset": -776,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_300",
+        "offset": -768,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_2f8",
+        "offset": -760,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2f0",
+        "offset": -752,
+        "size": 24,
+        "type": "CVector3d"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_2d8",
+        "offset": -728,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_2d0",
+        "offset": -720,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_2c8",
+        "offset": -712,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_2c0",
+        "offset": -704,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_2b8",
+        "offset": -696,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_2b0",
+        "offset": -688,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_2a8",
+        "offset": -680,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_2a0",
+        "offset": -672,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_298",
+        "offset": -664,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_290",
+        "offset": -656,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_288",
+        "offset": -648,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_280",
+        "offset": -640,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_278",
+        "offset": -632,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_270",
+        "offset": -624,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_268",
+        "offset": -616,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_260",
+        "offset": -608,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_258",
+        "offset": -600,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_250",
+        "offset": -592,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_248",
+        "offset": -584,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_240",
+        "offset": -576,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_238",
+        "offset": -568,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_230",
+        "offset": -560,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_228",
+        "offset": -552,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_220",
+        "offset": -544,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_218",
+        "offset": -536,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_214",
+        "offset": -532,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_210",
+        "offset": -528,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_20c",
+        "offset": -524,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_208",
+        "offset": -520,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_204",
+        "offset": -516,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_200",
+        "offset": -512,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_1f8",
+        "offset": -504,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_1f0",
+        "offset": -496,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1e8",
+        "offset": -488,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_1e0",
+        "offset": -480,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1d8",
+        "offset": -472,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_1d0",
+        "offset": -464,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1c8",
+        "offset": -456,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1c4",
+        "offset": -452,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_1c0",
+        "offset": -448,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1b8",
+        "offset": -440,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1b4",
+        "offset": -436,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_1b0",
+        "offset": -432,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1a8",
+        "offset": -424,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_1a4",
+        "offset": -420,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_1a0",
+        "offset": -416,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_198",
+        "offset": -408,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_194",
+        "offset": -404,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_190",
+        "offset": -400,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_188",
+        "offset": -392,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_180",
+        "offset": -384,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_178",
+        "offset": -376,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_174",
+        "offset": -372,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_170",
+        "offset": -368,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_168",
+        "offset": -360,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_160",
+        "offset": -352,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_158",
+        "offset": -344,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_150",
+        "offset": -336,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_148",
+        "offset": -328,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_140",
+        "offset": -320,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_138",
+        "offset": -312,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_134",
+        "offset": -308,
+        "size": 16,
+        "type": "undefined4[4]"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_124",
+        "offset": -292,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_120",
+        "offset": -288,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_11c",
+        "offset": -284,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_118",
+        "offset": -280,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_110",
+        "offset": -272,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_108",
+        "offset": -264,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_104",
+        "offset": -260,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_100",
+        "offset": -256,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_f8",
+        "offset": -248,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_f0",
+        "offset": -240,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_e8",
+        "offset": -232,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_e0",
+        "offset": -224,
+        "size": 8,
+        "type": "double"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_d8",
+        "offset": -216,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "aiStack_d4",
+        "offset": -212,
+        "size": 16,
+        "type": "int[4]"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_c4",
+        "offset": -196,
+        "size": 4,
+        "type": "CVector3d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "CVector3d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "CVector3d *"
+      },
+      {
+        "is_param": false,
+        "name": "pdStack_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": false,
+        "name": "pdStack_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pdStack_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": false,
+        "name": "pdStack_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": false,
+        "name": "pdStack_98",
+        "offset": -152,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": false,
+        "name": "pdStack_94",
+        "offset": -148,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_90",
+        "offset": -144,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_88",
+        "offset": -136,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_84",
+        "offset": -132,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_80",
+        "offset": -128,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_78",
+        "offset": -120,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_74",
+        "offset": -116,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_70",
+        "offset": -112,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_68",
+        "offset": -104,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_64",
+        "offset": -100,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_60",
+        "offset": -96,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "CVector2d *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_58",
+        "offset": -88,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_54",
+        "offset": -84,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_50",
+        "offset": -80,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_48",
+        "offset": -72,
+        "size": 4,
+        "type": "CVector3d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_44",
+        "offset": -68,
+        "size": 4,
+        "type": "CVector3d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_40",
+        "offset": -64,
+        "size": 4,
+        "type": "CVector3d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "CVector3d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_38",
+        "offset": -56,
+        "size": 4,
+        "type": "CVector3d *"
+      },
+      {
+        "is_param": false,
+        "name": "pdStack_34",
+        "offset": -52,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_30",
+        "offset": -48,
+        "size": 4,
+        "type": "CVector3d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "CVector3d *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "CVector3d *"
+      },
+      {
+        "is_param": false,
+        "name": "pdStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": false,
+        "name": "pdStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": false,
+        "name": "pdStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "double *"
+      },
+      {
+        "is_param": false,
+        "name": "pdStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "double *"
       },
       {
         "is_param": true,
@@ -296,7 +1808,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 21,
+      "line": 41,
       "match": "aiStackY_19c4",
       "severity": "moderate",
       "text": "int aiStackY_19c4 [1261];",
@@ -304,127 +1816,127 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 287,
+      "line": 327,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "uStack_5e0._0_4_ = *(uint *)&(pCVar10->position).x;",
+      "text": "uStack_5e0._0_4_ = *(uint *)&(pCVar17->position).x;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 288,
+      "line": 328,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_5e0._4_4_ = *(uint *)((int)&(pCVar10->position).x + 4);",
+      "text": "uStack_5e0._4_4_ = *(uint *)((int)&(pCVar17->position).x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 288,
+      "line": 328,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "uStack_5e0._4_4_ = *(uint *)((int)&(pCVar10->position).x + 4);",
+      "text": "uStack_5e0._4_4_ = *(uint *)((int)&(pCVar17->position).x + 4);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 289,
+      "line": 329,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "uStack_5d8._0_4_ = *(uint *)&(pCVar10->position).y;",
+      "text": "uStack_5d8._0_4_ = *(uint *)&(pCVar17->position).y;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 290,
+      "line": 330,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_5d8._4_4_ = *(uint *)((int)&(pCVar10->position).y + 4);",
+      "text": "uStack_5d8._4_4_ = *(uint *)((int)&(pCVar17->position).y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 290,
+      "line": 330,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "uStack_5d8._4_4_ = *(uint *)((int)&(pCVar10->position).y + 4);",
+      "text": "uStack_5d8._4_4_ = *(uint *)((int)&(pCVar17->position).y + 4);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 291,
+      "line": 331,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "uStack_5d0._0_4_ = *(uint *)&(pCVar10->position).z;",
+      "text": "uStack_5d0._0_4_ = *(uint *)&(pCVar17->position).z;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 292,
+      "line": 332,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_5d0._4_4_ = *(uint *)((int)&(pCVar10->position).z + 4);",
+      "text": "uStack_5d0._4_4_ = *(uint *)((int)&(pCVar17->position).z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 292,
+      "line": 332,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "uStack_5d0._4_4_ = *(uint *)((int)&(pCVar10->position).z + 4);",
+      "text": "uStack_5d0._4_4_ = *(uint *)((int)&(pCVar17->position).z + 4);",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 295,
+      "line": 335,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_5c4 = *(uint *)((int)&(pCVar10->position).x + 4);",
+      "text": "uStack_5c4 = *(uint *)((int)&(pCVar17->position).x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 297,
+      "line": 337,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_5bc = *(uint *)((int)&(pCVar10->position).y + 4);",
+      "text": "uStack_5bc = *(uint *)((int)&(pCVar17->position).y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 299,
+      "line": 339,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_5b4 = *(uint *)((int)&(pCVar10->position).z + 4);",
+      "text": "uStack_5b4 = *(uint *)((int)&(pCVar17->position).z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 302,
+      "line": 342,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_5ac = *(uint *)((int)&(pCVar3->position).x + 4);",
+      "text": "uStack_5ac = *(uint *)((int)&(pCVar17->position).x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 304,
+      "line": 344,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_5a4 = *(uint *)((int)&(pCVar3->position).y + 4);",
+      "text": "uStack_5a4 = *(uint *)((int)&(pCVar17->position).y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 306,
+      "line": 346,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uStack_59c = *(uint *)((int)&(pCVar3->position).z + 4);",
+      "text": "uStack_59c = *(uint *)((int)&(pCVar17->position).z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 308,
+      "line": 348,
       "match": "._0_4_",
       "severity": "mild",
       "text": "uStack_568._0_4_ = *(uint *)&this_ptr->uv_coords[0].impl.x;",
@@ -432,7 +1944,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 309,
+      "line": 349,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_568._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.x + 4);",
@@ -440,7 +1952,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 309,
+      "line": 349,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uStack_568._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.x + 4);",
@@ -448,7 +1960,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 310,
+      "line": 350,
       "match": "._0_4_",
       "severity": "mild",
       "text": "uStack_560._0_4_ = *(uint *)&this_ptr->uv_coords[0].impl.y;",
@@ -456,7 +1968,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 311,
+      "line": 351,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_560._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.y + 4);",
@@ -464,7 +1976,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 311,
+      "line": 351,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uStack_560._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].impl.y + 4);",
@@ -472,7 +1984,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 313,
+      "line": 353,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_554 = *(uint *)((int)&this_ptr->uv_coords[1].impl.x + 4);",
@@ -480,7 +1992,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 315,
+      "line": 355,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_54c = *(uint *)((int)&this_ptr->uv_coords[1].impl.y + 4);",
@@ -488,7 +2000,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 317,
+      "line": 357,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_544 = *(uint *)((int)&this_ptr->uv_coords[2].impl.x + 4);",
@@ -496,7 +2008,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 319,
+      "line": 359,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_53c = *(uint *)((int)&this_ptr->uv_coords[2].impl.y + 4);",
@@ -504,23 +2016,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 324,
+      "line": 363,
       "match": "(CVert *)((int)",
       "severity": "mild",
-      "text": "pCVar10 = (CVert *)((int)pCVar10 + ((uint)bVar16 * -2 + 1) * 4);",
+      "text": "pCVar10 = (CVert *)((int)pCVar10 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 325,
+      "line": 366,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 329,
+      "line": 370,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_214 = *(uint *)((int)&(other_poly->normal).impl.x + 4);",
@@ -528,7 +2040,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 332,
+      "line": 373,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_20c = *(uint *)((int)&(other_poly->normal).impl.y + 4);",
@@ -536,7 +2048,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 336,
+      "line": 377,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_204 = *(uint *)((int)&(other_poly->normal).impl.z + 4);",
@@ -544,7 +2056,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 340,
+      "line": 381,
       "match": "._4_4_",
       "severity": "mild",
       "text": "dStack_4e8 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5e0._4_4_,(uint)uStack_5e0));",
@@ -552,7 +2064,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 340,
+      "line": 381,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dStack_4e8 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5e0._4_4_,(uint)uStack_5e0));",
@@ -560,39 +2072,39 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 341,
+      "line": 382,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "dStack_4e0 = *pdVar12 * __BITCAST_DOUBLE(CONCAT44(uStack_5d8._4_4_,(uint)uStack_5d8));",
+      "text": "dStack_4e0 = *pdVar26 * __BITCAST_DOUBLE(CONCAT44(uStack_5d8._4_4_,(uint)uStack_5d8));",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 341,
+      "line": 382,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dStack_4e0 = *pdVar12 * __BITCAST_DOUBLE(CONCAT44(uStack_5d8._4_4_,(uint)uStack_5d8));",
+      "text": "dStack_4e0 = *pdVar26 * __BITCAST_DOUBLE(CONCAT44(uStack_5d8._4_4_,(uint)uStack_5d8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 342,
+      "line": 383,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "dStack_4d8 = *pdVar14 * __BITCAST_DOUBLE(CONCAT44(uStack_5d0._4_4_,(uint)uStack_5d0));",
+      "text": "dStack_4d8 = *pdVar28 * __BITCAST_DOUBLE(CONCAT44(uStack_5d0._4_4_,(uint)uStack_5d0));",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 342,
+      "line": 383,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dStack_4d8 = *pdVar14 * __BITCAST_DOUBLE(CONCAT44(uStack_5d0._4_4_,(uint)uStack_5d0));",
+      "text": "dStack_4d8 = *pdVar28 * __BITCAST_DOUBLE(CONCAT44(uStack_5d0._4_4_,(uint)uStack_5d0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 343,
+      "line": 384,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dStack_2d8 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5c4,uStack_5c8));",
@@ -600,23 +2112,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 344,
+      "line": 385,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dStack_2d0 = *pdVar12 * __BITCAST_DOUBLE(CONCAT44(uStack_5bc,uStack_5c0));",
+      "text": "dStack_2d0 = *pdVar26 * __BITCAST_DOUBLE(CONCAT44(uStack_5bc,uStack_5c0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 345,
+      "line": 386,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dStack_2c8 = *pdVar14 * __BITCAST_DOUBLE(CONCAT44(uStack_5b4,uStack_5b8));",
+      "text": "dStack_2c8 = *pdVar28 * __BITCAST_DOUBLE(CONCAT44(uStack_5b4,uStack_5b8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 346,
+      "line": 387,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dStack_2c0 = (pCVar1->impl).x * __BITCAST_DOUBLE(CONCAT44(uStack_5ac,uStack_5b0));",
@@ -624,87 +2136,87 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 347,
+      "line": 388,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dStack_2b8 = *pdVar12 * __BITCAST_DOUBLE(CONCAT44(uStack_5a4,uStack_5a8));",
+      "text": "dStack_2b8 = *pdVar26 * __BITCAST_DOUBLE(CONCAT44(uStack_5a4,uStack_5a8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 352,
+      "line": 393,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 353,
+      "line": 394,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 355,
+      "line": 396,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "dStack_2b0 = dVar4 * __BITCAST_DOUBLE(CONCAT44(uStack_59c,uStack_5a0));",
+      "text": "dStack_2b0 = dVar18 * __BITCAST_DOUBLE(CONCAT44(uStack_59c,uStack_5a0));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 360,
+      "line": 401,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 361,
+      "line": 402,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 368,
+      "line": 409,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 369,
+      "line": 410,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 375,
+      "line": 416,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 376,
+      "line": 417,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 392,
+      "line": 433,
       "match": "._0_4_",
       "severity": "mild",
       "text": "if (((((ulonglong)dStack_3f8 & 0x7fffffff00000000) != 0) || (dStack_3f8._0_4_ != 0)) &&",
@@ -712,7 +2224,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 393,
+      "line": 434,
       "match": "._0_4_",
       "severity": "mild",
       "text": "(((((ulonglong)dStack_3f0 & 0x7fffffff00000000) != 0 || (dStack_3f0._0_4_ != 0)) &&",
@@ -720,7 +2232,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 394,
+      "line": 435,
       "match": "._0_4_",
       "severity": "mild",
       "text": "((((ulonglong)dStack_3e8 & 0x7fffffff00000000) != 0 || (dStack_3e8._0_4_ != 0)))))) {",
@@ -728,71 +2240,71 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 429,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 430,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 439,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 440,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 451,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 456,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar5 + 4) = uStack_34c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 458,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar5 + 4) = uStack_344;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 460,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar5 + 4) = uStack_33c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 467,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 468,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 477,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 478,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 487,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 501,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "uStack_188._0_4_ = SUB84(*pdVar23 - *pdVar21,0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 501,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "uStack_188._0_4_ = SUB84(*pdVar23 - *pdVar21,0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 501,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "uStack_188._0_4_ = SUB84(*pdVar23 - *pdVar21,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 503,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "(&uStack_1b4)[(uint)bVar16 * -2] = *(uint *)((int)&uStack_188 + (uint)bVar16 * -8 + 4)",
@@ -800,15 +2312,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 475,
+      "line": 511,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "uStack_118 = __BITCAST_DOUBLE(CONCAT44(uStack_1b4,uStack_1b8)) * dVar4;",
+      "text": "uStack_118 = __BITCAST_DOUBLE(CONCAT44(uStack_1b4,uStack_1b8)) * dVar18;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 479,
+      "line": 514,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "(&uStack_1c4)[(uint)bVar16 * -2] = *(uint *)((int)&uStack_118 + (uint)bVar16 * -8 + 4)",
@@ -816,15 +2328,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 487,
+      "line": 522,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "uStack_148 = *pdVar12 - __BITCAST_DOUBLE(CONCAT44(uStack_1c4,uStack_1c8));",
+      "text": "uStack_148 = *pdVar23 - __BITCAST_DOUBLE(CONCAT44(uStack_1c4,uStack_1c8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 492,
+      "line": 526,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&uStack_148 + (uint)bVar16 * -8 + 4);",
@@ -832,39 +2344,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 500,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pdVar12 + 4) = uStack_124;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 502,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pdVar12 + 0xc) = uStack_11c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 504,
+      "line": 545,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "((&dStack_3f8)[iStack_58] - *(double *)((int)&dStack_3f8 + iStack_a4));",
+      "text": "pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 513,
+      "line": 546,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 514,
+      "line": 554,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);",
@@ -872,55 +2368,47 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 523,
+      "line": 556,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 566,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 524,
-      "match": "(double *)((int)",
+      "description": "Unknown/mangled field access",
+      "line": 580,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
+      "text": "uStack_168._0_4_ = SUB84(*pdVar26 - *pdVar21,0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 580,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "uStack_168._0_4_ = SUB84(*pdVar26 - *pdVar21,0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 580,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "uStack_168._0_4_ = SUB84(*pdVar26 - *pdVar21,0);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 533,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 539,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar9 + 4) = uStack_43c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 541,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar9 + 4) = uStack_434;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 543,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar9 + 4) = uStack_42c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 548,
+      "line": 582,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "(&uStack_174)[(uint)bVar16 * -2] = *(uint *)((int)&uStack_168 + (uint)bVar16 * -8 + 4)",
@@ -928,15 +2416,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 557,
+      "line": 590,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "uStack_158 = __BITCAST_DOUBLE(CONCAT44(uStack_174,uStack_178)) * dVar4;",
+      "text": "uStack_158 = __BITCAST_DOUBLE(CONCAT44(uStack_174,uStack_178)) * dVar18;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 560,
+      "line": 593,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "(&uStack_1a4)[(uint)bVar16 * -2] = *(uint *)((int)&uStack_158 + (uint)bVar16 * -8 + 4)",
@@ -944,15 +2432,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 568,
+      "line": 601,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "uStack_1e8 = *pdVar12 - __BITCAST_DOUBLE(CONCAT44(uStack_1a4,uStack_1a8));",
+      "text": "uStack_1e8 = *pdVar26 - __BITCAST_DOUBLE(CONCAT44(uStack_1a4,uStack_1a8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 571,
+      "line": 604,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "aiStack_d4[(uint)bVar16 * -2] = *(int *)((int)&uStack_1e8 + (uint)bVar16 * -8 + 4);",
@@ -960,119 +2448,255 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 575,
+      "line": 608,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)(&dStack_1e0 + (-(uint)bVar16 - (uint)bVar16)) +",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 580,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&uStack_568 + iVar7 + 4) = aiStack_d4[0];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 582,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&uStack_560 + iVar7 + 4) = aiStack_d4[2];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 595,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "if (0.0 < *(double *)((int)&dStack_3f8 + iStack_a4)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 629,
-      "match": "(uint *)((int)",
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].x + 4) =",
-      "type": "pointer_cast"
+      "text": "pCVar6->x = __BITCAST_DOUBLE(CONCAT44(uStack_594,uStack_598));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 630,
-      "match": "(uint *)((int)",
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar9 + 4);",
-      "type": "pointer_cast"
+      "text": "(out_result->poly1).vertices[1].y = __BITCAST_DOUBLE(CONCAT44(uStack_58c,uStack_590));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 631,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[1].z = __BITCAST_DOUBLE(CONCAT44(uStack_584,uStack_588));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 632,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "pCVar5->x = __BITCAST_DOUBLE(CONCAT44(uStack_534,uStack_538));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 633,
-      "match": "(uint *)((int)",
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].y + 4) =",
-      "type": "pointer_cast"
+      "text": "(out_result->poly1).uvs[1].y = __BITCAST_DOUBLE(CONCAT44(uStack_52c,uStack_530));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 634,
-      "match": "(uint *)((int)",
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar9 + 4);",
-      "type": "pointer_cast"
+      "text": "pCVar4->x = __BITCAST_DOUBLE(CONCAT44(uStack_57c,uStack_580));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 635,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[2].y = __BITCAST_DOUBLE(CONCAT44(uStack_574,uStack_578));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 636,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[2].z = __BITCAST_DOUBLE(CONCAT44(uStack_56c,uStack_570));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 637,
-      "match": "(uint *)((int)",
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].z + 4) =",
-      "type": "pointer_cast"
+      "text": "pCVar16->x = __BITCAST_DOUBLE(CONCAT44(aiStack_d4[0],uStack_d8));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 638,
-      "match": "(uint *)((int)",
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar9 + 4);",
-      "type": "pointer_cast"
+      "text": "(out_result->poly1).uvs[2].y = __BITCAST_DOUBLE(CONCAT44(aiStack_d4[2],aiStack_d4[1]));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 640,
-      "match": "(uint *)((int)",
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).uvs[3].x + 4) =",
-      "type": "pointer_cast"
+      "text": "pCVar2->x = __BITCAST_DOUBLE(CONCAT44(uStack_594,uStack_598));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 641,
-      "match": "(uint *)((int)",
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_568 + iVar7 + 4);",
-      "type": "pointer_cast"
+      "text": "(out_result->poly2).vertices[0].y = __BITCAST_DOUBLE(CONCAT44(uStack_58c,uStack_590));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 642,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly2).vertices[0].z = __BITCAST_DOUBLE(CONCAT44(uStack_584,uStack_588));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 643,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "pCVar14->x = __BITCAST_DOUBLE(CONCAT44(uStack_534,uStack_538));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 644,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly2).uvs[0].y = __BITCAST_DOUBLE(CONCAT44(uStack_52c,uStack_530));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 656,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).uvs[3].y + 4) =",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].x + 4) = uStack_57c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 645,
+      "line": 658,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_560 + iVar7 + 4);",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].y + 4) = uStack_574;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
+      "line": 660,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[3].z + 4) = uStack_56c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 662,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&(out_result->poly2).uvs[3].x + 4) = aiStack_d4[0];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 664,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&(out_result->poly2).uvs[3].y + 4) = aiStack_d4[2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 668,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "pCVar8->x = __BITCAST_DOUBLE(CONCAT44(uStack_594,uStack_598));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 669,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[0].y = __BITCAST_DOUBLE(CONCAT44(uStack_58c,uStack_590));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 670,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[0].z = __BITCAST_DOUBLE(CONCAT44(uStack_584,uStack_588));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 671,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "pCVar7->x = __BITCAST_DOUBLE(CONCAT44(uStack_534,uStack_538));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 672,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).uvs[0].y = __BITCAST_DOUBLE(CONCAT44(uStack_52c,uStack_530));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 683,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[3].x = __BITCAST_DOUBLE(CONCAT44(uStack_57c,uStack_580));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 684,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[3].y = __BITCAST_DOUBLE(CONCAT44(uStack_574,uStack_578));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 685,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[3].z = __BITCAST_DOUBLE(CONCAT44(uStack_56c,uStack_570));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 686,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).uvs[3].x = __BITCAST_DOUBLE(CONCAT44(aiStack_d4[0],uStack_d8));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 687,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).uvs[3].y = __BITCAST_DOUBLE(CONCAT44(aiStack_d4[2],aiStack_d4[1]));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 690,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(out_result->poly2).vertices[0].x + 4) =",
@@ -1080,82 +2704,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 672,
+      "line": 691,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)pdStack_98 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 674,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 675,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)pdStack_98 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 680,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 681,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar5 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 684,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 685,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar5 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 688,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 689,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar5 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 693,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].x + 4) =",
+      "text": "*(uint *)((int)&uStack_5e0 + iStack_50 * 0x18 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1163,31 +2715,23 @@
       "line": 694,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar9 + 4);",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].y + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 697,
+      "line": 695,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].y + 4) =",
+      "text": "*(uint *)((int)&uStack_5d8 + iStack_50 * 0x18 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 698,
+      "line": 700,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar9 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 701,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].z + 4) =",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].x + 4) = uStack_594;",
       "type": "pointer_cast"
     },
     {
@@ -1195,7 +2739,7 @@
       "line": 702,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar9 + 4);",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].y + 4) = uStack_58c;",
       "type": "pointer_cast"
     },
     {
@@ -1203,36 +2747,68 @@
       "line": 704,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).uvs[2].x + 4) =",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].z + 4) = uStack_584;",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 705,
-      "match": "(uint *)((int)",
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_568 + iVar7 + 4);",
-      "type": "pointer_cast"
+      "text": "pCVar12->x = __BITCAST_DOUBLE(CONCAT44(uStack_534,uStack_538));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 707,
-      "match": "(uint *)((int)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 706,
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).uvs[2].y + 4) =",
-      "type": "pointer_cast"
+      "text": "(out_result->poly2).uvs[1].y = __BITCAST_DOUBLE(CONCAT44(uStack_52c,uStack_530));",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
       "line": 708,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_560 + iVar7 + 4);",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].x + 4) = uStack_57c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 710,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].y + 4) = uStack_574;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 712,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[2].z + 4) = uStack_56c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 714,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&(out_result->poly2).uvs[2].x + 4) = aiStack_d4[0];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 716,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&(out_result->poly2).uvs[2].y + 4) = aiStack_d4[2];",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 712,
+      "line": 719,
       "match": "._0_4_",
       "severity": "mild",
       "text": "if ((((ulonglong)dStack_3f8 & 0x7fffffff00000000) == 0) && (dStack_3f8._0_4_ == 0)) {",
@@ -1240,7 +2816,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 717,
+      "line": 724,
       "match": "._0_4_",
       "severity": "mild",
       "text": "else if ((((ulonglong)dStack_3f0 & 0x7fffffff00000000) == 0) && (dStack_3f0._0_4_ == 0)) {",
@@ -1248,71 +2824,71 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 738,
+      "line": 744,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 739,
+      "line": 745,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 748,
+      "line": 754,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 749,
+      "line": 755,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 759,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar12 = (double *)((int)pdVar12 + (uint)bVar16 * -8 + 4);",
+      "text": "pdVar28 = (double *)((int)pdVar28 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 764,
-      "match": "(uint *)((int)",
+      "match": "(double *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar5 + 4) = uStack_3dc;",
+      "text": "pdVar26 = (double *)((int)pdVar26 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 766,
-      "match": "(uint *)((int)",
+      "description": "Unknown/mangled field access",
+      "line": 777,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar5 + 4) = uStack_3d4;",
-      "type": "pointer_cast"
+      "text": "uStack_1d8._0_4_ = SUB84(*pdVar26 - *pdVar28,0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 777,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "uStack_1d8._0_4_ = SUB84(*pdVar26 - *pdVar28,0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 777,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "uStack_1d8._0_4_ = SUB84(*pdVar26 - *pdVar28,0);",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 768,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar5 + 4) = uStack_3cc;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 774,
+      "line": 779,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "(&uStack_104)[(uint)bVar16 * -2] = *(uint *)((int)&uStack_1d8 + (uint)bVar16 * -8 + 4);",
@@ -1320,15 +2896,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 782,
+      "line": 786,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "uStack_e8 = __BITCAST_DOUBLE(CONCAT44(uStack_104,uStack_108)) * dVar4;",
+      "text": "uStack_e8 = __BITCAST_DOUBLE(CONCAT44(uStack_104,uStack_108)) * dVar18;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 785,
+      "line": 789,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "(&uStack_194)[(uint)bVar16 * -2] = *(uint *)((int)&uStack_e8 + (uint)bVar16 * -8 + 4);",
@@ -1336,47 +2912,63 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 792,
+      "line": 796,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "uStack_f8 = *pdVar12 - __BITCAST_DOUBLE(CONCAT44(uStack_194,uStack_198));",
+      "text": "uStack_f8 = *pdVar26 - __BITCAST_DOUBLE(CONCAT44(uStack_194,uStack_198));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 795,
+      "line": 799,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "auStack_134[(uint)bVar16 * -2] = *(uint *)((int)&uStack_f8 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 804,
-      "match": "(uint *)((int)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 836,
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_568 + iVar6 + 4) = auStack_134[0];",
-      "type": "pointer_cast"
+      "text": "pCVar4->x = __BITCAST_DOUBLE(CONCAT44(uStack_594,uStack_598));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 837,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[2].y = __BITCAST_DOUBLE(CONCAT44(uStack_58c,uStack_590));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 838,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).vertices[2].z = __BITCAST_DOUBLE(CONCAT44(uStack_584,uStack_588));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 839,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "pCVar16->x = __BITCAST_DOUBLE(CONCAT44(auStack_134[0],uStack_138));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 840,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly1).uvs[2].y = __BITCAST_DOUBLE(CONCAT44(auStack_134[2],auStack_134[1]));",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 806,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_560 + iVar6 + 4) = auStack_134[2];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 823,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "if (0.0 < *(double *)((int)&dStack_3f8 + iStack_90)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 842,
+      "line": 843,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(out_result->poly2).vertices[0].x + 4) =",
@@ -1384,18 +2976,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 843,
+      "line": 844,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 846,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].y + 4) =",
+      "text": "*(uint *)((int)&uStack_5e0 + iVar19 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1403,15 +2987,15 @@
       "line": 847,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar8 + 4);",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].y + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 850,
+      "line": 848,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].z + 4) =",
+      "text": "*(uint *)((int)&uStack_5d8 + iVar19 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1419,15 +3003,15 @@
       "line": 851,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar8 + 4);",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[0].z + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 853,
+      "line": 852,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).uvs[0].x + 4) =",
+      "text": "*(uint *)((int)&uStack_5d0 + iVar19 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1435,15 +3019,15 @@
       "line": 854,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_568 + iVar7 + 4);",
+      "text": "*(uint *)((int)&(out_result->poly2).uvs[0].x + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 856,
+      "line": 855,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).uvs[0].y + 4) =",
+      "text": "*(uint *)((int)&uStack_568 + iVar7 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1451,15 +3035,15 @@
       "line": 857,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_560 + iVar7 + 4);",
+      "text": "*(uint *)((int)&(out_result->poly2).uvs[0].y + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 859,
+      "line": 858,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].x + 4) =",
+      "text": "*(uint *)((int)&uStack_560 + iVar7 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -1467,15 +3051,15 @@
       "line": 860,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar5 + 4);",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].x + 4) = uStack_594;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 863,
+      "line": 862,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].y + 4) =",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].y + 4) = uStack_58c;",
       "type": "pointer_cast"
     },
     {
@@ -1483,15 +3067,15 @@
       "line": 864,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar5 + 4);",
+      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].z + 4) = uStack_584;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 867,
+      "line": 866,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).vertices[1].z + 4) =",
+      "text": "*(uint *)((int)&(out_result->poly2).uvs[1].x + 4) = auStack_134[0];",
       "type": "pointer_cast"
     },
     {
@@ -1499,44 +3083,52 @@
       "line": 868,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar5 + 4);",
+      "text": "*(uint *)((int)&(out_result->poly2).uvs[1].y + 4) = auStack_134[2];",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 870,
-      "match": "(uint *)((int)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 887,
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).uvs[1].x + 4) =",
-      "type": "pointer_cast"
+      "text": "pCVar11->x = __BITCAST_DOUBLE(CONCAT44(uStack_594,uStack_598));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 871,
-      "match": "(uint *)((int)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 888,
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_568 + iVar6 + 4);",
-      "type": "pointer_cast"
+      "text": "(out_result->poly2).vertices[2].y = __BITCAST_DOUBLE(CONCAT44(uStack_58c,uStack_590));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 873,
-      "match": "(uint *)((int)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 889,
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly2).uvs[1].y + 4) =",
-      "type": "pointer_cast"
+      "text": "(out_result->poly2).vertices[2].z = __BITCAST_DOUBLE(CONCAT44(uStack_584,uStack_588));",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 874,
-      "match": "(uint *)((int)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 890,
+      "match": "CONCAT44",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_560 + iVar6 + 4);",
-      "type": "pointer_cast"
+      "text": "pCVar9->x = __BITCAST_DOUBLE(CONCAT44(auStack_134[0],uStack_138));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 891,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(out_result->poly2).uvs[2].y = __BITCAST_DOUBLE(CONCAT44(auStack_134[2],auStack_134[1]));",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 900,
+      "line": 894,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(out_result->poly1).vertices[0].x + 4) =",
@@ -1544,15 +3136,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 901,
+      "line": 895,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar8 + 4);",
+      "text": "*(uint *)((int)&uStack_5e0 + iVar19 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 904,
+      "line": 898,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(out_result->poly1).vertices[0].y + 4) =",
@@ -1560,15 +3152,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 905,
+      "line": 899,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar8 + 4);",
+      "text": "*(uint *)((int)&uStack_5d8 + iVar19 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 908,
+      "line": 902,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(out_result->poly1).vertices[0].z + 4) =",
@@ -1576,15 +3168,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 909,
+      "line": 903,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar8 + 4);",
+      "text": "*(uint *)((int)&uStack_5d0 + iVar19 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 911,
+      "line": 905,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(out_result->poly1).uvs[0].x + 4) =",
@@ -1592,7 +3184,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 912,
+      "line": 906,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&uStack_568 + iVar7 + 4);",
@@ -1600,7 +3192,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 914,
+      "line": 908,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(out_result->poly1).uvs[0].y + 4) =",
@@ -1608,7 +3200,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 915,
+      "line": 909,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&uStack_560 + iVar7 + 4);",
@@ -1616,82 +3208,42 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 911,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].x + 4) = uStack_594;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 913,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].y + 4) = uStack_58c;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 915,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].z + 4) = uStack_584;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 917,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].x + 4) =",
+      "text": "*(uint *)((int)&(out_result->poly1).uvs[1].x + 4) = auStack_134[0];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 918,
+      "line": 919,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5e0 + iVar5 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 920,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 921,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d8 + iVar5 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 923,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly1).vertices[1].z + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 924,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_5d0 + iVar5 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 926,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly1).uvs[1].x + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 927,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_568 + iVar6 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 929,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(out_result->poly1).uvs[1].y + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 930,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&uStack_560 + iVar6 + 4);",
+      "text": "*(uint *)((int)&(out_result->poly1).uvs[1].y + 4) = auStack_134[2];",
       "type": "pointer_cast"
     }
   ],

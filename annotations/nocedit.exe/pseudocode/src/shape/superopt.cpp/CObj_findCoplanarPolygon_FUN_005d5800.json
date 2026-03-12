@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 409,
-    "complexity_score": 287,
+    "complexity_score": 284,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 157,
-    "suspect_count": 12,
+    "pseudocode_lines": 164,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "warning_unreachable"
     ],
-    "total_lines": 566
+    "total_lines": 573
   },
   "cross_references": [],
   "function": {
@@ -181,50 +181,50 @@
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "undefined4[6]"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "CP3D *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CPoly *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CP3D *"
       },
       {
         "is_param": true,
@@ -277,7 +277,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 48,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;",
@@ -285,7 +285,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 48,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;",
@@ -293,34 +293,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 69,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "point = this_ptr->vertex_data + *(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(point->position).x + 4) = local_54;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(point->position).y + 4) = local_4c;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(point->position).z + 4) = local_44;",
+      "text": "*(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);",
       "type": "pointer_cast"
     },
     {
@@ -328,23 +304,15 @@
       "line": 84,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(local_18->normal).impl.y + 4) =",
+      "text": "*(uint *)((int)&(point_00->position).x + 4) = local_54;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 86,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(local_14->impl).y + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&(local_18->normal).impl.z + 4) =",
+      "text": "*(uint *)((int)&(point_00->position).y + 4) = local_4c;",
       "type": "pointer_cast"
     },
     {
@@ -352,15 +320,39 @@
       "line": 88,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&(local_14->impl).z + 4);",
+      "text": "*(uint *)((int)&(point_00->position).z + 4) = local_44;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
-      "match": "(CP3D *)((int)",
+      "line": 91,
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "pCVar4 = (CP3D *)((int)(pCVar4 + 4) + 8);",
+      "text": "*(uint *)((int)&(local_18->normal).impl.y + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(local_14->impl).y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(local_18->normal).impl.z + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&(local_14->impl).z + 4);",
       "type": "pointer_cast"
     }
   ],

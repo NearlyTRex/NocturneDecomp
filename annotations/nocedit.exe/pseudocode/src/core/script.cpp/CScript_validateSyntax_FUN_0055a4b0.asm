@@ -7,7 +7,7 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ; int *            Stack[0x8]:4   error_line_out
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
+; float            Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_checkSyntax_FUN_00566080 at 00566097

@@ -11,11 +11,14 @@
 void __cdecl core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40(CDemonPart *this_ptr,int enable_vertex_reduction,int enable_polygon_optimize)
 
 {
-  float *pfVar1;
-  double dVar2;
+  int iVar1;
   int iVar3;
+  int iVar2;
   int iVar4;
+  int iVar6;
   int iVar5;
+  double dVar2;
+  float *pfVar1;
   
   shape_design_c_calculateVertexNormals_FUN_0045be40();
   if (enable_vertex_reduction != 0) {
@@ -49,28 +52,28 @@ void __cdecl core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40(CDemonPar
       iVar4 = iVar4 + 0xc;
     } while (iVar5 < this_ptr->vertex_count);
   }
-  iVar5 = 0;
+  iVar2 = 0;
   if (0 < this_ptr->face_count) {
-    iVar4 = 0;
-    iVar3 = 0;
+    iVar6 = 0;
+    iVar1 = 0;
     do {
-      *(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar3) =
-           *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4);
-      *(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar3) =
-           *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 4);
-      *(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar3) =
-           *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 8);
-      if (*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -0x14) == 4) {
-        *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar3) =
-             *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 0xc);
+      *(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar1) =
+           *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6);
+      *(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar1) =
+           *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + 4);
+      *(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar1) =
+           *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + 8);
+      if (*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + -0x14) == 4) {
+        *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar1) =
+             *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + 0xc);
       }
       else {
-        *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar3) = 0xffffffff;
+        *(uint *)((int)&this_ptr->face_data->vertex_index_4 + iVar1) = 0xffffffff;
       }
-      iVar3 = iVar3 + 0x20;
-      iVar5 = iVar5 + 1;
-      iVar4 = iVar4 + 0x184;
-    } while (iVar5 < this_ptr->face_count);
+      iVar1 = iVar1 + 0x20;
+      iVar2 = iVar2 + 1;
+      iVar6 = iVar6 + 0x184;
+    } while (iVar2 < this_ptr->face_count);
   }
   core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_004824f0(this_ptr);
   return;

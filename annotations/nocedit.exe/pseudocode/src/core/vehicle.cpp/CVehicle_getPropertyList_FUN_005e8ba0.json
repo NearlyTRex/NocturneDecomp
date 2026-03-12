@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 18,
-        "line": 30,
+        "line": 29,
         "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 34,
-        "line": 30,
+        "line": 29,
         "message": "use of undeclared identifier 'PTR_s_Left_front_00684480'; did you mean 's_Left_front_00656fb5'?"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 56,
+    "complexity_score": 55,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 41,
+    "pseudocode_lines": 40,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 146
+    "total_lines": 145
   },
   "cross_references": [],
   "function": {
@@ -185,22 +185,22 @@
         "is_param": false,
         "name": "local_110",
         "offset": -272,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_c",
         "offset": -12,
         "size": 4,
-        "type": "undefined4"
+        "type": "CTire *"
       },
       {
         "is_param": true,
@@ -221,7 +221,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 22,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&PTR_s_Left_front_00684480 + iVar2));",

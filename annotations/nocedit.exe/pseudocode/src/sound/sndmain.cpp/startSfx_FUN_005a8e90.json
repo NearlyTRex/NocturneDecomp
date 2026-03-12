@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 141,
+        "line": 148,
         "message": "assigning to 'CMP3Decoder *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 19,
-        "line": 209,
+        "line": 212,
         "message": "no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'"
       }
     ],
@@ -19,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 556,
-    "complexity_score": 390,
+    "complexity_score": 393,
     "cross_reference_count": 23,
     "function_call_count": 27,
     "global_count": 49,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 275,
+    "pseudocode_lines": 278,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 831
+    "total_lines": 834
   },
   "cross_references": [
     {
@@ -669,64 +669,57 @@
         "is_param": false,
         "name": "local_390",
         "offset": -912,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_38f",
-        "offset": -911,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_290",
         "offset": -656,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_190",
         "offset": -400,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_90",
         "offset": -144,
-        "size": 4,
-        "type": "undefined4"
+        "size": 112,
+        "type": "CSfxOptions"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CSfxSample *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CSfxSample *"
       },
       {
         "is_param": true,
@@ -772,74 +765,74 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 67,
       "match": "(CSfxOptions *)((int)",
       "severity": "mild",
-      "text": "pCVar13 = (CSfxOptions *)((int)pCVar13 + ((uint)bVar19 * -2 + 1) * 4);",
+      "text": "pCVar17 = (CSfxOptions *)((int)pCVar17 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 69,
       "match": "(CSfxOptions *)((int)",
       "severity": "mild",
-      "text": "pCVar17 = (CSfxOptions *)((int)pCVar17 + ((uint)bVar19 * -2 + 1) * 4);",
+      "text": "pCVar9 = (CSfxOptions *)((int)pCVar9 + ((uint)bVar19 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 91,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar3 = *(int *)((int)g_SfxSlots[1].distance_to_speakers + iVar6 + -0xc);",
+      "text": "iVar7 = *(int *)((int)g_SfxSlots[1].distance_to_speakers + iVar5 + -0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 102,
       "match": "(CSfxOptions *)((int)",
       "severity": "mild",
-      "text": "pCVar13 = (CSfxOptions *)((int)pCVar13 + ((uint)bVar19 * -2 + 1) * 4);",
+      "text": "pCVar13 = (CSfxOptions *)((int)pCVar13 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 105,
       "match": "(CSfxSlot *)((int)",
       "severity": "mild",
-      "text": "pCVar4 = (CSfxSlot *)((int)pCVar4 + (uint)bVar19 * -8 + 4);",
+      "text": "pCVar10 = (CSfxSlot *)((int)pCVar10 + (uint)bVar19 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 173,
+      "line": 179,
       "match": "ROUND",
       "severity": "mild",
-      "text": "pCVar11->streaming_buffer_size = (int)ROUND(ROUND(fVar1));",
+      "text": "local_18->streaming_buffer_size = (int)ROUND(ROUND(fVar4));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 173,
+      "line": 179,
       "match": "ROUND",
       "severity": "mild",
-      "text": "pCVar11->streaming_buffer_size = (int)ROUND(ROUND(fVar1));",
+      "text": "local_18->streaming_buffer_size = (int)ROUND(ROUND(fVar4));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 211,
+      "line": 214,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_18->streaming_buffer_size = (int)ROUND(ROUND(fVar1));",
+      "text": "local_18->streaming_buffer_size = (int)ROUND(ROUND(fVar4));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 211,
+      "line": 214,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_18->streaming_buffer_size = (int)ROUND(ROUND(fVar1));",
+      "text": "local_18->streaming_buffer_size = (int)ROUND(ROUND(fVar4));",
       "type": "decompiler_intrinsic"
     }
   ]

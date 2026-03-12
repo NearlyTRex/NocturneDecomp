@@ -9,22 +9,23 @@
 void __cdecl core_script_cpp_readActorReference_FUN_00560760(_FILE *file_handle,CDemonActor *actor_out)
 
 {
-  char *pcVar1;
+  int iVar1;
   CDemonActor *pCVar2;
   int iVar3;
   char *pcVar4;
   char local_d0 [200];
+  char *pcVar1;
   
   pcVar4 = g_ActorRefDefaultBuffer;
   pcVar1 = local_d0;
   for (iVar3 = 0x32; iVar3 != 0; iVar3 = iVar3 + -1) {
     *(uint *)pcVar1 = *(uint *)pcVar4;
     pcVar4 = pcVar4 + 4;
-    pcVar1 = (char *)((int)pcVar1 + 4);
+    pcVar1 = pcVar1 + 4;
   }
   _fscanf(file_handle,"\"%[^\"]\"\n",local_d0);
-  iVar3 = _stricmp(local_d0,"(none)");
-  if (iVar3 == 0) {
+  iVar1 = _stricmp(local_d0,"(none)");
+  if (iVar1 == 0) {
     actor_out->actor_name[0] = '\0';
     actor_out->actor_name[1] = '\0';
     actor_out->actor_name[2] = '\0';

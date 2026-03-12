@@ -9,7 +9,6 @@
 void __cdecl core_setedit_cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70(CDemonSet *this_ptr,char *coverage_map)
 
 {
-  char cVar1;
   uint uVar2;
   uint uVar3;
   uint uVar4;
@@ -19,6 +18,7 @@ void __cdecl core_setedit_cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70(CDemo
   char *local_1c;
   int local_18;
   int local_14;
+  char cVar1;
   
   local_28 = 0;
   local_1c = coverage_map;

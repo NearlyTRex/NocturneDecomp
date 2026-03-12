@@ -4,8 +4,14 @@
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 78,
+        "line": 83,
         "message": "assigning to 'SIZE_T *' (aka 'unsigned long *') from incompatible type 'void *'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 25,
+        "line": 143,
+        "message": "assigning to 'CDemonPart *' from incompatible type 'void *'"
       }
     ],
     "success": false,
@@ -13,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 634,
-    "complexity_score": 317,
+    "complexity_score": 323,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 23,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 242,
+    "pseudocode_lines": 248,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 876
+    "total_lines": 882
   },
   "cross_references": [
     {
@@ -370,113 +376,85 @@
         "is_param": false,
         "name": "local_50",
         "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -497,7 +475,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 72,
       "match": "(SIZE_T *)((int)",
       "severity": "mild",
       "text": "buffer = (SIZE_T *)((int)this_ptr->cube_list->voxel_data + local_24 + -0x14);",
@@ -505,39 +483,39 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 128,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar10 = (int *)((int)this_ptr->cube_list->voxel_data + iVar11 + -0x14);",
+      "text": "piVar4 = (int *)((int)this_ptr->cube_list->voxel_data + iVar3 + -0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 158,
+      "line": 164,
       "match": "(CDemonTriangle *)((int)",
       "severity": "mild",
-      "text": "((CDemonTriangle *)((int)&(this_ptr->triangle_list->vertex1).x + iVar11),",
+      "text": "((CDemonTriangle *)((int)&(this_ptr->triangle_list->vertex1).x + iVar3),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 169,
+      "line": 175,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar10 = (int *)((int)this_ptr->cube_list->voxel_data + iVar12 + -0x14);",
+      "text": "piVar4 = (int *)((int)this_ptr->cube_list->voxel_data + iVar12 + -0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 204,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar10 = (int *)((int)pSVar2->voxel_data + iVar9 + -0x14);",
+      "text": "piVar10 = (int *)((int)pSVar2->voxel_data + iVar1 + -0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 203,
+      "line": 209,
       "match": "(CDemonCube *)((int)",
       "severity": "mild",
       "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + local_20),",
@@ -545,7 +523,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 234,
+      "line": 240,
       "match": "(CDemonCube *)((int)",
       "severity": "mild",
       "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar9),file_handle);",

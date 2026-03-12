@@ -7,11 +7,10 @@
 ; CInventory *     Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined1       Stack[-0x1dc]:1  local_1dc
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined1       Stack[-0x78]:1  local_78
-; undefined1       Stack[-0x77]:1  local_77
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x1dc]:256  local_1dc
+; char[100]        Stack[-0xdc]:100  local_dc
+; char[100]        Stack[-0x78]:100  local_78
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_hero.cpp_CHero_archive_FUN_004f2610 at 004f2840

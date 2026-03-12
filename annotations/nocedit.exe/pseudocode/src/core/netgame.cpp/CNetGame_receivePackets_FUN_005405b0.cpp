@@ -11,6 +11,7 @@ void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(CNetGame *thi
 {
   int iVar1;
   int iVar2;
+  int iVar3;
   SNetworkAddr local_10;
   
   iVar1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -24,14 +25,14 @@ void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(CNetGame *thi
   g_CurrentGameTime = g_CurrentGameTime + iVar2;
   g_LastPingTime = iVar1 / 0x12;
   while( true ) {
-    iVar1 = support_trisock_cpp_isSocketValid_FUN_005e1b70(&this_ptr->socket);
-    if (iVar1 == 0) {
+    iVar3 = support_trisock_cpp_isSocketValid_FUN_005e1b70(&this_ptr->socket);
+    if (iVar3 == 0) {
       return;
     }
-    iVar1 = support_trisock_cpp_receiveSocketData_FUN_005e1c20
+    iVar3 = support_trisock_cpp_receiveSocketData_FUN_005e1c20
                       (&this_ptr->socket,g_NetworkReceivePacket.raw + 4,0x404,&local_10);
-    if (iVar1 < 1) break;
-    g_NetworkReceivePacket.header.size = iVar1 + 1;
+    if (iVar3 < 1) break;
+    g_NetworkReceivePacket.header.size = iVar3 + 1;
     core_netgame_cpp_CNetGame_processPacket_FUN_005406a0(this_ptr,&local_10,&g_NetworkReceivePacket)
     ;
   }

@@ -6,12 +6,12 @@
 ; Parameters:
 ; CCloth *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined        Stack[-0x4cc]:1  local_4cc
-; undefined        Stack[-0x124]:1  local_124
-; undefined8       Stack[-0x24]:8  local_24
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CPickList        Stack[-0x4cc]:936  local_4cc
+; char[256]        Stack[-0x124]:256  local_124
+; double           Stack[-0x24]:8  local_24
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Select_bone_to_add_00618656

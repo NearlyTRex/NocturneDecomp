@@ -12,9 +12,8 @@
 CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_ptr)
 
 {
-  char cVar1;
-  float fVar2;
-  float fVar3;
+  char cVar2;
+  float fVar4;
   CBoneGuy *pCVar4;
   CBoneGuy_ptr_48956 dest;
   int iVar4;
@@ -22,6 +21,9 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   char *pcVar6;
   CVector3f local_20;
   CVector3f local_14;
+  float fVar2;
+  float fVar3;
+  char cVar1;
   
   pCVar4 = (CBoneGuy *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base);
   dest = __arrinit(pCVar4->boxes,0x14,&g_SBoneGuyBoxTypeInfo);
@@ -34,21 +36,21 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   ADJ(dest)->base.base.base.is_transparent = 1;
   pcVar6 = ADJ(dest)->death_event;
   ADJ(dest)->blown_up = 0;
-  fVar2 = 50.0f;
+  fVar4 = 50.0f;
   ADJ(dest)->base.base.blood_type = 2;
   fVar3 = 100.0f;
   ADJ(dest)->recombine_time = 10.0;
-  ADJ(dest)->base.base.ai_detection_range_min = fVar2;
+  ADJ(dest)->base.base.ai_detection_range_min = fVar4;
   ADJ(dest)->base.base.ai_detection_range_max = fVar3;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
+    cVar2 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
-    pcVar6[1] = cVar1;
+    pcVar6[1] = cVar2;
     pcVar6 = pcVar6 + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   ADJ(dest)->box_count = 0;
   memset(dest,0,0x5a0);
   iVar4 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,0xff);

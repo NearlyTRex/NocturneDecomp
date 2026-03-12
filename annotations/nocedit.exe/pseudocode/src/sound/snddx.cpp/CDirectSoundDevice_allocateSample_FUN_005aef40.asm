@@ -10,16 +10,9 @@
 ; int              Stack[0x10]:4   sample_rate
 ; int              Stack[0x14]:4   sample_count
 ; Local Variables:
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x28]:4  local_28
-; undefined2       Stack[-0x24]:2  local_24
-; undefined2       Stack[-0x22]:2  local_22
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined2       Stack[-0x18]:2  local_18
-; undefined2       Stack[-0x16]:2  local_16
+; char[400]        Stack[-0x1c8]:400  acStack_1c8
+; DSBUFFERDESC     Stack[-0x38]:20  local_38
+; tWAVEFORMATEX    Stack[-0x24]:20  local_24
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c

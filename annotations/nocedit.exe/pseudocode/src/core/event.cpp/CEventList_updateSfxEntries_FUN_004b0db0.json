@@ -1,44 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 15,
-        "line": 29,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 31,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 61,
-        "line": 32,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 133,
+    "complexity_score": 100,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
-    "suspect_count": 6,
+    "pseudocode_lines": 55,
+    "suspect_count": 3,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "sub84_truncation",
-      "unknown_field"
+      "sub84_truncation"
     ],
-    "total_lines": 171
+    "total_lines": 173
   },
   "cross_references": [
     {
@@ -158,43 +138,29 @@
         "is_param": false,
         "name": "local_170",
         "offset": -368,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_16f",
-        "offset": -367,
-        "size": 1,
-        "type": "undefined1"
+        "size": 336,
+        "type": "char[336]"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "undefined8"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "SSfxEntry *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -232,52 +198,28 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 22,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_20._0_4_ = SUB84(__BITCAST_UINT64(dVar5),0);",
-      "type": "unknown_field"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 22,
+      "line": 25,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_20._0_4_ = SUB84(__BITCAST_UINT64(dVar5),0);",
+      "text": "local_20 = SUB84(__BITCAST_UINT64(dVar5),0);",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 25,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_20._0_4_ = SUB84(__BITCAST_UINT64(dVar5),0);",
+      "text": "local_20 = SUB84(__BITCAST_UINT64(dVar5),0);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 24,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_20._4_4_ = (int)((ulonglong)dVar5 >> 0x20);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 28,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&dest->playback_position + 4) = local_20._4_4_;",
+      "text": "*(int *)((int)&dest->playback_position + 4) = iStack_1c;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 25,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(int *)((int)&dest->playback_position + 4) = local_20._4_4_;",
-      "type": "unknown_field"
     }
   ]
 }

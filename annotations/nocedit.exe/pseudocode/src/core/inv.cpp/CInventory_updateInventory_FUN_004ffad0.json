@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 267,
-    "complexity_score": 118,
+    "complexity_score": 123,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 103,
+    "pseudocode_lines": 108,
     "suspect_count": 1,
     "suspect_types": [
       "suspect_float"
     ],
-    "total_lines": 370
+    "total_lines": 375
   },
   "cross_references": [
     {
@@ -220,14 +220,14 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -258,10 +258,10 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 74,
+      "line": 79,
       "match": "2.8026e-45",
       "severity": "mild",
-      "text": "if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.position.y != 2.8026e-45)) {",
+      "text": "if ((pCVar4 != (CDemonActor *)0x0) && (pCVar4[2].location.position.y != 2.8026e-45)) {",
       "type": "suspect_float"
     }
   ]

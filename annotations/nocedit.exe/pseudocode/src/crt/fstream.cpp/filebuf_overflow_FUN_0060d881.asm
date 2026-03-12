@@ -7,7 +7,7 @@
 ; filebuf *        Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   character
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; char[4]          Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   crt_io.c_tell_FUN_00606720

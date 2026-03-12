@@ -4,25 +4,31 @@
       {
         "category": "other",
         "column": 50,
-        "line": 29,
+        "line": 31,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 8,
+        "line": 35,
+        "message": "assigning to 'uchar *' (aka 'unsigned char *') from incompatible type 'void *'"
       },
       {
         "category": "format_error",
         "column": 100,
-        "line": 34,
+        "line": 37,
         "message": "format specifies type 'unsigned int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 37,
+        "line": 40,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 50,
+        "line": 53,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -31,15 +37,15 @@
   },
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 60,
+    "complexity_score": 63,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 13,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 63,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 234
+    "total_lines": 237
   },
   "cross_references": [
     {
@@ -252,43 +258,43 @@
         "is_param": false,
         "name": "local_148",
         "offset": -328,
-        "size": 1,
-        "type": "undefined"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_e4",
         "offset": -228,
-        "size": 1,
-        "type": "undefined"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_80",
         "offset": -128,
-        "size": 1,
-        "type": "undefined"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uchar *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "_FILE *"
       },
       {
         "is_param": true,

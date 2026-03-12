@@ -7,10 +7,10 @@
 ; char *           Stack[0x4]:4   rule_string
 ; dst_rule *       Stack[0x8]:4   rule
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
+; int              Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   crt_time.c_parse_tz_string_FUN_0060756c at 0060761b

@@ -9,22 +9,27 @@
 int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,char *section,char *key,char *value,char *filename)
 
 {
-  char cVar1;
+  char cVar2;
+  byte bVar3;
+  bool bVar4;
   int iVar2;
   _FILE *stream;
   _FILE *file;
+  int iVar5;
   uint uVar3;
   char *pcVar4;
   byte bVar5;
-  char *pcVar6;
-  int line_number;
+  char *pcVar7;
   char local_314 [254];
   char acStack_216 [258];
   char local_114 [256];
   int local_14;
+  char cVar1;
+  char *pcVar6;
+  int line_number;
   
   bVar5 = 0;
-  local_14 = 0;
+  bVar4 = false;
   iVar2 = engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004fb470
                     (this_ptr,section,key,filename,value);
   if (this_ptr->initialized == 0) {
@@ -37,31 +42,31 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,c
     g_CurrentLineNumber = 0x183;
     core_main_c_displayErrorAndQuit_FUN_00506f10("cIni::writeProfileString: Unable to open input");
   }
-  pcVar6 = acStack_216;
+  pcVar7 = acStack_216;
   pcVar4 = filename;
   do {
-    pcVar6 = pcVar6 + 2;
+    pcVar7 = pcVar7 + 2;
     cVar1 = *pcVar4;
-    *pcVar6 = cVar1;
+    *pcVar7 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
+    cVar2 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    pcVar6[1] = cVar1;
-  } while (cVar1 != '\0');
+    pcVar7[1] = cVar2;
+  } while (cVar2 != '\0');
   uVar3 = 0xffffffff;
-  pcVar6 = filename;
+  pcVar7 = filename;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar6 + (uint)bVar5 * -2 + 1;
-  } while (cVar1 != '\0');
+    cVar2 = *pcVar7;
+    pcVar7 = pcVar7 + (uint)bVar5 * -2 + 1;
+  } while (cVar2 != '\0');
   line_number = 0x186;
-  pcVar4 = "..\\engine\\ini.cpp";
+  pcVar7 = "..\\engine\\ini.cpp";
   pcVar6 = "wt";
   acStack_216[~uVar3] = 'x';
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (acStack_216 + 2,(char *)0x0,pcVar6,pcVar4,line_number);
+                   (acStack_216 + 2,(char *)0x0,pcVar6,pcVar7,line_number);
   if (file == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\ini.cpp";
     g_CurrentLineNumber = 0x187;
@@ -69,19 +74,19 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,c
   }
   if (iVar2 == 0) {
     _sprintf(local_114,"[%s]\n",section);
-    bVar5 = (byte)stream->_flag;
-    while (((bVar5 & 0x10) == 0 &&
-           (pcVar6 = _fgets(local_314,0xff,stream), pcVar6 != (char *)0x0)))
+    bVar3 = (byte)stream->_flag;
+    while (((bVar3 & 0x10) == 0 &&
+           (pcVar7 = _fgets(local_314,0xff,stream), pcVar7 != (char *)0x0)))
     {
       _fprintf(file,local_314);
-      iVar2 = _strcmp(local_114,local_314);
-      if (iVar2 == 0) {
+      iVar5 = _strcmp(local_114,local_314);
+      if (iVar5 == 0) {
         _fprintf(file,"%s=%s\n",key,value);
-        local_14 = 1;
+        bVar4 = true;
       }
-      bVar5 = (byte)stream->_flag;
+      bVar3 = (byte)stream->_flag;
     }
-    if (local_14 == 0) {
+    if (!bVar4) {
       _fprintf(file,local_114);
       _fprintf(file,"%s=%s\n",key,value);
     }
@@ -93,12 +98,12 @@ int __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004fb660(CIni *this_ptr,c
     }
     _fprintf(file,"%s=%s\n",key,value);
     _fgets(local_314,0xff,stream);
-    bVar5 = (byte)stream->_flag;
-    while (((bVar5 & 0x10) == 0 &&
-           (pcVar6 = _fgets(local_314,0xff,stream), pcVar6 != (char *)0x0)))
+    bVar3 = (byte)stream->_flag;
+    while (((bVar3 & 0x10) == 0 &&
+           (pcVar7 = _fgets(local_314,0xff,stream), pcVar7 != (char *)0x0)))
     {
       _fprintf(file,local_314);
-      bVar5 = (byte)stream->_flag;
+      bVar3 = (byte)stream->_flag;
     }
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\engine\\ini.cpp",0x1e8);

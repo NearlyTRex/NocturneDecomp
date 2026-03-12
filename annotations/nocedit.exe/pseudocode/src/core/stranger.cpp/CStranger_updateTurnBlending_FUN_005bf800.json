@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 253,
-    "complexity_score": 114,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 89,
+    "pseudocode_lines": 91,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 342
+    "total_lines": 344
   },
   "cross_references": [
     {
@@ -181,7 +181,7 @@
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -254,15 +254,15 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 28,
       "match": "ABS",
       "severity": "mild",
-      "text": "if (fVar4 <= ABS(this_ptr->turn_angle)) {",
+      "text": "if (fVar1 <= ABS(this_ptr->turn_angle)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 56,
       "match": "ABS",
       "severity": "mild",
       "text": "local_34 = ABS(this_ptr->turn_angle * (float)0.31830988619288902);",

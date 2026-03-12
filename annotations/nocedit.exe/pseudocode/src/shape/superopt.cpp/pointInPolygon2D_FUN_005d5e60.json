@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 308,
+    "complexity_score": 310,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 78,
+    "pseudocode_lines": 80,
     "suspect_count": 21,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -19,7 +19,7 @@
       "pointer_cast",
       "sub84_truncation"
     ],
-    "total_lines": 258
+    "total_lines": 260
   },
   "cross_references": [
     {
@@ -149,49 +149,77 @@
         "name": "local_60",
         "offset": -96,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": false,
@@ -212,7 +240,7 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -257,7 +285,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 34,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar1 = *(uint *)((int)&pCVar8->x + 4);",
@@ -265,7 +293,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 36,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar3 = *(uint *)((int)&pCVar8->y + 4);",
@@ -273,7 +301,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 37,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_44 = *(uint *)((int)&pCVar6->x + 4);",
@@ -281,7 +309,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 39,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_3c = *(uint *)((int)&pCVar6->y + 4);",
@@ -289,7 +317,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 53,
+      "line": 55,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if (((__BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50)) <= test_point->y) &&",
@@ -297,7 +325,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 54,
+      "line": 56,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "(test_point->y <= __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)))) &&",
@@ -305,7 +333,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 57,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "((test_point->y != __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50)) ||",
@@ -313,7 +341,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 56,
+      "line": 58,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "(test_point->y != __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)))))) {",
@@ -321,7 +349,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 59,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if ((test_point->x < __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58))) ||",
@@ -329,7 +357,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 60,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "(test_point->x < __BITCAST_DOUBLE(CONCAT44(uStack_44,local_48)))) {",
@@ -337,7 +365,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 61,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar4 = __BITCAST_DOUBLE(CONCAT44(uStack_44,local_48)) - __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));",
@@ -345,7 +373,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 61,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar4 = __BITCAST_DOUBLE(CONCAT44(uStack_44,local_48)) - __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));",
@@ -353,7 +381,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 62,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar5 = __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)) - __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50));",
@@ -361,7 +389,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 62,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "dVar5 = __BITCAST_DOUBLE(CONCAT44(uStack_3c,local_40)) - __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50));",
@@ -369,7 +397,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 61,
+      "line": 63,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
@@ -377,7 +405,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 63,
       "match": "SUB84",
       "severity": "mild",
       "text": "local_38 = SUB84(__BITCAST_UINT64(dVar4),0);",
@@ -385,7 +413,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 62,
+      "line": 64,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_30 = SUB84(__BITCAST_UINT64(dVar5),0);",
@@ -393,7 +421,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 64,
       "match": "SUB84",
       "severity": "mild",
       "text": "local_30 = SUB84(__BITCAST_UINT64(dVar5),0);",
@@ -401,7 +429,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 69,
+      "line": 71,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "(test_point->y - __BITCAST_DOUBLE(CONCAT44(uStack_4c,local_50))) * local_60 +",
@@ -409,7 +437,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 72,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(uStack_54,local_58))) goto LAB_005d5ef4;",

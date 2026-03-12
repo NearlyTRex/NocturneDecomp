@@ -4,67 +4,67 @@
       {
         "category": "other",
         "column": 49,
-        "line": 73,
+        "line": 75,
         "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 76,
+        "line": 78,
         "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 81,
+        "line": 83,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 81,
+        "line": 83,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 46,
-        "line": 83,
+        "line": 85,
         "message": "cannot initialize a parameter of type 'struct IUnknown *' with an lvalue of type 'IDirectSoundBuffer *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 87,
+        "line": 89,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 26,
-        "line": 87,
+        "line": 89,
         "message": "expected expression"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 97,
+        "line": 99,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 138,
+        "line": 140,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 145,
+        "line": 147,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 153,
+        "line": 155,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -73,12 +73,12 @@
   },
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 230,
+    "complexity_score": 232,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 19,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 150,
+    "pseudocode_lines": 152,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -86,7 +86,7 @@
       "warning_inlined_function",
       "warning_max_restarts"
     ],
-    "total_lines": 541
+    "total_lines": 543
   },
   "cross_references": [],
   "function": {
@@ -300,53 +300,95 @@
     "pcode_op_count": 1479
   },
   "stack_frame": {
-    "frame_size": 96,
-    "local_size": 76,
+    "frame_size": 1736,
+    "local_size": 1716,
     "param_offset": 4,
     "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "acStack_6b0",
+        "offset": -1712,
+        "size": 400,
+        "type": "char[400]"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_520",
+        "offset": -1312,
+        "size": 400,
+        "type": "char[400]"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_390",
+        "offset": -912,
+        "size": 400,
+        "type": "char[400]"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_200",
+        "offset": -512,
+        "size": 400,
+        "type": "char[400]"
+      },
+      {
+        "is_param": false,
+        "name": "DStack_70",
+        "offset": -112,
+        "size": 20,
+        "type": "DSBUFFERDESC"
+      },
+      {
+        "is_param": false,
+        "name": "DStack_5c",
+        "offset": -92,
+        "size": 20,
+        "type": "DSBUFFERDESC"
+      },
+      {
+        "is_param": false,
         "name": "local_48",
         "offset": -72,
-        "size": 2,
-        "type": "undefined2"
+        "size": 20,
+        "type": "WAVEFORMATEX"
       },
       {
         "is_param": false,
-        "name": "local_46",
-        "offset": -70,
-        "size": 2,
-        "type": "undefined2"
+        "name": "tStack_34",
+        "offset": -52,
+        "size": 20,
+        "type": "tWAVEFORMATEX"
       },
       {
         "is_param": false,
-        "name": "local_44",
-        "offset": -68,
+        "name": "pIStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "IDirectSoundBuffer *"
+      },
+      {
+        "is_param": false,
+        "name": "piStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_18",
+        "offset": -24,
         "size": 4,
         "type": "undefined4"
       },
       {
         "is_param": false,
-        "name": "local_40",
-        "offset": -64,
+        "name": "fStack_14",
+        "offset": -20,
         "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 2,
-        "type": "undefined2"
-      },
-      {
-        "is_param": false,
-        "name": "local_3a",
-        "offset": -58,
-        "size": 2,
-        "type": "undefined2"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -404,7 +446,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 74,
+      "line": 76,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)*piStack_1c)(piStack_1c,&g_IID_IKsPropertySet,&g_DirectSoundPropertySet);",
@@ -412,7 +454,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 80,
+      "line": 82,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_1c + 8))(piStack_1c);",
@@ -420,7 +462,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 107,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(((float)g_StreamSampleRate * fStack_14) / (float)g_StreamBlockCount));",
@@ -428,7 +470,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 105,
+      "line": 107,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(((float)g_StreamSampleRate * fStack_14) / (float)g_StreamBlockCount));",

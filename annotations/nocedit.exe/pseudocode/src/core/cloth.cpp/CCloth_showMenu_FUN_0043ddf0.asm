@@ -6,11 +6,10 @@
 ; Parameters:
 ; CCloth *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x278]:1  local_278
-; undefined1       Stack[-0x178]:1  local_178
-; undefined1       Stack[-0x177]:1  local_177
-; undefined        Stack[-0x78]:1  local_78
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x278]:256  local_278
+; char[256]        Stack[-0x178]:256  local_178
+; char[100]        Stack[-0x78]:100  local_78
+; float *          Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0043ddd4 = 0043decc

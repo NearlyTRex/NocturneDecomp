@@ -8,14 +8,14 @@
 ; char *           Stack[0x8]:4   dialog_title
 ; char *           Stack[0xc]:4   selected_name
 ; Local Variables:
-; undefined1       Stack[-0x748]:1  local_748
-; undefined1       Stack[-0x3a0]:1  local_3a0
-; undefined1       Stack[-0x1ac]:1  local_1ac
-; undefined1       Stack[-0x1ab]:1  local_1ab
-; undefined1       Stack[-0xe4]:1  local_e4
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CActorPropertyList Stack[-0x2c4c]:9476  CStack_2c4c
+; CPickList        Stack[-0x748]:936  local_748
+; char[500]        Stack[-0x3a0]:500  local_3a0
+; char[200]        Stack[-0x1ac]:200  local_1ac
+; char[200]        Stack[-0xe4]:200  local_e4
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; char *           Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_script.cpp_editParameterValue_FUN_00562920 at 005637ca

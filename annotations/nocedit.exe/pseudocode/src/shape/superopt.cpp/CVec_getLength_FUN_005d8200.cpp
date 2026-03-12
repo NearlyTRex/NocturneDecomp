@@ -9,10 +9,10 @@
 int __cdecl shape_superopt_cpp_CVec_getLength_FUN_005d8200(CVec *this_ptr)
 
 {
-  double dVar1;
-  double dVar2;
-  double dVar3;
   int local_8;
+  double dVar1;
+  double dVar3;
+  double dVar2;
   
   dVar1 = (this_ptr->impl).y;
   dVar2 = (this_ptr->impl).x;

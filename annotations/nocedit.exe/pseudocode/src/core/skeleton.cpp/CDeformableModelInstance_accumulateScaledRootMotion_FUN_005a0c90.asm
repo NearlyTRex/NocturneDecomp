@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
-; undefined1       Stack[-0xc]:1  local_c
+; CVector3f        Stack[-0xc]:12  local_c
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10

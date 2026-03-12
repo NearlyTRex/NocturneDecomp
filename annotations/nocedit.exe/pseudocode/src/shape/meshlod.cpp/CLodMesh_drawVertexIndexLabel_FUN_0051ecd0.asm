@@ -7,7 +7,7 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   vertex_index
 ; Local Variables:
-; undefined        Stack[-0x28]:1  local_28
+; char[40]         Stack[-0x28]:40  local_28
 ;
 ; XREF[2]:
 ;   shape_meshlod.cpp_CLodMesh_drawVertexLabels_FUN_0051ed30 at 0051ed40

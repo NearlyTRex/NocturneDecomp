@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 61,
-        "line": 28,
+        "line": 29,
         "message": "cannot initialize a parameter of type 'LPDWORD' (aka 'unsigned long *') with an rvalue of type 'uint *' (aka 'unsigned int *')"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 34,
+        "line": 35,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -19,15 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 29,
+    "complexity_score": 30,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 29,
+    "pseudocode_lines": 30,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 129
+    "total_lines": 130
   },
   "cross_references": [],
   "function": {
@@ -166,25 +166,32 @@
     "pcode_op_count": 350
   },
   "stack_frame": {
-    "frame_size": 36,
-    "local_size": 28,
+    "frame_size": 444,
+    "local_size": 436,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "acStack_1b0",
+        "offset": -432,
+        "size": 408,
+        "type": "char[408]"
+      },
+      {
+        "is_param": false,
         "name": "local_18",
         "offset": -24,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "DWORD"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "uint"
       },
       {
         "is_param": true,

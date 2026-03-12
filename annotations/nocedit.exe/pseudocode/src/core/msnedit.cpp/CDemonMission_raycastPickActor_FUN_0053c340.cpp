@@ -9,8 +9,8 @@
 CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_raycastPickActor_FUN_0053c340(CDemonMission *this_ptr,int screen_x,int screen_y)
 
 {
-  CDemonActor *actor_ptr;
   int iVar1;
+  float fVar1;
   CDemonActor *pCVar2;
   CBoundingBox3D local_64;
   CVector3f local_4c;
@@ -20,6 +20,7 @@ CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_raycastPickActor_FUN_0053c3
   float fStack_1c;
   float local_18;
   float local_14;
+  CDemonActor *actor_ptr;
   
   if (((((this_ptr->viewport).left < screen_x) && ((this_ptr->viewport).top < screen_y)) &&
       (screen_x < (this_ptr->viewport).right + -1)) && (screen_y < (this_ptr->viewport).bottom + -1)
@@ -29,11 +30,11 @@ CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_raycastPickActor_FUN_0053c3
     local_28.z = g_CDemonCameraInstance.base.position.f.z;
     core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480
               (&g_CDemonCameraInstance,&local_4c,screen_x,screen_y);
-    local_18 = (float)1000 /
-               SQRT(local_4c.z * local_4c.z + local_4c.x * local_4c.x + local_4c.y * local_4c.y);
-    local_4c.x = local_4c.x * local_18;
-    local_4c.y = local_4c.y * local_18;
-    local_4c.z = local_4c.z * local_18;
+    fVar1 = (float)1000 /
+            SQRT(local_4c.z * local_4c.z + local_4c.x * local_4c.x + local_4c.y * local_4c.y);
+    local_4c.x = local_4c.x * fVar1;
+    local_4c.y = local_4c.y * fVar1;
+    local_4c.z = local_4c.z * fVar1;
     pCVar2 = (CDemonActor *)0x0;
     actor_ptr = this_ptr->first_actor;
     local_14 = 1.01;
@@ -47,11 +48,11 @@ CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_raycastPickActor_FUN_0053c3
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(actor_ptr,&CStack_40,&local_28);
         core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                   (actor_ptr,&CStack_34,&local_4c);
-        fStack_1c = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                              (&local_64,&CStack_40,&CStack_34,(CVector3f *)0x0);
-        if (((0.0 < fStack_1c) && (fStack_1c <= local_14)) && (fStack_1c <= 1.0)) {
+        fVar1 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
+                          (&local_64,&CStack_40,&CStack_34,(CVector3f *)0x0);
+        if (((0.0 < fVar1) && (fVar1 <= local_14)) && (fVar1 <= 1.0)) {
           pCVar2 = actor_ptr;
-          local_14 = fStack_1c;
+          local_14 = fVar1;
         }
       }
     }

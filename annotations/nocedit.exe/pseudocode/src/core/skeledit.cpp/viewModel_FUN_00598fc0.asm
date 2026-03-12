@@ -4,8 +4,8 @@
 ; void __cdecl core_skeledit_cpp_viewModel_FUN_00598fc0(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x118]:1  local_118
-; undefined4       Stack[-0x14]:4  local_14
+; char[260]        Stack[-0x118]:260  local_118
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_main.c_showDeveloperToolsMenu_FUN_005073a0 at 005078ff

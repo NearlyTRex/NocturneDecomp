@@ -11,15 +11,14 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLodMesh *this_ptr,int enable_texture_lookup)
 
 {
-  char cVar1;
-  int *piVar2;
+  char cVar2;
   int iVar3;
   char *pcVar4;
   int atlas_texture_index;
+  int iVar4;
   int *piVar5;
   int *piVar6;
   char *pcVar7;
-  SMRGLTextureBasic *texture;
   SMRGLHeaderPrimitive SStack_78;
   int aiStack_60 [12];
   float local_30;
@@ -30,6 +29,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLo
   uint local_1c;
   int *local_18;
   int *local_14;
+  SMRGLTextureBasic *texture;
+  char cVar1;
+  int *piVar2;
   
   SStack_78.surface_normal.D = 0;
   SStack_78.surface_normal.C = 0;
@@ -50,11 +52,11 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLo
                          (this_ptr->lod_textures[atlas_texture_index].textures[0].texture_name);
         }
         local_14 = local_18 + 3;
-        iVar3 = 0;
+        iVar4 = 0;
         piVar5 = local_18;
         piVar6 = local_18;
         do {
-          *(int *)((int)aiStack_60 + iVar3) = piVar5[4];
+          *(int *)((int)aiStack_60 + iVar4) = piVar5[4];
           local_30 = (float)piVar6[7];
           local_2c = (float)piVar6[8];
           if ((-1 < atlas_texture_index) && (enable_texture_lookup != 0)) {
@@ -63,10 +65,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLo
           piVar2 = local_14;
           piVar6 = piVar6 + 2;
           local_28 = (int)ROUND(ROUND(local_2c * 65535.0f));
-          *(int *)((int)aiStack_60 + iVar3 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));
+          *(int *)((int)aiStack_60 + iVar4 + 4) = (int)ROUND(ROUND(local_30 * 65535.0f));
           piVar5 = piVar5 + 1;
-          *(int *)((int)aiStack_60 + iVar3 + 8) = local_28;
-          iVar3 = iVar3 + 0xc;
+          *(int *)((int)aiStack_60 + iVar4 + 8) = local_28;
+          iVar4 = iVar4 + 0xc;
         } while (piVar5 != piVar2);
         if (atlas_texture_index < 0) {
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
@@ -87,11 +89,11 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0(CLo
                 cVar1 = *pcVar4;
                 *pcVar7 = cVar1;
                 if (cVar1 == '\0') break;
-                cVar1 = pcVar4[1];
+                cVar2 = pcVar4[1];
                 pcVar4 = pcVar4 + 2;
-                pcVar7[1] = cVar1;
+                pcVar7[1] = cVar2;
                 pcVar7 = pcVar7 + 2;
-              } while (cVar1 != '\0');
+              } while (cVar2 != '\0');
               texture = &g_TempTextureDescriptor;
             }
             engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(texture);

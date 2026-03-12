@@ -11,10 +11,12 @@
 int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context)
 
 {
-  char cVar1;
-  SDirectSoundDeviceInfo *pSVar2;
+  char cVar2;
+  int iVar3;
   uint uVar3;
+  uint error_code;
   int iVar4;
+  char *pcVar4;
   uint *puVar5;
   uint *puVar6;
   uint *puVar7;
@@ -25,6 +27,8 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID d
   char acStack_200 [400];
   DSCAPS DStack_70;
   LPDIRECTSOUND local_10;
+  char cVar1;
+  SDirectSoundDeviceInfo *pSVar2;
   
   bVar10 = 0;
   if (0xb < g_DirectSoundDeviceCount) {
@@ -33,28 +37,28 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID d
   local_10 = (LPDIRECTSOUND)0x0;
   uVar3 = DirectSoundCreate(device_guid,&local_10,(LPUNKNOWN)0x0);
   if (uVar3 != 0) {
-    pcVar9 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar3);
+    pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar3);
     _sprintf
               (acStack_200,"DirectSux: Unable to %s.  (%s)","create DirectSound object",
-               pcVar9);
+               pcVar4);
     sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_200);
     return 1;
   }
   if (local_10 != (LPDIRECTSOUND)0x0) {
     memset(&DStack_70,0,0x60);
     DStack_70.dwSize = 0x60;
-    uVar3 = (*local_10->vtable->GetCaps)(local_10,&DStack_70);
-    if (uVar3 != 0) {
-      pcVar9 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar3);
+    error_code = (*local_10->vtable->GetCaps)(local_10,&DStack_70);
+    if (error_code != 0) {
+      pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
       _sprintf
                 (acStack_390,"DirectSux: Unable to %s.  (%s)","Querry DirectSound capabilities",
-                 pcVar9);
+                 pcVar4);
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_390);
     }
     if (local_10 != (LPDIRECTSOUND)0x0) {
       (*local_10->vtable->Release)(local_10);
     }
-    if (uVar3 == 0) {
+    if (error_code == 0) {
       iVar4 = g_DirectSoundDeviceCount * 0x11c;
       if (device_guid == (LPGUID)0x0) {
         g_DirectSoundDevices[g_DirectSoundDeviceCount].is_primary_device = 1;
@@ -71,21 +75,21 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120(LPGUID d
         *puVar8 = *puVar6;
         puVar8[(uint)bVar10 * -2 + 1] = puVar6[(uint)bVar10 * -2 + 1];
       }
-      iVar4 = g_DirectSoundDeviceCount;
+      iVar3 = g_DirectSoundDeviceCount;
       g_DirectSoundDevices[g_DirectSoundDeviceCount].is_emulated =
            (uint)(((byte)DStack_70.dwFlags & 0x20) != 0);
-      g_DirectSoundDevices[iVar4].has_hardware_mixing =
+      g_DirectSoundDevices[iVar3].has_hardware_mixing =
            (uint)(DStack_70.dwMaxHwMixingStaticBuffers != 0);
-      pcVar9 = g_DirectSoundDevices[iVar4].device_description;
+      pcVar9 = g_DirectSoundDevices[iVar3].device_description;
       do {
         cVar1 = *description;
         *pcVar9 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = description[1];
+        cVar2 = description[1];
         description = description + 2;
-        pcVar9[1] = cVar1;
+        pcVar9[1] = cVar2;
         pcVar9 = pcVar9 + 2;
-      } while (cVar1 != '\0');
+      } while (cVar2 != '\0');
       g_DirectSoundDeviceCount = g_DirectSoundDeviceCount + 1;
       return 1;
     }

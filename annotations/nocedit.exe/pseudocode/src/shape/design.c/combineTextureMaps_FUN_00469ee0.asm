@@ -6,21 +6,20 @@
 ; Local Variables:
 ; undefined4       Stack[-0x13c]:4  local_13c
 ; undefined4       Stack[-0x138]:4  local_138
-; undefined1       Stack[-0x134]:1  local_134
-; undefined1       Stack[-0x133]:1  local_133
-; undefined1       Stack[-0xe4]:1  local_e4
-; undefined1       Stack[-0x94]:1  local_94
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x134]:80  local_134
+; char[80]         Stack[-0xe4]:80  local_e4
+; char[80]         Stack[-0x94]:80  local_94
+; int              Stack[-0x44]:4  local_44
+; _FILE *          Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; float            Stack[-0x30]:4  local_30
+; float[3]         Stack[-0x2c]:12  local_2c
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showShapeEditorMenu_FUN_0046f290 at 0046f772

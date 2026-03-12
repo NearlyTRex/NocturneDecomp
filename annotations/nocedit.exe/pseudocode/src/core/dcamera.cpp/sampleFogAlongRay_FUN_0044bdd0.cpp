@@ -9,7 +9,7 @@
 uint __cdecl core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0(SFogGrid *fog_ptr,CVector3i *start_pos,CVector3i *end_pos,int ray_length)
 
 {
-  longlong lVar1;
+  int iVar1;
   int iVar2;
   uint uVar3;
   int iVar4;
@@ -18,6 +18,7 @@ uint __cdecl core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0(SFogGrid *fog_ptr,C
   int local_28;
   int local_24;
   uint local_14;
+  longlong lVar1;
   
   if (ray_length == 0) {
     local_14 = 0;
@@ -44,16 +45,16 @@ uint __cdecl core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0(SFogGrid *fog_ptr,C
                                    [(int)((local_2c + (local_2c >> 0x1f) * -0x100) -
                                          (uint)((local_2c >> 0x1f) << 7 < 0)) >> 8 & 0xf];
           uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-          iVar4 = fog_ptr->height_threshold;
-          if (iVar4 != 0) {
-            if (iVar4 < local_28) {
+          iVar1 = fog_ptr->height_threshold;
+          if (iVar1 != 0) {
+            if (iVar1 < local_28) {
               iVar4 = 0;
             }
             else if (local_28 < 0) {
               iVar4 = 0x10000;
             }
             else {
-              iVar4 = (int)(((longlong)(iVar4 - local_28) * 0x10000) / (longlong)iVar4);
+              iVar4 = (int)(((longlong)(iVar1 - local_28) * 0x10000) / (longlong)iVar1);
             }
             uVar3 = (uint)((longlong)iVar4 * (longlong)(int)uVar3) >> 0x10 |
                     (int)((ulonglong)((longlong)iVar4 * (longlong)(int)uVar3) >> 0x20) << 0x10;

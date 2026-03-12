@@ -9,9 +9,13 @@
 void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_ptr,SClothVertex *vertex)
 
 {
-  float fVar1;
-  float fVar2;
-  SClothBone *pSVar3;
+  CVector3f *pCVar1;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  int iVar8;
   SClothVertex *pSVar4;
   CVector3f *pCVar5;
   int iVar6;
@@ -79,6 +83,9 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
   float local_1c;
   float local_18;
   CVector3f *local_14;
+  float fVar2;
+  float fVar1;
+  SClothBone *pSVar3;
   
   if ((vertex->position).y < this_ptr->floor_y) {
     (vertex->secondary_velocity).y = 0.0;
@@ -88,7 +95,7 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
   iVar6 = 0;
   if (0 < vertex->connected_count) {
     local_34 = &this_ptr->spring;
-    pCVar5 = &vertex->secondary_velocity;
+    pCVar1 = &vertex->secondary_velocity;
     pfVar7 = &this_ptr->inv_delta_time;
     local_3c = this_ptr->vertices;
     pSVar8 = vertex;
@@ -107,44 +114,36 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
       local_1c = pSVar8->rest_lengths[0];
       if (local_1c < local_24) {
         local_2c = local_24 - local_1c;
-        local_e8 = local_7c * local_2c;
-        local_e4 = local_78 * local_2c;
-        local_e0 = local_74 * local_2c;
-        local_d4 = 1.0 / local_24;
-        local_dc = local_e8 * local_d4;
-        local_d8 = local_e4 * local_d4;
-        local_d4 = local_e0 * local_d4;
-        (vertex->position).x = (vertex->position).x - local_dc;
-        (vertex->position).y = (vertex->position).y - local_d8;
-        (vertex->position).z = (vertex->position).z - local_d4;
-        local_100 = local_dc * *pfVar7;
-        local_fc = local_d8 * *pfVar7;
-        local_f8 = local_d4 * *pfVar7;
-        pCVar5->x = pCVar5->x - local_100;
-        (vertex->secondary_velocity).y = (vertex->secondary_velocity).y - local_fc;
-        (vertex->secondary_velocity).z = (vertex->secondary_velocity).z - local_f8;
+        fVar5 = 1.0 / local_24;
+        fVar6 = local_7c * local_2c * fVar5;
+        fVar7 = local_78 * local_2c * fVar5;
+        fVar5 = local_74 * local_2c * fVar5;
+        (vertex->position).x = (vertex->position).x - fVar6;
+        (vertex->position).y = (vertex->position).y - fVar7;
+        (vertex->position).z = (vertex->position).z - fVar5;
+        fVar3 = *pfVar7;
+        fVar4 = *pfVar7;
+        pCVar1->x = pCVar1->x - fVar6 * *pfVar7;
+        (vertex->secondary_velocity).y = (vertex->secondary_velocity).y - fVar7 * fVar3;
+        (vertex->secondary_velocity).z = (vertex->secondary_velocity).z - fVar5 * fVar4;
       }
       if (local_24 < local_1c) {
         local_28 = local_1c - local_24;
         local_118 = local_7c * local_28;
         local_114 = local_78 * local_28;
         local_110 = local_74 * local_28;
-        local_8c = 1.0 / local_24;
-        local_94 = local_118 * local_8c;
-        local_90 = local_114 * local_8c;
-        local_8c = local_110 * local_8c;
-        local_f4 = local_94 * *local_34;
-        local_f0 = local_90 * *local_34;
-        local_ec = local_8c * *local_34;
-        (vertex->position).x = (vertex->position).x + local_f4;
-        (vertex->position).y = (vertex->position).y + local_f0;
-        (vertex->position).z = (vertex->position).z + local_ec;
-        local_c4 = local_f4 * *pfVar7;
-        local_c0 = local_f0 * *pfVar7;
-        local_bc = local_ec * *pfVar7;
-        pCVar5->x = pCVar5->x + local_c4;
-        (vertex->secondary_velocity).y = (vertex->secondary_velocity).y + local_c0;
-        (vertex->secondary_velocity).z = (vertex->secondary_velocity).z + local_bc;
+        fVar3 = 1.0 / local_24;
+        fVar5 = local_118 * fVar3 * *local_34;
+        fVar6 = local_114 * fVar3 * *local_34;
+        fVar7 = local_110 * fVar3 * *local_34;
+        (vertex->position).x = (vertex->position).x + fVar5;
+        (vertex->position).y = (vertex->position).y + fVar6;
+        (vertex->position).z = (vertex->position).z + fVar7;
+        fVar3 = *pfVar7;
+        fVar4 = *pfVar7;
+        pCVar1->x = pCVar1->x + fVar5 * *pfVar7;
+        (vertex->secondary_velocity).y = (vertex->secondary_velocity).y + fVar6 * fVar3;
+        (vertex->secondary_velocity).z = (vertex->secondary_velocity).z + fVar7 * fVar4;
       }
       iVar6 = iVar6 + 1;
       pSVar8 = (SClothVertex *)&(pSVar8->position).y;
@@ -158,7 +157,7 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
     local_38 = this_ptr->collide_bones;
     local_14 = &this_ptr->collide_bones[0].position_offset;
     do {
-      iVar6 = local_20;
+      iVar8 = local_20;
       pSVar3 = local_38;
       local_70 = (vertex->position).x - local_14->x;
       local_6c = (vertex->position).y - local_14->y;
@@ -190,32 +189,32 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_0043a420(CCloth *this_pt
           local_88.z = local_a4;
           pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                              (&local_38[local_20].local_matrix,&local_10c,&local_88);
-          local_a0.x = pSVar3[iVar6].position_offset.x + pCVar5->x;
-          local_a0.y = pSVar3[iVar6].position_offset.y + pCVar5->y;
-          local_a0.z = pSVar3[iVar6].position_offset.z + pCVar5->z;
+          local_a0.x = pSVar3[iVar8].position_offset.x + pCVar5->x;
+          local_a0.y = pSVar3[iVar8].position_offset.y + pCVar5->y;
+          local_a0.z = pSVar3[iVar8].position_offset.z + pCVar5->z;
           if (&local_88 != &local_a0) {
             local_88.x = local_a0.x;
             local_88.y = local_a0.y;
             local_88.z = local_a0.z;
           }
-          local_d0 = local_88.x - (vertex->position).x;
-          local_cc = local_88.y - (vertex->position).y;
-          local_c8 = local_88.z - (vertex->position).z;
+          fVar3 = (vertex->position).x;
+          fVar4 = (vertex->position).y;
+          fVar5 = (vertex->position).z;
           if (vertex != (SClothVertex *)&local_88) {
             (vertex->position).x = local_88.x;
             (vertex->position).y = local_88.y;
             (vertex->position).z = local_88.z;
           }
-          local_124 = local_d0 * *local_30;
-          local_120 = local_cc * *local_30;
-          local_11c = local_c8 * *local_30;
+          local_124 = (local_88.x - fVar3) * *local_30;
+          local_120 = (local_88.y - fVar4) * *local_30;
+          local_11c = (local_88.z - fVar5) * *local_30;
           (vertex->secondary_velocity).x = (vertex->secondary_velocity).x + local_124;
           (vertex->secondary_velocity).y = (vertex->secondary_velocity).y + local_120;
           (vertex->secondary_velocity).z = (vertex->secondary_velocity).z + local_11c;
           vertex->body_collision = 1;
         }
       }
-      local_14 = (CVector3f *)((int)(local_14 + 0xe) + 4);
+      local_14 = (CVector3f *)&local_14[0xe].y;
       local_20 = local_20 + 1;
     } while (local_20 < this_ptr->collide_bone_count);
   }

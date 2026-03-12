@@ -3,6 +3,11 @@
 ; *****************************************************************************
 ; int __watcallRegister crt_heap_c_ResizeBlockInPlace_FUN_006097b8(ushort segment,void *ptr,ulong new_size,ulong *pExtraNeeded)
 ;
+; Parameters:
+; short            Stack[0x4]:2   in_stack_00000004
+; Heap *           Stack[0x8]:4   in_stack_00000008
+; uint             Stack[0xc]:4   in_stack_0000000c
+; uint *           Stack[0x10]:4   in_stack_00000010
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18

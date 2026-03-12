@@ -9,8 +9,8 @@
 double __cdecl shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d *p1,CVector2d *p2,CVector2d *p3)
 
 {
-  double dVar1;
   double local_20;
+  double dVar1;
   
   dVar1 = (p2->x - p1->x) * (p3->y - p1->y) - (p3->x - p1->x) * (p2->y - p1->y);
   local_20 = dVar1;

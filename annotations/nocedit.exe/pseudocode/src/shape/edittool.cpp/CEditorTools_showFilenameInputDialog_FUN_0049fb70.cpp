@@ -9,21 +9,30 @@
 int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension,char *output_buffer,uint flags)
 
 {
-  char cVar1;
+  char cVar2;
+  bool bVar3;
+  int iVar5;
   char *pcVar2;
   int y;
+  int iVar6;
   int iVar3;
   int iVar4;
+  int iVar7;
   uint uVar5;
+  char *pcVar9;
+  CInputString *pCVar10;
   CInputString *pCVar6;
   CInputString *pCVar7;
   char *pcVar8;
+  char *pcVar11;
+  CInputString *pCVar12;
   byte bVar9;
-  int color_value;
   char local_360 [520];
   CInputString local_158;
   int local_18;
   int local_14;
+  char cVar1;
+  int color_value;
   
   bVar9 = 0;
   if (directory_path == (char *)0x0) {
@@ -38,14 +47,14 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
   g_FontCharacterWidth = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(g_EditorFont,0x6a);
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
             (this_ptr,g_FontCharacterHeight * 0x1e,g_FontCharacterWidth * 2,dialog_title,0);
-  pcVar8 = output_buffer;
+  pcVar9 = output_buffer;
   if ((flags & 1) == 0) {
-    pcVar8 = (char *)0x0;
+    pcVar9 = (char *)0x0;
   }
-  shape_edittool_cpp_CInputString_init_FUN_0049d3d0(&local_158,pcVar8,0x14,0);
-  local_18 = g_InputKeyMask;
+  shape_edittool_cpp_CInputString_init_FUN_0049d3d0(&local_158,pcVar9,0x14,0);
+  iVar5 = g_InputKeyMask;
   g_InputKeyMask = 0x7f;
-  local_14 = 0;
+  bVar3 = false;
   do {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(this_ptr);
     strupr(local_158.string_data);
@@ -56,63 +65,63 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
         cVar1 = *pcVar2;
         *pcVar8 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar2[1];
+        cVar2 = pcVar2[1];
         pcVar2 = pcVar2 + 2;
-        pcVar8[1] = cVar1;
+        pcVar8[1] = cVar2;
         pcVar8 = pcVar8 + 2;
-      } while (cVar1 != '\0');
+      } while (cVar2 != '\0');
       iVar3 = -1;
-      pcVar8 = local_360;
+      pcVar9 = local_360;
       do {
-        pcVar2 = pcVar8;
+        pcVar11 = pcVar9;
         if (iVar3 == 0) break;
         iVar3 = iVar3 + -1;
-        pcVar2 = pcVar8 + (uint)bVar9 * -2 + 1;
-        cVar1 = *pcVar8;
-        pcVar8 = pcVar2;
-      } while (cVar1 != '\0');
-      pcVar2 = pcVar2 + -1;
-      pcVar8 = directory_path;
+        pcVar11 = pcVar9 + (uint)bVar9 * -2 + 1;
+        cVar2 = *pcVar9;
+        pcVar9 = pcVar11;
+      } while (cVar2 != '\0');
+      pcVar11 = pcVar11 + -1;
+      pcVar9 = directory_path;
       do {
-        cVar1 = *pcVar8;
-        *pcVar2 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar8[1];
-        pcVar8 = pcVar8 + 2;
-        pcVar2[1] = cVar1;
-        pcVar2 = pcVar2 + 2;
-      } while (cVar1 != '\0');
+        cVar2 = *pcVar9;
+        *pcVar11 = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar9[1];
+        pcVar9 = pcVar9 + 2;
+        pcVar11[1] = cVar2;
+        pcVar11 = pcVar11 + 2;
+      } while (cVar2 != '\0');
       engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
                 (g_EditorFont,local_360,g_ClipLeft,g_ClipTop,g_DialogTextColor,-1);
     }
-    iVar3 = g_DialogTextColor;
-    if (local_14 != 0) {
-      iVar3 = g_ActiveItemTextColor;
+    iVar6 = g_DialogTextColor;
+    if (bVar3) {
+      iVar6 = g_ActiveItemTextColor;
     }
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
     color_value = -1;
     y = g_ClipTop + g_FontCharacterWidth;
-    iVar4 = g_ClipLeft;
-    pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Filename: ");
-    engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_EditorFont,pcVar8,iVar4,y,iVar3,color_value);
-    pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Filename: ");
-    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,pcVar8);
+    iVar7 = g_ClipLeft;
+    pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Filename: ");
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80(g_EditorFont,pcVar9,iVar7,y,iVar6,color_value);
+    pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Filename: ");
+    iVar6 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,pcVar9);
     shape_edittool_cpp_CInputString_draw_FUN_0049d9b0
-              (&local_158,iVar3 + g_ClipLeft,g_ClipTop + g_FontCharacterWidth);
+              (&local_158,iVar6 + g_ClipLeft,g_ClipTop + g_FontCharacterWidth);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    if (local_14 != 0) break;
-    while (iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00(), iVar3 != 0) {
-      iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
-      if (iVar3 == 0x1b) {
+    if (bVar3) break;
+    while (iVar6 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00(), iVar6 != 0) {
+      iVar6 = engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
+      if (iVar6 == 0x1b) {
         *output_buffer = '\0';
         shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(this_ptr);
         engine_2d_c_clearInputAndWait_FUN_00403260();
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-        g_InputKeyMask = local_18;
+        g_InputKeyMask = iVar5;
         return 0;
       }
-      if ((iVar3 == 0xd) && (local_158.string_data[0] != '\0')) {
+      if ((iVar6 == 0xd) && (local_158.string_data[0] != '\0')) {
         pCVar6 = &local_158;
         do {
           pCVar7 = pCVar6;
@@ -126,88 +135,88 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
 LAB_0049fea7:
         if (pCVar7 == (CInputString *)0x0) {
           if (*file_extension != '.') {
-            pcVar8 = ".";
+            pcVar9 = ".";
             iVar4 = -1;
-            pCVar6 = &local_158;
+            pCVar10 = &local_158;
             do {
-              pCVar7 = pCVar6;
+              pCVar12 = pCVar10;
               if (iVar4 == 0) break;
               iVar4 = iVar4 + -1;
-              pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);
-              pcVar2 = pCVar6->string_data;
-              pCVar6 = pCVar7;
-            } while (*pcVar2 != '\0');
-            pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);
+              pCVar12 = (CInputString *)((int)pCVar10 + (uint)bVar9 * -2 + 1);
+              pcVar11 = pCVar10->string_data;
+              pCVar10 = pCVar12;
+            } while (*pcVar11 != '\0');
+            pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);
             do {
-              cVar1 = *pcVar8;
-              *pcVar2 = cVar1;
-              if (cVar1 == '\0') break;
-              cVar1 = pcVar8[1];
-              pcVar8 = pcVar8 + 2;
-              pcVar2[1] = cVar1;
-              pcVar2 = pcVar2 + 2;
-            } while (cVar1 != '\0');
+              cVar2 = *pcVar9;
+              *pcVar11 = cVar2;
+              if (cVar2 == '\0') break;
+              cVar2 = pcVar9[1];
+              pcVar9 = pcVar9 + 2;
+              pcVar11[1] = cVar2;
+              pcVar11 = pcVar11 + 2;
+            } while (cVar2 != '\0');
           }
-          iVar4 = -1;
-          pCVar6 = &local_158;
+          iVar7 = -1;
+          pCVar10 = &local_158;
           do {
-            pCVar7 = pCVar6;
-            if (iVar4 == 0) break;
-            iVar4 = iVar4 + -1;
-            pCVar7 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);
-            pcVar8 = pCVar6->string_data;
-            pCVar6 = pCVar7;
-          } while (*pcVar8 != '\0');
-          pcVar2 = (char *)((int)&pCVar7[-1].mask_mode + 3);
-          pcVar8 = file_extension;
+            pCVar12 = pCVar10;
+            if (iVar7 == 0) break;
+            iVar7 = iVar7 + -1;
+            pCVar12 = (CInputString *)((int)pCVar10 + (uint)bVar9 * -2 + 1);
+            pcVar9 = pCVar10->string_data;
+            pCVar10 = pCVar12;
+          } while (*pcVar9 != '\0');
+          pcVar11 = (char *)((int)&pCVar12[-1].mask_mode + 3);
+          pcVar9 = file_extension;
           do {
-            cVar1 = *pcVar8;
-            *pcVar2 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar8[1];
-            pcVar8 = pcVar8 + 2;
-            pcVar2[1] = cVar1;
-            pcVar2 = pcVar2 + 2;
-          } while (cVar1 != '\0');
+            cVar2 = *pcVar9;
+            *pcVar11 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar9[1];
+            pcVar9 = pcVar9 + 2;
+            pcVar11[1] = cVar2;
+            pcVar11 = pcVar11 + 2;
+          } while (cVar2 != '\0');
           uVar5 = 0xffffffff;
-          pCVar6 = &local_158;
+          pCVar10 = &local_158;
           do {
             if (uVar5 == 0) break;
             uVar5 = uVar5 - 1;
-            pcVar8 = pCVar6->string_data;
-            pCVar6 = (CInputString *)((int)pCVar6 + (uint)bVar9 * -2 + 1);
-          } while (*pcVar8 != '\0');
+            pcVar9 = pCVar10->string_data;
+            pCVar10 = (CInputString *)((int)pCVar10 + (uint)bVar9 * -2 + 1);
+          } while (*pcVar9 != '\0');
           local_158.current_length = ~uVar5 - 1;
           local_158.cursor_position = local_158.current_length;
           shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0049d460(&local_158);
         }
         engine_2d_c_clearInputAndWait_FUN_00403260();
-        local_14 = 1;
+        bVar3 = true;
       }
-      if (iVar3 == 8) {
+      if (iVar6 == 8) {
         shape_edittool_cpp_CInputString_backspace_FUN_0049d5d0(&local_158);
       }
-      else if (((((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 8) != 0) &&
-                (iVar3 != 0x5c)) && (iVar3 != 0x3a)) &&
-              ((g_CharacterClassificationTable[(byte)((char)iVar3 + 1)] & 2) == 0)) {
+      else if (((((g_CharacterClassificationTable[(byte)((char)iVar6 + 1)] & 8) != 0) &&
+                (iVar6 != 0x5c)) && (iVar6 != 0x3a)) &&
+              ((g_CharacterClassificationTable[(byte)((char)iVar6 + 1)] & 2) == 0)) {
         shape_edittool_cpp_CInputString_deleteSelection_FUN_0049d580(&local_158);
-        shape_edittool_cpp_CInputString_insertChar_FUN_0049d480(&local_158,(char)iVar3,1);
+        shape_edittool_cpp_CInputString_insertChar_FUN_0049d480(&local_158,(char)iVar6,1);
         shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0049d460(&local_158);
       }
     }
     shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0049d6c0(&local_158);
   } while( true );
-  pCVar6 = &local_158;
+  pCVar10 = &local_158;
   do {
-    cVar1 = pCVar6->string_data[0];
-    *output_buffer = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pCVar6->string_data[1];
-    pCVar6 = (CInputString *)(pCVar6->string_data + 2);
-    output_buffer[1] = cVar1;
+    cVar2 = pCVar10->string_data[0];
+    *output_buffer = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pCVar10->string_data[1];
+    pCVar10 = (CInputString *)(pCVar10->string_data + 2);
+    output_buffer[1] = cVar2;
     output_buffer = output_buffer + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(this_ptr);
-  g_InputKeyMask = local_18;
+  g_InputKeyMask = iVar5;
   return 1;
 }

@@ -9,9 +9,11 @@
 void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMission *this_ptr)
 
 {
-  char cVar1;
-  CEditorTools *this_ptr_00;
+  char *input_buffer;
+  char cVar2;
   uint uVar2;
+  int iVar3;
+  int iVar5;
   CPodFile *pCVar3;
   int iVar4;
   char *pcVar5;
@@ -26,6 +28,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
   char (*local_1c) [256];
   char (*local_18) [256];
   char *local_14;
+  char cVar1;
+  CEditorTools *this_ptr_00;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Sec...");
@@ -33,10 +37,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
   core_mission_cpp_CDemonMission_freeAllAssets_FUN_005248e0(this_ptr);
   remove("$$UNDO$$.TMP");
   core_inivar_cpp_readIniData_FUN_004fbd90();
-  local_14 = this_ptr->mission_name;
-  local_1c = this_ptr->set_names;
+  input_buffer = this_ptr->mission_name;
   g_IncludeCommentsWhenWriting = 0;
-  local_18 = local_1c;
   do {
     this_ptr->is_in_editor = 1;
     this_ptr->skip_gore_load_flag = 0;
@@ -49,14 +51,14 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         cVar1 = *pcVar5;
         *pcVar6 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar5[1];
+        cVar2 = pcVar5[1];
         pcVar5 = pcVar5 + 2;
-        pcVar6[1] = cVar1;
+        pcVar6[1] = cVar2;
         pcVar6 = pcVar6 + 2;
-      } while (cVar1 != '\0');
+      } while (cVar2 != '\0');
     }
     else {
-      _sprintf(local_21c,"Current mission: %s.msn",local_14);
+      _sprintf(local_21c,"Current mission: %s.msn",input_buffer);
     }
     engine_2d_c_drawText_FUN_00401fd0(local_21c,0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("1. Load mission",0,0x2c);
@@ -84,7 +86,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       iVar4 = 0x113;
       iVar7 = 0;
       engine_2d_c_drawText_FUN_00401fd0("Sets in mission:",0,0xfd);
-      text = local_1c;
+      text = this_ptr->set_names;
       if (0 < this_ptr->num_sets) {
         do {
           iVar7 = iVar7 + 1;
@@ -101,9 +103,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       if (uVar2 < 0x34) {
         if (uVar2 < 0x32) {
           if ((uVar2 == 0x31) &&
-             (iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+             (iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                                 (g_CEditorToolsPtr,"Load mission","world",
-                                 "*.msn",(int)local_320,0), iVar4 != 0)) {
+                                 "*.msn",(int)local_320,0), iVar3 != 0)) {
             core_mission_cpp_CDemonMission_load_FUN_00522d90(this_ptr,local_320,0);
             core_mission_cpp_CDemonMission_loadScript_FUN_005235b0(this_ptr,1);
           }
@@ -114,67 +116,67 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
                       (g_CEditorToolsPtr,"No mission loaded.");
           }
           else {
-            _sprintf(local_320,"%s.msn",local_14);
-            iVar4 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+            _sprintf(local_320,"%s.msn",input_buffer);
+            iVar3 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                               (g_CEditorToolsPtr,"Save mission to %s",local_320);
-            if (iVar4 != 0) {
+            if (iVar3 != 0) {
               core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(this_ptr,local_320);
             }
           }
         }
         else {
-          iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                            (g_CEditorToolsPtr,"Enter mission name",local_14,0xf,0);
-          if ((iVar4 != 0) &&
-             (iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+          iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+                            (g_CEditorToolsPtr,"Enter mission name",input_buffer,0xf,0);
+          if ((iVar3 != 0) &&
+             (iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                                 (g_CEditorToolsPtr,"Enter set name","models",
-                                 "*.set",(int)local_320,0), iVar4 != 0)) {
+                                 "*.set",(int)local_320,0), iVar3 != 0)) {
             core_mission_cpp_CDemonMission_createFromSingleSet_FUN_005243a0(this_ptr,local_320);
           }
         }
       }
       else if (uVar2 < 0x35) {
-        iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+        iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                           (g_CEditorToolsPtr,"Enter set name to add","models",
                            "*.set",(int)local_320,0);
-        if (iVar4 != 0) {
+        if (iVar3 != 0) {
           core_msnedit_cpp_CDemonMission_addSet_FUN_00538d60(this_ptr,local_320);
         }
       }
       else if (uVar2 < 0x36) {
-        iVar4 = core_msnedit_cpp_CDemonMission_pickSet_FUN_00538f90
+        iVar3 = core_msnedit_cpp_CDemonMission_pickSet_FUN_00538f90
                           (this_ptr,"Select set to delete.",this_ptr->current_set_index);
-        if ((-1 < iVar4) &&
-           (iVar7 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+        if ((-1 < iVar3) &&
+           (iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                               (g_CEditorToolsPtr,"This is going to remove set %s from the mission and delete all the actors in the set.",
-                               local_18 + iVar4), iVar7 != 0)) {
-          core_msnedit_cpp_CDemonMission_removeSet_FUN_00538df0(this_ptr,iVar4);
+                               this_ptr->set_names + iVar3), iVar5 != 0)) {
+          core_msnedit_cpp_CDemonMission_removeSet_FUN_00538df0(this_ptr,iVar3);
         }
       }
       else if (uVar2 < 0x37) {
-        iVar4 = core_msnedit_cpp_CDemonMission_pickSet_FUN_00538f90
+        iVar3 = core_msnedit_cpp_CDemonMission_pickSet_FUN_00538f90
                           (this_ptr,"Edit actors in which set?",this_ptr->current_set_index)
         ;
-        if (-1 < iVar4) {
+        if (-1 < iVar3) {
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,"Preparing actors.");
           core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(this_ptr);
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,"Loading set.");
-          core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(this_ptr,iVar4);
-          iVar4 = 1;
-          while (iVar4 = core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(this_ptr,iVar4)
-                , iVar4 == 2) {
+          core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(this_ptr,iVar3);
+          iVar3 = 1;
+          while (iVar3 = core_msnedit_cpp_CDemonMission_editActorsInSet_FUN_005390f0(this_ptr,iVar3)
+                , iVar3 == 2) {
             core_msnedit_cpp_CDemonMission_saveMissionAndScript_FUN_0053d190(this_ptr,local_320);
             core_msnedit_cpp_CDemonMission_playMission_FUN_00538ba0(this_ptr);
-            iVar4 = 0;
+            iVar3 = 0;
           }
         }
       }
       else if (uVar2 < 0x38) {
-        iVar4 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+        iVar3 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                           (g_CEditorToolsPtr,"Precompute lights?");
-        if (iVar4 != 0) {
+        if (iVar3 != 0) {
           core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(g_CDemonSetPtr,-1);
           wincore_windll_cpp_clearScreen_FUN_005b3e70();
           engine_2d_c_drawText_FUN_00401fd0("You must now go into set editor and save!",0,0);
@@ -183,9 +185,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         }
       }
       else if ((uVar2 == 0x38) &&
-              (iVar4 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
+              (iVar3 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                                  (g_CEditorToolsPtr,"Save mission to new name",
-                                  "world","msn",local_320,0), iVar4 != 0)) {
+                                  "world","msn",local_320,0), iVar3 != 0)) {
         splitpath(local_320,(char *)0x0,(char *)0x0,local_11c,(char *)0x0)
         ;
         _sprintf(local_320,"%s.msn",local_11c);
@@ -206,15 +208,15 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         core_msnedit_cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0(this_ptr);
       }
       else if ((uVar2 == 0x47) &&
-              (iVar4 = core_msnedit_cpp_CDemonMission_pickSet_FUN_00538f90
+              (iVar3 = core_msnedit_cpp_CDemonMission_pickSet_FUN_00538f90
                                  (this_ptr,"Edit gore in which set?",
-                                  this_ptr->current_set_index), -1 < iVar4)) {
+                                  this_ptr->current_set_index), -1 < iVar3)) {
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Preparing actors.");
         core_mission_cpp_CDemonMission_prepareAllActors_FUN_00523cf0(this_ptr);
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Loading set.");
-        core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(this_ptr,iVar4);
+        core_mission_cpp_CDemonMission_loadSet_FUN_00523fb0(this_ptr,iVar3);
         core_msnedit_cpp_CDemonMission_editGore_FUN_0053e220(this_ptr);
       }
     }
@@ -233,9 +235,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       }
     }
     else if (uVar2 < 0x56) {
-      iVar4 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+      iVar3 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                         (g_CEditorToolsPtr,"Update ALL mission files to latest version?");
-      if (iVar4 != 0) {
+      if (iVar3 != 0) {
         engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_434);
         engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_434,"world\\*.msn");
         while (local_434.filename[0] != '\0') {

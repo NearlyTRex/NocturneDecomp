@@ -9,13 +9,15 @@
 void __cdecl shape_design_c_mergeAdjacentPolygons_FUN_00462b70(int polygon1_index,int polygon2_index)
 
 {
-  uint uVar1;
+  int iVar1;
+  uint uVar2;
   int iVar2;
   SShapeEditorPolygon *pSVar3;
   SShapeEditorPolygon *pSVar4;
   bool bVar5;
   byte bVar6;
   double dVar7;
+  double dVar3;
   float local_90 [6];
   float local_78;
   float local_74 [6];
@@ -29,6 +31,7 @@ void __cdecl shape_design_c_mergeAdjacentPolygons_FUN_00462b70(int polygon1_inde
   int local_1c;
   int local_18;
   float local_14;
+  uint uVar1;
   
   bVar6 = 0;
   local_3c[3] = 0;
@@ -105,55 +108,54 @@ LAB_00462e72:
         local_90[1] = g_ModelPolygonData[polygon1_index].uv_v[(local_1c + 1) % 4];
       }
       local_3c[4] = (uint)bVar5;
-      local_74[local_3c[4] + 8] = (float)g_ModelPolygonData[polygon1_index].vertex_indices[local_20]
-      ;
-      local_74[local_3c[4] + 1] = g_ModelPolygonData[polygon1_index].uv_u[local_20];
-      local_90[local_3c[4] + 1] = g_ModelPolygonData[polygon1_index].uv_v[local_20];
-      uVar1 = local_3c[4] + 2;
-      local_74[local_3c[4] + 9] = (float)g_ModelPolygonData[polygon2_index].vertex_indices[local_18]
-      ;
-      local_74[uVar1] = g_ModelPolygonData[polygon2_index].uv_u[local_18];
-      local_90[uVar1] = g_ModelPolygonData[polygon2_index].uv_v[local_18];
+      iVar1 = local_3c[4] + 1;
+      local_58[iVar1] = (float)g_ModelPolygonData[polygon1_index].vertex_indices[local_20];
+      local_74[iVar1] = g_ModelPolygonData[polygon1_index].uv_u[local_20];
+      local_90[iVar1] = g_ModelPolygonData[polygon1_index].uv_v[local_20];
+      uVar2 = local_3c[4] + 2;
+      local_58[uVar2] = (float)g_ModelPolygonData[polygon2_index].vertex_indices[local_18];
+      local_74[uVar2] = g_ModelPolygonData[polygon2_index].uv_u[local_18];
+      local_90[uVar2] = g_ModelPolygonData[polygon2_index].uv_v[local_18];
       if (g_ModelPolygonData[polygon2_index].vertex_indices_count == 4) {
-        uVar1 = local_3c[4] + 3;
-        local_74[local_3c[4] + 10] =
+        uVar2 = local_3c[4] + 3;
+        local_58[uVar2] =
              (float)g_ModelPolygonData[polygon2_index].vertex_indices[(local_18 + 1) % 4];
-        local_74[uVar1] = g_ModelPolygonData[polygon2_index].uv_u[(local_18 + 1) % 4];
-        local_90[uVar1] = g_ModelPolygonData[polygon2_index].uv_v[(local_18 + 1) % 4];
+        local_74[uVar2] = g_ModelPolygonData[polygon2_index].uv_u[(local_18 + 1) % 4];
+        local_90[uVar2] = g_ModelPolygonData[polygon2_index].uv_v[(local_18 + 1) % 4];
       }
-      local_3c[4] = uVar1;
-      local_74[local_3c[4] + 8] =
+      local_3c[4] = uVar2;
+      iVar1 = local_3c[4] + 1;
+      local_58[iVar1] =
            (float)g_ModelPolygonData[polygon1_index].vertex_indices
                   [(local_20 + 1) % (int)g_ModelPolygonData[polygon1_index].vertex_indices_count];
-      local_74[local_3c[4] + 1] =
+      local_74[iVar1] =
            g_ModelPolygonData[polygon1_index].uv_u
            [(local_20 + 1) % (int)g_ModelPolygonData[polygon1_index].vertex_indices_count];
-      local_90[local_3c[4] + 1] =
+      local_90[iVar1] =
            g_ModelPolygonData[polygon1_index].uv_v
            [(local_20 + 1) % (int)g_ModelPolygonData[polygon1_index].vertex_indices_count];
-      local_14 = 179.98;
       local_3c[3] = 0;
       local_3c[6] = local_3c[4] + 2;
       for (local_3c[4] = 0; (int)local_3c[4] < (int)(local_3c[6] - 2); local_3c[4] = local_3c[4] + 1
           ) {
         dVar7 = shape_design_c_calculateVertexAngle_FUN_00462050
-                          ((int)local_74[local_3c[4] + 7],(int)local_74[local_3c[4] + 8],
-                           (int)local_74[local_3c[4] + 9]);
-        if ((double)local_14 < dVar7) {
+                          ((int)local_58[local_3c[4]],(int)local_58[local_3c[4] + 1],
+                           (int)afStack_4c[local_3c[4] - 1]);
+        if (179.97999572753906 < dVar7) {
           local_3c[local_3c[3]] = local_3c[4] + 1;
           local_3c[3] = local_3c[3] + 1;
         }
       }
-      dVar7 = shape_design_c_calculateVertexAngle_FUN_00462050
-                        ((int)local_74[local_3c[6] + 5],(int)local_74[local_3c[6] + 6],
+      dVar3 = shape_design_c_calculateVertexAngle_FUN_00462050
+                        ((int)local_74[local_3c[6] + 5],(int)local_58[local_3c[6] - 1],
                          (int)local_58[0]);
-      if ((double)local_14 < dVar7) {
+      if (179.97999572753906 < dVar3) {
         local_3c[local_3c[3]] = local_3c[6] - 1;
         local_3c[3] = local_3c[3] + 1;
       }
-      dVar7 = shape_design_c_calculateVertexAngle_FUN_00462050
-                        ((int)local_74[local_3c[6] + 6],(int)local_58[0],(int)local_58[1]);
-      if ((double)local_14 < dVar7) {
+      dVar3 = shape_design_c_calculateVertexAngle_FUN_00462050
+                        ((int)local_58[local_3c[6] - 1],(int)local_58[0],(int)local_58[1]);
+      if (179.97999572753906 < dVar3) {
         local_3c[local_3c[3]] = 0;
         local_3c[3] = local_3c[3] + 1;
       }
@@ -161,27 +163,24 @@ LAB_00462e72:
         for (local_3c[4] = 0; (int)local_3c[4] < (int)local_3c[3]; local_3c[4] = local_3c[4] + 1) {
           for (local_3c[5] = local_3c[local_3c[4]] - local_3c[4];
               (int)local_3c[5] < (int)(local_3c[6] - 1); local_3c[5] = local_3c[5] + 1) {
-            local_74[local_3c[5] + 7] = local_74[local_3c[5] + 8];
+            local_58[local_3c[5]] = local_58[local_3c[5] + 1];
             local_74[local_3c[5]] = local_74[local_3c[5] + 1];
             local_90[local_3c[5]] = local_90[local_3c[5] + 1];
           }
           local_3c[6] = local_3c[6] - 1;
         }
-        dVar7 = shape_design_c_calculateVertexAngle_FUN_00462050
+        dVar3 = shape_design_c_calculateVertexAngle_FUN_00462050
                           ((int)local_58[0],(int)local_58[1],local_50);
-        if (170 < dVar7) {
-          local_40 = local_58[0];
-          local_5c = local_74[0];
-          local_78 = local_90[0];
+        if (170 < dVar3) {
           for (local_3c[4] = 0; (int)local_3c[4] < (int)(local_3c[6] - 1);
               local_3c[4] = local_3c[4] + 1) {
-            local_74[local_3c[4] + 7] = local_74[local_3c[4] + 8];
+            local_58[local_3c[4]] = local_58[local_3c[4] + 1];
             local_74[local_3c[4]] = local_74[local_3c[4] + 1];
             local_90[local_3c[4]] = local_90[local_3c[4] + 1];
           }
-          local_74[local_3c[4] + 7] = local_40;
-          local_74[local_3c[4]] = local_5c;
-          local_90[local_3c[4]] = local_78;
+          local_58[local_3c[4]] = local_58[0];
+          local_74[local_3c[4]] = local_74[0];
+          local_90[local_3c[4]] = local_90[0];
         }
         if ((g_ModelPolygonData[polygon1_index].vertex_indices_count == 3) &&
            (g_ModelPolygonData[polygon2_index].vertex_indices_count == 3)) {
@@ -195,7 +194,7 @@ LAB_00462e72:
         g_ModelPolygonData[polygon1_index].vertex_indices_count = local_3c[6];
         for (local_3c[4] = 0; (int)local_3c[4] < (int)local_3c[6]; local_3c[4] = local_3c[4] + 1) {
           g_ModelPolygonData[polygon1_index].vertex_indices[local_3c[4]] =
-               (uint)local_74[local_3c[4] + 7];
+               (uint)local_58[local_3c[4]];
           g_ModelPolygonData[polygon1_index].uv_u[local_3c[4]] = local_74[local_3c[4]];
           g_ModelPolygonData[polygon1_index].uv_v[local_3c[4]] = local_90[local_3c[4]];
         }
@@ -205,9 +204,11 @@ LAB_00462e72:
           pSVar3 = g_ModelPolygonData + local_3c[4] + 1;
           pSVar4 = g_ModelPolygonData + local_3c[4];
           for (iVar2 = 0x61; iVar2 != 0; iVar2 = iVar2 + -1) {
+            pSVar4 = (SShapeEditorPolygon *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
+            pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + (uint)bVar6 * -8 + 4);
             pSVar4->polygon_type = pSVar3->polygon_type;
-            pSVar3 = (SShapeEditorPolygon *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);
-            pSVar4 = (SShapeEditorPolygon *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
+            pSVar3 = pSVar3;
+            pSVar4 = pSVar4;
           }
         }
         g_PolygonCount = g_PolygonCount + -1;

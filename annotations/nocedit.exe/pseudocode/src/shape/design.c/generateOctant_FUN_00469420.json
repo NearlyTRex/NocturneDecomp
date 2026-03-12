@@ -1,23 +1,61 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 8,
+        "line": 54,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 61,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 12,
+        "line": 74,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 14,
+        "line": 85,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 16,
+        "line": 107,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 15,
+        "line": 112,
+        "message": "member reference base type 'double' is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 123,
+    "complexity_score": 198,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 93,
-    "suspect_count": 2,
+    "pseudocode_lines": 103,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
-      "sub84_truncation"
+      "sub84_truncation",
+      "unknown_field"
     ],
-    "total_lines": 336
+    "total_lines": 346
   },
   "cross_references": [
     {
@@ -229,104 +267,152 @@
         "is_param": false,
         "name": "local_8c",
         "offset": -140,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "char[80]"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "dVar6._0_4_ = iVar2;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 54,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "dVar6._0_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 67,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "dVar6._0_4_ = 0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 78,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "dVar6._0_4_ = SUB84(__BITCAST_UINT64(dVar6),0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 78,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "iVar2 = SUB84(__BITCAST_UINT64(dVar6),0);",
+      "text": "dVar6._0_4_ = SUB84(__BITCAST_UINT64(dVar6),0);",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 78,
       "match": "SUB84",
       "severity": "mild",
-      "text": "iVar2 = SUB84(__BITCAST_UINT64(dVar6),0);",
+      "text": "dVar6._0_4_ = SUB84(__BITCAST_UINT64(dVar6),0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 100,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "dVar6._0_4_ = local_14;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 105,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "return dVar6._0_4_;",
+      "type": "unknown_field"
     }
   ]
 }

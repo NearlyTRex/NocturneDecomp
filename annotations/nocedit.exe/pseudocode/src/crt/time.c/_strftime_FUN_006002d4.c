@@ -9,19 +9,22 @@
 uint __cdecl _strftime(char *dest_buffer,uint buffer_size,char *format_string,_tm *time_ptr)
 
 {
-  char cVar1;
-  byte bVar2;
-  char *pcVar3;
   int value;
   uint uVar4;
+  uint uVar1;
   uint uVar5;
+  char *pcVar2;
   char (*pacVar6) [4];
+  char (*pacVar3) [4];
   char (*pacVar7) [4];
   byte bVar8;
   char local_a0 [132];
   uint local_1c;
   uint local_18;
   char *local_14;
+  char cVar1;
+  byte bVar2;
+  char *pcVar3;
   
   bVar8 = 0;
   local_1c = 0;
@@ -43,7 +46,7 @@ LAB_0060030a:
   }
   if (cVar1 == '%') {
     bVar2 = format_string[1];
-    format_string = format_string + 1;
+    pcVar2 = format_string + 1;
     if (bVar2 < 0x61) {
       if (bVar2 < 0x4d) {
         if (bVar2 < 0x42) {
@@ -75,8 +78,8 @@ LAB_0060030a:
           goto LAB_006006c0;
         }
         if (bVar2 != 0x44) goto LAB_006006b4;
-        local_14 = format_string;
         format_string = "%m/%d/%y";
+        local_14 = pcVar2;
         goto LAB_0060030a;
       }
       if (bVar2 < 0x4e) {
@@ -91,7 +94,7 @@ LAB_0060030a:
           }
           else {
 LAB_006006b4:
-            local_a0[0] = *format_string;
+            local_a0[0] = *pcVar2;
             local_a0[1] = '\0';
             pacVar6 = (char (*) [4])local_a0;
           }
@@ -114,8 +117,8 @@ LAB_006006b4:
         }
         if (bVar2 < 0x59) {
 LAB_00600659:
-          local_14 = format_string;
           format_string = "%H:%M:%S";
+          local_14 = pcVar2;
           goto LAB_0060030a;
         }
         if (0x59 < bVar2) {
@@ -132,8 +135,8 @@ LAB_00600659:
     else if (bVar2 < 0x6e) {
       if (bVar2 < 100) {
         if (0x62 < bVar2) {
-          local_14 = format_string;
           format_string = "%a %b %d %H:%M:%S %Y";
+          local_14 = pcVar2;
           goto LAB_0060030a;
         }
 LAB_006004a2:
@@ -175,8 +178,8 @@ LAB_006004a2:
       }
       else {
         if (bVar2 < 0x73) {
-          local_14 = format_string;
           format_string = "%I:%M:%S %p";
+          local_14 = pcVar2;
           goto LAB_0060030a;
         }
         if (bVar2 != 0x74) goto LAB_006006b4;
@@ -191,8 +194,8 @@ LAB_006004a2:
         goto LAB_006006c0;
       }
       if (bVar2 < 0x79) {
-        local_14 = format_string;
         format_string = "%a %b %d, %Y";
+        local_14 = pcVar2;
         goto LAB_0060030a;
       }
       if (bVar2 < 0x7a) {
@@ -210,32 +213,34 @@ LAB_006006a3:
   else {
     local_a0[0] = cVar1;
     local_a0[1] = '\0';
+    pcVar2 = format_string;
     pacVar6 = (char (*) [4])local_a0;
   }
 LAB_006006c0:
-  format_string = format_string + 1;
+  format_string = pcVar2 + 1;
   uVar4 = 0xffffffff;
-  pacVar7 = pacVar6;
+  pacVar3 = pacVar6;
   do {
     if (uVar4 == 0) break;
     uVar4 = uVar4 - 1;
-    pcVar3 = *pacVar7;
-    pacVar7 = (char (*) [4])((int)pacVar7 + (uint)bVar8 * -2 + 1);
+    pcVar3 = *pacVar3;
+    pacVar3 = (char (*) [4])((int)pacVar3 + (uint)bVar8 * -2 + 1);
   } while (*pcVar3 != '\0');
   uVar5 = ~uVar4 - 1;
-  if (local_18 < ~uVar4 - 1) {
+  if (local_18 < uVar5) {
     uVar5 = local_18;
   }
   pacVar7 = (char (*) [4])(dest_buffer + local_1c);
-  for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+  for (uVar1 = uVar5 >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
     *pacVar7 = *pacVar6;
     pacVar6 = pacVar6 + (uint)bVar8 * -2 + 1;
     pacVar7 = pacVar7 + (uint)bVar8 * -2 + 1;
   }
-  for (uVar4 = uVar5 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+  for (uVar1 = uVar5 & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
+    pacVar7 = (char (*) [4])((int)pacVar7 + (uint)bVar8 * -2 + 1);
     (*pacVar7)[0] = (*pacVar6)[0];
     pacVar6 = (char (*) [4])((int)pacVar6 + (uint)bVar8 * -2 + 1);
-    pacVar7 = (char (*) [4])((int)pacVar7 + (uint)bVar8 * -2 + 1);
+    pacVar7 = pacVar7;
   }
   local_18 = local_18 - uVar5;
   local_1c = local_1c + uVar5;

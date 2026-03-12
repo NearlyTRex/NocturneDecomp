@@ -6,16 +6,12 @@
 ; Parameters:
 ; CElephantGun *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined1       Stack[-0x44]:1  local_44
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined1       Stack[-0x20]:1  local_20
-; undefined4       Stack[-0x14]:4  local_14
+; CMatrix3x3f      Stack[-0x6c]:36  local_6c
+; CVector3f        Stack[-0x44]:12  local_44
+; CVector3f        Stack[-0x38]:12  local_38
+; CVector3f        Stack[-0x2c]:12  local_2c
+; CVector3f        Stack[-0x20]:12  local_20
+; float            Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloat_FUN_0040cc10

@@ -8,12 +8,13 @@
 ; CVector3i *      Stack[0x8]:4   world_position
 ; CVector3i *      Stack[0xc]:4   surface_normal
 ; Local Variables:
-; undefined1       Stack[-0x48]:1  local_48
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined1       Stack[-0x30]:1  local_30
-; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float[1012]      Stack[-0x1030]:4048  afStackY_1030
+; CVector3i        Stack[-0x48]:12  local_48
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3i        Stack[-0x30]:12  local_30
+; CVector3i        Stack[-0x24]:12  local_24
+; int              Stack[-0x18]:4  local_18
+; CDemonSet *      Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 at 0056e045

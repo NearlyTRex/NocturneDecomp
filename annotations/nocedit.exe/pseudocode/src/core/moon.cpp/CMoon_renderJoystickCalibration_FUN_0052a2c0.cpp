@@ -9,12 +9,12 @@
 void __cdecl core_moon_cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0(CMoon *this_ptr)
 
 {
-  CDemonSet *pCVar1;
   byte bVar2;
   int aiStackY_101c [1014];
   CVector3i local_34;
   CVector3i local_28;
   CVector3f local_1c;
+  CDemonSet *pCVar1;
   
   bVar2 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();

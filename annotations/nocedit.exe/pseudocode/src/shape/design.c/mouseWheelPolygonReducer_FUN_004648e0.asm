@@ -6,7 +6,7 @@
 ; Parameters:
 ; int              Stack[0x4]:4   selected_polygon_index
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
+; int              Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:

@@ -11,20 +11,14 @@
 void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *this_ptr)
 
 {
-  CVector3f *world_position;
-  CVector3f *pCVar1;
-  int *piVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  CDemonRenderer *pCVar6;
+  int *piVar1;
+  int iVar2;
+  int iVar3;
+  float fVar6;
+  CDemonRenderer *this_ptr_00;
   int iVar7;
   uint uVar8;
   SMRGLHeaderPrimitive local_dc;
-  uint local_c4;
-  uint local_c0;
-  uint local_bc;
-  uint local_b8;
   float local_b4;
   float local_b0;
   float local_ac;
@@ -43,6 +37,13 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
   CVector3i local_18;
   int local_c;
   int local_8;
+  CDemonRenderer *pCVar6;
+  float fVar5;
+  int *piVar2;
+  CVector3f *pCVar1;
+  float fVar4;
+  float fVar3;
+  CVector3f *world_position;
   
   if (this_ptr->lifetime <= 0.0) {
     return;
@@ -55,10 +56,6 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
   local_dc.surface_normal.C = 0;
   local_dc.surface_normal.B = 0;
   local_dc.surface_normal.A = 0;
-  local_c4 = 0;
-  local_b8 = 3;
-  local_c0 = 1;
-  local_bc = 2;
   uVar8 = rand();
   if ((uVar8 & 1) == 0) {
     g_RenderVertexBuffer[1].u = 0x80000;
@@ -90,14 +87,14 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
   g_RenderVertexBuffer[3].b = 0xffff;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
-  fVar4 = (float)this_ptr->mode;
+  iVar3 = this_ptr->mode;
   world_position = &this_ptr->start_position;
-  if (fVar4 == 0.0) {
+  if (iVar3 == 0) {
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,world_position);
     engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800
               (g_CDemonRendererPtr2,(float *)&local_24);
-    local_24.x = (int)fVar4;
+    local_24.x = iVar3;
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
               (g_CDemonRendererPtr2,&local_24,(CVector3i *)0x0);
     if (0.0 < this_ptr->end_width) {
@@ -106,29 +103,27 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
     else {
       local_b4 = this_ptr->start_width * (float)0.25;
     }
-    local_b0 = this_ptr->start_width;
+    fVar6 = this_ptr->start_width;
     local_60.x = (int)ROUND(local_b4 * 256.0f);
-    local_60.y = (int)ROUND(local_b0 * 256.0f);
+    local_60.y = (int)ROUND(fVar6 * 256.0f);
     local_60.z = (int)ROUND(256.0f * 0.0);
-    local_ac = fVar4;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_60);
     local_b4 = -local_b4;
     local_48.x = (int)ROUND(local_b4 * 256.0f);
-    local_48.y = (int)ROUND(local_b0 * 256.0f);
-    local_48.z = (int)ROUND(local_ac * 256.0f);
+    local_48.y = (int)ROUND(fVar6 * 256.0f);
+    local_48.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_48);
-    local_b0 = 0.0;
     local_30.x = (int)ROUND(local_b4 * 256.0f);
     local_30.y = (int)ROUND(256.0f * 0.0);
-    local_30.z = (int)ROUND(local_ac * 256.0f);
+    local_30.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_30);
     local_b4 = -local_b4;
     local_18.x = (int)ROUND(local_b4 * 256.0f);
-    local_18.y = (int)ROUND(local_b0 * 256.0f);
-    local_18.z = (int)ROUND(local_ac * 256.0f);
+    local_18.y = (int)ROUND(256.0f * 0.0);
+    local_18.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_18);
     engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
@@ -162,19 +157,19 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
     fVar5 = (float)256;
     fVar3 = this_ptr->end_spread;
     (g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x = -0x80000000;
-    local_c = (int)ROUND(ROUND(fVar4 * fVar5));
+    iVar3 = (int)ROUND(ROUND(fVar4 * fVar5));
     piVar2 = &(pCVar6->vertex_buffer_ptr->projected_vertex).transformed_y;
-    *piVar2 = *piVar2 - local_c;
+    *piVar2 = *piVar2 - iVar3;
     pCVar6->vertex_buffer_ptr[1].projected_vertex.screen_x = -0x80000000;
-    piVar2 = &pCVar6->vertex_buffer_ptr[1].projected_vertex.transformed_y;
-    *piVar2 = *piVar2 + local_c;
+    piVar1 = &pCVar6->vertex_buffer_ptr[1].projected_vertex.transformed_y;
+    *piVar1 = *piVar1 + iVar3;
     pCVar6->vertex_buffer_ptr[2].projected_vertex.screen_x = -0x80000000;
-    local_8 = (int)ROUND(ROUND(fVar3 * fVar5));
-    piVar2 = &pCVar6->vertex_buffer_ptr[2].projected_vertex.transformed_y;
-    *piVar2 = *piVar2 + local_8;
+    iVar2 = (int)ROUND(ROUND(fVar3 * fVar5));
+    piVar1 = &pCVar6->vertex_buffer_ptr[2].projected_vertex.transformed_y;
+    *piVar1 = *piVar1 + iVar2;
     pCVar6->vertex_buffer_ptr[3].projected_vertex.screen_x = -0x80000000;
     pCVar6->vertex_buffer_ptr[3].projected_vertex.transformed_y =
-         pCVar6->vertex_buffer_ptr[3].projected_vertex.transformed_y - local_8;
+         pCVar6->vertex_buffer_ptr[3].projected_vertex.transformed_y - iVar2;
     engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(pCVar6,&local_dc);
     local_54.x = (int)ROUND(world_position->x * 256.0f);
     local_54.y = (int)ROUND((this_ptr->start_position).y * 256.0f);
@@ -196,20 +191,20 @@ void __cdecl core_fire_cpp_CLightningBolt_render_FUN_004c5720(CLightningBolt *th
     local_84.z = (int)ROUND((this_ptr->end_position).z * 256.0f);
     wincore_windll_cpp_transformPoint_FUN_005b5a25
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_84);
-    pCVar6 = g_CDemonRendererPtr2;
+    this_ptr_00 = g_CDemonRendererPtr2;
     (g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).screen_x = -0x80000000;
-    (pCVar6->vertex_buffer_ptr->projected_vertex).transformed_x =
-         (pCVar6->vertex_buffer_ptr->projected_vertex).transformed_x - local_c;
-    pCVar6->vertex_buffer_ptr[1].projected_vertex.screen_x = -0x80000000;
-    pCVar6->vertex_buffer_ptr[1].projected_vertex.transformed_x =
-         pCVar6->vertex_buffer_ptr[1].projected_vertex.transformed_x + local_c;
-    pCVar6->vertex_buffer_ptr[2].projected_vertex.screen_x = -0x80000000;
-    pCVar6->vertex_buffer_ptr[2].projected_vertex.transformed_x =
-         pCVar6->vertex_buffer_ptr[2].projected_vertex.transformed_x + local_8;
-    pCVar6->vertex_buffer_ptr[3].projected_vertex.screen_x = -0x80000000;
-    pCVar6->vertex_buffer_ptr[3].projected_vertex.transformed_x =
-         pCVar6->vertex_buffer_ptr[3].projected_vertex.transformed_x - local_8;
-    engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(pCVar6,&local_dc);
+    (this_ptr_00->vertex_buffer_ptr->projected_vertex).transformed_x =
+         (this_ptr_00->vertex_buffer_ptr->projected_vertex).transformed_x - iVar3;
+    this_ptr_00->vertex_buffer_ptr[1].projected_vertex.screen_x = -0x80000000;
+    this_ptr_00->vertex_buffer_ptr[1].projected_vertex.transformed_x =
+         this_ptr_00->vertex_buffer_ptr[1].projected_vertex.transformed_x + iVar3;
+    this_ptr_00->vertex_buffer_ptr[2].projected_vertex.screen_x = -0x80000000;
+    this_ptr_00->vertex_buffer_ptr[2].projected_vertex.transformed_x =
+         this_ptr_00->vertex_buffer_ptr[2].projected_vertex.transformed_x + iVar2;
+    this_ptr_00->vertex_buffer_ptr[3].projected_vertex.screen_x = -0x80000000;
+    this_ptr_00->vertex_buffer_ptr[3].projected_vertex.transformed_x =
+         this_ptr_00->vertex_buffer_ptr[3].projected_vertex.transformed_x - iVar2;
+    engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(this_ptr_00,&local_dc);
   }
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   return;

@@ -6,7 +6,7 @@
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x20]:1  local_20
+; CBoundingBox3D   Stack[-0x20]:24  local_20
 ;
 ; XREF[12]:
 ;   core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_0041d180 at 0041d199

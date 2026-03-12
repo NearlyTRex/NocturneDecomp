@@ -8,7 +8,7 @@
 ; _FILE * *        Stack[0x8]:4   raw_file
 ; _FILE * *        Stack[0xc]:4   act_file
 ; Local Variables:
-; undefined        Stack[-0x104]:1  local_104
+; char[256]        Stack[-0x104]:256  local_104
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ART_s_RAW_006291bc

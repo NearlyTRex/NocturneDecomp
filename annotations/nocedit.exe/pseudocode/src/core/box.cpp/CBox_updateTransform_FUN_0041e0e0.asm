@@ -9,11 +9,11 @@
 ; CVector3f *      Stack[0xc]:4   new_orientation
 ; float            Stack[0x10]:4   speed
 ; Local Variables:
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x2c]:12  local_2c
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; SScrape *        Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_box.cpp_CBox_setupCorners_FUN_0041dd20 at 0041df45

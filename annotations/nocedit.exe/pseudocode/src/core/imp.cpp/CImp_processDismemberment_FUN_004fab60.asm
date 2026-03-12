@@ -7,7 +7,7 @@
 ; CImp *           Stack[0x4]:4   this_ptr
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_imp.cpp_CImp_processDamage_FUN_004fae00 at 004fae82

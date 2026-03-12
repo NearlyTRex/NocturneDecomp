@@ -8,8 +8,27 @@
 ; double           Stack[0x8]:8   weld_tolerance
 ; int              Stack[0x10]:4   remove_degenerate
 ; Local Variables:
-; undefined4       Stack[-0x108]:4  local_108
+; int              Stack[-0x108]:4  local_108
 ; undefined4       Stack[-0x104]:4  local_104
+; char[92]         Stack[-0x100]:92  acStack_100
+; double           Stack[-0xa4]:8  dStack_a4
+; double           Stack[-0x9c]:8  dStack_9c
+; double           Stack[-0x94]:8  dStack_94
+; double           Stack[-0x8c]:8  dStack_8c
+; double           Stack[-0x84]:8  dStack_84
+; double           Stack[-0x7c]:8  dStack_7c
+; double           Stack[-0x74]:8  dStack_74
+; double           Stack[-0x6c]:8  dStack_6c
+; double           Stack[-0x64]:8  dStack_64
+; double           Stack[-0x5c]:8  dStack_5c
+; double           Stack[-0x54]:8  dStack_54
+; double           Stack[-0x4c]:8  dStack_4c
+; int              Stack[-0x2c]:4  iStack_2c
+; void *           Stack[-0x28]:4  pvStack_28
+; int              Stack[-0x24]:4  iStack_24
+; int              Stack[-0x20]:4  iStack_20
+; double *         Stack[-0x1c]:4  pdStack_1c
+; uint             Stack[-0x18]:4  uStack_18
 ;
 ; XREF[1]:
 ;   shape_superopt.cpp_COptimize_optimize_FUN_005d7290 at 005d72a0

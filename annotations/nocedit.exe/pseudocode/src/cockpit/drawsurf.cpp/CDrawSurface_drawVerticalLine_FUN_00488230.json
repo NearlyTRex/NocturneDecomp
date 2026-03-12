@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 141,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 13,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 86,
+    "pseudocode_lines": 89,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 287
+    "total_lines": 290
   },
   "cross_references": [
     {
@@ -238,42 +238,42 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 38,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);",
+      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 48,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "puVar6 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar3) + iVar5 * 4);",
+      "text": "puVar6 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar6) + iVar5 * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 69,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);",
+      "text": "piVar2 = (int *)((int)g_ScreenBufferArray + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 76,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);",
+      "text": "piVar2 = (int *)((int)g_ScreenBufferArray + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 84,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar3);",
+      "text": "piVar2 = (int *)((int)g_ScreenBufferArray + iVar6);",
       "type": "pointer_cast"
     }
   ]

@@ -9,16 +9,18 @@
 void __cdecl core_setedit_cpp_addGroundType_FUN_00578290(char *filename,int ground_type)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
   uint uVar3;
   int iVar4;
   char (*str1) [40];
   char *pcVar5;
+  char *pcVar3;
   char *pcVar6;
   byte bVar7;
   char local_20c [256];
   char local_10c [256];
+  char cVar1;
   
   bVar7 = 0;
   iVar4 = 0;
@@ -52,12 +54,12 @@ void __cdecl core_setedit_cpp_addGroundType_FUN_00578290(char *filename,int grou
     core_main_c_displayErrorAndQuit_FUN_00506f10("Ground type list is full!  (Max is %d)",500);
   }
   uVar3 = 0xffffffff;
-  pcVar5 = local_10c;
+  pcVar3 = local_10c;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
+    cVar1 = *pcVar3;
+    pcVar3 = pcVar3 + (uint)bVar7 * -2 + 1;
   } while (cVar1 != '\0');
   if (0x27 < ~uVar3 - 1) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
@@ -67,14 +69,14 @@ void __cdecl core_setedit_cpp_addGroundType_FUN_00578290(char *filename,int grou
   pcVar5 = local_10c;
   pcVar6 = g_GroundTextureNames[g_GroundTextureCount];
   do {
-    cVar1 = *pcVar5;
-    *pcVar6 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
+    cVar2 = *pcVar5;
+    (*(char (*) [40])pcVar6)[0] = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
-  } while (cVar1 != '\0');
+    (*(char (*) [40])pcVar6)[1] = cVar2;
+    pcVar6 = *(char (*) [40])pcVar6 + 2;
+  } while (cVar2 != '\0');
   g_GroundTextureTypes[g_GroundTextureCount] = (char)ground_type;
   g_GroundTextureCount = g_GroundTextureCount + 1;
   return;

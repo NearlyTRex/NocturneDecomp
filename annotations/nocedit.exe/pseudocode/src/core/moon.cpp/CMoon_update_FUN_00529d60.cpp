@@ -9,14 +9,16 @@
 void __cdecl core_moon_cpp_CMoon_update_FUN_00529d60(CMoon *this_ptr,float delta_time)
 
 {
-  float *pfVar1;
+  float *pfVar2;
+  float fVar4;
+  int iVar4;
   float fVar2;
   float fVar3;
-  int iVar4;
+  float *pfVar1;
   
-  fVar2 = delta_time * (float)0.012500000000000001 + this_ptr->rotation_phase;
-  this_ptr->rotation_phase = fVar2;
-  if ((float)0.57999999999999996 < fVar2) {
+  fVar4 = delta_time * (float)0.012500000000000001 + this_ptr->rotation_phase;
+  this_ptr->rotation_phase = fVar4;
+  if ((float)0.57999999999999996 < fVar4) {
     this_ptr->rotation_phase = 0.58;
     g_MoonBatsEnabled = 1;
   }
@@ -43,8 +45,8 @@ void __cdecl core_moon_cpp_CMoon_update_FUN_00529d60(CMoon *this_ptr,float delta
               *(float *)((int)&g_MoonBats[0].animation_frame + iVar4);
       *(float *)((int)&g_MoonBats[0].animation_frame + iVar4) = fVar3;
       if (fVar2 <= fVar3) {
-        pfVar1 = (float *)((int)&g_MoonBats[0].animation_frame + iVar4);
-        *pfVar1 = *pfVar1 - fVar2;
+        pfVar2 = (float *)((int)&g_MoonBats[0].animation_frame + iVar4);
+        *pfVar2 = *pfVar2 - fVar2;
       }
       iVar4 = iVar4 + 0x18;
     } while (iVar4 != 0x2d0);

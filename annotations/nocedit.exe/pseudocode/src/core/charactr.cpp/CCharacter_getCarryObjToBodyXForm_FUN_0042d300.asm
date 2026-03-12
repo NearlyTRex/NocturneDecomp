@@ -7,7 +7,7 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   hand_index
 ; Local Variables:
-; undefined1       Stack[-0x38]:1  local_38
+; CMatrix3x4f      Stack[-0x38]:48  local_38
 ;
 ; XREF[1]:
 ;   core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550 at 004f69a3

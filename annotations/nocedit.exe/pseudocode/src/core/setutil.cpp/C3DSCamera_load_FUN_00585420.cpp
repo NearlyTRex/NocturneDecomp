@@ -9,10 +9,10 @@
 void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00585420(C3DSCamera *this_ptr,_FILE *file_handle)
 
 {
-  CDemonSet *pCVar1;
   CVector3f *pCVar2;
   CVector3f *pCVar3;
   char local_110 [256];
+  CDemonSet *pCVar1;
   
   core_setutil_cpp_C3DSCamera_reset_FUN_005853b0(this_ptr);
   if (10 < g_CDemonSetPtr->set_file_version) {

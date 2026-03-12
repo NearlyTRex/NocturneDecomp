@@ -10,19 +10,30 @@
 ; Local Variables:
 ; undefined4       Stack[-0x144]:4  local_144
 ; undefined4       Stack[-0x140]:4  local_140
-; undefined4       Stack[-0x13c]:4  local_13c
-; undefined        Stack[-0x138]:1  local_138
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
+; float            Stack[-0x13c]:4  local_13c
+; CVector3f[10]    Stack[-0x138]:120  local_138
+; CBoundingBox3D   Stack[-0xc0]:24  CStack_c0
+; CVector3f        Stack[-0xa8]:12  CStack_a8
+; CVector3f        Stack[-0x9c]:12  CStack_9c
+; float            Stack[-0x90]:4  fStack_90
+; float            Stack[-0x8c]:4  fStack_8c
+; float            Stack[-0x88]:4  fStack_88
+; CVector3f        Stack[-0x84]:12  CStack_84
+; CVector3f        Stack[-0x78]:12  CStack_78
+; CVector3f        Stack[-0x6c]:12  CStack_6c
+; CVector3f        Stack[-0x60]:12  CStack_60
+; CVector3f        Stack[-0x54]:12  CStack_54
+; float            Stack[-0x40]:4  local_40
+; float            Stack[-0x3c]:4  local_3c
+; float            Stack[-0x38]:4  local_38
+; float            Stack[-0x34]:4  local_34
+; float            Stack[-0x30]:4  local_30
+; float            Stack[-0x2c]:4  local_2c
+; CDemonActor *    Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_scat.cpp_CScat_process_FUN_005571f0 at 00557516

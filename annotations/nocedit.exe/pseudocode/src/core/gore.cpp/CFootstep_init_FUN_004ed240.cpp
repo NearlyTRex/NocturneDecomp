@@ -9,28 +9,31 @@
 void __cdecl core_gore_cpp_CFootstep_init_FUN_004ed240(CFootstep *this_ptr,CVector3f *position,UOrientationVector *orientation,int is_bloody,int alpha,int blood_type)
 
 {
-  float fVar1;
+  float fVar2;
   int iVar2;
   float *pfVar3;
   CVector3f *pCVar4;
   float10 fVar5;
   float10 fVar6;
+  float10 fVar3;
+  float10 fVar4;
   CVector3f local_40;
   CVector3f local_34 [2];
   float local_18;
+  float fVar1;
   
   iVar2 = 0;
   pCVar4 = this_ptr->corners;
   do {
     fVar5 = (float10)fsin((float10)(orientation->vec).y);
     fVar6 = (float10)fcos((float10)(orientation->vec).y);
-    fVar5 = fVar5 * (float10)0.5;
-    fVar6 = fVar6 * (float10)0.5;
-    local_40.x = (float)(fVar5 * (float10)*(float *)((int)&1.0f + iVar2) +
-                         -fVar6 * (float10)*(float *)((int)&1.0f + iVar2) +
+    fVar3 = fVar5 * (float10)0.5;
+    fVar4 = fVar6 * (float10)0.5;
+    local_40.x = (float)(fVar3 * (float10)*(float *)((int)&1.0f + iVar2) +
+                         -fVar4 * (float10)*(float *)((int)&1.0f + iVar2) +
                         (float10)position->x);
-    local_40.z = (float)(fVar6 * (float10)*(float *)((int)&1.0f + iVar2) +
-                        fVar5 * (float10)*(float *)((int)&1.0f + iVar2)) + position->z;
+    local_40.z = (float)(fVar4 * (float10)*(float *)((int)&1.0f + iVar2) +
+                        fVar3 * (float10)*(float *)((int)&1.0f + iVar2)) + position->z;
     if (local_34 != &local_40) {
       local_34[0].x = local_40.x;
       local_34[0].y = position->y;
@@ -38,9 +41,9 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004ed240(CFootstep *this_ptr,CVect
     }
     local_40.y = position->y + 1.0;
     local_34[0].y = local_34[0].y + -3.0f;
-    local_18 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
-                         (&g_CDemonRaytraceInstance,&local_40,local_34,(CVector3f *)0x0,(int *)0x0);
-    fVar1 = (local_40.y - local_18 * (float)4) + 0.08333334f;
+    fVar2 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
+                      (&g_CDemonRaytraceInstance,&local_40,local_34,(CVector3f *)0x0,(int *)0x0);
+    fVar1 = (local_40.y - fVar2 * (float)4) + 0.08333334f;
     if (pCVar4 != &local_40) {
       pCVar4->x = local_40.x;
       pCVar4->y = fVar1;

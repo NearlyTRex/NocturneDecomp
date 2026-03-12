@@ -7,7 +7,15 @@
 ; CTrigger *       Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   actor
 ; Local Variables:
-; undefined1       Stack[-0x7c]:1  local_7c
+; CBoundingBox3D   Stack[-0x94]:24  CStack_94
+; CBoundingBox3D   Stack[-0x7c]:24  local_7c
+; CBoundingBox3D   Stack[-0x64]:24  CStack_64
+; CVector3f        Stack[-0x4c]:12  CStack_4c
+; CVector3f        Stack[-0x40]:12  CStack_40
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; CVector3f[2]     Stack[-0x28]:24  aCStack_28
 ;
 ; XREF[1]:
 ;   core_trigger.cpp_CTrigger_process_FUN_005dfac0 at 005e0001

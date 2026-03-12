@@ -9,14 +9,15 @@
 CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(CVector3i *input_vector,CVector3i *output_vector)
 
 {
-  double dVar1;
-  double dVar2;
-  double dVar3;
-  double dVar4;
+  double dVar5;
   int local_38;
   double local_30;
   double local_28;
   double local_20;
+  double dVar1;
+  double dVar2;
+  double dVar3;
+  double dVar4;
   
   dVar1 = (double)input_vector->x;
   dVar2 = (double)input_vector->y;
@@ -29,10 +30,10 @@ CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(CVec
     local_30 = 0.0;
   }
   else {
-    dVar4 = 1.0 / dVar4;
-    local_30 = dVar1 * dVar4 * 65535;
-    local_28 = dVar2 * dVar4 * 65535;
-    local_20 = 65535 * dVar3 * dVar4;
+    dVar5 = 1.0 / dVar4;
+    local_30 = dVar1 * dVar5 * 65535;
+    local_28 = dVar2 * dVar5 * 65535;
+    local_20 = 65535 * dVar3 * dVar5;
   }
   output_vector->x = (int)ROUND(local_30);
   output_vector->y = (int)ROUND(local_28);

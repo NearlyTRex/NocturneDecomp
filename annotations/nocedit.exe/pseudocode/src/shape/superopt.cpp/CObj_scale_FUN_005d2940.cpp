@@ -9,12 +9,12 @@
 void __cdecl shape_superopt_cpp_CObj_scale_FUN_005d2940(CObj *this_ptr,CVector3d *scale,CVector3d *pivot)
 
 {
-  double dVar1;
-  double dVar2;
-  double dVar3;
   int iVar4;
+  int iVar1;
   CVert *pCVar5;
+  double *pdVar2;
   double *pdVar6;
+  double *pdVar3;
   double *pdVar7;
   uint *puVar8;
   double local_c0;
@@ -42,6 +42,9 @@ void __cdecl shape_superopt_cpp_CObj_scale_FUN_005d2940(CObj *this_ptr,CVector3d
   uint local_20;
   uint local_1c;
   uint local_18;
+  double dVar3;
+  double dVar2;
+  double dVar1;
   
   local_18 = 0;
   pCVar5 = this_ptr->vertex_data;
@@ -59,21 +62,21 @@ void __cdecl shape_superopt_cpp_CObj_scale_FUN_005d2940(CObj *this_ptr,CVector3d
       local_68 = (pCVar5->position).z - pivot->z;
       uStack_7c = *(uint *)((int)&scale->z + 4);
       dVar3 = scale->z;
-      pdVar6 = &local_78;
-      pdVar7 = &local_60;
+      pdVar2 = &local_78;
+      pdVar3 = &local_60;
       for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *(uint *)pdVar7 = *(uint *)pdVar6;
-        pdVar6 = (double *)((int)pdVar6 + 4);
-        pdVar7 = (double *)((int)pdVar7 + 4);
+        *(uint *)pdVar3 = *(uint *)pdVar2;
+        pdVar2 = (double *)((int)pdVar2 + 4);
+        pdVar3 = (double *)((int)pdVar3 + 4);
       }
       local_48 = local_60 * dVar1;
       local_40 = local_58 * dVar2;
       local_38 = local_50 * dVar3;
-      pdVar6 = &local_48;
+      pdVar2 = &local_48;
       pdVar7 = &local_c0;
-      for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *(uint *)pdVar7 = *(uint *)pdVar6;
-        pdVar6 = (double *)((int)pdVar6 + 4);
+      for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+        *(uint *)pdVar7 = *(uint *)pdVar2;
+        pdVar2 = (double *)((int)pdVar2 + 4);
         pdVar7 = (double *)((int)pdVar7 + 4);
       }
       local_a8 = local_c0 + pivot->x;
@@ -81,7 +84,7 @@ void __cdecl shape_superopt_cpp_CObj_scale_FUN_005d2940(CObj *this_ptr,CVector3d
       local_98 = local_b0 + pivot->z;
       pdVar6 = &local_a8;
       puVar8 = local_30;
-      for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+      for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
         *puVar8 = *(uint *)pdVar6;
         pdVar6 = (double *)((int)pdVar6 + 4);
         puVar8 = puVar8 + 1;

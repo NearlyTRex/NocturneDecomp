@@ -9,13 +9,13 @@
 void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004dd9d0(char *cheat_code,char *class_name,char *message)
 
 {
-  char cVar1;
-  byte bVar2;
   uint uVar3;
   uint uVar4;
   int iVar5;
   int iVar6;
   char *pcVar7;
+  char cVar1;
+  byte bVar2;
   
   uVar4 = 0xffffffff;
   pcVar7 = cheat_code;

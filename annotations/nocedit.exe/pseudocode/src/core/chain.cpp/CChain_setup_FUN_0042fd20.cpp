@@ -9,22 +9,24 @@
 void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
 
 {
-  CLocation *pCVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
   CVector3f *pCVar9;
+  SChainVertex *pSVar1;
   int iVar10;
   CVector3f *pCVar11;
   SChainVertex *pSVar12;
+  CVector3f *pCVar2;
   CVector3f CStack_3c;
   float local_30;
   float local_2c;
   float local_28;
+  float fVar7;
+  float fVar2;
+  CLocation *pCVar1;
+  float fVar4;
+  float fVar3;
+  float fVar6;
+  float fVar5;
+  float fVar8;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);
   if (this_ptr->target != (CDemonActor *)0x0) {
@@ -42,7 +44,7 @@ void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
     fVar8 = 1.0 / (float)(this_ptr->vertex_count + -1);
     iVar10 = 0;
     if (0 < this_ptr->vertex_count) {
-      pCVar9 = &this_ptr->vertices[0].prev_position;
+      pCVar2 = &this_ptr->vertices[0].prev_position;
       pCVar11 = &this_ptr->vertices[0].velocity;
       do {
         pSVar12 = this_ptr->vertices + iVar10;
@@ -56,14 +58,14 @@ void __cdecl core_chain_cpp_CChain_setup_FUN_0042fd20(CChain *this_ptr)
         local_28 = local_28 + (fVar6 - fVar7) * fVar8;
         pCVar11->z = 0.0;
         pCVar11->y = pCVar11->z;
-        pSVar12 = this_ptr->vertices + iVar10;
+        pSVar1 = this_ptr->vertices + iVar10;
         pCVar11->x = pCVar11->y;
-        if ((SChainVertex *)pCVar9 != pSVar12) {
-          pCVar11[1].x = (pSVar12->position).x;
-          pCVar11[1].y = (pSVar12->position).y;
-          pCVar11[1].z = (pSVar12->position).z;
+        if ((SChainVertex *)pCVar2 != pSVar1) {
+          pCVar11[1].x = (pSVar1->position).x;
+          pCVar11[1].y = (pSVar1->position).y;
+          pCVar11[1].z = (pSVar1->position).z;
         }
-        pCVar9 = pCVar9 + 3;
+        pCVar2 = pCVar2 + 3;
         iVar10 = iVar10 + 1;
         pCVar11 = pCVar11 + 3;
       } while (iVar10 < this_ptr->vertex_count);

@@ -12,13 +12,13 @@
 ; undefined1       Stack[-0x85]:1  local_85
 ; undefined2       Stack[-0x84]:2  local_84
 ; undefined2       Stack[-0x82]:2  local_82
-; undefined2       Stack[-0x80]:2  local_80
-; undefined2       Stack[-0x7e]:2  local_7e
+; short            Stack[-0x80]:2  local_80
+; short            Stack[-0x7e]:2  local_7e
 ; undefined1       Stack[-0x47]:1  local_47
-; undefined2       Stack[-0x46]:2  local_46
+; short            Stack[-0x46]:2  local_46
 ; undefined2       Stack[-0x44]:2  local_44
-; undefined2       Stack[-0x42]:2  local_42
-; undefined2       Stack[-0x40]:2  local_40
+; short            Stack[-0x42]:2  local_42
+; short            Stack[-0x40]:2  local_40
 ;
 ; XREF[4]:
 ;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043cb3a

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 93,
+    "complexity_score": 94,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 26,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 59,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 183
+    "total_lines": 184
   },
   "cross_references": [],
   "function": {
@@ -241,14 +241,14 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SCramRectangle *"
       },
       {
         "is_param": true,
@@ -290,7 +290,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 16,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (((layer_id == *(int *)((int)&g_CramRectangles[0].map_id + iVar1)) &&",
@@ -298,7 +298,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 17,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(start_x == *(int *)((int)&g_CramRectangles[0].start_x + iVar1))) &&",
@@ -306,7 +306,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 18,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(start_y == *(int *)((int)&g_CramRectangles[0].start_y + iVar1))) {",

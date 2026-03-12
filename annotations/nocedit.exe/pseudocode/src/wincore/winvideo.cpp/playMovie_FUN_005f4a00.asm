@@ -7,8 +7,12 @@
 ; char *           Stack[0x4]:4   directory_path
 ; char *           Stack[0x8]:4   movie_filename
 ; Local Variables:
-; undefined1       Stack[-0x1f8]:1  local_1f8
-; undefined1       Stack[-0x74]:1  local_74
+; char[260]        Stack[-0x1f8]:260  local_1f8
+; byte             Stack[-0xf4]:1  bStack_f4
+; byte[127]        Stack[-0xf3]:127  abStack_f3
+; char[80]         Stack[-0x74]:80  local_74
+; tagRECT          Stack[-0x24]:16  tStack_24
+; tagRECT          Stack[-0x14]:16  tStack_14
 ;
 ; XREF[1]:
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 00508041
@@ -36,7 +40,6 @@
 ;   crt_stdlib.c_atoi_FUN_005ffef0
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   GetClientRect
-;   GetCurrentProcess
 ;   mciGetErrorStringA
 ;   mciSendStringA
 ;   MessageBoxA
@@ -47,7 +50,8 @@
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;   Sleep
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
-;   ... and 4 more
+;   wincore_windll.cpp_clearScreen_FUN_005b3e70
+;   ... and 3 more
 ;
 ; *****************************************************************************
 

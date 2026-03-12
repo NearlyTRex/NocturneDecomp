@@ -10,7 +10,7 @@
 ; CVector3f *      Stack[0x10]:4   vertex3
 ; CVector3f *      Stack[0x14]:4   vertex4
 ; Local Variables:
-; undefined        Stack[-0x48]:1  local_48
+; CDemonTriangle   Stack[-0x48]:56  local_48
 ;
 ; Called Functions:
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790

@@ -7,9 +7,9 @@
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   actor
 ; Local Variables:
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0x40]:1  local_40
+; CMatrix3x4f      Stack[-0xa0]:48  local_a0
+; CMatrix3x4f      Stack[-0x70]:48  local_70
+; CMatrix3x4f      Stack[-0x40]:48  local_40
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_step_FUN_0055a810 at 0055c072

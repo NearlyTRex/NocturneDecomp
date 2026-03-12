@@ -59,68 +59,81 @@
     "vars":{
       "locals":[
         {
-          "name":"local_14",
+          "name":"iVar4",
           "storage":{
-            "offset":-20,
+            "reg":"EAX",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[-0x14]",
-                "offset":-20,
+                "addr":"register:00000000",
                 "size":4
               }
             ]
           },
-          "type":"undefined4"
+          "type":"int",
+          "use":21
+        },
+        {
+          "name":"uVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"undefined4",
+          "use":38
+        },
+        {
+          "name":"uVar6",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"uint",
+          "use":49
         },
         {
           "name":"local_18",
           "storage":{
             "offset":-24,
-            "size":4,
+            "size":8,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x18]",
                 "offset":-24,
-                "size":4
+                "size":8
               }
             ]
           },
-          "type":"undefined4"
-        },
-        {
-          "name":"local_1c",
-          "storage":{
-            "offset":-28,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x1c]",
-                "offset":-28,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
+          "type":"undefined8"
         },
         {
           "name":"local_20",
           "storage":{
             "offset":-32,
-            "size":4,
+            "size":8,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x20]",
                 "offset":-32,
-                "size":4
+                "size":8
               }
             ]
           },
-          "type":"undefined4"
+          "type":"undefined8"
         },
         {
           "name":"local_28",
@@ -139,20 +152,100 @@
           "type":"undefined8"
         },
         {
+          "name":"bStack_2b",
+          "storage":{
+            "offset":-43,
+            "size":1,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0x2b]",
+                "offset":-43,
+                "size":1
+              }
+            ]
+          },
+          "type":"byte"
+        },
+        {
+          "name":"uStack_2c",
+          "storage":{
+            "offset":-44,
+            "size":1,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0x2c]",
+                "offset":-44,
+                "size":1
+              }
+            ]
+          },
+          "type":"undefined1"
+        },
+        {
           "name":"local_34",
           "storage":{
             "offset":-52,
-            "size":12,
+            "size":8,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x34]",
                 "offset":-52,
-                "size":12
+                "size":8
               }
             ]
           },
-          "type":"undefined1[12]"
+          "type":"undefined8"
+        },
+        {
+          "name":"uVar1",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:79fcd1b4d33",
+                "offset":8382922313011,
+                "size":4
+              }
+            ]
+          },
+          "type":"undefined4",
+          "use":38
+        },
+        {
+          "name":"dVar3",
+          "storage":{
+            "size":8,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:179f0858c052",
+                "offset":25971807273042,
+                "size":8
+              }
+            ]
+          },
+          "type":"double",
+          "use":212
+        },
+        {
+          "name":"dVar2",
+          "storage":{
+            "size":8,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:179fba0d9803",
+                "offset":25974788691971,
+                "size":8
+              }
+            ]
+          },
+          "type":"double",
+          "use":212
         }
       ],
       "params":[
@@ -220,6 +313,54 @@
     "ret":"undefined1",
     "vars":{
       "locals":[
+        {
+          "name":"in_DS",
+          "storage":{
+            "reg":"DS",
+            "size":2,
+            "varnodes":[
+              {
+                "addr":"register:00000106",
+                "offset":262,
+                "size":2
+              }
+            ]
+          },
+          "type":"undefined2",
+          "use":-1
+        },
+        {
+          "name":"extraout_EDX",
+          "storage":{
+            "reg":"EDX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000008",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int",
+          "use":178
+        },
+        {
+          "name":"iVar2",
+          "storage":{
+            "reg":"EDX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000008",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int",
+          "use":273
+        },
         {
           "name":"local_10",
           "storage":{
@@ -346,7 +487,7 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"int"
         },
         {
           "name":"local_40",
@@ -427,6 +568,22 @@
             ]
           },
           "type":"undefined4"
+        },
+        {
+          "name":"iVar1",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:5f03c86d76",
+                "offset":408085359990,
+                "size":4
+              }
+            ]
+          },
+          "type":"int",
+          "use":217
         }
       ],
       "ret_storage":{

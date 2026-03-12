@@ -8,15 +8,15 @@
 ; float            Stack[0x8]:4   time_window
 ; float            Stack[0xc]:4   update_interval
 ; Local Variables:
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; SIZE_T           Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SIZE_T           Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   sound_sndmain.cpp_pollAllStreams_FUN_005ace90 at 005acede

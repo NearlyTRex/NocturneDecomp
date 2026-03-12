@@ -11,28 +11,30 @@
 int __cdecl core_baron_cpp_CBaron_renderTransparent_FUN_00413ae0(CBaron *this_ptr)
 
 {
-  CDeformableModelInstance *pCVar1;
-  uint uVar2;
-  float fVar3;
+  CDeformableModelInstance *pCVar2;
+  float fVar4;
   SMotion *pSVar4;
+  SMotion *pSVar5;
   CBoundingBox3D *this_ptr_00;
   int iVar5;
   CBoundingBox3D local_40;
   CVector3i local_28;
   float local_1c;
   int local_18;
+  uint uVar2;
+  CDeformableModelInstance *pCVar1;
+  float fVar3;
   
   if ((this_ptr->summoned == 0) && ((this_ptr->base).control_type == HERO_CONTROL_AI)) {
     return 0;
   }
-  pCVar1 = &(this_ptr->base).base.model;
+  pCVar2 = &(this_ptr->base).base.model;
   pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar1->motion_controller);
+                     (&pCVar2->motion_controller);
   uVar2 = pSVar4->state_index;
-  fVar3 = (this_ptr->base).base.model.motion_controller.current_frame_number;
-  local_1c = fVar3;
-  pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar1->motion_controller);
+  fVar4 = (this_ptr->base).base.model.motion_controller.current_frame_number;
+  pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                     (&pCVar2->motion_controller);
   if (uVar2 < 6) {
     if (uVar2 != 5) {
 LAB_00413cc3:
@@ -40,14 +42,14 @@ LAB_00413cc3:
       goto LAB_00413b59;
     }
 LAB_00413b43:
-    fVar3 = fVar3 * (float)65000;
+    fVar4 = fVar4 * (float)65000;
   }
   else {
     if (uVar2 < 7) goto LAB_00413b43;
     if (uVar2 != 7) goto LAB_00413cc3;
-    fVar3 = ((float)pSVar4->frame_count - local_1c) * (float)65000;
+    fVar4 = ((float)pSVar5->frame_count - fVar4) * (float)65000;
   }
-  local_18 = (int)ROUND(ROUND(fVar3 / (float)pSVar4->frame_count));
+  local_18 = (int)ROUND(ROUND(fVar4 / (float)pSVar5->frame_count));
 LAB_00413b59:
   if (this_ptr->shell_visible != 0) {
     engine_3d_c_setRenderAlpha_FUN_00406d80((local_18 * 2) / 3);
@@ -70,12 +72,12 @@ LAB_00413b59:
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,1);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,local_18);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr2,1);
-    pCVar1 = &(this_ptr->base).base.model;
-    core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(pCVar1,-1,0x2e7,1,0);
+    pCVar2 = &(this_ptr->base).base.model;
+    core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150(pCVar2,-1,0x2e7,1,0);
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr2);
     if (INT_02f43978 != 0) {
       core_motion_cpp_CMotionController_render_FUN_0052e700
-                (&pCVar1->motion_controller,(CDemonActor *)this_ptr);
+                (&pCVar2->motion_controller,(CDemonActor *)this_ptr);
     }
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr2,0);
   }

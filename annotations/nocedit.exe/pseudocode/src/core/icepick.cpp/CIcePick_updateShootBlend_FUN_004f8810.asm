@@ -7,8 +7,9 @@
 ; CIcePick *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x30]:1  local_30
-; undefined1       Stack[-0x20]:1  local_20
+; float[1519]      Stack[-0x180c]:6076  afStackY_180c
+; CQuaternion4f    Stack[-0x30]:16  local_30
+; CQuaternion4f    Stack[-0x20]:16  local_20
 ;
 ; XREF[1]:
 ;   core_icepick.cpp_CIcePick_process_FUN_004f80b0 at 004f83b7

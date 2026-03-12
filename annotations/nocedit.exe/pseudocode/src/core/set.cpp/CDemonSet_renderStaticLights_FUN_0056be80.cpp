@@ -9,19 +9,23 @@
 void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(CDemonSet *this_ptr)
 
 {
-  int *piVar1;
-  CDemonLight *pCVar2;
-  float fVar3;
-  CDemonActor *this_ptr_00;
+  int *piVar2;
+  CDemonLight *this_ptr_01;
   int iVar4;
   int iVar5;
   CDemonSet *pCVar6;
+  int iVar3;
+  CDemonSet *pCVar4;
   int local_38;
   int local_30;
   int local_2c;
   int local_28;
   int local_24;
   int local_18;
+  float fVar3;
+  CDemonLight *pCVar2;
+  CDemonActor *this_ptr_00;
+  int *piVar1;
   
   if (g_CGamePtr->shadow_flag != 0) {
     if (g_CGamePtr->profile_mode != 0) {
@@ -46,22 +50,22 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(CDemonSet *t
             pCVar6 = this_ptr;
             if (0 < this_ptr->sorted_render_actor_count) {
               do {
-                iVar5 = 0;
+                iVar3 = 0;
                 (*((pCVar6->sorted_render_actors[0]->vtable)._ub)->renderOpaque)
                           (pCVar6->sorted_render_actors[0]);
                 if (0 < this_ptr->mirror_glass_actor_count) {
                   do {
-                    core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar5,0);
+                    core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar3,0);
                     (*((pCVar6->sorted_render_actors[0]->vtable)._ub)->renderOpaque)
                               (pCVar6->sorted_render_actors[0]);
-                    iVar5 = iVar5 + 1;
+                    iVar3 = iVar3 + 1;
                     core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_00570af0(this_ptr);
-                  } while (iVar5 < this_ptr->mirror_glass_actor_count);
+                  } while (iVar3 < this_ptr->mirror_glass_actor_count);
                 }
                 engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
                           (g_CDemonRendererPtr2,1);
-                local_18 = local_18 + 1;
                 pCVar6 = (CDemonSet *)pCVar6->cameras;
+                local_18 = local_18 + 1;
               } while (local_18 < this_ptr->sorted_render_actor_count);
             }
             core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
@@ -78,35 +82,35 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(CDemonSet *t
     if (0 < g_SpotLightCount) {
       local_2c = 0;
       do {
-        pCVar2 = *(CDemonLight **)((int)g_SpotLightList + local_2c);
-        if (pCVar2->light_enabled_flag != 0) {
-          core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(pCVar2,1);
+        this_ptr_01 = *(CDemonLight **)((int)g_SpotLightList + local_2c);
+        if (this_ptr_01->light_enabled_flag != 0) {
+          core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(this_ptr_01,1);
           core_set_cpp_CDemonSet_buildDisplayList_FUN_0056fbd0(this_ptr,0x22);
-          iVar5 = 0;
-          pCVar6 = this_ptr;
-          g_CurrentShadowLight = pCVar2;
+          iVar3 = 0;
+          pCVar4 = this_ptr;
+          g_CurrentShadowLight = this_ptr_01;
           if (0 < this_ptr->sorted_render_actor_count) {
             do {
-              this_ptr_00 = pCVar6->sorted_render_actors[0];
+              this_ptr_00 = pCVar4->sorted_render_actors[0];
               iVar4 = (*((this_ptr_00->vtable)._ub)->renderOpaque)(this_ptr_00);
               if (iVar4 == 0) {
-                piVar1 = &(this_ptr_00->previous_transform_state).dirty_flags;
-                *(byte *)piVar1 = (byte)*piVar1 & 0xfd;
+                piVar2 = &(this_ptr_00->previous_transform_state).dirty_flags;
+                *(byte *)piVar2 = (byte)*piVar2 & 0xfd;
               }
               else {
                 piVar1 = &(this_ptr_00->previous_transform_state).dirty_flags;
                 *(byte *)piVar1 = (byte)*piVar1 | 0x22;
               }
-              iVar5 = iVar5 + 1;
+              iVar3 = iVar3 + 1;
               engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0
                         (g_CDemonRendererPtr2,1);
-              pCVar6 = (CDemonSet *)pCVar6->cameras;
-            } while (iVar5 < this_ptr->sorted_render_actor_count);
+              pCVar4 = (CDemonSet *)pCVar4->cameras;
+            } while (iVar3 < this_ptr->sorted_render_actor_count);
           }
           core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
           core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);
           g_CurrentShadowLight = (CDemonLight *)0x0;
-          core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(pCVar2);
+          core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(this_ptr_01);
         }
         local_2c = local_2c + 4;
         local_24 = local_24 + 1;

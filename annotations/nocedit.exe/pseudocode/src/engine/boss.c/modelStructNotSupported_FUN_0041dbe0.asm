@@ -6,7 +6,7 @@
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
 ; Local Variables:
-; undefined1       Stack[-0x3c]:1  local_3c
+; undefined4[13]   Stack[-0x3c]:52  local_3c
 ;
 ; XREF[1]:
 ;   engine_model.c_getMRGLBounds_FUN_00528140 at 005285aa

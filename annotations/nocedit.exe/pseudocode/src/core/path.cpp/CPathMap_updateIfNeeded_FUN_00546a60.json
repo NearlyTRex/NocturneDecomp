@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 163,
+    "complexity_score": 165,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 60,
     "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 189
+    "total_lines": 191
   },
   "cross_references": [
     {
@@ -128,12 +128,19 @@
     "pcode_op_count": 639
   },
   "stack_frame": {
-    "frame_size": 56,
-    "local_size": 44,
+    "frame_size": 4116,
+    "local_size": 4104,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "aiStackY_1004",
+        "offset": -4100,
+        "size": 4052,
+        "type": "int[1013]"
+      },
       {
         "is_param": false,
         "name": "local_28",
@@ -159,8 +166,8 @@
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": true,
@@ -205,7 +212,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
+      "line": 12,
       "match": "aiStackY_1004",
       "severity": "moderate",
       "text": "int aiStackY_1004 [1013];",
@@ -213,7 +220,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 22,
       "match": "ABS",
       "severity": "mild",
       "text": "else if (((ABS(source_position->x - (this_ptr->cached_world_position).x) <",
@@ -221,7 +228,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 24,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS(source_position->y - (this_ptr->cached_world_position).y) <",
@@ -229,7 +236,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 26,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS(source_position->z - (this_ptr->cached_world_position).z) <",
@@ -237,18 +244,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 42,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*puVar3 = *(uint *)((int)&local_1c + (uint)bVar5 * -8 + 4);",
+      "text": "puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);",
       "type": "pointer_cast"
     },
     {
@@ -256,12 +255,20 @@
       "line": 44,
       "match": "(uint *)((int)",
       "severity": "mild",
+      "text": "*puVar3 = *(uint *)((int)&local_1c + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(uint *)((int)",
+      "severity": "mild",
       "text": "*(uint *)((int)&local_1c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 52,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar4 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x138b4);",
@@ -269,10 +276,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 53,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);",
+      "text": "puVar2 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);",
       "type": "pointer_cast"
     }
   ]

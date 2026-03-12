@@ -9,11 +9,11 @@
 void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_00520ba0(CMimic *this_ptr,float delta_time)
 
 {
-  SMorphPoint *pSVar1;
-  float fVar2;
   int iVar3;
   int iVar4;
   float local_18 [2];
+  SMorphPoint *pSVar1;
+  float fVar2;
   
   if (this_ptr->morph_target_actor == (CDemonActor *)0x0) {
     g_CurrentFilename = "..\\core\\mimic.cpp";

@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDynamite *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x68]:1  local_68
+; char[100]        Stack[-0x68]:100  local_68
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270 at 005c5813

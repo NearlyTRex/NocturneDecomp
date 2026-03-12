@@ -8,13 +8,11 @@
 ; int              Stack[0x8]:4   column
 ; int              Stack[0xc]:4   line
 ; Local Variables:
-; undefined1       Stack[-0x910]:1  local_910
-; undefined1       Stack[-0x5e8]:1  local_5e8
-; undefined1       Stack[-0x5e7]:1  local_5e7
-; undefined1       Stack[-0x3f4]:1  local_3f4
-; undefined1       Stack[-0x3f3]:1  local_3f3
-; undefined1       Stack[-0x200]:1  local_200
-; undefined1       Stack[-0x1ff]:1  local_1ff
+; CCmdParse        Stack[-0x2a38]:8488  CStack_2a38
+; CCmdParm         Stack[-0x910]:808  local_910
+; char[500]        Stack[-0x5e8]:500  local_5e8
+; char[500]        Stack[-0x3f4]:500  local_3f4
+; char[500]        Stack[-0x200]:500  local_200
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_processEditorInput_FUN_00565130 at 005658a9

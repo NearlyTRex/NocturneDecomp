@@ -9,8 +9,6 @@
 void __cdecl shape_design_c_duplicateSharedVertices_FUN_00465d50(int polygon_index)
 
 {
-  uint uVar1;
-  bool bVar2;
   uint *puVar3;
   uint *puVar4;
   uint *puVar5;
@@ -20,6 +18,8 @@ void __cdecl shape_design_c_duplicateSharedVertices_FUN_00465d50(int polygon_ind
   int local_24;
   int local_20;
   int local_1c;
+  bool bVar2;
+  uint uVar1;
   
   bVar7 = 0;
   local_24 = 0;

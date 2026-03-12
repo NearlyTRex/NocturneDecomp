@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 56,
-        "line": 64,
+        "line": 67,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 149,
+    "complexity_score": 152,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 117,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 356
+    "total_lines": 359
   },
   "cross_references": [],
   "function": {
@@ -221,8 +221,8 @@
         "is_param": false,
         "name": "local_110",
         "offset": -272,
-        "size": 1,
-        "type": "undefined"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": true,
@@ -236,23 +236,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 25,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar4);",
+      "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 74,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar1 = (uint *)((int)g_RenderFaceArray + iVar5);",
+      "text": "puVar2 = (uint *)((int)g_RenderFaceArray + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 117,
       "match": "(SMRGLHeaderExtended *)((int)",
       "severity": "mild",
       "text": "mrgl = (SMRGLHeaderExtended *)((int)&(((SMRGLHeaderPrimitive *)mrgl)->base).type + iVar4);",

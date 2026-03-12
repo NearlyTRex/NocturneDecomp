@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 68,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 53,
+    "pseudocode_lines": 54,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 157
+    "total_lines": 158
   },
   "cross_references": [
     {
@@ -149,7 +149,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "char[32] *"
       },
       {
         "is_param": true,
@@ -180,10 +180,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 45,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "(void *)((int)((this_ptr->counters).names + -2) + 0x18 + iVar5 * 4),",
+      "text": "(void *)((int)((this_ptr->counters).names + -2) + 0x18 + iVar1 * 4),",
       "type": "pointer_cast"
     }
   ]

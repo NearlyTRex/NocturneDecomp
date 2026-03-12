@@ -6,7 +6,10 @@
 ; Parameters:
 ; CVampireBoss *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x2c]:1  local_2c
+; CBoundingBox3D   Stack[-0x2c]:24  local_2c
+; int              Stack[-0x14]:4  iStack_14
+; CDeformableModelInstance * Stack[-0x10]:4  pCStack_10
+; CCloth *         Stack[-0xc]:4  pCStack_c
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

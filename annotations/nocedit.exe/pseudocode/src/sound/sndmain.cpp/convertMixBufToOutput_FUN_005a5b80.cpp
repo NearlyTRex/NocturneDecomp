@@ -9,12 +9,13 @@
 void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80(float *input_samples,ushort *output_buffer,int bits_per_sample,int num_samples,int output_stride)
 
 {
-  float fVar1;
+  float fVar2;
   ushort *local_30;
   byte local_28;
   ushort local_20;
   int local_18;
   int local_14;
+  float fVar1;
   
   local_30 = output_buffer;
   if ((uint)bits_per_sample < 8) {
@@ -29,12 +30,12 @@ LAB_005a5ccd:
     local_18 = 0;
     if (0 < num_samples) {
       do {
-        fVar1 = *input_samples;
-        if (fVar1 <= (float)-1) {
+        fVar2 = *input_samples;
+        if (fVar2 <= (float)-1) {
           *(byte *)local_30 = 0;
         }
-        else if (fVar1 < 1.0) {
-          local_28 = (byte)(int)ROUND(fVar1 * 127.0f + 128.0f);
+        else if (fVar2 < 1.0) {
+          local_28 = (byte)(int)ROUND(fVar2 * 127.0f + 128.0f);
           *(byte *)local_30 = local_28;
         }
         else {

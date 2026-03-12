@@ -12,19 +12,20 @@
 double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0(short *sample_data,SStereoBuffers *channel_buffers,SStereoGains *channel_gains,double resample_position,double resample_delta,int samples_to_process)
 
 {
-  short sVar1;
-  float fVar2;
-  float fVar3;
-  float *pfVar4;
-  float *pfVar5;
-  int iVar6;
-  int iVar7;
   uint uVar8;
   int iVar9;
   int iVar10;
   bool bVar11;
   double dVar12;
+  double dVar1;
   ulonglong local_34;
+  int iVar6;
+  int iVar7;
+  float *pfVar4;
+  float *pfVar5;
+  float fVar2;
+  float fVar3;
+  short sVar1;
   
   if (0 < samples_to_process) {
     dVar12 = floor(resample_position);
@@ -34,10 +35,10 @@ double __cdecl sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0(short *s
     local_34._0_4_ =
          (uint)(longlong)ROUND(ROUND((resample_position - (double)local_34) * 4294967296));
     uVar8 = (uint)local_34;
-    dVar12 = floor(resample_delta);
-    local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar12));
+    dVar1 = floor(resample_delta);
+    local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar1));
     iVar7 = (uint)local_34;
-    local_34 = (longlong)ROUND(ROUND(dVar12)) & 0xffffffff;
+    local_34 = (longlong)ROUND(ROUND(dVar1)) & 0xffffffff;
     local_34._0_4_ =
          (uint)(longlong)ROUND(ROUND((resample_delta - (double)local_34) * 4294967296));
     fVar2 = channel_gains->left_gain;

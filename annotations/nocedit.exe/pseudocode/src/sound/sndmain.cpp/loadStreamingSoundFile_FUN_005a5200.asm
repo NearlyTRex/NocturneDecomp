@@ -7,8 +7,8 @@
 ; int              Stack[0x4]:4   slot_index
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined        Stack[-0x114]:1  local_114
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x114]:256  local_114
+; CSfxSample *     Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_mp3_0064fa62

@@ -9,20 +9,13 @@
 ; char *           Stack[0xc]:4   file_pattern
 ; char *           Stack[0x10]:4   dest_directory
 ; Local Variables:
-; undefined1       Stack[-0x750]:1  local_750
-; undefined1       Stack[-0x74f]:1  local_74f
-; undefined4       Stack[-0x54c]:4  local_54c
-; undefined4       Stack[-0x544]:4  local_544
-; undefined1       Stack[-0x53c]:1  local_53c
-; undefined1       Stack[-0x53b]:1  local_53b
-; undefined4       Stack[-0x338]:4  local_338
-; undefined4       Stack[-0x330]:4  local_330
-; undefined1       Stack[-0x328]:1  local_328
-; undefined1       Stack[-0x327]:1  local_327
-; undefined1       Stack[-0x224]:1  local_224
-; undefined1       Stack[-0x124]:1  local_124
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x14]:4  local_14
+; SFoundFileInfo   Stack[-0x750]:532  local_750
+; SFoundFileInfo   Stack[-0x53c]:532  local_53c
+; char[260]        Stack[-0x328]:260  local_328
+; char[256]        Stack[-0x224]:256  local_224
+; char[256]        Stack[-0x124]:256  local_124
+; CStrList         Stack[-0x24]:16  local_24
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_fileman.cpp_refreshSoundDirectory_FUN_004be590 at 004be5e4

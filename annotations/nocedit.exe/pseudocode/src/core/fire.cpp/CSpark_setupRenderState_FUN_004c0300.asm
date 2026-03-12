@@ -6,11 +6,12 @@
 ; Parameters:
 ; CSpark *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x48]:4  local_48
+; float[997]       Stack[-0x1000]:3988  afStackY_1000
+; float            Stack[-0x60]:4  local_60
+; float            Stack[-0x54]:4  local_54
+; float            Stack[-0x48]:4  local_48
 ; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x18]:1  local_18
+; CVector3i        Stack[-0x18]:12  local_18
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_render_FUN_004c7180 at 004c732a

@@ -6,15 +6,12 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   source_directory
 ; Local Variables:
-; undefined1       Stack[-0x64c]:1  local_64c
-; undefined1       Stack[-0x64b]:1  local_64b
-; undefined4       Stack[-0x440]:4  local_440
-; undefined1       Stack[-0x438]:1  local_438
-; undefined4       Stack[-0x22c]:4  local_22c
-; undefined1       Stack[-0x224]:1  local_224
-; undefined1       Stack[-0x124]:1  local_124
-; undefined4       Stack[-0x24]:4  local_24
-; undefined1       Stack[-0x14]:1  local_14
+; SFoundFileInfo   Stack[-0x64c]:532  local_64c
+; SFoundFileInfo   Stack[-0x438]:532  local_438
+; char[256]        Stack[-0x224]:256  local_224
+; char[256]        Stack[-0x124]:256  local_124
+; CStrList         Stack[-0x24]:16  local_24
+; char[4]          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_fileman.cpp_refreshSoundDirectory_FUN_004be590 at 004be5a8

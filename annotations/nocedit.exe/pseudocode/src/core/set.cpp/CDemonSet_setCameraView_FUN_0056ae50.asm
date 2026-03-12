@@ -7,28 +7,22 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   index
 ; Local Variables:
-; undefined4       Stack[-0x184]:4  local_184
-; undefined4       Stack[-0x180]:4  local_180
-; undefined4       Stack[-0x17c]:4  local_17c
-; undefined1       Stack[-0x124]:1  local_124
-; undefined1       Stack[-0xd4]:1  local_d4
-; undefined1       Stack[-0xac]:1  local_ac
-; undefined1       Stack[-0x84]:1  local_84
-; undefined1       Stack[-0x60]:1  local_60
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int[24]          Stack[-0x184]:96  local_184
+; char[80]         Stack[-0x124]:80  local_124
+; float[10]        Stack[-0xd4]:40  local_d4
+; CMatrix3x3f      Stack[-0xac]:36  local_ac
+; CBoundingBox3D   Stack[-0x84]:24  local_84
+; CVector3f        Stack[-0x6c]:12  CStack_6c
+; CVector3f        Stack[-0x60]:12  local_60
+; CVector3f        Stack[-0x54]:12  CStack_54
+; CVector3f        Stack[-0x48]:12  local_48
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  local_30
+; C3DSLight *      Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int *            Stack[-0x1c]:4  local_1c
+; CDemonSet *      Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[13]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd416

@@ -7,13 +7,7 @@
 ; WORD             Stack[0x4]:2   dos_date
 ; WORD             Stack[0x8]:2   dos_time
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x8]:4  local_8
+; _tm              Stack[-0x28]:36  local_28
 ;
 ; XREF[1]:
 ;   crt_io.c_stat_FUN_00607e64 at 00608100

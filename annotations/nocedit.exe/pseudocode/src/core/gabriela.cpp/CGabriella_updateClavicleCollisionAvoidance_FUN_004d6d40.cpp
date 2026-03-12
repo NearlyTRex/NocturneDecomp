@@ -9,10 +9,9 @@
 void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004d6d40(CGabriella *this_ptr,float delta_time,int has_carried_objects)
 
 {
-  CDeformableModelInstance *this_ptr_00;
-  CDemonActor *pCVar1;
-  float fVar2;
+  CDemonActor *pCVar2;
   CBoundingBox3D *pCVar3;
+  CBoundingBox3D *pCVar4;
   CBoundingBox3D CStack_68;
   CBoundingBox3D local_50;
   float fStack_38;
@@ -22,6 +21,9 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
   float fStack_20;
   float fStack_1c;
   float fStack_18;
+  CDeformableModelInstance *this_ptr_00;
+  float fVar2;
+  CDemonActor *pCVar1;
   
   fVar2 = delta_time / 0.5f;
   this_ptr->left_clavicle_blend = this_ptr->left_clavicle_blend - fVar2;
@@ -38,38 +40,32 @@ void __cdecl core_gabriela_cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_0
     if (pCVar1 != (CDemonActor *)0x0) {
       core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCVar1);
     }
-    pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
-    if (pCVar1 != (CDemonActor *)0x0) {
-      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCVar1);
+    pCVar2 = (this_ptr->base).base.carry_hands[1].carry_actor;
+    if (pCVar2 != (CDemonActor *)0x0) {
+      core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,pCVar2);
     }
     core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00574210(g_CDemonSetPtr);
     local_2c.z = 0.0;
     local_2c.y = 0.0;
     local_2c.x = 0.0;
-    pCVar1 = (this_ptr->base).base.carry_hands[0].carry_actor;
-    if (pCVar1 == (CDemonActor *)0x0) {
+    pCVar2 = (this_ptr->base).base.carry_hands[0].carry_actor;
+    if (pCVar2 == (CDemonActor *)0x0) {
       local_2c.x = -0.5;
     }
     else {
-      pCVar3 = (*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,&local_50);
-      fStack_38 = (pCVar3->max).x - (pCVar3->min).x;
-      fStack_34 = (pCVar3->max).y - (pCVar3->min).y;
-      fStack_30 = (pCVar3->max).z - (pCVar3->min).z;
-      local_2c.x = -fStack_30;
+      pCVar3 = (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&local_50);
+      local_2c.x = -((pCVar3->max).z - (pCVar3->min).z);
     }
     core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
               (this_ptr,delta_time,&this_ptr->left_clavicle_blend,INT_02d7b888,INT_02d7b84c,
                &local_2c);
-    pCVar1 = (this_ptr->base).base.carry_hands[1].carry_actor;
-    if (pCVar1 == (CDemonActor *)0x0) {
+    pCVar2 = (this_ptr->base).base.carry_hands[1].carry_actor;
+    if (pCVar2 == (CDemonActor *)0x0) {
       local_2c.x = 0.5;
     }
     else {
-      pCVar3 = (*((pCVar1->vtable)._ub)->getBoundingBox)(pCVar1,&CStack_68);
-      fStack_20 = (pCVar3->max).x - (pCVar3->min).x;
-      fStack_1c = (pCVar3->max).y - (pCVar3->min).y;
-      local_2c.x = (pCVar3->max).z - (pCVar3->min).z;
-      fStack_18 = local_2c.x;
+      pCVar4 = (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&CStack_68);
+      local_2c.x = (pCVar4->max).z - (pCVar4->min).z;
     }
     core_gabriela_cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80
               (this_ptr,delta_time,&this_ptr->right_clavicle_blend,INT_02d7b88c,INT_02d7b850,

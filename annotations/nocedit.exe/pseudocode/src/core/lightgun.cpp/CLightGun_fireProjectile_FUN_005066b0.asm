@@ -6,7 +6,26 @@
 ; Parameters:
 ; CLightGun *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x94]:1  local_94
+; CVector3f        Stack[-0x94]:12  local_94
+; CVector3f        Stack[-0x88]:12  CStack_88
+; float            Stack[-0x7c]:4  fStack_7c
+; float            Stack[-0x78]:4  fStack_78
+; float            Stack[-0x74]:4  fStack_74
+; float            Stack[-0x70]:4  fStack_70
+; float            Stack[-0x6c]:4  fStack_6c
+; float            Stack[-0x68]:4  fStack_68
+; CVector3f        Stack[-0x64]:12  CStack_64
+; float            Stack[-0x58]:4  fStack_58
+; float            Stack[-0x54]:4  fStack_54
+; float            Stack[-0x50]:4  fStack_50
+; CVector3f        Stack[-0x4c]:12  CStack_4c
+; CVector3f        Stack[-0x40]:12  CStack_40
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; CVector3f        Stack[-0x28]:12  CStack_28
+; float            Stack[-0x1c]:4  fStack_1c
+; int              Stack[-0x18]:4  iStack_18
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0063151e = 18

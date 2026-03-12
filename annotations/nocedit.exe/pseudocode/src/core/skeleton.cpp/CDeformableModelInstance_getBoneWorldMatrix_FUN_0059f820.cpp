@@ -11,9 +11,11 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWor
 {
   CSkeleton *pCVar1;
   int iVar2;
+  int iVar1;
   CMatrix3x4f *pCVar3;
   float *pfVar4;
   CMatrix3x4f *pCVar5;
+  CMatrix3x4f *pCVar2;
   byte bVar6;
   CMatrix3x4f local_ac;
   int local_7c;
@@ -41,9 +43,8 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWor
   }
   else {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
-    iVar2 = pCVar1->bone_list[bone_index].parent_index;
-    local_10 = bone_index * 0xc;
-    if (iVar2 < 0) {
+    iVar1 = pCVar1->bone_list[bone_index].parent_index;
+    if (iVar1 < 0) {
       local_70 = (this_ptr->bone_transform).root_position.x +
                  this_ptr->transformed_vertices[bone_index].x;
       local_60 = (this_ptr->bone_transform).root_position.y +
@@ -53,17 +54,18 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWor
     }
     else {
       core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
-                (this_ptr,iVar2,&local_ac);
+                (this_ptr,iVar1,&local_ac);
       pCVar3 = &local_ac;
       pCVar5 = &local_4c;
       for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+        pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
+        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar6 * -8 + 4);
         pCVar5->m[0].w = pCVar3->m[0].w;
-        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
-        pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);
+        pCVar3 = pCVar3;
+        pCVar5 = pCVar5;
       }
       core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                (&local_1c,(CVector3f *)((int)&this_ptr->transformed_vertices[0].x + local_10),
-                 &local_4c);
+                (&local_1c,this_ptr->transformed_vertices + bone_index,&local_4c);
       local_70 = local_1c.x;
       local_60 = local_1c.y;
       local_50 = local_1c.z;
@@ -83,11 +85,12 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWor
     }
   }
   pfVar4 = (float *)&local_7c;
-  pCVar3 = out_matrix;
-  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pCVar3->m[0].w = *pfVar4;
+  pCVar2 = out_matrix;
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
+    pCVar2->m[0].w = *pfVar4;
+    pfVar4 = pfVar4;
+    pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar6 * -2 + 1) * 4);
   }
   return out_matrix;
 }

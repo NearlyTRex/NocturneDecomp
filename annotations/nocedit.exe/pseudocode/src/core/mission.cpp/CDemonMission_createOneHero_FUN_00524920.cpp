@@ -9,9 +9,9 @@
 int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission *this_ptr,int index,int hero_type,CCharacter *existing_actor)
 
 {
-  CDemonActor *actor_ptr;
   CHeroPlaceholder *this_ptr_00;
   CHero *local_14;
+  CDemonActor *actor_ptr;
   
   if (g_HeroCount <= index) {
     g_CurrentFilename = "..\\core\\mission.cpp";

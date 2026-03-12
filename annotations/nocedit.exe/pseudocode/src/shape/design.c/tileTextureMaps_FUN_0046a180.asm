@@ -10,17 +10,15 @@
 ; undefined4       Stack[-0x1cc]:4  local_1cc
 ; undefined4       Stack[-0x1c8]:4  local_1c8
 ; undefined4       Stack[-0x1c4]:4  local_1c4
-; undefined4       Stack[-0x1c0]:4  local_1c0
-; undefined4       Stack[-0x1bc]:4  local_1bc
-; undefined4       Stack[-0x1b8]:4  local_1b8
-; undefined4       Stack[-0x1b4]:4  local_1b4
+; float            Stack[-0x1c0]:4  local_1c0
+; float            Stack[-0x1bc]:4  local_1bc
+; float            Stack[-0x1b8]:4  local_1b8
+; float            Stack[-0x1b4]:4  local_1b4
 ; undefined4       Stack[-0x1b0]:4  local_1b0
-; undefined1       Stack[-0x1ac]:1  local_1ac
-; undefined1       Stack[-0xe4]:1  local_e4
-; undefined1       Stack[-0xe3]:1  local_e3
-; undefined1       Stack[-0xe1]:1  local_e1
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x14]:4  local_14
+; char[200]        Stack[-0x1ac]:200  local_1ac
+; char[200]        Stack[-0xe4]:200  local_e4
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_showShapeEditorMenu_FUN_0046f290 at 0046f780

@@ -6,7 +6,21 @@
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x80]:1  local_80
+; CBoundingBox3D   Stack[-0x80]:24  local_80
+; float            Stack[-0x68]:4  fStack_68
+; float            Stack[-0x64]:4  fStack_64
+; float            Stack[-0x60]:4  fStack_60
+; CVector3f        Stack[-0x5c]:12  CStack_5c
+; CVector3f        Stack[-0x50]:12  CStack_50
+; float            Stack[-0x44]:4  fStack_44
+; undefined4       Stack[-0x40]:4  uStack_40
+; float            Stack[-0x3c]:4  fStack_3c
+; CVector3f        Stack[-0x38]:12  CStack_38
+; CVector3f        Stack[-0x2c]:12  CStack_2c
+; float            Stack[-0x20]:4  fStack_20
+; float            Stack[-0x1c]:4  fStack_1c
+; float            Stack[-0x18]:4  fStack_18
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; XREF[2]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d4027

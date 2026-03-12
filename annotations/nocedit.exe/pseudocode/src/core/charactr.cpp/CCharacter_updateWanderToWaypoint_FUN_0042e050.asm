@@ -8,13 +8,13 @@
 ; float            Stack[0x8]:4   delta_time
 ; char *           Stack[0xc]:4   pattern
 ; Local Variables:
-; undefined4       Stack[-0x1f80]:4  local_1f80
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x14]:4  local_14
+; undefined4[2005] Stack[-0x1f80]:8020  local_1f80
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; CLocation *      Stack[-0x1c]:4  local_1c
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_004a9fd0 at 004aa002

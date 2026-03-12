@@ -6,11 +6,13 @@
 ; Parameters:
 ; CBloodParticle * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x48]:4  local_48
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x18]:1  local_18
+; int[997]         Stack[-0x1000]:3988  aiStackY_1000
+; float[2]         Stack[-0x68]:8  afStack_68
+; float            Stack[-0x60]:4  local_60
+; float            Stack[-0x54]:4  local_54
+; float            Stack[-0x48]:4  local_48
+; float[10]        Stack[-0x40]:40  local_40
+; CVector3i        Stack[-0x18]:12  local_18
 ;
 ; XREF[1]:
 ;   core_gore.cpp_CGore_renderParticles_FUN_004ed7b0 at 004ed7fa

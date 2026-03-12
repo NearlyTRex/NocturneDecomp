@@ -8,26 +8,16 @@
 ; int              Stack[0x8]:4   bone_index
 ; CDeformableModelInstance * Stack[0xc]:4   model_ptr
 ; Local Variables:
-; undefined4       Stack[-0x138]:4  local_138
-; undefined4       Stack[-0x134]:4  local_134
-; undefined4       Stack[-0x130]:4  local_130
-; undefined4       Stack[-0x128]:4  local_128
-; undefined4       Stack[-0x124]:4  local_124
-; undefined4       Stack[-0x120]:4  local_120
-; undefined4       Stack[-0x118]:4  local_118
-; undefined4       Stack[-0x114]:4  local_114
-; undefined4       Stack[-0x110]:4  local_110
-; undefined1       Stack[-0x108]:1  local_108
-; undefined1       Stack[-0xd8]:1  local_d8
-; undefined1       Stack[-0xa8]:1  local_a8
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined1       Stack[-0x78]:1  local_78
-; undefined1       Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; CMatrix3x4f      Stack[-0x138]:48  local_138
+; CMatrix3x4f      Stack[-0x108]:48  local_108
+; CMatrix3x4f      Stack[-0xd8]:48  local_d8
+; float[3]         Stack[-0xa8]:12  local_a8
+; float            Stack[-0x9c]:4  local_9c
+; float            Stack[-0x8c]:4  local_8c
+; float            Stack[-0x7c]:4  local_7c
+; CMatrix3x4f      Stack[-0x78]:48  local_78
+; CMatrix3x4f      Stack[-0x48]:48  local_48
+; undefined1[12]   Stack[-0x18]:12  local_18
 ;
 ; XREF[2]:
 ;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043d50e

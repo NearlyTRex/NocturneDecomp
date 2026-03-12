@@ -9,7 +9,10 @@
 ; LPCSTR           Stack[0xc]:4   module
 ; LPVOID           Stack[0x10]:4   context
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
+; char[400]        Stack[-0x390]:400  acStack_390
+; char[400]        Stack[-0x200]:400  acStack_200
+; DSCAPS           Stack[-0x70]:96  DStack_70
+; LPDIRECTSOUND    Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_005b0390 at 005b03b7

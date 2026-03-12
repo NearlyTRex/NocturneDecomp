@@ -9,203 +9,211 @@
 char * __cdecl build_file_info_env(void)
 
 {
-  char cVar1;
+  char cVar2;
+  char *pcVar3;
+  uint uVar4;
+  int iVar5;
   uint uVar2;
   int iVar3;
+  int iVar6;
   uint file_handle_index;
+  char *pcVar7;
   char *pcVar4;
   char *pcVar5;
   char *pcVar6;
+  char *pcVar8;
+  char *pcVar9;
   byte bVar7;
   char local_44 [28];
   char local_28 [12];
   int local_1c;
   char *local_18;
+  char cVar1;
   
   bVar7 = 0;
   uVar2 = 0xffffffff;
-  pcVar5 = "C_FILE_INFO=";
+  pcVar3 = "C_FILE_INFO=";
   do {
     if (uVar2 == 0) break;
     uVar2 = uVar2 - 1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar5 + 1;
+    cVar1 = *pcVar3;
+    pcVar3 = pcVar3 + 1;
   } while (cVar1 != '\0');
-  local_18 = malloc(g_MaxHandleCount * 0x1b + ~uVar2);
-  uVar2 = g_MaxHandleCount;
-  if (local_18 == (char *)0x0) {
-    local_18 = (char *)0x0;
+  pcVar3 = malloc(g_MaxHandleCount * 0x1b + ~uVar2);
+  uVar4 = g_MaxHandleCount;
+  if (pcVar3 == (char *)0x0) {
+    pcVar3 = (char *)0x0;
   }
   else {
     file_handle_index = 0;
-    pcVar5 = local_18 + (uint)bVar7 * -8 + 4;
-    *(uint *)local_18 = "C_FILE_INFO="._0_4_;
+    pcVar5 = pcVar3 + (uint)bVar7 * -8 + 4;
+    *(uint *)pcVar3 = "C_FILE_INFO="._0_4_;
     *(uint *)pcVar5 = *(uint *)("C_FILE_INFO=" + (uint)bVar7 * -8 + 4);
     *(uint *)(pcVar5 + (uint)bVar7 * -8 + 4) =
          *(uint *)("C_FILE_INFO=" + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);
     (pcVar5 + (uint)bVar7 * -8 + 4)[(uint)bVar7 * -8 + 4] =
          ("C_FILE_INFO=" + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8)
          [((uint)bVar7 * -2 + 1) * 4];
-    if (uVar2 != 0) {
+    if (uVar4 != 0) {
       do {
-        uVar2 = getFileTypeFlags(file_handle_index);
-        if ((uVar2 & 0x4000) != 0) {
-          local_1c = get_handle(file_handle_index);
+        uVar4 = getFileTypeFlags(file_handle_index);
+        if ((uVar4 & 0x4000) != 0) {
+          iVar5 = get_handle(file_handle_index);
           local_44[0] = '\0';
           IntegerToString(file_handle_index,local_28,0x10);
-          pcVar5 = local_28;
+          pcVar7 = local_28;
           iVar3 = -1;
-          pcVar4 = local_44;
+          pcVar6 = local_44;
           do {
-            pcVar6 = pcVar4;
+            pcVar6 = pcVar6;
             if (iVar3 == 0) break;
             iVar3 = iVar3 + -1;
-            pcVar6 = pcVar4 + (uint)bVar7 * -2 + 1;
-            cVar1 = *pcVar4;
-            pcVar4 = pcVar6;
-          } while (cVar1 != '\0');
-          pcVar6 = pcVar6 + -1;
+            pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
+            cVar2 = *pcVar6;
+            pcVar6 = pcVar6;
+          } while (cVar2 != '\0');
+          pcVar8 = pcVar6 + -1;
           do {
-            cVar1 = *pcVar5;
-            *pcVar6 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar5[1];
-            pcVar5 = pcVar5 + 2;
-            pcVar6[1] = cVar1;
-            pcVar6 = pcVar6 + 2;
-          } while (cVar1 != '\0');
+            cVar2 = *pcVar7;
+            *pcVar8 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar7[1];
+            pcVar7 = pcVar7 + 2;
+            pcVar8[1] = cVar2;
+            pcVar8 = pcVar8 + 2;
+          } while (cVar2 != '\0');
           pcVar4 = &g_ColonChar;
-          iVar3 = -1;
-          pcVar5 = local_44;
+          iVar6 = -1;
+          pcVar7 = local_44;
           do {
-            pcVar6 = pcVar5;
-            if (iVar3 == 0) break;
-            iVar3 = iVar3 + -1;
-            pcVar6 = pcVar5 + (uint)bVar7 * -2 + 1;
-            cVar1 = *pcVar5;
-            pcVar5 = pcVar6;
-          } while (cVar1 != '\0');
-          pcVar6 = pcVar6 + -1;
+            pcVar8 = pcVar7;
+            if (iVar6 == 0) break;
+            iVar6 = iVar6 + -1;
+            pcVar8 = pcVar7 + (uint)bVar7 * -2 + 1;
+            cVar2 = *pcVar7;
+            pcVar7 = pcVar8;
+          } while (cVar2 != '\0');
+          pcVar8 = pcVar8 + -1;
           do {
-            cVar1 = *pcVar4;
-            *pcVar6 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar4[1];
+            cVar2 = *pcVar4;
+            *pcVar8 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar4[1];
             pcVar4 = pcVar4 + 2;
-            pcVar6[1] = cVar1;
-            pcVar6 = pcVar6 + 2;
-          } while (cVar1 != '\0');
-          IntegerToString(local_1c,local_28,0x10);
-          pcVar5 = local_28;
-          iVar3 = -1;
-          pcVar4 = local_44;
+            pcVar8[1] = cVar2;
+            pcVar8 = pcVar8 + 2;
+          } while (cVar2 != '\0');
+          IntegerToString(iVar5,local_28,0x10);
+          pcVar7 = local_28;
+          iVar5 = -1;
+          pcVar8 = local_44;
           do {
-            pcVar6 = pcVar4;
-            if (iVar3 == 0) break;
-            iVar3 = iVar3 + -1;
-            pcVar6 = pcVar4 + (uint)bVar7 * -2 + 1;
-            cVar1 = *pcVar4;
-            pcVar4 = pcVar6;
-          } while (cVar1 != '\0');
-          pcVar6 = pcVar6 + -1;
+            pcVar9 = pcVar8;
+            if (iVar5 == 0) break;
+            iVar5 = iVar5 + -1;
+            pcVar9 = pcVar8 + (uint)bVar7 * -2 + 1;
+            cVar2 = *pcVar8;
+            pcVar8 = pcVar9;
+          } while (cVar2 != '\0');
+          pcVar9 = pcVar9 + -1;
           do {
-            cVar1 = *pcVar5;
-            *pcVar6 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar5[1];
-            pcVar5 = pcVar5 + 2;
-            pcVar6[1] = cVar1;
-            pcVar6 = pcVar6 + 2;
-          } while (cVar1 != '\0');
-          pcVar4 = &g_ColonChar;
-          iVar3 = -1;
-          pcVar5 = local_44;
+            cVar2 = *pcVar7;
+            *pcVar9 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar7[1];
+            pcVar7 = pcVar7 + 2;
+            pcVar9[1] = cVar2;
+            pcVar9 = pcVar9 + 2;
+          } while (cVar2 != '\0');
+          pcVar8 = &g_ColonChar;
+          iVar5 = -1;
+          pcVar7 = local_44;
           do {
-            pcVar6 = pcVar5;
-            if (iVar3 == 0) break;
-            iVar3 = iVar3 + -1;
-            pcVar6 = pcVar5 + (uint)bVar7 * -2 + 1;
-            cVar1 = *pcVar5;
-            pcVar5 = pcVar6;
-          } while (cVar1 != '\0');
-          pcVar6 = pcVar6 + -1;
+            pcVar9 = pcVar7;
+            if (iVar5 == 0) break;
+            iVar5 = iVar5 + -1;
+            pcVar9 = pcVar7 + (uint)bVar7 * -2 + 1;
+            cVar2 = *pcVar7;
+            pcVar7 = pcVar9;
+          } while (cVar2 != '\0');
+          pcVar9 = pcVar9 + -1;
           do {
-            cVar1 = *pcVar4;
-            *pcVar6 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar4[1];
-            pcVar4 = pcVar4 + 2;
-            pcVar6[1] = cVar1;
-            pcVar6 = pcVar6 + 2;
-          } while (cVar1 != '\0');
-          IntegerToString(uVar2,local_28,0x10);
-          pcVar5 = local_28;
-          iVar3 = -1;
-          pcVar4 = local_44;
+            cVar2 = *pcVar8;
+            *pcVar9 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar8[1];
+            pcVar8 = pcVar8 + 2;
+            pcVar9[1] = cVar2;
+            pcVar9 = pcVar9 + 2;
+          } while (cVar2 != '\0');
+          IntegerToString(uVar4,local_28,0x10);
+          pcVar7 = local_28;
+          iVar5 = -1;
+          pcVar8 = local_44;
           do {
-            pcVar6 = pcVar4;
-            if (iVar3 == 0) break;
-            iVar3 = iVar3 + -1;
-            pcVar6 = pcVar4 + (uint)bVar7 * -2 + 1;
-            cVar1 = *pcVar4;
-            pcVar4 = pcVar6;
-          } while (cVar1 != '\0');
-          pcVar6 = pcVar6 + -1;
+            pcVar9 = pcVar8;
+            if (iVar5 == 0) break;
+            iVar5 = iVar5 + -1;
+            pcVar9 = pcVar8 + (uint)bVar7 * -2 + 1;
+            cVar2 = *pcVar8;
+            pcVar8 = pcVar9;
+          } while (cVar2 != '\0');
+          pcVar9 = pcVar9 + -1;
           do {
-            cVar1 = *pcVar5;
-            *pcVar6 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar5[1];
-            pcVar5 = pcVar5 + 2;
-            pcVar6[1] = cVar1;
-            pcVar6 = pcVar6 + 2;
-          } while (cVar1 != '\0');
-          pcVar4 = &g_AsteriskChar;
-          iVar3 = -1;
-          pcVar5 = local_44;
+            cVar2 = *pcVar7;
+            *pcVar9 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar7[1];
+            pcVar7 = pcVar7 + 2;
+            pcVar9[1] = cVar2;
+            pcVar9 = pcVar9 + 2;
+          } while (cVar2 != '\0');
+          pcVar8 = &g_AsteriskChar;
+          iVar5 = -1;
+          pcVar7 = local_44;
           do {
-            pcVar6 = pcVar5;
-            if (iVar3 == 0) break;
-            iVar3 = iVar3 + -1;
-            pcVar6 = pcVar5 + (uint)bVar7 * -2 + 1;
-            cVar1 = *pcVar5;
-            pcVar5 = pcVar6;
-          } while (cVar1 != '\0');
-          pcVar6 = pcVar6 + -1;
+            pcVar9 = pcVar7;
+            if (iVar5 == 0) break;
+            iVar5 = iVar5 + -1;
+            pcVar9 = pcVar7 + (uint)bVar7 * -2 + 1;
+            cVar2 = *pcVar7;
+            pcVar7 = pcVar9;
+          } while (cVar2 != '\0');
+          pcVar9 = pcVar9 + -1;
           do {
-            cVar1 = *pcVar4;
-            *pcVar6 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar4[1];
-            pcVar4 = pcVar4 + 2;
-            pcVar6[1] = cVar1;
-            pcVar6 = pcVar6 + 2;
-          } while (cVar1 != '\0');
-          iVar3 = -1;
-          pcVar5 = local_18;
+            cVar2 = *pcVar8;
+            *pcVar9 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar8[1];
+            pcVar8 = pcVar8 + 2;
+            pcVar9[1] = cVar2;
+            pcVar9 = pcVar9 + 2;
+          } while (cVar2 != '\0');
+          iVar5 = -1;
+          pcVar7 = pcVar3;
           do {
-            pcVar4 = pcVar5;
-            if (iVar3 == 0) break;
-            iVar3 = iVar3 + -1;
-            pcVar4 = pcVar5 + (uint)bVar7 * -2 + 1;
-            cVar1 = *pcVar5;
-            pcVar5 = pcVar4;
-          } while (cVar1 != '\0');
-          pcVar4 = pcVar4 + -1;
-          pcVar5 = local_44;
+            pcVar8 = pcVar7;
+            if (iVar5 == 0) break;
+            iVar5 = iVar5 + -1;
+            pcVar8 = pcVar7 + (uint)bVar7 * -2 + 1;
+            cVar2 = *pcVar7;
+            pcVar7 = pcVar8;
+          } while (cVar2 != '\0');
+          pcVar8 = pcVar8 + -1;
+          pcVar7 = local_44;
           do {
-            cVar1 = *pcVar5;
-            *pcVar4 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar5[1];
-            pcVar5 = pcVar5 + 2;
-            pcVar4[1] = cVar1;
-            pcVar4 = pcVar4 + 2;
-          } while (cVar1 != '\0');
+            cVar2 = *pcVar7;
+            *pcVar8 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar7[1];
+            pcVar7 = pcVar7 + 2;
+            pcVar8[1] = cVar2;
+            pcVar8 = pcVar8 + 2;
+          } while (cVar2 != '\0');
         }
         file_handle_index = file_handle_index + 1;
       } while (file_handle_index < g_MaxHandleCount);
     }
   }
-  return local_18;
+  return pcVar3;
 }

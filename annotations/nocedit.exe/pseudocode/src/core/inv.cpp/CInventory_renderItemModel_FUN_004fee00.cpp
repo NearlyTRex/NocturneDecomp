@@ -9,20 +9,11 @@
 void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,int rotation_y,int alpha)
 
 {
-  CVector3f *pCVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
-  float fVar9;
-  CDemonSet *pCVar10;
   int iVar11;
   int iVar12;
   CKeyFramedModelInstance *this_ptr_00;
   CKeyFramedModel *pCVar13;
+  int iVar1;
   CDemonActor *pCVar14;
   CVector3i local_50;
   CVector3i local_44;
@@ -32,6 +23,16 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
   CVector3i local_2c;
   float local_18;
   float local_14;
+  float fVar8;
+  float fVar9;
+  float fVar4;
+  float fVar5;
+  float fVar2;
+  float fVar3;
+  float fVar6;
+  float fVar7;
+  CDemonSet *pCVar10;
+  CVector3f *pCVar1;
   
   pCVar10 = g_CDemonSetPtr;
   if (item != (CDemonActor *)0x0) {
@@ -61,25 +62,21 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
     fVar4 = pCVar1->z;
     fVar5 = pCVar1[1].x;
     fVar6 = pCVar1[1].y;
-    local_38 = fVar5 - fVar2;
-    local_34 = fVar6 - fVar3;
     fVar7 = pCVar1[1].z;
-    local_14 = local_38 * 0.5f;
-    local_30 = fVar7 - fVar4;
-    fVar8 = local_34 * 0.5f;
-    fVar9 = local_30 * 0.5f;
+    local_14 = (fVar5 - fVar2) * 0.5f;
+    fVar8 = (fVar6 - fVar3) * 0.5f;
+    fVar9 = (fVar7 - fVar4) * 0.5f;
     if (((local_14 <= fVar8) || (local_14 <= fVar9)) && (local_14 = fVar9, fVar9 < fVar8)) {
       local_14 = fVar8;
     }
-    iVar11 = core_actor_cpp_isOfClass_FUN_0040c6d0(item,"CGun");
-    if ((iVar11 != 0) ||
-       (iVar11 = core_actor_cpp_isOfClass_FUN_0040c6d0(item,"CKeyActor"), iVar11 != 0)) {
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(item,"CGun");
+    if ((iVar1 != 0) ||
+       (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(item,"CKeyActor"), iVar1 != 0)) {
       local_14 = local_14 * (float)2;
     }
     local_44.z = (int)(-local_14 * (float)2);
     local_44.x = 0;
     local_44.y = 0;
-    local_18 = (float)local_44.z;
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
               (g_CDemonRendererPtr2,&local_44);
     engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr2,36.0);
@@ -94,19 +91,19 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004fee00(CInventory *th
     local_2c.x = 0;
     local_2c.z = 0;
     local_2c.y = rotation_y;
-    iVar11 = core_actor_cpp_isOfClass_FUN_0040c6d0(item,"CKeyActor");
-    if (iVar11 != 0) {
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(item,"CKeyActor");
+    if (iVar1 != 0) {
       local_2c.x = (int)((float)local_2c.x + 1.570796f);
     }
     pCVar14 = (CMelee *)core_actor_cpp_castToClassHash_FUN_0040c790(item,g_CMeleeClassInfo.name_hash);
     if (pCVar14 != (CDemonActor *)0x0) {
-      iVar11 = _stricmp(pCVar14[1].create_event,"axe1.kfm");
-      if (iVar11 == 0) {
+      iVar1 = _stricmp(pCVar14[1].create_event,"axe1.kfm");
+      if (iVar1 == 0) {
         local_2c.x = (int)((float)local_2c.x + -1.570796f);
         local_2c.z = (int)((float)local_2c.z + -1.570796f);
       }
-      iVar11 = _stricmp(pCVar14[1].create_event,"ax.kfm");
-      if (iVar11 == 0) {
+      iVar1 = _stricmp(pCVar14[1].create_event,"ax.kfm");
+      if (iVar1 == 0) {
         local_2c.x = (int)((float)local_2c.x + -1.570796f);
         local_2c.z = (int)((float)local_2c.z + -1.570796f);
       }

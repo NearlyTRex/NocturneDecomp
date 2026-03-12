@@ -6,7 +6,7 @@
 ; Parameters:
 ; UINT             Stack[0x4]:4   device_id
 ; Local Variables:
-; undefined1       Stack[-0x34]:1  local_34
+; tagWAVEOUTCAPSA  Stack[-0x34]:52  local_34
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_initializeSoundDevice_FUN_005ab5b0 at 005ab5f7
@@ -18,7 +18,6 @@
 ;
 ; Called Functions:
 ;   sound_sndwav.cpp_CWavOutDevice_close_FUN_005b0840
-;   waveOutGetDevCapsA
 ;
 ; *****************************************************************************
 

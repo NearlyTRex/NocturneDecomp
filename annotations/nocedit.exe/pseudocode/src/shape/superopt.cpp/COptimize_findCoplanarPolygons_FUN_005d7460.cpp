@@ -9,12 +9,11 @@
 void __cdecl shape_superopt_cpp_COptimize_findCoplanarPolygons_FUN_005d7460(COptimize *this_ptr,CPoly *polygon,COptimize *search_obj)
 
 {
-  byte *pbVar1;
-  double dVar2;
-  double dVar3;
-  bool bVar4;
+  double dVar1;
   int iVar5;
   int iVar6;
+  int iVar2;
+  int iVar3;
   int iVar7;
   int iVar8;
   uint uVar9;
@@ -24,6 +23,10 @@ void __cdecl shape_superopt_cpp_COptimize_findCoplanarPolygons_FUN_005d7460(COpt
   uint uStack_24;
   int iStack_1c;
   int iStack_14;
+  double dVar2;
+  double dVar3;
+  bool bVar4;
+  byte *pbVar1;
   
   pbVar1 = (byte *)((int)&polygon->flags + 1);
   *pbVar1 = *pbVar1 | 0x20;
@@ -50,8 +53,8 @@ void __cdecl shape_superopt_cpp_COptimize_findCoplanarPolygons_FUN_005d7460(COpt
                   *(double *)(iVar8 + 0x50) * *(double *)(iVar7 + 0x50) +
                   *(double *)(iVar8 + 0x40) * *(double *)(iVar7 + 0x40) +
                   *(double *)(iVar8 + 0x48) * *(double *)(iVar7 + 0x48))) {
-                dStack_40 = (double)(**(code **)(*(int *)(iVar8 + 100) + 0x84))(iVar8);
-                dStack_40 = dStack_40 - dVar3;
+                dVar1 = (double)(**(code **)(*(int *)(iVar8 + 100) + 0x84))(iVar8);
+                dStack_40 = dVar1 - dVar3;
                 if (dStack_40 < 0.0) {
                   dStack_40 = -dStack_40;
                 }
@@ -61,16 +64,16 @@ void __cdecl shape_superopt_cpp_COptimize_findCoplanarPolygons_FUN_005d7460(COpt
                   if ((search_obj->base).poly_count != 0) {
                     iStack_14 = 0;
                     do {
-                      iVar5 = (int)&((CPoly *)(((search_obj->base).poly_array)->uv_coords + -1))->
+                      iVar3 = (int)&((CPoly *)(((search_obj->base).poly_array)->uv_coords + -1))->
                                     parent_obj + iStack_14;
-                      if ((((*(byte *)(iVar5 + 0x61) & 0x80) == 0) &&
-                          ((*(byte *)(iVar5 + 0x61) & 0x20) != 0)) &&
-                         ((iVar6 = (**(code **)(*(int *)(iVar8 + 100) + 0x7c))(iVar8,iVar5),
+                      if ((((*(byte *)(iVar3 + 0x61) & 0x80) == 0) &&
+                          ((*(byte *)(iVar3 + 0x61) & 0x20) != 0)) &&
+                         ((iVar6 = (**(code **)(*(int *)(iVar8 + 100) + 0x7c))(iVar8,iVar3),
                           iVar6 != 0 ||
-                          ((iVar6 = (**(code **)(*(int *)(iVar8 + 100) + 0x78))(iVar8,iVar5),
-                           iVar6 != 0 ||
-                           (iVar5 = (**(code **)(*(int *)(iVar8 + 100) + 0x80))(iVar8,iVar5),
-                           iVar5 != 0)))))) break;
+                          ((iVar2 = (**(code **)(*(int *)(iVar8 + 100) + 0x78))(iVar8,iVar3),
+                           iVar2 != 0 ||
+                           (iVar3 = (**(code **)(*(int *)(iVar8 + 100) + 0x80))(iVar8,iVar3),
+                           iVar3 != 0)))))) break;
                       iStack_14 = iStack_14 + 0x68;
                       uVar9 = uVar9 + 1;
                     } while (uVar9 < (uint)(search_obj->base).poly_count);

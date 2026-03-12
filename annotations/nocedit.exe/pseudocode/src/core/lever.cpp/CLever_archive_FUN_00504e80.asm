@@ -6,8 +6,7 @@
 ; Parameters:
 ; CLever *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xd4]:1  local_d4
-; undefined1       Stack[-0xd3]:1  local_d3
+; char[200]        Stack[-0xd4]:200  local_d4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_006310c0

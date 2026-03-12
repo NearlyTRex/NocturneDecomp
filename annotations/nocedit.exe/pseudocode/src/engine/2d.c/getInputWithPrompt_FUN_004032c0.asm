@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   y
 ; char *           Stack[0x14]:4   prompt
 ; Local Variables:
-; undefined1       Stack[-0x114]:1  local_114
+; char[256]        Stack[-0x114]:256  local_114
 ; _BIT_INTEGER32   Stack[-0x14]:4  local_14
 ;
 ; XREF[42]:

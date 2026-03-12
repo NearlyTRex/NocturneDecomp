@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   base
 ; Local Variables:
 ; undefined1       Stack[-0x38]:1  local_38
-; undefined1       Stack[-0x37]:1  local_37
-; undefined4       Stack[-0x14]:4  local_14
+; char[35]         Stack[-0x37]:35  local_37
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   crt_stdio.c_IntegerToString_FUN_00607d18 at 00607d3b

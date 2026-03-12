@@ -7,10 +7,8 @@
 ; CTextureList *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x114]:1  local_114
-; undefined1       Stack[-0x113]:1  local_113
-; undefined1       Stack[-0x111]:1  local_111
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x114]:256  local_114
+; _FILE *          Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_texlist_cpp_00654f54

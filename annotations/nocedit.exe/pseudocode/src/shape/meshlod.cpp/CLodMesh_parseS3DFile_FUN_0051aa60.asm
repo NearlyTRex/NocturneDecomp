@@ -7,16 +7,16 @@
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined        Stack[-0x234]:1  local_234
-; undefined        Stack[-0x130]:1  local_130
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined        Stack[-0x28]:1  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined        Stack[-0x20]:1  local_20
-; undefined        Stack[-0x1c]:1  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[260]        Stack[-0x234]:260  local_234
+; char[256]        Stack[-0x130]:256  local_130
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; undefined1[4]    Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; undefined1[4]    Stack[-0x20]:4  local_20
+; undefined1[4]    Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_meshlod.cpp_CLodMesh_importFromFile_FUN_0051a9d0 at 0051aa12

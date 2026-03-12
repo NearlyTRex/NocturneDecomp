@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDeformableModel * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; SMRGLTextureBasic * Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460 at 0059d4ac

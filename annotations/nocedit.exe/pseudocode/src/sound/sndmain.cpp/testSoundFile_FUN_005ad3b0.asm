@@ -6,11 +6,11 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   sample_name
 ; Local Variables:
-; undefined1       Stack[-0x170]:1  local_170
-; undefined1       Stack[-0x16f]:1  local_16f
-; undefined4       Stack[-0x60]:4  local_60
-; undefined8       Stack[-0x20]:8  local_20
-; undefined4       Stack[-0x18]:4  local_18
+; char[272]        Stack[-0x170]:272  local_170
+; int              Stack[-0x60]:4  local_60
+; double           Stack[-0x20]:8  local_20
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0 at 005adb55

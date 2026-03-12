@@ -11,8 +11,8 @@
 void __cdecl core_game_cpp_drawHealthBar_FUN_004d7fa0(int x1,int y1,int x2,int y2,float fill_percent)
 
 {
-  int iVar1;
   int color;
+  int iVar1;
   
   color = 2;
   if (fill_percent < (float)0.59999999999999998) {

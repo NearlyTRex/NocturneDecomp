@@ -11,13 +11,16 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodMounts_FUN_004bcec0(CFileMa
 {
   char *pcVar1;
   int iVar2;
+  char *pcVar2;
   int iVar3;
   int iVar4;
-  char *format;
+  int iVar5;
+  int initial_selected_index;
   CPickList local_5d8;
   char local_230 [512];
   CStrList local_30;
   CStrList local_20;
+  char *format;
   
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_20);
   shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
@@ -30,47 +33,49 @@ void __cdecl engine_fileio_cpp_CFileManager_managePodMounts_FUN_004bcec0(CFileMa
       pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_30,iVar4);
       iVar2 = engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0(this_ptr,&local_20,pcVar1);
       if (iVar2 < 0) {
-        pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_30,iVar4);
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_20,pcVar1);
+        pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_30,iVar4);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_20,pcVar2);
       }
       iVar4 = iVar4 + 1;
     } while (iVar4 < local_30.item_count);
   }
-  iVar4 = 0;
+  initial_selected_index = 0;
   while( true ) {
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_5d8);
     shape_edittool_cpp_CPickList_setOkButtonText_FUN_004a3d20(&local_5d8,(char *)0x0);
     shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90(&local_5d8,"Close");
-    iVar2 = 0;
+    iVar5 = 0;
     if (0 < local_20.item_count) {
       do {
-        pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,iVar2);
-        iVar3 = engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0(this_ptr,&local_30,pcVar1)
+        pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,iVar5);
+        iVar3 = engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0(this_ptr,&local_30,pcVar2)
         ;
         if (iVar3 < 0) {
-          pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,iVar2);
+          pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,iVar5);
           format = "%s\tNot mounted";
         }
         else {
-          pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,iVar2);
+          pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,iVar5);
           format = "%s\tMounted";
         }
-        _sprintf(local_230,format,pcVar1);
+        _sprintf(local_230,format,pcVar2);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5d8.base,local_230);
-        iVar2 = iVar2 + 1;
-      } while (iVar2 < local_20.item_count);
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < local_20.item_count);
     }
-    iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                      (&local_5d8,"Select PODs you wish to have mounted",iVar4,0);
-    if (iVar4 < 0) break;
-    pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,iVar4);
-    iVar2 = engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0(this_ptr,&local_30,pcVar1);
-    if (iVar2 < 0) {
-      pcVar1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,iVar4);
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_30,pcVar1);
+    initial_selected_index =
+         shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                   (&local_5d8,"Select PODs you wish to have mounted",initial_selected_index,0);
+    if (initial_selected_index < 0) break;
+    pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_20,initial_selected_index);
+    iVar5 = engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0(this_ptr,&local_30,pcVar2);
+    if (iVar5 < 0) {
+      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
+                         (&local_20,initial_selected_index);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_30,pcVar2);
     }
     else {
-      shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(&local_30,iVar2);
+      shape_edittool_cpp_CStrList_removeAt_FUN_004a2de0(&local_30,iVar5);
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_5d8,0);
   }

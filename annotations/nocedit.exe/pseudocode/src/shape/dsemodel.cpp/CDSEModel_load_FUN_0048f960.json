@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 68,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 15,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 44,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 133
+    "total_lines": 134
   },
   "cross_references": [
     {
@@ -206,7 +206,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -220,15 +220,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 23,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "*(char *)((int)pSVar5 + 1) = cVar1;",
+      "text": "*(char *)((int)pSVar5 + 1) = cVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 24,
       "match": "(SModelPartName *)((int)",
       "severity": "mild",
       "text": "pSVar5 = (SModelPartName *)((int)pSVar5 + 2);",

@@ -7,7 +7,7 @@
 ; CWeapon *        Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   drop_position
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; CVector3f        Stack[-0x14]:12  local_14
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030

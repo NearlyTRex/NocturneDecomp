@@ -9,8 +9,8 @@
 double __cdecl shape_superopt_cpp_CPoly_computePlaneDistance_FUN_005d1fa0(CPoly *this_ptr)
 
 {
-  int iVar1;
   CVert *pCVar2;
+  int iVar1;
   
   iVar1 = this_ptr->vertex_idx_0;
   pCVar2 = this_ptr->parent_obj->vertex_data;

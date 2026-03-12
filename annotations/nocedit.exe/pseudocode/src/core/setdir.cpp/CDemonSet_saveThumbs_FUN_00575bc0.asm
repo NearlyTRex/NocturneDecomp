@@ -8,6 +8,13 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
+; CVector3f        Stack[-0x5c]:12  CStack_5c
+; CVector3f        Stack[-0x50]:12  CStack_50
+; CVector3f        Stack[-0x44]:12  CStack_44
+; CVector3f        Stack[-0x38]:12  CStack_38
+; CVector3f        Stack[-0x2c]:12  CStack_2c
+; CVector3f        Stack[-0x20]:12  CStack_20
+; CVector3f        Stack[-0x14]:12  CStack_14
 ;
 ; XREF[2]:
 ;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00575b40 at 00575b7f

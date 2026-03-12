@@ -7,6 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   light_index
 ; Local Variables:
+; undefined4[1443] Stack[-0x1838]:5772  auStackY_1838
 ; undefined8       Stack[-0x1a4]:8  local_1a4
 ; undefined8       Stack[-0x19c]:8  local_19c
 ; undefined8       Stack[-0x194]:8  local_194
@@ -14,23 +15,23 @@
 ; undefined8       Stack[-0x184]:8  local_184
 ; undefined8       Stack[-0x17c]:8  local_17c
 ; char[256]        Stack[-0x174]:256  local_174
-; undefined1       Stack[-0x74]:1  local_74
-; undefined1       Stack[-0x5c]:1  local_5c
-; undefined4       Stack[-0x4c]:4  local_4c
+; CVector3f[2]     Stack[-0x74]:24  local_74
+; CRect            Stack[-0x5c]:16  local_5c
+; uint             Stack[-0x4c]:4  local_4c
 ; int              Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; C3DSCamera *     Stack[-0x44]:4  local_44
+; int              Stack[-0x40]:4  local_40
+; CDemonSet *      Stack[-0x3c]:4  local_3c
+; C3DSLight *      Stack[-0x38]:4  local_38
+; C3DSLight *      Stack[-0x34]:4  local_34
+; CDemonSet *      Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; CDemonSet *      Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538762

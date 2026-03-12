@@ -9,10 +9,10 @@
 void __cdecl core_fire_cpp_CCrater_save_FUN_004c49c0(CCrater *this_ptr,_FILE *file_handle)
 
 {
-  CVector3f *pCVar1;
-  CVector3f *pCVar2;
-  CVector3f *pCVar3;
   CCrater *pCVar4;
+  CVector3f *pCVar2;
+  CVector3f *pCVar1;
+  CVector3f *pCVar3;
   
   _fprintf(file_handle,"%d,%d,%f,%f\n",this_ptr->active,this_ptr->has_smoke,
              (double)this_ptr->smoke_delay,(double)this_ptr->smoke_spawn_timer);

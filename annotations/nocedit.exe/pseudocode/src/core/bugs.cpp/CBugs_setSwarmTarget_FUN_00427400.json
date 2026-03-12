@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 66,
-        "line": 51,
+        "line": 55,
         "message": "format specifies type 'char *' but the argument has type 'CBugs *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 75,
-        "line": 51,
+        "line": 55,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       }
     ],
@@ -19,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 198,
+    "complexity_score": 202,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 103,
+    "pseudocode_lines": 107,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 341
+    "total_lines": 345
   },
   "cross_references": [
     {
@@ -238,7 +238,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 60,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_BugsSortedVertexIndices + iVar9) = iVar6;",
@@ -246,47 +246,47 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "if (*(int *)(*(int *)((int)g_BugsSortedVertexIndices + iVar9 + 4) * 0xc + 4 + iVar1) <",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)(*(int *)((int)g_BugsSortedVertexIndices + iVar9) * 0xc + 4 + iVar1)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "puVar8 = (uint *)((int)g_BugsSortedVertexIndices + iVar9 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 68,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)((int)g_BugsSortedVertexIndices + iVar9);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 69,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if (*(int *)(*(int *)((int)g_BugsSortedVertexIndices + iVar11 + 4) * 0xc + 4 + iVar2)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "< *(int *)(*(int *)((int)g_BugsSortedVertexIndices + iVar11) * 0xc + 4 + iVar2)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_BugsSortedVertexIndices + iVar9) = *puVar8;",
+      "text": "puVar8 = (uint *)((int)g_BugsSortedVertexIndices + iVar11 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "uVar2 = *(uint *)((int)g_BugsSortedVertexIndices + iVar11);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)g_BugsSortedVertexIndices + iVar11) = *puVar8;",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 87,
+      "line": 91,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "(0,(int)(CONCAT44(this_ptr->swarm_vertex_count >> 0x1f,",

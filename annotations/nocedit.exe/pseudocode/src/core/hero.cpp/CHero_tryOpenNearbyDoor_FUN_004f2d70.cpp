@@ -9,17 +9,18 @@
 int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70(CHero *this_ptr)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
   CDoor *this_ptr_00;
   CVector3f *pCVar5;
   int iVar6;
+  int iVar1;
   int iVar7;
   CVector3f local_24;
   int local_18;
   int local_14;
+  float fVar4;
+  float fVar3;
+  float fVar2;
+  float fVar1;
   
   iVar7 = 0;
   local_14 = 0;
@@ -45,15 +46,14 @@ int __cdecl core_hero_cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70(CHero *this_ptr)
         if (iVar6 != 0) {
           return 1;
         }
-        local_18 = core_door_cpp_CDoor_getMoveType_FUN_00481070(this_ptr_00,(CDemonActor *)this_ptr)
-        ;
-        if (local_18 != 0) {
-          if (local_18 == 1) {
+        iVar1 = core_door_cpp_CDoor_getMoveType_FUN_00481070(this_ptr_00,(CDemonActor *)this_ptr);
+        if (iVar1 != 0) {
+          if (iVar1 == 1) {
             core_door_cpp_CDoor_onOpened_FUN_0047fcf0(this_ptr_00);
-            return local_18;
+            return 1;
           }
           this_ptr->door_to_open = this_ptr_00;
-          return local_18;
+          return iVar1;
         }
       }
     }

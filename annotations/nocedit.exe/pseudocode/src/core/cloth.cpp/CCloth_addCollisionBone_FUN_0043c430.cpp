@@ -9,22 +9,25 @@
 void __cdecl core_cloth_cpp_CCloth_addCollisionBone_FUN_0043c430(CCloth *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
   CSkeleton *pCVar2;
   CSkeleton *pCVar3;
+  int iVar3;
   char *pcVar4;
   int iVar5;
   SBone *string_data;
   int iVar6;
   SClothBone *pSVar7;
+  double dVar4;
+  double dVar5;
   CPickList local_4cc;
   char local_124 [256];
   double local_24;
   float local_1c;
   float local_18;
   int local_14;
+  char cVar1;
   
-  local_14 = 0;
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                      (&g_CDeformableModelInstanceInstance);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -49,40 +52,34 @@ void __cdecl core_cloth_cpp_CCloth_addCollisionBone_FUN_0043c430(CCloth *this_pt
       string_data = string_data + 1;
     } while (iVar6 < pCVar2->bone_count);
   }
-  iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+  iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                     (&local_4cc,"Select bone to add",-1,0);
-  if (-1 < iVar6) {
-    pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_4cc.base,iVar6);
-    iVar6 = local_14;
+  if (-1 < iVar3) {
+    pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_4cc.base,iVar3);
     pSVar7 = this_ptr->collide_bones + this_ptr->collide_bone_count;
     do {
       cVar1 = *pcVar4;
       pSVar7->name[0] = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar4[1];
+      cVar2 = pcVar4[1];
       pcVar4 = pcVar4 + 2;
-      pSVar7->name[1] = cVar1;
+      pSVar7->name[1] = cVar2;
       pSVar7 = (SClothBone *)(pSVar7->name + 2);
-    } while (cVar1 != '\0');
-    engine_2d_c_getInputWithPrompt_FUN_004032c0
-              (local_124,10,0,local_14,"Enter in X radius : ");
-    local_24 = _strtod(local_124);
-    local_1c = (float)local_24;
-    local_14 = iVar6 + 0xb;
-    engine_2d_c_getInputWithPrompt_FUN_004032c0
-              (local_124,10,0,local_14,"Enter in Y radius : ");
-    local_24 = _strtod(local_124);
-    local_18 = (float)local_24;
-    this_ptr->collide_bones[this_ptr->collide_bone_count].radius1 = local_1c;
-    this_ptr->collide_bones[this_ptr->collide_bone_count].radius2 = local_18;
-    iVar6 = this_ptr->collide_bone_count;
-    this_ptr->collide_bones[iVar6].euler1.z = 0.0;
-    this_ptr->collide_bones[iVar6].euler1.y = this_ptr->collide_bones[iVar6].euler1.z;
-    this_ptr->collide_bones[iVar6].euler1.x = this_ptr->collide_bones[iVar6].euler1.y;
-    iVar6 = this_ptr->collide_bone_count;
-    this_ptr->collide_bones[iVar6].euler2.z = 0.0;
-    this_ptr->collide_bones[iVar6].euler2.y = this_ptr->collide_bones[iVar6].euler2.z;
-    this_ptr->collide_bones[iVar6].euler2.x = this_ptr->collide_bones[iVar6].euler2.y;
+    } while (cVar2 != '\0');
+    engine_2d_c_getInputWithPrompt_FUN_004032c0(local_124,10,0,0,"Enter in X radius : ");
+    dVar4 = _strtod(local_124);
+    engine_2d_c_getInputWithPrompt_FUN_004032c0(local_124,10,0,0xb,"Enter in Y radius : ");
+    dVar5 = _strtod(local_124);
+    this_ptr->collide_bones[this_ptr->collide_bone_count].radius1 = (float)dVar4;
+    this_ptr->collide_bones[this_ptr->collide_bone_count].radius2 = (float)dVar5;
+    iVar3 = this_ptr->collide_bone_count;
+    this_ptr->collide_bones[iVar3].euler1.z = 0.0;
+    this_ptr->collide_bones[iVar3].euler1.y = this_ptr->collide_bones[iVar3].euler1.z;
+    this_ptr->collide_bones[iVar3].euler1.x = this_ptr->collide_bones[iVar3].euler1.y;
+    iVar3 = this_ptr->collide_bone_count;
+    this_ptr->collide_bones[iVar3].euler2.z = 0.0;
+    this_ptr->collide_bones[iVar3].euler2.y = this_ptr->collide_bones[iVar3].euler2.z;
+    this_ptr->collide_bones[iVar3].euler2.x = this_ptr->collide_bones[iVar3].euler2.y;
     this_ptr->collide_bones[this_ptr->collide_bone_count].length = 0.0;
     this_ptr->collide_bone_count = this_ptr->collide_bone_count + 1;
   }

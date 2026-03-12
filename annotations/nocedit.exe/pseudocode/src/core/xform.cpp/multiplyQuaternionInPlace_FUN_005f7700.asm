@@ -7,7 +7,8 @@
 ; CQuaternion4f *  Stack[0x4]:4   quat1_inout
 ; CQuaternion4f *  Stack[0x8]:4   quat2_ptr
 ; Local Variables:
-; undefined        Stack[-0x1c]:1  local_1c
+; float[1525]      Stack[-0x17f8]:6100  afStackY_17f8
+; CQuaternion4f    Stack[-0x1c]:16  local_1c
 ;
 ; Called Functions:
 ;   core_xform.cpp_multiplyQuaternion_FUN_005f7640

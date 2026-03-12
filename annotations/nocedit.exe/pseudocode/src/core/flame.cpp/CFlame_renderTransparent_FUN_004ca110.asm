@@ -6,7 +6,42 @@
 ; Parameters:
 ; CFlame *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xf4]:1  local_f4
+; undefined4[973]  Stack[-0x1088]:3892  auStackY_1088
+; SMRGLHeaderPrimitive Stack[-0x144]:24  SStack_144
+; undefined4       Stack[-0x12c]:4  uStack_12c
+; undefined4       Stack[-0x128]:4  uStack_128
+; undefined4       Stack[-0x124]:4  uStack_124
+; undefined4       Stack[-0x120]:4  uStack_120
+; SMRGLHeaderPrimitive Stack[-0x11c]:24  SStack_11c
+; undefined4       Stack[-0x104]:4  uStack_104
+; undefined4       Stack[-0x100]:4  uStack_100
+; undefined4       Stack[-0xfc]:4  uStack_fc
+; undefined4       Stack[-0xf8]:4  uStack_f8
+; CBoundingBox3D   Stack[-0xf4]:24  local_f4
+; CVector3i        Stack[-0xdc]:12  CStack_dc
+; CVector3i        Stack[-0xd0]:12  CStack_d0
+; CVector3i        Stack[-0xc4]:12  CStack_c4
+; CVector3i        Stack[-0xb8]:12  CStack_b8
+; CVector3i        Stack[-0xac]:12  CStack_ac
+; CVector3i        Stack[-0xa0]:12  CStack_a0
+; CVector3i        Stack[-0x94]:12  CStack_94
+; CVector3i        Stack[-0x88]:12  CStack_88
+; float            Stack[-0x7c]:4  fStack_7c
+; float            Stack[-0x78]:4  fStack_78
+; float            Stack[-0x74]:4  fStack_74
+; CVector3i        Stack[-0x70]:12  CStack_70
+; CVector3i        Stack[-0x64]:12  CStack_64
+; CVector3i        Stack[-0x58]:12  CStack_58
+; float            Stack[-0x4c]:4  fStack_4c
+; float            Stack[-0x48]:4  fStack_48
+; float            Stack[-0x44]:4  fStack_44
+; CVector3i        Stack[-0x40]:12  CStack_40
+; CVector3i        Stack[-0x34]:12  CStack_34
+; CVector3i        Stack[-0x28]:12  CStack_28
+; float            Stack[-0x1c]:4  fStack_1c
+; int              Stack[-0x18]:4  iStack_18
+; int              Stack[-0x14]:4  iStack_14
+; float            Stack[-0x10]:4  fStack_10
 ;
 ; XREF[4]:
 ;   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740 at 004197dd

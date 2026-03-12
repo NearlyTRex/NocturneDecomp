@@ -9,6 +9,7 @@
 int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450fc0(CDemonCamera *this_ptr,CDemonLight *light_source)
 
 {
+  int iVar1;
   uint *puVar1;
   int *piVar2;
   int iVar3;
@@ -23,10 +24,10 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450f
     local_18 = light_source->corona_depth_buffer;
     local_14 = light_source->corona_visibility_buffers;
     do {
-      iVar3 = light_source->left_extent[0];
-      puVar1 = (uint *)(local_14 + iVar3);
-      piVar2 = local_18 + iVar3;
-      for (iVar3 = (light_source->right_extent[0] - iVar3) + 1; 0 < iVar3; iVar3 = iVar3 + -1) {
+      iVar1 = light_source->left_extent[0];
+      puVar1 = (uint *)(local_14 + iVar1);
+      piVar2 = local_18 + iVar1;
+      for (iVar3 = (light_source->right_extent[0] - iVar1) + 1; 0 < iVar3; iVar3 = iVar3 + -1) {
         if ((*puVar1 != 0) && (*puVar1 < (uint)*(ushort *)*piVar2)) {
           iVar4 = iVar4 + 1;
         }

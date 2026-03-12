@@ -6,7 +6,10 @@
 ; Parameters:
 ; HWND             Stack[0x4]:4   parent_window
 ; Local Variables:
-; undefined        Stack[-0x24]:1  local_24
+; byte             Stack[-0xa4]:1  bStack_a4
+; byte[127]        Stack[-0xa3]:127  abStack_a3
+; tagRECT          Stack[-0x24]:16  local_24
+; tagRECT          Stack[-0x14]:16  tStack_14
 ;
 ; Referenced Globals:
 ;   MCI_SEND_STRING_A_FUNC* g_mciSendStringAFunc = 00211850

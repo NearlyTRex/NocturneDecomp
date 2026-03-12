@@ -7,54 +7,55 @@
 ; CChain *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0xf0]:4  local_f0
-; undefined4       Stack[-0xec]:4  local_ec
-; undefined1       Stack[-0xe8]:1  local_e8
+; float            Stack[-0xf0]:4  local_f0
+; float            Stack[-0xec]:4  local_ec
+; CVector3f        Stack[-0xe8]:12  local_e8
 ; undefined4       Stack[-0xdc]:4  local_dc
-; undefined4       Stack[-0xd8]:4  local_d8
+; float            Stack[-0xd8]:4  local_d8
 ; undefined4       Stack[-0xd4]:4  local_d4
-; undefined4       Stack[-0xd0]:4  local_d0
-; undefined4       Stack[-0xcc]:4  local_cc
-; undefined4       Stack[-0xc8]:4  local_c8
-; undefined4       Stack[-0xc4]:4  local_c4
-; undefined4       Stack[-0xc0]:4  local_c0
-; undefined4       Stack[-0xbc]:4  local_bc
-; undefined4       Stack[-0xb8]:4  local_b8
-; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined1       Stack[-0xac]:1  local_ac
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined1       Stack[-0x70]:1  local_70
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
+; float            Stack[-0xd0]:4  local_d0
+; float            Stack[-0xcc]:4  local_cc
+; float            Stack[-0xc8]:4  local_c8
+; float            Stack[-0xc4]:4  local_c4
+; float            Stack[-0xc0]:4  local_c0
+; float            Stack[-0xbc]:4  local_bc
+; float            Stack[-0xb8]:4  local_b8
+; float            Stack[-0xb4]:4  local_b4
+; float            Stack[-0xb0]:4  local_b0
+; CVector3f        Stack[-0xac]:12  local_ac
+; float            Stack[-0xa0]:4  local_a0
+; float            Stack[-0x9c]:4  local_9c
+; float            Stack[-0x98]:4  local_98
+; float            Stack[-0x94]:4  local_94
+; float            Stack[-0x90]:4  local_90
+; float            Stack[-0x8c]:4  local_8c
+; float            Stack[-0x88]:4  local_88
+; float            Stack[-0x84]:4  local_84
+; float            Stack[-0x80]:4  local_80
+; float            Stack[-0x7c]:4  local_7c
+; float            Stack[-0x78]:4  local_78
+; float            Stack[-0x74]:4  local_74
+; CVector3f        Stack[-0x70]:12  local_70
+; float            Stack[-0x64]:4  local_64
+; float            Stack[-0x60]:4  local_60
+; float            Stack[-0x5c]:4  local_5c
+; SChainVertex *   Stack[-0x58]:4  local_58
+; int              Stack[-0x54]:4  local_54
+; int              Stack[-0x50]:4  local_50
+; SChainVertex *   Stack[-0x4c]:4  local_4c
+; SChainVertex *   Stack[-0x48]:4  local_48
+; float            Stack[-0x44]:4  local_44
+; float *          Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; SChainVertex *   Stack[-0x38]:4  local_38
+; SChainVertex *   Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; SChainVertex *   Stack[-0x2c]:4  local_2c
+; CVector3f *      Stack[-0x28]:4  local_28
+; SChainVertex *   Stack[-0x24]:4  local_24
+; SChainVertex *   Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; Referenced Globals:
 ;   float FLOAT_006177d2 = -9900

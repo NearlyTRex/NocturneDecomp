@@ -9,7 +9,6 @@
 void __cdecl shape_design_c_removeUnusedVertices_FUN_00463830(void)
 
 {
-  int iVar1;
   void *dest;
   uint *puVar2;
   uint *puVar3;
@@ -19,6 +18,7 @@ void __cdecl shape_design_c_removeUnusedVertices_FUN_00463830(void)
   int local_2c;
   int local_24;
   int local_1c;
+  int iVar1;
   
   bVar6 = 0;
   if (0 < g_VertexCount) {

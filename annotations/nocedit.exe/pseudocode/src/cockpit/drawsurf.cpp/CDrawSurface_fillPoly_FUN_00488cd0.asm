@@ -8,15 +8,17 @@
 ; int              Stack[0x8]:4   vertex_count
 ; SPoint2i *       Stack[0xc]:4   vertices
 ; Local Variables:
-; undefined4       Stack[-0xdc]:4  local_dc
-; undefined        Stack[-0x3c]:1  local_3c
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int[1483]        Stack[-0x1818]:5932  aiStackY_1818
+; int              Stack[-0xdc]:4  local_dc
+; int[39]          Stack[-0xd8]:156  aiStack_d8
+; undefined4       Stack[-0x3c]:4  local_3c
+; int[4]           Stack[-0x38]:16  aiStack_38
+; SPoint2i *       Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_drawsurf_cpp_00621e74

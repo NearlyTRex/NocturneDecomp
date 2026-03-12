@@ -4,7 +4,7 @@
 ; void __cdecl engine_clipper_c_clipPolygonLeftPlaneGlobal_FUN_00437700(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004376e8 = 00437761

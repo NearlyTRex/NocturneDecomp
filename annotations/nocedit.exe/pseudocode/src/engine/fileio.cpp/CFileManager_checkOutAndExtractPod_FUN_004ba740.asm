@@ -9,21 +9,17 @@
 ; _FILE *          Stack[0xc]:4   optional_pod_file
 ; Local Variables:
 ; undefined        Stack[-0x69c]:1  local_69c
-; undefined        Stack[-0x4a8]:1  local_4a8
-; undefined1       Stack[-0x4a7]:1  local_4a7
-; undefined        Stack[-0x3a4]:1  local_3a4
-; undefined1       Stack[-0x3a3]:1  local_3a3
-; undefined        Stack[-0x340]:1  local_340
-; undefined1       Stack[-0x33f]:1  local_33f
-; undefined        Stack[-0x23c]:1  local_23c
-; undefined1       Stack[-0x23b]:1  local_23b
-; undefined        Stack[-0x138]:1  local_138
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined        Stack[-0x14]:1  local_14
+; CCheckOutItem    Stack[-0x4a8]:360  local_4a8
+; char[8]          Stack[-0x340]:8  local_340
+; char[252]        Stack[-0x338]:252  acStack_338
+; char[260]        Stack[-0x23c]:260  local_23c
+; char[264]        Stack[-0x138]:264  local_138
+; undefined1[8]    Stack[-0x30]:8  auStack_30
+; CCheckOutList    Stack[-0x28]:8  local_28
+; CStrList_vtable * Stack[-0x20]:4  local_20
+; CCheckOutItem *  Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; char[4]          Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   SLEEP_FUNC* g_SleepFunc = 00212228

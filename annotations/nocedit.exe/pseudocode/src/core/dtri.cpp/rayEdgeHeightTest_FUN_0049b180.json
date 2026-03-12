@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 59,
+    "complexity_score": 62,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 37,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 184
+    "total_lines": 187
   },
   "cross_references": [
     {
@@ -212,18 +212,18 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 23,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar4 = (-fVar1 - SQRT(fVar3)) / (fVar2 * (float)2);",
+      "text": "fVar7 = (-fVar5 - SQRT(fVar6)) / (fVar2 * (float)2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 27,
+      "line": 30,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar1 = (SQRT(fVar3) - fVar1) / (fVar2 * (float)2);",
+      "text": "fVar5 = (SQRT(fVar6) - fVar5) / (fVar2 * (float)2);",
       "type": "decompiler_intrinsic"
     }
   ]

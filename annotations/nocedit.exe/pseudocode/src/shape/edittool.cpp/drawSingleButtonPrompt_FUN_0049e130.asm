@@ -8,12 +8,12 @@
 ; char *           Stack[0x8]:4   message
 ; int              Stack[0xc]:4   color
 ; Local Variables:
-; undefined1       Stack[-0x108]:1  local_108
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CEdButton        Stack[-0x108]:228  local_108
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 0049e777

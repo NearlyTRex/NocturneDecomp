@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; Local Variables:
-; undefined        Stack[-0x100]:1  local_100
+; char[256]        Stack[-0x100]:256  local_100
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_0064fa53

@@ -6,7 +6,7 @@
 ; Parameters:
 ; CVampireBoss *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
+; float            Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[1]:

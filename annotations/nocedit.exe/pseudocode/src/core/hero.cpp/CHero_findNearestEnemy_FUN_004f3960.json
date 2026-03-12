@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 75,
+    "complexity_score": 81,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 60,
+    "pseudocode_lines": 66,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 199
+    "total_lines": 205
   },
   "cross_references": [
     {
@@ -173,25 +173,60 @@
     "pcode_op_count": 622
   },
   "stack_frame": {
-    "frame_size": 40,
-    "local_size": 32,
+    "frame_size": 180,
+    "local_size": 172,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "aCStack_a8",
+        "offset": -168,
+        "size": 120,
+        "type": "CVector3f[10]"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_30",
+        "offset": -48,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "CEnemy *"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CLocation *"
       },
       {
         "is_param": true,
@@ -229,7 +264,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 67,
       "match": "SQRT",
       "severity": "mild",
       "text": "*out_distance = SQRT(*out_distance);",

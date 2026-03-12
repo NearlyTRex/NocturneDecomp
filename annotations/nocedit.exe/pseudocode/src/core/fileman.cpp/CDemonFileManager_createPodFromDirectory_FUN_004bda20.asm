@@ -7,22 +7,15 @@
 ; CDemonFileManager * Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined1       Stack[-0x799]:1  local_799
-; undefined1       Stack[-0x798]:1  local_798
-; undefined1       Stack[-0x797]:1  local_797
-; undefined1       Stack[-0x598]:1  local_598
-; undefined1       Stack[-0x3a5]:1  local_3a5
-; undefined1       Stack[-0x3a4]:1  local_3a4
-; undefined1       Stack[-0x3a3]:1  local_3a3
-; undefined1       Stack[-0x2a5]:1  local_2a5
-; undefined1       Stack[-0x2a4]:1  local_2a4
-; undefined1       Stack[-0x2a3]:1  local_2a3
-; undefined1       Stack[-0x1a4]:1  local_1a4
-; undefined1       Stack[-0x140]:1  local_140
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined1       Stack[-0xdb]:1  local_db
-; undefined1       Stack[-0x78]:1  local_78
-; undefined1       Stack[-0x77]:1  local_77
-; undefined4       Stack[-0x14]:4  local_14
+; char[512]        Stack[-0x798]:512  local_798
+; char[499]        Stack[-0x598]:499  local_598
+; char[256]        Stack[-0x3a5]:256  local_3a5
+; char[257]        Stack[-0x2a5]:257  local_2a5
+; char[100]        Stack[-0x1a4]:100  local_1a4
+; char[100]        Stack[-0x140]:100  local_140
+; char[100]        Stack[-0xdc]:100  local_dc
+; char[100]        Stack[-0x78]:100  local_78
+; _FILE *          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be467

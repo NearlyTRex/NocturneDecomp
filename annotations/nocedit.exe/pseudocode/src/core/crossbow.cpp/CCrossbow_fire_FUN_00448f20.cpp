@@ -9,13 +9,18 @@
 int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
 
 {
-  CDemonActor *actor;
-  CDemonSet *this_ptr_00;
+  float fVar1;
+  float fVar2;
+  float fVar3;
   CVector3f *pCVar1;
   int iVar2;
+  float fVar4;
   CCharacter *this_ptr_01;
   EDeathState EVar3;
+  CGlass *this_ptr_03;
   CTrigger *this_ptr_02;
+  int iVar5;
+  CVector3f *pCVar6;
   float fStack_f8;
   SDamageInfo SStack_f4;
   float fStack_b8;
@@ -46,6 +51,8 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
   float fStack_1c;
   CGlass *pCStack_18;
   float fStack_14;
+  CDemonActor *actor;
+  CDemonSet *this_ptr_00;
   
   pCVar1 = (*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,&local_4c);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
@@ -62,13 +69,10 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
   CStack_7c.x = CStack_70.x + CStack_a0.x;
   CStack_7c.y = CStack_70.y + CStack_a0.y;
   CStack_7c.z = CStack_70.z + CStack_a0.z;
-  fStack_28 = (float)1.5 / (this_ptr->base).bolt_velocity;
-  fStack_58 = CStack_a0.x * fStack_28;
-  fStack_54 = CStack_a0.y * fStack_28;
-  fStack_50 = CStack_a0.z * fStack_28;
-  CStack_94.x = CStack_70.x - fStack_58;
-  CStack_94.y = CStack_70.y - fStack_54;
-  CStack_94.z = CStack_70.z - fStack_50;
+  fVar4 = (float)1.5 / (this_ptr->base).bolt_velocity;
+  CStack_94.x = CStack_70.x - CStack_a0.x * fVar4;
+  CStack_94.y = CStack_70.y - CStack_a0.y * fVar4;
+  CStack_94.z = CStack_70.z - CStack_a0.z * fVar4;
   core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
@@ -78,10 +82,8 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
   }
   iStack_20 = 0;
   do {
-    fStack_f8 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
-                          (g_CDemonSetPtr,&CStack_94,&CStack_7c);
-    fStack_14 = fStack_f8;
-    if ((fStack_f8 < 0.0) || (1.0 < fStack_f8)) break;
+    fVar4 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&CStack_94,&CStack_7c);
+    if ((fVar4 < 0.0) || (1.0 < fVar4)) break;
     this_ptr_01 = (CCharacter *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
@@ -90,15 +92,14 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
        0 < (int)EVar3)) {
       this_ptr_01 = (CCharacter *)0x0;
     }
-    pCStack_18 = (CGlass *)
-                 core_actor_cpp_castToClassHash_FUN_0040c790
-                           (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
+    this_ptr_03 = (CGlass *)
+                  core_actor_cpp_castToClassHash_FUN_0040c790
+                            (g_CDemonSetPtr->collision_actor,g_CGlassClassInfo.name_hash);
     this_ptr_02 = (CTrigger *)
                   core_actor_cpp_castToClassHash_FUN_0040c790
                             (g_CDemonSetPtr->collision_actor,g_CTriggerClassInfo.name_hash);
-    pCStack_24 = this_ptr_02;
     if (this_ptr_01 == (CCharacter *)0x0) {
-      if (pCStack_18 == (CGlass *)0x0) {
+      if (this_ptr_03 == (CGlass *)0x0) {
         if (this_ptr_02 == (CTrigger *)0x0) {
           core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0
                     (g_CFireEffectPtr,&g_CDemonSetPtr->collision_impact_position,
@@ -107,25 +108,25 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
           break;
         }
         core_trigger_cpp_CTrigger_onProjectileHit_FUN_005e0aa0(this_ptr_02);
-        iVar2 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
+        iVar5 = core_trigger_cpp_CTrigger_acceptsDamageFrom_FUN_005e0ac0
                           (this_ptr_02,(CDemonActor *)this_ptr);
-        if (iVar2 != 0) {
-          fStack_14 = (*(((this_ptr->base).base.vtable._uw)->_uw).getDamage)(&this_ptr->base);
-          core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_02,fStack_14);
+        if (iVar5 != 0) {
+          fVar4 = (*(((this_ptr->base).base.vtable._uw)->_uw).getDamage)(&this_ptr->base);
+          core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_02,fVar4);
         }
-        core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&pCStack_24->base);
+        core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr_02);
       }
       else {
-        iVar2 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(pCStack_18);
-        if (iVar2 == 0) break;
+        iVar5 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(this_ptr_03);
+        if (iVar5 == 0) break;
         core_glass_cpp_CGlass_shatter_FUN_004eaef0
-                  (pCStack_18,&g_CDemonSetPtr->collision_impact_position);
+                  (this_ptr_03,&g_CDemonSetPtr->collision_impact_position);
       }
     }
     else {
-      iVar2 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01);
+      iVar5 = (*(((this_ptr_01->base).vtable._uc)->_uc).canWalk)(this_ptr_01);
       this_ptr_00 = g_CDemonSetPtr;
-      if (iVar2 != 0) {
+      if (iVar5 != 0) {
         if (iStack_20 == 0) {
           (this_ptr->base).ammo_count = (this_ptr->base).ammo_count + 1;
           core_setcolid_cpp_CDemonSet_init_FUN_00574180(this_ptr_00);
@@ -138,26 +139,24 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
       SStack_f4.damage_amount =
            (*(((this_ptr->base).base.vtable._uw)->_uw).getDamage)(&this_ptr->base);
       SStack_f4.gore_multiplier = 0.4;
-      fStack_ac = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
-      fStack_a8 = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
-      fStack_a4 = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
-      fStack_1c = (float)10 /
-                  SQRT(fStack_a4 * fStack_a4 + fStack_ac * fStack_ac + fStack_a8 * fStack_a8);
-      fStack_40 = fStack_ac * fStack_1c;
-      fStack_3c = fStack_a8 * fStack_1c;
-      fStack_38 = fStack_a4 * fStack_1c;
+      fVar4 = (g_CDemonSetPtr->ray_target).x - (g_CDemonSetPtr->ray_origin).x;
+      fVar1 = (g_CDemonSetPtr->ray_target).y - (g_CDemonSetPtr->ray_origin).y;
+      fVar3 = (g_CDemonSetPtr->ray_target).z - (g_CDemonSetPtr->ray_origin).z;
+      fVar2 = (float)10 / SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar1 * fVar1);
+      fStack_40 = fVar4 * fVar2;
+      fStack_3c = fVar1 * fVar2;
+      fStack_38 = fVar3 * fVar2;
       if (&SStack_f4.impact_point != (CVector3f *)&fStack_40) {
         SStack_f4.impact_point.x = fStack_40;
         SStack_f4.impact_point.y = fStack_3c;
         SStack_f4.impact_point.z = fStack_38;
       }
-      fStack_14 = SStack_f4.damage_amount;
-      pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+      pCVar6 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                          (&this_ptr_01->base,&CStack_34,&g_CDemonSetPtr->collision_impact_position);
-      if (&SStack_f4.impact_direction != pCVar1) {
-        SStack_f4.impact_direction.x = pCVar1->x;
-        SStack_f4.impact_direction.y = pCVar1->y;
-        SStack_f4.impact_direction.z = pCVar1->z;
+      if (&SStack_f4.impact_direction != pCVar6) {
+        SStack_f4.impact_direction.x = pCVar6->x;
+        SStack_f4.impact_direction.y = pCVar6->y;
+        SStack_f4.impact_direction.z = pCVar6->z;
       }
       SStack_f4.ammo_type = (this_ptr->base).ammo_type;
       SStack_f4.damage_type = DAMAGE_TYPE_LAUNCH;
@@ -173,15 +172,6 @@ int __cdecl core_crossbow_cpp_CCrossbow_fire_FUN_00448f20(CCrossbow *this_ptr)
     iStack_20 = iStack_20 + 1;
   } while (iStack_20 < 4);
   core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
-  if (1.0 < fStack_f8) {
-    fStack_f8 = 1.0;
-  }
-  fStack_64 = CStack_a0.x * fStack_f8;
-  fStack_60 = CStack_a0.y * fStack_f8;
-  fStack_5c = CStack_a0.z * fStack_f8;
-  fStack_b8 = CStack_94.x + fStack_64;
-  fStack_b4 = CStack_94.y + fStack_60;
-  fStack_b0 = CStack_94.z + fStack_5c;
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
             (g_CSoundPtr,(CDemonActor *)this_ptr,"bow-!.wav",&CStack_70);
   (this_ptr->base).fire_cooldown_timer = 0.666;

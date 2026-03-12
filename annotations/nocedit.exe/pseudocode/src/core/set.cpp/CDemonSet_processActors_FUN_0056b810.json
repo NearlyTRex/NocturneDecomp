@@ -4,61 +4,55 @@
       {
         "category": "other",
         "column": 17,
-        "line": 65,
+        "line": 69,
         "message": "cannot cast from type 'float' to pointer type 'CPathMap *'"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 69,
+        "line": 73,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 75,
-        "line": 69,
+        "line": 73,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 70,
+        "line": 74,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 71,
+        "line": 75,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 72,
+        "line": 76,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 15,
-        "line": 83,
+        "line": 87,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 28,
-        "line": 98,
-        "message": "cannot cast from type 'float' to pointer type 'CDemonActor *'"
-      },
-      {
-        "category": "other",
         "column": 53,
-        "line": 106,
+        "line": 107,
         "message": "C-style cast from 'CPathMap *' to 'float' is not allowed"
       },
       {
         "category": "undeclared_identifier",
         "column": 77,
-        "line": 163,
+        "line": 164,
         "message": "use of undeclared identifier 'stack0xffffff60'"
       },
       {
@@ -414,101 +408,143 @@
       },
       {
         "is_param": false,
+        "name": "aCStack_94",
+        "offset": -148,
+        "size": 36,
+        "type": "CVector3f[3]"
+      },
+      {
+        "is_param": false,
+        "name": "EStack_70",
+        "offset": -112,
+        "size": 4,
+        "type": "EDamageType"
+      },
+      {
+        "is_param": false,
         "name": "local_68",
         "offset": -104,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonActor *"
       },
       {
         "is_param": false,
         "name": "local_64",
         "offset": -100,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
-        "name": "local_50",
-        "offset": -80,
+        "name": "fStack_5c",
+        "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_58",
+        "offset": -88,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_48",
+        "offset": -72,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_30",
+        "offset": -48,
+        "size": 4,
+        "type": "CCharacter *"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": true,
@@ -539,7 +575,7 @@
   "suspects": [
     {
       "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
-      "line": 61,
+      "line": 65,
       "match": "CONCAT22((short)((uint)damage_info >> 0x10",
       "severity": "severe",
       "text": "CONCAT22((short)((uint)damage_info >> 0x10),",
@@ -547,7 +583,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 65,
       "match": "CONCAT22",
       "severity": "mild",
       "text": "CONCAT22((short)((uint)damage_info >> 0x10),",
@@ -555,7 +591,7 @@
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 62,
+      "line": 66,
       "match": "NAN(",
       "severity": "severe",
       "text": "(ushort)(0.0 < (float)damage_info) << 8 | (ushort)NAN((float)damage_info) << 10",
@@ -563,7 +599,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 66,
       "match": "NAN",
       "severity": "mild",
       "text": "(ushort)(0.0 < (float)damage_info) << 8 | (ushort)NAN((float)damage_info) << 10",
@@ -571,15 +607,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 103,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_ActorProfileTimes + iVar7) = iVar8 - local_3c;",
+      "text": "*(int *)((int)g_ActorProfileTimes + iVar7) = iVar3 - local_3c;",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 156,
+      "line": 157,
       "match": "&stack0xffffff60",
       "severity": "moderate",
       "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);",
@@ -598,7 +634,7 @@
       "line": 219,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar7 = *(int *)((int)g_ActorProfileTimes + local_2c);",
+      "text": "iVar3 = *(int *)((int)g_ActorProfileTimes + local_2c);",
       "type": "pointer_cast"
     },
     {
@@ -606,7 +642,7 @@
       "line": 220,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (iVar7 < *(int *)((int)g_ActorProfileTimes + iVar9)) {",
+      "text": "if (iVar3 < *(int *)((int)g_ActorProfileTimes + iVar2)) {",
       "type": "pointer_cast"
     },
     {
@@ -622,7 +658,7 @@
       "line": 222,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_ActorProfileTimes + iVar9);",
+      "text": "*(uint *)((int)g_ActorProfileTimes + iVar2);",
       "type": "pointer_cast"
     },
     {
@@ -630,7 +666,7 @@
       "line": 223,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_ActorProfileTimes + iVar9) = iVar7;",
+      "text": "*(int *)((int)g_ActorProfileTimes + iVar2) = iVar3;",
       "type": "pointer_cast"
     },
     {
@@ -654,7 +690,7 @@
       "line": 226,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_ActorProfileActors + iVar9);",
+      "text": "*(uint *)((int)g_ActorProfileActors + iVar2);",
       "type": "pointer_cast"
     },
     {
@@ -662,7 +698,7 @@
       "line": 227,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_ActorProfileActors + iVar9) = uVar4;",
+      "text": "*(uint *)((int)g_ActorProfileActors + iVar2) = uVar4;",
       "type": "pointer_cast"
     },
     {

@@ -9,7 +9,6 @@
 void __cdecl core_skeleton_cpp_CDeformableModel_computeFarthestChildBones_FUN_0059dbe0(CDeformableModel *this_ptr)
 
 {
-  float fVar1;
   CSkeleton *pCVar2;
   int iVar3;
   CVector3f *pCVar4;
@@ -17,6 +16,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeFarthestChildBones_FUN_00
   int iVar6;
   CDeformableModel *local_1c;
   float local_18;
+  float fVar1;
   
   pCVar2 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(this_ptr);
   iVar6 = 0;
@@ -36,9 +36,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_computeFarthestChildBones_FUN_00
             local_1c->farthest_child_bone[0] = iVar3;
             local_18 = fVar1;
           }
+          pCVar5 = (CSkeleton *)((pCVar5->motion_list).state_names[1] + 2);
           iVar3 = iVar3 + 1;
           pCVar4 = pCVar4 + 1;
-          pCVar5 = (CSkeleton *)((pCVar5->motion_list).state_names[1] + 2);
         } while (iVar3 < pCVar2->bone_count);
       }
       iVar6 = iVar6 + 1;

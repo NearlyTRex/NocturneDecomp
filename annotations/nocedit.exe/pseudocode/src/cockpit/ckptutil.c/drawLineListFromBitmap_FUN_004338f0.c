@@ -9,13 +9,13 @@
 void __cdecl cockpit_ckptutil_c_drawLineListFromBitmap_FUN_004338f0(CPackedBitmap *bitmap,short *line_data,int line_count,int offset_x,int offset_y)
 
 {
-  short sVar1;
-  short sVar2;
-  short sVar3;
   int row_index;
   int base_color;
   int iVar4;
   int iVar5;
+  short sVar1;
+  short sVar2;
+  short sVar3;
   
   if ((bitmap->width != 0) && (iVar5 = 0, 0 < line_count)) {
     do {

@@ -3,44 +3,38 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 14,
-        "line": 33,
-        "message": "assigning to 'int *' from incompatible type 'void *'"
-      },
-      {
-        "category": "incompatible_types",
         "column": 12,
-        "line": 40,
+        "line": 46,
         "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'"
       },
       {
         "category": "format_error",
         "column": 74,
-        "line": 54,
+        "line": 60,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 57,
+        "line": 63,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 60,
+        "line": 66,
         "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'void *'"
       },
       {
         "category": "format_error",
-        "column": 76,
-        "line": 103,
+        "column": 24,
+        "line": 122,
         "message": "format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 60,
-        "line": 106,
+        "column": 58,
+        "line": 125,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -49,15 +43,17 @@
   },
   "complexity": {
     "assembly_lines": 357,
-    "complexity_score": 151,
+    "complexity_score": 169,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 12,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 151,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 508
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 154,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 511
   },
   "cross_references": [
     {
@@ -241,92 +237,92 @@
         "is_param": false,
         "name": "local_16c",
         "offset": -364,
-        "size": 1,
-        "type": "undefined1"
+        "size": 300,
+        "type": "char[300]"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "char[80] *"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "byte *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "byte *"
       },
       {
         "is_param": true,
@@ -365,5 +361,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "local_14 = (byte *)((int)this_ptr->bitmap_data[bitmap_count] + *local_30 * bitmap_width);",
+      "type": "pointer_cast"
+    }
+  ]
 }

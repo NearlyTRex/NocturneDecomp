@@ -6,18 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDemonSet *this_ptr,CVector3f *position,float radius)
 
 {
-  CVector3f *pCVar1;
-  CDemonActor *pCVar2;
+  CDemonActor *this_ptr_01;
   int iVar3;
   CSpike *pCVar4;
   ECollisionType bounding_box_type;
   CBoundingBox3D *other;
+  int iVar1;
   CVector3f *pCVar5;
+  CVector3f *pCVar3;
   int iVar6;
   int iVar7;
   int iVar8;
@@ -32,6 +31,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
   CVector3f *pCVar17;
   CKeyFramedModel *this_ptr_00;
   EGroundType EVar18;
+  CVector3f *pCVar6;
   uint corner_index;
   CVector3f CStack_308;
   CVector3f CStack_2fc;
@@ -72,6 +72,8 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
   int local_1c;
   CDemonSet *local_18;
   float local_14;
+  CVector3f *pCVar1;
+  CDemonActor *pCVar2;
   
   if (0.0 < radius) {
     local_14 = core_dtrace_cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950
@@ -131,10 +133,10 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
             if (bounding_box_type != COLLISION_TYPE_NONE) {
               other = core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
                                 (pCVar2,&CStack_118,&local_158,bounding_box_type);
-              iVar3 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010(&local_100,other);
-              if (iVar3 != 0) {
+              iVar1 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010(&local_100,other);
+              if (iVar1 != 0) {
                 if ((this_ptr->skip_exact_collisions == 0) &&
-                   ((CSpike *)local_158.keyframed_model != (CSpike *)0x0)) {
+                   (local_158.keyframed_model != (CKeyFramedModelInstance *)0x0)) {
                   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                                           (local_158.keyframed_model);
                   if (this_ptr_00->collision_triangle_list == (CDemonTriangle *)0x0) {
@@ -147,10 +149,10 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
                   CStack_58.y = local_e8.y - (pCVar2->location).position.y;
                   CStack_58.z = local_e8.z - (pCVar2->location).position.z;
                   fStack_24 = local_28 - (pCVar2->location).position.y;
-                  iVar3 = core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740
+                  iVar1 = core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740
                                     (this_ptr_00,0,&CStack_58,radius,&fStack_24,
                                      &(pCVar2->orient).vec);
-                  if (iVar3 != 0) {
+                  if (iVar1 != 0) {
                     this_ptr->collision_actor = pCVar2;
                     local_28 = fStack_24 + (pCVar2->location).position.y;
                     CStack_d0.x = 0.0;
@@ -166,31 +168,31 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
                 else if (bounding_box_type < COLLISION_TYPE_CYLINDER) {
                   if (bounding_box_type == COLLISION_TYPE_MESH) {
                     __arrinit(&CStack_308,8,&g_CVectorTypeInfo);
-                    pCVar17 = &CStack_308;
+                    pCVar6 = &CStack_308;
                     corner_index = 0;
                     (*((pCVar2->vtable)._ub)->getBoundingBox)(pCVar2,&CStack_130);
                     do {
                       pCVar5 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
                                          (&CStack_130,&CStack_70,corner_index);
-                      pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                      pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                                          (pCVar2,&CStack_7c,pCVar5);
-                      if (pCVar17 != pCVar5) {
-                        pCVar17->x = pCVar5->x;
-                        pCVar17->y = pCVar5->y;
-                        pCVar17->z = pCVar5->z;
+                      if (pCVar6 != pCVar3) {
+                        pCVar6->x = pCVar3->x;
+                        pCVar6->y = pCVar3->y;
+                        pCVar6->z = pCVar3->z;
                       }
                       corner_index = corner_index + 1;
-                      pCVar17 = pCVar17 + 1;
+                      pCVar6 = pCVar6 + 1;
                     } while ((int)corner_index < 8);
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_270,&CStack_308,&CStack_2d8,&CStack_2c0);
-                    iVar3 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
+                    iVar1 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
                                       (&CStack_270,&local_e8,radius,&local_28);
                     core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
                               (&CStack_270,&CStack_308,&CStack_2c0,&CStack_2f0);
                     iVar6 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
                                       (&CStack_270,&local_e8,radius,&local_28);
-                    if (iVar3 != 0 || iVar6 != 0) {
+                    if (iVar1 != 0 || iVar6 != 0) {
                       CStack_a0.x = -CStack_270.normal.x;
                       CStack_a0.y = -CStack_270.normal.y;
                       CStack_a0.z = -CStack_270.normal.z;
@@ -290,7 +292,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0(CDe
                         CStack_64.z = CStack_c4.z;
                       }
                     }
-                    if ((((((iVar3 != 0 || iVar6 != 0) || (iVar7 != 0 || iVar8 != 0)) ||
+                    if ((((((iVar1 != 0 || iVar6 != 0) || (iVar7 != 0 || iVar8 != 0)) ||
                           (iVar9 != 0 || iVar10 != 0)) || (iVar11 != 0 || iVar12 != 0)) ||
                         (iVar13 != 0 || iVar14 != 0)) || (iVar15 != 0 || iVar16 != 0)) {
                       this_ptr->collision_actor = pCVar2;
@@ -315,9 +317,9 @@ LAB_005722ec:
                   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                             (pCVar2,&CStack_4c,&local_e8);
                   fStack_20 = local_28 - (pCVar2->location).position.y;
-                  iVar3 = (*((pCVar2->vtable)._ub)->customGetFloorHeight)
+                  iVar1 = (*((pCVar2->vtable)._ub)->customGetFloorHeight)
                                     (pCVar2,(float)&CStack_4c,radius,&fStack_20);
-                  if (iVar3 != 0) {
+                  if (iVar1 != 0) {
                     this_ptr->collision_actor = pCVar2;
                     local_28 = fStack_20 + (pCVar2->location).position.y;
                     CStack_88.y = 1.0;
@@ -338,9 +340,9 @@ LAB_005722ec:
         local_1c = local_1c + 1;
       } while (local_1c < this_ptr->collidable_actor_count);
     }
-    pCVar2 = this_ptr->collision_actor;
-    if (pCVar2 != (CDemonActor *)0x0) {
-      EVar18 = (*((pCVar2->vtable)._ub)->getGroundType)(pCVar2);
+    this_ptr_01 = this_ptr->collision_actor;
+    if (this_ptr_01 != (CDemonActor *)0x0) {
+      EVar18 = (*((this_ptr_01->vtable)._ub)->getGroundType)(this_ptr_01);
       this_ptr->ground_type = EVar18;
       return local_28;
     }

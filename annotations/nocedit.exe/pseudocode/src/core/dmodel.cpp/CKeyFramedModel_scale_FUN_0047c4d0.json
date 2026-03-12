@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 170,
+    "complexity_score": 171,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 25,
+    "pseudocode_lines": 26,
     "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 117
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -205,7 +205,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 15,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "((double)((float)*(int *)((int)&this_ptr->vertex_list->x + iVar1) *",
@@ -213,7 +213,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 17,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->x + iVar1) = (int)ROUND(ROUND(dVar3));",
@@ -221,7 +221,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 17,
       "match": "ROUND",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->x + iVar1) = (int)ROUND(ROUND(dVar3));",
@@ -229,7 +229,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 16,
+      "line": 17,
       "match": "ROUND",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->x + iVar1) = (int)ROUND(ROUND(dVar3));",
@@ -237,7 +237,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 19,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "((double)((float)*(int *)((int)&this_ptr->vertex_list->y + iVar1) *",
@@ -245,31 +245,31 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 21,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar1) = (int)ROUND(ROUND(dVar3));",
+      "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar1) = (int)ROUND(ROUND(dVar1));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 21,
       "match": "ROUND",
       "severity": "mild",
-      "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar1) = (int)ROUND(ROUND(dVar3));",
+      "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar1) = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 21,
       "match": "ROUND",
       "severity": "mild",
-      "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar1) = (int)ROUND(ROUND(dVar3));",
+      "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar1) = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 23,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "((double)((float)*(int *)((int)&this_ptr->vertex_list->z + iVar1) *",
@@ -277,26 +277,26 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 25,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar1) = (int)ROUND(ROUND(dVar3));",
+      "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar1) = (int)ROUND(ROUND(dVar1));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 25,
       "match": "ROUND",
       "severity": "mild",
-      "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar1) = (int)ROUND(ROUND(dVar3));",
+      "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar1) = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 25,
       "match": "ROUND",
       "severity": "mild",
-      "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar1) = (int)ROUND(ROUND(dVar3));",
+      "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar1) = (int)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -11,17 +11,16 @@
 ; int              Stack[0x14]:4   blend_bone_index
 ; CVector3f *      Stack[0x18]:4   probe_offset
 ; Local Variables:
-; undefined4       Stack[-0x1b48]:4  local_1b48
-; undefined1       Stack[-0x1b44]:1  local_1b44
-; undefined1       Stack[-0xa8]:1  local_a8
-; undefined1       Stack[-0x78]:1  local_78
-; undefined1       Stack[-0x48]:1  local_48
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined1       Stack[-0x30]:1  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0x1b48]:4  local_1b48
+; SPose            Stack[-0x1b44]:6812  local_1b44
+; CMatrix3x4f      Stack[-0xa8]:48  local_a8
+; CMatrix3x4f      Stack[-0x78]:48  local_78
+; CVector3f        Stack[-0x48]:12  local_48
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  local_30
+; CVector3f        Stack[-0x24]:12  local_24
+; float            Stack[-0x18]:4  local_18
+; CDeformableModelInstance * Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004d6d40 at 004d6ee6

@@ -6,7 +6,7 @@
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
+; float            Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db94b

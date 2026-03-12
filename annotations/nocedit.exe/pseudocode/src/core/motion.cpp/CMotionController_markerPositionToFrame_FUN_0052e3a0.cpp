@@ -11,12 +11,12 @@
 float __cdecl core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0(CMotionController *this_ptr,int motion_index,float marker_position)
 
 {
-  int iVar1;
-  CMotionList *pCVar2;
-  float fVar3;
   int iVar4;
   int iVar5;
   float local_18;
+  float fVar3;
+  int iVar1;
+  CMotionList *pCVar2;
   
   pCVar2 = this_ptr->motion_list_ptr;
   if (marker_position <= 0.0) {

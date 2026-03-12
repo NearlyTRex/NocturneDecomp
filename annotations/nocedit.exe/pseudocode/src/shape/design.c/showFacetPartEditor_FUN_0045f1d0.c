@@ -11,16 +11,30 @@
 void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
 
 {
-  int iVar1;
-  int iVar2;
-  int iVar3;
+  uint uVar1;
+  float10 fVar2;
+  float10 fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  float fVar9;
+  float fVar10;
+  int iVar11;
   int iVar4;
+  int color;
+  int iVar12;
+  int iVar13;
+  SShapeEditorPolygon *pSVar14;
   SShapeEditorPolygon *pSVar5;
+  SShapeEditorPolygon *pSVar15;
   SShapeEditorPolygon *pSVar6;
   byte bVar7;
   float10 fVar8;
+  float10 fVar16;
+  float10 fVar17;
+  float10 fVar18;
   double dVar9;
-  uint local_d8;
   char local_b8 [80];
   CQuaternion4f local_68;
   int local_58;
@@ -41,22 +55,27 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
   int local_1c;
   int local_18;
   float local_14;
+  int iVar2;
+  int iVar1;
+  int iVar3;
   
   bVar7 = 0;
-  local_54 = 1;
-  local_30 = 1;
-  local_2c = 60.0;
   fVar8 = (float10)fptan((float10)60.0 * (float10)3.1415926535000001 * (float10)0.0055555555555555497
                          * (float10)0.5);
-  local_28 = (float)(((float10)g_WindowWidth * (float10)0.5) / fVar8);
-  fVar8 = (float10)fptan((float10)60.0 * (float10)3.1415926535000001 * (float10)0.0055555555555555497
-                         * (float10)0.5);
-  local_14 = (float)(((float10)g_WindowHeight * (float10)0.5) / fVar8);
-  local_20 = (local_28 / ((float)g_WindowWidth * (float)0.5)) *
-             (float)65536;
-  local_48 = (local_14 / ((float)g_WindowHeight * (float)0.5)) *
-             (float)65536;
+  fVar16 = (float10)g_WindowWidth;
+  fVar2 = (float10)0.5;
+  fVar17 = (float10)fptan((float10)60.0 * (float10)3.1415926535000001 * (float10)0.0055555555555555497
+                          * (float10)0.5);
+  fVar18 = (float10)g_WindowHeight;
+  fVar3 = (float10)0.5;
+  fVar6 = (float)g_WindowWidth;
+  fVar5 = (float)0.5;
+  fVar4 = (float)65536;
+  fVar10 = (float)g_WindowHeight;
+  fVar9 = (float)0.5;
+  fVar7 = (float)65536;
   iVar4 = shape_design_c_checkVertexCountLimit_FUN_00460a10();
+  iVar11 = g_ProjectionScale;
   if (iVar4 == 0) {
     local_58 = 0;
     local_3c = 0;
@@ -64,9 +83,8 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
     local_4c = 0;
     local_1c = 0;
     local_40 = -0x10000;
-    local_24 = g_ProjectionScale;
     g_ProjectionScale = 0x10000;
-    local_34 = engine_2d_c_getTextColor_FUN_00402830();
+    color = engine_2d_c_getTextColor_FUN_00402830();
     engine_2d_c_setTextColor_FUN_00402840((int)(&g_EditorColorIndices)[g_CurrentModelIndex]);
     g_CurrentPartIndex = -1;
     g_SelectedPolygonIndex = -1;
@@ -89,8 +107,8 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       }
       iVar3 = g_ClipBottom;
       iVar2 = g_ClipRight;
-      iVar1 = g_ClipTop;
-      iVar4 = g_ClipLeft;
+      iVar13 = g_ClipTop;
+      iVar12 = g_ClipLeft;
       if (g_UseExternalRenderer == 0) {
         engine_2d_c_fillRectColor_FUN_00403170
                   (0,0,g_WindowWidth + -1,g_WindowHeight + -1,
@@ -103,8 +121,8 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
         g_ClipBottom = g_WindowHeight + -1;
         wincore_windll_cpp_drawFullScreenQuad_FUN_005b7a50
                   ((int)(&g_EditorBackgroundColors)[g_CurrentModelIndex]);
-        g_ClipLeft = iVar4;
-        g_ClipTop = iVar1;
+        g_ClipLeft = iVar12;
+        g_ClipTop = iVar13;
         g_ClipRight = iVar2;
         g_ClipBottom = iVar3;
       }
@@ -118,19 +136,19 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       engine_3d_c_processCameraRelativePoint_FUN_004037e0(&local_68);
       engine_matrix_c_matrixPushAndTransform_FUN_0050cee0(local_58,local_3c,local_38,0,0,0);
       if (g_WireframeMode != 0) {
-        iVar4 = (int)ROUND(ROUND(local_20));
-        iVar1 = (int)ROUND(ROUND(local_48));
+        iVar12 = (int)ROUND(ROUND(((float)((fVar16 * fVar2) / fVar8) / (fVar6 * fVar5)) * fVar4));
+        iVar1 = (int)ROUND(ROUND(((float)((fVar18 * fVar3) / fVar17) / (fVar10 * fVar9)) * fVar7));
         g_TransformMatrix.m[0].x =
-             (uint)((longlong)iVar4 * (longlong)g_TransformMatrix.m[0].x) >> 0x10 |
-             (int)((ulonglong)((longlong)iVar4 * (longlong)g_TransformMatrix.m[0].x) >> 0x20) <<
+             (uint)((longlong)iVar12 * (longlong)g_TransformMatrix.m[0].x) >> 0x10 |
+             (int)((ulonglong)((longlong)iVar12 * (longlong)g_TransformMatrix.m[0].x) >> 0x20) <<
              0x10;
         g_TransformMatrix.m[1].x =
-             (uint)((longlong)iVar4 * (longlong)g_TransformMatrix.m[1].x) >> 0x10 |
-             (int)((ulonglong)((longlong)iVar4 * (longlong)g_TransformMatrix.m[1].x) >> 0x20) <<
+             (uint)((longlong)iVar12 * (longlong)g_TransformMatrix.m[1].x) >> 0x10 |
+             (int)((ulonglong)((longlong)iVar12 * (longlong)g_TransformMatrix.m[1].x) >> 0x20) <<
              0x10;
         g_TransformMatrix.m[2].x =
-             (uint)((longlong)iVar4 * (longlong)g_TransformMatrix.m[2].x) >> 0x10 |
-             (int)((ulonglong)((longlong)iVar4 * (longlong)g_TransformMatrix.m[2].x) >> 0x20) <<
+             (uint)((longlong)iVar12 * (longlong)g_TransformMatrix.m[2].x) >> 0x10 |
+             (int)((ulonglong)((longlong)iVar12 * (longlong)g_TransformMatrix.m[2].x) >> 0x20) <<
              0x10;
         g_TransformMatrix.m[0].y =
              (uint)((longlong)iVar1 * (longlong)g_TransformMatrix.m[0].y) >> 0x10 |
@@ -246,32 +264,32 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
                 (local_b8,((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -4) -
                                 (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + 0x19,
                  g_WindowHeight + -0x21);
-      iVar4 = g_WindowWidth >> 0x1f;
+      iVar12 = g_WindowWidth >> 0x1f;
       if (g_GouraudShadingEnabled == 1) {
         engine_2d_c_drawTextColor_FUN_00402430
                   ("Gouraud : on",
-                   ((int)((g_WindowWidth + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2) + 0x19,
+                   ((int)((g_WindowWidth + iVar12 * -4) - (uint)(iVar12 << 1 < 0)) >> 2) + 0x19,
                    g_WindowHeight + -0x16);
       }
       else {
         engine_2d_c_drawTextColor_FUN_00402430
                   ("Gouraud : off",
-                   ((int)((g_WindowWidth + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2) + 0x19,
+                   ((int)((g_WindowWidth + iVar12 * -4) - (uint)(iVar12 << 1 < 0)) >> 2) + 0x19,
                    g_WindowHeight + -0x16);
       }
-      local_44 = engine_2d_c_getStringWidth_FUN_004018a0("Gouraud : off   ");
-      iVar4 = g_WindowWidth >> 0x1f;
+      iVar12 = engine_2d_c_getStringWidth_FUN_004018a0("Gouraud : off   ");
+      iVar13 = g_WindowWidth >> 0x1f;
       if (g_ZBufferEnabled == 1) {
         engine_2d_c_drawTextColor_FUN_00402430
                   ("Z-buffer : on",
-                   ((int)((g_WindowWidth + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2) + 0x19 +
-                   local_44,g_WindowHeight + -0x16);
+                   ((int)((g_WindowWidth + iVar13 * -4) - (uint)(iVar13 << 1 < 0)) >> 2) + 0x19 +
+                   iVar12,g_WindowHeight + -0x16);
       }
       else {
         engine_2d_c_drawTextColor_FUN_00402430
                   ("Z-buffer : off",
-                   ((int)((g_WindowWidth + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2) + 0x19 +
-                   local_44,g_WindowHeight + -0x16);
+                   ((int)((g_WindowWidth + iVar13 * -4) - (uint)(iVar13 << 1 < 0)) >> 2) + 0x19 +
+                   iVar12,g_WindowHeight + -0x16);
       }
       if (g_CurrentPartIndex == -1) {
         _sprintf(local_b8,&s_EmptyChar_0061b79a);
@@ -280,28 +298,22 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
         _sprintf(local_b8,"Current part : %s");
       }
       engine_2d_c_drawTextColor_FUN_00402430(local_b8,0,0);
-      local_44 = engine_2d_c_getStringWidth_FUN_004018a0("Polygons");
+      iVar12 = engine_2d_c_getStringWidth_FUN_004018a0("Polygons");
       _sprintf(local_b8,"Points");
       engine_2d_c_drawTextColor_FUN_00402430(local_b8,g_WindowWidth / 2 + 10,0);
       _sprintf(local_b8," : %d");
-      engine_2d_c_drawTextColor_FUN_00402430(local_b8,g_WindowWidth / 2 + 10 + local_44,0);
+      engine_2d_c_drawTextColor_FUN_00402430(local_b8,g_WindowWidth / 2 + 10 + iVar12,0);
       _sprintf(local_b8,"Polygons");
       engine_2d_c_drawTextColor_FUN_00402430(local_b8,g_WindowWidth / 2 + 10,0xb);
       _sprintf(local_b8," : %d");
-      engine_2d_c_drawTextColor_FUN_00402430(local_b8,g_WindowWidth / 2 + 10 + local_44,0xb);
+      engine_2d_c_drawTextColor_FUN_00402430(local_b8,g_WindowWidth / 2 + 10 + iVar12,0xb);
       _sprintf(local_b8,"Parts");
       engine_2d_c_drawTextColor_FUN_00402430(local_b8,g_WindowWidth / 2 + 10,0x16);
       _sprintf(local_b8," : %d");
-      engine_2d_c_drawTextColor_FUN_00402430(local_b8,g_WindowWidth / 2 + 10 + local_44,0x16);
-      if (g_WireframeMode == 0) {
-        local_d8 = 0;
-      }
-      else {
-        local_d8 = SUB84(__BITCAST_UINT64((double)local_2c),0);
-      }
+      engine_2d_c_drawTextColor_FUN_00402430(local_b8,g_WindowWidth / 2 + 10 + iVar12,0x16);
       _sprintf
                 (local_b8,"Zoom : %4.2f  FOV : %4.1f",65536 / (double)g_ProjectionScale,
-                 local_d8);
+                 0);
       engine_2d_c_drawTextColor_FUN_00402430(local_b8,g_WindowWidth / 2 + 10,0x2c);
       if ((g_KeyboardState[0x13] != '\0') && (g_KeyboardState[0x1d] != '\0')) {
         g_KeyboardState[0x13] = '\0';
@@ -474,24 +486,24 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       }
       if ((g_KeyboardState[0x31] != '\0') && (g_SelectedPolygonIndex != -1)) {
         g_KeyboardState[0x31] = '\0';
-        pSVar5 = g_ModelPolygonData + g_SelectedPolygonIndex;
-        pSVar6 = g_ModelPolygonData + g_PolygonCount;
-        for (iVar4 = 0x61; iVar4 != 0; iVar4 = iVar4 + -1) {
-          pSVar6->polygon_type = pSVar5->polygon_type;
-          pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
-          pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);
+        pSVar14 = g_ModelPolygonData + g_SelectedPolygonIndex;
+        pSVar15 = g_ModelPolygonData + g_PolygonCount;
+        for (iVar12 = 0x61; iVar12 != 0; iVar12 = iVar12 + -1) {
+          pSVar15->polygon_type = pSVar14->polygon_type;
+          pSVar14 = (SShapeEditorPolygon *)((int)pSVar14 + ((uint)bVar7 * -2 + 1) * 4);
+          pSVar15 = (SShapeEditorPolygon *)((int)pSVar15 + ((uint)bVar7 * -2 + 1) * 4);
         }
-        local_50 = g_ModelPolygonData[g_PolygonCount].vertex_indices_count;
-        for (local_44 = 0; local_44 < (int)local_50; local_44 = local_44 + 1) {
+        uVar1 = g_ModelPolygonData[g_PolygonCount].vertex_indices_count;
+        for (local_44 = 0; local_44 < (int)uVar1; local_44 = local_44 + 1) {
           g_ModelPolygonData[g_PolygonCount].vertex_indices[local_44] =
                *(uint *)((int)g_ModelPolygonData +
-                        g_SelectedPolygonIndex * 0x184 + (local_50 - local_44) * 4 + 0xb4);
+                        g_SelectedPolygonIndex * 0x184 + (uVar1 - local_44) * 4 + 0xb4);
           g_ModelPolygonData[g_PolygonCount].uv_u[local_44] =
                *(float *)((int)g_ModelPolygonData +
-                         g_SelectedPolygonIndex * 0x184 + (local_50 - local_44) * 4 + 0xf4);
+                         g_SelectedPolygonIndex * 0x184 + (uVar1 - local_44) * 4 + 0xf4);
           g_ModelPolygonData[g_PolygonCount].uv_v[local_44] =
                *(float *)((int)g_ModelPolygonData +
-                         g_SelectedPolygonIndex * 0x184 + (local_50 - local_44) * 4 + 0x134);
+                         g_SelectedPolygonIndex * 0x184 + (uVar1 - local_44) * 4 + 0x134);
         }
         g_PolygonCount = g_PolygonCount + 1;
       }
@@ -506,8 +518,8 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
       wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       shape_design_c_handleEditorHotkeys_FUN_0045b990();
-      iVar4 = shape_design_c_checkVertexCountLimit_FUN_00460a10();
-      if (iVar4 != 0) break;
+      iVar12 = shape_design_c_checkVertexCountLimit_FUN_00460a10();
+      if (iVar12 != 0) break;
       if ((g_KeyboardState[0x19] != '\0') && (g_KeyboardState[0x1d] != '\0')) {
         g_KeyboardState[0x19] = '\0';
         shape_design_c_loadPalette_FUN_0046e810();
@@ -547,10 +559,12 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
               local_44 = local_44 + 1) {
             pSVar5 = g_ModelPolygonData + local_44 + 1;
             pSVar6 = g_ModelPolygonData + local_44;
-            for (iVar4 = 0x61; iVar4 != 0; iVar4 = iVar4 + -1) {
+            for (iVar12 = 0x61; iVar12 != 0; iVar12 = iVar12 + -1) {
+              pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar7 * -8 + 4);
+              pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
               pSVar6->polygon_type = pSVar5->polygon_type;
-              pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
-              pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);
+              pSVar5 = pSVar5;
+              pSVar6 = pSVar6;
             }
           }
           g_PolygonCount = g_PolygonCount + -1;
@@ -588,14 +602,14 @@ void __cdecl shape_design_c_showFacetPartEditor_FUN_0045f1d0(void)
         local_3c = 0;
         local_58 = 0;
       }
-      local_44 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-      g_GlobalDeltaTimeInt = (local_44 - local_18) / 0x12;
-      local_18 = local_44;
+      iVar12 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+      g_GlobalDeltaTimeInt = (iVar12 - local_18) / 0x12;
+      local_18 = iVar12;
     } while (g_KeyboardState[1] == '\0');
     engine_2d_c_reinitializeGraphicsSystem_FUN_005ed4b0();
     engine_2d_c_clearInputAndWait_FUN_00403260();
-    g_ProjectionScale = local_24;
-    engine_2d_c_setTextColor_FUN_00402840(local_34);
+    g_ProjectionScale = iVar11;
+    engine_2d_c_setTextColor_FUN_00402840(color);
   }
   return;
 }

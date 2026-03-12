@@ -7,7 +7,7 @@
 ; CFileBitStream * Stack[0x4]:4   bitstream
 ; int              Stack[0x8]:4   num_bits
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[11]:
 ;   sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0 at 0052f7e4

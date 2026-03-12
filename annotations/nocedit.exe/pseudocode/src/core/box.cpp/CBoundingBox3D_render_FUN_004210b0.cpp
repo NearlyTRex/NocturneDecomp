@@ -9,16 +9,17 @@
 void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *this_ptr)
 
 {
-  CDemonRenderer *pCVar1;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
   void *pvVar2;
   uint corner_index;
   CVector3i *pCVar3;
   CVector3i local_b0 [8];
   SMRGLHeaderPrimitive local_50;
-  uint local_38;
-  uint local_34;
-  uint local_30;
-  uint local_2c;
   int local_28;
   int local_24;
   int local_20;
@@ -26,6 +27,7 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
   int local_10;
   int local_c;
   int local_8;
+  CDemonRenderer *pCVar1;
   
   corner_index = 0;
   pCVar3 = local_b0;
@@ -41,12 +43,12 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
   local_50.base.count = 4;
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(g_CDemonRendererPtr2,1);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
-  local_28 = (int)ROUND((this_ptr->min).x * 256.0f);
-  local_24 = (int)ROUND((this_ptr->min).y * 256.0f);
-  local_20 = (int)ROUND((this_ptr->min).z * 256.0f);
-  local_10 = (int)ROUND((this_ptr->max).x * 256.0f);
-  local_c = (int)ROUND((this_ptr->max).y * 256.0f);
-  local_8 = (int)ROUND((this_ptr->max).z * 256.0f);
+  fVar1 = (this_ptr->min).x * 256.0f;
+  fVar2 = (this_ptr->min).y * 256.0f;
+  fVar3 = (this_ptr->min).z * 256.0f;
+  fVar4 = (this_ptr->max).x * 256.0f;
+  fVar5 = (this_ptr->max).y * 256.0f;
+  fVar6 = (this_ptr->max).z * 256.0f;
   pvVar2 = (void *)engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2)
   ;
   pCVar1 = g_CDemonRendererPtr2;
@@ -81,61 +83,37 @@ void __cdecl core_box_cpp_CBoundingBox3D_render_FUN_004210b0(CBoundingBox3D *thi
   local_50.surface_normal.A = -1;
   local_50.surface_normal.B = 0;
   local_50.surface_normal.C = 0;
-  local_38 = 0;
-  local_34 = 4;
-  local_30 = 6;
-  local_50.surface_normal.D = -local_28;
-  local_2c = 2;
+  local_50.surface_normal.D = -(int)ROUND(fVar1);
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50,0x2c4);
   local_50.surface_normal.A = 1;
-  local_50.surface_normal.D = local_10;
   local_50.surface_normal.B = 0;
-  local_34 = 3;
-  local_38 = 1;
   local_50.surface_normal.C = 0;
-  local_30 = 7;
-  local_2c = 5;
+  local_50.surface_normal.D = (int)ROUND(fVar4);
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50,0x2c4);
   local_50.surface_normal.A = 0;
   local_50.surface_normal.B = -1;
   local_50.surface_normal.C = 0;
-  local_38 = 0;
-  local_34 = 1;
-  local_50.surface_normal.D = -local_24;
-  local_30 = 5;
-  local_2c = 4;
+  local_50.surface_normal.D = -(int)ROUND(fVar2);
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50,0x2c4);
   local_50.surface_normal.A = 0;
   local_50.surface_normal.B = 1;
   local_50.surface_normal.C = 0;
-  local_38 = 2;
-  local_34 = 6;
-  local_50.surface_normal.D = local_c;
-  local_30 = 7;
-  local_2c = 3;
+  local_50.surface_normal.D = (int)ROUND(fVar5);
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50,0x2c4);
   local_50.surface_normal.A = 0;
   local_50.surface_normal.B = 0;
   local_50.surface_normal.C = -1;
-  local_38 = 0;
-  local_2c = 1;
-  local_34 = 2;
-  local_30 = 3;
-  local_50.surface_normal.D = -local_20;
+  local_50.surface_normal.D = -(int)ROUND(fVar3);
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50,0x2c4);
   local_50.surface_normal.A = 0;
   local_50.surface_normal.B = 0;
-  local_38 = 4;
-  local_34 = 5;
-  local_50.surface_normal.D = local_8;
   local_50.surface_normal.C = 1;
-  local_30 = 7;
-  local_2c = 6;
+  local_50.surface_normal.D = (int)ROUND(fVar6);
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
             (g_CDemonRendererPtr2,&local_50,0x2c4);
   return;

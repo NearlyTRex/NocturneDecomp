@@ -6,7 +6,7 @@
 ; Parameters:
 ; ulong            Stack[0x4]:4   size
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
+; Heap *           Stack[-0x24]:4  local_24
 ;
 ; XREF[5]:
 ;   crt_ioinit.c_staticInit_FUN_00608f20 at 00608f4d

@@ -6,12 +6,10 @@
 ; Parameters:
 ; CEventList *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x170]:1  local_170
-; undefined1       Stack[-0x16f]:1  local_16f
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[336]        Stack[-0x170]:336  local_170
+; undefined8       Stack[-0x20]:8  local_20
+; SSfxEntry *      Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ac223

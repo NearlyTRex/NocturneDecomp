@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 110,
-        "line": 144,
+        "line": 146,
         "message": "format specifies type 'char *' but the argument has type 'CKeyFramedModel *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 45,
-        "line": 319,
+        "line": 321,
         "message": "C-style cast from 'CVector3f *' to 'float' is not allowed"
       }
     ],
@@ -19,17 +19,15 @@
   },
   "complexity": {
     "assembly_lines": 883,
-    "complexity_score": 353,
+    "complexity_score": 341,
     "cross_reference_count": 7,
     "function_call_count": 17,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 338,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_type_propagation"
-    ],
-    "total_lines": 1221
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 341,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 1224
   },
   "cross_references": [
     {
@@ -283,123 +281,284 @@
     "pcode_op_count": 3431
   },
   "stack_frame": {
-    "frame_size": 360,
-    "local_size": 348,
+    "frame_size": 792,
+    "local_size": 780,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "CStack_308",
+        "offset": -776,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2fc",
+        "offset": -764,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2f0",
+        "offset": -752,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2e4",
+        "offset": -740,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2d8",
+        "offset": -728,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2cc",
+        "offset": -716,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2c0",
+        "offset": -704,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2b4",
+        "offset": -692,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_2a8",
+        "offset": -680,
+        "size": 56,
+        "type": "CDemonTriangle"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_270",
+        "offset": -624,
+        "size": 56,
+        "type": "CDemonTriangle"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_238",
+        "offset": -568,
+        "size": 56,
+        "type": "CDemonTriangle"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_200",
+        "offset": -512,
+        "size": 56,
+        "type": "CDemonTriangle"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_1c8",
+        "offset": -456,
+        "size": 56,
+        "type": "CDemonTriangle"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_190",
+        "offset": -400,
+        "size": 56,
+        "type": "CDemonTriangle"
+      },
+      {
+        "is_param": false,
         "name": "local_158",
         "offset": -344,
-        "size": 4,
-        "type": "undefined4"
+        "size": 40,
+        "type": "SCollisionInfo"
       },
       {
         "is_param": false,
-        "name": "local_138",
-        "offset": -312,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_130",
+        "offset": -304,
+        "size": 24,
+        "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
-        "name": "local_134",
-        "offset": -308,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_118",
+        "offset": -280,
+        "size": 24,
+        "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
         "name": "local_100",
         "offset": -256,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_fc",
-        "offset": -252,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_f8",
-        "offset": -248,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_f4",
-        "offset": -244,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_f0",
-        "offset": -240,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_ec",
-        "offset": -236,
-        "size": 4,
-        "type": "undefined4"
+        "size": 24,
+        "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
         "name": "local_e8",
         "offset": -232,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_e4",
-        "offset": -228,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_dc",
+        "offset": -220,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_e0",
-        "offset": -224,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_d0",
+        "offset": -208,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_c4",
+        "offset": -196,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "aCStack_b8",
+        "offset": -184,
+        "size": 24,
+        "type": "CVector3f[2]"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_a0",
+        "offset": -160,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_94",
+        "offset": -148,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_88",
+        "offset": -136,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_7c",
+        "offset": -124,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_70",
+        "offset": -112,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_64",
+        "offset": -100,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_58",
+        "offset": -88,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_4c",
+        "offset": -76,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_40",
+        "offset": -64,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_34",
+        "offset": -52,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonSet *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -424,14 +583,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    }
-  ]
+  "suspects": []
 }

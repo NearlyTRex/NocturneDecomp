@@ -11,11 +11,13 @@
 int __cdecl core_skeledit_cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0(CDeformableModel *this_ptr,_FILE *file_handle)
 
 {
-  SInputFace *pSVar1;
   int iVar2;
   int iVar3;
   ushort *puVar4;
+  int iVar1;
+  int iVar4;
   int iVar5;
+  int iVar7;
   int iVar6;
   float local_54;
   byte local_50 [4];
@@ -33,6 +35,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0(CDefo
   float local_1c;
   float local_18;
   int local_14;
+  SInputFace *pSVar1;
   
   __STK();
   iVar5 = 1;
@@ -40,9 +43,9 @@ int __cdecl core_skeledit_cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0(CDefo
     iVar2 = _fgetc(file_handle);
     if (iVar2 < 0) break;
   } while ((iVar2 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
-  iVar5 = 0;
+  iVar7 = 0;
   if (0 < this_ptr->tri_count[0]) {
-    iVar2 = 0;
+    iVar4 = 0;
     iVar6 = 0;
     do {
       iVar3 = _fscanf(file_handle,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",&local_28,local_3c,&local_48,
@@ -52,17 +55,17 @@ int __cdecl core_skeledit_cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0(CDefo
       }
       local_24 = local_48;
       local_1c = 4.0;
-      iVar3 = 4;
+      iVar1 = 4;
       local_18 = local_54;
       do {
-        if (*(float *)(local_44 + iVar3 + -4) < local_24) {
-          local_24 = *(float *)(local_44 + iVar3 + -4);
+        if (*(float *)(local_44 + iVar1 + -4) < local_24) {
+          local_24 = *(float *)(local_44 + iVar1 + -4);
         }
-        if (*(float *)(local_50 + iVar3 + -4) < local_18) {
-          local_18 = *(float *)(local_50 + iVar3 + -4);
+        if (*(float *)(local_50 + iVar1 + -4) < local_18) {
+          local_18 = *(float *)(local_50 + iVar1 + -4);
         }
-        iVar3 = iVar3 + 4;
-      } while (iVar3 != 0xc);
+        iVar1 = iVar1 + 4;
+      } while (iVar1 != 0xc);
       local_30 = floor((double)((local_24 + 4.0) * (float)0.00390625));
       local_24 = (float)((float10)local_30 * (float10)256);
       local_30 = floor
@@ -75,14 +78,14 @@ int __cdecl core_skeledit_cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0(CDefo
         local_28 = 0;
       }
       pSVar1 = this_ptr->tri_data_ptr[0];
-      *(int *)((int)this_ptr->index_data_ptr[0] + iVar2) = local_28;
-      iVar3 = 0;
+      *(int *)((int)this_ptr->index_data_ptr[0] + iVar4) = local_28;
+      iVar1 = 0;
       puVar4 = (ushort *)((int)&(pSVar1->vertex_indices).vertex_index_0 + iVar6);
       do {
-        *puVar4 = *(ushort *)((int)local_3c + iVar3);
-        local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar3 + -4) - local_24) *
+        *puVar4 = *(ushort *)((int)local_3c + iVar1);
+        local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar1 + -4) - local_24) *
                                     (float)256));
-        local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar3 + -4) - local_18) *
+        local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar1 + -4) - local_18) *
                                     (float)256));
         if (local_20 < 0) {
           local_20 = 0;
@@ -97,14 +100,14 @@ int __cdecl core_skeledit_cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0(CDefo
           local_14 = 0xffff;
         }
         puVar4[3] = (short)local_20;
-        iVar3 = iVar3 + 4;
+        iVar1 = iVar1 + 4;
         puVar4[6] = (short)local_14;
         puVar4 = puVar4 + 1;
-      } while (iVar3 != 0xc);
-      iVar2 = iVar2 + 4;
-      iVar5 = iVar5 + 1;
+      } while (iVar1 != 0xc);
+      iVar4 = iVar4 + 4;
+      iVar7 = iVar7 + 1;
       iVar6 = iVar6 + 0x12;
-    } while (iVar5 < this_ptr->tri_count[0]);
+    } while (iVar7 < this_ptr->tri_count[0]);
   }
   core_skeledit_cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0(this_ptr);
   return 1;

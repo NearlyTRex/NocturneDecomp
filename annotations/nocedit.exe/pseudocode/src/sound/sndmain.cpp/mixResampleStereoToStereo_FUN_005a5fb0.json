@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 13,
-        "line": 31,
+        "line": 32,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 34,
+        "line": 35,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 38,
+        "line": 39,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 41,
+        "line": 42,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
@@ -31,12 +31,12 @@
   },
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 275,
+    "complexity_score": 276,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 51,
     "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -45,7 +45,7 @@
       "warning_deadcode_restart",
       "warning_inlined_function"
     ],
-    "total_lines": 165
+    "total_lines": 166
   },
   "cross_references": [
     {
@@ -168,7 +168,7 @@
         "name": "local_34",
         "offset": -52,
         "size": 8,
-        "type": "undefined8"
+        "type": "ulonglong"
       },
       {
         "is_param": false,
@@ -282,7 +282,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 24,
+      "line": 25,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar12));",
@@ -290,7 +290,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 25,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar12));",
@@ -298,7 +298,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
+      "line": 25,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar12));",
@@ -306,23 +306,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_34 = (longlong)ROUND(ROUND(dVar12)) & 0xffffffff;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_34 = (longlong)ROUND(ROUND(dVar12)) & 0xffffffff;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
       "line": 27,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_34 = (longlong)ROUND(ROUND(dVar12)) & 0xffffffff;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 27,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_34 = (longlong)ROUND(ROUND(dVar12)) & 0xffffffff;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 28,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_34._0_4_ =",
@@ -330,7 +330,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 29,
       "match": "ROUND",
       "severity": "mild",
       "text": "(uint)(longlong)ROUND(ROUND((resample_position - (double)local_34) * 4294967296));",
@@ -338,7 +338,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 29,
       "match": "ROUND",
       "severity": "mild",
       "text": "(uint)(longlong)ROUND(ROUND((resample_position - (double)local_34) * 4294967296));",
@@ -346,47 +346,47 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 31,
+      "line": 32,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar12));",
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar1));",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 32,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar12));",
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 32,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar12));",
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(ROUND(dVar1));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_34 = (longlong)ROUND(ROUND(dVar12)) & 0xffffffff;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_34 = (longlong)ROUND(ROUND(dVar12)) & 0xffffffff;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unknown/mangled field access",
       "line": 34,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_34 = (longlong)ROUND(ROUND(dVar1)) & 0xffffffff;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 34,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_34 = (longlong)ROUND(ROUND(dVar1)) & 0xffffffff;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 35,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_34._0_4_ =",
@@ -394,7 +394,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 36,
       "match": "ROUND",
       "severity": "mild",
       "text": "(uint)(longlong)ROUND(ROUND((resample_delta - (double)local_34) * 4294967296));",
@@ -402,7 +402,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 36,
       "match": "ROUND",
       "severity": "mild",
       "text": "(uint)(longlong)ROUND(ROUND((resample_delta - (double)local_34) * 4294967296));",
@@ -410,7 +410,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 45,
       "match": "CARRY4",
       "severity": "mild",
       "text": "bVar11 = CARRY4(uVar8,(uint)local_34);",

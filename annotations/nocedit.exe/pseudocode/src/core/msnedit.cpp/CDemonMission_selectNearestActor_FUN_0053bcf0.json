@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 41,
+    "complexity_score": 42,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
+    "pseudocode_lines": 27,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 90
+    "total_lines": 91
   },
   "cross_references": [
     {
@@ -103,7 +103,7 @@
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -124,10 +124,10 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 23,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar3 = SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3), fVar3 < local_10)) {",
+      "text": "fVar1 = SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3), fVar1 < local_10)) {",
       "type": "decompiler_intrinsic"
     }
   ]

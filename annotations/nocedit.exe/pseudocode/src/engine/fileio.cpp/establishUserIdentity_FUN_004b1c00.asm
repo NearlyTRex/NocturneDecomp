@@ -4,8 +4,7 @@
 ; int __cdecl engine_fileio_cpp_establishUserIdentity_FUN_004b1c00(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x204]:1  local_204
-; undefined1       Stack[-0x203]:1  local_203
+; char[512]        Stack[-0x204]:512  local_204
 ;
 ; XREF[6]:
 ;   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 at 004b393a

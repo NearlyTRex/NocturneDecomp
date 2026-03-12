@@ -11,7 +11,9 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDev
 {
   int iVar1;
   uint uVar2;
+  uint uVar1;
   char *pcVar3;
+  int iVar2;
   char acStack_19c [400];
   uint local_c;
   DWORD local_8;
@@ -28,19 +30,19 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDev
         sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_19c);
         return 0;
       }
-      uVar2 = local_c / (uint)g_StreamBlockSizeBytes;
-      if (g_StreamBlockCount <= (int)uVar2) {
-        uVar2 = g_StreamBlockCount - 1;
+      uVar1 = local_c / (uint)g_StreamBlockSizeBytes;
+      if (g_StreamBlockCount <= (int)uVar1) {
+        uVar1 = g_StreamBlockCount - 1;
       }
-      if ((int)uVar2 < 0) {
-        uVar2 = 0;
+      if ((int)uVar1 < 0) {
+        uVar1 = 0;
       }
       do {
-        if (uVar2 == g_StreamCurrentBlock) {
+        if (uVar1 == g_StreamCurrentBlock) {
           return 1;
         }
-        iVar1 = sound_snddx_cpp_fillStreamBuffer_FUN_005adff0();
-      } while (iVar1 != 0);
+        iVar2 = sound_snddx_cpp_fillStreamBuffer_FUN_005adff0();
+      } while (iVar2 != 0);
       return 0;
     }
     iVar1 = 0;

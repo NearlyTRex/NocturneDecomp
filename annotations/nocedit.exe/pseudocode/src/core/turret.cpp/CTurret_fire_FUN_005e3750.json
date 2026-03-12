@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 397,
-    "complexity_score": 172,
+    "complexity_score": 174,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 22,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 157,
+    "pseudocode_lines": 159,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 554
+    "total_lines": 556
   },
   "cross_references": [],
   "function": {
@@ -303,18 +303,158 @@
     "pcode_op_count": 1602
   },
   "stack_frame": {
-    "frame_size": 100,
-    "local_size": 96,
+    "frame_size": 232,
+    "local_size": 228,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "SStack_e0",
+        "offset": -224,
+        "size": 60,
+        "type": "SDamageInfo"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_a4",
+        "offset": -164,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_98",
+        "offset": -152,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_88",
+        "offset": -136,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_84",
+        "offset": -132,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_80",
+        "offset": -128,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_74",
+        "offset": -116,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_68",
+        "offset": -104,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
         "name": "local_5c",
         "offset": -92,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_50",
+        "offset": -80,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_48",
+        "offset": -72,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_44",
+        "offset": -68,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_38",
+        "offset": -56,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "CTrigger *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "CCrate *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "CGlass *"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": true,
@@ -345,10 +485,10 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 124,
       "match": "SQRT",
       "severity": "mild",
-      "text": "SQRT(fStack_84 * fStack_84 + fStack_8c * fStack_8c + fStack_88 * fStack_88);",
+      "text": "fVar2 = (float)10 / SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar1 * fVar1);",
       "type": "decompiler_intrinsic"
     }
   ],

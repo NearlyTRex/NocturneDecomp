@@ -15,15 +15,15 @@ void __cdecl engine_matrix_c_invertTransformMatrix_FUN_0050c640(void)
   float fVar2;
   float fVar3;
   float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
   float fVar9;
   float fVar10;
   float fVar11;
   float fVar12;
   float fVar13;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  float fVar8;
   
   fVar3 = (float)g_TransformMatrix.m[0].x * (float)1.52587890625e-05;
   fVar8 = (float)g_TransformMatrix.m[0].y * (float)1.52587890625e-05;

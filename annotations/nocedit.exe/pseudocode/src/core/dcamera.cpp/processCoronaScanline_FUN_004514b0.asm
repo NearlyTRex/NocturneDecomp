@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined1       Stack[-0x14]:1  local_14
+; char             Stack[-0x14]:1  local_14
 ;
 ; Referenced Globals:
 ;   CVector3i[15360] g_PrecomputedWorldPositions

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 37,
+    "complexity_score": 38,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
+    "pseudocode_lines": 23,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 82
+    "total_lines": 83
   },
   "cross_references": [
     {
@@ -123,8 +123,8 @@
         "is_param": false,
         "name": "local_3ac",
         "offset": -940,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": true,
@@ -152,7 +152,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 12,
+      "line": 13,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)&g_SoundModeTable[0].name + iVar2);",

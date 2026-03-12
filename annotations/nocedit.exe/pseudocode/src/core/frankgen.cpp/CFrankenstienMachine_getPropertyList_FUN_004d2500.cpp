@@ -10,8 +10,8 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500
 
 {
   CDemonActor *pCVar1;
-  CActorPropertyValidatorFunc *callback;
   char local_68 [100];
+  CActorPropertyValidatorFunc *callback;
   
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base,property_list);
   _sprintf(local_68,"Master frame (%0..%g)",(double)2300.0f);

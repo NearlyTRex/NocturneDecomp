@@ -7,8 +7,8 @@
 ; CPassenger *     Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined1       Stack[-0x1c]:1  local_1c
+; float            Stack[-0x20]:4  local_20
+; CVector3f        Stack[-0x1c]:12  local_1c
 ;
 ; Referenced Globals:
 ;   float FLOAT_00661f58 = 2

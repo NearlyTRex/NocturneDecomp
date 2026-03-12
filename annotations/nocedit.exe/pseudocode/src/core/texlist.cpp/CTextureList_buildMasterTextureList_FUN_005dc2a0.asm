@@ -6,19 +6,14 @@
 ; Parameters:
 ; CTextureList *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x1d0]:4  local_1d0
-; undefined        Stack[-0x1cc]:1  local_1cc
-; undefined1       Stack[-0x1cb]:1  local_1cb
-; undefined        Stack[-0xc8]:1  local_c8
-; undefined1       Stack[-0xc7]:1  local_c7
-; undefined        Stack[-0x78]:1  local_78
-; undefined1       Stack[-0x77]:1  local_77
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; _WIN32_FIND_DATAA Stack[-0x1e0]:320  _Stack_1e0
+; char[80]         Stack[-0x78]:80  local_78
+; int              Stack[-0x28]:4  local_28
+; HANDLE           Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; char[16] *       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_art_raw_00654ff3

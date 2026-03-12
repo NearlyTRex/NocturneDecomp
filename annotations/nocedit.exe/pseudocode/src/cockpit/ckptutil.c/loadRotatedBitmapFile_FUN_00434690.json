@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 23,
+        "line": 25,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
@@ -24,6 +24,12 @@
         "column": 58,
         "line": 54,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
+      },
+      {
+        "category": "other",
+        "column": 19,
+        "line": 56,
+        "message": "member reference base type 'int' is not a structure or union"
       }
     ],
     "success": false,
@@ -31,17 +37,18 @@
   },
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 85,
+    "complexity_score": 101,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 2,
+    "pseudocode_lines": 61,
+    "suspect_count": 3,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "unknown_field"
     ],
-    "total_lines": 240
+    "total_lines": 241
   },
   "cross_references": [],
   "function": {
@@ -212,39 +219,39 @@
     "pcode_op_count": 593
   },
   "stack_frame": {
-    "frame_size": 132,
+    "frame_size": 112,
     "local_size": 112,
     "param_offset": 4,
-    "param_size": 20,
+    "param_size": 0,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
-        "size": 1,
-        "type": "undefined"
+        "size": 80,
+        "type": "char[80]"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -280,24 +287,39 @@
         "offset": 20,
         "size": 4,
         "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "in_stack_00000018",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 10,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "int in_stack_00000018;",
       "type": "stack_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 49,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "local_14._0_1_ = (char)iVar1;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 62,
       "match": "in_stack_00000018",
       "severity": "moderate",
-      "text": "cockpit_ckptutil_c_applyActPalette_FUN_004319b0(filename,buffer,local_1c,in_stack_00000018);",
+      "text": "cockpit_ckptutil_c_applyActPalette_FUN_004319b0(filename,buffer,size,in_stack_00000018);",
       "type": "stack_param"
     }
   ]

@@ -6,18 +6,15 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   mp3_filename
 ; Local Variables:
-; undefined1       Stack[-0x85c]:1  local_85c
-; undefined1       Stack[-0x45c]:1  local_45c
-; undefined1       Stack[-0x45b]:1  local_45b
-; undefined1       Stack[-0x45a]:1  local_45a
-; undefined1       Stack[-0x459]:1  local_459
-; undefined1       Stack[-0x330]:1  local_330
-; undefined1       Stack[-0x22c]:1  local_22c
-; undefined1       Stack[-0x12c]:1  local_12c
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined1       Stack[-0x14]:1  local_14
+; short[512]       Stack[-0x85c]:1024  local_85c
+; char[300]        Stack[-0x45c]:300  local_45c
+; char[260]        Stack[-0x330]:260  local_330
+; char[256]        Stack[-0x22c]:256  local_22c
+; char[256]        Stack[-0x12c]:256  local_12c
+; CStrList         Stack[-0x2c]:16  local_2c
+; int              Stack[-0x1c]:4  local_1c
+; _FILE *          Stack[-0x18]:4  local_18
+; char[4]          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_fileman.cpp_preprocessMusicFiles_FUN_004bd750 at 004bd8c7

@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 77,
-        "line": 42,
+        "line": 44,
         "message": "format specifies type 'int' but the argument has type 'HWND' (aka 'HWND__ *') [-Werror,-Wformat]"
       }
     ],
@@ -13,15 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 112,
+    "complexity_score": 114,
     "cross_reference_count": 1,
-    "function_call_count": 19,
+    "function_call_count": 18,
     "global_count": 25,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 112,
+    "pseudocode_lines": 114,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 459
+    "total_lines": 461
   },
   "cross_references": [
     {
@@ -63,11 +63,6 @@
       "addr": "EXTERNAL:00000035",
       "is_variadic": false,
       "name": "GetClientRect"
-    },
-    {
-      "addr": "EXTERNAL:0000006a",
-      "is_variadic": false,
-      "name": "GetCurrentProcess"
     },
     {
       "addr": "EXTERNAL:00000011",
@@ -338,15 +333,43 @@
         "is_param": false,
         "name": "local_1f8",
         "offset": -504,
+        "size": 260,
+        "type": "char[260]"
+      },
+      {
+        "is_param": false,
+        "name": "bStack_f4",
+        "offset": -244,
         "size": 1,
-        "type": "undefined1"
+        "type": "byte"
+      },
+      {
+        "is_param": false,
+        "name": "abStack_f3",
+        "offset": -243,
+        "size": 127,
+        "type": "byte[127]"
       },
       {
         "is_param": false,
         "name": "local_74",
         "offset": -116,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "char[80]"
+      },
+      {
+        "is_param": false,
+        "name": "tStack_24",
+        "offset": -36,
+        "size": 16,
+        "type": "tagRECT"
+      },
+      {
+        "is_param": false,
+        "name": "tStack_14",
+        "offset": -20,
+        "size": 16,
+        "type": "tagRECT"
       },
       {
         "is_param": true,

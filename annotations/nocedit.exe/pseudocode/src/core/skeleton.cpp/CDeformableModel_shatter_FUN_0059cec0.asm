@@ -13,37 +13,35 @@
 ; int *            Stack[0x1c]:4   texture_set_indices
 ; int              Stack[0x20]:4   particle_lifetime
 ; Local Variables:
-; undefined1       Stack[-0xe0]:1  local_e0
+; CMatrix3x3f      Stack[-0xe0]:36  local_e0
 ; char             Stack[-0xb8]:1  local_b8
 ; undefined4       Stack[-0xb4]:4  local_b4
 ; undefined4       Stack[-0xb0]:4  local_b0
-; undefined1       Stack[-0x94]:1  local_94
-; undefined1       Stack[-0x88]:1  local_88
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined1       Stack[-0x70]:1  local_70
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x94]:12  local_94
+; CVector3f        Stack[-0x88]:12  local_88
+; CVector3f        Stack[-0x7c]:12  local_7c
+; CVector3f        Stack[-0x70]:12  local_70
+; STextureSet *    Stack[-0x64]:4  local_64
+; STextureSet *    Stack[-0x60]:4  local_60
+; int              Stack[-0x5c]:4  local_5c
+; int *            Stack[-0x58]:4  local_58
+; int              Stack[-0x54]:4  local_54
+; int              Stack[-0x50]:4  local_50
+; byte *           Stack[-0x4c]:4  local_4c
+; byte *           Stack[-0x48]:4  local_48
+; int              Stack[-0x44]:4  local_44
+; int              Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; STextureSet *    Stack[-0x2c]:4  local_2c
+; STextureSet *    Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_005a14b0 at 005a14f4

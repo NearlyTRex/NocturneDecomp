@@ -7,8 +7,8 @@
 ; CMatrix3x4f *    Stack[0x4]:4   matrix_in
 ; CVector3f *      Stack[0x8]:4   vector_out
 ; Local Variables:
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined1       Stack[-0x3c]:1  local_3c
+; CMatrix3x4f      Stack[-0x6c]:48  local_6c
+; CMatrix3x4f      Stack[-0x3c]:48  local_3c
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 at 00598099

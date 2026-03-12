@@ -7,7 +7,7 @@
 ; CChain *         Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   out_point
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; CVector3f        Stack[-0x14]:12  local_14
 ;
 ; XREF[1]:
 ;   core_chain.cpp_CChain_process_FUN_004300d0 at 004301d7

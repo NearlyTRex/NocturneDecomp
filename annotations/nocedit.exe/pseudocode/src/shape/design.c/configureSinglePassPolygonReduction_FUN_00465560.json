@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 89,
-        "line": 92,
+        "line": 96,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 129,
+    "complexity_score": 133,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 14,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 118,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 399
+    "total_lines": 403
   },
   "cross_references": [
     {
@@ -270,50 +270,43 @@
         "is_param": false,
         "name": "local_74",
         "offset": -116,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_73",
-        "offset": -115,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "byte[80]"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -327,7 +320,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 62,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar7 = (float10)fcos((float10)local_14 * (float10)0.01745329252);",

@@ -8,29 +8,28 @@
 ; char *           Stack[0x8]:4   filename
 ; CBoneStructure * Stack[0xc]:4   bone_structure
 ; Local Variables:
-; undefined        Stack[-0x110]:1  local_110
-; undefined4       Stack[-0x10e]:4  local_10e
-; undefined        Stack[-0xd8]:1  local_d8
-; undefined        Stack[-0xa8]:1  local_a8
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined        Stack[-0x4c]:1  local_4c
-; undefined        Stack[-0x40]:1  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int[200]         Stack[-0x430]:800  aiStack_430
+; undefined1[2]    Stack[-0x110]:2  local_110
+; int              Stack[-0x10e]:4  local_10e
+; CMatrix3x4f      Stack[-0xd8]:48  local_d8
+; CMatrix3x4f      Stack[-0xa8]:48  local_a8
+; int[4]           Stack[-0x78]:16  local_78
+; int              Stack[-0x68]:4  local_68
+; float            Stack[-0x64]:4  local_64
+; CVector3f        Stack[-0x58]:12  local_58
+; CVector3f        Stack[-0x4c]:12  local_4c
+; undefined1[4]    Stack[-0x40]:4  local_40
+; long             Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; float            Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; _FILE *          Stack[-0x28]:4  local_28
+; SBoneData *      Stack[-0x24]:4  local_24
+; uchar *          Stack[-0x20]:4  local_20
+; uchar *          Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; SIZE_T           Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Importing_vertex_assignm_0064a90c

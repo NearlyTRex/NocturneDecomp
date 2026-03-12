@@ -12,7 +12,7 @@ float __cdecl core_charactr_cpp_clampFloat_FUN_00428620(float value,float limit)
   float fVar1;
   
   fVar1 = -limit;
-  if ((-limit <= value) && (fVar1 = limit, value <= limit)) {
+  if ((fVar1 <= value) && (fVar1 = limit, value <= limit)) {
     return value;
   }
   return fVar1;

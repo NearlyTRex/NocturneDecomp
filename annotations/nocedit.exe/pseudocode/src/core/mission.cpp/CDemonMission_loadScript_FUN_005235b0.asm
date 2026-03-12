@@ -7,7 +7,7 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   is_loading
 ; Local Variables:
-; undefined1       Stack[-0x104]:1  local_104
+; char[260]        Stack[-0x104]:260  local_104
 ;
 ; XREF[2]:
 ;   core_mission.cpp_CDemonMission_startMission_FUN_00524760 at 00524816

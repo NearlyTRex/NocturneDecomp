@@ -10,6 +10,7 @@ float __cdecl core_conveyor_cpp_floatModulo_FUN_00442400(float value,float divis
 
 {
   double dVar1;
+  double dVar2;
   
   if (value < 0.0) {
     dVar1 = floor((double)(-value / divisor));
@@ -19,6 +20,6 @@ float __cdecl core_conveyor_cpp_floatModulo_FUN_00442400(float value,float divis
     }
     return value;
   }
-  dVar1 = floor((double)(value / divisor));
-  return value - (float)dVar1 * divisor;
+  dVar2 = floor((double)(value / divisor));
+  return value - (float)dVar2 * divisor;
 }

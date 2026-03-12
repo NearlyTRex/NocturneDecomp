@@ -9,11 +9,12 @@
 void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,int string_index,char *output_buffer,int field_number)
 
 {
-  char cVar1;
-  char *pcVar2;
+  char cVar2;
   char *pcVar3;
   char *pcVar4;
   char local_134 [300];
+  char cVar1;
+  char *pcVar2;
   
   pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,(int)output_buffer);
   for (; (pcVar3 != (char *)0x0 && (0 < field_number)); field_number = field_number + -1) {
@@ -29,12 +30,12 @@ void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_
     *pcVar4 = '\0';
   }
   if (pcVar3 != (char *)0x0) {
-    cVar1 = *pcVar3;
-    while ((cVar1 != '\0' && (*pcVar3 != '\t'))) {
-      cVar1 = *pcVar3;
+    cVar2 = *pcVar3;
+    while ((cVar2 != '\0' && (*pcVar3 != '\t'))) {
+      cVar2 = *pcVar3;
       pcVar3 = pcVar3 + 1;
-      *(char *)string_index = cVar1;
-      cVar1 = *pcVar3;
+      *(char *)string_index = cVar2;
+      cVar2 = *pcVar3;
       string_index = string_index + 1;
     }
     *(char *)string_index = '\0';

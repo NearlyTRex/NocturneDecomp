@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 108,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 93,
+    "pseudocode_lines": 94,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 274
+    "total_lines": 275
   },
   "cross_references": [
     {
@@ -170,78 +170,57 @@
         "is_param": false,
         "name": "local_c8",
         "offset": -200,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c4",
-        "offset": -196,
-        "size": 1,
-        "type": "undefined1"
+        "size": 5,
+        "type": "SNetPacketHeader"
       },
       {
         "is_param": false,
         "name": "local_c3",
         "offset": -195,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_bf",
         "offset": -191,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_bb",
         "offset": -187,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_ba",
-        "offset": -186,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "char[80]"
       },
       {
         "is_param": false,
         "name": "local_6b",
         "offset": -107,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_67",
         "offset": -103,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_66",
-        "offset": -102,
-        "size": 1,
-        "type": "undefined1"
+        "size": 20,
+        "type": "char[20]"
       },
       {
         "is_param": false,
         "name": "local_53",
         "offset": -83,
-        "size": 1,
-        "type": "undefined"
+        "size": 60,
+        "type": "EHeroType[15]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SNetPlayer *"
       },
       {
         "is_param": true,
@@ -262,7 +241,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 72,
       "match": "(EHeroType *)((int)",
       "severity": "mild",
       "text": "*(EHeroType *)((int)pCVar2 + (uint)bVar8 * -8 + 0x40);",

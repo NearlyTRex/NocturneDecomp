@@ -9,10 +9,10 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_eqSave_FUN_0051d0e0(CLodMesh *this_ptr,_FILE *file_handle)
 
 {
-  double dVar1;
   uint *puVar2;
   int iVar3;
   int iVar4;
+  double dVar1;
   
   if (file_handle != (_FILE *)0x0) {
     iVar3 = 0;

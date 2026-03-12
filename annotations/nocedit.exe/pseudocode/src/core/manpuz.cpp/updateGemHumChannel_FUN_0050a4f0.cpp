@@ -9,10 +9,11 @@
 int __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_0050a4f0(float *hum_value,float target,float max_step,uint *sfx_handle,char *wav_filename,CVector3f *world_position)
 
 {
-  float fVar1;
+  float volume;
   int iVar2;
   uint uVar3;
   int iVar4;
+  float fVar1;
   
   iVar4 = 0;
   if (target - *hum_value < -max_step) {
@@ -28,8 +29,8 @@ int __cdecl core_manpuz_cpp_updateGemHumChannel_FUN_0050a4f0(float *hum_value,fl
   }
   *hum_value = fVar1;
 LAB_0050a537:
-  fVar1 = *hum_value * (float)0.0039215686274509803;
-  if (fVar1 <= 0.0) {
+  volume = *hum_value * (float)0.0039215686274509803;
+  if (volume <= 0.0) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40(*sfx_handle);
     return iVar4;
   }
@@ -38,11 +39,11 @@ LAB_0050a537:
     sound_sndmain_cpp_setSfxPosition_FUN_005a9820
               (*sfx_handle,(double)world_position->x,(double)world_position->y,
                (double)world_position->z);
-    sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(*sfx_handle,fVar1);
+    sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(*sfx_handle,volume);
     return iVar4;
   }
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-  sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(fVar1);
+  sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(volume);
   sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0
             ((double)world_position->x,(double)world_position->y,(double)world_position->z);
   uVar3 = sound_sndmain_cpp_startSfx_FUN_005a8e90(wav_filename);

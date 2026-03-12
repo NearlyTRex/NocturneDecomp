@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 83,
+    "complexity_score": 84,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 59,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 180
+    "total_lines": 181
   },
   "cross_references": [
     {
@@ -162,7 +162,7 @@
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -176,7 +176,7 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "CKeyFramedModel *"
       },
       {
         "is_param": false,
@@ -190,7 +190,7 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -211,7 +211,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 31,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "while (iVar3 < *(int *)((int)this_ptr->poly_vert_list->vertices + local_18 + -0x14)) {",
@@ -219,7 +219,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 32,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar1 = *(int *)((int)&this_ptr->poly_vert_list->vertices[0].vertex_index +",

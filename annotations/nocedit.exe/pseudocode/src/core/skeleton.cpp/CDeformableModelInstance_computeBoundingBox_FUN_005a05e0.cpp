@@ -9,13 +9,9 @@
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0(CDeformableModelInstance *this_ptr)
 
 {
-  CBoundingBox3D *pCVar1;
-  float fVar2;
-  float fVar3;
-  int iVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
+  float fVar1;
+  float fVar4;
+  int iVar5;
   CDeformableModel *pCVar8;
   int iVar9;
   CVector3f *pCVar10;
@@ -32,6 +28,13 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_0
   int local_34;
   int local_30;
   int local_2c;
+  float fVar6;
+  float fVar3;
+  CBoundingBox3D *pCVar1;
+  int iVar4;
+  float fVar7;
+  float fVar2;
+  float fVar5;
   
   bVar13 = 0;
   local_2c = 0x7fffffff;
@@ -49,15 +52,14 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_0
     do {
       piVar11 = (int *)((int)&this_ptr->skinned_vertices_buffer->x + iVar9);
       piVar12 = piVar11 + (uint)bVar13 * -2 + 1;
-      local_40 = *piVar11;
-      *(int *)((int)&stack0xffffffc4 + (uint)bVar13 * -8) = *piVar12;
-      *(int *)((int)&stack0xffffffc8 + (uint)bVar13 * -8 + (uint)bVar13 * -8) =
-           piVar12[(uint)bVar13 * -2 + 1];
-      if (local_40 < local_34) {
-        local_34 = local_40;
+      iVar5 = *piVar11;
+      (&local_3c)[(uint)bVar13 * -2] = *piVar12;
+      (&local_38)[(uint)bVar13 * -2 + (uint)bVar13 * -2] = piVar12[(uint)bVar13 * -2 + 1];
+      if (iVar5 < local_34) {
+        local_34 = iVar5;
       }
-      if (local_4c < local_40) {
-        local_4c = local_40;
+      if (local_4c < iVar5) {
+        local_4c = iVar5;
       }
       if (local_3c < local_30) {
         local_30 = local_3c;
@@ -90,10 +92,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_0
   fVar3 = (this_ptr->bounding_box).min.z;
   (this_ptr->bounding_box).min.y = fVar2 - fVar6;
   (this_ptr->bounding_box).min.z = fVar3 - fVar7;
-  fVar2 = (this_ptr->bounding_box).max.y;
+  fVar1 = (this_ptr->bounding_box).max.y;
   pCVar10->x = pCVar10->x + fVar5;
-  fVar3 = (this_ptr->bounding_box).max.z;
-  (this_ptr->bounding_box).max.y = fVar2 + fVar6;
-  (this_ptr->bounding_box).max.z = fVar3 + fVar7;
+  fVar4 = (this_ptr->bounding_box).max.z;
+  (this_ptr->bounding_box).max.y = fVar1 + fVar6;
+  (this_ptr->bounding_box).max.z = fVar4 + fVar7;
   return;
 }

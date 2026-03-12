@@ -9,10 +9,14 @@
 void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella *this_ptr,SDamageInfo *damage_info)
 
 {
+  CDeformableModelInstance *this_ptr_01;
+  CDemonActor_vtable *pCVar2;
+  SMotion *pSVar2;
+  SMotion *pSVar3;
+  float fVar3;
+  float fVar4;
   CDeformableModelInstance *this_ptr_00;
   CDemonActor_vtable *pCVar1;
-  SMotion *pSVar2;
-  float fVar3;
   int force_immediate;
   
   if (ABS((this_ptr->base).invincibility_timer) != 0.0) {
@@ -25,30 +29,30 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella 
     damage_info->damage_amount = 0.0;
   }
   (this_ptr->base).invincibility_timer = 0.5f;
-  fVar3 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
-  this_ptr_00 = &(this_ptr->base).base.model;
-  (this_ptr->base).base.hit_points = fVar3;
-  if (0.0 < fVar3) {
+  fVar4 = (this_ptr->base).base.hit_points - damage_info->damage_amount;
+  this_ptr_01 = &(this_ptr->base).base.model;
+  (this_ptr->base).base.hit_points = fVar4;
+  if (0.0 < fVar4) {
     if (0.0 < damage_info->damage_amount) {
       if ((this_ptr->base).ladder_to_climb == (CLadder *)0x0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&this_ptr_00->motion_controller,8,1);
+                  (&this_ptr_01->motion_controller,8,1);
       }
       if (g_CGamePtr->hero_number != HERO_TYPE_STRANGER) {
-        pCVar1 = (this_ptr->base).base.base.vtable._ub;
-        fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.25,0.4);
-        (*pCVar1->playSoundWithDelay)((CDemonActor *)this_ptr,"gb-hit[1,6].wav",fVar3);
+        pCVar2 = (this_ptr->base).base.base.vtable._ub;
+        fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.25,0.4);
+        (*pCVar2->playSoundWithDelay)((CDemonActor *)this_ptr,"gb-hit[1,6].wav",fVar4);
       }
     }
   }
   else {
     (this_ptr->base).base.hit_points = 0.0;
     pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&this_ptr_00->motion_controller);
+                       (&this_ptr_01->motion_controller);
     if (pSVar2->state_index != 0xc) {
-      pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                         (&this_ptr_00->motion_controller);
-      if (pSVar2->state_index != 0xb) {
+      pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                         (&this_ptr_01->motion_controller);
+      if (pSVar3->state_index != 0xb) {
         force_immediate = 1;
         (this_ptr->base).base.grabbed_by = (CDemonActor *)0x0;
         fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,100.0);
@@ -57,8 +61,8 @@ void __cdecl core_gabriela_cpp_CGabriella_processDamage_FUN_004d6b30(CGabriella 
                    force_immediate);
         if (g_CGamePtr->hero_number != HERO_TYPE_STRANGER) {
           pCVar1 = (this_ptr->base).base.base.vtable._ub;
-          fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.25,0.4);
-          (*pCVar1->playSoundWithDelay)((CDemonActor *)this_ptr,"gb-die[1,6].wav",fVar3);
+          fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.25,0.4);
+          (*pCVar1->playSoundWithDelay)((CDemonActor *)this_ptr,"gb-die[1,6].wav",fVar4);
         }
         core_gore_cpp_CGore_spawnFliesOnActor_FUN_004ee030
                   (g_CGorePtr,(CDemonActor *)this_ptr,0x32,50.0,(CVector3f *)0x0);

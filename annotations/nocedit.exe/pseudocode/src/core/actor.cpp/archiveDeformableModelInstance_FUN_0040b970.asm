@@ -7,8 +7,7 @@
 ; CDeformableModelInstance * Stack[0x4]:4   model_ptr
 ; char *           Stack[0x8]:4   property_name
 ; Local Variables:
-; undefined1       Stack[-0xd0]:1  local_d0
-; undefined1       Stack[-0xcf]:1  local_cf
+; char[200]        Stack[-0xd0]:200  local_d0
 ;
 ; XREF[27]:
 ;   core_armour.cpp_CArmour_archive_FUN_004123a0 at 004123cf

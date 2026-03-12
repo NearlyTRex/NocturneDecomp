@@ -4,43 +4,19 @@
       {
         "category": "format_error",
         "column": 46,
-        "line": 38,
+        "line": 42,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 52,
-        "line": 38,
+        "line": 42,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 62,
-        "line": 38,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 20,
-        "line": 48,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 20,
-        "line": 49,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 20,
-        "line": 50,
-        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 20,
-        "line": 51,
+        "line": 42,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
@@ -78,6 +54,30 @@
         "column": 20,
         "line": 57,
         "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 20,
+        "line": 58,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 20,
+        "line": 59,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 20,
+        "line": 60,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 20,
+        "line": 61,
+        "message": "format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -85,17 +85,17 @@
   },
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 266,
+    "complexity_score": 270,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 19,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 131,
+    "pseudocode_lines": 135,
     "suspect_count": 13,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 453
+    "total_lines": 457
   },
   "cross_references": [],
   "function": {
@@ -315,14 +315,14 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -336,15 +336,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 56,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)pSVar5->vertices + iVar6 + -0x14) = 3;",
+      "text": "*(uint *)((int)pSVar1->vertices + iVar2 + -0x14) = 3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 78,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar2 = (uint *)((int)&pCVar4->z + iVar9);",
@@ -352,7 +352,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 79,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)&pCVar4->y + iVar9);",
@@ -360,7 +360,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 80,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar1 = (uint *)((int)&pCVar4->x + iVar9);",
@@ -368,7 +368,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 94,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&pSVar5->vertices[0].vertex_index + local_18),",
@@ -376,7 +376,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 95,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&pSVar5->vertices[0].texture_u + local_18),",
@@ -384,7 +384,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 96,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&pSVar5->vertices[0].texture_v + local_18),",
@@ -392,7 +392,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 97,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&pSVar5->vertices[1].vertex_index + local_18),",
@@ -400,7 +400,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 98,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&pSVar5->vertices[1].texture_u + local_18),",
@@ -408,7 +408,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 99,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&pSVar5->vertices[1].texture_v + local_18),",
@@ -416,7 +416,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 100,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&pSVar5->vertices[2].vertex_index + local_18),",
@@ -424,7 +424,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 101,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&pSVar5->vertices[2].texture_u + local_18),",
@@ -432,7 +432,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 102,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&pSVar5->vertices[2].texture_v + local_18));",

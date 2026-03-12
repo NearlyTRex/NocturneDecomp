@@ -6,32 +6,28 @@
 ; Parameters:
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x274]:1  local_274
-; undefined1       Stack[-0x174]:1  local_174
-; undefined1       Stack[-0x130]:1  local_130
-; undefined4       Stack[-0x114]:4  local_114
-; undefined1       Stack[-0xf8]:1  local_f8
-; undefined1       Stack[-0x94]:1  local_94
-; undefined1       Stack[-0x90]:1  local_90
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x274]:256  local_274
+; undefined1[68]   Stack[-0x174]:68  local_174
+; _ostream         Stack[-0x130]:56  local_130
+; char[100]        Stack[-0xf8]:100  local_f8
+; CLZWCompress     Stack[-0x94]:56  local_94
+; CVector3i        Stack[-0x5c]:12  local_5c
+; char[4]          Stack[-0x50]:4  local_50
+; int              Stack[-0x4c]:4  local_4c
+; int              Stack[-0x48]:4  local_48
+; int              Stack[-0x44]:4  local_44
+; int              Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360 at 0044e5a7

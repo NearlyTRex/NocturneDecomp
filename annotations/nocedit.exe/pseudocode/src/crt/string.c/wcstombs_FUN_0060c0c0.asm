@@ -8,7 +8,7 @@
 ; wchar_t *        Stack[0x8]:4   src
 ; SIZE_T           Stack[0xc]:4   dest_size
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; char[4]          Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   crt_time.c_tzset_FUN_006072f8 at 006072a0

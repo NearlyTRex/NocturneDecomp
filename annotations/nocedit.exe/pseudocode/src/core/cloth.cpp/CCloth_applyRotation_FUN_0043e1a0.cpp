@@ -10,6 +10,7 @@ void __cdecl core_cloth_cpp_CCloth_applyRotation_FUN_0043e1a0(CCloth *this_ptr,C
 
 {
   CVector3f *pCVar1;
+  CVector3f *pCVar3;
   CVector3f *pCVar2;
   CVector3f *input;
   int iVar3;
@@ -39,12 +40,12 @@ void __cdecl core_cloth_cpp_CCloth_applyRotation_FUN_0043e1a0(CCloth *this_ptr,C
         input->y = pCVar1->y;
         input->z = pCVar1->z;
       }
-      pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+      pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                          (&local_5c,&local_1c,&this_ptr->vertices[iVar3].position);
-      if (pCVar2 != pCVar1) {
-        pCVar2->x = pCVar1->x;
-        pCVar2->y = pCVar1->y;
-        pCVar2->z = pCVar1->z;
+      if (pCVar2 != pCVar3) {
+        pCVar2->x = pCVar3->x;
+        pCVar2->y = pCVar3->y;
+        pCVar2->z = pCVar3->z;
       }
       iVar3 = iVar3 + 1;
       pCVar2 = (CVector3f *)&pCVar2[0x17].z;

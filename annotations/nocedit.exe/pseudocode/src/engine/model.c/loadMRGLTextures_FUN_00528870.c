@@ -9,31 +9,31 @@
 void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *mrgl)
 
 {
-  char cVar1;
-  int iVar2;
-  SMRGLTextureBasic *pSVar3;
   int iVar4;
   int *piVar5;
+  int iVar1;
   int *piVar6;
   char *pcVar7;
   SMRGLTextureBasic SStack_30;
   SMRGLTextureBasic *local_18;
   SMRGLTextureBasic *local_14;
+  char cVar1;
+  SMRGLTextureBasic *pSVar3;
+  int iVar2;
   
-  iVar4 = (mrgl->base).type;
-  local_18 = (SMRGLTextureBasic *)mrgl;
-  if (iVar4 == 0x26) {
+  iVar1 = (mrgl->base).type;
+  if (iVar1 == 0x26) {
     engine_boss_c_modelStructNotSupported_FUN_0041dc20(mrgl);
   }
   else {
-    while (iVar4 != 0) {
-      iVar4 = (local_18->base).type;
-      if ((iVar4 == 0xd) || (iVar4 == 0x40)) {
-        engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(local_18);
+    while (iVar1 != 0) {
+      iVar1 = (((SMRGLTextureBasic *)mrgl)->base).type;
+      if ((iVar1 == 0xd) || (iVar1 == 0x40)) {
+        engine_texture_cpp_ensureTextureLoaded_FUN_005dd800((SMRGLTextureBasic *)mrgl);
       }
-      else if ((iVar4 == 0x1d) &&
-              (iVar4 = 0, local_14 = local_18, 0 < *(int *)local_18->texture_name)) {
-        piVar5 = &local_18[1].base.count;
+      else if ((iVar1 == 0x1d) && (iVar1 = 0, 0 < *(int *)((SMRGLTextureBasic *)mrgl)->texture_name)
+              ) {
+        piVar5 = &(((SMRGLTextureBasic *)((int)mrgl + 0x18))->base).count;
         do {
           SStack_30.base.count = 0;
           pcVar7 = SStack_30.texture_name;
@@ -48,14 +48,13 @@ void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *m
             pcVar7 = pcVar7 + 2;
           } while (cVar1 != '\0');
           engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&SStack_30);
-          iVar4 = iVar4 + 1;
+          iVar1 = iVar1 + 1;
           piVar5 = piVar5 + 8;
-        } while (iVar4 < *(int *)local_14->texture_name);
+        } while (iVar1 < *(int *)((SMRGLTextureBasic *)mrgl)->texture_name);
       }
-      pSVar3 = local_18;
-      iVar4 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)local_18);
-      local_18 = (SMRGLTextureBasic *)(pSVar3->texture_name + iVar4 + -8);
-      iVar4 = (local_18->base).type;
+      iVar4 = engine_model_c_getMRGLSize_FUN_00528700(mrgl);
+      mrgl = (SMRGLHeaderExtended *)(((SMRGLTextureBasic *)mrgl)->texture_name + iVar4 + -8);
+      iVar1 = (((SMRGLTextureBasic *)mrgl)->base).type;
     }
   }
   return;

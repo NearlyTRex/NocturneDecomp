@@ -7,8 +7,7 @@
 ; CChain *         Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined1       Stack[-0x104]:1  local_104
-; undefined1       Stack[-0x103]:1  local_103
+; char[256]        Stack[-0x104]:256  local_104
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHAINLINK_RAW_00617906

@@ -9,10 +9,10 @@
 void __cdecl core_grave_cpp_CGrave_process_FUN_004ee5c0(CGrave *this_ptr,float delta_time)
 
 {
-  float fVar1;
-  float fVar2;
   int iVar3;
   CKeyFramedModel *pCVar4;
+  float fVar1;
+  float fVar2;
   
   if (this_ptr->animation_started == 0) {
     if (this_ptr->grave_state == 0) {

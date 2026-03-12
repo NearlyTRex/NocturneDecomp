@@ -7,8 +7,8 @@
 ; CPod *           Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   target_filename
 ; Local Variables:
-; undefined1       Stack[-0x210]:1  local_210
-; undefined1       Stack[-0x110]:1  local_110
+; char[256]        Stack[-0x210]:256  local_210
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[1]:
 ;   engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0 at 005516a7

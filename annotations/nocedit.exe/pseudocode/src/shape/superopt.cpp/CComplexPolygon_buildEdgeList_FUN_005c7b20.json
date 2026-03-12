@@ -4,13 +4,13 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 21,
+        "line": 23,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 100,
+        "line": 102,
         "message": "no matching function for call to 'shape_superopt_cpp_CComplexPolygon_orderEdgesIntoChain_FUN_005c8280'"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 248,
-    "complexity_score": 215,
+    "complexity_score": 217,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 100,
+    "pseudocode_lines": 102,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 348
+    "total_lines": 350
   },
   "cross_references": [
     {
@@ -124,14 +124,14 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -145,18 +145,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 24,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar4 = *(int *)((int)this_ptr->polygon_list + local_10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "piVar3[5] = *(int *)((int)&pCVar1[iVar2].position.x + 4);",
+      "text": "iVar1 = *(int *)((int)this_ptr->polygon_list + local_10);",
       "type": "pointer_cast"
     },
     {
@@ -164,7 +156,7 @@
       "line": 28,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[7] = *(int *)((int)&pCVar1[iVar2].position.y + 4);",
+      "text": "piVar3[5] = *(int *)((int)&pCVar1[iVar2].position.x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -172,15 +164,15 @@
       "line": 30,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[9] = *(int *)((int)&pCVar1[iVar2].position.z + 4);",
+      "text": "piVar3[7] = *(int *)((int)&pCVar1[iVar2].position.y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 32,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[0xb] = *(int *)((int)&pCVar1[iVar2].position.x + 4);",
+      "text": "piVar3[9] = *(int *)((int)&pCVar1[iVar2].position.z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -188,15 +180,15 @@
       "line": 40,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[0xd] = *(int *)((int)&pCVar1[iVar2].position.y + 4);",
+      "text": "piVar3[0xb] = *(int *)((int)&pCVar1[iVar3].position.x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 42,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[0x23] = *(int *)((int)&pCVar1[iVar2].position.x + 4);",
+      "text": "piVar3[0xd] = *(int *)((int)&pCVar1[iVar3].position.y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -204,15 +196,15 @@
       "line": 60,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[0x25] = *(int *)((int)&pCVar1[iVar2].position.y + 4);",
+      "text": "piVar3[0x23] = *(int *)((int)&pCVar1[iVar3].position.x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 62,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[0x3b] = *(int *)((int)&pCVar1[iVar2].position.x + 4);",
+      "text": "piVar3[0x25] = *(int *)((int)&pCVar1[iVar3].position.y + 4);",
       "type": "pointer_cast"
     },
     {
@@ -220,7 +212,7 @@
       "line": 80,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[0x3d] = *(int *)((int)&pCVar1[iVar2].position.y + 4);",
+      "text": "piVar3[0x3b] = *(int *)((int)&pCVar1[iVar3].position.x + 4);",
       "type": "pointer_cast"
     },
     {
@@ -228,7 +220,15 @@
       "line": 82,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar3[0x3f] = *(int *)((int)&pCVar1[iVar2].position.z + 4);",
+      "text": "piVar3[0x3d] = *(int *)((int)&pCVar1[iVar3].position.y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar3[0x3f] = *(int *)((int)&pCVar1[iVar3].position.z + 4);",
       "type": "pointer_cast"
     }
   ]

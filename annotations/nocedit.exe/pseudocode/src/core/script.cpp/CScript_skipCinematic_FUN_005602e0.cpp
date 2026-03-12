@@ -9,10 +9,10 @@
 int __cdecl core_script_cpp_CScript_skipCinematic_FUN_005602e0(CScript *this_ptr)
 
 {
-  int iVar1;
   int iVar2;
   int iVar3;
   float local_c;
+  int iVar1;
   
   if (this_ptr->saved_cmd_index < 0) {
     return 0;

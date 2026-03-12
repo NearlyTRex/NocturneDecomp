@@ -7,15 +7,30 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
+; float            Stack[-0x118]:4  fStack_118
 ; undefined4       Stack[-0x114]:4  local_114
-; undefined1       Stack[-0xbc]:1  local_bc
-; undefined1       Stack[-0xa4]:1  local_a4
-; undefined1       Stack[-0x8c]:1  local_8c
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x24]:4  local_24
+; float            Stack[-0x110]:4  fStack_110
+; CMatrix3x3f      Stack[-0x10c]:36  CStack_10c
+; CMatrix3x3f      Stack[-0xe4]:36  CStack_e4
+; CVector3f        Stack[-0xbc]:12  local_bc
+; CVector3f        Stack[-0xb0]:12  CStack_b0
+; CVector3f        Stack[-0xa4]:12  local_a4
+; CVector3f        Stack[-0x98]:12  CStack_98
+; CVector3f        Stack[-0x8c]:12  local_8c
+; CVector3f        Stack[-0x80]:12  CStack_80
+; CVector3f        Stack[-0x74]:12  CStack_74
+; CVector3f        Stack[-0x68]:12  CStack_68
+; CVector3f        Stack[-0x5c]:12  CStack_5c
+; CVector3f        Stack[-0x50]:12  CStack_50
+; CVector3f        Stack[-0x44]:12  local_44
+; CVector3f        Stack[-0x38]:12  CStack_38
+; CEnemy *         Stack[-0x2c]:4  local_2c
+; uint             Stack[-0x28]:4  uStack_28
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  fStack_20
+; uint             Stack[-0x1c]:4  uStack_1c
+; uint             Stack[-0x18]:4  uStack_18
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; XREF[4]:
 ;   core_hostage.cpp_CHostage_process_FUN_004f4bd0 at 004f566f

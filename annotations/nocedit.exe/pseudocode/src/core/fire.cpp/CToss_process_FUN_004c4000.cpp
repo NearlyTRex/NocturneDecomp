@@ -9,8 +9,8 @@
 void __cdecl core_fire_cpp_CToss_process_FUN_004c4000(CToss *this_ptr)
 
 {
-  CBox *this_ptr_00;
-  float fVar1;
+  CBox *this_ptr_01;
+  float delta_time;
   CKeyFramedModel *pCVar2;
   CVector3f *pCVar3;
   CVector3f local_30;
@@ -19,14 +19,16 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004c4000(CToss *this_ptr)
   float local_1c;
   CVector3f local_18;
   float local_c;
+  CBox *this_ptr_00;
+  float fVar1;
   
   if (0.0 < this_ptr->fuse_timer) {
-    local_c = g_CGamePtr->delta_time_float;
-    fVar1 = this_ptr->fuse_timer - local_c;
-    this_ptr_00 = &this_ptr->physics_box;
+    delta_time = g_CGamePtr->delta_time_float;
+    fVar1 = this_ptr->fuse_timer - delta_time;
+    this_ptr_01 = &this_ptr->physics_box;
     this_ptr->fuse_timer = fVar1;
     if (0.0 < fVar1) {
-      core_box_cpp_CBox_process_FUN_0041e2f0(this_ptr_00,local_c);
+      core_box_cpp_CBox_process_FUN_0041e2f0(this_ptr_01,delta_time);
       if (this_ptr->toss_type != 0) {
         return;
       }
@@ -37,7 +39,7 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004c4000(CToss *this_ptr)
       local_30.z = local_30.z + (pCVar2->bounds_max).z;
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                          (&(this_ptr->physics_box).rotation_matrix,&local_18,&local_30);
-      local_24 = (this_ptr_00->position).x + pCVar3->x;
+      local_24 = (this_ptr_01->position).x + pCVar3->x;
       local_20 = (this_ptr->physics_box).position.y + pCVar3->y;
       local_1c = (this_ptr->physics_box).position.z + pCVar3->z;
       if (&local_30 != (CVector3f *)&local_24) {
@@ -51,7 +53,7 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004c4000(CToss *this_ptr)
     }
     if (this_ptr->toss_type == 0) {
       core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10
-                (g_CFireEffectPtr,&this_ptr_00->position,16.0,0x42c80000);
+                (g_CFireEffectPtr,&this_ptr_01->position,16.0,0x42c80000);
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handle);
       return;
     }

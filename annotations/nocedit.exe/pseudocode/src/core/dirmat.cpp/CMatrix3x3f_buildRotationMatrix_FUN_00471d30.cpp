@@ -9,17 +9,17 @@
 void __cdecl core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(CMatrix3x3f *this_ptr,CVector3f *euler_angles)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
   float10 fVar6;
   float10 fVar7;
   float10 fVar8;
   float10 fVar9;
   float10 fVar10;
   float10 fVar11;
+  float fVar3;
+  float fVar4;
+  float fVar1;
+  float fVar2;
+  float fVar5;
   
   fVar6 = (float10)fsin((float10)euler_angles->x);
   fVar7 = (float10)fsin((float10)euler_angles->z);

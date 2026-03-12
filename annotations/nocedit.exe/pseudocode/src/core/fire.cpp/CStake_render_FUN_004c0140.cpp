@@ -9,10 +9,10 @@
 void __cdecl core_fire_cpp_CStake_render_FUN_004c0140(CStake *this_ptr)
 
 {
-  CVector3f *orientation;
   CKeyFramedModel *pCVar1;
   int iVar2;
   CBoundingBox3D local_24;
+  CVector3f *orientation;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&(this_ptr->physics_box).position);

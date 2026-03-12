@@ -10,6 +10,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CE
 
 {
   int iVar1;
+  int iVar2;
   char local_40 [40];
   CVector3f local_18;
   
@@ -27,8 +28,8 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CE
     if (iVar1 == 0) {
       return 0;
     }
-    iVar1 = sscanf(local_40,"%f%*[ ,]%f%*[ ,]%f");
-    if (iVar1 == 3) break;
+    iVar2 = sscanf(local_40,"%f%*[ ,]%f%*[ ,]%f");
+    if (iVar2 == 3) break;
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (editor_tools,"Please enter a valid vector.");
   }

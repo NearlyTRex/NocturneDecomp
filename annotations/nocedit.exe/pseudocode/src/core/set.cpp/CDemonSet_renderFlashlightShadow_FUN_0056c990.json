@@ -10,7 +10,7 @@
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 61,
+        "line": 60,
         "message": "use of undeclared identifier 'stack0x00000000'"
       }
     ],
@@ -19,19 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 193,
+    "complexity_score": 192,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 36,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 118,
+    "pseudocode_lines": 117,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "stack_ref",
       "warning_type_propagation"
     ],
-    "total_lines": 470
+    "total_lines": 469
   },
   "cross_references": [
     {
@@ -454,113 +454,50 @@
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_54",
-        "offset": -84,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonLight *"
       },
       {
         "is_param": true,
@@ -590,7 +527,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 54,
+      "line": 53,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((float *)&stack0x00000000 != &g_CDemonCameraInstance.base.rotation_matrix.m[2].z) {",
@@ -598,7 +535,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
+      "line": 82,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_5c.x = (int)ROUND(local_2c.x * 256.0f);",
@@ -606,7 +543,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 84,
+      "line": 83,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_5c.y = (int)ROUND(local_2c.y * 256.0f);",
@@ -614,7 +551,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 85,
+      "line": 84,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_5c.z = (int)ROUND(local_2c.z * 256.0f);",

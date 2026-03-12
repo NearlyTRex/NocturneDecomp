@@ -6,17 +6,16 @@
 ; Parameters:
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x138]:4  local_138
-; undefined4       Stack[-0x134]:4  local_134
-; undefined        Stack[-0x130]:1  local_130
-; undefined1       Stack[-0x12f]:1  local_12f
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x138]:4  local_138
+; float            Stack[-0x134]:4  local_134
+; uchar[256]       Stack[-0x130]:256  local_130
+; int              Stack[-0x30]:4  local_30
+; char *           Stack[-0x2c]:4  local_2c
+; char *           Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; char *           Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   core_game.cpp_hostNetworkGame_FUN_004e2f10 at 004e2f64

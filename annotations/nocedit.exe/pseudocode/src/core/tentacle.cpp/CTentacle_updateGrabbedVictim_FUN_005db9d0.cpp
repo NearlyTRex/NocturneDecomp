@@ -9,12 +9,15 @@
 int __cdecl core_tentacle_cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0(CTentacle *this_ptr,CCharacter *character)
 
 {
-  CCharacter *pCVar1;
   CVector3f *pCVar2;
   UOrientationVector *orientation;
   int iVar3;
+  int iVar1;
+  CMatrix3x4f *pCVar3;
+  CMatrix3x4f *pCVar7;
   CMatrix3x4f *pCVar4;
   CMatrix3x4f *pCVar5;
+  CMatrix3x4f *pCVar8;
   CMatrix3x4f *pCVar6;
   byte bVar7;
   CMatrix3x4f local_1cc;
@@ -28,6 +31,7 @@ int __cdecl core_tentacle_cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0(CTentac
   CMatrix3x4f local_4c;
   CVector3f local_1c;
   CVector3f local_10;
+  CCharacter *pCVar1;
   
   bVar7 = 0;
   if (character != (this_ptr->base).victim) {
@@ -36,40 +40,43 @@ int __cdecl core_tentacle_cpp_CTentacle_updateGrabbedVictim_FUN_005db9d0(CTentac
   core_xform_cpp_lerpMatrix3x4_FUN_005f7140
             (&this_ptr->target_matrix,&this_ptr->prev_target_matrix,this_ptr->target_blend,
              &local_1cc);
-  pCVar5 = &local_1cc;
-  pCVar4 = &local_16c;
+  pCVar3 = &local_1cc;
+  pCVar7 = &local_16c;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar4->m[0].w = pCVar5->m[0].w;
-    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);
+    pCVar7->m[0].w = pCVar3->m[0].w;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);
+    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
             (&local_13c,&(this_ptr->base).base.base.location.position,
              &(this_ptr->base).base.base.orient.vec);
-  pCVar5 = &local_13c;
+  pCVar3 = &local_13c;
   core_tentacle_cpp_CTentacle_computeGripBoneMatrix_FUN_005dbb70(this_ptr,&local_4c);
-  pCVar4 = &local_4c;
-  pCVar6 = &local_dc;
-  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar6->m[0].w = pCVar4->m[0].w;
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);
-    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
+  pCVar7 = &local_4c;
+  pCVar8 = &local_dc;
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    pCVar8->m[0].w = pCVar7->m[0].w;
+    pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar7 * -2 + 1) * 4);
+    pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar7 * -2 + 1) * 4);
   }
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_16c,&local_dc,&local_7c);
   pCVar4 = &local_7c;
   pCVar6 = &local_19c;
-  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + (uint)bVar7 * -8 + 4);
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar7 * -8 + 4);
     pCVar6->m[0].w = pCVar4->m[0].w;
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);
-    pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar7 * -2 + 1) * 4);
+    pCVar4 = pCVar4;
+    pCVar6 = pCVar6;
   }
-  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_19c,pCVar5,&local_ac);
+  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_19c,pCVar3,&local_ac);
   pCVar5 = &local_ac;
-  pCVar4 = &local_10c;
-  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar4->m[0].w = pCVar5->m[0].w;
-    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
-    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar7 * -2 + 1) * 4);
+  pCVar3 = &local_10c;
+  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar7 * -8 + 4);
+    pCVar3->m[0].w = pCVar5->m[0].w;
+    pCVar5 = pCVar5;
+    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar7 * -2 + 1) * 4);
   }
   pCVar2 = core_xform_cpp_getTranslation_FUN_005f6110(&local_10c,&local_10);
   pCVar1 = (this_ptr->base).victim;

@@ -8,15 +8,9 @@
 ; int              Stack[0x8]:4   vertex_index1
 ; int              Stack[0xc]:4   vertex_index2
 ; Local Variables:
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x90]:4  local_90
-; undefined1       Stack[-0x70]:1  local_70
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x30]:4  local_30
+; SRenderVertex    Stack[-0xa0]:48  local_a0
+; SRenderVertex    Stack[-0x70]:48  local_70
+; SRenderVertex    Stack[-0x40]:48  local_40
 ;
 ; XREF[7]:
 ;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340 at 0042546d

@@ -9,14 +9,17 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_createOrigSamplePoints_FUN_00517000(CLodMesh *this_ptr)
 
 {
-  CLodMesh *pCVar1;
+  CLodMesh *pCVar2;
   int *piVar2;
   SLodSamplePoint *pSVar3;
   CVector3f *pCVar4;
   uint *puVar5;
   CLodVert *pCVar6;
   int iVar7;
+  int *piVar3;
   CLodVert *pCVar8;
+  int iVar4;
+  int iVar5;
   int sample_point_index;
   CVector3f *pCVar9;
   char *pcVar10;
@@ -35,6 +38,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_createOrigSamplePoints_FUN_00517000(CLod
   int local_1c;
   int local_18;
   CLodVert *local_14;
+  CLodMesh *pCVar1;
   
   if (this_ptr->next_lod == (CLodMesh *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
@@ -46,7 +50,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_createOrigSamplePoints_FUN_00517000(CLod
   this_ptr->sample_point_count = iVar7;
   piVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      (iVar7 * 0x1c + 4,"..\\shape\\meshlod.cpp",0x577);
-  pSVar3 = (SLodSamplePoint *)0x0;
+  pSVar3 = (SLodSamplePoint *)piVar2;
   if (piVar2 != (int *)0x0) {
     pSVar3 = (SLodSamplePoint *)(piVar2 + 1);
     *piVar2 = iVar7;
@@ -58,34 +62,33 @@ void __cdecl shape_meshlod_cpp_CLodMesh_createOrigSamplePoints_FUN_00517000(CLod
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
   sample_point_index = 0;
-  iVar7 = 0;
+  iVar4 = 0;
   local_24 = 0;
   for (local_18 = 0; local_18 < this_ptr->next_lod->vertex_count; local_18 = local_18 + 1) {
-    pcVar10 = this_ptr->next_lod->vertex_data->lod_workspace + iVar7 + -0x10;
+    pcVar10 = this_ptr->next_lod->vertex_data->lod_workspace + iVar4 + -0x10;
     puVar5 = (uint *)((int)&(this_ptr->sample_points_ptr->position).x + local_24);
     if ((char *)puVar5 != pcVar10) {
       *puVar5 = *(uint *)pcVar10;
       puVar5[1] = *(uint *)(pcVar10 + 4);
       puVar5[2] = *(uint *)(pcVar10 + 8);
     }
-    iVar7 = iVar7 + 0x4c4;
+    iVar4 = iVar4 + 0x4c4;
     puVar5[6] = 0x3f800000;
     shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
               (this_ptr,sample_point_index);
     sample_point_index = sample_point_index + 1;
     local_24 = local_24 + 0x1c;
   }
-  iVar7 = 0;
-  local_20 = sample_point_index * 0x1c;
+  iVar5 = 0;
+  iVar4 = sample_point_index * 0x1c;
   local_28 = 0;
   while( true ) {
-    pCVar1 = this_ptr->next_lod;
-    if (pCVar1->edge_count <= iVar7) break;
-    piVar2 = (int *)((int)pCVar1->edges_ptr->adjacent_tri_indices + local_28 + -0x28);
-    pfVar11 = (float *)((int)&(this_ptr->sample_points_ptr->position).x + local_20);
-    local_14 = pCVar1->vertex_data;
-    pCVar6 = local_14 + piVar2[1];
-    pCVar8 = local_14 + *piVar2;
+    pCVar2 = this_ptr->next_lod;
+    if (pCVar2->edge_count <= iVar5) break;
+    piVar3 = (int *)((int)pCVar2->edges_ptr->adjacent_tri_indices + local_28 + -0x28);
+    pfVar11 = (float *)((int)&(this_ptr->sample_points_ptr->position).x + iVar4);
+    pCVar6 = pCVar2->vertex_data + piVar3[1];
+    pCVar8 = pCVar2->vertex_data + *piVar3;
     local_44 = (pCVar8->position).x + (pCVar6->position).x;
     local_50 = local_44 / 2.0f;
     local_40 = (pCVar8->position).y + (pCVar6->position).y;
@@ -97,36 +100,36 @@ void __cdecl shape_meshlod_cpp_CLodMesh_createOrigSamplePoints_FUN_00517000(CLod
       pfVar11[1] = local_4c;
       pfVar11[2] = local_48;
     }
-    iVar7 = iVar7 + 1;
+    iVar5 = iVar5 + 1;
     pfVar11[6] = 0.9;
     shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
               (this_ptr,sample_point_index);
     sample_point_index = sample_point_index + 1;
     local_28 = local_28 + 0xf0;
-    local_20 = local_20 + 0x1c;
+    iVar4 = iVar4 + 0x1c;
   }
-  iVar7 = 0;
-  local_2c = sample_point_index * 0x1c;
+  iVar5 = 0;
+  iVar4 = sample_point_index * 0x1c;
   local_1c = 0;
   while( true ) {
-    pCVar1 = this_ptr->next_lod;
-    if (pCVar1->tri_count <= local_1c) break;
-    pCVar9 = (CVector3f *)((int)&(this_ptr->sample_points_ptr->position).x + local_2c);
+    pCVar2 = this_ptr->next_lod;
+    if (pCVar2->tri_count <= local_1c) break;
+    pCVar9 = (CVector3f *)((int)&(this_ptr->sample_points_ptr->position).x + iVar4);
     pCVar4 = shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870
-                       (pCVar1,&local_38,
-                        (CLodFace *)((int)pCVar1->tri_data->attribute_indices + iVar7));
+                       (pCVar2,&local_38,
+                        (CLodFace *)((int)pCVar2->tri_data->attribute_indices + iVar5));
     if (pCVar9 != pCVar4) {
       pCVar9->x = pCVar4->x;
       pCVar9->y = pCVar4->y;
       pCVar9->z = pCVar4->z;
     }
-    iVar7 = iVar7 + 0x8c;
+    iVar5 = iVar5 + 0x8c;
     pCVar9[2].x = 0.8;
     shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
               (this_ptr,sample_point_index);
     sample_point_index = sample_point_index + 1;
     local_1c = local_1c + 1;
-    local_2c = local_2c + 0x1c;
+    iVar4 = iVar4 + 0x1c;
   }
   if (sample_point_index == this_ptr->sample_point_count) {
     return;

@@ -9,11 +9,13 @@
 int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_0052f350(CMP3Decoder *this_ptr,SHuffmanTable *huffman_table,int *x_out,int *y_out,int *v_out,int *w_out)
 
 {
-  int iVar1;
+  int iVar2;
+  uint uVar5;
   uint uVar2;
   uint uVar3;
   uint uVar4;
   int local_14;
+  int iVar1;
   
   uVar4 = 0x80000000;
   uVar3 = 0;
@@ -36,9 +38,9 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_0052f350(CMP3Decoder *th
     uVar2 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr);
     if (uVar2 == 0) {
       do {
-        iVar1 = uVar3 * 2;
-        uVar3 = uVar3 + (byte)huffman_table->huffman_data[iVar1];
-      } while (0xf9 < (byte)huffman_table->huffman_data[iVar1]);
+        iVar2 = uVar3 * 2;
+        uVar3 = uVar3 + (byte)huffman_table->huffman_data[iVar2];
+      } while (0xf9 < (byte)huffman_table->huffman_data[iVar2]);
     }
     else {
       do {
@@ -60,34 +62,34 @@ LAB_0052f3b9:
     *x_out = *y_out >> 1 & 1;
     *y_out = *y_out & 1;
     if ((*v_out != 0) &&
-       (uVar3 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar3 == 1)) {
+       (uVar5 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar5 == 1)) {
       *v_out = -*v_out;
     }
     if ((*w_out != 0) &&
-       (uVar3 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar3 == 1)) {
+       (uVar5 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar5 == 1)) {
       *w_out = -*w_out;
     }
     if ((*x_out != 0) &&
-       (uVar3 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar3 == 1)) {
+       (uVar5 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar5 == 1)) {
       *x_out = -*x_out;
     }
   }
   else {
     if ((huffman_table->linbits != 0) && (huffman_table->xlen + -1 == *x_out)) {
-      uVar3 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,huffman_table->linbits);
-      *x_out = *x_out + uVar3;
+      uVar5 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,huffman_table->linbits);
+      *x_out = *x_out + uVar5;
     }
     if ((*x_out != 0) &&
-       (uVar3 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar3 == 1)) {
+       (uVar5 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar5 == 1)) {
       *x_out = -*x_out;
     }
     if ((huffman_table->linbits != 0) && (huffman_table->ylen + -1 == *y_out)) {
-      uVar3 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,huffman_table->linbits);
-      *y_out = *y_out + uVar3;
+      uVar5 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,huffman_table->linbits);
+      *y_out = *y_out + uVar5;
     }
   }
   if ((*y_out != 0) &&
-     (uVar3 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar3 == 1)) {
+     (uVar5 = sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), uVar5 == 1)) {
     *y_out = -*y_out;
   }
   return local_14;

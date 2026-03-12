@@ -9,14 +9,20 @@
 void __cdecl core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20(CDemonFileManager *this_ptr)
 
 {
-  char cVar1;
-  _FILE *file_ptr;
+  char cVar2;
   int iVar2;
+  int iVar3;
+  _FILE *file;
   char *pcVar3;
   uint uVar4;
   SIZE_T SVar5;
+  uint uVar5;
+  SIZE_T SVar6;
   char *pcVar6;
+  char *pcVar8;
+  char *pcVar9;
   char *pcVar7;
+  char *pcVar10;
   byte bVar8;
   char local_798 [512];
   char local_598 [499];
@@ -27,6 +33,8 @@ void __cdecl core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bd
   char local_dc [100];
   char local_78 [100];
   _FILE *local_14;
+  char cVar1;
+  _FILE *file_ptr;
   
   bVar8 = 0;
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
@@ -35,23 +43,22 @@ void __cdecl core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bd
   if (iVar2 != 0) {
     splitpath(local_598,(char *)0x0,(char *)0x0,local_1a4,(char *)0x0);
     makepath(local_140,(char *)0x0,(char *)0x0,local_1a4,"pod");
-    iVar2 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
+    iVar3 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                       (g_CEditorToolsPtr,"Enter POD name to build",&s_EmptyChar_006295ed,
                        "pod",local_140,1);
-    if ((iVar2 != 0) &&
-       (iVar2 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+    if ((iVar3 != 0) &&
+       (iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                           (g_CEditorToolsPtr,"Enter volume name",local_1a4,100,1),
-       iVar2 != 0)) {
-      local_14 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                           (local_598,(char *)0x0,"rt","..\\core\\fileman.cpp",0xb9);
+       iVar3 != 0)) {
+      file = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                       (local_598,(char *)0x0,"rt","..\\core\\fileman.cpp",0xb9);
       engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10(&this_ptr->base);
 LAB_004bdb2c:
       do {
         do {
-          file_ptr = local_14;
-          iVar2 = _fscanf(local_14," %[^\n]\n",local_798);
-          if (iVar2 != 1) {
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\fileman.cpp",0x12d);
+          iVar3 = _fscanf(file," %[^\n]\n",local_798);
+          if (iVar3 != 1) {
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\fileman.cpp",0x12d);
             engine_fileio_cpp_CFileManager_closeExtractFile_FUN_004b7c60(&this_ptr->base);
             engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50
                       (&this_ptr->base,local_140,(char *)0x0);
@@ -62,20 +69,20 @@ LAB_004bdb2c:
             *pcVar3 = '\0';
           }
           uVar4 = 0xffffffff;
-          pcVar3 = local_798;
+          pcVar9 = local_798;
           do {
             if (uVar4 == 0) break;
             uVar4 = uVar4 - 1;
-            cVar1 = *pcVar3;
-            pcVar3 = pcVar3 + (uint)bVar8 * -2 + 1;
+            cVar1 = *pcVar9;
+            pcVar9 = pcVar9 + (uint)bVar8 * -2 + 1;
           } while (cVar1 != '\0');
           SVar5 = ~uVar4 - 1;
           if (0 < (int)SVar5) {
-            pcVar3 = local_798 + (~uVar4 - 1);
+            pcVar9 = local_798 + (~uVar4 - 1);
             do {
-              if ((g_CharacterClassificationTable[(byte)(pcVar3[-1] + 1)] & 2) == 0) break;
+              if ((g_CharacterClassificationTable[(byte)(pcVar9[-1] + 1)] & 2) == 0) break;
               SVar5 = SVar5 - 1;
-              pcVar3 = pcVar3 + -1;
+              pcVar9 = pcVar9 + -1;
             } while (0 < (int)SVar5);
           }
           local_798[SVar5] = '\0';
@@ -84,84 +91,84 @@ LAB_004bdb2c:
             SVar5 = SVar5 - 1;
           }
         } while (local_798[0] == '\0');
-        iVar2 = sscanf(local_798," %[^:]:%s",local_2a5 + 1,local_3a5 + 1);
-        if (iVar2 != 2) {
+        iVar3 = sscanf(local_798," %[^:]:%s",local_2a5 + 1,local_3a5 + 1);
+        if (iVar3 != 2) {
           pcVar6 = "file";
-          pcVar3 = local_2a5 + 1;
+          pcVar9 = local_2a5 + 1;
           do {
-            cVar1 = *pcVar6;
-            *pcVar3 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar6[1];
+            cVar2 = *pcVar6;
+            *pcVar9 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar6[1];
             pcVar6 = pcVar6 + 2;
-            pcVar3[1] = cVar1;
-            pcVar3 = pcVar3 + 2;
-          } while (cVar1 != '\0');
-          pcVar3 = local_3a5 + 1;
-          pcVar6 = local_798;
+            pcVar9[1] = cVar2;
+            pcVar9 = pcVar9 + 2;
+          } while (cVar2 != '\0');
+          pcVar9 = local_3a5 + 1;
+          pcVar8 = local_798;
           do {
-            cVar1 = *pcVar6;
-            *pcVar3 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar6[1];
-            pcVar6 = pcVar6 + 2;
-            pcVar3[1] = cVar1;
-            pcVar3 = pcVar3 + 2;
-          } while (cVar1 != '\0');
+            cVar2 = *pcVar8;
+            *pcVar9 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar8[1];
+            pcVar8 = pcVar8 + 2;
+            pcVar9[1] = cVar2;
+            pcVar9 = pcVar9 + 2;
+          } while (cVar2 != '\0');
         }
-        uVar4 = 0xffffffff;
-        pcVar3 = local_2a5 + 1;
+        uVar5 = 0xffffffff;
+        pcVar9 = local_2a5 + 1;
         do {
-          if (uVar4 == 0) break;
-          uVar4 = uVar4 - 1;
-          cVar1 = *pcVar3;
-          pcVar3 = pcVar3 + (uint)bVar8 * -2 + 1;
-        } while (cVar1 != '\0');
-        SVar5 = ~uVar4 - 1;
-        if (0 < (int)SVar5) {
-          pcVar3 = local_2a5 + ~uVar4;
+          if (uVar5 == 0) break;
+          uVar5 = uVar5 - 1;
+          cVar2 = *pcVar9;
+          pcVar9 = pcVar9 + (uint)bVar8 * -2 + 1;
+        } while (cVar2 != '\0');
+        SVar6 = ~uVar5 - 1;
+        if (0 < (int)SVar6) {
+          pcVar9 = local_2a5 + ~uVar5;
           do {
-            if ((g_CharacterClassificationTable[(byte)(pcVar3[-1] + 1)] & 2) == 0) break;
-            SVar5 = SVar5 - 1;
-            pcVar3 = pcVar3 + -1;
-          } while (0 < (int)SVar5);
+            if ((g_CharacterClassificationTable[(byte)(pcVar9[-1] + 1)] & 2) == 0) break;
+            SVar6 = SVar6 - 1;
+            pcVar9 = pcVar9 + -1;
+          } while (0 < (int)SVar6);
         }
-        (local_2a5 + 1)[SVar5] = '\0';
+        (local_2a5 + 1)[SVar6] = '\0';
         while ((g_CharacterClassificationTable[(byte)(local_2a5[1] + 1)] & 2) != 0) {
-          memmove(local_2a5 + 1,local_2a5 + 2,SVar5);
-          SVar5 = SVar5 - 1;
+          memmove(local_2a5 + 1,local_2a5 + 2,SVar6);
+          SVar6 = SVar6 - 1;
         }
-        uVar4 = 0xffffffff;
-        pcVar3 = local_3a5 + 1;
+        uVar5 = 0xffffffff;
+        pcVar9 = local_3a5 + 1;
         do {
-          if (uVar4 == 0) break;
-          uVar4 = uVar4 - 1;
-          cVar1 = *pcVar3;
-          pcVar3 = pcVar3 + (uint)bVar8 * -2 + 1;
-        } while (cVar1 != '\0');
-        SVar5 = ~uVar4 - 1;
-        if (0 < (int)SVar5) {
-          pcVar3 = local_3a5 + ~uVar4;
+          if (uVar5 == 0) break;
+          uVar5 = uVar5 - 1;
+          cVar2 = *pcVar9;
+          pcVar9 = pcVar9 + (uint)bVar8 * -2 + 1;
+        } while (cVar2 != '\0');
+        SVar6 = ~uVar5 - 1;
+        if (0 < (int)SVar6) {
+          pcVar9 = local_3a5 + ~uVar5;
           do {
-            if ((g_CharacterClassificationTable[(byte)(pcVar3[-1] + 1)] & 2) == 0) break;
-            SVar5 = SVar5 - 1;
-            pcVar3 = pcVar3 + -1;
-          } while (0 < (int)SVar5);
+            if ((g_CharacterClassificationTable[(byte)(pcVar9[-1] + 1)] & 2) == 0) break;
+            SVar6 = SVar6 - 1;
+            pcVar9 = pcVar9 + -1;
+          } while (0 < (int)SVar6);
         }
-        (local_3a5 + 1)[SVar5] = '\0';
+        (local_3a5 + 1)[SVar6] = '\0';
         while ((g_CharacterClassificationTable[(byte)(local_3a5[1] + 1)] & 2) != 0) {
-          memmove(local_3a5 + 1,local_3a5 + 2,SVar5);
-          SVar5 = SVar5 - 1;
+          memmove(local_3a5 + 1,local_3a5 + 2,SVar6);
+          SVar6 = SVar6 - 1;
         }
-        iVar2 = _stricmp(local_2a5 + 1,"sounds");
-        if (iVar2 != 0) {
-          iVar2 = _stricmp(local_2a5 + 1,"file");
-          if (iVar2 == 0) {
+        iVar3 = _stricmp(local_2a5 + 1,"sounds");
+        if (iVar3 != 0) {
+          iVar3 = _stricmp(local_2a5 + 1,"file");
+          if (iVar3 == 0) {
             _fprintf((this_ptr->base).file_ptr,"%s\n",local_3a5 + 1);
           }
           else {
-            iVar2 = _stricmp(local_2a5 + 1,"msn");
-            if (iVar2 == 0) {
+            iVar3 = _stricmp(local_2a5 + 1,"msn");
+            if (iVar3 == 0) {
               shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                         (g_CEditorToolsPtr,"Loading %s",local_3a5 + 1);
               core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,local_3a5 + 1,0);
@@ -171,56 +178,56 @@ LAB_004bdb2c:
               _fprintf((this_ptr->base).file_ptr,"WORLD\\%s\n",local_3a5 + 1);
               splitpath
                         (local_3a5 + 1,(char *)0x0,(char *)0x0,local_dc,(char *)0x0);
-              pcVar6 = ".scr";
-              iVar2 = -1;
-              pcVar3 = local_dc;
+              pcVar9 = ".scr";
+              iVar3 = -1;
+              pcVar7 = local_dc;
               do {
-                pcVar7 = pcVar3;
-                if (iVar2 == 0) break;
-                iVar2 = iVar2 + -1;
-                pcVar7 = pcVar3 + (uint)bVar8 * -2 + 1;
-                cVar1 = *pcVar3;
-                pcVar3 = pcVar7;
-              } while (cVar1 != '\0');
-              pcVar7 = pcVar7 + -1;
+                pcVar7 = pcVar7;
+                if (iVar3 == 0) break;
+                iVar3 = iVar3 + -1;
+                pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
+                cVar2 = *pcVar7;
+                pcVar7 = pcVar7;
+              } while (cVar2 != '\0');
+              pcVar8 = pcVar7 + -1;
               do {
-                cVar1 = *pcVar6;
-                *pcVar7 = cVar1;
-                if (cVar1 == '\0') break;
-                cVar1 = pcVar6[1];
-                pcVar6 = pcVar6 + 2;
-                pcVar7[1] = cVar1;
-                pcVar7 = pcVar7 + 2;
-              } while (cVar1 != '\0');
-              iVar2 = engine_dosio_c_getFileSize_FUN_00481880("world",local_dc);
-              if (0 < iVar2) {
+                cVar2 = *pcVar9;
+                *pcVar8 = cVar2;
+                if (cVar2 == '\0') break;
+                cVar2 = pcVar9[1];
+                pcVar9 = pcVar9 + 2;
+                pcVar8[1] = cVar2;
+                pcVar8 = pcVar8 + 2;
+              } while (cVar2 != '\0');
+              iVar3 = engine_dosio_c_getFileSize_FUN_00481880("world",local_dc);
+              if (0 < iVar3) {
                 _fprintf((this_ptr->base).file_ptr,"WORLD\\%s\n",local_dc);
               }
               splitpath
                         (local_3a5 + 1,(char *)0x0,(char *)0x0,local_78,(char *)0x0);
-              pcVar6 = ".txt";
-              iVar2 = -1;
-              pcVar3 = local_78;
+              pcVar8 = ".txt";
+              iVar3 = -1;
+              pcVar9 = local_78;
               do {
-                pcVar7 = pcVar3;
-                if (iVar2 == 0) break;
-                iVar2 = iVar2 + -1;
-                pcVar7 = pcVar3 + (uint)bVar8 * -2 + 1;
-                cVar1 = *pcVar3;
-                pcVar3 = pcVar7;
-              } while (cVar1 != '\0');
-              pcVar7 = pcVar7 + -1;
+                pcVar10 = pcVar9;
+                if (iVar3 == 0) break;
+                iVar3 = iVar3 + -1;
+                pcVar10 = pcVar9 + (uint)bVar8 * -2 + 1;
+                cVar2 = *pcVar9;
+                pcVar9 = pcVar10;
+              } while (cVar2 != '\0');
+              pcVar10 = pcVar10 + -1;
               do {
-                cVar1 = *pcVar6;
-                *pcVar7 = cVar1;
-                if (cVar1 == '\0') break;
-                cVar1 = pcVar6[1];
-                pcVar6 = pcVar6 + 2;
-                pcVar7[1] = cVar1;
-                pcVar7 = pcVar7 + 2;
-              } while (cVar1 != '\0');
-              iVar2 = engine_dosio_c_getFileSize_FUN_00481880("world",local_78);
-              if (0 < iVar2) {
+                cVar2 = *pcVar8;
+                *pcVar10 = cVar2;
+                if (cVar2 == '\0') break;
+                cVar2 = pcVar8[1];
+                pcVar8 = pcVar8 + 2;
+                pcVar10[1] = cVar2;
+                pcVar10 = pcVar10 + 2;
+              } while (cVar2 != '\0');
+              iVar3 = engine_dosio_c_getFileSize_FUN_00481880("world",local_78);
+              if (0 < iVar3) {
                 _fprintf((this_ptr->base).file_ptr,"WORLD\\%s\n",local_78);
               }
               shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -229,30 +236,30 @@ LAB_004bdb2c:
                         (g_CDemonMissionPtr,(this_ptr->base).file_ptr,0);
             }
             else {
-              iVar2 = _stricmp(local_2a5 + 1,"kfm");
-              if (iVar2 == 0) {
+              iVar3 = _stricmp(local_2a5 + 1,"kfm");
+              if (iVar3 == 0) {
                 core_fileman_cpp_CDemonFileManager_addKeyframeModelToExtractList_FUN_004be230
                           (this_ptr,local_3a5 + 1);
               }
               else {
-                iVar2 = _stricmp(local_2a5 + 1,"cth");
-                if (iVar2 == 0) {
+                iVar3 = _stricmp(local_2a5 + 1,"cth");
+                if (iVar3 == 0) {
                   core_fileman_cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150
                             (this_ptr,local_3a5 + 1);
                 }
                 else {
-                  iVar2 = _stricmp(local_2a5 + 1,"dfm");
-                  if (iVar2 == 0) {
+                  iVar3 = _stricmp(local_2a5 + 1,"dfm");
+                  if (iVar3 == 0) {
                     core_fileman_cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070
                               (this_ptr,local_3a5 + 1);
                   }
                   else {
-                    iVar2 = _stricmp(local_2a5 + 1,"set");
-                    if (iVar2 != 0) {
+                    iVar3 = _stricmp(local_2a5 + 1,"set");
+                    if (iVar3 != 0) {
                       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                                 (g_CEditorToolsPtr,"Invalid tag \"%s\"",local_2a5 + 1);
                       shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                                (local_14,"..\\core\\fileman.cpp",0x126);
+                                (file,"..\\core\\fileman.cpp",0x126);
                       return;
                     }
                     core_fileman_cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0

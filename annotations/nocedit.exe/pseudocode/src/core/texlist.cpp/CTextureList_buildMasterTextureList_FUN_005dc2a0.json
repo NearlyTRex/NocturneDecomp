@@ -3,20 +3,20 @@
     "errors": [
       {
         "category": "incompatible_types",
-        "column": 16,
-        "line": 32,
+        "column": 19,
+        "line": 39,
         "message": "incompatible integer to pointer conversion assigning to 'HANDLE' (aka 'void *') from 'long'"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 86,
+        "line": 93,
         "message": "no matching function for call to '_findnext'"
       },
       {
         "category": "incompatible_types",
         "column": 5,
-        "line": 89,
+        "line": 96,
         "message": "no matching function for call to '_findclose'"
       }
     ],
@@ -25,17 +25,17 @@
   },
   "complexity": {
     "assembly_lines": 291,
-    "complexity_score": 157,
+    "complexity_score": 162,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 132,
+    "pseudocode_lines": 137,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 423
+    "total_lines": 428
   },
   "cross_references": [],
   "function": {
@@ -203,102 +203,67 @@
     "pcode_op_count": 1061
   },
   "stack_frame": {
-    "frame_size": 472,
-    "local_size": 468,
+    "frame_size": 488,
+    "local_size": 484,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_1d0",
-        "offset": -464,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1cc",
-        "offset": -460,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_1cb",
-        "offset": -459,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_c8",
-        "offset": -200,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_c7",
-        "offset": -199,
-        "size": 1,
-        "type": "undefined1"
+        "name": "_Stack_1e0",
+        "offset": -480,
+        "size": 320,
+        "type": "_WIN32_FIND_DATAA"
       },
       {
         "is_param": false,
         "name": "local_78",
         "offset": -120,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_77",
-        "offset": -119,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "char[80]"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "HANDLE"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "char[16] *"
       },
       {
         "is_param": true,
@@ -312,7 +277,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 47,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "cVar1 = *(char *)((int)&pFVar4->dwLowDateTime + 1);",
@@ -320,7 +285,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 48,
       "match": "(FILETIME *)((int)",
       "severity": "mild",
       "text": "pFVar4 = (FILETIME *)((int)&pFVar4->dwLowDateTime + 2);",

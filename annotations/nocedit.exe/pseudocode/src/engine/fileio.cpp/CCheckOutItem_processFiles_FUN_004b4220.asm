@@ -8,47 +8,35 @@
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
 ; undefined4       Stack[-0x13d0]:4  local_13d0
-; undefined        Stack[-0x13c8]:1  local_13c8
-; undefined        Stack[-0x1020]:1  local_1020
-; undefined1       Stack[-0x101f]:1  local_101f
-; undefined4       Stack[-0xe1c]:4  local_e1c
-; undefined4       Stack[-0xe14]:4  local_e14
-; undefined        Stack[-0xe0c]:1  local_e0c
-; undefined1       Stack[-0xe0b]:1  local_e0b
-; undefined4       Stack[-0xc08]:4  local_c08
-; undefined4       Stack[-0xc00]:4  local_c00
-; undefined        Stack[-0xbf8]:1  local_bf8
-; undefined        Stack[-0xa68]:1  local_a68
-; undefined1       Stack[-0xa67]:1  local_a67
-; undefined        Stack[-0x964]:1  local_964
-; undefined1       Stack[-0x963]:1  local_963
-; undefined        Stack[-0x860]:1  local_860
-; undefined1       Stack[-0x85f]:1  local_85f
-; undefined        Stack[-0x75c]:1  local_75c
-; undefined1       Stack[-0x75b]:1  local_75b
-; undefined        Stack[-0x658]:1  local_658
-; undefined        Stack[-0x554]:1  local_554
-; undefined1       Stack[-0x553]:1  local_553
-; undefined        Stack[-0x450]:1  local_450
-; undefined        Stack[-0x350]:1  local_350
-; undefined        Stack[-0x250]:1  local_250
-; undefined        Stack[-0x150]:1  local_150
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined        Stack[-0x20]:1  local_20
-; undefined        Stack[-0x1c]:1  local_1c
-; undefined        Stack[-0x18]:1  local_18
-; undefined        Stack[-0x14]:1  local_14
+; CPickList        Stack[-0x13c8]:936  local_13c8
+; SFoundFileInfo   Stack[-0x1020]:532  local_1020
+; SFoundFileInfo   Stack[-0xe0c]:532  local_e0c
+; char[400]        Stack[-0xbf8]:400  local_bf8
+; char[260]        Stack[-0xa68]:260  local_a68
+; char[260]        Stack[-0x964]:260  local_964
+; char[260]        Stack[-0x860]:260  local_860
+; char[260]        Stack[-0x75c]:260  local_75c
+; char[260]        Stack[-0x658]:260  local_658
+; char[260]        Stack[-0x554]:260  local_554
+; char[256]        Stack[-0x450]:256  local_450
+; char[256]        Stack[-0x350]:256  local_350
+; char[256]        Stack[-0x250]:256  local_250
+; char[256]        Stack[-0x150]:256  local_150
+; CCheckOutList    Stack[-0x50]:8  local_50
+; _FILE *          Stack[-0x48]:4  local_48
+; time_t           Stack[-0x44]:4  local_44
+; int              Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; char *           Stack[-0x38]:4  local_38
+; _FILE *          Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; _FILE *          Stack[-0x2c]:4  local_2c
+; _FILE *          Stack[-0x28]:4  local_28
+; _FILE *          Stack[-0x24]:4  local_24
+; char[4]          Stack[-0x20]:4  local_20
+; char[4]          Stack[-0x1c]:4  local_1c
+; char[4]          Stack[-0x18]:4  local_18
+; char[4]          Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   SLEEP_FUNC* g_SleepFunc = 00212228

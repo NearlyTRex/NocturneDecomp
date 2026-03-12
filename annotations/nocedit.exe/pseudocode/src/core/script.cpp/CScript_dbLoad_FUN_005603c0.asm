@@ -7,16 +7,12 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x334]:1  local_334
-; undefined1       Stack[-0x333]:1  local_333
-; undefined1       Stack[-0x2f8]:1  local_2f8
-; undefined1       Stack[-0x2f7]:1  local_2f7
-; undefined1       Stack[-0x2bc]:1  local_2bc
-; undefined1       Stack[-0x2bb]:1  local_2bb
-; undefined1       Stack[-0x29e]:1  local_29e
-; undefined1       Stack[-0x10c]:1  local_10c
-; undefined1       Stack[-0x10b]:1  local_10b
-; undefined4       Stack[-0xc]:4  local_c
+; char[60]         Stack[-0x334]:60  local_334
+; char[60]         Stack[-0x2f8]:60  local_2f8
+; char[30]         Stack[-0x2bc]:30  local_2bc
+; char[402]        Stack[-0x29e]:402  local_29e
+; char[256]        Stack[-0x10c]:256  local_10c
+; int              Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_loadScript_FUN_00559f80 at 0055a026

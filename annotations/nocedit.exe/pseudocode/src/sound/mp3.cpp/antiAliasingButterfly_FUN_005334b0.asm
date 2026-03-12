@@ -9,15 +9,16 @@
 ; SMpegFrame *     Stack[0xc]:4   frame_info
 ; SMpegFrameHeader * Stack[0x10]:4   header
 ; Local Variables:
-; undefined8       Stack[-0x48]:8  local_48
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
+; undefined4       Stack[-0x48]:4  local_48
+; undefined4       Stack[-0x44]:4  uStack_44
+; float *          Stack[-0x30]:4  local_30
+; float *          Stack[-0x2c]:4  local_2c
+; float *          Stack[-0x28]:4  local_28
+; float *          Stack[-0x24]:4  local_24
+; float *          Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40 at 00535974

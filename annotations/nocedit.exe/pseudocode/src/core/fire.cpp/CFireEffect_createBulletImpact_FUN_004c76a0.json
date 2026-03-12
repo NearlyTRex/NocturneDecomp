@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 319,
-    "complexity_score": 152,
+    "complexity_score": 157,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 23,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 137,
+    "pseudocode_lines": 142,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 456
+    "total_lines": 461
   },
   "cross_references": [
     {
@@ -336,38 +336,59 @@
       },
       {
         "is_param": false,
+        "name": "acStack_60",
+        "offset": -96,
+        "size": 52,
+        "type": "char[52]"
+      },
+      {
+        "is_param": false,
         "name": "local_2c",
         "offset": -44,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -426,7 +447,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 78,
+      "line": 82,
       "match": "DAT_0067aeb8",
       "severity": "mild",
       "text": "puVar5 = &DAT_0067aeb8;",

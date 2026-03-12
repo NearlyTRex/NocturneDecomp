@@ -10,12 +10,12 @@
 ; Local Variables:
 ; undefined8       Stack[-0xa4]:8  local_a4
 ; undefined8       Stack[-0x9c]:8  local_9c
-; undefined1       Stack[-0x94]:1  local_94
-; undefined8       Stack[-0x30]:8  local_30
-; undefined4       Stack[-0x28]:4  local_28
-; undefined8       Stack[-0x24]:8  local_24
-; undefined8       Stack[-0x1c]:8  local_1c
-; undefined4       Stack[-0x14]:4  local_14
+; char[100]        Stack[-0x94]:100  local_94
+; double           Stack[-0x30]:8  local_30
+; int              Stack[-0x28]:4  local_28
+; double           Stack[-0x24]:8  local_24
+; double           Stack[-0x1c]:8  local_1c
+; STextureAtlasEntry * Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0 at 0047a6df

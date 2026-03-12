@@ -11,42 +11,39 @@
 void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0(SMRGLTextureBasic *sky_texture,int u_coord,int v_coord,int vertex_index)
 
 {
-  int iVar1;
   float10 fVar2;
   float10 fVar3;
   float10 fVar4;
   float10 fVar5;
+  float10 fVar1;
   float10 fVar6;
+  float10 fVar7;
   float local_48;
   CVector3i local_44;
   double local_38;
   double local_30;
   float local_1c;
   int local_18;
+  int iVar1;
   
-  local_18 = u_coord;
-  local_1c = (float)u_coord * 0.0625f * (float)3.1415926535000001 *
-             (float)2;
   if (v_coord == 0) {
     local_48 = 0.019634955;
   }
   else {
     local_48 = (float)v_coord * 0.25f * (float)3.1415926535000001 *
                (float)0.5;
-    local_18 = v_coord;
   }
   fVar2 = (float10)fsin((float10)local_48);
-  fVar3 = (float10)local_1c + (float10)(float)sky_texture[1].base.count;
+  fVar3 = (float10)((float)u_coord * 0.0625f * (float)3.1415926535000001 *
+                   (float)2) + (float10)(float)sky_texture[1].base.count;
   fVar4 = (float10)fsin(fVar3);
   fVar5 = (float10)fcos((float10)local_48);
-  fVar3 = (float10)fcos(fVar3);
+  fVar1 = (float10)fcos(fVar3);
   fVar6 = (float10)g_SkyDomeVertexScale;
-  local_38 = (double)fVar5;
-  fVar5 = (float10)256;
-  local_44.y = (int)ROUND(ROUND(fVar2 * fVar6 * fVar5));
-  local_44.x = (int)ROUND(ROUND(fVar4 * fVar6 * (float10)local_38 * fVar5));
-  local_44.z = (int)ROUND(ROUND(fVar3 * fVar6 * (float10)local_38 * fVar5));
-  local_30 = local_38;
+  fVar7 = (float10)256;
+  local_44.y = (int)ROUND(ROUND(fVar2 * fVar6 * fVar7));
+  local_44.x = (int)ROUND(ROUND(fVar4 * fVar6 * (float10)(double)fVar5 * fVar7));
+  local_44.z = (int)ROUND(ROUND(fVar1 * fVar6 * (float10)(double)fVar5 * fVar7));
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr2->vertex_buffer_ptr[vertex_index].projected_vertex,&local_44);
   iVar1 = (sky_texture->base).type;

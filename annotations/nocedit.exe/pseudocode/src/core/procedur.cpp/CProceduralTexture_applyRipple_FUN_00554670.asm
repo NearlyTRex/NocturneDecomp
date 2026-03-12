@@ -9,16 +9,16 @@
 ; float            Stack[0xc]:4   wave_y
 ; float            Stack[0x10]:4   wave_offset
 ; Local Variables:
-; undefined4       Stack[-0x40]:4  local_40
+; float            Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x30]:4  local_30
+; CProceduralTexture * Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; uchar            Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
 ;   core_procedur.cpp_CProceduralTexture_createWaterFrames_FUN_005542b0 at 00554411

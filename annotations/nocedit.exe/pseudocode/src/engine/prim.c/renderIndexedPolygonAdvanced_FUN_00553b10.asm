@@ -7,13 +7,13 @@
 ; int *            Stack[0x4]:4   vertex_indices
 ; int              Stack[0x8]:4   vertex_count
 ; Local Variables:
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SRenderVertex *[16] Stack[-0x68]:64  local_68
+; uint             Stack[-0x28]:4  local_28
+; int *            Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; SSoftwareEdge *  Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_clipper.c_clipPolygonToViewport_FUN_00438420 at 0043850e

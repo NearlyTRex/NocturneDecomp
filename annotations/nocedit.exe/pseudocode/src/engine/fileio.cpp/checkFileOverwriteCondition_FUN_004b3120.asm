@@ -7,8 +7,8 @@
 ; char *           Stack[0x4]:4   target_filename
 ; char *           Stack[0x8]:4   source_directory
 ; Local Variables:
-; undefined        Stack[-0x3f4]:1  local_3f4
-; undefined        Stack[-0x200]:1  local_200
+; char[500]        Stack[-0x3f4]:500  local_3f4
+; char[500]        Stack[-0x200]:500  local_200
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_You_currently_have_s_che_00626502

@@ -9,47 +9,20 @@
 float __cdecl core_path_cpp_CPathMap_getDirection_FUN_005465b0(CPathMap *this_ptr,int current_direction,int next_direction,int prev_direction,CVector3f *dest_position)
 
 {
+  float fVar1;
   CVector3f *pCVar1;
+  CVector3f *pCVar2;
+  int iVar3;
   CVector3f local_e0;
-  uint local_d4;
-  uint local_d0;
-  uint local_cc;
-  uint local_c8;
-  uint local_c4;
-  uint local_c0;
   CVector3f local_bc;
-  uint local_b0;
-  uint local_ac;
-  uint local_a8;
   float local_a4;
   float local_a0;
   float local_9c;
   CVector3f local_98;
-  uint local_8c;
-  uint local_88;
-  uint local_84;
-  uint local_80;
-  uint local_7c;
-  uint local_78;
-  uint local_74;
-  uint local_70;
-  uint local_6c;
   CVector3f local_68;
-  uint local_5c;
-  uint local_58;
-  uint local_54;
   float local_50;
   float local_4c;
   float local_48;
-  uint local_44;
-  uint local_40;
-  uint local_3c;
-  uint local_38;
-  uint local_34;
-  uint local_30;
-  uint local_2c;
-  uint local_28;
-  uint local_24;
   float local_20;
   int local_18;
   
@@ -57,25 +30,16 @@ float __cdecl core_path_cpp_CPathMap_getDirection_FUN_005465b0(CPathMap *this_pt
   local_98.y = (this_ptr->current_position).y - dest_position->y;
   local_98.z = (this_ptr->current_position).z - dest_position->z;
   pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_68,&local_98);
-  local_a4 = pCVar1->x / 100.0f;
-  local_9c = 0.01f * pCVar1->z;
-  local_18 = 1;
+  iVar3 = 1;
   local_50 = 0.0;
-  local_4c = 0.0;
   local_48 = 0.0;
   local_a0 = -(pCVar1->y * 0.01f);
   switch(current_direction) {
   case 1:
     local_48 = 1.0;
-    local_40 = 0;
-    local_44 = 0;
-    local_3c = 0x3f800000;
     break;
   case 2:
     local_48 = -1.0;
-    local_88 = 0;
-    local_8c = 0;
-    local_84 = 0xbf800000;
     break;
   case 3:
     local_50 = 1.0;
@@ -92,10 +56,7 @@ float __cdecl core_path_cpp_CPathMap_getDirection_FUN_005465b0(CPathMap *this_pt
       goto switchD_0054667e_default;
     }
   case 4:
-    local_d0 = 0;
-    local_cc = 0;
     local_50 = -1.0;
-    local_d4 = 0xbf800000;
     switch(next_direction) {
     case 1:
       goto switchD_0054667e_caseD_1;
@@ -111,35 +72,23 @@ float __cdecl core_path_cpp_CPathMap_getDirection_FUN_005465b0(CPathMap *this_pt
   switch(next_direction) {
   case 1:
 switchD_0054667e_caseD_1:
-    local_74 = 0;
-    local_70 = 0;
     local_48 = local_48 + 1.0;
-    local_6c = 0x3f800000;
     goto LAB_005466ab;
   case 2:
 switchD_0054667e_caseD_2:
-    local_80 = 0;
-    local_7c = 0;
     local_48 = local_48 + -1.0f;
-    local_78 = 0xbf800000;
 LAB_005466ab:
-    local_18 = 2;
+    iVar3 = 2;
     break;
   case 3:
 switchD_0054667e_caseD_3:
-    local_18 = 2;
-    local_c8 = 0x3f800000;
-    local_c4 = 0;
+    iVar3 = 2;
     local_50 = local_50 + 1.0;
-    local_c0 = 0;
     break;
   case 4:
 switchD_0054667e_caseD_4:
-    local_18 = 2;
-    local_2c = 0xbf800000;
-    local_28 = 0;
+    iVar3 = 2;
     local_50 = local_50 + -1.0f;
-    local_24 = 0;
   }
 switchD_0054667e_default:
   if ((ABS(local_50) == 0.0) && (ABS(local_48) == 0.0)) {
@@ -173,33 +122,23 @@ switchD_0054667e_default:
     local_48 = local_48 + 1.0;
     goto LAB_00546935;
   case 2:
-    local_b0 = 0;
-    local_ac = 0;
     local_48 = local_48 + -1.0f;
-    local_a8 = 0xbf800000;
 LAB_00546935:
-    local_18 = local_18 + 1;
+    iVar3 = iVar3 + 1;
     break;
   case 3:
-    local_18 = local_18 + 1;
-    local_5c = 0x3f800000;
-    local_58 = 0;
+    iVar3 = iVar3 + 1;
     local_50 = local_50 + 1.0;
-    local_54 = 0;
     break;
   case 4:
-    local_18 = local_18 + 1;
-    local_38 = 0xbf800000;
-    local_34 = 0;
+    iVar3 = iVar3 + 1;
     local_50 = local_50 + -1.0f;
-    local_30 = 0;
   }
 switchD_00546911_default:
-  local_20 = (float)local_18;
-  local_e0.z = 1.0 / local_20;
-  local_e0.x = local_50 * local_e0.z;
-  local_e0.y = local_4c * local_e0.z;
-  local_e0.z = local_48 * local_e0.z;
-  pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_bc,&local_e0);
-  return pCVar1->y + local_a0;
+  fVar1 = 1.0 / (float)iVar3;
+  local_e0.x = local_50 * fVar1;
+  local_e0.y = fVar1 * 0.0;
+  local_e0.z = local_48 * fVar1;
+  pCVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_bc,&local_e0);
+  return pCVar2->y + local_a0;
 }

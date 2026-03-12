@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   box_index
 ; int              Stack[0xc]:4   new_box_index
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_colquant.c_quantizeColors_FUN_004406c0 at 00440946

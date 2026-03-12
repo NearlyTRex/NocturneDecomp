@@ -8,15 +8,16 @@
 ; int              Stack[0x8]:4   x_start
 ; int              Stack[0xc]:4   x_end
 ; Local Variables:
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined        Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; int[1016]        Stack[-0x1028]:4064  aiStackY_1028
+; int              Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; CVector3i        Stack[-0x34]:12  local_34
+; uint             Stack[-0x28]:4  local_28
+; CVector3i *      Stack[-0x24]:4  local_24
+; uint *           Stack[-0x20]:4  local_20
+; int *            Stack[-0x1c]:4  local_1c
+; char *           Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
 ;   CVector3i[320] g_TempWorldPositionRow

@@ -12,6 +12,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_groundBias_FUN_0058e4e0(CDeforma
   CDeformableModelInstance *this_ptr_00;
   CVector3i *pCVar1;
   CDeformableModelInstance *this_ptr_01;
+  int iVar1;
   int iVar2;
   CVector3f local_20;
   int local_14;
@@ -33,20 +34,19 @@ void __cdecl core_skeledit_cpp_CDeformableModel_groundBias_FUN_0058e4e0(CDeforma
   core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr_01,0);
   pCVar1 = this_ptr_01->skinned_vertices_buffer;
   iVar2 = 0;
-  local_14 = pCVar1->y;
+  iVar1 = pCVar1->y;
   if (0 < this_ptr->vertex_count[0]) {
     do {
-      if (pCVar1->y < local_14) {
-        local_14 = pCVar1->y;
+      if (pCVar1->y < iVar1) {
+        iVar1 = pCVar1->y;
       }
       iVar2 = iVar2 + 1;
       pCVar1 = pCVar1 + 1;
     } while (iVar2 < this_ptr->vertex_count[0]);
   }
   local_20.x = g_ZeroVector.f.x;
-  local_14 = -local_14;
   local_20.z = g_ZeroVector.f.z;
-  local_20.y = (float)local_14 * (float)0.00390625;
+  local_20.y = (float)-iVar1 * (float)0.00390625;
   core_skeledit_cpp_CDeformableModel_offsetRootVertices_FUN_0058e600(this_ptr,&local_20);
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0x9d1;

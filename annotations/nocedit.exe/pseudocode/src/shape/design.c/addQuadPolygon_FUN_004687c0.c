@@ -9,8 +9,8 @@
 void __cdecl shape_design_c_addQuadPolygon_FUN_004687c0(int vertex_index_0,int vertex_index_1,int vertex_index_2,int vertex_index_3)
 
 {
-  int iVar1;
   SShapeEditorPolygon *pSVar2;
+  int iVar1;
   
   iVar1 = g_PolygonCount;
   pSVar2 = g_ModelPolygonData + g_PolygonCount;

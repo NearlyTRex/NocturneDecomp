@@ -9,8 +9,9 @@
 void __cdecl core_fire_cpp_CExplosion_activate_FUN_004c3970(CExplosion *this_ptr,CVector3f *position,float scale,int damage_amount)
 
 {
-  CDemonSet *this_ptr_00;
   int iVar1;
+  float fVar1;
+  float fVar2;
   CKeyFramedModel *model_ptr;
   int iVar2;
   float10 fVar3;
@@ -21,6 +22,7 @@ void __cdecl core_fire_cpp_CExplosion_activate_FUN_004c3970(CExplosion *this_ptr
   CVector3f local_44 [2];
   float local_28;
   float local_14;
+  CDemonSet *this_ptr_00;
   
   if (this_ptr != (CExplosion *)position) {
     (this_ptr->position).x = position->x;
@@ -36,13 +38,12 @@ void __cdecl core_fire_cpp_CExplosion_activate_FUN_004c3970(CExplosion *this_ptr
   this_ptr->flip_flag = iVar1;
   this_ptr->damage_amount = damage_amount;
   do {
-    local_28 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
-    local_14 = local_28;
-    local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
-    fVar3 = (float10)fcos((float10)local_14);
-    fVar4 = (float10)fcos((float10)local_28);
-    fVar5 = (float10)fsin((float10)local_14);
-    fVar6 = (float10)fsin((float10)local_28);
+    fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
+    fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
+    fVar3 = (float10)fcos((float10)fVar2);
+    fVar4 = (float10)fcos((float10)fVar1);
+    fVar5 = (float10)fsin((float10)fVar2);
+    fVar6 = (float10)fsin((float10)fVar1);
     local_50.y = (float)(fVar6 * (float10)30.0f);
     local_50.x = (float)(fVar3 * (float10)30.0f * fVar4);
     local_50.z = (float)(fVar5 * (float10)30.0f * fVar4);

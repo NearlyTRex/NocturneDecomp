@@ -6,17 +6,13 @@
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x5c]:1  local_5c
-; undefined1       Stack[-0x50]:1  local_50
-; undefined1       Stack[-0x44]:1  local_44
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined1       Stack[-0x20]:1  local_20
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x5c]:12  local_5c
+; CVector3f        Stack[-0x50]:12  local_50
+; CVector3f        Stack[-0x44]:12  local_44
+; CVector3f        Stack[-0x38]:12  local_38
+; CVector3f        Stack[-0x2c]:12  local_2c
+; CVector3f        Stack[-0x20]:12  local_20
+; CMatrix3x4f *    Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_bride.cpp_CBride_process_FUN_00423a30 at 0042454a

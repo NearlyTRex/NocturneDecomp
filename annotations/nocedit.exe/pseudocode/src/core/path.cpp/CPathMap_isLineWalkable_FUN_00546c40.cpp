@@ -10,7 +10,10 @@ int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_00546c40(CPathMap *this_pt
 
 {
   int iVar1;
+  int iVar2;
+  int iVar4;
   uint uVar2;
+  uint uVar5;
   int iVar3;
   int grid_z;
   int local_38;
@@ -22,19 +25,19 @@ int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_00546c40(CPathMap *this_pt
   int local_18;
   int local_14;
   
-  iVar3 = start_height;
+  iVar2 = start_height;
   local_34 = 1;
   grid_z = start_z;
-  local_1c = end_x;
+  iVar4 = end_x;
   if (end_z < start_z) {
     grid_z = end_z;
-    local_1c = start_x;
+    iVar4 = start_x;
     start_height = end_height;
     start_x = end_x;
     end_z = start_z;
-    end_height = iVar3;
+    end_height = iVar2;
   }
-  local_1c = local_1c - start_x;
+  local_1c = iVar4 - start_x;
   iVar3 = end_z - grid_z;
   if (local_1c < 0) {
     local_1c = -local_1c;
@@ -52,16 +55,16 @@ int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_00546c40(CPathMap *this_pt
         if (g_PathfindingMaxClimbHeight < (int)((iVar1 - start_height ^ uVar2) - uVar2)) {
           return 0;
         }
-        iVar1 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
+        iVar2 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                           (this_ptr,grid_z + 1,start_x,start_height);
-        uVar2 = iVar1 - start_height >> 0x1f;
-        if (g_PathfindingMaxClimbHeight < (int)((iVar1 - start_height ^ uVar2) - uVar2)) {
+        uVar5 = iVar2 - start_height >> 0x1f;
+        if (g_PathfindingMaxClimbHeight < (int)((iVar2 - start_height ^ uVar5) - uVar5)) {
           return 0;
         }
         local_38 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                              (this_ptr,grid_z,start_x,start_height);
-        uVar2 = local_38 - start_height >> 0x1f;
-        if (g_PathfindingMaxClimbHeight < (int)((local_38 - start_height ^ uVar2) - uVar2)) {
+        uVar5 = local_38 - start_height >> 0x1f;
+        if (g_PathfindingMaxClimbHeight < (int)((local_38 - start_height ^ uVar5) - uVar5)) {
           return 0;
         }
         if (0 < local_14) {
@@ -81,22 +84,22 @@ int __cdecl core_path_cpp_CPathMap_isLineWalkable_FUN_00546c40(CPathMap *this_pt
     local_24 = 0;
     if (-1 < iVar3) {
       do {
-        iVar1 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
+        iVar2 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                           (this_ptr,grid_z,start_x + 1,start_height);
-        uVar2 = iVar1 - start_height >> 0x1f;
-        if (g_PathfindingMaxClimbHeight < (int)((iVar1 - start_height ^ uVar2) - uVar2)) {
+        uVar5 = iVar2 - start_height >> 0x1f;
+        if (g_PathfindingMaxClimbHeight < (int)((iVar2 - start_height ^ uVar5) - uVar5)) {
           return 0;
         }
-        iVar1 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
+        iVar2 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                           (this_ptr,grid_z,start_x + -1,start_height);
-        uVar2 = iVar1 - start_height >> 0x1f;
-        if (g_PathfindingMaxClimbHeight < (int)((iVar1 - start_height ^ uVar2) - uVar2)) {
+        uVar5 = iVar2 - start_height >> 0x1f;
+        if (g_PathfindingMaxClimbHeight < (int)((iVar2 - start_height ^ uVar5) - uVar5)) {
           return 0;
         }
         local_38 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                              (this_ptr,grid_z,start_x,start_height);
-        uVar2 = local_38 - start_height >> 0x1f;
-        if (g_PathfindingMaxClimbHeight < (int)((local_38 - start_height ^ uVar2) - uVar2)) {
+        uVar5 = local_38 - start_height >> 0x1f;
+        if (g_PathfindingMaxClimbHeight < (int)((local_38 - start_height ^ uVar5) - uVar5)) {
           return 0;
         }
         if (0 < local_18) {

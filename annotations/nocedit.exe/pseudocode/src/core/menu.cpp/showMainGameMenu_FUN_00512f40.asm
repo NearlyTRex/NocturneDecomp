@@ -5,8 +5,8 @@
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; int              Stack[-0xc]:4  iStack_c
+; int              Stack[-0x8]:4  iStack_8
 ;
 ; XREF[1]:
 ;   core_main.c_enterMainGameMenu_FUN_00512f40 at 00507a50

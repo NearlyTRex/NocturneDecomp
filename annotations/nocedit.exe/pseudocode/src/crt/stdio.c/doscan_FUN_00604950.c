@@ -9,14 +9,15 @@
 int __cdecl doscan(scanf_state_t *state,char **format_ptr,va_list_t *args)
 
 {
-  char **format_ptr_00;
-  byte bVar1;
   int iVar2;
   uint character;
+  int iVar1;
   uint uVar3;
   int iVar4;
   int chars_consumed;
   va_list_t local_14;
+  char **format_ptr_00;
+  byte bVar1;
   
   local_14 = (va_list_t)args->value[0];
   iVar4 = 0;
@@ -43,10 +44,10 @@ int __cdecl doscan(scanf_state_t *state,char **format_ptr,va_list_t *args)
         if (bVar1 < 0x47) {
           if (bVar1 < 0x43) {
             if (bVar1 == 0x25) {
-              iVar2 = scanf_getc_wrapper(state);
-              if (iVar2 == 0x25) goto LAB_00604bc3;
+              iVar1 = scanf_getc_wrapper(state);
+              if (iVar1 == 0x25) goto LAB_00604bc3;
               if ((state->flags & 2) == 0) {
-                scanf_ungetc_wrapper(iVar2,state);
+                scanf_ungetc_wrapper(iVar1,state);
               }
               goto LAB_00604c00;
             }
@@ -55,7 +56,7 @@ int __cdecl doscan(scanf_state_t *state,char **format_ptr,va_list_t *args)
             if (bVar1 < 0x44) {
               state->flags = state->flags | 0x20;
 LAB_00604b72:
-              iVar2 = scanf_char(state,&local_14);
+              iVar1 = scanf_char(state,&local_14);
               goto LAB_00604b7e;
             }
             if (bVar1 == 0x45) goto LAB_00604b3f;
@@ -64,14 +65,14 @@ LAB_00604b72:
         else {
           if (bVar1 < 0x48) {
 LAB_00604b3f:
-            iVar2 = scanf_float(state,&local_14);
+            iVar1 = scanf_float(state,&local_14);
             goto LAB_00604b7e;
           }
           if (bVar1 < 0x58) {
             if (bVar1 == 0x53) {
               state->flags = state->flags | 0x20;
 LAB_00604b4e:
-              iVar2 = scanf_string(state,&local_14);
+              iVar1 = scanf_string(state,&local_14);
               goto LAB_00604b7e;
             }
           }
@@ -79,7 +80,7 @@ LAB_00604b4e:
             if (bVar1 < 0x59) goto LAB_00604b2b;
             if (0x5a < bVar1) {
               if (bVar1 < 0x5c) {
-                iVar2 = scanf_scanset(state,&local_14,(char **)&format_ptr)
+                iVar1 = scanf_scanset(state,&local_14,(char **)&format_ptr)
                 ;
                 goto LAB_00604b7e;
               }
@@ -89,10 +90,10 @@ LAB_00604b4e:
         }
       }
       else if (bVar1 < 0x65) {
-        iVar2 = scanf_integer(state,&local_14,10,1);
+        iVar1 = scanf_integer(state,&local_14,10,1);
 LAB_00604b7e:
-        if (iVar2 < 1) goto LAB_00604c00;
-        chars_consumed = chars_consumed + iVar2;
+        if (iVar1 < 1) goto LAB_00604c00;
+        chars_consumed = chars_consumed + iVar1;
         if ((state->flags & 1) != 0) {
           iVar4 = iVar4 + 1;
         }
@@ -103,7 +104,7 @@ LAB_00604b7e:
         }
         else {
           if (bVar1 < 0x6a) {
-            iVar2 = scanf_integer(state,&local_14,0,1);
+            iVar1 = scanf_integer(state,&local_14,0,1);
             goto LAB_00604b7e;
           }
           if (bVar1 == 0x6e) {
@@ -113,13 +114,13 @@ LAB_00604b7e:
       }
       else {
         if (bVar1 < 0x70) {
-          iVar2 = scanf_integer(state,&local_14,8,1);
+          iVar1 = scanf_integer(state,&local_14,8,1);
           goto LAB_00604b7e;
         }
         if (bVar1 < 0x73) {
           if (bVar1 == 0x70) {
 LAB_00604b2b:
-            iVar2 = scanf_integer(state,&local_14,0x10,1);
+            iVar1 = scanf_integer(state,&local_14,0x10,1);
             goto LAB_00604b7e;
           }
         }
@@ -127,7 +128,7 @@ LAB_00604b2b:
           if (bVar1 < 0x74) goto LAB_00604b4e;
           if (0x74 < bVar1) {
             if (bVar1 < 0x76) {
-              iVar2 = scanf_integer(state,&local_14,10,0);
+              iVar1 = scanf_integer(state,&local_14,10,0);
               goto LAB_00604b7e;
             }
             if (bVar1 == 0x78) goto LAB_00604b2b;

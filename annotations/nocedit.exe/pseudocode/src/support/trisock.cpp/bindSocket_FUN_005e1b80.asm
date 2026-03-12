@@ -7,7 +7,7 @@
 ; _SOCKET *        Stack[0x4]:4   socket_handle
 ; uint16_t         Stack[0x8]:2   port
 ; Local Variables:
-; undefined2       Stack[-0x10]:2  local_10
+; SOCKADDR         Stack[-0x10]:16  local_10
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0053fbc0 at 0053fc14

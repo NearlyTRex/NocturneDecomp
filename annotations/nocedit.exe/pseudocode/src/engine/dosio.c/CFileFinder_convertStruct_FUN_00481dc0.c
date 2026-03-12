@@ -10,6 +10,7 @@ void __cdecl engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder *
 
 {
   BOOL BVar1;
+  BOOL BVar2;
   uint uVar2;
   _tm _Stack_4c;
   _SYSTEMTIME _Stack_28;
@@ -39,8 +40,8 @@ void __cdecl engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0(CFileFinder *
   finder->attributes = 0;
   BVar1 = (*g_FileTimeToLocalFileTimeFunc)(&find_data->ftLastWriteTime,&local_18);
   if (BVar1 != 0) {
-    BVar1 = (*g_FileTimeToSystemTimeFunc)(&local_18,&_Stack_28);
-    if (BVar1 != 0) {
+    BVar2 = (*g_FileTimeToSystemTimeFunc)(&local_18,&_Stack_28);
+    if (BVar2 != 0) {
       _Stack_4c.tm_sec = (int)_Stack_28.wSecond;
       _Stack_4c.tm_min = (int)_Stack_28.wMinute;
       _Stack_4c.tm_hour = (int)_Stack_28.wHour;

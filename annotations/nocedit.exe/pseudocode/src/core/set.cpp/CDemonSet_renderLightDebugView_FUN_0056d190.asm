@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x110]:1  local_110
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da4d4

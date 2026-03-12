@@ -9,11 +9,9 @@
 void __cdecl shape_quantize_cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f0(CColorQuantizer *this_ptr,uchar *src_pixels,uchar *dest_indices,short start_x,short end_x,short num_palette_entries)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
+  float fVar5;
   uint uVar5;
+  int iVar8;
   int iVar6;
   int iVar7;
   SPaletteEntry *pSVar8;
@@ -24,6 +22,10 @@ void __cdecl shape_quantize_cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f
   float local_4c;
   int local_30;
   float local_28;
+  float fVar4;
+  float fVar2;
+  float fVar3;
+  float fVar1;
   
   local_30 = (int)start_x;
   uVar5 = shape_quantize_cpp_getAbsoluteValue_FUN_00556df0(end_x - local_30);
@@ -79,35 +81,35 @@ void __cdecl shape_quantize_cpp_CColorQuantizer_mapScanlineToPalette_FUN_005556f
       local_4c = 0.0;
     }
     local_28 = 9999.0;
-    iVar6 = 0;
+    iVar8 = 0;
     pSVar8 = this_ptr->palette;
-    while (iVar7 = iVar6, iVar7 < num_palette_entries) {
+    while (iVar7 = iVar8, iVar7 < num_palette_entries) {
       fVar1 = pSVar8->r - local_58;
       fVar4 = pSVar8->g - local_50;
       fVar3 = pSVar8->b - local_54;
       fVar2 = pSVar8->intensity - local_4c;
-      fVar1 = fVar2 * fVar2 * (float)0.14999999999999999 +
+      fVar5 = fVar2 * fVar2 * (float)0.14999999999999999 +
               fVar3 * fVar3 * (float)0.11 +
               fVar4 * fVar4 * (float)0.58999999999999997 + fVar1 * fVar1 * (float)0.29999999999999999;
-      if (fVar1 < local_28) {
+      if (fVar5 < local_28) {
         pSVar8 = pSVar8 + 1;
-        iVar6 = iVar7 + 1;
+        iVar8 = iVar7 + 1;
         unaff_EBX = iVar7;
-        local_28 = fVar1;
+        local_28 = fVar5;
       }
       else {
         pSVar8 = pSVar8 + 1;
-        iVar6 = iVar7 + 1;
+        iVar8 = iVar7 + 1;
       }
     }
     dest_indices[local_30] = (uchar)unaff_EBX;
     if (start_x < end_x) {
-      iVar6 = 1;
+      iVar8 = 1;
     }
     else {
-      iVar6 = -1;
+      iVar8 = -1;
     }
-    local_30 = local_30 + iVar6;
+    local_30 = local_30 + iVar8;
     if (start_x < end_x) {
       src_pixels = src_pixels + 3;
     }

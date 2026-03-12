@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 11,
-        "line": 54,
+        "line": 57,
         "message": "statement requires expression of integer type ('float' invalid)"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 58,
+        "line": 61,
         "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 87,
+        "line": 90,
         "message": "C-style cast from 'CMotionController *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 101,
+        "line": 104,
         "message": "C-style cast from 'CMotionController *' to 'float' is not allowed"
       }
     ],
@@ -31,18 +31,18 @@
   },
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 209,
+    "complexity_score": 212,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 109,
+    "pseudocode_lines": 112,
     "suspect_count": 9,
     "suspect_types": [
       "suspect_float",
       "unaffected_reg"
     ],
-    "total_lines": 352
+    "total_lines": 355
   },
   "cross_references": [
     {
@@ -235,15 +235,15 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 29,
+      "line": 32,
       "match": "1.12104e-44",
       "severity": "mild",
-      "text": "((pCVar5->model).transformed_vertices[0x19].y == 1.12104e-44)) {",
+      "text": "((pCVar7->model).transformed_vertices[0x19].y == 1.12104e-44)) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 51,
+      "line": 54,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "case 1.12104e-44:",
@@ -251,7 +251,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 58,
+      "line": 61,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "((this_ptr_00->model).transformed_vertices[0x19].y != 1.12104e-44)) {",
@@ -259,7 +259,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 64,
+      "line": 67,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "if ((pCVar5->model).transformed_vertices[0x19].y != 1.12104e-44) goto LAB_00558263;",
@@ -267,7 +267,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 77,
+      "line": 80,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "((CVector3f *)(uint)((pCVar2->model).transformed_vertices[0x19].y != 1.12104e-44) ==",
@@ -275,7 +275,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 85,
+      "line": 88,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "((this_ptr_00->model).transformed_vertices[0x19].y == 1.12104e-44)) {",
@@ -283,7 +283,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 97,
+      "line": 100,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "this_ptr_01 = unaff_EDI;",
@@ -291,7 +291,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 98,
+      "line": 101,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(unaff_EDI,6,1);",

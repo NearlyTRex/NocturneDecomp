@@ -9,9 +9,18 @@
 void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet *this_ptr)
 
 {
-  int *piVar1;
-  CSlew *this_ptr_00;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  bool bVar8;
+  void *pvVar9;
+  C3DSCamera *ptr;
   int iVar2;
+  int iVar10;
   int iVar3;
   int unaff_EBP;
   int y;
@@ -26,9 +35,10 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
   char *local_1c;
   int local_18;
   C3DSCamera *pCStack_14;
+  CSlew *this_ptr_00;
+  int *piVar1;
   
-  local_18 = 0;
-  local_1c = (char *)0x0;
+  bVar8 = false;
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
   this_ptr_00 = g_CSlewPtr;
   this_ptr->actor_count = 0;
@@ -36,23 +46,23 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
   core_setedit_cpp_CDemonSet_clearCameraDepthData_FUN_00580560(this_ptr);
   core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(this_ptr);
-  pvStack_20 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                         (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",0x786);
-  if (pvStack_20 == (void *)0x0) {
+  pvVar9 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                     (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",0x786);
+  if (pvVar9 == (void *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0x787;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
-  pCStack_14 = this_ptr->cameras;
+  ptr = this_ptr->cameras;
   while( true ) {
     (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
-    fStack_38 = (g_CSlewPtr->position).x;
-    fStack_34 = (g_CSlewPtr->position).y;
-    fStack_30 = (g_CSlewPtr->position).z;
-    fStack_2c = g_CSlewPtr->pitch;
-    fStack_28 = g_CSlewPtr->yaw;
-    fStack_24 = g_CSlewPtr->roll;
-    pvStack_20 = (void *)g_CSlewPtr->slew_rate;
+    fVar1 = (g_CSlewPtr->position).x;
+    fVar2 = (g_CSlewPtr->position).y;
+    fVar3 = (g_CSlewPtr->position).z;
+    fVar4 = g_CSlewPtr->pitch;
+    fVar5 = g_CSlewPtr->yaw;
+    fVar6 = g_CSlewPtr->roll;
+    fVar7 = g_CSlewPtr->slew_rate;
     core_slew_cpp_CSlew_processInput_FUN_005a20b0(g_CSlewPtr);
     if (g_CSlewPtr != (CSlew *)&g_CDemonCameraInstance.base.position) {
       g_CDemonCameraInstance.base.position.f.x = (g_CSlewPtr->position).x;
@@ -64,24 +74,24 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
     g_CDemonCameraInstance.base.focal_length = g_CSlewPtr->slew_rate;
     wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,0);
-    if (pCStack_14 != (C3DSCamera *)0x0) {
+    if (ptr != (C3DSCamera *)0x0) {
       g_CDemonRaytraceInstance.rendering_mode = 4;
     }
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,9999.9,0);
     core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
     wincore_windll_cpp_lockFrame_FUN_005b7210();
-    if ((((fStack_38 != (g_CSlewPtr->position).x) || (fStack_34 != (g_CSlewPtr->position).y)) ||
-        (fStack_30 != (g_CSlewPtr->position).z)) ||
-       (((fStack_2c != g_CSlewPtr->pitch || (fStack_28 != g_CSlewPtr->yaw)) ||
-        ((fStack_24 != g_CSlewPtr->roll || ((float)pvStack_20 != g_CSlewPtr->slew_rate)))))) {
-      local_18 = 0;
+    if ((((fVar1 != (g_CSlewPtr->position).x) || (fVar2 != (g_CSlewPtr->position).y)) ||
+        (fVar3 != (g_CSlewPtr->position).z)) ||
+       (((fVar4 != g_CSlewPtr->pitch || (fVar5 != g_CSlewPtr->yaw)) ||
+        ((fVar6 != g_CSlewPtr->roll || (fVar7 != g_CSlewPtr->slew_rate)))))) {
+      bVar8 = false;
     }
-    if (pCStack_14 != (C3DSCamera *)0x0) {
-      if (local_18 == 0) {
-        core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(this_ptr,local_1c,-1);
-        local_18 = 1;
+    if (ptr != (C3DSCamera *)0x0) {
+      if (!bVar8) {
+        core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(this_ptr,(char *)0x0,-1);
+        bVar8 = true;
       }
-      core_setedit_cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70(this_ptr,local_1c);
+      core_setedit_cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70(this_ptr,(char *)0x0);
       iVar2 = core_setedit_cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0
                         (this_ptr,g_MouseX,g_MouseY,(int *)&stack0xfffffae0,-1);
       if (0 < iVar2) {
@@ -112,20 +122,20 @@ void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet 
     wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
-    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
-    if (iVar2 != 0) break;
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);
-    if (iVar2 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
+    if (iVar10 != 0) break;
+    iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_R);
+    if (iVar10 != 0) {
       g_CDemonRaytraceInstance.rendering_mode = g_CDemonRaytraceInstance.rendering_mode + 1;
     }
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
-    if (iVar2 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
+    if (iVar10 != 0) {
       this_ptr = (CDemonSet *)(uint)(this_ptr == (CDemonSet *)0x0);
     }
   }
   g_CurrentDebugFilename = "..\\core\\setedit.cpp";
   g_CurrentDebugLine = 0x7f0;
-  shape_memdbg_cpp_free_FUN_005fe659(pCStack_14);
+  shape_memdbg_cpp_free_FUN_005fe659(ptr);
   core_setedit_cpp_CDemonSet_clearCameraDepthData_FUN_00580560(this_ptr);
   core_slew_cpp_CSlew_free_FUN_005a20a0();
   core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);

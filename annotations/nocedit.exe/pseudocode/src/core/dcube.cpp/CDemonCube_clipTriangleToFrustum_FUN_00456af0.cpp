@@ -9,17 +9,21 @@
 void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemonCube *this_ptr,CVector3f *vertex1,CVector3f *vertex2,CVector3f *vertex3,uchar texture_id)
 
 {
-  uint uVar1;
-  float fVar2;
-  float fVar3;
-  int iVar4;
-  int iVar5;
+  uint uVar2;
+  float fVar4;
+  float fVar5;
   byte bVar6;
+  int iVar6;
   uint uVar7;
   CVector3f *pCVar8;
   int iVar9;
   int iVar10;
   uint local_14;
+  float fVar2;
+  uint uVar1;
+  int iVar5;
+  int iVar4;
+  float fVar3;
   
   g_CubeInputTriangleCount = 3;
   if (vertex1 != g_CubeInputTriangleBuffer) {
@@ -118,30 +122,28 @@ void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemon
     }
   }
   if (2 < (int)g_CubeClippedTriangleCount) {
-    iVar10 = 0xc;
-    for (iVar9 = 0; iVar4 = g_VertexCount, fVar3 = g_CubeClippedTriangleBuffer[0].z,
-        fVar2 = g_CubeClippedTriangleBuffer[0].y, iVar9 < (int)(g_CubeClippedTriangleCount - 2);
+    iVar6 = 0xc;
+    for (iVar9 = 0; iVar4 = g_VertexCount, fVar5 = g_CubeClippedTriangleBuffer[0].z,
+        fVar4 = g_CubeClippedTriangleBuffer[0].y, iVar9 < (int)(g_CubeClippedTriangleCount - 2);
         iVar9 = iVar9 + 1) {
       g_LoadedVertices[g_VertexCount].vertex.x = g_CubeClippedTriangleBuffer[0].x;
-      g_LoadedVertices[iVar4].vertex.y = fVar2;
-      uVar7 = iVar4 + 1;
-      g_LoadedVertices[iVar4].vertex.z = fVar3;
-      fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].y + iVar10);
-      fVar3 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].z + iVar10);
+      g_LoadedVertices[iVar4].vertex.y = fVar4;
+      uVar2 = iVar4 + 1;
+      g_LoadedVertices[iVar4].vertex.z = fVar5;
+      fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].y + iVar6);
+      fVar3 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].z + iVar6);
       uVar1 = iVar4 + 2;
-      g_LoadedVertices[uVar7].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[0].x + iVar10)
-      ;
-      g_LoadedVertices[uVar7].vertex.y = fVar2;
-      g_LoadedVertices[uVar7].vertex.z = fVar3;
+      g_LoadedVertices[uVar2].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[0].x + iVar6);
+      g_LoadedVertices[uVar2].vertex.y = fVar2;
+      g_LoadedVertices[uVar2].vertex.z = fVar3;
       iVar5 = g_PolygonCount;
-      fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].y + iVar10);
-      fVar3 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].z + iVar10);
-      g_LoadedVertices[uVar1].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[1].x + iVar10)
-      ;
-      g_LoadedVertices[uVar1].vertex.y = fVar2;
-      g_LoadedVertices[uVar1].vertex.z = fVar3;
+      fVar4 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].y + iVar6);
+      fVar5 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].z + iVar6);
+      g_LoadedVertices[uVar1].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[1].x + iVar6);
+      g_LoadedVertices[uVar1].vertex.y = fVar4;
+      g_LoadedVertices[uVar1].vertex.z = fVar5;
       g_ModelPolygonData[iVar5].vertex_indices[0] = iVar4;
-      g_ModelPolygonData[iVar5].vertex_indices[1] = uVar7;
+      g_ModelPolygonData[iVar5].vertex_indices[1] = uVar2;
       g_ModelPolygonData[iVar5].vertex_indices[2] = uVar1;
       g_ModelPolygonData[iVar5].uv_u[0] = 0.0;
       g_ModelPolygonData[iVar5].uv_v[0] = 0.0;
@@ -154,7 +156,7 @@ void __cdecl core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0(CDemon
       g_ModelPolygonData[iVar5].polygon_type = 1;
       _sprintf
                 (g_ModelPolygonData[iVar5].texture_name,"%d",(uint)texture_id);
-      iVar10 = iVar10 + 0xc;
+      iVar6 = iVar6 + 0xc;
       g_ModelPolygonData[g_PolygonCount].part_assignment = 0;
       g_PolygonCount = g_PolygonCount + 1;
       g_VertexCount = g_VertexCount + 3;

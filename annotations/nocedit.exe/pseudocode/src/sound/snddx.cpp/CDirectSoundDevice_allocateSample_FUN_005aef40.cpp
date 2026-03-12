@@ -9,7 +9,8 @@
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDirectSoundDevice *this_ptr,int bits_per_sample,int channel_count,int sample_rate,int sample_count)
 
 {
-  IDirectSoundBuffer *pIVar1;
+  IDirectSoundBuffer *this_ptr_00;
+  int iVar1;
   int iVar2;
   uint error_code;
   char *pcVar3;
@@ -17,16 +18,17 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDire
   char acStack_1c8 [400];
   DSBUFFERDESC local_38;
   tWAVEFORMATEX local_24;
+  IDirectSoundBuffer *pIVar1;
   
   if (g_DirectSound != (IDirectSound *)0x0) {
     iVar4 = 1;
-    iVar2 = 4;
+    iVar1 = 4;
     pIVar1 = g_DirectSoundSampleBuffers[1];
     while (pIVar1 != (IDirectSoundBuffer *)0x0) {
       iVar4 = iVar4 + 1;
-      if (99 < iVar2 + 4) break;
-      pIVar1 = *(IDirectSoundBuffer **)((int)g_DirectSoundSampleBuffers + iVar2 + 4);
-      iVar2 = iVar2 + 4;
+      if (99 < iVar1 + 4) break;
+      pIVar1 = *(IDirectSoundBuffer **)((int)g_DirectSoundSampleBuffers + iVar1 + 4);
+      iVar1 = iVar1 + 4;
     }
     if (iVar4 < 0x19) {
       memset(&local_24,0,0x12);
@@ -61,9 +63,9 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_005aef40(CDire
         sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1c8);
       }
       sound_sndmain_cpp_logSoundError_FUN_005adba0("DirectSoundDevice::allocateSample - access failed\n");
-      pIVar1 = g_DirectSoundSampleBuffers[iVar4];
-      if (pIVar1 != (IDirectSoundBuffer *)0x0) {
-        (*pIVar1->vtable->Release)((IUnknown *)pIVar1);
+      this_ptr_00 = g_DirectSoundSampleBuffers[iVar4];
+      if (this_ptr_00 != (IDirectSoundBuffer *)0x0) {
+        (*this_ptr_00->vtable->Release)((IUnknown *)this_ptr_00);
         g_DirectSoundSampleBuffers[iVar4] = (IDirectSoundBuffer *)0x0;
       }
       g_DirectSoundBufferMetadata[iVar4].field0_0x0 = 0;

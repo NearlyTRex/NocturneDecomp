@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 242,
+    "complexity_score": 244,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 102,
+    "pseudocode_lines": 104,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -19,7 +19,7 @@
       "undefined_data",
       "warning_inlined_function"
     ],
-    "total_lines": 334
+    "total_lines": 336
   },
   "cross_references": [
     {
@@ -167,7 +167,7 @@
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -195,14 +195,14 @@
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -248,7 +248,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 46,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_00823c54 + iVar10) = 0;",
@@ -256,7 +256,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 46,
       "match": "DAT_00823c54",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_00823c54 + iVar10) = 0;",
@@ -264,31 +264,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 58,
       "match": "DAT_00823c54",
       "severity": "mild",
-      "text": "(&DAT_00823c54)[iVar10] =",
+      "text": "(&DAT_00823c54)[iVar2] =",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 59,
       "match": "DAT_00823c54",
       "severity": "mild",
-      "text": "(float)(&DAT_00823c54)[iVar10] + (pCVar11->fire_effects[0].size * fVar4) / fVar5;",
+      "text": "(float)(&DAT_00823c54)[iVar2] + (pCVar11->fire_effects[0].size * fVar4) / fVar5;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 69,
       "match": "DAT_00823c54",
       "severity": "mild",
-      "text": "if ((float)65535 <= (float)(&DAT_00823c54)[iVar8]) {",
+      "text": "if ((float)65535 <= (float)(&DAT_00823c54)[iVar1]) {",
       "type": "undefined_data"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 95,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30 = (float)(int)ROUND(ROUND(*pfVar2 * (float)(&DAT_00823c54)[*puVar1])) + local_30;",
@@ -296,7 +296,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 95,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30 = (float)(int)ROUND(ROUND(*pfVar2 * (float)(&DAT_00823c54)[*puVar1])) + local_30;",
@@ -304,7 +304,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 93,
+      "line": 95,
       "match": "DAT_00823c54",
       "severity": "mild",
       "text": "local_30 = (float)(int)ROUND(ROUND(*pfVar2 * (float)(&DAT_00823c54)[*puVar1])) + local_30;",
@@ -312,7 +312,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 101,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->a + local_18) =",
@@ -320,7 +320,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 102,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(local_30));",
@@ -328,7 +328,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 100,
+      "line": 102,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(local_30));",

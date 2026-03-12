@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 84,
+    "complexity_score": 87,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 62,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 186
+    "total_lines": 189
   },
   "cross_references": [
     {
@@ -170,18 +170,18 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 26,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_VertexIndexBuffer + iVar2) = iVar1;",
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar5) = iVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 39,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)g_VertexIndexBuffer + iVar2) = pSVar3[1].base.type;",
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar2) = pSVar1[1].base.type;",
       "type": "pointer_cast"
     }
   ]

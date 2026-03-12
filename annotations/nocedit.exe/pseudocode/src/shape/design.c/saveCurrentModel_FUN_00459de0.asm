@@ -4,8 +4,7 @@
 ; void __cdecl shape_design_c_saveCurrentModel_FUN_00459de0(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x60]:1  local_60
-; undefined1       Stack[-0x5f]:1  local_5f
+; char[80]         Stack[-0x60]:80  local_60
 ;
 ; XREF[1]:
 ;   shape_design.c_handleEditorHotkeys_FUN_0045b990 at 0045b9f5

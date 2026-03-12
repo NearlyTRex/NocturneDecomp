@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   title
 ; int *            Stack[0x8]:4   room_size
 ; Local Variables:
-; undefined        Stack[-0x3ac]:1  local_3ac
+; CPickList        Stack[-0x3ac]:936  local_3ac
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Outside_006489f3

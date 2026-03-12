@@ -7,7 +7,7 @@
 ; CMimic *         Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
+; float[2]         Stack[-0x18]:8  local_18
 ;
 ; XREF[2]:
 ;   core_mimic.cpp_CMimic_beginMorph_FUN_00520a80 at 00520b39

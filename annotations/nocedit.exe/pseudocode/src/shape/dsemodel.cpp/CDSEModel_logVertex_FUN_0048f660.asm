@@ -7,7 +7,7 @@
 ; CDSEModel *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   vertex_id
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_dsemodel.cpp_CDSEModel_processModelPart_FUN_0048f770 at 0048f884

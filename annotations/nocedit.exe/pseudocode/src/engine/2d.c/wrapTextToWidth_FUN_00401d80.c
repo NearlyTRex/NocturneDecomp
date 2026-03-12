@@ -9,40 +9,45 @@
 void __cdecl engine_2d_c_wrapTextToWidth_FUN_00401d80(char *input_text,int max_width,char *output_buffer)
 
 {
-  char cVar1;
+  char cVar2;
+  bool bVar3;
   int iVar2;
+  int iVar4;
   uint uVar3;
+  uint uVar5;
   uint uVar4;
   char *pcVar5;
   char *pcVar6;
+  char *pcVar8;
   char *pcVar7;
   byte bVar8;
   char acStack_114 [256];
   int local_14;
+  char cVar1;
   
   bVar8 = 0;
-  local_14 = 1;
-  pcVar5 = output_buffer;
+  bVar3 = true;
+  pcVar8 = output_buffer;
   if (*input_text == '\0') {
     *output_buffer = '\0';
   }
   else {
     do {
       cVar1 = *input_text;
-      *pcVar5 = cVar1;
+      *pcVar8 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = input_text[1];
+      cVar2 = input_text[1];
       input_text = input_text + 2;
-      pcVar5[1] = cVar1;
-      pcVar5 = pcVar5 + 2;
-    } while (cVar1 != '\0');
+      pcVar8[1] = cVar2;
+      pcVar8 = pcVar8 + 2;
+    } while (cVar2 != '\0');
     iVar2 = engine_2d_c_getStringWidth_FUN_004018a0(output_buffer);
     pcVar5 = output_buffer;
     if (max_width < iVar2) {
       do {
-        cVar1 = *output_buffer;
-        if (((cVar1 == '\0') || ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2) != 0)) ||
-           (cVar1 == '\n')) {
+        cVar2 = *output_buffer;
+        if (((cVar2 == '\0') || ((g_CharacterClassificationTable[(byte)(cVar2 + 1)] & 2) != 0)) ||
+           (cVar2 == '\n')) {
           uVar4 = (int)output_buffer - (int)pcVar5;
           pcVar6 = pcVar5;
           pcVar7 = acStack_114;
@@ -51,19 +56,21 @@ void __cdecl engine_2d_c_wrapTextToWidth_FUN_00401d80(char *input_text,int max_w
             pcVar6 = pcVar6 + (uint)bVar8 * -8 + 4;
             pcVar7 = pcVar7 + (uint)bVar8 * -8 + 4;
           }
-          for (uVar3 = uVar4 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-            *pcVar7 = *pcVar6;
-            pcVar6 = pcVar6 + (uint)bVar8 * -2 + 1;
+          for (uVar5 = uVar4 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
             pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
+            pcVar6 = pcVar6 + (uint)bVar8 * -2 + 1;
+            *pcVar7 = *pcVar6;
+            pcVar6 = pcVar6;
+            pcVar7 = pcVar7;
           }
           acStack_114[uVar4] = '\0';
-          iVar2 = engine_2d_c_getStringWidth_FUN_004018a0(acStack_114);
-          if (max_width < iVar2) {
-            cVar1 = output_buffer[-1];
-            pcVar6 = output_buffer;
-            while ((output_buffer = pcVar6 + -1, cVar1 != '\n' && (*output_buffer != ' '))) {
-              cVar1 = pcVar6[-2];
-              pcVar6 = output_buffer;
+          iVar4 = engine_2d_c_getStringWidth_FUN_004018a0(acStack_114);
+          if (max_width < iVar4) {
+            cVar2 = output_buffer[-1];
+            pcVar8 = output_buffer;
+            while ((output_buffer = pcVar8 + -1, cVar2 != '\n' && (*output_buffer != ' '))) {
+              cVar2 = pcVar8[-2];
+              pcVar8 = output_buffer;
             }
             *output_buffer = '\n';
           }
@@ -71,11 +78,11 @@ void __cdecl engine_2d_c_wrapTextToWidth_FUN_00401d80(char *input_text,int max_w
             pcVar5 = output_buffer + 1;
           }
           if (*output_buffer == '\0') {
-            local_14 = 0;
+            bVar3 = false;
           }
         }
         output_buffer = output_buffer + 1;
-      } while (local_14 != 0);
+      } while (bVar3);
       return;
     }
   }

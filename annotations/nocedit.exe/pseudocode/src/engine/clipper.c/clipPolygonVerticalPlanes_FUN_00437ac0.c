@@ -12,8 +12,11 @@ void __cdecl engine_clipper_c_clipPolygonVerticalPlanes_FUN_00437ac0(void)
   byte bVar1;
   uint uVar2;
   int iVar3;
+  int iVar1;
   SRenderVertex *v1;
+  SRenderVertex *pSVar2;
   SRenderVertex *pSVar4;
+  SRenderVertex *pSVar3;
   SRenderVertex *pSVar5;
   byte bVar6;
   int local_14;
@@ -34,18 +37,18 @@ void __cdecl engine_clipper_c_clipPolygonVerticalPlanes_FUN_00437ac0(void)
       }
       switch(bVar1) {
       case 0:
-        pSVar4 = v1;
-        pSVar5 = g_ClippedVertexBuffer + g_ClippedVertexCount;
-        for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-          (pSVar5->projected_vertex).transformed_x = (pSVar4->projected_vertex).transformed_x;
-          pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
-          pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);
+        pSVar2 = v1;
+        pSVar3 = g_ClippedVertexBuffer + g_ClippedVertexCount;
+        for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+          (pSVar3->projected_vertex).transformed_x = (pSVar2->projected_vertex).transformed_x;
+          pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar6 * -8 + 4);
+          pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);
         }
-        for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *(char *)&(pSVar5->projected_vertex).transformed_x =
-               (char)(pSVar4->projected_vertex).transformed_x;
-          pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
-          pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);
+        for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
+          *(char *)&(pSVar3->projected_vertex).transformed_x =
+               (char)(pSVar2->projected_vertex).transformed_x;
+          pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar6 * -2 + 1);
+          pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar6 * -2 + 1);
         }
         g_ClippedVertexCount = g_ClippedVertexCount + 1;
         break;
@@ -61,13 +64,15 @@ void __cdecl engine_clipper_c_clipPolygonVerticalPlanes_FUN_00437ac0(void)
         for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
           (pSVar5->projected_vertex).transformed_x = (pSVar4->projected_vertex).transformed_x;
           pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);
-          pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);
+          pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar6 * -8 + 4);
         }
-        for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
+        for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
+          pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);
+          pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
           *(char *)&(pSVar5->projected_vertex).transformed_x =
                (char)(pSVar4->projected_vertex).transformed_x;
-          pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);
-          pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);
+          pSVar4 = pSVar4;
+          pSVar5 = pSVar5;
         }
         g_ClippedVertexCount = g_ClippedVertexCount + 1;
         engine_clipper_c_interpolateVertexTopClipAdvanced_FUN_004375c0

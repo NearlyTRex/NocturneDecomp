@@ -10,7 +10,9 @@ int __cdecl core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(CLodMe
 
 {
   int iVar1;
+  int iVar2;
   CPickList *this_ptr_00;
+  _FILE *p_Var3;
   _FILE *p_Var2;
   char *format_string;
   CPickList local_a70;
@@ -30,7 +32,7 @@ int __cdecl core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(CLodMe
                   (&local_6c8.base,"Rebuild LODs, recreating the precompute file.");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
                   (&local_6c8.base,"Don't select LODs at this time.  I can always use the precompute file later.");
-        iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+        iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                           (&local_6c8,"Precomputed LOD exists for this model",-1,0);
         this_ptr_00 = &local_6c8;
       }
@@ -42,13 +44,13 @@ int __cdecl core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(CLodMe
                   (&local_a70.base,"Rebuild shadow LOD, recreating the precompute file.");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
                   (&local_a70.base,"Don't select a shadow LOD at this time.  I can always use the precompute file later.");
-        iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+        iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                           (&local_a70,"Precomputed LOD exists for this model for shadow LOD",-1,0);
         this_ptr_00 = &local_a70;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(this_ptr_00,0);
-      if (iVar1 != 0) {
-        if (iVar1 == 1) {
+      if (iVar2 != 0) {
+        if (iVar2 == 1) {
           p_Var2 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
                              (this_ptr,"wt");
           this_ptr->precompute_file = p_Var2;
@@ -69,9 +71,9 @@ int __cdecl core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(CLodMe
         }
         return 0;
       }
-      p_Var2 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(this_ptr,"rt");
-      this_ptr->precompute_file = p_Var2;
-      if (p_Var2 == (_FILE *)0x0) {
+      p_Var3 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(this_ptr,"rt");
+      this_ptr->precompute_file = p_Var3;
+      if (p_Var3 == (_FILE *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Error loading precompute file.");
         return -1;
@@ -79,9 +81,9 @@ int __cdecl core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(CLodMe
       core_skeledit_cpp_CLodMeshPrecomputeEntry_ctor_FUN_00589fa0(&local_320);
       core_skeledit_cpp_CLodMeshPrecomputeEntry_load_FUN_00589fe0
                 (&local_320,this_ptr->precompute_file);
-      iVar1 = shape_meshlod_cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0
+      iVar2 = shape_meshlod_cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0
                         (this_ptr,this_ptr->precompute_file);
-      if (iVar1 == 0) {
+      if (iVar2 == 0) {
         shape_meshlod_cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(this_ptr);
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Error loading precompute file.");
@@ -94,9 +96,9 @@ int __cdecl core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(CLodMe
     if (entry->for_shadows != 0) {
       format_string = "No precompute file exists.  Generate an LOD for shadows now?";
     }
-    iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+    iVar2 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                       (g_CEditorToolsPtr,format_string);
-    if (iVar1 != 0) {
+    if (iVar2 != 0) {
       shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(this_ptr,0,render_mode);
       sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
       sound_sndmain_cpp_startSfx_FUN_005a8e90("dixie.wav");

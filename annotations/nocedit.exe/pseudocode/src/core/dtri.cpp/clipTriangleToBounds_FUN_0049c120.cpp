@@ -9,15 +9,22 @@
 int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0049c120(CVector3f *triangle_vertices,CVector3f *bounds_min,CVector3f *bounds_max)
 
 {
-  float fVar1;
-  int iVar2;
+  float fVar2;
+  int iVar3;
   byte bVar3;
+  byte bVar4;
   uint uVar4;
+  uint uVar5;
   byte bVar5;
   CVector3f *pCVar6;
+  int iVar6;
   int iVar7;
+  CVector3f *pCVar7;
   byte bVar8;
   CVector3f *pCVar9;
+  CVector3f *point2_ptr;
+  int iVar2;
+  float fVar1;
   
   g_ClipInputVertexCount = 3;
   if (triangle_vertices != g_ClipInputVertices) {
@@ -37,7 +44,7 @@ int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0049c120(CVector3f *triangle_
   }
   bVar8 = 0;
   iVar7 = 0;
-  bVar3 = 0xff;
+  bVar4 = 0xff;
   pCVar6 = g_ClipInputVertices;
   do {
     bVar5 = bounds_max->x < pCVar6->x;
@@ -58,7 +65,7 @@ int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0049c120(CVector3f *triangle_
     }
     pCVar6 = pCVar6 + 1;
     iVar7 = iVar7 + 1;
-    bVar3 = bVar3 & bVar5;
+    bVar4 = bVar4 & bVar5;
     bVar8 = bVar8 | bVar5;
   } while (iVar7 < 3);
   if (bVar8 == 0) {
@@ -80,10 +87,10 @@ int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0049c120(CVector3f *triangle_
     }
     return 1;
   }
-  if (bVar3 == 0) {
+  if (bVar4 == 0) {
     fVar1 = bounds_max->y;
-    iVar7 = 0;
-    pCVar6 = g_ClipInputVertices;
+    iVar6 = 0;
+    pCVar7 = g_ClipInputVertices;
     g_ClipBuffer1VertexCount = 0;
     g_ClipBuffer2VertexCount = 0;
     g_ClipBuffer3VertexCount = 0;
@@ -92,279 +99,279 @@ int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_0049c120(CVector3f *triangle_
     g_ClipOutputVertexCount = 0;
     do {
       iVar2 = g_ClipBuffer1VertexCount;
-      uVar4 = iVar7 + 1;
+      uVar4 = iVar6 + 1;
       if (uVar4 == g_ClipInputVertexCount) {
         uVar4 = uVar4 ^ g_ClipInputVertexCount;
       }
-      bVar3 = fVar1 < pCVar6->y;
+      bVar3 = fVar1 < pCVar7->y;
       if (fVar1 < g_ClipInputVertices[uVar4].y) {
         bVar3 = bVar3 | 2;
       }
       switch(bVar3) {
       case 0:
-        if (g_ClipBuffer1Vertices + g_ClipBuffer1VertexCount != pCVar6) {
-          g_ClipBuffer1Vertices[g_ClipBuffer1VertexCount].x = pCVar6->x;
-          g_ClipBuffer1Vertices[iVar2].y = pCVar6->y;
-          g_ClipBuffer1Vertices[iVar2].z = pCVar6->z;
+        if (g_ClipBuffer1Vertices + g_ClipBuffer1VertexCount != pCVar7) {
+          g_ClipBuffer1Vertices[g_ClipBuffer1VertexCount].x = pCVar7->x;
+          g_ClipBuffer1Vertices[iVar2].y = pCVar7->y;
+          g_ClipBuffer1Vertices[iVar2].z = pCVar7->z;
         }
         g_ClipBuffer1VertexCount = g_ClipBuffer1VertexCount + 1;
         break;
       case 1:
         core_dtri_cpp_clipLineToPlane_FUN_0049b6c0
-                  (g_ClipInputVertices + uVar4,pCVar6,
+                  (g_ClipInputVertices + uVar4,pCVar7,
                    g_ClipBuffer1Vertices + g_ClipBuffer1VertexCount,0.0,1.0,0.0,(double)-fVar1);
         g_ClipBuffer1VertexCount = g_ClipBuffer1VertexCount + 1;
         break;
       case 2:
-        if (g_ClipBuffer1Vertices + g_ClipBuffer1VertexCount != pCVar6) {
-          g_ClipBuffer1Vertices[g_ClipBuffer1VertexCount].x = pCVar6->x;
-          g_ClipBuffer1Vertices[iVar2].y = pCVar6->y;
-          g_ClipBuffer1Vertices[iVar2].z = pCVar6->z;
+        if (g_ClipBuffer1Vertices + g_ClipBuffer1VertexCount != pCVar7) {
+          g_ClipBuffer1Vertices[g_ClipBuffer1VertexCount].x = pCVar7->x;
+          g_ClipBuffer1Vertices[iVar2].y = pCVar7->y;
+          g_ClipBuffer1Vertices[iVar2].z = pCVar7->z;
         }
         g_ClipBuffer1VertexCount = g_ClipBuffer1VertexCount + 1;
         core_dtri_cpp_clipLineToPlane_FUN_0049b6c0
-                  (pCVar6,g_ClipInputVertices + uVar4,
+                  (pCVar7,g_ClipInputVertices + uVar4,
                    g_ClipBuffer1Vertices + g_ClipBuffer1VertexCount,0.0,1.0,0.0,(double)-fVar1);
         g_ClipBuffer1VertexCount = g_ClipBuffer1VertexCount + 1;
       }
-      iVar7 = iVar7 + 1;
-      pCVar6 = pCVar6 + 1;
-    } while (iVar7 < g_ClipInputVertexCount);
+      iVar6 = iVar6 + 1;
+      pCVar7 = pCVar7 + 1;
+    } while (iVar6 < g_ClipInputVertexCount);
     if (2 < g_ClipBuffer1VertexCount) {
-      fVar1 = bounds_min->y;
-      iVar7 = 0;
+      fVar2 = bounds_min->y;
+      iVar6 = 0;
       if (0 < g_ClipBuffer1VertexCount) {
-        pCVar6 = g_ClipBuffer1Vertices;
+        pCVar7 = g_ClipBuffer1Vertices;
         do {
-          iVar2 = g_ClipBuffer2VertexCount;
-          uVar4 = iVar7 + 1;
-          if (uVar4 == g_ClipBuffer1VertexCount) {
-            uVar4 = uVar4 ^ g_ClipBuffer1VertexCount;
+          iVar3 = g_ClipBuffer2VertexCount;
+          uVar5 = iVar6 + 1;
+          if (uVar5 == g_ClipBuffer1VertexCount) {
+            uVar5 = uVar5 ^ g_ClipBuffer1VertexCount;
           }
-          bVar3 = pCVar6->y < fVar1;
-          if (g_ClipBuffer1Vertices[uVar4].y < fVar1) {
-            bVar3 = bVar3 | 2;
+          bVar4 = pCVar7->y < fVar2;
+          if (g_ClipBuffer1Vertices[uVar5].y < fVar2) {
+            bVar4 = bVar4 | 2;
           }
-          switch(bVar3) {
+          switch(bVar4) {
           case 0:
-            if (g_ClipBuffer2Vertices + g_ClipBuffer2VertexCount != pCVar6) {
-              g_ClipBuffer2Vertices[g_ClipBuffer2VertexCount].x = pCVar6->x;
-              g_ClipBuffer2Vertices[iVar2].y = pCVar6->y;
-              g_ClipBuffer2Vertices[iVar2].z = pCVar6->z;
+            if (g_ClipBuffer2Vertices + g_ClipBuffer2VertexCount != pCVar7) {
+              g_ClipBuffer2Vertices[g_ClipBuffer2VertexCount].x = pCVar7->x;
+              g_ClipBuffer2Vertices[iVar3].y = pCVar7->y;
+              g_ClipBuffer2Vertices[iVar3].z = pCVar7->z;
             }
             g_ClipBuffer2VertexCount = g_ClipBuffer2VertexCount + 1;
             break;
           case 1:
             core_dtri_cpp_clipLineToPlane_FUN_0049b6c0
-                      (g_ClipBuffer1Vertices + uVar4,pCVar6,
-                       g_ClipBuffer2Vertices + g_ClipBuffer2VertexCount,0.0,-1.0,0.0,(double)fVar1);
+                      (g_ClipBuffer1Vertices + uVar5,pCVar7,
+                       g_ClipBuffer2Vertices + g_ClipBuffer2VertexCount,0.0,-1.0,0.0,(double)fVar2);
             g_ClipBuffer2VertexCount = g_ClipBuffer2VertexCount + 1;
             break;
           case 2:
-            if (g_ClipBuffer2Vertices + g_ClipBuffer2VertexCount != pCVar6) {
-              g_ClipBuffer2Vertices[g_ClipBuffer2VertexCount].x = pCVar6->x;
-              g_ClipBuffer2Vertices[iVar2].y = pCVar6->y;
-              g_ClipBuffer2Vertices[iVar2].z = pCVar6->z;
+            if (g_ClipBuffer2Vertices + g_ClipBuffer2VertexCount != pCVar7) {
+              g_ClipBuffer2Vertices[g_ClipBuffer2VertexCount].x = pCVar7->x;
+              g_ClipBuffer2Vertices[iVar3].y = pCVar7->y;
+              g_ClipBuffer2Vertices[iVar3].z = pCVar7->z;
             }
             g_ClipBuffer2VertexCount = g_ClipBuffer2VertexCount + 1;
             core_dtri_cpp_clipLineToPlane_FUN_0049b6c0
-                      (pCVar6,g_ClipBuffer1Vertices + uVar4,
-                       g_ClipBuffer2Vertices + g_ClipBuffer2VertexCount,0.0,-1.0,0.0,(double)fVar1);
+                      (pCVar7,g_ClipBuffer1Vertices + uVar5,
+                       g_ClipBuffer2Vertices + g_ClipBuffer2VertexCount,0.0,-1.0,0.0,(double)fVar2);
             g_ClipBuffer2VertexCount = g_ClipBuffer2VertexCount + 1;
           }
-          iVar7 = iVar7 + 1;
-          pCVar6 = pCVar6 + 1;
-        } while (iVar7 < g_ClipBuffer1VertexCount);
+          iVar6 = iVar6 + 1;
+          pCVar7 = pCVar7 + 1;
+        } while (iVar6 < g_ClipBuffer1VertexCount);
       }
       if (2 < g_ClipBuffer2VertexCount) {
-        fVar1 = bounds_max->x;
-        iVar7 = 0;
+        fVar2 = bounds_max->x;
+        iVar6 = 0;
         if (0 < g_ClipBuffer2VertexCount) {
-          pCVar6 = g_ClipBuffer2Vertices;
+          pCVar7 = g_ClipBuffer2Vertices;
           do {
-            iVar2 = g_ClipBuffer3VertexCount;
-            uVar4 = iVar7 + 1;
-            if (uVar4 == g_ClipBuffer2VertexCount) {
-              uVar4 = uVar4 ^ g_ClipBuffer2VertexCount;
+            iVar3 = g_ClipBuffer3VertexCount;
+            uVar5 = iVar6 + 1;
+            if (uVar5 == g_ClipBuffer2VertexCount) {
+              uVar5 = uVar5 ^ g_ClipBuffer2VertexCount;
             }
-            pCVar9 = g_ClipBuffer2Vertices + uVar4;
-            bVar3 = fVar1 < pCVar6->x;
-            if (fVar1 < pCVar9->x) {
-              bVar3 = bVar3 | 2;
+            pCVar9 = g_ClipBuffer2Vertices + uVar5;
+            bVar4 = fVar2 < pCVar7->x;
+            if (fVar2 < pCVar9->x) {
+              bVar4 = bVar4 | 2;
             }
-            switch(bVar3) {
+            switch(bVar4) {
             case 0:
-              if (g_ClipBuffer3Vertices + g_ClipBuffer3VertexCount != pCVar6) {
-                g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = pCVar6->x;
-                g_ClipBuffer3Vertices[iVar2].y = pCVar6->y;
-                g_ClipBuffer3Vertices[iVar2].z = pCVar6->z;
+              if (g_ClipBuffer3Vertices + g_ClipBuffer3VertexCount != pCVar7) {
+                g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = pCVar7->x;
+                g_ClipBuffer3Vertices[iVar3].y = pCVar7->y;
+                g_ClipBuffer3Vertices[iVar3].z = pCVar7->z;
               }
               g_ClipBuffer3VertexCount = g_ClipBuffer3VertexCount + 1;
               break;
             case 1:
               core_dtri_cpp_clipLineToPlane_FUN_0049b6c0
-                        (pCVar9,pCVar6,g_ClipBuffer3Vertices + g_ClipBuffer3VertexCount,1.0,0.0,0.0,
-                         (double)-fVar1);
+                        (pCVar9,pCVar7,g_ClipBuffer3Vertices + g_ClipBuffer3VertexCount,1.0,0.0,0.0,
+                         (double)-fVar2);
               g_ClipBuffer3VertexCount = g_ClipBuffer3VertexCount + 1;
               break;
             case 2:
-              if (g_ClipBuffer3Vertices + g_ClipBuffer3VertexCount != pCVar6) {
-                g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = pCVar6->x;
-                g_ClipBuffer3Vertices[iVar2].y = pCVar6->y;
-                g_ClipBuffer3Vertices[iVar2].z = pCVar6->z;
+              if (g_ClipBuffer3Vertices + g_ClipBuffer3VertexCount != pCVar7) {
+                g_ClipBuffer3Vertices[g_ClipBuffer3VertexCount].x = pCVar7->x;
+                g_ClipBuffer3Vertices[iVar3].y = pCVar7->y;
+                g_ClipBuffer3Vertices[iVar3].z = pCVar7->z;
               }
               g_ClipBuffer3VertexCount = g_ClipBuffer3VertexCount + 1;
               core_dtri_cpp_clipLineToPlane_FUN_0049b6c0
-                        (pCVar6,pCVar9,g_ClipBuffer3Vertices + g_ClipBuffer3VertexCount,1.0,0.0,0.0,
-                         (double)-fVar1);
+                        (pCVar7,pCVar9,g_ClipBuffer3Vertices + g_ClipBuffer3VertexCount,1.0,0.0,0.0,
+                         (double)-fVar2);
               g_ClipBuffer3VertexCount = g_ClipBuffer3VertexCount + 1;
             }
-            iVar7 = iVar7 + 1;
-            pCVar6 = pCVar6 + 1;
-          } while (iVar7 < g_ClipBuffer2VertexCount);
+            iVar6 = iVar6 + 1;
+            pCVar7 = pCVar7 + 1;
+          } while (iVar6 < g_ClipBuffer2VertexCount);
         }
         if (2 < g_ClipBuffer3VertexCount) {
-          fVar1 = bounds_min->x;
-          iVar7 = 0;
+          fVar2 = bounds_min->x;
+          iVar6 = 0;
           if (0 < g_ClipBuffer3VertexCount) {
-            pCVar6 = g_ClipBuffer3Vertices;
+            pCVar7 = g_ClipBuffer3Vertices;
             do {
-              iVar2 = g_ClipBuffer4VertexCount;
-              uVar4 = iVar7 + 1;
-              if (uVar4 == g_ClipBuffer3VertexCount) {
-                uVar4 = uVar4 ^ g_ClipBuffer3VertexCount;
+              iVar3 = g_ClipBuffer4VertexCount;
+              uVar5 = iVar6 + 1;
+              if (uVar5 == g_ClipBuffer3VertexCount) {
+                uVar5 = uVar5 ^ g_ClipBuffer3VertexCount;
               }
-              pCVar9 = g_ClipBuffer3Vertices + uVar4;
-              bVar3 = pCVar6->x < fVar1;
-              if (pCVar9->x < fVar1) {
-                bVar3 = bVar3 | 2;
+              point2_ptr = g_ClipBuffer3Vertices + uVar5;
+              bVar4 = pCVar7->x < fVar2;
+              if (point2_ptr->x < fVar2) {
+                bVar4 = bVar4 | 2;
               }
-              switch(bVar3) {
+              switch(bVar4) {
               case 0:
-                if (g_ClipBuffer4Vertices + g_ClipBuffer4VertexCount != pCVar6) {
-                  g_ClipBuffer4Vertices[g_ClipBuffer4VertexCount].x = pCVar6->x;
-                  g_ClipBuffer4Vertices[iVar2].y = pCVar6->y;
-                  g_ClipBuffer4Vertices[iVar2].z = pCVar6->z;
+                if (g_ClipBuffer4Vertices + g_ClipBuffer4VertexCount != pCVar7) {
+                  g_ClipBuffer4Vertices[g_ClipBuffer4VertexCount].x = pCVar7->x;
+                  g_ClipBuffer4Vertices[iVar3].y = pCVar7->y;
+                  g_ClipBuffer4Vertices[iVar3].z = pCVar7->z;
                 }
                 g_ClipBuffer4VertexCount = g_ClipBuffer4VertexCount + 1;
                 break;
               case 1:
                 core_dtri_cpp_clipLineToPlane_FUN_0049b6c0
-                          (pCVar9,pCVar6,g_ClipBuffer4Vertices + g_ClipBuffer4VertexCount,-1.0,0.0,
-                           0.0,(double)fVar1);
+                          (point2_ptr,pCVar7,g_ClipBuffer4Vertices + g_ClipBuffer4VertexCount,-1.0,
+                           0.0,0.0,(double)fVar2);
                 g_ClipBuffer4VertexCount = g_ClipBuffer4VertexCount + 1;
                 break;
               case 2:
-                if (g_ClipBuffer4Vertices + g_ClipBuffer4VertexCount != pCVar6) {
-                  g_ClipBuffer4Vertices[g_ClipBuffer4VertexCount].x = pCVar6->x;
-                  g_ClipBuffer4Vertices[iVar2].y = pCVar6->y;
-                  g_ClipBuffer4Vertices[iVar2].z = pCVar6->z;
+                if (g_ClipBuffer4Vertices + g_ClipBuffer4VertexCount != pCVar7) {
+                  g_ClipBuffer4Vertices[g_ClipBuffer4VertexCount].x = pCVar7->x;
+                  g_ClipBuffer4Vertices[iVar3].y = pCVar7->y;
+                  g_ClipBuffer4Vertices[iVar3].z = pCVar7->z;
                 }
                 g_ClipBuffer4VertexCount = g_ClipBuffer4VertexCount + 1;
                 core_dtri_cpp_clipLineToPlane_FUN_0049b6c0
-                          (pCVar6,pCVar9,g_ClipBuffer4Vertices + g_ClipBuffer4VertexCount,-1.0,0.0,
-                           0.0,(double)fVar1);
+                          (pCVar7,point2_ptr,g_ClipBuffer4Vertices + g_ClipBuffer4VertexCount,-1.0,
+                           0.0,0.0,(double)fVar2);
                 g_ClipBuffer4VertexCount = g_ClipBuffer4VertexCount + 1;
               }
-              iVar7 = iVar7 + 1;
-              pCVar6 = pCVar6 + 1;
-            } while (iVar7 < g_ClipBuffer3VertexCount);
+              iVar6 = iVar6 + 1;
+              pCVar7 = pCVar7 + 1;
+            } while (iVar6 < g_ClipBuffer3VertexCount);
           }
           if (2 < g_ClipBuffer4VertexCount) {
-            fVar1 = bounds_min->z;
-            iVar7 = 0;
+            fVar2 = bounds_min->z;
+            iVar6 = 0;
             if (0 < g_ClipBuffer4VertexCount) {
-              pCVar6 = g_ClipBuffer4Vertices;
+              pCVar7 = g_ClipBuffer4Vertices;
               do {
-                iVar2 = g_ClipBuffer5VertexCount;
-                uVar4 = iVar7 + 1;
-                if (uVar4 == g_ClipBuffer4VertexCount) {
-                  uVar4 = uVar4 ^ g_ClipBuffer4VertexCount;
+                iVar3 = g_ClipBuffer5VertexCount;
+                uVar5 = iVar6 + 1;
+                if (uVar5 == g_ClipBuffer4VertexCount) {
+                  uVar5 = uVar5 ^ g_ClipBuffer4VertexCount;
                 }
-                bVar3 = pCVar6->z < fVar1;
-                if (g_ClipBuffer4Vertices[uVar4].z < fVar1) {
-                  bVar3 = bVar3 | 2;
+                bVar4 = pCVar7->z < fVar2;
+                if (g_ClipBuffer4Vertices[uVar5].z < fVar2) {
+                  bVar4 = bVar4 | 2;
                 }
-                switch(bVar3) {
+                switch(bVar4) {
                 case 0:
-                  if (g_ClipBuffer5Vertices + g_ClipBuffer5VertexCount != pCVar6) {
-                    g_ClipBuffer5Vertices[g_ClipBuffer5VertexCount].x = pCVar6->x;
-                    g_ClipBuffer5Vertices[iVar2].y = pCVar6->y;
-                    g_ClipBuffer5Vertices[iVar2].z = pCVar6->z;
+                  if (g_ClipBuffer5Vertices + g_ClipBuffer5VertexCount != pCVar7) {
+                    g_ClipBuffer5Vertices[g_ClipBuffer5VertexCount].x = pCVar7->x;
+                    g_ClipBuffer5Vertices[iVar3].y = pCVar7->y;
+                    g_ClipBuffer5Vertices[iVar3].z = pCVar7->z;
                   }
                   g_ClipBuffer5VertexCount = g_ClipBuffer5VertexCount + 1;
                   break;
                 case 1:
                   core_dtri_cpp_clipLineToPlane_FUN_0049b6c0
-                            (g_ClipBuffer4Vertices + uVar4,pCVar6,
+                            (g_ClipBuffer4Vertices + uVar5,pCVar7,
                              g_ClipBuffer5Vertices + g_ClipBuffer5VertexCount,0.0,0.0,-1.0,
-                             (double)fVar1);
+                             (double)fVar2);
                   g_ClipBuffer5VertexCount = g_ClipBuffer5VertexCount + 1;
                   break;
                 case 2:
-                  if (g_ClipBuffer5Vertices + g_ClipBuffer5VertexCount != pCVar6) {
-                    g_ClipBuffer5Vertices[g_ClipBuffer5VertexCount].x = pCVar6->x;
-                    g_ClipBuffer5Vertices[iVar2].y = pCVar6->y;
-                    g_ClipBuffer5Vertices[iVar2].z = pCVar6->z;
+                  if (g_ClipBuffer5Vertices + g_ClipBuffer5VertexCount != pCVar7) {
+                    g_ClipBuffer5Vertices[g_ClipBuffer5VertexCount].x = pCVar7->x;
+                    g_ClipBuffer5Vertices[iVar3].y = pCVar7->y;
+                    g_ClipBuffer5Vertices[iVar3].z = pCVar7->z;
                   }
                   g_ClipBuffer5VertexCount = g_ClipBuffer5VertexCount + 1;
                   core_dtri_cpp_clipLineToPlane_FUN_0049b6c0
-                            (pCVar6,g_ClipBuffer4Vertices + uVar4,
+                            (pCVar7,g_ClipBuffer4Vertices + uVar5,
                              g_ClipBuffer5Vertices + g_ClipBuffer5VertexCount,0.0,0.0,-1.0,
-                             (double)fVar1);
+                             (double)fVar2);
                   g_ClipBuffer5VertexCount = g_ClipBuffer5VertexCount + 1;
                 }
-                iVar7 = iVar7 + 1;
-                pCVar6 = pCVar6 + 1;
-              } while (iVar7 < g_ClipBuffer4VertexCount);
+                iVar6 = iVar6 + 1;
+                pCVar7 = pCVar7 + 1;
+              } while (iVar6 < g_ClipBuffer4VertexCount);
             }
             if (2 < g_ClipBuffer5VertexCount) {
-              fVar1 = bounds_max->z;
-              iVar7 = 0;
+              fVar2 = bounds_max->z;
+              iVar6 = 0;
               if (0 < g_ClipBuffer5VertexCount) {
-                pCVar6 = g_ClipBuffer5Vertices;
+                pCVar7 = g_ClipBuffer5Vertices;
                 do {
-                  iVar2 = g_ClipOutputVertexCount;
-                  uVar4 = iVar7 + 1;
-                  if (uVar4 == g_ClipBuffer5VertexCount) {
-                    uVar4 = uVar4 ^ g_ClipBuffer5VertexCount;
+                  iVar3 = g_ClipOutputVertexCount;
+                  uVar5 = iVar6 + 1;
+                  if (uVar5 == g_ClipBuffer5VertexCount) {
+                    uVar5 = uVar5 ^ g_ClipBuffer5VertexCount;
                   }
-                  bVar3 = fVar1 < pCVar6->z;
-                  if (fVar1 < g_ClipBuffer5Vertices[uVar4].z) {
-                    bVar3 = bVar3 | 2;
+                  bVar4 = fVar2 < pCVar7->z;
+                  if (fVar2 < g_ClipBuffer5Vertices[uVar5].z) {
+                    bVar4 = bVar4 | 2;
                   }
-                  switch(bVar3) {
+                  switch(bVar4) {
                   case 0:
-                    if (g_ClipOutputVertices + g_ClipOutputVertexCount != pCVar6) {
-                      g_ClipOutputVertices[g_ClipOutputVertexCount].x = pCVar6->x;
-                      g_ClipOutputVertices[iVar2].y = pCVar6->y;
-                      g_ClipOutputVertices[iVar2].z = pCVar6->z;
+                    if (g_ClipOutputVertices + g_ClipOutputVertexCount != pCVar7) {
+                      g_ClipOutputVertices[g_ClipOutputVertexCount].x = pCVar7->x;
+                      g_ClipOutputVertices[iVar3].y = pCVar7->y;
+                      g_ClipOutputVertices[iVar3].z = pCVar7->z;
                     }
                     g_ClipOutputVertexCount = g_ClipOutputVertexCount + 1;
                     break;
                   case 1:
                     core_dtri_cpp_clipLineToPlane_FUN_0049b6c0
-                              (g_ClipBuffer5Vertices + uVar4,pCVar6,
+                              (g_ClipBuffer5Vertices + uVar5,pCVar7,
                                g_ClipOutputVertices + g_ClipOutputVertexCount,0.0,0.0,-1.0,
-                               (double)fVar1);
+                               (double)fVar2);
                     g_ClipOutputVertexCount = g_ClipOutputVertexCount + 1;
                     break;
                   case 2:
-                    if (g_ClipOutputVertices + g_ClipOutputVertexCount != pCVar6) {
-                      g_ClipOutputVertices[g_ClipOutputVertexCount].x = pCVar6->x;
-                      g_ClipOutputVertices[iVar2].y = pCVar6->y;
-                      g_ClipOutputVertices[iVar2].z = pCVar6->z;
+                    if (g_ClipOutputVertices + g_ClipOutputVertexCount != pCVar7) {
+                      g_ClipOutputVertices[g_ClipOutputVertexCount].x = pCVar7->x;
+                      g_ClipOutputVertices[iVar3].y = pCVar7->y;
+                      g_ClipOutputVertices[iVar3].z = pCVar7->z;
                     }
                     g_ClipOutputVertexCount = g_ClipOutputVertexCount + 1;
                     core_dtri_cpp_clipLineToPlane_FUN_0049b6c0
-                              (pCVar6,g_ClipBuffer5Vertices + uVar4,
+                              (pCVar7,g_ClipBuffer5Vertices + uVar5,
                                g_ClipOutputVertices + g_ClipOutputVertexCount,0.0,0.0,-1.0,
-                               (double)fVar1);
+                               (double)fVar2);
                     g_ClipOutputVertexCount = g_ClipOutputVertexCount + 1;
                   }
-                  iVar7 = iVar7 + 1;
-                  pCVar6 = pCVar6 + 1;
-                } while (iVar7 < g_ClipBuffer5VertexCount);
+                  iVar6 = iVar6 + 1;
+                  pCVar7 = pCVar7 + 1;
+                } while (iVar6 < g_ClipBuffer5VertexCount);
               }
               if (2 < g_ClipOutputVertexCount) {
                 return 1;

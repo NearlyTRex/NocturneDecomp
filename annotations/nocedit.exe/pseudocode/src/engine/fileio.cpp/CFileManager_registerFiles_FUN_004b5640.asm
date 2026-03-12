@@ -7,17 +7,14 @@
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename_list
 ; Local Variables:
-; undefined1       Stack[-0x580]:1  local_580
-; undefined1       Stack[-0x47c]:1  local_47c
-; undefined1       Stack[-0x37c]:1  local_37c
-; undefined1       Stack[-0x27c]:1  local_27c
-; undefined1       Stack[-0x17c]:1  local_17c
-; undefined1       Stack[-0xb4]:1  local_b4
-; undefined1       Stack[-0xb3]:1  local_b3
-; undefined1       Stack[-0xb1]:1  local_b1
-; undefined1       Stack[-0x64]:1  local_64
-; undefined1       Stack[-0x63]:1  local_63
-; undefined4       Stack[-0x14]:4  local_14
+; char[260]        Stack[-0x580]:260  local_580
+; char[256]        Stack[-0x47c]:256  local_47c
+; char[256]        Stack[-0x37c]:256  local_37c
+; char[256]        Stack[-0x27c]:256  local_27c
+; char[200]        Stack[-0x17c]:200  local_17c
+; char[80]         Stack[-0xb4]:80  local_b4
+; char[80]         Stack[-0x64]:80  local_64
+; char[128] *      Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_fileio.cpp_CFileManager_load_FUN_004b6c00 at 004b6cab

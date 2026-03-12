@@ -10,7 +10,17 @@
 ; int              Stack[0x10]:4   blue
 ; int              Stack[0x14]:4   alpha
 ; Local Variables:
-; undefined1       Stack[-0x4c]:1  local_4c
+; SMRGLHeaderPrimitive Stack[-0x74]:24  SStack_74
+; undefined4       Stack[-0x5c]:4  uStack_5c
+; undefined4       Stack[-0x58]:4  uStack_58
+; undefined4       Stack[-0x54]:4  uStack_54
+; undefined4       Stack[-0x50]:4  uStack_50
+; CBoundingBox3D   Stack[-0x4c]:24  local_4c
+; CVector3f        Stack[-0x34]:12  CStack_34
+; CVector3i        Stack[-0x28]:12  CStack_28
+; int              Stack[-0x1c]:4  iStack_1c
+; int              Stack[-0x18]:4  iStack_18
+; int              Stack[-0x14]:4  iStack_14
 ;
 ; XREF[5]:
 ;   core_barrier.cpp_CBarrier_renderTransparent_FUN_00414240 at 004142c5

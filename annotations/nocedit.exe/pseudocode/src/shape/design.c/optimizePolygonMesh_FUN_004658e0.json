@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 81,
-        "line": 71,
+        "line": 73,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 108,
+    "complexity_score": 110,
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 93,
+    "pseudocode_lines": 95,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 339
+    "total_lines": 341
   },
   "cross_references": [
     {
@@ -246,43 +246,36 @@
         "is_param": false,
         "name": "local_70",
         "offset": -112,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_6f",
-        "offset": -111,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "char[80]"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -310,7 +303,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 26,
+      "line": 31,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar8 = (float10)fcos((float10)angle_tolerance * (float10)0.01745329252);",

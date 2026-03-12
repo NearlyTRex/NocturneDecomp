@@ -9,14 +9,16 @@
 void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_00433c90(int x0,int y0,int x1,int y1,int color)
 
 {
-  int iVar1;
-  int iVar2;
   uint uVar3;
+  uint uVar1;
   uint uVar4;
   uint uVar5;
+  uint uVar2;
   int local_1c;
   uint local_18;
   uint local_14;
+  int iVar2;
+  int iVar1;
   
   iVar1 = x0;
   iVar2 = y0;
@@ -52,10 +54,10 @@ void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_00433c90(int x0,int y0,int x1,int
       if (local_18 != local_14) {
         if ((int)local_14 < (int)local_18) {
           uVar3 = (local_14 * 0x10000) / local_18;
-          uVar5 = 0;
+          uVar1 = 0;
           while (local_18 = local_18 - 1, local_18 != 0) {
-            uVar4 = uVar5 + uVar3 & 0xffff;
-            if (uVar4 <= uVar5) {
+            uVar4 = uVar1 + uVar3 & 0xffff;
+            if (uVar4 <= uVar1) {
               y0 = y0 + 1;
             }
             x0 = x0 + local_1c;
@@ -63,23 +65,23 @@ void __cdecl cockpit_ckptutil_c_drawLineAA_FUN_00433c90(int x0,int y0,int x1,int
                       (x0,y0,((float)(uVar4 >> 8) + 1.0) * 0.00390625,color);
             cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0
                       (x0,y0 + 1,(float)(uVar4 >> 8 ^ 0xff) * 0.00390625,color);
-            uVar5 = uVar4;
+            uVar1 = uVar4;
           }
         }
         else {
-          uVar3 = (local_18 << 0x10) / local_14;
+          uVar1 = (local_18 << 0x10) / local_14;
           uVar5 = 0;
           while (local_14 = local_14 - 1, local_14 != 0) {
-            uVar4 = uVar5 + uVar3 & 0xffff;
-            if (uVar4 <= uVar5) {
+            uVar2 = uVar5 + uVar1 & 0xffff;
+            if (uVar2 <= uVar5) {
               x0 = x0 + local_1c;
             }
             y0 = y0 + 1;
             cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0
-                      (x0,y0,((float)(uVar4 >> 8) + 1.0) * 0.00390625,color);
+                      (x0,y0,((float)(uVar2 >> 8) + 1.0) * 0.00390625,color);
             cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0
-                      (local_1c + x0,y0,(float)(uVar4 >> 8 ^ 0xff) * 0.00390625,color);
-            uVar5 = uVar4;
+                      (local_1c + x0,y0,(float)(uVar2 >> 8 ^ 0xff) * 0.00390625,color);
+            uVar5 = uVar2;
           }
         }
         cockpit_ckptutil_c_putPixel_FUN_004345c0(x1,y1,color);

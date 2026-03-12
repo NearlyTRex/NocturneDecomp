@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x5c]:1  local_5c
+; char[80]         Stack[-0x5c]:80  local_5c
 ;
 ; XREF[8]:
 ;   engine_fileio.cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610 at 004b5616

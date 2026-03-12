@@ -7,7 +7,7 @@
 ; HANDLE           Stack[0x4]:4   mutex_handle
 ; double           Stack[0x8]:8   timeout_seconds
 ; Local Variables:
-; undefined8       Stack[-0x8]:8  local_8
+; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_processAudio_FUN_005abe20 at 005abe43
@@ -18,7 +18,6 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
-;   WaitForSingleObject
 ;
 ; *****************************************************************************
 

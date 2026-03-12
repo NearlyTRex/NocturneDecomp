@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 11,
-        "line": 53,
+        "line": 57,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 53,
+        "line": 57,
         "message": "expected expression"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 158,
+    "complexity_score": 162,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 62,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 198
+    "total_lines": 202
   },
   "cross_references": [
     {
@@ -126,7 +126,7 @@
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -147,7 +147,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 35,
       "match": "(CVert *)((int)",
       "severity": "mild",
       "text": "pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
@@ -155,18 +155,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 36,
       "match": "(CVert *)((int)",
       "severity": "mild",
       "text": "pCVar8 = (CVert *)((int)pCVar8 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(CVert *)((int)",
-      "severity": "mild",
-      "text": "pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -178,8 +170,16 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(CVert *)((int)",
+      "severity": "mild",
+      "text": "pCVar6 = (CVert *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 46,
+      "line": 50,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar4 + 100) + 4))",
@@ -187,7 +187,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 53,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -0xc);",
@@ -195,15 +195,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 55,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -8);",
+      "text": "piVar2 = (int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 57,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -4) =",
@@ -211,7 +211,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 58,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)this_ptr->poly_array->uv_coords + iVar7 + -4) + iVar2;",

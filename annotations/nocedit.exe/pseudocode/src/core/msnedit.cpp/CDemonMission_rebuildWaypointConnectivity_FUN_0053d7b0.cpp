@@ -9,11 +9,11 @@
 void __cdecl core_msnedit_cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0(CDemonMission *this_ptr)
 
 {
-  uint *puVar1;
   int iVar2;
   int iVar3;
   int set_index;
   char (*local_14) [256];
+  uint *puVar1;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing actors.");

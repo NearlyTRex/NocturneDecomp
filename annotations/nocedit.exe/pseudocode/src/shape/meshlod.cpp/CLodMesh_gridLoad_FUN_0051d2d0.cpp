@@ -13,6 +13,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
   int *piVar2;
   int iVar3;
   int iVar4;
+  int iVar1;
   int iVar5;
   int local_14;
   
@@ -32,9 +33,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
   }
   iVar4 = 0;
   do {
-    iVar5 = (int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + iVar4;
+    iVar1 = (int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + iVar4;
     iVar4 = iVar4 + 4;
-    _fscanf(file_handle,"%d\n",iVar5);
+    _fscanf(file_handle,"%d\n",iVar1);
   } while (iVar4 != 0x4004);
   piVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->spatial_grid_data,this_ptr->spatial_grid_ptr->triangle_count << 2,
@@ -45,10 +46,10 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
     g_CurrentLineNumber = 0x147b;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
-  iVar4 = 0;
+  iVar1 = 0;
   for (iVar5 = 0; iVar5 < this_ptr->spatial_grid_ptr->triangle_count; iVar5 = iVar5 + 1) {
-    iVar3 = (int)this_ptr->spatial_grid_data + iVar4;
-    iVar4 = iVar4 + 4;
+    iVar3 = (int)this_ptr->spatial_grid_data + iVar1;
+    iVar1 = iVar1 + 4;
     _fscanf(file_handle,"%d\n",iVar3);
   }
   return;

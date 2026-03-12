@@ -9,11 +9,11 @@
 CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0(CLodMesh *this_ptr,CVector3f *output_point,CVector3f *input_point)
 
 {
-  float *pfVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
   float fVar5;
+  float fVar4;
+  float fVar3;
+  float fVar2;
+  float *pfVar1;
   
   pfVar1 = &this_ptr->scale_factor;
   fVar2 = input_point->y;

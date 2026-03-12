@@ -9,10 +9,10 @@
 void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(void)
 
 {
-  float fVar1;
   float *in_stack_00000004;
   float in_stack_00000008;
   float in_stack_0000000c;
+  float fVar1;
   
   fVar1 = (g_CGamePtr->delta_time_float * in_stack_0000000c) / in_stack_00000008;
   if (0.0 <= *in_stack_00000004) {

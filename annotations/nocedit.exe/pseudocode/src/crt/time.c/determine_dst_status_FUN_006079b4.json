@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 320,
-    "complexity_score": 186,
+    "complexity_score": 190,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 19,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 121,
+    "pseudocode_lines": 125,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "special_crt_function",
       "undefined_data"
     ],
-    "total_lines": 441
+    "total_lines": 445
   },
   "cross_references": [
     {
@@ -266,7 +266,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -280,23 +280,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 35,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar4 = *(int *)((int)&INFINITY + iVar5 * 2 + 6);",
+      "text": "iVar1 = *(int *)((int)&INFINITY + iVar9 * 2 + 6);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 39,
       "match": "DAT_00665f50",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(&DAT_00665f50 + iVar5 * 2);",
+      "text": "iVar1 = *(int *)(&DAT_00665f50 + iVar9 * 2);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 42,
       "match": "(dst_rule *)((int)",
       "severity": "mild",
       "text": "if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 0) {",
@@ -304,7 +304,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 66,
       "match": "(dst_rule *)((int)",
       "severity": "mild",
       "text": "if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 1) {",

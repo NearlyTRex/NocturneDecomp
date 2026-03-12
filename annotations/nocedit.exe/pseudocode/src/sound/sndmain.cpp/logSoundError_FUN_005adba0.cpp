@@ -12,12 +12,14 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
   _FILE *file;
   _tm *timeptr;
   char *pcVar1;
+  char *pcVar2;
   int iVar2;
-  SSoundDeviceInfo *device_info;
+  int iVar3;
   char local_528 [1024];
   SSoundDeviceInfo local_128;
   byte *local_10;
   int local_c;
+  SSoundDeviceInfo *device_info;
   
   local_10 = &stack0x00000008;
   _vsprintf(local_528,format,(va_list_t)&local_10);
@@ -35,32 +37,32 @@ void __cdecl sound_sndmain_cpp_logSoundError_FUN_005adba0(char *format,...)
   timeptr = _localtime(&local_c);
   pcVar1 = _asctime(timeptr);
   _fprintf(file,"Time: %s",pcVar1);
-  pcVar1 = getenv("USERNAME");
-  if (pcVar1 != (char *)0x0) {
-    _fprintf(file,"USERNAME: %s\n",pcVar1);
+  pcVar2 = getenv("USERNAME");
+  if (pcVar2 != (char *)0x0) {
+    _fprintf(file,"USERNAME: %s\n",pcVar2);
   }
-  pcVar1 = getenv("COMPUTERNAME");
-  if (pcVar1 != (char *)0x0) {
-    _fprintf(file,"COMPUTERNAME: %s\n",pcVar1);
+  pcVar2 = getenv("COMPUTERNAME");
+  if (pcVar2 != (char *)0x0) {
+    _fprintf(file,"COMPUTERNAME: %s\n",pcVar2);
   }
   iVar2 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();
   _fprintf(file,"selectedDeviceIndex: %d\n",iVar2);
-  iVar2 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();
-  if (iVar2 < 0) {
+  iVar3 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();
+  if (iVar3 < 0) {
     _fprintf(file,"No device selected.\n");
   }
   else {
     device_info = &local_128;
-    iVar2 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();
-    sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar2,device_info);
+    iVar3 = sound_sndmain_cpp_getCurrentSoundDevice_FUN_005ab6c0();
+    sound_sndmain_cpp_getSoundDeviceInfo_FUN_005ab370(iVar3,device_info);
     _fprintf(file,"Device: %s.\n",&local_128);
   }
-  iVar2 = sound_sndmain_cpp_getAudioBitDepth_FUN_005ab250();
-  _fprintf(file,"Bits: %d\n",iVar2);
-  iVar2 = sound_sndmain_cpp_getAudioChannelCount_FUN_005ab270();
-  _fprintf(file,"Channels: %d\n",iVar2);
-  iVar2 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
-  _fprintf(file,"Hz: %d\n",iVar2);
+  iVar3 = sound_sndmain_cpp_getAudioBitDepth_FUN_005ab250();
+  _fprintf(file,"Bits: %d\n",iVar3);
+  iVar3 = sound_sndmain_cpp_getAudioChannelCount_FUN_005ab270();
+  _fprintf(file,"Channels: %d\n",iVar3);
+  iVar3 = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
+  _fprintf(file,"Hz: %d\n",iVar3);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\sound\\sndmain.cpp",0x188b);
   return;
 }

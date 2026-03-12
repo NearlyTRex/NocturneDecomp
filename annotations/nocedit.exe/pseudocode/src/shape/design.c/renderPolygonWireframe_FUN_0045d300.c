@@ -9,73 +9,78 @@
 void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimitive *polygon_data)
 
 {
-  SRenderVertex vertex2;
-  SRenderVertex vertex2_00;
   SMRGLHeaderPrimitive *pSVar1;
   int iVar2;
   int iVar3;
+  int iVar1;
+  SRenderVertex *pSVar2;
   SRenderVertex *pSVar4;
+  SRenderVertex *pSVar3;
+  int *piVar4;
   SRenderVertex *pSVar5;
   int *piVar6;
   byte bVar7;
-  SRenderVertex in_stack_fffffef8;
-  byte auVar8 [24];
-  byte in_stack_ffffff28 [40];
-  uint uVar9;
+  int iVar5;
   SRenderVertex local_a8;
   SRenderVertex local_78;
   SRenderVertex local_48;
   int local_18;
+  SRenderVertex vertex2_00;
+  SRenderVertex vertex2;
+  SRenderVertex in_stack_fffffef8;
+  byte auVar8 [24];
+  byte in_stack_ffffff28 [40];
+  uint uVar9;
   
   bVar7 = 0;
   pSVar1 = polygon_data + 1;
   uVar9 = 0x45d321;
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_data->surface_normal);
   if (iVar2 != 0) {
-    iVar2 = 0x45d331;
+    iVar5 = 0x45d331;
     engine_3d_c_setActiveRenderColor_FUN_00404540();
     for (local_18 = 0; local_18 < (polygon_data->base).count + -1; local_18 = local_18 + 1) {
-      pSVar4 = g_RenderVertexBuffer + (&(pSVar1->base).type)[local_18];
-      pSVar5 = &local_78;
+      pSVar2 = g_RenderVertexBuffer + (&(pSVar1->base).type)[local_18];
+      pSVar3 = &local_78;
       for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-        (pSVar5->projected_vertex).transformed_x = (pSVar4->projected_vertex).transformed_x;
-        pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);
-        pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
+        (pSVar3->projected_vertex).transformed_x = (pSVar2->projected_vertex).transformed_x;
+        pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);
       }
-      pSVar4 = g_RenderVertexBuffer + (&(pSVar1->base).count)[local_18];
-      pSVar5 = &local_48;
-      for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-        (pSVar5->projected_vertex).transformed_x = (pSVar4->projected_vertex).transformed_x;
-        pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);
-        pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
+      pSVar2 = g_RenderVertexBuffer + (&(pSVar1->base).count)[local_18];
+      pSVar3 = &local_48;
+      for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+        (pSVar3->projected_vertex).transformed_x = (pSVar2->projected_vertex).transformed_x;
+        pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);
       }
-      pSVar4 = &local_48;
-      pSVar5 = &local_a8;
-      for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-        (pSVar5->projected_vertex).transformed_x = (pSVar4->projected_vertex).transformed_x;
-        pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
-        pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
+      pSVar2 = &local_48;
+      pSVar3 = &local_a8;
+      for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+        (pSVar3->projected_vertex).transformed_x = (pSVar2->projected_vertex).transformed_x;
+        pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);
       }
-      pSVar4 = &local_a8;
-      piVar6 = (int *)&stack0xffffff28;
-      for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *piVar6 = (pSVar4->projected_vertex).transformed_x;
-        pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
-        piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+      pSVar2 = &local_a8;
+      piVar4 = (int *)&stack0xffffff28;
+      for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+        *piVar4 = (pSVar2->projected_vertex).transformed_x;
+        pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);
+        piVar4 = piVar4 + (uint)bVar7 * -2 + 1;
       }
-      pSVar4 = &local_78;
-      pSVar5 = &local_a8;
-      for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-        (pSVar5->projected_vertex).transformed_x = (pSVar4->projected_vertex).transformed_x;
-        pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
-        pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
+      pSVar2 = &local_78;
+      pSVar3 = &local_a8;
+      for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+        (pSVar3->projected_vertex).transformed_x = (pSVar2->projected_vertex).transformed_x;
+        pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);
       }
-      pSVar4 = &local_a8;
-      piVar6 = (int *)&stack0xfffffef8;
-      for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *piVar6 = (pSVar4->projected_vertex).transformed_x;
-        pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
-        piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+      pSVar2 = &local_a8;
+      piVar4 = (int *)&stack0xfffffef8;
+      for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+        *piVar4 = (pSVar2->projected_vertex).transformed_x;
+        pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);
+        piVar4 = piVar4 + (uint)bVar7 * -2 + 1;
       }
       vertex2.b = uVar9;
       auVar8 = in_stack_ffffff28._0_24_;
@@ -89,50 +94,53 @@ void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimi
       vertex2.v = in_stack_ffffff28._28_4_;
       vertex2.r = in_stack_ffffff28._32_4_;
       vertex2.g = in_stack_ffffff28._36_4_;
-      vertex2.a = iVar2;
+      vertex2.a = iVar5;
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffef8,vertex2);
     }
-    pSVar4 = g_RenderVertexBuffer + *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);
-    pSVar5 = &local_78;
-    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      (pSVar5->projected_vertex).transformed_x = (pSVar4->projected_vertex).transformed_x;
-      pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);
-      pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
+    pSVar2 = g_RenderVertexBuffer + *(int *)((int)pSVar1 + (polygon_data->base).count * 4 + -4);
+    pSVar3 = &local_78;
+    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+      (pSVar3->projected_vertex).transformed_x = (pSVar2->projected_vertex).transformed_x;
+      pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);
+      pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);
     }
-    pSVar4 = g_RenderVertexBuffer + (pSVar1->base).type;
-    pSVar5 = &local_48;
-    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      (pSVar5->projected_vertex).transformed_x = (pSVar4->projected_vertex).transformed_x;
-      pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);
-      pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
+    pSVar2 = g_RenderVertexBuffer + (pSVar1->base).type;
+    pSVar3 = &local_48;
+    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+      (pSVar3->projected_vertex).transformed_x = (pSVar2->projected_vertex).transformed_x;
+      pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);
+      pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);
     }
-    pSVar4 = &local_48;
+    pSVar2 = &local_48;
+    pSVar3 = &local_a8;
+    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+      (pSVar3->projected_vertex).transformed_x = (pSVar2->projected_vertex).transformed_x;
+      pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);
+      pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar7 * -8 + 4);
+    }
+    pSVar2 = &local_a8;
+    piVar4 = (int *)&stack0xffffff28;
+    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *piVar4 = (pSVar2->projected_vertex).transformed_x;
+      pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);
+      piVar4 = piVar4 + (uint)bVar7 * -2 + 1;
+    }
+    pSVar2 = &local_78;
     pSVar5 = &local_a8;
-    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      (pSVar5->projected_vertex).transformed_x = (pSVar4->projected_vertex).transformed_x;
-      pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
+    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
       pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
-    }
-    pSVar4 = &local_a8;
-    piVar6 = (int *)&stack0xffffff28;
-    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar6 = (pSVar4->projected_vertex).transformed_x;
-      pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
-      piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
-    }
-    pSVar4 = &local_78;
-    pSVar5 = &local_a8;
-    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      (pSVar5->projected_vertex).transformed_x = (pSVar4->projected_vertex).transformed_x;
-      pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
-      pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);
+      (pSVar5->projected_vertex).transformed_x = (pSVar2->projected_vertex).transformed_x;
+      pSVar2 = (SRenderVertex *)((int)pSVar2 + (uint)bVar7 * -8 + 4);
+      pSVar5 = pSVar5;
     }
     pSVar4 = &local_a8;
     piVar6 = (int *)&stack0xfffffef8;
-    for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar6 = (pSVar4->projected_vertex).transformed_x;
-      pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
+    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
       piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
+      pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);
+      *piVar6 = (pSVar4->projected_vertex).transformed_x;
+      pSVar4 = pSVar4;
+      piVar6 = piVar6;
     }
     vertex2_00.b = uVar9;
     auVar8 = in_stack_ffffff28._0_24_;
@@ -146,7 +154,7 @@ void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimi
     vertex2_00.v = in_stack_ffffff28._28_4_;
     vertex2_00.r = in_stack_ffffff28._32_4_;
     vertex2_00.g = in_stack_ffffff28._36_4_;
-    vertex2_00.a = iVar2;
+    vertex2_00.a = iVar5;
     engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffef8,vertex2_00);
   }
   return;

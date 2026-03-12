@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 269,
-    "complexity_score": 175,
+    "complexity_score": 144,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 115,
-    "suspect_count": 5,
+    "pseudocode_lines": 119,
+    "suspect_count": 2,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "suspect_float"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 384
+    "total_lines": 388
   },
   "cross_references": [],
   "function": {
@@ -205,106 +204,50 @@
         "is_param": false,
         "name": "local_214",
         "offset": -532,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_170",
-        "offset": -368,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_16c",
-        "offset": -364,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_168",
-        "offset": -360,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_164",
-        "offset": -356,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_160",
-        "offset": -352,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_15c",
-        "offset": -348,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_158",
-        "offset": -344,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_154",
-        "offset": -340,
-        "size": 4,
-        "type": "undefined4"
+        "size": 388,
+        "type": "SShapeEditorPolygon"
       },
       {
         "is_param": false,
         "name": "local_90",
         "offset": -144,
-        "size": 1,
-        "type": "undefined"
+        "size": 80,
+        "type": "byte[80]"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "STreeNode *"
       },
       {
         "is_param": false,
@@ -318,42 +261,42 @@
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -367,7 +310,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 46,
       "match": "NAN",
       "severity": "mild",
       "text": "local_18 = -NAN;",
@@ -375,35 +318,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 51,
       "match": "NAN",
       "severity": "mild",
       "text": "if (local_18 != -NAN) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 52,
-      "match": "1.12104e-43",
-      "severity": "mild",
-      "text": "if (local_28 == 1.12104e-43) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 76,
-      "match": "1.23314e-43",
-      "severity": "mild",
-      "text": "if (local_28 == 1.23314e-43) {",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 85,
-      "match": "1.26117e-43",
-      "severity": "mild",
-      "text": "else if (local_28 == 1.26117e-43) {",
-      "type": "suspect_float"
     }
   ]
 }

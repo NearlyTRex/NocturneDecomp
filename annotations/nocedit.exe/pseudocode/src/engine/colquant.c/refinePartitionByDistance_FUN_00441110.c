@@ -9,13 +9,15 @@
 void __cdecl engine_colquant_c_refinePartitionByDistance_FUN_00441110(SColorQuantMapper *workspace,int box_index,int new_box_index)
 
 {
-  uint uVar1;
   char *pcVar2;
   int color_index;
   int color_index_00;
   double dVar3;
   double dVar4;
+  double dVar1;
+  double dVar2;
   int local_14;
+  uint uVar1;
   
   color_index_00 = workspace->boxes[box_index].start_index;
   color_index = workspace->boxes[box_index].count + color_index_00 + -1;
@@ -28,11 +30,11 @@ void __cdecl engine_colquant_c_refinePartitionByDistance_FUN_00441110(SColorQuan
                         (workspace,new_box_index,color_index_00);
       if (dVar4 < dVar3) {
         for (; color_index_00 < color_index; color_index = color_index + -1) {
-          dVar3 = engine_colquant_c_computeWeightedColorDistance_FUN_00441040
+          dVar1 = engine_colquant_c_computeWeightedColorDistance_FUN_00441040
                             (workspace,box_index,color_index);
-          dVar4 = engine_colquant_c_computeWeightedColorDistance_FUN_00441040
+          dVar2 = engine_colquant_c_computeWeightedColorDistance_FUN_00441040
                             (workspace,new_box_index,color_index);
-          if (dVar3 <= dVar4) break;
+          if (dVar1 <= dVar2) break;
         }
         pcVar2 = workspace->color_data + local_14;
         uVar1 = *(uint *)pcVar2;

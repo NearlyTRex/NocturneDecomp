@@ -9,18 +9,20 @@
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(CMansionPuzzleCircle *this_ptr)
 
 {
-  CVector3f *pCVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
+  CVector3f *pCVar2;
+  float fVar9;
   CSlew CStack_78;
   CSlew local_5c;
   CSlew local_40;
   CSlew local_24;
+  CVector3f *pCVar1;
+  float fVar2;
+  float fVar7;
+  float fVar8;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
   
   if (g_MansionPuzzleSlewType == 1) {
     core_slew_cpp_CSlew_init_FUN_005a2060(&local_40);
@@ -70,9 +72,9 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(C
       CStack_78.position.y = this_ptr->reflectors[0].start_position.y;
       CStack_78.position.z = this_ptr->reflectors[0].start_position.z;
     }
-    pCVar1 = &this_ptr->reflectors[0].rotation;
-    if ((CVector3f *)&CStack_78.pitch != pCVar1) {
-      CStack_78.pitch = pCVar1->x;
+    pCVar2 = &this_ptr->reflectors[0].rotation;
+    if ((CVector3f *)&CStack_78.pitch != pCVar2) {
+      CStack_78.pitch = pCVar2->x;
       CStack_78.yaw = this_ptr->reflectors[0].rotation.y;
       CStack_78.roll = this_ptr->reflectors[0].rotation.z;
     }
@@ -82,16 +84,16 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(C
       this_ptr->reflectors[0].start_position.y = CStack_78.position.y;
       this_ptr->reflectors[0].start_position.z = CStack_78.position.z;
     }
-    pCVar1 = &this_ptr->reflectors[0].rotation;
-    if (pCVar1 != (CVector3f *)&CStack_78.pitch) {
-      pCVar1->x = CStack_78.pitch;
+    pCVar2 = &this_ptr->reflectors[0].rotation;
+    if (pCVar2 != (CVector3f *)&CStack_78.pitch) {
+      pCVar2->x = CStack_78.pitch;
       this_ptr->reflectors[0].rotation.y = CStack_78.yaw;
       this_ptr->reflectors[0].rotation.z = CStack_78.roll;
     }
     this_ptr->reflectors[0].interp_factor = 0.0;
-    fVar2 = this_ptr->reflectors[0].start_position.z;
+    fVar9 = this_ptr->reflectors[0].start_position.z;
     this_ptr->reflectors[0].target_position.x = this_ptr->reflectors[0].start_position.x;
-    this_ptr->reflectors[0].target_position.z = fVar2;
+    this_ptr->reflectors[0].target_position.z = fVar9;
   }
   else if (g_MansionPuzzleSlewType == 4) {
     core_slew_cpp_CSlew_init_FUN_005a2060(&local_5c);
@@ -101,22 +103,22 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(C
       local_5c.position.y = this_ptr->reflectors[0].target_position.y;
       local_5c.position.z = this_ptr->reflectors[0].target_position.z;
     }
-    pCVar1 = &this_ptr->reflectors[0].rotation;
-    if ((CVector3f *)&local_5c.pitch != pCVar1) {
-      local_5c.pitch = pCVar1->x;
+    pCVar2 = &this_ptr->reflectors[0].rotation;
+    if ((CVector3f *)&local_5c.pitch != pCVar2) {
+      local_5c.pitch = pCVar2->x;
       local_5c.yaw = this_ptr->reflectors[0].rotation.y;
       local_5c.roll = this_ptr->reflectors[0].rotation.z;
     }
     core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_5c);
-    pCVar1 = &this_ptr->reflectors[0].target_position;
-    if ((CSlew *)pCVar1 != &local_5c) {
-      pCVar1->x = local_5c.position.x;
+    pCVar2 = &this_ptr->reflectors[0].target_position;
+    if ((CSlew *)pCVar2 != &local_5c) {
+      pCVar2->x = local_5c.position.x;
       this_ptr->reflectors[0].target_position.y = local_5c.position.y;
       this_ptr->reflectors[0].target_position.z = local_5c.position.z;
     }
-    pCVar1 = &this_ptr->reflectors[0].rotation;
-    if (pCVar1 != (CVector3f *)&local_5c.pitch) {
-      pCVar1->x = local_5c.pitch;
+    pCVar2 = &this_ptr->reflectors[0].rotation;
+    if (pCVar2 != (CVector3f *)&local_5c.pitch) {
+      pCVar2->x = local_5c.pitch;
       this_ptr->reflectors[0].rotation.y = local_5c.yaw;
       this_ptr->reflectors[0].rotation.z = local_5c.roll;
     }
@@ -129,7 +131,7 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(C
     g_MansionPuzzleSlewType = 0;
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base);
   }
-  fVar2 = this_ptr->reflectors[0].start_position.y;
+  fVar9 = this_ptr->reflectors[0].start_position.y;
   fVar3 = this_ptr->reflectors[0].start_position.x;
   fVar4 = this_ptr->reflectors[0].start_position.z;
   fVar5 = this_ptr->reflectors[0].target_position.y;
@@ -137,15 +139,15 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440(C
   fVar7 = this_ptr->reflectors[0].target_position.z;
   fVar8 = this_ptr->reflectors[0].interp_factor;
   (this_ptr->base).orient.vec.z = 0.0;
-  this_ptr->reflectors[1].start_position.y = fVar2;
+  this_ptr->reflectors[1].start_position.y = fVar9;
   this_ptr->reflectors[1].start_position.z = fVar4;
   this_ptr->reflectors[1].target_position.y = fVar5;
   this_ptr->reflectors[1].target_position.z = fVar7;
   this_ptr->reflectors[1].interp_factor = fVar8;
-  fVar2 = (this_ptr->base).orient.vec.z;
+  fVar9 = (this_ptr->base).orient.vec.z;
   this_ptr->reflectors[1].start_position.x = -fVar3;
   this_ptr->reflectors[1].target_position.x = -fVar6;
-  (this_ptr->base).orient.vec.x = fVar2;
+  (this_ptr->base).orient.vec.x = fVar9;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   (*((this_ptr->base).vtable._ub)->setup)(&this_ptr->base);
   return;

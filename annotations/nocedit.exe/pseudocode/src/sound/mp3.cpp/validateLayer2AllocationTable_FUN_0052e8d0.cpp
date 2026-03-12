@@ -11,11 +11,11 @@
 int __cdecl sound_mp3_cpp_validateLayer2AllocationTable_FUN_0052e8d0(SMpegFrame *frame)
 
 {
-  int iVar1;
-  SMpegFrameHeader *pSVar2;
-  int iVar3;
-  int iVar4;
   int iVar5;
+  int iVar1;
+  int iVar3;
+  SMpegFrameHeader *pSVar2;
+  int iVar4;
   
   pSVar2 = frame->header;
   iVar3 = pSVar2->mpeg_version;

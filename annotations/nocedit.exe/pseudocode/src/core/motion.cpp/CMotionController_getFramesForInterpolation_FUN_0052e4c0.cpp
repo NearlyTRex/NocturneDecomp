@@ -11,9 +11,10 @@
 void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0(CMotionController *this_ptr,int motion_index,float frame_number,int *out_frame1,int *out_frame2,float *out_blend_weight)
 
 {
+  float fVar1;
+  float fVar3;
   CMotionList *pCVar1;
   int iVar2;
-  float fVar3;
   
   pCVar1 = this_ptr->motion_list_ptr;
   if (frame_number <= 0.0) {
@@ -24,10 +25,10 @@ void __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_005
   }
   else {
     if (frame_number < (float)(pCVar1->motions[motion_index].frame_count + -1)) {
-      fVar3 = (float)pCVar1->motions[motion_index].frame_start + frame_number;
-      *out_frame1 = (int)ROUND(ROUND(fVar3));
+      fVar1 = (float)pCVar1->motions[motion_index].frame_start + frame_number;
+      *out_frame1 = (int)ROUND(ROUND(fVar1));
       *out_frame2 = *out_frame1 + 1;
-      *out_blend_weight = fVar3 - (float)*out_frame1;
+      *out_blend_weight = fVar1 - (float)*out_frame1;
       return;
     }
     *out_frame1 = pCVar1->motions[motion_index].frame_start +

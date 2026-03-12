@@ -11,24 +11,26 @@
 void __cdecl core_passngr_cpp_CPassenger_process_FUN_00545ef0(CPassenger *this_ptr,float delta_time)
 
 {
-  CLocation *pCVar1;
-  CDeformableModelInstance *this_ptr_00;
-  int iVar2;
-  CDemonActor *pCVar3;
-  float fVar4;
-  CDemonMission *this_ptr_01;
+  CDeformableModelInstance *this_ptr_02;
   SMotion *pSVar5;
   int iVar6;
+  int bone_index;
   CVector3f *pCVar7;
   float local_20;
   CVector3f local_1c;
+  CDemonMission *this_ptr_01;
+  CDemonActor *pCVar3;
+  float fVar4;
+  CDeformableModelInstance *this_ptr_00;
+  int iVar2;
+  CLocation *pCVar1;
   
   if (1.0 <= this_ptr->morph_time) {
     return;
   }
-  this_ptr_00 = &(this_ptr->base).base.model;
+  this_ptr_02 = &(this_ptr->base).base.model;
   pSVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&this_ptr_00->motion_controller);
+                     (&this_ptr_02->motion_controller);
   iVar2 = pSVar5->state_index;
   if ((iVar2 == 1) || (iVar2 == 2)) {
     if ((iVar2 == 2) &&
@@ -47,7 +49,7 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_00545ef0(CPassenger *this_p
                       (g_CEventListPtr,this_ptr->transform_event);
     if (iVar6 != 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                (&this_ptr_00->motion_controller,1,1);
+                (&this_ptr_02->motion_controller,1,1);
       if (this_ptr->transform_wav[0] != '\0') {
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,this_ptr->transform_wav);
@@ -62,9 +64,9 @@ void __cdecl core_passngr_cpp_CPassenger_process_FUN_00545ef0(CPassenger *this_p
   (this_ptr->base).base.model.accumulated_root_motion.x =
        (this_ptr->base).base.model.accumulated_root_motion.y;
   while (0.0 < local_20) {
-    iVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610
-                      (&(this_ptr->base).base.model.motion_controller,&local_20);
-    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,iVar6);
+    bone_index = core_motion_cpp_CMotionController_advance_FUN_0052d610
+                           (&(this_ptr->base).base.model.motion_controller,&local_20);
+    core_charactr_cpp_CCharacter_processMotion_FUN_0042ec40((CCharacter *)this_ptr,bone_index);
   }
   if (iVar2 != 0) {
     pCVar7 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80

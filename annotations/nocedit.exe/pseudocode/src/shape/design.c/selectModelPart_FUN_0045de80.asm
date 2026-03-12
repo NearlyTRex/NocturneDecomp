@@ -4,10 +4,9 @@
 ; void __cdecl shape_design_c_selectModelPart_FUN_0045de80(void)
 ;
 ; Local Variables:
-; undefined        Stack[-0x2c]:1  local_2c
-; undefined1       Stack[-0x2b]:1  local_2b
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[20]         Stack[-0x2c]:20  local_2c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Part_name_0061b4a2

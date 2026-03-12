@@ -7,9 +7,7 @@
 ; char *           Stack[0x4]:4   filename
 ; uchar *          Stack[0x8]:4   output_palette
 ; Local Variables:
-; undefined1       Stack[-0x30c]:1  local_30c
-; undefined1       Stack[-0x30b]:1  local_30b
-; undefined1       Stack[-0x30a]:1  local_30a
+; byte[768]        Stack[-0x30c]:768  local_30c
 ; uchar            Stack[-0xc]:1  local_c
 ;
 ; XREF[4]:

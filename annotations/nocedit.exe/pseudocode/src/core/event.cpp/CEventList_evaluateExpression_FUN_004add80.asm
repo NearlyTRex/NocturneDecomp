@@ -7,7 +7,7 @@
 ; CEventList *     Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   expression
 ; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
+; int              Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0 at 004adcd2

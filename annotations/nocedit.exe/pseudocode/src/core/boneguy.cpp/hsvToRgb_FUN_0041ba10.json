@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 129,
+    "complexity_score": 131,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 69,
+    "pseudocode_lines": 71,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function"
     ],
-    "total_lines": 218
+    "total_lines": 220
   },
   "cross_references": [],
   "function": {
@@ -207,14 +207,14 @@
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -228,7 +228,7 @@
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -274,23 +274,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 30,
       "match": "ROUND",
       "severity": "mild",
-      "text": "fVar5 = fVar5 - (float)(int)ROUND(ROUND(dVar8));",
+      "text": "fVar5 = fVar9 - (float)(int)ROUND(ROUND(dVar8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 30,
       "match": "ROUND",
       "severity": "mild",
-      "text": "fVar5 = fVar5 - (float)(int)ROUND(ROUND(dVar8));",
+      "text": "fVar5 = fVar9 - (float)(int)ROUND(ROUND(dVar8));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 36,
       "match": "ROUND",
       "severity": "mild",
       "text": "switch(((int)ROUND(ROUND(dVar8)) + 600) % 6) {",
@@ -298,7 +298,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 36,
       "match": "ROUND",
       "severity": "mild",
       "text": "switch(((int)ROUND(ROUND(dVar8)) + 600) % 6) {",

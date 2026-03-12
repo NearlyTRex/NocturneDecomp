@@ -11,11 +11,16 @@
 int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(CGabriella *this_ptr)
 
 {
-  CDemonActor *pCVar1;
-  float fVar2;
+  CDemonActor *pCVar2;
+  CDemonActor *pCVar5;
+  float fVar6;
+  float fVar7;
   CVector3f *pCVar3;
+  CVector3f *pCVar8;
   CDemonActor *pCVar4;
+  uint uVar9;
   int iVar5;
+  int desired_state_index;
   float local_bc [3];
   CVector3f local_b0;
   CVector3f local_a4;
@@ -36,6 +41,8 @@ int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(
   uint uStack_20;
   float fStack_1c;
   int local_18;
+  CDemonActor *pCVar1;
+  float fVar2;
   
   (this_ptr->base).object_to_pick_up = (CDemonActor *)0x0;
   __arrinit(local_bc,4,&g_CVectorTypeInfo);
@@ -52,35 +59,35 @@ int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(
   local_50.y = 0.0;
   local_50.x = -0.65;
   local_50.z = 2.12;
-  pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+  pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)this_ptr,&local_38,&local_50);
-  if (&local_a4 != pCVar3) {
-    local_a4.x = pCVar3->x;
-    local_a4.y = pCVar3->y;
-    local_a4.z = pCVar3->z;
+  if (&local_a4 != pCVar8) {
+    local_a4.x = pCVar8->x;
+    local_a4.y = pCVar8->y;
+    local_a4.z = pCVar8->z;
   }
   local_8c.x = 0.0;
   local_8c.y = 0.0;
   local_8c.z = 2.0;
-  pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+  pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      ((CDemonActor *)this_ptr,&local_80,&local_8c);
-  if (&local_98 != pCVar3) {
-    local_98.x = pCVar3->x;
-    local_98.y = pCVar3->y;
-    local_98.z = pCVar3->z;
+  if (&local_98 != pCVar8) {
+    local_98.x = pCVar8->x;
+    local_98.y = pCVar8->y;
+    local_98.z = pCVar8->z;
   }
   iVar5 = 0;
   local_24 = 4.0;
-  local_2c = &(this_ptr->base).base.base.location.position;
   for (local_18 = 0; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
     pCVar1 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + iVar5);
     pCVar4 = (*((pCVar1->vtable)._ub)->getCarrier)(pCVar1);
     if (pCVar4 == (CDemonActor *)0x0) {
-      uStack_20 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,(CDemonActor *)this_ptr);
-      if (uStack_20 < 2) {
-        if ((uStack_20 == 1) &&
-           ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0)) {
-          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(pCVar1,&CStack_68,local_2c);
+      uVar9 = (*((pCVar1->vtable)._ub)->canPickup)(pCVar1,(CDemonActor *)this_ptr);
+      if (uVar9 < 2) {
+        if ((uVar9 == 1) && ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0)
+           ) {
+          core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                    (pCVar1,&CStack_68,&(this_ptr->base).base.base.location.position);
           fVar2 = SQRT(CStack_68.z * CStack_68.z +
                        CStack_68.x * CStack_68.x + CStack_68.y * CStack_68.y);
           if (fVar2 <= 0.0) {
@@ -89,42 +96,39 @@ int __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870(
             CStack_68.z = 0.0;
           }
           else {
-            fVar2 = 1.0 / fVar2;
-            CStack_68.x = CStack_68.x * fVar2;
-            CStack_68.y = CStack_68.y * fVar2;
-            CStack_68.z = CStack_68.z * fVar2;
+            fVar6 = 1.0 / fVar2;
+            CStack_68.x = CStack_68.x * fVar6;
+            CStack_68.y = CStack_68.y * fVar6;
+            CStack_68.z = CStack_68.z * fVar6;
           }
           if (CStack_68.z <= (float)-0.80000000000000004) goto LAB_004d59f9;
         }
       }
-      else if (((uStack_20 < 3) || (uStack_20 == 3)) &&
+      else if (((uVar9 < 3) || (uVar9 == 3)) &&
               ((this_ptr->base).base.carry_hands[0].carry_actor == (CDemonActor *)0x0)) {
 LAB_004d59f9:
-        fStack_44 = (pCVar1->location).position.x - local_bc[uStack_20 * 3];
-        fStack_40 = (pCVar1->location).position.y - local_bc[uStack_20 * 3 + 1];
-        fStack_3c = (pCVar1->location).position.z - local_bc[uStack_20 * 3 + 2];
-        if (ABS(fStack_40) <= (float)2) {
-          fStack_1c = fStack_44 * fStack_44 + fStack_3c * fStack_3c;
-          if (fStack_1c <= local_24) {
-            local_24 = fStack_1c;
-            (this_ptr->base).object_to_pick_up = pCVar1;
-            local_28 = uStack_20;
-          }
+        fVar6 = (pCVar1->location).position.x - local_bc[uVar9 * 3];
+        fVar7 = (pCVar1->location).position.z - local_bc[uVar9 * 3 + 2];
+        if ((ABS((pCVar1->location).position.y - local_bc[uVar9 * 3 + 1]) <= (float)2)
+           && (fVar6 = fVar6 * fVar6 + fVar7 * fVar7, fVar6 <= local_24)) {
+          (this_ptr->base).object_to_pick_up = pCVar1;
+          local_28 = uVar9;
+          local_24 = fVar6;
         }
       }
     }
     iVar5 = iVar5 + 4;
   }
-  pCVar1 = (this_ptr->base).object_to_pick_up;
-  if (pCVar1 == (CDemonActor *)0x0) {
+  pCVar2 = (this_ptr->base).object_to_pick_up;
+  if (pCVar2 == (CDemonActor *)0x0) {
     return 0;
   }
-  pCVar4 = (this_ptr->base).object_to_pick_up;
+  pCVar5 = (this_ptr->base).object_to_pick_up;
   (this_ptr->base).base.base.location.position.x =
-       ((pCVar1->location).position.x - local_bc[local_28 * 3]) +
+       ((pCVar2->location).position.x - local_bc[local_28 * 3]) +
        (this_ptr->base).base.base.location.position.x;
   (this_ptr->base).base.base.location.position.z =
-       ((pCVar4->location).position.z - local_bc[local_28 * 3 + 2]) +
+       ((pCVar5->location).position.z - local_bc[local_28 * 3 + 2]) +
        (this_ptr->base).base.base.location.position.z;
   if (local_28 < 2) {
     if (local_28 != 1) {
@@ -134,16 +138,16 @@ LAB_004d5bd9:
       core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze - invalid pickUpType: %d",local_28);
       return 1;
     }
-    iVar5 = 0xe;
+    desired_state_index = 0xe;
   }
   else if (local_28 < 3) {
-    iVar5 = 0xf;
+    desired_state_index = 0xf;
   }
   else {
     if (local_28 != 3) goto LAB_004d5bd9;
-    iVar5 = 4;
+    desired_state_index = 4;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&(this_ptr->base).base.model.motion_controller,iVar5,1);
+            (&(this_ptr->base).base.model.motion_controller,desired_state_index,1);
   return 1;
 }

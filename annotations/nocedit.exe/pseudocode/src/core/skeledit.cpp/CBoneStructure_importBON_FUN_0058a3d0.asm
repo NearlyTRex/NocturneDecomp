@@ -7,7 +7,7 @@
 ; CBoneStructure * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined        Stack[-0x14]:1  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 0059299f

@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 235,
+    "complexity_score": 241,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 90,
+    "pseudocode_lines": 91,
     "suspect_count": 13,
     "suspect_types": [
+      "pointer_cast",
       "special_crt_function",
       "unaffected_reg",
       "undefined_ptr_cast"
     ],
-    "total_lines": 269
+    "total_lines": 270
   },
   "cross_references": [
     {
@@ -135,14 +136,14 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "wchar_t[2]"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 1,
-        "type": "undefined1"
+        "type": "char"
       },
       {
         "is_param": false,
@@ -156,7 +157,7 @@
         "name": "local_18",
         "offset": -24,
         "size": 1,
-        "type": "undefined1"
+        "type": "byte"
       },
       {
         "is_param": true,
@@ -185,23 +186,23 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 29,
+      "line": 31,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "unaff_EDI = *(char **)pcVar2;",
+      "text": "unaff_EDI = *(char **)pcVar1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 36,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "unaff_EDI = *(char **)pcVar2;",
+      "text": "unaff_EDI = *(char **)pcVar1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Cast to undefined pointer type",
-      "line": 40,
+      "line": 42,
       "match": "(undefined6 *)",
       "severity": "moderate",
       "text": "unaff_EDI = (char *)*(undefined6 *)pcVar2;",
@@ -209,7 +210,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 40,
+      "line": 42,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "unaff_EDI = (char *)*(undefined6 *)pcVar2;",
@@ -217,7 +218,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 57,
+      "line": 59,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "*unaff_EDI = cVar4;",
@@ -225,31 +226,39 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 69,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "*(short *)unaff_EDI = local_20[0];",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
       "line": 71,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "unaff_EDI = unaff_EDI + local_18;",
+      "text": "*(wchar_t *)unaff_EDI = local_20[0];",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 71,
+      "line": 73,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "unaff_EDI = unaff_EDI + local_18;",
+      "text": "unaff_EDI = (char *)((int)unaff_EDI + (uint)local_18);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 85,
+      "line": 73,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI = (char *)((int)unaff_EDI + (uint)local_18);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(char *)((int)",
+      "severity": "mild",
+      "text": "unaff_EDI = (char *)((int)unaff_EDI + (uint)local_18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 87,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "*unaff_EDI = '\\0';",
@@ -257,18 +266,10 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 88,
+      "line": 90,
       "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "unaff_EDI[0] = '\\0';",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 89,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "unaff_EDI[1] = '\\0';",
+      "text": "*(wchar_t *)unaff_EDI = L'\\0';",
       "type": "unaffected_reg"
     },
     {

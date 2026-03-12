@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 151,
+    "complexity_score": 127,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 126,
-    "suspect_count": 2,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 292
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 127,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 293
   },
   "cross_references": [
     {
@@ -99,21 +97,21 @@
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_c",
         "offset": -12,
         "size": 4,
-        "type": "undefined4"
+        "type": "C3DSLight *"
       },
       {
         "is_param": false,
         "name": "local_8",
         "offset": -8,
         "size": 4,
-        "type": "undefined4"
+        "type": "C3DSLight *"
       },
       {
         "is_param": true,
@@ -131,22 +129,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 109,
-      "match": "(CVector3f *)((int)",
-      "severity": "mild",
-      "text": "pCVar3 = (CVector3f *)((int)(pCVar3 + 0x20c) + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 117,
-      "match": "(CVector3f *)((int)",
-      "severity": "mild",
-      "text": "pCVar2 = (CVector3f *)((int)(pCVar2 + 0x20c) + 8);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

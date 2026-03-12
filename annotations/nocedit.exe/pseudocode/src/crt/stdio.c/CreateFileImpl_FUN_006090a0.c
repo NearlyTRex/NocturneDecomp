@@ -9,11 +9,13 @@
 HANDLE __cdecl CreateFileImpl(char *filename,dword access_mode,dword share_mode,va_list_t *extra_args)
 
 {
-  uint *puVar1;
+  uint uVar1;
   int iVar2;
+  int iVar3;
   HANDLE pvVar3;
   HANDLE handle_index;
   DWORD dwCreationDisposition;
+  HANDLE pvVar4;
   DWORD unaff_EBX;
   uint uVar4;
   DWORD dwFlagsAndAttributes;
@@ -23,6 +25,7 @@ HANDLE __cdecl CreateFileImpl(char *filename,dword access_mode,dword share_mode,
   DWORD share_mode_windows;
   DWORD desired_access;
   DWORD extra_parameter;
+  uint *puVar1;
   
   iVar2 = CheckFileHandleAvailability();
   if (iVar2 != 0) {
@@ -34,7 +37,7 @@ HANDLE __cdecl CreateFileImpl(char *filename,dword access_mode,dword share_mode,
   dwFlagsAndAttributes = 0x80;
   ConvertCreationDisposition(share_mode | access_mode_00,&share_mode_windows);
   if ((DAT_0068528c == (code *)0x0) ||
-     (iVar2 = _stricmp(filename,"con"), iVar2 != 0)) {
+     (iVar3 = _stricmp(filename,"con"), iVar3 != 0)) {
     if ((access_mode & 0x20) == 0) {
       if ((access_mode & 0x40) == 0) {
 LAB_006091db:
@@ -47,9 +50,9 @@ LAB_006091db:
     else {
       puVar1 = (uint *)extra_args->value[0];
       extra_args->value[0] = (char *)(puVar1 + 1);
-      uVar4 = *puVar1;
+      uVar1 = *puVar1;
       extra_args->value[0] = (char *)0x0;
-      extra_parameter = uVar4 & ~DAT_006854ec;
+      extra_parameter = uVar1 & ~DAT_006854ec;
       if (((extra_parameter & 0x100) != 0) && ((extra_parameter & 0x80) == 0)) {
         dwFlagsAndAttributes = 1;
       }
@@ -66,30 +69,30 @@ LAB_006091db:
         dwCreationDisposition = 1;
       }
     }
-    pvVar3 = (*g_CreateFileAFunc)
+    pvVar4 = (*g_CreateFileAFunc)
                        (filename,desired_access,share_mode_windows,
                         (LPSECURITY_ATTRIBUTES)&stack0xffffffd8,dwCreationDisposition,
                         dwFlagsAndAttributes,(HANDLE)0x0);
-    if (pvVar3 == (HANDLE)0xffffffff) {
+    if (pvVar4 == (HANDLE)0xffffffff) {
       if ((access_mode & 0x20) != 0) {
-        pvVar3 = (*g_CreateFileAFunc)
+        pvVar4 = (*g_CreateFileAFunc)
                            (filename,desired_access,share_mode_windows,(LPSECURITY_ATTRIBUTES)0x0,
                             unaff_EBX,dwFlagsAndAttributes,(HANDLE)0x0);
       }
-      if (pvVar3 == (HANDLE)0xffffffff) {
-        pvVar3 = (HANDLE)__set_errno();
-        return pvVar3;
+      if (pvVar4 == (HANDLE)0xffffffff) {
+        pvVar4 = (HANDLE)__set_errno();
+        return pvVar4;
       }
     }
-    handle_index = (HANDLE)(*PTR_crt_sync_c_RegisterHandle_FUN_00602438_00684ef0)(pvVar3);
+    handle_index = (HANDLE)(*PTR_crt_sync_c_RegisterHandle_FUN_00602438_00684ef0)(pvVar4);
     uVar4 = 0;
     if (g_MaxHandleCount <= handle_index) {
-      (*g_CloseHandleFunc)(pvVar3);
+      (*g_CloseHandleFunc)(pvVar4);
       setErrno(5);
       return (HANDLE)0xffffffff;
     }
-    iVar2 = IsSpecialDevice((int)handle_index);
-    if (iVar2 != 0) {
+    iVar3 = IsSpecialDevice((int)handle_index);
+    if (iVar3 != 0) {
       uVar4 = 0x2000;
     }
   }

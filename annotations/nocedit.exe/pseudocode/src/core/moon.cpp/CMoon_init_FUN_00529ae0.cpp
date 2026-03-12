@@ -9,12 +9,15 @@
 void __cdecl core_moon_cpp_CMoon_init_FUN_00529ae0(CMoon *this_ptr)
 
 {
-  uint *puVar1;
   int iVar2;
   float fVar3;
   float fVar4;
+  float fVar1;
+  int iVar3;
+  int iVar4;
   int iVar5;
   CAlphaBitmap *this_ptr_00;
+  uint *puVar1;
   
   if (this_ptr->is_loaded == 0) {
     if (g_CGamePtr->head_of_horror_cheat == 0x29a) {
@@ -41,24 +44,24 @@ void __cdecl core_moon_cpp_CMoon_init_FUN_00529ae0(CMoon *this_ptr)
     core_course_cpp_CCourse_load_FUN_00442580(g_MoonBatCourses + 2,"menu3.pth");
   }
   this_ptr->rotation_phase = 0.25;
-  iVar5 = 0;
+  iVar3 = 0;
   do {
     iVar2 = rand();
-    *(int *)((int)&g_MoonBats[0].course_index + iVar5) = iVar2 % 3;
+    *(int *)((int)&g_MoonBats[0].course_index + iVar3) = iVar2 % 3;
     fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,(float)g_MoonBatCourses[iVar2 % 3].len);
-    fVar4 = (float)g_MoonBatModel.frame_count;
-    *(float *)((int)&g_MoonBats[0].course_position + iVar5) = -fVar3;
-    fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,fVar4);
-    *(float *)((int)&g_MoonBats[0].animation_frame + iVar5) = fVar4;
-    fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
-    *(float *)((int)&g_MoonBats[0].random_offset.x + iVar5) = fVar4;
-    fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
-    *(float *)((int)&g_MoonBats[0].random_offset.y + iVar5) = fVar4;
-    fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
-    iVar2 = iVar5 + 0x18;
-    *(float *)((int)&g_MoonBats[0].random_offset.z + iVar5) = fVar4;
-    iVar5 = iVar2;
-  } while (iVar2 != 0x2d0);
+    fVar1 = (float)g_MoonBatModel.frame_count;
+    *(float *)((int)&g_MoonBats[0].course_position + iVar3) = -fVar3;
+    fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,fVar1);
+    *(float *)((int)&g_MoonBats[0].animation_frame + iVar3) = fVar4;
+    fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+    *(float *)((int)&g_MoonBats[0].random_offset.x + iVar3) = fVar1;
+    fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+    *(float *)((int)&g_MoonBats[0].random_offset.y + iVar3) = fVar1;
+    fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+    iVar4 = iVar3 + 0x18;
+    *(float *)((int)&g_MoonBats[0].random_offset.z + iVar3) = fVar1;
+    iVar3 = iVar4;
+  } while (iVar4 != 0x2d0);
   g_MoonBatsEnabled = 0;
   return;
 }

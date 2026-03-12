@@ -9,16 +9,18 @@
 float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0(CDemonCube *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *hit_normal,uint *hit_material)
 
 {
-  float fVar1;
-  float fVar2;
-  CDemonCubeTriangle *pCVar3;
-  CVector3f *pCVar4;
+  CVector3f *pCVar1;
+  float fVar3;
   int iVar5;
   int iVar6;
   CVector3f local_2c;
   int local_20;
   float local_1c;
   float local_18;
+  CVector3f *pCVar4;
+  CDemonCubeTriangle *pCVar3;
+  float fVar2;
+  float fVar1;
   
   iVar5 = 0;
   local_20 = -1;
@@ -26,13 +28,13 @@ float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0(CDemo
   if (0 < this_ptr->triangle_count) {
     iVar6 = 0;
     do {
-      local_18 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460
-                           ((CDemonCubeTriangle *)
-                            ((int)(this_ptr->triangle_buffer->triangle).vertices + iVar6),ray_origin
-                            ,ray_direction);
-      if (((0.0 <= local_18) && (local_18 < local_1c)) && (local_18 <= 1.0)) {
+      fVar3 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460
+                        ((CDemonCubeTriangle *)
+                         ((int)(this_ptr->triangle_buffer->triangle).vertices + iVar6),ray_origin,
+                         ray_direction);
+      if (((0.0 <= fVar3) && (fVar3 < local_1c)) && (fVar3 <= 1.0)) {
         local_20 = iVar5;
-        local_1c = local_18;
+        local_1c = fVar3;
       }
       iVar5 = iVar5 + 1;
       iVar6 = iVar6 + 0x20;
@@ -54,17 +56,17 @@ float __cdecl core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0(CDemo
       g_TempNormal0.z = pCVar4->z;
       g_TempNormal0.y = pCVar4->y;
     }
-    pCVar4 = this_ptr->triangle_buffer[local_20].triangle.vertices[1];
-    if (pCVar4 != &g_TempNormal1) {
-      g_TempNormal1.x = pCVar4->x;
-      g_TempNormal1.z = pCVar4->z;
-      g_TempNormal1.y = pCVar4->y;
+    pCVar1 = this_ptr->triangle_buffer[local_20].triangle.vertices[1];
+    if (pCVar1 != &g_TempNormal1) {
+      g_TempNormal1.x = pCVar1->x;
+      g_TempNormal1.z = pCVar1->z;
+      g_TempNormal1.y = pCVar1->y;
     }
-    pCVar4 = this_ptr->triangle_buffer[local_20].triangle.vertices[2];
-    if (pCVar4 != &g_TempNormal2) {
-      g_TempNormal2.y = pCVar4->y;
-      g_TempNormal2.z = pCVar4->z;
-      g_TempNormal2.x = pCVar4->x;
+    pCVar1 = this_ptr->triangle_buffer[local_20].triangle.vertices[2];
+    if (pCVar1 != &g_TempNormal2) {
+      g_TempNormal2.y = pCVar1->y;
+      g_TempNormal2.z = pCVar1->z;
+      g_TempNormal2.x = pCVar1->x;
       return local_1c;
     }
   }

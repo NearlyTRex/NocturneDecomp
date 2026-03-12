@@ -9,14 +9,14 @@
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_00410c20(CAlphaBitmap *this_ptr,int scaleFactorX,int scaleFactorY)
 
 {
-  int iVar1;
-  char *pcVar2;
   int iVar3;
   int iVar4;
   int iVar5;
   int iVar6;
   int iVar7;
   int local_14;
+  int iVar1;
+  char *pcVar2;
   
   iVar3 = this_ptr->width / scaleFactorX;
   iVar4 = this_ptr->height / scaleFactorY;

@@ -11,13 +11,13 @@
 SVertexData * __stack_esi shape_design_c_convertWorldToScreenCoordinates_FUN_0045bd10(SScreenCoord *input_coords,SVertexData *output_vertex)
 
 {
-  float fVar1;
-  float fVar2;
   float local_38;
   float local_34;
   float local_30;
   float fStack_2c;
   float fStack_28;
+  float fVar2;
+  float fVar1;
   
   fVar1 = (float)g_ZoomLevel *
           (((float)input_coords->x - (float)g_WindowWidth * (float)0.5) /

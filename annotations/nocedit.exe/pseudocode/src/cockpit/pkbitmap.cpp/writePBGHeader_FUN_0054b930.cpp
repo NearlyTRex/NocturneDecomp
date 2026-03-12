@@ -10,6 +10,7 @@ void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_0054b930(CPackedBitmap *bit
 
 {
   int iVar1;
+  int iVar2;
   char *pcVar2;
   CPackedBitmap **ppCVar3;
   CPackedBitmap *local_10 [2];
@@ -17,10 +18,10 @@ void __cdecl cockpit_pkbitmap_cpp_writePBGHeader_FUN_0054b930(CPackedBitmap *bit
   pcVar2 = "PBM\032PBG\032";
   ppCVar3 = local_10;
   for (iVar1 = 1; pcVar2 = pcVar2 + 4, iVar1 != 0; iVar1 = iVar1 + -1) {
-    *ppCVar3 = (CPackedBitmap *)*(uint *)pcVar2;
-    ppCVar3 = (CPackedBitmap **)((int)ppCVar3 + 4);
+    *ppCVar3 = *(CPackedBitmap **)pcVar2;
+    ppCVar3 = ppCVar3 + 1;
   }
-  for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
+  for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(char *)ppCVar3 = *pcVar2;
     pcVar2 = pcVar2 + 1;
     ppCVar3 = (CPackedBitmap **)((int)ppCVar3 + 1);

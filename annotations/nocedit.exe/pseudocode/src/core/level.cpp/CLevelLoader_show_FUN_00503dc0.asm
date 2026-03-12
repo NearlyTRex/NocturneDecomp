@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   use_custom_viewport
 ; int              Stack[0x10]:4   image_variant
 ; Local Variables:
-; undefined1       Stack[-0x58]:1  local_58
-; undefined1       Stack[-0x44]:1  local_44
-; undefined1       Stack[-0x30]:1  local_30
-; undefined1       Stack[-0x1c]:1  local_1c
+; CAlphaBitmap     Stack[-0x58]:20  local_58
+; CAlphaBitmap     Stack[-0x44]:20  local_44
+; CAlphaBitmap     Stack[-0x30]:20  local_30
+; CAlphaBitmap     Stack[-0x1c]:20  local_1c
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e140d

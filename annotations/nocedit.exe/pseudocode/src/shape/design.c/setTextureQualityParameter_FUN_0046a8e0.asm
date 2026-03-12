@@ -6,8 +6,8 @@
 ; Parameters:
 ; int              Stack[0x4]:4   texture_quality_param
 ; Local Variables:
-; undefined1       Stack[-0x8c]:1  local_8c
-; undefined4       Stack[-0x18]:4  local_18
+; SCram            Stack[-0x8c]:116  local_8c
+; SCram *          Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:

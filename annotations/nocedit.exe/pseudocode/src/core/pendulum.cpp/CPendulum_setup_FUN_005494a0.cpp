@@ -9,12 +9,12 @@
 void __cdecl core_pendulum_cpp_CPendulum_setup_FUN_005494a0(CPendulum *this_ptr)
 
 {
-  float fVar1;
-  float fVar2;
   CBoundingBox3D *pCVar3;
   CBoundingBox3D CStack_4c;
   CBoundingBox3D local_34;
   float afStack_10 [3];
+  float fVar1;
+  float fVar2;
   
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base);

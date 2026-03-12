@@ -7,7 +7,7 @@
 ; CPodFile *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   record_index
 ; Local Variables:
-; undefined1       Stack[-0x144]:1  local_144
+; undefined4[78]   Stack[-0x144]:312  local_144
 ;
 ; XREF[3]:
 ;   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 at 004b5c3e

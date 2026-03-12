@@ -13,25 +13,14 @@ CMatrix3x4f * __stack_esi core_xform_cpp_buildUniformScaleMatrix_FUN_005f6e20(fl
   float *pfVar2;
   float *pfVar3;
   float local_34 [6];
-  uint local_1c;
-  uint local_18;
-  uint local_14;
-  uint local_10;
   float local_c;
-  uint local_8;
   
   local_34[0] = scale_factor;
-  local_1c = 0;
-  local_18 = 0;
-  local_14 = 0;
-  local_10 = 0;
-  local_8 = 0;
   local_34[1] = 0.0;
   local_34[2] = 0.0;
   local_34[3] = 0.0;
   local_34[4] = 0.0;
   local_34[5] = scale_factor;
-  local_c = scale_factor;
   pfVar2 = local_34;
   pfVar3 = (float *)matrix_out;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

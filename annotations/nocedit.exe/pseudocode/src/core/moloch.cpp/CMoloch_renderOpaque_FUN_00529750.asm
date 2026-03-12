@@ -6,7 +6,7 @@
 ; Parameters:
 ; CMoloch *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x1c]:1  local_1c
+; CBoundingBox3D   Stack[-0x1c]:24  local_1c
 ;
 ; Referenced Globals:
 ;   float FLOAT_00661938 = 2

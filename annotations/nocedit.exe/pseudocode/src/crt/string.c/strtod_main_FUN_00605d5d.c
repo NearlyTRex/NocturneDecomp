@@ -9,9 +9,6 @@
 double __cdecl strtod_main(char *str,char **endptr)
 
 {
-  uint uVar1;
-  double dVar2;
-  double dVar3;
   int iVar4;
   uint uVar5;
   uint uVar6;
@@ -21,6 +18,9 @@ double __cdecl strtod_main(char *str,char **endptr)
   ulonglong local_28;
   ulonglong local_20;
   ulonglong local_18;
+  double dVar2;
+  double dVar3;
+  uint uVar1;
   
   iVar4 = parseFloatString(str,&local_34,endptr);
   if (iVar4 == 0) {
@@ -30,7 +30,8 @@ LAB_00605d83:
     local_28 = __BITCAST_DOUBLE(CONCAT44(uVar5,uVar1));
     return local_28;
   }
-  uVar6 = (uint)(CONCAT11(bStack_2b,uStack_2c) & 0x7fff);
+  uVar6._0_2_ = CONCAT11(bStack_2b,uStack_2c) & 0x7fff;
+  uVar6 = (uint)(ushort)uVar6;
   if (0x43fe < uVar6) {
     set_range_error_errno();
     uVar5 = INFINITY._4_4_;

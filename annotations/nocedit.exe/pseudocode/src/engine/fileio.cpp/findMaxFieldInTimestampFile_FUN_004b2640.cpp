@@ -10,6 +10,7 @@ int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *dir
 
 {
   int *piVar1;
+  int iVar1;
   STimestampRecord *pSVar2;
   int iVar3;
   int iVar4;
@@ -36,25 +37,25 @@ LAB_004b2681:
     return 0;
   }
   local_14 = (STimestampRecord *)0x0;
-  iVar4 = engine_fileio_cpp_readTimestampFile_FUN_004b23a0
+  iVar1 = engine_fileio_cpp_readTimestampFile_FUN_004b23a0
                     ((_FILE *)&local_18,&local_14,directory,filename);
   if (local_18 != (_FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0xc4);
     local_18 = (_FILE *)0x0;
   }
   uVar5 = 0xffffffff;
-  if (-1 < iVar4) {
+  if (-1 < iVar1) {
     iVar3 = 0;
     uVar5 = 0;
     pSVar2 = local_14;
-    if (0 < iVar4) {
+    if (0 < iVar1) {
       do {
         if ((int)uVar5 < (int)pSVar2->record_number) {
           uVar5 = pSVar2->record_number;
         }
         iVar3 = iVar3 + 1;
         pSVar2 = pSVar2 + 1;
-      } while (iVar3 < iVar4);
+      } while (iVar3 < iVar1);
     }
   }
   if (local_14 != (STimestampRecord *)0x0) {

@@ -9,8 +9,8 @@
 int __cdecl engine_2d_c_drawCharacter_FUN_00401610(int char_code,int x_pos,int y_pos)
 
 {
-  byte bVar1;
-  uchar uVar2;
+  int iVar1;
+  byte bVar2;
   uchar *puVar3;
   ushort *puVar4;
   ushort *puVar5;
@@ -21,7 +21,10 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401610(int char_code,int x_pos,int y
   uint *puVar10;
   uint uVar11;
   int iVar12;
+  int iVar3;
   int iVar13;
+  uchar uVar2;
+  byte bVar1;
   
   uVar11 = (uint)g_FontTable[char_code + -0x20].width;
   if ((((x_pos < g_ClipLeft) || (y_pos < g_ClipTop)) || ((int)((g_ClipRight + 1) - uVar11) < x_pos))
@@ -31,25 +34,26 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401610(int char_code,int x_pos,int y
   else {
     iVar13 = y_pos * 4;
     puVar3 = g_FontTable[char_code + -0x20].bitmap;
-    iVar6 = iVar13 + 0x2c;
+    iVar1 = iVar13 + 0x2c;
     if (g_BitsPerPixel == 8) {
       do {
-        iVar12 = 0;
+        iVar3 = 0;
         puVar7 = (uchar *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x_pos);
         puVar8 = puVar7;
         if (uVar11 != 0) {
           do {
-            puVar7 = puVar8 + 1;
+            puVar8 = puVar8 + 1;
             uVar2 = *puVar3;
             puVar3 = puVar3 + 1;
-            iVar12 = iVar12 + 1;
+            iVar3 = iVar3 + 1;
             *puVar8 = uVar2;
-            puVar8 = puVar7;
-          } while (iVar12 < (int)uVar11);
+            puVar8 = puVar8;
+            puVar7 = puVar8;
+          } while (iVar3 < (int)uVar11);
         }
         iVar13 = iVar13 + 4;
         *puVar7 = '\0';
-      } while (iVar13 != iVar6);
+      } while (iVar13 != iVar1);
     }
     else if (g_BitsPerPixel == 0x10) {
       do {
@@ -68,26 +72,26 @@ int __cdecl engine_2d_c_drawCharacter_FUN_00401610(int char_code,int x_pos,int y
         }
         iVar13 = iVar13 + 4;
         *puVar4 = 0;
-      } while (iVar13 != iVar6);
+      } while (iVar13 != iVar1);
     }
     else {
       do {
-        iVar12 = 0;
+        iVar3 = 0;
         puVar9 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar13) + x_pos * 4);
         puVar10 = puVar9;
         if (uVar11 != 0) {
           do {
-            bVar1 = *puVar3;
+            bVar2 = *puVar3;
             puVar3 = puVar3 + 1;
             puVar9 = puVar10 + 1;
-            iVar12 = iVar12 + 1;
-            *puVar10 = g_ColorTable32[bVar1];
+            iVar3 = iVar3 + 1;
+            *puVar10 = g_ColorTable32[bVar2];
             puVar10 = puVar9;
-          } while (iVar12 < (int)uVar11);
+          } while (iVar3 < (int)uVar11);
         }
         iVar13 = iVar13 + 4;
         *puVar9 = 0;
-      } while (iVar13 != iVar6);
+      } while (iVar13 != iVar1);
     }
     iVar6 = uVar11 + 1;
   }

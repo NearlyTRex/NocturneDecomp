@@ -9,8 +9,7 @@
 ; int              Stack[0xc]:4   base
 ; Local Variables:
 ; undefined1       Stack[-0x38]:1  local_38
-; undefined1       Stack[-0x37]:1  local_37
-; undefined4       Stack[-0x14]:4  local_14
+; char[39]         Stack[-0x37]:39  local_37
 ;
 ; XREF[1]:
 ;   crt_stdio.c_ConvertFormatSpec_FUN_00603238 at 006036a1

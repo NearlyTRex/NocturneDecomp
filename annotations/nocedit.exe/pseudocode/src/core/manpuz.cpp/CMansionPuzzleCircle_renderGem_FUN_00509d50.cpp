@@ -11,24 +11,12 @@
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansionPuzzleCircle *this_ptr,int gem_index)
 
 {
-  float fVar1;
-  float fVar2;
-  CDemonRenderer *this_ptr_00;
+  int iVar1;
+  int iVar2;
   int iVar3;
+  int iVar4;
   SGem *pSVar4;
   SMRGLHeaderPrimitive SStack_a8;
-  uint local_90;
-  uint local_8c;
-  uint local_88;
-  uint local_84;
-  uint local_80;
-  uint local_7c;
-  uint local_78;
-  uint local_74;
-  uint local_70;
-  uint local_6c;
-  uint local_68;
-  uint local_64;
   CVector3i local_60;
   CVector3i local_54;
   float local_48;
@@ -41,6 +29,9 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansio
   int local_1c;
   int local_18;
   int local_14;
+  float fVar1;
+  float fVar2;
+  CDemonRenderer *this_ptr_00;
   
   pSVar4 = this_ptr->gems + gem_index;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
@@ -53,79 +44,60 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_00509d50(CMansio
     }
     shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,1.0,0xfb);
   }
-  local_24 = (int)ROUND(ROUND((pSVar4->color).b * 256.0f));
-  local_14 = (int)ROUND(ROUND((pSVar4->color).r * 256.0f));
   core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0
-            (g_CDemonSetPtr,local_14,(int)ROUND(ROUND((pSVar4->color).g * 256.0f)),local_24)
-  ;
+            (g_CDemonSetPtr,(int)ROUND(ROUND((pSVar4->color).r * 256.0f)),
+             (int)ROUND(ROUND((pSVar4->color).g * 256.0f)),
+             (int)ROUND(ROUND((pSVar4->color).b * 256.0f)));
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             (&this_ptr->gem_model,0.0,-1);
   core_set_cpp_CDemonSet_setScaleFactors_FUN_00570ca0(g_CDemonSetPtr,0x10000,0x10000,0x10000);
-  iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
-  if ((iVar3 == 0) &&
+  iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
+  if ((iVar4 == 0) &&
      ((((float)0.01 < (pSVar4->hum_color).r ||
        ((float)0.01 < (pSVar4->hum_color).g)) ||
       ((float)0.01 < (pSVar4->hum_color).b)))) {
-    local_48 = -1.4;
-    local_40 = -1.4;
-    local_44 = 0.2;
     local_54.x = (int)ROUND(256.0f * -1.4);
     local_54.y = (int)ROUND(256.0f * 0.2);
     local_54.z = (int)ROUND(256.0f * -1.4);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_54);
-    local_48 = -local_48;
-    local_60.x = (int)ROUND(local_48 * 256.0f);
-    local_60.y = (int)ROUND(local_44 * 256.0f);
-    local_60.z = (int)ROUND(local_40 * 256.0f);
+    local_60.x = (int)ROUND(256.0f * 1.4);
+    local_60.y = (int)ROUND(256.0f * 0.2);
+    local_60.z = (int)ROUND(256.0f * -1.4);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_60);
-    local_40 = -local_40;
-    local_3c.x = (int)ROUND(local_48 * 256.0f);
-    local_3c.y = (int)ROUND(local_44 * 256.0f);
-    local_3c.z = (int)ROUND(local_40 * 256.0f);
+    local_3c.x = (int)ROUND(256.0f * 1.4);
+    local_3c.y = (int)ROUND(256.0f * 0.2);
+    local_3c.z = (int)ROUND(256.0f * 1.4);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_3c);
-    local_48 = -local_48;
-    local_30.x = (int)ROUND(local_48 * 256.0f);
-    local_30.y = (int)ROUND(local_44 * 256.0f);
-    local_30.z = (int)ROUND(local_40 * 256.0f);
+    local_30.x = (int)ROUND(256.0f * -1.4);
+    local_30.y = (int)ROUND(256.0f * 0.2);
+    local_30.z = (int)ROUND(256.0f * 1.4);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_30);
     this_ptr_00 = g_CDemonRendererPtr2;
     SStack_a8.base.count = 4;
-    local_90 = 0;
-    local_8c = 0;
-    local_88 = 0;
-    local_84 = 1;
-    local_7c = 0;
-    local_78 = 2;
-    local_68 = 0;
-    local_80 = 0x1000000;
-    local_74 = 0x1000000;
-    local_70 = 0x1000000;
-    local_64 = 0x1000000;
-    local_6c = 3;
     fVar1 = (pSVar4->hum_color).g * 256.0f;
     fVar2 = (pSVar4->hum_color).b * 256.0f;
-    local_20 = (int)ROUND(ROUND((pSVar4->hum_color).r * 256.0f));
-    g_CDemonRendererPtr2->vertex_buffer_ptr->r = local_20;
-    local_1c = (int)ROUND(ROUND(fVar1));
-    this_ptr_00->vertex_buffer_ptr->g = local_1c;
-    local_18 = (int)ROUND(ROUND(fVar2));
-    this_ptr_00->vertex_buffer_ptr->b = local_18;
+    iVar4 = (int)ROUND(ROUND((pSVar4->hum_color).r * 256.0f));
+    g_CDemonRendererPtr2->vertex_buffer_ptr->r = iVar4;
+    iVar1 = (int)ROUND(ROUND(fVar1));
+    this_ptr_00->vertex_buffer_ptr->g = iVar1;
+    iVar2 = (int)ROUND(ROUND(fVar2));
+    this_ptr_00->vertex_buffer_ptr->b = iVar2;
     this_ptr_00->vertex_buffer_ptr->a = 0xffff;
-    this_ptr_00->vertex_buffer_ptr[1].r = local_20;
-    this_ptr_00->vertex_buffer_ptr[1].g = local_1c;
-    this_ptr_00->vertex_buffer_ptr[1].b = local_18;
+    this_ptr_00->vertex_buffer_ptr[1].r = iVar4;
+    this_ptr_00->vertex_buffer_ptr[1].g = iVar1;
+    this_ptr_00->vertex_buffer_ptr[1].b = iVar2;
     this_ptr_00->vertex_buffer_ptr[1].a = 0xffff;
-    this_ptr_00->vertex_buffer_ptr[2].r = local_20;
-    this_ptr_00->vertex_buffer_ptr[2].g = local_1c;
-    this_ptr_00->vertex_buffer_ptr[2].b = local_18;
+    this_ptr_00->vertex_buffer_ptr[2].r = iVar4;
+    this_ptr_00->vertex_buffer_ptr[2].g = iVar1;
+    this_ptr_00->vertex_buffer_ptr[2].b = iVar2;
     this_ptr_00->vertex_buffer_ptr[2].a = 0xffff;
-    this_ptr_00->vertex_buffer_ptr[3].r = local_20;
-    this_ptr_00->vertex_buffer_ptr[3].g = local_1c;
-    this_ptr_00->vertex_buffer_ptr[3].b = local_18;
+    this_ptr_00->vertex_buffer_ptr[3].r = iVar4;
+    this_ptr_00->vertex_buffer_ptr[3].g = iVar1;
+    this_ptr_00->vertex_buffer_ptr[3].b = iVar2;
     this_ptr_00->vertex_buffer_ptr[3].a = 0xffff;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (this_ptr_00,(this_ptr->light_texture).textures);

@@ -9,10 +9,10 @@
 ; CVector3f *      Stack[0xc]:4   out_pos
 ; CVector3f *      Stack[0x10]:4   out_euler
 ; Local Variables:
-; undefined1       Stack[-0x88]:1  local_88
-; undefined1       Stack[-0x58]:1  local_58
-; undefined1       Stack[-0x28]:1  local_28
-; undefined1       Stack[-0x18]:1  local_18
+; CMatrix3x3f      Stack[-0x88]:36  local_88
+; CMatrix3x4f      Stack[-0x58]:48  local_58
+; CQuaternion4f    Stack[-0x28]:16  local_28
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; XREF[9]:
 ;   core_bat.cpp_CBat_updateCoursePosition_FUN_00414ce0 at 00414d7f

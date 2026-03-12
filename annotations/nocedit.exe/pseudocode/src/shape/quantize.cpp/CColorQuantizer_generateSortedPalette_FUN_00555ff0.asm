@@ -7,7 +7,7 @@
 ; CColorQuantizer * Stack[0x4]:4   this_ptr
 ; uchar *          Stack[0x8]:4   output_buffer
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; uchar            Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
 ;   shape_quantize.cpp_CColorQuantizer_quantize_FUN_00554cc0 at 00554d31

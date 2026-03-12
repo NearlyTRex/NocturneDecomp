@@ -8,9 +8,9 @@
 ; SExpandedEdge *  Stack[0x8]:4   edges
 ; int              Stack[0xc]:4   edge_count
 ; Local Variables:
-; undefined8       Stack[-0x28]:8  local_28
-; undefined8       Stack[-0x20]:8  local_20
-; undefined8       Stack[-0x18]:8  local_18
+; double           Stack[-0x28]:8  local_28
+; double           Stack[-0x20]:8  local_20
+; double           Stack[-0x18]:8  local_18
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[2]:

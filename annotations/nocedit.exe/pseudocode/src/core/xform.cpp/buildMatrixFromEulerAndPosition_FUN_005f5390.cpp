@@ -9,17 +9,17 @@
 void __cdecl core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles)
 
 {
-  double dVar1;
-  double dVar2;
-  double dVar3;
-  double dVar4;
-  double dVar5;
   float10 fVar6;
   float10 fVar7;
   float10 fVar8;
   float10 fVar9;
   float10 fVar10;
   float10 fVar11;
+  double dVar2;
+  double dVar3;
+  double dVar1;
+  double dVar4;
+  double dVar5;
   
   fVar6 = (float10)fsin((float10)euler_angles->x);
   fVar7 = (float10)fcos((float10)euler_angles->x);

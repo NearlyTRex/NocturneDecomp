@@ -9,12 +9,13 @@
 CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(CMatrix3x3f *matrix_out,CQuaternion4f *quat_in)
 
 {
+  float fVar9;
   float fVar1;
   float fVar2;
-  float fVar3;
-  float fVar4;
   float fVar5;
   float fVar6;
+  float fVar3;
+  float fVar4;
   float fVar7;
   float fVar8;
   
@@ -27,7 +28,7 @@ CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(CMatri
   fVar6 = quat_in->z * fVar4;
   fVar3 = quat_in->w;
   fVar7 = fVar3 * fVar1 * fVar4;
-  fVar4 = fVar1 * fVar1 * fVar4;
+  fVar9 = fVar1 * fVar1 * fVar4;
   fVar8 = quat_in->z * fVar6;
   matrix_out->m[1].y = fVar1 * fVar5 + fVar3 * fVar6;
   matrix_out->m[2].z = fVar1 * fVar6 - fVar3 * fVar5;
@@ -36,7 +37,7 @@ CQuaternion4f * __cdecl core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(CMatri
   matrix_out->m[0].z = fVar1 * fVar6 + fVar3 * fVar5;
   matrix_out->m[2].x = fVar2 * fVar6 - fVar7;
   matrix_out->m[0].x = 1.0 - (fVar2 * fVar5 + fVar8);
-  matrix_out->m[1].z = 1.0 - (fVar4 + fVar8);
-  matrix_out[1].m[0].y = 1.0 - (fVar4 + fVar2 * fVar5);
+  matrix_out->m[1].z = 1.0 - (fVar9 + fVar8);
+  matrix_out[1].m[0].y = 1.0 - (fVar9 + fVar2 * fVar5);
   return quat_in;
 }

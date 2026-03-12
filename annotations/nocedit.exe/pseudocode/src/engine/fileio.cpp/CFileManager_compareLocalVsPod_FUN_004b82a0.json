@@ -4,31 +4,31 @@
       {
         "category": "format_error",
         "column": 49,
-        "line": 79,
+        "line": 83,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 55,
-        "line": 85,
+        "line": 89,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 55,
-        "line": 91,
+        "line": 95,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 40,
-        "line": 97,
+        "line": 101,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 65,
-        "line": 102,
+        "line": 106,
         "message": "format specifies type 'char *' but the argument has type 'SFoundFileInfo *' [-Werror,-Wformat]"
       }
     ],
@@ -37,17 +37,17 @@
   },
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 169,
+    "complexity_score": 173,
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 19,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 134,
+    "pseudocode_lines": 138,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 499
+    "total_lines": 503
   },
   "cross_references": [
     {
@@ -299,113 +299,64 @@
         "is_param": false,
         "name": "local_1208",
         "offset": -4616,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1207",
-        "offset": -4615,
-        "size": 1,
-        "type": "undefined1"
+        "size": 2048,
+        "type": "char[2048]"
       },
       {
         "is_param": false,
         "name": "local_a08",
         "offset": -2568,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_a04",
-        "offset": -2564,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_5f8",
-        "offset": -1528,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_5f4",
-        "offset": -1524,
-        "size": 4,
-        "type": "undefined4"
+        "size": 1068,
+        "type": "CPodFile"
       },
       {
         "is_param": false,
         "name": "local_5dc",
         "offset": -1500,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_234",
         "offset": -564,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_233",
-        "offset": -563,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
+        "size": 532,
+        "type": "SFoundFileInfo"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -443,26 +394,26 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 80,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "else if (*(int *)((int)&(local_a08.directory_entries)->timestamp + iVar2) + 2U <",
+      "text": "else if (*(int *)((int)&(local_a08.directory_entries)->timestamp + iVar5) + 2U <",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 87,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&(local_a08.directory_entries)->timestamp + iVar2) - 2U) {",
+      "text": "*(int *)((int)&(local_a08.directory_entries)->timestamp + iVar5) - 2U) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 92,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "else if (local_234.file_size == *(uint *)((int)&(local_a08.directory_entries)->size + iVar2))",
+      "text": "else if (local_234.file_size == *(uint *)((int)&(local_a08.directory_entries)->size + iVar5))",
       "type": "pointer_cast"
     }
   ]

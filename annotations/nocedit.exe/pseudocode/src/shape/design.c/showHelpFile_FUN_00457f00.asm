@@ -6,9 +6,9 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   help_filename
 ; Local Variables:
-; undefined1       Stack[-0x68]:1  local_68
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x68]:80  local_68
+; _FILE *          Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_design.c_showPointEditor_FUN_0045c6c0 at 0045ca6e

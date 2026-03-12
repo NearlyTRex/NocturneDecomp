@@ -9,11 +9,11 @@
 ; CLodFace *       Stack[0xc]:4   face
 ; Local Variables:
 ; undefined8       Stack[-0xa0]:8  local_a0
-; undefined        Stack[-0x98]:1  local_98
-; undefined        Stack[-0x8c]:1  local_8c
-; undefined        Stack[-0x80]:1  local_80
-; undefined        Stack[-0x74]:1  local_74
-; undefined4       Stack[-0x38]:4  local_38
+; CVector3f        Stack[-0x98]:12  local_98
+; CVector3f        Stack[-0x8c]:12  local_8c
+; CVector3f        Stack[-0x80]:12  local_80
+; CVector3f[5]     Stack[-0x74]:60  local_74
+; CLodVert *       Stack[-0x38]:4  local_38
 ;
 ; XREF[3]:
 ;   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910 at 00519408

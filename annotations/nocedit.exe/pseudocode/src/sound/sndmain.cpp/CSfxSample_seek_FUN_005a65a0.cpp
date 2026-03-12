@@ -12,6 +12,7 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample *this_ptr
 
 {
   int iVar1;
+  int iVar2;
   double dVar2;
   CMP3Decoder *this_ptr_00;
   
@@ -45,8 +46,8 @@ void __cdecl sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample *this_ptr
                (int)this_ptr_00);
   }
   else {
-    iVar1 = sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0(this_ptr_00,this_ptr->stream_read_position);
-    if (iVar1 == 0) {
+    iVar2 = sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0(this_ptr_00,this_ptr->stream_read_position);
+    if (iVar2 == 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x7ab;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Error seeking %s to %d");

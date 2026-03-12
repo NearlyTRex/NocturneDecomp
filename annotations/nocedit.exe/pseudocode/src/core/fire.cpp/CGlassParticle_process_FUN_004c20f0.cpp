@@ -9,8 +9,8 @@
 void __cdecl core_fire_cpp_CGlassParticle_process_FUN_004c20f0(CGlassParticle *this_ptr)
 
 {
-  float fVar1;
   int iVar2;
+  float fVar1;
   
   fVar1 = g_CGamePtr->delta_time_float;
   (this_ptr->euler_angles).x = (this_ptr->euler_angles).x + fVar1;

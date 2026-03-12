@@ -7,17 +7,17 @@
 ; CTentacle *      Stack[0x4]:4   this_ptr
 ; CCharacter *     Stack[0x8]:4   character
 ; Local Variables:
-; undefined1       Stack[-0x1cc]:1  local_1cc
-; undefined1       Stack[-0x19c]:1  local_19c
-; undefined1       Stack[-0x16c]:1  local_16c
-; undefined1       Stack[-0x13c]:1  local_13c
-; undefined1       Stack[-0x10c]:1  local_10c
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined1       Stack[-0xac]:1  local_ac
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined1       Stack[-0x1c]:1  local_1c
-; undefined1       Stack[-0x10]:1  local_10
+; CMatrix3x4f      Stack[-0x1cc]:48  local_1cc
+; CMatrix3x4f      Stack[-0x19c]:48  local_19c
+; CMatrix3x4f      Stack[-0x16c]:48  local_16c
+; CMatrix3x4f      Stack[-0x13c]:48  local_13c
+; CMatrix3x4f      Stack[-0x10c]:48  local_10c
+; CMatrix3x4f      Stack[-0xdc]:48  local_dc
+; CMatrix3x4f      Stack[-0xac]:48  local_ac
+; CMatrix3x4f      Stack[-0x7c]:48  local_7c
+; CMatrix3x4f      Stack[-0x4c]:48  local_4c
+; CVector3f        Stack[-0x1c]:12  local_1c
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_setOrientation_FUN_0042ded0

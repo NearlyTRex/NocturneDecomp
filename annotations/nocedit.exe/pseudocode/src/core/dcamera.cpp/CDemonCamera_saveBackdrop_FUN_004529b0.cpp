@@ -13,10 +13,12 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
 {
   _FILE *file_ptr;
   uint uVar1;
+  uint uVar2;
   int iVar2;
   int iVar3;
   char cVar4;
   int *piVar5;
+  int iVar4;
   int iVar6;
   char *pcVar7;
   int iVar8;
@@ -106,11 +108,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
                 else {
                   uVar1 = core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0
                                     (&g_CameraFogGrid,&local_5c,end_pos,*piVar5);
-                  uVar1 = uVar1 * 0xff >> 0xe;
-                  if (0xff < uVar1) {
-                    uVar1 = 0xff;
+                  uVar2 = uVar1 * 0xff >> 0xe;
+                  if (0xff < uVar2) {
+                    uVar2 = 0xff;
                   }
-                  *pcVar7 = (char)uVar1;
+                  *pcVar7 = (char)uVar2;
                 }
                 end_pos = end_pos + 1;
                 pcVar7 = pcVar7 + 1;
@@ -134,19 +136,19 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
           local_38 = local_44;
           do {
             iVar3 = 0;
-            iVar6 = 0;
+            iVar4 = 0;
             if (0 < this_ptr->display_width) {
               local_14 = local_24;
               iVar8 = local_24;
               iVar9 = local_38;
               do {
-                uVar1 = (uint)(byte)g_CameraImageDecompressBuffer[0].pixels[0]
+                uVar2 = (uint)(byte)g_CameraImageDecompressBuffer[0].pixels[0]
                                     [local_44 + local_24 + iVar3];
                 if (0 < local_18) {
-                  uVar1 = uVar1 - (byte)g_CameraImageDecompressBuffer[0].pixels[0]
+                  uVar2 = uVar2 - (byte)g_CameraImageDecompressBuffer[0].pixels[0]
                                         [local_40 + local_24 + iVar3];
                 }
-                iVar2 = ((int)uVar1 >> 2) - iVar6;
+                iVar2 = ((int)uVar2 >> 2) - iVar4;
                 if (iVar2 < -0x20) {
                   iVar2 = -0x20;
                 }
@@ -154,8 +156,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
                   iVar2 = 0x3f;
                 }
                 g_CameraPlaneWorkBuffer.pixels[0][iVar8] = (char)iVar2;
-                iVar6 = iVar2 + iVar6;
-                cVar4 = (char)iVar6 * '\x04';
+                iVar4 = iVar2 + iVar4;
+                cVar4 = (char)iVar4 * '\x04';
                 if (0 < local_18) {
                   cVar4 = cVar4 + g_CameraImageDecompressBuffer[0].pixels[0]
                                   [local_40 + local_24 + iVar3];
@@ -172,10 +174,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamer
           } while (local_2c < this_ptr->display_height);
         }
         local_4c = 0x12c00;
-        iVar6 = support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30
+        iVar4 = support_codec_cpp_CCodec_processFromBuffer_FUN_0043eb30
                           (&local_94.base,(char *)&g_CameraPlaneWorkBuffer,&local_4c,
                            (char *)&local_130);
-        if (iVar6 == 0) {
+        if (iVar4 == 0) {
           g_CurrentFilename = "..\\core\\dcamera.cpp";
           g_CurrentLineNumber = 0x1349;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Error compressing %s",local_f8);

@@ -9,10 +9,14 @@
 ; COptimize *      Stack[0xc]:4   search_obj
 ; Local Variables:
 ; undefined8       Stack[-0x50]:8  local_50
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
+; double           Stack[-0x40]:8  dStack_40
+; uint             Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
+; uint             Stack[-0x24]:4  uStack_24
+; int              Stack[-0x1c]:4  iStack_1c
 ; undefined4       Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  iStack_14
 ;
 ; *****************************************************************************
 

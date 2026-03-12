@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 54,
-        "line": 111,
+        "line": 116,
         "message": "format specifies type 'char *' but the argument has type 'CEnemy *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 19,
-        "line": 143,
+        "line": 148,
         "message": "cannot cast from type 'float' to pointer type 'CCharacter *'"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 203,
+    "complexity_score": 208,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 143,
+    "pseudocode_lines": 148,
     "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 239
+    "total_lines": 244
   },
   "cross_references": [],
   "function": {
@@ -168,73 +168,87 @@
       },
       {
         "is_param": false,
+        "name": "CStack_48",
+        "offset": -72,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_30",
+        "offset": -48,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "CLocation *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "CCharacter *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -272,7 +286,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 73,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((ABS(fVar4) <= fVar1) &&",
@@ -280,15 +294,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 78,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)g_EnemyVictimCandidateDistances + local_20) = fStack_30;",
+      "text": "*(float *)((int)g_EnemyVictimCandidateDistances + local_20) = fVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 94,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "if (*(float *)((int)g_EnemyVictimCandidateDistances + iVar8) < local_18) {",
@@ -296,7 +310,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 95,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_18 = *(float *)((int)g_EnemyVictimCandidateDistances + iVar8);",
@@ -304,7 +318,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 136,
+      "line": 141,
       "match": "NAN",
       "severity": "mild",
       "text": "if (pCVar2 == (CCharacter *)NAN) {",

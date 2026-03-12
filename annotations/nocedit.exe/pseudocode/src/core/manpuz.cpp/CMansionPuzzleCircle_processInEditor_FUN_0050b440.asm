@@ -6,9 +6,10 @@
 ; Parameters:
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x5c]:1  local_5c
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x24]:1  local_24
+; CSlew            Stack[-0x78]:28  CStack_78
+; CSlew            Stack[-0x5c]:28  local_5c
+; CSlew            Stack[-0x40]:28  local_40
+; CSlew            Stack[-0x24]:28  local_24
 ;
 ; Referenced Globals:
 ;   int g_MansionPuzzleSlewType

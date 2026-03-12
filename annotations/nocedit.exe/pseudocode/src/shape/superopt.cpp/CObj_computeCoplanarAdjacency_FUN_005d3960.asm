@@ -9,11 +9,14 @@
 ; Local Variables:
 ; undefined4       Stack[-0x70]:4  local_70
 ; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
+; void *           Stack[-0x68]:4  local_68
+; int              Stack[-0x64]:4  local_64
+; CP3D *           Stack[-0x60]:4  pCStack_60
+; uint             Stack[-0x5c]:4  local_5c
+; int *            Stack[-0x58]:4  local_58
+; CPoly *          Stack[-0x54]:4  local_54
+; uint             Stack[-0x2c]:4  uStack_2c
+; double *         Stack[-0x1c]:4  pdStack_1c
 ;
 ; Called Functions:
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1d0

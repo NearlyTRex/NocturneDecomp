@@ -8,12 +8,7 @@
 ; int              Stack[0x8]:4   visible_cube_count
 ; int *            Stack[0xc]:4   visible_cube_indices
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; CVector3f[2]     Stack[-0x20]:24  local_20
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190 at 0056a369

@@ -7,14 +7,30 @@
 ; CBugs *          Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x184]:4  local_184
-; undefined4       Stack[-0x154]:4  local_154
-; undefined4       Stack[-0x150]:4  local_150
-; undefined1       Stack[-0x11c]:1  local_11c
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x18]:4  local_18
+; SDamageInfo      Stack[-0x188]:60  SStack_188
+; CMatrix3x4f      Stack[-0x14c]:48  CStack_14c
+; CMatrix3x4f      Stack[-0x11c]:48  local_11c
+; CMatrix3x4f      Stack[-0xec]:48  CStack_ec
+; CMatrix3x3f      Stack[-0xbc]:36  CStack_bc
+; CVector3f        Stack[-0x94]:12  CStack_94
+; float            Stack[-0x88]:4  fStack_88
+; float            Stack[-0x84]:4  fStack_84
+; float            Stack[-0x80]:4  fStack_80
+; CVector3f        Stack[-0x7c]:12  CStack_7c
+; CVector3f        Stack[-0x70]:12  CStack_70
+; CVector3f        Stack[-0x64]:12  CStack_64
+; float            Stack[-0x58]:4  fStack_58
+; float            Stack[-0x54]:4  fStack_54
+; float            Stack[-0x50]:4  fStack_50
+; float            Stack[-0x4c]:4  local_4c
+; float            Stack[-0x48]:4  local_48
+; float            Stack[-0x44]:4  local_44
+; float            Stack[-0x40]:4  fStack_40
+; float            Stack[-0x3c]:4  fStack_3c
+; float            Stack[-0x38]:4  fStack_38
+; CVector3f[2]     Stack[-0x34]:24  aCStack_34
+; float *          Stack[-0x1c]:4  pfStack_1c
+; float *          Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
 ;   core_bugs.cpp_CBugs_process_FUN_004250f0 at 0042518c

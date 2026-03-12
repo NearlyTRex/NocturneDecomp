@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 236,
+    "complexity_score": 240,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 121,
+    "pseudocode_lines": 125,
     "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 368
+    "total_lines": 372
   },
   "cross_references": [
     {
@@ -180,127 +180,127 @@
         "is_param": false,
         "name": "local_68",
         "offset": -104,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3f *"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "CMatrix3x4f *"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "CFlame *"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "SFire *"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDeformableModelInstance *"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -336,15 +336,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 51,
       "match": "SQRT",
       "severity": "mild",
-      "text": "(local_20 = SQRT(pCVar5->z * pCVar5->z + pCVar5->x * pCVar5->x + pCVar5->y * pCVar5->y),",
+      "text": "(local_20 = SQRT(pCVar9->z * pCVar9->z + pCVar9->x * pCVar9->x + pCVar9->y * pCVar9->y),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 67,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) *",
@@ -352,7 +352,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 67,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) *",
@@ -360,7 +360,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 67,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_18 = (int)ROUND(ROUND(SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) *",
@@ -368,7 +368,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 109,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x3b8) = 0;",
@@ -376,7 +376,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 112,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x364) =",
@@ -384,7 +384,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 114,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x368) =",
@@ -392,7 +392,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 116,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x36c) =",
@@ -400,7 +400,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 119,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)this_ptr->fire_effects + this_ptr->fire_count * 0x2a4 + 0x3b4) =",

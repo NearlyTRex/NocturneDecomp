@@ -4,14 +4,13 @@
 ; void __cdecl shape_design_c_displayPalette_FUN_00461560(void)
 ;
 ; Local Variables:
-; undefined        Stack[-0x7c]:1  local_7c
-; undefined1       Stack[-0x7b]:1  local_7b
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x7c]:80  local_7c
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_3d_0061beed

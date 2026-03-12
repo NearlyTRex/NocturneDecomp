@@ -9,7 +9,7 @@
 int __cdecl engine_fileio_cpp_parseTimestampRecord_FUN_004b2270(char *input_string,STimestampRecord *output_record)
 
 {
-  char cVar1;
+  char cVar2;
   char *pcVar2;
   char *pcVar3;
   char local_224 [512];
@@ -21,6 +21,7 @@ int __cdecl engine_fileio_cpp_parseTimestampRecord_FUN_004b2270(char *input_stri
   int local_10;
   int local_c;
   int local_8;
+  char cVar1;
   
   local_8 = -1;
   sscanf
@@ -45,10 +46,10 @@ int __cdecl engine_fileio_cpp_parseTimestampRecord_FUN_004b2270(char *input_stri
     if (cVar1 == '\0') {
       return 1;
     }
-    cVar1 = pcVar2[1];
+    cVar2 = pcVar2[1];
     pcVar2 = pcVar2 + 2;
-    pcVar3[1] = cVar1;
+    pcVar3[1] = cVar2;
     pcVar3 = pcVar3 + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   return 1;
 }

@@ -12,8 +12,8 @@
 ; char *           Stack[0x18]:4   timestamp_source
 ; int              Stack[0x1c]:4   checksum
 ; Local Variables:
-; undefined1       Stack[-0x114]:1  local_114
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x114]:256  local_114
+; byte *           Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0 at 004b7993

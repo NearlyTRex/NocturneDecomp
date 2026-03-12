@@ -7,7 +7,8 @@
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   layer_flag
 ; Local Variables:
-; undefined1       Stack[-0x2c]:1  local_2c
+; CBoundingBox3D   Stack[-0x2c]:24  local_2c
+; CVector3i        Stack[-0x14]:12  CStack_14
 ;
 ; Referenced Globals:
 ;   float FLOAT_00662280 = 256

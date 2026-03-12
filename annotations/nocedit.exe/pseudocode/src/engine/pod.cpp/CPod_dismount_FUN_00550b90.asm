@@ -7,9 +7,7 @@
 ; CPod *           Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x224]:1  local_224
-; undefined1       Stack[-0x223]:1  local_223
-; undefined1       Stack[-0x124]:1  local_124
+; SFoundFileInfo   Stack[-0x224]:532  local_224
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005fe7f0

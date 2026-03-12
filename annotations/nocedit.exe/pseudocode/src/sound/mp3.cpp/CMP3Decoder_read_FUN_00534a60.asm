@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   samples_requested
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210 at 0053435a

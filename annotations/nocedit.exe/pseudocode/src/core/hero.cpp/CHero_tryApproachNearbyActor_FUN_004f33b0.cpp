@@ -9,11 +9,12 @@
 int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004f33b0(CHero *this_ptr)
 
 {
-  CLocation *input_world_point;
-  float fVar1;
-  float fVar2;
+  CLocation *input_world_point_00;
   int iVar3;
   CVector3f *pCVar4;
+  float fVar3;
+  CVector3f *pCVar5;
+  int iVar6;
   SInteractionInfo SStack_80;
   CVector3f local_60;
   CVector3f CStack_54;
@@ -24,17 +25,20 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004f33b0(CHero *this_
   int local_1c;
   float local_14;
   CDemonActor *this_ptr_00;
+  CLocation *input_world_point;
+  float fVar1;
+  float fVar2;
   
   iVar3 = core_charactr_cpp_CCharacter_isCarryingAnything_FUN_0042d360(&this_ptr->base);
   if (iVar3 == 0) {
     if (this_ptr->nearby_interactive_actor != (CDemonActor *)0x0) {
       return 1;
     }
-    input_world_point = &(this_ptr->base).base.location;
+    input_world_point_00 = &(this_ptr->base).base.location;
     local_1c = 0;
     for (local_20 = 0; local_20 < g_CDemonSetPtr->actor_count; local_20 = local_20 + 1) {
       this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c);
-      local_60.x = (this_ptr_00->location).position.x - (input_world_point->position).x;
+      local_60.x = (this_ptr_00->location).position.x - (input_world_point_00->position).x;
       local_60.z = (this_ptr_00->location).position.z - (this_ptr->base).base.location.position.z;
       if (((ABS((this_ptr_00->location).position.y - (this_ptr->base).base.location.position.y) <=
             (float)10) &&
@@ -43,12 +47,12 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004f33b0(CHero *this_
          ((CHero *)this_ptr_00 != this_ptr)) {
         pCVar4 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&local_30,&local_60);
-        local_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                             (pCVar4->y - (this_ptr->base).base.orient.vec.y);
-        if (((ABS(local_14) <= (float)1.04719755116667) &&
-            (pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                                (this_ptr_00,&local_3c,&input_world_point->position),
-            pCVar4->z <= 0.0)) &&
+        fVar3 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                          (pCVar4->y - (this_ptr->base).base.orient.vec.y);
+        if (((ABS(fVar3) <= (float)1.04719755116667) &&
+            (pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                                (this_ptr_00,&local_3c,&input_world_point_00->position),
+            pCVar5->z <= 0.0)) &&
            (((*((this_ptr_00->vtable)._ub)->getInteractionInfo)(this_ptr_00,&SStack_80),
             SStack_80.can_interact != 0 && (SStack_80.interacting_actor == (CDemonActor *)0x0)))) {
           CStack_48.z = SStack_80.approach_offset;
@@ -56,11 +60,11 @@ int __cdecl core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004f33b0(CHero *this_
           CStack_48.y = (float)SStack_80.interacting_actor;
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     (this_ptr_00,&CStack_54,&CStack_48);
-          fVar1 = CStack_54.x - (input_world_point->position).x;
+          fVar1 = CStack_54.x - (input_world_point_00->position).x;
           fVar2 = CStack_54.z - (this_ptr->base).base.location.position.z;
           if ((SQRT(fVar2 * fVar2 + fVar1 * fVar1) <= (float)5) &&
-             (iVar3 = (*((this_ptr_00->vtable)._ub)->startInteraction)
-                                (this_ptr_00,(CDemonActor *)this_ptr), iVar3 != 0)) {
+             (iVar6 = (*((this_ptr_00->vtable)._ub)->startInteraction)
+                                (this_ptr_00,(CDemonActor *)this_ptr), iVar6 != 0)) {
             this_ptr->nearby_interactive_actor = this_ptr_00;
             return 1;
           }

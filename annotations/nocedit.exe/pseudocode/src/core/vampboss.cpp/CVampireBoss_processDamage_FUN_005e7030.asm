@@ -7,7 +7,7 @@
 ; CVampireBoss *   Stack[0x4]:4   this_ptr
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
-; undefined1       Stack[-0x24]:1  local_24
+; CVector3f        Stack[-0x24]:12  local_24
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_voicuhurt_wav_00656c5f

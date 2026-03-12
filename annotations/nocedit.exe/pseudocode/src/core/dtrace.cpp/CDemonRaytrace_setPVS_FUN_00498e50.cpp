@@ -9,18 +9,18 @@
 void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_00498e50(CDemonRaytrace *this_ptr,int visible_cube_count,int *visible_cube_indices)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  int iVar5;
-  int iVar6;
-  int iVar7;
-  ulonglong uVar8;
   uint uVar9;
   CVector3f *pCVar10;
   int iVar11;
   CVector3f local_20 [2];
+  float fVar1;
+  ulonglong uVar8;
+  int iVar7;
+  float fVar4;
+  float fVar3;
+  int iVar6;
+  int iVar5;
+  float fVar2;
   
   g_PVSReadyFlag = 0;
   if ((0 < visible_cube_count) && (visible_cube_indices != (int *)0x0)) {

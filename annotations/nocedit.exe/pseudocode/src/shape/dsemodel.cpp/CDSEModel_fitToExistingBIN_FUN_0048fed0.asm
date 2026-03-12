@@ -9,20 +9,20 @@
 ; Local Variables:
 ; undefined4       Stack[-0xcc]:4  local_cc
 ; undefined4       Stack[-0xc8]:4  local_c8
-; undefined1       Stack[-0xc4]:1  local_c4
-; undefined1       Stack[-0x90]:1  local_90
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SMRGLModelBounds Stack[-0xc4]:52  local_c4
+; int[13]          Stack[-0x90]:52  local_90
+; int              Stack[-0x5c]:4  local_5c
+; int              Stack[-0x58]:4  local_58
+; int              Stack[-0x54]:4  local_54
+; int              Stack[-0x50]:4  local_50
+; int              Stack[-0x4c]:4  local_4c
+; int              Stack[-0x48]:4  local_48
+; int              Stack[-0x28]:4  local_28
+; _FILE *          Stack[-0x24]:4  local_24
+; SMRGLHeaderExtended * Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70 at 0053efd4

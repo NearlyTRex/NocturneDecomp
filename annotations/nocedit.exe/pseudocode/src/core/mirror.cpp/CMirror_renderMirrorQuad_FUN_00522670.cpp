@@ -11,10 +11,6 @@ int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_00522670(CMirror *this_
 {
   int iVar1;
   SMRGLHeaderPrimitive local_64;
-  uint local_4c;
-  uint local_48;
-  uint local_44;
-  uint local_40;
   CVector3i local_3c;
   CVector3i local_30;
   CVector3i local_24;
@@ -46,10 +42,6 @@ int __cdecl core_mirror_cpp_CMirror_renderMirrorQuad_FUN_00522670(CMirror *this_
   local_64.surface_normal.C = 0;
   local_64.surface_normal.B = 0;
   local_64.surface_normal.A = 0;
-  local_4c = 0;
-  local_48 = 1;
-  local_44 = 2;
-  local_40 = 3;
   iVar1 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
                     (g_CDemonRendererPtr2,&local_64);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);

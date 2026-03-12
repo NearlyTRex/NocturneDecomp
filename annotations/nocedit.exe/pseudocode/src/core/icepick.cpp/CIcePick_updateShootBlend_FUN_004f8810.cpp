@@ -9,18 +9,21 @@
 void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004f8810(CIcePick *this_ptr,float delta_time)
 
 {
-  CDeformableModelInstance *this_ptr_00;
-  float fVar1;
+  CDeformableModelInstance *this_ptr_02;
+  float fVar2;
   CMotionList *this_ptr_01;
+  int iVar3;
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
   float afStackY_180c [1519];
-  char *motion_name;
-  int iVar5;
   CQuaternion4f local_30;
   CQuaternion4f local_20;
+  float fVar1;
+  CDeformableModelInstance *this_ptr_00;
   CDeformableModel_MotionBlendWeightFunc *blend_callback;
+  int iVar5;
+  char *motion_name;
   
   bVar4 = 0;
   if (this_ptr->is_armed != 0) {
@@ -32,25 +35,25 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004f8810(CIcePick *t
       }
     }
     else {
-      fVar1 = delta_time * (float)2 + this_ptr->shoot_blend_weight;
-      this_ptr->shoot_blend_weight = fVar1;
-      if (1.0 < fVar1) {
+      fVar2 = delta_time * (float)2 + this_ptr->shoot_blend_weight;
+      this_ptr->shoot_blend_weight = fVar2;
+      if (1.0 < fVar2) {
         this_ptr->shoot_blend_weight = 1.0;
       }
     }
     iVar5 = 1;
     motion_name = "shoot";
-    this_ptr_00 = &(this_ptr->base).base.model;
+    this_ptr_02 = &(this_ptr->base).base.model;
     this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                            (&this_ptr_00->motion_controller);
-    iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01,motion_name,iVar5);
+                            (&this_ptr_02->motion_controller);
+    iVar3 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr_01,motion_name,iVar5);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-              (this_ptr_00,iVar5,0.0,this_ptr->shoot_blend_weight,INT_02db89b0,
+              (this_ptr_02,iVar3,0.0,this_ptr->shoot_blend_weight,INT_02db89b0,
                core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
-    fVar1 = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
+    fVar2 = (this_ptr->base).player_control.look_up_down_speed * (float)3.1415926535000001 *
             (float)2 * delta_time + this_ptr->aim_pitch;
-    this_ptr->aim_pitch = fVar1;
-    if ((float)0.78539816337500001 < fVar1) {
+    this_ptr->aim_pitch = fVar2;
+    if ((float)0.78539816337500001 < fVar2) {
       this_ptr->aim_pitch = 0.7853982;
     }
     if (this_ptr->aim_pitch < (float)-0.78539816337500001) {
@@ -63,11 +66,11 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004f8810(CIcePick *t
     puVar2 = (uint *)((int)&local_30 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     *(uint *)((int)&local_20 + (uint)bVar4 * -8 + 4) =
          *(uint *)((int)&local_30 + (uint)bVar4 * -8 + 4);
-    iVar5 = INT_02db89b0;
+    iVar3 = INT_02db89b0;
     *puVar3 = *puVar2;
     puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
-              (&(this_ptr->base).base.model,&local_20,this_ptr->shoot_blend_weight,iVar5,
+              (&(this_ptr->base).base.model,&local_20,this_ptr->shoot_blend_weight,iVar3,
                blend_callback);
   }
   return;

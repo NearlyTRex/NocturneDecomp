@@ -9,14 +9,17 @@
 int __cdecl stat(char *filename,_stat *file_info)
 
 {
-  bool bVar1;
+  int iVar1;
   char *pcVar2;
   int iVar3;
+  char *pcVar1;
   char *pcVar4;
+  int iVar2;
   HANDLE hFindFile;
   DWORD DVar5;
   uint uVar6;
   time_t tVar7;
+  time_t tVar3;
   _WIN32_FIND_DATAA local_368;
   char local_228;
   char local_227;
@@ -27,6 +30,7 @@ int __cdecl stat(char *filename,_stat *file_info)
   WORD local_1c [2];
   WORD local_18 [2];
   WORD local_14 [2];
+  bool bVar1;
   
   bVar1 = false;
   if ((*filename == '\0') ||
@@ -37,20 +41,20 @@ int __cdecl stat(char *filename,_stat *file_info)
   }
   else {
     getcwd((char *)local_124,0x104);
-    pcVar2 = _fullpath(&local_228,filename,0x104);
-    if ((pcVar2 != (char *)0x0) &&
+    pcVar1 = _fullpath(&local_228,filename,0x104);
+    if ((pcVar1 != (char *)0x0) &&
        (((((g_CharacterClassificationTable[(byte)(local_228 + 1)] & 0xc0) != 0 && (local_227 == ':')
           ) && (local_226 == '\\')) && (local_225 == '\0')))) {
       bVar1 = true;
     }
     pcVar4 = mbtowc_next(filename);
-    pcVar2 = filename;
+    pcVar1 = filename;
     if (*pcVar4 == ':') {
-      pcVar2 = filename + 2;
+      pcVar1 = filename + 2;
     }
-    if ((((*pcVar2 == '\\') || (*pcVar2 == '/')) && (pcVar2[1] == '\0')) || (bVar1)) {
-      iVar3 = chdir(filename);
-      if (iVar3 != 0) {
+    if ((((*pcVar1 == '\\') || (*pcVar1 == '/')) && (pcVar1[1] == '\0')) || (bVar1)) {
+      iVar2 = chdir(filename);
+      if (iVar2 != 0) {
         return -1;
       }
       chdir((char *)local_124);
@@ -65,15 +69,15 @@ int __cdecl stat(char *filename,_stat *file_info)
       }
       (*g_FindCloseFunc)(hFindFile);
     }
-    pcVar2 = mbtowc_next(filename);
-    if (*pcVar2 == ':') {
+    pcVar1 = mbtowc_next(filename);
+    if (*pcVar1 == ':') {
       local_124[0] = *filename;
     }
-    iVar3 = tolower((uint)local_124[0]);
-    file_info->_st_dev = iVar3 + -0x61;
-    iVar3 = file_info->_st_dev + -1;
-    file_info->_st_dev = iVar3;
-    file_info->_st_rdev = iVar3;
+    iVar2 = tolower((uint)local_124[0]);
+    file_info->_st_dev = iVar2 + -0x61;
+    iVar2 = file_info->_st_dev + -1;
+    file_info->_st_dev = iVar2;
+    file_info->_st_rdev = iVar2;
     file_info->_st_size = local_368.nFileSizeLow;
     uVar6 = analyze_file_type(local_368.dwFileAttributes,local_368.cFileName);
     file_info->_st_mode = (ushort)uVar6;
@@ -82,20 +86,20 @@ int __cdecl stat(char *filename,_stat *file_info)
     file_info->_st_mtime = tVar7;
     filetime_to_dos_datetime(&local_368.ftCreationTime,local_18,local_1c);
     if ((local_18[0] == local_20[0]) && (local_1c[0] == local_14[0])) {
-      tVar7 = file_info->_st_mtime;
+      tVar3 = file_info->_st_mtime;
     }
     else {
-      tVar7 = dos_datetime_to_time_t(local_18[0],local_1c[0]);
+      tVar3 = dos_datetime_to_time_t(local_18[0],local_1c[0]);
     }
-    file_info->_st_ctime = tVar7;
+    file_info->_st_ctime = tVar3;
     filetime_to_dos_datetime(&local_368.ftLastAccessTime,local_18,local_1c);
     if ((local_18[0] == local_20[0]) && (local_1c[0] == local_14[0])) {
-      tVar7 = file_info->_st_mtime;
+      tVar3 = file_info->_st_mtime;
     }
     else {
-      tVar7 = dos_datetime_to_time_t(local_18[0],local_1c[0]);
+      tVar3 = dos_datetime_to_time_t(local_18[0],local_1c[0]);
     }
-    file_info->_st_atime = tVar7;
+    file_info->_st_atime = tVar3;
     file_info->_st_gid = 0;
     file_info->_st_nlink = 1;
     file_info->_st_uid = (int)file_info->_st_gid;

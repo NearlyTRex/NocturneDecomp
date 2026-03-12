@@ -6,10 +6,9 @@
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined        Stack[-0x1c]:1  local_1c
+; int[1016]        Stack[-0x1010]:4064  aiStackY_1010
+; CVector3i        Stack[-0x28]:12  local_28
+; CVector3i        Stack[-0x1c]:12  local_1c
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8

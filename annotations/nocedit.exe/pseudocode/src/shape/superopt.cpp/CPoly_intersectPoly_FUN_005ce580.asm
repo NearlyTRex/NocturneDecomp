@@ -8,8 +8,223 @@
 ; CPoly *          Stack[0x8]:4   other_poly
 ; CPolyIntersectResult * Stack[0xc]:4   out_result
 ; Local Variables:
-; undefined1       Stack[-0x458]:1  local_458
-; undefined1       Stack[-0x3c8]:1  local_3c8
+; int[1261]        Stack[-0x19c4]:5044  aiStackY_19c4
+; undefined8       Stack[-0x5e0]:8  uStack_5e0
+; undefined8       Stack[-0x5d8]:8  uStack_5d8
+; undefined8       Stack[-0x5d0]:8  uStack_5d0
+; undefined4       Stack[-0x5c8]:4  uStack_5c8
+; undefined4       Stack[-0x5c4]:4  uStack_5c4
+; undefined4       Stack[-0x5c0]:4  uStack_5c0
+; undefined4       Stack[-0x5bc]:4  uStack_5bc
+; undefined4       Stack[-0x5b8]:4  uStack_5b8
+; undefined4       Stack[-0x5b4]:4  uStack_5b4
+; undefined4       Stack[-0x5b0]:4  uStack_5b0
+; undefined4       Stack[-0x5ac]:4  uStack_5ac
+; undefined4       Stack[-0x5a8]:4  uStack_5a8
+; undefined4       Stack[-0x5a4]:4  uStack_5a4
+; undefined4       Stack[-0x5a0]:4  uStack_5a0
+; undefined4       Stack[-0x59c]:4  uStack_59c
+; undefined8       Stack[-0x568]:8  uStack_568
+; undefined8       Stack[-0x560]:8  uStack_560
+; undefined4       Stack[-0x558]:4  uStack_558
+; undefined4       Stack[-0x554]:4  uStack_554
+; undefined4       Stack[-0x550]:4  uStack_550
+; undefined4       Stack[-0x54c]:4  uStack_54c
+; undefined4       Stack[-0x548]:4  uStack_548
+; undefined4       Stack[-0x544]:4  uStack_544
+; undefined4       Stack[-0x540]:4  uStack_540
+; undefined4       Stack[-0x53c]:4  uStack_53c
+; double           Stack[-0x518]:8  dStack_518
+; double           Stack[-0x510]:8  dStack_510
+; double           Stack[-0x508]:8  dStack_508
+; double           Stack[-0x500]:8  dStack_500
+; double           Stack[-0x4f8]:8  dStack_4f8
+; double           Stack[-0x4f0]:8  dStack_4f0
+; double           Stack[-0x4e8]:8  dStack_4e8
+; double           Stack[-0x4e0]:8  dStack_4e0
+; double           Stack[-0x4d8]:8  dStack_4d8
+; CVector3d        Stack[-0x4d0]:24  CStack_4d0
+; double           Stack[-0x4b8]:8  dStack_4b8
+; double           Stack[-0x4b0]:8  dStack_4b0
+; double           Stack[-0x4a8]:8  dStack_4a8
+; double           Stack[-0x4a0]:8  dStack_4a0
+; double           Stack[-0x498]:8  dStack_498
+; double           Stack[-0x490]:8  dStack_490
+; double           Stack[-0x488]:8  dStack_488
+; double           Stack[-0x480]:8  dStack_480
+; double           Stack[-0x478]:8  dStack_478
+; double           Stack[-0x470]:8  dStack_470
+; double           Stack[-0x468]:8  dStack_468
+; double           Stack[-0x460]:8  dStack_460
+; CVector3d        Stack[-0x458]:24  local_458
+; undefined4       Stack[-0x440]:4  uStack_440
+; undefined4       Stack[-0x43c]:4  uStack_43c
+; undefined4       Stack[-0x438]:4  uStack_438
+; undefined4       Stack[-0x434]:4  uStack_434
+; undefined4       Stack[-0x430]:4  uStack_430
+; undefined4       Stack[-0x42c]:4  uStack_42c
+; double           Stack[-0x428]:8  dStack_428
+; double           Stack[-0x420]:8  dStack_420
+; double           Stack[-0x418]:8  dStack_418
+; CVector3d        Stack[-0x410]:24  CStack_410
+; double           Stack[-0x3f8]:8  dStack_3f8
+; double           Stack[-0x3f0]:8  dStack_3f0
+; double           Stack[-0x3e8]:8  dStack_3e8
+; undefined4       Stack[-0x3e0]:4  uStack_3e0
+; undefined4       Stack[-0x3dc]:4  uStack_3dc
+; undefined4       Stack[-0x3d8]:4  uStack_3d8
+; undefined4       Stack[-0x3d4]:4  uStack_3d4
+; undefined4       Stack[-0x3d0]:4  uStack_3d0
+; undefined4       Stack[-0x3cc]:4  uStack_3cc
+; CVector3d        Stack[-0x3c8]:24  local_3c8
+; double           Stack[-0x3b0]:8  dStack_3b0
+; double           Stack[-0x3a8]:8  dStack_3a8
+; double           Stack[-0x3a0]:8  dStack_3a0
+; double           Stack[-0x398]:8  dStack_398
+; double           Stack[-0x390]:8  dStack_390
+; double           Stack[-0x388]:8  dStack_388
+; double           Stack[-0x380]:8  dStack_380
+; double           Stack[-0x378]:8  dStack_378
+; double           Stack[-0x370]:8  dStack_370
+; double           Stack[-0x368]:8  dStack_368
+; double           Stack[-0x360]:8  dStack_360
+; double           Stack[-0x358]:8  dStack_358
+; undefined4       Stack[-0x350]:4  uStack_350
+; undefined4       Stack[-0x34c]:4  uStack_34c
+; undefined4       Stack[-0x348]:4  uStack_348
+; undefined4       Stack[-0x344]:4  uStack_344
+; undefined4       Stack[-0x340]:4  uStack_340
+; undefined4       Stack[-0x33c]:4  uStack_33c
+; double           Stack[-0x338]:8  dStack_338
+; double           Stack[-0x330]:8  dStack_330
+; double           Stack[-0x328]:8  dStack_328
+; double           Stack[-0x320]:8  dStack_320
+; double           Stack[-0x318]:8  dStack_318
+; double           Stack[-0x310]:8  dStack_310
+; double           Stack[-0x308]:8  dStack_308
+; double           Stack[-0x300]:8  dStack_300
+; double           Stack[-0x2f8]:8  dStack_2f8
+; CVector3d        Stack[-0x2f0]:24  CStack_2f0
+; double           Stack[-0x2d8]:8  dStack_2d8
+; double           Stack[-0x2d0]:8  dStack_2d0
+; double           Stack[-0x2c8]:8  dStack_2c8
+; double           Stack[-0x2c0]:8  dStack_2c0
+; double           Stack[-0x2b8]:8  dStack_2b8
+; double           Stack[-0x2b0]:8  dStack_2b0
+; double           Stack[-0x2a8]:8  dStack_2a8
+; double           Stack[-0x2a0]:8  dStack_2a0
+; double           Stack[-0x298]:8  dStack_298
+; double           Stack[-0x290]:8  dStack_290
+; double           Stack[-0x288]:8  dStack_288
+; double           Stack[-0x280]:8  dStack_280
+; double           Stack[-0x278]:8  dStack_278
+; double           Stack[-0x270]:8  dStack_270
+; double           Stack[-0x268]:8  dStack_268
+; double           Stack[-0x260]:8  dStack_260
+; double           Stack[-0x258]:8  dStack_258
+; double           Stack[-0x250]:8  dStack_250
+; double           Stack[-0x248]:8  dStack_248
+; double           Stack[-0x240]:8  dStack_240
+; double           Stack[-0x238]:8  dStack_238
+; double           Stack[-0x230]:8  dStack_230
+; double           Stack[-0x228]:8  dStack_228
+; double           Stack[-0x220]:8  dStack_220
+; undefined4       Stack[-0x218]:4  uStack_218
+; undefined4       Stack[-0x214]:4  uStack_214
+; undefined4       Stack[-0x210]:4  uStack_210
+; undefined4       Stack[-0x20c]:4  uStack_20c
+; undefined4       Stack[-0x208]:4  uStack_208
+; undefined4       Stack[-0x204]:4  uStack_204
+; double           Stack[-0x200]:8  dStack_200
+; double           Stack[-0x1f8]:8  dStack_1f8
+; double           Stack[-0x1f0]:8  dStack_1f0
+; undefined8       Stack[-0x1e8]:8  uStack_1e8
+; double           Stack[-0x1e0]:8  dStack_1e0
+; undefined8       Stack[-0x1d8]:8  uStack_1d8
+; double           Stack[-0x1d0]:8  dStack_1d0
+; undefined4       Stack[-0x1c8]:4  uStack_1c8
+; undefined4       Stack[-0x1c4]:4  uStack_1c4
+; double           Stack[-0x1c0]:8  dStack_1c0
+; undefined4       Stack[-0x1b8]:4  uStack_1b8
+; undefined4       Stack[-0x1b4]:4  uStack_1b4
+; double           Stack[-0x1b0]:8  dStack_1b0
+; undefined4       Stack[-0x1a8]:4  uStack_1a8
+; undefined4       Stack[-0x1a4]:4  uStack_1a4
+; double           Stack[-0x1a0]:8  dStack_1a0
+; undefined4       Stack[-0x198]:4  uStack_198
+; undefined4       Stack[-0x194]:4  uStack_194
+; double           Stack[-0x190]:8  dStack_190
+; undefined8       Stack[-0x188]:8  uStack_188
+; double           Stack[-0x180]:8  dStack_180
+; undefined4       Stack[-0x178]:4  uStack_178
+; undefined4       Stack[-0x174]:4  uStack_174
+; double           Stack[-0x170]:8  dStack_170
+; undefined8       Stack[-0x168]:8  uStack_168
+; double           Stack[-0x160]:8  dStack_160
+; undefined8       Stack[-0x158]:8  uStack_158
+; double           Stack[-0x150]:8  dStack_150
+; undefined8       Stack[-0x148]:8  uStack_148
+; double           Stack[-0x140]:8  dStack_140
+; undefined4       Stack[-0x138]:4  uStack_138
+; undefined4[4]    Stack[-0x134]:16  auStack_134
+; undefined4       Stack[-0x124]:4  uStack_124
+; undefined4       Stack[-0x120]:4  uStack_120
+; undefined4       Stack[-0x11c]:4  uStack_11c
+; undefined8       Stack[-0x118]:8  uStack_118
+; double           Stack[-0x110]:8  dStack_110
+; undefined4       Stack[-0x108]:4  uStack_108
+; undefined4       Stack[-0x104]:4  uStack_104
+; double           Stack[-0x100]:8  dStack_100
+; undefined8       Stack[-0xf8]:8  uStack_f8
+; double           Stack[-0xf0]:8  dStack_f0
+; undefined8       Stack[-0xe8]:8  uStack_e8
+; double           Stack[-0xe0]:8  dStack_e0
+; undefined4       Stack[-0xd8]:4  uStack_d8
+; int[4]           Stack[-0xd4]:16  aiStack_d4
+; CVector3d *      Stack[-0xc4]:4  pCStack_c4
+; CVector3d *      Stack[-0xc0]:4  pCStack_c0
+; CVector3d *      Stack[-0xbc]:4  pCStack_bc
+; double *         Stack[-0xb8]:4  pdStack_b8
+; double *         Stack[-0xb4]:4  pdStack_b4
+; int              Stack[-0xb0]:4  iStack_b0
+; int              Stack[-0xac]:4  iStack_ac
+; int              Stack[-0xa8]:4  iStack_a8
+; int              Stack[-0xa4]:4  iStack_a4
+; double *         Stack[-0xa0]:4  pdStack_a0
+; double *         Stack[-0x9c]:4  pdStack_9c
+; double *         Stack[-0x98]:4  pdStack_98
+; double *         Stack[-0x94]:4  pdStack_94
+; int              Stack[-0x90]:4  iStack_90
+; CVector2d *      Stack[-0x8c]:4  pCStack_8c
+; CVector2d *      Stack[-0x88]:4  pCStack_88
+; CVector2d *      Stack[-0x84]:4  pCStack_84
+; CVector2d *      Stack[-0x80]:4  pCStack_80
+; CVector2d *      Stack[-0x7c]:4  pCStack_7c
+; CVector2d *      Stack[-0x78]:4  pCStack_78
+; CVector2d *      Stack[-0x74]:4  pCStack_74
+; CVector2d *      Stack[-0x70]:4  pCStack_70
+; int              Stack[-0x6c]:4  iStack_6c
+; CVector2d *      Stack[-0x68]:4  pCStack_68
+; CVector2d *      Stack[-0x64]:4  pCStack_64
+; CVector2d *      Stack[-0x60]:4  pCStack_60
+; CVector2d *      Stack[-0x5c]:4  pCStack_5c
+; int              Stack[-0x58]:4  iStack_58
+; int              Stack[-0x54]:4  iStack_54
+; int              Stack[-0x50]:4  iStack_50
+; int              Stack[-0x4c]:4  iStack_4c
+; CVector3d *      Stack[-0x48]:4  pCStack_48
+; CVector3d *      Stack[-0x44]:4  pCStack_44
+; CVector3d *      Stack[-0x40]:4  pCStack_40
+; CVector3d *      Stack[-0x3c]:4  pCStack_3c
+; CVector3d *      Stack[-0x38]:4  pCStack_38
+; double *         Stack[-0x34]:4  pdStack_34
+; CVector3d *      Stack[-0x30]:4  pCStack_30
+; CVector3d *      Stack[-0x2c]:4  pCStack_2c
+; CVector3d *      Stack[-0x28]:4  pCStack_28
+; double *         Stack[-0x24]:4  pdStack_24
+; double *         Stack[-0x20]:4  pdStack_20
+; double *         Stack[-0x1c]:4  pdStack_1c
+; double *         Stack[-0x18]:4  pdStack_18
 ;
 ; Referenced Globals:
 ;   double DOUBLE_006542e2 = 1.00000000000000E-8

@@ -6,14 +6,12 @@
 ; Parameters:
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x38]:1  local_38
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int[1012]        Stack[-0x1014]:4048  aiStackY_1014
+; CVector3f        Stack[-0x38]:12  local_38
+; int              Stack[-0x2c]:4  local_2c
+; int[2]           Stack[-0x28]:8  local_28
+; CVector3f        Stack[-0x20]:12  local_20
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   core_frankgen.cpp_CFrankenstienMachine_processInEditor_FUN_004d25f0 at 004d26f3

@@ -9,13 +9,14 @@
 void __cdecl core_msnedit_cpp_CDemonMission_selectNearestActor_FUN_0053bcf0(CDemonMission *this_ptr)
 
 {
-  CDemonActor *pCVar1;
-  CDemonActor *pCVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
+  float fVar1;
   CDemonActor *actor;
   float local_10;
+  float fVar5;
+  float fVar4;
+  float fVar3;
+  CDemonActor *pCVar2;
+  CDemonActor *pCVar1;
   
   local_10 = 1e+30;
   actor = (CDemonActor *)0x0;
@@ -26,9 +27,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_selectNearestActor_FUN_0053bcf0(CDem
        (fVar3 = (pCVar1->location).position.x - (pCVar2->location).position.x,
        fVar5 = (pCVar1->location).position.y - (pCVar2->location).position.y,
        fVar4 = (pCVar1->location).position.z - (pCVar2->location).position.z,
-       fVar3 = SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3), fVar3 < local_10)) {
+       fVar1 = SQRT(fVar4 * fVar4 + fVar5 * fVar5 + fVar3 * fVar3), fVar1 < local_10)) {
       actor = pCVar1;
-      local_10 = fVar3;
+      local_10 = fVar1;
     }
   }
   core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(this_ptr,actor);

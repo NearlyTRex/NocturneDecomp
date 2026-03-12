@@ -14,9 +14,13 @@ int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90(CPathMap *t
   int iVar3;
   int iVar4;
   int iVar5;
+  int iVar1;
+  int grid_z;
   uint uVar6;
   uint uVar7;
+  uint uVar3;
   uint uVar8;
+  uint uVar4;
   int unaff_EDI;
   int local_40;
   int local_3c;
@@ -46,108 +50,108 @@ int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90(CPathMap *t
   }
   iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                     (this_ptr,end_x,start_height,(this_ptr->dest_voxel_coords).y);
-  iVar5 = start_height;
+  iVar1 = start_height;
   if (0 < local_2c) {
     do {
-      iVar4 = local_3c + iVar5;
+      iVar4 = local_3c + iVar1;
       unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                             (this_ptr,end_x,iVar4,iVar3);
       uVar7 = unaff_EDI - iVar3 >> 0x1f;
       if (((g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7)) ||
           (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                                 (this_ptr,end_x + -1,iVar5,iVar3),
-          uVar7 = unaff_EDI - iVar3 >> 0x1f,
-          g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7))) ||
+                                 (this_ptr,end_x + -1,iVar1,iVar3),
+          uVar3 = unaff_EDI - iVar3 >> 0x1f,
+          g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar3) - uVar3))) ||
          (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                                (this_ptr,end_x + 1,iVar5,iVar3), uVar7 = unaff_EDI - iVar3 >> 0x1f,
-         g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7))) break;
+                                (this_ptr,end_x + 1,iVar1,iVar3), uVar3 = unaff_EDI - iVar3 >> 0x1f,
+         g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar3) - uVar3))) break;
       iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0(this_ptr,end_x,iVar4,iVar3);
       local_2c = local_2c + -1;
-      iVar5 = iVar4;
+      iVar1 = iVar4;
     } while (0 < local_2c);
   }
-  uVar7 = (int)uVar2 >> 0x1f;
+  uVar3 = (int)uVar2 >> 0x1f;
   if (local_2c == 0) {
-    local_30 = (uVar2 ^ uVar7) - uVar7;
+    local_30 = (uVar2 ^ uVar3) - uVar3;
     if (0 < local_30) {
       do {
-        iVar4 = local_14 + local_40;
+        grid_z = local_14 + local_40;
         unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                              (this_ptr,iVar4,iVar5,iVar3);
+                              (this_ptr,grid_z,iVar1,iVar3);
         uVar8 = unaff_EDI - iVar3 >> 0x1f;
         if (((g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8)) ||
             (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                                   (this_ptr,local_14,iVar5 + -1,iVar3),
-            uVar8 = unaff_EDI - iVar3 >> 0x1f,
-            g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8))) ||
+                                   (this_ptr,local_14,iVar1 + -1,iVar3),
+            uVar4 = unaff_EDI - iVar3 >> 0x1f,
+            g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar4) - uVar4))) ||
            (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                                  (this_ptr,local_14,iVar5 + 1,iVar3),
-           uVar8 = unaff_EDI - iVar3 >> 0x1f,
-           g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8))) break;
-        iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0(this_ptr,iVar4,iVar5,iVar3)
-        ;
+                                  (this_ptr,local_14,iVar1 + 1,iVar3),
+           uVar4 = unaff_EDI - iVar3 >> 0x1f,
+           g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar4) - uVar4))) break;
+        iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
+                          (this_ptr,grid_z,iVar1,iVar3);
         local_30 = local_30 + -1;
-        local_14 = iVar4;
+        local_14 = grid_z;
       } while (0 < local_30);
     }
     if ((local_30 == 0) &&
-       (iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                          (this_ptr,start_z,start_x,(this_ptr->voxel_coords).y), unaff_EDI == iVar5)
+       (iVar1 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
+                          (this_ptr,start_z,start_x,(this_ptr->voxel_coords).y), unaff_EDI == iVar1)
        ) {
       return 1;
     }
   }
   local_18 = start_height;
-  local_34 = (uVar2 ^ uVar7) - uVar7;
+  local_34 = (uVar2 ^ uVar3) - uVar3;
   iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                     (this_ptr,end_x,start_height,(this_ptr->dest_voxel_coords).y);
   if (0 < local_34) {
     do {
-      iVar3 = local_40 + end_x;
+      iVar1 = local_40 + end_x;
       unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                            (this_ptr,iVar3,start_height,iVar5);
-      uVar2 = unaff_EDI - iVar5 >> 0x1f;
-      if (((g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2)) ||
+                            (this_ptr,iVar1,start_height,iVar5);
+      uVar3 = unaff_EDI - iVar5 >> 0x1f;
+      if (((g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar3) - uVar3)) ||
           (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                                  (this_ptr,end_x,start_height + -1,iVar5),
-          uVar2 = unaff_EDI - iVar5 >> 0x1f,
-          g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2))) ||
+          uVar3 = unaff_EDI - iVar5 >> 0x1f,
+          g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar3) - uVar3))) ||
          (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                                 (this_ptr,end_x,start_height + 1,iVar5),
-         uVar2 = unaff_EDI - iVar5 >> 0x1f,
-         g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2))) break;
+         uVar3 = unaff_EDI - iVar5 >> 0x1f,
+         g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar3) - uVar3))) break;
       iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                        (this_ptr,iVar3,start_height,iVar5);
+                        (this_ptr,iVar1,start_height,iVar5);
       local_34 = local_34 + -1;
-      end_x = iVar3;
+      end_x = iVar1;
     } while (0 < local_34);
   }
   if (local_34 == 0) {
     local_38 = (uVar1 ^ uVar6) - uVar6;
     if (0 < local_38) {
       do {
-        iVar3 = local_18 + local_3c;
+        iVar1 = local_18 + local_3c;
         unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                              (this_ptr,end_x,iVar3,iVar5);
-        uVar1 = unaff_EDI - iVar5 >> 0x1f;
-        if (((g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1)) ||
+                              (this_ptr,end_x,iVar1,iVar5);
+        uVar3 = unaff_EDI - iVar5 >> 0x1f;
+        if (((g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar3) - uVar3)) ||
             (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                                    (this_ptr,end_x + -1,local_18,iVar5),
-            uVar1 = unaff_EDI - iVar5 >> 0x1f,
-            g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1))) ||
+            uVar3 = unaff_EDI - iVar5 >> 0x1f,
+            g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar3) - uVar3))) ||
            (unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                                   (this_ptr,end_x + 1,local_18,iVar5),
-           uVar1 = unaff_EDI - iVar5 >> 0x1f,
-           g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1))) break;
-        iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0(this_ptr,end_x,iVar3,iVar5)
+           uVar3 = unaff_EDI - iVar5 >> 0x1f,
+           g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar3) - uVar3))) break;
+        iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0(this_ptr,end_x,iVar1,iVar5)
         ;
         local_38 = local_38 + -1;
-        local_18 = iVar3;
+        local_18 = iVar1;
       } while (0 < local_38);
     }
     if ((local_38 == 0) &&
-       (iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                          (this_ptr,start_z,start_x,(this_ptr->voxel_coords).y), unaff_EDI == iVar5)
+       (iVar1 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
+                          (this_ptr,start_z,start_x,(this_ptr->voxel_coords).y), unaff_EDI == iVar1)
        ) {
       return 2;
     }

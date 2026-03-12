@@ -7,7 +7,7 @@
 ; CBatCreature *   Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   out_points_array
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; CVector3f        Stack[-0x14]:12  local_14
 ;
 ; Referenced Globals:
 ;   int INT_0082274c

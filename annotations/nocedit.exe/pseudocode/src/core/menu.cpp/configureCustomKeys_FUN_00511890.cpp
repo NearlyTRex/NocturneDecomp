@@ -9,21 +9,28 @@
 void __cdecl core_menu_cpp_configureCustomKeys_FUN_00511890(void)
 
 {
-  char cVar1;
-  EAimMode EVar2;
-  CGame *pCVar3;
+  char cVar2;
   int iVar4;
   char *pcVar5;
+  char *pcVar3;
+  int iVar5;
   int iVar6;
   char (*pacVar7) [256];
   EControlMode EVar8;
+  EControlMode EVar6;
   char *pcVar9;
   char *pcVar10;
   char *pcVar11;
   char (*pacVar12) [256];
+  char *pcVar7;
+  char (*pacVar8) [256];
   byte bVar13;
   char local_114 [256];
   int local_14;
+  CGame *pCVar3;
+  char cVar1;
+  EAimMode EVar2;
+  char (*pacVar9) [256];
   
   bVar13 = 0;
   pacVar7 = g_ControlsMenuTextBuffers;
@@ -41,146 +48,146 @@ void __cdecl core_menu_cpp_configureCustomKeys_FUN_00511890(void)
     core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
     core_moon_cpp_CMoon_update_FUN_00529d60(&g_CMoonInstance,g_CGamePtr->delta_time_float);
     core_moon_cpp_CMoon_render_FUN_00529ed0(&g_CMoonInstance);
-    EVar8 = g_CGamePtr->game_control;
-    if (EVar8 == CONTROL_MODE_KEYBOARD) {
+    EVar6 = g_CGamePtr->game_control;
+    if (EVar6 == CONTROL_MODE_KEYBOARD) {
 LAB_00511c13:
       g_CGamePtr->game_control = CONTROL_MODE_KEYBOARD;
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Control : Keyboard");
     }
     else {
-      if (EVar8 < CONTROL_MODE_GAMEPAD) {
-        pcVar5 = "Control : Keyboard/Mouse";
+      if (EVar6 < CONTROL_MODE_GAMEPAD) {
+        pcVar3 = "Control : Keyboard/Mouse";
       }
       else {
-        if (EVar8 != CONTROL_MODE_GAMEPAD) goto LAB_00511c13;
-        pcVar5 = "Control : Gamepad";
+        if (EVar6 != CONTROL_MODE_GAMEPAD) goto LAB_00511c13;
+        pcVar3 = "Control : Gamepad";
       }
-      pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar5);
+      pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar3);
     }
     _sprintf(g_ControlsMenuTextBuffers[0],pcVar5);
-    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Customize Keys");
-    _sprintf(g_ControlsMenuTextBuffers[1],pcVar5);
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Customize Keys");
+    _sprintf(g_ControlsMenuTextBuffers[1],pcVar3);
     if (g_CGamePtr->always_run == 0) {
-      pcVar5 = "Always run : OFF";
+      pcVar3 = "Always run : OFF";
     }
     else {
-      pcVar5 = "Always run : ON";
+      pcVar3 = "Always run : ON";
     }
-    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar5);
-    _sprintf(g_ControlsMenuTextBuffers[2],pcVar5);
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar3);
+    _sprintf(g_ControlsMenuTextBuffers[2],pcVar3);
     EVar2 = g_CGamePtr->aim_mode;
     if (EVar2 == AIM_MODE_AUTO) {
 LAB_005119ab:
       g_CGamePtr->aim_mode = AIM_MODE_AUTO;
-      pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Aiming : Auto");
+      pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Aiming : Auto");
     }
     else if (EVar2 < AIM_MODE_MANUAL) {
-      pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Aiming : Kindof auto");
+      pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Aiming : Kindof auto");
     }
     else {
       if (EVar2 != AIM_MODE_MANUAL) goto LAB_005119ab;
-      pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Aiming : Manual");
+      pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Aiming : Manual");
     }
-    _sprintf(g_ControlsMenuTextBuffers[3],pcVar5);
+    _sprintf(g_ControlsMenuTextBuffers[3],pcVar3);
     if (g_CGamePtr->auto_use_health == 0) {
-      pcVar5 = "Auto use health : Off";
+      pcVar3 = "Auto use health : Off";
     }
     else {
-      pcVar5 = "Auto use health : On";
+      pcVar3 = "Auto use health : On";
     }
-    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar5);
-    _sprintf(g_ControlsMenuTextBuffers[4],pcVar5);
-    pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("X-axis sensitivity : ");
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar3);
+    _sprintf(g_ControlsMenuTextBuffers[4],pcVar3);
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("X-axis sensitivity : ");
     pcVar11 = g_ControlsMenuTextBuffers[5];
     do {
-      cVar1 = *pcVar5;
-      *pcVar11 = cVar1;
+      cVar1 = *pcVar3;
+      (*(char (*) [256])pcVar11)[0] = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar5[1];
-      pcVar5 = pcVar5 + 2;
-      pcVar11[1] = cVar1;
-      pcVar11 = pcVar11 + 2;
-    } while (cVar1 != '\0');
+      cVar2 = pcVar3[1];
+      pcVar3 = pcVar3 + 2;
+      (*(char (*) [256])pcVar11)[1] = cVar2;
+      pcVar11 = *(char (*) [256])pcVar11 + 2;
+    } while (cVar2 != '\0');
     _sprintf
               (local_114,"%5.2f",(double)g_CGamePtr->x_mouse_sensitivity * 1.52587890625e-05
               );
-    iVar4 = -1;
-    pacVar7 = g_ControlsMenuTextBuffers + 5;
+    iVar5 = -1;
+    pacVar12 = g_ControlsMenuTextBuffers + 5;
     do {
-      pacVar12 = pacVar7;
-      if (iVar4 == 0) break;
-      iVar4 = iVar4 + -1;
-      pacVar12 = (char (*) [256])((int)pacVar7 + (uint)bVar13 * -2 + 1);
-      pcVar5 = *pacVar7;
-      pacVar7 = pacVar12;
-    } while (*pcVar5 != '\0');
-    pcVar5 = pacVar12[-1] + 0xff;
+      pacVar12 = pacVar12;
+      if (iVar5 == 0) break;
+      iVar5 = iVar5 + -1;
+      pacVar12 = (char (*) [256])((int)pacVar12 + (uint)bVar13 * -2 + 1);
+      pcVar3 = *pacVar12;
+      pacVar12 = pacVar12;
+    } while (*pcVar3 != '\0');
+    pcVar3 = pacVar12[-1] + 0xff;
     do {
-      cVar1 = *pcVar9;
-      *pcVar5 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar9[1];
+      cVar2 = *pcVar9;
+      *pcVar3 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar9[1];
       pcVar9 = pcVar9 + 2;
-      pcVar5[1] = cVar1;
-      pcVar5 = pcVar5 + 2;
-    } while (cVar1 != '\0');
-    pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Y-axis sensitivity : ");
-    pcVar5 = g_ControlsMenuTextBuffers[6];
+      pcVar3[1] = cVar2;
+      pcVar3 = pcVar3 + 2;
+    } while (cVar2 != '\0');
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Y-axis sensitivity : ");
+    pcVar7 = g_ControlsMenuTextBuffers[6];
     do {
-      cVar1 = *pcVar9;
-      *pcVar5 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
-      pcVar5[1] = cVar1;
-      pcVar5 = pcVar5 + 2;
-    } while (cVar1 != '\0');
-    iVar4 = 7;
+      cVar2 = *pcVar3;
+      *pcVar7 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar3[1];
+      pcVar3 = pcVar3 + 2;
+      pcVar7[1] = cVar2;
+      pcVar7 = pcVar7 + 2;
+    } while (cVar2 != '\0');
+    iVar5 = 7;
     _sprintf
               (local_114,"%5.2f",(double)g_CGamePtr->y_mouse_sensitivity * 1.52587890625e-05
               );
     iVar6 = -1;
-    pacVar7 = g_ControlsMenuTextBuffers + 6;
+    pacVar9 = g_ControlsMenuTextBuffers + 6;
     do {
-      pacVar12 = pacVar7;
+      pacVar8 = pacVar9;
       if (iVar6 == 0) break;
       iVar6 = iVar6 + -1;
-      pacVar12 = (char (*) [256])((int)pacVar7 + (uint)bVar13 * -2 + 1);
-      pcVar9 = *pacVar7;
-      pacVar7 = pacVar12;
-    } while (*pcVar9 != '\0');
-    pcVar9 = pacVar12[-1] + 0xff;
+      pacVar8 = (char (*) [256])((int)pacVar9 + (uint)bVar13 * -2 + 1);
+      pcVar3 = *pacVar9;
+      pacVar9 = pacVar8;
+    } while (*pcVar3 != '\0');
+    pcVar3 = pacVar8[-1] + 0xff;
     do {
-      cVar1 = *pcVar10;
-      *pcVar9 = cVar1;
-      if (cVar1 == '\0') break;
-      cVar1 = pcVar10[1];
+      cVar2 = *pcVar10;
+      *pcVar3 = cVar2;
+      if (cVar2 == '\0') break;
+      cVar2 = pcVar10[1];
       pcVar10 = pcVar10 + 2;
-      pcVar9[1] = cVar1;
-      pcVar9 = pcVar9 + 2;
-    } while (cVar1 != '\0');
+      pcVar3[1] = cVar2;
+      pcVar3 = pcVar3 + 2;
+    } while (cVar2 != '\0');
     if (g_CGamePtr->game_control == CONTROL_MODE_MOUSE) {
       if (g_CGamePtr->invert_mouse_y_axis == 0) {
-        pcVar9 = "Invert Y Axis : OFF";
+        pcVar3 = "Invert Y Axis : OFF";
       }
       else {
-        pcVar9 = "Invert Y Axis : ON";
+        pcVar3 = "Invert Y Axis : ON";
       }
 LAB_00511b4c:
-      pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar9);
-      _sprintf(g_ControlsMenuTextBuffers[7],pcVar9);
-      iVar4 = 8;
+      pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar3);
+      _sprintf(g_ControlsMenuTextBuffers[7],pcVar3);
+      iVar5 = 8;
     }
     else if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
-      pcVar9 = "Calibrate";
+      pcVar3 = "Calibrate";
       goto LAB_00511b4c;
     }
-    pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Control Options");
-    iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
-                      (g_ControlOptionsMenuPointers,iVar4,&local_14,0xfa,(int)pcVar9);
+    pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Control Options");
+    iVar5 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
+                      (g_ControlOptionsMenuPointers,iVar5,&local_14,0xfa,(int)pcVar3);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     pCVar3 = g_CGamePtr;
-    switch(iVar4) {
+    switch(iVar5) {
     case 0:
       if (g_MenuLeftRightPressed == 1) {
         EVar8 = g_CGamePtr->game_control - CONTROL_MODE_MOUSE;
@@ -190,9 +197,9 @@ LAB_00511b4c:
         }
       }
       else {
-        EVar8 = g_CGamePtr->game_control + CONTROL_MODE_MOUSE;
-        g_CGamePtr->game_control = EVar8;
-        if (2 < (int)EVar8) {
+        EVar6 = g_CGamePtr->game_control + CONTROL_MODE_MOUSE;
+        g_CGamePtr->game_control = EVar6;
+        if (2 < (int)EVar6) {
           pCVar3->game_control = CONTROL_MODE_KEYBOARD;
         }
       }
@@ -215,14 +222,14 @@ LAB_00511b4c:
       g_CGamePtr->auto_use_health = (uint)(g_CGamePtr->auto_use_health == 0);
       break;
     case 5:
-      pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+      pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                          ("Adjust X-Axis sensitivity");
-      core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(&g_CGamePtr->x_mouse_sensitivity,pcVar9);
+      core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(&g_CGamePtr->x_mouse_sensitivity,pcVar3);
       break;
     case 6:
-      pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+      pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                          ("Adjust Y-Axis sensitivity");
-      core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(&g_CGamePtr->y_mouse_sensitivity,pcVar9);
+      core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(&g_CGamePtr->y_mouse_sensitivity,pcVar3);
       break;
     case 7:
       if (g_CGamePtr->game_control == CONTROL_MODE_MOUSE) {
@@ -232,8 +239,8 @@ LAB_00511b4c:
         core_menu_cpp_calibrateGamepad_FUN_005104d0();
       }
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
-    if (iVar4 != 0) {
+    iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
+    if (iVar5 != 0) {
       if (g_CGamePtr->game_control != CONTROL_MODE_GAMEPAD) {
         return;
       }
@@ -244,8 +251,8 @@ LAB_00511b4c:
       local_114[5] = '\x1d';
       local_114[6] = 'Q';
       local_114[7] = '\0';
-      iVar4 = core_menu_cpp_calibrateGamepad_FUN_005104d0();
-      if (iVar4 != 0) {
+      iVar5 = core_menu_cpp_calibrateGamepad_FUN_005104d0();
+      if (iVar5 != 0) {
         return;
       }
     }

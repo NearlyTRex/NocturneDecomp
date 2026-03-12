@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 296,
-    "complexity_score": 267,
+    "complexity_score": 259,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 25,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 107,
+    "pseudocode_lines": 99,
     "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function"
     ],
-    "total_lines": 403
+    "total_lines": 395
   },
   "cross_references": [
     {
@@ -302,141 +302,106 @@
         "is_param": false,
         "name": "local_104",
         "offset": -260,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_100",
-        "offset": -256,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_fc",
-        "offset": -252,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_f0",
         "offset": -240,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_ec",
-        "offset": -236,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_e8",
-        "offset": -232,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_e4",
-        "offset": -228,
-        "size": 4,
-        "type": "undefined4"
+        "size": 80,
+        "type": "SClipPlane[5]"
       },
       {
         "is_param": false,
         "name": "local_a0",
         "offset": -160,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "char[80]"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -450,14 +415,14 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       }
     ]
   },
@@ -472,15 +437,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_104.x = (int)ROUND(ROUND(g_LoadedVertices[local_4c].vertex.x * 256.0f",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 34,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_104.x = (int)ROUND(ROUND(g_LoadedVertices[local_4c].vertex.x * 256.0f",
@@ -491,12 +448,12 @@
       "line": 34,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_104.y = (int)ROUND(ROUND(g_LoadedVertices[local_4c].vertex.y * 256.0f",
+      "text": "local_104.x = (int)ROUND(ROUND(g_LoadedVertices[local_4c].vertex.x * 256.0f",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 36,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_104.y = (int)ROUND(ROUND(g_LoadedVertices[local_4c].vertex.y * 256.0f",
@@ -507,12 +464,12 @@
       "line": 36,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_104.z = (int)ROUND(ROUND(g_LoadedVertices[local_4c].vertex.z * 256.0f",
+      "text": "local_104.y = (int)ROUND(ROUND(g_LoadedVertices[local_4c].vertex.y * 256.0f",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 38,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_104.z = (int)ROUND(ROUND(g_LoadedVertices[local_4c].vertex.z * 256.0f",
@@ -520,7 +477,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 38,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_104.z = (int)ROUND(ROUND(g_LoadedVertices[local_4c].vertex.z * 256.0f",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 83,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[local_4c].normal.x * 65535.0f));",
@@ -528,7 +493,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 86,
+      "line": 83,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[local_4c].normal.x * 65535.0f));",
@@ -536,7 +501,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 85,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[local_4c].normal.y * 65535.0f));",
@@ -544,7 +509,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 88,
+      "line": 85,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[local_4c].normal.y * 65535.0f));",
@@ -552,7 +517,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 87,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[local_4c].normal.z * 65535.0f));",
@@ -560,7 +525,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 87,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[local_4c].normal.z * 65535.0f));",
@@ -568,7 +533,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 89,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[local_4c].plane_distance * 65535.0f",
@@ -576,7 +541,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 92,
+      "line": 89,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(g_ModelPolygonData[local_4c].plane_distance * 65535.0f",

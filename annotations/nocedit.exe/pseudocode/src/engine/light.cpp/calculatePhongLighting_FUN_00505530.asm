@@ -8,9 +8,10 @@
 ; int              Stack[0x8]:4   world_y
 ; int              Stack[0xc]:4   world_z
 ; Local Variables:
-; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int[1017]        Stack[-0x100c]:4068  aiStackY_100c
+; CVector3i        Stack[-0x24]:12  local_24
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   engine_light.cpp_calculateAndStoreVertexLight_FUN_00505850 at 00505860

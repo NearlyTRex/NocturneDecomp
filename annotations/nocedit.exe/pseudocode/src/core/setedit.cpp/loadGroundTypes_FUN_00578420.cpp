@@ -9,17 +9,20 @@
 void __cdecl core_setedit_cpp_loadGroundTypes_FUN_00578420(char *filename)
 
 {
-  EGroundType EVar1;
   _FILE *stream;
   char *pcVar2;
   int iVar3;
+  int iVar1;
+  char *pcVar3;
   EGroundType type;
   char *pcVar4;
+  char *pcVar5;
   int iVar5;
   char local_19c [200];
   char local_d4 [100];
   char local_70 [100];
   EGroundType local_c;
+  EGroundType EVar1;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Importing texture ground type list from %s...",filename);
@@ -28,54 +31,55 @@ void __cdecl core_setedit_cpp_loadGroundTypes_FUN_00578420(char *filename)
   if (stream != (_FILE *)0x0) {
     iVar5 = 0;
     while (pcVar2 = _fgets(local_19c,200,stream), pcVar2 != (char *)0x0) {
-      pcVar2 = local_19c;
+      pcVar5 = local_19c;
       do {
-        pcVar4 = pcVar2;
-        if (*pcVar2 == '\n') goto LAB_005784ac;
-        if (*pcVar2 == '\0') break;
-        pcVar4 = pcVar2 + 1;
+        pcVar4 = pcVar5;
+        if (*pcVar5 == '\n') goto LAB_005784ac;
+        if (*pcVar5 == '\0') break;
+        pcVar4 = pcVar5 + 1;
         if (*pcVar4 == '\n') goto LAB_005784ac;
-        pcVar2 = pcVar2 + 2;
+        pcVar5 = pcVar5 + 2;
       } while (*pcVar4 != '\0');
       pcVar4 = (char *)0x0;
 LAB_005784ac:
       iVar5 = iVar5 + 1;
       if (pcVar4 != (char *)0x0) {
-        pcVar2 = local_19c;
+        pcVar5 = local_19c;
         do {
-          pcVar4 = pcVar2;
-          if (*pcVar2 == '\n') goto LAB_005784e7;
-          if (*pcVar2 == '\0') break;
-          pcVar4 = pcVar2 + 1;
-          if (*pcVar4 == '\n') goto LAB_005784e7;
-          pcVar2 = pcVar2 + 2;
-        } while (*pcVar4 != '\0');
-        pcVar4 = (char *)0x0;
+          pcVar3 = pcVar5;
+          if (*pcVar5 == '\n') goto LAB_005784e7;
+          if (*pcVar5 == '\0') break;
+          pcVar3 = pcVar5 + 1;
+          if (*pcVar3 == '\n') goto LAB_005784e7;
+          pcVar5 = pcVar5 + 2;
+        } while (*pcVar3 != '\0');
+        pcVar3 = (char *)0x0;
 LAB_005784e7:
-        *pcVar4 = '\0';
+        *pcVar3 = '\0';
       }
-      pcVar2 = local_19c;
-      while ((g_CharacterClassificationTable[(byte)(*pcVar2 + 1)] & 2) != 0) {
-        pcVar2 = pcVar2 + 1;
+      pcVar5 = local_19c;
+      while ((g_CharacterClassificationTable[(byte)(*pcVar5 + 1)] & 2) != 0) {
+        pcVar5 = pcVar5 + 1;
       }
-      if (*pcVar2 != '\0') {
+      if (*pcVar5 != '\0') {
         local_c = ~GROUND_TYPE_DEFAULT;
-        iVar3 = sscanf(pcVar2,"%[^,], %s",local_70,local_d4);
+        iVar3 = sscanf(pcVar5,"%[^,], %s",local_70,local_d4);
         EVar1 = local_c;
         if ((iVar3 == 2) &&
-           (iVar3 = sscanf(local_d4,"%d",&local_c), EVar1 = local_c
-           , iVar3 != 1)) {
+           (iVar1 = sscanf(local_d4,"%d",&local_c), EVar1 = local_c
+           , iVar1 != 1)) {
           type = GROUND_TYPE_DEFAULT;
           while( true ) {
-            pcVar2 = local_d4;
-            pcVar4 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(type);
-            iVar3 = _stricmp(pcVar4,pcVar2);
+            pcVar5 = local_d4;
+            pcVar3 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(type);
+            iVar1 = _stricmp(pcVar3,pcVar5);
             EVar1 = type;
-            if (iVar3 == 0) break;
-            pcVar2 = local_d4;
-            pcVar4 = core_ground_cpp_getGroundTypeName_FUN_004eed80(type);
-            iVar3 = _stricmp(pcVar4,pcVar2);
-            if ((iVar3 == 0) || (type = type + GROUND_TYPE_NONE, EVar1 = local_c, 0xd < (int)type))
+            if (iVar1 == 0) break;
+            pcVar5 = local_d4;
+            pcVar3 = core_ground_cpp_getGroundTypeName_FUN_004eed80(type);
+            iVar1 = _stricmp(pcVar3,pcVar5);
+            EVar1 = type;
+            if ((iVar1 == 0) || (type = type + GROUND_TYPE_NONE, EVar1 = local_c, 0xd < (int)type))
             break;
           }
         }

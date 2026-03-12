@@ -8,7 +8,7 @@
 ; ushort           Stack[0x8]:2   segment
 ; int              Stack[0xc]:4   max_chars
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; undefined1[8]    Stack[-0x14]:8  local_14
 ;
 ; XREF[1]:
 ;   crt_stdio.c_ConvertFormatSpec_FUN_00603238 at 00603581

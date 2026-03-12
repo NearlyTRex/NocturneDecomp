@@ -7,12 +7,19 @@
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; CActorProperty * Stack[0x8]:4   property
 ; Local Variables:
-; undefined4       Stack[-0x6ac]:4  local_6ac
-; undefined1       Stack[-0x110]:1  local_110
-; undefined1       Stack[-0x10f]:1  local_10f
-; undefined1       Stack[-0x38]:1  local_38
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x18]:4  local_18
+; CActorPropertyList Stack[-0x2bb0]:9476  CStack_2bb0
+; CPickList        Stack[-0x6ac]:936  local_6ac
+; char[300]        Stack[-0x304]:300  acStack_304
+; char[200]        Stack[-0x1d8]:200  acStack_1d8
+; char[200]        Stack[-0x110]:200  local_110
+; CStrList         Stack[-0x48]:16  CStack_48
+; CStrList         Stack[-0x38]:16  local_38
+; uint             Stack[-0x28]:4  local_28
+; char *           Stack[-0x24]:4  pcStack_24
+; uint             Stack[-0x20]:4  uStack_20
+; int              Stack[-0x1c]:4  iStack_1c
+; CDemonActor *    Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  iStack_14
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_pasteActorProperty_FUN_0053af50 at 0053afc4

@@ -6,7 +6,9 @@
 ; Parameters:
 ; CPendulum *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x34]:1  local_34
+; CBoundingBox3D   Stack[-0x4c]:24  CStack_4c
+; CBoundingBox3D   Stack[-0x34]:24  local_34
+; float[3]         Stack[-0x10]:12  afStack_10
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408bb0

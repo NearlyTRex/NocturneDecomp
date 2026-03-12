@@ -3,62 +3,62 @@
     "errors": [
       {
         "category": "format_error",
-        "column": 39,
-        "line": 69,
+        "column": 38,
+        "line": 74,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 48,
-        "line": 69,
+        "column": 47,
+        "line": 74,
+        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
+      },
+      {
+        "category": "format_error",
+        "column": 56,
+        "line": 74,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 57,
-        "line": 69,
+        "line": 93,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 61,
-        "line": 88,
+        "column": 67,
+        "line": 93,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 71,
-        "line": 88,
-        "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 81,
-        "line": 88,
+        "column": 77,
+        "line": 93,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 49,
-        "line": 89,
+        "line": 94,
         "message": "format specifies type 'char *' but the argument has type 'SModelPartName *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 47,
-        "line": 209,
+        "column": 43,
+        "line": 214,
         "message": "format specifies type 'float *' but the argument has type 'SVertexData *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 28,
-        "line": 210,
+        "line": 215,
         "message": "format specifies type 'float *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 56,
-        "line": 210,
+        "line": 215,
         "message": "format specifies type 'float *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       }
     ],
@@ -67,15 +67,15 @@
   },
   "complexity": {
     "assembly_lines": 656,
-    "complexity_score": 232,
+    "complexity_score": 237,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 65,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 232,
+    "pseudocode_lines": 237,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 888
+    "total_lines": 893
   },
   "cross_references": [
     {
@@ -613,56 +613,42 @@
         "name": "local_9e4",
         "offset": -2532,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_9e0",
         "offset": -2528,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_9df",
-        "offset": -2527,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_9dd",
-        "offset": -2525,
-        "size": 1,
-        "type": "undefined1"
+        "size": 260,
+        "type": "char[260]"
       },
       {
         "is_param": false,
         "name": "local_8dc",
         "offset": -2268,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "undefined1[4]"
       },
       {
         "is_param": false,
         "name": "local_8d8",
         "offset": -2264,
-        "size": 1,
-        "type": "undefined1"
+        "size": 2000,
+        "type": "int[500]"
       },
       {
         "is_param": false,
         "name": "local_108",
         "offset": -264,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
@@ -676,70 +662,56 @@
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "_FILE *"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "int[3]"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "undefined1[4]"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "undefined1[4]"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 1,
-        "type": "undefined1"
+        "size": 4,
+        "type": "undefined1[4]"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SShapeEditorPolygon *"
       },
       {
         "is_param": true,

@@ -25,7 +25,6 @@ void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_00547c00(CPathMap *th
   do {
     iVar3 = 0;
     iVar1 = 0;
-    local_1c = local_14;
     iVar4 = local_18;
     do {
       _sprintf
@@ -41,7 +40,7 @@ void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_00547c00(CPathMap *th
       iVar4 = iVar4 + 1;
       iVar1 = iVar1 + 1;
       iVar3 = iVar3 + 0xe;
-      engine_2d_c_drawText_FUN_00401fd0(local_11c,x,local_1c);
+      engine_2d_c_drawText_FUN_00401fd0(local_11c,x,local_14);
     } while (iVar1 < 100);
     iVar2 = iVar2 + 1;
     local_14 = local_14 + -0xb;

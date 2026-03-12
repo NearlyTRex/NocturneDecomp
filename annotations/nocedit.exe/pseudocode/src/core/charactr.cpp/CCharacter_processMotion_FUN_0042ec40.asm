@@ -7,10 +7,10 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   bone_index
 ; Local Variables:
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined1       Stack[-0x30]:1  local_30
-; undefined1       Stack[-0x24]:1  local_24
-; undefined1       Stack[-0x18]:1  local_18
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  local_30
+; CVector3f        Stack[-0x24]:12  local_24
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; XREF[31]:
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00415470 at 00415693

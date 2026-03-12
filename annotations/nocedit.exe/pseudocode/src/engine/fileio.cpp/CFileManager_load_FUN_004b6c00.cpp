@@ -9,16 +9,19 @@
 void __cdecl engine_fileio_cpp_CFileManager_load_FUN_004b6c00(CFileManager *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
+  byte bVar3;
   _FILE *file;
   int iVar2;
   int iVar3;
+  int iVar4;
   uint uVar4;
   uint uVar5;
   char (*str2) [128];
   char *pcVar6;
   char (*pacVar7) [128];
   byte *pbVar8;
+  byte *pbVar5;
   char *str1;
   char (*pacVar9) [128];
   byte bVar10;
@@ -28,6 +31,7 @@ void __cdecl engine_fileio_cpp_CFileManager_load_FUN_004b6c00(CFileManager *this
   int local_1c;
   char (*local_18) [128];
   int local_14;
+  char cVar1;
   
   bVar10 = 0;
   this_ptr->tracked_file_count = 0;
@@ -45,12 +49,12 @@ LAB_004b6c3c:
     uVar5 = 0;
     do {
       uVar4 = 0xffffffff;
-      pbVar8 = local_224;
+      pbVar5 = local_224;
       do {
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
-        cVar1 = *pbVar8;
-        pbVar8 = (byte *)((char *)pbVar8 + (uint)bVar10 * -2 + 1);
+        cVar1 = *pbVar5;
+        pbVar5 = (byte *)((char *)pbVar5 + (uint)bVar10 * -2 + 1);
       } while (cVar1 != '\0');
       if (~uVar4 - 1 <= uVar5) goto LAB_004b6ca0;
       iVar3 = toupper((uint)local_224[uVar5]);
@@ -65,7 +69,6 @@ LAB_004b6cb3:
   if (iVar2 == -1) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0x914);
     local_20 = 0;
-    local_18 = this_ptr->file_entries;
     local_24 = 0;
     do {
       if (this_ptr->tracked_file_count + -1 <= local_20) {
@@ -73,45 +76,44 @@ LAB_004b6cb3:
       }
       local_14 = local_20 + 1;
       if (local_14 < this_ptr->tracked_file_count) {
-        local_1c = local_24;
-        str2 = local_18 + local_14;
+        str2 = this_ptr->file_entries + local_20 + 1;
         do {
-          str1 = *local_18 + local_1c;
-          iVar2 = _stricmp(str1,*str2);
+          str1 = this_ptr->file_entries[0] + local_24;
+          iVar4 = _stricmp(str1,*str2);
           pcVar6 = str1;
-          pbVar8 = local_224;
-          if (0 < iVar2) {
+          pbVar5 = local_224;
+          if (0 < iVar4) {
             do {
-              cVar1 = *pcVar6;
-              *pbVar8 = cVar1;
+              cVar2 = *pcVar6;
+              *pbVar5 = cVar2;
               pacVar7 = str2;
-              if (cVar1 == '\0') break;
-              cVar1 = pcVar6[1];
-              ((char *)pbVar8)[1] = cVar1;
+              if (cVar2 == '\0') break;
+              cVar2 = pcVar6[1];
+              ((char *)pbVar5)[1] = cVar2;
               pcVar6 = pcVar6 + 2;
-              pbVar8 = (byte *)((char *)pbVar8 + 2);
-            } while (cVar1 != '\0');
+              pbVar5 = (byte *)((char *)pbVar5 + 2);
+            } while (cVar2 != '\0');
             do {
-              cVar1 = (*pacVar7)[0];
-              *str1 = cVar1;
+              cVar2 = (*pacVar7)[0];
+              *str1 = cVar2;
               pbVar8 = local_224;
               pacVar9 = str2;
-              if (cVar1 == '\0') break;
-              cVar1 = (*pacVar7)[1];
-              str1[1] = cVar1;
+              if (cVar2 == '\0') break;
+              cVar2 = (*pacVar7)[1];
+              pacVar7 = (char (*) [128])(*pacVar7 + 2);
+              str1[1] = cVar2;
               str1 = str1 + 2;
               pbVar8 = local_224;
-              pacVar7 = (char (*) [128])(*pacVar7 + 2);
-            } while (cVar1 != '\0');
+            } while (cVar2 != '\0');
             do {
-              cVar1 = *pbVar8;
-              (*pacVar9)[0] = cVar1;
-              if (cVar1 == '\0') break;
-              cVar1 = ((char *)pbVar8)[1];
-              (*pacVar9)[1] = cVar1;
-              pbVar8 = (byte *)((char *)pbVar8 + 2);
+              bVar3 = *pbVar8;
+              (*pacVar9)[0] = bVar3;
+              if (bVar3 == 0) break;
+              bVar3 = pbVar8[1];
+              (*pacVar9)[1] = bVar3;
               pacVar9 = (char (*) [128])(*pacVar9 + 2);
-            } while (cVar1 != '\0');
+              pbVar8 = pbVar8 + 2;
+            } while (bVar3 != 0);
           }
           local_14 = local_14 + 1;
           str2 = str2 + 1;

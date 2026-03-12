@@ -9,7 +9,14 @@
 ; CVector3f *      Stack[0xc]:4   ray_direction
 ; CVector3f *      Stack[0x10]:4   out_normal
 ; Local Variables:
-; undefined        Stack[-0x50]:1  local_50
+; float            Stack[-0x8c]:4  fStack_8c
+; CDemonTriangle   Stack[-0x88]:56  CStack_88
+; CBoundingBox3D   Stack[-0x50]:24  local_50
+; CVector3f        Stack[-0x38]:12  CStack_38
+; CVector3f        Stack[-0x2c]:12  CStack_2c
+; float            Stack[-0x20]:4  fStack_20
+; int              Stack[-0x1c]:4  iStack_1c
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940

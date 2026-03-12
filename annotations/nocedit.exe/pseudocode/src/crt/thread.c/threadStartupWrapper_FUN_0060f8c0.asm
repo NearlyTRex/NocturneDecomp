@@ -6,8 +6,10 @@
 ; Parameters:
 ; ThreadStartupInfo * Stack[0x4]:4   info
 ; Local Variables:
-; undefined        Stack[-0x28]:1  local_28
-; undefined4       Stack[-0x20]:4  local_20
+; undefined4       Stack[-0x38]:4  uStackY_38
+; int[2]           Stack[-0x34]:8  aiStackY_34
+; ExceptionFrame   Stack[-0x28]:8  local_28
+; undefined *      Stack[-0x20]:4  local_20
 ;
 ; XREF[1]:
 ;   crt_thread.c_create_thread_with_sync_FUN_0060f960 at 0060f9fa
@@ -23,7 +25,6 @@
 ;   crt_exception.c_installExceptionHandler_FUN_0060aba8
 ;   crt_memory.c_memset_FUN_005fde40
 ;   crt_sync.c_CriticalSectionStub_FUN_00602458
-;   crt_thread.c_GetTLS_FUN_0060242c
 ;   crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8
 ;   crt_unknown.c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878
 ;   SetEvent

@@ -9,13 +9,15 @@
 void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
 
 {
-  float fVar1;
-  float fVar2;
+  float fVar3;
   int iVar3;
+  int iVar6;
   int iVar4;
   int iVar5;
   CMatrix3x3f *pCVar6;
   float *pfVar7;
+  CMatrix3x3f *pCVar7;
+  float *pfVar9;
   float *pfVar8;
   byte bVar9;
   int aiStackY_10cc [965];
@@ -53,6 +55,8 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
   int local_1c;
   int local_18;
   float local_14;
+  float fVar2;
+  float fVar1;
   
   bVar9 = 0;
   if (g_CGamePtr->block_auto_save == 0) {
@@ -64,21 +68,20 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
       local_c8 = g_CDemonCameraInstance.base.position.f.y;
       local_c4 = g_CDemonCameraInstance.base.position.f.z;
     }
-    local_68 = local_c8 - g_SoundListenerPrev.y;
-    local_6c = local_cc - g_SoundListenerPrev.x;
-    local_64 = local_c4 - g_SoundListenerPrev.z;
-    if (SQRT(local_64 * local_64 + local_6c * local_6c + local_68 * local_68) <
+    if (SQRT((local_c4 - g_SoundListenerPrev.z) * (local_c4 - g_SoundListenerPrev.z) +
+             (local_cc - g_SoundListenerPrev.x) * (local_cc - g_SoundListenerPrev.x) +
+             (local_c8 - g_SoundListenerPrev.y) * (local_c8 - g_SoundListenerPrev.y)) <
         (float)0.0001) {
       return;
     }
     pCVar6 = &g_CDemonCameraInstance.base.rotation_matrix;
-    pfVar8 = local_10c;
+    pfVar9 = local_10c;
     for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *pfVar8 = pCVar6->m[0].x;
+      *pfVar9 = pCVar6->m[0].x;
       pCVar6 = (CMatrix3x3f *)&pCVar6->m[0].y;
-      pfVar8 = pfVar8 + 1;
+      pfVar9 = pfVar9 + 1;
     }
-    iVar3 = 10;
+    iVar6 = 10;
     pfVar7 = local_10c;
     pfVar8 = (float *)&local_15c;
   }
@@ -91,18 +94,18 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
       local_c8 = g_CDemonLightInstance.base.base.position.f.y;
       local_c4 = g_CDemonLightInstance.base.base.position.f.z;
     }
-    pCVar6 = &g_CDemonLightInstance.base.base.rotation_matrix;
-    pfVar8 = local_134;
-    for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *pfVar8 = pCVar6->m[0].x;
-      pCVar6 = (CMatrix3x3f *)&pCVar6->m[0].y;
-      pfVar8 = pfVar8 + 1;
+    pCVar7 = &g_CDemonLightInstance.base.base.rotation_matrix;
+    pfVar9 = local_134;
+    for (iVar6 = 10; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *pfVar9 = pCVar7->m[0].x;
+      pCVar7 = (CMatrix3x3f *)&pCVar7->m[0].y;
+      pfVar9 = pfVar9 + 1;
     }
-    iVar3 = 10;
+    iVar6 = 10;
     pfVar8 = (float *)&local_15c;
     pfVar7 = local_134;
   }
-  for (; iVar3 != 0; iVar3 = iVar3 + -1) {
+  for (; iVar6 != 0; iVar6 = iVar6 + -1) {
     *pfVar8 = *pfVar7;
     pfVar7 = pfVar7 + 1;
     pfVar8 = pfVar8 + 1;
@@ -127,21 +130,20 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
              (double)local_78.z);
   CVector3f_03f6af7c.x = 0.0;
   if (g_CGamePtr->block_auto_save == 0) {
-    iVar3 = _strnicmp
+    iVar6 = _strnicmp
                       (g_CDemonSetPtr->geometry_filename,"castle",6);
-    if (iVar3 == 0) {
+    if (iVar6 == 0) {
       local_1c = 1;
       do {
-        iVar3 = 1;
-        local_18 = local_1c;
+        iVar6 = 1;
         do {
-          iVar4 = g_CDemonCameraInstance.framebuffer_width * iVar3 >> 0x1f;
-          iVar5 = g_CDemonCameraInstance.framebuffer_height * local_18 >> 0x1f;
+          iVar4 = g_CDemonCameraInstance.framebuffer_width * iVar6 >> 0x1f;
+          iVar5 = g_CDemonCameraInstance.framebuffer_height * local_1c >> 0x1f;
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                     (&g_CDemonCameraInstance,
-                     (int)((g_CDemonCameraInstance.framebuffer_width * iVar3 + iVar4 * -0x20) -
+                     (int)((g_CDemonCameraInstance.framebuffer_width * iVar6 + iVar4 * -0x20) -
                           (uint)(iVar4 << 4 < 0)) >> 5,
-                     (int)((g_CDemonCameraInstance.framebuffer_height * local_18 + iVar5 * -0x20) -
+                     (int)((g_CDemonCameraInstance.framebuffer_height * local_1c + iVar5 * -0x20) -
                           (uint)(iVar5 << 4 < 0)) >> 5,&local_3c);
           local_e4.x = local_3c.x;
           *(uint *)((int)&local_e4 + (uint)bVar9 * -8 + 4) =
@@ -162,7 +164,6 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
                  *(int *)((int)&local_54 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);
             fVar2 = (float)0.00390625;
             local_84.x = (float)local_90 * fVar2;
-            local_14 = (float)local_8c[1];
             local_84.z = (float)local_8c[1] * fVar2;
             local_98 = (float)local_8c[0] * fVar2 - local_c8;
             local_9c = local_84.x - local_cc;
@@ -172,11 +173,11 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
               local_160 = (fVar1 + (float)-50) * (float)0.02 + 0.0;
             }
             local_84.y = (float)local_8c[0] * fVar2 + 1.0;
-            local_14 = core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340
-                                 (g_CDemonSetPtr,&local_84);
-            if ((float)60 < local_14 - local_84.y) {
-              local_160 = ((local_14 - local_84.y) + (float)-60) *
-                          (float)0.016666666666666701 + local_160;
+            fVar3 = core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340
+                              (g_CDemonSetPtr,&local_84);
+            if ((float)60 < fVar3 - local_84.y) {
+              local_160 = ((fVar3 - local_84.y) + (float)-60) * (float)0.016666666666666701 +
+                          local_160;
             }
           }
           else {
@@ -190,8 +191,8 @@ void __cdecl core_sound_cpp_updateListeners_FUN_005b1870(void)
             local_160 = 1.0;
           }
           CVector3f_03f6af7c.x = local_160 * 0.015625f + CVector3f_03f6af7c.x;
-          iVar3 = iVar3 + 2;
-        } while (iVar3 != 0x21);
+          iVar6 = iVar6 + 2;
+        } while (iVar6 != 0x21);
         local_1c = local_1c + 2;
       } while (local_1c != 0x21);
     }

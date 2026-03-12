@@ -9,10 +9,12 @@
 int __cdecl WideStringToMultiByteLen(wchar_t *wide_string_offset,ushort segment,int max_chars)
 
 {
-  wchar_t wVar1;
+  wchar_t wVar2;
   int iVar2;
+  int iVar4;
   int iVar3;
   byte local_14 [8];
+  wchar_t wVar1;
   
   iVar3 = 0;
   if (max_chars == -1) {
@@ -26,12 +28,12 @@ int __cdecl WideStringToMultiByteLen(wchar_t *wide_string_offset,ushort segment,
     }
   }
   else {
-    while ((wVar1 = *wide_string_offset, wVar1 != L'\0' && (iVar3 <= max_chars))) {
+    while ((wVar2 = *wide_string_offset, wVar2 != L'\0' && (iVar3 <= max_chars))) {
       wide_string_offset = wide_string_offset + 1;
-      iVar2 = WideCharToSingleByte
-                        ((wchar_t)local_14,(char *)(uint)(ushort)wVar1);
-      if (iVar2 != -1) {
-        iVar3 = iVar3 + iVar2;
+      iVar4 = WideCharToSingleByte
+                        ((wchar_t)local_14,(char *)(uint)(ushort)wVar2);
+      if (iVar4 != -1) {
+        iVar3 = iVar3 + iVar4;
       }
     }
     if (max_chars < iVar3) {

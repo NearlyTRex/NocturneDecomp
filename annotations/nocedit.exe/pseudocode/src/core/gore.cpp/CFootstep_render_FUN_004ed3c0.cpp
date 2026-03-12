@@ -9,10 +9,11 @@
 void __cdecl core_gore_cpp_CFootstep_render_FUN_004ed3c0(CFootstep *this_ptr,int expire_flag)
 
 {
-  uint uVar1;
+  uint uVar2;
   CVector3f *pCVar2;
   SRenderVertex *output;
   CVector3i local_1c;
+  uint uVar1;
   
   g_FootstepPrimitive.base.base.count = 4;
   g_FootstepPrimitive.vertices[0] = 0;
@@ -76,47 +77,47 @@ LAB_004ed4ec:
     g_RenderVertexBuffer[0].r = 0;
   }
   g_RenderVertexBuffer[0].b = 0;
-  uVar1 = this_ptr->blood_type;
-  if (uVar1 == 0) {
+  uVar2 = this_ptr->blood_type;
+  if (uVar2 == 0) {
 LAB_004ed51e:
     g_RenderVertexBuffer[1].r = 0x2000;
     g_RenderVertexBuffer[1].g = 0;
   }
-  else if (uVar1 < 2) {
+  else if (uVar2 < 2) {
     g_RenderVertexBuffer[1].g = 0x7f80;
     g_RenderVertexBuffer[1].r = 0;
   }
   else {
-    if (uVar1 != 2) goto LAB_004ed51e;
+    if (uVar2 != 2) goto LAB_004ed51e;
     g_RenderVertexBuffer[1].g = 0;
     g_RenderVertexBuffer[1].r = 0;
   }
   g_RenderVertexBuffer[1].b = 0;
-  uVar1 = this_ptr->blood_type;
-  if (uVar1 == 0) {
+  uVar2 = this_ptr->blood_type;
+  if (uVar2 == 0) {
 LAB_004ed550:
     g_RenderVertexBuffer[2].r = 0x2000;
     g_RenderVertexBuffer[2].g = 0;
   }
-  else if (uVar1 < 2) {
+  else if (uVar2 < 2) {
     g_RenderVertexBuffer[2].g = 0x7f80;
     g_RenderVertexBuffer[2].r = 0;
   }
   else {
-    if (uVar1 != 2) goto LAB_004ed550;
+    if (uVar2 != 2) goto LAB_004ed550;
     g_RenderVertexBuffer[2].g = 0;
     g_RenderVertexBuffer[2].r = 0;
   }
   g_RenderVertexBuffer[2].b = 0;
-  uVar1 = this_ptr->blood_type;
-  if (uVar1 != 0) {
-    if (uVar1 < 2) {
+  uVar2 = this_ptr->blood_type;
+  if (uVar2 != 0) {
+    if (uVar2 < 2) {
       g_RenderVertexBuffer[3].g = 0x7f80;
       g_RenderVertexBuffer[3].b = 0;
       g_RenderVertexBuffer[3].r = 0;
       goto LAB_004ed595;
     }
-    if (uVar1 == 2) {
+    if (uVar2 == 2) {
       g_RenderVertexBuffer[3].g = 0;
       g_RenderVertexBuffer[3].b = 0;
       g_RenderVertexBuffer[3].r = 0;

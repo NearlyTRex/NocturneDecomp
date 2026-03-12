@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 817,
-    "complexity_score": 440,
+    "complexity_score": 448,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 92,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 345,
+    "pseudocode_lines": 353,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 1162
+    "total_lines": 1170
   },
   "cross_references": [],
   "function": {
@@ -697,7 +697,7 @@
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -711,7 +711,7 @@
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -725,7 +725,7 @@
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -739,35 +739,35 @@
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "SCramRectangle *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "SCramRectangle *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "SCramRectangle *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -781,74 +781,74 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 151,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (((*(int *)((int)&g_CramRectangles[0].map_id + iVar10) == 0) &&",
+      "text": "if (((*(int *)((int)&g_CramRectangles[0].map_id + iVar16) == 0) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 152,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)&g_CramRectangles[0].start_x + iVar10) == 0)) &&",
+      "text": "(*(int *)((int)&g_CramRectangles[0].start_x + iVar16) == 0)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 146,
+      "line": 154,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_CramRectangles[0].start_y + iVar10))) goto LAB_00445b8a;",
+      "text": "*(int *)((int)&g_CramRectangles[0].start_y + iVar16))) goto LAB_00445b8a;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 191,
+      "line": 199,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (((*(int *)((int)&g_CramRectangles[0].map_id + iVar13) == 0) &&",
+      "text": "if (((*(int *)((int)&g_CramRectangles[0].map_id + iVar17) == 0) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 193,
+      "line": 201,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_CramRectangles[0].start_x + iVar13))) &&",
+      "text": "*(int *)((int)&g_CramRectangles[0].start_x + iVar17))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 195,
+      "line": 203,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_CramRectangles[0].start_y + iVar13))) goto LAB_00445bd9;",
+      "text": "*(int *)((int)&g_CramRectangles[0].start_y + iVar17))) goto LAB_00445bd9;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 241,
+      "line": 249,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (((local_14 == *(int *)((int)&g_CramRectangles[0].map_id + iVar12)) &&",
+      "text": "if (((local_14 == *(int *)((int)&g_CramRectangles[0].map_id + iVar11)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 242,
+      "line": 250,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)&g_CramRectangles[0].start_x + iVar12) == 0)) &&",
+      "text": "(*(int *)((int)&g_CramRectangles[0].start_x + iVar11) == 0)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 243,
+      "line": 251,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)&g_CramRectangles[0].start_y + iVar12) == 0)) goto LAB_00445c34;",
+      "text": "(*(int *)((int)&g_CramRectangles[0].start_y + iVar11) == 0)) goto LAB_00445c34;",
       "type": "pointer_cast"
     }
   ]

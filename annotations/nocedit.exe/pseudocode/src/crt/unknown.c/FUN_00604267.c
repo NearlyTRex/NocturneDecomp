@@ -9,10 +9,14 @@
 void FUN_00604267(uint *param_1,char *param_2,uint param_3,uint param_4,char *param_5)
 
 {
+  uint uVar4;
   uint uVar1;
+  uint uVar5;
   uint uVar2;
   uint uVar3;
+  char *pcVar6;
   char *pcVar4;
+  char *pcVar7;
   char *pcVar5;
   uint local_14;
   
@@ -43,48 +47,48 @@ void FUN_00604267(uint *param_1,char *param_2,uint param_3,uint param_4,char *pa
       param_4 = -local_14;
     }
     param_1[6] = param_4;
-    local_14 = local_14 + param_4;
+    uVar4 = local_14 + param_4;
     param_1[8] = param_4;
     param_1[8] = -param_4;
-    if ((int)local_14 < (int)param_3) {
-      param_3 = local_14;
+    if ((int)uVar4 < (int)param_3) {
+      param_3 = uVar4;
     }
-    pcVar4 = param_5 + uVar3;
-    for (uVar1 = param_3 >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
-      *(uint *)pcVar4 = *(uint *)param_2;
+    pcVar6 = param_5 + uVar3;
+    for (uVar5 = param_3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *(uint *)pcVar6 = *(uint *)param_2;
       param_2 = param_2 + 4;
-      pcVar4 = pcVar4 + 4;
+      pcVar6 = pcVar6 + 4;
     }
-    for (uVar1 = param_3 & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
-      *pcVar4 = *param_2;
+    for (uVar5 = param_3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *pcVar6 = *param_2;
       param_2 = param_2 + 1;
-      pcVar4 = pcVar4 + 1;
+      pcVar6 = pcVar6 + 1;
     }
     param_1[9] = param_3;
-    local_14 = local_14 - param_3;
-    uVar3 = uVar3 + param_3;
+    local_14 = uVar4 - param_3;
+    uVar4 = uVar3 + param_3;
   }
   else {
     if ((int)uVar1 <= (int)param_3) {
-      pcVar4 = param_2;
-      pcVar5 = param_5;
-      for (uVar3 = uVar1 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-        *(uint *)pcVar5 = *(uint *)pcVar4;
-        pcVar4 = pcVar4 + 4;
-        pcVar5 = pcVar5 + 4;
+      pcVar6 = param_2;
+      pcVar7 = param_5;
+      for (uVar4 = uVar1 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+        *(uint *)pcVar7 = *(uint *)pcVar6;
+        pcVar6 = pcVar6 + 4;
+        pcVar7 = pcVar7 + 4;
       }
-      for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-        *pcVar5 = *pcVar4;
-        pcVar4 = pcVar4 + 1;
-        pcVar5 = pcVar5 + 1;
+      for (uVar4 = uVar1 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+        *pcVar7 = *pcVar6;
+        pcVar6 = pcVar6 + 1;
+        pcVar7 = pcVar7 + 1;
       }
       param_3 = param_3 - uVar1;
       param_1[6] = uVar1;
-      uVar3 = uVar1;
+      uVar4 = uVar1;
       if ((param_1[2] & 8) == 0) {
         if ((0 < (int)local_14) || ((param_1[2] & 0x10) != 0)) {
           param_5[uVar1] = '.';
-          uVar3 = param_4 + 2;
+          uVar4 = param_4 + 2;
         }
       }
       else if (*param_5 == '0') {
@@ -94,45 +98,45 @@ void FUN_00604267(uint *param_1,char *param_2,uint param_3,uint param_4,char *pa
         param_3 = local_14;
       }
       pcVar4 = param_2 + uVar1;
-      pcVar5 = param_5 + uVar3;
+      pcVar5 = param_5 + uVar4;
       for (uVar2 = param_3 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
         *(uint *)pcVar5 = *(uint *)pcVar4;
         pcVar4 = pcVar4 + 4;
         pcVar5 = pcVar5 + 4;
       }
-      for (uVar1 = param_3 & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
+      for (uVar5 = param_3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
         *pcVar5 = *pcVar4;
         pcVar4 = pcVar4 + 1;
         pcVar5 = pcVar5 + 1;
       }
-      uVar3 = uVar3 + param_3;
-      param_1[7] = uVar3;
+      uVar4 = uVar4 + param_3;
+      param_1[7] = uVar4;
       param_1[8] = local_14 - param_3;
       goto LAB_00604458;
     }
-    pcVar4 = param_5;
-    for (uVar3 = param_3 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *(uint *)pcVar4 = *(uint *)param_2;
+    pcVar6 = param_5;
+    for (uVar4 = param_3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+      *(uint *)pcVar6 = *(uint *)param_2;
       param_2 = param_2 + 4;
-      pcVar4 = pcVar4 + 4;
+      pcVar6 = pcVar6 + 4;
     }
-    for (uVar3 = param_3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *pcVar4 = *param_2;
+    for (uVar4 = param_3 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+      *pcVar6 = *param_2;
       param_2 = param_2 + 1;
-      pcVar4 = pcVar4 + 1;
+      pcVar6 = pcVar6 + 1;
     }
     param_1[7] = param_3;
     param_1[8] = uVar1 - param_3;
     param_1[6] = uVar1;
-    uVar3 = param_3;
+    uVar4 = param_3;
     if (((param_1[2] & 8) == 0) && ((0 < (int)local_14 || ((param_1[2] & 0x10) != 0)))) {
       param_5[param_3] = '.';
-      uVar3 = param_3 + 1;
+      uVar4 = param_3 + 1;
       param_1[9] = 1;
     }
   }
   param_1[10] = local_14;
 LAB_00604458:
-  param_5[uVar3] = '\0';
+  param_5[uVar4] = '\0';
   return;
 }

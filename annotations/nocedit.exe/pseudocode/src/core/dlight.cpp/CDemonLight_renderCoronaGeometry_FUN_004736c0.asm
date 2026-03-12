@@ -7,32 +7,21 @@
 ; CDemonLight *    Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined4       Stack[-0xa8]:4  local_a8
-; undefined1       Stack[-0xa4]:1  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined1       Stack[-0x70]:1  local_70
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined1       Stack[-0x58]:1  local_58
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SMRGLHeaderPrimitive Stack[-0xa4]:24  local_a4
+; int              Stack[-0x8c]:4  local_8c
+; int              Stack[-0x88]:4  local_88
+; int              Stack[-0x84]:4  local_84
+; CVector3i        Stack[-0x7c]:12  local_7c
+; CVector3f        Stack[-0x70]:12  local_70
+; CVector3i        Stack[-0x64]:12  local_64
+; float[3]         Stack[-0x58]:12  local_58
+; CVector3f        Stack[-0x4c]:12  local_4c
+; float            Stack[-0x40]:4  local_40
+; float            Stack[-0x3c]:4  local_3c
+; float            Stack[-0x38]:4  local_38
+; CVector3f[2]     Stack[-0x34]:24  local_34
+; float            Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0 at 00450b44

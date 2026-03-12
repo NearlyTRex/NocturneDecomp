@@ -6,11 +6,9 @@
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ; Local Variables:
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined        Stack[-0x28]:1  local_28
-; undefined1       Stack[-0x27]:1  local_27
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SMRGLTextureBasic Stack[-0x30]:24  SStack_30
+; SMRGLTextureBasic * Stack[-0x18]:4  local_18
+; SMRGLTextureBasic * Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_model.c_initializeMRGLModel_FUN_00528940 at 00528957

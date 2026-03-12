@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 131,
+    "complexity_score": 135,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 86,
+    "pseudocode_lines": 90,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 370
+    "total_lines": 374
   },
   "cross_references": [
     {
@@ -160,7 +160,7 @@
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -209,14 +209,14 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -247,34 +247,34 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 19,
+      "line": 23,
       "match": "SQRT",
       "severity": "mild",
-      "text": "local_14 = 1.0 / SQRT(fVar5);",
+      "text": "fVar7 = 1.0 / SQRT(fVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 51,
       "match": "ABS",
       "severity": "mild",
-      "text": "if (ABS(fVar1) <= ABS(fVar2)) {",
+      "text": "if (ABS(fVar6) <= ABS(fVar2)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 51,
       "match": "ABS",
       "severity": "mild",
-      "text": "if (ABS(fVar1) <= ABS(fVar2)) {",
+      "text": "if (ABS(fVar6) <= ABS(fVar2)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 85,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar1 = (-fVar2 - SQRT(fVar5)) / (fVar1 * 2.0f);",
+      "text": "fVar6 = (-fVar8 - SQRT(fVar7)) / (fVar6 * 2.0f);",
       "type": "decompiler_intrinsic"
     }
   ]

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 182,
+    "complexity_score": 183,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 97,
+    "pseudocode_lines": 98,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 320
+    "total_lines": 321
   },
   "cross_references": [
     {
@@ -186,71 +186,71 @@
         "is_param": false,
         "name": "local_98",
         "offset": -152,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "C3DSCamera *"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CZThumb *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -264,7 +264,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 31,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_VDCameraSortIndices + iVar5) = iVar3;",
@@ -272,7 +272,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 42,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + local_28)] <",
@@ -280,7 +280,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 43,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "g_VDCameraScores[*(int *)((int)g_VDCameraSortIndices + iVar4)]) {",
@@ -288,7 +288,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 44,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar1 = *(uint *)((int)g_VDCameraSortIndices + local_28);",
@@ -296,7 +296,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 45,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_VDCameraSortIndices + local_28) =",
@@ -304,7 +304,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 46,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_VDCameraSortIndices + iVar4);",
@@ -312,7 +312,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 47,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_VDCameraSortIndices + iVar4) = uVar1;",
@@ -320,10 +320,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 66,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar4 = *(int *)((int)g_VDCameraSortIndices + local_1c);",
+      "text": "iVar1 = *(int *)((int)g_VDCameraSortIndices + local_1c);",
       "type": "pointer_cast"
     }
   ]

@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 47,
+        "line": 51,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 255,
-    "complexity_score": 183,
+    "complexity_score": 186,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 128,
+    "pseudocode_lines": 131,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 383
+    "total_lines": 386
   },
   "cross_references": [
     {
@@ -215,98 +215,98 @@
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
-        "size": 1,
-        "type": "undefined"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CLodVert *"
       },
       {
         "is_param": true,
@@ -320,7 +320,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 62,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar5 = (uint *)((int)&(this_ptr->sample_points_ptr->position).x + local_24);",
@@ -328,34 +328,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 81,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar2 = (int *)((int)pCVar1->edges_ptr->adjacent_tri_indices + local_28 + -0x28);",
+      "text": "piVar3 = (int *)((int)pCVar2->edges_ptr->adjacent_tri_indices + local_28 + -0x28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 82,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "pfVar11 = (float *)((int)&(this_ptr->sample_points_ptr->position).x + local_20);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 107,
-      "match": "(CVector3f *)((int)",
-      "severity": "mild",
-      "text": "pCVar9 = (CVector3f *)((int)&(this_ptr->sample_points_ptr->position).x + local_2c);",
+      "text": "pfVar11 = (float *)((int)&(this_ptr->sample_points_ptr->position).x + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 110,
+      "match": "(CVector3f *)((int)",
+      "severity": "mild",
+      "text": "pCVar9 = (CVector3f *)((int)&(this_ptr->sample_points_ptr->position).x + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 113,
       "match": "(CLodFace *)((int)",
       "severity": "mild",
-      "text": "(CLodFace *)((int)pCVar1->tri_data->attribute_indices + iVar7));",
+      "text": "(CLodFace *)((int)pCVar2->tri_data->attribute_indices + iVar5));",
       "type": "pointer_cast"
     }
   ]

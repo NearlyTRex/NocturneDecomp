@@ -7,7 +7,7 @@
 ; C3DSCamera *     Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined1       Stack[-0x110]:1  local_110
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[1]:
 ;   core_set.cpp_CDemonSet_load_FUN_00569410 at 0056980a

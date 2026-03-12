@@ -6,8 +6,8 @@
 ; Parameters:
 ; HANDLE           Stack[0x4]:4   hConsoleInput
 ; Local Variables:
-; undefined1       Stack[-0x28]:1  local_28
-; undefined1       Stack[-0x14]:1  local_14
+; _INPUT_RECORD    Stack[-0x28]:20  local_28
+; DWORD            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   crt_stdio.c_DrainConsoleInputAndSetup_FUN_0060b3f8 at 0060b458
@@ -21,7 +21,6 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_IsRelevantKeyEvent_FUN_0060cd90
-;   ReadConsoleInputA
 ;
 ; *****************************************************************************
 

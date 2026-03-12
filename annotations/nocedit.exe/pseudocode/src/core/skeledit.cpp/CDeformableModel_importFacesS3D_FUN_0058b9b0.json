@@ -4,43 +4,43 @@
       {
         "category": "format_error",
         "column": 79,
-        "line": 48,
+        "line": 51,
         "message": "format specifies type 'int *' but the argument has type 'ushort *' (aka 'unsigned short *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 36,
-        "line": 49,
+        "line": 52,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 45,
-        "line": 49,
+        "line": 52,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 54,
-        "line": 49,
+        "line": 52,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 63,
-        "line": 49,
+        "line": 52,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 72,
-        "line": 49,
+        "line": 52,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 81,
-        "line": 49,
+        "line": 52,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       }
     ],
@@ -49,19 +49,19 @@
   },
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 195,
+    "complexity_score": 198,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 100,
+    "pseudocode_lines": 103,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 343
+    "total_lines": 346
   },
   "cross_references": [
     {
@@ -202,112 +202,112 @@
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "undefined1[4]"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "undefined1[4]"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "undefined1[4]"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "undefined1[4]"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "undefined2[2]"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "undefined1[4]"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "undefined1[4]"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -336,15 +336,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 74,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)this_ptr->index_data_ptr[0] + iVar2) = local_28;",
+      "text": "*(int *)((int)this_ptr->index_data_ptr[0] + iVar4) = local_28;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 76,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "puVar4 = (ushort *)((int)&(pSVar1->vertex_indices).vertex_index_0 + iVar6);",
@@ -352,42 +352,42 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 78,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*puVar4 = *(ushort *)((int)local_3c + iVar3);",
+      "text": "*puVar4 = *(ushort *)((int)local_3c + iVar1);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 79,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar3 + -4) - local_24) *",
+      "text": "local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar1 + -4) - local_24) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 79,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar3 + -4) - local_24) *",
+      "text": "local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar1 + -4) - local_24) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 81,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar3 + -4) - local_18) *",
+      "text": "local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar1 + -4) - local_18) *",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 81,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar3 + -4) - local_18) *",
+      "text": "local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar1 + -4) - local_18) *",
       "type": "decompiler_intrinsic"
     }
   ]

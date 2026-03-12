@@ -12,17 +12,20 @@
 void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,_FILE *file_handle)
 
 {
-  char cVar1;
+  float fVar1;
+  char cVar2;
+  float fVar3;
   uint uVar2;
   int iVar3;
   char *pcVar4;
+  char *pcVar5;
   C3DSCamera *pCVar5;
   byte bVar6;
   float10 fVar7;
+  float10 fVar6;
   float10 fVar8;
   uint uStack_240;
   char local_23c [255];
-  byte uStack_13d;
   char acStack_13c [256];
   float fStack_3c;
   float fStack_38;
@@ -33,41 +36,41 @@ void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this
   C3DSCamera *local_20;
   float fStack_1c;
   uint uStack_18;
+  char cVar1;
   
   bVar6 = 0;
   local_20 = this_ptr;
   _fgets(local_23c,0xff,file_handle);
   uVar2 = 0xffffffff;
-  pcVar4 = local_23c;
+  pcVar5 = local_23c;
   do {
     if (uVar2 == 0) break;
     uVar2 = uVar2 - 1;
-    cVar1 = *pcVar4;
-    pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
+    cVar1 = *pcVar5;
+    pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
   if (0 < (int)(~uVar2 - 1)) {
     local_23c[~uVar2 - 2] = '\0';
   }
   iVar3 = -1;
-  pcVar4 = local_23c;
+  pcVar5 = local_23c;
   do {
     if (iVar3 == 0) break;
     iVar3 = iVar3 + -1;
-    cVar1 = *pcVar4;
-    pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
-  } while (cVar1 != '\0');
-  uStack_13d = 0;
+    cVar2 = *pcVar5;
+    pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+  } while (cVar2 != '\0');
   pcVar4 = local_23c;
   pCVar5 = local_20;
   do {
-    cVar1 = *pcVar4;
-    pCVar5->name[0] = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
+    cVar2 = *pcVar4;
+    pCVar5->name[0] = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    pCVar5->name[1] = cVar1;
+    pCVar5->name[1] = cVar2;
     pCVar5 = (C3DSCamera *)(pCVar5->name + 2);
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->position,&(this_ptr->position).y);
   _fscanf(file_handle,"%f,%f,%f\n",&fStack_30,&fStack_2c);
   _fscanf(file_handle,"%f\n");
@@ -146,17 +149,16 @@ void __cdecl core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this
   engine_2d_c_clearInputAndWait_FUN_00403260();
   engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
 LAB_00585deb:
-  fStack_3c = fStack_30 - (this_ptr->position).x;
-  fStack_38 = fStack_2c - (this_ptr->position).y;
+  fVar3 = fStack_30 - (this_ptr->position).x;
+  fVar1 = (this_ptr->position).y;
   fVar7 = (float10)fStack_28 - (float10)(this_ptr->position).z;
-  fStack_34 = (float)fVar7;
+  fVar6 = (float10)fVar3;
   (this_ptr->orientation).z = fStack_1c;
-  fVar8 = (float10)fpatan((float10)fStack_3c,(float10)fStack_34);
+  fVar8 = (float10)fpatan((float10)fVar3,(float10)(float)fVar7);
   (this_ptr->orientation).y = (float)fVar8;
-  fVar7 = (float10)fpatan((float10)fStack_38,
-                          SQRT((float10)fStack_3c * (float10)fStack_3c + fVar7 * (float10)fStack_34)
-                         );
-  (this_ptr->orientation).x = (float)-fVar7;
+  fVar6 = (float10)fpatan((float10)(fStack_2c - fVar1),
+                          SQRT(fVar6 * fVar6 + fVar7 * (float10)(float)fVar7));
+  (this_ptr->orientation).x = (float)-fVar6;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             (&this_ptr->rotation_matrix,&this_ptr->orientation);
   return;

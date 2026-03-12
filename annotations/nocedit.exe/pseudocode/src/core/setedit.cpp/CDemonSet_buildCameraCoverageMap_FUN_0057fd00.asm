@@ -8,17 +8,17 @@
 ; char *           Stack[0x8]:4   coverage_map
 ; int              Stack[0xc]:4   exclude_camera_index
 ; Local Variables:
-; undefined1       Stack[-0x50]:1  local_50
-; undefined1       Stack[-0x44]:1  local_44
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined1       Stack[-0x38]:1  local_38
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int[1015]        Stack[-0x1038]:4060  aiStackY_1038
+; CVector3i        Stack[-0x50]:12  local_50
+; CVector3i        Stack[-0x44]:12  local_44
+; CVector3i        Stack[-0x38]:12  local_38
+; CVector3i *      Stack[-0x2c]:4  local_2c
+; CBoundingBox3D * Stack[-0x28]:4  local_28
+; CVector3i *      Stack[-0x24]:4  local_24
+; CVector3f *      Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 at 0057e188

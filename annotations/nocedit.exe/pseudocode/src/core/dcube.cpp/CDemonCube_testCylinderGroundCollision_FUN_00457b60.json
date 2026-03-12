@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 74,
+    "complexity_score": 75,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 60,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 185
+    "total_lines": 186
   },
   "cross_references": [
     {
@@ -144,22 +144,8 @@
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": true,
@@ -208,7 +194,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 51,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*output_material = (uint)*(byte *)((int)this_ptr->ground_type_memory + iVar7);",

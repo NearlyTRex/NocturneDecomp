@@ -9,7 +9,7 @@
 int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_005e3280(CTurret *this_ptr,CVector3f *target_pos,float delta_time)
 
 {
-  float fVar1;
+  float fVar2;
   float local_38;
   float local_34;
   CVector3f local_30;
@@ -18,6 +18,7 @@ int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_005e3280(CTurret *this_ptr,C
   float local_14;
   float local_10;
   float local_c;
+  float fVar1;
   
   local_24.x = target_pos->x - (this_ptr->base).base.location.position.x;
   local_24.y = target_pos->y - (this_ptr->base).base.location.position.y;
@@ -31,24 +32,20 @@ int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_005e3280(CTurret *this_ptr,C
   }
   local_34 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                        (local_30.y - (this_ptr->base).base.orient.vec.y);
-  local_c = local_34;
-  local_c = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                      (local_30.x - (this_ptr->base).base.orient.vec.x);
-  local_10 = delta_time * this_ptr->rotate_deg_per_sec * (float)0.017453292519444399;
-  local_18 = -local_10;
-  if (local_34 < local_18) {
-    local_34 = local_18;
+  local_38 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                       (local_30.x - (this_ptr->base).base.orient.vec.x);
+  fVar2 = delta_time * this_ptr->rotate_deg_per_sec * (float)0.017453292519444399;
+  if (local_34 < -fVar2) {
+    local_34 = -fVar2;
   }
-  if (local_10 < local_34) {
-    local_34 = local_10;
+  if (fVar2 < local_34) {
+    local_34 = fVar2;
   }
-  local_14 = -local_10;
-  local_38 = local_c;
-  if (local_c < local_14) {
-    local_38 = local_14;
+  if (local_38 < -fVar2) {
+    local_38 = -fVar2;
   }
-  if (local_10 < local_38) {
-    local_38 = local_10;
+  if (fVar2 < local_38) {
+    local_38 = fVar2;
   }
   fVar1 = (this_ptr->base).base.orient.vec.x;
   (this_ptr->base).base.orient.vec.y = (this_ptr->base).base.orient.vec.y + local_34;

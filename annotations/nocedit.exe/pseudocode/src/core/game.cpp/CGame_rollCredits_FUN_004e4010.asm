@@ -6,16 +6,15 @@
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x1134]:4  local_1134
-; undefined1       Stack[-0x134]:1  local_134
-; undefined1       Stack[-0x133]:1  local_133
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; undefined4[1024] Stack[-0x1134]:4096  local_1134
+; char[256]        Stack[-0x134]:256  local_134
+; CAlphaBitmap     Stack[-0x34]:20  local_34
+; uint             Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
+; int              Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_finishAct_FUN_004e3b90 at 004e3c5d

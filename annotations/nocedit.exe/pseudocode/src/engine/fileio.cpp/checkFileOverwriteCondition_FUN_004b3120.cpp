@@ -11,6 +11,7 @@ int __cdecl engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120(char *tar
 {
   uint uVar1;
   int iVar2;
+  int iVar1;
   char local_3f4 [500];
   char local_200 [500];
   
@@ -22,16 +23,16 @@ int __cdecl engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120(char *tar
     {
       _sprintf
                 (local_3f4,"You currently have %s checked out.  Replace local copy with network copy?",target_filename);
-      iVar2 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
+      iVar1 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
                         (local_3f4,&g_VersionControlSession.overwrite_own_choice);
-      return iVar2;
+      return iVar1;
     }
     if ((uVar1 & 8) == 0) {
       _sprintf
                 (local_200,"A writable copy of %s exists.  Replace it?",target_filename);
-      iVar2 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
+      iVar1 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
                         (local_200,&g_VersionControlSession.overwrite_writeable_choice);
-      return iVar2;
+      return iVar1;
     }
   }
   return 1;

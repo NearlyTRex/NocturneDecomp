@@ -7,7 +7,7 @@
 ; SMRGLKeyframeModel * Stack[0x4]:4   keyframe_model
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30 at 005022c9

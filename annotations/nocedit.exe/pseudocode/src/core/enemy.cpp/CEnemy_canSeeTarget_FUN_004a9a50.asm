@@ -7,7 +7,12 @@
 ; CEnemy *         Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   target
 ; Local Variables:
-; undefined1       Stack[-0x2c]:1  local_2c
+; CBoundingBox3D   Stack[-0x5c]:24  CStack_5c
+; CVector3f        Stack[-0x44]:12  CStack_44
+; CVector3f        Stack[-0x38]:12  CStack_38
+; CVector3f        Stack[-0x2c]:12  local_2c
+; CVector3f        Stack[-0x20]:12  CStack_20
+; CVector3f        Stack[-0x14]:12  CStack_14
 ;
 ; XREF[1]:
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_005267a0 at 005267da

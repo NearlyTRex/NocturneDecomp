@@ -6,10 +6,8 @@
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; CVector3f        Stack[-0x24]:12  local_24
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; XREF[1]:
 ;   core_turret.cpp_factoryFunc_FUN_005e20b0 at 005e20cd

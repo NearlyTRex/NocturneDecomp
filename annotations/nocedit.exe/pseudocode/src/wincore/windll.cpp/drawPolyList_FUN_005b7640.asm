@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   polygon_count
 ; int              Stack[0x10]:4   render_flags
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SRenderVertex *  Stack[-0x20]:4  local_20
+; SRenderVertex *  Stack[-0x1c]:4  local_1c
+; SRenderVertex *  Stack[-0x18]:4  local_18
+; SRenderVertex *  Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 at 00407b28

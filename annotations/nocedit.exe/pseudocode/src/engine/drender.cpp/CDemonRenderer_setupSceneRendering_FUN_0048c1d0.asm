@@ -7,7 +7,7 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   euler_angles
 ; Local Variables:
-; undefined1       Stack[-0x28]:1  local_28
+; CMatrix3x3f      Stack[-0x28]:36  local_28
 ;
 ; XREF[11]:
 ;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 00443cdf

@@ -7,19 +7,14 @@
 ; CCheckOutItem *  Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined        Stack[-0x584]:1  local_584
-; undefined        Stack[-0x390]:1  local_390
-; undefined1       Stack[-0x38f]:1  local_38f
-; undefined        Stack[-0x28c]:1  local_28c
-; undefined1       Stack[-0x28b]:1  local_28b
-; undefined        Stack[-0x228]:1  local_228
-; undefined1       Stack[-0x227]:1  local_227
-; undefined        Stack[-0x124]:1  local_124
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined        Stack[-0x14]:1  local_14
+; char[500]        Stack[-0x584]:500  local_584
+; CCheckOutItem    Stack[-0x390]:360  local_390
+; char[260]        Stack[-0x228]:260  local_228
+; char[256]        Stack[-0x124]:256  local_124
+; CCheckOutList    Stack[-0x24]:8  local_24
+; _FILE *          Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; char[4]          Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   SLEEP_FUNC* g_SleepFunc = 00212228

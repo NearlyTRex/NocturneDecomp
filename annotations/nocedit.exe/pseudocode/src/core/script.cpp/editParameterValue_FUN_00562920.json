@@ -4,19 +4,7 @@
       {
         "category": "other",
         "column": 30,
-        "line": 57,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 60,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "other",
-        "column": 31,
-        "line": 64,
+        "line": 66,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
@@ -26,45 +14,57 @@
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
+        "category": "other",
+        "column": 31,
+        "line": 73,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "other",
+        "column": 35,
+        "line": 78,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
         "category": "format_error",
         "column": 39,
-        "line": 476,
+        "line": 485,
         "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 476,
+        "line": 485,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 544,
+        "line": 553,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 637,
+        "line": 646,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 647,
+        "line": 656,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "format_error",
         "column": 39,
-        "line": 658,
+        "line": 667,
         "message": "format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 658,
+        "line": 667,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -73,18 +73,18 @@
   },
   "complexity": {
     "assembly_lines": 2421,
-    "complexity_score": 847,
+    "complexity_score": 856,
     "cross_reference_count": 1,
     "function_call_count": 33,
     "global_count": 85,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 747,
+    "pseudocode_lines": 756,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 3168
+    "total_lines": 3177
   },
   "cross_references": [
     {
@@ -995,56 +995,56 @@
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "CMotionList *"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "char[30] *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDeformableModel *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -1096,55 +1096,55 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 184,
+      "line": 193,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar10 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar7);",
+      "text": "uVar11 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 297,
+      "line": 306,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar10 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar7);",
+      "text": "uVar11 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 330,
+      "line": 339,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "uVar10 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar7);",
+      "text": "uVar11 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 422,
+      "line": 431,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar4 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar7);",
+      "text": "iVar3 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 442,
+      "line": 451,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar4 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar7);",
+      "text": "iVar3 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 613,
+      "line": 622,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar4 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar7);",
+      "text": "iVar3 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 630,
+      "line": 639,
       "match": "code",
       "severity": "moderate",
       "text": "(g_CEditorToolsPtr,\"WARNING! chooseParm - unknown parm type %d (code needs to be updated)\");",
@@ -1152,7 +1152,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 676,
+      "line": 685,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)local_a8 + local_14) != 0) {",
@@ -1160,7 +1160,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 730,
+      "line": 739,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "switch(*(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar7)) {",

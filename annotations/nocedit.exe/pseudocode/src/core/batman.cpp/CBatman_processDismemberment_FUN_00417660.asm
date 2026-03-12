@@ -7,11 +7,9 @@
 ; CBatman *        Stack[0x4]:4   this_ptr
 ; SDamageInfo *    Stack[0x8]:4   damage_info
 ; Local Variables:
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x28]:12  local_28
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_batman.cpp_CBatman_processDamage_FUN_004179a0 at 00417a26

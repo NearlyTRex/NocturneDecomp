@@ -7,12 +7,10 @@
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   default_wildcard
 ; Local Variables:
-; undefined4       Stack[-0x9cc]:4  local_9cc
-; undefined1       Stack[-0x624]:1  local_624
-; undefined1       Stack[-0x524]:1  local_524
-; undefined1       Stack[-0x308]:1  local_308
-; undefined1       Stack[-0x108]:1  local_108
-; undefined1       Stack[-0x107]:1  local_107
+; CPickList        Stack[-0x9cc]:936  local_9cc
+; CPodSearchContext Stack[-0x624]:796  local_624
+; char[512]        Stack[-0x308]:512  local_308
+; char[256]        Stack[-0x108]:256  local_108
 ;
 ; XREF[1]:
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be4be

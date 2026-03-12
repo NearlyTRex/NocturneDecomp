@@ -4,13 +4,13 @@
       {
         "category": "undeclared_identifier",
         "column": 9,
-        "line": 94,
+        "line": 96,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 16,
-        "line": 94,
+        "line": 96,
         "message": "expected expression"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 117,
+    "complexity_score": 119,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 87,
+    "pseudocode_lines": 89,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 295
+    "total_lines": 297
   },
   "cross_references": [],
   "function": {
@@ -172,25 +172,25 @@
     "pcode_op_count": 1067
   },
   "stack_frame": {
-    "frame_size": 88,
-    "local_size": 84,
+    "frame_size": 92,
+    "local_size": 88,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
+        "name": "SStack_54",
+        "offset": -84,
+        "size": 60,
+        "type": "SDamageInfo"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -211,15 +211,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 84,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar4);",
+      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->characters + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 87,
+      "line": 89,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0x114))(iVar1,this_ptr,local_14,&SStack_54);",

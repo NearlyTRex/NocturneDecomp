@@ -9,25 +9,29 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_renderEnhancedQualityWithIndices_FUN_0048b730(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
-  int iVar1;
+  int iVar2;
+  SMRGLHeaderPrimitive *pSVar3;
   SMRGLHeaderPrimitive *pSVar2;
   int iVar3;
+  int iVar5;
   int iVar4;
+  int iVar6;
   uint local_14;
+  int iVar1;
   
   if ((this_ptr->plane_culling_enabled == 0) ||
-     (iVar4 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar4 != 0)) {
+     (iVar5 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar5 != 0)) {
     iVar4 = 0;
     local_14 = 0xffffffff;
     if (0 < (prim->base).count) {
       iVar3 = 0;
-      pSVar2 = prim;
+      pSVar3 = prim;
       do {
-        iVar1 = pSVar2[1].base.type;
+        iVar1 = pSVar3[1].base.type;
         *(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;
         iVar3 = iVar3 + 4;
         local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
-        pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
+        pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
         iVar4 = iVar4 + 1;
       } while (iVar4 < (prim->base).count);
     }
@@ -41,17 +45,17 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderEnhancedQualityWithIndices_
         }
         g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
         g_RenderStateFlags.dword = 999;
-        if ((this_ptr->skip_uv_extraction == 0) && (iVar4 = 0, 0 < (prim->base).count)) {
-          iVar3 = 0;
+        if ((this_ptr->skip_uv_extraction == 0) && (iVar5 = 0, 0 < (prim->base).count)) {
+          iVar6 = 0;
           pSVar2 = prim;
           do {
-            iVar1 = *(int *)((int)g_VertexIndexBuffer + iVar3);
-            this_ptr->vertex_buffer_ptr[iVar1].u = pSVar2[1].base.count;
-            this_ptr->vertex_buffer_ptr[iVar1].v = pSVar2[1].surface_normal.A;
+            iVar2 = *(int *)((int)g_VertexIndexBuffer + iVar6);
+            this_ptr->vertex_buffer_ptr[iVar2].u = pSVar2[1].base.count;
+            this_ptr->vertex_buffer_ptr[iVar2].v = pSVar2[1].surface_normal.A;
             pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
-            iVar4 = iVar4 + 1;
-            iVar3 = iVar3 + 4;
-          } while (iVar4 < (prim->base).count);
+            iVar5 = iVar5 + 1;
+            iVar6 = iVar6 + 4;
+          } while (iVar5 < (prim->base).count);
         }
       }
       else {

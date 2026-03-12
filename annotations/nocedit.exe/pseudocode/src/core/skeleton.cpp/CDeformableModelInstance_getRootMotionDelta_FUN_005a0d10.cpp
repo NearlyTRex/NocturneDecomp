@@ -11,24 +11,27 @@
 CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10(CDeformableModelInstance *this_ptr,CVector3f *output_buffer,float start_frame,float end_frame)
 
 {
+  int iVar3;
+  CVector3f *pCVar4;
+  CSkeleton *pCVar13;
+  int iVar14;
+  double dVar15;
+  double dVar5;
+  float local_30;
+  float local_2c;
+  float local_28;
+  float fVar12;
   int iVar1;
   int iVar2;
   float fVar3;
   float fVar4;
   float fVar5;
+  CVector3f *pCVar9;
+  float fVar11;
+  float fVar8;
+  CVector3f *pCVar10;
   float fVar6;
   float fVar7;
-  float fVar8;
-  CVector3f *pCVar9;
-  CVector3f *pCVar10;
-  float fVar11;
-  float fVar12;
-  CSkeleton *pCVar13;
-  int iVar14;
-  double dVar15;
-  float local_30;
-  float local_2c;
-  float local_28;
   
   if (end_frame <= start_frame) {
     output_buffer->x = g_ZeroVector.f.x;
@@ -39,8 +42,8 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelt
   pCVar13 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   dVar15 = floor((double)start_frame);
   iVar1 = (int)ROUND(ROUND(dVar15));
-  dVar15 = ceil((double)end_frame);
-  iVar2 = (int)ROUND(ROUND(dVar15));
+  dVar5 = ceil((double)end_frame);
+  iVar2 = (int)ROUND(ROUND(dVar5));
   local_30 = 0.0;
   local_2c = 0.0;
   local_28 = 0.0;
@@ -55,18 +58,18 @@ CVector3f * __cdecl core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelt
     } while (iVar14 < iVar2 * 0xc);
   }
   fVar11 = start_frame - (float)iVar1;
-  pCVar9 = pCVar13->frame_positions_2;
-  fVar3 = pCVar9[iVar1].y;
-  fVar4 = pCVar9[iVar1].z;
-  iVar14 = iVar2 + -1;
+  pCVar4 = pCVar13->frame_positions_2;
+  fVar3 = pCVar4[iVar1].y;
+  fVar4 = pCVar4[iVar1].z;
+  iVar3 = iVar2 + -1;
   fVar12 = (float)iVar2 - end_frame;
   pCVar10 = pCVar13->frame_positions_2;
-  fVar5 = pCVar10[iVar14].y;
-  fVar6 = pCVar10[iVar14].z;
+  fVar5 = pCVar10[iVar3].y;
+  fVar6 = pCVar10[iVar3].z;
   fVar7 = (this_ptr->scaled_model_dimensions).y;
   fVar8 = (this_ptr->scaled_model_dimensions).z;
   output_buffer->x =
-       ((local_30 - pCVar9[iVar1].x * fVar11) - pCVar10[iVar14].x * fVar12) *
+       ((local_30 - pCVar4[iVar1].x * fVar11) - pCVar10[iVar3].x * fVar12) *
        (this_ptr->scaled_model_dimensions).x;
   output_buffer->y = ((local_2c - fVar3 * fVar11) - fVar5 * fVar12) * fVar7;
   output_buffer->z = ((local_28 - fVar4 * fVar11) - fVar6 * fVar12) * fVar8;

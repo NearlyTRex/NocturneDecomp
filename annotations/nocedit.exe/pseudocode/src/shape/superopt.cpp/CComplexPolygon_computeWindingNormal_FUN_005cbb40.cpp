@@ -9,13 +9,15 @@
 CVector3d * __cdecl shape_superopt_cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40(CComplexPolygon *this_ptr,CVector3d *output_normal,SExpandedEdge *edges,int edge_count)
 
 {
-  double dVar1;
-  double dVar2;
-  double dVar3;
+  double dVar4;
+  double dVar5;
   uint uVar4;
   int iVar5;
+  int iVar6;
   CVector3d *pCVar6;
+  double *pdVar9;
   double *pdVar7;
+  double *pdVar10;
   double *pdVar8;
   ulonglong local_110;
   uint local_100;
@@ -37,6 +39,9 @@ CVector3d * __cdecl shape_superopt_cpp_CComplexPolygon_computeWindingNormal_FUN_
   double local_50;
   uint local_18;
   CVector3d *local_14;
+  double dVar1;
+  double dVar2;
+  double dVar3;
   
   local_18 = 0;
   local_100 = 0;
@@ -51,51 +56,51 @@ CVector3d * __cdecl shape_superopt_cpp_CComplexPolygon_computeWindingNormal_FUN_
       local_a8 = pCVar6[1].x - pCVar6->x;
       local_a0 = pCVar6[1].y - pCVar6->y;
       local_98 = pCVar6[1].z - pCVar6->z;
-      pdVar7 = &local_a8;
-      pdVar8 = &local_90;
+      pdVar9 = &local_a8;
+      pdVar10 = &local_90;
       for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *(uint *)pdVar8 = *(uint *)pdVar7;
-        pdVar7 = (double *)((int)pdVar7 + 4);
-        pdVar8 = (double *)((int)pdVar8 + 4);
+        *(uint *)pdVar10 = *(uint *)pdVar9;
+        pdVar9 = (double *)((int)pdVar9 + 4);
+        pdVar10 = (double *)((int)pdVar10 + 4);
       }
       local_14 = &edges[uVar4].end_pos;
       dVar1 = 1.0 / SQRT(local_80 * local_80 + local_90 * local_90 + local_88 * local_88);
       dVar2 = local_90 * dVar1;
       dVar3 = local_88 * dVar1;
-      dVar1 = local_80 * dVar1;
+      dVar4 = local_80 * dVar1;
       local_c0 = edges[uVar4].end_pos.x - pCVar6[1].x;
       local_b8 = edges[uVar4].end_pos.y - pCVar6[1].y;
       local_b0 = edges[uVar4].end_pos.z - pCVar6[1].z;
       pdVar7 = &local_c0;
       pdVar8 = &local_60;
-      for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
+      for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
         *(uint *)pdVar8 = *(uint *)pdVar7;
         pdVar7 = (double *)((int)pdVar7 + 4);
         pdVar8 = (double *)((int)pdVar8 + 4);
       }
-      local_68 = 1.0 / SQRT(local_50 * local_50 + local_60 * local_60 + local_58 * local_58);
-      local_78 = local_60 * local_68;
-      local_70 = local_58 * local_68;
-      local_68 = local_50 * local_68;
-      local_110 = dVar2 * local_78 + dVar3 * local_70 + dVar1 * local_68;
+      dVar5 = 1.0 / SQRT(local_50 * local_50 + local_60 * local_60 + local_58 * local_58);
+      local_78 = local_60 * dVar5;
+      local_70 = local_58 * dVar5;
+      local_68 = local_50 * dVar5;
+      local_110 = dVar2 * local_78 + dVar3 * local_70 + dVar4 * local_68;
       if (local_110 < 0.0) {
         local_110 = -local_110;
       }
       if (local_110 < __BITCAST_DOUBLE(CONCAT44(uStack_fc,local_100))) {
         local_100 = (uint)local_110;
         uStack_fc = local_110._4_4_;
-        output_normal->x = dVar3 * local_68 - dVar1 * local_70;
-        output_normal->y = dVar1 * local_78 - dVar2 * local_68;
+        output_normal->x = dVar3 * local_68 - dVar4 * local_70;
+        output_normal->y = dVar4 * local_78 - dVar2 * local_68;
         output_normal->z = dVar2 * local_70 - dVar3 * local_78;
       }
       local_18 = local_18 + 1;
       pCVar6 = pCVar6 + 4;
     } while (local_18 < (uint)edge_count);
   }
-  dVar1 = 1.0 / SQRT(output_normal->z * output_normal->z +
+  dVar4 = 1.0 / SQRT(output_normal->z * output_normal->z +
                      output_normal->x * output_normal->x + output_normal->y * output_normal->y);
-  output_normal->x = output_normal->x * dVar1;
-  output_normal->y = output_normal->y * dVar1;
-  output_normal->z = output_normal->z * dVar1;
+  output_normal->x = output_normal->x * dVar4;
+  output_normal->y = output_normal->y * dVar4;
+  output_normal->z = output_normal->z * dVar4;
   return output_normal;
 }

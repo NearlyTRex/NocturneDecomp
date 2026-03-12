@@ -9,8 +9,9 @@
 void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector3f *location)
 
 {
-  char cVar1;
+  char cVar2;
   CVector3f *pCVar2;
+  CVector3f *pCVar3;
   char *pcVar3;
   char *pcVar4;
   SQuadVertices local_cc;
@@ -33,6 +34,7 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector
   float local_24;
   float local_20;
   CVector3f local_1c;
+  char cVar1;
   
   if (this_ptr->shattered == 0) {
     this_ptr->shattered = 1;
@@ -44,11 +46,11 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector
         cVar1 = *pcVar3;
         *pcVar4 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar3[1];
+        cVar2 = pcVar3[1];
         pcVar3 = pcVar3 + 2;
-        pcVar4[1] = cVar1;
+        pcVar4[1] = cVar2;
         pcVar4 = pcVar4 + 2;
-      } while (cVar1 != '\0');
+      } while (cVar2 != '\0');
       core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_00570c60(g_CDemonSetPtr);
     }
     __arrinit(&local_cc,4,&g_CVectorTypeInfo);
@@ -66,33 +68,33 @@ void __cdecl core_glass_cpp_CGlass_shatter_FUN_004eaef0(CGlass *this_ptr,CVector
       local_cc.vertices[0].z = local_38;
     }
     local_1c.y = local_1c.y + (this_ptr->glass_size).y;
-    pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+    pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (&(this_ptr->base).orient_matrix,&local_7c,&local_1c);
-    local_58 = (this_ptr->base).location.position.x + pCVar2->x;
-    local_54 = (this_ptr->base).location.position.y + pCVar2->y;
-    local_50 = (this_ptr->base).location.position.z + pCVar2->z;
+    local_58 = (this_ptr->base).location.position.x + pCVar3->x;
+    local_54 = (this_ptr->base).location.position.y + pCVar3->y;
+    local_50 = (this_ptr->base).location.position.z + pCVar3->z;
     if (local_cc.vertices + 1 != (CVector3f *)&local_58) {
       local_cc.vertices[1].x = local_58;
       local_cc.vertices[1].y = local_54;
       local_cc.vertices[1].z = local_50;
     }
     local_1c.x = -local_1c.x;
-    pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+    pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (&(this_ptr->base).orient_matrix,&local_64,&local_1c);
-    local_34 = (this_ptr->base).location.position.x + pCVar2->x;
-    local_30 = (this_ptr->base).location.position.y + pCVar2->y;
-    local_2c = (this_ptr->base).location.position.z + pCVar2->z;
+    local_34 = (this_ptr->base).location.position.x + pCVar3->x;
+    local_30 = (this_ptr->base).location.position.y + pCVar3->y;
+    local_2c = (this_ptr->base).location.position.z + pCVar3->z;
     if (local_cc.vertices + 2 != (CVector3f *)&local_34) {
       local_cc.vertices[2].x = local_34;
       local_cc.vertices[2].y = local_30;
       local_cc.vertices[2].z = local_2c;
     }
     local_1c.y = 0.0;
-    pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+    pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                        (&(this_ptr->base).orient_matrix,&local_70,&local_1c);
-    local_28 = (this_ptr->base).location.position.x + pCVar2->x;
-    local_24 = (this_ptr->base).location.position.y + pCVar2->y;
-    local_20 = (this_ptr->base).location.position.z + pCVar2->z;
+    local_28 = (this_ptr->base).location.position.x + pCVar3->x;
+    local_24 = (this_ptr->base).location.position.y + pCVar3->y;
+    local_20 = (this_ptr->base).location.position.z + pCVar3->z;
     if (local_cc.vertices + 3 != (CVector3f *)&local_28) {
       local_cc.vertices[3].x = local_28;
       local_cc.vertices[3].y = local_24;

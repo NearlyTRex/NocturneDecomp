@@ -8,12 +8,18 @@
 ; uint             Stack[0x8]:4   dirty_flags_mask
 ; Local Variables:
 ; undefined8       Stack[-0x90]:8  local_90
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0x64]:1  local_64
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x14]:4  local_14
+; float[2]         Stack[-0x70]:8  local_70
+; float            Stack[-0x68]:4  fStack_68
+; CVector3i        Stack[-0x64]:12  local_64
+; CVector3f        Stack[-0x50]:12  CStack_50
+; float            Stack[-0x44]:4  fStack_44
+; float            Stack[-0x40]:4  fStack_40
+; float            Stack[-0x3c]:4  fStack_3c
+; CVector3f        Stack[-0x38]:12  CStack_38
+; int              Stack[-0x2c]:4  local_2c
+; uint             Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a349

@@ -4,9 +4,9 @@
 ; void __cdecl shape_design_c_deleteSinglePolygon_FUN_0045dcc0(void)
 ;
 ; Local Variables:
-; undefined        Stack[-0x6c]:1  local_6c
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x6c]:80  local_6c
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Polygon_to_delete_0061b448

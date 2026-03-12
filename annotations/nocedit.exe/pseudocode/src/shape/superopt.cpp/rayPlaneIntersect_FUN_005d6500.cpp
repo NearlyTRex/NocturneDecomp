@@ -9,8 +9,8 @@
 double __cdecl shape_superopt_cpp_rayPlaneIntersect_FUN_005d6500(CVector3d *ray_origin,CVector3d *ray_dir,CVector3d *plane_point,CVector3d *plane_normal)
 
 {
-  double dVar1;
   double local_70;
+  double dVar1;
   
   dVar1 = plane_normal->z * ray_dir->z + plane_normal->x * ray_dir->x + plane_normal->y * ray_dir->y
   ;

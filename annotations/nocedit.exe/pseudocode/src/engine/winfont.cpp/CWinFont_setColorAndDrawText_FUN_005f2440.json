@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 381,
-    "complexity_score": 191,
+    "complexity_score": 195,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 136,
+    "pseudocode_lines": 140,
     "suspect_count": 4,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 517
+    "total_lines": 521
   },
   "cross_references": [
     {
@@ -210,10 +210,10 @@
     "pcode_op_count": 2250
   },
   "stack_frame": {
-    "frame_size": 84,
+    "frame_size": 56,
     "local_size": 56,
     "param_offset": 4,
-    "param_size": 28,
+    "param_size": 0,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -229,6 +229,34 @@
         "offset": -40,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "COLORREF"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "COLORREF"
       },
       {
         "is_param": true,
@@ -278,13 +306,20 @@
         "offset": 28,
         "size": 4,
         "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "in_stack_0000002c",
+        "offset": 44,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 18,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "int in_stack_0000002c;",
@@ -292,7 +327,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 59,
       "match": "in_stack_0000002c",
       "severity": "moderate",
       "text": "if (in_stack_0000002c != -1) {",
@@ -300,10 +335,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 93,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar7] + y_position * 2);",
+      "text": "puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar8] + y_position * 2);",
       "type": "pointer_cast"
     },
     {

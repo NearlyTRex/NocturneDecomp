@@ -11,15 +11,15 @@
 void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *this_ptr)
 
 {
-  CVector3f *world_position;
-  SRenderVertex *vertex_ptr;
-  longlong lVar1;
+  int iVar1;
+  SRenderVertex *vertex_ptr_00;
+  float fVar2;
+  float fVar3;
   int iVar2;
   CVector3i local_70;
   CVector3i local_64;
   float local_58;
   float local_54;
-  uint local_50;
   CVector3i local_4c;
   CVector3i local_40;
   CVector3i local_34;
@@ -27,58 +27,50 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
   float local_1c;
   int local_18;
   float local_14;
+  CVector3f *world_position;
+  SRenderVertex *vertex_ptr;
+  longlong lVar1;
   
-  vertex_ptr = g_CDemonRendererPtr2->vertex_buffer_ptr;
+  vertex_ptr_00 = g_CDemonRendererPtr2->vertex_buffer_ptr;
   local_64.x = (int)ROUND((this_ptr->position).x * 256.0f);
   local_64.y = (int)ROUND((this_ptr->position).y * 256.0f);
   local_64.z = (int)ROUND((this_ptr->position).z * 256.0f);
-  wincore_windll_cpp_transformPoint_FUN_005b5a25(&vertex_ptr->projected_vertex,&local_64);
-  iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50(g_CDemonRendererPtr2,vertex_ptr);
+  wincore_windll_cpp_transformPoint_FUN_005b5a25(&vertex_ptr_00->projected_vertex,&local_64);
+  iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50
+                    (g_CDemonRendererPtr2,vertex_ptr_00);
   if (iVar2 != 0) {
-    local_18 = (int)ROUND(ROUND(this_ptr->age));
-    if ((local_18 < 0) || (0x27 < local_18)) {
+    iVar1 = (int)ROUND(ROUND(this_ptr->age));
+    if ((iVar1 < 0) || (0x27 < iVar1)) {
       g_CurrentFilename = "..\\core\\fire.cpp";
       g_CurrentLineNumber = 0x11c;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CSmokeParticle::render - Frame out of range");
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr2,g_FireEffectSmokeParticleTextures + local_18);
+              (g_CDemonRendererPtr2,g_FireEffectSmokeParticleTextures + iVar1);
     world_position = &this_ptr->position;
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr2,world_position);
     engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
               (g_CDemonRendererPtr2,&g_BillboardCameraRight,(CVector3i *)0x0);
-    local_14 = this_ptr->drag_factor;
-    local_50 = 0;
-    local_58 = -local_14;
-    local_28.x = (int)ROUND(local_58 * 256.0f);
-    local_28.y = (int)ROUND(local_58 * 256.0f);
+    fVar2 = this_ptr->drag_factor;
+    fVar3 = -fVar2;
+    local_28.x = (int)ROUND(fVar3 * 256.0f);
+    local_28.y = (int)ROUND(fVar3 * 256.0f);
     local_28.z = (int)ROUND(256.0f * 0.0);
-    local_54 = local_58;
-    local_1c = local_58;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_28);
-    local_58 = local_14;
-    local_54 = local_1c;
-    local_50 = 0;
-    local_70.x = (int)ROUND(local_14 * 256.0f);
-    local_70.y = (int)ROUND(local_1c * 256.0f);
+    local_70.x = (int)ROUND(fVar2 * 256.0f);
+    local_70.y = (int)ROUND(fVar3 * 256.0f);
     local_70.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[1].projected_vertex,&local_70);
-    local_50 = 0;
-    local_58 = local_14;
-    local_54 = local_14;
-    local_34.x = (int)ROUND(local_14 * 256.0f);
-    local_34.y = (int)ROUND(local_14 * 256.0f);
+    local_34.x = (int)ROUND(fVar2 * 256.0f);
+    local_34.y = (int)ROUND(fVar2 * 256.0f);
     local_34.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[2].projected_vertex,&local_34);
-    local_58 = local_1c;
-    local_54 = local_14;
-    local_50 = 0;
-    local_4c.x = (int)ROUND(local_1c * 256.0f);
-    local_4c.y = (int)ROUND(local_14 * 256.0f);
+    local_4c.x = (int)ROUND(fVar3 * 256.0f);
+    local_4c.y = (int)ROUND(fVar2 * 256.0f);
     local_4c.z = (int)ROUND(256.0f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr2->vertex_buffer_ptr[3].projected_vertex,&local_4c);

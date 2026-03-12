@@ -9,12 +9,14 @@
 void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList *this_ptr,char *var_name,CDemonActor *actor)
 
 {
-  char cVar1;
+  char cVar2;
   char *pcVar2;
   int iVar3;
   char (*dest) [30];
+  char (*pacVar3) [30];
   char (*pacVar4) [30];
   int iVar5;
+  char cVar1;
   
   if ((actor != (CDemonActor *)0x0) && (actor->actor_name[0] == '\0')) {
     g_CurrentFilename = "..\\core\\event.cpp";
@@ -31,38 +33,38 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList 
         g_CurrentLineNumber = 0xb38;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CEventList::setActorVariable - already too many actor variables.  Max is %d.",0x19);
       }
-      pacVar4 = (this_ptr->actor_vars).var_names + (this_ptr->actor_vars).count;
+      pacVar3 = (this_ptr->actor_vars).var_names + (this_ptr->actor_vars).count;
       do {
-        cVar1 = *var_name;
-        (*pacVar4)[0] = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = var_name[1];
+        cVar2 = *var_name;
+        (*pacVar3)[0] = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = var_name[1];
         var_name = var_name + 2;
-        (*pacVar4)[1] = cVar1;
-        pacVar4 = (char (*) [30])(*pacVar4 + 2);
-      } while (cVar1 != '\0');
+        (*pacVar3)[1] = cVar2;
+        pacVar3 = (char (*) [30])(*pacVar3 + 2);
+      } while (cVar2 != '\0');
       pacVar4 = (this_ptr->actor_vars).actor_names + (this_ptr->actor_vars).count;
       do {
-        cVar1 = actor->actor_name[0];
-        (*pacVar4)[0] = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = actor->actor_name[1];
+        cVar2 = actor->actor_name[0];
+        (*pacVar4)[0] = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = actor->actor_name[1];
         actor = (CDemonActor *)(actor->actor_name + 2);
-        (*pacVar4)[1] = cVar1;
+        (*pacVar4)[1] = cVar2;
         pacVar4 = (char (*) [30])(*pacVar4 + 2);
-      } while (cVar1 != '\0');
+      } while (cVar2 != '\0');
       (this_ptr->actor_vars).count = (this_ptr->actor_vars).count + 1;
       return;
     }
   }
   else {
     dest = (this_ptr->actor_vars).actor_names + iVar3;
-    pacVar4 = (this_ptr->actor_vars).var_names + iVar3;
+    pacVar3 = (this_ptr->actor_vars).var_names + iVar3;
     if (actor == (CDemonActor *)0x0) {
       iVar5 = (this_ptr->actor_vars).count + -1;
       (this_ptr->actor_vars).count = iVar5;
       memmove
-                (pacVar4,(this_ptr->actor_vars).var_names + iVar3 + 1,(iVar5 - iVar3) * 0x1e);
+                (pacVar3,(this_ptr->actor_vars).var_names + iVar3 + 1,(iVar5 - iVar3) * 0x1e);
       memmove
                 (dest,(this_ptr->actor_vars).actor_names + iVar3 + 1,
                  ((this_ptr->actor_vars).count - iVar3) * 0x1e);
@@ -70,24 +72,24 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList 
     }
     do {
       cVar1 = *var_name;
-      (*pacVar4)[0] = cVar1;
+      (*pacVar3)[0] = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = var_name[1];
+      cVar2 = var_name[1];
       var_name = var_name + 2;
-      (*pacVar4)[1] = cVar1;
-      pacVar4 = (char (*) [30])(*pacVar4 + 2);
-    } while (cVar1 != '\0');
+      (*pacVar3)[1] = cVar2;
+      pacVar3 = (char (*) [30])(*pacVar3 + 2);
+    } while (cVar2 != '\0');
     do {
-      cVar1 = actor->actor_name[0];
-      (*dest)[0] = cVar1;
-      if (cVar1 == '\0') {
+      cVar2 = actor->actor_name[0];
+      (*dest)[0] = cVar2;
+      if (cVar2 == '\0') {
         return;
       }
-      cVar1 = actor->actor_name[1];
+      cVar2 = actor->actor_name[1];
       actor = (CDemonActor *)(actor->actor_name + 2);
-      (*dest)[1] = cVar1;
+      (*dest)[1] = cVar2;
       dest = (char (*) [30])(*dest + 2);
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
   }
   return;
 }

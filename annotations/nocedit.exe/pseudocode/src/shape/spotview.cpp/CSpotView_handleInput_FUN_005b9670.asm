@@ -7,7 +7,9 @@
 ; CSpotView *      Stack[0x4]:4   this_ptr
 ; uint             Stack[0x8]:4   control_flags
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  fStack_1c
+; float            Stack[-0xc]:4  fStack_c
 ;
 ; XREF[6]:
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d6e7

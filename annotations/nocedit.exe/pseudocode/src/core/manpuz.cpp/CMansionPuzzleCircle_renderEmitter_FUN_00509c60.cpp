@@ -13,7 +13,6 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderEmitter_FUN_00509c60(CMa
   CVector3i local_1c;
   int local_10;
   
-  local_10 = panel_index;
   local_1c.y = (int)((float)panel_index * 0.5235988f);
   local_1c.x = 0;
   local_1c.z = 0;

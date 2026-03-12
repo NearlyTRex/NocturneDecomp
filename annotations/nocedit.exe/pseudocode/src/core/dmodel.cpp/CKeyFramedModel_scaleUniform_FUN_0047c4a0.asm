@@ -7,9 +7,7 @@
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   uniform_scale
 ; Local Variables:
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
-; undefined4       Stack[-0x4]:4  local_4
+; CVector3f        Stack[-0xc]:12  local_c
 ;
 ; XREF[2]:
 ;   core_dmodel.cpp_CKeyFramedModel_scaleToHeight_FUN_0047c470 at 0047c495

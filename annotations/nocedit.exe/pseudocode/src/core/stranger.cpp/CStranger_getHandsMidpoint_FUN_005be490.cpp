@@ -9,16 +9,16 @@
 CVector3f * __cdecl core_stranger_cpp_CStranger_getHandsMidpoint_FUN_005be490(CStranger *this_ptr,CVector3f *out_position)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
   CVector3f *pCVar6;
   CVector3f *pCVar7;
   CDeformableModelInstance *this_ptr_00;
   CVector3f local_30 [2];
   CVector3f local_18;
+  float fVar2;
+  float fVar1;
+  float fVar4;
+  float fVar5;
+  float fVar3;
   
   this_ptr_00 = &(this_ptr->base).base.model;
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20

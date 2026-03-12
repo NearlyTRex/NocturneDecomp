@@ -9,8 +9,8 @@
 void __cdecl core_dcube_cpp_clipPolygonAgainstMaxX_FUN_00454c40(float max_x_plane)
 
 {
-  CVector3f *vertex2;
   byte bVar1;
+  CVector3f *vertex2;
   uint uVar2;
   int iVar3;
   CVector3f *vertex1;

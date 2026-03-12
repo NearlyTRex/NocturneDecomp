@@ -10,13 +10,17 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap *th
 
 {
   char *pcVar1;
+  char *pcVar2;
   uint *puVar2;
+  _FILE *p_Var3;
   int iVar3;
   int iVar4;
   uint uVar5;
   _FILE *p_Var6;
   int iVar7;
+  int iVar5;
   uint uVar8;
+  int iVar6;
   char local_114 [256];
   _FILE *local_14;
   
@@ -31,10 +35,10 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap *th
     g_CurrentLineNumber = 0x53;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CAlphaBitmap::load - Out of memory");
   }
-  pcVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+  pcVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                      (width * height,"..\\engine\\alphabit.cpp",0x55);
-  this_ptr->opa = pcVar1;
-  if (pcVar1 == (char *)0x0) {
+  this_ptr->opa = pcVar2;
+  if (pcVar2 == (char *)0x0) {
     g_CurrentFilename = "..\\engine\\alphabit.cpp";
     g_CurrentLineNumber = 0x56;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CAlphaBitmap::load - Out of memory");
@@ -47,27 +51,26 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap *th
     core_main_c_displayErrorAndQuit_FUN_00506f10("CAlphaBitmap::load - Out of memory");
   }
   _sprintf(local_114,"%s.raw",filename);
-  local_14 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
-  if (local_14 == (_FILE *)0x0) {
+  p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
+  if (p_Var3 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\alphabit.cpp";
     g_CurrentLineNumber = 0x5f;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CAlphaBitmap::load - Can't open %s",local_114);
   }
-  p_Var6 = local_14;
-  _fread(this_ptr->raw,width,height,local_14);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var6,"..\\engine\\alphabit.cpp",0x61);
+  _fread(this_ptr->raw,width,height,p_Var3);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\alphabit.cpp",0x61);
   _sprintf(local_114,"%s.act",filename);
-  local_14 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
-  if (local_14 == (_FILE *)0x0) {
+  p_Var3 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
+  if (p_Var3 == (_FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\alphabit.cpp";
     g_CurrentLineNumber = 0x65;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CAlphaBitmap::load - Can't open %s",local_114);
   }
-  iVar7 = 0;
+  iVar6 = 0;
   do {
-    iVar3 = _fgetc(local_14);
-    iVar4 = _fgetc(local_14);
-    uVar5 = _fgetc(local_14);
+    iVar3 = _fgetc(p_Var3);
+    iVar4 = _fgetc(p_Var3);
+    uVar5 = _fgetc(p_Var3);
     if (g_BitsPerPixel == 0x20) {
       uVar8 = iVar4 << (g_GreenBitPosition.bytes[0] & 0x1f) |
               iVar3 << (g_RedBitPosition.bytes[0] & 0x1f);
@@ -76,28 +79,28 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap *th
     else {
       uVar8 = iVar3 << 0x10 | iVar4 << 8;
     }
-    iVar3 = iVar7 + 4;
-    *(uint *)(iVar7 + (int)this_ptr->act) = uVar8 | uVar5;
-    iVar7 = iVar3;
-  } while (iVar3 != 0x400);
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\engine\\alphabit.cpp",0x6d);
+    iVar5 = iVar6 + 4;
+    *(uint *)(iVar6 + (int)this_ptr->act) = uVar8 | uVar5;
+    iVar6 = iVar5;
+  } while (iVar5 != 0x400);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\engine\\alphabit.cpp",0x6d);
   _sprintf(local_114,"%s.opa",filename);
   p_Var6 = engine_dosio_c_getFile_FUN_00481a50("art",local_114,"rb");
   if (p_Var6 == (_FILE *)0x0) {
-    iVar3 = width * height;
+    iVar6 = width * height;
     iVar7 = 0;
-    if (0 < iVar3) {
+    if (0 < iVar6) {
       do {
         while (this_ptr->act[(byte)this_ptr->raw[iVar7]] != 0) {
           this_ptr->opa[iVar7] = -1;
           iVar7 = iVar7 + 1;
-          if (iVar3 <= iVar7) {
+          if (iVar6 <= iVar7) {
             return;
           }
         }
         this_ptr->opa[iVar7] = '\0';
         iVar7 = iVar7 + 1;
-      } while (iVar7 < iVar3);
+      } while (iVar7 < iVar6);
     }
     return;
   }

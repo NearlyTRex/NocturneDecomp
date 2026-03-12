@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   mb_string
 ; SIZE_T           Stack[0xc]:4   max_bytes
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; wchar_t[2]       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   crt_stdio.c_scanf_char_FUN_00604d54 at 00604e13

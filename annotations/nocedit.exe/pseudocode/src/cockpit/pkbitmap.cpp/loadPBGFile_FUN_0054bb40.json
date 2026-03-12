@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 50,
-        "line": 24,
+        "line": 26,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -13,15 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 50,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 7,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 52,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 184
+    "total_lines": 186
   },
   "cross_references": [
     {
@@ -175,25 +175,32 @@
     "pcode_op_count": 443
   },
   "stack_frame": {
-    "frame_size": 148,
-    "local_size": 124,
+    "frame_size": 404,
+    "local_size": 380,
     "param_offset": 4,
     "param_size": 24,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "auStack_178",
+        "offset": -376,
+        "size": 256,
+        "type": "uchar[256]"
+      },
+      {
+        "is_param": false,
         "name": "local_78",
         "offset": -120,
-        "size": 1,
-        "type": "undefined"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CPackedBitmap *"
       },
       {
         "is_param": true,

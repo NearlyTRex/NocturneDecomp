@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   format
 ; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
+; undefined1 *     Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0 at 00433411

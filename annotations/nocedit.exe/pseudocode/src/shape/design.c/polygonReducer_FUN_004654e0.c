@@ -9,12 +9,13 @@
 void __cdecl shape_design_c_polygonReducer_FUN_004654e0(void)
 
 {
-  char cVar1;
   int iVar2;
+  int iVar1;
   char *pcVar3;
   byte bVar4;
   char local_64 [80];
   int local_14;
+  char cVar1;
   
   bVar4 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -22,15 +23,16 @@ void __cdecl shape_design_c_polygonReducer_FUN_004654e0(void)
                     (local_64,0x14,0,0,"Enter 1 for full pass or 2 for single pass [1] : ");
   if (iVar2 != 0x1b) {
     local_14 = 1;
-    iVar2 = -1;
+    iVar1 = -1;
     pcVar3 = local_64;
     do {
-      if (iVar2 == 0) break;
-      iVar2 = iVar2 + -1;
-      cVar1 = *pcVar3;
+      if (iVar1 == 0) break;
+      iVar1 = iVar1 + -1;
       pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
+      cVar1 = *pcVar3;
+      pcVar3 = pcVar3;
     } while (cVar1 != '\0');
-    if (iVar2 != -2) {
+    if (iVar1 != -2) {
       local_14 = atoi(local_64);
     }
     if (local_14 == 1) {

@@ -6,9 +6,9 @@
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xd4]:1  local_d4
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0xc]:1  local_c
+; char[100]        Stack[-0xd4]:100  local_d4
+; char[100]        Stack[-0x70]:100  local_70
+; int              Stack[-0xc]:4  local_c
 ;
 ; XREF[9]:
 ;   core_baron.cpp_CBaron_archive_FUN_00413a70 at 00413a76

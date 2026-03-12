@@ -4,31 +4,31 @@
       {
         "category": "format_error",
         "column": 127,
-        "line": 56,
+        "line": 60,
         "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 20,
-        "line": 178,
+        "line": 182,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
         "category": "format_error",
         "column": 72,
-        "line": 204,
+        "line": 209,
         "message": "format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 81,
-        "line": 204,
+        "line": 209,
         "message": "format specifies type 'int' but the argument has type 'SIZE_T' (aka 'unsigned long') [-Werror,-Wformat]"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 217,
+        "line": 222,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       }
     ],
@@ -37,18 +37,18 @@
   },
   "complexity": {
     "assembly_lines": 524,
-    "complexity_score": 303,
+    "complexity_score": 308,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 32,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 223,
+    "pseudocode_lines": 228,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function"
     ],
-    "total_lines": 747
+    "total_lines": 752
   },
   "cross_references": [
     {
@@ -402,28 +402,28 @@
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "SIZE_T"
       },
       {
         "is_param": false,
@@ -458,7 +458,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SIZE_T"
       },
       {
         "is_param": true,
@@ -494,15 +494,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "local_30 = (int)ROUND(ROUND((float)(this_ptr->sample_info).sample_rate * time_window));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 66,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30 = (int)ROUND(ROUND((float)(this_ptr->sample_info).sample_rate * time_window));",
@@ -513,12 +505,12 @@
       "line": 66,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_2c = (int)ROUND(ROUND((double)this_ptr->stream_write_position -",
+      "text": "local_30 = (int)ROUND(ROUND((float)(this_ptr->sample_info).sample_rate * time_window));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 70,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_2c = (int)ROUND(ROUND((double)this_ptr->stream_write_position -",
@@ -526,7 +518,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 70,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "local_2c = (int)ROUND(ROUND((double)this_ptr->stream_write_position -",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 82,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND((float)(this_ptr->sample_info).sample_rate * update_interval));",
@@ -534,7 +534,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 78,
+      "line": 82,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_34 = (int)ROUND(ROUND((float)(this_ptr->sample_info).sample_rate * update_interval));",

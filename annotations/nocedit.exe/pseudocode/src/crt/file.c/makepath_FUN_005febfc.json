@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 156,
+    "complexity_score": 160,
     "cross_reference_count": 23,
     "function_call_count": 6,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 101,
+    "pseudocode_lines": 105,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "special_crt_function"
     ],
-    "total_lines": 340
+    "total_lines": 344
   },
   "cross_references": [
     {
@@ -241,14 +241,14 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": true,
@@ -290,7 +290,7 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 10,
       "match": "extraout_var",
       "severity": "moderate",
       "text": "ushort extraout_var;",
@@ -298,18 +298,18 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 79,
+      "line": 83,
       "match": "extraout_var",
       "severity": "moderate",
-      "text": "if ((CONCAT22(extraout_var,wVar2) != local_18) && ((byte)*path_buffer == local_18)) {",
+      "text": "if ((CONCAT22(extraout_var,wVar3) != local_18) && ((byte)*path_buffer == local_18)) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 83,
       "match": "CONCAT22",
       "severity": "mild",
-      "text": "if ((CONCAT22(extraout_var,wVar2) != local_18) && ((byte)*path_buffer == local_18)) {",
+      "text": "if ((CONCAT22(extraout_var,wVar3) != local_18) && ((byte)*path_buffer == local_18)) {",
       "type": "decompiler_intrinsic"
     },
     {

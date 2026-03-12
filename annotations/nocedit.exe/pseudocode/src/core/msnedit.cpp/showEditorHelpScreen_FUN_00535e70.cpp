@@ -9,16 +9,17 @@
 void __cdecl core_msnedit_cpp_showEditorHelpScreen_FUN_00535e70(void)
 
 {
-  CDemonActor *this_ptr;
-  uint uVar1;
   char *pcVar2;
   int iVar3;
   int iVar4;
-  int right_pos;
-  int bottom_pos;
+  int iVar1;
   char local_110 [200];
   CEdScrollBar local_48;
   uint local_14;
+  int right_pos;
+  uint uVar1;
+  CDemonActor *this_ptr;
+  int bottom_pos;
   
   shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&local_48);
   while( true ) {
@@ -176,12 +177,12 @@ void __cdecl core_msnedit_cpp_showEditorHelpScreen_FUN_00535e70(void)
     }
     local_14 = uVar1;
     local_14 = local_14 + 0xb;
-    iVar4 = g_ClipTop;
+    iVar1 = g_ClipTop;
     right_pos = g_ClipRight;
     bottom_pos = g_ClipBottom;
     iVar3 = shape_edittool_cpp_calculateGridWidth_FUN_004a6490();
     shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
-              (&local_48,g_WindowWidth - iVar3,iVar4,right_pos,bottom_pos);
+              (&local_48,g_WindowWidth - iVar3,iVar1,right_pos,bottom_pos);
     local_48.current_value = local_14 + local_48.scroll_position;
     local_48.max_value = (g_ClipBottom - g_ClipTop) + -1;
     shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&local_48);
@@ -190,24 +191,24 @@ void __cdecl core_msnedit_cpp_showEditorHelpScreen_FUN_00535e70(void)
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
     if (iVar4 != 0) break;
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD2);
-    if (iVar4 != 0) {
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD2);
+    if (iVar1 != 0) {
       local_48.scroll_position = local_48.scroll_position + 0xb;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD8);
-    if (iVar4 != 0) {
-      local_48.scroll_position = local_48.scroll_position - 0xb;
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD8);
+    if (iVar1 != 0) {
+      local_48.scroll_position = local_48.scroll_position + -0xb;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD3);
-    if (iVar4 != 0) {
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD3);
+    if (iVar1 != 0) {
       local_48.scroll_position = local_48.scroll_position + local_48.max_value;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD9);
-    if (iVar4 != 0) {
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD9);
+    if (iVar1 != 0) {
       local_48.scroll_position = local_48.scroll_position - local_48.max_value;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD7);
-    if (iVar4 != 0) {
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD7);
+    if (iVar1 != 0) {
       local_48.scroll_position = 0;
     }
     if (local_48.current_value - local_48.max_value < local_48.scroll_position) {

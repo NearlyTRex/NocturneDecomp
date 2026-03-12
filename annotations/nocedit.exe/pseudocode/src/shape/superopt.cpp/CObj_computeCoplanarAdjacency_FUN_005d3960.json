@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 389,
-    "complexity_score": 199,
+    "complexity_score": 192,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 154,
-    "suspect_count": 4,
+    "pseudocode_lines": 157,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 543
+    "total_lines": 546
   },
   "cross_references": [],
   "function": {
@@ -116,35 +116,56 @@
         "name": "local_68",
         "offset": -104,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": false,
         "name": "local_64",
         "offset": -100,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_60",
+        "offset": -96,
+        "size": 4,
+        "type": "CP3D *"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "CPoly *"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": false,
+        "name": "pdStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "double *"
       },
       {
         "is_param": true,
@@ -182,34 +203,26 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 64,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar13 = (uint *)((int)(pCVar12->uv_coords + 4) + local_64 + 8);",
+      "text": "puVar13 = (uint *)((int)(pCVar1->uv_coords + 4) + local_64 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 65,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdStack_1c = (double *)((int)&(((CP3D *)(pCVar12->uv_coords + 3))->impl).x + local_64);",
+      "text": "pdStack_1c = (double *)((int)&(((CP3D *)(pCVar1->uv_coords + 3))->impl).x + local_64);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 66,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar15 = (int *)((int)pCVar12->uv_coords + local_64 + -0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 147,
-      "match": "(CP3D *)((int)",
-      "severity": "mild",
-      "text": "pCStack_60 = (CP3D *)((int)(pCStack_60 + 4) + 8);",
+      "text": "piVar15 = (int *)((int)pCVar1->uv_coords + local_64 + -0xc);",
       "type": "pointer_cast"
     }
   ],

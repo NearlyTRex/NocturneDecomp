@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   y
 ; int              Stack[0x10]:4   width
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0 at 0053c5a1

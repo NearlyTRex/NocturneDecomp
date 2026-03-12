@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 144,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 63,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 204
+    "total_lines": 208
   },
   "cross_references": [
     {
@@ -151,7 +151,7 @@
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -182,15 +182,15 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 34,
+      "line": 38,
       "match": "SQRT",
       "severity": "mild",
-      "text": "local_10 = SQRT(fVar5 * (this_ptr->triangle).normal.z + fVar7 * fVar2 + fVar6 * fVar1);",
+      "text": "local_10 = SQRT(fVar3 * (this_ptr->triangle).normal.z + fVar7 * fVar2 + fVar6 * fVar1);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 35,
+      "line": 39,
       "match": "ABS",
       "severity": "mild",
       "text": "if (ABS(local_10) == 0.0) {",
@@ -198,26 +198,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 45,
+      "line": 49,
       "match": "ABS",
       "severity": "mild",
-      "text": "fVar2 = ABS((this_ptr->triangle).normal.x);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(fVar1) < fVar2) && (ABS((this_ptr->triangle).normal.z) < fVar2)) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(fVar1) < fVar2) && (ABS((this_ptr->triangle).normal.z) < fVar2)) {",
+      "text": "fVar4 = ABS((this_ptr->triangle).normal.x);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -225,23 +209,39 @@
       "line": 54,
       "match": "ABS",
       "severity": "mild",
-      "text": "fVar1 = ABS((this_ptr->triangle).normal.y);",
+      "text": "if ((ABS(fVar3) < fVar4) && (ABS((this_ptr->triangle).normal.z) < fVar4)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 54,
       "match": "ABS",
       "severity": "mild",
-      "text": "if ((ABS((this_ptr->triangle).normal.x) < fVar1) && (ABS((this_ptr->triangle).normal.z) < fVar1))",
+      "text": "if ((ABS(fVar3) < fVar4) && (ABS((this_ptr->triangle).normal.z) < fVar4)) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 55,
+      "line": 58,
       "match": "ABS",
       "severity": "mild",
-      "text": "if ((ABS((this_ptr->triangle).normal.x) < fVar1) && (ABS((this_ptr->triangle).normal.z) < fVar1))",
+      "text": "fVar3 = ABS((this_ptr->triangle).normal.y);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if ((ABS((this_ptr->triangle).normal.x) < fVar3) && (ABS((this_ptr->triangle).normal.z) < fVar3))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 59,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if ((ABS((this_ptr->triangle).normal.x) < fVar3) && (ABS((this_ptr->triangle).normal.z) < fVar3))",
       "type": "decompiler_intrinsic"
     }
   ]

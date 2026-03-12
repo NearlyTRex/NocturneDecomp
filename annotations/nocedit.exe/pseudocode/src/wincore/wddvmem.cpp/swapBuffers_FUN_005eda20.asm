@@ -4,13 +4,11 @@
 ; void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; DDSURFACEDESC    Stack[-0x8c]:108  local_8c
+; undefined8 *     Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; undefined8 *     Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[132]:
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043da5b

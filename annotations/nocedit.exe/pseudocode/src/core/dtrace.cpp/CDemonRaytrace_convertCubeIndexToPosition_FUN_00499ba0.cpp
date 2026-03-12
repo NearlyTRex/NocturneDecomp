@@ -9,10 +9,10 @@
 CVector3f * __cdecl core_dtrace_cpp_CDemonRaytrace_convertCubeIndexToPosition_FUN_00499ba0(CDemonRaytrace *this_ptr,CVector3f *output_position,int cube_index)
 
 {
-  int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
+  int iVar1;
   
   iVar2 = cube_index / ((this_ptr->grid_coord).y * (this_ptr->grid_coord).z);
   iVar1 = (this_ptr->grid_coord).z;

@@ -4,12 +4,10 @@
 ; void __cdecl shape_design_c_loadPalette_FUN_0046e810(void)
 ;
 ; Local Variables:
-; undefined        Stack[-0xb8]:1  local_b8
-; undefined        Stack[-0x68]:1  local_68
-; undefined1       Stack[-0x67]:1  local_67
-; undefined1       Stack[-0x65]:1  local_65
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0xb8]:80  local_b8
+; char[80]         Stack[-0x68]:80  local_68
+; char *           Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_1_Load_model_palette_0061df26

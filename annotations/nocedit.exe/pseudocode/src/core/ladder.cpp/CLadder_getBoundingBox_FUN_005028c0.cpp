@@ -9,13 +9,14 @@
 CBoundingBox3D * __cdecl core_ladder_cpp_CLadder_getBoundingBox_FUN_005028c0(CLadder *this_ptr,CBoundingBox3D *out_box)
 
 {
-  float fVar1;
+  CKeyFramedModel *pCVar7;
+  CKeyFramedModel *pCVar1;
   float fVar2;
   float fVar3;
   float fVar4;
   float fVar5;
   float fVar6;
-  CKeyFramedModel *pCVar7;
+  float fVar1;
   
   pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
   if (pCVar7->poly_count < 1) {
@@ -33,12 +34,12 @@ CBoundingBox3D * __cdecl core_ladder_cpp_CLadder_getBoundingBox_FUN_005028c0(CLa
     (out_box->max).z = fVar5 * fVar4;
     return out_box;
   }
-  pCVar7 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
-  (out_box->min).x = (pCVar7->bounds_min).x;
-  (out_box->min).y = (pCVar7->bounds_min).y;
-  (out_box->min).z = (pCVar7->bounds_min).z;
-  (out_box->max).x = (pCVar7->bounds_max).x;
-  (out_box->max).y = (pCVar7->bounds_max).y;
-  (out_box->max).z = (pCVar7->bounds_max).z;
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->model);
+  (out_box->min).x = (pCVar1->bounds_min).x;
+  (out_box->min).y = (pCVar1->bounds_min).y;
+  (out_box->min).z = (pCVar1->bounds_min).z;
+  (out_box->max).x = (pCVar1->bounds_max).x;
+  (out_box->max).y = (pCVar1->bounds_max).y;
+  (out_box->max).z = (pCVar1->bounds_max).z;
   return out_box;
 }

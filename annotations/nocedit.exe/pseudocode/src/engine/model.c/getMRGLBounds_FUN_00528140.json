@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 52,
-        "line": 95,
+        "line": 100,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -13,19 +13,19 @@
   },
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 319,
+    "complexity_score": 322,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 184,
+    "pseudocode_lines": 187,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 523
+    "total_lines": 526
   },
   "cross_references": [
     {
@@ -210,190 +210,190 @@
         "is_param": false,
         "name": "local_160",
         "offset": -352,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "char[80]"
       },
       {
         "is_param": false,
         "name": "local_110",
         "offset": -272,
-        "size": 1,
-        "type": "undefined1"
+        "size": 52,
+        "type": "uint[13]"
       },
       {
         "is_param": false,
         "name": "local_dc",
         "offset": -220,
-        "size": 1,
-        "type": "undefined1"
+        "size": 52,
+        "type": "uint[13]"
       },
       {
         "is_param": false,
         "name": "local_a8",
         "offset": -168,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_a4",
         "offset": -164,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_a0",
         "offset": -160,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_9c",
         "offset": -156,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_98",
         "offset": -152,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_94",
         "offset": -148,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_90",
         "offset": -144,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_8c",
         "offset": -140,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_88",
         "offset": -136,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_84",
         "offset": -132,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_80",
         "offset": -128,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_7c",
         "offset": -124,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_78",
         "offset": -120,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_74",
         "offset": -116,
-        "size": 1,
-        "type": "undefined1"
+        "size": 52,
+        "type": "SMRGLModelBounds"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMRGLModelBounds *"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -415,26 +415,18 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 65,
       "match": "(SMRGLModelBounds *)((int)",
       "severity": "mild",
-      "text": "pSVar13 = (SMRGLModelBounds *)((int)pSVar13 + ((uint)bVar15 * -2 + 1) * 4);",
+      "text": "pSVar13 = (SMRGLModelBounds *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
+      "line": 148,
       "match": "ROUND",
       "severity": "mild",
-      "text": "lVar4 = (longlong)local_2c * (longlong)(int)ROUND(ROUND(local_14));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar4 = (longlong)local_2c * (longlong)(int)ROUND(ROUND(local_14));",
+      "text": "lVar4 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_14 * fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -442,15 +434,7 @@
       "line": 148,
       "match": "ROUND",
       "severity": "mild",
-      "text": "lVar4 = (longlong)local_2c * (longlong)(int)ROUND(ROUND(local_18));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 148,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "lVar4 = (longlong)local_2c * (longlong)(int)ROUND(ROUND(local_18));",
+      "text": "lVar4 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_14 * fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -458,7 +442,7 @@
       "line": 150,
       "match": "ROUND",
       "severity": "mild",
-      "text": "lVar4 = (longlong)local_2c * (longlong)(int)ROUND(ROUND(local_1c));",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_18 * fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
@@ -466,12 +450,28 @@
       "line": 150,
       "match": "ROUND",
       "severity": "mild",
-      "text": "lVar4 = (longlong)local_2c * (longlong)(int)ROUND(ROUND(local_1c));",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_18 * fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
+      "line": 152,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_1c * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 152,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_1c * fVar5));",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 170,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
@@ -479,7 +479,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
+      "line": 170,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
@@ -487,7 +487,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 169,
+      "line": 170,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
@@ -495,10 +495,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 185,
+      "line": 188,
       "match": "(SMRGLModelBounds *)((int)",
       "severity": "mild",
-      "text": "pSVar13 = (SMRGLModelBounds *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
+      "text": "pSVar7 = (SMRGLModelBounds *)((int)pSVar7 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

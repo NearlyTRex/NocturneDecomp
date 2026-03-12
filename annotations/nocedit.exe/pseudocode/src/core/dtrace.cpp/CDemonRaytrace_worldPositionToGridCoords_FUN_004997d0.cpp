@@ -11,13 +11,13 @@
 void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
 
 {
-  double dVar1;
   int *unaff_ESI;
   byte bVar2;
   int aiStackY_1004 [1016];
   int local_18;
   int local_14;
   double local_10;
+  double dVar1;
   
   bVar2 = 0;
   local_10 = floor
@@ -33,8 +33,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997
                                 (this_ptr->cell_size).z));
   local_14 = (int)ROUND(ROUND(local_10));
   *unaff_ESI = (int)ROUND(dVar1);
-  unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffe8 + (uint)bVar2 * -8);
+  unaff_ESI[(uint)bVar2 * -2 + 1] = (&local_18)[(uint)bVar2 * -2];
   (unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =
-       *(int *)((int)&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+       (&local_14)[(uint)bVar2 * -2 + (uint)bVar2 * -2];
   return;
 }

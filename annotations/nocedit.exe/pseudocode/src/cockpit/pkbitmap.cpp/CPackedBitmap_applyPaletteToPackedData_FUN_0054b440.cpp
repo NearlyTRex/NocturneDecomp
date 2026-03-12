@@ -9,12 +9,12 @@
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440(CPackedBitmap *this_ptr,uchar *palette_buffer)
 
 {
-  char *pcVar1;
-  void *pvVar2;
   byte *pbVar3;
   int iVar4;
   uint uVar5;
   byte *pbVar6;
+  void *pvVar2;
+  char *pcVar1;
   
   pcVar1 = this_ptr->packed_data;
   pvVar2 = this_ptr->row_pointers[this_ptr->height];

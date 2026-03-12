@@ -21,8 +21,9 @@ void __cdecl engine_boss_c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExten
   core_main_c_displayErrorAndQuit_FUN_00506f10("modelStruct not supported");
   puVar2 = local_3c;
   for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *unaff_ESI = *puVar2;
     puVar2 = puVar2 + (uint)bVar3 * -2 + 1;
+    *unaff_ESI = *puVar2;
+    puVar2 = puVar2;
     unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;
   }
   return;

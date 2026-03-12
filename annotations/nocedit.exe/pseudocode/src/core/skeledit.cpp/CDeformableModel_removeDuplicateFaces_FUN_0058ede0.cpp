@@ -10,6 +10,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede
 
 {
   int iVar1;
+  int iVar4;
   int iVar2;
   int iVar3;
   short *psVar4;
@@ -58,13 +59,13 @@ LAB_0058ee5a:
                   psVar4 = psVar4 + 1;
                 } while (iVar2 < 3);
                 if (iVar2 == 3) {
-                  iVar3 = local_54->tri_count[0] + -1;
-                  local_54->tri_count[0] = iVar3;
+                  iVar4 = local_54->tri_count[0] + -1;
+                  local_54->tri_count[0] = iVar4;
                   memmove
                             ((void *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).
                                             vertex_index_0 + local_38),
                              (void *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).
-                                            vertex_index_0 + local_3c),(iVar3 - local_30) * 0x12);
+                                            vertex_index_0 + local_3c),(iVar4 - local_30) * 0x12);
                   memmove
                             (local_54->index_data_ptr[0] + local_30,
                              (void *)(local_40 + (int)local_54->index_data_ptr[0]),

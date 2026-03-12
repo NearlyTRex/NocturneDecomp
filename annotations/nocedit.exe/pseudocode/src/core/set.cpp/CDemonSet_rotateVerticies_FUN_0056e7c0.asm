@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   vertex_count
 ; CVector3i *      Stack[0xc]:4   input_vertices
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[11]:
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340 at 00419360

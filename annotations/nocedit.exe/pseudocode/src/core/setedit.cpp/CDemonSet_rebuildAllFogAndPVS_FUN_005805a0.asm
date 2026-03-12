@@ -6,8 +6,8 @@
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x174]:1  local_174
-; undefined1       Stack[-0x74]:1  local_74
+; char[256]        Stack[-0x174]:256  local_174
+; char[100]        Stack[-0x74]:100  local_74
 ;
 ; XREF[2]:
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00579502

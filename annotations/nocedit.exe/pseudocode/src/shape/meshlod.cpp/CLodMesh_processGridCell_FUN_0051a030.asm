@@ -9,13 +9,14 @@
 ; int              Stack[0xc]:4   grid_y
 ; int              Stack[0x10]:4   grid_z
 ; Local Variables:
-; undefined8       Stack[-0x38]:8  local_38
+; undefined4       Stack[-0x38]:4  local_38
+; undefined4       Stack[-0x34]:4  uStack_34
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; SLodSamplePoint * Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50 at 00519d67

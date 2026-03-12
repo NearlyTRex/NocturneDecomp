@@ -9,8 +9,19 @@
 ; LPVOID           Stack[0xc]:4   sync_param
 ; HANDLE *         Stack[0x10]:4   out_thread_handle
 ; Local Variables:
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
+; char[4048]       Stack[-0x1034]:4048  acStackY_1034
+; char             Stack[-0x4c]:1  cStack_4c
+; char             Stack[-0x4b]:1  cStack_4b
+; char             Stack[-0x4a]:1  cStack_4a
+; char             Stack[-0x49]:1  cStack_49
+; undefined4       Stack[-0x48]:4  uStack_48
+; char[24]         Stack[-0x44]:24  acStack_44
+; LPVOID           Stack[-0x2c]:4  local_2c
+; LPVOID           Stack[-0x28]:4  local_28
+; HANDLE           Stack[-0x24]:4  pvStack_24
+; HANDLE           Stack[-0x20]:4  pvStack_20
+; undefined4 *     Stack[-0x1c]:4  puStack_1c
+; DWORD            Stack[-0x18]:4  DStack_18
 ;
 ; XREF[2]:
 ;   crt_unknown.c_FUN_0060e854 at 0060e86a
@@ -31,12 +42,10 @@
 ; Called Functions:
 ;   CloseHandle
 ;   CreateEventA
-;   CreateThread
 ;   crt_stdio.c_IntegerToString_FUN_00607d18
 ;   crt_tls.c_allocate_tls_index_FUN_0060a27c
 ;   crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4
 ;   GetCurrentThread
-;   GetCurrentThreadId
 ;   WaitForSingleObject
 ;
 ; *****************************************************************************

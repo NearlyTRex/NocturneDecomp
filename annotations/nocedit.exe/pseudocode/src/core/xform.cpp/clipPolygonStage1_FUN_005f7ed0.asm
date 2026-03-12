@@ -4,7 +4,7 @@
 ; void __cdecl core_xform_cpp_clipPolygonStage1_FUN_005f7ed0(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005f7ebc = 005f7f31

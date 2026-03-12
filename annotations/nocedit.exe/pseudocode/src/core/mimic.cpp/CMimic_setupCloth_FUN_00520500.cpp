@@ -9,7 +9,7 @@
 void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_00520500(CMimic *this_ptr)
 
 {
-  CDeformableModelInstance *this_ptr_00;
+  CDeformableModelInstance *this_ptr_01;
   CDemonActor *pCVar1;
   SMotion *motion_name;
   uint uVar2;
@@ -17,6 +17,7 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_00520500(CMimic *this_ptr)
   int *piVar4;
   SClothVertex *pSVar5;
   byte bVar6;
+  CDeformableModelInstance *this_ptr_00;
   float frame_number;
   
   bVar6 = 0;
@@ -37,20 +38,22 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_00520500(CMimic *this_ptr)
       pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -8 + 4);
     }
     for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(char *)&(pSVar5->position).x = (char)*piVar4;
-      piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -2 + 1);
       pSVar5 = (SClothVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);
+      piVar4 = (int *)((int)piVar4 + (uint)bVar6 * -2 + 1);
+      *(char *)&(pSVar5->position).x = (char)*piVar4;
+      piVar4 = piVar4;
+      pSVar5 = pSVar5;
     }
   }
   frame_number = (g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller.current_frame_number
   ;
   motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&(g_HeroActors[g_LocalHeroIndex]->base).model.motion_controller);
-  this_ptr_00 = &(this_ptr->base).base.model;
+  this_ptr_01 = &(this_ptr->base).base.model;
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
-            (&this_ptr_00->motion_controller,motion_name->motion_name,frame_number);
+            (&this_ptr_01->motion_controller,motion_name->motion_name,frame_number);
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            (&this_ptr_00->motion_controller,1,1);
+            (&this_ptr_01->motion_controller,1,1);
   engine_console_cpp_CConsole_printf_FUN_00441890
             (g_CConsolePtr,"%s attacking hero\n",this_ptr);
   return;

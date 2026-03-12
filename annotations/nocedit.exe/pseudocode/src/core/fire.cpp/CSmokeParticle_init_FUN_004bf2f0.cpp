@@ -9,8 +9,8 @@
 void __cdecl core_fire_cpp_CSmokeParticle_init_FUN_004bf2f0(CSmokeParticle *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value)
 
 {
-  CVector3f *pCVar1;
   float fVar2;
+  CVector3f *pCVar1;
   
   if (&this_ptr->position != position) {
     (this_ptr->position).x = position->x;

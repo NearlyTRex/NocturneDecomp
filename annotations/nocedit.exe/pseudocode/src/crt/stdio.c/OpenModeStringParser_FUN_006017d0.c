@@ -9,12 +9,13 @@
 int __cdecl OpenModeStringParser(char *mode_string,char *output_flags)
 
 {
+  byte bVar6;
+  uint uVar6;
   byte bVar1;
+  bool bVar5;
   bool bVar2;
   bool bVar3;
   bool bVar4;
-  bool bVar5;
-  uint uVar6;
   
   bVar2 = true;
   bVar4 = false;
@@ -50,12 +51,12 @@ LAB_00601822:
     if (bVar1 != 0x77) goto LAB_00601822;
     uVar6 = 2;
   }
-  bVar1 = mode_string[1];
-  while ((bVar1 != 0 && (bVar2))) {
-    bVar1 = ((byte *)mode_string)[1];
-    if (bVar1 < 99) {
-      if (0x2a < bVar1) {
-        if (bVar1 < 0x2c) {
+  bVar6 = mode_string[1];
+  while ((bVar6 != 0 && (bVar2))) {
+    bVar6 = ((byte *)mode_string)[1];
+    if (bVar6 < 99) {
+      if (0x2a < bVar6) {
+        if (bVar6 < 0x2c) {
           if (bVar3) {
             bVar2 = false;
           }
@@ -64,7 +65,7 @@ LAB_00601822:
             bVar3 = true;
           }
         }
-        else if (bVar1 == 0x62) {
+        else if (bVar6 == 0x62) {
           if (bVar4) {
             bVar2 = false;
           }
@@ -75,7 +76,7 @@ LAB_00601822:
         }
       }
     }
-    else if (bVar1 < 100) {
+    else if (bVar6 < 100) {
       if (bVar5) {
         bVar2 = false;
       }
@@ -84,8 +85,8 @@ LAB_00601822:
         *output_flags = *output_flags | 1;
       }
     }
-    else if (0x6d < bVar1) {
-      if (bVar1 < 0x6f) {
+    else if (0x6d < bVar6) {
+      if (bVar6 < 0x6f) {
         if (bVar5) {
           bVar2 = false;
         }
@@ -94,7 +95,7 @@ LAB_00601822:
           *output_flags = *output_flags & 0xfe;
         }
       }
-      else if (bVar1 == 0x74) {
+      else if (bVar6 == 0x74) {
         if (bVar4) {
           bVar2 = false;
         }
@@ -103,7 +104,7 @@ LAB_00601822:
         }
       }
     }
-    bVar1 = ((byte *)mode_string)[2];
+    bVar6 = ((byte *)mode_string)[2];
     mode_string = (char *)((byte *)mode_string + 1);
   }
   if ((!bVar4) && (INT_00684ed0 == 0x200)) {

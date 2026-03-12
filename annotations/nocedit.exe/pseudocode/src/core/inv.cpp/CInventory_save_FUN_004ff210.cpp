@@ -11,6 +11,8 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,_FIL
 {
   int iVar1;
   CInventory *pCVar2;
+  CInventory *pCVar1;
+  int iVar2;
   
   _fprintf(file_handle,"%s{ // Inventory\n");
   core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
@@ -34,15 +36,15 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,_FIL
   _fprintf(file_handle,"%s%f\n",g_PropertyNamePrefix,(double)this_ptr->battery_charge);
   _fprintf(file_handle,"%s// actor name list\n");
   core_inv_cpp_CInventory_saveItems_FUN_004ff3b0(this_ptr,file_handle);
-  iVar1 = 0;
+  iVar2 = 0;
   _fprintf(file_handle,"%s// actor data list\n");
-  pCVar2 = this_ptr;
+  pCVar1 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      iVar1 = iVar1 + 1;
-      core_actor_cpp_CDemonActor_save_FUN_0040af30(pCVar2->items[0],file_handle);
-      pCVar2 = (CInventory *)&pCVar2->owner;
-    } while (iVar1 < this_ptr->item_count);
+      iVar2 = iVar2 + 1;
+      core_actor_cpp_CDemonActor_save_FUN_0040af30(pCVar1->items[0],file_handle);
+      pCVar1 = (CInventory *)&pCVar1->owner;
+    } while (iVar2 < this_ptr->item_count);
   }
   core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
   _fprintf(file_handle,"%s} // End inventory\n");

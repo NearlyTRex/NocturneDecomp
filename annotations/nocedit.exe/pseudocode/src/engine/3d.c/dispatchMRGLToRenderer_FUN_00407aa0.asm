@@ -6,7 +6,7 @@
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ; Local Variables:
-; undefined        Stack[-0x110]:1  local_110
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_3d_c_006134f3

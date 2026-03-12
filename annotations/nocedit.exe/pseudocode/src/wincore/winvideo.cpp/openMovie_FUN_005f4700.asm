@@ -7,7 +7,11 @@
 ; HWND             Stack[0x4]:4   parent_window
 ; char *           Stack[0x8]:4   movie_filename
 ; Local Variables:
-; undefined        Stack[-0x1b4]:1  local_1b4
+; char[260]        Stack[-0x1b4]:260  local_1b4
+; byte             Stack[-0xb0]:1  bStack_b0
+; byte[127]        Stack[-0xaf]:127  abStack_af
+; tagRECT          Stack[-0x30]:16  tStack_30
+; tagRECT          Stack[-0x20]:16  tStack_20
 ;
 ; Referenced Globals:
 ;   MCI_GET_ERROR_STRING_A_FUNC* g_mciGetErrorStringAFunc = 0021183a

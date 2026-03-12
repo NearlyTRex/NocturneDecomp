@@ -6,7 +6,7 @@
 ; Parameters:
 ; SMRGLHeaderPrimitive * Stack[0x4]:4   prim
 ; Local Variables:
-; undefined        Stack[-0x54]:1  local_54
+; char[80]         Stack[-0x54]:80  local_54
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Old_func_d_00613396

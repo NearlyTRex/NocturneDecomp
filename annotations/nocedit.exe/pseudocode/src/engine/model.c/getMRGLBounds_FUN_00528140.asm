@@ -6,33 +6,33 @@
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   mrgl_data
 ; Local Variables:
-; undefined1       Stack[-0x160]:1  local_160
-; undefined1       Stack[-0x110]:1  local_110
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined4       Stack[-0xa8]:4  local_a8
-; undefined4       Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined1       Stack[-0x74]:1  local_74
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; char[80]         Stack[-0x160]:80  local_160
+; uint[13]         Stack[-0x110]:52  local_110
+; uint[13]         Stack[-0xdc]:52  local_dc
+; uint             Stack[-0xa8]:4  local_a8
+; uint             Stack[-0xa4]:4  local_a4
+; uint             Stack[-0xa0]:4  local_a0
+; uint             Stack[-0x9c]:4  local_9c
+; uint             Stack[-0x98]:4  local_98
+; uint             Stack[-0x94]:4  local_94
+; uint             Stack[-0x90]:4  local_90
+; uint             Stack[-0x8c]:4  local_8c
+; uint             Stack[-0x88]:4  local_88
+; int              Stack[-0x84]:4  local_84
+; int              Stack[-0x80]:4  local_80
+; int              Stack[-0x7c]:4  local_7c
+; int              Stack[-0x78]:4  local_78
+; SMRGLModelBounds Stack[-0x74]:52  local_74
+; int *            Stack[-0x34]:4  local_34
+; SMRGLModelBounds * Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int *            Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
 ;   shape_design.c_loadModelBinary_FUN_00458170 at 004588c3

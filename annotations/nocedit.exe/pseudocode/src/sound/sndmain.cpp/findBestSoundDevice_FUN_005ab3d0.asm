@@ -4,11 +4,10 @@
 ; int __cdecl sound_sndmain_cpp_findBestSoundDevice_FUN_005ab3d0(void)
 ;
 ; Local Variables:
-; undefined1[280]  Stack[-0x464]:280  device_info2
-; undefined1[280]  Stack[-0x34c]:280  device_info3
-; undefined1[280]  Stack[-0x234]:280  device_info1
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0xc]:4  local_c
+; SSoundDeviceInfo Stack[-0x468]:280  SStack_468
+; SSoundDeviceInfo Stack[-0x350]:280  SStack_350
+; SSoundDeviceInfo Stack[-0x238]:280  SStack_238
+; SSoundDeviceInfo Stack[-0x120]:280  SStack_120
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_selectSoundDevice_FUN_005ab4c0 at 005ab4e1

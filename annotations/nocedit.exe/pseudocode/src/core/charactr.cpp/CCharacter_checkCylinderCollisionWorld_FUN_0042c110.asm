@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   tolerance
 ; SDamageInfo *    Stack[0x10]:4   damage_info
 ; Local Variables:
-; undefined1       Stack[-0x10]:1  local_10
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10

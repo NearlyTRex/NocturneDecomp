@@ -8,8 +8,8 @@
 ; int *            Stack[0x8]:4   offset
 ; CVector3f *      Stack[0xc]:4   out_position
 ; Local Variables:
-; undefined1       Stack[-0x78]:1  local_78
-; undefined4       Stack[-0x14]:4  local_14
+; char[100]        Stack[-0x78]:100  local_78
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 at 004af2a7

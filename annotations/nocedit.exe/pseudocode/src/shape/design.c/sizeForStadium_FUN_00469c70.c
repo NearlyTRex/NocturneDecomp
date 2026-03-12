@@ -9,13 +9,18 @@
 void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void)
 
 {
-  char cVar1;
-  float fVar2;
-  float fVar3;
+  char cVar2;
+  float fVar4;
+  float fVar5;
+  int iVar6;
   int iVar4;
+  int iVar7;
+  int iVar8;
+  char *pcVar9;
   char *pcVar5;
   byte bVar6;
   double dVar7;
+  double dVar10;
   char local_e8 [160];
   int local_48;
   float local_44;
@@ -25,55 +30,58 @@ void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void)
   int local_20;
   int local_1c;
   float local_18;
+  float fVar2;
+  float fVar3;
+  char cVar1;
   
   bVar6 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_e8,0x14,0,0,"Enter in X point : ");
   iVar4 = -1;
-  pcVar5 = local_e8;
+  pcVar9 = local_e8;
   do {
     if (iVar4 == 0) break;
     iVar4 = iVar4 + -1;
-    cVar1 = *pcVar5;
-    pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+    cVar1 = *pcVar9;
+    pcVar9 = pcVar9 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar4 != -2) {
-    local_20 = atoi(local_e8);
+    iVar6 = atoi(local_e8);
     engine_2d_c_getInputWithPrompt_FUN_004032c0(local_e8,0x14,0,0xb,"Enter in Z point : ");
-    iVar4 = -1;
-    pcVar5 = local_e8;
+    iVar7 = -1;
+    pcVar9 = local_e8;
     do {
-      if (iVar4 == 0) break;
-      iVar4 = iVar4 + -1;
-      cVar1 = *pcVar5;
-      pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
-    } while (cVar1 != '\0');
-    if (iVar4 != -2) {
-      local_1c = atoi(local_e8);
+      if (iVar7 == 0) break;
+      iVar7 = iVar7 + -1;
+      cVar2 = *pcVar9;
+      pcVar9 = pcVar9 + (uint)bVar6 * -2 + 1;
+    } while (cVar2 != '\0');
+    if (iVar7 != -2) {
+      iVar7 = atoi(local_e8);
       engine_2d_c_getInputWithPrompt_FUN_004032c0(local_e8,0x14,0,0x16,"Enter in X size : ");
-      iVar4 = -1;
-      pcVar5 = local_e8;
+      iVar8 = -1;
+      pcVar9 = local_e8;
       do {
-        if (iVar4 == 0) break;
-        iVar4 = iVar4 + -1;
-        cVar1 = *pcVar5;
-        pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
-      } while (cVar1 != '\0');
-      if (iVar4 != -2) {
+        if (iVar8 == 0) break;
+        iVar8 = iVar8 + -1;
+        cVar2 = *pcVar9;
+        pcVar9 = pcVar9 + (uint)bVar6 * -2 + 1;
+      } while (cVar2 != '\0');
+      if (iVar8 != -2) {
         dVar7 = _strtod(local_e8);
-        local_18 = (float)dVar7;
         engine_2d_c_getInputWithPrompt_FUN_004032c0(local_e8,0x14,0,0x21,"Enter in Z size : ")
         ;
-        iVar4 = -1;
+        iVar8 = -1;
         pcVar5 = local_e8;
         do {
-          if (iVar4 == 0) break;
-          iVar4 = iVar4 + -1;
-          cVar1 = *pcVar5;
+          if (iVar8 == 0) break;
+          iVar8 = iVar8 + -1;
           pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
-        } while (cVar1 != '\0');
-        if (iVar4 != -2) {
-          dVar7 = _strtod(local_e8);
+          cVar2 = *pcVar5;
+          pcVar5 = pcVar5;
+        } while (cVar2 != '\0');
+        if (iVar8 != -2) {
+          dVar10 = _strtod(local_e8);
           local_44 = 999999.9;
           local_40 = -999999.9;
           local_3c = 999999.9;
@@ -86,22 +94,22 @@ void __cdecl shape_design_c_sizeForStadium_FUN_00469c70(void)
             if (fVar2 < local_44) {
               local_44 = fVar2;
             }
-            fVar2 = g_LoadedVertices[local_48].vertex.z;
-            if (local_38 < fVar2) {
-              local_38 = fVar2;
+            fVar4 = g_LoadedVertices[local_48].vertex.z;
+            if (local_38 < fVar4) {
+              local_38 = fVar4;
             }
-            if (fVar2 < local_3c) {
-              local_3c = fVar2;
+            if (fVar4 < local_3c) {
+              local_3c = fVar4;
             }
           }
-          local_18 = local_18 / g_LoadedVertices[local_20].vertex.x;
-          fVar2 = (float)dVar7 / g_LoadedVertices[local_1c].vertex.z;
+          fVar4 = (float)dVar7 / g_LoadedVertices[iVar6].vertex.x;
+          fVar5 = (float)dVar10 / g_LoadedVertices[iVar7].vertex.z;
           fVar3 = (float)0.5;
           for (local_48 = 0; local_48 < g_VertexCount; local_48 = local_48 + 1) {
-            g_LoadedVertices[local_48].vertex.x = g_LoadedVertices[local_48].vertex.x * local_18;
+            g_LoadedVertices[local_48].vertex.x = g_LoadedVertices[local_48].vertex.x * fVar4;
             g_LoadedVertices[local_48].vertex.y =
-                 g_LoadedVertices[local_48].vertex.y * (local_18 + fVar2) * fVar3;
-            g_LoadedVertices[local_48].vertex.z = g_LoadedVertices[local_48].vertex.z * fVar2;
+                 g_LoadedVertices[local_48].vertex.y * (fVar4 + fVar5) * fVar3;
+            g_LoadedVertices[local_48].vertex.z = g_LoadedVertices[local_48].vertex.z * fVar5;
           }
         }
       }

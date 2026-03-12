@@ -10,9 +10,11 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
 
 {
   HRESULT HVar1;
+  HRESULT HVar2;
   DDPIXELFORMAT_union2 DVar2;
   uint uVar3;
   DDPIXELFORMAT_union3 DVar4;
+  uint uVar4;
   DDPIXELFORMAT_union4 DVar5;
   DDSURFACEDESC local_70;
   
@@ -25,8 +27,8 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
     g_CurrentLineNumber = 0x2ae;
     core_main_c_displayErrorAndQuit_FUN_00506f10("setColorTable16 - Unable to lock back buffer!");
   }
-  HVar1 = (*g_SoftwareRenderSurface->vtable->Unlock)(g_SoftwareRenderSurface,(void *)0x0);
-  if (HVar1 != 0) {
+  HVar2 = (*g_SoftwareRenderSurface->vtable->Unlock)(g_SoftwareRenderSurface,(void *)0x0);
+  if (HVar2 != 0) {
     g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
     g_CurrentLineNumber = 0x2b0;
     core_main_c_displayErrorAndQuit_FUN_00506f10("setColorTable16 - Unable to unlock back buffer!");
@@ -60,12 +62,12 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
                     (local_70.ddpfPixelFormat.field_20.dwGBitMask >>
                     (g_GreenBitPosition.bytes[0] & 0x1f)));
   g_GreenBitCount.dword = 0;
-  uVar3 = g_GreenScaleFactor;
+  uVar4 = g_GreenScaleFactor;
   if (g_GreenScaleFactor == 0) {
     g_GreenBitCount.dword = 0x20;
   }
   else {
-    for (; 1 < uVar3; uVar3 = uVar3 >> 1) {
+    for (; 1 < uVar4; uVar4 = uVar4 >> 1) {
       g_GreenBitCount.dword = g_GreenBitCount.dword + 1;
     }
   }
@@ -79,13 +81,13 @@ void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
                     (local_70.ddpfPixelFormat.field_24.dwBBitMask >>
                     (g_BlueBitPosition.bytes[0] & 0x1f)));
   g_BlueBitCount.dword = 0;
-  uVar3 = g_BlueScaleFactor;
+  uVar4 = g_BlueScaleFactor;
   if (g_BlueScaleFactor == 0) {
     g_BlueBitCount.dword = 0x20;
     wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0();
     return;
   }
-  for (; 1 < uVar3; uVar3 = uVar3 >> 1) {
+  for (; 1 < uVar4; uVar4 = uVar4 >> 1) {
     g_BlueBitCount.dword = g_BlueBitCount.dword + 1;
   }
   wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0();

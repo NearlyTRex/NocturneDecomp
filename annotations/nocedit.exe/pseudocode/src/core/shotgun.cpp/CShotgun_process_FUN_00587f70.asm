@@ -8,7 +8,7 @@
 ; CShotgun *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; CVector3f[2]     Stack[-0x20]:24  aCStack_20
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 03114278

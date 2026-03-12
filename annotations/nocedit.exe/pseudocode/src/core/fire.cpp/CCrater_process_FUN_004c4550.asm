@@ -6,9 +6,7 @@
 ; Parameters:
 ; CCrater *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_process_FUN_004c6ec0 at 004c7085

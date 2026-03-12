@@ -11,11 +11,11 @@
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_004727c0(CDemonLight *this_ptr)
 
 {
-  float fVar1;
   void *pvVar2;
   uchar *puVar3;
   int iVar4;
   int iVar5;
+  float fVar1;
   
   core_dlight_cpp_CDemonLight_free_FUN_004728b0(this_ptr);
   pvVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250

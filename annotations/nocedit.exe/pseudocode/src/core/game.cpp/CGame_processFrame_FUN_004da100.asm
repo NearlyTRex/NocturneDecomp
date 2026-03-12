@@ -6,6 +6,7 @@
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
+; undefined4[646]  Stack[-0x107c]:2584  auStackY_107c
 ; CSfxSample       Stack[-0x62c]:384  local_62c
 ; char[256]        Stack[-0x3dc]:256  local_3dc
 ; char[256]        Stack[-0x2dc]:256  local_2dc

@@ -10,63 +10,51 @@
 ; Local Variables:
 ; undefined4       Stack[-0x1840]:4  local_1840
 ; undefined4       Stack[-0x183c]:4  local_183c
-; undefined4       Stack[-0x1838]:4  local_1838
-; undefined4       Stack[-0x1428]:4  local_1428
-; undefined4       Stack[-0x1424]:4  local_1424
-; undefined4       Stack[-0x141c]:4  local_141c
-; undefined4       Stack[-0x140c]:4  local_140c
-; undefined1       Stack[-0x1064]:1  local_1064
-; undefined1       Stack[-0xcbc]:1  local_cbc
-; undefined1       Stack[-0xcbb]:1  local_cbb
-; undefined4       Stack[-0xab8]:4  local_ab8
-; undefined4       Stack[-0xab0]:4  local_ab0
-; undefined1       Stack[-0xaa8]:1  local_aa8
-; undefined1       Stack[-0x8a8]:1  local_8a8
-; undefined1       Stack[-0x880]:1  local_880
-; undefined1       Stack[-0x87f]:1  local_87f
-; undefined1       Stack[-0x770]:1  local_770
-; undefined1       Stack[-0x748]:1  local_748
-; undefined1       Stack[-0x747]:1  local_747
-; undefined1       Stack[-0x638]:1  local_638
-; undefined1       Stack[-0x610]:1  local_610
-; undefined1       Stack[-0x60f]:1  local_60f
-; undefined1       Stack[-0x500]:1  local_500
-; undefined1       Stack[-0x3c8]:1  local_3c8
-; undefined1       Stack[-0x3a0]:1  local_3a0
-; undefined1       Stack[-0x39f]:1  local_39f
-; undefined1       Stack[-0x290]:1  local_290
-; undefined1       Stack[-0x28f]:1  local_28f
-; undefined1       Stack[-0x190]:1  local_190
+; CPodFile         Stack[-0x1838]:1068  local_1838
+; CPickList        Stack[-0x140c]:936  local_140c
+; CPickList        Stack[-0x1064]:936  local_1064
+; SFoundFileInfo   Stack[-0xcbc]:532  local_cbc
+; char[512]        Stack[-0xaa8]:512  local_aa8
+; undefined4[10]   Stack[-0x8a8]:40  local_8a8
+; char[272]        Stack[-0x880]:272  local_880
+; undefined4[10]   Stack[-0x770]:40  local_770
+; char[272]        Stack[-0x748]:272  local_748
+; undefined4[10]   Stack[-0x638]:40  local_638
+; char[272]        Stack[-0x610]:272  local_610
+; undefined4[78]   Stack[-0x500]:312  local_500
+; undefined4[10]   Stack[-0x3c8]:40  local_3c8
+; char[272]        Stack[-0x3a0]:272  local_3a0
+; char[256]        Stack[-0x290]:256  local_290
+; char[200]        Stack[-0x190]:200  local_190
 ; undefined1       Stack[-0xc8]:1  local_c8
 ; undefined1       Stack[-0xc7]:1  local_c7
 ; undefined1       Stack[-0xc6]:1  local_c6
 ; undefined1       Stack[-0xc5]:1  local_c5
-; undefined1       Stack[-0xc0]:1  local_c0
-; undefined1       Stack[-0xbf]:1  local_bf
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0xc0]:80  local_c0
+; int              Stack[-0x70]:4  local_70
+; int              Stack[-0x6c]:4  local_6c
+; int              Stack[-0x68]:4  local_68
+; char[128] *      Stack[-0x64]:4  local_64
+; SIZE_T           Stack[-0x60]:4  local_60
+; char[128] *      Stack[-0x5c]:4  local_5c
+; SIZE_T *         Stack[-0x58]:4  local_58
+; void *           Stack[-0x54]:4  local_54
+; int              Stack[-0x50]:4  local_50
+; int              Stack[-0x4c]:4  local_4c
+; int              Stack[-0x48]:4  local_48
+; SIZE_T           Stack[-0x44]:4  local_44
+; int              Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; SIZE_T           Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; SIZE_T           Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; SIZE_T *         Stack[-0x28]:4  local_28
+; char[128] *      Stack[-0x24]:4  local_24
+; _FILE *          Stack[-0x20]:4  local_20
+; char[128] *      Stack[-0x1c]:4  local_1c
+; _FILE *          Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20 at 004be054

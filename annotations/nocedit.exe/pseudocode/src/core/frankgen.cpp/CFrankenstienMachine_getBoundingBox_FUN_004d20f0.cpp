@@ -11,9 +11,9 @@
 CBoundingBox3D * __cdecl core_frankgen_cpp_CFrankenstienMachine_getBoundingBox_FUN_004d20f0(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box)
 
 {
-  float fVar1;
   CKeyFramedModel *pCVar2;
   CVector3f *pCVar3;
+  float fVar1;
   
   fVar1 = this_ptr->part_frame;
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(&this_ptr->bed_model);

@@ -6,7 +6,7 @@
 ; Parameters:
 ; SMRGLHeaderExtended * Stack[0x4]:4   mrgl
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; uint             Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0 at 00407add

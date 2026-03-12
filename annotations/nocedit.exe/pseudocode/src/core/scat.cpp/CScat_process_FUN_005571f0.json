@@ -2,34 +2,22 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "type_error",
-        "column": 3,
-        "line": 35,
-        "message": "unknown type name 'code'"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 38,
-        "line": 141,
+        "line": 151,
         "message": "use of undeclared identifier 'SUB14'"
       },
       {
         "category": "format_error",
         "column": 77,
-        "line": 185,
+        "line": 195,
         "message": "format specifies type 'char *' but the argument has type 'CScat *' [-Werror,-Wformat]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 18,
-        "line": 250,
-        "message": "use of undeclared identifier 'code'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 25,
-        "line": 250,
-        "message": "expected expression"
+        "category": "incompatible_types",
+        "column": 22,
+        "line": 310,
+        "message": "assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'"
       }
     ],
     "success": false,
@@ -37,20 +25,19 @@
   },
   "complexity": {
     "assembly_lines": 661,
-    "complexity_score": 415,
+    "complexity_score": 395,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 315,
-    "suspect_count": 8,
+    "pseudocode_lines": 320,
+    "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_alignment_array",
-      "unresolved_funcptr"
+      "stack_alignment_array"
     ],
-    "total_lines": 976
+    "total_lines": 981
   },
   "cross_references": [],
   "function": {
@@ -336,95 +323,109 @@
     "pcode_op_count": 2856
   },
   "stack_frame": {
-    "frame_size": 148,
-    "local_size": 140,
+    "frame_size": 6252,
+    "local_size": 6244,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "afStackY_1860",
+        "offset": -6240,
+        "size": 6084,
+        "type": "float[1521]"
+      },
+      {
+        "is_param": false,
         "name": "local_88",
         "offset": -136,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_84",
+        "offset": -132,
+        "size": 16,
+        "type": "CQuaternion4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_74",
+        "offset": -116,
+        "size": 16,
+        "type": "CQuaternion4f"
       },
       {
         "is_param": false,
         "name": "local_64",
         "offset": -100,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -476,32 +477,16 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "code *blend_callback;",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 134,
+      "line": 144,
       "match": "SUB14",
       "severity": "mild",
       "text": "(&this_ptr->base,SUB14(this_ptr->guns_drawn == 0,0));",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 243,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar10 = (**(code **)((int)local_14 + 0x124))(pCVar12,this_ptr,pCVar11);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 305,
+      "line": 309,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar17 = (uint *)((int)&CStack_84 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);",
@@ -509,7 +494,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 306,
+      "line": 310,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar16 = (uint *)((int)&CStack_74 + (uint)bVar18 * -8 + (uint)bVar18 * -8 + 8);",
@@ -517,7 +502,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 307,
+      "line": 311,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_84 + (uint)bVar18 * -8 + 4) =",
@@ -525,7 +510,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 308,
+      "line": 312,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_74 + (uint)bVar18 * -8 + 4);",

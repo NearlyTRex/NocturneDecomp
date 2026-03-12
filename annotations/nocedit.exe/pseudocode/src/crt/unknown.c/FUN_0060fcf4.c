@@ -9,14 +9,14 @@
 uint FUN_0060fcf4(short *param_1)
 
 {
-  short sVar1;
-  short *psVar2;
   short *in_EAX;
   uint *ptr;
   int iVar3;
   SIZE_T n;
   ulong new_size;
   bool bVar4;
+  short *psVar2;
+  short sVar1;
   
   ptr = (uint *)g_EnvironInitialized;
   if (param_1 == (short *)0x0) {

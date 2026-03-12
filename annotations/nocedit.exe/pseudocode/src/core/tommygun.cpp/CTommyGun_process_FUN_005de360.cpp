@@ -11,40 +11,41 @@
 void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_ptr,float delta_time)
 
 {
-  float10 fVar1;
+  float fVar3;
   float fVar2;
   int iVar3;
   uint uVar4;
+  int iVar4;
+  uint uVar5;
   float10 fVar5;
+  double dVar6;
   CSfxSample local_1dc;
   double local_28;
   double local_20;
   float local_18;
+  float10 fVar1;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base,delta_time);
   if (this_ptr->fire_frames_remaining < 1) {
-    local_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(this_ptr->sfx_handles[0],2);
-    fVar2 = (float)local_20;
-    if (0.0 <= fVar2) {
+    dVar6 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(this_ptr->sfx_handles[0],2);
+    if (0.0 <= (float)dVar6) {
       sound_sndmain_cpp_lockSound_FUN_005abd30();
-      local_28 = (double)(fVar2 * 6.0f);
-      local_20 = floor(local_28);
-      fVar5 = (float10)local_20;
-      fVar1 = (float10)local_28;
+      fVar3 = (float)dVar6 * 6.0f;
+      dVar6 = floor((double)fVar3);
+      fVar5 = (float10)dVar6;
+      fVar1 = (float10)fVar3;
       sound_sndmain_cpp_CSfxSample_init_FUN_005a8480(&local_1dc);
-      iVar3 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0(this_ptr->sfx_handles[0],&local_1dc);
-      if (iVar3 != 0) {
-        local_18 = (float)local_1dc.sample_info.sample_count;
-        iVar3 = (int)ROUND(ROUND((float)local_1dc.sample_info.sample_count * (float)(fVar1 - fVar5)
-                                 * 0.1666667f));
+      iVar4 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0(this_ptr->sfx_handles[0],&local_1dc);
+      if (iVar4 != 0) {
+        fVar3 = (float)local_1dc.sample_info.sample_count * (float)(fVar1 - fVar5) * 0.1666667f;
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-        local_18 = (float)iVar3;
-        if (0.0 < (double)iVar3) {
-          sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)iVar3,0);
+        dVar6 = (double)(int)ROUND(ROUND(fVar3));
+        if (0.0 < dVar6) {
+          sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0(dVar6,0);
         }
-        uVar4 = (*((this_ptr->base).base.vtable._ub)->playSound)
+        uVar5 = (*((this_ptr->base).base.vtable._ub)->playSound)
                           ((CDemonActor *)this_ptr,"m-gun-t.wav");
-        this_ptr->sfx_handles[1] = uVar4;
+        this_ptr->sfx_handles[1] = uVar5;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }
       sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr->sfx_handles[0]);
@@ -56,7 +57,6 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   }
   this_ptr->fire_frames_remaining = this_ptr->fire_frames_remaining + -1;
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
-  local_18 = fVar2;
   iVar3 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40(this_ptr->sfx_handles[0],fVar2);
   if (iVar3 != 0) {
     return;

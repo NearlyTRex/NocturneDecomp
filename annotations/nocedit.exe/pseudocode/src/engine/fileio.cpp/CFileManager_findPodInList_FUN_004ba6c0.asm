@@ -8,8 +8,8 @@
 ; CStrList *       Stack[0x8]:4   pod_list
 ; char *           Stack[0xc]:4   target_filename
 ; Local Variables:
-; undefined1       Stack[-0x210]:1  local_210
-; undefined1       Stack[-0x10c]:1  local_10c
+; char[260]        Stack[-0x210]:260  local_210
+; char[260]        Stack[-0x10c]:260  local_10c
 ;
 ; XREF[6]:
 ;   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 at 004bb4c7

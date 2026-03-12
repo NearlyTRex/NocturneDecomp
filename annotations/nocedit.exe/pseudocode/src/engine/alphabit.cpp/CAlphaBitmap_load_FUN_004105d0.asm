@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   width
 ; int              Stack[0x10]:4   height
 ; Local Variables:
-; undefined1       Stack[-0x114]:1  local_114
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x114]:256  local_114
+; _FILE *          Stack[-0x14]:4  local_14
 ;
 ; XREF[13]:
 ;   core_game.cpp_CGame_displayActStats_FUN_004e3800 at 004e3831

@@ -11,6 +11,7 @@
 void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr,float delta_time)
 
 {
+  CWerewolf *this_ptr_00;
   EDeathState EVar1;
   CWerewolf *pCVar2;
   int iVar3;
@@ -21,9 +22,10 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr,float delt
   CVector3f CStack_1c;
   
   if (this_ptr->carrier == (CDemonActor *)0x0) {
-    pCVar2 = this_ptr->wolf_in_trap;
-    if (pCVar2 != (CWerewolf *)0x0) {
-      EVar1 = (*(((pCVar2->base).base.base.vtable._uc)->_uc).getDeathState)((CCharacter *)pCVar2);
+    this_ptr_00 = this_ptr->wolf_in_trap;
+    if (this_ptr_00 != (CWerewolf *)0x0) {
+      EVar1 = (*(((this_ptr_00->base).base.base.vtable._uc)->_uc).getDeathState)
+                        ((CCharacter *)this_ptr_00);
       if (EVar1 == DEATH_STATE_ALIVE) {
         return;
       }

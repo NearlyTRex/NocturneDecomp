@@ -8,7 +8,8 @@
 ; CDemonActor *    Stack[0x8]:4   querying_actor
 ; CVector3f *      Stack[0xc]:4   query_position
 ; Local Variables:
-; undefined1       Stack[-0x18]:1  local_18
+; CBoundingBox3D   Stack[-0x30]:24  CStack_30
+; CVector3f        Stack[-0x18]:12  local_18
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Called Functions:

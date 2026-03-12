@@ -9,11 +9,17 @@
 void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delta_time)
 
 {
-  int iVar1;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  int iVar8;
   int iVar2;
   CVector3f *pCVar3;
   int iVar4;
-  char *commands;
   SCollisionInfo SStack_d0;
   CBoundingBox3D local_a8;
   CVector3f CStack_90;
@@ -39,19 +45,21 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
   float fStack_1c;
   int iStack_18;
   float fStack_14;
+  char *commands;
+  int iVar1;
   
-  local_78 = (this_ptr->base).location.position.x;
-  local_74 = (this_ptr->base).location.position.y;
-  local_70 = (this_ptr->base).location.position.z;
-  local_50 = this_ptr->param;
+  fVar1 = (this_ptr->base).location.position.x;
+  fVar2 = (this_ptr->base).location.position.y;
+  fVar3 = (this_ptr->base).location.position.z;
+  fVar4 = this_ptr->param;
   if (1 < this_ptr->one_shot) {
     return;
   }
   switch(this_ptr->door_state) {
   case DOOR_STATE_CLOSED:
-    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+    iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->open_condition);
-    if (iVar4 != 0) {
+    if (iVar8 != 0) {
       this_ptr->door_state = DOOR_STATE_OPENING;
       if (this_ptr->open_sound[0] != '\0') {
         (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->open_sound);
@@ -61,7 +69,7 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
     this_ptr->param = 0.0;
     break;
   case DOOR_STATE_OPENING:
-    this_ptr->param = (delta_time * this_ptr->max_param) / this_ptr->open_speed + local_50;
+    this_ptr->param = (delta_time * this_ptr->max_param) / this_ptr->open_speed + fVar4;
     if (this_ptr->max_param <= 0.0) {
       if (this_ptr->param < this_ptr->max_param) {
         this_ptr->door_state = DOOR_STATE_OPEN;
@@ -80,16 +88,16 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
     }
     break;
   case DOOR_STATE_OPEN:
-    iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+    iVar8 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->close_condition);
-    if ((iVar4 != 0) &&
+    if ((iVar8 != 0) &&
        (this_ptr->door_state = DOOR_STATE_CLOSING, this_ptr->close_sound[0] != '\0')) {
       (*((this_ptr->base).vtable._ub)->playSound)(&this_ptr->base,this_ptr->close_sound);
     }
     this_ptr->param = this_ptr->max_param;
     break;
   case DOOR_STATE_CLOSING:
-    this_ptr->param = local_50 - (delta_time * this_ptr->max_param) / this_ptr->close_speed;
+    this_ptr->param = fVar4 - (delta_time * this_ptr->max_param) / this_ptr->close_speed;
     if (this_ptr->max_param <= 0.0) {
       if (0.0 < this_ptr->param) {
         this_ptr->door_state = DOOR_STATE_CLOSED;
@@ -121,11 +129,9 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr,float delt
   core_event_cpp_CEventList_executeCommands_FUN_004aabe0(g_CEventListPtr,commands);
 LAB_004801a8:
   core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
-  if ((this_ptr->param != local_50) && (this_ptr->door_type != DOOR_TYPE_TILT)) {
+  if ((this_ptr->param != fVar4) && (this_ptr->door_type != DOOR_TYPE_TILT)) {
     iVar4 = 0;
     (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_a8);
-    iStack_54 = 0;
-    pCStack_4c = &(this_ptr->base).orient_matrix;
     iStack_18 = 0;
     while( true ) {
       if (g_CDemonSetPtr->character_count <= iStack_18) break;
@@ -141,58 +147,57 @@ LAB_004801a8:
         CStack_84.y = *(float *)(iVar1 + 0x24) - (this_ptr->base).location.position.y;
         CStack_84.z = *(float *)(iVar1 + 0x28) - (this_ptr->base).location.position.z;
         pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                           (pCStack_4c,&CStack_90,&CStack_84);
+                           (&(this_ptr->base).orient_matrix,&CStack_90,&CStack_84);
         if (aCStack_6c != pCVar3) {
           aCStack_6c[0].x = pCVar3->x;
           aCStack_6c[0].y = pCVar3->y;
           aCStack_6c[0].z = pCVar3->z;
         }
-        fStack_48 = aCStack_6c[0].x + SStack_d0.cylinder_radius;
-        if (((local_a8.min.x <= fStack_48) &&
-            (fStack_44 = aCStack_6c[0].x - SStack_d0.cylinder_radius, fStack_44 <= local_a8.max.x))
-           && ((fStack_40 = aCStack_6c[0].z + SStack_d0.cylinder_radius, local_a8.min.z <= fStack_40
-               && (fStack_3c = aCStack_6c[0].z - SStack_d0.cylinder_radius,
-                  fStack_3c <= local_a8.max.z)))) {
-          if (((local_a8.min.x <= fStack_44) && (fStack_48 <= local_a8.max.x)) &&
-             ((local_a8.min.z <= fStack_3c && (fStack_40 <= local_a8.max.z)))) goto LAB_0048059d;
-          fStack_14 = SStack_d0.cylinder_radius * SStack_d0.cylinder_radius;
-          fStack_30 = SQRT(fStack_14 -
-                           (local_a8.max.x - aCStack_6c[0].x) * (local_a8.max.x - aCStack_6c[0].x));
-          fStack_34 = aCStack_6c[0].z + fStack_30;
-          fStack_30 = aCStack_6c[0].z - fStack_30;
-          if (((local_a8.min.z <= fStack_34) && (fStack_34 <= local_a8.max.z)) ||
-             ((local_a8.min.z <= fStack_30 && (fStack_30 <= local_a8.max.z)))) goto LAB_0048059d;
-          fStack_1c = SQRT(fStack_14 -
-                           (local_a8.min.x - aCStack_6c[0].x) * (local_a8.min.x - aCStack_6c[0].x));
-          fStack_24 = aCStack_6c[0].z + fStack_1c;
-          fStack_1c = aCStack_6c[0].z - fStack_1c;
-          if (((local_a8.min.z <= fStack_24) && (fStack_24 <= local_a8.max.z)) ||
-             ((local_a8.min.z <= fStack_1c && (fStack_1c <= local_a8.max.z)))) goto LAB_0048059d;
-          fStack_20 = SQRT(fStack_14 -
-                           (local_a8.max.z - aCStack_6c[0].z) * (local_a8.max.z - aCStack_6c[0].z));
-          fStack_28 = aCStack_6c[0].x + fStack_20;
-          fStack_20 = aCStack_6c[0].x - fStack_20;
-          if (((local_a8.min.x <= fStack_28) && (fStack_28 <= local_a8.max.x)) ||
-             ((local_a8.min.x <= fStack_20 && (fStack_20 <= local_a8.max.x)))) goto LAB_0048059d;
-          fStack_38 = SQRT(fStack_14 -
-                           (local_a8.min.z - aCStack_6c[0].z) * (local_a8.min.z - aCStack_6c[0].z));
-          fStack_2c = aCStack_6c[0].x + fStack_38;
-          fStack_38 = aCStack_6c[0].x - fStack_38;
-          if (((local_a8.min.x <= fStack_2c) && (fStack_2c <= local_a8.max.x)) ||
-             ((local_a8.min.x <= fStack_38 && (fStack_38 <= local_a8.max.x)))) goto LAB_0048059d;
+        if (((local_a8.min.x <= aCStack_6c[0].x + SStack_d0.cylinder_radius) &&
+            (aCStack_6c[0].x - SStack_d0.cylinder_radius <= local_a8.max.x)) &&
+           ((local_a8.min.z <= aCStack_6c[0].z + SStack_d0.cylinder_radius &&
+            (aCStack_6c[0].z - SStack_d0.cylinder_radius <= local_a8.max.z)))) {
+          if (((local_a8.min.x <= aCStack_6c[0].x - SStack_d0.cylinder_radius) &&
+              (aCStack_6c[0].x + SStack_d0.cylinder_radius <= local_a8.max.x)) &&
+             ((local_a8.min.z <= aCStack_6c[0].z - SStack_d0.cylinder_radius &&
+              (aCStack_6c[0].z + SStack_d0.cylinder_radius <= local_a8.max.z)))) {
+LAB_0048059d:
+            (this_ptr->base).location.position.x = fVar1;
+            (this_ptr->base).location.position.y = fVar2;
+            (this_ptr->base).location.position.z = fVar3;
+            this_ptr->param = fVar4;
+            core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
+            return;
+          }
+          fVar5 = SStack_d0.cylinder_radius * SStack_d0.cylinder_radius;
+          fVar6 = SQRT(fVar5 - (local_a8.max.x - aCStack_6c[0].x) *
+                               (local_a8.max.x - aCStack_6c[0].x));
+          fVar7 = aCStack_6c[0].z + fVar6;
+          fVar6 = aCStack_6c[0].z - fVar6;
+          if (((local_a8.min.z <= fVar7) && (fVar7 <= local_a8.max.z)) ||
+             ((local_a8.min.z <= fVar6 && (fVar6 <= local_a8.max.z)))) goto LAB_0048059d;
+          fVar6 = SQRT(fVar5 - (local_a8.min.x - aCStack_6c[0].x) *
+                               (local_a8.min.x - aCStack_6c[0].x));
+          fVar7 = aCStack_6c[0].z + fVar6;
+          fVar6 = aCStack_6c[0].z - fVar6;
+          if (((local_a8.min.z <= fVar7) && (fVar7 <= local_a8.max.z)) ||
+             ((local_a8.min.z <= fVar6 && (fVar6 <= local_a8.max.z)))) goto LAB_0048059d;
+          fVar6 = SQRT(fVar5 - (local_a8.max.z - aCStack_6c[0].z) *
+                               (local_a8.max.z - aCStack_6c[0].z));
+          fVar7 = aCStack_6c[0].x + fVar6;
+          fVar6 = aCStack_6c[0].x - fVar6;
+          if (((local_a8.min.x <= fVar7) && (fVar7 <= local_a8.max.x)) ||
+             ((local_a8.min.x <= fVar6 && (fVar6 <= local_a8.max.x)))) goto LAB_0048059d;
+          fVar5 = SQRT(fVar5 - (local_a8.min.z - aCStack_6c[0].z) *
+                               (local_a8.min.z - aCStack_6c[0].z));
+          fVar6 = aCStack_6c[0].x + fVar5;
+          fVar5 = aCStack_6c[0].x - fVar5;
+          if (((local_a8.min.x <= fVar6) && (fVar6 <= local_a8.max.x)) ||
+             ((local_a8.min.x <= fVar5 && (fVar5 <= local_a8.max.x)))) goto LAB_0048059d;
         }
       }
       iStack_18 = iStack_18 + 1;
       iVar4 = iVar4 + 4;
-    }
-    if (iStack_54 != 0) {
-LAB_0048059d:
-      (this_ptr->base).location.position.x = local_78;
-      (this_ptr->base).location.position.y = local_74;
-      (this_ptr->base).location.position.z = local_70;
-      this_ptr->param = local_50;
-      core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
-      return;
     }
   }
   return;

@@ -6,43 +6,179 @@
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x460]:1  local_460
+; char[256]        Stack[-0x460]:256  local_460
+; byte[100]        Stack[-0x360]:100  abStack_360
+; SDamageInfo      Stack[-0x2fc]:60  SStack_2fc
+; float            Stack[-0x2c0]:4  fStack_2c0
+; float            Stack[-0x2bc]:4  fStack_2bc
+; float            Stack[-0x2b8]:4  fStack_2b8
 ; undefined8       Stack[-0x2b4]:8  local_2b4
-; undefined4       Stack[-0x2ac]:4  local_2ac
-; undefined4       Stack[-0x2a8]:4  local_2a8
-; undefined4       Stack[-0x2a4]:4  local_2a4
-; undefined4       Stack[-0x2a0]:4  local_2a0
-; undefined4       Stack[-0x29c]:4  local_29c
-; undefined4       Stack[-0x298]:4  local_298
-; undefined4       Stack[-0x294]:4  local_294
-; undefined4       Stack[-0x290]:4  local_290
-; undefined4       Stack[-0x28c]:4  local_28c
-; undefined4       Stack[-0x288]:4  local_288
-; undefined4       Stack[-0x284]:4  local_284
-; undefined4       Stack[-0x280]:4  local_280
-; undefined4       Stack[-0x27c]:4  local_27c
-; undefined4       Stack[-0x278]:4  local_278
-; undefined4       Stack[-0x274]:4  local_274
-; undefined4       Stack[-0x270]:4  local_270
-; undefined4       Stack[-0x26c]:4  local_26c
-; undefined4       Stack[-0x268]:4  local_268
-; undefined4       Stack[-0x264]:4  local_264
-; undefined4       Stack[-0x260]:4  local_260
-; undefined4       Stack[-0x25c]:4  local_25c
-; undefined4       Stack[-0x258]:4  local_258
-; undefined4       Stack[-0x254]:4  local_254
-; undefined4       Stack[-0x194]:4  local_194
-; undefined4       Stack[-0xd4]:4  local_d4
-; undefined4       Stack[-0xd0]:4  local_d0
-; undefined4       Stack[-0xcc]:4  local_cc
-; undefined4       Stack[-0xc8]:4  local_c8
-; undefined4       Stack[-0xc4]:4  local_c4
-; undefined4       Stack[-0xc0]:4  local_c0
-; undefined4       Stack[-0xbc]:4  local_bc
-; undefined4       Stack[-0xb8]:4  local_b8
-; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0x18]:4  local_18
+; int              Stack[-0x2ac]:4  local_2ac
+; int              Stack[-0x2a8]:4  local_2a8
+; int              Stack[-0x2a4]:4  local_2a4
+; int              Stack[-0x2a0]:4  local_2a0
+; int              Stack[-0x29c]:4  local_29c
+; int              Stack[-0x298]:4  local_298
+; int              Stack[-0x294]:4  local_294
+; int              Stack[-0x290]:4  local_290
+; int              Stack[-0x28c]:4  local_28c
+; int              Stack[-0x288]:4  local_288
+; int              Stack[-0x284]:4  local_284
+; int              Stack[-0x280]:4  local_280
+; int              Stack[-0x27c]:4  local_27c
+; int              Stack[-0x278]:4  local_278
+; int              Stack[-0x274]:4  local_274
+; int              Stack[-0x270]:4  local_270
+; int              Stack[-0x26c]:4  local_26c
+; int              Stack[-0x268]:4  local_268
+; int              Stack[-0x264]:4  local_264
+; int              Stack[-0x260]:4  local_260
+; int              Stack[-0x25c]:4  local_25c
+; int              Stack[-0x258]:4  local_258
+; int              Stack[-0x254]:4  local_254
+; int              Stack[-0x250]:4  iStack_250
+; int              Stack[-0x24c]:4  iStack_24c
+; int              Stack[-0x248]:4  iStack_248
+; char *           Stack[-0x244]:4  pcStack_244
+; char *           Stack[-0x240]:4  pcStack_240
+; int              Stack[-0x23c]:4  iStack_23c
+; int              Stack[-0x238]:4  iStack_238
+; char *           Stack[-0x234]:4  pcStack_234
+; char *           Stack[-0x230]:4  pcStack_230
+; int              Stack[-0x22c]:4  iStack_22c
+; int              Stack[-0x228]:4  iStack_228
+; char *           Stack[-0x224]:4  pcStack_224
+; char *           Stack[-0x220]:4  pcStack_220
+; int              Stack[-0x21c]:4  iStack_21c
+; int              Stack[-0x218]:4  iStack_218
+; char *           Stack[-0x214]:4  pcStack_214
+; char *           Stack[-0x210]:4  pcStack_210
+; int              Stack[-0x20c]:4  iStack_20c
+; int              Stack[-0x208]:4  iStack_208
+; char *           Stack[-0x204]:4  pcStack_204
+; char *           Stack[-0x200]:4  pcStack_200
+; int              Stack[-0x1fc]:4  iStack_1fc
+; int              Stack[-0x1f8]:4  iStack_1f8
+; char *           Stack[-0x1f4]:4  pcStack_1f4
+; char *           Stack[-0x1f0]:4  pcStack_1f0
+; int              Stack[-0x1ec]:4  iStack_1ec
+; int              Stack[-0x1e8]:4  iStack_1e8
+; char *           Stack[-0x1e4]:4  pcStack_1e4
+; char *           Stack[-0x1e0]:4  pcStack_1e0
+; int              Stack[-0x1dc]:4  iStack_1dc
+; int              Stack[-0x1d8]:4  iStack_1d8
+; char *           Stack[-0x1d4]:4  pcStack_1d4
+; char *           Stack[-0x1d0]:4  pcStack_1d0
+; int              Stack[-0x1cc]:4  iStack_1cc
+; int              Stack[-0x1c8]:4  iStack_1c8
+; int              Stack[-0x1c4]:4  iStack_1c4
+; int              Stack[-0x1c0]:4  iStack_1c0
+; int              Stack[-0x1bc]:4  iStack_1bc
+; int              Stack[-0x1b8]:4  iStack_1b8
+; int              Stack[-0x1b4]:4  iStack_1b4
+; int              Stack[-0x1b0]:4  iStack_1b0
+; int              Stack[-0x1ac]:4  iStack_1ac
+; int              Stack[-0x1a8]:4  iStack_1a8
+; int              Stack[-0x1a4]:4  iStack_1a4
+; int              Stack[-0x1a0]:4  iStack_1a0
+; int              Stack[-0x19c]:4  iStack_19c
+; int              Stack[-0x198]:4  iStack_198
+; float *          Stack[-0x194]:4  local_194
+; int              Stack[-0x190]:4  iStack_190
+; int              Stack[-0x18c]:4  iStack_18c
+; int              Stack[-0x188]:4  iStack_188
+; int              Stack[-0x184]:4  iStack_184
+; int              Stack[-0x180]:4  iStack_180
+; int              Stack[-0x17c]:4  iStack_17c
+; int              Stack[-0x178]:4  iStack_178
+; int              Stack[-0x174]:4  iStack_174
+; int              Stack[-0x170]:4  iStack_170
+; int              Stack[-0x16c]:4  iStack_16c
+; int              Stack[-0x168]:4  iStack_168
+; int              Stack[-0x164]:4  iStack_164
+; int              Stack[-0x160]:4  iStack_160
+; int              Stack[-0x15c]:4  iStack_15c
+; int              Stack[-0x158]:4  iStack_158
+; int              Stack[-0x154]:4  iStack_154
+; int              Stack[-0x150]:4  iStack_150
+; int              Stack[-0x14c]:4  iStack_14c
+; int              Stack[-0x148]:4  iStack_148
+; float            Stack[-0x144]:4  fStack_144
+; CDeformableModelInstance * Stack[-0x140]:4  pCStack_140
+; CSkeleton *      Stack[-0x13c]:4  pCStack_13c
+; CDeformableModelInstance * Stack[-0x138]:4  pCStack_138
+; float            Stack[-0x134]:4  fStack_134
+; int              Stack[-0x130]:4  iStack_130
+; CDeformableModelInstance * Stack[-0x12c]:4  pCStack_12c
+; float            Stack[-0x128]:4  fStack_128
+; int              Stack[-0x124]:4  iStack_124
+; CDeformableModelInstance * Stack[-0x120]:4  pCStack_120
+; float            Stack[-0x11c]:4  fStack_11c
+; int              Stack[-0x118]:4  iStack_118
+; int              Stack[-0x114]:4  iStack_114
+; int              Stack[-0x110]:4  iStack_110
+; int              Stack[-0x10c]:4  iStack_10c
+; int              Stack[-0x108]:4  iStack_108
+; int              Stack[-0x104]:4  iStack_104
+; int              Stack[-0x100]:4  iStack_100
+; int              Stack[-0xfc]:4  iStack_fc
+; int              Stack[-0xf8]:4  iStack_f8
+; int              Stack[-0xf4]:4  iStack_f4
+; int              Stack[-0xf0]:4  iStack_f0
+; int              Stack[-0xec]:4  iStack_ec
+; int              Stack[-0xe8]:4  iStack_e8
+; int              Stack[-0xe4]:4  iStack_e4
+; int              Stack[-0xe0]:4  iStack_e0
+; int              Stack[-0xdc]:4  iStack_dc
+; int              Stack[-0xd8]:4  iStack_d8
+; int              Stack[-0xd4]:4  local_d4
+; int              Stack[-0xd0]:4  local_d0
+; int              Stack[-0xcc]:4  local_cc
+; int              Stack[-0xc8]:4  local_c8
+; int              Stack[-0xc4]:4  local_c4
+; int              Stack[-0xc0]:4  local_c0
+; int              Stack[-0xbc]:4  local_bc
+; int              Stack[-0xb8]:4  local_b8
+; int              Stack[-0xb4]:4  local_b4
+; int              Stack[-0xb0]:4  local_b0
+; int              Stack[-0xac]:4  iStack_ac
+; int              Stack[-0xa8]:4  iStack_a8
+; int              Stack[-0xa4]:4  iStack_a4
+; int              Stack[-0xa0]:4  iStack_a0
+; int              Stack[-0x9c]:4  iStack_9c
+; int              Stack[-0x98]:4  iStack_98
+; int              Stack[-0x94]:4  iStack_94
+; int              Stack[-0x90]:4  iStack_90
+; int              Stack[-0x8c]:4  iStack_8c
+; int              Stack[-0x88]:4  iStack_88
+; int              Stack[-0x84]:4  iStack_84
+; int              Stack[-0x80]:4  iStack_80
+; int              Stack[-0x7c]:4  iStack_7c
+; int              Stack[-0x78]:4  iStack_78
+; int              Stack[-0x74]:4  iStack_74
+; int              Stack[-0x70]:4  iStack_70
+; int              Stack[-0x6c]:4  iStack_6c
+; int              Stack[-0x68]:4  iStack_68
+; int              Stack[-0x64]:4  iStack_64
+; int              Stack[-0x60]:4  iStack_60
+; int              Stack[-0x5c]:4  iStack_5c
+; int              Stack[-0x58]:4  iStack_58
+; int              Stack[-0x54]:4  iStack_54
+; int              Stack[-0x50]:4  iStack_50
+; int              Stack[-0x4c]:4  iStack_4c
+; int              Stack[-0x48]:4  iStack_48
+; int              Stack[-0x44]:4  iStack_44
+; int              Stack[-0x40]:4  iStack_40
+; int              Stack[-0x3c]:4  iStack_3c
+; int              Stack[-0x38]:4  iStack_38
+; int              Stack[-0x34]:4  iStack_34
+; int              Stack[-0x30]:4  iStack_30
+; int              Stack[-0x2c]:4  iStack_2c
+; int              Stack[-0x28]:4  iStack_28
+; int              Stack[-0x24]:4  iStack_24
+; int              Stack[-0x20]:4  iStack_20
+; int              Stack[-0x1c]:4  iStack_1c
+; uint             Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_process_FUN_004e3190 at 004e3567

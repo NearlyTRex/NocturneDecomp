@@ -11,7 +11,7 @@
 void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
 
 {
-  char cVar1;
+  char cVar2;
   char *pcVar2;
   char *pcVar3;
   SMRGLHeaderPrimitive local_c4;
@@ -21,6 +21,7 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
   uint local_1c;
   int local_18;
   uint local_14;
+  char cVar1;
   
   if (((g_SelectionBlinkTimer == 0) ||
       ((polygon_index != g_SelectedPolygonIndex && (polygon_index != g_SecondaryPolygonIndex)))) &&
@@ -52,11 +53,11 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
         cVar1 = *pcVar2;
         *pcVar3 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar2[1];
+        cVar2 = pcVar2[1];
         pcVar2 = pcVar2 + 2;
-        pcVar3[1] = cVar1;
+        pcVar3[1] = cVar2;
         pcVar3 = pcVar3 + 2;
-      } while (cVar1 != '\0');
+      } while (cVar2 != '\0');
       engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(local_6c);
       for (local_18 = 0; local_18 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
           local_18 = local_18 + 1) {

@@ -7,41 +7,42 @@
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   arm_side
 ; Local Variables:
-; undefined4       Stack[-0x1e0]:4  local_1e0
-; undefined1       Stack[-0x1dc]:1  local_1dc
-; undefined1       Stack[-0x1cc]:1  local_1cc
-; undefined1       Stack[-0x1bc]:1  local_1bc
-; undefined1       Stack[-0x1ac]:1  local_1ac
-; undefined1       Stack[-0x19c]:1  local_19c
-; undefined1       Stack[-0x18c]:1  local_18c
-; undefined1       Stack[-0x17c]:1  local_17c
-; undefined1       Stack[-0x16c]:1  local_16c
-; undefined1       Stack[-0x15c]:1  local_15c
-; undefined1       Stack[-0x14c]:1  local_14c
-; undefined1       Stack[-0x13c]:1  local_13c
-; undefined1       Stack[-0x12c]:1  local_12c
-; undefined1       Stack[-0x11c]:1  local_11c
-; undefined1       Stack[-0x10c]:1  local_10c
-; undefined1       Stack[-0xfc]:1  local_fc
-; undefined1       Stack[-0xec]:1  local_ec
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined1       Stack[-0xcc]:1  local_cc
-; undefined1       Stack[-0xbc]:1  local_bc
-; undefined1       Stack[-0xac]:1  local_ac
-; undefined1       Stack[-0x9c]:1  local_9c
-; undefined1       Stack[-0x8c]:1  local_8c
-; undefined1       Stack[-0x7c]:1  local_7c
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined1       Stack[-0x5c]:1  local_5c
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float[1520]      Stack[-0x19b8]:6080  afStackY_19b8
+; float            Stack[-0x1e0]:4  local_1e0
+; CQuaternion4f    Stack[-0x1dc]:16  local_1dc
+; CQuaternion4f    Stack[-0x1cc]:16  local_1cc
+; CQuaternion4f    Stack[-0x1bc]:16  local_1bc
+; CQuaternion4f    Stack[-0x1ac]:16  local_1ac
+; CQuaternion4f    Stack[-0x19c]:16  local_19c
+; CQuaternion4f    Stack[-0x18c]:16  local_18c
+; CQuaternion4f    Stack[-0x17c]:16  local_17c
+; CQuaternion4f    Stack[-0x16c]:16  local_16c
+; CQuaternion4f    Stack[-0x15c]:16  local_15c
+; CQuaternion4f    Stack[-0x14c]:16  local_14c
+; CQuaternion4f    Stack[-0x13c]:16  local_13c
+; CQuaternion4f    Stack[-0x12c]:16  local_12c
+; CQuaternion4f    Stack[-0x11c]:16  local_11c
+; CQuaternion4f    Stack[-0x10c]:16  local_10c
+; CQuaternion4f    Stack[-0xfc]:16  local_fc
+; CQuaternion4f    Stack[-0xec]:16  local_ec
+; CQuaternion4f    Stack[-0xdc]:16  local_dc
+; CQuaternion4f    Stack[-0xcc]:16  local_cc
+; CQuaternion4f    Stack[-0xbc]:16  local_bc
+; CQuaternion4f    Stack[-0xac]:16  local_ac
+; CQuaternion4f    Stack[-0x9c]:16  local_9c
+; CQuaternion4f    Stack[-0x8c]:16  local_8c
+; CQuaternion4f    Stack[-0x7c]:16  local_7c
+; CQuaternion4f    Stack[-0x6c]:16  local_6c
+; CQuaternion4f    Stack[-0x5c]:16  local_5c
+; CQuaternion4f    Stack[-0x4c]:16  local_4c
+; float            Stack[-0x34]:4  local_34
+; char *           Stack[-0x30]:4  local_30
+; CQuaternion4f *  Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; SArmAimData *    Stack[-0x20]:4  local_20
+; CDeformableModelInstance * Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60 at 005c003b

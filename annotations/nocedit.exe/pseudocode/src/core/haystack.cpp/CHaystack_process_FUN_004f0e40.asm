@@ -7,20 +7,22 @@
 ; CHaystack *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined1       Stack[-0x60]:1  local_60
-; undefined1       Stack[-0x54]:1  local_54
-; undefined1       Stack[-0x48]:1  local_48
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float[1521]      Stack[-0x1868]:6084  afStackY_1868
+; float            Stack[-0x90]:4  local_90
+; CQuaternion4f    Stack[-0x8c]:16  CStack_8c
+; CQuaternion4f    Stack[-0x7c]:16  CStack_7c
+; float            Stack[-0x6c]:4  local_6c
+; float            Stack[-0x68]:4  local_68
+; float            Stack[-0x64]:4  local_64
+; CVector3f        Stack[-0x60]:12  local_60
+; CVector3f        Stack[-0x54]:12  local_54
+; CVector3f        Stack[-0x48]:12  local_48
+; CVector3f        Stack[-0x3c]:12  local_3c
+; float            Stack[-0x28]:4  local_28
+; CDeformableModelInstance * Stack[-0x24]:4  pCStack_24
+; float            Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; CCharacter_full_vtable * Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004f0e14 = 004f1143

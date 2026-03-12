@@ -7,22 +7,20 @@
 ; CMobster *       Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
+; float[1519]      Stack[-0x185c]:6076  afStackY_185c
 ; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined1       Stack[-0x80]:1  local_80
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0x60]:1  local_60
-; undefined1       Stack[-0x50]:1  local_50
-; undefined1       Stack[-0x44]:1  local_44
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float            Stack[-0x88]:4  local_88
+; float            Stack[-0x84]:4  local_84
+; CQuaternion4f    Stack[-0x80]:16  local_80
+; CQuaternion4f    Stack[-0x70]:16  local_70
+; CQuaternion4f    Stack[-0x60]:16  local_60
+; CVector3f        Stack[-0x50]:12  local_50
+; CVector3f        Stack[-0x44]:12  local_44
+; CVector3f        Stack[-0x38]:12  local_38
+; CVector3f        Stack[-0x2c]:12  local_2c
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; CDeformableModelInstance * Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_mobster.cpp_CMobster_process_FUN_00525840 at 00525d5e

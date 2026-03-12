@@ -9,10 +9,10 @@
 void __cdecl core_actor_cpp_CDemonActor_save_FUN_0040af30(CDemonActor *this_ptr,_FILE *file_handle)
 
 {
+  char *pcVar4;
   _FILE *p_Var1;
   int iVar2;
   CDemonActor *pCVar3;
-  char *pcVar4;
   
   core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0();
   pcVar4 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr);

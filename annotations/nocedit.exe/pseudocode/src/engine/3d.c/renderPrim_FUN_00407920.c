@@ -9,10 +9,10 @@
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive *primitive)
 
 {
-  int iVar1;
   SMRGLHeaderExtended *extraout_EAX;
   SMRGLHeaderExtended *pSVar2;
   char local_104 [256];
+  int iVar1;
   
   if (primitive == (SMRGLHeaderPrimitive *)0x0) {
     g_CurrentFilename = "..\\engine\\3d.c";

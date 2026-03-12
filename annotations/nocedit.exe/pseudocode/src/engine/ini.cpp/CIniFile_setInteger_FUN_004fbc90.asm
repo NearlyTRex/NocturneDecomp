@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   key
 ; int              Stack[0xc]:4   value
 ; Local Variables:
-; undefined        Stack[-0x68]:1  local_68
+; char[12]         Stack[-0x68]:12  local_68
 ; char             Stack[-0x5c]:1  local_5c
 ;
 ; XREF[6]:

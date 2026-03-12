@@ -7,8 +7,8 @@
 ; char *           Stack[0x4]:4   str1
 ; char *           Stack[0x8]:4   str2
 ; Local Variables:
-; undefined1       Stack[-0x10]:1  local_10
-; undefined1       Stack[-0xc]:1  local_c
+; char[4]          Stack[-0x10]:4  local_10
+; char[4]          Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
 ;   crt_string.c__mbstrnicmp_FUN_00608e50 at 00608e82

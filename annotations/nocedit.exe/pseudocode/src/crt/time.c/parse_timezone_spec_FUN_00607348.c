@@ -9,15 +9,17 @@
 char * __cdecl parse_timezone_spec(char *tz_string,char *name_buffer,int *offset_seconds)
 
 {
-  byte bVar1;
-  bool bVar2;
   uint uVar3;
+  uint uVar1;
   uint uVar4;
+  int iVar2;
   byte *pbVar5;
   byte *pbVar6;
   int local_1c;
   int local_18;
   int local_14;
+  bool bVar2;
+  byte bVar1;
   
   pbVar5 = (byte *)tz_string;
   if (*tz_string == ':') {
@@ -38,7 +40,7 @@ char * __cdecl parse_timezone_spec(char *tz_string,char *name_buffer,int *offset
     pbVar5 = pbVar5 + 4;
     pbVar6 = pbVar6 + 4;
   }
-  for (uVar3 = uVar4 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
+  for (uVar1 = uVar4 & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
     *pbVar6 = *pbVar5;
     pbVar5 = pbVar5 + 1;
     pbVar6 = pbVar6 + 1;
@@ -62,10 +64,10 @@ LAB_006073c8:
         tz_string = parse_uint((char *)((byte *)tz_string + 1),&local_1c);
       }
     }
-    local_1c = local_1c + (local_18 + local_14 * 0x3c) * 0x3c;
-    *offset_seconds = local_1c;
+    iVar2 = local_1c + (local_18 + local_14 * 0x3c) * 0x3c;
+    *offset_seconds = iVar2;
     if (bVar2) {
-      *offset_seconds = -local_1c;
+      *offset_seconds = -iVar2;
     }
   }
   return (char *)(byte *)tz_string;

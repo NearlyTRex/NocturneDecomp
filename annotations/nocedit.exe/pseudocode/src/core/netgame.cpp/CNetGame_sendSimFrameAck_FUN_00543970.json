@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 59,
+    "complexity_score": 60,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 45,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 145
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -166,29 +166,22 @@
         "is_param": false,
         "name": "local_48",
         "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 1,
-        "type": "undefined1"
+        "size": 5,
+        "type": "SNetPacketHeader"
       },
       {
         "is_param": false,
         "name": "local_43",
         "offset": -67,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3f",
         "offset": -63,
-        "size": 1,
-        "type": "undefined1"
+        "size": 44,
+        "type": "int[11]"
       },
       {
         "is_param": true,
@@ -202,10 +195,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(SPlayerControl *)((int)",
       "severity": "mild",
-      "text": "pSVar2 = (SPlayerControl *)((int)pSVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pSVar2 = (SPlayerControl *)((int)pSVar2 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

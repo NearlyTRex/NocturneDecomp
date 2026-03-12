@@ -9,8 +9,6 @@
 void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *this_ptr,uint rendering_mode)
 
 {
-  float *pfVar1;
-  CDemonCubeTriangle *pCVar2;
   int iVar3;
   CVector3f *pCVar4;
   int iVar5;
@@ -27,6 +25,8 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *t
   int local_1c;
   int local_18;
   int local_14;
+  CDemonCubeTriangle *pCVar2;
+  float *pfVar1;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr2,&g_ZeroVector.f);

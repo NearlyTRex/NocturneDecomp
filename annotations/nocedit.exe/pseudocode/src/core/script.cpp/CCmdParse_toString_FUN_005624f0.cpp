@@ -9,13 +9,19 @@
 void __cdecl core_script_cpp_CCmdParse_toString_FUN_005624f0(CCmdParse *this_ptr,char *output_buffer)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
   int iVar3;
+  int iVar4;
+  char *pcVar5;
+  int iVar6;
   char *pcVar4;
+  char *pcVar8;
   CCmdParm *pCVar5;
   char *pcVar6;
   char *pcVar7;
+  char *pcVar9;
+  char cVar1;
   
   pcVar4 = this_ptr->cmd_name;
   pcVar6 = output_buffer;
@@ -23,103 +29,103 @@ void __cdecl core_script_cpp_CCmdParse_toString_FUN_005624f0(CCmdParse *this_ptr
     cVar1 = *pcVar4;
     *pcVar6 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
+    cVar2 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    pcVar6[1] = cVar1;
+    pcVar6[1] = cVar2;
     pcVar6 = pcVar6 + 2;
-  } while (cVar1 != '\0');
-  pcVar4 = this_ptr->argument_text;
+  } while (cVar2 != '\0');
+  pcVar8 = this_ptr->argument_text;
   iVar2 = -1;
-  pcVar6 = output_buffer;
+  pcVar5 = output_buffer;
   do {
-    pcVar7 = pcVar6;
+    pcVar7 = pcVar5;
     if (iVar2 == 0) break;
     iVar2 = iVar2 + -1;
-    pcVar7 = pcVar6 + 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar7;
-  } while (cVar1 != '\0');
+    pcVar7 = pcVar5 + 1;
+    cVar2 = *pcVar5;
+    pcVar5 = pcVar7;
+  } while (cVar2 != '\0');
   pcVar7 = pcVar7 + -1;
   do {
-    cVar1 = *pcVar4;
-    *pcVar7 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pcVar7[1] = cVar1;
+    cVar2 = *pcVar8;
+    *pcVar7 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar8[1];
+    pcVar8 = pcVar8 + 2;
+    pcVar7[1] = cVar2;
     pcVar7 = pcVar7 + 2;
-  } while (cVar1 != '\0');
-  iVar2 = 0;
+  } while (cVar2 != '\0');
+  iVar6 = 0;
   if (0 < this_ptr->param_count) {
-    pcVar6 = this_ptr->params[0].parsed_value;
+    pcVar5 = this_ptr->params[0].parsed_value;
     do {
-      pCVar5 = this_ptr->params + iVar2;
+      pCVar5 = this_ptr->params + iVar6;
       iVar3 = -1;
-      pcVar4 = output_buffer;
+      pcVar8 = output_buffer;
       do {
-        pcVar7 = pcVar4;
+        pcVar9 = pcVar8;
         if (iVar3 == 0) break;
         iVar3 = iVar3 + -1;
-        pcVar7 = pcVar4 + 1;
-        cVar1 = *pcVar4;
-        pcVar4 = pcVar7;
-      } while (cVar1 != '\0');
-      pcVar7 = pcVar7 + -1;
+        pcVar9 = pcVar8 + 1;
+        cVar2 = *pcVar8;
+        pcVar8 = pcVar9;
+      } while (cVar2 != '\0');
+      pcVar9 = pcVar9 + -1;
       do {
-        cVar1 = pCVar5->prefix_text[0];
-        *pcVar7 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pCVar5->prefix_text[1];
+        cVar2 = pCVar5->prefix_text[0];
+        *pcVar9 = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pCVar5->prefix_text[1];
         pCVar5 = (CCmdParm *)(pCVar5->prefix_text + 2);
-        pcVar7[1] = cVar1;
-        pcVar7 = pcVar7 + 2;
-      } while (cVar1 != '\0');
-      iVar3 = -1;
-      pcVar4 = output_buffer;
+        pcVar9[1] = cVar2;
+        pcVar9 = pcVar9 + 2;
+      } while (cVar2 != '\0');
+      iVar4 = -1;
+      pcVar8 = output_buffer;
       do {
-        pcVar7 = pcVar4;
-        if (iVar3 == 0) break;
-        iVar3 = iVar3 + -1;
-        pcVar7 = pcVar4 + 1;
-        cVar1 = *pcVar4;
-        pcVar4 = pcVar7;
-      } while (cVar1 != '\0');
-      pcVar7 = pcVar7 + -1;
-      pcVar4 = pcVar6;
+        pcVar9 = pcVar8;
+        if (iVar4 == 0) break;
+        iVar4 = iVar4 + -1;
+        pcVar9 = pcVar8 + 1;
+        cVar2 = *pcVar8;
+        pcVar8 = pcVar9;
+      } while (cVar2 != '\0');
+      pcVar9 = pcVar9 + -1;
+      pcVar8 = pcVar5;
       do {
-        cVar1 = *pcVar4;
-        *pcVar7 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar4[1];
-        pcVar4 = pcVar4 + 2;
-        pcVar7[1] = cVar1;
-        pcVar7 = pcVar7 + 2;
-      } while (cVar1 != '\0');
-      iVar2 = iVar2 + 1;
-      pcVar6 = pcVar6 + 0x328;
-    } while (iVar2 < this_ptr->param_count);
+        cVar2 = *pcVar8;
+        *pcVar9 = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar8[1];
+        pcVar8 = pcVar8 + 2;
+        pcVar9[1] = cVar2;
+        pcVar9 = pcVar9 + 2;
+      } while (cVar2 != '\0');
+      iVar6 = iVar6 + 1;
+      pcVar5 = pcVar5 + 0x328;
+    } while (iVar6 < this_ptr->param_count);
   }
-  pcVar6 = this_ptr->remaining_text;
-  iVar2 = -1;
+  pcVar5 = this_ptr->remaining_text;
+  iVar6 = -1;
   do {
-    pcVar4 = output_buffer;
-    if (iVar2 == 0) break;
-    iVar2 = iVar2 + -1;
-    pcVar4 = output_buffer + 1;
-    cVar1 = *output_buffer;
-    output_buffer = pcVar4;
-  } while (cVar1 != '\0');
-  pcVar4 = pcVar4 + -1;
+    pcVar8 = output_buffer;
+    if (iVar6 == 0) break;
+    iVar6 = iVar6 + -1;
+    pcVar8 = output_buffer + 1;
+    cVar2 = *output_buffer;
+    output_buffer = pcVar8;
+  } while (cVar2 != '\0');
+  pcVar8 = pcVar8 + -1;
   do {
-    cVar1 = *pcVar6;
-    *pcVar4 = cVar1;
-    if (cVar1 == '\0') {
+    cVar2 = *pcVar5;
+    *pcVar8 = cVar2;
+    if (cVar2 == '\0') {
       return;
     }
-    cVar1 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
-  } while (cVar1 != '\0');
+    cVar2 = pcVar5[1];
+    pcVar5 = pcVar5 + 2;
+    pcVar8[1] = cVar2;
+    pcVar8 = pcVar8 + 2;
+  } while (cVar2 != '\0');
   return;
 }

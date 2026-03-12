@@ -8,11 +8,11 @@
 ; CCheckOutItem *  Stack[0x8]:4   checkout_item
 ; char *           Stack[0xc]:4   source_path
 ; Local Variables:
-; undefined        Stack[-0x7bc]:1  local_7bc
-; undefined        Stack[-0x414]:1  local_414
-; undefined        Stack[-0x220]:1  local_220
-; undefined        Stack[-0x11c]:1  local_11c
-; undefined        Stack[-0x18]:1  local_18
+; CPickList        Stack[-0x7bc]:936  local_7bc
+; char[500]        Stack[-0x414]:500  local_414
+; char[260]        Stack[-0x220]:260  local_220
+; char[260]        Stack[-0x11c]:260  local_11c
+; CStrList         Stack[-0x18]:16  local_18
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_00626a5d

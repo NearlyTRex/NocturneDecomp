@@ -7,14 +7,17 @@
 ; CMoloch *        Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
+; float            Stack[-0x78]:4  fStack_78
+; CVector3f        Stack[-0x74]:12  local_74
+; CVector3f        Stack[-0x68]:12  CStack_68
+; float            Stack[-0x58]:4  fStack_58
+; CVector3f        Stack[-0x50]:12  CStack_50
+; CVector3f        Stack[-0x44]:12  local_44
+; CVector3f        Stack[-0x38]:12  CStack_38
+; float            Stack[-0x28]:4  fStack_28
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; XREF[1]:
 ;   core_moloch.cpp_CMoloch_process_FUN_00528d20 at 0052905b

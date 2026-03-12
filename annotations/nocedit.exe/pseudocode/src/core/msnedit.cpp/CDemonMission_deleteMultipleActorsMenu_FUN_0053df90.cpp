@@ -9,14 +9,18 @@
 void __cdecl core_msnedit_cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df90(CDemonMission *this_ptr)
 
 {
-  CDemonActor *pCVar1;
+  CDemonActor *pCVar3;
+  CDemonActor *pCVar4;
   char *name;
   CDemonActor *pCVar2;
+  int iVar5;
   int iVar3;
+  int iVar6;
   int iVar4;
   CPickList local_764;
   CPickList local_3bc;
   int local_14;
+  CDemonActor *pCVar1;
   
   local_14 = 0;
   while( true ) {
@@ -31,9 +35,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df9
     if (local_14 < 0) break;
     if (local_14 == 0) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_764);
-      for (pCVar2 = this_ptr->first_actor; pCVar2 != (CDemonActor *)0x0; pCVar2 = pCVar2->next_actor
+      for (pCVar3 = this_ptr->first_actor; pCVar3 != (CDemonActor *)0x0; pCVar3 = pCVar3->next_actor
           ) {
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_764.base,pCVar2->actor_name);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_764.base,pCVar3->actor_name);
       }
       iVar4 = 0;
       shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_764.base);
@@ -53,39 +57,39 @@ void __cdecl core_msnedit_cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df9
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_764,0);
     }
     if ((local_14 == 1) &&
-       (iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+       (iVar5 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                           (g_CEditorToolsPtr,"Delete actors by name using wildcard",
-                           g_DeleteActorsWildcardBuffer,100,1), iVar4 != 0)) {
-      iVar4 = 0;
-      pCVar2 = this_ptr->first_actor;
-      while (pCVar1 = pCVar2, pCVar1 != (CDemonActor *)0x0) {
-        pCVar2 = pCVar1->next_actor;
+                           g_DeleteActorsWildcardBuffer,100,1), iVar5 != 0)) {
+      iVar5 = 0;
+      pCVar3 = this_ptr->first_actor;
+      while (pCVar4 = pCVar3, pCVar4 != (CDemonActor *)0x0) {
+        pCVar3 = pCVar4->next_actor;
         iVar3 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                          (g_DeleteActorsWildcardBuffer,pCVar1->actor_name,0);
+                          (g_DeleteActorsWildcardBuffer,pCVar4->actor_name,0);
         if (iVar3 != 0) {
-          iVar4 = iVar4 + 1;
-          core_msnedit_cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80(this_ptr,pCVar1,1);
+          iVar5 = iVar5 + 1;
+          core_msnedit_cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80(this_ptr,pCVar4,1);
         }
       }
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
-                (g_CEditorToolsPtr,"%d actors deleted",iVar4);
+                (g_CEditorToolsPtr,"%d actors deleted",iVar5);
     }
     if ((local_14 == 2) &&
-       (iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+       (iVar5 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                           (g_CEditorToolsPtr,"Delete actors by type",
-                           g_MsnEditDeleteByTypePattern,100,1), iVar4 != 0)) {
-      iVar4 = 0;
-      pCVar2 = this_ptr->first_actor;
-      while (pCVar1 = pCVar2, pCVar1 != (CDemonActor *)0x0) {
-        pCVar2 = pCVar1->next_actor;
-        iVar3 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar1,g_MsnEditDeleteByTypePattern);
-        if (iVar3 != 0) {
-          iVar4 = iVar4 + 1;
-          core_msnedit_cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80(this_ptr,pCVar1,1);
+                           g_MsnEditDeleteByTypePattern,100,1), iVar5 != 0)) {
+      iVar5 = 0;
+      pCVar3 = this_ptr->first_actor;
+      while (pCVar4 = pCVar3, pCVar4 != (CDemonActor *)0x0) {
+        pCVar3 = pCVar4->next_actor;
+        iVar6 = core_actor_cpp_isOfClass_FUN_0040c6d0(pCVar4,g_MsnEditDeleteByTypePattern);
+        if (iVar6 != 0) {
+          iVar5 = iVar5 + 1;
+          core_msnedit_cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80(this_ptr,pCVar4,1);
         }
       }
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
-                (g_CEditorToolsPtr,"%d actors deleted",iVar4);
+                (g_CEditorToolsPtr,"%d actors deleted",iVar5);
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3bc,0);
   }

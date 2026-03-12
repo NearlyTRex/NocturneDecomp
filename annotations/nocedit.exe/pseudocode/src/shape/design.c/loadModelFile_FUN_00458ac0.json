@@ -3,56 +3,56 @@
     "errors": [
       {
         "category": "format_error",
-        "column": 39,
-        "line": 148,
+        "column": 35,
+        "line": 157,
         "message": "format specifies type 'float *' but the argument has type 'SVertexData *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 67,
-        "line": 148,
+        "column": 63,
+        "line": 157,
         "message": "format specifies type 'float *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 21,
-        "line": 149,
+        "column": 20,
+        "line": 158,
         "message": "format specifies type 'float *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 43,
-        "line": 196,
+        "column": 39,
+        "line": 203,
         "message": "format specifies type 'int *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 24,
-        "line": 197,
+        "line": 204,
         "message": "format specifies type 'float *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 24,
-        "line": 198,
+        "line": 205,
         "message": "format specifies type 'float *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 35,
-        "line": 216,
+        "column": 31,
+        "line": 223,
         "message": "format specifies type 'char *' but the argument has type 'SModelPartName *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 35,
-        "line": 219,
+        "column": 31,
+        "line": 226,
         "message": "format specifies type 'int *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 35,
-        "line": 240,
+        "column": 31,
+        "line": 247,
         "message": "format specifies type 'int *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       }
     ],
@@ -61,17 +61,17 @@
   },
   "complexity": {
     "assembly_lines": 805,
-    "complexity_score": 315,
+    "complexity_score": 322,
     "cross_reference_count": 2,
     "function_call_count": 18,
     "global_count": 66,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 290,
+    "pseudocode_lines": 297,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 1095
+    "total_lines": 1102
   },
   "cross_references": [
     {
@@ -641,85 +641,64 @@
         "is_param": false,
         "name": "local_170",
         "offset": -368,
-        "size": 1,
-        "type": "undefined1"
+        "size": 84,
+        "type": "char[84]"
       },
       {
         "is_param": false,
         "name": "local_11c",
         "offset": -284,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "char[80]"
       },
       {
         "is_param": false,
         "name": "local_cc",
         "offset": -204,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_7c",
-        "offset": -124,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_78",
-        "offset": -120,
-        "size": 4,
-        "type": "undefined4"
+        "size": 88,
+        "type": "char[88]"
       },
       {
         "is_param": false,
         "name": "local_74",
         "offset": -116,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_73",
-        "offset": -115,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "byte[80]"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "_FILE *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "byte *"
       },
       {
         "is_param": true,
@@ -733,15 +712,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 227,
+      "line": 234,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "*(char *)((int)pSVar8 + 1) = cVar2;",
+      "text": "*(char *)((int)pSVar8 + 1) = cVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 228,
+      "line": 235,
       "match": "(SModelPartName *)((int)",
       "severity": "mild",
       "text": "pSVar8 = (SModelPartName *)((int)pSVar8 + 2);",

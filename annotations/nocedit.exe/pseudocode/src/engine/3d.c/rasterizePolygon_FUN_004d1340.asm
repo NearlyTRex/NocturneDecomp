@@ -7,11 +7,11 @@
 ; SRenderVertex * * Stack[0x4]:4   vertices
 ; int              Stack[0x8]:4   vertex_count
 ; Local Variables:
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
+; SRenderVertex * * Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; SHardwareEdge *  Stack[-0x18]:4  local_18
+; SHardwareEdge *  Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   engine_3d.c_renderPolygonUVTextureEnable_FUN_00405a00 at 00405a49

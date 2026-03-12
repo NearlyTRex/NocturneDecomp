@@ -9,9 +9,10 @@
 void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004547d0(CVector3f *vertex1,CVector3f *vertex2,CVector3f *output_vertex,double plane_nx,double plane_ny,double plane_nz,double plane_d)
 
 {
+  float fVar1;
+  int local_28;
   double dVar1;
   float fVar2;
-  int local_28;
   
   fVar2 = (vertex2->z - vertex1->z) * (float)plane_nz +
           (vertex2->x - vertex1->x) * (float)plane_nx + (vertex2->y - vertex1->y) * (float)plane_ny;
@@ -22,11 +23,11 @@ void __cdecl core_dcube_cpp_clipEdgeToPlane_FUN_004547d0(CVector3f *vertex1,CVec
     g_CurrentLineNumber = 0x6e;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Bad clip!");
   }
-  fVar2 = -(vertex1->z * (float)plane_nz +
+  fVar1 = -(vertex1->z * (float)plane_nz +
            vertex1->y * (float)plane_ny + (float)plane_nx * vertex1->x + (float)plane_d) / fVar2;
-  output_vertex->x = (vertex2->x - vertex1->x) * fVar2 + vertex1->x;
-  output_vertex->y = (vertex2->y - vertex1->y) * fVar2 + vertex1->y;
-  output_vertex->z = (vertex2->z - vertex1->z) * fVar2 + vertex1->z;
+  output_vertex->x = (vertex2->x - vertex1->x) * fVar1 + vertex1->x;
+  output_vertex->y = (vertex2->y - vertex1->y) * fVar1 + vertex1->y;
+  output_vertex->z = (vertex2->z - vertex1->z) * fVar1 + vertex1->z;
   if ((((((ulonglong)plane_nx & 0x7fffffff00000000) != 0) || (plane_nx._0_4_ != 0)) &&
       (((ulonglong)plane_ny & 0x7fffffff00000000) == 0)) &&
      (((plane_ny._0_4_ == 0 && (((ulonglong)plane_nz & 0x7fffffff00000000) == 0)) &&

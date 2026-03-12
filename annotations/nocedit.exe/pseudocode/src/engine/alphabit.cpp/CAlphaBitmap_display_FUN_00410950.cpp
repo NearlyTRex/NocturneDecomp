@@ -10,9 +10,11 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap 
 
 {
   int iVar1;
+  int pixelCount;
   uint *destPixels;
   ushort *destPixels_00;
   int iVar2;
+  int iVar3;
   char *pcVar3;
   int local_24;
   int local_20;
@@ -62,21 +64,21 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap 
         do {
           if ((-1 < local_1c) && (local_1c < g_WindowHeight)) {
             destPixels_00 = g_ScreenBufferArray[local_1c];
-            iVar1 = this_ptr->width;
-            iVar2 = 0;
+            pixelCount = this_ptr->width;
+            iVar3 = 0;
             if (x < 0) {
-              iVar2 = -x;
-              iVar1 = iVar1 + x;
+              iVar3 = -x;
+              pixelCount = pixelCount + x;
             }
             else {
               destPixels_00 = destPixels_00 + x;
             }
-            if (g_WindowWidth < x + iVar1) {
-              iVar1 = g_WindowWidth - x;
+            if (g_WindowWidth < x + pixelCount) {
+              pixelCount = g_WindowWidth - x;
             }
             wincore_windll_cpp_renderAlphaRow16_FUN_005b55f7
-                      (destPixels_00,(uchar *)(local_14 + iVar2),(uchar *)(pcVar3 + iVar2),alpha,
-                       iVar1);
+                      (destPixels_00,(uchar *)(local_14 + iVar3),(uchar *)(pcVar3 + iVar3),alpha,
+                       pixelCount);
           }
           local_1c = local_1c + 1;
           local_14 = local_14 + this_ptr->width;

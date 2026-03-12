@@ -4,25 +4,25 @@
       {
         "category": "incompatible_types",
         "column": 12,
-        "line": 22,
+        "line": 24,
         "message": "assigning to 'CPoly *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 29,
-        "line": 34,
+        "line": 36,
         "message": "incompatible pointer to integer conversion assigning to 'uint' (aka 'unsigned int') from 'struct CObj *'"
       },
       {
         "category": "undeclared_identifier",
         "column": 12,
-        "line": 44,
+        "line": 47,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 18,
-        "line": 44,
+        "line": 47,
         "message": "expected expression"
       }
     ],
@@ -31,18 +31,18 @@
   },
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 99,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 52,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 153
+    "total_lines": 156
   },
   "cross_references": [],
   "function": {
@@ -164,15 +164,15 @@
         "is_param": false,
         "name": "local_78",
         "offset": -120,
-        "size": 1,
-        "type": "undefined1"
+        "size": 104,
+        "type": "CPoly"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -193,18 +193,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 30,
       "match": "(CPoly *)((int)",
       "severity": "mild",
-      "text": "pCVar1 = (CPoly *)((int)pCVar1 + ((uint)bVar5 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(CPoly *)((int)",
-      "severity": "mild",
-      "text": "pCVar1 = (CPoly *)((int)pCVar1 + (uint)bVar5 * -2 + 1);",
+      "text": "pCVar2 = (CPoly *)((int)pCVar2 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -216,11 +208,19 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(CPoly *)((int)",
+      "severity": "mild",
+      "text": "pCVar2 = (CPoly *)((int)pCVar2 + (uint)bVar5 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 37,
+      "line": 40,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)**(uint **)(iVar2 + 100))(iVar2,this_ptr);",
+      "text": "(*(code *)**(uint **)(iVar1 + 100))(iVar1,this_ptr);",
       "type": "unresolved_funcptr"
     }
   ],

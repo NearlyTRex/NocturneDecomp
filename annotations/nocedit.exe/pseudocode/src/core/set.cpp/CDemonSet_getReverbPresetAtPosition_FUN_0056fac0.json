@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 79,
+    "complexity_score": 63,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 29,
-    "suspect_count": 4,
+    "pseudocode_lines": 28,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "pointer_cast"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 117
+    "total_lines": 116
   },
   "cross_references": [
     {
@@ -97,50 +96,22 @@
         "is_param": false,
         "name": "local_30",
         "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "SRoom *"
       },
       {
         "is_param": true,
@@ -178,7 +149,15 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 22,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if (((ABS(local_30.x) <= (pSVar1->extents).x) && (ABS(local_30.y) <= (pSVar1->extents).y)) &&",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
       "match": "ABS",
       "severity": "mild",
       "text": "if (((ABS(local_30.x) <= (pSVar1->extents).x) && (ABS(local_30.y) <= (pSVar1->extents).y)) &&",
@@ -187,26 +166,10 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 23,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if (((ABS(local_30.x) <= (pSVar1->extents).x) && (ABS(local_30.y) <= (pSVar1->extents).y)) &&",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS(local_30.z) <= (pSVar1->extents).z)) {",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(CMatrix3x3f *)((int)",
-      "severity": "mild",
-      "text": "this_ptr_00 = (CMatrix3x3f *)((int)(this_ptr_00 + 1) + 0x20);",
-      "type": "pointer_cast"
     }
   ]
 }

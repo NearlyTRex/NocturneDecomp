@@ -9,13 +9,13 @@
 int __cdecl core_game_cpp_checkCheatCode_FUN_004dd7f0(char *cheat_string)
 
 {
-  char cVar1;
-  byte bVar2;
   uint uVar3;
   uint uVar4;
   int iVar5;
   int iVar6;
   char *pcVar7;
+  byte bVar2;
+  char cVar1;
   
   uVar4 = 0xffffffff;
   pcVar7 = cheat_string;

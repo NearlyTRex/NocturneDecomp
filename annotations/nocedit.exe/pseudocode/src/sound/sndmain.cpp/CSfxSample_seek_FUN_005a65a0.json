@@ -4,19 +4,19 @@
       {
         "category": "format_error",
         "column": 91,
-        "line": 21,
+        "line": 22,
         "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 110,
-        "line": 40,
+        "line": 41,
         "message": "format specifies type 'char *' but the argument has type 'CSfxSample *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 68,
-        "line": 52,
+        "line": 53,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -25,19 +25,19 @@
   },
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 101,
+    "complexity_score": 102,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 47,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "format_string_mismatch",
       "warning_inlined_function"
     ],
-    "total_lines": 183
+    "total_lines": 184
   },
   "cross_references": [
     {
@@ -266,7 +266,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 19,
       "match": "ROUND",
       "severity": "mild",
       "text": "this_ptr->stream_read_position = (int)ROUND(ROUND(dVar2));",
@@ -274,7 +274,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 19,
       "match": "ROUND",
       "severity": "mild",
       "text": "this_ptr->stream_read_position = (int)ROUND(ROUND(dVar2));",
@@ -286,7 +286,7 @@
       "expected_args": 2,
       "format_string": "Error seeking %s to %d",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 45,
+      "line_number": 46,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error seeking %s to %d\");",
       "text": "Format string expects 2 args but got 0",
       "type": "format_string_mismatch"

@@ -4,61 +4,55 @@
       {
         "category": "type_error",
         "column": 3,
-        "line": 12,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "type_error",
-        "column": 3,
-        "line": 14,
+        "line": 41,
         "message": "unknown type name 'code'"
       },
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 40,
+        "line": 46,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "other",
         "column": 13,
-        "line": 41,
+        "line": 47,
         "message": "cast from pointer to smaller type 'char' loses information"
       },
       {
         "category": "pointer_arithmetic",
         "column": 23,
-        "line": 44,
+        "line": 50,
         "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
       },
       {
         "category": "other",
         "column": 21,
-        "line": 50,
+        "line": 56,
         "message": "cast from pointer to smaller type 'char' loses information"
       },
       {
         "category": "pointer_arithmetic",
         "column": 27,
-        "line": 51,
+        "line": 57,
         "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
       },
       {
         "category": "pointer_arithmetic",
         "column": 27,
-        "line": 53,
+        "line": 59,
         "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
       },
       {
         "category": "format_error",
         "column": 57,
-        "line": 100,
+        "line": 106,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 74,
-        "line": 146,
+        "line": 152,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       }
     ],
@@ -67,17 +61,17 @@
   },
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 189,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 154,
-    "suspect_count": 3,
+    "pseudocode_lines": 161,
+    "suspect_count": 2,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 578
+    "total_lines": 585
   },
   "cross_references": [
     {
@@ -288,53 +282,102 @@
     "pcode_op_count": 1421
   },
   "stack_frame": {
-    "frame_size": 1720,
-    "local_size": 1712,
+    "frame_size": 11196,
+    "local_size": 11188,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "CStack_2bb0",
+        "offset": -11184,
+        "size": 9476,
+        "type": "CActorPropertyList"
+      },
+      {
+        "is_param": false,
         "name": "local_6ac",
         "offset": -1708,
-        "size": 4,
-        "type": "undefined4"
+        "size": 936,
+        "type": "CPickList"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_304",
+        "offset": -772,
+        "size": 300,
+        "type": "char[300]"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_1d8",
+        "offset": -472,
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
         "name": "local_110",
         "offset": -272,
-        "size": 1,
-        "type": "undefined1"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
-        "name": "local_10f",
-        "offset": -271,
-        "size": 1,
-        "type": "undefined1"
+        "name": "CStack_48",
+        "offset": -72,
+        "size": 16,
+        "type": "CStrList"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
-        "size": 1,
-        "type": "undefined1"
+        "size": 16,
+        "type": "CStrList"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_14",
+        "offset": -20,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": true,
@@ -355,15 +398,7 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 5,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "code *pcVar1;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 7,
+      "line": 34,
       "match": "code",
       "severity": "moderate",
       "text": "code cVar3;",
@@ -371,7 +406,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
+      "line": 39,
       "match": "code",
       "severity": "moderate",
       "text": "while (cVar3 != (code)0x0) {",

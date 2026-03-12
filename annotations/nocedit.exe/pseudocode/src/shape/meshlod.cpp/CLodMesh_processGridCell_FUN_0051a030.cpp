@@ -9,9 +9,6 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(CLodMesh *this_ptr,int grid_x,int grid_y,int grid_z)
 
 {
-  int iVar1;
-  int iVar2;
-  CLodFace *pCVar3;
   int *piVar4;
   int iVar5;
   int iVar6;
@@ -20,12 +17,14 @@ void __cdecl shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(CLodMesh *t
   uint uStack_34;
   SLodSamplePoint *local_1c;
   int local_18;
+  int iVar1;
+  int iVar2;
+  CLodFace *pCVar3;
   
   piVar4 = this_ptr->spatial_grid_ptr->cell_start_indices[grid_x][grid_y] + grid_z;
-  iVar6 = *piVar4;
   iVar1 = piVar4[1];
-  if (iVar6 < iVar1) {
-    iVar6 = iVar6 * 4;
+  if (*piVar4 < iVar1) {
+    iVar6 = *piVar4 * 4;
     do {
       iVar2 = *(int *)(iVar6 + (int)this_ptr->spatial_grid_data);
       pCVar3 = this_ptr->tri_data;

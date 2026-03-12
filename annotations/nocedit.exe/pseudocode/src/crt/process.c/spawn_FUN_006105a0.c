@@ -11,16 +11,18 @@ int __cdecl spawn(int mode,char *cmdline,char *envblock,void *reserved)
 {
   BOOL BVar1;
   DWORD DVar2;
+  BOOL BVar2;
+  DWORD DVar3;
   HANDLE hTargetProcessHandle;
   HANDLE hSourceProcessHandle;
   char **in_stack_00000014;
-  HANDLE hSourceHandle;
-  HANDLE *lpTargetHandle;
-  DWORD dwOptions;
   _STARTUPINFOA local_6c;
   _PROCESS_INFORMATION local_28;
   HANDLE pvStack_18;
   HANDLE pvStack_14;
+  DWORD dwOptions;
+  HANDLE hSourceHandle;
+  HANDLE *lpTargetHandle;
   
   build_command_line(cmdline,in_stack_00000014,envblock,0);
   memset(&local_6c,0,0x44);
@@ -38,8 +40,8 @@ int __cdecl spawn(int mode,char *cmdline,char *envblock,void *reserved)
   else {
     if (mode == 0) {
       if ((g_WindowsPlatformVersion < 0x8000) || (3 < g_WindowsMinorVersion)) {
-        DVar2 = (*g_WaitForSingleObjectFunc)(local_28.hProcess,0xffffffff);
-        if (DVar2 == 0) {
+        DVar3 = (*g_WaitForSingleObjectFunc)(local_28.hProcess,0xffffffff);
+        if (DVar3 == 0) {
           (*g_GetExitCodeProcessFunc)(local_28.hProcess,(LPDWORD)&pvStack_18);
         }
         else {
@@ -51,10 +53,10 @@ int __cdecl spawn(int mode,char *cmdline,char *envblock,void *reserved)
         pvStack_18 = (HANDLE)0x103;
         do {
           (*g_SleepFunc)(100);
-          BVar1 = (*g_GetExitCodeProcessFunc)(local_28.hProcess,(LPDWORD)&pvStack_18);
-          if (BVar1 == 0) {
-            DVar2 = __set_errno();
-            return DVar2;
+          BVar2 = (*g_GetExitCodeProcessFunc)(local_28.hProcess,(LPDWORD)&pvStack_18);
+          if (BVar2 == 0) {
+            DVar3 = __set_errno();
+            return DVar3;
           }
         } while (pvStack_18 == (HANDLE)0x103);
       }
@@ -66,17 +68,17 @@ int __cdecl spawn(int mode,char *cmdline,char *envblock,void *reserved)
     }
     else {
       dwOptions = 2;
-      BVar1 = 0;
-      DVar2 = 0;
+      BVar2 = 0;
+      DVar3 = 0;
       lpTargetHandle = &pvStack_14;
       hTargetProcessHandle = (*g_GetCurrentProcessFunc)();
       hSourceHandle = local_28.hProcess;
       hSourceProcessHandle = (*g_GetCurrentProcessFunc)();
-      BVar1 = (*g_DuplicateHandleFunc)
+      BVar2 = (*g_DuplicateHandleFunc)
                         (hSourceProcessHandle,hSourceHandle,hTargetProcessHandle,lpTargetHandle,
-                         DVar2,BVar1,dwOptions);
+                         DVar3,BVar2,dwOptions);
       pvStack_18 = pvStack_14;
-      if (BVar1 == 0) {
+      if (BVar2 == 0) {
         pvStack_14 = local_28.hProcess;
         pvStack_18 = pvStack_14;
       }

@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   height
 ; int              Stack[0x10]:4   bit_depth
 ; Local Variables:
-; undefined1       Stack[-0x68]:1  local_68
+; char[92]         Stack[-0x68]:92  local_68
 ;
 ; XREF[2]:
 ;   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 at 005561e5

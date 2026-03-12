@@ -8,6 +8,13 @@
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; undefined4       Stack[-0x58]:4  local_58
+; CBoundingBox3D   Stack[-0x54]:24  CStack_54
+; float            Stack[-0x3c]:4  fStack_3c
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; CVector3f        Stack[-0x30]:12  CStack_30
+; float            Stack[-0x24]:4  fStack_24
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; XREF[2]:
 ;   core_turret.cpp_CTurret_process_FUN_005e2430 at 005e26e3

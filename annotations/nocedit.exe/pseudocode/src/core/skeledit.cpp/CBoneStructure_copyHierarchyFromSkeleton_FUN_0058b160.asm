@@ -7,7 +7,7 @@
 ; CBoneStructure * Stack[0x4]:4   this_ptr
 ; CSkeleton *      Stack[0x8]:4   skeleton
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
+; CSkeleton *      Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c25f

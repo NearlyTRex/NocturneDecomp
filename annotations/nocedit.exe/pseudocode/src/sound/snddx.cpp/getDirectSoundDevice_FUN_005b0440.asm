@@ -6,7 +6,12 @@
 ; Parameters:
 ; UINT             Stack[0x4]:4   device_id
 ; Local Variables:
-; undefined1       Stack[-0x138]:1  local_138
+; char[400]        Stack[-0x778]:400  acStack_778
+; char[400]        Stack[-0x5e8]:400  acStack_5e8
+; char[400]        Stack[-0x458]:400  acStack_458
+; char[400]        Stack[-0x2c8]:400  acStack_2c8
+; SSoundDeviceInfo Stack[-0x138]:280  local_138
+; DSBUFFERDESC     Stack[-0x20]:20  DStack_20
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_initializeSoundDevice_FUN_005ab5b0 at 005ab62c

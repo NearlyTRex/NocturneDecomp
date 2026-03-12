@@ -4,43 +4,24 @@
 ; void __cdecl shape_superopt_cpp_optimizeCubeTriList_FUN_005d77a0(void)
 ;
 ; Local Variables:
+; int[1009]        Stack[-0x114c]:4036  aiStackY_114c
 ; undefined8       Stack[-0x180]:8  local_180
 ; undefined8       Stack[-0x178]:8  local_178
 ; undefined8       Stack[-0x170]:8  local_170
-; undefined4       Stack[-0x168]:4  local_168
-; undefined4       Stack[-0x164]:4  local_164
-; undefined4       Stack[-0x160]:4  local_160
-; undefined4       Stack[-0x15c]:4  local_15c
-; undefined8       Stack[-0x158]:8  local_158
-; undefined8       Stack[-0x150]:8  local_150
-; undefined8       Stack[-0x148]:8  local_148
-; undefined8       Stack[-0x140]:8  local_140
-; undefined8       Stack[-0x138]:8  local_138
-; undefined8       Stack[-0x130]:8  local_130
-; undefined4       Stack[-0x128]:4  local_128
-; undefined4       Stack[-0x124]:4  local_124
-; undefined4       Stack[-0x120]:4  local_120
-; undefined4       Stack[-0x11c]:4  local_11c
-; undefined4       Stack[-0x118]:4  local_118
-; undefined4       Stack[-0x114]:4  local_114
-; undefined4       Stack[-0x110]:4  local_110
-; undefined4       Stack[-0x10c]:4  local_10c
-; undefined4       Stack[-0x108]:4  local_108
-; undefined1       Stack[-0x100]:1  local_100
-; undefined1       Stack[-0x9c]:1  local_9c
-; undefined1       Stack[-0x58]:1  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined8       Stack[-0x3c]:8  local_3c
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CPoly            Stack[-0x168]:104  local_168
+; char[100]        Stack[-0x100]:100  local_100
+; COptimize        Stack[-0x9c]:68  local_9c
+; CObj             Stack[-0x58]:28  local_58
+; double           Stack[-0x3c]:8  local_3c
+; int *            Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; char *           Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; _FILE *          Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData_FUN_00456ed0 at 00456ee2

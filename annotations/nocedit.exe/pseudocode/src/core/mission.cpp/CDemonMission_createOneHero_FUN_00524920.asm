@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   hero_type
 ; CCharacter *     Stack[0x10]:4   existing_actor
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; CHero *          Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_00524a80 at 00524bb1

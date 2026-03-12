@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 11,
-        "line": 64,
+        "line": 65,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 65,
+        "line": 66,
         "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 142,
+    "complexity_score": 145,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 82,
+    "pseudocode_lines": 85,
     "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 167
+    "total_lines": 170
   },
   "cross_references": [],
   "function": {
@@ -87,12 +87,47 @@
     "pcode_op_count": 329
   },
   "stack_frame": {
-    "frame_size": 128,
-    "local_size": 120,
+    "frame_size": 148,
+    "local_size": 140,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "EStack_88",
+        "offset": -136,
+        "size": 4,
+        "type": "EConnectionType"
+      },
+      {
+        "is_param": false,
+        "name": "EStack_84",
+        "offset": -132,
+        "size": 4,
+        "type": "ENetworkMode"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
       {
         "is_param": false,
         "name": "local_74",
@@ -111,8 +146,8 @@
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": false,
@@ -154,21 +189,21 @@
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "EHeroType"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
@@ -182,91 +217,91 @@
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -311,7 +346,7 @@
   "suspects": [
     {
       "description": "Unknown/mangled field access",
-      "line": 57,
+      "line": 58,
       "match": "._0_2_",
       "severity": "mild",
       "text": "local_48._0_2_ = this_ptr->players[0].addr.port;",
@@ -319,7 +354,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 58,
+      "line": 59,
       "match": "._2_2_",
       "severity": "mild",
       "text": "local_48._2_2_ = this_ptr->players[0].addr.other;",
@@ -335,7 +370,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 78,
       "match": "(CNetGame *)((int)",
       "severity": "mild",
       "text": "this_ptr = (CNetGame *)((int)this_ptr + (uint)bVar4 * -8 + 4);",
@@ -343,7 +378,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 85,
       "match": "(SNetPlayer *)((int)",
       "severity": "mild",
       "text": "other = (SNetPlayer *)((int)other + (uint)bVar4 * -8 + 4);",

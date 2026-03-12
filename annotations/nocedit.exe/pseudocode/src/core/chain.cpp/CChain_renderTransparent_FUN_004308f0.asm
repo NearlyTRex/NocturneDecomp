@@ -6,7 +6,21 @@
 ; Parameters:
 ; CChain *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x90]:1  local_90
+; SMRGLHeaderPrimitive Stack[-0xb8]:24  SStack_b8
+; undefined4       Stack[-0xa0]:4  uStack_a0
+; undefined4       Stack[-0x9c]:4  uStack_9c
+; undefined4       Stack[-0x98]:4  uStack_98
+; undefined4       Stack[-0x94]:4  uStack_94
+; CBoundingBox3D   Stack[-0x90]:24  local_90
+; CVector3i        Stack[-0x78]:12  CStack_78
+; CVector3i        Stack[-0x6c]:12  CStack_6c
+; CVector3i        Stack[-0x60]:12  CStack_60
+; CVector3i        Stack[-0x54]:12  CStack_54
+; CVector3i        Stack[-0x48]:12  CStack_48
+; CVector3i        Stack[-0x3c]:12  CStack_3c
+; CVector3i        Stack[-0x30]:12  CStack_30
+; CVector3i        Stack[-0x24]:12  CStack_24
+; CVector3i        Stack[-0x18]:12  CStack_18
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065b9e0 = 256

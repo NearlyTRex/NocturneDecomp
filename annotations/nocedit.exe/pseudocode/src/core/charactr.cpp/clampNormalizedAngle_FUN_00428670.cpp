@@ -14,7 +14,7 @@ float __cdecl core_charactr_cpp_clampNormalizedAngle_FUN_00428670(float angle,fl
   
   fVar1 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(angle);
   fVar2 = -limit;
-  if ((-limit <= fVar1) && (fVar2 = limit, fVar1 <= limit)) {
+  if ((fVar2 <= fVar1) && (fVar2 = limit, fVar1 <= limit)) {
     return fVar1;
   }
   return fVar2;

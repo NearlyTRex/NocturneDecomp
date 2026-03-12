@@ -12,8 +12,8 @@
 ; int              Stack[0x18]:4   max_value
 ; int              Stack[0x1c]:4   show_current_value
 ; Local Variables:
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x14]:4  local_14
+; char[32]         Stack[-0x34]:32  local_34
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[9]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040ef34

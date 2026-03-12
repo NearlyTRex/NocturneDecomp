@@ -9,8 +9,7 @@
 ; char *           Stack[0xc]:4   new_extension
 ; char *           Stack[0x10]:4   open_mode
 ; Local Variables:
-; undefined1       Stack[-0x60]:1  local_60
-; undefined1       Stack[-0x5f]:1  local_5f
+; char[80]         Stack[-0x60]:80  local_60
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_ground_cpp_0062e571

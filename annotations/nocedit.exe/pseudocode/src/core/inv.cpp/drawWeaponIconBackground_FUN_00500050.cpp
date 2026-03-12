@@ -9,16 +9,12 @@
 void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_00500050(int x1,int y1,int x2,int y2,int alpha)
 
 {
-  CDemonRenderer *this_ptr;
   SMRGLHeaderPrimitive local_48;
-  uint local_30;
-  uint local_2c;
-  uint local_28;
-  uint local_24;
   int local_20;
   int local_1c;
   int local_18;
   int local_14;
+  CDemonRenderer *this_ptr;
   
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr2,&g_Inventory3DTextureAtlas);
@@ -49,15 +45,7 @@ void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_00500050(int x1,int y1,in
   local_48.surface_normal.C = 0;
   local_48.surface_normal.B = 0;
   local_48.surface_normal.A = 0;
-  local_30 = 0;
-  local_24 = 3;
-  local_2c = 1;
-  local_28 = 2;
   engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10(this_ptr,&local_48,0xa3);
-  local_20 = x1;
-  local_18 = y1;
-  local_1c = x2;
-  local_14 = y2;
   core_dcamera_cpp_CDemonCamera_pushRect_FUN_0044c740(&g_CDemonCameraInstance,x1,x2,y1,y2);
   return;
 }

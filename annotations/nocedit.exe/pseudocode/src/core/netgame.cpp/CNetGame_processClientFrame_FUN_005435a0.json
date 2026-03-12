@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 222,
-    "complexity_score": 140,
+    "complexity_score": 142,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 13,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 95,
+    "pseudocode_lines": 97,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 317
+    "total_lines": 319
   },
   "cross_references": [
     {
@@ -203,7 +203,7 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -217,7 +217,7 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "SSimFrame *"
       },
       {
         "is_param": false,
@@ -255,7 +255,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 29,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states + iVar1 + -0xc)) {",
@@ -263,7 +263,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 42,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
@@ -271,7 +271,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 46,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "((void *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",
@@ -279,7 +279,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 63,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_SimFrameHistory[0].player_controls[0].action_states +",

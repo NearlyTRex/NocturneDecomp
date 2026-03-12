@@ -9,11 +9,11 @@
 void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot *this_ptr,double hardware_playback_pos)
 
 {
-  CSfxSample *this_ptr_00;
-  double dVar1;
   int iVar2;
   double dVar3;
   ulonglong local_28;
+  CSfxSample *this_ptr_00;
+  double dVar1;
   
   if (this_ptr->sample == (CSfxSample *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";

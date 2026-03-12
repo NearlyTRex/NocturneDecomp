@@ -11,20 +11,19 @@
 ; SExpandedEdge *  Stack[0x14]:4   full_edges
 ; int              Stack[0x18]:4   full_edge_count
 ; Local Variables:
-; undefined8       Stack[-0x138]:8  local_138
-; undefined8       Stack[-0x130]:8  local_130
-; undefined8       Stack[-0x128]:8  local_128
-; undefined8       Stack[-0x120]:8  local_120
-; undefined8       Stack[-0x118]:8  local_118
+; double           Stack[-0x138]:8  local_138
+; int              Stack[-0x130]:4  local_130
+; undefined4       Stack[-0x12c]:4  uStack_12c
+; double           Stack[-0x128]:8  local_128
+; double           Stack[-0x120]:8  local_120
+; int              Stack[-0x118]:4  local_118
+; undefined4       Stack[-0x114]:4  uStack_114
 ; undefined8       Stack[-0x110]:8  local_110
 ; undefined8       Stack[-0x108]:8  local_108
 ; undefined8       Stack[-0x100]:8  local_100
-; undefined8       Stack[-0xf8]:8  local_f8
-; undefined8       Stack[-0xf0]:8  local_f0
-; undefined8       Stack[-0xe8]:8  local_e8
-; undefined8       Stack[-0xe0]:8  local_e0
-; undefined8       Stack[-0xd8]:8  local_d8
-; undefined8       Stack[-0xd0]:8  local_d0
+; CVector2d        Stack[-0xf8]:16  local_f8
+; CVector2d        Stack[-0xe8]:16  local_e8
+; CVector2d        Stack[-0xd8]:16  local_d8
 ; undefined4       Stack[-0xc8]:4  local_c8
 ; undefined4       Stack[-0xc4]:4  local_c4
 ; undefined4       Stack[-0xc0]:4  local_c0
@@ -35,7 +34,7 @@
 ; undefined4       Stack[-0xac]:4  local_ac
 ; undefined4       Stack[-0xa8]:4  local_a8
 ; undefined4       Stack[-0xa4]:4  local_a4
-; undefined8       Stack[-0xa0]:8  local_a0
+; double           Stack[-0xa0]:8  local_a0
 ; undefined4       Stack[-0x98]:4  local_98
 ; undefined4       Stack[-0x94]:4  local_94
 ; undefined4       Stack[-0x90]:4  local_90
@@ -62,13 +61,13 @@
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; SExpandedEdge *  Stack[-0x30]:4  local_30
+; SExpandedEdge *  Stack[-0x2c]:4  local_2c
+; SExpandedEdge *  Stack[-0x28]:4  local_28
+; SExpandedEdge *  Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   shape_superopt.cpp_CComplexPolygon_processEdgeSubLoops_FUN_005c91e0 at 005c92d6

@@ -9,10 +9,6 @@
 void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(CDeformableModel *this_ptr)
 
 {
-  int *piVar1;
-  uint uVar2;
-  int iVar3;
-  int iVar4;
   int iVar5;
   int *piVar6;
   int iVar7;
@@ -21,6 +17,8 @@ void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(
   uint *puVar10;
   uint *puVar11;
   uint *puVar12;
+  uint *puVar1;
+  uint *puVar2;
   byte bVar13;
   ushort auStack_201c [1018];
   uint auStack_1828 [1528];
@@ -38,6 +36,10 @@ void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(
   int local_1c;
   int local_18;
   CDeformableModel *local_14;
+  int *piVar1;
+  int iVar4;
+  int iVar3;
+  uint uVar2;
   
   bVar13 = 0;
   __STK();
@@ -68,23 +70,23 @@ void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(
                     iVar3 = *piVar1;
                     *piVar1 = *piVar6;
                     *piVar6 = iVar3;
-                    puVar10 = (uint *)
-                              ((int)&local_14->tri_data_ptr[0][1].vertex_indices.vertex_index_0 +
-                              iVar4);
-                    puVar9 = (uint *)
+                    puVar2 = (uint *)
+                             ((int)&local_14->tri_data_ptr[0][1].vertex_indices.vertex_index_0 +
+                             iVar4);
+                    puVar1 = (uint *)
                              ((int)&(local_14->tri_data_ptr[0]->vertex_indices).vertex_index_0 +
                              iVar5);
-                    uVar2 = *puVar9;
+                    uVar2 = *puVar1;
                     *(ushort *)(auStack_48 + (uint)bVar13 * -8) =
-                         *(ushort *)(puVar9 + (uint)bVar13 * -2 + 1);
-                    stack0xffffffba = *(uint *)((int)puVar9 + 6);
+                         *(ushort *)(puVar1 + (uint)bVar13 * -2 + 1);
+                    stack0xffffffba = *(uint *)((int)puVar1 + 6);
                     *(ushort *)((int)&uStack_44 + (uint)bVar13 * -8 + 2) =
-                         *(ushort *)((int)puVar9 + (uint)bVar13 * -8 + 10);
-                    local_40 = puVar9[3];
-                    auStack_3c[(uint)bVar13 * -4] = *(ushort *)(puVar9 + (uint)bVar13 * -2 + 4);
-                    puVar11 = puVar9 + (uint)bVar13 * -2 + 1;
-                    puVar8 = puVar10 + (uint)bVar13 * -2 + 1;
-                    *puVar9 = *puVar10;
+                         *(ushort *)((int)puVar1 + (uint)bVar13 * -8 + 10);
+                    local_40 = puVar1[3];
+                    auStack_3c[(uint)bVar13 * -4] = *(ushort *)(puVar1 + (uint)bVar13 * -2 + 4);
+                    puVar11 = puVar1 + (uint)bVar13 * -2 + 1;
+                    puVar8 = puVar2 + (uint)bVar13 * -2 + 1;
+                    *puVar1 = *puVar2;
                     puVar12 = puVar11 + (uint)bVar13 * -2 + 1;
                     puVar9 = puVar8 + (uint)bVar13 * -2 + 1;
                     *puVar11 = *puVar8;
@@ -92,14 +94,14 @@ void __cdecl core_skeledit_cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240(
                     puVar12[(uint)bVar13 * -2 + 1] = puVar9[(uint)bVar13 * -2 + 1];
                     *(ushort *)(puVar12 + (uint)bVar13 * -2 + 1 + (uint)bVar13 * -2 + 1) =
                          *(ushort *)(puVar9 + (uint)bVar13 * -2 + 1 + (uint)bVar13 * -2 + 1);
-                    puVar9 = puVar10 + (uint)bVar13 * -2 + 1;
-                    *puVar10 = uVar2;
-                    puVar8 = puVar9 + (uint)bVar13 * -2 + 1;
+                    puVar1 = puVar2 + (uint)bVar13 * -2 + 1;
+                    *puVar2 = uVar2;
+                    puVar2 = puVar1 + (uint)bVar13 * -2 + 1;
                     puVar10 = &uStack_44 + (uint)bVar13 * -2 + (uint)bVar13 * -2;
-                    *puVar9 = *(uint *)(auStack_48 + (uint)bVar13 * -8);
-                    *puVar8 = *puVar10;
-                    puVar8[(uint)bVar13 * -2 + 1] = puVar10[(uint)bVar13 * -2 + 1];
-                    *(ushort *)(puVar8 + (uint)bVar13 * -2 + 1 + (uint)bVar13 * -2 + 1) =
+                    *puVar1 = *(uint *)(auStack_48 + (uint)bVar13 * -8);
+                    *puVar2 = *puVar10;
+                    puVar2[(uint)bVar13 * -2 + 1] = puVar10[(uint)bVar13 * -2 + 1];
+                    *(ushort *)(puVar2 + (uint)bVar13 * -2 + 1 + (uint)bVar13 * -2 + 1) =
                          *(ushort *)(puVar10 + (uint)bVar13 * -2 + 1 + (uint)bVar13 * -2 + 1);
                   }
                   iVar7 = iVar7 + 4;

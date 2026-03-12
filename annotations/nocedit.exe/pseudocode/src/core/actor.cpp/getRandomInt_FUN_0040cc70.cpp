@@ -11,10 +11,11 @@
 int __cdecl core_actor_cpp_getRandomInt_FUN_0040cc70(int min_value,int max_value)
 
 {
-  double dVar1;
-  float fVar2;
+  int iVar1;
   int iVar3;
   uint uVar4;
+  double dVar1;
+  float fVar2;
   
   dVar1 = (double)(max_value - min_value) + 0.99999000000000005;
   if (g_CGamePtr->is_processing == 0) {
@@ -25,9 +26,9 @@ int __cdecl core_actor_cpp_getRandomInt_FUN_0040cc70(int min_value,int max_value
     uVar4 = core_actor_cpp_generateRandomValue_FUN_0040cba0();
     fVar2 = (float)(int)uVar4 * (float)INT_00614304;
   }
-  iVar3 = (int)ROUND(ROUND((float)min_value + fVar2 * (float)dVar1));
-  if ((min_value <= iVar3) && (min_value = max_value, iVar3 <= max_value)) {
-    return iVar3;
+  iVar1 = (int)ROUND(ROUND((float)min_value + fVar2 * (float)dVar1));
+  if ((min_value <= iVar1) && (min_value = max_value, iVar1 <= max_value)) {
+    return iVar1;
   }
   return min_value;
 }

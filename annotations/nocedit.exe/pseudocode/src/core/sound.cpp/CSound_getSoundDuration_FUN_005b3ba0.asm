@@ -7,7 +7,7 @@
 ; CSound *         Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   sound_name
 ; Local Variables:
-; undefined1       Stack[-0x160]:1  local_160
+; CSampleInfo      Stack[-0x160]:288  local_160
 ; undefined8       Stack[-0x10]:8  local_10
 ; undefined4       Stack[-0x8]:4  local_8
 ;

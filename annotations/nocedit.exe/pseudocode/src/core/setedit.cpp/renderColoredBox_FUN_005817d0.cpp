@@ -11,21 +11,18 @@
 void __cdecl core_setedit_cpp_renderColoredBox_FUN_005817d0(CVector3f *corner_a,CVector3f *corner_b,float opacity,int r,int g,int b)
 
 {
-  CDemonRenderer *this_ptr;
+  CVector3f *pCVar2;
   CVector3f *pCVar1;
   int iVar2;
   uint uVar3;
   float local_60;
   SMRGLHeaderPrimitive local_54;
-  uint local_3c;
-  uint local_38;
-  uint local_34;
-  uint local_30;
   CVector3i local_2c;
   int local_20;
   int local_1c;
   int local_18;
   int local_14;
+  CDemonRenderer *this_ptr;
   
   local_14 = (int)ROUND(ROUND(opacity * 65535.0f));
   if (local_14 < 0) {
@@ -34,20 +31,17 @@ void __cdecl core_setedit_cpp_renderColoredBox_FUN_005817d0(CVector3f *corner_a,
   else if (0xffff < local_14) {
     local_14 = 0xffff;
   }
-  local_20 = r << 8;
-  local_1c = g << 8;
-  local_18 = b << 8;
   uVar3 = 0;
   do {
     local_60 = corner_b->x;
     iVar2 = uVar3 * 0x30;
     while( true ) {
       local_2c.x = (int)ROUND(ROUND(local_60 * (float)256));
-      pCVar1 = corner_b;
+      pCVar2 = corner_b;
       if ((uVar3 & 2) != 0) {
-        pCVar1 = corner_a;
+        pCVar2 = corner_a;
       }
-      local_2c.y = (int)ROUND(ROUND(pCVar1->y * (float)256));
+      local_2c.y = (int)ROUND(ROUND(pCVar2->y * (float)256));
       pCVar1 = corner_b;
       if ((uVar3 & 4) != 0) {
         pCVar1 = corner_a;
@@ -60,9 +54,9 @@ void __cdecl core_setedit_cpp_renderColoredBox_FUN_005817d0(CVector3f *corner_a,
       this_ptr = g_CDemonRendererPtr2;
       *(uint *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->u + iVar2) = 0x80000;
       *(uint *)((int)&this_ptr->vertex_buffer_ptr->v + iVar2) = 0x80000;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->r + iVar2) = local_20;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->g + iVar2) = local_1c;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->b + iVar2) = local_18;
+      *(int *)((int)&this_ptr->vertex_buffer_ptr->r + iVar2) = r << 8;
+      *(int *)((int)&this_ptr->vertex_buffer_ptr->g + iVar2) = g << 8;
+      *(int *)((int)&this_ptr->vertex_buffer_ptr->b + iVar2) = b << 8;
       uVar3 = uVar3 + 1;
       *(int *)((int)&this_ptr->vertex_buffer_ptr->a + iVar2) = local_14;
       if (7 < (int)uVar3) {
@@ -72,41 +66,17 @@ void __cdecl core_setedit_cpp_renderColoredBox_FUN_005817d0(CVector3f *corner_a,
         local_54.surface_normal.C = 0;
         local_54.surface_normal.B = 0;
         local_54.surface_normal.A = 0;
-        local_3c = 0;
-        local_34 = 6;
         local_54.base.count = 4;
-        local_30 = 4;
-        local_38 = 2;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
                   (g_CDemonRendererPtr2,&local_54);
-        local_30 = 5;
-        local_3c = 1;
-        local_38 = 3;
-        local_34 = 7;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
                   (g_CDemonRendererPtr2,&local_54);
-        local_3c = 0;
-        local_38 = 1;
-        local_34 = 3;
-        local_30 = 2;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
                   (g_CDemonRendererPtr2,&local_54);
-        local_3c = 4;
-        local_38 = 5;
-        local_34 = 7;
-        local_30 = 6;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
                   (g_CDemonRendererPtr2,&local_54);
-        local_3c = 2;
-        local_30 = 6;
-        local_38 = 3;
-        local_34 = 7;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
                   (g_CDemonRendererPtr2,&local_54);
-        local_38 = 1;
-        local_3c = 0;
-        local_34 = 5;
-        local_30 = 4;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
                   (g_CDemonRendererPtr2,&local_54);
         return;

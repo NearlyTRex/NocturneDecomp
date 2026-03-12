@@ -10,8 +10,11 @@
 ; int              Stack[0x10]:4   bone_index
 ; CDeformableModel_MotionBlendWeightFunc * Stack[0x14]:4   blend_callback
 ; Local Variables:
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float[1522]      Stack[-0x1808]:6088  afStackY_1808
+; CQuaternion4f    Stack[-0x2c]:16  CStack_2c
+; CSkeleton *      Stack[-0x1c]:4  local_1c
+; CDeformableModelInstance * Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; XREF[11]:
 ;   core_baron.cpp_CBaron_process_FUN_00412e80 at 00413113

@@ -10,12 +10,12 @@
       {
         "category": "other",
         "column": 74,
-        "line": 52,
+        "line": 51,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
       },
       {
         "category": "other",
-        "column": 36,
+        "column": 27,
         "line": 53,
         "message": "C-style cast from 'struct CDemonActor *' to 'float' is not allowed"
       },
@@ -40,68 +40,68 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 63,
+        "line": 62,
         "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CHealthItem *'"
       },
       {
         "category": "format_error",
         "column": 62,
-        "line": 67,
+        "line": 66,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 56,
-        "line": 68,
+        "line": 67,
         "message": "format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 78,
+        "column": 11,
+        "line": 76,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 51,
+        "line": 77,
+        "message": "member reference base type 'double' is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 53,
         "line": 79,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
-        "category": "format_error",
-        "column": 45,
-        "line": 81,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
         "category": "other",
         "column": 36,
-        "line": 83,
+        "line": 81,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 85,
+        "line": 83,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 19,
-        "line": 88,
+        "column": 11,
+        "line": 85,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "other",
         "column": 55,
-        "line": 89,
+        "line": 86,
         "message": "member reference base type 'double' is not a structure or union"
       },
       {
-        "category": "format_error",
-        "column": 45,
-        "line": 91,
-        "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
+        "category": "other",
+        "column": 53,
+        "line": 88,
+        "message": "member reference base type 'double' is not a structure or union"
       }
     ],
     "success": false,
@@ -109,19 +109,20 @@
   },
   "complexity": {
     "assembly_lines": 364,
-    "complexity_score": 190,
+    "complexity_score": 252,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 20,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 105,
-    "suspect_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 102,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
+      "sub84_truncation",
       "unknown_field",
       "warning_inlined_function"
     ],
-    "total_lines": 469
+    "total_lines": 466
   },
   "cross_references": [
     {
@@ -383,85 +384,85 @@
         "is_param": false,
         "name": "local_10c4",
         "offset": -4292,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_d1c",
         "offset": -3356,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_974",
         "offset": -2420,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_5cc",
         "offset": -1484,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
         "name": "local_224",
         "offset": -548,
-        "size": 1,
-        "type": "undefined1"
+        "size": 500,
+        "type": "char[500]"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -483,31 +484,47 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 45,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_28 = (int)ROUND(ROUND(local_14 * 100.0f));",
+      "text": "(int)ROUND(ROUND(local_14 * 100.0f)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 45,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_28 = (int)ROUND(ROUND(local_14 * 100.0f));",
+      "text": "(int)ROUND(ROUND(local_14 * 100.0f)),",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 71,
+      "line": 69,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "uVar1 = local_30._0_4_;",
+      "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_20),0);",
       "type": "unknown_field"
     },
     {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 69,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_20),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 69,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_20),0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unknown/mangled field access",
-      "line": 72,
+      "line": 70,
       "match": "._0_4_",
       "severity": "mild",
       "text": "_sprintf(local_224,\"Total enemy HP\\t%g\",local_30._0_4_);",
@@ -515,18 +532,50 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 81,
+      "line": 72,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "uVar1 = local_30._0_4_;",
+      "text": "_sprintf(local_224,\"Total\\t\\t\\t\\t\\t%g hp\",local_30._0_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 82,
+      "line": 78,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_24),0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 78,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_24),0);",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 78,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64((double)local_24),0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 79,
       "match": "._0_4_",
       "severity": "mild",
       "text": "_sprintf(local_224,\"Total health items\\t%g\",local_30._0_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 81,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "_sprintf(local_224,\"Total\\t\\t\\t\\t\\t%g hp\",local_30._0_4_);",
       "type": "unknown_field"
     }
   ]

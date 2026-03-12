@@ -9,22 +9,22 @@
 ; int              Stack[0xc]:4   quality_parameter
 ; int              Stack[0x10]:4   pack_parameter
 ; Local Variables:
-; undefined1       Stack[-0xb8]:1  local_b8
-; undefined1       Stack[-0xb7]:1  local_b7
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0xc0]:4  fStack_c0
+; float            Stack[-0xbc]:4  fStack_bc
+; SCram            Stack[-0xb8]:116  local_b8
+; int              Stack[-0x44]:4  iStack_44
+; SMRGLTextureLod * Stack[-0x40]:4  pSStack_40
+; char *           Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  iStack_38
+; char *           Stack[-0x34]:4  pcStack_34
+; int              Stack[-0x30]:4  iStack_30
+; int              Stack[-0x2c]:4  iStack_2c
+; int              Stack[-0x28]:4  iStack_28
+; int              Stack[-0x24]:4  local_24
+; int *            Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047dc9d

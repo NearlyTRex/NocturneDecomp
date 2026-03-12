@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 149,
+    "complexity_score": 152,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 84,
+    "pseudocode_lines": 87,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 272
+    "total_lines": 275
   },
   "cross_references": [],
   "function": {
@@ -132,14 +132,14 @@
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -153,7 +153,7 @@
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -167,35 +167,35 @@
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "float *"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -209,7 +209,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -240,7 +240,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 31,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "for (local_34 = 0; local_34 < *(int *)((int)this_ptr->vertex_count + local_40);",
@@ -248,7 +248,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 33,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "pfVar1 = (float *)(local_14 + *(int *)((int)this_ptr->vertex_data_ptr + local_40));",
@@ -256,7 +256,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 47,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);",
@@ -264,7 +264,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 47,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);",
@@ -272,7 +272,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 57,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_2c = (float *)((int)local_2c + 1);",
@@ -280,7 +280,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 62,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_28 = (float *)((int)local_28 + 1);",

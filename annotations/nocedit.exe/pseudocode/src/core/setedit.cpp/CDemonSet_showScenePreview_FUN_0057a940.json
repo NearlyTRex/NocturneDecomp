@@ -2,33 +2,21 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "other",
-        "column": 18,
-        "line": 55,
-        "message": "cannot cast from type 'float' to pointer type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 45,
-        "line": 76,
-        "message": "C-style cast from 'void *' to 'float' is not allowed"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 61,
-        "line": 86,
+        "line": 96,
         "message": "use of undeclared identifier 'stack0xfffffae0'"
       },
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 91,
+        "line": 101,
         "message": "use of undeclared identifier 'stack0xfffffae0'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 100,
+        "line": 110,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -37,18 +25,18 @@
   },
   "complexity": {
     "assembly_lines": 417,
-    "complexity_score": 175,
+    "complexity_score": 185,
     "cross_reference_count": 1,
     "function_call_count": 29,
     "global_count": 41,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 125,
+    "pseudocode_lines": 135,
     "suspect_count": 4,
     "suspect_types": [
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 542
+    "total_lines": 552
   },
   "cross_references": [
     {
@@ -525,25 +513,88 @@
     "pcode_op_count": 1792
   },
   "stack_frame": {
-    "frame_size": 36,
-    "local_size": 32,
+    "frame_size": 320,
+    "local_size": 316,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "acStack_138",
+        "offset": -312,
+        "size": 256,
+        "type": "char[256]"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_38",
+        "offset": -56,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_34",
+        "offset": -52,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_30",
+        "offset": -48,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "pvStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_14",
+        "offset": -20,
+        "size": 4,
+        "type": "C3DSCamera *"
       },
       {
         "is_param": true,
@@ -574,7 +625,7 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 18,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "int unaff_EBP;",
@@ -582,7 +633,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 79,
+      "line": 89,
       "match": "&stack0xfffffae0",
       "severity": "moderate",
       "text": "(this_ptr,g_MouseX,g_MouseY,(int *)&stack0xfffffae0,-1);",
@@ -590,7 +641,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 84,
+      "line": 94,
       "match": "&stack0xfffffae0",
       "severity": "moderate",
       "text": "piVar1 = (int *)(&stack0xfffffae0 + iVar3);",
@@ -598,7 +649,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 86,
+      "line": 96,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "engine_2d_c_drawTextXY_FUN_00402130(0,y,(char *)(*piVar1 * 0x1a4 + unaff_EBP));",

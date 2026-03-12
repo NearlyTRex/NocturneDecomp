@@ -9,16 +9,18 @@
 int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
 
 {
-  char cVar1;
+  int iVar1;
   int iVar2;
   _FILE *file_handle;
   uint uVar3;
   int iVar4;
   char *pcVar5;
+  char *pcVar2;
   byte bVar6;
   char local_114;
   byte local_113 [255];
   long local_14;
+  char cVar1;
   
   bVar6 = 0;
   sound_sndmain_cpp_lockSound_FUN_005abd30();
@@ -28,9 +30,10 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
       pcVar5 = g_SfxSamples[0].sample_info.name + iVar4;
       iVar2 = _stricmp(pcVar5,(char *)out_sample);
       if (iVar2 == 0) {
-        for (iVar4 = 0x54; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *(uint *)(out_sample->sample_info).name = *(uint *)pcVar5;
+        for (iVar1 = 0x54; iVar1 != 0; iVar1 = iVar1 + -1) {
           pcVar5 = pcVar5 + (uint)bVar6 * -8 + 4;
+          *(uint *)(out_sample->sample_info).name = *(uint *)pcVar5;
+          pcVar5 = pcVar5;
           out_sample = (CSfxSample *)((int)out_sample + (uint)bVar6 * -8 + 4);
         }
         sound_sndmain_cpp_unlockSound_FUN_005abdc0();
@@ -40,25 +43,25 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
     iVar4 = iVar4 + 0x180;
   } while (iVar4 < 0x6000);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-  iVar4 = engine_dosio_c_getFileSize_FUN_00481880("sound",(char *)out_sample);
-  if (0 < iVar4) {
+  iVar1 = engine_dosio_c_getFileSize_FUN_00481880("sound",(char *)out_sample);
+  if (0 < iVar1) {
     engine_dosio_c_splitPath_FUN_00481f20
               ((char *)out_sample,(char *)0x0,(char *)0x0,(char *)0x0,&local_114);
     if (local_114 == '.') {
       uVar3 = 0xffffffff;
-      pcVar5 = &local_114;
+      pcVar2 = &local_114;
       do {
         if (uVar3 == 0) break;
         uVar3 = uVar3 - 1;
-        cVar1 = *pcVar5;
-        pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+        cVar1 = *pcVar2;
+        pcVar2 = pcVar2 + (uint)bVar6 * -2 + 1;
       } while (cVar1 != '\0');
       memmove(&local_114,local_113,~uVar3 - 1);
     }
-    iVar4 = _stricmp(&local_114,"wav");
-    if (iVar4 != 0) {
-      iVar4 = _stricmp(&local_114,"mp3");
-      if (iVar4 == 0) {
+    iVar1 = _stricmp(&local_114,"wav");
+    if (iVar1 != 0) {
+      iVar1 = _stricmp(&local_114,"mp3");
+      if (iVar1 == 0) {
         if ((g_GlobalMP3DecoderInitializedOther & 1) == 0) {
           g_GlobalMP3DecoderInitializedOther = g_GlobalMP3DecoderInitializedOther | 1;
           sound_mp3_cpp_CMP3Decoder_ctor_FUN_005344f0(&g_CMP3DecoderInstance);
@@ -67,9 +70,9 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
         sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(&g_CMP3DecoderInstance,(char *)out_sample);
         (out_sample->sample_info).bit_depth = 0x10;
         (out_sample->sample_info).num_channels = g_CMP3DecoderInstance.num_channels;
-        iVar4 = g_CMP3DecoderInstance.sample_rate;
+        iVar1 = g_CMP3DecoderInstance.sample_rate;
         (out_sample->sample_info).sample_count = -1;
-        (out_sample->sample_info).sample_rate = iVar4;
+        (out_sample->sample_info).sample_rate = iVar1;
         sound_mp3_cpp_CMP3Decoder_free_FUN_005349e0(&g_CMP3DecoderInstance);
       }
       else {
@@ -93,8 +96,8 @@ LAB_005aa53c:
                             ("sound",(char *)out_sample,"rb");
     if (file_handle != (_FILE *)0x0) {
       local_14 = _ftell(file_handle);
-      iVar4 = sound_sndmain_cpp_parseWavFile_FUN_005a3fe0(file_handle,&local_14,out_sample);
-      if (iVar4 != 0) {
+      iVar1 = sound_sndmain_cpp_parseWavFile_FUN_005a3fe0(file_handle,&local_14,out_sample);
+      if (iVar1 != 0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\sound\\sndmain.cpp",0x10ba);
         goto LAB_005aa53c;
       }

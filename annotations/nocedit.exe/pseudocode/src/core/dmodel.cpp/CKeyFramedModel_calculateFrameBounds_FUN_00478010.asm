@@ -6,12 +6,7 @@
 ; Parameters:
 ; CKeyFramedModel * Stack[0x4]:4   model_ptr
 ; Local Variables:
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CBoundingBox3D   Stack[-0x28]:24  local_28
 ;
 ; XREF[8]:
 ;   core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370 at 0047c460

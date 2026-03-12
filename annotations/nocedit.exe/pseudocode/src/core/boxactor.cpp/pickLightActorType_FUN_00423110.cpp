@@ -9,6 +9,7 @@
 ELightActorType __cdecl core_boxactor_cpp_pickLightActorType_FUN_00423110(char *prompt_text,int allow_custom,uint current_type)
 
 {
+  int iVar2;
   int iVar1;
   CPickList local_3b0;
   
@@ -27,9 +28,9 @@ ELightActorType __cdecl core_boxactor_cpp_pickLightActorType_FUN_00423110(char *
   if (allow_custom != 0) {
     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_3b0.base,"Custom");
   }
-  iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+  iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                     (&local_3b0,prompt_text,iVar1,0);
-  switch(iVar1) {
+  switch(iVar2) {
   case 0:
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3b0,0);
     return LIGHT_TYPE_FLASHLIGHT;

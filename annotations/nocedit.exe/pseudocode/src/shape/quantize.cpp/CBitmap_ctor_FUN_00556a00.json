@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 48,
-        "line": 49,
+        "line": 50,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 65,
+        "line": 66,
         "message": "assigning to 'void **' from incompatible type 'void *'"
       }
     ],
@@ -19,17 +19,17 @@
   },
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 98,
+    "complexity_score": 99,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 13,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 83,
+    "pseudocode_lines": 84,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 287
+    "total_lines": 288
   },
   "cross_references": [
     {
@@ -213,8 +213,8 @@
         "is_param": false,
         "name": "local_68",
         "offset": -104,
-        "size": 1,
-        "type": "undefined1"
+        "size": 92,
+        "type": "char[92]"
       },
       {
         "is_param": true,
@@ -249,7 +249,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 73,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "(void *)((int)this_ptr->pixel_data + (uint)(ushort)this_ptr->bytes_per_row * iVar3);",

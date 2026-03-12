@@ -7,18 +7,20 @@
 ; CScat *          Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined1       Stack[-0x58]:1  local_58
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined1       Stack[-0x40]:1  local_40
-; undefined1       Stack[-0x34]:1  local_34
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; float[1521]      Stack[-0x1860]:6084  afStackY_1860
+; float            Stack[-0x88]:4  local_88
+; CQuaternion4f    Stack[-0x84]:16  CStack_84
+; CQuaternion4f    Stack[-0x74]:16  CStack_74
+; float            Stack[-0x64]:4  local_64
+; float            Stack[-0x60]:4  local_60
+; float            Stack[-0x5c]:4  local_5c
+; CVector3f        Stack[-0x58]:12  local_58
+; CVector3f        Stack[-0x4c]:12  local_4c
+; CVector3f        Stack[-0x40]:12  local_40
+; CVector3f        Stack[-0x34]:12  local_34
+; CDeformableModelInstance * Stack[-0x20]:4  pCStack_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:

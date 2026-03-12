@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 238,
+    "complexity_score": 241,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 88,
+    "pseudocode_lines": 91,
     "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 213
+    "total_lines": 216
   },
   "cross_references": [],
   "function": {
@@ -85,133 +85,133 @@
         "name": "local_c0",
         "offset": -192,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_b8",
         "offset": -184,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_b0",
         "offset": -176,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_a8",
         "offset": -168,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_a0",
         "offset": -160,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_98",
         "offset": -152,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_90",
         "offset": -144,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_88",
         "offset": -136,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_80",
         "offset": -128,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_78",
         "offset": -120,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_70",
         "offset": -112,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_68",
         "offset": -104,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_54",
+        "offset": -84,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
-        "size": 8,
-        "type": "undefined8"
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
+        "size": 16,
+        "type": "undefined4[4]"
       },
       {
         "is_param": false,
@@ -232,28 +232,28 @@
         "name": "local_30",
         "offset": -48,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -313,7 +313,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 46,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_5c = *(uint *)((int)&scale->x + 4);",
@@ -321,7 +321,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 48,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uStack_54 = *(uint *)((int)&scale->y + 4);",
@@ -329,7 +329,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 53,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "uVar1 = *(uint *)((int)&scale->z + 4);",
@@ -337,23 +337,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 58,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar4 = (double *)((int)pdVar4 + 4);",
+      "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 59,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar5 = (double *)((int)pdVar5 + 4);",
+      "text": "pdVar3 = (double *)((int)pdVar3 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 59,
+      "line": 62,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_90 = local_a8 * __BITCAST_DOUBLE(CONCAT44(uStack_5c,local_60));",
@@ -361,7 +361,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 60,
+      "line": 63,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_88 = local_a0 * __BITCAST_DOUBLE(CONCAT44(uStack_54,local_58));",
@@ -369,7 +369,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 64,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "local_80 = local_98 * __BITCAST_DOUBLE(CONCAT44(uVar1,local_50));",
@@ -377,15 +377,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 69,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "pdVar4 = (double *)((int)pdVar4 + 4);",
+      "text": "pdVar2 = (double *)((int)pdVar2 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 70,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar5 = (double *)((int)pdVar5 + 4);",
@@ -393,7 +393,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 79,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar4 = (double *)((int)pdVar4 + 4);",
@@ -401,7 +401,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 83,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(pCVar3->position).x + 4) = local_48[1];",
@@ -409,7 +409,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 85,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(pCVar3->position).y + 4) = local_48[3];",
@@ -417,7 +417,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 87,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(pCVar3->position).z + 4) = local_34;",

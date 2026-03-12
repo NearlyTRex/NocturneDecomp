@@ -6,9 +6,9 @@
 ; Parameters:
 ; CMouse *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined1       Stack[-0x1c]:1  local_1c
+; char[16]         Stack[-0x3c]:16  local_3c
+; char[16]         Stack[-0x2c]:16  local_2c
+; char[16]         Stack[-0x1c]:16  local_1c
 ;
 ; XREF[1]:
 ;   core_main.c_initializeGameSystems_FUN_00507a60 at 005081bc

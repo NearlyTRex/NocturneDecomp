@@ -7,9 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   world_position
 ; int              Stack[0x8]:4   marker_color
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; CVector3i        Stack[-0x14]:12  local_14
 ;
 ; Referenced Globals:
 ;   float FLOAT_006597b0 = 256

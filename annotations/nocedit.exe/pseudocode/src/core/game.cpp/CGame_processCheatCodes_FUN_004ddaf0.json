@@ -4,61 +4,43 @@
       {
         "category": "undeclared_identifier",
         "column": 27,
-        "line": 257,
+        "line": 270,
         "message": "use of undeclared identifier 'int3'; did you mean 'int'?"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 335,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 28,
-        "line": 336,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 337,
-        "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "format_error",
         "column": 44,
-        "line": 340,
+        "line": 337,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
-        "column": 50,
-        "line": 340,
+        "column": 54,
+        "line": 337,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "lvalue_required",
         "column": 66,
-        "line": 612,
+        "line": 567,
         "message": "cannot take the address of an rvalue of type 'float'"
       },
       {
         "category": "other",
         "column": 84,
-        "line": 1205,
+        "line": 1057,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 1248,
+        "line": 1093,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 1248,
+        "line": 1093,
         "message": "expected expression"
       }
     ],
@@ -67,23 +49,21 @@
   },
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 2184,
+    "complexity_score": 1853,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 200,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 2009,
-    "suspect_count": 14,
+    "pseudocode_lines": 1728,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
       "nonstandard_int",
       "pointer_cast",
       "sub84_truncation",
-      "unknown_field",
-      "unresolved_funcptr",
-      "warning_type_propagation"
+      "unresolved_funcptr"
     ],
-    "total_lines": 5956
+    "total_lines": 5675
   },
   "cross_references": [
     {
@@ -1579,8 +1559,43 @@
         "is_param": false,
         "name": "local_460",
         "offset": -1120,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
+      },
+      {
+        "is_param": false,
+        "name": "abStack_360",
+        "offset": -864,
+        "size": 100,
+        "type": "byte[100]"
+      },
+      {
+        "is_param": false,
+        "name": "SStack_2fc",
+        "offset": -764,
+        "size": 60,
+        "type": "SDamageInfo"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_2c0",
+        "offset": -704,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_2bc",
+        "offset": -700,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_2b8",
+        "offset": -696,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
@@ -1594,245 +1609,1162 @@
         "name": "local_2ac",
         "offset": -684,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2a8",
         "offset": -680,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2a4",
         "offset": -676,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2a0",
         "offset": -672,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_29c",
         "offset": -668,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_298",
         "offset": -664,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_294",
         "offset": -660,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_290",
         "offset": -656,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28c",
         "offset": -652,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_288",
         "offset": -648,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_284",
         "offset": -644,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_280",
         "offset": -640,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_27c",
         "offset": -636,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_278",
         "offset": -632,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_274",
         "offset": -628,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_270",
         "offset": -624,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_26c",
         "offset": -620,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_268",
         "offset": -616,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_264",
         "offset": -612,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_260",
         "offset": -608,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_25c",
         "offset": -604,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_258",
         "offset": -600,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_254",
         "offset": -596,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_250",
+        "offset": -592,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_24c",
+        "offset": -588,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_248",
+        "offset": -584,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_244",
+        "offset": -580,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_240",
+        "offset": -576,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_23c",
+        "offset": -572,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_238",
+        "offset": -568,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_234",
+        "offset": -564,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_230",
+        "offset": -560,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_22c",
+        "offset": -556,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_228",
+        "offset": -552,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_224",
+        "offset": -548,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_220",
+        "offset": -544,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_21c",
+        "offset": -540,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_218",
+        "offset": -536,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_214",
+        "offset": -532,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_210",
+        "offset": -528,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_20c",
+        "offset": -524,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_208",
+        "offset": -520,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_204",
+        "offset": -516,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_200",
+        "offset": -512,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1fc",
+        "offset": -508,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1f8",
+        "offset": -504,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_1f4",
+        "offset": -500,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_1f0",
+        "offset": -496,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1ec",
+        "offset": -492,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1e8",
+        "offset": -488,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_1e4",
+        "offset": -484,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_1e0",
+        "offset": -480,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1dc",
+        "offset": -476,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1d8",
+        "offset": -472,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_1d4",
+        "offset": -468,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "pcStack_1d0",
+        "offset": -464,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1cc",
+        "offset": -460,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1c8",
+        "offset": -456,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1c4",
+        "offset": -452,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1c0",
+        "offset": -448,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1bc",
+        "offset": -444,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1b8",
+        "offset": -440,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1b4",
+        "offset": -436,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1b0",
+        "offset": -432,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1ac",
+        "offset": -428,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1a8",
+        "offset": -424,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1a4",
+        "offset": -420,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1a0",
+        "offset": -416,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_19c",
+        "offset": -412,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_198",
+        "offset": -408,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_194",
         "offset": -404,
         "size": 4,
-        "type": "undefined4"
+        "type": "float *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_190",
+        "offset": -400,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_18c",
+        "offset": -396,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_188",
+        "offset": -392,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_184",
+        "offset": -388,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_180",
+        "offset": -384,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_17c",
+        "offset": -380,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_178",
+        "offset": -376,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_174",
+        "offset": -372,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_170",
+        "offset": -368,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_16c",
+        "offset": -364,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_168",
+        "offset": -360,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_164",
+        "offset": -356,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_160",
+        "offset": -352,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_15c",
+        "offset": -348,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_158",
+        "offset": -344,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_154",
+        "offset": -340,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_150",
+        "offset": -336,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_14c",
+        "offset": -332,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_148",
+        "offset": -328,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_144",
+        "offset": -324,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_140",
+        "offset": -320,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_13c",
+        "offset": -316,
+        "size": 4,
+        "type": "CSkeleton *"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_138",
+        "offset": -312,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_134",
+        "offset": -308,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_130",
+        "offset": -304,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_12c",
+        "offset": -300,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_128",
+        "offset": -296,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_124",
+        "offset": -292,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_120",
+        "offset": -288,
+        "size": 4,
+        "type": "CDeformableModelInstance *"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_11c",
+        "offset": -284,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_118",
+        "offset": -280,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_114",
+        "offset": -276,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_110",
+        "offset": -272,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_10c",
+        "offset": -268,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_108",
+        "offset": -264,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_104",
+        "offset": -260,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_100",
+        "offset": -256,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_fc",
+        "offset": -252,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_f8",
+        "offset": -248,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_f4",
+        "offset": -244,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_f0",
+        "offset": -240,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_ec",
+        "offset": -236,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_e8",
+        "offset": -232,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_e4",
+        "offset": -228,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_e0",
+        "offset": -224,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_dc",
+        "offset": -220,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_d8",
+        "offset": -216,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_d4",
         "offset": -212,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_d0",
         "offset": -208,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_cc",
         "offset": -204,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_c8",
         "offset": -200,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_c4",
         "offset": -196,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_c0",
         "offset": -192,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_bc",
         "offset": -188,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_b8",
         "offset": -184,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_b4",
         "offset": -180,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_b0",
         "offset": -176,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_98",
+        "offset": -152,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_94",
+        "offset": -148,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_90",
+        "offset": -144,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_8c",
+        "offset": -140,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_88",
+        "offset": -136,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_84",
+        "offset": -132,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_80",
+        "offset": -128,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_78",
+        "offset": -120,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_74",
+        "offset": -116,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_70",
+        "offset": -112,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_68",
+        "offset": -104,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_64",
+        "offset": -100,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_60",
+        "offset": -96,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_58",
+        "offset": -88,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_54",
+        "offset": -84,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_50",
+        "offset": -80,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_48",
+        "offset": -72,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_44",
+        "offset": -68,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_40",
+        "offset": -64,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_38",
+        "offset": -56,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_34",
+        "offset": -52,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_30",
+        "offset": -48,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -1862,80 +2794,48 @@
   },
   "suspects": [
     {
-      "description": "Type propagation did not converge",
-      "line": 2,
-      "match": "WARNING: Type propagation algorithm not settling",
-      "severity": "moderate",
-      "text": "/* WARNING: Type propagation algorithm not settling */",
-      "type": "warning_type_propagation"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 226,
+      "line": 240,
       "match": "code",
       "severity": "moderate",
-      "text": "pcVar10 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(\"Enter cheat code\");",
+      "text": "pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(\"Enter cheat code\");",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 250,
+      "line": 263,
       "match": "CONCAT31",
       "severity": "mild",
-      "text": "iVar9 = CONCAT31((int3)((uint)iVar12 >> 8),g_InputHistory[iVar18]);",
+      "text": "iVar6 = CONCAT31((int3)((uint)iVar12 >> 8),g_InputHistory[iVar19]);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 250,
+      "line": 263,
       "match": "int3",
       "severity": "mild",
-      "text": "iVar9 = CONCAT31((int3)((uint)iVar12 >> 8),g_InputHistory[iVar18]);",
+      "text": "iVar6 = CONCAT31((int3)((uint)iVar12 >> 8),g_InputHistory[iVar19]);",
       "type": "nonstandard_int"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 328,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_2b4._4_4_ = (uint)((ulonglong)dVar6 >> 0x20);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 329,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "uVar7 = local_2b4._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 330,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_2b4._0_4_ = SUB84(__BITCAST_UINT64(dVar6),0);",
-      "type": "unknown_field"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 330,
+      "line": 329,
       "match": "SUB84(",
       "severity": "moderate",
-      "text": "local_2b4._0_4_ = SUB84(__BITCAST_UINT64(dVar6),0);",
+      "text": "local_2b4 = SUB84(__BITCAST_UINT64(dVar3),0);",
       "type": "sub84_truncation"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 330,
+      "line": 329,
       "match": "SUB84",
       "severity": "mild",
-      "text": "local_2b4._0_4_ = SUB84(__BITCAST_UINT64(dVar6),0);",
+      "text": "local_2b4 = SUB84(__BITCAST_UINT64(dVar3),0);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 685,
+      "line": 628,
       "match": "NAN",
       "severity": "mild",
       "text": "this_ptr_01[2].location.position.y = -NAN;",
@@ -1943,34 +2843,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1232,
+      "line": 1078,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar18 = *(int *)((int)g_CDemonSetPtr->enemies + iStack_74);",
+      "text": "iVar11 = *(int *)((int)g_CDemonSetPtr->enemies + iStack_74);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1237,
+      "line": 1083,
       "match": "SQRT",
       "severity": "mild",
-      "text": "if (SQRT(fStack_2b8 * fStack_2b8 + fStack_2c0 * fStack_2c0 + fStack_2bc * fStack_2bc) <=",
+      "text": "if (SQRT(fVar5 * fVar5 + fVar15 * fVar15 + fVar4 * fVar4) <= (float)50) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1241,
+      "line": 1086,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar18 + 0x154) + 0x11c))(iVar18,&SStack_2fc);",
+      "text": "(**(code **)(*(int *)(iVar11 + 0x154) + 0x11c))(iVar11,&SStack_2fc);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 1668,
+      "line": 1444,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar9 = *(int *)((int)g_CDemonSetPtr->characters + iStack_40);",
+      "text": "iVar6 = *(int *)((int)g_CDemonSetPtr->characters + iStack_40);",
       "type": "pointer_cast"
     }
   ]

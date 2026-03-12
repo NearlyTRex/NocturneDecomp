@@ -9,8 +9,8 @@
 void __cdecl core_larva_cpp_CLarva_setup_FUN_00503020(CLarva *this_ptr)
 
 {
-  CDeformableModelInstance *this_ptr_00;
   float fVar1;
+  CDeformableModelInstance *this_ptr_00;
   
   this_ptr_00 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);

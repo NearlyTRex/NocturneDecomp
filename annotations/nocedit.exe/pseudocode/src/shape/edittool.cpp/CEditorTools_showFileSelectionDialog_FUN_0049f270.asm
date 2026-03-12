@@ -11,10 +11,10 @@
 ; int              Stack[0x14]:4   auto_select_flag
 ; uint             Stack[0x18]:4   unknown
 ; Local Variables:
-; undefined4       Stack[-0x8bc]:4  local_8bc
-; undefined1       Stack[-0x514]:1  local_514
-; undefined1       Stack[-0x314]:1  local_314
-; undefined1       Stack[-0x114]:1  local_114
+; CPickList        Stack[-0x8bc]:936  local_8bc
+; char[512]        Stack[-0x514]:512  local_514
+; char[512]        Stack[-0x314]:512  local_314
+; char[260]        Stack[-0x114]:260  local_114
 ;
 ; XREF[19]:
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b2aa

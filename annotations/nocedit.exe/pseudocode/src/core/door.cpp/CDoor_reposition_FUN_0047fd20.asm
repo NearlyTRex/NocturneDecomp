@@ -6,7 +6,25 @@
 ; Parameters:
 ; CDoor *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xc8]:1  local_c8
+; CBoundingBox3D   Stack[-0xc8]:24  local_c8
+; float            Stack[-0xb0]:4  fStack_b0
+; float            Stack[-0xac]:4  fStack_ac
+; float            Stack[-0xa8]:4  fStack_a8
+; CVector3f        Stack[-0xa4]:12  CStack_a4
+; CVector3f        Stack[-0x98]:12  CStack_98
+; CVector3f        Stack[-0x8c]:12  CStack_8c
+; float            Stack[-0x80]:4  fStack_80
+; float            Stack[-0x7c]:4  fStack_7c
+; float            Stack[-0x78]:4  fStack_78
+; CVector3f        Stack[-0x74]:12  CStack_74
+; CVector3f        Stack[-0x68]:12  CStack_68
+; CVector3f        Stack[-0x5c]:12  CStack_5c
+; CVector3f        Stack[-0x50]:12  CStack_50
+; CVector3f        Stack[-0x44]:12  CStack_44
+; CVector3f        Stack[-0x38]:12  CStack_38
+; CVector3f        Stack[-0x2c]:12  CStack_2c
+; CVector3f        Stack[-0x20]:12  CStack_20
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; XREF[4]:
 ;   core_door.cpp_CDoor_process_FUN_004800c0 at 004805c2

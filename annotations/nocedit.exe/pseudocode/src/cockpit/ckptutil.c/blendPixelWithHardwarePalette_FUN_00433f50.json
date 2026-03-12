@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 277,
-    "complexity_score": 257,
+    "complexity_score": 260,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 14,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 82,
+    "pseudocode_lines": 85,
     "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 359
+    "total_lines": 362
   },
   "cross_references": [
     {
@@ -199,7 +199,7 @@
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
@@ -294,15 +294,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 28,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "uVar1 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);",
+      "text": "uVar2 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 68,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30.u32[0] = (uint)(longlong)ROUND(ROUND(fVar3));",
@@ -310,7 +310,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 65,
+      "line": 68,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30.u32[0] = (uint)(longlong)ROUND(ROUND(fVar3));",
@@ -318,7 +318,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 69,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28.u32[0] = (uint)(longlong)ROUND(ROUND(fVar4));",
@@ -326,7 +326,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 69,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_28.u32[0] = (uint)(longlong)ROUND(ROUND(fVar4));",
@@ -334,23 +334,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 70,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_20.u32[0] = (uint)(longlong)ROUND(ROUND(fVar2));",
+      "text": "local_20.u32[0] = (uint)(longlong)ROUND(ROUND(fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 70,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_20.u32[0] = (uint)(longlong)ROUND(ROUND(fVar2));",
+      "text": "local_20.u32[0] = (uint)(longlong)ROUND(ROUND(fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 71,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_ScreenBufferArray[y] + x * 4) =",
@@ -358,7 +358,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 77,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30.u32[0] = (uint)(longlong)ROUND(ROUND(fVar4));",
@@ -366,7 +366,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 74,
+      "line": 77,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_30.u32[0] = (uint)(longlong)ROUND(ROUND(fVar4));",
@@ -374,7 +374,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 78,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_20.u32[0] = (uint)(longlong)ROUND(ROUND(fVar3));",
@@ -382,7 +382,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 75,
+      "line": 78,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_20.u32[0] = (uint)(longlong)ROUND(ROUND(fVar3));",
@@ -390,23 +390,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 79,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_28.u32[0] = (uint)(longlong)ROUND(ROUND(fVar2));",
+      "text": "local_28.u32[0] = (uint)(longlong)ROUND(ROUND(fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 76,
+      "line": 79,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_28.u32[0] = (uint)(longlong)ROUND(ROUND(fVar2));",
+      "text": "local_28.u32[0] = (uint)(longlong)ROUND(ROUND(fVar5));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 80,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "*(ushort *)((int)g_ScreenBufferArray[y] + x * 2) =",

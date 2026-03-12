@@ -4,25 +4,25 @@
       {
         "category": "undeclared_identifier",
         "column": 20,
-        "line": 98,
+        "line": 105,
         "message": "use of undeclared identifier 'stack0xfffffe8c'"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 151,
+        "line": 155,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 153,
+        "line": 157,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 154,
+        "line": 158,
         "message": "member reference base type 'byte[12]' (aka 'unsigned char[12]') is not a structure or union"
       }
     ],
@@ -31,13 +31,13 @@
   },
   "complexity": {
     "assembly_lines": 745,
-    "complexity_score": 521,
+    "complexity_score": 495,
     "cross_reference_count": 8,
     "function_call_count": 11,
     "global_count": 53,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 306,
-    "suspect_count": 19,
+    "pseudocode_lines": 310,
+    "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
@@ -45,7 +45,7 @@
       "unknown_field",
       "warning_inlined_function"
     ],
-    "total_lines": 1051
+    "total_lines": 1055
   },
   "cross_references": [
     {
@@ -563,24 +563,157 @@
       },
       {
         "is_param": false,
-        "name": "local_cc",
-        "offset": -204,
-        "size": 1,
-        "type": "undefined1"
+        "name": "fStack_15c",
+        "offset": -348,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "aCStack_158",
+        "offset": -344,
+        "size": 84,
+        "type": "CVector3i[7]"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_100",
+        "offset": -256,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_fc",
+        "offset": -252,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_f8",
+        "offset": -248,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_e8",
+        "offset": -232,
+        "size": 20,
+        "type": "undefined1[20]"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_d4",
+        "offset": -212,
+        "size": 12,
+        "type": "undefined1[12]"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_c8",
+        "offset": -200,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_c4",
+        "offset": -196,
+        "size": 24,
+        "type": "CBoundingBox3D"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_a4",
+        "offset": -164,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_98",
+        "offset": -152,
+        "size": 16,
+        "type": "undefined1[16]"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_88",
+        "offset": -136,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_84",
+        "offset": -132,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_80",
+        "offset": -128,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_74",
+        "offset": -116,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_70",
+        "offset": -112,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_6c",
+        "offset": -108,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_68",
+        "offset": -104,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_5c",
+        "offset": -92,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_54",
+        "offset": -84,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -588,6 +721,76 @@
         "offset": -64,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_38",
+        "offset": -56,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_34",
+        "offset": -52,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_30",
+        "offset": -48,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "uStack_24",
+        "offset": -36,
+        "size": 4,
+        "type": "uint"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_20",
+        "offset": -32,
+        "size": 4,
+        "type": "C3DSCamera *"
+      },
+      {
+        "is_param": false,
+        "name": "iStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "pCStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_14",
+        "offset": -20,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": true,
@@ -640,7 +843,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 91,
+      "line": 98,
       "match": "&stack0xfffffe8c",
       "severity": "moderate",
       "text": "piVar2 = (int *)&stack0xfffffe8c;",
@@ -648,7 +851,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 96,
+      "line": 103,
       "match": "ROUND",
       "severity": "mild",
       "text": "piVar2[3] = (int)ROUND(pCVar3->x * 256.0f);",
@@ -656,7 +859,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 97,
+      "line": 104,
       "match": "ROUND",
       "severity": "mild",
       "text": "piVar2[4] = (int)ROUND(pCVar3->y * 256.0f);",
@@ -664,7 +867,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 105,
       "match": "ROUND",
       "severity": "mild",
       "text": "piVar2[5] = (int)ROUND(pCVar3->z * 256.0f);",
@@ -672,31 +875,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 107,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iStack_100 = (int)ROUND(fStack_88 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 108,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iStack_fc = (int)ROUND(fStack_84 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "iStack_f8 = (int)ROUND(fStack_80 * 256.0f);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 125,
       "match": "ROUND",
       "severity": "mild",
       "text": "iStack_5c = (int)ROUND(ROUND((float)(this_ptr->camera_count * 10) * g_CGamePtr->delta_time_float",
@@ -704,7 +883,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 121,
+      "line": 125,
       "match": "ROUND",
       "severity": "mild",
       "text": "iStack_5c = (int)ROUND(ROUND((float)(this_ptr->camera_count * 10) * g_CGamePtr->delta_time_float",
@@ -712,7 +891,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 144,
+      "line": 148,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fStack_74 = (float)auStack_d4._0_4_ + fStack_c8;",
@@ -720,7 +899,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 146,
+      "line": 150,
       "match": "._4_4_",
       "severity": "mild",
       "text": "fStack_70 = (float)auStack_d4._4_4_ + CStack_c4.min.x;",
@@ -728,7 +907,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 147,
+      "line": 151,
       "match": "._8_4_",
       "severity": "mild",
       "text": "fStack_6c = (float)auStack_d4._8_4_ + CStack_c4.min.y;",
@@ -736,50 +915,50 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 170,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10) =",
+      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar7) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 167,
+      "line": 171,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar10);",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 275,
+      "line": 279,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar10) =",
+      "text": "*(uint *)((int)g_ZBufferScanlineArray + iVar8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 276,
+      "line": 280,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar10);",
+      "text": "*(uint *)((int)g_ZBufferScanlineArrayBackup + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 290,
+      "line": 294,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "if (fStack_15c < *(float *)((int)g_VDCameraScores + iVar7)) {",
+      "text": "if (fStack_15c < *(float *)((int)g_VDCameraScores + iVar8)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 291,
+      "line": 295,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "fStack_15c = *(float *)((int)g_VDCameraScores + iVar7);",
+      "text": "fStack_15c = *(float *)((int)g_VDCameraScores + iVar8);",
       "type": "pointer_cast"
     }
   ]

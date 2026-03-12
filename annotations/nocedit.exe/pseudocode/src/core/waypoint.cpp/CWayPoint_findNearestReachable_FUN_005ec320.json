@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 100,
+    "complexity_score": 103,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 85,
+    "pseudocode_lines": 88,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 257
+    "total_lines": 260
   },
   "cross_references": [
     {
@@ -156,7 +156,7 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -177,7 +177,7 @@
         "name": "local_c",
         "offset": -12,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -198,10 +198,10 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 31,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)g_CDemonSetPtr->waypoints + iVar4);",
+      "text": "piVar1 = (int *)((int)g_CDemonSetPtr->waypoints + iVar2);",
       "type": "pointer_cast"
     }
   ]

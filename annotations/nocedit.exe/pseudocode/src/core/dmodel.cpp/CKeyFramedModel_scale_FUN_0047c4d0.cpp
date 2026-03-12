@@ -14,6 +14,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_scale_FUN_0047c4d0(CKeyFramedModel 
   int iVar1;
   int iVar2;
   double dVar3;
+  double dVar1;
   
   iVar1 = 0;
   for (iVar2 = 0; iVar2 < this_ptr->frame_count * this_ptr->vertex_count; iVar2 = iVar2 + 1) {
@@ -21,14 +22,14 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_scale_FUN_0047c4d0(CKeyFramedModel 
                       ((double)((float)*(int *)((int)&this_ptr->vertex_list->x + iVar1) *
                                 scale_factors->x + (float)0.5));
     *(int *)((int)&this_ptr->vertex_list->x + iVar1) = (int)ROUND(ROUND(dVar3));
-    dVar3 = floor
+    dVar1 = floor
                       ((double)((float)*(int *)((int)&this_ptr->vertex_list->y + iVar1) *
                                 scale_factors->y + (float)0.5));
-    *(int *)((int)&this_ptr->vertex_list->y + iVar1) = (int)ROUND(ROUND(dVar3));
-    dVar3 = floor
+    *(int *)((int)&this_ptr->vertex_list->y + iVar1) = (int)ROUND(ROUND(dVar1));
+    dVar1 = floor
                       ((double)((float)*(int *)((int)&this_ptr->vertex_list->z + iVar1) *
                                 scale_factors->z + (float)0.5));
-    *(int *)((int)&this_ptr->vertex_list->z + iVar1) = (int)ROUND(ROUND(dVar3));
+    *(int *)((int)&this_ptr->vertex_list->z + iVar1) = (int)ROUND(ROUND(dVar1));
     iVar1 = iVar1 + 0xc;
   }
   core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);

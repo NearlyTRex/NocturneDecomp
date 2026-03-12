@@ -174,18 +174,25 @@
     "pcode_op_count": 173
   },
   "stack_frame": {
-    "frame_size": 32,
-    "local_size": 28,
+    "frame_size": 4104,
+    "local_size": 4100,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "aiStackY_1000",
+        "offset": -4096,
+        "size": 4068,
+        "type": "int[1017]"
+      },
+      {
+        "is_param": false,
         "name": "local_18",
         "offset": -24,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": true,
@@ -199,7 +206,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 8,
+      "line": 7,
       "match": "aiStackY_1000",
       "severity": "moderate",
       "text": "int aiStackY_1000 [1017];",

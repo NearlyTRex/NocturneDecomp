@@ -75,6 +75,42 @@
     "vars":{
       "locals":[
         {
+          "name":"dVar1",
+          "storage":{
+            "compound":true,
+            "size":8,
+            "varnodes":[
+              {
+                "addr":"register:00000008",
+                "offset":8,
+                "size":4
+              },
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"double",
+          "use":215
+        },
+        {
+          "name":"unaff_EBX",
+          "storage":{
+            "reg":"EBX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000000c",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"int",
+          "use":-1
+        },
+        {
           "name":"local_c",
           "storage":{
             "offset":-12,
@@ -155,116 +191,20 @@
           "type":"undefined4"
         },
         {
-          "name":"local_24",
-          "storage":{
-            "offset":-36,
-            "size":8,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x24]",
-                "offset":-36,
-                "size":8
-              }
-            ]
-          },
-          "type":"undefined8"
-        },
-        {
-          "name":"local_28",
-          "storage":{
-            "offset":-40,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x28]",
-                "offset":-40,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
-          "name":"local_2c",
-          "storage":{
-            "offset":-44,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x2c]",
-                "offset":-44,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
-          "name":"local_30",
-          "storage":{
-            "offset":-48,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x30]",
-                "offset":-48,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
-          "name":"local_34",
-          "storage":{
-            "offset":-52,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x34]",
-                "offset":-52,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
-          "name":"local_38",
-          "storage":{
-            "offset":-56,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x38]",
-                "offset":-56,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4"
-        },
-        {
           "name":"local_3c",
           "storage":{
             "offset":-60,
-            "size":4,
+            "size":32,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x3c]",
                 "offset":-60,
-                "size":4
+                "size":32
               }
             ]
           },
-          "type":"undefined4"
+          "type":"MathErrorContext"
         }
       ],
       "params":[

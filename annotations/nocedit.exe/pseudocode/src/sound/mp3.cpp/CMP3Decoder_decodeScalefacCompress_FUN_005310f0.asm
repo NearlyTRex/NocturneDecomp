@@ -11,12 +11,10 @@
 ; int              Stack[0x14]:4   granule
 ; SMpegFrame *     Stack[0x18]:4   frame
 ; Local Variables:
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x1e]:4  local_1e
+; uint[5]          Stack[-0x34]:20  local_34
+; undefined2       Stack[-0x20]:2  uStack_20
+; undefined2       Stack[-0x1e]:2  local_1e
+; short            Stack[-0x1c]:2  sStack_1c
 ; undefined4       Stack[-0x1a]:4  local_1a
 ; undefined4       Stack[-0x16]:4  local_16
 ;

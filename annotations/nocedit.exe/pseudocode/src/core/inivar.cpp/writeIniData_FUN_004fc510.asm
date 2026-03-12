@@ -4,7 +4,7 @@
 ; void __cdecl core_inivar_cpp_writeIniData_FUN_004fc510(void)
 ;
 ; Local Variables:
-; undefined1       Stack[-0x210]:1  local_210
+; CIniFile         Stack[-0x210]:512  local_210
 ;
 ; XREF[3]:
 ;   core_main.c_finalizeGameSystems_FUN_00508570 at 00508821

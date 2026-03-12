@@ -6,16 +6,11 @@
 ; Parameters:
 ; CDemonPart *     Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined        Stack[-0x58]:1  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x1c]:4  local_1c
+; SMRGLHeaderPrimitive Stack[-0x58]:24  local_58
+; int              Stack[-0x40]:4  local_40
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x1c]:4  local_1c
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

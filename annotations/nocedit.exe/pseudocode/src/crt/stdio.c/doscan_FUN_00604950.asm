@@ -8,7 +8,7 @@
 ; char * *         Stack[0x8]:4   format_ptr
 ; va_list_t *      Stack[0xc]:4   args
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; va_list_t        Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   crt_stdio.c_vfscanf_FUN_005fe738 at 005fe79c

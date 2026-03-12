@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 94,
+    "complexity_score": 97,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 69,
+    "pseudocode_lines": 72,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 263
+    "total_lines": 266
   },
   "cross_references": [
     {
@@ -130,8 +130,50 @@
         "is_param": false,
         "name": "local_88",
         "offset": -136,
+        "size": 40,
+        "type": "SCollisionInfo"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_60",
+        "offset": -96,
+        "size": 24,
+        "type": "CBoundingBox3D"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_48",
+        "offset": -72,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_3c",
+        "offset": -60,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_30",
+        "offset": -48,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_24",
+        "offset": -36,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_18",
+        "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -169,15 +211,15 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 34,
       "match": "ABS",
       "severity": "mild",
-      "text": "if ((ABS(fVar3) <= (float)0.01) &&",
+      "text": "if ((ABS(fVar1) <= (float)0.01) &&",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 35,
       "match": "ABS",
       "severity": "mild",
       "text": "(ABS((this_ptr->base).orient.vec.z) <= (float)0.01)) {",

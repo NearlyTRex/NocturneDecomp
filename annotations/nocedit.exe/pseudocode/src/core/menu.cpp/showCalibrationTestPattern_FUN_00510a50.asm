@@ -6,8 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   message_text
 ; Local Variables:
-; undefined1       Stack[-0x110]:1  local_110
-; undefined1       Stack[-0x10f]:1  local_10f
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[1]:
 ;   core_menu.cpp_showCalibrationTest_FUN_00510ba0 at 00510c07

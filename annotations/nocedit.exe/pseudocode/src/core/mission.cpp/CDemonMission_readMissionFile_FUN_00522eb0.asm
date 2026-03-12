@@ -8,17 +8,16 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ; int              Stack[0xc]:4   load_flags
 ; Local Variables:
-; undefined1       Stack[-0x158]:1  local_158
-; undefined1       Stack[-0xf4]:1  local_f4
-; undefined1       Stack[-0xf3]:1  local_f3
-; undefined1       Stack[-0x90]:1  local_90
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[100]        Stack[-0x158]:100  local_158
+; char[100]        Stack[-0xf4]:100  local_f4
+; char[100]        Stack[-0x90]:100  local_90
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; CDemonActor *    Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_loadGame_FUN_004e12b0 at 004e1913

@@ -6,8 +6,7 @@
 ; Parameters:
 ; CScript *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x18]:4  local_18
+; SScriptXRef      Stack[-0x124]:276  SStack_124
 ;
 ; XREF[1]:
 ;   core_script.cpp_editParameterValue_FUN_00562920 at 00563d00

@@ -9,18 +9,21 @@
 int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0(CCheckOutItem *this_ptr,void *unused_param)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
   _FILE *stream_ptr;
   int *piVar3;
+  int iVar3;
   char *pcVar4;
   char *pcVar5;
+  char *pcVar7;
   byte bVar7;
   char local_224 [260];
   char local_120 [256];
   CCheckOutList local_20;
   _FILE *local_18;
   char local_14 [4];
+  char cVar1;
   char *pcVar6;
   
   bVar7 = 0;
@@ -46,27 +49,27 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_14,local_120);
   engine_dosio_c_makePath_FUN_00481f50(local_224,local_14,local_120,(char *)0x0,(char *)0x0);
   pcVar4 = "checkout.txt";
-  iVar2 = -1;
-  pcVar6 = local_224;
+  iVar3 = -1;
+  pcVar5 = local_224;
   do {
-    pcVar5 = pcVar6;
-    if (iVar2 == 0) break;
-    iVar2 = iVar2 + -1;
-    pcVar5 = pcVar6 + (uint)bVar7 * -2 + 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar5;
+    pcVar5 = pcVar5;
+    if (iVar3 == 0) break;
+    iVar3 = iVar3 + -1;
+    pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
+    cVar1 = *pcVar5;
+    pcVar5 = pcVar5;
   } while (cVar1 != '\0');
-  pcVar5 = pcVar5 + -1;
+  pcVar7 = pcVar5 + -1;
   do {
-    cVar1 = *pcVar4;
-    *pcVar5 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
+    cVar2 = *pcVar4;
+    *pcVar7 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
-  } while (cVar1 != '\0');
-  iVar2 = 0;
+    pcVar7[1] = cVar2;
+    pcVar7 = pcVar7 + 2;
+  } while (cVar2 != '\0');
+  iVar3 = 0;
   do {
     stream_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                            (local_224,(char *)0x0,"r+t","..\\engine\\fileio.cpp",0x153)
@@ -77,9 +80,9 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35
     }
     piVar3 = (int *)_errno();
     if (*piVar3 != 6) break;
-    iVar2 = iVar2 + 1;
+    iVar3 = iVar3 + 1;
     (*g_SleepFunc)(500);
-  } while (iVar2 < 10);
+  } while (iVar3 < 10);
   stream_ptr = (_FILE *)0x0;
 LAB_004b36b4:
   local_18 = stream_ptr;
@@ -90,13 +93,13 @@ LAB_004b36b4:
   else {
     local_20.count = 0;
     local_20.items = (CCheckOutItem *)0x0;
-    iVar2 = engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(&local_20,&local_18);
-    if (iVar2 == 0) {
+    iVar3 = engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(&local_20,&local_18);
+    if (iVar3 == 0) {
       engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_20);
     }
     else {
-      iVar2 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_20,unused_param);
-      if (iVar2 < 0) {
+      iVar3 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_20,unused_param);
+      if (iVar3 < 0) {
         if (local_18 != (_FILE *)0x0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0xc4);
           local_18 = (_FILE *)0x0;
@@ -107,8 +110,8 @@ LAB_004b36b4:
         engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_20);
         return 1;
       }
-      iVar2 = engine_fileio_cpp_CCheckOutList_remove_FUN_004b2d70(&local_20,iVar2);
-      if (iVar2 == 0) {
+      iVar3 = engine_fileio_cpp_CCheckOutList_remove_FUN_004b2d70(&local_20,iVar3);
+      if (iVar3 == 0) {
         if (local_18 != (_FILE *)0x0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0xc4);
           local_18 = (_FILE *)0x0;
@@ -117,8 +120,8 @@ LAB_004b36b4:
                   (g_CEditorToolsPtr,"Out of memory...Restart the application NOW.\nBetter yet, reboot the computer.");
       }
       else {
-        iVar2 = engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0(&local_20,&local_18);
-        if (iVar2 != 0) {
+        iVar3 = engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0(&local_20,&local_18);
+        if (iVar3 != 0) {
           if (local_18 != (_FILE *)0x0) {
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0xc4);
             local_18 = (_FILE *)0x0;

@@ -7,7 +7,7 @@
 ; _SOCKET *        Stack[0x4]:4   socket_handle
 ; int              Stack[0x8]:4   blocking_mode
 ; Local Variables:
-; undefined4       Stack[-0x4]:4  local_4
+; uint             Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0053fbc0 at 0053fbfe

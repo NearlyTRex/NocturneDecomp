@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   dialog_title
 ; int *            Stack[0x8]:4   overwrite_state
 ; Local Variables:
-; undefined1       Stack[-0x3b4]:1  local_3b4
+; CPickList        Stack[-0x3b4]:936  local_3b4
 ;
 ; XREF[4]:
 ;   engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920 at 004b3c0b

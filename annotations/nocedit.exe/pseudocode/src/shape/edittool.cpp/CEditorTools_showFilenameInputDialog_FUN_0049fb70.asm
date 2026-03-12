@@ -11,14 +11,10 @@
 ; char *           Stack[0x14]:4   output_buffer
 ; uint             Stack[0x18]:4   flags
 ; Local Variables:
-; undefined1       Stack[-0x360]:1  local_360
-; undefined1       Stack[-0x35f]:1  local_35f
-; undefined1       Stack[-0x158]:1  local_158
-; undefined1       Stack[-0x157]:1  local_157
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[520]        Stack[-0x360]:520  local_360
+; CInputString     Stack[-0x158]:320  local_158
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[12]:
 ;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043df42

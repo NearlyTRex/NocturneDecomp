@@ -6,14 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e020(CMotionController *this_ptr,int motion_index,float current_frame,float *inout_delta_time,SMotionTransition *out_transition)
 
 {
-  int iVar1;
-  float fVar2;
+  SMotionTransition *pSVar1;
+  float fVar3;
   SMotion *pSVar3;
+  int iVar4;
   SMotion *pSVar4;
   int iVar5;
   int *piVar6;
@@ -21,14 +20,16 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e0
   byte bVar8;
   float local_24;
   int local_20;
+  float fVar2;
+  int iVar1;
   
   bVar8 = 0;
   pSVar4 = this_ptr->motion_list_ptr->motions + motion_index;
   iVar5 = 0;
-  fVar2 = *inout_delta_time * pSVar4->fps + current_frame;
+  fVar3 = *inout_delta_time * pSVar4->fps + current_frame;
   local_20 = 0;
   pSVar3 = pSVar4;
-  local_24 = fVar2;
+  local_24 = fVar3;
   if (0 < pSVar4->signal_count) {
     do {
       iVar1 = pSVar3->signals[0].frame_number;
@@ -48,7 +49,7 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e0
     out_transition->set_new_state_as_desired = 0;
     out_transition->to_motion_number = motion_index;
     out_transition->to_frame_number = local_24;
-    if (fVar2 <= out_transition->to_frame_number) {
+    if (fVar3 <= out_transition->to_frame_number) {
       return local_20;
     }
     fVar2 = out_transition->to_frame_number;
@@ -59,14 +60,16 @@ int __cdecl core_motion_cpp_CMotionController_advanceFrameToExitPoint_FUN_0052e0
                (float)(pSVar4->frame_start + pSVar4->exit_forward_from_frame),1.0);
     piVar6 = &pSVar4->unused1;
     pSVar7 = out_transition;
-    for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
-      pSVar7->desired_state = *piVar6;
-      piVar6 = piVar6 + (uint)bVar8 * -2 + 1;
+    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
       pSVar7 = (SMotionTransition *)((int)pSVar7 + (uint)bVar8 * -8 + 4);
+      piVar6 = piVar6 + (uint)bVar8 * -2 + 1;
+      pSVar7->desired_state = *piVar6;
+      piVar6 = piVar6;
+      pSVar7 = pSVar7;
     }
-    pSVar7 = this_ptr->in_transition;
-    if ((pSVar7 != (SMotionTransition *)0x0) && (pSVar7->cmd == MOTION_CMD_WAIT_EXIT)) {
-      out_transition->to_motion_number = pSVar7->to_motion_number;
+    pSVar1 = this_ptr->in_transition;
+    if ((pSVar1 != (SMotionTransition *)0x0) && (pSVar1->cmd == MOTION_CMD_WAIT_EXIT)) {
+      out_transition->to_motion_number = pSVar1->to_motion_number;
       out_transition->to_frame_number = this_ptr->in_transition->to_frame_number;
     }
     fVar2 = (float)pSVar4->exit_forward_from_frame;

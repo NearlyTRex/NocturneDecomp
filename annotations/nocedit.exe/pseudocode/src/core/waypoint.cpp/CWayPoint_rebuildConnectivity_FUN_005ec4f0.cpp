@@ -9,26 +9,30 @@
 void __cdecl core_waypoint_cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0(CWayPoint *this_ptr)
 
 {
-  CLocation *this_ptr_00;
-  CLocation *this_ptr_01;
+  SWayPointAdjacency *pSVar1;
+  CWayPoint *target;
   int iVar1;
+  int iVar3;
+  int iVar5;
   int iVar2;
   CWayPoint *pCVar3;
   int iVar4;
+  CLocation *this_ptr_00;
+  CLocation *this_ptr_01;
   
   core_waypoint_cpp_CWayPoint_cleanupAdjacency_FUN_005ec830(this_ptr);
   iVar2 = 0;
   pCVar3 = this_ptr;
   if (0 < this_ptr->num_adjacent_waypoints) {
     do {
-      iVar2 = iVar2 + 1;
-      core_waypoint_cpp_CWayPoint_removeAllAdjTo_FUN_005ec640
-                (pCVar3->adjacency[0].waypoint,this_ptr);
+      pSVar1 = pCVar3->adjacency;
       pCVar3 = (CWayPoint *)((pCVar3->base).base.actor_name + 8);
+      iVar2 = iVar2 + 1;
+      core_waypoint_cpp_CWayPoint_removeAllAdjTo_FUN_005ec640(pSVar1->waypoint,this_ptr);
     } while (iVar2 < this_ptr->num_adjacent_waypoints);
   }
   iVar4 = 0;
-  iVar2 = 0;
+  iVar5 = 0;
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(g_CDemonMissionPtr);
   this_ptr_00 = &(this_ptr->base).base.location;
   this_ptr->num_adjacent_waypoints = 0;
@@ -36,22 +40,22 @@ void __cdecl core_waypoint_cpp_CWayPoint_rebuildConnectivity_FUN_005ec4f0(CWayPo
     if (g_CDemonSetPtr->waypoint_count <= iVar4) {
       return;
     }
-    pCVar3 = *(CWayPoint **)((int)g_CDemonSetPtr->waypoints + iVar2);
-    if ((pCVar3 != this_ptr) && (pCVar3->num_adjacent_waypoints < 0x3c)) {
-      this_ptr_01 = &(pCVar3->base).base.location;
+    target = *(CWayPoint **)((int)g_CDemonSetPtr->waypoints + iVar5);
+    if ((target != this_ptr) && (target->num_adjacent_waypoints < 0x3c)) {
+      this_ptr_01 = &(target->base).base.location;
       iVar1 = core_waypoint_cpp_CWayPoint_isReachable_FUN_005ebd40
                         ((CWayPoint *)this_ptr_00,this_ptr_01,1);
       if ((iVar1 != 0) &&
-         (iVar1 = core_waypoint_cpp_CWayPoint_isReachable_FUN_005ebd40
-                            ((CWayPoint *)this_ptr_01,this_ptr_00,1), iVar1 != 0)) {
-        core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(this_ptr,pCVar3);
-        core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(pCVar3,this_ptr);
+         (iVar3 = core_waypoint_cpp_CWayPoint_isReachable_FUN_005ebd40
+                            ((CWayPoint *)this_ptr_01,this_ptr_00,1), iVar3 != 0)) {
+        core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(this_ptr,target);
+        core_waypoint_cpp_CWayPoint_addAdj_FUN_005ec700(target,this_ptr);
         if (0x3b < this_ptr->num_adjacent_waypoints) {
           return;
         }
       }
     }
     iVar4 = iVar4 + 1;
-    iVar2 = iVar2 + 4;
+    iVar5 = iVar5 + 4;
   } while( true );
 }

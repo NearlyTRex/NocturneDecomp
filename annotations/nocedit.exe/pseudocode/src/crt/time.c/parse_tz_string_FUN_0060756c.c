@@ -10,6 +10,7 @@ void __cdecl parse_tz_string(char *tz_string)
 
 {
   char *pcVar1;
+  char *pcVar2;
   int local_14;
   
   g_DaylightSavingActive = 0;
@@ -20,13 +21,13 @@ void __cdecl parse_tz_string(char *tz_string)
   else {
     local_14 = g_TimezoneOffset + -0xe10;
     g_DaylightSavingActive = 1;
-    pcVar1 = parse_timezone_spec(pcVar1,"EDT",&local_14);
+    pcVar2 = parse_timezone_spec(pcVar1,"EDT",&local_14);
     g_DaylightSavingOffset = g_TimezoneOffset - local_14;
-    if (*pcVar1 == ',') {
-      pcVar1 = parse_dst_rule(pcVar1 + 1,&g_DstStartRule);
+    if (*pcVar2 == ',') {
+      pcVar2 = parse_dst_rule(pcVar2 + 1,&g_DstStartRule);
     }
-    if (*pcVar1 == ',') {
-      parse_dst_rule(pcVar1 + 1,(dst_rule *)&g_DstTransitionSecond);
+    if (*pcVar2 == ',') {
+      parse_dst_rule(pcVar2 + 1,(dst_rule *)&g_DstTransitionSecond);
       g_DstTransitionHour = g_DstTransitionHour - g_DaylightSavingOffset / 0xe10;
       g_DstTransitionMinute =
            g_DstTransitionMinute -

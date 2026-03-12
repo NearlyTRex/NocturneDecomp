@@ -11,6 +11,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter *t
 {
   int iVar1;
   CBoundingBox3D *this_ptr_00;
+  int iVar3;
   int iVar2;
   CBoundingBox3D local_20;
   
@@ -21,8 +22,8 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter *t
   if (this_ptr->render_active == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
     this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_20);
-    iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-    if (iVar1 != 0) {
+    iVar3 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
+    if (iVar3 != 0) {
       this_ptr->was_rendered_opaque = 1;
       core_charactr_cpp_CCharacter_renderCharacter_FUN_00429aa0(this_ptr);
       if (INT_02f43978 != 0) {
@@ -35,7 +36,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter *t
       }
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
-    return iVar1;
+    return iVar3;
   }
   return 0;
 }

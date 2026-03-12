@@ -7,26 +7,26 @@
 ; CPoly *          Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; undefined8       Stack[-0xe8]:8  local_e8
-; undefined8       Stack[-0xe0]:8  local_e0
+; double           Stack[-0xe0]:8  local_e0
 ; undefined8       Stack[-0xd8]:8  local_d8
-; undefined8       Stack[-0xc8]:8  local_c8
-; undefined8       Stack[-0xc0]:8  local_c0
-; undefined8       Stack[-0xb8]:8  local_b8
-; undefined8       Stack[-0xb0]:8  local_b0
-; undefined8       Stack[-0xa8]:8  local_a8
-; undefined8       Stack[-0xa0]:8  local_a0
-; undefined8       Stack[-0x98]:8  local_98
-; undefined8       Stack[-0x90]:8  local_90
-; undefined8       Stack[-0x88]:8  local_88
-; undefined8       Stack[-0x80]:8  local_80
-; undefined8       Stack[-0x78]:8  local_78
-; undefined8       Stack[-0x70]:8  local_70
-; undefined8       Stack[-0x68]:8  local_68
-; undefined8       Stack[-0x60]:8  local_60
-; undefined8       Stack[-0x58]:8  local_58
-; undefined8       Stack[-0x50]:8  local_50
-; undefined8       Stack[-0x48]:8  local_48
-; undefined8       Stack[-0x40]:8  local_40
+; double           Stack[-0xc8]:8  local_c8
+; double           Stack[-0xc0]:8  local_c0
+; double           Stack[-0xb8]:8  local_b8
+; double           Stack[-0xb0]:8  local_b0
+; double           Stack[-0xa8]:8  local_a8
+; double           Stack[-0xa0]:8  local_a0
+; double           Stack[-0x98]:8  local_98
+; double           Stack[-0x90]:8  local_90
+; double           Stack[-0x88]:8  local_88
+; double           Stack[-0x80]:8  local_80
+; double           Stack[-0x78]:8  local_78
+; double           Stack[-0x70]:8  local_70
+; double           Stack[-0x68]:8  local_68
+; double           Stack[-0x60]:8  local_60
+; double           Stack[-0x58]:8  local_58
+; double           Stack[-0x50]:8  local_50
+; double           Stack[-0x48]:8  local_48
+; double           Stack[-0x40]:8  local_40
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0065431a = 0.999999990000000

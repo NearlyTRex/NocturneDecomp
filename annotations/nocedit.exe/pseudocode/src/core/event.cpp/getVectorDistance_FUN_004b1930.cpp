@@ -9,9 +9,9 @@
 float __cdecl core_event_cpp_getVectorDistance_FUN_004b1930(CVector3f *a,CVector3f *b)
 
 {
-  float fVar1;
   float fVar2;
   float fVar3;
+  float fVar1;
   
   fVar1 = a->x - b->x;
   fVar3 = a->y - b->y;

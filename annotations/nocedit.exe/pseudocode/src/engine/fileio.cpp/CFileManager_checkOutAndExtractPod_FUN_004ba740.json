@@ -4,37 +4,37 @@
       {
         "category": "format_error",
         "column": 70,
-        "line": 89,
+        "line": 96,
         "message": "format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 72,
-        "line": 93,
+        "line": 100,
         "message": "format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 105,
+        "line": 112,
         "message": "use of undeclared identifier 'stack0xfffff964'"
       },
       {
         "category": "undeclared_identifier",
         "column": 25,
-        "line": 107,
+        "line": 114,
         "message": "use of undeclared identifier 'stack0xfffff964'"
       },
       {
         "category": "format_error",
         "column": 76,
-        "line": 247,
+        "line": 255,
         "message": "format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 78,
-        "line": 252,
+        "line": 260,
         "message": "format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Werror,-Wformat]"
       }
     ],
@@ -43,18 +43,18 @@
   },
   "complexity": {
     "assembly_lines": 730,
-    "complexity_score": 349,
+    "complexity_score": 356,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 40,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 299,
+    "pseudocode_lines": 306,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 1029
+    "total_lines": 1036
   },
   "cross_references": [],
   "function": {
@@ -546,106 +546,78 @@
         "is_param": false,
         "name": "local_4a8",
         "offset": -1192,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_4a7",
-        "offset": -1191,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_3a4",
-        "offset": -932,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_3a3",
-        "offset": -931,
-        "size": 1,
-        "type": "undefined1"
+        "size": 360,
+        "type": "CCheckOutItem"
       },
       {
         "is_param": false,
         "name": "local_340",
         "offset": -832,
-        "size": 1,
-        "type": "undefined"
+        "size": 8,
+        "type": "char[8]"
       },
       {
         "is_param": false,
-        "name": "local_33f",
-        "offset": -831,
-        "size": 1,
-        "type": "undefined1"
+        "name": "acStack_338",
+        "offset": -824,
+        "size": 252,
+        "type": "char[252]"
       },
       {
         "is_param": false,
         "name": "local_23c",
         "offset": -572,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_23b",
-        "offset": -571,
-        "size": 1,
-        "type": "undefined1"
+        "size": 260,
+        "type": "char[260]"
       },
       {
         "is_param": false,
         "name": "local_138",
         "offset": -312,
-        "size": 1,
-        "type": "undefined"
+        "size": 264,
+        "type": "char[264]"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_30",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined1[8]"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "CCheckOutList"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "CStrList_vtable *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "CCheckOutItem *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
-        "size": 1,
-        "type": "undefined"
+        "size": 4,
+        "type": "char[4]"
       },
       {
         "is_param": true,
@@ -673,15 +645,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 61,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "cVar1 = *(char *)((int)&p_Var6->_ptr + 1);",
+      "text": "cVar2 = *(char *)((int)&p_Var6->_ptr + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 62,
       "match": "(_FILE *)((int)",
       "severity": "mild",
       "text": "p_Var6 = (_FILE *)((int)&p_Var6->_ptr + 2);",
@@ -689,7 +661,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 98,
+      "line": 105,
       "match": "&stack0xfffff964",
       "severity": "moderate",
       "text": "(&stack0xfffff964,\"A writable copy of %s exists.  Replace it?\",local_340);",
@@ -697,7 +669,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 100,
+      "line": 107,
       "match": "&stack0xfffff964",
       "severity": "moderate",
       "text": "(&stack0xfffff964,&g_VersionControlSession.overwrite_writeable_choice);",

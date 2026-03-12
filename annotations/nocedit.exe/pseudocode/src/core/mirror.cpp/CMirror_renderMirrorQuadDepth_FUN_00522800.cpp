@@ -9,18 +9,15 @@
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror *this_ptr)
 
 {
-  int *piVar1;
+  int *piVar2;
   int iVar2;
   int iVar3;
   SMRGLHeaderPrimitive SStack_88;
-  uint local_70;
-  uint local_64;
-  uint local_58;
-  uint local_4c;
   CVector3i local_40;
   CVector3i local_34;
   CVector3i local_28;
   CVector3i local_1c;
+  int *piVar1;
   
   local_34.x = (int)ROUND((this_ptr->reflection).corner1.x * 256.0f);
   local_34.y = (int)ROUND((this_ptr->reflection).corner1.y * 256.0f);
@@ -47,12 +44,12 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror 
     piVar1 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x
                     + iVar2);
     *piVar1 = *piVar1 << 4;
-    piVar1 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_y
+    piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_y
                     + iVar2);
-    *piVar1 = *piVar1 << 4;
-    piVar1 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_z
+    *piVar2 = *piVar2 << 4;
+    piVar2 = (int *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_z
                     + iVar2);
-    *piVar1 = *piVar1 << 4;
+    *piVar2 = *piVar2 << 4;
     iVar3 = iVar2 + 0x30;
     *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).inv_z + iVar2) =
          *(uint *)((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).inv_z + iVar2)
@@ -63,11 +60,7 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror 
   SStack_88.surface_normal.D = 0;
   SStack_88.surface_normal.C = 0;
   SStack_88.surface_normal.B = 0;
-  local_58 = 2;
   SStack_88.surface_normal.A = 0;
-  local_70 = 0;
-  local_4c = 3;
-  local_64 = 1;
   engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950
             (g_CDemonRendererPtr2,&SStack_88);
   return;

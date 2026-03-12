@@ -9,17 +9,21 @@
 void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonMission *this_ptr,_FILE *file_handle,int load_flags)
 
 {
-  char cVar1;
-  CGore *this_ptr_00;
+  char cVar2;
   int iVar2;
+  int iVar3;
   CDemonActorType *pCVar3;
   CDemonActor *pCVar4;
+  CDemonActor *actor;
   int iVar5;
   char (*pacVar6) [256];
+  char *pcVar4;
   CDemonActor *pCVar7;
+  uint *puVar5;
   uint *puVar8;
   char *pcVar9;
   char *pcVar10;
+  CDemonActor *pCVar6;
   byte bVar11;
   char local_158 [100];
   char local_f4 [100];
@@ -31,6 +35,8 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   int local_1c;
   CDemonActor *local_18;
   int local_14;
+  char cVar1;
+  CGore *this_ptr_00;
   
   bVar11 = 0;
   core_mission_cpp_CDemonMission_clearMissionData_FUN_00522d30(this_ptr);
@@ -59,41 +65,42 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
     core_main_c_displayErrorAndQuit_FUN_00506f10("No name in mission");
   }
   do {
-    iVar2 = _fgetc(file_handle);
-    if (iVar2 < 0) break;
-  } while (iVar2 != 10);
+    iVar3 = _fgetc(file_handle);
+    if (iVar3 < 0) break;
+  } while (iVar3 != 10);
   _fscanf(file_handle,"%s\n",this_ptr->mission_name);
   do {
-    iVar2 = _fgetc(file_handle);
-    if (iVar2 < 0) break;
-  } while (iVar2 != 10);
-  iVar2 = 0;
+    iVar3 = _fgetc(file_handle);
+    if (iVar3 < 0) break;
+  } while (iVar3 != 10);
+  iVar3 = 0;
   _fscanf(file_handle,"%d\n",&this_ptr->num_sets);
   if (0 < this_ptr->num_sets) {
     pacVar6 = this_ptr->set_names;
     do {
-      iVar2 = iVar2 + 1;
+      iVar3 = iVar3 + 1;
       _fscanf(file_handle,"%s\n",pacVar6);
       pacVar6 = pacVar6 + 1;
-    } while (iVar2 < this_ptr->num_sets);
+    } while (iVar3 < this_ptr->num_sets);
   }
   core_actor_cpp_resetActorTypeInfo_FUN_0040c7f0();
   if (2 < this_ptr->mission_version_num) {
     do {
-      iVar2 = _fgetc(file_handle);
-      if (iVar2 < 0) break;
-    } while (iVar2 != 10);
+      iVar3 = _fgetc(file_handle);
+      if (iVar3 < 0) break;
+    } while (iVar3 != 10);
                     /* this is the count of the different actor types (113) */
     _fscanf(file_handle,"%d\n",&local_20);
-    iVar2 = 0;
+    iVar3 = 0;
     if (0 < local_20) {
       do {
-        pcVar9 = "corrupt!";
+        pcVar4 = "corrupt!";
         pcVar10 = local_158;
         for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *(uint *)pcVar10 = *(uint *)pcVar9;
-          pcVar9 = pcVar9 + ((uint)bVar11 * -2 + 1) * 4;
-          pcVar10 = (char *)((int)pcVar10 + ((uint)bVar11 * -2 + 1) * 4);
+          pcVar10 = pcVar10 + (uint)bVar11 * -8 + 4;
+          *(uint *)pcVar10 = *(uint *)pcVar4;
+          pcVar4 = pcVar4 + ((uint)bVar11 * -2 + 1) * 4;
+          pcVar10 = pcVar10;
         }
                     /* this reads actorClassName, actorClassType (version num) */
         _fscanf(file_handle,"%s %d\n",local_158,&local_1c);
@@ -107,14 +114,14 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
           }
           *(int *)pCVar3->type_info = local_1c;
         }
-        iVar2 = iVar2 + 1;
-      } while (iVar2 < local_20);
+        iVar3 = iVar3 + 1;
+      } while (iVar3 < local_20);
     }
   }
   do {
-    iVar2 = _fgetc(file_handle);
-    if (iVar2 < 0) break;
-  } while (iVar2 != 10);
+    iVar3 = _fgetc(file_handle);
+    if (iVar3 < 0) break;
+  } while (iVar3 != 10);
                     /* this looks like it might be getting actorCount */
   _fscanf(file_handle,"%d\n",&local_28);
   local_24 = 0;
@@ -123,53 +130,54 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   }
   else {
     do {
-      iVar2 = _fgetc(file_handle);
-      if (iVar2 < 0) break;
-    } while (iVar2 != 10);
+      iVar3 = _fgetc(file_handle);
+      if (iVar3 < 0) break;
+    } while (iVar3 != 10);
                     /* this pulls the inventory actor count */
     _fscanf(file_handle,"%d\n",&local_24);
     this_ptr->has_inventory_actors = 1;
   }
   do {
-    iVar2 = _fgetc(file_handle);
-    if (iVar2 < 0) break;
-  } while (iVar2 != 10);
+    iVar3 = _fgetc(file_handle);
+    if (iVar3 < 0) break;
+  } while (iVar3 != 10);
   this_ptr->actor_lookup_count = 0;
   this_ptr->next_inventory_actor = (CDemonActor *)0x0;
   local_14 = 0;
   while (local_14 < local_28 + local_24) {
-    puVar8 = &DAT_0067d5c0;
-    pcVar9 = local_90;
-    for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(uint *)pcVar9 = *puVar8;
-      puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
-      pcVar9 = pcVar9 + ((uint)bVar11 * -2 + 1) * 4;
+    puVar5 = &DAT_0067d5c0;
+    pcVar4 = local_90;
+    for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *(uint *)pcVar4 = *puVar5;
+      puVar5 = puVar5 + (uint)bVar11 * -2 + 1;
+      pcVar4 = pcVar4 + (uint)bVar11 * -8 + 4;
     }
     puVar8 = &DAT_0067d628;
-    pcVar9 = local_f4;
-    for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(uint *)pcVar9 = *puVar8;
+    pcVar4 = local_f4;
+    for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
       puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
-      pcVar9 = pcVar9 + ((uint)bVar11 * -2 + 1) * 4;
+      *(uint *)pcVar4 = *puVar8;
+      puVar8 = puVar8;
+      pcVar4 = pcVar4 + (uint)bVar11 * -8 + 4;
     }
                     /* this pulls in the actor className and name fields */
     _fscanf(file_handle,"%s \"%[^\"]\"\n",local_90,local_f4);
     pcVar9 = local_f4;
-    pCVar4 = core_actor_cpp_createActorByName_FUN_0040c430(local_90);
-    local_18 = pCVar4;
-    pCVar7 = pCVar4;
+    actor = core_actor_cpp_createActorByName_FUN_0040c430(local_90);
+    local_18 = actor;
+    pCVar6 = actor;
     do {
       cVar1 = *pcVar9;
-      pCVar7->actor_name[0] = cVar1;
+      pCVar6->actor_name[0] = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar9[1];
+      cVar2 = pcVar9[1];
       pcVar9 = pcVar9 + 2;
-      pCVar7->actor_name[1] = cVar1;
-      pCVar7 = (CDemonActor *)(pCVar7->actor_name + 2);
-    } while (cVar1 != '\0');
-    core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,pCVar4);
+      pCVar6->actor_name[1] = cVar2;
+      pCVar6 = (CDemonActor *)(pCVar6->actor_name + 2);
+    } while (cVar2 != '\0');
+    core_mission_cpp_CDemonMission_addActorToList_FUN_00523b70(this_ptr,actor);
     if (local_14 == local_28) {
-      this_ptr->next_inventory_actor = pCVar4;
+      this_ptr->next_inventory_actor = actor;
     }
                     /* looks like the max actor count is 1999 */
     if (1999 < this_ptr->actor_lookup_count) {
@@ -182,11 +190,11 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
     this_ptr->actor_lookup_count = this_ptr->actor_lookup_count + 1;
   }
   do {
-    iVar2 = _fgetc(file_handle);
-    if (iVar2 < 0) break;
-  } while (iVar2 != 10);
+    iVar3 = _fgetc(file_handle);
+    if (iVar3 < 0) break;
+  } while (iVar3 != 10);
   pCVar7 = this_ptr->first_actor;
-  iVar2 = 0;
+  iVar3 = 0;
   if (0 < local_28) {
     do {
       if (pCVar7 == (CDemonActor *)0x0) {
@@ -195,13 +203,13 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
         core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::load - actor list count mismatch #1!");
       }
       core_actor_cpp_CDemonActor_load_FUN_0040b050(pCVar7,file_handle);
-      iVar2 = iVar2 + 1;
+      iVar3 = iVar3 + 1;
       pCVar7 = pCVar7->next_actor;
-    } while (iVar2 < local_28);
+    } while (iVar3 < local_28);
   }
   if (this_ptr->has_inventory_actors != 0) {
     pCVar7 = this_ptr->first_actor;
-    iVar2 = 0;
+    iVar3 = 0;
     if (0 < local_28) {
       do {
         if (pCVar7 == (CDemonActor *)0x0) {
@@ -214,9 +222,9 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
           core_inv_cpp_CInventory_loadItems_FUN_004ff740
                     ((CInventory *)(pCVar4[0x176].create_event + 0x30));
         }
-        iVar2 = iVar2 + 1;
+        iVar3 = iVar3 + 1;
         pCVar7 = pCVar7->next_actor;
-      } while (iVar2 < local_28);
+      } while (iVar3 < local_28);
     }
     this_ptr->has_inventory_actors = 0;
   }
@@ -235,13 +243,13 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   if (this_ptr->skip_gore_load_flag == 0) {
     if (this_ptr->mission_version_num < 4) {
       do {
-        iVar2 = _fgetc(file_handle);
-        if (iVar2 < 0) break;
-      } while (iVar2 != 10);
+        iVar3 = _fgetc(file_handle);
+        if (iVar3 < 0) break;
+      } while (iVar3 != 10);
       do {
-        iVar2 = _fgetc(file_handle);
-        if (iVar2 < 0) break;
-      } while (iVar2 != 10);
+        iVar3 = _fgetc(file_handle);
+        if (iVar3 < 0) break;
+      } while (iVar3 != 10);
     }
     this_ptr_00 = g_CGorePtr;
     this_ptr->current_set_index = -1;

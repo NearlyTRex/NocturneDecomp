@@ -9,7 +9,7 @@
 ulonglong FUN_0060af5d(int param_1,int *param_2,int param_3)
 
 {
-  int iVar1;
+  int iVar3;
   int extraout_EDX;
   int iVar2;
   ushort in_DS;
@@ -18,6 +18,7 @@ ulonglong FUN_0060af5d(int param_1,int *param_2,int param_3)
   uint local_30;
   uint local_2c;
   uint local_28;
+  int iVar1;
   
   *param_2 = *param_2 + 8;
   FUN_00603dc8();
@@ -34,17 +35,19 @@ ulonglong FUN_0060af5d(int param_1,int *param_2,int param_3)
   else if ((*(byte *)(param_3 + 0x1e) & 4) == 0) {
     iVar2 = extraout_EDX;
     if ((*(byte *)(param_3 + 0x1e) & 2) != 0) {
-      iVar1 = *(int *)(param_3 + 0x20);
-      iVar2 = iVar1 + 1;
+      iVar3 = *(int *)(param_3 + 0x20);
+      iVar2 = iVar3 + 1;
       *(int *)(param_3 + 0x20) = iVar2;
-      *(byte *)(param_1 + iVar1) = 0x20;
+      *(byte *)(param_1 + iVar3) = 0x20;
     }
   }
   else {
-    iVar1 = *(int *)(param_3 + 0x20);
-    iVar2 = iVar1 + 1;
+    iVar3 = *(int *)(param_3 + 0x20);
+    iVar2 = iVar3 + 1;
     *(int *)(param_3 + 0x20) = iVar2;
-    *(byte *)(param_1 + iVar1) = 0x2b;
+    *(byte *)(param_1 + iVar3) = 0x2b;
   }
-  return CONCAT44(CONCAT22((short)((uint)iVar2 >> 0x10),in_DS),param_1);
+  iVar2._2_2_ = (ushort)((uint)iVar2 >> 0x10);
+  iVar2 = CONCAT22(iVar2._2_2_,in_DS);
+  return CONCAT44(iVar2,param_1);
 }

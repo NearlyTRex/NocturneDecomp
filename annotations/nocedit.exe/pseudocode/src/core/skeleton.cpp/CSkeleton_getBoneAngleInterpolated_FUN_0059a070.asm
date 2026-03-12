@@ -10,9 +10,10 @@
 ; int              Stack[0x10]:4   frame_index_2
 ; float            Stack[0x14]:4   interpolation
 ; Local Variables:
+; undefined4[1520] Stack[-0x180c]:6080  auStackY_180c
 ; undefined8       Stack[-0x38]:8  local_38
 ; undefined1       Stack[-0x30]:1  local_30
-; undefined1       Stack[-0x20]:1  local_20
+; CQuaternion4f    Stack[-0x20]:16  local_20
 ;
 ; XREF[3]:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50 at 0059f12e

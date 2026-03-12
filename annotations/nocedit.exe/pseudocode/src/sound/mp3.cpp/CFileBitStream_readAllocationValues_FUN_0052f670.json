@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 131,
+    "complexity_score": 134,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 66,
+    "pseudocode_lines": 69,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 189
+    "total_lines": 192
   },
   "cross_references": [
     {
@@ -133,14 +133,14 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -168,7 +168,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 30,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)output_allocation->granules + local_14);",
@@ -176,7 +176,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 33,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(this_ptr,*(int *)((int)local_18 + 4));",
@@ -184,7 +184,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 40,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "local_18 = (void *)((int)local_18 + 0x100);",
@@ -192,15 +192,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 47,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,*(int *)((int)pvVar8 + 4))",
+      "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,*(int *)((int)pvVar8 + 4))",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 49,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "pvVar8 = (void *)((int)pvVar8 + 0x100);",
@@ -208,7 +208,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 61,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar5 = (uint *)((int)output_allocation->granules + iVar9);",

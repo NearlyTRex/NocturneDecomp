@@ -11,7 +11,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390(C
 {
   int iVar1;
   uint uVar2;
+  uint uVar1;
   int iVar3;
+  int iVar2;
   uint uVar4;
   int iVar5;
   int local_24;
@@ -24,24 +26,24 @@ void __cdecl core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390(C
       uVar4 = 0;
       for (local_24 = 0; local_24 < this_ptr->shadow_map_height * 0x100; local_24 = local_24 + iVar1
           ) {
-        iVar5 = 0;
-        while (iVar5 < this_ptr->shadow_map_width * 0x100) {
+        iVar2 = 0;
+        while (iVar2 < this_ptr->shadow_map_width * 0x100) {
           uVar2 = (uint)this_ptr->shadow_depth_buffer
-                        [((int)((iVar5 + (iVar5 >> 0x1f) * -0x100) -
-                               (uint)((iVar5 >> 0x1f) << 7 < 0)) >> 8) +
+                        [((int)((iVar2 + (iVar2 >> 0x1f) * -0x100) -
+                               (uint)((iVar2 >> 0x1f) << 7 < 0)) >> 8) +
                          ((int)((local_24 + (local_24 >> 0x1f) * -0x100) -
                                (uint)((local_24 >> 0x1f) << 7 < 0)) >> 8) *
                          this_ptr->shadow_map_width];
           if ((uVar2 == 0) || (0xfffe < uVar2)) {
 LAB_004734b7:
-            iVar5 = iVar5 + iVar1;
+            iVar2 = iVar2 + iVar1;
           }
           else {
             if (uVar2 < local_14) {
               local_14 = uVar2;
             }
             if (uVar2 <= uVar4) goto LAB_004734b7;
-            iVar5 = iVar5 + iVar1;
+            iVar2 = iVar2 + iVar1;
             uVar4 = uVar2;
           }
         }
@@ -51,16 +53,16 @@ LAB_004734b7:
       }
       for (iVar5 = 0; iVar5 < this_ptr->shadow_map_height * 0x100; iVar5 = iVar5 + iVar1) {
         for (iVar3 = 0; iVar3 < this_ptr->shadow_map_width * 0x100; iVar3 = iVar3 + iVar1) {
-          uVar2 = (uint)this_ptr->shadow_depth_buffer
+          uVar1 = (uint)this_ptr->shadow_depth_buffer
                         [((int)((iVar3 + (iVar3 >> 0x1f) * -0x100) -
                                (uint)((iVar3 >> 0x1f) << 7 < 0)) >> 8) +
                          ((int)((iVar5 + (iVar5 >> 0x1f) * -0x100) -
                                (uint)((iVar5 >> 0x1f) << 7 < 0)) >> 8) * this_ptr->shadow_map_width]
           ;
-          if ((uVar2 < 0xffff) && (uVar2 != 0)) {
+          if ((uVar1 < 0xffff) && (uVar1 != 0)) {
             *(int *)((screen_x + iVar3 / iVar1) * 4 +
                     (int)g_ScreenBufferArray[screen_y + iVar5 / iVar1]) =
-                 ((int)((uVar2 - local_14) * 0xff) / (int)(uVar4 - local_14)) * 0x10101;
+                 ((int)((uVar1 - local_14) * 0xff) / (int)(uVar4 - local_14)) * 0x10101;
           }
         }
       }

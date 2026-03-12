@@ -9,10 +9,10 @@
 int __cdecl core_passngr_cpp_CPassenger_renderOpaque_FUN_005460c0(CPassenger *this_ptr)
 
 {
-  CMorph *this_ptr_00;
   CBoundingBox3D *this_ptr_01;
   int iVar1;
   CBoundingBox3D local_1c;
+  CMorph *this_ptr_00;
   
   if ((this_ptr->morph_time <= 1.0) && ((this_ptr->base).base.render_active == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);

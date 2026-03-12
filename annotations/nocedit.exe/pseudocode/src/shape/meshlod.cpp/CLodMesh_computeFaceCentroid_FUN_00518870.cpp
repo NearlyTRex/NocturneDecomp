@@ -10,15 +10,15 @@ CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870(
 
 {
   float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
   int iVar7;
-  int iVar8;
-  int iVar9;
   CLodVert *pCVar10;
+  float fVar6;
+  int iVar9;
+  int iVar8;
+  float fVar3;
+  float fVar2;
+  float fVar5;
+  float fVar4;
   float fVar11;
   
   iVar7 = face->vertex_idx_2;

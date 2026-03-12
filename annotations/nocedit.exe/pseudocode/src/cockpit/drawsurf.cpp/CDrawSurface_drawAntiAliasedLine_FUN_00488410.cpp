@@ -9,11 +9,11 @@
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 
 {
+  int disabled;
   int iVar1;
+  int iVar4;
   int iVar2;
   int iVar3;
-  int iVar4;
-  int disabled;
   
   iVar4 = g_ClipBottom;
   iVar3 = g_ClipRight;

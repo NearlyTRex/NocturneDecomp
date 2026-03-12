@@ -12,207 +12,201 @@
 ; undefined8       Stack[-0xa200]:8  local_a200
 ; undefined4       Stack[-0xa1f8]:4  local_a1f8
 ; undefined4       Stack[-0xa1f4]:4  local_a1f4
-; undefined4       Stack[-0xa1f0]:4  local_a1f0
-; undefined        Stack[-0xa1ec]:1  local_a1ec
-; undefined        Stack[-0xbec]:1  local_bec
-; undefined        Stack[-0x844]:1  local_844
-; undefined        Stack[-0x740]:1  local_740
-; undefined        Stack[-0x640]:1  local_640
-; undefined        Stack[-0x540]:1  local_540
-; undefined        Stack[-0x478]:1  local_478
-; undefined        Stack[-0x400]:1  local_400
-; undefined        Stack[-0x388]:1  local_388
-; undefined4       Stack[-0x324]:4  local_324
-; undefined4       Stack[-0x320]:4  local_320
-; undefined4       Stack[-0x31c]:4  local_31c
-; undefined4       Stack[-0x318]:4  local_318
-; undefined4       Stack[-0x314]:4  local_314
-; undefined4       Stack[-0x310]:4  local_310
-; undefined4       Stack[-0x30c]:4  local_30c
-; undefined4       Stack[-0x308]:4  local_308
-; undefined4       Stack[-0x304]:4  local_304
-; undefined4       Stack[-0x300]:4  local_300
-; undefined4       Stack[-0x2fc]:4  local_2fc
-; undefined4       Stack[-0x2f8]:4  local_2f8
-; undefined        Stack[-0x2f4]:1  local_2f4
-; undefined        Stack[-0x2ee]:1  local_2ee
-; undefined        Stack[-0x2e8]:1  local_2e8
-; undefined        Stack[-0x2e0]:1  local_2e0
-; undefined        Stack[-0x2da]:1  local_2da
-; undefined        Stack[-0x2d4]:1  local_2d4
-; undefined4       Stack[-0x2cc]:4  local_2cc
-; undefined4       Stack[-0x2c8]:4  local_2c8
-; undefined4       Stack[-0x2c4]:4  local_2c4
-; undefined4       Stack[-0x2c0]:4  local_2c0
-; undefined4       Stack[-0x2bc]:4  local_2bc
-; undefined4       Stack[-0x2b8]:4  local_2b8
-; undefined4       Stack[-0x2b4]:4  local_2b4
-; undefined4       Stack[-0x2b0]:4  local_2b0
-; undefined4       Stack[-0x2ac]:4  local_2ac
-; undefined4       Stack[-0x2a8]:4  local_2a8
-; undefined4       Stack[-0x2a4]:4  local_2a4
-; undefined4       Stack[-0x2a0]:4  local_2a0
-; undefined4       Stack[-0x29c]:4  local_29c
-; undefined4       Stack[-0x298]:4  local_298
-; undefined4       Stack[-0x294]:4  local_294
-; undefined4       Stack[-0x290]:4  local_290
-; undefined4       Stack[-0x28c]:4  local_28c
-; undefined4       Stack[-0x288]:4  local_288
-; undefined4       Stack[-0x284]:4  local_284
-; undefined4       Stack[-0x280]:4  local_280
-; undefined4       Stack[-0x27c]:4  local_27c
-; undefined        Stack[-0x278]:1  local_278
-; undefined        Stack[-0x274]:1  local_274
-; undefined        Stack[-0x270]:1  local_270
-; undefined4       Stack[-0x26c]:4  local_26c
-; undefined4       Stack[-0x268]:4  local_268
-; undefined4       Stack[-0x264]:4  local_264
-; undefined4       Stack[-0x260]:4  local_260
-; undefined4       Stack[-0x25c]:4  local_25c
-; undefined4       Stack[-0x258]:4  local_258
-; undefined4       Stack[-0x254]:4  local_254
-; undefined4       Stack[-0x250]:4  local_250
-; undefined4       Stack[-0x24c]:4  local_24c
-; undefined4       Stack[-0x248]:4  local_248
-; undefined4       Stack[-0x244]:4  local_244
-; undefined4       Stack[-0x240]:4  local_240
-; undefined4       Stack[-0x23c]:4  local_23c
-; undefined4       Stack[-0x238]:4  local_238
-; undefined4       Stack[-0x234]:4  local_234
-; undefined4       Stack[-0x230]:4  local_230
-; undefined4       Stack[-0x22c]:4  local_22c
-; undefined4       Stack[-0x228]:4  local_228
-; undefined4       Stack[-0x224]:4  local_224
-; undefined4       Stack[-0x220]:4  local_220
-; undefined4       Stack[-0x21c]:4  local_21c
-; undefined4       Stack[-0x218]:4  local_218
-; undefined4       Stack[-0x214]:4  local_214
-; undefined4       Stack[-0x210]:4  local_210
-; undefined4       Stack[-0x20c]:4  local_20c
-; undefined4       Stack[-0x208]:4  local_208
-; undefined4       Stack[-0x204]:4  local_204
-; undefined        Stack[-0x200]:1  local_200
-; undefined        Stack[-0x1fc]:1  local_1fc
-; undefined        Stack[-0x1f8]:1  local_1f8
-; undefined4       Stack[-0x1f4]:4  local_1f4
-; undefined4       Stack[-0x1f0]:4  local_1f0
-; undefined4       Stack[-0x1ec]:4  local_1ec
-; undefined4       Stack[-0x1e8]:4  local_1e8
-; undefined4       Stack[-0x1e4]:4  local_1e4
-; undefined4       Stack[-0x1e0]:4  local_1e0
-; undefined4       Stack[-0x1dc]:4  local_1dc
-; undefined4       Stack[-0x1d8]:4  local_1d8
-; undefined4       Stack[-0x1d4]:4  local_1d4
-; undefined4       Stack[-0x1d0]:4  local_1d0
-; undefined4       Stack[-0x1cc]:4  local_1cc
-; undefined4       Stack[-0x1c8]:4  local_1c8
-; undefined4       Stack[-0x1c4]:4  local_1c4
-; undefined4       Stack[-0x1c0]:4  local_1c0
-; undefined4       Stack[-0x1bc]:4  local_1bc
-; undefined4       Stack[-0x1b8]:4  local_1b8
-; undefined4       Stack[-0x1b4]:4  local_1b4
-; undefined4       Stack[-0x1b0]:4  local_1b0
-; undefined4       Stack[-0x1ac]:4  local_1ac
-; undefined4       Stack[-0x1a8]:4  local_1a8
-; undefined4       Stack[-0x1a4]:4  local_1a4
-; undefined4       Stack[-0x1a0]:4  local_1a0
-; undefined4       Stack[-0x19c]:4  local_19c
-; undefined4       Stack[-0x198]:4  local_198
-; undefined        Stack[-0x194]:1  local_194
-; undefined        Stack[-0x190]:1  local_190
-; undefined        Stack[-0x18c]:1  local_18c
-; undefined4       Stack[-0x188]:4  local_188
-; undefined4       Stack[-0x184]:4  local_184
-; undefined4       Stack[-0x180]:4  local_180
-; undefined4       Stack[-0x17c]:4  local_17c
-; undefined4       Stack[-0x178]:4  local_178
-; undefined4       Stack[-0x174]:4  local_174
-; undefined4       Stack[-0x170]:4  local_170
-; undefined4       Stack[-0x16c]:4  local_16c
-; undefined4       Stack[-0x168]:4  local_168
-; undefined        Stack[-0x164]:1  local_164
-; undefined4       Stack[-0x160]:4  local_160
-; undefined4       Stack[-0x15c]:4  local_15c
-; undefined4       Stack[-0x158]:4  local_158
-; undefined4       Stack[-0x154]:4  local_154
-; undefined4       Stack[-0x150]:4  local_150
-; undefined4       Stack[-0x14c]:4  local_14c
-; undefined4       Stack[-0x148]:4  local_148
-; undefined4       Stack[-0x144]:4  local_144
-; undefined4       Stack[-0x140]:4  local_140
-; undefined4       Stack[-0x13c]:4  local_13c
-; undefined        Stack[-0x138]:1  local_138
-; undefined4       Stack[-0x134]:4  local_134
+; float            Stack[-0xa1f0]:4  local_a1f0
+; char[32552]      Stack[-0xa1ec]:32552  local_a1ec
+; undefined2[1018] Stack[-0x22c4]:2036  auStack_22c4
+; undefined4[953]  Stack[-0x1ad0]:3812  auStack_1ad0
+; CPickList        Stack[-0xbec]:936  local_bec
+; char[260]        Stack[-0x844]:260  local_844
+; char[256]        Stack[-0x740]:256  local_740
+; char[256]        Stack[-0x640]:256  local_640
+; char[200]        Stack[-0x540]:200  local_540
+; undefined1[120]  Stack[-0x478]:120  local_478
+; undefined4[30]   Stack[-0x400]:120  local_400
+; char[100]        Stack[-0x388]:100  local_388
+; CBoundingBox3D   Stack[-0x324]:24  local_324
+; CBoundingBox3D   Stack[-0x30c]:24  local_30c
+; undefined4       Stack[-0x2f4]:4  local_2f4
+; undefined1[4]    Stack[-0x2f0]:4  auStack_2f0
+; undefined4       Stack[-0x2ec]:4  uStack_2ec
+; undefined4       Stack[-0x2e8]:4  local_2e8
+; undefined2[2]    Stack[-0x2e4]:4  auStack_2e4
+; undefined4       Stack[-0x2e0]:4  local_2e0
+; undefined1[4]    Stack[-0x2dc]:4  auStack_2dc
+; undefined4       Stack[-0x2d8]:4  uStack_2d8
+; undefined4       Stack[-0x2d4]:4  local_2d4
+; undefined2[2]    Stack[-0x2d0]:4  auStack_2d0
+; float            Stack[-0x2cc]:4  local_2cc
+; float            Stack[-0x2c8]:4  local_2c8
+; float            Stack[-0x2c4]:4  local_2c4
+; float            Stack[-0x2c0]:4  local_2c0
+; float            Stack[-0x2bc]:4  local_2bc
+; float            Stack[-0x2b8]:4  local_2b8
+; float            Stack[-0x2b4]:4  local_2b4
+; float            Stack[-0x2b0]:4  local_2b0
+; float            Stack[-0x2ac]:4  local_2ac
+; float            Stack[-0x2a8]:4  local_2a8
+; float            Stack[-0x2a4]:4  local_2a4
+; float            Stack[-0x2a0]:4  local_2a0
+; float            Stack[-0x29c]:4  local_29c
+; float            Stack[-0x298]:4  local_298
+; float            Stack[-0x294]:4  local_294
+; float            Stack[-0x290]:4  local_290
+; float            Stack[-0x28c]:4  local_28c
+; float            Stack[-0x288]:4  local_288
+; float            Stack[-0x284]:4  local_284
+; float            Stack[-0x280]:4  local_280
+; float            Stack[-0x27c]:4  local_27c
+; undefined4       Stack[-0x278]:4  local_278
+; undefined1[4]    Stack[-0x274]:4  local_274
+; undefined1[4]    Stack[-0x270]:4  local_270
+; float            Stack[-0x26c]:4  local_26c
+; float            Stack[-0x268]:4  local_268
+; float            Stack[-0x264]:4  local_264
+; float            Stack[-0x260]:4  local_260
+; float            Stack[-0x25c]:4  local_25c
+; float            Stack[-0x258]:4  local_258
+; float            Stack[-0x254]:4  local_254
+; float            Stack[-0x250]:4  local_250
+; float            Stack[-0x24c]:4  local_24c
+; float            Stack[-0x248]:4  local_248
+; float            Stack[-0x244]:4  local_244
+; float            Stack[-0x240]:4  local_240
+; float            Stack[-0x23c]:4  local_23c
+; float            Stack[-0x238]:4  local_238
+; float            Stack[-0x234]:4  local_234
+; float            Stack[-0x230]:4  local_230
+; float            Stack[-0x22c]:4  local_22c
+; float            Stack[-0x228]:4  local_228
+; float            Stack[-0x224]:4  local_224
+; float            Stack[-0x220]:4  local_220
+; float            Stack[-0x21c]:4  local_21c
+; float            Stack[-0x218]:4  local_218
+; float            Stack[-0x214]:4  local_214
+; float            Stack[-0x210]:4  local_210
+; float            Stack[-0x20c]:4  local_20c
+; float            Stack[-0x208]:4  local_208
+; float            Stack[-0x204]:4  local_204
+; float            Stack[-0x200]:4  local_200
+; undefined1[8]    Stack[-0x1fc]:8  local_1fc
+; float            Stack[-0x1f4]:4  local_1f4
+; float            Stack[-0x1f0]:4  local_1f0
+; float            Stack[-0x1ec]:4  local_1ec
+; float            Stack[-0x1e8]:4  local_1e8
+; float            Stack[-0x1e4]:4  local_1e4
+; float            Stack[-0x1e0]:4  local_1e0
+; float            Stack[-0x1dc]:4  local_1dc
+; float            Stack[-0x1d8]:4  local_1d8
+; float            Stack[-0x1d4]:4  local_1d4
+; float            Stack[-0x1d0]:4  local_1d0
+; float            Stack[-0x1cc]:4  local_1cc
+; float            Stack[-0x1c8]:4  local_1c8
+; float            Stack[-0x1c4]:4  local_1c4
+; float            Stack[-0x1c0]:4  local_1c0
+; float            Stack[-0x1bc]:4  local_1bc
+; float            Stack[-0x1b8]:4  local_1b8
+; float            Stack[-0x1b4]:4  local_1b4
+; float            Stack[-0x1b0]:4  local_1b0
+; float            Stack[-0x1ac]:4  local_1ac
+; float            Stack[-0x1a8]:4  local_1a8
+; float            Stack[-0x1a4]:4  local_1a4
+; float            Stack[-0x1a0]:4  local_1a0
+; float            Stack[-0x19c]:4  local_19c
+; float            Stack[-0x198]:4  local_198
+; float            Stack[-0x194]:4  local_194
+; undefined1[4]    Stack[-0x190]:4  local_190
+; undefined1[4]    Stack[-0x18c]:4  local_18c
+; CBoundingBox3D * Stack[-0x188]:4  local_188
+; void *           Stack[-0x184]:4  local_184
+; _FILE *          Stack[-0x180]:4  local_180
+; float *          Stack[-0x17c]:4  local_17c
+; float *          Stack[-0x178]:4  local_178
+; void *           Stack[-0x174]:4  local_174
+; undefined4 *     Stack[-0x170]:4  local_170
+; float            Stack[-0x16c]:4  local_16c
+; float            Stack[-0x168]:4  local_168
+; undefined1[4]    Stack[-0x164]:4  local_164
+; int              Stack[-0x160]:4  local_160
+; void *           Stack[-0x15c]:4  local_15c
+; int              Stack[-0x158]:4  local_158
+; int              Stack[-0x154]:4  local_154
+; SInputFace *     Stack[-0x150]:4  local_150
+; int *            Stack[-0x14c]:4  local_14c
+; SPart *          Stack[-0x148]:4  local_148
+; int              Stack[-0x144]:4  local_144
+; SPart *          Stack[-0x140]:4  local_140
+; undefined4[2]    Stack[-0x13c]:8  local_13c
+; void *           Stack[-0x134]:4  local_134
 ; undefined4       Stack[-0x130]:4  local_130
-; undefined4       Stack[-0x12c]:4  local_12c
-; undefined4       Stack[-0x128]:4  local_128
-; undefined4       Stack[-0x124]:4  local_124
-; undefined4       Stack[-0x120]:4  local_120
-; undefined4       Stack[-0x11c]:4  local_11c
-; undefined4       Stack[-0x118]:4  local_118
-; undefined4       Stack[-0x114]:4  local_114
-; undefined4       Stack[-0x110]:4  local_110
-; undefined4       Stack[-0x10c]:4  local_10c
-; undefined4       Stack[-0x108]:4  local_108
-; undefined4       Stack[-0x104]:4  local_104
-; undefined4       Stack[-0xfc]:4  local_fc
-; undefined4       Stack[-0xf8]:4  local_f8
-; undefined4       Stack[-0xf4]:4  local_f4
-; undefined4       Stack[-0xf0]:4  local_f0
-; undefined4       Stack[-0xec]:4  local_ec
-; undefined4       Stack[-0xe8]:4  local_e8
-; undefined4       Stack[-0xe4]:4  local_e4
-; undefined4       Stack[-0xe0]:4  local_e0
-; undefined        Stack[-0xdc]:1  local_dc
-; undefined4       Stack[-0xd8]:4  local_d8
-; undefined4       Stack[-0xd4]:4  local_d4
-; undefined4       Stack[-0xd0]:4  local_d0
-; undefined4       Stack[-0xcc]:4  local_cc
-; undefined4       Stack[-0xc8]:4  local_c8
-; undefined4       Stack[-0xc4]:4  local_c4
-; undefined4       Stack[-0xc0]:4  local_c0
-; undefined4       Stack[-0xbc]:4  local_bc
-; undefined4       Stack[-0xb8]:4  local_b8
-; undefined4       Stack[-0xb4]:4  local_b4
-; undefined4       Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0xac]:4  local_ac
-; undefined4       Stack[-0xa8]:4  local_a8
-; undefined4       Stack[-0xa4]:4  local_a4
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x94]:4  local_94
-; undefined4       Stack[-0x90]:4  local_90
-; undefined4       Stack[-0x8c]:4  local_8c
-; undefined4       Stack[-0x88]:4  local_88
-; undefined4       Stack[-0x84]:4  local_84
-; undefined4       Stack[-0x80]:4  local_80
-; undefined4       Stack[-0x7c]:4  local_7c
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; int              Stack[-0x12c]:4  local_12c
+; int              Stack[-0x128]:4  local_128
+; int              Stack[-0x124]:4  local_124
+; SInputFace *     Stack[-0x120]:4  local_120
+; int              Stack[-0x11c]:4  local_11c
+; int              Stack[-0x118]:4  local_118
+; void *           Stack[-0x114]:4  local_114
+; float            Stack[-0x110]:4  local_110
+; int              Stack[-0x10c]:4  local_10c
+; float *          Stack[-0x108]:4  local_108
+; float            Stack[-0x104]:4  local_104
+; float *          Stack[-0xfc]:4  local_fc
+; float *          Stack[-0xf8]:4  local_f8
+; int              Stack[-0xf4]:4  local_f4
+; int *            Stack[-0xf0]:4  local_f0
+; _FILE *          Stack[-0xec]:4  local_ec
+; int              Stack[-0xe8]:4  local_e8
+; int              Stack[-0xe4]:4  local_e4
+; int              Stack[-0xe0]:4  local_e0
+; undefined1[4]    Stack[-0xdc]:4  local_dc
+; SPart *          Stack[-0xd8]:4  local_d8
+; int              Stack[-0xd4]:4  local_d4
+; int              Stack[-0xd0]:4  local_d0
+; int              Stack[-0xcc]:4  local_cc
+; short *          Stack[-0xc8]:4  local_c8
+; int              Stack[-0xc4]:4  local_c4
+; short *          Stack[-0xc0]:4  local_c0
+; short *          Stack[-0xbc]:4  local_bc
+; int              Stack[-0xb8]:4  local_b8
+; void *           Stack[-0xb4]:4  local_b4
+; SInputFace *     Stack[-0xb0]:4  local_b0
+; int              Stack[-0xac]:4  local_ac
+; STextureSet *    Stack[-0xa8]:4  local_a8
+; STextureSet *    Stack[-0xa4]:4  local_a4
+; float            Stack[-0xa0]:4  local_a0
+; int              Stack[-0x9c]:4  local_9c
+; float            Stack[-0x98]:4  local_98
+; undefined1 *     Stack[-0x94]:4  local_94
+; undefined4 *     Stack[-0x90]:4  local_90
+; float *          Stack[-0x8c]:4  local_8c
+; void *           Stack[-0x88]:4  local_88
+; void *           Stack[-0x84]:4  local_84
+; int              Stack[-0x80]:4  local_80
+; void *           Stack[-0x7c]:4  local_7c
+; float *          Stack[-0x78]:4  local_78
+; int              Stack[-0x74]:4  local_74
+; int              Stack[-0x70]:4  local_70
+; short *          Stack[-0x6c]:4  local_6c
+; int *            Stack[-0x68]:4  local_68
+; int              Stack[-0x64]:4  local_64
+; int              Stack[-0x60]:4  local_60
+; int *            Stack[-0x5c]:4  local_5c
+; int              Stack[-0x58]:4  local_58
+; int              Stack[-0x54]:4  local_54
+; void *           Stack[-0x50]:4  local_50
+; void *           Stack[-0x4c]:4  local_4c
+; CDeformableModel * Stack[-0x48]:4  local_48
+; int              Stack[-0x44]:4  local_44
+; int              Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c78d

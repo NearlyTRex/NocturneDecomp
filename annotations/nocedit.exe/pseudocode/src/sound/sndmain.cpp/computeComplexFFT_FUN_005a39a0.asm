@@ -24,9 +24,9 @@
 ; undefined8       Stack[-0x54]:8  local_54
 ; undefined8       Stack[-0x4c]:8  local_4c
 ; undefined8       Stack[-0x34]:8  local_34
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; Referenced Globals:

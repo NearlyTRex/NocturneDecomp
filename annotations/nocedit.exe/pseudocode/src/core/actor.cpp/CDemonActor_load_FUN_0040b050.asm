@@ -7,10 +7,9 @@
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined1       Stack[-0xdc]:1  local_dc
-; undefined1       Stack[-0x78]:1  local_78
-; undefined1       Stack[-0x77]:1  local_77
-; undefined4       Stack[-0x14]:4  local_14
+; char[100]        Stack[-0xdc]:100  local_dc
+; char[100]        Stack[-0x78]:100  local_78
+; _FILE *          Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   core_inv.cpp_CInventory_load_FUN_004ff400 at 004ff5c9

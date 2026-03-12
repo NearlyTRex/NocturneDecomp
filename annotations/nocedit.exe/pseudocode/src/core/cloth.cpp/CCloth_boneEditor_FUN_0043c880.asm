@@ -5,26 +5,31 @@
 ;
 ; Parameters:
 ; CCloth *         Stack[0x4]:4   this_ptr
+; int              Stack[0x10]:4   in_stack_00000010
+; int              Stack[0x20]:4   in_stack_00000020
+; int              Stack[0x28]:4   in_stack_00000028
+; int              Stack[0x2c]:4   in_stack_0000002c
+; int              Stack[0x34]:4   in_stack_00000034
+; int              Stack[0x3c]:4   in_stack_0000003c
+; int              Stack[0x54]:4   in_stack_00000054
 ; Local Variables:
 ; undefined4       Stack[-0x558]:4  local_558
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x58]:4  local_58
+; char[16]         Stack[-0x1a0]:16  acStack_1a0
+; char[56]         Stack[-0x190]:56  acStack_190
+; char[236]        Stack[-0x158]:236  acStack_158
+; CVector3i        Stack[-0x6c]:12  local_6c
+; SClothVertex *   Stack[-0x60]:4  local_60
+; float            Stack[-0x58]:4  local_58
 ; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x18]:4  local_18
+; CSlew            Stack[-0x50]:28  local_50
+; CSkeleton *      Stack[-0x34]:4  local_34
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  local_2c
+; char *           Stack[-0x28]:4  local_28
+; SMotion *        Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  fStack_1c
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043dfd0

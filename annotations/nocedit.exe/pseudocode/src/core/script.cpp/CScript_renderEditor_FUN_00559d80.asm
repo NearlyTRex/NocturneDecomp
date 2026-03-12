@@ -10,12 +10,12 @@
 ; int              Stack[0x10]:4   right
 ; int              Stack[0x14]:4   bottom
 ; Local Variables:
-; undefined1       Stack[-0xa4]:1  local_a4
-; undefined1       Stack[-0x40]:1  local_40
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[100]        Stack[-0xa4]:100  local_a4
+; CDrawSurface     Stack[-0x40]:32  local_40
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; CStrList *       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da9d2

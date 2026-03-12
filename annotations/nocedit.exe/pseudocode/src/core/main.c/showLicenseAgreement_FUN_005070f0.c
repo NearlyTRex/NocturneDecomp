@@ -13,13 +13,14 @@ int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
   int iVar1;
   int iVar2;
   int iVar3;
-  int right_pos;
-  int bottom_pos;
+  int iVar4;
   CIniFile local_410;
   CEdButton local_210;
   CEdButton local_12c;
   CEdScrollBar local_48;
   int local_14;
+  int bottom_pos;
+  int right_pos;
   
   engine_ini_cpp_CIniFile_ctor_FUN_004fba70(&local_410,".\\system\\nocturne.ini",0x63169a);
   local_14 = 0;
@@ -31,12 +32,12 @@ int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
   text_string = support_newmsg_cpp_decryptMessage_FUN_00544270(g_LicenseAgreement);
   iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004cff40(g_EditorFont,text_string);
   shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&local_48);
-  iVar3 = g_ClipTop;
+  iVar4 = g_ClipTop;
   right_pos = g_ClipRight;
   bottom_pos = g_ClipBottom;
   iVar2 = shape_edittool_cpp_calculateGridWidth_FUN_004a6490();
   shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
-            (&local_48,g_WindowWidth - iVar2,iVar3,right_pos,bottom_pos);
+            (&local_48,g_WindowWidth - iVar2,iVar4,right_pos,bottom_pos);
   local_48.max_value = g_WindowHeight;
   local_48.current_value = iVar1 + 100;
   shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&local_12c);
@@ -61,16 +62,16 @@ int __cdecl core_main_c_showLicenseAgreement_FUN_005070f0(void)
       shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_48,0);
       return 1;
     }
-    iVar3 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_210);
-    if (iVar3 != 0) break;
+    iVar4 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_210);
+    if (iVar4 != 0) break;
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_EditorFont,text_string,0x1e,-local_48.scroll_position,0xff,-1);
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_12c,0);
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_210,0);
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
-  } while (iVar3 == 0);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_ESCAPE);
+  } while (iVar4 == 0);
   shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_210,0);
   shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_12c,0);
   shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_48,0);

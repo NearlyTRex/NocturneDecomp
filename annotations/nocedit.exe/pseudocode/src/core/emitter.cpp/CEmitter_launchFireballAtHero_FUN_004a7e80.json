@@ -112,84 +112,63 @@
         "name": "local_6c",
         "offset": -108,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_68",
         "offset": -104,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_64",
         "offset": -100,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
         "size": 12,
-        "type": "undefined1[12]"
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "dStack_3c",
+        "offset": -60,
+        "size": 8,
+        "type": "double"
       },
       {
         "is_param": false,
@@ -203,21 +182,21 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_10",
         "offset": -16,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -264,7 +243,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 43,
+      "line": 45,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar3 = (float10)fsin((float10)-1.30899693895833);",
@@ -272,7 +251,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
+      "line": 46,
       "match": "fptan",
       "severity": "mild",
       "text": "fVar4 = (float10)fptan((float10)1.30899693895833);",
@@ -280,23 +259,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 49,
       "match": "fpatan",
       "severity": "mild",
-      "text": "Var8 = fpatan((float10)local_6c,(float10)local_10 + fVar5);",
+      "text": "Var8 = fpatan((float10)local_6c,(float10)fVar2 + fVar8);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 50,
       "match": "SQRT",
       "severity": "mild",
-      "text": "fVar1 = SQRT(local_6c * local_6c + local_64 * local_64);",
+      "text": "fVar2 = SQRT(local_6c * local_6c + local_64 * local_64);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 51,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar5 = (float10)fcos((float10)-1.30899693895833);",
@@ -304,7 +283,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 52,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar6 = (float10)fsin(Var8);",
@@ -312,7 +291,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 53,
       "match": "fcos",
       "severity": "mild",
       "text": "fVar7 = (float10)fcos(Var8);",
@@ -323,7 +302,7 @@
       "line": 59,
       "match": "SQRT",
       "severity": "mild",
-      "text": "local_14 = SQRT(local_18 / (float)fVar4);",
+      "text": "fVar2 = SQRT((fVar2 * (float)32 * fVar2) / (float)fVar8);",
       "type": "decompiler_intrinsic"
     }
   ]

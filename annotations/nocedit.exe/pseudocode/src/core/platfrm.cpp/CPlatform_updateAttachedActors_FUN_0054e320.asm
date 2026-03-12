@@ -6,12 +6,12 @@
 ; Parameters:
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xbc]:1  local_bc
-; undefined1       Stack[-0x8c]:1  local_8c
-; undefined1       Stack[-0x5c]:1  local_5c
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined1       Stack[-0x20]:1  local_20
-; undefined4       Stack[-0x14]:4  local_14
+; CMatrix3x4f      Stack[-0xbc]:48  local_bc
+; CMatrix3x4f      Stack[-0x8c]:48  local_8c
+; CMatrix3x4f      Stack[-0x5c]:48  local_5c
+; CVector3f        Stack[-0x2c]:12  local_2c
+; CVector3f        Stack[-0x20]:12  local_20
+; SPlatformAttachment * Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_platfrm.cpp_CPlatform_process_FUN_0054cc30 at 0054d679

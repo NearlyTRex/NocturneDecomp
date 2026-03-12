@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 93,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 48,
+    "pseudocode_lines": 51,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 136
+    "total_lines": 139
   },
   "cross_references": [
     {
@@ -107,14 +107,14 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -128,7 +128,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 33,
       "match": "(SVoxelGrid *)((int)",
       "severity": "mild",
       "text": "pSVar3 = (SVoxelGrid *)((int)pSVar3 + (uint)bVar5 * -8 + 4);",
@@ -136,7 +136,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 34,
       "match": "(SVoxelGrid *)((int)",
       "severity": "mild",
       "text": "pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -8 + 4);",
@@ -147,7 +147,7 @@
       "line": 37,
       "match": "(SVoxelGrid *)((int)",
       "severity": "mild",
-      "text": "pSVar3 = (SVoxelGrid *)((int)pSVar3 + (uint)bVar5 * -2 + 1);",
+      "text": "pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -155,7 +155,7 @@
       "line": 38,
       "match": "(SVoxelGrid *)((int)",
       "severity": "mild",
-      "text": "pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -2 + 1);",
+      "text": "pSVar3 = (SVoxelGrid *)((int)pSVar3 + (uint)bVar5 * -2 + 1);",
       "type": "pointer_cast"
     }
   ]

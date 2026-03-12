@@ -6,8 +6,8 @@
 ; Parameters:
 ; CFireball *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x18]:4  local_18
+; SDamageInfo      Stack[-0x54]:60  SStack_54
+; float            Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:

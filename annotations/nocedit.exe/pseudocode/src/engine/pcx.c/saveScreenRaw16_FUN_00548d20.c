@@ -9,11 +9,13 @@
 void __cdecl engine_pcx_c_saveScreenRaw16_FUN_00548d20(char *filename)
 
 {
-  char cVar1;
-  ushort uVar2;
+  char cVar2;
   _FILE *file;
+  uint uVar3;
   int iVar3;
   uint uVar4;
+  char *pcVar4;
+  char *pcVar6;
   char *pcVar5;
   ushort *puVar6;
   char *pcVar7;
@@ -22,44 +24,46 @@ void __cdecl engine_pcx_c_saveScreenRaw16_FUN_00548d20(char *filename)
   uint local_1c;
   int local_18;
   int local_14;
+  ushort uVar2;
+  char cVar1;
   
   pcVar7 = local_70;
   do {
     cVar1 = *filename;
     *pcVar7 = cVar1;
-    pcVar5 = local_70;
+    pcVar4 = local_70;
     if (cVar1 == '\0') break;
-    cVar1 = filename[1];
+    cVar2 = filename[1];
     filename = filename + 2;
-    pcVar7[1] = cVar1;
+    pcVar7[1] = cVar2;
     pcVar7 = pcVar7 + 2;
-    pcVar5 = local_70;
-  } while (cVar1 != '\0');
+    pcVar4 = local_70;
+  } while (cVar2 != '\0');
   do {
-    pcVar7 = pcVar5;
-    if (*pcVar5 == '.') goto LAB_00548d63;
-    if (*pcVar5 == '\0') break;
-    pcVar7 = pcVar5 + 1;
-    if (*pcVar7 == '.') goto LAB_00548d63;
-    pcVar5 = pcVar5 + 2;
-  } while (*pcVar7 != '\0');
-  pcVar7 = (char *)0x0;
+    pcVar6 = pcVar4;
+    if (*pcVar4 == '.') goto LAB_00548d63;
+    if (*pcVar4 == '\0') break;
+    pcVar6 = pcVar4 + 1;
+    if (*pcVar6 == '.') goto LAB_00548d63;
+    pcVar4 = pcVar4 + 2;
+  } while (*pcVar6 != '\0');
+  pcVar6 = (char *)0x0;
 LAB_00548d63:
-  if (pcVar7 == (char *)0x0) {
+  if (pcVar6 == (char *)0x0) {
     g_CurrentFilename = "..\\engine\\pcx.c";
     g_CurrentLineNumber = 0x67;
     core_main_c_displayErrorAndQuit_FUN_00506f10("saveScreenRaw16 - No ext found");
   }
   pcVar5 = ".RAW";
   do {
-    cVar1 = *pcVar5;
-    *pcVar7 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
+    cVar2 = *pcVar5;
+    *pcVar6 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
-    pcVar7[1] = cVar1;
-    pcVar7 = pcVar7 + 2;
-  } while (cVar1 != '\0');
+    pcVar6[1] = cVar2;
+    pcVar6 = pcVar6 + 2;
+  } while (cVar2 != '\0');
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (local_70,(char *)0x0,"wb","..\\engine\\pcx.c",0x6c);
   if (file == (_FILE *)0x0) {
@@ -76,12 +80,11 @@ LAB_00548d63:
       if (0 < g_WindowWidth) {
         do {
           uVar2 = *puVar6;
-          local_20 = (uint)(uVar2 >> (g_RedBitPosition.bytes[0] & 0x1f)) * g_RedScaleFactor & 0xff;
-          local_1c = (uint)(uVar2 >> (g_GreenBitPosition.bytes[0] & 0x1f)) * g_GreenScaleFactor &
-                     0xff;
+          uVar3 = (uint)(uVar2 >> (g_GreenBitPosition.bytes[0] & 0x1f)) * g_GreenScaleFactor;
           uVar4 = (uint)(uVar2 >> (g_BlueBitPosition.bytes[0] & 0x1f)) * g_BlueScaleFactor;
-          _fputc(local_20,file);
-          _fputc(local_1c,file);
+          _fputc((uint)(uVar2 >> (g_RedBitPosition.bytes[0] & 0x1f)) * g_RedScaleFactor & 0xff,
+                     file);
+          _fputc(uVar3 & 0xff,file);
           puVar6 = puVar6 + 1;
           iVar3 = iVar3 + 1;
           _fputc(uVar4 & 0xff,file);

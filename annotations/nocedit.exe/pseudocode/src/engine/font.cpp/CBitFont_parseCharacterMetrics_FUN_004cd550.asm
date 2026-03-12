@@ -10,19 +10,19 @@
 ; int              Stack[0x10]:4   bitmap_height
 ; int              Stack[0x14]:4   first_char
 ; Local Variables:
-; undefined1       Stack[-0x16c]:1  local_16c
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[300]        Stack[-0x16c]:300  local_16c
+; int *            Stack[-0x40]:4  local_40
+; int              Stack[-0x3c]:4  local_3c
+; int              Stack[-0x38]:4  local_38
+; int              Stack[-0x34]:4  local_34
+; int *            Stack[-0x30]:4  local_30
+; char[80] *       Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int *            Stack[-0x24]:4  local_24
+; uint             Stack[-0x20]:4  local_20
+; byte *           Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; byte *           Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0 at 004cd235

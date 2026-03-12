@@ -10,19 +10,13 @@
 ; undefined8       Stack[-0xb8]:8  local_b8
 ; undefined8       Stack[-0xb0]:8  local_b0
 ; undefined8       Stack[-0xa8]:8  local_a8
-; undefined1       Stack[-0xa0]:1  local_a0
-; undefined1       Stack[-0x9f]:1  local_9f
-; undefined1       Stack[-0x9d]:1  local_9d
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; char[100]        Stack[-0xa0]:100  local_a0
+; CVector3f        Stack[-0x3c]:12  local_3c
+; CVector3f        Stack[-0x30]:12  local_30
+; SVDBox *         Stack[-0x24]:4  local_24
+; SRoom *          Stack[-0x20]:4  local_20
+; CMatrix3x3f *    Stack[-0x1c]:4  local_1c
+; CMatrix3x3f *    Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
 ;   core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0 at 0057ed41

@@ -7,12 +7,10 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; _FILE *          Stack[0x8]:4   file_handle
 ; Local Variables:
-; undefined1       Stack[-0x218]:1  local_218
-; undefined1       Stack[-0x217]:1  local_217
-; undefined1       Stack[-0x118]:1  local_118
-; undefined1       Stack[-0x117]:1  local_117
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x218]:256  local_218
+; char[256]        Stack[-0x118]:256  local_118
+; CDemonSet *      Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_fileman.cpp_CDemonFileManager_addSetToExtractList_FUN_004bd8e0 at 004bd91f

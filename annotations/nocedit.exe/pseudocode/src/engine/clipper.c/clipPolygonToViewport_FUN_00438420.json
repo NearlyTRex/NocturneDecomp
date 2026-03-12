@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 735,
-    "complexity_score": 816,
+    "complexity_score": 829,
     "cross_reference_count": 10,
     "function_call_count": 8,
     "global_count": 54,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 451,
+    "pseudocode_lines": 464,
     "suspect_count": 36,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 1186
+    "total_lines": 1199
   },
   "cross_references": [
     {
@@ -523,42 +523,42 @@
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -579,71 +579,135 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 126,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar14 = (SRenderVertex *)((int)&(pSVar14->projected_vertex).transformed_x + 1);",
+      "text": "pSVar10 = (SRenderVertex *)((int)&(pSVar10->projected_vertex).transformed_x + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 127,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)&(pSVar13->projected_vertex).transformed_x + 1);",
+      "text": "pSVar12 = (SRenderVertex *)((int)&(pSVar12->projected_vertex).transformed_x + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 145,
+      "line": 155,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar14 = (SRenderVertex *)((int)&(pSVar14->projected_vertex).transformed_x + 1);",
+      "text": "pSVar12 = (SRenderVertex *)((int)&(pSVar12->projected_vertex).transformed_x + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 146,
+      "line": 156,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)&(pSVar13->projected_vertex).transformed_x + 1);",
+      "text": "pSVar16 = (SRenderVertex *)((int)&(pSVar16->projected_vertex).transformed_x + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 175,
+      "line": 185,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 176,
+      "line": 186,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + ((uint)bVar16 * -2 + 1) * 4);",
+      "text": "pSVar16 = (SRenderVertex *)((int)pSVar16 + ((uint)bVar16 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 181,
+      "line": 191,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar16 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 182,
+      "line": 192,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);",
+      "text": "pSVar16 = (SRenderVertex *)((int)pSVar16 + (uint)bVar16 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 197,
+      "line": 207,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar16 = (SRenderVertex *)((int)pSVar16 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 208,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar17 = (SRenderVertex *)((int)pSVar17 + ((uint)bVar16 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 213,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar16 = (SRenderVertex *)((int)pSVar16 + (uint)bVar16 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 214,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar17 = (SRenderVertex *)((int)pSVar17 + (uint)bVar16 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 248,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 249,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar16 = (SRenderVertex *)((int)pSVar16 + ((uint)bVar16 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 254,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar16 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 255,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar16 = (SRenderVertex *)((int)pSVar16 + (uint)bVar16 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 270,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -8 + 4);",
@@ -651,23 +715,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 271,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar15 = (SRenderVertex *)((int)pSVar15 + ((uint)bVar16 * -2 + 1) * 4);",
+      "text": "pSVar15 = (SRenderVertex *)((int)pSVar15 + (uint)bVar16 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 203,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 204,
+      "line": 274,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "pSVar15 = (SRenderVertex *)((int)pSVar15 + (uint)bVar16 * -2 + 1);",
@@ -675,7 +731,111 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 238,
+      "line": 275,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 312,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 313,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar16 = (SRenderVertex *)((int)pSVar16 + ((uint)bVar16 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 318,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar16 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 319,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar16 = (SRenderVertex *)((int)pSVar16 + (uint)bVar16 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 335,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 336,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar16 = (SRenderVertex *)((int)pSVar16 + ((uint)bVar16 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 341,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar16 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 342,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar16 = (SRenderVertex *)((int)pSVar16 + (uint)bVar16 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 376,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar16 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 377,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar16 = (SRenderVertex *)((int)pSVar16 + ((uint)bVar16 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 382,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar16 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 383,
+      "match": "(SRenderVertex *)((int)",
+      "severity": "mild",
+      "text": "pSVar16 = (SRenderVertex *)((int)pSVar16 + (uint)bVar16 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 399,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);",
@@ -683,15 +843,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 239,
+      "line": 400,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + ((uint)bVar16 * -2 + 1) * 4);",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + ((uint)bVar16 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 244,
+      "line": 403,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
       "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);",
@@ -699,170 +859,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 245,
+      "line": 407,
       "match": "(SRenderVertex *)((int)",
       "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 260,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 261,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar15 = (SRenderVertex *)((int)pSVar15 + ((uint)bVar16 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 266,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 267,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar15 = (SRenderVertex *)((int)pSVar15 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 300,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 301,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + ((uint)bVar16 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 306,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 307,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 323,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 324,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + ((uint)bVar16 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 329,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 330,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 364,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 365,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + ((uint)bVar16 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 370,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 371,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 387,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 388,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + ((uint)bVar16 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 393,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 394,
-      "match": "(SRenderVertex *)((int)",
-      "severity": "mild",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);",
+      "text": "pSVar12 = (SRenderVertex *)((int)pSVar12 + (uint)bVar16 * -2 + 1);",
       "type": "pointer_cast"
     }
   ]

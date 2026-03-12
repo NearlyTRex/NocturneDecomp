@@ -9,23 +9,25 @@
 int __cdecl support_codec_cpp_extractBitsFromBuffer_FUN_0043e840(SBitBuffer *bit_state,int bit_count,char **output_pos,int *bytes_remaining)
 
 {
-  byte *pbVar1;
-  uint uVar2;
+  byte *pbVar2;
+  uint uVar3;
   int iVar3;
   int iVar4;
   uint uVar5;
+  uint uVar2;
+  byte *pbVar1;
   
   if (bit_count < bit_state->bits_available) {
-    uVar5 = bit_state->accumulated_bits;
+    uVar3 = bit_state->accumulated_bits;
     bit_state->accumulated_bits = bit_state->accumulated_bits >> ((byte)bit_count & 0x1f);
     bit_state->bits_available = bit_state->bits_available - bit_count;
-    return ~(-1 << ((byte)bit_count & 0x1f)) & uVar5;
+    return ~(-1 << ((byte)bit_count & 0x1f)) & uVar3;
   }
   if (bit_count == bit_state->bits_available) {
     bit_state->bits_available = 0;
-    uVar5 = bit_state->accumulated_bits;
+    uVar3 = bit_state->accumulated_bits;
     bit_state->accumulated_bits = 0;
-    return uVar5;
+    return uVar3;
   }
   uVar5 = bit_state->accumulated_bits & ~(-1 << ((byte)bit_state->bits_available & 0x1f));
   iVar3 = bit_state->bits_available;
@@ -47,9 +49,9 @@ LAB_0043e980:
       bit_state->bits_available = iVar3;
       return -1;
     }
-    pbVar1 = (byte *)*output_pos;
-    *output_pos = (char *)(pbVar1 + 1);
-    bit_state->accumulated_bits = (uint)*pbVar1;
+    pbVar2 = (byte *)*output_pos;
+    *output_pos = (char *)(pbVar2 + 1);
+    bit_state->accumulated_bits = (uint)*pbVar2;
     *bytes_remaining = *bytes_remaining + -1;
     uVar2 = bit_state->accumulated_bits;
     bit_state->accumulated_bits = bit_state->accumulated_bits >> ((byte)iVar4 & 0x1f);

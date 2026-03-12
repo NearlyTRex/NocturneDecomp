@@ -7,11 +7,31 @@
 ; CDoor *          Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined1       Stack[-0xa8]:1  local_a8
-; undefined4       Stack[-0x78]:4  local_78
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x50]:4  local_50
+; SCollisionInfo   Stack[-0xd0]:40  SStack_d0
+; CBoundingBox3D   Stack[-0xa8]:24  local_a8
+; CVector3f        Stack[-0x90]:12  CStack_90
+; CVector3f        Stack[-0x84]:12  CStack_84
+; float            Stack[-0x78]:4  local_78
+; float            Stack[-0x74]:4  local_74
+; float            Stack[-0x70]:4  local_70
+; CVector3f[2]     Stack[-0x6c]:24  aCStack_6c
+; int              Stack[-0x54]:4  iStack_54
+; float            Stack[-0x50]:4  local_50
+; CMatrix3x3f *    Stack[-0x4c]:4  pCStack_4c
+; float            Stack[-0x48]:4  fStack_48
+; float            Stack[-0x44]:4  fStack_44
+; float            Stack[-0x40]:4  fStack_40
+; float            Stack[-0x3c]:4  fStack_3c
+; float            Stack[-0x38]:4  fStack_38
+; float            Stack[-0x34]:4  fStack_34
+; float            Stack[-0x30]:4  fStack_30
+; float            Stack[-0x2c]:4  fStack_2c
+; float            Stack[-0x28]:4  fStack_28
+; float            Stack[-0x24]:4  fStack_24
+; float            Stack[-0x20]:4  fStack_20
+; float            Stack[-0x1c]:4  fStack_1c
+; int              Stack[-0x18]:4  iStack_18
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004800b0 = 0048011a

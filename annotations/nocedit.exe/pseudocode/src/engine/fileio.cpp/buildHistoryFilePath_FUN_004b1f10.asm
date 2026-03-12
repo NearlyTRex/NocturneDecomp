@@ -8,10 +8,9 @@
 ; char *           Stack[0x8]:4   extension
 ; char *           Stack[0xc]:4   dest_buffer
 ; Local Variables:
-; undefined        Stack[-0x214]:1  local_214
-; undefined1       Stack[-0x213]:1  local_213
-; undefined        Stack[-0x110]:1  local_110
-; undefined        Stack[-0x10]:1  local_10
+; char[260]        Stack[-0x214]:260  local_214
+; char[256]        Stack[-0x110]:256  local_110
+; char[4]          Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_fileio_cpp_006260a3

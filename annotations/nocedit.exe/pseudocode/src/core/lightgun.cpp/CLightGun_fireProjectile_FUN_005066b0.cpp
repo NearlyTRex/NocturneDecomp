@@ -9,10 +9,14 @@
 void __cdecl core_lightgun_cpp_CLightGun_fireProjectile_FUN_005066b0(CLightGun *this_ptr)
 
 {
-  float fVar1;
+  float fVar2;
+  float fVar3;
+  float fVar5;
+  float fVar6;
   int iVar2;
   CVector3f *input_local_point;
   int iVar3;
+  int iVar7;
   float10 fVar4;
   CVector3f local_94;
   CVector3f CStack_88;
@@ -34,6 +38,7 @@ void __cdecl core_lightgun_cpp_CLightGun_fireProjectile_FUN_005066b0(CLightGun *
   CVector3f CStack_28;
   float fStack_1c;
   int iStack_18;
+  float fVar1;
   
   iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
   if (iVar2 == 0) {
@@ -64,61 +69,60 @@ void __cdecl core_lightgun_cpp_CLightGun_fireProjectile_FUN_005066b0(CLightGun *
       fStack_2c = 0.0;
     }
     else {
-      fVar1 = 1.0 / fVar1;
-      fStack_34 = fStack_34 * fVar1;
-      fStack_30 = fStack_30 * fVar1;
-      fStack_2c = fStack_2c * fVar1;
+      fVar2 = 1.0 / fVar1;
+      fStack_34 = fStack_34 * fVar2;
+      fStack_30 = fStack_30 * fVar2;
+      fStack_2c = fStack_2c * fVar2;
     }
     fVar4 = (float10)fpatan((float10)18 / (float10)112.0f,(float10)1);
     core_fire_cpp_CFireEffect_createLaserCone_FUN_004c7f20
               (g_CFireEffectPtr,&CStack_4c,&CStack_40,1.0,0xff,0xff,0xb4,(float)fVar4);
     if (this_ptr->hit_enemy != 0) {
+      iVar3 = 1;
       this_ptr->hit_enemy = 0;
-      iVar2 = 1;
       do {
-        iVar3 = iVar2 + 1;
-        iStack_18 = iVar2;
+        fVar2 = (float)iVar3;
+        iVar3 = iVar3 + 1;
         core_fire_cpp_CFireEffect_createLaserCone_FUN_004c7f20
                   (g_CFireEffectPtr,&CStack_4c,&CStack_40,1.0,0xff,0xff,0xb4,
-                   (float)iVar2 * (float)fVar4 * (float)0.10000000000000001);
-        iVar2 = iVar3;
+                   fVar2 * (float)fVar4 * (float)0.10000000000000001);
       } while (iVar3 < 10);
-      fStack_6c = CStack_40.y - CStack_4c.y;
-      fStack_70 = CStack_40.x - CStack_4c.x;
-      fStack_68 = CStack_40.z - CStack_4c.z;
+      fVar5 = CStack_40.y - CStack_4c.y;
+      fVar2 = CStack_40.x - CStack_4c.x;
+      fVar6 = CStack_40.z - CStack_4c.z;
       CStack_88.x = CStack_4c.x;
       CStack_88.y = CStack_4c.y;
       CStack_88.z = CStack_4c.z;
-      fVar1 = SQRT(fStack_68 * fStack_68 + fStack_70 * fStack_70 + fStack_6c * fStack_6c);
-      if (0.0 < fVar1) {
-        fVar1 = 1.0 / fVar1;
-        fStack_70 = fStack_70 * fVar1;
-        fStack_6c = fStack_6c * fVar1;
-        fStack_68 = fStack_68 * fVar1;
+      fVar3 = SQRT(fVar6 * fVar6 + fVar2 * fVar2 + fVar5 * fVar5);
+      if (0.0 < fVar3) {
+        fVar3 = 1.0 / fVar3;
+        fStack_70 = fVar2 * fVar3;
+        fStack_6c = fVar5 * fVar3;
+        fStack_68 = fVar6 * fVar3;
       }
       else {
         fStack_6c = 0.0;
         fStack_70 = 0.0;
         fStack_68 = 0.0;
       }
-      fStack_1c = this_ptr->beam_length * (float)0.015625;
-      fStack_7c = fStack_70 * fStack_1c;
-      fStack_78 = fStack_6c * fStack_1c;
-      fStack_74 = fStack_68 * fStack_1c;
+      fVar2 = this_ptr->beam_length * (float)0.015625;
+      fStack_7c = fStack_70 * fVar2;
+      fStack_78 = fStack_6c * fVar2;
+      fStack_74 = fStack_68 * fVar2;
       if (&fStack_70 != &fStack_7c) {
         fStack_70 = fStack_7c;
         fStack_6c = fStack_78;
         fStack_68 = fStack_74;
       }
-      iVar2 = 0;
+      iVar7 = 0;
       do {
         core_fire_cpp_CFireEffect_createSpark_FUN_004c79d0
                   (g_CFireEffectPtr,&CStack_88,(CVector3f *)0x0,0x8000,0x4000,0,0x3333);
-        iVar2 = iVar2 + 1;
+        iVar7 = iVar7 + 1;
         CStack_88.x = CStack_88.x + fStack_70;
         CStack_88.y = CStack_88.y + fStack_6c;
         CStack_88.z = CStack_88.z + fStack_68;
-      } while (iVar2 < 0x40);
+      } while (iVar7 < 0x40);
       return;
     }
   }

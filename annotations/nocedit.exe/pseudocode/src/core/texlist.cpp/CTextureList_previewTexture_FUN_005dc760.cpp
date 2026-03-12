@@ -9,16 +9,14 @@
 void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureList *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
   char (*pacVar3) [16];
+  int iVar3;
   char *pcVar4;
   SMRGLHeaderPrimitive SStack_50;
-  uint local_38;
-  uint local_34;
-  uint local_30;
-  uint local_2c;
   SMRGLTextureBasic local_28;
+  char cVar1;
   
   if ((g_KeyboardState[0x1d] != '\0') && (g_KeyboardState[0x2c] != '\0')) {
     g_KeyboardState[0x2c] = '\0';
@@ -66,11 +64,7 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
     SStack_50.surface_normal.B = 0;
     SStack_50.surface_normal.C = 0;
     SStack_50.surface_normal.D = 0;
-    local_38 = 0;
-    local_2c = 3;
     SStack_50.base.count = 4;
-    local_30 = 2;
-    local_34 = 1;
     g_RenderVertexBuffer[2].u = 0x80000;
     pcVar4 = local_28.texture_name;
     pacVar3 = this_ptr->master_texture_names + this_ptr->current_master_selection;
@@ -79,11 +73,11 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
       cVar1 = (*pacVar3)[0];
       *pcVar4 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = (*pacVar3)[1];
+      cVar2 = (*pacVar3)[1];
       pacVar3 = (char (*) [16])(*pacVar3 + 2);
-      pcVar4[1] = cVar1;
+      pcVar4[1] = cVar2;
       pcVar4 = pcVar4 + 2;
-    } while (cVar1 != '\0');
+    } while (cVar2 != '\0');
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr2,&local_28);
     engine_3d_c_renderPolygonTextureEnable_FUN_00403cc0(&SStack_50);
     if (g_KeyboardState[0x1b] != '\0') {
@@ -96,9 +90,9 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
     }
     if (g_KeyboardState[0x1a] != '\0') {
       g_KeyboardState[0x1a] = '\0';
-      iVar2 = this_ptr->current_master_selection - ((uint)(byte)g_KeyboardState[0x2a] * 9 + 1);
-      this_ptr->current_master_selection = iVar2;
-      if (iVar2 < 0) {
+      iVar3 = this_ptr->current_master_selection - ((uint)(byte)g_KeyboardState[0x2a] * 9 + 1);
+      this_ptr->current_master_selection = iVar3;
+      if (iVar3 < 0) {
         this_ptr->current_master_selection = this_ptr->master_texture_count + -1;
       }
     }

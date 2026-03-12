@@ -6,10 +6,10 @@
 ; Parameters:
 ; CBoneStructure * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xa4]:1  local_a4
-; undefined1       Stack[-0x74]:1  local_74
-; undefined1       Stack[-0x44]:1  local_44
-; undefined4       Stack[-0x14]:4  local_14
+; CMatrix3x4f      Stack[-0xa4]:48  local_a4
+; CMatrix3x4f      Stack[-0x74]:48  local_74
+; CMatrix3x4f      Stack[-0x44]:48  local_44
+; SBoneData *      Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
 ;   core_skeledit.cpp_CBoneStructure_applyMatrixArray_FUN_0058af40 at 0058afc3

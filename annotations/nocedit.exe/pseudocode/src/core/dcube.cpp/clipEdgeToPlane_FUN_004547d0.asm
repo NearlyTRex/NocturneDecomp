@@ -12,7 +12,7 @@
 ; double           Stack[0x20]:8   plane_nz
 ; double           Stack[0x28]:8   plane_d
 ; Local Variables:
-; undefined8       Stack[-0x28]:8  local_28
+; int              Stack[-0x28]:4  local_28
 ;
 ; XREF[6]:
 ;   core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40 at 00454d78

@@ -7,7 +7,7 @@
 ; CMatrix3x4f *    Stack[0x4]:4   matrix_a
 ; CMatrix3x4f *    Stack[0x8]:4   matrix_b
 ; Local Variables:
-; undefined1       Stack[-0x3c]:1  local_3c
+; CMatrix3x4f      Stack[-0x3c]:48  local_3c
 ;
 ; XREF[1]:
 ;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 005954c7

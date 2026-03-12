@@ -10,6 +10,7 @@ int __cdecl engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50(
 
 {
   int iVar1;
+  int iVar3;
   int iVar2;
   CPodFile local_438;
   int local_c;
@@ -24,18 +25,17 @@ int __cdecl engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50(
   }
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
             (g_CEditorToolsPtr,"Deleting local files");
-  iVar1 = 0;
+  iVar3 = 0;
   if (0 < local_438.file_count) {
     iVar2 = 0;
     do {
       remove(*(char **)((int)&(local_438.directory_entries)->name + iVar2))
       ;
-      iVar1 = iVar1 + 1;
-      local_c = iVar1;
+      iVar3 = iVar3 + 1;
       shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                (g_CEditorToolsPtr,(float)iVar1,(float)local_438.file_count);
+                (g_CEditorToolsPtr,(float)iVar3,(float)local_438.file_count);
       iVar2 = iVar2 + 0x14;
-    } while (iVar1 < local_438.file_count);
+    } while (iVar3 < local_438.file_count);
   }
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
   engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_438,0);

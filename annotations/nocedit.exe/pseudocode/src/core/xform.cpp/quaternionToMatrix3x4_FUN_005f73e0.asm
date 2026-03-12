@@ -6,7 +6,7 @@
 ; Parameters:
 ; CQuaternion4f *  Stack[0x4]:4   quat_in
 ; Local Variables:
-; undefined1       Stack[-0x38]:1  local_38
+; CMatrix3x4f      Stack[-0x38]:48  local_38
 ;
 ; XREF[2]:
 ;   core_course.cpp_CCourse_evaluate_FUN_00442710 at 00442753

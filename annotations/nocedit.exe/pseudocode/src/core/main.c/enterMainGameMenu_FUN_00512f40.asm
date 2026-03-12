@@ -5,8 +5,8 @@
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; int              Stack[-0xc]:4  iStack_c
+; int              Stack[-0x8]:4  iStack_8
 ;
 ; XREF[1]:
 ;   wincore_winrun.cpp_winMain_FUN_005f3680 at 005f3900

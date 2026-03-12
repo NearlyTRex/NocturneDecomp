@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 116,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 53,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 212
+    "total_lines": 214
   },
   "cross_references": [],
   "function": {
@@ -206,15 +206,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 28,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "(*pCVar3)((void *)(iVar7 + iVar5),(void *)((int)sprite_data + iVar5),(iVar4 - iVar5) + 1);",
+      "text": "(*pCVar3)((void *)(iVar7 + iVar8),(void *)((int)sprite_data + iVar8),(iVar4 - iVar8) + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 31,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "sprite_data = (void *)((int)sprite_data + width);",
@@ -222,7 +222,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 37,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "pvVar8 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);",
@@ -230,7 +230,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 44,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "(*pCVar3)((void *)(iVar5 * 2 + (int)pvVar8),(void *)((int)sprite_data + iVar5),",
@@ -238,7 +238,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 47,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "pvVar8 = (void *)((int)pvVar8 + (iVar2 / 2) * 2);",
@@ -246,7 +246,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 48,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "sprite_data = (void *)((int)sprite_data + width);",

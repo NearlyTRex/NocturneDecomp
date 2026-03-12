@@ -13,6 +13,7 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
   int iVar1;
   uint uVar2;
   int iVar3;
+  int iVar2;
   int iVar4;
   char *text;
   int iVar5;
@@ -35,17 +36,17 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
                       (g_MediumFont,"In stores 10/26/99");
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
               (g_MediumFont,"In stores 10/26/99",0x140 - iVar3 / 2,0xdc,7,0);
-    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
+    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                       (g_MediumFont,"www.nocturnegame.com");
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
-              (g_MediumFont,"www.nocturnegame.com",0x140 - iVar3 / 2,0x1e0 - iVar1,7,0);
+              (g_MediumFont,"www.nocturnegame.com",0x140 - iVar2 / 2,0x1e0 - iVar1,7,0);
     iVar5 = 0xa0000;
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar3 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+    iVar2 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
     do {
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       iVar4 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-      g_GlobalDeltaTimeInt = (iVar4 - iVar3) / 0x12;
+      g_GlobalDeltaTimeInt = (iVar4 - iVar2) / 0x12;
       if (g_GlobalDeltaTimeInt < 0) {
         g_GlobalDeltaTimeInt = 0;
       }
@@ -53,17 +54,17 @@ void __cdecl core_main_c_finalizeGameSystems_FUN_00508570(void)
         g_GlobalDeltaTimeInt = 0x4000;
       }
       iVar5 = iVar5 - g_GlobalDeltaTimeInt;
-      iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
-      if (iVar3 != 0) {
-        iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
-        if (iVar3 != 0) break;
+      iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
+      if (iVar2 != 0) {
+        iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
+        if (iVar2 != 0) break;
       }
-      iVar3 = iVar4;
+      iVar2 = iVar4;
     } while (0 < iVar5);
     text = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Press any key to continue...");
-    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,text);
+    iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,text);
     engine_font_cpp_CBitFont_drawText_FUN_004cda80
-              (g_MediumFont,text,0x140 - iVar3 / 2,iVar1 * -2 + 0x1e0,7,0);
+              (g_MediumFont,text,0x140 - iVar2 / 2,iVar1 * -2 + 0x1e0,7,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     engine_2d_c_clearInputAndWait_FUN_00403260();
     wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();

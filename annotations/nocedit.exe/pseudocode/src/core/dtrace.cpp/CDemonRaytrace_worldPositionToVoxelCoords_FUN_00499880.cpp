@@ -11,13 +11,13 @@
 void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_voxel_coords)
 
 {
-  double dVar1;
   uint *puVar2;
   byte bVar3;
   int aiStackY_1004 [1016];
   int local_18;
   int local_14;
   double local_10;
+  double dVar1;
   
   bVar3 = 0;
   local_10 = floor
@@ -34,8 +34,7 @@ void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_
   local_14 = (int)ROUND(ROUND(local_10));
   puVar2 = (uint *)((int)output_voxel_coords + (uint)bVar3 * -8 + 4);
   output_voxel_coords->x = (int)ROUND(dVar1);
-  *puVar2 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar3 * -8);
-  puVar2[(uint)bVar3 * -2 + 1] =
-       *(uint *)((int)&stack0xffffffec + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+  *puVar2 = (&local_18)[(uint)bVar3 * -2];
+  puVar2[(uint)bVar3 * -2 + 1] = (&local_14)[(uint)bVar3 * -2 + (uint)bVar3 * -2];
   return;
 }

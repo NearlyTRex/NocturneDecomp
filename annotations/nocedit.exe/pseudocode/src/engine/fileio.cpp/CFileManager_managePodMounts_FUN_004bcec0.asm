@@ -6,10 +6,10 @@
 ; Parameters:
 ; CFileManager *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x5d8]:1  local_5d8
-; undefined1       Stack[-0x230]:1  local_230
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x20]:4  local_20
+; CPickList        Stack[-0x5d8]:936  local_5d8
+; char[512]        Stack[-0x230]:512  local_230
+; CStrList         Stack[-0x30]:16  local_30
+; CStrList         Stack[-0x20]:16  local_20
 ;
 ; XREF[1]:
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be472

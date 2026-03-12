@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 20,
-        "line": 84,
+        "line": 89,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 85,
+        "line": 90,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 113,
+        "line": 118,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 114,
+        "line": 119,
         "message": "member reference base type 'longlong' (aka 'long long') is not a structure or union"
       }
     ],
@@ -31,12 +31,12 @@
   },
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 311,
+    "complexity_score": 316,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 19,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 131,
+    "pseudocode_lines": 136,
     "suspect_count": 16,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -44,7 +44,7 @@
       "unknown_field",
       "warning_unreachable"
     ],
-    "total_lines": 354
+    "total_lines": 359
   },
   "cross_references": [],
   "function": {
@@ -263,7 +263,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 33,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar3 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z + iVar5);",
@@ -271,7 +271,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 47,
+      "line": 52,
       "match": "ROUND",
       "severity": "mild",
       "text": "*(longlong *)piVar10 = (longlong)ROUND((float10)lVar1);",
@@ -279,31 +279,31 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 77,
+      "line": 82,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "lVar2._0_4_ = (pSVar9->projected_vertex).transformed_x;",
+      "text": "lVar2._0_4_ = (pSVar7->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 78,
+      "line": 83,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "lVar2._4_4_ = (pSVar9->projected_vertex).transformed_y;",
+      "text": "lVar2._4_4_ = (pSVar7->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 80,
+      "line": 85,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);",
+      "text": "(pSVar8->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 82,
+      "line": 87,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar2) >> 0x20);",
@@ -311,55 +311,55 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 94,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)pSVar11 + (uint)bVar12 * -8 + 4) =",
+      "text": "*(uint *)((int)pSVar8 + (uint)bVar12 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 95,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)pSVar9 + (uint)bVar12 * -8 + 4);",
+      "text": "*(uint *)((int)pSVar7 + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 106,
+      "line": 111,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "lVar1._0_4_ = (pSVar9->projected_vertex).transformed_x;",
+      "text": "lVar3._0_4_ = (pSVar9->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 107,
+      "line": 112,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "lVar1._4_4_ = (pSVar9->projected_vertex).transformed_y;",
+      "text": "lVar3._4_4_ = (pSVar9->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 109,
+      "line": 114,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar1);",
+      "text": "(pSVar11->projected_vertex).transformed_x = (int)(longlong)ROUND((float10)lVar3);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 111,
+      "line": 116,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar1) >> 0x20);",
+      "text": "(int)((ulonglong)(longlong)ROUND((float10)lVar3) >> 0x20);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 123,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)pSVar11 + (uint)bVar12 * -8 + 4) =",
@@ -367,7 +367,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 124,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)pSVar9 + (uint)bVar12 * -8 + 4);",

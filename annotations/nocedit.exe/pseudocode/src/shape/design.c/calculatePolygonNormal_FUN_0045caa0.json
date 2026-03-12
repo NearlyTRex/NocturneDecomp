@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 69,
-        "line": 40,
+        "line": 42,
         "message": "member reference base type 'double' is not a structure or union"
       }
     ],
@@ -13,18 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 73,
+    "complexity_score": 75,
     "cross_reference_count": 10,
     "function_call_count": 0,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 45,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
       "unknown_field"
     ],
-    "total_lines": 171
+    "total_lines": 173
   },
   "cross_references": [
     {
@@ -221,7 +221,7 @@
         "name": "local_28",
         "offset": -40,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
@@ -249,15 +249,15 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 32,
+      "line": 34,
       "match": "SQRT",
       "severity": "mild",
-      "text": "local_28 = SQRT(dVar4 * dVar4 + dVar6 * dVar6 + dVar10 * dVar10);",
+      "text": "local_28 = SQRT(dVar2 * dVar2 + dVar1 * dVar1 + dVar10 * dVar10);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 33,
+      "line": 35,
       "match": "._0_4_",
       "severity": "mild",
       "text": "if ((((ulonglong)local_28 & 0x7fffffff00000000) == 0) && (local_28._0_4_ == 0)) {",

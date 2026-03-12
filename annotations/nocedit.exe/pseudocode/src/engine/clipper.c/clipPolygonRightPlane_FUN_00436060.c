@@ -9,15 +9,16 @@
 int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_00436060(SRenderVertex **input_vertices,SRenderVertex **output_vertices,int vertex_count)
 
 {
-  SRenderVertex *v2;
-  int iVar1;
   byte bVar2;
   SRenderVertex *pSVar3;
+  SRenderVertex *output;
   int iVar4;
   int iVar5;
   SRenderVertex *v1;
   int local_18;
   SRenderVertex **local_14;
+  SRenderVertex *v2;
+  int iVar1;
   
   iVar4 = 0;
   local_18 = 0;
@@ -57,11 +58,11 @@ int __cdecl engine_clipper_c_clipPolygonRightPlane_FUN_00436060(SRenderVertex **
           g_CurrentLineNumber = 0x5e;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Ran out of clipped verts!");
         }
-        pSVar3 = g_ClipperTempBuffer + g_ClipperTempCount;
+        output = g_ClipperTempBuffer + g_ClipperTempCount;
         iVar4 = iVar5 + 2;
         g_ClipperTempCount = g_ClipperTempCount + 1;
-        output_vertices[iVar5 + 1] = pSVar3;
-        engine_clipper_c_interpolateVertexRightClip_FUN_00435b00(v1,v2,pSVar3);
+        output_vertices[iVar5 + 1] = output;
+        engine_clipper_c_interpolateVertexRightClip_FUN_00435b00(v1,v2,output);
       }
       local_14 = local_14 + 1;
       local_18 = local_18 + 1;

@@ -8,20 +8,17 @@
 ; CQuaternion4f *  Stack[0x8]:4   quat2_in
 ; float            Stack[0xc]:4   t
 ; Local Variables:
-; undefined8       Stack[-0x80]:8  local_80
-; undefined8       Stack[-0x78]:8  local_78
-; undefined8       Stack[-0x70]:8  local_70
+; double           Stack[-0x80]:8  local_80
+; double           Stack[-0x78]:8  local_78
+; double           Stack[-0x70]:8  local_70
 ; undefined8       Stack[-0x68]:8  local_68
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x58]:4  local_58
-; undefined4       Stack[-0x54]:4  local_54
+; float            Stack[-0x60]:4  local_60
+; float            Stack[-0x5c]:4  local_5c
+; float            Stack[-0x58]:4  local_58
+; float            Stack[-0x54]:4  local_54
 ; undefined1       Stack[-0x50]:1  local_50
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined8       Stack[-0x18]:8  local_18
+; CQuaternion4f[2] Stack[-0x40]:32  local_40
+; double           Stack[-0x18]:8  local_18
 ;
 ; XREF[15]:
 ;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90 at 0041c146

@@ -10,6 +10,7 @@ time_t __cdecl filetime_to_time_t(FILETIME *filetime)
 
 {
   BOOL BVar1;
+  BOOL BVar2;
   time_t tVar2;
   _tm _Stack_40;
   _SYSTEMTIME _Stack_1c;
@@ -22,8 +23,8 @@ time_t __cdecl filetime_to_time_t(FILETIME *filetime)
   if (BVar1 == 0) {
     return -1;
   }
-  BVar1 = (*g_FileTimeToSystemTimeFunc)(&local_c,&_Stack_1c);
-  if (BVar1 == 0) {
+  BVar2 = (*g_FileTimeToSystemTimeFunc)(&local_c,&_Stack_1c);
+  if (BVar2 == 0) {
     return -1;
   }
   _Stack_40.tm_year = _Stack_1c.wYear - 0x76c;

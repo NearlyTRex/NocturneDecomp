@@ -10,11 +10,9 @@
 ; char *           Stack[0x10]:4   value
 ; char *           Stack[0x14]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x214]:1  local_214
-; undefined1       Stack[-0x213]:1  local_213
-; undefined1       Stack[-0x211]:1  local_211
-; undefined1       Stack[-0x114]:1  local_114
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x214]:256  local_214
+; char[256]        Stack[-0x114]:256  local_114
+; char *           Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   engine_ini.cpp_CIni_writeProfileString_FUN_004fb660 at 004fb69b

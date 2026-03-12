@@ -11,26 +11,27 @@ int __cdecl engine_font_cpp_CBitFont_drawText_FUN_004cda80(CBitFont *this_ptr,ch
 {
   int iVar1;
   int iVar2;
+  int x_00;
   char *pcVar3;
   uint character_code;
   char *local_14;
   
-  iVar1 = x;
+  x_00 = x;
   if (this_ptr->win_font_enabled == 0) {
     for (; character_code = (uint)(byte)*text, character_code != 0; text = text + 1) {
       if (character_code != 0xd) {
         if (character_code == 10) {
           y = y + this_ptr->current_line_height + this_ptr->line_spacing;
-          iVar1 = x;
+          x_00 = x;
         }
         else {
           iVar2 = engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0
-                            (this_ptr,character_code,iVar1,y,color_mode,color_value);
-          iVar1 = iVar1 + iVar2;
+                            (this_ptr,character_code,x_00,y,color_mode,color_value);
+          x_00 = x_00 + iVar2;
         }
       }
     }
-    return iVar1 - x;
+    return x_00 - x;
   }
   if (this_ptr->win_font_helper == (CWinFont *)0x0) {
     g_CurrentFilename = "..\\engine\\font.cpp";

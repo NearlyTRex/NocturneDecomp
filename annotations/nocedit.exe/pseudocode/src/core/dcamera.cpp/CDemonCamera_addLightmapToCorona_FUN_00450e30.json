@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 111,
+    "complexity_score": 115,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 71,
+    "pseudocode_lines": 75,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
       "warning_deadcode_restart"
     ],
-    "total_lines": 213
+    "total_lines": 217
   },
   "cross_references": [
     {
@@ -152,28 +152,28 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "char[320] *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonLight *"
       },
       {
         "is_param": true,
@@ -202,7 +202,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 33,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar3 = (uint *)((int)light_source->corona_visibility_buffers +",
@@ -210,7 +210,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 37,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar4 = (int *)((int)light_source->corona_lightmap_indices +",

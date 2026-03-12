@@ -9,8 +9,7 @@
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0(CMansionPuzzleCircle *this_ptr,int panel_index,float delta_time)
 
 {
-  SPanel *pSVar1;
-  float fVar2;
+  bool bVar1;
   CVector3f *pCVar3;
   int iVar4;
   SLaserInfo local_114;
@@ -25,19 +24,21 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0(CMans
   CMatrix3x3f *local_1c;
   SPanel *local_18;
   int local_14;
+  float fVar2;
+  SPanel *pSVar1;
   
-  local_18 = this_ptr->panels;
-  pSVar1 = local_18 + panel_index;
-  local_14 = 0;
+  pSVar1 = this_ptr->panels + panel_index;
+  bVar1 = false;
   if (pSVar1->exists == 0) {
-    local_14 = 1;
+    bVar1 = true;
     iVar4 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_0050aef0
                       (this_ptr,panel_index);
-    if ((local_18[iVar4].exists == 0) || (local_18[iVar4].anim_speed <= 0.0)) goto LAB_0050a917;
+    if ((this_ptr->panels[iVar4].exists == 0) || (this_ptr->panels[iVar4].anim_speed <= 0.0))
+    goto LAB_0050a917;
   }
   else {
 LAB_0050a917:
-    if (local_14 != 0) {
+    if (bVar1) {
       fVar2 = (float)this_ptr->laser_intensity[panel_index] + delta_time;
       goto LAB_0050a92e;
     }
@@ -45,14 +46,12 @@ LAB_0050a917:
   fVar2 = (float)this_ptr->laser_intensity[panel_index] - delta_time;
 LAB_0050a92e:
   this_ptr->laser_intensity[panel_index] = (int)fVar2;
-  local_24 = (double)(float)this_ptr->laser_intensity[panel_index];
-  if (0.0 < local_24) {
-    if (1.0 < local_24) {
+  if (0.0 < (float)this_ptr->laser_intensity[panel_index]) {
+    if (1.0 < (float)this_ptr->laser_intensity[panel_index]) {
       this_ptr->laser_intensity[panel_index] = 0x3f800000;
     }
-    local_1c = &pSVar1->rotation_matrix;
     pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                       (local_1c,&local_6c,&(this_ptr->emitter_pos).f);
+                       (&pSVar1->rotation_matrix,&local_6c,&(this_ptr->emitter_pos).f);
     local_48.x = (pSVar1->local_position).x + pCVar3->x;
     local_48.y = (pSVar1->local_position).y + pCVar3->y;
     local_48.z = (pSVar1->local_position).z + pCVar3->z;
@@ -61,7 +60,8 @@ LAB_0050a92e:
     local_60.y = ((this_ptr->gem_pos).y - (this_ptr->emitter_pos).f.y) * 4.0f;
     local_60.z = -(this_ptr->panel_radius * 2.0f + (this_ptr->emitter_pos).f.z +
                   (this_ptr->gem_pos).z) * 4.0f;
-    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(local_1c,&local_30,&local_60);
+    core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+              (&pSVar1->rotation_matrix,&local_30,&local_60);
     core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(&this_ptr->base,&local_54,&local_30);
     core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
     core_fire_cpp_SLaserInfo_ctor_FUN_004c81f0(&local_114);

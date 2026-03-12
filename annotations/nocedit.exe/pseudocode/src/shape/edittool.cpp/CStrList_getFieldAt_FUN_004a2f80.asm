@@ -9,7 +9,7 @@
 ; char *           Stack[0xc]:4   output_buffer
 ; int              Stack[0x10]:4   field_number
 ; Local Variables:
-; undefined1       Stack[-0x134]:1  local_134
+; char[300]        Stack[-0x134]:300  local_134
 ;
 ; XREF[9]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f3d6

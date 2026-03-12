@@ -9,14 +9,14 @@
 double __cdecl engine_colquant_c_computeWeightedColorDistance_FUN_00441040(SColorQuantMapper *workspace,int box_index,int color_index)
 
 {
-  int iVar1;
-  int iVar2;
-  int iVar3;
-  double dVar4;
-  double dVar5;
-  double dVar6;
-  double dVar7;
   byte *pbVar8;
+  double dVar4;
+  int iVar3;
+  int iVar2;
+  int iVar1;
+  double dVar7;
+  double dVar6;
+  double dVar5;
   
   pbVar8 = (byte *)(workspace->color_data + color_index * 4);
   iVar1._0_2_ = workspace->boxes[box_index].avg_red;

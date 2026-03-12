@@ -6,17 +6,18 @@
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x630]:1  local_630
-; undefined1       Stack[-0x130]:1  local_130
-; undefined1       Stack[-0x12f]:1  local_12f
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; uint[256]        Stack[-0xa30]:1024  auStack_a30
+; byte[768]        Stack[-0x630]:768  local_630
+; ushort[256]      Stack[-0x330]:512  auStack_330
+; char[256]        Stack[-0x130]:256  local_130
+; uint             Stack[-0x30]:4  local_30
+; uint             Stack[-0x2c]:4  local_2c
+; ushort *         Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; void *           Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004dbb5c

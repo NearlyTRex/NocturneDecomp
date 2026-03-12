@@ -9,8 +9,10 @@
 void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream *this_ptr,SMpegSubbandAllocation *output_allocation,SBitAllocationTable *alloc_table_info)
 
 {
-  int iVar1;
+  void *pvVar1;
   uint uVar2;
+  uint uVar3;
+  int iVar4;
   uint *puVar3;
   int *piVar4;
   uint *puVar5;
@@ -20,14 +22,15 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFil
   int iVar9;
   void *local_18;
   int local_14;
+  int iVar1;
   
-  iVar9 = alloc_table_info->num_granules;
+  iVar4 = alloc_table_info->num_granules;
   iVar1 = alloc_table_info->num_subbands;
   iVar6 = alloc_table_info->num_allocation_groups;
-  pvVar8 = alloc_table_info->allocation_data_ptr;
+  pvVar1 = alloc_table_info->allocation_data_ptr;
   if (0 < iVar6) {
     local_14 = 0;
-    local_18 = pvVar8;
+    local_18 = pvVar1;
     do {
       iVar7 = 0;
       if (0 < iVar1) {
@@ -44,30 +47,30 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFil
       local_18 = (void *)((int)local_18 + 0x100);
     } while (local_14 < iVar6 * 4);
   }
-  if (iVar6 < iVar9) {
-    pvVar8 = (void *)(iVar6 * 0x100 + (int)pvVar8);
+  if (iVar6 < iVar4) {
+    pvVar8 = (void *)(iVar6 * 0x100 + (int)pvVar1);
     piVar4 = output_allocation->granules + iVar6;
     do {
-      uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,*(int *)((int)pvVar8 + 4))
+      uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,*(int *)((int)pvVar8 + 4))
       ;
       pvVar8 = (void *)((int)pvVar8 + 0x100);
-      piVar4[0x20] = uVar2 & 0xff;
+      piVar4[0x20] = uVar3 & 0xff;
       iVar6 = iVar6 + 1;
-      *piVar4 = uVar2 & 0xff;
+      *piVar4 = uVar3 & 0xff;
       piVar4 = piVar4 + 1;
-    } while (iVar6 < iVar9);
+    } while (iVar6 < iVar4);
   }
-  if (iVar9 < 0x20) {
-    iVar9 = iVar9 * 4;
+  if (iVar4 < 0x20) {
+    iVar9 = iVar4 * 4;
     do {
-      iVar6 = 0;
+      iVar4 = 0;
       if (0 < iVar1) {
         puVar5 = (uint *)((int)output_allocation->granules + iVar9);
         do {
-          iVar6 = iVar6 + 1;
+          iVar4 = iVar4 + 1;
           *puVar5 = 0;
           puVar5 = puVar5 + 0x20;
-        } while (iVar6 < iVar1);
+        } while (iVar4 < iVar1);
       }
       iVar9 = iVar9 + 4;
     } while (iVar9 < 0x80);

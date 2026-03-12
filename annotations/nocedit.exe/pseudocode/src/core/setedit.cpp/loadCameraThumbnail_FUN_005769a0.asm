@@ -8,19 +8,19 @@
 ; char *           Stack[0x8]:4   name
 ; int              Stack[0xc]:4   thumbnail_index
 ; Local Variables:
-; undefined1       Stack[-0x5c]:1  local_5c
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
+; char[16]         Stack[-0x5c]:16  local_5c
+; char[16]         Stack[-0x4c]:16  local_4c
+; _FILE *          Stack[-0x3c]:4  local_3c
+; SIZE_T           Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x30]:4  local_30
+; SIZE_T           Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; SIZE_T           Stack[-0x1c]:4  local_1c
+; void *           Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0 at 00576ee1

@@ -10,6 +10,7 @@ void __cdecl core_setedit_cpp_CDemonSet_computeCameraFog_FUN_00581320(CDemonSet 
 
 {
   int iVar1;
+  int iVar2;
   char local_110 [256];
   
   g_CDemonLightInstance.light_enabled_flag = 0;
@@ -35,10 +36,10 @@ void __cdecl core_setedit_cpp_CDemonSet_computeCameraFog_FUN_00581320(CDemonSet 
         core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(g_CGamePtr);
         return;
       }
-      iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
-    } while (iVar1 == 0);
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
-    if (iVar1 == 0) {
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
+    } while (iVar2 == 0);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
+    if (iVar2 == 0) {
       camera_index = camera_index + 1;
       if (this_ptr->camera_count <= camera_index) {
         camera_index = 0;

@@ -10,6 +10,7 @@ int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_0041d550(CBoneGuy *thi
 
 {
   CVector3f *pCVar1;
+  CVector3f *pCVar2;
   CVector3f local_48;
   CVector3f local_3c;
   CVector3f local_30;
@@ -26,33 +27,33 @@ int __cdecl core_boneguy_cpp_CBoneGuy_getTargetPoints_FUN_0041d550(CBoneGuy *thi
     out_points_array->y = pCVar1->y;
     out_points_array->z = pCVar1->z;
   }
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                      (&(this_ptr->base).base.model,&local_24,INT_00822958);
-  if (out_points_array + 1 != pCVar1) {
-    out_points_array[1].x = pCVar1->x;
-    out_points_array[1].y = pCVar1->y;
-    out_points_array[1].z = pCVar1->z;
+  if (out_points_array + 1 != pCVar2) {
+    out_points_array[1].x = pCVar2->x;
+    out_points_array[1].y = pCVar2->y;
+    out_points_array[1].z = pCVar2->z;
   }
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                      (&(this_ptr->base).base.model,&local_18,INT_0082295c);
-  if (out_points_array + 2 != pCVar1) {
-    out_points_array[2].x = pCVar1->x;
-    out_points_array[2].y = pCVar1->y;
-    out_points_array[2].z = pCVar1->z;
+  if (out_points_array + 2 != pCVar2) {
+    out_points_array[2].x = pCVar2->x;
+    out_points_array[2].y = pCVar2->y;
+    out_points_array[2].z = pCVar2->z;
   }
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                      (&(this_ptr->base).base.model,&local_3c,INT_00822968);
-  if (out_points_array + 3 != pCVar1) {
-    out_points_array[3].x = pCVar1->x;
-    out_points_array[3].y = pCVar1->y;
-    out_points_array[3].z = pCVar1->z;
+  if (out_points_array + 3 != pCVar2) {
+    out_points_array[3].x = pCVar2->x;
+    out_points_array[3].y = pCVar2->y;
+    out_points_array[3].z = pCVar2->z;
   }
-  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+  pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                      (&(this_ptr->base).base.model,&local_48,INT_0082296c);
-  if (out_points_array + 4 != pCVar1) {
-    out_points_array[4].x = pCVar1->x;
-    out_points_array[4].y = pCVar1->y;
-    out_points_array[4].z = pCVar1->z;
+  if (out_points_array + 4 != pCVar2) {
+    out_points_array[4].x = pCVar2->x;
+    out_points_array[4].y = pCVar2->y;
+    out_points_array[4].z = pCVar2->z;
   }
   return 5;
 }

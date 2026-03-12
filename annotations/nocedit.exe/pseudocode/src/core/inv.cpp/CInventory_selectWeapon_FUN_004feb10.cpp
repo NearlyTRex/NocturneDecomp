@@ -9,12 +9,13 @@
 void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004feb10(CInventory *this_ptr,CDemonActor *specific_weapon,int weapon_category,int direction)
 
 {
-  CWeapon *this_ptr_00;
+  CWeapon *this_ptr_01;
   CWeapon *weapon_actor;
   int iVar1;
   int iVar2;
   int iVar3;
   CInventory *pCVar4;
+  CWeapon *this_ptr_00;
   
   if (this_ptr->item_count < 1) {
     this_ptr->selected_weapon = (CWeapon *)0x0;
@@ -54,10 +55,10 @@ void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004feb10(CInventory *this_
         return;
       }
     }
-    this_ptr_00 = this_ptr->selected_weapon;
-    if (this_ptr_00 != weapon_actor) {
-      if (this_ptr_00 != (CWeapon *)0x0) {
-        (*((this_ptr_00->base).vtable._ub)->process)(&this_ptr_00->base,0.1);
+    this_ptr_01 = this_ptr->selected_weapon;
+    if (this_ptr_01 != weapon_actor) {
+      if (this_ptr_01 != (CWeapon *)0x0) {
+        (*((this_ptr_01->base).vtable._ub)->process)(&this_ptr_01->base,0.1);
       }
       this_ptr->selected_weapon = weapon_actor;
       core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(this_ptr);

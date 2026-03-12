@@ -9,11 +9,11 @@
 void __cdecl core_turret_cpp_CTurret_setup_FUN_005e2240(CTurret *this_ptr)
 
 {
-  float fVar1;
   CKeyFramedModel *this_ptr_00;
   CVector3i *pCVar2;
   int iVar3;
   float local_18;
+  float fVar1;
   
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
   core_weapon_cpp_CWeapon_setup_FUN_005edff0(&this_ptr->base);

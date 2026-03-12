@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   scale_factor
 ; int              Stack[0x10]:4   tolerance
 ; Local Variables:
-; undefined4       Stack[-0x2c]:4  local_2c
+; int              Stack[-0x2c]:4  local_2c
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20

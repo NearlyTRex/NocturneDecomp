@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 32,
-        "line": 39,
+        "line": 45,
         "message": "format specifies type 'float *' but the argument has type 'CInventory *' [-Werror,-Wformat]"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 129,
+    "complexity_score": 136,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 17,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 104,
+    "pseudocode_lines": 111,
     "suspect_count": 2,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 374
+    "total_lines": 381
   },
   "cross_references": [
     {
@@ -242,36 +242,29 @@
         "is_param": false,
         "name": "local_1dc",
         "offset": -476,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_dc",
         "offset": -220,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_78",
         "offset": -120,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_77",
-        "offset": -119,
-        "size": 1,
-        "type": "undefined1"
+        "size": 100,
+        "type": "char[100]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -292,15 +285,15 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 45,
       "match": "DAT_0067ce48",
       "severity": "mild",
-      "text": "puVar8 = &DAT_0067ce48;",
+      "text": "puVar6 = &DAT_0067ce48;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 52,
       "match": "DAT_0067ceb0",
       "severity": "mild",
       "text": "puVar8 = &DAT_0067ceb0;",

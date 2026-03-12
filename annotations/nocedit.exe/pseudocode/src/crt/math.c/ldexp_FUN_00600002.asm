@@ -8,8 +8,11 @@
 ; int              Stack[0xc]:4   exp
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined8       Stack[-0x1c]:8  local_1c
+; undefined2       Stack[-0x20]:2  local_20
+; ushort           Stack[-0x1e]:2  uStack_1e
+; undefined2       Stack[-0x1c]:2  local_1c
+; undefined2       Stack[-0x1a]:2  uStack_1a
+; undefined4       Stack[-0x18]:4  uStack_18
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined1       Stack[-0xc]:1  local_c

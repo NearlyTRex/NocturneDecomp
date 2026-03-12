@@ -4,15 +4,7 @@
 ; int crt_unknown_c_FUN_00607858(int param_1,int param_2)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; _tm              Stack[-0x34]:36  local_34
 ;
 ; XREF[1]:
 ;   crt_unknown.c_FUN_00607958 at 0060798a

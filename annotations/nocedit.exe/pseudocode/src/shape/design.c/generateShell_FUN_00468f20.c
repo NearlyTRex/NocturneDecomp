@@ -9,8 +9,17 @@
 void __cdecl shape_design_c_generateShell_FUN_00468f20(void)
 
 {
-  char cVar1;
+  char cVar2;
+  float radius;
+  float latitude_degrees;
+  float fVar3;
+  float fVar4;
+  float longitude_degrees;
+  int iVar5;
   int iVar2;
+  int iVar6;
+  int iVar7;
+  char *pcVar8;
   char *pcVar3;
   byte bVar4;
   double dVar5;
@@ -25,62 +34,63 @@ void __cdecl shape_design_c_generateShell_FUN_00468f20(void)
   float local_1c;
   float local_18;
   float local_14;
+  char cVar1;
   
   bVar4 = 0;
   g_PolygonCount = 0;
   g_VertexCount = 0;
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_88,10,0,0,"Enter in size in heading : ");
   iVar2 = -1;
-  pcVar3 = local_88;
+  pcVar8 = local_88;
   do {
     if (iVar2 == 0) break;
     iVar2 = iVar2 + -1;
-    cVar1 = *pcVar3;
-    pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
+    cVar1 = *pcVar8;
+    pcVar8 = pcVar8 + (uint)bVar4 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar2 != -2) {
-    local_34 = atoi(local_88);
-    local_18 = (float)180 / (float)local_34;
+    iVar5 = atoi(local_88);
+    fVar3 = (float)180 / (float)iVar5;
     engine_2d_c_getInputWithPrompt_FUN_004032c0(local_88,10,0,0xb,"Enter in size in pitch : ")
     ;
-    iVar2 = -1;
-    pcVar3 = local_88;
+    iVar6 = -1;
+    pcVar8 = local_88;
     do {
-      if (iVar2 == 0) break;
-      iVar2 = iVar2 + -1;
-      cVar1 = *pcVar3;
-      pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
-    } while (cVar1 != '\0');
-    if (iVar2 != -2) {
-      local_30 = atoi(local_88);
-      local_14 = (float)180 / (float)local_30;
+      if (iVar6 == 0) break;
+      iVar6 = iVar6 + -1;
+      cVar2 = *pcVar8;
+      pcVar8 = pcVar8 + (uint)bVar4 * -2 + 1;
+    } while (cVar2 != '\0');
+    if (iVar6 != -2) {
+      iVar6 = atoi(local_88);
+      fVar4 = (float)180 / (float)iVar6;
       engine_2d_c_getInputWithPrompt_FUN_004032c0(local_88,10,0,0x16,"Enter in radius : ");
-      iVar2 = -1;
+      iVar7 = -1;
       pcVar3 = local_88;
       do {
-        if (iVar2 == 0) break;
-        iVar2 = iVar2 + -1;
-        cVar1 = *pcVar3;
+        if (iVar7 == 0) break;
+        iVar7 = iVar7 + -1;
         pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
-      } while (cVar1 != '\0');
-      if (iVar2 != -2) {
+        cVar2 = *pcVar3;
+        pcVar3 = pcVar3;
+      } while (cVar2 != '\0');
+      if (iVar7 != -2) {
         dVar5 = _strtod(local_88);
-        local_1c = (float)dVar5;
-        for (local_28 = 0; local_28 <= local_30; local_28 = local_28 + 1) {
-          for (local_2c = 0; local_2c < local_34; local_2c = local_2c + 1) {
-            local_38 = g_VertexCount;
-            local_24 = (float)local_2c * local_18;
-            local_20 = (float)90 - (float)local_28 * local_14;
+        radius = (float)dVar5;
+        for (local_28 = 0; local_28 <= iVar6; local_28 = local_28 + 1) {
+          for (local_2c = 0; iVar7 = g_VertexCount, local_2c < iVar5; local_2c = local_2c + 1) {
+            latitude_degrees = (float)local_2c * fVar3;
+            longitude_degrees = (float)90 - (float)local_28 * fVar4;
             shape_design_c_addVertexFromSphericalCoordsHalfSphere_FUN_00468c40
-                      (local_24,local_20,local_1c);
+                      (latitude_degrees,longitude_degrees,radius);
             shape_design_c_addVertexFromSphericalCoordsHalfSphere_FUN_00468c40
-                      (local_24 + local_18,local_20,local_1c);
+                      (latitude_degrees + fVar3,longitude_degrees,radius);
             shape_design_c_addVertexFromSphericalCoordsHalfSphere_FUN_00468c40
-                      (local_24 + local_18,local_20 + local_14,local_1c);
+                      (latitude_degrees + fVar3,longitude_degrees + fVar4,radius);
             shape_design_c_addVertexFromSphericalCoordsHalfSphere_FUN_00468c40
-                      (local_24,local_20 + local_14,local_1c);
+                      (latitude_degrees,longitude_degrees + fVar4,radius);
             shape_design_c_addQuadPolygonHalfSphere_FUN_00468d20
-                      (local_38 + 3,local_38 + 2,local_38 + 1,local_38);
+                      (iVar7 + 3,iVar7 + 2,iVar7 + 1,iVar7);
           }
         }
       }

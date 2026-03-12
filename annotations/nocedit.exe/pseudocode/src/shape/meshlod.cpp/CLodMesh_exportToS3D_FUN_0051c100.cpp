@@ -9,14 +9,16 @@
 int __cdecl shape_meshlod_cpp_CLodMesh_exportToS3D_FUN_0051c100(CLodMesh *this_ptr,_FILE *file_ptr)
 
 {
-  double dVar1;
-  CLodFace *pCVar2;
-  CLodVert *pCVar3;
-  int iVar4;
-  int iVar5;
   int iVar6;
   int iVar7;
   int iVar8;
+  int iVar1;
+  int iVar2;
+  double dVar1;
+  CLodFace *pCVar2;
+  int iVar5;
+  CLodVert *pCVar3;
+  int iVar4;
   
   _fprintf(file_ptr,"// S3D version\n");
   _fprintf(file_ptr,"%d\n");
@@ -27,7 +29,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_exportToS3D_FUN_0051c100(CLodMesh *this_p
   _fprintf(file_ptr,"0,%d,0,%d, \"TheOnlyPart\"\n",this_ptr->vertex_count)
   ;
   _fprintf(file_ptr,"// texture list: name\n");
-  iVar6 = 0;
+  iVar1 = 0;
   _fprintf(file_ptr,"// triList: textureIndex,vertices(index, texX, texY)\n");
   if (0 < this_ptr->tri_count) {
     iVar7 = 0;
@@ -46,27 +48,27 @@ int __cdecl shape_meshlod_cpp_CLodMesh_exportToS3D_FUN_0051c100(CLodMesh *this_p
                    (double)*(float *)((int)pCVar2->uv_coords[2] + iVar7),
                    (double)*(float *)((int)pCVar2->uv_coords[2] + iVar7 + 4));
       }
-      iVar6 = iVar6 + 1;
+      iVar1 = iVar1 + 1;
       iVar7 = iVar7 + 0x8c;
-    } while (iVar6 < this_ptr->tri_count);
+    } while (iVar1 < this_ptr->tri_count);
   }
-  iVar7 = 0;
-  iVar6 = _fprintf(file_ptr,"// vertexList: x,y,z\n");
+  iVar2 = 0;
+  iVar1 = _fprintf(file_ptr,"// vertexList: x,y,z\n");
   if (0 < this_ptr->vertex_count) {
     iVar8 = 0;
     do {
       pCVar3 = this_ptr->vertex_data;
-      iVar6 = iVar8 + -8;
+      iVar1 = iVar8 + -8;
       iVar4 = iVar8 + -0xc;
       iVar5 = iVar8 + -0x10;
       iVar8 = iVar8 + 0x4c4;
-      iVar7 = iVar7 + 1;
-      iVar6 = _fprintf(file_ptr,"%f,%f,%f\n",
+      iVar2 = iVar2 + 1;
+      iVar1 = _fprintf(file_ptr,"%f,%f,%f\n",
                          SUB84(__BITCAST_UINT64((double)*(float *)(pCVar3->lod_workspace + iVar5)),0),
                          (int)((ulonglong)(double)*(float *)(pCVar3->lod_workspace + iVar5) >> 0x20)
                          ,(double)*(float *)(pCVar3->lod_workspace + iVar4),
-                         (double)*(float *)(pCVar3->lod_workspace + iVar6));
-    } while (iVar7 < this_ptr->vertex_count);
+                         (double)*(float *)(pCVar3->lod_workspace + iVar1));
+    } while (iVar2 < this_ptr->vertex_count);
   }
-  return iVar6;
+  return iVar1;
 }

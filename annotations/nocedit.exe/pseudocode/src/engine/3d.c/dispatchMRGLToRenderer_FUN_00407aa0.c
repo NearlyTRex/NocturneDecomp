@@ -9,12 +9,15 @@
 void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SMRGLHeaderExtended *mrgl)
 
 {
-  uint *puVar1;
-  char cVar2;
-  byte bVar3;
+  uint *puVar2;
   int iVar4;
+  int iVar3;
+  int iVar6;
   int iVar5;
   char local_110 [256];
+  char cVar2;
+  byte bVar3;
+  uint *puVar1;
   
   cVar2 = (char)(mrgl->base).type;
   g_RenderFaceCount = 0;
@@ -23,11 +26,11 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SMRGLHeaderExtended
       if (g_RenderFaceCount != 0) {
         if (g_UseExternalRenderer == 0) {
           iVar5 = 0;
-          iVar4 = 0;
+          iVar3 = 0;
           if (0 < g_RenderFaceCount) {
             do {
-              puVar1 = (uint *)((int)g_RenderFaceArray + iVar4);
-              iVar4 = iVar4 + 4;
+              puVar1 = (uint *)((int)g_RenderFaceArray + iVar3);
+              iVar3 = iVar3 + 4;
               iVar5 = iVar5 + 1;
               engine_3d_c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50
                         ((SMRGLHeaderPrimitive *)*puVar1);
@@ -71,16 +74,16 @@ LAB_00407c82:
         if (bVar3 != 0xd) goto LAB_00407c82;
         if (g_RenderFaceCount != 0) {
           if (g_UseExternalRenderer == 0) {
-            iVar4 = 0;
+            iVar3 = 0;
             if (0 < g_RenderFaceCount) {
-              iVar5 = 0;
+              iVar6 = 0;
               do {
-                puVar1 = (uint *)((int)g_RenderFaceArray + iVar5);
-                iVar5 = iVar5 + 4;
-                iVar4 = iVar4 + 1;
+                puVar2 = (uint *)((int)g_RenderFaceArray + iVar6);
+                iVar6 = iVar6 + 4;
+                iVar3 = iVar3 + 1;
                 engine_3d_c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50
-                          ((SMRGLHeaderPrimitive *)*puVar1);
-              } while (iVar4 < g_RenderFaceCount);
+                          ((SMRGLHeaderPrimitive *)*puVar2);
+              } while (iVar3 < g_RenderFaceCount);
             }
           }
           else {
@@ -99,9 +102,9 @@ LAB_00407c82:
         engine_3d_c_renderPrimitivePlaneMaskedComplex_FUN_004046c0((SMRGLHeaderPrimitive *)mrgl);
       }
       else if (bVar3 < 0x2a) {
-        iVar4 = engine_3d_c_isVisiblePlane_FUN_00403950
+        iVar3 = engine_3d_c_isVisiblePlane_FUN_00403950
                           (&((SMRGLHeaderPrimitive *)mrgl)->surface_normal);
-        if (iVar4 != 0) {
+        if (iVar3 != 0) {
           if (1999 < g_RenderFaceCount) {
             g_CurrentFilename = "..\\engine\\3d.c";
             g_CurrentLineNumber = 0xca7;

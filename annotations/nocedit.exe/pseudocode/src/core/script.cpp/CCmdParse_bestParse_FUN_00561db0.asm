@@ -11,10 +11,11 @@
 ; int              Stack[0x14]:4   template_count
 ; Local Variables:
 ; CPickList        Stack[-0x464]:936  local_464
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int[20]          Stack[-0xbc]:80  aiStack_bc
+; int[20]          Stack[-0x6c]:80  local_6c
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
 ;   core_script.cpp_CScript_executeContextAction_FUN_00565d00 at 00565d4c

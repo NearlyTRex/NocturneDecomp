@@ -7,7 +7,7 @@
 ; CScript *        Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   path
 ; Local Variables:
-; undefined1       Stack[-0x110]:1  local_110
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_dbLoad_FUN_005603c0 at 00560562

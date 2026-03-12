@@ -9,17 +9,18 @@
 void __cdecl core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart *this_ptr,int layer_flag)
 
 {
-  CConsole *this_ptr_00;
   CBoundingBox3D *this_ptr_01;
   int iVar1;
+  int iVar3;
   int iVar2;
   CBoundingBox3D local_20;
+  CConsole *this_ptr_00;
   
   if (this_ptr->render_in_background == 0) {
     if ((((layer_flag != 0) && (this_ptr->carried_by_actor == (CDemonActor *)0x0)) &&
         ((this_ptr->physics_box).is_valid == 0)) &&
-       (iVar1 = (*((this_ptr->base).vtable._ub)->getAllowedMeleeAttackTypes)(&this_ptr->base),
-       this_ptr_00 = g_CConsolePtr, iVar1 == 0)) {
+       (iVar3 = (*((this_ptr->base).vtable._ub)->getAllowedMeleeAttackTypes)(&this_ptr->base),
+       this_ptr_00 = g_CConsolePtr, iVar3 == 0)) {
       this_ptr->render_in_background = 1;
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (this_ptr_00,"%s going into background\n",this_ptr);

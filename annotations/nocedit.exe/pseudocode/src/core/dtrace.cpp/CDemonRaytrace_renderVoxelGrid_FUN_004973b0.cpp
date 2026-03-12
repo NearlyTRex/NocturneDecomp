@@ -9,12 +9,6 @@
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_004973b0(CDemonRaytrace *this_ptr,uchar *voxel_data,int grid_x,int grid_y,int grid_z)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
   int iVar7;
   int iVar8;
   CVector3f local_34;
@@ -24,6 +18,12 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_004973b0(CDemonR
   int local_1c;
   int local_18;
   int local_14;
+  float fVar3;
+  float fVar2;
+  float fVar1;
+  float fVar6;
+  float fVar5;
+  float fVar4;
   
   fVar1 = (this_ptr->cell_size).x;
   fVar2 = (this_ptr->bbox_min).x;
@@ -40,12 +40,10 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_004973b0(CDemonR
     do {
       if ((*(int *)voxel_data != 0) && (*(char *)(*(int *)voxel_data + local_24) != '\0')) {
         iVar7 = 0;
-        local_18 = local_20;
         do {
-          if ((*(byte *)(*(int *)voxel_data + local_18) & g_VoxelYBitMasks[iVar7]) != 0) {
+          if ((*(byte *)(*(int *)voxel_data + local_20) & g_VoxelYBitMasks[iVar7]) != 0) {
             local_34.x = (float)iVar7 * (this_ptr->cell_size).x * 0.125f +
                          (float)grid_x * fVar1 + fVar2;
-            local_14 = local_1c;
             local_34.y = (float)iVar8 * (this_ptr->cell_size).y * 0.125f +
                          (float)grid_y * fVar3 + fVar4;
             local_34.z = (float)local_1c * (this_ptr->cell_size).z * 0.125f +

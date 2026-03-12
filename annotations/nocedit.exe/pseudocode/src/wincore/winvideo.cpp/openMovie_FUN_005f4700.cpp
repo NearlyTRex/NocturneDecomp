@@ -9,14 +9,15 @@
 void __cdecl wincore_winvideo_cpp_openMovie_FUN_005f4700(HWND parent_window,char *movie_filename)
 
 {
-  byte *pbVar1;
   MCIERROR MVar2;
+  MCIERROR mcierr;
   byte *pbVar3;
   char local_1b4 [260];
   byte bStack_b0;
   byte abStack_af [127];
   tagRECT tStack_30;
   tagRECT tStack_20;
+  byte *pbVar1;
   
   if (g_MoviePlaying != 0) {
     wincore_winvideo_cpp_closeMovie_FUN_005f46b0(parent_window);
@@ -30,12 +31,12 @@ void __cdecl wincore_winvideo_cpp_openMovie_FUN_005f4700(HWND parent_window,char
     return;
   }
   g_MoviePlaying = 1;
-  MVar2 = (*g_mciSendStringAFunc)("status mov window handle",local_1b4,0x104,(HWND)0x0);
-  if (MVar2 == 0) {
+  mcierr = (*g_mciSendStringAFunc)("status mov window handle",local_1b4,0x104,(HWND)0x0);
+  if (mcierr == 0) {
     g_MovieWindowHandle = (HWND)atoi(local_1b4);
   }
   else {
-    (*g_mciGetErrorStringAFunc)(MVar2,local_1b4,0x104);
+    (*g_mciGetErrorStringAFunc)(mcierr,local_1b4,0x104);
     (*g_MessageBoxAFunc)(parent_window,local_1b4,(LPCSTR)0x0,0x30);
   }
   if ((g_FullscreenMovie == 0) && (g_MoviePlaying != 0)) {

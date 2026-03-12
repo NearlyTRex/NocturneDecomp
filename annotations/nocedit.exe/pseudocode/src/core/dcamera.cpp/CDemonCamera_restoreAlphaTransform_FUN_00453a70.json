@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 84,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 50,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 159
+    "total_lines": 160
   },
   "cross_references": [
     {
@@ -162,7 +162,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 28,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -10) + alpha_index * 4)",
@@ -170,7 +170,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 33,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x58)",
@@ -178,7 +178,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 39,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x38",

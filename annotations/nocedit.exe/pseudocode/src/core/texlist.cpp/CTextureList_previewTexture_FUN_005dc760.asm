@@ -6,19 +6,12 @@
 ; Parameters:
 ; CTextureList *   Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
+; SMRGLHeaderPrimitive Stack[-0x50]:24  SStack_50
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined4       Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
-; undefined        Stack[-0x28]:1  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined        Stack[-0x20]:1  local_20
-; undefined1       Stack[-0x1f]:1  local_1f
+; SMRGLTextureBasic Stack[-0x28]:24  local_28
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

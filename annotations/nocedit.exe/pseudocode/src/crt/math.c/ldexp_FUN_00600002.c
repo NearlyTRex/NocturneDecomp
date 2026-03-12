@@ -9,13 +9,13 @@
 double __cdecl ldexp(double x,int exp)
 
 {
-  double dVar1;
   int iVar2;
   ushort local_20;
   ushort uStack_1e;
   ushort local_1c;
   ushort uStack_1a;
   uint uStack_18;
+  double dVar1;
   
   local_20 = (ushort)((ulonglong)x >> 0x20);
   uStack_1e = (ushort)((ulonglong)x >> 0x30);

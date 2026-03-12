@@ -6,8 +6,8 @@
 ; Parameters:
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x24]:1  local_24
-; undefined1       Stack[-0x18]:1  local_18
+; CVector3f        Stack[-0x24]:12  local_24
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_head_0065335a

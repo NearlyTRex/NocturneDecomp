@@ -1,20 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 195,
+    "complexity_score": 208,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 65,
-    "suspect_count": 11,
+    "pseudocode_lines": 63,
+    "suspect_count": 12,
     "suspect_types": [
       "special_crt_function",
       "unaffected_reg",
       "undefined_data",
-      "undefined_ptr_cast"
+      "undefined_ptr_cast",
+      "unknown_field"
     ],
-    "total_lines": 196
+    "total_lines": 194
   },
   "cross_references": [
     {
@@ -111,32 +112,39 @@
     "pcode_op_count": 477
   },
   "stack_frame": {
-    "frame_size": 48,
-    "local_size": 36,
+    "frame_size": 80,
+    "local_size": 68,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "abStack_40",
+        "offset": -64,
+        "size": 32,
+        "type": "byte[32]"
+      },
+      {
+        "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -172,55 +180,55 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 28,
+      "line": 31,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "unaff_ESI = *(byte **)pcVar3;",
+      "text": "unaff_ESI = *(byte **)pcVar1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 33,
+      "line": 36,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "unaff_ESI = *(byte **)pcVar3;",
+      "text": "unaff_ESI = *(byte **)pcVar1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Cast to undefined pointer type",
-      "line": 39,
+      "line": 42,
       "match": "(undefined6 *)",
       "severity": "moderate",
-      "text": "unaff_ESI = (byte *)*(undefined6 *)pcVar3;",
+      "text": "unaff_ESI = (byte *)*(undefined6 *)pcVar1;",
       "type": "undefined_ptr_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 39,
+      "line": 42,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "unaff_ESI = (byte *)*(undefined6 *)pcVar3;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = 0;",
+      "text": "unaff_ESI = (byte *)*(undefined6 *)pcVar1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 51,
       "match": "DAT_00685030",
       "severity": "mild",
-      "text": "if ((((&DAT_00685030)[local_18 & 7] & abStack_40[(int)local_18 >> 3]) == 0) != local_1c) {",
+      "text": "if ((((&DAT_00685030)[character & 7] & abStack_40[(int)character >> 3]) == 0) != bVar2) break;",
       "type": "undefined_data"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 55,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "local_18._0_1_ = (byte)character;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 64,
+      "line": 56,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = (byte)local_18;",
@@ -228,7 +236,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 65,
+      "line": 57,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + 1;",
@@ -236,10 +244,18 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 65,
+      "line": 57,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 63,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = 0;",
       "type": "unaffected_reg"
     },
     {

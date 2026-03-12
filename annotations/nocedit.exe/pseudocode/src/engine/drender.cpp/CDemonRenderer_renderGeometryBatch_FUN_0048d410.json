@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 26,
-        "line": 39,
+        "line": 42,
         "message": "no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 194,
+    "complexity_score": 191,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 119,
+    "pseudocode_lines": 116,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 404
+    "total_lines": 401
   },
   "cross_references": [],
   "function": {
@@ -199,22 +199,22 @@
         "is_param": false,
         "name": "local_68",
         "offset": -104,
-        "size": 4,
-        "type": "undefined4"
+        "size": 72,
+        "type": "CVector3i[6]"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -256,23 +256,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 39,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "(pSVar4 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
+      "text": "(v1 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 44,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "vertex_indices = (int *)((int)vertex_indices + local_14);",
+      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 56,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_68[0].x + iVar2) = (uint)*puVar1;",
@@ -280,10 +280,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 76,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "vertex_indices = (int *)((int)vertex_indices + local_14);",
+      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
       "type": "pointer_cast"
     },
     {
@@ -299,15 +299,15 @@
       "line": 100,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&local_68[0].x + iVar2) = (uint)*puVar1;",
+      "text": "*(uint *)((int)&local_68[0].x + iVar4) = (uint)*puVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 115,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "vertex_indices = (int *)((int)vertex_indices + local_18);",
+      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
       "type": "pointer_cast"
     }
   ]

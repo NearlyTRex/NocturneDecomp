@@ -9,6 +9,7 @@
 void __cdecl sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0(int *out_referenced_count,int *out_total_bytes_referenced,int *out_unreferenced_count,int *out_total_bytes_unreferenced,int *out_free_slots,int *out_available_memory)
 
 {
+  int iVar4;
   int iVar1;
   CSfxSample *this_ptr;
   int iVar2;
@@ -27,8 +28,8 @@ void __cdecl sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0(int *out_referen
     if (0 < g_SfxSamples[iVar3].streaming_buffer_size) {
       if ((g_SfxSamples[iVar3].ref_count == 0) && (g_SfxSamples[iVar3].taken == 0)) {
         local_1c = local_1c + 1;
-        iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(g_SfxSamples + iVar3);
-        local_14 = local_14 + iVar1 * g_SfxSamples[iVar3].streaming_buffer_size;
+        iVar4 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(g_SfxSamples + iVar3);
+        local_14 = local_14 + iVar4 * g_SfxSamples[iVar3].streaming_buffer_size;
       }
       else {
         iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
@@ -55,8 +56,8 @@ void __cdecl sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0(int *out_referen
     *out_free_slots = 0x40 - (local_18 + local_1c);
   }
   if ((out_available_memory != (int *)0x0) &&
-     (iVar2 = g_MaximumSoundMemoryBudget - (iVar2 + local_14), *out_available_memory = iVar2,
-     iVar2 < 0)) {
+     (iVar4 = g_MaximumSoundMemoryBudget - (iVar2 + local_14), *out_available_memory = iVar4,
+     iVar4 < 0)) {
     *out_available_memory = 0;
     return;
   }

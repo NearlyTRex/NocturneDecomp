@@ -6,25 +6,21 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; Local Variables:
-; undefined4       Stack[-0x9e4]:4  local_9e4
-; undefined1       Stack[-0x9e0]:1  local_9e0
-; undefined1       Stack[-0x9df]:1  local_9df
-; undefined1       Stack[-0x9dd]:1  local_9dd
-; undefined1       Stack[-0x8dc]:1  local_8dc
-; undefined1       Stack[-0x8d8]:1  local_8d8
-; undefined1       Stack[-0x108]:1  local_108
-; undefined4       Stack[-0x40]:4  local_40
+; int              Stack[-0x9e4]:4  local_9e4
+; char[260]        Stack[-0x9e0]:260  local_9e0
+; undefined1[4]    Stack[-0x8dc]:4  local_8dc
+; int[500]         Stack[-0x8d8]:2000  local_8d8
+; char[200]        Stack[-0x108]:200  local_108
+; uint             Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x38]:4  local_38
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined1       Stack[-0x24]:1  local_24
-; undefined1       Stack[-0x20]:1  local_20
-; undefined1       Stack[-0x1c]:1  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; void *           Stack[-0x38]:4  local_38
+; _FILE *          Stack[-0x34]:4  local_34
+; int[3]           Stack[-0x30]:12  local_30
+; undefined1[4]    Stack[-0x24]:4  local_24
+; undefined1[4]    Stack[-0x20]:4  local_20
+; undefined1[4]    Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; SShapeEditorPolygon * Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_loadModelFile_FUN_00458ac0 at 00458bfc

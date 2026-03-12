@@ -7,8 +7,7 @@
 ; char *           Stack[0x4]:4   directory
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x214]:1  local_214
-; undefined4       Stack[-0x10]:4  local_10
+; SFoundFileInfo   Stack[-0x214]:532  local_214
 ;
 ; XREF[36]:
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40 at 0054bf6e

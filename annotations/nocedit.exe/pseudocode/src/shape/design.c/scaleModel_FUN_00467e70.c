@@ -9,14 +9,14 @@
 void __cdecl shape_design_c_scaleModel_FUN_00467e70(void)
 
 {
-  char cVar1;
-  float fVar2;
   int iVar3;
   char *pcVar4;
   byte bVar5;
   double dVar6;
   char local_68 [80];
   int local_18;
+  char cVar1;
+  float fVar2;
   
   bVar5 = 0;
   engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -28,8 +28,9 @@ void __cdecl shape_design_c_scaleModel_FUN_00467e70(void)
   do {
     if (iVar3 == 0) break;
     iVar3 = iVar3 + -1;
-    cVar1 = *pcVar4;
     pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
+    cVar1 = *pcVar4;
+    pcVar4 = pcVar4;
   } while (cVar1 != '\0');
   if (iVar3 != -2) {
     dVar6 = _strtod(local_68);

@@ -6,7 +6,8 @@
 ; Parameters:
 ; CFlameCan *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x38]:1  local_38
+; CBoundingBox3D   Stack[-0x38]:24  local_38
+; float[6]         Stack[-0x20]:24  afStack_20
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00408bb0

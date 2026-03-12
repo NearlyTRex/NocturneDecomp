@@ -11,7 +11,6 @@
 void __cdecl core_boneguy_cpp_CBoneGuy_beginRecombine_FUN_0041d8a0(CBoneGuy *this_ptr)
 
 {
-  CBodyPart *pCVar1;
   CLocation *pCVar2;
   CBoneGuy *pCVar3;
   CVector3f *pCVar4;
@@ -22,6 +21,7 @@ void __cdecl core_boneguy_cpp_CBoneGuy_beginRecombine_FUN_0041d8a0(CBoneGuy *thi
   float afStackY_1800 [1525];
   CQuaternion4f local_24;
   int local_14;
+  CBodyPart *pCVar1;
   
   bVar8 = 0;
   local_14 = 0;

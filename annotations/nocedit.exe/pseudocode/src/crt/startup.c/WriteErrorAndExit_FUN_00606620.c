@@ -9,10 +9,10 @@
 void __cdecl WriteErrorAndExit(char *error_message,int exit_code)
 
 {
-  char cVar1;
   char *pcVar2;
   DWORD nNumberOfBytesToWrite;
   DWORD in_stack_fffffff8;
+  char cVar1;
   
   nNumberOfBytesToWrite = 0;
   pcVar2 = error_message;

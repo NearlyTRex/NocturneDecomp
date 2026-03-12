@@ -1,20 +1,35 @@
 {
   "compilation_status": {
-    "errors": [],
-    "success": true,
+    "errors": [
+      {
+        "category": "other",
+        "column": 10,
+        "line": 53,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 54,
+        "message": "member reference base type 'uint' (aka 'unsigned int') is not a structure or union"
+      }
+    ],
+    "success": false,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 229,
-    "complexity_score": 111,
+    "complexity_score": 142,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 23,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 111,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 340
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 117,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unknown_field"
+    ],
+    "total_lines": 346
   },
   "cross_references": [],
   "function": {
@@ -244,5 +259,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 46,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "uVar8._0_2_ = (ushort)(vertex_a->base).z_gradient;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._0_2_",
+      "severity": "mild",
+      "text": "uVar8._0_2_ = (ushort)uVar8 ^ 0xffff;",
+      "type": "unknown_field"
+    }
+  ]
 }

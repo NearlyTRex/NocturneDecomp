@@ -9,16 +9,19 @@
 void __cdecl core_chain_cpp_CChain_constrainSegmentDistance_FUN_0042fed0(CChain *this_ptr,SChainVertex *vertex_a,SChainVertex *vertex_b)
 
 {
-  float *pfVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
+  float fVar1;
+  float fVar7;
+  float fVar8;
   float fVar6;
   float local_68 [12];
   float local_38;
   float local_34;
   float local_30;
+  float fVar3;
+  float fVar4;
+  float *pfVar1;
+  float fVar2;
+  float fVar5;
   
   if ((this_ptr->ground_collide_flag != 0) && ((vertex_a->position).y < this_ptr->cached_distance))
   {
@@ -37,27 +40,27 @@ void __cdecl core_chain_cpp_CChain_constrainSegmentDistance_FUN_0042fed0(CChain 
   if (fVar6 <= this_ptr->segment_length) {
     return;
   }
-  fVar2 = fVar6 - this_ptr->segment_length;
-  fVar6 = 1.0 / fVar6;
-  fVar4 = local_38 * fVar2 * fVar6;
-  fVar5 = local_34 * fVar2 * fVar6;
-  fVar6 = local_30 * fVar2 * fVar6;
+  fVar1 = fVar6 - this_ptr->segment_length;
+  fVar8 = 1.0 / fVar6;
+  fVar4 = local_38 * fVar1 * fVar8;
+  fVar5 = local_34 * fVar1 * fVar8;
+  fVar8 = local_30 * fVar1 * fVar8;
   (vertex_a->position).x = (vertex_a->position).x - fVar4;
   (vertex_a->position).y = (vertex_a->position).y - fVar5;
   pfVar1 = &this_ptr->inv_delta_time;
-  (vertex_a->position).z = (vertex_a->position).z - fVar6;
+  (vertex_a->position).z = (vertex_a->position).z - fVar8;
   fVar2 = *pfVar1;
   fVar3 = *pfVar1;
   (vertex_a->velocity).x = (vertex_a->velocity).x - fVar4 * *pfVar1;
   (vertex_a->velocity).y = (vertex_a->velocity).y - fVar5 * fVar2;
-  (vertex_a->velocity).z = (vertex_a->velocity).z - fVar6 * fVar3;
+  (vertex_a->velocity).z = (vertex_a->velocity).z - fVar8 * fVar3;
   (vertex_b->position).x = (vertex_b->position).x + fVar4;
   (vertex_b->position).y = (vertex_b->position).y + fVar5;
-  (vertex_b->position).z = (vertex_b->position).z + fVar6;
-  fVar2 = *pfVar1;
-  fVar3 = *pfVar1;
+  (vertex_b->position).z = (vertex_b->position).z + fVar8;
+  fVar1 = *pfVar1;
+  fVar7 = *pfVar1;
   (vertex_b->velocity).x = (vertex_b->velocity).x + fVar4 * *pfVar1;
-  (vertex_b->velocity).y = (vertex_b->velocity).y + fVar5 * fVar2;
-  (vertex_b->velocity).z = (vertex_b->velocity).z + fVar6 * fVar3;
+  (vertex_b->velocity).y = (vertex_b->velocity).y + fVar5 * fVar1;
+  (vertex_b->velocity).z = (vertex_b->velocity).z + fVar8 * fVar7;
   return;
 }

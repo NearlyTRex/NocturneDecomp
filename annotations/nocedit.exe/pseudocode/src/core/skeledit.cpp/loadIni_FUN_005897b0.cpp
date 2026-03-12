@@ -11,8 +11,11 @@ void __cdecl core_skeledit_cpp_loadIni_FUN_005897b0(void)
 {
   _FILE *file;
   int iVar1;
+  int iVar3;
   int iVar2;
+  int iVar4;
   char *pcVar3;
+  char *pcVar5;
   int local_10;
   
   __STK();
@@ -35,83 +38,83 @@ void __cdecl core_skeledit_cpp_loadIni_FUN_005897b0(void)
     remove("skeledit.ini");
     return;
   }
-  iVar2 = 1;
+  iVar4 = 1;
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
+    iVar3 = _fgetc(file);
+    if (iVar3 < 0) break;
+  } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
   g_SkeleditLastPOSImported[0] = '\0';
   do {
-    iVar2 = _fgetc(file);
-    if ((iVar2 < 0) || (iVar2 == 10)) goto LAB_00589863;
-    pcVar3 = g_SkeleditLastPOSImported;
-  } while (iVar2 != 0x22);
-  while ((iVar2 = _fgetc(file), -1 < iVar2 && (iVar2 != 10))) {
-    if (iVar2 == 0x22) {
-      iVar2 = 1;
+    iVar4 = _fgetc(file);
+    if ((iVar4 < 0) || (iVar4 == 10)) goto LAB_00589863;
+    pcVar5 = g_SkeleditLastPOSImported;
+  } while (iVar4 != 0x22);
+  while ((iVar4 = _fgetc(file), -1 < iVar4 && (iVar4 != 10))) {
+    if (iVar4 == 0x22) {
+      iVar4 = 1;
       goto LAB_005899ac;
     }
-    *pcVar3 = (char)iVar2;
-    pcVar3[1] = '\0';
-    pcVar3 = pcVar3 + 1;
+    *pcVar5 = (char)iVar4;
+    pcVar5[1] = '\0';
+    pcVar5 = pcVar5 + 1;
   }
   goto LAB_00589863;
-  while ((iVar1 != 10 || (iVar2 = iVar2 + -1, 0 < iVar2))) {
+  while ((iVar3 != 10 || (iVar4 = iVar4 + -1, 0 < iVar4))) {
 LAB_00589a04:
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
+    iVar3 = _fgetc(file);
+    if (iVar3 < 0) break;
   }
   goto LAB_005898a6;
-  while ((iVar1 != 10 || (iVar2 = iVar2 + -1, 0 < iVar2))) {
+  while ((iVar3 != 10 || (iVar4 = iVar4 + -1, 0 < iVar4))) {
 LAB_0058990c:
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
+    iVar3 = _fgetc(file);
+    if (iVar3 < 0) break;
   }
   goto LAB_00589923;
-  while ((iVar1 != 10 || (iVar2 = iVar2 + -1, 0 < iVar2))) {
+  while ((iVar3 != 10 || (iVar4 = iVar4 + -1, 0 < iVar4))) {
 LAB_005899ac:
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
+    iVar3 = _fgetc(file);
+    if (iVar3 < 0) break;
   }
 LAB_00589863:
-  iVar2 = 1;
+  iVar4 = 1;
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
+    iVar3 = _fgetc(file);
+    if (iVar3 < 0) break;
+  } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
   g_SkeleditLastMOTImported[0] = '\0';
   do {
-    iVar2 = _fgetc(file);
-    if ((iVar2 < 0) || (iVar2 == 10)) goto LAB_005898a6;
-    pcVar3 = g_SkeleditLastMOTImported;
-  } while (iVar2 != 0x22);
-  while ((iVar2 = _fgetc(file), -1 < iVar2 && (iVar2 != 10))) {
-    if (iVar2 == 0x22) {
-      iVar2 = 1;
+    iVar4 = _fgetc(file);
+    if ((iVar4 < 0) || (iVar4 == 10)) goto LAB_005898a6;
+    pcVar5 = g_SkeleditLastMOTImported;
+  } while (iVar4 != 0x22);
+  while ((iVar4 = _fgetc(file), -1 < iVar4 && (iVar4 != 10))) {
+    if (iVar4 == 0x22) {
+      iVar4 = 1;
       goto LAB_00589a04;
     }
-    *pcVar3 = (char)iVar2;
-    pcVar3[1] = '\0';
-    pcVar3 = pcVar3 + 1;
+    *pcVar5 = (char)iVar4;
+    pcVar5[1] = '\0';
+    pcVar5 = pcVar5 + 1;
   }
 LAB_005898a6:
-  iVar2 = 1;
+  iVar4 = 1;
   do {
-    iVar1 = _fgetc(file);
-    if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
+    iVar3 = _fgetc(file);
+    if (iVar3 < 0) break;
+  } while ((iVar3 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
   g_SkeleditLastTestSkeletonDir[0] = '\0';
   do {
-    iVar2 = _fgetc(file);
-    if ((iVar2 < 0) || (iVar2 == 10)) goto LAB_00589923;
+    iVar4 = _fgetc(file);
+    if ((iVar4 < 0) || (iVar4 == 10)) goto LAB_00589923;
     pcVar3 = g_SkeleditLastTestSkeletonDir;
-  } while (iVar2 != 0x22);
-  while ((iVar2 = _fgetc(file), -1 < iVar2 && (iVar2 != 10))) {
-    if (iVar2 == 0x22) {
-      iVar2 = 1;
+  } while (iVar4 != 0x22);
+  while ((iVar4 = _fgetc(file), -1 < iVar4 && (iVar4 != 10))) {
+    if (iVar4 == 0x22) {
+      iVar4 = 1;
       goto LAB_0058990c;
     }
-    *pcVar3 = (char)iVar2;
+    *pcVar3 = (char)iVar4;
     pcVar3[1] = '\0';
     pcVar3 = pcVar3 + 1;
   }

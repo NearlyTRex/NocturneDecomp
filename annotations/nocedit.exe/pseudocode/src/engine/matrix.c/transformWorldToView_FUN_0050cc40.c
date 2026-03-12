@@ -9,15 +9,15 @@
 void __stack_esi engine_matrix_c_transformWorldToView_FUN_0050cc40(CVector3i *input_coords,CVector3i *output_coords)
 
 {
-  longlong lVar1;
-  longlong lVar2;
-  longlong lVar3;
-  longlong lVar4;
-  longlong lVar5;
-  longlong lVar6;
   int iVar7;
   int iVar8;
   int iVar9;
+  longlong lVar1;
+  longlong lVar6;
+  longlong lVar4;
+  longlong lVar5;
+  longlong lVar2;
+  longlong lVar3;
   
   iVar9 = input_coords->x - g_RelativeX;
   iVar8 = input_coords->z - g_RelativeZ;

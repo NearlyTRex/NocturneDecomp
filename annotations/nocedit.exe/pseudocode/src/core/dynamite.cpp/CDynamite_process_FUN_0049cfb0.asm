@@ -9,7 +9,13 @@
 ; Local Variables:
 ; undefined4       Stack[-0x6c]:4  local_6c
 ; undefined8       Stack[-0x68]:8  local_68
-; undefined1       Stack[-0x48]:1  local_48
+; CBoundingBox3D   Stack[-0x60]:24  CStack_60
+; CBoundingBox3D   Stack[-0x48]:24  local_48
+; CVector3f        Stack[-0x30]:12  CStack_30
+; float            Stack[-0x24]:4  fStack_24
+; float            Stack[-0x20]:4  fStack_20
+; float            Stack[-0x1c]:4  fStack_1c
+; CVector3f        Stack[-0x18]:12  CStack_18
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00622ea2 = 5

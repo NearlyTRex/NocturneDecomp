@@ -7,13 +7,12 @@
 ; CDemonCamera *   Stack[0x4]:4   this_ptr
 ; CVector3i *      Stack[0x8]:4   input_vector
 ; Local Variables:
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined        Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; CVector3i        Stack[-0x30]:12  local_30
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  iStack_20
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   CVector3i g_CameraOutOfBoundsCoord

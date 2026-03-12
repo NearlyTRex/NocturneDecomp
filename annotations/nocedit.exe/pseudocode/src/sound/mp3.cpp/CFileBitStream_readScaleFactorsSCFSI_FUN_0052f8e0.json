@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 248,
-    "complexity_score": 193,
+    "complexity_score": 198,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 118,
+    "pseudocode_lines": 123,
     "suspect_count": 7,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 366
+    "total_lines": 371
   },
   "cross_references": [
     {
@@ -135,14 +135,14 @@
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -170,7 +170,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": true,
@@ -212,7 +212,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 28,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar8 = (int *)((int)allocation_array->granules + local_28);",
@@ -220,7 +220,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 32,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)scfsi_array[iVar4].scfsi + local_28) = uVar2 & 0xff;",
@@ -228,15 +228,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 46,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar7 = (uint *)((int)scfsi_array->scfsi + iVar4);",
+      "text": "puVar4 = (uint *)((int)scfsi_array->scfsi + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 61,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_14 = (int *)((int)allocation_array->granules + local_24);",
@@ -244,7 +244,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 62,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)scalefactor_array->codes[0] + local_24);",
@@ -252,15 +252,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 70,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "switch(*(uint *)((int)scfsi_array[iVar4].scfsi + local_24)) {",
+      "text": "switch(*(uint *)((int)scfsi_array[iVar2].scfsi + local_24)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 112,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)scalefactor_array->codes[0] + iVar3);",

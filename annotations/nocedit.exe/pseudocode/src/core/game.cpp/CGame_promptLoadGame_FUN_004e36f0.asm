@@ -6,9 +6,8 @@
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x210]:1  local_210
-; undefined1       Stack[-0x20f]:1  local_20f
-; undefined1       Stack[-0x10c]:1  local_10c
+; char[260]        Stack[-0x210]:260  local_210
+; char[256]        Stack[-0x10c]:256  local_10c
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004dcee0 at 004dd12f

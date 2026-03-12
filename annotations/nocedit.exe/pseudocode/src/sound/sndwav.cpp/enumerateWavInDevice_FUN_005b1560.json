@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 92,
+    "complexity_score": 96,
     "cross_reference_count": 1,
-    "function_call_count": 2,
+    "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 52,
+    "pseudocode_lines": 56,
     "suspect_count": 3,
     "suspect_types": [
       "negative_offset",
       "pointer_cast"
     ],
-    "total_lines": 125
+    "total_lines": 129
   },
   "cross_references": [
     {
@@ -44,11 +44,6 @@
       "addr": "005441f0",
       "is_variadic": false,
       "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0"
-    },
-    {
-      "addr": "EXTERNAL:00000018",
-      "is_variadic": false,
-      "name": "waveInGetDevCapsA"
     }
   ],
   "globals": [
@@ -121,8 +116,8 @@
         "is_param": false,
         "name": "local_38",
         "offset": -56,
-        "size": 1,
-        "type": "undefined1"
+        "size": 48,
+        "type": "tagWAVEINCAPSA"
       },
       {
         "is_param": true,
@@ -143,26 +138,26 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 42,
       "match": "(SRecordingDeviceInfo *)((int)",
       "severity": "mild",
-      "text": "pSVar6 = (SRecordingDeviceInfo *)((int)device_info + (uint)bVar7 * -2 + 1);",
+      "text": "pSVar6 = (SRecordingDeviceInfo *)((int)pSVar6 + (uint)bVar7 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 42,
+      "line": 46,
       "match": "pSVar6[-1].",
       "severity": "mild",
-      "text": "pcVar3 = (char *)((int)&pSVar6[-1].device_id + 3);",
+      "text": "pcVar4 = (char *)((int)&pSVar6[-1].device_id + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 46,
       "match": "(char *)((int)",
       "severity": "mild",
-      "text": "pcVar3 = (char *)((int)&pSVar6[-1].device_id + 3);",
+      "text": "pcVar4 = (char *)((int)&pSVar6[-1].device_id + 3);",
       "type": "pointer_cast"
     }
   ]

@@ -255,43 +255,29 @@
         "is_param": false,
         "name": "local_44",
         "offset": -68,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -305,7 +291,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -336,7 +322,7 @@
       "line": 25,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_2c.x = (int)ROUND(local_20 * 256.0f);",
+      "text": "local_2c.x = (int)ROUND(256.0f * 0.0);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -344,7 +330,7 @@
       "line": 26,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_2c.y = (int)ROUND(local_1c * 256.0f);",
+      "text": "local_2c.y = (int)ROUND((pCVar3->max).y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -376,7 +362,7 @@
       "line": 55,
       "match": "&stack0xffffff58",
       "severity": "moderate",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar6 + -0x16);",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,iVar3,iVar6 + -0x16);",
       "type": "stack_ref"
     },
     {
@@ -384,7 +370,7 @@
       "line": 57,
       "match": "&stack0xffffff58",
       "severity": "moderate",
-      "text": "_sprintf(&stack0xffffff58,\"%s : %5.2f\",pSVar4);",
+      "text": "_sprintf(&stack0xffffff58,\"%s : %5.2f\",pSVar5);",
       "type": "stack_ref"
     },
     {
@@ -392,7 +378,7 @@
       "line": 58,
       "match": "&stack0xffffff58",
       "severity": "moderate",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar6 + -0xb);",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,iVar3,iVar6 + -0xb);",
       "type": "stack_ref"
     }
   ]

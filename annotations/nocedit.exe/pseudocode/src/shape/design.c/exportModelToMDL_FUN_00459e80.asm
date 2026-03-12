@@ -9,11 +9,10 @@
 ; undefined8       Stack[-0x84]:8  local_84
 ; undefined8       Stack[-0x7c]:8  local_7c
 ; undefined8       Stack[-0x74]:8  local_74
-; undefined1       Stack[-0x6c]:1  local_6c
-; undefined1       Stack[-0x6b]:1  local_6b
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x6c]:80  local_6c
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; _FILE *          Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   shape_design.c_saveCurrentModel_FUN_00459de0 at 00459e6f

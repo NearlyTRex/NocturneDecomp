@@ -6,29 +6,26 @@
 ; Parameters:
 ; CMimic *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x2d0]:1  local_2d0
-; undefined1       Stack[-0x2a0]:1  local_2a0
-; undefined1       Stack[-0x270]:1  local_270
-; undefined1       Stack[-0x240]:1  local_240
-; undefined1       Stack[-0x210]:1  local_210
-; undefined1       Stack[-0x1e0]:1  local_1e0
-; undefined1       Stack[-0x1b0]:1  local_1b0
-; undefined1       Stack[-0x180]:1  local_180
-; undefined1       Stack[-0x150]:1  local_150
-; undefined1       Stack[-0x120]:1  local_120
-; undefined1       Stack[-0xf0]:1  local_f0
-; undefined1       Stack[-0xc0]:1  local_c0
-; undefined1       Stack[-0x90]:1  local_90
-; undefined1       Stack[-0x60]:1  local_60
-; undefined4       Stack[-0x54]:4  local_54
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined1       Stack[-0x24]:1  local_24
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CMatrix3x4f      Stack[-0x2d0]:48  local_2d0
+; CMatrix3x4f      Stack[-0x2a0]:48  local_2a0
+; CMatrix3x4f      Stack[-0x270]:48  local_270
+; CMatrix3x4f      Stack[-0x240]:48  local_240
+; CMatrix3x4f      Stack[-0x210]:48  local_210
+; CMatrix3x4f      Stack[-0x1e0]:48  local_1e0
+; CMatrix3x4f      Stack[-0x1b0]:48  local_1b0
+; CMatrix3x4f      Stack[-0x180]:48  local_180
+; CMatrix3x4f      Stack[-0x150]:48  local_150
+; CMatrix3x4f      Stack[-0x120]:48  local_120
+; CMatrix3x4f      Stack[-0xf0]:48  local_f0
+; CMatrix3x4f      Stack[-0xc0]:48  local_c0
+; CMatrix3x4f      Stack[-0x90]:48  local_90
+; CMatrix3x4f      Stack[-0x60]:48  local_60
+; float            Stack[-0x30]:4  local_30
+; float            Stack[-0x2c]:4  local_2c
+; float            Stack[-0x28]:4  local_28
+; CVector3f        Stack[-0x24]:12  local_24
+; int              Stack[-0x18]:4  local_18
+; CMimic *         Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_mimic.cpp_CMimic_process_FUN_0051f780 at 0051f894

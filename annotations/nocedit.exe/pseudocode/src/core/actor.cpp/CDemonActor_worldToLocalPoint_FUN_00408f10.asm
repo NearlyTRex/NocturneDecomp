@@ -8,9 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   output_local_point
 ; CVector3f *      Stack[0xc]:4   input_world_point
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; XREF[76]:
 ;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210 at 0040a645

@@ -9,14 +9,10 @@
 ; float            Stack[0xc]:4   scale
 ; int              Stack[0x10]:4   damage_amount
 ; Local Variables:
-; undefined4       Stack[-0x50]:4  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x14]:4  local_14
+; CVector3f        Stack[-0x50]:12  local_50
+; CVector3f[2]     Stack[-0x44]:24  local_44
+; float            Stack[-0x28]:4  local_28
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10 at 004c8c35

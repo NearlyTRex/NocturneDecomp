@@ -4,115 +4,115 @@
       {
         "category": "undeclared_identifier",
         "column": 58,
-        "line": 64,
+        "line": 73,
         "message": "use of undeclared identifier 'stack0xfffff17c'"
       },
       {
         "category": "undeclared_identifier",
         "column": 75,
-        "line": 65,
+        "line": 74,
         "message": "use of undeclared identifier 'stack0xfffff17c'"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 69,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 60,
-        "line": 70,
-        "message": "use of undeclared identifier 'stack0xfffff17c'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 76,
-        "line": 73,
-        "message": "use of undeclared identifier 'stack0xfffff17c'"
-      },
-      {
-        "category": "other",
-        "column": 186,
         "line": 78,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
+        "column": 60,
+        "line": 79,
+        "message": "use of undeclared identifier 'stack0xfffff17c'"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 76,
+        "line": 82,
+        "message": "use of undeclared identifier 'stack0xfffff17c'"
+      },
+      {
+        "category": "other",
+        "column": 186,
+        "line": 87,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "undeclared_identifier",
         "column": 62,
-        "line": 80,
+        "line": 89,
         "message": "use of undeclared identifier 'stack0xfffff17c'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 86,
+        "line": 95,
         "message": "no matching function for call to 'shape_memdbg_cpp_openFile_FUN_0050f7a0'"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 90,
+        "line": 99,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 60,
-        "line": 91,
+        "line": 100,
         "message": "use of undeclared identifier 'stack0xfffff17c'"
       },
       {
         "category": "other",
         "column": 25,
-        "line": 101,
+        "line": 110,
         "message": "member reference base type 'byte[2088]' (aka 'unsigned char[2088]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 48,
-        "line": 104,
+        "line": 113,
         "message": "member reference base type 'byte[2088]' (aka 'unsigned char[2088]') is not a structure or union"
       },
       {
         "category": "incompatible_types",
         "column": 43,
-        "line": 105,
+        "line": 114,
         "message": "incompatible pointer types assigning to 'time_t *' (aka 'long *') from 'uint *' (aka 'unsigned int *')"
       },
       {
         "category": "other",
         "column": 117,
-        "line": 136,
+        "line": 145,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 49,
-        "line": 141,
+        "line": 150,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 67,
-        "line": 160,
+        "line": 168,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 163,
+        "line": 171,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 7,
-        "line": 164,
+        "line": 172,
         "message": "no matching function for call to 'engine_2d_c_drawText_FUN_00401fd0'"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 165,
+        "line": 173,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -121,12 +121,12 @@
   },
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 336,
+    "complexity_score": 344,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 206,
+    "pseudocode_lines": 214,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
@@ -134,7 +134,7 @@
       "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 761
+    "total_lines": 769
   },
   "cross_references": [],
   "function": {
@@ -516,12 +516,19 @@
     "pcode_op_count": 2067
   },
   "stack_frame": {
-    "frame_size": 3732,
-    "local_size": 3720,
+    "frame_size": 11896,
+    "local_size": 11884,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "atStackY_2e68",
+        "offset": -11880,
+        "size": 8136,
+        "type": "time_t[2034]"
+      },
       {
         "is_param": false,
         "name": "local_e84",
@@ -533,169 +540,92 @@
         "is_param": false,
         "name": "local_e80",
         "offset": -3712,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_d80",
-        "offset": -3456,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_a74",
-        "offset": -2676,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a70",
-        "offset": -2672,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_a58",
-        "offset": -2648,
-        "size": 1,
-        "type": "undefined"
+        "size": 2088,
+        "type": "undefined1[2088]"
       },
       {
         "is_param": false,
         "name": "local_658",
         "offset": -1624,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_657",
-        "offset": -1623,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_558",
-        "offset": -1368,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_454",
-        "offset": -1108,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44c",
-        "offset": -1100,
-        "size": 1,
-        "type": "undefined"
+        "size": 532,
+        "type": "SFoundFileInfo"
       },
       {
         "is_param": false,
         "name": "local_444",
         "offset": -1092,
-        "size": 1,
-        "type": "undefined"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_344",
         "offset": -836,
-        "size": 1,
-        "type": "undefined"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_244",
         "offset": -580,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_243",
-        "offset": -579,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_144",
         "offset": -324,
-        "size": 1,
-        "type": "undefined"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 1,
-        "type": "undefined"
+        "size": 16,
+        "type": "time_t[4]"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
-        "size": 1,
-        "type": "undefined"
+        "size": 16,
+        "type": "undefined1[16]"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "_FILE *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -740,7 +670,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 22,
       "match": "atStackY_2e68",
       "severity": "moderate",
       "text": "time_t atStackY_2e68 [2034];",
@@ -748,7 +678,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 57,
+      "line": 66,
       "match": "&stack0xfffff17c",
       "severity": "moderate",
       "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xfffff17c);",
@@ -756,31 +686,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 58,
+      "line": 67,
       "match": "&stack0xfffff17c",
       "severity": "moderate",
-      "text": "iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650((CPodFile *)&stack0xfffff17c,local_244)",
+      "text": "iVar3 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650((CPodFile *)&stack0xfffff17c,local_244)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xfffff17c",
-      "severity": "moderate",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 66,
-      "match": "&stack0xfffff17c",
-      "severity": "moderate",
-      "text": "iVar2 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230((CPodFile *)&stack0xfffff17c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 73,
+      "line": 72,
       "match": "&stack0xfffff17c",
       "severity": "moderate",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);",
@@ -788,7 +702,23 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 84,
+      "line": 75,
+      "match": "&stack0xfffff17c",
+      "severity": "moderate",
+      "text": "iVar3 = engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230((CPodFile *)&stack0xfffff17c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 82,
+      "match": "&stack0xfffff17c",
+      "severity": "moderate",
+      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 93,
       "match": "&stack0xfffff17c",
       "severity": "moderate",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffff17c,0);",
@@ -796,7 +726,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 94,
+      "line": 103,
       "match": "._1036_4_",
       "severity": "mild",
       "text": "if (0 < (int)local_e80._1036_4_) {",
@@ -804,7 +734,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 106,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar5 = (uint *)((int)(char **)local_e80._1040_4_ + local_1c);",
@@ -812,7 +742,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 97,
+      "line": 106,
       "match": "._1040_4_",
       "severity": "mild",
       "text": "puVar5 = (uint *)((int)(char **)local_e80._1040_4_ + local_1c);",
@@ -820,7 +750,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 179,
+      "line": 187,
       "match": "._1036_4_",
       "severity": "mild",
       "text": "} while (local_18 < (int)local_e80._1036_4_);",

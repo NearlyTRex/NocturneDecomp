@@ -7,16 +7,15 @@
 ; char *           Stack[0x4]:4   input_string
 ; STimestampRecord * Stack[0x8]:4   output_record
 ; Local Variables:
-; undefined        Stack[-0x224]:1  local_224
-; undefined1       Stack[-0x223]:1  local_223
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; char[512]        Stack[-0x224]:512  local_224
+; uint             Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; int              Stack[-0x10]:4  local_10
+; int              Stack[-0xc]:4  local_c
+; int              Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   engine_fileio.cpp_readTimestampFile_FUN_004b23a0 at 004b24d4

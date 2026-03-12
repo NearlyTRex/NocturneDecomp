@@ -7,7 +7,7 @@
 ; UINT             Stack[0x4]:4   device_id
 ; SSoundDeviceInfo * Stack[0x8]:4   device_info
 ; Local Variables:
-; undefined1       Stack[-0x3c]:1  local_3c
+; tagWAVEOUTCAPSA  Stack[-0x3c]:52  local_3c
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_getSoundDeviceCount_FUN_005ab2e0 at 005ab317
@@ -18,7 +18,6 @@
 ;
 ; Called Functions:
 ;   support_newmsg.cpp_getLocalizedString_FUN_005441f0
-;   waveOutGetDevCapsA
 ;
 ; *****************************************************************************
 

@@ -9,22 +9,25 @@
 int __cdecl spawnvp(int mode,char *cmdname,char **argv)
 
 {
-  char **ppcVar1;
-  ulong size;
+  char *pcVar1;
+  char **ppcVar3;
   char **ppcVar2;
+  int iVar4;
   int iVar3;
   char *pcVar4;
   uint uVar5;
+  uint uVar6;
   BOOL BVar6;
   ThreadData *pTVar7;
+  ThreadData *pTVar8;
+  int iVar9;
+  BOOL BVar10;
   char *extraout_EAX;
   char *arg1;
   char *program;
   int iVar8;
   uint size_00;
   char **in_stack_00000010;
-  char *arg2;
-  char *pcVar9;
   PRTL_CRITICAL_SECTION_DEBUG in_stack_ffffff3c;
   char acStack_c0 [104];
   char *local_58;
@@ -45,6 +48,10 @@ int __cdecl spawnvp(int mode,char *cmdname,char **argv)
   char *local_1c;
   char *local_18;
   char local_14;
+  char **ppcVar1;
+  ulong size;
+  char *arg2;
+  char *pcVar9;
   
   __STK();
   local_20 = 0;
@@ -52,13 +59,13 @@ int __cdecl spawnvp(int mode,char *cmdname,char **argv)
      (local_1c = (char *)build_file_info_env(), local_1c != (char *)0x0))
   {
     iVar8 = 1;
-    pcVar4 = *in_stack_00000010;
-    ppcVar2 = in_stack_00000010;
-    while (pcVar4 != (char *)0x0) {
-      ppcVar1 = ppcVar2 + 1;
-      ppcVar2 = ppcVar2 + 1;
+    pcVar1 = *in_stack_00000010;
+    ppcVar3 = in_stack_00000010;
+    while (pcVar1 != (char *)0x0) {
+      ppcVar1 = ppcVar3 + 1;
+      ppcVar3 = ppcVar3 + 1;
       iVar8 = iVar8 + 1;
-      pcVar4 = *ppcVar1;
+      pcVar1 = *ppcVar1;
     }
     size = (iVar8 + 1) * 4;
     ppcVar2 = malloc(size);
@@ -75,18 +82,18 @@ int __cdecl spawnvp(int mode,char *cmdname,char **argv)
   }
   local_14 = '\0';
   if (mode == 2) {
-    iVar8 = execv((int)cmdname,(char *)argv,in_stack_00000010);
+    iVar4 = execv((int)cmdname,(char *)argv,in_stack_00000010);
     if (local_20 == 0) {
-      return iVar8;
+      return iVar4;
     }
     free(in_stack_00000010);
     free(local_1c);
-    return iVar8;
+    return iVar4;
   }
-  iVar8 = build_cmdline
+  iVar4 = build_cmdline
                     ((int)argv,in_stack_00000010,(char *)&local_38,&local_3c,&local_40,&local_44,
                      (int *)0x0,(int)in_stack_ffffff3c);
-  if (iVar8 == -1) {
+  if (iVar4 == -1) {
     if (local_20 != 0) {
       free(in_stack_00000010);
       free(local_1c);
@@ -107,10 +114,10 @@ int __cdecl spawnvp(int mode,char *cmdname,char **argv)
     else {
       pcVar4 = (char *)0x0;
     }
-    iVar3 = local_20;
+    iVar9 = local_20;
     if (pcVar4 == (char *)0x0) {
       free(local_38);
-      if (iVar3 != 0) {
+      if (iVar9 != 0) {
         free(in_stack_00000010);
         free(local_1c);
       }
@@ -126,8 +133,8 @@ int __cdecl spawnvp(int mode,char *cmdname,char **argv)
   local_18 = local_2c;
   if (local_2c == (char *)0x0) {
     local_34 = (uint)(local_44 + 3) & 0xfffffffc;
-    uVar5 = GetStackUsage();
-    if (local_34 < uVar5) {
+    uVar6 = GetStackUsage();
+    if (local_34 < uVar6) {
       ProbeStackSpace((uint)(local_44 + 3) & 0xfffffffc);
       local_18 = acStack_c0;
     }
@@ -136,7 +143,7 @@ int __cdecl spawnvp(int mode,char *cmdname,char **argv)
     }
     if (local_18 == (char *)0x0) {
       setErrno(2);
-      iVar8 = -1;
+      iVar4 = -1;
       SetWindowsError(10);
       goto LAB_0060f80e;
     }
@@ -147,42 +154,42 @@ int __cdecl spawnvp(int mode,char *cmdname,char **argv)
 LAB_0060f687:
     pTVar7 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
     if ((pTVar7->errno_value != 1) &&
-       (pTVar7 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(), pTVar7->errno_value != 9))
+       (pTVar8 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(), pTVar8->errno_value != 9))
     goto LAB_0060f80e;
-    iVar3 = strlen(pcVar4);
-    local_28 = pcVar4 + iVar3;
+    iVar9 = strlen(pcVar4);
+    local_28 = pcVar4 + iVar9;
     if (local_14 == '\0') {
       strcpy(local_28,".com");
       setErrno(0);
-      iVar8 = spawn(mode,pcVar4,local_18,local_38);
+      iVar4 = spawn(mode,pcVar4,local_18,local_38);
     }
     else {
       setErrno(1);
     }
-    pTVar7 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
-    if ((pTVar7->errno_value != 1) &&
-       (pTVar7 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(), pTVar7->errno_value != 9))
+    pTVar8 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
+    if ((pTVar8->errno_value != 1) &&
+       (pTVar8 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(), pTVar8->errno_value != 9))
     goto LAB_0060f80e;
     setErrno(0);
     strcpy(local_28,".exe");
-    iVar8 = spawn(mode,pcVar4,local_18,local_38);
-    pTVar7 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
-    if ((pTVar7->errno_value != 1) &&
-       (pTVar7 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(), pTVar7->errno_value != 9))
+    iVar4 = spawn(mode,pcVar4,local_18,local_38);
+    pTVar8 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
+    if ((pTVar8->errno_value != 1) &&
+       (pTVar8 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(), pTVar8->errno_value != 9))
     goto LAB_0060f80e;
     setErrno(0);
     strcpy(local_28,".bat");
-    BVar6 = exists(pcVar4);
-    if (BVar6 == 0) goto LAB_0060f80e;
+    BVar10 = exists(pcVar4);
+    if (BVar10 == 0) goto LAB_0060f80e;
   }
   else {
-    iVar8 = _stricmp(local_58,".bat");
-    if (iVar8 != 0) {
+    iVar4 = _stricmp(local_58,".bat");
+    if (iVar4 != 0) {
       setErrno(0);
-      iVar8 = spawn(mode,pcVar4,local_18,local_38);
+      iVar4 = spawn(mode,pcVar4,local_18,local_38);
       goto LAB_0060f687;
     }
-    iVar8 = -1;
+    iVar4 = -1;
     BVar6 = exists(pcVar4);
     if (BVar6 == 0) goto LAB_0060f687;
   }
@@ -199,7 +206,7 @@ LAB_0060f687:
   }
   arg2 = extraout_EAX;
   program = getenv("COMSPEC");
-  iVar8 = execvp(mode,program,arg1,arg2,pcVar4,pcVar9);
+  iVar4 = execvp(mode,program,arg1,arg2,pcVar4,pcVar9);
 LAB_0060f80e:
   if (local_20 != 0) {
     free(in_stack_00000010);
@@ -210,5 +217,5 @@ LAB_0060f80e:
   free(local_38);
   (*PTR_crt_thread_c_ExitCriticalSection_FUN_0060b180_00685468)
             ((LPCRITICAL_SECTION)&stack0xffffff3c);
-  return iVar8;
+  return iVar4;
 }

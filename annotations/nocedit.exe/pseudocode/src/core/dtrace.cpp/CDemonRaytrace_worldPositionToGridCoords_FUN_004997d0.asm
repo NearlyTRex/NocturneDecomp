@@ -8,11 +8,12 @@
 ; CVector3f *      Stack[0x8]:4   world_position
 ; CVector3i *      Stack[0xc]:4   output_grid_coords
 ; Local Variables:
+; int[1016]        Stack[-0x1004]:4064  aiStackY_1004
 ; undefined8       Stack[-0x24]:8  local_24
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined8       Stack[-0x10]:8  local_10
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
+; double           Stack[-0x10]:8  local_10
 ;
 ; XREF[2]:
 ;   core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280 at 0049a299

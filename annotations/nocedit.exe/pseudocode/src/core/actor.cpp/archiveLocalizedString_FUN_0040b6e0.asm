@@ -7,8 +7,7 @@
 ; char *           Stack[0x4]:4   string_buffer
 ; char *           Stack[0x8]:4   localization_key
 ; Local Variables:
-; undefined1       Stack[-0x134]:1  local_134
-; undefined1       Stack[-0x133]:1  local_133
+; char[300]        Stack[-0x134]:300  local_134
 ;
 ; XREF[5]:
 ;   core_charactr.cpp_CCharacter_archive_FUN_004283a0 at 004285a5

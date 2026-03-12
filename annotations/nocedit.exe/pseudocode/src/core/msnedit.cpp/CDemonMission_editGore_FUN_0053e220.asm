@@ -6,9 +6,30 @@
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0xc8]:4  local_c8
-; undefined4       Stack[-0xc0]:4  local_c0
-; undefined1       Stack[-0xbc]:1  local_bc
+; float[984]       Stack[-0x1040]:3936  afStackY_1040
+; float            Stack[-0xc8]:4  local_c8
+; float            Stack[-0xc0]:4  local_c0
+; CSlew            Stack[-0xbc]:28  local_bc
+; CVector3f        Stack[-0xa0]:12  CStack_a0
+; undefined1[16]   Stack[-0x94]:16  auStack_94
+; float            Stack[-0x84]:4  fStack_84
+; float            Stack[-0x80]:4  fStack_80
+; CVector3f        Stack[-0x7c]:12  CStack_7c
+; float            Stack[-0x70]:4  fStack_70
+; float            Stack[-0x6c]:4  fStack_6c
+; float            Stack[-0x68]:4  fStack_68
+; CVector3f        Stack[-0x64]:12  CStack_64
+; CVector3i        Stack[-0x58]:12  CStack_58
+; CVector3i        Stack[-0x4c]:12  CStack_4c
+; float            Stack[-0x40]:4  fStack_40
+; float            Stack[-0x3c]:4  fStack_3c
+; float            Stack[-0x38]:4  fStack_38
+; CVector3i        Stack[-0x34]:12  CStack_34
+; int              Stack[-0x28]:4  iStack_28
+; CLocation *      Stack[-0x24]:4  pCStack_24
+; UOrientationVector * Stack[-0x20]:4  pUStack_20
+; CBoxActor *      Stack[-0x1c]:4  pCStack_1c
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 005388a1

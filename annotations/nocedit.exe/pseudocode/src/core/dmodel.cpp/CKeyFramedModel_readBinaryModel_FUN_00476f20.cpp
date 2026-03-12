@@ -10,6 +10,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20(CKeyFr
 
 {
   SIZE_T SVar1;
+  SIZE_T SVar2;
   int iVar2;
   int local_2c;
   int local_28;
@@ -28,28 +29,28 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_00476f20(CKeyFr
       core_main_c_displayErrorAndQuit_FUN_00506f10("KFM file is invalid version %d",local_2c);
     }
     local_14 = 0;
-    if ((local_2c < 4) || (SVar1 = _fread(&local_14,4,1,file), SVar1 == 1))
+    if ((local_2c < 4) || (SVar2 = _fread(&local_14,4,1,file), SVar2 == 1))
     {
       core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0
                 (this_ptr,local_28,local_24,local_20,local_1c,local_18);
-      SVar1 = _fread(this_ptr->vertex_list,this_ptr->vertex_count * this_ptr->frame_count * 0xc,
+      SVar2 = _fread(this_ptr->vertex_list,this_ptr->vertex_count * this_ptr->frame_count * 0xc,
                          1,file);
-      if ((SVar1 == 1) &&
+      if ((SVar2 == 1) &&
          ((this_ptr->poly_count < 1 ||
-          ((SVar1 = _fread(this_ptr->poly_vert_list,this_ptr->poly_count * 0x48,1,file),
-           SVar1 == 1 &&
-           (SVar1 = _fread(this_ptr->poly_texture_index_list,this_ptr->poly_count << 2,1,file),
-           SVar1 == 1)))))) {
+          ((SVar2 = _fread(this_ptr->poly_vert_list,this_ptr->poly_count * 0x48,1,file),
+           SVar2 == 1 &&
+           (SVar2 = _fread(this_ptr->poly_texture_index_list,this_ptr->poly_count << 2,1,file),
+           SVar2 == 1)))))) {
         if (0 < this_ptr->texture_count) {
           memset(this_ptr->texture_list,0,0x5460);
           for (iVar2 = 0; iVar2 < this_ptr->texture_count; iVar2 = iVar2 + 1) {
-            SVar1 = _fread(this_ptr->texture_list + iVar2,0x18,1,file);
-            if (SVar1 != 1) goto LAB_00476f99;
+            SVar2 = _fread(this_ptr->texture_list + iVar2,0x18,1,file);
+            if (SVar2 != 1) goto LAB_00476f99;
           }
         }
-        SVar1 = _fread(this_ptr->part_list,this_ptr->part_count << 3,1,file)
+        SVar2 = _fread(this_ptr->part_list,this_ptr->part_count << 3,1,file)
         ;
-        if (SVar1 == 1) {
+        if (SVar2 == 1) {
           if (local_14 != 0) {
             core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830(this_ptr);
             return;

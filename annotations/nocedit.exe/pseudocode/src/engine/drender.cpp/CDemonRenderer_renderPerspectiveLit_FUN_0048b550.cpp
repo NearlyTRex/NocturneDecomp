@@ -9,13 +9,14 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550(CDemonRenderer *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
-  int iVar1;
   SMRGLHeaderPrimitive *pSVar2;
+  int iVar2;
   int iVar3;
   int iVar4;
+  int iVar1;
   
   if ((this_ptr->plane_culling_enabled == 0) ||
-     (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar3 != 0)) {
+     (iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar2 != 0)) {
     iVar3 = 0;
     if (0 < (prim->base).count) {
       iVar4 = 0;

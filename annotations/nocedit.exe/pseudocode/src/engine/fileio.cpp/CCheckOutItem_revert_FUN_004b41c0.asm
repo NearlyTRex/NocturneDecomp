@@ -7,7 +7,7 @@
 ; CCheckOutItem *  Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   output_buffer
 ; Local Variables:
-; undefined        Stack[-0x108]:1  local_108
+; char[260]        Stack[-0x108]:260  local_108
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_00626a5d

@@ -11,12 +11,11 @@
 void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float delta_time)
 
 {
-  EHeroTask EVar1;
-  CWeapon *pCVar2;
-  float fVar3;
+  CHero *pCVar1;
   CHero *pCVar4;
   SMotion *pSVar5;
   CPathMap *this_ptr_00;
+  int iVar2;
   CVector3f *pCVar6;
   CHero *this_ptr_01;
   int iVar7;
@@ -34,6 +33,9 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float del
   float local_20;
   float local_1c;
   float fStack_18;
+  EHeroTask EVar1;
+  CWeapon *pCVar2;
+  float fVar3;
   
   local_20 = 0.25;
   local_1c = 0.7853982;
@@ -42,13 +44,13 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float del
     return;
   }
   memset(&(this_ptr->base).player_control,0,0x2c);
-  pCVar4 = g_HeroActors[g_LocalHeroIndex];
+  pCVar1 = g_HeroActors[g_LocalHeroIndex];
   local_3c.x = (this_ptr->base).base.base.location.position.x -
-               (pCVar4->base).base.location.position.x;
+               (pCVar1->base).base.location.position.x;
   local_3c.y = (this_ptr->base).base.base.location.position.y -
-               (pCVar4->base).base.location.position.y;
+               (pCVar1->base).base.location.position.y;
   local_3c.z = (this_ptr->base).base.base.location.position.z -
-               (pCVar4->base).base.location.position.z;
+               (pCVar1->base).base.location.position.z;
   EVar1 = (this_ptr->base).ai_task;
   iVar7 = 0;
   if ((((EVar1 == HERO_TASK_KILL) || (EVar1 == HERO_TASK_GUARD)) &&
@@ -109,10 +111,10 @@ LAB_00557a94:
   if (this_ptr_00 == (CPathMap *)0x0) {
     this_ptr_00 = core_path_cpp_getPathMap_FUN_00548500(&(this_ptr_01->base).base.location);
   }
-  iVar7 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
+  iVar2 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                     (this_ptr_00,&(this_ptr->base).base.base.location.position,&CStack_54,
                      (this_ptr->base).base.base.direction_hint);
-  if (iVar7 != 0) {
+  if (iVar2 != 0) {
     fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (CStack_54.y - (this_ptr->base).base.base.orient.vec.y);
     fVar3 = fStack_18 * (float)0.31830988619288902 * (float)4;

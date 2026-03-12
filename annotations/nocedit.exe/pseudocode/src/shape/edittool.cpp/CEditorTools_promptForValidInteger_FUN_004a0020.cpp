@@ -10,6 +10,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020(C
 
 {
   int iVar1;
+  int iVar2;
   char local_34 [32];
   int local_14;
   
@@ -26,8 +27,8 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020(C
       if (iVar1 == 0) {
         return 0;
       }
-      iVar1 = sscanf(local_34,"%d",&local_14);
-      if (iVar1 == 1) break;
+      iVar2 = sscanf(local_34,"%d",&local_14);
+      if (iVar2 == 1) break;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (this_ptr,"Please enter a valid integer.");
     }

@@ -10,12 +10,18 @@
 ; int              Stack[0x10]:4   sample_rate
 ; int *            Stack[0x14]:4   out_samples_per_block
 ; Local Variables:
-; undefined2       Stack[-0x48]:2  local_48
-; undefined2       Stack[-0x46]:2  local_46
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x40]:4  local_40
-; undefined2       Stack[-0x3c]:2  local_3c
-; undefined2       Stack[-0x3a]:2  local_3a
+; char[400]        Stack[-0x6b0]:400  acStack_6b0
+; char[400]        Stack[-0x520]:400  acStack_520
+; char[400]        Stack[-0x390]:400  acStack_390
+; char[400]        Stack[-0x200]:400  acStack_200
+; DSBUFFERDESC     Stack[-0x70]:20  DStack_70
+; DSBUFFERDESC     Stack[-0x5c]:20  DStack_5c
+; WAVEFORMATEX     Stack[-0x48]:20  local_48
+; tWAVEFORMATEX    Stack[-0x34]:20  tStack_34
+; IDirectSoundBuffer * Stack[-0x20]:4  pIStack_20
+; int *            Stack[-0x1c]:4  piStack_1c
+; undefined4       Stack[-0x18]:4  uStack_18
+; float            Stack[-0x14]:4  fStack_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_00651a6c

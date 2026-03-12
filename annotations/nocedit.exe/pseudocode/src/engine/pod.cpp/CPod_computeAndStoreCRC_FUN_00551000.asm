@@ -7,11 +7,11 @@
 ; CPod *           Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   pod_filename
 ; Local Variables:
-; undefined4       Stack[-0x44c]:4  local_44c
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CPodFile         Stack[-0x44c]:1068  local_44c
+; uint             Stack[-0x20]:4  local_20
+; _FILE *          Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; SIZE_T           Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 at 004b6a2c

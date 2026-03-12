@@ -9,12 +9,11 @@
 ; int              Stack[0xc]:4   display_progress
 ; Local Variables:
 ; undefined8       Stack[-0x78]:8  local_78
-; undefined1       Stack[-0x70]:1  local_70
-; undefined1       Stack[-0x6f]:1  local_6f
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[80]         Stack[-0x70]:80  local_70
+; int              Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40 at 00482e6b

@@ -9,11 +9,14 @@
 void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDemonSet *this_ptr,char *coverage_map,int exclude_camera_index)
 
 {
+  CVector3i *ptr;
   int iVar1;
   int iVar2;
   CVector3i *pCVar3;
   int iVar4;
+  CVector3i *point;
   uint *puVar5;
+  int iVar3;
   byte bVar6;
   int aiStackY_1038 [1015];
   CVector3i local_50;
@@ -30,16 +33,16 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
   bVar6 = 0;
   core_setedit_cpp_CDemonSet_buildCameraDepthData_FUN_00580310(this_ptr);
   memset(coverage_map,0,g_WindowWidth * g_WindowHeight);
-  local_2c = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                       (g_CDemonCameraInstance.framebuffer_height *
-                        g_CDemonCameraInstance.framebuffer_width * 0xc,"..\\core\\setedit.cpp",
-                        0xf22);
-  if (local_2c == (CVector3i *)0x0) {
+  ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                  (g_CDemonCameraInstance.framebuffer_height *
+                   g_CDemonCameraInstance.framebuffer_width * 0xc,"..\\core\\setedit.cpp",0xf22)
+  ;
+  if (ptr == (CVector3i *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0xf23;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
-  pCVar3 = local_2c;
+  pCVar3 = ptr;
   for (local_1c = 0; local_1c < g_CDemonCameraInstance.framebuffer_height; local_1c = local_1c + 1)
   {
     for (local_18 = 0; local_18 < g_CDemonCameraInstance.framebuffer_width; local_18 = local_18 + 1)
@@ -81,27 +84,27 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
         iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(local_28);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
         if (iVar1 != 0) {
-          iVar1 = 0;
-          pCVar3 = local_2c;
-          while (iVar1 < g_CDemonCameraInstance.framebuffer_height) {
+          iVar3 = 0;
+          point = ptr;
+          while (iVar3 < g_CDemonCameraInstance.framebuffer_height) {
             iVar4 = 0;
             if (g_CDemonCameraInstance.framebuffer_width < 1) {
-              iVar1 = iVar1 + 1;
+              iVar3 = iVar3 + 1;
             }
             else {
               do {
-                if (pCVar3->x < 0x7fffffff) {
+                if (point->x < 0x7fffffff) {
                   iVar2 = core_setedit_cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0
-                                    (this_ptr,pCVar3,local_14);
+                                    (this_ptr,point,local_14);
                   if (iVar2 != 0) {
-                    coverage_map[g_WindowWidth * iVar1 + iVar4] =
-                         coverage_map[g_WindowWidth * iVar1 + iVar4] + '\x01';
+                    coverage_map[g_WindowWidth * iVar3 + iVar4] =
+                         coverage_map[g_WindowWidth * iVar3 + iVar4] + '\x01';
                   }
                 }
                 iVar4 = iVar4 + 1;
-                pCVar3 = pCVar3 + 1;
+                point = point + 1;
               } while (iVar4 < g_CDemonCameraInstance.framebuffer_width);
-              iVar1 = iVar1 + 1;
+              iVar3 = iVar3 + 1;
             }
           }
         }
@@ -115,6 +118,6 @@ void __cdecl core_setedit_cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00(CDem
   core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
   g_CurrentDebugLine = 0xf73;
   g_CurrentDebugFilename = "..\\core\\setedit.cpp";
-  shape_memdbg_cpp_free_FUN_005fe659(local_2c);
+  shape_memdbg_cpp_free_FUN_005fe659(ptr);
   return;
 }

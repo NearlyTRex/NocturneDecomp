@@ -4,7 +4,7 @@
 ; void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005ed730(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x70]:4  local_70
+; DDSURFACEDESC    Stack[-0x70]:108  local_70
 ;
 ; XREF[1]:
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0 at 005eda0f

@@ -7,9 +7,7 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   drop_position
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
-; undefined4       Stack[-0x8]:4  local_8
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; Called Functions:
 ;   core_bodypart.cpp_CBodyPart_setupPhysicsBox_FUN_0041b070

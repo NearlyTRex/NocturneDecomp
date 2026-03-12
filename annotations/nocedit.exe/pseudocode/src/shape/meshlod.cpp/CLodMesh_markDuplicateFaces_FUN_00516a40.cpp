@@ -9,7 +9,6 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_markDuplicateFaces_FUN_00516a40(CLodMesh *this_ptr)
 
 {
-  CLodFace *pCVar1;
   int iVar2;
   int iVar3;
   int iVar4;
@@ -19,6 +18,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_markDuplicateFaces_FUN_00516a40(CLodMesh
   int local_24;
   int local_20;
   int local_1c;
+  CLodFace *pCVar1;
   
   local_24 = 0;
   if (0 < this_ptr->tri_count) {

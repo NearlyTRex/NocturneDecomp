@@ -6,25 +6,30 @@
 ; Parameters:
 ; CSpark *         Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0xd0]:4  local_d0
-; undefined4       Stack[-0xcc]:4  local_cc
-; undefined4       Stack[-0xc8]:4  local_c8
-; undefined4       Stack[-0xb8]:4  local_b8
-; undefined4       Stack[-0xb4]:4  local_b4
+; float            Stack[-0xd8]:4  fStack_d8
+; float            Stack[-0xd4]:4  fStack_d4
+; CVector3i        Stack[-0xd0]:12  local_d0
+; CVector3i        Stack[-0xc4]:12  CStack_c4
+; float            Stack[-0xb8]:4  local_b8
+; float            Stack[-0xb4]:4  local_b4
 ; undefined4       Stack[-0xb0]:4  local_b0
-; undefined4       Stack[-0xa0]:4  local_a0
-; undefined4       Stack[-0x9c]:4  local_9c
-; undefined4       Stack[-0x98]:4  local_98
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
-; undefined4       Stack[-0x60]:4  local_60
-; undefined4       Stack[-0x5c]:4  local_5c
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x44]:4  local_44
-; undefined4       Stack[-0x20]:4  local_20
+; float            Stack[-0xac]:4  fStack_ac
+; float            Stack[-0xa8]:4  fStack_a8
+; float            Stack[-0xa4]:4  fStack_a4
+; CVector3i        Stack[-0xa0]:12  local_a0
+; CVector3i        Stack[-0x94]:12  CStack_94
+; CVector3f        Stack[-0x88]:12  CStack_88
+; float            Stack[-0x7c]:4  fStack_7c
+; float            Stack[-0x78]:4  fStack_78
+; float            Stack[-0x74]:4  fStack_74
+; CVector3i        Stack[-0x70]:12  local_70
+; CVector3i        Stack[-0x64]:12  local_64
+; CVector3i        Stack[-0x58]:12  CStack_58
+; CVector3i        Stack[-0x4c]:12  local_4c
+; CVector3i[2]     Stack[-0x40]:24  aCStack_40
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  fStack_1c
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; Referenced Globals:
 ;   float FLOAT_0065dca8 = 256

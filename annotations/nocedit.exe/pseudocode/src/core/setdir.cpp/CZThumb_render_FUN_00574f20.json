@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 84,
+    "complexity_score": 87,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 52,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 205
+    "total_lines": 208
   },
   "cross_references": [
     {
@@ -144,14 +144,14 @@
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -165,7 +165,7 @@
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -193,7 +193,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 26,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(*(int *)((int)this_ptr->zbuffer_data +",
@@ -201,15 +201,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 31,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)((int)g_ScreenBufferArray + iVar4 + 4) + iVar1) = uVar2 * 0x10101;",
+      "text": "*(uint *)(*(int *)((int)g_ScreenBufferArray + iVar5 + 4) + iVar1) = uVar2 * 0x10101;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 42,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(*(int *)((int)this_ptr->zbuffer_data +",

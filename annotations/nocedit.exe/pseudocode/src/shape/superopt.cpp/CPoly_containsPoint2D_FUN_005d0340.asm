@@ -7,28 +7,16 @@
 ; CPoly *          Stack[0x4]:4   this_ptr
 ; CVector2d *      Stack[0x8]:4   point
 ; Local Variables:
-; undefined8       Stack[-0x1d8]:8  local_1d8
-; undefined8       Stack[-0x1d0]:8  local_1d0
+; double           Stack[-0x1d8]:8  local_1d8
+; double           Stack[-0x1d0]:8  local_1d0
 ; undefined8       Stack[-0x1c8]:8  local_1c8
 ; undefined8       Stack[-0x1c0]:8  local_1c0
 ; undefined8       Stack[-0x1b8]:8  local_1b8
-; undefined8       Stack[-0x1b0]:8  local_1b0
-; undefined4       Stack[-0x1a8]:4  local_1a8
-; undefined4       Stack[-0x1a4]:4  local_1a4
-; undefined4       Stack[-0x1a0]:4  local_1a0
-; undefined4       Stack[-0x19c]:4  local_19c
-; undefined4       Stack[-0x198]:4  local_198
-; undefined4       Stack[-0x194]:4  local_194
-; undefined4       Stack[-0x190]:4  local_190
-; undefined4       Stack[-0x18c]:4  local_18c
-; undefined4       Stack[-0x188]:4  local_188
-; undefined4       Stack[-0x184]:4  local_184
-; undefined4       Stack[-0x180]:4  local_180
-; undefined4       Stack[-0x17c]:4  local_17c
-; undefined4       Stack[-0x178]:4  local_178
-; undefined4       Stack[-0x174]:4  local_174
-; undefined4       Stack[-0x170]:4  local_170
-; undefined4       Stack[-0x16c]:4  local_16c
+; double           Stack[-0x1b0]:8  local_1b0
+; CVector2d        Stack[-0x1a8]:16  local_1a8
+; CVector2d        Stack[-0x198]:16  local_198
+; CVector2d        Stack[-0x188]:16  local_188
+; CVector2d        Stack[-0x178]:16  local_178
 ; undefined4       Stack[-0x168]:4  local_168
 ; undefined4       Stack[-0x164]:4  local_164
 ; undefined4       Stack[-0x160]:4  local_160
@@ -113,7 +101,7 @@
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined8       Stack[-0x18]:8  local_18
+; double           Stack[-0x18]:8  local_18
 ;
 ; Called Functions:
 ;   shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640

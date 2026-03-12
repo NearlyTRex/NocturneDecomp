@@ -6,6 +6,7 @@
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   actor
 ; Local Variables:
+; CBoundingBox3D   Stack[-0x30]:24  CStack_30
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; Referenced Globals:

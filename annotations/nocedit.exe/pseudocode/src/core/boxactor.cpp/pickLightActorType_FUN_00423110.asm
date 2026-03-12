@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   allow_custom
 ; uint             Stack[0xc]:4   current_type
 ; Local Variables:
-; undefined        Stack[-0x3b0]:1  local_3b0
+; CPickList        Stack[-0x3b0]:936  local_3b0
 ;
 ; XREF[2]:
 ;   core_boxactor.cpp_CLightActor_initializeInEditor_FUN_00423590 at 00423599

@@ -7,8 +7,7 @@
 ; char *           Stack[0x4]:4   directory_path
 ; char *           Stack[0x8]:4   filename
 ; Local Variables:
-; undefined        Stack[-0x214]:1  local_214
-; undefined4       Stack[-0x8]:4  local_8
+; SFoundFileInfo   Stack[-0x214]:532  local_214
 ;
 ; Called Functions:
 ;   engine_dosio.c_findFile_FUN_00481760

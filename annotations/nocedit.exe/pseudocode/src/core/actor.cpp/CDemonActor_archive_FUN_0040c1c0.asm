@@ -6,7 +6,7 @@
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x8]:1  local_8
+; float            Stack[-0x8]:4  local_8
 ;
 ; XREF[50]:
 ;   core_ammo.cpp_CAmmo_archive_FUN_00410f40 at 00410f46

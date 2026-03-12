@@ -7,9 +7,17 @@
 ; CFrankenstienMachine * Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   delta_time
 ; Local Variables:
-; undefined        Stack[-0x80]:1  local_80
-; undefined1       Stack[-0x68]:1  local_68
-; undefined4       Stack[-0x10]:4  local_10
+; CBoundingBox3D   Stack[-0x80]:24  local_80
+; CBoundingBox3D   Stack[-0x68]:24  local_68
+; CVector3f        Stack[-0x50]:12  CStack_50
+; undefined4       Stack[-0x44]:4  uStack_44
+; undefined4       Stack[-0x40]:4  uStack_40
+; undefined4       Stack[-0x3c]:4  uStack_3c
+; CVector3f        Stack[-0x38]:12  CStack_38
+; CVector3f        Stack[-0x2c]:12  CStack_2c
+; CVector3f        Stack[-0x20]:12  CStack_20
+; float            Stack[-0x10]:4  local_10
+; float            Stack[-0xc]:4  fStack_c
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004d1a18 = 004d1ab2

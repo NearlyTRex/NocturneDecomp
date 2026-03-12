@@ -9,8 +9,7 @@
 void __cdecl shape_design_c_quantizePaletteColors_FUN_0046b770(byte *image_data,int pixel_count,int stride,byte *palette_data,int mode_flag,char *bit_mask)
 
 {
-  char cVar1;
-  float fVar2;
+  float fVar1;
   uint uVar3;
   uint uVar4;
   uint uVar5;
@@ -25,6 +24,8 @@ void __cdecl shape_design_c_quantizePaletteColors_FUN_0046b770(byte *image_data,
   uint local_2c;
   byte local_1c;
   int local_14;
+  char cVar1;
+  float fVar2;
   
   uVar10 = 0xffffffff;
   pcVar11 = bit_mask;
@@ -55,13 +56,13 @@ void __cdecl shape_design_c_quantizePaletteColors_FUN_0046b770(byte *image_data,
                   (float)0.57735027000000005 -
                   SQRT((float)(uVar9 * uVar9 + uVar8 * uVar8 + uVar7 * uVar7)) *
                   (float)0.57735027000000005;
-          fVar2 = fVar2 * fVar2 * (float)0.69999999999999996 +
+          fVar1 = fVar2 * fVar2 * (float)0.69999999999999996 +
                   (float)(int)((uVar6 - uVar9) * (uVar6 - uVar9)) * (float)0.11 +
                   (float)(int)((uVar5 - uVar8) * (uVar5 - uVar8)) * (float)0.58999999999999997 +
                   (float)(int)((uVar4 - uVar7) * (uVar4 - uVar7)) * (float)0.29999999999999999;
-          if (fVar2 < local_34) {
+          if (fVar1 < local_34) {
             local_30 = local_2c;
-            local_34 = fVar2;
+            local_34 = fVar1;
           }
         }
       }

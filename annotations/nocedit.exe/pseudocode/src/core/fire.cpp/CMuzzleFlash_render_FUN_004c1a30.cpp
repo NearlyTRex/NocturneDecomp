@@ -26,8 +26,6 @@ void __cdecl core_fire_cpp_CMuzzleFlash_render_FUN_004c1a30(CMuzzleFlash *this_p
   local_28.z = (int)core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
   local_28.x = 0;
   local_28.y = 0;
-  local_10 = (float)local_28.z;
-  local_c = (float)local_28.z;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr2,&local_28,(CVector3i *)0x0);
   g_CDemonSetPtr->lighting_quality_mode = 1;

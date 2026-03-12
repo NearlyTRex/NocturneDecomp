@@ -8,25 +8,18 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ; int              Stack[0xc]:4   count
 ; Local Variables:
+; undefined4[1508] Stack[-0x1804]:6032  auStackY_1804
 ; undefined4       Stack[-0x68]:4  local_68
 ; undefined4       Stack[-0x64]:4  local_64
-; undefined1       Stack[-0x58]:1  local_58
-; undefined1       Stack[-0x54]:1  local_54
-; undefined1       Stack[-0x50]:1  local_50
-; undefined4       Stack[-0x4c]:4  local_4c
-; undefined1       Stack[-0x48]:1  local_48
-; undefined1       Stack[-0x44]:1  local_44
-; undefined1       Stack[-0x40]:1  local_40
-; undefined4       Stack[-0x3c]:4  local_3c
-; undefined1       Stack[-0x38]:1  local_38
-; undefined1       Stack[-0x34]:1  local_34
-; undefined1       Stack[-0x30]:1  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined1       Stack[-0x28]:1  local_28
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
-; undefined4       Stack[-0xc]:4  local_c
+; CMatrix3x3f      Stack[-0x58]:36  local_58
+; undefined1[4]    Stack[-0x34]:4  local_34
+; undefined1[4]    Stack[-0x30]:4  local_30
+; float            Stack[-0x2c]:4  local_2c
+; CQuaternion4f    Stack[-0x28]:16  local_28
+; float            Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
+; float            Stack[-0x10]:4  local_10
+; float            Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
 ;   core_course.cpp_CCourse_importBON_FUN_00442bc0 at 00442cd3

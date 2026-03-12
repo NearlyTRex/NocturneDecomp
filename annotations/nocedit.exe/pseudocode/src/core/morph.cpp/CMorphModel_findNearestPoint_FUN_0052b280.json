@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 66,
+    "complexity_score": 67,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
+    "pseudocode_lines": 32,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 95
+    "total_lines": 96
   },
   "cross_references": [
     {
@@ -127,7 +127,7 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -155,7 +155,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 22,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "fVar2 = position->x - *(float *)((int)&(pSVar1->position).x + iVar5);",
@@ -163,7 +163,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 23,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "fVar3 = position->y - *(float *)((int)&(pSVar1->position).y + iVar5);",
@@ -171,7 +171,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 24,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "fVar4 = position->z - *(float *)((int)&(pSVar1->position).z + iVar5);",

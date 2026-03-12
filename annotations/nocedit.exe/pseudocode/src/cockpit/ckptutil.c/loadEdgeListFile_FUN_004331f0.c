@@ -10,6 +10,7 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_004331f0(char *filename,SEd
 
 {
   SIZE_T SVar1;
+  SIZE_T SVar2;
   SEdge *pSVar2;
   int *buffer;
   int iVar3;
@@ -41,8 +42,8 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_004331f0(char *filename,SEd
   if (0 < expected_count) {
     buffer = &edge_lists->edge_count;
     do {
-      SVar1 = _fread(buffer,4,1,local_14);
-      if (SVar1 != 1) {
+      SVar2 = _fread(buffer,4,1,local_14);
+      if (SVar2 != 1) {
         _sprintf(local_68,"Unable to read number of edges (%s).",filename);
         g_CurrentFilename = "..\\cockpit\\ckptutil.c";
         g_CurrentLineNumber = 0x4c2;
@@ -53,9 +54,9 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_004331f0(char *filename,SEd
                   (edge_lists->edge_data,"..\\cockpit\\ckptutil.c",0x4c8);
       }
       if (0 < edge_lists->edge_count) {
-        SVar1 = edge_lists->edge_count * 8;
+        SVar2 = edge_lists->edge_count * 8;
         pSVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                           (SVar1,"..\\cockpit\\ckptutil.c",0x4d2);
+                           (SVar2,"..\\cockpit\\ckptutil.c",0x4d2);
         edge_lists->edge_data = pSVar2;
         if (pSVar2 == (SEdge *)0x0) {
           printf("\nUnable to allocate memory for edge list.\n");
@@ -63,8 +64,8 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_004331f0(char *filename,SEd
           g_CurrentLineNumber = 0x4d6;
           core_main_c_displayErrorAndQuit_FUN_00506f10(local_68);
         }
-        SVar1 = _fread(edge_lists->edge_data,SVar1,1,local_14);
-        if (SVar1 != 1) {
+        SVar2 = _fread(edge_lists->edge_data,SVar2,1,local_14);
+        if (SVar2 != 1) {
           _sprintf(local_68,"Unable to read edge list (%s).",filename);
           g_CurrentFilename = "..\\cockpit\\ckptutil.c";
           g_CurrentLineNumber = 0x4dd;

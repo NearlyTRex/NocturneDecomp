@@ -8,10 +8,10 @@
 ; SPoseData *      Stack[0x8]:4   out_pose
 ; Local Variables:
 ; undefined4       Stack[-0x1ae0]:4  local_1ae0
-; undefined1       Stack[-0x3c]:1  local_3c
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined1       Stack[-0x1c]:1  local_1c
-; undefined4       Stack[-0x10]:4  local_10
+; SPose            Stack[-0x1ad8]:6812  SStack_1ad8
+; CQuaternion4f    Stack[-0x3c]:16  local_3c
+; CQuaternion4f    Stack[-0x2c]:16  local_2c
+; CQuaternion4f    Stack[-0x1c]:16  local_1c
 ;
 ; XREF[1]:
 ;   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 at 005be5ce

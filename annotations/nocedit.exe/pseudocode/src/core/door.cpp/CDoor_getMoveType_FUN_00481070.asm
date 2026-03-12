@@ -7,8 +7,7 @@
 ; CDoor *          Stack[0x4]:4   this_ptr
 ; CDemonActor *    Stack[0x8]:4   opener
 ; Local Variables:
-; undefined1       Stack[-0x18]:1  local_18
-; undefined4       Stack[-0x10]:4  local_10
+; CVector3f        Stack[-0x18]:12  local_18
 ;
 ; XREF[1]:
 ;   core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70 at 004f2e80

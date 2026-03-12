@@ -14,9 +14,13 @@ int __cdecl putenv_internal(char *envstr)
   uint uVar3;
   LPCSTR lpName;
   BOOL BVar4;
+  int iVar1;
   void *ptr;
   uint uVar5;
+  uint uVar2;
+  uint uVar4;
   CHAR *pCVar6;
+  char *pcVar5;
   LPCSTR pCVar7;
   char *pcVar8;
   byte bVar9;
@@ -43,35 +47,38 @@ int __cdecl putenv_internal(char *envstr)
       pCVar6 = pCVar6 + (uint)bVar9 * -8 + 4;
       pCVar7 = pCVar7 + (uint)bVar9 * -8 + 4;
     }
-    for (uVar5 = uVar3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pCVar7 = *pCVar6;
-      pCVar6 = pCVar6 + (uint)bVar9 * -2 + 1;
+    for (uVar2 = uVar3 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
       pCVar7 = pCVar7 + (uint)bVar9 * -2 + 1;
+      pCVar6 = pCVar6 + (uint)bVar9 * -2 + 1;
+      *pCVar7 = *pCVar6;
+      pCVar6 = pCVar6;
+      pCVar7 = pCVar7;
     }
     lpName[uVar3] = '\0';
-    uVar3 = FUN_0060fa90(pcVar1 + 1);
-    if (uVar3 == 0) {
+    uVar2 = FUN_0060fa90(pcVar1 + 1);
+    if (uVar2 == 0) {
       local_18 = (LPCSTR)0x0;
     }
     else {
-      local_18 = malloc(uVar3 + 1);
+      local_18 = malloc(uVar2 + 1);
       if (local_18 == (char *)0x0) {
         free(lpName);
         return -1;
       }
-      pcVar1 = pcVar1 + 1;
+      pcVar5 = pcVar1 + 1;
       pcVar8 = local_18;
-      for (uVar5 = uVar3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *(uint *)pcVar8 = *(uint *)pcVar1;
-        pcVar1 = pcVar1 + (uint)bVar9 * -8 + 4;
+      for (uVar4 = uVar2 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+        *(uint *)pcVar8 = *(uint *)pcVar5;
+        pcVar5 = pcVar5 + (uint)bVar9 * -8 + 4;
         pcVar8 = pcVar8 + (uint)bVar9 * -8 + 4;
       }
-      for (uVar5 = uVar3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-        *pcVar8 = *pcVar1;
-        pcVar1 = pcVar1 + (uint)bVar9 * -2 + 1;
+      for (uVar4 = uVar2 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
         pcVar8 = pcVar8 + (uint)bVar9 * -2 + 1;
+        *pcVar8 = *pcVar5;
+        pcVar5 = pcVar5 + (uint)bVar9 * -2 + 1;
+        pcVar8 = pcVar8;
       }
-      local_18[uVar3] = '\0';
+      local_18[uVar2] = '\0';
     }
     BVar4 = (*g_SetEnvironmentVariableAFunc)(lpName,local_18);
     free(lpName);
@@ -79,20 +86,20 @@ int __cdecl putenv_internal(char *envstr)
     if (BVar4 == 0) {
       return -1;
     }
-    iVar2 = updateEnvironTable(envstr);
-    if (iVar2 != 0) {
+    iVar1 = updateEnvironTable(envstr);
+    if (iVar1 != 0) {
       return -1;
     }
     iVar2 = 0;
     if (g_EnvironInitialized != 0) {
-      iVar2 = FUN_0060fa90(envstr);
-      ptr = malloc((iVar2 + 1) * 2);
+      iVar1 = FUN_0060fa90(envstr);
+      ptr = malloc((iVar1 + 1) * 2);
       if (ptr == (void *)0x0) {
         convertWindowsErrorToErrno(5);
         return -1;
       }
-      iVar2 = FUN_0060fac0(ptr,envstr,iVar2 + 1);
-      if (iVar2 == -1) {
+      iVar1 = FUN_0060fac0(ptr,envstr,iVar1 + 1);
+      if (iVar1 == -1) {
         free(ptr);
         return -1;
       }

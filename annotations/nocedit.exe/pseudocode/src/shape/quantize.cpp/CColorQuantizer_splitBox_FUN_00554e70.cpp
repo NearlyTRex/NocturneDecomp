@@ -9,13 +9,15 @@
 void __cdecl shape_quantize_cpp_CColorQuantizer_splitBox_FUN_00554e70(CColorQuantizer *this_ptr,int source_box_index,int dest_box_index)
 
 {
-  uint uVar1;
   float fVar2;
   float fVar3;
+  float fVar1;
+  float fVar4;
   uchar *pixel_ptr;
   int iVar4;
   int iVar5;
   uchar *local_20;
+  uint uVar1;
   
   iVar4 = this_ptr->boxes[source_box_index].start_index;
   iVar5 = this_ptr->boxes[source_box_index].pixel_count + iVar4 + -1;
@@ -29,11 +31,11 @@ void __cdecl shape_quantize_cpp_CColorQuantizer_splitBox_FUN_00554e70(CColorQuan
                         (this_ptr,this_ptr->boxes + dest_box_index,local_20);
       if (fVar3 < fVar2) {
         for (; iVar4 < iVar5; iVar5 = iVar5 + -1) {
-          fVar2 = shape_quantize_cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0
+          fVar1 = shape_quantize_cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0
                             (this_ptr,this_ptr->boxes + source_box_index,pixel_ptr);
-          fVar3 = shape_quantize_cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0
+          fVar4 = shape_quantize_cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0
                             (this_ptr,this_ptr->boxes + dest_box_index,pixel_ptr);
-          if (fVar2 <= fVar3) break;
+          if (fVar1 <= fVar4) break;
           pixel_ptr = pixel_ptr + -4;
         }
         uVar1 = *(uint *)local_20;

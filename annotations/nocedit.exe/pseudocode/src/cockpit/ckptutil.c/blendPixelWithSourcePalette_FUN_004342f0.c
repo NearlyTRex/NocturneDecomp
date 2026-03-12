@@ -11,15 +11,18 @@
 void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0(int x,int y,float blend_factor,int palette_index)
 
 {
-  ushort uVar1;
-  float fVar2;
-  int iVar3;
   uint uVar4;
   uint uVar5;
   uint uVar6;
+  uint uVar2;
   uint *puVar7;
+  uint uVar3;
+  uint uVar7;
   uint local_34;
   uint local_2c;
+  float fVar2;
+  int iVar3;
+  ushort uVar1;
   
   if ((((g_ClipLeft <= x) && (x <= g_ClipRight)) && (g_ClipTop <= y)) &&
      ((y <= g_ClipBottom && (g_BitsPerPixel != 8)))) {
@@ -47,23 +50,23 @@ void __cdecl cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0(int x,i
     local_2c = (uint)(longlong)
                      ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 1] * fVar2 +
                                  (float)(uVar5 & 0xff) * blend_factor));
-    local_34 = local_34 >> (g_RedBitCount.bytes[0] & 0x1f);
-    uVar5 = local_2c >> (g_GreenBitCount.bytes[0] & 0x1f);
+    uVar7 = local_34 >> (g_RedBitCount.bytes[0] & 0x1f);
+    uVar2 = local_2c >> (g_GreenBitCount.bytes[0] & 0x1f);
     local_2c = (uint)(longlong)
                      ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3 + 2] * fVar2 +
                                  (float)(uVar6 & 0xff) * blend_factor));
-    local_2c = local_2c >> (g_BlueBitCount.bytes[0] & 0x1f);
+    uVar3 = local_2c >> (g_BlueBitCount.bytes[0] & 0x1f);
     if (g_BitsPerPixel != 0x10) {
       *(uint *)(x * 4 + (int)g_ScreenBufferArray[y]) =
-           local_34 << (g_RedBitPosition.bytes[0] & 0x1f) |
-           uVar5 << (g_GreenBitPosition.bytes[0] & 0x1f) |
-           local_2c << (g_BlueBitPosition.bytes[0] & 0x1f);
+           uVar7 << (g_RedBitPosition.bytes[0] & 0x1f) |
+           uVar2 << (g_GreenBitPosition.bytes[0] & 0x1f) |
+           uVar3 << (g_BlueBitPosition.bytes[0] & 0x1f);
       return;
     }
     *(ushort *)((int)g_ScreenBufferArray[y] + x * 2) =
-         (ushort)(uVar5 << (g_GreenBitPosition.bytes[0] & 0x1f)) |
-         (ushort)(local_34 << (g_RedBitPosition.bytes[0] & 0x1f)) |
-         (ushort)(local_2c << (g_BlueBitPosition.bytes[0] & 0x1f));
+         (ushort)(uVar2 << (g_GreenBitPosition.bytes[0] & 0x1f)) |
+         (ushort)(uVar7 << (g_RedBitPosition.bytes[0] & 0x1f)) |
+         (ushort)(uVar3 << (g_BlueBitPosition.bytes[0] & 0x1f));
   }
   return;
 }

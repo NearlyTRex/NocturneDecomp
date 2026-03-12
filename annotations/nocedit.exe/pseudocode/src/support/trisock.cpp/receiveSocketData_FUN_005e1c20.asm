@@ -9,8 +9,9 @@
 ; int              Stack[0xc]:4   length
 ; SNetworkAddr *   Stack[0x10]:4   source_addr
 ; Local Variables:
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined4       Stack[-0x14]:4  local_14
+; SOCKADDR         Stack[-0x2c]:16  local_2c
+; SNetworkAddr     Stack[-0x1c]:8  SStack_1c
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00540550 at 0054058e

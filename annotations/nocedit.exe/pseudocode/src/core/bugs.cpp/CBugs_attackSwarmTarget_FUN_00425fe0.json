@@ -1,31 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 22,
-        "line": 89,
-        "message": "cannot cast from type 'float' to pointer type 'float *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 241,
+    "complexity_score": 249,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 156,
+    "pseudocode_lines": 164,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_type_propagation"
     ],
-    "total_lines": 495
+    "total_lines": 503
   },
   "cross_references": [
     {
@@ -232,67 +225,179 @@
     "pcode_op_count": 1485
   },
   "stack_frame": {
-    "frame_size": 400,
-    "local_size": 392,
+    "frame_size": 404,
+    "local_size": 396,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "local_184",
-        "offset": -388,
-        "size": 4,
-        "type": "undefined4"
+        "name": "SStack_188",
+        "offset": -392,
+        "size": 60,
+        "type": "SDamageInfo"
       },
       {
         "is_param": false,
-        "name": "local_154",
-        "offset": -340,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_150",
-        "offset": -336,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_14c",
+        "offset": -332,
+        "size": 48,
+        "type": "CMatrix3x4f"
       },
       {
         "is_param": false,
         "name": "local_11c",
         "offset": -284,
-        "size": 1,
-        "type": "undefined1"
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_ec",
+        "offset": -236,
+        "size": 48,
+        "type": "CMatrix3x4f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_bc",
+        "offset": -188,
+        "size": 36,
+        "type": "CMatrix3x3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_94",
+        "offset": -148,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_88",
+        "offset": -136,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_84",
+        "offset": -132,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_80",
+        "offset": -128,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_7c",
+        "offset": -124,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_70",
+        "offset": -112,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_64",
+        "offset": -100,
+        "size": 12,
+        "type": "CVector3f"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_58",
+        "offset": -88,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_54",
+        "offset": -84,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_50",
+        "offset": -80,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_40",
+        "offset": -64,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_38",
+        "offset": -56,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "aCStack_34",
+        "offset": -52,
+        "size": 24,
+        "type": "CVector3f[2]"
+      },
+      {
+        "is_param": false,
+        "name": "pfStack_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "float *"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float *"
       },
       {
         "is_param": true,
@@ -338,7 +443,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 63,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "pfVar6 = (float *)((int)pfVar6 + 1);",
@@ -346,42 +451,42 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 72,
       "match": "ABS",
       "severity": "mild",
-      "text": "if ((((float)2 < ABS(local_48)) || ((float)2 < ABS(local_4c))) ||",
+      "text": "ABS((this_ptr->base).base.base.location.position.y - (pCVar1->location).position.y)) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 74,
       "match": "ABS",
       "severity": "mild",
-      "text": "if ((((float)2 < ABS(local_48)) || ((float)2 < ABS(local_4c))) ||",
+      "text": "ABS((this_ptr->base).base.base.location.position.x - (pCVar1->location).position.x))) ||",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 68,
+      "line": 76,
       "match": "ABS",
       "severity": "mild",
-      "text": "((float)2 < ABS(local_44))) {",
+      "text": "ABS((this_ptr->base).base.base.location.position.z - (pCVar1->location).position.z))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 136,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 137,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar8 * -8 + 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

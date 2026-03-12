@@ -7,19 +7,17 @@
 ; CVector3f *      Stack[0x4]:4   axis_vector
 ; float            Stack[0x8]:4   distance
 ; Local Variables:
-; undefined        Stack[-0x1a4]:1  local_1a4
-; undefined        Stack[-0x174]:1  local_174
-; undefined        Stack[-0x144]:1  local_144
-; undefined        Stack[-0x114]:1  local_114
-; undefined        Stack[-0xe4]:1  local_e4
-; undefined        Stack[-0xb4]:1  local_b4
-; undefined        Stack[-0x84]:1  local_84
-; undefined        Stack[-0x54]:1  local_54
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined        Stack[-0x18]:1  local_18
-; undefined4       Stack[-0xc]:4  local_c
+; CMatrix3x4f      Stack[-0x1a4]:48  local_1a4
+; CMatrix3x4f      Stack[-0x174]:48  local_174
+; CMatrix3x4f      Stack[-0x144]:48  local_144
+; CMatrix3x4f      Stack[-0x114]:48  local_114
+; CMatrix3x4f      Stack[-0xe4]:48  local_e4
+; CMatrix3x4f      Stack[-0xb4]:48  local_b4
+; CMatrix3x4f      Stack[-0x84]:48  local_84
+; CMatrix3x4f      Stack[-0x54]:48  local_54
+; CVector3f        Stack[-0x24]:12  local_24
+; CVector3f        Stack[-0x18]:12  local_18
+; float            Stack[-0xc]:4  local_c
 ;
 ; Called Functions:
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830

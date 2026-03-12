@@ -7,7 +7,7 @@
 ; CDeformableModelInstance * Stack[0x4]:4   model_ptr
 ; char *           Stack[0x8]:4   property_name
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_0041d270 at 0041d361

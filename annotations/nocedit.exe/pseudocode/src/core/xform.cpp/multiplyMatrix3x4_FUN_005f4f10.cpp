@@ -28,27 +28,9 @@ CMatrix3x4f * __stack2_esi core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(CMatrix
                 matrix_b->m[0].w * matrix_a->m[0].x + matrix_b->m[0].x * matrix_a->m[1].x;
   local_38[2] = matrix_b->m[0].y * matrix_a->m[2].y +
                 matrix_b->m[0].w * matrix_a->m[0].y + matrix_b->m[0].x * matrix_a->m[1].y;
-  local_28 = matrix_b->m[1].y * matrix_a->m[2].w +
-             matrix_b->m[1].w * matrix_a->m[0].w + matrix_b->m[1].x * matrix_a->m[1].w;
-  local_24 = matrix_b->m[1].y * matrix_a->m[2].x +
-             matrix_b->m[1].x * matrix_a->m[1].x + matrix_b->m[1].w * matrix_a->m[0].x;
-  local_20 = matrix_b->m[1].y * matrix_a->m[2].y +
-             matrix_b->m[1].x * matrix_a->m[1].y + matrix_b->m[1].w * matrix_a->m[0].y;
-  local_18 = matrix_b->m[2].y * matrix_a->m[2].w +
-             matrix_b->m[2].w * matrix_a->m[0].w + matrix_b->m[2].x * matrix_a->m[1].w;
-  local_14 = matrix_b->m[2].y * matrix_a->m[2].x +
-             matrix_b->m[2].x * matrix_a->m[1].x + matrix_b->m[2].w * matrix_a->m[0].x;
-  local_10 = matrix_b->m[2].y * matrix_a->m[2].y +
-             matrix_b->m[2].x * matrix_a->m[1].y + matrix_b->m[2].w * matrix_a->m[0].y;
   local_38[3] = matrix_b->m[0].y * matrix_a->m[2].z +
                 matrix_b->m[0].w * matrix_a->m[0].z + matrix_b->m[0].x * matrix_a->m[1].z +
                 matrix_b->m[0].z;
-  local_1c = matrix_b->m[1].y * matrix_a->m[2].z +
-             matrix_b->m[1].x * matrix_a->m[1].z + matrix_b->m[1].w * matrix_a->m[0].z +
-             matrix_b->m[1].z;
-  local_c = matrix_b->m[2].y * matrix_a->m[2].z +
-            matrix_b->m[2].x * matrix_a->m[1].z + matrix_b->m[2].w * matrix_a->m[0].z +
-            matrix_b->m[2].z;
   pfVar2 = local_38;
   pfVar3 = (float *)matrix_out;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

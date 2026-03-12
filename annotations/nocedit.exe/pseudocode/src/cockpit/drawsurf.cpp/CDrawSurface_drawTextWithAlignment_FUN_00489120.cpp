@@ -9,16 +9,17 @@
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode)
 
 {
-  int iVar1;
-  int iVar2;
-  int iVar3;
-  int iVar4;
   int iVar5;
+  int enabled;
   int color;
   int right_x;
   int y_00;
   int iVar6;
   int left_x;
+  int iVar2;
+  int iVar3;
+  int iVar1;
+  int iVar4;
   
   iVar4 = g_ClipBottom;
   iVar3 = g_ClipRight;
@@ -33,7 +34,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_0048912
   g_ClipTop = this_ptr->clip_top;
   g_ClipBottom = this_ptr->clip_bottom;
   if (g_CurrentFont == (CBitFont *)0x0) {
-    iVar5 = engine_2d_c_getTextWrapEnabled_FUN_004027f0();
+    enabled = engine_2d_c_getTextWrapEnabled_FUN_004027f0();
     color = engine_2d_c_getTextColor_FUN_00402830();
     engine_2d_c_disableTextWrap_FUN_00402820();
     engine_2d_c_setTextColor_FUN_00402840(g_PaletteColorIndex);
@@ -63,7 +64,7 @@ LAB_00489337:
       engine_2d_c_drawTextCenteredColor_FUN_004026c0(text,left_x,right_x,(y_00 + -10 + iVar6) / 2);
     }
     engine_2d_c_setTextColor_FUN_00402840(color);
-    engine_2d_c_setTextWrapEnabled_FUN_00402800(iVar5);
+    engine_2d_c_setTextWrapEnabled_FUN_00402800(enabled);
     g_ClipLeft = iVar1;
     g_ClipTop = iVar2;
     g_ClipRight = iVar3;

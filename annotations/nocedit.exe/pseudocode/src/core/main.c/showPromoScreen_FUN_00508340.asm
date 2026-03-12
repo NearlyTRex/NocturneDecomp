@@ -4,7 +4,7 @@
 ; void __cdecl core_main_c_showPromoScreen_FUN_00508340(void)
 ;
 ; Local Variables:
-; undefined        Stack[-0x110]:1  local_110
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_load_d_006355e6

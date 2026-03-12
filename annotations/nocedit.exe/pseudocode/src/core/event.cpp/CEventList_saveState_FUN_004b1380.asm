@@ -9,8 +9,8 @@
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_saveGame_FUN_004e0cd0 at 004e0e58

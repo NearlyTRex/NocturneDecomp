@@ -4,49 +4,49 @@
       {
         "category": "format_error",
         "column": 30,
-        "line": 69,
+        "line": 72,
         "message": "format specifies type 'int *' but the argument has type 'C3DSLight *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 36,
-        "line": 70,
+        "line": 73,
         "message": "format specifies type 'int *' but the argument has type 'CColor3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 53,
-        "line": 70,
+        "line": 73,
         "message": "format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 74,
-        "line": 70,
+        "line": 73,
         "message": "format specifies type 'int *' but the argument has type 'float *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 36,
-        "line": 74,
+        "line": 77,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 79,
+        "line": 82,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 80,
+        "line": 83,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 30,
-        "line": 81,
+        "line": 84,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       }
     ],
@@ -55,18 +55,18 @@
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 133,
+    "complexity_score": 136,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 83,
+    "pseudocode_lines": 86,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "warning_inlined_function"
     ],
-    "total_lines": 144
+    "total_lines": 147
   },
   "cross_references": [],
   "function": {
@@ -137,22 +137,64 @@
         "is_param": false,
         "name": "local_188",
         "offset": -392,
-        "size": 1,
-        "type": "undefined"
+        "size": 255,
+        "type": "char[255]"
       },
       {
         "is_param": false,
-        "name": "local_187",
-        "offset": -391,
+        "name": "uStack_89",
+        "offset": -137,
         "size": 1,
         "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_88",
+        "offset": -136,
+        "size": 80,
+        "type": "char[80]"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_38",
+        "offset": -56,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_34",
+        "offset": -52,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "afStack_30",
+        "offset": -48,
+        "size": 16,
+        "type": "float[4]"
+      },
+      {
+        "is_param": false,
+        "name": "afStack_20",
+        "offset": -32,
+        "size": 8,
+        "type": "float[2]"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined1[4]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "char *"
       },
       {
         "is_param": true,
@@ -220,23 +262,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar11 = (float10)fpatan((float10)fStack_38,(float10)fVar2);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 83,
-      "match": "fpatan",
-      "severity": "mild",
-      "text": "fVar9 = (float10)fpatan((float10)(fStack_34 - fVar1),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 84,
+      "match": "fpatan",
+      "severity": "mild",
+      "text": "fVar11 = (float10)fpatan((float10)fVar3,(float10)fVar2);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 86,
+      "match": "fpatan",
+      "severity": "mild",
+      "text": "fVar5 = (float10)fpatan((float10)(fStack_34 - fVar1),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 87,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(fVar10 * fVar10 + fVar9 * (float10)fVar2));",

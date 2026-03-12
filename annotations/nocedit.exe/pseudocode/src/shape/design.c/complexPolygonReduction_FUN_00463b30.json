@@ -4,13 +4,13 @@
       {
         "category": "lvalue_required",
         "column": 12,
-        "line": 46,
+        "line": 48,
         "message": "cannot take the address of an rvalue of type 'int'"
       },
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 54,
+        "line": 56,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -19,18 +19,18 @@
   },
   "complexity": {
     "assembly_lines": 1138,
-    "complexity_score": 423,
+    "complexity_score": 425,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 26,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 323,
+    "pseudocode_lines": 325,
     "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "suspect_float"
     ],
-    "total_lines": 1461
+    "total_lines": 1463
   },
   "cross_references": [
     {
@@ -374,134 +374,141 @@
         "is_param": false,
         "name": "local_2e4",
         "offset": -740,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_240",
-        "offset": -576,
-        "size": 4,
-        "type": "undefined4"
+        "size": 388,
+        "type": "SShapeEditorPolygon"
       },
       {
         "is_param": false,
         "name": "local_160",
         "offset": -352,
-        "size": 1,
-        "type": "undefined1"
+        "size": 80,
+        "type": "int[20]"
       },
       {
         "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
+        "name": "afStack_110",
+        "offset": -272,
+        "size": 64,
+        "type": "float[16]"
+      },
+      {
+        "is_param": false,
+        "name": "auStack_d0",
+        "offset": -208,
+        "size": 64,
+        "type": "uint[16]"
+      },
+      {
+        "is_param": false,
+        "name": "afStack_90",
+        "offset": -144,
+        "size": 68,
+        "type": "float[17]"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "void *"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": true,
@@ -515,7 +522,7 @@
   "suspects": [
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 69,
+      "line": 71,
       "match": "3.58732e-43",
       "severity": "mild",
       "text": "3.58732e-43,8);",
@@ -555,34 +562,34 @@
     },
     {
       "description": "Complex pointer cast",
+      "line": 281,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "severity": "mild",
+      "text": "pSVar8 = (SShapeEditorPolygon *)((int)pSVar8 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 282,
       "match": "(SShapeEditorPolygon *)((int)",
       "severity": "mild",
-      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 283,
-      "match": "(SShapeEditorPolygon *)((int)",
-      "severity": "mild",
-      "text": "pSVar8 = (SShapeEditorPolygon *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 287,
+      "line": 289,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)local_20 + local_48 * 4 + -8) < selected_polygon_index) {",
+      "text": "if (*(int *)((int)local_20 + local_3c * 4 + -8) < selected_polygon_index) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 288,
+      "line": 290,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "selected_polygon_index = *(int *)((int)local_20 + local_48 * 4 + -8);",
+      "text": "selected_polygon_index = *(int *)((int)local_20 + local_3c * 4 + -8);",
       "type": "pointer_cast"
     }
   ]

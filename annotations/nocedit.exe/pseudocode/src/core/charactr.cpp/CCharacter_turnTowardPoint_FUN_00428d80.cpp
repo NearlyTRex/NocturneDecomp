@@ -9,7 +9,9 @@
 void __cdecl core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00428d80(CCharacter *this_ptr,CVector3f *target)
 
 {
+  float fVar1;
   CVector3f *pCVar1;
+  CVector3f *pCVar2;
   float fVar2;
   float fVar3;
   CVector3f local_30;
@@ -19,12 +21,11 @@ void __cdecl core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00428d80(CCharacte
   
   pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                      (&this_ptr->base,&local_24,target);
-  pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_30,pCVar1);
-  local_c = pCVar1->y;
-  local_10 = this_ptr->turn_speed;
-  fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_c);
-  fVar3 = -local_10;
-  if ((-local_10 <= fVar2) && (fVar3 = local_10, fVar2 <= local_10)) {
+  pCVar2 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_30,pCVar1);
+  fVar1 = this_ptr->turn_speed;
+  fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar2->y);
+  fVar3 = -fVar1;
+  if ((-fVar1 <= fVar2) && (fVar3 = fVar1, fVar2 <= fVar1)) {
     this_ptr->turn_angle_accumulator = fVar2;
     return;
   }

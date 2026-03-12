@@ -4,7 +4,19 @@
 ; void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
 ;
 ; Local Variables:
-; undefined4       Stack[-0x34]:4  local_34
+; CPickList        Stack[-0xf20]:936  CStack_f20
+; SFoundFileInfo   Stack[-0xb78]:532  SStack_b78
+; SFoundFileInfo   Stack[-0x964]:532  SStack_964
+; char[512]        Stack[-0x750]:512  acStack_750
+; char[260]        Stack[-0x550]:260  acStack_550
+; char[260]        Stack[-0x44c]:260  acStack_44c
+; char[260]        Stack[-0x348]:260  acStack_348
+; char[256]        Stack[-0x244]:256  acStack_244
+; char[256]        Stack[-0x144]:256  acStack_144
+; CStrList         Stack[-0x44]:16  CStack_44
+; CStrList         Stack[-0x34]:16  local_34
+; CStrList         Stack[-0x24]:16  CStack_24
+; int              Stack[-0x14]:4  iStack_14
 ;
 ; XREF[1]:
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be47c

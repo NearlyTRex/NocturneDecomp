@@ -12,9 +12,6 @@ void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *th
 
 {
   SMRGLHeaderPrimitive SStack_78;
-  uint local_60;
-  uint local_54;
-  uint local_48;
   CVector3i local_30;
   CVector3i local_24;
   CVector3i local_18;
@@ -41,9 +38,6 @@ void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *th
        (int)ROUND(ROUND((double)(this_ptr->normal).y * -65536));
   SStack_78.surface_normal.C =
        (int)ROUND(ROUND(-65536 * (double)(this_ptr->normal).z));
-  local_60 = 0;
-  local_54 = 1;
-  local_48 = 2;
   SStack_78.surface_normal.D =
        (int)ROUND(ROUND(this_ptr->plane_distance * (float)65536 *
                         (float)256));

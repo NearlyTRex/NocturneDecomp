@@ -12,8 +12,8 @@
 ; int              Stack[0x18]:4   rect_right
 ; int              Stack[0x1c]:4   rect_bottom
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_renderPackedBitmap_FUN_00488c90 at 00488cc1

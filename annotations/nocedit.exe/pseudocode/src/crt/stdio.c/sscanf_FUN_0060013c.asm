@@ -7,7 +7,7 @@
 ; char *           Stack[0x4]:4   str
 ; char *           Stack[0x8]:4   format
 ; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
+; undefined1 *     Stack[-0x8]:4  local_8
 ;
 ; XREF[47]:
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047e6b5

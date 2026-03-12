@@ -10,6 +10,7 @@ int __cdecl engine_dosio_c_copyFileTimestamp_FUN_00481910(char *source_file,char
 
 {
   int iVar1;
+  int iVar2;
   _stat _Stack_50;
   utimbuf local_8;
   
@@ -19,6 +20,6 @@ int __cdecl engine_dosio_c_copyFileTimestamp_FUN_00481910(char *source_file,char
   if (iVar1 == 0) {
     local_8.actime = _Stack_50._st_atime;
   }
-  iVar1 = utime_00600c1e(source_file,&local_8);
-  return (uint)(iVar1 == 0);
+  iVar2 = utime_00600c1e(source_file,&local_8);
+  return (uint)(iVar2 == 0);
 }

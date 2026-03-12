@@ -57,19 +57,13 @@ CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_computeVisibleFrustumBounds_FU
     output_bounds->y = output_bounds[1].y;
     output_bounds->z = output_bounds[1].z;
   }
-  local_20 = &(this_ptr->base).position;
   local_38 = 0;
-  local_34 = &(this_ptr->base).rotation_matrix;
   local_18 = 1;
   do {
     if (this_ptr->framebuffer_height + -1 <= local_18) {
       return output_bounds;
     }
-    local_2c = local_18 + 1;
-    local_28 = local_38;
-    local_30 = local_38;
     local_1c = 0;
-    local_24 = local_2c;
     for (local_14 = 1; local_14 < this_ptr->framebuffer_width + -1; local_14 = local_14 + 1) {
       core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                 (this_ptr,local_14,local_18,&local_d4);
@@ -84,16 +78,13 @@ LAB_00454218:
                   (this_ptr,&local_80,&local_e0);
         aiStack_70[2] = local_e0.x;
         aiStack_70[(uint)bVar3 * -2 + 3] = *(int *)((int)&local_e0 + (uint)bVar3 * -8 + 4);
-        aiStack_70[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
+        (&local_60)[(uint)bVar3 * -2 + (uint)bVar3 * -2] =
              *(int *)((int)&local_e0 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
-        local_a4 = (float)aiStack_70[2] * 0.00390625f;
-        local_a0 = (float)aiStack_70[3] * 0.00390625f;
-        local_9c = (float)local_60 * 0.00390625f;
-        local_5c.x = local_a4 - (local_20->f).x;
-        local_5c.y = local_a0 - (local_20->f).y;
-        local_5c.z = local_9c - (local_20->f).z;
+        local_5c.x = (float)aiStack_70[2] * 0.00390625f - (this_ptr->base).position.f.x;
+        local_5c.y = (float)aiStack_70[3] * 0.00390625f - (this_ptr->base).position.f.y;
+        local_5c.z = (float)local_60 * 0.00390625f - (this_ptr->base).position.f.z;
         core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                  (local_34,&local_50,&local_5c);
+                  (&(this_ptr->base).rotation_matrix,&local_50,&local_5c);
         core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)output_bounds,&local_50);
       }
       else {
@@ -104,8 +95,7 @@ LAB_004541c5:
         }
         else {
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-                    (this_ptr,local_1c,local_30,&local_bc);
-          local_c8 = local_bc.x;
+                    (this_ptr,local_1c,local_38,&local_bc);
           aiStack_c4[(uint)bVar3 * -2] = *(int *)((int)&local_bc + (uint)bVar3 * -8 + 4);
           aiStack_c4[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
                *(int *)((int)&local_bc + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
@@ -117,8 +107,7 @@ LAB_004541d4:
         }
         else {
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-                    (this_ptr,local_1c,local_2c,&local_ec);
-          local_b0 = local_ec.x;
+                    (this_ptr,local_1c,local_18 + 1,&local_ec);
           aiStack_ac[(uint)bVar3 * -2] = *(int *)((int)&local_ec + (uint)bVar3 * -8 + 4);
           aiStack_ac[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
                *(int *)((int)&local_ec + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
@@ -126,8 +115,7 @@ LAB_004541d4:
         }
         if ((local_14 < this_ptr->framebuffer_width + -2) && (1 < local_18)) {
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-                    (this_ptr,local_14 + 1,local_28,&local_8c);
-          local_98 = local_8c.x;
+                    (this_ptr,local_14 + 1,local_38,&local_8c);
           aiStack_94[(uint)bVar3 * -2] = *(int *)((int)&local_8c + (uint)bVar3 * -8 + 4);
           aiStack_94[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
                *(int *)((int)&local_8c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
@@ -140,8 +128,7 @@ LAB_004541ed:
         if ((local_14 < this_ptr->framebuffer_width + -2) &&
            (local_18 < this_ptr->framebuffer_height + -2)) {
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-                    (this_ptr,local_14 + 1,local_24,&local_44);
-          local_74 = local_44.x;
+                    (this_ptr,local_14 + 1,local_18 + 1,&local_44);
           aiStack_70[(uint)bVar3 * -2] = *(int *)((int)&local_44 + (uint)bVar3 * -8 + 4);
           aiStack_70[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
                *(int *)((int)&local_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);

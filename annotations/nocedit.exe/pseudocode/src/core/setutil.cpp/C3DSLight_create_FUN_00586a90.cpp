@@ -9,7 +9,7 @@
 CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_00586a90(C3DSLight *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
   CDemonLight *this_ptr_00;
   CDemonFilter *pCVar2;
   CDemonLight *this_ptr_01;
@@ -19,6 +19,7 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_00586a90(C3DSLight *
   char *pcVar6;
   char (*filter_name) [40];
   char *pcVar7;
+  char cVar1;
   
   this_ptr_00 = (CDemonLight *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x2fac,"..\\core\\setutil.cpp",0x2f8);
   this_ptr_01 = (CDemonLight *)0x0;
@@ -39,7 +40,7 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_00586a90(C3DSLight *
     this_ptr_01->shadow_bounds_mode = this_ptr->blend_filter;
   }
   pUVar3 = &(this_ptr_01->base).base.position;
-  if ((CVector3f *)pUVar3 != &this_ptr->pos) {
+  if (pUVar3 != (UVector3 *)&this_ptr->pos) {
     (pUVar3->f).x = (this_ptr->pos).x;
     (this_ptr_01->base).base.position.f.y = (this_ptr->pos).y;
     (this_ptr_01->base).base.position.f.z = (this_ptr->pos).z;
@@ -68,10 +69,10 @@ CDemonLight * __cdecl core_setutil_cpp_C3DSLight_create_FUN_00586a90(C3DSLight *
     if (cVar1 == '\0') {
       return this_ptr_01;
     }
-    cVar1 = pcVar6[1];
+    cVar2 = pcVar6[1];
     pcVar6 = pcVar6 + 2;
-    pcVar7[1] = cVar1;
+    pcVar7[1] = cVar2;
     pcVar7 = pcVar7 + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   return this_ptr_01;
 }

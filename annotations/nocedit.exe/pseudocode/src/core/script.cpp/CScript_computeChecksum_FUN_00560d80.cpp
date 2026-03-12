@@ -9,11 +9,12 @@
 uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_00560d80(CScript *this_ptr)
 
 {
-  byte bVar1;
+  byte input_byte;
   byte *pbVar2;
   int iVar3;
   int iVar4;
   uint local_14;
+  byte bVar1;
   
   local_14 = 0;
   iVar4 = 0;
@@ -23,9 +24,9 @@ uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_00560d80(CScript *this_
       pbVar2 = *(byte **)((int)&this_ptr->parsed_lines->text + iVar3);
       bVar1 = *pbVar2;
       while (bVar1 != 0) {
-        bVar1 = *pbVar2;
+        input_byte = *pbVar2;
         pbVar2 = pbVar2 + 1;
-        core_actor_cpp_crc32ProcessByte_FUN_0040ce30(&local_14,bVar1);
+        core_actor_cpp_crc32ProcessByte_FUN_0040ce30(&local_14,input_byte);
         bVar1 = *pbVar2;
       }
       iVar4 = iVar4 + 1;

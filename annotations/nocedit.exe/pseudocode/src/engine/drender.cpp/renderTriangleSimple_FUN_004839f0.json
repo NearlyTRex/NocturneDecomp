@@ -6,15 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 465,
-    "complexity_score": 220,
+    "complexity_score": 243,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 22,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 220,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 685
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 228,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 693
   },
   "cross_references": [
     {
@@ -265,50 +267,50 @@
         "is_param": false,
         "name": "local_74",
         "offset": -116,
-        "size": 1,
-        "type": "undefined1"
+        "size": 64,
+        "type": "SRenderVertex *[16]"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3i *"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "SRenderVertex *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "SRenderVertex *"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "SRenderVertex *"
       },
       {
         "is_param": false,
@@ -322,14 +324,14 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "SSoftwareEdge *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "SSoftwareEdge *"
       },
       {
         "is_param": true,
@@ -347,5 +349,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 212,
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "scanline_y = (byte *)((int)&(local_20->projected_vertex).transformed_x + 1);",
+      "type": "pointer_cast"
+    }
+  ]
 }

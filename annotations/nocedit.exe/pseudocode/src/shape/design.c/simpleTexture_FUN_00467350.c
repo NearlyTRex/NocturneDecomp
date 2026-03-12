@@ -9,8 +9,9 @@
 void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
 
 {
-  char cVar1;
-  uint uVar2;
+  _FILE *file_ptr;
+  uint uVar1;
+  int iVar2;
   int iVar3;
   char *pcVar4;
   byte bVar5;
@@ -23,6 +24,8 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
   int local_1c;
   _FILE *local_18;
   uint local_14;
+  char cVar1;
+  uint uVar2;
   
   bVar5 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -32,12 +35,13 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
   do {
     if (iVar3 == 0) break;
     iVar3 = iVar3 + -1;
-    cVar1 = *pcVar4;
     pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
+    cVar1 = *pcVar4;
+    pcVar4 = pcVar4;
   } while (cVar1 != '\0');
   if (iVar3 != -2) {
-    local_18 = engine_dosio_c_getFile_FUN_00481a50("art",local_70,"rb");
-    if (local_18 == (_FILE *)0x0) {
+    file_ptr = engine_dosio_c_getFile_FUN_00481a50("art",local_70,"rb");
+    if (file_ptr == (_FILE *)0x0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("ERROR! Bad texture name!",0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -45,15 +49,14 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     }
     else {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\shape\\design.c",0x1ffd);
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\design.c",0x1ffd);
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Face map on Z axis (Y/N) ?",0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      local_14 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-      local_14 = local_14 & 0xff;
-      iVar3 = toupper(local_14);
-      if (iVar3 == 0x59) {
+      uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
+      iVar2 = toupper(uVar1 & 0xff);
+      if (iVar2 == 0x59) {
         local_74 = 99999.9;
         local_78 = 99999.9;
         local_7c = -99999.9;

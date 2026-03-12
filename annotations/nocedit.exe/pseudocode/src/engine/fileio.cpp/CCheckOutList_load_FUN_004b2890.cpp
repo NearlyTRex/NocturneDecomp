@@ -11,17 +11,21 @@
 int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *this_ptr)
 
 {
-  char cVar1;
+  char cVar2;
+  int *piVar3;
   int *piVar2;
   int iVar3;
   char *pcVar4;
+  int iVar4;
   char *pcVar5;
+  char *pcVar7;
   byte bVar7;
   char local_21c [260];
   char local_118 [256];
   _FILE *local_18;
   char local_14 [4];
   char *pcVar6;
+  char cVar1;
   
   bVar7 = 0;
   engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(this_ptr);
@@ -32,26 +36,26 @@ int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *thi
   engine_dosio_c_makePath_FUN_00481f50(local_21c,local_14,local_118,(char *)0x0,(char *)0x0);
   pcVar4 = "checkout.txt";
   iVar3 = -1;
-  pcVar6 = local_21c;
+  pcVar5 = local_21c;
   do {
-    pcVar5 = pcVar6;
+    pcVar5 = pcVar5;
     if (iVar3 == 0) break;
     iVar3 = iVar3 + -1;
-    pcVar5 = pcVar6 + (uint)bVar7 * -2 + 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar5;
+    pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
+    cVar1 = *pcVar5;
+    pcVar5 = pcVar5;
   } while (cVar1 != '\0');
-  pcVar5 = pcVar5 + -1;
+  pcVar7 = pcVar5 + -1;
   do {
-    cVar1 = *pcVar4;
-    *pcVar5 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
+    cVar2 = *pcVar4;
+    *pcVar7 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
-  } while (cVar1 != '\0');
-  iVar3 = 0;
+    pcVar7[1] = cVar2;
+    pcVar7 = pcVar7 + 2;
+  } while (cVar2 != '\0');
+  iVar4 = 0;
   do {
     local_18 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                          (local_21c,(char *)0x0,"rt","..\\engine\\fileio.cpp",0x153);
@@ -59,19 +63,19 @@ int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *thi
       _setvbuf(local_18,(char *)0x0,0,0x400);
       goto LAB_004b295b;
     }
-    piVar2 = (int *)_errno();
-    if (*piVar2 != 6) break;
-    iVar3 = iVar3 + 1;
+    piVar3 = (int *)_errno();
+    if (*piVar3 != 6) break;
+    iVar4 = iVar4 + 1;
     (*g_SleepFunc)(500);
-  } while (iVar3 < 10);
+  } while (iVar4 < 10);
   local_18 = (_FILE *)0x0;
 LAB_004b295b:
   if (local_18 != (_FILE *)0x0) {
-    iVar3 = engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(this_ptr,&local_18);
+    iVar4 = engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(this_ptr,&local_18);
     if (local_18 != (_FILE *)0x0) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0xc4);
     }
-    return iVar3;
+    return iVar4;
   }
   piVar2 = (int *)_errno();
   if (*piVar2 != 1) {

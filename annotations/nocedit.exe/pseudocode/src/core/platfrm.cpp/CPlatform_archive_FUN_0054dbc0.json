@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 327,
-    "complexity_score": 146,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 37,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 111,
+    "pseudocode_lines": 113,
     "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 438
+    "total_lines": 440
   },
   "cross_references": [
     {
@@ -369,21 +369,21 @@
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonActor *"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -397,7 +397,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 78,
+      "match": "(CPlatform *)((int)",
+      "severity": "mild",
+      "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
       "match": "(CPlatform *)((int)",
       "severity": "mild",
       "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
@@ -405,18 +413,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 100,
       "match": "(CPlatform *)((int)",
       "severity": "mild",
-      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 98,
-      "match": "(CPlatform *)((int)",
-      "severity": "mild",
-      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
+      "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
       "type": "pointer_cast"
     }
   ],

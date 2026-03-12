@@ -8,7 +8,7 @@
 ; void *           Stack[0x8]:4   input_buffer
 ; SIZE_T           Stack[0xc]:4   bytes_to_write
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; *****************************************************************************
 

@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 133,
+    "complexity_score": 130,
     "cross_reference_count": 9,
     "function_call_count": 7,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 78,
+    "pseudocode_lines": 75,
     "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 232
+    "total_lines": 229
   },
   "cross_references": [
     {
@@ -279,10 +279,10 @@
     "pcode_op_count": 682
   },
   "stack_frame": {
-    "frame_size": 192,
+    "frame_size": 180,
     "local_size": 180,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 0,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -290,91 +290,105 @@
         "name": "local_b0",
         "offset": -176,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_ac",
         "offset": -172,
-        "size": 1,
-        "type": "undefined1"
+        "size": 36,
+        "type": "CMatrix3x3f"
       },
       {
         "is_param": false,
         "name": "local_84",
         "offset": -132,
-        "size": 1,
-        "type": "undefined1"
+        "size": 24,
+        "type": "CBoundingBox3D"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_60",
+        "offset": -96,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 4,
-        "type": "undefined4"
+        "name": "CStack_54",
+        "offset": -84,
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
-        "name": "local_38",
-        "offset": -56,
+        "name": "fStack_30",
+        "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_28",
+        "offset": -40,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": true,
@@ -396,6 +410,13 @@
         "offset": 12,
         "size": 4,
         "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "in_stack_00000010",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -419,7 +440,7 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 10,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "int in_stack_00000010;",
@@ -427,7 +448,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 49,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_6c.z = SQRT(impact_point->z * impact_point->z +",

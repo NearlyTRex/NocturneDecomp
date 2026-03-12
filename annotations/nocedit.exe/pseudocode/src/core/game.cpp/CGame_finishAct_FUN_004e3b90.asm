@@ -6,20 +6,18 @@
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x550]:4  local_550
-; undefined1       Stack[-0x54c]:1  local_54c
-; undefined1       Stack[-0x54b]:1  local_54b
-; undefined1       Stack[-0x14c]:1  local_14c
-; undefined1       Stack[-0x14b]:1  local_14b
-; undefined1       Stack[-0x4c]:1  local_4c
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0x550]:4  local_550
+; char[1024]       Stack[-0x54c]:1024  local_54c
+; char[256]        Stack[-0x14c]:256  local_14c
+; CAlphaBitmap     Stack[-0x4c]:20  local_4c
+; int              Stack[-0x30]:4  local_30
+; int              Stack[-0x2c]:4  local_2c
+; int              Stack[-0x28]:4  local_28
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; CBitFont *       Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_mission.cpp_CDemonMission_run_FUN_00524420 at 00524617

@@ -9,8 +9,7 @@
 void __cdecl shape_design_c_removeDegeneratePolygons_FUN_00465310(void)
 
 {
-  uint uVar1;
-  int iVar2;
+  int iVar1;
   int iVar3;
   SShapeEditorPolygon *pSVar4;
   SShapeEditorPolygon *pSVar5;
@@ -18,6 +17,8 @@ void __cdecl shape_design_c_removeDegeneratePolygons_FUN_00465310(void)
   int local_20;
   int local_1c;
   uint local_14;
+  uint uVar1;
+  int iVar2;
   
   do {
     local_24 = 0;
@@ -27,10 +28,10 @@ void __cdecl shape_design_c_removeDegeneratePolygons_FUN_00465310(void)
       }
       uVar1 = g_ModelPolygonData[local_24].vertex_indices_count;
       local_14 = 0xffffffff;
-      for (local_20 = 0; iVar3 = local_20, local_20 < (int)(uVar1 - 1); local_20 = local_20 + 1) {
-        while (local_1c = iVar3 + 1, local_1c < (int)uVar1) {
-          iVar2 = iVar3 + 1;
-          iVar3 = local_1c;
+      for (local_20 = 0; iVar1 = local_20, local_20 < (int)(uVar1 - 1); local_20 = local_20 + 1) {
+        while (local_1c = iVar1 + 1, local_1c < (int)uVar1) {
+          iVar2 = iVar1 + 1;
+          iVar1 = local_1c;
           if (g_ModelPolygonData[local_24].vertex_indices[local_20] ==
               g_ModelPolygonData[local_24].vertex_indices[iVar2]) {
             local_14 = g_ModelPolygonData[local_24].vertex_indices[local_20];

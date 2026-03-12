@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 29,
-        "line": 168,
+        "line": 182,
         "message": "assigning to 'ushort *' (aka 'unsigned short *') from incompatible type 'void *'"
       }
     ],
@@ -13,19 +13,19 @@
   },
   "complexity": {
     "assembly_lines": 1168,
-    "complexity_score": 1463,
+    "complexity_score": 1467,
     "cross_reference_count": 8,
     "function_call_count": 5,
     "global_count": 64,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 598,
+    "pseudocode_lines": 602,
     "suspect_count": 85,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array"
     ],
-    "total_lines": 1766
+    "total_lines": 1770
   },
   "cross_references": [
     {
@@ -551,466 +551,382 @@
     "pcode_op_count": 6651
   },
   "stack_frame": {
-    "frame_size": 408,
-    "local_size": 380,
+    "frame_size": 4480,
+    "local_size": 4452,
     "param_offset": 4,
     "param_size": 28,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "aiStackY_1160",
+        "offset": -4448,
+        "size": 4052,
+        "type": "int[1013]"
+      },
+      {
+        "is_param": false,
         "name": "local_178",
         "offset": -376,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_16c",
         "offset": -364,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_168",
-        "offset": -360,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_164",
-        "offset": -356,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_160",
         "offset": -352,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_154",
         "offset": -340,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_148",
         "offset": -328,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_13c",
         "offset": -316,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_138",
-        "offset": -312,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_134",
-        "offset": -308,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_130",
         "offset": -304,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_124",
         "offset": -292,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_120",
         "offset": -288,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_11c",
-        "offset": -284,
-        "size": 4,
-        "type": "undefined4"
+        "size": 8,
+        "type": "int[2]"
       },
       {
         "is_param": false,
         "name": "local_118",
         "offset": -280,
-        "size": 1,
-        "type": "undefined1"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_10c",
         "offset": -268,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_108",
-        "offset": -264,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_104",
-        "offset": -260,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_100",
         "offset": -256,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_fc",
-        "offset": -252,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_f8",
-        "offset": -248,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_f4",
         "offset": -244,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_f0",
-        "offset": -240,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_ec",
-        "offset": -236,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_e8",
         "offset": -232,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_e4",
-        "offset": -228,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_e0",
-        "offset": -224,
-        "size": 4,
-        "type": "undefined4"
+        "size": 12,
+        "type": "CVector3i"
       },
       {
         "is_param": false,
         "name": "local_dc",
         "offset": -220,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_d8",
         "offset": -216,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_d4",
         "offset": -212,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_cc",
         "offset": -204,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_c4",
         "offset": -196,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_bc",
         "offset": -188,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_b8",
         "offset": -184,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_b0",
         "offset": -176,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_ac",
         "offset": -172,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_a8",
         "offset": -168,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_a0",
         "offset": -160,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_98",
         "offset": -152,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_94",
         "offset": -148,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_90",
         "offset": -144,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_88",
         "offset": -136,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_84",
         "offset": -132,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_7c",
         "offset": -124,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_78",
         "offset": -120,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_74",
         "offset": -116,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_70",
         "offset": -112,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_6c",
         "offset": -108,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_68",
         "offset": -104,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3i *"
       },
       {
         "is_param": false,
         "name": "local_64",
         "offset": -100,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_60",
         "offset": -96,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3i *"
       },
       {
         "is_param": false,
         "name": "local_5c",
         "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_54",
         "offset": -84,
         "size": 4,
-        "type": "undefined4"
+        "type": "CVector3i *"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_4c",
         "offset": -76,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": true,
@@ -1083,7 +999,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 28,
+      "line": 34,
       "match": "aiStackY_1160",
       "severity": "moderate",
       "text": "int aiStackY_1160 [1013];",
@@ -1091,7 +1007,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 121,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_16c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
@@ -1099,7 +1015,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 123,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_16c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
@@ -1107,7 +1023,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 125,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_16c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
@@ -1115,7 +1031,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 129,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_160 + (uint)bVar23 * -8 + 4) =",
@@ -1123,7 +1039,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 130,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_154 + (uint)bVar23 * -8 + 4);",
@@ -1131,7 +1047,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 131,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_160 + (uint)bVar23 * -8 + (uint)bVar23 * -8 + 8) =",
@@ -1139,7 +1055,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 132,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_154 + (uint)bVar23 * -8 + (uint)bVar23 * -8 + 8);",
@@ -1147,15 +1063,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 135,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].a + iVar12) = g_PerspectiveReciprocal;",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].a + iVar22) = g_PerspectiveReciprocal;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 147,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_13c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
@@ -1163,7 +1079,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 149,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_13c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
@@ -1171,7 +1087,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 151,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_13c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
@@ -1179,23 +1095,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 156,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar21 = (int *)((int)&g_TransformedVertexArray[0].x + local_6c);",
+      "text": "*(int *)((int)&g_TransformedVertexArray[0].x + local_6c) = local_118.x;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 157,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*puVar19 = *(uint *)((int)&local_118 + (uint)bVar23 * -8 + 4);",
+      "text": "*puVar23 = *(uint *)((int)&local_118 + (uint)bVar23 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 146,
+      "line": 159,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_118 + (uint)bVar23 * -8 + (uint)bVar23 * -8 + 8);",
@@ -1203,23 +1119,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 204,
+      "line": 214,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "uVar2 = *(ushort *)((int)face_data + 2);",
+      "text": "uVar1 = *(ushort *)((int)face_data + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 208,
+      "line": 218,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "uVar2 = *(ushort *)((int)face_data + 4);",
+      "text": "uVar1 = *(ushort *)((int)face_data + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 209,
+      "line": 219,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "face_data = (void *)((int)face_data + 0x12);",
@@ -1227,23 +1143,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 223,
+      "line": 233,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar18 = *(int *)((int)pvVar14 + 0x24);",
+      "text": "iVar19 = *(int *)((int)pvVar14 + 0x24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 224,
+      "line": 234,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar13 = *(int *)((int)pvVar14 + 0x18);",
+      "text": "iVar17 = *(int *)((int)pvVar14 + 0x18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 229,
+      "line": 237,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar4 = *(int *)((int)pvVar14 + 0x30);",
@@ -1251,7 +1167,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 246,
+      "line": 253,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)pvVar14 + 8) = fVar8 * fVar9;",
@@ -1259,7 +1175,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 247,
+      "line": 254,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)pvVar14 + 0xc) = fVar11 * fVar9;",
@@ -1267,7 +1183,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 248,
+      "line": 255,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)pvVar14 + 0x10) = fVar10 * fVar9;",
@@ -1275,7 +1191,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 250,
+      "line": 257,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "pvVar14 = (void *)((int)pvVar14 + 0x48);",
@@ -1283,7 +1199,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 253,
+      "line": 260,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "pvVar14 = (void *)((int)pvVar14 + 0x3c);",
@@ -1291,15 +1207,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 262,
+      "line": 269,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar18 = *(int *)((int)face_data + 0x18);",
+      "text": "iVar19 = *(int *)((int)face_data + 0x18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 263,
+      "line": 270,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "pfVar1 = (float *)((int)face_data + 8);",
@@ -1307,74 +1223,42 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 266,
+      "line": 273,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar18].y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 268,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar18].z;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 269,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar18 = *(int *)((int)face_data + 0x24);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 272,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar18].y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 274,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar18].z;",
+      "text": "*(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar19].y;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 275,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar19].z;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 276,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar18 = *(int *)((int)face_data + 0x30);",
+      "text": "iVar19 = *(int *)((int)face_data + 0x24);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 278,
+      "line": 279,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar18].y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 280,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar18].z;",
+      "text": "*(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar19].y;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 281,
-      "match": "(int *)((int)",
+      "match": "(float *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)face_data + 4) == 4) {",
+      "text": "*(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar19].z;",
       "type": "pointer_cast"
     },
     {
@@ -1382,7 +1266,7 @@
       "line": 282,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar18 = *(int *)((int)face_data + 0x3c);",
+      "text": "iVar19 = *(int *)((int)face_data + 0x30);",
       "type": "pointer_cast"
     },
     {
@@ -1390,7 +1274,7 @@
       "line": 285,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar18].y;",
+      "text": "*(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar19].y;",
       "type": "pointer_cast"
     },
     {
@@ -1398,12 +1282,44 @@
       "line": 287,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar18].z;",
+      "text": "*(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar19].z;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 290,
+      "line": 288,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "if (*(int *)((int)face_data + 4) == 4) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 289,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "iVar19 = *(int *)((int)face_data + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 292,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)face_data + 0xc) + g_VertexNormalArray[iVar19].y;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 294,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)face_data + 0x10) + g_VertexNormalArray[iVar19].z;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 297,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "face_data = (void *)((int)face_data + 0x48);",
@@ -1411,7 +1327,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 293,
+      "line": 300,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "face_data = (void *)((int)face_data + 0x3c);",
@@ -1419,31 +1335,31 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 314,
+      "line": 320,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_100.x = (int)ROUND(pCVar22->x);",
+      "text": "local_100.x = (int)ROUND(pCVar21->x);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 315,
+      "line": 321,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_100.y = (int)ROUND(pCVar22->y);",
+      "text": "local_100.y = (int)ROUND(pCVar21->y);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 316,
+      "line": 322,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_100.z = (int)ROUND(pCVar22->z);",
+      "text": "local_100.z = (int)ROUND(pCVar21->z);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Complex pointer cast",
-      "line": 322,
+      "line": 328,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&g_RenderVertexBuffer[0].a + local_64) = g_PerspectiveReciprocal",
@@ -1451,7 +1367,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 337,
+      "line": 343,
       "match": "ABS",
       "severity": "mild",
       "text": "if (((1.0 <= ABS(pCVar22->x)) || (1.0 <= ABS(pCVar22->y))) ||",
@@ -1459,7 +1375,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 337,
+      "line": 343,
       "match": "ABS",
       "severity": "mild",
       "text": "if (((1.0 <= ABS(pCVar22->x)) || (1.0 <= ABS(pCVar22->y))) ||",
@@ -1467,7 +1383,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 338,
+      "line": 344,
       "match": "ABS",
       "severity": "mild",
       "text": "(1.0 <= ABS(pCVar22->z))) {",
@@ -1475,7 +1391,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 346,
+      "line": 352,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_f4.x = (int)ROUND(pCVar22->x);",
@@ -1483,7 +1399,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 347,
+      "line": 353,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_f4.y = (int)ROUND(pCVar22->y);",
@@ -1491,7 +1407,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 348,
+      "line": 354,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_f4.z = (int)ROUND(pCVar22->z);",
@@ -1499,7 +1415,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 360,
+      "line": 366,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&g_RenderVertexBuffer[0].a + local_58) = g_PerspectiveReciprocal",
@@ -1507,7 +1423,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 376,
+      "line": 381,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_e8.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x",
@@ -1515,7 +1431,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 378,
+      "line": 383,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_e8.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y",
@@ -1523,7 +1439,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 380,
+      "line": 385,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_e8.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z",
@@ -1531,7 +1447,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 385,
+      "line": 390,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&g_TransformedVertexArray[0].x + local_5c) = local_130.x;",
@@ -1539,15 +1455,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 386,
+      "line": 391,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*puVar19 = *(uint *)((int)&local_130 + (uint)bVar23 * -8 + 4);",
+      "text": "*puVar23 = *(uint *)((int)&local_130 + (uint)bVar23 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 388,
+      "line": 393,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_130 + (uint)bVar23 * -8 + (uint)bVar23 * -8 + 8);",
@@ -1555,7 +1471,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 472,
+      "line": 476,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar19 = (uint *)((int)vertex_normals + (uint)bVar23 * -8 + 4);",
@@ -1563,26 +1479,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 489,
+      "line": 493,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].a + iVar18) = g_PerspectiveReciprocal;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 503,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "local_10c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 505,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "local_10c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y +",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].a + iVar19) = g_PerspectiveReciprocal;",
       "type": "pointer_cast"
     },
     {
@@ -1590,31 +1490,23 @@
       "line": 507,
       "match": "(int *)((int)",
       "severity": "mild",
+      "text": "local_10c.x = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 509,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "local_10c.y = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 511,
+      "match": "(int *)((int)",
+      "severity": "mild",
       "text": "local_10c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z +",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 514,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_178 + (uint)bVar23 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 515,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_148 + (uint)bVar23 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 516,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)&local_178 + (uint)bVar23 * -8 + (uint)bVar23 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
@@ -1622,143 +1514,167 @@
       "line": 517,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&local_148 + (uint)bVar23 * -8 + (uint)bVar23 * -8 + 8);",
+      "text": "*(uint *)((int)&local_178 + (uint)bVar23 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 518,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_148 + (uint)bVar23 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 520,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&local_178 + (uint)bVar23 * -8 + (uint)bVar23 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 521,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].a + iVar12) = g_PerspectiveReciprocal;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 530,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].r + iVar18) = this_ptr->mirror_cached_light;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 531,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].g + iVar18) = this_ptr->mirror_cached_color;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 533,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].b + iVar18) = this_ptr->mirror_cached_fog;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 546,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar18) = 0;",
+      "text": "*(uint *)((int)&local_148 + (uint)bVar23 * -8 + (uint)bVar23 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 559,
-      "match": "(int *)((int)",
+      "line": 525,
+      "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].r + iVar18) = this_ptr->light_scale_factor;",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].a + iVar22) = g_PerspectiveReciprocal;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 560,
+      "line": 534,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].g + iVar18) = this_ptr->color_scale_factor;",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].r + iVar19) = this_ptr->mirror_cached_light;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 562,
+      "line": 535,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].b + iVar18) = this_ptr->fog_scale_factor;",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].g + iVar19) = this_ptr->mirror_cached_color;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 537,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].b + iVar19) = this_ptr->mirror_cached_fog;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 550,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 563,
-      "match": "(uint *)((int)",
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar18) = 0;",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].r + iVar19) = this_ptr->light_scale_factor;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 574,
-      "match": "(uint *)((int)",
+      "line": 564,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + iVar18) = 0xffff;",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].g + iVar19) = this_ptr->color_scale_factor;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 575,
-      "match": "(uint *)((int)",
+      "line": 566,
+      "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar18) = 0xffff;",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].b + iVar19) = this_ptr->fog_scale_factor;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 576,
+      "line": 567,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].b + iVar18) = 0xffff;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 577,
+      "line": 578,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar18) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + iVar19) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 590,
+      "line": 579,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + iVar18) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar19) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 591,
+      "line": 580,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar18) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].b + iVar19) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 592,
+      "line": 581,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].b + iVar18) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar19) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 593,
+      "line": 594,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar18) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].r + iVar13) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 595,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].g + iVar13) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 596,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].b + iVar13) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 597,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].a + iVar13) = 0;",
       "type": "pointer_cast"
     }
   ]

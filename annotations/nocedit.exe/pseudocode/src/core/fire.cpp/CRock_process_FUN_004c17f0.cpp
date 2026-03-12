@@ -11,12 +11,13 @@
 void __cdecl core_fire_cpp_CRock_process_FUN_004c17f0(CRock *this_ptr)
 
 {
-  int *piVar1;
+  longlong lVar1;
   int iVar2;
-  float fVar3;
+  int *piVar1;
   float fVar4;
-  float fVar5;
+  float fVar3;
   longlong lVar6;
+  float fVar5;
   int iVar7;
   
   core_particle_cpp_CParticle_process_FUN_00545760(&this_ptr->base);
@@ -31,8 +32,8 @@ void __cdecl core_fire_cpp_CRock_process_FUN_004c17f0(CRock *this_ptr)
                 (uint)((g_GlobalDeltaTimeInt >> 0x1f) << 1 < 0)) >> 2) * (longlong)iVar2;
   (this_ptr->rotation).x =
        (this_ptr->rotation).x + ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
-  lVar6 = (longlong)(iVar7 / 2) * (longlong)iVar2;
+  lVar1 = (longlong)(iVar7 / 2) * (longlong)iVar2;
   piVar1 = &(this_ptr->rotation).y;
-  *piVar1 = *piVar1 + ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
+  *piVar1 = *piVar1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   return;
 }

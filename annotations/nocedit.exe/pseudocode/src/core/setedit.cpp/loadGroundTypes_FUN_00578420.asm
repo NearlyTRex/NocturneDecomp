@@ -6,12 +6,10 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x19c]:1  local_19c
-; undefined1       Stack[-0x19b]:1  local_19b
-; undefined1       Stack[-0x199]:1  local_199
-; undefined1       Stack[-0xd4]:1  local_d4
-; undefined1       Stack[-0x70]:1  local_70
-; undefined4       Stack[-0xc]:4  local_c
+; char[200]        Stack[-0x19c]:200  local_19c
+; char[100]        Stack[-0xd4]:100  local_d4
+; char[100]        Stack[-0x70]:100  local_70
+; EGroundType      Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 005796ed

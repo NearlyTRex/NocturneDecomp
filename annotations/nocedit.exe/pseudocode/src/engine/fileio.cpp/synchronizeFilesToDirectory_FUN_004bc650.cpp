@@ -9,13 +9,15 @@
 void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *file_list_output,char *source_directory,char *file_pattern,char *dest_directory)
 
 {
-  char cVar1;
-  bool bVar2;
+  char cVar2;
   char *full_path;
   int iVar3;
+  int iVar4;
   _FILE *file;
   _FILE *file_ptr;
   char *pcVar4;
+  char *pcVar5;
+  SFoundFileInfo *pSVar6;
   SFoundFileInfo *pSVar5;
   SFoundFileInfo local_750;
   SFoundFileInfo local_53c;
@@ -24,6 +26,8 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
   char local_124 [256];
   CStrList local_24;
   int local_14;
+  bool bVar2;
+  char cVar1;
   
   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_24);
   shape_edittool_cpp_CStrList_populateWithFullPaths_FUN_004a39e0
@@ -37,37 +41,37 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
       engine_dosio_c_makePath_FUN_00481f50(local_328,(char *)0x0,dest_directory,local_224,local_124)
       ;
       _fprintf((_FILE *)file_list_output->_ptr,"%s\n",local_328);
-      pSVar5 = &local_53c;
+      pSVar6 = &local_53c;
       pcVar4 = full_path;
       do {
         cVar1 = *pcVar4;
-        pSVar5->found_path[0] = cVar1;
+        pSVar6->found_path[0] = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar4[1];
+        cVar2 = pcVar4[1];
         pcVar4 = pcVar4 + 2;
-        pSVar5->found_path[1] = cVar1;
-        pSVar5 = (SFoundFileInfo *)(pSVar5->found_path + 2);
-      } while (cVar1 != '\0');
-      pcVar4 = local_328;
+        pSVar6->found_path[1] = cVar2;
+        pSVar6 = (SFoundFileInfo *)(pSVar6->found_path + 2);
+      } while (cVar2 != '\0');
+      pcVar5 = local_328;
       pSVar5 = &local_750;
       do {
-        cVar1 = *pcVar4;
-        pSVar5->found_path[0] = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar4[1];
-        pcVar4 = pcVar4 + 2;
-        *(char *)((int)pSVar5 + 1) = cVar1;
-        pSVar5 = (SFoundFileInfo *)((int)pSVar5 + 2);
-      } while (cVar1 != '\0');
+        cVar2 = *pcVar5;
+        pSVar5->found_path[0] = cVar2;
+        if (cVar2 == '\0') break;
+        cVar2 = pcVar5[1];
+        pcVar5 = pcVar5 + 2;
+        pSVar5->found_path[1] = cVar2;
+        pSVar5 = (SFoundFileInfo *)(pSVar5->found_path + 2);
+      } while (cVar2 != '\0');
       iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_53c);
       if (iVar3 == 0) {
         g_CurrentFilename = "..\\engine\\fileio.cpp";
         g_CurrentLineNumber = 0xfe7;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Can't get info on %s",&local_53c);
       }
-      iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_750);
-      if ((((iVar3 == 0) || (local_53c.timestamp < (char *)(local_750.timestamp - 1))) ||
-          ((char *)(local_750.timestamp + 1) < local_53c.timestamp)) ||
+      iVar4 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_750);
+      if ((((iVar4 == 0) || (local_53c.timestamp < local_750.timestamp - 1)) ||
+          (local_750.timestamp + 1 < local_53c.timestamp)) ||
          (local_53c.file_size != local_750.file_size)) {
         file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                          (full_path,(char *)0x0,"rb","..\\engine\\fileio.cpp",0xff8);
@@ -87,9 +91,9 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Copying %s -> %s",full_path,local_328);
         while( true ) {
-          iVar3 = _fgetc(file);
-          if (iVar3 == -1) break;
-          _fputc(iVar3,file_ptr);
+          iVar4 = _fgetc(file);
+          if (iVar4 == -1) break;
+          _fputc(iVar4,file_ptr);
         }
         if ((file->_flag & 0x20) != 0) {
           g_CurrentFilename = "..\\engine\\fileio.cpp";
@@ -103,9 +107,9 @@ void __cdecl engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650(_FILE *f
         }
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0x100d);
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0x100e);
-        iVar3 = engine_dosio_c_copyFileTimestamp_FUN_00481910(local_328,(char *)local_53c.timestamp)
+        iVar4 = engine_dosio_c_copyFileTimestamp_FUN_00481910(local_328,(char *)local_53c.timestamp)
         ;
-        if (iVar3 == 0) {
+        if (iVar4 == 0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"WARNING: Error setting date/time on %s.\n(Most likely reason: Tried to set the file time to a time\nnewer than the current system time on your computer)",local_328);
           bVar2 = false;

@@ -6,7 +6,7 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   tz_string
 ; Local Variables:
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   crt_time.c_tzset_FUN_006072f8 at 0060730e

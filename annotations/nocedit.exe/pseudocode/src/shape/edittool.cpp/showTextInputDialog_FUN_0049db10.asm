@@ -10,11 +10,11 @@
 ; int              Stack[0x10]:4   flags
 ; int              Stack[0x14]:4   dialog_mode
 ; Local Variables:
-; undefined1       Stack[-0x320]:1  local_320
-; undefined1       Stack[-0x1e0]:1  local_1e0
-; undefined1       Stack[-0xfc]:1  local_fc
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CInputString     Stack[-0x320]:320  local_320
+; CEdButton        Stack[-0x1e0]:228  local_1e0
+; CEdButton        Stack[-0xfc]:228  local_fc
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_004a0400 at 004a0418

@@ -4,55 +4,55 @@
       {
         "category": "other",
         "column": 23,
-        "line": 22,
+        "line": 24,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 25,
+        "line": 27,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 30,
-        "line": 27,
+        "line": 29,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 74,
-        "line": 43,
+        "line": 45,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 20,
-        "line": 45,
+        "line": 47,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 20,
-        "line": 47,
+        "line": 49,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
         "column": 26,
-        "line": 65,
+        "line": 67,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 26,
-        "line": 66,
+        "line": 68,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 68,
+        "line": 70,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -61,19 +61,19 @@
   },
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 217,
+    "complexity_score": 219,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 64,
     "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation"
     ],
-    "total_lines": 214
+    "total_lines": 216
   },
   "cross_references": [
     {
@@ -272,7 +272,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 31,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)pCVar2->edge_perpendiculars + iVar7 + -0x14) == 0) {",
@@ -280,7 +280,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 32,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "dVar1 = (double)*(float *)((int)pCVar2->uv_coords[1] + iVar7 + 4);",
@@ -288,7 +288,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 34,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)(pCVar2->uv_coords + -2) + iVar7 + 4),",
@@ -296,7 +296,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 35,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[0] + iVar7),",
@@ -304,7 +304,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 36,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[0] + iVar7 + 4),",
@@ -312,7 +312,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 37,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)(pCVar2->uv_coords + -1) + iVar7),",
@@ -320,7 +320,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 38,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(__BITCAST_UINT64(dVar1),0),",
@@ -328,7 +328,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 36,
+      "line": 38,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(__BITCAST_UINT64(dVar1),0),",
@@ -336,7 +336,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 36,
+      "line": 38,
       "match": "SUB84",
       "severity": "mild",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84(__BITCAST_UINT64(dVar1),0),",
@@ -344,7 +344,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 40,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)(pCVar2->uv_coords + -1) + iVar7 + 4),",
@@ -352,7 +352,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 41,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[2] + iVar7),",
@@ -360,7 +360,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 42,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)pCVar2->uv_coords[2] + iVar7 + 4));",
@@ -368,7 +368,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 58,
+      "line": 60,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)*(float *)(pCVar3->lod_workspace + iVar5)),0),",
@@ -376,7 +376,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 58,
+      "line": 60,
       "match": "SUB84",
       "severity": "mild",
       "text": "SUB84(__BITCAST_UINT64((double)*(float *)(pCVar3->lod_workspace + iVar5)),0),",

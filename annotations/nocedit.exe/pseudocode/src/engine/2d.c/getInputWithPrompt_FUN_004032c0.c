@@ -9,12 +9,12 @@
 int __cdecl engine_2d_c_getInputWithPrompt_FUN_004032c0(char *buffer,int max_length,int x,int y,char *prompt)
 
 {
-  uchar *puVar1;
   uint uVar2;
   _BIT_INTEGER32 _Var3;
   int iVar4;
   char local_114 [256];
   _BIT_INTEGER32 local_14;
+  uchar *puVar1;
   
   *buffer = '\0';
   engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -25,12 +25,11 @@ int __cdecl engine_2d_c_getInputWithPrompt_FUN_004032c0(char *buffer,int max_len
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     _Var3.dword = uVar2 & 0xff;
-    local_14.dword = _Var3.dword;
     if (_Var3.dword == 0xd) {
 LAB_0040337b:
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      return local_14.dword;
+      return _Var3.dword;
     }
     if (_Var3.dword == 0x1b) {
       *buffer = '\0';

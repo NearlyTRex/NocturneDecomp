@@ -9,12 +9,10 @@
 int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_ptr,CDemonActor *actor)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
   CBoundingBox3D *pCVar4;
   CVector3f *pCVar5;
   CCharacter *pCVar6;
+  CBoundingBox3D *pCVar1;
   CBoundingBox3D CStack_94;
   CBoundingBox3D local_7c;
   CBoundingBox3D CStack_64;
@@ -24,15 +22,15 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_
   float fStack_30;
   float fStack_2c;
   CVector3f aCStack_28 [2];
+  float fVar1;
+  float fVar2;
+  float fVar3;
   
   if (actor != (CDemonActor *)0x0) {
     pCVar4 = (*((actor->vtable)._ub)->getBoundingBox)(actor,&local_7c);
-    fStack_34 = (pCVar4->min).x + (pCVar4->max).x;
-    fStack_30 = (pCVar4->min).y + (pCVar4->max).y;
-    CStack_4c.x = fStack_34 * 0.5f;
-    CStack_4c.y = fStack_30 * 0.5f;
-    fStack_2c = (pCVar4->min).z + (pCVar4->max).z;
-    CStack_4c.z = fStack_2c * 0.5f;
+    CStack_4c.x = ((pCVar4->min).x + (pCVar4->max).x) * 0.5f;
+    CStack_4c.y = ((pCVar4->min).y + (pCVar4->max).y) * 0.5f;
+    CStack_4c.z = ((pCVar4->min).z + (pCVar4->max).z) * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(actor,&CStack_40,&CStack_4c);
     if (this_ptr->pressure_plate != 0) {
       pCVar6 = (CCharacter *)
@@ -55,11 +53,11 @@ int __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(CTrigger *this_
         CStack_40.z = pCVar5->z;
       }
       if (this_ptr->shape == 0) {
-        pCVar4 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_64);
-        if ((((((pCVar4->min).x <= CStack_40.x) && ((pCVar4->min).y <= CStack_40.y)) &&
-             ((pCVar4->min).z <= CStack_40.z)) &&
-            ((CStack_40.x <= (pCVar4->max).x && (CStack_40.y <= (pCVar4->max).y)))) &&
-           (CStack_40.z <= (pCVar4->max).z)) {
+        pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_64);
+        if ((((((pCVar1->min).x <= CStack_40.x) && ((pCVar1->min).y <= CStack_40.y)) &&
+             ((pCVar1->min).z <= CStack_40.z)) &&
+            ((CStack_40.x <= (pCVar1->max).x && (CStack_40.y <= (pCVar1->max).y)))) &&
+           (CStack_40.z <= (pCVar1->max).z)) {
           return 1;
         }
       }

@@ -9,19 +9,20 @@
 CVector3i * __cdecl core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70(CDemonCamera *this_ptr,CVector3i *screen_pos,int alpha_index,CVector3i *world_pos)
 
 {
-  int iVar1;
-  int iVar2;
-  longlong lVar3;
-  longlong lVar4;
-  longlong lVar5;
-  longlong lVar6;
-  longlong lVar7;
-  longlong lVar8;
-  longlong lVar9;
-  longlong lVar10;
-  longlong lVar11;
+  int iVar3;
   int iVar12;
   int iVar13;
+  longlong lVar11;
+  longlong lVar10;
+  longlong lVar9;
+  longlong lVar8;
+  longlong lVar3;
+  int iVar2;
+  int iVar1;
+  longlong lVar7;
+  longlong lVar6;
+  longlong lVar5;
+  longlong lVar4;
   
   iVar1 = screen_pos->z;
   iVar12 = (int)(((longlong)(screen_pos->x - (this_ptr->saved_viewport_rect).right) *
@@ -44,7 +45,7 @@ CVector3i * __cdecl core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_0045
   lVar11 = (longlong)
            *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x38
                    ) * (longlong)iVar1;
-  iVar1 = this_ptr->alpha_translations[alpha_index].z;
+  iVar3 = this_ptr->alpha_translations[alpha_index].z;
   world_pos->x = ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
                  ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
                  ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) +
@@ -52,7 +53,7 @@ CVector3i * __cdecl core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_0045
   world_pos->y = iVar2 + ((uint)lVar8 >> 0x10 | (int)((ulonglong)lVar8 >> 0x20) << 0x10) +
                          ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) +
                          ((uint)lVar7 >> 0x10 | (int)((ulonglong)lVar7 >> 0x20) << 0x10);
-  world_pos->z = iVar1 + ((uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10) +
+  world_pos->z = iVar3 + ((uint)lVar11 >> 0x10 | (int)((ulonglong)lVar11 >> 0x20) << 0x10) +
                          ((uint)lVar9 >> 0x10 | (int)((ulonglong)lVar9 >> 0x20) << 0x10) +
                          ((uint)lVar10 >> 0x10 | (int)((ulonglong)lVar10 >> 0x20) << 0x10);
   return world_pos;

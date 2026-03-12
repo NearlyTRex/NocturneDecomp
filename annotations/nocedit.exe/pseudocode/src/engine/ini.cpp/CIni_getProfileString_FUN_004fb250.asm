@@ -12,10 +12,8 @@
 ; int              Stack[0x18]:4   buffer_size
 ; char *           Stack[0x1c]:4   filename
 ; Local Variables:
-; undefined1       Stack[-0x210]:1  local_210
-; undefined1       Stack[-0x20f]:1  local_20f
-; undefined1       Stack[-0x20d]:1  local_20d
-; undefined1       Stack[-0x110]:1  local_110
+; char[256]        Stack[-0x210]:256  local_210
+; char[256]        Stack[-0x110]:256  local_110
 ;
 ; XREF[2]:
 ;   engine_ini.cpp_getProfileInteger_FUN_004fb9a0 at 004fb9f5

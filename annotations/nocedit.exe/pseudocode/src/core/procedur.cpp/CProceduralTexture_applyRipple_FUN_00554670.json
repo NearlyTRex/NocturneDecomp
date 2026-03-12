@@ -6,12 +6,12 @@
   },
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 224,
+    "complexity_score": 226,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 84,
+    "pseudocode_lines": 86,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -19,7 +19,7 @@
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 278
+    "total_lines": 280
   },
   "cross_references": [
     {
@@ -178,7 +178,7 @@
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -199,7 +199,7 @@
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "CProceduralTexture *"
       },
       {
         "is_param": false,
@@ -213,21 +213,21 @@
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -240,8 +240,8 @@
         "is_param": false,
         "name": "local_14",
         "offset": -20,
-        "size": 4,
-        "type": "undefined4"
+        "size": 1,
+        "type": "uchar"
       },
       {
         "is_param": true,
@@ -301,7 +301,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 42,
       "match": "fsin",
       "severity": "mild",
       "text": "fVar10 = (float10)fsin(((float10)wave_offset - (float10)SQRT(fVar1)) *",
@@ -309,7 +309,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 40,
+      "line": 42,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar10 = (float10)fsin(((float10)wave_offset - (float10)SQRT(fVar1)) *",
@@ -317,7 +317,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 44,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_14 = (uchar)(int)ROUND(ROUND(((float10)128 - (float10)wave_offset) *",
@@ -325,7 +325,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 44,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_14 = (uchar)(int)ROUND(ROUND(((float10)128 - (float10)wave_offset) *",
@@ -333,23 +333,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 63,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_1c = (int)ROUND(ROUND((float)iVar7 - wave_x));",
+      "text": "local_1c = (int)ROUND(ROUND((float)iVar5 - wave_x));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 61,
+      "line": 63,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_1c = (int)ROUND(ROUND((float)iVar7 - wave_x));",
+      "text": "local_1c = (int)ROUND(ROUND((float)iVar5 - wave_x));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 64,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND((float)local_28 - wave_y));",
@@ -357,7 +357,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 64,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND((float)local_28 - wave_y));",
@@ -365,7 +365,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 81,
       "match": "(CProceduralTexture *)((int)",
       "severity": "mild",
       "text": "pCVar8 = (CProceduralTexture *)((int)&pCVar8->width + 1);",
@@ -373,7 +373,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 84,
       "match": "(CProceduralTexture *)((int)",
       "severity": "mild",
       "text": "pCVar5 = (CProceduralTexture *)((int)&pCVar5->width + 1);",

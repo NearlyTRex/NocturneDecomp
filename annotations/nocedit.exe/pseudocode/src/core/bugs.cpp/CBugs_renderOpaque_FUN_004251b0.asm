@@ -6,7 +6,13 @@
 ; Parameters:
 ; CBugs *          Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x44]:1  local_44
+; CBoundingBox3D   Stack[-0x44]:24  local_44
+; CVector3f        Stack[-0x2c]:12  CStack_2c
+; CVector3f        Stack[-0x20]:12  CStack_20
+; int              Stack[-0x14]:4  iStack_14
+; CKeyFramedModelInstance * Stack[-0x10]:4  pCStack_10
+; SBug *           Stack[-0xc]:4  pSStack_c
+; SBug *           Stack[-0x8]:4  pSStack_8
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578

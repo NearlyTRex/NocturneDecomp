@@ -9,16 +9,19 @@
 int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004fb470(CIni *this_ptr,char *section,char *key,char *value,char *filename)
 
 {
-  byte bVar1;
-  bool bVar2;
   _FILE *stream;
   char *pcVar3;
   int iVar4;
+  int iVar1;
   char *pcVar5;
   int iVar6;
+  char *pcVar2;
+  char *pcVar4;
   char local_214 [256];
   char local_114 [256];
   char *local_14;
+  byte bVar1;
+  bool bVar2;
   
   iVar6 = 0;
   bVar2 = false;
@@ -33,8 +36,8 @@ int __cdecl engine_ini_cpp_CIni_findLineNumberOfVariable_FUN_004fb470(CIni *this
   _sprintf(local_114,"[%s]\n",section);
   while (((stream->_flag & 0x10) == 0 &&
          (pcVar5 = _fgets(local_214,0xff,stream), pcVar5 != (char *)0x0))) {
-    iVar4 = _strcmp(local_214,local_114);
-    if (iVar4 == 0) {
+    iVar1 = _strcmp(local_214,local_114);
+    if (iVar1 == 0) {
       bVar1 = (byte)stream->_flag;
       bVar2 = false;
       goto LAB_004fb4f0;
@@ -49,41 +52,41 @@ LAB_004fb5ab:
   return 0;
 LAB_004fb4f0:
   if (((bVar1 & 0x10) != 0) ||
-     (pcVar3 = _fgets(local_214,0xff,stream), pcVar5 = local_214,
+     (pcVar3 = _fgets(local_214,0xff,stream), pcVar4 = local_214,
      pcVar3 == (char *)0x0)) goto LAB_004fb5ab;
   do {
-    pcVar3 = pcVar5;
-    if (*pcVar5 == '\n') goto LAB_004fb52d;
-    if (*pcVar5 == '\0') break;
-    pcVar3 = pcVar5 + 1;
-    if (*pcVar3 == '\n') goto LAB_004fb52d;
-    pcVar5 = pcVar5 + 2;
-  } while (*pcVar3 != '\0');
-  pcVar3 = (char *)0x0;
+    pcVar2 = pcVar4;
+    if (*pcVar4 == '\n') goto LAB_004fb52d;
+    if (*pcVar4 == '\0') break;
+    pcVar2 = pcVar4 + 1;
+    if (*pcVar2 == '\n') goto LAB_004fb52d;
+    pcVar4 = pcVar4 + 2;
+  } while (*pcVar2 != '\0');
+  pcVar2 = (char *)0x0;
 LAB_004fb52d:
-  pcVar5 = local_214;
-  if (pcVar3 != (char *)0x0) {
-    *pcVar3 = '\0';
-    pcVar5 = local_214;
+  pcVar4 = local_214;
+  if (pcVar2 != (char *)0x0) {
+    *pcVar2 = '\0';
+    pcVar4 = local_214;
   }
   do {
-    local_14 = pcVar5;
-    if (*pcVar5 == '=') goto LAB_004fb550;
-    if (*pcVar5 == '\0') break;
-    local_14 = pcVar5 + 1;
-    if (*local_14 == '=') goto LAB_004fb550;
-    pcVar5 = pcVar5 + 2;
-  } while (*local_14 != '\0');
-  local_14 = (char *)0x0;
+    pcVar2 = pcVar4;
+    if (*pcVar4 == '=') goto LAB_004fb550;
+    if (*pcVar4 == '\0') break;
+    pcVar2 = pcVar4 + 1;
+    if (*pcVar2 == '=') goto LAB_004fb550;
+    pcVar4 = pcVar4 + 2;
+  } while (*pcVar2 != '\0');
+  pcVar2 = (char *)0x0;
 LAB_004fb550:
-  if (local_14 != (char *)0x0) {
-    *local_14 = '\0';
+  if (pcVar2 != (char *)0x0) {
+    *pcVar2 = '\0';
   }
   iVar4 = _strcmp(local_214,key);
   if (iVar4 == 0) {
     bVar2 = true;
-    iVar4 = _strcmp(local_14 + 1,filename);
-    if (iVar4 == 0) {
+    iVar1 = _strcmp(pcVar2 + 1,filename);
+    if (iVar1 == 0) {
       this_ptr->initialized = 0;
     }
     goto LAB_004fb5ab;

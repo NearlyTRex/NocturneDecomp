@@ -17,8 +17,10 @@ void __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(
 
 {
   int iVar1;
+  int iVar2;
   CMatrix3x4f *pCVar2;
   float *pfVar3;
+  float *pfVar4;
   byte bVar4;
   float local_294 [12];
   CMatrix3x4f local_264 [2];
@@ -41,9 +43,9 @@ void __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(
   
   bVar4 = 0;
   if ((this_ptr->hostage_type == 1) &&
-     (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0
+     (iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0
                         ((this_ptr->base).base.carry_hands[hand_index].carry_actor,
-                         "CShotgun"), iVar1 != 0)) {
+                         "CShotgun"), iVar2 != 0)) {
     local_84.x = 0.269;
     local_84.y = -0.012;
     local_54.x = -0.287;
@@ -112,16 +114,17 @@ void __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(
               ((CCharacter *)this_ptr,hand_index,&local_144);
     pCVar2 = &local_144;
   }
-  pfVar3 = local_294;
+  pfVar4 = local_294;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *pfVar3 = pCVar2->m[0].w;
+    *pfVar4 = pCVar2->m[0].w;
     pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
-    pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
+    pfVar4 = pfVar4 + (uint)bVar4 * -2 + 1;
   }
   pfVar3 = local_294;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    out_matrix->m[0].w = *pfVar3;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
     pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
+    out_matrix->m[0].w = *pfVar3;
+    pfVar3 = pfVar3;
     out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar4 * -2 + 1) * 4);
   }
   return;

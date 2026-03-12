@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 520,
-    "complexity_score": 366,
+    "complexity_score": 371,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 231,
+    "pseudocode_lines": 236,
     "suspect_count": 13,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 751
+    "total_lines": 756
   },
   "cross_references": [
     {
@@ -142,14 +142,14 @@
         "name": "local_5c",
         "offset": -92,
         "size": 4,
-        "type": "undefined4"
+        "type": "int *"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -177,70 +177,70 @@
         "name": "local_48",
         "offset": -72,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegLayer3SideInfo *"
       },
       {
         "is_param": false,
         "name": "local_44",
         "offset": -68,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_3c",
         "offset": -60,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegLayer3SideInfo *"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegLayer3SideInfo *"
       },
       {
         "is_param": false,
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_2c",
         "offset": -44,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "SMpegLayer3SideInfo *"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
@@ -303,31 +303,31 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 69,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)piVar6 + iVar11 + 0x34) = uVar3;",
+      "text": "*(uint *)((int)piVar9 + iVar7 + 0x34) = uVar6;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 95,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar11 + 0x28) = uVar4;",
+      "text": "*(uint *)((int)side_info_array->granules + iVar7 + 0x28) = uVar9;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 97,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar11 = *(int *)((int)side_info_array->granules + local_30 * 0xa0 + 0x14);",
+      "text": "iVar7 = *(int *)((int)side_info_array->granules + local_30 * 0xa0 + 0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 105,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(*(int *)((int)side_info_array->granules + local_30 * 0xa0 + 0x18) == 0)) {",
@@ -335,7 +335,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 106,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)side_info_array->granules + local_30 * 0xa0 + 0x34) = 8;",
@@ -343,66 +343,66 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 172,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar2 + 0x1c) = uVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 175,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar8 + 0x34) = uVar3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 177,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar8 + 0x14) = 0;",
+      "text": "*(uint *)((int)side_info_array->granules + iVar2 + 0x1c) = uVar6;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 180,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar8 + 0x38) = uVar3;",
+      "text": "*(uint *)((int)side_info_array->granules + iVar3 + 0x34) = uVar6;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
+      "line": 182,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar8 + 0x28) = uVar3;",
+      "text": "*(uint *)((int)side_info_array->granules + iVar3 + 0x14) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 201,
+      "line": 183,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)side_info_array->granules + iVar3 + 0x38) = uVar6;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 204,
+      "match": "(uint *)((int)",
+      "severity": "mild",
+      "text": "*(uint *)((int)side_info_array->granules + iVar3 + 0x28) = uVar6;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 206,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "iVar8 = *(int *)((int)side_info_array->granules + iVar11 + 0x14);",
+      "text": "iVar3 = *(int *)((int)side_info_array->granules + iVar7 + 0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 208,
+      "line": 213,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "else if ((iVar8 == 2) && (*(int *)((int)side_info_array->granules + iVar11 + 0x18) == 0)",
+      "text": "else if ((iVar3 == 2) && (*(int *)((int)side_info_array->granules + iVar7 + 0x18) == 0))",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 210,
+      "line": 215,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)side_info_array->granules + iVar11 + 0x34) = 8;",
+      "text": "*(uint *)((int)side_info_array->granules + iVar7 + 0x34) = 8;",
       "type": "pointer_cast"
     }
   ]

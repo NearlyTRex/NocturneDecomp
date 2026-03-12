@@ -9,21 +9,19 @@
 float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(CDemonSet *this_ptr,float start_x,float start_z,float dir_x,float dir_z,float radius,float bottom_y,float top_y)
 
 {
-  CDemonActor *actor;
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
+  float fVar8;
+  float fVar9;
+  float fVar10;
+  float fVar11;
   CDeformableModelInstance *pCVar8;
   ECollisionType bounding_box_type;
   CBoundingBox3D *pCVar9;
   int iVar10;
   CKeyFramedModel *this_ptr_00;
+  CBoundingBox3D *bounding_box;
+  int iVar12;
   CVector3f *pCVar11;
-  CMatrix3x3f *orientation_matrix;
+  CVector3f *position;
   double dStack_278;
   SIntersectXZCylinder SStack_204;
   SIntersectXZCylinder SStack_1a8;
@@ -39,6 +37,15 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(CDe
   CVector3f aCStack_50 [4];
   CDemonSet *local_18;
   int local_14;
+  float fVar5;
+  float fVar7;
+  float fVar6;
+  float fVar4;
+  CMatrix3x3f *orientation_matrix;
+  float fVar1;
+  CDemonActor *actor;
+  float fVar3;
+  float fVar2;
   
   core_dtrace_cpp_initIntersectionCylinder_FUN_00496b90
             (&local_14c,start_x,start_z,dir_x,dir_z,radius,bottom_y,top_y);
@@ -91,16 +98,15 @@ float __cdecl core_setcolid_cpp_CDemonSet_testCylinderCollision_FUN_00573470(CDe
                              (actor,&CStack_b0,&local_f0,bounding_box_type);
           iVar10 = core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010(&local_98,pCVar9);
           if (iVar10 != 0) {
-            if ((CDeformableModelInstance *)local_f0.keyframed_model ==
-                (CDeformableModelInstance *)0x0) {
+            if (local_f0.keyframed_model == (CKeyFramedModelInstance *)0x0) {
               if (bounding_box_type < COLLISION_TYPE_CYLINDER) {
                 if (bounding_box_type == COLLISION_TYPE_MESH) {
                   orientation_matrix = &actor->orient_matrix;
-                  pCVar11 = &(actor->location).position;
-                  pCVar9 = (*((actor->vtable)._ub)->getBoundingBox)(actor,&CStack_c8);
-                  iVar10 = core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140
-                                     (this_ptr,&local_14c,pCVar9,pCVar11,orientation_matrix);
-                  if (iVar10 != 0) {
+                  position = &(actor->location).position;
+                  bounding_box = (*((actor->vtable)._ub)->getBoundingBox)(actor,&CStack_c8);
+                  iVar12 = core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140
+                                     (this_ptr,&local_14c,bounding_box,position,orientation_matrix);
+                  if (iVar12 != 0) {
                     this_ptr->collision_actor = actor;
                   }
                 }
@@ -125,29 +131,29 @@ LAB_00573d6f:
                   fVar7 = fVar6 * fVar6;
                   fVar4 = fVar5 * fVar5 + fVar3 * fVar3;
                   if (fVar7 <= fVar4) {
-                    fVar3 = fVar5 * local_14c.normal_z + fVar3 * local_14c.normal_x;
-                    if (0.0 < fVar3) {
-                      fVar6 = local_14c.normal_x * fVar3 + local_14c.center_x;
-                      fVar4 = fVar1 - fVar6;
-                      fVar5 = local_14c.normal_z * fVar3 + local_14c.center_z;
-                      fVar3 = fVar2 - fVar5;
-                      fVar3 = fVar3 * fVar3 + fVar4 * fVar4;
-                      if (fVar3 < fVar7) {
-                        fVar3 = SQRT(fVar7 - fVar3);
-                        fVar6 = fVar6 - local_14c.normal_x * fVar3;
-                        fVar5 = fVar5 - local_14c.normal_z * fVar3;
+                    fVar8 = fVar5 * local_14c.normal_z + fVar3 * local_14c.normal_x;
+                    if (0.0 < fVar8) {
+                      fVar11 = local_14c.normal_x * fVar8 + local_14c.center_x;
+                      fVar9 = fVar1 - fVar11;
+                      fVar10 = local_14c.normal_z * fVar8 + local_14c.center_z;
+                      fVar8 = fVar2 - fVar10;
+                      fVar8 = fVar8 * fVar8 + fVar9 * fVar9;
+                      if (fVar8 < fVar7) {
+                        fVar8 = SQRT(fVar7 - fVar8);
+                        fVar11 = fVar11 - local_14c.normal_x * fVar8;
+                        fVar10 = fVar10 - local_14c.normal_z * fVar8;
                         if (ABS(local_14c.dir_x) <= ABS(local_14c.dir_z)) {
-                          fVar3 = (fVar5 - local_14c.center_z) / local_14c.dir_z;
+                          fVar8 = (fVar10 - local_14c.center_z) / local_14c.dir_z;
                         }
                         else {
-                          fVar3 = (fVar6 - local_14c.center_x) / local_14c.dir_x;
+                          fVar8 = (fVar11 - local_14c.center_x) / local_14c.dir_x;
                         }
-                        if (((0.0 <= fVar3) && (fVar3 < local_14c.closest_t)) && (fVar3 <= 1.0)) {
-                          local_14c.push_normal.x = fVar6 - fVar1;
-                          local_14c.push_normal.z = fVar5 - fVar2;
+                        if (((0.0 <= fVar8) && (fVar8 < local_14c.closest_t)) && (fVar8 <= 1.0)) {
+                          local_14c.push_normal.x = fVar11 - fVar1;
+                          local_14c.push_normal.z = fVar10 - fVar2;
                           local_14c.push_normal.y = 0.0;
                           this_ptr->collision_actor = actor;
-                          local_14c.closest_t = fVar3;
+                          local_14c.closest_t = fVar8;
                         }
                       }
                     }
@@ -233,14 +239,14 @@ LAB_00573d6f:
     }
   }
   if (local_14c.closest_t <= 1.0) {
-    fVar1 = SQRT(local_14c.push_normal.z * local_14c.push_normal.z +
+    fVar8 = SQRT(local_14c.push_normal.z * local_14c.push_normal.z +
                  local_14c.push_normal.y * local_14c.push_normal.y +
                  local_14c.push_normal.x * local_14c.push_normal.x);
-    if (0.0 < fVar1) {
-      fVar1 = 1.0 / fVar1;
-      local_14c.push_normal.x = local_14c.push_normal.x * fVar1;
-      local_14c.push_normal.y = local_14c.push_normal.y * fVar1;
-      local_14c.push_normal.z = local_14c.push_normal.z * fVar1;
+    if (0.0 < fVar8) {
+      fVar8 = 1.0 / fVar8;
+      local_14c.push_normal.x = local_14c.push_normal.x * fVar8;
+      local_14c.push_normal.y = local_14c.push_normal.y * fVar8;
+      local_14c.push_normal.z = local_14c.push_normal.z * fVar8;
     }
     else {
       local_14c.push_normal.y = 0.0;

@@ -6,12 +6,12 @@
 ; Parameters:
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x2840]:1  local_2840
-; undefined4       Stack[-0x58c]:4  local_58c
-; undefined1       Stack[-0x1e4]:1  local_1e4
-; undefined1       Stack[-0xe0]:1  local_e0
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; CDeformableModelInstance Stack[-0x2840]:8884  local_2840
+; CPickList        Stack[-0x58c]:936  local_58c
+; char[260]        Stack[-0x1e4]:260  local_1e4
+; char[200]        Stack[-0xe0]:200  local_e0
+; int              Stack[-0x18]:4  local_18
+; CDeformableModel * Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dfm_00615ea0

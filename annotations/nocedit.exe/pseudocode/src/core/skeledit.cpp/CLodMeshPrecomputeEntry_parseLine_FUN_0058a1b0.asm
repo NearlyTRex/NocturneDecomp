@@ -7,7 +7,7 @@
 ; CLodMeshPrecomputeEntry * Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   line
 ; Local Variables:
-; undefined4       Stack[-0x10]:4  local_10
+; int              Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_n_0064a213

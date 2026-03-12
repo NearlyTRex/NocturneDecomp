@@ -11,13 +11,10 @@
 ; undefined4       Stack[-0x40]:4  local_40
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
-; undefined1       Stack[-0x34]:1  local_34
-; undefined1       Stack[-0x28]:1  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined1       Stack[-0x10]:1  local_10
+; CVector3f        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x28]:12  local_28
+; CVector3f        Stack[-0x1c]:12  local_1c
+; CVector3f        Stack[-0x10]:12  local_10
 ;
 ; Referenced Globals:
 ;   float FLOAT_00645882 = 0.5

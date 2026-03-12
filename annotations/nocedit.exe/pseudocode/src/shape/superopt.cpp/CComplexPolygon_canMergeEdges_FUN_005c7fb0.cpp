@@ -10,7 +10,10 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0(CCompl
 
 {
   int iVar1;
+  int iVar2;
+  double *pdVar3;
   double *pdVar2;
+  uint *puVar4;
   uint *puVar3;
   CVector3d local_a0;
   double local_88;
@@ -38,12 +41,12 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0(CCompl
   local_88 = (edge_a->end_pos).x - (edge_a->start_pos).x;
   local_80 = (edge_a->end_pos).y - (edge_a->start_pos).y;
   local_78 = (edge_a->end_pos).z - (edge_a->start_pos).z;
-  pdVar2 = &local_88;
-  puVar3 = local_58;
+  pdVar3 = &local_88;
+  puVar4 = local_58;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *(uint *)pdVar2;
-    pdVar2 = (double *)((int)pdVar2 + 4);
-    puVar3 = puVar3 + 1;
+    *puVar4 = *(uint *)pdVar3;
+    pdVar3 = (double *)((int)pdVar3 + 4);
+    puVar4 = puVar4 + 1;
   }
   local_40.x._0_4_ = local_58[0];
   local_40.x._4_4_ = local_58[1];
@@ -56,7 +59,7 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0(CCompl
   local_60 = (edge_b->end_pos).z - (edge_b->start_pos).z;
   pdVar2 = &local_70;
   puVar3 = local_28;
-  for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+  for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar3 = *(uint *)pdVar2;
     pdVar2 = (double *)((int)pdVar2 + 4);
     puVar3 = puVar3 + 1;
@@ -71,8 +74,8 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_canMergeEdges_FUN_005c7fb0(CCompl
              __BITCAST_DOUBLE(CONCAT44(local_58[1],local_58[0])) * __BITCAST_DOUBLE(CONCAT44(local_28[1],local_28[0])) +
              __BITCAST_DOUBLE(CONCAT44(local_58[3],local_58[2])) * __BITCAST_DOUBLE(CONCAT44(local_28[3],local_28[2])))
   {
-    iVar1 = shape_superopt_cpp_areVectorsCollinear_FUN_005d66e0(&local_40,&local_a0);
-    return iVar1;
+    iVar2 = shape_superopt_cpp_areVectorsCollinear_FUN_005d66e0(&local_40,&local_a0);
+    return iVar2;
   }
   return 0;
 }

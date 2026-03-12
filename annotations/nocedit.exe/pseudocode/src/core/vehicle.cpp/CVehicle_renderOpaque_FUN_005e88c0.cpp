@@ -10,7 +10,10 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
 
 {
   CBoundingBox3D *pCVar1;
+  int iVar1;
   int iVar2;
+  CBoundingBox3D *this_ptr_01;
+  int iVar3;
   CVector3f *pCVar3;
   CVector3i *rotation;
   CKeyFramedModelInstance *this_ptr_00;
@@ -26,14 +29,14 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
   pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_60);
-  iStack_18 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar1);
-  this_ptr->is_visible = iStack_18;
-  if (iStack_18 != 0) {
+  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar1);
+  this_ptr->is_visible = iVar1;
+  if (iVar1 != 0) {
     iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
     if ((iVar2 == 0) || (g_CGamePtr->block_auto_save != 0)) {
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                 (&this_ptr->model,0.0,-1);
-      iVar2 = 0;
+      iVar3 = 0;
       if (0 < this_ptr->tire_count) {
         this_ptr_00 = &this_ptr->tires[0].model;
         pCStack_14 = (CVector3i *)&this_ptr->tires[0].spin_angle;
@@ -49,22 +52,22 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
           pCStack_14 = (CVector3i *)&pCStack_14[0x24].y;
-          iVar2 = iVar2 + 1;
+          iVar3 = iVar3 + 1;
           rotation = (CVector3i *)&rotation[0x24].y;
           position = (CVector3i *)&position[0x24].y;
           this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);
-        } while (iVar2 < this_ptr->tire_count);
+        } while (iVar3 < this_ptr->tire_count);
       }
     }
     else {
-      pCVar1 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_78);
-      core_box_cpp_CBoundingBox3D_render_FUN_004210b0(pCVar1);
+      this_ptr_01 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_78);
+      core_box_cpp_CBoundingBox3D_render_FUN_004210b0(this_ptr_01);
     }
   }
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
   if ((this_ptr->is_visible != 0) &&
-     (iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
-     iVar2 == 0)) {
+     (iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2),
+     iVar3 == 0)) {
     CStack_30.z = 6.0;
     CStack_24.z = 6.0;
     CStack_30.x = 1.14;
@@ -84,7 +87,7 @@ int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005e88c0(CVehicle *this_p
     }
     core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
               (&CStack_48,(CVector3i *)&(this_ptr->base).orient.vec,56.0,10.0);
-    return iStack_18;
+    return iVar1;
   }
-  return iStack_18;
+  return iVar1;
 }

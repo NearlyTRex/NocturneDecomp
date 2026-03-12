@@ -8,12 +8,9 @@
 ; char *           Stack[0x8]:4   text
 ; SScriptXRef *    Stack[0xc]:4   xref_data
 ; Local Variables:
-; undefined1       Stack[-0x2374]:1  local_2374
-; undefined1       Stack[-0x24c]:1  local_24c
-; undefined1       Stack[-0x24b]:1  local_24b
-; undefined1       Stack[-0x120]:1  local_120
-; undefined1       Stack[-0x11f]:1  local_11f
-; undefined4       Stack[-0x20]:4  local_20
+; CCmdParse        Stack[-0x2374]:8488  local_2374
+; byte[300]        Stack[-0x24c]:300  local_24c
+; SScriptXRef      Stack[-0x120]:276  local_120
 ;
 ; XREF[2]:
 ;   core_script.cpp_CScript_parseCommandList_FUN_00567010 at 00567059

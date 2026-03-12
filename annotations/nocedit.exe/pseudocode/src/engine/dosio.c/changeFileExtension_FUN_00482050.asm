@@ -8,9 +8,9 @@
 ; char *           Stack[0x8]:4   destination_buffer
 ; char *           Stack[0xc]:4   new_extension
 ; Local Variables:
-; undefined        Stack[-0x208]:1  local_208
-; undefined        Stack[-0x108]:1  local_108
-; undefined        Stack[-0x8]:1  local_8
+; char[256]        Stack[-0x208]:256  local_208
+; char[256]        Stack[-0x108]:256  local_108
+; char[4]          Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
 ;   engine_dosio.c_removeFileExtension_FUN_00482040 at 00482047

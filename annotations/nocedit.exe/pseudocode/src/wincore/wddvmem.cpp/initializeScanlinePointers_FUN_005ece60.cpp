@@ -9,12 +9,12 @@
 void __cdecl wincore_wddvmem_cpp_initializeScanlinePointers_FUN_005ece60(void)
 
 {
-  int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
   int iVar5;
   int iVar6;
+  int iVar1;
   
   iVar4 = 0;
   if (0 < g_WindowHeight) {

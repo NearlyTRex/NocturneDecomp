@@ -6,11 +6,11 @@
 ; Local Variables:
 ; undefined8       Stack[-0x34]:8  local_34
 ; undefined8       Stack[-0x2c]:8  local_2c
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
+; float            Stack[-0x24]:4  local_24
+; float            Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   shape_design.c_tileTextureMaps_FUN_0046a180 at 0046a232

@@ -9,26 +9,30 @@
 int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal)
 
 {
-  uint *puVar1;
+  uint *puVar2;
   int iVar2;
+  int iVar6;
   int iVar3;
   int iVar4;
+  int iVar7;
   int iVar5;
+  int iVar8;
   byte bVar6;
   float afStackY_1030 [1012];
-  CVector3f *position;
-  CVector3f *orientation;
-  CVector3f *aabb_min;
-  CVector3f *aabb_max;
-  CDemonLight *light_source;
-  CMatrix3x3f *rotation_matrix;
-  CVector3i *light_direction;
   CVector3i local_48;
   CVector3f local_3c;
   CVector3i local_30;
   CVector3i local_24;
   int local_18;
   CDemonSet *local_14;
+  CVector3i *light_direction;
+  CVector3f *orientation;
+  uint *puVar1;
+  CVector3f *aabb_max;
+  CVector3f *aabb_min;
+  CMatrix3x3f *rotation_matrix;
+  CDemonLight *light_source;
+  CVector3f *position;
   
   bVar6 = 0;
   if (g_LightingSystemDirty != 0) {
@@ -64,30 +68,30 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
       iVar3 = iVar3 + iVar2;
     } while (iVar4 < g_PrimaryDirectionalLightCount);
   }
-  iVar4 = 0;
+  iVar8 = 0;
   if (0 < g_SecondaryDirectionalLightCount) {
-    iVar5 = 0;
+    iVar7 = 0;
     do {
-      puVar1 = (uint *)((int)g_SecondaryDirectionalLights + iVar5);
-      iVar5 = iVar5 + 4;
-      iVar4 = iVar4 + 1;
-      iVar2 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0
-                        (&g_CDemonCameraInstance,world_position,(CDemonLight *)*puVar1,
+      puVar2 = (uint *)((int)g_SecondaryDirectionalLights + iVar7);
+      iVar7 = iVar7 + 4;
+      iVar8 = iVar8 + 1;
+      iVar6 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0
+                        (&g_CDemonCameraInstance,world_position,(CDemonLight *)*puVar2,
                          surface_normal);
-      iVar3 = iVar3 + iVar2;
-    } while (iVar4 < g_SecondaryDirectionalLightCount);
+      iVar3 = iVar3 + iVar6;
+    } while (iVar8 < g_SecondaryDirectionalLightCount);
   }
-  iVar4 = 0;
+  iVar8 = 0;
   if (0 < g_GlobeLightCount) {
-    iVar5 = 0;
+    iVar7 = 0;
     do {
-      puVar1 = (uint *)((int)g_GlobeLights + iVar5);
-      iVar5 = iVar5 + 4;
-      iVar4 = iVar4 + 1;
-      iVar2 = core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850
-                        ((CDemonGlobe *)*puVar1,world_position,surface_normal);
-      iVar3 = iVar3 + iVar2;
-    } while (iVar4 < g_GlobeLightCount);
+      puVar2 = (uint *)((int)g_GlobeLights + iVar7);
+      iVar7 = iVar7 + 4;
+      iVar8 = iVar8 + 1;
+      iVar6 = core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850
+                        ((CDemonGlobe *)*puVar2,world_position,surface_normal);
+      iVar3 = iVar3 + iVar6;
+    } while (iVar8 < g_GlobeLightCount);
   }
   local_18 = 0;
   if (0 < this_ptr->mirror_glass_actor_count) {
@@ -111,24 +115,24 @@ int __cdecl core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonS
         *(uint *)((int)&local_24 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
              *(uint *)((int)&local_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       }
-      iVar4 = 0;
+      iVar8 = 0;
       if (0 < g_DynamicLightCount) {
-        iVar5 = 0;
+        iVar7 = 0;
         do {
           if (surface_normal == (CVector3i *)0x0) {
-            light_source = *(CDemonLight **)((int)g_DynamicLights + iVar5);
+            light_source = *(CDemonLight **)((int)g_DynamicLights + iVar7);
             light_direction = (CVector3i *)0x0;
           }
           else {
             light_direction = &local_24;
-            light_source = *(CDemonLight **)((int)g_DynamicLights + iVar5);
+            light_source = *(CDemonLight **)((int)g_DynamicLights + iVar7);
           }
-          iVar2 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0
+          iVar6 = core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0
                             (&g_CDemonCameraInstance,&local_48,light_source,light_direction);
-          iVar3 = iVar3 + iVar2;
-          iVar4 = iVar4 + 1;
-          iVar5 = iVar5 + 4;
-        } while (iVar4 < g_DynamicLightCount);
+          iVar3 = iVar3 + iVar6;
+          iVar8 = iVar8 + 1;
+          iVar7 = iVar7 + 4;
+        } while (iVar8 < g_DynamicLightCount);
       }
       local_14 = (CDemonSet *)local_14->cameras;
       local_18 = local_18 + 1;

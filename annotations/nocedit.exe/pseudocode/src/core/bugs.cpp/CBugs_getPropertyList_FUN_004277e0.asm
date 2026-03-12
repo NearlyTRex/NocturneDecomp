@@ -7,7 +7,7 @@
 ; CBugs *          Stack[0x4]:4   this_ptr
 ; CActorPropertyList * Stack[0x8]:4   property_list
 ; Local Variables:
-; undefined1       Stack[-0x70]:1  local_70
+; char[100]        Stack[-0x70]:100  local_70
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bugCount_00616e80

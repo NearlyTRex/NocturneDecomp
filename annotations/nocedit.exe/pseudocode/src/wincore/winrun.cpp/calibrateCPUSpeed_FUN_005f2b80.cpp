@@ -13,6 +13,7 @@ void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005f2b80(void)
   int iVar2;
   int iVar3;
   MMRESULT MVar4;
+  int iVar1;
   uint uVar5;
   int local_18;
   int local_14;
@@ -28,10 +29,10 @@ void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_005f2b80(void)
     g_UseMultimediaTimer = 1;
     MVar4 = (*g_timeBeginPeriodFunc)(1);
     if (MVar4 != 0) {
-      iVar2 = (*g_MessageBoxAFunc)
+      iVar1 = (*g_MessageBoxAFunc)
                         (g_MainWindowHandle,"Unable to set timer",g_ApplicationTimerTitle,
                          0x31);
-      if (iVar2 == 2) {
+      if (iVar1 == 2) {
         g_InputDisabled = 1;
       }
     }

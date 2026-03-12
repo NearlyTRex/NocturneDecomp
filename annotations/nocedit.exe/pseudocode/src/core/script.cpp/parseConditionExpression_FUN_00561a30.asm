@@ -13,10 +13,10 @@
 ; CCmdParse *      Stack[0x1c]:4   parse_out
 ; Local Variables:
 ; CStrList         Stack[-0x30]:16  local_30
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; uint             Stack[-0x20]:4  local_20
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_script.cpp_parseCommandWithTemplates_FUN_00561690 at 005619c1

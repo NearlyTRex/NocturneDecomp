@@ -6,7 +6,27 @@
 ; Parameters:
 ; CTrigger *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0xa4]:1  local_a4
+; int              Stack[-0xd8]:4  iStack_d8
+; int              Stack[-0xd0]:4  iStack_d0
+; SMRGLHeaderPrimitive Stack[-0xcc]:24  SStack_cc
+; int              Stack[-0xb4]:4  iStack_b4
+; int              Stack[-0xb0]:4  iStack_b0
+; int              Stack[-0xac]:4  iStack_ac
+; int              Stack[-0xa8]:4  iStack_a8
+; CBoundingBox3D   Stack[-0xa4]:24  local_a4
+; CBoundingBox3D   Stack[-0x8c]:24  CStack_8c
+; CVector3i        Stack[-0x74]:12  CStack_74
+; float            Stack[-0x68]:4  fStack_68
+; float            Stack[-0x64]:4  fStack_64
+; float            Stack[-0x60]:4  fStack_60
+; CVector3i        Stack[-0x5c]:12  CStack_5c
+; CVector3i        Stack[-0x50]:12  CStack_50
+; CVector3i[2]     Stack[-0x44]:24  aCStack_44
+; int              Stack[-0x28]:4  iStack_28
+; int              Stack[-0x24]:4  iStack_24
+; int              Stack[-0x20]:4  iStack_20
+; int              Stack[-0x1c]:4  iStack_1c
+; int              Stack[-0x18]:4  iStack_18
 ;
 ; Referenced Globals:
 ;   void* switchdataD_005e00a4 = 005e0159

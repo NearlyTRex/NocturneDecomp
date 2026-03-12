@@ -6,7 +6,29 @@
 ; Parameters:
 ; CLightGun *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x78]:1  local_78
+; SDamageInfo      Stack[-0x114]:60  SStack_114
+; CBoundingBox3D   Stack[-0xd8]:24  CStack_d8
+; CBoundingBox3D   Stack[-0xc0]:24  CStack_c0
+; float            Stack[-0xa8]:4  fStack_a8
+; float            Stack[-0xa4]:4  fStack_a4
+; float            Stack[-0xa0]:4  fStack_a0
+; CVector3f        Stack[-0x9c]:12  CStack_9c
+; CVector3f        Stack[-0x90]:12  CStack_90
+; CVector3f        Stack[-0x84]:12  CStack_84
+; CVector3f        Stack[-0x78]:12  local_78
+; CVector3f        Stack[-0x6c]:12  CStack_6c
+; CVector3f        Stack[-0x60]:12  CStack_60
+; CVector3f        Stack[-0x54]:12  CStack_54
+; CVector3f        Stack[-0x48]:12  CStack_48
+; CVector3f        Stack[-0x3c]:12  CStack_3c
+; float            Stack[-0x30]:4  fStack_30
+; CTrigger *       Stack[-0x2c]:4  pCStack_2c
+; int              Stack[-0x28]:4  iStack_28
+; int              Stack[-0x24]:4  iStack_24
+; int              Stack[-0x20]:4  iStack_20
+; CCharacter *     Stack[-0x1c]:4  pCStack_1c
+; CVector3f *      Stack[-0x18]:4  pCStack_18
+; CVector3f *      Stack[-0x14]:4  pCStack_14
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CDraculaBride_0063145d

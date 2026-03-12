@@ -9,9 +9,12 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080(CLodMesh *this_ptr)
 
 {
+  int iVar2;
   int iVar1;
+  int iVar5;
   int *piVar2;
   int iVar3;
+  int iVar6;
   int iVar4;
   int local_1c;
   int local_18;
@@ -34,56 +37,56 @@ void __cdecl shape_meshlod_cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080(CLo
   }
   shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0
             (this_ptr,g_VertexCount,iVar4,this_ptr->lod_texture_count);
-  iVar3 = 0;
+  iVar6 = 0;
   if (0 < this_ptr->vertex_count) {
-    iVar4 = 0;
-    iVar1 = 0;
+    iVar2 = 0;
+    iVar5 = 0;
     do {
-      *(uint *)(this_ptr->vertex_data->lod_workspace + iVar1 + -0x10) =
-           *(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar4);
-      *(uint *)(this_ptr->vertex_data->lod_workspace + iVar1 + -0xc) =
-           *(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar4);
-      *(uint *)(this_ptr->vertex_data->lod_workspace + iVar1 + -8) =
-           *(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar4);
-      iVar1 = iVar1 + 0x4c4;
-      iVar3 = iVar3 + 1;
-      iVar4 = iVar4 + 0x14;
-    } while (iVar3 < this_ptr->vertex_count);
+      *(uint *)(this_ptr->vertex_data->lod_workspace + iVar5 + -0x10) =
+           *(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar2);
+      *(uint *)(this_ptr->vertex_data->lod_workspace + iVar5 + -0xc) =
+           *(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar2);
+      *(uint *)(this_ptr->vertex_data->lod_workspace + iVar5 + -8) =
+           *(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar2);
+      iVar5 = iVar5 + 0x4c4;
+      iVar6 = iVar6 + 1;
+      iVar2 = iVar2 + 0x14;
+    } while (iVar6 < this_ptr->vertex_count);
   }
-  iVar3 = g_PolygonCount;
+  iVar6 = g_PolygonCount;
   local_18 = 0;
   local_1c = 0;
   this_ptr->lod_texture_count = 0;
-  if (0 < iVar3) {
+  if (0 < iVar6) {
     do {
-      iVar3 = local_18 * 0x8c;
+      iVar6 = local_18 * 0x8c;
       local_14 = 2;
       if (2 < (int)g_ModelPolygonData[local_1c].vertex_indices_count) {
-        iVar4 = local_1c * 0x184 + 8;
+        iVar2 = local_1c * 0x184 + 8;
         do {
           local_18 = local_18 + 1;
-          piVar2 = (int *)((int)this_ptr->tri_data->attribute_indices + iVar3);
-          iVar3 = iVar3 + 0x8c;
+          piVar2 = (int *)((int)this_ptr->tri_data->attribute_indices + iVar6);
+          iVar6 = iVar6 + 0x8c;
           if (g_ModelPolygonData[local_1c].texture_name[0] == '\0') {
             *piVar2 = -1;
           }
           else {
-            iVar1 = shape_meshlod_cpp_CLodMesh_findOrAddLodTexture_FUN_00518790
+            iVar5 = shape_meshlod_cpp_CLodMesh_findOrAddLodTexture_FUN_00518790
                               (this_ptr,g_ModelPolygonData[local_1c].texture_name);
-            *piVar2 = iVar1;
+            *piVar2 = iVar5;
           }
           piVar2[1] = g_ModelPolygonData[local_1c].part_assignment;
           piVar2[4] = g_ModelPolygonData[local_1c].vertex_indices[0];
           piVar2[7] = (int)g_ModelPolygonData[local_1c].uv_u[0];
           piVar2[8] = (int)g_ModelPolygonData[local_1c].uv_v[0];
-          piVar2[5] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -4);
-          piVar2[9] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 0x3c);
-          piVar2[10] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar4 + 0x3c);
-          piVar2[6] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4);
-          piVar2[0xb] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar4);
+          piVar2[5] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + -4);
+          piVar2[9] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + 0x3c);
+          piVar2[10] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar2 + 0x3c);
+          piVar2[6] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2);
+          piVar2[0xb] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar2);
           local_14 = local_14 + 1;
-          piVar2[0xc] = *(int *)((int)g_ModelPolygonData[0].uv_v + iVar4);
-          iVar4 = iVar4 + 4;
+          piVar2[0xc] = *(int *)((int)g_ModelPolygonData[0].uv_v + iVar2);
+          iVar2 = iVar2 + 4;
         } while (local_14 < (int)g_ModelPolygonData[local_1c].vertex_indices_count);
       }
       local_1c = local_1c + 1;

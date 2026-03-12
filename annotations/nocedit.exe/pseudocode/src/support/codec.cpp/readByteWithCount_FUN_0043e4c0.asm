@@ -7,7 +7,7 @@
 ; _istream *       Stack[0x4]:4   istream
 ; int *            Stack[0x8]:4   remaining_count
 ; Local Variables:
-; undefined1       Stack[-0x14]:1  local_14
+; byte[4]          Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   crt_iostream.cpp_istream_get_FUN_005ff245

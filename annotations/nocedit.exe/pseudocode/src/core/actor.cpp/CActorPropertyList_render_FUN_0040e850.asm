@@ -7,12 +7,12 @@
 ; CActorPropertyList * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   selected_index
 ; Local Variables:
-; undefined1       Stack[-0xec]:1  local_ec
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[200]        Stack[-0xec]:200  local_ec
+; int              Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; CActorProperty * Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0 at 0053c662

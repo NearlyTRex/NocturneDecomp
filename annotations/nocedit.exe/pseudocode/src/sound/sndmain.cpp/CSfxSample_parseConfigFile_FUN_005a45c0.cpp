@@ -9,17 +9,18 @@
 void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSample *this_ptr)
 
 {
-  float fVar1;
-  double dVar2;
-  char cVar3;
-  float fVar4;
-  float fVar5;
-  _FILE *stream;
+  float fVar2;
+  double dVar3;
+  float fVar6;
   int iVar6;
+  int iVar7;
   long lVar7;
+  long lVar8;
   char *pcVar8;
   char *pcVar9;
   uint uVar10;
+  char *pcVar10;
+  char *pcVar11;
   byte bVar11;
   uint local_480;
   uint uStack_47c;
@@ -41,16 +42,22 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   int local_20;
   int local_1c;
   int local_18;
+  _FILE *stream;
+  char cVar3;
+  float fVar5;
+  double dVar2;
+  float fVar1;
+  float fVar4;
   
   bVar11 = 0;
   fVar4 = (float)g_Cached3DDistanceFactorInverse;
-  fVar1 = 20.0f * fVar4;
+  fVar2 = 20.0f * fVar4;
   fVar5 = g_SoundReferenceVolumeDistance * fVar4;
-  fVar4 = 10000.0f * fVar4;
+  fVar6 = 10000.0f * fVar4;
   this_ptr->loop_marker_count = 1;
-  (this_ptr->sample_info).reference_distance = fVar1;
+  (this_ptr->sample_info).reference_distance = fVar2;
   (this_ptr->sample_info).reference_volume_distance = fVar5;
-  (this_ptr->sample_info).max_distance = fVar4;
+  (this_ptr->sample_info).max_distance = fVar6;
   this_ptr->loop_endpoints[0] = (this_ptr->sample_info).sample_count;
   this_ptr->loop_destinations[0] = -1;
   engine_dosio_c_splitPath_FUN_00481f20
@@ -59,63 +66,63 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   iVar6 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_338);
   if (0 < iVar6) {
     this_ptr->loop_marker_count = 1;
-    iVar6 = (this_ptr->sample_info).sample_count;
+    iVar7 = (this_ptr->sample_info).sample_count;
     this_ptr->loop_destinations[0] = 0;
-    this_ptr->loop_endpoints[0] = iVar6;
+    this_ptr->loop_endpoints[0] = iVar7;
   }
   engine_dosio_c_makePath_FUN_00481f50(local_138,(char *)0x0,(char *)0x0,local_238,"sfx");
-  iVar6 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_138);
-  if ((iVar6 < 1) ||
+  iVar7 = engine_dosio_c_getFileSize_FUN_00481880("sound",local_138);
+  if ((iVar7 < 1) ||
      (local_24 = engine_dosio_c_getFile_FUN_00481a50("sound",local_138,"rb"),
      local_24 == (_FILE *)0x0)) {
     return;
   }
   lVar7 = _ftell(local_24);
-  local_28 = iVar6 + lVar7;
+  local_28 = iVar7 + lVar7;
   local_30 = &(this_ptr->sample_info).max_distance;
   local_2c = &(this_ptr->sample_info).reference_volume_distance;
   local_1c = 0;
   local_20 = 0;
   local_34 = &(this_ptr->sample_info).reference_distance;
   local_18 = 0;
-  while (stream = local_24, lVar7 = _ftell(local_24), lVar7 < local_28) {
+  while (stream = local_24, lVar8 = _ftell(local_24), lVar8 < local_28) {
     local_18 = local_18 + 1;
     pcVar8 = _fgets(local_464,300,stream);
     if (pcVar8 == (char *)0x0) break;
     pcVar9 = strstr(local_464,"//");
-    pcVar8 = local_464;
+    pcVar10 = local_464;
     if (pcVar9 != (char *)0x0) {
       *pcVar9 = '\0';
     }
     do {
-      pcVar9 = pcVar8;
-      if (*pcVar8 == '\0') goto joined_r0x005a47dc;
-      if (*pcVar8 == '\0') break;
-      pcVar9 = pcVar8 + 1;
-      if (*pcVar9 == '\0') goto joined_r0x005a47dc;
-      pcVar8 = pcVar8 + 2;
-    } while (*pcVar9 != '\0');
-    pcVar9 = (char *)0x0;
+      pcVar11 = pcVar10;
+      if (*pcVar10 == '\0') goto joined_r0x005a47dc;
+      if (*pcVar10 == '\0') break;
+      pcVar11 = pcVar10 + 1;
+      if (*pcVar11 == '\0') goto joined_r0x005a47dc;
+      pcVar10 = pcVar10 + 2;
+    } while (*pcVar11 != '\0');
+    pcVar11 = (char *)0x0;
 joined_r0x005a47dc:
-    while ((local_464 < pcVar9 &&
-           ((g_CharacterClassificationTable[(byte)(pcVar9[-1] + 1)] & 2) != 0))) {
-      pcVar9 = pcVar9 + -1;
+    while ((local_464 < pcVar11 &&
+           ((g_CharacterClassificationTable[(byte)(pcVar11[-1] + 1)] & 2) != 0))) {
+      pcVar11 = pcVar11 + -1;
     }
-    *pcVar9 = '\0';
+    *pcVar11 = '\0';
     while ((g_CharacterClassificationTable[(byte)(local_464[0] + 1)] & 2) != 0) {
       uVar10 = 0xffffffff;
-      pcVar8 = local_464;
+      pcVar10 = local_464;
       do {
         if (uVar10 == 0) break;
         uVar10 = uVar10 - 1;
-        cVar3 = *pcVar8;
-        pcVar8 = pcVar8 + (uint)bVar11 * -2 + 1;
+        cVar3 = *pcVar10;
+        pcVar10 = pcVar10 + (uint)bVar11 * -2 + 1;
       } while (cVar3 != '\0');
       memmove(local_464,local_464 + 1,~uVar10 - 1);
     }
     if (local_464[0] != '\0') {
-      iVar6 = sscanf(local_464,"refDist =%f",local_34);
-      if (iVar6 == 1) {
+      iVar7 = sscanf(local_464,"refDist =%f",local_34);
+      if (iVar7 == 1) {
         if (local_20 != 0) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0x290;
@@ -124,10 +131,9 @@ joined_r0x005a47dc:
         }
         local_20 = local_18;
         fVar1 = (this_ptr->sample_info).reference_distance;
-        dVar2 = (double)fVar1;
         if (fVar1 < (float)0.10000000000000001) {
-          uStack_474 = (uint)((ulonglong)dVar2 >> 0x20);
-          local_478 = SUB84(__BITCAST_UINT64(dVar2),0);
+          uStack_474 = (uint)((ulonglong)(double)fVar1 >> 0x20);
+          local_478 = SUB84(__BITCAST_UINT64((double)fVar1),0);
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
           g_CurrentLineNumber = 0x292;
           core_main_c_displayErrorAndQuit_FUN_00506f10
@@ -139,8 +145,8 @@ joined_r0x005a47dc:
         }
       }
       else {
-        iVar6 = sscanf(local_464,"minDist =%f",local_2c);
-        if (iVar6 == 1) {
+        iVar7 = sscanf(local_464,"minDist =%f",local_2c);
+        if (iVar7 == 1) {
           if (local_1c != 0) {
             g_CurrentFilename = "..\\sound\\sndmain.cpp";
             g_CurrentLineNumber = 0x298;
@@ -148,11 +154,11 @@ joined_r0x005a47dc:
                       ("Minimum distance specified in %s on line %d, then again on line %d",local_138,local_1c,local_18);
           }
           local_1c = local_18;
-          fVar1 = (this_ptr->sample_info).reference_volume_distance;
-          dVar2 = (double)fVar1;
-          if (fVar1 < (float)0.10000000000000001) {
-            uStack_46c = (uint)((ulonglong)dVar2 >> 0x20);
-            local_470 = SUB84(__BITCAST_UINT64(dVar2),0);
+          fVar2 = (this_ptr->sample_info).reference_volume_distance;
+          dVar3 = (double)fVar2;
+          if (fVar2 < (float)0.10000000000000001) {
+            uStack_46c = (uint)((ulonglong)dVar3 >> 0x20);
+            local_470 = SUB84(__BITCAST_UINT64(dVar3),0);
             g_CurrentFilename = "..\\sound\\sndmain.cpp";
             g_CurrentLineNumber = 0x29a;
             core_main_c_displayErrorAndQuit_FUN_00506f10
@@ -160,10 +166,10 @@ joined_r0x005a47dc:
           }
         }
         else {
-          iVar6 = sscanf(local_464,"maxDist =%f",local_30);
-          if (iVar6 != 1) {
-            iVar6 = sscanf(local_464,"maxVol =%f",&local_468);
-            if (iVar6 == 1) {
+          iVar7 = sscanf(local_464,"maxDist =%f",local_30);
+          if (iVar7 != 1) {
+            iVar7 = sscanf(local_464,"maxVol =%f",&local_468);
+            if (iVar7 == 1) {
               if (local_20 == 0) {
                 g_CurrentFilename = "..\\sound\\sndmain.cpp";
                 g_CurrentLineNumber = 0x2a4;
@@ -190,8 +196,8 @@ joined_r0x005a47dc:
                    (this_ptr->sample_info).reference_distance / local_468;
             }
             else {
-              iVar6 = sscanf(local_464,"length =%d",&local_38);
-              if (iVar6 == 1) {
+              iVar7 = sscanf(local_464,"length =%d",&local_38);
+              if (iVar7 == 1) {
                 if (-1 < (this_ptr->sample_info).sample_count) {
                   g_CurrentFilename = "..\\sound\\sndmain.cpp";
                   g_CurrentLineNumber = 0x2ae;
@@ -207,12 +213,12 @@ joined_r0x005a47dc:
                 (this_ptr->sample_info).sample_count = local_38;
               }
               else {
-                iVar6 = _stricmp(local_464,"loop");
-                if (iVar6 == 0) {
+                iVar7 = _stricmp(local_464,"loop");
+                if (iVar7 == 0) {
                   this_ptr->loop_marker_count = 1;
-                  iVar6 = (this_ptr->sample_info).sample_count;
+                  iVar7 = (this_ptr->sample_info).sample_count;
                   this_ptr->loop_destinations[0] = 0;
-                  this_ptr->loop_endpoints[0] = iVar6;
+                  this_ptr->loop_endpoints[0] = iVar7;
                 }
                 else {
                   g_CurrentFilename = "..\\sound\\sndmain.cpp";

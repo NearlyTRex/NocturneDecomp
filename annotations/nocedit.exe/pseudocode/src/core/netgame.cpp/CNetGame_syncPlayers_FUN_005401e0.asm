@@ -7,17 +7,16 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   sync_stage
 ; Local Variables:
-; undefined4       Stack[-0x198]:4  local_198
-; undefined1       Stack[-0x194]:1  local_194
-; undefined1       Stack[-0x94]:1  local_94
-; undefined4       Stack[-0x30]:4  local_30
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined4       Stack[-0x2b]:4  local_2b
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; float            Stack[-0x198]:4  local_198
+; char[256]        Stack[-0x194]:256  local_194
+; char[100]        Stack[-0x94]:100  local_94
+; SNetPacketHeader Stack[-0x30]:5  local_30
+; int              Stack[-0x2b]:4  local_2b
+; uint             Stack[-0x24]:4  local_24
+; SNetPlayer *     Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db2d1

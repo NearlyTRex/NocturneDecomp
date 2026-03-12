@@ -12,6 +12,7 @@ int __watcallStack crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932(streambuf *b
   uint uVar1;
   int iVar2;
   uint uVar3;
+  uint uVar2;
   char *pcVar4;
   char *pcVar5;
   byte bVar6;
@@ -41,10 +42,12 @@ int __watcallStack crt_iostream_cpp_streambuf_do_sgetn_FUN_0060b932(streambuf *b
       pcVar4 = pcVar4 + (uint)bVar6 * -8 + 4;
       pcVar5 = pcVar5 + (uint)bVar6 * -8 + 4;
     }
-    for (uVar3 = uVar1 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-      *pcVar5 = *pcVar4;
-      pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
+    for (uVar2 = uVar1 & 3; uVar2 != 0; uVar2 = uVar2 - 1) {
       pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
+      pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
+      *pcVar5 = *pcVar4;
+      pcVar4 = pcVar4;
+      pcVar5 = pcVar5;
     }
     bytes_to_read = bytes_to_read - uVar1;
     output_buffer = (void *)((int)output_buffer + uVar1);

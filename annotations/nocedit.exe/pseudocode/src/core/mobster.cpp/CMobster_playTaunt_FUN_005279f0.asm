@@ -7,10 +7,10 @@
 ; CMobster *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   taunt_category
 ; Local Variables:
-; undefined1       Stack[-0x80]:1  local_80
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[100]        Stack[-0x80]:100  local_80
+; int              Stack[-0x1c]:4  local_1c
+; int              Stack[-0x18]:4  local_18
+; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_mobster.cpp_CMobster_process_FUN_00525840 at 00525f8a

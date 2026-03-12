@@ -11,7 +11,6 @@
 void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00547fc0(CPathMap *this_ptr,int depth,int red,int green,int fog)
 
 {
-  CDemonRenderer *this_ptr_00;
   int iVar1;
   byte bVar2;
   int aiStackY_1040 [1010];
@@ -30,6 +29,7 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00547fc0(CPathMap *this_pt
   int local_1c;
   int local_18;
   int local_14;
+  CDemonRenderer *this_ptr_00;
   
   bVar2 = 0;
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr2);
@@ -77,7 +77,7 @@ void __cdecl core_path_cpp_CPathMap_renderPathMap_FUN_00547fc0(CPathMap *this_pt
         local_54[0] = *(int *)(local_18 + 0x30);
         local_54[2] = local_58;
         local_54[(uint)bVar2 * -2 + 3] = local_54[(uint)bVar2 * -2];
-        local_54[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
+        (&local_44)[(uint)bVar2 * -2 + (uint)bVar2 * -2] =
              local_54[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
         local_14 = local_44;
         local_70.x = (int)ROUND(ROUND((float)local_54[2] *

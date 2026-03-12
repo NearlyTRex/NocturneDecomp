@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   text
 ; SScriptXRef *    Stack[0xc]:4   xref_data
 ; Local Variables:
-; undefined1       Stack[-0x2134]:1  local_2134
+; CCmdParse        Stack[-0x2134]:8488  local_2134
 ;
 ; XREF[1]:
 ;   core_script.cpp_CScript_extractCrossReferences_FUN_005671a0 at 00567259

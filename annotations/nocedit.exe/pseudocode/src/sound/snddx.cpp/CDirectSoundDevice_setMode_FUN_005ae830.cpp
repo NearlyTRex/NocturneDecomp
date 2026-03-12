@@ -13,6 +13,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
 
 {
   uint uVar1;
+  uint uVar2;
+  char *pcVar3;
   char *pcVar2;
   char acStack_6b0 [400];
   char acStack_520 [400];
@@ -43,9 +45,9 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
     local_48.wBitsPerSample = (WORD)bits_per_sample;
     uVar1 = (*g_DirectSoundPrimaryBuffer->vtable->SetFormat)(g_DirectSoundPrimaryBuffer,&local_48);
     if (uVar1 == 0) {
-      uVar1 = (*g_DirectSoundPrimaryBuffer->vtable->GetFormat)
+      uVar2 = (*g_DirectSoundPrimaryBuffer->vtable->GetFormat)
                         (g_DirectSoundPrimaryBuffer,&local_48,0x12,(LPDWORD)0x0);
-      if (uVar1 == 0) {
+      if (uVar2 == 0) {
         g_StreamBitsPerSample = (int)local_48.wBitsPerSample;
         g_StreamSampleRate = local_48.nSamplesPerSec;
         g_StreamChannelCount = (int)local_48.nChannels;
@@ -67,9 +69,9 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
         DStack_5c.dwSize = 0x14;
         DStack_5c.dwFlags = 0x12;
         DStack_5c.dwBufferBytes = 0x400;
-        uVar1 = (*g_DirectSound->vtable->CreateSoundBuffer)
+        uVar2 = (*g_DirectSound->vtable->CreateSoundBuffer)
                           (g_DirectSound,&DStack_5c,&pIStack_20,(LPUNKNOWN)0x0);
-        if (uVar1 == 0) {
+        if (uVar2 == 0) {
           (*pIStack_20->vtable->QueryInterface)(pIStack_20,&g_IID_IDirectSound3DBuffer,&piStack_1c);
           if (piStack_1c == (int *)0x0) {
             if (pIStack_20 != (IDirectSoundBuffer *)0x0) {
@@ -90,10 +92,10 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
           }
         }
         else {
-          pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
+          pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar2);
           _sprintf
                     (acStack_390,"DirectSux: Unable to %s.  (%s)",
-                     "Create temp secondary buffer for property set creation",pcVar2);
+                     "Create temp secondary buffer for property set creation",pcVar3);
           sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_390);
         }
         if (g_DirectSoundPropertySet != (IKsPropertySet *)0x0) {
@@ -125,31 +127,31 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSound
           ;
           g_DirectSoundSecondaryBuffer = (IDirectSoundBuffer *)0x0;
         }
-        uVar1 = (*g_DirectSound->vtable->CreateSoundBuffer)
+        uVar2 = (*g_DirectSound->vtable->CreateSoundBuffer)
                           (g_DirectSound,&DStack_70,&g_DirectSoundSecondaryBuffer,(LPUNKNOWN)0x0);
-        if (uVar1 == 0) {
+        if (uVar2 == 0) {
           *out_samples_per_block = g_StreamSamplesPerBlock;
           return 1;
         }
-        pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
+        pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar2);
         _sprintf
                   (acStack_6b0,"DirectSux: Unable to %s.  (%s)",
                    "Create the secondary buffer",pcVar2);
         sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_6b0);
       }
       else {
-        pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
+        pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar2);
         _sprintf
                   (acStack_200,"DirectSux: Unable to %s.  (%s)",
-                   "Get Primary buffer format",pcVar2);
+                   "Get Primary buffer format",pcVar3);
         sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_200);
       }
     }
     else {
-      pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
+      pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar1);
       _sprintf
                 (acStack_520,"DirectSux: Unable to %s.  (%s)","Set Primary buffer format",
-                 pcVar2);
+                 pcVar3);
       sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_520);
     }
   }

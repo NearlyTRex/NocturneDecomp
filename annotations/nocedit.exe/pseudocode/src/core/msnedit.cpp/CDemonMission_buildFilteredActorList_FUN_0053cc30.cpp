@@ -9,9 +9,10 @@
 void __cdecl core_msnedit_cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30(CDemonMission *this_ptr,CStrList *name_list,CDemonActor *class_type,char *class_name ,CActorPropertyFilterFunc *filter_func)
 
 {
-  int sort_type;
-  CDemonActor *actor_ptr;
   int iVar1;
+  int iVar2;
+  CDemonActor *actor_ptr;
+  int sort_type;
   
   sort_type = name_list->item_count;
   for (actor_ptr = this_ptr->first_actor; actor_ptr != (CDemonActor *)0x0;
@@ -19,7 +20,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30(
     if ((((class_name == (char *)0x0) || (*class_name == '\0')) ||
         (iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,class_name), iVar1 != 0)) &&
        ((filter_func == (CActorPropertyFilterFunc *)0x0 ||
-        (iVar1 = (*filter_func)(class_type,actor_ptr), iVar1 != 0)))) {
+        (iVar2 = (*filter_func)(class_type,actor_ptr), iVar2 != 0)))) {
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(name_list,actor_ptr->actor_name);
     }
   }

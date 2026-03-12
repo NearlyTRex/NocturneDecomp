@@ -9,12 +9,12 @@
 void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream *this_ptr,SMpegSubbandAllocation *allocation_indices,SMpegSubbandScalefactors *scalefactors,SBitAllocationTable *alloc_info)
 
 {
-  int iVar1;
   uint uVar2;
   uint *puVar3;
   int iVar4;
   int *piVar5;
   int local_14;
+  int iVar1;
   
   local_14 = 0;
   iVar1 = alloc_info->num_subbands;

@@ -9,7 +9,9 @@
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750(CDeformableModelInstance *this_ptr,CQuaternion4f *source_quaternions,float blend_weight,int bone_index,CDeformableModel_MotionBlendWeightFunc *blend_callback)
 
 {
+  CSkeleton *this_ptr_00;
   int hierarchy_distance;
+  float t;
   int start_bone_index;
   CQuaternion4f *quat1_in;
   uint *puVar1;
@@ -25,19 +27,18 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
   bVar4 = 0;
   if ((float)0.001 < blend_weight) {
     start_bone_index = 0;
-    local_1c = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
-    if (0 < local_1c->bone_count) {
+    this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
+    if (0 < this_ptr_00->bone_count) {
       local_18 = this_ptr;
       quat1_in = (this_ptr->bone_transform).bone_rotations;
       do {
         hierarchy_distance =
              core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100
-                       (local_1c,start_bone_index,bone_index);
+                       (this_ptr_00,start_bone_index,bone_index);
         if (-1 < hierarchy_distance) {
-          fStack_14 = (*blend_callback)(start_bone_index,bone_index,blend_weight,hierarchy_distance,
-                                        this_ptr);
-          core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                    (quat1_in,source_quaternions,fStack_14,&CStack_2c);
+          t = (*blend_callback)(start_bone_index,bone_index,blend_weight,hierarchy_distance,this_ptr
+                               );
+          core_xform_cpp_slerpQuaternion_FUN_005f77e0(quat1_in,source_quaternions,t,&CStack_2c);
           puVar2 = (uint *)((int)local_18 + (uint)bVar4 * -8 + 0x6b4);
           (local_18->bone_transform).bone_rotations[0].w = CStack_2c.w;
           puVar3 = puVar2 + (uint)bVar4 * -2 + 1;
@@ -49,7 +50,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
         quat1_in = quat1_in + 1;
         start_bone_index = start_bone_index + 1;
         local_18 = (CDeformableModelInstance *)&(local_18->motion_controller).tween_speed;
-      } while (start_bone_index < local_1c->bone_count);
+      } while (start_bone_index < this_ptr_00->bone_count);
     }
   }
   return;

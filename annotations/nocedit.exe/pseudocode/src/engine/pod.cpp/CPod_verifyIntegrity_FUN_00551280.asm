@@ -7,7 +7,7 @@
 ; CPod *           Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   pod_filename
 ; Local Variables:
-; undefined1       Stack[-0x430]:1  local_430
+; CPodFile         Stack[-0x430]:1068  local_430
 ;
 ; XREF[3]:
 ;   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 at 004bb014

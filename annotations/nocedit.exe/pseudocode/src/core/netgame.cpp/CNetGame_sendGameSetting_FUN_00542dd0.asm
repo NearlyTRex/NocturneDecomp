@@ -7,17 +7,14 @@
 ; CNetGame *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   player_index
 ; Local Variables:
-; undefined4       Stack[-0xc8]:4  local_c8
-; undefined1       Stack[-0xc4]:1  local_c4
-; undefined4       Stack[-0xc3]:4  local_c3
-; undefined4       Stack[-0xbf]:4  local_bf
-; undefined        Stack[-0xbb]:1  local_bb
-; undefined1       Stack[-0xba]:1  local_ba
-; undefined4       Stack[-0x6b]:4  local_6b
-; undefined        Stack[-0x67]:1  local_67
-; undefined1       Stack[-0x66]:1  local_66
-; undefined        Stack[-0x53]:1  local_53
-; undefined4       Stack[-0x14]:4  local_14
+; SNetPacketHeader Stack[-0xc8]:5  local_c8
+; int              Stack[-0xc3]:4  local_c3
+; uint             Stack[-0xbf]:4  local_bf
+; char[80]         Stack[-0xbb]:80  local_bb
+; int              Stack[-0x6b]:4  local_6b
+; char[20]         Stack[-0x67]:20  local_67
+; EHeroType[15]    Stack[-0x53]:60  local_53
+; SNetPlayer *     Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00541390 at 00541916

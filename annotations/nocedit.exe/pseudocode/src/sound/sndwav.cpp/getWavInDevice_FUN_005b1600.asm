@@ -6,7 +6,7 @@
 ; Parameters:
 ; UINT             Stack[0x4]:4   device_id
 ; Local Variables:
-; undefined        Stack[-0x30]:1  local_30
+; tagWAVEINCAPSA   Stack[-0x30]:48  local_30
 ;
 ; XREF[1]:
 ;   sound_sndmain.cpp_initializeRecordingDevice_FUN_005ab8d0 at 005ab90e

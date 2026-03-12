@@ -4,31 +4,31 @@
       {
         "category": "incompatible_types",
         "column": 13,
-        "line": 39,
+        "line": 43,
         "message": "assigning to 'void **' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 16,
-        "line": 55,
+        "line": 59,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
         "category": "incompatible_types",
         "column": 22,
-        "line": 79,
+        "line": 84,
         "message": "assigning to 'char *' from incompatible type 'void *'"
       },
       {
         "category": "format_error",
         "column": 105,
-        "line": 85,
+        "line": 90,
         "message": "format specifies type 'char *' but the argument has type 'CPackedBitmap *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 60,
-        "line": 88,
+        "line": 93,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -37,17 +37,17 @@
   },
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 131,
+    "complexity_score": 137,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 106,
+    "pseudocode_lines": 112,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 304
+    "total_lines": 310
   },
   "cross_references": [
     {
@@ -228,50 +228,50 @@
         "is_param": false,
         "name": "local_154",
         "offset": -340,
-        "size": 1,
-        "type": "undefined"
+        "size": 300,
+        "type": "char[300]"
       },
       {
         "is_param": false,
         "name": "local_28",
         "offset": -40,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_24",
         "offset": -36,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_20",
         "offset": -32,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "uchar *"
       },
       {
         "is_param": true,
@@ -320,7 +320,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 50,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)this_ptr->row_pointers + local_28) = new_size;",
@@ -328,10 +328,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 104,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "puVar6 = (ushort *)((int)puVar6 + (uint)bVar11 * -2 + 1);",
+      "text": "puVar4 = (ushort *)((int)puVar4 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     }
   ]

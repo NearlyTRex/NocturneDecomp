@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 66,
+    "complexity_score": 67,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 52,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 156
+    "total_lines": 157
   },
   "cross_references": [
     {
@@ -125,14 +125,14 @@
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "int"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -153,7 +153,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 23,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_VertexIndexBuffer + iVar2) = iVar1;",

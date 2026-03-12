@@ -7,12 +7,10 @@
 ; CMansionPuzzleCircle * Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   panel_index
 ; Local Variables:
-; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined1       Stack[-0x28]:1  local_28
-; undefined1       Stack[-0x1c]:1  local_1c
-; undefined4       Stack[-0x10]:4  local_10
+; CVector3f        Stack[-0x34]:12  local_34
+; CVector3f        Stack[-0x28]:12  local_28
+; CVector3f        Stack[-0x1c]:12  local_1c
+; int              Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_005091d0 at 0050924b

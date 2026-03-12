@@ -6,7 +6,7 @@
 ; Parameters:
 ; CCurtain *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x8]:4  local_8
+; uint             Stack[-0x8]:4  local_8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_curtainSize_00619c5a

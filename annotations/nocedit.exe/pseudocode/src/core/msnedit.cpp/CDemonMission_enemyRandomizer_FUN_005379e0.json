@@ -4,43 +4,43 @@
       {
         "category": "lvalue_required",
         "column": 73,
-        "line": 80,
+        "line": 83,
         "message": "cannot take the address of an rvalue of type 'float'"
       },
       {
         "category": "lvalue_required",
         "column": 75,
-        "line": 88,
+        "line": 91,
         "message": "cannot take the address of an rvalue of type 'float'"
       },
       {
         "category": "undeclared_identifier",
         "column": 74,
-        "line": 104,
+        "line": 107,
         "message": "use of undeclared identifier 'stack0xfffff300'"
       },
       {
         "category": "format_error",
         "column": 52,
-        "line": 121,
+        "line": 123,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 66,
-        "line": 133,
+        "line": 135,
         "message": "format specifies type 'int' but the argument has type 'CEnemy *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 40,
-        "line": 135,
+        "line": 137,
         "message": "use of undeclared identifier 'stack0xfffff300'"
       },
       {
         "category": "undeclared_identifier",
         "column": 74,
-        "line": 137,
+        "line": 139,
         "message": "use of undeclared identifier 'stack0xfffff300'"
       }
     ],
@@ -49,18 +49,18 @@
   },
   "complexity": {
     "assembly_lines": 333,
-    "complexity_score": 259,
+    "complexity_score": 261,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 139,
+    "pseudocode_lines": 141,
     "suspect_count": 11,
     "suspect_types": [
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 472
+    "total_lines": 474
   },
   "cross_references": [
     {
@@ -316,18 +316,53 @@
     "pcode_op_count": 1004
   },
   "stack_frame": {
-    "frame_size": 1464,
-    "local_size": 1460,
+    "frame_size": 3332,
+    "local_size": 3328,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
+        "name": "aCStack_cfc",
+        "offset": -3324,
+        "size": 928,
+        "type": "CStrList[58]"
+      },
+      {
+        "is_param": false,
+        "name": "CStack_958",
+        "offset": -2392,
+        "size": 936,
+        "type": "CPickList"
+      },
+      {
+        "is_param": false,
         "name": "local_5b0",
         "offset": -1456,
-        "size": 1,
-        "type": "undefined1"
+        "size": 936,
+        "type": "CPickList"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_204",
+        "offset": -516,
+        "size": 296,
+        "type": "char[296]"
+      },
+      {
+        "is_param": false,
+        "name": "acStack_dc",
+        "offset": -220,
+        "size": 200,
+        "type": "char[200]"
+      },
+      {
+        "is_param": false,
+        "name": "fStack_14",
+        "offset": -20,
+        "size": 4,
+        "type": "float"
       },
       {
         "is_param": true,
@@ -341,7 +376,7 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 18,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "ulonglong in_stack_fffff2fc;",
@@ -349,7 +384,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 28,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "string_data = (CEnemy *)(in_stack_fffff2fc >> 0x20);",
@@ -357,7 +392,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 56,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
@@ -365,7 +400,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 63,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
@@ -373,7 +408,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 71,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
@@ -381,7 +416,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 76,
+      "line": 79,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
@@ -389,7 +424,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 87,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
@@ -397,7 +432,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 97,
+      "line": 100,
       "match": "&stack0xfffff300",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff300);",
@@ -405,7 +440,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 128,
+      "line": 130,
       "match": "&stack0xfffff300",
       "severity": "moderate",
       "text": "((CPickList *)&stack0xfffff300,acStack_dc,-1,0);",
@@ -413,7 +448,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 130,
+      "line": 132,
       "match": "&stack0xfffff300",
       "severity": "moderate",
       "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff300,0);",
@@ -421,7 +456,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 136,
+      "line": 138,
       "match": "in_stack_fffff2fc",
       "severity": "moderate",
       "text": "in_stack_fffff2fc = uVar4 & 0xffffffff00000000;",

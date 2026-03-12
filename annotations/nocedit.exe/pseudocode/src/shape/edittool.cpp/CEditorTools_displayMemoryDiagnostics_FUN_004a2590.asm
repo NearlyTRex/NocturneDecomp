@@ -9,8 +9,8 @@
 ; Local Variables:
 ; undefined8       Stack[-0x38]:8  local_38
 ; undefined8       Stack[-0x30]:8  local_30
-; _heapinfo        Stack[-0x28]:14  local_28
-; undefined4       Stack[-0x18]:4  local_18
+; _heapinfo        Stack[-0x28]:14  _Stack_28
+; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[4]:
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da9f7

@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; float            Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
 ;   core_dcube.cpp_CDemonCubeTriangle_init_FUN_00455430 at 00455449

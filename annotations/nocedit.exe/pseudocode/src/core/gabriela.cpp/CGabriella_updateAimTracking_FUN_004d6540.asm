@@ -10,17 +10,28 @@
 ; Local Variables:
 ; undefined4       Stack[-0x13c]:4  local_13c
 ; undefined4       Stack[-0x138]:4  local_138
-; undefined1       Stack[-0x134]:1  local_134
+; CVector3f[10]    Stack[-0x134]:120  local_134
+; CBoundingBox3D   Stack[-0xbc]:24  CStack_bc
+; float            Stack[-0xa4]:4  fStack_a4
+; float            Stack[-0xa0]:4  fStack_a0
+; float            Stack[-0x9c]:4  fStack_9c
+; CVector3f        Stack[-0x98]:12  CStack_98
+; CVector3f        Stack[-0x8c]:12  CStack_8c
+; CVector3f        Stack[-0x80]:12  CStack_80
+; CVector3f        Stack[-0x74]:12  CStack_74
+; CVector3f        Stack[-0x68]:12  CStack_68
+; CVector3f        Stack[-0x5c]:12  CStack_5c
+; CVector3f        Stack[-0x50]:12  CStack_50
 ; undefined4       Stack[-0x3c]:4  local_3c
 ; undefined4       Stack[-0x38]:4  local_38
 ; undefined4       Stack[-0x34]:4  local_34
-; undefined4       Stack[-0x30]:4  local_30
+; float            Stack[-0x30]:4  local_30
 ; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
+; CDemonActor *    Stack[-0x28]:4  local_28
+; float            Stack[-0x24]:4  local_24
+; int              Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
 ;   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0 at 004d3493

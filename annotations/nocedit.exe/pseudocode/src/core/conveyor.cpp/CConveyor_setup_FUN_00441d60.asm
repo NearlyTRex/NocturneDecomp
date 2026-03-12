@@ -6,7 +6,8 @@
 ; Parameters:
 ; CConveyor *      Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x1c]:1  local_1c
+; float[1526]      Stack[-0x17f8]:6104  afStackY_17f8
+; CQuaternion4f    Stack[-0x1c]:16  local_1c
 ;
 ; Called Functions:
 ;   core_platfrm.cpp_CPlatform_setup_FUN_0054ca20

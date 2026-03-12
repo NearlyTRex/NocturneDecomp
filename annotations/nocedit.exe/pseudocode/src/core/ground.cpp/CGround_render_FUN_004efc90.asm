@@ -6,8 +6,7 @@
 ; Parameters:
 ; CGround *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x10]:4  local_10
+; CVector3i        Stack[-0x18]:12  local_18
 ;
 ; XREF[1]:
 ;   core_terrain.cpp_CTerrain_render_FUN_005e1f50 at 005e2027

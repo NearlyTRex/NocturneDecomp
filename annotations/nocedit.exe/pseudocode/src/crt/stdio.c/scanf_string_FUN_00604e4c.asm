@@ -7,10 +7,10 @@
 ; scanf_state_t *  Stack[0x4]:4   state
 ; va_list_t *      Stack[0x8]:4   args
 ; Local Variables:
-; undefined4       Stack[-0x20]:4  local_20
-; undefined1       Stack[-0x1c]:1  local_1c
+; wchar_t[2]       Stack[-0x20]:4  local_20
+; char             Stack[-0x1c]:1  local_1c
 ; undefined1       Stack[-0x1b]:1  local_1b
-; undefined1       Stack[-0x18]:1  local_18
+; byte             Stack[-0x18]:1  local_18
 ;
 ; XREF[1]:
 ;   crt_stdio.c_doscan_FUN_00604950 at 00604b52

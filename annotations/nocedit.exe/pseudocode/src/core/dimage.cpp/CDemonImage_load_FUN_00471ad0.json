@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 156,
+    "complexity_score": 162,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 91,
+    "pseudocode_lines": 97,
     "suspect_count": 6,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 299
+    "total_lines": 305
   },
   "cross_references": [],
   "function": {
@@ -219,46 +219,39 @@
     "pcode_op_count": 845
   },
   "stack_frame": {
-    "frame_size": 296,
+    "frame_size": 288,
     "local_size": 288,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 0,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
         "name": "local_11c",
         "offset": -284,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_11b",
-        "offset": -283,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_1c",
         "offset": -28,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "CDemonImage *"
       },
       {
         "is_param": true,
@@ -273,6 +266,20 @@
         "offset": 8,
         "size": 4,
         "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "in_stack_0000000c",
+        "offset": 12,
+        "size": 4,
+        "type": "SIZE_T"
+      },
+      {
+        "is_param": true,
+        "name": "in_stack_00000010",
+        "offset": 16,
+        "size": 4,
+        "type": "SIZE_T"
       }
     ]
   },
@@ -303,7 +310,7 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 18,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "SIZE_T in_stack_0000000c;",
@@ -311,7 +318,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 19,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "SIZE_T in_stack_00000010;",
@@ -319,7 +326,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 44,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "this_ptr->width = in_stack_0000000c;",
@@ -327,7 +334,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 45,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "this_ptr->height = in_stack_00000010;",
@@ -335,7 +342,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 47,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "_fread(this_ptr->data,in_stack_0000000c,in_stack_00000010,p_Var4);",
@@ -343,7 +350,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 47,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "_fread(this_ptr->data,in_stack_0000000c,in_stack_00000010,p_Var4);",

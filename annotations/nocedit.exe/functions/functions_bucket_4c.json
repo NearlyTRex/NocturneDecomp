@@ -181,6 +181,38 @@
     "vars":{
       "locals":[
         {
+          "name":"in_stack_00000008",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"in_stack_00000004",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"float10*"
+        },
+        {
           "name":"local_1c",
           "storage":{
             "offset":-28,
@@ -231,6 +263,84 @@
     "vars":{
       "locals":[
         {
+          "name":"unaff_EDI",
+          "storage":{
+            "reg":"EDI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000001c",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*",
+          "use":-1
+        },
+        {
+          "name":"iVar5",
+          "storage":{
+            "reg":"EBP",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000014",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"int",
+          "use":99
+        },
+        {
+          "name":"character",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"uint",
+          "use":102
+        },
+        {
+          "name":"cVar4",
+          "storage":{
+            "reg":"BL",
+            "size":1,
+            "varnodes":[
+              {
+                "addr":"register:0000000c",
+                "offset":12,
+                "size":1
+              }
+            ]
+          },
+          "type":"char",
+          "use":174
+        },
+        {
+          "name":"iVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"int",
+          "use":214
+        },
+        {
           "name":"local_18",
           "storage":{
             "offset":-24,
@@ -244,7 +354,7 @@
               }
             ]
           },
-          "type":"undefined1"
+          "type":"byte"
         },
         {
           "name":"local_1b",
@@ -276,7 +386,7 @@
               }
             ]
           },
-          "type":"undefined1"
+          "type":"char"
         },
         {
           "name":"local_20",
@@ -292,7 +402,39 @@
               }
             ]
           },
-          "type":"undefined4"
+          "type":"wchar_t[2]"
+        },
+        {
+          "name":"bVar1",
+          "storage":{
+            "size":1,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:5fbf4f5a0d",
+                "offset":411231541773,
+                "size":1
+              }
+            ]
+          },
+          "type":"byte",
+          "use":39
+        },
+        {
+          "name":"pcVar2",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:5f4a2a70bc",
+                "offset":409266188476,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*",
+          "use":52
         }
       ],
       "params":[
@@ -503,6 +645,176 @@
     "vars":{
       "locals":[
         {
+          "name":"bVar8",
+          "storage":{
+            "reg":"DF",
+            "size":1,
+            "varnodes":[
+              {
+                "addr":"register:0000020a",
+                "offset":522,
+                "size":1
+              }
+            ]
+          },
+          "type":"byte"
+        },
+        {
+          "name":"in_EAX",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"char*",
+          "use":-1
+        },
+        {
+          "name":"bVar7",
+          "storage":{
+            "reg":"ZF",
+            "size":1,
+            "varnodes":[
+              {
+                "addr":"register:00000206",
+                "offset":518,
+                "size":1
+              }
+            ]
+          },
+          "type":"bool",
+          "use":69
+        },
+        {
+          "name":"ptr",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"char**",
+          "use":99
+        },
+        {
+          "name":"iVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"int",
+          "use":156
+        },
+        {
+          "name":"n",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"SIZE_T",
+          "use":180
+        },
+        {
+          "name":"new_size",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"ulong",
+          "use":211
+        },
+        {
+          "name":"uVar3",
+          "storage":{
+            "reg":"ECX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000004",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"uint",
+          "use":266
+        },
+        {
+          "name":"iVar4",
+          "storage":{
+            "reg":"ECX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000004",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int",
+          "use":276
+        },
+        {
+          "name":"ppcVar5",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"char**",
+          "use":276
+        },
+        {
+          "name":"ppcVar6",
+          "storage":{
+            "reg":"EDI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:0000001c",
+                "offset":28,
+                "size":4
+              }
+            ]
+          },
+          "type":"char**",
+          "use":276
+        },
+        {
           "name":"local_14",
           "storage":{
             "offset":-20,
@@ -533,6 +845,22 @@
             ]
           },
           "type":"undefined4"
+        },
+        {
+          "name":"cVar1",
+          "storage":{
+            "size":1,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:5f620731fc",
+                "offset":409666531836,
+                "size":1
+              }
+            ]
+          },
+          "type":"char",
+          "use":33
         }
       ],
       "params":[

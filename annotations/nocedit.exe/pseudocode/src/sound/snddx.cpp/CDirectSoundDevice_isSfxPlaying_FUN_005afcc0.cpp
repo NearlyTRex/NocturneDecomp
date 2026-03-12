@@ -9,11 +9,11 @@
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_isSfxPlaying_FUN_005afcc0(CDirectSoundDevice *this_ptr,CSfxSlot *slot)
 
 {
-  int iVar1;
   uint error_code;
   char *pcVar2;
   char acStack_194 [400];
   byte local_4 [4];
+  int iVar1;
   
   iVar1 = slot->hardware_buffer_handle;
   if ((((0 < iVar1) && (iVar1 < 0x1f)) &&

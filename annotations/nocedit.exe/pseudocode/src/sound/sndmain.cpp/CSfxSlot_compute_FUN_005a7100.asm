@@ -16,10 +16,10 @@
 ; undefined8       Stack[-0x50]:8  local_50
 ; undefined8       Stack[-0x48]:8  local_48
 ; undefined8       Stack[-0x40]:8  local_40
-; undefined8       Stack[-0x38]:8  local_38
+; undefined4       Stack[-0x38]:4  local_38
 ; undefined8       Stack[-0x30]:8  local_30
 ; undefined8       Stack[-0x28]:8  local_28
-; undefined4       Stack[-0x18]:4  local_18
+; int              Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[12]:

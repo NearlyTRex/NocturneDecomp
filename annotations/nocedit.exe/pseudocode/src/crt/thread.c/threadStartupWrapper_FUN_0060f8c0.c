@@ -11,15 +11,16 @@
 void __cdecl threadStartupWrapper(ThreadStartupInfo *info)
 
 {
-  int iVar1;
+  code *pcVar1;
   BOOL BVar2;
   ThreadData *pTVar3;
   uint uStackY_38;
   int aiStackY_34 [2];
   ExceptionFrame local_28;
-  code *local_20;
+  byte *local_20;
+  int iVar1;
   
-  local_20 = info->thread_proc;
+  pcVar1 = info->thread_proc;
   if (g_EmergencyExitFlag == 0) {
     iVar1 = -(g_RuntimeBufferSize + 3 & 0xfffffffc);
     *(DWORD *)(&stack0xffffffd4 + iVar1) = g_RuntimeBufferSize;
@@ -45,7 +46,7 @@ void __cdecl threadStartupWrapper(ThreadStartupInfo *info)
   installExceptionHandler(&local_28);
   (*PTR_crt_sync_c_CriticalSectionStub_FUN_00602458_00684f24)();
   aiStackY_34[1] = 0x60f949;
-  (*local_20)();
+  (*pcVar1)();
   SomethingThatCallsExitThreadAfterCommunicate();
   return;
 }

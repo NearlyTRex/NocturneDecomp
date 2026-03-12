@@ -11,15 +11,16 @@
 void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DSLight *this_ptr)
 
 {
-  CDemonRenderer *this_ptr_00;
   int iVar1;
   int iVar2;
   int iVar3;
   float10 fVar4;
   float10 fVar5;
+  float10 fVar1;
   float10 fVar6;
   float10 fVar7;
   float10 fVar8;
+  float10 fVar2;
   SMRGLHeaderPrimitive local_78;
   int local_60;
   int local_5c;
@@ -34,6 +35,7 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
   int local_10;
   int local_c;
   int local_8;
+  CDemonRenderer *this_ptr_00;
   
   if (ABS(this_ptr->atten_end) == 0.0) {
     return;
@@ -49,19 +51,15 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
       fVar4 = (float10)local_c * (float10)0.0625f * (float10)3.1415926535000001 *
               (float10)2;
       fVar5 = (float10)fsin(fVar4);
-      fVar4 = (float10)fcos(fVar4);
+      fVar1 = (float10)fcos(fVar4);
       fVar6 = (float10)this_ptr->atten_end * (float10)0.25;
       fVar7 = (float10)iVar3 * (float10)0.25f * (float10)3.1415926535000001 *
               (float10)0.5;
       fVar8 = (float10)fcos(fVar7);
-      fVar7 = (float10)fsin(fVar7);
-      local_3c = (float)(fVar4 * fVar6 * fVar8);
-      local_44 = (float)(fVar5 * fVar6 * fVar8);
-      local_40 = (float)(fVar7 * fVar6);
-      local_50.x = (int)ROUND(local_44 * 256.0f);
-      local_50.y = (int)ROUND(local_40 * 256.0f);
-      local_50.z = (int)ROUND(local_3c * 256.0f);
-      local_8 = iVar3;
+      fVar2 = (float10)fsin(fVar7);
+      local_50.x = (int)ROUND((float)(fVar5 * fVar6 * fVar8) * 256.0f);
+      local_50.y = (int)ROUND((float)(fVar2 * fVar6) * 256.0f);
+      local_50.z = (int)ROUND((float)(fVar1 * fVar6 * fVar8) * 256.0f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)
                  ((int)&(g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex).transformed_x +
@@ -73,9 +71,9 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
            (int)ROUND(ROUND((this_ptr->color).r * 255.0f));
       *(int *)((int)&this_ptr_00->vertex_buffer_ptr->g + iVar1) =
            (int)ROUND(ROUND((this_ptr->color).g * 255.0f));
-      local_8 = (int)ROUND(ROUND((this_ptr->color).b * 255.0f));
       iVar3 = iVar3 + 1;
-      *(int *)((int)&this_ptr_00->vertex_buffer_ptr->b + iVar1) = local_8;
+      *(int *)((int)&this_ptr_00->vertex_buffer_ptr->b + iVar1) =
+           (int)ROUND(ROUND((this_ptr->color).b * 255.0f));
       iVar1 = iVar1 + 0x30;
     } while (iVar3 < 5);
     local_c = local_c + 1;
@@ -91,23 +89,15 @@ void __cdecl core_setutil_cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50(C3DS
   local_78.surface_normal.B = 0;
   local_78.surface_normal.A = 0;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,1);
-  local_14 = 10;
   local_10 = 0;
   do {
-    iVar3 = local_10;
-    iVar1 = local_14;
     iVar2 = -4;
     do {
-      local_60 = iVar3 + iVar2;
-      local_5c = iVar1 + iVar2;
       iVar2 = iVar2 + 1;
-      local_58 = iVar1 + iVar2;
-      local_54 = iVar3 + iVar2;
       engine_drender_cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0
                 (g_CDemonRendererPtr2,&local_78);
     } while (iVar2 < 4);
     local_10 = local_10 + 10;
-    local_14 = local_14 + 10;
   } while (local_10 != 0xa0);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr2,0);
   return;

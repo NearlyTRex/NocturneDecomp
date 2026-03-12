@@ -6,19 +6,19 @@
   },
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 118,
+    "complexity_score": 121,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 46,
     "suspect_count": 6,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "unaffected_reg"
     ],
-    "total_lines": 125
+    "total_lines": 128
   },
   "cross_references": [
     {
@@ -92,71 +92,57 @@
         "is_param": false,
         "name": "local_70",
         "offset": -112,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_60",
-        "offset": -96,
-        "size": 8,
-        "type": "undefined8"
+        "size": 24,
+        "type": "CVector3d"
       },
       {
         "is_param": false,
         "name": "local_58",
         "offset": -88,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_50",
         "offset": -80,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_48",
         "offset": -72,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_40",
         "offset": -64,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_38",
         "offset": -56,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
         "name": "local_18",
         "offset": -24,
         "size": 8,
-        "type": "undefined8"
+        "type": "double"
       },
       {
         "is_param": false,
@@ -191,7 +177,7 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 7,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "CVector3d *unaff_ESI;",
@@ -199,15 +185,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 31,
+      "line": 32,
       "match": "SQRT",
       "severity": "mild",
-      "text": "local_18 = local_18 / SQRT(dVar3 * dVar3 + dVar1 * dVar1 + dVar2 * dVar2);",
+      "text": "dVar4 = local_18 / SQRT(dVar3 * dVar3 + dVar1 * dVar1 + dVar2 * dVar2);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Unaffected register variable",
-      "line": 39,
+      "line": 40,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "pCVar6 = unaff_ESI;",
@@ -216,22 +202,22 @@
     {
       "description": "Complex pointer cast",
       "line": 42,
-      "match": "(double *)((int)",
-      "severity": "mild",
-      "text": "pdVar5 = (double *)((int)pdVar5 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
       "match": "(CVector3d *)((int)",
       "severity": "mild",
       "text": "pCVar6 = (CVector3d *)((int)pCVar6 + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(double *)((int)",
+      "severity": "mild",
+      "text": "pdVar5 = (double *)((int)pdVar5 + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 45,
+      "line": 48,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",

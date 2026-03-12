@@ -9,12 +9,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x120]:4  local_120
 ; undefined4       Stack[-0x11c]:4  local_11c
-; undefined1       Stack[-0x118]:1  local_118
-; undefined1       Stack[-0x117]:1  local_117
-; undefined1       Stack[-0x115]:1  local_115
-; undefined1       Stack[-0x114]:1  local_114
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[256]        Stack[-0x118]:256  local_118
+; CDemonSet *      Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 00539193

@@ -4,8 +4,8 @@
 ; void __cdecl core_game_cpp_joinNetworkGame_FUN_004e2fc0(void)
 ;
 ; Local Variables:
-; undefined        Stack[-0x74]:1  local_74
-; undefined        Stack[-0x10]:1  local_10
+; char[100]        Stack[-0x74]:100  local_74
+; uint             Stack[-0x10]:4  local_10
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Enter_Server_IP_0062d3a7

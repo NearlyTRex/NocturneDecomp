@@ -9,9 +9,9 @@
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0(CMansionPuzzleCircle *this_ptr,int panel_index)
 
 {
-  SPanel *pSVar1;
   int panel_index_00;
   SPanel *pSVar2;
+  SPanel *pSVar1;
   
   panel_index_00 =
        core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_0050aef0(this_ptr,panel_index);

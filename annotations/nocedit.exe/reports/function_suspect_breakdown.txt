@@ -4,92 +4,92 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4491 functions
-  1 suspects: 861 functions
-  2 suspects: 361 functions
-  3 suspects: 250 functions
-  4 suspects: 177 functions
-  5 suspects: 146 functions
+  0 suspects: 4499 functions
+  1 suspects: 857 functions
+  2 suspects: 364 functions
+  3 suspects: 260 functions
+  4 suspects: 174 functions
+  5 suspects: 151 functions
   6 suspects: 104 functions
-  7 suspects: 101 functions
-  8 suspects: 60 functions
-  9 suspects: 62 functions
+  7 suspects: 98 functions
+  8 suspects: 55 functions
+  9 suspects: 59 functions
   10 suspects: 30 functions
-  11 suspects: 43 functions
-  12 suspects: 38 functions
-  13 suspects: 32 functions
-  14 suspects: 37 functions
-  15 suspects: 31 functions
-  16 suspects: 26 functions
-  17 suspects: 16 functions
-  18 suspects: 17 functions
-  19 suspects: 20 functions
-  20 suspects: 25 functions
-  21 suspects: 11 functions
+  11 suspects: 47 functions
+  12 suspects: 39 functions
+  13 suspects: 31 functions
+  14 suspects: 38 functions
+  15 suspects: 29 functions
+  16 suspects: 27 functions
+  17 suspects: 13 functions
+  18 suspects: 15 functions
+  19 suspects: 19 functions
+  20 suspects: 24 functions
+  21 suspects: 14 functions
   22 suspects: 10 functions
-  23 suspects: 14 functions
-  24 suspects: 18 functions
-  25 suspects: 9 functions
+  23 suspects: 10 functions
+  24 suspects: 17 functions
+  25 suspects: 10 functions
   26 suspects: 7 functions
   27 suspects: 3 functions
-  28 suspects: 9 functions
+  28 suspects: 7 functions
   29 suspects: 12 functions
-  30 suspects: 8 functions
+  30 suspects: 9 functions
   31 suspects: 2 functions
-  32 suspects: 7 functions
+  32 suspects: 8 functions
   33 suspects: 4 functions
-  34 suspects: 3 functions
-  35 suspects: 5 functions
-  36 suspects: 6 functions
-  37 suspects: 6 functions
+  34 suspects: 4 functions
+  35 suspects: 4 functions
+  36 suspects: 5 functions
+  37 suspects: 4 functions
   39 suspects: 5 functions
   40 suspects: 4 functions
-  41 suspects: 6 functions
-  42 suspects: 1 functions
-  43 suspects: 2 functions
+  41 suspects: 5 functions
+  42 suspects: 2 functions
+  43 suspects: 3 functions
   44 suspects: 2 functions
-  45 suspects: 3 functions
+  45 suspects: 1 functions
   46 suspects: 2 functions
   47 suspects: 1 functions
   48 suspects: 1 functions
   49 suspects: 2 functions
+  51 suspects: 2 functions
   52 suspects: 1 functions
-  53 suspects: 4 functions
+  53 suspects: 1 functions
   54 suspects: 2 functions
-  55 suspects: 4 functions
+  55 suspects: 5 functions
   56 suspects: 3 functions
-  59 suspects: 2 functions
-  60 suspects: 1 functions
+  58 suspects: 1 functions
+  60 suspects: 2 functions
   62 suspects: 1 functions
   63 suspects: 1 functions
   64 suspects: 1 functions
-  67 suspects: 1 functions
-  70 suspects: 3 functions
+  66 suspects: 1 functions
+  70 suspects: 2 functions
   72 suspects: 2 functions
   73 suspects: 1 functions
-  75 suspects: 1 functions
+  75 suspects: 2 functions
+  76 suspects: 1 functions
   78 suspects: 1 functions
   79 suspects: 1 functions
-  81 suspects: 1 functions
+  81 suspects: 2 functions
   82 suspects: 1 functions
-  85 suspects: 2 functions
+  84 suspects: 1 functions
+  85 suspects: 1 functions
   86 suspects: 1 functions
   97 suspects: 2 functions
-  98 suspects: 1 functions
-  99 suspects: 1 functions
+  98 suspects: 2 functions
   104 suspects: 3 functions
   105 suspects: 1 functions
   115 suspects: 1 functions
-  118 suspects: 1 functions
-  124 suspects: 1 functions
+  126 suspects: 1 functions
   159 suspects: 1 functions
   161 suspects: 1 functions
   168 suspects: 1 functions
-  175 suspects: 1 functions
-  210 suspects: 1 functions
+  180 suspects: 1 functions
   244 suspects: 1 functions
+  270 suspects: 1 functions
   310 suspects: 1 functions
-  324 suspects: 1 functions
 
 ========================================================================================================================
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
@@ -139,7 +139,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       CRT function (runtime support) at 00610ab0...
     ... and 265 more
 
-  [param_count_too_few] (165 functions)
+  [param_count_too_few] (166 functions)
   ------------------------------------------------------------
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_0043 (  4 lines)
       Function declares 0 params but call sites push 4 (4 missing)...
@@ -181,9 +181,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 4 params but call sites push 6 (2 missing)...
     cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered (  6 lines)
       Function declares 5 params but call sites push 8 (3 missing)...
-    ... and 145 more
+    ... and 146 more
 
-  [pointer_cast] (132 functions)
+  [pointer_cast] (128 functions)
   ------------------------------------------------------------
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360    (  5 lines)
       *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
@@ -221,11 +221,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       uVar1 = *(uint *)((int)pSVar3 + (uint)bVar4 * -8 + 4);...
     core_dcamera.cpp_CDemonCamera_sampleFramebufferPix ( 22 lines)
       uVar1 = *(uint *)((int)this_ptr->framebuffer_aligned +...
-    core_sound.cpp_CSound_selectReverbPreset_FUN_005b3 ( 22 lines)
-      puVar1 = (uint *)((int)&g_SoundModeTable[0].name + iVar2);...
     shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420   ( 22 lines)
       puVar1 = (uint *)((int)this_ptr->spatial_grid_ptr->cell_star...
-    ... and 112 more
+    shape_superopt.cpp_CObj_restoreVertexPositions_FUN ( 22 lines)
+      puVar1 = (uint *)((int)&(this_ptr->vertex_data->position).x ...
+    ... and 108 more
 
   [decompiler_intrinsic] (125 functions)
   ------------------------------------------------------------
@@ -271,7 +271,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       return ADJ(pSVar1);...
     ... and 105 more
 
-  [warning_type_propagation] (45 functions)
+  [warning_type_propagation] (43 functions)
   ------------------------------------------------------------
     core_zombie.cpp_CZombie_canPickupWithHand_FUN_005f ( 11 lines)
       /* WARNING: Type propagation algorithm not settling */...
@@ -281,41 +281,41 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Type propagation algorithm not settling */...
     core_smiley.cpp_CSmiley_attractActorToward_FUN_005 ( 25 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_bride.cpp_CBride_getTargetPoints_FUN_00424a10 ( 27 lines)
+    core_bride.cpp_CBride_getTargetPoints_FUN_00424a10 ( 28 lines)
       /* WARNING: Type propagation algorithm not settling */...
     core_sentinel.cpp_CSentinel_attractActorToward_FUN ( 29 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_flies.cpp_CFlies_initFly_FUN_004cc760         ( 39 lines)
-      /* WARNING: Type propagation algorithm not settling */...
     core_mobster.cpp_CMobster_positionOnVehicle_FUN_00 ( 39 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_hostage.cpp_CHostage_processGrabberFlee_FUN_0 ( 39 lines)
+    core_hostage.cpp_CHostage_processGrabberFlee_FUN_0 ( 40 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_mobster.cpp_CMobster_getTargetPoints_FUN_0052 ( 40 lines)
+    core_mobster.cpp_CMobster_getTargetPoints_FUN_0052 ( 41 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_batman.cpp_CBatman_getTargetPoints_FUN_00417b ( 40 lines)
+    core_batman.cpp_CBatman_getTargetPoints_FUN_00417b ( 41 lines)
       /* WARNING: Type propagation algorithm not settling */...
     core_mobster.cpp_CMobster_dismountVehicle_FUN_0052 ( 42 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_ ( 43 lines)
+    core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_ ( 44 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_bugs.cpp_CBugs_processInEditor_FUN_004278d0   ( 44 lines)
+    core_bugs.cpp_CBugs_processInEditor_FUN_004278d0   ( 45 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_anvil.cpp_CAnvil_process_FUN_00411d90         ( 45 lines)
+    core_anvil.cpp_CAnvil_process_FUN_00411d90         ( 46 lines)
       /* WARNING: Type propagation algorithm not settling */...
     core_mission.cpp_CDemonMission_process_FUN_0052425 ( 46 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_baron.cpp_CBaron_engageTarget_FUN_00413470    ( 50 lines)
+    core_haystack.cpp_CHaystack_advanceMotion_FUN_004f ( 51 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_haystack.cpp_CHaystack_advanceMotion_FUN_004f ( 50 lines)
+    core_baron.cpp_CBaron_engageTarget_FUN_00413470    ( 56 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_trap.cpp_CTrap_process_FUN_005de770           ( 58 lines)
+    core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0      ( 58 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    core_bugs.cpp_CBugs_renderOpaque_FUN_004251b0      ( 59 lines)
+    core_tvbat.cpp_CTVBat_processInEditor_FUN_005e5260 ( 59 lines)
       /* WARNING: Type propagation algorithm not settling */...
-    ... and 25 more
+    core_trap.cpp_CTrap_process_FUN_005de770           ( 60 lines)
+      /* WARNING: Type propagation algorithm not settling */...
+    ... and 23 more
 
-  [param_count_too_many] (31 functions)
+  [param_count_too_many] (30 functions)
   ------------------------------------------------------------
     sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40     (  5 lines)
       Function declares 1 params but call sites push 0 (1 extra)...
@@ -345,19 +345,19 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       Function declares 3 params but call sites push 2 (1 extra)...
     core_dmodel.cpp_CKeyFramedModel_scaleUniform_FUN_0 (  9 lines)
       Function declares 2 params but call sites push 1 (1 extra)...
-    core_box.cpp_CBoundingBox3D_doesSphereIntersect_FU ( 10 lines)
-      Function declares 3 params but call sites push 1 (2 extra)...
     sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005 ( 11 lines)
       Function declares 3 params but call sites push 0 (3 extra)...
     core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690     ( 12 lines)
       Function declares 2 params but call sites push 1 (1 extra)...
+    core_box.cpp_CBoundingBox3D_doesSphereIntersect_FU ( 12 lines)
+      Function declares 3 params but call sites push 1 (2 extra)...
     shape_design.c_polygonMergerSelectAndProcess_FUN_0 ( 12 lines)
       Function declares 2 params but call sites push 1 (1 extra)...
     sound_mp3.cpp_CMP3Decoder_putByte_FUN_0052f260     ( 14 lines)
       Function declares 3 params but call sites push 2 (1 extra)...
     shape_design.c_clampedArccos_FUN_00461c50          ( 16 lines)
       Function declares 1 params but call sites push 0 (1 extra)...
-    ... and 11 more
+    ... and 10 more
 
   [warning_unreachable] (12 functions)
   ------------------------------------------------------------
@@ -379,11 +379,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       /* WARNING: Removing unreachable block (ram,0x004871be) */...
     core_drip.cpp_CDrip_propertyDisplayCallback_FUN_00 ( 57 lines)
       /* WARNING: Removing unreachable block (ram,0x0048e859) */...
-    engine_fileio.cpp_CCheckOutList_load_FUN_004b2890  ( 72 lines)
+    engine_fileio.cpp_CCheckOutList_load_FUN_004b2890  ( 76 lines)
       /* WARNING: Removing unreachable block (ram,0x004b29c8) */...
-    shape_design.c_showPointEditor_FUN_0045c6c0        (103 lines)
+    shape_design.c_showPointEditor_FUN_0045c6c0        ( 85 lines)
       /* WARNING: Removing unreachable block (ram,0x0045c93b) */...
-    core_stranger.cpp_CStranger_updateWeaponLayerActio (367 lines)
+    core_stranger.cpp_CStranger_updateWeaponLayerActio (378 lines)
       /* WARNING: Removing unreachable block (ram,0x005c5793) */...
 
   [unresolved_funcptr] (11 functions)
@@ -400,16 +400,37 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       core_main_c_displayErrorAndQuit_FUN_00506f10("Bad code!");...
     engine_dosio.c_findFile_FUN_00481760               ( 23 lines)
       iVar1 = (**(code **)((int)g_SearchHandlers + iVar2))(context...
-    shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4 ( 35 lines)
-      iVar1 = (**(code **)(*(int *)(iVar1 + 100) + 0x70))...
+    shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4 ( 36 lines)
+      iVar1 = (**(code **)(*(int *)(iVar4 + 100) + 0x70))...
     engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_004 ( 73 lines)
       code *pcVar2;...
-    sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae ( 74 lines)
+    sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae ( 77 lines)
       uVar2 = (**(code **)(*piVar1 + 0x48))(piVar1);...
-    sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f3 ( 84 lines)
+    sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f3 ( 86 lines)
       ("Illegal Huffman code in data.  File: %s",g_CurrentMp3Filen...
     wincore_winrun.cpp_mainWindowProc_FUN_005f3150     (172 lines)
       iVar1 = (**(code **)((int)g_WindowMessageHandlers + iVar5))(...
+
+  [stack_ref] (9 functions)
+  ------------------------------------------------------------
+    core_event.cpp_formatEventError_FUN_004aa2a0       (  7 lines)
+      local_4 = &stack0x00000008;...
+    engine_2d.c_getStringWidthFormatted_FUN_004027a0   ( 11 lines)
+      local_4 = &stack0x00000008;...
+    core_sound.cpp_resetTrainSounds_FUN_005b26f0       ( 12 lines)
+      if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {...
+    shape_design.c_renderEditorBackgroundOverlay_FUN_0 ( 19 lines)
+      engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPri...
+    shape_superopt.cpp_logToFile_FUN_005c7910          ( 20 lines)
+      local_8 = &stack0x00000008;...
+    core_sound.cpp_CSound_init_FUN_005b2dd0            ( 51 lines)
+      if ((uint *)&stack0x00000000 != &g_TrainRailNoiseHandle) {...
+    core_frankgen.cpp_CFrankenstienMachine_renderOpaqu ( 55 lines)
+      (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffcc);...
+    sound_sndmain.cpp_logSoundError_FUN_005adba0       ( 58 lines)
+      local_10 = &stack0x00000008;...
+    core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fb (166 lines)
+      ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff...
 
   [unnamed_param] (9 functions)
   ------------------------------------------------------------
@@ -432,25 +453,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_actor.cpp_CActorPropertyList_addFile_FUN_0040 ( 31 lines)
       (pCVar2->param1).v_int = allow_none;...
 
-  [stack_ref] (8 functions)
-  ------------------------------------------------------------
-    core_event.cpp_formatEventError_FUN_004aa2a0       (  7 lines)
-      local_4 = &stack0x00000008;...
-    engine_2d.c_getStringWidthFormatted_FUN_004027a0   ( 11 lines)
-      local_4 = &stack0x00000008;...
-    core_sound.cpp_resetTrainSounds_FUN_005b26f0       ( 12 lines)
-      if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {...
-    shape_design.c_renderEditorBackgroundOverlay_FUN_0 ( 19 lines)
-      engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPri...
-    shape_superopt.cpp_logToFile_FUN_005c7910          ( 20 lines)
-      local_8 = &stack0x00000008;...
-    core_sound.cpp_CSound_init_FUN_005b2dd0            ( 50 lines)
-      if ((uint *)&stack0x00000000 != &g_TrainRailNoiseHandle) {...
-    core_frankgen.cpp_CFrankenstienMachine_renderOpaqu ( 54 lines)
-      (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffcc);...
-    sound_sndmain.cpp_logSoundError_FUN_005adba0       ( 56 lines)
-      local_10 = &stack0x00000008;...
-
   [undefined_data] (8 functions)
   ------------------------------------------------------------
     sound_snddx.cpp_CDirectSoundDevice_commitDeferredS ( 11 lines)
@@ -459,15 +461,15 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       LVar1 = (*g_RegOpenKeyExAFunc)((HKEY)&DAT_80000002,key_path,...
     core_actor.cpp_adjustIndentationLevel_FUN_0040aee0 ( 24 lines)
       (&DAT_0066e177)[iVar2] = 9;...
-    wincore_winrun.cpp_setRegistryStringValue_FUN_005f ( 28 lines)
+    wincore_winrun.cpp_setRegistryStringValue_FUN_005f ( 29 lines)
       ((HKEY)&DAT_80000002,key_path,0,"suck",0,0x20006,...
     engine_matrix.c_projectTransformedPoint_FUN_0050cd ( 38 lines)
       point->screen_x = (int)&DAT_80000010;...
     core_script.cpp_CScript_loadLineToBuffer_FUN_00566 ( 44 lines)
       pcVar5 = &DAT_00643f94;...
-    sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440  ( 76 lines)
+    sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440  ( 79 lines)
       ((IUnknown *)g_DirectSoundPrimaryBuffer,&DAT_00686d58,&g_Dir...
-    core_fire.cpp_CFireEffect_createBulletImpact_FUN_0 (137 lines)
+    core_fire.cpp_CFireEffect_createBulletImpact_FUN_0 (142 lines)
       puVar5 = &DAT_0067aeb8;...
 
   [negative_offset] (7 functions)
@@ -495,11 +497,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       (pCVar2->base).fire_cooldown = 1.4013e-45;...
     core_lightgun.cpp_CLightGun_ctor_FUN_00505900      ( 26 lines)
       (pCVar3->base).fire_cooldown = 1.4013e-45;...
-    core_dtri.cpp_rayTriangleIntersection_FUN_0049a800 ( 68 lines)
+    core_dtri.cpp_rayTriangleIntersection_FUN_0049a800 ( 71 lines)
       if (fVar2 == 2.8026e-45) {...
-    core_inv.cpp_CInventory_updateInventory_FUN_004ffa (103 lines)
-      if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.po...
-    core_charactr.cpp_CCharacter_setup_FUN_00428140    (106 lines)
+    core_inv.cpp_CInventory_updateInventory_FUN_004ffa (108 lines)
+      if ((pCVar4 != (CDemonActor *)0x0) && (pCVar4[2].location.po...
+    core_charactr.cpp_CCharacter_setup_FUN_00428140    (114 lines)
       this_ptr->fire_spread_rate = 5.60519e-45;...
 
   [special_math_intrinsic] (4 functions)
@@ -531,12 +533,14 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     wincore_windll.cpp_transformPoint_FUN_005b5a25     (110 lines)
       Function uses MMX instructions...
 
-  [unknown_field] (2 functions)
+  [unknown_field] (3 functions)
   ------------------------------------------------------------
     engine_drender.cpp_CDemonRenderer_renderPerspectiv ( 20 lines)
       g_RenderStateFlags.dword._1_3_ = 0;...
-    support_codec.cpp_readBitsFromStream_FUN_0043e530  ( 70 lines)
+    support_codec.cpp_readBitsFromStream_FUN_0043e530  ( 71 lines)
       bit_count._0_1_ = (byte)iVar3;...
+    core_msnedit.cpp_CDemonMission_replicateActor_FUN_ (141 lines)
+      local_20 = (char  [4])"DUPACTOR.TMP"._0_4_;...
 
   [warning_unmapped_variable] (2 functions)
   ------------------------------------------------------------
@@ -547,14 +551,14 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
 
   [stack_alignment_array] (2 functions)
   ------------------------------------------------------------
-    shape_design.c_calculatePolygonAngularArea_FUN_004 ( 73 lines)
+    shape_design.c_calculatePolygonAngularArea_FUN_004 ( 77 lines)
       float afStackY_2034 [2020];...
-    core_main.c_showDeveloperToolsMenu_FUN_005073a0    (211 lines)
+    core_main.c_showDeveloperToolsMenu_FUN_005073a0    (216 lines)
       int aiStackY_1008 [690];...
 
   [format_string_mismatch] (1 functions)
   ------------------------------------------------------------
-    core_script.cpp_CScript_editorAction_FUN_00564820  (423 lines)
+    core_script.cpp_CScript_editorAction_FUN_00564820  (431 lines)
       Format string expects 2 args but got 1...
 
 ========================================================================================================================
@@ -650,6 +654,8 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/xform.cpp, Lines: 12, Types: ['decompiler_intrinsic']
   crt_time.c_get_local_time_FUN_00607150
     File: crt/time.c, Lines: 13, Types: ['param_count_too_few', 'special_crt_function']
+  crt_stdio.c_vsscanf_FUN_00600100
+    File: crt/stdio.c, Lines: 13, Types: ['param_count_too_few', 'special_crt_function']
   crt_fpu.c_staticInit_FUN_006047e0
     File: crt/fpu.c, Lines: 13, Types: ['special_crt_function', 'undefined_data']
   core_cloth.cpp_CCloth_dtor_FUN_00438c00
@@ -658,7 +664,5 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: crt/exit.c, Lines: 14, Types: ['special_crt_function', 'unresolved_funcptr']
   core_dcamera.cpp_initializeCoronaBuffers_FUN_004502e0
     File: core/dcamera.cpp, Lines: 14, Types: ['pointer_cast']
-  core_dcamera.cpp_CDemonCamera_blendLightmapPixel32_FUN_00453
-    File: core/dcamera.cpp, Lines: 14, Types: ['pointer_cast']
 
-  ... and 561 more
+  ... and 574 more

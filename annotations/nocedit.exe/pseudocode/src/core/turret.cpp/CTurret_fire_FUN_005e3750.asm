@@ -6,7 +6,27 @@
 ; Parameters:
 ; CTurret *        Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x5c]:1  local_5c
+; SDamageInfo      Stack[-0xe0]:60  SStack_e0
+; CVector3f        Stack[-0xa4]:12  CStack_a4
+; CVector3f        Stack[-0x98]:12  CStack_98
+; float            Stack[-0x8c]:4  fStack_8c
+; float            Stack[-0x88]:4  fStack_88
+; float            Stack[-0x84]:4  fStack_84
+; CVector3f        Stack[-0x80]:12  CStack_80
+; CVector3f        Stack[-0x74]:12  CStack_74
+; CVector3f        Stack[-0x68]:12  CStack_68
+; CVector3f        Stack[-0x5c]:12  local_5c
+; float            Stack[-0x50]:4  fStack_50
+; float            Stack[-0x4c]:4  fStack_4c
+; float            Stack[-0x48]:4  fStack_48
+; CVector3f        Stack[-0x44]:12  CStack_44
+; CVector3f        Stack[-0x38]:12  CStack_38
+; CTrigger *       Stack[-0x2c]:4  pCStack_2c
+; CCrate *         Stack[-0x28]:4  pCStack_28
+; int              Stack[-0x24]:4  iStack_24
+; CGlass *         Stack[-0x20]:4  pCStack_20
+; float            Stack[-0x1c]:4  fStack_1c
+; float            Stack[-0x18]:4  fStack_18
 ;
 ; Referenced Globals:
 ;   float FLOAT_006567a4 = -0.125

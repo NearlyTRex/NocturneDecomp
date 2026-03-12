@@ -20,23 +20,21 @@ void __cdecl core_curtain_cpp_CCurtain_updateLocalPositions_FUN_00449f10(CCurtai
   
   iVar4 = 0;
   if (0 < this_ptr->vertex_count) {
-    local_14 = this_ptr->vertices;
-    local_18 = &(this_ptr->base).orient_matrix;
     pCVar2 = &this_ptr->vertices[0].world_position;
     do {
       local_30.x = pCVar2->x - (this_ptr->base).location.position.x;
       local_30.y = pCVar2->y - (this_ptr->base).location.position.y;
-      pCVar3 = &local_14[iVar4].local_position;
+      pCVar3 = &this_ptr->vertices[iVar4].local_position;
       local_30.z = pCVar2->z - (this_ptr->base).location.position.z;
       pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                         (local_18,&local_24,&local_30);
+                         (&(this_ptr->base).orient_matrix,&local_24,&local_30);
       if (pCVar3 != pCVar1) {
         pCVar3->x = pCVar1->x;
         pCVar3->y = pCVar1->y;
         pCVar3->z = pCVar1->z;
       }
       iVar4 = iVar4 + 1;
-      pCVar2 = (CVector3f *)((int)(pCVar2 + 9) + 8);
+      pCVar2 = (CVector3f *)&pCVar2[9].z;
     } while (iVar4 < this_ptr->vertex_count);
   }
   return;

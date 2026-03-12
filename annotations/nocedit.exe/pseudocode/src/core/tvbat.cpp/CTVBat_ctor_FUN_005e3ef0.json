@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 227,
+    "complexity_score": 228,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 33,
     "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 53
+    "total_lines": 54
   },
   "cross_references": [
     {
@@ -134,7 +134,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 11,
+      "line": 12,
       "match": "ADJ",
       "severity": "mild",
       "text": "ADJ(this_ptr_00)->base.base.base.vtable._ub = &g_CTVBatVTable;",
@@ -142,7 +142,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 12,
+      "line": 13,
       "match": "ADJ",
       "severity": "mild",
       "text": "ADJ(this_ptr_00)->anim_frame = 0.0;",
@@ -150,7 +150,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 13,
+      "line": 14,
       "match": "ADJ",
       "severity": "mild",
       "text": "ADJ(this_ptr_00)->anim_rate = 0.0;",
@@ -158,7 +158,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 15,
+      "line": 16,
       "match": "ADJ",
       "severity": "mild",
       "text": "ADJ(this_ptr_00)->speed = fVar1;",
@@ -166,7 +166,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
+      "line": 18,
       "match": "ADJ",
       "severity": "mild",
       "text": "ADJ(this_ptr_00)->max_height = 5.0;",
@@ -174,7 +174,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
+      "line": 19,
       "match": "ADJ",
       "severity": "mild",
       "text": "ADJ(this_ptr_00)->max_distance = 15.0;",
@@ -182,26 +182,18 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 20,
+      "line": 21,
       "match": "ADJ",
       "severity": "mild",
-      "text": "ADJ(this_ptr_00)->move_speed = fVar1 * 10.0f;",
+      "text": "ADJ(this_ptr_00)->move_speed = fVar2 * 10.0f;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 23,
       "match": "ADJ",
       "severity": "mild",
-      "text": "ADJ(this_ptr_00)->rot_speed = fVar1 * 2.0f;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 24,
-      "match": "ADJ",
-      "severity": "mild",
-      "text": "ADJ(this_ptr_00)->follow_orders = 0;",
+      "text": "ADJ(this_ptr_00)->rot_speed = fVar2 * 2.0f;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -209,7 +201,7 @@
       "line": 25,
       "match": "ADJ",
       "severity": "mild",
-      "text": "ADJ(this_ptr_00)->attack_timer = 0.0;",
+      "text": "ADJ(this_ptr_00)->follow_orders = 0;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -217,7 +209,7 @@
       "line": 26,
       "match": "ADJ",
       "severity": "mild",
-      "text": "ADJ(this_ptr_00)->state = 0;",
+      "text": "ADJ(this_ptr_00)->attack_timer = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -225,7 +217,7 @@
       "line": 27,
       "match": "ADJ",
       "severity": "mild",
-      "text": "ADJ(this_ptr_00)->base.base.show_in_editor = 0;",
+      "text": "ADJ(this_ptr_00)->state = 0;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -233,7 +225,7 @@
       "line": 28,
       "match": "ADJ",
       "severity": "mild",
-      "text": "ADJ(this_ptr_00)->boss_actor = (CDemonActor *)0x0;",
+      "text": "ADJ(this_ptr_00)->base.base.show_in_editor = 0;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -241,7 +233,7 @@
       "line": 29,
       "match": "ADJ",
       "severity": "mild",
-      "text": "ADJ(this_ptr_00)->periodic_sound[0] = '\\0';",
+      "text": "ADJ(this_ptr_00)->boss_actor = (CDemonActor *)0x0;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -249,7 +241,7 @@
       "line": 30,
       "match": "ADJ",
       "severity": "mild",
-      "text": "ADJ(this_ptr_00)->periodic_sound_timer_min = 15.0;",
+      "text": "ADJ(this_ptr_00)->periodic_sound[0] = '\\0';",
       "type": "decompiler_intrinsic"
     },
     {
@@ -257,7 +249,7 @@
       "line": 31,
       "match": "ADJ",
       "severity": "mild",
-      "text": "ADJ(this_ptr_00)->periodic_sound_timer_max = 30.0;",
+      "text": "ADJ(this_ptr_00)->periodic_sound_timer_min = 15.0;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -265,7 +257,7 @@
       "line": 32,
       "match": "ADJ",
       "severity": "mild",
-      "text": "ADJ(this_ptr_00)->periodic_sound_timer = 0.0;",
+      "text": "ADJ(this_ptr_00)->periodic_sound_timer_max = 30.0;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -273,12 +265,20 @@
       "line": 33,
       "match": "ADJ",
       "severity": "mild",
-      "text": "ADJ(this_ptr_00)->height_offset = fVar1;",
+      "text": "ADJ(this_ptr_00)->periodic_sound_timer = 0.0;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 34,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ADJ(this_ptr_00)->height_offset = fVar2;",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 35,
       "match": "ADJ",
       "severity": "mild",
       "text": "return ADJ(this_ptr_00);",

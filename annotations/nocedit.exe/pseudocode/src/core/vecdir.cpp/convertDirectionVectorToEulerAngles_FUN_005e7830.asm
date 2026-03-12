@@ -7,7 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   out_euler_angles
 ; CVector3f *      Stack[0x8]:4   in_direction_vector
 ; Local Variables:
-; undefined8       Stack[-0x18]:8  local_18
+; undefined4       Stack[-0x14]:4  uStack_14
 ;
 ; XREF[74]:
 ;   core_baron.cpp_CBaron_performLightningAttack_FUN_004136b0 at 00413705

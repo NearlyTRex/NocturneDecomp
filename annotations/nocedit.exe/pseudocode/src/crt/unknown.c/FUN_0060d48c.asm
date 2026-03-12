@@ -3,6 +3,10 @@
 ; *****************************************************************************
 ; undefined4 crt_unknown_c_FUN_0060d48c(void)
 ;
+; Parameters:
+; undefined4 *     Stack[0x10]:4   in_stack_00000010
+; undefined4 *     Stack[0x14]:4   in_stack_00000014
+; undefined4       Stack[0x1c]:4   in_stack_0000001c
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50
 ; undefined4       Stack[-0x4c]:4  local_4c

@@ -6,8 +6,8 @@
 ; Parameters:
 ; CAmmoBox *       Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined4       Stack[-0x14]:4  local_14
+; CBoundingBox3D   Stack[-0x2c]:24  local_2c
+; int              Stack[-0x14]:4  local_14
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40

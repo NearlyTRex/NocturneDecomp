@@ -9,12 +9,16 @@
 int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
 
 {
-  char cVar1;
+  char cVar2;
   int iVar2;
+  int iVar3;
+  char *pcVar4;
   char *pcVar3;
   SMRGLModelBounds *pSVar4;
   int *piVar5;
+  char *pcVar5;
   char *pcVar6;
+  int *piVar6;
   int *piVar7;
   byte bVar8;
   SMRGLModelBounds local_198;
@@ -52,6 +56,7 @@ int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
   SMRGLHeaderExtended *local_1c;
   uint local_18;
   SIZE_T local_14;
+  char cVar1;
   
   bVar8 = 0;
   local_20 = 1.0;
@@ -71,7 +76,6 @@ int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
     local_14 = _fread(&local_18,1,4,local_38);
     _fseek(local_38,-4,1);
     while ((local_18 != 0 && (local_14 != 0xffffffff))) {
-      local_164 = local_18;
       if (local_18 < 0x14) {
         if (local_18 < 6) {
           if (local_18 < 3) {
@@ -107,17 +111,17 @@ LAB_00458378:
           g_ModelPolygonData[g_PolygonCount].polygon_type = 1;
           g_ModelPolygonData[g_PolygonCount].vertex_indices_count = local_a4;
           shape_design_c_calculatePolygonNormal_FUN_0045caa0(g_ModelPolygonData + g_PolygonCount);
-          pcVar3 = g_TempTextureName;
-          pcVar6 = g_ModelPolygonData[g_PolygonCount].texture_name;
+          pcVar4 = g_TempTextureName;
+          pcVar5 = g_ModelPolygonData[g_PolygonCount].texture_name;
           do {
-            cVar1 = *pcVar3;
-            *pcVar6 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar3[1];
-            pcVar3 = pcVar3 + 2;
-            pcVar6[1] = cVar1;
-            pcVar6 = pcVar6 + 2;
-          } while (cVar1 != '\0');
+            cVar2 = *pcVar4;
+            *pcVar5 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar4[1];
+            pcVar4 = pcVar4 + 2;
+            pcVar5[1] = cVar2;
+            pcVar5 = pcVar5 + 2;
+          } while (cVar2 != '\0');
           g_ModelPolygonData[g_PolygonCount].material_id = local_24;
           _fread(g_ModelPolygonData[g_PolygonCount].vertex_indices,local_a4,4,local_38);
           for (local_2c = 0; local_2c < (int)g_ModelPolygonData[g_PolygonCount].vertex_indices_count
@@ -139,17 +143,17 @@ LAB_00458378:
             goto LAB_004584f3;
           }
           _fread(local_90,1,0x18,local_38);
-          pcVar6 = local_88;
-          pcVar3 = g_TempTextureName;
+          pcVar5 = local_88;
+          pcVar4 = g_TempTextureName;
           do {
-            cVar1 = *pcVar6;
-            *pcVar3 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar6[1];
-            pcVar6 = pcVar6 + 2;
-            pcVar3[1] = cVar1;
-            pcVar3 = pcVar3 + 2;
-          } while (cVar1 != '\0');
+            cVar2 = *pcVar5;
+            *pcVar4 = cVar2;
+            if (cVar2 == '\0') break;
+            cVar2 = pcVar5[1];
+            pcVar5 = pcVar5 + 2;
+            pcVar4[1] = cVar2;
+            pcVar4 = pcVar4 + 2;
+          } while (cVar2 != '\0');
         }
       }
       else if (local_18 < 0x15) {
@@ -197,11 +201,11 @@ LAB_004584f3:
           cVar1 = *pcVar3;
           *pcVar6 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar3[1];
+          cVar2 = pcVar3[1];
           pcVar3 = pcVar3 + 2;
-          pcVar6[1] = cVar1;
+          pcVar6[1] = cVar2;
           pcVar6 = pcVar6 + 2;
-        } while (cVar1 != '\0');
+        } while (cVar2 != '\0');
         g_ModelPolygonData[g_PolygonCount].material_id = local_24;
         for (local_28 = 0; local_28 < (int)local_a4; local_28 = local_28 + 1) {
           _fread((void *)(local_28 * 4 + g_PolygonCount * 0x184 + 0x16e99c8),1,4,local_38);
@@ -231,18 +235,21 @@ LAB_00458835:
     }
     engine_model_c_getMRGLBounds_FUN_00528140(local_1c,&local_198);
     pSVar4 = &local_198;
-    piVar5 = local_dc;
+    piVar6 = local_dc;
     for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *piVar5 = (pSVar4->min_scaled).x;
-      pSVar4 = (SMRGLModelBounds *)((int)pSVar4 + ((uint)bVar8 * -2 + 1) * 4);
-      piVar5 = piVar5 + (uint)bVar8 * -2 + 1;
+      pSVar4 = (SMRGLModelBounds *)((int)pSVar4 + (uint)bVar8 * -8 + 4);
+      *piVar6 = (pSVar4->min_scaled).x;
+      pSVar4 = pSVar4;
+      piVar6 = piVar6 + (uint)bVar8 * -2 + 1;
     }
     piVar5 = local_dc;
     piVar7 = &local_110;
-    for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *piVar7 = *piVar5;
-      piVar5 = piVar5 + (uint)bVar8 * -2 + 1;
+    for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
       piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
+      piVar5 = piVar5 + (uint)bVar8 * -2 + 1;
+      *piVar7 = *piVar5;
+      piVar5 = piVar5;
+      piVar7 = piVar7;
     }
     engine_model_c_freeMRGLData_FUN_005280b0(local_1c);
     _sprintf

@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 196,
-    "complexity_score": 153,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 88,
+    "pseudocode_lines": 93,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 284
+    "total_lines": 289
   },
   "cross_references": [
     {
@@ -174,50 +174,50 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 24,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if ((*(int *)((int)granule_info->granules + iVar1 + -8) != 0) &&",
+      "text": "if ((*(int *)((int)granule_info->granules + iVar10 + -8) != 0) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 25,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(*(int *)((int)granule_info->granules + iVar1 + -4) == 2)) {",
+      "text": "(*(int *)((int)granule_info->granules + iVar10 + -4) == 2)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 27,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "if (*(int *)((int)granule_info->granules + iVar1) != 0) {",
+      "text": "if (*(int *)((int)granule_info->granules + iVar10) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 50,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "} while (piVar3 != (int *)((int)scalefactor_dest + iVar1 + granule * 0xf8));",
+      "text": "} while (piVar3 != (int *)((int)scalefactor_dest + iVar10 + granule * 0xf8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 74,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "} while (piVar2 != (int *)((int)piVar4 + iVar1));",
+      "text": "} while (piVar5 != (int *)((int)piVar1 + iVar10));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 92,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(int *)((int)scalefactor_dest + iVar8) = *piVar4;",
+      "text": "*(int *)((int)scalefactor_dest + iVar10) = *piVar1;",
       "type": "pointer_cast"
     }
   ]

@@ -6,23 +6,13 @@
 ; Parameters:
 ; CDemonTriangle * Stack[0x4]:4   this_ptr
 ; Local Variables:
-; undefined4       Stack[-0x74]:4  local_74
-; undefined4       Stack[-0x70]:4  local_70
-; undefined4       Stack[-0x6c]:4  local_6c
-; undefined4       Stack[-0x68]:4  local_68
-; undefined4       Stack[-0x64]:4  local_64
+; SMRGLHeaderPrimitive Stack[-0x78]:24  SStack_78
 ; undefined4       Stack[-0x60]:4  local_60
 ; undefined4       Stack[-0x54]:4  local_54
 ; undefined4       Stack[-0x48]:4  local_48
-; undefined4       Stack[-0x30]:4  local_30
-; undefined4       Stack[-0x2c]:4  local_2c
-; undefined4       Stack[-0x28]:4  local_28
-; undefined4       Stack[-0x24]:4  local_24
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
-; undefined4       Stack[-0x10]:4  local_10
+; CVector3i        Stack[-0x30]:12  local_30
+; CVector3i        Stack[-0x24]:12  local_24
+; CVector3i        Stack[-0x18]:12  local_18
 ;
 ; Referenced Globals:
 ;   double g_NormalVectorScaleFactor = -65536

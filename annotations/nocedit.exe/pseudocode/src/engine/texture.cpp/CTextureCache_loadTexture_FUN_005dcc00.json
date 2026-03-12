@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 48,
-        "line": 68,
+        "line": 77,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 519,
-    "complexity_score": 406,
+    "complexity_score": 414,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 33,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 241,
+    "pseudocode_lines": 249,
     "suspect_count": 16,
     "suspect_types": [
       "unaffected_reg"
     ],
-    "total_lines": 760
+    "total_lines": 768
   },
   "cross_references": [
     {
@@ -338,22 +338,15 @@
         "is_param": false,
         "name": "local_114",
         "offset": -276,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_113",
-        "offset": -275,
-        "size": 1,
-        "type": "undefined1"
+        "size": 256,
+        "type": "char[256]"
       },
       {
         "is_param": false,
         "name": "local_14",
         "offset": -20,
         "size": 4,
-        "type": "undefined4"
+        "type": "uint"
       },
       {
         "is_param": true,
@@ -426,7 +419,7 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 14,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "SIZE_T unaff_EBP;",
@@ -434,7 +427,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 26,
+      "line": 35,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = 0x20;",
@@ -442,7 +435,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 30,
+      "line": 39,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = 0x40;",
@@ -450,7 +443,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 37,
+      "line": 46,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = 0x80;",
@@ -458,7 +451,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 42,
+      "line": 51,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = 0x100;",
@@ -466,7 +459,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 48,
+      "line": 57,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = 0x200;",
@@ -474,7 +467,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 52,
+      "line": 61,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = 0x400;",
@@ -482,7 +475,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 134,
+      "line": 144,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "if (unaff_EBP != cache->texture_dimensions[cache->current_texture_count]) {",
@@ -490,7 +483,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 182,
+      "line": 191,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "(cache->texture_data_ptrs[cache->current_texture_count],0,unaff_EBP * unaff_EBP);",
@@ -498,7 +491,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 182,
+      "line": 191,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "(cache->texture_data_ptrs[cache->current_texture_count],0,unaff_EBP * unaff_EBP);",
@@ -506,23 +499,23 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 186,
+      "line": 195,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "_fread(cache->texture_data_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var3);",
+      "text": "_fread(cache->texture_data_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var4);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 186,
+      "line": 195,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "_fread(cache->texture_data_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var3);",
+      "text": "_fread(cache->texture_data_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var4);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 221,
+      "line": 230,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "if (unaff_EBP != cache->texture_dimensions[cache->current_texture_count]) {",
@@ -530,23 +523,23 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 231,
+      "line": 239,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "_fread(cache->texture_opacity_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var3)",
+      "text": "_fread(cache->texture_opacity_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var4)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 231,
+      "line": 239,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "_fread(cache->texture_opacity_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var3)",
+      "text": "_fread(cache->texture_opacity_ptrs[cache->current_texture_count],unaff_EBP,unaff_EBP,p_Var4)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 235,
+      "line": 243,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "cache->texture_dimensions[cache->current_texture_count] = unaff_EBP;",

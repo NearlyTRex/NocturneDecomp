@@ -11,11 +11,14 @@
 ; CDemonActor *    Stack[0x14]:4   hit_actor
 ; Local Variables:
 ; undefined8       Stack[-0x68]:8  local_68
-; undefined1       Stack[-0x2c]:1  local_2c
-; undefined4       Stack[-0x20]:4  local_20
-; undefined4       Stack[-0x1c]:4  local_1c
-; undefined4       Stack[-0x18]:4  local_18
-; undefined4       Stack[-0x14]:4  local_14
+; char[52]         Stack[-0x60]:52  acStack_60
+; float            Stack[-0x2c]:4  local_2c
+; float            Stack[-0x28]:4  fStack_28
+; float            Stack[-0x24]:4  fStack_24
+; float            Stack[-0x20]:4  local_20
+; float            Stack[-0x1c]:4  local_1c
+; float            Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
 ;   core_gun.cpp_CGun_fire_FUN_004f0350 at 004f0b0a
