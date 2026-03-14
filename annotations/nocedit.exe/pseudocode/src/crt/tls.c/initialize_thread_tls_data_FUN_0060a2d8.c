@@ -11,12 +11,11 @@ BOOL __cdecl initialize_thread_tls_data(void *init_param)
 {
   void *thread_param;
   BOOL BVar1;
-  void *unaff_ESI;
   
   if (g_TLSIndex == 0xffffffff) {
     return 0;
   }
-  thread_param = crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(unaff_ESI);
+  thread_param = crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(init_param);
   BVar1 = 0;
   if (thread_param != (void *)0x0) {
     BVar1 = register_thread_data

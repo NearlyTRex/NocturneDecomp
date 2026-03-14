@@ -20,7 +20,6 @@ void __cdecl core_skeledit_cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058
   int iVar2;
   char cVar1;
   
-  __STK();
   iVar2 = skeleton->bone_count;
   iVar5 = 0;
   this_ptr->bone_count = iVar2;

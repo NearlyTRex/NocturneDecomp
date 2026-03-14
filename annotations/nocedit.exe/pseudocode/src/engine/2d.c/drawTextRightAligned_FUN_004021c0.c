@@ -12,6 +12,6 @@ void __cdecl engine_2d_c_drawTextRightAligned_FUN_004021c0(char *text,int x,int 
   int iVar1;
   
   iVar1 = engine_2d_c_getStringWidth_FUN_004018a0(text);
-  engine_2d_c_drawText_FUN_00401fd0(text,(y - iVar1) + 2,x);
+  engine_2d_c_drawText_FUN_00401fd0(text,(x - iVar1) + 2,y);
   return;
 }

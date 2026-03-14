@@ -9,17 +9,21 @@
 ; Referenced Globals:
 ;   uchar[257] g_CharacterClassificationTable
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x4                            ; 00589500
+    NOP                                 ; 00589500
         ;   Label: core_skeledit.cpp_skipLeadingWhitespace_FUN_00589500
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589505
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00589501
+    NOP                                 ; 00589502
+    NOP                                 ; 00589503
+    NOP                                 ; 00589504
+    NOP                                 ; 00589505
+    NOP                                 ; 00589506
+    NOP                                 ; 00589507
+    NOP                                 ; 00589508
+    NOP                                 ; 00589509
     MOV EAX,dword ptr [ESP + 0x4]       ; 0058950a
     MOV DL,byte ptr [EAX]               ; 0058950e
         ;   Label: LAB_0058950e

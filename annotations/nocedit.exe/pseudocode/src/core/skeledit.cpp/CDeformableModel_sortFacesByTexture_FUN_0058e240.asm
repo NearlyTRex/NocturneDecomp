@@ -26,17 +26,21 @@
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModel_importGeometryS3D_FUN_0058b660 at 0058b8b3
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x50                           ; 0058e240
+    NOP                                 ; 0058e240
         ;   Label: core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058e245
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058e241
+    NOP                                 ; 0058e242
+    NOP                                 ; 0058e243
+    NOP                                 ; 0058e244
+    NOP                                 ; 0058e245
+    NOP                                 ; 0058e246
+    NOP                                 ; 0058e247
+    NOP                                 ; 0058e248
+    NOP                                 ; 0058e249
     PUSH EBX                            ; 0058e24a
     PUSH ESI                            ; 0058e24b
     PUSH EDI                            ; 0058e24c

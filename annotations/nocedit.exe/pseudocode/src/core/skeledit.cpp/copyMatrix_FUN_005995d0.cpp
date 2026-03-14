@@ -9,7 +9,6 @@
 CMatrix3x4f * __cdecl core_skeledit_cpp_copyMatrix_FUN_005995d0(CMatrix3x4f *dst,CMatrix3x4f *src)
 
 {
-  __STK();
   dst->m[0].w = src->m[0].w;
   dst->m[0].x = src->m[0].x;
   dst->m[0].y = src->m[0].y;

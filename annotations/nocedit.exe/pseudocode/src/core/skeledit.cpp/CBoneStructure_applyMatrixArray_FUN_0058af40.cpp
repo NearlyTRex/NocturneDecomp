@@ -14,12 +14,12 @@ void __cdecl core_skeledit_cpp_CBoneStructure_applyMatrixArray_FUN_0058af40(CBon
   CMatrix3x4f *pCVar2;
   CMatrix3x4f *pCVar3;
   byte bVar4;
+  byte bVar1;
   CMatrix3x4f local_40;
   int local_10;
   CBoneStructure *local_c;
   
-  bVar4 = 0;
-  __STK();
+  bVar1 = 0;
   local_10 = 0;
   if (0 < this_ptr->bone_count) {
     local_c = this_ptr;
@@ -29,8 +29,8 @@ void __cdecl core_skeledit_cpp_CBoneStructure_applyMatrixArray_FUN_0058af40(CBon
       pCVar2 = &local_40;
       pCVar3 = &local_c->bones[0].world_matrix;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
-        pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar4 * -8 + 4);
+        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar1 * -8 + 4);
+        pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar1 * -8 + 4);
         pCVar3->m[0].w = pCVar2->m[0].w;
         pCVar2 = pCVar2;
         pCVar3 = pCVar3;

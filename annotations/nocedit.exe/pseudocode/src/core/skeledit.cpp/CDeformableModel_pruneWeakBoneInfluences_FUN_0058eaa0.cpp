@@ -27,7 +27,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058
   int local_1c;
   int local_14;
   
-  __STK();
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Optimizing deformable model vertices...");
   local_3c = 0;

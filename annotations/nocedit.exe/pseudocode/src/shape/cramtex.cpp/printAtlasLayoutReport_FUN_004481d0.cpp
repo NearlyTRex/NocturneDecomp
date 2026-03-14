@@ -21,7 +21,6 @@ void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output
   int iVar10;
   int iVar11;
   
-  __STK();
   if (0 < g_CramTextureCount) {
     pCVar9 = g_CramSortedTextureEntries;
     iVar10 = 0;

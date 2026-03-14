@@ -25,7 +25,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_cramModelTexture_FUN_0058de70(CD
   int local_14;
   char cVar1;
   
-  __STK();
   shape_design_c_initializeTextureManager_FUN_0046a880(1);
   shape_design_c_setTextureQualityParameter_FUN_0046a8e0(0x40);
   pSVar8 = &local_98;

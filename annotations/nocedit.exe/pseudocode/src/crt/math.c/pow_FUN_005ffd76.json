@@ -1,21 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 330,
+    "complexity_score": 516,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 85,
-    "suspect_count": 22,
+    "pseudocode_lines": 96,
+    "suspect_count": 39,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
       "nan_function_artifact",
       "special_math_intrinsic",
-      "undefined_type"
+      "stack_param",
+      "sub84_truncation"
     ],
-    "total_lines": 248
+    "total_lines": 259
   },
   "cross_references": [
     {
@@ -183,7 +184,7 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
+      "line": 7,
       "match": "extraout_AL",
       "severity": "moderate",
       "text": "char extraout_AL;",
@@ -191,55 +192,55 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 13,
       "match": "extraout_ST0",
       "severity": "moderate",
       "text": "float10 extraout_ST0;",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved type",
-      "line": 20,
-      "match": "undefined6 uVar7",
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_ffffffe0",
       "severity": "moderate",
-      "text": "undefined6 uVar7;",
-      "type": "undefined_type"
+      "text": "uint in_stack_ffffffe0;",
+      "type": "stack_param"
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 23,
+      "line": 27,
       "match": "NAN(",
       "severity": "severe",
-      "text": "exponent = (ushort)(base < fVar1) << 8 | (ushort)(NAN(base) || NAN(fVar1)) << 10 |",
+      "text": "exponent = (ushort)(base < fVar5) << 8 | (ushort)(NAN(base) || NAN(fVar5)) << 10 |",
       "type": "nan_function_artifact"
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 23,
+      "line": 27,
       "match": "NAN(",
       "severity": "severe",
-      "text": "exponent = (ushort)(base < fVar1) << 8 | (ushort)(NAN(base) || NAN(fVar1)) << 10 |",
+      "text": "exponent = (ushort)(base < fVar5) << 8 | (ushort)(NAN(base) || NAN(fVar5)) << 10 |",
       "type": "nan_function_artifact"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 27,
       "match": "NAN",
       "severity": "mild",
-      "text": "exponent = (ushort)(base < fVar1) << 8 | (ushort)(NAN(base) || NAN(fVar1)) << 10 |",
+      "text": "exponent = (ushort)(base < fVar5) << 8 | (ushort)(NAN(base) || NAN(fVar5)) << 10 |",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 23,
+      "line": 27,
       "match": "NAN",
       "severity": "mild",
-      "text": "exponent = (ushort)(base < fVar1) << 8 | (ushort)(NAN(base) || NAN(fVar1)) << 10 |",
+      "text": "exponent = (ushort)(base < fVar5) << 8 | (ushort)(NAN(base) || NAN(fVar5)) << 10 |",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 32,
       "match": "ROUND",
       "severity": "mild",
       "text": "fVar4 = ROUND(exp);",
@@ -247,7 +248,7 @@
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 33,
+      "line": 36,
       "match": "NAN(",
       "severity": "severe",
       "text": "if ((!NAN(fVar4) && !NAN(exp)) &&",
@@ -255,7 +256,7 @@
     },
     {
       "description": "NAN() function call (FNSTSW comparison artifact)",
-      "line": 33,
+      "line": 36,
       "match": "NAN(",
       "severity": "severe",
       "text": "if ((!NAN(fVar4) && !NAN(exp)) &&",
@@ -263,7 +264,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 36,
       "match": "NAN",
       "severity": "mild",
       "text": "if ((!NAN(fVar4) && !NAN(exp)) &&",
@@ -271,7 +272,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 33,
+      "line": 36,
       "match": "NAN",
       "severity": "mild",
       "text": "if ((!NAN(fVar4) && !NAN(exp)) &&",
@@ -279,47 +280,119 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
-      "match": "SUB86",
-      "severity": "mild",
-      "text": "uVar7 = SUB86(__BITCAST_UINT64((double)exp),0);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 42,
+      "line": 47,
       "match": "ROUND",
       "severity": "mild",
       "text": "uStack_6 = (ushort)((uint)(int)ROUND(exp) >> 0x10);",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_ffffffe0",
+      "severity": "moderate",
+      "text": "in_stack_ffffffe0 = 0x5ffe31;",
+      "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 51,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "((float10)CONCAT19(uVar8,CONCAT18(uVar7,CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar6)))",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 44,
-      "match": "CONCAT64",
+      "line": 51,
+      "match": "CONCAT19",
       "severity": "mild",
-      "text": "fVar3 = integer_power((float10)CONCAT64(uVar7,uVar6),exponent);",
+      "text": "((float10)CONCAT19(uVar8,CONCAT18(uVar7,CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar6)))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 48,
+      "line": 51,
+      "match": "CONCAT18",
+      "severity": "mild",
+      "text": "((float10)CONCAT19(uVar8,CONCAT18(uVar7,CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar6)))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "((float10)CONCAT19(uVar8,CONCAT18(uVar7,CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar6)))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 51,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "((float10)CONCAT19(uVar8,CONCAT18(uVar7,CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar6)))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 56,
       "match": "ROUND",
       "severity": "mild",
       "text": "if ((uStack_6 != 0xffff) || (sStack_8 = (short)(int)ROUND(exp), sStack_8 == 0))",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_ffffffe0",
+      "severity": "moderate",
+      "text": "in_stack_ffffffe0 = 0x5ffe45;",
+      "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 60,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "((float10)CONCAT19(uVar8,CONCAT18(uVar7,CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar6)))",
+      "type": "sub84_truncation"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
-      "match": "CONCAT64",
+      "line": 60,
+      "match": "CONCAT19",
       "severity": "mild",
-      "text": "fVar1 = integer_power((float10)CONCAT64(uVar7,uVar6),exponent);",
+      "text": "((float10)CONCAT19(uVar8,CONCAT18(uVar7,CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar6)))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "CONCAT18",
+      "severity": "mild",
+      "text": "((float10)CONCAT19(uVar8,CONCAT18(uVar7,CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar6)))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "((float10)CONCAT19(uVar8,CONCAT18(uVar7,CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar6)))",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "((float10)CONCAT19(uVar8,CONCAT18(uVar7,CONCAT44(SUB84(__BITCAST_UINT64(dVar2),0),uVar6)))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 57,
+      "line": 68,
       "match": "extraout_ST0",
       "severity": "moderate",
       "text": "fVar3 = extraout_ST0;",
@@ -327,15 +400,23 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 63,
+      "line": 74,
       "match": "SUB82",
       "severity": "mild",
       "text": "if (((SUB82(__BITCAST_UINT64(dVar1),0) != 0 || sStack_a != 0) || sStack_8 != 0) ||",
       "type": "decompiler_intrinsic"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 82,
+      "match": "in_stack_ffffffe0",
+      "severity": "moderate",
+      "text": "in_stack_ffffffe0 = 0x5ffe99;",
+      "type": "stack_param"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 70,
+      "line": 83,
       "match": "ABS",
       "severity": "mild",
       "text": "fVar3 = exp((float10)0.6931471805599453 * exp * ABS(base));",
@@ -343,11 +424,67 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 71,
+      "line": 84,
       "match": "extraout_AL",
       "severity": "moderate",
       "text": "if (extraout_AL == '\\0') {",
       "type": "extra_output"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 93,
+      "match": "in_stack_ffffffe0",
+      "severity": "moderate",
+      "text": "(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar6),0),in_stack_ffffffe0)),",
+      "type": "stack_param"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 93,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar6),0),in_stack_ffffffe0)),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 93,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar6),0),in_stack_ffffffe0)),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 93,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar6),0),in_stack_ffffffe0)),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
+      "line": 94,
+      "match": "SUB84(",
+      "severity": "moderate",
+      "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64((double)exp),0),(int)((ulonglong)dVar6 >> 0x20))),",
+      "type": "sub84_truncation"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64((double)exp),0),(int)((ulonglong)dVar6 >> 0x20))),",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 94,
+      "match": "SUB84",
+      "severity": "mild",
+      "text": "__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64((double)exp),0),(int)((ulonglong)dVar6 >> 0x20))),",
+      "type": "decompiler_intrinsic"
     },
     {
       "address": "005ffd76",

@@ -16,14 +16,11 @@ void __cdecl initialize_runtime(HMODULE hModule,void *pThreadParam,int unused)
   LPWSTR str_00;
   WCHAR *pWVar4;
   char *pcVar5;
-  void *unaff_EBP;
-  int in_stack_00000004;
-  HMODULE in_stack_0000000c;
   
-  g_EmergencyExitFlag = in_stack_00000004;
-  g_CurrentThreadTlsBlock = crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(unaff_EBP);
+  g_EmergencyExitFlag = (int)hModule;
+  g_CurrentThreadTlsBlock = crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(pThreadParam);
   if (g_CurrentThreadTlsBlock == (void *)0x0) {
-    if (in_stack_00000004 == 0) {
+    if (hModule == (HMODULE)0x0) {
       (*g_ExitProcessFunc)(1);
       return;
     }
@@ -95,11 +92,11 @@ void __cdecl initialize_runtime(HMODULE hModule,void *pThreadParam,int unused)
       }
     }
     g_CommandLineArgsW = (WCHAR *)pcVar5;
-    if (in_stack_00000004 != 0) {
-      (*g_GetModuleFileNameAFunc)(in_stack_0000000c,g_DllFileNameBuffer_A,0x104);
+    if (hModule != (HMODULE)0x0) {
+      (*g_GetModuleFileNameAFunc)((HMODULE)unused,g_DllFileNameBuffer_A,0x104);
       g_DllFileNameA = g_DllFileNameBuffer_A;
       GetModuleFileNameCompat
-                (in_stack_0000000c,g_DllFileNameBuffer_W,0x208);
+                ((HMODULE)unused,g_DllFileNameBuffer_W,0x208);
       g_DllFileNameW = g_DllFileNameBuffer_W;
     }
   }

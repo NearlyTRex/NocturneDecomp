@@ -9,6 +9,5 @@
 int __cdecl shape_cramtex_cpp_mapCoordinateToAtlas_FUN_00447a80(int min_coord,int max_coord,int pixel_offset)
 
 {
-  __STK();
   return ((max_coord - min_coord) * pixel_offset) / g_CramCurrentAcceptableSize + min_coord;
 }

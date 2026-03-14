@@ -13,7 +13,6 @@ void __cdecl core_skeledit_cpp_onLodGenerationComplete_FUN_00589b10(int use_simp
   int iVar2;
   int iVar3;
   
-  __STK();
   sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
   sound_sndmain_cpp_startSfx_FUN_005a8e90("dixie.wav");
   if (use_simple_message == 0) {

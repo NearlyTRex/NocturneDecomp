@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 70,
-        "line": 27,
+        "line": 26,
         "message": "format specifies type 'char *' but the argument has type 'SBoneData *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 70,
-        "line": 34,
+        "line": 33,
         "message": "format specifies type 'char *' but the argument has type 'SBoneData *' [-Werror,-Wformat]"
       }
     ],
@@ -18,19 +18,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 92,
-    "complexity_score": 63,
+    "assembly_lines": 99,
+    "complexity_score": 62,
     "cross_reference_count": 2,
-    "function_call_count": 5,
+    "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 32,
     "suspect_count": 2,
     "suspect_types": [
       "decompiler_intrinsic",
       "sub84_truncation"
     ],
-    "total_lines": 125
+    "total_lines": 131
   },
   "cross_references": [
     {
@@ -55,7 +55,6 @@
       ]
     ],
     "convention": "__cdecl",
-    "is_ebp_frame": true,
     "name": "core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0",
     "signature": "void __cdecl core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneStructure *this_ptr)"
   },
@@ -79,11 +78,6 @@
       "addr": "005f6690",
       "is_variadic": false,
       "name": "core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690"
-    },
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
     }
   ],
   "globals": [
@@ -156,14 +150,14 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.75,
-    "instruction_count": 76,
+    "avg_pcode_per_instr": 4.226190476190476,
+    "instruction_count": 84,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
       "BOOL_OR": 3,
-      "CALL": 6,
+      "CALL": 5,
       "CBRANCH": 5,
-      "COPY": 98,
+      "COPY": 97,
       "FLOAT2FLOAT": 3,
       "FLOAT_EQUAL": 1,
       "FLOAT_LESS": 1,
@@ -182,16 +176,16 @@
       "INT_SCARRY": 8,
       "INT_SEXT": 6,
       "INT_SLESS": 15,
-      "INT_SUB": 21,
+      "INT_SUB": 19,
       "INT_XOR": 1,
       "INT_ZEXT": 4,
       "LOAD": 15,
       "POPCOUNT": 15,
       "RETURN": 1,
-      "STORE": 23,
+      "STORE": 21,
       "SUBPIECE": 4
     },
-    "pcode_op_count": 361
+    "pcode_op_count": 355
   },
   "stack_frame": {
     "frame_size": 48,
@@ -236,7 +230,7 @@
   "suspects": [
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 22,
+      "line": 21,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_28 = SUB84(__BITCAST_UINT64(dVar2),0);",
@@ -244,7 +238,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 22,
+      "line": 21,
       "match": "SUB84",
       "severity": "mild",
       "text": "local_28 = SUB84(__BITCAST_UINT64(dVar2),0);",

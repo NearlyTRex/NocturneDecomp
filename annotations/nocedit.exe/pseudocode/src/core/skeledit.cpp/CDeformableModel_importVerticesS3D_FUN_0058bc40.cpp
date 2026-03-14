@@ -19,7 +19,6 @@ int __cdecl core_skeledit_cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40(CD
   uint local_14;
   SVert *pSVar1;
   
-  __STK();
   iVar4 = 1;
   do {
     iVar2 = _fgetc(file_handle);

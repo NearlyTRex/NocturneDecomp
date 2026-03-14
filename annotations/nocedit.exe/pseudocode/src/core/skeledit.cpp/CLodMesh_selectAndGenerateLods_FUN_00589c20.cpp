@@ -19,7 +19,6 @@ int __cdecl core_skeledit_cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20(CLodMe
   CPickList local_6c8;
   CLodMeshPrecomputeEntry local_320;
   
-  __STK();
   if (entry->skip_generation != 1) {
     shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520(this_ptr,0,render_mode);
     iVar1 = shape_meshlod_cpp_CLodMesh_loadPrecomputeFile_FUN_0051b6f0(this_ptr);

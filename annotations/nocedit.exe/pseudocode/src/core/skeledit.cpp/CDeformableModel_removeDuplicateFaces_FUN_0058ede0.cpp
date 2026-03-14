@@ -24,7 +24,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede
   int local_20;
   int local_1c;
   
-  __STK();
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Searching for duplicate faces.");
   local_44 = 0;

@@ -10,16 +10,22 @@
 ; Called Functions:
 ;   core_curtain.cpp_CVector3f_arrdtor_FUN_0044baf0
 ;   core_skeleton.cpp_CSkeleton_free_FUN_00599a50
-;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x10                           ; 005998e0
+    NOP                                 ; 005998e0
         ;   Label: core_skeleton.cpp_CSkeleton_dtor_FUN_005998e0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 005998e5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 005998e1
+    NOP                                 ; 005998e2
+    NOP                                 ; 005998e3
+    NOP                                 ; 005998e4
+    NOP                                 ; 005998e5
+    NOP                                 ; 005998e6
+    NOP                                 ; 005998e7
+    NOP                                 ; 005998e8
+    NOP                                 ; 005998e9
     PUSH EBX                            ; 005998ea
     MOV EBX,dword ptr [ESP + 0x8]       ; 005998eb
     PUSH EBX                            ; 005998ef

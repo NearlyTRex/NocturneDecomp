@@ -12,7 +12,6 @@ int __cdecl core_skeledit_cpp_CBoneStructure_doesHierarchyMatch_FUN_0058b200(CBo
   uint uVar1;
   CBoneStructure *pCVar2;
   
-  __STK();
   if (this_ptr->bone_count != other->bone_count) {
     return 0;
   }

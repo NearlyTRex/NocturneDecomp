@@ -21,17 +21,21 @@
 ;   int g_CramPaddingCalculation
 ;   int g_CramCurrentAcceptableSize
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x20                           ; 00447e80
+    NOP                                 ; 00447e80
         ;   Label: shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00447e85
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00447e81
+    NOP                                 ; 00447e82
+    NOP                                 ; 00447e83
+    NOP                                 ; 00447e84
+    NOP                                 ; 00447e85
+    NOP                                 ; 00447e86
+    NOP                                 ; 00447e87
+    NOP                                 ; 00447e88
+    NOP                                 ; 00447e89
     PUSH EBX                            ; 00447e8a
     PUSH ESI                            ; 00447e8b
     PUSH EDI                            ; 00447e8c

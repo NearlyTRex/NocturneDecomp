@@ -14,7 +14,6 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940
 ;   shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
 ;   shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
@@ -28,10 +27,17 @@
 
 section .text
 
-    PUSH 0x10                           ; 00589b10
+    NOP                                 ; 00589b10
         ;   Label: core_skeledit.cpp_onLodGenerationComplete_FUN_00589b10
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589b15
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00589b11
+    NOP                                 ; 00589b12
+    NOP                                 ; 00589b13
+    NOP                                 ; 00589b14
+    NOP                                 ; 00589b15
+    NOP                                 ; 00589b16
+    NOP                                 ; 00589b17
+    NOP                                 ; 00589b18
+    NOP                                 ; 00589b19
     PUSH ESI                            ; 00589b1a
     CALL sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0 ; 00589b1b
         ;   XREF to: 005aaef0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0()

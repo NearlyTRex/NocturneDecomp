@@ -11,16 +11,22 @@
 ;
 ; Called Functions:
 ;   core_skeledit.cpp_CLodMeshPrecomputeEntry_reset_FUN_00589fc0
-;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0xc                            ; 00589fa0
+    NOP                                 ; 00589fa0
         ;   Label: core_skeledit.cpp_CLodMeshPrecomputeEntry_ctor_FUN_00589fa0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589fa5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00589fa1
+    NOP                                 ; 00589fa2
+    NOP                                 ; 00589fa3
+    NOP                                 ; 00589fa4
+    NOP                                 ; 00589fa5
+    NOP                                 ; 00589fa6
+    NOP                                 ; 00589fa7
+    NOP                                 ; 00589fa8
+    NOP                                 ; 00589fa9
     PUSH EBX                            ; 00589faa
     MOV EBX,dword ptr [ESP + 0x8]       ; 00589fab
     PUSH EBX                            ; 00589faf

@@ -22,7 +22,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec6
   CDeformableModel *local_18;
   int local_14;
   
-  __STK();
   if (this_ptr->num_texture_sets != 1) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0xa72;

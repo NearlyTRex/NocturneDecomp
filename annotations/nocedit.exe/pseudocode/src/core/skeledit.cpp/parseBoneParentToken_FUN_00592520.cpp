@@ -11,7 +11,6 @@ int __cdecl core_skeledit_cpp_parseBoneParentToken_FUN_00592520(char *token,int 
 {
   int iVar1;
   
-  __STK();
   iVar1 = _strcmp(token,"(");
   if (iVar1 == 0) {
     *out_index = 0;

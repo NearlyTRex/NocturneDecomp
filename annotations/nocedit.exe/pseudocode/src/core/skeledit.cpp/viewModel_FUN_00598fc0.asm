@@ -36,7 +36,6 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
 ;   core_skeleton.cpp_freeAllModels_FUN_005a1dc0
 ;   core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
@@ -44,16 +43,24 @@
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470
-;   ... and 7 more
+;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+;   ... and 6 more
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x134                          ; 00598fc0
+    NOP                                 ; 00598fc0
         ;   Label: core_skeledit.cpp_viewModel_FUN_00598fc0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00598fc5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00598fc1
+    NOP                                 ; 00598fc2
+    NOP                                 ; 00598fc3
+    NOP                                 ; 00598fc4
+    NOP                                 ; 00598fc5
+    NOP                                 ; 00598fc6
+    NOP                                 ; 00598fc7
+    NOP                                 ; 00598fc8
+    NOP                                 ; 00598fc9
     PUSH EBX                            ; 00598fca
     PUSH ESI                            ; 00598fcb
     PUSH EDI                            ; 00598fcc

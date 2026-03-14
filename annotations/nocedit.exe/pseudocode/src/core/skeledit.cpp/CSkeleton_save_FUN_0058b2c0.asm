@@ -27,7 +27,6 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   engine_dosio.c_getFile_FUN_00481a50
 ;   engine_pod.cpp_CPod_locateFile_FUN_005512f0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -38,10 +37,17 @@
 
 section .text
 
-    PUSH 0x24                           ; 0058b2c0
+    NOP                                 ; 0058b2c0
         ;   Label: core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058b2c5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058b2c1
+    NOP                                 ; 0058b2c2
+    NOP                                 ; 0058b2c3
+    NOP                                 ; 0058b2c4
+    NOP                                 ; 0058b2c5
+    NOP                                 ; 0058b2c6
+    NOP                                 ; 0058b2c7
+    NOP                                 ; 0058b2c8
+    NOP                                 ; 0058b2c9
     PUSH EBX                            ; 0058b2ca
     PUSH ESI                            ; 0058b2cb
     PUSH EBP                            ; 0058b2cc

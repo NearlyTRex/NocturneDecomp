@@ -4,9 +4,9 @@
 ; void __cdecl crt_startup_c_initialize_runtime_FUN_0060245c(HMODULE hModule,void *pThreadParam,int unused)
 ;
 ; Parameters:
-; HMODULE          Stack[0x14]:4   hModule
-; void *           Stack[0x18]:4   pThreadParam
-; int              Stack[0x1c]:4   unused
+; HMODULE          Stack[0x4]:4   hModule
+; void *           Stack[0x8]:4   pThreadParam
+; int              Stack[0xc]:4   unused
 ;
 ; XREF[1]:
 ;   crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8 at 006026ba

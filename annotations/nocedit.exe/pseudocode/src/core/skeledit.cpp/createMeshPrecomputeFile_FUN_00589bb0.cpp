@@ -11,7 +11,6 @@ void __cdecl core_skeledit_cpp_createMeshPrecomputeFile_FUN_00589bb0(CLodMesh *m
 {
   _FILE *p_Var1;
   
-  __STK();
   p_Var1 = shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(mesh_ptr,"wt");
   mesh_ptr->precompute_file = p_Var1;
   if (p_Var1 == (_FILE *)0x0) {

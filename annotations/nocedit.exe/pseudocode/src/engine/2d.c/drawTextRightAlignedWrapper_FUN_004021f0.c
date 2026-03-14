@@ -9,6 +9,6 @@
 void __cdecl engine_2d_c_drawTextRightAlignedWrapper_FUN_004021f0(int x,int y,char *text)
 
 {
-  engine_2d_c_drawTextRightAligned_FUN_004021c0(text,y,x);
+  engine_2d_c_drawTextRightAligned_FUN_004021c0(text,x,y);
   return;
 }

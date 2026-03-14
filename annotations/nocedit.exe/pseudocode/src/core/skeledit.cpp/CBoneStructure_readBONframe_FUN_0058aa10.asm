@@ -4,9 +4,9 @@
 ; void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStructure *this_ptr,_FILE *file,int mirror_flag)
 ;
 ; Parameters:
-; CBoneStructure * Stack[0x8]:4   this_ptr
-; _FILE *          Stack[0xc]:4   file
-; int              Stack[0x10]:4   mirror_flag
+; CBoneStructure * Stack[0x4]:4   this_ptr
+; _FILE *          Stack[0x8]:4   file
+; int              Stack[0xc]:4   mirror_flag
 ;
 ; XREF[3]:
 ;   core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 at 0058a44b
@@ -30,7 +30,6 @@
 ;   core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
 ;   core_xform.cpp_hasNegativeDeterminant_FUN_005f6be0
 ;   core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;
 ; *****************************************************************************
@@ -43,8 +42,11 @@ section .text
     NOP                                 ; 0058aa12
     NOP                                 ; 0058aa13
     NOP                                 ; 0058aa14
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058aa15
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058aa15
+    NOP                                 ; 0058aa16
+    NOP                                 ; 0058aa17
+    NOP                                 ; 0058aa18
+    NOP                                 ; 0058aa19
     PUSH EBX                            ; 0058aa1a
     PUSH ESI                            ; 0058aa1b
     PUSH EDI                            ; 0058aa1c

@@ -14,7 +14,6 @@ void __cdecl core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneSt
   double dVar2;
   int local_28;
   
-  __STK();
   iVar1 = 0;
   if (0 < this_ptr->bone_count) {
     matrix = &this_ptr->bones[0].world_matrix;

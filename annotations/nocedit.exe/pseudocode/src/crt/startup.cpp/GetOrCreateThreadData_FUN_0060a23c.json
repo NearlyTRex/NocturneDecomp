@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 115,
+    "complexity_score": 29,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 15,
-    "suspect_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 1,
     "suspect_types": [
-      "special_crt_function",
-      "stack_param"
+      "special_crt_function"
     ],
-    "total_lines": 42
+    "total_lines": 41
   },
   "cross_references": [
     {
@@ -114,86 +113,22 @@
     "pcode_op_count": 77
   },
   "stack_frame": {
-    "frame_size": 12,
+    "frame_size": 8,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": true,
         "name": "pThreadData",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "void *"
       }
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "ThreadData *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (in_stack_00000004 == (ThreadData *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004 = calloc(1,g_RuntimeBufferSize);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "if (in_stack_00000004 != (ThreadData *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "in_stack_00000004->padding_0x52[0] = '\\x01';",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "*(DWORD *)(in_stack_00000004->unknown_E2 + 0xe) = DVar1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "InitializeThreadContext(in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000004",
-      "severity": "moderate",
-      "text": "return in_stack_00000004;",
-      "type": "stack_param"
-    },
     {
       "address": "0060a23c",
       "crt_type": "runtime support",

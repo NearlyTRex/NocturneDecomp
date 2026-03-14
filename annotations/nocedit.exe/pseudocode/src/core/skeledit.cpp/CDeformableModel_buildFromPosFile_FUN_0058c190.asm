@@ -110,16 +110,23 @@
 ;   core_skeledit.cpp_CDeformableModel_importTexturesS3D_FUN_0058b8e0
 ;   core_skeledit.cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40
 ;   core_skeledit.cpp_CDeformableModel_initSinglePart_FUN_0058f790
-;   ... and 50 more
+;   ... and 49 more
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0xa248                         ; 0058c190
+    NOP                                 ; 0058c190
         ;   Label: core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058c195
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058c191
+    NOP                                 ; 0058c192
+    NOP                                 ; 0058c193
+    NOP                                 ; 0058c194
+    NOP                                 ; 0058c195
+    NOP                                 ; 0058c196
+    NOP                                 ; 0058c197
+    NOP                                 ; 0058c198
+    NOP                                 ; 0058c199
     PUSH EBX                            ; 0058c19a
     PUSH ESI                            ; 0058c19b
     PUSH EDI                            ; 0058c19c

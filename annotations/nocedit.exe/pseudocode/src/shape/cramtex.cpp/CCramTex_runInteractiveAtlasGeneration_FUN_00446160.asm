@@ -54,7 +54,6 @@
 ;   ... and 86 more
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdlib.c__qsort_FUN_005fdf38
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
@@ -74,10 +73,17 @@
 
 section .text
 
-    PUSH 0xdc                           ; 00446160
+    NOP                                 ; 00446160
         ;   Label: shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00446165
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00446161
+    NOP                                 ; 00446162
+    NOP                                 ; 00446163
+    NOP                                 ; 00446164
+    NOP                                 ; 00446165
+    NOP                                 ; 00446166
+    NOP                                 ; 00446167
+    NOP                                 ; 00446168
+    NOP                                 ; 00446169
     PUSH EBX                            ; 0044616a
     PUSH ESI                            ; 0044616b
     PUSH EDI                            ; 0044616c

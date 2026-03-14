@@ -38,7 +38,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690
   CSkeleton *local_14;
   CVector3i *pCVar1;
   
-  __STK();
   local_14 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(this_ptr);
   if (local_14->bone_scales[0].x < (float)-9999) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";

@@ -12,10 +12,9 @@ void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStruct
   CBoneStructure *this_ptr_00;
   int iVar1;
   int iVar2;
+  byte auStack_18 [4];
   int local_14;
-  int in_stack_ffffffe8;
   
-  __STK();
   this_ptr_00 = (CBoneStructure *)
                 shape_memdbg_cpp_openFile_FUN_0050f7a0
                           (filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x27c);
@@ -29,11 +28,10 @@ void __cdecl core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0(CBoneStruct
     iVar1 = _fgetc((_FILE *)this_ptr_00);
     if (iVar1 < 0) break;
   } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
-  _fscanf((_FILE *)this_ptr_00,"%d\n",&stack0xffffffe8);
+  _fscanf((_FILE *)this_ptr_00,"%d\n",auStack_18);
   core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
             (this_ptr,(_FILE *)this_ptr_00,&local_14);
-  core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10
-            (this_ptr_00,(_FILE *)0x0,in_stack_ffffffe8);
+  core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(this_ptr,(_FILE *)this_ptr_00,0);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0((_FILE *)this_ptr_00,"..\\core\\skeledit.cpp",0x290);
   core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(this_ptr);
   return;

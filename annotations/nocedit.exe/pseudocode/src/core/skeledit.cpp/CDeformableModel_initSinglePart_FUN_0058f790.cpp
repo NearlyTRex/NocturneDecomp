@@ -16,7 +16,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_initSinglePart_FUN_0058f790(CDef
   char *pcVar5;
   SPart *pSVar6;
   
-  __STK();
   pcVar5 = "TheOnlyPart";
   pSVar6 = this_ptr->parts;
   this_ptr->num_parts = 1;

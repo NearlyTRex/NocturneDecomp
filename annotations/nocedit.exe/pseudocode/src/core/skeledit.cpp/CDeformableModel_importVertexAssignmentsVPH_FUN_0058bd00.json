@@ -12,10 +12,10 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 356,
+    "assembly_lines": 363,
     "complexity_score": 187,
     "cross_reference_count": 0,
-    "function_call_count": 11,
+    "function_call_count": 10,
     "global_count": 16,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 152,
@@ -23,7 +23,7 @@
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 508
+    "total_lines": 515
   },
   "cross_references": [],
   "function": {
@@ -35,7 +35,6 @@
       ]
     ],
     "convention": "__cdecl",
-    "is_ebp_frame": true,
     "name": "core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00",
     "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00(CDeformableModel *this_ptr,char *filename,CBoneStructure *bone_structure)"
   },
@@ -64,11 +63,6 @@
       "addr": "005fde40",
       "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005fde40"
-    },
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fd990",
@@ -203,15 +197,15 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.161616161616162,
-    "instruction_count": 297,
+    "avg_pcode_per_instr": 4.032786885245901,
+    "instruction_count": 305,
     "opcode_distribution": {
       "BOOL_NEGATE": 2,
       "BOOL_OR": 6,
       "BRANCH": 7,
-      "CALL": 22,
+      "CALL": 21,
       "CBRANCH": 14,
-      "COPY": 268,
+      "COPY": 267,
       "FLOAT2FLOAT": 4,
       "FLOAT_MULT": 2,
       "FLOAT_SUB": 1,
@@ -227,16 +221,16 @@
       "INT_SCARRY": 36,
       "INT_SEXT": 9,
       "INT_SLESS": 57,
-      "INT_SUB": 107,
+      "INT_SUB": 105,
       "INT_XOR": 7,
       "INT_ZEXT": 2,
       "LOAD": 66,
       "POPCOUNT": 57,
       "RETURN": 1,
-      "STORE": 124,
+      "STORE": 122,
       "SUBPIECE": 6
     },
-    "pcode_op_count": 1236
+    "pcode_op_count": 1230
   },
   "stack_frame": {
     "frame_size": 1088,
@@ -453,7 +447,7 @@
       "line": 132,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar10 * -8 + 4);",
+      "text": "pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -461,7 +455,7 @@
       "line": 133,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar10 * -8 + 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 188,
-    "complexity_score": 152,
+    "assembly_lines": 195,
+    "complexity_score": 151,
     "cross_reference_count": 0,
-    "function_call_count": 2,
+    "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 87,
+    "pseudocode_lines": 86,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 275
+    "total_lines": 281
   },
   "cross_references": [],
   "function": {
@@ -28,16 +28,10 @@
       ]
     ],
     "convention": "__cdecl",
-    "is_ebp_frame": true,
     "name": "core_skeledit.cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0",
     "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0(CDeformableModel *this_ptr)"
   },
   "function_calls": [
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
-    },
     {
       "addr": "0049e790",
       "is_variadic": true,
@@ -85,15 +79,15 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.922077922077922,
-    "instruction_count": 154,
+    "avg_pcode_per_instr": 4.6419753086419755,
+    "instruction_count": 162,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
       "BOOL_OR": 4,
       "BRANCH": 5,
-      "CALL": 3,
+      "CALL": 2,
       "CBRANCH": 11,
-      "COPY": 177,
+      "COPY": 176,
       "FLOAT2FLOAT": 8,
       "FLOAT_ADD": 1,
       "FLOAT_DIV": 1,
@@ -111,15 +105,15 @@
       "INT_SBORROW": 10,
       "INT_SCARRY": 20,
       "INT_SLESS": 42,
-      "INT_SUB": 22,
+      "INT_SUB": 20,
       "INT_XOR": 10,
       "INT_ZEXT": 4,
       "LOAD": 50,
       "POPCOUNT": 42,
       "RETURN": 1,
-      "STORE": 40
+      "STORE": 38
     },
-    "pcode_op_count": 758
+    "pcode_op_count": 752
   },
   "stack_frame": {
     "frame_size": 72,
@@ -220,7 +214,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 30,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "for (local_34 = 0; local_34 < *(int *)((int)this_ptr->vertex_count + local_40);",
@@ -228,7 +222,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "pfVar1 = (float *)(local_14 + *(int *)((int)this_ptr->vertex_data_ptr + local_40));",
@@ -236,7 +230,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);",
@@ -244,7 +238,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)local_2c + 1) = *(byte *)((int)local_28 + 1);",
@@ -252,7 +246,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 56,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_2c = (float *)((int)local_2c + 1);",
@@ -260,7 +254,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 61,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_28 = (float *)((int)local_28 + 1);",

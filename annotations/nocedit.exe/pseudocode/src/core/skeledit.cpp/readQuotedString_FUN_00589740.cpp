@@ -12,7 +12,6 @@ void __cdecl core_skeledit_cpp_readQuotedString_FUN_00589740(_FILE *file_handle,
   int iVar1;
   int iVar2;
   
-  __STK();
   *buffer = '\0';
   while( true ) {
     iVar1 = _fgetc(file_handle);

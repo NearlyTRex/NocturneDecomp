@@ -37,7 +37,6 @@ int __cdecl core_skeledit_cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0(CDefo
   int local_14;
   SInputFace *pSVar1;
   
-  __STK();
   iVar5 = 1;
   do {
     iVar2 = _fgetc(file_handle);

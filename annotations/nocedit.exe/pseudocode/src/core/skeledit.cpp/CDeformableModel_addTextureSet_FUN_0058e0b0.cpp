@@ -23,7 +23,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_addTextureSet_FUN_0058e0b0(CDefo
   STextureSet *local_14;
   char cVar1;
   
-  __STK();
   if (4 < this_ptr->num_texture_sets) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x912;

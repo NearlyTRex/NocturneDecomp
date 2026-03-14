@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 105,
-    "complexity_score": 70,
+    "assembly_lines": 112,
+    "complexity_score": 69,
     "cross_reference_count": 1,
-    "function_call_count": 1,
+    "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 45,
+    "pseudocode_lines": 44,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 150
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -38,13 +38,7 @@
     "name": "core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0",
     "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0(CDeformableModel *this_ptr,float scale)"
   },
-  "function_calls": [
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
-    }
-  ],
+  "function_calls": [],
   "globals": [],
   "param_estimates": {
     "call_site_count": 1,
@@ -67,15 +61,14 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.50561797752809,
-    "instruction_count": 89,
+    "avg_pcode_per_instr": 5.907216494845361,
+    "instruction_count": 97,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
       "BOOL_OR": 1,
       "BRANCH": 2,
-      "CALL": 1,
       "CBRANCH": 5,
-      "COPY": 263,
+      "COPY": 262,
       "FLOAT2FLOAT": 20,
       "FLOAT_MULT": 9,
       "INT_ADD": 48,
@@ -87,14 +80,14 @@
       "INT_SBORROW": 5,
       "INT_SCARRY": 11,
       "INT_SLESS": 22,
-      "INT_SUB": 11,
+      "INT_SUB": 9,
       "INT_XOR": 5,
       "LOAD": 26,
       "POPCOUNT": 22,
       "RETURN": 1,
-      "STORE": 20
+      "STORE": 18
     },
-    "pcode_op_count": 579
+    "pcode_op_count": 573
   },
   "stack_frame": {
     "frame_size": 36,
@@ -136,7 +129,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 20,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "for (iVar4 = 0; iVar4 < *(int *)((int)this_ptr->vertex_count + local_14); iVar4 = iVar4 + 1) {",
@@ -144,7 +137,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 21,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "pbVar3 = (byte *)(*(int *)((int)this_ptr->vertex_data_ptr + local_14) + iVar7);",

@@ -38,7 +38,6 @@
 ;   core_skeledit.cpp_CLodMeshPrecomputeEntry_ctor_FUN_00589fa0
 ;   core_skeledit.cpp_CLodMeshPrecomputeEntry_load_FUN_00589fe0
 ;   core_skeledit.cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
 ;   shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
@@ -49,16 +48,24 @@
 ;   shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870
 ;   shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0
 ;   shape_meshlod.cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0
-;   ... and 6 more
+;   shape_meshlod.cpp_CLodMesh_loadPrecomputeFile_FUN_0051b6f0
+;   ... and 5 more
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0xa84                          ; 00589c20
+    NOP                                 ; 00589c20
         ;   Label: core_skeledit.cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589c25
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00589c21
+    NOP                                 ; 00589c22
+    NOP                                 ; 00589c23
+    NOP                                 ; 00589c24
+    NOP                                 ; 00589c25
+    NOP                                 ; 00589c26
+    NOP                                 ; 00589c27
+    NOP                                 ; 00589c28
+    NOP                                 ; 00589c29
     PUSH EBX                            ; 00589c2a
     PUSH ESI                            ; 00589c2b
     PUSH EDI                            ; 00589c2c

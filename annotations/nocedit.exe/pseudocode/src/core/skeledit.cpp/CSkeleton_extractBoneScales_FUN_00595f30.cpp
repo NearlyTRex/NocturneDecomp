@@ -17,7 +17,6 @@ void __cdecl core_skeledit_cpp_CSkeleton_extractBoneScales_FUN_00595f30(CSkeleto
   float fVar1;
   SBoneData *pSVar3;
   
-  __STK();
   iVar6 = 0;
   if (0 < bone_structure->bone_count) {
     pSVar3 = (SBoneData *)&bone_structure->bones[0].local_matrix;

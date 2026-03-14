@@ -23,17 +23,21 @@
 ;   int g_CramTextureCount
 ;   int g_CramCurrentAcceptableSize
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x14                           ; 00447a10
+    NOP                                 ; 00447a10
         ;   Label: shape_cramtex.cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00447a15
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00447a11
+    NOP                                 ; 00447a12
+    NOP                                 ; 00447a13
+    NOP                                 ; 00447a14
+    NOP                                 ; 00447a15
+    NOP                                 ; 00447a16
+    NOP                                 ; 00447a17
+    NOP                                 ; 00447a18
+    NOP                                 ; 00447a19
     PUSH EBX                            ; 00447a1a
     PUSH ESI                            ; 00447a1b
     PUSH EDI                            ; 00447a1c

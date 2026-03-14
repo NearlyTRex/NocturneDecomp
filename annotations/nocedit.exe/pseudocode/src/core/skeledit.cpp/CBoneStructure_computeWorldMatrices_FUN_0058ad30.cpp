@@ -15,11 +15,11 @@ void __cdecl core_skeledit_cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30(
   CMatrix3x4f *pCVar4;
   CMatrix3x4f *pCVar5;
   byte bVar6;
+  byte bVar1;
   CMatrix3x4f local_44;
   SBoneData *local_14;
   
-  bVar6 = 0;
-  __STK();
+  bVar1 = 0;
   iVar3 = 0;
   if (0 < this_ptr->bone_count) {
     pSVar2 = this_ptr->bones;
@@ -38,8 +38,8 @@ void __cdecl core_skeledit_cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30(
         pCVar4 = &local_44;
       }
       for (; iVar1 != 0; iVar1 = iVar1 + -1) {
-        pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
-        pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar6 * -8 + 4);
+        pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar1 * -8 + 4);
+        pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar1 * -8 + 4);
         pCVar5->m[0].w = pCVar4->m[0].w;
         pCVar4 = pCVar4;
         pCVar5 = pCVar5;

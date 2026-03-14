@@ -18,17 +18,23 @@
 ;   TerminatedCString s_tweenMotionToMotion_0064c041
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x10                           ; 005925c0
+    NOP                                 ; 005925c0
         ;   Label: core_skeledit.cpp_parseTransitionType_FUN_005925c0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 005925c5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 005925c1
+    NOP                                 ; 005925c2
+    NOP                                 ; 005925c3
+    NOP                                 ; 005925c4
+    NOP                                 ; 005925c5
+    NOP                                 ; 005925c6
+    NOP                                 ; 005925c7
+    NOP                                 ; 005925c8
+    NOP                                 ; 005925c9
     PUSH EBX                            ; 005925ca
     MOV EBX,dword ptr [ESP + 0x8]       ; 005925cb
     PUSH 0x64bfff                       ; 005925cf | = "skipTo"

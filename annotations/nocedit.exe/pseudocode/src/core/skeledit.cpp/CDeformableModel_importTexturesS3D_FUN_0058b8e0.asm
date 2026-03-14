@@ -20,7 +20,6 @@
 ;
 ; Called Functions:
 ;   crt_file.c_makepath_FUN_005febfc
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   crt_string.c_splitpath_FUN_005ff178
@@ -29,10 +28,17 @@
 
 section .text
 
-    PUSH 0x22c                          ; 0058b8e0
+    NOP                                 ; 0058b8e0
         ;   Label: core_skeledit.cpp_CDeformableModel_importTexturesS3D_FUN_0058b8e0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058b8e5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058b8e1
+    NOP                                 ; 0058b8e2
+    NOP                                 ; 0058b8e3
+    NOP                                 ; 0058b8e4
+    NOP                                 ; 0058b8e5
+    NOP                                 ; 0058b8e6
+    NOP                                 ; 0058b8e7
+    NOP                                 ; 0058b8e8
+    NOP                                 ; 0058b8e9
     PUSH EBX                            ; 0058b8ea
     PUSH ESI                            ; 0058b8eb
     PUSH EDI                            ; 0058b8ec

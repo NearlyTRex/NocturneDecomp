@@ -25,17 +25,23 @@
 ;   TerminatedCString s_d_0064a20f
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x18                           ; 0058a0f0
+    NOP                                 ; 0058a0f0
         ;   Label: core_skeledit.cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058a0f5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058a0f1
+    NOP                                 ; 0058a0f2
+    NOP                                 ; 0058a0f3
+    NOP                                 ; 0058a0f4
+    NOP                                 ; 0058a0f5
+    NOP                                 ; 0058a0f6
+    NOP                                 ; 0058a0f7
+    NOP                                 ; 0058a0f8
+    NOP                                 ; 0058a0f9
     PUSH EBX                            ; 0058a0fa
     PUSH ESI                            ; 0058a0fb
     MOV ESI,dword ptr [ESP + 0xc]       ; 0058a0fc

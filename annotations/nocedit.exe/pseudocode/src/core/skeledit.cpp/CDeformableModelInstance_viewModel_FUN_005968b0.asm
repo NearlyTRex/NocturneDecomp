@@ -158,16 +158,23 @@
 ;   core_skeledit.cpp_CDeformableModel_offsetRootVertices_FUN_0058e600
 ;   core_skeledit.cpp_CDeformableModel_save_FUN_0058f040
 ;   core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0
-;   ... and 76 more
+;   ... and 75 more
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x33f0                         ; 005968b0
+    NOP                                 ; 005968b0
         ;   Label: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 005968b5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 005968b1
+    NOP                                 ; 005968b2
+    NOP                                 ; 005968b3
+    NOP                                 ; 005968b4
+    NOP                                 ; 005968b5
+    NOP                                 ; 005968b6
+    NOP                                 ; 005968b7
+    NOP                                 ; 005968b8
+    NOP                                 ; 005968b9
     PUSH EBX                            ; 005968ba
     PUSH ESI                            ; 005968bb
     PUSH EDI                            ; 005968bc

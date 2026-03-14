@@ -11,7 +11,6 @@ void __cdecl core_skeledit_cpp_skipFileLines_FUN_005894c0(_FILE *file_handle,int
 {
   int iVar1;
   
-  __STK();
   do {
     if (line_count < 1) {
       return;

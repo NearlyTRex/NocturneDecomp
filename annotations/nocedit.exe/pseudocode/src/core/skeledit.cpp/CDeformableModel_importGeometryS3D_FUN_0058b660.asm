@@ -49,7 +49,6 @@
 ;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510
 ;   core_skeleton.cpp_CDeformableModel_allocMemory_FUN_0059a3f0
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -60,10 +59,17 @@
 
 section .text
 
-    PUSH 0x6c                           ; 0058b660
+    NOP                                 ; 0058b660
         ;   Label: core_skeledit.cpp_CDeformableModel_importGeometryS3D_FUN_0058b660
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058b665
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058b661
+    NOP                                 ; 0058b662
+    NOP                                 ; 0058b663
+    NOP                                 ; 0058b664
+    NOP                                 ; 0058b665
+    NOP                                 ; 0058b666
+    NOP                                 ; 0058b667
+    NOP                                 ; 0058b668
+    NOP                                 ; 0058b669
     PUSH EBX                            ; 0058b66a
     PUSH ESI                            ; 0058b66b
     PUSH EDI                            ; 0058b66c

@@ -4,7 +4,7 @@
 ; void * __cdecl crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(void *pThreadData)
 ;
 ; Parameters:
-; void *           Stack[0x8]:4   pThreadData
+; void *           Stack[0x4]:4   pThreadData
 ;
 ; XREF[2]:
 ;   crt_startup.c_initialize_runtime_FUN_0060245c at 0060246f

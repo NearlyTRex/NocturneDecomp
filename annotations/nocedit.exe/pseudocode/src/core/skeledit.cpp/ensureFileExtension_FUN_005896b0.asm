@@ -14,17 +14,23 @@
 ;
 ; Called Functions:
 ;   crt_file.c_makepath_FUN_005febfc
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_string.c_splitpath_FUN_005ff178
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x31c                          ; 005896b0
+    NOP                                 ; 005896b0
         ;   Label: core_skeledit.cpp_ensureFileExtension_FUN_005896b0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 005896b5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 005896b1
+    NOP                                 ; 005896b2
+    NOP                                 ; 005896b3
+    NOP                                 ; 005896b4
+    NOP                                 ; 005896b5
+    NOP                                 ; 005896b6
+    NOP                                 ; 005896b7
+    NOP                                 ; 005896b8
+    NOP                                 ; 005896b9
     SUB ESP,0x304                       ; 005896ba
     LEA EAX,[ESP + 0x100]               ; 005896c0
     PUSH EAX                            ; 005896c7

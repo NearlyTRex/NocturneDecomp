@@ -21,7 +21,6 @@
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_errno.c_SetWindowsError_FUN_006027c8
 ;   crt_process.c_spawnvp_FUN_0060f39c
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_string.c_memcpy_FUN_0060cd60
 ;   crt_string.c_strchr_FUN_0060f890
 ;   crt_string.c_strlen_FUN_0060f870
@@ -31,10 +30,17 @@
 
 section .text
 
-    PUSH 0x130                          ; 0060e6a0
+    NOP                                 ; 0060e6a0
         ;   Label: crt_process.c_spawnvp_with_path_search_FUN_0060e6a0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0060e6a5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0060e6a1
+    NOP                                 ; 0060e6a2
+    NOP                                 ; 0060e6a3
+    NOP                                 ; 0060e6a4
+    NOP                                 ; 0060e6a5
+    NOP                                 ; 0060e6a6
+    NOP                                 ; 0060e6a7
+    NOP                                 ; 0060e6a8
+    NOP                                 ; 0060e6a9
     PUSH EBX                            ; 0060e6aa
     PUSH ESI                            ; 0060e6ab
     PUSH EDI                            ; 0060e6ac

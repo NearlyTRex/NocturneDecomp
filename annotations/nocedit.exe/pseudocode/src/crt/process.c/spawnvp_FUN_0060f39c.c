@@ -52,7 +52,6 @@ int __cdecl spawnvp(int mode,char *cmdname,char **argv,char **envp)
   char *arg2;
   char *pcVar9;
   
-  __STK();
   local_20 = 0;
   if ((g_ProcessSpawnEnabled != 0) &&
      (local_1c = (char *)build_file_info_env(), local_1c != (char *)0x0))

@@ -17,16 +17,22 @@
 ; Called Functions:
 ;   core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10
-;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x4c                           ; 0058af40
+    NOP                                 ; 0058af40
         ;   Label: core_skeledit.cpp_CBoneStructure_applyMatrixArray_FUN_0058af40
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058af45
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058af41
+    NOP                                 ; 0058af42
+    NOP                                 ; 0058af43
+    NOP                                 ; 0058af44
+    NOP                                 ; 0058af45
+    NOP                                 ; 0058af46
+    NOP                                 ; 0058af47
+    NOP                                 ; 0058af48
+    NOP                                 ; 0058af49
     PUSH EBX                            ; 0058af4a
     PUSH EBP                            ; 0058af4b
     SUB ESP,0x38                        ; 0058af4c

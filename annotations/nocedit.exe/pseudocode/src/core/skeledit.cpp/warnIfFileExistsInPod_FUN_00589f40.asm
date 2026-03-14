@@ -15,7 +15,6 @@
 ;   CDemonPod g_CDemonPodInstance
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   engine_pod.cpp_CPod_locateFile_FUN_005512f0
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
 ;
@@ -23,10 +22,17 @@
 
 section .text
 
-    PUSH 0x20                           ; 00589f40
+    NOP                                 ; 00589f40
         ;   Label: core_skeledit.cpp_warnIfFileExistsInPod_FUN_00589f40
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589f45
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00589f41
+    NOP                                 ; 00589f42
+    NOP                                 ; 00589f43
+    NOP                                 ; 00589f44
+    NOP                                 ; 00589f45
+    NOP                                 ; 00589f46
+    NOP                                 ; 00589f47
+    NOP                                 ; 00589f48
+    NOP                                 ; 00589f49
     PUSH EBX                            ; 00589f4a
     PUSH EBP                            ; 00589f4b
     PUSH 0x0                            ; 00589f4c

@@ -16,26 +16,46 @@
 #
 # ============================================================================
 
-@005995c0 [ESP:-4](-4)  # PUSH 0x4
-COPY (unique,0x87f00,4) = (const,0x4,4)
-INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+@005995c0 [ESP:+0]  # NOP
+# (no p-code)
 
-@005995c5 [ESP:-4](-4)  # CALL 0x005ff9f3
-INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5995ca,4)
-CALL (ram,0x5ff9f3,4)
+@005995c1 [ESP:+0]  # NOP
+# (no p-code)
 
-@005995ca [ESP:-4]  # MOV EAX, dword ptr [ESP + 0x4]
+@005995c2 [ESP:+0]  # NOP
+# (no p-code)
+
+@005995c3 [ESP:+0]  # NOP
+# (no p-code)
+
+@005995c4 [ESP:+0]  # NOP
+# (no p-code)
+
+@005995c5 [ESP:+0]  # NOP
+# (no p-code)
+
+@005995c6 [ESP:+0]  # NOP
+# (no p-code)
+
+@005995c7 [ESP:+0]  # NOP
+# (no p-code)
+
+@005995c8 [ESP:+0]  # NOP
+# (no p-code)
+
+@005995c9 [ESP:+0]  # NOP
+# (no p-code)
+
+@005995ca [ESP:+0]  # MOV EAX, dword ptr [ESP + 0x4]
 INT_ADD (unique,0x7600,4) = (const,0x4,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x7600,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
-@005995ce [ESP:+0](+4)  # RET
+@005995ce [ESP:+4](+4)  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
-# Summary: 4 instructions, 12 P-code ops
+# Summary: 12 instructions, 6 P-code ops
 # ============================================================================

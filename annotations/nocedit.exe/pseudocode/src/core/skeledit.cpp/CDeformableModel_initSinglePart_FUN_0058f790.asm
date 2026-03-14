@@ -16,17 +16,21 @@
 ;   undefined4 s_TheOnlyPart_0064b4bf+2
 ;   undefined4 s_TheOnlyPart_0064b4bf+3
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x10                           ; 0058f790
+    NOP                                 ; 0058f790
         ;   Label: core_skeledit.cpp_CDeformableModel_initSinglePart_FUN_0058f790
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058f795
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058f791
+    NOP                                 ; 0058f792
+    NOP                                 ; 0058f793
+    NOP                                 ; 0058f794
+    NOP                                 ; 0058f795
+    NOP                                 ; 0058f796
+    NOP                                 ; 0058f797
+    NOP                                 ; 0058f798
+    NOP                                 ; 0058f799
     PUSH EBX                            ; 0058f79a
     PUSH ESI                            ; 0058f79b
     PUSH EDI                            ; 0058f79c

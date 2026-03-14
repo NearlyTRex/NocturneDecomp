@@ -21,7 +21,7 @@ void __cdecl CTextureCache::freeTextures(CTextureCache *this_ptr);
 
 // Original: engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
 // Address: 005dcc00
-void __cdecl CTextureCache::loadTexture(CTextureCache *cache,char *texture_name);
+int __cdecl CTextureCache::loadTexture(CTextureCache *cache,char *texture_name);
 
 // Original: engine_texture.cpp_CTextureCache_findTexture_FUN_005dd180
 // Address: 005dd180

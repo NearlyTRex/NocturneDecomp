@@ -9,6 +9,5 @@
 CLodVert * __cdecl core_skeledit_cpp_CLodVert_dtor_FUN_005995c0(CLodVert *this_ptr,uint flags)
 
 {
-  __STK();
   return this_ptr;
 }

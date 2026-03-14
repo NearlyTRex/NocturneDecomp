@@ -12,16 +12,22 @@
 ; Called Functions:
 ;   core_motion.cpp_CMotionList_ctor_FUN_0052cd50
 ;   crt_memory.c___arrinit_FUN_005fe667
-;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x10                           ; 00599880
+    NOP                                 ; 00599880
         ;   Label: core_skeleton.cpp_CSkeleton_ctor_FUN_00599880
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00599885
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00599881
+    NOP                                 ; 00599882
+    NOP                                 ; 00599883
+    NOP                                 ; 00599884
+    NOP                                 ; 00599885
+    NOP                                 ; 00599886
+    NOP                                 ; 00599887
+    NOP                                 ; 00599888
+    NOP                                 ; 00599889
     MOV EAX,dword ptr [ESP + 0x4]       ; 0059988a
     PUSH EAX                            ; 0059988e
     CALL core_motion.cpp_CMotionList_ctor_FUN_0052cd50 ; 0059988f

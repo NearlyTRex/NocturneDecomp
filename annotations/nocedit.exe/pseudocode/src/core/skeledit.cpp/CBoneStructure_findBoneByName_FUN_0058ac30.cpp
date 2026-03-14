@@ -13,7 +13,6 @@ int __cdecl core_skeledit_cpp_CBoneStructure_findBoneByName_FUN_0058ac30(CBoneSt
   int iVar2;
   SBoneData *str1;
   
-  __STK();
   iVar2 = 0;
   if (0 < this_ptr->bone_count) {
     str1 = this_ptr->bones;

@@ -71,7 +71,6 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeledit.cpp_CBoneStructure_findBoneByName_FUN_0058ac30
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   crt_string.c__stricmp_FUN_005fe7f0
@@ -80,10 +79,17 @@
 
 section .text
 
-    PUSH 0x25c                          ; 0058a4a0
+    NOP                                 ; 0058a4a0
         ;   Label: core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058a4a5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058a4a1
+    NOP                                 ; 0058a4a2
+    NOP                                 ; 0058a4a3
+    NOP                                 ; 0058a4a4
+    NOP                                 ; 0058a4a5
+    NOP                                 ; 0058a4a6
+    NOP                                 ; 0058a4a7
+    NOP                                 ; 0058a4a8
+    NOP                                 ; 0058a4a9
     PUSH EBX                            ; 0058a4aa
     PUSH ESI                            ; 0058a4ab
     PUSH EDI                            ; 0058a4ac

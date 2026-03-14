@@ -17,7 +17,6 @@ int __cdecl core_skeledit_cpp_CDeformableModel_importTexturesS3D_FUN_0058b8e0(CD
   char local_214 [260];
   char local_110 [256];
   
-  __STK();
   iVar2 = 1;
   do {
     iVar1 = _fgetc(file_handle);

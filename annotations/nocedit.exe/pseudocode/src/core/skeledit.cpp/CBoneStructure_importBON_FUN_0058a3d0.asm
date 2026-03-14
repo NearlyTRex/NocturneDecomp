@@ -27,7 +27,6 @@
 ;   core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0
 ;   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
 ;   core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
@@ -37,10 +36,17 @@
 
 section .text
 
-    PUSH 0x30                           ; 0058a3d0
+    NOP                                 ; 0058a3d0
         ;   Label: core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058a3d5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058a3d1
+    NOP                                 ; 0058a3d2
+    NOP                                 ; 0058a3d3
+    NOP                                 ; 0058a3d4
+    NOP                                 ; 0058a3d5
+    NOP                                 ; 0058a3d6
+    NOP                                 ; 0058a3d7
+    NOP                                 ; 0058a3d8
+    NOP                                 ; 0058a3d9
     PUSH EBX                            ; 0058a3da
     PUSH ESI                            ; 0058a3db
     PUSH EDI                            ; 0058a3dc

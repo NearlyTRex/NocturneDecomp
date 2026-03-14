@@ -25,16 +25,22 @@
 ;   core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
 ;   core_xform.cpp_determinant_FUN_005f61c0
 ;   core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690
-;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x30                           ; 0058adb0
+    NOP                                 ; 0058adb0
         ;   Label: core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058adb5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058adb1
+    NOP                                 ; 0058adb2
+    NOP                                 ; 0058adb3
+    NOP                                 ; 0058adb4
+    NOP                                 ; 0058adb5
+    NOP                                 ; 0058adb6
+    NOP                                 ; 0058adb7
+    NOP                                 ; 0058adb8
+    NOP                                 ; 0058adb9
     PUSH EBX                            ; 0058adba
     PUSH ESI                            ; 0058adbb
     PUSH EDI                            ; 0058adbc

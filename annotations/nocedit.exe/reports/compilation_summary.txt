@@ -5,15 +5,15 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5776 (89.1%)
-Failed: 708
+Successful: 5778 (89.1%)
+Failed: 706
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1352
-  format_error                     800
-  incompatible_types               320
-  undeclared_identifier            221
+  other                           1359
+  format_error                     801
+  incompatible_types               319
+  undeclared_identifier            212
   syntax_error                      46
   missing_member                    20
   lvalue_required                   15
@@ -22,7 +22,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1352 errors)
+CATEGORY: other (1359 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -89,7 +89,7 @@ CATEGORY: other (1352 errors)
   ... and 285 more errors
 
 ====================================================================================================
-CATEGORY: format_error (800 errors)
+CATEGORY: format_error (801 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -153,10 +153,10 @@ CATEGORY: format_error (800 errors)
   engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60
     Line 35: format specifies type 'char *' but the argument has type 'CCheckOutItem *' [-Wer...
 
-  ... and 237 more errors
+  ... and 238 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (320 errors)
+CATEGORY: incompatible_types (319 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -170,7 +170,7 @@ CATEGORY: incompatible_types (320 errors)
   shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0
     Line 16: assigning to 'CComplexPolygon **' from incompatible type 'void *'...
   core_skeledit.cpp_viewModel_FUN_00598fc0
-    Line 153: assigning to 'CDeformableModelInstance *' from incompatible type 'void *'...
+    Line 152: assigning to 'CDeformableModelInstance *' from incompatible type 'void *'...
   core_actor.cpp_createActorByName_FUN_0040c430
     Line 26: assigning to 'CDemonActor *' from incompatible type 'void *'...
   core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380
@@ -220,10 +220,10 @@ CATEGORY: incompatible_types (320 errors)
   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
     Line 24: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 163 more errors
+  ... and 162 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (221 errors)
+CATEGORY: undeclared_identifier (212 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
@@ -287,7 +287,7 @@ CATEGORY: undeclared_identifier (221 errors)
   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
     Line 1190: use of undeclared identifier 'code'...
 
-  ... and 81 more errors
+  ... and 77 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (46 errors)
@@ -436,7 +436,7 @@ COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
 Average suspects in successfully compiled functions: 1.81
-Average suspects in failed compilations: 8.43
+Average suspects in failed compilations: 8.40
 
 Functions that compile but have suspect patterns: 1420
 (These may have runtime issues even though syntax is valid)

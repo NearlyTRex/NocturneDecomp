@@ -12,17 +12,21 @@
 ; XREF[1]:
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c25f
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x14                           ; 0058b160
+    NOP                                 ; 0058b160
         ;   Label: core_skeledit.cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058b160
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058b165
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058b161
+    NOP                                 ; 0058b162
+    NOP                                 ; 0058b163
+    NOP                                 ; 0058b164
+    NOP                                 ; 0058b165
+    NOP                                 ; 0058b166
+    NOP                                 ; 0058b167
+    NOP                                 ; 0058b168
+    NOP                                 ; 0058b169
     PUSH EBX                            ; 0058b16a
     PUSH ESI                            ; 0058b16b
     PUSH EBP                            ; 0058b16c

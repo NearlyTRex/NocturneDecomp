@@ -20,6 +20,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   int iVar8;
   CMatrix3x4f *pCVar9;
   byte bVar10;
+  byte bVar3;
   int aiStack_430 [200];
   byte local_110 [2];
   int local_10e;
@@ -46,8 +47,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
   _FILE *file;
   byte *pbVar1;
   
-  bVar10 = 0;
-  __STK();
+  bVar3 = 0;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Importing vertex assignments from %s...",filename);
   local_28 = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -136,8 +136,8 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0
         pCVar7 = &local_d8;
         pCVar9 = &local_a8;
         for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-          pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar10 * -8 + 4);
-          pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar10 * -8 + 4);
+          pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar3 * -8 + 4);
+          pCVar7 = (CMatrix3x4f *)((int)pCVar7 + (uint)bVar3 * -8 + 4);
           pCVar9->m[0].w = pCVar7->m[0].w;
           pCVar7 = pCVar7;
           pCVar9 = pCVar9;

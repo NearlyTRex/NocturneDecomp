@@ -42,6 +42,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   CMatrix3x4f *pCVar18;
   char *pcVar19;
   byte bVar20;
+  byte bVar24;
   CPickList local_1900;
   CPickList local_1558;
   CPickList local_11b0;
@@ -165,8 +166,7 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(C
   ushort uVar21;
   ushort uVar22;
   
-  bVar20 = 0;
-  __STK();
+  bVar24 = 0;
   core_skeleton_cpp_freeAllSkeletons_FUN_005a1ea0();
   core_skeleton_cpp_freeAllModels_FUN_005a1dc0();
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr);
@@ -473,8 +473,8 @@ LAB_0059722b:
       pCVar23 = &local_2f0;
       for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
         pCVar23->m[0].w = pCVar22->m[0].w;
-        pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar20 * -2 + 1) * 4);
-        pCVar23 = (CMatrix3x4f *)((int)pCVar23 + ((uint)bVar20 * -2 + 1) * 4);
+        pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar24 * -2 + 1) * 4);
+        pCVar23 = (CMatrix3x4f *)((int)pCVar23 + ((uint)bVar24 * -2 + 1) * 4);
       }
       pCVar17 = core_xform_cpp_getTranslation_FUN_005f6110(&local_2f0,&local_16c);
       if ((CVector3f *)local_200 != pCVar17) {
@@ -521,10 +521,10 @@ LAB_0059722b:
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr2,&local_d0,&local_dc);
       local_154.x = (int)CVector3f_006819fc.x;
-      *(uint *)((int)&local_154 + (uint)bVar20 * -8 + 4) =
-           *(uint *)((int)&CVector3f_006819fc + (uint)bVar20 * -8 + 4);
-      *(uint *)((int)&local_154 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
-           *(uint *)((uint)bVar20 * -8 + 0x681a04 + (uint)bVar20 * -8);
+      *(uint *)((int)&local_154 + (uint)bVar24 * -8 + 4) =
+           *(uint *)((int)&CVector3f_006819fc + (uint)bVar24 * -8 + 4);
+      *(uint *)((int)&local_154 + (uint)bVar24 * -8 + (uint)bVar24 * -8 + 8) =
+           *(uint *)((uint)bVar24 * -8 + 0x681a04 + (uint)bVar24 * -8);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr2->vertex_buffer_ptr->projected_vertex,&local_154);
       local_154.x = 0xf00;
@@ -688,8 +688,8 @@ LAB_005975b4:
       pCVar16 = &local_290;
       pCVar18 = &local_260;
       for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-        pCVar18 = (CMatrix3x4f *)((int)pCVar18 + (uint)bVar20 * -8 + 4);
-        pCVar16 = (CMatrix3x4f *)((int)pCVar16 + (uint)bVar20 * -8 + 4);
+        pCVar18 = (CMatrix3x4f *)((int)pCVar18 + (uint)bVar24 * -8 + 4);
+        pCVar16 = (CMatrix3x4f *)((int)pCVar16 + (uint)bVar24 * -8 + 4);
         pCVar18->m[0].w = pCVar16->m[0].w;
         pCVar16 = pCVar16;
         pCVar18 = pCVar18;

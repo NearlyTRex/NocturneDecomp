@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6484
-Clean functions: 4986 (76.9%)
+Clean functions: 4989 (76.9%)
 Files at 100%: 40
 Files at 90%+: 79
 Files at 50%+: 202
@@ -335,6 +335,11 @@ FILES AT 50-89%
            - core_flies.cpp_CFlies_process_FUN_004cbf00 (124 lines) [decompiler_intrinsic, pointer_cast]
            - core_flies.cpp_CFlies_renderOpaque_FUN_004cc300 (153 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
            - core_flies.cpp_drawFlyPixel_FUN_004cc230 (51 lines) [decompiler_intrinsic, mmx_assembly, nonstandard_int, pointer_cast, unknown_field]
+   86.4% | engine/texture.cpp
+         19/22 clean, 3 remaining
+           - engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930 (6 lines) [param_count_too_many]
+           - engine_texture.cpp_updateTextureWithPalette_FUN_005dd900 (7 lines) [param_count_too_many]
+           - engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200 (118 lines) [pointer_cast, warning_unreachable]
    86.0% | core/inv.cpp
          37/43 clean, 6 remaining
            - core_inv.cpp_CInventory_clear_FUN_004fd0e0 (24 lines) [warning_unreachable]
@@ -563,12 +568,6 @@ FILES AT 50-89%
            - wincore_windll.cpp_transformPoint_FUN_005b5a25 (110 lines) [mmx_assembly]
            - wincore_windll.cpp_restoreVideoMode_FUN_005b75b0 (10 lines) [param_count_too_few]
            - wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7 (106 lines) [decompiler_intrinsic, mmx_assembly, nonstandard_int, undefined_type]
-   81.8% | engine/texture.cpp
-         18/22 clean, 4 remaining
-           - engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930 (6 lines) [param_count_too_many]
-           - engine_texture.cpp_updateTextureWithPalette_FUN_005dd900 (7 lines) [param_count_too_many]
-           - engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00 (249 lines) [unaffected_reg]
-           - engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200 (118 lines) [pointer_cast, warning_unreachable]
    81.5% | core/gore.cpp
          44/54 clean, 10 remaining
            - core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0 (56 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array, warning_inlined_function]
@@ -1029,11 +1028,11 @@ FILES AT 50-89%
            - core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850 (259 lines) [decompiler_intrinsic, stack_param]
    71.4% | shape/cramtex.cpp
          15/21 clean, 6 remaining
-           - shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (833 lines) [pointer_cast]
+           - shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 (832 lines) [pointer_cast]
            - shape_cramtex.cpp_generateTextureAtlas_FUN_00445820 (353 lines) [pointer_cast]
-           - shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80 (22 lines) [decompiler_intrinsic]
+           - shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80 (21 lines) [decompiler_intrinsic]
            - shape_cramtex.cpp_placementCollisionCheck_FUN_00448260 (59 lines) [pointer_cast]
-           - shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590 (144 lines) [register_param]
+           - shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590 (143 lines) [register_param]
            - shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90 (406 lines) [pointer_cast]
    70.5% | core/bugs.cpp
          31/44 clean, 13 remaining
@@ -1281,6 +1280,34 @@ FILES AT 50-89%
            - shape_quantize.cpp_quantizeRawPixelData_FUN_00556490 (163 lines) [unaffected_reg]
            - shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70 (48 lines) [pointer_cast]
            - shape_quantize.cpp_CColorQuantizer_getPixelSortKey_FUN_00554ff0 (23 lines) [unknown_field]
+   64.9% | core/skeledit.cpp
+         48/74 clean, 26 remaining
+           - core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60 (73 lines) [pointer_cast]
+           - core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (255 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation]
+           - core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (155 lines) [pointer_cast]
+           - core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80 (53 lines) [pointer_cast]
+           - core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0 (101 lines) [pointer_cast]
+           - core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (1900 lines) [decompiler_intrinsic, format_string_mismatch, pointer_cast, unknown_field, warning_inlined_function]
+           - core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (243 lines) [pointer_cast]
+           - core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0 (32 lines) [decompiler_intrinsic, sub84_truncation]
+           - core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0 (85 lines) [pointer_cast]
+           - core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (242 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
+           - core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1103 lines) [decompiler_intrinsic, pointer_cast, stack_ref, suspect_float, unknown_field, warning_inlined_function]
+           - core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0 (44 lines) [pointer_cast]
+           - core_skeledit.cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30 (42 lines) [pointer_cast]
+           - core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0 (102 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
+           - core_skeledit.cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40 (37 lines) [pointer_cast]
+           - core_skeledit.cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0 (86 lines) [pointer_cast]
+           - core_skeledit.cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0 (35 lines) [pointer_cast]
+           - core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240 (98 lines) [decompiler_intrinsic, pointer_cast]
+           - core_skeledit.cpp_CSkeleton_scaleFramePositions_FUN_0058b260 (19 lines) [pointer_cast]
+           - core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1494 lines) [bare_stack_ref, decompiler_intrinsic, negative_offset, pointer_cast, warning_inlined_function]
+           - core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (152 lines) [pointer_cast]
+           - core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (716 lines) [pointer_cast, unknown_field]
+           - core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (187 lines) [pointer_cast]
+           - core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058de70 (85 lines) [pointer_cast]
+           - core_skeledit.cpp_CBoneStructure_applyMatrixArray_FUN_0058af40 (36 lines) [pointer_cast]
+           - core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10 (71 lines) [pointer_cast]
    64.3% | core/bride.cpp
          9/14 clean, 5 remaining
            - core_bride.cpp_CBride_getTargetPoints_FUN_00424a10 (28 lines) [warning_type_propagation]
@@ -1331,36 +1358,6 @@ FILES AT 50-89%
            - core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670 (165 lines) [pointer_cast]
            - core_dlight.cpp_CDemonLight_blitZBuffer_FUN_00472c70 (25 lines) [pointer_cast]
            - core_dlight.cpp_drawGrayscalePixel_FUN_00473360 (5 lines) [pointer_cast]
-   62.2% | core/skeledit.cpp
-         46/74 clean, 28 remaining
-           - core_skeledit.cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60 (74 lines) [pointer_cast]
-           - core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0 (256 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation]
-           - core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690 (156 lines) [pointer_cast]
-           - core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80 (53 lines) [pointer_cast]
-           - core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0 (102 lines) [pointer_cast]
-           - core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (1902 lines) [decompiler_intrinsic, format_string_mismatch, pointer_cast, stack_param, stack_ref, unknown_field, warning_inlined_function]
-           - core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0 (243 lines) [pointer_cast]
-           - core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0 (33 lines) [decompiler_intrinsic, sub84_truncation]
-           - core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0 (30 lines) [stack_param, stack_ref]
-           - core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0 (86 lines) [pointer_cast]
-           - core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790 (242 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
-           - core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (1103 lines) [decompiler_intrinsic, pointer_cast, stack_ref, suspect_float, unknown_field, warning_inlined_function]
-           - core_skeledit.cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0 (45 lines) [pointer_cast]
-           - core_skeledit.cpp_CBoneStructure_computeWorldMatrices_FUN_0058ad30 (42 lines) [pointer_cast]
-           - core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0 (103 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
-           - core_skeledit.cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40 (38 lines) [pointer_cast]
-           - core_skeledit.cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0 (87 lines) [pointer_cast]
-           - core_skeledit.cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0 (35 lines) [pointer_cast]
-           - core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240 (116 lines) [bare_stack_ref, pointer_cast]
-           - core_skeledit.cpp_CSkeleton_scaleFramePositions_FUN_0058b260 (20 lines) [pointer_cast]
-           - core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (1494 lines) [bare_stack_ref, decompiler_intrinsic, negative_offset, pointer_cast, warning_inlined_function]
-           - core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 (152 lines) [pointer_cast]
-           - core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 (714 lines) [pointer_cast, stack_param, stack_ref]
-           - core_skeledit.cpp_copyBoneData_FUN_00599480 (43 lines) [pointer_cast]
-           - core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120 (188 lines) [pointer_cast]
-           - core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058de70 (86 lines) [pointer_cast]
-           - core_skeledit.cpp_CBoneStructure_applyMatrixArray_FUN_0058af40 (36 lines) [pointer_cast]
-           - core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10 (72 lines) [pointer_cast]
    61.5% | core/mobster.cpp
          16/26 clean, 10 remaining
            - core_mobster.cpp_CMobster_processWeaponPickup_FUN_00526d90 (148 lines) [decompiler_intrinsic, warning_type_propagation]

@@ -21,7 +21,6 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_string.c_strstr_FUN_005fedd0
 ;
@@ -29,10 +28,17 @@
 
 section .text
 
-    PUSH 0x1c                           ; 005895f0
+    NOP                                 ; 005895f0
         ;   Label: core_skeledit.cpp_readNonEmptyLine_FUN_005895f0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 005895f5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 005895f1
+    NOP                                 ; 005895f2
+    NOP                                 ; 005895f3
+    NOP                                 ; 005895f4
+    NOP                                 ; 005895f5
+    NOP                                 ; 005895f6
+    NOP                                 ; 005895f7
+    NOP                                 ; 005895f8
+    NOP                                 ; 005895f9
     PUSH EBX                            ; 005895fa
     PUSH ESI                            ; 005895fb
     PUSH EDI                            ; 005895fc

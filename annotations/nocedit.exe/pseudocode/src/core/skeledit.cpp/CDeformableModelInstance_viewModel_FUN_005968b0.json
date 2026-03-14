@@ -120,10 +120,10 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 3337,
+    "assembly_lines": 3344,
     "complexity_score": 1403,
     "cross_reference_count": 2,
-    "function_call_count": 91,
+    "function_call_count": 90,
     "global_count": 146,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1103,
@@ -136,7 +136,7 @@
       "unknown_field",
       "warning_inlined_function"
     ],
-    "total_lines": 4440
+    "total_lines": 4447
   },
   "cross_references": [
     {
@@ -169,7 +169,6 @@
       ]
     ],
     "convention": "__cdecl",
-    "is_ebp_frame": true,
     "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
     "signature": "void __cdecl core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(CDeformableModelInstance *this_ptr)"
   },
@@ -403,11 +402,6 @@
       "addr": "005fe6b0",
       "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
-    },
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fdbd0",
@@ -1540,17 +1534,17 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.901221264367816,
-    "instruction_count": 2784,
+    "avg_pcode_per_instr": 4.885028653295129,
+    "instruction_count": 2792,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 69,
       "BOOL_OR": 21,
       "BRANCH": 39,
-      "CALL": 242,
+      "CALL": 241,
       "CALLIND": 52,
       "CBRANCH": 138,
-      "COPY": 3839,
+      "COPY": 3838,
       "FLOAT2FLOAT": 221,
       "FLOAT_ADD": 29,
       "FLOAT_DIV": 1,
@@ -1578,18 +1572,18 @@
       "INT_SLESS": 579,
       "INT_SREM": 1,
       "INT_SRIGHT": 6,
-      "INT_SUB": 1117,
+      "INT_SUB": 1115,
       "INT_XOR": 30,
       "INT_ZEXT": 48,
       "LOAD": 524,
       "POPCOUNT": 567,
       "RETURN": 1,
       "ROUND": 2,
-      "STORE": 1249,
+      "STORE": 1247,
       "SUBPIECE": 14,
       "TRUNC": 2
     },
-    "pcode_op_count": 13645
+    "pcode_op_count": 13639
   },
   "stack_frame": {
     "frame_size": 6408,
@@ -2436,7 +2430,7 @@
       "line": 469,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar20 * -2 + 1) * 4);",
+      "text": "pCVar22 = (CMatrix3x4f *)((int)pCVar22 + ((uint)bVar24 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -2444,7 +2438,7 @@
       "line": 470,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar23 = (CMatrix3x4f *)((int)pCVar23 + ((uint)bVar20 * -2 + 1) * 4);",
+      "text": "pCVar23 = (CMatrix3x4f *)((int)pCVar23 + ((uint)bVar24 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -2500,7 +2494,7 @@
       "line": 517,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&local_154 + (uint)bVar20 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_154 + (uint)bVar24 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -2508,7 +2502,7 @@
       "line": 518,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&CVector3f_006819fc + (uint)bVar20 * -8 + 4);",
+      "text": "*(uint *)((int)&CVector3f_006819fc + (uint)bVar24 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -2516,7 +2510,7 @@
       "line": 519,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&local_154 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =",
+      "text": "*(uint *)((int)&local_154 + (uint)bVar24 * -8 + (uint)bVar24 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
@@ -2580,7 +2574,7 @@
       "line": 684,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar18 = (CMatrix3x4f *)((int)pCVar18 + (uint)bVar20 * -8 + 4);",
+      "text": "pCVar18 = (CMatrix3x4f *)((int)pCVar18 + (uint)bVar24 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -2588,7 +2582,7 @@
       "line": 685,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar16 = (CMatrix3x4f *)((int)pCVar16 + (uint)bVar20 * -8 + 4);",
+      "text": "pCVar16 = (CMatrix3x4f *)((int)pCVar16 + (uint)bVar24 * -8 + 4);",
       "type": "pointer_cast"
     },
     {

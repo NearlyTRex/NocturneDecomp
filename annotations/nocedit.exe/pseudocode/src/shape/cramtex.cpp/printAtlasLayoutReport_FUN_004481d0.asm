@@ -25,17 +25,23 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x40                           ; 004481d0
+    NOP                                 ; 004481d0
         ;   Label: shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 004481d5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 004481d1
+    NOP                                 ; 004481d2
+    NOP                                 ; 004481d3
+    NOP                                 ; 004481d4
+    NOP                                 ; 004481d5
+    NOP                                 ; 004481d6
+    NOP                                 ; 004481d7
+    NOP                                 ; 004481d8
+    NOP                                 ; 004481d9
     PUSH EBX                            ; 004481da
     PUSH ESI                            ; 004481db
     PUSH EDI                            ; 004481dc

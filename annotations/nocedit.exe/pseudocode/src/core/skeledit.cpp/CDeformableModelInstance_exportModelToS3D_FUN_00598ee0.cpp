@@ -13,7 +13,6 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_exportModelToS3D_FUN_005
   int lod_level;
   CMatrix3x4f *bone_matrices;
   
-  __STK();
   bone_matrices = (this_ptr->bone_transform).bone_world_matrices;
   lod_level = 0;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);

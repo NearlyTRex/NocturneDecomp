@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 336,
-    "complexity_score": 199,
+    "assembly_lines": 343,
+    "complexity_score": 198,
     "cross_reference_count": 0,
-    "function_call_count": 5,
+    "function_call_count": 4,
     "global_count": 11,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 144,
+    "pseudocode_lines": 143,
     "suspect_count": 5,
     "suspect_types": [
       "register_param"
     ],
-    "total_lines": 480
+    "total_lines": 486
   },
   "cross_references": [],
   "function": {
@@ -32,11 +32,6 @@
     "signature": "uint __cdecl shape_cramtex_cpp_performGapFillingOptimization_FUN_00447590(void)"
   },
   "function_calls": [
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
-    },
     {
       "addr": "004478c0",
       "is_variadic": false,
@@ -135,16 +130,16 @@
     "estimated_params": 0
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.685393258426966,
-    "instruction_count": 267,
+    "avg_pcode_per_instr": 5.498181818181818,
+    "instruction_count": 275,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 34,
       "BOOL_OR": 6,
       "BRANCH": 4,
-      "CALL": 15,
+      "CALL": 14,
       "CBRANCH": 24,
-      "COPY": 186,
+      "COPY": 185,
       "INT_ADD": 106,
       "INT_AND": 295,
       "INT_CARRY": 35,
@@ -158,15 +153,15 @@
       "INT_SEXT": 3,
       "INT_SLESS": 106,
       "INT_SRIGHT": 18,
-      "INT_SUB": 73,
+      "INT_SUB": 71,
       "INT_XOR": 9,
       "LOAD": 44,
       "POPCOUNT": 106,
       "RETURN": 1,
-      "STORE": 60,
+      "STORE": 58,
       "SUBPIECE": 2
     },
-    "pcode_op_count": 1518
+    "pcode_op_count": 1512
   },
   "stack_frame": {
     "frame_size": 32,
@@ -209,7 +204,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 132,
+      "line": 131,
       "match": "in_EAX",
       "severity": "mild",
       "text": "in_EAX = g_CramTextureCount;",
@@ -217,7 +212,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 139,
+      "line": 138,
       "match": "in_EAX",
       "severity": "mild",
       "text": "in_EAX = shape_cramtex_cpp_CCramTex_findLowestOverlappingY_FUN_00447930(pCVar9);",
@@ -225,7 +220,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 141,
+      "line": 140,
       "match": "in_EAX",
       "severity": "mild",
       "text": "pCVar9->final_bottom = in_EAX;",
@@ -233,7 +228,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 146,
+      "line": 145,
       "match": "in_EAX",
       "severity": "mild",
       "text": "return in_EAX;",

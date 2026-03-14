@@ -11,17 +11,21 @@
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c274
 ;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 00592f90
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x14                           ; 0058b200
+    NOP                                 ; 0058b200
         ;   Label: core_skeledit.cpp_CBoneStructure_doesHierarchyMatch_FUN_0058b200
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058b205
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058b201
+    NOP                                 ; 0058b202
+    NOP                                 ; 0058b203
+    NOP                                 ; 0058b204
+    NOP                                 ; 0058b205
+    NOP                                 ; 0058b206
+    NOP                                 ; 0058b207
+    NOP                                 ; 0058b208
+    NOP                                 ; 0058b209
     PUSH EBX                            ; 0058b20a
     PUSH ESI                            ; 0058b20b
     PUSH EDI                            ; 0058b20c

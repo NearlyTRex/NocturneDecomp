@@ -19,7 +19,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_scaleAllVertices_FUN_0058e3e0(CD
   int local_18;
   int local_14;
   
-  __STK();
   local_18 = 0;
   if (0 < this_ptr->num_lods) {
     local_14 = 0;

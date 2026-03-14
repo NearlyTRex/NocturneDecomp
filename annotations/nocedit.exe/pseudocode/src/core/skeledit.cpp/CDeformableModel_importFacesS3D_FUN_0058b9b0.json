@@ -4,43 +4,43 @@
       {
         "category": "format_error",
         "column": 79,
-        "line": 51,
+        "line": 50,
         "message": "format specifies type 'int *' but the argument has type 'ushort *' (aka 'unsigned short *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 36,
-        "line": 52,
+        "line": 51,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 45,
-        "line": 52,
+        "line": 51,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 54,
-        "line": 52,
+        "line": 51,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 63,
-        "line": 52,
+        "line": 51,
         "message": "format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 72,
-        "line": 52,
+        "line": 51,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 81,
-        "line": 52,
+        "line": 51,
         "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       }
     ],
@@ -48,20 +48,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 243,
-    "complexity_score": 198,
+    "assembly_lines": 250,
+    "complexity_score": 197,
     "cross_reference_count": 2,
-    "function_call_count": 6,
+    "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 103,
+    "pseudocode_lines": 102,
     "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 346
+    "total_lines": 352
   },
   "cross_references": [
     {
@@ -104,11 +104,6 @@
       "addr": "005fe6b0",
       "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
-    },
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fe840",
@@ -173,16 +168,16 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.2615384615384615,
-    "instruction_count": 195,
+    "avg_pcode_per_instr": 5.024630541871921,
+    "instruction_count": 203,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 6,
       "BOOL_OR": 5,
       "BRANCH": 5,
-      "CALL": 8,
+      "CALL": 7,
       "CBRANCH": 16,
-      "COPY": 342,
+      "COPY": 341,
       "FLOAT2FLOAT": 23,
       "FLOAT_ADD": 2,
       "FLOAT_EQUAL": 2,
@@ -202,17 +197,17 @@
       "INT_SBORROW": 12,
       "INT_SCARRY": 13,
       "INT_SLESS": 40,
-      "INT_SUB": 39,
+      "INT_SUB": 37,
       "INT_XOR": 9,
       "INT_ZEXT": 8,
       "LOAD": 44,
       "POPCOUNT": 40,
       "RETURN": 2,
       "ROUND": 2,
-      "STORE": 52,
+      "STORE": 50,
       "TRUNC": 2
     },
-    "pcode_op_count": 1026
+    "pcode_op_count": 1020
   },
   "stack_frame": {
     "frame_size": 96,
@@ -360,7 +355,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 73,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)this_ptr->index_data_ptr[0] + iVar4) = local_28;",
@@ -368,7 +363,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 75,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "puVar4 = (ushort *)((int)&(pSVar1->vertex_indices).vertex_index_0 + iVar6);",
@@ -376,7 +371,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 77,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "*puVar4 = *(ushort *)((int)local_3c + iVar1);",
@@ -384,7 +379,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 78,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar1 + -4) - local_24) *",
@@ -392,7 +387,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 79,
+      "line": 78,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_20 = (int)ROUND(ROUND((*(float *)(local_44 + iVar1 + -4) - local_24) *",
@@ -400,7 +395,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 80,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar1 + -4) - local_18) *",
@@ -408,7 +403,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 80,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_14 = (int)ROUND(ROUND((*(float *)(local_50 + iVar1 + -4) - local_18) *",

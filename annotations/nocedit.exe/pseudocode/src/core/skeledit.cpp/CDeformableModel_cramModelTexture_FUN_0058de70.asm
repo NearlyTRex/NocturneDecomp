@@ -22,7 +22,6 @@
 ;   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190 at 0058c512
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   engine_texture.cpp_clearTextureCache_FUN_005dd8e0
 ;   shape_design.c_cramTextureList_FUN_0046bb80
 ;   shape_design.c_cramTextures_FUN_0046a970
@@ -34,10 +33,17 @@
 
 section .text
 
-    PUSH 0xb0                           ; 0058de70
+    NOP                                 ; 0058de70
         ;   Label: core_skeledit.cpp_CDeformableModel_cramModelTexture_FUN_0058de70
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058de75
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058de71
+    NOP                                 ; 0058de72
+    NOP                                 ; 0058de73
+    NOP                                 ; 0058de74
+    NOP                                 ; 0058de75
+    NOP                                 ; 0058de76
+    NOP                                 ; 0058de77
+    NOP                                 ; 0058de78
+    NOP                                 ; 0058de79
     PUSH EBX                            ; 0058de7a
     PUSH ESI                            ; 0058de7b
     PUSH EDI                            ; 0058de7c

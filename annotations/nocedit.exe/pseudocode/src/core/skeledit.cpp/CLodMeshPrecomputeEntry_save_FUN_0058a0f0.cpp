@@ -9,7 +9,6 @@
 void __cdecl core_skeledit_cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0(CLodMeshPrecomputeEntry *this_ptr,_FILE *file_handle)
 
 {
-  __STK();
   _fprintf(file_handle,"// version\n");
   _fprintf(file_handle,"1\n");
   _fprintf(file_handle,"// posFilename\n");

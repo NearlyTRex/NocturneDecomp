@@ -11,7 +11,6 @@ int __cdecl core_skeledit_cpp_parseTransitionType_FUN_005925c0(char *type_name)
 {
   int iVar1;
   
-  __STK();
   iVar1 = _stricmp(type_name,"skipTo");
   if (iVar1 == 0) {
     return 1;

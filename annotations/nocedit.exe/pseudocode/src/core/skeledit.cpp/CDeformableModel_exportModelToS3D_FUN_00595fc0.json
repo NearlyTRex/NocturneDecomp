@@ -4,97 +4,97 @@
       {
         "category": "other",
         "column": 49,
-        "line": 70,
+        "line": 69,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "incompatible_types",
         "column": 10,
-        "line": 73,
+        "line": 72,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       },
       {
         "category": "format_error",
         "column": 45,
-        "line": 144,
+        "line": 143,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 24,
-        "line": 145,
+        "line": 144,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 146,
+        "line": 145,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
         "column": 51,
-        "line": 164,
+        "line": 163,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 79,
-        "line": 165,
+        "line": 164,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 166,
+        "line": 165,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
         "column": 22,
-        "line": 188,
+        "line": 187,
         "message": "format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 81,
-        "line": 189,
+        "line": 188,
         "message": "format specifies type 'double' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 190,
+        "line": 189,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 214,
+        "line": 213,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 37,
-        "line": 227,
+        "line": 226,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 238,
+        "line": 237,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 248,
+        "line": 247,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 257,
+        "line": 256,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -102,20 +102,20 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 784,
-    "complexity_score": 391,
+    "assembly_lines": 791,
+    "complexity_score": 390,
     "cross_reference_count": 1,
-    "function_call_count": 16,
+    "function_call_count": 15,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 256,
+    "pseudocode_lines": 255,
     "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation"
     ],
-    "total_lines": 1040
+    "total_lines": 1046
   },
   "cross_references": [
     {
@@ -134,7 +134,6 @@
       ]
     ],
     "convention": "__cdecl",
-    "is_ebp_frame": true,
     "name": "core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0",
     "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CDeformableModel *this_ptr,char *output_filename,int lod_level,CMatrix3x4f *bone_matrices)"
   },
@@ -153,11 +152,6 @@
       "addr": "005fde40",
       "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005fde40"
-    },
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fdbd0",
@@ -465,15 +459,15 @@
     "estimated_params": 4
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.436681222707423,
-    "instruction_count": 687,
+    "avg_pcode_per_instr": 5.365467625899281,
+    "instruction_count": 695,
     "opcode_distribution": {
       "BOOL_NEGATE": 68,
       "BOOL_OR": 8,
       "BRANCH": 3,
-      "CALL": 38,
+      "CALL": 37,
       "CBRANCH": 27,
-      "COPY": 834,
+      "COPY": 833,
       "FLOAT2FLOAT": 20,
       "FLOAT_MULT": 12,
       "INT2FLOAT": 12,
@@ -490,15 +484,15 @@
       "INT_SCARRY": 89,
       "INT_SEXT": 12,
       "INT_SLESS": 207,
-      "INT_SUB": 188,
+      "INT_SUB": 186,
       "INT_XOR": 44,
       "LOAD": 200,
       "POPCOUNT": 181,
       "RETURN": 2,
-      "STORE": 228,
+      "STORE": 226,
       "SUBPIECE": 8
     },
-    "pcode_op_count": 3735
+    "pcode_op_count": 3729
   },
   "stack_frame": {
     "frame_size": 852,
@@ -820,7 +814,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 122,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)aiStack_140 + local_78) = 0;",
@@ -828,7 +822,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 131,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)aiStack_140 + local_78) = *(int *)((int)aiStack_140 + local_78) + 1;",
@@ -836,7 +830,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 131,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)aiStack_140 + local_78) = *(int *)((int)aiStack_140 + local_78) + 1;",
@@ -844,7 +838,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 137,
+      "line": 136,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(local_340,\"%g,%g,%g\",SUB84(__BITCAST_UINT64((double)local_a8.x),0),",
@@ -852,7 +846,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 137,
+      "line": 136,
       "match": "SUB84",
       "severity": "mild",
       "text": "(local_340,\"%g,%g,%g\",SUB84(__BITCAST_UINT64((double)local_a8.x),0),",
@@ -860,7 +854,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 153,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)this_ptr->index_data_ptr[lod_level] + local_28),",
@@ -868,7 +862,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 157,
+      "line": 156,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "(double)puVar2[4] * 0.00390625,SUB84(__BITCAST_UINT64((double)puVar2[7] * 0.00390625),0),",
@@ -876,7 +870,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 157,
+      "line": 156,
       "match": "SUB84",
       "severity": "mild",
       "text": "(double)puVar2[4] * 0.00390625,SUB84(__BITCAST_UINT64((double)puVar2[7] * 0.00390625),0),",
@@ -884,7 +878,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 181,
+      "line": 180,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "SUB84(__BITCAST_UINT64((double)puVar6[7] * 0.00390625),0),",
@@ -892,7 +886,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 181,
+      "line": 180,
       "match": "SUB84",
       "severity": "mild",
       "text": "SUB84(__BITCAST_UINT64((double)puVar6[7] * 0.00390625),0),",
@@ -900,7 +894,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
+      "line": 219,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "_fprintf(file,\"%d,%d,%d,%d,\\\"%s\\\"\\n\",local_88,*(uint *)((int)aiStack_140 + iVar1),",
@@ -908,7 +902,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 222,
+      "line": 221,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_88 = local_88 + *(int *)((int)aiStack_140 + iVar1);",

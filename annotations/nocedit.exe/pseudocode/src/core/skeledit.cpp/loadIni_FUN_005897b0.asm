@@ -24,7 +24,6 @@
 ;   undefined4 DAT_03670a59
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;   crt_stdio.c_remove_FUN_005ff9d0
@@ -36,10 +35,17 @@
 
 section .text
 
-    PUSH 0x28                           ; 005897b0
+    NOP                                 ; 005897b0
         ;   Label: core_skeledit.cpp_loadIni_FUN_005897b0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 005897b5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 005897b1
+    NOP                                 ; 005897b2
+    NOP                                 ; 005897b3
+    NOP                                 ; 005897b4
+    NOP                                 ; 005897b5
+    NOP                                 ; 005897b6
+    NOP                                 ; 005897b7
+    NOP                                 ; 005897b8
+    NOP                                 ; 005897b9
     PUSH EBX                            ; 005897ba
     PUSH ESI                            ; 005897bb
     PUSH EDI                            ; 005897bc

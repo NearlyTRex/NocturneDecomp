@@ -37,7 +37,6 @@
 ;   core_skeledit.cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0
 ;   crt_math.c_floor_FUN_005feb90
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;
@@ -45,10 +44,17 @@
 
 section .text
 
-    PUSH 0x88                           ; 0058b9b0
+    NOP                                 ; 0058b9b0
         ;   Label: core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058b9b5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058b9b1
+    NOP                                 ; 0058b9b2
+    NOP                                 ; 0058b9b3
+    NOP                                 ; 0058b9b4
+    NOP                                 ; 0058b9b5
+    NOP                                 ; 0058b9b6
+    NOP                                 ; 0058b9b7
+    NOP                                 ; 0058b9b8
+    NOP                                 ; 0058b9b9
     PUSH EBX                            ; 0058b9ba
     PUSH ESI                            ; 0058b9bb
     PUSH EDI                            ; 0058b9bc

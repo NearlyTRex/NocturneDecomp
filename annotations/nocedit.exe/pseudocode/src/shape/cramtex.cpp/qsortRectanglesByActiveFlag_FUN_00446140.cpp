@@ -9,6 +9,5 @@
 int __cdecl shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140(SCramRectangle **rect_a,SCramRectangle **rect_b)
 
 {
-  __STK();
   return (*rect_a)->active_flag - (*rect_b)->active_flag;
 }

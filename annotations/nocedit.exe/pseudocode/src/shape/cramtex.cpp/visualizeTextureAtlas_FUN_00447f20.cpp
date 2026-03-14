@@ -39,7 +39,6 @@ void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textu
   int *piVar1;
   int *piVar4;
   
-  __STK();
   g_CramMapNumber = g_CramMapNumber % g_CramTotalMaps;
   iVar4 = 0;
   iVar7 = 0;

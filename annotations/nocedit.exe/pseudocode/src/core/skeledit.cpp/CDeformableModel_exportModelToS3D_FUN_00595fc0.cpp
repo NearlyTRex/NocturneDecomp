@@ -62,7 +62,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0(CD
   uint local_14;
   _FILE *p_Var1;
   
-  __STK();
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (output_filename,(char *)0x0,"wt","..\\core\\skeledit.cpp",0x155d);
   if (file == (_FILE *)0x0) {

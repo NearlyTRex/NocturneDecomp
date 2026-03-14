@@ -7,17 +7,21 @@
 ; CSkeleton *      Stack[0x4]:4   this_ptr
 ; float            Stack[0x8]:4   scale
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x8                            ; 0058b260
+    NOP                                 ; 0058b260
         ;   Label: core_skeledit.cpp_CSkeleton_scaleFramePositions_FUN_0058b260
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058b265
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058b261
+    NOP                                 ; 0058b262
+    NOP                                 ; 0058b263
+    NOP                                 ; 0058b264
+    NOP                                 ; 0058b265
+    NOP                                 ; 0058b266
+    NOP                                 ; 0058b267
+    NOP                                 ; 0058b268
+    NOP                                 ; 0058b269
     PUSH EBX                            ; 0058b26a
     MOV EBX,dword ptr [ESP + 0x8]       ; 0058b26b
     MOV ECX,dword ptr [EBX + 0x2936c]   ; 0058b26f

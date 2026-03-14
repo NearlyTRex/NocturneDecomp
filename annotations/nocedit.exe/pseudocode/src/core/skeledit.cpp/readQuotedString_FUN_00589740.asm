@@ -8,17 +8,23 @@
 ; char *           Stack[0x8]:4   buffer
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x10                           ; 00589740
+    NOP                                 ; 00589740
         ;   Label: core_skeledit.cpp_readQuotedString_FUN_00589740
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589745
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00589741
+    NOP                                 ; 00589742
+    NOP                                 ; 00589743
+    NOP                                 ; 00589744
+    NOP                                 ; 00589745
+    NOP                                 ; 00589746
+    NOP                                 ; 00589747
+    NOP                                 ; 00589748
+    NOP                                 ; 00589749
     PUSH EBX                            ; 0058974a
     PUSH ESI                            ; 0058974b
     MOV ESI,dword ptr [ESP + 0xc]       ; 0058974c

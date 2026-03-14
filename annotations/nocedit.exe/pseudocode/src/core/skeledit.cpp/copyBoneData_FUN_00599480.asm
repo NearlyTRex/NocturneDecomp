@@ -7,17 +7,21 @@
 ; SBoneData *      Stack[0x4]:4   dest
 ; SBoneData *      Stack[0x8]:4   src
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x10                           ; 00599480
+    NOP                                 ; 00599480
         ;   Label: core_skeledit.cpp_copyBoneData_FUN_00599480
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00599485
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00599481
+    NOP                                 ; 00599482
+    NOP                                 ; 00599483
+    NOP                                 ; 00599484
+    NOP                                 ; 00599485
+    NOP                                 ; 00599486
+    NOP                                 ; 00599487
+    NOP                                 ; 00599488
+    NOP                                 ; 00599489
     PUSH EBX                            ; 0059948a
     PUSH ESI                            ; 0059948b
     PUSH EDI                            ; 0059948c

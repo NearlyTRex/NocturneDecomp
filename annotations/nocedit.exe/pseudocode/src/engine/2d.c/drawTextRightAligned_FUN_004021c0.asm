@@ -5,8 +5,8 @@
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   text
-; int              Stack[0x8]:4   y
-; int              Stack[0xc]:4   x
+; int              Stack[0x8]:4   x
+; int              Stack[0xc]:4   y
 ;
 ; XREF[2]:
 ;   engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210 at 00402261

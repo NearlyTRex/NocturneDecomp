@@ -9,7 +9,6 @@
 CLodMeshPrecomputeEntry * __cdecl core_skeledit_cpp_CLodMeshPrecomputeEntry_ctor_FUN_00589fa0(CLodMeshPrecomputeEntry *this_ptr)
 
 {
-  __STK();
   core_skeledit_cpp_CLodMeshPrecomputeEntry_reset_FUN_00589fc0(this_ptr);
   return this_ptr;
 }

@@ -30,10 +30,10 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 419,
+    "assembly_lines": 426,
     "complexity_score": 318,
     "cross_reference_count": 3,
-    "function_call_count": 6,
+    "function_call_count": 5,
     "global_count": 17,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 243,
@@ -41,7 +41,7 @@
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 662
+    "total_lines": 669
   },
   "cross_references": [
     {
@@ -85,11 +85,6 @@
       "addr": "0058ac30",
       "is_variadic": false,
       "name": "core_skeledit.cpp_CBoneStructure_findBoneByName_FUN_0058ac30"
-    },
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fe840",
@@ -265,16 +260,16 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.479411764705882,
-    "instruction_count": 340,
+    "avg_pcode_per_instr": 4.359195402298851,
+    "instruction_count": 348,
     "opcode_distribution": {
       "BOOL_AND": 4,
       "BOOL_NEGATE": 9,
       "BOOL_OR": 7,
       "BRANCH": 6,
-      "CALL": 12,
+      "CALL": 11,
       "CBRANCH": 35,
-      "COPY": 280,
+      "COPY": 279,
       "INT_ADD": 182,
       "INT_AND": 193,
       "INT_CARRY": 36,
@@ -286,16 +281,16 @@
       "INT_SCARRY": 42,
       "INT_SEXT": 9,
       "INT_SLESS": 87,
-      "INT_SUB": 67,
+      "INT_SUB": 65,
       "INT_XOR": 7,
       "INT_ZEXT": 8,
       "LOAD": 101,
       "POPCOUNT": 87,
       "RETURN": 1,
-      "STORE": 89,
+      "STORE": 87,
       "SUBPIECE": 6
     },
-    "pcode_op_count": 1523
+    "pcode_op_count": 1517
   },
   "stack_frame": {
     "frame_size": 600,
@@ -609,7 +604,7 @@
       "line": 152,
       "match": "(SBoneData *)((int)",
       "severity": "mild",
-      "text": "pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar15 * -8 + 4);",
+      "text": "pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -617,7 +612,7 @@
       "line": 183,
       "match": "(SBoneData *)((int)",
       "severity": "mild",
-      "text": "pSVar14 = (SBoneData *)((int)pSVar14 + (uint)bVar15 * -8 + 4);",
+      "text": "pSVar14 = (SBoneData *)((int)pSVar14 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -625,7 +620,7 @@
       "line": 184,
       "match": "(SBoneData *)((int)",
       "severity": "mild",
-      "text": "pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar15 * -8 + 4);",
+      "text": "pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -633,7 +628,7 @@
       "line": 195,
       "match": "(SBoneData *)((int)",
       "severity": "mild",
-      "text": "pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar15 * -8 + 4);",
+      "text": "pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

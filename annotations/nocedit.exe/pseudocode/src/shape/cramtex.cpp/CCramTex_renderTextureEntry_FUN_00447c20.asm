@@ -23,17 +23,23 @@
 ;   int g_CramMapNumber
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x48                           ; 00447c20
+    NOP                                 ; 00447c20
         ;   Label: shape_cramtex.cpp_CCramTex_renderTextureEntry_FUN_00447c20
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00447c25
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00447c21
+    NOP                                 ; 00447c22
+    NOP                                 ; 00447c23
+    NOP                                 ; 00447c24
+    NOP                                 ; 00447c25
+    NOP                                 ; 00447c26
+    NOP                                 ; 00447c27
+    NOP                                 ; 00447c28
+    NOP                                 ; 00447c29
     PUSH EBX                            ; 00447c2a
     PUSH ESI                            ; 00447c2b
     PUSH EDI                            ; 00447c2c

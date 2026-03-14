@@ -27,6 +27,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   uint *puVar7;
   SBoneData *pSVar14;
   byte bVar15;
+  byte bVar8;
   int local_248 [100];
   uint local_b8 [8];
   int local_98;
@@ -68,8 +69,7 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
   int *piVar4;
   int uVar3;
   
-  bVar15 = 0;
-  __STK();
+  bVar8 = 0;
   iVar6 = 1;
   do {
     iVar5 = _fgetc(file);
@@ -156,8 +156,8 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
             puVar7 = local_b8;
             for (uVar3 = 7; uVar3 != 0; uVar3 = uVar3 + -1) {
               *puVar7 = *(uint *)pSVar6->name;
-              pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar15 * -8 + 4);
-              puVar7 = puVar7 + (uint)bVar15 * -2 + 1;
+              pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar8 * -8 + 4);
+              puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
             }
             *(ushort *)puVar7 = *(ushort *)pSVar6->name;
             local_98 = pSVar14->parent_index;
@@ -187,8 +187,8 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
             local_38 = pCVar8[1].m[2].z;
             pSVar11 = local_18;
             for (uVar3 = 0x21; uVar3 != 0; uVar3 = uVar3 + -1) {
-              pSVar14 = (SBoneData *)((int)pSVar14 + (uint)bVar15 * -8 + 4);
-              pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar15 * -8 + 4);
+              pSVar14 = (SBoneData *)((int)pSVar14 + (uint)bVar8 * -8 + 4);
+              pSVar11 = (SBoneData *)((int)pSVar11 + (uint)bVar8 * -8 + 4);
               *(uint *)pSVar14->name = *(uint *)pSVar11->name;
               pSVar11 = pSVar11;
               pSVar14 = pSVar14;
@@ -196,10 +196,10 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0(CBoneSt
             puVar12 = local_b8;
             pSVar6 = local_18;
             for (uVar3 = 0x21; uVar3 != 0; uVar3 = uVar3 + -1) {
-              puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
+              puVar12 = puVar12 + (uint)bVar8 * -2 + 1;
               *(uint *)pSVar6->name = *puVar12;
               puVar12 = puVar12;
-              pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar15 * -8 + 4);
+              pSVar6 = (SBoneData *)((int)pSVar6 + (uint)bVar8 * -8 + 4);
             }
             uVar3 = *piVar4;
             *piVar4 = *puVar10;

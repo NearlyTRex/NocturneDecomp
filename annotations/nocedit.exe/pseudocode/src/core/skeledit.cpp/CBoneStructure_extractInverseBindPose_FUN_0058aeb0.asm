@@ -19,16 +19,22 @@
 ;   core_xform.cpp_clearTranslation_FUN_005f5370
 ;   core_xform.cpp_inverse_FUN_005f6210
 ;   core_xform.cpp_setRotationScaleIdentity_FUN_005f5190
-;   crt_stack.c___STK_FUN_005ff9f3
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x40                           ; 0058aeb0
+    NOP                                 ; 0058aeb0
         ;   Label: core_skeledit.cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058aeb5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058aeb1
+    NOP                                 ; 0058aeb2
+    NOP                                 ; 0058aeb3
+    NOP                                 ; 0058aeb4
+    NOP                                 ; 0058aeb5
+    NOP                                 ; 0058aeb6
+    NOP                                 ; 0058aeb7
+    NOP                                 ; 0058aeb8
+    NOP                                 ; 0058aeb9
     PUSH EBP                            ; 0058aeba
     SUB ESP,0x34                        ; 0058aebb
     MOV EAX,dword ptr [ESP + 0x3c]      ; 0058aebe

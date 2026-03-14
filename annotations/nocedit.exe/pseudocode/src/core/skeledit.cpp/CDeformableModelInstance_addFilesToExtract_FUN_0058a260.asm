@@ -26,17 +26,23 @@
 ; Called Functions:
 ;   core_skeledit.cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x14                           ; 0058a260
+    NOP                                 ; 0058a260
         ;   Label: core_skeledit.cpp_CDeformableModelInstance_addFilesToExtract_FUN_0058a260
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058a265
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058a261
+    NOP                                 ; 0058a262
+    NOP                                 ; 0058a263
+    NOP                                 ; 0058a264
+    NOP                                 ; 0058a265
+    NOP                                 ; 0058a266
+    NOP                                 ; 0058a267
+    NOP                                 ; 0058a268
+    NOP                                 ; 0058a269
     PUSH EBX                            ; 0058a26a
     MOV EAX,dword ptr [ESP + 0x8]       ; 0058a26b
     ADD EAX,0x2260                      ; 0058a26f

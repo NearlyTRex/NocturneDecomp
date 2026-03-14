@@ -14,11 +14,11 @@ void __cdecl core_skeledit_cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb
   CMatrix3x4f *pCVar2;
   CMatrix3x4f *pCVar3;
   byte bVar4;
+  byte bVar1;
   CMatrix3x4f local_38;
   int local_8;
   
-  bVar4 = 0;
-  __STK();
+  bVar1 = 0;
   local_8 = 0;
   if (0 < this_ptr->bone_count) {
     matrix_in = &this_ptr->bones[0].world_matrix;
@@ -27,8 +27,8 @@ void __cdecl core_skeledit_cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb
       pCVar2 = &local_38;
       pCVar3 = inverse_matrices;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
-        pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar4 * -8 + 4);
+        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar1 * -8 + 4);
+        pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar1 * -8 + 4);
         pCVar3->m[0].w = pCVar2->m[0].w;
         pCVar2 = pCVar2;
         pCVar3 = pCVar3;

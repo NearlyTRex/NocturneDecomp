@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 26,
-        "line": 31,
+        "line": 30,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 29,
-        "line": 33,
+        "line": 32,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 43,
-        "line": 39,
+        "line": 38,
         "message": "format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 39,
+        "line": 38,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -30,18 +30,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 262,
-    "complexity_score": 167,
+    "assembly_lines": 269,
+    "complexity_score": 166,
     "cross_reference_count": 1,
-    "function_call_count": 4,
+    "function_call_count": 3,
     "global_count": 19,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 102,
+    "pseudocode_lines": 101,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 364
+    "total_lines": 370
   },
   "cross_references": [
     {
@@ -73,11 +73,6 @@
       "addr": "0052d170",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionList_save_FUN_0052d170"
-    },
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fe6d0",
@@ -222,14 +217,14 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.715596330275229,
-    "instruction_count": 218,
+    "avg_pcode_per_instr": 5.486725663716814,
+    "instruction_count": 226,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
       "BOOL_OR": 6,
-      "CALL": 17,
+      "CALL": 16,
       "CBRANCH": 13,
-      "COPY": 371,
+      "COPY": 370,
       "FLOAT2FLOAT": 26,
       "INT_ADD": 87,
       "INT_AND": 137,
@@ -241,14 +236,14 @@
       "INT_SBORROW": 20,
       "INT_SCARRY": 30,
       "INT_SLESS": 65,
-      "INT_SUB": 78,
+      "INT_SUB": 76,
       "INT_XOR": 8,
       "LOAD": 49,
       "POPCOUNT": 65,
       "RETURN": 2,
-      "STORE": 79
+      "STORE": 77
     },
-    "pcode_op_count": 1246
+    "pcode_op_count": 1240
   },
   "stack_frame": {
     "frame_size": 40,
@@ -297,10 +292,18 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 63,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "_fprintf(file_handle,\"%g,%g,%g\\n\",(double)*(float *)((int)&pCVar8->x + iVar10),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "(double)*(float *)((int)&pCVar8->y + iVar10),",
       "type": "pointer_cast"
     },
     {
@@ -308,20 +311,12 @@
       "line": 65,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "(double)*(float *)((int)&pCVar8->y + iVar10),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(float *)((int)",
-      "severity": "mild",
       "text": "(double)*(float *)((int)&pCVar8->z + iVar10));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 76,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "_fprintf(file_handle,\"%g,%g,%g\\n\",(double)*(float *)((int)&pCVar8->x + iVar10),",
@@ -329,7 +324,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 77,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)&pCVar8->y + iVar10),",
@@ -337,7 +332,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 78,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "(double)*(float *)((int)&pCVar8->z + iVar10));",

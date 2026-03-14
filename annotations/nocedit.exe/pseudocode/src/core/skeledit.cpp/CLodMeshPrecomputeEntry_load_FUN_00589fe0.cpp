@@ -11,7 +11,6 @@ void __cdecl core_skeledit_cpp_CLodMeshPrecomputeEntry_load_FUN_00589fe0(CLodMes
 {
   byte auStack_c [4];
   
-  __STK();
   core_skeledit_cpp_CLodMeshPrecomputeEntry_reset_FUN_00589fc0(this_ptr);
   _fscanf(file_handle,"%*[^\n]\n");
   _fscanf(file_handle,"%d\n",auStack_c);

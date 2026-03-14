@@ -248,16 +248,23 @@
 ;   core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0
 ;   core_skeledit.cpp_CSkeleton_extractBoneScales_FUN_00595f30
 ;   core_skeledit.cpp_parseBoneParentToken_FUN_00592520
-;   ... and 43 more
+;   ... and 42 more
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x11418                        ; 00592690
+    NOP                                 ; 00592690
         ;   Label: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00592695
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00592691
+    NOP                                 ; 00592692
+    NOP                                 ; 00592693
+    NOP                                 ; 00592694
+    NOP                                 ; 00592695
+    NOP                                 ; 00592696
+    NOP                                 ; 00592697
+    NOP                                 ; 00592698
+    NOP                                 ; 00592699
     PUSH EBX                            ; 0059269a
     PUSH ESI                            ; 0059269b
     PUSH EDI                            ; 0059269c

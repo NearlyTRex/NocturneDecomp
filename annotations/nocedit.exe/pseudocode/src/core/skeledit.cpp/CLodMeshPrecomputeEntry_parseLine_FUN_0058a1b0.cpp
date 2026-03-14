@@ -11,7 +11,6 @@ int __cdecl core_skeledit_cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0(CLo
 {
   int local_10;
   
-  __STK();
   local_10 = -1;
   sscanf
             (line,"\"%[^\"]\", \"%[^\"]\", \"%[^\"]\"%n",this_ptr,this_ptr->skl_filename,this_ptr->s3d_filename,&local_10);

@@ -13,7 +13,6 @@ int __cdecl shape_cramtex_cpp_CCramTex_findRightmostOverlappingX_FUN_004479a0(CC
   int iVar2;
   int iVar3;
   
-  __STK();
   iVar2 = 0;
   iVar3 = 0;
   if (0 < g_CramTextureCount) {

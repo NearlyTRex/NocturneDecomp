@@ -11,7 +11,6 @@ void __cdecl core_skeledit_cpp_CDeformableModelInstance_addFilesToExtract_FUN_00
 {
   CDeformableModel *this_ptr_00;
   
-  __STK();
   _fprintf(file_handle,"MODELS\\%s\n",this_ptr->model_name);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   core_skeledit_cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0(this_ptr_00,file_handle);

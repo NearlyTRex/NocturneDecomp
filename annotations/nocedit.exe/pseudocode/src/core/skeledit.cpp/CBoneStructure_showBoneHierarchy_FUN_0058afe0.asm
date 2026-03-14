@@ -27,7 +27,6 @@
 ;   char[20480] g_SkeleditClipboardBuffer
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CEditorTools_setClipboardText_FUN_004a1bc0
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -40,10 +39,17 @@
 
 section .text
 
-    PUSH 0x4a0                          ; 0058afe0
+    NOP                                 ; 0058afe0
         ;   Label: core_skeledit.cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058afe5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058afe1
+    NOP                                 ; 0058afe2
+    NOP                                 ; 0058afe3
+    NOP                                 ; 0058afe4
+    NOP                                 ; 0058afe5
+    NOP                                 ; 0058afe6
+    NOP                                 ; 0058afe7
+    NOP                                 ; 0058afe8
+    NOP                                 ; 0058afe9
     PUSH EBX                            ; 0058afea
     PUSH ESI                            ; 0058afeb
     PUSH EDI                            ; 0058afec

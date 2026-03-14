@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 354,
-    "complexity_score": 181,
+    "assembly_lines": 361,
+    "complexity_score": 180,
     "cross_reference_count": 0,
-    "function_call_count": 9,
+    "function_call_count": 8,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 156,
+    "pseudocode_lines": 155,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 510
+    "total_lines": 516
   },
   "cross_references": [],
   "function": {
@@ -66,11 +66,6 @@
       "addr": "0059e070",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070"
-    },
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "0050f1b0",
@@ -161,16 +156,16 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.049668874172186,
-    "instruction_count": 302,
+    "avg_pcode_per_instr": 4.9,
+    "instruction_count": 310,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
       "BOOL_OR": 3,
       "BRANCH": 1,
-      "CALL": 13,
+      "CALL": 12,
       "CALLIND": 1,
       "CBRANCH": 18,
-      "COPY": 610,
+      "COPY": 609,
       "FLOAT2FLOAT": 52,
       "FLOAT_DIV": 3,
       "FLOAT_EQUAL": 1,
@@ -190,15 +185,15 @@
       "INT_SBORROW": 14,
       "INT_SCARRY": 28,
       "INT_SLESS": 48,
-      "INT_SUB": 59,
+      "INT_SUB": 57,
       "INT_XOR": 2,
       "INT_ZEXT": 4,
       "LOAD": 79,
       "POPCOUNT": 48,
       "RETURN": 1,
-      "STORE": 91
+      "STORE": 89
     },
-    "pcode_op_count": 1525
+    "pcode_op_count": 1519
   },
   "stack_frame": {
     "frame_size": 100,
@@ -303,7 +298,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 87,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar3 = (int *)((int)&this_ptr_01->skinned_vertices_buffer->x + iVar6);",
@@ -311,7 +306,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 142,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar7 = (int *)((int)&this_ptr_01->skinned_vertices_buffer->x + iVar9);",

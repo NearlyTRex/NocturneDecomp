@@ -12,17 +12,21 @@
 ; XREF[1]:
 ;   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 at 005929d6
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x28                           ; 00595f30
+    NOP                                 ; 00595f30
         ;   Label: core_skeledit.cpp_CSkeleton_extractBoneScales_FUN_00595f30
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00595f35
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00595f31
+    NOP                                 ; 00595f32
+    NOP                                 ; 00595f33
+    NOP                                 ; 00595f34
+    NOP                                 ; 00595f35
+    NOP                                 ; 00595f36
+    NOP                                 ; 00595f37
+    NOP                                 ; 00595f38
+    NOP                                 ; 00595f39
     PUSH EBX                            ; 00595f3a
     PUSH ESI                            ; 00595f3b
     PUSH EDI                            ; 00595f3c

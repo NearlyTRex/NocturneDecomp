@@ -14,14 +14,13 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   int *piVar1;
   char cVar2;
   CEditorTools *this_ptr_00;
-  CBoneStructure *file;
+  _FILE *file;
   _FILE *p_Var3;
   int iVar4;
   int iVar5;
   EMotionTransitionCmd EVar6;
   byte *pbVar7;
   uint uVar8;
-  CBoneStructure *file_00;
   CVector3f *pCVar9;
   float fVar10;
   SBone *pSVar11;
@@ -46,9 +45,10 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   CMatrix3x3f *pCVar26;
   bool bVar27;
   byte bVar28;
-  int in_stack_fffeec08;
-  byte local_ded4 [27208];
-  byte local_748c [88];
+  byte auStack_113f8 [13608];
+  char local_ded0 [32];
+  int aiStack_deb0 [3392];
+  byte local_a9b0 [13692];
   CMatrix3x4f local_7434 [281];
   CMatrix3x4f local_3f68 [100];
   CPickList local_2ca8;
@@ -167,13 +167,13 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   int local_e4;
   uint local_e0;
   uint local_dc;
-  _FILE *local_d8;
+  int local_d8;
   float local_d4;
   float local_d0;
   int local_cc;
   int local_c8;
   int local_c4;
-  CBoneStructure *local_c0;
+  _FILE *local_c0;
   int local_b8;
   int local_b4;
   int local_b0;
@@ -202,7 +202,7 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   float local_54;
   CSkeleton *local_50;
   float *local_4c;
-  CVector3f *local_48;
+  float *local_48;
   char (*local_44) [260];
   SMotion *local_40;
   int local_3c;
@@ -217,7 +217,6 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
   char local_14 [4];
   
   bVar28 = 0;
-  __STK();
   core_skeleton_cpp_CSkeleton_free_FUN_00599a50(this_ptr);
   p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                      (filename,(char *)0x0,"rt","..\\core\\skeledit.cpp",0x103c);
@@ -298,14 +297,14 @@ int __cdecl core_skeledit_cpp_CSkeleton_importSkeletonFile_FUN_00592690(CSkeleto
     }
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Reading bone heirarchy and building reorientation matrices from %s");
-    core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0((CBoneStructure *)local_ded4,local_1e74)
-    ;
+    core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0
+              ((CBoneStructure *)(auStack_113f8 + 0x3524),local_1e74);
     core_skeledit_cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0
-              ((CBoneStructure *)local_ded4,(CMatrix3x4f *)(local_748c + 0x3524));
+              ((CBoneStructure *)(auStack_113f8 + 0x3524),local_3f68);
     p_Var3 = local_11c;
     iVar15 = 1;
     core_skeledit_cpp_CSkeleton_extractBoneScales_FUN_00595f30
-              (this_ptr,(CBoneStructure *)local_ded4);
+              (this_ptr,(CBoneStructure *)(auStack_113f8 + 0x3524));
     do {
       iVar4 = _fgetc(p_Var3);
       if (iVar4 < 0) break;
@@ -346,7 +345,7 @@ LAB_00592a67:
         } while ((iVar4 != 10) || (iVar15 = iVar15 + -1, 0 < iVar15));
         _fscanf(p_Var3,"%d\n");
         core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-                  ((CBoneStructure *)(local_ded4 + 0x3524),p_Var3,&local_58);
+                  ((CBoneStructure *)local_a9b0,p_Var3,&local_58);
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var3,"..\\core\\skeledit.cpp",0x10b8);
         if (0x1869e < local_104) {
           local_104 = local_58 + -1;
@@ -361,7 +360,8 @@ LAB_00592a67:
           goto LAB_005927ee;
         }
         iVar15 = core_skeledit_cpp_CBoneStructure_doesHierarchyMatch_FUN_0058b200
-                           ((CBoneStructure *)local_ded4,(CBoneStructure *)(local_ded4 + 0x3524));
+                           ((CBoneStructure *)(auStack_113f8 + 0x3524),(CBoneStructure *)local_a9b0)
+        ;
         if (iVar15 == 0) {
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_2ca8.base,*local_fc);
         }
@@ -406,23 +406,24 @@ LAB_00592a67:
               pcVar13 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                                   (&local_2ca8.base,iVar15);
               core_skeledit_cpp_CBoneStructure_importBON_FUN_0058a3d0
-                        ((CBoneStructure *)&stack0xfffeec08,pcVar13);
+                        ((CBoneStructure *)auStack_113f8,pcVar13);
               core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0
-                        ((CBoneStructure *)&stack0xfffeec08,pcVar13);
+                        ((CBoneStructure *)auStack_113f8,pcVar13);
             }
           }
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2ca8,0);
           return 0;
         }
-        core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(this_ptr,local_ded4._0_4_,local_10c);
+        core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910
+                  (this_ptr,auStack_113f8._13604_4_,local_10c);
         iVar15 = 0;
         if (0 < this_ptr->bone_count) {
-          pcVar13 = local_ded4 + 4;
+          pcVar13 = local_ded0;
           local_50 = this_ptr;
           pSVar11 = this_ptr->bone_list;
           do {
             pSVar12 = pSVar11 + 1;
-            local_50->bone_list[0].parent_index = *(int *)(local_ded4 + iVar15 * 0x84 + 0x24);
+            local_50->bone_list[0].parent_index = aiStack_deb0[iVar15 * 0x21];
             iVar15 = iVar15 + 1;
             pcVar18 = pcVar13;
             do {
@@ -486,7 +487,7 @@ LAB_00592a67:
             local_1c4 = -99999.0;
             local_1c8 = -99999.0;
             local_cc = 0;
-            local_d8 = (_FILE *)0x0;
+            local_d8 = 0;
             local_c4 = 0;
             local_94 = local_ec->frame_count + -1;
             local_d0 = -99998.0;
@@ -1245,7 +1246,7 @@ LAB_0059518b:
                                       iVar15 = _strnicmp
                                                          (local_20a4,"flipXZ",6);
                                       if (iVar15 == 0) {
-                                        local_d8 = (_FILE *)0x1;
+                                        local_d8 = 1;
                                       }
                                       else {
                                         iVar15 = _strnicmp
@@ -1306,12 +1307,11 @@ LAB_0059518b:
               } while (local_f0 < *(int *)((int)aiStack_2720 + local_ac));
             }
             pacVar19 = local_e8;
-            file_00 = (CBoneStructure *)
-                      shape_memdbg_cpp_openFile_FUN_0050f7a0
-                                (*local_e8,(char *)0x0,"rt","..\\core\\skeledit.cpp",
-                                 0x13d8);
-            local_c0 = file_00;
-            if (file_00 == (CBoneStructure *)0x0) {
+            p_Var3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                               (*local_e8,(char *)0x0,"rt","..\\core\\skeledit.cpp",
+                                0x13d8);
+            local_c0 = p_Var3;
+            if (p_Var3 == (_FILE *)0x0) {
               shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                         (g_CEditorToolsPtr,"Can't open %s mentioned in %s",pacVar19);
               shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_2ca8,0);
@@ -1319,20 +1319,20 @@ LAB_0059518b:
             }
             iVar15 = 1;
             do {
-              iVar4 = _fgetc((_FILE *)file_00);
+              iVar4 = _fgetc(p_Var3);
               file = local_c0;
               if (iVar4 < 0) break;
             } while ((iVar4 != 10) || (iVar15 = iVar15 + -1, 0 < iVar15));
-            _fscanf((_FILE *)local_c0,"%d\n");
+            _fscanf(local_c0,"%d\n");
             iVar15 = local_3c;
             core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-                      ((CBoneStructure *)local_748c,(_FILE *)file,&local_b8);
+                      ((CBoneStructure *)(local_a9b0 + 0x3524),file,&local_b8);
             iVar4 = 0;
             if (0 < *(int *)((int)aiStack_2900 + iVar15)) {
               do {
                 iVar4 = iVar4 + 1;
                 core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0
-                          ((CBoneStructure *)local_748c,(_FILE *)local_c0);
+                          ((CBoneStructure *)(local_a9b0 + 0x3524),local_c0);
                 local_b8 = local_b8 + -1;
               } while (iVar4 < *(int *)((int)aiStack_2900 + iVar15));
             }
@@ -1355,26 +1355,26 @@ LAB_0059518b:
                 }
                 local_b8 = local_b8 + -1;
                 core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10
-                          (local_c0,local_d8,in_stack_fffeec08);
+                          ((CBoneStructure *)(local_a9b0 + 0x3524),local_c0,local_d8);
                 iVar15 = local_c4;
                 core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0
-                          ((CBoneStructure *)local_748c);
+                          ((CBoneStructure *)(local_a9b0 + 0x3524));
                 if (iVar15 != 0) {
                   iVar15 = 0;
-                  if (0 < (int)local_748c._0_4_) {
-                    matrix_a = (float *)(local_748c + 0x58);
+                  if (0 < (int)local_a9b0._13604_4_) {
+                    matrix_a = (float *)local_7434;
                     do {
                       iVar15 = iVar15 + 1;
                       core_xform_cpp_multiplyMatrix3x4InPlace_FUN_005f50c0
                                 ((CMatrix3x4f *)matrix_a,&local_434);
                       matrix_a = matrix_a + 0x21;
-                    } while (iVar15 < (int)local_748c._0_4_);
+                    } while (iVar15 < (int)local_a9b0._13604_4_);
                   }
                   core_skeledit_cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80
-                            ((CBoneStructure *)local_748c);
+                            ((CBoneStructure *)(local_a9b0 + 0x3524));
                 }
                 core_skeledit_cpp_CBoneStructure_applyMatrixArray_FUN_0058af40
-                          ((CBoneStructure *)local_748c,(CMatrix3x4f *)(local_748c + 0x3524));
+                          ((CBoneStructure *)(local_a9b0 + 0x3524),local_3f68);
                 if (local_b4 != 0) {
                   local_168 = local_7434[0].m[0].z;
                   local_164 = local_7434[0].m[1].z;
@@ -1385,7 +1385,7 @@ LAB_0059518b:
                     local_1f0 = local_7434[0].m[2].z;
                   }
                   pCVar9 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                                     ((CMatrix3x3f *)(local_748c + 0x58),&local_1b0);
+                                     ((CMatrix3x3f *)local_7434,&local_1b0);
                   if (&local_1bc != pCVar9) {
                     local_1bc.x = pCVar9->x;
                     local_1bc.y = pCVar9->y;
@@ -1430,7 +1430,7 @@ LAB_0059518b:
                 if (local_dc == 0) {
                   local_60 = local_dc;
                   if (0 < this_ptr->bone_count) {
-                    local_48 = (CVector3f *)(local_748c + 0x58);
+                    local_48 = (float *)local_7434;
                     pCVar17 = pCVar17 + iVar4 * iVar15;
                     do {
                       core_xform_cpp_matrixToQuaternion_FUN_005f7420
@@ -1444,14 +1444,14 @@ LAB_0059518b:
                       *puVar24 = *puVar21;
                       puVar24[(uint)bVar28 * -2 + 1] = puVar21[(uint)bVar28 * -2 + 1];
                       local_60 = local_60 + 1;
-                      local_48 = ((CMatrix3x3f *)((int)local_48 + 0x6c))->m + 2;
+                      local_48 = &((CMatrix3x4f *)(local_48 + 0x18))->m[2].x;
                       pCVar17 = pCVar17 + 1;
                     } while ((int)local_60 < this_ptr->bone_count);
                   }
                 }
                 else {
                   core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                            ((CMatrix3x3f *)(local_748c + 0x58),&local_180);
+                            ((CMatrix3x3f *)local_7434,&local_180);
                   if ((local_dc & 1) != 0) {
                     local_180.x = local_1bc.x;
                   }
@@ -1466,8 +1466,7 @@ LAB_0059518b:
                   local_150.z = 0.0;
                   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                             (&local_3a4,&local_150,&local_180);
-                  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                            ((CMatrix3x4f *)(local_748c + 0x58),&local_3a4,&local_344);
+                  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(local_7434,&local_3a4,&local_344);
                   pCVar22 = &local_344;
                   pCVar25 = &local_3d4;
                   for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -1485,7 +1484,7 @@ LAB_0059518b:
                   }
                   local_5c = 0;
                   if (0 < this_ptr->bone_count) {
-                    local_4c = (float *)(local_748c + 0x58);
+                    local_4c = (float *)local_7434;
                     pCVar17 = pCVar17 + iVar4 * iVar15;
                     do {
                       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
@@ -1515,8 +1514,7 @@ LAB_0059518b:
                 local_34 = local_34 + 1;
               } while (local_34 <= local_ec->frame_count);
             }
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                      ((_FILE *)local_c0,"..\\core\\skeledit.cpp",0x147a);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_c0,"..\\core\\skeledit.cpp",0x147a);
             local_204 = 0.0;
             local_200 = 0.0;
             local_1fc = 0.0;

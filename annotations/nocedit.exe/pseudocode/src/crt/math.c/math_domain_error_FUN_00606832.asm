@@ -4,10 +4,10 @@
 ; double __cdecl crt_math_c_math_domain_error_FUN_00606832(double x,double y,uchar error_type)
 ;
 ; Parameters:
+; double           Stack[0x4]:8   x
 ; undefined4       Stack[0x4]:4   in_stack_00000004
-; double           Stack[0x8]:8   x
-; double           Stack[0x10]:8   y
-; uchar            Stack[0x18]:1   error_type
+; double           Stack[0xc]:8   y
+; uchar            Stack[0x14]:1   error_type
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14

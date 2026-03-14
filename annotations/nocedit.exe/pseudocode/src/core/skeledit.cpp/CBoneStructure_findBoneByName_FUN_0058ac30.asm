@@ -12,17 +12,23 @@
 ;   core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00 at 0058be16
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_string.c__stricmp_FUN_005fe7f0
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x1c                           ; 0058ac30
+    NOP                                 ; 0058ac30
         ;   Label: core_skeledit.cpp_CBoneStructure_findBoneByName_FUN_0058ac30
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058ac35
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058ac31
+    NOP                                 ; 0058ac32
+    NOP                                 ; 0058ac33
+    NOP                                 ; 0058ac34
+    NOP                                 ; 0058ac35
+    NOP                                 ; 0058ac36
+    NOP                                 ; 0058ac37
+    NOP                                 ; 0058ac38
+    NOP                                 ; 0058ac39
     PUSH EBX                            ; 0058ac3a
     PUSH ESI                            ; 0058ac3b
     PUSH EDI                            ; 0058ac3c

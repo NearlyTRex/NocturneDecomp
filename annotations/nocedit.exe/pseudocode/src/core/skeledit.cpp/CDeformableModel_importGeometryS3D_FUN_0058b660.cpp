@@ -28,7 +28,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_importGeometryS3D_FUN_0058b660(C
   _FILE *local_18;
   int local_14;
   
-  __STK();
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Importing deformable model from %s...",filename);
   core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(this_ptr);

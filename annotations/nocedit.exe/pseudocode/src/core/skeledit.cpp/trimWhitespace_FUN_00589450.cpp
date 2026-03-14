@@ -13,17 +13,14 @@ void __cdecl core_skeledit_cpp_trimWhitespace_FUN_00589450(char *str)
   char *pcVar2;
   uint uVar3;
   SIZE_T n;
-  byte bVar4;
   
-  bVar4 = 0;
-  __STK();
   uVar3 = 0xffffffff;
   pcVar2 = str;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
     cVar1 = *pcVar2;
-    pcVar2 = pcVar2 + (uint)bVar4 * -2 + 1;
+    pcVar2 = pcVar2 + 1;
   } while (cVar1 != '\0');
   n = ~uVar3 - 1;
   if (0 < (int)n) {

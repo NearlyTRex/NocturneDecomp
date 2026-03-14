@@ -35,17 +35,23 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_motion.cpp_CMotionList_save_FUN_0052d170
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x4c                           ; 0058b3a0
+    NOP                                 ; 0058b3a0
         ;   Label: core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058b3a5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058b3a1
+    NOP                                 ; 0058b3a2
+    NOP                                 ; 0058b3a3
+    NOP                                 ; 0058b3a4
+    NOP                                 ; 0058b3a5
+    NOP                                 ; 0058b3a6
+    NOP                                 ; 0058b3a7
+    NOP                                 ; 0058b3a8
+    NOP                                 ; 0058b3a9
     PUSH EBX                            ; 0058b3aa
     PUSH ESI                            ; 0058b3ab
     PUSH EDI                            ; 0058b3ac

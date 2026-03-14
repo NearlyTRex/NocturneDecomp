@@ -40,17 +40,23 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x74                           ; 0058f120
+    NOP                                 ; 0058f120
         ;   Label: core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058f125
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058f121
+    NOP                                 ; 0058f122
+    NOP                                 ; 0058f123
+    NOP                                 ; 0058f124
+    NOP                                 ; 0058f125
+    NOP                                 ; 0058f126
+    NOP                                 ; 0058f127
+    NOP                                 ; 0058f128
+    NOP                                 ; 0058f129
     PUSH EBX                            ; 0058f12a
     PUSH ESI                            ; 0058f12b
     PUSH EDI                            ; 0058f12c

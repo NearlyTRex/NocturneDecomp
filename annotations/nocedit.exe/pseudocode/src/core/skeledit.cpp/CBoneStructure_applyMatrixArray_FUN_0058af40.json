@@ -5,10 +5,10 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 58,
+    "assembly_lines": 65,
     "complexity_score": 61,
     "cross_reference_count": 1,
-    "function_call_count": 3,
+    "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 36,
@@ -16,7 +16,7 @@
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 94
+    "total_lines": 101
   },
   "cross_references": [
     {
@@ -48,11 +48,6 @@
       "addr": "005f4f10",
       "is_variadic": false,
       "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10"
-    },
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
     }
   ],
   "globals": [],
@@ -77,14 +72,14 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.6,
-    "instruction_count": 50,
+    "avg_pcode_per_instr": 3.8620689655172415,
+    "instruction_count": 58,
     "opcode_distribution": {
       "BOOL_OR": 1,
       "BRANCH": 1,
-      "CALL": 3,
+      "CALL": 2,
       "CBRANCH": 3,
-      "COPY": 43,
+      "COPY": 42,
       "INT_ADD": 30,
       "INT_AND": 25,
       "INT_CARRY": 7,
@@ -95,15 +90,15 @@
       "INT_SBORROW": 2,
       "INT_SCARRY": 8,
       "INT_SLESS": 12,
-      "INT_SUB": 16,
+      "INT_SUB": 14,
       "INT_XOR": 1,
       "INT_ZEXT": 2,
       "LOAD": 16,
       "POPCOUNT": 12,
       "RETURN": 1,
-      "STORE": 16
+      "STORE": 14
     },
-    "pcode_op_count": 230
+    "pcode_op_count": 224
   },
   "stack_frame": {
     "frame_size": 76,
@@ -155,7 +150,7 @@
       "line": 25,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar1 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -163,7 +158,7 @@
       "line": 26,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar4 * -8 + 4);",
+      "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + (uint)bVar1 * -8 + 4);",
       "type": "pointer_cast"
     }
   ]

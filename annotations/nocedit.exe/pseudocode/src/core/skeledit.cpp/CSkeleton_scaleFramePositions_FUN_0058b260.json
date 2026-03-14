@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 37,
-    "complexity_score": 85,
+    "assembly_lines": 44,
+    "complexity_score": 84,
     "cross_reference_count": 0,
-    "function_call_count": 1,
+    "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 19,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 57
+    "total_lines": 63
   },
   "cross_references": [],
   "function": {
@@ -31,13 +31,7 @@
     "name": "core_skeledit.cpp_CSkeleton_scaleFramePositions_FUN_0058b260",
     "signature": "void __cdecl core_skeledit_cpp_CSkeleton_scaleFramePositions_FUN_0058b260(CSkeleton *this_ptr,float scale)"
   },
-  "function_calls": [
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
-    }
-  ],
+  "function_calls": [],
   "globals": [],
   "param_estimates": {
     "call_site_count": 0,
@@ -48,13 +42,12 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.709677419354839,
-    "instruction_count": 31,
+    "avg_pcode_per_instr": 5.17948717948718,
+    "instruction_count": 39,
     "opcode_distribution": {
       "BOOL_OR": 1,
-      "CALL": 1,
       "CBRANCH": 2,
-      "COPY": 98,
+      "COPY": 97,
       "FLOAT2FLOAT": 7,
       "FLOAT_MULT": 3,
       "INT_ADD": 20,
@@ -67,14 +60,14 @@
       "INT_SBORROW": 1,
       "INT_SCARRY": 2,
       "INT_SLESS": 6,
-      "INT_SUB": 5,
+      "INT_SUB": 3,
       "INT_XOR": 2,
       "LOAD": 11,
       "POPCOUNT": 6,
       "RETURN": 1,
-      "STORE": 7
+      "STORE": 5
     },
-    "pcode_op_count": 208
+    "pcode_op_count": 202
   },
   "stack_frame": {
     "frame_size": 12,
@@ -102,7 +95,15 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 16,
+      "line": 15,
+      "match": "(float *)((int)",
+      "severity": "mild",
+      "text": "*(float *)((int)&pCVar1->x + iVar2) = *(float *)((int)&pCVar1->x + iVar2) * scale;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&pCVar1->x + iVar2) = *(float *)((int)&pCVar1->x + iVar2) * scale;",
@@ -113,12 +114,12 @@
       "line": 16,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "*(float *)((int)&pCVar1->x + iVar2) = *(float *)((int)&pCVar1->x + iVar2) * scale;",
+      "text": "*(float *)((int)&pCVar1->y + iVar2) = *(float *)((int)&pCVar1->y + iVar2) * scale;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 16,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&pCVar1->y + iVar2) = *(float *)((int)&pCVar1->y + iVar2) * scale;",
@@ -127,14 +128,6 @@
     {
       "description": "Complex pointer cast",
       "line": 17,
-      "match": "(float *)((int)",
-      "severity": "mild",
-      "text": "*(float *)((int)&pCVar1->y + iVar2) = *(float *)((int)&pCVar1->y + iVar2) * scale;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&pCVar1->z + iVar2) = *(float *)((int)&pCVar1->z + iVar2) * scale;",
@@ -142,7 +135,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 17,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&pCVar1->z + iVar2) = *(float *)((int)&pCVar1->z + iVar2) * scale;",

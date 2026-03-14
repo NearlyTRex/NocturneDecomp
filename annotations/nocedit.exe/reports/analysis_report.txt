@@ -7,10 +7,10 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6484
-Clean functions: 4986 (76.9%)
-Functions with suspects: 1498 (23.1%)
+Clean functions: 4989 (76.9%)
+Functions with suspects: 1495 (23.1%)
 
-Total suspect patterns: 16421
+Total suspect patterns: 16389
 Average suspects per function: 2.53
 
 Virtual files: 214 total, 40 at 100%, 79 at 90%+
@@ -23,19 +23,19 @@ Average complexity score: 75.3
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6484
-Successful: 5776 (89.1%)
-Failed: 708
+Successful: 5778 (89.1%)
+Failed: 706
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  decompiler_intrinsic      6705
-  pointer_cast              5416
-  unknown_field             1375
-  stack_param               758
+  decompiler_intrinsic      6706
+  pointer_cast              5412
+  unknown_field             1380
+  stack_param               749
   nonstandard_int           268
   warning_inlined_function  261
-  stack_ref                 244
-  unaffected_reg            195
+  stack_ref                 236
+  unaffected_reg            179
   warning_type_propagation  131
   stack_alignment_array     121
   unresolved_funcptr        102
@@ -62,10 +62,10 @@ SUSPECT PATTERN BREAKDOWN
   special_cpu_detection     4
   warning_max_restarts      3
   nan_function_artifact     3
-  bare_stack_ref            3
   warning_overlapping_globals 3
   warning_jumptable         2
   warning_indirect_jump     2
+  bare_stack_ref            2
   cpuid_intrinsic           2
   warning_unmapped_variable 1
   unresolved_register       1
@@ -125,7 +125,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
   005b1680: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680 (4 lines)
   005b1660: sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660 (4 lines)
-  ... and 4936 more
+  ... and 4939 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -136,8 +136,8 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 2751, suspects: 180, lines: 926)
   0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 2499, suspects: 98, lines: 1494)
   004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2294, suspects: 9, lines: 2189)
-  00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2277, suspects: 34, lines: 1902)
   005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (score: 2235, suspects: 161, lines: 585)
+  00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2215, suspects: 29, lines: 1900)
   005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031 (score: 2198, suspects: 159, lines: 568)
   005b9c10: core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10 (score: 2161, suspects: 168, lines: 446)
   004e6600: core_ghoul.cpp_CGhoul_process_FUN_004e6600 (score: 2052, suspects: 97, lines: 1052)
@@ -163,7 +163,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  decompiler_intrinsic (897 functions):
+  decompiler_intrinsic (898 functions):
     00488630: cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
     004887a0: cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
     00487bc0: cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0
@@ -174,9 +174,9 @@ FUNCTIONS BY SUSPECT TYPE
     0043f490: support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490
     0043f710: support_codec.cpp_CLZWCompress_dtor_FUN_0043f710
     0043f2d0: support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0
-    ... and 887 more
+    ... and 888 more
 
-  pointer_cast (921 functions):
+  pointer_cast (920 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
     004874d0: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0
     00487630: cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630
@@ -187,9 +187,9 @@ FUNCTIONS BY SUSPECT TYPE
     0054ab30: cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    ... and 911 more
+    ... and 910 more
 
-  unknown_field (114 functions):
+  unknown_field (115 functions):
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     0043e530: support_codec.cpp_readBitsFromStream_FUN_0043e530
     00441040: engine_colquant.c_computeWeightedColorDistance_FUN_00441040
@@ -200,9 +200,9 @@ FUNCTIONS BY SUSPECT TYPE
     00440c80: engine_colquant.c_partitionByGreen_FUN_00440c80
     00441790: engine_colquant.c_doubleMax_FUN_00441790
     00552a40: engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
-    ... and 104 more
+    ... and 105 more
 
-  stack_param (50 functions):
+  stack_param (47 functions):
     005f2440: engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
     00404600: engine_3d.c_drawLineStrip3D_FUN_00404600
     00407cf0: engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
@@ -213,7 +213,7 @@ FUNCTIONS BY SUSPECT TYPE
     005b0a30: sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30
     005aca90: sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
     005a59c0: sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
-    ... and 40 more
+    ... and 37 more
 
   nonstandard_int (23 functions):
     004ce240: engine_font.cpp_drawAlphaBlendedPixels_FUN_004ce240
@@ -241,7 +241,7 @@ FUNCTIONS BY SUSPECT TYPE
     0050e5b0: engine_matrix.c_projectToScreen_FUN_0050e5b0
     ... and 248 more
 
-  stack_ref (66 functions):
+  stack_ref (63 functions):
     004027a0: engine_2d.c_getStringWidthFormatted_FUN_004027a0
     00404600: engine_3d.c_drawLineStrip3D_FUN_00404600
     00407cf0: engine_3d.c_drawLine2DFromIndices_FUN_00407cf0
@@ -252,10 +252,9 @@ FUNCTIONS BY SUSPECT TYPE
     004b5950: engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     00534d40: sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
     005aca90: sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
-    ... and 56 more
+    ... and 53 more
 
-  unaffected_reg (28 functions):
-    005dcc00: engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
+  unaffected_reg (27 functions):
     004fb250: engine_ini.cpp_CIni_getProfileString_FUN_004fb250
     0041dbe0: engine_boss.c_modelStructNotSupported_FUN_0041dbe0
     005abe20: sound_sndmain.cpp_processAudio_FUN_005abe20
@@ -265,7 +264,8 @@ FUNCTIONS BY SUSPECT TYPE
     0057ae50: core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50
     0057d660: core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
     0057a940: core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
-    ... and 18 more
+    004940e9: core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
+    ... and 17 more
 
   warning_type_propagation (131 functions):
     005513d0: engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0
@@ -521,10 +521,6 @@ FUNCTIONS BY SUSPECT TYPE
     0056b810: core_set.cpp_CDemonSet_processActors_FUN_0056b810
     00462190: shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
 
-  bare_stack_ref (2 functions):
-    0058e240: core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240
-    0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-
   warning_overlapping_globals (3 functions):
     00524f4c: core_mmx.c_detectIntelProcessor_FUN_00524f4c
     005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
@@ -537,6 +533,9 @@ FUNCTIONS BY SUSPECT TYPE
   warning_indirect_jump (2 functions):
     00457650: core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
     005b5710: wincore_windll.cpp_renderScanline_FUN_005b5710
+
+  bare_stack_ref (1 functions):
+    0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
 
   cpuid_intrinsic (1 functions):
     00524f4c: core_mmx.c_detectIntelProcessor_FUN_00524f4c

@@ -22,17 +22,23 @@
 ;   TerminatedCString s_ART_s_ACT_0064a26d
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x3c                           ; 0058a2b0
+    NOP                                 ; 0058a2b0
         ;   Label: core_skeledit.cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058a2b5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058a2b1
+    NOP                                 ; 0058a2b2
+    NOP                                 ; 0058a2b3
+    NOP                                 ; 0058a2b4
+    NOP                                 ; 0058a2b5
+    NOP                                 ; 0058a2b6
+    NOP                                 ; 0058a2b7
+    NOP                                 ; 0058a2b8
+    NOP                                 ; 0058a2b9
     PUSH EBX                            ; 0058a2ba
     PUSH ESI                            ; 0058a2bb
     PUSH EDI                            ; 0058a2bc

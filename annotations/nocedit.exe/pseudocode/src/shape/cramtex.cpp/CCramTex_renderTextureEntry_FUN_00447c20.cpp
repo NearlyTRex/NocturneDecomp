@@ -20,7 +20,6 @@ void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex
   int iVar6;
   int local_18;
   
-  __STK();
   if (show_final_placement == 0) {
     if (g_CramMapNumber != this_ptr->assigned_map_number) {
       return;

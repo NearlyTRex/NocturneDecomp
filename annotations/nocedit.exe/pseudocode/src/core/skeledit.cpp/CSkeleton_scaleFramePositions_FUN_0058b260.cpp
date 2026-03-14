@@ -13,7 +13,6 @@ void __cdecl core_skeledit_cpp_CSkeleton_scaleFramePositions_FUN_0058b260(CSkele
   int iVar2;
   int iVar3;
   
-  __STK();
   iVar3 = 0;
   if (0 < this_ptr->frame_count) {
     iVar2 = 0;

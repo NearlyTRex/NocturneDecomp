@@ -8,17 +8,23 @@
 ; int              Stack[0x8]:4   line_count
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x10                           ; 005894c0
+    NOP                                 ; 005894c0
         ;   Label: core_skeledit.cpp_skipFileLines_FUN_005894c0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 005894c5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 005894c1
+    NOP                                 ; 005894c2
+    NOP                                 ; 005894c3
+    NOP                                 ; 005894c4
+    NOP                                 ; 005894c5
+    NOP                                 ; 005894c6
+    NOP                                 ; 005894c7
+    NOP                                 ; 005894c8
+    NOP                                 ; 005894c9
     PUSH EBX                            ; 005894ca
     PUSH ESI                            ; 005894cb
     MOV ESI,dword ptr [ESP + 0x10]      ; 005894cc

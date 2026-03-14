@@ -19,7 +19,6 @@
 ;   TerminatedCString s_f_f_f_0064a902
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fscanf_FUN_005fe7c0
 ;
@@ -27,10 +26,17 @@
 
 section .text
 
-    PUSH 0x34                           ; 0058bc40
+    NOP                                 ; 0058bc40
         ;   Label: core_skeledit.cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058bc45
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058bc41
+    NOP                                 ; 0058bc42
+    NOP                                 ; 0058bc43
+    NOP                                 ; 0058bc44
+    NOP                                 ; 0058bc45
+    NOP                                 ; 0058bc46
+    NOP                                 ; 0058bc47
+    NOP                                 ; 0058bc48
+    NOP                                 ; 0058bc49
     PUSH EBX                            ; 0058bc4a
     PUSH ESI                            ; 0058bc4b
     PUSH EDI                            ; 0058bc4c

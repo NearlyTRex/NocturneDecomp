@@ -55,7 +55,6 @@
 ;   core_xform.cpp_inverse_FUN_005f6210
 ;   core_xform.cpp_transformVector3x4_FUN_005f4dc0
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fread_FUN_005fd990
 ;   crt_stdio.c_fseek_FUN_005ffacc
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
@@ -66,10 +65,17 @@
 
 section .text
 
-    PUSH 0x448                          ; 0058bd00
+    NOP                                 ; 0058bd00
         ;   Label: core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058bd05
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058bd01
+    NOP                                 ; 0058bd02
+    NOP                                 ; 0058bd03
+    NOP                                 ; 0058bd04
+    NOP                                 ; 0058bd05
+    NOP                                 ; 0058bd06
+    NOP                                 ; 0058bd07
+    NOP                                 ; 0058bd08
+    NOP                                 ; 0058bd09
     PUSH EBX                            ; 0058bd0a
     PUSH ESI                            ; 0058bd0b
     PUSH EDI                            ; 0058bd0c

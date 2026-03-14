@@ -9,7 +9,6 @@
 int * __cdecl core_skeledit_cpp_copyInt_FUN_00599630(int *dest,int *src)
 
 {
-  __STK();
   *dest = *src;
   return dest;
 }

@@ -120,10 +120,10 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 3291,
+    "assembly_lines": 3298,
     "complexity_score": 2499,
     "cross_reference_count": 1,
-    "function_call_count": 24,
+    "function_call_count": 23,
     "global_count": 125,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 1494,
@@ -135,7 +135,7 @@
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 4785
+    "total_lines": 4792
   },
   "cross_references": [
     {
@@ -154,7 +154,6 @@
       ]
     ],
     "convention": "__cdecl",
-    "is_ebp_frame": true,
     "name": "core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810",
     "signature": "int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformableModel *this_ptr,char *filename)"
   },
@@ -173,11 +172,6 @@
       "addr": "005fe6b0",
       "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
-    },
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fdbd0",
@@ -1053,16 +1047,16 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.242622950819672,
-    "instruction_count": 2745,
+    "avg_pcode_per_instr": 5.225208863058482,
+    "instruction_count": 2753,
     "opcode_distribution": {
       "BOOL_AND": 8,
       "BOOL_NEGATE": 163,
       "BOOL_OR": 55,
       "BRANCH": 42,
-      "CALL": 111,
+      "CALL": 110,
       "CBRANCH": 207,
-      "COPY": 3761,
+      "COPY": 3760,
       "FLOAT2FLOAT": 225,
       "FLOAT_ABS": 6,
       "FLOAT_ADD": 17,
@@ -1091,18 +1085,18 @@
       "INT_SLESS": 637,
       "INT_SREM": 3,
       "INT_SRIGHT": 10,
-      "INT_SUB": 631,
+      "INT_SUB": 629,
       "INT_XOR": 73,
       "INT_ZEXT": 132,
       "LOAD": 827,
       "POPCOUNT": 605,
       "RETURN": 2,
       "ROUND": 2,
-      "STORE": 756,
+      "STORE": 754,
       "SUBPIECE": 66,
       "TRUNC": 2
     },
-    "pcode_op_count": 14391
+    "pcode_op_count": 14385
   },
   "stack_frame": {
     "frame_size": 41468,
@@ -2964,7 +2958,7 @@
       "line": 957,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*(ushort *)((int)&uStack_2d8 + (uint)bVar38 * -8 + 2) =",
+      "text": "*(ushort *)((int)&uStack_2d8 + (uint)bVar40 * -8 + 2) =",
       "type": "pointer_cast"
     },
     {
@@ -2972,7 +2966,7 @@
       "line": 958,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*(ushort *)((int)puVar29 + (uint)bVar38 * -8 + 10);",
+      "text": "*(ushort *)((int)puVar29 + (uint)bVar40 * -8 + 10);",
       "type": "pointer_cast"
     },
     {
@@ -3028,7 +3022,7 @@
       "line": 1135,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*(ushort *)((int)&uStack_2ec + (uint)bVar38 * -8 + 2) =",
+      "text": "*(ushort *)((int)&uStack_2ec + (uint)bVar40 * -8 + 2) =",
       "type": "pointer_cast"
     },
     {
@@ -3036,7 +3030,7 @@
       "line": 1136,
       "match": "(ushort *)((int)",
       "severity": "mild",
-      "text": "*(ushort *)((int)puVar29 + (uint)bVar38 * -8 + 10);",
+      "text": "*(ushort *)((int)puVar29 + (uint)bVar40 * -8 + 10);",
       "type": "pointer_cast"
     },
     {
@@ -3060,7 +3054,7 @@
       "line": 1204,
       "match": "(SInputFace *)((int)",
       "severity": "mild",
-      "text": "pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar38 * -8 + 4);",
+      "text": "pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar40 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -3068,7 +3062,7 @@
       "line": 1205,
       "match": "(SInputFace *)((int)",
       "severity": "mild",
-      "text": "pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar38 * -8 + 4);",
+      "text": "pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar40 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -3076,7 +3070,7 @@
       "line": 1208,
       "match": "(SInputFace *)((int)",
       "severity": "mild",
-      "text": "pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar38 * -2 + 1);",
+      "text": "pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar40 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -3084,7 +3078,7 @@
       "line": 1209,
       "match": "(SInputFace *)((int)",
       "severity": "mild",
-      "text": "pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar38 * -2 + 1);",
+      "text": "pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar40 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -3092,7 +3086,7 @@
       "line": 1227,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar35 = (int *)((int)piVar35 + (uint)bVar38 * -2 + 1);",
+      "text": "piVar35 = (int *)((int)piVar35 + (uint)bVar40 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -3100,7 +3094,7 @@
       "line": 1229,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar23 = (int *)((int)piVar23 + (uint)bVar38 * -2 + 1);",
+      "text": "piVar23 = (int *)((int)piVar23 + (uint)bVar40 * -2 + 1);",
       "type": "pointer_cast"
     },
     {

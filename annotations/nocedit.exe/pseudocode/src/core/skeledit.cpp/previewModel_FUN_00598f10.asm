@@ -22,17 +22,23 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x20                           ; 00598f10
+    NOP                                 ; 00598f10
         ;   Label: core_skeledit.cpp_previewModel_FUN_00598f10
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00598f15
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00598f11
+    NOP                                 ; 00598f12
+    NOP                                 ; 00598f13
+    NOP                                 ; 00598f14
+    NOP                                 ; 00598f15
+    NOP                                 ; 00598f16
+    NOP                                 ; 00598f17
+    NOP                                 ; 00598f18
+    NOP                                 ; 00598f19
     PUSH EBX                            ; 00598f1a
     PUSH ESI                            ; 00598f1b
     PUSH EDI                            ; 00598f1c

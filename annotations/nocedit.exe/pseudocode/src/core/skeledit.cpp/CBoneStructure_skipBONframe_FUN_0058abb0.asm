@@ -18,17 +18,23 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x18                           ; 0058abb0
+    NOP                                 ; 0058abb0
         ;   Label: core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058abb5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058abb1
+    NOP                                 ; 0058abb2
+    NOP                                 ; 0058abb3
+    NOP                                 ; 0058abb4
+    NOP                                 ; 0058abb5
+    NOP                                 ; 0058abb6
+    NOP                                 ; 0058abb7
+    NOP                                 ; 0058abb8
+    NOP                                 ; 0058abb9
     PUSH EBX                            ; 0058abba
     PUSH ESI                            ; 0058abbb
     PUSH EDI                            ; 0058abbc

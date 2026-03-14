@@ -9,17 +9,23 @@
 ; char *           Stack[0xc]:4   value
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x14                           ; 00596860
+    NOP                                 ; 00596860
         ;   Label: core_skeledit.cpp_drawInfoRow_FUN_00596860
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00596865
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00596861
+    NOP                                 ; 00596862
+    NOP                                 ; 00596863
+    NOP                                 ; 00596864
+    NOP                                 ; 00596865
+    NOP                                 ; 00596866
+    NOP                                 ; 00596867
+    NOP                                 ; 00596868
+    NOP                                 ; 00596869
     PUSH EBX                            ; 0059686a
     MOV EBX,dword ptr [ESP + 0x8]       ; 0059686b
     LEA EDX,[EBX + 0x1]                 ; 0059686f

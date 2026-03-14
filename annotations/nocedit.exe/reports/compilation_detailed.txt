@@ -5,15 +5,15 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5776 (89.1%)
-Failed: 708
+Successful: 5778 (89.1%)
+Failed: 706
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1352
-  format_error                     800
-  incompatible_types               320
-  undeclared_identifier            221
+  other                           1359
+  format_error                     801
+  incompatible_types               319
+  undeclared_identifier            212
   syntax_error                      46
   missing_member                    20
   lvalue_required                   15
@@ -22,7 +22,7 @@ ERROR CATEGORIES
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1352 errors)
+CATEGORY: other (1359 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -229,10 +229,8 @@ CATEGORY: other (1352 errors)
     Line 272: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_msnedit.cpp_CDemonMission_showOptionsMenu_FUN_00537680
     Line 89: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
-  core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
-    Line 278: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_skeledit.cpp_CLodMesh_selectAndGenerateLods_FUN_00589c20
-    Line 100: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+    Line 99: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_werewolf.cpp_CWerewolf_propertyDisplayCallback_FUN_005f2010
     Line 28: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0
@@ -270,7 +268,7 @@ CATEGORY: other (1352 errors)
   engine_model.c_loadModelFile_FUN_00527ec0
     Line 46: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00
-    Line 77: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+    Line 70: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   shape_design.c_cramTextures_FUN_0046a970
     Line 93: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   shape_design.c_fixupCramUV_FUN_0046e090
@@ -357,6 +355,8 @@ CATEGORY: other (1352 errors)
     Line 63: member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union
   core_particle.cpp_CParticle_process_FUN_00545760
     Line 52: member reference base type 'byte[52]' (aka 'unsigned char[52]') is not a structure or union
+  core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
+    Line 215: member reference base type 'byte[88]' (aka 'unsigned char[88]') is not a structure or union
   core_stranger.cpp_CStranger_processFrame_FUN_005bb960
     Line 147: member reference base type 'byte[8]' (aka 'unsigned char[8]') is not a structure or union
   core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0
@@ -548,13 +548,13 @@ CATEGORY: other (1352 errors)
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
     Line 286: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
-    Line 70: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 69: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_saveStream_FUN_0058f120
-    Line 51: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 50: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    Line 227: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 226: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
-    Line 31: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 30: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_sound.cpp_CSound_process_FUN_005b2fd0
     Line 225: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_sound.cpp_playSfxInternal_FUN_005b1fd0
@@ -657,7 +657,7 @@ CATEGORY: other (1352 errors)
     Line 1033: use of undeclared label 'DAT_032758e8'
 
 ====================================================================================================
-CATEGORY: format_error (800 errors)
+CATEGORY: format_error (801 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -829,9 +829,9 @@ CATEGORY: format_error (800 errors)
   core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
     Line 129: format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]
   core_skeledit.cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0
-    Line 17: format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]
-  core_skeledit.cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0
     Line 16: format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]
+  core_skeledit.cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0
+    Line 15: format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]
   core_mimic.cpp_CMimic_beginMorph_FUN_00520a80
     Line 46: format specifies type 'char *' but the argument has type 'CMimic *' [-Werror,-Wformat]
   core_mimic.cpp_CMimic_setupCloth_FUN_00520500
@@ -895,13 +895,13 @@ CATEGORY: format_error (800 errors)
   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0
     Line 64: format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]
   core_skeledit.cpp_CSkeleton_saveStream_FUN_0058b3a0
-    Line 39: format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]
+    Line 38: format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]
   core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0
     Line 67: format specifies type 'char *' but the argument has type 'SBone *' [-Werror,-Wformat]
   core_skeledit.cpp_CBoneStructure_fixupMatrices_FUN_0058adb0
-    Line 27: format specifies type 'char *' but the argument has type 'SBoneData *' [-Werror,-Wformat]
+    Line 26: format specifies type 'char *' but the argument has type 'SBoneData *' [-Werror,-Wformat]
   core_skeledit.cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0
-    Line 36: format specifies type 'char *' but the argument has type 'SBoneData *' [-Werror,-Wformat]
+    Line 35: format specifies type 'char *' but the argument has type 'SBoneData *' [-Werror,-Wformat]
   core_cloth.cpp_CCloth_load_FUN_00438cf0
     Line 126: format specifies type 'char *' but the argument has type 'SClothBone *' [-Werror,-Wformat]
   core_cloth.cpp_CCloth_save_FUN_00439260
@@ -963,7 +963,7 @@ CATEGORY: format_error (800 errors)
   core_motion.cpp_CMotionList_save_FUN_0052d170
     Line 37: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
   core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    Line 266: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
+    Line 265: format specifies type 'char *' but the argument has type 'char (*)[30]' [-Werror,-Wformat]
   core_event.cpp_CEventList_render_FUN_004addf0
     Line 39: format specifies type 'char *' but the argument has type 'char (*)[32]' [-Werror,-Wformat]
   core_event.cpp_CEventList_saveState_FUN_004b1380
@@ -1055,7 +1055,7 @@ CATEGORY: format_error (800 errors)
   core_gore.cpp_CBloodPool_save_FUN_004ed1c0
     Line 18: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
-    Line 144: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
+    Line 143: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100
     Line 45: format specifies type 'double' but the argument has type 'uint32_t' (aka 'unsigned int') [-Werror,-Wformat]
   core_dtri.cpp_CDemonTriangle_readDataCSV_FUN_0049a4e0
@@ -1065,7 +1065,7 @@ CATEGORY: format_error (800 errors)
   core_course.cpp_CCourse_importMatrices_FUN_00442ea0
     Line 44: format specifies type 'float *' but the argument has type 'CMatrix3x3f *' [-Werror,-Wformat]
   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
-    Line 23: format specifies type 'float *' but the argument has type 'CMatrix3x4f *' [-Werror,-Wformat]
+    Line 22: format specifies type 'float *' but the argument has type 'CMatrix3x4f *' [-Werror,-Wformat]
   core_actor.cpp_archiveQuaternion_FUN_0040b520
     Line 15: format specifies type 'float *' but the argument has type 'CQuaternion4f *' [-Werror,-Wformat]
   core_event.cpp_CEventList_executeCommand_FUN_004aacc0
@@ -1087,7 +1087,7 @@ CATEGORY: format_error (800 errors)
   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80
     Line 387: format specifies type 'float *' but the argument has type 'int *' [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_importVerticesS3D_FUN_0058bc40
-    Line 32: format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
+    Line 31: format specifies type 'float *' but the argument has type 'uint *' (aka 'unsigned int *') [-Werror,-Wformat]
   core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0
     Line 72: format specifies type 'int *' but the argument has type 'C3DSLight *' [-Werror,-Wformat]
   core_setutil.cpp_C3DSLight_importS3D_FUN_00587710
@@ -1124,10 +1124,12 @@ CATEGORY: format_error (800 errors)
     Line 285: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   core_set.cpp_CDemonSet_load_FUN_00569410
     Line 73: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
+  core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
+    Line 31: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_importGeometryS3D_FUN_0058b660
-    Line 61: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
+    Line 60: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   core_skeledit.cpp_CLodMeshPrecomputeEntry_load_FUN_00589fe0
-    Line 17: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
+    Line 16: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   shape_design.c_createPolygonFromVertexList_FUN_0045cc80
     Line 35: format specifies type 'int *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]
   shape_design.c_createRotationalSweepGeometry_FUN_0045e070
@@ -1155,7 +1157,7 @@ CATEGORY: format_error (800 errors)
   shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0
     Line 81: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
   core_skeledit.cpp_CDeformableModel_importFacesS3D_FUN_0058b9b0
-    Line 51: format specifies type 'int *' but the argument has type 'ushort *' (aka 'unsigned short *') [-Werror,-Wformat]
+    Line 50: format specifies type 'int *' but the argument has type 'ushort *' (aka 'unsigned short *') [-Werror,-Wformat]
   core_menu.cpp_calibrateGamepad_FUN_005104d0
     Line 42: format specifies type 'int' but the argument has type 'DWORD' (aka 'unsigned long') [-Werror,-Wformat]
   core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840
@@ -1196,7 +1198,7 @@ CATEGORY: format_error (800 errors)
     Line 40: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: incompatible_types (320 errors)
+CATEGORY: incompatible_types (319 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -1210,7 +1212,7 @@ CATEGORY: incompatible_types (320 errors)
   shape_superopt.cpp_COptimize_addComplexPolygon_FUN_005d76e0
     Line 16: assigning to 'CComplexPolygon **' from incompatible type 'void *'
   core_skeledit.cpp_viewModel_FUN_00598fc0
-    Line 153: assigning to 'CDeformableModelInstance *' from incompatible type 'void *'
+    Line 152: assigning to 'CDeformableModelInstance *' from incompatible type 'void *'
   core_actor.cpp_createActorByName_FUN_0040c430
     Line 26: assigning to 'CDemonActor *' from incompatible type 'void *'
   core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380
@@ -1402,7 +1404,7 @@ CATEGORY: incompatible_types (320 errors)
   core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0
     Line 18: assigning to 'int *' from incompatible type 'void *'
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
-    Line 73: assigning to 'int *' from incompatible type 'void *'
+    Line 72: assigning to 'int *' from incompatible type 'void *'
   core_skeledit.cpp_CDeformableModel_extractLodLevel_FUN_0058d790
     Line 153: assigning to 'int *' from incompatible type 'void *'
   shape_design.c_complexPolygonReduction_FUN_00463b30
@@ -1437,8 +1439,6 @@ CATEGORY: incompatible_types (320 errors)
     Line 62: assigning to 'int' from incompatible type 'void'
   core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260
     Line 69: assigning to 'int' from incompatible type 'void'
-  engine_texture.cpp_ensureTextureLoaded_FUN_005dd800
-    Line 22: assigning to 'int' from incompatible type 'void'
   wincore_windll.cpp_clear_FUN_005b7a30
     Line 17: assigning to 'int' from incompatible type 'void'
   wincore_windll.cpp_setColorTable16_FUN_005b7579
@@ -1587,7 +1587,7 @@ CATEGORY: incompatible_types (320 errors)
     Line 112: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (221 errors)
+CATEGORY: undeclared_identifier (212 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
@@ -1742,10 +1742,6 @@ CATEGORY: undeclared_identifier (221 errors)
     Line 24: use of undeclared identifier 'stack0x00000008'
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 41: use of undeclared identifier 'stack0x0000002c'
-  core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690
-    Line 409: use of undeclared identifier 'stack0xfffeec08'; did you mean 'in_stack_fffeec08'?
-  core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190
-    Line 141: use of undeclared identifier 'stack0xffff5dd8'; did you mean 'in_stack_ffff5dd8'?
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 500: use of undeclared identifier 'stack0xffffcc64'
   core_event.cpp_CEventList_executeCommand_FUN_004aacc0
@@ -1784,8 +1780,6 @@ CATEGORY: undeclared_identifier (221 errors)
     Line 111: use of undeclared identifier 'stack0xffffff78'
   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
     Line 85: use of undeclared identifier 'stack0xffffff94'; did you mean 'in_stack_ffffff94'?
-  core_skeledit.cpp_CDeformableModel_sortFacesByTexture_FUN_0058e240
-    Line 82: use of undeclared identifier 'stack0xffffffba'
   shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
     Line 25: use of undeclared identifier 'stack0xffffffbc'
   core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004d1f70
@@ -1798,8 +1792,6 @@ CATEGORY: undeclared_identifier (221 errors)
     Line 19: use of undeclared identifier 'stack0xffffffe0'
   core_mimic.cpp_CMimic_setup_FUN_0051f3e0
     Line 118: use of undeclared identifier 'stack0xffffffe8'
-  core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0
-    Line 32: use of undeclared identifier 'stack0xffffffe8'; did you mean 'in_stack_ffffffe8'?
   engine_dosio.c_copyFileTimestamp_FUN_00481910
     Line 19: use of undeclared identifier 'stat_00600c18'
   engine_dosio.c_findFileNormally_FUN_004817c0

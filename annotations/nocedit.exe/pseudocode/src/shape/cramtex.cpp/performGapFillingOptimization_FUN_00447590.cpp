@@ -26,7 +26,6 @@ uint __cdecl shape_cramtex_cpp_performGapFillingOptimization_FUN_00447590(void)
   uint local_18;
   CCramTex *local_14;
   
-  __STK();
   if (g_CramFillGaps != 0) {
     do {
       iVar4 = 0;

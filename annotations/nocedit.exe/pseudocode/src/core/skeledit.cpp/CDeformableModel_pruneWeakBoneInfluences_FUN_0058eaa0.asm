@@ -24,17 +24,23 @@
 ;   CEditorTools g_CEditorToolsInstance
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x4c                           ; 0058eaa0
+    NOP                                 ; 0058eaa0
         ;   Label: core_skeledit.cpp_CDeformableModel_pruneWeakBoneInfluences_FUN_0058eaa0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058eaa5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058eaa1
+    NOP                                 ; 0058eaa2
+    NOP                                 ; 0058eaa3
+    NOP                                 ; 0058eaa4
+    NOP                                 ; 0058eaa5
+    NOP                                 ; 0058eaa6
+    NOP                                 ; 0058eaa7
+    NOP                                 ; 0058eaa8
+    NOP                                 ; 0058eaa9
     PUSH EBX                            ; 0058eaaa
     PUSH ESI                            ; 0058eaab
     PUSH EDI                            ; 0058eaac

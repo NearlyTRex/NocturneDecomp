@@ -17,13 +17,13 @@ void __cdecl core_skeledit_cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80(
   CMatrix3x4f *pCVar5;
   CMatrix3x4f *pCVar3;
   byte bVar6;
+  byte bVar4;
   CMatrix3x4f local_a4;
   CMatrix3x4f local_74;
   CMatrix3x4f local_44;
   SBoneData *local_14;
   
-  bVar6 = 0;
-  __STK();
+  bVar4 = 0;
   iVar3 = 0;
   if (0 < this_ptr->bone_count) {
     pSVar2 = this_ptr->bones;
@@ -39,10 +39,10 @@ void __cdecl core_skeledit_cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80(
         pCVar5 = &local_44;
         pCVar3 = &local_74;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-          pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar6 * -8 + 4);
+          pCVar5 = (CMatrix3x4f *)((int)pCVar5 + (uint)bVar4 * -8 + 4);
           pCVar3->m[0].w = pCVar5->m[0].w;
           pCVar5 = pCVar5;
-          pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
+          pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
         }
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&pSVar2->world_matrix,&local_74,&local_a4);
         iVar1 = 0xc;
@@ -50,10 +50,10 @@ void __cdecl core_skeledit_cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80(
         pCVar4 = &local_a4;
       }
       for (; iVar1 != 0; iVar1 = iVar1 + -1) {
-        pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar6 * -8 + 4);
+        pCVar4 = (CMatrix3x4f *)((int)pCVar4 + (uint)bVar4 * -8 + 4);
         pCVar3->m[0].w = pCVar4->m[0].w;
         pCVar4 = pCVar4;
-        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar6 * -8 + 4);
+        pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
       }
       iVar3 = iVar3 + 1;
       pSVar2 = pSVar2 + 1;

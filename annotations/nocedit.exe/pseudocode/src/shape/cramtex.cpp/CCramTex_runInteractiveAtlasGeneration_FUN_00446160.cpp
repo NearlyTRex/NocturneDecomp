@@ -78,7 +78,6 @@ int __cdecl shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_0044616
   int *piVar1;
   int *piVar2;
   
-  __STK();
   local_3c = g_CramCandidateWriteCursor;
   local_a8 = 0;
   local_a4 = 0;

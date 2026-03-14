@@ -10,17 +10,21 @@
 ; XREF[1]:
 ;   shape_cramtex.cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160 at 00446249
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x4                            ; 00446140
+    NOP                                 ; 00446140
         ;   Label: shape_cramtex.cpp_qsortRectanglesByActiveFlag_FUN_00446140
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00446145
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00446141
+    NOP                                 ; 00446142
+    NOP                                 ; 00446143
+    NOP                                 ; 00446144
+    NOP                                 ; 00446145
+    NOP                                 ; 00446146
+    NOP                                 ; 00446147
+    NOP                                 ; 00446148
+    NOP                                 ; 00446149
     MOV EAX,dword ptr [ESP + 0x4]       ; 0044614a
     MOV EDX,dword ptr [ESP + 0x8]       ; 0044614e
     MOV EAX,dword ptr [EAX]             ; 00446152

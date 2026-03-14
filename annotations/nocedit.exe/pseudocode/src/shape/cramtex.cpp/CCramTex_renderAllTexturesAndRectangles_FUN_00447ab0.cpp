@@ -16,7 +16,6 @@ void __cdecl shape_cramtex_cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447
   int iVar2;
   int y_00;
   
-  __STK();
   if (g_CramVisualizationFlag != 0) {
     engine_2d_c_fillRectColor_FUN_00403170(x,y,width + -1,height + -1,1);
     iVar2 = g_CramPlacedTextureCount;

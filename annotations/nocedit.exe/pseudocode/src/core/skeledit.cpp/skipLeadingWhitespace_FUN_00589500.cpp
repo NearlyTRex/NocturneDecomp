@@ -9,7 +9,6 @@
 void __cdecl core_skeledit_cpp_skipLeadingWhitespace_FUN_00589500(char *str)
 
 {
-  __STK();
   while ((g_CharacterClassificationTable[(byte)(*str + 1)] & 2) != 0) {
     str = str + 1;
   }

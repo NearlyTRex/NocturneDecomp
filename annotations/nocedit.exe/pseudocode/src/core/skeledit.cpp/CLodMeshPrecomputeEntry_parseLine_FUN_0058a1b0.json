@@ -4,13 +4,13 @@
       {
         "category": "format_error",
         "column": 58,
-        "line": 17,
+        "line": 16,
         "message": "format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 44,
-        "line": 19,
+        "line": 18,
         "message": "format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]"
       }
     ],
@@ -18,16 +18,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 70,
-    "complexity_score": 19,
+    "assembly_lines": 77,
+    "complexity_score": 18,
     "cross_reference_count": 0,
-    "function_call_count": 2,
+    "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 18,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 89
+    "total_lines": 95
   },
   "cross_references": [],
   "function": {
@@ -43,11 +43,6 @@
     "signature": "int __cdecl core_skeledit_cpp_CLodMeshPrecomputeEntry_parseLine_FUN_0058a1b0(CLodMeshPrecomputeEntry *this_ptr,char *line)"
   },
   "function_calls": [
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
-    },
     {
       "addr": "0060013c",
       "is_variadic": true,
@@ -83,13 +78,13 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.016949152542373,
-    "instruction_count": 59,
+    "avg_pcode_per_instr": 3.4477611940298507,
+    "instruction_count": 67,
     "opcode_distribution": {
       "BRANCH": 1,
-      "CALL": 4,
+      "CALL": 3,
       "CBRANCH": 2,
-      "COPY": 49,
+      "COPY": 48,
       "INT_ADD": 24,
       "INT_AND": 22,
       "INT_CARRY": 7,
@@ -99,14 +94,14 @@
       "INT_SBORROW": 3,
       "INT_SCARRY": 7,
       "INT_SLESS": 11,
-      "INT_SUB": 26,
+      "INT_SUB": 24,
       "INT_XOR": 1,
       "LOAD": 13,
       "POPCOUNT": 11,
       "RETURN": 2,
-      "STORE": 27
+      "STORE": 25
     },
-    "pcode_op_count": 237
+    "pcode_op_count": 231
   },
   "stack_frame": {
     "frame_size": 28,

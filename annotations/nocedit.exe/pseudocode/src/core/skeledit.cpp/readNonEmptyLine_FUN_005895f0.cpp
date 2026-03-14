@@ -12,7 +12,6 @@ int __cdecl core_skeledit_cpp_readNonEmptyLine_FUN_005895f0(char *buffer,_FILE *
   int iVar1;
   char *pcVar2;
   
-  __STK();
   do {
     do {
       iVar1 = _fgetc(file);

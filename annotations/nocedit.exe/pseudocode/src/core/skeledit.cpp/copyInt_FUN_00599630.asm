@@ -7,17 +7,21 @@
 ; int *            Stack[0x4]:4   dest
 ; int *            Stack[0x8]:4   src
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x4                            ; 00599630
+    NOP                                 ; 00599630
         ;   Label: core_skeledit.cpp_copyInt_FUN_00599630
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00599635
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00599631
+    NOP                                 ; 00599632
+    NOP                                 ; 00599633
+    NOP                                 ; 00599634
+    NOP                                 ; 00599635
+    NOP                                 ; 00599636
+    NOP                                 ; 00599637
+    NOP                                 ; 00599638
+    NOP                                 ; 00599639
     MOV EDX,dword ptr [ESP + 0x4]       ; 0059963a
     MOV EAX,dword ptr [ESP + 0x8]       ; 0059963e
     MOV EAX,dword ptr [EAX]             ; 00599642

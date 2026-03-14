@@ -16,7 +16,6 @@ void __cdecl core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10(CBoneStr
   int iVar4;
   int iVar5;
   
-  __STK();
   for (iVar5 = 0; iVar5 < this_ptr->bone_count; iVar5 = iVar5 + 1) {
     iVar3 = this_ptr->shuffled_bone_indices[iVar5];
     matrix = &this_ptr->bones[iVar3].world_matrix;

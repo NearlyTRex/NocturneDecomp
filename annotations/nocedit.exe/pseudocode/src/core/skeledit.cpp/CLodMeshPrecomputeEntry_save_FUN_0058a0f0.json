@@ -4,7 +4,7 @@
       {
         "category": "format_error",
         "column": 35,
-        "line": 16,
+        "line": 15,
         "message": "format specifies type 'char *' but the argument has type 'CLodMeshPrecomputeEntry *' [-Werror,-Wformat]"
       }
     ],
@@ -12,16 +12,16 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 68,
-    "complexity_score": 15,
+    "assembly_lines": 75,
+    "complexity_score": 14,
     "cross_reference_count": 3,
-    "function_call_count": 2,
+    "function_call_count": 1,
     "global_count": 10,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 15,
+    "pseudocode_lines": 14,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 83
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -56,11 +56,6 @@
     "signature": "void __cdecl core_skeledit_cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0(CLodMeshPrecomputeEntry *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
-    },
     {
       "addr": "005fe6d0",
       "is_variadic": true,
@@ -183,24 +178,24 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.071428571428571,
-    "instruction_count": 56,
+    "avg_pcode_per_instr": 3.46875,
+    "instruction_count": 64,
     "opcode_distribution": {
-      "CALL": 11,
-      "COPY": 36,
+      "CALL": 10,
+      "COPY": 35,
       "INT_ADD": 18,
       "INT_AND": 20,
       "INT_CARRY": 10,
       "INT_EQUAL": 20,
       "INT_SCARRY": 10,
       "INT_SLESS": 10,
-      "INT_SUB": 38,
+      "INT_SUB": 36,
       "LOAD": 6,
       "POPCOUNT": 10,
       "RETURN": 1,
-      "STORE": 38
+      "STORE": 36
     },
-    "pcode_op_count": 228
+    "pcode_op_count": 222
   },
   "stack_frame": {
     "frame_size": 12,

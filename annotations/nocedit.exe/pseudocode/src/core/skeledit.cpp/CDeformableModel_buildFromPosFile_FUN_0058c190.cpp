@@ -42,7 +42,8 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   SMRGLTextureLod *pSVar21;
   char *pcVar21;
   byte bVar22;
-  int in_stack_ffff5dd8;
+  byte bVar23;
+  byte local_a228 [88];
   float afStack_a1d0 [3279];
   int aiStack_6e94 [100];
   byte local_6d04 [18404];
@@ -117,8 +118,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   SVert *pSVar2;
   uint uVar3;
   
-  bVar22 = 0;
-  __STK();
+  bVar23 = 0;
   g_SkeleditStatusMessage[0] = '\0';
   pCVar5 = (CBoneStructure *)
            shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -133,19 +133,19 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   core_skeleton_cpp_CDeformableModel_free_FUN_0059a2b0(this_ptr);
   do {
     iVar6 = _fgetc((_FILE *)pCVar5);
-    this_ptr_00 = local_24;
+    pCVar4 = local_24;
     if (iVar6 < 0) break;
   } while ((iVar6 != 10) || (iVar12 = iVar12 + -1, 0 < iVar12));
   _fscanf((_FILE *)local_24,"%d\n",local_20);
   core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
-            ((CBoneStructure *)&stack0xffff5dd8,(_FILE *)this_ptr_00,&local_b4);
+            ((CBoneStructure *)local_a228,(_FILE *)pCVar4,&local_b4);
   core_skeledit_cpp_CBoneStructure_readBONframe_FUN_0058aa10
-            (this_ptr_00,(_FILE *)0x0,in_stack_ffff5dd8);
+            ((CBoneStructure *)local_a228,(_FILE *)pCVar4,0);
   skeleton = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(this_ptr);
   core_skeledit_cpp_CBoneStructure_copyHierarchyFromSkeleton_FUN_0058b160
             ((CBoneStructure *)local_6d04,skeleton);
   iVar5 = core_skeledit_cpp_CBoneStructure_doesHierarchyMatch_FUN_0058b200
-                    ((CBoneStructure *)&stack0xffff5dd8,(CBoneStructure *)local_6d04);
+                    ((CBoneStructure *)local_a228,(CBoneStructure *)local_6d04);
   if (iVar5 == 0) {
     pcVar16 = this_ptr->model_name;
     _sprintf
@@ -163,7 +163,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
         if (iVar5 < 0) break;
         if (iVar5 == 0) {
           core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0
-                    ((CBoneStructure *)&stack0xffff5dd8,entry->pos_filename);
+                    ((CBoneStructure *)local_a228,entry->pos_filename);
         }
         if (iVar5 == 1) {
           core_skeledit_cpp_CBoneStructure_showBoneHierarchy_FUN_0058afe0
@@ -176,7 +176,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_buildFromPosFile_FUN_0058c190(CDe
   }
   iVar5 = 1;
   do {
-    iVar8 = _fgetc((_FILE *)this_ptr_00);
+    iVar8 = _fgetc((_FILE *)pCVar4);
     if (iVar8 < 0) break;
   } while ((iVar8 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
   iVar5 = _fscanf((_FILE *)local_24,"%d,%d,%d\n",&local_b0,&local_ac,&local_a8);
@@ -208,11 +208,11 @@ LAB_0058c613:
   }
   core_skeledit_cpp_CDeformableModel_removeUnusedTextures_FUN_0058ec60(this_ptr);
   core_skeledit_cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0
-            ((CBoneStructure *)&stack0xffff5dd8,(CMatrix3x4f *)(local_6d04 + 0x3524));
+            ((CBoneStructure *)local_a228,(CMatrix3x4f *)(local_6d04 + 0x3524));
   core_skeledit_cpp_CDeformableModel_extractBoneScales_FUN_0058dde0
-            (this_ptr,(CBoneStructure *)&stack0xffff5dd8);
+            (this_ptr,(CBoneStructure *)local_a228);
   local_28 = 0;
-  if (0 < in_stack_ffff5dd8) {
+  if (0 < (int)local_a228._0_4_) {
     local_70 = afStack_a1d0;
     iVar5 = 0;
     do {
@@ -221,15 +221,15 @@ LAB_0058c613:
       iVar5 = iVar5 + 0x30;
       pCVar14 = &local_11c;
       for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {
-        pfVar19 = pfVar19 + (uint)bVar22 * -2 + 1;
-        pCVar14 = (CMatrix3x4f *)((int)pCVar14 + (uint)bVar22 * -8 + 4);
+        pfVar19 = pfVar19 + (uint)bVar23 * -2 + 1;
+        pCVar14 = (CMatrix3x4f *)((int)pCVar14 + (uint)bVar23 * -8 + 4);
         *pfVar19 = pCVar14->m[0].w;
         pCVar14 = pCVar14;
         pfVar19 = pfVar19;
       }
       local_28 = local_28 + 1;
       local_70 = local_70 + 0x21;
-    } while (local_28 < in_stack_ffff5dd8);
+    } while (local_28 < (int)local_a228._0_4_);
   }
   splitpath
             (entry->pos_filename,local_14,local_718,(char *)0x0,(char *)0x0);
@@ -395,7 +395,7 @@ LAB_0058c4df:
         pcVar16 = pcVar19;
       } while (pcVar19 != pcVar21 + 400);
       iVar8 = _fscanf((_FILE *)local_24,"%d\n",&local_94);
-      if (((iVar8 != 1) || (local_94 < 1)) || (in_stack_ffff5dd8 < local_94)) {
+      if (((iVar8 != 1) || (local_94 < 1)) || ((int)local_a228._0_4_ < local_94)) {
 LAB_0058c601:
         shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_1f4,0);
         goto LAB_0058c613;
@@ -507,6 +507,7 @@ LAB_0058c601:
   local_1f4.attribute_enabled_flags[2] = 1;
   local_1f4.attribute_enabled_flags[3] = 0;
   local_1f4.active_attribute_count = 4;
+  local_1f4.extra_attribute_count = local_a228._0_4_;
   iVar5 = 0;
   pCVar15 = this_ptr;
   if (0 < this_ptr->num_textures) {
@@ -514,8 +515,8 @@ LAB_0058c601:
       pSVar17 = pCVar15->texture_sets;
       pSVar21 = local_1f4.lod_textures + iVar5;
       for (iVar8 = 0x12; iVar8 != 0; iVar8 = iVar8 + -1) {
-        pSVar21 = (SMRGLTextureLod *)((int)pSVar21 + (uint)bVar22 * -8 + 4);
-        pSVar17 = (STextureSet *)((int)pSVar17 + (uint)bVar22 * -8 + 4);
+        pSVar21 = (SMRGLTextureLod *)((int)pSVar21 + (uint)bVar23 * -8 + 4);
+        pSVar17 = (STextureSet *)((int)pSVar17 + (uint)bVar23 * -8 + 4);
         pSVar21->textures[0].base.type = pSVar17->textures[0].textures[0].base.type;
         pSVar17 = pSVar17;
         pSVar21 = pSVar21;
@@ -533,6 +534,7 @@ LAB_0058c601:
   local_350.attribute_enabled_flags[1] = 1;
   local_350.attribute_enabled_flags[0] = 0;
   local_350.attribute_enabled_flags[2] = 1;
+  local_350.extra_attribute_count = local_a228._0_4_;
   local_350.attribute_enabled_flags[3] = 0;
   g_EnableMidpointSampling = 1;
   g_LodReplayMode = 0;

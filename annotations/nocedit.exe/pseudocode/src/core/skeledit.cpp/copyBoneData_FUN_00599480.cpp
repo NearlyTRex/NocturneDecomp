@@ -12,16 +12,13 @@ SBoneData * __cdecl core_skeledit_cpp_copyBoneData_FUN_00599480(SBoneData *dest,
   int iVar1;
   SBoneData *pSVar2;
   SBoneData *pSVar3;
-  byte bVar4;
   
-  bVar4 = 0;
-  __STK();
   pSVar2 = src;
   pSVar3 = dest;
   for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(uint *)pSVar3->name = *(uint *)pSVar2->name;
-    pSVar2 = (SBoneData *)((int)pSVar2 + (uint)bVar4 * -8 + 4);
-    pSVar3 = (SBoneData *)((int)pSVar3 + (uint)bVar4 * -8 + 4);
+    pSVar2 = (SBoneData *)(pSVar2->name + 4);
+    pSVar3 = (SBoneData *)(pSVar3->name + 4);
   }
   *(ushort *)pSVar3->name = *(ushort *)pSVar2->name;
   dest->parent_index = src->parent_index;

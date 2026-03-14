@@ -37,6 +37,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDe
   float *pfVar7;
   uint *puVar21;
   byte bVar22;
+  byte bVar8;
   float local_538;
   CVector3f local_534;
   float local_528 [250];
@@ -64,8 +65,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDe
   float *pfVar1;
   double dVar3;
   
-  bVar22 = 0;
-  __STK();
+  bVar8 = 0;
   pCVar4 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(this_ptr);
   iVar2 = pCVar4->bone_count;
   core_skeleton_cpp_CDeformableModel_allocLOD_FUN_0059a510
@@ -190,17 +190,17 @@ void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDe
     pcVar17 = pcVar13 + 0xc;
     pfVar6 = local_528;
     for (iVar10 = 0xfa; iVar10 != 0; iVar10 = iVar10 + -1) {
-      pcVar17 = pcVar17 + (uint)bVar22 * -8 + 4;
+      pcVar17 = pcVar17 + (uint)bVar8 * -8 + 4;
       *pfVar6 = *(float *)pcVar17;
       pcVar17 = pcVar17;
-      pfVar6 = pfVar6 + (uint)bVar22 * -2 + 1;
+      pfVar6 = pfVar6 + (uint)bVar8 * -2 + 1;
     }
     pfVar6 = (float *)(pcVar13 + 0x3fc);
     pfVar7 = local_138;
     for (iVar3 = 0x32; iVar3 != 0; iVar3 = iVar3 + -1) {
       *pfVar7 = *pfVar6;
-      pfVar6 = pfVar6 + (uint)bVar22 * -2 + 1;
-      pfVar7 = pfVar7 + (uint)bVar22 * -2 + 1;
+      pfVar6 = pfVar6 + (uint)bVar8 * -2 + 1;
+      pfVar7 = pfVar7 + (uint)bVar8 * -2 + 1;
     }
     pfVar18 = (float *)(this_ptr->vertex_data_ptr[lod_index]->bone_indices + local_4c + -1);
     fVar2 = 0.0;

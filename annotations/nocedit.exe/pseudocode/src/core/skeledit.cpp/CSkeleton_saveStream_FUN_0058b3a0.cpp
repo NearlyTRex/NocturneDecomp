@@ -26,7 +26,6 @@ void __cdecl core_skeledit_cpp_CSkeleton_saveStream_FUN_0058b3a0(CSkeleton *this
   float *pfVar3;
   float *pfVar4;
   
-  __STK();
   _fprintf(file_handle,"// skeleton version\n");
   _fprintf(file_handle,"%d\n");
   _fprintf(file_handle,"// bonecount, frameCount\n");

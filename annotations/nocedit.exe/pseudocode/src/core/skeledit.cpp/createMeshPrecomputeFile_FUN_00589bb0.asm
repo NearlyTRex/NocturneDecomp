@@ -17,17 +17,23 @@
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeledit.cpp_CLodMeshPrecomputeEntry_save_FUN_0058a0f0
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x18                           ; 00589bb0
+    NOP                                 ; 00589bb0
         ;   Label: core_skeledit.cpp_createMeshPrecomputeFile_FUN_00589bb0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589bb5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00589bb1
+    NOP                                 ; 00589bb2
+    NOP                                 ; 00589bb3
+    NOP                                 ; 00589bb4
+    NOP                                 ; 00589bb5
+    NOP                                 ; 00589bb6
+    NOP                                 ; 00589bb7
+    NOP                                 ; 00589bb8
+    NOP                                 ; 00589bb9
     PUSH EBX                            ; 00589bba
     PUSH EDI                            ; 00589bbb
     PUSH EBP                            ; 00589bbc

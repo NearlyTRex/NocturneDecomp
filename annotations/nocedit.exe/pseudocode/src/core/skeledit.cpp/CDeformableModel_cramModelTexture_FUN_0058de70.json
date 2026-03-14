@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 199,
-    "complexity_score": 101,
+    "assembly_lines": 206,
+    "complexity_score": 100,
     "cross_reference_count": 1,
-    "function_call_count": 7,
+    "function_call_count": 6,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 86,
+    "pseudocode_lines": 85,
     "suspect_count": 1,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 285
+    "total_lines": 291
   },
   "cross_references": [
     {
@@ -39,11 +39,6 @@
     "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_cramModelTexture_FUN_0058de70(CDeformableModel *this_ptr,char *base_name,int num_crams,int atlas_dimension,int texture_set_index,int max_iterations)"
   },
   "function_calls": [
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
-    },
     {
       "addr": "005dd8e0",
       "is_variadic": false,
@@ -108,16 +103,16 @@
     "estimated_params": 6
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.58282208588957,
-    "instruction_count": 163,
+    "avg_pcode_per_instr": 5.286549707602339,
+    "instruction_count": 171,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 32,
       "BOOL_OR": 4,
       "BRANCH": 2,
-      "CALL": 7,
+      "CALL": 6,
       "CBRANCH": 12,
-      "COPY": 127,
+      "COPY": 126,
       "INT_ADD": 82,
       "INT_AND": 163,
       "INT_CARRY": 19,
@@ -130,14 +125,14 @@
       "INT_SBORROW": 14,
       "INT_SCARRY": 21,
       "INT_SLESS": 60,
-      "INT_SUB": 42,
+      "INT_SUB": 40,
       "INT_XOR": 12,
       "LOAD": 41,
       "POPCOUNT": 48,
       "RETURN": 1,
-      "STORE": 43
+      "STORE": 41
     },
-    "pcode_op_count": 910
+    "pcode_op_count": 904
   },
   "stack_frame": {
     "frame_size": 180,
@@ -235,7 +230,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 37,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (local_20 == *(int *)((int)this_ptr->index_data_ptr[0] + local_14)) {",

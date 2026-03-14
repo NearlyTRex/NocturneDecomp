@@ -227,7 +227,6 @@
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420240
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   crt_math.c_round_FUN_005fe6b0
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fgetc_FUN_005fe840
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
@@ -239,16 +238,24 @@
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
-;   ... and 9 more
+;   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
+;   ... and 8 more
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0xa228                         ; 0058f810
+    NOP                                 ; 0058f810
         ;   Label: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 0058f815
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 0058f811
+    NOP                                 ; 0058f812
+    NOP                                 ; 0058f813
+    NOP                                 ; 0058f814
+    NOP                                 ; 0058f815
+    NOP                                 ; 0058f816
+    NOP                                 ; 0058f817
+    NOP                                 ; 0058f818
+    NOP                                 ; 0058f819
     PUSH EBX                            ; 0058f81a
     PUSH ESI                            ; 0058f81b
     PUSH EDI                            ; 0058f81c

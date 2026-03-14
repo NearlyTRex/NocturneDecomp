@@ -11,17 +11,21 @@
 ; Referenced Globals:
 ;   int g_CramCurrentAcceptableSize
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0xc                            ; 00447a80
+    NOP                                 ; 00447a80
         ;   Label: shape_cramtex.cpp_mapCoordinateToAtlas_FUN_00447a80
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00447a85
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00447a81
+    NOP                                 ; 00447a82
+    NOP                                 ; 00447a83
+    NOP                                 ; 00447a84
+    NOP                                 ; 00447a85
+    NOP                                 ; 00447a86
+    NOP                                 ; 00447a87
+    NOP                                 ; 00447a88
+    NOP                                 ; 00447a89
     PUSH EBX                            ; 00447a8a
     PUSH ESI                            ; 00447a8b
     MOV ECX,dword ptr [ESP + 0xc]       ; 00447a8c

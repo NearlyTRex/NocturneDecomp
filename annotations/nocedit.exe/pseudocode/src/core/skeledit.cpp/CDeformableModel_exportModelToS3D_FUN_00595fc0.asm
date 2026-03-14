@@ -75,7 +75,6 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00
 ;   crt_memory.c_memset_FUN_005fde40
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c__sprintf_FUN_005fdbd0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
@@ -87,16 +86,23 @@
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_debugAlloc_FUN_0050f1f0
 ;   shape_memdbg.cpp_free_FUN_005fe659
-;   ... and 1 more
+;   shape_memdbg.cpp_openFile_FUN_0050f7a0
 ;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x38c                          ; 00595fc0
+    NOP                                 ; 00595fc0
         ;   Label: core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00595fc5
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00595fc1
+    NOP                                 ; 00595fc2
+    NOP                                 ; 00595fc3
+    NOP                                 ; 00595fc4
+    NOP                                 ; 00595fc5
+    NOP                                 ; 00595fc6
+    NOP                                 ; 00595fc7
+    NOP                                 ; 00595fc8
+    NOP                                 ; 00595fc9
     PUSH EBX                            ; 00595fca
     PUSH ESI                            ; 00595fcb
     PUSH EDI                            ; 00595fcc

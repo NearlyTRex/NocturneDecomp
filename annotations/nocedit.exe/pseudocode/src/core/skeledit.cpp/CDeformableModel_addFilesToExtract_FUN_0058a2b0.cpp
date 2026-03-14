@@ -21,7 +21,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_addFilesToExtract_FUN_0058a2b0(C
   STextureSet *local_14;
   char cVar1;
   
-  __STK();
   _fprintf(file_handle,"DATA\\%s\n",this_ptr->model_name);
   local_18 = 0;
   if (0 < this_ptr->num_texture_sets) {

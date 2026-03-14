@@ -6,17 +6,21 @@
 ; Parameters:
 ; char *           Stack[0x4]:4   str
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x1c                           ; 00589450
+    NOP                                 ; 00589450
         ;   Label: core_skeledit.cpp_trimWhitespace_FUN_00589450
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589455
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00589451
+    NOP                                 ; 00589452
+    NOP                                 ; 00589453
+    NOP                                 ; 00589454
+    NOP                                 ; 00589455
+    NOP                                 ; 00589456
+    NOP                                 ; 00589457
+    NOP                                 ; 00589458
+    NOP                                 ; 00589459
     PUSH EBX                            ; 0058945a
     PUSH ESI                            ; 0058945b
     PUSH EDI                            ; 0058945c

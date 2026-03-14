@@ -70,6 +70,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
   uint *puVar39;
   void *pvVar37;
   byte bVar38;
+  byte bVar40;
   float local_a1f0;
   char local_a1ec [32552];
   ushort auStack_22c4 [1018];
@@ -275,8 +276,7 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
   CEditorTools *this_ptr_00;
   double dVar7;
   
-  bVar38 = 0;
-  __STK();
+  bVar40 = 0;
   if (this_ptr->num_lods != 1) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0xbc8;
@@ -390,9 +390,9 @@ int __cdecl core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f81
         pcVar36 = "gore";
         pcVar30 = local_388;
         for (iVar24 = 0x19; iVar24 != 0; iVar24 = iVar24 + -1) {
-          pcVar30 = pcVar30 + (uint)bVar38 * -8 + 4;
+          pcVar30 = pcVar30 + (uint)bVar40 * -8 + 4;
           *(uint *)pcVar30 = *(uint *)pcVar36;
-          pcVar36 = pcVar36 + ((uint)bVar38 * -2 + 1) * 4;
+          pcVar36 = pcVar36 + ((uint)bVar40 * -2 + 1) * 4;
           pcVar30 = pcVar30;
         }
         if (*(int *)(filename + 0x308) == 0) {
@@ -958,31 +958,31 @@ LAB_005902c8:
                             ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 +
                             local_74);
                   local_2e0 = *puVar29;
-                  *(ushort *)(auStack_2dc + (uint)bVar38 * -8) =
-                       *(ushort *)(puVar29 + (uint)bVar38 * -2 + 1);
+                  *(ushort *)(auStack_2dc + (uint)bVar40 * -8) =
+                       *(ushort *)(puVar29 + (uint)bVar40 * -2 + 1);
                   stack0xfffffd26 = *(uint *)((int)puVar29 + 6);
-                  *(ushort *)((int)&uStack_2d8 + (uint)bVar38 * -8 + 2) =
-                       *(ushort *)((int)puVar29 + (uint)bVar38 * -8 + 10);
+                  *(ushort *)((int)&uStack_2d8 + (uint)bVar40 * -8 + 2) =
+                       *(ushort *)((int)puVar29 + (uint)bVar40 * -8 + 10);
                   local_2d4 = puVar29[3];
-                  auStack_2d0[(uint)bVar38 * -4] = *(ushort *)(puVar29 + (uint)bVar38 * -2 + 4);
-                  puVar31 = puVar29 + (uint)bVar38 * -2 + 1;
-                  puVar28 = puVar39 + (uint)bVar38 * -2 + 1;
+                  auStack_2d0[(uint)bVar40 * -4] = *(ushort *)(puVar29 + (uint)bVar40 * -2 + 4);
+                  puVar31 = puVar29 + (uint)bVar40 * -2 + 1;
+                  puVar28 = puVar39 + (uint)bVar40 * -2 + 1;
                   *puVar29 = *puVar39;
-                  puVar32 = puVar31 + (uint)bVar38 * -2 + 1;
-                  puVar29 = puVar28 + (uint)bVar38 * -2 + 1;
+                  puVar32 = puVar31 + (uint)bVar40 * -2 + 1;
+                  puVar29 = puVar28 + (uint)bVar40 * -2 + 1;
                   *puVar31 = *puVar28;
                   *puVar32 = *puVar29;
-                  puVar32[(uint)bVar38 * -2 + 1] = puVar29[(uint)bVar38 * -2 + 1];
-                  *(ushort *)(puVar32 + (uint)bVar38 * -2 + 1 + (uint)bVar38 * -2 + 1) =
-                       *(ushort *)(puVar29 + (uint)bVar38 * -2 + 1 + (uint)bVar38 * -2 + 1);
+                  puVar32[(uint)bVar40 * -2 + 1] = puVar29[(uint)bVar40 * -2 + 1];
+                  *(ushort *)(puVar32 + (uint)bVar40 * -2 + 1 + (uint)bVar40 * -2 + 1) =
+                       *(ushort *)(puVar29 + (uint)bVar40 * -2 + 1 + (uint)bVar40 * -2 + 1);
                   *puVar39 = local_2e0;
-                  puVar33 = puVar39 + (uint)bVar38 * -2 + 1 + (uint)bVar38 * -2 + 1;
-                  puVar29 = &uStack_2d8 + (uint)bVar38 * -2 + (uint)bVar38 * -2;
-                  puVar39[(uint)bVar38 * -2 + 1] = *(uint *)(auStack_2dc + (uint)bVar38 * -8);
+                  puVar33 = puVar39 + (uint)bVar40 * -2 + 1 + (uint)bVar40 * -2 + 1;
+                  puVar29 = &uStack_2d8 + (uint)bVar40 * -2 + (uint)bVar40 * -2;
+                  puVar39[(uint)bVar40 * -2 + 1] = *(uint *)(auStack_2dc + (uint)bVar40 * -8);
                   *puVar33 = *puVar29;
-                  puVar33[(uint)bVar38 * -2 + 1] = puVar29[(uint)bVar38 * -2 + 1];
-                  *(ushort *)(puVar33 + (uint)bVar38 * -2 + 1 + (uint)bVar38 * -2 + 1) =
-                       *(ushort *)(puVar29 + (uint)bVar38 * -2 + 1 + (uint)bVar38 * -2 + 1);
+                  puVar33[(uint)bVar40 * -2 + 1] = puVar29[(uint)bVar40 * -2 + 1];
+                  *(ushort *)(puVar33 + (uint)bVar40 * -2 + 1 + (uint)bVar40 * -2 + 1) =
+                       *(ushort *)(puVar29 + (uint)bVar40 * -2 + 1 + (uint)bVar40 * -2 + 1);
                   iVar14 = *piVar23;
                   *piVar23 = *(int *)((int)local_f0 + local_18);
                   *(int *)((int)local_f0 + local_18) = iVar14;
@@ -1136,35 +1136,35 @@ LAB_00591f48:
                                   ((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0
                                   + local_58);
                         uVar1 = *puVar29;
-                        *(ushort *)(auStack_2f0 + (uint)bVar38 * -8) =
-                             *(ushort *)(puVar29 + (uint)bVar38 * -2 + 1);
+                        *(ushort *)(auStack_2f0 + (uint)bVar40 * -8) =
+                             *(ushort *)(puVar29 + (uint)bVar40 * -2 + 1);
                         stack0xfffffd12 = *(uint *)((int)puVar29 + 6);
-                        *(ushort *)((int)&uStack_2ec + (uint)bVar38 * -8 + 2) =
-                             *(ushort *)((int)puVar29 + (uint)bVar38 * -8 + 10);
+                        *(ushort *)((int)&uStack_2ec + (uint)bVar40 * -8 + 2) =
+                             *(ushort *)((int)puVar29 + (uint)bVar40 * -8 + 10);
                         local_2e8 = puVar29[3];
-                        auStack_2e4[(uint)bVar38 * -4] =
-                             *(ushort *)(puVar29 + (uint)bVar38 * -2 + 4);
-                        puVar37 = puVar29 + (uint)bVar38 * -2 + 1;
-                        puVar34 = puVar39 + (uint)bVar38 * -2 + 1;
+                        auStack_2e4[(uint)bVar40 * -4] =
+                             *(ushort *)(puVar29 + (uint)bVar40 * -2 + 4);
+                        puVar37 = puVar29 + (uint)bVar40 * -2 + 1;
+                        puVar34 = puVar39 + (uint)bVar40 * -2 + 1;
                         *puVar29 = *puVar39;
-                        puVar38 = puVar37 + (uint)bVar38 * -2 + 1;
-                        puVar29 = puVar34 + (uint)bVar38 * -2 + 1;
+                        puVar38 = puVar37 + (uint)bVar40 * -2 + 1;
+                        puVar29 = puVar34 + (uint)bVar40 * -2 + 1;
                         *puVar37 = *puVar34;
                         *puVar38 = *puVar29;
-                        puVar38[(uint)bVar38 * -2 + 1] = puVar29[(uint)bVar38 * -2 + 1];
-                        *(ushort *)(puVar38 + (uint)bVar38 * -2 + 1 + (uint)bVar38 * -2 + 1) =
+                        puVar38[(uint)bVar40 * -2 + 1] = puVar29[(uint)bVar40 * -2 + 1];
+                        *(ushort *)(puVar38 + (uint)bVar40 * -2 + 1 + (uint)bVar40 * -2 + 1) =
                              *(ushort *)
-                              (puVar29 + (uint)bVar38 * -2 + 1 + (uint)bVar38 * -2 + 1);
-                        puVar34 = puVar39 + (uint)bVar38 * -2 + 1;
+                              (puVar29 + (uint)bVar40 * -2 + 1 + (uint)bVar40 * -2 + 1);
+                        puVar34 = puVar39 + (uint)bVar40 * -2 + 1;
                         *puVar39 = uVar1;
-                        puVar39 = puVar34 + (uint)bVar38 * -2 + 1;
-                        puVar29 = &uStack_2ec + (uint)bVar38 * -2 + (uint)bVar38 * -2;
-                        *puVar34 = *(uint *)(auStack_2f0 + (uint)bVar38 * -8);
+                        puVar39 = puVar34 + (uint)bVar40 * -2 + 1;
+                        puVar29 = &uStack_2ec + (uint)bVar40 * -2 + (uint)bVar40 * -2;
+                        *puVar34 = *(uint *)(auStack_2f0 + (uint)bVar40 * -8);
                         *puVar39 = *puVar29;
-                        puVar39[(uint)bVar38 * -2 + 1] = puVar29[(uint)bVar38 * -2 + 1];
-                        *(ushort *)(puVar39 + (uint)bVar38 * -2 + 1 + (uint)bVar38 * -2 + 1) =
+                        puVar39[(uint)bVar40 * -2 + 1] = puVar29[(uint)bVar40 * -2 + 1];
+                        *(ushort *)(puVar39 + (uint)bVar40 * -2 + 1 + (uint)bVar40 * -2 + 1) =
                              *(ushort *)
-                              (puVar29 + (uint)bVar38 * -2 + 1 + (uint)bVar38 * -2 + 1);
+                              (puVar29 + (uint)bVar40 * -2 + 1 + (uint)bVar40 * -2 + 1);
                         iVar14 = *piVar23;
                         *piVar23 = *(int *)((int)local_f0 + local_18);
                         *(int *)((int)local_f0 + local_18) = iVar14;
@@ -1208,12 +1208,12 @@ LAB_00591f48:
             uVar5 = (pSVar29->vertex_indices).vertex_index_1;
             (pSVar34->vertex_indices).vertex_index_0 = (pSVar29->vertex_indices).vertex_index_0;
             (pSVar34->vertex_indices).vertex_index_1 = uVar5;
-            pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar38 * -8 + 4);
-            pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar38 * -8 + 4);
+            pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar40 * -8 + 4);
+            pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar40 * -8 + 4);
           }
           for (uVar19 = uVar20 & 3; uVar19 != 0; uVar19 = uVar19 - 1) {
-            pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar38 * -2 + 1);
-            pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar38 * -2 + 1);
+            pSVar34 = (SInputFace *)((int)pSVar34 + (uint)bVar40 * -2 + 1);
+            pSVar29 = (SInputFace *)((int)pSVar29 + (uint)bVar40 * -2 + 1);
             *(char *)&(pSVar34->vertex_indices).vertex_index_0 =
                  (char)(pSVar29->vertex_indices).vertex_index_0;
             pSVar29 = pSVar29;
@@ -1227,13 +1227,13 @@ LAB_00591f48:
           piVar35 = local_14c;
           for (uVar20 = this_ptr->tri_count[0] & 0x3fffffff; uVar20 != 0; uVar20 = uVar20 - 1) {
             *piVar35 = *piVar23;
-            piVar23 = piVar23 + (uint)bVar38 * -2 + 1;
-            piVar35 = piVar35 + (uint)bVar38 * -2 + 1;
+            piVar23 = piVar23 + (uint)bVar40 * -2 + 1;
+            piVar35 = piVar35 + (uint)bVar40 * -2 + 1;
           }
           for (iVar24 = 0; iVar24 != 0; iVar24 = iVar24 + -1) {
-            piVar35 = (int *)((int)piVar35 + (uint)bVar38 * -2 + 1);
+            piVar35 = (int *)((int)piVar35 + (uint)bVar40 * -2 + 1);
             *(char *)piVar35 = (char)*piVar23;
-            piVar23 = (int *)((int)piVar23 + (uint)bVar38 * -2 + 1);
+            piVar23 = (int *)((int)piVar23 + (uint)bVar40 * -2 + 1);
             piVar35 = piVar35;
           }
           g_CurrentDebugFilename = "..\\core\\skeledit.cpp";

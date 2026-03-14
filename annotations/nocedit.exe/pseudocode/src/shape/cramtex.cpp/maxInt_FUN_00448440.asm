@@ -7,17 +7,21 @@
 ; int              Stack[0x4]:4   a
 ; int              Stack[0x8]:4   b
 ;
-; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
-;
 ; *****************************************************************************
 
 section .text
 
-    PUSH 0x4                            ; 00448440
+    NOP                                 ; 00448440
         ;   Label: shape_cramtex.cpp_maxInt_FUN_00448440
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00448445
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00448441
+    NOP                                 ; 00448442
+    NOP                                 ; 00448443
+    NOP                                 ; 00448444
+    NOP                                 ; 00448445
+    NOP                                 ; 00448446
+    NOP                                 ; 00448447
+    NOP                                 ; 00448448
+    NOP                                 ; 00448449
     MOV EAX,dword ptr [ESP + 0x4]       ; 0044844a
     MOV EDX,dword ptr [ESP + 0x8]       ; 0044844e
     CMP EAX,EDX                         ; 00448452

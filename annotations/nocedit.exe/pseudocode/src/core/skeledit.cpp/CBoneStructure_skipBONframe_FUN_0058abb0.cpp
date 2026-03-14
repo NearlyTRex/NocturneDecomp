@@ -13,7 +13,6 @@ void __cdecl core_skeledit_cpp_CBoneStructure_skipBONframe_FUN_0058abb0(CBoneStr
   int iVar2;
   int iVar3;
   
-  __STK();
   iVar3 = 0;
   do {
     if (this_ptr->bone_count * 4 <= iVar3) {

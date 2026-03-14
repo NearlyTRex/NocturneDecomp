@@ -14,7 +14,6 @@ void __cdecl core_skeledit_cpp_CDeformableModel_offsetRootVertices_FUN_0058e600(
   int iVar3;
   CSkeleton *pCVar4;
   
-  __STK();
   pCVar1 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(this_ptr);
   iVar3 = 0;
   if (0 < pCVar1->bone_count) {

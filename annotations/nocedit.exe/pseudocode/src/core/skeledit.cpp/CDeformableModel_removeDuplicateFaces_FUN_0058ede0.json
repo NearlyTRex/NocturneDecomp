@@ -5,18 +5,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 208,
-    "complexity_score": 131,
+    "assembly_lines": 215,
+    "complexity_score": 130,
     "cross_reference_count": 1,
-    "function_call_count": 3,
+    "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 86,
+    "pseudocode_lines": 85,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 294
+    "total_lines": 300
   },
   "cross_references": [
     {
@@ -39,11 +39,6 @@
     "signature": "void __cdecl core_skeledit_cpp_CDeformableModel_removeDuplicateFaces_FUN_0058ede0(CDeformableModel *this_ptr)"
   },
   "function_calls": [
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
-    },
     {
       "addr": "005fe5e0",
       "is_variadic": false,
@@ -102,15 +97,15 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.142857142857143,
-    "instruction_count": 175,
+    "avg_pcode_per_instr": 4.885245901639344,
+    "instruction_count": 183,
     "opcode_distribution": {
       "BOOL_NEGATE": 18,
       "BOOL_OR": 2,
       "BRANCH": 3,
-      "CALL": 5,
+      "CALL": 4,
       "CBRANCH": 11,
-      "COPY": 134,
+      "COPY": 133,
       "INT_ADD": 103,
       "INT_AND": 135,
       "INT_CARRY": 21,
@@ -127,16 +122,16 @@
       "INT_SLESS": 54,
       "INT_SREM": 1,
       "INT_SRIGHT": 2,
-      "INT_SUB": 37,
+      "INT_SUB": 35,
       "INT_XOR": 7,
       "INT_ZEXT": 2,
       "LOAD": 62,
       "POPCOUNT": 50,
       "RETURN": 1,
-      "STORE": 48,
+      "STORE": 46,
       "SUBPIECE": 4
     },
-    "pcode_op_count": 900
+    "pcode_op_count": 894
   },
   "stack_frame": {
     "frame_size": 92,
@@ -220,7 +215,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 43,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "psVar4 = (short *)((int)&(this_ptr->tri_data_ptr[local_50]->vertex_indices).",
@@ -228,7 +223,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(short *)((int)",
       "severity": "mild",
       "text": "*(short *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).vertex_index_0 +",
@@ -236,7 +231,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 57,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "((void *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).",
@@ -244,7 +239,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 59,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "(void *)((int)&(local_54->tri_data_ptr[0]->vertex_indices).",

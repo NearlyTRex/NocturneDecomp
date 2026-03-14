@@ -4,19 +4,19 @@
       {
         "category": "format_error",
         "column": 39,
-        "line": 23,
+        "line": 22,
         "message": "format specifies type 'float *' but the argument has type 'CMatrix3x4f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 46,
-        "line": 23,
+        "line": 22,
         "message": "format specifies type 'float *' but the argument has type 'CQuaternion4f *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 24,
-        "line": 24,
+        "line": 23,
         "message": "format specifies type 'float *' but the argument has type 'CQuaternion4f *' [-Werror,-Wformat]"
       }
     ],
@@ -24,18 +24,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 173,
-    "complexity_score": 297,
+    "assembly_lines": 176,
+    "complexity_score": 296,
     "cross_reference_count": 3,
-    "function_call_count": 6,
+    "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 72,
+    "pseudocode_lines": 71,
     "suspect_count": 22,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 245
+    "total_lines": 247
   },
   "cross_references": [
     {
@@ -89,11 +89,6 @@
       "addr": "005f6690",
       "is_variadic": false,
       "name": "core_xform.cpp_orthonormalizeMatrix3x3_FUN_005f6690"
-    },
-    {
-      "addr": "005ff9f3",
-      "is_variadic": false,
-      "name": "crt_stack.c___STK_FUN_005ff9f3"
     },
     {
       "addr": "005fe7c0",
@@ -206,12 +201,12 @@
     "estimated_params": 3
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.5479452054794525,
-    "instruction_count": 146,
+    "avg_pcode_per_instr": 4.406666666666666,
+    "instruction_count": 150,
     "opcode_distribution": {
       "BOOL_NEGATE": 14,
       "BRANCH": 1,
-      "CALL": 10,
+      "CALL": 9,
       "CBRANCH": 8,
       "COPY": 129,
       "INT_ADD": 63,
@@ -226,40 +221,40 @@
       "INT_SBORROW": 6,
       "INT_SCARRY": 13,
       "INT_SLESS": 39,
-      "INT_SUB": 48,
+      "INT_SUB": 47,
       "INT_XOR": 14,
       "LOAD": 27,
       "POPCOUNT": 35,
       "RETURN": 2,
-      "STORE": 51
+      "STORE": 50
     },
-    "pcode_op_count": 664
+    "pcode_op_count": 661
   },
   "stack_frame": {
-    "frame_size": 20,
+    "frame_size": 16,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": true,
         "name": "this_ptr",
-        "offset": 8,
+        "offset": 4,
         "size": 4,
         "type": "CBoneStructure *"
       },
       {
         "is_param": true,
         "name": "file",
-        "offset": 12,
+        "offset": 8,
         "size": 4,
         "type": "_FILE *"
       },
       {
         "is_param": true,
         "name": "mirror_flag",
-        "offset": 16,
+        "offset": 12,
         "size": 4,
         "type": "int"
       }
@@ -268,10 +263,18 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) =",
       "type": "pointer_cast"
     },
     {
@@ -279,7 +282,7 @@
       "line": 40,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) =",
+      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) ^ 0x80;",
       "type": "pointer_cast"
     },
     {
@@ -287,7 +290,7 @@
       "line": 41,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) ^ 0x80;",
+      "text": "bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].w + 3);",
       "type": "pointer_cast"
     },
     {
@@ -295,7 +298,7 @@
       "line": 42,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].w + 3);",
+      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3) = bVar1 ^ 0x80;",
       "type": "pointer_cast"
     },
     {
@@ -303,7 +306,7 @@
       "line": 43,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3) = bVar1 ^ 0x80;",
+      "text": "bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3);",
       "type": "pointer_cast"
     },
     {
@@ -311,7 +314,7 @@
       "line": 44,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3);",
+      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].w + 3) = bVar2 ^ 0x80;",
       "type": "pointer_cast"
     },
     {
@@ -319,7 +322,7 @@
       "line": 45,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].w + 3) = bVar2 ^ 0x80;",
+      "text": "bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].z + 3);",
       "type": "pointer_cast"
     },
     {
@@ -327,7 +330,7 @@
       "line": 46,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].z + 3);",
+      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3) = bVar1 ^ 0x80;",
       "type": "pointer_cast"
     },
     {
@@ -335,7 +338,7 @@
       "line": 47,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3) = bVar1 ^ 0x80;",
+      "text": "bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].y + 3);",
       "type": "pointer_cast"
     },
     {
@@ -343,7 +346,7 @@
       "line": 48,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].y + 3);",
+      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].z + 3) = bVar2 ^ 0x80;",
       "type": "pointer_cast"
     },
     {
@@ -351,7 +354,7 @@
       "line": 49,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].z + 3) = bVar2 ^ 0x80;",
+      "text": "bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].x + 3);",
       "type": "pointer_cast"
     },
     {
@@ -359,7 +362,7 @@
       "line": 50,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].x + 3);",
+      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].y + 3) = bVar1 ^ 0x80;",
       "type": "pointer_cast"
     },
     {
@@ -367,7 +370,7 @@
       "line": 51,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].y + 3) = bVar1 ^ 0x80;",
+      "text": "bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].z + 3);",
       "type": "pointer_cast"
     },
     {
@@ -375,7 +378,7 @@
       "line": 52,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].z + 3);",
+      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].x + 3) = bVar2 ^ 0x80;",
       "type": "pointer_cast"
     },
     {
@@ -383,20 +386,12 @@
       "line": 53,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].x + 3) = bVar2 ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(byte *)((int)",
-      "severity": "mild",
       "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[2].z + 3) = bVar1 ^ 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 57,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "bVar1 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3);",
@@ -404,7 +399,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 58,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) =",
@@ -412,7 +407,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 59,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].w + 3) ^ 0x80;",
@@ -420,7 +415,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 60,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "bVar2 = *(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3);",
@@ -428,7 +423,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 61,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].y + 3) = bVar1 ^ 0x80;",
@@ -436,7 +431,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 62,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&this_ptr->bones[iVar3].world_matrix.m[0].x + 3) = bVar2 ^ 0x80;",

@@ -22,7 +22,6 @@
 ;   char[260] g_SkeleditLastTestSkeletonDir
 ;
 ; Called Functions:
-;   crt_stack.c___STK_FUN_005ff9f3
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
@@ -31,10 +30,17 @@
 
 section .text
 
-    PUSH 0x1c                           ; 00589a40
+    NOP                                 ; 00589a40
         ;   Label: core_skeledit.cpp_saveIni_FUN_00589a40
-    CALL crt_stack.c___STK_FUN_005ff9f3 ; 00589a45
-        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)  ; void crt_stack.c___STK_FUN_005ff9f3()
+    NOP                                 ; 00589a41
+    NOP                                 ; 00589a42
+    NOP                                 ; 00589a43
+    NOP                                 ; 00589a44
+    NOP                                 ; 00589a45
+    NOP                                 ; 00589a46
+    NOP                                 ; 00589a47
+    NOP                                 ; 00589a48
+    NOP                                 ; 00589a49
     PUSH EBX                            ; 00589a4a
     PUSH 0x144                          ; 00589a4b
     PUSH 0x649d66                       ; 00589a50 | = "..\\core\\skeledit.cpp"

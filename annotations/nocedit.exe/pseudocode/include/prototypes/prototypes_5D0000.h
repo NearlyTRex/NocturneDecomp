@@ -267,7 +267,7 @@ CTextureCache * __cdecl engine_texture_cpp_CTextureCache_ctor_FUN_005dcab0(CText
 int __cdecl engine_texture_cpp_CTextureCache_free_FUN_005dcb00(CTextureCache *this_ptr);
 void __cdecl engine_texture_cpp_CTextureCache_reset_FUN_005dcb20(CTextureCache *this_ptr);
 void __cdecl engine_texture_cpp_CTextureCache_freeTextures_FUN_005dcb30(CTextureCache *this_ptr);
-void __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache *cache,char *texture_name);
+int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005dcc00(CTextureCache *cache,char *texture_name);
 int __cdecl engine_texture_cpp_CTextureCache_findTexture_FUN_005dd180(CTextureCache *this_ptr,int hint_index,char *texture_name);
 void __cdecl engine_texture_cpp_CTextureCache_setupTexture_FUN_005dd200(CTextureCache *cache,int texture_index);
 int __cdecl engine_texture_cpp_CTextureCache_getTextureCount_FUN_005dd570(CTextureCache *this_ptr);

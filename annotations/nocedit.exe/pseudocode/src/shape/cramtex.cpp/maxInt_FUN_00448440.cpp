@@ -9,7 +9,6 @@
 int __cdecl shape_cramtex_cpp_maxInt_FUN_00448440(int a,int b)
 
 {
-  __STK();
   if (b < a) {
     return a;
   }
