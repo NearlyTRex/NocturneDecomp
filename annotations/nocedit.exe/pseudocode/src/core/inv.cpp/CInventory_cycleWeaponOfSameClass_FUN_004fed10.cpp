@@ -59,7 +59,7 @@ void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10(CInvent
             (*((this_ptr_02->base).vtable._ub)->process)(&this_ptr_02->base,0.1);
           }
           this_ptr->selected_weapon = this_ptr_01;
-          core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(this_ptr);
+          core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(this_ptr,999);
           return;
         }
       }

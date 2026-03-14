@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 61,
+    "complexity_score": 76,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 6,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
+      "param_count_too_few",
       "special_math_intrinsic",
       "warning_inlined_function"
     ],
@@ -55,6 +56,70 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "005feba3",
+        "call_type": "direct",
+        "caller": "crt_math.c_floor_FUN_005feb90",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00530788",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 9,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0053071e",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00530471",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_initializeSynthesisDctTable_FUN_00530400",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005304db",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_initializeSynthesisDctTable_FUN_00530400",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.133333333333334,
     "instruction_count": 15,
@@ -124,6 +189,17 @@
       "severity": "mild",
       "text": "return value - ROUND(value);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "call_site_count": 5,
+      "declared_params": 2,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:2 vs estimated:3",
+      "param_delta": 1,
+      "text": "Function declares 2 params but call sites push 3 (1 missing)",
+      "type": "param_count_too_few"
     },
     {
       "address": "00602102",

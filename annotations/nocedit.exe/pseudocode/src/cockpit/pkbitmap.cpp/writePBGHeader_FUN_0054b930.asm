@@ -13,7 +13,7 @@
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0063f250
 ;   TerminatedCString s_Error_writing_PBG_header_0063f268
 ;   undefined4 s_PBG_00680ca0
-;   undefined4 s__00680ca4
+;   undefined4 s_anon_00680c9c+8
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -39,7 +39,7 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 0054b94b | s_PBG_00680ca0
     MOV CL,AL                           ; 0054b94d
     AND CL,0x3                          ; 0054b94f
-    MOVSB.REP ES:EDI,ESI                ; 0054b952 | s__00680ca4
+    MOVSB.REP ES:EDI,ESI                ; 0054b952 | s_anon_00680c9c+8
     POP EDI                             ; 0054b954
     PUSH EDX                            ; 0054b955
     PUSH 0x1                            ; 0054b956

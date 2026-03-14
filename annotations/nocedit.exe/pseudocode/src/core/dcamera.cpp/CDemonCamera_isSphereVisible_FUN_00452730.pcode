@@ -17,24 +17,24 @@
 # ============================================================================
 
 @00452730 [ESP:-4](-4)  # PUSH EBX
-COPY (unique,0x20a80,4) = (register,0xc,4) /* EBX */
+COPY (unique,0x41500,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
 @00452731 [ESP:-8](-4)  # PUSH ESI
-COPY (unique,0x20a80,4) = (register,0x18,4) /* ESI */
+COPY (unique,0x41500,4) = (register,0x18,4) /* ESI */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
 @00452732 [ESP:-12](-4)  # PUSH EDI
-COPY (unique,0x20a80,4) = (register,0x1c,4) /* EDI */
+COPY (unique,0x41500,4) = (register,0x1c,4) /* EDI */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
 @00452733 [ESP:-16](-4)  # PUSH EBP
-COPY (unique,0x20a80,4) = (register,0x14,4) /* EBP */
+COPY (unique,0x41500,4) = (register,0x14,4) /* EBP */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
 
 @00452734 [ESP:-16]  # MOV EBP, ESP
 COPY (register,0x14,4) /* EBP */ = (register,0x10,4) /* ESP */
@@ -45,23 +45,23 @@ INT_SBORROW (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x20,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x20,4)
 INT_SLESS (register,0x207,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x10,4) /* ESP */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x10,4) /* ESP */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @00452739 [ESP:-48]  # MOV EAX, dword ptr [EBP + 0x18]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x18,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x18,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @0045273c [ESP:-48]  # LEA EBX, [EBP + -0x20]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe0,4)
-COPY (register,0xc,4) /* EBX */ = (unique,0x3300,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe0,4)
+COPY (register,0xc,4) /* EBX */ = (unique,0x6600,4)
 
 @0045273f [ESP:-48]  # FLD float ptr [EAX]
 COPY (register,0x10ac,4) = (const,0x45273f,4)
-COPY (unique,0x29480,10) = (register,0x1170,10)
+COPY (unique,0x52900,10) = (register,0x1170,10)
 COPY (register,0x1170,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1140,10)
@@ -69,18 +69,18 @@ COPY (register,0x1140,10) = (register,0x1130,10)
 COPY (register,0x1130,10) = (register,0x1120,10)
 COPY (register,0x1120,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (register,0x1100,10)
-COPY (register,0x1100,10) = (unique,0x29480,10)
-LOAD (unique,0x5480,4) = (const,0x1a1,4), (register,0x0,4) /* EAX */
-FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
+COPY (register,0x1100,10) = (unique,0x52900,10)
+LOAD (unique,0xa900,4) = (const,0x1a1,4), (register,0x0,4) /* EAX */
+FLOAT2FLOAT (register,0x1100,10) = (unique,0xa900,4)
 
 @00452741 [ESP:-48]  # FMUL float ptr [0x0065c63c]
 COPY (register,0x10ac,4) = (const,0x452741,4)
-FLOAT2FLOAT (unique,0x5d280,10) = (ram,0x65c63c,4)
-FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (unique,0x5d280,10)
+FLOAT2FLOAT (unique,0xba500,10) = (ram,0x65c63c,4)
+FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (unique,0xba500,10)
 
 @00452747 [ESP:-48]  # FISTP dword ptr [EBX]
 COPY (register,0x10ac,4) = (const,0x452747,4)
-ROUND (unique,0x5bd00,10) = (register,0x1100,10)
+ROUND (unique,0xb7a00,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (register,0x1120,10)
 COPY (register,0x1120,10) = (register,0x1130,10)
@@ -88,13 +88,13 @@ COPY (register,0x1130,10) = (register,0x1140,10)
 COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
-TRUNC (unique,0x5180,4) = (unique,0x5bd00,10)
-STORE (const,0x1a1,4), (register,0xc,4) /* EBX */, (unique,0x5180,4)
+TRUNC (unique,0xa300,4) = (unique,0xb7a00,10)
+STORE (const,0x1a1,4), (register,0xc,4) /* EBX */, (unique,0xa300,4)
 
 @00452749 [ESP:-48]  # FLD float ptr [EAX + 0x4]
-INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x4,4)
+INT_ADD (unique,0x6600,4) = (register,0x0,4) /* EAX */, (const,0x4,4)
 COPY (register,0x10ac,4) = (const,0x452749,4)
-COPY (unique,0x29480,10) = (register,0x1170,10)
+COPY (unique,0x52900,10) = (register,0x1170,10)
 COPY (register,0x1170,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1140,10)
@@ -102,19 +102,19 @@ COPY (register,0x1140,10) = (register,0x1130,10)
 COPY (register,0x1130,10) = (register,0x1120,10)
 COPY (register,0x1120,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (register,0x1100,10)
-COPY (register,0x1100,10) = (unique,0x29480,10)
-LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3300,4)
-FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
+COPY (register,0x1100,10) = (unique,0x52900,10)
+LOAD (unique,0xa900,4) = (const,0x1a1,4), (unique,0x6600,4)
+FLOAT2FLOAT (register,0x1100,10) = (unique,0xa900,4)
 
 @0045274c [ESP:-48]  # FMUL float ptr [0x0065c63c]
 COPY (register,0x10ac,4) = (const,0x45274c,4)
-FLOAT2FLOAT (unique,0x5d280,10) = (ram,0x65c63c,4)
-FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (unique,0x5d280,10)
+FLOAT2FLOAT (unique,0xba500,10) = (ram,0x65c63c,4)
+FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (unique,0xba500,10)
 
 @00452752 [ESP:-48]  # FISTP dword ptr [EBX + 0x4]
-INT_ADD (unique,0x3300,4) = (register,0xc,4) /* EBX */, (const,0x4,4)
+INT_ADD (unique,0x6600,4) = (register,0xc,4) /* EBX */, (const,0x4,4)
 COPY (register,0x10ac,4) = (const,0x452752,4)
-ROUND (unique,0x5bd00,10) = (register,0x1100,10)
+ROUND (unique,0xb7a00,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (register,0x1120,10)
 COPY (register,0x1120,10) = (register,0x1130,10)
@@ -122,13 +122,13 @@ COPY (register,0x1130,10) = (register,0x1140,10)
 COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
-TRUNC (unique,0x5180,4) = (unique,0x5bd00,10)
-STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
+TRUNC (unique,0xa300,4) = (unique,0xb7a00,10)
+STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
 @00452755 [ESP:-48]  # FLD float ptr [EAX + 0x8]
-INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x8,4)
+INT_ADD (unique,0x6600,4) = (register,0x0,4) /* EAX */, (const,0x8,4)
 COPY (register,0x10ac,4) = (const,0x452755,4)
-COPY (unique,0x29480,10) = (register,0x1170,10)
+COPY (unique,0x52900,10) = (register,0x1170,10)
 COPY (register,0x1170,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1140,10)
@@ -136,19 +136,19 @@ COPY (register,0x1140,10) = (register,0x1130,10)
 COPY (register,0x1130,10) = (register,0x1120,10)
 COPY (register,0x1120,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (register,0x1100,10)
-COPY (register,0x1100,10) = (unique,0x29480,10)
-LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3300,4)
-FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
+COPY (register,0x1100,10) = (unique,0x52900,10)
+LOAD (unique,0xa900,4) = (const,0x1a1,4), (unique,0x6600,4)
+FLOAT2FLOAT (register,0x1100,10) = (unique,0xa900,4)
 
 @00452758 [ESP:-48]  # FMUL float ptr [0x0065c63c]
 COPY (register,0x10ac,4) = (const,0x452758,4)
-FLOAT2FLOAT (unique,0x5d280,10) = (ram,0x65c63c,4)
-FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (unique,0x5d280,10)
+FLOAT2FLOAT (unique,0xba500,10) = (ram,0x65c63c,4)
+FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (unique,0xba500,10)
 
 @0045275e [ESP:-48]  # FISTP dword ptr [EBX + 0x8]
-INT_ADD (unique,0x3300,4) = (register,0xc,4) /* EBX */, (const,0x8,4)
+INT_ADD (unique,0x6600,4) = (register,0xc,4) /* EBX */, (const,0x8,4)
 COPY (register,0x10ac,4) = (const,0x45275e,4)
-ROUND (unique,0x5bd00,10) = (register,0x1100,10)
+ROUND (unique,0xb7a00,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (register,0x1120,10)
 COPY (register,0x1120,10) = (register,0x1130,10)
@@ -156,13 +156,13 @@ COPY (register,0x1130,10) = (register,0x1140,10)
 COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
-TRUNC (unique,0x5180,4) = (unique,0x5bd00,10)
-STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
+TRUNC (unique,0xa300,4) = (unique,0xb7a00,10)
+STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
 @00452761 [ESP:-48]  # FLD float ptr [EBP + 0x1c]
-INT_ADD (unique,0x3400,4) = (register,0x14,4) /* EBP */, (const,0x1c,4)
+INT_ADD (unique,0x6800,4) = (register,0x14,4) /* EBP */, (const,0x1c,4)
 COPY (register,0x10ac,4) = (const,0x452761,4)
-COPY (unique,0x29480,10) = (register,0x1170,10)
+COPY (unique,0x52900,10) = (register,0x1170,10)
 COPY (register,0x1170,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1140,10)
@@ -170,13 +170,13 @@ COPY (register,0x1140,10) = (register,0x1130,10)
 COPY (register,0x1130,10) = (register,0x1120,10)
 COPY (register,0x1120,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (register,0x1100,10)
-COPY (register,0x1100,10) = (unique,0x29480,10)
-LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3400,4)
-FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
+COPY (register,0x1100,10) = (unique,0x52900,10)
+LOAD (unique,0xa900,4) = (const,0x1a1,4), (unique,0x6800,4)
+FLOAT2FLOAT (register,0x1100,10) = (unique,0xa900,4)
 
 @00452767 [ESP:-48]  # FLD float ptr [0x0065c63c]
 COPY (register,0x10ac,4) = (const,0x452767,4)
-COPY (unique,0x29480,10) = (register,0x1170,10)
+COPY (unique,0x52900,10) = (register,0x1170,10)
 COPY (register,0x1170,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1140,10)
@@ -184,7 +184,7 @@ COPY (register,0x1140,10) = (register,0x1130,10)
 COPY (register,0x1130,10) = (register,0x1120,10)
 COPY (register,0x1120,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (register,0x1100,10)
-COPY (register,0x1100,10) = (unique,0x29480,10)
+COPY (register,0x1100,10) = (unique,0x52900,10)
 FLOAT2FLOAT (register,0x1100,10) = (ram,0x65c63c,4)
 
 @0045276d [ESP:-48]  # FMULP
@@ -199,16 +199,16 @@ COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
 @0045276f [ESP:-48]  # FIST dword ptr [EBP + 0xfffffff8]
-INT_ADD (unique,0x3400,4) = (register,0x14,4) /* EBP */, (const,0xfffffff8,4)
+INT_ADD (unique,0x6800,4) = (register,0x14,4) /* EBP */, (const,0xfffffff8,4)
 COPY (register,0x10ac,4) = (const,0x45276f,4)
-ROUND (unique,0x5ba00,10) = (register,0x1100,10)
-TRUNC (unique,0x5180,4) = (unique,0x5ba00,10)
-STORE (const,0x1a1,4), (unique,0x3400,4), (unique,0x5180,4)
+ROUND (unique,0xb7400,10) = (register,0x1100,10)
+TRUNC (unique,0xa300,4) = (unique,0xb7400,10)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
 
 @00452775 [ESP:-48]  # FISTP dword ptr [EBP + 0xfffffffc]
-INT_ADD (unique,0x3400,4) = (register,0x14,4) /* EBP */, (const,0xfffffffc,4)
+INT_ADD (unique,0x6800,4) = (register,0x14,4) /* EBP */, (const,0xfffffffc,4)
 COPY (register,0x10ac,4) = (const,0x452775,4)
-ROUND (unique,0x5bd00,10) = (register,0x1100,10)
+ROUND (unique,0xb7a00,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (register,0x1120,10)
 COPY (register,0x1120,10) = (register,0x1130,10)
@@ -216,105 +216,105 @@ COPY (register,0x1130,10) = (register,0x1140,10)
 COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
-TRUNC (unique,0x5180,4) = (unique,0x5bd00,10)
-STORE (const,0x1a1,4), (unique,0x3400,4), (unique,0x5180,4)
+TRUNC (unique,0xa300,4) = (unique,0xb7a00,10)
+STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa300,4)
 
 @0045277b [ESP:-48]  # MOV EAX, dword ptr [EBP + 0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @0045277e [ESP:-48]  # MOV EDX, dword ptr [EBP + -0x20]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe0,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe0,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @00452781 [ESP:-48]  # SUB EDX, dword ptr [EAX + 0x16c]
-INT_ADD (unique,0x3400,4) = (register,0x0,4) /* EAX */, (const,0x16c,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-INT_LESS (register,0x200,1) = (register,0x8,4) /* EDX */, (unique,0xb900,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-INT_SBORROW (register,0x20b,1) = (register,0x8,4) /* EDX */, (unique,0xb900,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-INT_SUB (register,0x8,4) /* EDX */ = (register,0x8,4) /* EDX */, (unique,0xb900,4)
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x16c,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+INT_LESS (register,0x200,1) = (register,0x8,4) /* EDX */, (unique,0x17200,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+INT_SBORROW (register,0x20b,1) = (register,0x8,4) /* EDX */, (unique,0x17200,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+INT_SUB (register,0x8,4) /* EDX */ = (register,0x8,4) /* EDX */, (unique,0x17200,4)
 INT_SLESS (register,0x207,1) = (register,0x8,4) /* EDX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x8,4) /* EDX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x8,4) /* EDX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x8,4) /* EDX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @00452787 [ESP:-48]  # MOV EAX, dword ptr [EBP + 0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @0045278a [ESP:-48]  # MOV dword ptr [EBP + -0x20], EDX
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe0,4)
-COPY (unique,0x5180,4) = (register,0x8,4) /* EDX */
-STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe0,4)
+COPY (unique,0xa300,4) = (register,0x8,4) /* EDX */
+STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
 @0045278d [ESP:-48]  # MOV ECX, dword ptr [EBP + -0x1c]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe4,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x4,4) /* ECX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe4,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x4,4) /* ECX */ = (unique,0x17200,4)
 
 @00452790 [ESP:-48]  # SUB ECX, dword ptr [EAX + 0x170]
-INT_ADD (unique,0x3400,4) = (register,0x0,4) /* EAX */, (const,0x170,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-INT_LESS (register,0x200,1) = (register,0x4,4) /* ECX */, (unique,0xb900,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-INT_SBORROW (register,0x20b,1) = (register,0x4,4) /* ECX */, (unique,0xb900,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-INT_SUB (register,0x4,4) /* ECX */ = (register,0x4,4) /* ECX */, (unique,0xb900,4)
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x170,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+INT_LESS (register,0x200,1) = (register,0x4,4) /* ECX */, (unique,0x17200,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+INT_SBORROW (register,0x20b,1) = (register,0x4,4) /* ECX */, (unique,0x17200,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+INT_SUB (register,0x4,4) /* ECX */ = (register,0x4,4) /* ECX */, (unique,0x17200,4)
 INT_SLESS (register,0x207,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @00452796 [ESP:-48]  # MOV EAX, dword ptr [EBP + 0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @00452799 [ESP:-48]  # MOV dword ptr [EBP + -0x1c], ECX
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe4,4)
-COPY (unique,0x5180,4) = (register,0x4,4) /* ECX */
-STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe4,4)
+COPY (unique,0xa300,4) = (register,0x4,4) /* ECX */
+STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
 @0045279c [ESP:-48]  # MOV EBX, dword ptr [EBP + -0x18]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe8,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0xc,4) /* EBX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe8,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0xc,4) /* EBX */ = (unique,0x17200,4)
 
 @0045279f [ESP:-48]  # SUB EBX, dword ptr [EAX + 0x174]
-INT_ADD (unique,0x3400,4) = (register,0x0,4) /* EAX */, (const,0x174,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-INT_LESS (register,0x200,1) = (register,0xc,4) /* EBX */, (unique,0xb900,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-INT_SBORROW (register,0x20b,1) = (register,0xc,4) /* EBX */, (unique,0xb900,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-INT_SUB (register,0xc,4) /* EBX */ = (register,0xc,4) /* EBX */, (unique,0xb900,4)
+INT_ADD (unique,0x6800,4) = (register,0x0,4) /* EAX */, (const,0x174,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+INT_LESS (register,0x200,1) = (register,0xc,4) /* EBX */, (unique,0x17200,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+INT_SBORROW (register,0x20b,1) = (register,0xc,4) /* EBX */, (unique,0x17200,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+INT_SUB (register,0xc,4) /* EBX */ = (register,0xc,4) /* EBX */, (unique,0x17200,4)
 INT_SLESS (register,0x207,1) = (register,0xc,4) /* EBX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0xc,4) /* EBX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0xc,4) /* EBX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0xc,4) /* EBX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004527a5 [ESP:-48]  # MOV EAX, EDX
 COPY (register,0x0,4) /* EAX */ = (register,0x8,4) /* EDX */
 
 @004527a7 [ESP:-48]  # MOV dword ptr [EBP + -0x18], EBX
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe8,4)
-COPY (unique,0x5180,4) = (register,0xc,4) /* EBX */
-STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe8,4)
+COPY (unique,0xa300,4) = (register,0xc,4) /* EBX */
+STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
 @004527aa [ESP:-48]  # CDQ
-INT_SEXT (unique,0x32300,8) = (register,0x0,4) /* EAX */
-SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x32300,8), (const,0x4,4)
+INT_SEXT (unique,0x64600,8) = (register,0x0,4) /* EAX */
+SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x64600,8), (const,0x4,4)
 
 @004527ab [ESP:-48]  # XOR EAX, EDX
 COPY (register,0x200,1) = (const,0x0,1)
@@ -322,10 +322,10 @@ COPY (register,0x20b,1) = (const,0x0,1)
 INT_XOR (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (register,0x8,4) /* EDX */
 INT_SLESS (register,0x207,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004527ad [ESP:-48]  # SUB EAX, EDX
 INT_LESS (register,0x200,1) = (register,0x0,4) /* EAX */, (register,0x8,4) /* EDX */
@@ -333,37 +333,37 @@ INT_SBORROW (register,0x20b,1) = (register,0x0,4) /* EAX */, (register,0x8,4) /*
 INT_SUB (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (register,0x8,4) /* EDX */
 INT_SLESS (register,0x207,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004527af [ESP:-48]  # CMP EAX, dword ptr [EBP + -0x8]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xfffffff8,4)
-LOAD (unique,0x5180,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (unique,0x33b00,4) = (unique,0x5180,4)
-INT_LESS (register,0x200,1) = (register,0x0,4) /* EAX */, (unique,0x33b00,4)
-INT_SBORROW (register,0x20b,1) = (register,0x0,4) /* EAX */, (unique,0x33b00,4)
-INT_SUB (unique,0x33c00,4) = (register,0x0,4) /* EAX */, (unique,0x33b00,4)
-INT_SLESS (register,0x207,1) = (unique,0x33c00,4), (const,0x0,4)
-INT_EQUAL (register,0x206,1) = (unique,0x33c00,4), (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (unique,0x33c00,4), (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xfffffff8,4)
+LOAD (unique,0xa300,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (unique,0x67600,4) = (unique,0xa300,4)
+INT_LESS (register,0x200,1) = (register,0x0,4) /* EAX */, (unique,0x67600,4)
+INT_SBORROW (register,0x20b,1) = (register,0x0,4) /* EAX */, (unique,0x67600,4)
+INT_SUB (unique,0x67800,4) = (register,0x0,4) /* EAX */, (unique,0x67600,4)
+INT_SLESS (register,0x207,1) = (unique,0x67800,4), (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (unique,0x67800,4), (const,0x0,4)
+INT_AND (unique,0x49800,4) = (unique,0x67800,4), (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004527b2 [ESP:-48]  # JGE 0x004527c5
-INT_EQUAL (unique,0xc480,1) = (register,0x20b,1), (register,0x207,1)
-CBRANCH (ram,0x4527c5,4), (unique,0xc480,1)
+INT_EQUAL (unique,0x18900,1) = (register,0x20b,1), (register,0x207,1)
+CBRANCH (ram,0x4527c5,4), (unique,0x18900,1)
 
 @004527b4 [ESP:-48]  # MOV EAX, dword ptr [EBP + -0x1c]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe4,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe4,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @004527b7 [ESP:-48]  # CDQ
-INT_SEXT (unique,0x32300,8) = (register,0x0,4) /* EAX */
-SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x32300,8), (const,0x4,4)
+INT_SEXT (unique,0x64600,8) = (register,0x0,4) /* EAX */
+SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x64600,8), (const,0x4,4)
 
 @004527b8 [ESP:-48]  # XOR EAX, EDX
 COPY (register,0x200,1) = (const,0x0,1)
@@ -371,10 +371,10 @@ COPY (register,0x20b,1) = (const,0x0,1)
 INT_XOR (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (register,0x8,4) /* EDX */
 INT_SLESS (register,0x207,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004527ba [ESP:-48]  # SUB EAX, EDX
 INT_LESS (register,0x200,1) = (register,0x0,4) /* EAX */, (register,0x8,4) /* EDX */
@@ -382,174 +382,174 @@ INT_SBORROW (register,0x20b,1) = (register,0x0,4) /* EAX */, (register,0x8,4) /*
 INT_SUB (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (register,0x8,4) /* EDX */
 INT_SLESS (register,0x207,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004527bc [ESP:-48]  # CMP EAX, dword ptr [EBP + -0x8]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xfffffff8,4)
-LOAD (unique,0x5180,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (unique,0x33b00,4) = (unique,0x5180,4)
-INT_LESS (register,0x200,1) = (register,0x0,4) /* EAX */, (unique,0x33b00,4)
-INT_SBORROW (register,0x20b,1) = (register,0x0,4) /* EAX */, (unique,0x33b00,4)
-INT_SUB (unique,0x33c00,4) = (register,0x0,4) /* EAX */, (unique,0x33b00,4)
-INT_SLESS (register,0x207,1) = (unique,0x33c00,4), (const,0x0,4)
-INT_EQUAL (register,0x206,1) = (unique,0x33c00,4), (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (unique,0x33c00,4), (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xfffffff8,4)
+LOAD (unique,0xa300,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (unique,0x67600,4) = (unique,0xa300,4)
+INT_LESS (register,0x200,1) = (register,0x0,4) /* EAX */, (unique,0x67600,4)
+INT_SBORROW (register,0x20b,1) = (register,0x0,4) /* EAX */, (unique,0x67600,4)
+INT_SUB (unique,0x67800,4) = (register,0x0,4) /* EAX */, (unique,0x67600,4)
+INT_SLESS (register,0x207,1) = (unique,0x67800,4), (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (unique,0x67800,4), (const,0x0,4)
+INT_AND (unique,0x49800,4) = (unique,0x67800,4), (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004527bf [ESP:-48]  # JL 0x004528be
-INT_NOTEQUAL (unique,0xc380,1) = (register,0x20b,1), (register,0x207,1)
-CBRANCH (ram,0x4528be,4), (unique,0xc380,1)
+INT_NOTEQUAL (unique,0x18700,1) = (register,0x20b,1), (register,0x207,1)
+CBRANCH (ram,0x4528be,4), (unique,0x18700,1)
 
 @004527c5 [ESP:-48]  # MOV EDX, dword ptr [EBP + 0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @004527c8 [ESP:-48]  # MOV EAX, dword ptr [EBP + -0x20]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe0,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe0,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @004527cb [ESP:-48]  # MOV EDX, dword ptr [EDX + 0x178]
-INT_ADD (unique,0x3400,4) = (register,0x8,4) /* EDX */, (const,0x178,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6800,4) = (register,0x8,4) /* EDX */, (const,0x178,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @004527d1 [ESP:-48]  # IMUL EDX
-INT_SEXT (unique,0x3c100,8) = (register,0x0,4) /* EAX */
-INT_SEXT (unique,0x3c180,8) = (register,0x8,4) /* EDX */
-INT_MULT (unique,0x3c280,8) = (unique,0x3c100,8), (unique,0x3c180,8)
-SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x3c280,8), (const,0x4,4)
-SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x3c280,8), (const,0x0,4)
-INT_SEXT (unique,0x25b80,8) = (register,0x0,4) /* EAX */
-INT_NOTEQUAL (register,0x200,1) = (unique,0x25b80,8), (unique,0x3c280,8)
+INT_SEXT (unique,0x78200,8) = (register,0x0,4) /* EAX */
+INT_SEXT (unique,0x78300,8) = (register,0x8,4) /* EDX */
+INT_MULT (unique,0x78500,8) = (unique,0x78200,8), (unique,0x78300,8)
+SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x78500,8), (const,0x4,4)
+SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x78500,8), (const,0x0,4)
+INT_SEXT (unique,0x4b700,8) = (register,0x0,4) /* EAX */
+INT_NOTEQUAL (register,0x200,1) = (unique,0x4b700,8), (unique,0x78500,8)
 COPY (register,0x20b,1) = (register,0x200,1)
 
 @004527d3 [ESP:-48]  # SHRD EAX, EDX, 0x10
-INT_AND (unique,0x54780,4) = (const,0x10,4), (const,0x1f,4)
-COPY (unique,0x54800,4) = (register,0x0,4) /* EAX */
-INT_RIGHT (unique,0x54880,4) = (register,0x0,4) /* EAX */, (unique,0x54780,4)
-INT_SUB (unique,0x54900,4) = (const,0x20,4), (unique,0x54780,4)
-INT_LEFT (unique,0x54980,4) = (register,0x8,4) /* EDX */, (unique,0x54900,4)
-INT_OR (register,0x0,4) /* EAX */ = (unique,0x54880,4), (unique,0x54980,4)
-INT_NOTEQUAL (unique,0x28a80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SUB (unique,0x28b00,4) = (unique,0x54780,4), (const,0x1,4)
-INT_RIGHT (unique,0x28b80,4) = (unique,0x54800,4), (unique,0x28b00,4)
-INT_AND (unique,0x28c00,4) = (unique,0x28b80,4), (const,0x1,4)
-INT_NOTEQUAL (unique,0x28d00,1) = (unique,0x28c00,4), (const,0x0,4)
-BOOL_NEGATE (unique,0x28d80,1) = (unique,0x28a80,1)
-INT_AND (unique,0x28e00,1) = (unique,0x28d80,1), (register,0x200,1)
-INT_AND (unique,0x28e80,1) = (unique,0x28a80,1), (unique,0x28d00,1)
-INT_OR (register,0x200,1) = (unique,0x28e00,1), (unique,0x28e80,1)
-INT_EQUAL (unique,0x29000,1) = (unique,0x54780,4), (const,0x1,4)
-INT_SLESS (unique,0x29080,1) = (unique,0x54800,4), (const,0x0,4)
-INT_SLESS (unique,0x29100,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_XOR (unique,0x29200,1) = (unique,0x29080,1), (unique,0x29100,1)
-BOOL_NEGATE (unique,0x29280,1) = (unique,0x29000,1)
-INT_AND (unique,0x29300,1) = (unique,0x29280,1), (register,0x20b,1)
-INT_AND (unique,0x29380,1) = (unique,0x29000,1), (unique,0x29200,1)
-INT_OR (register,0x20b,1) = (unique,0x29300,1), (unique,0x29380,1)
-INT_NOTEQUAL (unique,0x24e80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SLESS (unique,0x24f80,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25000,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25080,1) = (unique,0x25000,1), (register,0x207,1)
-INT_AND (unique,0x25100,1) = (unique,0x24e80,1), (unique,0x24f80,1)
-INT_OR (register,0x207,1) = (unique,0x25080,1), (unique,0x25100,1)
-INT_EQUAL (unique,0x25280,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25300,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25380,1) = (unique,0x25300,1), (register,0x206,1)
-INT_AND (unique,0x25400,1) = (unique,0x24e80,1), (unique,0x25280,1)
-INT_OR (register,0x206,1) = (unique,0x25380,1), (unique,0x25400,1)
-INT_AND (unique,0x25500,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x25580,1) = (unique,0x25500,4)
-INT_AND (unique,0x25600,1) = (unique,0x25580,1), (const,0x1,1)
-INT_EQUAL (unique,0x25700,1) = (unique,0x25600,1), (const,0x0,1)
-BOOL_NEGATE (unique,0x25780,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25800,1) = (unique,0x25780,1), (register,0x202,1)
-INT_AND (unique,0x25880,1) = (unique,0x24e80,1), (unique,0x25700,1)
-INT_OR (register,0x202,1) = (unique,0x25800,1), (unique,0x25880,1)
+INT_AND (unique,0xa8f00,4) = (const,0x10,4), (const,0x1f,4)
+COPY (unique,0xa9000,4) = (register,0x0,4) /* EAX */
+INT_RIGHT (unique,0xa9100,4) = (register,0x0,4) /* EAX */, (unique,0xa8f00,4)
+INT_SUB (unique,0xa9200,4) = (const,0x20,4), (unique,0xa8f00,4)
+INT_LEFT (unique,0xa9300,4) = (register,0x8,4) /* EDX */, (unique,0xa9200,4)
+INT_OR (register,0x0,4) /* EAX */ = (unique,0xa9100,4), (unique,0xa9300,4)
+INT_NOTEQUAL (unique,0x51500,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SUB (unique,0x51600,4) = (unique,0xa8f00,4), (const,0x1,4)
+INT_RIGHT (unique,0x51700,4) = (unique,0xa9000,4), (unique,0x51600,4)
+INT_AND (unique,0x51800,4) = (unique,0x51700,4), (const,0x1,4)
+INT_NOTEQUAL (unique,0x51a00,1) = (unique,0x51800,4), (const,0x0,4)
+BOOL_NEGATE (unique,0x51b00,1) = (unique,0x51500,1)
+INT_AND (unique,0x51c00,1) = (unique,0x51b00,1), (register,0x200,1)
+INT_AND (unique,0x51d00,1) = (unique,0x51500,1), (unique,0x51a00,1)
+INT_OR (register,0x200,1) = (unique,0x51c00,1), (unique,0x51d00,1)
+INT_EQUAL (unique,0x52000,1) = (unique,0xa8f00,4), (const,0x1,4)
+INT_SLESS (unique,0x52100,1) = (unique,0xa9000,4), (const,0x0,4)
+INT_SLESS (unique,0x52200,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+INT_XOR (unique,0x52400,1) = (unique,0x52100,1), (unique,0x52200,1)
+BOOL_NEGATE (unique,0x52500,1) = (unique,0x52000,1)
+INT_AND (unique,0x52600,1) = (unique,0x52500,1), (register,0x20b,1)
+INT_AND (unique,0x52700,1) = (unique,0x52000,1), (unique,0x52400,1)
+INT_OR (register,0x20b,1) = (unique,0x52600,1), (unique,0x52700,1)
+INT_NOTEQUAL (unique,0x49d00,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SLESS (unique,0x49f00,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a000,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a100,1) = (unique,0x4a000,1), (register,0x207,1)
+INT_AND (unique,0x4a200,1) = (unique,0x49d00,1), (unique,0x49f00,1)
+INT_OR (register,0x207,1) = (unique,0x4a100,1), (unique,0x4a200,1)
+INT_EQUAL (unique,0x4a500,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a600,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a700,1) = (unique,0x4a600,1), (register,0x206,1)
+INT_AND (unique,0x4a800,1) = (unique,0x49d00,1), (unique,0x4a500,1)
+INT_OR (register,0x206,1) = (unique,0x4a700,1), (unique,0x4a800,1)
+INT_AND (unique,0x4aa00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x4ab00,1) = (unique,0x4aa00,4)
+INT_AND (unique,0x4ac00,1) = (unique,0x4ab00,1), (const,0x1,1)
+INT_EQUAL (unique,0x4ae00,1) = (unique,0x4ac00,1), (const,0x0,1)
+BOOL_NEGATE (unique,0x4af00,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4b000,1) = (unique,0x4af00,1), (register,0x202,1)
+INT_AND (unique,0x4b100,1) = (unique,0x49d00,1), (unique,0x4ae00,1)
+INT_OR (register,0x202,1) = (unique,0x4b000,1), (unique,0x4b100,1)
 
 @004527d7 [ESP:-48]  # MOV EDX, dword ptr [EBP + 0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @004527da [ESP:-48]  # MOV ECX, EAX
 COPY (register,0x4,4) /* ECX */ = (register,0x0,4) /* EAX */
 
 @004527dc [ESP:-48]  # MOV EAX, dword ptr [EBP + -0x1c]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe4,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe4,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @004527df [ESP:-48]  # MOV EDX, dword ptr [EDX + 0x184]
-INT_ADD (unique,0x3400,4) = (register,0x8,4) /* EDX */, (const,0x184,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6800,4) = (register,0x8,4) /* EDX */, (const,0x184,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @004527e5 [ESP:-48]  # IMUL EDX
-INT_SEXT (unique,0x3c100,8) = (register,0x0,4) /* EAX */
-INT_SEXT (unique,0x3c180,8) = (register,0x8,4) /* EDX */
-INT_MULT (unique,0x3c280,8) = (unique,0x3c100,8), (unique,0x3c180,8)
-SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x3c280,8), (const,0x4,4)
-SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x3c280,8), (const,0x0,4)
-INT_SEXT (unique,0x25b80,8) = (register,0x0,4) /* EAX */
-INT_NOTEQUAL (register,0x200,1) = (unique,0x25b80,8), (unique,0x3c280,8)
+INT_SEXT (unique,0x78200,8) = (register,0x0,4) /* EAX */
+INT_SEXT (unique,0x78300,8) = (register,0x8,4) /* EDX */
+INT_MULT (unique,0x78500,8) = (unique,0x78200,8), (unique,0x78300,8)
+SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x78500,8), (const,0x4,4)
+SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x78500,8), (const,0x0,4)
+INT_SEXT (unique,0x4b700,8) = (register,0x0,4) /* EAX */
+INT_NOTEQUAL (register,0x200,1) = (unique,0x4b700,8), (unique,0x78500,8)
 COPY (register,0x20b,1) = (register,0x200,1)
 
 @004527e7 [ESP:-48]  # SHRD EAX, EDX, 0x10
-INT_AND (unique,0x54780,4) = (const,0x10,4), (const,0x1f,4)
-COPY (unique,0x54800,4) = (register,0x0,4) /* EAX */
-INT_RIGHT (unique,0x54880,4) = (register,0x0,4) /* EAX */, (unique,0x54780,4)
-INT_SUB (unique,0x54900,4) = (const,0x20,4), (unique,0x54780,4)
-INT_LEFT (unique,0x54980,4) = (register,0x8,4) /* EDX */, (unique,0x54900,4)
-INT_OR (register,0x0,4) /* EAX */ = (unique,0x54880,4), (unique,0x54980,4)
-INT_NOTEQUAL (unique,0x28a80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SUB (unique,0x28b00,4) = (unique,0x54780,4), (const,0x1,4)
-INT_RIGHT (unique,0x28b80,4) = (unique,0x54800,4), (unique,0x28b00,4)
-INT_AND (unique,0x28c00,4) = (unique,0x28b80,4), (const,0x1,4)
-INT_NOTEQUAL (unique,0x28d00,1) = (unique,0x28c00,4), (const,0x0,4)
-BOOL_NEGATE (unique,0x28d80,1) = (unique,0x28a80,1)
-INT_AND (unique,0x28e00,1) = (unique,0x28d80,1), (register,0x200,1)
-INT_AND (unique,0x28e80,1) = (unique,0x28a80,1), (unique,0x28d00,1)
-INT_OR (register,0x200,1) = (unique,0x28e00,1), (unique,0x28e80,1)
-INT_EQUAL (unique,0x29000,1) = (unique,0x54780,4), (const,0x1,4)
-INT_SLESS (unique,0x29080,1) = (unique,0x54800,4), (const,0x0,4)
-INT_SLESS (unique,0x29100,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_XOR (unique,0x29200,1) = (unique,0x29080,1), (unique,0x29100,1)
-BOOL_NEGATE (unique,0x29280,1) = (unique,0x29000,1)
-INT_AND (unique,0x29300,1) = (unique,0x29280,1), (register,0x20b,1)
-INT_AND (unique,0x29380,1) = (unique,0x29000,1), (unique,0x29200,1)
-INT_OR (register,0x20b,1) = (unique,0x29300,1), (unique,0x29380,1)
-INT_NOTEQUAL (unique,0x24e80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SLESS (unique,0x24f80,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25000,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25080,1) = (unique,0x25000,1), (register,0x207,1)
-INT_AND (unique,0x25100,1) = (unique,0x24e80,1), (unique,0x24f80,1)
-INT_OR (register,0x207,1) = (unique,0x25080,1), (unique,0x25100,1)
-INT_EQUAL (unique,0x25280,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25300,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25380,1) = (unique,0x25300,1), (register,0x206,1)
-INT_AND (unique,0x25400,1) = (unique,0x24e80,1), (unique,0x25280,1)
-INT_OR (register,0x206,1) = (unique,0x25380,1), (unique,0x25400,1)
-INT_AND (unique,0x25500,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x25580,1) = (unique,0x25500,4)
-INT_AND (unique,0x25600,1) = (unique,0x25580,1), (const,0x1,1)
-INT_EQUAL (unique,0x25700,1) = (unique,0x25600,1), (const,0x0,1)
-BOOL_NEGATE (unique,0x25780,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25800,1) = (unique,0x25780,1), (register,0x202,1)
-INT_AND (unique,0x25880,1) = (unique,0x24e80,1), (unique,0x25700,1)
-INT_OR (register,0x202,1) = (unique,0x25800,1), (unique,0x25880,1)
+INT_AND (unique,0xa8f00,4) = (const,0x10,4), (const,0x1f,4)
+COPY (unique,0xa9000,4) = (register,0x0,4) /* EAX */
+INT_RIGHT (unique,0xa9100,4) = (register,0x0,4) /* EAX */, (unique,0xa8f00,4)
+INT_SUB (unique,0xa9200,4) = (const,0x20,4), (unique,0xa8f00,4)
+INT_LEFT (unique,0xa9300,4) = (register,0x8,4) /* EDX */, (unique,0xa9200,4)
+INT_OR (register,0x0,4) /* EAX */ = (unique,0xa9100,4), (unique,0xa9300,4)
+INT_NOTEQUAL (unique,0x51500,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SUB (unique,0x51600,4) = (unique,0xa8f00,4), (const,0x1,4)
+INT_RIGHT (unique,0x51700,4) = (unique,0xa9000,4), (unique,0x51600,4)
+INT_AND (unique,0x51800,4) = (unique,0x51700,4), (const,0x1,4)
+INT_NOTEQUAL (unique,0x51a00,1) = (unique,0x51800,4), (const,0x0,4)
+BOOL_NEGATE (unique,0x51b00,1) = (unique,0x51500,1)
+INT_AND (unique,0x51c00,1) = (unique,0x51b00,1), (register,0x200,1)
+INT_AND (unique,0x51d00,1) = (unique,0x51500,1), (unique,0x51a00,1)
+INT_OR (register,0x200,1) = (unique,0x51c00,1), (unique,0x51d00,1)
+INT_EQUAL (unique,0x52000,1) = (unique,0xa8f00,4), (const,0x1,4)
+INT_SLESS (unique,0x52100,1) = (unique,0xa9000,4), (const,0x0,4)
+INT_SLESS (unique,0x52200,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+INT_XOR (unique,0x52400,1) = (unique,0x52100,1), (unique,0x52200,1)
+BOOL_NEGATE (unique,0x52500,1) = (unique,0x52000,1)
+INT_AND (unique,0x52600,1) = (unique,0x52500,1), (register,0x20b,1)
+INT_AND (unique,0x52700,1) = (unique,0x52000,1), (unique,0x52400,1)
+INT_OR (register,0x20b,1) = (unique,0x52600,1), (unique,0x52700,1)
+INT_NOTEQUAL (unique,0x49d00,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SLESS (unique,0x49f00,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a000,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a100,1) = (unique,0x4a000,1), (register,0x207,1)
+INT_AND (unique,0x4a200,1) = (unique,0x49d00,1), (unique,0x49f00,1)
+INT_OR (register,0x207,1) = (unique,0x4a100,1), (unique,0x4a200,1)
+INT_EQUAL (unique,0x4a500,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a600,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a700,1) = (unique,0x4a600,1), (register,0x206,1)
+INT_AND (unique,0x4a800,1) = (unique,0x49d00,1), (unique,0x4a500,1)
+INT_OR (register,0x206,1) = (unique,0x4a700,1), (unique,0x4a800,1)
+INT_AND (unique,0x4aa00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x4ab00,1) = (unique,0x4aa00,4)
+INT_AND (unique,0x4ac00,1) = (unique,0x4ab00,1), (const,0x1,1)
+INT_EQUAL (unique,0x4ae00,1) = (unique,0x4ac00,1), (const,0x0,1)
+BOOL_NEGATE (unique,0x4af00,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4b000,1) = (unique,0x4af00,1), (register,0x202,1)
+INT_AND (unique,0x4b100,1) = (unique,0x49d00,1), (unique,0x4ae00,1)
+INT_OR (register,0x202,1) = (unique,0x4b000,1), (unique,0x4b100,1)
 
 @004527eb [ESP:-48]  # MOV EDX, dword ptr [EBP + 0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @004527ee [ESP:-48]  # ADD ECX, EAX
 INT_CARRY (register,0x200,1) = (register,0x4,4) /* ECX */, (register,0x0,4) /* EAX */
@@ -557,79 +557,79 @@ INT_SCARRY (register,0x20b,1) = (register,0x4,4) /* ECX */, (register,0x0,4) /* 
 INT_ADD (register,0x4,4) /* ECX */ = (register,0x4,4) /* ECX */, (register,0x0,4) /* EAX */
 INT_SLESS (register,0x207,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004527f0 [ESP:-48]  # MOV EAX, dword ptr [EBP + -0x18]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe8,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe8,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @004527f3 [ESP:-48]  # MOV EDX, dword ptr [EDX + 0x190]
-INT_ADD (unique,0x3400,4) = (register,0x8,4) /* EDX */, (const,0x190,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6800,4) = (register,0x8,4) /* EDX */, (const,0x190,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @004527f9 [ESP:-48]  # IMUL EDX
-INT_SEXT (unique,0x3c100,8) = (register,0x0,4) /* EAX */
-INT_SEXT (unique,0x3c180,8) = (register,0x8,4) /* EDX */
-INT_MULT (unique,0x3c280,8) = (unique,0x3c100,8), (unique,0x3c180,8)
-SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x3c280,8), (const,0x4,4)
-SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x3c280,8), (const,0x0,4)
-INT_SEXT (unique,0x25b80,8) = (register,0x0,4) /* EAX */
-INT_NOTEQUAL (register,0x200,1) = (unique,0x25b80,8), (unique,0x3c280,8)
+INT_SEXT (unique,0x78200,8) = (register,0x0,4) /* EAX */
+INT_SEXT (unique,0x78300,8) = (register,0x8,4) /* EDX */
+INT_MULT (unique,0x78500,8) = (unique,0x78200,8), (unique,0x78300,8)
+SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x78500,8), (const,0x4,4)
+SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x78500,8), (const,0x0,4)
+INT_SEXT (unique,0x4b700,8) = (register,0x0,4) /* EAX */
+INT_NOTEQUAL (register,0x200,1) = (unique,0x4b700,8), (unique,0x78500,8)
 COPY (register,0x20b,1) = (register,0x200,1)
 
 @004527fb [ESP:-48]  # SHRD EAX, EDX, 0x10
-INT_AND (unique,0x54780,4) = (const,0x10,4), (const,0x1f,4)
-COPY (unique,0x54800,4) = (register,0x0,4) /* EAX */
-INT_RIGHT (unique,0x54880,4) = (register,0x0,4) /* EAX */, (unique,0x54780,4)
-INT_SUB (unique,0x54900,4) = (const,0x20,4), (unique,0x54780,4)
-INT_LEFT (unique,0x54980,4) = (register,0x8,4) /* EDX */, (unique,0x54900,4)
-INT_OR (register,0x0,4) /* EAX */ = (unique,0x54880,4), (unique,0x54980,4)
-INT_NOTEQUAL (unique,0x28a80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SUB (unique,0x28b00,4) = (unique,0x54780,4), (const,0x1,4)
-INT_RIGHT (unique,0x28b80,4) = (unique,0x54800,4), (unique,0x28b00,4)
-INT_AND (unique,0x28c00,4) = (unique,0x28b80,4), (const,0x1,4)
-INT_NOTEQUAL (unique,0x28d00,1) = (unique,0x28c00,4), (const,0x0,4)
-BOOL_NEGATE (unique,0x28d80,1) = (unique,0x28a80,1)
-INT_AND (unique,0x28e00,1) = (unique,0x28d80,1), (register,0x200,1)
-INT_AND (unique,0x28e80,1) = (unique,0x28a80,1), (unique,0x28d00,1)
-INT_OR (register,0x200,1) = (unique,0x28e00,1), (unique,0x28e80,1)
-INT_EQUAL (unique,0x29000,1) = (unique,0x54780,4), (const,0x1,4)
-INT_SLESS (unique,0x29080,1) = (unique,0x54800,4), (const,0x0,4)
-INT_SLESS (unique,0x29100,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_XOR (unique,0x29200,1) = (unique,0x29080,1), (unique,0x29100,1)
-BOOL_NEGATE (unique,0x29280,1) = (unique,0x29000,1)
-INT_AND (unique,0x29300,1) = (unique,0x29280,1), (register,0x20b,1)
-INT_AND (unique,0x29380,1) = (unique,0x29000,1), (unique,0x29200,1)
-INT_OR (register,0x20b,1) = (unique,0x29300,1), (unique,0x29380,1)
-INT_NOTEQUAL (unique,0x24e80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SLESS (unique,0x24f80,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25000,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25080,1) = (unique,0x25000,1), (register,0x207,1)
-INT_AND (unique,0x25100,1) = (unique,0x24e80,1), (unique,0x24f80,1)
-INT_OR (register,0x207,1) = (unique,0x25080,1), (unique,0x25100,1)
-INT_EQUAL (unique,0x25280,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25300,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25380,1) = (unique,0x25300,1), (register,0x206,1)
-INT_AND (unique,0x25400,1) = (unique,0x24e80,1), (unique,0x25280,1)
-INT_OR (register,0x206,1) = (unique,0x25380,1), (unique,0x25400,1)
-INT_AND (unique,0x25500,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x25580,1) = (unique,0x25500,4)
-INT_AND (unique,0x25600,1) = (unique,0x25580,1), (const,0x1,1)
-INT_EQUAL (unique,0x25700,1) = (unique,0x25600,1), (const,0x0,1)
-BOOL_NEGATE (unique,0x25780,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25800,1) = (unique,0x25780,1), (register,0x202,1)
-INT_AND (unique,0x25880,1) = (unique,0x24e80,1), (unique,0x25700,1)
-INT_OR (register,0x202,1) = (unique,0x25800,1), (unique,0x25880,1)
+INT_AND (unique,0xa8f00,4) = (const,0x10,4), (const,0x1f,4)
+COPY (unique,0xa9000,4) = (register,0x0,4) /* EAX */
+INT_RIGHT (unique,0xa9100,4) = (register,0x0,4) /* EAX */, (unique,0xa8f00,4)
+INT_SUB (unique,0xa9200,4) = (const,0x20,4), (unique,0xa8f00,4)
+INT_LEFT (unique,0xa9300,4) = (register,0x8,4) /* EDX */, (unique,0xa9200,4)
+INT_OR (register,0x0,4) /* EAX */ = (unique,0xa9100,4), (unique,0xa9300,4)
+INT_NOTEQUAL (unique,0x51500,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SUB (unique,0x51600,4) = (unique,0xa8f00,4), (const,0x1,4)
+INT_RIGHT (unique,0x51700,4) = (unique,0xa9000,4), (unique,0x51600,4)
+INT_AND (unique,0x51800,4) = (unique,0x51700,4), (const,0x1,4)
+INT_NOTEQUAL (unique,0x51a00,1) = (unique,0x51800,4), (const,0x0,4)
+BOOL_NEGATE (unique,0x51b00,1) = (unique,0x51500,1)
+INT_AND (unique,0x51c00,1) = (unique,0x51b00,1), (register,0x200,1)
+INT_AND (unique,0x51d00,1) = (unique,0x51500,1), (unique,0x51a00,1)
+INT_OR (register,0x200,1) = (unique,0x51c00,1), (unique,0x51d00,1)
+INT_EQUAL (unique,0x52000,1) = (unique,0xa8f00,4), (const,0x1,4)
+INT_SLESS (unique,0x52100,1) = (unique,0xa9000,4), (const,0x0,4)
+INT_SLESS (unique,0x52200,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+INT_XOR (unique,0x52400,1) = (unique,0x52100,1), (unique,0x52200,1)
+BOOL_NEGATE (unique,0x52500,1) = (unique,0x52000,1)
+INT_AND (unique,0x52600,1) = (unique,0x52500,1), (register,0x20b,1)
+INT_AND (unique,0x52700,1) = (unique,0x52000,1), (unique,0x52400,1)
+INT_OR (register,0x20b,1) = (unique,0x52600,1), (unique,0x52700,1)
+INT_NOTEQUAL (unique,0x49d00,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SLESS (unique,0x49f00,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a000,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a100,1) = (unique,0x4a000,1), (register,0x207,1)
+INT_AND (unique,0x4a200,1) = (unique,0x49d00,1), (unique,0x49f00,1)
+INT_OR (register,0x207,1) = (unique,0x4a100,1), (unique,0x4a200,1)
+INT_EQUAL (unique,0x4a500,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a600,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a700,1) = (unique,0x4a600,1), (register,0x206,1)
+INT_AND (unique,0x4a800,1) = (unique,0x49d00,1), (unique,0x4a500,1)
+INT_OR (register,0x206,1) = (unique,0x4a700,1), (unique,0x4a800,1)
+INT_AND (unique,0x4aa00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x4ab00,1) = (unique,0x4aa00,4)
+INT_AND (unique,0x4ac00,1) = (unique,0x4ab00,1), (const,0x1,1)
+INT_EQUAL (unique,0x4ae00,1) = (unique,0x4ac00,1), (const,0x0,1)
+BOOL_NEGATE (unique,0x4af00,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4b000,1) = (unique,0x4af00,1), (register,0x202,1)
+INT_AND (unique,0x4b100,1) = (unique,0x49d00,1), (unique,0x4ae00,1)
+INT_OR (register,0x202,1) = (unique,0x4b000,1), (unique,0x4b100,1)
 
 @004527ff [ESP:-48]  # MOV EDX, dword ptr [EBP + 0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @00452802 [ESP:-48]  # ADD ECX, EAX
 INT_CARRY (register,0x200,1) = (register,0x4,4) /* ECX */, (register,0x0,4) /* EAX */
@@ -637,156 +637,156 @@ INT_SCARRY (register,0x20b,1) = (register,0x4,4) /* ECX */, (register,0x0,4) /* 
 INT_ADD (register,0x4,4) /* ECX */ = (register,0x4,4) /* ECX */, (register,0x0,4) /* EAX */
 INT_SLESS (register,0x207,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @00452804 [ESP:-48]  # MOV EAX, dword ptr [EBP + -0x20]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe0,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe0,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @00452807 [ESP:-48]  # MOV EDX, dword ptr [EDX + 0x17c]
-INT_ADD (unique,0x3400,4) = (register,0x8,4) /* EDX */, (const,0x17c,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6800,4) = (register,0x8,4) /* EDX */, (const,0x17c,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @0045280d [ESP:-48]  # MOV dword ptr [EBP + -0x14], ECX
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffec,4)
-COPY (unique,0x5180,4) = (register,0x4,4) /* ECX */
-STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffec,4)
+COPY (unique,0xa300,4) = (register,0x4,4) /* ECX */
+STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
 @00452810 [ESP:-48]  # IMUL EDX
-INT_SEXT (unique,0x3c100,8) = (register,0x0,4) /* EAX */
-INT_SEXT (unique,0x3c180,8) = (register,0x8,4) /* EDX */
-INT_MULT (unique,0x3c280,8) = (unique,0x3c100,8), (unique,0x3c180,8)
-SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x3c280,8), (const,0x4,4)
-SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x3c280,8), (const,0x0,4)
-INT_SEXT (unique,0x25b80,8) = (register,0x0,4) /* EAX */
-INT_NOTEQUAL (register,0x200,1) = (unique,0x25b80,8), (unique,0x3c280,8)
+INT_SEXT (unique,0x78200,8) = (register,0x0,4) /* EAX */
+INT_SEXT (unique,0x78300,8) = (register,0x8,4) /* EDX */
+INT_MULT (unique,0x78500,8) = (unique,0x78200,8), (unique,0x78300,8)
+SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x78500,8), (const,0x4,4)
+SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x78500,8), (const,0x0,4)
+INT_SEXT (unique,0x4b700,8) = (register,0x0,4) /* EAX */
+INT_NOTEQUAL (register,0x200,1) = (unique,0x4b700,8), (unique,0x78500,8)
 COPY (register,0x20b,1) = (register,0x200,1)
 
 @00452812 [ESP:-48]  # SHRD EAX, EDX, 0x10
-INT_AND (unique,0x54780,4) = (const,0x10,4), (const,0x1f,4)
-COPY (unique,0x54800,4) = (register,0x0,4) /* EAX */
-INT_RIGHT (unique,0x54880,4) = (register,0x0,4) /* EAX */, (unique,0x54780,4)
-INT_SUB (unique,0x54900,4) = (const,0x20,4), (unique,0x54780,4)
-INT_LEFT (unique,0x54980,4) = (register,0x8,4) /* EDX */, (unique,0x54900,4)
-INT_OR (register,0x0,4) /* EAX */ = (unique,0x54880,4), (unique,0x54980,4)
-INT_NOTEQUAL (unique,0x28a80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SUB (unique,0x28b00,4) = (unique,0x54780,4), (const,0x1,4)
-INT_RIGHT (unique,0x28b80,4) = (unique,0x54800,4), (unique,0x28b00,4)
-INT_AND (unique,0x28c00,4) = (unique,0x28b80,4), (const,0x1,4)
-INT_NOTEQUAL (unique,0x28d00,1) = (unique,0x28c00,4), (const,0x0,4)
-BOOL_NEGATE (unique,0x28d80,1) = (unique,0x28a80,1)
-INT_AND (unique,0x28e00,1) = (unique,0x28d80,1), (register,0x200,1)
-INT_AND (unique,0x28e80,1) = (unique,0x28a80,1), (unique,0x28d00,1)
-INT_OR (register,0x200,1) = (unique,0x28e00,1), (unique,0x28e80,1)
-INT_EQUAL (unique,0x29000,1) = (unique,0x54780,4), (const,0x1,4)
-INT_SLESS (unique,0x29080,1) = (unique,0x54800,4), (const,0x0,4)
-INT_SLESS (unique,0x29100,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_XOR (unique,0x29200,1) = (unique,0x29080,1), (unique,0x29100,1)
-BOOL_NEGATE (unique,0x29280,1) = (unique,0x29000,1)
-INT_AND (unique,0x29300,1) = (unique,0x29280,1), (register,0x20b,1)
-INT_AND (unique,0x29380,1) = (unique,0x29000,1), (unique,0x29200,1)
-INT_OR (register,0x20b,1) = (unique,0x29300,1), (unique,0x29380,1)
-INT_NOTEQUAL (unique,0x24e80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SLESS (unique,0x24f80,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25000,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25080,1) = (unique,0x25000,1), (register,0x207,1)
-INT_AND (unique,0x25100,1) = (unique,0x24e80,1), (unique,0x24f80,1)
-INT_OR (register,0x207,1) = (unique,0x25080,1), (unique,0x25100,1)
-INT_EQUAL (unique,0x25280,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25300,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25380,1) = (unique,0x25300,1), (register,0x206,1)
-INT_AND (unique,0x25400,1) = (unique,0x24e80,1), (unique,0x25280,1)
-INT_OR (register,0x206,1) = (unique,0x25380,1), (unique,0x25400,1)
-INT_AND (unique,0x25500,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x25580,1) = (unique,0x25500,4)
-INT_AND (unique,0x25600,1) = (unique,0x25580,1), (const,0x1,1)
-INT_EQUAL (unique,0x25700,1) = (unique,0x25600,1), (const,0x0,1)
-BOOL_NEGATE (unique,0x25780,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25800,1) = (unique,0x25780,1), (register,0x202,1)
-INT_AND (unique,0x25880,1) = (unique,0x24e80,1), (unique,0x25700,1)
-INT_OR (register,0x202,1) = (unique,0x25800,1), (unique,0x25880,1)
+INT_AND (unique,0xa8f00,4) = (const,0x10,4), (const,0x1f,4)
+COPY (unique,0xa9000,4) = (register,0x0,4) /* EAX */
+INT_RIGHT (unique,0xa9100,4) = (register,0x0,4) /* EAX */, (unique,0xa8f00,4)
+INT_SUB (unique,0xa9200,4) = (const,0x20,4), (unique,0xa8f00,4)
+INT_LEFT (unique,0xa9300,4) = (register,0x8,4) /* EDX */, (unique,0xa9200,4)
+INT_OR (register,0x0,4) /* EAX */ = (unique,0xa9100,4), (unique,0xa9300,4)
+INT_NOTEQUAL (unique,0x51500,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SUB (unique,0x51600,4) = (unique,0xa8f00,4), (const,0x1,4)
+INT_RIGHT (unique,0x51700,4) = (unique,0xa9000,4), (unique,0x51600,4)
+INT_AND (unique,0x51800,4) = (unique,0x51700,4), (const,0x1,4)
+INT_NOTEQUAL (unique,0x51a00,1) = (unique,0x51800,4), (const,0x0,4)
+BOOL_NEGATE (unique,0x51b00,1) = (unique,0x51500,1)
+INT_AND (unique,0x51c00,1) = (unique,0x51b00,1), (register,0x200,1)
+INT_AND (unique,0x51d00,1) = (unique,0x51500,1), (unique,0x51a00,1)
+INT_OR (register,0x200,1) = (unique,0x51c00,1), (unique,0x51d00,1)
+INT_EQUAL (unique,0x52000,1) = (unique,0xa8f00,4), (const,0x1,4)
+INT_SLESS (unique,0x52100,1) = (unique,0xa9000,4), (const,0x0,4)
+INT_SLESS (unique,0x52200,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+INT_XOR (unique,0x52400,1) = (unique,0x52100,1), (unique,0x52200,1)
+BOOL_NEGATE (unique,0x52500,1) = (unique,0x52000,1)
+INT_AND (unique,0x52600,1) = (unique,0x52500,1), (register,0x20b,1)
+INT_AND (unique,0x52700,1) = (unique,0x52000,1), (unique,0x52400,1)
+INT_OR (register,0x20b,1) = (unique,0x52600,1), (unique,0x52700,1)
+INT_NOTEQUAL (unique,0x49d00,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SLESS (unique,0x49f00,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a000,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a100,1) = (unique,0x4a000,1), (register,0x207,1)
+INT_AND (unique,0x4a200,1) = (unique,0x49d00,1), (unique,0x49f00,1)
+INT_OR (register,0x207,1) = (unique,0x4a100,1), (unique,0x4a200,1)
+INT_EQUAL (unique,0x4a500,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a600,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a700,1) = (unique,0x4a600,1), (register,0x206,1)
+INT_AND (unique,0x4a800,1) = (unique,0x49d00,1), (unique,0x4a500,1)
+INT_OR (register,0x206,1) = (unique,0x4a700,1), (unique,0x4a800,1)
+INT_AND (unique,0x4aa00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x4ab00,1) = (unique,0x4aa00,4)
+INT_AND (unique,0x4ac00,1) = (unique,0x4ab00,1), (const,0x1,1)
+INT_EQUAL (unique,0x4ae00,1) = (unique,0x4ac00,1), (const,0x0,1)
+BOOL_NEGATE (unique,0x4af00,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4b000,1) = (unique,0x4af00,1), (register,0x202,1)
+INT_AND (unique,0x4b100,1) = (unique,0x49d00,1), (unique,0x4ae00,1)
+INT_OR (register,0x202,1) = (unique,0x4b000,1), (unique,0x4b100,1)
 
 @00452816 [ESP:-48]  # MOV EDX, dword ptr [EBP + 0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @00452819 [ESP:-48]  # MOV ECX, EAX
 COPY (register,0x4,4) /* ECX */ = (register,0x0,4) /* EAX */
 
 @0045281b [ESP:-48]  # MOV EAX, dword ptr [EBP + -0x1c]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe4,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe4,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @0045281e [ESP:-48]  # MOV EDX, dword ptr [EDX + 0x188]
-INT_ADD (unique,0x3400,4) = (register,0x8,4) /* EDX */, (const,0x188,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6800,4) = (register,0x8,4) /* EDX */, (const,0x188,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @00452824 [ESP:-48]  # IMUL EDX
-INT_SEXT (unique,0x3c100,8) = (register,0x0,4) /* EAX */
-INT_SEXT (unique,0x3c180,8) = (register,0x8,4) /* EDX */
-INT_MULT (unique,0x3c280,8) = (unique,0x3c100,8), (unique,0x3c180,8)
-SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x3c280,8), (const,0x4,4)
-SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x3c280,8), (const,0x0,4)
-INT_SEXT (unique,0x25b80,8) = (register,0x0,4) /* EAX */
-INT_NOTEQUAL (register,0x200,1) = (unique,0x25b80,8), (unique,0x3c280,8)
+INT_SEXT (unique,0x78200,8) = (register,0x0,4) /* EAX */
+INT_SEXT (unique,0x78300,8) = (register,0x8,4) /* EDX */
+INT_MULT (unique,0x78500,8) = (unique,0x78200,8), (unique,0x78300,8)
+SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x78500,8), (const,0x4,4)
+SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x78500,8), (const,0x0,4)
+INT_SEXT (unique,0x4b700,8) = (register,0x0,4) /* EAX */
+INT_NOTEQUAL (register,0x200,1) = (unique,0x4b700,8), (unique,0x78500,8)
 COPY (register,0x20b,1) = (register,0x200,1)
 
 @00452826 [ESP:-48]  # SHRD EAX, EDX, 0x10
-INT_AND (unique,0x54780,4) = (const,0x10,4), (const,0x1f,4)
-COPY (unique,0x54800,4) = (register,0x0,4) /* EAX */
-INT_RIGHT (unique,0x54880,4) = (register,0x0,4) /* EAX */, (unique,0x54780,4)
-INT_SUB (unique,0x54900,4) = (const,0x20,4), (unique,0x54780,4)
-INT_LEFT (unique,0x54980,4) = (register,0x8,4) /* EDX */, (unique,0x54900,4)
-INT_OR (register,0x0,4) /* EAX */ = (unique,0x54880,4), (unique,0x54980,4)
-INT_NOTEQUAL (unique,0x28a80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SUB (unique,0x28b00,4) = (unique,0x54780,4), (const,0x1,4)
-INT_RIGHT (unique,0x28b80,4) = (unique,0x54800,4), (unique,0x28b00,4)
-INT_AND (unique,0x28c00,4) = (unique,0x28b80,4), (const,0x1,4)
-INT_NOTEQUAL (unique,0x28d00,1) = (unique,0x28c00,4), (const,0x0,4)
-BOOL_NEGATE (unique,0x28d80,1) = (unique,0x28a80,1)
-INT_AND (unique,0x28e00,1) = (unique,0x28d80,1), (register,0x200,1)
-INT_AND (unique,0x28e80,1) = (unique,0x28a80,1), (unique,0x28d00,1)
-INT_OR (register,0x200,1) = (unique,0x28e00,1), (unique,0x28e80,1)
-INT_EQUAL (unique,0x29000,1) = (unique,0x54780,4), (const,0x1,4)
-INT_SLESS (unique,0x29080,1) = (unique,0x54800,4), (const,0x0,4)
-INT_SLESS (unique,0x29100,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_XOR (unique,0x29200,1) = (unique,0x29080,1), (unique,0x29100,1)
-BOOL_NEGATE (unique,0x29280,1) = (unique,0x29000,1)
-INT_AND (unique,0x29300,1) = (unique,0x29280,1), (register,0x20b,1)
-INT_AND (unique,0x29380,1) = (unique,0x29000,1), (unique,0x29200,1)
-INT_OR (register,0x20b,1) = (unique,0x29300,1), (unique,0x29380,1)
-INT_NOTEQUAL (unique,0x24e80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SLESS (unique,0x24f80,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25000,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25080,1) = (unique,0x25000,1), (register,0x207,1)
-INT_AND (unique,0x25100,1) = (unique,0x24e80,1), (unique,0x24f80,1)
-INT_OR (register,0x207,1) = (unique,0x25080,1), (unique,0x25100,1)
-INT_EQUAL (unique,0x25280,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25300,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25380,1) = (unique,0x25300,1), (register,0x206,1)
-INT_AND (unique,0x25400,1) = (unique,0x24e80,1), (unique,0x25280,1)
-INT_OR (register,0x206,1) = (unique,0x25380,1), (unique,0x25400,1)
-INT_AND (unique,0x25500,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x25580,1) = (unique,0x25500,4)
-INT_AND (unique,0x25600,1) = (unique,0x25580,1), (const,0x1,1)
-INT_EQUAL (unique,0x25700,1) = (unique,0x25600,1), (const,0x0,1)
-BOOL_NEGATE (unique,0x25780,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25800,1) = (unique,0x25780,1), (register,0x202,1)
-INT_AND (unique,0x25880,1) = (unique,0x24e80,1), (unique,0x25700,1)
-INT_OR (register,0x202,1) = (unique,0x25800,1), (unique,0x25880,1)
+INT_AND (unique,0xa8f00,4) = (const,0x10,4), (const,0x1f,4)
+COPY (unique,0xa9000,4) = (register,0x0,4) /* EAX */
+INT_RIGHT (unique,0xa9100,4) = (register,0x0,4) /* EAX */, (unique,0xa8f00,4)
+INT_SUB (unique,0xa9200,4) = (const,0x20,4), (unique,0xa8f00,4)
+INT_LEFT (unique,0xa9300,4) = (register,0x8,4) /* EDX */, (unique,0xa9200,4)
+INT_OR (register,0x0,4) /* EAX */ = (unique,0xa9100,4), (unique,0xa9300,4)
+INT_NOTEQUAL (unique,0x51500,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SUB (unique,0x51600,4) = (unique,0xa8f00,4), (const,0x1,4)
+INT_RIGHT (unique,0x51700,4) = (unique,0xa9000,4), (unique,0x51600,4)
+INT_AND (unique,0x51800,4) = (unique,0x51700,4), (const,0x1,4)
+INT_NOTEQUAL (unique,0x51a00,1) = (unique,0x51800,4), (const,0x0,4)
+BOOL_NEGATE (unique,0x51b00,1) = (unique,0x51500,1)
+INT_AND (unique,0x51c00,1) = (unique,0x51b00,1), (register,0x200,1)
+INT_AND (unique,0x51d00,1) = (unique,0x51500,1), (unique,0x51a00,1)
+INT_OR (register,0x200,1) = (unique,0x51c00,1), (unique,0x51d00,1)
+INT_EQUAL (unique,0x52000,1) = (unique,0xa8f00,4), (const,0x1,4)
+INT_SLESS (unique,0x52100,1) = (unique,0xa9000,4), (const,0x0,4)
+INT_SLESS (unique,0x52200,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+INT_XOR (unique,0x52400,1) = (unique,0x52100,1), (unique,0x52200,1)
+BOOL_NEGATE (unique,0x52500,1) = (unique,0x52000,1)
+INT_AND (unique,0x52600,1) = (unique,0x52500,1), (register,0x20b,1)
+INT_AND (unique,0x52700,1) = (unique,0x52000,1), (unique,0x52400,1)
+INT_OR (register,0x20b,1) = (unique,0x52600,1), (unique,0x52700,1)
+INT_NOTEQUAL (unique,0x49d00,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SLESS (unique,0x49f00,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a000,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a100,1) = (unique,0x4a000,1), (register,0x207,1)
+INT_AND (unique,0x4a200,1) = (unique,0x49d00,1), (unique,0x49f00,1)
+INT_OR (register,0x207,1) = (unique,0x4a100,1), (unique,0x4a200,1)
+INT_EQUAL (unique,0x4a500,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a600,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a700,1) = (unique,0x4a600,1), (register,0x206,1)
+INT_AND (unique,0x4a800,1) = (unique,0x49d00,1), (unique,0x4a500,1)
+INT_OR (register,0x206,1) = (unique,0x4a700,1), (unique,0x4a800,1)
+INT_AND (unique,0x4aa00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x4ab00,1) = (unique,0x4aa00,4)
+INT_AND (unique,0x4ac00,1) = (unique,0x4ab00,1), (const,0x1,1)
+INT_EQUAL (unique,0x4ae00,1) = (unique,0x4ac00,1), (const,0x0,1)
+BOOL_NEGATE (unique,0x4af00,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4b000,1) = (unique,0x4af00,1), (register,0x202,1)
+INT_AND (unique,0x4b100,1) = (unique,0x49d00,1), (unique,0x4ae00,1)
+INT_OR (register,0x202,1) = (unique,0x4b000,1), (unique,0x4b100,1)
 
 @0045282a [ESP:-48]  # MOV EDX, dword ptr [EBP + 0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @0045282d [ESP:-48]  # ADD ECX, EAX
 INT_CARRY (register,0x200,1) = (register,0x4,4) /* ECX */, (register,0x0,4) /* EAX */
@@ -794,79 +794,79 @@ INT_SCARRY (register,0x20b,1) = (register,0x4,4) /* ECX */, (register,0x0,4) /* 
 INT_ADD (register,0x4,4) /* ECX */ = (register,0x4,4) /* ECX */, (register,0x0,4) /* EAX */
 INT_SLESS (register,0x207,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @0045282f [ESP:-48]  # MOV EAX, dword ptr [EBP + -0x18]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe8,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe8,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @00452832 [ESP:-48]  # MOV EDX, dword ptr [EDX + 0x194]
-INT_ADD (unique,0x3400,4) = (register,0x8,4) /* EDX */, (const,0x194,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6800,4) = (register,0x8,4) /* EDX */, (const,0x194,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @00452838 [ESP:-48]  # IMUL EDX
-INT_SEXT (unique,0x3c100,8) = (register,0x0,4) /* EAX */
-INT_SEXT (unique,0x3c180,8) = (register,0x8,4) /* EDX */
-INT_MULT (unique,0x3c280,8) = (unique,0x3c100,8), (unique,0x3c180,8)
-SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x3c280,8), (const,0x4,4)
-SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x3c280,8), (const,0x0,4)
-INT_SEXT (unique,0x25b80,8) = (register,0x0,4) /* EAX */
-INT_NOTEQUAL (register,0x200,1) = (unique,0x25b80,8), (unique,0x3c280,8)
+INT_SEXT (unique,0x78200,8) = (register,0x0,4) /* EAX */
+INT_SEXT (unique,0x78300,8) = (register,0x8,4) /* EDX */
+INT_MULT (unique,0x78500,8) = (unique,0x78200,8), (unique,0x78300,8)
+SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x78500,8), (const,0x4,4)
+SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x78500,8), (const,0x0,4)
+INT_SEXT (unique,0x4b700,8) = (register,0x0,4) /* EAX */
+INT_NOTEQUAL (register,0x200,1) = (unique,0x4b700,8), (unique,0x78500,8)
 COPY (register,0x20b,1) = (register,0x200,1)
 
 @0045283a [ESP:-48]  # SHRD EAX, EDX, 0x10
-INT_AND (unique,0x54780,4) = (const,0x10,4), (const,0x1f,4)
-COPY (unique,0x54800,4) = (register,0x0,4) /* EAX */
-INT_RIGHT (unique,0x54880,4) = (register,0x0,4) /* EAX */, (unique,0x54780,4)
-INT_SUB (unique,0x54900,4) = (const,0x20,4), (unique,0x54780,4)
-INT_LEFT (unique,0x54980,4) = (register,0x8,4) /* EDX */, (unique,0x54900,4)
-INT_OR (register,0x0,4) /* EAX */ = (unique,0x54880,4), (unique,0x54980,4)
-INT_NOTEQUAL (unique,0x28a80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SUB (unique,0x28b00,4) = (unique,0x54780,4), (const,0x1,4)
-INT_RIGHT (unique,0x28b80,4) = (unique,0x54800,4), (unique,0x28b00,4)
-INT_AND (unique,0x28c00,4) = (unique,0x28b80,4), (const,0x1,4)
-INT_NOTEQUAL (unique,0x28d00,1) = (unique,0x28c00,4), (const,0x0,4)
-BOOL_NEGATE (unique,0x28d80,1) = (unique,0x28a80,1)
-INT_AND (unique,0x28e00,1) = (unique,0x28d80,1), (register,0x200,1)
-INT_AND (unique,0x28e80,1) = (unique,0x28a80,1), (unique,0x28d00,1)
-INT_OR (register,0x200,1) = (unique,0x28e00,1), (unique,0x28e80,1)
-INT_EQUAL (unique,0x29000,1) = (unique,0x54780,4), (const,0x1,4)
-INT_SLESS (unique,0x29080,1) = (unique,0x54800,4), (const,0x0,4)
-INT_SLESS (unique,0x29100,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_XOR (unique,0x29200,1) = (unique,0x29080,1), (unique,0x29100,1)
-BOOL_NEGATE (unique,0x29280,1) = (unique,0x29000,1)
-INT_AND (unique,0x29300,1) = (unique,0x29280,1), (register,0x20b,1)
-INT_AND (unique,0x29380,1) = (unique,0x29000,1), (unique,0x29200,1)
-INT_OR (register,0x20b,1) = (unique,0x29300,1), (unique,0x29380,1)
-INT_NOTEQUAL (unique,0x24e80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SLESS (unique,0x24f80,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25000,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25080,1) = (unique,0x25000,1), (register,0x207,1)
-INT_AND (unique,0x25100,1) = (unique,0x24e80,1), (unique,0x24f80,1)
-INT_OR (register,0x207,1) = (unique,0x25080,1), (unique,0x25100,1)
-INT_EQUAL (unique,0x25280,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25300,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25380,1) = (unique,0x25300,1), (register,0x206,1)
-INT_AND (unique,0x25400,1) = (unique,0x24e80,1), (unique,0x25280,1)
-INT_OR (register,0x206,1) = (unique,0x25380,1), (unique,0x25400,1)
-INT_AND (unique,0x25500,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x25580,1) = (unique,0x25500,4)
-INT_AND (unique,0x25600,1) = (unique,0x25580,1), (const,0x1,1)
-INT_EQUAL (unique,0x25700,1) = (unique,0x25600,1), (const,0x0,1)
-BOOL_NEGATE (unique,0x25780,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25800,1) = (unique,0x25780,1), (register,0x202,1)
-INT_AND (unique,0x25880,1) = (unique,0x24e80,1), (unique,0x25700,1)
-INT_OR (register,0x202,1) = (unique,0x25800,1), (unique,0x25880,1)
+INT_AND (unique,0xa8f00,4) = (const,0x10,4), (const,0x1f,4)
+COPY (unique,0xa9000,4) = (register,0x0,4) /* EAX */
+INT_RIGHT (unique,0xa9100,4) = (register,0x0,4) /* EAX */, (unique,0xa8f00,4)
+INT_SUB (unique,0xa9200,4) = (const,0x20,4), (unique,0xa8f00,4)
+INT_LEFT (unique,0xa9300,4) = (register,0x8,4) /* EDX */, (unique,0xa9200,4)
+INT_OR (register,0x0,4) /* EAX */ = (unique,0xa9100,4), (unique,0xa9300,4)
+INT_NOTEQUAL (unique,0x51500,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SUB (unique,0x51600,4) = (unique,0xa8f00,4), (const,0x1,4)
+INT_RIGHT (unique,0x51700,4) = (unique,0xa9000,4), (unique,0x51600,4)
+INT_AND (unique,0x51800,4) = (unique,0x51700,4), (const,0x1,4)
+INT_NOTEQUAL (unique,0x51a00,1) = (unique,0x51800,4), (const,0x0,4)
+BOOL_NEGATE (unique,0x51b00,1) = (unique,0x51500,1)
+INT_AND (unique,0x51c00,1) = (unique,0x51b00,1), (register,0x200,1)
+INT_AND (unique,0x51d00,1) = (unique,0x51500,1), (unique,0x51a00,1)
+INT_OR (register,0x200,1) = (unique,0x51c00,1), (unique,0x51d00,1)
+INT_EQUAL (unique,0x52000,1) = (unique,0xa8f00,4), (const,0x1,4)
+INT_SLESS (unique,0x52100,1) = (unique,0xa9000,4), (const,0x0,4)
+INT_SLESS (unique,0x52200,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+INT_XOR (unique,0x52400,1) = (unique,0x52100,1), (unique,0x52200,1)
+BOOL_NEGATE (unique,0x52500,1) = (unique,0x52000,1)
+INT_AND (unique,0x52600,1) = (unique,0x52500,1), (register,0x20b,1)
+INT_AND (unique,0x52700,1) = (unique,0x52000,1), (unique,0x52400,1)
+INT_OR (register,0x20b,1) = (unique,0x52600,1), (unique,0x52700,1)
+INT_NOTEQUAL (unique,0x49d00,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SLESS (unique,0x49f00,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a000,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a100,1) = (unique,0x4a000,1), (register,0x207,1)
+INT_AND (unique,0x4a200,1) = (unique,0x49d00,1), (unique,0x49f00,1)
+INT_OR (register,0x207,1) = (unique,0x4a100,1), (unique,0x4a200,1)
+INT_EQUAL (unique,0x4a500,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a600,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a700,1) = (unique,0x4a600,1), (register,0x206,1)
+INT_AND (unique,0x4a800,1) = (unique,0x49d00,1), (unique,0x4a500,1)
+INT_OR (register,0x206,1) = (unique,0x4a700,1), (unique,0x4a800,1)
+INT_AND (unique,0x4aa00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x4ab00,1) = (unique,0x4aa00,4)
+INT_AND (unique,0x4ac00,1) = (unique,0x4ab00,1), (const,0x1,1)
+INT_EQUAL (unique,0x4ae00,1) = (unique,0x4ac00,1), (const,0x0,1)
+BOOL_NEGATE (unique,0x4af00,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4b000,1) = (unique,0x4af00,1), (register,0x202,1)
+INT_AND (unique,0x4b100,1) = (unique,0x49d00,1), (unique,0x4ae00,1)
+INT_OR (register,0x202,1) = (unique,0x4b000,1), (unique,0x4b100,1)
 
 @0045283e [ESP:-48]  # MOV EDX, dword ptr [EBP + 0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @00452841 [ESP:-48]  # ADD ECX, EAX
 INT_CARRY (register,0x200,1) = (register,0x4,4) /* ECX */, (register,0x0,4) /* EAX */
@@ -874,156 +874,156 @@ INT_SCARRY (register,0x20b,1) = (register,0x4,4) /* ECX */, (register,0x0,4) /* 
 INT_ADD (register,0x4,4) /* ECX */ = (register,0x4,4) /* ECX */, (register,0x0,4) /* EAX */
 INT_SLESS (register,0x207,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @00452843 [ESP:-48]  # MOV EAX, dword ptr [EBP + -0x20]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe0,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe0,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @00452846 [ESP:-48]  # MOV EDX, dword ptr [EDX + 0x180]
-INT_ADD (unique,0x3400,4) = (register,0x8,4) /* EDX */, (const,0x180,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6800,4) = (register,0x8,4) /* EDX */, (const,0x180,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @0045284c [ESP:-48]  # MOV dword ptr [EBP + -0x10], ECX
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xfffffff0,4)
-COPY (unique,0x5180,4) = (register,0x4,4) /* ECX */
-STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xfffffff0,4)
+COPY (unique,0xa300,4) = (register,0x4,4) /* ECX */
+STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
 @0045284f [ESP:-48]  # IMUL EDX
-INT_SEXT (unique,0x3c100,8) = (register,0x0,4) /* EAX */
-INT_SEXT (unique,0x3c180,8) = (register,0x8,4) /* EDX */
-INT_MULT (unique,0x3c280,8) = (unique,0x3c100,8), (unique,0x3c180,8)
-SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x3c280,8), (const,0x4,4)
-SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x3c280,8), (const,0x0,4)
-INT_SEXT (unique,0x25b80,8) = (register,0x0,4) /* EAX */
-INT_NOTEQUAL (register,0x200,1) = (unique,0x25b80,8), (unique,0x3c280,8)
+INT_SEXT (unique,0x78200,8) = (register,0x0,4) /* EAX */
+INT_SEXT (unique,0x78300,8) = (register,0x8,4) /* EDX */
+INT_MULT (unique,0x78500,8) = (unique,0x78200,8), (unique,0x78300,8)
+SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x78500,8), (const,0x4,4)
+SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x78500,8), (const,0x0,4)
+INT_SEXT (unique,0x4b700,8) = (register,0x0,4) /* EAX */
+INT_NOTEQUAL (register,0x200,1) = (unique,0x4b700,8), (unique,0x78500,8)
 COPY (register,0x20b,1) = (register,0x200,1)
 
 @00452851 [ESP:-48]  # SHRD EAX, EDX, 0x10
-INT_AND (unique,0x54780,4) = (const,0x10,4), (const,0x1f,4)
-COPY (unique,0x54800,4) = (register,0x0,4) /* EAX */
-INT_RIGHT (unique,0x54880,4) = (register,0x0,4) /* EAX */, (unique,0x54780,4)
-INT_SUB (unique,0x54900,4) = (const,0x20,4), (unique,0x54780,4)
-INT_LEFT (unique,0x54980,4) = (register,0x8,4) /* EDX */, (unique,0x54900,4)
-INT_OR (register,0x0,4) /* EAX */ = (unique,0x54880,4), (unique,0x54980,4)
-INT_NOTEQUAL (unique,0x28a80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SUB (unique,0x28b00,4) = (unique,0x54780,4), (const,0x1,4)
-INT_RIGHT (unique,0x28b80,4) = (unique,0x54800,4), (unique,0x28b00,4)
-INT_AND (unique,0x28c00,4) = (unique,0x28b80,4), (const,0x1,4)
-INT_NOTEQUAL (unique,0x28d00,1) = (unique,0x28c00,4), (const,0x0,4)
-BOOL_NEGATE (unique,0x28d80,1) = (unique,0x28a80,1)
-INT_AND (unique,0x28e00,1) = (unique,0x28d80,1), (register,0x200,1)
-INT_AND (unique,0x28e80,1) = (unique,0x28a80,1), (unique,0x28d00,1)
-INT_OR (register,0x200,1) = (unique,0x28e00,1), (unique,0x28e80,1)
-INT_EQUAL (unique,0x29000,1) = (unique,0x54780,4), (const,0x1,4)
-INT_SLESS (unique,0x29080,1) = (unique,0x54800,4), (const,0x0,4)
-INT_SLESS (unique,0x29100,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_XOR (unique,0x29200,1) = (unique,0x29080,1), (unique,0x29100,1)
-BOOL_NEGATE (unique,0x29280,1) = (unique,0x29000,1)
-INT_AND (unique,0x29300,1) = (unique,0x29280,1), (register,0x20b,1)
-INT_AND (unique,0x29380,1) = (unique,0x29000,1), (unique,0x29200,1)
-INT_OR (register,0x20b,1) = (unique,0x29300,1), (unique,0x29380,1)
-INT_NOTEQUAL (unique,0x24e80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SLESS (unique,0x24f80,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25000,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25080,1) = (unique,0x25000,1), (register,0x207,1)
-INT_AND (unique,0x25100,1) = (unique,0x24e80,1), (unique,0x24f80,1)
-INT_OR (register,0x207,1) = (unique,0x25080,1), (unique,0x25100,1)
-INT_EQUAL (unique,0x25280,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25300,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25380,1) = (unique,0x25300,1), (register,0x206,1)
-INT_AND (unique,0x25400,1) = (unique,0x24e80,1), (unique,0x25280,1)
-INT_OR (register,0x206,1) = (unique,0x25380,1), (unique,0x25400,1)
-INT_AND (unique,0x25500,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x25580,1) = (unique,0x25500,4)
-INT_AND (unique,0x25600,1) = (unique,0x25580,1), (const,0x1,1)
-INT_EQUAL (unique,0x25700,1) = (unique,0x25600,1), (const,0x0,1)
-BOOL_NEGATE (unique,0x25780,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25800,1) = (unique,0x25780,1), (register,0x202,1)
-INT_AND (unique,0x25880,1) = (unique,0x24e80,1), (unique,0x25700,1)
-INT_OR (register,0x202,1) = (unique,0x25800,1), (unique,0x25880,1)
+INT_AND (unique,0xa8f00,4) = (const,0x10,4), (const,0x1f,4)
+COPY (unique,0xa9000,4) = (register,0x0,4) /* EAX */
+INT_RIGHT (unique,0xa9100,4) = (register,0x0,4) /* EAX */, (unique,0xa8f00,4)
+INT_SUB (unique,0xa9200,4) = (const,0x20,4), (unique,0xa8f00,4)
+INT_LEFT (unique,0xa9300,4) = (register,0x8,4) /* EDX */, (unique,0xa9200,4)
+INT_OR (register,0x0,4) /* EAX */ = (unique,0xa9100,4), (unique,0xa9300,4)
+INT_NOTEQUAL (unique,0x51500,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SUB (unique,0x51600,4) = (unique,0xa8f00,4), (const,0x1,4)
+INT_RIGHT (unique,0x51700,4) = (unique,0xa9000,4), (unique,0x51600,4)
+INT_AND (unique,0x51800,4) = (unique,0x51700,4), (const,0x1,4)
+INT_NOTEQUAL (unique,0x51a00,1) = (unique,0x51800,4), (const,0x0,4)
+BOOL_NEGATE (unique,0x51b00,1) = (unique,0x51500,1)
+INT_AND (unique,0x51c00,1) = (unique,0x51b00,1), (register,0x200,1)
+INT_AND (unique,0x51d00,1) = (unique,0x51500,1), (unique,0x51a00,1)
+INT_OR (register,0x200,1) = (unique,0x51c00,1), (unique,0x51d00,1)
+INT_EQUAL (unique,0x52000,1) = (unique,0xa8f00,4), (const,0x1,4)
+INT_SLESS (unique,0x52100,1) = (unique,0xa9000,4), (const,0x0,4)
+INT_SLESS (unique,0x52200,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+INT_XOR (unique,0x52400,1) = (unique,0x52100,1), (unique,0x52200,1)
+BOOL_NEGATE (unique,0x52500,1) = (unique,0x52000,1)
+INT_AND (unique,0x52600,1) = (unique,0x52500,1), (register,0x20b,1)
+INT_AND (unique,0x52700,1) = (unique,0x52000,1), (unique,0x52400,1)
+INT_OR (register,0x20b,1) = (unique,0x52600,1), (unique,0x52700,1)
+INT_NOTEQUAL (unique,0x49d00,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SLESS (unique,0x49f00,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a000,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a100,1) = (unique,0x4a000,1), (register,0x207,1)
+INT_AND (unique,0x4a200,1) = (unique,0x49d00,1), (unique,0x49f00,1)
+INT_OR (register,0x207,1) = (unique,0x4a100,1), (unique,0x4a200,1)
+INT_EQUAL (unique,0x4a500,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a600,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a700,1) = (unique,0x4a600,1), (register,0x206,1)
+INT_AND (unique,0x4a800,1) = (unique,0x49d00,1), (unique,0x4a500,1)
+INT_OR (register,0x206,1) = (unique,0x4a700,1), (unique,0x4a800,1)
+INT_AND (unique,0x4aa00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x4ab00,1) = (unique,0x4aa00,4)
+INT_AND (unique,0x4ac00,1) = (unique,0x4ab00,1), (const,0x1,1)
+INT_EQUAL (unique,0x4ae00,1) = (unique,0x4ac00,1), (const,0x0,1)
+BOOL_NEGATE (unique,0x4af00,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4b000,1) = (unique,0x4af00,1), (register,0x202,1)
+INT_AND (unique,0x4b100,1) = (unique,0x49d00,1), (unique,0x4ae00,1)
+INT_OR (register,0x202,1) = (unique,0x4b000,1), (unique,0x4b100,1)
 
 @00452855 [ESP:-48]  # MOV EDX, dword ptr [EBP + 0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @00452858 [ESP:-48]  # MOV ECX, EAX
 COPY (register,0x4,4) /* ECX */ = (register,0x0,4) /* EAX */
 
 @0045285a [ESP:-48]  # MOV EAX, dword ptr [EBP + -0x1c]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe4,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe4,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @0045285d [ESP:-48]  # MOV EDX, dword ptr [EDX + 0x18c]
-INT_ADD (unique,0x3400,4) = (register,0x8,4) /* EDX */, (const,0x18c,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6800,4) = (register,0x8,4) /* EDX */, (const,0x18c,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @00452863 [ESP:-48]  # IMUL EDX
-INT_SEXT (unique,0x3c100,8) = (register,0x0,4) /* EAX */
-INT_SEXT (unique,0x3c180,8) = (register,0x8,4) /* EDX */
-INT_MULT (unique,0x3c280,8) = (unique,0x3c100,8), (unique,0x3c180,8)
-SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x3c280,8), (const,0x4,4)
-SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x3c280,8), (const,0x0,4)
-INT_SEXT (unique,0x25b80,8) = (register,0x0,4) /* EAX */
-INT_NOTEQUAL (register,0x200,1) = (unique,0x25b80,8), (unique,0x3c280,8)
+INT_SEXT (unique,0x78200,8) = (register,0x0,4) /* EAX */
+INT_SEXT (unique,0x78300,8) = (register,0x8,4) /* EDX */
+INT_MULT (unique,0x78500,8) = (unique,0x78200,8), (unique,0x78300,8)
+SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x78500,8), (const,0x4,4)
+SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x78500,8), (const,0x0,4)
+INT_SEXT (unique,0x4b700,8) = (register,0x0,4) /* EAX */
+INT_NOTEQUAL (register,0x200,1) = (unique,0x4b700,8), (unique,0x78500,8)
 COPY (register,0x20b,1) = (register,0x200,1)
 
 @00452865 [ESP:-48]  # SHRD EAX, EDX, 0x10
-INT_AND (unique,0x54780,4) = (const,0x10,4), (const,0x1f,4)
-COPY (unique,0x54800,4) = (register,0x0,4) /* EAX */
-INT_RIGHT (unique,0x54880,4) = (register,0x0,4) /* EAX */, (unique,0x54780,4)
-INT_SUB (unique,0x54900,4) = (const,0x20,4), (unique,0x54780,4)
-INT_LEFT (unique,0x54980,4) = (register,0x8,4) /* EDX */, (unique,0x54900,4)
-INT_OR (register,0x0,4) /* EAX */ = (unique,0x54880,4), (unique,0x54980,4)
-INT_NOTEQUAL (unique,0x28a80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SUB (unique,0x28b00,4) = (unique,0x54780,4), (const,0x1,4)
-INT_RIGHT (unique,0x28b80,4) = (unique,0x54800,4), (unique,0x28b00,4)
-INT_AND (unique,0x28c00,4) = (unique,0x28b80,4), (const,0x1,4)
-INT_NOTEQUAL (unique,0x28d00,1) = (unique,0x28c00,4), (const,0x0,4)
-BOOL_NEGATE (unique,0x28d80,1) = (unique,0x28a80,1)
-INT_AND (unique,0x28e00,1) = (unique,0x28d80,1), (register,0x200,1)
-INT_AND (unique,0x28e80,1) = (unique,0x28a80,1), (unique,0x28d00,1)
-INT_OR (register,0x200,1) = (unique,0x28e00,1), (unique,0x28e80,1)
-INT_EQUAL (unique,0x29000,1) = (unique,0x54780,4), (const,0x1,4)
-INT_SLESS (unique,0x29080,1) = (unique,0x54800,4), (const,0x0,4)
-INT_SLESS (unique,0x29100,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_XOR (unique,0x29200,1) = (unique,0x29080,1), (unique,0x29100,1)
-BOOL_NEGATE (unique,0x29280,1) = (unique,0x29000,1)
-INT_AND (unique,0x29300,1) = (unique,0x29280,1), (register,0x20b,1)
-INT_AND (unique,0x29380,1) = (unique,0x29000,1), (unique,0x29200,1)
-INT_OR (register,0x20b,1) = (unique,0x29300,1), (unique,0x29380,1)
-INT_NOTEQUAL (unique,0x24e80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SLESS (unique,0x24f80,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25000,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25080,1) = (unique,0x25000,1), (register,0x207,1)
-INT_AND (unique,0x25100,1) = (unique,0x24e80,1), (unique,0x24f80,1)
-INT_OR (register,0x207,1) = (unique,0x25080,1), (unique,0x25100,1)
-INT_EQUAL (unique,0x25280,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25300,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25380,1) = (unique,0x25300,1), (register,0x206,1)
-INT_AND (unique,0x25400,1) = (unique,0x24e80,1), (unique,0x25280,1)
-INT_OR (register,0x206,1) = (unique,0x25380,1), (unique,0x25400,1)
-INT_AND (unique,0x25500,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x25580,1) = (unique,0x25500,4)
-INT_AND (unique,0x25600,1) = (unique,0x25580,1), (const,0x1,1)
-INT_EQUAL (unique,0x25700,1) = (unique,0x25600,1), (const,0x0,1)
-BOOL_NEGATE (unique,0x25780,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25800,1) = (unique,0x25780,1), (register,0x202,1)
-INT_AND (unique,0x25880,1) = (unique,0x24e80,1), (unique,0x25700,1)
-INT_OR (register,0x202,1) = (unique,0x25800,1), (unique,0x25880,1)
+INT_AND (unique,0xa8f00,4) = (const,0x10,4), (const,0x1f,4)
+COPY (unique,0xa9000,4) = (register,0x0,4) /* EAX */
+INT_RIGHT (unique,0xa9100,4) = (register,0x0,4) /* EAX */, (unique,0xa8f00,4)
+INT_SUB (unique,0xa9200,4) = (const,0x20,4), (unique,0xa8f00,4)
+INT_LEFT (unique,0xa9300,4) = (register,0x8,4) /* EDX */, (unique,0xa9200,4)
+INT_OR (register,0x0,4) /* EAX */ = (unique,0xa9100,4), (unique,0xa9300,4)
+INT_NOTEQUAL (unique,0x51500,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SUB (unique,0x51600,4) = (unique,0xa8f00,4), (const,0x1,4)
+INT_RIGHT (unique,0x51700,4) = (unique,0xa9000,4), (unique,0x51600,4)
+INT_AND (unique,0x51800,4) = (unique,0x51700,4), (const,0x1,4)
+INT_NOTEQUAL (unique,0x51a00,1) = (unique,0x51800,4), (const,0x0,4)
+BOOL_NEGATE (unique,0x51b00,1) = (unique,0x51500,1)
+INT_AND (unique,0x51c00,1) = (unique,0x51b00,1), (register,0x200,1)
+INT_AND (unique,0x51d00,1) = (unique,0x51500,1), (unique,0x51a00,1)
+INT_OR (register,0x200,1) = (unique,0x51c00,1), (unique,0x51d00,1)
+INT_EQUAL (unique,0x52000,1) = (unique,0xa8f00,4), (const,0x1,4)
+INT_SLESS (unique,0x52100,1) = (unique,0xa9000,4), (const,0x0,4)
+INT_SLESS (unique,0x52200,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+INT_XOR (unique,0x52400,1) = (unique,0x52100,1), (unique,0x52200,1)
+BOOL_NEGATE (unique,0x52500,1) = (unique,0x52000,1)
+INT_AND (unique,0x52600,1) = (unique,0x52500,1), (register,0x20b,1)
+INT_AND (unique,0x52700,1) = (unique,0x52000,1), (unique,0x52400,1)
+INT_OR (register,0x20b,1) = (unique,0x52600,1), (unique,0x52700,1)
+INT_NOTEQUAL (unique,0x49d00,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SLESS (unique,0x49f00,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a000,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a100,1) = (unique,0x4a000,1), (register,0x207,1)
+INT_AND (unique,0x4a200,1) = (unique,0x49d00,1), (unique,0x49f00,1)
+INT_OR (register,0x207,1) = (unique,0x4a100,1), (unique,0x4a200,1)
+INT_EQUAL (unique,0x4a500,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a600,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a700,1) = (unique,0x4a600,1), (register,0x206,1)
+INT_AND (unique,0x4a800,1) = (unique,0x49d00,1), (unique,0x4a500,1)
+INT_OR (register,0x206,1) = (unique,0x4a700,1), (unique,0x4a800,1)
+INT_AND (unique,0x4aa00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x4ab00,1) = (unique,0x4aa00,4)
+INT_AND (unique,0x4ac00,1) = (unique,0x4ab00,1), (const,0x1,1)
+INT_EQUAL (unique,0x4ae00,1) = (unique,0x4ac00,1), (const,0x0,1)
+BOOL_NEGATE (unique,0x4af00,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4b000,1) = (unique,0x4af00,1), (register,0x202,1)
+INT_AND (unique,0x4b100,1) = (unique,0x49d00,1), (unique,0x4ae00,1)
+INT_OR (register,0x202,1) = (unique,0x4b000,1), (unique,0x4b100,1)
 
 @00452869 [ESP:-48]  # MOV EDX, dword ptr [EBP + 0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0x14,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @0045286c [ESP:-48]  # ADD ECX, EAX
 INT_CARRY (register,0x200,1) = (register,0x4,4) /* ECX */, (register,0x0,4) /* EAX */
@@ -1031,74 +1031,74 @@ INT_SCARRY (register,0x20b,1) = (register,0x4,4) /* ECX */, (register,0x0,4) /* 
 INT_ADD (register,0x4,4) /* ECX */ = (register,0x4,4) /* ECX */, (register,0x0,4) /* EAX */
 INT_SLESS (register,0x207,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @0045286e [ESP:-48]  # MOV EAX, dword ptr [EBP + -0x18]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe8,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe8,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @00452871 [ESP:-48]  # MOV EDX, dword ptr [EDX + 0x198]
-INT_ADD (unique,0x3400,4) = (register,0x8,4) /* EDX */, (const,0x198,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6800,4) = (register,0x8,4) /* EDX */, (const,0x198,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6800,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @00452877 [ESP:-48]  # IMUL EDX
-INT_SEXT (unique,0x3c100,8) = (register,0x0,4) /* EAX */
-INT_SEXT (unique,0x3c180,8) = (register,0x8,4) /* EDX */
-INT_MULT (unique,0x3c280,8) = (unique,0x3c100,8), (unique,0x3c180,8)
-SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x3c280,8), (const,0x4,4)
-SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x3c280,8), (const,0x0,4)
-INT_SEXT (unique,0x25b80,8) = (register,0x0,4) /* EAX */
-INT_NOTEQUAL (register,0x200,1) = (unique,0x25b80,8), (unique,0x3c280,8)
+INT_SEXT (unique,0x78200,8) = (register,0x0,4) /* EAX */
+INT_SEXT (unique,0x78300,8) = (register,0x8,4) /* EDX */
+INT_MULT (unique,0x78500,8) = (unique,0x78200,8), (unique,0x78300,8)
+SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x78500,8), (const,0x4,4)
+SUBPIECE (register,0x0,4) /* EAX */ = (unique,0x78500,8), (const,0x0,4)
+INT_SEXT (unique,0x4b700,8) = (register,0x0,4) /* EAX */
+INT_NOTEQUAL (register,0x200,1) = (unique,0x4b700,8), (unique,0x78500,8)
 COPY (register,0x20b,1) = (register,0x200,1)
 
 @00452879 [ESP:-48]  # SHRD EAX, EDX, 0x10
-INT_AND (unique,0x54780,4) = (const,0x10,4), (const,0x1f,4)
-COPY (unique,0x54800,4) = (register,0x0,4) /* EAX */
-INT_RIGHT (unique,0x54880,4) = (register,0x0,4) /* EAX */, (unique,0x54780,4)
-INT_SUB (unique,0x54900,4) = (const,0x20,4), (unique,0x54780,4)
-INT_LEFT (unique,0x54980,4) = (register,0x8,4) /* EDX */, (unique,0x54900,4)
-INT_OR (register,0x0,4) /* EAX */ = (unique,0x54880,4), (unique,0x54980,4)
-INT_NOTEQUAL (unique,0x28a80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SUB (unique,0x28b00,4) = (unique,0x54780,4), (const,0x1,4)
-INT_RIGHT (unique,0x28b80,4) = (unique,0x54800,4), (unique,0x28b00,4)
-INT_AND (unique,0x28c00,4) = (unique,0x28b80,4), (const,0x1,4)
-INT_NOTEQUAL (unique,0x28d00,1) = (unique,0x28c00,4), (const,0x0,4)
-BOOL_NEGATE (unique,0x28d80,1) = (unique,0x28a80,1)
-INT_AND (unique,0x28e00,1) = (unique,0x28d80,1), (register,0x200,1)
-INT_AND (unique,0x28e80,1) = (unique,0x28a80,1), (unique,0x28d00,1)
-INT_OR (register,0x200,1) = (unique,0x28e00,1), (unique,0x28e80,1)
-INT_EQUAL (unique,0x29000,1) = (unique,0x54780,4), (const,0x1,4)
-INT_SLESS (unique,0x29080,1) = (unique,0x54800,4), (const,0x0,4)
-INT_SLESS (unique,0x29100,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_XOR (unique,0x29200,1) = (unique,0x29080,1), (unique,0x29100,1)
-BOOL_NEGATE (unique,0x29280,1) = (unique,0x29000,1)
-INT_AND (unique,0x29300,1) = (unique,0x29280,1), (register,0x20b,1)
-INT_AND (unique,0x29380,1) = (unique,0x29000,1), (unique,0x29200,1)
-INT_OR (register,0x20b,1) = (unique,0x29300,1), (unique,0x29380,1)
-INT_NOTEQUAL (unique,0x24e80,1) = (unique,0x54780,4), (const,0x0,4)
-INT_SLESS (unique,0x24f80,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25000,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25080,1) = (unique,0x25000,1), (register,0x207,1)
-INT_AND (unique,0x25100,1) = (unique,0x24e80,1), (unique,0x24f80,1)
-INT_OR (register,0x207,1) = (unique,0x25080,1), (unique,0x25100,1)
-INT_EQUAL (unique,0x25280,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-BOOL_NEGATE (unique,0x25300,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25380,1) = (unique,0x25300,1), (register,0x206,1)
-INT_AND (unique,0x25400,1) = (unique,0x24e80,1), (unique,0x25280,1)
-INT_OR (register,0x206,1) = (unique,0x25380,1), (unique,0x25400,1)
-INT_AND (unique,0x25500,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x25580,1) = (unique,0x25500,4)
-INT_AND (unique,0x25600,1) = (unique,0x25580,1), (const,0x1,1)
-INT_EQUAL (unique,0x25700,1) = (unique,0x25600,1), (const,0x0,1)
-BOOL_NEGATE (unique,0x25780,1) = (unique,0x24e80,1)
-INT_AND (unique,0x25800,1) = (unique,0x25780,1), (register,0x202,1)
-INT_AND (unique,0x25880,1) = (unique,0x24e80,1), (unique,0x25700,1)
-INT_OR (register,0x202,1) = (unique,0x25800,1), (unique,0x25880,1)
+INT_AND (unique,0xa8f00,4) = (const,0x10,4), (const,0x1f,4)
+COPY (unique,0xa9000,4) = (register,0x0,4) /* EAX */
+INT_RIGHT (unique,0xa9100,4) = (register,0x0,4) /* EAX */, (unique,0xa8f00,4)
+INT_SUB (unique,0xa9200,4) = (const,0x20,4), (unique,0xa8f00,4)
+INT_LEFT (unique,0xa9300,4) = (register,0x8,4) /* EDX */, (unique,0xa9200,4)
+INT_OR (register,0x0,4) /* EAX */ = (unique,0xa9100,4), (unique,0xa9300,4)
+INT_NOTEQUAL (unique,0x51500,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SUB (unique,0x51600,4) = (unique,0xa8f00,4), (const,0x1,4)
+INT_RIGHT (unique,0x51700,4) = (unique,0xa9000,4), (unique,0x51600,4)
+INT_AND (unique,0x51800,4) = (unique,0x51700,4), (const,0x1,4)
+INT_NOTEQUAL (unique,0x51a00,1) = (unique,0x51800,4), (const,0x0,4)
+BOOL_NEGATE (unique,0x51b00,1) = (unique,0x51500,1)
+INT_AND (unique,0x51c00,1) = (unique,0x51b00,1), (register,0x200,1)
+INT_AND (unique,0x51d00,1) = (unique,0x51500,1), (unique,0x51a00,1)
+INT_OR (register,0x200,1) = (unique,0x51c00,1), (unique,0x51d00,1)
+INT_EQUAL (unique,0x52000,1) = (unique,0xa8f00,4), (const,0x1,4)
+INT_SLESS (unique,0x52100,1) = (unique,0xa9000,4), (const,0x0,4)
+INT_SLESS (unique,0x52200,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+INT_XOR (unique,0x52400,1) = (unique,0x52100,1), (unique,0x52200,1)
+BOOL_NEGATE (unique,0x52500,1) = (unique,0x52000,1)
+INT_AND (unique,0x52600,1) = (unique,0x52500,1), (register,0x20b,1)
+INT_AND (unique,0x52700,1) = (unique,0x52000,1), (unique,0x52400,1)
+INT_OR (register,0x20b,1) = (unique,0x52600,1), (unique,0x52700,1)
+INT_NOTEQUAL (unique,0x49d00,1) = (unique,0xa8f00,4), (const,0x0,4)
+INT_SLESS (unique,0x49f00,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a000,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a100,1) = (unique,0x4a000,1), (register,0x207,1)
+INT_AND (unique,0x4a200,1) = (unique,0x49d00,1), (unique,0x49f00,1)
+INT_OR (register,0x207,1) = (unique,0x4a100,1), (unique,0x4a200,1)
+INT_EQUAL (unique,0x4a500,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+BOOL_NEGATE (unique,0x4a600,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4a700,1) = (unique,0x4a600,1), (register,0x206,1)
+INT_AND (unique,0x4a800,1) = (unique,0x49d00,1), (unique,0x4a500,1)
+INT_OR (register,0x206,1) = (unique,0x4a700,1), (unique,0x4a800,1)
+INT_AND (unique,0x4aa00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x4ab00,1) = (unique,0x4aa00,4)
+INT_AND (unique,0x4ac00,1) = (unique,0x4ab00,1), (const,0x1,1)
+INT_EQUAL (unique,0x4ae00,1) = (unique,0x4ac00,1), (const,0x0,1)
+BOOL_NEGATE (unique,0x4af00,1) = (unique,0x49d00,1)
+INT_AND (unique,0x4b000,1) = (unique,0x4af00,1), (register,0x202,1)
+INT_AND (unique,0x4b100,1) = (unique,0x49d00,1), (unique,0x4ae00,1)
+INT_OR (register,0x202,1) = (unique,0x4b000,1), (unique,0x4b100,1)
 
 @0045287d [ESP:-48]  # ADD ECX, EAX
 INT_CARRY (register,0x200,1) = (register,0x4,4) /* ECX */, (register,0x0,4) /* EAX */
@@ -1106,30 +1106,30 @@ INT_SCARRY (register,0x20b,1) = (register,0x4,4) /* ECX */, (register,0x0,4) /* 
 INT_ADD (register,0x4,4) /* ECX */ = (register,0x4,4) /* ECX */, (register,0x0,4) /* EAX */
 INT_SLESS (register,0x207,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x4,4) /* ECX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x4,4) /* ECX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @0045287f [ESP:-48]  # MOV EAX, dword ptr [EBP + -0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffec,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffec,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @00452882 [ESP:-48]  # MOV dword ptr [EBP + -0xc], ECX
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xfffffff4,4)
-COPY (unique,0x5180,4) = (register,0x4,4) /* ECX */
-STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xfffffff4,4)
+COPY (unique,0xa300,4) = (register,0x4,4) /* ECX */
+STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa300,4)
 
 @00452885 [ESP:-48]  # MOV ECX, dword ptr [EBP + -0x8]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xfffffff8,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x4,4) /* ECX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xfffffff8,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x4,4) /* ECX */ = (unique,0x17200,4)
 
 @00452888 [ESP:-48]  # MOV EBX, dword ptr [EBP + -0xc]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xfffffff4,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0xc,4) /* EBX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xfffffff4,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0xc,4) /* EBX */ = (unique,0x17200,4)
 
 @0045288b [ESP:-48]  # SUB EAX, ECX
 INT_LESS (register,0x200,1) = (register,0x0,4) /* EAX */, (register,0x4,4) /* ECX */
@@ -1137,38 +1137,38 @@ INT_SBORROW (register,0x20b,1) = (register,0x0,4) /* EAX */, (register,0x4,4) /*
 INT_SUB (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (register,0x4,4) /* ECX */
 INT_SLESS (register,0x207,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @0045288d [ESP:-48]  # CMP EAX, EBX
-COPY (unique,0x33500,4) = (register,0x0,4) /* EAX */
-INT_LESS (register,0x200,1) = (unique,0x33500,4), (register,0xc,4) /* EBX */
-INT_SBORROW (register,0x20b,1) = (unique,0x33500,4), (register,0xc,4) /* EBX */
-INT_SUB (unique,0x33600,4) = (unique,0x33500,4), (register,0xc,4) /* EBX */
-INT_SLESS (register,0x207,1) = (unique,0x33600,4), (const,0x0,4)
-INT_EQUAL (register,0x206,1) = (unique,0x33600,4), (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (unique,0x33600,4), (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+COPY (unique,0x66a00,4) = (register,0x0,4) /* EAX */
+INT_LESS (register,0x200,1) = (unique,0x66a00,4), (register,0xc,4) /* EBX */
+INT_SBORROW (register,0x20b,1) = (unique,0x66a00,4), (register,0xc,4) /* EBX */
+INT_SUB (unique,0x66c00,4) = (unique,0x66a00,4), (register,0xc,4) /* EBX */
+INT_SLESS (register,0x207,1) = (unique,0x66c00,4), (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (unique,0x66c00,4), (const,0x0,4)
+INT_AND (unique,0x49800,4) = (unique,0x66c00,4), (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @0045288f [ESP:-48]  # JG 0x004528b5
-BOOL_NEGATE (unique,0xc680,1) = (register,0x206,1)
-INT_EQUAL (unique,0xc700,1) = (register,0x20b,1), (register,0x207,1)
-BOOL_AND (unique,0xc800,1) = (unique,0xc680,1), (unique,0xc700,1)
-CBRANCH (ram,0x4528b5,4), (unique,0xc800,1)
+BOOL_NEGATE (unique,0x18d00,1) = (register,0x206,1)
+INT_EQUAL (unique,0x18e00,1) = (register,0x20b,1), (register,0x207,1)
+BOOL_AND (unique,0x19000,1) = (unique,0x18d00,1), (unique,0x18e00,1)
+CBRANCH (ram,0x4528b5,4), (unique,0x19000,1)
 
 @00452891 [ESP:-48]  # MOV EDX, dword ptr [EBP + -0x14]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffec,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffec,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @00452894 [ESP:-48]  # MOV ESI, dword ptr [EBP + -0x8]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xfffffff8,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x18,4) /* ESI */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xfffffff8,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x18,4) /* ESI */ = (unique,0x17200,4)
 
 @00452897 [ESP:-48]  # MOV EAX, EBX
 COPY (register,0x0,4) /* EAX */ = (register,0xc,4) /* EBX */
@@ -1179,10 +1179,10 @@ INT_SCARRY (register,0x20b,1) = (register,0x8,4) /* EDX */, (register,0x18,4) /*
 INT_ADD (register,0x8,4) /* EDX */ = (register,0x8,4) /* EDX */, (register,0x18,4) /* ESI */
 INT_SLESS (register,0x207,1) = (register,0x8,4) /* EDX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x8,4) /* EDX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x8,4) /* EDX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x8,4) /* EDX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @0045289b [ESP:-48]  # NEG EAX
 INT_NOTEQUAL (register,0x200,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
@@ -1190,100 +1190,100 @@ INT_SBORROW (register,0x20b,1) = (const,0x0,4), (register,0x0,4) /* EAX */
 INT_2COMP (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */
 INT_SLESS (register,0x207,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @0045289d [ESP:-48]  # CMP EDX, EAX
-COPY (unique,0x33500,4) = (register,0x8,4) /* EDX */
-INT_LESS (register,0x200,1) = (unique,0x33500,4), (register,0x0,4) /* EAX */
-INT_SBORROW (register,0x20b,1) = (unique,0x33500,4), (register,0x0,4) /* EAX */
-INT_SUB (unique,0x33600,4) = (unique,0x33500,4), (register,0x0,4) /* EAX */
-INT_SLESS (register,0x207,1) = (unique,0x33600,4), (const,0x0,4)
-INT_EQUAL (register,0x206,1) = (unique,0x33600,4), (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (unique,0x33600,4), (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+COPY (unique,0x66a00,4) = (register,0x8,4) /* EDX */
+INT_LESS (register,0x200,1) = (unique,0x66a00,4), (register,0x0,4) /* EAX */
+INT_SBORROW (register,0x20b,1) = (unique,0x66a00,4), (register,0x0,4) /* EAX */
+INT_SUB (unique,0x66c00,4) = (unique,0x66a00,4), (register,0x0,4) /* EAX */
+INT_SLESS (register,0x207,1) = (unique,0x66c00,4), (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (unique,0x66c00,4), (const,0x0,4)
+INT_AND (unique,0x49800,4) = (unique,0x66c00,4), (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @0045289f [ESP:-48]  # JL 0x004528b5
-INT_NOTEQUAL (unique,0xc380,1) = (register,0x20b,1), (register,0x207,1)
-CBRANCH (ram,0x4528b5,4), (unique,0xc380,1)
+INT_NOTEQUAL (unique,0x18700,1) = (register,0x20b,1), (register,0x207,1)
+CBRANCH (ram,0x4528b5,4), (unique,0x18700,1)
 
 @004528a1 [ESP:-48]  # MOV EDX, dword ptr [EBP + -0x10]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xfffffff0,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xfffffff0,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @004528a4 [ESP:-48]  # SUB EDX, dword ptr [EBP + -0x4]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xfffffffc,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-INT_LESS (register,0x200,1) = (register,0x8,4) /* EDX */, (unique,0xb900,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-INT_SBORROW (register,0x20b,1) = (register,0x8,4) /* EDX */, (unique,0xb900,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-INT_SUB (register,0x8,4) /* EDX */ = (register,0x8,4) /* EDX */, (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xfffffffc,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+INT_LESS (register,0x200,1) = (register,0x8,4) /* EDX */, (unique,0x17200,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+INT_SBORROW (register,0x20b,1) = (register,0x8,4) /* EDX */, (unique,0x17200,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+INT_SUB (register,0x8,4) /* EDX */ = (register,0x8,4) /* EDX */, (unique,0x17200,4)
 INT_SLESS (register,0x207,1) = (register,0x8,4) /* EDX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x8,4) /* EDX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x8,4) /* EDX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x8,4) /* EDX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004528a7 [ESP:-48]  # CMP EDX, EBX
-COPY (unique,0x33500,4) = (register,0x8,4) /* EDX */
-INT_LESS (register,0x200,1) = (unique,0x33500,4), (register,0xc,4) /* EBX */
-INT_SBORROW (register,0x20b,1) = (unique,0x33500,4), (register,0xc,4) /* EBX */
-INT_SUB (unique,0x33600,4) = (unique,0x33500,4), (register,0xc,4) /* EBX */
-INT_SLESS (register,0x207,1) = (unique,0x33600,4), (const,0x0,4)
-INT_EQUAL (register,0x206,1) = (unique,0x33600,4), (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (unique,0x33600,4), (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+COPY (unique,0x66a00,4) = (register,0x8,4) /* EDX */
+INT_LESS (register,0x200,1) = (unique,0x66a00,4), (register,0xc,4) /* EBX */
+INT_SBORROW (register,0x20b,1) = (unique,0x66a00,4), (register,0xc,4) /* EBX */
+INT_SUB (unique,0x66c00,4) = (unique,0x66a00,4), (register,0xc,4) /* EBX */
+INT_SLESS (register,0x207,1) = (unique,0x66c00,4), (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (unique,0x66c00,4), (const,0x0,4)
+INT_AND (unique,0x49800,4) = (unique,0x66c00,4), (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004528a9 [ESP:-48]  # JG 0x004528b5
-BOOL_NEGATE (unique,0xc680,1) = (register,0x206,1)
-INT_EQUAL (unique,0xc700,1) = (register,0x20b,1), (register,0x207,1)
-BOOL_AND (unique,0xc800,1) = (unique,0xc680,1), (unique,0xc700,1)
-CBRANCH (ram,0x4528b5,4), (unique,0xc800,1)
+BOOL_NEGATE (unique,0x18d00,1) = (register,0x206,1)
+INT_EQUAL (unique,0x18e00,1) = (register,0x20b,1), (register,0x207,1)
+BOOL_AND (unique,0x19000,1) = (unique,0x18d00,1), (unique,0x18e00,1)
+CBRANCH (ram,0x4528b5,4), (unique,0x19000,1)
 
 @004528ab [ESP:-48]  # MOV EDX, dword ptr [EBP + -0x10]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xfffffff0,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xfffffff0,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x17200,4)
 
 @004528ae [ESP:-48]  # ADD EDX, dword ptr [EBP + -0x4]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xfffffffc,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-INT_CARRY (register,0x200,1) = (register,0x8,4) /* EDX */, (unique,0xb900,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-INT_SCARRY (register,0x20b,1) = (register,0x8,4) /* EDX */, (unique,0xb900,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-INT_ADD (register,0x8,4) /* EDX */ = (register,0x8,4) /* EDX */, (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xfffffffc,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+INT_CARRY (register,0x200,1) = (register,0x8,4) /* EDX */, (unique,0x17200,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+INT_SCARRY (register,0x20b,1) = (register,0x8,4) /* EDX */, (unique,0x17200,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+INT_ADD (register,0x8,4) /* EDX */ = (register,0x8,4) /* EDX */, (unique,0x17200,4)
 INT_SLESS (register,0x207,1) = (register,0x8,4) /* EDX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x8,4) /* EDX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x8,4) /* EDX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x8,4) /* EDX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004528b1 [ESP:-48]  # CMP EDX, EAX
-COPY (unique,0x33500,4) = (register,0x8,4) /* EDX */
-INT_LESS (register,0x200,1) = (unique,0x33500,4), (register,0x0,4) /* EAX */
-INT_SBORROW (register,0x20b,1) = (unique,0x33500,4), (register,0x0,4) /* EAX */
-INT_SUB (unique,0x33600,4) = (unique,0x33500,4), (register,0x0,4) /* EAX */
-INT_SLESS (register,0x207,1) = (unique,0x33600,4), (const,0x0,4)
-INT_EQUAL (register,0x206,1) = (unique,0x33600,4), (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (unique,0x33600,4), (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+COPY (unique,0x66a00,4) = (register,0x8,4) /* EDX */
+INT_LESS (register,0x200,1) = (unique,0x66a00,4), (register,0x0,4) /* EAX */
+INT_SBORROW (register,0x20b,1) = (unique,0x66a00,4), (register,0x0,4) /* EAX */
+INT_SUB (unique,0x66c00,4) = (unique,0x66a00,4), (register,0x0,4) /* EAX */
+INT_SLESS (register,0x207,1) = (unique,0x66c00,4), (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (unique,0x66c00,4), (const,0x0,4)
+INT_AND (unique,0x49800,4) = (unique,0x66c00,4), (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004528b3 [ESP:-48]  # JGE 0x004528cf
-INT_EQUAL (unique,0xc480,1) = (register,0x20b,1), (register,0x207,1)
-CBRANCH (ram,0x4528cf,4), (unique,0xc480,1)
+INT_EQUAL (unique,0x18900,1) = (register,0x20b,1), (register,0x207,1)
+CBRANCH (ram,0x4528cf,4), (unique,0x18900,1)
 
 @004528b5 [ESP:-48]  # XOR EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
@@ -1291,37 +1291,37 @@ COPY (register,0x20b,1) = (const,0x0,1)
 INT_XOR (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
 INT_SLESS (register,0x207,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004528b7 [ESP:-16](+32)  # MOV ESP, EBP
 COPY (register,0x10,4) /* ESP */ = (register,0x14,4) /* EBP */
 
 @004528b9 [ESP:-12](+4)  # POP EBP
-COPY (unique,0x43980,4) = (const,0x0,4)
-LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-COPY (register,0x14,4) /* EBP */ = (unique,0x43980,4)
+COPY (register,0x14,4) /* EBP */ = (unique,0x87300,4)
 
 @004528ba [ESP:-8](+4)  # POP EDI
-COPY (unique,0x43980,4) = (const,0x0,4)
-LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-COPY (register,0x1c,4) /* EDI */ = (unique,0x43980,4)
+COPY (register,0x1c,4) /* EDI */ = (unique,0x87300,4)
 
 @004528bb [ESP:-4](+4)  # POP ESI
-COPY (unique,0x43980,4) = (const,0x0,4)
-LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-COPY (register,0x18,4) /* ESI */ = (unique,0x43980,4)
+COPY (register,0x18,4) /* ESI */ = (unique,0x87300,4)
 
 @004528bc [ESP:+0](+4)  # POP EBX
-COPY (unique,0x43980,4) = (const,0x0,4)
-LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-COPY (register,0xc,4) /* EBX */ = (unique,0x43980,4)
+COPY (register,0xc,4) /* EBX */ = (unique,0x87300,4)
 
 @004528bd [ESP:+4](+4)  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
@@ -1329,13 +1329,13 @@ INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 @004528be [ESP:-48]~  # MOV EAX, dword ptr [EBP + -0x18]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xffffffe8,4)
-LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xffffffe8,4)
+LOAD (unique,0x17200,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x17200,4)
 
 @004528c1 [ESP:-48]~  # CDQ
-INT_SEXT (unique,0x32300,8) = (register,0x0,4) /* EAX */
-SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x32300,8), (const,0x4,4)
+INT_SEXT (unique,0x64600,8) = (register,0x0,4) /* EAX */
+SUBPIECE (register,0x8,4) /* EDX */ = (unique,0x64600,8), (const,0x4,4)
 
 @004528c2 [ESP:-48]~  # XOR EAX, EDX
 COPY (register,0x200,1) = (const,0x0,1)
@@ -1343,10 +1343,10 @@ COPY (register,0x20b,1) = (const,0x0,1)
 INT_XOR (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (register,0x8,4) /* EDX */
 INT_SLESS (register,0x207,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004528c4 [ESP:-48]~  # SUB EAX, EDX
 INT_LESS (register,0x200,1) = (register,0x0,4) /* EAX */, (register,0x8,4) /* EDX */
@@ -1354,28 +1354,28 @@ INT_SBORROW (register,0x20b,1) = (register,0x0,4) /* EAX */, (register,0x8,4) /*
 INT_SUB (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (register,0x8,4) /* EDX */
 INT_SLESS (register,0x207,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
 INT_EQUAL (register,0x206,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_AND (unique,0x49800,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004528c6 [ESP:-48]~  # CMP EAX, dword ptr [EBP + -0x8]
-INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0xfffffff8,4)
-LOAD (unique,0x5180,4) = (const,0x1a1,4), (unique,0x3300,4)
-COPY (unique,0x33b00,4) = (unique,0x5180,4)
-INT_LESS (register,0x200,1) = (register,0x0,4) /* EAX */, (unique,0x33b00,4)
-INT_SBORROW (register,0x20b,1) = (register,0x0,4) /* EAX */, (unique,0x33b00,4)
-INT_SUB (unique,0x33c00,4) = (register,0x0,4) /* EAX */, (unique,0x33b00,4)
-INT_SLESS (register,0x207,1) = (unique,0x33c00,4), (const,0x0,4)
-INT_EQUAL (register,0x206,1) = (unique,0x33c00,4), (const,0x0,4)
-INT_AND (unique,0x24c00,4) = (unique,0x33c00,4), (const,0xff,4)
-POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
-INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
-INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+INT_ADD (unique,0x6600,4) = (register,0x14,4) /* EBP */, (const,0xfffffff8,4)
+LOAD (unique,0xa300,4) = (const,0x1a1,4), (unique,0x6600,4)
+COPY (unique,0x67600,4) = (unique,0xa300,4)
+INT_LESS (register,0x200,1) = (register,0x0,4) /* EAX */, (unique,0x67600,4)
+INT_SBORROW (register,0x20b,1) = (register,0x0,4) /* EAX */, (unique,0x67600,4)
+INT_SUB (unique,0x67800,4) = (register,0x0,4) /* EAX */, (unique,0x67600,4)
+INT_SLESS (register,0x207,1) = (unique,0x67800,4), (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (unique,0x67800,4), (const,0x0,4)
+INT_AND (unique,0x49800,4) = (unique,0x67800,4), (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
 @004528c9 [ESP:-48]~  # JGE 0x004527c5
-INT_EQUAL (unique,0xc480,1) = (register,0x20b,1), (register,0x207,1)
-CBRANCH (ram,0x4527c5,4), (unique,0xc480,1)
+INT_EQUAL (unique,0x18900,1) = (register,0x20b,1), (register,0x207,1)
+CBRANCH (ram,0x4527c5,4), (unique,0x18900,1)
 
 @004528cf [ESP:-48]~  # MOV EAX, 0x1
 COPY (register,0x0,4) /* EAX */ = (const,0x1,4)
@@ -1384,28 +1384,28 @@ COPY (register,0x0,4) /* EAX */ = (const,0x1,4)
 COPY (register,0x10,4) /* ESP */ = (register,0x14,4) /* EBP */
 
 @004528d6 [ESP:-12](+4)~  # POP EBP
-COPY (unique,0x43980,4) = (const,0x0,4)
-LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-COPY (register,0x14,4) /* EBP */ = (unique,0x43980,4)
+COPY (register,0x14,4) /* EBP */ = (unique,0x87300,4)
 
 @004528d7 [ESP:-8](+4)~  # POP EDI
-COPY (unique,0x43980,4) = (const,0x0,4)
-LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-COPY (register,0x1c,4) /* EDI */ = (unique,0x43980,4)
+COPY (register,0x1c,4) /* EDI */ = (unique,0x87300,4)
 
 @004528d8 [ESP:-4](+4)~  # POP ESI
-COPY (unique,0x43980,4) = (const,0x0,4)
-LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-COPY (register,0x18,4) /* ESI */ = (unique,0x43980,4)
+COPY (register,0x18,4) /* ESI */ = (unique,0x87300,4)
 
 @004528d9 [ESP:+0](+4)~  # POP EBX
-COPY (unique,0x43980,4) = (const,0x0,4)
-LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
-COPY (register,0xc,4) /* EBX */ = (unique,0x43980,4)
+COPY (register,0xc,4) /* EBX */ = (unique,0x87300,4)
 
 @004528da [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */

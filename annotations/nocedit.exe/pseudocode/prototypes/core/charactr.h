@@ -149,7 +149,7 @@ void __cdecl CCharacter::explode(CCharacter *this_ptr,CVector3f *impact_point,fl
 
 // Original: core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0
 // Address: 0042b9e0
-void __cdecl CCharacter::dismember(CCharacter *this_ptr,CVector3f *impact_point,float impact_force);
+void __cdecl CCharacter::dismember(CCharacter *this_ptr,CVector3f *impact_point,float impact_force,int render_in_background);
 
 // Original: core_charactr.cpp_CCharacter_getCollisionType_FUN_0042bc20
 // Address: 0042bc20

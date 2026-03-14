@@ -21,7 +21,7 @@
 ;   int g_IrisFadeCenterY
 ;
 ; Called Functions:
-;   core_game.cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0
+;   core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0
 ;   crt_math.c_round_FUN_005fe6b0
 ;   engine_2d.c_fillRectColor_FUN_00403170
 ;
@@ -49,8 +49,8 @@ section .text
     CMP dword ptr [0x02d831f0],0x3f800000 ; 004e0acd | g_IrisFadeRadius
     JL 0x004e0b61                       ; 004e0ad7
         ;   XREF to: 004e0b61 (CONDITIONAL_JUMP)  ; LAB_004e0b61
-    CALL core_game.cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0 ; 004e0add
-        ;   XREF to: 004e09a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0(CGame * this_ptr)
+    CALL core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 ; 004e0add
+        ;   XREF to: 004e09a0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0()
     CMP dword ptr [0x0067939c],0x20     ; 004e0ae2 | g_BitsPerPixel
     JNZ 0x004e0b53                      ; 004e0ae9
         ;   XREF to: 004e0b53 (CONDITIONAL_JUMP)  ; LAB_004e0b53

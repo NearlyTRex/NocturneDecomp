@@ -130,11 +130,11 @@
 ;   TerminatedCString s_ghoul_dig_wav_1_3_0062dc76
 ;   TerminatedCString s_ghoul_eat_wav_1_3_0062dc8b
 ;   TerminatedCString s_ghoul_eat_wav_1_3_0062dca0
-;   undefined4 s_houl-eat-?.wav_@1.3_0062dca1
+;   undefined4 s_ghoul_eat_wav_1_3_0062dca0+1
 ;   TerminatedCString s_ghoul_dig_wav_1_3_0062dcb5
 ;   undefined4 s_houl-dig-?.wav_@1.3_0062dcb6
 ;   undefined4 s_oul-dig-?.wav_@1.3_0062dcb7
-;   undefined4 s_ul-dig-?.wav_@1.3_0062dcb8
+;   undefined4 s_ghoul_dig_wav_1_3_0062dcb5+3
 ;   TerminatedCString s_s_confused_while_walking_0062dcca
 ;   TerminatedCString s_ghoul_alert_wav_0062dcf4
 ;   TerminatedCString s_ghoul_scream_wav_0062dd06
@@ -960,7 +960,7 @@ section .text
     CMP AL,0x0                          ; 004e6f3c
     JZ 0x004e6f50                       ; 004e6f3e
         ;   XREF to: 004e6f50 (CONDITIONAL_JUMP)  ; LAB_004e6f50
-    MOV AL,byte ptr [ESI + 0x1]         ; 004e6f40 | s_houl-dig-?.wav_@1.3_0062dcb6 | s_ul-dig-?.wav_@1.3_0062dcb8 | s_houl-eat-?.wav_@1.3_0062dca1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004e6f40 | s_houl-dig-?.wav_@1.3_0062dcb6 | s_ghoul_dig_wav_1_3_0062dcb5+3 | s_ghoul_eat_wav_1_3_0062dca0+1
     ADD ESI,0x2                         ; 004e6f43
     MOV byte ptr [EDI + 0x1],AL         ; 004e6f46
     ADD EDI,0x2                         ; 004e6f49

@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 310,
+    "complexity_score": 295,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 80,
-    "suspect_count": 21,
+    "suspect_count": 20,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_few",
       "pointer_cast",
       "sub84_truncation"
     ],
@@ -51,24 +50,29 @@
         "call_addr": "005d5df7",
         "call_type": "direct",
         "caller": "shape_superopt.cpp_segmentIntersectsPolygon2D_FUN_005d5de0",
-        "estimated_params": 7,
-        "instructions_analyzed": 11,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 7
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "005d5e10",
         "call_type": "direct",
         "caller": "shape_superopt.cpp_segmentIntersectsPolygon2D_FUN_005d5de0",
         "estimated_params": 3,
-        "instructions_analyzed": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 12,
         "stack_params": 3
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 3,
-    "estimated_params": 7
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.1466666666666665,
@@ -400,17 +404,6 @@
       "severity": "mild",
       "text": "__BITCAST_DOUBLE(CONCAT44(uStack_54,local_58))) goto LAB_005d5ef4;",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 3,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 7,
-      "fix_type": "add_params",
-      "match": "declared:3 vs estimated:7",
-      "param_delta": 4,
-      "text": "Function declares 3 params but call sites push 7 (4 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

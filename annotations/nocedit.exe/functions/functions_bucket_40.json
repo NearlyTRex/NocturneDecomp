@@ -9,6 +9,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_2d.c_plotPixel_FUN_00401140",
     "ret":"void",
@@ -125,6 +126,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_2d.c_drawTextMultilineColor_FUN_00401f40",
     "ret":"void",
@@ -337,6 +339,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_2d.c_drawTextRightAligned_FUN_004021c0",
     "ret":"void",
@@ -469,6 +472,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_2d.c_drawTextCenteredFormatted_FUN_004023c0",
     "ret":"void",
@@ -577,6 +581,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_2d.c_drawTextColorFormatted_FUN_004024c0",
     "ret":"void",
@@ -669,6 +674,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_2d.c_drawTextCenteredColor_FUN_004026c0",
     "ret":"void",
@@ -751,6 +757,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_2d.c_setTextColor_FUN_00402840",
     "ret":"void",
@@ -1167,7 +1174,7 @@
     "vars":{
       "params":[
         {
-          "name":"intensity",
+          "name":"color_value",
           "storage":{
             "offset":4,
             "size":4,
@@ -1176,6 +1183,22 @@
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        },
+        {
+          "name":"lighting_value",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
                 "size":4
               }
             ]
@@ -1697,6 +1720,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_3d.c_flushPremiumRenderBuffer_FUN_004070c0",
     "ret":"void",
@@ -1970,6 +1994,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_actor.cpp_rayCylinderIntersect_FUN_00408340",
     "ret":"float",
@@ -2585,6 +2610,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_actor.cpp_CDemonActor_testPointInCylinder_FUN_004090c0",
     "ret":"int",
@@ -2971,6 +2997,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_actor.cpp_archiveVector_FUN_0040b340",
     "ret":"void",
@@ -3038,6 +3065,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_actor.cpp_archiveString_FUN_0040b5c0",
     "ret":"void",
@@ -3140,6 +3168,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_actor.cpp_getActorClassByName_FUN_0040c3c0",
     "ret":"CDemonActorType*",
@@ -3184,6 +3213,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_actor.cpp_matchesClassName_FUN_0040c740",
     "ret":"int",
@@ -3258,6 +3288,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_actor.cpp_getRandomFloat_FUN_0040cbc0",
     "ret":"float",
@@ -3400,6 +3431,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940",
     "ret":"void",
@@ -3468,6 +3500,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0",
     "ret":"void",
@@ -4020,6 +4053,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_actor.cpp_CVector_ctor_FUN_00410340",
     "ret":"CVector3f*",
@@ -5642,6 +5676,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00419340",
     "ret":"void",
@@ -5911,6 +5946,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_0041aa40",
     "ret":"void",
@@ -6572,6 +6608,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_bodypart.cpp_boundingBoxCenter_FUN_0041b5c0",
     "ret":"CBoundingBox3D*",
@@ -6790,6 +6827,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_boneguy.cpp_CBoneGuy_ctor_FUN_0041bbc0",
     "ret":"CBoneGuy*",
@@ -6993,6 +7031,7 @@
       }
     ],
     "conv":"__stack2_esi",
+    "custom_storage":true,
     "importable":true,
     "name":"core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40",
     "ret":"void",
@@ -8155,6 +8194,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840",
     "ret":"float",
@@ -8281,6 +8321,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940",
     "ret":"float",
@@ -8973,6 +9014,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_00425340",
     "ret":"void",
@@ -9415,6 +9457,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_bugs.cpp_CBugs_applySwarmTranslation_FUN_004276c0",
     "ret":"void",
@@ -9585,6 +9628,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_charactr.cpp_CCharacter_setup_FUN_00428140",
     "ret":"void",
@@ -9826,6 +9870,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_charactr.cpp_CCharacter_moveAndCollide_FUN_00428f40",
     "ret":"void",
@@ -10633,6 +10678,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_charactr.cpp_CCharacter_renderCollision_FUN_00429b40",
     "ret":"void",
@@ -11546,6 +11592,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0",
     "ret":"void",
@@ -11870,6 +11917,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0",
     "ret":"void",
@@ -13035,6 +13083,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40",
     "ret":"void",
@@ -13387,6 +13436,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540",
     "ret":"void",
@@ -13666,6 +13716,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0",
     "ret":"void",
@@ -14006,6 +14057,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"cockpit_ckptutil.c_flipEdgeArrayHorizontally_FUN_004355c0",
     "ret":"void",
@@ -14616,6 +14668,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_cloth.cpp_dotProduct_FUN_0043e2c0",
     "ret":"float",
@@ -14947,6 +15000,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"support_codec.cpp_extractBitsFromBuffer_FUN_0043e840",
     "ret":"int",
@@ -16063,6 +16117,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_colquant.c_computeWeightedColorDistance_FUN_00441040",
     "ret":"double",
@@ -16274,6 +16329,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_console.cpp_CConsole_reset_FUN_00441a40",
     "ret":"void",
@@ -16680,6 +16736,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_course.cpp_CCourse_showEditorMenu_FUN_00443040",
     "ret":"void",
@@ -16988,6 +17045,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_course.cpp_CCourse_preview_FUN_00443bc0",
     "ret":"void",
@@ -18177,6 +18235,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_crossbow.cpp_CCrossbow_getCurFrame_FUN_00449540",
     "ret":"float",
@@ -18416,6 +18475,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_curtain.cpp_CCurtain_solveConstraints_FUN_00449fc0",
     "ret":"void",
@@ -19159,6 +19219,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440",
     "ret":"void",
@@ -20155,6 +20216,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dcamera.cpp_renderCoronaScanlineSegment_FUN_00451340",
     "ret":"void",
@@ -20548,6 +20610,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40",
     "ret":"void",
@@ -20663,6 +20726,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dcube.cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_004552c0",
     "ret":"void",
@@ -20875,6 +20939,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dcube.cpp_triangleCylinderCollision_FUN_00456040",
     "ret":"uint",
@@ -21587,6 +21652,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0",
     "ret":"void",
@@ -21685,6 +21751,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_calculateVertexNormals_FUN_0045be40",
     "ret":"void",
@@ -21841,6 +21908,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_showPointEditor_FUN_0045c6c0",
     "ret":"void",
@@ -22343,6 +22411,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_showFacetPartEditorHelp_FUN_00460ac0",
     "ret":"void",
@@ -22376,6 +22445,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_configureSpatialSplittingPlane_FUN_004617c0",
     "ret":"void",
@@ -22713,6 +22783,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_mergePolygonsWithValidation_FUN_00465b40",
     "ret":"void",
@@ -23232,6 +23303,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_qsortByOriginalIndex_FUN_004677c0",
     "ret":"int",
@@ -23310,6 +23382,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_addQuadPolygon_FUN_004687c0",
     "ret":"void",
@@ -23425,6 +23498,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_addVertexFromSphericalCoordsHalfSphere_FUN_00468c40",
     "ret":"void",
@@ -23557,6 +23631,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_addVertexFromSphericalCoordsOctant_FUN_00469140",
     "ret":"void",
@@ -23689,6 +23764,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_wrapCoordinate_FUN_0046acc0",
     "ret":"int",
@@ -23749,6 +23825,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_calculateSamplingWeight_FUN_0046adc0",
     "ret":"double",
@@ -23848,6 +23925,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_findTextureByFilename_FUN_0046dfc0",
     "ret":"int",
@@ -23925,6 +24003,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_design.c_normalizeUVCoordinates_FUN_0046e340",
     "ret":"void",
@@ -24105,6 +24184,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dest.cpp_CActorDestination_getBoundingBox_FUN_0046fcc0",
     "ret":"CBoundingBox3D*",
@@ -24636,6 +24716,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dlight.cpp_CDemonLight_init_FUN_004727c0",
     "ret":"void",
@@ -24837,6 +24918,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0",
     "ret":"void",
@@ -25521,6 +25603,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0",
     "ret":"void",
@@ -25797,6 +25880,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40",
     "ret":"void",
@@ -25986,6 +26070,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0",
     "ret":"void",
@@ -27982,6 +28067,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dog.cpp_CZombieDog_process_FUN_0047f140",
     "ret":"void",
@@ -29193,6 +29279,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_dosio.c_getRelativeFilePath_FUN_004816c0",
     "ret":"void",
@@ -29259,6 +29346,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_dosio.c_findFileNormally_FUN_004817c0",
     "ret":"int",
@@ -29400,6 +29488,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_dosio.c_CFileFinder_convertStruct_FUN_00481dc0",
     "ret":"void",
@@ -29580,6 +29669,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_dosio.c_getFullPath_FUN_004820c0",
     "ret":"int",
@@ -29674,6 +29764,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0",
     "ret":"void",
@@ -29917,6 +30008,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dpart.cpp_CDemonPart_processAndFinalize_FUN_00482e40",
     "ret":"void",
@@ -30763,6 +30855,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0",
     "ret":"void",
@@ -31573,6 +31666,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940",
     "ret":"void",
@@ -32723,6 +32817,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_drip.cpp_CDrip_getBoundingBox_FUN_0048e740",
     "ret":"CBoundingBox3D*",
@@ -32958,6 +33053,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_dsemodel.cpp_CDSEModel_scaleZ_FUN_0048fcc0",
     "ret":"void",
@@ -33088,6 +33184,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0",
     "ret":"void",
@@ -33321,6 +33418,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640",
     "ret":"void",
@@ -33665,6 +33763,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dtri.cpp_clipPolygonToBottom_FUN_0049b9c0",
     "ret":"void",
@@ -33765,6 +33864,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dtri.cpp_buildClipTriangleFan_FUN_0049cb40",
     "ret":"CDemonTriangle*",
@@ -33990,6 +34090,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
     "ret":"void",
@@ -34159,6 +34260,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40",
     "ret":"void",
@@ -35769,6 +35871,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_event.cpp_CEventList_process_FUN_004aaac0",
     "ret":"void",
@@ -35949,6 +36052,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_event.cpp_CEventList_executeCommand_FUN_004aacc0",
     "ret":"int",
@@ -37898,6 +38002,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_event.cpp_CEventList_evaluateAtom_FUN_004ae140",
     "ret":"int",
@@ -40543,6 +40648,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40",
     "ret":"void",
@@ -41117,6 +41223,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
     "ret":"int",
@@ -41881,6 +41988,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0",
     "ret":"void",
@@ -42195,6 +42303,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_fire.cpp_CBulletHole_render_FUN_004bfac0",
     "ret":"void",
@@ -42493,6 +42602,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_fire.cpp_CSpark_process_FUN_004c0240",
     "ret":"void",
@@ -42719,6 +42829,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_fire.cpp_CMuzzleFlash_init_FUN_004c1940",
     "ret":"void",
@@ -42860,6 +42971,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_fire.cpp_CLaserBeam_render_FUN_004c25c0",
     "ret":"void",
@@ -44537,6 +44649,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_fire.cpp_CExplosion_process_FUN_004c3ac0",
     "ret":"void",
@@ -44589,6 +44702,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_fire.cpp_CCrater_save_FUN_004c49c0",
     "ret":"void",
@@ -44821,6 +44935,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_fire.cpp_CPopcorn_render_FUN_004c64c0",
     "ret":"void",
@@ -45228,6 +45343,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004c90c0",
     "ret":"void",
@@ -46747,6 +46863,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_3d.c_rasterizePolygon_FUN_004d1340",
     "ret":"void",
@@ -47004,6 +47121,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_frankgen.cpp_CFrankenstienMachine_process_FUN_004d1a40",
     "ret":"void",
@@ -47277,6 +47395,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_004d1ec0",
     "ret":"int",
@@ -47542,6 +47661,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004d6540",
     "ret":"void",
@@ -48281,6 +48401,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_game.cpp_CGame_ctor_FUN_004d7b40",
     "ret":"CGame*",
@@ -48325,6 +48446,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_game.cpp_CGame_renderOverlay_FUN_004d8040",
     "ret":"void",
@@ -48856,6 +48978,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_game.cpp_CGame_processMouseControls_FUN_004dccc0",
     "ret":"void",
@@ -49000,6 +49123,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_game.cpp_CGame_updateFadeTransition_FUN_004e09c0",
     "ret":"void",
@@ -51540,6 +51664,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_gore.cpp_CBloodParticle_render_FUN_004ebac0",
     "ret":"void",
@@ -52120,6 +52245,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_gore.cpp_CBloodPool_save_FUN_004ed1c0",
     "ret":"int",
@@ -52851,6 +52977,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_grave.cpp_CGrave_process_FUN_004ee5c0",
     "ret":"void",
@@ -54304,6 +54431,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"wincore_wddvmem.cpp_populateColorTable_FUN_004f4140",
     "ret":"ulonglong",
@@ -54335,6 +54463,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004f41c0",
     "ret":"void",
@@ -54671,6 +54800,98 @@
     "name":"core_hotdemon.cpp_CHotDemon_dtor_FUN_004f7a40",
     "ret":"CDemonActor*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHotDemon_ptr_13260",
+          "use":25
+        },
+        {
+          "name":"pSVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHotDemon_ptr_12060",
+          "use":41
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHotDemon_ptr_11536",
+          "use":57
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHotDemon_ptr_11356",
+          "use":73
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHotDemon_ptr_10900",
+          "use":89
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHotDemon_ptr_344",
+          "use":105
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -54979,6 +55200,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_ini.cpp_writeProfileString_FUN_004fba40",
     "ret":"void",
@@ -55249,6 +55471,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0",
     "ret":"void",
@@ -55493,6 +55716,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40",
     "ret":"void",
@@ -55824,6 +56048,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_ladder.cpp_CLadder_getBoundingBox_FUN_005028c0",
     "ret":"CBoundingBox3D*",
@@ -56095,6 +56320,98 @@
     "name":"core_larva.cpp_CLarva_dtor_FUN_00503cc0",
     "ret":"CDemonActor*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CLarva_ptr_13260",
+          "use":25
+        },
+        {
+          "name":"pSVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CLarva_ptr_12060",
+          "use":41
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CLarva_ptr_11536",
+          "use":57
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CLarva_ptr_11356",
+          "use":73
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CLarva_ptr_10900",
+          "use":89
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CLarva_ptr_344",
+          "use":105
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -57349,6 +57666,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_marquee.cpp_CMarquee_renderLightBulb_FUN_0050bec0",
     "ret":"void",
@@ -57649,6 +57967,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_matrix.c_invertTransformMatrix_FUN_0050c640",
     "ret":"void",
@@ -57875,6 +58194,7 @@
       }
     ],
     "conv":"__stack_esi",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_matrix.c_transformWorldToView_FUN_0050cc40",
     "ret":"void",
@@ -58070,6 +58390,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_matrix.c_projectTransformedPoint_FUN_0050cdc0",
     "ret":"void",
@@ -58104,6 +58425,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_matrix.c_getCameraOrigin_FUN_0050e2c0",
     "ret":"void",
@@ -58337,6 +58659,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_memdbg.cpp_debugRealloc_FUN_0050f540",
     "ret":"void*",
@@ -58429,6 +58752,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_memdbg.cpp_debugMemdump_FUN_0050f6c0",
     "ret":"void",
@@ -58523,6 +58847,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_menu.cpp_adjustMouseSensitivity_FUN_005107c0",
     "ret":"void",
@@ -58727,6 +59052,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_menu.cpp_showMainGameMenu_FUN_00512f40",
     "ret":"int",
@@ -59493,6 +59819,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40",
     "ret":"void",
@@ -59723,6 +60050,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0",
     "ret":"CVector3f*",
@@ -60098,6 +60426,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0",
     "ret":"void",
@@ -60734,6 +61063,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0",
     "ret":"void",
@@ -61718,6 +62048,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0",
     "ret":"void",
@@ -63120,6 +63451,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_mobster.cpp_CMobster_process_FUN_00525840",
     "ret":"void",
@@ -64122,6 +64454,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_mobster.cpp_CMobster_startFiringAttack_FUN_005271c0",
     "ret":"void",
@@ -65518,6 +65851,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_morph.cpp_CMorphModel_setFaceListFromPolygon_FUN_0052aac0",
     "ret":"void",
@@ -66296,6 +66630,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0",
     "ret":"void",
@@ -66712,6 +67047,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540",
     "ret":"void",
@@ -66828,6 +67164,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40",
     "ret":"int",
@@ -68642,6 +68979,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_msnedit.cpp_CDemonMission_playSound_FUN_0053eb40",
     "ret":"void",
@@ -68816,6 +69154,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_netgame.cpp_getElapsedSeconds_FUN_0053f440",
     "ret":"float",
@@ -69194,6 +69533,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"support_newmsg.cpp_readMessageFile_FUN_00543e40",
     "ret":"void",
@@ -69922,6 +70262,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40",
     "ret":"int",
@@ -71195,6 +71536,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440",
     "ret":"void",
@@ -73160,6 +73502,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40",
     "ret":"int",
@@ -73628,6 +73971,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_scat.cpp_CScat_blendLayerAction_FUN_005582c0",
     "ret":"void",
@@ -73995,6 +74339,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_script.cpp_CScript_getLetterboxHeight_FUN_00559ac0",
     "ret":"int",
@@ -74457,6 +74802,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_script.cpp_CScript_skipCommands_FUN_005601c0",
     "ret":"int",
@@ -74952,6 +75298,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_script.cpp_CScript_findText_FUN_00566cc0",
     "ret":"int",
@@ -78180,6 +78527,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340",
     "ret":"float",
@@ -79225,6 +79573,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0",
     "ret":"void",
@@ -80206,6 +80555,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_setedit.cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340",
     "ret":"void",
@@ -80546,6 +80896,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0",
     "ret":"void",
@@ -82158,6 +82509,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_setutil.cpp_C3DSCamera_save_FUN_00585a40",
     "ret":"void",
@@ -82208,6 +82560,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_setutil.cpp_generateSphereVertex_FUN_00587a40",
     "ret":"void",
@@ -82420,6 +82773,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_shovel.cpp_CShovel_getDamage_FUN_00588c40",
     "ret":"float",
@@ -83793,6 +84147,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0",
     "ret":"void",
@@ -85629,6 +85984,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0059ce40",
     "ret":"int",
@@ -85737,6 +86093,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0",
     "ret":"void",
@@ -87924,6 +88281,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"sound_sndmain.cpp_calculateDistanceGain_FUN_005a56c0",
     "ret":"float",
@@ -88035,6 +88393,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0",
     "ret":"void",
@@ -88069,6 +88428,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540",
     "ret":"void",
@@ -88171,6 +88531,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0",
     "ret":"int",
@@ -88561,6 +88922,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"sound_sndmain.cpp_selectSoundDevice_FUN_005ab4c0",
     "ret":"void",
@@ -90581,6 +90943,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"wincore_windll.cpp_selectTexture_FUN_005b7340",
     "ret":"int",
@@ -91529,6 +91892,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_superopt.cpp_CComplexPolygon_mergeAdjacentEdges_FUN_005c7dc0",
     "ret":"void",
@@ -91740,6 +92104,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_superopt.cpp_CComplexPolygon_splitToConvex_FUN_005c84c0",
     "ret":"int",
@@ -92841,6 +93206,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_superopt.cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40",
     "ret":"CVector3d*",
@@ -94940,6 +95306,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340",
     "ret":"int",
@@ -96660,6 +97027,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640",
     "ret":"double",
@@ -96775,6 +97143,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"shape_superopt.cpp_COptimize_getCoplanarAngleThreshold_FUN_005d7140",
     "ret":"double",
@@ -97908,6 +98277,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_texture.cpp_loadTextureAndGetData_FUN_005dd8c0",
     "ret":"SMRGLHeaderExtended*",
@@ -98062,6 +98432,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_trash.cpp_CTrash_setup_FUN_005debc0",
     "ret":"void",
@@ -98113,6 +98484,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_trash.cpp_addRandomJitter_FUN_005decc0",
     "ret":"void",
@@ -98812,6 +99184,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"support_trisock.cpp_createNetworkAddr_FUN_005e1940",
     "ret":"void",
@@ -98948,6 +99321,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_turret.cpp_CTurret_setup_FUN_005e2240",
     "ret":"void",
@@ -99196,6 +99570,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_tvbat.cpp_jitterValue_FUN_005e3ec0",
     "ret":"float",
@@ -99341,6 +99716,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_vampboss.cpp_CVampireBoss_setup_FUN_005e56c0",
     "ret":"void",
@@ -100156,6 +100532,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_water.cpp_calculateWaveHeight_FUN_005e9dc0",
     "ret":"float",
@@ -100431,6 +100808,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740",
     "ret":"float",
@@ -101268,6 +101646,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_weather.cpp_CWeather_createThunder_FUN_005ef140",
     "ret":"void",
@@ -101340,6 +101719,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_weather.cpp_CWeather_setWeatherType_FUN_005ef8c0",
     "ret":"void",
@@ -101412,6 +101792,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940",
     "ret":"void",
@@ -101716,6 +102097,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_werewolf.cpp_CWerewolf_setup_FUN_005efcc0",
     "ret":"void",
@@ -101813,6 +102195,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_werewolf.cpp_CWerewolf_processDamage_FUN_005f1ac0",
     "ret":"void",
@@ -101958,6 +102341,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_005f1e40",
     "ret":"void",
@@ -102364,22 +102748,6 @@
           "use":1007
         },
         {
-          "name":"in_stack_0000002c",
-          "storage":{
-            "offset":44,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x2c]",
-                "offset":44,
-                "size":4
-              }
-            ]
-          },
-          "type":"int"
-        },
-        {
           "name":"CStack_18",
           "storage":{
             "offset":-24,
@@ -102474,54 +102842,6 @@
           },
           "type":"ushort",
           "use":740
-        },
-        {
-          "name":"temp_1e1098b1cde",
-          "storage":{
-            "size":1,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:1e1098b1cde",
-                "offset":2066039381214,
-                "size":1
-              }
-            ]
-          },
-          "type":"undefined1",
-          "use":1033
-        },
-        {
-          "name":"temp_261ac9b665d",
-          "storage":{
-            "size":1,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:261ac9b665d",
-                "offset":2618530948701,
-                "size":1
-              }
-            ]
-          },
-          "type":"undefined1",
-          "use":1033
-        },
-        {
-          "name":"GAME_COLOR_MAGENTA_TRANSPARENT",
-          "storage":{
-            "size":1,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:2e1591bc09d",
-                "offset":3166885888157,
-                "size":1
-              }
-            ]
-          },
-          "type":"undefined1",
-          "use":1033
         }
       ],
       "params":[
@@ -102558,7 +102878,7 @@
           "type":"HDC"
         },
         {
-          "name":"x_position",
+          "name":"text_string",
           "storage":{
             "offset":12,
             "size":4,
@@ -102571,10 +102891,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
-          "name":"y_position",
+          "name":"x_position",
           "storage":{
             "offset":16,
             "size":4,
@@ -102590,7 +102910,7 @@
           "type":"int"
         },
         {
-          "name":"text_string",
+          "name":"y_position",
           "storage":{
             "offset":20,
             "size":4,
@@ -102603,7 +102923,7 @@
               }
             ]
           },
-          "type":"char*"
+          "type":"int"
         },
         {
           "name":"foreground_color",
@@ -102690,6 +103010,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"wincore_winrun.cpp_getComputerAndUserName_FUN_005f4140",
     "ret":"void",
@@ -103006,6 +103327,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0",
     "ret":"void",
@@ -103250,6 +103572,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_atan2Approximation_FUN_005f55c0",
     "ret":"float",
@@ -103517,6 +103840,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_determinant_FUN_005f61c0",
     "ret":"double",
@@ -103566,6 +103890,7 @@
       }
     ],
     "conv":"__stack_esi",
+    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_buildRotationX_FUN_005f6c40",
     "ret":"CMatrix3x4f*",
@@ -103803,6 +104128,7 @@
       }
     ],
     "conv":"__stack_esi",
+    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_buildRotationY_FUN_005f6cc0",
     "ret":"CMatrix3x4f*",
@@ -104008,6 +104334,7 @@
       }
     ],
     "conv":"__stack_esi",
+    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_buildRotationZ_FUN_005f6d40",
     "ret":"CMatrix3x4f*",
@@ -104213,6 +104540,7 @@
       }
     ],
     "conv":"__stack_esi",
+    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_buildTranslationMatrix_FUN_005f6dc0",
     "ret":"CMatrix3x4f*",
@@ -104370,6 +104698,7 @@
       }
     ],
     "conv":"__stack_esi",
+    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_buildYFlipMatrix_FUN_005f6f40",
     "ret":"CMatrix3x4f*",
@@ -104495,6 +104824,7 @@
       }
     ],
     "conv":"__stack3_esi",
+    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_lerpMatrix3x4_FUN_005f7140",
     "ret":"CMatrix3x4f*",
@@ -104834,6 +105164,7 @@
       }
     ],
     "conv":"__stack2_esi",
+    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_multiplyQuaternion_FUN_005f7640",
     "ret":"CQuaternion4f*",
@@ -105871,6 +106202,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_zombie.cpp_getObjectHeightScale_FUN_005f8cc0",
     "ret":"float",
@@ -105948,6 +106280,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_zombie.cpp_CZombie_setup_FUN_005f9140",
     "ret":"void",
@@ -106126,6 +106459,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"engine_3d.c_rasterizeTriangle_FUN_005fcfc0",
     "ret":"void",
@@ -106461,6 +106795,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_memory.c_memset_FUN_005fde40",
     "ret":"void*",
@@ -106537,6 +106872,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_stdio.c_fscanf_FUN_005fe7c0",
     "ret":"int",
@@ -106631,6 +106967,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_stdio.c_fgetc_FUN_005fe840",
     "ret":"int",
@@ -106675,6 +107012,7 @@
       }
     ],
     "conv":"__watcallStack",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_stdio.c_FillInputBuffer_FUN_005fe940",
     "ret":"int",
@@ -106737,6 +107075,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_string.c__strncpy_FUN_00600f40",
     "ret":"char*",
@@ -106813,6 +107152,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_stdlib.c__fullpath_FUN_00601140",
     "ret":"char*",
@@ -106977,6 +107317,7 @@
       }
     ],
     "conv":"__watcallStack",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_time.c_formatTwoDigits_FUN_00601640",
     "ret":"void",
@@ -107077,6 +107418,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_heap.c_InternalHeapAlloc_FUN_00601bc0",
     "ret":"void*",
@@ -107300,6 +107642,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_stdio.c_FormatWideString_FUN_006031c0",
     "ret":"void",
@@ -107447,6 +107790,7 @@
       }
     ],
     "conv":"__watcallStack",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_stdio.c_write_FUN_006038c0",
     "ret":"int",
@@ -107523,6 +107867,7 @@
       }
     ],
     "conv":"__watcallStack",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_locale.c_mblen_FUN_00605a40",
     "ret":"int",
@@ -107567,6 +107912,7 @@
       }
     ],
     "conv":"__watcallStack",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_string.c_mbstrnbytes_FUN_00605ec0",
     "ret":"int",
@@ -107627,6 +107973,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_stdlib.c_itoa_FUN_00607cc0",
     "ret":"char*",
@@ -107825,6 +108172,7 @@
       }
     ],
     "conv":"__watcallRegister",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0",
     "ret":"void",
@@ -107906,6 +108254,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_stdlib.c_i64toa_FUN_0060ad40",
     "ret":"char*",
@@ -108128,6 +108477,7 @@
       }
     ],
     "conv":"__watcallStack",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_locale.c_mbtowc_FUN_0060b1c0",
     "ret":"int",
@@ -108267,6 +108617,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_iostream.cpp_ios_freeBufferChain_FUN_0060bdc0",
     "ret":"void",
@@ -108301,6 +108652,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_string.c_wcstombs_FUN_0060c0c0",
     "ret":"int",
@@ -108504,6 +108856,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340",
     "ret":"int",
@@ -108585,6 +108938,7 @@
       }
     ],
     "conv":"__fpustack",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_math.c_atan2_FUN_0060c440",
     "ret":"float10",
@@ -108866,6 +109220,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_string.c_char_in_set_FUN_0060e340",
     "ret":"char*",
@@ -108926,6 +109281,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_string.c_mbcmp_FUN_0060e640",
     "ret":"int",
@@ -108986,6 +109342,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_thread.c_threadStartupWrapper_FUN_0060f8c0",
     "ret":"void",
@@ -109149,6 +109506,7 @@
         "start":"0060fb40"
       }
     ],
+    "custom_storage":true,
     "importable":true,
     "name":"crt_unknown.c_FUN_0060fb40",
     "ret":"undefined1",
@@ -109276,6 +109634,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_string.c_strcpy_advance_FUN_00610240",
     "ret":"char*",
@@ -109354,6 +109713,7 @@
       }
     ],
     "conv":"__stdcall",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_dsound.c_DirectSoundCreate",
     "ret":"HRESULT",

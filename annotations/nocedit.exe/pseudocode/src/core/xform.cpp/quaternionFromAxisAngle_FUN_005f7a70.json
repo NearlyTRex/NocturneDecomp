@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 43,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 18,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "param_count_too_many"
     ],
     "total_lines": 50
   },
@@ -47,6 +48,37 @@
       "value": "0.5"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005a0032",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a009e",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.032258064516129,
     "instruction_count": 31,
@@ -129,6 +161,17 @@
       "severity": "mild",
       "text": "fVar5 = (float10)fcos((float10)angle_radians * (float10)0.5);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 3,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 2,
+      "fix_type": "remove_params",
+      "match": "declared:3 vs estimated:2",
+      "param_delta": -1,
+      "text": "Function declares 3 params but call sites push 2 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

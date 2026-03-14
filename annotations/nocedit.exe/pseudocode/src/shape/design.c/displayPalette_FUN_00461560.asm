@@ -17,7 +17,7 @@
 ;   TerminatedCString s_Hit_a_key_0061bef1
 ;   undefined4 s_it_a_key..._0061bef2
 ;   undefined4 s_t_a_key..._0061bef3
-;   undefined4 s_a_key..._0061bef4
+;   undefined4 s_Hit_a_key_0061bef1+3
 ;   int g_WindowHeight = 0xc8
 ;
 ; Called Functions:
@@ -132,7 +132,7 @@ section .text
     CMP AL,0x0                          ; 00461656
     JZ 0x0046166a                       ; 00461658
         ;   XREF to: 0046166a (CONDITIONAL_JUMP)  ; LAB_0046166a
-    MOV AL,byte ptr [ESI + 0x1]         ; 0046165a | s_it_a_key..._0061bef2 | s_a_key..._0061bef4
+    MOV AL,byte ptr [ESI + 0x1]         ; 0046165a | s_it_a_key..._0061bef2 | s_Hit_a_key_0061bef1+3
     ADD ESI,0x2                         ; 0046165d
     MOV byte ptr [EDI + 0x1],AL         ; 00461660
     ADD EDI,0x2                         ; 00461663

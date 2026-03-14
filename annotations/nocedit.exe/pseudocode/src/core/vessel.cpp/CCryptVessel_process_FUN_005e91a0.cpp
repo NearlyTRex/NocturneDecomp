@@ -141,7 +141,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
           return;
         }
         core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10
-                  (g_CFireEffectPtr,&pCVar1->position,8.0,0x44bb8000);
+                  (g_CFireEffectPtr,&pCVar1->position,8.0,1500.0,4.0);
         pCVar6 = this_ptr->start_loc;
         this_ptr->timer = 1.0;
         (pCVar1->position).x = (pCVar6->base).location.position.x;

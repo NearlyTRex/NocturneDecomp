@@ -34,6 +34,7 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *t
   UOrientationVector *pUVar15;
   int iVar16;
   int iVar13;
+  double in_stack_ffffff18;
   CVector3f local_cc;
   CVector3f CStack_c0;
   CVector3f local_b4;
@@ -61,7 +62,6 @@ int __cdecl core_stranger_cpp_CStranger_tryPlaceObject_FUN_005c2850(CStranger *t
   int iStack_1c;
   float local_18;
   float fStack_14;
-  double in_stack_ffffff18;
   int force_immediate;
   float fVar2;
   float fVar3;

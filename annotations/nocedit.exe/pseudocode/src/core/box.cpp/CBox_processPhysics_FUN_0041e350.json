@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 854,
-    "complexity_score": 924,
+    "complexity_score": 909,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 779,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_many",
       "pointer_cast"
     ],
     "total_lines": 1633
@@ -143,24 +142,29 @@
         "call_addr": "004c0229",
         "call_type": "direct",
         "caller": "core_fire.cpp_CStake_process_FUN_004c0210",
-        "estimated_params": 1,
-        "instructions_analyzed": 7,
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 1
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "0041e33e",
         "call_type": "direct",
         "caller": "core_box.cpp_CBox_process_FUN_0041e2f0",
         "estimated_params": 2,
-        "instructions_analyzed": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 2,
-    "estimated_params": 1
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.88681592039801,
@@ -958,17 +962,6 @@
       "severity": "mild",
       "text": "if (ABS(pCVar13->scrape_points[0].transformed_position.y - this_ptr[1].position.x) <",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

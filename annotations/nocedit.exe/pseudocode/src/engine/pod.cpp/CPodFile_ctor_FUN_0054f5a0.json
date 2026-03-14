@@ -110,6 +110,125 @@
   },
   "function_calls": [],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 13,
+    "call_sites": [
+      {
+        "call_addr": "004b8305",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b74c8",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00551029",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_00551000",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055128a",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_CPod_verifyIntegrity_FUN_00551280",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b7712",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b5bf4",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b7fb8",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00550a3c",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_CPod_mount_FUN_00550a10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b6e7a",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004baf53",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 2.9285714285714284,
     "instruction_count": 14,
@@ -138,5 +257,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPodFile",
+        "offset": 0,
+        "vtable_addr": "0065d9b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

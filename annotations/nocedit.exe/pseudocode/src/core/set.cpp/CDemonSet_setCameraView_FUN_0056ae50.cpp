@@ -211,7 +211,7 @@ void __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet *this_p
         core_dlight_cpp_CDemonLight_beginBackgroundScene_FUN_00472e40(this_ptr_01);
         core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0056aca0(this_ptr,1);
         core_dlight_cpp_CDemonLight_endBackgroundScene_FUN_00472f30(this_ptr_01);
-        core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(this_ptr_01);
+        core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(this_ptr_01,0);
         core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80(this_ptr_01);
         if (this_ptr->cameras[index].is_panning == 0) {
           core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10

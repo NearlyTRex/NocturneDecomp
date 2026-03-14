@@ -26,7 +26,7 @@ int __cdecl sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0(CSfxSample *out_sample)
   sound_sndmain_cpp_lockSound_FUN_005abd30();
   iVar4 = 0;
   do {
-    if (0 < *(int *)((int)g_SfxSamples[0].loop_endpoints + iVar4 + -0x18)) {
+    if (0 < *(int *)(g_SfxSamples[0].sample_info.name + iVar4 + 0x110)) {
       pcVar5 = g_SfxSamples[0].sample_info.name + iVar4;
       iVar2 = _stricmp(pcVar5,(char *)out_sample);
       if (iVar2 == 0) {

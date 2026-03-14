@@ -135,10 +135,10 @@ LAB_005dfb52:
       fVar2 = (this_ptr->trigger_size).x;
       fVar3 = (this_ptr->trigger_size).y;
       fVar4 = (this_ptr->trigger_size).z;
-      local_34 = core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
+      local_34 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004c8c90
                            (g_CFireEffectPtr,&pCVar2->position,
                             (float)(((int)(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2) >> 1) +
-                                   INT_02d7a7b8),(CVector3f *)0x0,(int *)0x0);
+                                   INT_02d7a7b8),(CVector3f *)0x0,(float *)0x0);
     }
     break;
   case 7:

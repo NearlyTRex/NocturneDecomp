@@ -159,8 +159,8 @@ void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProper
       if (cVar3 == '\0') {
         return;
       }
-      cVar1 = ((CActorPropertyActionFunc *)pcVar7)[1];
-      pcVar7 = (char *)((CActorPropertyActionFunc *)pcVar7 + 2);
+      cVar1 = (code)pcVar7[1];
+      pcVar7 = pcVar7 + 2;
       output_buffer[1] = (char)cVar1;
       output_buffer = output_buffer + 2;
     } while (cVar1 != (code)0x0);

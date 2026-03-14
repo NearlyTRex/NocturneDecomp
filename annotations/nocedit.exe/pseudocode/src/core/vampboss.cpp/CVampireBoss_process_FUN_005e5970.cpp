@@ -207,7 +207,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005e5970(CVampireBoss *t
       }
     }
     else if (this_ptr->bat_ai_state == 3) {
-      pCVar5 = (&this_ptr->way_point_0)[this_ptr->waypoint_index];
+      pCVar5 = *(CDemonActor **)((int)(&this_ptr->morph + 1) + (this_ptr->waypoint_index + 7) * 4);
       if ((CLocation *)&local_b8 != &pCVar5->location) {
         local_b8 = (pCVar5->location).position.x;
         local_b4 = (pCVar5->location).position.y;
@@ -442,8 +442,8 @@ LAB_005e648e:
         CStack_c4.z = 20.0;
         core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                   ((CDemonActor *)this_ptr,&CStack_10c,&CStack_c4);
-        core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0((CCharacter *)this_ptr,&CStack_10c,-1.0)
-        ;
+        core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0
+                  ((CCharacter *)this_ptr,&CStack_10c,-1.0,0);
         iVar18 = 0;
         for (local_2c = 0; local_2c < g_CDemonSetPtr->enemy_count; local_2c = local_2c + 1) {
           this_ptr_00 = (CCharacter *)
@@ -488,7 +488,8 @@ LAB_005e648e:
       iVar21 = this_ptr->waypoint_index;
       (this_ptr->base).base.walk_step_speed = 10.0f * delta_time;
       core_charactr_cpp_CCharacter_followActor_FUN_0042c5f0
-                ((CCharacter *)this_ptr,(&this_ptr->way_point_0)[iVar21],0.2,999999.0,
+                ((CCharacter *)this_ptr,
+                 *(CDemonActor **)((int)(&this_ptr->morph + 1) + (iVar21 + 7) * 4),0.2,999999.0,
                  &this_ptr->follow_result);
       switch(this_ptr->follow_result) {
       default:

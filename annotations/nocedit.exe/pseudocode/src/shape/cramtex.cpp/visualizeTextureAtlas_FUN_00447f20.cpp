@@ -2,11 +2,11 @@
 // Address: 00447f20
 // Address Range: [[00447f20, 004481c8]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures,int is_complete)
+// Signature: void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures,int is_complete,int show_status)
 
 #include "nocturne.h"
 
-void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures,int is_complete)
+void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures,int is_complete,int show_status)
 
 {
   int iVar1;

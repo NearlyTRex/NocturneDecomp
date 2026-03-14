@@ -32,7 +32,7 @@ uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0054f490(char *filename,in
     uVar4 = 0;
     do {
       uVar1 = *pcVar3;
-      pcVar3 = (char *)((uchar *)pcVar3 + 1);
+      pcVar3 = pcVar3 + 1;
       uVar4 = uVar4 + 1;
       current_crc = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(current_crc,uVar1);
     } while (uVar4 < 0x10000);
@@ -43,7 +43,7 @@ uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0054f490(char *filename,in
   if (size != 0) {
     do {
       data_byte = *pcVar1;
-      pcVar1 = (char *)((uchar *)pcVar1 + 1);
+      pcVar1 = pcVar1 + 1;
       current_crc = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(current_crc,data_byte);
       uVar2 = uVar2 + 1;
     } while (uVar2 < size);

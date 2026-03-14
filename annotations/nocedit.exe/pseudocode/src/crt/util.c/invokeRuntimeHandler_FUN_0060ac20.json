@@ -41,6 +41,37 @@
   },
   "function_calls": [],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0060ac72",
+        "call_type": "direct",
+        "caller": "crt_init.c_ProcessInitTermHandlers_FUN_0060ac30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0060acd7",
+        "call_type": "direct",
+        "caller": "crt_exit.c_ProcessExitHandlers_FUN_0060ac88",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.4444444444444446,
     "instruction_count": 9,

@@ -36,7 +36,9 @@ void __cdecl engine_prim_c_normalizeTextureCoords_FUN_00552020(SRenderVertex *ve
         vertices->v = (int)(((longlong)vertices->v * (longlong)iVar4) /
                            (longlong)(vertices->projected_vertex).transformed_z);
         (vertices->projected_vertex).transformed_z =
-             (int)(((longlong)iVar4 * 0x1000000) / (longlong)iVar1);
+             (int)((longlong)
+                   ((((longlong)iVar4 & 0xffffffffffU) >> 8) << 0x20 |
+                   (longlong)iVar4 * 0x1000000 & 0xffffffffU) / (longlong)iVar1);
         iVar2 = iVar2 + 1;
         vertices = vertices + 1;
         if (vertex_count <= iVar2) {

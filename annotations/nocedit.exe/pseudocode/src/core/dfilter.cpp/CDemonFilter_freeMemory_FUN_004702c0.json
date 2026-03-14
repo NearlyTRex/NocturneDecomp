@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 24,
+    "complexity_score": 9,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 28
   },
   "cross_references": [
@@ -66,24 +64,29 @@
         "call_addr": "00470246",
         "call_type": "direct",
         "caller": "core_dfilter.cpp_CDemonFilter_dtor_FUN_00470240",
-        "estimated_params": 2,
-        "instructions_analyzed": 3,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "00470266",
         "call_type": "direct",
         "caller": "core_dfilter.cpp_CDemonFilter_allocMemory_FUN_00470260",
-        "estimated_params": 2,
-        "instructions_analyzed": 3,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 2
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.8666666666666667,
@@ -123,17 +126,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 2,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

@@ -609,11 +609,11 @@ section .text
     JZ 0x0049c6dc                       ; 0049c6ca
         ;   XREF to: 0049c6dc (CONDITIONAL_JUMP)  ; LAB_0049c6dc
     MOV EAX,dword ptr [EDX]             ; 0049c6cc | g_ClipBuffer5Vertices[1].x
-    MOV dword ptr [ECX],EAX             ; 0049c6ce | CHAR_ARRAY_02ceed5c
+    MOV dword ptr [ECX],EAX             ; 0049c6ce | g_MessageFormatBuffer+0x2c
     MOV EAX,dword ptr [EDX + 0x4]       ; 0049c6d0 | g_ClipBuffer5Vertices[1].y
-    MOV dword ptr [ECX + 0x4],EAX       ; 0049c6d3 | CHAR_ARRAY_02ceed60
+    MOV dword ptr [ECX + 0x4],EAX       ; 0049c6d3 | g_MessageFormatBuffer+0x30
     MOV EAX,dword ptr [EDX + 0x8]       ; 0049c6d6 | DAT_02cee9b8
-    MOV dword ptr [ECX + 0x8],EAX       ; 0049c6d9 | CHAR_ARRAY_02ceed64
+    MOV dword ptr [ECX + 0x8],EAX       ; 0049c6d9 | g_MessageFormatBuffer+0x34
     INC dword ptr [0x02ceea64]          ; 0049c6dc | g_ClipOutputVertexCount
         ;   Label: LAB_0049c6dc
     MOV EDX,dword ptr [0x02cee9a0]      ; 0049c6e2 | g_ClipBuffer5VertexCount
@@ -956,8 +956,8 @@ section .text
     PUSH 0x0                            ; 0049ca98
     PUSH 0x0                            ; 0049ca9a
     PUSH 0x0                            ; 0049ca9c
-    ADD ECX,0x2ceea68                   ; 0049ca9e | CHAR_ARRAY_02ceed5c | g_ClipOutputVertices
-    PUSH ECX                            ; 0049caa4 | CHAR_ARRAY_02ceed5c
+    ADD ECX,0x2ceea68                   ; 0049ca9e | g_MessageFormatBuffer+0x2c | g_ClipOutputVertices
+    PUSH ECX                            ; 0049caa4 | g_MessageFormatBuffer+0x2c
     PUSH EDX                            ; 0049caa5 | g_ClipBuffer5Vertices[1].x
     PUSH EDI                            ; 0049caa6 | g_ClippedTriangleBuffer[7].vertex3.x
     CALL core_dtri.cpp_clipLineToPlane_FUN_0049b6c0 ; 0049caa7
@@ -975,11 +975,11 @@ section .text
     JZ 0x0049cae2                       ; 0049cad0
         ;   XREF to: 0049cae2 (CONDITIONAL_JUMP)  ; LAB_0049cae2
     MOV EAX,dword ptr [EDX]             ; 0049cad2 | g_ClipBuffer5Vertices[1].x
-    MOV dword ptr [ECX],EAX             ; 0049cad4 | CHAR_ARRAY_02ceed5c
+    MOV dword ptr [ECX],EAX             ; 0049cad4 | g_MessageFormatBuffer+0x2c
     MOV EAX,dword ptr [EDX + 0x4]       ; 0049cad6 | g_ClipBuffer5Vertices[1].y
-    MOV dword ptr [ECX + 0x4],EAX       ; 0049cad9 | CHAR_ARRAY_02ceed60
+    MOV dword ptr [ECX + 0x4],EAX       ; 0049cad9 | g_MessageFormatBuffer+0x30
     MOV EAX,dword ptr [EDX + 0x8]       ; 0049cadc | DAT_02cee9b8
-    MOV dword ptr [ECX + 0x8],EAX       ; 0049cadf | CHAR_ARRAY_02ceed64
+    MOV dword ptr [ECX + 0x8],EAX       ; 0049cadf | g_MessageFormatBuffer+0x34
     MOV ECX,dword ptr [0x02ceea64]      ; 0049cae2 | g_ClipOutputVertexCount
         ;   Label: LAB_0049cae2
     INC ECX                             ; 0049cae8
@@ -994,8 +994,8 @@ section .text
     PUSH 0x0                            ; 0049cb05
     PUSH 0x0                            ; 0049cb07
     PUSH 0x0                            ; 0049cb09
-    ADD ECX,0x2ceea68                   ; 0049cb0b | CHAR_ARRAY_02ceed68 | g_ClipOutputVertices
-    PUSH ECX                            ; 0049cb11 | CHAR_ARRAY_02ceed68
+    ADD ECX,0x2ceea68                   ; 0049cb0b | g_MessageFormatBuffer+0x38 | g_ClipOutputVertices
+    PUSH ECX                            ; 0049cb11 | g_MessageFormatBuffer+0x38
     PUSH EDI                            ; 0049cb12 | g_ClippedTriangleBuffer[7].vertex3.x
     PUSH EDX                            ; 0049cb13 | g_ClipBuffer5Vertices[1].x
     CALL core_dtri.cpp_clipLineToPlane_FUN_0049b6c0 ; 0049cb14

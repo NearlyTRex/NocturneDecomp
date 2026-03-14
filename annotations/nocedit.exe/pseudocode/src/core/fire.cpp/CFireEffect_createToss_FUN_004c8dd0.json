@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 28,
+    "complexity_score": 13,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 56
   },
   "cross_references": [
@@ -77,15 +75,18 @@
         "call_addr": "0049cea8",
         "call_type": "direct",
         "caller": "core_dynamite.cpp_CDynamite_fire_FUN_0049ce70",
-        "estimated_params": 7,
-        "instructions_analyzed": 13,
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 7
+        "stack_bytes": 24,
+        "stack_params": 6
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 6,
-    "estimated_params": 7
+    "declared_stack_bytes": 24,
+    "estimated_params": 6
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.894736842105263,
@@ -172,17 +173,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 6,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 7,
-      "fix_type": "add_params",
-      "match": "declared:6 vs estimated:7",
-      "param_delta": 1,
-      "text": "Function declares 6 params but call sites push 7 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

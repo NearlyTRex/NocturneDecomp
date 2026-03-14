@@ -50,6 +50,37 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0059623a",
+        "call_type": "direct",
+        "caller": "core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "005a0236",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.898989898989899,
     "instruction_count": 99,

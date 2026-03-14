@@ -49,7 +49,7 @@ _FILE * __cdecl getFile(char *directory,char *filename,char *mode);
 
 // Original: engine_dosio.c_reopenFileStream_FUN_00481b50
 // Address: 00481b50
-void __cdecl reopenFileStream(char *directory_path,char *filename,byte file_mode_flags,ifstream *file_stream);
+void __cdecl reopenFileStream(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream);
 
 // Original: engine_dosio.c_CFileFinder_ctor_FUN_00481c30
 // Address: 00481c30

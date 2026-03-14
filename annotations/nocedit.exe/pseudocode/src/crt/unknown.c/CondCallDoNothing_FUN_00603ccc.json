@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 143,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
+      "param_count_too_few",
       "special_crt_function",
       "stack_param"
     ],
@@ -49,6 +50,37 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00603da5",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_00603d60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00603d98",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_00603d60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.383333333333334,
     "instruction_count": 60,
@@ -181,6 +213,17 @@
       "severity": "mild",
       "text": "*in_stack_00000004 = (float10)CONCAT28(0x3fff,0x8000000000000000) * *in_stack_00000004;",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     },
     {
       "address": "00603ccc",

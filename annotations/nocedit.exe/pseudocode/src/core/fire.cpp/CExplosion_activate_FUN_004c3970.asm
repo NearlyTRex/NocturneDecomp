@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CExplosion_activate_FUN_004c3970(CExplosion *this_ptr,CVector3f *position,float scale,int damage_amount)
+; void __cdecl core_fire_cpp_CExplosion_activate_FUN_004c3970(CExplosion *this_ptr,CVector3f *position,float scale,float gore_multiplier)
 ;
 ; Parameters:
 ; CExplosion *     Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
 ; float            Stack[0xc]:4   scale
-; int              Stack[0x10]:4   damage_amount
+; float            Stack[0x10]:4   gore_multiplier
 ; Local Variables:
 ; CVector3f        Stack[-0x50]:12  local_50
 ; CVector3f[2]     Stack[-0x44]:24  local_44

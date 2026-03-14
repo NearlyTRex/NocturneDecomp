@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
-;   core_game.cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0
+;   core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0
 ;
 ; *****************************************************************************
 

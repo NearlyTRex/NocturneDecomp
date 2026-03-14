@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 109,
+    "complexity_score": 94,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 23,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 79,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast"
     ],
     "total_lines": 267
@@ -245,33 +244,40 @@
         "call_addr": "005801c0",
         "call_type": "direct",
         "caller": "core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0",
-        "estimated_params": 5,
-        "instructions_analyzed": 8,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0057a99d",
         "call_type": "direct",
         "caller": "core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940",
         "estimated_params": 1,
-        "instructions_analyzed": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "0057fd0d",
         "call_type": "direct",
         "caller": "core_setedit.cpp_CDemonSet_buildCameraCoverageMap_FUN_0057fd00",
-        "estimated_params": 5,
-        "instructions_analyzed": 8,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 5
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.25625,
@@ -362,17 +368,6 @@
       "severity": "mild",
       "text": "iVar1 = *(int *)(iVar4 + *(int *)((int)g_ZBufferScanlineArray + iVar5));",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 3,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:5",
-      "param_delta": 4,
-      "text": "Function declares 1 params but call sites push 5 (4 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -1,12 +1,12 @@
 // Name: crt_unknown.c_FUN_0060eb57
 // Address: 0060eb57
 // Address Range: [[0060eb57, 0060eb76]]
-// Convention: unknown
-// Signature: ulonglong crt_unknown_c_FUN_0060eb57(void)
+// Convention: __cdecl
+// Signature: ulonglong __cdecl crt_unknown_c_FUN_0060eb57(void)
 
 #include "nocturne.h"
 
-ulonglong FUN_0060eb57(void)
+ulonglong __cdecl FUN_0060eb57(void)
 
 {
   uint in_EAX;

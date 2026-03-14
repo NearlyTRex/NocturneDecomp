@@ -194,7 +194,7 @@ section .text
     PUSH EAX                            ; 005dc974
     CALL engine_3d.c_renderPolygonTextureEnable_FUN_00403cc0 ; 005dc975
         ;   XREF to: 00403cc0 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureEnable_FUN_00403cc0(SMRGLHeaderPrimitive * prim)
-    MOV DL,byte ptr [0x02d03eb3]        ; 005dc97a | CHAR_ARRAY_02d03eb3
+    MOV DL,byte ptr [0x02d03eb3]        ; 005dc97a | g_KeyboardState+0x1b
     ADD ESP,0x4                         ; 005dc980
     TEST DL,DL                          ; 005dc983
     JZ 0x005dc9c3                       ; 005dc985
@@ -203,7 +203,7 @@ section .text
     MOV CL,byte ptr [0x02d03ec2]        ; 005dc989 | CHAR_ARRAY_02d03ec2
     XOR DH,DH                           ; 005dc98f
     LEA EAX,[ECX*0x8 + 0x0]             ; 005dc991
-    MOV byte ptr [0x02d03eb3],DH        ; 005dc998 | CHAR_ARRAY_02d03eb3
+    MOV byte ptr [0x02d03eb3],DH        ; 005dc998 | g_KeyboardState+0x1b
     ADD EAX,ECX                         ; 005dc99e
     MOV EDX,dword ptr [EBX + 0x1a5e8]   ; 005dc9a0
     INC EAX                             ; 005dc9a6
@@ -214,12 +214,12 @@ section .text
     JL 0x005dc9c3                       ; 005dc9b7
         ;   XREF to: 005dc9c3 (CONDITIONAL_JUMP)  ; LAB_005dc9c3
     MOV dword ptr [EBX + 0x1a5e8],0x0   ; 005dc9b9
-    CMP byte ptr [0x02d03eb2],0x0       ; 005dc9c3 | CHAR_ARRAY_02d03eb2
+    CMP byte ptr [0x02d03eb2],0x0       ; 005dc9c3 | g_KeyboardState+0x1a
         ;   Label: LAB_005dc9c3
     JZ 0x005dc9f8                       ; 005dc9ca
         ;   XREF to: 005dc9f8 (CONDITIONAL_JUMP)  ; LAB_005dc9f8
     XOR CH,CH                           ; 005dc9cc
-    MOV byte ptr [0x02d03eb2],CH        ; 005dc9ce | CHAR_ARRAY_02d03eb2
+    MOV byte ptr [0x02d03eb2],CH        ; 005dc9ce | g_KeyboardState+0x1a
     XOR ECX,ECX                         ; 005dc9d4
     MOV CL,byte ptr [0x02d03ec2]        ; 005dc9d6 | CHAR_ARRAY_02d03ec2
     LEA EAX,[ECX*0x8 + 0x0]             ; 005dc9dc

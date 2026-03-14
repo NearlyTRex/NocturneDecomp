@@ -57,6 +57,37 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00524d0d",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_00524c20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004f3bdd",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_factoryFunc_FUN_004f3bc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.75,
     "instruction_count": 8,
@@ -93,5 +124,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CHeroPlaceholder",
+        "offset": 0,
+        "vtable_addr": "0065f934"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

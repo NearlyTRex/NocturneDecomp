@@ -1,12 +1,12 @@
-// Name: core_fire.cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
+// Name: core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004c8c90
 // Address: 004c8c90
 // Address Range: [[004c8c90, 004c8dc9]]
 // Convention: __cdecl
-// Signature: int __cdecl core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,int *out_damage)
+// Signature: int __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004c8c90(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,float *out_gore_multiplier)
 
 #include "nocturne.h"
 
-int __cdecl core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,int *out_damage)
+int __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004c8c90(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,float *out_gore_multiplier)
 
 {
   float fVar4;
@@ -42,8 +42,8 @@ int __cdecl core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90(CFireEff
             out_force_dir->z = fVar3;
           }
         }
-        if (out_damage != (int *)0x0) {
-          *out_damage = pCVar5->damage_amount;
+        if (out_gore_multiplier != (float *)0x0) {
+          *out_gore_multiplier = pCVar5->gore_multiplier;
         }
         return 1;
       }

@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **argv)
+; int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **argv,char **envp)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   mode
 ; char *           Stack[0x8]:4   cmdname
 ; char * *         Stack[0xc]:4   argv
-; char * *         Stack[0x10]:4   in_stack_00000010
+; char * *         Stack[0x10]:4   envp
 ; Local Variables:
 ; undefined1       Stack[-0xc4]:1  local_c4
 ; char[104]        Stack[-0xc0]:104  acStack_c0
@@ -406,7 +406,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x86]      ; 0060f676
     PUSH EDX                            ; 0060f67c
     CALL crt_process.c_spawn_FUN_006105a0 ; 0060f67d
-        ;   XREF to: 006105a0 (UNCONDITIONAL_CALL)  ; int crt_process.c_spawn_FUN_006105a0(int mode, char * cmdline, char * envblock, void * reserved)
+        ;   XREF to: 006105a0 (UNCONDITIONAL_CALL)  ; int crt_process.c_spawn_FUN_006105a0(int mode, char * cmdline, char * envblock, void * reserved, ...)
     ADD ESP,0x14                        ; 0060f682
     MOV EDI,EAX                         ; 0060f685
     CALL dword ptr [0x00684ee4]         ; 0060f687 | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
@@ -456,7 +456,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x86]      ; 0060f6f0
     PUSH ECX                            ; 0060f6f6
     CALL crt_process.c_spawn_FUN_006105a0 ; 0060f6f7
-        ;   XREF to: 006105a0 (UNCONDITIONAL_CALL)  ; int crt_process.c_spawn_FUN_006105a0(int mode, char * cmdline, char * envblock, void * reserved)
+        ;   XREF to: 006105a0 (UNCONDITIONAL_CALL)  ; int crt_process.c_spawn_FUN_006105a0(int mode, char * cmdline, char * envblock, void * reserved, ...)
     ADD ESP,0x14                        ; 0060f6fc
     MOV EDI,EAX                         ; 0060f6ff
     CALL dword ptr [0x00684ee4]         ; 0060f701 | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
@@ -489,7 +489,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x86]      ; 0060f748
     PUSH EDI                            ; 0060f74e
     CALL crt_process.c_spawn_FUN_006105a0 ; 0060f74f
-        ;   XREF to: 006105a0 (UNCONDITIONAL_CALL)  ; int crt_process.c_spawn_FUN_006105a0(int mode, char * cmdline, char * envblock, void * reserved)
+        ;   XREF to: 006105a0 (UNCONDITIONAL_CALL)  ; int crt_process.c_spawn_FUN_006105a0(int mode, char * cmdline, char * envblock, void * reserved, ...)
     ADD ESP,0x14                        ; 0060f754
     MOV EDI,EAX                         ; 0060f757
     CALL dword ptr [0x00684ee4]         ; 0060f759 | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4

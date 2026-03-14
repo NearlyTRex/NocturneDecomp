@@ -53,7 +53,7 @@ LAB_00601822:
   }
   bVar6 = mode_string[1];
   while ((bVar6 != 0 && (bVar2))) {
-    bVar6 = ((byte *)mode_string)[1];
+    bVar6 = mode_string[1];
     if (bVar6 < 99) {
       if (0x2a < bVar6) {
         if (bVar6 < 0x2c) {
@@ -104,8 +104,8 @@ LAB_00601822:
         }
       }
     }
-    bVar6 = ((byte *)mode_string)[2];
-    mode_string = (char *)((byte *)mode_string + 1);
+    bVar6 = mode_string[2];
+    mode_string = mode_string + 1;
   }
   if ((!bVar4) && (INT_00684ed0 == 0x200)) {
     uVar6 = uVar6 | 0x40;

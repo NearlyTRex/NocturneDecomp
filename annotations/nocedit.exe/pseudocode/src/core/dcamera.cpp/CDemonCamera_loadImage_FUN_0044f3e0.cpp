@@ -309,7 +309,7 @@ LAB_0044f4fd:
         puVar13 = this_ptr->framebuffer_aligned;
         do {
           bVar1 = *pcVar10;
-          pcVar10 = (char *)((byte *)pcVar10 + 1);
+          pcVar10 = pcVar10 + 1;
           iVar2 = iVar2 + 1;
           *puVar13 = g_CameraConvertedPalette[bVar1];
           puVar13 = puVar13 + 1;

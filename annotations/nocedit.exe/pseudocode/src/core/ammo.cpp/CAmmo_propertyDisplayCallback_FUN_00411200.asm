@@ -16,17 +16,17 @@
 ;   TerminatedCString s_Generic_00614a8d
 ;   undefined4 s_eneric_00614a8e
 ;   TerminatedCString s_Holy_00614a95
-;   undefined4 s_oly_00614a96
+;   undefined4 s_Holy_00614a95+1
 ;   TerminatedCString s_Wood_00614a9a
-;   undefined4 s_ood_00614a9b
+;   undefined4 s_Wood_00614a9a+1
 ;   TerminatedCString s_Silver_00614a9f
-;   undefined4 s_ilver_00614aa0
+;   undefined4 s_Silver_00614a9f+1
 ;   TerminatedCString s_Gold_00614aa6
-;   undefined4 s_old_00614aa7
+;   undefined4 s_Gold_00614aa6+1
 ;   TerminatedCString s_Flaming_00614aab
-;   undefined4 s_laming_00614aac
+;   undefined4 s_Flaming_00614aab+1
 ;   TerminatedCString s_Blanks_00614ab3
-;   undefined4 s_lanks_00614ab4
+;   undefined4 s_Blanks_00614ab3+1
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -57,13 +57,13 @@ section .text
         ;   Label: caseD_0
     PUSH EDI                            ; 00411231
         ;   Label: LAB_00411231
-    MOV AL,byte ptr [ESI]               ; 00411232 | = "Mercury" | s_rcury_00614ac4 | s_Lithium_00614aba
+    MOV AL,byte ptr [ESI]               ; 00411232 | = "Mercury" | s_Mercury_00614ac2+2 | s_Lithium_00614aba
         ;   Label: LAB_00411232
     MOV byte ptr [EDI],AL               ; 00411234
     CMP AL,0x0                          ; 00411236
     JZ 0x0041124a                       ; 00411238
         ;   XREF to: 0041124a (CONDITIONAL_JUMP)  ; LAB_0041124a
-    MOV AL,byte ptr [ESI + 0x1]         ; 0041123a | s_ercury_00614ac3 | s_cury_00614ac5 | s_ithium_00614abb
+    MOV AL,byte ptr [ESI + 0x1]         ; 0041123a | s_Mercury_00614ac2+1 | s_Mercury_00614ac2+3 | s_Lithium_00614aba+1
     ADD ESI,0x2                         ; 0041123d
     MOV byte ptr [EDI + 0x1],AL         ; 00411240
     ADD EDI,0x2                         ; 00411243

@@ -48,7 +48,7 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_0042c3c0(CCharacter 
     }
 LAB_0042c50c:
     core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0
-              (this_ptr,impact_point,damage_info->impact_force);
+              (this_ptr,impact_point,damage_info->impact_force,0);
   }
   else {
     if (DAMAGE_TYPE_ELECTROCUTE < EVar5) {

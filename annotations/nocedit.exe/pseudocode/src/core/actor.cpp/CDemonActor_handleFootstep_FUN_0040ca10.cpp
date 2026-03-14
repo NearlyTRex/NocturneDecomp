@@ -2,11 +2,11 @@
 // Address: 0040ca10
 // Address Range: [[0040ca10, 0040cb82]]
 // Convention: __cdecl
-// Signature: void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume)
+// Signature: void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume)
 
 #include "nocturne.h"
 
-void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume)
+void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume)
 
 {
   int iVar4;
@@ -29,13 +29,13 @@ void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor 
   }
   iVar4 = core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00574580(g_CDemonSetPtr,position);
   if (iVar4 != 0) {
-    surface_type = GROUND_TYPE_WATER;
+    ground_type = GROUND_TYPE_WATER;
   }
   iVar1 = core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0
                     (g_CGorePtr,position,(int *)&this_ptr->blood_effect_color);
   if (iVar1 == 0) {
     if (this_ptr->blood_effect_timer < 1) {
-      if (surface_type == GROUND_TYPE_DIRT) {
+      if (ground_type == GROUND_TYPE_DIRT) {
         core_gore_cpp_CGore_createFootstep_FUN_004ee070
                   (g_CGorePtr,position,&this_ptr->orient,3,0x4000,0);
       }
@@ -55,7 +55,7 @@ void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor 
   }
 LAB_0040cb07:
   dVar6 = (double)volume;
-  pcVar5 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(surface_type);
+  pcVar5 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(ground_type);
   _sprintf
             (local_8c,"footstep-%s-!-%s-?.wav @ %f",this_ptr->footstep_sound_code,pcVar5,dVar6);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40(g_CSoundPtr,this_ptr,local_8c,position);

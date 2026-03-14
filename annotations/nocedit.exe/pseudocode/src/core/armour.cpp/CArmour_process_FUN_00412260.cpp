@@ -57,7 +57,7 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr,floa
       CStack_1c.x = 0.0;
       CStack_1c.y = 0.0;
       CStack_1c.z = 5.0;
-      core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0((CCharacter *)this_ptr,&CStack_1c,-1.0);
+      core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0((CCharacter *)this_ptr,&CStack_1c,-1.0,1);
       return;
     }
   }

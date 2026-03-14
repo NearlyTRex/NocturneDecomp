@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 90,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 10,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
+      "param_count_too_few",
       "special_crt_function",
       "unnamed_param"
     ],
@@ -43,6 +44,26 @@
       "value": "0x0"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0060d0bd",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.7058823529411766,
     "instruction_count": 34,
@@ -163,6 +184,17 @@
       "severity": "mild",
       "text": "local_c = ~param_2 & local_c | param_1 & param_2 & 0xffff;",
       "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     },
     {
       "address": "0060e8e0",

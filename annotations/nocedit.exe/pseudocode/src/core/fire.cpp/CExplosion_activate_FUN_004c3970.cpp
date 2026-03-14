@@ -2,11 +2,11 @@
 // Address: 004c3970
 // Address Range: [[004c3970, 004c39eb]]
 // Convention: __cdecl
-// Signature: void __cdecl core_fire_cpp_CExplosion_activate_FUN_004c3970(CExplosion *this_ptr,CVector3f *position,float scale,int damage_amount)
+// Signature: void __cdecl core_fire_cpp_CExplosion_activate_FUN_004c3970(CExplosion *this_ptr,CVector3f *position,float scale,float gore_multiplier)
 
 #include "nocturne.h"
 
-void __cdecl core_fire_cpp_CExplosion_activate_FUN_004c3970(CExplosion *this_ptr,CVector3f *position,float scale,int damage_amount)
+void __cdecl core_fire_cpp_CExplosion_activate_FUN_004c3970(CExplosion *this_ptr,CVector3f *position,float scale,float gore_multiplier)
 
 {
   int iVar1;
@@ -36,7 +36,7 @@ void __cdecl core_fire_cpp_CExplosion_activate_FUN_004c3970(CExplosion *this_ptr
   iVar2 = 0;
   iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
   this_ptr->flip_flag = iVar1;
-  this_ptr->damage_amount = damage_amount;
+  this_ptr->gore_multiplier = gore_multiplier;
   do {
     fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
     fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);

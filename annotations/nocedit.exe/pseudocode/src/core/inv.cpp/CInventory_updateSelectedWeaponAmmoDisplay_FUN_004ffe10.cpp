@@ -2,11 +2,11 @@
 // Address: 004ffe10
 // Address Range: [[004ffe10, 004ffe6f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory *this_ptr)
+// Signature: void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory *this_ptr,int ammo_type)
 
 #include "nocturne.h"
 
-void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory *this_ptr)
+void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory *this_ptr,int ammo_type)
 
 {
   char *weapon_class_name;

@@ -71,7 +71,7 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(CDemonSet *t
             core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
             core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);
           }
-          core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(pCVar2);
+          core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(pCVar2,1);
           (pCVar2->base).max_distance = fVar3;
         }
         local_30 = local_30 + 4;
@@ -110,7 +110,7 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_0056be80(CDemonSet *t
           core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
           core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);
           g_CurrentShadowLight = (CDemonLight *)0x0;
-          core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(this_ptr_01);
+          core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(this_ptr_01,0);
         }
         local_2c = local_2c + 4;
         local_24 = local_24 + 1;

@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 26,
+    "complexity_score": 11,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 34
   },
   "cross_references": [
@@ -113,60 +111,73 @@
         "call_addr": "0054bdc7",
         "call_type": "direct",
         "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0",
-        "estimated_params": 3,
-        "instructions_analyzed": 6,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0054c3ea",
         "call_type": "direct",
         "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0",
-        "estimated_params": 5,
-        "instructions_analyzed": 9,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0054c488",
         "call_type": "direct",
         "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480",
-        "estimated_params": 4,
-        "instructions_analyzed": 5,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 4
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0054c4d6",
         "call_type": "direct",
         "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0",
-        "estimated_params": 2,
-        "instructions_analyzed": 3,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0054be8a",
         "call_type": "direct",
         "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70",
-        "estimated_params": 5,
-        "instructions_analyzed": 9,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0054bf59",
         "call_type": "direct",
         "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40",
-        "estimated_params": 5,
-        "instructions_analyzed": 8,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 5
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.25,
@@ -204,17 +215,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 6,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:5",
-      "param_delta": 4,
-      "text": "Function declares 1 params but call sites push 5 (4 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

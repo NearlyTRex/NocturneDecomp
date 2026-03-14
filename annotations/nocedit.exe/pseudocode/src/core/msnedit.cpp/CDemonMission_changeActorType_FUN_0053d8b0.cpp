@@ -121,8 +121,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_changeActorType_FUN_0053d8b0(CDemonM
                     if (cVar2 == '\0') break;
                     cVar3 = pCVar8[1];
                     pCVar8 = pCVar8 + 2;
-                    ((CActorPropertyActionFunc *)pcVar12)[1] = cVar3;
-                    pcVar12 = (char *)((CActorPropertyActionFunc *)pcVar12 + 2);
+                    pcVar12[1] = (char)cVar3;
+                    pcVar12 = pcVar12 + 2;
                   } while (cVar3 != (code)0x0);
                   break;
                 case PROP_BOOL:

@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblock,void *reserved)
+; int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblock,void *reserved,char **argv)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   mode
 ; char *           Stack[0x8]:4   cmdline
 ; char *           Stack[0xc]:4   envblock
 ; void *           Stack[0x10]:4   reserved
-; char * *         Stack[0x14]:4   in_stack_00000014
+; char * *         Stack[0x14]:4   argv
 ; Local Variables:
 ; _STARTUPINFOA    Stack[-0x6c]:68  local_6c
 ; _PROCESS_INFORMATION Stack[-0x28]:16  local_28

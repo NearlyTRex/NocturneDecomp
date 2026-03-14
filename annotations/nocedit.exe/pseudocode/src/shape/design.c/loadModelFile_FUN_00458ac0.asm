@@ -175,13 +175,13 @@ section .text
     PUSH EDI                            ; 00458ba7 | g_LoadedModelName
     MOV AL,byte ptr [ESI]               ; 00458ba8
         ;   Label: LAB_00458ba8
-    MOV byte ptr [EDI],AL               ; 00458baa | g_LoadedModelName | s__0066edaa
+    MOV byte ptr [EDI],AL               ; 00458baa | g_LoadedModelName | g_LoadedModelName+2
     CMP AL,0x0                          ; 00458bac
     JZ 0x00458bc0                       ; 00458bae
         ;   XREF to: 00458bc0 (CONDITIONAL_JUMP)  ; LAB_00458bc0
     MOV AL,byte ptr [ESI + 0x1]         ; 00458bb0
     ADD ESI,0x2                         ; 00458bb3
-    MOV byte ptr [EDI + 0x1],AL         ; 00458bb6 | s__0066eda9 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 00458bb6 | g_LoadedModelName+1 | DAT_0066edab
     ADD EDI,0x2                         ; 00458bb9
     CMP AL,0x0                          ; 00458bbc
     JNZ 0x00458ba8                      ; 00458bbe
@@ -221,13 +221,13 @@ section .text
     PUSH EDI                            ; 00458c15 | g_LoadedModelName
     MOV AL,byte ptr [ESI]               ; 00458c16
         ;   Label: LAB_00458c16
-    MOV byte ptr [EDI],AL               ; 00458c18 | g_LoadedModelName | s__0066edaa
+    MOV byte ptr [EDI],AL               ; 00458c18 | g_LoadedModelName | g_LoadedModelName+2
     CMP AL,0x0                          ; 00458c1a
     JZ 0x00458c2e                       ; 00458c1c
         ;   XREF to: 00458c2e (CONDITIONAL_JUMP)  ; LAB_00458c2e
     MOV AL,byte ptr [ESI + 0x1]         ; 00458c1e
     ADD ESI,0x2                         ; 00458c21
-    MOV byte ptr [EDI + 0x1],AL         ; 00458c24 | s__0066eda9 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 00458c24 | g_LoadedModelName+1 | DAT_0066edab
     ADD EDI,0x2                         ; 00458c27
     CMP AL,0x0                          ; 00458c2a
     JNZ 0x00458c16                      ; 00458c2c
@@ -278,13 +278,13 @@ section .text
     PUSH EDI                            ; 00458ca6 | g_LoadedModelName
     MOV AL,byte ptr [ESI]               ; 00458ca7
         ;   Label: LAB_00458ca7
-    MOV byte ptr [EDI],AL               ; 00458ca9 | g_LoadedModelName | s__0066edaa
+    MOV byte ptr [EDI],AL               ; 00458ca9 | g_LoadedModelName | g_LoadedModelName+2
     CMP AL,0x0                          ; 00458cab
     JZ 0x00458cbf                       ; 00458cad
         ;   XREF to: 00458cbf (CONDITIONAL_JUMP)  ; LAB_00458cbf
     MOV AL,byte ptr [ESI + 0x1]         ; 00458caf
     ADD ESI,0x2                         ; 00458cb2
-    MOV byte ptr [EDI + 0x1],AL         ; 00458cb5 | s__0066eda9 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 00458cb5 | g_LoadedModelName+1 | DAT_0066edab
     ADD EDI,0x2                         ; 00458cb8
     CMP AL,0x0                          ; 00458cbb
     JNZ 0x00458ca7                      ; 00458cbd
@@ -331,13 +331,13 @@ section .text
     PUSH EDI                            ; 00458d45 | g_LoadedModelName
     MOV AL,byte ptr [ESI]               ; 00458d46 | s_EmptyChar_0061aa4e | s_.\shape\design.c_0061aa50
         ;   Label: LAB_00458d46
-    MOV byte ptr [EDI],AL               ; 00458d48 | g_LoadedModelName | s__0066edaa
+    MOV byte ptr [EDI],AL               ; 00458d48 | g_LoadedModelName | g_LoadedModelName+2
     CMP AL,0x0                          ; 00458d4a
     JZ 0x00458d5e                       ; 00458d4c
         ;   XREF to: 00458d5e (CONDITIONAL_JUMP)  ; LAB_00458d5e
     MOV AL,byte ptr [ESI + 0x1]         ; 00458d4e | = "..\\shape\\design.c" | s_\shape\design.c_0061aa51
     ADD ESI,0x2                         ; 00458d51
-    MOV byte ptr [EDI + 0x1],AL         ; 00458d54 | s__0066eda9 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 00458d54 | g_LoadedModelName+1 | DAT_0066edab
     ADD EDI,0x2                         ; 00458d57
     CMP AL,0x0                          ; 00458d5a
     JNZ 0x00458d46                      ; 00458d5c
@@ -434,13 +434,13 @@ section .text
     PUSH EDI                            ; 00458e75 | g_LoadedModelName
     MOV AL,byte ptr [ESI]               ; 00458e76 | s_EmptyChar_0061aaa3 | s_.\shape\design.c_0061aaa5
         ;   Label: LAB_00458e76
-    MOV byte ptr [EDI],AL               ; 00458e78 | g_LoadedModelName | s__0066edaa
+    MOV byte ptr [EDI],AL               ; 00458e78 | g_LoadedModelName | g_LoadedModelName+2
     CMP AL,0x0                          ; 00458e7a
     JZ 0x00458e8e                       ; 00458e7c
         ;   XREF to: 00458e8e (CONDITIONAL_JUMP)  ; LAB_00458e8e
     MOV AL,byte ptr [ESI + 0x1]         ; 00458e7e | = "..\\shape\\design.c" | s_\shape\design.c_0061aaa6
     ADD ESI,0x2                         ; 00458e81
-    MOV byte ptr [EDI + 0x1],AL         ; 00458e84 | s__0066eda9 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 00458e84 | g_LoadedModelName+1 | DAT_0066edab
     ADD EDI,0x2                         ; 00458e87
     CMP AL,0x0                          ; 00458e8a
     JNZ 0x00458e76                      ; 00458e8c

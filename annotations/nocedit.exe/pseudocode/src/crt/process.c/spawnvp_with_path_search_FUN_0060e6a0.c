@@ -2,11 +2,11 @@
 // Address: 0060e6a0
 // Address Range: [[0060e6a0, 0060e847]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_process_c_spawnvp_with_path_search_FUN_0060e6a0(int mode,char *program,char **argv)
+// Signature: int __cdecl crt_process_c_spawnvp_with_path_search_FUN_0060e6a0(int mode,char *program,char **argv,char **envp)
 
 #include "nocturne.h"
 
-int __cdecl spawnvp_with_path_search(int mode,char *program,char **argv)
+int __cdecl spawnvp_with_path_search(int mode,char *program,char **argv,char **envp)
 
 {
   int iVar1;
@@ -21,7 +21,7 @@ int __cdecl spawnvp_with_path_search(int mode,char *program,char **argv)
   SIZE_T SStack_14;
   
   __STK();
-  iVar1 = spawnvp(mode,program,argv);
+  iVar1 = spawnvp(mode,program,argv,envp);
   if (((iVar1 == -1) &&
       ((((pTVar2 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(), pTVar2->errno_value == 1 ||
          (pTVar2 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(), pTVar2->errno_value == 9)) &&
@@ -46,7 +46,7 @@ int __cdecl spawnvp_with_path_search(int mode,char *program,char **argv)
           dest = acStack_11c + count + 1;
         }
         memcpy(dest,program,SStack_14);
-        iVar1 = spawnvp(mode,acStack_11c,argv);
+        iVar1 = spawnvp(mode,acStack_11c,argv,envp);
         if (iVar1 != -1) {
           return iVar1;
         }

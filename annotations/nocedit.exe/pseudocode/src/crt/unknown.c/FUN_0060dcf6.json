@@ -1,21 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 264,
-    "complexity_score": 853,
+    "complexity_score": 936,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 198,
-    "suspect_count": 63,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 211,
+    "suspect_count": 70,
     "suspect_types": [
       "decompiler_intrinsic",
+      "fnstsw_flag_artifact",
       "register_param",
       "special_crt_function",
-      "sub84_truncation",
       "unaffected_reg"
     ],
-    "total_lines": 462
+    "total_lines": 475
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_0060dcf6",
-    "signature": "uint crt_unknown_c_FUN_0060dcf6(void)"
+    "signature": "double crt_unknown_c_FUN_0060dcf6(void)"
   },
   "function_calls": [
     {
@@ -141,7 +141,7 @@
   "suspects": [
     {
       "description": "Inferred register parameter",
-      "line": 8,
+      "line": 9,
       "match": "in_EAX",
       "severity": "mild",
       "text": "uint in_EAX;",
@@ -157,7 +157,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 17,
+      "line": 18,
       "match": "in_EDX",
       "severity": "mild",
       "text": "uint in_EDX;",
@@ -173,7 +173,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 46,
+      "line": 49,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if (unaff_EBX == 0) {",
@@ -181,7 +181,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 47,
+      "line": 50,
       "match": "in_ECX",
       "severity": "mild",
       "text": "if ((in_ECX & 0x7fffffff) == 0) {",
@@ -189,7 +189,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 51,
+      "line": 54,
       "match": "in_ECX",
       "severity": "mild",
       "text": "in_ECX = in_ECX & 0x7fffffff | (uint)CARRY4(in_ECX,in_ECX) << 0x1f;",
@@ -197,7 +197,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 51,
+      "line": 54,
       "match": "in_ECX",
       "severity": "mild",
       "text": "in_ECX = in_ECX & 0x7fffffff | (uint)CARRY4(in_ECX,in_ECX) << 0x1f;",
@@ -205,7 +205,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 51,
+      "line": 54,
       "match": "in_ECX",
       "severity": "mild",
       "text": "in_ECX = in_ECX & 0x7fffffff | (uint)CARRY4(in_ECX,in_ECX) << 0x1f;",
@@ -213,7 +213,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 51,
+      "line": 54,
       "match": "in_ECX",
       "severity": "mild",
       "text": "in_ECX = in_ECX & 0x7fffffff | (uint)CARRY4(in_ECX,in_ECX) << 0x1f;",
@@ -221,7 +221,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 51,
+      "line": 54,
       "match": "CARRY4",
       "severity": "mild",
       "text": "in_ECX = in_ECX & 0x7fffffff | (uint)CARRY4(in_ECX,in_ECX) << 0x1f;",
@@ -229,7 +229,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 53,
+      "line": 56,
       "match": "in_EAX",
       "severity": "mild",
       "text": "if (in_EAX == 0) {",
@@ -237,7 +237,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 54,
+      "line": 57,
       "match": "in_EDX",
       "severity": "mild",
       "text": "if ((in_EDX & 0x7fffffff) == 0) {",
@@ -245,7 +245,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 57,
+      "line": 60,
       "match": "in_EDX",
       "severity": "mild",
       "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
@@ -253,7 +253,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 57,
+      "line": 60,
       "match": "in_EDX",
       "severity": "mild",
       "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
@@ -261,7 +261,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 57,
+      "line": 60,
       "match": "in_EDX",
       "severity": "mild",
       "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
@@ -269,7 +269,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 57,
+      "line": 60,
       "match": "in_EDX",
       "severity": "mild",
       "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
@@ -277,7 +277,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 57,
+      "line": 60,
       "match": "CARRY4",
       "severity": "mild",
       "text": "in_EDX = in_EDX & 0x7fffffff | (uint)CARRY4(in_EDX,in_EDX) << 0x1f;",
@@ -285,23 +285,31 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 60,
+      "line": 63,
       "match": "in_ECX",
       "severity": "mild",
-      "text": "uVar21 = (ushort)((int)in_ECX >> 0x14) & 0x7ff;",
+      "text": "uVar18 = (int)in_ECX >> 0x14 & 0x800007ff;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 61,
+      "line": 64,
       "match": "in_EDX",
       "severity": "mild",
-      "text": "uVar15 = (int)in_EDX >> 0x14 & 0x7ff;",
+      "text": "uVar23 = (int)in_EDX >> 0x14 & 0x7ff;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 62,
+      "line": 65,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "uVar21 = (uint)(ushort)(((ushort)((int)in_EDX >> 0x1f) & 0x8000) + (short)(uVar18 >> 0x10)) <<",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 68,
       "match": "in_EDX",
       "severity": "mild",
       "text": "uVar9 = in_EDX & 0xfffff;",
@@ -309,7 +317,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 63,
+      "line": 69,
       "match": "in_ECX",
       "severity": "mild",
       "text": "uVar11 = in_ECX & 0xfffff;",
@@ -317,31 +325,31 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 67,
+      "line": 72,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "bVar23 = CARRY4(in_EAX,in_EAX);",
+      "text": "bVar24 = CARRY4(in_EAX,in_EAX);",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 67,
+      "line": 72,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "bVar23 = CARRY4(in_EAX,in_EAX);",
+      "text": "bVar24 = CARRY4(in_EAX,in_EAX);",
       "type": "register_param"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 67,
+      "line": 72,
       "match": "CARRY4",
       "severity": "mild",
-      "text": "bVar23 = CARRY4(in_EAX,in_EAX);",
+      "text": "bVar24 = CARRY4(in_EAX,in_EAX);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred register parameter",
-      "line": 68,
+      "line": 73,
       "match": "in_EAX",
       "severity": "mild",
       "text": "in_EAX = in_EAX * 2;",
@@ -349,15 +357,31 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 68,
+      "line": 73,
       "match": "in_EAX",
       "severity": "mild",
       "text": "in_EAX = in_EAX * 2;",
       "type": "register_param"
     },
     {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 77,
+      "match": "CONCAT22((short)(uVar21 >> 0x10",
+      "severity": "severe",
+      "text": "uVar21 = CONCAT22((short)(uVar21 >> 0x10),uVar16);",
+      "type": "fnstsw_flag_artifact"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 77,
+      "match": "CONCAT22",
+      "severity": "mild",
+      "text": "uVar21 = CONCAT22((short)(uVar21 >> 0x10),uVar16);",
+      "type": "decompiler_intrinsic"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 81,
+      "line": 86,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "bVar19 = CARRY4(unaff_EBX,unaff_EBX);",
@@ -365,7 +389,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 81,
+      "line": 86,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "bVar19 = CARRY4(unaff_EBX,unaff_EBX);",
@@ -373,7 +397,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 86,
       "match": "CARRY4",
       "severity": "mild",
       "text": "bVar19 = CARRY4(unaff_EBX,unaff_EBX);",
@@ -381,7 +405,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 82,
+      "line": 87,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = unaff_EBX * 2;",
@@ -389,7 +413,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 82,
+      "line": 87,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = unaff_EBX * 2;",
@@ -397,7 +421,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 97,
+      "line": 103,
       "match": "in_EAX",
       "severity": "mild",
       "text": "uVar10 = uVar9 << 0xb | in_EAX >> 0x15;",
@@ -405,15 +429,15 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 98,
+      "line": 104,
       "match": "in_EAX",
       "severity": "mild",
-      "text": "uVar15 = in_EAX * 0x800;",
+      "text": "uVar23 = in_EAX * 0x800;",
       "type": "register_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 99,
+      "line": 105,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "uVar12 = uVar11 << 0xb | unaff_EBX >> 0x15;",
@@ -421,7 +445,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 100,
+      "line": 106,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "uVar18 = unaff_EBX * 0x800;",
@@ -429,15 +453,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 106,
+      "line": 112,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "uVar1 = CONCAT44(uVar19,uVar15) / (ulonglong)uVar12;",
+      "text": "uVar1 = CONCAT44(uVar19,uVar23) / (ulonglong)uVar12;",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 112,
+      "line": 118,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "lVar3 = lVar3 + CONCAT44(uVar12,uVar18);",
@@ -445,15 +469,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 123,
+      "line": 129,
       "match": "CARRY4",
       "severity": "mild",
-      "text": "bVar24 = CARRY4(uVar8,uVar18);",
+      "text": "bVar25 = CARRY4(uVar8,uVar18);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 125,
+      "line": 131,
       "match": "CARRY4",
       "severity": "mild",
       "text": "bVar21 = CARRY4(uVar13,uVar12);",
@@ -461,15 +485,15 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 126,
+      "line": 132,
       "match": "CARRY4",
       "severity": "mild",
-      "text": "bVar21 = bVar21 || CARRY4(uVar13 + uVar12,(uint)bVar24);",
+      "text": "bVar21 = bVar21 || CARRY4(uVar13 + uVar12,(uint)bVar25);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 135,
+      "line": 141,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "uVar3 = CONCAT44(uVar13,uVar8) / (ulonglong)uVar12;",
@@ -477,55 +501,103 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 147,
-      "match": "CARRY4",
-      "severity": "mild",
-      "text": "iVar22 = iVar22 + (uint)(bVar25 || CARRY4(uVar15,(uint)bVar24))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
       "line": 153,
       "match": "CARRY4",
       "severity": "mild",
-      "text": "bVar24 = CARRY4(uVar19,uVar18);",
+      "text": "iVar22 = iVar22 + (uint)(bVar26 || CARRY4(uVar23,(uint)bVar25))) {",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 155,
+      "line": 159,
       "match": "CARRY4",
       "severity": "mild",
-      "text": "bVar25 = CARRY4(uVar14,uVar12);",
+      "text": "bVar25 = CARRY4(uVar19,uVar18);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
+      "line": 161,
       "match": "CARRY4",
       "severity": "mild",
-      "text": "uVar15 = (uint)CARRY4(uVar15,uVar15);",
+      "text": "bVar26 = CARRY4(uVar14,uVar12);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 166,
+      "match": "CONCAT22((short)(uVar21 >> 0x10",
+      "severity": "severe",
+      "text": "iVar22 = CONCAT22((short)(uVar21 >> 0x10),sVar20 + 0x3fe);",
+      "type": "fnstsw_flag_artifact"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 166,
+      "match": "CONCAT22",
+      "severity": "mild",
+      "text": "iVar22 = CONCAT22((short)(uVar21 >> 0x10),sVar20 + 0x3fe);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 172,
+      "line": 176,
       "match": "CARRY4",
       "severity": "mild",
-      "text": "uVar15 = (uint)CARRY4(uVar18,uVar15);",
+      "text": "uVar23 = (uint)CARRY4(uVar23,uVar23);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 173,
+      "line": 178,
       "match": "CARRY4",
       "severity": "mild",
-      "text": "sVar18 = uVar21 + CARRY4(uVar20,uVar15);",
+      "text": "uVar23 = (uint)CARRY4(uVar18,uVar23);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 180,
+      "match": "CARRY4",
+      "severity": "mild",
+      "text": "uVar23 = iVar22 + (uint)CARRY4(uVar19,uVar23);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "FNSTSW flag reconstruction (floating-point comparison artifact)",
+      "line": 187,
+      "match": "CONCAT22((short)(uVar23 >> 0x10",
+      "severity": "severe",
+      "text": "uVar23 = CONCAT22((short)(uVar23 >> 0x10),-sVar20);",
+      "type": "fnstsw_flag_artifact"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 187,
+      "match": "CONCAT22",
+      "severity": "mild",
+      "text": "uVar23 = CONCAT22((short)(uVar23 >> 0x10),-sVar20);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 194,
+      "match": "CONCAT44",
+      "severity": "mild",
+      "text": "return __BITCAST_DOUBLE(CONCAT44(uVar18 & 0xfffff |",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 195,
+      "match": "CARRY4",
+      "severity": "mild",
+      "text": "(uVar23 & 0x7ff) << 0x14 | (uint)CARRY4(uVar23,uVar23) << 0x1f,uVar21))",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Inferred register parameter",
-      "line": 189,
+      "line": 202,
       "match": "in_EDX",
       "severity": "mild",
       "text": "fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));",
@@ -533,7 +605,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 189,
+      "line": 202,
       "match": "in_EAX",
       "severity": "mild",
       "text": "fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));",
@@ -541,7 +613,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 189,
+      "line": 202,
       "match": "in_ECX",
       "severity": "mild",
       "text": "fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));",
@@ -549,7 +621,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 189,
+      "line": 202,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));",
@@ -557,7 +629,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 189,
+      "line": 202,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));",
@@ -565,7 +637,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 189,
+      "line": 202,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)) / (float10)__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX));",
@@ -573,7 +645,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 193,
+      "line": 206,
       "match": "in_EDX",
       "severity": "mild",
       "text": "((float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)),__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX)))",
@@ -581,7 +653,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 193,
+      "line": 206,
       "match": "in_EAX",
       "severity": "mild",
       "text": "((float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)),__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX)))",
@@ -589,7 +661,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 193,
+      "line": 206,
       "match": "in_ECX",
       "severity": "mild",
       "text": "((float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)),__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX)))",
@@ -597,7 +669,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 193,
+      "line": 206,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "((float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)),__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX)))",
@@ -605,7 +677,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 193,
+      "line": 206,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "((float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)),__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX)))",
@@ -613,26 +685,10 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 193,
+      "line": 206,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "((float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX)),__BITCAST_DOUBLE(CONCAT44(in_ECX,unaff_EBX)))",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 196,
-      "match": "SUB84(",
-      "severity": "moderate",
-      "text": "uVar15 = SUB84(__BITCAST_UINT64((double)fVar22),0);",
-      "type": "sub84_truncation"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 196,
-      "match": "SUB84",
-      "severity": "mild",
-      "text": "uVar15 = SUB84(__BITCAST_UINT64((double)fVar22),0);",
       "type": "decompiler_intrinsic"
     },
     {

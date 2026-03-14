@@ -61,15 +61,16 @@
   },
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 164,
+    "complexity_score": 179,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
+      "param_count_too_few",
       "sub84_truncation",
       "unknown_field"
     ],
@@ -159,6 +160,125 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 12,
+    "call_sites": [
+      {
+        "call_addr": "00454e80",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_clipPolygonAgainstMinX_FUN_00454da0",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "00454fe2",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "00454aaa",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00454970",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "00454a4c",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_clipPolygonAgainstMaxY_FUN_00454970",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "00454c0e",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_clipPolygonAgainstMinY_FUN_00454ad0",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "004551ae",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455070",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "00454bb2",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_clipPolygonAgainstMinY_FUN_00454ad0",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "00455152",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00455070",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "00454d78",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      },
+      {
+        "call_addr": "00454d1a",
+        "call_type": "direct",
+        "caller": "core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00454c40",
+        "estimated_params": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 44,
+        "stack_params": 11
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 7,
+    "declared_stack_bytes": 44,
+    "estimated_params": 11
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.496551724137931,
     "instruction_count": 145,
@@ -360,6 +480,17 @@
       "severity": "mild",
       "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) != 0 || (plane_nz._0_4_ != 0)))) {",
       "type": "unknown_field"
+    },
+    {
+      "call_site_count": 12,
+      "declared_params": 7,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 11,
+      "fix_type": "add_params",
+      "match": "declared:7 vs estimated:11",
+      "param_delta": 4,
+      "text": "Function declares 7 params but call sites push 11 (4 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

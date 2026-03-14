@@ -322,6 +322,48 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0048d301",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048a7aa",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048d0ac",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.127490039840637,
     "instruction_count": 502,

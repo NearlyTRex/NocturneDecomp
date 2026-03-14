@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 134,
+    "complexity_score": 93,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 79,
-    "suspect_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 78,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
-      "special_crt_function",
-      "stack_param"
+      "special_crt_function"
     ],
-    "total_lines": 251
+    "total_lines": 250
   },
   "cross_references": [
     {
@@ -33,7 +31,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_process.c_spawn_FUN_006105a0",
-    "signature": "int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblock,void *reserved)"
+    "signature": "int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblock,void *reserved,char **argv)"
   },
   "function_calls": [
     {
@@ -152,8 +150,10 @@
         "call_type": "direct",
         "caller": "crt_process.c_spawnvp_FUN_0060f39c",
         "estimated_params": 5,
-        "instructions_analyzed": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 20,
         "stack_params": 5
       },
       {
@@ -161,8 +161,10 @@
         "call_type": "direct",
         "caller": "crt_process.c_spawnvp_FUN_0060f39c",
         "estimated_params": 5,
-        "instructions_analyzed": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 20,
         "stack_params": 5
       },
       {
@@ -170,13 +172,16 @@
         "call_type": "direct",
         "caller": "crt_process.c_spawnvp_FUN_0060f39c",
         "estimated_params": 5,
-        "instructions_analyzed": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 20,
         "stack_params": 5
       }
     ],
     "confidence": "high",
-    "declared_params": 4,
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5
   },
   "pcode_summary": {
@@ -206,10 +211,10 @@
     "pcode_op_count": 502
   },
   "stack_frame": {
-    "frame_size": 112,
+    "frame_size": 132,
     "local_size": 112,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -270,7 +275,7 @@
       },
       {
         "is_param": true,
-        "name": "in_stack_00000014",
+        "name": "argv",
         "offset": 20,
         "size": 4,
         "type": "char * *"
@@ -278,33 +283,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "char **in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "build_command_line(cmdline,in_stack_00000014,envblock,0);",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 3,
-      "declared_params": 4,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:4 vs estimated:5",
-      "param_delta": 1,
-      "text": "Function declares 4 params but call sites push 5 (1 missing)",
-      "type": "param_count_too_few"
-    },
     {
       "address": "006105a0",
       "crt_type": "runtime support",

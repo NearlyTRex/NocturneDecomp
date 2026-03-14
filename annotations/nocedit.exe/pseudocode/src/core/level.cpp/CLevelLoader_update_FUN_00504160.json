@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 469,
-    "complexity_score": 331,
+    "complexity_score": 316,
     "cross_reference_count": 5,
     "function_call_count": 18,
     "global_count": 17,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 156,
-    "suspect_count": 16,
+    "suspect_count": 15,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_many",
       "pointer_cast"
     ],
     "total_lines": 625
@@ -267,96 +266,117 @@
         "call_addr": "00523d21",
         "call_type": "direct",
         "caller": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0",
-        "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "00524801",
         "call_type": "direct",
         "caller": "core_mission.cpp_CDemonMission_startMission_FUN_00524760",
-        "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "00569d63",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_load_FUN_00569410",
-        "estimated_params": 2,
-        "instructions_analyzed": 6,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "00522dc7",
         "call_type": "direct",
         "caller": "core_mission.cpp_CDemonMission_load_FUN_00522d90",
-        "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "0056aa32",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10",
-        "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "00523dd6",
         "call_type": "direct",
         "caller": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0",
-        "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "00523dfa",
         "call_type": "direct",
         "caller": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0",
-        "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "00569cba",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_load_FUN_00569410",
-        "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "00523e1d",
         "call_type": "direct",
         "caller": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_00523cf0",
-        "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "0056943f",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_load_FUN_00569410",
-        "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 12,
+        "stack_params": 3
       }
     ],
     "confidence": "high",
     "declared_params": 3,
-    "estimated_params": 2
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.201421800947867,
@@ -635,17 +655,6 @@
       "severity": "mild",
       "text": "*(int *)((int)&pCVar3->vertex_buffer_ptr->b + iVar7) = (this_ptr->color).b << 8;",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 10,
-      "declared_params": 3,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 2,
-      "fix_type": "remove_params",
-      "match": "declared:3 vs estimated:2",
-      "param_delta": -1,
-      "text": "Function declares 3 params but call sites push 2 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

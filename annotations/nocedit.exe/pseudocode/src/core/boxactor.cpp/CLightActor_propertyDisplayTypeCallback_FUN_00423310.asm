@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   void* switchdataD_004232f8 = 00423338
 ;   TerminatedCString s_Custom_0061698f
-;   undefined4 s_ustom_00616990
-;   undefined4 s_stom_00616991
+;   undefined4 s_ustom_0061698f+1
+;   undefined4 s_stom_0061698f+2
 ;   undefined4 s_tom_00616992
 ;   TerminatedCString s_Flashlight_00616996
 ;   undefined4 s_lashlight_00616997
@@ -57,13 +57,13 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 0042333d
         ;   Label: LAB_0042333d
     PUSH EDI                            ; 00423341
-    MOV AL,byte ptr [ESI]               ; 00423342 | = "Custom" | s_stom_00616991 | s_Flashlight_00616996
+    MOV AL,byte ptr [ESI]               ; 00423342 | = "Custom" | s_stom_0061698f+2 | s_Flashlight_00616996
         ;   Label: LAB_00423342
     MOV byte ptr [EDI],AL               ; 00423344
     CMP AL,0x0                          ; 00423346
     JZ 0x0042335a                       ; 00423348
         ;   XREF to: 0042335a (CONDITIONAL_JUMP)  ; LAB_0042335a
-    MOV AL,byte ptr [ESI + 0x1]         ; 0042334a | s_ustom_00616990 | s_tom_00616992 | s_lashlight_00616997
+    MOV AL,byte ptr [ESI + 0x1]         ; 0042334a | s_ustom_0061698f+1 | s_tom_00616992 | s_lashlight_00616997
     ADD ESI,0x2                         ; 0042334d
     MOV byte ptr [EDI + 0x1],AL         ; 00423350
     ADD EDI,0x2                         ; 00423353

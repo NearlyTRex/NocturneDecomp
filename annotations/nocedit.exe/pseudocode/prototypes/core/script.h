@@ -237,7 +237,7 @@ void __cdecl CScript::drawEditor(CScript *this_ptr);
 
 // Original: core_script.cpp_CScript_editorAction_FUN_00564820
 // Address: 00564820
-void __cdecl CScript::editorAction(CScript *this_ptr,EEditorActionType action_type);
+void __cdecl CScript::editorAction(CScript *this_ptr,EEditorActionType action_type,int action_parm);
 
 // Original: core_script.cpp_CScript_processEditorInput_FUN_00565130
 // Address: 00565130

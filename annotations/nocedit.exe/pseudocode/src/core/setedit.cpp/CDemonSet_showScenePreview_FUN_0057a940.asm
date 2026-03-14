@@ -461,7 +461,7 @@ section .text
     MOV EBX,dword ptr [0x00681ab8]      ; 0057ae16 | g_CSlewInstance | g_CSlewPtr
     PUSH EBX                            ; 0057ae1c | g_CSlewInstance
     CALL core_slew.cpp_CSlew_free_FUN_005a20a0 ; 0057ae1d
-        ;   XREF to: 005a20a0 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_free_FUN_005a20a0()
+        ;   XREF to: 005a20a0 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_free_FUN_005a20a0(CSlew * this_ptr)
     ADD ESP,0x4                         ; 0057ae22
     MOV ESI,dword ptr [EBP + 0x14]      ; 0057ae25
     PUSH ESI                            ; 0057ae28

@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 76,
+    "complexity_score": 61,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 46,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "param_count_too_few"
+      "negative_offset"
     ],
     "total_lines": 186
   },
@@ -158,33 +157,40 @@
         "call_addr": "00515ac9",
         "call_type": "direct",
         "caller": "shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0",
-        "estimated_params": 5,
-        "instructions_analyzed": 6,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0051b090",
         "call_type": "direct",
         "caller": "shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080",
-        "estimated_params": 5,
-        "instructions_analyzed": 9,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "00515956",
         "call_type": "direct",
         "caller": "shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950",
-        "estimated_params": 2,
-        "instructions_analyzed": 3,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 5
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.056603773584905,
@@ -235,17 +241,6 @@
       "severity": "mild",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->sample_points_ptr[-1].weight);",
       "type": "negative_offset"
-    },
-    {
-      "call_site_count": 3,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:5",
-      "param_delta": 4,
-      "text": "Function declares 1 params but call sites push 5 (4 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

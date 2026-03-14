@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 56,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 41,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 129
   },
   "cross_references": [
@@ -66,15 +64,18 @@
         "call_addr": "0055a3b8",
         "call_type": "direct",
         "caller": "core_script.cpp_CScript_buildParsedLines_FUN_0055a370",
-        "estimated_params": 1,
-        "instructions_analyzed": 3,
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 1
+        "stack_bytes": 8,
+        "stack_params": 2
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 2,
-    "estimated_params": 1
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.703125,
@@ -127,17 +128,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

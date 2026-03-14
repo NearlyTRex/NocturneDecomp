@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 23,
+    "complexity_score": 38,
     "cross_reference_count": 315,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 8,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "param_count_too_few",
       "special_crt_function"
     ],
     "total_lines": 25
@@ -1925,6 +1926,125 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "0040edc0",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0045ca00",
+        "call_type": "direct",
+        "caller": "shape_design.c_showPointEditor_FUN_0045c6c0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0046dce0",
+        "call_type": "direct",
+        "caller": "shape_design.c_cramTextureList_FUN_0046bb80",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004a0360",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_004a0300",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "00510fa0",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_configureGraphicsOptions_FUN_00510c80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00539f80",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005402a0",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0057f4e0",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_showCameraEditor_FUN_0057e7c0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005ae620",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae4b0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005f3940",
+        "call_type": "direct",
+        "caller": "wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005f3920",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.0,
     "instruction_count": 15,
@@ -1978,6 +2098,17 @@
     ]
   },
   "suspects": [
+    {
+      "call_site_count": 50,
+      "declared_params": 2,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:2 vs estimated:3",
+      "param_delta": 1,
+      "text": "Function declares 2 params but call sites push 3 (1 missing)",
+      "type": "param_count_too_few"
+    },
     {
       "address": "005fdbd0",
       "crt_type": "runtime support",

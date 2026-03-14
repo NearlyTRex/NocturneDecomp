@@ -1,13 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50(char *directory_path,char *filename,byte file_mode_flags,ifstream *file_stream)
+; void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   directory_path
 ; char *           Stack[0x8]:4   filename
-; byte             Stack[0xc]:1   file_mode_flags
-; undefined3       Stack[0xd]:3   in_stack_0000000d
+; uint             Stack[0xc]:4   mode_flags
 ; ifstream *       Stack[0x10]:4   file_stream
 ; Local Variables:
 ; SFoundFileInfo   Stack[-0x220]:532  local_220
@@ -18,7 +17,7 @@
 ; Called Functions:
 ;   crt_fstream.cpp_istream_seekg_FUN_00600ee4
 ;   crt_fstream.cpp_openFile_FUN_00600e85
-;   crt_stdio.c_clear_and_preserve_state_FUN_00600e64
+;   crt_iostream.cpp_ios_clear_FUN_00600e64
 ;   crt_stdio.c_fflush_FUN_00600e29
 ;   crt_watcom.c__mkdir_FUN_00600e10
 ;   engine_dosio.c_findFile_FUN_00481760
@@ -44,8 +43,8 @@ section .text
     PUSH 0x0                            ; 00481b75
     ADD EAX,EBX                         ; 00481b77
     PUSH EAX                            ; 00481b79
-    CALL crt_stdio.c_clear_and_preserve_state_FUN_00600e64 ; 00481b7a
-        ;   XREF to: 00600e64 (UNCONDITIONAL_CALL)  ; uint crt_stdio.c_clear_and_preserve_state_FUN_00600e64(FileEmbeddedData * embedded_data, uint error_code)
+    CALL crt_iostream.cpp_ios_clear_FUN_00600e64 ; 00481b7a
+        ;   XREF to: 00600e64 (UNCONDITIONAL_CALL)  ; uint crt_iostream.cpp_ios_clear_FUN_00600e64(ios * this_ptr, uint state_flags)
     ADD ESP,0x8                         ; 00481b7f
     MOV EDX,dword ptr [ESP + 0x228]     ; 00481b82
     PUSH EDX                            ; 00481b89

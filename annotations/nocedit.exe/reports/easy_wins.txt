@@ -10,17 +10,21 @@ sorted by effort required (lowest effort first).
 PRIORITY 1: Files with 1-2 functions remaining
 ====================================================================================================
 
-  cockpit/pkbmpset.cpp (1 remaining of 21)
-    - cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
-      Suspects: param_count_too_few
-
   support/newmsg.cpp (1 remaining of 4)
     - support_newmsg.cpp_readMessageFile_FUN_00543e40
       Suspects: pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast
 
-  engine/console.cpp (1 remaining of 8)
-    - engine_console.cpp_CConsole_render_FUN_00441b00
+  engine/palette.cpp (1 remaining of 10)
+    - engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060
       Suspects: pointer_cast
+
+  engine/winfont.cpp (1 remaining of 9)
+    - engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
+      Suspects: stack_param, stack_param, pointer_cast
+
+  engine/ini.cpp (1 remaining of 18)
+    - engine_ini.cpp_CIni_getProfileString_FUN_004fb250
+      Suspects: unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg
 
   engine/boss.c (1 remaining of 5)
     - engine_boss.c_modelStructNotSupported_FUN_0041dbe0
@@ -28,7 +32,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   engine/light.cpp (1 remaining of 10)
     - engine_light.cpp_calculatePhongLighting_FUN_00505530
-      Suspects: stack_alignment_array, pointer_cast, pointer_cast, pointer_cast, param_count_too_few
+      Suspects: stack_alignment_array, pointer_cast, pointer_cast, pointer_cast
 
   core/trap.cpp (1 remaining of 17)
     - core_trap.cpp_CTrap_process_FUN_005de770
@@ -36,6 +40,14 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/anvil.cpp (1 remaining of 13)
     - core_anvil.cpp_CAnvil_process_FUN_00411d90
+      Suspects: warning_type_propagation
+
+  core/dog.cpp (1 remaining of 13)
+    - core_dog.cpp_CZombieDog_process_FUN_0047f140
+      Suspects: warning_type_propagation, decompiler_intrinsic
+
+  core/drone.cpp (1 remaining of 13)
+    - core_drone.cpp_CDrone_process_FUN_0048ec70
       Suspects: warning_type_propagation
 
   core/dirmat.cpp (1 remaining of 7)
@@ -50,6 +62,10 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_shotgun.cpp_CShotgun_process_FUN_00587f70
       Suspects: unaffected_reg, unaffected_reg
 
+  core/dimage.cpp (1 remaining of 6)
+    - core_dimage.cpp_CDemonImage_load_FUN_00471ad0
+      Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param
+
   core/dynamite.cpp (1 remaining of 12)
     - core_dynamite.cpp_staticInit_FUN_0049cd40
       Suspects: undefined_data, undefined_data, undefined_data
@@ -60,15 +76,11 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/terrain.cpp (1 remaining of 4)
     - core_terrain.cpp_CTerrain_render_FUN_005e1f50
-      Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
+      Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, param_count_too_few
 
   core/keyactor.cpp (1 remaining of 15)
     - core_keyactor.cpp_CKeyActor_process_FUN_00501710
       Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
-
-  core/ammobox.cpp (1 remaining of 18)
-    - core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690
-      Suspects: param_count_too_many
 
   core/particle.cpp (1 remaining of 6)
     - core_particle.cpp_CParticle_process_FUN_00545760
@@ -76,7 +88,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/elephant.cpp (1 remaining of 10)
     - core_elephant.cpp_CElephantGun_process_FUN_004a7070
-      Suspects: warning_unmapped_variable
+      Suspects: unaffected_reg, unaffected_reg
 
   core/conveyor.cpp (1 remaining of 20)
     - core_conveyor.cpp_CConveyor_setup_FUN_00441d60
@@ -86,9 +98,9 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_grave.cpp_CGrave_getBoundingBox_FUN_004ee8f0
       Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic
 
-  core/hiram.cpp (1 remaining of 10)
-    - core_hiram.cpp_CHiram_dtor_FUN_004f4450
-      Suspects: negative_offset, negative_offset, negative_offset
+  core/larva.cpp (1 remaining of 13)
+    - core_larva.cpp_CLarva_process_FUN_00503080
+      Suspects: warning_inlined_function, warning_unreachable, unknown_type, stack_param, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, stack_param, decompiler_intrinsic, stack_ref, stack_ref
 
   core/setcolid.cpp (1 remaining of 40)
     - core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
@@ -101,14 +113,6 @@ PRIORITY 1: Files with 1-2 functions remaining
   core/dest.cpp (1 remaining of 13)
     - core_dest.cpp_CActorDestination_process_FUN_0046f9b0
       Suspects: pointer_cast, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
-
-  core/hpriest.cpp (1 remaining of 9)
-    - core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f7cb0
-      Suspects: negative_offset, negative_offset, negative_offset
-
-  core/crossbow.cpp (1 remaining of 12)
-    - core_crossbow.cpp_CCrossbow_getCurFrame_FUN_00449540
-      Suspects: param_count_too_few
 
   core/trash.cpp (1 remaining of 15)
     - core_trash.cpp_CTrash_process_FUN_005decf0
@@ -134,6 +138,10 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10
       Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, stack_param, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, stack_param, stack_param, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, unknown_field, decompiler_intrinsic, unknown_field, decompiler_intrinsic, unknown_field, stack_param, decompiler_intrinsic, stack_param, stack_param, pointer_cast, stack_ref, pointer_cast, stack_ref, stack_param, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_param, unknown_field, stack_param, pointer_cast, stack_ref, pointer_cast, stack_ref, stack_param, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_param, unknown_field, stack_param, pointer_cast, stack_ref, pointer_cast, stack_ref, stack_param, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_param, unknown_field, stack_param, pointer_cast, stack_ref, pointer_cast, stack_ref, stack_param, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_param, unknown_field, stack_param, pointer_cast, stack_ref, pointer_cast, stack_ref, stack_param, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_param, unknown_field, stack_param, pointer_cast, stack_ref, pointer_cast, stack_ref, stack_param, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_param, unknown_field, stack_param, stack_param, stack_param, stack_ref, pointer_cast, stack_param, stack_ref, pointer_cast, stack_param, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_param, unknown_field, stack_param, stack_param, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, stack_param, stack_param, suspect_float, stack_param, stack_param, stack_param, stack_param, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, unknown_field, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, stack_param, byvalue_struct_passing
 
+  core/hotdemon.cpp (1 remaining of 14)
+    - core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20
+      Suspects: warning_type_propagation, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
+
   core/chain.cpp (1 remaining of 21)
     - core_chain.cpp_CChain_process_FUN_004300d0
       Suspects: negative_offset, negative_offset, negative_offset, decompiler_intrinsic, negative_offset, negative_offset, negative_offset, decompiler_intrinsic, decompiler_intrinsic
@@ -148,11 +156,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/level.cpp (1 remaining of 6)
     - core_level.cpp_CLevelLoader_update_FUN_00504160
-      Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, pointer_cast, pointer_cast, pointer_cast, param_count_too_many
-
-  shape/multicrm.cpp (1 remaining of 6)
-    - shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70
-      Suspects: param_count_too_few
+      Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, pointer_cast, pointer_cast, pointer_cast
 
   engine/pcx.c (2 remaining of 4)
     - engine_pcx.c_writePCXScanline_FUN_00548c50
@@ -160,16 +164,10 @@ PRIORITY 1: Files with 1-2 functions remaining
     - engine_pcx.c_saveScreenshotGeneral_FUN_005490c0
       Suspects: pointer_cast, pointer_cast, pointer_cast, pointer_cast
 
-  engine/palette.cpp (2 remaining of 10)
-    - engine_palette.cpp_CFont_ctor_FUN_00544eb0
-      Suspects: param_count_too_few
-    - engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060
+  engine/console.cpp (2 remaining of 8)
+    - engine_console.cpp_CConsole_render_FUN_00441b00
       Suspects: pointer_cast
-
-  engine/winfont.cpp (2 remaining of 9)
-    - engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
-      Suspects: stack_param, stack_param, pointer_cast, param_count_too_few
-    - engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860
+    - engine_console.cpp_CConsole_printf_FUN_00441890
       Suspects: param_count_too_few
 
   engine/keyframe.c (2 remaining of 5)
@@ -177,12 +175,6 @@ PRIORITY 1: Files with 1-2 functions remaining
       Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
     - engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30
       Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
-
-  core/dog.cpp (2 remaining of 13)
-    - core_dog.cpp_CZombieDog_process_FUN_0047f140
-      Suspects: warning_type_propagation, decompiler_intrinsic
-    - core_dog.cpp_CZombieDog_dtor_FUN_0047f9a0
-      Suspects: negative_offset, negative_offset
 
   core/drip.cpp (2 remaining of 17)
     - core_drip.cpp_CDrip_propertyDisplayCallback_FUN_0048e830
@@ -196,29 +188,23 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_batcreat.cpp_CBatCreature_process_FUN_00415470
       Suspects: warning_type_propagation, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
 
-  core/drone.cpp (2 remaining of 13)
-    - core_drone.cpp_CDrone_dtor_FUN_0048f5a0
-      Suspects: negative_offset, negative_offset
-    - core_drone.cpp_CDrone_process_FUN_0048ec70
+  core/dracbrid.cpp (2 remaining of 25)
+    - core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20
       Suspects: warning_type_propagation
+    - core_dracbrid.cpp_CDraculaBride_process_FUN_00484410
+      Suspects: warning_inlined_function, warning_type_propagation, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
 
   core/door.cpp (2 remaining of 28)
     - core_door.cpp_CDoor_process_FUN_004800c0
       Suspects: pointer_cast, unresolved_funcptr, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
     - core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20
-      Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param
+      Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, param_count_too_few
 
   core/vehicle.cpp (2 remaining of 20)
     - core_vehicle.cpp_CVehicle_process_FUN_005e7e80
       Suspects: warning_type_propagation, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
     - core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0
       Suspects: pointer_cast
-
-  core/dimage.cpp (2 remaining of 6)
-    - core_dimage.cpp_CDemonImage_load_FUN_00471ad0
-      Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param
-    - core_dimage.cpp_CDemonImage_freeMemory_FUN_00471a40
-      Suspects: param_count_too_few
 
   core/marquee.cpp (2 remaining of 16)
     - core_marquee.cpp_CMarquee_renderTransparent_FUN_0050c050
@@ -250,11 +236,11 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_turret.cpp_CTurret_process_FUN_005e2430
       Suspects: stack_alignment_array, decompiler_intrinsic, suspect_float, suspect_float, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, unknown_field, unknown_field
 
-  core/larva.cpp (2 remaining of 13)
-    - core_larva.cpp_CLarva_dtor_FUN_00503cc0
-      Suspects: negative_offset, negative_offset
-    - core_larva.cpp_CLarva_process_FUN_00503080
-      Suspects: warning_inlined_function, warning_unreachable, unknown_type, stack_param, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, stack_param, decompiler_intrinsic, stack_ref, stack_ref
+  core/weapon.cpp (2 remaining of 27)
+    - core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0
+      Suspects: unaffected_reg, unaffected_reg, stack_param, unaffected_reg, stack_param, unaffected_reg, unaffected_reg
+    - core_weapon.cpp_CWeapon_ctor_FUN_005ede70
+      Suspects: decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, suspect_float, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
 
   core/water.cpp (2 remaining of 8)
     - core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
@@ -276,15 +262,9 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/cow.cpp (2 remaining of 14)
     - core_cow.cpp_CZombieCow_processDismemberment_FUN_004448c0
-      Suspects: warning_type_propagation, param_count_too_few
+      Suspects: warning_type_propagation
     - core_cow.cpp_CZombieCow_process_FUN_00444310
       Suspects: warning_type_propagation
-
-  core/hotdemon.cpp (2 remaining of 14)
-    - core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20
-      Suspects: warning_type_propagation, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
-    - core_hotdemon.cpp_CHotDemon_dtor_FUN_004f7a40
-      Suspects: negative_offset, negative_offset
 
   core/menu.cpp (2 remaining of 22)
     - core_menu.cpp_configureSoundOptions_FUN_00511e50
@@ -292,168 +272,24 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_menu.cpp_showMainGameMenu_FUN_00512f40
       Suspects: pointer_cast
 
+  core/waypoint.cpp (2 remaining of 19)
+    - core_waypoint.cpp_CWaypoint_setup_FUN_005ebeb0
+      Suspects: warning_type_propagation, decompiler_intrinsic
+    - core_waypoint.cpp_CWayPoint_findNearestReachable_FUN_005ec320
+      Suspects: pointer_cast
+
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [param_count_too_few] - 149 functions
-    cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660                 (  4 lines)
-    engine_2d.c_getTextWrapEnabled_FUN_004027f0                            (  4 lines)
-    engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00            (  4 lines)
-    sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970                 (  4 lines)
-    core_script.cpp_getDeformableModelFilename_FUN_00567d30                (  4 lines)
-    support_trisock.cpp_bindSocketWrapper_FUN_005e1af0                     (  5 lines)
-    engine_texture.cpp_CTextureCache_reset_FUN_005dcb20                    (  5 lines)
-    engine_palette.cpp_CFont_ctor_FUN_00544eb0                             (  5 lines)
-    engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620              (  5 lines)
-    engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0       (  5 lines)
-    core_netgame.cpp_copyInteger_FUN_00543e30                              (  5 lines)
-    core_bugs.cpp_CBugs_updateBoundingBox_FUN_00426410                     (  5 lines)
-    core_fire.cpp_CSmokeParticle_reset_FUN_004bf2e0                        (  5 lines)
-    core_set.cpp_CDemonSet_renderEnvMapBatchTri_FUN_0056ffe0               (  5 lines)
-    core_crossbow.cpp_CCrossbow_getCurFrame_FUN_00449540                   (  5 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00489590        (  6 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeight_FUN_00489b60 (  6 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_00489660 (  6 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0 (  6 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800 (  6 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730    (  6 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0 (  6 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInArea_FUN_004898e0  (  6 lines)
-    support_trisock.cpp_createNetworkAddr_FUN_005e1940                     (  6 lines)
-    core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004c7620              (  6 lines)
-    core_morph.cpp_CMorphModel_animateFromPartVertexBuffer_FUN_0052aa00    (  6 lines)
-    core_set.cpp_CDemonSet_loadAssets_FUN_0056fb80                         (  6 lines)
-    core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0     (  6 lines)
-    core_skeledit.cpp_CLodMeshPrecomputeEntry_reset_FUN_00589fc0           (  6 lines)
-    core_texlist.cpp_CTextureList_captureTexture_FUN_005dc270              (  6 lines)
-    wincore_wddvmem.cpp_freeLibrary_FUN_005ede00                           (  6 lines)
-    engine_matrix.c_setCameraOrigin_FUN_0050e270                           (  7 lines)
-    engine_2d.c_drawTextCenteredAt_FUN_00402280                            (  7 lines)
-    engine_2d.c_drawTextCentered_FUN_00402350                              (  7 lines)
-    engine_2d.c_drawTextRightAligned_FUN_004021c0                          (  7 lines)
-    engine_3d.c_makeGrayscaleColor_FUN_004039c0                            (  7 lines)
-    engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0048dc30           (  7 lines)
-    core_dtri.cpp_getClippedTriangleCount_FUN_0049cb30                     (  7 lines)
-    core_bodypart.cpp_addVector_FUN_0041b540                               (  7 lines)
-    shape_quantize.cpp_getAbsoluteValue_FUN_00556df0                       (  7 lines)
-    cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0054a8b0                  (  8 lines)
-    engine_matrix.c_setCameraRotation_FUN_0050e290                         (  8 lines)
-    engine_font.cpp_CBitFont_printFV_FUN_004cdd70                          (  8 lines)
-    shape_edittool.cpp_CEdCheck_clearActiveButtonIfMatch_FUN_004a6b50      (  8 lines)
-    shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0            (  8 lines)
-    shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40  (  8 lines)
-    shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530     (  8 lines)
-    engine_font.cpp_CBitFont_printCenterFV_FUN_004ce090                    (  9 lines)
-    engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde70                 (  9 lines)
-    engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc70                       (  9 lines)
-    engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf80         (  9 lines)
-    core_dimage.cpp_CDemonImage_freeMemory_FUN_00471a40                    (  9 lines)
-    core_dfilter.cpp_CDemonFilter_freeMemory_FUN_004702c0                  (  9 lines)
-    core_dfilter.cpp_CFilterFX_free_FUN_00470700                           (  9 lines)
-    core_motion.cpp_CMotionController_reset_FUN_0052dad0                   (  9 lines)
-    shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0        (  9 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40 ( 10 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0  ( 10 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450 ( 10 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790 ( 10 lines)
-    engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30          ( 10 lines)
-    core_gore.cpp_CGore_createWallBloodSplat_FUN_004edb70                  ( 10 lines)
-    core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30      ( 10 lines)
-    core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810         ( 10 lines)
-    wincore_windll.cpp_restoreVideoMode_FUN_005b75b0                       ( 10 lines)
-    cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60               ( 11 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520 ( 11 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30 ( 11 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860 ( 11 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0 ( 11 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940 ( 11 lines)
-    support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20               ( 11 lines)
-    engine_matrix.c_getCameraOrigin_FUN_0050e2c0                           ( 11 lines)
-    engine_matrix.c_getCameraRotation_FUN_0050e2f0                         ( 11 lines)
-    core_cloth.cpp_CCloth_free_FUN_00438cb0                                ( 11 lines)
-    core_setutil.cpp_C3DSCamera_free_FUN_00585360                          ( 11 lines)
-    core_actor.cpp_initTransformCache_FUN_00408870                         ( 11 lines)
-    core_event.cpp_CEventList_reset_FUN_004aaa70                           ( 11 lines)
-    cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0                   ( 12 lines)
-    support_trisock.cpp_buildIPAddress_FUN_005e1870                        ( 12 lines)
-    sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0                   ( 12 lines)
-    sound_sndmain.cpp_setNumberOfSfxChannels_FUN_005a9de0                  ( 12 lines)
-    core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0                   ( 12 lines)
-    core_fire.cpp_updateTextureAnimCounts_FUN_004c3870                     ( 12 lines)
-    core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_0052aa30     ( 12 lines)
-    support_codec.cpp_CLZWDictionary_free_FUN_0043ee10                     ( 13 lines)
-    core_fire.cpp_CLightningBolt_activate_FUN_004c5640                     ( 13 lines)
-    core_fire.cpp_CFireEffect_createToss_FUN_004c8dd0                      ( 13 lines)
-    core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_0052aa80      ( 13 lines)
-    core_setdir.cpp_CZThumb_free_FUN_00574b50                              ( 13 lines)
-    sound_sndmain.cpp_countActiveSfx_FUN_005a9ff0                          ( 14 lines)
-    core_fire.cpp_CTrail_activate_FUN_004c5df0                             ( 15 lines)
-    core_dtrace.cpp_CDemonRaytrace_freeNewCubeList_FUN_00494400            ( 15 lines)
-    shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10                     ( 15 lines)
-    shape_edittool.cpp_CStrList_copyFrom_FUN_004a2ac0                      ( 15 lines)
-    engine_matrix.c_integerSquareRoot_FUN_0050d890                         ( 16 lines)
-    engine_font.cpp_CBitFont_free_FUN_004cd4e0                             ( 16 lines)
-    core_morph.cpp_CMorphModel_free_FUN_0052a510                           ( 16 lines)
-    core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70              ( 16 lines)
-    shape_edittool.cpp_CEdScrollBar_clampToValidRange_FUN_004a63b0         ( 16 lines)
-    core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_00541260                ( 17 lines)
-    core_gore.cpp_CGore_allocateBloodPool_FUN_004edde0                     ( 17 lines)
-    core_gore.cpp_CGore_allocateBloodSplat_FUN_004edaf0                    ( 17 lines)
-    core_msnedit.cpp_CDemonMission_moveActorToScreenPos_FUN_0053c970       ( 17 lines)
-    core_charactr.cpp_CCharacter_isCarryingAnything_FUN_0042d360           ( 17 lines)
-    shape_meshlod.cpp_CLodVert_findEdge_FUN_00515e50                       ( 17 lines)
-    shape_meshlod.cpp_CLodEdge_findFace_FUN_00515d60                       ( 17 lines)
-    support_trisock.cpp_parseIPComponents_FUN_005e1800                     ( 18 lines)
-    sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0                     ( 18 lines)
-    core_dpart.cpp_CDemonPart_free_FUN_004822b0                            ( 18 lines)
-    core_actor.cpp_archiveLocation_FUN_0040b480                            ( 18 lines)
-    core_fire.cpp_CLightningBolt_activateDirectional_FUN_004c5680          ( 18 lines)
-    core_ground.cpp_CGround_free_FUN_004eefb0                              ( 18 lines)
-    shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500                      ( 18 lines)
-    core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0                           ( 19 lines)
-    core_fire.cpp_CShell_setup_FUN_004c6170                                ( 19 lines)
-    core_dfilter.cpp_CFilterCache_findFilter_FUN_004701a0                  ( 19 lines)
-    core_msnedit.cpp_CDemonMission_findSetByName_FUN_00538f40              ( 19 lines)
-    core_event.cpp_CEventList_findCounter_FUN_004b0950                     ( 19 lines)
-    engine_ini.cpp_CIniFile_init_FUN_004fbaa0                              ( 20 lines)
-    core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0    ( 21 lines)
-    support_codec.cpp_CLZWDictionary_init_FUN_0043ee60                     ( 22 lines)
-    core_dfilter.cpp_CFilterCache_free_FUN_00470000                        ( 22 lines)
-    engine_texture.cpp_CTextureCache_findTexture_FUN_005dd180              ( 24 lines)
-    core_inv.cpp_CInventory_removeMatchingKeys_FUN_005014a0                ( 24 lines)
-    shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50        ( 24 lines)
-    engine_matrix.c_matrixPush_FUN_0050d620                                ( 26 lines)
-    core_fire.cpp_CLaserBeam_init_FUN_004c2420                             ( 26 lines)
-    core_box.cpp_CBox_setupVelocities_FUN_00420180                         ( 26 lines)
-    core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0                           ( 27 lines)
-    core_skeleton.cpp_loadSkeleton_FUN_005a1df0                            ( 28 lines)
-    core_ground.cpp_CGround_init_FUN_004eef00                              ( 28 lines)
-    core_netgame.cpp_CNetGame_initializeNetworkToHost_FUN_0053f860         ( 30 lines)
-    core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_005ee740                   ( 30 lines)
-    engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0                    ( 32 lines)
-    core_inv.cpp_getItemModel_FUN_004fcda0                                 ( 32 lines)
-    core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0                    ( 32 lines)
-    core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0                 ( 33 lines)
-    core_fire.cpp_CToss_create_FUN_004c3ee0                                ( 35 lines)
-    core_gore.cpp_CGore_spawnFlies_FUN_004edf30                            ( 36 lines)
-    core_waypoint.cpp_CWayPoint_cleanupAdjacency_FUN_005ec830              ( 36 lines)
-    cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054adb0 ( 37 lines)
-    engine_matrix.c_transformWorldToView_FUN_0050cc40                      ( 37 lines)
-    core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0               ( 37 lines)
-    engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0      ( 39 lines)
-    engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20 ( 40 lines)
-    core_dlight.cpp_CDemonLight_endScene_FUN_00472d30                      ( 41 lines)
-    core_morph.cpp_CMorph_previewMorph_FUN_0052ca90                        ( 44 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0                    ( 45 lines)
-
-  [pointer_cast] - 71 functions
+  [pointer_cast] - 73 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360                        (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0                         (  5 lines)
     shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0                   ( 10 lines)
     core_morph.cpp_countTrianglesFromPolygons_FUN_0052a490                 ( 12 lines)
     core_sound.cpp_stopTrainSounds_FUN_005b2ca0                            ( 14 lines)
     shape_design.c_getVertexCountFromModel_FUN_00468080                    ( 14 lines)
+    shape_design.c_findVertexListInModel_FUN_00468000                      ( 14 lines)
     core_sound.cpp_CSound_shutdown_FUN_005b2f70                            ( 16 lines)
     core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004c93d0            ( 16 lines)
     core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0                           ( 17 lines)
@@ -487,8 +323,10 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     wincore_wddvmem.cpp_initializeScanlinePointers_FUN_005ece60            ( 27 lines)
     engine_3d.c_flushRenderQueue_FUN_00407a30                              ( 28 lines)
     core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044f290 ( 29 lines)
+    core_dtrace.cpp_CDemonRaytrace_freeCubeList_FUN_004942d0               ( 29 lines)
     shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0             ( 29 lines)
     wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580                      ( 29 lines)
+    engine_dosio.c_reopenFileStream_FUN_00481b50                           ( 30 lines)
     engine_2d.c_unmapFrameBuffer_FUN_00403670                              ( 30 lines)
     core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0 ( 30 lines)
     shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0  ( 30 lines)
@@ -501,17 +339,16 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_hero.cpp_closestHeroToPoint_FUN_004f2170                          ( 35 lines)
     core_ground.cpp_CGround_transformAndStoreVertex_FUN_004ef3a0           ( 35 lines)
     engine_3d.c_renderOverlayTextureEnable_FUN_00404020                    ( 36 lines)
+    core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00453160              ( 37 lines)
     core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0                 ( 40 lines)
     engine_colquant.c_partitionByRed_FUN_00440b40                          ( 41 lines)
     wincore_windll.cpp_clearScreen_FUN_005b3f37                            ( 41 lines)
-    engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0               ( 42 lines)
     core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_005bb010          ( 42 lines)
     core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0            ( 44 lines)
     engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550    ( 45 lines)
     core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970                 ( 45 lines)
     core_dstrender.cpp_renderDepthOnlyStandard_FUN_0049072f                ( 45 lines)
     core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020        ( 46 lines)
-    core_event.cpp_CEventList_setCounter_FUN_004b0720                      ( 46 lines)
     engine_drender.cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50  ( 47 lines)
     core_netgame.cpp_CNetGame_addPlayer_FUN_005412b0                       ( 47 lines)
     core_dlight.cpp_CDemonLight_beginBackgroundScene_FUN_00472e40          ( 47 lines)
@@ -520,35 +357,56 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_dstrender.cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5 ( 48 lines)
     core_msnedit.cpp_CDemonMission_pickActorByName_FUN_0053c210            ( 49 lines)
 
-  [param_count_too_many] - 28 functions
+  [param_count_too_few] - 49 functions
+    cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660                 (  4 lines)
+    engine_2d.c_getTextWrapEnabled_FUN_004027f0                            (  4 lines)
+    sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970                 (  4 lines)
+    support_trisock.cpp_bindSocketWrapper_FUN_005e1af0                     (  5 lines)
+    engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d620              (  5 lines)
+    engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480             (  5 lines)
     sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40                         (  5 lines)
-    engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930                   (  6 lines)
-    engine_font.cpp_CBitFont_drawTextWrapper_FUN_004cdbf0                  (  6 lines)
-    core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0059ab20         (  6 lines)
-    engine_texture.cpp_updateTextureWithPalette_FUN_005dd900               (  7 lines)
-    core_morph.cpp_CMorph_setupModelFromKeyframed_FUN_0052b470             (  7 lines)
-    core_skeleton.cpp_CDeformableModel_lightVertices_FUN_0059ab50          (  7 lines)
-    core_bodypart.cpp_scaleVector_FUN_0041b4e0                             (  7 lines)
-    shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_004a0400      (  7 lines)
-    engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30                     (  8 lines)
-    core_script.cpp_parseCommandWithDefaultTemplates_FUN_00561c70          (  8 lines)
-    engine_dosio.c_changeFileExtension_FUN_00482050                        (  9 lines)
-    core_procedur.cpp_CProceduralTexture_calculateWaveOffset_FUN_00554620  (  9 lines)
-    core_dmodel.cpp_CKeyFramedModel_scaleUniform_FUN_0047c4a0              (  9 lines)
+    core_bugs.cpp_CBugs_updateBoundingBox_FUN_00426410                     (  5 lines)
+    core_actor.cpp_generateRandomValue_FUN_0040cba0                        (  5 lines)
+    core_sound.cpp_CSound_dtor_FUN_005aaeb0                                (  5 lines)
+    core_texlist.cpp_CTextureList_captureTexture_FUN_005dc270              (  6 lines)
+    core_dtri.cpp_getClippedTriangleCount_FUN_0049cb30                     (  7 lines)
+    sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0                   (  8 lines)
+    engine_font.cpp_CBitFont_drawTextF_FUN_004cdc20                        (  9 lines)
+    sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290                  (  9 lines)
+    shape_design.c_validatePolygonNormals_FUN_00461d80                     (  9 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40 ( 10 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0  ( 10 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450 ( 10 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790 ( 10 lines)
+    engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580            ( 10 lines)
+    engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004cdf30          ( 10 lines)
+    sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_005aa240             ( 10 lines)
+    shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0               ( 10 lines)
+    wincore_windll.cpp_restoreVideoMode_FUN_005b75b0                       ( 10 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520 ( 11 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30 ( 11 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860 ( 11 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0 ( 11 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940 ( 11 lines)
+    engine_matrix.c_getCameraOrigin_FUN_0050e2c0                           ( 11 lines)
+    engine_matrix.c_getCameraRotation_FUN_0050e2f0                         ( 11 lines)
+    sound_sndmain.cpp_set3DListenerPos_FUN_005aa020                        ( 11 lines)
     sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0                ( 11 lines)
-    core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690                         ( 12 lines)
-    core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0           ( 12 lines)
-    shape_design.c_polygonMergerSelectAndProcess_FUN_00465160              ( 12 lines)
-    sound_mp3.cpp_CMP3Decoder_putByte_FUN_0052f260                         ( 14 lines)
+    sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0                   ( 12 lines)
+    core_fire.cpp_updateTextureAnimCounts_FUN_004c3870                     ( 12 lines)
+    shape_design.c_calculateSamplingWeight_FUN_0046adc0                    ( 12 lines)
+    sound_sndmain.cpp_countActiveSfx_FUN_005a9ff0                          ( 14 lines)
     shape_design.c_clampedArccos_FUN_00461c50                              ( 16 lines)
-    shape_dsemodel.cpp_CDSEModel_scaleX_FUN_0048fd70                       ( 23 lines)
-    shape_dsemodel.cpp_CDSEModel_scaleY_FUN_0048fe20                       ( 23 lines)
-    shape_dsemodel.cpp_CDSEModel_scaleZ_FUN_0048fcc0                       ( 23 lines)
-    core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0                ( 25 lines)
-    engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50     ( 34 lines)
-    core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090    ( 38 lines)
-    core_script.cpp_trimLine_FUN_005592c0                                  ( 41 lines)
-    sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0                            ( 48 lines)
+    sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0                     ( 18 lines)
+    shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500                      ( 18 lines)
+    sound_sndmain.cpp_setSfxPosition_FUN_005a9820                          ( 21 lines)
+    core_platfrm.cpp_CPlatform_propertyActionSlewCallback_FUN_0054e480     ( 22 lines)
+    sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540               ( 23 lines)
+    engine_matrix.c_matrixPush_FUN_0050d620                                ( 26 lines)
+    engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0                    ( 32 lines)
+    core_baron.cpp_CBaron_updateMountedPosition_FUN_004135e0               ( 37 lines)
+    engine_console.cpp_CConsole_printf_FUN_00441890                        ( 43 lines)
+    core_morph.cpp_CMorph_previewMorph_FUN_0052ca90                        ( 44 lines)
 
   [warning_type_propagation] - 15 functions
     core_zombie.cpp_CZombie_canPickupWithHand_FUN_005fbda0                 ( 11 lines)
@@ -567,6 +425,22 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_anvil.cpp_CAnvil_process_FUN_00411d90                             ( 46 lines)
     core_mission.cpp_CDemonMission_process_FUN_00524250                    ( 46 lines)
 
+  [param_count_too_many] - 14 functions
+    engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930                   (  6 lines)
+    engine_texture.cpp_updateTextureWithPalette_FUN_005dd900               (  7 lines)
+    engine_dosio.c_changeFileExtension_FUN_00482050                        (  9 lines)
+    core_xform.cpp_negateFirstComponent_FUN_005f75e0                       ( 14 lines)
+    core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0          ( 15 lines)
+    core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0                           ( 19 lines)
+    core_xform.cpp_buildZFlipMatrix_FUN_005f6fa0                           ( 27 lines)
+    core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10                          ( 32 lines)
+    core_dcamera.cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370      ( 33 lines)
+    engine_matrix.c_transformWorldToView_FUN_0050cc40                      ( 37 lines)
+    core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090    ( 38 lines)
+    core_set.cpp_transformToWorldSpace_FUN_0056e890                        ( 38 lines)
+    engine_pod.cpp_CPodFile_getAuditRecord_FUN_00550590                    ( 42 lines)
+    core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70       ( 44 lines)
+
   [unnamed_param] - 9 functions
     core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260               (  8 lines)
     core_actor.cpp_CActorPropertyList_addGroundType_FUN_0040e300           (  9 lines)
@@ -578,6 +452,25 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500            ( 27 lines)
     core_actor.cpp_CActorPropertyList_addFile_FUN_0040e3e0                 ( 31 lines)
 
+  [warning_unreachable] - 8 functions
+    core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880             ( 20 lines)
+    core_course.cpp_CCourse_allocMemory_FUN_00442500                       ( 23 lines)
+    core_inv.cpp_CInventory_clear_FUN_004fd0e0                             ( 24 lines)
+    engine_font.cpp_setShadowColor_FUN_004ce0f0                            ( 27 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220             ( 40 lines)
+    shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10            ( 40 lines)
+    shape_design.c_setupViewMatrix_FUN_0045ba60                            ( 42 lines)
+    core_game.cpp_CGame_playerControls_FUN_004dbd80                        ( 49 lines)
+
+  [negative_offset] - 7 functions
+    core_set.cpp_CDemonSet_dtor_FUN_00569350                               ( 14 lines)
+    core_course.cpp_CCourse_free_FUN_004426c0                              ( 14 lines)
+    core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690                ( 17 lines)
+    core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40           ( 21 lines)
+    core_manpuz.cpp_CMansionPuzzleCircle_dtor_FUN_0050b890                 ( 24 lines)
+    core_dcube.cpp_CDemonCube_freeMemory_FUN_004569b0                      ( 32 lines)
+    shape_meshlod.cpp_CLodMesh_free_FUN_00515970                           ( 46 lines)
+
   [unresolved_funcptr] - 7 functions
     shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40               ( 17 lines)
     shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0             ( 17 lines)
@@ -586,15 +479,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_3d.c_dispatchMRGLBlockChain_FUN_00407890                        ( 21 lines)
     engine_dosio.c_findFile_FUN_00481760                                   ( 23 lines)
     shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070                  ( 36 lines)
-
-  [warning_unreachable] - 7 functions
-    core_procedur.cpp_CProceduralTexture_showMenu_FUN_00554880             ( 20 lines)
-    core_course.cpp_CCourse_allocMemory_FUN_00442500                       ( 23 lines)
-    engine_font.cpp_setShadowColor_FUN_004ce0f0                            ( 27 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220             ( 40 lines)
-    shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10            ( 40 lines)
-    shape_design.c_setupViewMatrix_FUN_0045ba60                            ( 42 lines)
-    core_game.cpp_CGame_playerControls_FUN_004dbd80                        ( 49 lines)
 
   [undefined_data] - 6 functions
     sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005b0340 ( 11 lines)
@@ -611,13 +495,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     shape_design.c_renderEditorBackgroundOverlay_FUN_0045d920              ( 19 lines)
     shape_superopt.cpp_logToFile_FUN_005c7910                              ( 20 lines)
 
-  [negative_offset] - 5 functions
-    core_set.cpp_CDemonSet_dtor_FUN_00569350                               ( 14 lines)
-    core_course.cpp_CCourse_free_FUN_004426c0                              ( 14 lines)
-    core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690                ( 17 lines)
-    core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40           ( 21 lines)
-    core_manpuz.cpp_CMansionPuzzleCircle_dtor_FUN_0050b890                 ( 24 lines)
-
   [special_cpu_detection] - 3 functions
     core_mmx.c_detectMMXSupport_FUN_00524ff9                               (  7 lines)
     core_mmx.c_detectCPUFeatures_FUN_00524f10                              (  9 lines)
@@ -632,15 +509,14 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_dmodel.cpp_safeAcos_FUN_0047b170                                  ( 20 lines)
     shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80                ( 22 lines)
 
-  [warning_unmapped_variable] - 2 functions
-    cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30                ( 24 lines)
-    core_elephant.cpp_CElephantGun_process_FUN_004a7070                    ( 33 lines)
-
   [mmx_assembly] - 1 functions
     core_dstrender.cpp_saveMMXRegisters_FUN_004906b0                       ( 12 lines)
 
   [unknown_field] - 1 functions
     engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90 ( 20 lines)
+
+  [warning_unmapped_variable] - 1 functions
+    cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30                ( 24 lines)
 
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
@@ -665,11 +541,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
     1 functions remaining:
       core_lever.cpp_CLever_getHandlePosition_FUN_00504dd0 (28 lines)
         Types: ['decompiler_intrinsic', 'warning_inlined_function']
-
-  cockpit/pkbmpset.cpp (95.2% complete)
-    1 functions remaining:
-      cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60 (11 lines)
-        Types: ['param_count_too_few']
 
   core/stairs.cpp (95.2% complete)
     1 functions remaining:
@@ -696,10 +567,10 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_bat.cpp_CBat_getBoundingBox_FUN_00414c60 (17 lines)
         Types: ['decompiler_intrinsic', 'warning_inlined_function']
 
-  core/ammobox.cpp (94.4% complete)
+  engine/ini.cpp (94.4% complete)
     1 functions remaining:
-      core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690 (12 lines)
-        Types: ['param_count_too_many']
+      engine_ini.cpp_CIni_getProfileString_FUN_004fb250 (113 lines)
+        Types: ['unaffected_reg']
 
   core/trap.cpp (94.1% complete)
     1 functions remaining:
@@ -710,6 +581,15 @@ PRIORITY 3: Files at 90%+ (finish them off!)
     1 functions remaining:
       core_grave.cpp_CGrave_getBoundingBox_FUN_004ee8f0 (38 lines)
         Types: ['decompiler_intrinsic', 'warning_inlined_function']
+
+  core/boxactor.cpp (93.5% complete)
+    3 functions remaining:
+      core_boxactor.cpp_CLightActor_process_FUN_00422a50 (82 lines)
+        Types: ['pointer_cast']
+      core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_00421fe0 (17 lines)
+        Types: ['decompiler_intrinsic', 'warning_inlined_function']
+      core_boxactor.cpp_CBoxActor_process_FUN_004219e0 (134 lines)
+        Types: ['decompiler_intrinsic', 'unknown_field', 'warning_inlined_function']
 
   core/keyactor.cpp (93.3% complete)
     1 functions remaining:
@@ -731,27 +611,72 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_door.cpp_CDoor_process_FUN_004800c0 (194 lines)
         Types: ['decompiler_intrinsic', 'pointer_cast', 'unresolved_funcptr']
       core_door.cpp_CDoor_getOpenStandPos_FUN_00480e20 (91 lines)
-        Types: ['stack_param']
+        Types: ['param_count_too_few', 'stack_param']
+
+  core/hotdemon.cpp (92.9% complete)
+    1 functions remaining:
+      core_hotdemon.cpp_CHotDemon_process_FUN_004f6f20 (315 lines)
+        Types: ['decompiler_intrinsic', 'warning_type_propagation']
 
   core/npc.cpp (92.9% complete)
     1 functions remaining:
       core_npc.cpp_CNPC_dtor_FUN_004f4700 (33 lines)
         Types: ['negative_offset']
 
+  core/weapon.cpp (92.6% complete)
+    2 functions remaining:
+      core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0 (47 lines)
+        Types: ['stack_param', 'unaffected_reg']
+      core_weapon.cpp_CWeapon_ctor_FUN_005ede70 (32 lines)
+        Types: ['decompiler_intrinsic', 'suspect_float']
+
   core/anvil.cpp (92.3% complete)
     1 functions remaining:
       core_anvil.cpp_CAnvil_process_FUN_00411d90 (46 lines)
         Types: ['warning_type_propagation']
+
+  core/dog.cpp (92.3% complete)
+    1 functions remaining:
+      core_dog.cpp_CZombieDog_process_FUN_0047f140 (282 lines)
+        Types: ['decompiler_intrinsic', 'warning_type_propagation']
+
+  core/drone.cpp (92.3% complete)
+    1 functions remaining:
+      core_drone.cpp_CDrone_process_FUN_0048ec70 (275 lines)
+        Types: ['warning_type_propagation']
+
+  core/larva.cpp (92.3% complete)
+    1 functions remaining:
+      core_larva.cpp_CLarva_process_FUN_00503080 (342 lines)
+        Types: ['decompiler_intrinsic', 'stack_param', 'stack_ref', 'unknown_type', 'warning_inlined_function', 'warning_unreachable']
 
   core/dest.cpp (92.3% complete)
     1 functions remaining:
       core_dest.cpp_CActorDestination_process_FUN_0046f9b0 (56 lines)
         Types: ['decompiler_intrinsic', 'pointer_cast']
 
+  core/dracbrid.cpp (92.0% complete)
+    2 functions remaining:
+      core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20 (22 lines)
+        Types: ['warning_type_propagation']
+      core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (759 lines)
+        Types: ['decompiler_intrinsic', 'warning_inlined_function', 'warning_type_propagation']
+
   core/dynamite.cpp (91.7% complete)
     1 functions remaining:
       core_dynamite.cpp_staticInit_FUN_0049cd40 (10 lines)
         Types: ['undefined_data']
+
+  core/hero.cpp (91.7% complete)
+    4 functions remaining:
+      core_hero.cpp_CHero_dtor_FUN_004f2470 (33 lines)
+        Types: ['decompiler_intrinsic', 'negative_offset', 'pointer_cast']
+      core_hero.cpp_closestHeroToPoint_FUN_004f2170 (35 lines)
+        Types: ['pointer_cast']
+      core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 (24 lines)
+        Types: ['pointer_cast']
+      core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0 (24 lines)
+        Types: ['decompiler_intrinsic', 'pointer_cast']
 
   core/turret.cpp (91.7% complete)
     2 functions remaining:
@@ -760,21 +685,36 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_turret.cpp_CTurret_process_FUN_005e2430 (199 lines)
         Types: ['decompiler_intrinsic', 'pointer_cast', 'stack_alignment_array', 'suspect_float', 'unknown_field']
 
-  core/crossbow.cpp (91.7% complete)
-    1 functions remaining:
-      core_crossbow.cpp_CCrossbow_getCurFrame_FUN_00449540 (5 lines)
+  shape/edittool.cpp (91.0% complete)
+    14 functions remaining:
+      shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0 (50 lines)
+        Types: ['decompiler_intrinsic', 'pointer_cast', 'unknown_field']
+      shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0 (181 lines)
+        Types: ['byvalue_struct_passing', 'decompiler_intrinsic', 'pointer_cast', 'stack_param', 'stack_ref', 'unknown_field', 'warning_inlined_function']
+      shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 (10 lines)
         Types: ['param_count_too_few']
-
-  core/boxactor.cpp (91.3% complete)
-    4 functions remaining:
-      core_boxactor.cpp_CLightActor_setupLightModel_FUN_00422d60 (82 lines)
-        Types: ['param_count_too_few']
-      core_boxactor.cpp_CLightActor_process_FUN_00422a50 (82 lines)
+      shape_edittool.cpp_paintWindowBackground_FUN_0049e590 (55 lines)
         Types: ['pointer_cast']
-      core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_00421fe0 (17 lines)
+      shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40 (67 lines)
+        Types: ['byvalue_struct_passing', 'decompiler_intrinsic', 'pointer_cast', 'stack_param', 'stack_ref', 'unknown_field']
+      shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050 (239 lines)
+        Types: ['byvalue_struct_passing', 'decompiler_intrinsic', 'pointer_cast', 'stack_param', 'stack_ref', 'unknown_field']
+      shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70 (212 lines)
+        Types: ['negative_offset', 'pointer_cast']
+      shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_004a3360 (99 lines)
+        Types: ['pointer_cast']
+      shape_edittool.cpp_CInputString_init_FUN_0049d3d0 (32 lines)
+        Types: ['pointer_cast']
+      shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0 (48 lines)
+        Types: ['pointer_cast']
+      shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0 (50 lines)
+        Types: ['pointer_cast']
+      shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410 (48 lines)
+        Types: ['pointer_cast']
+      shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 (86 lines)
         Types: ['decompiler_intrinsic', 'warning_inlined_function']
-      core_boxactor.cpp_CBoxActor_process_FUN_004219e0 (134 lines)
-        Types: ['decompiler_intrinsic', 'unknown_field', 'warning_inlined_function']
+      shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970 (160 lines)
+        Types: ['pointer_cast']
 
   core/menu.cpp (90.9% complete)
     2 functions remaining:
@@ -783,10 +723,15 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_menu.cpp_showMainGameMenu_FUN_00512f40 (200 lines)
         Types: ['pointer_cast']
 
+  engine/palette.cpp (90.0% complete)
+    1 functions remaining:
+      engine_palette.cpp_CPaletteManager_scanTextures_FUN_00545060 (60 lines)
+        Types: ['pointer_cast']
+
   engine/light.cpp (90.0% complete)
     1 functions remaining:
       engine_light.cpp_calculatePhongLighting_FUN_00505530 (103 lines)
-        Types: ['param_count_too_few', 'pointer_cast', 'stack_alignment_array']
+        Types: ['pointer_cast', 'stack_alignment_array']
 
   core/vehicle.cpp (90.0% complete)
     2 functions remaining:
@@ -809,13 +754,17 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 
   core/elephant.cpp (90.0% complete)
     1 functions remaining:
-      core_elephant.cpp_CElephantGun_process_FUN_004a7070 (33 lines)
-        Types: ['warning_unmapped_variable']
+      core_elephant.cpp_CElephantGun_process_FUN_004a7070 (31 lines)
+        Types: ['unaffected_reg']
 
-  core/hiram.cpp (90.0% complete)
-    1 functions remaining:
-      core_hiram.cpp_CHiram_dtor_FUN_004f4450 (35 lines)
-        Types: ['negative_offset']
+  core/box.cpp (90.0% complete)
+    3 functions remaining:
+      core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680 (82 lines)
+        Types: ['decompiler_intrinsic', 'pointer_cast']
+      core_box.cpp_CBox_processPhysics_FUN_0041e350 (779 lines)
+        Types: ['decompiler_intrinsic', 'pointer_cast']
+      core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940 (178 lines)
+        Types: ['decompiler_intrinsic', 'warning_unreachable']
 
   core/flamegun.cpp (90.0% complete)
     1 functions remaining:
@@ -825,123 +774,116 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 ====================================================================================================
 ALL REMAINING FILES
 ====================================================================================================
-  core/hero.cpp                                                 89.6%  (43/48 clean, 5 remaining)
-  core/weapon.cpp                                               88.9%  (24/27 clean, 3 remaining)
+  core/event.cpp                                                89.3%  (50/56 clean, 6 remaining)
   engine/dosio.c                                                88.5%  (23/26 clean, 3 remaining)
   core/curtain.cpp                                              88.5%  (23/26 clean, 3 remaining)
-  core/dracbrid.cpp                                             88.0%  (22/25 clean, 3 remaining)
+  shape/memdbg.cpp                                              88.5%  (23/26 clean, 3 remaining)
+  core/fire.cpp                                                 87.6%  (162/185 clean, 23 remaining)
   core/glass.cpp                                                87.5%  (21/24 clean, 3 remaining)
   core/manpuz.cpp                                               87.3%  (55/63 clean, 8 remaining)
   core/flies.cpp                                                86.4%  (19/22 clean, 3 remaining)
+  core/inv.cpp                                                  86.0%  (37/43 clean, 6 remaining)
   core/mission.cpp                                              85.4%  (35/41 clean, 6 remaining)
-  engine/pod.cpp                                                85.3%  (29/34 clean, 5 remaining)
-  shape/memdbg.cpp                                              84.6%  (22/26 clean, 4 remaining)
-  shape/edittool.cpp                                            84.6%  (132/156 clean, 24 remaining)
+  support/codec.cpp                                             85.0%  (34/40 clean, 6 remaining)
+  core/motion.cpp                                               84.8%  (28/33 clean, 5 remaining)
+  core/bodypart.cpp                                             84.4%  (38/45 clean, 7 remaining)
+  core/dfilter.cpp                                              84.2%  (16/19 clean, 3 remaining)
   core/enemy.cpp                                                84.2%  (16/19 clean, 3 remaining)
   core/svetlana.cpp                                             84.2%  (16/19 clean, 3 remaining)
+  engine/font.cpp                                               83.7%  (41/49 clean, 8 remaining)
+  core/cloth.cpp                                                83.6%  (46/55 clean, 9 remaining)
+  core/actor.cpp                                                83.6%  (153/183 clean, 30 remaining)
+  core/charactr.cpp                                             83.5%  (91/109 clean, 18 remaining)
   core/haystack.cpp                                             83.3%  (15/18 clean, 3 remaining)
-  core/box.cpp                                                  83.3%  (25/30 clean, 5 remaining)
   core/frankgen.cpp                                             83.3%  (20/24 clean, 4 remaining)
-  wincore/windll.cpp                                            83.3%  (60/72 clean, 12 remaining)
+  core/hostage.cpp                                              83.3%  (15/18 clean, 3 remaining)
   core/wateract.cpp                                             82.6%  (19/23 clean, 4 remaining)
   core/vampboss.cpp                                             82.6%  (19/23 clean, 4 remaining)
-  core/actor.cpp                                                82.5%  (151/183 clean, 32 remaining)
+  engine/pod.cpp                                                82.4%  (28/34 clean, 6 remaining)
   core/baron.cpp                                                82.4%  (28/34 clean, 6 remaining)
+  core/imp.cpp                                                  82.4%  (14/17 clean, 3 remaining)
   core/flame.cpp                                                82.4%  (14/17 clean, 3 remaining)
   core/dtri.cpp                                                 82.1%  (23/28 clean, 5 remaining)
-  core/event.cpp                                                82.1%  (46/56 clean, 10 remaining)
-  core/cloth.cpp                                                81.8%  (45/55 clean, 10 remaining)
-  core/fire.cpp                                                 81.6%  (151/185 clean, 34 remaining)
-  core/inv.cpp                                                  81.4%  (35/43 clean, 8 remaining)
+  wincore/windll.cpp                                            81.9%  (59/72 clean, 13 remaining)
+  engine/texture.cpp                                            81.8%  (18/22 clean, 4 remaining)
+  core/gore.cpp                                                 81.5%  (44/54 clean, 10 remaining)
+  core/script.cpp                                               81.2%  (78/96 clean, 18 remaining)
   core/batman.cpp                                               81.2%  (13/16 clean, 3 remaining)
   core/werewolf.cpp                                             81.0%  (17/21 clean, 4 remaining)
-  core/charactr.cpp                                             80.7%  (88/109 clean, 21 remaining)
+  core/setutil.cpp                                              80.5%  (33/41 clean, 8 remaining)
   core/sound.cpp                                                80.5%  (33/41 clean, 8 remaining)
-  support/codec.cpp                                             80.0%  (32/40 clean, 8 remaining)
+  engine/2d.c                                                   80.3%  (61/76 clean, 15 remaining)
   core/tvbat.cpp                                                80.0%  (16/20 clean, 4 remaining)
-  core/bodypart.cpp                                             80.0%  (36/45 clean, 9 remaining)
   core/ladder.cpp                                               78.9%  (15/19 clean, 4 remaining)
-  core/waypoint.cpp                                             78.9%  (15/19 clean, 4 remaining)
   core/succubus.cpp                                             78.6%  (11/14 clean, 3 remaining)
   core/sentinel.cpp                                             78.6%  (11/14 clean, 3 remaining)
   core/icepick.cpp                                              78.3%  (18/23 clean, 5 remaining)
-  core/setutil.cpp                                              78.0%  (32/41 clean, 9 remaining)
-  core/hostage.cpp                                              77.8%  (14/18 clean, 4 remaining)
+  core/morph.cpp                                                77.6%  (38/49 clean, 11 remaining)
+  cockpit/drawsurf.cpp                                          77.4%  (72/93 clean, 21 remaining)
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
-  core/imp.cpp                                                  76.5%  (13/17 clean, 4 remaining)
-  engine/2d.c                                                   76.3%  (58/76 clean, 18 remaining)
   core/scat.cpp                                                 76.0%  (19/25 clean, 6 remaining)
-  core/motion.cpp                                               75.8%  (25/33 clean, 8 remaining)
-  core/script.cpp                                               75.0%  (72/96 clean, 24 remaining)
+  cockpit/pkbitmap.cpp                                          75.8%  (25/33 clean, 8 remaining)
+  support/trisock.cpp                                           75.0%  (24/32 clean, 8 remaining)
+  core/gargoyle.cpp                                             75.0%  (12/16 clean, 4 remaining)
   core/smiley.cpp                                               75.0%  (12/16 clean, 4 remaining)
   core/boneguy.cpp                                              75.0%  (21/28 clean, 7 remaining)
+  core/ground.cpp                                               75.0%  (15/20 clean, 5 remaining)
   core/tbplayer.cpp                                             75.0%  (12/16 clean, 4 remaining)
-  core/gore.cpp                                                 74.1%  (40/54 clean, 14 remaining)
+  core/set.cpp                                                  74.7%  (65/87 clean, 22 remaining)
+  core/msnedit.cpp                                              74.6%  (47/63 clean, 16 remaining)
   core/gabriela.cpp                                             73.7%  (28/38 clean, 10 remaining)
-  core/set.cpp                                                  73.6%  (64/87 clean, 23 remaining)
-  core/msnedit.cpp                                              73.0%  (46/63 clean, 17 remaining)
-  engine/texture.cpp                                            72.7%  (16/22 clean, 6 remaining)
+  core/netgame.cpp                                              73.4%  (47/64 clean, 17 remaining)
+  engine/fileio.cpp                                             73.2%  (52/71 clean, 19 remaining)
   core/passngr.cpp                                              72.7%  (8/11 clean, 3 remaining)
-  engine/ini.cpp                                                72.2%  (13/18 clean, 5 remaining)
+  core/game.cpp                                                 72.5%  (50/69 clean, 19 remaining)
+  core/setdir.cpp                                               72.2%  (26/36 clean, 10 remaining)
   sound/snddx.cpp                                               71.9%  (23/32 clean, 9 remaining)
-  engine/fileio.cpp                                             71.8%  (51/71 clean, 20 remaining)
   core/dcube.cpp                                                71.8%  (28/39 clean, 11 remaining)
-  engine/font.cpp                                               71.4%  (35/49 clean, 14 remaining)
+  core/skeleton.cpp                                             71.8%  (84/117 clean, 33 remaining)
   core/moon.cpp                                                 71.4%  (10/14 clean, 4 remaining)
   core/stranger.cpp                                             71.4%  (45/63 clean, 18 remaining)
   core/lightgun.cpp                                             71.4%  (10/14 clean, 4 remaining)
   shape/cramtex.cpp                                             71.4%  (15/21 clean, 6 remaining)
-  core/game.cpp                                                 71.0%  (49/69 clean, 20 remaining)
-  sound/sndmain.cpp                                             71.0%  (137/193 clean, 56 remaining)
   core/bugs.cpp                                                 70.5%  (31/44 clean, 13 remaining)
   core/weather.cpp                                              70.0%  (7/10 clean, 3 remaining)
-  core/platfrm.cpp                                              70.0%  (21/30 clean, 9 remaining)
   wincore/winrun.cpp                                            69.7%  (23/33 clean, 10 remaining)
+  engine/3d.c                                                   69.2%  (72/104 clean, 32 remaining)
   core/zombie.cpp                                               68.8%  (22/32 clean, 10 remaining)
-  core/gargoyle.cpp                                             68.8%  (11/16 clean, 5 remaining)
-  engine/3d.c                                                   68.3%  (71/104 clean, 33 remaining)
-  core/morph.cpp                                                67.3%  (33/49 clean, 16 remaining)
-  core/netgame.cpp                                              67.2%  (43/64 clean, 21 remaining)
-  cockpit/drawsurf.cpp                                          66.7%  (62/93 clean, 31 remaining)
-  cockpit/pkbitmap.cpp                                          66.7%  (22/33 clean, 11 remaining)
+  shape/design.c                                                68.7%  (112/163 clean, 51 remaining)
+  sound/sndmain.cpp                                             68.4%  (132/193 clean, 61 remaining)
   engine/alphabit.cpp                                           66.7%  (6/9 clean, 3 remaining)
+  core/dpart.cpp                                                66.7%  (10/15 clean, 5 remaining)
   core/tentacle.cpp                                             66.7%  (10/15 clean, 5 remaining)
-  core/skeleton.cpp                                             66.7%  (78/117 clean, 39 remaining)
-  core/setdir.cpp                                               66.7%  (24/36 clean, 12 remaining)
-  shape/design.c                                                66.3%  (108/163 clean, 55 remaining)
-  core/ground.cpp                                               65.0%  (13/20 clean, 7 remaining)
+  core/ghoul.cpp                                                66.7%  (12/18 clean, 6 remaining)
+  core/platfrm.cpp                                              66.7%  (20/30 clean, 10 remaining)
+  shape/quantize.cpp                                            66.7%  (22/33 clean, 11 remaining)
   core/bride.cpp                                                64.3%  (9/14 clean, 5 remaining)
-  core/dfilter.cpp                                              63.2%  (12/19 clean, 7 remaining)
+  wincore/wddvmem.cpp                                           64.3%  (18/28 clean, 10 remaining)
   sound/sndwav.cpp                                              62.9%  (22/35 clean, 13 remaining)
-  support/trisock.cpp                                           62.5%  (20/32 clean, 12 remaining)
+  core/dlight.cpp                                               62.2%  (23/37 clean, 14 remaining)
+  core/skeledit.cpp                                             62.2%  (46/74 clean, 28 remaining)
   core/mobster.cpp                                              61.5%  (16/26 clean, 10 remaining)
-  core/ghoul.cpp                                                61.1%  (11/18 clean, 7 remaining)
-  wincore/wddvmem.cpp                                           60.7%  (17/28 clean, 11 remaining)
-  shape/quantize.cpp                                            60.6%  (20/33 clean, 13 remaining)
-  core/dpart.cpp                                                60.0%  (9/15 clean, 6 remaining)
-  core/main.c                                                   60.0%  (6/10 clean, 4 remaining)
-  core/dlight.cpp                                               59.5%  (22/37 clean, 15 remaining)
-  core/skeledit.cpp                                             59.5%  (44/74 clean, 30 remaining)
-  core/xform.cpp                                                59.0%  (36/61 clean, 25 remaining)
+  shape/dsemodel.cpp                                            60.0%  (6/10 clean, 4 remaining)
+  shape/meshlod.cpp                                             59.7%  (74/124 clean, 50 remaining)
+  core/dmodel.cpp                                               59.4%  (41/69 clean, 28 remaining)
   core/mimic.cpp                                                58.3%  (14/24 clean, 10 remaining)
+  engine/drender.cpp                                            58.0%  (51/88 clean, 37 remaining)
+  core/dtrace.cpp                                               56.9%  (29/51 clean, 22 remaining)
+  engine/matrix.c                                               56.7%  (17/30 clean, 13 remaining)
   core/path.cpp                                                 56.0%  (14/25 clean, 11 remaining)
-  shape/meshlod.cpp                                             55.6%  (69/124 clean, 55 remaining)
-  shape/superopt.cpp                                            55.4%  (103/186 clean, 83 remaining)
-  core/dmodel.cpp                                               55.1%  (38/69 clean, 31 remaining)
-  core/setedit.cpp                                              53.4%  (31/58 clean, 27 remaining)
-  engine/drender.cpp                                            53.4%  (47/88 clean, 41 remaining)
-  core/dtrace.cpp                                               52.9%  (27/51 clean, 24 remaining)
+  shape/superopt.cpp                                            55.9%  (104/186 clean, 82 remaining)
+  core/setedit.cpp                                              55.2%  (32/58 clean, 26 remaining)
   engine/model.c                                                50.0%  (4/8 clean, 4 remaining)
-  core/dcamera.cpp                                              48.8%  (42/86 clean, 44 remaining)
-  cockpit/ckptutil.c                                            47.3%  (26/55 clean, 29 remaining)
-  engine/matrix.c                                               46.7%  (14/30 clean, 16 remaining)
-  sound/mp3.cpp                                                 45.6%  (26/57 clean, 31 remaining)
+  core/main.c                                                   50.0%  (5/10 clean, 5 remaining)
+  cockpit/ckptutil.c                                            49.1%  (27/55 clean, 28 remaining)
+  sound/mp3.cpp                                                 47.4%  (27/57 clean, 30 remaining)
+  core/dcamera.cpp                                              46.5%  (40/86 clean, 46 remaining)
+  core/xform.cpp                                                45.9%  (28/61 clean, 33 remaining)
   engine/prim.c                                                 42.9%  (9/21 clean, 12 remaining)
   core/course.cpp                                               40.0%  (6/15 clean, 9 remaining)
   engine/clipper.c                                              35.7%  (10/28 clean, 18 remaining)
   core/dglobe.cpp                                               33.3%  (2/6 clean, 4 remaining)
-  shape/dsemodel.cpp                                            30.0%  (3/10 clean, 7 remaining)
+  core/procedur.cpp                                             25.0%  (1/4 clean, 3 remaining)
   core/dstrender.cpp                                            12.9%  (4/31 clean, 27 remaining)
   engine/colquant.c                                             11.1%  (1/9 clean, 8 remaining)
-  core/procedur.cpp                                              0.0%  (0/4 clean, 4 remaining)
   core/mmx.c                                                     0.0%  (0/4 clean, 4 remaining)

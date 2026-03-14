@@ -91,6 +91,37 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00564d22",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_editorAction_FUN_00564820",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004a5713",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CPickList_remove_FUN_004a56f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.092307692307692,
     "instruction_count": 65,
@@ -130,12 +161,12 @@
       "caller_details": [
         {
           "caller": "CStrList_removeAt_FUN_004a2de0",
-          "estimated_params": 3
+          "estimated_params": 0
         }
       ],
-      "estimated_params": 3,
+      "estimated_params": 0,
       "param_estimates": [
-        3
+        0
       ]
     },
     "possible_callers": [
@@ -173,5 +204,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStrList",
+        "offset": 4,
+        "vtable_addr": "0065d474"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

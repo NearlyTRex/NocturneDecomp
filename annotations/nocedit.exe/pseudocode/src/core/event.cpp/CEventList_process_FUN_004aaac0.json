@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 69,
+    "complexity_score": 53,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 54,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
-    "total_lines": 158
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 53,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 157
   },
   "cross_references": [
     {
@@ -68,13 +66,16 @@
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_process_FUN_004e3190",
         "estimated_params": 1,
-        "instructions_analyzed": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 4,
         "stack_params": 1
       }
     ],
     "confidence": "medium",
     "declared_params": 1,
+    "declared_stack_bytes": 4,
     "estimated_params": 1
   },
   "pcode_summary": {
@@ -156,14 +157,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(void *)((int)",
-      "severity": "mild",
-      "text": "(void *)((int)((this_ptr->counters).names + -2) + 0x18 + iVar1 * 4),",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

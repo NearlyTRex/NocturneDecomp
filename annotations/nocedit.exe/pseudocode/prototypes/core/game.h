@@ -109,7 +109,7 @@ void __cdecl CGame::processJoystickControls(CGame *this_ptr,SPlayerControl *play
 
 // Original: core_game.cpp_pollKeyStateOnChange_FUN_004dc270
 // Address: 004dc270
-void __cdecl pollKeyStateOnChange(void);
+void __cdecl pollKeyStateOnChange(int key_index,int *output_state);
 
 // Original: core_game.cpp_pollKeyEdgeTrigger_FUN_004dc2a0
 // Address: 004dc2a0
@@ -121,7 +121,7 @@ void __cdecl rampControlAxis(int negative_key,int positive_key,float *axis_value
 
 // Original: core_game.cpp_dampControlAxis_FUN_004dc370
 // Address: 004dc370
-void __cdecl dampControlAxis(void);
+void __cdecl dampControlAxis(float *axis_value,float damp_time,float damp_rate);
 
 // Original: core_game.cpp_CGame_processKeyboardControls_FUN_004dc3e0
 // Address: 004dc3e0
@@ -175,9 +175,9 @@ void __cdecl CGame::beginFadeIn(CGame *this_ptr);
 // Address: 004e0960
 void __cdecl CGame::beginFadeOut(CGame *this_ptr);
 
-// Original: core_game.cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0
+// Original: core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0
 // Address: 004e09a0
-void __cdecl CGame::calculateIrisFadeCenter(CGame *this_ptr);
+void __cdecl calculateIrisFadeCenter(void);
 
 // Original: core_game.cpp_CGame_updateFadeTransition_FUN_004e09c0
 // Address: 004e09c0

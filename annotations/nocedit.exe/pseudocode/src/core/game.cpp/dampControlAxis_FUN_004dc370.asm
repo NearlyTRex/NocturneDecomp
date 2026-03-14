@@ -1,11 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(void)
+; void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(float *axis_value,float damp_time,float damp_rate)
 ;
 ; Parameters:
+; float *          Stack[0x4]:4   axis_value
 ; float *          Stack[0x4]:4   in_stack_00000004
+; float            Stack[0x8]:4   damp_time
 ; float            Stack[0x8]:4   in_stack_00000008
+; float            Stack[0xc]:4   damp_rate
 ; float            Stack[0xc]:4   in_stack_0000000c
 ;
 ; Referenced Globals:

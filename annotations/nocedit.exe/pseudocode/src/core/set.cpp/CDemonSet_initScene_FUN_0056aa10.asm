@@ -198,7 +198,7 @@ section .text
     ADD EBP,0x4                         ; 0056ab8f
     INC EDI                             ; 0056ab92
     CALL core_dlight.cpp_CDemonLight_endScene_FUN_00472d30 ; 0056ab93
-        ;   XREF to: 00472d30 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight * this_ptr)
+        ;   XREF to: 00472d30 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight * this_ptr, int restore_viewport_state)
     MOV EDX,dword ptr [0x03276dac]      ; 0056ab98 | g_MasterLightCount
     ADD ESP,0x8                         ; 0056ab9e
     CMP EDI,EDX                         ; 0056aba1

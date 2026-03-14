@@ -85,7 +85,6 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
   int local_20;
   int local_1c;
   int local_18;
-  int in_stack_fffffed8;
   double max_search_radius;
   float fVar2;
   double *pdVar1;
@@ -94,7 +93,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLo
   pCVar7->collapse_cost = 9.9999999999999997e+34;
   pCVar7->needs_recalc_flag = 0;
   iVar3 = shape_meshlod_cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
-                    (this_ptr,pCVar7->vertex_idx_1,pCVar7->vertex_idx_2,in_stack_fffffed8);
+                    (this_ptr,pCVar7->vertex_idx_1,pCVar7->vertex_idx_2);
   if (iVar3 == edge_index) {
     iVar8 = shape_meshlod_cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480
                       (this_ptr,edge_index,pCVar7->vertex_idx_1);

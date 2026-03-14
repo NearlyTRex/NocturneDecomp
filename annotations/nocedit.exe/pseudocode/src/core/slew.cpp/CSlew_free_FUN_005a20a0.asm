@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_slew_cpp_CSlew_free_FUN_005a20a0(void)
+; void __cdecl core_slew_cpp_CSlew_free_FUN_005a20a0(CSlew *this_ptr)
 ;
+; Parameters:
+; CSlew *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
 ;   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 at 0057db80

@@ -45,7 +45,7 @@ int __cdecl CPathMap::isLineWalkable(CPathMap *this_ptr,int start_x,int start_z,
 
 // Original: core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90
 // Address: 00546e90
-int __cdecl CPathMap::checkAxisAlignedPath(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z);
+int __cdecl CPathMap::checkAxisAlignedPath(CPathMap *this_ptr,int start_x,int start_z,int end_x,int end_z);
 
 // Original: core_path.cpp_CPathMap_findPathToDestination_FUN_00547320
 // Address: 00547320

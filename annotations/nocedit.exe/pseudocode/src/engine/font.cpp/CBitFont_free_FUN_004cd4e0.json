@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 31,
+    "complexity_score": 16,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 48
   },
   "cross_references": [
@@ -83,24 +81,29 @@
         "call_addr": "004cd288",
         "call_type": "direct",
         "caller": "engine_font.cpp_CBitFont_loadNewBitmap_FUN_004cd280",
-        "estimated_params": 4,
-        "instructions_analyzed": 5,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 4
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "004cceb6",
         "call_type": "direct",
         "caller": "engine_font.cpp_CBitFont_dtor_FUN_004cceb0",
-        "estimated_params": 2,
-        "instructions_analyzed": 3,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 4
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.6296296296296298,
@@ -142,17 +145,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 2,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:4",
-      "param_delta": 3,
-      "text": "Function declares 1 params but call sites push 4 (3 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

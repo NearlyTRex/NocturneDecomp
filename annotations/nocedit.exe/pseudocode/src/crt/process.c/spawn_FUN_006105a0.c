@@ -2,11 +2,11 @@
 // Address: 006105a0
 // Address Range: [[006105a0, 00610752]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblock,void *reserved)
+// Signature: int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblock,void *reserved,char **argv)
 
 #include "nocturne.h"
 
-int __cdecl spawn(int mode,char *cmdline,char *envblock,void *reserved)
+int __cdecl spawn(int mode,char *cmdline,char *envblock,void *reserved,char **argv)
 
 {
   BOOL BVar1;
@@ -15,7 +15,6 @@ int __cdecl spawn(int mode,char *cmdline,char *envblock,void *reserved)
   DWORD DVar3;
   HANDLE hTargetProcessHandle;
   HANDLE hSourceProcessHandle;
-  char **in_stack_00000014;
   _STARTUPINFOA local_6c;
   _PROCESS_INFORMATION local_28;
   HANDLE pvStack_18;
@@ -24,7 +23,7 @@ int __cdecl spawn(int mode,char *cmdline,char *envblock,void *reserved)
   HANDLE hSourceHandle;
   HANDLE *lpTargetHandle;
   
-  build_command_line(cmdline,in_stack_00000014,envblock,0);
+  build_command_line(cmdline,argv,envblock,0);
   memset(&local_6c,0,0x44);
   local_6c.wShowWindow = 1;
   BVar1 = (*g_CreateProcessAFunc)

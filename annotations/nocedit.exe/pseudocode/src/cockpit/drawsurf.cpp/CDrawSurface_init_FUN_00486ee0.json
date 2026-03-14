@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 60,
+    "complexity_score": 45,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 45,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 169
   },
   "cross_references": [
@@ -66,24 +64,29 @@
         "call_addr": "00486ec2",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0",
-        "estimated_params": 10,
-        "instructions_analyzed": 16,
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 10
+        "stack_bytes": 24,
+        "stack_params": 6
       },
       {
         "call_addr": "00486e8a",
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486e70",
-        "estimated_params": 7,
-        "instructions_analyzed": 12,
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 7
+        "stack_bytes": 24,
+        "stack_params": 6
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 6,
-    "estimated_params": 10
+    "declared_stack_bytes": 24,
+    "estimated_params": 6
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.23,
@@ -163,17 +166,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 2,
-      "declared_params": 6,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 10,
-      "fix_type": "add_params",
-      "match": "declared:6 vs estimated:10",
-      "param_delta": 4,
-      "text": "Function declares 6 params but call sites push 10 (4 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

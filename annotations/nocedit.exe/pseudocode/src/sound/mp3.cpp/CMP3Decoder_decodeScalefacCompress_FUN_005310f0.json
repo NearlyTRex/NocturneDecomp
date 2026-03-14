@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 312,
-    "complexity_score": 259,
+    "complexity_score": 244,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 104,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_few",
       "pointer_cast"
     ],
     "total_lines": 416
@@ -62,15 +61,18 @@
         "call_addr": "005314ce",
         "call_type": "direct",
         "caller": "sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480",
-        "estimated_params": 10,
-        "instructions_analyzed": 29,
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 10
+        "stack_bytes": 24,
+        "stack_params": 6
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 6,
-    "estimated_params": 10
+    "declared_stack_bytes": 24,
+    "estimated_params": 6
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.8604651162790695,
@@ -291,17 +293,6 @@
       "severity": "mild",
       "text": "local_1a = CONCAT22(5,(ushort)local_1a);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 6,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 10,
-      "fix_type": "add_params",
-      "match": "declared:6 vs estimated:10",
-      "param_delta": 4,
-      "text": "Function declares 6 params but call sites push 10 (4 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

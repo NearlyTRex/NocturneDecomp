@@ -167,7 +167,7 @@ LAB_0060e0af:
         }
       }
     }
-    uVar13 = uVar9 & 0xfffff | (uVar6 << 0x15) >> 1 | (uint)CARRY4(uVar6,uVar6) << 0x1f;
+    uVar13 = uVar9 & 0xfffff | (uVar6 & 0x7ff) << 0x14 | (uint)CARRY4(uVar6,uVar6) << 0x1f;
   }
   return __BITCAST_DOUBLE(CONCAT44(uVar13,uVar11));
 }

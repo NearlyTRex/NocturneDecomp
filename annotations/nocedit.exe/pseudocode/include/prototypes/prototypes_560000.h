@@ -67,7 +67,7 @@ void __cdecl core_script_cpp_clearSelections_FUN_005644e0(void);
 void __cdecl core_script_cpp_updateSelection_FUN_00564500(void);
 void __cdecl core_script_cpp_getSelectionRangeForLine_FUN_00564560(int line,int *sel_start_col_out,int *sel_end_col_out);
 void __cdecl core_script_cpp_CScript_drawEditor_FUN_005645d0(CScript *this_ptr);
-void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr,EEditorActionType action_type);
+void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr,EEditorActionType action_type,int action_parm);
 void __cdecl core_script_cpp_CScript_processEditorInput_FUN_00565130(CScript *this_ptr);
 void __cdecl core_script_cpp_CScript_gotoPosition_FUN_00565aa0(CScript *this_ptr,int column,int line);
 void __cdecl core_script_cpp_CScript_editParameterAtPosition_FUN_00565ae0(CScript *this_ptr,int column,int line);

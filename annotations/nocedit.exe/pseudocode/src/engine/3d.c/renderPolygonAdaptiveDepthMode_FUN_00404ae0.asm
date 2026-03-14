@@ -77,7 +77,7 @@ section .text
     PUSH ECX                            ; 00404b58
     MOV [0x02d02574],EAX                ; 00404b59 | g_CurrentLightingValue
     CALL engine_3d.c_makeGrayscaleColor_FUN_004039c0 ; 00404b5e
-        ;   XREF to: 004039c0 (UNCONDITIONAL_CALL)  ; uint engine_3d.c_makeGrayscaleColor_FUN_004039c0(int intensity)
+        ;   XREF to: 004039c0 (UNCONDITIONAL_CALL)  ; uint engine_3d.c_makeGrayscaleColor_FUN_004039c0(int color_value, int lighting_value)
     ADD ESP,0x8                         ; 00404b63
     PUSH EDI                            ; 00404b66
     MOV EDI,dword ptr [EBX + 0x4]       ; 00404b67

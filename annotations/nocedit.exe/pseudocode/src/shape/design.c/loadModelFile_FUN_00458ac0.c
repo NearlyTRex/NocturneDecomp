@@ -46,8 +46,8 @@ int __cdecl shape_design_c_loadModelFile_FUN_00458ac0(char *filename)
     bVar1 = *filename;
     *pbVar5 = bVar1;
     if (bVar1 == 0) break;
-    bVar2 = ((byte *)filename)[1];
-    filename = (char *)((byte *)filename + 2);
+    bVar2 = filename[1];
+    filename = filename + 2;
     pbVar5[1] = bVar2;
     pbVar5 = pbVar5 + 2;
   } while (bVar2 != 0);
@@ -96,8 +96,8 @@ LAB_00458b67:
         }
         bVar2 = pbVar6[1];
         pbVar6 = pbVar6 + 2;
-        ((byte *)pcVar6)[1] = bVar2;
-        pcVar6 = (char *)((byte *)pcVar6 + 2);
+        pcVar6[1] = bVar2;
+        pcVar6 = pcVar6 + 2;
       } while (bVar2 != 0);
       g_VertexOptimizationPasses = 0;
       g_PolygonOptimizationPasses = 0;
@@ -121,8 +121,8 @@ LAB_00458b67:
         }
         bVar2 = pbVar6[1];
         pbVar6 = pbVar6 + 2;
-        ((byte *)pcVar8)[1] = bVar2;
-        pcVar8 = (char *)((byte *)pcVar8 + 2);
+        pcVar8[1] = bVar2;
+        pcVar8 = pcVar8 + 2;
       } while (bVar2 != 0);
       g_VertexOptimizationPasses = 0;
       g_PolygonOptimizationPasses = 0;
@@ -146,8 +146,8 @@ LAB_00458b67:
       if (bVar2 == 0) break;
       bVar2 = pbVar6[1];
       pbVar6 = pbVar6 + 2;
-      ((byte *)pcVar8)[1] = bVar2;
-      pcVar8 = (char *)((byte *)pcVar8 + 2);
+      pcVar8[1] = bVar2;
+      pcVar8 = pcVar8 + 2;
     } while (bVar2 != 0);
     g_PolygonOptimizationPasses = 0;
     g_VertexOptimizationPasses = 0;

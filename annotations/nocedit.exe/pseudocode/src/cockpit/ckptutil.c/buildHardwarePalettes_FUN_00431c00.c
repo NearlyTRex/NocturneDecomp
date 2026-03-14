@@ -27,10 +27,10 @@ void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(char *rgb_pal
     iVar6 = 0;
     do {
       bVar5 = *rgb_palette_data;
-      pbVar3 = (byte *)rgb_palette_data + 1;
-      pbVar4 = (byte *)rgb_palette_data + 2;
+      pbVar3 = (byte *)(rgb_palette_data + 1);
+      pbVar4 = (byte *)(rgb_palette_data + 2);
       iVar7 = iVar6 + 2;
-      rgb_palette_data = (char *)((byte *)rgb_palette_data + 3);
+      rgb_palette_data = rgb_palette_data + 3;
       *(ushort *)((int)g_Hardware16BitPalette + iVar6) =
            (ushort)((uint)*pbVar3 / (uint)g_GreenScaleFactor << (g_GreenBitPosition.bytes[0] & 0x1f)
                    ) |
@@ -42,11 +42,11 @@ void __cdecl cockpit_ckptutil_c_buildHardwarePalettes_FUN_00431c00(char *rgb_pal
   }
   iVar4 = 0;
   do {
-    pbVar1 = (byte *)rgb_palette_data + 1;
+    pbVar1 = (byte *)(rgb_palette_data + 1);
     bVar3 = *rgb_palette_data;
-    pbVar2 = (byte *)rgb_palette_data + 2;
+    pbVar2 = (byte *)(rgb_palette_data + 2);
     iVar5 = iVar4 + 4;
-    rgb_palette_data = (char *)((byte *)rgb_palette_data + 3);
+    rgb_palette_data = rgb_palette_data + 3;
     *(uint *)((int)g_Hardware32BitPalette + iVar4) =
          (uint)*pbVar2 << (g_BlueBitPosition.bytes[0] & 0x1f) |
          (uint)bVar3 << (g_RedBitPosition.bytes[0] & 0x1f) |

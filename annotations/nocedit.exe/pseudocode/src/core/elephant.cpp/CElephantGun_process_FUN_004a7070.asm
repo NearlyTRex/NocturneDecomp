@@ -6,7 +6,7 @@
 ; Parameters:
 ; char             Stack[0x0]:1   local_res0
 ; CElephantGun *   Stack[0x4]:4   this_ptr
-; float            Stack[0x10]:4   delta_time
+; float            Stack[0x8]:4   delta_time
 ; Local Variables:
 ; CVector3f        Stack[-0x20]:12  local_20
 ; CVector3f        Stack[-0x14]:12  local_14
@@ -65,6 +65,7 @@ section .text
     PUSH EBX                            ; 004a70b1
     MOV dword ptr [0x02d807a4],ECX      ; 004a70b2 | g_CDemonLightInstance.light_enabled_flag
     CALL dword ptr [EDX + 0xf4]         ; 004a70b8
+        ;   Label: prt_4a70b8_b76712a0
     ADD ESP,0x8                         ; 004a70be
     PUSH EAX                            ; 004a70c1
     LEA EAX,[ESP + 0xc]                 ; 004a70c2

@@ -36,11 +36,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_00453950(CDemo
   this_ptr->alpha_transform_matrices[0xc][alpha_index] = g_InverseMatrix.m[1].x;
   this_ptr->alpha_transform_matrices[0xd][alpha_index] = g_InverseMatrix.m[1].y;
   this_ptr->alpha_transform_matrices[0xe][alpha_index] = g_InverseMatrix.m[1].z;
-  *(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -10) + alpha_index * 4) =
-       g_InverseMatrix.m[2].x;
-  *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x58) =
-       g_InverseMatrix.m[2].y;
-  *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x38) =
-       g_InverseMatrix.m[2].z;
+  this_ptr->alpha_transform_matrices[0xf][alpha_index] = g_InverseMatrix.m[2].x;
+  this_ptr->alpha_transform_matrices[0x10][alpha_index] = g_InverseMatrix.m[2].y;
+  this_ptr->alpha_transform_matrices[0x11][alpha_index] = g_InverseMatrix.m[2].z;
   return;
 }

@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 139,
+    "complexity_score": 154,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
+      "param_count_too_many",
       "pointer_cast",
       "stack_alignment_array",
       "warning_inlined_function"
@@ -90,6 +91,92 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "0049a1c4",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0049a2e5",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054734c",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_findPathToDestination_FUN_00547320",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00546b0e",
+        "call_type": "direct",
+        "caller": "core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005483d0",
+        "call_type": "direct",
+        "caller": "core_path.cpp_getOrCreatePathMap_FUN_00548390",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054581e",
+        "call_type": "direct",
+        "caller": "core_particle.cpp_CParticle_process_FUN_00545760",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054869d",
+        "call_type": "direct",
+        "caller": "core_path.cpp_renderPathMapsAtPosition_FUN_00548680",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.673076923076923,
     "instruction_count": 52,
@@ -242,6 +329,17 @@
       "severity": "mild",
       "text": "output_voxel_coords->x = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "call_site_count": 7,
+      "declared_params": 3,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 2,
+      "fix_type": "remove_params",
+      "match": "declared:3 vs estimated:2",
+      "param_delta": -1,
+      "text": "Function declares 3 params but call sites push 2 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

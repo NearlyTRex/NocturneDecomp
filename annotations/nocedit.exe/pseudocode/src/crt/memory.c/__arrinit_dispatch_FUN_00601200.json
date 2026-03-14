@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 61,
+    "complexity_score": 46,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
       "special_crt_function",
       "unresolved_funcptr"
     ],
@@ -61,24 +60,29 @@
         "call_addr": "00601268",
         "call_type": "direct",
         "caller": "crt_unknown.c_AnotherFunctorCall2_FUN_00601258",
-        "estimated_params": 4,
-        "instructions_analyzed": 7,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 4
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "0060124f",
         "call_type": "direct",
         "caller": "crt_memory.c___vec_new_FUN_00601232",
         "estimated_params": 3,
-        "instructions_analyzed": 9,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 12,
         "stack_params": 3
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 3,
-    "estimated_params": 4
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.6,
@@ -144,17 +148,6 @@
       "severity": "moderate",
       "text": "code *pcVar1;",
       "type": "unresolved_funcptr"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 3,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:3 vs estimated:4",
-      "param_delta": 1,
-      "text": "Function declares 3 params but call sites push 4 (1 missing)",
-      "type": "param_count_too_few"
     },
     {
       "address": "00601200",

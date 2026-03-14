@@ -38,6 +38,26 @@
   },
   "function_calls": [],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004c6d95",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_init_FUN_004c6c80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.0,
     "instruction_count": 3,
@@ -66,5 +86,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CExplosion",
+        "offset": 0,
+        "vtable_addr": "0065def4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

@@ -14,9 +14,9 @@
 ;   TerminatedCString s_core_texlist_cpp_00654f54
 ;   TerminatedCString s_CTextureList_save_No_ext_00654f68
 ;   TerminatedCString s_tex_00654f90
-;   undefined4 s_tex_00654f91
-;   undefined4 s_ex_00654f92
-;   undefined4 s_x_00654f93
+;   undefined4 s_tex_00654f90+1
+;   undefined4 s_tex_00654f90+2
+;   undefined4 s_tex_00654f90+3
 ;   TerminatedCString s_wt_00654f95
 ;   TerminatedCString s_data_00654f98
 ;   TerminatedCString s_core_texlist_cpp_00654f9d
@@ -91,13 +91,13 @@ section .text
     MOV ESI,0x654f90                    ; 005dc12a | = ".tex"
         ;   Label: LAB_005dc12a
     PUSH EDI                            ; 005dc12f
-    MOV AL,byte ptr [ESI]               ; 005dc130 | = ".tex" | s_ex_00654f92
+    MOV AL,byte ptr [ESI]               ; 005dc130 | = ".tex" | s_tex_00654f90+2
         ;   Label: LAB_005dc130
     MOV byte ptr [EDI],AL               ; 005dc132
     CMP AL,0x0                          ; 005dc134
     JZ 0x005dc148                       ; 005dc136
         ;   XREF to: 005dc148 (CONDITIONAL_JUMP)  ; LAB_005dc148
-    MOV AL,byte ptr [ESI + 0x1]         ; 005dc138 | s_tex_00654f91 | s_x_00654f93
+    MOV AL,byte ptr [ESI + 0x1]         ; 005dc138 | s_tex_00654f90+1 | s_tex_00654f90+3
     ADD ESI,0x2                         ; 005dc13b
     MOV byte ptr [EDI + 0x1],AL         ; 005dc13e
     ADD EDI,0x2                         ; 005dc141

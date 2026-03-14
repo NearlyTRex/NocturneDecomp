@@ -4,7 +4,7 @@
       {
         "category": "incompatible_types",
         "column": 14,
-        "line": 25,
+        "line": 24,
         "message": "assigning to 'int *' from incompatible type 'void *'"
       }
     ],
@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 79,
+    "complexity_score": 78,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 33,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 104
+    "total_lines": 103
   },
   "cross_references": [
     {
@@ -71,13 +71,16 @@
         "call_type": "direct",
         "caller": "shape_superopt.cpp_CComplexPolygon_processEdgeSubLoops_FUN_005c91e0",
         "estimated_params": 3,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 12,
         "stack_params": 3
       }
     ],
     "confidence": "medium",
     "declared_params": 3,
+    "declared_stack_bytes": 12,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -145,34 +148,34 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 17,
+      "line": 16,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar5 = (int *)((int)this_ptr->edge_array + this_ptr->edge_count * 8);",
+      "text": "piVar4 = (int *)((int)this_ptr->edge_array + this_ptr->edge_count * 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 22,
       "match": "(SExpandedEdge *)((int)",
       "severity": "mild",
-      "text": "edges = (SExpandedEdge *)((int)edges + (uint)bVar6 * -8 + 4);",
+      "text": "edges = (SExpandedEdge *)((int)edges + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(SExpandedEdge *)((int)",
+      "severity": "mild",
+      "text": "edges = (SExpandedEdge *)((int)edges + (uint)bVar5 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 28,
-      "match": "(SExpandedEdge *)((int)",
-      "severity": "mild",
-      "text": "edges = (SExpandedEdge *)((int)edges + (uint)bVar6 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar2 = (int *)((int)piVar2 + (uint)bVar6 * -2 + 1);",
+      "text": "piVar2 = (int *)((int)piVar2 + (uint)bVar5 * -2 + 1);",
       "type": "pointer_cast"
     }
   ]

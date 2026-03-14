@@ -131,7 +131,7 @@ int __cdecl shape_cramtex_cpp_mapCoordinateToAtlas_FUN_00447a80(int min_coord,in
 void __cdecl shape_cramtex_cpp_CCramTex_renderAllTexturesAndRectangles_FUN_00447ab0(CCramTex *this_ptr,int x,int y,int width,int height,int render_mode);
 void __cdecl shape_cramtex_cpp_CCramTex_renderTextureEntry_FUN_00447c20(CCramTex *this_ptr,int show_final_placement,int draw_x,int draw_y,int draw_right, int draw_bottom);
 double __cdecl shape_cramtex_cpp_calculateAtlasEfficiency_FUN_00447e80(void);
-void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures,int is_complete);
+void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures,int is_complete,int show_status);
 void __cdecl shape_cramtex_cpp_printAtlasLayoutReport_FUN_004481d0(_FILE *output_file);
 void __cdecl shape_cramtex_cpp_placementCollisionCheck_FUN_00448260(int layer_id,int start_x,int start_y,int width,int height);
 int __cdecl shape_cramtex_cpp_CCramTex_checkTextureCollision_FUN_00448390(CCramTex *this_ptr,CCramTex *other);

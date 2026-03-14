@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 10,
+    "complexity_score": 25,
     "cross_reference_count": 12,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 10,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
     "total_lines": 35
   },
   "cross_references": [
@@ -134,6 +136,125 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 19,
+    "call_sites": [
+      {
+        "call_addr": "005712a0",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_loadStateInfo_FUN_00571230",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00508022",
+        "call_type": "direct",
+        "caller": "core_main.c_initializeGameSystems_FUN_00507a60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005c1f6e",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_processPickupComplete_FUN_005c1f00",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "005c2b4e",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_tryPlaceObject_FUN_005c2850",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00560b34",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_loadState_FUN_00560820",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005380f5",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_saveWithNewName_FUN_00537f60",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00507e98",
+        "call_type": "direct",
+        "caller": "core_main.c_initializeGameSystems_FUN_00507a60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005c5aff",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005c5270",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004b38a5",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "004b5009",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 4
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.136363636363637,
     "instruction_count": 22,
@@ -187,5 +308,17 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_site_count": 19,
+      "declared_params": 2,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:2 vs estimated:4",
+      "param_delta": 2,
+      "text": "Function declares 2 params but call sites push 4 (2 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
 }

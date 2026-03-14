@@ -16,15 +16,15 @@
 ;   TerminatedCString s_Generic_00614c6f
 ;   undefined4 s_eneric_00614c70
 ;   TerminatedCString s_Holy_00614c77
-;   undefined4 s_oly_00614c78
+;   undefined4 s_Holy_00614c77+1
 ;   TerminatedCString s_Wood_00614c7c
-;   undefined4 s_ood_00614c7d
+;   undefined4 s_Wood_00614c7c+1
 ;   TerminatedCString s_Silver_00614c81
-;   undefined4 s_ilver_00614c82
+;   undefined4 s_Silver_00614c81+1
 ;   TerminatedCString s_Gold_00614c88
-;   undefined4 s_old_00614c89
-;   undefined4 s_ld_00614c8a
-;   undefined4 s_d_00614c8b
+;   undefined4 s_Gold_00614c88+1
+;   undefined4 s_Gold_00614c88+2
+;   undefined4 s_Gold_00614c88+3
 ;   undefined4 g_CAmmoBoxClassInfo.name_hash
 ;
 ; Called Functions:
@@ -55,13 +55,13 @@ section .text
         ;   Label: caseD_0
     PUSH EDI                            ; 00411a61
         ;   Label: LAB_00411a61
-    MOV AL,byte ptr [ESI]               ; 00411a62 | = "Gold" | s_ld_00614c8a | s_Silver_00614c81
+    MOV AL,byte ptr [ESI]               ; 00411a62 | = "Gold" | s_Gold_00614c88+2 | s_Silver_00614c81
         ;   Label: LAB_00411a62
     MOV byte ptr [EDI],AL               ; 00411a64
     CMP AL,0x0                          ; 00411a66
     JZ 0x00411a7a                       ; 00411a68
         ;   XREF to: 00411a7a (CONDITIONAL_JUMP)  ; LAB_00411a7a
-    MOV AL,byte ptr [ESI + 0x1]         ; 00411a6a | s_old_00614c89 | s_d_00614c8b | s_ilver_00614c82
+    MOV AL,byte ptr [ESI + 0x1]         ; 00411a6a | s_Gold_00614c88+1 | s_Gold_00614c88+3 | s_Silver_00614c81+1
     ADD ESI,0x2                         ; 00411a6d
     MOV byte ptr [EDI + 0x1],AL         ; 00411a70
     ADD EDI,0x2                         ; 00411a73

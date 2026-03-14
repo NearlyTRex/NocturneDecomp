@@ -86,7 +86,7 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,9999.9,0);
       iVar2 = iVar2 + 4;
       iVar4 = iVar4 + 1;
-      core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(this_ptr_00);
+      core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(this_ptr_00,0);
     } while (iVar4 < g_MasterLightCount);
   }
   this_ptr->selected_camera_index = -1;

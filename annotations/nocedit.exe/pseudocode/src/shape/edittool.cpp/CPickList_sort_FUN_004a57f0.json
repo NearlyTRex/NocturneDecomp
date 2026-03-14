@@ -86,6 +86,26 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0049f674",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.6,
     "instruction_count": 35,
@@ -142,5 +162,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPickList",
+        "offset": 8,
+        "vtable_addr": "0065d494"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

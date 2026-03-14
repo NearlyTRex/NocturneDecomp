@@ -21,7 +21,7 @@ int __cdecl ostrstream::tellp(void *this_ptr);
 
 // Original: crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a
 // Address: 005ff48a
-_ostrstream * __cdecl ostrstream::dtor(void * this_ptr,uint flags);
+_ostrstream * __cdecl ostrstream::dtor(void *this_ptr,uint flags);
 
 // Original: crt_strstream.cpp_istrstream_ctor_FUN_005ff524
 // Address: 005ff524
@@ -37,7 +37,7 @@ void __cdecl istrstream::destructor_thunk_from_ios(ios *this_ptr,int dtor_flags)
 
 // Original: crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca
 // Address: 005ff5ca
-_istrstream * __cdecl istrstream::dtor(void * this_ptr,uint flags);
+_istrstream * __cdecl istrstream::dtor(void *this_ptr,uint flags);
 
 // Original: crt_strstream.cpp_strstreambase_ctor_FUN_006060fe
 // Address: 006060fe

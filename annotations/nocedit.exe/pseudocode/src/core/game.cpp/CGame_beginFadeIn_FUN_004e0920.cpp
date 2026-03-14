@@ -13,6 +13,6 @@ void __cdecl core_game_cpp_CGame_beginFadeIn_FUN_004e0920(CGame *this_ptr)
   g_IrisFadeCenterX = g_WindowWidth / 2;
   g_IrisFadeCenterY = g_WindowHeight / 2;
   g_IrisFadeRadius = 0.0;
-  core_game_cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0(this_ptr);
+  core_game_cpp_calculateIrisFadeCenter_FUN_004e09a0();
   return;
 }

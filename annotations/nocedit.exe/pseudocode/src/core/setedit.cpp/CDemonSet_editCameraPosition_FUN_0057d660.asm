@@ -487,7 +487,7 @@ section .text
     PUSH EDX                            ; 0057db7a | g_CSlewInstance
     MOV EBX,0xd80                       ; 0057db7b
     CALL core_slew.cpp_CSlew_free_FUN_005a20a0 ; 0057db80
-        ;   XREF to: 005a20a0 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_free_FUN_005a20a0()
+        ;   XREF to: 005a20a0 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_free_FUN_005a20a0(CSlew * this_ptr)
     MOV ECX,0x648072                    ; 0057db85 | = "..\\core\\setedit.cpp"
     ADD ESP,0x4                         ; 0057db8a
     MOV dword ptr [0x02f0d944],EBX      ; 0057db8d | g_CurrentDebugLine

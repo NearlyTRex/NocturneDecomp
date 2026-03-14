@@ -9,6 +9,7 @@
 CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480(CDemonCamera *this_ptr,CVector3f *output_ptr,int screen_x,int screen_y)
 
 {
+  ulonglong uVar1;
   longlong lVar2;
   float fVar3;
   int iVar3;
@@ -16,7 +17,9 @@ CVector3f * __cdecl core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_004
   longlong lVar1;
   float fVar2;
   
-  iVar3 = (int)(((longlong)(screen_x * 0x10000 - (this_ptr->saved_viewport_rect).right) * 0x10000) /
+  uVar1 = (ulonglong)(screen_x * 0x10000 - (this_ptr->saved_viewport_rect).right);
+  iVar3 = (int)((longlong)
+                (((uVar1 & 0xffffffffffff) >> 0x10) << 0x20 | uVar1 * 0x10000 & 0xffffffff) /
                (longlong)(this_ptr->saved_viewport_rect).left);
   iVar4 = (int)(((longlong)(screen_y * 0x10000 - (this_ptr->saved_viewport_rect).bottom) * 0x10000)
                / (longlong)(this_ptr->saved_viewport_rect).top);

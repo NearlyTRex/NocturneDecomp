@@ -82,7 +82,7 @@ LAB_005fee60_2:
           pcVar9 = haystack_str;
           if (pbVar4 == (byte *)0x0) break;
           pbVar4 = pbVar4 + -1;
-          pcVar9 = (char *)((byte *)haystack_str + 1);
+          pcVar9 = haystack_str + 1;
           bVar6 = *needle_str == *haystack_str;
           haystack_str = pcVar9;
         } while (!bVar6);

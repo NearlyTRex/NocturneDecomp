@@ -48,10 +48,14 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_00548390(CLocation *loca
   iVar3 = 0;
   iVar6 = 0;
   do {
-    if (((local_34.x == *(int *)((int)&g_PathMapCache[0].cached_voxel_coords.x + iVar3)) &&
-        (local_18[0] == *(int *)((int)&g_PathMapCache[0].cached_voxel_coords.y + iVar3))) &&
+    if (((local_34.x ==
+          *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->x + iVar3)) &&
+        (local_18[0] ==
+         *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->y + iVar3))) &&
        (iVar5 = iVar2,
-       local_18[1] == *(int *)((int)&g_PathMapCache[0].cached_voxel_coords.z + iVar3))) break;
+       local_18[1] ==
+       *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->z + iVar3)))
+    break;
     iVar5 = iVar6;
     if (g_PathMapLRUCounters[iVar6] < *(int *)((int)g_PathMapLRUCounters + iVar4)) {
       iVar5 = iVar2;

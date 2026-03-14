@@ -52,7 +52,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10",
-    "signature": "void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory *this_ptr)"
+    "signature": "void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory *this_ptr,int ammo_type)"
   },
   "function_calls": [
     {
@@ -67,6 +67,59 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "004ff86b",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_select_FUN_004ff800",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004fedef",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ff655",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_load_FUN_004ff400",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004febfb",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_selectWeapon_FUN_004feb10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.642857142857143,
     "instruction_count": 28,
@@ -90,10 +143,10 @@
     "pcode_op_count": 102
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -102,6 +155,13 @@
         "offset": 4,
         "size": 4,
         "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "ammo_type",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },

@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   crt_fstream.cpp_filebuf_open_FUN_00608c15
-;   crt_stdio.c_clear_and_preserve_state_FUN_00600e64
+;   crt_iostream.cpp_ios_clear_FUN_00600e64
 ;   crt_stdio.c_reportStreamError_FUN_00606020
 ;
 ; *****************************************************************************
@@ -75,8 +75,8 @@ section .text
     PUSH 0x0                            ; 00600ed8
     ADD EBX,EBP                         ; 00600eda
     PUSH EBX                            ; 00600edc
-    CALL crt_stdio.c_clear_and_preserve_state_FUN_00600e64 ; 00600edd
-        ;   XREF to: 00600e64 (UNCONDITIONAL_CALL)  ; uint crt_stdio.c_clear_and_preserve_state_FUN_00600e64(FileEmbeddedData * embedded_data, uint error_code)
+    CALL crt_iostream.cpp_ios_clear_FUN_00600e64 ; 00600edd
+        ;   XREF to: 00600e64 (UNCONDITIONAL_CALL)  ; uint crt_iostream.cpp_ios_clear_FUN_00600e64(ios * this_ptr, uint state_flags)
     JMP 0x00600ec6                      ; 00600ee2
         ;   XREF to: 00600ec6 (UNCONDITIONAL_JUMP)  ; LAB_00600ec6
 

@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 9,
+    "complexity_score": 24,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 9,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
     "total_lines": 37
   },
   "cross_references": [
@@ -87,6 +89,92 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "004f1a19",
+        "call_type": "direct",
+        "caller": "core_haystack.cpp_CHaystack_advanceMotion_FUN_004f1970",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "004f1a5b",
+        "call_type": "direct",
+        "caller": "core_haystack.cpp_CHaystack_advanceMotion_FUN_004f1970",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "0048edc9",
+        "call_type": "direct",
+        "caller": "core_drone.cpp_CDrone_process_FUN_0048ec70",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "004a80f4",
+        "call_type": "direct",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_004a8070",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "00414b98",
+        "call_type": "direct",
+        "caller": "core_bat.cpp_CBat_process_FUN_00414a00",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "0041c567",
+        "call_type": "direct",
+        "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_0041bf90",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      },
+      {
+        "call_addr": "005e4d10",
+        "call_type": "direct",
+        "caller": "core_tvbat.cpp_CTVBat_process_FUN_005e4210",
+        "estimated_params": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 32,
+        "stack_params": 8
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 32,
+    "estimated_params": 8
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.6923076923076925,
     "instruction_count": 26,
@@ -150,5 +238,17 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_site_count": 7,
+      "declared_params": 4,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 8,
+      "fix_type": "add_params",
+      "match": "declared:4 vs estimated:8",
+      "param_delta": 4,
+      "text": "Function declares 4 params but call sites push 8 (4 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
 }

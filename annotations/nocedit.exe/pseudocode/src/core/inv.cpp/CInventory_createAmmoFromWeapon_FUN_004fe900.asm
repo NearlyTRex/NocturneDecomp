@@ -12,9 +12,9 @@
 ;   TerminatedCString s_core_inv_cpp_006307fa
 ;   TerminatedCString s_Out_of_memory_0063080a
 ;   TerminatedCString s_Some_ammo_00630818
-;   undefined4 s_ome_ammo_00630819
-;   undefined4 s_me_ammo_0063081a
-;   undefined4 s_e_ammo_0063081b
+;   undefined4 s_Some_ammo_00630818+1
+;   undefined4 s_Some_ammo_00630818+2
+;   undefined4 s_Some_ammo_00630818+3
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -90,13 +90,13 @@ section .text
     MOV EDI,EBX                         ; 004fe998
     MOV ESI,0x630818                    ; 004fe99a | = "Some_ammo"
     PUSH EDI                            ; 004fe99f
-    MOV AL,byte ptr [ESI]               ; 004fe9a0 | = "Some_ammo" | s_me_ammo_0063081a
+    MOV AL,byte ptr [ESI]               ; 004fe9a0 | = "Some_ammo" | s_Some_ammo_00630818+2
         ;   Label: LAB_004fe9a0
     MOV byte ptr [EDI],AL               ; 004fe9a2
     CMP AL,0x0                          ; 004fe9a4
     JZ 0x004fe9b8                       ; 004fe9a6
         ;   XREF to: 004fe9b8 (CONDITIONAL_JUMP)  ; LAB_004fe9b8
-    MOV AL,byte ptr [ESI + 0x1]         ; 004fe9a8 | s_ome_ammo_00630819 | s_e_ammo_0063081b
+    MOV AL,byte ptr [ESI + 0x1]         ; 004fe9a8 | s_Some_ammo_00630818+1 | s_Some_ammo_00630818+3
     ADD ESI,0x2                         ; 004fe9ab
     MOV byte ptr [EDI + 0x1],AL         ; 004fe9ae
     ADD EDI,0x2                         ; 004fe9b1

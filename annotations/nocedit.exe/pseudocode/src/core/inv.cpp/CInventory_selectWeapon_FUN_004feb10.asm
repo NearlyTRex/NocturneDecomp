@@ -153,7 +153,7 @@ section .text
     PUSH ESI                            ; 004febf4
     MOV dword ptr [ESI + 0x330],EAX     ; 004febf5
     CALL core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10 ; 004febfb
-        ;   XREF to: 004ffe10 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory * this_ptr)
+        ;   XREF to: 004ffe10 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory * this_ptr, int ammo_type)
     ADD ESP,0x8                         ; 004fec00
     ADD ESP,0x4                         ; 004fec03
     POP EBP                             ; 004fec06

@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory *this_ptr)
+; void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory *this_ptr,int ammo_type)
 ;
 ; Parameters:
 ; CInventory *     Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   ammo_type
 ;
 ; XREF[4]:
 ;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10 at 004fedef

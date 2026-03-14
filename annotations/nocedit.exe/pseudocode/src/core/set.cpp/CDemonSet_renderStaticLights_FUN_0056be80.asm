@@ -248,7 +248,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 0056c07c
     PUSH ECX                            ; 0056c080
     CALL core_dlight.cpp_CDemonLight_endScene_FUN_00472d30 ; 0056c081
-        ;   XREF to: 00472d30 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight * this_ptr)
+        ;   XREF to: 00472d30 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight * this_ptr, int restore_viewport_state)
     ADD ESP,0x8                         ; 0056c086
     MOV EDX,dword ptr [ESP + 0x24]      ; 0056c089
     MOV EAX,dword ptr [ESP + 0xc]       ; 0056c08d
@@ -314,7 +314,7 @@ section .text
     PUSH EBP                            ; 0056c12a
     MOV dword ptr [0x020a5740],EDI      ; 0056c12b | g_CurrentShadowLight
     CALL core_dlight.cpp_CDemonLight_endScene_FUN_00472d30 ; 0056c131
-        ;   XREF to: 00472d30 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight * this_ptr)
+        ;   XREF to: 00472d30 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight * this_ptr, int restore_viewport_state)
     ADD ESP,0x8                         ; 0056c136
     JMP 0x0056bf2b                      ; 0056c139
         ;   XREF to: 0056bf2b (UNCONDITIONAL_JUMP)  ; LAB_0056bf2b

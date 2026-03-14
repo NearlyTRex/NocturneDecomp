@@ -36,7 +36,7 @@ section .text
     PUSH ECX                            ; 006101ff
     PUSH 0x1                            ; 00610200
     CALL crt_process.c_spawnvp_FUN_0060f39c ; 00610202
-        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv)
+        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv, char * * envp)
     ADD ESP,0x10                        ; 00610207
     MOV EBX,EAX                         ; 0061020a
     CALL dword ptr [0x00684ee4]         ; 0061020c | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4

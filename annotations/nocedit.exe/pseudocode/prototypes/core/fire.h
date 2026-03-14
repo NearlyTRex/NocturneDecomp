@@ -189,7 +189,7 @@ void __cdecl loadDebrisAssets(void);
 
 // Original: core_fire.cpp_CExplosion_activate_FUN_004c3970
 // Address: 004c3970
-void __cdecl CExplosion::activate(CExplosion *this_ptr,CVector3f *position,float scale,int damage_amount);
+void __cdecl CExplosion::activate(CExplosion *this_ptr,CVector3f *position,float scale,float gore_multiplier);
 
 // Original: core_fire.cpp_CExplosion_process_FUN_004c3ac0
 // Address: 004c3ac0
@@ -417,7 +417,7 @@ void __cdecl CFireEffect::createRock(CFireEffect *this_ptr,CVector3f *position,C
 
 // Original: core_fire.cpp_CFireEffect_createLaserSegment_FUN_004c7eb0
 // Address: 004c7eb0
-void __cdecl CFireEffect::createLaserSegment(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread,float cone_angle);
+void __cdecl CFireEffect::createLaserSegment(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread);
 
 // Original: core_fire.cpp_CFireEffect_createLaserCone_FUN_004c7f20
 // Address: 004c7f20
@@ -437,11 +437,11 @@ void __cdecl CFireEffect::traceLaser(CFireEffect *this_ptr,CVector3f *origin,CVe
 
 // Original: core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10
 // Address: 004c8c10
-void __cdecl CFireEffect::createExplosion(CFireEffect *this_ptr,CVector3f *position,float scale,int damage_amount);
+void __cdecl CFireEffect::createExplosion(CFireEffect *this_ptr,CVector3f *position,float scale,float gore_multiplier,float radius);
 
-// Original: core_fire.cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
+// Original: core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004c8c90
 // Address: 004c8c90
-int __cdecl CFireEffect::checkExplosionDamage(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,int *out_damage);
+int __cdecl CFireEffect::getExplosionEffect(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,float *out_gore_multiplier);
 
 // Original: core_fire.cpp_CFireEffect_createToss_FUN_004c8dd0
 // Address: 004c8dd0

@@ -19,7 +19,7 @@
 ;   undefined4 DAT_0066e176
 ;   undefined4 DAT_0066e177
 ;   char[104] g_PropertyNamePrefix
-;   undefined4 s__0066e179
+;   undefined4 g_PropertyNamePrefix+1
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     SUB ECX,ECX                         ; 0040aee6
     DEC ECX                             ; 0040aee8
     XOR EAX,EAX                         ; 0040aee9
-    SCASB.REPNE ES:EDI                  ; 0040aeeb | g_PropertyNamePrefix | s__0066e179
+    SCASB.REPNE ES:EDI                  ; 0040aeeb | g_PropertyNamePrefix | g_PropertyNamePrefix+1
     NOT ECX                             ; 0040aeed
     DEC ECX                             ; 0040aeef
     MOV EAX,dword ptr [ESP + 0x8]       ; 0040aef0
@@ -41,7 +41,7 @@ section .text
         ;   XREF to: 0040af22 (CONDITIONAL_JUMP)  ; LAB_0040af22
     XOR DL,DL                           ; 0040aefa
         ;   Label: LAB_0040aefa
-    MOV byte ptr [EAX + 0x66e178],DL    ; 0040aefc | g_PropertyNamePrefix | s__0066e179
+    MOV byte ptr [EAX + 0x66e178],DL    ; 0040aefc | g_PropertyNamePrefix | g_PropertyNamePrefix+1
     TEST EAX,EAX                        ; 0040af02
     JLE 0x0040af20                      ; 0040af04
         ;   XREF to: 0040af20 (CONDITIONAL_JUMP)  ; LAB_0040af20

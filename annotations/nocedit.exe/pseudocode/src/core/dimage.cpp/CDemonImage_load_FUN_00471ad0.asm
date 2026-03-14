@@ -23,9 +23,9 @@
 ;   TerminatedCString s_core_dimage_cpp_0061ed14
 ;   TerminatedCString s_CDemonImage_load_Unable__0061ed27
 ;   TerminatedCString s_ACT_0061ed55
-;   undefined4 s_ACT_0061ed56
-;   undefined4 s_CT_0061ed57
-;   undefined4 s_T_0061ed58
+;   undefined4 s_ACT_0061ed55+1
+;   undefined4 s_ACT_0061ed55+2
+;   undefined4 s_ACT_0061ed55+3
 ;   TerminatedCString s_rb_0061ed5a
 ;   TerminatedCString s_art_0061ed5d
 ;   TerminatedCString s_core_dimage_cpp_0061ed61
@@ -142,13 +142,13 @@ section .text
     MOV ESI,0x61ed55                    ; 00471bbc | = ".ACT"
         ;   Label: LAB_00471bbc
     PUSH EDI                            ; 00471bc1
-    MOV AL,byte ptr [ESI]               ; 00471bc2 | = ".ACT" | s_CT_0061ed57
+    MOV AL,byte ptr [ESI]               ; 00471bc2 | = ".ACT" | s_ACT_0061ed55+2
         ;   Label: LAB_00471bc2
     MOV byte ptr [EDI],AL               ; 00471bc4
     CMP AL,0x0                          ; 00471bc6
     JZ 0x00471bda                       ; 00471bc8
         ;   XREF to: 00471bda (CONDITIONAL_JUMP)  ; LAB_00471bda
-    MOV AL,byte ptr [ESI + 0x1]         ; 00471bca | s_ACT_0061ed56 | s_T_0061ed58
+    MOV AL,byte ptr [ESI + 0x1]         ; 00471bca | s_ACT_0061ed55+1 | s_ACT_0061ed55+3
     ADD ESI,0x2                         ; 00471bcd
     MOV byte ptr [EDI + 0x1],AL         ; 00471bd0
     ADD EDI,0x2                         ; 00471bd3

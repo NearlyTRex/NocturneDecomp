@@ -177,7 +177,7 @@ int __cdecl CLodMesh::removeEdgeFromFace(CLodMesh *this_ptr,int tri_index,int ed
 
 // Original: shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
 // Address: 00518490
-int __cdecl CLodMesh::validateEdgeCollapse(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,int vertex_idx_3);
+int __cdecl CLodMesh::validateEdgeCollapse(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2);
 
 // Original: shape_meshlod.cpp_CLodMesh_hasVertexBoundaryEdge_FUN_00518740
 // Address: 00518740
@@ -313,7 +313,7 @@ int __cdecl CLodMesh::initializeFromPrecomputedData(CLodMesh *this_ptr,_FILE *fi
 
 // Original: shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920
 // Address: 0051b920
-void __cdecl CLodMesh::getLOD(CLodMesh *this_ptr);
+void __cdecl CLodMesh::getLOD(CLodMesh *this_ptr,int target_face_count,CLodMesh *output_mesh);
 
 // Original: shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0
 // Address: 0051bac0

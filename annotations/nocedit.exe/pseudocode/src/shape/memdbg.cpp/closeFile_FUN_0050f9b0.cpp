@@ -33,19 +33,19 @@ int __cdecl shape_memdbg_cpp_closeFile_FUN_0050f9b0(_FILE *file_ptr,char *source
   if (0 < g_OpenFileCount) {
     iVar1 = 0;
     do {
-      if (file_ptr == *(_FILE **)((int)&g_FileRegistry[0].file_ptr + iVar1)) {
+      if (file_ptr == *(_FILE **)(g_FileRegistry[0].source_file + iVar1 + 0x108)) {
         if (g_FileRegistry[0].directory[iVar1] == '\0') {
           shape_memdbg_cpp_traceFile_FUN_0050f180
                     ("Closing %s at %s line %d, originally opened for %s at %s line %d",g_FileRegistry[0].filename + iVar1,
                      source_file,line_number,iVar1 + 0x2f0db54,iVar1 + 0x2f0db68,
-                     *(uint *)((int)&g_FileRegistry[0].line_number + iVar1));
+                     *(uint *)(g_FileRegistry[0].source_file + iVar1 + 0x104));
         }
         else {
           shape_memdbg_cpp_traceFile_FUN_0050f180
                     ("Closing %s in %s at %s line %d, originally opened for %s in %s line %d",iVar1 + 0x2f0da50,
                      g_FileRegistry[0].filename + iVar1,source_file,line_number,iVar1 + 0x2f0db54,
-                     iVar1 + 0x2f0db68,*(uint *)((int)&g_FileRegistry[0].line_number + iVar1))
-          ;
+                     iVar1 + 0x2f0db68,
+                     *(uint *)(g_FileRegistry[0].source_file + iVar1 + 0x104));
         }
         g_OpenFileCount = g_OpenFileCount + -1;
         memmove

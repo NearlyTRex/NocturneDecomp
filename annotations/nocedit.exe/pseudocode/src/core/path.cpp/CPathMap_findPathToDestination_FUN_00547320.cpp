@@ -19,9 +19,9 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *
   uint uVar6;
   uint *puVar7;
   byte bVar8;
-  uint auStackY_1040 [963];
+  float afStackY_1040 [963];
   CVector3f *in_direction_vector;
-  float in_stack_fffffee8;
+  CVector3f local_118;
   CVector3f local_10c;
   CVector3f local_100;
   CVector3f local_f4;
@@ -188,7 +188,7 @@ LAB_005473e0:
   }
   iVar2 = core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90
                     (this_ptr,g_PathfindingDestX,g_PathfindingDestZ,g_PathfindingCurrentX,
-                     g_PathfindingCurrentZ,(int)in_stack_fffffee8);
+                     g_PathfindingCurrentZ);
   if (iVar2 == 0) {
     uVar5 = core_path_cpp_CPathMap_searchGrid_FUN_005487a0(this_ptr,(this_ptr->dest_voxel_coords).y)
     ;
@@ -219,8 +219,11 @@ LAB_005473e0:
         local_1c = local_18;
         local_18 = uVar5;
         if (uVar6 == 0) {
+          local_118.x = (this_ptr->current_position).x - dest_position->x;
+          local_118.y = (this_ptr->current_position).y - dest_position->y;
+          local_118.z = (this_ptr->current_position).z - dest_position->z;
           pCVar1 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                             (&local_10c,(CVector3f *)&stack0xfffffee8);
+                             (&local_10c,&local_118);
           if (pCVar1 == out_euler_angles) {
             return 2;
           }

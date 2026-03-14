@@ -28,7 +28,7 @@ HIGH SEVERITY - Severe decompilation impact
 
   crt_process.c_spawnvp_FUN_0060f39c
     Address: 0060f39c
-    Suspect count: 20
+    Suspect count: 8
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 0060f51c: SUB ESP,EAX
     - [dynamic_alloca] at 0060f5d6: SUB ESP,EAX
@@ -72,7 +72,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00433f59: AND ESP,0xfffffff8
 
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
-    File: cockpit/ckptutil.c, Suspects: 1
+    File: cockpit/ckptutil.c, Suspects: 0
     - [alt_frame_pointer] at 00431ad7: MOV EDI,ESP
     - [alt_frame_pointer] at 00431af5: MOV ESI,ESP
     - [alt_frame_pointer] at 00431b15: MOV ESI,ESP
@@ -120,7 +120,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00601729: MOV ESI,ESP
 
   crt_unknown.c_SomethingFPUControlWord_FUN_0060e8e0
-    File: crt/unknown.c, Suspects: 7
+    File: crt/unknown.c, Suspects: 8
     - [alt_frame_pointer] at 0060e8f8: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e913: MOV EDI,ESP
     - [alt_frame_pointer] at 0060e91c: MOV EDI,ESP
@@ -180,7 +180,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0050ccff: MOV ESI,ESP
 
   engine_matrix.c_invertTransformMatrix_FUN_0050c640
-    File: engine/matrix.c, Suspects: 19
+    File: engine/matrix.c, Suspects: 20
     - [stack_alignment] at 0050c646: AND ESP,0xfffffff8
 
   engine_pcx.c_saveScreenRaw32_FUN_00548f00
@@ -236,11 +236,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 00401e0d: MOV EDI,ESP
 
   engine_ini.cpp_CIni_getProfileString_FUN_004fb250
-    File: engine/ini.cpp, Suspects: 10
+    File: engine/ini.cpp, Suspects: 9
     - [alt_frame_pointer] at 004fb396: MOV ESI,ESP
 
   engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470
-    File: engine/ini.cpp, Suspects: 1
+    File: engine/ini.cpp, Suspects: 0
     - [alt_frame_pointer] at 004fb513: MOV ESI,ESP
     - [alt_frame_pointer] at 004fb536: MOV ESI,ESP
 
@@ -277,7 +277,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00501f39: AND ESP,0xfffffff8
 
   engine_drender.cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
-    File: engine/drender.cpp, Suspects: 3
+    File: engine/drender.cpp, Suspects: 4
     - [alt_frame_pointer] at 0048c767: MOV ESI,ESP
     - [alt_frame_pointer] at 0048c770: MOV ESI,ESP
 

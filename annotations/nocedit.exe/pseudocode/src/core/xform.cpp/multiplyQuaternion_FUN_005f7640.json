@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 57,
+    "complexity_score": 72,
     "cross_reference_count": 11,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 57,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_many"
+    ],
     "total_lines": 132
   },
   "cross_references": [
@@ -98,6 +100,125 @@
   },
   "function_calls": [],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 31,
+    "call_sites": [
+      {
+        "call_addr": "004d5162",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00443405",
+        "call_type": "direct",
+        "caller": "core_course.cpp_CCourse_showEditorMenu_FUN_00443040",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059f1a5",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059f6a5",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059f1e6",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005585e7",
+        "call_type": "direct",
+        "caller": "core_scat.cpp_CScat_blendAimBones_FUN_005584a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042dd48",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059e908",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059e948",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005586ae",
+        "call_type": "direct",
+        "caller": "core_scat.cpp_CScat_blendAimBones_FUN_005584a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.635135135135135,
     "instruction_count": 74,
@@ -165,5 +286,17 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_site_count": 31,
+      "declared_params": 3,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 2,
+      "fix_type": "remove_params",
+      "match": "declared:3 vs estimated:2",
+      "param_delta": -1,
+      "text": "Function declares 3 params but call sites push 2 (1 extra)",
+      "type": "param_count_too_many"
+    }
+  ]
 }

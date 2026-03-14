@@ -333,7 +333,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0x14]      ; 0051dd46
     PUSH ECX                            ; 0051dd49
     CALL shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 ; 0051dd4a
-        ;   XREF to: 0051b920 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh * this_ptr)
+        ;   XREF to: 0051b920 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh * this_ptr, int target_face_count, CLodMesh * output_mesh)
     ADD ESP,0xc                         ; 0051dd4f
     CMP dword ptr [EBP + 0x24],0x2      ; 0051dd52
     JNZ 0x0051dd7c                      ; 0051dd56

@@ -19,15 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 705,
-    "complexity_score": 776,
+    "complexity_score": 791,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 321,
-    "suspect_count": 44,
+    "suspect_count": 45,
     "suspect_types": [
       "decompiler_intrinsic",
+      "param_count_too_few",
       "pointer_cast",
       "warning_inlined_function"
     ],
@@ -140,6 +141,26 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005acc82",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90",
+        "estimated_params": 12,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 48,
+        "stack_params": 12
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 48,
+    "estimated_params": 12
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.293497363796134,
     "instruction_count": 569,
@@ -776,6 +797,17 @@
       "severity": "mild",
       "text": "*(uint *)((int)this_ptr->channel_target_buffer_offsets + local_4c);",
       "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 2,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 12,
+      "fix_type": "add_params",
+      "match": "declared:2 vs estimated:12",
+      "param_delta": 10,
+      "text": "Function declares 2 params but call sites push 12 (10 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

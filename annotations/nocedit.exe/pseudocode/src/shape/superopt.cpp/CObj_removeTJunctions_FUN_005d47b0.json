@@ -154,6 +154,26 @@
       "value": "0.000100000000000000"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005d72bc",
+        "call_type": "direct",
+        "caller": "shape_superopt.cpp_COptimize_optimize_FUN_005d7290",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.007600434310532,
     "instruction_count": 921,
@@ -1541,5 +1561,16 @@
       "text": "*(int *)((int)&(pCVar16->impl).y + 4) = local_cc[1];",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CObj",
+        "offset": 212,
+        "vtable_addr": "00663b64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

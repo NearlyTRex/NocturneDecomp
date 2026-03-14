@@ -72,7 +72,7 @@ void __cdecl shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
       cVar2 = *pbVar12;
-      pbVar12 = (byte *)((char *)pbVar12 + (uint)bVar12 * -2 + 1);
+      pbVar12 = pbVar12 + (uint)bVar12 * -2 + 1;
     } while (cVar2 != '\0');
     if (~uVar6 - 1 <= uVar7) break;
     iVar5 = toupper((uint)local_dc[uVar7]);

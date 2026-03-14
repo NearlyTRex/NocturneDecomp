@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 22,
+    "complexity_score": 7,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 33
   },
   "cross_references": [
@@ -60,7 +58,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_makeGrayscaleColor_FUN_004039c0",
-    "signature": "uint __cdecl engine_3d_c_makeGrayscaleColor_FUN_004039c0(int intensity)"
+    "signature": "uint __cdecl engine_3d_c_makeGrayscaleColor_FUN_004039c0(int color_value,int lighting_value)"
   },
   "function_calls": [],
   "globals": [],
@@ -72,8 +70,10 @@
         "call_type": "direct",
         "caller": "engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840",
         "estimated_params": 2,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -81,8 +81,10 @@
         "call_type": "direct",
         "caller": "engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430",
         "estimated_params": 2,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -90,8 +92,10 @@
         "call_type": "direct",
         "caller": "engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0",
         "estimated_params": 2,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -99,8 +103,10 @@
         "call_type": "direct",
         "caller": "engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0",
         "estimated_params": 2,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -108,13 +114,16 @@
         "call_type": "direct",
         "caller": "engine_3d.c_renderPolygonLastPixelMode_FUN_004066d0",
         "estimated_params": 2,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       }
     ],
     "confidence": "high",
-    "declared_params": 1,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -144,32 +153,27 @@
     "pcode_op_count": 310
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": true,
-        "name": "intensity",
+        "name": "color_value",
         "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "lighting_value",
+        "offset": 8,
         "size": 4,
         "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 5,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

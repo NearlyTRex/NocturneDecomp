@@ -77,6 +77,26 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00423605",
+        "call_type": "direct",
+        "caller": "core_boxactor.cpp_CLightActor_dtor_FUN_004235f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.057142857142857,
     "instruction_count": 35,
@@ -122,5 +142,21 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonLight",
+        "offset": 0,
+        "vtable_addr": "0065c924"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "0065c944"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

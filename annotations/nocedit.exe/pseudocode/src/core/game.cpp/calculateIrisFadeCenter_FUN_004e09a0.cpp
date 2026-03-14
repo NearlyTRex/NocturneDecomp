@@ -1,15 +1,15 @@
-// Name: core_game.cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0
+// Name: core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0
 // Address: 004e09a0
 // Address Range: [[004e09a0, 004e09bc]]
 // Convention: __cdecl
-// Signature: void __cdecl core_game_cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0(CGame *this_ptr)
+// Signature: void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004e09a0(void)
 
 #include "nocturne.h"
 
-void __cdecl core_game_cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0(CGame *this_ptr)
+void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004e09a0(void)
 
 {
-  CDemonActor *this_ptr_00;
+  CDemonActor *this_ptr;
   CBoundingBox3D *pCVar1;
   byte bVar2;
   int aiStackY_1018 [1000];
@@ -25,9 +25,9 @@ void __cdecl core_game_cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0(CGame *thi
   float fStack_10;
   
   bVar2 = 0;
-  this_ptr_00 = g_CScriptPtr->focus_actor;
-  if (this_ptr_00 != (CDemonActor *)0x0) {
-    pCVar1 = (*((this_ptr_00->vtable)._ub)->getBoundingBox)(this_ptr_00,&CStack_6c);
+  this_ptr = g_CScriptPtr->focus_actor;
+  if (this_ptr != (CDemonActor *)0x0) {
+    pCVar1 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,&CStack_6c);
     fStack_18 = (pCVar1->min).x + (pCVar1->max).x;
     fStack_14 = (pCVar1->min).y + (pCVar1->max).y;
     CStack_3c.x = fStack_18 * 0.5f;

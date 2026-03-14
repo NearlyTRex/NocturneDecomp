@@ -46,6 +46,10 @@ CDemonFilter CDemonFilter_ARRAY_008229ec[8] = {};
 CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance = {};
 CKeyFramedModelInstance CKeyFramedModelInstance_00823a98 = {};
 
+// CVector3f
+CVector3f CVector3f_00822c88 = {};
+CVector3f CVector3f_00822c94 = {};
+
 // SEdge[512]
 SEdge g_TracedEdgeBuffer[512] = {};
 
@@ -80,12 +84,6 @@ char g_ActorDebugBuffer[52] = {};
 
 // float
 float FLOAT_008224dc = {};
-float FLOAT_00822c88 = {};
-float FLOAT_00822c8c = {};
-float FLOAT_00822c90 = {};
-float FLOAT_00822c94 = {};
-float FLOAT_00822c98 = {};
-float FLOAT_00822c9c = {};
 
 // float[12][12]
 float g_BugsGroundHeightGridTemp[12][12] = {};

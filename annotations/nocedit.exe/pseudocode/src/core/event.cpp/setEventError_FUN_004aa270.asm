@@ -10,8 +10,8 @@
 ;
 ; Referenced Globals:
 ;   char[256] g_EventErrorMessageBuffer
-;   undefined4 CHAR_ARRAY_02d0a461
-;   undefined4 CHAR_ARRAY_02d0a462
+;   undefined4 g_EventErrorMessageBuffer+1
+;   undefined4 g_EventErrorMessageBuffer+2
 ;   undefined4 DAT_02d0a463
 ;
 ; *****************************************************************************
@@ -26,13 +26,13 @@ section .text
     PUSH EDI                            ; 004aa27b | g_EventErrorMessageBuffer
     MOV AL,byte ptr [ESI]               ; 004aa27c
         ;   Label: LAB_004aa27c
-    MOV byte ptr [EDI],AL               ; 004aa27e | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004aa27e | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004aa280
     JZ 0x004aa294                       ; 004aa282
         ;   XREF to: 004aa294 (CONDITIONAL_JUMP)  ; LAB_004aa294
     MOV AL,byte ptr [ESI + 0x1]         ; 004aa284
     ADD ESI,0x2                         ; 004aa287
-    MOV byte ptr [EDI + 0x1],AL         ; 004aa28a | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004aa28a | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004aa28d
     CMP AL,0x0                          ; 004aa290
     JNZ 0x004aa27c                      ; 004aa292

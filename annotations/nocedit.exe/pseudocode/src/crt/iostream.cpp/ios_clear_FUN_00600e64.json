@@ -36,8 +36,8 @@
       ]
     ],
     "convention": "__cdecl",
-    "name": "crt_stdio.c_clear_and_preserve_state_FUN_00600e64",
-    "signature": "uint __cdecl crt_stdio_c_clear_and_preserve_state_FUN_00600e64(FileEmbeddedData *embedded_data,uint error_code)"
+    "name": "crt_iostream.cpp_ios_clear_FUN_00600e64",
+    "signature": "uint __cdecl crt_iostream_cpp_ios_clear_FUN_00600e64(ios *this_ptr,uint state_flags)"
   },
   "function_calls": [
     {
@@ -56,7 +56,9 @@
         "caller": "crt_fstream.cpp_openFile_FUN_00600e85",
         "estimated_params": 2,
         "instructions_analyzed": 6,
+        "method": "push_count",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -64,13 +66,16 @@
         "call_type": "direct",
         "caller": "engine_dosio.c_reopenFileStream_FUN_00481b50",
         "estimated_params": 2,
-        "instructions_analyzed": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       }
     ],
     "confidence": "high",
     "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -102,14 +107,14 @@
     "variables": [
       {
         "is_param": true,
-        "name": "embedded_data",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
-        "type": "FileEmbeddedData *"
+        "type": "ios *"
       },
       {
         "is_param": true,
-        "name": "error_code",
+        "name": "state_flags",
         "offset": 8,
         "size": 4,
         "type": "uint"
@@ -121,7 +126,7 @@
       "address": "00600e64",
       "crt_type": "runtime support",
       "description": "C runtime function with non-standard stack patterns",
-      "function_name": "crt_stdio.c_clear_and_preserve_state_FUN_00600e64",
+      "function_name": "crt_iostream.cpp_ios_clear_FUN_00600e64",
       "match": "crt_",
       "text": "CRT function (runtime support) at 00600e64",
       "type": "special_crt_function"

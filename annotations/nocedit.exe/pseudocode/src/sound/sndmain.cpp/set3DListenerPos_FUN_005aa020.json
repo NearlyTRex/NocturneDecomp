@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 11,
+    "complexity_score": 26,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 7,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 11,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
     "total_lines": 57
   },
   "cross_references": [
@@ -105,6 +107,70 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "005b38e2",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_configure_FUN_005b3830",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "005b19ab",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_updateListeners_FUN_005b1870",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "005ad416",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_testSoundFile_FUN_005ad3b0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "00580f97",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "005aae3d",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.046511627906977,
     "instruction_count": 43,
@@ -157,5 +223,17 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_site_count": 5,
+      "declared_params": 3,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 6,
+      "fix_type": "add_params",
+      "match": "declared:3 vs estimated:6",
+      "param_delta": 3,
+      "text": "Function declares 3 params but call sites push 6 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
 }

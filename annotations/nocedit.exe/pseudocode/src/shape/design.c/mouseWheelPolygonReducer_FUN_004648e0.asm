@@ -25,8 +25,8 @@
 ;   TerminatedCString s_shape_design_c_0061c3b7
 ;   TerminatedCString s_Wheel_polygon_reducer_on_0061c3c9
 ;   char[80] g_LoadedModelName
-;   undefined4 s__0066eda9
-;   undefined4 s__0066edaa
+;   undefined4 g_LoadedModelName+1
+;   undefined4 g_LoadedModelName+2
 ;   ... and 24 more
 ;
 ; Called Functions:
@@ -135,13 +135,13 @@ section .text
     MOV ESI,0x66eda8                    ; 00464a02 | g_LoadedModelName
     MOV EDI,0x15c4858                   ; 00464a07 | g_BackupModelName
     PUSH EDI                            ; 00464a0c | g_BackupModelName
-    MOV AL,byte ptr [ESI]               ; 00464a0d | g_LoadedModelName | s__0066edaa
+    MOV AL,byte ptr [ESI]               ; 00464a0d | g_LoadedModelName | g_LoadedModelName+2
         ;   Label: LAB_00464a0d
     MOV byte ptr [EDI],AL               ; 00464a0f | g_BackupModelName | DAT_015c485a
     CMP AL,0x0                          ; 00464a11
     JZ 0x00464a25                       ; 00464a13
         ;   XREF to: 00464a25 (CONDITIONAL_JUMP)  ; LAB_00464a25
-    MOV AL,byte ptr [ESI + 0x1]         ; 00464a15 | s__0066eda9 | DAT_0066edab
+    MOV AL,byte ptr [ESI + 0x1]         ; 00464a15 | g_LoadedModelName+1 | DAT_0066edab
     ADD ESI,0x2                         ; 00464a18
     MOV byte ptr [EDI + 0x1],AL         ; 00464a1b | DAT_015c4859 | DAT_015c485b
     ADD EDI,0x2                         ; 00464a1e

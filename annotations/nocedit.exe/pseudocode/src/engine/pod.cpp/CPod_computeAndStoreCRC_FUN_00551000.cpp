@@ -64,7 +64,7 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod *this_ptr,
     uVar5 = 0;
     do {
       uVar1 = *pcVar4;
-      pcVar4 = (char *)((uchar *)pcVar4 + 1);
+      pcVar4 = pcVar4 + 1;
       uVar5 = uVar5 + 1;
       current_crc = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(current_crc,uVar1);
     } while (uVar5 < 0x10000);
@@ -76,7 +76,7 @@ void __cdecl engine_pod_cpp_CPod_computeAndStoreCRC_FUN_00551000(CPod *this_ptr,
   if (size != 0) {
     do {
       data_byte = *pcVar2;
-      pcVar2 = (char *)((uchar *)pcVar2 + 1);
+      pcVar2 = pcVar2 + 1;
       uVar3 = uVar3 + 1;
       current_crc = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(current_crc,data_byte);
     } while (uVar3 < size);

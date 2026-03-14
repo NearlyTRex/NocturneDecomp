@@ -61,7 +61,9 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitiveAdaptivePlaneMasked_FUN
         engine_light_cpp_calculateLighting_FUN_00505780
                   ((primitive->surface_normal).A,(primitive->surface_normal).B,
                    (primitive->surface_normal).C);
-        g_ActiveRenderColor = engine_3d_c_makeGrayscaleColor_FUN_004039c0(g_CurrentPolygonColor);
+        g_ActiveRenderColor =
+             engine_3d_c_makeGrayscaleColor_FUN_004039c0
+                       (g_CurrentPolygonColor,g_CurrentLightingValue);
       }
     }
     else {

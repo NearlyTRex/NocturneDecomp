@@ -79,7 +79,9 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FU
         g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
         engine_light_cpp_calculateLighting_FUN_00505780
                   ((prim->surface_normal).A,(prim->surface_normal).B,(prim->surface_normal).C);
-        g_ActiveRenderColor = engine_3d_c_makeGrayscaleColor_FUN_004039c0(g_CurrentPolygonColor);
+        g_ActiveRenderColor =
+             engine_3d_c_makeGrayscaleColor_FUN_004039c0
+                       (g_CurrentPolygonColor,g_CurrentLightingValue);
       }
     }
     else {

@@ -65,7 +65,7 @@ double __cdecl calculateAtlasEfficiency(void);
 
 // Original: shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20
 // Address: 00447f20
-void __cdecl visualizeTextureAtlas(int show_textures,int is_complete);
+void __cdecl visualizeTextureAtlas(int show_textures,int is_complete,int show_status);
 
 // Original: shape_cramtex.cpp_printAtlasLayoutReport_FUN_004481d0
 // Address: 004481d0

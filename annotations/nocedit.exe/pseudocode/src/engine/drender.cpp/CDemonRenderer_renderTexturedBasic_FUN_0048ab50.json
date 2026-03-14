@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 49,
+    "complexity_score": 34,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 34,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 121
   },
   "cross_references": [
@@ -130,81 +128,99 @@
         "call_addr": "005225c9",
         "call_type": "direct",
         "caller": "core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0",
-        "estimated_params": 3,
-        "instructions_analyzed": 7,
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 3
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "00497cca",
         "call_type": "direct",
         "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500",
-        "estimated_params": 1,
-        "instructions_analyzed": 3,
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 1
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "00497e2c",
         "call_type": "direct",
         "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500",
-        "estimated_params": 1,
-        "instructions_analyzed": 4,
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 1
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "00497bed",
         "call_type": "direct",
         "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500",
-        "estimated_params": 1,
-        "instructions_analyzed": 4,
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 1
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "00497db5",
         "call_type": "direct",
         "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500",
-        "estimated_params": 1,
-        "instructions_analyzed": 3,
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 1
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "00570e17",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_00570df0",
         "estimated_params": 2,
-        "instructions_analyzed": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
         "call_addr": "00497d3a",
         "call_type": "direct",
         "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500",
-        "estimated_params": 1,
-        "instructions_analyzed": 4,
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 1
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "00497c5d",
         "call_type": "direct",
         "caller": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500",
-        "estimated_params": 1,
-        "instructions_analyzed": 3,
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 1
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "005ea2be",
         "call_type": "direct",
         "caller": "core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70",
         "estimated_params": 2,
-        "instructions_analyzed": 22,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -212,14 +228,17 @@
         "call_type": "direct",
         "caller": "core_mirror.cpp_CMirror_renderMirrorQuad_FUN_00522670",
         "estimated_params": 2,
-        "instructions_analyzed": 19,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 2,
-    "estimated_params": 1
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.6142857142857143,
@@ -270,17 +289,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 10,
-      "declared_params": 2,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 1,
-      "fix_type": "remove_params",
-      "match": "declared:2 vs estimated:1",
-      "param_delta": -1,
-      "text": "Function declares 2 params but call sites push 1 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

@@ -29,11 +29,11 @@ void __cdecl ofstream::destructor_thunk_from_ios(ios *this_ptr,int dtor_flags);
 
 // Original: crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc
 // Address: 005ff7bc
-ofstream * __cdecl ofstream::dtor(void * this_ptr,uint flags);
+ofstream * __cdecl ofstream::dtor(void *this_ptr,uint flags);
 
 // Original: crt_fstream.cpp_ifstream_dtor_FUN_005ff856
 // Address: 005ff856
-ifstream * __cdecl ifstream::dtor(void * this_ptr,uint flags);
+ifstream * __cdecl ifstream::dtor(void *this_ptr,uint flags);
 
 // Original: crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0
 // Address: 005ff8f0

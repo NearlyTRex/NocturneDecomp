@@ -40,7 +40,7 @@
 void __cdecl core_game_cpp_CGame_loadAssets_FUN_004e07a0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_beginFadeIn_FUN_004e0920(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr);
-void __cdecl core_game_cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0(CGame *this_ptr);
+void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004e09a0(void);
 void __cdecl core_game_cpp_CGame_updateFadeTransition_FUN_004e09c0(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004e0aa0(CGame *this_ptr);
 uint __cdecl core_game_cpp_CGame_fadeIn_FUN_004e0b90(CGame *this_ptr);

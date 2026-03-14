@@ -43,7 +43,7 @@ void __cdecl engine_2d_c_drawTextWrapped_FUN_00401c60(char *text,int x_start,int
         }
       }
       iVar5 = iVar5 + 1;
-      text = (char *)((byte *)text + 1);
+      text = text + 1;
       x_pos = iVar6;
     } while (iVar5 < (int)(~uVar4 - 1));
   }

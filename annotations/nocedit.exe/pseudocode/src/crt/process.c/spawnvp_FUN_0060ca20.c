@@ -11,6 +11,6 @@ int __watcallStack spawnvp(int mode,char *cmdname,char **argv)
 {
   int iVar1;
   
-  iVar1 = spawnvp_with_path_search(mode,cmdname,argv);
+  iVar1 = spawnvp_with_path_search(mode,cmdname,argv,g_EnvironmentBlock);
   return iVar1;
 }

@@ -834,7 +834,6 @@ section .text
     PUSH EDX                            ; 004c8b12
     CALL core_fire.cpp_CFireEffect_createLaserSegment_FUN_004c7eb0 ; 004c8b13
         ;   XREF to: 004c7eb0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createLaserSegment_FUN_004c7eb0(CFireEffect * this_ptr, CVector3f * origin, CVector3f * hit_position, float beam_width, ...)
-        ;   Label: prt_4c8b13_486ab265
     ADD ESP,0x28                        ; 004c8b18
     LEA ESP,[EBP + 0x6e]                ; 004c8b1b
         ;   Label: LAB_004c8b1b

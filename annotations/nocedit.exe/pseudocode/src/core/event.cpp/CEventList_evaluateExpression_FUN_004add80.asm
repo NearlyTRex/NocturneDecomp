@@ -19,8 +19,8 @@
 ;   undefined4 s_ntax_error_006252b9
 ;   undefined4 s_tax_error_006252ba
 ;   char[256] g_EventErrorMessageBuffer
-;   undefined4 CHAR_ARRAY_02d0a461
-;   undefined4 CHAR_ARRAY_02d0a462
+;   undefined4 g_EventErrorMessageBuffer+1
+;   undefined4 g_EventErrorMessageBuffer+2
 ;   undefined4 DAT_02d0a463
 ;
 ; Called Functions:
@@ -66,13 +66,13 @@ section .text
     PUSH EDI                            ; 004addc8 | g_EventErrorMessageBuffer
     MOV AL,byte ptr [ESI]               ; 004addc9 | = "Syntax error" | s_ntax_error_006252b9
         ;   Label: LAB_004addc9
-    MOV byte ptr [EDI],AL               ; 004addcb | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004addcb | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004addcd
     JZ 0x004adde1                       ; 004addcf
         ;   XREF to: 004adde1 (CONDITIONAL_JUMP)  ; LAB_004adde1
     MOV AL,byte ptr [ESI + 0x1]         ; 004addd1 | s_yntax_error_006252b8 | s_tax_error_006252ba
     ADD ESI,0x2                         ; 004addd4
-    MOV byte ptr [EDI + 0x1],AL         ; 004addd7 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004addd7 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004addda
     CMP AL,0x0                          ; 004adddd
     JNZ 0x004addc9                      ; 004adddf

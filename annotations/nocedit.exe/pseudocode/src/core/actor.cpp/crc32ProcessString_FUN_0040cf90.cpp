@@ -14,7 +14,7 @@ void __cdecl core_actor_cpp_crc32ProcessString_FUN_0040cf90(uint *crc_state,char
   bVar1 = *string;
   while (bVar1 != 0) {
     bVar1 = *string;
-    string = (char *)((byte *)string + 1);
+    string = string + 1;
     core_actor_cpp_crc32ProcessByte_FUN_0040ce30(crc_state,bVar1);
     bVar1 = *string;
   }

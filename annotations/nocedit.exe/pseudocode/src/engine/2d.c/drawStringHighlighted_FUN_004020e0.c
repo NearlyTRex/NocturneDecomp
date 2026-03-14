@@ -33,7 +33,7 @@ void __cdecl engine_2d_c_drawStringHighlighted_FUN_004020e0(char *text,int x_pos
         x_pos = x_pos + iVar3;
       }
       iVar5 = iVar5 + 1;
-      text = (char *)((byte *)text + 1);
+      text = text + 1;
     } while (iVar5 < (int)(~uVar4 - 1));
   }
   return;

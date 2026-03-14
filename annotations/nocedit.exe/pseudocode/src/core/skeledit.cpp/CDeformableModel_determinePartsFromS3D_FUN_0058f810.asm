@@ -701,7 +701,7 @@ section .text
     LEA EDI,[ESP + 0x9e70]              ; 0058fdc0
     MOV ESI,0x681878                    ; 0058fdc7 | = "gore"
     MOV EAX,dword ptr [EBP + 0x18]      ; 0058fdcc
-    MOVSD.REP ES:EDI,ESI                ; 0058fdcf | = "gore" | s__0068187c
+    MOVSD.REP ES:EDI,ESI                ; 0058fdcf | = "gore" | s_gore_00681878+4
     CMP dword ptr [EAX + 0x308],0x0     ; 0058fdd1
     JNZ 0x0058fdfa                      ; 0058fdd8
         ;   XREF to: 0058fdfa (CONDITIONAL_JUMP)  ; LAB_0058fdfa
@@ -2858,13 +2858,13 @@ section .text
     MOV ESI,0x64bced                    ; 00591bc2 | = "MySpecialTriangles"
     ADD EDI,ECX                         ; 00591bc7
     PUSH EDI                            ; 00591bc9
-    MOV AL,byte ptr [ESI]               ; 00591bca | = "MySpecialTriangles" | s_SpecialTriangles_0064bcef
+    MOV AL,byte ptr [ESI]               ; 00591bca | = "MySpecialTriangles" | s_MySpecialTriangles_0064bced+2
         ;   Label: LAB_00591bca
     MOV byte ptr [EDI],AL               ; 00591bcc
     CMP AL,0x0                          ; 00591bce
     JZ 0x00591be2                       ; 00591bd0
         ;   XREF to: 00591be2 (CONDITIONAL_JUMP)  ; LAB_00591be2
-    MOV AL,byte ptr [ESI + 0x1]         ; 00591bd2 | s_ySpecialTriangles_0064bcee | s_pecialTriangles_0064bcf0
+    MOV AL,byte ptr [ESI + 0x1]         ; 00591bd2 | s_MySpecialTriangles_0064bced+1 | s_MySpecialTriangles_0064bced+3
     ADD ESI,0x2                         ; 00591bd5
     MOV byte ptr [EDI + 0x1],AL         ; 00591bd8
     ADD EDI,0x2                         ; 00591bdb

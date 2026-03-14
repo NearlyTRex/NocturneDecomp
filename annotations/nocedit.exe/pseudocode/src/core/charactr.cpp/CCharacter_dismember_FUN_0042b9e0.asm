@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force)
+; void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force,int render_in_background)
 ;
 ; Parameters:
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   impact_point
 ; float            Stack[0xc]:4   impact_force
-; int              Stack[0x10]:4   in_stack_00000010
+; int              Stack[0x10]:4   render_in_background
 ; Local Variables:
 ; float            Stack[-0xb0]:4  local_b0
 ; CMatrix3x3f      Stack[-0xac]:36  local_ac

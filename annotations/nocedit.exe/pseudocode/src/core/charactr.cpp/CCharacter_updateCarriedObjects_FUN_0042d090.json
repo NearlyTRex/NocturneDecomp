@@ -122,6 +122,70 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "0042f825",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_processInEditor_FUN_0042f800",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d556c",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004d5550",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042dff4",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_0042dfc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042f717",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00525889",
+        "call_type": "direct",
+        "caller": "core_mobster.cpp_CMobster_process_FUN_00525840",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.0,
     "instruction_count": 167,
@@ -326,7 +390,7 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 11,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "int unaff_EBP;",
@@ -334,7 +398,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 18,
       "match": "in_stack_fffffd80",
       "severity": "moderate",
       "text": "CMatrix3x4f *in_stack_fffffd80;",
@@ -353,7 +417,7 @@
       "line": 53,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -369,7 +433,7 @@
       "line": 65,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -377,7 +441,7 @@
       "line": 66,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -385,7 +449,7 @@
       "line": 73,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -393,7 +457,7 @@
       "line": 74,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -401,7 +465,7 @@
       "line": 82,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -409,7 +473,7 @@
       "line": 83,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -441,7 +505,7 @@
       "line": 107,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -449,7 +513,7 @@
       "line": 108,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);",
+      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -457,7 +521,7 @@
       "line": 111,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)(unaff_EBP + 8);",
+      "text": "iVar4 = *(int *)(unaff_EBP + 8);",
       "type": "unaffected_reg"
     },
     {
@@ -473,7 +537,7 @@
       "line": 118,
       "match": "unaff_EBP",
       "severity": "moderate",
-      "text": "iVar2 = *(int *)(unaff_EBP + 8);",
+      "text": "iVar4 = *(int *)(unaff_EBP + 8);",
       "type": "unaffected_reg"
     },
     {

@@ -646,6 +646,7 @@ def import_functions(currentProgram, path):
             fn_variadic = fn.get("variadic")
             fn_thunked = fn.get("thunk")
             fn_thunktarget = get_addr_obj(currentProgram, fn.get("thtarget"))
+            fn_custom_storage = fn.get("custom_storage")
             fn_tags = fn.get("tags", [])
             fn_comment = fn.get("cmt")
             fn_variables = fn.get("vars")
@@ -716,6 +717,8 @@ def import_functions(currentProgram, path):
                 function.setInline(True)
             if fn_variadic:
                 function.setVarArgs(True)
+            if fn_custom_storage:
+                function.setCustomVariableStorage(True)
 
             # Import variables
             if fn_variables:
@@ -773,6 +776,7 @@ def export_functions(currentProgram, path):
         func_inline = f.isInline()
         func_variadic = f.hasVarArgs()
         func_noreturn = f.hasNoReturn()
+        func_custom_storage = f.hasCustomVariableStorage()
         func_thunked = f.isThunk()
         func_thunk_target = str(f.getThunkedFunction(True).getEntryPoint()) if f.isThunk() and f.getThunkedFunction(True) else None
         func_cmt = f.getComment()
@@ -814,6 +818,8 @@ def export_functions(currentProgram, path):
             func_data["variadic"] = True
         if func_noreturn:
             func_data["noreturn"] = True
+        if func_custom_storage:
+            func_data["custom_storage"] = True
 
         # Handle thunk information
         final_thunked = func_thunked or func_existing_thunk.get("thunk", False)

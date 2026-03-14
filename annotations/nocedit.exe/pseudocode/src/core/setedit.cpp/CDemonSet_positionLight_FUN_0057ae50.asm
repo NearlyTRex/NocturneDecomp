@@ -552,7 +552,7 @@ section .text
         ;   Label: LAB_0057b3c9
     PUSH EDX                            ; 0057b3cf | g_CSlewInstance
     CALL core_slew.cpp_CSlew_free_FUN_005a20a0 ; 0057b3d0
-        ;   XREF to: 005a20a0 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_free_FUN_005a20a0()
+        ;   XREF to: 005a20a0 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_free_FUN_005a20a0(CSlew * this_ptr)
     ADD ESP,0x4                         ; 0057b3d5
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0057b3d8
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()

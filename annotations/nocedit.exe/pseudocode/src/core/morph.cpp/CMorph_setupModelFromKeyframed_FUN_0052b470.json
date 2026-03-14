@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 22,
+    "complexity_score": 7,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 31
   },
   "cross_references": [
@@ -58,15 +56,18 @@
         "call_addr": "004186cf",
         "call_type": "direct",
         "caller": "core_biggs.cpp_CBiggs_setup_FUN_00418680",
-        "estimated_params": 3,
-        "instructions_analyzed": 5,
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 3
+        "stack_bytes": 16,
+        "stack_params": 4
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 4,
-    "estimated_params": 3
+    "declared_stack_bytes": 16,
+    "estimated_params": 4
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.714285714285714,
@@ -133,17 +134,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 4,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 3,
-      "fix_type": "remove_params",
-      "match": "declared:4 vs estimated:3",
-      "param_delta": -1,
-      "text": "Function declares 4 params but call sites push 3 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

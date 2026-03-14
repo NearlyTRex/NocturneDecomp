@@ -13,17 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 88,
+    "complexity_score": 89,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
+    "pseudocode_lines": 74,
     "suspect_count": 1,
     "suspect_types": [
       "unresolved_funcptr"
     ],
-    "total_lines": 217
+    "total_lines": 218
   },
   "cross_references": [
     {
@@ -129,6 +129,37 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0045d124",
+        "call_type": "direct",
+        "caller": "shape_design.c_renderSinglePolygon_FUN_0045ce20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045d1af",
+        "call_type": "direct",
+        "caller": "shape_design.c_renderSinglePolygon_FUN_0045ce20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.76,
     "instruction_count": 100,
@@ -183,5 +214,16 @@
       "text": "code *pcVar2;",
       "type": "unresolved_funcptr"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 100,
+        "vtable_addr": "0066df88"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

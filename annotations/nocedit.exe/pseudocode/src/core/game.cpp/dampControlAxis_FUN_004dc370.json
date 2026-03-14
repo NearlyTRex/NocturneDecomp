@@ -6,13 +6,13 @@
   },
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 168,
+    "complexity_score": 158,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 23,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
       "stack_param"
     ],
@@ -29,7 +29,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_game.cpp_dampControlAxis_FUN_004dc370",
-    "signature": "void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(void)"
+    "signature": "void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(float *axis_value,float damp_time,float damp_rate)"
   },
   "function_calls": [],
   "globals": [
@@ -50,8 +50,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 0,
-    "estimated_params": 0
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.82051282051282,
@@ -98,6 +99,13 @@
     "variables": [
       {
         "is_param": true,
+        "name": "axis_value",
+        "offset": 4,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
         "name": "in_stack_00000004",
         "offset": 4,
         "size": 4,
@@ -105,8 +113,22 @@
       },
       {
         "is_param": true,
+        "name": "damp_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
         "name": "in_stack_00000008",
         "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "damp_rate",
+        "offset": 12,
         "size": 4,
         "type": "float"
       },
@@ -147,17 +169,9 @@
     {
       "description": "Unresolved stack parameter",
       "line": 10,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "fVar1 = (g_CGamePtr->delta_time_float * in_stack_0000000c) / in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "fVar1 = (g_CGamePtr->delta_time_float * in_stack_0000000c) / in_stack_00000008;",
+      "text": "fVar1 = (g_CGamePtr->delta_time_float * damp_rate) / in_stack_00000008;",
       "type": "stack_param"
     },
     {

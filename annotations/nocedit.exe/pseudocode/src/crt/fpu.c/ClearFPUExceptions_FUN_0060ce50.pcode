@@ -18,10 +18,10 @@
 
 @0060ce50 [ESP:+0]  # FNCLEX
 COPY (register,0x10a2,1) = (const,0x0,1)
-INT_AND (unique,0x59b80,2) = (register,0x10a2,2), (const,0x7fff,2)
-INT_ZEXT (unique,0x59c00,2) = (const,0x0,1)
-INT_LEFT (unique,0x59c80,2) = (unique,0x59c00,2), (const,0xf,4)
-INT_OR (register,0x10a2,2) = (unique,0x59b80,2), (unique,0x59c80,2)
+INT_AND (unique,0xb3700,2) = (register,0x10a2,2), (const,0x7fff,2)
+INT_ZEXT (unique,0xb3800,2) = (const,0x0,1)
+INT_LEFT (unique,0xb3900,2) = (unique,0xb3800,2), (const,0xf,4)
+INT_OR (register,0x10a2,2) = (unique,0xb3700,2), (unique,0xb3900,2)
 
 @0060ce52 [ESP:+4](+4)  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */

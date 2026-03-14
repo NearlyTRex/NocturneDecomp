@@ -19,7 +19,7 @@ int __watcallStack mbstrnbytes(char *str,int char_count)
       iVar2 = iVar2 + 1;
     }
     else {
-      if (((byte *)str)[1] == 0) {
+      if (str[1] == 0) {
         return iVar2;
       }
       iVar1 = mblen(str);

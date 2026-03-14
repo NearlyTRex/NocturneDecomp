@@ -17,6 +17,7 @@ void __cdecl core_hpriest_cpp_CHighPriestOfGardath_process_FUN_004f7c00(CHighPri
   if (iVar1 == 0) {
     return;
   }
-  core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0((CCharacter *)this_ptr,(CVector3f *)0x0,-1.0);
+  core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0
+            ((CCharacter *)this_ptr,(CVector3f *)0x0,-1.0,1);
   return;
 }

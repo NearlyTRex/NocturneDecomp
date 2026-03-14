@@ -6,19 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 130,
+    "complexity_score": 89,
     "cross_reference_count": 9,
     "function_call_count": 7,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 75,
-    "suspect_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 74,
+    "suspect_count": 1,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "param_count_too_few",
-      "stack_param"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 229
+    "total_lines": 228
   },
   "cross_references": [
     {
@@ -91,7 +89,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0",
-    "signature": "void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force)"
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force,int render_in_background)"
   },
   "function_calls": [
     {
@@ -158,8 +156,10 @@
         "call_type": "direct",
         "caller": "core_batman.cpp_CBatman_processDismemberment_FUN_00417660",
         "estimated_params": 4,
-        "instructions_analyzed": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 16,
         "stack_params": 4
       },
       {
@@ -167,26 +167,32 @@
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_explode_FUN_0042b930",
         "estimated_params": 4,
-        "instructions_analyzed": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 16,
         "stack_params": 4
       },
       {
         "call_addr": "0041240f",
         "call_type": "direct",
         "caller": "core_armour.cpp_CArmour_processDamage_FUN_00412400",
-        "estimated_params": 5,
-        "instructions_analyzed": 6,
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 16,
+        "stack_params": 4
       },
       {
         "call_addr": "00412390",
         "call_type": "direct",
         "caller": "core_armour.cpp_CArmour_process_FUN_00412260",
         "estimated_params": 4,
-        "instructions_analyzed": 12,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 16,
         "stack_params": 4
       },
       {
@@ -194,8 +200,10 @@
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_processDamage_FUN_0042c3c0",
         "estimated_params": 4,
-        "instructions_analyzed": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 16,
         "stack_params": 4
       },
       {
@@ -203,8 +211,10 @@
         "call_type": "direct",
         "caller": "core_gargoyle.cpp_CGargoyle_processDamage_FUN_004e57d0",
         "estimated_params": 4,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 16,
         "stack_params": 4
       },
       {
@@ -212,8 +222,10 @@
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_processFire_FUN_0042a830",
         "estimated_params": 4,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 16,
         "stack_params": 4
       },
       {
@@ -221,8 +233,10 @@
         "call_type": "direct",
         "caller": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970",
         "estimated_params": 4,
-        "instructions_analyzed": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 16,
         "stack_params": 4
       },
       {
@@ -230,13 +244,16 @@
         "call_type": "direct",
         "caller": "core_hpriest.cpp_CHighPriestOfGardath_process_FUN_004f7c00",
         "estimated_params": 4,
-        "instructions_analyzed": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 16,
         "stack_params": 4
       }
     ],
-    "confidence": "medium",
-    "declared_params": 3,
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
     "estimated_params": 4
   },
   "pcode_summary": {
@@ -279,10 +296,10 @@
     "pcode_op_count": 682
   },
   "stack_frame": {
-    "frame_size": 180,
+    "frame_size": 196,
     "local_size": 180,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 16,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -413,7 +430,7 @@
       },
       {
         "is_param": true,
-        "name": "in_stack_00000010",
+        "name": "render_in_background",
         "offset": 16,
         "size": 4,
         "type": "int"
@@ -439,39 +456,12 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 49,
+      "line": 48,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_6c.z = SQRT(impact_point->z * impact_point->z +",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000010",
-      "severity": "moderate",
-      "text": "(this_ptr,part_index,initial_velocity,in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "call_site_count": 9,
-      "declared_params": 3,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:3 vs estimated:4",
-      "param_delta": 1,
-      "text": "Function declares 3 params but call sites push 4 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

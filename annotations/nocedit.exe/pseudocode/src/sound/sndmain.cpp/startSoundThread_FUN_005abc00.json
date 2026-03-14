@@ -43,15 +43,16 @@
   },
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 165,
+    "complexity_score": 180,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
+      "param_count_too_few",
       "sub84_truncation",
       "unknown_field"
     ],
@@ -138,6 +139,37 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005b098b",
+        "call_type": "direct",
+        "caller": "sound_sndwav.cpp_CWavOutDevice_start_FUN_005b08f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005ae3ce",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.527272727272727,
     "instruction_count": 55,
@@ -293,6 +325,17 @@
       "severity": "mild",
       "text": "g_AudioLatencySeconds._0_4_ = SUB84(__BITCAST_UINT64(dVar1),0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

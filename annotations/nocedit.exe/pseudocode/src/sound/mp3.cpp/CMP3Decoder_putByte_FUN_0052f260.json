@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 29,
+    "complexity_score": 14,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 14,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 42
   },
   "cross_references": [
@@ -84,15 +82,18 @@
         "call_addr": "0053564f",
         "call_type": "direct",
         "caller": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40",
-        "estimated_params": 2,
-        "instructions_analyzed": 6,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 12,
+        "stack_params": 3
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 3,
-    "estimated_params": 2
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.181818181818182,
@@ -150,17 +151,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 3,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 2,
-      "fix_type": "remove_params",
-      "match": "declared:3 vs estimated:2",
-      "param_delta": -1,
-      "text": "Function declares 3 params but call sites push 2 (1 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

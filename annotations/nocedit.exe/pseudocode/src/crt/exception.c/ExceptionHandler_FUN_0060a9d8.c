@@ -48,8 +48,8 @@ switchD_0060aa00_caseD_c000008e:
       }
       if ((((*pbVar1 & 1) == 0) && ((pbVar1[1] & 0x30) == 0x30)) &&
          ((((ContextRecord->FloatSave).TagWord & 0xffff) >>
-           ((byte)((((ContextRecord->FloatSave).StatusWord & 0xffff) << 2) >> 0xd) & 7) * '\x02' & 1
-          ) == 1)) goto switchD_0060aa00_caseD_c000008e;
+           ((byte)(((ContextRecord->FloatSave).StatusWord & 0xffff) >> 0xb) & 7) * '\x02' & 1) == 1)
+         ) goto switchD_0060aa00_caseD_c000008e;
       if (iVar1 == -1) goto switchD_0060aa00_default;
     }
     break;

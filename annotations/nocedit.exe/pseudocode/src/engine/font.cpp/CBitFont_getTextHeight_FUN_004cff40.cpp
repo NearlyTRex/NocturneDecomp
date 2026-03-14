@@ -46,13 +46,13 @@ LAB_004cffc4:
       iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(this_ptr,(uint)(byte)*text_string)
       ;
     }
-    bVar1 = ((byte *)text_string)[1];
-    text_string = (char *)((byte *)text_string + 1);
+    bVar1 = text_string[1];
+    text_string = text_string + 1;
   }
   iVar3 = this_ptr->current_line_height;
   do {
     iVar3 = iVar3 + this_ptr->line_spacing + this_ptr->current_line_height;
-    pbVar4 = (byte *)text_string + 1;
+    pbVar4 = (byte *)(text_string + 1);
     do {
       text_string = (char *)pbVar4;
       if (*pbVar4 == 10) goto LAB_004cff9c;

@@ -261,7 +261,7 @@ uint FUN_0060d576(_FILE *param_1);
 
 // Original: crt_unknown.c_FUN_0060dcf6
 // Address: 0060dcf6
-uint FUN_0060dcf6(void);
+double FUN_0060dcf6(void);
 
 // Original: crt_unknown.c_FUN_0060e256
 // Address: 0060e256
@@ -309,15 +309,15 @@ undefined8 FUN_0060eb3a(void);
 
 // Original: crt_unknown.c_FUN_0060eb4b
 // Address: 0060eb4b
-ulonglong FUN_0060eb4b(void);
+ulonglong __cdecl FUN_0060eb4b(void);
 
 // Original: crt_unknown.c_FUN_0060eb57
 // Address: 0060eb57
-ulonglong FUN_0060eb57(void);
+ulonglong __cdecl FUN_0060eb57(void);
 
 // Original: crt_unknown.c_FUN_0060fa80
 // Address: 0060fa80
-void FUN_0060fa80(void);
+void __cdecl FUN_0060fa80(void);
 
 // Original: crt_unknown.c_FUN_0060fa90
 // Address: 0060fa90

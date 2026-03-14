@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; ulonglong crt_unknown_c_FUN_0060eb57(void)
+; ulonglong __cdecl crt_unknown_c_FUN_0060eb57(void)
 ;
 ;
 ; XREF[3]:
@@ -23,7 +23,7 @@ section .text
         ;   XREF to: 006027ac (UNCONDITIONAL_CALL)  ; void crt_math.c_set_range_error_errno_FUN_006027ac()
     MOV EAX,0x84                        ; 0060eb5d
     CALL crt_unknown.c_FUN_0060fa80     ; 0060eb62
-        ;   XREF to: 0060fa80 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0060fa80()
+        ;   XREF to: 0060fa80 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_FUN_0060fa80()
     POP EAX                             ; 0060eb67
     AND EAX,0x80000000                  ; 0060eb68
         ;   Label: LAB_0060eb68

@@ -40,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_fire.cpp_CFireEffect_createLaserSegment_FUN_004c7eb0",
-    "signature": "void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_004c7eb0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread,float cone_angle)"
+    "signature": "void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_004c7eb0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread)"
   },
   "function_calls": [
     {
@@ -63,6 +63,48 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004c8127",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_createLaserPath_FUN_004c7f80",
+        "estimated_params": 10,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 40,
+        "stack_params": 10
+      },
+      {
+        "call_addr": "004c8b13",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_traceLaser_FUN_004c8230",
+        "estimated_params": 10,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 40,
+        "stack_params": 10
+      },
+      {
+        "call_addr": "004c81db",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_createLaserPath_FUN_004c7f80",
+        "estimated_params": 10,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 40,
+        "stack_params": 10
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 10,
+    "declared_stack_bytes": 40,
+    "estimated_params": 10
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.538461538461538,
     "instruction_count": 39,
@@ -92,10 +134,10 @@
     "pcode_op_count": 177
   },
   "stack_frame": {
-    "frame_size": 48,
+    "frame_size": 44,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 44,
+    "param_size": 40,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -165,13 +207,6 @@
         "is_param": true,
         "name": "halo_spread",
         "offset": 40,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": true,
-        "name": "cone_angle",
-        "offset": 44,
         "size": 4,
         "type": "float"
       }

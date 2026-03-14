@@ -16,8 +16,8 @@ char * __cdecl strupr(char *string)
   while (bVar1 != 0) {
     in_EAX = (char *)toupper((uint)(byte)*string);
     *string = (byte)in_EAX;
-    bVar1 = ((byte *)string)[1];
-    string = (char *)((byte *)string + 1);
+    bVar1 = string[1];
+    string = string + 1;
   }
   return in_EAX;
 }

@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 55,
+    "complexity_score": 40,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 36,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 40,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 115
   },
   "cross_references": [
@@ -270,24 +268,29 @@
         "call_addr": "00454507",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004544f0",
-        "estimated_params": 6,
-        "instructions_analyzed": 9,
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 6
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "0044cdbb",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70",
         "estimated_params": 2,
-        "instructions_analyzed": 13,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 2,
-    "estimated_params": 6
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 2.0135135135135136,
@@ -324,17 +327,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 2,
-      "declared_params": 2,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:2 vs estimated:6",
-      "param_delta": 4,
-      "text": "Function declares 2 params but call sites push 6 (4 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

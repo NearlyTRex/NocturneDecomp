@@ -134,10 +134,10 @@ void __cdecl core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0(CGame *this
 void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004dbe60(CGame *this_ptr);
 void __cdecl core_game_cpp_CGame_processJoystickControls_FUN_004dc230(CGame *this_ptr,SPlayerControl *player_control);
-void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_004dc270(void);
+void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_004dc270(int key_index,int *output_state);
 void __cdecl core_game_cpp_pollKeyEdgeTrigger_FUN_004dc2a0(int key_index,uint *out_state);
 void __cdecl core_game_cpp_rampControlAxis_FUN_004dc2d0(int negative_key,int positive_key,float *axis_value,float ramp_time,float max_value);
-void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(void);
+void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(float *axis_value,float damp_time,float damp_rate);
 void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_004dc3e0(CGame *this_ptr,SPlayerControl *player_control);
 void __cdecl core_game_cpp_CGame_processMouseControls_FUN_004dccc0(CGame *this_ptr,SPlayerControl *player_control);
 void __cdecl core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004dce70(CGame *this_ptr);

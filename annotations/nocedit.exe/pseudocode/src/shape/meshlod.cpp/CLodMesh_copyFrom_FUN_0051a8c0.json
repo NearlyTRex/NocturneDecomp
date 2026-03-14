@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 215,
+    "complexity_score": 216,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 70,
+    "pseudocode_lines": 71,
     "suspect_count": 14,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 151
+    "total_lines": 152
   },
   "cross_references": [
     {
@@ -64,6 +64,70 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "00515874",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_copy_FUN_00515860",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00516fa0",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00516feb",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0051b940",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0058d68d",
+        "call_type": "direct",
+        "caller": "core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.924050632911392,
     "instruction_count": 79,
@@ -188,7 +252,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 50,
       "match": "(SMRGLTextureLod *)((int)",
       "severity": "mild",
       "text": "pSVar5 = (SMRGLTextureLod *)((int)pSVar5 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -196,7 +260,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 51,
       "match": "(SMRGLTextureLod *)((int)",
       "severity": "mild",
       "text": "pSVar9 = (SMRGLTextureLod *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);",
@@ -204,7 +268,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 55,
       "match": "(SMRGLTextureLod *)((int)",
       "severity": "mild",
       "text": "pSVar5 = (SMRGLTextureLod *)((int)pSVar5 + (uint)bVar11 * -2 + 1);",
@@ -212,7 +276,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 56,
       "match": "(SMRGLTextureLod *)((int)",
       "severity": "mild",
       "text": "pSVar9 = (SMRGLTextureLod *)((int)pSVar9 + (uint)bVar11 * -2 + 1);",
@@ -220,7 +284,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 70,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar6 = (int *)((int)piVar6 + (uint)bVar11 * -2 + 1);",
@@ -228,7 +292,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 71,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "piVar10 = (int *)((int)piVar10 + (uint)bVar11 * -2 + 1);",

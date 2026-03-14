@@ -14,15 +14,15 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,484
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        306 ( 4.7%)
+  Functions with type issues:        296 ( 4.6%)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   0
     Missing register params:           4
-    Wrong calling convention:          29
-    Undefined types in variables:      236
-    Unresolved stack params:           64
+    Wrong calling convention:          28
+    Undefined types in variables:      235
+    Unresolved stack params:           50
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -85,7 +85,7 @@ Missing register parameters (likely wrong calling convention) (4)
     Suggested: Likely register-based calling convention
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (29)
+Wrong calling convention (unaffected register usage) (28)
 --------------------------------------------------------------------------------
 
   CTextureCache_loadTexture
@@ -154,16 +154,16 @@ Wrong calling convention (unaffected register usage) (29)
     Signature: void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
+  CElephantGun_process
+    Address: 0x004a7070  File: core/elephant.cpp
+    Evidence: unaff_ESI, unaff_ESI
+    Signature: void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *this_ptr,float delta_time)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
   CScat_updateWeaponState
     Address: 0x00558060  File: core/scat.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI
     Signature: void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00558060(CScat *this_ptr,float delta_time)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CStranger_processMotionEvents
-    Address: 0x005bdd20  File: core/stranger.cpp
-    Evidence: unaff_EBP, unaff_EBP
-    Signature: void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStranger *this_ptr,float delta_time)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CWeapon_updateLighting
@@ -205,7 +205,7 @@ Wrong calling convention (unaffected register usage) (29)
   CPathMap_checkAxisAlignedPath
     Address: 0x00546e90  File: core/path.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
-    Signature: int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z)
+    Signature: int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90(CPathMap *this_ptr,int start_x,int start_z,int end_x,int end_z)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CLightGun_updateBeamLight
@@ -218,12 +218,6 @@ Wrong calling convention (unaffected register usage) (29)
     Address: 0x00505a20  File: core/lightgun.cpp
     Evidence: unaff_ESI, unaff_ESI
     Signature: int __cdecl core_lightgun_cpp_CLightGun_isLightVulnerable_FUN_00505a20(CLightGun *this_ptr)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDemonRaytrace_worldPositionToGridCoords
-    Address: 0x004997d0  File: core/dtrace.cpp
-    Evidence: unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDemonMission_loadActor
@@ -263,31 +257,13 @@ Wrong calling convention (unaffected register usage) (29)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (64)
+Unresolved stack parameters (missing from signature) (50)
 --------------------------------------------------------------------------------
-
-  traceConnectedEdges
-    Address: 0x00434af0  File: cockpit/ckptutil.c
-    Evidence: in_stack_00000020, in_stack_00000024, in_stack_00000024, in_stack_00000020, in_stack_00000024
-    Signature: void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y)
-    Suggested: Signature is missing stack parameters entirely
-
-  loadRotatedBitmapFile
-    Address: 0x00434690  File: cockpit/ckptutil.c
-    Evidence: in_stack_00000018, in_stack_00000018
-    Signature: char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filename,char *buffer,int width,int height,void *optional_param)
-    Suggested: Signature is missing stack parameters entirely
-
-  reopenFileStream
-    Address: 0x00481b50  File: engine/dosio.c
-    Evidence: in_stack_0000000d
-    Signature: void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50(char *directory_path,char *filename,byte file_mode_flags,ifstream *file_stream)
-    Suggested: Signature is missing stack parameters entirely
 
   CWinFont_setColorAndDrawText
     Address: 0x005f2440  File: engine/winfont.cpp
     Evidence: in_stack_0000002c, in_stack_0000002c
-    Signature: void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,int x_position,int y_position,char *text_string,int foreground_color,int background_color)
+    Signature: void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,char *text_string,int x_position,int y_position,int foreground_color,int background_color)
     Suggested: Signature is missing stack parameters entirely
 
   drawLineStrip3D
@@ -440,12 +416,6 @@ Unresolved stack parameters (missing from signature) (64)
     Signature: void __cdecl core_actor_cpp_drawBoundingBox_FUN_0040d470(CBoundingBox3D *bbox,int line_color)
     Suggested: Signature is missing stack parameters entirely
 
-  CFireEffect_createExplosion
-    Address: 0x004c8c10  File: core/fire.cpp
-    Evidence: in_stack_00000014, in_stack_00000014
-    Signature: void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position,float scale,int damage_amount)
-    Suggested: Signature is missing stack parameters entirely
-
   CDemonMission_enemyRandomizer
     Address: 0x005379e0  File: core/msnedit.cpp
     Evidence: in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc, in_stack_fffff2fc
@@ -462,12 +432,6 @@ Unresolved stack parameters (missing from signature) (64)
     Address: 0x005bb960  File: core/stranger.cpp
     Evidence: in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd14, in_stack_fffffd10, in_stack_fffffd10, in_stack_fffffd14
     Signature: void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_005bb960(CStranger *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
-  CStranger_processMotionEvents
-    Address: 0x005bdd20  File: core/stranger.cpp
-    Evidence: in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48
-    Signature: void __cdecl core_stranger_cpp_CStranger_processMotionEvents_FUN_005bdd20(CStranger *this_ptr,float delta_time)
     Suggested: Signature is missing stack parameters entirely
 
   CStranger_tryPlaceObject
@@ -530,12 +494,6 @@ Unresolved stack parameters (missing from signature) (64)
     Signature: void __cdecl core_skeleton_cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDeformableModel *this_ptr,int color,CMatrix3x4f *bone_matrices,int render_flags)
     Suggested: Signature is missing stack parameters entirely
 
-  CCharacter_dismember
-    Address: 0x0042b9e0  File: core/charactr.cpp
-    Evidence: in_stack_00000010, in_stack_00000010
-    Signature: void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force)
-    Suggested: Signature is missing stack parameters entirely
-
   CCharacter_updateCarriedObjects
     Address: 0x0042d090  File: core/charactr.cpp
     Evidence: in_stack_fffffd80, in_stack_fffffd80, in_stack_fffffd80
@@ -554,70 +512,22 @@ Unresolved stack parameters (missing from signature) (64)
     Signature: void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *model_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  CPathMap_findPathToDestination
-    Address: 0x00547320  File: core/path.cpp
-    Evidence: in_stack_fffffee8, in_stack_fffffee8
-    Signature: int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00547320(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonRaytrace_restoreShadowBitFromBuffer
-    Address: 0x0049a280  File: core/dtrace.cpp
-    Evidence: in_stack_ffffffc0, in_stack_ffffffc0
-    Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280(CDemonRaytrace *this_ptr,CVector3f *world_position)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonRaytrace_setVoxelShadowBit
-    Address: 0x0049a160  File: core/dtrace.cpp
-    Evidence: in_stack_ffffffc0, in_stack_ffffffc0
-    Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160(CDemonRaytrace *this_ptr,CVector3f *world_position)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGabriella_processMotionEvents
-    Address: 0x004d4890  File: core/gabriela.cpp
-    Evidence: in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58, in_stack_ffffff58
-    Signature: void __cdecl core_gabriela_cpp_CGabriella_processMotionEvents_FUN_004d4890(CGabriella *this_ptr,float delta_time)
-    Suggested: Signature is missing stack parameters entirely
-
   CGame_processHotkeys
     Address: 0x004dcee0  File: core/game.cpp
     Evidence: in_stack_00000080, in_stack_00000080, in_stack_00000080
     Signature: void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
-  pollKeyStateOnChange
-    Address: 0x004dc270  File: core/game.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000008, in_stack_00000004
-    Signature: void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_004dc270(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGame_renderIrisFade
-    Address: 0x004e0aa0  File: core/game.cpp
-    Evidence: in_stack_ffffffec, in_stack_ffffffec
-    Signature: void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004e0aa0(CGame *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
   dampControlAxis
     Address: 0x004dc370  File: core/game.cpp
-    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
-    Signature: void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(void)
-    Suggested: Signature is missing stack parameters entirely
-
-  CLodMesh_computeEdgeCollapseCost
-    Address: 0x00518910  File: shape/meshlod.cpp
-    Evidence: in_stack_fffffed8, in_stack_fffffed8
-    Signature: void __cdecl shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLodMesh *this_ptr,int edge_index)
+    Evidence: in_stack_00000004, in_stack_00000008, in_stack_0000000c, in_stack_00000008, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004, in_stack_00000004
+    Signature: void __cdecl core_game_cpp_dampControlAxis_FUN_004dc370(float *axis_value,float damp_time,float damp_rate)
     Suggested: Signature is missing stack parameters entirely
 
   CLodMesh_renderWireframe
     Address: 0x0051e770  File: shape/meshlod.cpp
     Evidence: in_stack_ffffff84, in_stack_ffffffb4, in_stack_ffffff84, in_stack_ffffffb4
     Signature: void __cdecl shape_meshlod_cpp_CLodMesh_renderWireframe_FUN_0051e770(CLodMesh *this_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CLodMesh_getLOD
-    Address: 0x0051b920  File: shape/meshlod.cpp
-    Evidence: in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_00000008, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c, in_stack_0000000c
-    Signature: void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   CLodMesh_renderColorCodedEdges
@@ -651,7 +561,7 @@ Unresolved stack parameters (missing from signature) (64)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (236)
+Undefined types in variables (235)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -752,11 +662,6 @@ Undefined types in variables (236)
   createPolygonFromVertexList
     Address: 0x0045cc80  File: shape/design.c
     Locals:  local_54 (undefined1[4]), local_50 (undefined1[4]), local_4c (undefined1[4]), local_48 (undefined1[4]), local_44 (undefined1[4]), local_40 (undefined1[4]), local_3c (undefined1[4]), local_38 (undefined1[4]), local_34 (undefined1[4]), local_30 (undefined1[4]), local_2c (undefined1[4]), local_28 (undefined1[4]), local_24 (undefined1[4]), local_20 (undefined1[4]), local_1c (undefined1[4])
-    Suggested: Resolve undefined types to concrete types
-
-  CStranger_processMotionEvents
-    Address: 0x005bdd20  File: core/stranger.cpp
-    Locals:  local_94 (undefined4), local_90 (undefined4), local_8c (undefined4), local_7c (undefined4), local_78 (undefined4), local_74 (undefined1), local_5c (undefined1), local_50 (undefined1), local_44 (undefined1), local_38 (undefined1), local_20 (undefined4), local_1c (undefined4), local_18 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
   matrixToEulerAnglesZYX
@@ -987,6 +892,11 @@ Undefined types in variables (236)
   CDeformableModelInstance_updateMotion
     Address: 0x0059e0a0  File: core/skeleton.cpp
     Locals:  auStack_248 (undefined4[3]), local_22c (undefined4), local_16c (undefined4), local_cc (undefined4)
+    Suggested: Resolve undefined types to concrete types
+
+  CStranger_processMotionEvents
+    Address: 0x005bdd20  File: core/stranger.cpp
+    Locals:  local_68 (undefined1), local_5c (undefined1), local_50 (undefined1), local_38 (undefined1)
     Suggested: Resolve undefined types to concrete types
 
   CFileManager_removeAuditRecords
@@ -1677,11 +1587,6 @@ Undefined types in variables (236)
   computeBoxStatistics
     Address: 0x00441260  File: engine/colquant.c
     Locals:  local_30 (undefined8)
-    Suggested: Resolve undefined types to concrete types
-
-  reopenFileStream
-    Address: 0x00481b50  File: engine/dosio.c
-    Params:  in_stack_0000000d (undefined3)
     Suggested: Resolve undefined types to concrete types
 
   CFileManager_catalogPodFile

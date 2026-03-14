@@ -6,12 +6,6 @@
         "column": 20,
         "line": 156,
         "message": "assigning to 'char *' from incompatible type 'void *'"
-      },
-      {
-        "category": "other",
-        "column": 100,
-        "line": 434,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
     "success": false,
@@ -19,17 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 937,
-    "complexity_score": 446,
+    "complexity_score": 432,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 34,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 431,
-    "suspect_count": 1,
-    "suspect_types": [
-      "format_string_mismatch"
-    ],
-    "total_lines": 1368
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 432,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 1369
   },
   "cross_references": [
     {
@@ -49,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_script.cpp_CScript_editorAction_FUN_00564820",
-    "signature": "void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr,EEditorActionType action_type)"
+    "signature": "void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr,EEditorActionType action_type,int action_parm)"
   },
   "function_calls": [
     {
@@ -369,6 +361,125 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 20,
+    "call_sites": [
+      {
+        "call_addr": "00565722",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_processEditorInput_FUN_00565130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005657a2",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_processEditorInput_FUN_00565130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00565323",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_processEditorInput_FUN_00565130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005651e4",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_processEditorInput_FUN_00565130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00565205",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_processEditorInput_FUN_00565130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00565226",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_processEditorInput_FUN_00565130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00565926",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_processEditorInput_FUN_00565130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00565707",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_processEditorInput_FUN_00565130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00565948",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_processEditorInput_FUN_00565130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00565393",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_processEditorInput_FUN_00565130",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.603973509933775,
     "instruction_count": 755,
@@ -405,10 +516,10 @@
     "pcode_op_count": 3476
   },
   "stack_frame": {
-    "frame_size": 56,
+    "frame_size": 60,
     "local_size": 48,
     "param_offset": 4,
-    "param_size": 8,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -473,20 +584,15 @@
         "offset": 8,
         "size": 4,
         "type": "EEditorActionType"
+      },
+      {
+        "is_param": true,
+        "name": "action_parm",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
-  "suspects": [
-    {
-      "actual_args": 1,
-      "description": "Format \"CScript::editorAction - unknown action: %d parm %d\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "CScript::editorAction - unknown action: %d parm %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 427,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CScript::editorAction - unknown action: %d parm %d\",ac",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

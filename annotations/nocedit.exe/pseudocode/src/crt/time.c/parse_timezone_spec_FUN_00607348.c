@@ -27,8 +27,7 @@ char * __cdecl parse_timezone_spec(char *tz_string,char *name_buffer,int *offset
     pbVar5 = (byte *)tz_string;
   }
   for (; ((((bVar1 = *tz_string, bVar1 != 0 && (bVar1 != 0x2c)) && (bVar1 != 0x2d)) &&
-          (bVar1 != 0x2b)) && ((bVar1 < 0x30 || (0x39 < bVar1))));
-      tz_string = (char *)((byte *)tz_string + 1)) {
+          (bVar1 != 0x2b)) && ((bVar1 < 0x30 || (0x39 < bVar1)))); tz_string = tz_string + 1) {
   }
   uVar4 = (int)tz_string - (int)pbVar5;
   if (0x80 < (int)uVar4) {
@@ -51,7 +50,7 @@ char * __cdecl parse_timezone_spec(char *tz_string,char *name_buffer,int *offset
     bVar2 = true;
   }
   else if (bVar1 != 0x2b) goto LAB_006073c8;
-  tz_string = (char *)((byte *)tz_string + 1);
+  tz_string = tz_string + 1;
 LAB_006073c8:
   if ((0x2f < (byte)*tz_string) && ((byte)*tz_string < 0x3a)) {
     local_1c = 0;
@@ -59,9 +58,9 @@ LAB_006073c8:
     local_14 = 0;
     tz_string = parse_uint(tz_string,&local_14);
     if (*tz_string == 0x3a) {
-      tz_string = parse_uint((char *)((byte *)tz_string + 1),&local_18);
+      tz_string = parse_uint(tz_string + 1,&local_18);
       if (*tz_string == 0x3a) {
-        tz_string = parse_uint((char *)((byte *)tz_string + 1),&local_1c);
+        tz_string = parse_uint(tz_string + 1,&local_1c);
       }
     }
     iVar2 = local_1c + (local_18 + local_14 * 0x3c) * 0x3c;

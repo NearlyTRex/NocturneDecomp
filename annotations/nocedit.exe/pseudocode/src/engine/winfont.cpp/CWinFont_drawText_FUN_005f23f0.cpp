@@ -16,7 +16,7 @@ int __cdecl engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0(CWinFont *this_ptr
     return 0;
   }
   engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440
-            (this_ptr,this_ptr->device_context_handle,x_position,y_position,text_string,text_color,
-             draw_flags);
+            (this_ptr,this_ptr->device_context_handle,(char *)x_position,y_position,(int)text_string
+             ,text_color,draw_flags);
   return 0;
 }

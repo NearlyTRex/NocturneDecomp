@@ -32,18 +32,6 @@
         "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
       },
       {
-        "category": "other",
-        "column": 21,
-        "line": 124,
-        "message": "subscript of pointer to function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
-      },
-      {
-        "category": "pointer_arithmetic",
-        "column": 76,
-        "line": 125,
-        "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
-      },
-      {
         "category": "undeclared_identifier",
         "column": 38,
         "line": 126,
@@ -241,6 +229,26 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0053a756",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.129337539432177,
     "instruction_count": 317,

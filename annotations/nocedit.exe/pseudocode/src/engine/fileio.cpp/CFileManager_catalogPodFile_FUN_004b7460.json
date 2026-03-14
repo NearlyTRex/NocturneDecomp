@@ -176,6 +176,37 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004be446",
+        "call_type": "direct",
+        "caller": "core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b6b30",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.300546448087432,
     "instruction_count": 183,

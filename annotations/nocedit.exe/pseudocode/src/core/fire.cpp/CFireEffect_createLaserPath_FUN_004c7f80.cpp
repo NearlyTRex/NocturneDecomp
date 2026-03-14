@@ -10,6 +10,7 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80(CFireEffect 
 
 {
   float fVar1;
+  float fStack_88;
   float local_84;
   float local_80;
   CVector3f local_70;
@@ -56,7 +57,7 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80(CFireEffect 
     if (local_80 <= 0.0) break;
     core_fire_cpp_CFireEffect_createLaserSegment_FUN_004c7eb0
               (this_ptr,&local_70,&local_40,beam_width,0.0,reflection_normal,red,green,blue,
-               0.02f,cone_angle);
+               0.02f);
     if (&local_70 != &local_40) {
       local_70.x = local_40.x;
       local_70.y = local_40.y;
@@ -68,6 +69,6 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004c7f80(CFireEffect 
   }
   core_fire_cpp_CFireEffect_createLaserSegment_FUN_004c7eb0
             (this_ptr,&local_70,&local_40,beam_width,reticle_intensity,reflection_normal,red,green,
-             blue,0.02f,cone_angle);
+             blue,0.02f);
   return;
 }

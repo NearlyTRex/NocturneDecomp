@@ -2,11 +2,11 @@
 // Address: 00434af0
 // Address Range: [[00434af0, 004355b7]]
 // Convention: __cdecl
-// Signature: void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y)
+// Signature: SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal)
 
 #include "nocturne.h"
 
-void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y)
+SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal)
 
 {
   int iVar2;
@@ -27,17 +27,15 @@ void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *ed
   uint uVar8;
   short sVar9;
   int iVar11;
-  int iVar16;
+  uint uVar11;
   int iVar12;
   int iVar13;
-  SEdge *pSVar17;
+  SEdge *pSVar12;
   int iVar14;
   int iVar15;
-  int iVar18;
-  uint *puVar16;
+  int iVar16;
+  uint *puVar17;
   byte bVar17;
-  int in_stack_00000020;
-  int in_stack_00000024;
   char local_1f4 [256];
   int local_f4;
   int local_f0;
@@ -97,16 +95,16 @@ void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *ed
   bVar17 = 0;
   iVar11 = 0;
   if (edge_lists == (SEdgeList *)0x0) {
-    return (void *)0x0;
+    return (SEdge *)0x0;
   }
   iVar13 = 0;
-  local_e8 = output_buffer;
+  local_e8 = (int *)scanline_data;
   if (0 < gap_tolerance_x + -1) {
     do {
-      iVar18 = iVar13 + 1;
+      iVar16 = iVar13 + 1;
       local_e0 = 0;
       local_e4 = local_e8;
-      for (local_20 = 0; piVar2 = (int *)((int)output_buffer + iVar13 * 0x84), local_20 < *piVar2;
+      for (local_20 = 0; piVar2 = (int *)((int)scanline_data + iVar13 * 0x84), local_20 < *piVar2;
           local_20 = local_20 + 1) {
         iVar2 = *(int *)((int)piVar2 + local_e0 + 4);
         iVar14 = *(int *)((int)piVar2 + local_e0 + 0x44) + iVar2;
@@ -119,13 +117,13 @@ void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *ed
           core_main_c_displayErrorAndQuit_FUN_00506f10(local_1f4);
         }
         uVar6 = (ushort)iVar13;
-        uVar4 = (ushort)iVar18;
+        uVar4 = (ushort)iVar16;
         if (0 < iVar2) {
           iVar10 = 0;
           local_c4 = 0;
-          piVar7 = (int *)((int)output_buffer + iVar18 * 0x84);
+          piVar7 = (int *)((int)scanline_data + iVar16 * 0x84);
           while( true ) {
-            piVar6 = (int *)(iVar18 * 0x84 + (int)output_buffer);
+            piVar6 = (int *)(iVar16 * 0x84 + (int)scanline_data);
             if (*piVar6 <= iVar10) break;
             iVar3 = *(int *)((int)piVar6 + local_c4 + 4);
             bVar5 = false;
@@ -139,7 +137,7 @@ void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *ed
             uVar9 = (ushort)iVar3;
             if ((iVar3 < iVar2 + -1) &&
                (iVar2 <= *(int *)((int)piVar6 + local_c4 + 0x44) + iVar3 + -1)) {
-              iVar16 = iVar11 + 1;
+              uVar11 = iVar11 + 1;
               pSVar3 = g_TracedEdgeBuffer + iVar11;
               if (bVar5) {
                 if (gap_tolerance_y < (iVar2 - local_58) + -1) goto LAB_00434f60;
@@ -179,10 +177,11 @@ LAB_00434f60:
                   bVar5 = true;
                 }
               }
-              iVar16 = iVar11;
+              uVar11 = iVar11;
               if ((iVar2 + 1 < iVar3) && (iVar3 <= iVar15)) {
-                if ((bVar5) || (in_stack_00000024 < (iVar3 - iVar2) + 1)) {
-                  if ((!bVar5) || (in_stack_00000020 < (iVar3 - local_18) + -1)) goto LAB_00434df6;
+                if ((bVar5) || (gap_tolerance_horizontal < (iVar3 - iVar2) + 1)) {
+                  if ((!bVar5) || (gap_tolerance_connected < (iVar3 - local_18) + -1))
+                  goto LAB_00434df6;
                   pSVar3 = g_TracedEdgeBuffer + iVar11;
                   pSVar3->x0 = 0;
                   pSVar3->x0 = pSVar3->x0 | (ushort)local_18;
@@ -214,14 +213,14 @@ LAB_00434f60:
                 }
 LAB_00434df2:
                 pSVar3->y1 = uVar7;
-                iVar16 = iVar11 + 1;
+                uVar11 = iVar11 + 1;
               }
             }
 LAB_00434df6:
             local_c4 = local_c4 + 4;
             iVar10 = iVar10 + 1;
             piVar7 = piVar7 + 1;
-            iVar11 = iVar16;
+            iVar11 = uVar11;
           }
         }
         if (0x1ff < iVar11) {
@@ -233,27 +232,27 @@ LAB_00434df6:
         }
         if (iVar15 < max_y + -1) {
           local_50 = 0;
-          for (local_b4 = 0; piVar7 = (int *)(iVar18 * 0x84 + (int)output_buffer),
+          for (local_b4 = 0; piVar7 = (int *)(iVar16 * 0x84 + (int)scanline_data),
               local_b4 < *piVar7; local_b4 = local_b4 + 1) {
             iVar10 = *(int *)((int)piVar7 + local_50 + 4);
             bVar5 = false;
-            piVar6 = (int *)((int)output_buffer + iVar13 * 0x84);
+            piVar6 = (int *)((int)scanline_data + iVar13 * 0x84);
             iVar4 = iVar10 + *(int *)((int)piVar7 + local_50 + 0x44) + -1;
             if ((local_20 < *piVar6 + -1) && (*(int *)((int)piVar6 + local_e0 + 8) < iVar4)) {
               bVar5 = true;
             }
             if (((iVar4 <= iVar14) || (iVar15 < iVar10)) || (bVar5)) {
               bVar5 = false;
-              piVar7 = (int *)(iVar18 * 0x84 + (int)output_buffer);
+              piVar7 = (int *)(iVar16 * 0x84 + (int)scanline_data);
               if ((local_b4 < *piVar7 + -1) && (*(int *)((int)piVar7 + local_50 + 8) < iVar15)) {
                 bVar5 = true;
               }
               iVar12 = iVar11;
               if (((iVar4 < iVar14 + -2) && (iVar2 <= iVar4)) &&
-                 ((!bVar5 && ((iVar15 - iVar4) + 1 <= in_stack_00000024)))) {
-                pSVar17 = g_TracedEdgeBuffer + iVar11;
-                pSVar17->x0 = 0;
-                pSVar17->x0 = pSVar17->x0 | (ushort)iVar15;
+                 ((!bVar5 && ((iVar15 - iVar4) + 1 <= gap_tolerance_horizontal)))) {
+                pSVar12 = g_TracedEdgeBuffer + iVar11;
+                pSVar12->x0 = 0;
+                pSVar12->x0 = pSVar12->x0 | (ushort)iVar15;
                 g_TracedEdgeBuffer[iVar11].y0 = 0;
                 g_TracedEdgeBuffer[iVar11].y0 = g_TracedEdgeBuffer[iVar11].y0 | uVar6;
                 g_TracedEdgeBuffer[iVar11].x1 = 0;
@@ -294,36 +293,35 @@ LAB_00434df6:
     } while (iVar13 < gap_tolerance_x + -1);
   }
   if (iVar11 == 0) {
-    if (output_count == (int *)0x0) {
-      *(uint *)max_x = 0;
+    if (existing_edges == (SEdge *)0x0) {
+      *max_x = 0;
     }
-    return output_count;
+    return existing_edges;
   }
-  if (output_count == (int *)0x0) {
-    *(uint *)max_x = 0;
+  if (existing_edges == (SEdge *)0x0) {
+    *max_x = 0;
   }
-  iVar18 = *(int *)max_x * 8 + iVar11 * 8;
+  iVar16 = *max_x * 8 + iVar11 * 8;
   pvVar5 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (output_count,iVar18,"..\\cockpit\\ckptutil.c",0x8fc);
+                     (existing_edges,iVar16,"..\\cockpit\\ckptutil.c",0x8fc);
   if (pvVar5 == (void *)0x0) {
-    _sprintf(local_1f4,"Unable to allocate %u bytes for edge list.",iVar18);
+    _sprintf(local_1f4,"Unable to allocate %u bytes for edge list.",iVar16);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     g_CurrentLineNumber = 0x8ff;
     core_main_c_displayErrorAndQuit_FUN_00506f10(local_1f4);
   }
-  pSVar17 = g_TracedEdgeBuffer;
-  puVar16 = (uint *)(*(int *)max_x * 8 + (int)pvVar5);
-  for (uVar8 = (uint)(iVar11 * 8) >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *puVar16 = *(uint *)pSVar17;
-    pSVar17 = (SEdge *)&pSVar17[-(uint)bVar17].x1;
-    puVar16 = puVar16 + (uint)bVar17 * -2 + 1;
+  pSVar12 = g_TracedEdgeBuffer;
+  puVar17 = (uint *)(*max_x * 8 + (int)pvVar5);
+  for (uVar8 = (iVar11 & 0x1fffffffU) << 1; uVar8 != 0; uVar8 = uVar8 - 1) {
+    *puVar17 = *(uint *)pSVar12;
+    pSVar12 = (SEdge *)&pSVar12[-(uint)bVar17].x1;
+    puVar17 = puVar17 + (uint)bVar17 * -2 + 1;
   }
-  for (iVar18 = 0; iVar18 != 0; iVar18 = iVar18 + -1) {
-    puVar16 = (uint *)((int)puVar16 + (uint)bVar17 * -2 + 1);
-    *(char *)puVar16 = (char)pSVar17->x0;
-    pSVar17 = (SEdge *)((int)pSVar17 + (uint)bVar17 * -2 + 1);
-    puVar16 = puVar16;
+  for (iVar16 = 0; iVar16 != 0; iVar16 = iVar16 + -1) {
+    *(char *)puVar17 = (char)pSVar12->x0;
+    pSVar12 = (SEdge *)((int)pSVar12 + (uint)bVar17 * -2 + 1);
+    puVar17 = (uint *)((int)puVar17 + (uint)bVar17 * -2 + 1);
   }
-  *(int *)max_x = *(int *)max_x + iVar11;
+  *max_x = *max_x + iVar11;
   return pvVar5;
 }

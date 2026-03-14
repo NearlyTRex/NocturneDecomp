@@ -48,8 +48,7 @@ void __cdecl core_event_cpp_CEventList_process_FUN_004aaac0(CEventList *this_ptr
         (this_ptr->timers).count = iVar6;
         memmove(pacVar8,local_14,(iVar6 - iVar1) * 0x20);
         memmove
-                  ((this_ptr->timers).durations + iVar1,
-                   (void *)((int)((this_ptr->counters).names + -2) + 0x18 + iVar1 * 4),
+                  ((this_ptr->timers).durations + iVar1,(this_ptr->timers).durations + iVar1 + 1,
                    ((this_ptr->timers).count - iVar1) * 4);
       }
       else {

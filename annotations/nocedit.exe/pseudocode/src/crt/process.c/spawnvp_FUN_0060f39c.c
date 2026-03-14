@@ -2,11 +2,11 @@
 // Address: 0060f39c
 // Address Range: [[0060f39c, 0060f863]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **argv)
+// Signature: int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **argv,char **envp)
 
 #include "nocturne.h"
 
-int __cdecl spawnvp(int mode,char *cmdname,char **argv)
+int __cdecl spawnvp(int mode,char *cmdname,char **argv,char **envp)
 
 {
   char *pcVar1;
@@ -27,7 +27,6 @@ int __cdecl spawnvp(int mode,char *cmdname,char **argv)
   char *program;
   int iVar8;
   uint size_00;
-  char **in_stack_00000010;
   PRTL_CRITICAL_SECTION_DEBUG in_stack_ffffff3c;
   char acStack_c0 [104];
   char *local_58;
@@ -59,8 +58,8 @@ int __cdecl spawnvp(int mode,char *cmdname,char **argv)
      (local_1c = (char *)build_file_info_env(), local_1c != (char *)0x0))
   {
     iVar8 = 1;
-    pcVar1 = *in_stack_00000010;
-    ppcVar3 = in_stack_00000010;
+    pcVar1 = *envp;
+    ppcVar3 = envp;
     while (pcVar1 != (char *)0x0) {
       ppcVar1 = ppcVar3 + 1;
       ppcVar3 = ppcVar3 + 1;
@@ -73,29 +72,29 @@ int __cdecl spawnvp(int mode,char *cmdname,char **argv)
       free(local_1c);
     }
     else {
-      memcpy(ppcVar2,in_stack_00000010,size - 4);
+      memcpy(ppcVar2,envp,size - 4);
       ppcVar2[iVar8] = (char *)0x0;
       ppcVar2[iVar8 + -1] = local_1c;
       local_20 = 1;
-      in_stack_00000010 = ppcVar2;
+      envp = ppcVar2;
     }
   }
   local_14 = '\0';
   if (mode == 2) {
-    iVar4 = execv((int)cmdname,(char *)argv,in_stack_00000010);
+    iVar4 = execv((int)cmdname,(char *)argv,envp);
     if (local_20 == 0) {
       return iVar4;
     }
-    free(in_stack_00000010);
+    free(envp);
     free(local_1c);
     return iVar4;
   }
   iVar4 = build_cmdline
-                    ((int)argv,in_stack_00000010,(char *)&local_38,&local_3c,&local_40,&local_44,
-                     (int *)0x0,(int)in_stack_ffffff3c);
+                    ((int)argv,envp,(char *)&local_38,&local_3c,&local_40,&local_44,(int *)0x0,
+                     (int)in_stack_ffffff3c);
   if (iVar4 == -1) {
     if (local_20 != 0) {
-      free(in_stack_00000010);
+      free(envp);
       free(local_1c);
     }
     return -1;
@@ -118,7 +117,7 @@ int __cdecl spawnvp(int mode,char *cmdname,char **argv)
     if (pcVar4 == (char *)0x0) {
       free(local_38);
       if (iVar9 != 0) {
-        free(in_stack_00000010);
+        free(envp);
         free(local_1c);
       }
       return -1;
@@ -161,7 +160,7 @@ LAB_0060f687:
     if (local_14 == '\0') {
       strcpy(local_28,".com");
       setErrno(0);
-      iVar4 = spawn(mode,pcVar4,local_18,local_38);
+      iVar4 = spawn(mode,pcVar4,local_18,local_38,argv);
     }
     else {
       setErrno(1);
@@ -172,7 +171,7 @@ LAB_0060f687:
     goto LAB_0060f80e;
     setErrno(0);
     strcpy(local_28,".exe");
-    iVar4 = spawn(mode,pcVar4,local_18,local_38);
+    iVar4 = spawn(mode,pcVar4,local_18,local_38,argv);
     pTVar8 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
     if ((pTVar8->errno_value != 1) &&
        (pTVar8 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(), pTVar8->errno_value != 9))
@@ -186,7 +185,7 @@ LAB_0060f687:
     iVar4 = _stricmp(local_58,".bat");
     if (iVar4 != 0) {
       setErrno(0);
-      iVar4 = spawn(mode,pcVar4,local_18,local_38);
+      iVar4 = spawn(mode,pcVar4,local_18,local_38,argv);
       goto LAB_0060f687;
     }
     iVar4 = -1;
@@ -209,7 +208,7 @@ LAB_0060f687:
   iVar4 = execvp(mode,program,arg1,arg2,pcVar4,pcVar9);
 LAB_0060f80e:
   if (local_20 != 0) {
-    free(in_stack_00000010);
+    free(envp);
     free(local_1c);
   }
   ValidateHeapIntegrity(local_2c);

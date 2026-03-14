@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 67,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 37,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast"
     ],
     "total_lines": 133
@@ -79,15 +78,18 @@
         "call_addr": "00451196",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130",
-        "estimated_params": 5,
-        "instructions_analyzed": 8,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 12,
+        "stack_params": 3
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 3,
-    "estimated_params": 5
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.903614457831325,
@@ -158,17 +160,6 @@
       "severity": "mild",
       "text": "output_buffer = (SFogImagePlane *)((int)output_buffer + 0x140);",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 3,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:3 vs estimated:5",
-      "param_delta": 2,
-      "text": "Function declares 3 params but call sites push 5 (2 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

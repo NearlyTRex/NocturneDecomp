@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_004dc270(void)
+; void __cdecl core_game_cpp_pollKeyStateOnChange_FUN_004dc270(int key_index,int *output_state)
 ;
+; Parameters:
+; int              Stack[0x4]:4   key_index
+; int *            Stack[0x8]:4   output_state
 ;
 ; Referenced Globals:
 ;   char[512] g_KeyboardState

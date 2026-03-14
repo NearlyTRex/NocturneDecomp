@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 34,
+    "complexity_score": 19,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 19,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 50
   },
   "cross_references": [
@@ -58,15 +56,18 @@
         "call_addr": "004c9214",
         "call_type": "direct",
         "caller": "core_fire.cpp_CFireEffect_createShell_FUN_004c91e0",
-        "estimated_params": 8,
-        "instructions_analyzed": 19,
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 8
+        "stack_bytes": 20,
+        "stack_params": 5
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 5,
-    "estimated_params": 8
+    "declared_stack_bytes": 20,
+    "estimated_params": 5
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.5384615384615383,
@@ -134,17 +135,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 5,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 8,
-      "fix_type": "add_params",
-      "match": "declared:5 vs estimated:8",
-      "param_delta": 3,
-      "text": "Function declares 5 params but call sites push 8 (3 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

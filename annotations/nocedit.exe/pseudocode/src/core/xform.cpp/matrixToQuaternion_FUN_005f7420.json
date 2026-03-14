@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 117,
+    "complexity_score": 132,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 72,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
-      "decompiler_intrinsic"
+      "decompiler_intrinsic",
+      "param_count_too_many"
     ],
     "total_lines": 263
   },
@@ -78,6 +79,114 @@
       "value": "0.5"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "00443006",
+        "call_type": "direct",
+        "caller": "core_course.cpp_CCourse_importMatrices_FUN_00442ea0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054ef87",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005f71ac",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005f71ce",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005f7b52",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_eulerToQuaternion_FUN_005f7b20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0054f03b",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00595af4",
+        "call_type": "direct",
+        "caller": "core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00595c6d",
+        "call_type": "direct",
+        "caller": "core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005f7ba2",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.348066298342541,
     "instruction_count": 181,
@@ -194,6 +303,17 @@
       "severity": "mild",
       "text": "fVar5 = SQRT((matrix_in[1].m[0].y - fVar8) + 1.0);",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "call_site_count": 9,
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

@@ -197,7 +197,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
     iVar8 = 0;
     while (iVar5 < g_CScriptPtr->xref_count) {
-      uVar11 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);
+      uVar11 = *(uint *)(g_CScriptPtr->xref_entries->name + iVar8 + 0x100);
       if ((uVar11 < 10) || ((10 < uVar11 && (uVar11 != 0xb)))) {
         core_script_cpp_CScript_removeEventXRef_FUN_005676e0(g_CScriptPtr,iVar5);
       }
@@ -310,7 +310,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     iVar8 = 0;
     core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
     while (iVar5 < g_CScriptPtr->xref_count) {
-      uVar11 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);
+      uVar11 = *(uint *)(g_CScriptPtr->xref_entries->name + iVar8 + 0x100);
       if ((uVar11 < 8) || ((8 < uVar11 && (uVar11 != 9)))) {
         core_script_cpp_CScript_removeEventXRef_FUN_005676e0(g_CScriptPtr,iVar5);
       }
@@ -343,7 +343,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
     iVar5 = 0;
     while (iVar5 < g_CScriptPtr->xref_count) {
-      uVar11 = *(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar8);
+      uVar11 = *(uint *)(g_CScriptPtr->xref_entries->name + iVar8 + 0x100);
       if ((uVar11 < 5) || ((5 < uVar11 && (uVar11 != 6)))) {
         core_script_cpp_CScript_removeEventXRef_FUN_005676e0(g_CScriptPtr,iVar5);
       }
@@ -435,7 +435,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
     iVar5 = 0;
     while (iVar5 < g_CScriptPtr->xref_count) {
-      iVar3 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);
+      iVar3 = *(int *)(g_CScriptPtr->xref_entries->name + iVar8 + 0x100);
       if ((iVar3 == 0) || (iVar3 == 2)) {
         iVar5 = iVar5 + 1;
         iVar8 = iVar8 + 0x114;
@@ -455,7 +455,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     iVar8 = 0;
     core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
     while (iVar5 < g_CScriptPtr->xref_count) {
-      iVar3 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);
+      iVar3 = *(int *)(g_CScriptPtr->xref_entries->name + iVar8 + 0x100);
       if ((iVar3 == 0) || (iVar3 == 3)) {
         iVar5 = iVar5 + 1;
         iVar8 = iVar8 + 0x114;
@@ -626,7 +626,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     iVar8 = 0;
     core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
     while (iVar5 < g_CScriptPtr->xref_count) {
-      iVar3 = *(int *)((int)&g_CScriptPtr->xref_entries->type + iVar8);
+      iVar3 = *(int *)(g_CScriptPtr->xref_entries->name + iVar8 + 0x100);
       if ((iVar3 == 0) || (iVar3 == 4)) {
         iVar5 = iVar5 + 1;
         iVar8 = iVar8 + 0x114;
@@ -743,7 +743,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     iVar7 = 0;
     core_script_cpp_CScript_rebuildEventXRefs_FUN_00567630(g_CScriptPtr);
     while (iVar6 < g_CScriptPtr->xref_count) {
-      switch(*(uint *)((int)&g_CScriptPtr->xref_entries->type + iVar7)) {
+      switch(*(uint *)(g_CScriptPtr->xref_entries->name + iVar7 + 0x100)) {
       case 0:
       case 1:
       case 2:

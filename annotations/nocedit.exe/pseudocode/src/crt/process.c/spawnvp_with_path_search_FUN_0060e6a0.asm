@@ -1,12 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_process_c_spawnvp_with_path_search_FUN_0060e6a0(int mode,char *program,char **argv)
+; int __cdecl crt_process_c_spawnvp_with_path_search_FUN_0060e6a0(int mode,char *program,char **argv,char **envp)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   mode
 ; char *           Stack[0x8]:4   program
 ; char * *         Stack[0xc]:4   argv
+; char * *         Stack[0x10]:4   envp
 ;
 ; XREF[1]:
 ;   crt_process.c_spawnvp_FUN_0060ca20 at 0060ca38
@@ -48,7 +49,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x12c]     ; 0060e6cc
     PUSH ECX                            ; 0060e6d3
     CALL crt_process.c_spawnvp_FUN_0060f39c ; 0060e6d4
-        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv)
+        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv, char * * envp)
     ADD ESP,0x10                        ; 0060e6d9
     MOV EDI,EAX                         ; 0060e6dc
     CMP EAX,-0x1                        ; 0060e6de
@@ -162,7 +163,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x12c]     ; 0060e7fb
     PUSH EDI                            ; 0060e802
     CALL crt_process.c_spawnvp_FUN_0060f39c ; 0060e803
-        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv)
+        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv, char * * envp)
     ADD ESP,0x10                        ; 0060e808
     MOV EDI,EAX                         ; 0060e80b
     CMP EAX,-0x1                        ; 0060e80d

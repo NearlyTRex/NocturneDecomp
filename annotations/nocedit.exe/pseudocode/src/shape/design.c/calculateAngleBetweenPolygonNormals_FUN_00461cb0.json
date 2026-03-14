@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 24,
+    "complexity_score": 9,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 48
   },
   "cross_references": [
@@ -67,24 +65,29 @@
         "call_addr": "00461d44",
         "call_type": "direct",
         "caller": "shape_design.c_isAngleBelowThreshold_FUN_00461d30",
-        "estimated_params": 6,
-        "instructions_analyzed": 10,
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 6
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "004650f8",
         "call_type": "direct",
         "caller": "shape_design.c_polygonToolModeManager_FUN_00464c90",
         "estimated_params": 2,
-        "instructions_analyzed": 9,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 2,
-    "estimated_params": 6
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.45945945945946,
@@ -134,17 +137,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 2,
-      "declared_params": 2,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:2 vs estimated:6",
-      "param_delta": 4,
-      "text": "Function declares 2 params but call sites push 6 (4 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

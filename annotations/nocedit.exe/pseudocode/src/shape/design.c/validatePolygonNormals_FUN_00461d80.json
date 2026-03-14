@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 9,
+    "complexity_score": 24,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 9,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
     "total_lines": 48
   },
   "cross_references": [
@@ -63,6 +65,70 @@
   },
   "function_calls": [],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "00467cc0",
+        "call_type": "direct",
+        "caller": "shape_design.c_vertexReducer_FUN_00467850",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00465b81",
+        "call_type": "direct",
+        "caller": "shape_design.c_mergePolygonsWithValidation_FUN_00465b40",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004656c3",
+        "call_type": "direct",
+        "caller": "shape_design.c_configureSinglePassPolygonReduction_FUN_00465560",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004627b5",
+        "call_type": "direct",
+        "caller": "shape_design.c_mergeTrianglesIntoQuad_FUN_00462190",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004659de",
+        "call_type": "direct",
+        "caller": "shape_design.c_optimizePolygonMesh_FUN_004658e0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.411764705882353,
     "instruction_count": 34,
@@ -132,5 +198,17 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_site_count": 5,
+      "declared_params": 3,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:3 vs estimated:4",
+      "param_delta": 1,
+      "text": "Function declares 3 params but call sites push 4 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
 }

@@ -88,7 +88,7 @@ section .text
     PUSH EDI                            ; 004ff869
     PUSH EBP                            ; 004ff86a
     CALL core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10 ; 004ff86b
-        ;   XREF to: 004ffe10 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory * this_ptr)
+        ;   XREF to: 004ffe10 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory * this_ptr, int ammo_type)
     ADD ESP,0x8                         ; 004ff870
     XOR EAX,EAX                         ; 004ff873
         ;   Label: LAB_004ff873

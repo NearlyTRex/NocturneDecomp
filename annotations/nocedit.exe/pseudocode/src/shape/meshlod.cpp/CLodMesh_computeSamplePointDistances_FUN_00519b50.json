@@ -31,15 +31,16 @@
   },
   "complexity": {
     "assembly_lines": 446,
-    "complexity_score": 482,
+    "complexity_score": 497,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 192,
-    "suspect_count": 27,
+    "suspect_count": 28,
     "suspect_types": [
       "decompiler_intrinsic",
+      "param_count_too_many",
       "pointer_cast",
       "stack_ref",
       "warning_inlined_function"
@@ -199,6 +200,26 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00518f21",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 2,
+    "declared_stack_bytes": 12,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.300561797752809,
     "instruction_count": 356,
@@ -646,6 +667,17 @@
       "severity": "mild",
       "text": "uVar5 = grid_z - (int)ROUND(ROUND((local_90.max.z + (float)0.5) *",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

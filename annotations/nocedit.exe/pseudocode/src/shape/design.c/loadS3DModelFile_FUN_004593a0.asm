@@ -106,13 +106,13 @@ section .text
     PUSH EDI                            ; 00459409 | g_LoadedModelName
     MOV AL,byte ptr [ESI]               ; 0045940a
         ;   Label: LAB_0045940a
-    MOV byte ptr [EDI],AL               ; 0045940c | g_LoadedModelName | s__0066edaa
+    MOV byte ptr [EDI],AL               ; 0045940c | g_LoadedModelName | g_LoadedModelName+2
     CMP AL,0x0                          ; 0045940e
     JZ 0x00459422                       ; 00459410
         ;   XREF to: 00459422 (CONDITIONAL_JUMP)  ; LAB_00459422
     MOV AL,byte ptr [ESI + 0x1]         ; 00459412
     ADD ESI,0x2                         ; 00459415
-    MOV byte ptr [EDI + 0x1],AL         ; 00459418 | s__0066eda9 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 00459418 | g_LoadedModelName+1 | DAT_0066edab
     ADD EDI,0x2                         ; 0045941b
     CMP AL,0x0                          ; 0045941e
     JNZ 0x0045940a                      ; 00459420
@@ -179,13 +179,13 @@ section .text
     PUSH EDI                            ; 004594d4 | g_LoadedModelName
     MOV AL,byte ptr [ESI]               ; 004594d5 | s_EmptyChar_0061ab51 | s_.\shape\design.c_0061ab53
         ;   Label: LAB_004594d5
-    MOV byte ptr [EDI],AL               ; 004594d7 | g_LoadedModelName | s__0066edaa
+    MOV byte ptr [EDI],AL               ; 004594d7 | g_LoadedModelName | g_LoadedModelName+2
     CMP AL,0x0                          ; 004594d9
     JZ 0x004594ed                       ; 004594db
         ;   XREF to: 004594ed (CONDITIONAL_JUMP)  ; LAB_004594ed
     MOV AL,byte ptr [ESI + 0x1]         ; 004594dd | = "..\\shape\\design.c" | s_\shape\design.c_0061ab54
     ADD ESI,0x2                         ; 004594e0
-    MOV byte ptr [EDI + 0x1],AL         ; 004594e3 | s__0066eda9 | DAT_0066edab
+    MOV byte ptr [EDI + 0x1],AL         ; 004594e3 | g_LoadedModelName+1 | DAT_0066edab
     ADD EDI,0x2                         ; 004594e6
     CMP AL,0x0                          ; 004594e9
     JNZ 0x004594d5                      ; 004594eb

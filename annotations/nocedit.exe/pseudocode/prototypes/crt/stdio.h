@@ -111,10 +111,6 @@ int __cdecl fputc(int character,_FILE *file);
 // Address: 00600e29
 int __cdecl fflush(_FILE *stream);
 
-// Original: crt_stdio.c_clear_and_preserve_state_FUN_00600e64
-// Address: 00600e64
-uint __cdecl clear::and_preserve_state(FileEmbeddedData *embedded_data,uint error_code);
-
 // Original: crt_stdio.c_setvbuf_FUN_00601490
 // Address: 00601490
 int __cdecl setvbuf(_FILE *stream_ptr,char *buffer_ptr,int buffer_mode,SIZE_T buffer_size);

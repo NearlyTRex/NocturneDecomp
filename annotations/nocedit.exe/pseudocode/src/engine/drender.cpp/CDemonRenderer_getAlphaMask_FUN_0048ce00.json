@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 5,
-    "complexity_score": 19,
+    "complexity_score": 4,
     "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 4,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 9
   },
   "cross_references": [
@@ -95,87 +93,106 @@
         "call_addr": "005c75a0",
         "call_type": "direct",
         "caller": "core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590",
-        "estimated_params": 3,
-        "instructions_analyzed": 6,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "004173c6",
         "call_type": "direct",
         "caller": "core_batman.cpp_CBatman_renderOpaque_FUN_004173b0",
-        "estimated_params": 5,
-        "instructions_analyzed": 10,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0044d7e7",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0",
-        "estimated_params": 4,
-        "instructions_analyzed": 9,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 4
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0056d16b",
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0056d140",
-        "estimated_params": 3,
-        "instructions_analyzed": 7,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0042a2d0",
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0",
-        "estimated_params": 3,
-        "instructions_analyzed": 6,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "00485bf6",
         "call_type": "direct",
         "caller": "core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0",
-        "estimated_params": 5,
-        "instructions_analyzed": 10,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0052975f",
         "call_type": "direct",
         "caller": "core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750",
-        "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0044dc65",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0",
         "estimated_params": 1,
-        "instructions_analyzed": 30,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "0044d62c",
         "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_screenToWorldWithAlpha_FUN_0044d600",
-        "estimated_params": 4,
-        "instructions_analyzed": 15,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 4
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 3
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 10.75,
@@ -213,17 +230,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 9,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:3",
-      "param_delta": 2,
-      "text": "Function declares 1 params but call sites push 3 (2 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

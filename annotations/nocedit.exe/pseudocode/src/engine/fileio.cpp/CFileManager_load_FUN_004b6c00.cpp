@@ -54,7 +54,7 @@ LAB_004b6c3c:
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
         cVar1 = *pbVar5;
-        pbVar5 = (byte *)((char *)pbVar5 + (uint)bVar10 * -2 + 1);
+        pbVar5 = pbVar5 + (uint)bVar10 * -2 + 1;
       } while (cVar1 != '\0');
       if (~uVar4 - 1 <= uVar5) goto LAB_004b6ca0;
       iVar3 = toupper((uint)local_224[uVar5]);
@@ -89,9 +89,9 @@ LAB_004b6cb3:
               pacVar7 = str2;
               if (cVar2 == '\0') break;
               cVar2 = pcVar6[1];
-              ((char *)pbVar5)[1] = cVar2;
+              pbVar5[1] = cVar2;
               pcVar6 = pcVar6 + 2;
-              pbVar5 = (byte *)((char *)pbVar5 + 2);
+              pbVar5 = pbVar5 + 2;
             } while (cVar2 != '\0');
             do {
               cVar2 = (*pacVar7)[0];

@@ -261,7 +261,7 @@ LAB_0057db4e:
         g_CurrentDebugFilename = "..\\core\\setedit.cpp";
         g_CurrentDebugLine = 0xd78;
         shape_memdbg_cpp_free_FUN_005fe659(unaff_retaddr);
-        core_slew_cpp_CSlew_free_FUN_005a20a0();
+        core_slew_cpp_CSlew_free_FUN_005a20a0(g_CSlewPtr);
         g_CurrentDebugLine = 0xd80;
         g_CurrentDebugFilename = "..\\core\\setedit.cpp";
         if (unaff_EDI != (CKeyFramedModel *)0x0) {

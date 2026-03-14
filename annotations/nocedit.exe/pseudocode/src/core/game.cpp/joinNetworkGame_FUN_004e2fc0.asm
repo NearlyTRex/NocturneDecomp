@@ -11,7 +11,7 @@
 ;   TerminatedCString s_Enter_Server_IP_0062d3a7
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   TerminatedCString s_s_10_0_0_105_0067b868
-;   undefined4 s_.0.105_0067b86c
+;   undefined4 s_s_10_0_0_105_0067b868+4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   CEditorTools g_CEditorToolsInstance
@@ -46,7 +46,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 004e2fdd | g_CEditorToolsPtr
     MOV ESI,0x67b868                    ; 004e2fe3 | = "10.0.0.105"
     PUSH EDX                            ; 004e2fe8 | g_CEditorToolsInstance
-    MOVSD.REP ES:EDI,ESI                ; 004e2fe9 | = "10.0.0.105" | s_.0.105_0067b86c
+    MOVSD.REP ES:EDI,ESI                ; 004e2fe9 | = "10.0.0.105" | s_s_10_0_0_105_0067b868+4
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0 ; 004e2feb
         ;   XREF to: 004a03d0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools * this_ptr, char * prompt_text, char * input_buffer, int buffer_size, ...)
     ADD ESP,0x14                        ; 004e2ff0

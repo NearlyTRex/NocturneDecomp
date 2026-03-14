@@ -95,12 +95,12 @@
 ;   TerminatedCString s_anon_00624446
 ;   TerminatedCString s_d_00624449
 ;   TerminatedCString s_Unexpected_end_of_string_00625308
-;   undefined4 s_nexpected_end_of_string_00625309
-;   undefined4 s_expected_end_of_string_0062530a
+;   undefined4 s_Unexpected_end_of_string_00625308+1
+;   undefined4 s_Unexpected_end_of_string_00625308+2
 ;   undefined4 s_xpected_end_of_string_0062530b
 ;   TerminatedCString s_Matching_is_missing_00625321
-;   undefined4 s_atching_')'_is_missing_00625322
-;   undefined4 s_tching_')'_is_missing_00625323
+;   undefined4 s_Matching_is_missing_00625321+1
+;   undefined4 s_Matching_is_missing_00625321+2
 ;   ... and 216 more
 ;
 ; Called Functions:
@@ -197,15 +197,15 @@ section .text
         ;   Label: LAB_004ae1c5
     MOV EDI,0x2d0a460                   ; 004ae1ca | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004ae1cf | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004ae1d0 | = "Unexpected end of string" | s_expected_end_of_string_0062530a
+    MOV AL,byte ptr [ESI]               ; 004ae1d0 | = "Unexpected end of string" | s_Unexpected_end_of_string_00625308+2
         ;   Label: LAB_004ae1d0
-    MOV byte ptr [EDI],AL               ; 004ae1d2 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004ae1d2 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004ae1d4
     JZ 0x004ae1e8                       ; 004ae1d6
         ;   XREF to: 004ae1e8 (CONDITIONAL_JUMP)  ; LAB_004ae1e8
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ae1d8 | s_nexpected_end_of_string_00625309 | s_xpected_end_of_string_0062530b
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ae1d8 | s_Unexpected_end_of_string_00625308+1 | s_xpected_end_of_string_0062530b
     ADD ESI,0x2                         ; 004ae1db
-    MOV byte ptr [EDI + 0x1],AL         ; 004ae1de | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004ae1de | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004ae1e1
     CMP AL,0x0                          ; 004ae1e4
     JNZ 0x004ae1d0                      ; 004ae1e6
@@ -256,15 +256,15 @@ section .text
         ;   Label: LAB_004ae23a
     MOV EDI,0x2d0a460                   ; 004ae23f | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004ae244 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004ae245 | = "Matching ')' is missing" | s_tching_')'_is_missing_00625323
+    MOV AL,byte ptr [ESI]               ; 004ae245 | = "Matching ')' is missing" | s_Matching_is_missing_00625321+2
         ;   Label: LAB_004ae245
-    MOV byte ptr [EDI],AL               ; 004ae247 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004ae247 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004ae249
     JZ 0x004ae25d                       ; 004ae24b
         ;   XREF to: 004ae25d (CONDITIONAL_JUMP)  ; LAB_004ae25d
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ae24d | s_atching_')'_is_missing_00625322 | s_ching_')'_is_missing_00625324
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ae24d | s_Matching_is_missing_00625321+1 | s_ching_')'_is_missing_00625324
     ADD ESI,0x2                         ; 004ae250
-    MOV byte ptr [EDI + 0x1],AL         ; 004ae253 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004ae253 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004ae256
     CMP AL,0x0                          ; 004ae259
     JNZ 0x004ae245                      ; 004ae25b
@@ -340,15 +340,15 @@ section .text
         ;   Label: LAB_004ae2e2
     MOV EDI,0x2d0a460                   ; 004ae2e7 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004ae2ec | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004ae2ed | = "Syntax error" | s_ntax_error_0062533b
+    MOV AL,byte ptr [ESI]               ; 004ae2ed | = "Syntax error" | s_Syntax_error_00625339+2
         ;   Label: LAB_004ae2ed
-    MOV byte ptr [EDI],AL               ; 004ae2ef | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004ae2ef | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004ae2f1
     JZ 0x004ae305                       ; 004ae2f3
         ;   XREF to: 004ae305 (CONDITIONAL_JUMP)  ; LAB_004ae305
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ae2f5 | s_yntax_error_0062533a | s_tax_error_0062533c
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ae2f5 | s_Syntax_error_00625339+1 | s_tax_error_0062533c
     ADD ESI,0x2                         ; 004ae2f8
-    MOV byte ptr [EDI + 0x1],AL         ; 004ae2fb | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004ae2fb | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004ae2fe
     CMP AL,0x0                          ; 004ae301
     JNZ 0x004ae2ed                      ; 004ae303
@@ -456,15 +456,15 @@ section .text
         ;   Label: LAB_004ae409
     MOV EDI,0x2d0a460                   ; 004ae40e | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004ae413 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004ae414 | = "Error parsing cmp parameters." | s_ror_parsing_cmp_parameters._00625360
+    MOV AL,byte ptr [ESI]               ; 004ae414 | = "Error parsing cmp parameters." | s_Error_parsing_cmp_parame_0062535e+2
         ;   Label: LAB_004ae414
-    MOV byte ptr [EDI],AL               ; 004ae416 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004ae416 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004ae418
     JZ 0x004ae42c                       ; 004ae41a
         ;   XREF to: 004ae42c (CONDITIONAL_JUMP)  ; LAB_004ae42c
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ae41c | s_rror_parsing_cmp_parameters._0062535f | s_or_parsing_cmp_parameters._00625361
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ae41c | s_Error_parsing_cmp_parame_0062535e+1 | s_or_parsing_cmp_parameters._00625361
     ADD ESI,0x2                         ; 004ae41f
-    MOV byte ptr [EDI + 0x1],AL         ; 004ae422 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004ae422 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004ae425
     CMP AL,0x0                          ; 004ae428
     JNZ 0x004ae414                      ; 004ae42a
@@ -733,15 +733,15 @@ section .text
         ;   Label: LAB_004ae6bd
     MOV EDI,0x2d0a460                   ; 004ae6c2 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004ae6c7 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004ae6c8 | = "Invalid relational operator in cmp st..." | s_valid_relational_operator_in_cmp_0062537e
+    MOV AL,byte ptr [ESI]               ; 004ae6c8 | = "Invalid relational operator in cmp st..." | s_Invalid_relational_opera_0062537c+2
         ;   Label: LAB_004ae6c8
-    MOV byte ptr [EDI],AL               ; 004ae6ca | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004ae6ca | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004ae6cc
     JZ 0x004ae6e0                       ; 004ae6ce
         ;   XREF to: 004ae6e0 (CONDITIONAL_JUMP)  ; LAB_004ae6e0
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ae6d0 | s_nvalid_relational_operator_in_cm_0062537d | s_alid_relational_operator_in_cmp_s_0062537f
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ae6d0 | s_Invalid_relational_opera_0062537c+1 | s_alid_relational_operator_in_cmp_s_0062537f
     ADD ESI,0x2                         ; 004ae6d3
-    MOV byte ptr [EDI + 0x1],AL         ; 004ae6d6 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004ae6d6 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004ae6d9
     CMP AL,0x0                          ; 004ae6dc
     JNZ 0x004ae6c8                      ; 004ae6de
@@ -887,15 +887,15 @@ section .text
         ;   Label: LAB_004ae844
     MOV EDI,0x2d0a460                   ; 004ae849 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004ae84e | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004ae84f | = "Error parsing exists parameters." | s_ror_parsing_exists_parameters._006253de
+    MOV AL,byte ptr [ESI]               ; 004ae84f | = "Error parsing exists parameters." | s_Error_parsing_exists_par_006253dc+2
         ;   Label: LAB_004ae84f
-    MOV byte ptr [EDI],AL               ; 004ae851 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004ae851 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004ae853
     JZ 0x004ae867                       ; 004ae855
         ;   XREF to: 004ae867 (CONDITIONAL_JUMP)  ; LAB_004ae867
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ae857 | s_rror_parsing_exists_parameters._006253dd | s_or_parsing_exists_parameters._006253df
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ae857 | s_Error_parsing_exists_par_006253dc+1 | s_or_parsing_exists_parameters._006253df
     ADD ESI,0x2                         ; 004ae85a
-    MOV byte ptr [EDI + 0x1],AL         ; 004ae85d | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004ae85d | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004ae860
     CMP AL,0x0                          ; 004ae863
     JNZ 0x004ae84f                      ; 004ae865
@@ -1023,15 +1023,15 @@ section .text
         ;   Label: LAB_004ae9a4
     MOV EDI,0x2d0a460                   ; 004ae9a9 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004ae9ae | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004ae9af | = "Can't use hasItem condition in multi-..." | s_n't_use_hasItem_condition_in_mul_00625407
+    MOV AL,byte ptr [ESI]               ; 004ae9af | = "Can't use hasItem condition in multi-..." | s_Can_t_use_hasItem_condit_00625405+2
         ;   Label: LAB_004ae9af
-    MOV byte ptr [EDI],AL               ; 004ae9b1 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004ae9b1 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004ae9b3
     JZ 0x004ae9c7                       ; 004ae9b5
         ;   XREF to: 004ae9c7 (CONDITIONAL_JUMP)  ; LAB_004ae9c7
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ae9b7 | s_an't_use_hasItem_condition_in_mu_00625406 | s_'t_use_hasItem_condition_in_mult_00625408
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ae9b7 | s_Can_t_use_hasItem_condit_00625405+1 | s_'t_use_hasItem_condition_in_mult_00625408
     ADD ESI,0x2                         ; 004ae9ba
-    MOV byte ptr [EDI + 0x1],AL         ; 004ae9bd | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004ae9bd | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004ae9c0
     CMP AL,0x0                          ; 004ae9c3
     JNZ 0x004ae9af                      ; 004ae9c5
@@ -1049,15 +1049,15 @@ section .text
         ;   Label: LAB_004ae9d4
     MOV EDI,0x2d0a460                   ; 004ae9d9 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004ae9de | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004ae9df | = "Error parsing hasItem parameters." | s_ror_parsing_hasItem_parameters._0062543e
+    MOV AL,byte ptr [ESI]               ; 004ae9df | = "Error parsing hasItem parameters." | s_Error_parsing_hasItem_pa_0062543c+2
         ;   Label: LAB_004ae9df
-    MOV byte ptr [EDI],AL               ; 004ae9e1 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004ae9e1 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004ae9e3
     JZ 0x004ae9f7                       ; 004ae9e5
         ;   XREF to: 004ae9f7 (CONDITIONAL_JUMP)  ; LAB_004ae9f7
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ae9e7 | s_rror_parsing_hasItem_parameters._0062543d | s_or_parsing_hasItem_parameters._0062543f
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ae9e7 | s_Error_parsing_hasItem_pa_0062543c+1 | s_or_parsing_hasItem_parameters._0062543f
     ADD ESI,0x2                         ; 004ae9ea
-    MOV byte ptr [EDI + 0x1],AL         ; 004ae9ed | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004ae9ed | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004ae9f0
     CMP AL,0x0                          ; 004ae9f3
     JNZ 0x004ae9df                      ; 004ae9f5
@@ -1180,15 +1180,15 @@ section .text
         ;   Label: LAB_004aeb2a
     MOV EDI,0x2d0a460                   ; 004aeb2f | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004aeb34 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004aeb35 | = "Error parsing hasItemType parameters." | s_ror_parsing_hasItemType_paramete_0062547f
+    MOV AL,byte ptr [ESI]               ; 004aeb35 | = "Error parsing hasItemType parameters." | s_Error_parsing_hasItemTyp_0062547d+2
         ;   Label: LAB_004aeb35
-    MOV byte ptr [EDI],AL               ; 004aeb37 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004aeb37 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004aeb39
     JZ 0x004aeb4d                       ; 004aeb3b
         ;   XREF to: 004aeb4d (CONDITIONAL_JUMP)  ; LAB_004aeb4d
-    MOV AL,byte ptr [ESI + 0x1]         ; 004aeb3d | s_rror_parsing_hasItemType_paramet_0062547e | s_or_parsing_hasItemType_parameter_00625480
+    MOV AL,byte ptr [ESI + 0x1]         ; 004aeb3d | s_Error_parsing_hasItemTyp_0062547d+1 | s_or_parsing_hasItemType_parameter_00625480
     ADD ESI,0x2                         ; 004aeb40
-    MOV byte ptr [EDI + 0x1],AL         ; 004aeb43 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004aeb43 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004aeb46
     CMP AL,0x0                          ; 004aeb49
     JNZ 0x004aeb35                      ; 004aeb4b
@@ -1365,15 +1365,15 @@ section .text
         ;   Label: LAB_004aed1f
     MOV EDI,0x2d0a460                   ; 004aed24 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004aed29 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004aed2a | = "Can't use hasKeyMask condition in mul..." | s_n't_use_hasKeyMask_condition_in_m_006254b0
+    MOV AL,byte ptr [ESI]               ; 004aed2a | = "Can't use hasKeyMask condition in mul..." | s_Can_t_use_hasKeyMask_con_006254ae+2
         ;   Label: LAB_004aed2a
-    MOV byte ptr [EDI],AL               ; 004aed2c | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004aed2c | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004aed2e
     JZ 0x004aed42                       ; 004aed30
         ;   XREF to: 004aed42 (CONDITIONAL_JUMP)  ; LAB_004aed42
-    MOV AL,byte ptr [ESI + 0x1]         ; 004aed32 | s_an't_use_hasKeyMask_condition_in_006254af | s_'t_use_hasKeyMask_condition_in_m_006254b1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004aed32 | s_Can_t_use_hasKeyMask_con_006254ae+1 | s_'t_use_hasKeyMask_condition_in_m_006254b1
     ADD ESI,0x2                         ; 004aed35
-    MOV byte ptr [EDI + 0x1],AL         ; 004aed38 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004aed38 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004aed3b
     CMP AL,0x0                          ; 004aed3e
     JNZ 0x004aed2a                      ; 004aed40
@@ -1391,15 +1391,15 @@ section .text
         ;   Label: LAB_004aed4f
     MOV EDI,0x2d0a460                   ; 004aed54 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004aed59 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004aed5a | = "Error parsing hasKeyMask parameters." | s_ror_parsing_hasKeyMask_parameter_006254e9
+    MOV AL,byte ptr [ESI]               ; 004aed5a | = "Error parsing hasKeyMask parameters." | s_Error_parsing_hasKeyMask_006254e7+2
         ;   Label: LAB_004aed5a
-    MOV byte ptr [EDI],AL               ; 004aed5c | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004aed5c | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004aed5e
     JZ 0x004aed72                       ; 004aed60
         ;   XREF to: 004aed72 (CONDITIONAL_JUMP)  ; LAB_004aed72
-    MOV AL,byte ptr [ESI + 0x1]         ; 004aed62 | s_rror_parsing_hasKeyMask_paramete_006254e8 | s_or_parsing_hasKeyMask_parameters_006254ea
+    MOV AL,byte ptr [ESI + 0x1]         ; 004aed62 | s_Error_parsing_hasKeyMask_006254e7+1 | s_or_parsing_hasKeyMask_parameters_006254ea
     ADD ESI,0x2                         ; 004aed65
-    MOV byte ptr [EDI + 0x1],AL         ; 004aed68 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004aed68 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004aed6b
     CMP AL,0x0                          ; 004aed6e
     JNZ 0x004aed5a                      ; 004aed70
@@ -1417,15 +1417,15 @@ section .text
         ;   Label: LAB_004aed7f
     MOV EDI,0x2d0a460                   ; 004aed84 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004aed89 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004aed8a | = "hasKeyMask(0) always returns false!" | s_sKeyMask(0)_always_returns_false_0062550e
+    MOV AL,byte ptr [ESI]               ; 004aed8a | = "hasKeyMask(0) always returns false!" | s_hasKeyMask_0_always_retu_0062550c+2
         ;   Label: LAB_004aed8a
-    MOV byte ptr [EDI],AL               ; 004aed8c | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004aed8c | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004aed8e
     JZ 0x004aeda2                       ; 004aed90
         ;   XREF to: 004aeda2 (CONDITIONAL_JUMP)  ; LAB_004aeda2
-    MOV AL,byte ptr [ESI + 0x1]         ; 004aed92 | s_asKeyMask(0)_always_returns_fals_0062550d | s_KeyMask(0)_always_returns_false!_0062550f
+    MOV AL,byte ptr [ESI + 0x1]         ; 004aed92 | s_hasKeyMask_0_always_retu_0062550c+1 | s_KeyMask(0)_always_returns_false!_0062550f
     ADD ESI,0x2                         ; 004aed95
-    MOV byte ptr [EDI + 0x1],AL         ; 004aed98 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004aed98 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004aed9b
     CMP AL,0x0                          ; 004aed9e
     JNZ 0x004aed8a                      ; 004aeda0
@@ -1443,15 +1443,15 @@ section .text
         ;   Label: LAB_004aedaf
     MOV EDI,0x2d0a460                   ; 004aedb4 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004aedb9 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004aedba | = "mask value must be a power of 2.\n(To..." | s_sk_value_must_be_a_power_of_2._(_00625532
+    MOV AL,byte ptr [ESI]               ; 004aedba | = "mask value must be a power of 2.\n(To..." | s_mask_value_must_be_a_pow_00625530+2
         ;   Label: LAB_004aedba
-    MOV byte ptr [EDI],AL               ; 004aedbc | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004aedbc | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004aedbe
     JZ 0x004aedd2                       ; 004aedc0
         ;   XREF to: 004aedd2 (CONDITIONAL_JUMP)  ; LAB_004aedd2
-    MOV AL,byte ptr [ESI + 0x1]         ; 004aedc2 | s_ask_value_must_be_a_power_of_2._(_00625531 | s_k_value_must_be_a_power_of_2._(T_00625533
+    MOV AL,byte ptr [ESI + 0x1]         ; 004aedc2 | s_mask_value_must_be_a_pow_00625530+1 | s_k_value_must_be_a_power_of_2._(T_00625533
     ADD ESI,0x2                         ; 004aedc5
-    MOV byte ptr [EDI + 0x1],AL         ; 004aedc8 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004aedc8 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004aedcb
     CMP AL,0x0                          ; 004aedce
     JNZ 0x004aedba                      ; 004aedd0
@@ -1539,15 +1539,15 @@ section .text
         ;   Label: LAB_004aee9f
     MOV EDI,0x2d0a460                   ; 004aeea4 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004aeea9 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004aeeaa | = "Error parsing isBroken parameters." | s_ror_parsing_isBroken_parameters._006255a4
+    MOV AL,byte ptr [ESI]               ; 004aeeaa | = "Error parsing isBroken parameters." | s_Error_parsing_isBroken_p_006255a2+2
         ;   Label: LAB_004aeeaa
-    MOV byte ptr [EDI],AL               ; 004aeeac | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004aeeac | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004aeeae
     JZ 0x004aeec2                       ; 004aeeb0
         ;   XREF to: 004aeec2 (CONDITIONAL_JUMP)  ; LAB_004aeec2
-    MOV AL,byte ptr [ESI + 0x1]         ; 004aeeb2 | s_rror_parsing_isBroken_parameters_006255a3 | s_or_parsing_isBroken_parameters._006255a5
+    MOV AL,byte ptr [ESI + 0x1]         ; 004aeeb2 | s_Error_parsing_isBroken_p_006255a2+1 | s_or_parsing_isBroken_parameters._006255a5
     ADD ESI,0x2                         ; 004aeeb5
-    MOV byte ptr [EDI + 0x1],AL         ; 004aeeb8 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004aeeb8 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004aeebb
     CMP AL,0x0                          ; 004aeebe
     JNZ 0x004aeeaa                      ; 004aeec0
@@ -1657,15 +1657,15 @@ section .text
         ;   Label: LAB_004aefed
     MOV EDI,0x2d0a460                   ; 004aeff2 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004aeff7 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004aeff8 | = "Error parsing icCurrentCamera paramet..." | s_ror_parsing_icCurrentCamera_para_006255e5
+    MOV AL,byte ptr [ESI]               ; 004aeff8 | = "Error parsing icCurrentCamera paramet..." | s_Error_parsing_icCurrentC_006255e3+2
         ;   Label: LAB_004aeff8
-    MOV byte ptr [EDI],AL               ; 004aeffa | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004aeffa | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004aeffc
     JZ 0x004af010                       ; 004aeffe
         ;   XREF to: 004af010 (CONDITIONAL_JUMP)  ; LAB_004af010
-    MOV AL,byte ptr [ESI + 0x1]         ; 004af000 | s_rror_parsing_icCurrentCamera_par_006255e4 | s_or_parsing_icCurrentCamera_param_006255e6
+    MOV AL,byte ptr [ESI + 0x1]         ; 004af000 | s_Error_parsing_icCurrentC_006255e3+1 | s_or_parsing_icCurrentCamera_param_006255e6
     ADD ESI,0x2                         ; 004af003
-    MOV byte ptr [EDI + 0x1],AL         ; 004af006 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004af006 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004af009
     CMP AL,0x0                          ; 004af00c
     JNZ 0x004aeff8                      ; 004af00e
@@ -1732,15 +1732,15 @@ section .text
         ;   Label: LAB_004af0b6
     MOV EDI,0x2d0a460                   ; 004af0bb | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004af0c0 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004af0c1 | = "Error parsing isDead parameters." | s_ror_parsing_isDead_parameters._00625624
+    MOV AL,byte ptr [ESI]               ; 004af0c1 | = "Error parsing isDead parameters." | s_Error_parsing_isDead_par_00625622+2
         ;   Label: LAB_004af0c1
-    MOV byte ptr [EDI],AL               ; 004af0c3 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004af0c3 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004af0c5
     JZ 0x004af0d9                       ; 004af0c7
         ;   XREF to: 004af0d9 (CONDITIONAL_JUMP)  ; LAB_004af0d9
-    MOV AL,byte ptr [ESI + 0x1]         ; 004af0c9 | s_rror_parsing_isDead_parameters._00625623 | s_or_parsing_isDead_parameters._00625625
+    MOV AL,byte ptr [ESI + 0x1]         ; 004af0c9 | s_Error_parsing_isDead_par_00625622+1 | s_or_parsing_isDead_parameters._00625625
     ADD ESI,0x2                         ; 004af0cc
-    MOV byte ptr [EDI + 0x1],AL         ; 004af0cf | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004af0cf | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004af0d2
     CMP AL,0x0                          ; 004af0d5
     JNZ 0x004af0c1                      ; 004af0d7
@@ -1809,15 +1809,15 @@ section .text
         ;   Label: LAB_004af180
     MOV EDI,0x2d0a460                   ; 004af185 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004af18a | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004af18b | = "Error parsing isFadeFinished function." | s_ror_parsing_isFadeFinished_funct_0062565b
+    MOV AL,byte ptr [ESI]               ; 004af18b | = "Error parsing isFadeFinished function." | s_Error_parsing_isFadeFini_00625659+2
         ;   Label: LAB_004af18b
-    MOV byte ptr [EDI],AL               ; 004af18d | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004af18d | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004af18f
     JZ 0x004af1a3                       ; 004af191
         ;   XREF to: 004af1a3 (CONDITIONAL_JUMP)  ; LAB_004af1a3
-    MOV AL,byte ptr [ESI + 0x1]         ; 004af193 | s_rror_parsing_isFadeFinished_func_0062565a | s_or_parsing_isFadeFinished_functi_0062565c
+    MOV AL,byte ptr [ESI + 0x1]         ; 004af193 | s_Error_parsing_isFadeFini_00625659+1 | s_or_parsing_isFadeFinished_functi_0062565c
     ADD ESI,0x2                         ; 004af196
-    MOV byte ptr [EDI + 0x1],AL         ; 004af199 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004af199 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004af19c
     CMP AL,0x0                          ; 004af19f
     JNZ 0x004af18b                      ; 004af1a1
@@ -1884,15 +1884,15 @@ section .text
         ;   Label: LAB_004af22d
     MOV EDI,0x2d0a460                   ; 004af232 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004af237 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004af238 | = "Error parsing isInRange parameters." | s_ror_parsing_isInRange_parameters_00625692
+    MOV AL,byte ptr [ESI]               ; 004af238 | = "Error parsing isInRange parameters." | s_Error_parsing_isInRange__00625690+2
         ;   Label: LAB_004af238
-    MOV byte ptr [EDI],AL               ; 004af23a | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004af23a | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004af23c
     JZ 0x004af250                       ; 004af23e
         ;   XREF to: 004af250 (CONDITIONAL_JUMP)  ; LAB_004af250
-    MOV AL,byte ptr [ESI + 0x1]         ; 004af240 | s_rror_parsing_isInRange_parameter_00625691 | s_or_parsing_isInRange_parameters._00625693
+    MOV AL,byte ptr [ESI + 0x1]         ; 004af240 | s_Error_parsing_isInRange__00625690+1 | s_or_parsing_isInRange_parameters._00625693
     ADD ESI,0x2                         ; 004af243
-    MOV byte ptr [EDI + 0x1],AL         ; 004af246 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004af246 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004af249
     CMP AL,0x0                          ; 004af24c
     JNZ 0x004af238                      ; 004af24e
@@ -1986,15 +1986,15 @@ section .text
         ;   Label: LAB_004af357
     MOV EDI,0x2d0a460                   ; 004af35c | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004af361 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004af362 | = "Error parsing isInRange parameters." | s_ror_parsing_isInRange_parameters_006256bc
+    MOV AL,byte ptr [ESI]               ; 004af362 | = "Error parsing isInRange parameters." | s_Error_parsing_isInRange__006256ba+2
         ;   Label: LAB_004af362
-    MOV byte ptr [EDI],AL               ; 004af364 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004af364 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004af366
     JZ 0x004af37a                       ; 004af368
         ;   XREF to: 004af37a (CONDITIONAL_JUMP)  ; LAB_004af37a
-    MOV AL,byte ptr [ESI + 0x1]         ; 004af36a | s_rror_parsing_isInRange_parameter_006256bb | s_or_parsing_isInRange_parameters._006256bd
+    MOV AL,byte ptr [ESI + 0x1]         ; 004af36a | s_Error_parsing_isInRange__006256ba+1 | s_or_parsing_isInRange_parameters._006256bd
     ADD ESI,0x2                         ; 004af36d
-    MOV byte ptr [EDI + 0x1],AL         ; 004af370 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004af370 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004af373
     CMP AL,0x0                          ; 004af376
     JNZ 0x004af362                      ; 004af378
@@ -2013,15 +2013,15 @@ section .text
         ;   Label: LAB_004af387
     MOV EDI,0x2d0a460                   ; 004af38c | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004af391 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004af392 | = "Error parsing isInRange parameters." | s_ror_parsing_isInRange_parameters_006256ea
+    MOV AL,byte ptr [ESI]               ; 004af392 | = "Error parsing isInRange parameters." | s_Error_parsing_isInRange__006256e8+2
         ;   Label: LAB_004af392
-    MOV byte ptr [EDI],AL               ; 004af394 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004af394 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004af396
     JZ 0x004af3aa                       ; 004af398
         ;   XREF to: 004af3aa (CONDITIONAL_JUMP)  ; LAB_004af3aa
-    MOV AL,byte ptr [ESI + 0x1]         ; 004af39a | s_rror_parsing_isInRange_parameter_006256e9 | s_or_parsing_isInRange_parameters._006256eb
+    MOV AL,byte ptr [ESI + 0x1]         ; 004af39a | s_Error_parsing_isInRange__006256e8+1 | s_or_parsing_isInRange_parameters._006256eb
     ADD ESI,0x2                         ; 004af39d
-    MOV byte ptr [EDI + 0x1],AL         ; 004af3a0 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004af3a0 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004af3a3
     CMP AL,0x0                          ; 004af3a6
     JNZ 0x004af392                      ; 004af3a8
@@ -2116,15 +2116,15 @@ section .text
         ;   Label: LAB_004af48d
     MOV EDI,0x2d0a460                   ; 004af492 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004af497 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004af498 | = "Error parsing isOfType parameters." | s_ror_parsing_isOfType_parameters._0062572e
+    MOV AL,byte ptr [ESI]               ; 004af498 | = "Error parsing isOfType parameters." | s_Error_parsing_isOfType_p_0062572c+2
         ;   Label: LAB_004af498
-    MOV byte ptr [EDI],AL               ; 004af49a | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004af49a | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004af49c
     JZ 0x004af4b0                       ; 004af49e
         ;   XREF to: 004af4b0 (CONDITIONAL_JUMP)  ; LAB_004af4b0
-    MOV AL,byte ptr [ESI + 0x1]         ; 004af4a0 | s_rror_parsing_isOfType_parameters_0062572d | s_or_parsing_isOfType_parameters._0062572f
+    MOV AL,byte ptr [ESI + 0x1]         ; 004af4a0 | s_Error_parsing_isOfType_p_0062572c+1 | s_or_parsing_isOfType_parameters._0062572f
     ADD ESI,0x2                         ; 004af4a3
-    MOV byte ptr [EDI + 0x1],AL         ; 004af4a6 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004af4a6 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004af4a9
     CMP AL,0x0                          ; 004af4ac
     JNZ 0x004af498                      ; 004af4ae
@@ -2308,15 +2308,15 @@ section .text
         ;   Label: LAB_004af674
     MOV EDI,0x2d0a460                   ; 004af679 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004af67e | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004af67f | = "Error parsing isFacing parameters." | s_ror_parsing_isFacing_parameters._0062576c
+    MOV AL,byte ptr [ESI]               ; 004af67f | = "Error parsing isFacing parameters." | s_Error_parsing_isFacing_p_0062576a+2
         ;   Label: LAB_004af67f
-    MOV byte ptr [EDI],AL               ; 004af681 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004af681 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004af683
     JZ 0x004af697                       ; 004af685
         ;   XREF to: 004af697 (CONDITIONAL_JUMP)  ; LAB_004af697
-    MOV AL,byte ptr [ESI + 0x1]         ; 004af687 | s_rror_parsing_isFacing_parameters_0062576b | s_or_parsing_isFacing_parameters._0062576d
+    MOV AL,byte ptr [ESI + 0x1]         ; 004af687 | s_Error_parsing_isFacing_p_0062576a+1 | s_or_parsing_isFacing_parameters._0062576d
     ADD ESI,0x2                         ; 004af68a
-    MOV byte ptr [EDI + 0x1],AL         ; 004af68d | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004af68d | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004af690
     CMP AL,0x0                          ; 004af693
     JNZ 0x004af67f                      ; 004af695
@@ -2494,15 +2494,15 @@ section .text
         ;   Label: LAB_004af826
     MOV EDI,0x2d0a460                   ; 004af82b | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004af830 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004af831 | = "Error parsing isFacing parameters." | s_ror_parsing_isFacing_parameters._00625796
+    MOV AL,byte ptr [ESI]               ; 004af831 | = "Error parsing isFacing parameters." | s_Error_parsing_isFacing_p_00625794+2
         ;   Label: LAB_004af831
-    MOV byte ptr [EDI],AL               ; 004af833 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004af833 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004af835
     JZ 0x004af849                       ; 004af837
         ;   XREF to: 004af849 (CONDITIONAL_JUMP)  ; LAB_004af849
-    MOV AL,byte ptr [ESI + 0x1]         ; 004af839 | s_rror_parsing_isFacing_parameters_00625795 | s_or_parsing_isFacing_parameters._00625797
+    MOV AL,byte ptr [ESI + 0x1]         ; 004af839 | s_Error_parsing_isFacing_p_00625794+1 | s_or_parsing_isFacing_parameters._00625797
     ADD ESI,0x2                         ; 004af83c
-    MOV byte ptr [EDI + 0x1],AL         ; 004af83f | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004af83f | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004af842
     CMP AL,0x0                          ; 004af845
     JNZ 0x004af831                      ; 004af847
@@ -2520,15 +2520,15 @@ section .text
         ;   Label: LAB_004af856
     MOV EDI,0x2d0a460                   ; 004af85b | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004af860 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004af861 | = "isFacing() angle must be in range 0....." | s_Facing()_angle_must_be_in_range_0_006257b9
+    MOV AL,byte ptr [ESI]               ; 004af861 | = "isFacing() angle must be in range 0....." | s_isFacing_angle_must_be_i_006257b7+2
         ;   Label: LAB_004af861
-    MOV byte ptr [EDI],AL               ; 004af863 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004af863 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004af865
     JZ 0x004af879                       ; 004af867
         ;   XREF to: 004af879 (CONDITIONAL_JUMP)  ; LAB_004af879
-    MOV AL,byte ptr [ESI + 0x1]         ; 004af869 | s_sFacing()_angle_must_be_in_range_006257b8 | s_acing()_angle_must_be_in_range_0_006257ba
+    MOV AL,byte ptr [ESI + 0x1]         ; 004af869 | s_isFacing_angle_must_be_i_006257b7+1 | s_acing()_angle_must_be_in_range_0_006257ba
     ADD ESI,0x2                         ; 004af86c
-    MOV byte ptr [EDI + 0x1],AL         ; 004af86f | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004af86f | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004af872
     CMP AL,0x0                          ; 004af875
     JNZ 0x004af861                      ; 004af877
@@ -2546,15 +2546,15 @@ section .text
         ;   Label: LAB_004af886
     MOV EDI,0x2d0a460                   ; 004af88b | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004af890 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004af891 | = "Error parsing isFacing parameters." | s_ror_parsing_isFacing_parameters._006257e3
+    MOV AL,byte ptr [ESI]               ; 004af891 | = "Error parsing isFacing parameters." | s_Error_parsing_isFacing_p_006257e1+2
         ;   Label: LAB_004af891
-    MOV byte ptr [EDI],AL               ; 004af893 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004af893 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004af895
     JZ 0x004af8a9                       ; 004af897
         ;   XREF to: 004af8a9 (CONDITIONAL_JUMP)  ; LAB_004af8a9
-    MOV AL,byte ptr [ESI + 0x1]         ; 004af899 | s_rror_parsing_isFacing_parameters_006257e2 | s_or_parsing_isFacing_parameters._006257e4
+    MOV AL,byte ptr [ESI + 0x1]         ; 004af899 | s_Error_parsing_isFacing_p_006257e1+1 | s_or_parsing_isFacing_parameters._006257e4
     ADD ESI,0x2                         ; 004af89c
-    MOV byte ptr [EDI + 0x1],AL         ; 004af89f | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004af89f | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004af8a2
     CMP AL,0x0                          ; 004af8a5
     JNZ 0x004af891                      ; 004af8a7
@@ -2662,15 +2662,15 @@ section .text
         ;   Label: LAB_004af9d9
     MOV EDI,0x2d0a460                   ; 004af9de | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004af9e3 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004af9e4 | = "Error parsing isLightOn parameters." | s_ror_parsing_isLightOn_parameters_0062581e
+    MOV AL,byte ptr [ESI]               ; 004af9e4 | = "Error parsing isLightOn parameters." | s_Error_parsing_isLightOn__0062581c+2
         ;   Label: LAB_004af9e4
-    MOV byte ptr [EDI],AL               ; 004af9e6 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004af9e6 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004af9e8
     JZ 0x004af9fc                       ; 004af9ea
         ;   XREF to: 004af9fc (CONDITIONAL_JUMP)  ; LAB_004af9fc
-    MOV AL,byte ptr [ESI + 0x1]         ; 004af9ec | s_rror_parsing_isLightOn_parameter_0062581d | s_or_parsing_isLightOn_parameters._0062581f
+    MOV AL,byte ptr [ESI + 0x1]         ; 004af9ec | s_Error_parsing_isLightOn__0062581c+1 | s_or_parsing_isLightOn_parameters._0062581f
     ADD ESI,0x2                         ; 004af9ef
-    MOV byte ptr [EDI + 0x1],AL         ; 004af9f2 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004af9f2 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004af9f5
     CMP AL,0x0                          ; 004af9f8
     JNZ 0x004af9e4                      ; 004af9fa
@@ -2699,13 +2699,13 @@ section .text
     PUSH EDI                            ; 004afa2d | g_EventErrorMessageBuffer
     MOV AL,byte ptr [ESI]               ; 004afa2e
         ;   Label: LAB_004afa2e
-    MOV byte ptr [EDI],AL               ; 004afa30 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004afa30 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004afa32
     JZ 0x004afa46                       ; 004afa34
         ;   XREF to: 004afa46 (CONDITIONAL_JUMP)  ; LAB_004afa46
     MOV AL,byte ptr [ESI + 0x1]         ; 004afa36
     ADD ESI,0x2                         ; 004afa39
-    MOV byte ptr [EDI + 0x1],AL         ; 004afa3c | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004afa3c | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004afa3f
     CMP AL,0x0                          ; 004afa42
     JNZ 0x004afa2e                      ; 004afa44
@@ -2759,15 +2759,15 @@ section .text
         ;   Label: LAB_004afac8
     MOV EDI,0x2d0a460                   ; 004afacd | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004afad2 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004afad3 | = "Error parsing isNudityEnabled()." | s_ror_parsing_isNudityEnabled()._00625875
+    MOV AL,byte ptr [ESI]               ; 004afad3 | = "Error parsing isNudityEnabled()." | s_Error_parsing_isNudityEn_00625873+2
         ;   Label: LAB_004afad3
-    MOV byte ptr [EDI],AL               ; 004afad5 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004afad5 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004afad7
     JZ 0x004afaeb                       ; 004afad9
         ;   XREF to: 004afaeb (CONDITIONAL_JUMP)  ; LAB_004afaeb
-    MOV AL,byte ptr [ESI + 0x1]         ; 004afadb | s_rror_parsing_isNudityEnabled()._00625874 | s_or_parsing_isNudityEnabled()._00625876
+    MOV AL,byte ptr [ESI + 0x1]         ; 004afadb | s_Error_parsing_isNudityEn_00625873+1 | s_or_parsing_isNudityEnabled()._00625876
     ADD ESI,0x2                         ; 004afade
-    MOV byte ptr [EDI + 0x1],AL         ; 004afae1 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004afae1 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004afae4
     CMP AL,0x0                          ; 004afae7
     JNZ 0x004afad3                      ; 004afae9
@@ -2855,15 +2855,15 @@ section .text
         ;   Label: LAB_004afbb8
     MOV EDI,0x2d0a460                   ; 004afbbd | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004afbc2 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004afbc3 | = "Error parsing isSfxActive parameters." | s_ror_parsing_isSfxActive_paramete_006258b0
+    MOV AL,byte ptr [ESI]               ; 004afbc3 | = "Error parsing isSfxActive parameters." | s_Error_parsing_isSfxActive_parame_006258ae+2
         ;   Label: LAB_004afbc3
-    MOV byte ptr [EDI],AL               ; 004afbc5 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004afbc5 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004afbc7
     JZ 0x004afbdb                       ; 004afbc9
         ;   XREF to: 004afbdb (CONDITIONAL_JUMP)  ; LAB_004afbdb
-    MOV AL,byte ptr [ESI + 0x1]         ; 004afbcb | s_rror_parsing_isSfxActive_paramet_006258af | s_or_parsing_isSfxActive_parameter_006258b1
+    MOV AL,byte ptr [ESI + 0x1]         ; 004afbcb | s_Error_parsing_isSfxActive_parame_006258ae+1 | s_or_parsing_isSfxActive_parameter_006258b1
     ADD ESI,0x2                         ; 004afbce
-    MOV byte ptr [EDI + 0x1],AL         ; 004afbd1 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004afbd1 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004afbd4
     CMP AL,0x0                          ; 004afbd7
     JNZ 0x004afbc3                      ; 004afbd9
@@ -2959,15 +2959,15 @@ section .text
         ;   Label: LAB_004afcc9
     MOV EDI,0x2d0a460                   ; 004afcce | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004afcd3 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004afcd4 | = "Error parsing isTalking parameters." | s_ror_parsing_isTalking_parameters_006258ee
+    MOV AL,byte ptr [ESI]               ; 004afcd4 | = "Error parsing isTalking parameters." | s_Error_parsing_isTalking__006258ec+2
         ;   Label: LAB_004afcd4
-    MOV byte ptr [EDI],AL               ; 004afcd6 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004afcd6 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004afcd8
     JZ 0x004afcec                       ; 004afcda
         ;   XREF to: 004afcec (CONDITIONAL_JUMP)  ; LAB_004afcec
-    MOV AL,byte ptr [ESI + 0x1]         ; 004afcdc | s_rror_parsing_isTalking_parameter_006258ed | s_or_parsing_isTalking_parameters._006258ef
+    MOV AL,byte ptr [ESI + 0x1]         ; 004afcdc | s_Error_parsing_isTalking__006258ec+1 | s_or_parsing_isTalking_parameters._006258ef
     ADD ESI,0x2                         ; 004afcdf
-    MOV byte ptr [EDI + 0x1],AL         ; 004afce2 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004afce2 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004afce5
     CMP AL,0x0                          ; 004afce8
     JNZ 0x004afcd4                      ; 004afcea
@@ -3078,15 +3078,15 @@ section .text
         ;   Label: LAB_004afe16
     MOV EDI,0x2d0a460                   ; 004afe1b | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004afe20 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004afe21 | = "Error parsing isVictim parameters." | s_ror_parsing_isVictim_parameters._00625929
+    MOV AL,byte ptr [ESI]               ; 004afe21 | = "Error parsing isVictim parameters." | s_Error_parsing_isVictim_p_00625927+2
         ;   Label: LAB_004afe21
-    MOV byte ptr [EDI],AL               ; 004afe23 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004afe23 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004afe25
     JZ 0x004afe39                       ; 004afe27
         ;   XREF to: 004afe39 (CONDITIONAL_JUMP)  ; LAB_004afe39
-    MOV AL,byte ptr [ESI + 0x1]         ; 004afe29 | s_rror_parsing_isVictim_parameters_00625928 | s_or_parsing_isVictim_parameters._0062592a
+    MOV AL,byte ptr [ESI + 0x1]         ; 004afe29 | s_Error_parsing_isVictim_p_00625927+1 | s_or_parsing_isVictim_parameters._0062592a
     ADD ESI,0x2                         ; 004afe2c
-    MOV byte ptr [EDI + 0x1],AL         ; 004afe2f | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004afe2f | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004afe32
     CMP AL,0x0                          ; 004afe35
     JNZ 0x004afe21                      ; 004afe37
@@ -3196,15 +3196,15 @@ section .text
         ;   Label: LAB_004aff58
     MOV EDI,0x2d0a460                   ; 004aff5d | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004aff62 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004aff63 | = "Error parsing isWeaponDrawn parameters." | s_ror_parsing_isWeaponDrawn_parame_00625968
+    MOV AL,byte ptr [ESI]               ; 004aff63 | = "Error parsing isWeaponDrawn parameters." | s_Error_parsing_isWeaponDr_00625966+2
         ;   Label: LAB_004aff63
-    MOV byte ptr [EDI],AL               ; 004aff65 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004aff65 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004aff67
     JZ 0x004aff7b                       ; 004aff69
         ;   XREF to: 004aff7b (CONDITIONAL_JUMP)  ; LAB_004aff7b
-    MOV AL,byte ptr [ESI + 0x1]         ; 004aff6b | s_rror_parsing_isWeaponDrawn_param_00625967 | s_or_parsing_isWeaponDrawn_paramet_00625969
+    MOV AL,byte ptr [ESI + 0x1]         ; 004aff6b | s_Error_parsing_isWeaponDr_00625966+1 | s_or_parsing_isWeaponDrawn_paramet_00625969
     ADD ESI,0x2                         ; 004aff6e
-    MOV byte ptr [EDI + 0x1],AL         ; 004aff71 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004aff71 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004aff74
     CMP AL,0x0                          ; 004aff77
     JNZ 0x004aff63                      ; 004aff79
@@ -3278,15 +3278,15 @@ section .text
         ;   Label: LAB_004b0037
     MOV EDI,0x2d0a460                   ; 004b003c | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004b0041 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004b0042 | = "Error parsing isWearingGasMask parame..." | s_ror_parsing_isWearingGasMask_par_006259af
+    MOV AL,byte ptr [ESI]               ; 004b0042 | = "Error parsing isWearingGasMask parame..." | s_Error_parsing_isWearingG_006259ad+2
         ;   Label: LAB_004b0042
-    MOV byte ptr [EDI],AL               ; 004b0044 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004b0044 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004b0046
     JZ 0x004b005a                       ; 004b0048
         ;   XREF to: 004b005a (CONDITIONAL_JUMP)  ; LAB_004b005a
-    MOV AL,byte ptr [ESI + 0x1]         ; 004b004a | s_rror_parsing_isWearingGasMask_pa_006259ae | s_or_parsing_isWearingGasMask_para_006259b0
+    MOV AL,byte ptr [ESI + 0x1]         ; 004b004a | s_Error_parsing_isWearingG_006259ad+1 | s_or_parsing_isWearingGasMask_para_006259b0
     ADD ESI,0x2                         ; 004b004d
-    MOV byte ptr [EDI + 0x1],AL         ; 004b0050 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004b0050 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004b0053
     CMP AL,0x0                          ; 004b0056
     JNZ 0x004b0042                      ; 004b0058
@@ -3351,15 +3351,15 @@ section .text
         ;   Label: LAB_004b010b
     MOV EDI,0x2d0a460                   ; 004b0110 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004b0115 | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004b0116 | = "Error parsing randBool parameters." | s_ror_parsing_randBool_parameters._006259ed
+    MOV AL,byte ptr [ESI]               ; 004b0116 | = "Error parsing randBool parameters." | s_Error_parsing_randBool_p_006259eb+2
         ;   Label: LAB_004b0116
-    MOV byte ptr [EDI],AL               ; 004b0118 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004b0118 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004b011a
     JZ 0x004b012e                       ; 004b011c
         ;   XREF to: 004b012e (CONDITIONAL_JUMP)  ; LAB_004b012e
-    MOV AL,byte ptr [ESI + 0x1]         ; 004b011e | s_rror_parsing_randBool_parameters_006259ec | s_or_parsing_randBool_parameters._006259ee
+    MOV AL,byte ptr [ESI + 0x1]         ; 004b011e | s_Error_parsing_randBool_p_006259eb+1 | s_or_parsing_randBool_parameters._006259ee
     ADD ESI,0x2                         ; 004b0121
-    MOV byte ptr [EDI + 0x1],AL         ; 004b0124 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004b0124 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004b0127
     CMP AL,0x0                          ; 004b012a
     JNZ 0x004b0116                      ; 004b012c
@@ -3424,15 +3424,15 @@ section .text
         ;   Label: LAB_004b01d2
     MOV EDI,0x2d0a460                   ; 004b01d7 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004b01dc | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004b01dd | = "Error parsing reachedDest parameters." | s_ror_parsing_reachedDest_paramete_00625a2a
+    MOV AL,byte ptr [ESI]               ; 004b01dd | = "Error parsing reachedDest parameters." | s_Error_parsing_reachedDes_00625a28+2
         ;   Label: LAB_004b01dd
-    MOV byte ptr [EDI],AL               ; 004b01df | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004b01df | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004b01e1
     JZ 0x004b01f5                       ; 004b01e3
         ;   XREF to: 004b01f5 (CONDITIONAL_JUMP)  ; LAB_004b01f5
-    MOV AL,byte ptr [ESI + 0x1]         ; 004b01e5 | s_rror_parsing_reachedDest_paramet_00625a29 | s_or_parsing_reachedDest_parameter_00625a2b
+    MOV AL,byte ptr [ESI + 0x1]         ; 004b01e5 | s_Error_parsing_reachedDes_00625a28+1 | s_or_parsing_reachedDest_parameter_00625a2b
     ADD ESI,0x2                         ; 004b01e8
-    MOV byte ptr [EDI + 0x1],AL         ; 004b01eb | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004b01eb | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004b01ee
     CMP AL,0x0                          ; 004b01f1
     JNZ 0x004b01dd                      ; 004b01f3
@@ -3464,15 +3464,15 @@ section .text
         ;   Label: LAB_004b0231
     MOV EDI,0x2d0a460                   ; 004b0236 | g_EventErrorMessageBuffer
     PUSH EDI                            ; 004b023b | g_EventErrorMessageBuffer
-    MOV AL,byte ptr [ESI]               ; 004b023c | = "Invalid meta-function" | s_valid_meta-function_00625a50
+    MOV AL,byte ptr [ESI]               ; 004b023c | = "Invalid meta-function" | s_Invalid_meta_function_00625a4e+2
         ;   Label: LAB_004b023c
-    MOV byte ptr [EDI],AL               ; 004b023e | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004b023e | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004b0240
     JZ 0x004b0254                       ; 004b0242
         ;   XREF to: 004b0254 (CONDITIONAL_JUMP)  ; LAB_004b0254
-    MOV AL,byte ptr [ESI + 0x1]         ; 004b0244 | s_nvalid_meta-function_00625a4f | s_alid_meta-function_00625a51
+    MOV AL,byte ptr [ESI + 0x1]         ; 004b0244 | s_Invalid_meta_function_00625a4e+1 | s_alid_meta-function_00625a51
     ADD ESI,0x2                         ; 004b0247
-    MOV byte ptr [EDI + 0x1],AL         ; 004b024a | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004b024a | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004b024d
     CMP AL,0x0                          ; 004b0250
     JNZ 0x004b023c                      ; 004b0252

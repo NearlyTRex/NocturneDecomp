@@ -61,7 +61,7 @@ void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filena
       wVar3 = normalize_path_separator(wVar2,pwVar8);
       wchar_to_bytes(wVar3,path_buffer);
       iVar3 = mblen(path_buffer);
-      ((byte *)path_buffer)[iVar3] = 0;
+      path_buffer[iVar3] = 0;
       path_buffer = mbtowc_next(path_buffer);
       directory = mbtowc_next(directory);
     } while (*directory != '\0');
@@ -70,7 +70,7 @@ void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filena
     }
     pbVar4 = (byte *)mb_get_last_char(local_14,path_buffer);
     if (*pbVar4 == local_18) {
-      path_buffer = (char *)((byte *)path_buffer + -1);
+      path_buffer = path_buffer + -1;
     }
     else {
       *path_buffer = (byte)local_18;
@@ -81,14 +81,14 @@ void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filena
   }
   if (filename == (char *)0x0) {
     if ((byte)*path_buffer == local_18) {
-      path_buffer = (char *)((byte *)path_buffer + 1);
+      path_buffer = path_buffer + 1;
     }
   }
   else {
     wVar3 = mbtowc_peek(filename);
     wVar3 = normalize_path_separator(wVar3,(wchar_t *)&local_18);
     if ((CONCAT22(extraout_var,wVar3) != local_18) && ((byte)*path_buffer == local_18)) {
-      path_buffer = (char *)((byte *)path_buffer + 1);
+      path_buffer = path_buffer + 1;
     }
     for (; *filename != '\0'; filename = mbtowc_next(filename)) {
       preferred_separator = (wchar_t *)&local_18;
@@ -96,18 +96,18 @@ void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filena
       wVar3 = normalize_path_separator(wVar3,preferred_separator);
       wchar_to_bytes(wVar3,path_buffer);
       iVar4 = mblen(path_buffer);
-      ((byte *)path_buffer)[iVar4] = 0;
+      path_buffer[iVar4] = 0;
       path_buffer = mbtowc_next(path_buffer);
     }
   }
   if ((extension != (char *)0x0) && (*extension != '\0')) {
     if (*extension != '.') {
       *path_buffer = 0x2e;
-      path_buffer = (char *)((byte *)path_buffer + 1);
+      path_buffer = path_buffer + 1;
     }
-    for (; *extension != 0; extension = (char *)((byte *)extension + 1)) {
+    for (; *extension != 0; extension = extension + 1) {
       *path_buffer = *extension;
-      path_buffer = (char *)((byte *)path_buffer + 1);
+      path_buffer = path_buffer + 1;
     }
   }
   *path_buffer = 0;

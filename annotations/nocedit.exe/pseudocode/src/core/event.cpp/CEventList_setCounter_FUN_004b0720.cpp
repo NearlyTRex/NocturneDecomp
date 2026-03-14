@@ -42,11 +42,11 @@ void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_
       iVar3 = (this_ptr->counters).count + -1;
       (this_ptr->counters).count = iVar3;
       memmove
-                ((this_ptr->counters).names + iVar2,(this_ptr->counters).names + iVar2 + 1,
+                ((this_ptr->counters).names + iVar2,
+                 ((SCounterBlock *)(&this_ptr->timers + 1))->names + iVar2 + 1,
                  (iVar3 - iVar2) * 0x20);
       memmove
-                ((this_ptr->counters).values + iVar2,
-                 (void *)((int)((this_ptr->actor_vars).var_names + -2) + 0x14 + iVar2 * 4),
+                ((this_ptr->counters).values + iVar2,(this_ptr->counters).values + iVar2 + 1,
                  ((this_ptr->counters).count - iVar2) * 4);
       return;
     }

@@ -9,9 +9,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_newformat_00621777
-;   undefined4 s_ewformat_00621778
-;   undefined4 s_wformat_00621779
-;   undefined4 s_format_0062177a
+;   undefined4 s_newformat_00621777+1
+;   undefined4 s_newformat_00621777+2
+;   undefined4 s_newformat_00621777+3
 ;
 ; Called Functions:
 ;   crt_stdio.c_fwrite_FUN_005fdc00
@@ -30,13 +30,13 @@ section .text
     MOV EDI,EBP                         ; 0048233d
     MOV EDX,dword ptr [ESP + 0x18]      ; 0048233f
     PUSH EDI                            ; 00482343
-    MOV AL,byte ptr [ESI]               ; 00482344 | = "newformat" | s_wformat_00621779
+    MOV AL,byte ptr [ESI]               ; 00482344 | = "newformat" | s_newformat_00621777+2
         ;   Label: LAB_00482344
     MOV byte ptr [EDI],AL               ; 00482346
     CMP AL,0x0                          ; 00482348
     JZ 0x0048235c                       ; 0048234a
         ;   XREF to: 0048235c (CONDITIONAL_JUMP)  ; LAB_0048235c
-    MOV AL,byte ptr [ESI + 0x1]         ; 0048234c | s_ewformat_00621778 | s_format_0062177a
+    MOV AL,byte ptr [ESI + 0x1]         ; 0048234c | s_newformat_00621777+1 | s_newformat_00621777+3
     ADD ESI,0x2                         ; 0048234f
     MOV byte ptr [EDI + 0x1],AL         ; 00482352
     ADD EDI,0x2                         ; 00482355

@@ -23,9 +23,9 @@
 ;   TerminatedCString s_engine_palette_cpp_0063e548
 ;   TerminatedCString s_paletteManager_createOut_0063e55e
 ;   TerminatedCString s_ACT_0063e597
-;   undefined4 s_ACT_0063e598
-;   undefined4 s_CT_0063e599
-;   undefined4 s_T_0063e59a
+;   undefined4 s_ACT_0063e597+1
+;   undefined4 s_ACT_0063e597+2
+;   undefined4 s_ACT_0063e597+3
 ;   TerminatedCString s_rb_0063e59c
 ;   TerminatedCString s_art_0063e59f
 ;   TerminatedCString s_rb_0063e5a3
@@ -158,13 +158,13 @@ section .text
         ;   Label: LAB_0054527d
     MOV DL,0x5c                         ; 00545282
     PUSH EDI                            ; 00545284
-    MOV AL,byte ptr [ESI]               ; 00545285 | = ".ACT" | s_CT_0063e599
+    MOV AL,byte ptr [ESI]               ; 00545285 | = ".ACT" | s_ACT_0063e597+2
         ;   Label: LAB_00545285
     MOV byte ptr [EDI],AL               ; 00545287
     CMP AL,0x0                          ; 00545289
     JZ 0x0054529d                       ; 0054528b
         ;   XREF to: 0054529d (CONDITIONAL_JUMP)  ; LAB_0054529d
-    MOV AL,byte ptr [ESI + 0x1]         ; 0054528d | s_ACT_0063e598 | s_T_0063e59a
+    MOV AL,byte ptr [ESI + 0x1]         ; 0054528d | s_ACT_0063e597+1 | s_ACT_0063e597+3
     ADD ESI,0x2                         ; 00545290
     MOV byte ptr [EDI + 0x1],AL         ; 00545293
     ADD EDI,0x2                         ; 00545296
@@ -461,7 +461,7 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 00545538 | g_DefaultPalette | g_PaletteData | UCHAR_ARRAY_02d0224c
     MOV CL,AL                           ; 0054553a
     AND CL,0x3                          ; 0054553c
-    MOVSB.REP ES:EDI,ESI                ; 0054553f | UCHAR_ARRAY_02d0224c | UCHAR_ARRAY_02fd8d24 | UCHAR_ARRAY_02d0224d
+    MOVSB.REP ES:EDI,ESI                ; 0054553f | UCHAR_ARRAY_02d0224c | g_PaletteData+4 | UCHAR_ARRAY_02d0224d
     POP EDI                             ; 00545541
     JMP 0x0054530b                      ; 00545542
         ;   XREF to: 0054530b (UNCONDITIONAL_JUMP)  ; LAB_0054530b
@@ -507,10 +507,10 @@ section .text
         ;   Label: LAB_005455b5
     XOR ECX,ECX                         ; 005455b8
     XOR EDX,EDX                         ; 005455ba
-    MOV CL,byte ptr [EAX + 0x2fd8d21]   ; 005455bc | UCHAR_ARRAY_02fd8d21
+    MOV CL,byte ptr [EAX + 0x2fd8d21]   ; 005455bc | g_PaletteData+1
     MOV DL,byte ptr [EAX + 0x2fd8d20]   ; 005455c2 | g_PaletteData
     MOV dword ptr [ESP + 0x68],ECX      ; 005455c8
-    MOV AL,byte ptr [EAX + 0x2fd8d22]   ; 005455cc | UCHAR_ARRAY_02fd8d22
+    MOV AL,byte ptr [EAX + 0x2fd8d22]   ; 005455cc | g_PaletteData+2
     AND EAX,0xff                        ; 005455d2
     TEST EDX,EDX                        ; 005455d7
     JZ 0x00545623                       ; 005455d9

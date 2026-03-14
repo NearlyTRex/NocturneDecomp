@@ -129,7 +129,7 @@ LAB_00417851:
       local_28.z = 20.0;
       core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                 ((CDemonActor *)this_ptr,&local_34,&local_28);
-      core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0((CCharacter *)this_ptr,&local_34,-1.0);
+      core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0((CCharacter *)this_ptr,&local_34,-1.0,1);
       return;
     }
   }

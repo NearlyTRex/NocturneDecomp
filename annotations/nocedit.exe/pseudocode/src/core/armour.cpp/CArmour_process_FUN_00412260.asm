@@ -144,7 +144,7 @@ section .text
     MOV dword ptr [ESP + 0x18],ECX      ; 00412388
     MOV dword ptr [ESP + 0x1c],EDI      ; 0041238c
     CALL core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 ; 00412390
-        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force)
+        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force, int render_in_background)
     ADD ESP,0x10                        ; 00412395
     MOV ESP,EBP                         ; 00412398
     POP EBP                             ; 0041239a

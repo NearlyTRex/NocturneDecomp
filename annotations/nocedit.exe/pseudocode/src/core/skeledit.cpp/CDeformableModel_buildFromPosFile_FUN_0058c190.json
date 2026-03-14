@@ -73,19 +73,19 @@
   },
   "complexity": {
     "assembly_lines": 1765,
-    "complexity_score": 948,
+    "complexity_score": 959,
     "cross_reference_count": 0,
     "function_call_count": 65,
     "global_count": 65,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 713,
-    "suspect_count": 22,
+    "pseudocode_lines": 714,
+    "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 2478
+    "total_lines": 2479
   },
   "cross_references": [],
   "function": {
@@ -676,7 +676,7 @@
     },
     {
       "addr": "0064acbe",
-      "name": "s_$TEST_0064acbe",
+      "name": "s_TEST_0064acbd+1",
       "type": "undefined4",
       "value": null
     },
@@ -688,19 +688,19 @@
     },
     {
       "addr": "0064acc5",
-      "name": "s_$BATCH_0064acc5",
+      "name": "s_BATCH_0064acc4+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0064acc6",
-      "name": "s_BATCH_0064acc6",
+      "name": "s_BATCH_0064acc4+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0064acc7",
-      "name": "s_ATCH_0064acc7",
+      "name": "s_BATCH_0064acc4+3",
       "type": "undefined4",
       "value": null
     },
@@ -824,6 +824,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -1537,6 +1538,14 @@
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar9 = *(int *)((int)local_d8 + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 611,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "(&local_1f4,*(int *)((int)local_ec + local_40),&local_2dc);",
       "type": "pointer_cast"
     }
   ]

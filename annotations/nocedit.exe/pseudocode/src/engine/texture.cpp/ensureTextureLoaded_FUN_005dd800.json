@@ -180,6 +180,125 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 15,
+    "call_sites": [
+      {
+        "call_addr": "0051ec44",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004cc4a5",
+        "call_type": "direct",
+        "caller": "core_flies.cpp_CFlies_renderOpaque_FUN_004cc300",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005dd8c5",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_loadTextureAndGetData_FUN_005dd8c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0048db87",
+        "call_type": "direct",
+        "caller": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0040512d",
+        "call_type": "direct",
+        "caller": "engine_3d.c_updateAnimatedTexture_FUN_004050c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ce32d",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005dd936",
+        "call_type": "direct",
+        "caller": "engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0043bb77",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_render_FUN_0043bae0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045cff9",
+        "call_type": "direct",
+        "caller": "shape_design.c_renderSinglePolygon_FUN_0045ce20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004716d9",
+        "call_type": "direct",
+        "caller": "core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.808219178082192,
     "instruction_count": 73,
@@ -221,5 +340,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 52,
+        "vtable_addr": "0066df88"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

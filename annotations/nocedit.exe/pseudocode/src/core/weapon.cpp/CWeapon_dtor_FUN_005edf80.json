@@ -151,6 +151,125 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 13,
+    "call_sites": [
+      {
+        "call_addr": "004495c6",
+        "call_type": "direct",
+        "caller": "core_crossbow.cpp_CCrossbow_dtor_FUN_004495a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0049d12f",
+        "call_type": "direct",
+        "caller": "core_dynamite.cpp_CDynamite_dtor_FUN_0049d120",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a7bef",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_CElephantGun_dtor_FUN_004a7be0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004cbb0f",
+        "call_type": "direct",
+        "caller": "core_flamegun.cpp_CFlameThrower_dtor_FUN_004cbb00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004cbc6f",
+        "call_type": "direct",
+        "caller": "core_flashlit.cpp_CFlashlight_dtor_FUN_004cbc60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00588aef",
+        "call_type": "direct",
+        "caller": "core_shotgun.cpp_CShotgun_dtor_FUN_00588ae0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00588c8f",
+        "call_type": "direct",
+        "caller": "core_shovel.cpp_CShovel_dtor_FUN_00588c80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005e3e0f",
+        "call_type": "direct",
+        "caller": "core_turret.cpp_CTurret_dtor_FUN_005e3e00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004140bf",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaronWeapon_dtor_FUN_004140b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f0b5f",
+        "call_type": "direct",
+        "caller": "core_gun.cpp_CGun_dtor_FUN_004f0b50",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.105263157894737,
     "instruction_count": 38,
@@ -205,5 +324,21 @@
       "text": "ptr = (CWeapon *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pCVar1)->base,1);",
       "type": "decompiler_intrinsic"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 228,
+        "vtable_addr": "006655b4"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 8,
+        "vtable_addr": "006656c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

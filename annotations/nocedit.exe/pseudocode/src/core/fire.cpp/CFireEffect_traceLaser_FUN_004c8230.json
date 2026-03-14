@@ -1,18 +1,11 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 5,
-        "line": 302,
-        "message": "no matching function for call to 'core_fire_cpp_CFireEffect_createLaserSegment_FUN_004c7eb0'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 818,
+    "assembly_lines": 817,
     "complexity_score": 323,
     "cross_reference_count": 3,
     "function_call_count": 11,
@@ -23,7 +16,7 @@
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 1116
+    "total_lines": 1115
   },
   "cross_references": [
     {
@@ -191,31 +184,38 @@
         "call_type": "direct",
         "caller": "core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830",
         "estimated_params": 5,
-        "instructions_analyzed": 30,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 20,
         "stack_params": 5
       },
       {
         "call_addr": "0050ab13",
         "call_type": "direct",
         "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateLaser_FUN_0050a8d0",
-        "estimated_params": 4,
-        "instructions_analyzed": 30,
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 4
+        "stack_bytes": 20,
+        "stack_params": 5
       },
       {
         "call_addr": "004a89bb",
         "call_type": "direct",
         "caller": "core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860",
-        "estimated_params": 3,
-        "instructions_analyzed": 7,
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 3
+        "stack_bytes": 20,
+        "stack_params": 5
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 5,
+    "declared_stack_bytes": 20,
     "estimated_params": 5
   },
   "pcode_summary": {

@@ -49,7 +49,7 @@ void __cdecl CDemonLight::blitZBuffer(CDemonLight *this_ptr,CRect *source_rect);
 
 // Original: core_dlight.cpp_CDemonLight_endScene_FUN_00472d30
 // Address: 00472d30
-void __cdecl CDemonLight::endScene(CDemonLight *this_ptr);
+void __cdecl CDemonLight::endScene(CDemonLight *this_ptr,int restore_viewport_state);
 
 // Original: core_dlight.cpp_CDemonLight_beginBackgroundScene_FUN_00472e40
 // Address: 00472e40

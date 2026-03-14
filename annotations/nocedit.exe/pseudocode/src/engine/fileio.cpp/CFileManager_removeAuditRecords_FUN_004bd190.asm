@@ -142,7 +142,7 @@ section .text
     MOV ECX,0x19                        ; 004bd24a
     LEA EDI,[ESP + 0x8d4]               ; 004bd24f
     MOV ESI,0x67a260                    ; 004bd256 | g_DefaultAuditRecordPath
-    MOVSD.REP ES:EDI,ESI                ; 004bd25b | g_DefaultAuditRecordPath | s__0067a264
+    MOVSD.REP ES:EDI,ESI                ; 004bd25b | g_DefaultAuditRecordPath | g_DefaultAuditRecordPath+4
     MOV EDI,0xffffffff                  ; 004bd25d
     MOV ESI,0x64                        ; 004bd262
     XOR EBX,EBX                         ; 004bd267

@@ -32,14 +32,13 @@ int __cdecl parseFloatString(char *str,void *result,char **endptr)
   bool bVar5;
   
   local_20 = (byte *)str;
-  for (; (bVar6 = *str, bVar6 == 0x20 || ((8 < bVar6 && (bVar6 < 0xe))));
-      str = (char *)((byte *)str + 1)) {
+  for (; (bVar6 = *str, bVar6 == 0x20 || ((8 < bVar6 && (bVar6 < 0xe)))); str = str + 1) {
   }
   bVar5 = false;
-  pbVar6 = (byte *)str + 1;
+  pbVar6 = (byte *)(str + 1);
   if ((bVar6 != 0x2b) && (pbVar6 = (byte *)str, bVar6 == 0x2d)) {
     bVar5 = true;
-    pbVar6 = (byte *)str + 1;
+    pbVar6 = (byte *)(str + 1);
   }
   bVar4 = false;
   bVar3 = false;

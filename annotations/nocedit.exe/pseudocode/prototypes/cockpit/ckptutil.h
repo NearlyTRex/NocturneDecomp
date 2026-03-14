@@ -201,7 +201,7 @@ void __cdecl setLineClippingDisabled(int disabled);
 
 // Original: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
 // Address: 00434690
-char * __cdecl loadRotatedBitmapFile(char *filename,char *buffer,int width,int height,void *optional_param);
+char * __cdecl loadRotatedBitmapFile(char *filename,char *buffer,int width,int height,int apply_palette,int palette_index);
 
 // Original: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
 // Address: 00434870
@@ -213,7 +213,7 @@ void __cdecl setEdgeData(SEdge *edge_array,int edge_index,int x1,int y1,int x2,i
 
 // Original: cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
 // Address: 00434af0
-void * __cdecl traceConnectedEdges(SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y);
+SEdge * __cdecl traceConnectedEdges(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal);
 
 // Original: cockpit_ckptutil.c_flipEdgeArrayHorizontally_FUN_004355c0
 // Address: 004355c0

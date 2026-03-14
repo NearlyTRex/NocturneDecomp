@@ -1,27 +1,20 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 133,
-        "message": "incompatible pointer types assigning to 'CDemonActor *' from 'CAmmo *'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 132,
+    "complexity_score": 134,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 24,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 132,
+    "pseudocode_lines": 134,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 414
+    "total_lines": 416
   },
   "cross_references": [
     {
@@ -260,8 +253,10 @@
         "call_type": "direct",
         "caller": "core_hero.cpp_CHero_tryUseSelectedItem_FUN_004f3760",
         "estimated_params": 2,
-        "instructions_analyzed": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -270,7 +265,9 @@
         "caller": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570",
         "estimated_params": 2,
         "instructions_analyzed": 4,
+        "method": "push_count",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -278,13 +275,16 @@
         "call_type": "direct",
         "caller": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570",
         "estimated_params": 2,
-        "instructions_analyzed": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       }
     ],
     "confidence": "high",
     "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2
   },
   "pcode_summary": {

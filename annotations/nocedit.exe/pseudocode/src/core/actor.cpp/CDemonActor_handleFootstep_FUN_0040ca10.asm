@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume)
+; void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume)
 ;
 ; Parameters:
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
-; int              Stack[0xc]:4   surface_type
+; EGroundType      Stack[0xc]:4   ground_type
 ; float            Stack[0x10]:4   volume
 ; Local Variables:
 ; char[100]        Stack[-0x8c]:100  local_8c

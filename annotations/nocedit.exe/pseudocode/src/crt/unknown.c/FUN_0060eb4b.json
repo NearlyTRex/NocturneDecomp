@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 21,
+    "complexity_score": 46,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 6,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "extra_output",
       "special_crt_function"
     ],
     "total_lines": 12
@@ -29,9 +30,9 @@
         "0060eb56"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "crt_unknown.c_FUN_0060eb4b",
-    "signature": "ulonglong crt_unknown_c_FUN_0060eb4b(void)"
+    "signature": "ulonglong __cdecl crt_unknown_c_FUN_0060eb4b(void)"
   },
   "function_calls": [
     {
@@ -62,6 +63,22 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 5,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "uint extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "return (ulonglong)(extraout_EAX & 0x80000000) << 0x20 | 0x7ff0000000000000;",
+      "type": "extra_output"
+    },
     {
       "address": "0060eb4b",
       "crt_type": "runtime support",

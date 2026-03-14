@@ -108,7 +108,7 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_p
     uVar9 = 0;
     do {
       uVar1 = *pcVar6;
-      pcVar6 = (char *)((uchar *)pcVar6 + 1);
+      pcVar6 = pcVar6 + 1;
       uVar9 = uVar9 + 1;
       uVar8 = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(uVar8,uVar1);
     } while (uVar9 < 0x10000);
@@ -120,7 +120,7 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_00550230(CPodFile *this_p
   if (size != 0) {
     do {
       data_byte = *pcVar2;
-      pcVar2 = (char *)((uchar *)pcVar2 + 1);
+      pcVar2 = pcVar2 + 1;
       uVar3 = uVar3 + 1;
       uVar8 = engine_pod_cpp_crc32UpdateByte_FUN_0054f2e0(uVar8,data_byte);
     } while (uVar3 < size);

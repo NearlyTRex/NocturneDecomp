@@ -27,7 +27,7 @@ char * __cdecl strtok(char *str,char *delimiters)
   }
   FUN_00607080(local_28,delimiters);
   while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVar1 & 7]) != 0))) {
-    str = (char *)((byte *)str + 1);
+    str = str + 1;
   }
   pbVar3 = (byte *)0x0;
   pbVar4 = (byte *)str;

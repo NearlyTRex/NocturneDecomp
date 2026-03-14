@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 21,
+    "complexity_score": 6,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_many"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 31
   },
   "cross_references": [
@@ -90,8 +88,10 @@
         "call_type": "direct",
         "caller": "engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc70",
         "estimated_params": 6,
-        "instructions_analyzed": 14,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 24,
         "stack_params": 6
       },
       {
@@ -99,59 +99,72 @@
         "call_type": "direct",
         "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120",
         "estimated_params": 6,
-        "instructions_analyzed": 8,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 24,
         "stack_params": 6
       },
       {
         "call_addr": "004cdd0f",
         "call_type": "direct",
         "caller": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0",
-        "estimated_params": 2,
-        "instructions_analyzed": 7,
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 24,
+        "stack_params": 6
       },
       {
         "call_addr": "00564791",
         "call_type": "direct",
         "caller": "core_script.cpp_CScript_drawEditor_FUN_005645d0",
         "estimated_params": 6,
-        "instructions_analyzed": 11,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 24,
         "stack_params": 6
       },
       {
         "call_addr": "004ce034",
         "call_type": "direct",
         "caller": "engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0",
-        "estimated_params": 2,
-        "instructions_analyzed": 10,
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 24,
+        "stack_params": 6
       },
       {
         "call_addr": "004cde15",
         "call_type": "direct",
         "caller": "engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0",
-        "estimated_params": 2,
-        "instructions_analyzed": 10,
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 24,
+        "stack_params": 6
       },
       {
         "call_addr": "004cdf1f",
         "call_type": "direct",
         "caller": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0",
-        "estimated_params": 2,
-        "instructions_analyzed": 10,
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 24,
+        "stack_params": 6
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 6,
-    "estimated_params": 2
+    "declared_stack_bytes": 24,
+    "estimated_params": 6
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.4347826086956523,
@@ -224,17 +237,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 7,
-      "declared_params": 6,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 2,
-      "fix_type": "remove_params",
-      "match": "declared:6 vs estimated:2",
-      "param_delta": -4,
-      "text": "Function declares 6 params but call sites push 2 (4 extra)",
-      "type": "param_count_too_many"
-    }
-  ]
+  "suspects": []
 }

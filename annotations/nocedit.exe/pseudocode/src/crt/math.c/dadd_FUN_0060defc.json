@@ -67,17 +67,20 @@
         "caller": "crt_fpemu.c_staticInit_FUN_0060be80",
         "estimated_params": 4,
         "instructions_analyzed": 5,
+        "method": "push_count",
         "reg_params": [
           "EAX",
           "EBX",
           "ECX",
           "EDX"
         ],
+        "stack_bytes": 0,
         "stack_params": 0
       }
     ],
     "confidence": "low",
     "declared_params": 2,
+    "declared_stack_bytes": 16,
     "estimated_params": 4
   },
   "pcode_summary": {
@@ -330,7 +333,7 @@
       "line": 163,
       "match": "CARRY4",
       "severity": "mild",
-      "text": "uVar13 = uVar9 & 0xfffff | (uVar6 << 0x15) >> 1 | (uint)CARRY4(uVar6,uVar6) << 0x1f;",
+      "text": "uVar13 = uVar9 & 0xfffff | (uVar6 & 0x7ff) << 0x14 | (uint)CARRY4(uVar6,uVar6) << 0x1f;",
       "type": "decompiler_intrinsic"
     },
     {

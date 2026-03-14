@@ -6,14 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 349,
+    "complexity_score": 364,
     "cross_reference_count": 17,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 144,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
+      "param_count_too_few",
       "pointer_cast"
     ],
     "total_lines": 405
@@ -216,6 +217,125 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "004a2240",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "004a2380",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "005b9fe4",
+        "call_type": "direct",
+        "caller": "core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "00502845",
+        "call_type": "direct",
+        "caller": "core_ladder.cpp_CLadder_renderOpaque_FUN_00502620",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "0051e927",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "005ba148",
+        "call_type": "direct",
+        "caller": "core_stairs.cpp_CStairs_renderOpaque_FUN_005b9c10",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "0045d3cd",
+        "call_type": "direct",
+        "caller": "shape_design.c_renderPolygonWireframe_FUN_0045d300",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "004a1d4e",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "004a1dee",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      },
+      {
+        "call_addr": "0051e7ee",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770",
+        "estimated_params": 24,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 96,
+        "stack_params": 24
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 96,
+    "estimated_params": 24
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.252336448598131,
     "instruction_count": 214,
@@ -440,6 +560,17 @@
       "severity": "mild",
       "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 50,
+      "declared_params": 2,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 24,
+      "fix_type": "add_params",
+      "match": "declared:2 vs estimated:24",
+      "param_delta": 22,
+      "text": "Function declares 2 params but call sites push 24 (22 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

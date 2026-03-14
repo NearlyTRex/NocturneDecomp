@@ -78,7 +78,10 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurfac
             pSVar13->y_start = iVar6;
             pSVar13->x_start = iVar8;
             pSVar13->x_increment =
-                 (int)(((longlong)(aiStack_38[3] - iVar7) * 0x10000) / (longlong)(iVar6 - iVar8));
+                 (int)((longlong)
+                       ((((longlong)(aiStack_38[3] - iVar7) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                       (longlong)(aiStack_38[3] - iVar7) * 0x10000 & 0xffffffffU) /
+                      (longlong)(iVar6 - iVar8));
             pSVar14 = pSVar13 + 1;
             if (pSVar13->x_start < this_ptr->clip_top) {
               pSVar13->x_fixed_point =

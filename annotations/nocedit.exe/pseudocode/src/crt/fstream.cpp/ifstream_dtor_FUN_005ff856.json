@@ -1,17 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 16,
+    "complexity_score": 93,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 1,
-    "suspect_count": 1,
+    "pseudocode_lines": 28,
+    "suspect_count": 5,
     "suspect_types": [
+      "negative_offset",
+      "pointer_cast",
       "special_crt_function"
     ],
-    "total_lines": 70
+    "total_lines": 97
   },
   "cross_references": [
     {
@@ -55,7 +57,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_fstream.cpp_ifstream_dtor_FUN_005ff856",
-    "signature": "ifstream * __cdecl crt_fstream.cpp_ifstream_dtor_FUN_005ff856(void * this_ptr,uint flags)"
+    "signature": "ifstream * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_005ff856(void *this_ptr,uint flags)"
   },
   "function_calls": [
     {
@@ -123,8 +125,10 @@
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
         "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -132,8 +136,10 @@
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
         "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -141,8 +147,10 @@
         "call_type": "direct",
         "caller": "crt_fstream.cpp_ifstream_destructor_thunk_from_ios_FUN_005ff6f8",
         "estimated_params": 2,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -150,8 +158,10 @@
         "call_type": "direct",
         "caller": "support_codec.cpp_CCodec_processFiles_FUN_0043ec30",
         "estimated_params": 2,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -159,8 +169,10 @@
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
         "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -168,8 +180,10 @@
         "call_type": "direct",
         "caller": "crt_fstream.cpp_ifstream_destructor_thunk_from_istream_FUN_005ff6e2",
         "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -177,8 +191,10 @@
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
         "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -186,8 +202,10 @@
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
         "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -195,8 +213,10 @@
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
         "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -204,13 +224,16 @@
         "call_type": "direct",
         "caller": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
         "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       }
     ],
     "confidence": "high",
     "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -261,6 +284,38 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 10,
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "*(int *)((int)this_ptr + *(int *)(*(int *)this_ptr + 4) + -4) = *(int *)(*(int *)this_ptr + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(_istream *)((int)",
+      "severity": "mild",
+      "text": "p_Var1 = crt_iostream_cpp_istream_dtor_FUN_006063e1((_istream *)((int)this_ptr + 0x44),1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "p_Var1[-2].",
+      "severity": "mild",
+      "text": "((fstreambase *)&p_Var1[-2]._ios.__i_lock,1);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 19,
+      "match": "piVar2[-2].",
+      "severity": "mild",
+      "text": "this_ptr = &piVar2[-2].__tied_stream;",
+      "type": "negative_offset"
+    },
     {
       "address": "005ff856",
       "crt_type": "runtime support",

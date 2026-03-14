@@ -42,7 +42,7 @@
 ;   TerminatedCString s_railnoiz_wav_00652729
 ;   TerminatedCString s_rail_s_wav_00652736
 ;   TerminatedCString s_bump_wav_00652742
-;   undefined4 s_ump?.wav_00652743
+;   undefined4 s_bump_wav_00652742+1
 ;   undefined4 s_mp_wav_00652744
 ;   undefined4 s_p?.wav_00652745
 ;   TerminatedCString s_s_g_0065274c
@@ -673,7 +673,7 @@ section .text
     CMP AL,0x0                          ; 005b37a7
     JZ 0x005b37bb                       ; 005b37a9
         ;   XREF to: 005b37bb (CONDITIONAL_JUMP)  ; LAB_005b37bb
-    MOV AL,byte ptr [ESI + 0x1]         ; 005b37ab | s_ump?.wav_00652743 | s_p?.wav_00652745
+    MOV AL,byte ptr [ESI + 0x1]         ; 005b37ab | s_bump_wav_00652742+1 | s_p?.wav_00652745
     ADD ESI,0x2                         ; 005b37ae
     MOV byte ptr [EDI + 0x1],AL         ; 005b37b1
     ADD EDI,0x2                         ; 005b37b4

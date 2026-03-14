@@ -109,28 +109,44 @@ LAB_004ce397:
     iVar8 = iVar6 + 0x9000;
   }
   g_QuadVertex0.projected_vertex.transformed_x =
-       (int)(((longlong)(iVar4 - g_ViewportRightFixed) * 0x10000) / (longlong)g_ViewportCenterXFixed
-            );
+       (int)((longlong)
+             ((((longlong)(iVar4 - g_ViewportRightFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)(iVar4 - g_ViewportRightFixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_ViewportCenterXFixed);
   g_QuadVertex0.projected_vertex.transformed_y =
-       (int)(((longlong)(iVar3 - g_ViewportBottomFixed) * 0x10000) /
+       (int)((longlong)
+             ((((longlong)(iVar3 - g_ViewportBottomFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)(iVar3 - g_ViewportBottomFixed) * 0x10000 & 0xffffffffU) /
             (longlong)g_ViewportCenterYFixed);
   g_QuadVertex1.projected_vertex.transformed_x =
-       (int)(((longlong)(iVar8 - g_ViewportRightFixed) * 0x10000) / (longlong)g_ViewportCenterXFixed
-            );
+       (int)((longlong)
+             ((((longlong)(iVar8 - g_ViewportRightFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)(iVar8 - g_ViewportRightFixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_ViewportCenterXFixed);
   g_QuadVertex1.projected_vertex.transformed_y =
-       (int)(((longlong)(iVar3 - g_ViewportBottomFixed) * 0x10000) /
+       (int)((longlong)
+             ((((longlong)(iVar3 - g_ViewportBottomFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)(iVar3 - g_ViewportBottomFixed) * 0x10000 & 0xffffffffU) /
             (longlong)g_ViewportCenterYFixed);
   g_QuadVertex2.projected_vertex.transformed_x =
-       (int)(((longlong)(iVar8 - g_ViewportRightFixed) * 0x10000) / (longlong)g_ViewportCenterXFixed
-            );
+       (int)((longlong)
+             ((((longlong)(iVar8 - g_ViewportRightFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)(iVar8 - g_ViewportRightFixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_ViewportCenterXFixed);
   g_QuadVertex2.projected_vertex.transformed_y =
-       (int)(((longlong)(iVar12 - g_ViewportBottomFixed) * 0x10000) /
+       (int)((longlong)
+             ((((longlong)(iVar12 - g_ViewportBottomFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)(iVar12 - g_ViewportBottomFixed) * 0x10000 & 0xffffffffU) /
             (longlong)g_ViewportCenterYFixed);
   g_QuadVertex3.projected_vertex.transformed_x =
-       (int)(((longlong)(iVar4 - g_ViewportRightFixed) * 0x10000) / (longlong)g_ViewportCenterXFixed
-            );
+       (int)((longlong)
+             ((((longlong)(iVar4 - g_ViewportRightFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)(iVar4 - g_ViewportRightFixed) * 0x10000 & 0xffffffffU) /
+            (longlong)g_ViewportCenterXFixed);
   g_QuadVertex3.projected_vertex.transformed_y =
-       (int)(((longlong)(iVar12 - g_ViewportBottomFixed) * 0x10000) /
+       (int)((longlong)
+             ((((longlong)(iVar12 - g_ViewportBottomFixed) & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)(iVar12 - g_ViewportBottomFixed) * 0x10000 & 0xffffffffU) /
             (longlong)g_ViewportCenterYFixed);
   engine_matrix_c_projectCachedPoint_FUN_0050cda0(0x4e1c);
   engine_matrix_c_projectCachedPoint_FUN_0050cda0(0x4e1d);

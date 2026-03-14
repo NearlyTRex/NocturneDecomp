@@ -1004,13 +1004,13 @@ section .text
         ;   Label: LAB_005824c2
     LEA EDI,[EBP + 0xfffffefa]          ; 005824c7
     PUSH EDI                            ; 005824cd
-    MOV AL,byte ptr [ESI]               ; 005824ce | = "No room selected" | s_room_selected_00648b64
+    MOV AL,byte ptr [ESI]               ; 005824ce | = "No room selected" | s_room_selected_00648b62+2
         ;   Label: LAB_005824ce
     MOV byte ptr [EDI],AL               ; 005824d0
     CMP AL,0x0                          ; 005824d2
     JZ 0x005824e6                       ; 005824d4
         ;   XREF to: 005824e6 (CONDITIONAL_JUMP)  ; LAB_005824e6
-    MOV AL,byte ptr [ESI + 0x1]         ; 005824d6 | s_o_room_selected_00648b63 | s_room_selected_00648b65
+    MOV AL,byte ptr [ESI + 0x1]         ; 005824d6 | s_o_room_selected_00648b62+1 | s_room_selected_00648b62+3
     ADD ESI,0x2                         ; 005824d9
     MOV byte ptr [EDI + 0x1],AL         ; 005824dc
     ADD EDI,0x2                         ; 005824df

@@ -80,8 +80,8 @@ int __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_00541390(CNetGame *this_ptr)
             uVar1 = *pcVar6;
             *puVar8 = uVar1;
             if (uVar1 == '\0') break;
-            uVar2 = ((uchar *)pcVar6)[1];
-            pcVar6 = (char *)((uchar *)pcVar6 + 2);
+            uVar2 = pcVar6[1];
+            pcVar6 = pcVar6 + 2;
             puVar8[1] = uVar2;
             puVar8 = puVar8 + 2;
           } while (uVar2 != '\0');
@@ -98,8 +98,8 @@ LAB_005415cb:
             uVar2 = *pcVar7;
             *puVar9 = uVar2;
             if (uVar2 == '\0') break;
-            uVar2 = ((uchar *)pcVar7)[1];
-            pcVar7 = (char *)((uchar *)pcVar7 + 2);
+            uVar2 = pcVar7[1];
+            pcVar7 = pcVar7 + 2;
             puVar9[1] = uVar2;
             puVar9 = puVar9 + 2;
           } while (uVar2 != '\0');
@@ -125,8 +125,8 @@ LAB_005415cb:
           uVar2 = *pcVar7;
           *puVar9 = uVar2;
           if (uVar2 == '\0') break;
-          uVar2 = ((uchar *)pcVar7)[1];
-          pcVar7 = (char *)((uchar *)pcVar7 + 2);
+          uVar2 = pcVar7[1];
+          pcVar7 = pcVar7 + 2;
           puVar9[1] = uVar2;
           puVar9 = puVar9 + 2;
         } while (uVar2 != '\0');

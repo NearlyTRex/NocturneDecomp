@@ -57,27 +57,21 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_screenToWorldWithAlpha_FU
   else {
     lVar1 = (longlong)this_ptr->alpha_transform_matrices[9][iVar4] * (longlong)iVar1;
     lVar2 = (longlong)this_ptr->alpha_transform_matrices[0xc][iVar4] * (longlong)iVar2;
-    lVar3 = (longlong)
-            *(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -10) + iVar4 * 4) *
-            (longlong)iVar7;
+    lVar3 = (longlong)this_ptr->alpha_transform_matrices[0xf][iVar4] * (longlong)iVar7;
     local_1c = this_ptr->alpha_translations[iVar4].x +
                ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
                ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
                ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
     lVar4 = (longlong)this_ptr->alpha_transform_matrices[10][iVar4] * (longlong)iVar1;
     lVar5 = (longlong)this_ptr->alpha_transform_matrices[0xd][iVar4] * (longlong)iVar2;
-    lVar6 = (longlong)
-            *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + iVar4 * 4 + -0x58) *
-            (longlong)iVar7;
+    lVar6 = (longlong)this_ptr->alpha_transform_matrices[0x10][iVar4] * (longlong)iVar7;
     local_18 = this_ptr->alpha_translations[iVar4].y +
                ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) +
                ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
                ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
     lVar4 = (longlong)this_ptr->alpha_transform_matrices[0xb][iVar4] * (longlong)iVar1;
     lVar5 = (longlong)this_ptr->alpha_transform_matrices[0xe][iVar4] * (longlong)iVar2;
-    lVar6 = (longlong)
-            *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + iVar4 * 4 + -0x38) *
-            (longlong)iVar7;
+    lVar6 = (longlong)this_ptr->alpha_transform_matrices[0x11][iVar4] * (longlong)iVar7;
     iVar7 = this_ptr->alpha_translations[iVar4].z;
     uVar5 = ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10) +
             ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +

@@ -43,7 +43,7 @@ void __cdecl engine_2d_c_drawTextWrappedColor_FUN_00401eb0(char *text,int x_star
         }
       }
       iVar5 = iVar5 + 1;
-      text = (char *)((byte *)text + 1);
+      text = text + 1;
       x_pos = iVar6;
     } while (iVar5 < (int)(~uVar4 - 1));
   }

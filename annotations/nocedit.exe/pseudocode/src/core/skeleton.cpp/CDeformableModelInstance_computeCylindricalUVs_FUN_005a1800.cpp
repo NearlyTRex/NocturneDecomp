@@ -71,7 +71,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FU
       *(int *)((int)&pSVar4->u + iVar5) = iVar2;
       iVar6 = iVar5 + 0x30;
       *(int *)((int)&g_CDemonRendererPtr2->vertex_buffer_ptr->v + iVar5) =
-           v_offset + (int)(((longlong)(piVar7[1] - iVar9) * 0x1000000) / (longlong)iVar8);
+           v_offset +
+           (int)((longlong)
+                 ((((longlong)(piVar7[1] - iVar9) & 0xffffffffffU) >> 8) << 0x20 |
+                 (longlong)(piVar7[1] - iVar9) * 0x1000000 & 0xffffffffU) / (longlong)iVar8);
       iVar3 = iVar3 + 0xc;
       iVar5 = iVar6;
     } while (iVar6 < iVar1 * 0x30);

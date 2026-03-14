@@ -33,7 +33,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x14]      ; 006107a2
     PUSH ECX                            ; 006107a6
     CALL crt_process.c_spawnvp_FUN_0060f39c ; 006107a7
-        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv)
+        ;   XREF to: 0060f39c (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_FUN_0060f39c(int mode, char * cmdname, char * * argv, char * * envp)
     ADD ESP,0x10                        ; 006107ac
     POP EBX                             ; 006107af
     RET                                 ; 006107b0

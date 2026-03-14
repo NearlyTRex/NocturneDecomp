@@ -17,9 +17,9 @@
 ;   TerminatedCString s_engine_fileio_cpp_006275b9
 ;   TerminatedCString s_fileManger_extractTextur_006275ce
 ;   TerminatedCString s_ACT_006275ff
-;   undefined4 s_ACT_00627600
-;   undefined4 s_CT_00627601
-;   undefined4 s_T_00627602
+;   undefined4 s_ACT_006275ff+1
+;   undefined4 s_ACT_006275ff+2
+;   undefined4 s_ACT_006275ff+3
 ;   TerminatedCString s_rb_00627604
 ;   TerminatedCString s_art_00627607
 ;   TerminatedCString s_engine_fileio_cpp_0062760b
@@ -106,13 +106,13 @@ section .text
     MOV ESI,0x6275ff                    ; 004b5461 | = ".ACT"
         ;   Label: LAB_004b5461
     PUSH EDI                            ; 004b5466
-    MOV AL,byte ptr [ESI]               ; 004b5467 | = ".ACT" | s_CT_00627601
+    MOV AL,byte ptr [ESI]               ; 004b5467 | = ".ACT" | s_ACT_006275ff+2
         ;   Label: LAB_004b5467
     MOV byte ptr [EDI],AL               ; 004b5469
     CMP AL,0x0                          ; 004b546b
     JZ 0x004b547f                       ; 004b546d
         ;   XREF to: 004b547f (CONDITIONAL_JUMP)  ; LAB_004b547f
-    MOV AL,byte ptr [ESI + 0x1]         ; 004b546f | s_ACT_00627600 | s_T_00627602
+    MOV AL,byte ptr [ESI + 0x1]         ; 004b546f | s_ACT_006275ff+1 | s_ACT_006275ff+3
     ADD ESI,0x2                         ; 004b5472
     MOV byte ptr [EDI + 0x1],AL         ; 004b5475
     ADD EDI,0x2                         ; 004b5478

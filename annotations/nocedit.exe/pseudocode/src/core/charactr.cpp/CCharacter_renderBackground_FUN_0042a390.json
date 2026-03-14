@@ -65,6 +65,37 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004a9fc1",
+        "call_type": "direct",
+        "caller": "core_enemy.cpp_CEnemy_renderBackground_FUN_004a9fa0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00544b91",
+        "call_type": "direct",
+        "caller": "core_npc.cpp_CNPC_renderBackground_FUN_00544b70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.032258064516129,
     "instruction_count": 31,
@@ -113,5 +144,36 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGabriella",
+        "offset": 16,
+        "vtable_addr": "0065e804"
+      },
+      {
+        "class_name": "CIcePick",
+        "offset": 16,
+        "vtable_addr": "00660034"
+      },
+      {
+        "class_name": "CCharacter",
+        "offset": 16,
+        "vtable_addr": "0065b844"
+      },
+      {
+        "class_name": "CMoloch",
+        "offset": 16,
+        "vtable_addr": "00661944"
+      },
+      {
+        "class_name": "CColonel",
+        "offset": 16,
+        "vtable_addr": "0065bd54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 11
+  }
 }

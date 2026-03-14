@@ -12,9 +12,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_TheOnlyPart_0064b4bf
-;   undefined4 s_heOnlyPart_0064b4c0
-;   undefined4 s_eOnlyPart_0064b4c1
-;   undefined4 s_OnlyPart_0064b4c2
+;   undefined4 s_TheOnlyPart_0064b4bf+1
+;   undefined4 s_TheOnlyPart_0064b4bf+2
+;   undefined4 s_TheOnlyPart_0064b4bf+3
 ;
 ; Called Functions:
 ;   crt_stack.c___STK_FUN_005ff9f3
@@ -35,13 +35,13 @@ section .text
     LEA EDI,[EBX + 0x7144]              ; 0058f7a6
     MOV dword ptr [EBX + 0x7140],0x1    ; 0058f7ac
     PUSH EDI                            ; 0058f7b6
-    MOV AL,byte ptr [ESI]               ; 0058f7b7 | = "TheOnlyPart" | s_eOnlyPart_0064b4c1
+    MOV AL,byte ptr [ESI]               ; 0058f7b7 | = "TheOnlyPart" | s_TheOnlyPart_0064b4bf+2
         ;   Label: LAB_0058f7b7
     MOV byte ptr [EDI],AL               ; 0058f7b9
     CMP AL,0x0                          ; 0058f7bb
     JZ 0x0058f7cf                       ; 0058f7bd
         ;   XREF to: 0058f7cf (CONDITIONAL_JUMP)  ; LAB_0058f7cf
-    MOV AL,byte ptr [ESI + 0x1]         ; 0058f7bf | s_heOnlyPart_0064b4c0 | s_OnlyPart_0064b4c2
+    MOV AL,byte ptr [ESI + 0x1]         ; 0058f7bf | s_TheOnlyPart_0064b4bf+1 | s_TheOnlyPart_0064b4bf+3
     ADD ESI,0x2                         ; 0058f7c2
     MOV byte ptr [EDI + 0x1],AL         ; 0058f7c5
     ADD EDI,0x2                         ; 0058f7c8

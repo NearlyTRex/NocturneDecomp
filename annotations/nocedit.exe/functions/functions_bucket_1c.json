@@ -23,6 +23,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_strstream.cpp_istrstream_destructor_thunk_from_istream_FUN_005ff59c",
     "ret":"void",
@@ -73,6 +74,7 @@
       }
     ],
     "conv":"__watcallStack",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_io.c__tempnam_FUN_00601f1c",
     "ret":"void",
@@ -123,6 +125,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_string.c_strupr_FUN_0060389c",
     "ret":"char*",
@@ -166,6 +169,7 @@
         "start":"0060411c"
       }
     ],
+    "custom_storage":true,
     "importable":true,
     "name":"crt_unknown.c_FUN_0060411c",
     "ret":"undefined1",
@@ -234,6 +238,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_stdio.c_parse_format_spec_FUN_00604c1c",
     "ret":"char*",
@@ -515,22 +520,6 @@
           },
           "type":"char*",
           "use":1112
-        },
-        {
-          "name":"in_stack_00000010",
-          "storage":{
-            "offset":16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[0x10]",
-                "offset":16,
-                "size":4
-              }
-            ]
-          },
-          "type":"char**"
         },
         {
           "name":"local_14",
@@ -965,6 +954,22 @@
             ]
           },
           "type":"char**"
+        },
+        {
+          "name":"envp",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"char**"
         }
       ],
       "ret_storage":{
@@ -989,6 +994,7 @@
       }
     ],
     "conv":"__stdcall",
+    "custom_storage":true,
     "importable":true,
     "name":"crt_wsock32.c_connect",
     "ret":"int",

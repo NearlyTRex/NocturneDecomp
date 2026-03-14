@@ -219,6 +219,37 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005b0774",
+        "call_type": "direct",
+        "caller": "sound_sndwav.cpp_writeWavOutBuffer_FUN_005b06c0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "005ae0d7",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_fillStreamBuffer_FUN_005adff0",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.6746411483253585,
     "instruction_count": 209,

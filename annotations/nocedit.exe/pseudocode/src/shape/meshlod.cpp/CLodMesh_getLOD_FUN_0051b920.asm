@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr)
+; void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr,int target_face_count,CLodMesh *output_mesh)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   in_stack_00000008
-; CLodMesh *       Stack[0xc]:4   in_stack_0000000c
+; int              Stack[0x8]:4   target_face_count
+; CLodMesh *       Stack[0xc]:4   output_mesh
 ; Local Variables:
 ; CBoundingBox3D   Stack[-0x54]:24  CStack_54
 ; float            Stack[-0x3c]:4  local_3c

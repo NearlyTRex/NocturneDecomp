@@ -509,7 +509,7 @@ section .text
     PUSH EAX                            ; 00547856
     PUSH EBP                            ; 00547857
     CALL core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90 ; 00547858
-        ;   XREF to: 00546e90 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90(CPathMap * this_ptr, int start_x, int start_z, int start_height, ...)
+        ;   XREF to: 00546e90 (UNCONDITIONAL_CALL)  ; int core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90(CPathMap * this_ptr, int start_x, int start_z, int end_x, ...)
     ADD ESP,0x14                        ; 0054785d
     TEST EAX,EAX                        ; 00547860
     JZ 0x0054793d                       ; 00547862

@@ -74,7 +74,7 @@ int __cdecl engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(CCheckOutList *th
       } while (cVar2 != '\0');
       n = ~uVar5 - 1;
       if (0 < (int)n) {
-        pcVar4 = local_178.value + (~uVar5 - 1);
+        pcVar4 = local_178.name + ~uVar5 + 0x103;
         do {
           if ((g_CharacterClassificationTable[(byte)(pcVar4[-1] + 1)] & 2) == 0) break;
           n = n - 1;

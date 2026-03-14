@@ -14,7 +14,7 @@
     "pseudocode_lines": 11,
     "suspect_count": 1,
     "suspect_types": [
-      "param_count_too_many"
+      "param_count_too_few"
     ],
     "total_lines": 33
   },
@@ -133,68 +133,83 @@
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_testSoundFile_FUN_005ad3b0",
         "estimated_params": 6,
-        "instructions_analyzed": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 24,
         "stack_params": 6
       },
       {
         "call_addr": "004c1729",
         "call_type": "direct",
         "caller": "core_fire.cpp_CFireball_onCollision_FUN_004c1690",
-        "estimated_params": 0,
-        "instructions_analyzed": 10,
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 0
+        "stack_bytes": 24,
+        "stack_params": 6
       },
       {
         "call_addr": "0050a5d7",
         "call_type": "direct",
         "caller": "core_manpuz.cpp_updateGemHumChannel_FUN_0050a4f0",
-        "estimated_params": 0,
-        "instructions_analyzed": 11,
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 0
+        "stack_bytes": 24,
+        "stack_params": 6
       },
       {
         "call_addr": "004c1799",
         "call_type": "direct",
         "caller": "core_fire.cpp_CFireball_onCollision_FUN_004c1690",
-        "estimated_params": 0,
-        "instructions_analyzed": 10,
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 0
+        "stack_bytes": 24,
+        "stack_params": 6
       },
       {
         "call_addr": "0058111a",
         "call_type": "direct",
         "caller": "core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730",
         "estimated_params": 6,
-        "instructions_analyzed": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 24,
         "stack_params": 6
       },
       {
         "call_addr": "005b26dd",
         "call_type": "direct",
         "caller": "core_sound.cpp_playSfxInternal_FUN_005b1fd0",
-        "estimated_params": 0,
-        "instructions_analyzed": 10,
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 0
+        "stack_bytes": 24,
+        "stack_params": 6
       },
       {
         "call_addr": "005a95b1",
         "call_type": "direct",
         "caller": "sound_sndmain.cpp_startSfxAtStaticPosition_FUN_005a9580",
         "estimated_params": 6,
-        "instructions_analyzed": 14,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 24,
         "stack_params": 6
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 3,
-    "estimated_params": 0
+    "declared_stack_bytes": 24,
+    "estimated_params": 6
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.619047619047619,
@@ -254,13 +269,13 @@
     {
       "call_site_count": 7,
       "declared_params": 3,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 0,
-      "fix_type": "remove_params",
-      "match": "declared:3 vs estimated:0",
-      "param_delta": -3,
-      "text": "Function declares 3 params but call sites push 0 (3 extra)",
-      "type": "param_count_too_many"
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 6,
+      "fix_type": "add_params",
+      "match": "declared:3 vs estimated:6",
+      "param_delta": 3,
+      "text": "Function declares 3 params but call sites push 6 (3 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

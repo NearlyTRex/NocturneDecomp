@@ -85,19 +85,19 @@
     },
     {
       "addr": "00627600",
-      "name": "s_ACT_00627600",
+      "name": "s_ACT_006275ff+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00627601",
-      "name": "s_CT_00627601",
+      "name": "s_ACT_006275ff+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00627602",
-      "name": "s_T_00627602",
+      "name": "s_ACT_006275ff+3",
       "type": "undefined4",
       "value": null
     },
@@ -138,6 +138,48 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004b5531",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b5553",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b55ed",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_processMRGLNode_FUN_004b54e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.21505376344086,
     "instruction_count": 93,

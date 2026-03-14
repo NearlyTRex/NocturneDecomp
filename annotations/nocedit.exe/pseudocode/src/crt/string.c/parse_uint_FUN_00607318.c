@@ -17,7 +17,7 @@ char * __cdecl parse_uint(char *str,int *result)
   iVar3 = 0;
   while ((0x2f < bVar1 && ((byte)*str < 0x3a))) {
     bVar2 = *str;
-    str = (char *)((byte *)str + 1);
+    str = str + 1;
     bVar1 = *str;
     iVar3 = iVar3 * 10 + (uint)bVar2 + -0x30;
   }

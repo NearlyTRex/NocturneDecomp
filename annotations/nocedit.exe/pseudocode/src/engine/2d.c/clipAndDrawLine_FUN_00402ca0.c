@@ -43,7 +43,10 @@ void __cdecl engine_2d_c_clipAndDrawLine_FUN_00402ca0(int x1,int y1,int x2,int y
       if ((uVar2 & 2) == 0) {
         if ((uVar2 & 4) == 0) {
           if (((uVar2 & 8) != 0) && (new_x = x_min, iVar3 != 0)) {
-            lVar2 = (longlong)(int)(((longlong)(x_min - x1) * 0x10000) / (longlong)iVar3) *
+            lVar2 = (longlong)
+                    (int)((longlong)
+                          ((((longlong)(x_min - x1) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                          (longlong)(x_min - x1) * 0x10000 & 0xffffffffU) / (longlong)iVar3) *
                     (longlong)iVar4;
             new_y = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) + y1;
           }
@@ -51,7 +54,10 @@ void __cdecl engine_2d_c_clipAndDrawLine_FUN_00402ca0(int x1,int y1,int x2,int y
         else {
           new_x = x_max;
           if (iVar3 != 0) {
-            lVar2 = (longlong)(int)(((longlong)(x_max - x1) * 0x10000) / (longlong)iVar3) *
+            lVar2 = (longlong)
+                    (int)((longlong)
+                          ((((longlong)(x_max - x1) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                          (longlong)(x_max - x1) * 0x10000 & 0xffffffffU) / (longlong)iVar3) *
                     (longlong)iVar4;
             new_y = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) + y1;
           }
@@ -60,7 +66,10 @@ void __cdecl engine_2d_c_clipAndDrawLine_FUN_00402ca0(int x1,int y1,int x2,int y
       else {
         new_y = y_min;
         if (iVar4 != 0) {
-          lVar2 = (longlong)(int)(((longlong)(y_min - y1) * 0x10000) / (longlong)iVar4) *
+          lVar2 = (longlong)
+                  (int)((longlong)
+                        ((((longlong)(y_min - y1) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                        (longlong)(y_min - y1) * 0x10000 & 0xffffffffU) / (longlong)iVar4) *
                   (longlong)iVar3;
           new_x = x1 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
         }
@@ -69,7 +78,10 @@ void __cdecl engine_2d_c_clipAndDrawLine_FUN_00402ca0(int x1,int y1,int x2,int y
     else {
       new_y = y_max;
       if (iVar4 != 0) {
-        lVar1 = (longlong)(int)(((longlong)(y_max - y1) * 0x10000) / (longlong)iVar4) *
+        lVar1 = (longlong)
+                (int)((longlong)
+                      ((((longlong)(y_max - y1) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                      (longlong)(y_max - y1) * 0x10000 & 0xffffffffU) / (longlong)iVar4) *
                 (longlong)iVar3;
         new_x = x1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
       }

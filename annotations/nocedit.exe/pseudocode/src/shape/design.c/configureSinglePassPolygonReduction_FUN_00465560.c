@@ -111,8 +111,8 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
       bVar2 = *pcVar3;
       *pbVar6 = bVar2;
       if (bVar2 == 0) break;
-      bVar2 = ((byte *)pcVar3)[1];
-      pcVar3 = (char *)((byte *)pcVar3 + 2);
+      bVar2 = pcVar3[1];
+      pcVar3 = pcVar3 + 2;
       pbVar6[1] = bVar2;
       pbVar6 = pbVar6 + 2;
     } while (bVar2 != 0);

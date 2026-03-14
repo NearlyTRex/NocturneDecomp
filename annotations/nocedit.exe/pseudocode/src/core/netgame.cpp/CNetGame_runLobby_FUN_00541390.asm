@@ -32,11 +32,11 @@
 ;   TerminatedCString s_heroType_0063d9e2
 ;   TerminatedCString s_gameSettings_0063d9eb
 ;   TerminatedCString s_Local_0063d9f8
-;   undefined4 s_Local)_0063d9f9
-;   undefined4 s_ocal)_0063d9fa
-;   undefined4 s_cal)_0063d9fb
+;   undefined4 s_Local_0063d9f8+1
+;   undefined4 s_Local_0063d9f8+2
+;   undefined4 s_Local_0063d9f8+3
 ;   TerminatedCString s_Local_0063da00
-;   undefined4 s_Local)_0063da01
+;   undefined4 s_Local_0063da00+1
 ;   ... and 49 more
 ;
 ; Called Functions:
@@ -219,13 +219,13 @@ section .text
     MOV ESI,0x63d9f8                    ; 0054157b | = "(Local)"
     LEA EDI,[ESP + 0x8]                 ; 00541580
     PUSH EDI                            ; 00541584
-    MOV AL,byte ptr [ESI]               ; 00541585 | = "(Local)" | s_ocal)_0063d9fa
+    MOV AL,byte ptr [ESI]               ; 00541585 | = "(Local)" | s_Local_0063d9f8+2
         ;   Label: LAB_00541585
     MOV byte ptr [EDI],AL               ; 00541587
     CMP AL,0x0                          ; 00541589
     JZ 0x0054159d                       ; 0054158b
         ;   XREF to: 0054159d (CONDITIONAL_JUMP)  ; LAB_0054159d
-    MOV AL,byte ptr [ESI + 0x1]         ; 0054158d | s_Local)_0063d9f9 | s_cal)_0063d9fb
+    MOV AL,byte ptr [ESI + 0x1]         ; 0054158d | s_Local_0063d9f8+1 | s_Local_0063d9f8+3
     ADD ESI,0x2                         ; 00541590
     MOV byte ptr [EDI + 0x1],AL         ; 00541593
     ADD EDI,0x2                         ; 00541596
@@ -251,13 +251,13 @@ section .text
     LEA EDI,[ESP + 0x8]                 ; 005415cb
         ;   Label: LAB_005415cb
     PUSH EDI                            ; 005415cf
-    MOV AL,byte ptr [ESI]               ; 005415d0 | = "(Local)" | s_ocal)_0063da02 | s_anon_0063da0d
+    MOV AL,byte ptr [ESI]               ; 005415d0 | = "(Local)" | s_Local_0063da00+2 | s_anon_0063da0d
         ;   Label: LAB_005415d0
     MOV byte ptr [EDI],AL               ; 005415d2
     CMP AL,0x0                          ; 005415d4
     JZ 0x005415e8                       ; 005415d6
         ;   XREF to: 005415e8 (CONDITIONAL_JUMP)  ; LAB_005415e8
-    MOV AL,byte ptr [ESI + 0x1]         ; 005415d8 | s_Local)_0063da01 | s_cal)_0063da03 | s__0063da0e
+    MOV AL,byte ptr [ESI + 0x1]         ; 005415d8 | s_Local_0063da00+1 | s_Local_0063da00+3 | s_anon_0063da0d+1
     ADD ESI,0x2                         ; 005415db
     MOV byte ptr [EDI + 0x1],AL         ; 005415de
     ADD EDI,0x2                         ; 005415e1
@@ -282,13 +282,13 @@ section .text
     LEA EDI,[ESP + 0x8]                 ; 00541612
         ;   Label: LAB_00541612
     PUSH EDI                            ; 00541616
-    MOV AL,byte ptr [ESI]               ; 00541617 | = "Ready" | s_ady_0063da11 | s_Not_ready_0063da15
+    MOV AL,byte ptr [ESI]               ; 00541617 | = "Ready" | s_Ready_0063da0f+2 | s_Not_ready_0063da15
         ;   Label: LAB_00541617
     MOV byte ptr [EDI],AL               ; 00541619
     CMP AL,0x0                          ; 0054161b
     JZ 0x0054162f                       ; 0054161d
         ;   XREF to: 0054162f (CONDITIONAL_JUMP)  ; LAB_0054162f
-    MOV AL,byte ptr [ESI + 0x1]         ; 0054161f | s_eady_0063da10 | s_dy_0063da12 | s_ot_ready_0063da16
+    MOV AL,byte ptr [ESI + 0x1]         ; 0054161f | s_Ready_0063da0f+1 | s_Ready_0063da0f+3 | s_Not_ready_0063da15+1
     ADD ESI,0x2                         ; 00541622
     MOV byte ptr [EDI + 0x1],AL         ; 00541625
     ADD EDI,0x2                         ; 00541628

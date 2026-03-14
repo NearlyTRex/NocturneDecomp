@@ -157,6 +157,114 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 9,
+    "call_sites": [
+      {
+        "call_addr": "0049cfc2",
+        "call_type": "direct",
+        "caller": "core_dynamite.cpp_CDynamite_process_FUN_0049cfb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004cb9c2",
+        "call_type": "direct",
+        "caller": "core_flamegun.cpp_CFlameThrower_process_FUN_004cb9b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004a7091",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_CElephantGun_process_FUN_004a7070",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00587f91",
+        "call_type": "direct",
+        "caller": "core_shotgun.cpp_CShotgun_process_FUN_00587f70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00413dd6",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaronWeapon_process_FUN_00413dc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00448d3d",
+        "call_type": "direct",
+        "caller": "core_crossbow.cpp_CCrossbow_process_FUN_00448d30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0050ec1d",
+        "call_type": "direct",
+        "caller": "core_melee.cpp_CMelee_process_FUN_0050ec10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0050645e",
+        "call_type": "direct",
+        "caller": "core_lightgun.cpp_CLightGun_process_FUN_00506450",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005de376",
+        "call_type": "direct",
+        "caller": "core_tommygun.cpp_CTommyGun_process_FUN_005de360",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.368421052631579,
     "instruction_count": 95,
@@ -218,5 +326,31 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 4,
+        "vtable_addr": "0065f2a4"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 4,
+        "vtable_addr": "006655b4"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 4,
+        "vtable_addr": "0065e3d4"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 4,
+        "vtable_addr": "00662bd4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 4
+  }
 }

@@ -15,7 +15,7 @@ int __cdecl crt_process_c_build_cmdline_FUN_00610258(int argc,char **argv,char *
 void __cdecl crt_process_c_build_command_line_FUN_006103a4(char *program_name,char **argv,char *buffer,int skip_program_name);
 char * __cdecl crt_file_c_extract_path_component_FUN_00610400(char **component_ptr,char *buffer,char *source,char *buffer_end);
 void __cdecl crt_file_c_splitpath_s_FUN_00610460(char *path,char *buffer,char *drive,char *dir,char *fname,char *ext);
-int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblock,void *reserved);
+int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblock,void *reserved,char **argv);
 char * __cdecl crt_string_c_strcpy_FUN_00610760(char *dest,char *src);
 int __cdecl crt_process_c_execvp_FUN_00610790(int argc,char *program,char *arg1,char *arg2,...);
 short * crt_unknown_c_FUN_006107c0(short *param_1,short param_2);

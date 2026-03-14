@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   undefined1 DAT_02d831d6
 ;   char[20] g_InputHistory
-;   undefined4 CHAR_ARRAY_02d831d8
+;   undefined4 g_InputHistory+1
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005ff9e0
@@ -46,7 +46,7 @@ section .text
         ;   Label: LAB_004dd81c
     MOV AL,byte ptr [ESI]               ; 004dd81e
     PUSH EAX                            ; 004dd820
-    MOVZX EDI,byte ptr [EBX + 0x2d831d7] ; 004dd821 | g_InputHistory | DAT_02d831d6 | CHAR_ARRAY_02d831d8
+    MOVZX EDI,byte ptr [EBX + 0x2d831d7] ; 004dd821 | g_InputHistory | DAT_02d831d6 | g_InputHistory+1
     CALL crt_ctype.c_toupper_FUN_005ff9e0 ; 004dd828
         ;   XREF to: 005ff9e0 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_005ff9e0(int c)
     ADD ESP,0x4                         ; 004dd82d
@@ -66,7 +66,7 @@ section .text
     JNZ 0x004dd859                      ; 004dd842
         ;   XREF to: 004dd859 (CONDITIONAL_JUMP)  ; LAB_004dd859
     XOR AH,AH                           ; 004dd844
-    MOV byte ptr [0x02d831d8],AH        ; 004dd846 | CHAR_ARRAY_02d831d8
+    MOV byte ptr [0x02d831d8],AH        ; 004dd846 | g_InputHistory+1
     MOV EAX,0x1                         ; 004dd84c
     ADD ESP,0x8                         ; 004dd851
     POP EBP                             ; 004dd854

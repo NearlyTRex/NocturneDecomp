@@ -21,9 +21,9 @@
 ;   double DOUBLE_0063765d = 0.0000152587890625
 ;   double DOUBLE_00637665 = 0.0555555555555556
 ;   char[400] g_LodMeshProgressBuffer
-;   undefined4 CHAR_ARRAY_02f31259
-;   undefined4 CHAR_ARRAY_02f3125a
-;   undefined4 CHAR_ARRAY_02f3125b
+;   undefined4 g_LodMeshProgressBuffer+1
+;   undefined4 g_LodMeshProgressBuffer+2
+;   undefined4 g_LodMeshProgressBuffer+3
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005fe6b0
@@ -138,7 +138,7 @@ section .text
     PUSH 0x637644                       ; 00516c8f | = ", est %d:%02d remaining"
     MOV ESI,0x2f31258                   ; 00516c94 | g_LodMeshProgressBuffer
     XOR DL,DL                           ; 00516c99
-    MOV AL,byte ptr [ESI]               ; 00516c9b | g_LodMeshProgressBuffer | CHAR_ARRAY_02f3125a
+    MOV AL,byte ptr [ESI]               ; 00516c9b | g_LodMeshProgressBuffer | g_LodMeshProgressBuffer+2
         ;   Label: LAB_00516c9b
     CMP AL,DL                           ; 00516c9d
     JZ 0x00516cb3                       ; 00516c9f
@@ -147,7 +147,7 @@ section .text
     JZ 0x00516cb1                       ; 00516ca3
         ;   XREF to: 00516cb1 (CONDITIONAL_JUMP)  ; LAB_00516cb1
     INC ESI                             ; 00516ca5
-    MOV AL,byte ptr [ESI]               ; 00516ca6 | CHAR_ARRAY_02f31259 | CHAR_ARRAY_02f3125b
+    MOV AL,byte ptr [ESI]               ; 00516ca6 | g_LodMeshProgressBuffer+1 | g_LodMeshProgressBuffer+3
     CMP AL,DL                           ; 00516ca8
     JZ 0x00516cb3                       ; 00516caa
         ;   XREF to: 00516cb3 (CONDITIONAL_JUMP)  ; LAB_00516cb3
@@ -157,7 +157,7 @@ section .text
         ;   XREF to: 00516c9b (CONDITIONAL_JUMP)  ; LAB_00516c9b
     SUB ESI,ESI                         ; 00516cb1
         ;   Label: LAB_00516cb1
-    PUSH ESI                            ; 00516cb3 | CHAR_ARRAY_02f3125b | CHAR_ARRAY_02f3125a
+    PUSH ESI                            ; 00516cb3 | g_LodMeshProgressBuffer+3 | g_LodMeshProgressBuffer+2
         ;   Label: LAB_00516cb3
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 00516cb4
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)

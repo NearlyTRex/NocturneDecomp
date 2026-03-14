@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 69,
-        "line": 377,
+        "line": 376,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
@@ -13,21 +13,20 @@
   },
   "complexity": {
     "assembly_lines": 846,
-    "complexity_score": 620,
+    "complexity_score": 594,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 48,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 385,
-    "suspect_count": 21,
+    "pseudocode_lines": 384,
+    "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "stack_param",
       "sub84_truncation",
       "unknown_field"
     ],
-    "total_lines": 1231
+    "total_lines": 1230
   },
   "cross_references": [
     {
@@ -398,6 +397,37 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0051975f",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005196e4",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.524682651622003,
     "instruction_count": 709,
@@ -827,24 +857,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_fffffed8",
-      "severity": "moderate",
-      "text": "int in_stack_fffffed8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 90,
-      "match": "in_stack_fffffed8",
-      "severity": "moderate",
-      "text": "(this_ptr,pCVar7->vertex_idx_1,pCVar7->vertex_idx_2,in_stack_fffffed8);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 119,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar16 = *(int *)((int)pCVar15[local_1c].adjacent_edge_indices + local_48);",
@@ -852,7 +866,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 135,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_MaxNeighborVerts + local_38) = iVar16;",
@@ -860,7 +874,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 162,
+      "line": 161,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -2) + iVar16 + 4) = local_1c;",
@@ -868,7 +882,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 163,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar16) =",
@@ -876,7 +890,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 168,
+      "line": 167,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar16 + 4) = iVar11;",
@@ -884,7 +898,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 172,
+      "line": 171,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar16) =",
@@ -892,7 +906,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 177,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar16) =",
@@ -900,7 +914,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 189,
+      "line": 188,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)g_TempNeighborFaces[0].edge_dot_products + iVar16 + 0xc) = iVar14;",
@@ -908,7 +922,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 237,
+      "line": 236,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "pCVar8 = this_ptr->vertex_data + *(int *)((int)g_MaxNeighborVerts + iVar10);",
@@ -916,7 +930,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 284,
+      "line": 283,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "pfVar12 = (float *)((int)&g_SamplePointArray[0].x + iVar14);",
@@ -924,7 +938,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 287,
+      "line": 286,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&g_SamplePointArray[0].y + iVar14) = local_b8;",
@@ -932,7 +946,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 288,
+      "line": 287,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)&g_SamplePointArray[0].z + iVar14) = local_b4;",
@@ -940,7 +954,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 302,
+      "line": 301,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "pdVar1 = (double *)((int)g_SampleDistances + iVar16);",
@@ -948,7 +962,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 345,
+      "line": 344,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "if (dVar20 < __BITCAST_DOUBLE(CONCAT44(uStack_114,local_118))) {",
@@ -956,7 +970,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 346,
+      "line": 345,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_108 = SUB84(__BITCAST_UINT64(dVar20),0);",
@@ -964,7 +978,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 346,
+      "line": 345,
       "match": "SUB84",
       "severity": "mild",
       "text": "local_108 = SUB84(__BITCAST_UINT64(dVar20),0);",
@@ -972,7 +986,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 356,
+      "line": 355,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "fVar2 = sample_point->weight * (float)__BITCAST_DOUBLE(CONCAT44(uStack_114,local_118)) +",
@@ -980,7 +994,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 370,
+      "line": 369,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&pCVar7->collapse_cost + 4) = local_110._4_4_;",
@@ -988,7 +1002,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 370,
+      "line": 369,
       "match": "._4_4_",
       "severity": "mild",
       "text": "*(uint *)((int)&pCVar7->collapse_cost + 4) = local_110._4_4_;",

@@ -5,34 +5,30 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5771 (89.0%)
-Failed: 713
+Successful: 5776 (89.1%)
+Failed: 708
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1358
+  other                           1352
   format_error                     800
-  incompatible_types               323
-  undeclared_identifier            228
+  incompatible_types               320
+  undeclared_identifier            221
   syntax_error                      46
   missing_member                    20
   lvalue_required                   15
-  type_error                        12
-  pointer_arithmetic                12
+  type_error                        11
+  pointer_arithmetic                10
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1358 errors)
+CATEGORY: other (1352 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
     Line 279: C-style cast from 'CDemonActor *' to 'float' is not allowed...
   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
     Line 55: C-style cast from 'CDemonCamera *' to 'float' is not allowed...
-  core_elephant.cpp_CElephantGun_process_FUN_004a7070
-    Line 40: C-style cast from 'CElephantGun *' to 'float' is not allowed...
-  core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890
-    Line 82: C-style cast from 'CGabriella *' to 'float' is not allowed...
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
     Line 118: C-style cast from 'CHero *' to 'float' is not allowed...
   core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380
@@ -45,8 +41,6 @@ CATEGORY: other (1358 errors)
     Line 21: C-style cast from 'CVector3f *' to 'float' is not allowed...
   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0
     Line 321: C-style cast from 'CVector3f *' to 'float' is not allowed...
-  core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
-    Line 44: C-style cast from 'CVector3f *' to 'float' is not allowed...
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
     Line 399: C-style cast from 'CWeapon *' to 'float' is not allowed...
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
@@ -85,8 +79,14 @@ CATEGORY: other (1358 errors)
     Line 328: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'...
   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
     Line 154: cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'...
+  core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330
+    Line 33: cannot cast from type 'float' to pointer type 'CDemonActor *'...
+  core_script.cpp_CScript_step_FUN_0055a810
+    Line 1382: cannot cast from type 'float' to pointer type 'CDemonActor *'...
+  core_set.cpp_CDemonSet_processActors_FUN_0056b810
+    Line 69: cannot cast from type 'float' to pointer type 'CPathMap *'...
 
-  ... and 287 more errors
+  ... and 285 more errors
 
 ====================================================================================================
 CATEGORY: format_error (800 errors)
@@ -156,7 +156,7 @@ CATEGORY: format_error (800 errors)
   ... and 237 more errors
 
 ====================================================================================================
-CATEGORY: incompatible_types (323 errors)
+CATEGORY: incompatible_types (320 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00
@@ -220,10 +220,10 @@ CATEGORY: incompatible_types (323 errors)
   shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
     Line 24: assigning to 'CPoly *' from incompatible type 'void *'...
 
-  ... and 166 more errors
+  ... and 163 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (228 errors)
+CATEGORY: undeclared_identifier (221 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
@@ -272,8 +272,6 @@ CATEGORY: undeclared_identifier (228 errors)
     Line 100: use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?...
   core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
     Line 169: use of undeclared identifier '_local_1ecc'; did you mean 'local_1ecc'?...
-  engine_dosio.c_reopenFileStream_FUN_00481b50
-    Line 17: use of undeclared identifier 'clear_and_preserve_state'...
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
     Line 167: use of undeclared identifier 'code'...
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
@@ -286,8 +284,10 @@ CATEGORY: undeclared_identifier (228 errors)
     Line 140: use of undeclared identifier 'code'...
   core_drip.cpp_CDrip_process_FUN_0048e2a0
     Line 113: use of undeclared identifier 'code'...
+  core_event.cpp_CEventList_evaluateAtom_FUN_004ae140
+    Line 1190: use of undeclared identifier 'code'...
 
-  ... and 84 more errors
+  ... and 81 more errors
 
 ====================================================================================================
 CATEGORY: syntax_error (46 errors)
@@ -318,7 +318,7 @@ CATEGORY: syntax_error (46 errors)
   core_smiley.cpp_CSmiley_process_FUN_005a2800
     Line 132: expected expression...
   core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
-    Line 103: expected expression...
+    Line 96: expected expression...
   core_zombie.cpp_CZombie_process_FUN_005f9470
     Line 737: expected expression...
   engine_colquant.c_computeBoxStatistics_FUN_00441260
@@ -383,7 +383,7 @@ CATEGORY: lvalue_required (15 errors)
     Line 48: cannot take the address of an rvalue of type 'int'...
 
 ====================================================================================================
-CATEGORY: type_error (12 errors)
+CATEGORY: type_error (11 errors)
 ====================================================================================================
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -404,15 +404,13 @@ CATEGORY: type_error (12 errors)
     Line 13: unknown type name 'code'...
   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
     Line 18: unknown type name 'code'...
-  engine_dosio.c_reopenFileStream_FUN_00481b50
-    Line 13: unknown type name 'undefined3'...
   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
     Line 13: unknown type name 'undefined3'...
   engine_colquant.c_computeBoxStatistics_FUN_00441260
     Line 46: unknown type name 'undefined5'...
 
 ====================================================================================================
-CATEGORY: pointer_arithmetic (12 errors)
+CATEGORY: pointer_arithmetic (10 errors)
 ====================================================================================================
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -437,8 +435,8 @@ CATEGORY: pointer_precision (2 errors)
 COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
-Average suspects in successfully compiled functions: 1.84
-Average suspects in failed compilations: 8.45
+Average suspects in successfully compiled functions: 1.81
+Average suspects in failed compilations: 8.43
 
-Functions that compile but have suspect patterns: 1541
+Functions that compile but have suspect patterns: 1420
 (These may have runtime issues even though syntax is valid)

@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 27,
+    "complexity_score": 12,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 59
   },
   "cross_references": [
@@ -53,24 +51,29 @@
         "call_addr": "005e176d",
         "call_type": "direct",
         "caller": "support_trisock.cpp_buildIPAddressOrDie_FUN_005e1750",
-        "estimated_params": 9,
-        "instructions_analyzed": 14,
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 9
+        "stack_bytes": 20,
+        "stack_params": 5
       },
       {
         "call_addr": "005e1852",
         "call_type": "direct",
         "caller": "support_trisock.cpp_parseIPComponents_FUN_005e1800",
-        "estimated_params": 8,
-        "instructions_analyzed": 14,
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 8
+        "stack_bytes": 20,
+        "stack_params": 5
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 5,
-    "estimated_params": 9
+    "declared_stack_bytes": 20,
+    "estimated_params": 5
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.611111111111111,
@@ -141,17 +144,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 2,
-      "declared_params": 5,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 9,
-      "fix_type": "add_params",
-      "match": "declared:5 vs estimated:9",
-      "param_delta": 4,
-      "text": "Function declares 5 params but call sites push 9 (4 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

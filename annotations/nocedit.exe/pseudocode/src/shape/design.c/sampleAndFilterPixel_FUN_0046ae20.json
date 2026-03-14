@@ -15,7 +15,7 @@
     "suspect_count": 18,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_many",
+      "param_count_too_few",
       "warning_inlined_function"
     ],
     "total_lines": 257
@@ -83,15 +83,18 @@
         "call_addr": "0046b5f2",
         "call_type": "direct",
         "caller": "shape_design.c_loadTextureData_FUN_0046b060",
-        "estimated_params": 8,
-        "instructions_analyzed": 30,
+        "estimated_params": 16,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 8
+        "stack_bytes": 64,
+        "stack_params": 16
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 12,
-    "estimated_params": 8
+    "declared_stack_bytes": 64,
+    "estimated_params": 16
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.752873563218391,
@@ -443,13 +446,13 @@
     {
       "call_site_count": 1,
       "declared_params": 12,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 8,
-      "fix_type": "remove_params",
-      "match": "declared:12 vs estimated:8",
-      "param_delta": -4,
-      "text": "Function declares 12 params but call sites push 8 (4 extra)",
-      "type": "param_count_too_many"
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 16,
+      "fix_type": "add_params",
+      "match": "declared:12 vs estimated:16",
+      "param_delta": 4,
+      "text": "Function declares 12 params but call sites push 16 (4 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

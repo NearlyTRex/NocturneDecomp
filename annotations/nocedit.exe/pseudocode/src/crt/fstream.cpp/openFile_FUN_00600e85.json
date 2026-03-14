@@ -55,7 +55,7 @@
     {
       "addr": "00600e64",
       "is_variadic": false,
-      "name": "crt_stdio.c_clear_and_preserve_state_FUN_00600e64"
+      "name": "crt_iostream.cpp_ios_clear_FUN_00600e64"
     },
     {
       "addr": "00606020",
@@ -64,6 +64,81 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "004e0fcf",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004e1018",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004e15ba",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "004e157f",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_loadGame_FUN_004e12b0",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00481bc3",
+        "call_type": "direct",
+        "caller": "engine_dosio.c_reopenFileStream_FUN_00481b50",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00481bfb",
+        "call_type": "direct",
+        "caller": "engine_dosio.c_reopenFileStream_FUN_00481b50",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.8181818181818183,
     "instruction_count": 44,
@@ -128,9 +203,9 @@
     {
       "description": "Complex pointer cast",
       "line": 14,
-      "match": "(FileEmbeddedData *)((int)",
+      "match": "(ios *)((int)",
       "severity": "mild",
-      "text": "((FileEmbeddedData *)((int)stream_obj + *(int *)(*(int *)stream_obj + 4)),0);",
+      "text": "((ios *)((int)stream_obj + *(int *)(*(int *)stream_obj + 4)),0);",
       "type": "pointer_cast"
     },
     {

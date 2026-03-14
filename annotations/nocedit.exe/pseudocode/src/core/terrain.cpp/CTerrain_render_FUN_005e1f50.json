@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 105,
+    "complexity_score": 120,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
+      "param_count_too_few",
       "warning_inlined_function"
     ],
     "total_lines": 122
@@ -116,6 +117,37 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0056c500",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0056a2d3",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.546511627906977,
     "instruction_count": 86,
@@ -255,6 +287,17 @@
       "severity": "mild",
       "text": "local_24.z = (local_24.z + (int)ROUND(ROUND((double)(float)local_30.z * 256))) -",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

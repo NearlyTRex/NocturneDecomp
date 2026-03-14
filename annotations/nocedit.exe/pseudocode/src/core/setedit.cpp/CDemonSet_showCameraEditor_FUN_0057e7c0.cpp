@@ -256,8 +256,8 @@ void __cdecl core_setedit_cpp_CDemonSet_showCameraEditor_FUN_0057e7c0(CDemonSet 
           bVar4 = *pcVar14;
           *pbVar12 = bVar4;
           if (bVar4 == 0) break;
-          bVar4 = ((byte *)pcVar14)[1];
-          pcVar14 = (char *)((byte *)pcVar14 + 2);
+          bVar4 = pcVar14[1];
+          pcVar14 = pcVar14 + 2;
           pbVar12[1] = bVar4;
           pbVar12 = pbVar12 + 2;
         } while (bVar4 != 0);

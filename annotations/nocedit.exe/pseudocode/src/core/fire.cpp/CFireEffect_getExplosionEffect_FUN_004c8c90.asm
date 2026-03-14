@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,int *out_damage)
+; int __cdecl core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004c8c90(CFireEffect *this_ptr,CVector3f *position,float radius,CVector3f *out_force_dir,float *out_gore_multiplier)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
 ; float            Stack[0xc]:4   radius
 ; CVector3f *      Stack[0x10]:4   out_force_dir
-; int *            Stack[0x14]:4   out_damage
+; float *          Stack[0x14]:4   out_gore_multiplier
 ; Local Variables:
 ; float            Stack[-0x48]:4  local_48
 ; float            Stack[-0x44]:4  local_44
@@ -41,7 +41,7 @@
 section .text
 
     PUSH EBX                            ; 004c8c90
-        ;   Label: core_fire.cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
+        ;   Label: core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004c8c90
     PUSH ESI                            ; 004c8c91
     PUSH EDI                            ; 004c8c92
     PUSH EBP                            ; 004c8c93

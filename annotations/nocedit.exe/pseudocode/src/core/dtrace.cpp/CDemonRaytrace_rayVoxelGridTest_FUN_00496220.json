@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 402,
-    "complexity_score": 453,
+    "complexity_score": 438,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 138,
-    "suspect_count": 30,
+    "suspect_count": 29,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_few",
       "warning_inlined_function"
     ],
     "total_lines": 540
@@ -78,15 +77,18 @@
         "call_addr": "00572479",
         "call_type": "direct",
         "caller": "core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460",
-        "estimated_params": 7,
-        "instructions_analyzed": 12,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 7
+        "stack_bytes": 12,
+        "stack_params": 3
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 3,
-    "estimated_params": 7
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.330459770114943,
@@ -594,17 +596,6 @@
       "severity": "mild",
       "text": "iVar6 = (int)ROUND(ROUND((float)(int)local_34 * local_6c - (float)local_38 * local_64));",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 3,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 7,
-      "fix_type": "add_params",
-      "match": "declared:3 vs estimated:7",
-      "param_delta": 4,
-      "text": "Function declares 3 params but call sites push 7 (4 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

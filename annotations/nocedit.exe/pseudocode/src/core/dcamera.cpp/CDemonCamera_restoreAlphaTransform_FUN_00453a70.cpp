@@ -31,20 +31,14 @@ CVector3i * __cdecl core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_0045
                  (longlong)iVar1) / (longlong)(this_ptr->saved_viewport_rect).top);
   lVar3 = (longlong)this_ptr->alpha_transform_matrices[9][alpha_index] * (longlong)iVar12;
   lVar4 = (longlong)this_ptr->alpha_transform_matrices[0xc][alpha_index] * (longlong)iVar13;
-  lVar5 = (longlong)
-          *(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -10) + alpha_index * 4)
-          * (longlong)iVar1;
+  lVar5 = (longlong)this_ptr->alpha_transform_matrices[0xf][alpha_index] * (longlong)iVar1;
   lVar6 = (longlong)this_ptr->alpha_transform_matrices[10][alpha_index] * (longlong)iVar12;
   lVar7 = (longlong)this_ptr->alpha_transform_matrices[0xd][alpha_index] * (longlong)iVar13;
-  lVar8 = (longlong)
-          *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x58)
-          * (longlong)iVar1;
+  lVar8 = (longlong)this_ptr->alpha_transform_matrices[0x10][alpha_index] * (longlong)iVar1;
   iVar2 = this_ptr->alpha_translations[alpha_index].y;
   lVar9 = (longlong)this_ptr->alpha_transform_matrices[0xb][alpha_index] * (longlong)iVar12;
   lVar10 = (longlong)this_ptr->alpha_transform_matrices[0xe][alpha_index] * (longlong)iVar13;
-  lVar11 = (longlong)
-           *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x38
-                   ) * (longlong)iVar1;
+  lVar11 = (longlong)this_ptr->alpha_transform_matrices[0x11][alpha_index] * (longlong)iVar1;
   iVar3 = this_ptr->alpha_translations[alpha_index].z;
   world_pos->x = ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
                  ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +

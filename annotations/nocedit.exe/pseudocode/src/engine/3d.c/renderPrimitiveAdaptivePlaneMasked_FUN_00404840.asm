@@ -166,7 +166,7 @@ section .text
     MOV EDX,dword ptr [0x00772a5c]      ; 004049c9 | g_CurrentPolygonColor
     PUSH EDX                            ; 004049cf
     CALL engine_3d.c_makeGrayscaleColor_FUN_004039c0 ; 004049d0
-        ;   XREF to: 004039c0 (UNCONDITIONAL_CALL)  ; uint engine_3d.c_makeGrayscaleColor_FUN_004039c0(int intensity)
+        ;   XREF to: 004039c0 (UNCONDITIONAL_CALL)  ; uint engine_3d.c_makeGrayscaleColor_FUN_004039c0(int color_value, int lighting_value)
     ADD ESP,0x8                         ; 004049d5
     MOV [0x02d02570],EAX                ; 004049d8 | g_ActiveRenderColor
     JMP 0x00404896                      ; 004049dd

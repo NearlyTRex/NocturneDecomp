@@ -209,8 +209,8 @@ LAB_00467b49:
         bVar2 = *pcVar4;
         *pbVar8 = bVar2;
         if (bVar2 == 0) break;
-        bVar2 = ((byte *)pcVar4)[1];
-        pcVar4 = (char *)((byte *)pcVar4 + 2);
+        bVar2 = pcVar4[1];
+        pcVar4 = pcVar4 + 2;
         pbVar8[1] = bVar2;
         pbVar8 = pbVar8 + 2;
       } while (bVar2 != 0);

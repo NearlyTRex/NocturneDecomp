@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 164,
+    "complexity_score": 149,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 54,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "param_count_too_few"
+      "decompiler_intrinsic"
     ],
     "total_lines": 187
   },
@@ -60,18 +59,22 @@
         "call_addr": "00438a24",
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonToViewport_FUN_00438420",
-        "estimated_params": 4,
-        "instructions_analyzed": 21,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 4
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "004389ce",
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonToViewport_FUN_00438420",
         "estimated_params": 3,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 12,
         "stack_params": 3
       },
       {
@@ -79,41 +82,50 @@
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00437840",
         "estimated_params": 3,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 12,
         "stack_params": 3
       },
       {
         "call_addr": "00437953",
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonRightPlaneGlobal_FUN_00437840",
-        "estimated_params": 4,
-        "instructions_analyzed": 21,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 4
+        "stack_bytes": 12,
+        "stack_params": 3
       },
       {
         "call_addr": "0043822c",
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0",
         "estimated_params": 3,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 12,
         "stack_params": 3
       },
       {
         "call_addr": "00438282",
         "call_type": "direct",
         "caller": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0",
-        "estimated_params": 4,
-        "instructions_analyzed": 21,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 4
+        "stack_bytes": 12,
+        "stack_params": 3
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 3,
-    "estimated_params": 4
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.648,
@@ -255,17 +267,6 @@
       "severity": "mild",
       "text": "output->a = v1->a + (int)((ulonglong)lVar1 >> 0x20) * 2 + (uint)CARRY4(uVar3,uVar3);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "call_site_count": 6,
-      "declared_params": 3,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:3 vs estimated:4",
-      "param_delta": 1,
-      "text": "Function declares 3 params but call sites push 4 (1 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

@@ -1,10 +1,8 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_game_cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0(CGame *this_ptr)
+; void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004e09a0(void)
 ;
-; Parameters:
-; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_game.cpp_CGame_beginFadeIn_FUN_004e0920 at 004e095a
@@ -20,7 +18,7 @@
 section .text
 
     PUSH EBX                            ; 004e09a0
-        ;   Label: core_game.cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0
+        ;   Label: core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0
     PUSH ESI                            ; 004e09a1
     PUSH EDI                            ; 004e09a2
     SUB ESP,0x60                        ; 004e09a3

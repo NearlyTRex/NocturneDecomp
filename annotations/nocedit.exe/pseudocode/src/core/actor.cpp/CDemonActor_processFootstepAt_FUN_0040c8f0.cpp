@@ -12,7 +12,7 @@ int __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0(CDemonActo
   float fVar1;
   float fVar2;
   int iVar1;
-  int iVar3;
+  EGroundType ground_type;
   CVector3f local_34;
   float local_28;
   float local_24;
@@ -34,13 +34,13 @@ int __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0(CDemonActo
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,this_ptr);
   fVar1 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                     (g_CDemonSetPtr,&local_34,0.0);
-  iVar3 = g_CDemonSetPtr->ground_type;
+  ground_type = g_CDemonSetPtr->ground_type;
   fVar2 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                     (g_CDemonSetPtr,&(this_ptr->location).position,0.0);
   core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
   if (fVar1 < fVar2 + (float)-1) {
-    iVar3 = g_CDemonSetPtr->ground_type;
+    ground_type = g_CDemonSetPtr->ground_type;
   }
-  iVar1 = (*((this_ptr->vtable)._ub)->handleFootstep)(this_ptr,&local_34,iVar3,volume);
+  iVar1 = (*((this_ptr->vtable)._ub)->handleFootstep)(this_ptr,&local_34,ground_type,volume);
   return iVar1;
 }

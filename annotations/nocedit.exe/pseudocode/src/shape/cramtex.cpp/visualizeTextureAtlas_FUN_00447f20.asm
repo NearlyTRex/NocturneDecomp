@@ -1,11 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures,int is_complete)
+; void __cdecl shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures,int is_complete,int show_status)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   show_textures
 ; int              Stack[0x8]:4   is_complete
+; int              Stack[0xc]:4   show_status
 ; Local Variables:
 ; undefined8       Stack[-0x110]:8  local_110
 ; char[200]        Stack[-0x100]:200  local_100

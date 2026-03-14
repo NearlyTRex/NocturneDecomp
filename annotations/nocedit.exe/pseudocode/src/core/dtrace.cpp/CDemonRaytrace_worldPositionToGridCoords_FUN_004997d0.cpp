@@ -1,17 +1,17 @@
 // Name: core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
 // Address: 004997d0
 // Address Range: [[004997d0, 00499871]]
-// Convention: __cdecl
-// Signature: void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
+// Convention: __stack2_esi
+// Signature: void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
+void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)
 
 {
-  int *unaff_ESI;
+  int *piVar1;
   byte bVar2;
   int aiStackY_1004 [1016];
   int local_18;
@@ -32,9 +32,9 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997
                        ((double)((world_position->z - (this_ptr->bbox_min).z) /
                                 (this_ptr->cell_size).z));
   local_14 = (int)ROUND(ROUND(local_10));
-  *unaff_ESI = (int)ROUND(dVar1);
-  unaff_ESI[(uint)bVar2 * -2 + 1] = (&local_18)[(uint)bVar2 * -2];
-  (unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =
-       (&local_14)[(uint)bVar2 * -2 + (uint)bVar2 * -2];
+  piVar1 = (int *)((int)output_grid_coords + (uint)bVar2 * -8 + 4);
+  output_grid_coords->x = (int)ROUND(dVar1);
+  *piVar1 = (&local_18)[(uint)bVar2 * -2];
+  piVar1[(uint)bVar2 * -2 + 1] = (&local_14)[(uint)bVar2 * -2 + (uint)bVar2 * -2];
   return;
 }

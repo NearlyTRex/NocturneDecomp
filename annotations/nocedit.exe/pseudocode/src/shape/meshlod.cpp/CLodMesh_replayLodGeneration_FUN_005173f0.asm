@@ -22,9 +22,9 @@
 ;   TerminatedCString s_shape_meshlod_cpp_006377b4
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   TerminatedCString s_replay_txt_0067d4b8
-;   undefined4 s_ay.txt_0067d4bc
-;   undefined4 s_xt_0067d4c0
-;   undefined4 s__0067d4c2
+;   undefined4 s_replay_txt_0067d4b8+4
+;   undefined4 s_replay_txt_0067d4b8+8
+;   undefined4 s_replay_txt_0067d4b8+0xa
 ;   CEditorTools g_CEditorToolsInstance
 ;   int g_LodReplayMode
 ;
@@ -64,9 +64,9 @@ section .text
     MOV ESI,0x67d4b8                    ; 0051741d | = "replay.txt"
     PUSH EAX                            ; 00517422
     MOVSD ES:EDI,ESI                    ; 00517423 | = "replay.txt"
-    MOVSD ES:EDI,ESI                    ; 00517424 | s_ay.txt_0067d4bc
-    MOVSW ES:EDI,ESI                    ; 00517425 | s_xt_0067d4c0
-    MOVSB ES:EDI,ESI                    ; 00517427 | s__0067d4c2
+    MOVSD ES:EDI,ESI                    ; 00517424 | s_replay_txt_0067d4b8+4
+    MOVSW ES:EDI,ESI                    ; 00517425 | s_replay_txt_0067d4b8+8
+    MOVSB ES:EDI,ESI                    ; 00517427 | s_replay_txt_0067d4b8+0xa
     CALL shape_memdbg.cpp_openFile_FUN_0050f7a0 ; 00517428
         ;   XREF to: 0050f7a0 (UNCONDITIONAL_CALL)  ; _FILE * shape_memdbg.cpp_openFile_FUN_0050f7a0(char * filename, char * directory, char * mode, char * source_file, ...)
     ADD ESP,0x14                        ; 0051742d

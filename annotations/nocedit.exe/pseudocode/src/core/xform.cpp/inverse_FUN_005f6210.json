@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 134,
+    "complexity_score": 149,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 89,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
+      "param_count_too_many",
       "pointer_cast",
       "sub84_truncation"
     ],
@@ -151,6 +152,125 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 15,
+    "call_sites": [
+      {
+        "call_addr": "0043a300",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042cf63",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005218a7",
+        "call_type": "direct",
+        "caller": "core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0042d24b",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005f6157",
+        "call_type": "direct",
+        "caller": "core_xform.cpp_invertAndGetTranslation_FUN_005f6140",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0058acf9",
+        "call_type": "direct",
+        "caller": "core_skeledit.cpp_CBoneStructure_computeLocalMatrices_FUN_0058ac80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005218db",
+        "call_type": "direct",
+        "caller": "core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0043a39e",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043a2b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0058aedd",
+        "call_type": "direct",
+        "caller": "core_skeledit.cpp_CBoneStructure_extractInverseBindPose_FUN_0058aeb0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0058c010",
+        "call_type": "direct",
+        "caller": "core_skeledit.cpp_CDeformableModel_importVertexAssignmentsVPH_FUN_0058bd00",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.794871794871795,
     "instruction_count": 195,
@@ -396,6 +516,17 @@
       "severity": "mild",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 15,
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

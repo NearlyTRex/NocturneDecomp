@@ -125,7 +125,7 @@ float __cdecl CInventory::calculateTotalBatteryCharge(CInventory *inventory_ptr,
 
 // Original: core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10
 // Address: 004ffe10
-void __cdecl CInventory::updateSelectedWeaponAmmoDisplay(CInventory *this_ptr);
+void __cdecl CInventory::updateSelectedWeaponAmmoDisplay(CInventory *this_ptr,int ammo_type);
 
 // Original: core_inv.cpp_CInventory_isWeaponInCategory_FUN_004ffe70
 // Address: 004ffe70

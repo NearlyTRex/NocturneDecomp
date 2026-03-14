@@ -88,6 +88,48 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005ff4c2",
+        "call_type": "direct",
+        "caller": "crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "006061f3",
+        "call_type": "direct",
+        "caller": "crt_iostream.cpp_ostream_destructor_thunk_FUN_006061e4",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005ff7f4",
+        "call_type": "direct",
+        "caller": "crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.875,
     "instruction_count": 40,
@@ -153,5 +195,16 @@
       "text": "CRT function (runtime support) at 00606231",
       "type": "special_crt_function"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "00665e14"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

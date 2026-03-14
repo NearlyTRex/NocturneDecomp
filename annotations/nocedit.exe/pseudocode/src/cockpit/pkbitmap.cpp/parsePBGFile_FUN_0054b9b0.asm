@@ -29,7 +29,7 @@
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0063f334
 ;   WatcomTypeInfo g_CPackedBitmapTypeInfo
 ;   undefined4 s_PBG_00680ca0
-;   undefined4 s_BG_00680ca1
+;   undefined4 s_anon_00680c9c+5
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -70,7 +70,7 @@ section .text
     MOV EDI,0x680ca0                    ; 0054b9db | s_PBG_00680ca0
     LEA ESI,[ESP + 0x24]                ; 0054b9e0
     XOR EAX,EAX                         ; 0054b9e4
-    CMPSB.REPE ES:EDI,ESI               ; 0054b9e6 | s_PBG_00680ca0 | s_BG_00680ca1
+    CMPSB.REPE ES:EDI,ESI               ; 0054b9e6 | s_PBG_00680ca0 | s_anon_00680c9c+5
     JZ 0x0054b9ef                       ; 0054b9e8
         ;   XREF to: 0054b9ef (CONDITIONAL_JUMP)  ; LAB_0054b9ef
     SBB EAX,EAX                         ; 0054b9ea

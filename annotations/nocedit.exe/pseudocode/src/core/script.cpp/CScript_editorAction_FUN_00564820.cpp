@@ -2,11 +2,11 @@
 // Address: 00564820
 // Address Range: [[00564820, 00565122]]
 // Convention: __cdecl
-// Signature: void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr,EEditorActionType action_type)
+// Signature: void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr,EEditorActionType action_type,int action_parm)
 
 #include "nocturne.h"
 
-void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr,EEditorActionType action_type)
+void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr,EEditorActionType action_type,int action_parm)
 
 {
   char cVar2;
@@ -118,8 +118,8 @@ void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr
   case ACTION_TYPE_UNKNOWN2:
     goto switchD_00564838_caseD_b;
   case ACTION_TYPE_SELECT_WORD:
-    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_COPY);
-    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CUT);
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_COPY,0);
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CUT,0);
     return;
   case ACTION_TYPE_COPY:
     core_script_cpp_updateSelection_FUN_00564500();
@@ -188,7 +188,7 @@ void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr
     shape_memdbg_cpp_debugFree_FUN_0050f460(local_14,"..\\core\\script.cpp",0x173c);
     return;
   case ACTION_TYPE_PASTE:
-    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CUT);
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CUT,0);
     iVar3 = 1;
     pcVar11 = shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(g_CEditorToolsPtr);
     core_script_cpp_CScript_insertText_FUN_00566390(this_ptr,pcVar11,iVar3);
@@ -400,7 +400,7 @@ void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr
       g_CurrentEditingColumn = iVar9;
     }
     else {
-      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CUT);
+      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CUT,0);
       while (iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text),
             iVar3 <= g_CurrentEditingLine) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&this_ptr->script_text,&s_EmptyChar_00643e08);
@@ -431,7 +431,8 @@ void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr
   default:
     g_CurrentFilename = "..\\core\\script.cpp";
     g_CurrentLineNumber = 0x180d;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("CScript::editorAction - unknown action: %d parm %d",action_type);
+    core_main_c_displayErrorAndQuit_FUN_00506f10
+              ("CScript::editorAction - unknown action: %d parm %d",action_type,action_parm);
     return;
   }
   core_script_cpp_CScript_updateCursorBounds_FUN_00566910(this_ptr);

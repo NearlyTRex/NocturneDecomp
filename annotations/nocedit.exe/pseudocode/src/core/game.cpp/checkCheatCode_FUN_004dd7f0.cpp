@@ -32,7 +32,7 @@ int __cdecl core_game_cpp_checkCheatCode_FUN_004dd7f0(char *cheat_string)
     if (bVar2 == uVar3) {
       iVar6 = iVar6 + 1;
     }
-    cheat_string = (char *)((byte *)cheat_string + 1);
+    cheat_string = cheat_string + 1;
   }
   if (iVar6 == ~uVar4 - 1) {
     g_InputHistory[1] = '\0';

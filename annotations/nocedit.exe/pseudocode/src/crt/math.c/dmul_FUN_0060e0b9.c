@@ -139,8 +139,8 @@ double __watcallRegister dmul(double a,double b)
         uVar18 = uVar18 & 0xffff0000;
       }
       return __BITCAST_DOUBLE(CONCAT44((uint)(uVar6 >> 0x20) & 0xfffff |
-                              (uVar18 << 0x15) >> 1 | (uint)CARRY4(uVar18,uVar18) << 0x1f,(int)uVar6
-                             ));
+                              (uVar18 & 0x7ff) << 0x14 | (uint)CARRY4(uVar18,uVar18) << 0x1f,
+                              (int)uVar6));
     }
     uVar8 = uVar6 & 1;
     uVar6 = CONCAT44((uint)(uVar6 >> 0x21),

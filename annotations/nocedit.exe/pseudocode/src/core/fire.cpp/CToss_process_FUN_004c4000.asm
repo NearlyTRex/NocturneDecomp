@@ -79,7 +79,7 @@ section .text
     MOV ECX,dword ptr [0x0067a3d0]      ; 004c4066 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH ECX                            ; 004c406c | g_CFireEffectInstance
     CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10 ; 004c406d
-        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect * this_ptr, CVector3f * position, float scale, int damage_amount)
+        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x14                        ; 004c4072
     MOV ESI,dword ptr [EBX + 0x3e0]     ; 004c4075
     PUSH ESI                            ; 004c407b

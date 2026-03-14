@@ -6,19 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 299,
+    "complexity_score": 121,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
-    "suspect_count": 21,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 71,
+    "suspect_count": 4,
     "suspect_types": [
       "decompiler_intrinsic",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 234
+    "total_lines": 231
   },
   "cross_references": [
     {
@@ -44,7 +43,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920",
-    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr)"
+    "signature": "void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr,int target_face_count,CLodMesh *output_mesh)"
   },
   "function_calls": [
     {
@@ -151,6 +150,48 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0051dd4a",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0058d366",
+        "call_type": "direct",
+        "caller": "core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0058d745",
+        "call_type": "direct",
+        "caller": "core_skeledit.cpp_CDeformableModel_buildFromPosFile_FUN_0058c190",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.291044776119403,
     "instruction_count": 134,
@@ -188,10 +229,10 @@
     "pcode_op_count": 709
   },
   "stack_frame": {
-    "frame_size": 88,
+    "frame_size": 100,
     "local_size": 88,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -259,14 +300,14 @@
       },
       {
         "is_param": true,
-        "name": "in_stack_00000008",
+        "name": "target_face_count",
         "offset": 8,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "in_stack_0000000c",
+        "name": "output_mesh",
         "offset": 12,
         "size": 4,
         "type": "CLodMesh *"
@@ -275,72 +316,16 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "CLodMesh *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_0000000c,this_ptr->next_lod);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_buildEdges_FUN_00515ba0(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "iVar4 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000008",
-      "severity": "moderate",
-      "text": "if ((iVar4 <= in_stack_00000008) || (this_ptr->lod_level_count <= iVar7)) break;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(in_stack_0000000c,*(int *)((int)pCVar1->adjacent_tri_indices + iVar3),",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 47,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "(in_stack_0000000c,*(int *)((int)pCVar1->adjacent_tri_indices + iVar3),",
+      "text": "(output_mesh,*(int *)((int)pCVar1->adjacent_tri_indices + iVar3),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 48,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)pCVar1->adjacent_tri_indices + iVar5),",
@@ -348,99 +333,19 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 49,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)pCVar1->adjacent_tri_indices + iVar2));",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_markDuplicateFaces_FUN_00516a40(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(in_stack_0000000c,&CStack_54);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "(in_stack_0000000c,",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 61,
       "match": "SQRT",
       "severity": "mild",
       "text": "SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) * (float)0.0001);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_compactFaces_FUN_0051b570(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 71,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_scaleVertices_FUN_005165c0(in_stack_0000000c,&local_24);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_0000000c",
-      "severity": "moderate",
-      "text": "shape_meshlod_cpp_CLodMesh_translateVertices_FUN_00516570(in_stack_0000000c,&local_30);",
-      "type": "stack_param"
     }
   ]
 }

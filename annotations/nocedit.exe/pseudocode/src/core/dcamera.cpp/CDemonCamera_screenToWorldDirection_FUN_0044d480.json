@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 54,
+    "complexity_score": 57,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 42,
     "suspect_count": 1,
     "suspect_types": [
       "decompiler_intrinsic"
     ],
-    "total_lines": 179
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -47,6 +47,37 @@
   },
   "function_calls": [],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0053c3a5",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_raycastPickActor_FUN_0053c340",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "00583fa6",
+        "call_type": "direct",
+        "caller": "core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.211678832116788,
     "instruction_count": 137,
@@ -149,7 +180,7 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 29,
+      "line": 32,
       "match": "SQRT",
       "severity": "mild",
       "text": "fVar2 = SQRT(fVar3 * output_ptr->z + output_ptr->x * output_ptr->x + output_ptr->y * output_ptr->y",

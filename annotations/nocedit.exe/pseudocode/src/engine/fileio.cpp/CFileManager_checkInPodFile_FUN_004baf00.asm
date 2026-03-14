@@ -226,7 +226,7 @@ section .text
     MOV dword ptr [ESP + 0x25dc],ESI    ; 004bb075
     MOV ESI,0x679dd8                    ; 004bb07c | g_DefaultCheckOutPath
     PUSH EDX                            ; 004bb081
-    MOVSD.REP ES:EDI,ESI                ; 004bb082 | g_DefaultCheckOutPath | s__00679ddc
+    MOVSD.REP ES:EDI,ESI                ; 004bb082 | g_DefaultCheckOutPath | g_DefaultCheckOutPath+4
     CALL engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50 ; 004bb084
         ;   XREF to: 004b3f50 (UNCONDITIONAL_CALL)  ; int engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50(CCheckOutItem * this_ptr, char * preselected_filename, char * out_buffer, char * dialog_title, ...)
     ADD ESP,0x14                        ; 004bb089

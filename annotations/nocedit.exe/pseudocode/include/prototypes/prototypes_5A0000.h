@@ -88,7 +88,7 @@ CVector3f * __cdecl core_skeleton_cpp_CVector3f_arrdtor_FUN_005a2010(CVector3f *
 CBoundingBox3D * __cdecl core_skeleton_cpp_CBoundingBox3D_arrdtor_FUN_005a2030(CBoundingBox3D *objs,uint flags);
 void __cdecl core_slew_cpp_staticInit_FUN_005a2050(void);
 void __cdecl core_slew_cpp_CSlew_init_FUN_005a2060(CSlew *this_ptr);
-void __cdecl core_slew_cpp_CSlew_free_FUN_005a20a0(void);
+void __cdecl core_slew_cpp_CSlew_free_FUN_005a20a0(CSlew *this_ptr);
 void __cdecl core_slew_cpp_CSlew_processInput_FUN_005a20b0(CSlew *this_ptr);
 void __cdecl core_smiley_cpp_staticInit_FUN_005a23c0(void);
 CSmiley * __cdecl core_smiley_cpp_factorFunc_FUN_005a23f0(void);

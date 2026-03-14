@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this_ptr)
+; void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this_ptr,int restore_viewport_state)
 ;
 ; Parameters:
 ; CDemonLight *    Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   restore_viewport_state
 ;
 ; XREF[4]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 at 0056ab93

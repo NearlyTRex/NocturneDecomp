@@ -1,18 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y)
+; SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal)
 ;
 ; Parameters:
 ; SEdgeList *      Stack[0x4]:4   edge_lists
-; void *           Stack[0x8]:4   output_buffer
-; int *            Stack[0xc]:4   output_count
-; int              Stack[0x10]:4   max_x
+; SEdgeList *      Stack[0x8]:4   scanline_data
+; SEdge *          Stack[0xc]:4   existing_edges
+; int *            Stack[0x10]:4   max_x
 ; int              Stack[0x14]:4   max_y
 ; int              Stack[0x18]:4   gap_tolerance_x
 ; int              Stack[0x1c]:4   gap_tolerance_y
-; int              Stack[0x20]:4   in_stack_00000020
-; int              Stack[0x24]:4   in_stack_00000024
+; int              Stack[0x20]:4   gap_tolerance_connected
+; int              Stack[0x24]:4   gap_tolerance_horizontal
 ; Local Variables:
 ; char[256]        Stack[-0x1f4]:256  local_1f4
 ; int              Stack[-0xf4]:4  local_f4

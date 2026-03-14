@@ -25,7 +25,7 @@ int __cdecl isVisiblePlane(SClipPlane *plane);
 
 // Original: engine_3d.c_makeGrayscaleColor_FUN_004039c0
 // Address: 004039c0
-uint __cdecl makeGrayscaleColor(int intensity);
+uint __cdecl makeGrayscaleColor(int color_value,int lighting_value);
 
 // Original: engine_3d.c_calculatePolygonLighting_FUN_00403a00
 // Address: 00403a00

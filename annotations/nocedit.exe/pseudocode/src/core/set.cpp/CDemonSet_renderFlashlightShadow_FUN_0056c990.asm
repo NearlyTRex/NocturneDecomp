@@ -245,7 +245,7 @@ section .text
     MOV ESI,dword ptr [EBP + -0x4]      ; 0056cb90
     PUSH ESI                            ; 0056cb93 | g_CDemonLightInstance
     CALL core_dlight.cpp_CDemonLight_endScene_FUN_00472d30 ; 0056cb94
-        ;   XREF to: 00472d30 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight * this_ptr)
+        ;   XREF to: 00472d30 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight * this_ptr, int restore_viewport_state)
     ADD ESP,0x8                         ; 0056cb99
     LEA EBX,[EBP + -0x4c]               ; 0056cb9c
     LEA EAX,[EBP + -0x1c]               ; 0056cb9f

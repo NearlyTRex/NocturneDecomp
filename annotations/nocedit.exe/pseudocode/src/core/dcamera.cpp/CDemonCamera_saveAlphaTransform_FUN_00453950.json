@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 101,
+    "complexity_score": 68,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 18,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 36,
-    "suspect_count": 6,
+    "pseudocode_lines": 33,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 97
+    "total_lines": 94
   },
   "cross_references": [],
   "function": {
@@ -153,6 +153,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -254,30 +255,6 @@
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -10) + alpha_index * 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x58) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x38) =",
       "type": "pointer_cast"
     }
   ],

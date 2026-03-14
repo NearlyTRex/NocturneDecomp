@@ -383,10 +383,94 @@ def generate_function_prototype(func_signature, original_func_name, cpp_func_nam
     return prototype
 
 
-def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True):
+def _scan_forward_for_add_esp(listing, call_addr, caller_func):
+    """Scan forward from a CALL instruction for ADD ESP,N to determine stack cleanup.
+
+    For __cdecl functions, the caller cleans the stack with ADD ESP,N after the call.
+    This gives us the exact number of stack bytes used for parameters, including any
+    early-pushed params that were pushed before intervening calls.
+
+    Args:
+        listing: Program listing
+        call_addr: Address of the CALL instruction
+        caller_func: The function containing the call
+
+    Returns:
+        Number of stack bytes cleaned, or None if no ADD ESP found
+    """
+    caller_body = caller_func.getBody()
+    call_instr = listing.getInstructionAt(call_addr)
+    if not call_instr:
+        return None
+
+    current_instr = call_instr.getNext()
+    instructions_checked = 0
+    max_forward = 15  # ADD ESP is usually within a few instructions
+
+    while current_instr and instructions_checked < max_forward:
+        if not caller_body.contains(current_instr.getAddress()):
+            break
+
+        mnemonic = current_instr.getMnemonicString().upper()
+        instructions_checked += 1
+
+        # Found ADD ESP,N
+        if mnemonic == 'ADD':
+            dest = current_instr.getDefaultOperandRepresentation(0).upper()
+            if dest == 'ESP':
+                src = current_instr.getDefaultOperandRepresentation(1)
+                try:
+                    if src.lower().startswith('0x'):
+                        return int(src, 16)
+                    else:
+                        return int(src)
+                except (ValueError, TypeError):
+                    return None
+
+        # Stop if we hit another CALL, RET, or PUSH (meaning cleanup didn't happen
+        # immediately - could be batched or callee-cleaned)
+        if mnemonic in ('CALL', 'RET', 'RETN', 'PUSH', 'JMP'):
+            break
+
+        current_instr = current_instr.getNext()
+
+    return None
+
+
+def _compute_declared_stack_bytes(params):
+    """Compute the expected stack bytes from declared parameter types.
+
+    Only counts stack parameters (skips register params like ESI in __stack_esi).
+    Each stack parameter takes at least 4 bytes (dword-aligned).
+    Doubles and long longs take 8 bytes.
+
+    Args:
+        params: List of Ghidra Parameter objects
+
+    Returns:
+        Total expected stack bytes
+    """
+    total = 0
+    for param in params:
+        # Skip register parameters (e.g. ESI in __stack_esi conventions)
+        if param.isRegisterVariable():
+            continue
+        size = param.getDataType().getLength()
+        # Stack params are dword-aligned (minimum 4 bytes)
+        aligned_size = max(4, ((size + 3) // 4) * 4)
+        total += aligned_size
+    return total
+
+
+def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True,
+                      calling_convention=None):
     """Analyze a single call site to estimate parameter count.
 
-    Walks backward from the CALL instruction to identify parameter setup.
+    Primary method: For __cdecl functions, scans FORWARD from the CALL for ADD ESP,N
+    to determine the exact stack cleanup bytes. This naturally handles early-pushed
+    parameters that were pushed before intervening function calls.
+
+    Fallback method: Walks backward from the CALL counting PUSH instructions.
 
     Args:
         listing: Program listing
@@ -394,41 +478,93 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
         caller_func: The function containing the call
         uses_register_params: If True, count register params (Watcom).
                               If False, only count stack params (__cdecl/__stdcall).
+        calling_convention: The calling convention name of the target function
 
     Returns:
         Dictionary with analysis results or None on failure
     """
+    # FPU register conventions don't use stack for params
+    FPU_REG_CONVENTIONS = {'__fpustack', '__fpustack_safe', '__fpureg', '__fpureg_safe',
+                           '__fpu_thunk'}
+    NO_PARAM_CONVENTIONS = {'__mathinternal', '__stk_probe'}
+
+    if calling_convention in FPU_REG_CONVENTIONS:
+        return {
+            'estimated_params': 0,
+            'reg_params': [],
+            'stack_params': 0,
+            'stack_bytes': 0,
+            'method': 'fpu_register',
+            'instructions_analyzed': 0
+        }
+
+    if calling_convention in NO_PARAM_CONVENTIONS:
+        return {
+            'estimated_params': 0,
+            'reg_params': [],
+            'stack_params': 0,
+            'stack_bytes': 0,
+            'method': 'no_params',
+            'instructions_analyzed': 0
+        }
+
     # Register parameters (Watcom order: EAX, EDX, EBX, ECX)
     WATCOM_REG_PARAMS = {'EAX', 'EDX', 'EBX', 'ECX', 'eax', 'edx', 'ebx', 'ecx'}
 
+    # Conventions where the CALLER cleans up with ADD ESP (extrapop="unknown")
+    CALLER_CLEANUP_CONVENTIONS = {'__cdecl', '__crtmath', '__fastcall',
+                                  '__stack_esi', '__stackdbl_esi', '__stack2_esi', '__stack3_esi',
+                                  '__stack_esi_edi', '__stack2_esi_edi',
+                                  None, 'unknown', ''}
+
+    # === Primary method: forward scan for ADD ESP ===
+    # This is the most reliable method for caller-cleanup conventions because it
+    # captures the total stack bytes including early-pushed parameters
+    if calling_convention in CALLER_CLEANUP_CONVENTIONS or not calling_convention:
+        stack_bytes = _scan_forward_for_add_esp(listing, call_addr, caller_func)
+        if stack_bytes is not None and stack_bytes > 0:
+            stack_slots = stack_bytes // 4
+
+            # For register-param conventions, also scan backward for register params
+            reg_params_found = set()
+            if uses_register_params:
+                reg_params_found = _scan_backward_for_reg_params(
+                    listing, call_addr, caller_func, WATCOM_REG_PARAMS)
+
+            estimated_total = len(reg_params_found) + stack_slots
+
+            return {
+                'estimated_params': estimated_total,
+                'reg_params': sorted(reg_params_found),
+                'stack_params': stack_slots,
+                'stack_bytes': stack_bytes,
+                'method': 'add_esp',
+                'instructions_analyzed': 0
+            }
+
+    # === Fallback: backward PUSH counting ===
     reg_params_found = set()
     stack_params = 0
     instructions_checked = 0
-    max_instructions = 30  # Don't look back too far
+    max_instructions = 30
 
-    # Get the CALL instruction
     call_instr = listing.getInstructionAt(call_addr)
     if not call_instr:
         return None
 
-    # Walk backward through instructions for param counting
     caller_body = caller_func.getBody()
     current_instr = call_instr.getPrevious()
     while current_instr and instructions_checked < max_instructions:
 
-        # Stop if we leave the caller function
         if not caller_body.contains(current_instr.getAddress()):
             break
 
-        # Stop conditions: hit another CALL, RET, or unconditional jump
         mnemonic = current_instr.getMnemonicString().upper()
         instructions_checked += 1
         if mnemonic in ('CALL', 'RET', 'RETN', 'JMP'):
             break
 
-        # Stop at conditional jumps that might indicate branch target
         if mnemonic.startswith('J') and mnemonic not in ('JMP',):
-            # Check if this is a target of a branch (would mean we crossed a branch boundary)
             refs_to = listing.getProgram().getReferenceManager().getReferencesTo(current_instr.getAddress())
             has_branch_ref = False
             for r in refs_to:
@@ -438,43 +574,81 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
             if has_branch_ref:
                 break
 
-        # Check for PUSH instructions (stack parameters)
-        # Near a CALL, ALL pushes are parameters - don't skip EBP/ESI/EDI
-        # (prologue saves happen at function entry, not before calls)
         if mnemonic == 'PUSH':
             stack_params += 1
 
-        # Check for MOV/LEA to register params (Watcom register params only)
         if uses_register_params and mnemonic in ('MOV', 'LEA', 'XOR', 'MOVSX', 'MOVZX'):
             dest_operand = current_instr.getDefaultOperandRepresentation(0)
             if dest_operand:
                 dest_upper = dest_operand.upper()
-                # Check if destination is a Watcom register parameter
-                # Also check for partial registers (AL, AX, DL, DX, etc.)
                 for reg in WATCOM_REG_PARAMS:
                     if dest_upper == reg or dest_upper.startswith(reg[0:2]):
-                        reg_params_found.add(reg.upper()[:3])  # Normalize to EAX, EDX, etc.
+                        reg_params_found.add(reg.upper()[:3])
                         break
 
         current_instr = current_instr.getPrevious()
 
-    # Calculate total estimated params
-    # For Watcom: register params + stack params
-    # For __cdecl/__stdcall: stack params only
     if uses_register_params:
         num_reg_params = len(reg_params_found)
         estimated_total = num_reg_params + stack_params
     else:
         num_reg_params = 0
-        reg_params_found = set()  # Clear for non-register calling conventions
+        reg_params_found = set()
         estimated_total = stack_params
 
     return {
         'estimated_params': estimated_total,
         'reg_params': sorted(reg_params_found),
         'stack_params': stack_params,
+        'stack_bytes': stack_params * 4,
+        'method': 'push_count',
         'instructions_analyzed': instructions_checked
     }
+
+
+def _scan_backward_for_reg_params(listing, call_addr, caller_func, reg_set):
+    """Scan backward from CALL to find register parameter setup.
+
+    Args:
+        listing: Program listing
+        call_addr: Address of the CALL instruction
+        caller_func: The function containing the call
+        reg_set: Set of register names to look for
+
+    Returns:
+        Set of register names found as parameters
+    """
+    reg_params_found = set()
+    caller_body = caller_func.getBody()
+    call_instr = listing.getInstructionAt(call_addr)
+    if not call_instr:
+        return reg_params_found
+
+    current_instr = call_instr.getPrevious()
+    instructions_checked = 0
+
+    while current_instr and instructions_checked < 30:
+        if not caller_body.contains(current_instr.getAddress()):
+            break
+
+        mnemonic = current_instr.getMnemonicString().upper()
+        instructions_checked += 1
+
+        if mnemonic in ('CALL', 'RET', 'RETN', 'JMP'):
+            break
+
+        if mnemonic in ('MOV', 'LEA', 'XOR', 'MOVSX', 'MOVZX'):
+            dest_operand = current_instr.getDefaultOperandRepresentation(0)
+            if dest_operand:
+                dest_upper = dest_operand.upper()
+                for reg in reg_set:
+                    if dest_upper == reg.upper() or dest_upper.startswith(reg.upper()[0:2]):
+                        reg_params_found.add(reg.upper()[:3])
+                        break
+
+        current_instr = current_instr.getPrevious()
+
+    return reg_params_found
 
 
 def load_vtable_bucket_files(vtables_dir):
@@ -601,15 +775,36 @@ def estimate_call_site_params(currentProgram, function, vtable_data=None):
 
     # Determine parameter passing style
     REGISTER_PARAM_CONVENTIONS = {'__watcallRegister', '__softfp_double'}
-    STACK_ONLY_CONVENTIONS = {'__watcallStack', '__stdcall', '__cdecl', '__syscall', '__crtmath', '__fpustack', '__thiscall'}
-    FPU_REGISTER_CONVENTIONS = {'__fpureg', '__fpureg_safe', '__fpu_thunk'}
-    NO_PARAM_CONVENTIONS = {'__mathinternal'}
+    STACK_ONLY_CONVENTIONS = {'__watcallStack', '__stdcall', '__cdecl', '__syscall', '__crtmath', '__thiscall',
+                               '__stack_esi', '__stackdbl_esi', '__stack2_esi', '__stack3_esi',
+                               '__stack_esi_edi', '__stack2_esi_edi'}
+    FPU_REGISTER_CONVENTIONS = {'__fpustack', '__fpustack_safe', '__fpureg', '__fpureg_safe', '__fpu_thunk'}
+    NO_PARAM_CONVENTIONS = {'__mathinternal', '__stk_probe'}
 
-    if calling_convention in NO_PARAM_CONVENTIONS:
-        uses_register_params = False
-    elif calling_convention in FPU_REGISTER_CONVENTIONS:
-        uses_register_params = False
-    elif calling_convention in REGISTER_PARAM_CONVENTIONS:
+    # Skip conventions where params aren't visible in assembly
+    if calling_convention in NO_PARAM_CONVENTIONS or calling_convention in FPU_REGISTER_CONVENTIONS:
+        result = {
+            'declared_params': declared_params,
+            'estimated_params': declared_params,
+            'call_site_count': 0,
+            'confidence': 'skipped',
+            'call_sites': [],
+            'skip_reason': 'fpu_or_no_param_convention'
+        }
+        if vtable_data:
+            func_addr = str(function.getEntryPoint()).lower().replace('0x', '')
+            vtable_entries = vtable_data.get('func_to_vtables', {}).get(func_addr, [])
+            if vtable_entries:
+                result['vtable_info'] = {
+                    'in_vtable': True,
+                    'vtable_count': len(vtable_entries),
+                    'entries': [{'class_name': e.get('class_name', 'Unknown'),
+                                 'vtable_addr': e.get('vtable_addr', ''),
+                                 'offset': e.get('offset', 0)} for e in vtable_entries[:5]]
+                }
+        return result
+
+    if calling_convention in REGISTER_PARAM_CONVENTIONS:
         uses_register_params = True
     elif calling_convention in STACK_ONLY_CONVENTIONS:
         uses_register_params = False
@@ -636,7 +831,7 @@ def estimate_call_site_params(currentProgram, function, vtable_data=None):
         if not caller_func or caller_func == function:
             continue
 
-        site_info = analyze_call_site(listing, from_addr, caller_func, uses_register_params)
+        site_info = analyze_call_site(listing, from_addr, caller_func, uses_register_params, calling_convention)
         if site_info:
             site_info['caller'] = caller_func.getName()
             site_info['call_addr'] = str(from_addr)
@@ -668,6 +863,10 @@ def estimate_call_site_params(currentProgram, function, vtable_data=None):
     # Use direct call sites for parameter estimation
     all_call_sites = call_sites
 
+    # Compute declared stack bytes for comparison with add_esp results
+    # This handles doubles (8 bytes) and structs correctly
+    declared_stack_bytes = _compute_declared_stack_bytes(params) if params else 0
+
     # Determine most common param count
     estimated_params = declared_params
     confidence = 'unknown'
@@ -678,7 +877,18 @@ def estimate_call_site_params(currentProgram, function, vtable_data=None):
         estimated_params = most_common[0]
         agreement_ratio = most_common[1] / len(param_counts)
 
-        matches_declared = (estimated_params == declared_params)
+        # Check if the estimated stack slots match declared stack bytes
+        # This avoids false positives from doubles/structs taking multiple slots
+        estimated_stack_bytes = estimated_params * 4  # each stack slot is 4 bytes
+        if uses_register_params:
+            # For register conventions, subtract register params from stack comparison
+            # Use the most common reg param count from call sites
+            reg_counts = [len(s.get('reg_params', [])) for s in call_sites if s]
+            common_reg = max(set(reg_counts), key=reg_counts.count) if reg_counts else 0
+            estimated_stack_bytes = (estimated_params - common_reg) * 4
+
+        matches_declared = (estimated_params == declared_params) or \
+                           (estimated_stack_bytes == declared_stack_bytes)
 
         if matches_declared:
             if len(param_counts) >= 3 and agreement_ratio >= 0.9:
@@ -698,6 +908,7 @@ def estimate_call_site_params(currentProgram, function, vtable_data=None):
     result = {
         'declared_params': declared_params,
         'estimated_params': estimated_params,
+        'declared_stack_bytes': declared_stack_bytes,
         'call_site_count': len(all_call_sites),
         'confidence': confidence,
         'call_sites': all_call_sites[:10]

@@ -441,13 +441,13 @@ section .text
     PUSH EDI                            ; 004aaf3f | g_EventErrorMessageBuffer
     MOV AL,byte ptr [ESI]               ; 004aaf40
         ;   Label: LAB_004aaf40
-    MOV byte ptr [EDI],AL               ; 004aaf42 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004aaf42 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004aaf44
     JZ 0x004aaf58                       ; 004aaf46
         ;   XREF to: 004aaf58 (CONDITIONAL_JUMP)  ; LAB_004aaf58
     MOV AL,byte ptr [ESI + 0x1]         ; 004aaf48
     ADD ESI,0x2                         ; 004aaf4b
-    MOV byte ptr [EDI + 0x1],AL         ; 004aaf4e | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004aaf4e | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004aaf51
     CMP AL,0x0                          ; 004aaf54
     JNZ 0x004aaf40                      ; 004aaf56
@@ -727,7 +727,7 @@ section .text
     MOV ECX,dword ptr [0x0067a3d0]      ; 004ab1f0 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH ECX                            ; 004ab1f6 | g_CFireEffectInstance
     CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10 ; 004ab1f7
-        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect * this_ptr, CVector3f * position, float scale, int damage_amount)
+        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x14                        ; 004ab1fc
     JMP 0x004aaf1d                      ; 004ab1ff
         ;   XREF to: 004aaf1d (UNCONDITIONAL_JUMP)  ; LAB_004aaf1d

@@ -92,7 +92,7 @@ section .text
     MOV ESI,0x679dd8                    ; 004b4243 | g_DefaultCheckOutPath
     LEA EAX,[ESP + 0x5c0]               ; 004b4248
     PUSH 0x626a7f                       ; 004b424f | = "Select file to check in"
-    MOVSD.REP ES:EDI,ESI                ; 004b4254 | g_DefaultCheckOutPath | s__00679ddc
+    MOVSD.REP ES:EDI,ESI                ; 004b4254 | g_DefaultCheckOutPath | g_DefaultCheckOutPath+4
     PUSH EAX                            ; 004b4256
     MOV EDI,dword ptr [EBP + 0x18]      ; 004b4257
     XOR EDX,EDX                         ; 004b425a

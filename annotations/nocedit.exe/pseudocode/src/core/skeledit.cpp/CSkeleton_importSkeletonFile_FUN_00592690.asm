@@ -457,7 +457,7 @@ section .text
         ;   XREF to: 0049e790 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790(CEditorTools * this_ptr, char * format)
     MOV ECX,0x41                        ; 005928ba
     MOV EBX,0x1                         ; 005928bf
-    MOVSD.REP ES:EDI,ESI                ; 005928c4 | = "(file error)" | s_e_error)_006818e4
+    MOVSD.REP ES:EDI,ESI                ; 005928c4 | = "(file error)" | s_file_error_006818e0+4
     ADD ESP,0x8                         ; 005928c6
     MOV ESI,dword ptr [EBP + 0xffffff6e] ; 005928c9
     PUSH ESI                            ; 005928cf

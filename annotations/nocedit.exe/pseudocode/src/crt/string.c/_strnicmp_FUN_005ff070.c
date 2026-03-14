@@ -30,7 +30,7 @@ int __cdecl _strnicmp(char *str1,char *str2,int count)
     if (bVar2 == 0) {
       return 0;
     }
-    str1 = (char *)((byte *)str1 + 1);
+    str1 = str1 + 1;
     str2 = str2 + 1;
     count = count + -1;
   }

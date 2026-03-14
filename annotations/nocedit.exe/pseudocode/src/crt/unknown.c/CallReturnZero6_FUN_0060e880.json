@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 45,
+    "complexity_score": 60,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 5,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "param_count_too_few",
       "special_crt_function",
       "unnamed_param"
     ],
@@ -49,6 +50,28 @@
       "value": "0060e850"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0060cbf4",
+        "call_type": "direct",
+        "caller": "crt_tls.c_register_thread_data_FUN_0060cbd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.4,
     "instruction_count": 5,
@@ -93,6 +116,17 @@
       "severity": "mild",
       "text": "(*PTR_unk_ReturnZero6_FUN_0060e850_0068559c)(param_1);",
       "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     },
     {
       "address": "0060e880",

@@ -111,6 +111,37 @@
       "value": "00000000"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004b2f78",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CCheckOutList_write_FUN_004b2eb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00481a35",
+        "call_type": "direct",
+        "caller": "engine_dosio.c_truncateFile_FUN_00481a20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.394495412844036,
     "instruction_count": 109,

@@ -2,11 +2,11 @@
 // Address: 005f2440
 // Address Range: [[005f2440, 005f285c]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,int x_position,int y_position,char *text_string,int foreground_color,int background_color)
+// Signature: void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,char *text_string,int x_position,int y_position,int foreground_color,int background_color)
 
 #include "nocturne.h"
 
-void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,int x_position,int y_position,char *text_string,int foreground_color,int background_color)
+void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont *this_ptr,HDC device_context,char *text_string,int x_position,int y_position,int foreground_color,int background_color)
 
 {
   char cVar2;
@@ -33,14 +33,13 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
   bVar11 = 0;
   if (((foreground_color != this_ptr->cached_foreground_color) ||
       (background_color != this_ptr->cached_background_color)) ||
-     (iVar6 = _strcmp(this_ptr->text_cache,(char *)x_position), iVar6 != 0
-     )) {
+     (iVar6 = _strcmp(this_ptr->text_cache,text_string), iVar6 != 0)) {
     this_ptr->cached_foreground_color = foreground_color;
     this_ptr->cached_background_color = background_color;
     if (foreground_color < 0) {
       engine_font_cpp_getDefaultTextColor_FUN_004ce220();
     }
-    pcVar7 = (char *)x_position;
+    pcVar7 = text_string;
     pcVar10 = this_ptr->text_cache;
     do {
       cVar1 = *pcVar7;
@@ -51,9 +50,9 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
       pcVar10[1] = cVar2;
       pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
-    iVar3 = (*((this_ptr->base).vtable)->getStringWidth)(&this_ptr->base,(char *)x_position);
+    iVar3 = (*((this_ptr->base).vtable)->getStringWidth)(&this_ptr->base,text_string);
     this_ptr->cached_string_width = iVar3;
-    iVar6 = (*((this_ptr->base).vtable)->getStringHeight)(&this_ptr->base,(char *)x_position);
+    iVar6 = (*((this_ptr->base).vtable)->getStringHeight)(&this_ptr->base,text_string);
     this_ptr->cached_string_height = iVar6;
     uVar6 = 0xffffffff;
     pcVar8 = this_ptr->text_cache;
@@ -65,22 +64,22 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
     } while (cVar2 != '\0');
     if (in_stack_0000002c != -1) {
       (*g_SetTextColorFunc)(this_ptr->device_context_handle,CStack_18);
-      (*g_TextOutAFunc)(this_ptr->device_context_handle,1,1,(LPCSTR)x_position,~uVar6 - 1);
+      (*g_TextOutAFunc)(this_ptr->device_context_handle,1,1,text_string,~uVar6 - 1);
     }
     (*g_SetTextColorFunc)(this_ptr->device_context_handle,CStack_24);
-    (*g_TextOutAFunc)(this_ptr->device_context_handle,0,0,(LPCSTR)x_position,~uVar6 - 1);
+    (*g_TextOutAFunc)(this_ptr->device_context_handle,0,0,text_string,~uVar6 - 1);
   }
-  if (this_ptr->right + y_position < g_WindowWidth) {
+  if (this_ptr->right + x_position < g_WindowWidth) {
     iVar6 = this_ptr->right;
   }
   else {
-    iVar6 = g_WindowWidth - y_position;
+    iVar6 = g_WindowWidth - x_position;
   }
-  if ((int)(text_string + this_ptr->top) < g_WindowHeight) {
+  if (this_ptr->top + y_position < g_WindowHeight) {
     CStack_24 = this_ptr->top;
   }
   else {
-    CStack_24 = g_WindowHeight - (int)text_string;
+    CStack_24 = g_WindowHeight - y_position;
   }
   if (this_ptr->cached_string_width < iVar6) {
     iVar6 = this_ptr->cached_string_width;
@@ -91,13 +90,13 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
   if (g_BitsPerPixel == 0x10) {
     CStack_18 = 0;
     if (0 < (int)CStack_24) {
-      pcStack_1c = text_string;
+      pcStack_1c = (char *)y_position;
       do {
         pcVar8 = pcStack_1c + this_ptr->y_offset1;
         if ((-1 < (int)pcVar8) && ((int)pcVar8 < g_WindowHeight)) {
           iVar4 = 0;
           if (0 < iVar6) {
-            puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar8] + y_position * 2);
+            puVar8 = (ushort *)((int)g_ScreenBufferArray[(int)pcVar8] + x_position * 2);
             do {
               uVar2 = *(ushort *)
                        ((int)this_ptr->ppv_bits + (CStack_18 * this_ptr->right + iVar4) * 2);
@@ -124,13 +123,13 @@ void __cdecl engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFo
   else {
     iVar9 = 0;
     if (0 < (int)CStack_24) {
-      pcStack_20 = text_string;
+      pcStack_20 = (char *)y_position;
       do {
         pcVar8 = pcStack_20 + this_ptr->y_offset1;
         if ((-1 < (int)pcVar8) && ((int)pcVar8 < g_WindowHeight)) {
           iVar5 = 0;
           if (0 < iVar6) {
-            piVar9 = (int *)(y_position * 4 + (int)g_ScreenBufferArray[(int)pcVar8]);
+            piVar9 = (int *)(x_position * 4 + (int)g_ScreenBufferArray[(int)pcVar8]);
             do {
               if (this_ptr->ppv_bits[this_ptr->right * iVar9 + iVar5] !=
                   g_LightBufferPool[0xd] + 0x6ef7) {

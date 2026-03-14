@@ -1759,13 +1759,31 @@ def generate_param_mismatch_report(functions, output_path):
             continue
 
         if declared != estimated:
+            # Check if estimated stack bytes match declared stack bytes
+            # This filters false positives from doubles (8 bytes) and structs
+            declared_stack_bytes = param_est.get('declared_stack_bytes', declared * 4)
+            # Get the most common estimated stack bytes from call sites
+            sites = param_est.get('call_sites', [])
+            est_stack_bytes_list = [s.get('stack_bytes', 0) for s in sites if s.get('stack_bytes')]
+            if est_stack_bytes_list:
+                from collections import Counter as _Counter
+                est_stack_bytes = _Counter(est_stack_bytes_list).most_common(1)[0][0]
+            else:
+                est_stack_bytes = estimated * 4
+
+            # Skip if stack bytes match (handles doubles/structs taking multiple slots)
+            if est_stack_bytes == declared_stack_bytes and est_stack_bytes > 0:
+                continue
+
             mismatch_info = {
                 'func': func,
                 'declared': declared,
                 'estimated': estimated,
                 'confidence': confidence,
                 'diff': estimated - declared,
-                'call_sites': call_site_count
+                'call_sites': call_site_count,
+                'declared_stack_bytes': declared_stack_bytes,
+                'estimated_stack_bytes': est_stack_bytes
             }
             if confidence in mismatches:
                 mismatches[confidence].append(mismatch_info)
@@ -1809,7 +1827,9 @@ def generate_param_mismatch_report(functions, output_path):
 
             diff_str = "+%d" % m['diff'] if m['diff'] > 0 else str(m['diff'])
             lines.append("  %s" % func_info.get('name', 'unknown'))
-            lines.append("    Declared: %d params, Estimated: %d params (%s)" % (m['declared'], m['estimated'], diff_str))
+            lines.append("    Declared: %d params (%d bytes), Estimated: %d stack slots (%d bytes) [%s]" % (
+                m['declared'], m.get('declared_stack_bytes', m['declared'] * 4),
+                m['estimated'], m.get('estimated_stack_bytes', m['estimated'] * 4), diff_str))
             lines.append("    Call sites: %d, Confidence: %s" % (m['call_sites'], m['confidence']))
             lines.append("    File: %s" % vfile)
             lines.append("    Signature: %s" % signature)
@@ -1820,12 +1840,16 @@ def generate_param_mismatch_report(functions, output_path):
                 lines.append("    Sample call sites:")
                 for site in call_sites[:3]:
                     reg_params = ', '.join(site.get('reg_params', []))
-                    lines.append("      %s at %s: %d reg [%s], %d stack" % (
+                    method = site.get('method', 'push_count')
+                    stack_bytes = site.get('stack_bytes', 0)
+                    lines.append("      %s at %s: %d reg [%s], %d stack (%d bytes, via %s)" % (
                         site.get('caller', '?')[:30],
                         site.get('call_addr', '?'),
                         len(site.get('reg_params', [])),
                         reg_params,
-                        site.get('stack_params', 0)
+                        site.get('stack_params', 0),
+                        stack_bytes,
+                        method
                     ))
             lines.append("")
 

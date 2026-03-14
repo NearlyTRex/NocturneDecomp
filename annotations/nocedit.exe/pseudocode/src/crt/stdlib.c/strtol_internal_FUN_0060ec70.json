@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 205,
-    "complexity_score": 124,
+    "complexity_score": 109,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 79,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "special_crt_function"
     ],
@@ -74,24 +73,29 @@
         "call_addr": "0060ee0e",
         "call_type": "direct",
         "caller": "crt_stdlib.c_strtol_FUN_0060edfc",
-        "estimated_params": 5,
-        "instructions_analyzed": 8,
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 16,
+        "stack_params": 4
       },
       {
         "call_addr": "0060edf2",
         "call_type": "direct",
         "caller": "crt_stdlib.c_strtoul_FUN_0060ede0",
-        "estimated_params": 5,
-        "instructions_analyzed": 8,
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 16,
+        "stack_params": 4
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 4,
-    "estimated_params": 5
+    "declared_stack_bytes": 16,
+    "estimated_params": 4
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.9071428571428575,
@@ -170,17 +174,6 @@
       "severity": "mild",
       "text": "pvVar6 = (void *)((int)pvVar7 * base + iVar3);",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 4,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:4 vs estimated:5",
-      "param_delta": 1,
-      "text": "Function declares 4 params but call sites push 5 (1 missing)",
-      "type": "param_count_too_few"
     },
     {
       "address": "0060ec70",

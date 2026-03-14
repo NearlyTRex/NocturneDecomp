@@ -481,7 +481,7 @@ section .text
     PUSH 0x1                            ; 004452b0
     XOR EBX,EBX                         ; 004452b2
     CALL shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20 ; 004452b4
-        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures, int is_complete)
+        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures, int is_complete, int show_status)
     MOV EDI,dword ptr [0x0084a854]      ; 004452b9 | g_CramTextureCount
     ADD ESP,0xc                         ; 004452bf
     TEST EDI,EDI                        ; 004452c2

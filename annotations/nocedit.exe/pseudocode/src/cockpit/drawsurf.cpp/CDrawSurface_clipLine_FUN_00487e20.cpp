@@ -61,7 +61,10 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface
       if ((bVar5 & 2) == 0) {
         if ((bVar5 & 4) == 0) {
           if (((bVar5 & 8) != 0) && (in_EDX = clip_left, iVar4 != 0)) {
-            lVar2 = (longlong)(int)(((longlong)(clip_left - *x1) * 0x10000) / (longlong)iVar4) *
+            lVar2 = (longlong)
+                    (int)((longlong)
+                          ((((longlong)(clip_left - *x1) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                          (longlong)(clip_left - *x1) * 0x10000 & 0xffffffffU) / (longlong)iVar4) *
                     (longlong)iVar6;
             in_EAX = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) + *y1;
           }
@@ -69,7 +72,10 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface
         else {
           in_EDX = clip_right;
           if (iVar4 != 0) {
-            lVar2 = (longlong)(int)(((longlong)(clip_right - *x1) * 0x10000) / (longlong)iVar4) *
+            lVar2 = (longlong)
+                    (int)((longlong)
+                          ((((longlong)(clip_right - *x1) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                          (longlong)(clip_right - *x1) * 0x10000 & 0xffffffffU) / (longlong)iVar4) *
                     (longlong)iVar6;
             in_EAX = ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) + *y1;
           }
@@ -78,7 +84,10 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface
       else {
         in_EAX = clip_top;
         if (iVar6 != 0) {
-          lVar2 = (longlong)(int)(((longlong)(clip_top - *y1) * 0x10000) / (longlong)iVar6) *
+          lVar2 = (longlong)
+                  (int)((longlong)
+                        ((((longlong)(clip_top - *y1) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                        (longlong)(clip_top - *y1) * 0x10000 & 0xffffffffU) / (longlong)iVar6) *
                   (longlong)iVar4;
           in_EDX = *x1 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
         }
@@ -87,7 +96,10 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface
     else {
       in_EAX = clip_bottom;
       if (iVar6 != 0) {
-        lVar1 = (longlong)(int)(((longlong)(clip_bottom - *y1) * 0x10000) / (longlong)iVar6) *
+        lVar1 = (longlong)
+                (int)((longlong)
+                      ((((longlong)(clip_bottom - *y1) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                      (longlong)(clip_bottom - *y1) * 0x10000 & 0xffffffffU) / (longlong)iVar6) *
                 (longlong)iVar4;
         in_EDX = *x1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
       }

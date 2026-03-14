@@ -199,6 +199,70 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004c2121",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CGlassParticle_process_FUN_004c20f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004c0b51",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireball_process_FUN_004c0b30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004c0298",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CSpark_process_FUN_004c0240",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004c17f9",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CRock_process_FUN_004c17f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004c631a",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CShell_process_FUN_004c6300",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.359504132231405,
     "instruction_count": 242,
@@ -457,5 +521,31 @@
       "text": "(this_ptr->position).z = (float)local_68._8_4_;",
       "type": "unknown_field"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CParticle",
+        "offset": 4,
+        "vtable_addr": "00661f24"
+      },
+      {
+        "class_name": "CParticle",
+        "offset": 4,
+        "vtable_addr": "0065f044"
+      },
+      {
+        "class_name": "CParticle",
+        "offset": 4,
+        "vtable_addr": "0065dcd4"
+      },
+      {
+        "class_name": "CParticle",
+        "offset": 4,
+        "vtable_addr": "0065dcf4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 4
+  }
 }

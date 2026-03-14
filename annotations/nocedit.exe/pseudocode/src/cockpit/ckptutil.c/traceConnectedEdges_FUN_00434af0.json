@@ -2,28 +2,28 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "incompatible_types",
-        "column": 14,
-        "line": 103,
-        "message": "assigning to 'int *' from incompatible type 'void *'"
-      },
-      {
         "category": "other",
         "column": 56,
-        "line": 119,
+        "line": 117,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 232,
+        "line": 231,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 312,
+        "line": 311,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
+      },
+      {
+        "category": "other",
+        "column": 10,
+        "line": 326,
+        "message": "cannot initialize return object of type 'SEdge *' with an lvalue of type 'void *'"
       }
     ],
     "success": false,
@@ -31,18 +31,17 @@
   },
   "complexity": {
     "assembly_lines": 702,
-    "complexity_score": 629,
+    "complexity_score": 572,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 19,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 319,
-    "suspect_count": 30,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 317,
+    "suspect_count": 25,
     "suspect_types": [
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 1021
+    "total_lines": 1019
   },
   "cross_references": [],
   "function": {
@@ -55,7 +54,7 @@
     ],
     "convention": "__cdecl",
     "name": "cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0",
-    "signature": "void * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,void *output_buffer,int *output_count,int max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y)"
+    "signature": "SEdge * __cdecl cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0(SEdgeList *edge_lists,SEdgeList *scanline_data,SEdge *existing_edges,int *max_x,int max_y,int gap_tolerance_x,int gap_tolerance_y,int gap_tolerance_connected,int gap_tolerance_horizontal)"
   },
   "function_calls": [
     {
@@ -194,8 +193,9 @@
     "call_site_count": 0,
     "call_sites": [],
     "confidence": "unknown",
-    "declared_params": 7,
-    "estimated_params": 7
+    "declared_params": 9,
+    "declared_stack_bytes": 36,
+    "estimated_params": 9
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.495145631067961,
@@ -234,10 +234,10 @@
     "pcode_op_count": 3396
   },
   "stack_frame": {
-    "frame_size": 504,
+    "frame_size": 540,
     "local_size": 504,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 36,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -627,24 +627,24 @@
       },
       {
         "is_param": true,
-        "name": "output_buffer",
+        "name": "scanline_data",
         "offset": 8,
         "size": 4,
-        "type": "void *"
+        "type": "SEdgeList *"
       },
       {
         "is_param": true,
-        "name": "output_count",
+        "name": "existing_edges",
         "offset": 12,
         "size": 4,
-        "type": "int *"
+        "type": "SEdge *"
       },
       {
         "is_param": true,
         "name": "max_x",
         "offset": 16,
         "size": 4,
-        "type": "int"
+        "type": "int *"
       },
       {
         "is_param": true,
@@ -669,14 +669,14 @@
       },
       {
         "is_param": true,
-        "name": "in_stack_00000020",
+        "name": "gap_tolerance_connected",
         "offset": 32,
         "size": 4,
         "type": "int"
       },
       {
         "is_param": true,
-        "name": "in_stack_00000024",
+        "name": "gap_tolerance_horizontal",
         "offset": 36,
         "size": 4,
         "type": "int"
@@ -685,32 +685,16 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000020",
-      "severity": "moderate",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000024",
-      "severity": "moderate",
-      "text": "int in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 100,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "for (local_20 = 0; piVar2 = (int *)((int)output_buffer + iVar13 * 0x84), local_20 < *piVar2;",
+      "text": "for (local_20 = 0; piVar2 = (int *)((int)scanline_data + iVar13 * 0x84), local_20 < *piVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 102,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar2 = *(int *)((int)piVar2 + local_e0 + 4);",
@@ -718,7 +702,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 103,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar14 = *(int *)((int)piVar2 + local_e0 + 0x44) + iVar2;",
@@ -726,15 +710,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 117,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar7 = (int *)((int)output_buffer + iVar18 * 0x84);",
+      "text": "piVar7 = (int *)((int)scanline_data + iVar16 * 0x84);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 121,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar3 = *(int *)((int)piVar6 + local_c4 + 4);",
@@ -742,7 +726,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 132,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "(iVar2 <= *(int *)((int)piVar6 + local_c4 + 0x44) + iVar3 + -1)) {",
@@ -750,7 +734,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 146,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
@@ -758,7 +742,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 147,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
@@ -766,7 +750,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 162,
+      "line": 160,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
@@ -774,42 +758,34 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 163,
+      "line": 161,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 177,
-      "match": "in_stack_00000024",
-      "severity": "moderate",
-      "text": "if ((bVar5) || (in_stack_00000024 < (iVar3 - iVar2) + 1)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 178,
-      "match": "in_stack_00000020",
-      "severity": "moderate",
-      "text": "if ((!bVar5) || (in_stack_00000020 < (iVar3 - local_18) + -1)) goto LAB_00434df6;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 188,
+      "match": "(byte *)((int)",
+      "severity": "mild",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 189,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 190,
+      "line": 203,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
+      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
       "type": "pointer_cast"
     },
     {
@@ -817,20 +793,12 @@
       "line": 204,
       "match": "(byte *)((int)",
       "severity": "mild",
-      "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 205,
-      "match": "(byte *)((int)",
-      "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 231,
+      "line": 230,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar10 = *(int *)((int)piVar7 + local_50 + 4);",
@@ -838,15 +806,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 233,
+      "line": 232,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar6 = (int *)((int)output_buffer + iVar13 * 0x84);",
+      "text": "piVar6 = (int *)((int)scanline_data + iVar13 * 0x84);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 234,
+      "line": 233,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar4 = iVar10 + *(int *)((int)piVar7 + local_50 + 0x44) + -1;",
@@ -854,7 +822,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 235,
+      "line": 234,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if ((local_20 < *piVar6 + -1) && (*(int *)((int)piVar6 + local_e0 + 8) < iVar4)) {",
@@ -862,23 +830,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 241,
+      "line": 240,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if ((local_b4 < *piVar7 + -1) && (*(int *)((int)piVar7 + local_50 + 8) < iVar15)) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 246,
-      "match": "in_stack_00000024",
-      "severity": "moderate",
-      "text": "((!bVar5 && ((iVar15 - iVar4) + 1 <= in_stack_00000024)))) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 257,
+      "line": 256,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
@@ -886,7 +846,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 258,
+      "line": 257,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
@@ -894,7 +854,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 273,
+      "line": 272,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) =",
@@ -902,7 +862,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 274,
+      "line": 273,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&g_TracedEdgeBuffer[iVar11].y1 + 1) & 0x7f;",
@@ -911,17 +871,17 @@
     {
       "description": "Complex pointer cast",
       "line": 315,
-      "match": "(uint *)((int)",
+      "match": "(SEdge *)((int)",
       "severity": "mild",
-      "text": "puVar16 = (uint *)((int)puVar16 + (uint)bVar17 * -2 + 1);",
+      "text": "pSVar12 = (SEdge *)((int)pSVar12 + (uint)bVar17 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 317,
-      "match": "(SEdge *)((int)",
+      "line": 316,
+      "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "pSVar17 = (SEdge *)((int)pSVar17 + (uint)bVar17 * -2 + 1);",
+      "text": "puVar17 = (uint *)((int)puVar17 + (uint)bVar17 * -2 + 1);",
       "type": "pointer_cast"
     }
   ]

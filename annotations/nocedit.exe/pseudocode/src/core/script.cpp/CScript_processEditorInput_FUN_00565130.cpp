@@ -47,19 +47,19 @@ void __cdecl core_script_cpp_CScript_processEditorInput_FUN_00565130(CScript *th
   bVar2 = false;
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD4);
   if (iVar5 != 0) {
-    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_LEFT);
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_LEFT,0);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD6);
   if (iVar5 != 0) {
-    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_RIGHT);
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_RIGHT,0);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD2);
   if (iVar5 != 0) {
-    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_DOWN);
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_DOWN,0);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD8);
   if (iVar5 != 0) {
-    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_UP);
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_UP,0);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD7);
   if (iVar5 != 0) {
@@ -70,7 +70,7 @@ void __cdecl core_script_cpp_CScript_processEditorInput_FUN_00565130(CScript *th
     else {
       EVar9 = ACTION_TYPE_CTRL_HOME;
     }
-    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,EVar9);
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,EVar9,0);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD1);
   if (iVar5 != 0) {
@@ -81,15 +81,15 @@ void __cdecl core_script_cpp_CScript_processEditorInput_FUN_00565130(CScript *th
     else {
       EVar9 = ACTION_TYPE_CTRL_END;
     }
-    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,EVar9);
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,EVar9,0);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD3);
   if (iVar5 != 0) {
-    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_PAGE_DOWN);
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_PAGE_DOWN,0);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD9);
   if (iVar5 != 0) {
-    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_PAGE_UP);
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_PAGE_UP,0);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_DECIMAL);
   if (iVar5 != 0) {
@@ -106,7 +106,7 @@ void __cdecl core_script_cpp_CScript_processEditorInput_FUN_00565130(CScript *th
         EVar9 = ACTION_TYPE_SELECT_WORD;
       }
     }
-    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,EVar9);
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,EVar9,0);
   }
   iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_NUMPAD0);
   if (iVar5 != 0) {
@@ -123,24 +123,24 @@ void __cdecl core_script_cpp_CScript_processEditorInput_FUN_00565130(CScript *th
     else {
       EVar9 = ACTION_TYPE_COPY;
     }
-    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,EVar9);
+    core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,EVar9,0);
   }
 LAB_00565363:
   iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LCONTROL);
   if (iVar5 != 0) {
     iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_X);
     if (iVar5 != 0) {
-      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_SELECT_WORD);
+      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_SELECT_WORD,0);
       wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
     }
     iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
     if (iVar5 != 0) {
-      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_COPY);
+      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_COPY,0);
       wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
     }
     iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_V);
     if (iVar5 != 0) {
-      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_PASTE);
+      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_PASTE,0);
       wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
     }
   }
@@ -247,16 +247,16 @@ LAB_00565363:
       core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20
                 (g_ActiveControl,g_MouseX,g_MouseY,&g_CurrentEditingColumn,&g_CurrentEditingLine);
       if (g_MouseX <= g_ScriptTextAreaLeft) {
-        core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr_00,ACTION_TYPE_CURSOR_LEFT);
+        core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr_00,ACTION_TYPE_CURSOR_LEFT,0);
       }
       if (g_ScriptTextAreaRight <= g_MouseX) {
-        core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_RIGHT);
+        core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_RIGHT,0);
       }
       if (g_MouseY <= g_ScriptTextAreaTop) {
-        core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_UP);
+        core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_UP,0);
       }
       if (g_ScriptTextAreaBottom <= g_MouseY) {
-        core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_DOWN);
+        core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CURSOR_DOWN,0);
       }
       iStack_18 = 1;
     }
@@ -321,13 +321,13 @@ LAB_00565363:
             cVar4 = (char)uVar6;
             uVar6 = uVar6 & 0xff;
             if (uVar6 != 0xd) break;
-            core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_ENTER);
+            core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_ENTER,0);
           }
           if (uVar6 != 8) break;
-          core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_BACKSPACE);
+          core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_BACKSPACE,0);
         }
       } while (((g_CharacterClassificationTable[(byte)(cVar4 + 1)] & 8) == 0) && (uVar6 != 9));
-      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CUT);
+      core_script_cpp_CScript_editorAction_FUN_00564820(this_ptr,ACTION_TYPE_CUT,0);
       if (g_AutoIndentEnabled == 0) break;
       acStack_14[1] = 0;
       acStack_14[0] = cVar4;

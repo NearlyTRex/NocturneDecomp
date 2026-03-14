@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_GenuineIntel_0067d6c0
-;   undefined4 s__0067d6cc
+;   undefined4 s_GenuineIntel_0067d6c0+0xc
 ;   int g_CPUInfoBasicInfo2 = 0x1000c900
 ;   int g_CPUInfoBaseInfo3 = -0x22000000
 ;   byte g_CPUInfoFamily = 0x96
@@ -58,13 +58,13 @@ section .text
     MOV byte ptr [0x0067d6db],0x1       ; 00524f86 | g_CPUIDSupported
     XOR EAX,EAX                         ; 00524f8d
     CPUID                               ; 00524f8f
-    MOV dword ptr [0x0067d6cc],EBX      ; 00524f91 | s__0067d6cc
+    MOV dword ptr [0x0067d6cc],EBX      ; 00524f91 | s_GenuineIntel_0067d6c0+0xc
     MOV dword ptr [0x0067d6d0],EDX      ; 00524f97 | g_CPUInfoBasicInfo2
     MOV dword ptr [0x0067d6d4],ECX      ; 00524f9d | g_CPUInfoBaseInfo3
-    MOV ESI,0x67d6cc                    ; 00524fa3 | s__0067d6cc
+    MOV ESI,0x67d6cc                    ; 00524fa3 | s_GenuineIntel_0067d6c0+0xc
     MOV EDI,0x67d6c0                    ; 00524fa8 | = "GenuineIntel"
     MOV ECX,0x1                         ; 00524fad
-    CMPSB.REPE ES:EDI,ESI               ; 00524fb2 | = "GenuineIntel" | s__0067d6cc
+    CMPSB.REPE ES:EDI,ESI               ; 00524fb2 | = "GenuineIntel" | s_GenuineIntel_0067d6c0+0xc
     OR ECX,ECX                          ; 00524fb4
     JNZ 0x00524ff2                      ; 00524fb6
         ;   XREF to: 00524ff2 (CONDITIONAL_JUMP)  ; LAB_00524ff2

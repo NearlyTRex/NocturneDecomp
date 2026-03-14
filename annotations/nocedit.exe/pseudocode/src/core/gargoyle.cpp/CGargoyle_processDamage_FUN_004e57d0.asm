@@ -117,7 +117,7 @@ section .text
     PUSH 0x0                            ; 004e58b1
     PUSH ESI                            ; 004e58b3
     CALL core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 ; 004e58b4
-        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force)
+        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force, int render_in_background)
     ADD ESP,0x10                        ; 004e58b9
     PUSH EDI                            ; 004e58bc
         ;   Label: LAB_004e58bc

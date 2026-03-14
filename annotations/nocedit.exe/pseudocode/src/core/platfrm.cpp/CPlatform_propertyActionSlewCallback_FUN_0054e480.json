@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 22,
+    "complexity_score": 37,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
     "total_lines": 54
   },
   "cross_references": [
@@ -63,6 +65,26 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0054eb47",
+        "call_type": "direct",
+        "caller": "core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.0952380952380953,
     "instruction_count": 21,
@@ -107,5 +129,17 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
 }

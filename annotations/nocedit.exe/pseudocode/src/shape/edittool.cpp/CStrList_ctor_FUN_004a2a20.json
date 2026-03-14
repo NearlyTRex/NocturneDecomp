@@ -183,6 +183,125 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 31,
+    "call_sites": [
+      {
+        "call_addr": "005671c0",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_extractCrossReferences_FUN_005671a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005b2461",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_playSfxInternal_FUN_005b1fd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004bc662",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004bd762",
+        "call_type": "direct",
+        "caller": "core_fileman.cpp_preprocessMusicFiles_FUN_004bd750",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0053b042",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0053b522",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00561a42",
+        "call_type": "direct",
+        "caller": "core_script.cpp_parseConditionExpression_FUN_00561a30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004bcf03",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_managePodMounts_FUN_004bcec0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00596084",
+        "call_type": "direct",
+        "caller": "core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005ad0a6",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 2.8333333333333335,
     "instruction_count": 6,
@@ -211,5 +330,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStrList",
+        "offset": 0,
+        "vtable_addr": "0065d4f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 25,
+    "complexity_score": 40,
     "cross_reference_count": 39,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 10,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "param_count_too_few",
       "special_math_intrinsic"
     ],
     "total_lines": 43
@@ -277,6 +278,125 @@
       "value": "-1"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "0047c520",
+        "call_type": "direct",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_scale_FUN_0047c4d0",
+        "estimated_params": 0,
+        "instructions_analyzed": 8,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005a5fe0",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a8360",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00549c21",
+        "call_type": "direct",
+        "caller": "core_pendulum.cpp_CPendulum_updateSwing_FUN_00549b90",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d1ee2",
+        "call_type": "direct",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_004d1ec0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00537142",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_drawMotionBar_FUN_00536e20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005a0d63",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "006001c3",
+        "call_type": "direct",
+        "caller": "crt_math.c_ceil_FUN_006001b2",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004258c4",
+        "call_type": "direct",
+        "caller": "core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_004257f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047c3c4",
+        "call_type": "direct",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.758620689655173,
     "instruction_count": 29,
@@ -335,6 +455,17 @@
     ]
   },
   "suspects": [
+    {
+      "call_site_count": 50,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
+    },
     {
       "address": "005feb90",
       "description": "Math library function with FPU stack or unusual patterns",

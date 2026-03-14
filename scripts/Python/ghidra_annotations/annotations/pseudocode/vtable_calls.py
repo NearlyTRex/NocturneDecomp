@@ -307,17 +307,37 @@ def analyze_indirect_call_in_asm(asm_path, vtable_offset):
             except ValueError:
                 continue
 
-        # Count PUSHes before this call (scan backward)
-        push_count = 0
-        for j in range(i - 1, max(0, i - 30), -1):
-            prev_line = lines[j].strip().upper()
-
-            # Stop at function boundaries or other calls
-            if any(x in prev_line for x in ['CALL ', 'RET', 'RETN', 'JMP ']):
+        # Primary method: scan FORWARD for ADD ESP,N (handles early pushes)
+        stack_params = None
+        method = 'push_count'
+        for j in range(i + 1, min(len(lines), i + 15)):
+            next_line = lines[j].strip().upper()
+            # Stop at boundaries
+            if any(x in next_line for x in ['CALL ', 'RET', 'RETN']):
+                break
+            if next_line.startswith('PUSH '):
+                break
+            add_match = re.match(r'ADD\s+ESP,\s*(0x[0-9A-Fa-f]+|\d+)', next_line)
+            if add_match:
+                val_str = add_match.group(1)
+                stack_bytes = int(val_str, 16) if val_str.lower().startswith('0x') else int(val_str)
+                stack_params = stack_bytes // 4
+                method = 'add_esp'
                 break
 
-            if prev_line.startswith('PUSH '):
-                push_count += 1
+        # Fallback: count PUSHes before this call (scan backward)
+        if stack_params is None:
+            push_count = 0
+            for j in range(i - 1, max(0, i - 30), -1):
+                prev_line = lines[j].strip().upper()
+
+                # Stop at function boundaries or other calls
+                if any(x in prev_line for x in ['CALL ', 'RET', 'RETN', 'JMP ']):
+                    break
+
+                if prev_line.startswith('PUSH '):
+                    push_count += 1
+            stack_params = push_count
 
         # Extract call address from the line if available
         addr_match = re.search(r';\s*([0-9a-fA-F]+)', line)
@@ -325,7 +345,8 @@ def analyze_indirect_call_in_asm(asm_path, vtable_offset):
 
         results.append({
             'call_addr': call_addr,
-            'estimated_params': push_count,
+            'estimated_params': stack_params,
+            'method': method,
             'line_num': i + 1
         })
 

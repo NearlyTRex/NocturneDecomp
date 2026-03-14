@@ -8,6 +8,7 @@
 #include "types/classes/CDemonCamera.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
 #include "types/structs/SEdge.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
@@ -60,6 +61,10 @@ extern CDemonFilter CDemonFilter_ARRAY_008229ec[8];
 extern CKeyFramedModelInstance g_CKeyFramedModelInstanceInstance;
 extern CKeyFramedModelInstance CKeyFramedModelInstance_00823a98;
 
+// CVector3f
+extern CVector3f CVector3f_00822c88;
+extern CVector3f CVector3f_00822c94;
+
 // SEdge[512]
 extern SEdge g_TracedEdgeBuffer[512];
 
@@ -94,12 +99,6 @@ extern char g_ActorDebugBuffer[52];
 
 // float
 extern float FLOAT_008224dc;
-extern float FLOAT_00822c88;
-extern float FLOAT_00822c8c;
-extern float FLOAT_00822c90;
-extern float FLOAT_00822c94;
-extern float FLOAT_00822c98;
-extern float FLOAT_00822c9c;
 
 // float[12][12]
 extern float g_BugsGroundHeightGridTemp[12][12];

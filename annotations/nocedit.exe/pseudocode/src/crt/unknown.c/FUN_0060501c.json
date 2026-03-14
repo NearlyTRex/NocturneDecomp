@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 116,
+    "complexity_score": 131,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 21,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
+      "param_count_too_few",
       "special_crt_function",
       "undefined_data",
       "unnamed_param"
@@ -50,6 +51,30 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00605098",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_scanf_scanset_FUN_00605064",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 5
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.966666666666667,
     "instruction_count": 30,
@@ -143,6 +168,17 @@
       "severity": "mild",
       "text": "*pbVar1 = *pbVar1 | (&DAT_00685030)[uVar2 & 7];",
       "type": "undefined_data"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "type": "param_count_too_few"
     },
     {
       "address": "0060501c",

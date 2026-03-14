@@ -127,7 +127,7 @@ section .text
     MOV ECX,0x41                        ; 004b86fa
     LEA EDI,[ESP + 0x1da0]              ; 004b86ff
     MOV ESI,0x679f48                    ; 004b8706 | g_DefaultPodDirectoryPath
-    MOVSD.REP ES:EDI,ESI                ; 004b870b | g_DefaultPodDirectoryPath | s__00679f4c
+    MOVSD.REP ES:EDI,ESI                ; 004b870b | g_DefaultPodDirectoryPath | g_DefaultPodDirectoryPath+4
     TEST EBX,EBX                        ; 004b870d
     JZ 0x004b8734                       ; 004b870f
         ;   XREF to: 004b8734 (CONDITIONAL_JUMP)  ; LAB_004b8734
@@ -819,13 +819,13 @@ section .text
     LEA EDI,[ESP + 0x1da0]              ; 004b8fe6
     PUSH EDI                            ; 004b8fed
         ;   Label: LAB_004b8fed
-    MOV AL,byte ptr [ESI]               ; 004b8fee | = "PODs not changed." | s_Ds_not_changed._00628aa1 | s_To_apply_these_changes_y_00628b24
+    MOV AL,byte ptr [ESI]               ; 004b8fee | = "PODs not changed." | s_PODs_not_changed_00628a9f+2 | s_To_apply_these_changes_y_00628b24
         ;   Label: LAB_004b8fee
     MOV byte ptr [EDI],AL               ; 004b8ff0
     CMP AL,0x0                          ; 004b8ff2
     JZ 0x004b9006                       ; 004b8ff4
         ;   XREF to: 004b9006 (CONDITIONAL_JUMP)  ; LAB_004b9006
-    MOV AL,byte ptr [ESI + 0x1]         ; 004b8ff6 | s_ODs_not_changed._00628aa0 | s_s_not_changed._00628aa2 | s_o_apply_these_changes,_you_shoul_00628b25
+    MOV AL,byte ptr [ESI + 0x1]         ; 004b8ff6 | s_PODs_not_changed_00628a9f+1 | s_s_not_changed._00628aa2 | s_o_apply_these_changes,_you_shoul_00628b25
     ADD ESI,0x2                         ; 004b8ff9
     MOV byte ptr [EDI + 0x1],AL         ; 004b8ffc
     ADD EDI,0x2                         ; 004b8fff

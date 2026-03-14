@@ -113,6 +113,103 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "004f7cc9",
+        "call_type": "direct",
+        "caller": "core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004f7cb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005da629",
+        "call_type": "direct",
+        "caller": "core_tbplayer.cpp_CBassPlayer_dtor_FUN_005da610",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f24ae",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_dtor_FUN_004f2470",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f4473",
+        "call_type": "direct",
+        "caller": "core_hiram.cpp_CHiram_dtor_FUN_004f4450",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f4719",
+        "call_type": "direct",
+        "caller": "core_npc.cpp_CNPC_dtor_FUN_004f4700",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f6b79",
+        "call_type": "direct",
+        "caller": "core_hostage.cpp_CHostage_dtor_FUN_004f6b60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005da559",
+        "call_type": "direct",
+        "caller": "core_tbplayer.cpp_CDrummer_dtor_FUN_005da540",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00545c7a",
+        "call_type": "direct",
+        "caller": "core_passngr.cpp_CPassenger_dtor_FUN_00545c10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.229166666666667,
     "instruction_count": 48,
@@ -180,5 +277,16 @@
       "text": "((void *)((int)g_PathMapList + iVar2),(void *)((int)g_PathMapList + iVar2 + 4),",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPathMap",
+        "offset": 8,
+        "vtable_addr": "00662114"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

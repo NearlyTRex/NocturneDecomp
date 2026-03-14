@@ -64,6 +64,59 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0060cbe5",
+        "call_type": "direct",
+        "caller": "crt_tls.c_register_thread_data_FUN_0060cbd0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0060a24e",
+        "call_type": "direct",
+        "caller": "crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00609f54",
+        "call_type": "direct",
+        "caller": "crt_sync.c_allocate_critical_section_FUN_00609f24",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0060cb57",
+        "call_type": "direct",
+        "caller": "crt_tls.c_getThreadLocalData_FUN_0060caf8",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.6,
     "instruction_count": 15,

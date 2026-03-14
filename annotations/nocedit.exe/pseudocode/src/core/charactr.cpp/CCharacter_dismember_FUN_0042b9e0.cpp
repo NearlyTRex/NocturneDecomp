@@ -2,11 +2,11 @@
 // Address: 0042b9e0
 // Address Range: [[0042b9e0, 0042bb48] [0042bbf4, 0042bc1f]]
 // Convention: __cdecl
-// Signature: void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force)
+// Signature: void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force,int render_in_background)
 
 #include "nocturne.h"
 
-void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force)
+void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *this_ptr,CVector3f *impact_point,float impact_force,int render_in_background)
 
 {
   int iVar1;
@@ -14,7 +14,6 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *thi
   CBoundingBox3D *pCVar2;
   float fVar2;
   int part_index;
-  int in_stack_00000010;
   float local_b0;
   CMatrix3x3f local_ac;
   CBoundingBox3D local_84;
@@ -62,7 +61,7 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter *thi
             initial_velocity = &local_48;
           }
           core_charactr_cpp_CCharacter_detachBodyPart_FUN_0042bcc0
-                    (this_ptr,part_index,initial_velocity,in_stack_00000010);
+                    (this_ptr,part_index,initial_velocity,render_in_background);
           part_index = part_index + 1;
         } while (part_index < iVar1);
       }

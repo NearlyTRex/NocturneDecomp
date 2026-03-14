@@ -87,7 +87,7 @@ int __cdecl engine_dosio_c_getFileTimestamp_FUN_00481960(char *directory,char *f
 int __cdecl engine_dosio_c_setFileAttributes_FUN_004819f0(char *filename,byte flags);
 int __cdecl engine_dosio_c_truncateFile_FUN_00481a20(_FILE *file_handle,long new_size_bytes);
 _FILE * __cdecl engine_dosio_c_getFile_FUN_00481a50(char *directory,char *filename,char *mode);
-void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50(char *directory_path,char *filename,byte file_mode_flags,ifstream *file_stream);
+void __cdecl engine_dosio_c_reopenFileStream_FUN_00481b50(char *directory_path,char *filename,uint mode_flags,ifstream *file_stream);
 CFileFinder * __cdecl engine_dosio_c_CFileFinder_ctor_FUN_00481c30(CFileFinder *this_ptr);
 CFileFinder * __cdecl engine_dosio_c_CFileFinder_dtor_FUN_00481c50(CFileFinder *this_ptr,uint flags);
 int __cdecl engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(CFileFinder *this_ptr,char *search_pattern);

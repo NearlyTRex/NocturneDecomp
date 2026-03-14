@@ -37,7 +37,7 @@ void __cdecl engine_2d_c_drawTextMultiline_FUN_00401cf0(char *text,int x_start,i
         x_pos = x_pos + g_FontTable[char_code - 0x20].width + 1;
       }
       iVar4 = iVar4 + 1;
-      text = (char *)((byte *)text + 1);
+      text = text + 1;
     } while (iVar4 < (int)(~uVar2 - 1));
   }
   return;

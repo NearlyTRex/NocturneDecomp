@@ -28,7 +28,7 @@
 ;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   CEventList g_CEventListInstance
 ;   char[256] g_EventErrorMessageBuffer
-;   undefined4 CHAR_ARRAY_02d0a461
+;   undefined4 g_EventErrorMessageBuffer+1
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -82,13 +82,13 @@ section .text
     PUSH EDI                            ; 004aa441 | g_EventErrorMessageBuffer
     MOV AL,byte ptr [ESI]               ; 004aa442 | = "Must specify actor name" | s_st_specify_actor_name_0062444e
         ;   Label: LAB_004aa442
-    MOV byte ptr [EDI],AL               ; 004aa444 | g_EventErrorMessageBuffer | CHAR_ARRAY_02d0a462
+    MOV byte ptr [EDI],AL               ; 004aa444 | g_EventErrorMessageBuffer | g_EventErrorMessageBuffer+2
     CMP AL,0x0                          ; 004aa446
     JZ 0x004aa45a                       ; 004aa448
         ;   XREF to: 004aa45a (CONDITIONAL_JUMP)  ; LAB_004aa45a
     MOV AL,byte ptr [ESI + 0x1]         ; 004aa44a | s_ust_specify_actor_name_0062444d | s_t_specify_actor_name_0062444f
     ADD ESI,0x2                         ; 004aa44d
-    MOV byte ptr [EDI + 0x1],AL         ; 004aa450 | CHAR_ARRAY_02d0a461 | DAT_02d0a463
+    MOV byte ptr [EDI + 0x1],AL         ; 004aa450 | g_EventErrorMessageBuffer+1 | DAT_02d0a463
     ADD EDI,0x2                         ; 004aa453
     CMP AL,0x0                          ; 004aa456
     JNZ 0x004aa442                      ; 004aa458

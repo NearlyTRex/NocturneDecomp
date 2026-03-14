@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 23,
+    "complexity_score": 38,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_few"
+    ],
     "total_lines": 80
   },
   "cross_references": [
@@ -44,6 +46,59 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0053320f",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00532cf4",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00532ed5",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "005329ff",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.666666666666667,
     "instruction_count": 48,
@@ -118,5 +173,17 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_site_count": 4,
+      "declared_params": 4,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:4 vs estimated:5",
+      "param_delta": 1,
+      "text": "Function declares 4 params but call sites push 5 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
 }

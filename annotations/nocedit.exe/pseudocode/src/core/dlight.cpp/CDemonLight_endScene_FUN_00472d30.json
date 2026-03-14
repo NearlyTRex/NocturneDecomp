@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 56,
+    "complexity_score": 41,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 41,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 138
   },
   "cross_references": [
@@ -55,7 +53,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_dlight.cpp_CDemonLight_endScene_FUN_00472d30",
-    "signature": "void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this_ptr)"
+    "signature": "void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this_ptr,int restore_viewport_state)"
   },
   "function_calls": [
     {
@@ -143,8 +141,10 @@
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80",
         "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -152,8 +152,10 @@
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0056be80",
         "estimated_params": 2,
-        "instructions_analyzed": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -161,8 +163,10 @@
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10",
         "estimated_params": 2,
-        "instructions_analyzed": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -170,8 +174,10 @@
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50",
         "estimated_params": 2,
-        "instructions_analyzed": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       },
       {
@@ -179,13 +185,16 @@
         "call_type": "direct",
         "caller": "core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990",
         "estimated_params": 2,
-        "instructions_analyzed": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 8,
         "stack_params": 2
       }
     ],
     "confidence": "high",
-    "declared_params": 1,
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -224,10 +233,10 @@
     "pcode_op_count": 351
   },
   "stack_frame": {
-    "frame_size": 8,
+    "frame_size": 12,
     "local_size": 4,
     "param_offset": 4,
-    "param_size": 4,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -236,6 +245,13 @@
         "offset": 4,
         "size": 4,
         "type": "CDemonLight *"
+      },
+      {
+        "is_param": true,
+        "name": "restore_viewport_state",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
       }
     ]
   },
@@ -256,17 +272,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "call_site_count": 5,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

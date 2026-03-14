@@ -345,7 +345,7 @@ LAB_004aad41:
         local_ec = local_ec + 1;
         if (local_f0 != 0) {
           core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10
-                    (g_CFireEffectPtr,&local_128,local_e0[0],0x44bb8000);
+                    (g_CFireEffectPtr,&local_128,local_e0[0],1500.0,local_e0[1]);
         }
       }
       else {

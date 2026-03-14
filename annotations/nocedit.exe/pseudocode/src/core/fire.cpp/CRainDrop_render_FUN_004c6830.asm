@@ -250,7 +250,7 @@ section .text
     MOV dword ptr [0x00688060],EBX      ; 004c6aab | g_RenderVertexBuffer[1].v
     MOV dword ptr [0x0068808c],ECX      ; 004c6ab1 | g_RenderVertexBuffer[2].u
     MOV dword ptr [0x006880bc],ECX      ; 004c6ab7 | g_RenderVertexBuffer[3].u
-    MOV EDX,0x900000                    ; 004c6abd | CHAR_ARRAY_00900000
+    MOV EDX,0x900000                    ; 004c6abd | g_CameraLoadImageReadBuffer+0x771b0
     MOV dword ptr [ESP + 0x98],EAX      ; 004c6ac2
     MOV dword ptr [0x00688090],EDX      ; 004c6ac9 | g_RenderVertexBuffer[2].v
     CALL crt_math.c_round_FUN_005fe6b0  ; 004c6acf

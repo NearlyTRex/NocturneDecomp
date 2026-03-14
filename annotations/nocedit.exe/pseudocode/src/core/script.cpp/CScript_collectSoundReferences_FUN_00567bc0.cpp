@@ -33,7 +33,7 @@ void __cdecl core_script_cpp_CScript_collectSoundReferences_FUN_00567bc0(CScript
         if ((2 < iVar2) && (iVar4 = 0, 0 < local_2274.param_count)) {
           iVar3 = 0;
           do {
-            if (*(int *)(local_14c + iVar3 + -0x1e00) == 0xd) {
+            if (*(int *)(local_2274.params[0].modifier_string + iVar3 + -4) == 0xd) {
               _sprintf
                         (local_14c,"%s\tScript line %d",
                          local_2274.params[0].parsed_value + iVar3,

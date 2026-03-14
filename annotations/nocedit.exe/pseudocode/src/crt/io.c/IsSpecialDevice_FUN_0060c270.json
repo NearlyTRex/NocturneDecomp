@@ -89,6 +89,48 @@
       "value": "00000000"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "006088e7",
+        "call_type": "direct",
+        "caller": "crt_io.c_getFileTypeFlags_FUN_006088b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00608eef",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00609275",
+        "call_type": "direct",
+        "caller": "crt_stdio.c_CreateFileImpl_FUN_006090a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.405405405405405,
     "instruction_count": 37,

@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 56,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 11,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "special_crt_function"
     ],
@@ -50,15 +49,18 @@
         "call_addr": "00601282",
         "call_type": "direct",
         "caller": "crt_memory.c___vec_new_FUN_00601272",
-        "estimated_params": 4,
-        "instructions_analyzed": 7,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 4
+        "stack_bytes": 12,
+        "stack_params": 3
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 3,
-    "estimated_params": 4
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.066666666666666,
@@ -120,17 +122,6 @@
       "severity": "mild",
       "text": "((void *)((int)dest + 4),element_count,type_info);",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 3,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 4,
-      "fix_type": "add_params",
-      "match": "declared:3 vs estimated:4",
-      "param_delta": 1,
-      "text": "Function declares 3 params but call sites push 4 (1 missing)",
-      "type": "param_count_too_few"
     },
     {
       "address": "00601232",

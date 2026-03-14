@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 28,
+    "complexity_score": 13,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 39
   },
   "cross_references": [
@@ -47,15 +45,18 @@
         "call_addr": "004c8f7b",
         "call_type": "direct",
         "caller": "core_fire.cpp_CFireEffect_createLightningBolt_FUN_004c8f50",
-        "estimated_params": 5,
-        "instructions_analyzed": 13,
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 16,
+        "stack_params": 4
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 4,
-    "estimated_params": 5
+    "declared_stack_bytes": 16,
+    "estimated_params": 4
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.0476190476190474,
@@ -116,17 +117,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 4,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:4 vs estimated:5",
-      "param_delta": 1,
-      "text": "Function declares 4 params but call sites push 5 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

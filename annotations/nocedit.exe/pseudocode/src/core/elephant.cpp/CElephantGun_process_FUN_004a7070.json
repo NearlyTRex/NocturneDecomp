@@ -1,29 +1,22 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 16,
-        "line": 40,
-        "message": "C-style cast from 'CElephantGun *' to 'float' is not allowed"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 77,
-    "complexity_score": 48,
+    "assembly_lines": 78,
+    "complexity_score": 56,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 1,
+    "pseudocode_lines": 31,
+    "suspect_count": 2,
     "suspect_types": [
-      "warning_unmapped_variable"
+      "unaffected_reg"
     ],
-    "total_lines": 110
+    "total_lines": 109
   },
   "cross_references": [],
   "function": {
@@ -144,6 +137,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
+    "declared_stack_bytes": 8,
     "estimated_params": 2
   },
   "pcode_summary": {
@@ -175,10 +169,10 @@
     "pcode_op_count": 266
   },
   "stack_frame": {
-    "frame_size": 52,
+    "frame_size": 44,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 16,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -212,7 +206,7 @@
       {
         "is_param": true,
         "name": "delta_time",
-        "offset": 16,
+        "offset": 8,
         "size": 4,
         "type": "float"
       }
@@ -220,12 +214,20 @@
   },
   "suspects": [
     {
-      "description": "Variable defined which should be unmapped",
-      "line": 2,
-      "match": "WARNING: Variable defined which should be unmapped",
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "/* WARNING: Variable defined which should be unmapped: local_20 */",
-      "type": "warning_unmapped_variable"
+      "text": "CVector3f *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,unaff_ESI);",
+      "type": "unaffected_reg"
     }
   ],
   "vtable_info": {

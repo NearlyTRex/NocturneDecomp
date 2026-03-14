@@ -13,7 +13,7 @@ void __cdecl CSlew::init(CSlew *this_ptr);
 
 // Original: core_slew.cpp_CSlew_free_FUN_005a20a0
 // Address: 005a20a0
-void __cdecl CSlew::free(void);
+void __cdecl CSlew::free(CSlew *this_ptr);
 
 // Original: core_slew.cpp_CSlew_processInput_FUN_005a20b0
 // Address: 005a20b0

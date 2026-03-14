@@ -2,11 +2,11 @@
 // Address: 00434690
 // Address Range: [[00434690, 0043486c]]
 // Convention: __cdecl
-// Signature: char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filename,char *buffer,int width,int height,void *optional_param)
+// Signature: char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filename,char *buffer,int width,int height,int apply_palette,int palette_index)
 
 #include "nocturne.h"
 
-char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filename,char *buffer,int width,int height,void *optional_param)
+char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filename,char *buffer,int width,int height,int apply_palette,int palette_index)
 
 {
   int size;
@@ -14,7 +14,6 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filen
   int iVar1;
   uint uVar1;
   char *pcVar2;
-  int in_stack_00000018;
   char local_6c [80];
   int local_1c;
   uint local_18;
@@ -63,9 +62,9 @@ char * __cdecl cockpit_ckptutil_c_loadRotatedBitmapFile_FUN_00434690(char *filen
     } while (local_18 < (uint)height);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\ckptutil.c",0x7de);
-  if (optional_param == (void *)0x0) {
+  if (apply_palette == 0) {
     return buffer;
   }
-  cockpit_ckptutil_c_applyActPalette_FUN_004319b0(filename,buffer,size,in_stack_00000018);
+  cockpit_ckptutil_c_applyActPalette_FUN_004319b0(filename,buffer,size,palette_index);
   return buffer;
 }

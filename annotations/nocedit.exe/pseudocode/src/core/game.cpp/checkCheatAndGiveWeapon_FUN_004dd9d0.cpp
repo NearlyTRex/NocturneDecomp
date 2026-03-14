@@ -32,7 +32,7 @@ void __cdecl core_game_cpp_checkCheatAndGiveWeapon_FUN_004dd9d0(char *cheat_code
     if (bVar2 == uVar3) {
       iVar6 = iVar6 + 1;
     }
-    cheat_code = (char *)((byte *)cheat_code + 1);
+    cheat_code = cheat_code + 1;
   }
   if (iVar6 != ~uVar4 - 1) {
     return;

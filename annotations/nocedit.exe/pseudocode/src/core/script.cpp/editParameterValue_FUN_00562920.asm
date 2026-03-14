@@ -2020,13 +2020,13 @@ section .text
     PUSH EDI                            ; 00563b67 | g_ScriptTempBuffer
     MOV AL,byte ptr [ESI]               ; 00563b68
         ;   Label: LAB_00563b68
-    MOV byte ptr [EDI],AL               ; 00563b6a | g_ScriptTempBuffer | CHAR_ARRAY_0310a9ea
+    MOV byte ptr [EDI],AL               ; 00563b6a | g_ScriptTempBuffer | g_ScriptTempBuffer+2
     CMP AL,0x0                          ; 00563b6c
     JZ 0x00563b80                       ; 00563b6e
         ;   XREF to: 00563b80 (CONDITIONAL_JUMP)  ; LAB_00563b80
     MOV AL,byte ptr [ESI + 0x1]         ; 00563b70
     ADD ESI,0x2                         ; 00563b73
-    MOV byte ptr [EDI + 0x1],AL         ; 00563b76 | CHAR_ARRAY_0310a9e9 | DAT_0310a9eb
+    MOV byte ptr [EDI + 0x1],AL         ; 00563b76 | g_ScriptTempBuffer+1 | DAT_0310a9eb
     ADD EDI,0x2                         ; 00563b79
     CMP AL,0x0                          ; 00563b7c
     JNZ 0x00563b68                      ; 00563b7e
@@ -2413,7 +2413,7 @@ section .text
     MOV AL,0x0                          ; 00563f32
     SCASB.REPNE ES:EDI                  ; 00563f34
     DEC EDI                             ; 00563f36
-    MOV AL,byte ptr [ESI]               ; 00563f37 | s_EmptyChar_00643d07 | s__00643d09
+    MOV AL,byte ptr [ESI]               ; 00563f37 | s_EmptyChar_00643d07 | s_anon_00643d08+1
         ;   Label: LAB_00563f37
     MOV byte ptr [EDI],AL               ; 00563f39
     CMP AL,0x0                          ; 00563f3b

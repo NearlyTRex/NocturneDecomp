@@ -1,10 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl engine_3d_c_makeGrayscaleColor_FUN_004039c0(int intensity)
+; uint __cdecl engine_3d_c_makeGrayscaleColor_FUN_004039c0(int color_value,int lighting_value)
 ;
 ; Parameters:
-; int              Stack[0x4]:4   intensity
+; int              Stack[0x4]:4   color_value
+; int              Stack[0x8]:4   lighting_value
 ;
 ; XREF[5]:
 ;   engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0 at 00404b5e

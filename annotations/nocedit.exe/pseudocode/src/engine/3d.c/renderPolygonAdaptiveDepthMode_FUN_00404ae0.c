@@ -76,7 +76,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveDepthMode_FUN_004
     g_CurrentLightingValue =
          engine_light_cpp_calculateLighting_FUN_00505780
                    ((prim->surface_normal).A,(prim->surface_normal).B,(prim->surface_normal).C);
-    g_ActiveRenderColor = engine_3d_c_makeGrayscaleColor_FUN_004039c0(g_CurrentPolygonColor);
+    g_ActiveRenderColor =
+         engine_3d_c_makeGrayscaleColor_FUN_004039c0(g_CurrentPolygonColor,g_CurrentLightingValue);
     engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,(int *)(prim + 1));
   }
   return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);

@@ -10,7 +10,7 @@ typedef struct CExplosion {
     CVector3f position; // 0x0
     float lifetime; // 0xc
     float scale; // 0x10
-    int damage_amount; // 0x14
+    float gore_multiplier; // 0x14
     int flip_flag; // 0x18
 } CExplosion;
 

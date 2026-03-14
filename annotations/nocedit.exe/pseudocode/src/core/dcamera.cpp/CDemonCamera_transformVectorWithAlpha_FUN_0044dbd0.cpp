@@ -64,22 +64,16 @@ CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_
   }
   lVar1 = (longlong)this_ptr->alpha_transform_matrices[9][iVar4] * (longlong)(int)uVar7;
   lVar2 = (longlong)this_ptr->alpha_transform_matrices[0xc][iVar4] * (longlong)(int)uVar8;
-  lVar3 = (longlong)
-          *(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -10) + iVar4 * 4) *
-          (longlong)(int)uVar9;
+  lVar3 = (longlong)this_ptr->alpha_transform_matrices[0xf][iVar4] * (longlong)(int)uVar9;
   lVar4 = (longlong)this_ptr->alpha_transform_matrices[10][iVar4] * (longlong)(int)uVar7;
   lVar5 = (longlong)this_ptr->alpha_transform_matrices[0xd][iVar4] * (longlong)(int)uVar8;
-  lVar6 = (longlong)
-          *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + iVar4 * 4 + -0x58) *
-          (longlong)(int)uVar9;
+  lVar6 = (longlong)this_ptr->alpha_transform_matrices[0x10][iVar4] * (longlong)(int)uVar9;
   local_14 = ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
              ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) +
              ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);
   lVar4 = (longlong)this_ptr->alpha_transform_matrices[0xb][iVar4] * (longlong)(int)uVar7;
   lVar5 = (longlong)this_ptr->alpha_transform_matrices[0xe][iVar4] * (longlong)(int)uVar8;
-  lVar6 = (longlong)
-          *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + iVar4 * 4 + -0x38) *
-          (longlong)(int)uVar9;
+  lVar6 = (longlong)this_ptr->alpha_transform_matrices[0x11][iVar4] * (longlong)(int)uVar9;
   local_10 = ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
              ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10) +
              ((uint)lVar6 >> 0x10 | (int)((ulonglong)lVar6 >> 0x20) << 0x10);

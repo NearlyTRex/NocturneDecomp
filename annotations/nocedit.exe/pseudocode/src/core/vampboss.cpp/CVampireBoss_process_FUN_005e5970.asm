@@ -1222,7 +1222,7 @@ section .text
     PUSH EBX                            ; 005e66f4
     MOV EDI,ESI                         ; 005e66f5
     CALL core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 ; 005e66f7
-        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force)
+        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force, int render_in_background)
     ADD ESP,0x10                        ; 005e66fc
     XOR EAX,EAX                         ; 005e66ff
     XOR EDI,ESI                         ; 005e6701

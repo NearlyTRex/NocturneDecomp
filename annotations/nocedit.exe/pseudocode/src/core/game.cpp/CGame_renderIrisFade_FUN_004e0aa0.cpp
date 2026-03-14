@@ -11,16 +11,15 @@
 void __cdecl core_game_cpp_CGame_renderIrisFade_FUN_004e0aa0(CGame *this_ptr)
 
 {
+  float fVar1;
   int iVar2;
   uint *puVar3;
   int iVar4;
   int iVar5;
-  CGame *in_stack_ffffffec;
-  float fVar1;
   
   if (g_IrisFadeType != 0) {
     if (((g_IrisFadeType < 4) && (g_IrisFadeType != 1)) && (0x3f7fffff < (int)g_IrisFadeRadius)) {
-      core_game_cpp_CGame_calculateIrisFadeCenter_FUN_004e09a0(in_stack_ffffffec);
+      core_game_cpp_calculateIrisFadeCenter_FUN_004e09a0();
       if (g_BitsPerPixel == 0x20) {
         fVar1 = g_IrisFadeRadius * g_IrisFadeRadius;
         iVar5 = 0;

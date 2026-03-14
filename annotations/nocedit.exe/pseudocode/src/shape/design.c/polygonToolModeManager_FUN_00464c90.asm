@@ -20,12 +20,12 @@
 ;   void* switchdataD_00465044 = 00464faf
 ;   char s_EmptyChar_0061c3e2 = \x00
 ;   TerminatedCString s_Mouse_polygon_selection__0061c3e3
-;   undefined4 s_ouse_polygon_selection_on_0061c3e4
-;   undefined4 s_use_polygon_selection_on_0061c3e5
+;   undefined4 s_Mouse_polygon_selection__0061c3e3+1
+;   undefined4 s_Mouse_polygon_selection__0061c3e3+2
 ;   undefined4 s_se_polygon_selection_on_0061c3e6
 ;   char s_EmptyChar_0061c3fe = \x00
 ;   TerminatedCString s_Polygon_merger_tol_4_2f__0061c3ff
-;   undefined4 s_-_Polygon_merger_(tol_=_%4.2f_de_0061c400
+;   undefined4 s_Polygon_merger_tol_4_2f__0061c3ff+1
 ;   undefined4 s_Polygon_merger_(tol_=_%4.2f_degs_0061c401
 ;   TerminatedCString s_Polygon_attacher_tol_4_2_0061c424
 ;   TerminatedCString s_Polygon_detacher_0061c44c
@@ -96,15 +96,15 @@ section .text
     MOV ESI,0x66eda8                    ; 00464d03 | g_LoadedModelName
     MOV EDI,0x15c4890                   ; 00464d08 | g_SavedModelName
     PUSH EDI                            ; 00464d0d | g_SavedModelName
-    MOV AL,byte ptr [ESI]               ; 00464d0e | g_LoadedModelName | s__0066edaa
+    MOV AL,byte ptr [ESI]               ; 00464d0e | g_LoadedModelName | g_LoadedModelName+2
         ;   Label: LAB_00464d0e
-    MOV byte ptr [EDI],AL               ; 00464d10 | g_SavedModelName | CHAR_ARRAY_015c4892
+    MOV byte ptr [EDI],AL               ; 00464d10 | g_SavedModelName | g_SavedModelName+2
     CMP AL,0x0                          ; 00464d12
     JZ 0x00464d26                       ; 00464d14
         ;   XREF to: 00464d26 (CONDITIONAL_JUMP)  ; LAB_00464d26
-    MOV AL,byte ptr [ESI + 0x1]         ; 00464d16 | s__0066eda9 | DAT_0066edab
+    MOV AL,byte ptr [ESI + 0x1]         ; 00464d16 | g_LoadedModelName+1 | DAT_0066edab
     ADD ESI,0x2                         ; 00464d19
-    MOV byte ptr [EDI + 0x1],AL         ; 00464d1c | CHAR_ARRAY_015c4891 | DAT_015c4893
+    MOV byte ptr [EDI + 0x1],AL         ; 00464d1c | g_SavedModelName+1 | DAT_015c4893
     ADD EDI,0x2                         ; 00464d1f
     CMP AL,0x0                          ; 00464d22
     JNZ 0x00464d0e                      ; 00464d24
@@ -320,13 +320,13 @@ section .text
         ;   Label: LAB_00464f58
     LEA EDI,[EBP + 0xffffff58]          ; 00464f5d
     PUSH EDI                            ; 00464f63
-    MOV AL,byte ptr [ESI]               ; 00464f64 | = "Mouse polygon selection on" | s_use_polygon_selection_on_0061c3e5
+    MOV AL,byte ptr [ESI]               ; 00464f64 | = "Mouse polygon selection on" | s_Mouse_polygon_selection__0061c3e3+2
         ;   Label: LAB_00464f64
     MOV byte ptr [EDI],AL               ; 00464f66
     CMP AL,0x0                          ; 00464f68
     JZ 0x00464f7c                       ; 00464f6a
         ;   XREF to: 00464f7c (CONDITIONAL_JUMP)  ; LAB_00464f7c
-    MOV AL,byte ptr [ESI + 0x1]         ; 00464f6c | s_ouse_polygon_selection_on_0061c3e4 | s_se_polygon_selection_on_0061c3e6
+    MOV AL,byte ptr [ESI + 0x1]         ; 00464f6c | s_Mouse_polygon_selection__0061c3e3+1 | s_se_polygon_selection_on_0061c3e6
     ADD ESI,0x2                         ; 00464f6f
     MOV byte ptr [EDI + 0x1],AL         ; 00464f72
     ADD EDI,0x2                         ; 00464f75
@@ -338,7 +338,7 @@ section .text
     MOV ESI,0x61c3fe                    ; 00464f7d | s_EmptyChar_0061c3fe
     LEA EDI,[EBP + -0x58]               ; 00464f82
     PUSH EDI                            ; 00464f85
-    MOV AL,byte ptr [ESI]               ; 00464f86 | s_EmptyChar_0061c3fe | s_-_Polygon_merger_(tol_=_%4.2f_de_0061c400
+    MOV AL,byte ptr [ESI]               ; 00464f86 | s_EmptyChar_0061c3fe | s_Polygon_merger_tol_4_2f__0061c3ff+1
         ;   Label: LAB_00464f86
     MOV byte ptr [EDI],AL               ; 00464f88
     CMP AL,0x0                          ; 00464f8a

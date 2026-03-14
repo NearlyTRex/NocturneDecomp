@@ -6,6 +6,7 @@ from ghidra_annotations.annotations.applied_strings import *
 from ghidra_annotations.annotations.applied_structs import *
 from ghidra_annotations.annotations.applied_unions import *
 from ghidra_annotations.annotations.bookmarks import *
+from ghidra_annotations.annotations.call_overrides import *
 from ghidra_annotations.annotations.comments import *
 from ghidra_annotations.annotations.cross_references import *
 from ghidra_annotations.annotations.data_types import *
@@ -26,6 +27,7 @@ from ghidra_annotations.annotations.switch_tables import *
 def delete_annotations(currentProgram, path):
     delete_data_types(currentProgram, path)
     delete_functions(currentProgram, path)
+    delete_call_overrides(currentProgram, path)
     delete_comments(currentProgram, path)
     delete_bookmarks(currentProgram, path)
     delete_applied_arrays(currentProgram, path)
@@ -47,6 +49,7 @@ def delete_annotations(currentProgram, path):
 def export_annotations(currentProgram, folder, strict=False):
     export_data_types(currentProgram, folder)
     export_functions(currentProgram, folder)
+    export_call_overrides(currentProgram, folder)
     export_comments(currentProgram, folder)
     export_bookmarks(currentProgram, folder)
     export_applied_arrays(currentProgram, folder)
@@ -76,6 +79,7 @@ def import_annotations(currentProgram, folder):
     import_symbols_namespace(currentProgram, folder)
     import_external_imports(currentProgram, folder)
     import_functions(currentProgram, folder)
+    import_call_overrides(currentProgram, folder)
     import_applied_enums(currentProgram, folder)
     import_applied_unions(currentProgram, folder)
     import_applied_structs(currentProgram, folder)

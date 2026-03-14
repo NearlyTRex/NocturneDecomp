@@ -48,7 +48,7 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 ;   core_actor.cpp_isOfClass_FUN_0040c6d0
 ;   core_event.cpp_CEventList_executeCommands_FUN_004aabe0
-;   core_fire.cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
+;   core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004c8c90
 ;   core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_00524030
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
@@ -381,8 +381,8 @@ section .text
     PUSH EBX                            ; 005dfe76
     MOV EAX,[0x0067a3d0]                ; 005dfe77 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EAX                            ; 005dfe7c | g_CFireEffectInstance
-    CALL core_fire.cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90 ; 005dfe7d
-        ;   XREF to: 004c8c90 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90(CFireEffect * this_ptr, CVector3f * position, float radius, CVector3f * out_force_dir, ...)
+    CALL core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004c8c90 ; 005dfe7d
+        ;   XREF to: 004c8c90 (UNCONDITIONAL_CALL)  ; int core_fire.cpp_CFireEffect_getExplosionEffect_FUN_004c8c90(CFireEffect * this_ptr, CVector3f * position, float radius, CVector3f * out_force_dir, ...)
     ADD ESP,0x14                        ; 005dfe82
     MOV dword ptr [ESP + 0x8c],EAX      ; 005dfe85
     JMP 0x005dfb58                      ; 005dfe8c

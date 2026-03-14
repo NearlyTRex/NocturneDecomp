@@ -157,9 +157,9 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
            fVar5 == 0.0)) {
           damage_info = (CPathMap *)&fStack_48;
           fStack_48 = fVar5;
-          iVar3 = core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
+          iVar3 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004c8c90
                             (g_CFireEffectPtr,&(this_ptr_01->base).location.position,0.0,&CStack_58,
-                             (int *)damage_info);
+                             (float *)damage_info);
           if (iVar3 != 0) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);
             if (aCStack_94 != &CStack_58) {
@@ -177,9 +177,9 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
                                 (pCVar4->actors[0],g_CGlassClassInfo.name_hash);
         if (this_ptr_02 != (CGlass *)0x0) {
           pCStack_30 = (CCharacter *)&(this_ptr_02->base).location;
-          iVar3 = core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
+          iVar3 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004c8c90
                             (g_CFireEffectPtr,(CVector3f *)pCStack_30,0.0,(CVector3f *)0x0,
-                             (int *)0x0);
+                             (float *)0x0);
           if ((iVar3 != 0) &&
              (iVar3 = core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(this_ptr_02),
              iVar3 != 0)) {
@@ -192,9 +192,9 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
         if (((this_ptr_03 != (CTrigger *)0x0) && (this_ptr_03->hero_triggers_me == 7)) &&
            (this_ptr_03->damage_actor_wildcard_name[0] == '\0')) {
           fStack_48 = 0.0;
-          iVar3 = core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
+          iVar3 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004c8c90
                             (g_CFireEffectPtr,&(this_ptr_03->base).location.position,0.0,
-                             (CVector3f *)0x0,(int *)&fStack_48);
+                             (CVector3f *)0x0,&fStack_48);
           if (iVar3 != 0) {
             core_trigger_cpp_CTrigger_applyDamage_FUN_005e0b00(this_ptr_03,fStack_48);
           }
@@ -203,9 +203,9 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_0056b810(CDemonSet *this_pt
                       core_actor_cpp_castToClassHash_FUN_0040c790
                                 (pCVar4->actors[0],g_CFlameCanClassInfo.name_hash);
         if ((this_ptr_04 != (CFlameCan *)0x0) &&
-           (iVar3 = core_fire_cpp_CFireEffect_checkExplosionDamage_FUN_004c8c90
+           (iVar3 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_004c8c90
                               (g_CFireEffectPtr,&(this_ptr_04->base).location.position,0.0,
-                               (CVector3f *)0x0,(int *)0x0), iVar3 != 0)) {
+                               (CVector3f *)0x0,(float *)0x0), iVar3 != 0)) {
           core_flamecan_cpp_CFlameCan_ignite_FUN_004cb340(this_ptr_04);
         }
         iVar2 = iVar2 + 1;

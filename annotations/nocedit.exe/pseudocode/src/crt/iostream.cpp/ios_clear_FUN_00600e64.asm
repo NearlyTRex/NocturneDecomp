@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint __cdecl crt_stdio_c_clear_and_preserve_state_FUN_00600e64(FileEmbeddedData *embedded_data,uint error_code)
+; uint __cdecl crt_iostream_cpp_ios_clear_FUN_00600e64(ios *this_ptr,uint state_flags)
 ;
 ; Parameters:
-; FileEmbeddedData * Stack[0x4]:4   embedded_data
-; uint             Stack[0x8]:4   error_code
+; ios *            Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   state_flags
 ;
 ; XREF[2]:
 ;   crt_fstream.cpp_openFile_FUN_00600e85 at 00600edd
@@ -19,7 +19,7 @@
 section .text
 
     PUSH EBX                            ; 00600e64
-        ;   Label: crt_stdio.c_clear_and_preserve_state_FUN_00600e64
+        ;   Label: crt_iostream.cpp_ios_clear_FUN_00600e64
     MOV EAX,dword ptr [ESP + 0x8]       ; 00600e65
     MOV EDX,dword ptr [ESP + 0xc]       ; 00600e69
     PUSH EDX                            ; 00600e6d

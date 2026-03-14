@@ -33,7 +33,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x18]      ; 0060ca33
     PUSH ESI                            ; 0060ca37
     CALL crt_process.c_spawnvp_with_path_search_FUN_0060e6a0 ; 0060ca38
-        ;   XREF to: 0060e6a0 (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_with_path_search_FUN_0060e6a0(int mode, char * program, char * * argv)
+        ;   XREF to: 0060e6a0 (UNCONDITIONAL_CALL)  ; int crt_process.c_spawnvp_with_path_search_FUN_0060e6a0(int mode, char * program, char * * argv, char * * envp)
     ADD ESP,0x10                        ; 0060ca3d
     POP ESI                             ; 0060ca40
     POP EBX                             ; 0060ca41

@@ -17,12 +17,12 @@
 # ============================================================================
 
 @004b1b54 [ESP:+0]  # MOV AL, byte ptr [EDX]
-LOAD (unique,0xb800,1) = (const,0x1a1,4), (register,0x8,4) /* EDX */
-COPY (register,0x0,1) = (unique,0xb800,1)
+LOAD (unique,0x17000,1) = (const,0x1a1,4), (register,0x8,4) /* EDX */
+COPY (register,0x0,1) = (unique,0x17000,1)
 
 @004b1b56 [ESP:+0]  # MOV byte ptr [ECX], AL
-COPY (unique,0x5080,1) = (register,0x0,1)
-STORE (const,0x1a1,4), (register,0x4,4) /* ECX */, (unique,0x5080,1)
+COPY (unique,0xa100,1) = (register,0x0,1)
+STORE (const,0x1a1,4), (register,0x4,4) /* ECX */, (unique,0xa100,1)
 
 @004b1b58 [ESP:+4](+4)  # RET 0x4
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */

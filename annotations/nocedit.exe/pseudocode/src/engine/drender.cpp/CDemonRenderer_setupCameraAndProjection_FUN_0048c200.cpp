@@ -55,7 +55,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048
   iVar2 = g_ProjectionScale;
   iVar4 = ((iVar5 + 1) * 0x10000) / ((iVar3 - iVar6) + 1);
   this_ptr[1].face_count = iVar4;
-  this_ptr[1].face_count = (int)(((longlong)iVar4 * 0x10000) / (longlong)iVar2);
+  this_ptr[1].face_count =
+       (int)((longlong)
+             ((((longlong)iVar4 & 0xffffffffffffU) >> 0x10) << 0x20 |
+             (longlong)iVar4 * 0x10000 & 0xffffffffU) / (longlong)iVar2);
   lVar1 = (longlong)(int)this_ptr[1].vertex_buffer_ptr * (longlong)g_TransformMatrix.m[0].x;
   g_TransformMatrix.m[0].x = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   lVar2 = (longlong)(int)this_ptr[1].vertex_buffer_ptr * (longlong)g_TransformMatrix.m[1].x;

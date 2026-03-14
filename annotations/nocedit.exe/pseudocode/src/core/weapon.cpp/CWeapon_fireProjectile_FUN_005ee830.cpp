@@ -11,7 +11,7 @@ void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_005ee830(CWeapon *this_p
 {
   int iVar1;
   CVector3f *input_local_point;
-  CDemonActor *pCVar2;
+  CHero *pCVar2;
   SLaserInfo local_e8;
   SLaserInfo local_94;
   CVector3f local_40;
@@ -23,7 +23,8 @@ void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_005ee830(CWeapon *this_p
   if (iVar1 != 0) {
     return;
   }
-  input_local_point = (*(((this_ptr->base).vtable._uw)->_uw).getMuzzlePoint)(this_ptr,&local_40);
+  input_local_point =
+       (CVector3f *)(*(((this_ptr->base).vtable._uc)->_uc).canWalk)((CCharacter *)this_ptr);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (&this_ptr->base,&local_28,input_local_point);
   local_1c.z = this_ptr->bolt_velocity;
@@ -41,9 +42,9 @@ void __cdecl core_weapon_cpp_CWeapon_fireProjectile_FUN_005ee830(CWeapon *this_p
   local_94.color.g = (int)(this_ptr->muzzle_flash_offset).y;
   local_94.color.b = (int)(this_ptr->muzzle_flash_offset).z;
   local_94.intensity = 1.0;
-  pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
-                     (this_ptr->carried_by_actor,g_CHeroClassInfo.name_hash);
-  local_e8.is_hero_weapon = (int)(pCVar2 != (CDemonActor *)0x0);
+  pCVar2 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790
+                              (this_ptr->carried_by_actor,g_CHeroClassInfo.name_hash);
+  local_e8.is_hero_weapon = (int)(pCVar2 != (CHero *)0x0);
   local_e8.intensity = local_94.intensity;
   local_e8.beam_width = local_94.beam_width;
   local_e8.laser_type = local_94.laser_type;

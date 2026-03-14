@@ -6,18 +6,18 @@
   },
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 184,
+    "complexity_score": 154,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 29,
-    "suspect_count": 13,
+    "suspect_count": 10,
     "suspect_types": [
       "decompiler_intrinsic",
-      "param_count_too_few",
+      "param_count_too_many",
+      "pointer_cast",
       "stack_alignment_array",
-      "unaffected_reg",
       "warning_inlined_function"
     ],
     "total_lines": 88
@@ -44,9 +44,9 @@
         "00499871"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__stack2_esi",
     "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0",
-    "signature": "void __cdecl core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)"
+    "signature": "void __stack2_esi core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0(CDemonRaytrace *this_ptr,CVector3f *world_position,CVector3i *output_grid_coords)"
   },
   "function_calls": [
     {
@@ -68,24 +68,29 @@
         "call_addr": "0049a179",
         "call_type": "direct",
         "caller": "core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160",
-        "estimated_params": 6,
-        "instructions_analyzed": 11,
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 6
+        "stack_bytes": 8,
+        "stack_params": 2
       },
       {
         "call_addr": "0049a299",
         "call_type": "direct",
         "caller": "core_dtrace.cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_0049a280",
-        "estimated_params": 6,
-        "instructions_analyzed": 11,
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 6
+        "stack_bytes": 8,
+        "stack_params": 2
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 3,
-    "estimated_params": 6
+    "declared_stack_bytes": 8,
+    "estimated_params": 2
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.673076923076923,
@@ -117,10 +122,10 @@
     "pcode_op_count": 347
   },
   "stack_frame": {
-    "frame_size": 4116,
+    "frame_size": 4112,
     "local_size": 4104,
     "param_offset": 4,
-    "param_size": 12,
+    "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -164,13 +169,6 @@
         "offset": 8,
         "size": 4,
         "type": "CVector3f *"
-      },
-      {
-        "is_param": true,
-        "name": "output_grid_coords",
-        "offset": 12,
-        "size": 4,
-        "type": "CVector3i *"
       }
     ]
   },
@@ -182,14 +180,6 @@
       "severity": "mild",
       "text": "/* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */",
       "type": "warning_inlined_function"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int *unaff_ESI;",
-      "type": "unaffected_reg"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
@@ -240,47 +230,31 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 28,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "*unaff_ESI = (int)ROUND(dVar1);",
-      "type": "unaffected_reg"
+      "match": "(int *)((int)",
+      "severity": "mild",
+      "text": "piVar1 = (int *)((int)output_grid_coords + (uint)bVar2 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 28,
+      "line": 29,
       "match": "ROUND",
       "severity": "mild",
-      "text": "*unaff_ESI = (int)ROUND(dVar1);",
+      "text": "output_grid_coords->x = (int)ROUND(dVar1);",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = (&local_18)[(uint)bVar2 * -2];",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
-      "type": "unaffected_reg"
     },
     {
       "call_site_count": 2,
       "declared_params": 3,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:3 vs estimated:6",
-      "param_delta": 3,
-      "text": "Function declares 3 params but call sites push 6 (3 missing)",
-      "type": "param_count_too_few"
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 2,
+      "fix_type": "remove_params",
+      "match": "declared:3 vs estimated:2",
+      "param_delta": -1,
+      "text": "Function declares 3 params but call sites push 2 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

@@ -361,7 +361,7 @@ section .text
     PUSH EAX                            ; 00417986
     PUSH EBX                            ; 00417987
     CALL core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 ; 00417988
-        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force)
+        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force, int render_in_background)
     ADD ESP,0x10                        ; 0041798d
     ADD ESP,0x24                        ; 00417990
     POP EBP                             ; 00417993

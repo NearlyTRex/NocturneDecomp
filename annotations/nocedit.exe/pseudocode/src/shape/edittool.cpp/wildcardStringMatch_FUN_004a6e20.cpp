@@ -36,12 +36,12 @@ LAB_004a6e42:
       if (bVar1 < 0x2b) {
         while( true ) {
           iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                            ((char *)((byte *)pattern + 1),target_string,case_sensitive);
+                            (pattern + 1,target_string,case_sensitive);
           if (iVar2 != 0) {
             return 1;
           }
           if (*target_string == 0) break;
-          target_string = (char *)((byte *)target_string + 1);
+          target_string = target_string + 1;
         }
         return 0;
       }
@@ -50,8 +50,8 @@ LAB_004a6e42:
         return 0;
       }
     }
-    target_string = (char *)((byte *)target_string + 1);
-    bVar1 = ((byte *)pattern)[1];
-    pattern = (char *)((byte *)pattern + 1);
+    target_string = target_string + 1;
+    bVar1 = pattern[1];
+    pattern = pattern + 1;
   } while( true );
 }

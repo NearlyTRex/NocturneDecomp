@@ -14,8 +14,8 @@
 ; Referenced Globals:
 ;   void* switchdataD_0054e3e8 = 0054e42c
 ;   TerminatedCString s_Disabled_0063f9c1
-;   undefined4 s_isabled_0063f9c2
-;   undefined4 s_sabled_0063f9c3
+;   undefined4 s_Disabled_0063f9c1+1
+;   undefined4 s_Disabled_0063f9c1+2
 ;   undefined4 s_abled_0063f9c4
 ;   TerminatedCString s_Start_0063f9ca
 ;   undefined4 s_tart_0063f9cb
@@ -57,13 +57,13 @@ section .text
         ;   Label: caseD_0
     PUSH EDI                            ; 0054e431
         ;   Label: LAB_0054e431
-    MOV AL,byte ptr [ESI]               ; 0054e432 | = "Disabled" | s_sabled_0063f9c3 | s_Start_0063f9ca
+    MOV AL,byte ptr [ESI]               ; 0054e432 | = "Disabled" | s_Disabled_0063f9c1+2 | s_Start_0063f9ca
         ;   Label: LAB_0054e432
     MOV byte ptr [EDI],AL               ; 0054e434
     CMP AL,0x0                          ; 0054e436
     JZ 0x0054e44a                       ; 0054e438
         ;   XREF to: 0054e44a (CONDITIONAL_JUMP)  ; LAB_0054e44a
-    MOV AL,byte ptr [ESI + 0x1]         ; 0054e43a | s_isabled_0063f9c2 | s_abled_0063f9c4 | s_tart_0063f9cb
+    MOV AL,byte ptr [ESI + 0x1]         ; 0054e43a | s_Disabled_0063f9c1+1 | s_abled_0063f9c4 | s_tart_0063f9cb
     ADD ESI,0x2                         ; 0054e43d
     MOV byte ptr [EDI + 0x1],AL         ; 0054e440
     ADD EDI,0x2                         ; 0054e443

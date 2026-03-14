@@ -148,14 +148,14 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
     if (0.0 < (this_ptr_15->base).lifetime_remaining) {
       (*((this_ptr_15->base).vtable)->process)(&this_ptr_15->base);
     }
-    this_ptr_15 = (CPopcorn *)(&this_ptr_15->base + 1);
+    this_ptr_15 = this_ptr_15 + 1;
   } while (this_ptr_15 != (CPopcorn *)&g_RainDropAllocIndex);
   this_ptr_16 = g_RainDropPool;
   do {
     if (0.0 < (this_ptr_16->base).lifetime_remaining) {
       (*((this_ptr_16->base).vtable)->process)(&this_ptr_16->base);
     }
-    this_ptr_16 = (CRainDrop *)(&this_ptr_16->base + 1);
+    this_ptr_16 = this_ptr_16 + 1;
   } while ((CDemonActorType *)this_ptr_16 != &g_CFlameClassInfo);
   return;
 }

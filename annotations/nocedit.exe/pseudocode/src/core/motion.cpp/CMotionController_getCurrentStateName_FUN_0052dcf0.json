@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 21,
+    "complexity_score": 6,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 22
   },
   "cross_references": [
@@ -65,51 +63,62 @@
         "call_addr": "0042c5c1",
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_getDeathState_FUN_0042c580",
-        "estimated_params": 2,
-        "instructions_analyzed": 3,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0052e824",
         "call_type": "direct",
         "caller": "core_motion.cpp_CMotionController_render_FUN_0052e700",
-        "estimated_params": 2,
-        "instructions_analyzed": 7,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 2
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "00536f16",
         "call_type": "direct",
         "caller": "core_msnedit.cpp_drawMotionBar_FUN_00536e20",
         "estimated_params": 1,
-        "instructions_analyzed": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 4,
         "stack_params": 1
       },
       {
         "call_addr": "0042c59f",
         "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_getDeathState_FUN_0042c580",
-        "estimated_params": 3,
-        "instructions_analyzed": 5,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "0052e89f",
         "call_type": "direct",
         "caller": "core_motion.cpp_CMotionController_render_FUN_0052e700",
         "estimated_params": 1,
-        "instructions_analyzed": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
+        "stack_bytes": 4,
         "stack_params": 1
       }
     ],
-    "confidence": "low",
+    "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 2
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.357142857142857,
@@ -154,17 +163,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 5,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 2,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:2",
-      "param_delta": 1,
-      "text": "Function declares 1 params but call sites push 2 (1 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

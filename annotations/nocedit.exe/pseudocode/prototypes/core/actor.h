@@ -441,7 +441,7 @@ int __cdecl CDemonActor::processFootstepAt(CDemonActor *this_ptr,CVector3f *loca
 
 // Original: core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10
 // Address: 0040ca10
-void __cdecl CDemonActor::handleFootstep(CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume);
+void __cdecl CDemonActor::handleFootstep(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
 
 // Original: core_actor.cpp_setRandomSeed_FUN_0040cb90
 // Address: 0040cb90

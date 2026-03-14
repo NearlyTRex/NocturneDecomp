@@ -1,22 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 330,
+    "complexity_score": 314,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 130,
-    "suspect_count": 17,
+    "pseudocode_lines": 129,
+    "suspect_count": 16,
     "suspect_types": [
-      "param_count_too_few",
       "pointer_cast",
       "special_crt_function",
       "stack_alignment_array",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 377
+    "total_lines": 376
   },
   "cross_references": [
     {
@@ -59,15 +58,18 @@
         "call_addr": "00605d72",
         "call_type": "direct",
         "caller": "crt_string.c_strtod_main_FUN_00605d5d",
-        "estimated_params": 7,
-        "instructions_analyzed": 12,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 7
+        "stack_bytes": 12,
+        "stack_params": 3
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 3,
-    "estimated_params": 7
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.8604651162790695,
@@ -195,7 +197,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 58,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "(&stack0xffffffc0)[iVar9] = bVar1;",
@@ -203,7 +205,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 95,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "for (; (0 < iVar9 && (*(char *)((int)&uStackY_44 + iVar9 + 3) == '0')); iVar9 = iVar9 + -1) {",
@@ -211,7 +213,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 96,
+      "line": 95,
       "match": "uStackY_44",
       "severity": "moderate",
       "text": "for (; (0 < iVar9 && (*(char *)((int)&uStackY_44 + iVar9 + 3) == '0')); iVar9 = iVar9 + -1) {",
@@ -219,7 +221,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 99,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "*(ushort *)((int)result + 8) = 0;",
@@ -227,7 +229,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 100,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)result + 4) = 0;",
@@ -235,7 +237,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 106,
+      "line": 105,
       "match": "&stack0xffffffc0",
       "severity": "moderate",
       "text": "(&stack0xffffffc0)[iVar9] = 0;",
@@ -243,7 +245,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 107,
+      "line": 106,
       "match": "uStackY_44",
       "severity": "moderate",
       "text": "uStackY_44 = 0x605d00;",
@@ -251,7 +253,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 107,
       "match": "in_stack_ffffffc0",
       "severity": "moderate",
       "text": "FUN_0060b586(in_stack_ffffffc0,in_stack_ffffffc4);",
@@ -259,7 +261,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 107,
       "match": "in_stack_ffffffc4",
       "severity": "moderate",
       "text": "FUN_0060b586(in_stack_ffffffc0,in_stack_ffffffc4);",
@@ -267,7 +269,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 110,
+      "line": 109,
       "match": "uStackY_44",
       "severity": "moderate",
       "text": "uStackY_44 = iVar8;",
@@ -275,7 +277,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 115,
       "match": "(ushort *)((int)",
       "severity": "mild",
       "text": "*(ushort *)((int)result + 8) = local_24;",
@@ -283,22 +285,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 116,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)result + 4) = local_28;",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 3,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 7,
-      "fix_type": "add_params",
-      "match": "declared:3 vs estimated:7",
-      "param_delta": 4,
-      "text": "Function declares 3 params but call sites push 7 (4 missing)",
-      "type": "param_count_too_few"
     },
     {
       "address": "00605b9b",

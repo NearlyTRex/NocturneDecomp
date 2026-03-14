@@ -669,7 +669,7 @@ section .text
     PUSH 0x0                            ; 0056b611
     PUSH ESI                            ; 0056b613
     CALL core_dlight.cpp_CDemonLight_endScene_FUN_00472d30 ; 0056b614
-        ;   XREF to: 00472d30 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight * this_ptr)
+        ;   XREF to: 00472d30 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight * this_ptr, int restore_viewport_state)
     ADD ESP,0x8                         ; 0056b619
     PUSH ESI                            ; 0056b61c
     CALL core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_00472f80 ; 0056b61d

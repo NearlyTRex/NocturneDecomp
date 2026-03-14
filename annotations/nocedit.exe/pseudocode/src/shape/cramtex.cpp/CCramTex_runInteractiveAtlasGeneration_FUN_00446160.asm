@@ -875,7 +875,7 @@ section .text
     PUSH 0x0                            ; 00446942
     PUSH 0x1                            ; 00446944
     CALL shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20 ; 00446946
-        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures, int is_complete)
+        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures, int is_complete, int show_status)
     ADD ESP,0xc                         ; 0044694b
     PUSH 0x359                          ; 0044694e
     PUSH 0x61998d                       ; 00446953 | = "..\\shape\\cramtex.cpp"
@@ -1457,7 +1457,7 @@ section .text
     PUSH 0x0                            ; 00446fa1
     PUSH 0x0                            ; 00446fa3
     CALL shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20 ; 00446fa5
-        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures, int is_complete)
+        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures, int is_complete, int show_status)
     ADD ESP,0xc                         ; 00446faa
     IMUL EAX,dword ptr [0x0084a85c],0x4c ; 00446fad | g_CramPlacedTextureCount
         ;   Label: LAB_00446fad
@@ -1975,7 +1975,7 @@ section .text
     PUSH ESI                            ; 004474f0
     PUSH 0x1                            ; 004474f1
     CALL shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20 ; 004474f3
-        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures, int is_complete)
+        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures, int is_complete, int show_status)
     ADD ESP,0xc                         ; 004474f8
     JMP 0x00447434                      ; 004474fb
         ;   XREF to: 00447434 (UNCONDITIONAL_JUMP)  ; LAB_00447434
@@ -2032,7 +2032,7 @@ section .text
     PUSH ESI                            ; 0044757f
     PUSH 0x1                            ; 00447580
     CALL shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20 ; 00447582
-        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures, int is_complete)
+        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; void shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20(int show_textures, int is_complete, int show_status)
     ADD ESP,0xc                         ; 00447587
     JMP 0x00447434                      ; 0044758a
         ;   XREF to: 00447434 (UNCONDITIONAL_JUMP)  ; LAB_00447434

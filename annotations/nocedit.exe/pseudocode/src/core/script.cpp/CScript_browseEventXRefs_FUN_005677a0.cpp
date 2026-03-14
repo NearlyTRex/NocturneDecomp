@@ -113,9 +113,9 @@ int __cdecl core_script_cpp_CScript_browseEventXRefs_FUN_005677a0(CScript *this_
       if (0 < local_18) {
         iVar4 = 0;
         do {
-          iVar2 = *(int *)((int)&this_ptr->xref_entries->display_index + iVar4);
+          iVar2 = *(int *)(this_ptr->xref_entries->name + iVar4 + 0x110);
           if (iVar5 <= iVar2) {
-            *(int *)((int)&this_ptr->xref_entries->display_index + iVar4) = iVar2 + 1;
+            *(int *)(this_ptr->xref_entries->name + iVar4 + 0x110) = iVar2 + 1;
           }
           iVar4 = iVar4 + 0x114;
         } while (iVar4 < local_18 * 0x114);

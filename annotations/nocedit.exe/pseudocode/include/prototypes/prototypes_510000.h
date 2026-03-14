@@ -82,7 +82,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530
 void __cdecl shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,float collapse_weight);
 void __cdecl shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300(CLodMesh *this_ptr,int sample_point_index);
 int __cdecl shape_meshlod_cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(CLodMesh *this_ptr,int tri_index,int edge_index);
-int __cdecl shape_meshlod_cpp_CLodMesh_validateEdgeCollapse_FUN_00518490(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,int vertex_idx_3);
+int __cdecl shape_meshlod_cpp_CLodMesh_validateEdgeCollapse_FUN_00518490(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2);
 int __cdecl shape_meshlod_cpp_CLodMesh_hasVertexBoundaryEdge_FUN_00518740(CLodMesh *this_ptr,int vertex_idx);
 int __cdecl shape_meshlod_cpp_CLodMesh_findOrAddLodTexture_FUN_00518790(CLodMesh *this_ptr,char *texture_filename);
 CVector3f * __cdecl shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870(CLodMesh *this_ptr,CVector3f *out_centroid,CLodFace *face);
@@ -116,7 +116,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_loadPrecomputedLodData_FUN_0051b720(CLodM
 _FILE * __cdecl shape_meshlod_cpp_CLodMesh_openPrecomputeFile_FUN_0051b770(CLodMesh *this_ptr,char *mode);
 void __cdecl shape_meshlod_cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(CLodMesh *this_ptr);
 int __cdecl shape_meshlod_cpp_CLodMesh_initializeFromPrecomputedData_FUN_0051b8a0(CLodMesh *this_ptr,_FILE *file_handle);
-void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr);
+void __cdecl shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh *this_ptr,int target_face_count,CLodMesh *output_mesh);
 void __cdecl shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_clearFaceAttributes_FUN_0051bcc0(CLodMesh *this_ptr);
 void __cdecl shape_meshlod_cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30(CLodMesh *this_ptr,int attribute_index);

@@ -55,7 +55,7 @@ int __cdecl engine_pod_cpp_findFilesByExtension_FUN_00550ce0(CPod **pod_array,ch
     do {
       iVar6 = iVar7 + 1;
       iVar2 = toupper((uint)(byte)*extension);
-      extension = (char *)((byte *)extension + 1);
+      extension = extension + 1;
       local_44[iVar7] = (char)iVar2;
       iVar7 = iVar6;
     } while (iVar6 < iVar5);

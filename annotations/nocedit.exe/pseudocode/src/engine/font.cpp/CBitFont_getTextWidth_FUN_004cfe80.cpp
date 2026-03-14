@@ -24,7 +24,7 @@ int __cdecl engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(CBitFont *this_pt
       iVar1 = 0;
       do {
         bVar1 = *text;
-        text = (char *)((byte *)text + 1);
+        text = text + 1;
         if (bVar1 == 10) break;
         iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01a0(this_ptr,(uint)bVar1);
         iVar1 = iVar1 + iVar3 + this_ptr->char_spacing;

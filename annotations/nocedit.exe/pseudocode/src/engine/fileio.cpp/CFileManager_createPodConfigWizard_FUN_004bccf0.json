@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 54,
+    "complexity_score": 39,
     "cross_reference_count": 5,
     "function_call_count": 13,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 39,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 185
   },
   "cross_references": [
@@ -192,51 +190,62 @@
         "call_addr": "005073af",
         "call_type": "direct",
         "caller": "core_main.c_showDeveloperToolsMenu_FUN_005073a0",
-        "estimated_params": 5,
-        "instructions_analyzed": 6,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "004ba760",
         "call_type": "direct",
         "caller": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740",
-        "estimated_params": 5,
-        "instructions_analyzed": 9,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "004baf13",
         "call_type": "direct",
         "caller": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
-        "estimated_params": 5,
-        "instructions_analyzed": 9,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "004bc2c7",
         "call_type": "direct",
         "caller": "engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0",
-        "estimated_params": 3,
-        "instructions_analyzed": 6,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 3
+        "stack_bytes": 4,
+        "stack_params": 1
       },
       {
         "call_addr": "004b86ee",
         "call_type": "direct",
         "caller": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0",
-        "estimated_params": 5,
-        "instructions_analyzed": 14,
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 5
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 5
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.213675213675214,
@@ -301,17 +310,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 5,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:5",
-      "param_delta": 4,
-      "text": "Function declares 1 params but call sites push 5 (4 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

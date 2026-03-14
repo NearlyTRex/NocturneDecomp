@@ -40,7 +40,7 @@ LAB_00606a70:
   if (((in_stack_00000008 * 2 ^ 0xe000000) & 0xe000000) != 0) {
     return fVar2 / fVar1;
   }
-  if (g_IEEE754ExponentClassTable[in_stack_00000008 * 2 >> 0x1c] == 0) {
+  if (g_IEEE754ExponentClassTable[(in_stack_00000008 & 0x7fffffff) >> 0x1b] == 0) {
     return fVar2 / fVar1;
   }
   if (((in_stack_0000000c & 0x7fff) != 0) && ((in_stack_0000000c & 0x7fff) != 0x7fff)) {

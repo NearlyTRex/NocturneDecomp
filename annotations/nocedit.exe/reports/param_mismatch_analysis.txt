@@ -13,187 +13,58 @@ Mismatches may indicate:
 
 SUMMARY
 --------------------------------------------------
-Functions with parameter estimates: 5091
-Functions with no callers: 3232
-Parameter mismatches detected: 422
-Signature accuracy rate: 77.3%
+Functions with parameter estimates: 6953
+Functions with no callers: 3247
+Parameter mismatches detected: 135
+Signature accuracy rate: 96.4%
 
 Mismatches by confidence:
-  High confidence:   14 (multiple call sites agree)
-  Medium confidence: 52 (some agreement)
-  Low confidence:    356 (limited data)
+  High confidence:   2 (multiple call sites agree)
+  Medium confidence: 33 (some agreement)
+  Low confidence:    100 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
 ====================================================================================================
 
-  engine_matrix.c_normalizeVector3DFixed_FUN_0050d970
-    Declared: 2 params, Estimated: 8 params (+6)
+  crt_unknown.c_FUN_0060fcf4
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
     Call sites: 3, Confidence: high
-    File: engine/matrix.c
-    Signature: CVector3i * __stack_esi engine_matrix_c_normalizeVector3DFixed_FUN_0050d970(CVector3i *input_vector,CVector3i *output_vector)
+    File: crt/unknown.c
+    Signature: undefined4 crt_unknown_c_FUN_0060fcf4(short *param_1)
     Sample call sites:
-      engine_3d.c_renderPolygonUVTex at 0040537a: 3 reg [EAX, EBX, EDX], 5 stack
-      engine_3d.c_renderPolygonUVTex at 0040545a: 3 reg [EAX, EBX, EDX], 5 stack
-      engine_3d.c_renderPolygonPersp at 004055da: 3 reg [EAX, EBX, EDX], 5 stack
+      crt_env.c_putenv_internal_FUN_ at 0060f03c: 0 reg [], 1 stack (4 bytes, via add_esp)
+      crt_unknown.c_FUN_0060fb40 at 0060fc64: 0 reg [], 1 stack (4 bytes, via add_esp)
+      crt_unknown.c_FUN_00610900 at 0061094a: 0 reg [], 1 stack (4 bytes, via add_esp)
 
-  core_xform.cpp_buildRotationX_FUN_005f6c40
-    Declared: 2 params, Estimated: 5 params (+3)
-    Call sites: 3, Confidence: high
-    File: core/xform.cpp
-    Signature: CMatrix3x4f * __stack_esi core_xform_cpp_buildRotationX_FUN_005f6c40(float angle_radians,CMatrix3x4f *matrix_out)
+  engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480
+    Declared: 0 params (0 bytes), Estimated: 1 stack slots (4 bytes) [+1]
+    Call sites: 9, Confidence: high
+    File: engine/drender.cpp
+    Signature: void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(void)
     Sample call sites:
-      core_stranger.cpp_CStranger_co at 005c088e: 2 reg [EAX, EDX], 3 stack
-      core_gabriela.cpp_CGabriella_u at 004d5610: 2 reg [EAX, EDX], 3 stack
-      core_stranger.cpp_CStranger_co at 005c0edc: 2 reg [EAX, EDX], 3 stack
-
-  core_bodypart.cpp_addVector_FUN_0041b540
-    Declared: 3 params, Estimated: 5 params (+2)
-    Call sites: 4, Confidence: high
-    File: core/bodypart.cpp
-    Signature: CVector3f * __cdecl core_bodypart_cpp_addVector_FUN_0041b540(CVector3f *a,CVector3f *dst,CVector3f *b)
-    Sample call sites:
-      core_boneguy.cpp_CBoneGuy_upda at 0041ce45: 0 reg [], 5 stack
-      core_mobster.cpp_CMobster_proc at 00526fc6: 0 reg [], 5 stack
-      core_zombie.cpp_CZombie_proces at 005fb79f: 0 reg [], 5 stack
-
-  core_bodypart.cpp_scaleVector_FUN_0041b4e0
-    Declared: 3 params, Estimated: 1 params (-2)
-    Call sites: 4, Confidence: high
-    File: core/bodypart.cpp
-    Signature: CVector3f * __cdecl core_bodypart_cpp_scaleVector_FUN_0041b4e0(CVector3f *src,CVector3f *dst,float *scalar)
-    Sample call sites:
-      core_boneguy.cpp_CBoneGuy_upda at 0041ce4e: 0 reg [], 1 stack
-      core_mobster.cpp_CMobster_proc at 00526fcf: 0 reg [], 1 stack
-      core_zombie.cpp_CZombie_proces at 005fb7a8: 0 reg [], 1 stack
-
-  core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a9880
-    Declared: 4 params, Estimated: 2 params (-2)
-    Call sites: 23, Confidence: high
-    File: core/enemy.cpp
-    Signature: int __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004a9880(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info)
-    Sample call sites:
-      core_dog.cpp_CZombieDog_proces at 0047f468: 0 reg [], 2 stack
-      core_drone.cpp_CDrone_process_ at 0048f014: 0 reg [], 2 stack
-      core_drone.cpp_CDrone_process_ at 0048f07c: 0 reg [], 2 stack
-
-  crt_math.c_fdiv_FUN_00606960
-    Declared: 2 params, Estimated: 0 params (-2)
-    Call sites: 43, Confidence: high
-    File: crt/math.c
-    Signature: float10 __fpustack_safe crt_math_c_fdiv_FUN_00606960(float10 dividend,float10 divisor)
-    Sample call sites:
-      crt_math.c_FUN_00606c57 at 00606c60: 0 reg [], 0 stack
-      crt_math.c_FUN_00606db7 at 00606dc0: 0 reg [], 0 stack
-      crt_math.c_fdiv_thunk_FUN_0060 at 00606e20: 0 reg [], 0 stack
-
-  crt_memory.c___vec_new_FUN_00601272
-    Declared: 3 params, Estimated: 1 params (-2)
-    Call sites: 6, Confidence: high
-    File: crt/memory.c
-    Signature: void * __cdecl crt_memory_c___vec_new_FUN_00601272(void *array_memory,int element_count,WatcomTypeInfo *type_info)
-    Sample call sites:
-      core_dtrace.cpp_CDemonRaytrace at 004943c0: 0 reg [], 1 stack
-      cockpit_pkbmpset.cpp_CPackedBi at 0054be02: 0 reg [], 1 stack
-      shape_edittool.cpp_showMultiCh at 0049ea6c: 0 reg [], 1 stack
-
-  engine_colquant.c_doubleMax_FUN_00441790
-    Declared: 2 params, Estimated: 4 params (+2)
-    Call sites: 7, Confidence: high
-    File: engine/colquant.c
-    Signature: double __cdecl engine_colquant_c_doubleMax_FUN_00441790(double a,double b)
-    Sample call sites:
-      engine_colquant.c_computeBoxSt at 00441526: 0 reg [], 4 stack
-      engine_colquant.c_computeBoxSt at 004416e9: 0 reg [], 4 stack
-      engine_colquant.c_computeBoxSt at 004414f0: 0 reg [], 4 stack
-
-  core_dlight.cpp_CDemonLight_endScene_FUN_00472d30
-    Declared: 1 params, Estimated: 2 params (+1)
-    Call sites: 5, Confidence: high
-    File: core/dlight.cpp
-    Signature: void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this_ptr)
-    Sample call sites:
-      core_set.cpp_CDemonSet_renderS at 0056c081: 0 reg [], 2 stack
-      core_set.cpp_CDemonSet_renderS at 0056c131: 0 reg [], 2 stack
-      core_set.cpp_CDemonSet_initSce at 0056ab93: 0 reg [], 2 stack
-
-  core_level.cpp_CLevelLoader_update_FUN_00504160
-    Declared: 3 params, Estimated: 2 params (-1)
-    Call sites: 10, Confidence: high
-    File: core/level.cpp
-    Signature: void __cdecl core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *text,int clear_screen)
-    Sample call sites:
-      core_mission.cpp_CDemonMission at 00523d21: 0 reg [], 2 stack
-      core_mission.cpp_CDemonMission at 00524801: 0 reg [], 2 stack
-      core_set.cpp_CDemonSet_load_FU at 00569d63: 0 reg [], 2 stack
-
-  crt_process.c_spawn_FUN_006105a0
-    Declared: 4 params, Estimated: 5 params (+1)
-    Call sites: 3, Confidence: high
-    File: crt/process.c
-    Signature: int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblock,void *reserved)
-    Sample call sites:
-      crt_process.c_spawnvp_FUN_0060 at 0060f74f: 0 reg [], 5 stack
-      crt_process.c_spawnvp_FUN_0060 at 0060f6f7: 0 reg [], 5 stack
-      crt_process.c_spawnvp_FUN_0060 at 0060f67d: 0 reg [], 5 stack
-
-  crt_stack.c___STK_FUN_005ff9f3
-    Declared: 0 params, Estimated: 1 params (+1)
-    Call sites: 50, Confidence: high
-    File: crt/stack.c
-    Signature: void __stk_probe crt_stack_c___STK_FUN_005ff9f3(void)
-    Sample call sites:
-      crt_process.c_spawnvp_FUN_0060 at 0060f3a1: 0 reg [], 1 stack
-      shape_cramtex.cpp_qsortRectang at 00446145: 0 reg [], 1 stack
-      shape_cramtex.cpp_CCramTex_fin at 004478c5: 0 reg [], 1 stack
-
-  engine_3d.c_makeGrayscaleColor_FUN_004039c0
-    Declared: 1 params, Estimated: 2 params (+1)
-    Call sites: 5, Confidence: high
-    File: engine/3d.c
-    Signature: uint __cdecl engine_3d_c_makeGrayscaleColor_FUN_004039c0(int intensity)
-    Sample call sites:
-      engine_3d.c_renderPrimitiveAda at 004049d0: 0 reg [], 2 stack
-      engine_3d.c_renderPolygonTextu at 00406655: 0 reg [], 2 stack
-      engine_3d.c_renderPolygonAdapt at 00404b5e: 0 reg [], 2 stack
-
-  sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40
-    Declared: 1 params, Estimated: 0 params (-1)
-    Call sites: 3, Confidence: high
-    File: sound/sndmain.cpp
-    Signature: void __cdecl sound_sndmain_cpp_setNextSfxDelay_FUN_005a8b40(double delay_seconds)
-    Sample call sites:
-      core_sound.cpp_CSound_playTrac at 005b3b40: 0 reg [], 0 stack
-      core_sound.cpp_CSound_playActo at 005b3af4: 0 reg [], 0 stack
-      core_sound.cpp_CSound_playActo at 005b3ab0: 0 reg [], 0 stack
+      core_morph.cpp_CMorph_editMorp at 0052c344: 0 reg [], 1 stack (4 bytes, via add_esp)
+      core_dlight.cpp_CDemonLight_en at 00472db2: 0 reg [], 1 stack (4 bytes, via add_esp)
+      core_dcamera.cpp_CDemonCamera_ at 0044ce13: 0 reg [], 1 stack (4 bytes, via add_esp)
 
 ====================================================================================================
 MEDIUM CONFIDENCE MISMATCHES
 ====================================================================================================
 
-  sound_sndmain.cpp_set3DListenerOrient_FUN_005aa0a0 declared:9 est:18 (+9) [5 calls]
-  core_script.cpp_parseCommandWithDefaultTemplates_F declared:7 est:1 (-6) [2 calls]
+  core_msnedit.cpp_drawMotionBar_FUN_00536e20        declared:0 est:76 (+76) [2 calls]
   crt_unknown.c_FUN_0060d480                         declared:0 est:5 (+5) [2 calls]
-  core_charactr.cpp_CCharacter_isCarryingAnything_FU declared:1 est:5 (+4) [2 calls]
-  core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_0 declared:5 est:1 (-4) [2 calls]
-  engine_fileio.cpp_CFileManager_createPodConfigWiza declared:1 est:5 (+4) [5 calls]
+  crt_unknown.c_FUN_00607c88                         declared:0 est:4 (+4) [2 calls]
   shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  declared:0 est:4 (+4) [2 calls]
-  shape_meshlod.cpp_CLodMesh_initializeLodGeneration declared:1 est:5 (+4) [2 calls]
-  core_dtrace.cpp_CDemonRaytrace_worldPositionToGrid declared:3 est:6 (+3) [2 calls]
-  core_fire.cpp_CLaserBeam_init_FUN_004c2420         declared:11 est:14 (+3) [2 calls]
-  core_script.cpp_CCmdParse_bestParse_FUN_00561db0   declared:5 est:2 (-3) [4 calls]
-  support_trisock.cpp_createNetworkAddr_FUN_005e1940 declared:3 est:6 (+3) [4 calls]
-  core_actor.cpp_CDemonActor_fillAttackDamageInfo_FU declared:4 est:6 (+2) [2 calls]
-  core_actor.cpp_CDemonActor_getPropertyList_FUN_004 declared:2 est:4 (+2) [46 calls]
-  core_box.cpp_CBoundingBox3D_doesSphereIntersect_FU declared:3 est:1 (-2) [2 calls]
-  core_dmodel.cpp_CKeyFramedModel_addFilesToExtract_ declared:3 est:1 (-2) [10 calls]
-  core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_ declared:5 est:7 (+2) [2 calls]
-  core_weapon.cpp_CWeapon_getPropertyList_FUN_005ee9 declared:2 est:4 (+2) [2 calls]
+  crt_unknown.c_FUN_00603dc8                         declared:0 est:3 (+3) [2 calls]
+  crt_unknown.c_FUN_00607858                         declared:0 est:3 (+3) [2 calls]
+  crt_unknown.c_CondCallDoNothing_FUN_00603ccc       declared:0 est:2 (+2) [2 calls]
+  crt_unknown.c_FUN_00603c74                         declared:0 est:2 (+2) [2 calls]
+  crt_unknown.c_FUN_00603d60                         declared:0 est:2 (+2) [2 calls]
+  crt_unknown.c_FUN_0060b133                         declared:0 est:2 (+2) [1 calls]
   crt_unknown.c_SomethingWithUppercaseCharacterConve declared:0 est:2 (+2) [2 calls]
-  engine_drender.cpp_CDemonRenderer_updateTexture_FU declared:3 est:5 (+2) [2 calls]
-  shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt declared:5 est:3 (-2) [2 calls]
-  shape_edittool.cpp_showTextInputDialog_FUN_0049db1 declared:5 est:7 (+2) [2 calls]
-  support_codec.cpp_CLZWDictionary_init_FUN_0043ee60 declared:3 est:5 (+2) [2 calls]
+  engine_2d.c_drawTextRightAlignedColorFormatted_FUN declared:3 est:5 (+2) [2 calls]
+  engine_matrix.c_getCameraOrigin_FUN_0050e2c0       declared:1 est:3 (+2) [4 calls]
+  engine_matrix.c_getCameraRotation_FUN_0050e2f0     declared:1 est:3 (+2) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:2 est:3 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:5 est:6 (+1) [2 calls]
@@ -203,69 +74,59 @@ MEDIUM CONFIDENCE MISMATCHES
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAli declared:4 est:5 (+1) [2 calls]
-  core_ammobox.cpp_CAmmoBox_openBox_FUN_00411690     declared:2 est:1 (-1) [2 calls]
-  core_charactr.cpp_CCharacter_dismember_FUN_0042b9e declared:3 est:4 (+1) [9 calls]
-  core_cloth.cpp_CCloth_free_FUN_00438cb0            declared:1 est:2 (+1) [2 calls]
-  core_dfilter.cpp_CDemonFilter_freeMemory_FUN_00470 declared:1 est:2 (+1) [2 calls]
-  core_dimage.cpp_CDemonImage_freeMemory_FUN_00471a4 declared:1 est:2 (+1) [2 calls]
-  core_moon.cpp_CMoon_update_FUN_00529d60            declared:2 est:1 (-1) [5 calls]
-  core_skeleton.cpp_CDeformableModel_selectLOD_FUN_0 declared:2 est:1 (-1) [2 calls]
-  core_weapon.cpp_CWeapon_archive_FUN_005ee250       declared:1 est:2 (+1) [2 calls]
-  core_weapon.cpp_CWeapon_ctor_FUN_005ede70          declared:1 est:2 (+1) [13 calls]
-  crt_debug.c_TriggerDebuggerBreak_FUN_0060b500      declared:2 est:3 (+1) [2 calls]
+  core_sound.cpp_CSound_dtor_FUN_005aaeb0            declared:0 est:1 (+1) [2 calls]
+  core_terrain.cpp_CTerrain_render_FUN_005e1f50      declared:1 est:2 (+1) [2 calls]
+  crt_fstream.cpp_fstreambase_ctor_FUN_00606456      declared:6 est:5 (-1) [2 calls]
+  crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0    declared:3 est:2 (-1) [1 calls]
+  crt_init.c_ProcessInitTermHandlers_FUN_0060ac30    declared:1 est:0 (-1) [3 calls]
   crt_iostream.cpp_streambuf_destructor_FUN_0060d64f declared:1 est:2 (+1) [2 calls]
-  crt_math.c_sqrt_FUN_0060710c                       declared:1 est:0 (-1) [2 calls]
+  crt_process.c_set_shell_execute_flag_FUN_00609c80  declared:1 est:2 (+1) [2 calls]
   crt_stdio.c_CreateFileVariadic_FUN_00609074        declared:3 est:4 (+1) [2 calls]
-  crt_stdlib.c_strtol_internal_FUN_0060ec70          declared:4 est:5 (+1) [2 calls]
-  crt_string.c_strtod_main_FUN_00605d5d              declared:2 est:3 (+1) [2 calls]
+  crt_sync.c_criticalSectionStub_FUN_00609f20        declared:0 est:1 (+1) [7 calls]
   crt_thread.c_noop_lock_FUN_0060b180                declared:0 est:1 (+1) [2 calls]
-  crt_unknown.c_FUN_0060fa80                         declared:0 est:1 (+1) [2 calls]
-  engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30 declared:3 est:2 (-1) [2 calls]
-
-  ... and 2 more
 
 ====================================================================================================
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  356 functions with low-confidence mismatches
+  100 functions with low-confidence mismatches
   Sample:
-    cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_F declared:1 est:5 (+4)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:4 est:6 (+2)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:3 est:4 (+1)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextRig declared:4 est:6 (+2)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextRig declared:4 est:6 (+2)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:5 est:8 (+3)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:4 est:6 (+2)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:3 est:4 (+1)
-    cockpit_drawsurf.cpp_CDrawSurface_drawTextCen declared:5 est:8 (+3)
-    cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00 declared:6 est:10 (+4)
+    cockpit_ckptutil.c_isLineClippingDisabled_FUN declared:0 est:4 (+4)
+    crt_io.c_CheckFileHandleAvailability_FUN_0060 declared:0 est:4 (+4)
+    crt_windows.c_has_active_window_FUN_0060a710  declared:0 est:4 (+4)
+    crt_process.c_spawnCommand_FUN_00609c90       declared:6 est:3 (-3)
+    crt_process.c_build_cmdline_FUN_00610258      declared:8 est:7 (-1)
+    crt_process.c_spawnvp_FUN_0060ca20            declared:3 est:4 (+1)
+    crt_process.c_execvp_FUN_00610790             declared:4 est:7 (+3)
+    crt_process.c_getpid_FUN_006099c0             declared:0 est:4 (+4)
+    crt_startup.cpp_InitializeWinAppRuntime_FUN_0 declared:1 est:3 (+2)
+    crt_locale.c_islower_multibyte_FUN_00610990   declared:1 est:2 (+1)
 
 ====================================================================================================
 MISMATCH DIRECTION ANALYSIS
 ====================================================================================================
 
-Functions where declaration has MORE params than estimated: 81
+Functions where declaration has MORE params than estimated: 14
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 341
+Functions where declaration has FEWER params than estimated: 121
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
   -11 params: 1 functions
-  -8 params: 1 functions
-  -7 params: 1 functions
-  -6 params: 1 functions
-  -5 params: 2 functions
-  -4 params: 4 functions
-  -3 params: 8 functions
-  -2 params: 16 functions
-  -1 params: 47 functions
-  +1 params: 149 functions
-  +2 params: 72 functions
-  +3 params: 40 functions
-  +4 params: 70 functions
-  +5 params: 3 functions
+  -4 params: 1 functions
+  -3 params: 1 functions
+  -2 params: 1 functions
+  -1 params: 10 functions
+  +1 params: 52 functions
+  +2 params: 26 functions
+  +3 params: 15 functions
+  +4 params: 15 functions
+  +5 params: 4 functions
   +6 params: 2 functions
-  +7 params: 3 functions
-  +9 params: 2 functions
+  +7 params: 2 functions
+  +9 params: 1 functions
+  +18 params: 1 functions
+  +23 params: 1 functions
+  +76 params: 1 functions
+  +3812 params: 1 functions

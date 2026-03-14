@@ -118,7 +118,7 @@ section .text
     PUSH 0x1                            ; 005651e1
     PUSH EBP                            ; 005651e3
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 005651e4
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 005651e9
     PUSH 0x50                           ; 005651ec
         ;   Label: LAB_005651ec
@@ -134,7 +134,7 @@ section .text
     PUSH 0x3                            ; 00565202
     PUSH EBP                            ; 00565204
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00565205
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 0056520a
     PUSH 0x48                           ; 0056520d
         ;   Label: LAB_0056520d
@@ -150,7 +150,7 @@ section .text
     PUSH 0x2                            ; 00565223
     PUSH EBP                            ; 00565225
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00565226
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 0056522b
     PUSH 0x47                           ; 0056522e
         ;   Label: LAB_0056522e
@@ -176,7 +176,7 @@ section .text
     PUSH EBP                            ; 0056525d
         ;   Label: LAB_0056525d
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 0056525e
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 00565263
     PUSH 0x4f                           ; 00565266
         ;   Label: LAB_00565266
@@ -202,7 +202,7 @@ section .text
     PUSH EBP                            ; 00565295
         ;   Label: LAB_00565295
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00565296
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 0056529b
     PUSH 0x51                           ; 0056529e
         ;   Label: LAB_0056529e
@@ -218,7 +218,7 @@ section .text
     PUSH 0x5                            ; 005652b4
     PUSH EBP                            ; 005652b6
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 005652b7
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 005652bc
     PUSH 0x49                           ; 005652bf
         ;   Label: LAB_005652bf
@@ -234,7 +234,7 @@ section .text
     PUSH 0x4                            ; 005652d5
     PUSH EBP                            ; 005652d7
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 005652d8
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 005652dd
     PUSH 0x53                           ; 005652e0
         ;   Label: LAB_005652e0
@@ -265,7 +265,7 @@ section .text
     PUSH EBP                            ; 00565322
         ;   Label: LAB_00565322
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00565323
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 00565328
     PUSH 0x52                           ; 0056532b
         ;   Label: LAB_0056532b
@@ -290,7 +290,7 @@ section .text
     PUSH 0xd                            ; 00565358
     PUSH EBP                            ; 0056535a
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 0056535b
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
         ;   Label: LAB_0056535b
     ADD ESP,0xc                         ; 00565360
     PUSH 0x1d                           ; 00565363
@@ -316,7 +316,7 @@ section .text
     PUSH 0xc                            ; 00565390
     PUSH EBP                            ; 00565392
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00565393
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 00565398
     CALL wincore_winrun.cpp_clearKeypresses_FUN_005f2e70 ; 0056539b
         ;   XREF to: 005f2e70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_clearKeypresses_FUN_005f2e70()
@@ -334,7 +334,7 @@ section .text
     PUSH 0xd                            ; 005653b6
     PUSH EBP                            ; 005653b8
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 005653b9
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 005653be
     CALL wincore_winrun.cpp_clearKeypresses_FUN_005f2e70 ; 005653c1
         ;   XREF to: 005f2e70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_clearKeypresses_FUN_005f2e70()
@@ -352,7 +352,7 @@ section .text
     PUSH 0xe                            ; 005653dc
     PUSH EBP                            ; 005653de
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 005653df
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 005653e4
     CALL wincore_winrun.cpp_clearKeypresses_FUN_005f2e70 ; 005653e7
         ;   XREF to: 005f2e70 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_clearKeypresses_FUN_005f2e70()
@@ -645,7 +645,7 @@ section .text
     PUSH 0x0                            ; 00565704
     PUSH EDI                            ; 00565706
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00565707
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 0056570c
     MOV EDI,dword ptr [0x031141e8]      ; 0056570f | g_ScriptTextAreaRight
         ;   Label: LAB_0056570f
@@ -656,7 +656,7 @@ section .text
     PUSH 0x1                            ; 0056571f
     PUSH EBP                            ; 00565721
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00565722
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 00565727
     MOV EDX,dword ptr [0x031141e4]      ; 0056572a | g_ScriptTextAreaTop
         ;   Label: LAB_0056572a
@@ -667,7 +667,7 @@ section .text
     PUSH 0x2                            ; 0056573a
     PUSH EBP                            ; 0056573c
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 0056573d
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 00565742
     MOV ECX,dword ptr [0x031141ec]      ; 00565745 | g_ScriptTextAreaBottom
         ;   Label: LAB_00565745
@@ -678,7 +678,7 @@ section .text
     PUSH 0x3                            ; 00565755
     PUSH EBP                            ; 00565757
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00565758
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 0056575d
     MOV dword ptr [ESP + 0x24],0x1      ; 00565760
         ;   Label: LAB_00565760
@@ -704,7 +704,7 @@ section .text
     PUSH 0x12                           ; 00565792
     PUSH EBP                            ; 00565794
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00565795
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 0056579a
     JMP 0x00565771                      ; 0056579d
         ;   XREF to: 00565771 (UNCONDITIONAL_JUMP)  ; LAB_00565771
@@ -713,7 +713,7 @@ section .text
     PUSH ESI                            ; 005657a0
     PUSH EBP                            ; 005657a1
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 005657a2
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 005657a7
     JMP 0x005651cb                      ; 005657aa
         ;   XREF to: 005651cb (UNCONDITIONAL_JUMP)  ; LAB_005651cb
@@ -866,7 +866,7 @@ section .text
     PUSH 0x10                           ; 00565923
     PUSH EBP                            ; 00565925
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00565926
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     ADD ESP,0xc                         ; 0056592b
     JMP 0x00565771                      ; 0056592e
         ;   XREF to: 00565771 (UNCONDITIONAL_JUMP)  ; LAB_00565771
@@ -881,7 +881,7 @@ section .text
     PUSH 0xf                            ; 00565945
     PUSH EBP                            ; 00565947
     CALL core_script.cpp_CScript_editorAction_FUN_00564820 ; 00565948
-        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type)
+        ;   XREF to: 00564820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_editorAction_FUN_00564820(CScript * this_ptr, EEditorActionType action_type, int action_parm)
     MOV ESI,dword ptr [0x0068105c]      ; 0056594d | g_AutoIndentEnabled
     ADD ESP,0xc                         ; 00565953
     TEST ESI,ESI                        ; 00565956

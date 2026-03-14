@@ -12,9 +12,9 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_MENUCLD2_RAW_00657069
-;   undefined4 s_ENUCLD2.RAW_0065706a
-;   undefined4 s_NUCLD2.RAW_0065706b
-;   undefined4 s_UCLD2.RAW_0065706c
+;   undefined4 s_MENUCLD2_RAW_00657069+1
+;   undefined4 s_MENUCLD2_RAW_00657069+2
+;   undefined4 s_MENUCLD2_RAW_00657069+3
 ;   TerminatedCString s_BWATER_d_RAW_00657076
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -103,13 +103,13 @@ section .text
     MOV ESI,0x657069                    ; 005e9969 | = "MENUCLD2.RAW"
     LEA EDI,[EAX + 0x12c]               ; 005e996e
     PUSH EDI                            ; 005e9974
-    MOV AL,byte ptr [ESI]               ; 005e9975 | = "MENUCLD2.RAW" | s_NUCLD2.RAW_0065706b
+    MOV AL,byte ptr [ESI]               ; 005e9975 | = "MENUCLD2.RAW" | s_MENUCLD2_RAW_00657069+2
         ;   Label: LAB_005e9975
     MOV byte ptr [EDI],AL               ; 005e9977
     CMP AL,0x0                          ; 005e9979
     JZ 0x005e998d                       ; 005e997b
         ;   XREF to: 005e998d (CONDITIONAL_JUMP)  ; LAB_005e998d
-    MOV AL,byte ptr [ESI + 0x1]         ; 005e997d | s_ENUCLD2.RAW_0065706a | s_UCLD2.RAW_0065706c
+    MOV AL,byte ptr [ESI + 0x1]         ; 005e997d | s_MENUCLD2_RAW_00657069+1 | s_MENUCLD2_RAW_00657069+3
     ADD ESI,0x2                         ; 005e9980
     MOV byte ptr [EDI + 0x1],AL         ; 005e9983
     ADD EDI,0x2                         ; 005e9986

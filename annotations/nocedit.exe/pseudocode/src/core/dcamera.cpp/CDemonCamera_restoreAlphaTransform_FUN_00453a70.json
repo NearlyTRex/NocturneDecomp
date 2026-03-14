@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 85,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 50,
-    "suspect_count": 3,
+    "pseudocode_lines": 44,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast"
+      "param_count_too_many"
     ],
-    "total_lines": 160
+    "total_lines": 154
   },
   "cross_references": [
     {
@@ -40,6 +40,26 @@
   },
   "function_calls": [],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0044e48e",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 4,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 8.743119266055047,
     "instruction_count": 109,
@@ -105,28 +125,15 @@
   },
   "suspects": [
     {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -10) + alpha_index * 4)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x58)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + alpha_index * 4 + -0x38",
-      "type": "pointer_cast"
+      "call_site_count": 1,
+      "declared_params": 4,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 3,
+      "fix_type": "remove_params",
+      "match": "declared:4 vs estimated:3",
+      "param_delta": -1,
+      "text": "Function declares 4 params but call sites push 3 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

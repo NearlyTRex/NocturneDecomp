@@ -178,7 +178,7 @@ LAB_0057b341:
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
 LAB_0057b3c9:
-  core_slew_cpp_CSlew_free_FUN_005a20a0();
+  core_slew_cpp_CSlew_free_FUN_005a20a0(g_CSlewPtr);
   engine_2d_c_clearInputAndWait_FUN_00403260();
   g_CDemonLightInstance.light_enabled_flag = 0;
   light->on_time = in_stack_0000000c;

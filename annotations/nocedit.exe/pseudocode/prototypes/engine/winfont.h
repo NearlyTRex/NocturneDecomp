@@ -17,7 +17,7 @@ int __cdecl CWinFont::drawText(CWinFont *this_ptr,int x_position,int y_position,
 
 // Original: engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
 // Address: 005f2440
-void __cdecl CWinFont::setColorAndDrawText(CWinFont *this_ptr,HDC device_context,int x_position,int y_position,char *text_string,int foreground_color,int background_color);
+void __cdecl CWinFont::setColorAndDrawText(CWinFont *this_ptr,HDC device_context,char *text_string,int x_position,int y_position,int foreground_color,int background_color);
 
 // Original: engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860
 // Address: 005f2860

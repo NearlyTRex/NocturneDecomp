@@ -21,11 +21,11 @@ int __watcallStack spawnvp(int mode,char *cmdname,char **argv);
 
 // Original: crt_process.c_spawnvp_with_path_search_FUN_0060e6a0
 // Address: 0060e6a0
-int __cdecl spawnvp::with_path_search(int mode,char *program,char **argv);
+int __cdecl spawnvp::with_path_search(int mode,char *program,char **argv,char **envp);
 
 // Original: crt_process.c_spawnvp_FUN_0060f39c
 // Address: 0060f39c
-int __cdecl spawnvp(int mode,char *cmdname,char **argv);
+int __cdecl spawnvp(int mode,char *cmdname,char **argv,char **envp);
 
 // Original: crt_process.c_build_file_info_env_FUN_0060ffd0
 // Address: 0060ffd0
@@ -45,7 +45,7 @@ void __cdecl build::command_line(char *program_name,char **argv,char *buffer,int
 
 // Original: crt_process.c_spawn_FUN_006105a0
 // Address: 006105a0
-int __cdecl spawn(int mode,char *cmdline,char *envblock,void *reserved);
+int __cdecl spawn(int mode,char *cmdline,char *envblock,void *reserved,char **argv);
 
 // Original: crt_process.c_execvp_FUN_00610790
 // Address: 00610790

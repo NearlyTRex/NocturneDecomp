@@ -1,13 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position,float scale,int damage_amount)
+; void __cdecl core_fire_cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect *this_ptr,CVector3f *position,float scale,float gore_multiplier,float radius)
 ;
 ; Parameters:
 ; CFireEffect *    Stack[0x4]:4   this_ptr
 ; CVector3f *      Stack[0x8]:4   position
 ; float            Stack[0xc]:4   scale
-; int              Stack[0x10]:4   damage_amount
+; float            Stack[0x10]:4   gore_multiplier
+; float            Stack[0x14]:4   radius
 ;
 ; XREF[6]:
 ;   core_charactr.cpp_CCharacter_explode_FUN_0042b930 at 0042b9b7
@@ -49,7 +50,7 @@ section .text
     ADD EAX,0x2d677b4                   ; 004c8c2f | g_ExplosionPool
     PUSH EAX                            ; 004c8c34
     CALL core_fire.cpp_CExplosion_activate_FUN_004c3970 ; 004c8c35
-        ;   XREF to: 004c3970 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_activate_FUN_004c3970(CExplosion * this_ptr, CVector3f * position, float scale, int damage_amount)
+        ;   XREF to: 004c3970 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_activate_FUN_004c3970(CExplosion * this_ptr, CVector3f * position, float scale, float gore_multiplier)
     MOV EDX,dword ptr [0x02d677b0]      ; 004c8c3a | g_ExplosionPoolIndex
     INC EDX                             ; 004c8c40
     ADD ESP,0x10                        ; 004c8c41

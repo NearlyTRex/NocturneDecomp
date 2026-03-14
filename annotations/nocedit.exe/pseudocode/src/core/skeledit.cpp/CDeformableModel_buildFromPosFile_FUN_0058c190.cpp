@@ -614,7 +614,8 @@ LAB_0058c601:
           shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(&local_2dc,&local_1f4);
         }
         else {
-          shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(&local_1f4);
+          shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920
+                    (&local_1f4,*(int *)((int)local_ec + local_40),&local_2dc);
         }
         shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(&local_2dc);
         if (iVar5 == 0) {
@@ -667,7 +668,7 @@ LAB_0058c601:
           this_ptr->lod_info[this_ptr->num_lods].shadow_only_flag = 1;
           this_ptr->num_lods = this_ptr->num_lods + 1;
           shape_meshlod_cpp_CLodMesh_ctor_FUN_00515840(&local_268);
-          shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(&local_350);
+          shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(&local_350,local_bc[1],&local_268);
           core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790
                     (this_ptr,this_ptr->num_lods + -1,&local_268,local_2520);
           shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_268,0);

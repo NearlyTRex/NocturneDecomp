@@ -123,7 +123,7 @@ section .text
     MOV dword ptr [ESP + 0xdc],EAX      ; 0051894a
     MOV dword ptr [EAX + 0x20],0x0      ; 00518951
     CALL shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490 ; 00518958
-        ;   XREF to: 00518490 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490(CLodMesh * this_ptr, int vertex_idx_1, int vertex_idx_2, int vertex_idx_3)
+        ;   XREF to: 00518490 (UNCONDITIONAL_CALL)  ; int shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490(CLodMesh * this_ptr, int vertex_idx_1, int vertex_idx_2)
     ADD ESP,0xc                         ; 0051895d
     MOV ESI,dword ptr [EBP + 0x18]      ; 00518960
     CMP EAX,ESI                         ; 00518963

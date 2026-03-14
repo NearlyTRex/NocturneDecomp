@@ -1,13 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_meshlod_cpp_CLodMesh_validateEdgeCollapse_FUN_00518490(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2,int vertex_idx_3)
+; int __cdecl shape_meshlod_cpp_CLodMesh_validateEdgeCollapse_FUN_00518490(CLodMesh *this_ptr,int vertex_idx_1,int vertex_idx_2)
 ;
 ; Parameters:
 ; CLodMesh *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   vertex_idx_1
 ; int              Stack[0xc]:4   vertex_idx_2
-; int              Stack[0x10]:4   vertex_idx_3
 ; Local Variables:
 ; int              Stack[-0x1c]:4  local_1c
 ;

@@ -2,18 +2,21 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CFireEffect.h"
 #include "types/classes/CPoly.h"
 #include "types/classes/CSoundDevice.h"
 #include "types/classes/CVector3d.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWeapon.h"
+#include "types/enums/EGroundType.h"
 
 // =============================================================================
 // MISC - System Header
 // =============================================================================
 
 // Forward declarations
+struct CDemonActor;
 struct CFireEffect;
 struct CPoly;
 struct CSoundDevice;
@@ -41,4 +44,7 @@ typedef struct CVector3f* dt_b76712a0(struct CWeapon* param, struct CVector3f* p
 
 // Function Definition: dt_d91e5264
 typedef void dt_d91e5264(struct CSoundDevice* param);
+
+// Function Definition: dt_eba4d65c
+typedef void dt_eba4d65c(struct CDemonActor* param, struct CVector3f* param1, EGroundType param2);
 

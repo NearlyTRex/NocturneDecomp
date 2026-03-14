@@ -36,18 +36,18 @@ void __cdecl core_script_cpp_CScript_parseCommand_FUN_00567080(CScript *this_ptr
     iVar3 = iVar3 + 4;
   } while (iVar3 < 0x1e0);
   while ((g_CharacterClassificationTable[(byte)(*text + 1)] & 2) != 0) {
-    text = (char *)((byte *)text + 1);
+    text = text + 1;
   }
   pbVar5 = local_24c;
   while (iVar4 = core_event_cpp_isValidIdentifierChar_FUN_004b0f90((uint)(byte)*text), iVar4 != 0) {
     bVar1 = *text;
-    text = (char *)((byte *)text + 1);
+    text = text + 1;
     *pbVar5 = bVar1;
     pbVar5 = pbVar5 + 1;
   }
   *pbVar5 = 0;
   while ((g_CharacterClassificationTable[(byte)(*text + 1)] & 2) != 0) {
-    text = (char *)((byte *)text + 1);
+    text = text + 1;
   }
   if ((*text != 0) || (local_24c[0] == 0)) {
     return;

@@ -64,7 +64,8 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList 
       iVar5 = (this_ptr->actor_vars).count + -1;
       (this_ptr->actor_vars).count = iVar5;
       memmove
-                (pacVar3,(this_ptr->actor_vars).var_names + iVar3 + 1,(iVar5 - iVar3) * 0x1e);
+                (pacVar3,((SActorVarBlock *)(&this_ptr->counters + 1))->var_names + iVar3 + 1,
+                 (iVar5 - iVar3) * 0x1e);
       memmove
                 (dest,(this_ptr->actor_vars).actor_names + iVar3 + 1,
                  ((this_ptr->actor_vars).count - iVar3) * 0x1e);

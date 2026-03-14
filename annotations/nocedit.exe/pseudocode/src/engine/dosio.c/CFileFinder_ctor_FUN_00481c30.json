@@ -98,6 +98,125 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "00538940",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004bcda7",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a36e9",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0048198c",
+        "call_type": "direct",
+        "caller": "engine_dosio.c_getFileTimestamp_FUN_00481960",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b5117",
+        "call_type": "direct",
+        "caller": "engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005519f7",
+        "call_type": "direct",
+        "caller": "core_podmain.cpp_CDemonPod_load_FUN_005519c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0049f4dc",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a38dc",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004a3a9f",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0053723d",
+        "call_type": "direct",
+        "caller": "core_msnedit.cpp_convertAllMissionFiles_FUN_00537230",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.5555555555555554,
     "instruction_count": 9,
@@ -134,5 +253,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFileFinder",
+        "offset": 0,
+        "vtable_addr": "0065cd04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

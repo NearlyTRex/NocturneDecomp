@@ -21,7 +21,7 @@
 ; Referenced Globals:
 ;   float g_VoxelSubGridScale = 0.125
 ;   uchar[8] g_VoxelYBitMasks
-;   undefined4 s_@_006789f9
+;   undefined4 g_VoxelYBitMasks+1
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70
@@ -86,7 +86,7 @@ section .text
     MOV AL,byte ptr [EAX]               ; 0049744a
     XOR EDX,EDX                         ; 0049744c
     AND EAX,0xff                        ; 0049744e
-    MOV DL,byte ptr [EBX + 0x6789f8]    ; 00497453 | g_VoxelYBitMasks | s_@_006789f9
+    MOV DL,byte ptr [EBX + 0x6789f8]    ; 00497453 | g_VoxelYBitMasks | g_VoxelYBitMasks+1
     TEST EAX,EDX                        ; 00497459
     JZ 0x004974b9                       ; 0049745b
         ;   XREF to: 004974b9 (CONDITIONAL_JUMP)  ; LAB_004974b9

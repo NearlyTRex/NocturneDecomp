@@ -54,7 +54,10 @@ uint __cdecl core_dcamera_cpp_sampleFogAlongRay_FUN_0044bdd0(SFogGrid *fog_ptr,C
               iVar4 = 0x10000;
             }
             else {
-              iVar4 = (int)(((longlong)(iVar1 - local_28) * 0x10000) / (longlong)iVar1);
+              iVar4 = (int)((longlong)
+                            ((((longlong)(iVar1 - local_28) & 0xffffffffffffU) >> 0x10) << 0x20 |
+                            (longlong)(iVar1 - local_28) * 0x10000 & 0xffffffffU) / (longlong)iVar1)
+              ;
             }
             uVar3 = (uint)((longlong)iVar4 * (longlong)(int)uVar3) >> 0x10 |
                     (int)((ulonglong)((longlong)iVar4 * (longlong)(int)uVar3) >> 0x20) << 0x10;

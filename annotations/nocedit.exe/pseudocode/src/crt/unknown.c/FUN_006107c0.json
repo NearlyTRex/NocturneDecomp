@@ -44,17 +44,20 @@
         "call_addr": "0060fb5b",
         "call_type": "direct",
         "caller": "crt_unknown.c_FUN_0060fb40",
-        "estimated_params": 7,
-        "instructions_analyzed": 11,
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [
           "EDX"
         ],
-        "stack_params": 6
+        "stack_bytes": 8,
+        "stack_params": 2
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 7
+    "declared_stack_bytes": 0,
+    "estimated_params": 3
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.05,
@@ -165,11 +168,11 @@
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 7,
+      "estimated_params": 3,
       "fix_type": "add_params",
-      "match": "declared:0 vs estimated:7",
-      "param_delta": 7,
-      "text": "Function declares 0 params but call sites push 7 (7 missing)",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
     },
     {

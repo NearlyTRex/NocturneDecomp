@@ -1,15 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90(CPathMap *this_ptr,int start_x,int start_z,int start_height,int end_x,int end_z)
+; int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90(CPathMap *this_ptr,int start_x,int start_z,int end_x,int end_z)
 ;
 ; Parameters:
 ; CPathMap *       Stack[0x4]:4   this_ptr
 ; int              Stack[0x8]:4   start_x
 ; int              Stack[0xc]:4   start_z
-; int              Stack[0x10]:4   start_height
-; int              Stack[0x14]:4   end_x
-; int              Stack[0x18]:4   end_z
+; int              Stack[0x10]:4   end_x
+; int              Stack[0x14]:4   end_z
 ; Local Variables:
 ; int              Stack[-0x40]:4  local_40
 ; int              Stack[-0x3c]:4  local_3c

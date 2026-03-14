@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 51,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 8,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 36,
-    "suspect_count": 1,
-    "suspect_types": [
-      "param_count_too_few"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 123
   },
   "cross_references": [
@@ -122,15 +120,18 @@
         "call_addr": "004ee04d",
         "call_type": "direct",
         "caller": "core_gore.cpp_CGore_spawnFliesOnActor_FUN_004ee030",
-        "estimated_params": 7,
-        "instructions_analyzed": 12,
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
-        "stack_params": 7
+        "stack_bytes": 20,
+        "stack_params": 5
       }
     ],
-    "confidence": "low",
+    "confidence": "medium",
     "declared_params": 5,
-    "estimated_params": 7
+    "declared_stack_bytes": 20,
+    "estimated_params": 5
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.7083333333333335,
@@ -204,17 +205,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_site_count": 1,
-      "declared_params": 5,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 7,
-      "fix_type": "add_params",
-      "match": "declared:5 vs estimated:7",
-      "param_delta": 2,
-      "text": "Function declares 5 params but call sites push 7 (2 missing)",
-      "type": "param_count_too_few"
-    }
-  ]
+  "suspects": []
 }

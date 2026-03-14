@@ -135,7 +135,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_badMRGLStruct_FUN_004037b0(SMRGLHeader
 SMRGLHeaderExtended * __cdecl engine_3d_c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f *input_point);
 SMRGLHeaderExtended * __cdecl engine_3d_c_transformAndBufferVertices_FUN_00403840(SMRGLHeaderExtended *mrgl);
 int __cdecl engine_3d_c_isVisiblePlane_FUN_00403950(SClipPlane *plane);
-uint __cdecl engine_3d_c_makeGrayscaleColor_FUN_004039c0(int intensity);
+uint __cdecl engine_3d_c_makeGrayscaleColor_FUN_004039c0(int color_value,int lighting_value);
 void __cdecl engine_3d_c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processVertexLighting_FUN_00403a20(SMRGLHeaderExtended *mrgl);
 SMRGLHeaderExtended * __cdecl engine_3d_c_processTextureCoordinates_FUN_00403a80(SMRGLHeaderPrimitive *prim);
@@ -338,7 +338,7 @@ void __cdecl core_actor_cpp_syncActorTypeIDs_FUN_0040c7c0(void);
 void __cdecl core_actor_cpp_resetActorTypeInfo_FUN_0040c7f0(void);
 int __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830(CDemonActor *this_ptr,float volume);
 int __cdecl core_actor_cpp_CDemonActor_processFootstepAt_FUN_0040c8f0(CDemonActor *this_ptr,CVector3f *location,float volume);
-void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor *this_ptr,CVector3f *position,int surface_type,float volume);
+void __cdecl core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
 void __cdecl core_actor_cpp_setRandomSeed_FUN_0040cb90(uint seed_value);
 uint __cdecl core_actor_cpp_generateRandomValue_FUN_0040cba0(void);
 float __cdecl core_actor_cpp_getRandomFloat_FUN_0040cbc0(void);

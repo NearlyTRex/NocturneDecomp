@@ -470,7 +470,7 @@ LAB_00446f25:
             }
 LAB_00446f96:
             if (g_CramVisualizationMode != 0) {
-              shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(0,0);
+              shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(0,0,0);
             }
             iVar32 = shape_cramtex_cpp_CCramTex_runInteractiveAtlasGeneration_FUN_00446160
                                (g_CramSortedTextureEntries + g_CramPlacedTextureCount);
@@ -515,10 +515,10 @@ LAB_00446f96:
                 }
                 if ((uVar26 == 0x74) || (uVar26 == 0x54)) {
                   g_CramVisualizationMode = (int)(g_CramVisualizationMode == 0);
-                  shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(1,0);
+                  shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(1,0,0);
                 }
                 else {
-                  shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(1,0);
+                  shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(1,0,0);
                 }
               }
               if ((0 < g_CramMaxIterationsLimit) &&
@@ -721,7 +721,7 @@ LAB_00447500:
             } while (iVar29 < iVar32);
           }
         }
-        shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(1,0);
+        shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(1,0,0);
         p_Var19 = shape_memdbg_cpp_openFile_FUN_0050f7a0
                             ("..\\shape\\cramlog.txt",(char *)0x0,"at",
                              "..\\shape\\cramtex.cpp",0x359);

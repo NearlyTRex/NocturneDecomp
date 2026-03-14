@@ -85,7 +85,7 @@ void __cdecl core_set_cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990(CDemonSe
     }
     core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(g_CGorePtr);
     core_fire_cpp_CFireEffect_render_FUN_004c7180(g_CFireEffectPtr);
-    core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(&g_CDemonLightInstance);
+    core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(&g_CDemonLightInstance,1);
     local_5c.x = (int)ROUND(local_2c.x * 256.0f);
     local_5c.y = (int)ROUND(local_2c.y * 256.0f);
     local_5c.z = (int)ROUND(local_2c.z * 256.0f);

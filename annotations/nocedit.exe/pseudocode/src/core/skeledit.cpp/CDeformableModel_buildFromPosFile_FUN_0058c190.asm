@@ -405,13 +405,13 @@ section .text
     MOV EBX,0x1e                        ; 0058c4da
     PUSH EDI                            ; 0058c4df
         ;   Label: LAB_0058c4df
-    MOV AL,byte ptr [ESI]               ; 0058c4e0 | = "$$BATCH" | s_BATCH_0064acc6 | s_TEST_0064acbd
+    MOV AL,byte ptr [ESI]               ; 0058c4e0 | = "$$BATCH" | s_BATCH_0064acc4+2 | s_TEST_0064acbd
         ;   Label: LAB_0058c4e0
     MOV byte ptr [EDI],AL               ; 0058c4e2
     CMP AL,0x0                          ; 0058c4e4
     JZ 0x0058c4f8                       ; 0058c4e6
         ;   XREF to: 0058c4f8 (CONDITIONAL_JUMP)  ; LAB_0058c4f8
-    MOV AL,byte ptr [ESI + 0x1]         ; 0058c4e8 | s_$BATCH_0064acc5 | s_ATCH_0064acc7 | s_$TEST_0064acbe
+    MOV AL,byte ptr [ESI + 0x1]         ; 0058c4e8 | s_BATCH_0064acc4+1 | s_BATCH_0064acc4+3 | s_TEST_0064acbd+1
     ADD ESI,0x2                         ; 0058c4eb
     MOV byte ptr [EDI + 0x1],AL         ; 0058c4ee
     ADD EDI,0x2                         ; 0058c4f1
@@ -1534,7 +1534,7 @@ section .text
     LEA EAX,[ESP + 0xa03c]              ; 0058d35e
     PUSH EAX                            ; 0058d365
     CALL shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 ; 0058d366
-        ;   XREF to: 0051b920 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh * this_ptr)
+        ;   XREF to: 0051b920 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh * this_ptr, int target_face_count, CLodMesh * output_mesh)
     ADD ESP,0xc                         ; 0058d36b
     LEA EAX,[ESP + 0x9f4c]              ; 0058d36e
         ;   Label: LAB_0058d36e
@@ -1860,7 +1860,7 @@ section .text
     LEA EAX,[ESP + 0x9ee0]              ; 0058d73d
     PUSH EAX                            ; 0058d744
     CALL shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920 ; 0058d745
-        ;   XREF to: 0051b920 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh * this_ptr)
+        ;   XREF to: 0051b920 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920(CLodMesh * this_ptr, int target_face_count, CLodMesh * output_mesh)
     ADD ESP,0xc                         ; 0058d74a
     LEA EAX,[ESP + 0x7d08]              ; 0058d74d
     PUSH EAX                            ; 0058d754

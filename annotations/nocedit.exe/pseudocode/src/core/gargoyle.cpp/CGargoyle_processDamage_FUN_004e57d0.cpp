@@ -55,7 +55,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_processDamage_FUN_004e57d0(CGargoyle *t
         (*((this_ptr->base).base.base.vtable._ub)->playSound)
                   ((CDemonActor *)this_ptr,"gargoyle-shatter.wav");
         core_charactr_cpp_CCharacter_dismember_FUN_0042b9e0
-                  ((CCharacter *)this_ptr,(CVector3f *)0x0,-1.0);
+                  ((CCharacter *)this_ptr,(CVector3f *)0x0,-1.0,1);
       }
     }
     core_enemy_cpp_CEnemy_processDamage_FUN_004a9f10(&this_ptr->base,damage_info);

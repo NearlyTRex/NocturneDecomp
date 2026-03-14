@@ -73,7 +73,7 @@ section .text
     MOV EDX,dword ptr [0x0067a3d0]      ; 0042b9b0 | g_CFireEffectInstance | g_CFireEffectPtr
     PUSH EDX                            ; 0042b9b6 | g_CFireEffectInstance
     CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10 ; 0042b9b7
-        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect * this_ptr, CVector3f * position, float scale, int damage_amount)
+        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x14                        ; 0042b9bc
     PUSH 0x0                            ; 0042b9bf
     MOV ECX,dword ptr [ESP + 0x4c]      ; 0042b9c1
@@ -81,7 +81,7 @@ section .text
     PUSH ECX                            ; 0042b9c9
     PUSH EBX                            ; 0042b9ca
     CALL core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0 ; 0042b9cb
-        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force)
+        ;   XREF to: 0042b9e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0(CCharacter * this_ptr, CVector3f * impact_point, float impact_force, int render_in_background)
     ADD ESP,0x10                        ; 0042b9d0
     ADD ESP,0x3c                        ; 0042b9d3
     POP EBX                             ; 0042b9d6

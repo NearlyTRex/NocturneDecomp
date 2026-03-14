@@ -81,6 +81,59 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "005b95b5",
+        "call_type": "direct",
+        "caller": "shape_spotview.cpp_staticInit_FUN_005b95b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0051d9f1",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0051dbc9",
+        "call_type": "direct",
+        "caller": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00596926",
+        "call_type": "direct",
+        "caller": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 7,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.518518518518518,
     "instruction_count": 27,
@@ -118,5 +171,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSpotView",
+        "offset": 0,
+        "vtable_addr": "006613b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

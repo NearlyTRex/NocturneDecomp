@@ -61,7 +61,7 @@ void __cdecl core_inv_cpp_CInventory_selectWeapon_FUN_004feb10(CInventory *this_
         (*((this_ptr_01->base).vtable._ub)->process)(&this_ptr_01->base,0.1);
       }
       this_ptr->selected_weapon = weapon_actor;
-      core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(this_ptr);
+      core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(this_ptr,999);
       return;
     }
   }

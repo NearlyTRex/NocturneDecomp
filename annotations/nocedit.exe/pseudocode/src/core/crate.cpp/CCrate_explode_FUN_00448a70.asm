@@ -80,7 +80,7 @@ section .text
     PUSH ESI                            ; 00448aef | g_CFireEffectInstance
     FSTP float ptr [ESP + 0x38]         ; 00448af0
     CALL core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10 ; 00448af4
-        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect * this_ptr, CVector3f * position, float scale, int damage_amount)
+        ;   XREF to: 004c8c10 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createExplosion_FUN_004c8c10(CFireEffect * this_ptr, CVector3f * position, float scale, float gore_multiplier, ...)
     ADD ESP,0x14                        ; 00448af9
     PUSH 0x1                            ; 00448afc
     PUSH EBX                            ; 00448afe

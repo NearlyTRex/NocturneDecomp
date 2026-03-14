@@ -2,11 +2,11 @@
 // Address: 00472d30
 // Address Range: [[00472d30, 00472e31]]
 // Convention: __cdecl
-// Signature: void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this_ptr)
+// Signature: void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this_ptr,int restore_viewport_state)
 
 #include "nocturne.h"
 
-void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this_ptr)
+void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(CDemonLight *this_ptr,int restore_viewport_state)
 
 {
   int iVar1;

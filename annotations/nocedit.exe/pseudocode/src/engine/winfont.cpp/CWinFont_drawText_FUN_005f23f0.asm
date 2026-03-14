@@ -52,7 +52,7 @@ section .text
     PUSH EAX                            ; 005f2428
     PUSH EBX                            ; 005f2429
     CALL engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440 ; 005f242a
-        ;   XREF to: 005f2440 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont * this_ptr, HDC device_context, int x_position, int y_position, ...)
+        ;   XREF to: 005f2440 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440(CWinFont * this_ptr, HDC device_context, char * text_string, int x_position, ...)
     ADD ESP,0x1c                        ; 005f242f
     XOR EAX,EAX                         ; 005f2432
     POP ESI                             ; 005f2434

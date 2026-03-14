@@ -167,6 +167,48 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0050f5d2",
+        "call_type": "direct",
+        "caller": "shape_memdbg.cpp_debugRealloc_FUN_0050f540",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0050eff8",
+        "call_type": "direct",
+        "caller": "shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0050f4df",
+        "call_type": "direct",
+        "caller": "shape_memdbg.cpp_debugFree_FUN_0050f460",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.210526315789474,
     "instruction_count": 95,
