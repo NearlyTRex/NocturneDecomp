@@ -9,47 +9,47 @@ void __mmx_save saveMMXRegisters(ulonglong mm0,ulonglong mm1,ulonglong mm2,ulong
 
 // Original: core_dstrender.cpp_renderDepthOnlyReversed_FUN_004906e9
 // Address: 004906e9
-void __cdecl renderDepthOnlyReversed(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx renderDepthOnlyReversed(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderDepthOnlyStandard_FUN_0049072f
 // Address: 0049072f
-void __cdecl renderDepthOnlyStandard(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx renderDepthOnlyStandard(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderDepth16BitConditional_FUN_0049077d
 // Address: 0049077d
-void __cdecl renderDepth16BitConditional(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx renderDepth16BitConditional(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7
 // Address: 004907e7
-void __cdecl renderTexturedAlphaMMXScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx renderTexturedAlphaMMXScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderZBufferFill16xUnrolled_FUN_00490902
 // Address: 00490902
-void __cdecl renderZBufferFill16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx renderZBufferFill16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58
 // Address: 00490a58
-void __cdecl renderSolidColorDepth16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx renderSolidColorDepth16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderDepthInterlacedProfiled_FUN_00490c37
 // Address: 00490c37
-void __cdecl renderDepthInterlacedProfiled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx renderDepthInterlacedProfiled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5
 // Address: 00490cb5
-void __cdecl renderScreenDepthTestInterlacedProfiled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx renderScreenDepthTestInterlacedProfiled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35
 // Address: 00490d35
-void __cdecl renderDepthTestStatistics16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx renderDepthTestStatistics16xUnrolled(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0
 // Address: 00490ec0
-void __cdecl renderPerspectiveCorrectTextured16xCached(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx renderPerspectiveCorrectTextured16xCached(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_renderTexturedDecalMMXScanline_FUN_0049169d
 // Address: 0049169d
-void __cdecl renderTexturedDecalMMXScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx renderTexturedDecalMMXScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 
 // Original: core_dstrender.cpp_blendBilerpLightmapToTexture64BitOutput_FUN_004917bc
 // Address: 004917bc
@@ -65,7 +65,7 @@ void __cdecl blendSinglePixelLightmapNoRoundingMMX(uint *output_pixel,uint *text
 
 // Original: core_dstrender.cpp_memcpyMMX_FUN_00492001
 // Address: 00492001
-void * __cdecl memcpyMMX(void *dest,void *src,int byte_count);
+void __cdecl memcpyMMX(void *dest,void *src,int byte_count);
 
 // Original: core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042
 // Address: 00492042

@@ -90,7 +90,7 @@ section .text
     LEA ESI,[ESP + 0x2c]                ; 0049a1bc
     LEA EDI,[ESP + 0x14]                ; 0049a1c0
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880 ; 0049a1c4
-        ;   XREF to: 00499880 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
+        ;   XREF to: 00499880 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     LEA ESI,[ESP + 0x2c]                ; 0049a1c9
     ADD ESP,0x8                         ; 0049a1cd
     MOVSD ES:EDI,ESI                    ; 0049a1d0

@@ -2,7 +2,7 @@
 // Address: 004f6550
 // Address Range: [[004f6550, 004f69b8]]
 // Convention: __stack2_esi
-// Signature: void __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+// Signature: CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 #include "nocturne.h"
 
@@ -13,7 +13,7 @@
 /* WARNING: Removing unreachable block (ram,0x004f6911) */
 /* WARNING: Type propagation algorithm not settling */
 
-void __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
+CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)
 
 {
   int iVar1;
@@ -21,6 +21,7 @@ void __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(
   CMatrix3x4f *pCVar2;
   float *pfVar3;
   float *pfVar4;
+  CMatrix3x4f *pCVar5;
   byte bVar4;
   float local_294 [12];
   CMatrix3x4f local_264 [2];
@@ -121,11 +122,12 @@ void __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(
     pfVar4 = pfVar4 + (uint)bVar4 * -2 + 1;
   }
   pfVar3 = local_294;
+  pCVar5 = out_matrix;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
     pfVar3 = pfVar3 + (uint)bVar4 * -2 + 1;
-    out_matrix->m[0].w = *pfVar3;
+    pCVar5->m[0].w = *pfVar3;
     pfVar3 = pfVar3;
-    out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar4 * -2 + 1) * 4);
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar4 * -2 + 1) * 4);
   }
-  return;
+  return out_matrix;
 }

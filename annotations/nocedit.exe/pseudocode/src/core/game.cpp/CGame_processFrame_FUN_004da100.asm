@@ -253,7 +253,7 @@ section .text
     LEA ESI,[EBP + 0x6]                 ; 004da2e4
     LEA EDI,[EBP + 0x1e]                ; 004da2e7
     CALL core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0 ; 004da2ea
-        ;   XREF to: 0044d2a0 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
+        ;   XREF to: 0044d2a0 (UNCONDITIONAL_CALL)  ; CVector3i * core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, int screen_x, int screen_y, CVector3i * output_ptr)
     LEA ESI,[EBP + 0x6]                 ; 004da2ef
     ADD ESP,0xc                         ; 004da2f2
     LEA EAX,[EBP + 0x1e]                ; 004da2f5

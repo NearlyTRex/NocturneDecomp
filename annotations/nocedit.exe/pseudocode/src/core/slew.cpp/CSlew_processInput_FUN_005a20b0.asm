@@ -11,8 +11,9 @@
 ; float            Stack[-0x1c]:4  local_1c
 ; float            Stack[-0x18]:4  local_18
 ;
-; XREF[13]:
+; XREF[14]:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040 at 0040d0fb
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043d169
 ;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 0044409c
 ;   core_game.cpp_CGame_processFrame_FUN_004da100 at 004da299
 ;   core_manpuz.cpp_CMansionPuzzleCircle_processInEditor_FUN_0050b440 at 0050b4c9
@@ -21,8 +22,7 @@
 ;   core_platfrm.cpp_CPlatform_processInEditor_FUN_0054ea00 at 0054ed90
 ;   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660 at 0057dcc4
 ;   core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50 at 0057af8c
-;   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0 at 00581e57
-;   ... and 3 more
+;   ... and 4 more
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0064f112 = 10

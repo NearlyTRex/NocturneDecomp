@@ -294,7 +294,21 @@ static inline int* _cpuid_intrinsic(int leaf) {
     return _cpuid_regs;
 }
 #elif defined(__GNUC__) || defined(__clang__)
+// Save and undef register-named calling convention macros that clash
+// with variable names in clang/gcc's cpuid.h (e.g. __edx)
+#pragma push_macro("__eax")
+#pragma push_macro("__ebx")
+#pragma push_macro("__ecx")
+#pragma push_macro("__edx")
+#undef __eax
+#undef __ebx
+#undef __ecx
+#undef __edx
 #include <cpuid.h>
+#pragma pop_macro("__eax")
+#pragma pop_macro("__ebx")
+#pragma pop_macro("__ecx")
+#pragma pop_macro("__edx")
 static inline int* _cpuid_intrinsic(int leaf) {
     static int _cpuid_regs[4];
     __cpuid(leaf, _cpuid_regs[0], _cpuid_regs[1], _cpuid_regs[2], _cpuid_regs[3]);

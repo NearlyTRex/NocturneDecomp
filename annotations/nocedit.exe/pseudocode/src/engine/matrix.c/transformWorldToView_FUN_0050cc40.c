@@ -2,11 +2,11 @@
 // Address: 0050cc40
 // Address Range: [[0050cc40, 0050cd0c]]
 // Convention: __stack_esi
-// Signature: void __stack_esi engine_matrix_c_transformWorldToView_FUN_0050cc40(CVector3i *input_coords,CVector3i *output_coords)
+// Signature: CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_0050cc40(CVector3i *input_coords,CVector3i *output_coords)
 
 #include "nocturne.h"
 
-void __stack_esi engine_matrix_c_transformWorldToView_FUN_0050cc40(CVector3i *input_coords,CVector3i *output_coords)
+CVector3i * __stack_esi engine_matrix_c_transformWorldToView_FUN_0050cc40(CVector3i *input_coords,CVector3i *output_coords)
 
 {
   int iVar7;
@@ -43,5 +43,5 @@ void __stack_esi engine_matrix_c_transformWorldToView_FUN_0050cc40(CVector3i *in
        ((uint)(lVar4 * iVar9) >> 0x10 | (int)((ulonglong)(lVar4 * iVar9) >> 0x20) << 0x10) +
        ((uint)(lVar5 * iVar7) >> 0x10 | (int)((ulonglong)(lVar5 * iVar7) >> 0x20) << 0x10) +
        ((uint)(lVar6 * iVar8) >> 0x10 | (int)((ulonglong)(lVar6 * iVar8) >> 0x20) << 0x10);
-  return;
+  return output_coords;
 }

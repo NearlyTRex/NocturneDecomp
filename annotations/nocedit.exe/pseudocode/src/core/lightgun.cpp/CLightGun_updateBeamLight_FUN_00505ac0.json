@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 50,
+    "complexity_score": 25,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 11,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 25,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 80
   },
   "cross_references": [
@@ -209,22 +207,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "CVector3f *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,unaff_ESI);",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

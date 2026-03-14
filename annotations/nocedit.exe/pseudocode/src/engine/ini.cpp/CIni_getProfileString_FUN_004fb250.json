@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 236,
-    "complexity_score": 208,
+    "complexity_score": 113,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 8,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 113,
-    "suspect_count": 9,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 349
   },
   "cross_references": [
@@ -276,78 +274,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "char *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 46,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "unaff_EBP = pcVar7;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 49,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "unaff_EBP = pcVar7 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 50,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "if (*unaff_EBP == '=') goto LAB_004fb3b0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 52,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "} while (*unaff_EBP != '\\0');",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 53,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "unaff_EBP = (char *)0x0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 55,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "if (unaff_EBP != (char *)0x0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 56,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "*unaff_EBP = '\\0';",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 66,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "pcVar6 = unaff_EBP + 1;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

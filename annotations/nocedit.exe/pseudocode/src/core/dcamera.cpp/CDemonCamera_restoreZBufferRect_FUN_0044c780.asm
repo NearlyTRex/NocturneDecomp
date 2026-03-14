@@ -81,7 +81,7 @@ section .text
     ADD EBP,0x4                         ; 0044c81c
     INC EDI                             ; 0044c81f
     CALL core_dstrender.cpp_memcpyMMX_FUN_00492001 ; 0044c820
-        ;   XREF to: 00492001 (UNCONDITIONAL_CALL)  ; void * core_dstrender.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)
+        ;   XREF to: 00492001 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)
     MOV EAX,dword ptr [ESI + 0xc]       ; 0044c825
     ADD ESP,0xc                         ; 0044c828
     CMP EDI,EAX                         ; 0044c82b

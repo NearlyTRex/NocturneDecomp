@@ -6,18 +6,18 @@
 ; Parameters:
 ; CPickList *      Stack[0x4]:4   this_ptr
 ;
-; XREF[76]:
+; XREF[77]:
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040f2cc
 ;   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280 at 0041b345
 ;   core_boxactor.cpp_pickLightActorType_FUN_00423110 at 00423138
 ;   core_charactr.cpp_CCharacter_propertyActionCallback_FUN_0042f3e0 at 0042f449
 ;   core_cloth.cpp_CCloth_addCollisionBone_FUN_0043c430 at 0043c45e
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043ccd1
 ;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 004795c9
 ;   core_frankgen.cpp_CFrankenstienMachine_initializeInEditor_FUN_004d2770 at 004d2781
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db763
 ;   core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 at 004e20ca
-;   core_game.cpp_staticInit_FUN_004d76d0 at 004d7713
-;   ... and 66 more
+;   ... and 67 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_OK_006239eb

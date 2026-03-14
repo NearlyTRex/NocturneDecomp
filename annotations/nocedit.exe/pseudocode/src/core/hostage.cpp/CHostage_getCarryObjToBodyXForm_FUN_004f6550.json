@@ -6,26 +6,26 @@
       {
         "category": "other",
         "column": 18,
-        "line": 75,
+        "line": 76,
         "message": "array comparison always evaluates to true [-Wtautological-compare]"
       }
     ]
   },
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 215,
+    "complexity_score": 217,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 120,
+    "pseudocode_lines": 122,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "warning_type_propagation",
       "warning_unreachable"
     ],
-    "total_lines": 403
+    "total_lines": 405
   },
   "cross_references": [],
   "function": {
@@ -38,7 +38,7 @@
     ],
     "convention": "__stack2_esi",
     "name": "core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550",
-    "signature": "void __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
+    "signature": "CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
   },
   "function_calls": [
     {
@@ -326,7 +326,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 114,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
@@ -334,10 +334,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 123,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
-      "text": "out_matrix = (CMatrix3x4f *)((int)out_matrix + ((uint)bVar4 * -2 + 1) * 4);",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     }
   ],

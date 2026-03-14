@@ -6,7 +6,8 @@
 ; Parameters:
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
-; XREF[23]:
+; XREF[24]:
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043d3d9
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043da67
 ;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 00443fa1
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047ce71
@@ -16,8 +17,7 @@
 ;   core_menu.cpp_configureCustomKeys_FUN_00511890 at 005118d4
 ;   core_menu.cpp_configureGraphicsOptions_FUN_00510c80 at 00510d3a
 ;   core_menu.cpp_configureSoundOptions_FUN_00511e50 at 00511e99
-;   core_menu.cpp_showMainGameMenu_FUN_00512f40 at 00513017
-;   ... and 13 more
+;   ... and 14 more
 ;
 ; Referenced Globals:
 ;   float g_MovieRecordingFrameBase = 65536

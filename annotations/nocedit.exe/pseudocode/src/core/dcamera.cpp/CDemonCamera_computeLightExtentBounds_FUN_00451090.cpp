@@ -1,12 +1,12 @@
 // Name: core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
 // Address: 00451090
 // Address Range: [[00451090, 00451122]]
-// Convention: __cdecl
-// Signature: void __cdecl core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090(CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds)
+// Convention: __stack2_esi
+// Signature: CRect * __stack2_esi core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090(CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds)
 
 #include "nocturne.h"
 
-void __cdecl core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090(CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds)
+CRect * __stack2_esi core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090(CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds)
 
 {
   int iVar1;
@@ -44,5 +44,5 @@ void __cdecl core_dcamera_cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
   out_bounds->top = local_18;
   out_bounds->right = local_14;
   out_bounds->bottom = local_10;
-  return;
+  return out_bounds;
 }

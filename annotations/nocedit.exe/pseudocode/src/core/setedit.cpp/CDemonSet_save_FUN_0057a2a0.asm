@@ -43,7 +43,7 @@
 ;   core_dcamera.cpp_saveCameraFog_FUN_00453f10
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60
+;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60
 ;   core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40
 ;   core_setutil.cpp_C3DSCamera_save_FUN_00585a40
 ;   core_setutil.cpp_C3DSCamera_savePVS_FUN_00587450
@@ -609,8 +609,8 @@ section .text
     POP EDI                             ; 0057a89f
         ;   Label: LAB_0057a89f
     PUSH EBX                            ; 0057a8a0
-    CALL core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60 ; 0057a8a1
-        ;   XREF to: 00575f60 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60(CDemonSet * this_ptr)
+    CALL core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60 ; 0057a8a1
+        ;   XREF to: 00575f60 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0057a8a6
     MOV EAX,ESP                         ; 0057a8a9
     PUSH EAX                            ; 0057a8ab

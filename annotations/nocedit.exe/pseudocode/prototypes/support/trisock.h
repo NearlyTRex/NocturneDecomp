@@ -49,7 +49,7 @@ SOCKADDR_IN * __cdecl convertSockAddr(SNetworkAddr *dest_addr,SOCKADDR *src_addr
 
 // Original: support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
 // Address: 005e19d0
-SOCKADDR_IN * __cdecl buildSockaddrIn(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer);
+SOCKADDR_IN * __stack_esi buildSockaddrIn(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer);
 
 // Original: support_trisock.cpp_formatSocketAddress_FUN_005e1a30
 // Address: 005e1a30

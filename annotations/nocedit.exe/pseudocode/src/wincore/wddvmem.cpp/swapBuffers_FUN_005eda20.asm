@@ -10,7 +10,8 @@
 ; undefined8 *     Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
-; XREF[132]:
+; XREF[133]:
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043d3cd
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043da5b
 ;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043dea7
 ;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 00443f95
@@ -20,8 +21,7 @@
 ;   core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0 at 0047c615
 ;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be3ba
 ;   core_game.cpp_CGame_finishAct_FUN_004e3b90 at 004e3fe0
-;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e428f
-;   ... and 122 more
+;   ... and 123 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_00657a2b

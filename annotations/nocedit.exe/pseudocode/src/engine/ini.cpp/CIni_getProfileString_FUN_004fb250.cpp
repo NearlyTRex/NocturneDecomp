@@ -17,7 +17,7 @@ int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004fb250(CIni *this_ptr,cha
   int iVar6;
   uint uVar7;
   uint uVar4;
-  char *unaff_EBP;
+  char *local_e1;
   char *pcVar6;
   char *pcVar7;
   byte bVar8;
@@ -50,17 +50,17 @@ int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004fb250(CIni *this_ptr,cha
        (pcVar4 = _fgets(local_210,0xff,stream), pcVar7 = local_210,
        pcVar4 == (char *)0x0)) goto LAB_004fb2d7;
     do {
-      unaff_EBP = pcVar7;
+      local_e1 = pcVar7;
       if (*pcVar7 == '=') goto LAB_004fb3b0;
       if (*pcVar7 == '\0') break;
-      unaff_EBP = pcVar7 + 1;
-      if (*unaff_EBP == '=') goto LAB_004fb3b0;
+      local_e1 = pcVar7 + 1;
+      if (*local_e1 == '=') goto LAB_004fb3b0;
       pcVar7 = pcVar7 + 2;
-    } while (*unaff_EBP != '\0');
-    unaff_EBP = (char *)0x0;
+    } while (*local_e1 != '\0');
+    local_e1 = (char *)0x0;
 LAB_004fb3b0:
-    if (unaff_EBP != (char *)0x0) {
-      *unaff_EBP = '\0';
+    if (local_e1 != (char *)0x0) {
+      *local_e1 = '\0';
     }
     iVar6 = _strcmp(local_210,key);
     if (iVar6 == 0) break;
@@ -70,7 +70,7 @@ LAB_004fb3b0:
 LAB_004fb2d7:
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\engine\\ini.cpp",0x99);
   if (bVar3) {
-    pcVar6 = unaff_EBP + 1;
+    pcVar6 = local_e1 + 1;
     uVar7 = 0xffffffff;
     pcVar7 = pcVar6;
     do {

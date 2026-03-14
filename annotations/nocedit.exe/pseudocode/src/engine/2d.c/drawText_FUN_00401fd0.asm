@@ -8,18 +8,18 @@
 ; int              Stack[0x8]:4   x
 ; int              Stack[0xc]:4   y
 ;
-; XREF[133]:
+; XREF[134]:
 ;   core_actor.cpp_CActorPropertyList_render_FUN_0040e850 at 0040e960
 ;   core_actor.cpp_drawTextLine_FUN_0040d240 at 0040d256
 ;   core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0 at 0040d222
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043ccac
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043dbd2
 ;   core_cloth.cpp_CCloth_showMenu_FUN_0043ddf0 at 0043de28
 ;   core_course.cpp_CCourse_preview_FUN_00443bc0 at 00443f8d
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 00443083
 ;   core_course.cpp_renderCourseGizmo_FUN_00443760 at 00443b1a
 ;   core_curtain.cpp_CCurtain_showEditorHelp_FUN_0044b8d0 at 0044b94d
-;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 004795b5
-;   ... and 123 more
+;   ... and 124 more
 ;
 ; Referenced Globals:
 ;   int g_TextWrapEnabled = 0x1

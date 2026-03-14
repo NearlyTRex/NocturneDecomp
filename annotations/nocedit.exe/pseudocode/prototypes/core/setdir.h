@@ -91,9 +91,9 @@ void __cdecl CDemonSet::freeThumbs(CDemonSet *this_ptr);
 // Address: 00575e40
 void __cdecl CDemonSet::writeThumbs(CDemonSet *this_ptr,char *filename);
 
-// Original: core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60
+// Original: core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60
 // Address: 00575f60
-void __cdecl CDemonSet::saveThumbs(CDemonSet *this_ptr);
+void __cdecl CDemonSet::saveThumbsNoFile(CDemonSet *this_ptr);
 
 // Original: core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70
 // Address: 00575f70

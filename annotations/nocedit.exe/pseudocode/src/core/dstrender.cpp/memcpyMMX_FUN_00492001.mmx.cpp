@@ -2,11 +2,11 @@
 // Address: 00492001
 // Address Range: [[00492001, 00492041]]
 // Convention: __cdecl
-// Signature: void * __cdecl core_dstrender_cpp_memcpyMMX_FUN_00492001(void *dest,void *src,int byte_count)
+// Signature: void __cdecl core_dstrender_cpp_memcpyMMX_FUN_00492001(void *dest,void *src,int byte_count)
 
 #include "nocturne.h"
 
-void * __cdecl core_dstrender_cpp_memcpyMMX_FUN_00492001(void *dest,void *src,int byte_count)
+void __cdecl core_dstrender_cpp_memcpyMMX_FUN_00492001(void *dest,void *src,int byte_count)
 {
 __asm {
         push EAX

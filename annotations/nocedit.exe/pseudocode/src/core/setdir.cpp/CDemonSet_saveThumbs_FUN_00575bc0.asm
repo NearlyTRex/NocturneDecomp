@@ -17,7 +17,7 @@
 ;
 ; XREF[2]:
 ;   core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00575b40 at 00575b7f
-;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60 at 00575f67
+;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60 at 00575f67
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00575ba0 = 00575c00

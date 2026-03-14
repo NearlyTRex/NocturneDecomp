@@ -7009,7 +7009,6 @@
       }
     ],
     "conv":"__stack2_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041ca40",
     "ret":"void",
@@ -33104,8 +33103,7 @@
         "start":"00490ec0"
       }
     ],
-    "conv":"__cdecl",
-    "custom_storage":true,
+    "conv":"__edi_esi_ebx",
     "importable":true,
     "name":"core_dstrender.cpp_renderPerspectiveCorrectTextured16xCached_FUN_00490ec0",
     "ret":"void",
@@ -33114,12 +33112,12 @@
         {
           "name":"left_edge",
           "storage":{
-            "reg":"ESI",
+            "reg":"EDI",
             "size":4,
             "varnodes":[
               {
-                "addr":"register:00000018",
-                "offset":24,
+                "addr":"register:0000001c",
+                "offset":28,
                 "size":4
               }
             ]
@@ -33129,12 +33127,12 @@
         {
           "name":"right_edge",
           "storage":{
-            "reg":"EDI",
+            "reg":"ESI",
             "size":4,
             "varnodes":[
               {
-                "addr":"register:0000001c",
-                "offset":28,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -56712,6 +56710,22 @@
     "vars":{
       "locals":[
         {
+          "name":"local_e1",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"undefined4",
+          "use":-1
+        },
+        {
           "name":"local_res0",
           "storage":{
             "offset":0,
@@ -58077,10 +58091,9 @@
       }
     ],
     "conv":"__stack_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"engine_matrix.c_transformWorldToView_FUN_0050cc40",
-    "ret":"void",
+    "ret":"CVector3i*",
     "vars":{
       "locals":[
         {
@@ -58260,7 +58273,17 @@
           },
           "type":"CVector3i*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -58306,8 +58329,7 @@
         "start":"0050e2c0"
       }
     ],
-    "conv":"__cdecl",
-    "custom_storage":true,
+    "conv":"__esi",
     "importable":true,
     "name":"engine_matrix.c_getCameraOrigin_FUN_0050e2c0",
     "ret":"void",
@@ -79434,38 +79456,6 @@
     "ret":"void",
     "vars":{
       "locals":[
-        {
-          "name":"unaff_ESI",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4",
-          "use":-1
-        },
-        {
-          "name":"unaff_EDI",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4",
-          "use":-1
-        },
         {
           "name":"iVar2",
           "storage":{
@@ -103706,7 +103696,6 @@
       }
     ],
     "conv":"__stack_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_buildRotationX_FUN_005f6c40",
     "ret":"CMatrix3x4f*",
@@ -103944,7 +103933,6 @@
       }
     ],
     "conv":"__stack_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_buildRotationY_FUN_005f6cc0",
     "ret":"CMatrix3x4f*",
@@ -104150,7 +104138,6 @@
       }
     ],
     "conv":"__stack_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_buildRotationZ_FUN_005f6d40",
     "ret":"CMatrix3x4f*",
@@ -104356,7 +104343,6 @@
       }
     ],
     "conv":"__stack_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_buildTranslationMatrix_FUN_005f6dc0",
     "ret":"CMatrix3x4f*",
@@ -104514,7 +104500,6 @@
       }
     ],
     "conv":"__stack_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_buildYFlipMatrix_FUN_005f6f40",
     "ret":"CMatrix3x4f*",
@@ -104640,7 +104625,6 @@
       }
     ],
     "conv":"__stack3_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_lerpMatrix3x4_FUN_005f7140",
     "ret":"CMatrix3x4f*",
@@ -104980,7 +104964,6 @@
       }
     ],
     "conv":"__stack2_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_multiplyQuaternion_FUN_005f7640",
     "ret":"CQuaternion4f*",

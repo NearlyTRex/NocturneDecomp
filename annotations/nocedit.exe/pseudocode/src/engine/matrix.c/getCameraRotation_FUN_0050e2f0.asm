@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_getCameraRotation_FUN_0050e2f0(CVector3i *output)
+; void __esi engine_matrix_c_getCameraRotation_FUN_0050e2f0(CVector3i *output)
 ;
 ;
 ; XREF[2]:

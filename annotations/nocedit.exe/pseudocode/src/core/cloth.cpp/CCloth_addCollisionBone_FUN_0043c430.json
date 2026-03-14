@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 195,
     "complexity_score": 81,
-    "cross_reference_count": 0,
+    "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 6,
     "max_suspect_severity": "clean",
@@ -16,7 +16,14 @@
     "suspect_types": [],
     "total_lines": 276
   },
-  "cross_references": [],
+  "cross_references": [
+    {
+      "addr": "0043c880",
+      "from_addr": "0043cebc",
+      "name": "core_cloth.cpp_CCloth_boneEditor_FUN_0043c880",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
   "function": {
     "address": "0043c430",
     "address_range": [
@@ -120,9 +127,21 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 0,
-    "call_sites": [],
-    "confidence": "unknown",
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0043cebc",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_boneEditor_FUN_0043c880",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
     "declared_params": 1,
     "declared_stack_bytes": 4,
     "estimated_params": 1

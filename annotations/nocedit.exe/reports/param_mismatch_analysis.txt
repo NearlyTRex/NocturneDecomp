@@ -14,14 +14,14 @@ Mismatches may indicate:
 SUMMARY
 --------------------------------------------------
 Functions with parameter estimates: 6953
-Functions with no callers: 3247
-Parameter mismatches detected: 135
-Signature accuracy rate: 96.4%
+Functions with no callers: 3246
+Parameter mismatches detected: 136
+Signature accuracy rate: 96.3%
 
 Mismatches by confidence:
   High confidence:   2 (multiple call sites agree)
   Medium confidence: 33 (some agreement)
-  Low confidence:    100 (limited data)
+  Low confidence:    101 (limited data)
 
 ====================================================================================================
 HIGH CONFIDENCE MISMATCHES - Likely signature issues
@@ -57,14 +57,14 @@ MEDIUM CONFIDENCE MISMATCHES
   shape_design.c_sortPolygonsByTexture_FUN_0045b8b0  declared:0 est:4 (+4) [2 calls]
   crt_unknown.c_FUN_00603dc8                         declared:0 est:3 (+3) [2 calls]
   crt_unknown.c_FUN_00607858                         declared:0 est:3 (+3) [2 calls]
+  engine_matrix.c_getCameraOrigin_FUN_0050e2c0       declared:1 est:4 (+3) [4 calls]
+  engine_matrix.c_getCameraRotation_FUN_0050e2f0     declared:1 est:4 (+3) [2 calls]
   crt_unknown.c_CondCallDoNothing_FUN_00603ccc       declared:0 est:2 (+2) [2 calls]
   crt_unknown.c_FUN_00603c74                         declared:0 est:2 (+2) [2 calls]
   crt_unknown.c_FUN_00603d60                         declared:0 est:2 (+2) [2 calls]
   crt_unknown.c_FUN_0060b133                         declared:0 est:2 (+2) [1 calls]
   crt_unknown.c_SomethingWithUppercaseCharacterConve declared:0 est:2 (+2) [2 calls]
   engine_2d.c_drawTextRightAlignedColorFormatted_FUN declared:3 est:5 (+2) [2 calls]
-  engine_matrix.c_getCameraOrigin_FUN_0050e2c0       declared:1 est:3 (+2) [4 calls]
-  engine_matrix.c_getCameraRotation_FUN_0050e2f0     declared:1 est:3 (+2) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:4 est:5 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:2 est:3 (+1) [2 calls]
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered declared:5 est:6 (+1) [2 calls]
@@ -89,7 +89,7 @@ MEDIUM CONFIDENCE MISMATCHES
 LOW CONFIDENCE MISMATCHES (limited data)
 ====================================================================================================
 
-  100 functions with low-confidence mismatches
+  101 functions with low-confidence mismatches
   Sample:
     cockpit_ckptutil.c_isLineClippingDisabled_FUN declared:0 est:4 (+4)
     crt_io.c_CheckFileHandleAvailability_FUN_0060 declared:0 est:4 (+4)
@@ -109,7 +109,7 @@ MISMATCH DIRECTION ANALYSIS
 Functions where declaration has MORE params than estimated: 14
   (May indicate: extra params not being passed, or params in globals)
 
-Functions where declaration has FEWER params than estimated: 121
+Functions where declaration has FEWER params than estimated: 122
   (May indicate: missing params in signature, or calling convention issue)
 
 Distribution of differences (estimated - declared):
@@ -118,9 +118,9 @@ Distribution of differences (estimated - declared):
   -3 params: 1 functions
   -2 params: 1 functions
   -1 params: 10 functions
-  +1 params: 52 functions
-  +2 params: 26 functions
-  +3 params: 15 functions
+  +1 params: 53 functions
+  +2 params: 24 functions
+  +3 params: 17 functions
   +4 params: 15 functions
   +5 params: 4 functions
   +6 params: 2 functions

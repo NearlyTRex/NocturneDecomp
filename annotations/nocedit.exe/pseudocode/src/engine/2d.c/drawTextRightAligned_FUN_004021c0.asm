@@ -8,7 +8,8 @@
 ; int              Stack[0x8]:4   x
 ; int              Stack[0xc]:4   y
 ;
-; XREF[2]:
+; XREF[3]:
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043cdd5
 ;   engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210 at 00402261
 ;   engine_2d.c_drawTextRightAlignedWrapper_FUN_004021f0 at 00402200
 ;

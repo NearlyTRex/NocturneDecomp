@@ -1,19 +1,18 @@
 // Name: engine_boss.c_modelStructNotSupported_FUN_0041dbe0
 // Address: 0041dbe0
 // Address Range: [[0041dbe0, 0041dc1e]]
-// Convention: __cdecl
-// Signature: void __cdecl engine_boss_c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtended *mrgl_data)
+// Convention: __esi
+// Signature: void __esi engine_boss_c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtended *mrgl_data)
 
 #include "nocturne.h"
 
-void __cdecl engine_boss_c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtended *mrgl_data)
+void __esi engine_boss_c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtended *mrgl_data)
 
 {
   int iVar1;
-  uint *unaff_ESI;
   uint *puVar2;
   byte bVar3;
-  uint local_3c [13];
+  uint local_3c [15];
   
   bVar3 = 0;
   g_CurrentFilename = "..\\engine\\boss.c";
@@ -22,9 +21,9 @@ void __cdecl engine_boss_c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExten
   puVar2 = local_3c;
   for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
     puVar2 = puVar2 + (uint)bVar3 * -2 + 1;
-    *unaff_ESI = *puVar2;
+    (mrgl_data->base).type = *puVar2;
     puVar2 = puVar2;
-    unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;
+    mrgl_data = (SMRGLHeaderExtended *)((int)mrgl_data + (uint)bVar3 * -8 + 4);
   }
   return;
 }

@@ -1,12 +1,12 @@
 // Name: support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
 // Address: 005e19d0
 // Address Range: [[005e19d0, 005e1a26]]
-// Convention: __cdecl
-// Signature: SOCKADDR_IN * __cdecl support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer)
+// Convention: __stack_esi
+// Signature: SOCKADDR_IN * __stack_esi support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer)
 
 #include "nocturne.h"
 
-SOCKADDR_IN * __cdecl support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer)
+SOCKADDR_IN * __stack_esi support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer)
 
 {
   ushort uVar1;

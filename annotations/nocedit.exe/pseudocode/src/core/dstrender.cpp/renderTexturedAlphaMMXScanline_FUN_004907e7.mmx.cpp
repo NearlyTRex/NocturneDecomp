@@ -1,12 +1,12 @@
 // Name: core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7
 // Address: 004907e7
 // Address Range: [[004907e7, 00490901]]
-// Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+// Convention: __edi_esi_ebx
+// Signature: void __edi_esi_ebx core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+void __edi_esi_ebx core_dstrender_cpp_renderTexturedAlphaMMXScanline_FUN_004907e7(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 {
 __asm {
         mov EAX,dword ptr [ESI + 0x8]

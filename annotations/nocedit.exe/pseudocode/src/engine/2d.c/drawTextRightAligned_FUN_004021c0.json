@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 20,
     "complexity_score": 7,
-    "cross_reference_count": 2,
+    "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
@@ -17,6 +17,12 @@
     "total_lines": 27
   },
   "cross_references": [
+    {
+      "addr": "0043c880",
+      "from_addr": "0043cdd5",
+      "name": "core_cloth.cpp_CCloth_boneEditor_FUN_0043c880",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00402210",
       "from_addr": "00402261",
@@ -56,7 +62,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 3,
     "call_sites": [
       {
         "call_addr": "00402200",
@@ -73,6 +79,17 @@
         "call_addr": "00402261",
         "call_type": "direct",
         "caller": "engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0043cdd5",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_boneEditor_FUN_0043c880",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

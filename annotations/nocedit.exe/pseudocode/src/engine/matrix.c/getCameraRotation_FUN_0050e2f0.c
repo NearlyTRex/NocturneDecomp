@@ -1,12 +1,12 @@
 // Name: engine_matrix.c_getCameraRotation_FUN_0050e2f0
 // Address: 0050e2f0
 // Address Range: [[0050e2f0, 0050e31e]]
-// Convention: __cdecl
-// Signature: void __cdecl engine_matrix_c_getCameraRotation_FUN_0050e2f0(CVector3i *output)
+// Convention: __esi
+// Signature: void __esi engine_matrix_c_getCameraRotation_FUN_0050e2f0(CVector3i *output)
 
 #include "nocturne.h"
 
-void __cdecl engine_matrix_c_getCameraRotation_FUN_0050e2f0(CVector3i *output)
+void __esi engine_matrix_c_getCameraRotation_FUN_0050e2f0(CVector3i *output)
 
 {
   int iVar1;

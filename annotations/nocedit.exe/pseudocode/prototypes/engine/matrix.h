@@ -29,7 +29,7 @@ void __cdecl buildRotationMatrix(int pitch,int yaw,int roll);
 
 // Original: engine_matrix.c_transformWorldToView_FUN_0050cc40
 // Address: 0050cc40
-void __stack_esi transformWorldToView(CVector3i *input_coords,CVector3i *output_coords);
+CVector3i * __stack_esi transformWorldToView(CVector3i *input_coords,CVector3i *output_coords);
 
 // Original: engine_matrix.c_calculateTransformedZ_FUN_0050cd10
 // Address: 0050cd10
@@ -97,11 +97,11 @@ void __cdecl setCameraRotation(int pitch,int yaw,int roll);
 
 // Original: engine_matrix.c_getCameraOrigin_FUN_0050e2c0
 // Address: 0050e2c0
-void __cdecl getCameraOrigin(CVector3i *output);
+void __esi getCameraOrigin(CVector3i *output);
 
 // Original: engine_matrix.c_getCameraRotation_FUN_0050e2f0
 // Address: 0050e2f0
-void __cdecl getCameraRotation(CVector3i *output);
+void __esi getCameraRotation(CVector3i *output);
 
 // Original: engine_matrix.c_pushViewport_FUN_0050e320
 // Address: 0050e320

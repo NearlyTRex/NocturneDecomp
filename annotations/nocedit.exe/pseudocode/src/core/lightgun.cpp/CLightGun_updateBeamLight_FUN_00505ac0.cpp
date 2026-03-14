@@ -10,12 +10,12 @@ void __cdecl core_lightgun_cpp_CLightGun_updateBeamLight_FUN_00505ac0(CLightGun 
 
 {
   CVector3f *input_local_point;
-  CVector3f *unaff_ESI;
+  CVector3f *local_e1;
   char local_res0;
   CVector3f CStack_14;
   
   input_local_point =
-       (*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,unaff_ESI);
+       (*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,local_e1);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             ((CDemonActor *)this_ptr,&CStack_14,input_local_point);
   g_CDemonLightInstance.light_enabled_flag = 1;

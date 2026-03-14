@@ -2,15 +2,14 @@
 // Address: 00492001
 // Address Range: [[00492001, 00492041]]
 // Convention: __cdecl
-// Signature: void * __cdecl core_dstrender_cpp_memcpyMMX_FUN_00492001(void *dest,void *src,int byte_count)
+// Signature: void __cdecl core_dstrender_cpp_memcpyMMX_FUN_00492001(void *dest,void *src,int byte_count)
 
 #include "nocturne.h"
 
-void * __cdecl core_dstrender_cpp_memcpyMMX_FUN_00492001(void *dest,void *src,int byte_count)
+void __cdecl core_dstrender_cpp_memcpyMMX_FUN_00492001(void *dest,void *src,int byte_count)
 
 {
   bool bVar1;
-  void *in_EAX;
   int iVar2;
   int iVar3;
   ulonglong *puVar4;
@@ -32,5 +31,5 @@ void * __cdecl core_dstrender_cpp_memcpyMMX_FUN_00492001(void *dest,void *src,in
     bVar1 = 0 < iVar3;
     iVar3 = iVar3 + -1;
   } while (bVar1);
-  return in_EAX;
+  return;
 }

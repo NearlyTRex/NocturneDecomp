@@ -11,9 +11,9 @@ int __cdecl core_lightgun_cpp_CLightGun_isLightVulnerable_FUN_00505a20(CLightGun
 {
   CVector3f *pCVar1;
   int iVar2;
-  CVector3f *unaff_ESI;
+  CVector3f *local_e1;
   
-  pCVar1 = (*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,unaff_ESI);
+  pCVar1 = (*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,local_e1);
   if (pCVar1 == (CVector3f *)0x0) {
     iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0((CDemonActor *)this_ptr,"CGhoul");
     if (iVar2 != 0) {

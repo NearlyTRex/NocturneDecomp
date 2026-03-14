@@ -9,35 +9,40 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_00453950(CDemonCamera *this_ptr,int alpha_index)
 
 {
-  uint *puVar1;
-  byte bVar2;
-  int aiStack_ffc [1018];
+  int iVar1;
+  int iVar2;
+  uint *puVar3;
+  byte bVar4;
+  int unaff_retaddr;
+  uint auStack_1000 [1019];
   CVector3i CStack_14;
   
-  bVar2 = 0;
+  bVar4 = 0;
   engine_matrix_c_getCameraOrigin_FUN_0050e2c0(&CStack_14);
-  puVar1 = (uint *)((int)this_ptr + (uint)bVar2 * -8 + alpha_index * 0xc + 0x11f0);
-  this_ptr->alpha_translations[alpha_index].x = CStack_14.x;
-  *puVar1 = *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + 4);
-  puVar1[(uint)bVar2 * -2 + 1] =
-       *(uint *)((int)&CStack_14 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-  this_ptr->alpha_transform_matrices[0][alpha_index] = g_TransformMatrix.m[0].x;
-  this_ptr->alpha_transform_matrices[1][alpha_index] = g_TransformMatrix.m[0].y;
-  this_ptr->alpha_transform_matrices[2][alpha_index] = g_TransformMatrix.m[0].z;
-  this_ptr->alpha_transform_matrices[3][alpha_index] = g_TransformMatrix.m[1].x;
-  this_ptr->alpha_transform_matrices[4][alpha_index] = g_TransformMatrix.m[1].y;
-  this_ptr->alpha_transform_matrices[5][alpha_index] = g_TransformMatrix.m[1].z;
-  this_ptr->alpha_transform_matrices[6][alpha_index] = g_TransformMatrix.m[2].x;
-  this_ptr->alpha_transform_matrices[7][alpha_index] = g_TransformMatrix.m[2].y;
-  this_ptr->alpha_transform_matrices[8][alpha_index] = g_TransformMatrix.m[2].z;
-  this_ptr->alpha_transform_matrices[9][alpha_index] = g_InverseMatrix.m[0].x;
-  this_ptr->alpha_transform_matrices[10][alpha_index] = g_InverseMatrix.m[0].y;
-  this_ptr->alpha_transform_matrices[0xb][alpha_index] = g_InverseMatrix.m[0].z;
-  this_ptr->alpha_transform_matrices[0xc][alpha_index] = g_InverseMatrix.m[1].x;
-  this_ptr->alpha_transform_matrices[0xd][alpha_index] = g_InverseMatrix.m[1].y;
-  this_ptr->alpha_transform_matrices[0xe][alpha_index] = g_InverseMatrix.m[1].z;
-  this_ptr->alpha_transform_matrices[0xf][alpha_index] = g_InverseMatrix.m[2].x;
-  this_ptr->alpha_transform_matrices[0x10][alpha_index] = g_InverseMatrix.m[2].y;
-  this_ptr->alpha_transform_matrices[0x11][alpha_index] = g_InverseMatrix.m[2].z;
+  iVar1 = (int)this_ptr * 0xc + unaff_retaddr;
+  iVar2 = (int)this_ptr * 4 + unaff_retaddr;
+  puVar3 = (uint *)(iVar1 + 0x11f0 + (uint)bVar4 * -8);
+  *(uint *)(iVar1 + 0x11ec) = 0x45395c;
+  *puVar3 = *(uint *)((int)&CStack_14 + (uint)bVar4 * -8);
+  puVar3[(uint)bVar4 * -2 + 1] =
+       *(uint *)((int)&CStack_14 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4);
+  *(int *)(iVar2 + 0x124c) = g_TransformMatrix.m[0].x;
+  *(int *)(iVar2 + 0x126c) = g_TransformMatrix.m[0].y;
+  *(int *)(iVar2 + 0x128c) = g_TransformMatrix.m[0].z;
+  *(int *)(iVar2 + 0x12ac) = g_TransformMatrix.m[1].x;
+  *(int *)(iVar2 + 0x12cc) = g_TransformMatrix.m[1].y;
+  *(int *)(iVar2 + 0x12ec) = g_TransformMatrix.m[1].z;
+  *(int *)(iVar2 + 0x130c) = g_TransformMatrix.m[2].x;
+  *(int *)(iVar2 + 0x132c) = g_TransformMatrix.m[2].y;
+  *(int *)(iVar2 + 0x134c) = g_TransformMatrix.m[2].z;
+  *(int *)(iVar2 + 0x136c) = g_InverseMatrix.m[0].x;
+  *(int *)(iVar2 + 0x138c) = g_InverseMatrix.m[0].y;
+  *(int *)(iVar2 + 0x13ac) = g_InverseMatrix.m[0].z;
+  *(int *)(iVar2 + 0x13cc) = g_InverseMatrix.m[1].x;
+  *(int *)(iVar2 + 0x13ec) = g_InverseMatrix.m[1].y;
+  *(int *)(iVar2 + 0x140c) = g_InverseMatrix.m[1].z;
+  *(int *)(iVar2 + 0x142c) = g_InverseMatrix.m[2].x;
+  *(int *)(iVar2 + 0x144c) = g_InverseMatrix.m[2].y;
+  *(int *)(iVar2 + 0x146c) = g_InverseMatrix.m[2].z;
   return;
 }

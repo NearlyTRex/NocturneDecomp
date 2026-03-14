@@ -188,7 +188,7 @@ LAB_0057a87e:
     pcVar4[1] = cVar2;
     pcVar4 = pcVar4 + 2;
   } while (cVar2 != '\0');
-  core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(this_ptr);
+  core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60(this_ptr);
   core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(this_ptr,local_a0);
   return;
 }

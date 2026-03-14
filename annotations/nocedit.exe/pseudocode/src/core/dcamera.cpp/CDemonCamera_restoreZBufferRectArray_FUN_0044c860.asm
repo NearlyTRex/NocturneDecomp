@@ -229,7 +229,7 @@ section .text
     ADD ESI,0x4                         ; 0044ca63
     INC EDI                             ; 0044ca66
     CALL core_dstrender.cpp_memcpyMMX_FUN_00492001 ; 0044ca67
-        ;   XREF to: 00492001 (UNCONDITIONAL_CALL)  ; void * core_dstrender.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)
+        ;   XREF to: 00492001 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)
     MOV EAX,[0x0151a3ac]                ; 0044ca6c | g_ScanlineSpanCount
     ADD ESP,0xc                         ; 0044ca71
     CMP EDI,EAX                         ; 0044ca74

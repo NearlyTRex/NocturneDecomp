@@ -22,26 +22,26 @@ void __cdecl core_mmx_c_detectIntelProcessor_FUN_00524f4c(void)
   int iVar7;
   char *pcVar8;
   char *pcVar9;
-  byte in_CF;
-  byte in_PF;
-  byte in_AF;
-  byte in_ZF;
-  byte in_SF;
-  byte in_TF;
-  byte in_IF;
-  byte in_OF;
-  byte in_NT;
-  byte in_AC;
-  byte in_VIF;
-  byte in_VIP;
-  byte in_ID;
+  byte local_1;
+  byte local_2;
+  byte local_3;
+  byte local_4;
+  byte local_5;
+  byte local_6;
+  byte local_7;
+  byte local_8;
+  byte local_9;
+  byte local_10;
+  byte local_11;
+  byte local_12;
+  byte local_13;
   uint uVar10;
   
-  uVar10 = (uint)(in_NT & 1) * 0x4000 | (uint)(in_OF & 1) * 0x800 | (uint)(in_IF & 1) * 0x200 |
-           (uint)(in_TF & 1) * 0x100 | (uint)(in_SF & 1) * 0x80 | (uint)(in_ZF & 1) * 0x40 |
-           (uint)(in_AF & 1) * 0x10 | (uint)(in_PF & 1) * 4 | (uint)(in_CF & 1) |
-           (uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |
-           (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;
+  uVar10 = (uint)(local_9 & 1) * 0x4000 | (uint)(local_8 & 1) * 0x800 | (uint)(local_7 & 1) * 0x200
+           | (uint)(local_6 & 1) * 0x100 | (uint)(local_5 & 1) * 0x80 | (uint)(local_4 & 1) * 0x40 |
+           (uint)(local_3 & 1) * 0x10 | (uint)(local_2 & 1) * 4 | (uint)(local_1 & 1) |
+           (uint)(local_13 & 1) * 0x200000 | (uint)(local_12 & 1) * 0x100000 |
+           (uint)(local_11 & 1) * 0x80000 | (uint)(local_10 & 1) * 0x40000;
   uVar6 = uVar10 ^ 0x40000;
   g_CPUInfoFamily = 3;
   if (((uint)((uVar6 & 0x4000) != 0) * 0x4000 | (uint)((uVar6 & 0x800) != 0) * 0x800 |

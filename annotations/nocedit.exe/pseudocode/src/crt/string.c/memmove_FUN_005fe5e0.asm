@@ -8,18 +8,18 @@
 ; void *           Stack[0x8]:4   src
 ; SIZE_T           Stack[0xc]:4   n
 ;
-; XREF[78]:
+; XREF[79]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0 at 00488f3a
 ;   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 at 0040ff10
 ;   core_actor.cpp_trimActorName_FUN_004087b0 at 0040880b
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043d26d
 ;   core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0 at 0047bebd
 ;   core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0 at 0047bccc
 ;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_004b0470 at 004b0588
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004b0330 at 004b0448
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_004ae140 at 004ae520
 ;   core_event.cpp_CEventList_executeCommand_FUN_004aacc0 at 004ad900
-;   core_event.cpp_CEventList_process_FUN_004aaac0 at 004aabcb
-;   ... and 68 more
+;   ... and 69 more
 ;
 ; *****************************************************************************
 

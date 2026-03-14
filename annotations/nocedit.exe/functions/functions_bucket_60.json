@@ -6051,7 +6051,7 @@
         "start":"0041dbe0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__esi",
     "importable":true,
     "name":"engine_boss.c_modelStructNotSupported_FUN_0041dbe0",
     "ret":"void",
@@ -6071,22 +6071,6 @@
             ]
           },
           "type":"byte"
-        },
-        {
-          "name":"unaff_ESI",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4*",
-          "use":-1
         },
         {
           "name":"iVar1",
@@ -6141,13 +6125,12 @@
         {
           "name":"mrgl_data",
           "storage":{
-            "offset":4,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x4]",
-                "offset":4,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -63602,7 +63585,6 @@
       }
     ],
     "conv":"__stack_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"core_set.cpp_transformNormalFixedPoint_FUN_0056e960",
     "ret":"CVector3i*",
@@ -64698,7 +64680,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60",
+    "name":"core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60",
     "ret":"void",
     "vars":{
       "params":[
@@ -91389,7 +91371,6 @@
       }
     ],
     "conv":"__stack_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_buildXFlipMatrix_FUN_005f6ee0",
     "ret":"CMatrix3x4f*",
@@ -91655,7 +91636,6 @@
       }
     ],
     "conv":"__stack_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_negateFirstComponent_FUN_005f75e0",
     "ret":"CQuaternion4f*",
@@ -91765,7 +91745,6 @@
       }
     ],
     "conv":"__stack3_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"core_xform.cpp_slerpQuaternion_FUN_005f77e0",
     "ret":"CQuaternion4f*",

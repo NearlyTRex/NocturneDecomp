@@ -7,7 +7,7 @@
   "complexity": {
     "assembly_lines": 308,
     "complexity_score": 109,
-    "cross_reference_count": 6,
+    "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "clean",
@@ -17,6 +17,12 @@
     "total_lines": 417
   },
   "cross_references": [
+    {
+      "addr": "0043c880",
+      "from_addr": "0043d549",
+      "name": "core_cloth.cpp_CCloth_boneEditor_FUN_0043c880",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0043d590",
       "from_addr": "0043d6e7",
@@ -124,7 +130,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 7,
+    "call_site_count": 9,
     "call_sites": [
       {
         "call_addr": "0052c400",
@@ -199,6 +205,28 @@
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0043d549",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_boneEditor_FUN_0043c880",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0043d56a",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_CCloth_boneEditor_FUN_0043c880",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
         "reg_params": [],
         "stack_bytes": 8,
         "stack_params": 2

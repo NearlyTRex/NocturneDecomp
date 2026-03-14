@@ -53360,10 +53360,9 @@
       }
     ],
     "conv":"__stack2_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550",
-    "ret":"void",
+    "ret":"CMatrix3x4f*",
     "vars":{
       "locals":[
         {
@@ -53766,7 +53765,17 @@
           },
           "type":"CMatrix3x4f*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -54028,7 +54037,7 @@
           "type":"byte"
         },
         {
-          "name":"unaff_EBP",
+          "name":"local_e1",
           "storage":{
             "reg":"EBP",
             "size":4,
@@ -90862,22 +90871,6 @@
           "type":"byte"
         },
         {
-          "name":"unaff_ESI",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"CVector3d*",
-          "use":-1
-        },
-        {
           "name":"iVar4",
           "storage":{
             "reg":"ECX",
@@ -91476,7 +91469,6 @@
       }
     ],
     "conv":"__stack2_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"shape_superopt.cpp_CP2D_subtract_FUN_005d8350",
     "ret":"CP2D*",
@@ -91586,7 +91578,6 @@
       }
     ],
     "conv":"__stackdbl_esi",
-    "custom_storage":true,
     "importable":true,
     "name":"shape_superopt.cpp_CP2D_scale_FUN_005d83d0",
     "ret":"CP2D*",
@@ -95453,8 +95444,7 @@
         "start":"005e19d0"
       }
     ],
-    "conv":"__cdecl",
-    "custom_storage":true,
+    "conv":"__stack_esi",
     "importable":true,
     "name":"support_trisock.cpp_buildSockaddrIn_FUN_005e19d0",
     "ret":"SOCKADDR_IN*",

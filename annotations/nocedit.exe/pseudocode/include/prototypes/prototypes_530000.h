@@ -141,7 +141,7 @@ void __cdecl core_netgame_cpp_resetGameTime_FUN_0053f360(void);
 void __cdecl core_netgame_cpp_updateGameTime_FUN_0053f390(void);
 float __cdecl core_netgame_cpp_computeTimeDelta_FUN_0053f3e0(int start_time,int end_time);
 float __cdecl core_netgame_cpp_getElapsedSeconds_FUN_0053f440(uint timestamp);
-void __cdecl core_netgame_cpp_resetChatCounts_FUN_0053f4a2(int count);
+void __edx core_netgame_cpp_resetChatCounts_FUN_0053f4a2(int count);
 void __cdecl core_netgame_cpp_removeChatOut_FUN_0053f4b0(int index);
 int __cdecl core_netgame_cpp_findSimFrame_FUN_0053f550(int sequence_number);
 SSimFrame * __cdecl core_netgame_cpp_allocSimFrame_FUN_0053f5a0(int sequence_number);

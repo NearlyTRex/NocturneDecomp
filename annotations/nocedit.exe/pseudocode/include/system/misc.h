@@ -27,6 +27,9 @@ struct CWeapon;
 // Function Definition: dt_11b7af31
 typedef void dt_11b7af31(struct CPoly* param, struct CVector3d* param1);
 
+// Function Definition: dt_3831e62a
+typedef void dt_3831e62a(char* format);
+
 // Function Definition: dt_486ab265
 typedef void dt_486ab265(struct CFireEffect* this_ptr, struct CVector3f* origin, struct CVector3f* hit_position, float beam_width, float reticle_intensity, struct CVector3f* reflection_normal, int red, int green, int blue, float halo_spread);
 

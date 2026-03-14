@@ -2,15 +2,14 @@
 // Address: 00447590
 // Address Range: [[00447590, 004478b1]]
 // Convention: __cdecl
-// Signature: uint __cdecl shape_cramtex_cpp_performGapFillingOptimization_FUN_00447590(void)
+// Signature: void __cdecl shape_cramtex_cpp_performGapFillingOptimization_FUN_00447590(void)
 
 #include "nocturne.h"
 
-uint __cdecl shape_cramtex_cpp_performGapFillingOptimization_FUN_00447590(void)
+void __cdecl shape_cramtex_cpp_performGapFillingOptimization_FUN_00447590(void)
 
 {
   bool bVar1;
-  uint in_EAX;
   int iVar1;
   int iVar3;
   int iVar2;
@@ -135,19 +134,18 @@ uint __cdecl shape_cramtex_cpp_performGapFillingOptimization_FUN_00447590(void)
       } while (iVar8 < g_CramTextureCount);
     }
     iVar8 = 0;
-    in_EAX = g_CramTextureCount;
     if (0 < g_CramTextureCount) {
       pCVar9 = g_CramSortedTextureEntries;
       do {
         iVar6 = shape_cramtex_cpp_CCramTex_findLeftmostOverlappingX_FUN_00447a10(pCVar9);
         iVar8 = iVar8 + 1;
         pCVar9->final_right = iVar6;
-        in_EAX = shape_cramtex_cpp_CCramTex_findLowestOverlappingY_FUN_00447930(pCVar9);
+        iVar3 = shape_cramtex_cpp_CCramTex_findLowestOverlappingY_FUN_00447930(pCVar9);
         iVar6 = g_CramTextureCount;
-        pCVar9->final_bottom = in_EAX;
+        pCVar9->final_bottom = iVar3;
         pCVar9 = pCVar9 + 1;
       } while (iVar8 < iVar6);
     }
   }
-  return in_EAX;
+  return;
 }

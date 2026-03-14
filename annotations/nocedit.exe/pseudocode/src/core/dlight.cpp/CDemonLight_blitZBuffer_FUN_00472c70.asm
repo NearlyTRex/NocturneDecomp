@@ -75,7 +75,7 @@ section .text
     PUSH ECX                            ; 00472ced
     INC EDI                             ; 00472cee
     CALL core_dstrender.cpp_memcpyMMX_FUN_00492001 ; 00472cef
-        ;   XREF to: 00492001 (UNCONDITIONAL_CALL)  ; void * core_dstrender.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)
+        ;   XREF to: 00492001 (UNCONDITIONAL_CALL)  ; void core_dstrender.cpp_memcpyMMX_FUN_00492001(void * dest, void * src, int byte_count)
     MOV EAX,dword ptr [ESI + 0xc]       ; 00472cf4
     ADD ESP,0xc                         ; 00472cf7
     CMP EDI,EAX                         ; 00472cfa

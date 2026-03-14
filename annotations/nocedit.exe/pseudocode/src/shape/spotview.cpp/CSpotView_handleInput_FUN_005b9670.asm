@@ -11,7 +11,8 @@
 ; float            Stack[-0x1c]:4  fStack_1c
 ; float            Stack[-0xc]:4  fStack_c
 ;
-; XREF[6]:
+; XREF[7]:
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043d549
 ;   core_cloth.cpp_CCloth_lockedVertexEditor_FUN_0043d590 at 0043d6e7
 ;   core_morph.cpp_CMorph_editMorph_FUN_0052bcb0 at 0052c400
 ;   core_morph.cpp_CMorph_previewMorph_FUN_0052ca90 at 0052cb59

@@ -12,13 +12,13 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
   uint seed_value;
   int iVar3;
   int iVar1;
-  int unaff_ESI;
+  int local_e1;
   CSound *this_ptr_00;
   CNetGame *pCVar2;
   CGame *pCVar1;
   
   if (this_ptr->profile_mode != 0) {
-    unaff_ESI = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+    local_e1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   }
   pCVar2 = g_CNetGamePtr;
   this_ptr->is_processing = 1;
@@ -132,7 +132,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004e3190(CGame *this_ptr)
     iVar1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
     engine_console_cpp_CConsole_printf_FUN_00441890
               (g_CConsolePtr,"simulate : %3.2f ms\n",
-               ((double)(iVar1 - unaff_ESI) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
+               ((double)(iVar1 - local_e1) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
                (double)g_CGamePtr->delta_time_float);
   }
   this_ptr->total_play_time = this_ptr->delta_time_float + this_ptr->total_play_time;

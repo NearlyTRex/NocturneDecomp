@@ -26,7 +26,7 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
   SMRGLModelBounds *pSVar13;
   int iVar14;
   uint *puVar6;
-  SMRGLModelBounds *pSVar7;
+  uint *extraout_EDI;
   byte bVar15;
   char local_160 [80];
   uint local_110 [13];
@@ -80,13 +80,13 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
     puVar11 = &local_a8;
   }
   else if (iVar4 == 0x26) {
-    puVar6 = local_110;
-    engine_boss_c_modelStructNotSupported_FUN_0041dbe0(mrgl_data);
+    engine_boss_c_modelStructNotSupported_FUN_0041dbe0((SMRGLHeaderExtended *)local_dc);
     iVar4 = 0xd;
-    puVar11 = local_dc;
+    puVar11 = local_110 + 0xc;
+    puVar6 = extraout_EDI;
   }
   else {
-    piVar3 = &mrgl_data[1].child_count;
+    local_34 = &mrgl_data[1].child_count;
     if ((mrgl_data->base).type != 0x14) {
       g_CurrentFilename = "..\\engine\\model.c";
       g_CurrentLineNumber = 0x172;
@@ -109,6 +109,7 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
     local_1c = 0.0;
     local_18 = 0.0;
     local_14 = 0.0;
+    piVar3 = local_34;
     if (0 < mrgl_data[1].base.count) {
       do {
         if (iVar10 < *piVar3) {
@@ -132,11 +133,11 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
         iVar3 = *piVar3;
         piVar1 = piVar3 + 1;
         piVar2 = piVar3 + 2;
-        piVar3 = piVar3 + 3;
         iVar7 = iVar7 + 1;
         local_14 = (float)iVar3 + local_14;
         local_18 = (float)*piVar1 + local_18;
         local_1c = (float)*piVar2 + local_1c;
+        piVar3 = piVar3 + 3;
       } while (iVar7 < mrgl_data[1].base.count);
     }
     local_9c = (uint)((longlong)iVar4 * (longlong)iVar10) >> 0x10 |
@@ -186,13 +187,13 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
     puVar11 = puVar11;
     puVar6 = puVar6 + (uint)bVar15 * -2 + 1;
   }
-  puVar12 = local_110;
-  pSVar7 = output_bounds;
+  puVar12 = (uint *)(local_160 + 0x4c);
+  puVar6 = (uint *)local_34;
   for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
     puVar12 = puVar12 + (uint)bVar15 * -2 + 1;
-    (pSVar7->min_scaled).x = *puVar12;
+    *puVar6 = *puVar12;
     puVar12 = puVar12;
-    pSVar7 = (SMRGLModelBounds *)((int)pSVar7 + (uint)bVar15 * -8 + 4);
+    puVar6 = puVar6 + (uint)bVar15 * -2 + 1;
   }
-  return output_bounds;
+  return (SMRGLModelBounds *)local_34;
 }

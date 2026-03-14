@@ -178,7 +178,7 @@ def dry_run(program, func_filter=None):
         for conv in sorted(by_conv.keys()):
             print("    %s: %d" % (conv, len(by_conv[conv])))
 
-    if non_redundant_funcs and len(non_redundant_funcs) <= 30:
+    if non_redundant_funcs:
         print("\n  Non-redundant functions:")
         for addr, name, conv, reason in non_redundant_funcs:
             print("    %s  %s [%s] - %s" % (addr, name, conv, reason))

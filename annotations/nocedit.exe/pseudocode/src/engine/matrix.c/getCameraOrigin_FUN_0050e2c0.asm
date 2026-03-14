@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_matrix_c_getCameraOrigin_FUN_0050e2c0(CVector3i *output)
+; void __esi engine_matrix_c_getCameraOrigin_FUN_0050e2c0(CVector3i *output)
 ;
 ;
 ; XREF[4]:

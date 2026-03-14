@@ -1,12 +1,12 @@
 // Name: core_dstrender.cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58
 // Address: 00490a58
 // Address Range: [[00490a58, 00490c36]]
-// Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+// Convention: __edi_esi_ebx
+// Signature: void __edi_esi_ebx core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+void __edi_esi_ebx core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
   int iVar1;
@@ -23,15 +23,15 @@ void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SS
   int *piVar12;
   
   iVar1 = g_ActiveRenderColor;
-  uVar11 = (left_edge->base).x_current;
-  uVar9 = (right_edge->base).x_current;
+  uVar11 = (right_edge->base).x_current;
+  uVar9 = (left_edge->base).x_current;
   uVar2 = uVar11;
-  pSVar10 = left_edge;
+  pSVar10 = right_edge;
   if (uVar9 < uVar11) {
     uVar2 = uVar9;
     uVar9 = uVar11;
-    pSVar10 = right_edge;
-    right_edge = left_edge;
+    pSVar10 = left_edge;
+    left_edge = right_edge;
   }
   uVar2 = uVar2 >> 0x10;
   iVar3 = (uVar9 >> 0x10) - uVar2;
@@ -39,7 +39,7 @@ void __cdecl core_dstrender_cpp_renderSolidColorDepth16xUnrolled_FUN_00490a58(SS
     piVar6 = (int *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 4);
     puVar7 = g_ZBufferScanlineArray[scanline_y] + uVar2;
     iVar5 = (int)((ulonglong)
-                  ((longlong)((right_edge->base).w_current - (pSVar10->base).w_current) *
+                  ((longlong)((left_edge->base).w_current - (pSVar10->base).w_current) *
                   (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
     uVar11 = (pSVar10->base).w_current;
     while (iVar4 = iVar3 + -4, puVar8 = puVar7, piVar12 = piVar6, 3 < iVar3) {

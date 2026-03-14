@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(CDemonSet *this_ptr)
+; void __cdecl core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60(CDemonSet *this_ptr)
 ;
 ; Parameters:
 ; CDemonSet *      Stack[0x4]:4   this_ptr
@@ -20,7 +20,7 @@
 section .text
 
     PUSH 0x0                            ; 00575f60
-        ;   Label: core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60
+        ;   Label: core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60
     MOV EDX,dword ptr [ESP + 0x8]       ; 00575f62
     PUSH EDX                            ; 00575f66
     CALL core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0 ; 00575f67

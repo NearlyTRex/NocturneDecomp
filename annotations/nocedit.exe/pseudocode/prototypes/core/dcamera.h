@@ -93,7 +93,7 @@ void __cdecl CDemonCamera::updateTransformMatrices(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
 // Address: 0044d2a0
-void __stack3_esi CDemonCamera::screenToWorldCoord(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr);
+CVector3i * __stack3_esi CDemonCamera::screenToWorldCoord(CDemonCamera *this_ptr,int screen_x,int screen_y,CVector3i *output_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310
 // Address: 0044d310
@@ -205,7 +205,7 @@ int __cdecl CDemonCamera::isCoronaSufficientlyVisible(CDemonCamera *this_ptr,CDe
 
 // Original: core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
 // Address: 00451090
-void __cdecl CDemonCamera::computeLightExtentBounds(CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds);
+CRect * __stack2_esi CDemonCamera::computeLightExtentBounds(CDemonCamera *this_ptr,CDemonLight *light,CRect *out_bounds);
 
 // Original: core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130
 // Address: 00451130
@@ -297,7 +297,7 @@ void __cdecl CDemonCamera::saveAlphaTransform(CDemonCamera *this_ptr,int alpha_i
 
 // Original: core_dcamera.cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70
 // Address: 00453a70
-CVector3i * __cdecl CDemonCamera::restoreAlphaTransform(CDemonCamera *this_ptr,CVector3i *screen_pos,int alpha_index,CVector3i *world_pos);
+CVector3i * __stack3_esi CDemonCamera::restoreAlphaTransform(CDemonCamera *this_ptr,CVector3i *screen_pos,int alpha_index,CVector3i *world_pos);
 
 // Original: core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0
 // Address: 00453bd0

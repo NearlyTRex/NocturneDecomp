@@ -22,13 +22,9 @@ PRIORITY 1: Files with 1-2 functions remaining
     - engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
       Suspects: stack_param, stack_param, pointer_cast
 
-  engine/ini.cpp (1 remaining of 18)
-    - engine_ini.cpp_CIni_getProfileString_FUN_004fb250
-      Suspects: unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg
-
   engine/boss.c (1 remaining of 5)
     - engine_boss.c_modelStructNotSupported_FUN_0041dbe0
-      Suspects: unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg
+      Suspects: pointer_cast, param_count_too_few
 
   engine/light.cpp (1 remaining of 10)
     - engine_light.cpp_calculatePhongLighting_FUN_00505530
@@ -272,6 +268,12 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_menu.cpp_showMainGameMenu_FUN_00512f40
       Suspects: pointer_cast
 
+  core/lightgun.cpp (2 remaining of 14)
+    - core_lightgun.cpp_CLightGun_ctor_FUN_00505900
+      Suspects: suspect_float
+    - core_lightgun.cpp_CLightGun_process_FUN_00506450
+      Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic
+
   core/waypoint.cpp (2 remaining of 19)
     - core_waypoint.cpp_CWaypoint_setup_FUN_005ebeb0
       Suspects: warning_type_propagation, decompiler_intrinsic
@@ -505,12 +507,13 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880                      ( 22 lines)
     core_lightgun.cpp_CLightGun_ctor_FUN_00505900                          ( 26 lines)
 
+  [mmx_assembly] - 2 functions
+    core_dstrender.cpp_saveMMXRegisters_FUN_004906b0                       ( 12 lines)
+    core_dstrender.cpp_memcpyMMX_FUN_00492001                              ( 25 lines)
+
   [decompiler_intrinsic] - 2 functions
     core_dmodel.cpp_safeAcos_FUN_0047b170                                  ( 20 lines)
     shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80                ( 21 lines)
-
-  [mmx_assembly] - 1 functions
-    core_dstrender.cpp_saveMMXRegisters_FUN_004906b0                       ( 12 lines)
 
   [unknown_field] - 1 functions
     engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90 ( 20 lines)
@@ -566,11 +569,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
     1 functions remaining:
       core_bat.cpp_CBat_getBoundingBox_FUN_00414c60 (17 lines)
         Types: ['decompiler_intrinsic', 'warning_inlined_function']
-
-  engine/ini.cpp (94.4% complete)
-    1 functions remaining:
-      engine_ini.cpp_CIni_getProfileString_FUN_004fb250 (113 lines)
-        Types: ['unaffected_reg']
 
   core/trap.cpp (94.1% complete)
     1 functions remaining:
@@ -778,13 +776,13 @@ ALL REMAINING FILES
   engine/dosio.c                                                88.5%  (23/26 clean, 3 remaining)
   core/curtain.cpp                                              88.5%  (23/26 clean, 3 remaining)
   shape/memdbg.cpp                                              88.5%  (23/26 clean, 3 remaining)
+  core/mission.cpp                                              87.8%  (36/41 clean, 5 remaining)
   core/fire.cpp                                                 87.6%  (162/185 clean, 23 remaining)
   core/glass.cpp                                                87.5%  (21/24 clean, 3 remaining)
   core/manpuz.cpp                                               87.3%  (55/63 clean, 8 remaining)
   engine/texture.cpp                                            86.4%  (19/22 clean, 3 remaining)
   core/flies.cpp                                                86.4%  (19/22 clean, 3 remaining)
   core/inv.cpp                                                  86.0%  (37/43 clean, 6 remaining)
-  core/mission.cpp                                              85.4%  (35/41 clean, 6 remaining)
   support/codec.cpp                                             85.0%  (34/40 clean, 6 remaining)
   core/motion.cpp                                               84.8%  (28/33 clean, 5 remaining)
   core/bodypart.cpp                                             84.4%  (38/45 clean, 7 remaining)
@@ -821,36 +819,35 @@ ALL REMAINING FILES
   core/morph.cpp                                                77.6%  (38/49 clean, 11 remaining)
   cockpit/drawsurf.cpp                                          77.4%  (72/93 clean, 21 remaining)
   core/mirror.cpp                                               77.3%  (17/22 clean, 5 remaining)
+  shape/cramtex.cpp                                             76.2%  (16/21 clean, 5 remaining)
   core/scat.cpp                                                 76.0%  (19/25 clean, 6 remaining)
   cockpit/pkbitmap.cpp                                          75.8%  (25/33 clean, 8 remaining)
   support/trisock.cpp                                           75.0%  (24/32 clean, 8 remaining)
   core/gargoyle.cpp                                             75.0%  (12/16 clean, 4 remaining)
   core/smiley.cpp                                               75.0%  (12/16 clean, 4 remaining)
   core/boneguy.cpp                                              75.0%  (21/28 clean, 7 remaining)
+  core/setdir.cpp                                               75.0%  (27/36 clean, 9 remaining)
   core/ground.cpp                                               75.0%  (15/20 clean, 5 remaining)
   core/tbplayer.cpp                                             75.0%  (12/16 clean, 4 remaining)
   core/set.cpp                                                  74.7%  (65/87 clean, 22 remaining)
   core/msnedit.cpp                                              74.6%  (47/63 clean, 16 remaining)
+  core/game.cpp                                                 73.9%  (51/69 clean, 18 remaining)
   core/gabriela.cpp                                             73.7%  (28/38 clean, 10 remaining)
   core/netgame.cpp                                              73.4%  (47/64 clean, 17 remaining)
   engine/fileio.cpp                                             73.2%  (52/71 clean, 19 remaining)
   core/passngr.cpp                                              72.7%  (8/11 clean, 3 remaining)
-  core/game.cpp                                                 72.5%  (50/69 clean, 19 remaining)
-  core/setdir.cpp                                               72.2%  (26/36 clean, 10 remaining)
   sound/snddx.cpp                                               71.9%  (23/32 clean, 9 remaining)
   core/dcube.cpp                                                71.8%  (28/39 clean, 11 remaining)
   core/skeleton.cpp                                             71.8%  (84/117 clean, 33 remaining)
   core/moon.cpp                                                 71.4%  (10/14 clean, 4 remaining)
   core/stranger.cpp                                             71.4%  (45/63 clean, 18 remaining)
-  core/lightgun.cpp                                             71.4%  (10/14 clean, 4 remaining)
-  shape/cramtex.cpp                                             71.4%  (15/21 clean, 6 remaining)
   core/bugs.cpp                                                 70.5%  (31/44 clean, 13 remaining)
   core/weather.cpp                                              70.0%  (7/10 clean, 3 remaining)
   wincore/winrun.cpp                                            69.7%  (23/33 clean, 10 remaining)
   engine/3d.c                                                   69.2%  (72/104 clean, 32 remaining)
+  sound/sndmain.cpp                                             68.9%  (133/193 clean, 60 remaining)
   core/zombie.cpp                                               68.8%  (22/32 clean, 10 remaining)
   shape/design.c                                                68.7%  (112/163 clean, 51 remaining)
-  sound/sndmain.cpp                                             68.4%  (132/193 clean, 61 remaining)
   engine/alphabit.cpp                                           66.7%  (6/9 clean, 3 remaining)
   core/dpart.cpp                                                66.7%  (10/15 clean, 5 remaining)
   core/tentacle.cpp                                             66.7%  (10/15 clean, 5 remaining)
@@ -863,15 +860,15 @@ ALL REMAINING FILES
   sound/sndwav.cpp                                              62.9%  (22/35 clean, 13 remaining)
   core/dlight.cpp                                               62.2%  (23/37 clean, 14 remaining)
   core/mobster.cpp                                              61.5%  (16/26 clean, 10 remaining)
+  core/path.cpp                                                 60.0%  (15/25 clean, 10 remaining)
   shape/dsemodel.cpp                                            60.0%  (6/10 clean, 4 remaining)
   shape/meshlod.cpp                                             59.7%  (74/124 clean, 50 remaining)
   core/dmodel.cpp                                               59.4%  (41/69 clean, 28 remaining)
   core/mimic.cpp                                                58.3%  (14/24 clean, 10 remaining)
-  engine/drender.cpp                                            58.0%  (51/88 clean, 37 remaining)
   core/dtrace.cpp                                               56.9%  (29/51 clean, 22 remaining)
   engine/matrix.c                                               56.7%  (17/30 clean, 13 remaining)
-  core/path.cpp                                                 56.0%  (14/25 clean, 11 remaining)
   shape/superopt.cpp                                            55.9%  (104/186 clean, 82 remaining)
+  engine/drender.cpp                                            55.7%  (49/88 clean, 39 remaining)
   core/setedit.cpp                                              55.2%  (32/58 clean, 26 remaining)
   engine/model.c                                                50.0%  (4/8 clean, 4 remaining)
   core/main.c                                                   50.0%  (5/10 clean, 5 remaining)

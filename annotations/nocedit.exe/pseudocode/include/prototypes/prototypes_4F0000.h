@@ -160,7 +160,7 @@ int __cdecl core_hostage_cpp_CHostage_isGrabbable_FUN_004f6390(CHostage *this_pt
 int __cdecl core_hostage_cpp_CHostage_canBeGrabbed_FUN_004f63d0(CHostage *this_ptr,CDemonActor *grabber,int grab_type);
 int __cdecl core_hostage_cpp_CHostage_getGrabbed_FUN_004f63e0(CHostage *this_ptr,CDemonActor *grabber,int grab_type);
 void __cdecl core_hostage_cpp_CHostage_processDamage_FUN_004f6450(CHostage *this_ptr,SDamageInfo *damage_info);
-void __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550 (CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi core_hostage_cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550 (CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 void __cdecl core_hostage_cpp_CHostage_getPropertyList_FUN_004f69c0(CHostage *this_ptr,CActorPropertyList *property_list);
 void __cdecl core_hostage_cpp_CHostage_addFilesToExtract_FUN_004f6b30(CHostage *this_ptr,_FILE *file_handle);
 CHostage * __cdecl core_hostage_cpp_CHostage_dtor_FUN_004f6b60(CHostage *this_ptr,uint flags);

@@ -61,7 +61,7 @@ void __cdecl CHostage::processDamage(CHostage *this_ptr,SDamageInfo *damage_info
 
 // Original: core_hostage.cpp_CHostage_getCarryObjToBodyXForm_FUN_004f6550
 // Address: 004f6550
-void __stack2_esi CHostage::getCarryObjToBodyXForm(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+CMatrix3x4f * __stack2_esi CHostage::getCarryObjToBodyXForm(CHostage *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_hostage.cpp_CHostage_getPropertyList_FUN_004f69c0
 // Address: 004f69c0

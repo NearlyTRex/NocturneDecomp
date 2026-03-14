@@ -101,7 +101,7 @@ section .text
     PUSH 0x3277d14                      ; 00545816 | g_CDemonRaytraceInstance
     FSTP float ptr [EBX + 0x8]          ; 0054581b
     CALL core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880 ; 0054581e
-        ;   XREF to: 00499880 (UNCONDITIONAL_CALL)  ; void core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
+        ;   XREF to: 00499880 (UNCONDITIONAL_CALL)  ; CVector3i * core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)
     ADD ESP,0x8                         ; 00545823
     LEA EAX,[ESP + 0x3c]                ; 00545826
     PUSH EAX                            ; 0054582a

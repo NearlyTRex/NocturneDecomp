@@ -135,7 +135,7 @@ LAB_00576e23:
   }
   _fwrite(g_ThumbnailImageBuffer,0x2ee000,1,file);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x17f);
-  core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(this_ptr);
+  core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60(this_ptr);
   pcVar3 = this_ptr->geometry_filename;
   do {
     cVar2 = *pcVar3;

@@ -651,7 +651,7 @@ LAB_0057a07e:
   if ((local_78 != 0) || (local_6c != 0)) {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Precalcs for virtual director");
-    core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(this_ptr);
+    core_setdir_cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60(this_ptr);
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Deleting possibly out-of-date fog files");
     iVar5 = 0;

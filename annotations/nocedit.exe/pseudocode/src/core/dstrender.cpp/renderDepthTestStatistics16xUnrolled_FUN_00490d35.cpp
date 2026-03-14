@@ -1,12 +1,12 @@
 // Name: core_dstrender.cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35
 // Address: 00490d35
 // Address Range: [[00490d35, 00490ebf]]
-// Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+// Convention: __edi_esi_ebx
+// Signature: void __edi_esi_ebx core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+void __edi_esi_ebx core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d35(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
   uint uVar1;
@@ -19,22 +19,22 @@ void __cdecl core_dstrender_cpp_renderDepthTestStatistics16xUnrolled_FUN_00490d3
   uint uVar8;
   uint uVar9;
   
-  uVar9 = (left_edge->base).x_current;
-  uVar8 = (right_edge->base).x_current;
+  uVar9 = (right_edge->base).x_current;
+  uVar8 = (left_edge->base).x_current;
   uVar1 = uVar9;
-  pSVar7 = left_edge;
+  pSVar7 = right_edge;
   if (uVar8 < uVar9) {
     uVar1 = uVar8;
     uVar8 = uVar9;
-    pSVar7 = right_edge;
-    right_edge = left_edge;
+    pSVar7 = left_edge;
+    left_edge = right_edge;
   }
   uVar1 = uVar1 >> 0x10;
   iVar2 = (uVar8 >> 0x10) - uVar1;
   if (iVar2 != 0 && uVar1 <= uVar8 >> 0x10) {
     puVar5 = g_ZBufferScanlineArray[scanline_y] + uVar1;
     iVar4 = (int)((ulonglong)
-                  ((longlong)((right_edge->base).w_current - (pSVar7->base).w_current) *
+                  ((longlong)((left_edge->base).w_current - (pSVar7->base).w_current) *
                   (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
     uVar9 = (pSVar7->base).w_current;
     while (iVar3 = iVar2 + -4, puVar6 = puVar5, 3 < iVar2) {

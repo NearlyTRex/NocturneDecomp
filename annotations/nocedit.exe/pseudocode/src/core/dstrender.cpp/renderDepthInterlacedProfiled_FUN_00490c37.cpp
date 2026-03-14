@@ -1,12 +1,12 @@
 // Name: core_dstrender.cpp_renderDepthInterlacedProfiled_FUN_00490c37
 // Address: 00490c37
 // Address Range: [[00490c37, 00490cb4]]
-// Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+// Convention: __edi_esi_ebx
+// Signature: void __edi_esi_ebx core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+void __edi_esi_ebx core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
   bool bVar1;
@@ -22,15 +22,15 @@ void __cdecl core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37(SSoft
   if ((scanline_y & 1U) != 0) {
     return;
   }
-  uVar9 = (left_edge->base).x_current;
-  uVar3 = (right_edge->base).x_current;
+  uVar9 = (right_edge->base).x_current;
+  uVar3 = (left_edge->base).x_current;
   uVar2 = uVar9;
-  pSVar8 = left_edge;
+  pSVar8 = right_edge;
   if (uVar3 < uVar9) {
     uVar2 = uVar3;
     uVar3 = uVar9;
-    pSVar8 = right_edge;
-    right_edge = left_edge;
+    pSVar8 = left_edge;
+    left_edge = right_edge;
   }
   uVar2 = uVar2 >> 0x10;
   iVar4 = (uVar3 >> 0x10) - uVar2;
@@ -46,7 +46,7 @@ void __cdecl core_dstrender_cpp_renderDepthInterlacedProfiled_FUN_00490c37(SSoft
         return;
       }
       uVar9 = uVar9 + (int)((ulonglong)
-                            ((longlong)((right_edge->base).w_current - (pSVar8->base).w_current) *
+                            ((longlong)((left_edge->base).w_current - (pSVar8->base).w_current) *
                             (longlong)(int)g_ReciprocalLookupTable[iVar4 + 1]) >> 0x20) * 2;
       puVar7 = puVar7 + 2;
       iVar6 = iVar5 + -2;

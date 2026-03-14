@@ -13,20 +13,21 @@
   },
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 337,
+    "complexity_score": 353,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 187,
-    "suspect_count": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 188,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
+      "extra_output",
       "param_count_too_many",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 526
+    "total_lines": 527
   },
   "cross_references": [
     {
@@ -416,6 +417,14 @@
       "type": "warning_inlined_function"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 22,
+      "match": "extraout_EDI",
+      "severity": "moderate",
+      "text": "uint *extraout_EDI;",
+      "type": "extra_output"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 65,
       "match": "(SMRGLModelBounds *)((int)",
@@ -424,8 +433,16 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 79,
+      "match": "extraout_EDI",
+      "severity": "moderate",
+      "text": "puVar6 = extraout_EDI;",
+      "type": "extra_output"
+    },
+    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 148,
+      "line": 149,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar4 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_14 * fVar5));",
@@ -433,7 +450,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 148,
+      "line": 149,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar4 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_14 * fVar5));",
@@ -441,7 +458,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 150,
+      "line": 151,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_18 * fVar5));",
@@ -449,7 +466,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 150,
+      "line": 151,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_18 * fVar5));",
@@ -457,7 +474,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 152,
+      "line": 153,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_1c * fVar5));",
@@ -465,7 +482,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 152,
+      "line": 153,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_1c * fVar5));",
@@ -473,7 +490,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
+      "line": 171,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
@@ -481,7 +498,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
+      "line": 171,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
@@ -489,19 +506,11 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 170,
+      "line": 171,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 188,
-      "match": "(SMRGLModelBounds *)((int)",
-      "severity": "mild",
-      "text": "pSVar7 = (SMRGLModelBounds *)((int)pSVar7 + (uint)bVar15 * -8 + 4);",
-      "type": "pointer_cast"
     },
     {
       "call_site_count": 2,

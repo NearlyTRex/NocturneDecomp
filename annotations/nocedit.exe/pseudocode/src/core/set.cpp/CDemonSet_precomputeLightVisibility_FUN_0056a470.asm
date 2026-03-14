@@ -383,7 +383,7 @@ section .text
     MOV byte ptr [ESI + 0x19b58],AL     ; 0056a8b6
     LEA ESI,[ESP + 0x120]               ; 0056a8bc
     CALL core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090 ; 0056a8c3
-        ;   XREF to: 00451090 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090(CDemonCamera * this_ptr, CDemonLight * light, CRect * out_bounds)
+        ;   XREF to: 00451090 (UNCONDITIONAL_CALL)  ; CRect * core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090(CDemonCamera * this_ptr, CDemonLight * light, CRect * out_bounds)
     LEA ESI,[ESP + 0x120]               ; 0056a8c8
     ADD ESP,0x8                         ; 0056a8cf
     LEA EDI,[EBP + 0x19c54]             ; 0056a8d2

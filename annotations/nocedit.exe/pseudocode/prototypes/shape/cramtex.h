@@ -29,7 +29,7 @@ int __cdecl CCramTex::runInteractiveAtlasGeneration(CCramTex *this_ptr);
 
 // Original: shape_cramtex.cpp_performGapFillingOptimization_FUN_00447590
 // Address: 00447590
-uint __cdecl performGapFillingOptimization(void);
+void __cdecl performGapFillingOptimization(void);
 
 // Original: shape_cramtex.cpp_CCramTex_findHighestOverlappingY_FUN_004478c0
 // Address: 004478c0

@@ -1,12 +1,12 @@
 // Name: core_dstrender.cpp_renderDepthOnlyReversed_FUN_004906e9
 // Address: 004906e9
 // Address Range: [[004906e9, 0049072e]]
-// Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+// Convention: __edi_esi_ebx
+// Signature: void __edi_esi_ebx core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+void __edi_esi_ebx core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
   uint uVar1;
@@ -20,21 +20,21 @@ void __cdecl core_dstrender_cpp_renderDepthOnlyReversed_FUN_004906e9(SSoftwareEd
   SSoftwareEdge *pSVar9;
   uint uVar10;
   
-  uVar1 = (left_edge->base).x_current;
-  uVar10 = (right_edge->base).x_current;
+  uVar1 = (right_edge->base).x_current;
+  uVar10 = (left_edge->base).x_current;
   uVar5 = uVar1;
-  pSVar9 = left_edge;
+  pSVar9 = right_edge;
   if (uVar10 < uVar1) {
     uVar5 = uVar10;
     uVar10 = uVar1;
-    pSVar9 = right_edge;
-    right_edge = left_edge;
+    pSVar9 = left_edge;
+    left_edge = right_edge;
   }
   uVar5 = uVar5 >> 0x10;
   iVar6 = (uVar10 >> 0x10) - uVar5;
   if (iVar6 != 0 && uVar5 <= uVar10 >> 0x10) {
     puVar8 = g_ZBufferScanlineArray[scanline_y] + uVar5;
-    iVar2 = (right_edge->base).w_current;
+    iVar2 = (left_edge->base).w_current;
     iVar3 = (pSVar9->base).w_current;
     uVar1 = g_ReciprocalLookupTable[iVar6 + 1];
     uVar10 = (pSVar9->base).w_current;

@@ -6,15 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 11,
+    "complexity_score": 68,
     "cross_reference_count": 10,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 11,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 44
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 5,
+    "suspect_types": [
+      "extra_output"
+    ],
+    "total_lines": 46
   },
   "cross_references": [
     {
@@ -303,5 +305,46 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 6,
+      "match": "extraout_EBX",
+      "severity": "moderate",
+      "text": "float *extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EBX",
+      "severity": "moderate",
+      "text": "*extraout_EBX = fVar2 * 4769685.0;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_EBX",
+      "severity": "moderate",
+      "text": "extraout_EBX[1] = (float)local_20.x * fVar2;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EBX",
+      "severity": "moderate",
+      "text": "extraout_EBX[2] = (float)local_20.y * fVar2;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 15,
+      "match": "extraout_EBX",
+      "severity": "moderate",
+      "text": "return extraout_EBX;",
+      "type": "extra_output"
+    }
+  ]
 }

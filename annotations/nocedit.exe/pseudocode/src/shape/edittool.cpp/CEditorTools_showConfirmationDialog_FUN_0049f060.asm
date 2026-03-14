@@ -10,7 +10,8 @@
 ; CStrList         Stack[-0x18]:16  local_18
 ; va_list_t        Stack[-0x8]:4  local_8
 ;
-; XREF[18]:
+; XREF[19]:
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043d226
 ;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 0044352e
 ;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 00479968
 ;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047d891
@@ -20,8 +21,7 @@
 ;   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0 at 0053a622
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538928
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 005795c4
-;   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730 at 00581262
-;   ... and 8 more
+;   ... and 9 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Yes_I_know_what_I_m_doin_00623058

@@ -1,12 +1,12 @@
 // Name: core_dstrender.cpp_renderZBufferFill16xUnrolled_FUN_00490902
 // Address: 00490902
 // Address Range: [[00490902, 00490a57]]
-// Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+// Convention: __edi_esi_ebx
+// Signature: void __edi_esi_ebx core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+void __edi_esi_ebx core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
   uint uVar1;
@@ -19,22 +19,22 @@ void __cdecl core_dstrender_cpp_renderZBufferFill16xUnrolled_FUN_00490902(SSoftw
   SSoftwareEdge *pSVar8;
   uint uVar9;
   
-  uVar9 = (left_edge->base).x_current;
-  uVar2 = (right_edge->base).x_current;
+  uVar9 = (right_edge->base).x_current;
+  uVar2 = (left_edge->base).x_current;
   uVar1 = uVar9;
-  pSVar8 = left_edge;
+  pSVar8 = right_edge;
   if (uVar2 < uVar9) {
     uVar1 = uVar2;
     uVar2 = uVar9;
-    pSVar8 = right_edge;
-    right_edge = left_edge;
+    pSVar8 = left_edge;
+    left_edge = right_edge;
   }
   uVar1 = uVar1 >> 0x10;
   iVar3 = (uVar2 >> 0x10) - uVar1;
   if (iVar3 != 0 && uVar1 <= uVar2 >> 0x10) {
     puVar6 = g_ZBufferScanlineArray[scanline_y] + uVar1;
     iVar5 = (int)((ulonglong)
-                  ((longlong)((right_edge->base).w_current - (pSVar8->base).w_current) *
+                  ((longlong)((left_edge->base).w_current - (pSVar8->base).w_current) *
                   (longlong)(int)g_ReciprocalLookupTable[iVar3 + 1]) >> 0x20);
     uVar9 = (pSVar8->base).w_current;
     while (iVar4 = iVar3 + -4, puVar7 = puVar6, 3 < iVar3) {

@@ -16,7 +16,8 @@
 ; int              Stack[-0x18]:4  local_18
 ; float            Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043d341
 ;   core_cloth.cpp_CCloth_setup_FUN_00439710 at 00439c9b
 ;
 ; Referenced Globals:

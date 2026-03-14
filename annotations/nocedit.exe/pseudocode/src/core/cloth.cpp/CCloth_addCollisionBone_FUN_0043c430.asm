@@ -13,6 +13,9 @@
 ; float            Stack[-0x18]:4  local_18
 ; int              Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880 at 0043cebc
+;
 ; Referenced Globals:
 ;   TerminatedCString s_Select_bone_to_add_00618656
 ;   TerminatedCString s_Enter_in_X_radius_00618669

@@ -21,19 +21,19 @@ void __cdecl fillDepthRegion(int left,int right,int top,int bottom);
 
 // Original: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
 // Address: 005b4031
-void __cdecl renderMMXPerspectiveScanline32(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
+void __edi_esi_ebx renderMMXPerspectiveScanline32(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
 // Address: 005b4823
-void __cdecl renderMMXPerspectiveScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
+void __edi_esi_ebx renderMMXPerspectiveScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: wincore_windll.cpp_renderPerspectiveCorrectScanline32_FUN_005b50ec
 // Address: 005b50ec
-void __cdecl renderPerspectiveCorrectScanline32(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
+void __edi_esi_ebx renderPerspectiveCorrectScanline32(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: wincore_windll.cpp_renderPerspectiveCorrectScanline16_FUN_005b5322
 // Address: 005b5322
-void __cdecl renderPerspectiveCorrectScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
+void __edi_esi_ebx renderPerspectiveCorrectScanline16(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y);
 
 // Original: wincore_windll.cpp_renderAlphaRow32_FUN_005b555c
 // Address: 005b555c

@@ -85,7 +85,7 @@
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
 ;   core_set.cpp_CDemonSet_clear_FUN_005693c0
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
-;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60
+;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60
 ;   core_setedit.cpp_addGroundType_FUN_00578290
 ;   core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0
 ;   core_setedit.cpp_editGroundTypes_FUN_00578630
@@ -703,8 +703,8 @@ section .text
     ADD ESP,0x8                         ; 00579416
     MOV EDX,dword ptr [ESP + 0x247c]    ; 00579419
     PUSH EDX                            ; 00579420
-    CALL core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60 ; 00579421
-        ;   XREF to: 00575f60 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60(CDemonSet * this_ptr)
+    CALL core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60 ; 00579421
+        ;   XREF to: 00575f60 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00579426
     PUSH 0x647291                       ; 00579429 | = "Deleting possibly out-of-date fog files"
     MOV ECX,dword ptr [0x00678a60]      ; 0057942e | g_CEditorToolsInstance | g_CEditorToolsPtr

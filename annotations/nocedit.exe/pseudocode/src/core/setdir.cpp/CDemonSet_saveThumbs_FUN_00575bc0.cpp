@@ -10,9 +10,7 @@ void __cdecl core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet *this_p
 
 {
   int iVar2;
-  uint unaff_ESI;
   uint uVar3;
-  uint unaff_EDI;
   CVector3f CStack_5c;
   CVector3f CStack_50;
   CVector3f CStack_44;
@@ -111,7 +109,7 @@ LAB_00575c24:
       if (uVar3 < 6) break;
       g_CurrentFilename = "..\\core\\setdir.cpp";
       g_CurrentLineNumber = 0x39d;
-      core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze",unaff_ESI,unaff_EDI);
+      core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze");
     }
   } while( true );
 }

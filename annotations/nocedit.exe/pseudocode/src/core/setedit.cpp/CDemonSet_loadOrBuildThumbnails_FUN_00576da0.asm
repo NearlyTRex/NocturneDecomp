@@ -40,7 +40,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
-;   core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60
+;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60
 ;   core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40
 ;   core_setedit.cpp_CDemonSet_clearCameraDepthData_FUN_00580560
 ;   core_setedit.cpp_loadCameraThumbnail_FUN_005769a0
@@ -317,8 +317,8 @@ section .text
     MOV EBP,dword ptr [ESP + 0x11c]     ; 00577022
     PUSH EBP                            ; 00577029
     LEA EDI,[ESP + 0x4]                 ; 0057702a
-    CALL core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60 ; 0057702e
-        ;   XREF to: 00575f60 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60(CDemonSet * this_ptr)
+    CALL core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60 ; 0057702e
+        ;   XREF to: 00575f60 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00575f60(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00577033
     LEA ESI,[EBP + 0x14d0f0]            ; 00577036
     MOV DL,0x2e                         ; 0057703c
