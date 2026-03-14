@@ -289,7 +289,7 @@ def find_format_call_sites(program):
     return results
 
 
-def process_call_sites(program, call_sites, apply=False, func_filter=None, limit=None):
+def process_call_sites(program, call_sites, apply=False, force=False, func_filter=None, limit=None):
     """Process format string call sites and optionally apply overrides."""
     from ghidra.program.model.pcode import HighFunctionDBUtil
     from ghidra.program.model.data import (
@@ -319,17 +319,19 @@ def process_call_sites(program, call_sites, apply=False, func_filter=None, limit
                 dt = PointerDataType(base_dt)
         else:
             # Search in data type manager
-            results = []
+            from java.util import ArrayList
+            results = ArrayList()
             dtm.findDataTypes(type_name, results)
-            if results:
+            if results.size() > 0:
                 # Prefer built-in types
-                for r in results:
+                for i in range(results.size()):
+                    r = results.get(i)
                     path = r.getPathName()
                     if '/BuiltInTypes/' in path or path.startswith('/' + type_name):
                         dt = r
                         break
                 if dt is None:
-                    dt = results[0]
+                    dt = results.get(0)
 
         type_cache[type_name] = dt
         return dt
@@ -378,6 +380,13 @@ def process_call_sites(program, call_sites, apply=False, func_filter=None, limit
                 caller_name, call_addr, display_name, fmt_str))
             continue
 
+        # Skip if no format specifiers found - creating an override with only
+        # fixed params would strip the varargs marker and break ESP tracking
+        if len(varargs) == 0:
+            print("  SKIP %s @ %s -> %s: no format specifiers in %r" % (
+                caller_name, call_addr, display_name, fmt_str[:40]))
+            continue
+
         # Get the target function's fixed params
         target_func = target_funcs.get(target_addr_str)
         if target_func is None:
@@ -405,28 +414,29 @@ def process_call_sites(program, call_sites, apply=False, func_filter=None, limit
         print("    override: %s" % sig)
 
         if apply:
-            # Check if there's already an override at this call site
+            # Check if there's already an override symbol at this call site
+            st = program.getSymbolTable()
+            existing_symbols = st.getSymbols(call_addr)
             has_existing = False
-            for local_var in caller_func.getLocalVariables():
-                dt = local_var.getDataType()
-                class_name = dt.__class__.__name__.rsplit('.', 1)[-1]
-                if class_name in ('FunctionDefinitionDataType', 'FunctionDefinitionDB',
-                                  'FunctionDefinition', 'FunctionDefDataType'):
-                    first_use = local_var.getFirstUseOffset()
-                    override_addr = caller_func.getEntryPoint().add(first_use)
-                    if override_addr.equals(call_addr):
-                        has_existing = True
-                        break
+            for sym in existing_symbols:
+                if sym.getName().startswith("prt") and sym.getParentNamespace().getName() == "override":
+                    has_existing = True
+                    if force:
+                        sym.delete()
+                    break
 
-            if has_existing:
+            if has_existing and not force:
                 skipped_existing += 1
-                print("    -> SKIPPED (existing override)")
+                print("    -> SKIPPED (existing override, use --force to replace)")
                 continue
 
             # Build the FunctionDefinitionDataType
             try:
                 func_def = FunctionDefinitionDataType("fmt_override_%s" % str(call_addr))
                 func_def.setReturnType(ret_type)
+                conv_name = target_func.getCallingConventionName()
+                if conv_name:
+                    func_def.setCallingConvention(conv_name)
 
                 param_defs = []
                 # Add fixed params
@@ -465,6 +475,51 @@ def process_call_sites(program, call_sites, apply=False, func_filter=None, limit
         print("\n(Dry run - no changes made. Use --apply to write overrides.)")
 
 
+def remove_all_overrides(program, call_sites, func_filter=None):
+    """Remove all call-site overrides at format function call sites.
+
+    Overrides created by HighFunctionDBUtil.writeOverride() are stored as
+    'prt_*' symbols in 'override' namespaces, not as local variables.
+    """
+    # Build set of call_addr strings for format function call sites
+    format_call_addrs = {}
+    for caller_func, call_addr, target_addr_str, (display_name, fmt_idx) in call_sites:
+        caller_name = caller_func.getName()
+        if func_filter and func_filter.lower() not in caller_name.lower():
+            continue
+        format_call_addrs[str(call_addr)] = (caller_name, display_name)
+
+    st = program.getSymbolTable()
+    removed = 0
+    scanned = 0
+
+    # Collect symbols to remove (can't modify while iterating)
+    to_remove = []
+    for symbol in st.getAllSymbols(False):
+        if not symbol.getName().startswith("prt"):
+            continue
+        if symbol.getParentNamespace().getName() != "override":
+            continue
+
+        scanned += 1
+        addr_str = str(symbol.getAddress())
+
+        if addr_str in format_call_addrs:
+            caller_name, display_name = format_call_addrs[addr_str]
+            to_remove.append((symbol, addr_str, caller_name, display_name))
+
+    for symbol, addr_str, caller_name, display_name in to_remove:
+        symbol.delete()
+        removed += 1
+        print("  REMOVED: %s @ %s -> %s" % (caller_name, addr_str, display_name))
+
+    print("\n" + "=" * 70)
+    print("REMOVE RESULTS")
+    print("=" * 70)
+    print("  Override symbols scanned: %d" % scanned)
+    print("  Overrides removed:        %d" % removed)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Apply format string call-site overrides",
@@ -479,6 +534,10 @@ def main():
                         help="Only process callers whose name contains this substring")
     parser.add_argument("--limit", type=int, default=None,
                         help="Max call sites to process")
+    parser.add_argument("--force", action="store_true",
+                        help="Replace existing overrides at call sites")
+    parser.add_argument("--remove-all", action="store_true",
+                        help="Remove all overrides at format function call sites")
 
     args = parser.parse_args()
 
@@ -495,7 +554,9 @@ def main():
     print("Opening project: %s/%s" % (project_path, args.project_name))
     print("Opening program: %s" % args.program_name)
 
-    if args.apply:
+    if args.remove_all:
+        print("REMOVE MODE - removing all format function call-site overrides")
+    elif args.apply:
         print("APPLY MODE - overrides will be saved to database")
     else:
         print("DRY RUN MODE - scanning only, no changes")
@@ -510,12 +571,24 @@ def main():
             call_sites = find_format_call_sites(prog)
             print("Found %d call sites to format functions\n" % len(call_sites))
 
-            if args.apply:
+            if args.remove_all:
+                tx_id = prog.startTransaction("Remove format string overrides")
+                try:
+                    remove_all_overrides(prog, call_sites, func_filter=args.func)
+                    prog.endTransaction(tx_id, True)
+                except Exception:
+                    prog.endTransaction(tx_id, False)
+                    raise
+                prog.save("Removed format string call-site overrides", None)
+                print("\nChanges saved to program database.")
+
+            elif args.apply:
                 tx_id = prog.startTransaction("Apply format string overrides")
                 try:
                     process_call_sites(
                         prog, call_sites,
                         apply=True,
+                        force=args.force,
                         func_filter=args.func,
                         limit=args.limit,
                     )
@@ -523,6 +596,9 @@ def main():
                 except Exception:
                     prog.endTransaction(tx_id, False)
                     raise
+                prog.save("Applied format string call-site overrides", None)
+                print("\nChanges saved to program database.")
+
             else:
                 process_call_sites(
                     prog, call_sites,
@@ -530,10 +606,6 @@ def main():
                     func_filter=args.func,
                     limit=args.limit,
                 )
-
-            if args.apply:
-                prog.save("Applied format string call-site overrides", None)
-                print("\nChanges saved to program database.")
 
         project.close()
     except Exception as e:
