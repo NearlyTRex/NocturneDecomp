@@ -23,7 +23,7 @@ CLightningBolt g_LightningBoltPool[10] = {};
 CPopcorn g_PopcornPool[256] = {};
 
 // CQuaternion4f
-CQuaternion4f CQuaternion4f_02d7b7f4 = {};
+CQuaternion4f g_GabriellaWeaponAimRotation = {};
 
 // CRainDrop[256]
 CRainDrop g_RainDropPool[256] = {};
@@ -110,13 +110,11 @@ int INT_02d7b894 = {};
 
 // uchar
 uchar g_ShadowColor8 = {};
+uchar g_GabriellaWeaponAimRotationInitFlag = {};
 
 // uint
 uint g_FlyBlendColor = {};
 uint g_FlyInvBlendColor = {};
-
-// undefined1
-undefined1 DAT_02d7b804 = {};
 
 // ushort
 ushort g_ShadowColor16 = {};

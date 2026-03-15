@@ -44,12 +44,15 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c7
         iVar4 = 0x2f7a030;
         do {
           core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50
-                    (g_MsnEditPropertyList.properties + iVar5,this_ptr->selected_actor,&DAT_02f79820
+                    (g_MsnEditPropertyList.properties + iVar5,this_ptr->selected_actor,
+                     g_MsnEditPropertyValueBuffer);
+          _sprintf
+                    (g_MsnEditPropertyFormatBuffer,"%s\t%s",iVar4,g_MsnEditPropertyValueBuffer
                     );
-          _sprintf(&DAT_02f79c20,"%s\t%s",iVar4,&DAT_02f79820);
           iVar5 = iVar5 + 1;
           iVar4 = iVar4 + 0xec;
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_540.base,&DAT_02f79c20);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80
+                    (&CStack_540.base,g_MsnEditPropertyFormatBuffer);
         } while (iVar5 < g_MsnEditPropertyList.count);
       }
       _sprintf

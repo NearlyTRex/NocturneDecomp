@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gargoyle_dfm_0062d7d6
-;   float DAT_0065ea30 = 50
-;   float DAT_0065ea34 = 100
+;   float FLOAT_0065ea30 = 50
+;   float FLOAT_0065ea34 = 100
 ;   CDemonActor_vtable g_CGargoyleVTable
 ;
 ; Called Functions:
@@ -51,9 +51,9 @@ section .text
     MOV dword ptr [EBX + 0xbef0],0x80   ; 004e4575
     MOV dword ptr [EBX + 0xbef4],0x80   ; 004e457f
     MOV dword ptr [EBX + 0xbef8],0x0    ; 004e4589
-    FLD float ptr [0x0065ea30]          ; 004e4593 | DAT_0065ea30
+    FLD float ptr [0x0065ea30]          ; 004e4593 | FLOAT_0065ea30
     MOV dword ptr [EBX + 0xbf10],0x0    ; 004e4599
-    FLD float ptr [0x0065ea34]          ; 004e45a3 | DAT_0065ea34
+    FLD float ptr [0x0065ea34]          ; 004e45a3 | FLOAT_0065ea34
     MOV dword ptr [EBX + 0xbf14],0x0    ; 004e45a9
     ADD ESP,0x8                         ; 004e45b3
     MOV dword ptr [EBX + 0x2624],0x0    ; 004e45b6

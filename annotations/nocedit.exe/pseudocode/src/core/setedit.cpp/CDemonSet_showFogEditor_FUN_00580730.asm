@@ -290,7 +290,7 @@ section .text
     XOR ECX,ECX                         ; 00580a10
     MOV EDX,dword ptr [EAX + 0x154]     ; 00580a12
         ;   Label: LAB_00580a12
-    MOV dword ptr [ECX + 0x3659388],EDX ; 00580a18 | DAT_03659388 | DAT_0365938c
+    MOV dword ptr [ECX + 0x3659388],EDX ; 00580a18 | g_CameraFogEnabledFlags | DAT_0365938c
     MOV EDX,dword ptr [EBP + 0x14]      ; 00580a1e
     ADD ECX,0x4                         ; 00580a21
     INC EDI                             ; 00580a24
@@ -299,7 +299,7 @@ section .text
     CMP EDI,EBX                         ; 00580a2c
     JL 0x00580a12                       ; 00580a2e
         ;   XREF to: 00580a12 (CONDITIONAL_JUMP)  ; LAB_00580a12
-    PUSH 0x3659388                      ; 00580a30 | DAT_03659388
+    PUSH 0x3659388                      ; 00580a30 | g_CameraFogEnabledFlags
         ;   Label: LAB_00580a30
     MOV EDI,dword ptr [EBP + 0x14]      ; 00580a35
     PUSH EDI                            ; 00580a38

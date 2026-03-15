@@ -3710,9 +3710,14 @@ CDemonActor_vtable g_CZombieVTable = {
     .archive = (CDemonActor_archive *)core_zombie_cpp_CZombie_archive_FUN_005fbfd0
 };
 
-// CDemonFilter*
-CDemonFilter* g_GlobalFilters = (CDemonFilter*)&CDemonFilter_ARRAY_020a4878;
-CDemonFilter* g_PlayerFilters = (CDemonFilter*)&CDemonFilter_ARRAY_020a4878;
+// CDemonFilter*[4]
+CDemonFilter* g_PlayerFilters[4] = {(CDemonFilter*)&CDemonFilter_ARRAY_020a4878, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[1].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[2].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[3].size};
+
+// CDemonFilter*[8]
+CDemonFilter* g_GlobalFilters[8] = {
+    (CDemonFilter*)&CDemonFilter_ARRAY_020a4878, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[1].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[2].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[3].size,
+    (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[4].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[5].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[6].size, (CDemonFilter*)&CDemonFilter_ARRAY_020a4878[7].size
+};
 
 // CDemonPod_vtable
 CDemonPod_vtable g_CDemonPodVTable = {
@@ -6583,7 +6588,7 @@ WatcomDestructorCall WatcomDestructorCall_00661c10 = {
 WatcomDestructorCall WatcomDestructorCall_00661c1c = {
     .delete_flags = 0x00000004,
     .destructor_func = (void *)shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20,
-    .object_instance = (void *)&CEdScrollBar_02f797e4
+    .object_instance = (void *)&g_MsnEditPropertyScrollBar
 };
 WatcomDestructorCall WatcomDestructorCall_00661c70 = {
     .delete_flags = 0x00000004,
@@ -6711,6 +6716,9 @@ WatcomDestructorCall WatcomDestructorCall_006652c0 = {
     .object_instance = (void *)&g_CWaterInstance
 };
 
+// WatcomInheritanceLayout
+WatcomInheritanceLayout WatcomInheritanceLayout_00665e68 = {.base_type = nullptr, .offset_to_base = 0x00000010};
+
 // WatcomStaticDestructorNode
 WatcomStaticDestructorNode WatcomStaticDestructorNode_0066e5cc = {
     .next = nullptr,
@@ -6760,6 +6768,10 @@ WatcomStaticDestructorNode g_CFilterFXDestructorNode = {
     .registration_type = 0x00000001,
     .object_instance = (void *)&g_CFilterFXInstance
 };
+
+// WatcomThunkedDestructor
+WatcomThunkedDestructor WatcomThunkedDestructor_00665b70 = {.destructor_func = (void *)0x00000048, .this_adjustment_ptr = (int *)0x0000000C};
+WatcomThunkedDestructor WatcomThunkedDestructor_00665e74 = {.destructor_func = (void *)crt_iostream_cpp_istream_dtor_FUN_006063e1, .this_adjustment_ptr = (int *)0x00665E88};
 
 // WatcomTypeInfo
 WatcomTypeInfo g_CIcePickTypeInfo = {
@@ -7692,6 +7704,7 @@ WatcomTypeInfo g_FilebufTypeInfo = {
 };
 
 // WatcomVirtualBaseDescriptor
+WatcomVirtualBaseDescriptor WatcomVirtualBaseDescriptor_00665b68 = {.flags = 0x00000000, .offset_to_vbase = 0x00000054};
 WatcomVirtualBaseDescriptor g_IstrstreamLayoutInfo = {.flags = 0x00000000, .offset_to_vbase = 0x00000058};
 WatcomVirtualBaseDescriptor g_IFStream_LayoutInfo = {.flags = 0x00000000, .offset_to_vbase = 0x00000054};
 WatcomVirtualBaseDescriptor g_IFStream_IStreamSubobjectLayout = {.flags = 0x00000044, .offset_to_vbase = 0x00000010};
@@ -7708,6 +7721,9 @@ char g_CourseLastBonPath[] = "";
 // char[264]
 char g_CourseLastPthPath[] = "";
 char g_CourseLastCrsPath[] = "";
+
+// char[2]
+char g_PropertyNamePrefixMinusTwo[] = "";
 
 // char[300]
 char g_LocalizationTemplate[] = "";
@@ -7792,6 +7808,13 @@ int g_OctantRotationAngles[14] = {
 int g_ColorLookupTable[16] = {
     0x000000FF, 0x000000F8, 0x00000002, 0x00000004, 0x00000001, 0x00000003, 0x00000005, 0x00000006,
     0x00000007, 0x000000F9, 0x000000FA, 0x000000FB, 0x000000E6, 0x000000F5, 0x00000000, 0x000000FD
+};
+
+// int[20]
+int g_PolygonReductionParams[20] = {
+    0x00000002, 0x00000003, 0x00000000, 0x00000000, 0x00000001, 0x00000000, 0x00000002, 0x00000000,
+    0x00000000, 0x00000000, 0x00000001, 0x00000002, 0x00000001, 0x00000002, 0x00000003, 0x00000000,
+    0x00000003, 0x00000000, 0x00000001, 0x00000002
 };
 
 // int[8]

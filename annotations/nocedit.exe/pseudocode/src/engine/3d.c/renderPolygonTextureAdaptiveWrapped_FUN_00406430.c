@@ -16,7 +16,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTextureAdaptiveWrapped_FU
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);
   if (iVar1 != 0) {
     if (g_TexturesDisabled == 0) {
-      if (DAT_00772a70 == 0) {
+      if (INT_00772a70 == 0) {
         if (g_MMXSupported == 0) {
           if (g_BitsPerPixel == 0x20) {
             g_ScanlineRenderFunc =

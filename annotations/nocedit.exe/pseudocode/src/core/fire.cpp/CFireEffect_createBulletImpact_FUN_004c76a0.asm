@@ -34,8 +34,8 @@
 ;   double DOUBLE_0062a03b = 0.200000000000000
 ;   double DOUBLE_0062a043 = -0.200000000000000
 ;   double DOUBLE_0062a04b = 0.0578000000000000
-;   undefined4 DAT_0067aeb8
-;   undefined2 DAT_0067aebc
+;   char[60] g_DefaultRicochetSound
+;   undefined4 DAT_0067aebc
 ;   CSound* g_CSoundPtr = 03f6af64
 ;   int g_SmokeParticleAllocIndex
 ;   CSmokeParticle[2048] g_SmokeParticlePool
@@ -184,9 +184,9 @@ section .text
     MOV ECX,0xc                         ; 004c7800
         ;   Label: caseD_9
     LEA EDI,[ESP + 0x8]                 ; 004c7805
-    MOV ESI,0x67aeb8                    ; 004c7809 | DAT_0067aeb8
-    MOVSD.REP ES:EDI,ESI                ; 004c780e | DAT_0067aeb8 | DAT_0067aebc
-    MOVSW ES:EDI,ESI                    ; 004c7810 | DAT_0067aeb8 | DAT_0067aebc
+    MOV ESI,0x67aeb8                    ; 004c7809 | g_DefaultRicochetSound
+    MOVSD.REP ES:EDI,ESI                ; 004c780e | g_DefaultRicochetSound | DAT_0067aebc
+    MOVSW ES:EDI,ESI                    ; 004c7810 | g_DefaultRicochetSound | DAT_0067aebc
     MOV EDI,dword ptr [EBP + 0x20]      ; 004c7812
     CMP EDI,0x9                         ; 004c7815
     JA 0x004c7823                       ; 004c7818

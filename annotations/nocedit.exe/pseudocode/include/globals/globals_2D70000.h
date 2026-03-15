@@ -36,7 +36,7 @@ extern CLightningBolt g_LightningBoltPool[10];
 extern CPopcorn g_PopcornPool[256];
 
 // CQuaternion4f
-extern CQuaternion4f CQuaternion4f_02d7b7f4;
+extern CQuaternion4f g_GabriellaWeaponAimRotation;
 
 // CRainDrop[256]
 extern CRainDrop g_RainDropPool[256];
@@ -123,13 +123,11 @@ extern int INT_02d7b894;
 
 // uchar
 extern uchar g_ShadowColor8;
+extern uchar g_GabriellaWeaponAimRotationInitFlag;
 
 // uint
 extern uint g_FlyBlendColor;
 extern uint g_FlyInvBlendColor;
-
-// undefined1
-extern undefined1 DAT_02d7b804;
 
 // ushort
 extern ushort g_ShadowColor16;

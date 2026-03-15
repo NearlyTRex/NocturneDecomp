@@ -1,13 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 162,
+    "complexity_score": 112,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 57,
-    "suspect_count": 9,
+    "suspect_count": 4,
     "suspect_types": [
       "register_param",
       "special_crt_function",
@@ -96,9 +96,9 @@
     },
     {
       "addr": "00684edc",
-      "name": "DAT_00684edc",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_00684edc",
+      "type": "int",
+      "value": "0x0"
     },
     {
       "addr": "00684f00",
@@ -266,52 +266,12 @@
       "type": "register_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_00684edc",
-      "severity": "mild",
-      "text": "if (DAT_00684edc < local_24) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_00684edc",
-      "severity": "mild",
-      "text": "DAT_00684edc = g_SecondaryHeap;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_00684edc",
-      "severity": "mild",
-      "text": "DAT_00684edc = (Heap *)0x0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Inferred register parameter",
       "line": 42,
       "match": "in_DS",
       "severity": "mild",
       "text": "(size,(HeapBlock *)(uint)in_DS,(ushort)pvVar6), pvVar6 != (void *)0x0",
       "type": "register_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_00684edc",
-      "severity": "mild",
-      "text": "if (DAT_00684edc < pHVar1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_00684edc",
-      "severity": "mild",
-      "text": "DAT_00684edc = pHVar1;",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",

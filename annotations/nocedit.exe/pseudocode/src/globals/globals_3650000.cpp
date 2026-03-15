@@ -33,9 +33,8 @@ char g_ThumbnailPalette[768] = {};
 // int
 int g_GroundTextureCount = {};
 
-// undefined4
-undefined4 DAT_03659388 = {};
-undefined4 DAT_0365938c = {};
+// int[250]
+int g_CameraFogEnabledFlags[250] = {};
 
 // void*
 void* g_CameraDepthData = {};

@@ -618,7 +618,7 @@ section .text
     TEST ECX,ECX                        ; 0057930b
     JL 0x00579316                       ; 0057930d
         ;   XREF to: 00579316 (CONDITIONAL_JUMP)  ; LAB_00579316
-    MOV EAX,dword ptr [ECX*0x4 + 0x3364d18] ; 0057930f | DAT_03364d18
+    MOV EAX,dword ptr [ECX*0x4 + 0x3364d18] ; 0057930f | g_S3DTextureGroundTypes
     MOV EBP,dword ptr [ESP + 0x23f8]    ; 00579316
         ;   Label: LAB_00579316
     PUSH EAX                            ; 0057931d
@@ -1046,7 +1046,7 @@ section .text
     JL 0x00579937                       ; 0057980e
         ;   XREF to: 00579937 (CONDITIONAL_JUMP)  ; LAB_00579937
     MOV AL,byte ptr [EBX + 0x3659190]   ; 00579814 | g_GroundTextureTypes
-    MOV dword ptr [EDI + 0x3364d18],EAX ; 0057981a | DAT_03364d18
+    MOV dword ptr [EDI + 0x3364d18],EAX ; 0057981a | g_S3DTextureGroundTypes
         ;   Label: LAB_0057981a
     TEST EAX,EAX                        ; 00579820
     JL 0x00579941                       ; 00579822
@@ -1155,7 +1155,7 @@ section .text
     TEST EAX,EAX                        ; 00579964
     JNZ 0x005799c3                      ; 00579966
         ;   XREF to: 005799c3 (CONDITIONAL_JUMP)  ; LAB_005799c3
-    CMP dword ptr [0x03365cb8],0x0      ; 00579968 | DAT_03365cb8
+    CMP dword ptr [0x03365cb8],0x0      ; 00579968 | INT_03365cb8
     JZ 0x0057999b                       ; 0057996f
         ;   XREF to: 0057999b (CONDITIONAL_JUMP)  ; LAB_0057999b
     XOR ECX,ECX                         ; 00579971
@@ -1164,7 +1164,7 @@ section .text
     LEA EAX,[ESP + 0x1ed8]              ; 00579974
     PUSH EAX                            ; 0057997b
     MOV ESI,0x1                         ; 0057997c
-    MOV dword ptr [EDI + 0x3364d18],ECX ; 00579981 | DAT_03364d18
+    MOV dword ptr [EDI + 0x3364d18],ECX ; 00579981 | g_S3DTextureGroundTypes
     CALL core_setedit.cpp_addGroundType_FUN_00578290 ; 00579987
         ;   XREF to: 00578290 (UNCONDITIONAL_CALL)  ; void core_setedit.cpp_addGroundType_FUN_00578290(char * filename, int ground_type)
     ADD ESP,0x8                         ; 0057998c
@@ -1181,7 +1181,7 @@ section .text
         ;   XREF to: 0049e740 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0049e740(CEditorTools * this_ptr, char * format)
     MOV EDX,0x1                         ; 005799b3
     ADD ESP,0xc                         ; 005799b8
-    MOV dword ptr [0x03365cb8],EDX      ; 005799bb | DAT_03365cb8
+    MOV dword ptr [0x03365cb8],EDX      ; 005799bb | INT_03365cb8
     JMP 0x00579971                      ; 005799c1
         ;   XREF to: 00579971 (UNCONDITIONAL_JUMP)  ; LAB_00579971
     PUSH 0x0                            ; 005799c3

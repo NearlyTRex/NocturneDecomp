@@ -103,8 +103,8 @@ extern EXCEPTION_FILTER_FUNC* g_UserExceptionFilter;
 // GUID
 extern GUID g_IID_IKsPropertySet;
 extern GUID g_KSPROPSETID_DirectSound3DListener;
-extern GUID DAT_00681df0;
-extern GUID DAT_00686d58;
+extern GUID GUID_00681df0;
+extern GUID GUID_00686d58;
 extern GUID g_IID_IDirectSound3DBuffer;
 
 // HANDLE
@@ -291,6 +291,7 @@ extern _MMX_INTEGER g_BlueBitShift;
 // byte
 extern byte BYTE_00684acc;
 extern byte BYTE_00684acd;
+extern byte BYTE_0068500c;
 extern byte g_WindowsMajorVersion;
 extern byte g_UseSoftwareMath;
 extern byte g_TimezoneInitFlags;
@@ -432,6 +433,7 @@ extern int g_CTVBatClassVersion;
 extern int g_CVampireBossVersion;
 extern int g_CVehicleClassVersion;
 extern int g_CCryptVesselClassVersion;
+extern int INT_006844f4;
 extern int g_CWaterActorVersion;
 extern int g_CWayPointClassVersion;
 extern int g_CWeaponClassVersion;
@@ -445,8 +447,10 @@ extern int g_MaxErrnoValue;
 extern int INT_00684ccc;
 extern int INT_00684cd0;
 extern int INT_00684ed0;
+extern int INT_00684edc;
 extern int g_SpecialExitHandler;
 extern int DAT_00684f30;
+extern int INT_00684fd0;
 extern int g_ConsoleInitializationFlag;
 extern int g_DstTransitionSecond;
 extern int g_DstTransitionMinute;
@@ -459,6 +463,8 @@ extern int g_FakeHandleCounter;
 extern int INT_00685280;
 extern int g_ProcessSpawnEnabled;
 extern int g_ConsoleInputState;
+extern int INT_006854ec;
+extern int INT_006854f0;
 extern int g_HeapFlags;
 
 // int*
@@ -488,19 +494,14 @@ extern uint g_MaxHandleCount;
 extern uint g_CodePage;
 
 // undefined1
-extern undefined1 DAT_0068500c;
 extern undefined1 DAT_006852db;
 
 // undefined4
-extern undefined4 DAT_00684edc;
-extern undefined4 DAT_00684fd0;
 extern undefined4 DAT_00685094;
 extern undefined4 DAT_006850b0;
 extern undefined4 DAT_006850b4;
 extern undefined4 DAT_006850b8;
 extern undefined4 DAT_0068528c;
-extern undefined4 DAT_006852c4;
-extern undefined4 DAT_006854ec;
 
 // void*
 extern void* g_CrtStackBuffer;

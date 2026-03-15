@@ -14,7 +14,7 @@
 ;   core_script.cpp_CScript_splitLineAtColumn_FUN_00566330 at 00566342
 ;
 ; Referenced Globals:
-;   undefined1 DAT_00643f94
+;   char s_EmptyChar_00643f94 = \x00
 ;   undefined4 g_CurrentLineBuffer
 ;   undefined4 DAT_031101c1
 ;   undefined4 DAT_031141bf
@@ -32,7 +32,7 @@ section .text
     PUSH ESI                            ; 00566231
     PUSH EDI                            ; 00566232
     MOV EDI,dword ptr [ESP + 0x14]      ; 00566233
-    MOV ESI,0x643f94                    ; 00566237 | DAT_00643f94
+    MOV ESI,0x643f94                    ; 00566237 | s_EmptyChar_00643f94
     TEST EDI,EDI                        ; 0056623c
     JL 0x00566260                       ; 0056623e
         ;   XREF to: 00566260 (CONDITIONAL_JUMP)  ; LAB_00566260
@@ -56,7 +56,7 @@ section .text
     SUB ECX,ECX                         ; 00566262
     DEC ECX                             ; 00566264
     XOR EAX,EAX                         ; 00566265
-    SCASB.REPNE ES:EDI                  ; 00566267 | DAT_00643f94
+    SCASB.REPNE ES:EDI                  ; 00566267 | s_EmptyChar_00643f94
     NOT ECX                             ; 00566269
     DEC ECX                             ; 0056626b
     MOV EDX,ECX                         ; 0056626c

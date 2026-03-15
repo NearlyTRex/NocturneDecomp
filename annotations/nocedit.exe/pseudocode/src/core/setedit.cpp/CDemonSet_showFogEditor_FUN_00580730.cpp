@@ -106,14 +106,14 @@ void __cdecl core_setedit_cpp_CDemonSet_showFogEditor_FUN_00580730(CDemonSet *th
         iVar6 = 0;
         pCVar3 = this_ptr;
         do {
-          *(int *)((int)&DAT_03659388 + iVar6) = pCVar3->cameras[0].fog_enabled;
+          *(int *)((int)g_CameraFogEnabledFlags + iVar6) = pCVar3->cameras[0].fog_enabled;
           iVar6 = iVar6 + 4;
           iVar9 = iVar9 + 1;
           pCVar3 = (CDemonSet *)&pCVar3->cameras[0].enabled;
         } while (iVar9 < this_ptr->camera_count);
       }
-      iVar5 = core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(this_ptr,&DAT_03659388)
-      ;
+      iVar5 = core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0
+                        (this_ptr,g_CameraFogEnabledFlags);
       if (iVar5 != -1) {
         iVar10 = this_ptr->selected_camera_index;
         if (iVar5 == iVar10) {

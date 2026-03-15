@@ -13,8 +13,8 @@
 ;   crt_strstream.cpp_istrstream_ctor_FUN_005ff524 at 005ff54c
 ;
 ; Referenced Globals:
-;   WatcomInheritanceLayout DAT_00665e68
-;   WatcomThunkedDestructor PTR_unk_OtherFreeMemory2_FUN_006063e1_00665e74
+;   WatcomInheritanceLayout WatcomInheritanceLayout_00665e68
+;   WatcomThunkedDestructor WatcomThunkedDestructor_00665e74
 ;   void* PTR_FUN_00665e7c = 006063c9
 ;
 ; Called Functions:
@@ -35,7 +35,7 @@ section .text
     LEA EDX,[EAX + ECX*0x1]             ; 00606386
     MOV dword ptr [EDX + -0x4],ECX      ; 00606389
     MOV EDX,dword ptr [EAX]             ; 0060638c
-    MOV dword ptr [EAX + 0x8],0x665e74  ; 0060638e | PTR_unk_OtherFreeMemory2_FUN_006063e1_00665e74
+    MOV dword ptr [EAX + 0x8],0x665e74  ; 0060638e | WatcomThunkedDestructor_00665e74
     MOV EDX,dword ptr [EDX + 0x4]       ; 00606395
     MOV dword ptr [EDX + EAX*0x1 + 0x28],0x665e7c ; 00606398 | PTR_FUN_00665e7c
     MOV EDX,dword ptr [EAX]             ; 006063a0
@@ -43,7 +43,7 @@ section .text
     MOV EDX,dword ptr [EDX + 0x4]       ; 006063a9
     OR byte ptr [EDX + EAX*0x1 + 0xc],0x1 ; 006063ac
     RET                                 ; 006063b1
-    MOV dword ptr [EAX],0x665e68        ; 006063b2 | DAT_00665e68
+    MOV dword ptr [EAX],0x665e68        ; 006063b2 | WatcomInheritanceLayout_00665e68
         ;   Label: LAB_006063b2
     ADD EAX,0x10                        ; 006063b8
     PUSH EAX                            ; 006063bb

@@ -52,7 +52,7 @@ LAB_006091db:
       extra_args->value[0] = (char *)(puVar1 + 1);
       uVar1 = *puVar1;
       extra_args->value[0] = (char *)0x0;
-      extra_parameter = uVar1 & ~DAT_006854ec;
+      extra_parameter = uVar1 & ~INT_006854ec;
       if (((extra_parameter & 0x100) != 0) && ((extra_parameter & 0x80) == 0)) {
         dwFlagsAndAttributes = 1;
       }

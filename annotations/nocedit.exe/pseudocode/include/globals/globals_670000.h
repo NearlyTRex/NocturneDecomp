@@ -213,27 +213,42 @@ extern byte g_CPUInfoMMXSupported;
 extern char* g_CurrentDebugFilename;
 
 // char[100]
-extern char g_DefaultAuditPath[100];
-extern char g_DefaultAuditRecordPath[100];
 extern char g_EventCommandBuffer[100];
+extern char g_DefaultInventoryValue[100];
+
+// char[104]
+extern char g_DefaultAuditPath[104];
+extern char g_DefaultInventoryKey[104];
+extern char g_DefaultMissionActorClass[104];
+extern char g_DefaultMissionActorName[104];
+
+// char[112]
+extern char g_DefaultCommandArg[112];
 
 // char[116]
 extern char g_ModelLastScaleInput[116];
+extern char g_DefaultAuditRecordPath[116];
+
+// char[200]
+extern char g_DefaultSfxHandleName[200];
 
 // char[260]
 extern char g_FilePathBuffer[260];
-extern char g_DefaultCheckOutPath[260];
-extern char g_DefaultPodDirectoryPath[260];
-extern char g_DirectoryBufferTemplate[260];
-extern char g_FilenameBufferTemplate[260];
 
 // char[264]
 extern char g_BrowserLastSelectedFile[264];
 extern char g_BrowserLastEnteredPath[264];
+extern char g_DefaultCheckOutPath[264];
+extern char g_DefaultPodDirectoryPath[264];
+extern char g_DirectoryBufferTemplate[264];
+extern char g_FilenameBufferTemplate[264];
 
 // char[512]
 extern char g_Field1ParseBuffer[512];
 extern char g_Field2ParseBuffer[512];
+
+// char[60]
+extern char g_DefaultRicochetSound[60];
 
 // float
 extern float g_DashAnimationThreshold;
@@ -383,11 +398,11 @@ extern uint g_MpegBitMaskTableMultiBit[18];
 // uint[8]
 extern uint g_MpegBitMaskTableSingleBit[8];
 
+// ulonglong[256]
+extern ulonglong g_ByteFillTable[256];
+
 // undefined1
 extern undefined1 g_MagicNumEFD;
-
-// undefined2
-extern undefined2 DAT_0067aebc;
 
 // undefined4
 extern undefined4 DAT_0067241c;
@@ -406,20 +421,7 @@ extern undefined4 DAT_0067244c;
 extern undefined4 DAT_00672450;
 extern undefined4 DAT_00672454;
 extern undefined4 DAT_00672458;
-extern undefined4 DAT_006793d8;
-extern undefined4 DAT_006793dc;
-extern undefined4 DAT_006794a0;
-extern undefined4 DAT_006794a4;
-extern undefined4 DAT_0067aeb8;
 extern undefined4 DAT_0067b718;
-extern undefined4 DAT_0067ce48;
-extern undefined4 DAT_0067ce4c;
-extern undefined4 DAT_0067ceb0;
-extern undefined4 DAT_0067ceb4;
-extern undefined4 DAT_0067d5c0;
-extern undefined4 DAT_0067d5c4;
-extern undefined4 DAT_0067d628;
-extern undefined4 DAT_0067d62c;
 
 // ushort[384]
 extern ushort g_LightmapData[384];

@@ -9,8 +9,8 @@
       },
       {
         "category": "other",
-        "column": 77,
-        "line": 64,
+        "column": 24,
+        "line": 65,
         "message": "cannot initialize a parameter of type 'void **' with an rvalue of type 'IDirectSound3DListener **'"
       },
       {
@@ -25,16 +25,14 @@
   },
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 94,
+    "complexity_score": 79,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 13,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 79,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 279
   },
   "cross_references": [
@@ -132,7 +130,7 @@
     },
     {
       "addr": "00686d58",
-      "name": "DAT_00686d58",
+      "name": "GUID_00686d58",
       "type": "GUID",
       "value": null
     },
@@ -288,14 +286,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_00686d58",
-      "severity": "mild",
-      "text": "((IUnknown *)g_DirectSoundPrimaryBuffer,&DAT_00686d58,&g_DirectSound3DListener",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

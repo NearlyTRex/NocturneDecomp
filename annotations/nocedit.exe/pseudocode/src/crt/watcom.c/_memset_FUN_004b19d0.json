@@ -70,8 +70,8 @@
   "globals": [
     {
       "addr": "00679510",
-      "name": "g_CharacterSet",
-      "type": "undefined4",
+      "name": "g_ByteFillTable",
+      "type": "ulonglong[256]",
       "value": null
     },
     {
@@ -282,7 +282,7 @@
       "line": 50,
       "match": "ROUND",
       "severity": "mild",
-      "text": "*plVar4 = (longlong)ROUND((float10)lVar1);",
+      "text": "*plVar4 = (longlong)ROUND((float10)(longlong)uVar1);",
       "type": "decompiler_intrinsic"
     },
     {

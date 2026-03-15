@@ -26,7 +26,7 @@
 ;   REGISTER_HANDLE_FUNC* PTR_crt_sync.c_RegisterHandle_FUN_00602438_00684ef0 = 00602438
 ;   uint g_MaxHandleCount = 0x14
 ;   undefined4 DAT_0068528c
-;   undefined4 DAT_006854ec
+;   int INT_006854ec = 0x0
 ;
 ; Called Functions:
 ;   CloseHandle
@@ -131,7 +131,7 @@ section .text
     MOV EAX,dword ptr [EBX + -0x4]      ; 00609174
     MOV dword ptr [ESP + 0x14],EAX      ; 00609177
     MOV dword ptr [EDI],0x0             ; 0060917b
-    MOV EAX,[0x006854ec]                ; 00609181 | DAT_006854ec
+    MOV EAX,[0x006854ec]                ; 00609181 | INT_006854ec
     MOV ECX,dword ptr [ESP + 0x14]      ; 00609186
     NOT EAX                             ; 0060918a
     AND ECX,EAX                         ; 0060918c

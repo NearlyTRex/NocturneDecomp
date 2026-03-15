@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 179,
+    "complexity_score": 154,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 49,
-    "suspect_count": 11,
+    "suspect_count": 9,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
-      "special_crt_function",
-      "undefined_data"
+      "special_crt_function"
     ],
     "total_lines": 123
   },
@@ -62,13 +61,13 @@
   "globals": [
     {
       "addr": "00665b68",
-      "name": "DAT_00665b68",
+      "name": "WatcomVirtualBaseDescriptor_00665b68",
       "type": "WatcomVirtualBaseDescriptor",
       "value": null
     },
     {
       "addr": "00665b70",
-      "name": "DAT_00665b70",
+      "name": "WatcomThunkedDestructor_00665b70",
       "type": "WatcomThunkedDestructor",
       "value": null
     },
@@ -196,22 +195,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_00665b68",
-      "severity": "mild",
-      "text": "*(WatcomVirtualBaseDescriptor **)this_ptr = &DAT_00665b68;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_00665b70",
-      "severity": "mild",
-      "text": "*(WatcomThunkedDestructor **)((int)this_ptr + 0x48) = &DAT_00665b70;",
-      "type": "undefined_data"
-    },
     {
       "description": "Complex pointer cast",
       "line": 20,

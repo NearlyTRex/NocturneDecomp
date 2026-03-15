@@ -22,8 +22,8 @@ extern CDemonFileManager g_CDemonFileManagerInstance;
 extern CVector3i g_CachedViewPosition;
 extern CVector3i g_NormalizedViewVector;
 
-// char[512]
-extern char g_ErrorMessageBuffer_02dd3130[512];
+// char[4096]
+extern char g_ErrorMessageBuffer_02dd3130[4096];
 
 // int
 extern int g_LightDirectionX2;

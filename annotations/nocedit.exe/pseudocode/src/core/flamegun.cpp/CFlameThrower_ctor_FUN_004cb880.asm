@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_flamegun_kfm_0062a38e
-;   float DAT_0065e26c = 8
+;   float FLOAT_0065e26c = 8
 ;   CDemonActor_vtable g_CFlameThrowerVTable
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
     MOV dword ptr [EBX + 0x2e4],0x0     ; 004cb8d9
     MOV dword ptr [EBX + 0x2e8],0x41700000 ; 004cb8e3
     MOV dword ptr [EBX + 0x2ec],0x1     ; 004cb8ed
-    FLD float ptr [0x0065e26c]          ; 004cb8f7 | DAT_0065e26c
+    FLD float ptr [0x0065e26c]          ; 004cb8f7 | FLOAT_0065e26c
     MOV dword ptr [EBX + 0x584],0x0     ; 004cb8fd
     ADD ESP,0x8                         ; 004cb907
     MOV dword ptr [EBX + 0x580],0x0     ; 004cb90a

@@ -1,0 +1,1907 @@
+================================================================================
+DAT_ GLOBALS ANALYSIS REPORT
+================================================================================
+
+Total DAT_ globals: 233
+
+Current type breakdown:
+  undefined4                     224
+  undefined1                     5
+  int                            2
+  WatcomVirtualBaseDescriptor    1
+  undefined2                     1
+
+DAT_ globals with type hints: 46 / 233
+
+--------------------------------------------------------------------------------
+HIGH CONFIDENCE INFERENCES (22)
+--------------------------------------------------------------------------------
+  DAT_00002424                    addr=00002424    current=undefined4      likely=float           refs=21
+  DAT_00665db8                    addr=00665db8    current=undefined4      likely=WatcomInheritanceLayout *  refs=1
+    nearby: g_OStream_Destructor (void*) at offset -12
+  DAT_0067d9f0                    addr=0067d9f0    current=undefined4      likely=float           refs=1
+    nearby: g_MpegSynthesisWindow (float[16][32]) at offset +128
+  DAT_00684ff4                    addr=00684ff4    current=undefined4      likely=uint *          refs=1
+    nearby: g_StackAllocSize (DWORD) at offset -4
+  DAT_006874d4                    addr=006874d4    current=undefined4      likely=double          refs=1
+    nearby: PTR_FUN_006874e4 (void*) at offset -16
+  DAT_0068755c                    addr=0068755c    current=undefined4      likely=double          refs=1
+    nearby: FLOAT10_00687552 (float10) at offset +10
+  DAT_016e9834                    addr=016e9834    current=undefined4      likely=float           refs=1
+    nearby: g_PolygonCount (int) at offset -216
+  DAT_016e9838                    addr=016e9838    current=undefined4      likely=float           refs=1
+    nearby: g_PolygonCount (int) at offset -212
+  DAT_016e983c                    addr=016e983c    current=undefined4      likely=float           refs=1
+    nearby: g_PolygonCount (int) at offset -208
+  DAT_016e9880                    addr=016e9880    current=undefined4      likely=float           refs=1
+    nearby: g_PolygonCount (int) at offset -140
+  DAT_016e9884                    addr=016e9884    current=undefined4      likely=float           refs=1
+    nearby: g_PolygonCount (int) at offset -136
+  DAT_016e98c0                    addr=016e98c0    current=undefined4      likely=float           refs=1
+    nearby: g_PolygonCount (int) at offset -76
+  DAT_016e98c4                    addr=016e98c4    current=undefined4      likely=float           refs=1
+    nearby: g_PolygonCount (int) at offset -72
+  DAT_03f48f88                    addr=03f48f88    current=undefined4      likely=float           refs=3
+    nearby: g_CSlewInstance (CSlew) at offset +4
+  DAT_03f48f8c                    addr=03f48f8c    current=undefined4      likely=float           refs=3
+    nearby: g_CSlewInstance (CSlew) at offset +8
+  DAT_03f48f90                    addr=03f48f90    current=undefined4      likely=float           refs=3
+    nearby: g_CSlewInstance (CSlew) at offset +12
+  DAT_03f48f94                    addr=03f48f94    current=undefined4      likely=float           refs=3
+    nearby: INT_03f48fa0 (int) at offset -12
+  DAT_03f48f98                    addr=03f48f98    current=undefined4      likely=float           refs=3
+    nearby: INT_03f48fa0 (int) at offset -8
+  DAT_03f48f9c                    addr=03f48f9c    current=undefined4      likely=float           refs=3
+    nearby: INT_03f48fa0 (int) at offset -4
+  DAT_03f875e4                    addr=03f875e4    current=undefined4      likely=float           refs=3
+    nearby: g_CWaterInstance (CWater) at offset +4
+  DAT_03f875e8                    addr=03f875e8    current=undefined4      likely=float           refs=2
+    nearby: g_CWaterInstance.visible_area_sqft (undefined4) at offset -4
+  DAT_03f9b210                    addr=03f9b210    current=undefined4      likely=int             refs=2
+    nearby: g_FreeListHeadPointer (undefined4) at offset +12
+
+--------------------------------------------------------------------------------
+MEDIUM CONFIDENCE INFERENCES (24)
+--------------------------------------------------------------------------------
+  DAT_00665f28                    addr=00665f28    current=undefined4      likely=byte            refs=2
+    nearby: g_PositiveInfinity (double) at offset -8
+  DAT_0067b559                    addr=0067b559    current=undefined4      likely=byte            refs=1
+    nearby: g_TempFilenameBuffer (undefined4) at offset +1
+  DAT_00684f38                    addr=00684f38    current=undefined2      likely=short           refs=1
+    nearby: g_SpecialExitHandler (int) at offset +12
+  DAT_00685030                    addr=00685030    current=undefined4      likely=byte            refs=2
+    nearby: PTR_FUN_0068502b (void*) at offset +5
+  DAT_006852db                    addr=006852db    current=undefined1      likely=byte            refs=1
+    nearby: g_TempDirectoryBuffer (char[260]) at offset -1
+  DAT_00688054+3                  addr=00688057    current=undefined4      likely=byte            refs=1
+    nearby: g_RenderVertexBuffer[1].projected_vertex.screen_x (undefined4) at offset +3
+  DAT_00823a80                    addr=00823a80    current=undefined4      likely=byte            refs=1
+    nearby: g_CollisionTexture (SMRGLTextureBasic) at offset +8
+  DAT_00823a81                    addr=00823a81    current=undefined4      likely=byte            refs=1
+    nearby: g_CollisionTexture (SMRGLTextureBasic) at offset +9
+  DAT_00ba8db8                    addr=00ba8db8    current=undefined4      likely=byte            refs=4
+  DAT_00bbb9b7                    addr=00bbb9b7    current=undefined4      likely=byte            refs=1
+    nearby: g_CoronaBlurWorkBuffer (char[241][320]) at offset -1
+  DAT_013da774+3                  addr=013da777    current=undefined4      likely=byte            refs=1
+    nearby: g_CameraPlaneWorkBuffer (SFogImagePlane) at offset -1
+  DAT_013da8b8                    addr=013da8b8    current=undefined4      likely=byte            refs=5
+  DAT_013da8b9                    addr=013da8b9    current=undefined4      likely=byte            refs=1
+  DAT_013ed377                    addr=013ed377    current=undefined4      likely=byte            refs=2
+    nearby: g_CameraImageDecompressBuffer (SFogImagePlane[16]) at offset -1
+  DAT_0151bf9e                    addr=0151bf9e    current=undefined4      likely=short           refs=1
+    nearby: g_CameraOutOfBoundsY (undefined4) at offset +2
+  DAT_016e9790                    addr=016e9790    current=undefined4      likely=byte            refs=1
+  DAT_016e97e0                    addr=016e97e0    current=undefined4      likely=byte            refs=1
+  DAT_03f69b58                    addr=03f69b58    current=undefined4      likely=byte            refs=1
+    nearby: g_RecordingDevices[7].device_name[14] (undefined4) at offset -2
+  DAT_03f69b59                    addr=03f69b59    current=undefined4      likely=byte            refs=1
+    nearby: g_RecordingDevices[7].device_name[14] (undefined4) at offset -1
+  DAT_03f87364                    addr=03f87364    current=undefined4      likely=byte            refs=1
+    nearby: g_CurrentTextureInfo.texture_name[3] (undefined4) at offset -3
+  DAT_03f87365                    addr=03f87365    current=undefined4      likely=byte            refs=1
+    nearby: g_CurrentTextureInfo.texture_name[3] (undefined4) at offset -2
+  DAT_03f98ff1                    addr=03f98ff1    current=undefined1      likely=byte            refs=1
+    nearby: g_CommandLineBuffer (byte) at offset +1
+  DAT_03f98ff2                    addr=03f98ff2    current=undefined1      likely=byte            refs=1
+    nearby: g_CommandLineBuffer (byte) at offset +2
+  DAT_03f9c030                    addr=03f9c030    current=undefined4      likely=byte            refs=1
+    nearby: g_LeadByteTable (char[256]) at offset -1
+
+--------------------------------------------------------------------------------
+LOW CONFIDENCE INFERENCES (0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+NO TYPE HINTS (187)
+--------------------------------------------------------------------------------
+  DAT_00412b41                    addr=00412b41    type=undefined4      refs=1
+  DAT_0051a3f4                    addr=0051a3f4    type=undefined4      refs=1  nearby: PTR_caseD_5_0051a3ec at +8
+  DAT_00665d60                    addr=00665d60    type=WatcomVirtualBaseDescriptor  refs=1  nearby: g_StrStreamBase_Destructor at -12
+  DAT_00665f34+2                  addr=00665f36    type=undefined4      refs=2  nearby: g_PositiveInfinity+4 at +2
+  DAT_00665f3a                    addr=00665f3a    type=undefined4      refs=1  nearby: g_DaysInMonth_Normal at +2
+  DAT_00665f50                    addr=00665f50    type=undefined4      refs=2  nearby: g_DaysInMonth_Leap at -2
+  DAT_0066e314                    addr=0066e314    type=undefined4      refs=2  nearby: SPropertyFlag_ARRAY_0066e30c[0].name at +4
+  DAT_0066ff28                    addr=0066ff28    type=undefined4      refs=1  nearby: g_LightTextures at +80
+  DAT_0066ff2c                    addr=0066ff2c    type=undefined4      refs=1  nearby: g_LightTextures at +84
+  DAT_0066ff30                    addr=0066ff30    type=undefined4      refs=1  nearby: g_LightTextures at +88
+  DAT_0066ff34                    addr=0066ff34    type=undefined4      refs=1  nearby: g_LightTextures at +92
+  DAT_0066ff38                    addr=0066ff38    type=undefined4      refs=1  nearby: g_LightTextures at +96
+  DAT_0067241c                    addr=0067241c    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +4
+  DAT_00672420                    addr=00672420    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +8
+  DAT_00672424                    addr=00672424    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +12
+  DAT_00672428                    addr=00672428    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +16
+  DAT_0067242c                    addr=0067242c    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +20
+  DAT_00672430                    addr=00672430    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +24
+  DAT_00672434                    addr=00672434    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +28
+  DAT_00672438                    addr=00672438    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +32
+  DAT_0067243c                    addr=0067243c    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +36
+  DAT_00672440                    addr=00672440    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +40
+  DAT_00672444                    addr=00672444    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +44
+  DAT_00672448                    addr=00672448    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +48
+  DAT_0067244c                    addr=0067244c    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +52
+  DAT_00672450                    addr=00672450    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +56
+  DAT_00672454                    addr=00672454    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +60
+  DAT_00672458                    addr=00672458    type=undefined4      refs=1  nearby: g_PerspectiveColorCache[15] at +64
+  DAT_00679d50                    addr=00679d50    type=undefined4      refs=1  nearby: switchdataD_00679d54 at -4
+  DAT_00679d94                    addr=00679d94    type=undefined4      refs=1  nearby: g_PodFileActionNames at -12
+  DAT_0067ae0c                    addr=0067ae0c    type=undefined4      refs=1  nearby: g_FireEffectLightningBoltTextures at +24
+  DAT_0067b55a                    addr=0067b55a    type=undefined4      refs=1  nearby: g_TempFilenameBuffer at +2
+  DAT_0067b55b                    addr=0067b55b    type=undefined4      refs=1  nearby: g_TempFilenameBuffer at +3
+  DAT_0067b850                    addr=0067b850    type=undefined4      refs=1  nearby: g_ChapterDisplayTexts at -4
+  DAT_0067b9e0                    addr=0067b9e0    type=undefined4      refs=1  nearby: g_BloodSplatTextures at +24
+  DAT_0067cb1c                    addr=0067cb1c    type=undefined4      refs=1  nearby: FLOAT_0067cb18 at +4
+  DAT_0067e180                    addr=0067e180    type=undefined4      refs=1  nearby: g_MpegSynthesisTableInitialized at +16
+  DAT_0067e184                    addr=0067e184    type=undefined4      refs=1  nearby: g_MpegSynthesisTableInitialized at +20
+  DAT_0067e2d0                    addr=0067e2d0    type=undefined4      refs=1  nearby: g_MpegBitrateTable at +120
+  DAT_0067e6e8                    addr=0067e6e8    type=undefined4      refs=1  nearby: g_Layer3BandIndex[0].l[3] at +20
+  DAT_0067e6f8                    addr=0067e6f8    type=undefined4      refs=1  nearby: g_Layer3BandIndex[0].l[3] at +36
+  DAT_0067e6fc                    addr=0067e6fc    type=undefined4      refs=1  nearby: g_Layer3BandIndex[0].l[3] at +40
+  DAT_0067e718                    addr=0067e718    type=undefined4      refs=1  nearby: g_Layer3BandIndex[0].l[3] at +68
+  DAT_0067e71c                    addr=0067e71c    type=undefined4      refs=1  nearby: g_Layer3BandIndex[0].l[3] at +72
+  DAT_0067e728                    addr=0067e728    type=undefined4      refs=2  nearby: g_Layer3BandIndex[0].l[3] at +84
+  DAT_0067e72c                    addr=0067e72c    type=undefined4      refs=2  nearby: g_Layer3BandIndex[0].l[3] at +88
+  DAT_0067e730                    addr=0067e730    type=undefined4      refs=2  nearby: g_Layer3BandIndex[0].l[3] at +92
+  DAT_0067e734                    addr=0067e734    type=undefined4      refs=2  nearby: g_Layer3BandIndex[0].l[3] at +96
+  DAT_0067e738                    addr=0067e738    type=undefined4      refs=2  nearby: g_Layer3BandIndex[0].l[3] at +100
+  DAT_0067e750                    addr=0067e750    type=undefined4      refs=1  nearby: g_Layer3BandIndex[0].l[3] at +124
+  DAT_0067e754                    addr=0067e754    type=undefined4      refs=1  nearby: g_Layer3BandIndex[0].l[3] at +128
+  DAT_0067e758                    addr=0067e758    type=undefined4      refs=1  nearby: g_Layer3BandIndex[0].l[3] at +132
+  DAT_0067e75c                    addr=0067e75c    type=undefined4      refs=1  nearby: g_Layer3BandIndex[0].l[3] at +136
+  DAT_0067e760                    addr=0067e760    type=undefined4      refs=1  nearby: g_Layer3BandIndex[0].l[3] at +140
+  DAT_006814ec                    addr=006814ec    type=undefined4      refs=1  nearby: g_BoundingBoxQuadTemplates at +24
+  DAT_00681524                    addr=00681524    type=undefined4      refs=1  nearby: g_BoundingBoxQuadTemplates at +80
+  DAT_00681528                    addr=00681528    type=undefined4      refs=1  nearby: g_BoundingBoxQuadTemplates at +84
+  DAT_0068152c                    addr=0068152c    type=undefined4      refs=1  nearby: g_BoundingBoxQuadTemplates at +88
+  DAT_00681534                    addr=00681534    type=undefined4      refs=1  nearby: g_BoundingBoxQuadTemplates at +96
+  DAT_00684f30                    addr=00684f30    type=int             refs=1  nearby: g_SpecialExitHandler at +4
+  DAT_00684f34                    addr=00684f34    type=int             refs=1  nearby: g_SpecialExitHandler at +8
+  DAT_00685080                    addr=00685080    type=undefined4      refs=1  nearby: g_DstStartRule at +12
+  DAT_00685084                    addr=00685084    type=undefined4      refs=1  nearby: g_DstStartRule at +16
+  DAT_0068508c                    addr=0068508c    type=undefined4      refs=1  nearby: g_DstTransitionSecond at -12
+  DAT_00685090                    addr=00685090    type=undefined4      refs=1  nearby: g_DstTransitionSecond at -8
+  DAT_00685094                    addr=00685094    type=undefined4      refs=1  nearby: g_DstTransitionSecond at -4
+  DAT_006850a4                    addr=006850a4    type=undefined4      refs=1  nearby: g_DstTransitionHour at +4
+  DAT_006850a8                    addr=006850a8    type=undefined4      refs=1  nearby: g_DstTransitionHour at +8
+  DAT_006850b0                    addr=006850b0    type=undefined4      refs=1  nearby: s_EST_006850bc at -12
+  DAT_006850b4                    addr=006850b4    type=undefined4      refs=1  nearby: s_EST_006850bc at -8
+  DAT_006850b8                    addr=006850b8    type=undefined4      refs=1  nearby: s_EST_006850bc at -4
+  DAT_006855d8                    addr=006855d8    type=undefined4      refs=1  nearby: PTR_unk_ReturnZero6_FUN_0060e850_0068559c at +60
+  DAT_00688058                    addr=00688058    type=undefined4      refs=1  nearby: g_RenderVertexBuffer[1].projected_vertex.screen_x at +4
+  DAT_00688074                    addr=00688074    type=undefined4      refs=3  nearby: g_RenderVertexBuffer[1].a at +4
+  DAT_00688084+3                  addr=00688087    type=undefined4      refs=1  nearby: g_RenderVertexBuffer[2].projected_vertex.screen_y at -1
+  DAT_006880a4                    addr=006880a4    type=undefined4      refs=3  nearby: g_RenderVertexBuffer[2].a at +4
+  DAT_006e6f63                    addr=006e6f63    type=undefined4      refs=1
+  DAT_006e6f69                    addr=006e6f69    type=undefined4      refs=1
+  DAT_00747874                    addr=00747874    type=undefined4      refs=1
+  DAT_00766880                    addr=00766880    type=undefined4      refs=2
+  DAT_0077256c                    addr=0077256c    type=undefined4      refs=1  nearby: g_CurrentRenderColorRed at -8
+  DAT_00772570                    addr=00772570    type=undefined4      refs=1  nearby: g_CurrentRenderColorRed at -4
+  DAT_0077259c                    addr=0077259c    type=undefined4      refs=1  nearby: g_QuadVertex1_Y at +20
+  DAT_007725a0                    addr=007725a0    type=undefined4      refs=1  nearby: g_QuadVertex2 at -20
+  DAT_007725fc                    addr=007725fc    type=undefined4      refs=1  nearby: g_ProjectedScreenY2 at +4
+  DAT_00772600                    addr=00772600    type=undefined4      refs=1  nearby: g_ProjectedScreenY2 at +8
+  DAT_00780000                    addr=00780000    type=undefined4      refs=2
+  DAT_00800000                    addr=00800000    type=undefined4      refs=12
+  DAT_00823a82                    addr=00823a82    type=undefined4      refs=1  nearby: g_CollisionTexture at +10
+  DAT_00823a83                    addr=00823a83    type=undefined4      refs=1  nearby: g_CollisionTexture at +11
+  DAT_00823b10                    addr=00823b10    type=undefined4      refs=1  nearby: CKeyFramedModelInstance_00823a98 at +120
+  DAT_00824e88                    addr=00824e88    type=undefined4      refs=3  nearby: g_ClippedVertexBuffer[0].projected_vertex.transformed_z at +88
+  DAT_00825adc                    addr=00825adc    type=undefined4      refs=1  nearby: g_ClipperTempBuffer[1].projected_vertex.transformed_y at -4
+  DAT_00825b3c                    addr=00825b3c    type=undefined4      refs=1  nearby: g_ClipperTempBuffer[2].projected_vertex.transformed_z at +40
+  DAT_00825b44                    addr=00825b44    type=undefined4      refs=1  nearby: g_ClipperTempBuffer[2].projected_vertex.transformed_z at +48
+  DAT_00825b48                    addr=00825b48    type=undefined4      refs=1  nearby: g_ClipperTempBuffer[2].projected_vertex.transformed_z at +52
+  DAT_00825b6c                    addr=00825b6c    type=undefined4      refs=1  nearby: g_ClipperTempBuffer[2].projected_vertex.transformed_z at +88
+  DAT_0083c1a0                    addr=0083c1a0    type=undefined4      refs=4  nearby: g_CZombieCowClassInfo at +4
+  DAT_0083c1ac                    addr=0083c1ac    type=undefined4      refs=4  nearby: g_CZombieCowClassInfo at +16
+  DAT_0083c1b0                    addr=0083c1b0    type=undefined4      refs=4  nearby: g_CZombieCowClassInfo at +20
+  DAT_0083c1b4                    addr=0083c1b4    type=undefined4      refs=4  nearby: g_CZombieCowClassInfo at +24
+  DAT_0083c1b8                    addr=0083c1b8    type=undefined4      refs=4  nearby: g_CZombieCowClassInfo at +28
+  DAT_009e5d74                    addr=009e5d74    type=undefined4      refs=1
+  DAT_009e5d80                    addr=009e5d80    type=undefined4      refs=1
+  DAT_009e5d84                    addr=009e5d84    type=undefined4      refs=1
+  DAT_009e5d88                    addr=009e5d88    type=undefined4      refs=1
+  DAT_009e6c74                    addr=009e6c74    type=undefined4      refs=1
+  DAT_00b71b00                    addr=00b71b00    type=undefined4      refs=1
+  DAT_00ba8db9                    addr=00ba8db9    type=undefined4      refs=1
+  DAT_00ba8ef8                    addr=00ba8ef8    type=undefined4      refs=2
+  DAT_00bbbaf8                    addr=00bbbaf8    type=undefined4      refs=1
+  DAT_00bbbc38                    addr=00bbbc38    type=undefined4      refs=1
+  DAT_00c196fc                    addr=00c196fc    type=undefined4      refs=3  nearby: g_CameraImagePaletteData at +4
+  DAT_00c196fd                    addr=00c196fd    type=undefined4      refs=3  nearby: g_CameraImagePaletteData at +5
+  DAT_00d00000                    addr=00d00000    type=undefined4      refs=1
+  DAT_00dc0000                    addr=00dc0000    type=undefined4      refs=1
+  DAT_00f00000                    addr=00f00000    type=undefined4      refs=1
+  DAT_00f80000                    addr=00f80000    type=undefined4      refs=24
+  DAT_00fbffff                    addr=00fbffff    type=undefined4      refs=2
+  DAT_00fcfcfc                    addr=00fcfcfc    type=undefined4      refs=1
+  DAT_00fdffff                    addr=00fdffff    type=undefined4      refs=1
+  DAT_00fe0000                    addr=00fe0000    type=undefined4      refs=4
+  DAT_00feffff                    addr=00feffff    type=undefined4      refs=3  nearby: g_ColorMagenta at -256
+  DAT_00ffffff                    addr=00ffffff    type=undefined4      refs=4
+  DAT_01000000                    addr=01000000    type=undefined4      refs=7
+  DAT_0132220c                    addr=0132220c    type=undefined4      refs=1  nearby: g_LightBufferPool[24][0] at +4
+  DAT_01322210                    addr=01322210    type=undefined4      refs=1  nearby: g_LightBufferPool[24][0] at +8
+  DAT_01322214                    addr=01322214    type=undefined4      refs=1  nearby: g_LightBufferPool[24][0] at +12
+  DAT_013225d0                    addr=013225d0    type=undefined4      refs=1
+  DAT_013225d4                    addr=013225d4    type=undefined4      refs=1
+  DAT_01335590                    addr=01335590    type=undefined4      refs=1
+  DAT_01335594                    addr=01335594    type=undefined4      refs=1
+  DAT_013bc23c                    addr=013bc23c    type=undefined4      refs=1  nearby: g_CoronaCameraRotationMatrix at +4
+  DAT_013da8b7                    addr=013da8b7    type=undefined4      refs=1
+  DAT_013da8ba                    addr=013da8ba    type=undefined4      refs=1
+  DAT_013da9f8                    addr=013da9f8    type=undefined4      refs=1
+  DAT_013da9f9                    addr=013da9f9    type=undefined4      refs=1
+  DAT_013ed375                    addr=013ed375    type=undefined4      refs=1  nearby: g_CameraImageDecompressBuffer at -3
+  DAT_013ed376                    addr=013ed376    type=undefined4      refs=1  nearby: g_CameraImageDecompressBuffer at -2
+  DAT_013ed4b8                    addr=013ed4b8    type=undefined4      refs=4
+  DAT_013fff78                    addr=013fff78    type=undefined4      refs=2
+  DAT_01577c28                    addr=01577c28    type=undefined4      refs=2
+  DAT_01577c2c                    addr=01577c2c    type=undefined4      refs=2
+  DAT_01578128                    addr=01578128    type=undefined4      refs=2
+  DAT_016e3600                    addr=016e3600    type=undefined4      refs=1
+  DAT_016e978c                    addr=016e978c    type=undefined4      refs=1
+  DAT_016e9830                    addr=016e9830    type=undefined4      refs=1  nearby: g_PolygonCount at -220
+  DAT_016e9840                    addr=016e9840    type=undefined4      refs=1  nearby: g_PolygonCount at -204
+  DAT_016e9844                    addr=016e9844    type=undefined4      refs=1  nearby: g_PolygonCount at -200
+  DAT_016e9848                    addr=016e9848    type=undefined4      refs=1  nearby: g_PolygonCount at -196
+  DAT_016e984c                    addr=016e984c    type=undefined4      refs=1  nearby: g_PolygonCount at -192
+  DAT_016e9904                    addr=016e9904    type=undefined4      refs=1  nearby: g_PolygonCount at -8
+  DAT_016e9908                    addr=016e9908    type=undefined4      refs=1  nearby: g_PolygonCount at -4
+  DAT_01e5017c                    addr=01e5017c    type=undefined4      refs=1  nearby: g_ModelPartNames at -20
+  DAT_020a48c8                    addr=020a48c8    type=undefined4      refs=1  nearby: CDemonFilter_ARRAY_020a4878[1].size at +4
+  DAT_038f4dac                    addr=038f4dac    type=undefined4      refs=1
+  DAT_038f60d0                    addr=038f60d0    type=undefined4      refs=2
+  DAT_0391e5d8                    addr=0391e5d8    type=undefined4      refs=1
+  DAT_03c00000                    addr=03c00000    type=undefined4      refs=1
+  DAT_03f5dc40                    addr=03f5dc40    type=undefined4      refs=7  nearby: g_SfxSlots[1].dsound_buffer at +4
+  DAT_03f5dc44                    addr=03f5dc44    type=undefined4      refs=6  nearby: g_SfxSlots[1].dsound_buffer at +8
+  DAT_03f6293c                    addr=03f6293c    type=undefined4      refs=1
+  DAT_03f6294c                    addr=03f6294c    type=undefined4      refs=1
+  DAT_03f6297c                    addr=03f6297c    type=undefined4      refs=5
+  DAT_03f62980                    addr=03f62980    type=undefined4      refs=4
+  DAT_03f6298c                    addr=03f6298c    type=undefined4      refs=2
+  DAT_03f629ac                    addr=03f629ac    type=undefined4      refs=13
+  DAT_03f629b0                    addr=03f629b0    type=undefined4      refs=1
+  DAT_03f62abc                    addr=03f62abc    type=undefined4      refs=1
+  DAT_03f62acc                    addr=03f62acc    type=undefined4      refs=1
+  DAT_03f62afc                    addr=03f62afc    type=undefined4      refs=7
+  DAT_03f62b00                    addr=03f62b00    type=undefined4      refs=8
+  DAT_03f62b04                    addr=03f62b04    type=undefined4      refs=2
+  DAT_03f62b0c                    addr=03f62b0c    type=undefined4      refs=2
+  DAT_03f69b44                    addr=03f69b44    type=undefined4      refs=1  nearby: g_RecordingDevices[7].device_name[14] at -22
+  DAT_03f69b48                    addr=03f69b48    type=undefined4      refs=1  nearby: g_RecordingDevices[7].device_name[14] at -18
+  DAT_03f69b4c                    addr=03f69b4c    type=undefined4      refs=1  nearby: g_RecordingDevices[7].device_name[14] at -14
+  DAT_03f69b50                    addr=03f69b50    type=undefined4      refs=1  nearby: g_RecordingDevices[7].device_name[14] at -10
+  DAT_03f69b54                    addr=03f69b54    type=undefined4      refs=1  nearby: g_RecordingDevices[7].device_name[14] at -6
+  DAT_03f6b9f8                    addr=03f6b9f8    type=undefined4      refs=1  nearby: g_CSpotViewInstance at +24
+  DAT_03f6b9fc                    addr=03f6b9fc    type=undefined4      refs=1  nearby: g_CSpotViewInstance at +28
+  DAT_03f6ba00                    addr=03f6ba00    type=undefined4      refs=1  nearby: FLOAT_03f6ba1c at -28
+  DAT_03f87366                    addr=03f87366    type=undefined4      refs=1  nearby: g_CurrentTextureInfo.texture_name[3] at -1
+  DAT_03f95de4                    addr=03f95de4    type=undefined4      refs=1  nearby: g_WeatherParticlePositions at -20
+  DAT_03f98ff3                    addr=03f98ff3    type=undefined1      refs=1  nearby: g_CommandLineBuffer at +3
+  DAT_03f98ff4                    addr=03f98ff4    type=undefined1      refs=1  nearby: g_CommandLineBuffer at +4
+  DAT_54524143                    addr=54524143    type=undefined4      refs=1
+
+--------------------------------------------------------------------------------
+MOST REFERENCED DAT_ GLOBALS (top 50)
+--------------------------------------------------------------------------------
+  DAT_00f80000                    addr=00f80000    refs=24    type=undefined4    
+  DAT_00002424                    addr=00002424    refs=21    type=undefined4      likely=float
+  DAT_03f629ac                    addr=03f629ac    refs=13    type=undefined4    
+  DAT_00800000                    addr=00800000    refs=12    type=undefined4    
+  DAT_03f62b00                    addr=03f62b00    refs=8     type=undefined4    
+  DAT_01000000                    addr=01000000    refs=7     type=undefined4    
+  DAT_03f62afc                    addr=03f62afc    refs=7     type=undefined4    
+  DAT_03f5dc40                    addr=03f5dc40    refs=7     type=undefined4      nearby: g_SfxSlots[1].dsound_buffer(+4)
+  DAT_03f5dc44                    addr=03f5dc44    refs=6     type=undefined4      nearby: g_SfxSlots[1].dsound_buffer(+8)
+  DAT_013da8b8                    addr=013da8b8    refs=5     type=undefined4      likely=byte
+  DAT_03f6297c                    addr=03f6297c    refs=5     type=undefined4    
+  DAT_00ba8db8                    addr=00ba8db8    refs=4     type=undefined4      likely=byte
+  DAT_013ed4b8                    addr=013ed4b8    refs=4     type=undefined4    
+  DAT_00ffffff                    addr=00ffffff    refs=4     type=undefined4    
+  DAT_00fe0000                    addr=00fe0000    refs=4     type=undefined4    
+  DAT_0083c1a0                    addr=0083c1a0    refs=4     type=undefined4      nearby: g_CZombieCowClassInfo(+4)
+  DAT_0083c1ac                    addr=0083c1ac    refs=4     type=undefined4      nearby: g_CZombieCowClassInfo(+16)
+  DAT_0083c1b0                    addr=0083c1b0    refs=4     type=undefined4      nearby: g_CZombieCowClassInfo(+20)
+  DAT_0083c1b4                    addr=0083c1b4    refs=4     type=undefined4      nearby: g_CZombieCowClassInfo(+24)
+  DAT_0083c1b8                    addr=0083c1b8    refs=4     type=undefined4      nearby: g_CZombieCowClassInfo(+28)
+  DAT_03f62980                    addr=03f62980    refs=4     type=undefined4    
+  DAT_00c196fc                    addr=00c196fc    refs=3     type=undefined4      nearby: g_CameraImagePaletteData(+4)
+  DAT_00c196fd                    addr=00c196fd    refs=3     type=undefined4      nearby: g_CameraImagePaletteData(+5)
+  DAT_00688074                    addr=00688074    refs=3     type=undefined4      nearby: g_RenderVertexBuffer[1].a(+4)
+  DAT_006880a4                    addr=006880a4    refs=3     type=undefined4      nearby: g_RenderVertexBuffer[2].a(+4)
+  DAT_03f875e4                    addr=03f875e4    refs=3     type=undefined4      likely=float  nearby: g_CWaterInstance(+4)
+  DAT_03f48f88                    addr=03f48f88    refs=3     type=undefined4      likely=float  nearby: g_CSlewInstance(+4)
+  DAT_03f48f8c                    addr=03f48f8c    refs=3     type=undefined4      likely=float  nearby: g_CSlewInstance(+8)
+  DAT_03f48f90                    addr=03f48f90    refs=3     type=undefined4      likely=float  nearby: g_CSlewInstance(+12)
+  DAT_03f48f94                    addr=03f48f94    refs=3     type=undefined4      likely=float  nearby: INT_03f48fa0(-12)
+  DAT_03f48f98                    addr=03f48f98    refs=3     type=undefined4      likely=float  nearby: INT_03f48fa0(-8)
+  DAT_03f48f9c                    addr=03f48f9c    refs=3     type=undefined4      likely=float  nearby: INT_03f48fa0(-4)
+  DAT_00824e88                    addr=00824e88    refs=3     type=undefined4      nearby: g_ClippedVertexBuffer[0].projected_vertex.transformed_z(+88)
+  DAT_00feffff                    addr=00feffff    refs=3     type=undefined4      nearby: g_ColorMagenta(-256)
+  DAT_0066e314                    addr=0066e314    refs=2     type=undefined4      nearby: SPropertyFlag_ARRAY_0066e30c[0].name(+4)
+  DAT_00ba8ef8                    addr=00ba8ef8    refs=2     type=undefined4    
+  DAT_013ed377                    addr=013ed377    refs=2     type=undefined4      likely=byte  nearby: g_CameraImageDecompressBuffer(-1)
+  DAT_013fff78                    addr=013fff78    refs=2     type=undefined4    
+  DAT_01577c28                    addr=01577c28    refs=2     type=undefined4    
+  DAT_01577c2c                    addr=01577c2c    refs=2     type=undefined4    
+  DAT_01578128                    addr=01578128    refs=2     type=undefined4    
+  DAT_00780000                    addr=00780000    refs=2     type=undefined4    
+  DAT_03f875e8                    addr=03f875e8    refs=2     type=undefined4      likely=float  nearby: g_CWaterInstance.visible_area_sqft(-4)
+  DAT_038f60d0                    addr=038f60d0    refs=2     type=undefined4    
+  DAT_03f9b210                    addr=03f9b210    refs=2     type=undefined4      likely=int  nearby: g_FreeListHeadPointer(+12)
+  DAT_00685030                    addr=00685030    refs=2     type=undefined4      likely=byte  nearby: PTR_FUN_0068502b(+5)
+  DAT_00665f28                    addr=00665f28    refs=2     type=undefined4      likely=byte  nearby: g_PositiveInfinity(-8)
+  DAT_00665f34+2                  addr=00665f36    refs=2     type=undefined4      nearby: g_PositiveInfinity+4(+2)
+  DAT_00665f50                    addr=00665f50    refs=2     type=undefined4      nearby: g_DaysInMonth_Leap(-2)
+  DAT_00fbffff                    addr=00fbffff    refs=2     type=undefined4    
+
+--------------------------------------------------------------------------------
+FILTERED OUT - INSIDE NAMED DATA (1542)
+--------------------------------------------------------------------------------
+These DAT_ globals fall within the address range of a named
+string, array, or struct and are not standalone globals.
+
+  DAT_00613579                    inside s_none_00613578
+  DAT_0061357a                    inside s_none_00613578
+  DAT_0061357e                    inside s_none_00613578
+  DAT_0061357f                    inside s_none_00613578
+  DAT_006144d2                    inside s_s_d_00614465
+  DAT_006144d3                    inside s_s_d_00614465
+  DAT_006144d4                    inside s_s_d_00614465
+  DAT_006144dd                    inside s_s_d_00614465
+  DAT_006144de                    inside s_s_d_00614465
+  DAT_006144e4                    inside s_s_d_00614465
+  DAT_006144e5                    inside s_s_d_00614465
+  DAT_00614522                    inside s_s_d_00614465
+  DAT_00614523                    inside s_s_d_00614465
+  DAT_00614940                    inside s_bullet_kfm_00614934
+  DAT_00614941                    inside s_bullet_kfm_00614934
+  DAT_00614942                    inside s_bullet_kfm_00614934
+  DAT_006169b0                    inside s_MODELS_s_006168e8
+  DAT_006176af                    inside s_s_was_in_the_way_but_cou_00617626
+  DAT_006176b0                    inside s_s_was_in_the_way_but_cou_00617626
+  DAT_006176b1                    inside s_s_was_in_the_way_but_cou_00617626
+  DAT_00618ac7                    inside s_s_4_Load_skeleton_006189d0
+  DAT_0061930c                    inside s_s_5_View_course_00619228
+  DAT_0061930d                    inside s_s_5_View_course_00619228
+  DAT_0061930e                    inside s_s_5_View_course_00619228
+  DAT_00619328                    inside s_s_6_Rotate_all_course_or_00619237
+  DAT_00619329                    inside s_s_6_Rotate_all_course_or_00619237
+  DAT_0061932a                    inside s_s_6_Rotate_all_course_or_00619237
+  DAT_00619ece                    inside s_ART_s_00619e8b
+  DAT_00619ecf                    inside s_ART_s_00619e8b
+  DAT_00619ed0                    inside s_ART_s_00619e8b
+  DAT_0061a166                    inside s_core_dcamera_cpp_0061a12a
+  DAT_0061a167                    inside s_core_dcamera_cpp_0061a12a
+  DAT_0061a168                    inside s_core_dcamera_cpp_0061a12a
+  DAT_0061a1c7                    inside s_core_dcamera_cpp_0061a12a
+  DAT_0061a1c8                    inside s_core_dcamera_cpp_0061a12a
+  DAT_0061a1c9                    inside s_core_dcamera_cpp_0061a12a
+  DAT_0061a9cd                    inside s_shape_design_c_0061a906
+  DAT_0061a9ce                    inside s_shape_design_c_0061a906
+  DAT_0061a9cf                    inside s_shape_design_c_0061a906
+  DAT_0061aaeb                    inside s_rt_0061a9ec
+  DAT_0061aaec                    inside s_models_0061a9ef
+  DAT_0061aaed                    inside s_models_0061a9ef
+  DAT_0061ac74                    inside s_d_d_d_d_d_d_d_0061aba5
+  DAT_0061ac75                    inside s_d_d_d_d_d_d_d_0061aba5
+  DAT_0061ace0                    inside s_Too_many_parts_d_max_is__0061abfd
+  DAT_0061ace1                    inside s_Too_many_parts_d_max_is__0061abfd
+  DAT_0061ad97                    inside s_shape_design_c_0061aca1
+  DAT_0061ad98                    inside s_shape_design_c_0061aca1
+  DAT_0061ad99                    inside s_shape_design_c_0061aca1
+  DAT_0061af5b                    inside s_wt_0061aed2
+  DAT_0061af5c                    inside s_wt_0061aed2
+  DAT_0061af5d                    inside s_wt_0061aed2
+  DAT_0061af60                    inside s_wt_0061aed2
+  DAT_0061af61                    inside s_wt_0061aed2
+  DAT_0061af62                    inside s_wt_0061aed2
+  DAT_0061d195                    inside s_Enter_response_file_0061d106
+  DAT_0061d22a                    inside s_rt_0061d12e
+  DAT_0061d22b                    inside s_rt_0061d12e
+  DAT_0061d22c                    inside s_rt_0061d12e
+  DAT_0061d24a                    inside s_s_0061d14c
+  DAT_0061d24b                    inside s_s_0061d14c
+  DAT_0061d24c                    inside s_f_f_0061d150
+  DAT_0061d24f                    inside s_f_f_0061d150
+  DAT_0061d250                    inside s_d_0061d157
+  DAT_0061d251                    inside s_d_0061d157
+  DAT_0061d254                    inside s_d_0061d157
+  DAT_0061d255                    inside s_d_0061d157
+  DAT_0061d256                    inside s_d_0061d157
+  DAT_0061da38                    inside s_Hit_a_key_to_continue_0061d949
+  DAT_0061da5b                    inside s_Hit_a_key_to_continue_0061d962
+  DAT_0061daf0                    inside s_Is_this_map_acceptable_y_0061d9f6
+  DAT_0061daf1                    inside s_Is_this_map_acceptable_y_0061d9f6
+  DAT_0061daf2                    inside s_Is_this_map_acceptable_y_0061d9f6
+  DAT_0061daf5                    inside s_Is_this_map_acceptable_y_0061d9f6
+  DAT_0061daf6                    inside s_Are_these_maps_acceptabl_0061da15
+  DAT_0061daf7                    inside s_Are_these_maps_acceptabl_0061da15
+  DAT_0061dc3c                    inside s_Unable_to_get_bitmap_0061db49
+  DAT_0061dc3d                    inside s_Unable_to_get_bitmap_0061db49
+  DAT_0061dc3e                    inside s_Unable_to_get_bitmap_0061db49
+  DAT_0061dcae                    inside s_wb_0061dbc8
+  DAT_0061dcaf                    inside s_wb_0061dbc8
+  DAT_0061dcb0                    inside s_wb_0061dbc8
+  DAT_0061dfaf                    inside s_OK_heap_is_good_0061ded0
+  DAT_0061dfb0                    inside s_OK_heap_is_good_0061ded0
+  DAT_0061dfb4                    inside s_OK_heap_is_good_0061ded0
+  DAT_0061dfb5                    inside s_OK_heap_is_good_0061ded0
+  DAT_0061dff2                    inside s_ERROR_heap_is_damaged_0061def5
+  DAT_0061dff3                    inside s_ERROR_heap_is_damaged_0061def5
+  DAT_0061dff7                    inside s_ERROR_bad_node_in_heap_0061df0d
+  DAT_0061dff8                    inside s_ERROR_bad_node_in_heap_0061df0d
+  DAT_006209be                    inside s_Vertex_count_d_006208dd
+  DAT_00621250                    inside s_modelName_00621159
+  DAT_00621251                    inside s_modelName_00621159
+  DAT_00621252                    inside s_modelName_00621159
+  DAT_00621348                    inside s_true_0062124f
+  DAT_00621349                    inside s_true_0062124f
+  DAT_0062134a                    inside s_true_0062124f
+  DAT_00621655                    inside s_Locked_sound_00621564
+  DAT_006222c2                    inside s_modelName_00622239
+  DAT_006222c3                    inside s_modelName_00622239
+  DAT_006222c4                    inside s_modelName_00622239
+  DAT_006231b0                    inside s_Yes_006230c5
+  DAT_006231b2                    inside s_d_006231b1
+  DAT_006235ac                    inside g_AxisLabelChars
+  DAT_00628c6a                    inside s_Enter_directory_containi_00628b75
+  DAT_00629210                    inside s_Can_t_mount_s_to_delete__006291d4
+  DAT_00629645                    inside s_models_s_00629597
+  DAT_00629646                    inside s_models_s_00629597
+  DAT_00629647                    inside s_models_s_00629597
+  DAT_00629673                    inside s_models_s_00629597
+  DAT_00629674                    inside s_models_s_00629597
+  DAT_00629675                    inside s_models_s_00629597
+  DAT_00629688                    inside s_models_s_00629597
+  DAT_00629689                    inside s_models_s_00629597
+  DAT_0062968a                    inside s_models_s_00629597
+  DAT_0062cab9                    inside s_noc_0062ca88
+  DAT_0062d2e0                    inside s_core_game_cpp_0062d24b
+  DAT_0062d2e1                    inside s_core_game_cpp_0062d24b
+  DAT_0062d2e2                    inside s_core_game_cpp_0062d24b
+  DAT_0062d4ff                    inside s_stats_0062d4ed
+  DAT_0062d500                    inside s_stats_0062d4ed
+  DAT_0062d51f                    inside s_stats_0062d4ed
+  DAT_0062d520                    inside s_stats_0062d4ed
+  DAT_0062d57c                    inside s_stats_0062d4ed
+  DAT_0062d57d                    inside s_stats_0062d4ed
+  DAT_0062d5a2                    inside s_stats_0062d4ed
+  DAT_0062d5a3                    inside s_stats_0062d4ed
+  DAT_0062e28b                    inside s_ART_s_0062e24c
+  DAT_0062e28c                    inside s_ART_s_0062e24c
+  DAT_0062e28d                    inside s_ART_s_0062e24c
+  DAT_0062e2d6                    inside s_ART_s_0062e24c
+  DAT_0062e2d7                    inside s_ART_s_0062e24c
+  DAT_0062e2d8                    inside s_ART_s_0062e24c
+  DAT_0062e749                    inside s_core_ground_cpp_0062e71f
+  DAT_0062e74a                    inside s_core_ground_cpp_0062e71f
+  DAT_0062e74b                    inside s_core_ground_cpp_0062e71f
+  DAT_0062e768                    inside s_core_ground_cpp_0062e71f
+  DAT_0062e769                    inside s_core_ground_cpp_0062e71f
+  DAT_0062e76a                    inside s_core_ground_cpp_0062e71f
+  DAT_00631179                    inside s_modelName_006310c0
+  DAT_0063117a                    inside s_modelName_006310c0
+  DAT_0063117b                    inside s_modelName_006310c0
+  DAT_0063117d                    inside s_modelName_006310c0
+  DAT_00635429                    inside s_This_CPU_does_not_have_a_00635337
+  DAT_0063545a                    inside s_core_main_c_0063535b
+  DAT_0063548e                    inside s_Windows_is_reporting_006353fb
+  DAT_006354aa                    inside s_Windows_is_reporting_006353fb
+  DAT_00635508                    inside s_s_1f_00635411
+  DAT_00635537                    inside s_anon_00635459
+  DAT_006367ac                    inside s_tri3dfx_dll_0063679f
+  DAT_006396d8                    inside s_CHero_0063966c
+  DAT_006396d9                    inside s_CHero_0063966c
+  DAT_006396da                    inside s_CHero_0063966c
+  DAT_0063eb1e                    inside s_s_0063ea24
+  DAT_0063eb1f                    inside s_s_0063ea24
+  DAT_0063eb20                    inside s_s_0063ea24
+  DAT_0063ebad                    inside s_Global_pathmap_list_corr_0063eab9
+  DAT_0063ebae                    inside s_Global_pathmap_list_corr_0063eab9
+  DAT_0063ebaf                    inside s_Global_pathmap_list_corr_0063eab9
+  DAT_0063fab3                    inside s_Choose_a_different_cours_0063f9e9
+  DAT_006417b6                    inside s_core_script_cpp_006416d4
+  DAT_006417b7                    inside s_core_script_cpp_006416d4
+  DAT_006417b8                    inside s_core_script_cpp_006416d4
+  DAT_00641a76                    inside s_core_script_cpp_006419d9
+  DAT_00641a77                    inside s_core_script_cpp_006419d9
+  DAT_00641a78                    inside s_core_script_cpp_006419d9
+  DAT_00641a85                    inside s_core_script_cpp_006419d9
+  DAT_00641a86                    inside s_core_script_cpp_006419d9
+  DAT_00641a87                    inside s_core_script_cpp_006419d9
+  DAT_00641a94                    inside s_core_script_cpp_006419d9
+  DAT_00641a95                    inside s_core_script_cpp_006419d9
+  DAT_00641a96                    inside s_core_script_cpp_006419d9
+  DAT_00642f53                    inside s_n_00642e5f
+  DAT_00643339                    inside s_world_006432a2
+  DAT_00644178                    inside s_Out_of_memory_0064407d
+  DAT_006459a2                    inside s_motion_state_006458a6
+  DAT_006459a3                    inside s_motion_state_006458a6
+  DAT_006459a4                    inside s_motion_state_006458a6
+  DAT_00645ac1                    inside s_f_f_f_006459ca
+  DAT_00645ac2                    inside s_f_f_f_006459ca
+  DAT_00645ac3                    inside s_f_f_f_006459ca
+  DAT_006466e4                    inside s_thm_006466e3
+  DAT_006466e5                    inside s_thm_006466e3
+  DAT_006466e6                    inside s_thm_006466e3
+  DAT_00647625                    inside s_weatherType_0064752c
+  DAT_00647626                    inside s_weatherType_0064752c
+  DAT_00647627                    inside s_weatherType_0064752c
+  DAT_00647c8b                    inside s_s_3_Delete_light_00647b8c
+  DAT_00647c8c                    inside s_s_4_Precompute_visiblity_00647b9d
+  DAT_00647c8d                    inside s_s_4_Precompute_visiblity_00647b9d
+  DAT_006481cd                    inside s_s_1_Add_new_camera_006480cf
+  DAT_006481ce                    inside s_s_1_Add_new_camera_006480cf
+  DAT_006481cf                    inside s_s_2_Delete_existing_came_006480e2
+  DAT_00648888                    inside s_R_Reverb_for_camera_s_s_006487a3
+  DAT_00648889                    inside s_R_Reverb_for_camera_s_s_006487a3
+  DAT_0064888a                    inside s_R_Reverb_for_camera_s_s_006487a3
+  DAT_00648f9f                    inside s_s_4_View_set_00648eae
+  DAT_00648fa0                    inside s_s_4_View_set_00648eae
+  DAT_00648fa1                    inside s_s_4_View_set_00648eae
+  DAT_00649152                    inside s_backdrop_sn_raw_00649056
+  DAT_00649153                    inside s_backdrop_sn_raw_00649056
+  DAT_00649154                    inside s_backdrop_sn_raw_00649056
+  DAT_00652592                    inside s_wav_006524ee
+  DAT_00652593                    inside s_wav_006524ee
+  DAT_00652594                    inside s_wav_006524ee
+  DAT_00654ef5                    inside s_modelName_00654e4c
+  DAT_00654ef6                    inside s_modelName_00654e4c
+  DAT_00654ef7                    inside s_modelName_00654e4c
+  DAT_00658bf4                    inside s_a_b_d_H_M_S_Y_00658bd0
+  DAT_00658c04                    inside s_a_b_d_H_M_S_Y_00658bd0
+  DAT_00658c08                    inside s_a_b_d_H_M_S_Y_00658bd0
+  DAT_00658c0c                    inside s_a_b_d_H_M_S_Y_00658bd0
+  DAT_006590a4                    inside s_con_0065905c
+  DAT_006590a8                    inside s_con_0065905c
+  DAT_00659788                    inside s_C_FILE_INFO_00659734
+  DAT_0065978c                    inside s_C_FILE_INFO_00659734
+  DAT_006597a1                    inside s_C_FILE_INFO_00659734
+  DAT_006597a2                    inside s_C_FILE_INFO_00659734
+  DAT_006597a3                    inside s_C_FILE_INFO_00659734
+  DAT_006597a5                    inside s_C_FILE_INFO_00659734
+  DAT_006597a6                    inside s_C_FILE_INFO_00659734
+  DAT_006597a7                    inside s_C_FILE_INFO_00659734
+  DAT_00666041                    inside g_FontTable
+  DAT_00666042                    inside g_FontTable
+  DAT_0066df30                    inside g_ResolutionTable
+  DAT_0066e944                    inside g_CourseLastPthPath
+  DAT_0066ea4c                    inside g_CourseLastCrsPath
+  DAT_0066eb54                    inside g_CourseLastBonPath
+  DAT_0066ed14                    inside g_CameraEdgeOffsetX
+  DAT_0066ed34                    inside g_CameraEdgeOffsetY
+  DAT_0066edab                    inside s_EFD_0066ed6c
+  DAT_0066eeac                    inside g_PolygonReductionParams
+  DAT_0066ef14                    inside g_OctantRotationAngles
+  DAT_0066efa0                    inside g_GlobalFilters
+  DAT_0066efc0                    inside g_PlayerFilters
+  DAT_0066f018                    inside g_CoronaVertexPositions
+  DAT_0066f01c                    inside g_CoronaVertexPositions
+  DAT_0066f020                    inside g_CoronaVertexPositions
+  DAT_0066f024                    inside g_CoronaVertexPositions
+  DAT_0066f028                    inside g_CoronaVertexPositions
+  DAT_0066f300                    inside g_CoronaFacePrimitives
+  DAT_0066f304                    inside g_CoronaFacePrimitives
+  DAT_0066f308                    inside g_CoronaFacePrimitives
+  DAT_0066f30c                    inside g_CoronaFacePrimitives
+  DAT_0066f310                    inside g_CoronaFacePrimitives
+  DAT_0066f314                    inside g_CoronaFacePrimitives
+  DAT_0066f318                    inside g_CoronaFacePrimitives
+  DAT_0066f31c                    inside g_CoronaFacePrimitives
+  DAT_0066f320                    inside g_CoronaFacePrimitives
+  DAT_0066f324                    inside g_CoronaFacePrimitives
+  DAT_0066f328                    inside g_CoronaFacePrimitives
+  DAT_0066f32c                    inside g_CoronaFacePrimitives
+  DAT_0066f330                    inside g_CoronaFacePrimitives
+  DAT_0066f334                    inside g_CoronaFacePrimitives
+  DAT_0066f338                    inside g_CoronaFacePrimitives
+  DAT_0066f33c                    inside g_CoronaFacePrimitives
+  DAT_0066f340                    inside g_CoronaFacePrimitives
+  DAT_0066fef0                    inside g_LightTextures
+  DAT_0066ff08                    inside g_LightTextures
+  DAT_0066ff24                    inside g_LightTextures
+  DAT_006700f4                    inside g_TriangleMatchTableA
+  DAT_00670100                    inside g_TriangleMatchTableB
+  DAT_00670214                    inside g_ModelLastScaleInput
+  DAT_00678a74                    inside g_LightmapBlendConstants
+  DAT_00678c84                    inside g_LightmapBlendConstants
+  DAT_00678d8c                    inside g_LightmapBlendConstants
+  DAT_00678f8c                    inside g_LightmapBlendConstants
+  DAT_0067918c                    inside g_FilePathBuffer
+  DAT_006793dc                    inside g_DefaultSfxHandleName
+  DAT_006794a4                    inside g_DefaultSfxHandleName
+  DAT_00679ee4                    inside g_DefaultAuditPath
+  DAT_0067a054                    inside g_DirectoryBufferTemplate
+  DAT_0067a15c                    inside g_FilenameBufferTemplate
+  DAT_0067aebc                    inside g_DefaultRicochetSound
+  DAT_0067b685                    inside s_save_SAVE_TMP_0067b670
+  DAT_0067b718                    inside s_save_SAVE_TMP_0067b670
+  DAT_0067ce4c                    inside s_Debug_0067cd50
+  DAT_0067ceb4                    inside g_DefaultInventoryKey
+  DAT_0067d5c4                    inside s_corrupt_0067d558
+  DAT_0067d62c                    inside s_corrupt_0067d558
+  DAT_0067e1d8                    inside g_Mp3AntiAliasCSSource
+  DAT_0067e5dc                    inside g_MpegBitMaskTableSingleBit
+  DAT_0067e600                    inside g_MpegBitMaskTableMultiBit
+  DAT_0067e62c                    inside g_Layer3LongBandGroupCounts
+  DAT_0067e630                    inside g_Layer3LongBandGroupCounts
+  DAT_0067e640                    inside g_Layer3ShortBandGroupCounts
+  DAT_0067e644                    inside g_Layer3ShortBandGroupCounts
+  DAT_0067e6dc                    inside g_Layer3BandIndex
+  DAT_00680174                    inside g_HuffmanTableSources
+  DAT_00680178                    inside g_HuffmanTableSources
+  DAT_0068017c                    inside g_HuffmanTableSources
+  DAT_00680180                    inside g_HuffmanTableSources
+  DAT_00680184                    inside g_HuffmanTableSources
+  DAT_00680834                    inside g_MsnEditDeleteByTypePattern
+  DAT_0068090c                    inside g_MsnEditLastSelectedPropertyName
+  DAT_00680974                    inside g_MsnEditLastSelectedPropertyName
+  DAT_00680bdc                    inside g_PathMapLRUCounters
+  DAT_00680d64                    inside s_anon_00680c9c
+  DAT_006810e0                    inside g_LightDebugScreenX
+  DAT_006810e4                    inside g_LightDebugScreenX
+  DAT_00681260                    inside g_LightDebugScreenY
+  DAT_00681264                    inside g_LightDebugScreenY
+  DAT_006814dc                    inside g_BoundingBoxQuadTemplates
+  DAT_006814e0                    inside g_BoundingBoxQuadTemplates
+  DAT_006814e4                    inside g_BoundingBoxQuadTemplates
+  DAT_006814e8                    inside g_BoundingBoxQuadTemplates
+  DAT_00681e10                    inside g_WaveInFormatTable
+  DAT_00681e14                    inside g_WaveInFormatTable
+  DAT_00681e18                    inside g_WaveInFormatTable
+  DAT_00681e1c                    inside g_WaveInFormatTable
+  DAT_00681e20                    inside g_WaveInFormatTable
+  DAT_00681e24                    inside g_WaveInFormatTable
+  DAT_00681e28                    inside g_WaveInFormatTable
+  DAT_00681f00                    inside g_SoundModeTable
+  DAT_00681f04                    inside g_SoundModeTable
+  DAT_00681f08                    inside g_SoundModeTable
+  DAT_006820b4                    inside g_SoundResultBufferTemplate
+  DAT_0068211c                    inside g_TrainSoundFilenameTemplate
+  DAT_00684011                    inside g_RendererDllName
+  DAT_00684510                    inside g_WaterTextures
+  DAT_00684cea                    inside g_CharacterClassificationTable
+  DAT_00684d12                    inside g_CharacterClassificationTable
+  DAT_0068513c                    inside s_EST_006850bc
+  DAT_006851bd                    inside s_EDT_0068513d
+  DAT_00685210                    inside s_s_0123456789abcdefghijkl_006851d8
+  DAT_00685219                    inside s_s_0123456789abcdefghijkl_006851d8
+  DAT_0068528c                    inside s_s_0123456789abcdefghijkl_006851d8
+  DAT_006852dd                    inside g_TempDirectoryBuffer
+  DAT_006852de                    inside g_TempDirectoryBuffer
+  DAT_0068546c                    inside g_HexLookupTable
+  DAT_00688024+3                  inside g_RenderVertexBuffer
+  DAT_00688044                    inside g_RenderVertexBuffer
+  DAT_00688048                    inside g_RenderVertexBuffer
+  DAT_0068804c                    inside g_RenderVertexBuffer
+  DAT_0069ffb8                    inside g_AALineVertex1
+  DAT_0069ffc4+3                  inside g_AALineVertex1
+  DAT_0069ffe8                    inside g_AALineVertex2
+  DAT_0069fff4+3                  inside g_AALineVertex2
+  DAT_0077263c                    inside g_PaletteLuminanceCache
+  DAT_00772a9c                    inside g_ProcessedVertexIndices
+  DAT_00772b04                    inside g_RenderBufferPool
+  DAT_00772b08                    inside g_RenderBufferPool
+  DAT_00772b0c                    inside g_RenderBufferPool
+  DAT_00772b34                    inside g_RenderBufferPool
+  DAT_00772b3c                    inside g_RenderBufferPool
+  DAT_00772bc4                    inside g_RenderBufferPool
+  DAT_00772bc8                    inside g_RenderBufferPool
+  DAT_00772c0c                    inside g_RenderBufferPool
+  DAT_00772c10                    inside g_RenderBufferPool
+  DAT_00772c14                    inside g_RenderBufferPool
+  DAT_00822d0c                    inside g_BugsGroundHeightGridTemp
+  DAT_00822f4c                    inside g_BugsSortedVertexIndices
+  DAT_00822f50                    inside g_BugsSortedVertexIndices
+  DAT_00823c58                    inside g_BoneBurnIntensity
+  DAT_00824e2c                    inside g_ClippedVertexBuffer
+  DAT_00824e34                    inside g_ClippedVertexBuffer
+  DAT_00824e38                    inside g_ClippedVertexBuffer
+  DAT_00824e58                    inside g_ClippedVertexBuffer
+  DAT_00824e5c                    inside g_ClippedVertexBuffer
+  DAT_00824e60                    inside g_ClippedVertexBuffer
+  DAT_008254b8                    inside g_SecondaryClipVertexBuffer
+  DAT_008254bc                    inside g_SecondaryClipVertexBuffer
+  DAT_008254dc                    inside g_SecondaryClipVertexBuffer
+  DAT_008254e0                    inside g_SecondaryClipVertexBuffer
+  DAT_008254e0+4                  inside g_SecondaryClipVertexBuffer
+  DAT_008254e8                    inside g_SecondaryClipVertexBuffer
+  DAT_00825ab0                    inside g_ClipperTempBuffer
+  DAT_00825d04                    inside g_ClipperOutputBuffer
+  DAT_00825d38                    inside g_ClipperOutputBuffer
+  DAT_00826304                    inside g_ClipperInputBuffer
+  DAT_00826334                    inside g_ClipperInputBuffer
+  DAT_00826338                    inside g_ClipperInputBuffer
+  DAT_00826908                    inside g_ClipperWorkingBuffer
+  DAT_00826934                    inside g_ClipperWorkingBuffer
+  DAT_00826938                    inside g_ClipperWorkingBuffer
+  DAT_00826f04                    inside g_ClipperIntermediateBuffer
+  DAT_00826f30                    inside g_ClipperIntermediateBuffer
+  DAT_00826f34                    inside g_ClipperIntermediateBuffer
+  DAT_00826f38                    inside g_ClipperIntermediateBuffer
+  DAT_00827504                    inside g_ClothBackfaceBuffer
+  DAT_00827518                    inside g_ClothBackfaceBuffer
+  DAT_0082751c                    inside g_ClothBackfaceBuffer
+  DAT_00827520                    inside g_ClothBackfaceBuffer
+  DAT_00827524                    inside g_ClothBackfaceBuffer
+  DAT_00827528                    inside g_ClothBackfaceBuffer
+  DAT_0082752c                    inside g_ClothBackfaceBuffer
+  DAT_00827548                    inside g_ClothBackfaceBuffer
+  DAT_0082754c                    inside g_ClothBackfaceBuffer
+  DAT_00827590                    inside g_ClothBackfaceBuffer
+  DAT_0083c1e0                    inside g_CramSortedTextureEntries
+  DAT_0083c208                    inside g_CramSortedTextureEntries
+  DAT_0083c20c                    inside g_CramSortedTextureEntries
+  DAT_0083c210                    inside g_CramSortedTextureEntries
+  DAT_0083c214                    inside g_CramSortedTextureEntries
+  DAT_0083c218                    inside g_CramSortedTextureEntries
+  DAT_0083c220                    inside g_CramSortedTextureEntries
+  DAT_0083c224                    inside g_CramSortedTextureEntries
+  DAT_0083c228                    inside g_CramSortedTextureEntries
+  DAT_0083c22c                    inside g_CramSortedTextureEntries
+  DAT_0083c230                    inside g_CramSortedTextureEntries
+  DAT_0083c234                    inside g_CramSortedTextureEntries
+  DAT_0083c238                    inside g_CramSortedTextureEntries
+  DAT_0083c244                    inside g_CramSortedTextureEntries
+  DAT_0083c248                    inside g_CramSortedTextureEntries
+  DAT_0083c24c                    inside g_CramSortedTextureEntries
+  DAT_0083c250                    inside g_CramSortedTextureEntries
+  DAT_0083c254                    inside g_CramSortedTextureEntries
+  DAT_0083c258                    inside g_CramSortedTextureEntries
+  DAT_0083c25c                    inside g_CramSortedTextureEntries
+  DAT_0083c260                    inside g_CramSortedTextureEntries
+  DAT_0083c264                    inside g_CramSortedTextureEntries
+  DAT_0083c268                    inside g_CramSortedTextureEntries
+  DAT_0083c26c                    inside g_CramSortedTextureEntries
+  DAT_0083c270                    inside g_CramSortedTextureEntries
+  DAT_0083c274                    inside g_CramSortedTextureEntries
+  DAT_0083c298                    inside g_CramSortedTextureEntries
+  DAT_0083c29c                    inside g_CramSortedTextureEntries
+  DAT_00840c18                    inside g_CramRectangles
+  DAT_00840c1c                    inside g_CramRectangles
+  DAT_00840c20                    inside g_CramRectangles
+  DAT_00840c24                    inside g_CramRectangles
+  DAT_00840c28                    inside g_CramRectangles
+  DAT_00840c2c                    inside g_CramRectangles
+  DAT_00840c38                    inside g_CramRectangles
+  DAT_00840c3c                    inside g_CramRectangles
+  DAT_00840c40                    inside g_CramRectangles
+  DAT_00840c44                    inside g_CramRectangles
+  DAT_00840c48                    inside g_CramRectangles
+  DAT_00840c4c                    inside g_CramRectangles
+  DAT_00840c50                    inside g_CramRectangles
+  DAT_00840c54                    inside g_CramRectangles
+  DAT_00840c58                    inside g_CramRectangles
+  DAT_00840c5c                    inside g_CramRectangles
+  DAT_00840c60                    inside g_CramRectangles
+  DAT_00840c64                    inside g_CramRectangles
+  DAT_008879c4                    inside CVector3f_ARRAY_008879c0
+  DAT_008879c8                    inside CVector3f_ARRAY_008879c0
+  DAT_00887e88                    inside SCollisionInfo_ARRAY_00887e70
+  DAT_00887e8c                    inside SCollisionInfo_ARRAY_00887e70
+  DAT_00887eb4                    inside SCollisionInfo_ARRAY_00887e70
+  DAT_00902f78                    inside g_PrecomputedWorldPositions
+  DAT_00902f7c                    inside g_PrecomputedWorldPositions
+  DAT_00902f80                    inside g_PrecomputedWorldPositions
+  DAT_00903e74                    inside g_PrecomputedWorldPositions
+  DAT_00903e78                    inside g_PrecomputedWorldPositions
+  DAT_00903e7c                    inside g_PrecomputedWorldPositions
+  DAT_00903e80                    inside g_PrecomputedWorldPositions
+  DAT_00903e84                    inside g_PrecomputedWorldPositions
+  DAT_00903e88                    inside g_PrecomputedWorldPositions
+  DAT_00904d74                    inside g_PrecomputedWorldPositions
+  DAT_00904d80                    inside g_PrecomputedWorldPositions
+  DAT_00ac7c74                    inside g_PrecomputedSurfaceNormals
+  DAT_00ac7c78                    inside g_PrecomputedSurfaceNormals
+  DAT_00ac7c7c                    inside g_PrecomputedSurfaceNormals
+  DAT_00ac7c80                    inside g_PrecomputedSurfaceNormals
+  DAT_00ac7c84                    inside g_PrecomputedSurfaceNormals
+  DAT_00ac7c88                    inside g_PrecomputedSurfaceNormals
+  DAT_00ac8b74                    inside g_PrecomputedSurfaceNormals
+  DAT_00bbb9b9                    inside g_CoronaBlurWorkBuffer
+  DAT_00bbbaf7                    inside g_CoronaBlurWorkBuffer
+  DAT_00bcebf8                    inside g_PrecomputedDepthBuffer
+  DAT_00bcebfc                    inside g_PrecomputedDepthBuffer
+  DAT_00bcf0f8                    inside g_PrecomputedDepthBuffer
+  DAT_00bcf0fc                    inside g_PrecomputedDepthBuffer
+  DAT_00c196f9                    inside g_CameraImagePaletteData
+  DAT_00c196fa                    inside g_CameraImagePaletteData
+  DAT_00c196fb                    inside g_CameraImagePaletteData
+  DAT_00c19a00                    inside g_CameraConvertedPalette
+  DAT_013bc26c                    inside g_CameraEdgeDetectionResults
+  DAT_013bc270                    inside g_CameraEdgeDetectionResults
+  DAT_013bc274                    inside g_CameraEdgeDetectionResults
+  DAT_013bc278                    inside g_CameraEdgeDetectionResults
+  DAT_013bc27c                    inside g_CameraEdgeDetectionResults
+  DAT_013d9759                    inside g_CameraLookupTable
+  DAT_013da779                    inside g_CameraPlaneWorkBuffer
+  DAT_013da77a                    inside g_CameraPlaneWorkBuffer
+  DAT_013ed379                    inside g_CameraImageDecompressBuffer
+  DAT_013ed37a                    inside g_CameraImageDecompressBuffer
+  DAT_0151a3b4                    inside g_ScanlineSpanLeft
+  DAT_0151a7b4                    inside g_ScanlineSpanRight
+  DAT_0151abc0                    inside g_BackgroundSavedScreenBufferArray
+  DAT_0151bf9a                    inside g_CameraOutOfBoundsCoord
+  DAT_0151bfa9                    inside g_CameraIndexedImageData
+  DAT_0151bfaa                    inside g_CameraIndexedImageData
+  DAT_0151bfab                    inside g_CameraIndexedImageData
+  DAT_0151c228                    inside g_CameraIndexedImageData
+  DAT_0151c229                    inside g_CameraIndexedImageData
+  DAT_0151c22a                    inside g_CameraIndexedImageData
+  DAT_0151c22b                    inside g_CameraIndexedImageData
+  DAT_0151c4a8                    inside g_CameraIndexedImageData
+  DAT_0151c4a9                    inside g_CameraIndexedImageData
+  DAT_0151c728                    inside g_CameraIndexedImageData
+  DAT_01566fa8+1                  inside g_CameraTextureWorkBuffer
+  DAT_01566fac                    inside g_CameraTextureWorkBuffer
+  DAT_01566fad                    inside g_CameraTextureWorkBuffer
+  DAT_01576fac                    inside g_CoronaLeftExtent
+  DAT_0157736c                    inside g_CoronaRightExtent
+  DAT_0157772c                    inside g_CoronaDepthBuffer
+  DAT_015c4374                    inside g_ClipStageMaxYBuffer
+  DAT_015c437c                    inside g_ClipStageMaxYBuffer
+  DAT_015c4384                    inside g_ClipStageMaxYBuffer
+  DAT_015c4388                    inside g_ClipStageMaxYBuffer
+  DAT_015c4434                    inside g_ClipStageMinYBuffer
+  DAT_015c4438                    inside g_ClipStageMinYBuffer
+  DAT_015c443c                    inside g_ClipStageMinYBuffer
+  DAT_015c4448                    inside g_ClipStageMinYBuffer
+  DAT_015c44f8                    inside g_ClipStageMaxXBuffer
+  DAT_015c44fc                    inside g_ClipStageMaxXBuffer
+  DAT_015c4500                    inside g_ClipStageMaxXBuffer
+  DAT_015c450c                    inside g_ClipStageMaxXBuffer
+  DAT_015c45bc                    inside g_ClipStageMinXBuffer
+  DAT_015c45c0                    inside g_ClipStageMinXBuffer
+  DAT_015c45cc                    inside g_ClipStageMinXBuffer
+  DAT_015c45d0                    inside g_ClipStageMinXBuffer
+  DAT_015c45d8                    inside g_ClipStageMinXBuffer
+  DAT_015c4680                    inside g_ClipStageMinZBuffer
+  DAT_015c4690                    inside g_ClipStageMinZBuffer
+  DAT_015c4694                    inside g_ClipStageMinZBuffer
+  DAT_015c469c                    inside g_ClipStageMinZBuffer
+  DAT_015c4859                    inside g_BackupModelName
+  DAT_015c485a                    inside g_BackupModelName
+  DAT_015c485b                    inside g_BackupModelName
+  DAT_015c4893                    inside g_BackupModelName
+  DAT_015c48c8                    inside g_PolygonScreenCache
+  DAT_015c48cc                    inside g_PolygonScreenCache
+  DAT_01626371                    inside g_TempTextureName
+  DAT_01626372                    inside g_TempTextureName
+  DAT_01626373                    inside g_TempTextureName
+  DAT_01626410                    inside g_LoadedVertices
+  DAT_01626410+1                  inside g_LoadedVertices
+  DAT_01626418                    inside g_LoadedVertices
+  DAT_0162641c                    inside g_LoadedVertices
+  DAT_01626420                    inside g_LoadedVertices
+  DAT_01626424                    inside g_LoadedVertices
+  DAT_01626428                    inside g_LoadedVertices
+  DAT_01626434                    inside g_LoadedVertices
+  DAT_01626438                    inside g_LoadedVertices
+  DAT_0162643c                    inside g_LoadedVertices
+  DAT_01626448                    inside g_LoadedVertices
+  DAT_0162644c                    inside g_LoadedVertices
+  DAT_01626450                    inside g_LoadedVertices
+  DAT_0162645c                    inside g_LoadedVertices
+  DAT_01626460                    inside g_LoadedVertices
+  DAT_01626464                    inside g_LoadedVertices
+  DAT_01626470                    inside g_LoadedVertices
+  DAT_01626474                    inside g_LoadedVertices
+  DAT_01626478                    inside g_LoadedVertices
+  DAT_01687e90                    inside g_VertexNormals
+  DAT_01687e94                    inside g_VertexNormals
+  DAT_016e9914                    inside g_ModelPolygonData
+  DAT_016e9915                    inside g_ModelPolygonData
+  DAT_016e9916                    inside g_ModelPolygonData
+  DAT_016e9917                    inside g_ModelPolygonData
+  DAT_016e9964                    inside g_ModelPolygonData
+  DAT_016e9965                    inside g_ModelPolygonData
+  DAT_016e9966                    inside g_ModelPolygonData
+  DAT_016e9967                    inside g_ModelPolygonData
+  DAT_016e99b4                    inside g_ModelPolygonData
+  DAT_016e99b8                    inside g_ModelPolygonData
+  DAT_016e99bc                    inside g_ModelPolygonData
+  DAT_016e99c0                    inside g_ModelPolygonData
+  DAT_016e99c4                    inside g_ModelPolygonData
+  DAT_016e99c8                    inside g_ModelPolygonData
+  DAT_016e99cc                    inside g_ModelPolygonData
+  DAT_016e99d0                    inside g_ModelPolygonData
+  DAT_016e99d4                    inside g_ModelPolygonData
+  DAT_016e9a08                    inside g_ModelPolygonData
+  DAT_016e9a0c                    inside g_ModelPolygonData
+  DAT_016e9a10                    inside g_ModelPolygonData
+  DAT_016e9a14                    inside g_ModelPolygonData
+  DAT_016e9a48                    inside g_ModelPolygonData
+  DAT_016e9a4c                    inside g_ModelPolygonData
+  DAT_016e9a50                    inside g_ModelPolygonData
+  DAT_016e9a54                    inside g_ModelPolygonData
+  DAT_016e9a88                    inside g_ModelPolygonData
+  DAT_016e9a8c                    inside g_ModelPolygonData
+  DAT_016e9a90                    inside g_ModelPolygonData
+  DAT_016e9a94                    inside g_ModelPolygonData
+  DAT_016e9a98                    inside g_ModelPolygonData
+  DAT_016e9a99                    inside g_ModelPolygonData
+  DAT_016e9ae8                    inside g_ModelPolygonData
+  DAT_016e9b38                    inside g_ModelPolygonData
+  DAT_016e9b4c                    inside g_ModelPolygonData
+  DAT_016e9b50                    inside g_ModelPolygonData
+  DAT_016e9b54                    inside g_ModelPolygonData
+  DAT_016e9b94                    inside g_ModelPolygonData
+  DAT_016e9bd4                    inside g_ModelPolygonData
+  DAT_016e9c0c                    inside g_ModelPolygonData
+  DAT_01e50191                    inside g_ModelPartNames
+  DAT_01e50192                    inside g_ModelPartNames
+  DAT_01e50193                    inside g_ModelPartNames
+  DAT_01e8d265                    inside g_TextureAtlasEntries
+  DAT_01e8d266                    inside g_TextureAtlasEntries
+  DAT_01e8d267                    inside g_TextureAtlasEntries
+  DAT_01e8d364                    inside g_TextureAtlasEntries
+  DAT_01e8d365                    inside g_TextureAtlasEntries
+  DAT_01e8d366                    inside g_TextureAtlasEntries
+  DAT_01e8d367                    inside g_TextureAtlasEntries
+  DAT_01e8d464                    inside g_TextureAtlasEntries
+  DAT_01e8d468                    inside g_TextureAtlasEntries
+  DAT_01e8d46c                    inside g_TextureAtlasEntries
+  DAT_01e8d470                    inside g_TextureAtlasEntries
+  DAT_01e8d474                    inside g_TextureAtlasEntries
+  DAT_01e8d478                    inside g_TextureAtlasEntries
+  DAT_01e8d47c                    inside g_TextureAtlasEntries
+  DAT_01e8d480                    inside g_TextureAtlasEntries
+  DAT_01e8d484                    inside g_TextureAtlasEntries
+  DAT_01e8d488                    inside g_TextureAtlasEntries
+  DAT_01e8d48c                    inside g_TextureAtlasEntries
+  DAT_01e8d490                    inside g_TextureAtlasEntries
+  DAT_01e8d494                    inside g_TextureAtlasEntries
+  DAT_01e8d498                    inside g_TextureAtlasEntries
+  DAT_01e8d49c                    inside g_TextureAtlasEntries
+  DAT_01e8d4a0                    inside g_TextureAtlasEntries
+  DAT_01e8d4a4                    inside g_TextureAtlasEntries
+  DAT_01e8d4a8                    inside g_TextureAtlasEntries
+  DAT_01e8d4ac                    inside g_TextureAtlasEntries
+  DAT_01e8d4b0                    inside g_TextureAtlasEntries
+  DAT_01eb1491                    inside g_TextureNameArray
+  DAT_01eb1492                    inside g_TextureNameArray
+  DAT_01eb1493                    inside g_TextureNameArray
+  DAT_01eb1769                    inside g_CurrentModelFilename
+  DAT_01eb176a                    inside g_CurrentModelFilename
+  DAT_01eb176b                    inside g_CurrentModelFilename
+  DAT_020a487c                    inside CDemonFilter_ARRAY_020a4878
+  DAT_026a5818                    inside g_SavedScreenBufferArray
+  DAT_026a5819                    inside g_SavedScreenBufferArray
+  DAT_026a6adc                    inside g_DirtySpanStarts
+  DAT_026a6edc                    inside g_DirtySpanEnds
+  DAT_026a72ec                    inside g_NoiseTable
+  DAT_026acb5c                    inside g_ShadowRestoreBuffer
+  DAT_02c14d34                    inside g_ShadowRestoreBuffer
+  DAT_02c14d38                    inside g_ShadowRestoreBuffer
+  DAT_02c14d3c                    inside g_ShadowRestoreBuffer
+  DAT_02c14d40                    inside g_ShadowRestoreBuffer
+  DAT_02c14d44                    inside g_ShadowRestoreBuffer
+  DAT_02c14d48                    inside g_ShadowRestoreBuffer
+  DAT_02c14d54                    inside g_ShadowRestoreBuffer
+  DAT_02c14d60                    inside g_ShadowRestoreBuffer
+  DAT_02c14d6c                    inside g_ShadowRestoreBuffer
+  DAT_02c14d80                    inside g_ShadowRestoreBuffer
+  DAT_02c14d84                    inside g_ShadowRestoreBuffer
+  DAT_02c14d88                    inside g_ShadowRestoreBuffer
+  DAT_02c14d8c                    inside g_ShadowRestoreBuffer
+  DAT_02c14d90                    inside g_ShadowRestoreBuffer
+  DAT_02c6cb78                    inside g_ShadowRestoreBuffer
+  DAT_02c6cb7c                    inside g_ShadowRestoreBuffer
+  DAT_02c6cb80                    inside g_ShadowRestoreBuffer
+  DAT_02c6cb84                    inside g_ShadowRestoreBuffer
+  DAT_02c6cb88                    inside g_ShadowRestoreBuffer
+  DAT_02c6cb8c                    inside g_ShadowRestoreBuffer
+  DAT_02c6cb90                    inside g_ShadowRestoreBuffer
+  DAT_02c6cb94                    inside g_ShadowRestoreBuffer
+  DAT_02c6cb98                    inside g_ShadowRestoreBuffer
+  DAT_02c6cb9c                    inside g_ShadowRestoreBuffer
+  DAT_02c6cba0                    inside g_ShadowRestoreBuffer
+  DAT_02c6cba4                    inside g_ShadowRestoreBuffer
+  DAT_02c6cba8                    inside g_ShadowRestoreBuffer
+  DAT_02c6cbac                    inside g_ShadowRestoreBuffer
+  DAT_02c6cbb0                    inside g_ShadowRestoreBuffer
+  DAT_02c6cbb4                    inside g_ShadowRestoreBuffer
+  DAT_02c6cbb8                    inside g_ShadowRestoreBuffer
+  DAT_02c6cbbc                    inside g_ShadowRestoreBuffer
+  DAT_02c6d110                    inside g_ShadowRestoreBuffer
+  DAT_02c6d114                    inside g_ShadowRestoreBuffer
+  DAT_02c6d118                    inside g_ShadowRestoreBuffer
+  DAT_02c6d11c                    inside g_ShadowRestoreBuffer
+  DAT_02c6d120                    inside g_ShadowRestoreBuffer
+  DAT_02c6d124                    inside g_ShadowRestoreBuffer
+  DAT_02c6d128                    inside g_ShadowRestoreBuffer
+  DAT_02c6d12c                    inside g_ShadowRestoreBuffer
+  DAT_02c6d130                    inside g_ShadowRestoreBuffer
+  DAT_02c6d134                    inside g_ShadowRestoreBuffer
+  DAT_02c6d138                    inside g_ShadowRestoreBuffer
+  DAT_02c6d13c                    inside g_ShadowRestoreBuffer
+  DAT_02c6d140                    inside g_ShadowRestoreBuffer
+  DAT_02c6d144                    inside g_ShadowRestoreBuffer
+  DAT_02c6d148                    inside g_ShadowRestoreBuffer
+  DAT_02c6d14c                    inside g_ShadowRestoreBuffer
+  DAT_02c6d150                    inside g_ShadowRestoreBuffer
+  DAT_02c6d154                    inside g_ShadowRestoreBuffer
+  DAT_02c6d158                    inside g_ShadowRestoreBuffer
+  DAT_02c6d15c                    inside g_ShadowRestoreBuffer
+  DAT_02c6d160                    inside g_ShadowRestoreBuffer
+  DAT_02c6d164                    inside g_ShadowRestoreBuffer
+  DAT_02c6d168                    inside g_ShadowRestoreBuffer
+  DAT_02c6d590                    inside g_ShadowRestoreBuffer
+  DAT_02c6d598                    inside g_ShadowRestoreBuffer
+  DAT_02c6d604                    inside g_ShadowRestoreBuffer
+  DAT_02c6d608                    inside g_ShadowRestoreBuffer
+  DAT_02c6d60c                    inside g_ShadowRestoreBuffer
+  DAT_02c6d610                    inside g_ShadowRestoreBuffer
+  DAT_02c6d614                    inside g_ShadowRestoreBuffer
+  DAT_02c946f8                    inside g_ShadowRestoreBuffer
+  DAT_02c9951c                    inside g_ShadowRestoreBuffer
+  DAT_02c9951d                    inside g_ShadowRestoreBuffer
+  DAT_02c9951e                    inside g_ShadowRestoreBuffer
+  DAT_02c9951f                    inside g_ShadowRestoreBuffer
+  DAT_02ca03b0                    inside g_ShadowRestoreBuffer
+  DAT_02cb3c30                    inside g_ShadowRestoreBuffer
+  DAT_02cb3c34                    inside g_ShadowRestoreBuffer
+  DAT_02cb3c38                    inside g_ShadowRestoreBuffer
+  DAT_02cee5d4                    inside g_ShadowRestoreBuffer
+  DAT_02cee6a4                    inside g_ShadowRestoreBuffer
+  DAT_02cee6b0                    inside g_ShadowRestoreBuffer
+  DAT_02cee764                    inside g_ShadowRestoreBuffer
+  DAT_02cee770                    inside g_ShadowRestoreBuffer
+  DAT_02cee828                    inside g_ShadowRestoreBuffer
+  DAT_02cee834                    inside g_ShadowRestoreBuffer
+  DAT_02cee8f4                    inside g_ShadowRestoreBuffer
+  DAT_02cee900                    inside g_ShadowRestoreBuffer
+  DAT_02cee9b8                    inside g_ShadowRestoreBuffer
+  DAT_02cee9c4                    inside g_ShadowRestoreBuffer
+  DAT_02ceea6c                    inside g_ShadowRestoreBuffer
+  DAT_02ceea70                    inside g_ShadowRestoreBuffer
+  DAT_02cf0130                    inside g_ShadowRestoreBuffer
+  DAT_02cf0df8                    inside g_ShadowRestoreBuffer
+  DAT_02cf1ce4                    inside g_ShadowRestoreBuffer
+  DAT_02cf1ce8                    inside g_ShadowRestoreBuffer
+  DAT_02cf1cec                    inside g_ShadowRestoreBuffer
+  DAT_02cf1cf0                    inside g_ShadowRestoreBuffer
+  DAT_02cf1cf4                    inside g_ShadowRestoreBuffer
+  DAT_02cf1cf8                    inside g_ShadowRestoreBuffer
+  DAT_02cf1cfc                    inside g_ShadowRestoreBuffer
+  DAT_02cf1d00                    inside g_ShadowRestoreBuffer
+  DAT_02cf1d04                    inside g_ShadowRestoreBuffer
+  DAT_02cf1d08                    inside g_ShadowRestoreBuffer
+  DAT_02cf1d0c                    inside g_ShadowRestoreBuffer
+  DAT_02cf1d10                    inside g_ShadowRestoreBuffer
+  DAT_02cf1d14                    inside g_ShadowRestoreBuffer
+  DAT_02cf1d17                    inside g_ShadowRestoreBuffer
+  DAT_02cf1d18                    inside g_ShadowRestoreBuffer
+  DAT_02cf1ea8                    inside g_ShadowRestoreBuffer
+  DAT_02cf1eac                    inside g_ShadowRestoreBuffer
+  DAT_02cf1eb0                    inside g_ShadowRestoreBuffer
+  DAT_02cf1eb4                    inside g_ShadowRestoreBuffer
+  DAT_02cf1eb8                    inside g_ShadowRestoreBuffer
+  DAT_02cf1ebc                    inside g_ShadowRestoreBuffer
+  DAT_02cf1ec0                    inside g_ShadowRestoreBuffer
+  DAT_02cf1ec4                    inside g_ShadowRestoreBuffer
+  DAT_02d01f4e                    inside g_SourcePaletteData
+  DAT_02d01f4f                    inside g_SourcePaletteData
+  DAT_02d01f50                    inside g_SourcePaletteData
+  DAT_02d02584                    inside g_DefaultPalette
+  DAT_02d02588                    inside g_DefaultPalette
+  DAT_02d03ee3                    inside g_ColorCubeLookup
+  DAT_02d052a1                    inside g_ColorCubeLookup
+  DAT_02d0a463                    inside g_ColorCubeLookup
+  DAT_02d0a591                    inside g_ColorCubeLookup
+  DAT_02d0a592                    inside g_ColorCubeLookup
+  DAT_02d0a593                    inside g_ColorCubeLookup
+  DAT_02d12991                    inside g_ColorCubeLookup
+  DAT_02d12992                    inside g_ColorCubeLookup
+  DAT_02d12993                    inside g_ColorCubeLookup
+  DAT_02d12994                    inside g_ColorCubeLookup
+  DAT_02d129b9                    inside g_ColorCubeLookup
+  DAT_02d129ba                    inside g_ColorCubeLookup
+  DAT_02d129bb                    inside g_ColorCubeLookup
+  DAT_02d12bd1                    inside g_ColorCubeLookup
+  DAT_02d12bd2                    inside g_ColorCubeLookup
+  DAT_02d12bd3                    inside g_ColorCubeLookup
+  DAT_02d12dbc                    inside g_ColorCubeLookup
+  DAT_02d136e4                    inside g_ColorCubeLookup
+  DAT_02d13860                    inside g_ColorCubeLookup
+  DAT_02d139dc                    inside g_ColorCubeLookup
+  DAT_02d13b58                    inside g_ColorCubeLookup
+  DAT_02d13cdc                    inside g_ColorCubeLookup
+  DAT_02d13cf4                    inside g_ColorCubeLookup
+  DAT_02d13ebc                    inside g_ColorCubeLookup
+  DAT_02d13f88                    inside g_ColorCubeLookup
+  DAT_02d14218                    inside g_ColorCubeLookup
+  DAT_02d2a1f8                    inside g_ShadowRestoreBuffer
+  DAT_02d2a200                    inside g_ShadowRestoreBuffer
+  DAT_02d2a204                    inside g_ShadowRestoreBuffer
+  DAT_02d2a230                    inside g_ShadowRestoreBuffer
+  DAT_02d2a234                    inside g_ShadowRestoreBuffer
+  DAT_02d2a238                    inside g_ShadowRestoreBuffer
+  DAT_02d2a23c                    inside g_ShadowRestoreBuffer
+  DAT_02d2a240                    inside g_ShadowRestoreBuffer
+  DAT_02d2e054                    inside g_ShadowRestoreBuffer
+  DAT_02d2e05c                    inside g_ShadowRestoreBuffer
+  DAT_02d2e2b4                    inside g_ShadowRestoreBuffer
+  DAT_02d53e18                    inside g_ShadowRestoreBuffer
+  DAT_02d53e34                    inside g_ShadowRestoreBuffer
+  DAT_02d53e38                    inside g_ShadowRestoreBuffer
+  DAT_02d53e3c                    inside g_ShadowRestoreBuffer
+  DAT_02d53e40                    inside g_ShadowRestoreBuffer
+  DAT_02d53e44                    inside g_ShadowRestoreBuffer
+  DAT_02d53e48                    inside g_ShadowRestoreBuffer
+  DAT_02d53e4c                    inside g_ShadowRestoreBuffer
+  DAT_02d53e64                    inside g_ShadowRestoreBuffer
+  DAT_02d53e80                    inside g_ShadowRestoreBuffer
+  DAT_02d58a60                    inside g_ShadowRestoreBuffer
+  DAT_02d58abc                    inside g_ShadowRestoreBuffer
+  DAT_02d59150                    inside g_ShadowRestoreBuffer
+  DAT_02d5916c                    inside g_ShadowRestoreBuffer
+  DAT_02d591d4                    inside g_ShadowRestoreBuffer
+  DAT_02d591ec                    inside g_ShadowRestoreBuffer
+  DAT_02d59208                    inside g_ShadowRestoreBuffer
+  DAT_02d62d5c                    inside g_ShadowRestoreBuffer
+  DAT_02d62d60                    inside g_ShadowRestoreBuffer
+  DAT_02d62d80                    inside g_ShadowRestoreBuffer
+  DAT_02d62ec0                    inside g_ShadowRestoreBuffer
+  DAT_02d62edc                    inside g_ShadowRestoreBuffer
+  DAT_02d62ee0                    inside g_ShadowRestoreBuffer
+  DAT_02d62ee4                    inside g_ShadowRestoreBuffer
+  DAT_02d62ee8                    inside g_ShadowRestoreBuffer
+  DAT_02d62eec                    inside g_ShadowRestoreBuffer
+  DAT_02d62f00                    inside g_ShadowRestoreBuffer
+  DAT_02d62f44                    inside g_ShadowRestoreBuffer
+  DAT_02d62f5c                    inside g_ShadowRestoreBuffer
+  DAT_02d62f78                    inside g_ShadowRestoreBuffer
+  DAT_02d655c4                    inside g_ShadowRestoreBuffer
+  DAT_02d655e0                    inside g_ShadowRestoreBuffer
+  DAT_02d655f4                    inside g_ShadowRestoreBuffer
+  DAT_02d6560c                    inside g_ShadowRestoreBuffer
+  DAT_02d65628                    inside g_ShadowRestoreBuffer
+  DAT_02d6563c                    inside g_ShadowRestoreBuffer
+  DAT_02d667f0                    inside g_ShadowRestoreBuffer
+  DAT_02d677b8                    inside g_ShadowRestoreBuffer
+  DAT_02d677bc                    inside g_ShadowRestoreBuffer
+  DAT_02d677c0                    inside g_ShadowRestoreBuffer
+  DAT_02d677c4                    inside g_ShadowRestoreBuffer
+  DAT_02d677c8                    inside g_ShadowRestoreBuffer
+  DAT_02d677d0                    inside g_ShadowRestoreBuffer
+  DAT_02d677d4                    inside g_ShadowRestoreBuffer
+  DAT_02d677d8                    inside g_ShadowRestoreBuffer
+  DAT_02d677dc                    inside g_ShadowRestoreBuffer
+  DAT_02d677e0                    inside g_ShadowRestoreBuffer
+  DAT_02d677e4                    inside g_ShadowRestoreBuffer
+  DAT_02d67cb0                    inside g_ShadowRestoreBuffer
+  DAT_02d67cb4                    inside g_ShadowRestoreBuffer
+  DAT_02d6c6a8                    inside g_ShadowRestoreBuffer
+  DAT_02d6c714                    inside g_ShadowRestoreBuffer
+  DAT_02d6c718                    inside g_ShadowRestoreBuffer
+  DAT_02d6cf8c                    inside g_ShadowRestoreBuffer
+  DAT_02d715e8                    inside g_ShadowRestoreBuffer
+  DAT_02d7179c                    inside g_ShadowRestoreBuffer
+  DAT_02d725a4                    inside g_ShadowRestoreBuffer
+  DAT_02d725c0                    inside g_ShadowRestoreBuffer
+  DAT_02d725e4                    inside g_ShadowRestoreBuffer
+  DAT_02d725fc                    inside g_ShadowRestoreBuffer
+  DAT_02d72618                    inside g_ShadowRestoreBuffer
+  DAT_02d736d8                    inside g_ShadowRestoreBuffer
+  DAT_02d736f4                    inside g_ShadowRestoreBuffer
+  DAT_02d736f8                    inside g_ShadowRestoreBuffer
+  DAT_02d73710                    inside g_ShadowRestoreBuffer
+  DAT_02d7372c                    inside g_ShadowRestoreBuffer
+  DAT_02d76edc                    inside g_ShadowRestoreBuffer
+  DAT_02d76ef8                    inside g_ShadowRestoreBuffer
+  DAT_02d76efc                    inside g_ShadowRestoreBuffer
+  DAT_02d76f14                    inside g_ShadowRestoreBuffer
+  DAT_02d76f30                    inside g_ShadowRestoreBuffer
+  DAT_02d76f34                    inside g_ShadowRestoreBuffer
+  DAT_02d7a828                    inside g_ShadowRestoreBuffer
+  DAT_02d7afe8                    inside g_ShadowRestoreBuffer
+  DAT_02d7b430                    inside g_ShadowRestoreBuffer
+  DAT_02d7b434                    inside g_ShadowRestoreBuffer
+  DAT_02d7b438                    inside g_ShadowRestoreBuffer
+  DAT_02d7b444                    inside g_ShadowRestoreBuffer
+  DAT_02d7b448                    inside g_ShadowRestoreBuffer
+  DAT_02d7b44c                    inside g_ShadowRestoreBuffer
+  DAT_02d7b450                    inside g_ShadowRestoreBuffer
+  DAT_02d7b464                    inside g_ShadowRestoreBuffer
+  DAT_02d7b7f8                    inside g_ShadowRestoreBuffer
+  DAT_02d7b7fc                    inside g_ShadowRestoreBuffer
+  DAT_02d7b800                    inside g_ShadowRestoreBuffer
+  DAT_02d7b9e0                    inside g_ShadowRestoreBuffer
+  DAT_02d7c3f0                    inside g_ShadowRestoreBuffer
+  DAT_02d7d7f0                    inside g_ShadowRestoreBuffer
+  DAT_02d7eb00                    inside g_ShadowRestoreBuffer
+  DAT_02d7eb04                    inside g_ShadowRestoreBuffer
+  DAT_02d7eb30                    inside g_ShadowRestoreBuffer
+  DAT_02d7eb31                    inside g_ShadowRestoreBuffer
+  DAT_02d7eb32                    inside g_ShadowRestoreBuffer
+  DAT_02d7eb33                    inside g_ShadowRestoreBuffer
+  DAT_02d807b0                    inside g_ShadowRestoreBuffer
+  DAT_02d807b4                    inside g_ShadowRestoreBuffer
+  DAT_02d81aa4                    inside g_ShadowRestoreBuffer
+  DAT_02d81aa8                    inside g_ShadowRestoreBuffer
+  DAT_02d81aac                    inside g_ShadowRestoreBuffer
+  DAT_02d81ab8                    inside g_ShadowRestoreBuffer
+  DAT_02d81abc                    inside g_ShadowRestoreBuffer
+  DAT_02d81ac0                    inside g_ShadowRestoreBuffer
+  DAT_02d81b30                    inside g_ShadowRestoreBuffer
+  DAT_02d81b38                    inside g_ShadowRestoreBuffer
+  DAT_02d81b3c                    inside g_ShadowRestoreBuffer
+  DAT_02d81b44                    inside g_ShadowRestoreBuffer
+  DAT_02d81b48                    inside g_ShadowRestoreBuffer
+  DAT_02d81b4c                    inside g_ShadowRestoreBuffer
+  DAT_02d81b50                    inside g_ShadowRestoreBuffer
+  DAT_02d81b54                    inside g_ShadowRestoreBuffer
+  DAT_02d81b60                    inside g_ShadowRestoreBuffer
+  DAT_02d81b64                    inside g_ShadowRestoreBuffer
+  DAT_02d81b68                    inside g_ShadowRestoreBuffer
+  DAT_02d81c6c                    inside g_ShadowRestoreBuffer
+  DAT_02d81c70                    inside g_ShadowRestoreBuffer
+  DAT_02d81c80                    inside g_ShadowRestoreBuffer
+  DAT_02d81c84                    inside g_ShadowRestoreBuffer
+  DAT_02d81c88                    inside g_ShadowRestoreBuffer
+  DAT_02d81c8c                    inside g_ShadowRestoreBuffer
+  DAT_02d81c90                    inside g_ShadowRestoreBuffer
+  DAT_02d81ca0                    inside g_ShadowRestoreBuffer
+  DAT_02d81ca8                    inside g_ShadowRestoreBuffer
+  DAT_02d81cb0                    inside g_ShadowRestoreBuffer
+  DAT_02d81cb4                    inside g_ShadowRestoreBuffer
+  DAT_02d81cb8                    inside g_ShadowRestoreBuffer
+  DAT_02d81cbc                    inside g_ShadowRestoreBuffer
+  DAT_02d81cc0                    inside g_ShadowRestoreBuffer
+  DAT_02d81cc4                    inside g_ShadowRestoreBuffer
+  DAT_02d81cc8                    inside g_ShadowRestoreBuffer
+  DAT_02d81ccc                    inside g_ShadowRestoreBuffer
+  DAT_02d81cd0                    inside g_ShadowRestoreBuffer
+  DAT_02d81cd4                    inside g_ShadowRestoreBuffer
+  DAT_02d81cd8                    inside g_ShadowRestoreBuffer
+  DAT_02d81cf4                    inside g_ShadowRestoreBuffer
+  DAT_02d82c81                    inside g_ShadowRestoreBuffer
+  DAT_02d82c82                    inside g_ShadowRestoreBuffer
+  DAT_02d82c83                    inside g_ShadowRestoreBuffer
+  DAT_02d82d88                    inside g_ShadowRestoreBuffer
+  DAT_02d82d8c                    inside g_ShadowRestoreBuffer
+  DAT_02d830a9                    inside g_ShadowRestoreBuffer
+  DAT_02d830aa                    inside g_ShadowRestoreBuffer
+  DAT_02d830ab                    inside g_ShadowRestoreBuffer
+  DAT_02d831d6                    inside g_ShadowRestoreBuffer
+  DAT_02d831e9                    inside g_ShadowRestoreBuffer
+  DAT_02d831ea                    inside g_ShadowRestoreBuffer
+  DAT_02d831eb                    inside g_ShadowRestoreBuffer
+  DAT_02d833ec                    inside g_ShadowRestoreBuffer
+  DAT_02d83408                    inside g_ShadowRestoreBuffer
+  DAT_02d83414                    inside g_ShadowRestoreBuffer
+  DAT_02d8342c                    inside g_ShadowRestoreBuffer
+  DAT_02d83448                    inside g_ShadowRestoreBuffer
+  DAT_02d873e0                    inside g_ShadowRestoreBuffer
+  DAT_02d873e4                    inside g_ShadowRestoreBuffer
+  DAT_02d873e8                    inside g_ShadowRestoreBuffer
+  DAT_02d873ec                    inside g_ShadowRestoreBuffer
+  DAT_02d873f0                    inside g_ShadowRestoreBuffer
+  DAT_02d87420                    inside g_ShadowRestoreBuffer
+  DAT_02d87424                    inside g_ShadowRestoreBuffer
+  DAT_02d87428                    inside g_ShadowRestoreBuffer
+  DAT_02d8742c                    inside g_ShadowRestoreBuffer
+  DAT_02d87430                    inside g_ShadowRestoreBuffer
+  DAT_02d87434                    inside g_ShadowRestoreBuffer
+  DAT_02da8728                    inside g_ShadowRestoreBuffer
+  DAT_02da872c                    inside g_ShadowRestoreBuffer
+  DAT_02da8730                    inside g_ShadowRestoreBuffer
+  DAT_02da8734                    inside g_ShadowRestoreBuffer
+  DAT_02da874c                    inside g_ShadowRestoreBuffer
+  DAT_02da8750                    inside g_ShadowRestoreBuffer
+  DAT_02da8754                    inside g_ShadowRestoreBuffer
+  DAT_02da8758                    inside g_ShadowRestoreBuffer
+  DAT_02da875c                    inside g_ShadowRestoreBuffer
+  DAT_02da8c6c                    inside g_ShadowRestoreBuffer
+  DAT_02db8780.name_hash          inside g_ShadowRestoreBuffer
+  DAT_02db87c4                    inside g_HeroActors
+  DAT_02db8d70                    inside g_ShadowRestoreBuffer
+  DAT_02db9770                    inside g_ShadowRestoreBuffer
+  DAT_02dba170                    inside g_ShadowRestoreBuffer
+  DAT_02dbabc8                    inside g_ShadowRestoreBuffer
+  DAT_02dbacc8                    inside g_ShadowRestoreBuffer
+  DAT_02dbadc8                    inside g_ShadowRestoreBuffer
+  DAT_02f0c940                    inside g_ShadowRestoreBuffer
+  DAT_02f21504                    inside g_ShadowRestoreBuffer
+  DAT_02f270d1                    inside g_ShadowRestoreBuffer
+  DAT_02f270d2                    inside g_ShadowRestoreBuffer
+  DAT_02f270d3                    inside g_ShadowRestoreBuffer
+  DAT_02f271d1                    inside g_ShadowRestoreBuffer
+  DAT_02f271d2                    inside g_ShadowRestoreBuffer
+  DAT_02f271d3                    inside g_ShadowRestoreBuffer
+  DAT_02f273d1                    inside g_ShadowRestoreBuffer
+  DAT_02f273d2                    inside g_ShadowRestoreBuffer
+  DAT_02f273d3                    inside g_ShadowRestoreBuffer
+  DAT_02f274d1                    inside g_ShadowRestoreBuffer
+  DAT_02f274d2                    inside g_ShadowRestoreBuffer
+  DAT_02f274d3                    inside g_ShadowRestoreBuffer
+  DAT_02f275d4                    inside g_ShadowRestoreBuffer
+  DAT_02f27c01                    inside g_ShadowRestoreBuffer
+  DAT_02f27c02                    inside g_ShadowRestoreBuffer
+  DAT_02f27c03                    inside g_ShadowRestoreBuffer
+  DAT_02f27d01                    inside g_ShadowRestoreBuffer
+  DAT_02f27d02                    inside g_ShadowRestoreBuffer
+  DAT_02f27d03                    inside g_ShadowRestoreBuffer
+  DAT_02f28004                    inside g_ShadowRestoreBuffer
+  DAT_02f28029                    inside g_ShadowRestoreBuffer
+  DAT_02f2802a                    inside g_ShadowRestoreBuffer
+  DAT_02f2802b                    inside g_ShadowRestoreBuffer
+  DAT_02f28a2c                    inside g_ShadowRestoreBuffer
+  DAT_02f28b50                    inside g_ShadowRestoreBuffer
+  DAT_02f28c50                    inside g_ShadowRestoreBuffer
+  DAT_02f28d50                    inside g_ShadowRestoreBuffer
+  DAT_02f28e54                    inside g_ShadowRestoreBuffer
+  DAT_02f28e63                    inside g_ShadowRestoreBuffer
+  DAT_02f28f63                    inside g_ShadowRestoreBuffer
+  DAT_02f29063                    inside g_ShadowRestoreBuffer
+  DAT_02f29163                    inside g_ShadowRestoreBuffer
+  DAT_02f29264                    inside g_ShadowRestoreBuffer
+  DAT_02f292f1                    inside g_ShadowRestoreBuffer
+  DAT_02f292f2                    inside g_ShadowRestoreBuffer
+  DAT_02f292f3                    inside g_ShadowRestoreBuffer
+  DAT_02f2931b                    inside g_ShadowRestoreBuffer
+  DAT_02f29343                    inside g_ShadowRestoreBuffer
+  DAT_02f2936b                    inside g_ShadowRestoreBuffer
+  DAT_02f29393                    inside g_ShadowRestoreBuffer
+  DAT_02f293bb                    inside g_ShadowRestoreBuffer
+  DAT_02f293e3                    inside g_ShadowRestoreBuffer
+  DAT_02f2940b                    inside g_ShadowRestoreBuffer
+  DAT_02f29433                    inside g_ShadowRestoreBuffer
+  DAT_02f2945b                    inside g_ShadowRestoreBuffer
+  DAT_02f29483                    inside g_ShadowRestoreBuffer
+  DAT_02f294ab                    inside g_ShadowRestoreBuffer
+  DAT_02f294d3                    inside g_ShadowRestoreBuffer
+  DAT_02f294fb                    inside g_ShadowRestoreBuffer
+  DAT_02f29523                    inside g_ShadowRestoreBuffer
+  DAT_02f2954b                    inside g_ShadowRestoreBuffer
+  DAT_02f29573                    inside g_ShadowRestoreBuffer
+  DAT_02f2959b                    inside g_ShadowRestoreBuffer
+  DAT_02f295c3                    inside g_ShadowRestoreBuffer
+  DAT_02f295eb                    inside g_ShadowRestoreBuffer
+  DAT_02f29613                    inside g_ShadowRestoreBuffer
+  DAT_02f2963b                    inside g_ShadowRestoreBuffer
+  DAT_02f29663                    inside g_ShadowRestoreBuffer
+  DAT_02f2968b                    inside g_ShadowRestoreBuffer
+  DAT_02f296b3                    inside g_ShadowRestoreBuffer
+  DAT_02f296db                    inside g_ShadowRestoreBuffer
+  DAT_02f29703                    inside g_ShadowRestoreBuffer
+  DAT_02f297a9                    inside g_ShadowRestoreBuffer
+  DAT_02f297aa                    inside g_ShadowRestoreBuffer
+  DAT_02f297ab                    inside g_ShadowRestoreBuffer
+  DAT_02f2a1b4                    inside g_ShadowRestoreBuffer
+  DAT_02f2a4e0                    inside g_ShadowRestoreBuffer
+  DAT_02f2a4e4                    inside g_ShadowRestoreBuffer
+  DAT_02f2a4e8                    inside g_ShadowRestoreBuffer
+  DAT_02f2a514                    inside g_ShadowRestoreBuffer
+  DAT_02f2a518                    inside g_ShadowRestoreBuffer
+  DAT_02f2a51c                    inside g_ShadowRestoreBuffer
+  DAT_02f2a554                    inside g_ShadowRestoreBuffer
+  DAT_02f2a55c                    inside g_ShadowRestoreBuffer
+  DAT_02f2a5a0                    inside g_ShadowRestoreBuffer
+  DAT_02f31248                    inside g_ShadowRestoreBuffer
+  DAT_02f31249                    inside g_ShadowRestoreBuffer
+  DAT_02f3124a                    inside g_ShadowRestoreBuffer
+  DAT_02f3124b                    inside g_ShadowRestoreBuffer
+  DAT_02f313fc                    inside g_ShadowRestoreBuffer
+  DAT_02f31400                    inside g_ShadowRestoreBuffer
+  DAT_02f31404                    inside g_ShadowRestoreBuffer
+  DAT_02f31408                    inside g_ShadowRestoreBuffer
+  DAT_02f3140c                    inside g_ShadowRestoreBuffer
+  DAT_02f31410                    inside g_ShadowRestoreBuffer
+  DAT_02f326b0+4                  inside g_ShadowRestoreBuffer
+  DAT_02f326b8                    inside g_ShadowRestoreBuffer
+  DAT_02f326b8+4                  inside g_ShadowRestoreBuffer
+  DAT_02f3340c                    inside g_ShadowRestoreBuffer
+  DAT_02f33410                    inside g_ShadowRestoreBuffer
+  DAT_02f33414                    inside g_ShadowRestoreBuffer
+  DAT_02f33418                    inside g_ShadowRestoreBuffer
+  DAT_02f3341c                    inside g_ShadowRestoreBuffer
+  DAT_02f33590                    inside g_ShadowRestoreBuffer
+  DAT_02f33594                    inside g_ShadowRestoreBuffer
+  DAT_02f33598                    inside g_ShadowRestoreBuffer
+  DAT_02f3359c                    inside g_ShadowRestoreBuffer
+  DAT_02f335a0                    inside g_ShadowRestoreBuffer
+  DAT_02f33744                    inside g_ShadowRestoreBuffer
+  DAT_02f3374c                    inside g_ShadowRestoreBuffer
+  DAT_02f33760                    inside g_ShadowRestoreBuffer
+  DAT_02f33768                    inside g_ShadowRestoreBuffer
+  DAT_02f33780                    inside g_ShadowRestoreBuffer
+  DAT_02f35f11                    inside g_ShadowRestoreBuffer
+  DAT_02f35f12                    inside g_ShadowRestoreBuffer
+  DAT_02f35f13                    inside g_ShadowRestoreBuffer
+  DAT_02f37f98                    inside g_ShadowRestoreBuffer
+  DAT_02f381f4                    inside g_ShadowRestoreBuffer
+  DAT_02f38200                    inside g_ShadowRestoreBuffer
+  DAT_02f38210                    inside g_ShadowRestoreBuffer
+  DAT_02f38214                    inside g_ShadowRestoreBuffer
+  DAT_02f38218                    inside g_ShadowRestoreBuffer
+  DAT_02f3821c                    inside g_ShadowRestoreBuffer
+  DAT_02f38220                    inside g_ShadowRestoreBuffer
+  DAT_02f38224                    inside g_ShadowRestoreBuffer
+  DAT_02f38228                    inside g_ShadowRestoreBuffer
+  DAT_02f3822c                    inside g_ShadowRestoreBuffer
+  DAT_02f3dbb8                    inside g_ShadowRestoreBuffer
+  DAT_02f3dbbc                    inside g_ShadowRestoreBuffer
+  DAT_02f3dbc0                    inside g_ShadowRestoreBuffer
+  DAT_02f3dbc4                    inside g_ShadowRestoreBuffer
+  DAT_02f3dbc8                    inside g_ShadowRestoreBuffer
+  DAT_02f43984                    inside g_ShadowRestoreBuffer
+  DAT_02f43a00                    inside g_ShadowRestoreBuffer
+  DAT_02f46610                    inside g_ShadowRestoreBuffer
+  DAT_02f46648+4                  inside g_ShadowRestoreBuffer
+  DAT_02f46650                    inside g_ShadowRestoreBuffer
+  DAT_02f46650+4                  inside g_ShadowRestoreBuffer
+  DAT_02f46690                    inside g_ShadowRestoreBuffer
+  DAT_02f467b0                    inside g_ShadowRestoreBuffer
+  DAT_02f46838                    inside g_ShadowRestoreBuffer
+  DAT_02f4683c                    inside g_ShadowRestoreBuffer
+  DAT_02f46840                    inside g_ShadowRestoreBuffer
+  DAT_02f46844                    inside g_ShadowRestoreBuffer
+  DAT_02f46848                    inside g_ShadowRestoreBuffer
+  DAT_02f46850                    inside g_ShadowRestoreBuffer
+  DAT_02f46898                    inside g_ShadowRestoreBuffer
+  DAT_02f4689c                    inside g_ShadowRestoreBuffer
+  DAT_02f468a0                    inside g_ShadowRestoreBuffer
+  DAT_02f468a4                    inside g_ShadowRestoreBuffer
+  DAT_02f468d0                    inside g_ShadowRestoreBuffer
+  DAT_02f46928                    inside g_ShadowRestoreBuffer
+  DAT_02f4692c                    inside g_ShadowRestoreBuffer
+  DAT_02f46930                    inside g_ShadowRestoreBuffer
+  DAT_02f46934                    inside g_ShadowRestoreBuffer
+  DAT_02f469ec                    inside g_ShadowRestoreBuffer
+  DAT_02f469f0                    inside g_ShadowRestoreBuffer
+  DAT_02f469f4                    inside g_ShadowRestoreBuffer
+  DAT_02f469f8                    inside g_ShadowRestoreBuffer
+  DAT_02f46a00                    inside g_ShadowRestoreBuffer
+  DAT_02f46a48                    inside g_ShadowRestoreBuffer
+  DAT_02f46a4c                    inside g_ShadowRestoreBuffer
+  DAT_02f46a50                    inside g_ShadowRestoreBuffer
+  DAT_02f46a54                    inside g_ShadowRestoreBuffer
+  DAT_02f46a58                    inside g_ShadowRestoreBuffer
+  DAT_02f46a60                    inside g_ShadowRestoreBuffer
+  DAT_02f46b10                    inside g_ShadowRestoreBuffer
+  DAT_02f46b18                    inside g_ShadowRestoreBuffer
+  DAT_02f46b20                    inside g_ShadowRestoreBuffer
+  DAT_02f46b28                    inside g_ShadowRestoreBuffer
+  DAT_02f46b30                    inside g_ShadowRestoreBuffer
+  DAT_02f46b38                    inside g_ShadowRestoreBuffer
+  DAT_02f46b40                    inside g_ShadowRestoreBuffer
+  DAT_02f46b48                    inside g_ShadowRestoreBuffer
+  DAT_02f46b50                    inside g_ShadowRestoreBuffer
+  DAT_02f46b58                    inside g_ShadowRestoreBuffer
+  DAT_02f46b60                    inside g_ShadowRestoreBuffer
+  DAT_02f46d50                    inside g_ShadowRestoreBuffer
+  DAT_02f68189                    inside g_ShadowRestoreBuffer
+  DAT_02f6818a                    inside g_ShadowRestoreBuffer
+  DAT_02f6818b                    inside g_ShadowRestoreBuffer
+  DAT_02f6828c                    inside g_ShadowRestoreBuffer
+  DAT_02f68290                    inside g_ShadowRestoreBuffer
+  DAT_02f68294                    inside g_ShadowRestoreBuffer
+  DAT_02f68298                    inside g_ShadowRestoreBuffer
+  DAT_02f6829c                    inside g_ShadowRestoreBuffer
+  DAT_02f682a8                    inside g_ShadowRestoreBuffer
+  DAT_02f682a8+1                  inside g_ShadowRestoreBuffer
+  DAT_02f682a8+2                  inside g_ShadowRestoreBuffer
+  DAT_02f682a8+3                  inside g_ShadowRestoreBuffer
+  DAT_02f682ac                    inside g_ShadowRestoreBuffer
+  DAT_02f682ad                    inside g_ShadowRestoreBuffer
+  DAT_02f68ab0                    inside g_ShadowRestoreBuffer
+  DAT_02f7a02c                    inside g_ShadowRestoreBuffer
+  DAT_02f7a030                    inside g_ShadowRestoreBuffer
+  DAT_02f7a031                    inside g_ShadowRestoreBuffer
+  DAT_02f7a032                    inside g_ShadowRestoreBuffer
+  DAT_02f7a033                    inside g_ShadowRestoreBuffer
+  DAT_02f7a080                    inside g_ShadowRestoreBuffer
+  DAT_02f7a094                    inside g_ShadowRestoreBuffer
+  DAT_02f7a118                    inside g_ShadowRestoreBuffer
+  DAT_02f7c744                    inside g_ShadowRestoreBuffer
+  DAT_02f7c75c                    inside g_ShadowRestoreBuffer
+  DAT_02f7c774                    inside g_ShadowRestoreBuffer
+  DAT_02f7c778                    inside g_ShadowRestoreBuffer
+  DAT_02f7c7ec                    inside g_ShadowRestoreBuffer
+  DAT_02f7c854                    inside g_ShadowRestoreBuffer
+  DAT_02f7c8a8                    inside g_ShadowRestoreBuffer
+  DAT_02f7c8ac                    inside g_ShadowRestoreBuffer
+  DAT_02f7c8d4                    inside g_ShadowRestoreBuffer
+  DAT_02f7c8d8                    inside g_ShadowRestoreBuffer
+  DAT_02f7c8dc                    inside g_ShadowRestoreBuffer
+  DAT_02f7c8dd                    inside g_ShadowRestoreBuffer
+  DAT_02f7c8de                    inside g_ShadowRestoreBuffer
+  DAT_02f7c8df                    inside g_ShadowRestoreBuffer
+  DAT_02f7c8f0                    inside g_ShadowRestoreBuffer
+  DAT_02f7c8f1                    inside g_ShadowRestoreBuffer
+  DAT_02f7c8f2                    inside g_ShadowRestoreBuffer
+  DAT_02f7c8f3                    inside g_ShadowRestoreBuffer
+  DAT_02f7c9f0                    inside g_ShadowRestoreBuffer
+  DAT_02f7c9f4                    inside g_ShadowRestoreBuffer
+  DAT_02f7c9f8                    inside g_ShadowRestoreBuffer
+  DAT_02f98ad4+1                  inside g_ShadowRestoreBuffer
+  DAT_02f98ad4+2                  inside g_ShadowRestoreBuffer
+  DAT_02f98ad8                    inside g_ShadowRestoreBuffer
+  DAT_02f98add                    inside g_ShadowRestoreBuffer
+  DAT_02f98ae0                    inside g_ShadowRestoreBuffer
+  DAT_02f98ae4                    inside g_ShadowRestoreBuffer
+  DAT_02f98ae8                    inside g_ShadowRestoreBuffer
+  DAT_02f98ae9                    inside g_ShadowRestoreBuffer
+  DAT_02f98aea                    inside g_ShadowRestoreBuffer
+  DAT_02f98aeb                    inside g_ShadowRestoreBuffer
+  DAT_02f98be8                    inside g_ShadowRestoreBuffer
+  DAT_02f98bec                    inside g_ShadowRestoreBuffer
+  DAT_02f98bf0                    inside g_ShadowRestoreBuffer
+  DAT_02f98d00                    inside g_ShadowRestoreBuffer
+  DAT_02f9c060                    inside g_ShadowRestoreBuffer
+  DAT_02f9c064                    inside g_ShadowRestoreBuffer
+  DAT_02f9c068                    inside g_ShadowRestoreBuffer
+  DAT_02f9c0c8                    inside g_ShadowRestoreBuffer
+  DAT_02f9c0cc                    inside g_ShadowRestoreBuffer
+  DAT_02f9c0d0                    inside g_ShadowRestoreBuffer
+  DAT_02f9c0d4                    inside g_ShadowRestoreBuffer
+  DAT_02f9c0f0                    inside g_ShadowRestoreBuffer
+  DAT_02f9c0fc                    inside g_ShadowRestoreBuffer
+  DAT_02f9c128                    inside g_ShadowRestoreBuffer
+  DAT_02f9c12c                    inside g_ShadowRestoreBuffer
+  DAT_02f9c130                    inside g_ShadowRestoreBuffer
+  DAT_02f9c18c                    inside g_ShadowRestoreBuffer
+  DAT_02fa8ce0                    inside g_ShadowRestoreBuffer
+  DAT_02fa8ce4                    inside g_ShadowRestoreBuffer
+  DAT_02fa94b0                    inside g_ShadowRestoreBuffer
+  DAT_02fec910                    inside g_ShadowRestoreBuffer
+  DAT_02fec914                    inside g_ShadowRestoreBuffer
+  DAT_02fec918                    inside g_ShadowRestoreBuffer
+  DAT_030001ec                    inside g_ShadowRestoreBuffer
+  DAT_030001f0                    inside g_ShadowRestoreBuffer
+  DAT_030001f4                    inside g_ShadowRestoreBuffer
+  DAT_030c3ac0                    inside g_ShadowRestoreBuffer
+  DAT_030c3ac4                    inside g_ShadowRestoreBuffer
+  DAT_030c3df8                    inside g_ShadowRestoreBuffer
+  DAT_030c3dfc                    inside g_ShadowRestoreBuffer
+  DAT_030c3e00                    inside g_ShadowRestoreBuffer
+  DAT_030c3e04                    inside g_ShadowRestoreBuffer
+  DAT_030c3e08                    inside g_ShadowRestoreBuffer
+  DAT_030c3e0c                    inside g_ShadowRestoreBuffer
+  DAT_030c3e10                    inside g_ShadowRestoreBuffer
+  DAT_030c3e14                    inside g_ShadowRestoreBuffer
+  DAT_030c3e18                    inside g_ShadowRestoreBuffer
+  DAT_030c3e1c                    inside g_ShadowRestoreBuffer
+  DAT_030c3e20                    inside g_ShadowRestoreBuffer
+  DAT_030c3e24                    inside g_ShadowRestoreBuffer
+  DAT_030d2859                    inside g_ShadowRestoreBuffer
+  DAT_030d28bc                    inside g_ShadowRestoreBuffer
+  DAT_030d5091                    inside g_ShadowRestoreBuffer
+  DAT_030d5092                    inside g_ShadowRestoreBuffer
+  DAT_030e5224                    inside g_ShadowRestoreBuffer
+  DAT_030e5230                    inside g_ShadowRestoreBuffer
+  DAT_030e5234                    inside g_ShadowRestoreBuffer
+  DAT_030e5238                    inside g_ShadowRestoreBuffer
+  DAT_030e523c                    inside g_ShadowRestoreBuffer
+  DAT_030e5240                    inside g_ShadowRestoreBuffer
+  DAT_030e5244                    inside g_ShadowRestoreBuffer
+  DAT_030e5248                    inside g_ShadowRestoreBuffer
+  DAT_030e524c                    inside g_ShadowRestoreBuffer
+  DAT_030e5250                    inside g_ShadowRestoreBuffer
+  DAT_030e5254                    inside g_ShadowRestoreBuffer
+  DAT_030e5258                    inside g_ShadowRestoreBuffer
+  DAT_030e525c                    inside g_ShadowRestoreBuffer
+  DAT_030e5260                    inside g_ShadowRestoreBuffer
+  DAT_030e5274                    inside g_ShadowRestoreBuffer
+  DAT_030f6159                    inside g_ShadowRestoreBuffer
+  DAT_031065e8                    inside g_ShadowRestoreBuffer
+  DAT_031091e9                    inside g_ShadowRestoreBuffer
+  DAT_031091ea                    inside g_ShadowRestoreBuffer
+  DAT_031091eb                    inside g_ShadowRestoreBuffer
+  DAT_0310a9eb                    inside g_ShadowRestoreBuffer
+  DAT_0310ab1c                    inside g_ShadowRestoreBuffer
+  DAT_0310ad74                    inside g_ShadowRestoreBuffer
+  DAT_0310cc44                    inside g_ShadowRestoreBuffer
+  DAT_0310cca8                    inside g_ShadowRestoreBuffer
+  DAT_0310cca9                    inside g_ShadowRestoreBuffer
+  DAT_0310ccaa                    inside g_ShadowRestoreBuffer
+  DAT_0310ccab                    inside g_ShadowRestoreBuffer
+  DAT_0310eca1                    inside g_ShadowRestoreBuffer
+  DAT_0310eca2                    inside g_ShadowRestoreBuffer
+  DAT_0310eca3                    inside g_ShadowRestoreBuffer
+  DAT_0310f864                    inside g_ShadowRestoreBuffer
+  DAT_0310f868                    inside g_ShadowRestoreBuffer
+  DAT_0310f870                    inside g_ShadowRestoreBuffer
+  DAT_0310fd40+1                  inside g_ShadowRestoreBuffer
+  DAT_0310fdc1                    inside g_ShadowRestoreBuffer
+  DAT_0310fdc2                    inside g_ShadowRestoreBuffer
+  DAT_0310fdc3                    inside g_ShadowRestoreBuffer
+  DAT_031101c1                    inside g_ShadowRestoreBuffer
+  DAT_031101c2                    inside g_ShadowRestoreBuffer
+  DAT_031101c3                    inside g_ShadowRestoreBuffer
+  DAT_031101c4                    inside g_ShadowRestoreBuffer
+  DAT_031101c5                    inside g_ShadowRestoreBuffer
+  DAT_031141bf                    inside g_ShadowRestoreBuffer
+  DAT_0311427c                    inside g_ShadowRestoreBuffer
+  DAT_031143c8                    inside g_ShadowRestoreBuffer
+  DAT_03114420                    inside g_ShadowRestoreBuffer
+  DAT_03115b10                    inside g_ShadowRestoreBuffer
+  DAT_0312f540                    inside g_ShadowRestoreBuffer
+  DAT_0312f544                    inside g_ShadowRestoreBuffer
+  DAT_03261368                    inside g_ShadowRestoreBuffer
+  DAT_03261388                    inside g_ShadowRestoreBuffer
+  DAT_0326138c                    inside g_ShadowRestoreBuffer
+  DAT_03261390                    inside g_ShadowRestoreBuffer
+  DAT_03261394                    inside g_ShadowRestoreBuffer
+  DAT_03261398                    inside g_ShadowRestoreBuffer
+  DAT_0326139c                    inside g_ShadowRestoreBuffer
+  DAT_032613a0                    inside g_ShadowRestoreBuffer
+  DAT_032613a4                    inside g_ShadowRestoreBuffer
+  DAT_032613a8                    inside g_ShadowRestoreBuffer
+  DAT_032613ac                    inside g_ShadowRestoreBuffer
+  DAT_032613b0                    inside g_ShadowRestoreBuffer
+  DAT_032613bc                    inside g_ShadowRestoreBuffer
+  DAT_032613c0                    inside g_ShadowRestoreBuffer
+  DAT_032613c4                    inside g_ShadowRestoreBuffer
+  DAT_032613c8                    inside g_ShadowRestoreBuffer
+  DAT_032613d4                    inside g_ShadowRestoreBuffer
+  DAT_032613d8                    inside g_ShadowRestoreBuffer
+  DAT_03263318                    inside g_ShadowRestoreBuffer
+  DAT_0326331c                    inside g_ShadowRestoreBuffer
+  DAT_03265258                    inside g_ShadowRestoreBuffer
+  DAT_0326525c                    inside g_ShadowRestoreBuffer
+  DAT_03267198                    inside g_ShadowRestoreBuffer
+  DAT_0326719c                    inside g_ShadowRestoreBuffer
+  DAT_032671a0                    inside g_ShadowRestoreBuffer
+  DAT_032690dc                    inside g_ShadowRestoreBuffer
+  DAT_032690e0                    inside g_ShadowRestoreBuffer
+  DAT_032690e4                    inside g_ShadowRestoreBuffer
+  DAT_0326eea8                    inside g_ShadowRestoreBuffer
+  DAT_0326eeac                    inside g_ShadowRestoreBuffer
+  DAT_0326eeb0                    inside g_ShadowRestoreBuffer
+  DAT_0326eeb4                    inside g_ShadowRestoreBuffer
+  DAT_0326eeb8                    inside g_ShadowRestoreBuffer
+  DAT_0326eebc                    inside g_ShadowRestoreBuffer
+  DAT_0326eec0                    inside g_ShadowRestoreBuffer
+  DAT_0326eec4                    inside g_ShadowRestoreBuffer
+  DAT_0326eec8                    inside g_ShadowRestoreBuffer
+  DAT_0326eed8                    inside g_ShadowRestoreBuffer
+  DAT_0326eedc                    inside g_ShadowRestoreBuffer
+  DAT_0326eee0                    inside g_ShadowRestoreBuffer
+  DAT_0326eee8                    inside g_ShadowRestoreBuffer
+  DAT_0326eeec                    inside g_ShadowRestoreBuffer
+  DAT_0326eef0                    inside g_ShadowRestoreBuffer
+  DAT_0326ef00                    inside g_ShadowRestoreBuffer
+  DAT_0326ef24                    inside g_ShadowRestoreBuffer
+  DAT_0326f0c0                    inside g_ShadowRestoreBuffer
+  DAT_0326f0e8                    inside g_ShadowRestoreBuffer
+  DAT_0326f0ec                    inside g_ShadowRestoreBuffer
+  DAT_0326f0f0                    inside g_ShadowRestoreBuffer
+  DAT_0326f0f4                    inside g_ShadowRestoreBuffer
+  DAT_0326f0f8                    inside g_ShadowRestoreBuffer
+  DAT_0326f0fc                    inside g_ShadowRestoreBuffer
+  DAT_0326f100                    inside g_ShadowRestoreBuffer
+  DAT_0326f104                    inside g_ShadowRestoreBuffer
+  DAT_0326f108                    inside g_ShadowRestoreBuffer
+  DAT_0326f118                    inside g_ShadowRestoreBuffer
+  DAT_03273954                    inside g_ShadowRestoreBuffer
+  DAT_032758e8                    inside g_ShadowRestoreBuffer
+  DAT_032758f8                    inside g_ShadowRestoreBuffer
+  DAT_03275924                    inside g_ShadowRestoreBuffer
+  DAT_03276db4                    inside g_ShadowRestoreBuffer
+  DAT_03276f38                    inside g_ShadowRestoreBuffer
+  DAT_032770b8                    inside g_ShadowRestoreBuffer
+  DAT_032770bc                    inside g_ShadowRestoreBuffer
+  DAT_032770c0                    inside g_ShadowRestoreBuffer
+  DAT_032776bc                    inside g_ShadowRestoreBuffer
+  DAT_032776d0                    inside g_ShadowRestoreBuffer
+  DAT_03277864                    inside g_ShadowRestoreBuffer
+  DAT_032779f4                    inside g_ShadowRestoreBuffer
+  DAT_03277b88                    inside g_ShadowRestoreBuffer
+  DAT_03277d88                    inside g_ShadowRestoreBuffer
+  DAT_0327d778                    inside g_ShadowRestoreBuffer
+  DAT_032bd778                    inside g_ShadowRestoreBuffer
+  DAT_032bd798                    inside g_ShadowRestoreBuffer
+  DAT_032bf6d8                    inside g_ShadowRestoreBuffer
+  DAT_032c161c                    inside g_ShadowRestoreBuffer
+  DAT_032c17a0                    inside g_ShadowRestoreBuffer
+  DAT_032c17b4                    inside g_ShadowRestoreBuffer
+  DAT_032c1948                    inside g_ShadowRestoreBuffer
+  DAT_032c1cd0                    inside g_ShadowRestoreBuffer
+  DAT_032c1cd4                    inside g_ShadowRestoreBuffer
+  DAT_032c1cd8                    inside g_ShadowRestoreBuffer
+  DAT_032c1cdc                    inside g_ShadowRestoreBuffer
+  DAT_032c1ce0                    inside g_ShadowRestoreBuffer
+  DAT_032cd850                    inside g_ShadowRestoreBuffer
+  DAT_032cd854                    inside g_ShadowRestoreBuffer
+  DAT_032cd858                    inside g_ShadowRestoreBuffer
+  DAT_032cd864                    inside g_ShadowRestoreBuffer
+  DAT_033081d0                    inside g_ShadowRestoreBuffer
+  DAT_033081d4                    inside g_ShadowRestoreBuffer
+  DAT_033081d8                    inside g_ShadowRestoreBuffer
+  DAT_033081dc                    inside g_ShadowRestoreBuffer
+  DAT_033081e0                    inside g_ShadowRestoreBuffer
+  DAT_03342b54                    inside g_ShadowRestoreBuffer
+  DAT_03342b58                    inside g_ShadowRestoreBuffer
+  DAT_033469f4                    inside g_ShadowRestoreBuffer
+  DAT_033469f8                    inside g_ShadowRestoreBuffer
+  DAT_033469fc                    inside g_ShadowRestoreBuffer
+  DAT_03346a00                    inside g_ShadowRestoreBuffer
+  DAT_03346a04                    inside g_ShadowRestoreBuffer
+  DAT_03346a08                    inside g_ShadowRestoreBuffer
+  DAT_03346a0c                    inside g_ShadowRestoreBuffer
+  DAT_03346a10                    inside g_ShadowRestoreBuffer
+  DAT_03346a34                    inside g_ShadowRestoreBuffer
+  DAT_03346a38                    inside g_ShadowRestoreBuffer
+  DAT_03346a3c                    inside g_ShadowRestoreBuffer
+  DAT_03346a40                    inside g_ShadowRestoreBuffer
+  DAT_03346a44                    inside g_ShadowRestoreBuffer
+  DAT_03346a48                    inside g_ShadowRestoreBuffer
+  DAT_03346a4c                    inside g_ShadowRestoreBuffer
+  DAT_03346a50                    inside g_ShadowRestoreBuffer
+  DAT_03346a54                    inside g_ShadowRestoreBuffer
+  DAT_03346a58                    inside g_ShadowRestoreBuffer
+  DAT_03346a5c                    inside g_ShadowRestoreBuffer
+  DAT_03346a60                    inside g_ShadowRestoreBuffer
+  DAT_03346a64                    inside g_ShadowRestoreBuffer
+  DAT_03346a68                    inside g_ShadowRestoreBuffer
+  DAT_03346a6c                    inside g_ShadowRestoreBuffer
+  DAT_03346a70                    inside g_ShadowRestoreBuffer
+  DAT_03346a74                    inside g_ShadowRestoreBuffer
+  DAT_03346a78                    inside g_ShadowRestoreBuffer
+  DAT_03346a7c                    inside g_ShadowRestoreBuffer
+  DAT_03346a80                    inside g_ShadowRestoreBuffer
+  DAT_03346a84                    inside g_ShadowRestoreBuffer
+  DAT_03346a88                    inside g_ShadowRestoreBuffer
+  DAT_03346a8c                    inside g_ShadowRestoreBuffer
+  DAT_03346d24                    inside g_ShadowRestoreBuffer
+  DAT_0334710c                    inside g_ShadowRestoreBuffer
+  DAT_03347130                    inside g_ShadowRestoreBuffer
+  DAT_03347158                    inside g_ShadowRestoreBuffer
+  DAT_03347180                    inside g_ShadowRestoreBuffer
+  DAT_033471f8                    inside g_ShadowRestoreBuffer
+  DAT_033472e8                    inside g_ShadowRestoreBuffer
+  DAT_03357ab0                    inside g_ShadowRestoreBuffer
+  DAT_03357ab4                    inside g_ShadowRestoreBuffer
+  DAT_03357ab8                    inside g_ShadowRestoreBuffer
+  DAT_03357abc                    inside g_ShadowRestoreBuffer
+  DAT_03357ac0                    inside g_ShadowRestoreBuffer
+  DAT_03363630                    inside g_ShadowRestoreBuffer
+  DAT_033648fc                    inside g_ShadowRestoreBuffer
+  DAT_03364900                    inside g_ShadowRestoreBuffer
+  DAT_03365cc4                    inside g_ShadowRestoreBuffer
+  DAT_03365dc0                    inside g_ShadowRestoreBuffer
+  DAT_03365dc4                    inside g_ShadowRestoreBuffer
+  DAT_03653cc1                    inside g_ShadowRestoreBuffer
+  DAT_03653cc2                    inside g_ShadowRestoreBuffer
+  DAT_03654371                    inside g_ShadowRestoreBuffer
+  DAT_03654372                    inside g_ShadowRestoreBuffer
+  DAT_03654373                    inside g_ShadowRestoreBuffer
+  DAT_03654398                    inside g_ShadowRestoreBuffer
+  DAT_0365918f                    inside g_ShadowRestoreBuffer
+  DAT_03659191                    inside g_ShadowRestoreBuffer
+  DAT_0365938c                    inside g_ShadowRestoreBuffer
+  DAT_03659831                    inside g_ShadowRestoreBuffer
+  DAT_03659832                    inside g_ShadowRestoreBuffer
+  DAT_03659833                    inside g_ShadowRestoreBuffer
+  DAT_0365984e                    inside g_ShadowRestoreBuffer
+  DAT_03670849                    inside g_ShadowRestoreBuffer
+  DAT_03670951                    inside g_ShadowRestoreBuffer
+  DAT_03670a59                    inside g_ShadowRestoreBuffer
+  DAT_03670b64                    inside g_ShadowRestoreBuffer
+  DAT_03670b68                    inside g_ShadowRestoreBuffer
+  DAT_03670b70                    inside g_ShadowRestoreBuffer
+  DAT_03670b78                    inside g_ShadowRestoreBuffer
+  DAT_03671300                    inside g_ShadowRestoreBuffer
+  DAT_03675180                    inside g_ShadowRestoreBuffer
+  DAT_03675184                    inside g_ShadowRestoreBuffer
+  DAT_03675188                    inside g_ShadowRestoreBuffer
+  DAT_0367518c                    inside g_ShadowRestoreBuffer
+  DAT_03675190                    inside g_ShadowRestoreBuffer
+  DAT_03683be4                    inside g_ShadowRestoreBuffer
+  DAT_03683be8                    inside g_ShadowRestoreBuffer
+  DAT_03683bec                    inside g_ShadowRestoreBuffer
+  DAT_03683bf0                    inside g_ShadowRestoreBuffer
+  DAT_03683bf4                    inside g_ShadowRestoreBuffer
+  DAT_03695850                    inside g_ShadowRestoreBuffer
+  DAT_036958a0                    inside g_ShadowRestoreBuffer
+  DAT_0369e850                    inside g_ShadowRestoreBuffer
+  DAT_03f5164c                    inside g_SfxStreamReadBuffer
+  DAT_03f5164d                    inside g_SfxStreamReadBuffer
+  DAT_03f5d97c                    inside g_SoundTestErrorBuffer
+  DAT_03f5db14                    inside g_SfxSlots
+  DAT_03f5db1c                    inside g_SfxSlots
+  DAT_03f68990                    inside g_SfxChannelEnabled
+  DAT_03f68994                    inside g_SfxChannelEnabled
+  DAT_03f6a9e8                    inside g_DirectSoundSampleBuffers
+  DAT_03f6a9ec                    inside g_DirectSoundSampleBuffers
+  DAT_03f6aa4c                    inside g_DirectSoundHardwareSfxBuffers
+  DAT_03f6aa50                    inside g_DirectSoundHardwareSfxBuffers
+  DAT_03f6aac4                    inside g_DirectSound3DBufferInterfaces
+  DAT_03f6aac8                    inside g_DirectSound3DBufferInterfaces
+  DAT_03f6ab40                    inside g_DirectSoundBufferMetadata
+  DAT_03f6ab44                    inside g_DirectSoundBufferMetadata
+  DAT_03f6ab48                    inside g_DirectSoundBufferMetadata
+  DAT_03f6ab4c                    inside g_DirectSoundBufferMetadata
+  DAT_03f6ab64                    inside g_DirectSoundBufferMetadata
+  DAT_03f6ab68                    inside g_DirectSoundBufferMetadata
+  DAT_03f6ad3c                    inside g_WaveOutHeaderHandles
+  DAT_03f6ad5c                    inside g_WaveOutHeaders
+  DAT_03f6ad7c                    inside g_WaveOutBufferHandles
+  DAT_03f6ad9c                    inside g_WaveOutBuffers
+  DAT_03f6add4                    inside g_WaveInHeaderHandles
+  DAT_03f6ae24                    inside g_WaveInHeaders
+  DAT_03f6ae74                    inside g_WaveInBufferHandles
+  DAT_03f6aec4                    inside g_WaveInBuffers
+  DAT_03f6b141                    inside g_SoundMatchedFilenames
+  DAT_03f6b142                    inside g_SoundMatchedFilenames
+  DAT_03f6b143                    inside g_SoundMatchedFilenames
+  DAT_03f6b781                    inside g_SoundAmbientSoundName
+  DAT_03f6b782                    inside g_SoundAmbientSoundName
+  DAT_03f6b783                    inside g_SoundAmbientSoundName
+  DAT_03f6b7c8                    inside g_SoundAmbientSoundName
+  DAT_03f6b7cc                    inside g_SoundAmbientSoundName
+  DAT_03f6b7d8                    inside g_SoundAmbientSoundName
+  DAT_03f6bbf1                    inside g_TriListTextureNames
+  DAT_03f6bbf2                    inside g_TriListTextureNames
+  DAT_03f6bbf3                    inside g_TriListTextureNames
+  DAT_03f6bc40                    inside g_TriListTextureNames
+  DAT_03f8760c                    inside g_VisibleWaterTilesX
+  DAT_03f8b60c                    inside g_VisibleWaterTilesY
+  DAT_03f8f609                    inside g_WaterTileSamples
+  DAT_03f90a8c                    inside g_WaterActorTransformedVertices
+  DAT_03f90a90                    inside g_WaterActorTransformedVertices
+  DAT_03f90a94                    inside g_WaterActorTransformedVertices
+  DAT_03f90a98                    inside g_WaterActorTransformedVertices
+  DAT_03f90a9c                    inside g_WaterActorTransformedVertices
+  DAT_03f939a8                    inside g_WaypointSearchQueue
+  DAT_03f95dfc                    inside g_WeatherParticlePositions
+  DAT_03f95e00                    inside g_WeatherParticlePositions
+  DAT_03f95e04                    inside g_WeatherParticlePositions
+  DAT_03f95e08                    inside g_WeatherParticlePositions
+  DAT_03f95e0c                    inside g_WeatherParticlePositions
+  DAT_03f9675c                    inside g_WeatherParticleGroundHeights
+  DAT_03f96a79                    inside g_WeatherParticleHitGround
+  DAT_03f99528                    inside g_ClipVertexBufferStage2
+  DAT_03f9952c                    inside g_ClipVertexBufferStage2
+  DAT_03f99530                    inside g_ClipVertexBufferStage2
+  DAT_03f99550                    inside g_ClipVertexBufferStage2
+  DAT_03f99558                    inside g_ClipVertexBufferStage2
+  DAT_03f99b28                    inside g_ClipVertexBufferStage1
+  DAT_03f99b2c                    inside g_ClipVertexBufferStage1
+  DAT_03f99b50                    inside g_ClipVertexBufferStage1
+  DAT_03f99b54                    inside g_ClipVertexBufferStage1
+  DAT_03f99b54+4                  inside g_ClipVertexBufferStage1
+  DAT_03f99b5c                    inside g_ClipVertexBufferStage1
+  DAT_03f9a128                    inside g_ClipVertexBufferStage3
+  DAT_03f9a12c                    inside g_ClipVertexBufferStage3
+  DAT_03f9a130                    inside g_ClipVertexBufferStage3
+  DAT_03f9a150                    inside g_ClipVertexBufferStage3
+  DAT_03f9a154                    inside g_ClipVertexBufferStage3
+  DAT_03f9a158                    inside g_ClipVertexBufferStage3
+  DAT_03f9a15c                    inside g_ClipVertexBufferStage3
+  DAT_03f9a728                    inside g_ClipVertexBufferStage4
+  DAT_03f9a72c                    inside g_ClipVertexBufferStage4
+  DAT_03f9a730                    inside g_ClipVertexBufferStage4
+  DAT_03f9a750                    inside g_ClipVertexBufferStage4
+  DAT_03f9a754                    inside g_ClipVertexBufferStage4
+  DAT_03f9a758                    inside g_ClipVertexBufferStage4
+  DAT_03f9b850                    inside g_DllFileNameBuffer_W
+  DAT_03f9b851                    inside g_DllFileNameBuffer_W
+  DAT_03f9b874                    inside g_DllFileNameBuffer_W
+  DAT_03f9b8d0                    inside g_DllFileNameBuffer_W
+

@@ -13,7 +13,6 @@
 ;   REG_CLOSE_KEY_FUNC* g_RegCloseKeyFunc = 002119dc
 ;   REG_OPEN_KEY_EX_A_FUNC* g_RegOpenKeyExAFunc = 002119fc
 ;   REG_QUERY_VALUE_EX_A_FUNC* g_RegQueryValueExAFunc = 00211a0c
-;   undefined4 DAT_80000002
 ;
 ; *****************************************************************************
 
@@ -30,7 +29,7 @@ section .text
     PUSH 0x0                            ; 005f4220
     MOV EDX,dword ptr [ESP + 0x20]      ; 005f4222
     PUSH EDX                            ; 005f4226
-    PUSH 0x80000002                     ; 005f4227 | DAT_80000002
+    PUSH 0x80000002                     ; 005f4227
     CALL dword ptr CS:[0x611474]        ; 005f422c | g_RegOpenKeyExAFunc
     TEST EAX,EAX                        ; 005f4233
     JZ 0x005f423c                       ; 005f4235

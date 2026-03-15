@@ -1,34 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 42,
-        "line": 27,
-        "message": "use of undeclared identifier 'DAT_00a00000'; did you mean 'DAT_00400080'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 32,
-        "message": "use of undeclared identifier 'DAT_00a00000'; did you mean 'DAT_00400080'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 66,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 4,
-    "global_count": 6,
-    "max_suspect_severity": "mild",
+    "global_count": 5,
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 41,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 155
   },
   "cross_references": [
@@ -84,12 +69,6 @@
       "addr": "0067cf14",
       "name": "g_Inventory3DTextureAtlas",
       "type": "SMRGLTextureBasic",
-      "value": null
-    },
-    {
-      "addr": "00a00000",
-      "name": "DAT_00a00000",
-      "type": "undefined4",
       "value": null
     },
     {
@@ -248,22 +227,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_00a00000",
-      "severity": "mild",
-      "text": "this_ptr->vertex_buffer_ptr->v = (int)&DAT_00a00000;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_00a00000",
-      "severity": "mild",
-      "text": "this_ptr->vertex_buffer_ptr[1].v = (int)&DAT_00a00000;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

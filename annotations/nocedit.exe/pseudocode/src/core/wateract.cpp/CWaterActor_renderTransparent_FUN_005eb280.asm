@@ -14,7 +14,7 @@
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonSet g_CDemonSetInstance
 ;   UVector3 g_ZeroVector
-;   undefined4 DAT_03f90a88
+;   CVector3i[1000] g_WaterActorTransformedVertices
 ;   undefined4 DAT_03f90a8c
 ;   undefined4 DAT_03f90a90
 ;   undefined4 DAT_03f90a94
@@ -107,14 +107,14 @@ section .text
     TEST EAX,EAX                        ; 005eb32a
     JLE 0x005eb370                      ; 005eb32c
         ;   XREF to: 005eb370 (CONDITIONAL_JUMP)  ; LAB_005eb370
-    MOV ECX,0x3f90a88                   ; 005eb32e | DAT_03f90a88
+    MOV ECX,0x3f90a88                   ; 005eb32e | g_WaterActorTransformedVertices
     LEA EDX,[ESI + 0x29c]               ; 005eb333
     MOV EBX,ECX                         ; 005eb339
         ;   Label: LAB_005eb339
     MOV EAX,EDX                         ; 005eb33b
     FLD float ptr [EAX]                 ; 005eb33d
     FMUL float ptr [0x00665310]         ; 005eb33f | FLOAT_00665310
-    FISTP dword ptr [EBX]               ; 005eb345 | DAT_03f90a88 | DAT_03f90a94
+    FISTP dword ptr [EBX]               ; 005eb345 | g_WaterActorTransformedVertices | DAT_03f90a94
     FLD float ptr [EAX + 0x4]           ; 005eb347
     FMUL float ptr [0x00665310]         ; 005eb34a | FLOAT_00665310
     FISTP dword ptr [EBX + 0x4]         ; 005eb350 | DAT_03f90a8c | DAT_03f90a98
@@ -128,7 +128,7 @@ section .text
     CMP EDI,EBX                         ; 005eb36c
     JL 0x005eb339                       ; 005eb36e
         ;   XREF to: 005eb339 (CONDITIONAL_JUMP)  ; LAB_005eb339
-    PUSH 0x3f90a88                      ; 005eb370 | DAT_03f90a88
+    PUSH 0x3f90a88                      ; 005eb370 | g_WaterActorTransformedVertices
         ;   Label: LAB_005eb370
     MOV EDI,dword ptr [ESI + 0x298]     ; 005eb375
     PUSH EDI                            ; 005eb37b

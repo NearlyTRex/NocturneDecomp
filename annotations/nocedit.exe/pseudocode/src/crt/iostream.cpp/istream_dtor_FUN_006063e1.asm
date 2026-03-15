@@ -13,7 +13,7 @@
 ;   crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca at 005ff602
 ;
 ; Referenced Globals:
-;   WatcomThunkedDestructor PTR_unk_OtherFreeMemory2_FUN_006063e1_00665e74
+;   WatcomThunkedDestructor WatcomThunkedDestructor_00665e74
 ;   void* PTR_FUN_00665e7c = 006063c9
 ;   WatcomTypeInfo g_IStreamTypeInfo
 ;
@@ -38,7 +38,7 @@ section .text
     LEA EAX,[EBX + EDX*0x1]             ; 006063f2
     MOV dword ptr [EAX + -0x4],EDX      ; 006063f5
     MOV EAX,dword ptr [EBX]             ; 006063f8
-    MOV dword ptr [EBX + 0x8],0x665e74  ; 006063fa | PTR_unk_OtherFreeMemory2_FUN_006063e1_00665e74
+    MOV dword ptr [EBX + 0x8],0x665e74  ; 006063fa | WatcomThunkedDestructor_00665e74
     MOV EAX,dword ptr [EAX + 0x4]       ; 00606401
     MOV DL,byte ptr [ESP + 0xc]         ; 00606404
     MOV dword ptr [EBX + EAX*0x1 + 0x28],0x665e7c ; 00606408 | PTR_FUN_00665e7c

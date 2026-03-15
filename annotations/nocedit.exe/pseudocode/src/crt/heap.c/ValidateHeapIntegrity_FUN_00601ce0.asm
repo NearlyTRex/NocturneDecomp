@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   Heap* g_MainHeap = 00000000
 ;   Heap* g_SecondaryHeap = 00000000
-;   undefined4 DAT_00684edc
+;   int INT_00684edc = 0x0
 ;   void* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00 = 00602434
 ;   void* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08 = 00602434
 ;   undefined4 DAT_03f9b210
@@ -152,12 +152,12 @@ section .text
     CMP ESI,EDX                         ; 00601dbe
     JNC 0x00601dd4                      ; 00601dc0
         ;   XREF to: 00601dd4 (CONDITIONAL_JUMP)  ; LAB_00601dd4
-    MOV EBX,dword ptr [0x00684edc]      ; 00601dc2 | DAT_00684edc
+    MOV EBX,dword ptr [0x00684edc]      ; 00601dc2 | INT_00684edc
     MOV EAX,dword ptr [ESI + 0x14]      ; 00601dc8
     CMP EAX,EBX                         ; 00601dcb
     JBE 0x00601dd4                      ; 00601dcd
         ;   XREF to: 00601dd4 (CONDITIONAL_JUMP)  ; LAB_00601dd4
-    MOV [0x00684edc],EAX                ; 00601dcf | DAT_00684edc
+    MOV [0x00684edc],EAX                ; 00601dcf | INT_00684edc
     XOR AH,AH                           ; 00601dd4
         ;   Label: LAB_00601dd4
     MOV byte ptr [0x03f9b850],AH        ; 00601dd6 | DAT_03f9b850

@@ -33,13 +33,13 @@ extern CTerrain g_CTerrainInstance;
 extern CTextureCache* g_TextureCacheInstance;
 
 // CVector3f[100]
-extern CVector3f DAT_03f8f638[100];
+extern CVector3f CVector3f_ARRAY_03f8f638[100];
 
 // CWater
 extern CWater g_CWaterInstance;
 
 // SCollisionInfo[100]
-extern SCollisionInfo DAT_03f8fae8[100];
+extern SCollisionInfo SCollisionInfo_ARRAY_03f8fae8[100];
 
 // SMRGLTextureBasic
 extern SMRGLTextureBasic g_CurrentTexture;
@@ -69,11 +69,10 @@ extern int INT_03f8f62c;
 extern int g_VisibleWaterTilesX[4096];
 extern int g_VisibleWaterTilesY[4096];
 
+// uchar[36]
+extern uchar g_WaterTileSamples[36];
+
 // uchar[4]
 extern uchar g_BroadcastIP[4];
 extern uchar g_AnyAddressIP[4];
-
-// undefined1
-extern undefined1 DAT_03f8f608;
-extern undefined1 DAT_03f8f609;
 

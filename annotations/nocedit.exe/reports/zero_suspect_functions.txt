@@ -242,6 +242,7 @@ annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CVector_copy_FUN_004104a0.
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CVector_ctor_FUN_00410340.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/CVector_dtor_FUN_00410350.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/SDamageInfo_dtor_FUN_00410420.cpp
+annotations/nocedit.exe/pseudocode/src/core/actor.cpp/adjustIndentationLevel_FUN_0040aee0.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/archiveActor_FUN_0040b870.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/archiveBox_FUN_0040bd70.cpp
 annotations/nocedit.exe/pseudocode/src/core/actor.cpp/archiveClothList_FUN_0040be60.cpp
@@ -1291,6 +1292,7 @@ annotations/nocedit.exe/pseudocode/src/core/dynamite.cpp/CDynamite_isFuseLit_FUN
 annotations/nocedit.exe/pseudocode/src/core/dynamite.cpp/CDynamite_lightFuse_FUN_0049cf20.cpp
 annotations/nocedit.exe/pseudocode/src/core/dynamite.cpp/CDynamite_process_FUN_0049cfb0.cpp
 annotations/nocedit.exe/pseudocode/src/core/dynamite.cpp/factoryFunc_FUN_0049cd80.cpp
+annotations/nocedit.exe/pseudocode/src/core/dynamite.cpp/staticInit_FUN_0049cd40.cpp
 annotations/nocedit.exe/pseudocode/src/core/elephant.cpp/CElephantGun_ctor_FUN_004a6fe0.cpp
 annotations/nocedit.exe/pseudocode/src/core/elephant.cpp/CElephantGun_dtor_FUN_004a7be0.cpp
 annotations/nocedit.exe/pseudocode/src/core/elephant.cpp/CElephantGun_fireProjectile_FUN_004a79f0.cpp
@@ -1452,6 +1454,7 @@ annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CExplosion_ctor_FUN_004c38c
 annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CExplosion_dtor_FUN_004c95e0.cpp
 annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CExplosion_process_FUN_004c3ac0.cpp
 annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CFireEffect_allocateToss_FUN_004c8e40.cpp
+annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CFireEffect_createBulletImpact_FUN_004c76a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CFireEffect_createBulletTrail_FUN_004c7d60.cpp
 annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CFireEffect_createCrater_FUN_004c8ea0.cpp
 annotations/nocedit.exe/pseudocode/src/core/fire.cpp/CFireEffect_createDefaultSmoke_FUN_004c7620.cpp
@@ -2063,6 +2066,7 @@ annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_hasItemOfClass_FU
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_initialize_FUN_004fd190.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_isWeaponInCategory_FUN_004ffe70.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_loadItems_FUN_004ff740.cpp
+annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_load_FUN_004ff400.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_removeItem_FUN_004fea70.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_removeMatchingKeys_FUN_005014a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_renderItemModel_FUN_004fee00.cpp
@@ -2079,6 +2083,7 @@ annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_toggleDetailView_
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/clampWeaponAmmoCount_FUN_004fd5d0.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/drawItemIconBackground_FUN_005001e0.cpp
+annotations/nocedit.exe/pseudocode/src/core/inv.cpp/drawWeaponIconBackground_FUN_00500050.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/freeInventory_FUN_004fd510.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/getItemDisplayName_FUN_004fcf00.cpp
 annotations/nocedit.exe/pseudocode/src/core/inv.cpp/getItemIconName_FUN_004fcf70.cpp
@@ -2350,6 +2355,7 @@ annotations/nocedit.exe/pseudocode/src/core/mission.cpp/CDemonMission_loadScript
 annotations/nocedit.exe/pseudocode/src/core/mission.cpp/CDemonMission_load_FUN_00522d90.cpp
 annotations/nocedit.exe/pseudocode/src/core/mission.cpp/CDemonMission_markActorToDelete_FUN_005240a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/mission.cpp/CDemonMission_prepareAllActors_FUN_00523cf0.cpp
+annotations/nocedit.exe/pseudocode/src/core/mission.cpp/CDemonMission_readMissionFile_FUN_00522eb0.cpp
 annotations/nocedit.exe/pseudocode/src/core/mission.cpp/CDemonMission_removeActorFromList_FUN_00523be0.cpp
 annotations/nocedit.exe/pseudocode/src/core/mission.cpp/CDemonMission_removeActor_FUN_00523f20.cpp
 annotations/nocedit.exe/pseudocode/src/core/mission.cpp/CDemonMission_removeAllActors_FUN_00523f50.cpp
@@ -2474,7 +2480,9 @@ annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_buildScrip
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_deleteActorWithConfirm_FUN_0053bc80.cpp
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_deleteActor_FUN_00538ea0.cpp
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_deleteMultipleActorsMenu_FUN_0053df90.cpp
+annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_drawPropertyPanel_FUN_0053c4f0.cpp
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_dropActorToGround_FUN_0053c8d0.cpp
+annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_editActorPropertiesDialog_FUN_0053c730.cpp
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_editActorProperties_FUN_00539060.cpp
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_findNextVisibleActor_FUN_0053ca30.cpp
 annotations/nocedit.exe/pseudocode/src/core/msnedit.cpp/CDemonMission_findPrevVisibleActor_FUN_0053ca80.cpp
@@ -2597,6 +2605,7 @@ annotations/nocedit.exe/pseudocode/src/core/path.cpp/CPathMap_getDirection_FUN_0
 annotations/nocedit.exe/pseudocode/src/core/path.cpp/CPathMap_isLineWalkable_FUN_00546c40.cpp
 annotations/nocedit.exe/pseudocode/src/core/path.cpp/CPathMap_previewPathfinding_FUN_00547c00.cpp
 annotations/nocedit.exe/pseudocode/src/core/path.cpp/CPathMap_reset_FUN_00548510.cpp
+annotations/nocedit.exe/pseudocode/src/core/path.cpp/CPathMap_searchGrid_FUN_005487a0.cpp
 annotations/nocedit.exe/pseudocode/src/core/path.cpp/CPathMap_setupPathSearch_FUN_00548750.cpp
 annotations/nocedit.exe/pseudocode/src/core/path.cpp/getPathMap_FUN_00548500.cpp
 annotations/nocedit.exe/pseudocode/src/core/path.cpp/isPathfindingQueueEmpty_FUN_00546330.cpp
@@ -2702,6 +2711,7 @@ annotations/nocedit.exe/pseudocode/src/core/script.cpp/CScript_gotoPosition_FUN_
 annotations/nocedit.exe/pseudocode/src/core/script.cpp/CScript_initEditorLayout_FUN_00566660.cpp
 annotations/nocedit.exe/pseudocode/src/core/script.cpp/CScript_initRuntime_FUN_0055a540.cpp
 annotations/nocedit.exe/pseudocode/src/core/script.cpp/CScript_insertText_FUN_00566390.cpp
+annotations/nocedit.exe/pseudocode/src/core/script.cpp/CScript_loadLineToBuffer_FUN_00566230.cpp
 annotations/nocedit.exe/pseudocode/src/core/script.cpp/CScript_parseActionTemplate_FUN_00567490.cpp
 annotations/nocedit.exe/pseudocode/src/core/script.cpp/CScript_parseCommandList_FUN_00567010.cpp
 annotations/nocedit.exe/pseudocode/src/core/script.cpp/CScript_processEditorInput_FUN_00565130.cpp
@@ -3525,6 +3535,7 @@ annotations/nocedit.exe/pseudocode/src/core/wateract.cpp/SWaterVertex_arrdtor_FU
 annotations/nocedit.exe/pseudocode/src/core/wateract.cpp/SWaterVertex_ctor_FUN_005ebcd0.cpp
 annotations/nocedit.exe/pseudocode/src/core/wateract.cpp/SWaterVertex_dtor_FUN_005ebce0.cpp
 annotations/nocedit.exe/pseudocode/src/core/wateract.cpp/factoryFunc_FUN_005ea860.cpp
+annotations/nocedit.exe/pseudocode/src/core/wateract.cpp/staticInit_FUN_005ea810.cpp
 annotations/nocedit.exe/pseudocode/src/core/waypoint.cpp/CWayPoint_addAdj_FUN_005ec700.cpp
 annotations/nocedit.exe/pseudocode/src/core/waypoint.cpp/CWayPoint_archive_FUN_005ec280.cpp
 annotations/nocedit.exe/pseudocode/src/core/waypoint.cpp/CWayPoint_cleanupAdjacency_FUN_005ec830.cpp
@@ -4653,6 +4664,7 @@ annotations/nocedit.exe/pseudocode/src/sound/mp3.cpp/testMP3DecoderBenchmark_FUN
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_allocateSample_FUN_005aef40.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_allocateSfx_FUN_005af410.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_close_FUN_005ae270.cpp
+annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_commitDeferredSettings_FUN_005b0340.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_freeSample_FUN_005af190.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_hasHardware3D_FUN_005aee20.cpp
@@ -4669,6 +4681,7 @@ annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_start_
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/CDirectSoundDevice_unlockSample_FUN_005af320.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/checkDirectSoundError_FUN_005adf90.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/enumerateDirectSoundDevice_FUN_005b0390.cpp
+annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/getDirectSoundDevice_FUN_005b0440.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/isValidSampleBuffer_FUN_005af150.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/isValidSfxHandle_FUN_005af720.cpp
 annotations/nocedit.exe/pseudocode/src/sound/snddx.cpp/releaseSfxHardwareBuffers_FUN_005ae1c0.cpp

@@ -4,8 +4,8 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6985 ( 35.2%)
-  pointer_cast                    5725 ( 28.9%)
+  decompiler_intrinsic            6985 ( 35.4%)
+  pointer_cast                    5725 ( 29.0%)
   unknown_field                   1517 (  7.7%)
   stack_param                      971 (  4.9%)
   unnamed_param                    698 (  3.5%)
@@ -16,18 +16,18 @@ SUSPECT TYPE COUNTS
   nonstandard_int                  271 (  1.4%)
   register_param                   270 (  1.4%)
   warning_inlined_function         264 (  1.3%)
-  unresolved_funcptr               175 (  0.9%)
+  unresolved_funcptr               174 (  0.9%)
   param_count_too_few              157 (  0.8%)
   stack_alignment_array            137 (  0.7%)
-  extra_output                     134 (  0.7%)
+  extra_output                     132 (  0.7%)
   warning_type_propagation         132 (  0.7%)
   negative_offset                  125 (  0.6%)
-  undefined_data                   123 (  0.6%)
   sub84_truncation                 107 (  0.5%)
   warning_unreachable               79 (  0.4%)
   suspect_float                     57 (  0.3%)
   unknown_type                      53 (  0.3%)
   param_count_too_many              52 (  0.3%)
+  undefined_data                    50 (  0.3%)
   mmx_assembly                      34 (  0.2%)
   special_math_intrinsic            24 (  0.1%)
   format_string_mismatch            24 (  0.1%)
@@ -554,11 +554,11 @@ Example functions:
     /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (175 occurrences)
+TYPE: unresolved_funcptr (174 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   119x  code *
+   118x  code *
     56x  code
 
 Example functions:
@@ -746,11 +746,11 @@ Example functions:
     int aiStackY_10d4 [1015];...
 
 ====================================================================================================
-TYPE: extra_output (134 occurrences)
+TYPE: extra_output (132 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    40x  extraout_EAX
+    38x  extraout_EAX
     21x  extraout_EDI
     14x  extraout_EBX
      8x  extraout_EAX_00
@@ -923,70 +923,6 @@ Example functions:
     ppHVar1 = &in_stack_00000008[-1].next_heap_block;...
   crt_iostream.cpp_istream_destructor_thunk_from_ios_FUN_006063c9
     ((_istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
-
-====================================================================================================
-TYPE: undefined_data (123 occurrences)
-====================================================================================================
-
-Unique patterns:
-    11x  DAT_03f9b210
-     9x  DAT_00823c54
-     8x  DAT_00684edc
-     5x  DAT_00679d94
-     4x  DAT_03f9b850
-     3x  DAT_03f9c030
-     3x  DAT_00665f28
-     3x  DAT_03364d18
-     3x  DAT_03365cbc
-     3x  DAT_02f79818
-     3x  DAT_02d7b804
-     2x  DAT_006852c4
-     2x  DAT_00665f50
-     2x  DAT_03f9b874
-     2x  DAT_00685030
-     2x  DAT_03f9b851
-     2x  DAT_0068528c
-     2x  DAT_00772a70
-     2x  DAT_00a00000
-     2x  DAT_02db9670
-
-Example functions:
-  crt_io.c_getTempDirectory_FUN_00609afc
-    (&DAT_006852db)[uVar3] = 0x5c;...
-  crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
-    pHeapBound = (uint *)&DAT_00684ff4;...
-  crt_watcom.c__heapchk_FUN_00600ad0
-    if (DAT_03f9b850 != '\0') {...
-  crt_watcom.c__memset_FUN_004b19d0
-    (**(code **)(&DAT_00679d50 + uVar3 * 4))();...
-  crt_watcom.c__memcpy_FUN_004b1a78
-    (**(code **)(&DAT_00679d94 + uVar2 * 4))();...
-  crt_math.c_atan2_FUN_0060c440
-    fVar1 = *(float10 *)(&DAT_0068755c + iVar1) +...
-  crt_startup.c_FUN_0060d230
-    memset(&DAT_03f9c030,0,0x101);...
-  crt_exit.c_FinalExitHandler_FUN_0060b560
-    if (DAT_006852c4 != (code *)0x0) {...
-  crt_time.c_tzset_FUN_006072f8
-    DAT_0068513c = 0;...
-  crt_time.c_determine_dst_status_FUN_006079b4
-    iVar1 = *(int *)(&DAT_00665f50 + iVar9 * 2);...
-  crt_unknown.c_FUN_00603c74
-    piVar1 = &DAT_00684f30;...
-  crt_unknown.c_FUN_00607858
-    iVar2 = *(int *)(&DAT_00665f50 + *(int *)(param_1 + 0x10) * 2);...
-  crt_unknown.c_staticInit_FUN_0060240e
-    DAT_03f9b874 = DAT_03f9b874 | 2;...
-  crt_unknown.c_FUN_00607080
-    *(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) | (&DAT_00665f28)[bVar1 & 7];...
-  crt_unknown.c_FUN_00608fdc
-    if (file_handle < (_FILE *)&DAT_00684d12) {...
-  crt_unknown.c_FUN_0060501c
-    *pbVar1 = *pbVar1 | (&DAT_00685030)[uVar2 & 7];...
-  crt_string.c_strtok_FUN_005fff50
-    while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVa...
-  crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0
-    if (((DAT_03f9b210 == (Heap *)0x0) ||...
 
 ====================================================================================================
 TYPE: sub84_truncation (107 occurrences)
@@ -1256,6 +1192,68 @@ Example functions:
     Function declares 2 params but call sites push 1 (1 extra)...
 
 ====================================================================================================
+TYPE: undefined_data (50 occurrences)
+====================================================================================================
+
+Unique patterns:
+    11x  DAT_03f9b210
+     5x  DAT_00679d94
+     4x  DAT_03f9b850
+     3x  DAT_03f9c030
+     3x  DAT_00665f28
+     2x  DAT_00665f50
+     2x  DAT_03f9b874
+     2x  DAT_00685030
+     2x  DAT_03f9b851
+     2x  DAT_0068528c
+     2x  DAT_80000002
+     1x  DAT_006852db
+     1x  DAT_00684ff4
+     1x  DAT_00679d50
+     1x  DAT_0068755c
+     1x  DAT_0068513c
+     1x  DAT_006851bd
+     1x  DAT_00684f30
+     1x  DAT_00684d12
+     1x  DAT_00665db8
+
+Example functions:
+  crt_io.c_getTempDirectory_FUN_00609afc
+    (&DAT_006852db)[uVar3] = 0x5c;...
+  crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8
+    pHeapBound = (uint *)&DAT_00684ff4;...
+  crt_watcom.c__heapchk_FUN_00600ad0
+    if (DAT_03f9b850 != '\0') {...
+  crt_watcom.c__memset_FUN_004b19d0
+    (**(code **)(&DAT_00679d50 + uVar3 * 4))();...
+  crt_watcom.c__memcpy_FUN_004b1a78
+    (**(code **)(&DAT_00679d94 + uVar2 * 4))();...
+  crt_math.c_atan2_FUN_0060c440
+    fVar1 = *(float10 *)(&DAT_0068755c + iVar1) +...
+  crt_startup.c_FUN_0060d230
+    memset(&DAT_03f9c030,0,0x101);...
+  crt_time.c_tzset_FUN_006072f8
+    DAT_0068513c = 0;...
+  crt_time.c_determine_dst_status_FUN_006079b4
+    iVar1 = *(int *)(&DAT_00665f50 + iVar9 * 2);...
+  crt_unknown.c_FUN_00603c74
+    piVar1 = &DAT_00684f30;...
+  crt_unknown.c_FUN_00607858
+    iVar2 = *(int *)(&DAT_00665f50 + *(int *)(param_1 + 0x10) * 2);...
+  crt_unknown.c_staticInit_FUN_0060240e
+    DAT_03f9b874 = DAT_03f9b874 | 2;...
+  crt_unknown.c_FUN_00607080
+    *(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) | (&DAT_00665f28)[bVar1 & 7];...
+  crt_unknown.c_FUN_00608fdc
+    if (file_handle < (_FILE *)&DAT_00684d12) {...
+  crt_unknown.c_FUN_0060501c
+    *pbVar1 = *pbVar1 | (&DAT_00685030)[uVar2 & 7];...
+  crt_string.c_strtok_FUN_005fff50
+    while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVa...
+  crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0
+    if (((DAT_03f9b210 == (Heap *)0x0) ||...
+
+====================================================================================================
 TYPE: mmx_assembly (34 occurrences)
 ====================================================================================================
 
@@ -1423,9 +1421,9 @@ Unique patterns:
      1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"grabbedBy=%s\n");
      1x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"pushedObject=%s\n");
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("No motions defined in %s");
-     1x  iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is too long");
-     1x  iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is not valid")
-     1x  iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0("SpotLight %s doesn't exist.");
+     1x  iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is too long");
+     1x  iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is not valid")
+     1x  iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0("SpotLight %s doesn't exist.");
      1x  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't find CDemonLight for light %s in advanceLightFil
 
 Example functions:

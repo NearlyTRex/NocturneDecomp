@@ -24,12 +24,12 @@ void __cdecl core_inv_cpp_drawWeaponIconBackground_FUN_00500050(int x1,int y1,in
   (this_ptr->vertex_buffer_ptr->projected_vertex).screen_y = y1 << 0x10;
   (this_ptr->vertex_buffer_ptr->projected_vertex).transformed_z = 0x1000;
   this_ptr->vertex_buffer_ptr->u = 0;
-  this_ptr->vertex_buffer_ptr->v = (int)&DAT_00a00000;
+  this_ptr->vertex_buffer_ptr->v = 0xa00000;
   this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_x = x2 << 0x10;
   this_ptr->vertex_buffer_ptr[1].projected_vertex.screen_y = y1 << 0x10;
   this_ptr->vertex_buffer_ptr[1].projected_vertex.transformed_z = 0x1000;
   this_ptr->vertex_buffer_ptr[1].u = 0x600000;
-  this_ptr->vertex_buffer_ptr[1].v = (int)&DAT_00a00000;
+  this_ptr->vertex_buffer_ptr[1].v = 0xa00000;
   this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_x = x2 << 0x10;
   this_ptr->vertex_buffer_ptr[2].projected_vertex.screen_y = y2 << 0x10;
   this_ptr->vertex_buffer_ptr[2].projected_vertex.transformed_z = 0x1000;

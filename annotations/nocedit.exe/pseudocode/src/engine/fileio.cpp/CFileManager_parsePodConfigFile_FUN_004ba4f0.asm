@@ -29,7 +29,7 @@
 ;   TerminatedCString s_engine_fileio_cpp_00628d0f
 ;   TerminatedCString s_Error_parsing_POD_INI_00628d24
 ;   TerminatedCString s_engine_fileio_cpp_00628d3a
-;   char[260] g_FilenameBufferTemplate
+;   char[264] g_FilenameBufferTemplate
 ;   undefined4 DAT_0067a15c
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber

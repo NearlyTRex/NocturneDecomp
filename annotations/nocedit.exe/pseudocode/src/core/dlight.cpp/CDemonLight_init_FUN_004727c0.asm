@@ -20,7 +20,7 @@
 ;   TerminatedCString s_CDemonCamera_init_Unable_0061ee71
 ;   TerminatedCString s_core_dlight_cpp_0061eea3
 ;   double DOUBLE_0061eebb = 7
-;   CDemonFilter* g_GlobalFilters = 020a4878
+;   CDemonFilter*[8] g_GlobalFilters
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;

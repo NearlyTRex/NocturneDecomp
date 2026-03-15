@@ -18,7 +18,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrimitiveAdaptivePlaneMasked_FUN
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&primitive->surface_normal);
   if (iVar2 != 0) {
     if (g_TexturesDisabled == 0) {
-      if (DAT_00772a70 == 0) {
+      if (INT_00772a70 == 0) {
         if (g_MMXSupported == 0) {
           if (g_BitsPerPixel == 0x20) {
             g_ScanlineRenderFunc =

@@ -40,6 +40,7 @@ from ghidra_annotations.annotations.pseudocode.output import (
     export_function_prototypes, generate_function_file_contents
 )
 from ghidra_annotations.annotations.pseudocode.analysis import generate_analysis_report
+from ghidra_annotations.annotations.pseudocode.dat_report import generate_dat_report, generate_struct_detection_report
 from ghidra_annotations.annotations.pseudocode.cleanup import delete_pseudocode
 from ghidra_annotations.annotations.pseudocode.header_compile import (
     verify_headers_after_export, verify_globals_after_export
@@ -1184,6 +1185,13 @@ def export_pseudocode(currentProgram, path, strict=False):
     log_info("Generating analysis report...")
     make_dirs(reports_dir)  # Ensure reports dir exists (may already exist from error report)
     generate_analysis_report(pseudocode_src_dir, reports_dir)
+    timer.end_phase()
+
+    # Generate DAT_ globals analysis reports
+    timer.start_phase("Generate DAT globals report")
+    log_info("Generating DAT_ globals analysis reports...")
+    generate_dat_report(pseudocode_src_dir, reports_dir)
+    generate_struct_detection_report(pseudocode_src_dir, reports_dir)
     timer.end_phase()
 
     # Log timing profile

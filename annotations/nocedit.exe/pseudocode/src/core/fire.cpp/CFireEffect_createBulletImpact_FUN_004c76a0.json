@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 319,
-    "complexity_score": 157,
+    "complexity_score": 142,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 23,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 142,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 461
   },
   "cross_references": [
@@ -159,14 +157,14 @@
     },
     {
       "addr": "0067aeb8",
-      "name": "DAT_0067aeb8",
-      "type": "undefined4",
+      "name": "g_DefaultRicochetSound",
+      "type": "char[60]",
       "value": null
     },
     {
       "addr": "0067aebc",
       "name": "DAT_0067aebc",
-      "type": "undefined2",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -444,14 +442,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_0067aeb8",
-      "severity": "mild",
-      "text": "puVar5 = &DAT_0067aeb8;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

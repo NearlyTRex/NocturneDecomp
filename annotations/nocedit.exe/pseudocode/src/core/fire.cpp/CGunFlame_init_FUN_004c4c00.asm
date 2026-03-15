@@ -63,7 +63,6 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 004c4c48
         ;   Label: LAB_004c4c48
     MOV EBX,dword ptr [0x02d13eb4]      ; 004c4c4c | g_CharactersOnFireCount
-        ;   Label: LAB_004c4c4c
     ADD ECX,0x4                         ; 004c4c52
     INC EDI                             ; 004c4c55
     MOV dword ptr [ESP + 0x20],ECX      ; 004c4c56

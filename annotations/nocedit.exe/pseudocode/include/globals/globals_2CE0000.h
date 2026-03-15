@@ -19,6 +19,7 @@ extern CDemonTriangle g_ClippedTriangleBuffer[8];
 // CVector3f
 extern CVector3f g_DebugCubeBasePoint;
 extern CVector3f g_FloorRayDirection;
+extern CVector3f CVector3f_02ceed24;
 
 // CVector3f[16]
 extern CVector3f g_ClipInputVertices[16];
@@ -54,7 +55,4 @@ extern int g_ClipBuffer3VertexCount;
 extern int g_ClipBuffer4VertexCount;
 extern int g_ClipBuffer5VertexCount;
 extern int g_ClipOutputVertexCount;
-extern int DAT_02ceed24;
-extern int DAT_02ceed28;
-extern int DAT_02ceed2c;
 

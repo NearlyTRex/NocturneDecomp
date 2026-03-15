@@ -27,3 +27,6 @@ extern int g_PathfindingQueueHead;
 extern int g_PathfindingQueueTail;
 extern int g_PathfindingNodesExpanded;
 
+// uchar
+extern uchar g_PathfindingVisitedMinus1;
+

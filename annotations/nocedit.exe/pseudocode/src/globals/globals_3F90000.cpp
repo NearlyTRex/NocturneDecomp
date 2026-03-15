@@ -29,6 +29,9 @@ CVector3f g_WeatherParticlePositions[200] = {};
 // CVector3i
 CVector3i g_TempProjectedCoord = {};
 
+// CVector3i[1000]
+CVector3i g_WaterActorTransformedVertices[1000] = {};
+
 // CWayPoint*[2000]
 CWayPoint* g_WaypointSearchQueue[2000] = {};
 
@@ -203,12 +206,6 @@ undefined1 DAT_03f98ff4 = {};
 undefined1 DAT_03f9b850 = {};
 
 // undefined4
-undefined4 DAT_03f90a88 = {};
-undefined4 DAT_03f90a8c = {};
-undefined4 DAT_03f90a90 = {};
-undefined4 DAT_03f90a94 = {};
-undefined4 DAT_03f90a98 = {};
-undefined4 DAT_03f90a9c = {};
 undefined4 g_FreeListHeadPointer = {};
 undefined4 DAT_03f9b210 = {};
 

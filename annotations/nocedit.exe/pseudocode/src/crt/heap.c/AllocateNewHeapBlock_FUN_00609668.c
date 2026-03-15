@@ -15,10 +15,10 @@ int __cdecl AllocateNewHeapBlock(uint size)
   HeapBlock *pHVar2;
   int iVar3;
   
-  if (0x00000001 == 0) {
+  if (INT_006854f0 == 0) {
     return 0;
   }
-  if (DAT_00684fd0 == -2) {
+  if (INT_00684fd0 == -2) {
     return 0;
   }
   new_block = CalculateHeapBlockSize(&size);

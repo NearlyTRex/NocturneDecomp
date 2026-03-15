@@ -16,8 +16,8 @@
 ;   core_inv.cpp_CInventory_save_FUN_004ff210 at 004ff372
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0066e176
-;   undefined4 DAT_0066e177
+;   char[2] g_PropertyNamePrefixMinusTwo
+;   undefined4 g_PropertyNamePrefixMinusTwo+1
 ;   char[104] g_PropertyNamePrefix
 ;   undefined4 g_PropertyNamePrefix+1
 ;
@@ -48,7 +48,7 @@ section .text
     MOV DH,0x9                          ; 0040af06
     DEC EAX                             ; 0040af08
         ;   Label: LAB_0040af08
-    MOV byte ptr [EAX + 0x66e178],DH    ; 0040af09 | g_PropertyNamePrefix | DAT_0066e176 | DAT_0066e177
+    MOV byte ptr [EAX + 0x66e178],DH    ; 0040af09 | g_PropertyNamePrefix | g_PropertyNamePrefixMinusTwo | g_PropertyNamePrefixMinusTwo+1
     TEST EAX,EAX                        ; 0040af0f
     JG 0x0040af08                       ; 0040af11
         ;   XREF to: 0040af08 (CONDITIONAL_JUMP)  ; LAB_0040af08

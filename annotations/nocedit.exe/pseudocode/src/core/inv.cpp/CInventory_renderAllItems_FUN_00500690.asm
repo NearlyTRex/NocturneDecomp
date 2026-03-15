@@ -268,7 +268,7 @@ section .text
     PUSH EAX                            ; 005008fb
     PUSH 0x100                          ; 005008fc
     PUSH 0xa                            ; 00500901
-    PUSH 0x2db8c70                      ; 00500903 | CHAR_ARRAY_02db8c70
+    PUSH 0x2db8c70                      ; 00500903 | g_InventoryWrappedTextLines
     LEA EAX,[ESP + 0x520]               ; 00500908
     PUSH EAX                            ; 0050090f
     MOV ESI,dword ptr [ESP + 0x658]     ; 00500910
@@ -299,14 +299,14 @@ section .text
     TEST ESI,ESI                        ; 00500973
     JLE 0x005009c0                      ; 00500975
         ;   XREF to: 005009c0 (CONDITIONAL_JUMP)  ; LAB_005009c0
-    MOV ESI,0x2db8c70                   ; 00500977 | CHAR_ARRAY_02db8c70
+    MOV ESI,0x2db8c70                   ; 00500977 | g_InventoryWrappedTextLines
     PUSH 0x0                            ; 0050097c
         ;   Label: LAB_0050097c
     PUSH 0xf8                           ; 0050097e
     PUSH EBX                            ; 00500983
     MOV EAX,dword ptr [ESP + 0x668]     ; 00500984
     PUSH EAX                            ; 0050098b
-    PUSH ESI                            ; 0050098c | CHAR_ARRAY_02db8c70 | DAT_02db8d70
+    PUSH ESI                            ; 0050098c | g_InventoryWrappedTextLines | DAT_02db8d70
     MOV EDX,dword ptr [ESP + 0x674]     ; 0050098d
     PUSH EDX                            ; 00500994
     INC EDI                             ; 00500995
@@ -490,7 +490,7 @@ section .text
     PUSH EAX                            ; 00500bde
     PUSH 0x100                          ; 00500bdf
     PUSH 0xa                            ; 00500be4
-    PUSH 0x2db9670                      ; 00500be6 | DAT_02db9670
+    PUSH 0x2db9670                      ; 00500be6 | g_InventoryWrappedTextLines2
     LEA EAX,[ESP + 0x120]               ; 00500beb
     PUSH EAX                            ; 00500bf2
     MOV ECX,dword ptr [ESP + 0x658]     ; 00500bf3
@@ -520,14 +520,14 @@ section .text
     TEST EDX,EDX                        ; 00500c59
     JLE 0x00500ca0                      ; 00500c5b
         ;   XREF to: 00500ca0 (CONDITIONAL_JUMP)  ; LAB_00500ca0
-    MOV EBX,0x2db9670                   ; 00500c5d | DAT_02db9670
+    MOV EBX,0x2db9670                   ; 00500c5d | g_InventoryWrappedTextLines2
     PUSH 0x0                            ; 00500c62
         ;   Label: LAB_00500c62
     PUSH 0xf8                           ; 00500c64
     PUSH EDI                            ; 00500c69
     MOV ECX,dword ptr [ESP + 0x65c]     ; 00500c6a
     PUSH ECX                            ; 00500c71
-    PUSH EBX                            ; 00500c72 | DAT_02db9670 | DAT_02db9770
+    PUSH EBX                            ; 00500c72 | g_InventoryWrappedTextLines2 | DAT_02db9770
     MOV EAX,dword ptr [ESP + 0x678]     ; 00500c73
     PUSH EAX                            ; 00500c7a
     INC ESI                             ; 00500c7b
@@ -747,7 +747,7 @@ section .text
     PUSH 0x100                          ; 00500f2a
     PUSH 0xa                            ; 00500f2f
     MOV EAX,dword ptr [EBP + 0x14]      ; 00500f31
-    PUSH 0x2dba070                      ; 00500f34 | CHAR_ARRAY_02dba070
+    PUSH 0x2dba070                      ; 00500f34 | g_InventoryWrappedTextLines3
     ADD EAX,0x34c                       ; 00500f39
     PUSH EAX                            ; 00500f3e
     MOV EDI,dword ptr [ESP + 0x684]     ; 00500f3f
@@ -780,13 +780,13 @@ section .text
     TEST ESI,ESI                        ; 00500f99
     JLE 0x00500fe0                      ; 00500f9b
         ;   XREF to: 00500fe0 (CONDITIONAL_JUMP)  ; LAB_00500fe0
-    MOV ESI,0x2dba070                   ; 00500f9d | CHAR_ARRAY_02dba070
+    MOV ESI,0x2dba070                   ; 00500f9d | g_InventoryWrappedTextLines3
     PUSH 0x0                            ; 00500fa2
         ;   Label: LAB_00500fa2
     PUSH 0xf8                           ; 00500fa4
     PUSH EDI                            ; 00500fa9
     PUSH 0x4                            ; 00500faa
-    PUSH ESI                            ; 00500fac | CHAR_ARRAY_02dba070 | DAT_02dba170
+    PUSH ESI                            ; 00500fac | g_InventoryWrappedTextLines3 | DAT_02dba170
     MOV EAX,dword ptr [ESP + 0x684]     ; 00500fad
     PUSH EAX                            ; 00500fb4
     INC EBX                             ; 00500fb5

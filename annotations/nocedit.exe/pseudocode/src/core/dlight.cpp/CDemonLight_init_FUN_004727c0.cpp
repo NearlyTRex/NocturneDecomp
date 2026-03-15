@@ -36,7 +36,7 @@ void __cdecl core_dlight_cpp_CDemonLight_init_FUN_004727c0(CDemonLight *this_ptr
   fVar1 = (float)7;
   this_ptr->lightmap_visibility_bits = puVar3;
   core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
-            (this_ptr,(&g_GlobalFilters)[(int)ROUND(ROUND(this_ptr->volumetric_intensity * fVar1))],
-             0,0,0);
+            (this_ptr,g_GlobalFilters[(int)ROUND(ROUND(this_ptr->volumetric_intensity * fVar1))],0,0
+             ,0);
   return;
 }

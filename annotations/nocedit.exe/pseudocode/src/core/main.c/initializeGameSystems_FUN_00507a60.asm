@@ -276,7 +276,7 @@ section .text
         ;   XREF to: 00507cd8 (CONDITIONAL_JUMP)  ; LAB_00507cd8
     POP EDI                             ; 00507cf0
         ;   Label: LAB_00507cf0
-    MOV ESI,0x635428                    ; 00507cf1 | DAT_00635428
+    MOV ESI,0x635428                    ; 00507cf1 | = "\n"
     LEA EDI,[ESP + 0x200]               ; 00507cf6
     PUSH EDI                            ; 00507cfd
     SUB ECX,ECX                         ; 00507cfe
@@ -284,7 +284,7 @@ section .text
     MOV AL,0x0                          ; 00507d01
     SCASB.REPNE ES:EDI                  ; 00507d03
     DEC EDI                             ; 00507d05
-    MOV AL,byte ptr [ESI]               ; 00507d06 | DAT_00635428 | = "Nocturne requires at least 64MB of sy..."
+    MOV AL,byte ptr [ESI]               ; 00507d06 | = "\n" | s_Nocturne_requires_at_lea_0063542a
         ;   Label: LAB_00507d06
     MOV byte ptr [EDI],AL               ; 00507d08
     CMP AL,0x0                          ; 00507d0a
@@ -326,7 +326,7 @@ section .text
         ;   XREF to: 00507d3e (CONDITIONAL_JUMP)  ; LAB_00507d3e
     POP EDI                             ; 00507d56
         ;   Label: LAB_00507d56
-    MOV ESI,0x635459                    ; 00507d57 | DAT_00635459
+    MOV ESI,0x635459                    ; 00507d57 | = "\n"
     LEA EDI,[ESP + 0x200]               ; 00507d5c
     PUSH EDI                            ; 00507d63
     SUB ECX,ECX                         ; 00507d64
@@ -334,7 +334,7 @@ section .text
     MOV AL,0x0                          ; 00507d67
     SCASB.REPNE ES:EDI                  ; 00507d69
     DEC EDI                             ; 00507d6b
-    MOV AL,byte ptr [ESI]               ; 00507d6c | DAT_00635459 | = "If you think you have at least 64MB o..."
+    MOV AL,byte ptr [ESI]               ; 00507d6c | = "\n" | s_If_you_think_you_have_at_0063545b
         ;   Label: LAB_00507d6c
     MOV byte ptr [EDI],AL               ; 00507d6e
     CMP AL,0x0                          ; 00507d70
@@ -376,7 +376,7 @@ section .text
         ;   XREF to: 00507da4 (CONDITIONAL_JUMP)  ; LAB_00507da4
     POP EDI                             ; 00507dbc
         ;   Label: LAB_00507dbc
-    MOV ESI,0x63548d                    ; 00507dbd | DAT_0063548d
+    MOV ESI,0x63548d                    ; 00507dbd | = "\n"
     LEA EDI,[ESP + 0x200]               ; 00507dc2
     PUSH EDI                            ; 00507dc9
     SUB ECX,ECX                         ; 00507dca
@@ -384,7 +384,7 @@ section .text
     MOV AL,0x0                          ; 00507dcd
     SCASB.REPNE ES:EDI                  ; 00507dcf
     DEC EDI                             ; 00507dd1
-    MOV AL,byte ptr [ESI]               ; 00507dd2 | DAT_0063548d | = "then ignore this message."
+    MOV AL,byte ptr [ESI]               ; 00507dd2 | = "\n" | s_then_ignore_this_message_0063548f
         ;   Label: LAB_00507dd2
     MOV byte ptr [EDI],AL               ; 00507dd4
     CMP AL,0x0                          ; 00507dd6
@@ -426,7 +426,7 @@ section .text
         ;   XREF to: 00507e0a (CONDITIONAL_JUMP)  ; LAB_00507e0a
     POP EDI                             ; 00507e22
         ;   Label: LAB_00507e22
-    MOV ESI,0x6354a9                    ; 00507e23 | DAT_006354a9
+    MOV ESI,0x6354a9                    ; 00507e23 | = "\n"
     LEA EDI,[ESP + 0x200]               ; 00507e28
     PUSH EDI                            ; 00507e2f
     SUB ECX,ECX                         ; 00507e30
@@ -434,7 +434,7 @@ section .text
     MOV AL,0x0                          ; 00507e33
     SCASB.REPNE ES:EDI                  ; 00507e35
     DEC EDI                             ; 00507e37
-    MOV AL,byte ptr [ESI]               ; 00507e38 | DAT_006354a9 | = "See README.TXT for more information."
+    MOV AL,byte ptr [ESI]               ; 00507e38 | = "\n" | s_See_README_TXT_for_more__006354ab
         ;   Label: LAB_00507e38
     MOV byte ptr [EDI],AL               ; 00507e3a
     CMP AL,0x0                          ; 00507e3c
@@ -569,7 +569,7 @@ section .text
         ;   XREF to: 00507f47 (CONDITIONAL_JUMP)  ; LAB_00507f47
     POP EDI                             ; 00507f5f
         ;   Label: LAB_00507f5f
-    MOV ESI,0x635507                    ; 00507f60 | DAT_00635507
+    MOV ESI,0x635507                    ; 00507f60 | = "\n"
     MOV EDI,ESP                         ; 00507f65
     PUSH EDI                            ; 00507f67
     SUB ECX,ECX                         ; 00507f68
@@ -577,7 +577,7 @@ section .text
     MOV AL,0x0                          ; 00507f6b
     SCASB.REPNE ES:EDI                  ; 00507f6d
     DEC EDI                             ; 00507f6f
-    MOV AL,byte ptr [ESI]               ; 00507f70 | DAT_00635507 | = "Nocturne runs best with at least 200M..."
+    MOV AL,byte ptr [ESI]               ; 00507f70 | = "\n" | s_Nocturne_runs_best_with__00635509
         ;   Label: LAB_00507f70
     MOV byte ptr [EDI],AL               ; 00507f72
     CMP AL,0x0                          ; 00507f74
@@ -619,7 +619,7 @@ section .text
         ;   XREF to: 00507fa3 (CONDITIONAL_JUMP)  ; LAB_00507fa3
     POP EDI                             ; 00507fbb
         ;   Label: LAB_00507fbb
-    MOV ESI,0x635536                    ; 00507fbc | DAT_00635536
+    MOV ESI,0x635536                    ; 00507fbc | = "\n"
     MOV EDI,ESP                         ; 00507fc1
     PUSH EDI                            ; 00507fc3
     SUB ECX,ECX                         ; 00507fc4
@@ -627,7 +627,7 @@ section .text
     MOV AL,0x0                          ; 00507fc7
     SCASB.REPNE ES:EDI                  ; 00507fc9
     DEC EDI                             ; 00507fcb
-    MOV AL,byte ptr [ESI]               ; 00507fcc | DAT_00635536 | = "See README.TXT for more information."
+    MOV AL,byte ptr [ESI]               ; 00507fcc | = "\n" | s_See_README_TXT_for_more__00635538
         ;   Label: LAB_00507fcc
     MOV byte ptr [EDI],AL               ; 00507fce
     CMP AL,0x0                          ; 00507fd0

@@ -9,7 +9,7 @@
 ; undefined4[4]    Stack[-0x10]:16  local_10
 ;
 ; Referenced Globals:
-;   GUID DAT_00681df0
+;   GUID GUID_00681df0
 ;   IKsPropertySet* g_DirectSoundPropertySet
 ;
 ; *****************************************************************************
@@ -41,7 +41,7 @@ section .text
     PUSH 0x0                            ; 005b037a
     PUSH 0x0                            ; 005b037c
     PUSH 0x0                            ; 005b037e
-    PUSH 0x681df0                       ; 005b0380 | DAT_00681df0
+    PUSH 0x681df0                       ; 005b0380 | GUID_00681df0
     PUSH EAX                            ; 005b0385
     CALL dword ptr [ECX + 0x10]         ; 005b0386
     ADD ESP,0x10                        ; 005b0389

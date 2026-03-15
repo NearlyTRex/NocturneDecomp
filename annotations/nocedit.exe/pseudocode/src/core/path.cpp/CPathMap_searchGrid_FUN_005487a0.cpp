@@ -106,10 +106,10 @@ uint __cdecl core_path_cpp_CPathMap_searchGrid_FUN_005487a0(CPathMap *this_ptr,i
           g_PathfindingQueueTail = 0;
         }
       }
-      if (((0 < grid_x) && ((&DAT_030d2857)[grid_z * 100 + grid_x] == '\0')) &&
+      if (((0 < grid_x) && ((&g_PathfindingVisitedMinus1)[grid_z * 100 + grid_x] == '\0')) &&
          (uVar7 = iVar4 - current_height >> 0x1f,
          (int)((iVar4 - current_height ^ uVar7) - uVar7) < g_PathfindingMaxClimbHeight)) {
-        (&DAT_030d2857)[grid_x + grid_z * 100] = 4;
+        (&g_PathfindingVisitedMinus1)[grid_x + grid_z * 100] = '\x04';
         g_PathfindingNodesExpanded = g_PathfindingNodesExpanded + 1;
         g_PathfindingQueue[g_PathfindingQueueTail].x = grid_x + -1;
         iVar8 = g_PathfindingQueueTail + 1;

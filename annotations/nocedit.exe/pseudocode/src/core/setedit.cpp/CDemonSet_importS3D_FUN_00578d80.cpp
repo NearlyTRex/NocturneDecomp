@@ -249,16 +249,16 @@ LAB_005797bd:
           }
           uVar4 = 0xffffffff;
 LAB_0057981a:
-          *(uint *)((int)&DAT_03364d18 + iVar6) = uVar4;
+          *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;
           if ((int)uVar4 < 0) {
             file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                              (local_6a8,(char *)0x0,"a+t","..\\core\\setedit.cpp",0x4e1
                              );
             if (file == (_FILE *)0x0) {
-              if (DAT_03365cb8 == 0) {
+              if (INT_03365cb8 == 0) {
                 shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                           (g_CEditorToolsPtr,"Warning: Can't create/append %s",local_6a8);
-                DAT_03365cb8 = 1;
+                INT_03365cb8 = 1;
               }
             }
             else {
@@ -268,7 +268,7 @@ LAB_0057981a:
               _fprintf(file,"%s, %s\n",local_3a0,pcVar13);
               shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x4eb);
             }
-            *(uint *)((int)&DAT_03364d18 + iVar6) = 0;
+            *(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;
             core_setedit_cpp_addGroundType_FUN_00578290(local_5a4,0);
             local_30 = 1;
           }
@@ -623,7 +623,7 @@ LAB_0057a07e:
         }
         triangle_flags = '\0';
         if (-1 < local_18) {
-          triangle_flags = (uchar)(&DAT_03364d18)[local_18];
+          triangle_flags = (uchar)g_S3DTextureGroundTypes[local_18];
         }
         core_dtrace_cpp_CDemonRaytrace_addTriangle_FUN_00495100
                   (&g_CDemonRaytraceInstance,(CVector3f *)(local_38 + local_88 * 3),

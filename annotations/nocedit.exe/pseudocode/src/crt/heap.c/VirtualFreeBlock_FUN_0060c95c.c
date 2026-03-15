@@ -18,7 +18,7 @@ int __cdecl VirtualFreeBlock(HeapBlock *block)
     if ((block == (HeapBlock *)g_SecondaryHeap) &&
        (g_SecondaryHeap = (Heap *)pHVar1, pHVar1 == (HeapBlock *)0x0)) {
       g_SecondaryHeap = g_MainHeap;
-      DAT_00684edc = 0;
+      INT_00684edc = 0;
     }
     if (block == DAT_03f9b210) {
       DAT_03f9b210 = (HeapBlock *)((uint)block ^ (uint)DAT_03f9b210);

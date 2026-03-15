@@ -23,9 +23,9 @@
 ;   TerminatedCString s_s_0063095a
 ;   TerminatedCString s_core_inv_cpp_00630967
 ;   TerminatedCString s_CInventory_load_Can_t_fi_00630977
-;   undefined4 DAT_0067ce48
+;   char[104] g_DefaultInventoryKey
 ;   undefined4 DAT_0067ce4c
-;   undefined4 DAT_0067ceb0
+;   char[100] g_DefaultInventoryValue
 ;   undefined4 DAT_0067ceb4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   char* g_CurrentFilename
@@ -141,18 +141,18 @@ section .text
         ;   Label: LAB_004ff50b
     LEA EDI,[ESP + 0x100]               ; 004ff510
     LEA EAX,[ESP + 0x164]               ; 004ff517
-    MOV ESI,0x67ce48                    ; 004ff51e | DAT_0067ce48
+    MOV ESI,0x67ce48                    ; 004ff51e | g_DefaultInventoryKey
     PUSH EAX                            ; 004ff523
     LEA EAX,[ESP + 0x104]               ; 004ff524
-    MOVSD.REP ES:EDI,ESI                ; 004ff52b | DAT_0067ce48 | DAT_0067ce4c
+    MOVSD.REP ES:EDI,ESI                ; 004ff52b | g_DefaultInventoryKey | DAT_0067ce4c
     PUSH EAX                            ; 004ff52d
     MOV ECX,0x19                        ; 004ff52e
     LEA EDI,[ESP + 0x16c]               ; 004ff533
     PUSH 0x63095a                       ; 004ff53a | = " %s \"%[^\"]\"\n"
     MOV EAX,dword ptr [ESP + 0x1f0]     ; 004ff53f
-    MOV ESI,0x67ceb0                    ; 004ff546 | DAT_0067ceb0
+    MOV ESI,0x67ceb0                    ; 004ff546 | g_DefaultInventoryValue
     PUSH EAX                            ; 004ff54b
-    MOVSD.REP ES:EDI,ESI                ; 004ff54c | DAT_0067ceb0 | DAT_0067ceb4
+    MOVSD.REP ES:EDI,ESI                ; 004ff54c | g_DefaultInventoryValue | DAT_0067ceb4
     CALL crt_stdio.c_fscanf_FUN_005fe7c0 ; 004ff54e
         ;   XREF to: 005fe7c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_005fe7c0(_FILE * file, char * format)
     MOV ESI,dword ptr [0x0067d550]      ; 004ff553 | g_CDemonMissionPtr

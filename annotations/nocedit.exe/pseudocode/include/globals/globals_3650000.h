@@ -38,9 +38,8 @@ extern char g_ThumbnailPalette[768];
 // int
 extern int g_GroundTextureCount;
 
-// undefined4
-extern undefined4 DAT_03659388;
-extern undefined4 DAT_0365938c;
+// int[250]
+extern int g_CameraFogEnabledFlags[250];
 
 // void*
 extern void* g_CameraDepthData;

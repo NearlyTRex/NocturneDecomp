@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   VIRTUAL_ALLOC_FUNC* g_VirtualAllocFunc = 00212296
-;   undefined4 DAT_00684fd0
-;   undefined4 DAT_006854f0
+;   int INT_00684fd0 = 0x0
+;   int INT_006854f0 = 0x1
 ;
 ; Called Functions:
 ;   crt_heap.c_CalculateHeapBlockSize_FUN_0060972c
@@ -28,7 +28,7 @@ section .text
         ;   Label: crt_heap.c_AllocateNewHeapBlock_FUN_00609668
     PUSH ESI                            ; 00609669
     PUSH EDI                            ; 0060966a
-    CMP dword ptr [0x006854f0],0x0      ; 0060966b | DAT_006854f0
+    CMP dword ptr [0x006854f0],0x0      ; 0060966b | INT_006854f0
     JNZ 0x0060967a                      ; 00609672
         ;   XREF to: 0060967a (CONDITIONAL_JUMP)  ; LAB_0060967a
     XOR EAX,EAX                         ; 00609674
@@ -36,7 +36,7 @@ section .text
     POP ESI                             ; 00609677
     POP EBX                             ; 00609678
     RET                                 ; 00609679
-    CMP dword ptr [0x00684fd0],-0x2     ; 0060967a | DAT_00684fd0
+    CMP dword ptr [0x00684fd0],-0x2     ; 0060967a | INT_00684fd0
         ;   Label: LAB_0060967a
     JNZ 0x00609689                      ; 00609681
         ;   XREF to: 00609689 (CONDITIONAL_JUMP)  ; LAB_00609689

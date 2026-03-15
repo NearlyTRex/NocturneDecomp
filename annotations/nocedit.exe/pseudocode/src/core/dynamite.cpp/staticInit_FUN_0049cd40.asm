@@ -8,9 +8,9 @@
 ;   TerminatedCString s_CDynamite_00622e62
 ;   int g_CDynamiteClassVersion = 0x1
 ;   CDemonActorType g_CDynamiteClassInfo
-;   int DAT_02ceed24
-;   int DAT_02ceed28
-;   int DAT_02ceed2c
+;   CVector3f CVector3f_02ceed24
+;   undefined4 CVector3f_02ceed24.y
+;   undefined4 CVector3f_02ceed24.z
 ;   CDemonActorType g_CWeaponClassInfo
 ;
 ; Called Functions:
@@ -32,8 +32,8 @@ section .text
     MOV ECX,0xc2000000                  ; 0049cd60
     XOR EDX,EDX                         ; 0049cd65
     ADD ESP,0x18                        ; 0049cd67
-    MOV dword ptr [0x02ceed24],EDX      ; 0049cd6a | DAT_02ceed24
-    MOV dword ptr [0x02ceed28],ECX      ; 0049cd70 | DAT_02ceed28
-    MOV dword ptr [0x02ceed2c],EDX      ; 0049cd76 | DAT_02ceed2c
+    MOV dword ptr [0x02ceed24],EDX      ; 0049cd6a | CVector3f_02ceed24
+    MOV dword ptr [0x02ceed28],ECX      ; 0049cd70 | CVector3f_02ceed24.y
+    MOV dword ptr [0x02ceed2c],EDX      ; 0049cd76 | CVector3f_02ceed24.z
     RET                                 ; 0049cd7c
 

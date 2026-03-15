@@ -513,7 +513,7 @@ crt_startup.c_PlaceholderStub_FUN_0060ca80,0060ca80,crt/startup.c,4,1,special_cr
 crt_startup.c_HandleRuntimeError_FUN_00606660,00606660,crt/startup.c,10,3,register_param|special_crt_function,50
 crt_startup.c_FUN_0060d230,0060d230,crt/startup.c,62,4,special_crt_function|undefined_data,112
 crt_exit.c_ProcessExitHandlers_FUN_0060ac88,0060ac88,crt/exit.c,25,2,pointer_cast|special_crt_function,55
-crt_exit.c_FinalExitHandler_FUN_0060b560,0060b560,crt/exit.c,11,7,special_crt_function|unaffected_reg|undefined_data|unresolved_funcptr|warning_noreturn,106
+crt_exit.c_FinalExitHandler_FUN_0060b560,0060b560,crt/exit.c,11,4,special_crt_function|unaffected_reg|warning_noreturn,66
 crt_exit.c_ExitProcess_FUN_00602700,00602700,crt/exit.c,14,2,special_crt_function|unresolved_funcptr,44
 crt_exit.c_ExitHookStub_FUN_0060b530,0060b530,crt/exit.c,4,1,special_crt_function,19
 crt_stack.c___STK_FUN_005ff9f3,005ff9f3,crt/stack.c,7,1,special_crt_function,22
@@ -680,22 +680,22 @@ crt_exception.c_RemoveExceptionHandler_FUN_0060abf4,0060abf4,crt/exception.c,12,
 crt_exception.c_ExceptionHandler_FUN_0060a9d8,0060a9d8,crt/exception.c,95,2,special_crt_function|warning_unreachable,125
 crt_exception.c_FormatHexString_FUN_0060a748,0060a748,crt/exception.c,32,1,special_crt_function,47
 crt_exception.c_TopLevelExceptionFilter_FUN_0060a7a4,0060a7a4,crt/exception.c,128,1,special_crt_function,143
-crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0,00601ce0,crt/heap.c,43,21,pointer_cast|register_param|special_crt_function|undefined_data,273
+crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0,00601ce0,crt/heap.c,43,19,pointer_cast|register_param|special_crt_function|undefined_data,253
 crt_heap.c_UnlinkAndFreeBlock_FUN_0060c9bc,0060c9bc,crt/heap.c,22,1,special_crt_function,37
 crt_heap.c_AllocateFromFreeList_FUN_00609410,00609410,crt/heap.c,58,16,pointer_cast|special_crt_function|unaffected_reg,233
 crt_heap.c_GetBlockSize_FUN_00609790,00609790,crt/heap.c,4,2,pointer_cast|special_crt_function,34
 crt_heap.c_CalculateHeapBlockSize_FUN_0060972c,0060972c,crt/heap.c,23,1,special_crt_function,38
 crt_heap.c_InsertHeapBlockInOrder_FUN_006095f0,006095f0,crt/heap.c,41,2,negative_offset|special_crt_function,71
 crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0,006094c0,crt/heap.c,96,6,decompiler_intrinsic|param_count_too_many|pointer_cast|special_crt_function,176
-crt_heap.c_VirtualFreeBlock_FUN_0060c95c,0060c95c,crt/heap.c,19,5,special_crt_function|undefined_data,79
+crt_heap.c_VirtualFreeBlock_FUN_0060c95c,0060c95c,crt/heap.c,19,4,special_crt_function|undefined_data,69
 crt_heap.c__heapwalk_FUN_006012c0,006012c0,crt/heap.c,6,1,special_crt_function,21
 crt_heap.c_AllocatorFallbackStub_FUN_00609780,00609780,crt/heap.c,4,1,special_crt_function,19
 crt_heap.c_heapWalk_FUN_006012d0,006012d0,crt/heap.c,47,5,pointer_cast|register_param|special_crt_function,112
 crt_heap.c_ResizeBlockInPlace_FUN_006097b8,006097b8,crt/heap.c,99,37,negative_offset|param_count_too_few|pointer_cast|register_param|special_crt_function|stack_param|undefined_data,504
 crt_heap.c_CompactHeapBlocks_FUN_0060c920,0060c920,crt/heap.c,15,1,special_crt_function,30
 crt_heap.c_SystemAllocWrapper_FUN_00609718,00609718,crt/heap.c,7,1,special_crt_function,22
-crt_heap.c_AllocateNewHeapBlock_FUN_00609668,00609668,crt/heap.c,39,2,special_crt_function|undefined_data,69
-crt_heap.c_InternalHeapAlloc_FUN_00601bc0,00601bc0,crt/heap.c,57,9,register_param|special_crt_function|undefined_data,162
+crt_heap.c_AllocateNewHeapBlock_FUN_00609668,00609668,crt/heap.c,39,1,special_crt_function,54
+crt_heap.c_InternalHeapAlloc_FUN_00601bc0,00601bc0,crt/heap.c,57,4,register_param|special_crt_function|undefined_data,112
 crt_heap.c_heapCheck_FUN_00601374,00601374,crt/heap.c,8,1,special_crt_function,23
 crt_heap.c_TryResizeInPlace_FUN_00609974,00609974,crt/heap.c,16,6,decompiler_intrinsic|fnstsw_flag_artifact|register_param|special_crt_function,96
 crt_environ.c_staticInit_FUN_0060c650,0060c650,crt/environ.c,62,1,special_crt_function,77
@@ -732,7 +732,7 @@ crt_stdio.c_formatTwoDigits_FUN_006002a0,006002a0,crt/stdio.c,7,1,special_crt_fu
 crt_stdio.c_OpenModeStringParser_FUN_006017d0,006017d0,crt/stdio.c,104,1,special_crt_function,119
 crt_stdio.c_FloatingPointStub_FUN_00603160,00603160,crt/stdio.c,6,1,special_crt_function,21
 crt_stdio.c_IsRelevantKeyEvent_FUN_0060cd90,0060cd90,crt/stdio.c,9,1,special_crt_function,24
-crt_stdio.c_CreateFileImpl_FUN_006090a0,006090a0,crt/stdio.c,115,11,special_crt_function|stack_ref|unaffected_reg|undefined_data|unresolved_funcptr,250
+crt_stdio.c_CreateFileImpl_FUN_006090a0,006090a0,crt/stdio.c,115,10,special_crt_function|stack_ref|unaffected_reg|undefined_data|unresolved_funcptr,240
 crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30,0060ad30,crt/stdio.c,5,2,param_count_too_few|special_crt_function,35
 crt_stdio.c_stream_setup_FUN_00605f20,00605f20,crt/stdio.c,26,8,pointer_cast|special_crt_function|unaffected_reg,121
 crt_stdio.c_FormatFixedPoint_FUN_0060305c,0060305c,crt/stdio.c,83,3,special_crt_function|unknown_field,123
@@ -813,7 +813,7 @@ crt_iostream.cpp_ios_dtor_FUN_0060632c,0060632c,crt/iostream.cpp,17,1,special_cr
 crt_iostream.cpp_streambuf_setbuf_FUN_0060d5ff,0060d5ff,crt/iostream.cpp,20,2,pointer_cast|special_crt_function,50
 crt_iostream.cpp_doallocate_FUN_0060d677,0060d677,crt/iostream.cpp,10,2,pointer_cast|special_crt_function,40
 crt_iostream.cpp_streambuf_ctor_FUN_0060b7c2,0060b7c2,crt/iostream.cpp,15,1,special_crt_function,30
-crt_iostream.cpp_istream_ctor_FUN_00606376,00606376,crt/iostream.cpp,22,3,negative_offset|special_crt_function|undefined_data,67
+crt_iostream.cpp_istream_ctor_FUN_00606376,00606376,crt/iostream.cpp,22,2,negative_offset|special_crt_function,52
 crt_iostream.cpp_istream_get_FUN_005ff245,005ff245,crt/iostream.cpp,32,2,special_crt_function|unresolved_funcptr,62
 crt_iostream.cpp_ostream_ctor_FUN_006061a2,006061a2,crt/iostream.cpp,17,3,negative_offset|special_crt_function|undefined_data,62
 crt_iostream.cpp_ostream_put_FUN_005ff2d7,005ff2d7,crt/iostream.cpp,40,2,special_crt_function|unresolved_funcptr,70
@@ -838,7 +838,7 @@ crt_env.c_getenv_FUN_006013f0,006013f0,crt/env.c,28,1,special_crt_function,43
 crt_env.c_putenv_internal_FUN_0060ee80,0060ee80,crt/env.c,100,1,special_crt_function,115
 crt_env.c_updateEnvironTable_FUN_0060f04c,0060f04c,crt/env.c,93,11,pointer_cast|register_param|special_crt_function,218
 crt_env.c_findEnvVar_FUN_0060f1f0,0060f1f0,crt/env.c,65,1,special_crt_function,80
-crt_fpu.c_staticInit_FUN_006047e0,006047e0,crt/fpu.c,13,2,special_crt_function|undefined_data,43
+crt_fpu.c_staticInit_FUN_006047e0,006047e0,crt/fpu.c,13,1,special_crt_function,28
 crt_fpu.c_ClearFPUExceptions_FUN_0060ce50,0060ce50,crt/fpu.c,4,1,special_crt_function,19
 crt_strstream.cpp_strstreambase_destructor_thunk_FUN_0060618a,0060618a,crt/strstream.cpp,6,3,negative_offset|pointer_cast|special_crt_function,51
 crt_strstream.cpp_istrstream_ctor_FUN_005ff524,005ff524,crt/strstream.cpp,23,4,negative_offset|pointer_cast|special_crt_function,78
@@ -852,7 +852,7 @@ crt_strstream.cpp_strstreambuf_overflow_FUN_0060b9bd,0060b9bd,crt/strstream.cpp,
 crt_strstream.cpp_ostrstream_tellp_FUN_005ff45d,005ff45d,crt/strstream.cpp,10,4,pointer_cast|special_crt_function|unresolved_funcptr,65
 crt_strstream.cpp_strstreambuf_setbuf_FUN_0060ba70,0060ba70,crt/strstream.cpp,7,1,special_crt_function,22
 crt_strstream.cpp_strstreambase_dtor_FUN_006062a6,006062a6,crt/strstream.cpp,32,3,negative_offset|special_crt_function,72
-crt_strstream.cpp_ostrstream_ctor_FUN_005ff384,005ff384,crt/strstream.cpp,49,11,negative_offset|pointer_cast|special_crt_function|undefined_data,179
+crt_strstream.cpp_ostrstream_ctor_FUN_005ff384,005ff384,crt/strstream.cpp,49,9,negative_offset|pointer_cast|special_crt_function,154
 crt_strstream.cpp_strstreambuf_dtor_FUN_0060bb7f,0060bb7f,crt/strstream.cpp,29,1,special_crt_function,44
 crt_strstream.cpp_ostrstream_destructor_thunk_from_ios_FUN_005ff445,005ff445,crt/strstream.cpp,6,3,negative_offset|pointer_cast|special_crt_function,51
 crt_strstream.cpp_strstreambuf_init_FUN_0060b815,0060b815,crt/strstream.cpp,59,1,special_crt_function,74
@@ -1330,7 +1330,7 @@ engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0,004046c0,engine/3d.c,
 engine_3d.c_renderPolygonDepthWriteTextured_FUN_00405960,00405960,engine/3d.c,25,0,,25
 engine_3d.c_renderPolygonLitDetailed_FUN_00406a20,00406a20,engine/3d.c,45,2,pointer_cast,70
 engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290,00407290,engine/3d.c,94,5,pointer_cast,149
-engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430,00406430,engine/3d.c,108,2,pointer_cast|undefined_data,138
+engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430,00406430,engine/3d.c,108,1,pointer_cast,123
 engine_3d.c_renderPolygon_FUN_00403ba0,00403ba0,engine/3d.c,45,0,,45
 engine_3d.c_renderPolygonDepthWriteTexturedAdvanced_FUN_00405e20,00405e20,engine/3d.c,25,0,,25
 engine_3d.c_renderPolygonSpecialEffectsAdvanced_FUN_00406f20,00406f20,engine/3d.c,51,0,,51
@@ -1361,7 +1361,7 @@ engine_3d.c_renderPolygonVertexLitNormalized_FUN_00405020,00405020,engine/3d.c,2
 engine_3d.c_oldFunction_FUN_00403740,00403740,engine/3d.c,9,0,,9
 engine_3d.c_renderPolygonUVTextureEnable_FUN_00405a00,00405a00,engine/3d.c,25,0,,25
 engine_3d.c_dispatchMRGLBlockChain_FUN_00407890,00407890,engine/3d.c,21,1,unresolved_funcptr,36
-engine_3d.c_renderPolygonLitDetailed_FUN_00404220,00404220,engine/3d.c,89,3,pointer_cast|undefined_data,129
+engine_3d.c_renderPolygonLitDetailed_FUN_00404220,00404220,engine/3d.c,89,2,pointer_cast,114
 engine_3d.c_renderPolygonLastPixelMode_FUN_004066d0,004066d0,engine/3d.c,30,0,,30
 engine_3d.c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_00407720,00407720,engine/3d.c,60,1,pointer_cast,75
 engine_3d.c_setRenderingQuality_FUN_00407880,00407880,engine/3d.c,5,0,,5
@@ -1408,7 +1408,7 @@ engine_3d.c_renderPolygonTextureNormalized_FUN_00403f20,00403f20,engine/3d.c,42,
 engine_3d.c_oldFunction_FUN_00403e00,00403e00,engine/3d.c,7,0,,7
 engine_3d.c_processVertexLighting_FUN_00403a20,00403a20,engine/3d.c,18,0,,18
 engine_3d.c_oldFunction_FUN_00404df0,00404df0,engine/3d.c,9,0,,9
-engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840,00404840,engine/3d.c,92,3,pointer_cast|undefined_data,132
+engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840,00404840,engine/3d.c,92,2,pointer_cast,117
 engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0,00403ad0,engine/3d.c,31,0,,31
 engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290,00406290,engine/3d.c,74,2,pointer_cast,99
 engine_3d.c_setVertexTextureU_FUN_00405270,00405270,engine/3d.c,15,0,,15
@@ -1619,9 +1619,9 @@ sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410,005af410,sound/snddx
 sound_snddx.cpp_isValidSampleBuffer_FUN_005af150,005af150,sound/snddx.cpp,9,0,,9
 sound_snddx.cpp_CDirectSoundDevice_close_FUN_005ae270,005ae270,sound/snddx.cpp,38,0,,38
 sound_snddx.cpp_checkDirectSoundError_FUN_005adf90,005adf90,sound/snddx.cpp,13,0,,13
-sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005b0340,005b0340,sound/snddx.cpp,11,1,undefined_data,26
+sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005b0340,005b0340,sound/snddx.cpp,11,0,,11
 sound_snddx.cpp_staticInit_FUN_005ade60,005ade60,sound/snddx.cpp,5,0,,5
-sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440,005b0440,sound/snddx.cpp,79,1,undefined_data,94
+sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440,005b0440,sound/snddx.cpp,79,0,,79
 sound_snddx.cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_005aef10,005aef10,sound/snddx.cpp,10,0,,10
 sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830,005ae830,sound/snddx.cpp,152,6,decompiler_intrinsic|unresolved_funcptr|warning_inlined_function|warning_max_restarts,232
 sound_snddx.cpp_directSoundEnumerationCallback_FUN_005b0120,005b0120,sound/snddx.cpp,87,2,pointer_cast|warning_max_restarts,117
@@ -2313,7 +2313,7 @@ core_inv.cpp_CInventory_clear_FUN_004fd0e0,004fd0e0,core/inv.cpp,24,1,warning_un
 core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0,004fffa0,core/inv.cpp,12,0,,12
 core_inv.cpp_CInventory_renderItemModel_FUN_004fee00,004fee00,core/inv.cpp,122,0,,122
 core_inv.cpp_CInventory_loadItems_FUN_004ff740,004ff740,core/inv.cpp,17,0,,17
-core_inv.cpp_drawWeaponIconBackground_FUN_00500050,00500050,core/inv.cpp,41,2,undefined_data,66
+core_inv.cpp_drawWeaponIconBackground_FUN_00500050,00500050,core/inv.cpp,41,0,,41
 core_inv.cpp_CInventory_ctor_FUN_004fd020,004fd020,core/inv.cpp,20,0,,20
 core_inv.cpp_CInventory_removeItem_FUN_004fea70,004fea70,core/inv.cpp,34,0,,34
 core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0,004fe9d0,core/inv.cpp,19,0,,19
@@ -2331,7 +2331,7 @@ core_inv.cpp_freeInventory_FUN_004fd510,004fd510,core/inv.cpp,18,0,,18
 core_inv.cpp_CInventory_saveItems_FUN_004ff3b0,004ff3b0,core/inv.cpp,19,0,,19
 core_inv.cpp_getItemDisplayName_FUN_004fcf00,004fcf00,core/inv.cpp,23,0,,23
 core_inv.cpp_CInventory_updateInventory_FUN_004ffad0,004ffad0,core/inv.cpp,108,1,suspect_float,123
-core_inv.cpp_CInventory_load_FUN_004ff400,004ff400,core/inv.cpp,111,2,undefined_data,136
+core_inv.cpp_CInventory_load_FUN_004ff400,004ff400,core/inv.cpp,111,0,,111
 core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020,00500020,core/inv.cpp,8,0,,8
 core_inv.cpp_loadItem_FUN_004fcfe0,004fcfe0,core/inv.cpp,6,0,,6
 core_inv.cpp_CInventory_selectItem_FUN_004fec10,004fec10,core/inv.cpp,58,0,,58
@@ -2343,7 +2343,7 @@ core_inv.cpp_CInventory_isWeaponInCategory_FUN_004ffe70,004ffe70,core/inv.cpp,52
 core_inv.cpp_getItemIconName_FUN_004fcf70,004fcf70,core/inv.cpp,23,0,,23
 core_inv.cpp_staticInit_FUN_004fcc30,004fcc30,core/inv.cpp,32,0,,32
 core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10,004fed10,core/inv.cpp,60,0,,60
-core_inv.cpp_CInventory_renderAllItems_FUN_00500690,00500690,core/inv.cpp,362,16,decompiler_intrinsic|undefined_data|warning_inlined_function,537
+core_inv.cpp_CInventory_renderAllItems_FUN_00500690,00500690,core/inv.cpp,364,14,decompiler_intrinsic|warning_inlined_function,514
 core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004ffff0,004ffff0,core/inv.cpp,9,0,,9
 core_inv.cpp_CInventory_hasItemOfClass_FUN_004fe9d0,004fea20,core/inv.cpp,19,0,,19
 core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570,00501570,core/inv.cpp,34,0,,34
@@ -2798,7 +2798,7 @@ core_dynamite.cpp_CDynamite_getDamage_FUN_0049cee0,0049cee0,core/dynamite.cpp,6,
 core_dynamite.cpp_CDynamite_process_FUN_0049cfb0,0049cfb0,core/dynamite.cpp,52,0,,52
 core_dynamite.cpp_CDynamite_getActorType_FUN_0049cdb0,0049cdb0,core/dynamite.cpp,4,0,,4
 core_dynamite.cpp_CDynamite_isFuseLit_FUN_0049cf70,0049cf70,core/dynamite.cpp,7,0,,7
-core_dynamite.cpp_staticInit_FUN_0049cd40,0049cd40,core/dynamite.cpp,10,3,undefined_data,45
+core_dynamite.cpp_staticInit_FUN_0049cd40,0049cd40,core/dynamite.cpp,10,0,,10
 core_dynamite.cpp_CDynamite_ctor_FUN_0049cdc0,0049cdc0,core/dynamite.cpp,22,0,,22
 core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0,005805a0,core/setedit.cpp,61,0,,61
 core_setedit.cpp_CDemonSet_save_FUN_0057a2a0,0057a2a0,core/setedit.cpp,184,0,,184
@@ -2808,7 +2808,7 @@ core_setedit.cpp_CDemonSet_deleteCamera_FUN_0057e430,0057e430,core/setedit.cpp,1
 core_setedit.cpp_CDemonSet_isPointVisibleFromCamera_FUN_005801b0,005801b0,core/setedit.cpp,48,1,pointer_cast,63
 core_setedit.cpp_showVdirBoxEditorHelp_FUN_00582f30,00582f30,core/setedit.cpp,25,0,,25
 core_setedit.cpp_CDemonSet_loadOrBuildThumbnails_FUN_00576da0,00576da0,core/setedit.cpp,175,0,,175
-core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80,00578d80,core/setedit.cpp,677,11,pointer_cast|stack_alignment_array|undefined_data,802
+core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80,00578d80,core/setedit.cpp,677,6,pointer_cast|stack_alignment_array,747
 core_setedit.cpp_CDemonSet_findVisibleCamerasAtScreenPoint_FUN_005800d0,005800d0,core/setedit.cpp,53,9,pointer_cast|stack_alignment_array,153
 core_setedit.cpp_loadGroundTypes_FUN_00578420,00578420,core/setedit.cpp,91,0,,91
 core_setedit.cpp_blitThumbnailToScreen_FUN_00577430,00577430,core/setedit.cpp,98,6,pointer_cast,163
@@ -2839,10 +2839,10 @@ core_setedit.cpp_CDemonSet_readIni_FUN_00584900,00584900,core/setedit.cpp,6,0,,6
 core_setedit.cpp_CDemonSet_addSpotLight_FUN_0057b410,0057b410,core/setedit.cpp,37,0,,37
 core_setedit.cpp_CDemonSet_showLightEditor_FUN_0057c5d0,0057c5d0,core/setedit.cpp,304,6,pointer_cast,369
 core_setedit.cpp_skipLine_FUN_00578a00,00578a00,core/setedit.cpp,11,0,,11
-core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0,00581aa0,core/setedit.cpp,447,21,stack_ref|undefined_data|unknown_field,672
+core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0,00581aa0,core/setedit.cpp,447,18,stack_ref|unknown_field,637
 core_setedit.cpp_incrementTrailingNumber_FUN_00576950,00576950,core/setedit.cpp,29,0,,29
 core_setedit.cpp_CDemonSet_buildCameraDepthData_FUN_00580310,00580310,core/setedit.cpp,79,1,pointer_cast,94
-core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730,00580730,core/setedit.cpp,381,3,pointer_cast|undefined_data,421
+core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730,00580730,core/setedit.cpp,381,1,pointer_cast,396
 core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660,0057d660,core/setedit.cpp,421,18,pointer_cast|stack_ref|unaffected_reg,616
 core_setedit.cpp_CDemonSet_importSet_FUN_00578a20,00578a20,core/setedit.cpp,74,0,,74
 core_setedit.cpp_editGroundTypes_FUN_00578630,00578630,core/setedit.cpp,122,0,,122
@@ -2900,7 +2900,7 @@ core_script.cpp_CScript_dtor_FUN_00559840,00559840,core/script.cpp,7,1,decompile
 core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0,00560de0,core/script.cpp,388,0,,388
 core_script.cpp_compareEventXRefs_FUN_005675a0,005675a0,core/script.cpp,48,2,decompiler_intrinsic,73
 core_script.cpp_CScript_editorX2Index_FUN_00566a90,00566a90,core/script.cpp,41,0,,41
-core_script.cpp_CScript_loadLineToBuffer_FUN_00566230,00566230,core/script.cpp,44,1,undefined_data,59
+core_script.cpp_CScript_loadLineToBuffer_FUN_00566230,00566230,core/script.cpp,44,0,,44
 core_script.cpp_CScript_clampCursorToView_FUN_00566880,00566880,core/script.cpp,22,0,,22
 core_script.cpp_CScript_screenToScriptPosition_FUN_00566c20,00566c20,core/script.cpp,14,0,,14
 core_script.cpp_parseConditionExpression_FUN_00561a30,00561a30,core/script.cpp,162,0,,162
@@ -3459,7 +3459,7 @@ core_actor.cpp_registerActorClass_FUN_0040c2e0,0040c2e0,core/actor.cpp,43,0,,43
 core_actor.cpp_CActorPropertyList_addInt_FUN_0040e1e0,0040e1e0,core/actor.cpp,9,2,unnamed_param,34
 core_actor.cpp_archiveFloat_FUN_0040b770,0040b770,core/actor.cpp,16,0,,16
 core_actor.cpp_crc32ProcessString_FUN_0040cf90,0040cf90,core/actor.cpp,12,0,,12
-core_actor.cpp_adjustIndentationLevel_FUN_0040aee0,0040aee0,core/actor.cpp,24,1,undefined_data,39
+core_actor.cpp_adjustIndentationLevel_FUN_0040aee0,0040aee0,core/actor.cpp,24,0,,24
 core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150,0040e150,core/actor.cpp,5,0,,5
 core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210,0040a210,core/actor.cpp,301,25,decompiler_intrinsic|stack_param|stack_ref|sub84_truncation|unknown_field|warning_inlined_function,581
 core_actor.cpp_CDemonActor_renderOpaque_FUN_00408aa0,00408aa0,core/actor.cpp,6,0,,6
@@ -3838,7 +3838,7 @@ core_fire.cpp_CSpark_process_FUN_004c0240,004c0240,core/fire.cpp,31,0,,31
 core_fire.cpp_CCrater_ctor_FUN_004c9580,004c9580,core/fire.cpp,6,1,decompiler_intrinsic,21
 core_fire.cpp_CMuzzleFlash_process_FUN_004c1a00,004c1a00,core/fire.cpp,15,0,,15
 core_fire.cpp_loadRockAssets_FUN_004c17e0,004c17e0,core/fire.cpp,4,0,,4
-core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0,004c76a0,core/fire.cpp,142,1,undefined_data,157
+core_fire.cpp_CFireEffect_createBulletImpact_FUN_004c76a0,004c76a0,core/fire.cpp,142,0,,142
 core_fire.cpp_loadGunFlameAssets_FUN_004c4d50,004c4d50,core/fire.cpp,19,0,,19
 core_fire.cpp_CLightningBolt_activateDirectional_FUN_004c5680,004c5680,core/fire.cpp,18,0,,18
 core_fire.cpp_CLightningBolt_dtor_FUN_004c9550,004c9550,core/fire.cpp,4,0,,4
@@ -3992,7 +3992,7 @@ core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0,005381e0,core/msnedit
 core_msnedit.cpp_CDemonMission_buildFilteredActorList_FUN_0053cc30,0053cc30,core/msnedit.cpp,19,0,,19
 core_msnedit.cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80,0053bc80,core/msnedit.cpp,20,0,,20
 core_msnedit.cpp_CDemonMission_selectActor_FUN_0053c140,0053c140,core/msnedit.cpp,29,0,,29
-core_msnedit.cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0,0053c4f0,core/msnedit.cpp,57,3,undefined_data,92
+core_msnedit.cpp_CDemonMission_drawPropertyPanel_FUN_0053c4f0,0053c4f0,core/msnedit.cpp,58,0,,58
 core_msnedit.cpp_CDemonMission_selectNearestActor_FUN_0053bcf0,0053bcf0,core/msnedit.cpp,27,1,decompiler_intrinsic,42
 core_msnedit.cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30,0053ca30,core/msnedit.cpp,30,0,,30
 core_msnedit.cpp_isWordSeparator_FUN_00536bc0,00536bc0,core/msnedit.cpp,8,0,,8
@@ -4005,7 +4005,7 @@ core_msnedit.cpp_getEmptyString_FUN_0053d3a0,0053d3a0,core/msnedit.cpp,4,0,,4
 core_msnedit.cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80,0053ca80,core/msnedit.cpp,27,0,,27
 core_msnedit.cpp_CDemonMission_makeOptimizedPalette_FUN_0053ccc0,0053ccc0,core/msnedit.cpp,7,0,,7
 core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0,0053d7b0,core/msnedit.cpp,30,1,pointer_cast,45
-core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730,0053c730,core/msnedit.cpp,72,4,undefined_data,117
+core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730,0053c730,core/msnedit.cpp,75,0,,75
 core_msnedit.cpp_drawMotionBar_FUN_00536e20,00536e20,core/msnedit.cpp,105,1,param_count_too_few,120
 core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0,0053d8b0,core/msnedit.cpp,174,4,pointer_cast|unresolved_funcptr,224
 core_msnedit.cpp_CDemonMission_undoActorChanges_FUN_0053c0b0,0053c0b0,core/msnedit.cpp,20,0,,20
@@ -4731,7 +4731,7 @@ core_water.cpp_CWater_process_FUN_005e9ed0,005e9ed0,core/water.cpp,4,0,,4
 core_water.cpp_calculateWaveHeight_FUN_005e9dc0,005e9dc0,core/water.cpp,7,1,decompiler_intrinsic,22
 core_water.cpp_CWater_ctor_FUN_005e9e10,005e9e10,core/water.cpp,7,0,,7
 core_water.cpp_CWater_dtor_FUN_005e9e30,005e9e30,core/water.cpp,4,0,,4
-core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70,005e9e70,core/water.cpp,140,20,decompiler_intrinsic|extra_output|undefined_data|warning_inlined_function,360
+core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70,005e9e70,core/water.cpp,139,17,decompiler_intrinsic|warning_inlined_function,319
 core_water.cpp_CWater_render_FUN_005ea320,005ea320,core/water.cpp,145,19,decompiler_intrinsic|pointer_cast,345
 core_water.cpp_staticInit_FUN_005e9da0,005e9da0,core/water.cpp,6,0,,6
 core_ladder.cpp_factoryFunc_FUN_00502500,00502500,core/ladder.cpp,10,0,,10
@@ -5029,7 +5029,7 @@ core_event.cpp_parseDamageType_FUN_004aa960,004aa960,core/event.cpp,40,0,,40
 core_event.cpp_CEventList_evaluateLogicalExpr_FUN_004b0270,004b0270,core/event.cpp,52,0,,52
 core_event.cpp_CEventList_getSfxHandle_FUN_004b0c40,004b0c40,core/event.cpp,10,0,,10
 core_event.cpp_CEventList_findTimer_FUN_004b0900,004b0900,core/event.cpp,19,0,,19
-core_event.cpp_CEventList_executeCommand_FUN_004aacc0,004aacc0,core/event.cpp,2189,9,format_string_mismatch|stack_ref|undefined_data,2294
+core_event.cpp_CEventList_executeCommand_FUN_004aacc0,004aacc0,core/event.cpp,2188,7,format_string_mismatch|stack_ref,2268
 core_event.cpp_CRuleList_remove_FUN_004b17c0,004b17c0,core/event.cpp,17,0,,17
 core_event.cpp_isCharacterSpeaking_FUN_004b1980,004b1980,core/event.cpp,7,0,,7
 core_event.cpp_parseIntOrCounter_FUN_004aa3c0,004aa3c0,core/event.cpp,12,0,,12
@@ -5186,7 +5186,7 @@ core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0,0042a2c0,core/charactr.cp
 core_charactr.cpp_CCharacter_ctor_FUN_00427e20,00427e20,core/charactr.cpp,92,70,decompiler_intrinsic,797
 core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0,00427db0,core/charactr.cpp,18,0,,18
 core_charactr.cpp_CCharacter_testDamageLine_FUN_0042c180,0042c180,core/charactr.cpp,73,4,decompiler_intrinsic|warning_inlined_function,123
-core_charactr.cpp_CCharacter_processFire_FUN_0042a830,0042a830,core/charactr.cpp,201,7,pointer_cast|undefined_data,281
+core_charactr.cpp_CCharacter_processFire_FUN_0042a830,0042a830,core/charactr.cpp,201,3,pointer_cast,236
 core_charactr.cpp_CCharacter_setWalkTarget_FUN_0042c920,0042c920,core/charactr.cpp,29,0,,29
 core_charactr.cpp_CCharacter_propertyDisplayCallback_FUN_0042f340,0042f340,core/charactr.cpp,39,0,,39
 core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042e840,0042e840,core/charactr.cpp,12,0,,12
@@ -5219,7 +5219,7 @@ core_charactr.cpp_copyFloat_FUN_0042fb00,0042fb00,core/charactr.cpp,5,0,,5
 core_charactr.cpp_CCharacter_setup_FUN_00428140,00428140,core/charactr.cpp,114,1,suspect_float,129
 core_charactr.cpp_CCharacter_clearDoorTarget_FUN_0042cd60,0042cd60,core/charactr.cpp,9,0,,9
 core_charactr.cpp_CCharacter_renderFlames_FUN_0042b110,0042b110,core/charactr.cpp,23,0,,23
-core_charactr.cpp_CCharacter_renderBurn_FUN_0042ad00,0042ad00,core/charactr.cpp,104,12,decompiler_intrinsic|pointer_cast|undefined_data|warning_inlined_function,244
+core_charactr.cpp_CCharacter_renderBurn_FUN_0042ad00,0042ad00,core/charactr.cpp,104,7,decompiler_intrinsic|pointer_cast|warning_inlined_function,189
 core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0,0042d3d0,core/charactr.cpp,33,0,,33
 core_charactr.cpp_staticInit_FUN_00427d80,00427d80,core/charactr.cpp,8,0,,8
 core_charactr.cpp_CCharacter_dismember_FUN_0042b9e0,0042b9e0,core/charactr.cpp,74,1,decompiler_intrinsic,89
@@ -5704,7 +5704,7 @@ core_path.cpp_resetAllPathMaps_FUN_00548590,00548590,core/path.cpp,22,2,pointer_
 core_path.cpp_CPathMap_ctor_FUN_00546450,00546450,core/path.cpp,17,0,,17
 core_path.cpp_renderGridQuad_FUN_00547dd0,00547dd0,core/path.cpp,60,13,decompiler_intrinsic|warning_inlined_function,200
 core_path.cpp_queuePop_FUN_005463d0,005463d0,core/path.cpp,18,0,,18
-core_path.cpp_CPathMap_searchGrid_FUN_005487a0,005487a0,core/path.cpp,117,2,undefined_data,142
+core_path.cpp_CPathMap_searchGrid_FUN_005487a0,005487a0,core/path.cpp,117,0,,117
 core_path.cpp_CPathMap_previewPathfinding_FUN_00547c00,00547c00,core/path.cpp,40,0,,40
 core_path.cpp_isPathfindingQueueEmpty_FUN_00546330,00546330,core/path.cpp,4,0,,4
 core_path.cpp_getOrCreatePathMap_FUN_00548390,00548390,core/path.cpp,71,11,pointer_cast|stack_alignment_array,191
@@ -5847,8 +5847,8 @@ core_wateract.cpp_CWaterActor_ctor_FUN_005ea8a0,005ea8a0,core/wateract.cpp,56,25
 core_wateract.cpp_CWaterActor_archive_FUN_005eb510,005eb510,core/wateract.cpp,38,0,,38
 core_wateract.cpp_CWaterActor_dtor_FUN_005ebc60,005ebc60,core/wateract.cpp,19,1,decompiler_intrinsic,34
 core_wateract.cpp_CWaterActor_updateWorldPositions_FUN_005eafa0,005eafa0,core/wateract.cpp,32,0,,32
-core_wateract.cpp_staticInit_FUN_005ea810,005ea810,core/wateract.cpp,10,2,undefined_data,35
-core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280,005eb280,core/wateract.cpp,88,11,decompiler_intrinsic|pointer_cast|undefined_data,213
+core_wateract.cpp_staticInit_FUN_005ea810,005ea810,core/wateract.cpp,10,0,,10
+core_wateract.cpp_CWaterActor_renderTransparent_FUN_005eb280,005eb280,core/wateract.cpp,88,9,decompiler_intrinsic|pointer_cast,188
 core_wateract.cpp_SWaterVertex_arrdtor_FUN_005ebcf0,005ebcf0,core/wateract.cpp,6,0,,6
 core_wateract.cpp_factoryFunc_FUN_005ea860,005ea860,core/wateract.cpp,10,0,,10
 core_wateract.cpp_CWaterActor_addFilesToExtract_FUN_005ebc50,005ebc50,core/wateract.cpp,4,0,,4
@@ -5961,7 +5961,7 @@ core_mission.cpp_CDemonMission_ctor_FUN_00524ef0,00524ef0,core/mission.cpp,4,0,,
 core_mission.cpp_CDemonMission_removeAllActors_FUN_00523f50,00523f50,core/mission.cpp,17,0,,17
 core_mission.cpp_CDemonMission_createHeros_FUN_00524a80,00524a80,core/mission.cpp,66,3,pointer_cast,101
 core_mission.cpp_CDemonMission_reset_FUN_00522c80,00522c80,core/mission.cpp,21,0,,21
-core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0,00522eb0,core/mission.cpp,253,2,undefined_data,278
+core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0,00522eb0,core/mission.cpp,253,0,,253
 core_mission.cpp_CDemonMission_load_FUN_00522d90,00522d90,core/mission.cpp,20,0,,20
 core_mission.cpp_CDemonMission_createFromSingleSet_FUN_005243a0,005243a0,core/mission.cpp,23,0,,23
 core_mission.cpp_CDemonMission_save_FUN_00522e30,00522e30,core/mission.cpp,14,0,,14
@@ -6074,7 +6074,7 @@ core_gabriela.cpp_CGabriella_processAI_FUN_004d4190,004d4190,core/gabriela.cpp,2
 core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_004d4c90,004d4c90,core/gabriela.cpp,14,0,,14
 core_gabriela.cpp_CGabriella_dtor_FUN_004d7660,004d7660,core/gabriela.cpp,18,1,decompiler_intrinsic,33
 core_gabriela.cpp_CGabriella_processDamage_FUN_004d6b30,004d6b30,core/gabriela.cpp,69,1,decompiler_intrinsic,84
-core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80,004d4d80,core/gabriela.cpp,338,55,pointer_cast|stack_alignment_array|undefined_data|unresolved_funcptr|warning_type_propagation,913
+core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80,004d4d80,core/gabriela.cpp,338,52,pointer_cast|stack_alignment_array|unresolved_funcptr|warning_type_propagation,878
 core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60,004d5c60,core/gabriela.cpp,113,7,decompiler_intrinsic|warning_type_propagation,193
 core_gabriela.cpp_CGabriella_process_FUN_004d2ea0,004d2ea0,core/gabriela.cpp,688,4,decompiler_intrinsic|pointer_cast|warning_type_propagation,743
 core_gabriela.cpp_flashlightBlendWeightCallback_FUN_004d2a30,004d2a30,core/gabriela.cpp,12,0,,12

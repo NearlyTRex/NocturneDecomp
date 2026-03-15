@@ -142,7 +142,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    pcVar10 = &0x0A;
+    pcVar10 = "\n";
     iVar9 = -1;
     pcVar8 = low_memory_message;
     do {
@@ -185,7 +185,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    pcVar10 = &0x0A;
+    pcVar10 = "\n";
     iVar9 = -1;
     pcVar8 = low_memory_message;
     do {
@@ -228,7 +228,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    pcVar10 = &0x0A;
+    pcVar10 = "\n";
     iVar9 = -1;
     pcVar8 = low_memory_message;
     do {
@@ -271,7 +271,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
       pcVar12[1] = cVar2;
       pcVar12 = pcVar12 + 2;
     } while (cVar2 != '\0');
-    pcVar10 = &0x0A;
+    pcVar10 = "\n";
     iVar9 = -1;
     pcVar8 = low_memory_message;
     do {
@@ -373,7 +373,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
       pcVar10[1] = cVar2;
       pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = &0x0A;
+    pcVar8 = "\n";
     iVar9 = -1;
     pcVar6 = acStack_728;
     do {
@@ -416,7 +416,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
       pcVar10[1] = cVar2;
       pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
-    pcVar8 = &0x0A;
+    pcVar8 = "\n";
     iVar9 = -1;
     pcVar6 = acStack_728;
     do {
@@ -496,7 +496,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   iVar11 = 0;
   do {
     fVar3 = (float)iVar9;
-    puVar1 = (uint *)((int)&g_GlobalFilters + iVar11);
+    puVar1 = (uint *)((int)g_GlobalFilters + iVar11);
     iVar11 = iVar11 + 4;
     iVar9 = iVar9 + 1;
     core_dfilter_cpp_CDemonFilter_init_FUN_004705a0
@@ -506,10 +506,10 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   iVar9 = 0;
   do {
     fVar4 = (float)iVar11;
-    **(uint **)((int)&g_PlayerFilters + iVar9) = 0x100;
+    **(uint **)((int)g_PlayerFilters + iVar9) = 0x100;
     fVar3 = (float)0.25;
-    *(uint *)(*(int *)((int)&g_PlayerFilters + iVar9) + 4) = 0x100;
-    puVar1 = (uint *)((int)&g_PlayerFilters + iVar9);
+    *(uint *)(*(int *)((int)g_PlayerFilters + iVar9) + 4) = 0x100;
+    puVar1 = (uint *)((int)g_PlayerFilters + iVar9);
     iVar9 = iVar9 + 4;
     iVar11 = iVar11 + 1;
     core_dfilter_cpp_CDemonFilter_init_FUN_004705a0

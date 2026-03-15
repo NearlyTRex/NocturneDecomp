@@ -19,16 +19,14 @@
   },
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 278,
+    "complexity_score": 253,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 39,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 253,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 832
   },
   "cross_references": [
@@ -323,8 +321,8 @@
     },
     {
       "addr": "0067d5c0",
-      "name": "DAT_0067d5c0",
-      "type": "undefined4",
+      "name": "g_DefaultMissionActorClass",
+      "type": "char[104]",
       "value": null
     },
     {
@@ -335,8 +333,8 @@
     },
     {
       "addr": "0067d628",
-      "name": "DAT_0067d628",
-      "type": "undefined4",
+      "name": "g_DefaultMissionActorName",
+      "type": "char[104]",
       "value": null
     },
     {
@@ -532,22 +530,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 141,
-      "match": "DAT_0067d5c0",
-      "severity": "mild",
-      "text": "puVar5 = &DAT_0067d5c0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 148,
-      "match": "DAT_0067d628",
-      "severity": "mild",
-      "text": "puVar8 = &DAT_0067d628;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -363,12 +363,12 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
         ;
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_53c.base,"Humongous");
         iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                          (&local_53c,"Create new room",DAT_03365cbc,0);
+                          (&local_53c,"Create new room",INT_03365cbc,0);
         if (iVar5 < 0) {
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_53c,0);
         }
         else {
-          DAT_03365cbc = iVar5;
+          INT_03365cbc = iVar5;
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_53c,0);
           local_1c = this_ptr->room_count;
           local_18 = local_20 + local_1c;
@@ -385,7 +385,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showRoomEditor_FUN_00581aa0(CDemonSet *t
           (local_18->extents).x = 10.0;
           (local_18->extents).y = 10.0;
           (local_18->extents).z = 10.0;
-          local_18->reverb_size = DAT_03365cbc;
+          local_18->reverb_size = INT_03365cbc;
           this_ptr->room_count = this_ptr->room_count + 1;
         }
       }

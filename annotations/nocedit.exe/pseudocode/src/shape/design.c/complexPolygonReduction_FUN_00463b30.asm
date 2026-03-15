@@ -78,8 +78,8 @@ section .text
     MOV dword ptr [EBP + -0x14],0x0     ; 00463b43
     MOV ECX,0x14                        ; 00463b4a
     LEA EDI,[EBP + 0xfffffeb0]          ; 00463b4f
-    MOV ESI,0x66eea8                    ; 00463b55 | DAT_0066eea8
-    MOVSD.REP ES:EDI,ESI                ; 00463b5a | DAT_0066eea8 | DAT_0066eeac
+    MOV ESI,0x66eea8                    ; 00463b55 | g_PolygonReductionParams
+    MOVSD.REP ES:EDI,ESI                ; 00463b5a | g_PolygonReductionParams | DAT_0066eeac
     MOV dword ptr [EBP + -0x4],0x0      ; 00463b5c
     PUSH 0x1921                         ; 00463b63
     MOV EAX,0x61c0aa                    ; 00463b68 | = "..\\shape\\design.c"

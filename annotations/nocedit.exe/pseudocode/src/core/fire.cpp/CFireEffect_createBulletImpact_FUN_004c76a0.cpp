@@ -86,7 +86,7 @@ LAB_004c7785:
       } while (iVar3 < 8);
     }
   }
-  puVar5 = &DAT_0067aeb8;
+  puVar5 = (uint *)g_DefaultRicochetSound;
   pcVar1 = acStack_60;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
     puVar5 = puVar5 + (uint)bVar6 * -2 + 1;

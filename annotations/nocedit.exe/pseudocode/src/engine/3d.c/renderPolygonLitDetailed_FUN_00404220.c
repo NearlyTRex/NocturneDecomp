@@ -20,7 +20,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitDetailed_FUN_00404220(
   pSVar4 = prim + 1;
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal);
   if (iVar2 == 0) goto LAB_004043ff;
-  if (DAT_00772a78 == 0) {
+  if (INT_00772a78 == 0) {
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) {
 LAB_00404269:

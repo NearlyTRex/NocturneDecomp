@@ -3,7 +3,6 @@
 // Dependencies
 #include <math.h>
 #include "system/basetypes.h"
-#include "constants.h"
 #include "system/watcom.h"
 
 // =============================================================================
@@ -86,14 +85,7 @@ static TerminatedCString s_CActorDestination_0066ef44 = "$CActorDestination$$";
 static TerminatedCString s_CFilterFX_0066efd8 = "$CFilterFX$$";
 static TerminatedCString s_CFilterCache_0066efec = "$CFilterCache$$";
 
-// WatcomInheritanceLayout constants
-static WatcomInheritanceLayout DAT_00665e68 = {.base_type = nullptr, .offset_to_base = 0x00000010};
-
-// WatcomThunkedDestructor constants
-static WatcomThunkedDestructor DAT_00665b70 = {.destructor_func = (void *)0x00000048, .this_adjustment_ptr = (int *)0x0000000C};
-
 // WatcomVirtualBaseDescriptor constants
-static WatcomVirtualBaseDescriptor DAT_00665b68 = {.flags = 0x00000000, .offset_to_vbase = 0x00000054};
 static WatcomVirtualBaseDescriptor DAT_00665d60 = {.flags = 0x00000000, .offset_to_vbase = 0x0000004C};
 
 // char*[4] constants
@@ -247,9 +239,6 @@ static float g_MoveAwayAngleOffsets[6] = {
     0.78539819f, 5.497787f
 };
 
-// int constants
-static int DAT_0066eea8 = 0x2;
-
 // string constants
 static string s_3D_vector_0066e0e0 = "3D vector";
 static string s_Euler_PBH_orientation_0066e0f0 = "Euler PBH orientation";
@@ -265,7 +254,6 @@ static uchar g_LightBitMaskLookup[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40
 
 // undefined4 constants
 static undefined4 DAT_00665f3a = 0x003B001F;
-static undefined4 DAT_0066eeac = 0x00000003;
 
 // void* constants
 static void* DAT_00665B78 = (void*)0x00665B90; // DAT_00665b90

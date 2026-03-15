@@ -567,7 +567,7 @@ section .text
         ;   XREF to: 004a2b80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_add_FUN_004a2b80(CStrList * this_ptr, char * string_data)
     ADD ESP,0x8                         ; 00581ff9
     PUSH 0x0                            ; 00581ffc
-    MOV ESI,dword ptr [0x03365cbc]      ; 00581ffe | DAT_03365cbc
+    MOV ESI,dword ptr [0x03365cbc]      ; 00581ffe | INT_03365cbc
     PUSH ESI                            ; 00582004
     PUSH 0x648b8c                       ; 00582005 | = "Create new room"
     LEA EAX,[EBP + 0xfffffb52]          ; 0058200a
@@ -579,7 +579,7 @@ section .text
     JL 0x005828ab                       ; 0058201b
         ;   XREF to: 005828ab (CONDITIONAL_JUMP)  ; LAB_005828ab
     PUSH 0x0                            ; 00582021
-    MOV [0x03365cbc],EAX                ; 00582023 | DAT_03365cbc
+    MOV [0x03365cbc],EAX                ; 00582023 | INT_03365cbc
     LEA EAX,[EBP + 0xfffffb52]          ; 00582028
     PUSH EAX                            ; 0058202e
     CALL shape_edittool.cpp_CPickList_dtor_FUN_004a3c80 ; 0058202f
@@ -624,7 +624,7 @@ section .text
     MOV dword ptr [EAX + 0x10],0x41200000 ; 0058209d
     MOV dword ptr [EAX + 0x14],0x41200000 ; 005820a4
     MOV EDX,dword ptr [EBP + 0x76]      ; 005820ab
-    MOV EAX,[0x03365cbc]                ; 005820ae | DAT_03365cbc
+    MOV EAX,[0x03365cbc]                ; 005820ae | INT_03365cbc
     MOV dword ptr [EDX + 0x40],EAX      ; 005820b3
     MOV EAX,dword ptr [EBP + 0x92]      ; 005820b6
     MOV ESI,dword ptr [EAX + 0x15aebc]  ; 005820bc

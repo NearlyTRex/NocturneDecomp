@@ -17,12 +17,12 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   CDemonActor *actor;
   int iVar5;
   char (*pacVar6) [256];
-  char *pcVar4;
   CDemonActor *pCVar7;
-  uint *puVar5;
+  char *pcVar4;
   uint *puVar8;
   char *pcVar9;
   char *pcVar10;
+  char *pcVar5;
   CDemonActor *pCVar6;
   byte bVar11;
   char local_158 [100];
@@ -145,14 +145,14 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(CDemonM
   this_ptr->next_inventory_actor = (CDemonActor *)0x0;
   local_14 = 0;
   while (local_14 < local_28 + local_24) {
-    puVar5 = &DAT_0067d5c0;
-    pcVar4 = local_90;
+    pcVar4 = g_DefaultMissionActorClass;
+    pcVar5 = local_90;
     for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(uint *)pcVar4 = *puVar5;
-      puVar5 = puVar5 + (uint)bVar11 * -2 + 1;
-      pcVar4 = pcVar4 + (uint)bVar11 * -8 + 4;
+      *(uint *)pcVar5 = *(uint *)pcVar4;
+      pcVar4 = pcVar4 + ((uint)bVar11 * -2 + 1) * 4;
+      pcVar5 = pcVar5 + (uint)bVar11 * -8 + 4;
     }
-    puVar8 = &DAT_0067d628;
+    puVar8 = (uint *)g_DefaultMissionActorName;
     pcVar4 = local_f4;
     for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
       puVar8 = puVar8 + (uint)bVar11 * -2 + 1;

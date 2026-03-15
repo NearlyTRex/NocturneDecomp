@@ -100,6 +100,9 @@ extern char g_ActorDebugBuffer[52];
 // float
 extern float FLOAT_008224dc;
 
+// float[100]
+extern float g_BoneBurnIntensity[100];
+
 // float[12][12]
 extern float g_BugsGroundHeightGridTemp[12][12];
 
@@ -188,8 +191,4 @@ extern int g_BugsSortedVertexIndices[700];
 
 // uint
 extern uint g_RandomSeedValue;
-
-// undefined4
-extern undefined4 DAT_00823c54;
-extern undefined4 DAT_00823c58;
 

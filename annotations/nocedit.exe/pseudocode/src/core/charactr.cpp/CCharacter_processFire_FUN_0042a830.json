@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 281,
+    "complexity_score": 236,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 11,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 201,
-    "suspect_count": 7,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 623
   },
@@ -154,8 +153,8 @@
     },
     {
       "addr": "00823c54",
-      "name": "DAT_00823c54",
-      "type": "undefined4",
+      "name": "g_BoneBurnIntensity",
+      "type": "float[100]",
       "value": null
     },
     {
@@ -387,48 +386,16 @@
       "line": 54,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&DAT_00823c54 + iVar5) = 0;",
+      "text": "*(uint *)((int)g_BoneBurnIntensity + iVar5) = 0;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_00823c54",
-      "severity": "mild",
-      "text": "*(uint *)((int)&DAT_00823c54 + iVar5) = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_00823c54",
-      "severity": "mild",
-      "text": "(&DAT_00823c54)[iVar11] =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_00823c54",
-      "severity": "mild",
-      "text": "(float)(&DAT_00823c54)[iVar11] + (pCVar10->fire_effects[0].size * fVar2) / fVar3;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 78,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "if ((float)65535 <= *(float *)((int)&DAT_00823c54 + iVar11)) {",
+      "text": "if ((float)65535 <= *(float *)((int)g_BoneBurnIntensity + iVar11)) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_00823c54",
-      "severity": "mild",
-      "text": "if ((float)65535 <= *(float *)((int)&DAT_00823c54 + iVar11)) {",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

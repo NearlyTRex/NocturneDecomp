@@ -1,0 +1,497 @@
+================================================================================
+DAT_ STRUCT/ARRAY DETECTION REPORT
+================================================================================
+
+Total DAT_ globals (after filtering): 233
+Clusters detected: 39
+DAT_ globals in clusters: 186
+
+Classification summary:
+  unknown              12 clusters
+  char_array           10 clusters
+  struct               9 clusters
+  vector_groups        4 clusters
+  array                3 clusters
+  byte_blob            1 clusters
+
+--------------------------------------------------------------------------------
+HIGH CONFIDENCE (11 clusters)
+--------------------------------------------------------------------------------
+
+  0x0067241c - 0x00672458  (16 items, 60 bytes span)
+    Classification: array
+    Likely type: int[16]
+    Reason: 16 elements at stride 4
+    Referenced by: 1 functions
+     near: g_PerspectiveColorCache[15] (undefined4) at +4
+      0x0067241c  DAT_0067241c  undefined4
+      0x00672420  DAT_00672420  undefined4
+      0x00672424  DAT_00672424  undefined4
+      0x00672428  DAT_00672428  undefined4
+      0x0067242c  DAT_0067242c  undefined4
+      0x00672430  DAT_00672430  undefined4
+      ... +10 more
+
+  0x013da8b7 - 0x013da8ba  (4 items, 3 bytes span)
+    Classification: char_array
+    Likely type: char[5]
+    Reason: 4 consecutive bytes
+    Referenced by: 5 functions
+     near: g_CameraPlaneWorkBuffer (SFogImagePlane) at +319
+      0x013da8b7  DAT_013da8b7  undefined4
+      0x013da8b8  DAT_013da8b8  undefined4 [byte]
+      0x013da8b9  DAT_013da8b9  undefined4 [byte]
+      0x013da8ba  DAT_013da8ba  undefined4
+
+  0x03f98ff1 - 0x03f98ff4  (4 items, 3 bytes span)
+    Classification: char_array
+    Likely type: char[5]
+    Reason: 4 consecutive bytes
+    Referenced by: 1 functions
+     near: g_CommandLineBuffer (byte) at +1
+      0x03f98ff1  DAT_03f98ff1  undefined1 [byte]
+      0x03f98ff2  DAT_03f98ff2  undefined1 [byte]
+      0x03f98ff3  DAT_03f98ff3  undefined1
+      0x03f98ff4  DAT_03f98ff4  undefined1
+
+  0x0067b559 - 0x0067b55b  (3 items, 2 bytes span)
+    Classification: char_array
+    Likely type: char[4]
+    Reason: 3 consecutive bytes
+    Referenced by: 1 functions
+     near: g_TempFilenameBuffer (undefined4) at +1
+      0x0067b559  DAT_0067b559  undefined4 [byte]
+      0x0067b55a  DAT_0067b55a  undefined4
+      0x0067b55b  DAT_0067b55b  undefined4
+
+  0x013ed375 - 0x013ed377  (3 items, 2 bytes span)
+    Classification: char_array
+    Likely type: char[4]
+    Reason: 3 consecutive bytes
+    Referenced by: 2 functions
+     near: g_CameraImageDecompressBuffer (SFogImagePlane[16]) at -3
+      0x013ed375  DAT_013ed375  undefined4
+      0x013ed376  DAT_013ed376  undefined4
+      0x013ed377  DAT_013ed377  undefined4 [byte]
+
+  0x03f87364 - 0x03f87366  (3 items, 2 bytes span)
+    Classification: char_array
+    Likely type: char[4]
+    Reason: 3 consecutive bytes
+    Referenced by: 1 functions
+     near: g_CurrentTextureInfo.texture_name[3] (undefined4) at -3
+      0x03f87364  DAT_03f87364  undefined4 [byte]
+      0x03f87365  DAT_03f87365  undefined4 [byte]
+      0x03f87366  DAT_03f87366  undefined4
+
+  0x00ba8db8 - 0x00ba8db9  (2 items, 1 bytes span)
+    Classification: char_array
+    Likely type: char[3]
+    Reason: 2 consecutive bytes
+    Referenced by: 4 functions
+     near: g_CoronaBlurOutputBuffer (char[241][320]) at +320
+      0x00ba8db8  DAT_00ba8db8  undefined4 [byte]
+      0x00ba8db9  DAT_00ba8db9  undefined4
+
+  0x00c196fc - 0x00c196fd  (2 items, 1 bytes span)
+    Classification: char_array
+    Likely type: char[3]
+    Reason: 2 consecutive bytes
+    Referenced by: 3 functions
+     near: g_CameraImagePaletteData (SRGBColorPalette) at +4
+      0x00c196fc  DAT_00c196fc  undefined4
+      0x00c196fd  DAT_00c196fd  undefined4
+
+  0x00fdffff - 0x00fe0000  (2 items, 1 bytes span)
+    Classification: char_array
+    Likely type: char[3]
+    Reason: 2 consecutive bytes
+    Referenced by: 5 functions
+      0x00fdffff  DAT_00fdffff  undefined4
+      0x00fe0000  DAT_00fe0000  undefined4
+
+  0x00ffffff - 0x01000000  (2 items, 1 bytes span)
+    Classification: char_array
+    Likely type: char[3]
+    Reason: 2 consecutive bytes
+    Referenced by: 11 functions
+      0x00ffffff  DAT_00ffffff  undefined4
+      0x01000000  DAT_01000000  undefined4
+
+  0x013da9f8 - 0x013da9f9  (2 items, 1 bytes span)
+    Classification: char_array
+    Likely type: char[3]
+    Reason: 2 consecutive bytes
+    Referenced by: 2 functions
+     near: g_CameraPlaneWorkBuffer (SFogImagePlane) at +640
+      0x013da9f8  DAT_013da9f8  undefined4
+      0x013da9f9  DAT_013da9f9  undefined4
+
+--------------------------------------------------------------------------------
+MEDIUM CONFIDENCE (7 clusters)
+--------------------------------------------------------------------------------
+
+  0x016e978c - 0x016e9908  (17 items, 380 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 2 groups of 3 consecutive ints found
+    Referenced by: 1 functions
+     near: g_PolygonCount (int) at -384
+      0x016e978c  DAT_016e978c  undefined4
+      0x016e9790  DAT_016e9790  undefined4 [byte]
+      0x016e97e0  DAT_016e97e0  undefined4 [byte]
+      0x016e9830  DAT_016e9830  undefined4
+      0x016e9834  DAT_016e9834  undefined4 [float]
+      0x016e9838  DAT_016e9838  undefined4 [float]
+      ... +11 more
+
+  0x0067e6e8 - 0x0067e760  (15 items, 120 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 2 groups of 3 consecutive ints found
+    Referenced by: 3 functions
+     near: g_Layer3BandIndex[0].l[3] (undefined4) at +20
+      0x0067e6e8  DAT_0067e6e8  undefined4
+      0x0067e6f8  DAT_0067e6f8  undefined4
+      0x0067e6fc  DAT_0067e6fc  undefined4
+      0x0067e718  DAT_0067e718  undefined4
+      0x0067e71c  DAT_0067e71c  undefined4
+      0x0067e728  DAT_0067e728  undefined4
+      ... +9 more
+
+  0x00684f30 - 0x006850b8  (15 items, 392 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 3 groups of 3 consecutive ints found
+    Referenced by: 5 functions
+     near: g_SpecialExitHandler (int) at +4
+      0x00684f30  DAT_00684f30  int
+      0x00684f34  DAT_00684f34  int
+      0x00684f38  DAT_00684f38  undefined2 [short]
+      0x00684ff4  DAT_00684ff4  undefined4
+      0x00685030  DAT_00685030  undefined4 [byte]
+      0x00685080  DAT_00685080  undefined4
+      ... +9 more
+
+  0x03f69b44 - 0x03f69b59  (7 items, 21 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 2 groups of 3 consecutive ints found
+    Referenced by: 1 functions
+     near: g_RecordingDevices[7].device_name[14] (undefined4) at -22
+      0x03f69b44  DAT_03f69b44  undefined4
+      0x03f69b48  DAT_03f69b48  undefined4
+      0x03f69b4c  DAT_03f69b4c  undefined4
+      0x03f69b50  DAT_03f69b50  undefined4
+      0x03f69b54  DAT_03f69b54  undefined4
+      0x03f69b58  DAT_03f69b58  undefined4 [byte]
+      ... +1 more
+
+  0x03f48f88 - 0x03f48f9c  (6 items, 20 bytes span)
+    Classification: array
+    Likely type: float[6]
+    Reason: 6 elements at stride 4
+    Referenced by: 3 functions
+     near: g_CSlewInstance (CSlew) at +4
+      0x03f48f88  DAT_03f48f88  undefined4 [float]
+      0x03f48f8c  DAT_03f48f8c  undefined4 [float]
+      0x03f48f90  DAT_03f48f90  undefined4 [float]
+      0x03f48f94  DAT_03f48f94  undefined4 [float]
+      0x03f48f98  DAT_03f48f98  undefined4 [float]
+      0x03f48f9c  DAT_03f48f9c  undefined4 [float]
+
+  0x0066ff28 - 0x0066ff38  (5 items, 16 bytes span)
+    Classification: array
+    Likely type: int[5]
+    Reason: 5 elements at stride 4
+    Referenced by: 2 functions
+     near: g_LightTextures (SMRGLTextureBasic[20]) at +80
+      0x0066ff28  DAT_0066ff28  undefined4
+      0x0066ff2c  DAT_0066ff2c  undefined4
+      0x0066ff30  DAT_0066ff30  undefined4
+      0x0066ff34  DAT_0066ff34  undefined4
+      0x0066ff38  DAT_0066ff38  undefined4
+
+  0x00823a80 - 0x00823b10  (5 items, 144 bytes span)
+    Classification: byte_blob
+    Likely type: char[] or byte[]
+    Reason: 3/4 strides are 1 byte
+    Referenced by: 2 functions
+     near: g_CollisionTexture (SMRGLTextureBasic) at +8
+      0x00823a80  DAT_00823a80  undefined4 [byte]
+      0x00823a81  DAT_00823a81  undefined4 [byte]
+      0x00823a82  DAT_00823a82  undefined4
+      0x00823a83  DAT_00823a83  undefined4
+      0x00823b10  DAT_00823b10  undefined4
+
+--------------------------------------------------------------------------------
+LOW CONFIDENCE (21 clusters)
+--------------------------------------------------------------------------------
+
+  0x03f6293c - 0x03f629b0  (7 items, 116 bytes span)
+    Classification: struct
+    Likely type: struct (116 bytes span, 7 fields)
+    Reason: mixed strides, shared by 13 functions
+    Referenced by: 13 functions
+     near: g_SfxSamples (CSfxSample[64]) at +272
+      0x03f6293c  DAT_03f6293c  undefined4
+      0x03f6294c  DAT_03f6294c  undefined4
+      0x03f6297c  DAT_03f6297c  undefined4
+      0x03f62980  DAT_03f62980  undefined4
+      0x03f6298c  DAT_03f6298c  undefined4
+      0x03f629ac  DAT_03f629ac  undefined4
+      ... +1 more
+
+  0x0077256c - 0x00772600  (6 items, 148 bytes span)
+    Classification: struct
+    Likely type: struct (148 bytes span, 6 fields)
+    Reason: mixed strides, shared by 1 functions
+    Referenced by: 1 functions
+     near: g_CurrentRenderColorRed (undefined4) at -8
+      0x0077256c  DAT_0077256c  undefined4
+      0x00772570  DAT_00772570  undefined4
+      0x0077259c  DAT_0077259c  undefined4
+      0x007725a0  DAT_007725a0  undefined4
+      0x007725fc  DAT_007725fc  undefined4
+      0x00772600  DAT_00772600  undefined4
+
+  0x03f62abc - 0x03f62b0c  (6 items, 80 bytes span)
+    Classification: struct
+    Likely type: struct (80 bytes span, 6 fields)
+    Reason: mixed strides, shared by 10 functions
+    Referenced by: 10 functions
+     near: g_SfxSamples (CSfxSample[64]) at +656
+      0x03f62abc  DAT_03f62abc  undefined4
+      0x03f62acc  DAT_03f62acc  undefined4
+      0x03f62afc  DAT_03f62afc  undefined4
+      0x03f62b00  DAT_03f62b00  undefined4
+      0x03f62b04  DAT_03f62b04  undefined4
+      0x03f62b0c  DAT_03f62b0c  undefined4
+
+  0x006814ec - 0x00681534  (5 items, 72 bytes span)
+    Classification: struct
+    Likely type: struct (72 bytes span, 5 fields)
+    Reason: mixed strides, shared by 1 functions
+    Referenced by: 1 functions
+     near: g_BoundingBoxQuadTemplates (SMRGLPrimitiveQuad[6]) at +24
+      0x006814ec  DAT_006814ec  undefined4
+      0x00681524  DAT_00681524  undefined4
+      0x00681528  DAT_00681528  undefined4
+      0x0068152c  DAT_0068152c  undefined4
+      0x00681534  DAT_00681534  undefined4
+
+  0x00688057 - 0x006880a4  (5 items, 77 bytes span)
+    Classification: struct
+    Likely type: struct (77 bytes span, 5 fields)
+    Reason: mixed strides, shared by 3 functions
+    Referenced by: 3 functions
+     near: g_RenderVertexBuffer[1].projected_vertex.screen_x (undefined4) at +3
+      0x00688057  DAT_00688054+3  undefined4 [byte]
+      0x00688058  DAT_00688058  undefined4
+      0x00688074  DAT_00688074  undefined4
+      0x00688087  DAT_00688084+3  undefined4
+      0x006880a4  DAT_006880a4  undefined4
+
+  0x00825adc - 0x00825b6c  (5 items, 144 bytes span)
+    Classification: struct
+    Likely type: struct (144 bytes span, 5 fields)
+    Reason: mixed strides, shared by 1 functions
+    Referenced by: 1 functions
+     near: g_ClipperTempBuffer[1].projected_vertex.transformed_y (undefined4) at -4
+      0x00825adc  DAT_00825adc  undefined4
+      0x00825b3c  DAT_00825b3c  undefined4
+      0x00825b44  DAT_00825b44  undefined4
+      0x00825b48  DAT_00825b48  undefined4
+      0x00825b6c  DAT_00825b6c  undefined4
+
+  0x0083c1a0 - 0x0083c1b8  (5 items, 24 bytes span)
+    Classification: struct
+    Likely type: struct (24 bytes span, 5 fields)
+    Reason: mixed strides, shared by 4 functions
+    Referenced by: 4 functions
+     near: g_CZombieCowClassInfo (CDemonActorType) at +4
+      0x0083c1a0  DAT_0083c1a0  undefined4
+      0x0083c1ac  DAT_0083c1ac  undefined4
+      0x0083c1b0  DAT_0083c1b0  undefined4
+      0x0083c1b4  DAT_0083c1b4  undefined4
+      0x0083c1b8  DAT_0083c1b8  undefined4
+
+  0x00665f28 - 0x00665f50  (4 items, 40 bytes span)
+    Classification: struct
+    Likely type: struct (40 bytes span, 4 fields)
+    Reason: mixed strides, shared by 4 functions
+    Referenced by: 4 functions
+     near: g_PositiveInfinity (double) at -8
+      0x00665f28  DAT_00665f28  undefined4 [byte]
+      0x00665f36  DAT_00665f34+2  undefined4
+      0x00665f3a  DAT_00665f3a  undefined4
+      0x00665f50  DAT_00665f50  undefined4
+
+  0x009e5d74 - 0x009e5d88  (4 items, 20 bytes span)
+    Classification: struct
+    Likely type: struct (20 bytes span, 4 fields)
+    Reason: mixed strides, shared by 2 functions
+    Referenced by: 2 functions
+      0x009e5d74  DAT_009e5d74  undefined4
+      0x009e5d80  DAT_009e5d80  undefined4
+      0x009e5d84  DAT_009e5d84  undefined4
+      0x009e5d88  DAT_009e5d88  undefined4
+
+  0x0132220c - 0x01322214  (3 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 3 items, span=8 bytes
+    Referenced by: 1 functions
+     near: g_LightBufferPool[24][0] (undefined4) at +4
+      0x0132220c  DAT_0132220c  undefined4
+      0x01322210  DAT_01322210  undefined4
+      0x01322214  DAT_01322214  undefined4
+
+  0x03f6b9f8 - 0x03f6ba00  (3 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 3 items, span=8 bytes
+    Referenced by: 1 functions
+     near: g_CSpotViewInstance (CSpotView) at +24
+      0x03f6b9f8  DAT_03f6b9f8  undefined4
+      0x03f6b9fc  DAT_03f6b9fc  undefined4
+      0x03f6ba00  DAT_03f6ba00  undefined4
+
+  0x00665d60 - 0x00665db8  (2 items, 88 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=88 bytes
+    Referenced by: 2 functions
+     near: g_StrStreamBase_Destructor (void*) at -12
+      0x00665d60  DAT_00665d60  WatcomVirtualBaseDescriptor
+      0x00665db8  DAT_00665db8  undefined4
+
+  0x00679d50 - 0x00679d94  (2 items, 68 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=68 bytes
+    Referenced by: 2 functions
+     near: switchdataD_00679d54 (void*) at -4
+      0x00679d50  DAT_00679d50  undefined4
+      0x00679d94  DAT_00679d94  undefined4
+
+  0x0067e180 - 0x0067e184  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 1 functions
+     near: g_MpegSynthesisTableInitialized (int) at +16
+      0x0067e180  DAT_0067e180  undefined4
+      0x0067e184  DAT_0067e184  undefined4
+
+  0x006874d4 - 0x0068755c  (2 items, 136 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=136 bytes
+    Referenced by: 1 functions
+     near: PTR_FUN_006874e4 (void*) at -16
+      0x006874d4  DAT_006874d4  undefined4 [double]
+      0x0068755c  DAT_0068755c  undefined4 [double]
+
+  0x006e6f63 - 0x006e6f69  (2 items, 6 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=6 bytes
+    Referenced by: 2 functions
+      0x006e6f63  DAT_006e6f63  undefined4
+      0x006e6f69  DAT_006e6f69  undefined4
+
+  0x013225d0 - 0x013225d4  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 1 functions
+     near: g_LightBufferPool[24][0] (undefined4) at +968
+      0x013225d0  DAT_013225d0  undefined4
+      0x013225d4  DAT_013225d4  undefined4
+
+  0x01335590 - 0x01335594  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 1 functions
+      0x01335590  DAT_01335590  undefined4
+      0x01335594  DAT_01335594  undefined4
+
+  0x01577c28 - 0x01577c2c  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 2 functions
+      0x01577c28  DAT_01577c28  undefined4
+      0x01577c2c  DAT_01577c2c  undefined4
+
+  0x03f5dc40 - 0x03f5dc44  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 8 functions
+     near: g_SfxSlots[1].dsound_buffer (undefined4) at +4
+      0x03f5dc40  DAT_03f5dc40  undefined4
+      0x03f5dc44  DAT_03f5dc44  undefined4
+
+  0x03f875e4 - 0x03f875e8  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 3 functions
+     near: g_CWaterInstance (CWater) at +4
+      0x03f875e4  DAT_03f875e4  undefined4 [float]
+      0x03f875e8  DAT_03f875e8  undefined4 [float]
+
+--------------------------------------------------------------------------------
+ISOLATED DAT_ GLOBALS (47 - not part of any cluster)
+--------------------------------------------------------------------------------
+  DAT_00f80000                    addr=00f80000    type=undefined4      refs=24
+  DAT_00002424                    addr=00002424    type=undefined4      refs=21 [likely float]
+  DAT_00800000                    addr=00800000    type=undefined4      refs=12
+  DAT_013ed4b8                    addr=013ed4b8    type=undefined4      refs=4
+  DAT_00824e88                    addr=00824e88    type=undefined4      refs=3  near: g_ClippedVertexBuffer[0].projected_vertex.transformed_z(+88)
+  DAT_00feffff                    addr=00feffff    type=undefined4      refs=3  near: g_ColorMagenta(-256)
+  DAT_0066e314                    addr=0066e314    type=undefined4      refs=2  near: SPropertyFlag_ARRAY_0066e30c[0].name(+4)
+  DAT_00ba8ef8                    addr=00ba8ef8    type=undefined4      refs=2
+  DAT_013fff78                    addr=013fff78    type=undefined4      refs=2
+  DAT_01578128                    addr=01578128    type=undefined4      refs=2
+  DAT_00780000                    addr=00780000    type=undefined4      refs=2
+  DAT_038f60d0                    addr=038f60d0    type=undefined4      refs=2
+  DAT_03f9b210                    addr=03f9b210    type=undefined4      refs=2  near: g_FreeListHeadPointer(+12)
+  DAT_00fbffff                    addr=00fbffff    type=undefined4      refs=2
+  DAT_00766880                    addr=00766880    type=undefined4      refs=2
+  DAT_00412b41                    addr=00412b41    type=undefined4      refs=1
+  DAT_00bbb9b7                    addr=00bbb9b7    type=undefined4      refs=1 [likely byte]  near: g_CoronaBlurWorkBuffer(-1)
+  DAT_00bbbaf8                    addr=00bbbaf8    type=undefined4      refs=1
+  DAT_00bbbc38                    addr=00bbbc38    type=undefined4      refs=1
+  DAT_013da774+3                  addr=013da777    type=undefined4      refs=1 [likely byte]  near: g_CameraPlaneWorkBuffer(-1)
+  DAT_00fcfcfc                    addr=00fcfcfc    type=undefined4      refs=1
+  DAT_009e6c74                    addr=009e6c74    type=undefined4      refs=1
+  DAT_013bc23c                    addr=013bc23c    type=undefined4      refs=1  near: g_CoronaCameraRotationMatrix(+4)
+  DAT_0151bf9e                    addr=0151bf9e    type=undefined4      refs=1 [likely short]  near: g_CameraOutOfBoundsY(+2)
+  DAT_00d00000                    addr=00d00000    type=undefined4      refs=1
+  DAT_00dc0000                    addr=00dc0000    type=undefined4      refs=1
+  DAT_0067ae0c                    addr=0067ae0c    type=undefined4      refs=1  near: g_FireEffectLightningBoltTextures(+24)
+  DAT_0067b850                    addr=0067b850    type=undefined4      refs=1  near: g_ChapterDisplayTexts(-4)
+  DAT_0067cb1c                    addr=0067cb1c    type=undefined4      refs=1  near: FLOAT_0067cb18(+4)
+  DAT_0067b9e0                    addr=0067b9e0    type=undefined4      refs=1  near: g_BloodSplatTextures(+24)
+  DAT_00f00000                    addr=00f00000    type=undefined4      refs=1
+  DAT_020a48c8                    addr=020a48c8    type=undefined4      refs=1  near: CDemonFilter_ARRAY_020a4878[1].size(+4)
+  DAT_03c00000                    addr=03c00000    type=undefined4      refs=1
+  DAT_00747874                    addr=00747874    type=undefined4      refs=1
+  DAT_00b71b00                    addr=00b71b00    type=undefined4      refs=1
+  DAT_016e3600                    addr=016e3600    type=undefined4      refs=1
+  DAT_03f95de4                    addr=03f95de4    type=undefined4      refs=1  near: g_WeatherParticlePositions(-20)
+  DAT_038f4dac                    addr=038f4dac    type=undefined4      refs=1
+  DAT_0391e5d8                    addr=0391e5d8    type=undefined4      refs=1
+  DAT_006852db                    addr=006852db    type=undefined1      refs=1 [likely byte]  near: g_TempDirectoryBuffer(-1)
+  DAT_03f9c030                    addr=03f9c030    type=undefined4      refs=1 [likely byte]  near: g_LeadByteTable(-1)
+  DAT_006855d8                    addr=006855d8    type=undefined4      refs=1  near: PTR_unk_ReturnZero6_FUN_0060e850_0068559c(+60)
+  DAT_54524143                    addr=54524143    type=undefined4      refs=1
+  DAT_01e5017c                    addr=01e5017c    type=undefined4      refs=1  near: g_ModelPartNames(-20)
+  DAT_0051a3f4                    addr=0051a3f4    type=undefined4      refs=1  near: PTR_caseD_5_0051a3ec(+8)
+  DAT_0067d9f0                    addr=0067d9f0    type=undefined4      refs=1 [likely float]  near: g_MpegSynthesisWindow(+128)
+  DAT_0067e2d0                    addr=0067e2d0    type=undefined4      refs=1  near: g_MpegBitrateTable(+120)
+

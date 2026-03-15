@@ -11,6 +11,8 @@ CEdScrollBar g_ThumbnailScrollBar = {};
 int g_SavedWindowWidth = {};
 int g_SavedWindowHeight = {};
 int g_VDIsActorAreaInvalid = {};
+int INT_03365cb8 = {};
+int INT_03365cbc = {};
 
 // int[250]
 int g_VDCameraSortIndices[250] = {};
@@ -21,11 +23,9 @@ uchar g_ThumbnailScrollBarInitFlag = {};
 // uint*[1200]
 uint* g_ZBufferScanlineArrayBackup[1200] = {};
 
+// uint[1000]
+uint g_S3DTextureGroundTypes[1000] = {};
+
 // uint[250][3072]
 uint g_ThumbnailImageBuffer[250][3072] = {};
-
-// undefined4
-undefined4 DAT_03364d18 = {};
-undefined4 DAT_03365cb8 = {};
-undefined4 DAT_03365cbc = {};
 

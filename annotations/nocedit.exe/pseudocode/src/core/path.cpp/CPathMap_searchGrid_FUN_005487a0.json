@@ -1,34 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 31,
-        "line": 109,
-        "message": "use of undeclared identifier 'DAT_030d2857'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 112,
-        "message": "use of undeclared identifier 'DAT_030d2857'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 358,
-    "complexity_score": 142,
+    "complexity_score": 117,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 30,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 117,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 475
   },
   "cross_references": [
@@ -233,8 +218,8 @@
     },
     {
       "addr": "030d2857",
-      "name": "DAT_030d2857",
-      "type": "undefined4",
+      "name": "g_PathfindingVisitedMinus1",
+      "type": "uchar",
       "value": null
     },
     {
@@ -343,22 +328,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 102,
-      "match": "DAT_030d2857",
-      "severity": "mild",
-      "text": "if (((0 < grid_x) && ((&DAT_030d2857)[grid_z * 100 + grid_x] == '\\0')) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_030d2857",
-      "severity": "mild",
-      "text": "(&DAT_030d2857)[grid_x + grid_z * 100] = 4;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

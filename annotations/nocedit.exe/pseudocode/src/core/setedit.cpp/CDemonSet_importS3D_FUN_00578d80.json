@@ -79,17 +79,16 @@
   },
   "complexity": {
     "assembly_lines": 1595,
-    "complexity_score": 802,
+    "complexity_score": 747,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 77,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 677,
-    "suspect_count": 11,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array",
-      "undefined_data"
+      "stack_alignment_array"
     ],
     "total_lines": 2272
   },
@@ -769,14 +768,14 @@
     },
     {
       "addr": "03364d18",
-      "name": "DAT_03364d18",
-      "type": "undefined4",
+      "name": "g_S3DTextureGroundTypes",
+      "type": "uint[1000]",
       "value": null
     },
     {
       "addr": "03365cb8",
-      "name": "DAT_03365cb8",
-      "type": "undefined4",
+      "name": "INT_03365cb8",
+      "type": "int",
       "value": null
     },
     {
@@ -1197,48 +1196,16 @@
       "line": 245,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&DAT_03364d18 + iVar6) = uVar4;",
+      "text": "*(uint *)((int)g_S3DTextureGroundTypes + iVar6) = uVar4;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 245,
-      "match": "DAT_03364d18",
-      "severity": "mild",
-      "text": "*(uint *)((int)&DAT_03364d18 + iVar6) = uVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 251,
-      "match": "DAT_03365cb8",
-      "severity": "mild",
-      "text": "if (DAT_03365cb8 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 254,
-      "match": "DAT_03365cb8",
-      "severity": "mild",
-      "text": "DAT_03365cb8 = 1;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 264,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&DAT_03364d18 + iVar6) = 0;",
+      "text": "*(uint *)((int)g_S3DTextureGroundTypes + iVar6) = 0;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 264,
-      "match": "DAT_03364d18",
-      "severity": "mild",
-      "text": "*(uint *)((int)&DAT_03364d18 + iVar6) = 0;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -1263,14 +1230,6 @@
       "severity": "mild",
       "text": "*puVar16 = *(uint *)((int)&local_2478 + (uint)bVar22 * -8 + 0x228);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 619,
-      "match": "DAT_03364d18",
-      "severity": "mild",
-      "text": "triangle_flags = (uchar)(&DAT_03364d18)[local_18];",
-      "type": "undefined_data"
     }
   ]
 }

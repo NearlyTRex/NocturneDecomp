@@ -26,11 +26,12 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   int iVar8;
   int iVar11;
   CAlphaBitmap *this_ptr_00;
+  char (*pacVar12) [256];
   int iVar9;
   int y;
   char *pcVar10;
   byte bVar11;
-  char *pcVar12;
+  char *pcVar13;
   float local_680;
   float local_67c;
   char local_678 [256];
@@ -154,14 +155,14 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
         _sprintf(local_678,"%d");
       }
       else {
-        pcVar12 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->ammo_ptr->base);
-        _sprintf(local_678,"%s %d",pcVar12);
+        pcVar13 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->ammo_ptr->base);
+        _sprintf(local_678,"%s %d",pcVar13);
       }
       iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
       iVar10 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_44,local_678);
       iVar3 = (g_WindowHeight - local_48) - iVar3;
       iVar10 = (g_WindowWidth - local_48) - iVar10;
-      pcVar12 = local_678;
+      pcVar13 = local_678;
       goto LAB_00500870;
     }
   }
@@ -171,9 +172,9 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
     iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80((CBitFont *)local_44,local_478);
     iVar3 = (g_WindowHeight - local_48) - iVar3;
     iVar10 = (g_WindowWidth - local_48) - iVar4;
-    pcVar12 = local_478;
+    pcVar13 = local_478;
 LAB_00500870:
-    engine_font_cpp_CBitFont_drawText_FUN_004cda80((CBitFont *)local_44,pcVar12,iVar10,iVar3,0xf8,0)
+    engine_font_cpp_CBitFont_drawText_FUN_004cda80((CBitFont *)local_44,pcVar13,iVar10,iVar3,0xf8,0)
     ;
   }
   if (this_ptr->render_mode_flag == 0) goto LAB_005009c0;
@@ -185,18 +186,18 @@ LAB_00500870:
     if ((iVar3 == 0) &&
        (iVar3 = core_inv_cpp_CInventory_isWeaponInCategory_FUN_004ffe70
                           (this_ptr,&this_ptr->selected_weapon->base,1), iVar3 == 0)) {
-      pcVar12 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
+      pcVar13 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
       pcVar7 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
-      uVar13 = CONCAT44(pcVar12,pcVar7);
-      pcVar12 = "%s\n\n%s";
+      uVar13 = CONCAT44(pcVar13,pcVar7);
+      pcVar13 = "%s\n\n%s";
       goto LAB_005008cd;
     }
-    pcVar12 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->ammo_ptr->base);
+    pcVar13 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->ammo_ptr->base);
     pcVar7 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
-    uVar13 = CONCAT44(pcVar12,pcVar7);
-    pcVar12 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
-    _sprintf(local_178,"%s\n\n%s %s",pcVar12,uVar13);
-    pcVar12 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(" are loaded.");
+    uVar13 = CONCAT44(pcVar13,pcVar7);
+    pcVar13 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
+    _sprintf(local_178,"%s\n\n%s %s",pcVar13,uVar13);
+    pcVar13 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(" are loaded.");
     iVar3 = -1;
     pcVar10 = local_178;
     do {
@@ -209,11 +210,11 @@ LAB_00500870:
     } while (cVar2 != '\0');
     pcVar7 = pcVar10 + -1;
     do {
-      cVar1 = *pcVar12;
+      cVar1 = *pcVar13;
       *pcVar7 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar12[1];
-      pcVar12 = pcVar12 + 2;
+      cVar1 = pcVar13[1];
+      pcVar13 = pcVar13 + 2;
       pcVar7[1] = cVar1;
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
@@ -222,24 +223,24 @@ LAB_00500870:
     pcVar5 = core_inv_cpp_getItemIconName_FUN_004fcf70(&this_ptr->selected_weapon->base);
     pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(&this_ptr->selected_weapon->base);
     uVar13 = CONCAT44(pcVar5,pcVar6);
-    pcVar12 = "%s\n\n%s";
+    pcVar13 = "%s\n\n%s";
 LAB_005008cd:
-    _sprintf(local_178,pcVar12,uVar13);
+    _sprintf(local_178,pcVar13,uVar13);
   }
   iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
-                    ((CBitFont *)local_44,local_178,CHAR_ARRAY_02db8c70,10,0x100,local_50 - local_58
-                    );
+                    ((CBitFont *)local_44,local_178,g_InventoryWrappedTextLines[0],10,0x100,
+                     local_50 - local_58);
   iVar10 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
   iVar5 = g_WindowWidth - local_50;
   iVar11 = (g_WindowHeight - local_54) + local_48;
   iVar9 = 0;
   if (0 < iVar3) {
-    pcVar12 = CHAR_ARRAY_02db8c70;
+    pacVar12 = g_InventoryWrappedTextLines;
     do {
       iVar9 = iVar9 + 1;
       engine_font_cpp_CBitFont_drawText_FUN_004cda80
-                ((CBitFont *)local_44,pcVar12,local_48 + iVar5,iVar11,0xf8,0);
-      pcVar12 = pcVar12 + 0x100;
+                ((CBitFont *)local_44,*pacVar12,local_48 + iVar5,iVar11,0xf8,0);
+      pacVar12 = pacVar12 + 1;
       iVar11 = iVar11 + iVar10;
     } while (iVar9 < iVar3);
   }
@@ -280,21 +281,22 @@ LAB_005009c0:
     }
     if (this_ptr->render_mode_flag != 0) {
       core_inv_cpp_getItemIconName_FUN_004fcf70(this_ptr->selected_item);
-      pcVar12 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(this_ptr->selected_item);
-      _sprintf(local_578,"%s\n\n%s",pcVar12);
+      pcVar13 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(this_ptr->selected_item);
+      _sprintf(local_578,"%s\n\n%s",pcVar13);
       iVar5 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
-                        ((CBitFont *)local_44,local_578,DAT_02db9670,10,0x100,iVar3 - local_5c);
+                        ((CBitFont *)local_44,local_578,g_InventoryWrappedTextLines2[0],10,0x100,
+                         iVar3 - local_5c);
       iVar11 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0((CBitFont *)local_44,0x58);
       y = (g_WindowHeight - iVar10) + local_4c;
       iVar3 = g_WindowWidth - iVar3;
       iVar10 = 0;
       if (0 < iVar5) {
-        pcVar12 = DAT_02db9670;
+        pacVar12 = g_InventoryWrappedTextLines2;
         do {
           iVar10 = iVar10 + 1;
           engine_font_cpp_CBitFont_drawText_FUN_004cda80
-                    ((CBitFont *)local_44,pcVar12,local_4c + iVar3,y,0xf8,0);
-          pcVar12 = pcVar12 + 0x100;
+                    ((CBitFont *)local_44,*pacVar12,local_4c + iVar3,y,0xf8,0);
+          pacVar12 = pacVar12 + 1;
           y = y + iVar11;
         } while (iVar10 < iVar5);
       }
@@ -354,16 +356,16 @@ LAB_005009c0:
       local_18 = g_MicroFont;
     }
     iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
-                      (local_18,this_ptr->message_text,CHAR_ARRAY_02dba070,10,0x100,
+                      (local_18,this_ptr->message_text,g_InventoryWrappedTextLines3[0],10,0x100,
                        (g_WindowWidth - iVar3) + -4);
     iVar10 = engine_font_cpp_CBitFont_getCharHeight_FUN_004d01d0(local_18,0x58);
     iVar5 = (g_WindowHeight + -4) - iVar10 * iVar3;
     if (((g_MicroFont != local_18) || (g_MessageCount == 0)) && (iVar11 = 0, 0 < iVar3)) {
-      pcVar12 = CHAR_ARRAY_02dba070;
+      pacVar12 = g_InventoryWrappedTextLines3;
       do {
         iVar11 = iVar11 + 1;
-        engine_font_cpp_CBitFont_drawText_FUN_004cda80(local_18,pcVar12,4,iVar5,0xf8,0);
-        pcVar12 = pcVar12 + 0x100;
+        engine_font_cpp_CBitFont_drawText_FUN_004cda80(local_18,*pacVar12,4,iVar5,0xf8,0);
+        pacVar12 = pacVar12 + 1;
         iVar5 = iVar5 + iVar10;
       } while (iVar11 < iVar3);
     }

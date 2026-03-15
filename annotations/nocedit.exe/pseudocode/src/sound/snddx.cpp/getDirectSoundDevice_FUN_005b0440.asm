@@ -22,7 +22,7 @@
 ;   TerminatedCString s_Set_cooperative_level_006522d5
 ;   TerminatedCString s_Create_the_primary_buffe_006522eb
 ;   TerminatedCString s_Create_the_primary_buffe_00652305
-;   GUID DAT_00686d58
+;   GUID GUID_00686d58
 ;   SDirectSoundDeviceInfo[8] g_DirectSoundDevices
 ;   undefined4 g_DirectSoundDevices[0].value1
 ;   IDirectSound* g_DirectSound
@@ -171,7 +171,7 @@ section .text
         ;   XREF to: 005b059d (CONDITIONAL_JUMP)  ; LAB_005b059d
     PUSH 0x3f6a9bc                      ; 005b0589 | g_DirectSound3DListener
     MOV EAX,[0x03f6a9b4]                ; 005b058e | g_DirectSoundPrimaryBuffer
-    PUSH 0x686d58                       ; 005b0593 | DAT_00686d58
+    PUSH 0x686d58                       ; 005b0593 | GUID_00686d58
     MOV EDX,dword ptr [EAX]             ; 005b0598
     PUSH EAX                            ; 005b059a
     CALL dword ptr [EDX]                ; 005b059b

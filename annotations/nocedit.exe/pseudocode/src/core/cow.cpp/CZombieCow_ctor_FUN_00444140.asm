@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cow_dfm_00619470
-;   float DAT_0065c09c = 50
+;   float FLOAT_0065c09c = 50
 ;   float FLOAT_0065c0a0 = 100
 ;   CDemonActor_vtable g_CZombieCowVTable
 ;
@@ -37,7 +37,7 @@ section .text
     MOV dword ptr [EAX + -0x4],0x65c0b4 ; 0044415b | g_CZombieCowVTable
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840 ; 00444162
         ;   XREF to: 005a0840 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840(CDeformableModelInstance * this_ptr, char * model_name)
-    FLD float ptr [0x0065c09c]          ; 00444167 | DAT_0065c09c
+    FLD float ptr [0x0065c09c]          ; 00444167 | FLOAT_0065c09c
     MOV dword ptr [EBX + 0x2ddc],0x3fe00000 ; 0044416d
     FLD float ptr [0x0065c0a0]          ; 00444177 | FLOAT_0065c0a0
     MOV dword ptr [EBX + 0x2de0],0x40600000 ; 0044417d

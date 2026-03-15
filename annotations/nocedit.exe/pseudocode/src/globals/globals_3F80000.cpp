@@ -22,13 +22,13 @@ CTerrain g_CTerrainInstance = {};
 CTextureCache* g_TextureCacheInstance = {};
 
 // CVector3f[100]
-CVector3f DAT_03f8f638[100] = {};
+CVector3f CVector3f_ARRAY_03f8f638[100] = {};
 
 // CWater
 CWater g_CWaterInstance = {};
 
 // SCollisionInfo[100]
-SCollisionInfo DAT_03f8fae8[100] = {};
+SCollisionInfo SCollisionInfo_ARRAY_03f8fae8[100] = {};
 
 // SMRGLTextureBasic
 SMRGLTextureBasic g_CurrentTexture = {};
@@ -58,11 +58,10 @@ int INT_03f8f62c = {};
 int g_VisibleWaterTilesX[4096] = {};
 int g_VisibleWaterTilesY[4096] = {};
 
+// uchar[36]
+uchar g_WaterTileSamples[36] = {};
+
 // uchar[4]
 uchar g_BroadcastIP[4] = {};
 uchar g_AnyAddressIP[4] = {};
-
-// undefined1
-undefined1 DAT_03f8f608 = {};
-undefined1 DAT_03f8f609 = {};
 

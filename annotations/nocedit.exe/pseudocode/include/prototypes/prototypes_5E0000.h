@@ -213,7 +213,7 @@ float __cdecl core_water_cpp_calculateWaveHeight_FUN_005e9dc0(int x,int y);
 CWater * __cdecl core_water_cpp_CWater_ctor_FUN_005e9e10(CWater *this_ptr);
 CWater * __cdecl core_water_cpp_CWater_dtor_FUN_005e9e30(CWater *this_ptr,uint flags);
 void __cdecl core_water_cpp_CWater_captureTextures_FUN_005e9e40(CWater *this_ptr);
-int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *this_ptr);
+void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *this_ptr);
 void __cdecl core_water_cpp_CWater_process_FUN_005e9ed0(CWater *this_ptr);
 void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int render_mode);
 void __cdecl core_wateract_cpp_staticInit_FUN_005ea810(void);

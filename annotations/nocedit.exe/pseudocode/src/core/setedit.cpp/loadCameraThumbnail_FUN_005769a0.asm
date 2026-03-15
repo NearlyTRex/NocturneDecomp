@@ -129,7 +129,7 @@ section .text
     ADD EAX,ESI                         ; 00576a5d
     ADD EAX,0x4                         ; 00576a5f
         ;   Label: LAB_00576a5f
-    MOV dword ptr [EAX + 0x3365cbc],EBP ; 00576a62 | DAT_03365cbc | g_ColorMagenta | g_ThumbnailImageBuffer
+    MOV dword ptr [EAX + 0x3365cbc],EBP ; 00576a62 | INT_03365cbc | g_ColorMagenta | g_ThumbnailImageBuffer
     CMP EAX,EDX                         ; 00576a68
     JNZ 0x00576a5f                      ; 00576a6a
         ;   XREF to: 00576a5f (CONDITIONAL_JUMP)  ; LAB_00576a5f
@@ -287,7 +287,7 @@ section .text
     ADD EBX,0x4                         ; 00576c35
     ADD EAX,EDX                         ; 00576c38
     MOV EDI,dword ptr [ESP + 0x40]      ; 00576c3a
-    MOV dword ptr [EBX + 0x3365cbc],EAX ; 00576c3e | DAT_03365cbc | g_ThumbnailImageBuffer
+    MOV dword ptr [EBX + 0x3365cbc],EAX ; 00576c3e | INT_03365cbc | g_ThumbnailImageBuffer
     MOV EAX,dword ptr [ESP + 0x48]      ; 00576c44
     ADD ECX,EDI                         ; 00576c48
     CMP EBX,EAX                         ; 00576c4a

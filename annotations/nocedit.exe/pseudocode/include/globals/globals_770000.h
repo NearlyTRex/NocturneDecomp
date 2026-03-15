@@ -34,7 +34,9 @@ extern int g_ScreenBufferStride;
 extern int g_CurrentPolygonColor;
 extern int g_PlaneTestCount;
 extern int g_BypassClipping;
+extern int INT_00772a70;
 extern int g_TexturesDisabled;
+extern int INT_00772a78;
 extern int g_CullingMode;
 extern int g_CurrentInvertedColor;
 extern int g_RenderResult;
@@ -50,10 +52,6 @@ extern int g_ProcessedVertexIndices[24];
 // uint
 extern uint g_ProcessedVertexOffset;
 extern uint g_ProcessedVertexBackupOffset;
-
-// undefined4
-extern undefined4 DAT_00772a70;
-extern undefined4 DAT_00772a78;
 
 // void*
 extern void* g_SoftwareZBuffer;

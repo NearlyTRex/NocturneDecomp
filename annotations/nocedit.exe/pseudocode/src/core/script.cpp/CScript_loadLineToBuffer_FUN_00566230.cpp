@@ -18,7 +18,7 @@ void __cdecl core_script_cpp_CScript_loadLineToBuffer_FUN_00566230(CScript *this
   byte bVar7;
   
   bVar7 = 0;
-  pcVar5 = &DAT_00643f94;
+  pcVar5 = &s_EmptyChar_00643f94;
   if (-1 < line_number) {
     iVar2 = shape_edittool_cpp_CStrList_getItemCount_FUN_004a6ed0(&this_ptr->script_text);
     if (line_number < iVar2) {

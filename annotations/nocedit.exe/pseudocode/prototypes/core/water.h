@@ -25,7 +25,7 @@ void __cdecl CWater::captureTextures(CWater *this_ptr);
 
 // Original: core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
 // Address: 005e9e70
-int __cdecl CWater::calculateVisibleTiles(CWater *this_ptr);
+void __cdecl CWater::calculateVisibleTiles(CWater *this_ptr);
 
 // Original: core_water.cpp_CWater_process_FUN_005e9ed0
 // Address: 005e9ed0

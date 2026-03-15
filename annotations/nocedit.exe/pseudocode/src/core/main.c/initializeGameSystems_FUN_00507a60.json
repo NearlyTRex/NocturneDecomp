@@ -8,46 +8,10 @@
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
-        "category": "lvalue_required",
-        "column": 15,
-        "line": 145,
-        "message": "cannot take the address of an rvalue of type 'int'"
-      },
-      {
-        "category": "lvalue_required",
-        "column": 15,
-        "line": 188,
-        "message": "cannot take the address of an rvalue of type 'int'"
-      },
-      {
-        "category": "lvalue_required",
-        "column": 15,
-        "line": 231,
-        "message": "cannot take the address of an rvalue of type 'int'"
-      },
-      {
-        "category": "lvalue_required",
-        "column": 15,
-        "line": 274,
-        "message": "cannot take the address of an rvalue of type 'int'"
-      },
-      {
         "category": "other",
         "column": 80,
         "line": 317,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
-      },
-      {
-        "category": "lvalue_required",
-        "column": 14,
-        "line": 376,
-        "message": "cannot take the address of an rvalue of type 'int'"
-      },
-      {
-        "category": "lvalue_required",
-        "column": 14,
-        "line": 419,
-        "message": "cannot take the address of an rvalue of type 'int'"
       },
       {
         "category": "other",
@@ -403,14 +367,14 @@
     },
     {
       "addr": "00635428",
-      "name": "DAT_00635428",
-      "type": "undefined1",
+      "name": "s_anon_00635428",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00635429",
       "name": "DAT_00635429",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -427,14 +391,14 @@
     },
     {
       "addr": "00635459",
-      "name": "DAT_00635459",
-      "type": "undefined1",
+      "name": "s_anon_00635459",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0063545a",
       "name": "DAT_0063545a",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -451,14 +415,14 @@
     },
     {
       "addr": "0063548d",
-      "name": "DAT_0063548d",
-      "type": "undefined1",
+      "name": "s_anon_0063548d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "0063548e",
       "name": "DAT_0063548e",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -475,14 +439,14 @@
     },
     {
       "addr": "006354a9",
-      "name": "DAT_006354a9",
-      "type": "undefined1",
+      "name": "s_anon_006354a9",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "006354aa",
       "name": "DAT_006354aa",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -517,14 +481,14 @@
     },
     {
       "addr": "00635507",
-      "name": "DAT_00635507",
-      "type": "undefined1",
+      "name": "s_anon_00635507",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00635508",
       "name": "DAT_00635508",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -541,14 +505,14 @@
     },
     {
       "addr": "00635536",
-      "name": "DAT_00635536",
-      "type": "undefined1",
+      "name": "s_anon_00635536",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "00635537",
       "name": "DAT_00635537",
-      "type": "undefined1",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -632,8 +596,8 @@
     {
       "addr": "0066ef9c",
       "name": "g_GlobalFilters",
-      "type": "CDemonFilter*",
-      "value": "020a4878"
+      "type": "CDemonFilter*[8]",
+      "value": null
     },
     {
       "addr": "0066efa0",
@@ -644,8 +608,8 @@
     {
       "addr": "0066efbc",
       "name": "g_PlayerFilters",
-      "type": "CDemonFilter*",
-      "value": "020a4878"
+      "type": "CDemonFilter*[4]",
+      "value": null
     },
     {
       "addr": "0066efc0",
@@ -1040,7 +1004,7 @@
       "line": 492,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar1 = (uint *)((int)&g_GlobalFilters + iVar11);",
+      "text": "puVar1 = (uint *)((int)g_GlobalFilters + iVar11);",
       "type": "pointer_cast"
     },
     {
@@ -1048,7 +1012,7 @@
       "line": 504,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)((int)&g_PlayerFilters + iVar9) + 4) = 0x100;",
+      "text": "*(uint *)(*(int *)((int)g_PlayerFilters + iVar9) + 4) = 0x100;",
       "type": "pointer_cast"
     },
     {
@@ -1056,7 +1020,7 @@
       "line": 505,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "puVar1 = (uint *)((int)&g_PlayerFilters + iVar9);",
+      "text": "puVar1 = (uint *)((int)g_PlayerFilters + iVar9);",
       "type": "pointer_cast"
     },
     {

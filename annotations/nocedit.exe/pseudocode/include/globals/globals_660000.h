@@ -121,9 +121,11 @@ extern CDemonActor_vtable g_CWeaponVTable;
 extern CDemonActor_vtable g_CWerewolfVTable;
 extern CDemonActor_vtable g_CZombieVTable;
 
-// CDemonFilter*
-extern CDemonFilter* g_GlobalFilters;
-extern CDemonFilter* g_PlayerFilters;
+// CDemonFilter*[4]
+extern CDemonFilter* g_PlayerFilters[4];
+
+// CDemonFilter*[8]
+extern CDemonFilter* g_GlobalFilters[8];
 
 // CDemonPod_vtable
 extern CDemonPod_vtable g_CDemonPodVTable;
@@ -304,6 +306,9 @@ extern WatcomDestructorCall WatcomDestructorCall_006632ec;
 extern WatcomDestructorCall WatcomDestructorCall_00664600;
 extern WatcomDestructorCall WatcomDestructorCall_006652c0;
 
+// WatcomInheritanceLayout
+extern WatcomInheritanceLayout WatcomInheritanceLayout_00665e68;
+
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode WatcomStaticDestructorNode_0066e5cc;
 extern WatcomStaticDestructorNode g_CDeformableModelInstanceDestructorNode;
@@ -313,6 +318,10 @@ extern WatcomStaticDestructorNode WatcomStaticDestructorNode_0066ef5c;
 extern WatcomStaticDestructorNode WatcomStaticDestructorNode_0066ef6c;
 extern WatcomStaticDestructorNode g_CFilterCacheDestructorNode;
 extern WatcomStaticDestructorNode g_CFilterFXDestructorNode;
+
+// WatcomThunkedDestructor
+extern WatcomThunkedDestructor WatcomThunkedDestructor_00665b70;
+extern WatcomThunkedDestructor WatcomThunkedDestructor_00665e74;
 
 // WatcomTypeInfo
 extern WatcomTypeInfo g_CIcePickTypeInfo;
@@ -433,6 +442,7 @@ extern WatcomTypeInfo g_StrStreamBufTypeInfo;
 extern WatcomTypeInfo g_FilebufTypeInfo;
 
 // WatcomVirtualBaseDescriptor
+extern WatcomVirtualBaseDescriptor WatcomVirtualBaseDescriptor_00665b68;
 extern WatcomVirtualBaseDescriptor g_IstrstreamLayoutInfo;
 extern WatcomVirtualBaseDescriptor g_IFStream_LayoutInfo;
 extern WatcomVirtualBaseDescriptor g_IFStream_IStreamSubobjectLayout;
@@ -449,6 +459,9 @@ extern char g_CourseLastBonPath[256];
 // char[264]
 extern char g_CourseLastPthPath[264];
 extern char g_CourseLastCrsPath[264];
+
+// char[2]
+extern char g_PropertyNamePrefixMinusTwo[2];
 
 // char[300]
 extern char g_LocalizationTemplate[300];
@@ -516,6 +529,9 @@ extern int g_OctantRotationAngles[14];
 
 // int[16]
 extern int g_ColorLookupTable[16];
+
+// int[20]
+extern int g_PolygonReductionParams[20];
 
 // int[8]
 extern int g_CameraEdgeOffsetX[8];

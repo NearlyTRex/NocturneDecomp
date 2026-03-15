@@ -2,13 +2,13 @@
 // Address: 005e9e70
 // Address Range: [[005e9e70, 005e9ecf] [005e9ed1, 005ea31e]]
 // Convention: __cdecl
-// Signature: int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *this_ptr)
+// Signature: void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *this_ptr)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *this_ptr)
+void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *this_ptr)
 
 {
   int iVar1;
@@ -16,7 +16,6 @@ int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *thi
   int iVar3;
   int iVar2;
   uint uVar3;
-  int extraout_EAX;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -50,12 +49,12 @@ int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *thi
     iVar1 = iVar6 + iVar5;
     iVar5 = iVar5 + 0x20;
     iVar6 = iVar6 + 0x400;
-    (&DAT_03f8f608)[iVar2] = *(byte *)(iVar1 + 0x2cf901f + iVar2);
+    g_WaterTileSamples[iVar2] = *(uchar *)(iVar1 + 0x2cf901f + iVar2);
     iVar2 = iVar2;
   } while (iVar2 < 0x20);
   this_ptr->visible_area_sqft = 0.0;
   if (ABS(this_ptr->water_level_y) == 0.0) {
-    return iVar2;
+    return;
   }
   core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40(&g_CDemonRaytraceInstance,&local_44);
   core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_00499b70(&g_CDemonRaytraceInstance,&local_8c);
@@ -147,5 +146,5 @@ int __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater *thi
   this_ptr->visible_area_sqft = fVar2;
   engine_console_cpp_CConsole_printf_FUN_00441890
             (g_CConsolePtr,"Vis water tiles : %d, SqFt : %f",iVar1,(double)fVar2);
-  return extraout_EAX;
+  return;
 }

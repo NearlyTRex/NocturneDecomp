@@ -266,7 +266,7 @@ section .text
         ;   Label: LAB_0056a3b0
     PUSH EAX                            ; 0056a3b5 | g_CWaterInstance
     CALL core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70 ; 0056a3b6
-        ;   XREF to: 005e9e70 (UNCONDITIONAL_CALL)  ; int core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater * this_ptr)
+        ;   XREF to: 005e9e70 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70(CWater * this_ptr)
     MOV EAX,[0x006844f0]                ; 0056a3bb | g_CWaterInstance | g_CWaterPtr
     MOV EDX,dword ptr [EAX]             ; 0056a3c0 | g_CWaterInstance
     ADD ESP,0x4                         ; 0056a3c2

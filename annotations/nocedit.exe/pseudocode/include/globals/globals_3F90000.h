@@ -49,6 +49,9 @@ extern CVector3f g_WeatherParticlePositions[200];
 // CVector3i
 extern CVector3i g_TempProjectedCoord;
 
+// CVector3i[1000]
+extern CVector3i g_WaterActorTransformedVertices[1000];
+
 // CWayPoint*[2000]
 extern CWayPoint* g_WaypointSearchQueue[2000];
 
@@ -223,12 +226,6 @@ extern undefined1 DAT_03f98ff4;
 extern undefined1 DAT_03f9b850;
 
 // undefined4
-extern undefined4 DAT_03f90a88;
-extern undefined4 DAT_03f90a8c;
-extern undefined4 DAT_03f90a90;
-extern undefined4 DAT_03f90a94;
-extern undefined4 DAT_03f90a98;
-extern undefined4 DAT_03f90a9c;
 extern undefined4 g_FreeListHeadPointer;
 extern undefined4 DAT_03f9b210;
 

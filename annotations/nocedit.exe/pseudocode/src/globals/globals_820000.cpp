@@ -85,6 +85,9 @@ char g_ActorDebugBuffer[52] = {};
 // float
 float FLOAT_008224dc = {};
 
+// float[100]
+float g_BoneBurnIntensity[100] = {};
+
 // float[12][12]
 float g_BugsGroundHeightGridTemp[12][12] = {};
 
@@ -173,8 +176,4 @@ int g_BugsSortedVertexIndices[700] = {};
 
 // uint
 uint g_RandomSeedValue = {};
-
-// undefined4
-undefined4 DAT_00823c54 = {};
-undefined4 DAT_00823c58 = {};
 

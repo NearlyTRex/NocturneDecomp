@@ -27,14 +27,14 @@ void __cdecl core_water_cpp_CWater_render_FUN_005ea320(CWater *this_ptr,int rend
   
   if (ABS(this_ptr->water_level_y) != 0.0) {
     g_WaterAnimationTimer = g_WaterAnimationTimer + g_GlobalDeltaTimeInt;
-    if (0x00002000 < g_WaterAnimationTimer) {
-      g_WaterAnimationTimer = g_WaterAnimationTimer - 0x00002000;
+    if (INT_006844f4 < g_WaterAnimationTimer) {
+      g_WaterAnimationTimer = g_WaterAnimationTimer - INT_006844f4;
       g_WaterCurrentFrame = g_WaterCurrentFrame + 1;
       if (0xf < g_WaterCurrentFrame) {
         g_WaterCurrentFrame = 0;
       }
     }
-    INT_03f8f62c = (int)(((longlong)g_WaterAnimationTimer * 0xffff) / (longlong)0x00002000);
+    INT_03f8f62c = (int)(((longlong)g_WaterAnimationTimer * 0xffff) / (longlong)INT_006844f4);
     if (INT_03f8f62c < 0x10000) {
       if (INT_03f8f62c < 0) {
         INT_03f8f62c = 0;

@@ -19,17 +19,16 @@
   },
   "complexity": {
     "assembly_lines": 685,
-    "complexity_score": 913,
+    "complexity_score": 878,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 30,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 338,
-    "suspect_count": 55,
+    "suspect_count": 52,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
-      "undefined_data",
       "unresolved_funcptr",
       "warning_type_propagation"
     ],
@@ -202,7 +201,7 @@
     },
     {
       "addr": "02d7b7f4",
-      "name": "CQuaternion4f_02d7b7f4",
+      "name": "g_GabriellaWeaponAimRotation",
       "type": "CQuaternion4f",
       "value": null
     },
@@ -226,8 +225,8 @@
     },
     {
       "addr": "02d7b804",
-      "name": "DAT_02d7b804",
-      "type": "undefined1",
+      "name": "g_GabriellaWeaponAimRotationInitFlag",
+      "type": "uchar",
       "value": null
     },
     {
@@ -862,30 +861,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 216,
-      "match": "DAT_02d7b804",
-      "severity": "mild",
-      "text": "if ((DAT_02d7b804 & 1) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 217,
-      "match": "DAT_02d7b804",
-      "severity": "mild",
-      "text": "DAT_02d7b804 = DAT_02d7b804 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 217,
-      "match": "DAT_02d7b804",
-      "severity": "mild",
-      "text": "DAT_02d7b804 = DAT_02d7b804 | 1;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 221,
       "match": "(uint *)((int)",
@@ -962,7 +937,7 @@
       "line": 239,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&CQuaternion4f_02d7b7f4 + (uint)bVar6 * -8 + 4) =",
+      "text": "*(uint *)((int)&g_GabriellaWeaponAimRotation + (uint)bVar6 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {

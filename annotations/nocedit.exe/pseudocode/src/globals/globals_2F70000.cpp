@@ -11,7 +11,7 @@ CActorPropertyList g_MsnEditPropertyList = {};
 CEdCheck g_CEdCheckInstance = {};
 
 // CEdScrollBar
-CEdScrollBar CEdScrollBar_02f797e4 = {};
+CEdScrollBar g_MsnEditPropertyScrollBar = {};
 
 // CNetGame
 CNetGame g_CNetGameInstance = {};
@@ -21,6 +21,10 @@ EConnectionStatus g_ConnectionStatus = {};
 
 // SChatHistory[400]
 SChatHistory g_ChatHistory[400] = {};
+
+// char[1024]
+char g_MsnEditPropertyValueBuffer[1024] = {};
+char g_MsnEditPropertyFormatBuffer[1024] = {};
 
 // char[256]
 char g_ChatMessageBuffer[256] = {};
@@ -43,10 +47,10 @@ int g_RemoteSyncStage = {};
 int INT_02f7c8c4 = {};
 int g_ChatHistoryCount = {};
 
+// uchar
+uchar g_MsnEditPropertyScrollBarInitGuard = {};
+
 // uint
 uint g_CurrentGameTime = {};
 uint UINT_02f7c8c8 = {};
-
-// undefined1
-undefined1 DAT_02f79818 = {};
 

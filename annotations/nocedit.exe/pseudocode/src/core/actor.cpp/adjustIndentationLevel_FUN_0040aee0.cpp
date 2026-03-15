@@ -28,7 +28,7 @@ int __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(int indent_delta)
   }
   g_PropertyNamePrefix[iVar2] = '\0';
   for (; 0 < iVar2; iVar2 = iVar2 + -1) {
-    (&DAT_0066e177)[iVar2] = 9;
+    g_PropertyNamePrefixMinusTwo[iVar2 + 1] = '\t';
   }
   return iVar2;
 }

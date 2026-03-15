@@ -4,49 +4,49 @@
       {
         "category": "other",
         "column": 30,
-        "line": 154,
+        "line": 155,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 33,
-        "line": 158,
+        "line": 159,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 26,
-        "line": 169,
+        "line": 170,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 46,
-        "line": 198,
+        "line": 199,
         "message": "format specifies type 'char *' but the argument has type 'ulonglong' (aka 'unsigned long long') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 35,
-        "line": 198,
+        "line": 199,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 42,
-        "line": 262,
+        "line": 263,
         "message": "format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 274,
+        "line": 275,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 34,
-        "line": 284,
+        "line": 285,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -55,19 +55,18 @@
   },
   "complexity": {
     "assembly_lines": 1078,
-    "complexity_score": 537,
+    "complexity_score": 514,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 53,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 362,
-    "suspect_count": 16,
+    "pseudocode_lines": 364,
+    "suspect_count": 14,
     "suspect_types": [
       "decompiler_intrinsic",
-      "undefined_data",
       "warning_inlined_function"
     ],
-    "total_lines": 1440
+    "total_lines": 1442
   },
   "cross_references": [
     {
@@ -384,8 +383,8 @@
     },
     {
       "addr": "02db8c70",
-      "name": "CHAR_ARRAY_02db8c70",
-      "type": "char[256]",
+      "name": "g_InventoryWrappedTextLines",
+      "type": "char[10][256]",
       "value": null
     },
     {
@@ -396,8 +395,8 @@
     },
     {
       "addr": "02db9670",
-      "name": "DAT_02db9670",
-      "type": "char[256]",
+      "name": "g_InventoryWrappedTextLines2",
+      "type": "char[10][256]",
       "value": null
     },
     {
@@ -408,8 +407,8 @@
     },
     {
       "addr": "02dba070",
-      "name": "CHAR_ARRAY_02dba070",
-      "type": "char[256]",
+      "name": "g_InventoryWrappedTextLines3",
+      "type": "char[10][256]",
       "value": null
     },
     {
@@ -844,7 +843,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 99,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));",
@@ -852,7 +851,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 98,
+      "line": 99,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_68 = (int)ROUND(ROUND(this_ptr->weapon_highlight_timer * 65535.0f));",
@@ -860,47 +859,31 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 183,
+      "line": 184,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "uVar13 = CONCAT44(pcVar12,pcVar7);",
+      "text": "uVar13 = CONCAT44(pcVar13,pcVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 189,
+      "line": 190,
       "match": "CONCAT44",
       "severity": "mild",
-      "text": "uVar13 = CONCAT44(pcVar12,pcVar7);",
+      "text": "uVar13 = CONCAT44(pcVar13,pcVar7);",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 217,
+      "line": 218,
       "match": "CONCAT44",
       "severity": "mild",
       "text": "uVar13 = CONCAT44(pcVar5,pcVar6);",
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 279,
-      "match": "DAT_02db9670",
-      "severity": "mild",
-      "text": "((CBitFont *)local_44,local_578,DAT_02db9670,10,0x100,iVar3 - local_5c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 285,
-      "match": "DAT_02db9670",
-      "severity": "mild",
-      "text": "pcVar12 = DAT_02db9670;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 300,
+      "line": 302,
       "match": "ROUND",
       "severity": "mild",
       "text": "(6,(int)ROUND(ROUND((float)iVar10 +",
@@ -908,7 +891,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 300,
+      "line": 302,
       "match": "ROUND",
       "severity": "mild",
       "text": "(6,(int)ROUND(ROUND((float)iVar10 +",
@@ -916,7 +899,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 314,
+      "line": 316,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_64 = (int)ROUND(ROUND(local_67c * 65535.0f));",
@@ -924,7 +907,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 314,
+      "line": 316,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_64 = (int)ROUND(ROUND(local_67c * 65535.0f));",
@@ -932,7 +915,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 330,
+      "line": 332,
       "match": "ROUND",
       "severity": "mild",
       "text": "iVar5 = (int)ROUND(ROUND((float)iVar3 - (float)iVar3 * local_680));",
@@ -940,7 +923,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 330,
+      "line": 332,
       "match": "ROUND",
       "severity": "mild",
       "text": "iVar5 = (int)ROUND(ROUND((float)iVar3 - (float)iVar3 * local_680));",
@@ -948,7 +931,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 340,
+      "line": 342,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_60 = (int)ROUND(ROUND(dVar1 * 65535));",
@@ -956,7 +939,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 340,
+      "line": 342,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_60 = (int)ROUND(ROUND(dVar1 * 65535));",

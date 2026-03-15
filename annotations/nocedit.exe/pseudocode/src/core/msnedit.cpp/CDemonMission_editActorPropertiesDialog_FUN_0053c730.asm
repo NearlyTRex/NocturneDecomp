@@ -18,8 +18,8 @@
 ;   TerminatedCString s_Edit_s_properties_0063c887
 ;   char[104] g_MsnEditLastSelectedPropertyName
 ;   undefined4 DAT_0068090c
-;   undefined4 DAT_02f79820
-;   undefined4 DAT_02f79c20
+;   char[1024] g_MsnEditPropertyValueBuffer
+;   char[1024] g_MsnEditPropertyFormatBuffer
 ;   CActorPropertyList g_MsnEditPropertyList
 ;   undefined4 g_MsnEditPropertyList.count
 ;   undefined4 DAT_02f7a02c
@@ -64,7 +64,7 @@ section .text
     LEA EDI,[ESP + 0x4dc]               ; 0053c75e
     MOV ESI,0x680908                    ; 0053c765 | g_MsnEditLastSelectedPropertyName
     MOVSD.REP ES:EDI,ESI                ; 0053c76a | g_MsnEditLastSelectedPropertyName | DAT_0068090c
-    MOV EBP,0x2f79820                   ; 0053c76c | DAT_02f79820
+    MOV EBP,0x2f79820                   ; 0053c76c | g_MsnEditPropertyValueBuffer
     PUSH 0x2f7a024                      ; 0053c771 | g_MsnEditPropertyList
         ;   Label: LAB_0053c771
     CALL core_actor.cpp_CActorPropertyList_resetSelection_FUN_0040e150 ; 0053c776
@@ -88,7 +88,7 @@ section .text
         ;   XREF to: 0053c807 (CONDITIONAL_JUMP)  ; LAB_0053c807
     MOV EDI,0x2f7a02c                   ; 0053c7af | DAT_02f7a02c
     ADD EDI,0x4                         ; 0053c7b4
-    PUSH EBP                            ; 0053c7b7 | DAT_02f79820
+    PUSH EBP                            ; 0053c7b7 | g_MsnEditPropertyValueBuffer
         ;   Label: LAB_0053c7b7
     MOV EAX,dword ptr [EBX + 0x28]      ; 0053c7b8
     PUSH EAX                            ; 0053c7bb
@@ -98,14 +98,14 @@ section .text
     CALL core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50 ; 0053c7c8
         ;   XREF to: 0040ea50 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProperty * this_ptr, CDemonActor * actor, char * output_buffer)
     ADD ESP,0xc                         ; 0053c7cd
-    PUSH EBP                            ; 0053c7d0 | DAT_02f79820
+    PUSH EBP                            ; 0053c7d0 | g_MsnEditPropertyValueBuffer
     PUSH EDI                            ; 0053c7d1 | DAT_02f7a030
     PUSH 0x63c881                       ; 0053c7d2 | = "%s\t%s"
-    PUSH 0x2f79c20                      ; 0053c7d7 | DAT_02f79c20
+    PUSH 0x2f79c20                      ; 0053c7d7 | g_MsnEditPropertyFormatBuffer
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 0053c7dc
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0053c7e1
-    PUSH 0x2f79c20                      ; 0053c7e4 | DAT_02f79c20
+    PUSH 0x2f79c20                      ; 0053c7e4 | g_MsnEditPropertyFormatBuffer
     LEA EAX,[ESP + 0xc]                 ; 0053c7e9
     PUSH EAX                            ; 0053c7ed
     INC ESI                             ; 0053c7ee

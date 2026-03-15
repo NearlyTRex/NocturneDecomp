@@ -2646,9 +2646,9 @@ section .text
     MOV ECX,0x32                        ; 004ac3e2
         ;   Label: LAB_004ac3e2
     LEA EDI,[EBP + 0xfffff57a]          ; 004ac3e7
-    MOV ESI,0x6793d8                    ; 004ac3ed | DAT_006793d8
+    MOV ESI,0x6793d8                    ; 004ac3ed | g_DefaultSfxHandleName
     MOV EAX,dword ptr [EBP + -0x5e]     ; 004ac3f2
-    MOVSD.REP ES:EDI,ESI                ; 004ac3f5 | DAT_006793d8 | DAT_006793dc
+    MOVSD.REP ES:EDI,ESI                ; 004ac3f5 | g_DefaultSfxHandleName | DAT_006793dc
     CMP byte ptr [EAX],0x2c             ; 004ac3f7
     JZ 0x004ac41f                       ; 004ac3fa
         ;   XREF to: 004ac41f (CONDITIONAL_JUMP)  ; LAB_004ac41f
@@ -4622,10 +4622,10 @@ section .text
     MOV ECX,0xffffffff                  ; 004ad655
         ;   Label: LAB_004ad655
     LEA EDI,[EBP + 0xfffffd4a]          ; 004ad65a
-    MOV ESI,0x6794a0                    ; 004ad660 | DAT_006794a0
+    MOV ESI,0x6794a0                    ; 004ad660 | g_DefaultCommandArg
     MOV dword ptr [EBP + 0x72],ECX      ; 004ad665
     MOV ECX,0x19                        ; 004ad668
-    MOVSD.REP ES:EDI,ESI                ; 004ad66d | DAT_006794a0 | DAT_006794a4
+    MOVSD.REP ES:EDI,ESI                ; 004ad66d | g_DefaultCommandArg | DAT_006794a4
     LEA ECX,[EBP + 0x72]                ; 004ad66f
     PUSH ECX                            ; 004ad672
     LEA ECX,[EBP + 0xfffffd4a]          ; 004ad673

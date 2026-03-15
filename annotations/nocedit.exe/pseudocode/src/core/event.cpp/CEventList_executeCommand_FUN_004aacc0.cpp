@@ -38,10 +38,9 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
   char *pcVar16;
   char (*str1) [32];
   char *pcVar17;
-  uint *puVar18;
   uint *puVar17;
-  int iVar19;
-  char *pcVar20;
+  int iVar18;
+  char *pcVar19;
   byte bVar18;
   char local_153d [200];
   char local_1475 [200];
@@ -160,7 +159,7 @@ int __cdecl core_event_cpp_CEventList_executeCommand_FUN_004aacc0(CEventList *th
     pcVar15 = (char *)0x0;
 LAB_004aad41:
     if (pcVar15 == (char *)0x0) {
-      iVar19 = 0;
+      iVar18 = 0;
       if (0 < (this_ptr->events).count) {
         str1 = (this_ptr->events).names;
         do {
@@ -168,9 +167,9 @@ LAB_004aad41:
           if (iVar3 == 0) {
             return 1;
           }
-          iVar19 = iVar19 + 1;
+          iVar18 = iVar18 + 1;
           str1 = str1 + 1;
-        } while (iVar19 < (this_ptr->events).count);
+        } while (iVar18 < (this_ptr->events).count);
       }
       uVar12 = 0xffffffff;
       pcVar3 = command_buffer;
@@ -181,21 +180,21 @@ LAB_004aad41:
         pcVar3 = pcVar3 + (uint)bVar18 * -2 + 1;
       } while (cVar1 != '\0');
       if (0x1f < ~uVar12 - 1) {
-        iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is too long");
-        return iVar19;
+        iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is too long");
+        return iVar18;
       }
       if (99 < (this_ptr->events).count) {
         g_CurrentFilename = "..\\core\\event.cpp";
         g_CurrentLineNumber = 599;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Too many events");
       }
-      pcVar20 = (this_ptr->events).names[(this_ptr->events).count];
+      pcVar19 = (this_ptr->events).names[(this_ptr->events).count];
       local_14 = 0;
-      pcVar3 = pcVar20;
+      pcVar3 = pcVar19;
       do {
         cVar2 = *command_buffer;
         *pcVar3 = cVar2;
-        pcVar17 = pcVar20;
+        pcVar17 = pcVar19;
         if (cVar2 == '\0') break;
         cVar2 = command_buffer[1];
         command_buffer = command_buffer + 2;
@@ -205,7 +204,7 @@ LAB_004aad41:
       do {
         uVar14 = local_14;
         uVar13 = 0xffffffff;
-        pcVar3 = pcVar20;
+        pcVar3 = pcVar19;
         do {
           if (uVar13 == 0) break;
           uVar13 = uVar13 - 1;
@@ -219,20 +218,20 @@ LAB_004aad41:
           (this_ptr->events).count = (this_ptr->events).count + 1;
           return 1;
         }
-        iVar19 = toupper((uint)(byte)*pcVar17);
-        *pcVar17 = (byte)iVar19;
-        iVar19 = core_event_cpp_isValidIdentifierChar_FUN_004b0f90((uint)(byte)*pcVar17);
-        if (iVar19 == 0) {
-          iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is not valid")
+        iVar18 = toupper((uint)(byte)*pcVar17);
+        *pcVar17 = (byte)iVar18;
+        iVar18 = core_event_cpp_isValidIdentifierChar_FUN_004b0f90((uint)(byte)*pcVar17);
+        if (iVar18 == 0) {
+          iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0("Event name %s is not valid")
           ;
-          return iVar19;
+          return iVar18;
         }
         local_14 = uVar14 + 1;
         pcVar17 = pcVar17 + 1;
       } while( true );
     }
-    iVar19 = _strnicmp(command_buffer,"advanceLightFilter",0x12);
-    if ((iVar19 == 0) &&
+    iVar18 = _strnicmp(command_buffer,"advanceLightFilter",0x12);
+    if ((iVar18 == 0) &&
        ((g_CharacterClassificationTable[(byte)(command_buffer[0x12] + 1)] & 0xe0) == 0)) {
       local_ec = (byte *)(command_buffer + 0x12);
       while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -243,8 +242,8 @@ LAB_004aad41:
       core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10
                 (g_CDemonSetPtr,local_fc4,&local_e8,&local_44);
       if (local_e8 == (C3DSLight *)0x0) {
-        iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0("SpotLight %s doesn't exist.");
-        return iVar19;
+        iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0("SpotLight %s doesn't exist.");
+        return iVar18;
       }
       if (local_f0 != 0) {
         if (local_44 == (CDemonLight *)0x0) {
@@ -256,8 +255,8 @@ LAB_004aad41:
       }
     }
     else {
-      iVar19 = _strnicmp(command_buffer,"createExplosion",0xf);
-      if ((iVar19 == 0) &&
+      iVar18 = _strnicmp(command_buffer,"createExplosion",0xf);
+      if ((iVar18 == 0) &&
          ((g_CharacterClassificationTable[(byte)(command_buffer[0xf] + 1)] & 0xe0) == 0)) {
         local_ec = (byte *)(command_buffer + 0xf);
         while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -266,9 +265,9 @@ LAB_004aad41:
         local_e4 = -1;
         sscanf((char *)local_ec,"( %f , %n",local_e0);
         if (local_e4 < 0) {
-          iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0("Error parsing createExplosion() parms")
+          iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0("Error parsing createExplosion() parms")
           ;
-          return iVar19;
+          return iVar18;
         }
         local_ec = local_ec + local_e4;
         local_e4 = -1;
@@ -315,9 +314,9 @@ LAB_004aad41:
           }
         }
         if (local_e4 < 0) {
-          iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0("Error parsing createExplosion() parms")
+          iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0("Error parsing createExplosion() parms")
           ;
-          return iVar19;
+          return iVar18;
         }
         local_ec = local_ec + local_e4;
         while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -328,9 +327,9 @@ LAB_004aad41:
           local_e4 = -1;
           sscanf((char *)local_ec,", %f %n",local_e0 + 1);
           if (local_e4 < 0) {
-            iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0
+            iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0
                                ("Error parsing createExplosion() parms");
-            return iVar19;
+            return iVar18;
           }
           local_ec = local_ec + local_e4;
           while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -338,9 +337,9 @@ LAB_004aad41:
           }
         }
         if (*local_ec != 0x29) {
-          iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0("Error parsing createExplosion() parms, expected matching ')'")
+          iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0("Error parsing createExplosion() parms, expected matching ')'")
           ;
-          return iVar19;
+          return iVar18;
         }
         local_ec = local_ec + 1;
         if (local_f0 != 0) {
@@ -349,8 +348,8 @@ LAB_004aad41:
         }
       }
       else {
-        iVar19 = _strnicmp(command_buffer,"deleteActor",0xb);
-        if ((iVar19 == 0) &&
+        iVar18 = _strnicmp(command_buffer,"deleteActor",0xb);
+        if ((iVar18 == 0) &&
            ((g_CharacterClassificationTable[(byte)(command_buffer[0xb] + 1)] & 0xe0) == 0)) {
           local_ec = (byte *)(command_buffer + 0xb);
           while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -386,8 +385,8 @@ LAB_004aad41:
           }
         }
         else {
-          iVar19 = _strnicmp(command_buffer,"displayBitmap",0xd);
-          if ((iVar19 == 0) &&
+          iVar18 = _strnicmp(command_buffer,"displayBitmap",0xd);
+          if ((iVar18 == 0) &&
              ((g_CharacterClassificationTable[(byte)(command_buffer[0xd] + 1)] & 0xe0) == 0)) {
             local_ec = (byte *)(command_buffer + 0xd);
             while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -397,24 +396,24 @@ LAB_004aad41:
             sscanf
                       ((char *)local_ec,"( %[^ ,], %d, %d )%n",&stack0xffffe9c4,&local_d8,&local_d4);
             if (local_d0 < 0) {
-              iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0
+              iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0
                                  ("Error parsing displayBitmap() parms");
-              return iVar19;
+              return iVar18;
             }
             local_ec = local_ec + local_d0;
             while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
               local_ec = local_ec + 1;
             }
-            iVar19 = engine_dosio_c_getFileSize_FUN_00481880("art",&stack0xffffe9c4);
-            if (iVar19 < 0) {
-              iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0("Bitmap doesn't exist")
+            iVar18 = engine_dosio_c_getFileSize_FUN_00481880("art",&stack0xffffe9c4);
+            if (iVar18 < 0) {
+              iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0("Bitmap doesn't exist")
               ;
-              return iVar19;
+              return iVar18;
             }
-            if (iVar19 != local_d8 * local_d4) {
-              iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0
+            if (iVar18 != local_d8 * local_d4) {
+              iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0
                                  ("Bitmap file size does not match specified dimensions");
-              return iVar19;
+              return iVar18;
             }
             if (local_f0 != 0) {
               core_game_cpp_CGame_displayBitmap_FUN_004e2890
@@ -422,9 +421,9 @@ LAB_004aad41:
             }
           }
           else {
-            iVar19 = _strnicmp
+            iVar18 = _strnicmp
                                (command_buffer,"fadeAmbientSound",0x10);
-            if ((iVar19 == 0) &&
+            if ((iVar18 == 0) &&
                ((g_CharacterClassificationTable[(byte)(command_buffer[0x10] + 1)] & 0xe0) == 0)) {
               local_ec = (byte *)(command_buffer + 0x10);
               while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -444,8 +443,8 @@ LAB_004aad41:
               }
             }
             else {
-              iVar19 = _strnicmp(command_buffer,"fadeSfx",7);
-              if ((iVar19 == 0) &&
+              iVar18 = _strnicmp(command_buffer,"fadeSfx",7);
+              if ((iVar18 == 0) &&
                  ((g_CharacterClassificationTable[(byte)(command_buffer[7] + 1)] & 0xe0) == 0)) {
                 local_ec = (byte *)(command_buffer + 7);
                 while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -494,8 +493,8 @@ LAB_004aad41:
                 }
               }
               else {
-                iVar19 = _strnicmp(command_buffer,"flagOn",6);
-                if ((iVar19 == 0) &&
+                iVar18 = _strnicmp(command_buffer,"flagOn",6);
+                if ((iVar18 == 0) &&
                    ((g_CharacterClassificationTable[(byte)(command_buffer[6] + 1)] & 0xe0) == 0)) {
                   local_ec = (byte *)(command_buffer + 6);
                   while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2) != 0) {
@@ -505,17 +504,17 @@ LAB_004aad41:
                                      ((char **)&local_ec,local_194,0x20);
                   if (pcVar3 != (char *)0x0) {
 LAB_004aaf38:
-                    pcVar20 = g_EventErrorMessageBuffer;
+                    pcVar19 = g_EventErrorMessageBuffer;
                     do {
                       cVar2 = *pcVar3;
-                      *pcVar20 = cVar2;
+                      *pcVar19 = cVar2;
                       if (cVar2 == '\0') {
                         return 0;
                       }
                       cVar2 = pcVar3[1];
                       pcVar3 = pcVar3 + 2;
-                      pcVar20[1] = cVar2;
-                      pcVar20 = pcVar20 + 2;
+                      pcVar19[1] = cVar2;
+                      pcVar19 = pcVar19 + 2;
                     } while (cVar2 != '\0');
                     return 0;
                   }
@@ -525,8 +524,8 @@ LAB_004aaf38:
                   }
                 }
                 else {
-                  iVar19 = _strnicmp(command_buffer,"flagOff",7);
-                  if ((iVar19 == 0) &&
+                  iVar18 = _strnicmp(command_buffer,"flagOff",7);
+                  if ((iVar18 == 0) &&
                      ((g_CharacterClassificationTable[(byte)(command_buffer[7] + 1)] & 0xe0) == 0))
                   {
                     local_ec = (byte *)(command_buffer + 7);
@@ -542,9 +541,9 @@ LAB_004aaf38:
                     }
                   }
                   else {
-                    iVar19 = _strnicmp
+                    iVar18 = _strnicmp
                                        (command_buffer,"gameFlagOn",10);
-                    if ((iVar19 == 0) &&
+                    if ((iVar18 == 0) &&
                        ((g_CharacterClassificationTable[(byte)(command_buffer[10] + 1)] & 0xe0) == 0
                        )) {
                       local_ec = (byte *)(command_buffer + 10);
@@ -560,9 +559,9 @@ LAB_004aaf38:
                       }
                     }
                     else {
-                      iVar19 = _strnicmp
+                      iVar18 = _strnicmp
                                          (command_buffer,"gameFlagOff",0xb);
-                      if ((iVar19 == 0) &&
+                      if ((iVar18 == 0) &&
                          ((g_CharacterClassificationTable[(byte)(command_buffer[0xb] + 1)] & 0xe0)
                           == 0)) {
                         local_ec = (byte *)(command_buffer + 0xb);
@@ -578,9 +577,9 @@ LAB_004aaf38:
                         }
                       }
                       else {
-                        iVar19 = _strnicmp
+                        iVar18 = _strnicmp
                                            (command_buffer,"hurtCharacter",0xd);
-                        if ((iVar19 == 0) &&
+                        if ((iVar18 == 0) &&
                            ((g_CharacterClassificationTable[(byte)(command_buffer[0xd] + 1)] & 0xe0)
                             == 0)) {
                           local_ec = (byte *)(command_buffer + 0xd);
@@ -592,9 +591,9 @@ LAB_004aaf38:
                                     ((char *)local_ec," ( %[^,], %[^,],%f)%n",local_665 + 1,local_2e1 + 1,
                                      &local_b0);
                           if (local_b4 < 2) {
-                            iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0
+                            iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0
                                                ("Syntax error in killHero() parms");
-                            return iVar19;
+                            return iVar18;
                           }
                           uVar14 = 0xffffffff;
                           pcVar3 = local_665 + 1;
@@ -658,12 +657,12 @@ LAB_004aaf38:
                           if (pCVar7 == (CCharacter *)g_ActorNameSentinel) {
                             local_f0 = (uint)pCVar7 ^ (uint)g_ActorNameSentinel;
                           }
-                          iVar19 = core_event_cpp_parseDamageType_FUN_004aa960
+                          iVar18 = core_event_cpp_parseDamageType_FUN_004aa960
                                              (local_2e1 + 1,&local_ac);
-                          if (iVar19 == 0) {
-                            iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0
+                          if (iVar18 == 0) {
+                            iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0
                                                ("Unknown damage type \"%s\" in hurtCharacter command.");
-                            return iVar19;
+                            return iVar18;
                           }
                           if (local_f0 != 0) {
                             (*(((pCVar7->base).vtable._uc)->_uc).applyDamage)
@@ -671,9 +670,9 @@ LAB_004aaf38:
                           }
                         }
                         else {
-                          iVar19 = _strnicmp
+                          iVar18 = _strnicmp
                                              (command_buffer,"incCounter",10);
-                          if ((iVar19 == 0) &&
+                          if ((iVar18 == 0) &&
                              ((g_CharacterClassificationTable[(byte)(command_buffer[10] + 1)] & 0xe0
                               ) == 0)) {
                             local_ec = (byte *)(command_buffer + 10);
@@ -717,16 +716,16 @@ LAB_004aaf38:
                               SVar15 = SVar15 - 1;
                             }
                             if (local_f0 != 0) {
-                              iVar19 = core_event_cpp_CEventList_getCounterValue_FUN_004b0830
+                              iVar18 = core_event_cpp_CEventList_getCounterValue_FUN_004b0830
                                                  (this_ptr,local_121d + 1);
                               core_event_cpp_CEventList_setCounter_FUN_004b0720
-                                        (this_ptr,local_121d + 1,iVar19 + 1);
+                                        (this_ptr,local_121d + 1,iVar18 + 1);
                             }
                           }
                           else {
-                            iVar19 = _strnicmp
+                            iVar18 = _strnicmp
                                                (command_buffer,"killCharacter",0xd);
-                            if ((iVar19 == 0) &&
+                            if ((iVar18 == 0) &&
                                ((g_CharacterClassificationTable[(byte)(command_buffer[0xd] + 1)] &
                                 0xe0) == 0)) {
                               local_ec = (byte *)(command_buffer + 0xd);
@@ -755,9 +754,9 @@ LAB_004aaf38:
                                            local_219 + 1);
                               }
                               if (local_a4 < 0) {
-                                iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0
+                                iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0
                                                    ("Syntax error in killCharacter() parms");
-                                return iVar19;
+                                return iVar18;
                               }
                               uVar14 = 0xffffffff;
                               pcVar3 = local_153d + 1;
@@ -824,12 +823,12 @@ LAB_004aaf38:
                               if (pCVar10 == (CCharacter *)g_ActorNameSentinel) {
                                 local_f0 = 0;
                               }
-                              iVar19 = core_event_cpp_parseDeathType_FUN_004aa7d0
+                              iVar18 = core_event_cpp_parseDeathType_FUN_004aa7d0
                                                  (local_219 + 1,&local_98);
-                              if (iVar19 == 0) {
-                                iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0
+                              if (iVar18 == 0) {
+                                iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0
                                                    ("Unknown death type \"%s\" in killCharacter command.");
-                                return iVar19;
+                                return iVar18;
                               }
                               if (local_f0 != 0) {
                                 (*(((pCVar10->base).vtable._uc)->_uc).kill)
@@ -837,9 +836,9 @@ LAB_004aaf38:
                               }
                             }
                             else {
-                              iVar19 = _strnicmp
+                              iVar18 = _strnicmp
                                                  (command_buffer,"killHero",8);
-                              if ((iVar19 == 0) &&
+                              if ((iVar18 == 0) &&
                                  ((g_CharacterClassificationTable[(byte)(command_buffer[8] + 1)] &
                                   0xe0) == 0)) {
                                 local_ec = (byte *)(command_buffer + 8);
@@ -848,29 +847,29 @@ LAB_004aaf38:
                                   local_ec = local_ec + 1;
                                 }
                                 if (g_CNetGamePtr->connection_type != CONNECTION_NONE) {
-                                  iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0
+                                  iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0
                                                      ("Can't use killHero command in multi-player");
-                                  return iVar19;
+                                  return iVar18;
                                 }
                                 local_94 = -1;
                                 sscanf
                                           ((char *)local_ec," ( %[^)])%n",local_27c);
                                 if (local_94 < 2) {
-                                  iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0
+                                  iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0
                                                      ("Syntax error in killHero() parms");
-                                  return iVar19;
+                                  return iVar18;
                                 }
                                 local_ec = local_ec + local_94;
                                 while ((g_CharacterClassificationTable[(byte)(*local_ec + 1)] & 2)
                                        != 0) {
                                   local_ec = local_ec + 1;
                                 }
-                                iVar19 = core_event_cpp_parseDeathType_FUN_004aa7d0
+                                iVar18 = core_event_cpp_parseDeathType_FUN_004aa7d0
                                                    (local_27c,&local_90);
-                                if (iVar19 == 0) {
-                                  iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0
+                                if (iVar18 == 0) {
+                                  iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0
                                                      ("Unknown death type \"%s\" in killHero command.");
-                                  return iVar19;
+                                  return iVar18;
                                 }
                                 if ((local_f0 != 0) &&
                                    (this_ptr_03 = g_HeroActors[g_LocalHeroIndex],
@@ -880,9 +879,9 @@ LAB_004aaf38:
                                 }
                               }
                               else {
-                                iVar19 = _strnicmp
+                                iVar18 = _strnicmp
                                                    (command_buffer,"killSfx",7);
-                                if ((iVar19 == 0) &&
+                                if ((iVar18 == 0) &&
                                    ((g_CharacterClassificationTable[(byte)(command_buffer[7] + 1)] &
                                     0xe0) == 0)) {
                                   local_ec = (byte *)(command_buffer + 7);
@@ -967,9 +966,9 @@ LAB_004aaf38:
                                   }
                                 }
                                 else {
-                                  iVar19 = _strnicmp
+                                  iVar18 = _strnicmp
                                                      (command_buffer,"lightning",9);
-                                  if ((iVar19 == 0) &&
+                                  if ((iVar18 == 0) &&
                                      ((g_CharacterClassificationTable[(byte)(command_buffer[9] + 1)]
                                       & 0xe0) == 0)) {
                                     local_ec = (byte *)(command_buffer + 9);
@@ -992,9 +991,9 @@ LAB_004aaf38:
                                     }
                                   }
                                   else {
-                                    iVar19 = _strnicmp
+                                    iVar18 = _strnicmp
                                                        (command_buffer,"playSfx",7);
-                                    if ((iVar19 == 0) &&
+                                    if ((iVar18 == 0) &&
                                        ((g_CharacterClassificationTable
                                          [(byte)(command_buffer[7] + 1)] & 0xe0) == 0)) {
                                       local_ec = (byte *)(command_buffer + 7);
@@ -1038,12 +1037,12 @@ LAB_004aaf38:
                                                   (local_13ad + 1,local_13ad + 2,SVar15);
                                         SVar15 = SVar15 - 1;
                                       }
-                                      puVar18 = &DAT_006793d8;
-                                      pcVar3 = local_b15 + 1;
-                                      for (iVar19 = 0x32; iVar19 != 0; iVar19 = iVar19 + -1) {
-                                        *(uint *)pcVar3 = *puVar18;
-                                        puVar18 = puVar18 + (uint)bVar18 * -2 + 1;
-                                        pcVar3 = pcVar3 + (uint)bVar18 * -8 + 4;
+                                      pcVar3 = g_DefaultSfxHandleName;
+                                      pcVar19 = local_b15 + 1;
+                                      for (iVar18 = 0x32; iVar18 != 0; iVar18 = iVar18 + -1) {
+                                        *(uint *)pcVar19 = *(uint *)pcVar3;
+                                        pcVar3 = pcVar3 + ((uint)bVar18 * -2 + 1) * 4;
+                                        pcVar19 = pcVar19 + (uint)bVar18 * -8 + 4;
                                       }
                                       if (*pbVar11 == 0x2c) {
                                         local_7c = -1;
@@ -1110,13 +1109,13 @@ LAB_004aaf38:
                                         return 0;
                                       }
                                       if (local_f0 != 0) {
-                                        iVar19 = _strnicmp
+                                        iVar18 = _strnicmp
                                                            (local_13ad + 1,"cue",3);
-                                        if (iVar19 == 0) {
-                                          iVar19 = 
+                                        if (iVar18 == 0) {
+                                          iVar18 = 
                                                   sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0
                                                             (1);
-                                          if (iVar19 != 0) {
+                                          if (iVar18 != 0) {
                                             sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
                                             sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(1);
                                             uVar14 = core_sound_cpp_CSound_playSound_FUN_005b3a20
@@ -1140,10 +1139,10 @@ LAB_004aaf38:
                                       }
                                     }
                                     else {
-                                      iVar19 = _strnicmp
+                                      iVar18 = _strnicmp
                                                          (command_buffer,"setCameraAmbient"
                                                           ,0x10);
-                                      if ((iVar19 == 0) &&
+                                      if ((iVar18 == 0) &&
                                          ((g_CharacterClassificationTable
                                            [(byte)(command_buffer[0x10] + 1)] & 0xe0) == 0)) {
                                         local_ec = (byte *)(command_buffer + 0x10);
@@ -1187,9 +1186,9 @@ LAB_004aaf38:
                                                     (local_12e5 + 1,local_12e5 + 2,SVar15);
                                           SVar15 = SVar15 - 1;
                                         }
-                                        iVar19 = core_set_cpp_CDemonSet_findCameraByName_FUN_0056b790
+                                        iVar18 = core_set_cpp_CDemonSet_findCameraByName_FUN_0056b790
                                                            (g_CDemonSetPtr,local_12e5 + 1);
-                                        if (iVar19 < 0) {
+                                        if (iVar18 < 0) {
                                           _sprintf
                                                     (g_EventErrorMessageBuffer,
                                                      "Camera \"%s\" does not exist.");
@@ -1204,15 +1203,15 @@ LAB_004aaf38:
                                         }
                                         if (local_f0 != 0) {
                                           core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20
-                                                    (g_CDemonSetPtr,iVar19,
+                                                    (g_CDemonSetPtr,iVar18,
                                                      local_78 * (float)0.01);
                                         }
                                       }
                                       else {
-                                        iVar19 = _strnicmp
+                                        iVar18 = _strnicmp
                                                            (command_buffer,"setCounter",10)
                                         ;
-                                        if ((iVar19 == 0) &&
+                                        if ((iVar18 == 0) &&
                                            ((g_CharacterClassificationTable
                                              [(byte)(command_buffer[10] + 1)] & 0xe0) == 0)) {
                                           local_ec = (byte *)(command_buffer + 10);
@@ -1285,10 +1284,10 @@ LAB_004aaf38:
                                           }
                                         }
                                         else {
-                                          iVar19 = _strnicmp
+                                          iVar18 = _strnicmp
                                                              (command_buffer,
                                                               "setGroupAmbient",0xf);
-                                          if ((iVar19 == 0) &&
+                                          if ((iVar18 == 0) &&
                                              ((g_CharacterClassificationTable
                                                [(byte)(command_buffer[0xf] + 1)] & 0xe0) == 0)) {
                                             local_ec = (byte *)(command_buffer + 0xf);
@@ -1321,11 +1320,11 @@ LAB_004aaf38:
                                             }
                                           }
                                           else {
-                                            iVar19 = _strnicmp
+                                            iVar18 = _strnicmp
                                                                (command_buffer,
                                                                 "setLightFilterFrame",0x13)
                                             ;
-                                            if ((iVar19 == 0) &&
+                                            if ((iVar18 == 0) &&
                                                ((g_CharacterClassificationTable
                                                  [(byte)(command_buffer[0x13] + 1)] & 0xe0) == 0)) {
                                               local_ec = (byte *)(command_buffer + 0x13);
@@ -1338,28 +1337,28 @@ LAB_004aaf38:
                                                         ((char *)local_ec,"( %[^ ,] , %d )%n",local_7f4,
                                                          &local_54);
                                               if (local_58 < 0) {
-                                                iVar19 = 
+                                                iVar18 = 
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Error parsing setLightFilterFrame parms");
-                                                return iVar19;
+                                                return iVar18;
                                               }
                                               local_ec = local_ec + local_58;
                                               core_set_cpp_CDemonSet_addLightFilter_FUN_00570f10
                                                         (g_CDemonSetPtr,local_7f4,&local_50,
                                                          &local_4c);
                                               if (local_50 == (C3DSLight *)0x0) {
-                                                iVar19 = 
+                                                iVar18 = 
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("SpotLight %s doesn't exist.");
-                                                return iVar19;
+                                                return iVar18;
                                               }
                                               if ((local_54 < 0) ||
                                                  (local_50->filter_count <= local_54)) {
-                                                iVar19 = 
+                                                iVar18 = 
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Invalid filter frame, %s has %d filters",
                                                              local_7f4,local_50->filter_count);
-                                                return iVar19;
+                                                return iVar18;
                                               }
                                               if (local_f0 != 0) {
                                                 if (local_4c == (CDemonLight *)0x0) {
@@ -1373,10 +1372,10 @@ LAB_004aaf38:
                                               }
                                             }
                                             else {
-                                              iVar19 = _strnicmp
+                                              iVar18 = _strnicmp
                                                                  (command_buffer,
                                                                   "setLeverState",0xd);
-                                              if ((iVar19 == 0) &&
+                                              if ((iVar18 == 0) &&
                                                  ((g_CharacterClassificationTable
                                                    [(byte)(command_buffer[0xd] + 1)] & 0xe0) == 0))
                                               {
@@ -1465,10 +1464,10 @@ LAB_004aaf38:
                                                   }
                                                 }
                                                 else {
-                                                  iVar19 = 
+                                                  iVar18 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                                                             (g_CEventListPtr,local_1475 + 1);
-                                                  if (iVar19 == 0) {
+                                                  if (iVar18 == 0) {
                                                     uVar14 = 0;
                                                   }
                                                   else {
@@ -1481,10 +1480,10 @@ LAB_004aaf38:
                                                 }
                                               }
                                               else {
-                                                iVar19 = _strnicmp
+                                                iVar18 = _strnicmp
                                                                    (command_buffer,
                                                                     "setModelState",0xd);
-                                                if ((iVar19 == 0) &&
+                                                if ((iVar18 == 0) &&
                                                    ((g_CharacterClassificationTable
                                                      [(byte)(command_buffer[0xd] + 1)] & 0xe0) == 0)
                                                    ) {
@@ -1566,14 +1565,14 @@ LAB_004aaf38:
                                                   }
                                                   if (pCVar9 != g_ActorNameSentinel) {
                                                     pcVar3 = local_8bd + 1;
-                                                    iVar19 = 0;
+                                                    iVar18 = 0;
                                                     pCVar8 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                                                             ((CMotionController *)(pCVar9 + 1));
-                                                  iVar19 = 
+                                                  iVar18 = 
                                                   core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0
-                                                            (pCVar8,pcVar3,iVar19);
-                                                  if (iVar19 < 0) {
+                                                            (pCVar8,pcVar3,iVar18);
+                                                  if (iVar18 < 0) {
                                                     _sprintf
                                                               (g_EventErrorMessageBuffer,
                                                                "Model %s does not have state %s",
@@ -1585,15 +1584,15 @@ LAB_004aaf38:
                                                                                                         
                                                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                                                             ((CMotionController *)(pCVar9 + 1),
-                                                             iVar19,1);
+                                                             iVar18,1);
                                                   }
                                                   }
                                                 }
                                                 else {
-                                                  iVar19 = _strnicmp
+                                                  iVar18 = _strnicmp
                                                                      (command_buffer,
                                                                       "setTimer",8);
-                                                  if ((iVar19 == 0) &&
+                                                  if ((iVar18 == 0) &&
                                                      ((g_CharacterClassificationTable
                                                        [(byte)(command_buffer[8] + 1)] & 0xe0) == 0)
                                                      ) {
@@ -1669,10 +1668,10 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   else {
-                                                    iVar19 = _strnicmp
+                                                    iVar18 = _strnicmp
                                                                        (command_buffer,
                                                                         "setWeather",10);
-                                                    if ((iVar19 == 0) &&
+                                                    if ((iVar18 == 0) &&
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(command_buffer[10] + 1)] & 0xe0) ==
                                                         0)) {
@@ -1719,22 +1718,22 @@ LAB_004aaf38:
                                                               (local_e35 + 1,local_e35 + 2,SVar15);
                                                     SVar15 = SVar15 - 1;
                                                   }
-                                                  iVar19 = _stricmp
+                                                  iVar18 = _stricmp
                                                                      (local_e35 + 1,"none")
                                                   ;
                                                   type = WEATHER_TYPE_NONE;
-                                                  if (iVar19 != 0) {
-                                                    iVar19 = _stricmp
+                                                  if (iVar18 != 0) {
+                                                    iVar18 = _stricmp
                                                                        (local_e35 + 1,
                                                                         "rain");
-                                                    if (iVar19 == 0) {
+                                                    if (iVar18 == 0) {
                                                       type = WEATHER_TYPE_RAIN;
                                                     }
                                                     else {
-                                                      iVar19 = _stricmp
+                                                      iVar18 = _stricmp
                                                                          (local_e35 + 1,
                                                                           "snow");
-                                                      if (iVar19 != 0) {
+                                                      if (iVar18 != 0) {
                                                         _sprintf
                                                                   (g_EventErrorMessageBuffer,
                                                                    "Invalid weather type: %s"
@@ -1751,10 +1750,10 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   else {
-                                                    iVar19 = _strnicmp
+                                                    iVar18 = _strnicmp
                                                                        (command_buffer,
                                                                         "shakeScreen",0xb);
-                                                    if ((iVar19 == 0) &&
+                                                    if ((iVar18 == 0) &&
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(command_buffer[0xb] + 1)] & 0xe0)
                                                         == 0)) {
@@ -1784,11 +1783,11 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   else {
-                                                    iVar19 = _strnicmp
+                                                    iVar18 = _strnicmp
                                                                        (command_buffer,
                                                                         "slamModelToMotion"
                                                                         ,0x11);
-                                                    if ((iVar19 == 0) &&
+                                                    if ((iVar18 == 0) &&
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(command_buffer[0x11] + 1)] & 0xe0)
                                                         == 0)) {
@@ -1871,15 +1870,15 @@ LAB_004aaf38:
                                                   }
                                                   if (pCVar9 != g_ActorNameSentinel) {
                                                     pcVar3 = local_40d + 1;
-                                                    iVar19 = 0;
+                                                    iVar18 = 0;
                                                     this_ptr_02 = pCVar9 + 1;
                                                     this_ptr_04 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                                                             ((CMotionController *)this_ptr_02);
-                                                  iVar19 = 
+                                                  iVar18 = 
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
-                                                            (this_ptr_04,pcVar3,iVar19);
-                                                  if (iVar19 < 0) {
+                                                            (this_ptr_04,pcVar3,iVar18);
+                                                  if (iVar18 < 0) {
                                                     _sprintf
                                                               (g_EventErrorMessageBuffer,
                                                                "Model %s does not have motion %s",
@@ -1890,24 +1889,24 @@ LAB_004aaf38:
                                                   if (local_f0 != 0) {
                                                                                                         
                                                   core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
-                                                            ((CMotionController *)this_ptr_02,iVar19
+                                                            ((CMotionController *)this_ptr_02,iVar18
                                                              ,0.0);
-                                                  iVar19 = 1;
+                                                  iVar18 = 1;
                                                   pSVar9 = 
                                                   core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                                                             ((CMotionController *)this_ptr_02);
                                                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                                                             ((CMotionController *)this_ptr_02,
-                                                             pSVar9->state_index,iVar19);
+                                                             pSVar9->state_index,iVar18);
                                                   }
                                                   }
                                                   }
                                                   else {
-                                                    iVar19 = _strnicmp
+                                                    iVar18 = _strnicmp
                                                                        (command_buffer,
                                                                         "switchCamera",0xc)
                                                     ;
-                                                    if ((iVar19 == 0) &&
+                                                    if ((iVar18 == 0) &&
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(command_buffer[0xc] + 1)] & 0xe0)
                                                         == 0)) {
@@ -1917,10 +1916,10 @@ LAB_004aaf38:
                                                         pbVar10 = pbVar10 + 1;
                                                       }
                                                       local_1c = -1;
-                                                      puVar17 = &DAT_006794a0;
+                                                      puVar17 = (uint *)g_DefaultCommandArg;
                                                       pcVar3 = local_344;
-                                                      for (iVar19 = 0x19; iVar19 != 0;
-                                                          iVar19 = iVar19 + -1) {
+                                                      for (iVar18 = 0x19; iVar18 != 0;
+                                                          iVar18 = iVar18 + -1) {
                                                         puVar17 = puVar17 + (uint)bVar18 * -2 + 1;
                                                         *(uint *)pcVar3 = *puVar17;
                                                         puVar17 = puVar17;
@@ -1931,24 +1930,24 @@ LAB_004aaf38:
                                                                 ((char *)pbVar10," ( %[^ ,)]%n",
                                                                  local_344);
                                                       if (local_1c < 2) {
-                                                        iVar19 = 
+                                                        iVar18 = 
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Syntax error in switchCamera() parms");
-                                                  return iVar19;
+                                                  return iVar18;
                                                   }
                                                   local_ec = local_ec + local_1c;
                                                   while ((g_CharacterClassificationTable
                                                           [(byte)(*local_ec + 1)] & 2) != 0) {
                                                     local_ec = local_ec + 1;
                                                   }
-                                                  iVar19 = 
+                                                  iVar18 = 
                                                   core_set_cpp_CDemonSet_findCameraByName_FUN_0056b790
                                                             (g_CDemonSetPtr,local_344);
-                                                  if (iVar19 < 0) {
-                                                    iVar19 = 
+                                                  if (iVar18 < 0) {
+                                                    iVar18 = 
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Camera \"%s\" doesn't exist");
-                                                  return iVar19;
+                                                  return iVar18;
                                                   }
                                                   local_70 = 3.0;
                                                   if (*local_ec == 0x2c) {
@@ -1957,10 +1956,10 @@ LAB_004aaf38:
                                                               ((char *)local_ec,",%f%n",
                                                                &local_70);
                                                     if (local_1c < 2) {
-                                                      iVar19 = 
+                                                      iVar18 = 
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Syntax error in switchCamera() parms");
-                                                  return iVar19;
+                                                  return iVar18;
                                                   }
                                                   local_ec = local_ec + local_1c;
                                                   while ((g_CharacterClassificationTable
@@ -1969,30 +1968,30 @@ LAB_004aaf38:
                                                   }
                                                   }
                                                   if (*local_ec != 0x29) {
-                                                    iVar19 = 
+                                                    iVar18 = 
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Missing ')' in switchCamera() statement");
-                                                  return iVar19;
+                                                  return iVar18;
                                                   }
                                                   local_ec = local_ec + 1;
                                                   if (local_f0 != 0) {
                                                                                                         
                                                   core_setdir_cpp_CDemonSet_setPendingCamera_FUN_00575b00
-                                                            (g_CDemonSetPtr,iVar19,local_70);
+                                                            (g_CDemonSetPtr,iVar18,local_70);
                                                   }
                                                   }
                                                   else {
-                                                    iVar19 = _strnicmp
+                                                    iVar18 = _strnicmp
                                                                        (command_buffer,
                                                                         "warpTo",6);
-                                                    if ((iVar19 != 0) ||
+                                                    if ((iVar18 != 0) ||
                                                        ((g_CharacterClassificationTable
                                                          [(byte)(command_buffer[6] + 1)] & 0xe0) !=
                                                         0)) {
-                                                      iVar19 = 
+                                                      iVar18 = 
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Unknown meta-function starting at %s");
-                                                  return iVar19;
+                                                  return iVar18;
                                                   }
                                                   local_ec = (byte *)(command_buffer + 6);
                                                   while ((g_CharacterClassificationTable
@@ -2004,10 +2003,10 @@ LAB_004aaf38:
                                                             ((char *)local_ec,"(%[^,], %[^)])%n",
                                                              local_bdd + 1,local_59d + 1);
                                                   if (local_18 < 5) {
-                                                    iVar19 = 
+                                                    iVar18 = 
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Error parsing warpTo command parms");
-                                                  return iVar19;
+                                                  return iVar18;
                                                   }
                                                   uVar14 = 0xffffffff;
                                                   pcVar3 = local_bdd + 1;
@@ -2146,10 +2145,10 @@ LAB_004aaf38:
                                                   }
                                                   if ((local_18 < 0) ||
                                                      (local_59d[local_18 + 1] != '\0')) {
-                                                    iVar19 = 
+                                                    iVar18 = 
                                                   core_event_cpp_formatEventError_FUN_004aa2a0
                                                             ("Error parsing warpTo command parms");
-                                                  return iVar19;
+                                                  return iVar18;
                                                   }
                                                   if (local_f0 != 0) {
                                                     pCVar10 = (CCharacter *)
@@ -2202,8 +2201,8 @@ LAB_004aaf38:
       local_ec = local_ec + 1;
     }
     if (*local_ec != 0) {
-      iVar19 = core_event_cpp_formatEventError_FUN_004aa2a0("Extra characters found");
-      return iVar19;
+      iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0("Extra characters found");
+      return iVar18;
     }
   }
   return 1;

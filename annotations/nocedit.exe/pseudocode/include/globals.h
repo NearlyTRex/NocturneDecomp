@@ -107,8 +107,6 @@
 #include "globals/globals_600000.h"
 #include "globals/globals_610000.h"
 #include "globals/globals_620000.h"
-#include "globals/globals_630000.h"
-#include "globals/globals_640000.h"
 #include "globals/globals_650000.h"
 #include "globals/globals_660000.h"
 #include "globals/globals_670000.h"

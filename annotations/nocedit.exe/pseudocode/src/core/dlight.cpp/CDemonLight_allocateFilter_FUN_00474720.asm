@@ -40,7 +40,6 @@ section .text
     PUSH EBX                            ; 00474746
         ;   Label: LAB_00474746
     MOV ECX,0x61f1a6                    ; 00474747 | = "..\\core\\dlight.cpp"
-        ;   Label: LAB_00474747
     MOV EBX,0x541                       ; 0047474c
     PUSH 0x61f1b9                       ; 00474751 | = "CDemonLight::allocateFilter - Out of ..."
     MOV dword ptr [0x02f0ca48],ECX      ; 00474756 | g_CurrentFilename

@@ -13,7 +13,7 @@
 ;   undefined4 g_RenderVertexBuffer[0].v
 ;   int g_CurrentPolygonColor
 ;   uint g_ProcessedVertexOffset
-;   undefined4 DAT_00772a70
+;   int INT_00772a70
 ;   int g_TexturesDisabled
 ;   int[24] g_ProcessedVertexIndices
 ;   undefined4 DAT_00772a9c
@@ -113,7 +113,7 @@ section .text
         ;   Label: LAB_00406515
     JMP 0x00406489                      ; 0040651f
         ;   XREF to: 00406489 (UNCONDITIONAL_JUMP)  ; LAB_00406489
-    CMP dword ptr [0x00772a70],0x0      ; 00406524 | DAT_00772a70
+    CMP dword ptr [0x00772a70],0x0      ; 00406524 | INT_00772a70
         ;   Label: LAB_00406524
     JNZ 0x00406602                      ; 0040652b
         ;   XREF to: 00406602 (CONDITIONAL_JUMP)  ; LAB_00406602

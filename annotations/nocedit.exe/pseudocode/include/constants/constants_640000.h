@@ -2962,6 +2962,7 @@ static char s_EmptyChar_00643d07 = '\0';
 static char s_EmptyChar_00643de8 = '\0';
 static char s_EmptyChar_00643e07 = '\0';
 static char s_EmptyChar_00643e08 = '\0';
+static char s_EmptyChar_00643f94 = '\0';
 static char s_EmptyChar_00643fd5 = '\0';
 
 // double constants

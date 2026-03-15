@@ -31,7 +31,7 @@
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonSet* g_CDemonSetPtr = 03114278
-;   undefined4 DAT_006844f4
+;   int INT_006844f4 = 0x2000
 ;   SMRGLTextureBasic[16] g_WaterTextures
 ;   SMRGLTextureBasic* g_WaterTexturesEnd = 00000000
 ;   CDemonRenderer g_CDemonRendererInstance
@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 005ea791 (CONDITIONAL_JUMP)  ; LAB_005ea791
     MOV ECX,dword ptr [0x03f875fc]      ; 005ea33c | g_WaterAnimationTimer
     ADD ECX,dword ptr [0x02cf6a80]      ; 005ea342 | g_GlobalDeltaTimeInt
-    MOV EBX,dword ptr [0x006844f4]      ; 005ea348 | DAT_006844f4
+    MOV EBX,dword ptr [0x006844f4]      ; 005ea348 | INT_006844f4
     MOV dword ptr [0x03f875fc],ECX      ; 005ea34e | g_WaterAnimationTimer
     CMP ECX,EBX                         ; 005ea354
     JLE 0x005ea37a                      ; 005ea356
@@ -88,7 +88,7 @@ section .text
     MOV dword ptr [0x03f87600],ECX      ; 005ea374 | g_WaterCurrentFrame
     MOV EDX,0xffff                      ; 005ea37a
         ;   Label: LAB_005ea37a
-    MOV EBX,dword ptr [0x006844f4]      ; 005ea37f | DAT_006844f4
+    MOV EBX,dword ptr [0x006844f4]      ; 005ea37f | INT_006844f4
     MOV EAX,[0x03f875fc]                ; 005ea385 | g_WaterAnimationTimer
     IMUL EDX                            ; 005ea38a
     IDIV EBX                            ; 005ea38c

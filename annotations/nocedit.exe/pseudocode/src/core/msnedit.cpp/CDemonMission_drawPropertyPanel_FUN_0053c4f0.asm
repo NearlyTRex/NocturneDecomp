@@ -18,11 +18,11 @@
 ;   int g_MouseX
 ;   int g_MouseY
 ;   int g_ActiveRenderColor
-;   CEdScrollBar CEdScrollBar_02f797e4
-;   undefined4 CEdScrollBar_02f797e4.current_value
-;   undefined4 CEdScrollBar_02f797e4.max_value
-;   undefined4 CEdScrollBar_02f797e4.scroll_increment
-;   undefined1 DAT_02f79818
+;   CEdScrollBar g_MsnEditPropertyScrollBar
+;   undefined4 g_MsnEditPropertyScrollBar.current_value
+;   undefined4 g_MsnEditPropertyScrollBar.max_value
+;   undefined4 g_MsnEditPropertyScrollBar.scroll_increment
+;   uchar g_MsnEditPropertyScrollBarInitGuard
 ;   CActorPropertyList g_MsnEditPropertyList
 ;   undefined4 g_MsnEditPropertyList.count
 ;   ... and 3 more
@@ -77,7 +77,7 @@ section .text
     MOV EDX,dword ptr [ESI + 0x154]     ; 0053c536
     PUSH ESI                            ; 0053c53c
     CALL dword ptr [EDX + 0xd4]         ; 0053c53d
-    MOV AH,byte ptr [0x02f79818]        ; 0053c543 | DAT_02f79818
+    MOV AH,byte ptr [0x02f79818]        ; 0053c543 | g_MsnEditPropertyScrollBarInitGuard
     ADD ESP,0x8                         ; 0053c549
     TEST AH,0x1                         ; 0053c54c
     JZ 0x0053c6b7                       ; 0053c54f
@@ -114,24 +114,24 @@ section .text
     PUSH ESI                            ; 0053c5b4
     PUSH 0x1                            ; 0053c5b5
     PUSH EAX                            ; 0053c5b7
-    PUSH 0x2f797e4                      ; 0053c5b8 | CEdScrollBar_02f797e4
+    PUSH 0x2f797e4                      ; 0053c5b8 | g_MsnEditPropertyScrollBar
     CALL shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60 ; 0053c5bd
         ;   XREF to: 004a5b60 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60(CEdScrollBar * this_ptr, int left_pos, int top_pos, int right_pos, ...)
     MOV EDX,0xf0                        ; 0053c5c2
     MOV EAX,[0x02f7c510]                ; 0053c5c7 | g_MsnEditPropertyList.total_height
-    MOV dword ptr [0x02f797ec],EDX      ; 0053c5cc | CEdScrollBar_02f797e4.max_value
+    MOV dword ptr [0x02f797ec],EDX      ; 0053c5cc | g_MsnEditPropertyScrollBar.max_value
     MOV EDX,EAX                         ; 0053c5d2
     MOV ECX,dword ptr [0x02f7a028]      ; 0053c5d4 | g_MsnEditPropertyList.count
     SAR EDX,0x1f                        ; 0053c5da
-    MOV [0x02f797e8],EAX                ; 0053c5dd | CEdScrollBar_02f797e4.current_value
+    MOV [0x02f797e8],EAX                ; 0053c5dd | g_MsnEditPropertyScrollBar.current_value
     IDIV ECX                            ; 0053c5e2
     ADD ESP,0x14                        ; 0053c5e4
-    PUSH 0x2f797e4                      ; 0053c5e7 | CEdScrollBar_02f797e4
-    MOV [0x02f797f0],EAX                ; 0053c5ec | CEdScrollBar_02f797e4.scroll_increment
+    PUSH 0x2f797e4                      ; 0053c5e7 | g_MsnEditPropertyScrollBar
+    MOV [0x02f797f0],EAX                ; 0053c5ec | g_MsnEditPropertyScrollBar.scroll_increment
     CALL shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0 ; 0053c5f1
         ;   XREF to: 004a5fc0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 0053c5f6
-    MOV EAX,[0x02f797e4]                ; 0053c5f9 | CEdScrollBar_02f797e4
+    MOV EAX,[0x02f797e4]                ; 0053c5f9 | g_MsnEditPropertyScrollBar
     PUSH EBX                            ; 0053c5fe
     NEG EAX                             ; 0053c5ff
     PUSH EAX                            ; 0053c601
@@ -175,7 +175,7 @@ section .text
     ADD ESP,0x8                         ; 0053c667
     CALL engine_matrix.c_popViewport_FUN_0050e480 ; 0053c66a
         ;   XREF to: 0050e480 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_0050e480()
-    PUSH 0x2f797e4                      ; 0053c66f | CEdScrollBar_02f797e4
+    PUSH 0x2f797e4                      ; 0053c66f | g_MsnEditPropertyScrollBar
     CALL shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10 ; 0053c674
         ;   XREF to: 004a5c10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 0053c679
@@ -207,8 +207,8 @@ section .text
     MOV DL,AH                           ; 0053c6b7
         ;   Label: LAB_0053c6b7
     OR DL,0x1                           ; 0053c6b9
-    PUSH 0x2f797e4                      ; 0053c6bc | CEdScrollBar_02f797e4
-    MOV byte ptr [0x02f79818],DL        ; 0053c6c1 | DAT_02f79818
+    PUSH 0x2f797e4                      ; 0053c6bc | g_MsnEditPropertyScrollBar
+    MOV byte ptr [0x02f79818],DL        ; 0053c6c1 | g_MsnEditPropertyScrollBarInitGuard
     CALL shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0 ; 0053c6c7
         ;   XREF to: 004a5ae0 (UNCONDITIONAL_CALL)  ; CEdScrollBar * shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 0053c6cc
@@ -236,7 +236,7 @@ section .text
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0053c706
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0053c70b
-    PUSH 0x2f797e4                      ; 0053c70e | CEdScrollBar_02f797e4
+    PUSH 0x2f797e4                      ; 0053c70e | g_MsnEditPropertyScrollBar
     CALL shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40 ; 0053c713
         ;   XREF to: 004a5b40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEdScrollBar_clearActiveButtonIfMatch_FUN_004a5b40(CEdScrollBar * this_ptr)
     ADD ESP,0x4                         ; 0053c718

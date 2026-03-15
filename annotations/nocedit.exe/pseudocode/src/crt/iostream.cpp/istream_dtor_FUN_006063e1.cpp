@@ -16,7 +16,7 @@ _istream * __cdecl crt_iostream_cpp_istream_dtor_FUN_006063e1(_istream *this_ptr
   if ((flags & 4) == 0) {
     iVar1 = ((this_ptr->_istream_core).layout_info)->offset_to_base;
     *(int *)((this_ptr->_ios).padding + iVar1 + -0x35) = iVar1;
-    (this_ptr->_istream_core).destructor_vtable = &PTR_unk_OtherFreeMemory2_FUN_006063e1_00665e74;
+    (this_ptr->_istream_core).destructor_vtable = &WatcomThunkedDestructor_00665e74;
     *(void ***)
      ((this_ptr->_ios).padding + ((this_ptr->_istream_core).layout_info)->offset_to_base + -9) =
          &PTR_FUN_00665e7c;

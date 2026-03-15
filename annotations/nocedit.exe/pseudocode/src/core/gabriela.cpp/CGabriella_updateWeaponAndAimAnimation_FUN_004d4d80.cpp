@@ -220,8 +220,8 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
         if ((0.82f <= this_ptr->draw_blend) &&
            (fVar2 = ((this_ptr->draw_blend - 0.82f) / (1.0 - 0.82f)) *
                     this_ptr->aim_weight, (float)0.001 < fVar2)) {
-          if ((DAT_02d7b804 & 1) == 0) {
-            DAT_02d7b804 = DAT_02d7b804 | 1;
+          if ((g_GabriellaWeaponAimRotationInitFlag & 1) == 0) {
+            g_GabriellaWeaponAimRotationInitFlag = g_GabriellaWeaponAimRotationInitFlag | 1;
             core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30(-1.5707964,&local_e4);
             pCVar10 = &local_a4;
             local_a4.w = local_e4.w;
@@ -240,16 +240,16 @@ void __cdecl core_gabriela_cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d
             *puVar7 = *puVar6;
             puVar7[(uint)bVar6 * -2 + 1] = puVar6[(uint)bVar6 * -2 + 1];
             core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_b4,pCVar10,&local_1e4);
-            CQuaternion4f_02d7b7f4.w = local_1e4.w;
+            g_GabriellaWeaponAimRotation.w = local_1e4.w;
             puVar5 = (uint *)((uint)bVar6 * -8 + 0x2d7b7fc + (uint)bVar6 * -8);
             puVar6 = (uint *)((int)&local_1e4 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
-            *(uint *)((int)&CQuaternion4f_02d7b7f4 + (uint)bVar6 * -8 + 4) =
+            *(uint *)((int)&g_GabriellaWeaponAimRotation + (uint)bVar6 * -8 + 4) =
                  *(uint *)((int)&local_1e4 + (uint)bVar6 * -8 + 4);
             *puVar5 = *puVar6;
             puVar5[(uint)bVar6 * -2 + 1] = puVar6[(uint)bVar6 * -2 + 1];
           }
           core_xform_cpp_multiplyQuaternion_FUN_005f7640
-                    (&CQuaternion4f_02d7b7f4,&local_1a4,&local_1d4);
+                    (&g_GabriellaWeaponAimRotation,&local_1a4,&local_1d4);
           pcVar13 = core_gabriela_cpp_weaponDrawBlendWeightCallback_FUN_004d29f0;
           pCVar10 = &local_114;
           pCVar9 = &(this_ptr->base).base.model;

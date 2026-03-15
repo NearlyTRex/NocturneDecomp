@@ -1,28 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "other",
-        "column": 12,
-        "line": 21,
-        "message": "assigning to 'char *' from 'undefined1 *' (aka 'unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 59,
+    "complexity_score": 44,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 44,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 98
   },
   "cross_references": [
@@ -78,9 +69,9 @@
   "globals": [
     {
       "addr": "00643f94",
-      "name": "DAT_00643f94",
-      "type": "undefined1",
-      "value": null
+      "name": "s_EmptyChar_00643f94",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "031101c0",
@@ -276,14 +267,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_00643f94",
-      "severity": "mild",
-      "text": "pcVar5 = &DAT_00643f94;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

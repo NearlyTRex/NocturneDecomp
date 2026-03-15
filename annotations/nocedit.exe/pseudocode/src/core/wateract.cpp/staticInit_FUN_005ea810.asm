@@ -10,8 +10,8 @@
 ;   WatcomTypeInfo g_SCollisionInfoTypeInfo
 ;   int g_CWaterActorVersion = 0x6
 ;   CDemonActorType g_CDemonActorClassInfo
-;   CVector3f[100] DAT_03f8f638
-;   SCollisionInfo[100] DAT_03f8fae8
+;   CVector3f[100] CVector3f_ARRAY_03f8f638
+;   SCollisionInfo[100] SCollisionInfo_ARRAY_03f8fae8
 ;   CDemonActorType g_CWaterActorClassInfo
 ;
 ; Called Functions:
@@ -25,13 +25,13 @@ section .text
     PUSH 0x6598c0                       ; 005ea810 | g_CVectorTypeInfo
         ;   Label: core_wateract.cpp_staticInit_FUN_005ea810
     PUSH 0x64                           ; 005ea815
-    PUSH 0x3f8f638                      ; 005ea817 | DAT_03f8f638
+    PUSH 0x3f8f638                      ; 005ea817 | CVector3f_ARRAY_03f8f638
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 005ea81c
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005ea821
     PUSH 0x65c5d0                       ; 005ea824 | g_SCollisionInfoTypeInfo
     PUSH 0x64                           ; 005ea829
-    PUSH 0x3f8fae8                      ; 005ea82b | DAT_03f8fae8
+    PUSH 0x3f8fae8                      ; 005ea82b | SCollisionInfo_ARRAY_03f8fae8
     CALL crt_memory.c___arrinit_FUN_005fe667 ; 005ea830
         ;   XREF to: 005fe667 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005fe667(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 005ea835

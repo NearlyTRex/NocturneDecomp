@@ -138,8 +138,8 @@
     {
       "addr": "0066ef9c",
       "name": "g_GlobalFilters",
-      "type": "CDemonFilter*",
-      "value": "020a4878"
+      "type": "CDemonFilter*[8]",
+      "value": null
     },
     {
       "addr": "02f0ca48",
@@ -307,7 +307,7 @@
       "line": 32,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(ROUND(this_ptr->volumetric_intensity * fVar1))],",
+      "text": "(this_ptr,g_GlobalFilters[(int)ROUND(ROUND(this_ptr->volumetric_intensity * fVar1))],0,0",
       "type": "decompiler_intrinsic"
     },
     {
@@ -315,7 +315,7 @@
       "line": 32,
       "match": "ROUND",
       "severity": "mild",
-      "text": "(this_ptr,(&g_GlobalFilters)[(int)ROUND(ROUND(this_ptr->volumetric_intensity * fVar1))],",
+      "text": "(this_ptr,g_GlobalFilters[(int)ROUND(ROUND(this_ptr->volumetric_intensity * fVar1))],0,0",
       "type": "decompiler_intrinsic"
     }
   ]

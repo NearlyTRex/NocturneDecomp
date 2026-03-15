@@ -18,7 +18,7 @@
 ; Referenced Globals:
 ;   Heap* g_MainHeap = 00000000
 ;   Heap* g_SecondaryHeap = 00000000
-;   undefined4 DAT_00684edc
+;   int INT_00684edc = 0x0
 ;   void* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00 = 00602434
 ;   void* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08 = 00602434
 ;   undefined1 DAT_03f9b850
@@ -69,21 +69,21 @@ section .text
     MOV byte ptr [ESP + 0x8],AH         ; 00601c03
     MOV EAX,dword ptr [ESP + 0x4]       ; 00601c07
         ;   Label: LAB_00601c07
-    CMP EAX,dword ptr [0x00684edc]      ; 00601c0b | DAT_00684edc
+    CMP EAX,dword ptr [0x00684edc]      ; 00601c0b | INT_00684edc
     JBE 0x00601c2b                      ; 00601c11
         ;   XREF to: 00601c2b (CONDITIONAL_JUMP)  ; LAB_00601c2b
     MOV ESI,dword ptr [0x00684ed8]      ; 00601c13 | g_SecondaryHeap
     TEST ESI,ESI                        ; 00601c19
     JNZ 0x00601c39                      ; 00601c1b
         ;   XREF to: 00601c39 (CONDITIONAL_JUMP)  ; LAB_00601c39
-    MOV dword ptr [0x00684edc],ESI      ; 00601c1d | DAT_00684edc
+    MOV dword ptr [0x00684edc],ESI      ; 00601c1d | INT_00684edc
     MOV ESI,dword ptr [0x00684ed4]      ; 00601c23 | g_MainHeap
     JMP 0x00601c39                      ; 00601c29
         ;   XREF to: 00601c39 (UNCONDITIONAL_JUMP)  ; LAB_00601c39
     XOR EDI,EDI                         ; 00601c2b
         ;   Label: LAB_00601c2b
     MOV ESI,dword ptr [0x00684ed4]      ; 00601c2d | g_MainHeap
-    MOV dword ptr [0x00684edc],EDI      ; 00601c33 | DAT_00684edc
+    MOV dword ptr [0x00684edc],EDI      ; 00601c33 | INT_00684edc
     TEST ESI,ESI                        ; 00601c39
         ;   Label: LAB_00601c39
     JZ 0x00601c7a                       ; 00601c3b
@@ -104,11 +104,11 @@ section .text
     TEST EAX,EAX                        ; 00601c63
     JNZ 0x00601cb0                      ; 00601c65
         ;   XREF to: 00601cb0 (CONDITIONAL_JUMP)  ; LAB_00601cb0
-    CMP EDI,dword ptr [0x00684edc]      ; 00601c67 | DAT_00684edc
+    CMP EDI,dword ptr [0x00684edc]      ; 00601c67 | INT_00684edc
         ;   Label: LAB_00601c67
     JBE 0x00601c75                      ; 00601c6d
         ;   XREF to: 00601c75 (CONDITIONAL_JUMP)  ; LAB_00601c75
-    MOV dword ptr [0x00684edc],EDI      ; 00601c6f | DAT_00684edc
+    MOV dword ptr [0x00684edc],EDI      ; 00601c6f | INT_00684edc
     MOV ESI,dword ptr [ESI + 0x8]       ; 00601c75
         ;   Label: LAB_00601c75
     JMP 0x00601c39                      ; 00601c78

@@ -29,7 +29,9 @@ int g_ScreenBufferStride = {};
 int g_CurrentPolygonColor = {};
 int g_PlaneTestCount = {};
 int g_BypassClipping = {};
+int INT_00772a70 = {};
 int g_TexturesDisabled = {};
+int INT_00772a78 = {};
 int g_CullingMode = {};
 int g_CurrentInvertedColor = {};
 int g_RenderResult = {};
@@ -45,10 +47,6 @@ int g_ProcessedVertexIndices[24] = {};
 // uint
 uint g_ProcessedVertexOffset = {};
 uint g_ProcessedVertexBackupOffset = {};
-
-// undefined4
-undefined4 DAT_00772a70 = {};
-undefined4 DAT_00772a78 = {};
 
 // void*
 void* g_SoftwareZBuffer = {};

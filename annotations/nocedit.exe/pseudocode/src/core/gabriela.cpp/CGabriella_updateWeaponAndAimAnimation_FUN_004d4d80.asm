@@ -65,7 +65,7 @@
 ;   float FLOAT_0065e7b0 = 0.2000000
 ;   float FLOAT_0065e7b4 = 0.6400000
 ;   float FLOAT_0065e7b8 = 0.8200000
-;   CQuaternion4f CQuaternion4f_02d7b7f4
+;   CQuaternion4f g_GabriellaWeaponAimRotation
 ;   undefined4 DAT_02d7b7f8
 ;   undefined4 DAT_02d7b7fc
 ;   undefined4 DAT_02d7b800
@@ -432,14 +432,14 @@ section .text
     SAHF                                ; 004d513e
     JBE 0x004d519f                      ; 004d513f
         ;   XREF to: 004d519f (CONDITIONAL_JUMP)  ; LAB_004d519f
-    MOV AH,byte ptr [0x02d7b804]        ; 004d5141 | DAT_02d7b804
+    MOV AH,byte ptr [0x02d7b804]        ; 004d5141 | g_GabriellaWeaponAimRotationInitFlag
     TEST AH,0x1                         ; 004d5147
     JZ 0x004d5219                       ; 004d514a
         ;   XREF to: 004d5219 (CONDITIONAL_JUMP)  ; LAB_004d5219
     LEA EAX,[EBP + 0xfffffeea]          ; 004d5150
         ;   Label: LAB_004d5150
     PUSH EAX                            ; 004d5156
-    PUSH 0x2d7b7f4                      ; 004d5157 | CQuaternion4f_02d7b7f4
+    PUSH 0x2d7b7f4                      ; 004d5157 | g_GabriellaWeaponAimRotation
     LEA ESI,[EBP + 0xfffffeba]          ; 004d515c
     CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 004d5162
         ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
@@ -504,7 +504,7 @@ section .text
     LEA ESI,[EBP + -0x56]               ; 004d5220
     OR DL,0x1                           ; 004d5223
     LEA EDI,[EBP + -0x16]               ; 004d5226
-    MOV byte ptr [0x02d7b804],DL        ; 004d5229 | DAT_02d7b804
+    MOV byte ptr [0x02d7b804],DL        ; 004d5229 | g_GabriellaWeaponAimRotationInitFlag
     CALL core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30 ; 004d522f
         ;   XREF to: 005f7a30 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionFromAngleZ_FUN_005f7a30(float angle_radians, CQuaternion4f * quat_out)
     ADD ESP,0x4                         ; 004d5234
@@ -529,12 +529,12 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004d5264
     PUSH EAX                            ; 004d5265
     LEA ESI,[EBP + 0xfffffeaa]          ; 004d5266
-    MOV EDI,0x2d7b7f4                   ; 004d526c | CQuaternion4f_02d7b7f4
+    MOV EDI,0x2d7b7f4                   ; 004d526c | g_GabriellaWeaponAimRotation
     CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 004d5271
         ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * quat1_in, CQuaternion4f * quat2_in, CQuaternion4f * quat_out)
     LEA ESI,[EBP + 0xfffffeaa]          ; 004d5276
     ADD ESP,0x8                         ; 004d527c
-    MOVSD ES:EDI,ESI                    ; 004d527f | CQuaternion4f_02d7b7f4
+    MOVSD ES:EDI,ESI                    ; 004d527f | g_GabriellaWeaponAimRotation
     MOVSD ES:EDI,ESI                    ; 004d5280 | DAT_02d7b7f8
     MOVSD ES:EDI,ESI                    ; 004d5281 | DAT_02d7b7fc
     MOVSD ES:EDI,ESI                    ; 004d5282 | DAT_02d7b800

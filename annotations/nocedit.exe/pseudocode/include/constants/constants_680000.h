@@ -426,11 +426,9 @@ static undefined2 DAT_00684f38 = 0x4002;
 static undefined2 DAT_0068546c = 0x127F;
 
 // undefined4 constants
-static undefined4 DAT_006844f4 = 0x00002000;
 static undefined4 DAT_006850a4 = 0x00000005;
 static undefined4 DAT_006850a8 = 0x00000009;
 static undefined4 DAT_00685210 = 0xFF010806;
-static undefined4 DAT_006854f0 = 0x00000001;
 static undefined4 DAT_006855d8 = 0x0FFFFFFF;
 
 // void* constants

@@ -7,24 +7,24 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6484
-Clean functions: 4996 (77.1%)
-Functions with suspects: 1488 (22.9%)
+Clean functions: 5009 (77.3%)
+Functions with suspects: 1475 (22.7%)
 
-Total suspect patterns: 16277
-Average suspects per function: 2.51
+Total suspect patterns: 16218
+Average suspects per function: 2.50
 
-Virtual files: 214 total, 41 at 100%, 79 at 90%+
+Virtual files: 214 total, 42 at 100%, 81 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3411, Average: 47.6
 
-Average complexity score: 75.1
+Average complexity score: 75.0
 
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6484
-Successful: 5779 (89.1%)
-Failed: 705
+Successful: 5784 (89.2%)
+Failed: 700
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
@@ -41,11 +41,10 @@ SUSPECT PATTERN BREAKDOWN
   unresolved_funcptr        102
   sub84_truncation          95
   param_count_too_few       85
-  extra_output              85
+  extra_output              83
   warning_unreachable       74
   negative_offset           73
   unnamed_param             64
-  undefined_data            61
   suspect_float             57
   param_count_too_many      44
   mmx_assembly              34
@@ -56,6 +55,7 @@ SUSPECT PATTERN BREAKDOWN
   fnstsw_flag_artifact      7
   undefined_type            5
   unknown_type              5
+  undefined_data            4
   undefined_ptr_cast        4
   warning_deadcode_restart  4
   special_cpu_detection     4
@@ -124,7 +124,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
   005b1680: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680 (4 lines)
   005b1660: sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660 (4 lines)
-  ... and 4946 more
+  ... and 4959 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -134,7 +134,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
   00582930: core_setedit.cpp_drawCameraFrustum_FUN_00582930 (score: 2923, suspects: 244, lines: 453)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 2751, suspects: 180, lines: 926)
   0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 2499, suspects: 98, lines: 1494)
-  004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2294, suspects: 9, lines: 2189)
+  004aacc0: core_event.cpp_CEventList_executeCommand_FUN_004aacc0 (score: 2268, suspects: 7, lines: 2188)
   005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823 (score: 2235, suspects: 161, lines: 585)
   00592690: core_skeledit.cpp_CSkeleton_importSkeletonFile_FUN_00592690 (score: 2215, suspects: 29, lines: 1900)
   005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031 (score: 2198, suspects: 159, lines: 568)
@@ -331,7 +331,7 @@ FUNCTIONS BY SUSPECT TYPE
     00434660: cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660
     ... and 75 more
 
-  extra_output (17 functions):
+  extra_output (16 functions):
     00528140: engine_model.c_getMRGLBounds_FUN_00528140
     005fd4e0: engine_3d.c_rasterizePolygon_FUN_005fd4e0
     00407920: engine_3d.c_renderPrim_FUN_00407920
@@ -342,7 +342,7 @@ FUNCTIONS BY SUSPECT TYPE
     00531d50: sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50
     00453bd0: core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0
     004511c0: core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0
-    ... and 7 more
+    ... and 6 more
 
   warning_unreachable (40 functions):
     00487010: cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
@@ -382,19 +382,6 @@ FUNCTIONS BY SUSPECT TYPE
     0040e640: core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640
     0040e3b0: core_actor.cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0
     ... and 7 more
-
-  undefined_data (30 functions):
-    0050cdc0: engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
-    00406430: engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430
-    00404220: engine_3d.c_renderPolygonLitDetailed_FUN_00404220
-    00404840: engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840
-    004b9f40: engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
-    005b0340: sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005b0340
-    005b0440: sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440
-    00500050: core_inv.cpp_drawWeaponIconBackground_FUN_00500050
-    004ff400: core_inv.cpp_CInventory_load_FUN_004ff400
-    00500690: core_inv.cpp_CInventory_renderAllItems_FUN_00500690
-    ... and 20 more
 
   suspect_float (22 functions):
     005401e0: core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
@@ -488,6 +475,12 @@ FUNCTIONS BY SUSPECT TYPE
     004760d0: core_dlight.cpp_renderConeLightGeometry_FUN_004760d0
     00503080: core_larva.cpp_CLarva_process_FUN_00503080
     004a7e80: core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80
+
+  undefined_data (4 functions):
+    0050cdc0: engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
+    004b9f40: engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
+    005f4290: wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290
+    005f4210: wincore_winrun.cpp_getRegistryStringValue_FUN_005f4210
 
   undefined_ptr_cast (2 functions):
     00441260: engine_colquant.c_computeBoxStatistics_FUN_00441260

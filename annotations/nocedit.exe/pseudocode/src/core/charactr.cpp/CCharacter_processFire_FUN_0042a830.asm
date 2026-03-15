@@ -37,7 +37,7 @@
 ;   double DOUBLE_0061712a = 0.5
 ;   float FLOAT_0065b82c = 2
 ;   float FLOAT_0065b830 = 3
-;   undefined4 DAT_00823c54
+;   float[100] g_BoneBurnIntensity
 ;   undefined4 DAT_00823c58
 ;
 ; Called Functions:
@@ -99,7 +99,7 @@ section .text
     XOR EAX,EAX                         ; 0042a897
     XOR ECX,ECX                         ; 0042a899
         ;   Label: LAB_0042a899
-    MOV dword ptr [EAX + 0x823c54],ECX  ; 0042a89b | DAT_00823c54 | DAT_00823c58
+    MOV dword ptr [EAX + 0x823c54],ECX  ; 0042a89b | g_BoneBurnIntensity | DAT_00823c58
     INC EDX                             ; 0042a8a1
     MOV ECX,dword ptr [ESI + 0x28558]   ; 0042a8a2
     ADD EAX,0x4                         ; 0042a8a8
@@ -120,12 +120,12 @@ section .text
         ;   Label: LAB_0042a8ca
     MOV EDX,dword ptr [ESI + 0x2f20]    ; 0042a8d0
     FMUL ST1                            ; 0042a8d6
-    FLD float ptr [EDX*0x4 + 0x823c54]  ; 0042a8d8 | DAT_00823c54
+    FLD float ptr [EDX*0x4 + 0x823c54]  ; 0042a8d8 | g_BoneBurnIntensity
     FLD ST3                             ; 0042a8df
     FDIVP ST2,ST0                       ; 0042a8e1
     FADDP                               ; 0042a8e3
     INC EAX                             ; 0042a8e5
-    FSTP float ptr [EDX*0x4 + 0x823c54] ; 0042a8e6 | DAT_00823c54
+    FSTP float ptr [EDX*0x4 + 0x823c54] ; 0042a8e6 | g_BoneBurnIntensity
     MOV EDX,dword ptr [EBX + 0x2f10]    ; 0042a8ed
     ADD ESI,0x18                        ; 0042a8f3
     CMP EAX,EDX                         ; 0042a8f6
@@ -145,7 +145,7 @@ section .text
     MOV dword ptr [ESP + 0x34],EDI      ; 0042a91c
     MOV dword ptr [ESP + 0x24],EAX      ; 0042a920
     XOR EDI,EDI                         ; 0042a924
-    FLD float ptr [EDI + 0x823c54]      ; 0042a926 | DAT_00823c54 | DAT_00823c58
+    FLD float ptr [EDI + 0x823c54]      ; 0042a926 | g_BoneBurnIntensity | DAT_00823c58
         ;   Label: LAB_0042a926
     FCOMP double ptr [0x0061710a]       ; 0042a92c | DOUBLE_0061710a
     FNSTSW AX                           ; 0042a932

@@ -335,7 +335,7 @@ section .text
         ;   XREF to: 00548936 (CONDITIONAL_JUMP)  ; LAB_00548936
     IMUL EAX,dword ptr [ESP + 0x10],0x64 ; 00548b51
     ADD EAX,EDI                         ; 00548b56
-    CMP byte ptr [EAX + 0x30d2857],0x0  ; 00548b58 | DAT_030d2857
+    CMP byte ptr [EAX + 0x30d2857],0x0  ; 00548b58 | g_PathfindingVisitedMinus1
     JNZ 0x00548936                      ; 00548b5f
         ;   XREF to: 00548936 (CONDITIONAL_JUMP)  ; LAB_00548936
     MOV ESI,dword ptr [ESP + 0xc]       ; 00548b65
@@ -351,7 +351,7 @@ section .text
     MOV dword ptr [ESP],0x4             ; 00548b83
     MOV EAX,dword ptr [ESP + 0x8]       ; 00548b8a
     MOV BL,byte ptr [ESP]               ; 00548b8e
-    MOV byte ptr [EDX + EAX*0x1 + 0x30d2857],BL ; 00548b91 | DAT_030d2857
+    MOV byte ptr [EDX + EAX*0x1 + 0x30d2857],BL ; 00548b91 | g_PathfindingVisitedMinus1
     MOV EBX,dword ptr [0x030d2850]      ; 00548b98 | g_PathfindingQueueTail
     IMUL EDX,EBX,0xc                    ; 00548b9e
     MOV ESI,dword ptr [0x030d4fcc]      ; 00548ba1 | g_PathfindingNodesExpanded

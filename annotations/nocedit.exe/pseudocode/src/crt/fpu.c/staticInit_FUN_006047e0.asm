@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   byte BYTE_00684acc = 0x0
 ;   byte BYTE_00684acd = 0x0
-;   undefined1 DAT_0068500c
+;   byte BYTE_0068500c = 0x0
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_006047a4
@@ -38,7 +38,7 @@ section .text
         ;   XREF to: 006047a4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_006047a4()
     MOV BH,AL                           ; 00604809
     MOV BL,AL                           ; 0060480b
-    CMP byte ptr [0x0068500c],0x0       ; 0060480d | DAT_0068500c
+    CMP byte ptr [0x0068500c],0x0       ; 0060480d | BYTE_0068500c
         ;   Label: LAB_0060480d
     JNZ 0x00604822                      ; 00604814
         ;   XREF to: 00604822 (CONDITIONAL_JUMP)  ; LAB_00604822

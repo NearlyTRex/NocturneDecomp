@@ -14,7 +14,7 @@ void __cdecl staticInit(void)
   if (BYTE_00684acc == 0) {
     BYTE_00684acd = BYTE_00684acc;
     bVar1 = FUN_006047a4();
-    if (DAT_0068500c == '\0') {
+    if (BYTE_0068500c == 0) {
       BYTE_00684acc = bVar1;
       BYTE_00684acd = bVar1;
     }

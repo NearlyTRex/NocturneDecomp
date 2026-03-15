@@ -11,7 +11,7 @@
 ;   int g_CurrentAlphaValue = 0xff
 ;   undefined4 g_RenderVertexBuffer[0].u
 ;   undefined4 g_RenderVertexBuffer[0].v
-;   undefined4 DAT_00772a78
+;   int INT_00772a78
 ;   int[24] g_ProcessedVertexIndices
 ;   undefined4 DAT_00772a9c
 ;   undefined4 DAT_00fdffff
@@ -46,7 +46,7 @@ section .text
     TEST EAX,EAX                        ; 0040423a
     JZ 0x004043ff                       ; 0040423c
         ;   XREF to: 004043ff (CONDITIONAL_JUMP)  ; LAB_004043ff
-    CMP dword ptr [0x00772a78],0x0      ; 00404242 | DAT_00772a78
+    CMP dword ptr [0x00772a78],0x0      ; 00404242 | INT_00772a78
     JNZ 0x0040435f                      ; 00404249
         ;   XREF to: 0040435f (CONDITIONAL_JUMP)  ; LAB_0040435f
     CMP dword ptr [0x02d05248],0x0      ; 0040424f | g_MMXSupported

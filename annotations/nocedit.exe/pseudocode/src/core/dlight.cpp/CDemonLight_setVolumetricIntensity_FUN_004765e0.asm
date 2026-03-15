@@ -19,8 +19,8 @@
 ; Referenced Globals:
 ;   double g_VolumetricFilterScaleLowRes = 7
 ;   double g_VolumetricFilterScaleHighRes = 3
-;   CDemonFilter* g_GlobalFilters = 020a4878
-;   CDemonFilter* g_PlayerFilters = 020a4878
+;   CDemonFilter*[8] g_GlobalFilters
+;   CDemonFilter*[4] g_PlayerFilters
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770

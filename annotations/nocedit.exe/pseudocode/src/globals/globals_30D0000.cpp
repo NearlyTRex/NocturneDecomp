@@ -22,3 +22,6 @@ int g_PathfindingQueueHead = {};
 int g_PathfindingQueueTail = {};
 int g_PathfindingNodesExpanded = {};
 
+// uchar
+uchar g_PathfindingVisitedMinus1 = {};
+

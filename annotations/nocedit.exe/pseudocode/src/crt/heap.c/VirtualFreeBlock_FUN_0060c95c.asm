@@ -13,7 +13,7 @@
 ;   VIRTUAL_FREE_FUNC* g_VirtualFreeFunc = 002122a6
 ;   Heap* g_MainHeap = 00000000
 ;   Heap* g_SecondaryHeap = 00000000
-;   undefined4 DAT_00684edc
+;   int INT_00684edc = 0x0
 ;   undefined4 DAT_03f9b210
 ;
 ; Called Functions:
@@ -51,7 +51,7 @@ section .text
         ;   XREF to: 0060c9a4 (UNCONDITIONAL_JUMP)  ; LAB_0060c9a4
     MOV EAX,[0x00684ed4]                ; 0060c994 | g_MainHeap
         ;   Label: LAB_0060c994
-    MOV dword ptr [0x00684edc],EBX      ; 0060c999 | DAT_00684edc
+    MOV dword ptr [0x00684edc],EBX      ; 0060c999 | INT_00684edc
     MOV [0x00684ed8],EAX                ; 0060c99f | g_SecondaryHeap
     MOV ECX,dword ptr [0x03f9b210]      ; 0060c9a4 | DAT_03f9b210
         ;   Label: LAB_0060c9a4

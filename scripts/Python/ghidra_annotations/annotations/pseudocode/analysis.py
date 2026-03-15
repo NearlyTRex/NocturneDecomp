@@ -2724,6 +2724,7 @@ def generate_annotation_quality_report(functions, output_path):
     lines.append("  Functions with type issues:        %s (%4.1f%%)" % (
         fmt_num(type_issue_count),
         type_issue_count * 100.0 / total if total else 0))
+    lines.append("  (Name/address mismatches and duplicate names are reported at the end)")
     lines.append("")
     lines.append("  Type issue breakdown:")
     lines.append("    Wrong return type (void):          %d" % len(wrong_return_void))
@@ -2854,6 +2855,89 @@ def generate_annotation_quality_report(functions, output_path):
                     '%s (%s)' % (n, t) for n, t in entry['local_undefs']))
             lines.append("    Suggested: Resolve undefined types to concrete types")
             lines.append("")
+
+    # =========================================================================
+    # Section: Function Name / Address Mismatches
+    # =========================================================================
+    # Verify that the FUN_XXXXXXXX suffix matches the actual function address
+    addr_mismatches = []
+    for func in non_crt:
+        func_info = func.get('function', {})
+        name = func_info.get('name', '')
+        actual_addr = func_info.get('address', '').lower()
+        m = re.search(r'FUN_([0-9a-fA-F]+)$', name)
+        if m and actual_addr:
+            fun_addr = m.group(1).lower()
+            if fun_addr != actual_addr:
+                addr_mismatches.append({
+                    'name': name,
+                    'fun_addr': fun_addr,
+                    'actual_addr': actual_addr,
+                    'vfile': func.get('_virtual_file', ''),
+                })
+
+    lines.append("=" * 100)
+    lines.append("FUNCTION NAME / ADDRESS MISMATCHES (%d)" % len(addr_mismatches))
+    lines.append("=" * 100)
+    lines.append("")
+    if addr_mismatches:
+        lines.append("Functions where the FUN_XXXXXXXX suffix does not match the actual entry point.")
+        lines.append("These were likely renamed or moved and the name suffix was not updated.")
+        lines.append("")
+        for entry in sorted(addr_mismatches, key=lambda x: x['actual_addr']):
+            lines.append("  %-70s" % entry['name'])
+            lines.append("    FUN_ says: 0x%s   actual: 0x%s   file: %s" % (
+                entry['fun_addr'], entry['actual_addr'], entry['vfile']))
+            lines.append("")
+    else:
+        lines.append("  No mismatches found.")
+        lines.append("")
+
+    # =========================================================================
+    # Section: Duplicate Function Names
+    # =========================================================================
+    # Find functions that share the same base name (minus virtual file prefix and FUN_ suffix)
+    name_groups = defaultdict(list)
+    for func in non_crt:
+        func_info = func.get('function', {})
+        name = func_info.get('name', '')
+        addr = func_info.get('address', '')
+        vfile = func.get('_virtual_file', '')
+        # Strip FUN_xxx suffix to get base name
+        base = re.sub(r'_FUN_[0-9a-fA-F]+$', '', name)
+        name_groups[base].append({
+            'name': name,
+            'addr': addr,
+            'vfile': vfile,
+            'signature': func_info.get('signature', ''),
+        })
+
+    duplicates = {k: v for k, v in name_groups.items() if len(v) > 1}
+
+    lines.append("=" * 100)
+    lines.append("DUPLICATE FUNCTION NAMES (%d groups)" % len(duplicates))
+    lines.append("=" * 100)
+    lines.append("")
+    if duplicates:
+        lines.append("Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).")
+        lines.append("Some are legitimate overloads, others may need disambiguating names.")
+        lines.append("")
+        for base in sorted(duplicates.keys()):
+            entries = duplicates[base]
+            lines.append("  %s  (%d functions)" % (base, len(entries)))
+            for entry in sorted(entries, key=lambda x: x['addr']):
+                # Show a compact signature summary
+                sig = entry['signature']
+                # Extract just the params from the signature
+                param_m = re.search(r'\(([^)]*)\)', sig)
+                params_str = param_m.group(1) if param_m else '?'
+                if len(params_str) > 60:
+                    params_str = params_str[:57] + '...'
+                lines.append("    0x%s  (%s)" % (entry['addr'], params_str))
+            lines.append("")
+    else:
+        lines.append("  No duplicate names found.")
+        lines.append("")
 
     report_text = "\n".join(lines)
 

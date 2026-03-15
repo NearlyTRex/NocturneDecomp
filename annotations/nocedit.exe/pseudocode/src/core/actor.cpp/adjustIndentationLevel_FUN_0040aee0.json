@@ -1,28 +1,19 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 7,
-        "line": 31,
-        "message": "use of undeclared identifier 'DAT_0066e177'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 39,
+    "complexity_score": 24,
     "cross_reference_count": 7,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 24,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 61
   },
   "cross_references": [
@@ -85,13 +76,13 @@
   "globals": [
     {
       "addr": "0066e176",
-      "name": "DAT_0066e176",
-      "type": "undefined4",
+      "name": "g_PropertyNamePrefixMinusTwo",
+      "type": "char[2]",
       "value": null
     },
     {
       "addr": "0066e177",
-      "name": "DAT_0066e177",
+      "name": "g_PropertyNamePrefixMinusTwo+1",
       "type": "undefined4",
       "value": null
     },
@@ -274,14 +265,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_0066e177",
-      "severity": "mild",
-      "text": "(&DAT_0066e177)[iVar2] = 9;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

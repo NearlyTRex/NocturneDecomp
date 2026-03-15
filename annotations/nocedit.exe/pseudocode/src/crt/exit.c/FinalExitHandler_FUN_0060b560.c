@@ -13,8 +13,8 @@ void __cdecl FinalExitHandler(int exit_code)
   
   (*PTR_crt_exit_c_ExitHookStub_FUN_0060b530_00685478)();
   (*PTR_crt_exit_c_ExitHookStub_FUN_0060b530_0068547c)();
-  if (DAT_006852c4 != (code *)0x0) {
-    (*DAT_006852c4)();
+  if (PTR_006852c4 != (void *)0x0) {
+    (*PTR_006852c4)();
   }
                     /* WARNING: Subroutine does not return */
   ExitProcess(unaff_EBX);

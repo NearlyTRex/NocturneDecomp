@@ -13,6 +13,7 @@ CDemonTriangle g_ClippedTriangleBuffer[8] = {};
 // CVector3f
 CVector3f g_DebugCubeBasePoint = {};
 CVector3f g_FloorRayDirection = {};
+CVector3f CVector3f_02ceed24 = {};
 
 // CVector3f[16]
 CVector3f g_ClipInputVertices[16] = {};
@@ -48,7 +49,4 @@ int g_ClipBuffer3VertexCount = {};
 int g_ClipBuffer4VertexCount = {};
 int g_ClipBuffer5VertexCount = {};
 int g_ClipOutputVertexCount = {};
-int DAT_02ceed24 = {};
-int DAT_02ceed28 = {};
-int DAT_02ceed2c = {};
 

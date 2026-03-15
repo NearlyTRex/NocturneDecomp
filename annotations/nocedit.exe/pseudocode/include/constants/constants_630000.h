@@ -428,14 +428,20 @@ static TerminatedCString s_Unable_to_set_640x480x32_0063536a = "Unable to set 64
 static TerminatedCString s_Windows_is_reporting_006353fb = "Windows is reporting ";
 static TerminatedCString s_s_1f_00635411 = "%.1f";
 static TerminatedCString s_MB_of_system_RAM_00635416 = "MB of system RAM.";
+static TerminatedCString s_anon_00635428 = "\n";
 static TerminatedCString s_Nocturne_requires_at_lea_0063542a = "Nocturne requires at least 64MB of system RAM.";
+static TerminatedCString s_anon_00635459 = "\n";
 static TerminatedCString s_If_you_think_you_have_at_0063545b = "If you think you have at least 64MB of system RAM";
+static TerminatedCString s_anon_0063548d = "\n";
 static TerminatedCString s_then_ignore_this_message_0063548f = "then ignore this message.";
+static TerminatedCString s_anon_006354a9 = "\n";
 static TerminatedCString s_See_README_TXT_for_more_006354ab = "See README.TXT for more information.";
 static TerminatedCString s_Windows_is_reporting_006354d0 = "Windows is reporting ";
 static TerminatedCString s_s_1f_006354e6 = "%.1f";
 static TerminatedCString s_MB_of_free_swap_disk_spa_006354eb = "MB of free swap disk space.";
+static TerminatedCString s_anon_00635507 = "\n";
 static TerminatedCString s_Nocturne_runs_best_with_00635509 = "Nocturne runs best with at least 200MB free.";
+static TerminatedCString s_anon_00635536 = "\n";
 static TerminatedCString s_See_README_TXT_for_more_00635538 = "See README.TXT for more information.";
 static TerminatedCString s_opening_avi_0063555d = "opening.avi";
 static TerminatedCString s_video_00635569 = "video";
@@ -4042,12 +4048,4 @@ static float FLOAT_0063ecb1 = -1.0f;
 static float FLOAT_0063ecb5 = 0.5f;
 static float FLOAT_0063ece9 = -1.0f;
 static float FLOAT_0063f986 = -1.0f;
-
-// undefined1 constants
-static undefined1 DAT_00635428 = 0x0A;
-static undefined1 DAT_00635459 = 0x0A;
-static undefined1 DAT_0063548d = 0x0A;
-static undefined1 DAT_006354a9 = 0x0A;
-static undefined1 DAT_00635507 = 0x0A;
-static undefined1 DAT_00635536 = 0x0A;
 

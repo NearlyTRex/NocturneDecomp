@@ -39,7 +39,7 @@
 ;   TerminatedCString s_s_s_00628205
 ;   TerminatedCString s_Viewing_audit_history_fo_0062820c
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
-;   char[100] g_DefaultAuditPath
+;   char[104] g_DefaultAuditPath
 ;   ... and 2 more
 ;
 ; Called Functions:

@@ -22,7 +22,6 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRendererPtr2 = 02c6d578
 ;   SMRGLTextureBasic g_Inventory3DTextureAtlas
-;   undefined4 DAT_00a00000
 ;   undefined4 DAT_01000000
 ;   CDemonRenderer g_CDemonRendererInstance
 ;   CDemonCamera g_CDemonCameraInstance
@@ -70,7 +69,7 @@ section .text
     MOV EDX,dword ptr [EAX]             ; 005000a5 | g_CDemonRendererInstance
     MOV dword ptr [EDX + 0x18],0x0      ; 005000a7
     MOV EDX,dword ptr [EAX]             ; 005000ae | g_CDemonRendererInstance
-    MOV dword ptr [EDX + 0x1c],0xa00000 ; 005000b0 | DAT_00a00000
+    MOV dword ptr [EDX + 0x1c],0xa00000 ; 005000b0
     MOV EDX,dword ptr [ESP + 0x54]      ; 005000b7
     MOV ESI,dword ptr [EAX]             ; 005000bb | g_CDemonRendererInstance
     SHL EDX,0x10                        ; 005000bd
@@ -82,7 +81,7 @@ section .text
     MOV EBX,dword ptr [EAX]             ; 005000d1 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x48],0x600000 ; 005000d3
     MOV EBX,dword ptr [EAX]             ; 005000da | g_CDemonRendererInstance
-    MOV dword ptr [EBX + 0x4c],0xa00000 ; 005000dc | DAT_00a00000
+    MOV dword ptr [EBX + 0x4c],0xa00000 ; 005000dc
     MOV EBX,dword ptr [EAX]             ; 005000e3 | g_CDemonRendererInstance
     MOV dword ptr [EBX + 0x70],EDX      ; 005000e5
     MOV EDX,dword ptr [ESP + 0x58]      ; 005000e8

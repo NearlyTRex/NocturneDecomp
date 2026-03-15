@@ -45,7 +45,7 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
   bVar9 = 0;
   local_28 = 0;
   local_24 = 0;
-  piVar5 = &0x2;
+  piVar5 = g_PolygonReductionParams;
   piVar7 = local_160;
   for (iVar4 = 0x14; iVar4 != 0; iVar4 = iVar4 + -1) {
     *piVar7 = *piVar5;

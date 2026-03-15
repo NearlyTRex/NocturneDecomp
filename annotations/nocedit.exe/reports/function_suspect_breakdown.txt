@@ -4,28 +4,28 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4643 functions
-  1 suspects: 752 functions
-  2 suspects: 337 functions
-  3 suspects: 254 functions
-  4 suspects: 168 functions
-  5 suspects: 151 functions
-  6 suspects: 113 functions
+  0 suspects: 4656 functions
+  1 suspects: 751 functions
+  2 suspects: 332 functions
+  3 suspects: 249 functions
+  4 suspects: 170 functions
+  5 suspects: 150 functions
+  6 suspects: 114 functions
   7 suspects: 99 functions
   8 suspects: 58 functions
   9 suspects: 63 functions
-  10 suspects: 24 functions
-  11 suspects: 46 functions
-  12 suspects: 38 functions
+  10 suspects: 25 functions
+  11 suspects: 42 functions
+  12 suspects: 37 functions
   13 suspects: 27 functions
-  14 suspects: 38 functions
+  14 suspects: 39 functions
   15 suspects: 29 functions
-  16 suspects: 28 functions
-  17 suspects: 14 functions
-  18 suspects: 15 functions
-  19 suspects: 20 functions
-  20 suspects: 21 functions
-  21 suspects: 14 functions
+  16 suspects: 27 functions
+  17 suspects: 15 functions
+  18 suspects: 16 functions
+  19 suspects: 21 functions
+  20 suspects: 20 functions
+  21 suspects: 12 functions
   22 suspects: 7 functions
   23 suspects: 11 functions
   24 suspects: 16 functions
@@ -54,10 +54,10 @@ SUSPECT COUNT DISTRIBUTION
   48 suspects: 1 functions
   49 suspects: 2 functions
   51 suspects: 2 functions
-  52 suspects: 1 functions
+  52 suspects: 2 functions
   53 suspects: 1 functions
   54 suspects: 2 functions
-  55 suspects: 5 functions
+  55 suspects: 4 functions
   56 suspects: 3 functions
   59 suspects: 1 functions
   60 suspects: 1 functions
@@ -96,7 +96,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [special_crt_function] (293 functions)
+  [special_crt_function] (295 functions)
   ------------------------------------------------------------
     crt_stub.c_staticInit_FUN_005fde92                 (  4 lines)
       CRT function (runtime support) at 005fde92...
@@ -138,9 +138,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       CRT function (runtime support) at 00602448...
     crt_system.c_sleep_FUN_00600790                    (  5 lines)
       CRT function (runtime support) at 00600790...
-    ... and 273 more
+    ... and 275 more
 
-  [pointer_cast] (133 functions)
+  [pointer_cast] (135 functions)
   ------------------------------------------------------------
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360    (  5 lines)
       *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
@@ -182,7 +182,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       uVar1 = *(uint *)((int)this_ptr->framebuffer_aligned +...
     shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420   ( 22 lines)
       puVar1 = (uint *)((int)this_ptr->spatial_grid_ptr->cell_star...
-    ... and 113 more
+    ... and 115 more
 
   [decompiler_intrinsic] (130 functions)
   ------------------------------------------------------------
@@ -466,25 +466,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056 ( 72 lines)
       local_14 = (CDemonSet *)&local_14[-1].weather_type;...
 
-  [undefined_data] (8 functions)
-  ------------------------------------------------------------
-    sound_snddx.cpp_CDirectSoundDevice_commitDeferredS ( 11 lines)
-      (g_DirectSoundPropertySet,&DAT_00681df0,0,(LPVOID)0x0,0,loca...
-    wincore_winrun.cpp_getRegistryStringValue_FUN_005f ( 19 lines)
-      LVar1 = (*g_RegOpenKeyExAFunc)((HKEY)&DAT_80000002,key_path,...
-    core_actor.cpp_adjustIndentationLevel_FUN_0040aee0 ( 24 lines)
-      (&DAT_0066e177)[iVar2] = 9;...
-    wincore_winrun.cpp_setRegistryStringValue_FUN_005f ( 29 lines)
-      ((HKEY)&DAT_80000002,key_path,0,"suck",0,0x20006,...
-    engine_matrix.c_projectTransformedPoint_FUN_0050cd ( 38 lines)
-      point->screen_x = (int)&DAT_80000010;...
-    core_script.cpp_CScript_loadLineToBuffer_FUN_00566 ( 44 lines)
-      pcVar5 = &DAT_00643f94;...
-    sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440  ( 79 lines)
-      ((IUnknown *)g_DirectSoundPrimaryBuffer,&DAT_00686d58,&g_Dir...
-    core_fire.cpp_CFireEffect_createBulletImpact_FUN_0 (142 lines)
-      puVar5 = &DAT_0067aeb8;...
-
   [suspect_float] (6 functions)
   ------------------------------------------------------------
     core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90      ( 21 lines)
@@ -530,6 +511,15 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       CPU detection function at 00524f10...
     core_mmx.c_getCPUInfo_FUN_0052500f                 ( 13 lines)
       CPU detection function at 0052500f...
+
+  [undefined_data] (3 functions)
+  ------------------------------------------------------------
+    wincore_winrun.cpp_getRegistryStringValue_FUN_005f ( 19 lines)
+      LVar1 = (*g_RegOpenKeyExAFunc)((HKEY)&DAT_80000002,key_path,...
+    wincore_winrun.cpp_setRegistryStringValue_FUN_005f ( 29 lines)
+      ((HKEY)&DAT_80000002,key_path,0,"suck",0,0x20006,...
+    engine_matrix.c_projectTransformedPoint_FUN_0050cd ( 38 lines)
+      point->screen_x = (int)&DAT_80000010;...
 
   [special_math_intrinsic] (2 functions)
   ------------------------------------------------------------
@@ -623,8 +613,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: crt/iostream.cpp, Lines: 10, Types: ['pointer_cast', 'special_crt_function']
   core_actor.cpp_CActorPropertyList_addEnumPair_FUN_0040e640
     File: core/actor.cpp, Lines: 10, Types: ['unnamed_param']
-  core_wateract.cpp_staticInit_FUN_005ea810
-    File: core/wateract.cpp, Lines: 10, Types: ['undefined_data']
   crt_locale.c_ismultibyte_FUN_00610a20
     File: crt/locale.c, Lines: 11, Types: ['param_count_too_few', 'special_crt_function']
   crt_memory.c___vec_new_FUN_00601232
@@ -641,8 +629,6 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: crt/math.c, Lines: 13, Types: ['decompiler_intrinsic', 'special_math_intrinsic']
   crt_time.c_get_local_time_FUN_00607150
     File: crt/time.c, Lines: 13, Types: ['param_count_too_few', 'special_crt_function']
-  crt_fpu.c_staticInit_FUN_006047e0
-    File: crt/fpu.c, Lines: 13, Types: ['special_crt_function', 'undefined_data']
   core_cloth.cpp_CCloth_dtor_FUN_00438c00
     File: core/cloth.cpp, Lines: 13, Types: ['decompiler_intrinsic']
   crt_exit.c_ExitProcess_FUN_00602700
@@ -653,5 +639,9 @@ FUNCTIONS WITH 2-3 SUSPECTS
     File: core/dcamera.cpp, Lines: 14, Types: ['pointer_cast']
   shape_design.c_normalizeVertex_FUN_00461e60
     File: shape/design.c, Lines: 14, Types: ['decompiler_intrinsic', 'unknown_field']
+  crt_tls.c_get_thread_local_data_FUN_0060a1fc
+    File: crt/tls.c, Lines: 15, Types: ['pointer_cast', 'special_crt_function']
+  crt_stack.c_ProbeStackSpace_FUN_005ffa2f
+    File: crt/stack.c, Lines: 15, Types: ['special_crt_function', 'stack_ref']
 
-  ... and 541 more
+  ... and 531 more
