@@ -3,6 +3,8 @@
 ; *****************************************************************************
 ; int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0(void)
 ;
+; Parameters:
+; int              Stack[0x84]:4   local_res84
 ;
 ; XREF[9]:
 ;   core_game.cpp_CGame_rollCredits_FUN_004e4010 at 004e40f9
@@ -20,18 +22,18 @@
 ;   int g_AudioChannelCount = 0x2
 ;   int g_AudioSampleRate = 0x5622
 ;   double g_Cached3DDistanceFactor = 1
-;   undefined4 g_Cached3DDistanceFactor+4
 ;   CVector3d g_Cached3DListenerPos
-;   undefined4 g_Cached3DListenerPos.x+4
 ;   undefined4 g_Cached3DListenerPos.y
-;   undefined4 g_Cached3DListenerPos.y+4
 ;   undefined4 g_Cached3DListenerPos.z
-;   undefined4 g_Cached3DListenerPos.z+4
 ;   CVector3d g_Cached3DListenerVelocity
-;   undefined4 g_Cached3DListenerVelocity.x+4
 ;   undefined4 g_Cached3DListenerVelocity.y
-;   undefined4 g_Cached3DListenerVelocity.y+4
-;   ... and 32 more
+;   undefined4 g_Cached3DListenerVelocity.z
+;   CVector3d g_Cached3DListenerOrientFront
+;   undefined4 g_Cached3DListenerOrientFront.y
+;   undefined4 g_Cached3DListenerOrientFront.z
+;   CVector3d g_Cached3DListenerOrientUp
+;   undefined4 g_Cached3DListenerOrientUp.y
+;   ... and 16 more
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005fde40
@@ -131,92 +133,108 @@ section .text
         ;   XREF to: 005aaf69 (CONDITIONAL_JUMP)  ; LAB_005aaf69
     LEA EAX,[EAX]                       ; 005aaf98
     MOV EDX,EDX                         ; 005aaf9e
-    MOV ESI,dword ptr [0x03f68844]      ; 005aafa0 | g_Cached3DListenerPos.z+4
+    SUB ESP,0x8                         ; 005aafa0
         ;   Label: LAB_005aafa0
-    PUSH ESI                            ; 005aafa6
-    MOV EDI,dword ptr [0x03f68840]      ; 005aafa7 | g_Cached3DListenerPos.z
-    PUSH EDI                            ; 005aafad
-    MOV EBP,dword ptr [0x03f6883c]      ; 005aafae | g_Cached3DListenerPos.y+4
-    XOR ECX,ECX                         ; 005aafb4
-    PUSH EBP                            ; 005aafb6
-    MOV EDX,dword ptr [0x03f68838]      ; 005aafb7 | g_Cached3DListenerPos.y
-    MOV dword ptr [0x03f69278],ECX      ; 005aafbd | g_MixBufferReadIndex
-    PUSH EDX                            ; 005aafc3
-    MOV dword ptr [0x03f6927c],ECX      ; 005aafc4 | g_MixBufferWriteIndex
-    MOV ECX,dword ptr [0x03f68834]      ; 005aafca | g_Cached3DListenerPos.x+4
-    PUSH ECX                            ; 005aafd0
-    MOV ESI,dword ptr [0x03f68830]      ; 005aafd1 | g_Cached3DListenerPos
-    MOV EAX,[0x03f69268]                ; 005aafd7 | g_CSoundDevicePtr
-    PUSH ESI                            ; 005aafdc
-    MOV EBX,dword ptr [EAX]             ; 005aafdd
-    PUSH EAX                            ; 005aafdf
+    FLD double ptr [0x03f68840]         ; 005aafa3 | g_Cached3DListenerPos.z
+    FSTP double ptr [ESP]               ; 005aafa9
+    NOP                                 ; 005aafac
+    NOP                                 ; 005aafad
+    XOR ECX,ECX                         ; 005aafae
+    MOV dword ptr [0x03f69278],ECX      ; 005aafb0 | g_MixBufferReadIndex
+    MOV dword ptr [0x03f6927c],ECX      ; 005aafb6 | g_MixBufferWriteIndex
+    SUB ESP,0x8                         ; 005aafbc
+    FLD double ptr [0x03f68838]         ; 005aafbf | g_Cached3DListenerPos.y
+    FSTP double ptr [ESP]               ; 005aafc5
+    NOP                                 ; 005aafc8
+    NOP                                 ; 005aafc9
+    SUB ESP,0x8                         ; 005aafca
+    FLD double ptr [0x03f68830]         ; 005aafcd | g_Cached3DListenerPos
+    FSTP double ptr [ESP]               ; 005aafd3
+    MOV EAX,[0x03f69268]                ; 005aafd6 | g_CSoundDevicePtr
+    MOV EBX,dword ptr [EAX]             ; 005aafdb
+    PUSH EAX                            ; 005aafdd
+    NOP                                 ; 005aafde
+    NOP                                 ; 005aafdf
     CALL dword ptr [EBX + 0x18]         ; 005aafe0
     ADD ESP,0x1c                        ; 005aafe3
-    MOV EDI,dword ptr [0x03f688a4]      ; 005aafe6 | g_Cached3DListenerOrientRight.z+4
-    PUSH EDI                            ; 005aafec
-    MOV EBP,dword ptr [0x03f688a0]      ; 005aafed | g_Cached3DListenerOrientRight.z
-    PUSH EBP                            ; 005aaff3
-    MOV EDX,dword ptr [0x03f6889c]      ; 005aaff4 | g_Cached3DListenerOrientRight.y+4
-    PUSH EDX                            ; 005aaffa
-    MOV ECX,dword ptr [0x03f68898]      ; 005aaffb | g_Cached3DListenerOrientRight.y
-    PUSH ECX                            ; 005ab001
-    MOV ESI,dword ptr [0x03f68894]      ; 005ab002 | g_Cached3DListenerOrientRight.x+4
-    PUSH ESI                            ; 005ab008
-    MOV EDI,dword ptr [0x03f68890]      ; 005ab009 | g_Cached3DListenerOrientRight
-    PUSH EDI                            ; 005ab00f
-    MOV EBP,dword ptr [0x03f6888c]      ; 005ab010 | g_Cached3DListenerOrientUp.z+4
-    PUSH EBP                            ; 005ab016
-    MOV EDX,dword ptr [0x03f68888]      ; 005ab017 | g_Cached3DListenerOrientUp.z
-    PUSH EDX                            ; 005ab01d
-    MOV ECX,dword ptr [0x03f68884]      ; 005ab01e | g_Cached3DListenerOrientUp.y+4
-    PUSH ECX                            ; 005ab024
-    MOV ESI,dword ptr [0x03f68880]      ; 005ab025 | g_Cached3DListenerOrientUp.y
-    PUSH ESI                            ; 005ab02b
-    MOV EDI,dword ptr [0x03f6887c]      ; 005ab02c | g_Cached3DListenerOrientUp.x+4
-    PUSH EDI                            ; 005ab032
-    MOV EBP,dword ptr [0x03f68878]      ; 005ab033 | g_Cached3DListenerOrientUp
-    PUSH EBP                            ; 005ab039
-    MOV EDX,dword ptr [0x03f68874]      ; 005ab03a | g_Cached3DListenerOrientFront.z+4
-    PUSH EDX                            ; 005ab040
-    MOV ECX,dword ptr [0x03f68870]      ; 005ab041 | g_Cached3DListenerOrientFront.z
-    PUSH ECX                            ; 005ab047
-    MOV ESI,dword ptr [0x03f6886c]      ; 005ab048 | g_Cached3DListenerOrientFront.y+4
-    PUSH ESI                            ; 005ab04e
-    MOV EDI,dword ptr [0x03f68868]      ; 005ab04f | g_Cached3DListenerOrientFront.y
-    PUSH EDI                            ; 005ab055
-    MOV EBP,dword ptr [0x03f68864]      ; 005ab056 | g_Cached3DListenerOrientFront.x+4
-    PUSH EBP                            ; 005ab05c
-    MOV EDX,dword ptr [0x03f68860]      ; 005ab05d | g_Cached3DListenerOrientFront
-    MOV EAX,[0x03f69268]                ; 005ab063 | g_CSoundDevicePtr
-    PUSH EDX                            ; 005ab068
-    MOV EBX,dword ptr [EAX]             ; 005ab069
-    PUSH EAX                            ; 005ab06b
+    SUB ESP,0x8                         ; 005aafe6
+    FLD double ptr [0x03f688a0]         ; 005aafe9 | g_Cached3DListenerOrientRight.z
+    FSTP double ptr [ESP]               ; 005aafef
+    NOP                                 ; 005aaff2
+    NOP                                 ; 005aaff3
+    SUB ESP,0x8                         ; 005aaff4
+    FLD double ptr [0x03f68898]         ; 005aaff7 | g_Cached3DListenerOrientRight.y
+    FSTP double ptr [ESP]               ; 005aaffd
+    NOP                                 ; 005ab000
+    NOP                                 ; 005ab001
+    SUB ESP,0x8                         ; 005ab002
+    FLD double ptr [0x03f68890]         ; 005ab005 | g_Cached3DListenerOrientRight
+    FSTP double ptr [ESP]               ; 005ab00b
+    NOP                                 ; 005ab00e
+    NOP                                 ; 005ab00f
+    SUB ESP,0x8                         ; 005ab010
+    FLD double ptr [0x03f68888]         ; 005ab013 | g_Cached3DListenerOrientUp.z
+    FSTP double ptr [ESP]               ; 005ab019
+    NOP                                 ; 005ab01c
+    NOP                                 ; 005ab01d
+    SUB ESP,0x8                         ; 005ab01e
+    FLD double ptr [0x03f68880]         ; 005ab021 | g_Cached3DListenerOrientUp.y
+    FSTP double ptr [ESP]               ; 005ab027
+    NOP                                 ; 005ab02a
+    NOP                                 ; 005ab02b
+    SUB ESP,0x8                         ; 005ab02c
+    FLD double ptr [0x03f68878]         ; 005ab02f | g_Cached3DListenerOrientUp
+    FSTP double ptr [ESP]               ; 005ab035
+    NOP                                 ; 005ab038
+    NOP                                 ; 005ab039
+    SUB ESP,0x8                         ; 005ab03a
+    FLD double ptr [0x03f68870]         ; 005ab03d | g_Cached3DListenerOrientFront.z
+    FSTP double ptr [ESP]               ; 005ab043
+    NOP                                 ; 005ab046
+    NOP                                 ; 005ab047
+    SUB ESP,0x8                         ; 005ab048
+    FLD double ptr [0x03f68868]         ; 005ab04b | g_Cached3DListenerOrientFront.y
+    FSTP double ptr [ESP]               ; 005ab051
+    NOP                                 ; 005ab054
+    NOP                                 ; 005ab055
+    SUB ESP,0x8                         ; 005ab056
+    FLD double ptr [0x03f68860]         ; 005ab059 | g_Cached3DListenerOrientFront
+    FSTP double ptr [ESP]               ; 005ab05f
+    MOV EAX,[0x03f69268]                ; 005ab062 | g_CSoundDevicePtr
+    MOV EBX,dword ptr [EAX]             ; 005ab067
+    PUSH EAX                            ; 005ab069
+    NOP                                 ; 005ab06a
+    NOP                                 ; 005ab06b
     CALL dword ptr [EBX + 0x1c]         ; 005ab06c
     ADD ESP,0x4c                        ; 005ab06f
-    MOV ECX,dword ptr [0x03f6885c]      ; 005ab072 | g_Cached3DListenerVelocity.z+4
-    PUSH ECX                            ; 005ab078
-    MOV ESI,dword ptr [0x03f68858]      ; 005ab079 | g_Cached3DListenerVelocity.z
-    PUSH ESI                            ; 005ab07f
-    MOV EDI,dword ptr [0x03f68854]      ; 005ab080 | g_Cached3DListenerVelocity.y+4
-    PUSH EDI                            ; 005ab086
-    MOV EBP,dword ptr [0x03f68850]      ; 005ab087 | g_Cached3DListenerVelocity.y
-    PUSH EBP                            ; 005ab08d
-    MOV EDX,dword ptr [0x03f6884c]      ; 005ab08e | g_Cached3DListenerVelocity.x+4
-    PUSH EDX                            ; 005ab094
-    MOV ECX,dword ptr [0x03f68848]      ; 005ab095 | g_Cached3DListenerVelocity
-    MOV EAX,[0x03f69268]                ; 005ab09b | g_CSoundDevicePtr
-    PUSH ECX                            ; 005ab0a0
-    MOV EBX,dword ptr [EAX]             ; 005ab0a1
-    PUSH EAX                            ; 005ab0a3
+    SUB ESP,0x8                         ; 005ab072
+    FLD double ptr [0x03f68858]         ; 005ab075 | g_Cached3DListenerVelocity.z
+    FSTP double ptr [ESP]               ; 005ab07b
+    NOP                                 ; 005ab07e
+    NOP                                 ; 005ab07f
+    SUB ESP,0x8                         ; 005ab080
+    FLD double ptr [0x03f68850]         ; 005ab083 | g_Cached3DListenerVelocity.y
+    FSTP double ptr [ESP]               ; 005ab089
+    NOP                                 ; 005ab08c
+    NOP                                 ; 005ab08d
+    SUB ESP,0x8                         ; 005ab08e
+    FLD double ptr [0x03f68848]         ; 005ab091 | g_Cached3DListenerVelocity
+    FSTP double ptr [ESP]               ; 005ab097
+    MOV EAX,[0x03f69268]                ; 005ab09a | g_CSoundDevicePtr
+    MOV EBX,dword ptr [EAX]             ; 005ab09f
+    PUSH EAX                            ; 005ab0a1
+    NOP                                 ; 005ab0a2
+    NOP                                 ; 005ab0a3
     CALL dword ptr [EBX + 0x20]         ; 005ab0a4
     ADD ESP,0x1c                        ; 005ab0a7
-    MOV ESI,dword ptr [0x00681b34]      ; 005ab0aa | g_Cached3DDistanceFactor+4
-    PUSH ESI                            ; 005ab0b0
-    MOV EDI,dword ptr [0x00681b30]      ; 005ab0b1 | g_Cached3DDistanceFactor
-    MOV EAX,[0x03f69268]                ; 005ab0b7 | g_CSoundDevicePtr
-    PUSH EDI                            ; 005ab0bc
-    MOV EBX,dword ptr [EAX]             ; 005ab0bd
-    PUSH EAX                            ; 005ab0bf
+    SUB ESP,0x8                         ; 005ab0aa
+    FLD double ptr [0x00681b30]         ; 005ab0ad | g_Cached3DDistanceFactor
+    FSTP double ptr [ESP]               ; 005ab0b3
+    MOV EAX,[0x03f69268]                ; 005ab0b6 | g_CSoundDevicePtr
+    MOV EBX,dword ptr [EAX]             ; 005ab0bb
+    PUSH EAX                            ; 005ab0bd
+    NOP                                 ; 005ab0be
+    NOP                                 ; 005ab0bf
     CALL dword ptr [EBX + 0x24]         ; 005ab0c0
     ADD ESP,0xc                         ; 005ab0c3
     PUSH dword ptr [0x03f693f0]         ; 005ab0c6 | g_DeferredOrientRight.z

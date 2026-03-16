@@ -448,6 +448,144 @@ def test_patches(program, pattern_filter=None, limit=10, func_filter=None):
         print()
 
 
+def batch_test_patches(program, pattern_filter=None, func_filter=None):
+    """Batch test all matching functions and produce aggregate statistics.
+
+    Patches each function in a transaction, decompiles before/after, rolls back.
+    No permanent changes are made.
+
+    Args:
+        program: Ghidra program object
+        pattern_filter: 'and-esp', 'sub-ebp', or None for both
+        func_filter: Only test functions whose name contains this substring
+    """
+    results = find_all_prologue_patterns(program)
+
+    do_and_esp = pattern_filter in (None, 'and-esp')
+    do_sub_ebp = pattern_filter in (None, 'sub-ebp')
+
+    test_funcs = []
+    for func, info in results:
+        if func_filter and func_filter.lower() not in func.getName().lower():
+            continue
+        if (do_and_esp and info['and_esp']) or (do_sub_ebp and info['sub_ebp']):
+            test_funcs.append((func, info))
+
+    if not test_funcs:
+        print("No functions found matching the filter.")
+        return
+
+    total = len(test_funcs)
+    print("Batch testing %d functions (all patches rolled back)...\n" % total)
+
+    improved = []    # (name, addr, before_total, after_total, delta)
+    worsened = []
+    unchanged = []
+    no_artifacts_either = []
+
+    # Per-artifact-type totals
+    total_before = {'unaff_': 0, 'in_stack_': 0, 'extraout_': 0, 'total': 0}
+    total_after = {'unaff_': 0, 'in_stack_': 0, 'extraout_': 0, 'total': 0}
+
+    for i, (func, info) in enumerate(test_funcs):
+        func_name = func.getName()
+        func_addr = str(func.getEntryPoint())
+
+        if (i + 1) % 50 == 0 or i == 0:
+            print("  [%d/%d] %s..." % (i + 1, total, func_name))
+
+        # Decompile BEFORE
+        before_code = decompile_function(program, func)
+        before_arts = count_artifacts(before_code)
+
+        # Patch in transaction, decompile, roll back
+        tx_id = program.startTransaction("Batch test: %s" % func_name)
+        try:
+            if info['and_esp'] and do_and_esp:
+                addr, length, _ = info['and_esp']
+                apply_nop_patch(program, addr, length)
+            if info['sub_ebp'] and do_sub_ebp:
+                addr, length, _ = info['sub_ebp']
+                apply_nop_patch(program, addr, length)
+
+            after_code = decompile_function(program, func)
+            after_arts = count_artifacts(after_code)
+        finally:
+            program.endTransaction(tx_id, False)
+
+        # Accumulate totals
+        for key in total_before:
+            total_before[key] += before_arts[key]
+            total_after[key] += after_arts[key]
+
+        delta = after_arts['total'] - before_arts['total']
+        entry = (func_name, func_addr, before_arts['total'], after_arts['total'], delta)
+
+        if delta < 0:
+            improved.append(entry)
+        elif delta > 0:
+            worsened.append(entry)
+        elif before_arts['total'] == 0 and after_arts['total'] == 0:
+            no_artifacts_either.append(entry)
+        else:
+            unchanged.append(entry)
+
+    # Sort by magnitude of change
+    improved.sort(key=lambda x: x[4])        # most improved first (most negative)
+    worsened.sort(key=lambda x: -x[4])       # most worsened first (most positive)
+
+    # Print summary
+    print("\n" + "=" * 70)
+    print("BATCH TEST SUMMARY")
+    print("=" * 70)
+    print("Functions tested: %d" % total)
+    print()
+    print("  Improved:            %3d functions" % len(improved))
+    print("  Worsened:            %3d functions" % len(worsened))
+    print("  Unchanged (had art): %3d functions" % len(unchanged))
+    print("  Clean (no art):      %3d functions" % len(no_artifacts_either))
+    print()
+
+    net = total_after['total'] - total_before['total']
+    print("Artifact totals:")
+    print("                    BEFORE    AFTER    DELTA")
+    print("  unaff_          %6d   %6d   %+d" % (
+        total_before['unaff_'], total_after['unaff_'],
+        total_after['unaff_'] - total_before['unaff_']))
+    print("  in_stack_       %6d   %6d   %+d" % (
+        total_before['in_stack_'], total_after['in_stack_'],
+        total_after['in_stack_'] - total_before['in_stack_']))
+    print("  extraout_       %6d   %6d   %+d" % (
+        total_before['extraout_'], total_after['extraout_'],
+        total_after['extraout_'] - total_before['extraout_']))
+    print("  TOTAL           %6d   %6d   %+d" % (
+        total_before['total'], total_after['total'], net))
+    print()
+
+    if net < 0:
+        print("NET RESULT: IMPROVED by %d artifacts overall" % abs(net))
+    elif net > 0:
+        print("NET RESULT: WORSE by %d artifacts overall" % net)
+    else:
+        print("NET RESULT: NO CHANGE overall")
+
+    # Show top improved
+    if improved:
+        print("\n" + "-" * 70)
+        print("TOP IMPROVED (up to 20):")
+        print("-" * 70)
+        for name, addr, before, after, delta in improved[:20]:
+            print("  %s (%s): %d -> %d (%+d)" % (name, addr, before, after, delta))
+
+    # Show all worsened (important to see every one)
+    if worsened:
+        print("\n" + "-" * 70)
+        print("ALL WORSENED (%d):" % len(worsened))
+        print("-" * 70)
+        for name, addr, before, after, delta in worsened:
+            print("  %s (%s): %d -> %d (%+d)" % (name, addr, before, after, delta))
+
+
 def main():
     """Entry point for PyGhidra headless execution."""
     parser = argparse.ArgumentParser(
@@ -461,6 +599,8 @@ def main():
                         help="Apply patches (default is dry-run)")
     parser.add_argument("--test", action="store_true",
                         help="Test mode: decompile before/after patching to show diff (no permanent changes)")
+    parser.add_argument("--batch", action="store_true",
+                        help="Batch test ALL matching functions with aggregate stats (no permanent changes)")
     parser.add_argument("--pattern", choices=['and-esp', 'sub-ebp'],
                         default=None,
                         help="Only patch a specific pattern (default: both)")
@@ -486,7 +626,9 @@ def main():
 
     print("Opening project: %s/%s" % (project_path, args.project_name))
     print("Opening program: %s" % args.program_name)
-    if args.test:
+    if args.batch:
+        print("BATCH TEST MODE - testing all functions, no permanent changes")
+    elif args.test:
         print("TEST MODE - patches will be applied and rolled back")
     elif dry_run:
         print("DRY RUN MODE - no changes will be made")
@@ -496,7 +638,13 @@ def main():
     try:
         project = pyghidra.open_project(project_path, args.project_name)
         with pyghidra.program_context(project, "/" + args.program_name) as currentProgram:
-            if args.test:
+            if args.batch:
+                batch_test_patches(
+                    currentProgram,
+                    pattern_filter=args.pattern,
+                    func_filter=args.func,
+                )
+            elif args.test:
                 test_patches(
                     currentProgram,
                     pattern_filter=args.pattern,

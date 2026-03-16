@@ -64,14 +64,12 @@ section .text
     MOV EDX,dword ptr [EBP + 0x18]      ; 005a975c
         ;   Label: LAB_005a975c
     PUSH EDX                            ; 005a975f
-    MOV ECX,dword ptr [EBX + 0x68]      ; 005a9760
-    PUSH ECX                            ; 005a9763
-    MOV ESI,dword ptr [EBX + 0x64]      ; 005a9764
-    PUSH ESI                            ; 005a9767
-    MOV EDI,dword ptr [EBX + 0x60]      ; 005a9768
-    PUSH EDI                            ; 005a976b
-    MOV EAX,dword ptr [EBX + 0x78]      ; 005a976c
-    PUSH EAX                            ; 005a976f
+    PUSH dword ptr [EBX + 0x68]         ; 005a9760
+    SUB ESP,0x8                         ; 005a9763
+    FLD double ptr [EBX + 0x60]         ; 005a9766
+    FSTP double ptr [ESP]               ; 005a9769
+    PUSH dword ptr [EBX + 0x78]         ; 005a976c
+    NOP                                 ; 005a976f
     CALL sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580 ; 005a9770
         ;   XREF to: 005a8580 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSampleInfo * this_ptr, double position, uint input_type, uint output_type)
     MOV dword ptr [ESP + 0x24],EAX      ; 005a9775

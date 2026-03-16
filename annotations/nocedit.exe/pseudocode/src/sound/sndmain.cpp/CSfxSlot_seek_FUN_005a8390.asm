@@ -46,14 +46,12 @@ section .text
     ADD ESP,0x4                         ; 005a83c1
     PUSH 0x0                            ; 005a83c4
         ;   Label: LAB_005a83c4
-    MOV EDI,dword ptr [EBX + 0x68]      ; 005a83c6
-    PUSH EDI                            ; 005a83c9
-    MOV EBP,dword ptr [EBX + 0x64]      ; 005a83ca
-    PUSH EBP                            ; 005a83cd
-    MOV EAX,dword ptr [EBX + 0x60]      ; 005a83ce
-    PUSH EAX                            ; 005a83d1
-    MOV EDX,dword ptr [EBX + 0x78]      ; 005a83d2
-    PUSH EDX                            ; 005a83d5
+    PUSH dword ptr [EBX + 0x68]         ; 005a83c6
+    SUB ESP,0x8                         ; 005a83c9
+    FLD double ptr [EBX + 0x60]         ; 005a83cc
+    FSTP double ptr [ESP]               ; 005a83cf
+    PUSH dword ptr [EBX + 0x78]         ; 005a83d2
+    NOP                                 ; 005a83d5
     CALL sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580 ; 005a83d6
         ;   XREF to: 005a8580 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSampleInfo * this_ptr, double position, uint input_type, uint output_type)
     MOV dword ptr [ESP + 0x14],EAX      ; 005a83db
@@ -64,12 +62,10 @@ section .text
     MOV ECX,dword ptr [EBX + 0x68]      ; 005a83f1
     PUSH ECX                            ; 005a83f4
     FSTP double ptr [EBX + 0x60]        ; 005a83f5
-    MOV ESI,dword ptr [EBX + 0x64]      ; 005a83f8
-    PUSH ESI                            ; 005a83fb
-    MOV EDI,dword ptr [EBX + 0x60]      ; 005a83fc
-    PUSH EDI                            ; 005a83ff
-    MOV EBP,dword ptr [EBX + 0x78]      ; 005a8400
-    PUSH EBP                            ; 005a8403
+    SUB ESP,0x8                         ; 005a83f8
+    FLD double ptr [EBX + 0x60]         ; 005a83fb
+    FSTP double ptr [ESP]               ; 005a83fe
+    PUSH dword ptr [EBX + 0x78]         ; 005a8401
     CALL sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0 ; 005a8404
         ;   XREF to: 005a86f0 (UNCONDITIONAL_CALL)  ; double sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0(CSfxSample * this_ptr, double position, uint input_type)
     MOV dword ptr [ESP + 0x10],EAX      ; 005a8409

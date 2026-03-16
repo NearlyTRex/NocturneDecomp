@@ -5,24 +5,24 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5784 (89.2%)
-Failed: 700
+Successful: 5788 (89.3%)
+Failed: 696
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1341
+  other                           1312
   format_error                     802
   incompatible_types               318
-  undeclared_identifier            204
-  syntax_error                      46
+  undeclared_identifier            200
+  syntax_error                      42
   missing_member                    20
-  type_error                        11
+  type_error                        10
   pointer_arithmetic                10
   lvalue_required                    8
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1341 errors)
+CATEGORY: other (1312 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -363,8 +363,6 @@ CATEGORY: other (1341 errors)
     Line 31: member reference base type 'double' is not a structure or union
   core_dtri.cpp_clipLineToPlane_FUN_0049b6c0
     Line 33: member reference base type 'double' is not a structure or union
-  engine_colquant.c_doubleMax_FUN_00441790
-    Line 15: member reference base type 'double' is not a structure or union
   shape_design.c_calculatePolygonNormal_FUN_0045caa0
     Line 42: member reference base type 'double' is not a structure or union
   shape_design.c_generateOctant_FUN_00469420
@@ -389,16 +387,12 @@ CATEGORY: other (1341 errors)
     Line 115: member reference base type 'double' is not a structure or union
   sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170
     Line 38: member reference base type 'double' is not a structure or union
-  sound_sndmain.cpp_audioThreadProc_FUN_005abba0
-    Line 21: member reference base type 'double' is not a structure or union
-  sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0
-    Line 48: member reference base type 'double' is not a structure or union
   sound_sndmain.cpp_startSoundThread_FUN_005abc00
     Line 18: member reference base type 'double' is not a structure or union
   core_mimic.cpp_CMimic_processAnimation_FUN_0051fcc0
     Line 202: member reference base type 'float' is not a structure or union
   engine_colquant.c_computeBoxStatistics_FUN_00441260
-    Line 96: member reference base type 'int' is not a structure or union
+    Line 94: member reference base type 'int' is not a structure or union
   engine_colquant.c_computeWeightedColorDistance_FUN_00441040
     Line 22: member reference base type 'int' is not a structure or union
   engine_colquant.c_partitionByBlue_FUN_00440dc0
@@ -1577,7 +1571,7 @@ CATEGORY: incompatible_types (318 errors)
     Line 112: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (204 errors)
+CATEGORY: undeclared_identifier (200 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
@@ -1782,13 +1776,9 @@ CATEGORY: undeclared_identifier (204 errors)
     Line 93: use of undeclared identifier 'uint3'
   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
     Line 23: use of undeclared identifier 'undefined3'
-  engine_colquant.c_computeBoxStatistics_FUN_00441260
-    Line 134: use of undeclared identifier 'undefined5'
-  sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390
-    Line 27: use of undeclared identifier 'undefined6'
 
 ====================================================================================================
-CATEGORY: syntax_error (46 errors)
+CATEGORY: syntax_error (42 errors)
 ====================================================================================================
 
   core_curtain.cpp_CCurtain_process_FUN_0044a920
@@ -1819,8 +1809,6 @@ CATEGORY: syntax_error (46 errors)
     Line 96: expected expression
   core_zombie.cpp_CZombie_process_FUN_005f9470
     Line 737: expected expression
-  engine_colquant.c_computeBoxStatistics_FUN_00441260
-    Line 134: expected expression
   engine_dosio.c_findFile_FUN_00481760
     Line 24: expected expression
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
@@ -1851,8 +1839,6 @@ CATEGORY: syntax_error (46 errors)
     Line 68: expected expression
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
     Line 83: expected expression
-  sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390
-    Line 27: expected expression
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     Line 123: expected expression
   wincore_winrun.cpp_mainWindowProc_FUN_005f3150
@@ -1868,7 +1854,7 @@ CATEGORY: missing_member (20 errors)
     Line 20: no member named 'unk15' in 'CDemonActor'
 
 ====================================================================================================
-CATEGORY: type_error (11 errors)
+CATEGORY: type_error (10 errors)
 ====================================================================================================
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -1891,8 +1877,6 @@ CATEGORY: type_error (11 errors)
     Line 18: unknown type name 'code'
   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
     Line 13: unknown type name 'undefined3'
-  engine_colquant.c_computeBoxStatistics_FUN_00441260
-    Line 46: unknown type name 'undefined5'
 
 ====================================================================================================
 CATEGORY: pointer_arithmetic (10 errors)

@@ -2,99 +2,57 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "type_error",
-        "column": 3,
-        "line": 46,
-        "message": "unknown type name 'undefined5'"
-      },
-      {
         "category": "other",
         "column": 10,
-        "line": 96,
+        "line": 94,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 97,
+        "line": 95,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 101,
+        "line": 99,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 102,
+        "line": 100,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 105,
+        "line": 103,
         "message": "member reference base type 'int' is not a structure or union"
       },
       {
         "category": "other",
         "column": 10,
-        "line": 106,
+        "line": 104,
         "message": "member reference base type 'int' is not a structure or union"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 13,
-        "line": 134,
-        "message": "use of undeclared identifier 'undefined5'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 25,
-        "line": 134,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 50,
-        "line": 146,
-        "message": "use of undeclared identifier 'undefined5'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 62,
-        "line": 146,
-        "message": "expected expression"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 154,
-        "message": "use of undeclared identifier 'undefined5'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 63,
-        "line": 154,
-        "message": "expected expression"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 156,
+        "line": 141,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 11,
-        "line": 158,
+        "line": 143,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       },
       {
         "category": "other",
         "column": 73,
-        "line": 159,
+        "line": 144,
         "message": "member reference base type 'ulonglong' (aka 'unsigned long long') is not a structure or union"
       }
     ],
@@ -102,24 +60,22 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 374,
-    "complexity_score": 585,
+    "assembly_lines": 378,
+    "complexity_score": 430,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 150,
-    "suspect_count": 40,
+    "pseudocode_lines": 135,
+    "suspect_count": 27,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
       "sub84_truncation",
-      "undefined_ptr_cast",
-      "undefined_type",
       "unknown_field",
       "warning_inlined_function"
     ],
-    "total_lines": 524
+    "total_lines": 513
   },
   "cross_references": [
     {
@@ -336,44 +292,44 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 6.0790960451977405,
-    "instruction_count": 354,
+    "avg_pcode_per_instr": 6.23463687150838,
+    "instruction_count": 358,
     "opcode_distribution": {
       "BOOL_NEGATE": 35,
       "BRANCH": 1,
       "CALL": 11,
       "CBRANCH": 3,
-      "COPY": 904,
-      "FLOAT2FLOAT": 66,
+      "COPY": 960,
+      "FLOAT2FLOAT": 74,
       "FLOAT_ADD": 12,
       "FLOAT_DIV": 4,
       "FLOAT_MULT": 16,
       "INT2FLOAT": 12,
-      "INT_ADD": 228,
-      "INT_AND": 179,
+      "INT_ADD": 224,
+      "INT_AND": 187,
       "INT_CARRY": 12,
-      "INT_EQUAL": 106,
+      "INT_EQUAL": 114,
       "INT_LEFT": 6,
-      "INT_LESS": 12,
+      "INT_LESS": 16,
       "INT_MULT": 10,
       "INT_NOTEQUAL": 20,
       "INT_OR": 31,
-      "INT_SBORROW": 12,
+      "INT_SBORROW": 16,
       "INT_SCARRY": 14,
       "INT_SEXT": 4,
-      "INT_SLESS": 55,
+      "INT_SLESS": 59,
       "INT_SRIGHT": 8,
-      "INT_SUB": 62,
+      "INT_SUB": 58,
       "INT_XOR": 15,
-      "LOAD": 116,
-      "POPCOUNT": 49,
+      "LOAD": 112,
+      "POPCOUNT": 53,
       "RETURN": 1,
       "ROUND": 4,
-      "STORE": 136,
+      "STORE": 132,
       "SUBPIECE": 4,
       "TRUNC": 4
     },
-    "pcode_op_count": 2152
+    "pcode_op_count": 2232
   },
   "stack_frame": {
     "frame_size": 156,
@@ -488,16 +444,16 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unresolved type",
-      "line": 39,
-      "match": "undefined5 uVar7",
-      "severity": "moderate",
-      "text": "undefined5 uVar7;",
-      "type": "undefined_type"
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 60,
+      "match": "ROUND",
+      "severity": "mild",
+      "text": "workspace->boxes[box_index].avg_red = (short)(int)ROUND(ROUND(local_78 / (double)local_30));",
+      "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 62,
+      "line": 60,
       "match": "ROUND",
       "severity": "mild",
       "text": "workspace->boxes[box_index].avg_red = (short)(int)ROUND(ROUND(local_78 / (double)local_30));",
@@ -508,12 +464,12 @@
       "line": 62,
       "match": "ROUND",
       "severity": "mild",
-      "text": "workspace->boxes[box_index].avg_red = (short)(int)ROUND(ROUND(local_78 / (double)local_30));",
+      "text": "workspace->boxes[box_index].avg_green = (short)(int)ROUND(ROUND(local_70 / (double)local_30));",
       "type": "decompiler_intrinsic"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 64,
+      "line": 62,
       "match": "ROUND",
       "severity": "mild",
       "text": "workspace->boxes[box_index].avg_green = (short)(int)ROUND(ROUND(local_70 / (double)local_30));",
@@ -522,14 +478,6 @@
     {
       "description": "Decompiler intrinsic (not real C)",
       "line": 64,
-      "match": "ROUND",
-      "severity": "mild",
-      "text": "workspace->boxes[box_index].avg_green = (short)(int)ROUND(ROUND(local_70 / (double)local_30));",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
       "match": "ROUND",
       "severity": "mild",
       "text": "workspace->boxes[box_index].avg_blue = (short)(int)ROUND(ROUND(local_50 / (double)local_30));",
@@ -537,7 +485,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 66,
+      "line": 64,
       "match": "ROUND",
       "severity": "mild",
       "text": "workspace->boxes[box_index].avg_blue = (short)(int)ROUND(ROUND(local_50 / (double)local_30));",
@@ -545,7 +493,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 67,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&workspace->boxes[box_index].spread_red + 4) = 0;",
@@ -553,7 +501,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 70,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&workspace->boxes[box_index].spread_green + 4) = 0;",
@@ -561,7 +509,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 73,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&workspace->boxes[box_index].spread_blue + 4) = 0;",
@@ -569,7 +517,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 76,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&workspace->boxes[box_index].spread_intensity + 4) = 0;",
@@ -577,7 +525,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 79,
       "match": "ROUND",
       "severity": "mild",
       "text": "workspace->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_48 / (double)local_30));",
@@ -585,7 +533,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 81,
+      "line": 79,
       "match": "ROUND",
       "severity": "mild",
       "text": "workspace->boxes[box_index].avg_intensity = (short)(int)ROUND(ROUND(local_48 / (double)local_30));",
@@ -593,7 +541,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 81,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&workspace->boxes[box_index].total_weighted_error + 4) = 0;",
@@ -601,7 +549,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 83,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "uVar9 = (*(int *)((int)&workspace->boxes[box_index + -1].count + 2) >> 0x10) -",
@@ -609,7 +557,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 89,
+      "line": 87,
       "match": "._0_2_",
       "severity": "mild",
       "text": "iVar3._0_2_ = workspace->boxes[box_index].avg_red;",
@@ -617,7 +565,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 90,
+      "line": 88,
       "match": "._2_2_",
       "severity": "mild",
       "text": "iVar3._2_2_ = workspace->boxes[box_index].avg_green;",
@@ -625,7 +573,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 94,
+      "line": 92,
       "match": "._0_2_",
       "severity": "mild",
       "text": "iVar4._0_2_ = workspace->boxes[box_index].avg_green;",
@@ -633,7 +581,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 95,
+      "line": 93,
       "match": "._2_2_",
       "severity": "mild",
       "text": "iVar4._2_2_ = workspace->boxes[box_index].avg_blue;",
@@ -641,7 +589,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 98,
+      "line": 96,
       "match": "._0_2_",
       "severity": "mild",
       "text": "iVar5._0_2_ = workspace->boxes[box_index].avg_blue;",
@@ -649,111 +597,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 99,
+      "line": 97,
       "match": "._2_2_",
       "severity": "mild",
       "text": "iVar5._2_2_ = workspace->boxes[box_index].avg_intensity;",
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 126,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)((int)&workspace->boxes[box_index].spread_red + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Cast to undefined pointer type",
-      "line": 127,
-      "match": "(undefined5 *)",
-      "severity": "moderate",
-      "text": "uVar7 = *(undefined5 *)&workspace->boxes[box_index].spread_red;",
-      "type": "undefined_ptr_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 131,
-      "match": "CONCAT26",
-      "severity": "mild",
-      "text": "(__BITCAST_DOUBLE(CONCAT26((short)((uint)uVar2 >> 0x10),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 132,
-      "match": "CONCAT15",
-      "severity": "mild",
-      "text": "CONCAT15((char)((uint)uVar2 >> 8),uVar7))),b_02);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 135,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)((int)&workspace->boxes[box_index].max_spread + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 137,
-      "match": "CONCAT26",
-      "severity": "mild",
-      "text": "(__BITCAST_DOUBLE(CONCAT26((short)((uint)uVar2 >> 0x10),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 138,
-      "match": "CONCAT15",
-      "severity": "mild",
-      "text": "CONCAT15((char)((uint)uVar2 >> 8),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Cast to undefined pointer type",
-      "line": 139,
-      "match": "(undefined5 *)",
-      "severity": "moderate",
-      "text": "*(undefined5 *)",
-      "type": "undefined_ptr_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 143,
-      "match": "(uint *)((int)",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)((int)&workspace->boxes[box_index].max_spread + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 145,
-      "match": "CONCAT26",
-      "severity": "mild",
-      "text": "(__BITCAST_DOUBLE(CONCAT26((short)((uint)uVar2 >> 0x10),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 146,
-      "match": "CONCAT15",
-      "severity": "mild",
-      "text": "CONCAT15((char)((uint)uVar2 >> 8),",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Cast to undefined pointer type",
-      "line": 147,
-      "match": "(undefined5 *)",
-      "severity": "moderate",
-      "text": "*(undefined5 *)",
-      "type": "undefined_ptr_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 149,
+      "line": 134,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64(dVar14),0);",
@@ -761,7 +613,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 149,
+      "line": 134,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64(dVar14),0);",
@@ -769,7 +621,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 149,
+      "line": 134,
       "match": "SUB84",
       "severity": "mild",
       "text": "local_30._0_4_ = SUB84(__BITCAST_UINT64(dVar14),0);",
@@ -777,7 +629,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 151,
+      "line": 136,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_30._4_4_ = (uint)((ulonglong)dVar14 >> 0x20);",
@@ -785,7 +637,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 137,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&workspace->boxes[box_index].max_spread + 4) = local_30._4_4_;",
@@ -793,7 +645,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 152,
+      "line": 137,
       "match": "._4_4_",
       "severity": "mild",
       "text": "*(uint *)((int)&workspace->boxes[box_index].max_spread + 4) = local_30._4_4_;",

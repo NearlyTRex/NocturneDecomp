@@ -7,30 +7,30 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 6484
-Clean functions: 5035 (77.7%)
-Functions with suspects: 1449 (22.3%)
+Clean functions: 5036 (77.7%)
+Functions with suspects: 1448 (22.3%)
 
-Total suspect patterns: 16185
-Average suspects per function: 2.50
+Total suspect patterns: 16119
+Average suspects per function: 2.49
 
 Virtual files: 214 total, 43 at 100%, 82 at 90%+
 
 Pseudocode lines:
   Min: 4, Max: 3411, Average: 47.6
 
-Average complexity score: 74.9
+Average complexity score: 74.8
 
 COMPILATION STATUS
 ----------------------------------------
 Functions compiled: 6484
-Successful: 5784 (89.2%)
-Failed: 700
+Successful: 5788 (89.3%)
+Failed: 696
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  decompiler_intrinsic      6843
-  pointer_cast              5389
-  unknown_field             1356
+  decompiler_intrinsic      6819
+  pointer_cast              5386
+  unknown_field             1322
   stack_param               749
   nonstandard_int           268
   warning_inlined_function  261
@@ -52,12 +52,11 @@ SUSPECT PATTERN BREAKDOWN
   byvalue_struct_passing    21
   extra_output              16
   fnstsw_flag_artifact      7
-  undefined_type            5
   unknown_type              5
   undefined_data            4
-  undefined_ptr_cast        4
   warning_deadcode_restart  4
   special_cpu_detection     4
+  undefined_type            4
   warning_max_restarts      3
   nan_function_artifact     3
   warning_overlapping_globals 3
@@ -123,7 +122,7 @@ EASIEST FUNCTIONS (Clean, Sorted by Size)
   005b1690: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690 (4 lines)
   005b1680: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680 (4 lines)
   005b1660: sound_sndwav.cpp_CWavOutDevice_set3DListenerPos_FUN_005b1660 (4 lines)
-  ... and 4985 more
+  ... and 4986 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -161,7 +160,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  decompiler_intrinsic (918 functions):
+  decompiler_intrinsic (916 functions):
     00488630: cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
     004887a0: cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
     00487bc0: cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0
@@ -172,7 +171,7 @@ FUNCTIONS BY SUSPECT TYPE
     0043f490: support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490
     0043f710: support_codec.cpp_CLZWCompress_dtor_FUN_0043f710
     0043f2d0: support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0
-    ... and 908 more
+    ... and 906 more
 
   pointer_cast (920 functions):
     00488230: cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
@@ -187,7 +186,7 @@ FUNCTIONS BY SUSPECT TYPE
     0054aa20: cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
     ... and 910 more
 
-  unknown_field (114 functions):
+  unknown_field (112 functions):
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     0043e530: support_codec.cpp_readBitsFromStream_FUN_0043e530
     00441040: engine_colquant.c_computeWeightedColorDistance_FUN_00441040
@@ -198,7 +197,7 @@ FUNCTIONS BY SUSPECT TYPE
     00440c80: engine_colquant.c_partitionByGreen_FUN_00440c80
     00441790: engine_colquant.c_doubleMax_FUN_00441790
     00552a40: engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
-    ... and 104 more
+    ... and 102 more
 
   stack_param (47 functions):
     005f2440: engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440
@@ -448,13 +447,6 @@ FUNCTIONS BY SUSPECT TYPE
     005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
     005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
 
-  undefined_type (5 functions):
-    00441260: engine_colquant.c_computeBoxStatistics_FUN_00441260
-    005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
-    005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
-    005b55f7: wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7
-    005f2e90: wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
-
   unknown_type (5 functions):
     004758d0: core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0
     00475210: core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210
@@ -468,10 +460,6 @@ FUNCTIONS BY SUSPECT TYPE
     005f4290: wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290
     005f4210: wincore_winrun.cpp_getRegistryStringValue_FUN_005f4210
 
-  undefined_ptr_cast (2 functions):
-    00441260: engine_colquant.c_computeBoxStatistics_FUN_00441260
-    005a8390: sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390
-
   warning_deadcode_restart (4 functions):
     00534d40: sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
     005a5e70: sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70
@@ -483,6 +471,12 @@ FUNCTIONS BY SUSPECT TYPE
     00524f4c: core_mmx.c_detectIntelProcessor_FUN_00524f4c
     0052500f: core_mmx.c_getCPUInfo_FUN_0052500f
     00524f10: core_mmx.c_detectCPUFeatures_FUN_00524f10
+
+  undefined_type (4 functions):
+    005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+    005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
+    005b55f7: wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7
+    005f2e90: wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
 
   warning_max_restarts (3 functions):
     005ae660: sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660

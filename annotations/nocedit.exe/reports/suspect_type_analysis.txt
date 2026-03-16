@@ -4,11 +4,11 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            7116 ( 36.1%)
-  pointer_cast                    5704 ( 29.0%)
-  unknown_field                   1493 (  7.6%)
+  decompiler_intrinsic            7092 ( 36.1%)
+  pointer_cast                    5701 ( 29.0%)
+  unknown_field                   1459 (  7.4%)
   stack_param                      970 (  4.9%)
-  unnamed_param                    698 (  3.5%)
+  unnamed_param                    698 (  3.6%)
   special_crt_function             636 (  3.2%)
   fpu_register_input               327 (  1.7%)
   unaffected_reg                   314 (  1.6%)
@@ -33,12 +33,12 @@ SUSPECT TYPE COUNTS
   format_string_mismatch            24 (  0.1%)
   undefined_ram                     24 (  0.1%)
   byvalue_struct_passing            21 (  0.1%)
-  undefined_type                    17 (  0.1%)
+  undefined_type                    16 (  0.1%)
   fnstsw_flag_artifact              15 (  0.1%)
   warning_jumptable                 10 (  0.1%)
   warning_indirect_jump             10 (  0.1%)
-  undefined_ptr_cast                10 (  0.1%)
   nan_function_artifact              9 (  0.0%)
+  undefined_ptr_cast                 6 (  0.0%)
   warning_noreturn                   4 (  0.0%)
   warning_max_restarts               4 (  0.0%)
   warning_spacebase                  4 (  0.0%)
@@ -55,13 +55,13 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (7116 occurrences)
+TYPE: decompiler_intrinsic (7092 occurrences)
 ====================================================================================================
 
 Unique patterns:
   2631x  ROUND
   1548x  ADJ
-   497x  CONCAT44
+   480x  CONCAT44
    427x  SQRT
    325x  ABS
    159x  CARRY4
@@ -73,8 +73,8 @@ Unique patterns:
     96x  CONCAT12
     82x  CONCAT14
     67x  CONCAT21
-    67x  CONCAT26
     64x  CONCAT13
+    63x  CONCAT26
     63x  CONCAT24
     55x  CONCAT25
     53x  CONCAT41
@@ -97,11 +97,11 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5704 occurrences)
+TYPE: pointer_cast (5701 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2167x  (uint *)((int)
+  2164x  (uint *)((int)
   1296x  (int *)((int)
    325x  (SRenderVertex *)((int)
    295x  (float *)((int)
@@ -135,12 +135,12 @@ Example functions:
     piVar2 = (int *)((int)g_ScreenBufferArray + iVar8);...
 
 ====================================================================================================
-TYPE: unknown_field (1493 occurrences)
+TYPE: unknown_field (1459 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   460x  ._0_4_
-   404x  ._4_4_
+   443x  ._0_4_
+   387x  ._4_4_
     89x  ._8_4_
     75x  ._12_4_
     67x  ._16_4_
@@ -1516,14 +1516,13 @@ Example functions:
     Function calls by-value struct passing functions...
 
 ====================================================================================================
-TYPE: undefined_type (17 occurrences)
+TYPE: undefined_type (16 occurrences)
 ====================================================================================================
 
 Unique patterns:
      6x  undefined6 uStack0000000c
      5x  undefined6 uStack00000020
      1x  undefined3 in_stack_00000005
-     1x  undefined5 uVar7
      1x  undefined5 uVar8
      1x  undefined6 uVar7
      1x  undefined7 uVar5
@@ -1554,8 +1553,6 @@ Example functions:
     undefined6 uStack0000000c;...
   crt_math.c_fdiv_thunk_FUN_00606cfb
     undefined6 uStack0000000c;...
-  engine_colquant.c_computeBoxStatistics_FUN_00441260
-    undefined5 uVar7;...
   wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
     undefined5 uVar8;...
   wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
@@ -1647,32 +1644,6 @@ Example functions:
     /* WARNING: Treating indirect jump as call */...
 
 ====================================================================================================
-TYPE: undefined_ptr_cast (10 occurrences)
-====================================================================================================
-
-Unique patterns:
-     7x  (undefined6 *)
-     3x  (undefined5 *)
-
-Example functions:
-  crt_stdio.c_scanf_integer_FUN_0060547c
-    piVar6 = (int *)*(undefined6 *)pcVar4;...
-  crt_stdio.c_scanf_scanset_FUN_00605064
-    unaff_ESI = (byte *)*(undefined6 *)pcVar1;...
-  crt_stdio.c_store_count_FUN_00604fb0
-    piVar3 = (int *)*(undefined6 *)pcVar2;...
-  crt_stdio.c_scanf_char_FUN_00604d54
-    unaff_EBX = (char *)*(undefined6 *)pcVar2;...
-  crt_stdio.c_scanf_float_FUN_00605178
-    pfVar6 = (float *)*(undefined6 *)pcVar2;...
-  crt_stdio.c_scanf_string_FUN_00604e4c
-    unaff_EDI = (char *)*(undefined6 *)pcVar2;...
-  engine_colquant.c_computeBoxStatistics_FUN_00441260
-    uVar7 = *(undefined5 *)&workspace->boxes[box_index].spread_red;...
-  sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390
-    0x10),*(undefined6 *)&(this_ptr->options).trigger_time))...
-
-====================================================================================================
 TYPE: nan_function_artifact (9 occurrences)
 ====================================================================================================
 
@@ -1688,6 +1659,27 @@ Example functions:
     (ushort)(0.0 < (float)damage_info) << 8 | (ushort)NAN((float)damage_info) << 10...
   shape_design.c_mergeTrianglesIntoQuad_FUN_00462190
     (ushort)(NAN(dVar9) || NAN(359.5)) << 10 |...
+
+====================================================================================================
+TYPE: undefined_ptr_cast (6 occurrences)
+====================================================================================================
+
+Unique patterns:
+     6x  (undefined6 *)
+
+Example functions:
+  crt_stdio.c_scanf_integer_FUN_0060547c
+    piVar6 = (int *)*(undefined6 *)pcVar4;...
+  crt_stdio.c_scanf_scanset_FUN_00605064
+    unaff_ESI = (byte *)*(undefined6 *)pcVar1;...
+  crt_stdio.c_store_count_FUN_00604fb0
+    piVar3 = (int *)*(undefined6 *)pcVar2;...
+  crt_stdio.c_scanf_char_FUN_00604d54
+    unaff_EBX = (char *)*(undefined6 *)pcVar2;...
+  crt_stdio.c_scanf_float_FUN_00605178
+    pfVar6 = (float *)*(undefined6 *)pcVar2;...
+  crt_stdio.c_scanf_string_FUN_00604e4c
+    unaff_EDI = (char *)*(undefined6 *)pcVar2;...
 
 ====================================================================================================
 TYPE: warning_noreturn (4 occurrences)

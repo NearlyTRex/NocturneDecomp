@@ -5,24 +5,24 @@ FUNCTION COMPILATION SUMMARY
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5784 (89.2%)
-Failed: 700
+Successful: 5788 (89.3%)
+Failed: 696
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1341
+  other                           1312
   format_error                     802
   incompatible_types               318
-  undeclared_identifier            204
-  syntax_error                      46
+  undeclared_identifier            200
+  syntax_error                      42
   missing_member                    20
-  type_error                        11
+  type_error                        10
   pointer_arithmetic                10
   lvalue_required                    8
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1341 errors)
+CATEGORY: other (1312 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -86,7 +86,7 @@ CATEGORY: other (1341 errors)
   core_setcolid.cpp_rayTestQuadFloor_FUN_005715d0
     Line 19: cannot cast from type 'float' to pointer type 'CVector3f *'...
 
-  ... and 281 more errors
+  ... and 278 more errors
 
 ====================================================================================================
 CATEGORY: format_error (802 errors)
@@ -223,7 +223,7 @@ CATEGORY: incompatible_types (318 errors)
   ... and 161 more errors
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (204 errors)
+CATEGORY: undeclared_identifier (200 errors)
 ====================================================================================================
 
   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
@@ -287,10 +287,10 @@ CATEGORY: undeclared_identifier (204 errors)
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
     Line 126: use of undeclared identifier 'code'...
 
-  ... and 73 more errors
+  ... and 71 more errors
 
 ====================================================================================================
-CATEGORY: syntax_error (46 errors)
+CATEGORY: syntax_error (42 errors)
 ====================================================================================================
 
   core_curtain.cpp_CCurtain_process_FUN_0044a920
@@ -321,8 +321,6 @@ CATEGORY: syntax_error (46 errors)
     Line 96: expected expression...
   core_zombie.cpp_CZombie_process_FUN_005f9470
     Line 737: expected expression...
-  engine_colquant.c_computeBoxStatistics_FUN_00441260
-    Line 134: expected expression...
   engine_dosio.c_findFile_FUN_00481760
     Line 24: expected expression...
   shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
@@ -353,8 +351,10 @@ CATEGORY: syntax_error (46 errors)
     Line 68: expected expression...
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
     Line 83: expected expression...
+  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
+    Line 123: expected expression...
 
-  ... and 3 more errors
+  ... and 1 more errors
 
 ====================================================================================================
 CATEGORY: missing_member (20 errors)
@@ -366,7 +366,7 @@ CATEGORY: missing_member (20 errors)
     Line 20: no member named 'unk15' in 'CDemonActor'...
 
 ====================================================================================================
-CATEGORY: type_error (11 errors)
+CATEGORY: type_error (10 errors)
 ====================================================================================================
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
@@ -389,8 +389,6 @@ CATEGORY: type_error (11 errors)
     Line 18: unknown type name 'code'...
   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
     Line 13: unknown type name 'undefined3'...
-  engine_colquant.c_computeBoxStatistics_FUN_00441260
-    Line 46: unknown type name 'undefined5'...
 
 ====================================================================================================
 CATEGORY: pointer_arithmetic (10 errors)
@@ -432,7 +430,7 @@ COMPILATION VS SUSPECT PATTERNS
 ====================================================================================================
 
 Average suspects in successfully compiled functions: 1.80
-Average suspects in failed compilations: 8.27
+Average suspects in failed compilations: 8.20
 
-Functions that compile but have suspect patterns: 1409
+Functions that compile but have suspect patterns: 1412
 (These may have runtime issues even though syntax is valid)

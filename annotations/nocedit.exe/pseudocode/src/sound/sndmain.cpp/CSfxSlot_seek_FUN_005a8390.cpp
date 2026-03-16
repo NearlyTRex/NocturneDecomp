@@ -21,11 +21,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::seek - no sample?!");
   }
   dVar1 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-                    (&this_ptr->sample->sample_info,
-                     __BITCAST_DOUBLE(CONCAT26((short)((uint)*(uint *)
-                                                     ((int)&(this_ptr->options).trigger_time + 4) >>
-                                             0x10),*(undefined6 *)&(this_ptr->options).trigger_time))
-                     ,(this_ptr->options).trigger_id,0);
+                    (&this_ptr->sample->sample_info,(this_ptr->options).trigger_time,
+                     (this_ptr->options).trigger_id,0);
   (this_ptr->options).trigger_id = 0;
   (this_ptr->options).trigger_time = dVar1;
   dVar2 = sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_005a86f0

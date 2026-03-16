@@ -11,7 +11,6 @@
 ;
 ; Referenced Globals:
 ;   double g_AudioLatencySeconds
-;   undefined4 g_AudioLatencySeconds+4
 ;   int g_AudioThreadRunning
 ;   int g_AudioThreadShutdownFlag
 ;
@@ -46,11 +45,12 @@ section .text
     POP ESI                             ; 005abbce
     POP EBX                             ; 005abbcf
     RET                                 ; 005abbd0
-    MOV EBX,dword ptr [0x03f693fc]      ; 005abbd1 | g_AudioLatencySeconds+4
+    SUB ESP,0x8                         ; 005abbd1
         ;   Label: LAB_005abbd1
-    PUSH EBX                            ; 005abbd7
-    MOV ESI,dword ptr [0x03f693f8]      ; 005abbd8 | g_AudioLatencySeconds
-    PUSH ESI                            ; 005abbde
+    FLD double ptr [0x03f693f8]         ; 005abbd4 | g_AudioLatencySeconds
+    FSTP double ptr [ESP]               ; 005abbda
+    NOP                                 ; 005abbdd
+    NOP                                 ; 005abbde
     CALL wincore_winrun.cpp_sleep_FUN_005f40e0 ; 005abbdf
         ;   XREF to: 005f40e0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_sleep_FUN_005f40e0(double seconds)
     MOV EDI,dword ptr [0x03f69404]      ; 005abbe4 | g_AudioThreadShutdownFlag

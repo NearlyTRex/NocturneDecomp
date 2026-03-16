@@ -1,38 +1,24 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 54,
-        "line": 27,
-        "message": "use of undeclared identifier 'undefined6'"
-      },
-      {
-        "category": "syntax_error",
-        "column": 66,
-        "line": 27,
-        "message": "expected expression"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 87,
-    "complexity_score": 126,
+    "assembly_lines": 83,
+    "complexity_score": 98,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
-    "suspect_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 33,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast",
-      "undefined_ptr_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 123
+    "total_lines": 116
   },
   "cross_references": [
     {
@@ -128,32 +114,32 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.662337662337662,
-    "instruction_count": 77,
+    "avg_pcode_per_instr": 5.424657534246576,
+    "instruction_count": 73,
     "opcode_distribution": {
       "BOOL_NEGATE": 1,
       "CALL": 5,
       "CBRANCH": 2,
-      "COPY": 134,
-      "FLOAT2FLOAT": 6,
+      "COPY": 159,
+      "FLOAT2FLOAT": 10,
       "INT2FLOAT": 1,
-      "INT_ADD": 47,
-      "INT_AND": 19,
+      "INT_ADD": 45,
+      "INT_AND": 23,
       "INT_CARRY": 6,
-      "INT_EQUAL": 19,
-      "INT_LESS": 2,
-      "INT_SBORROW": 2,
+      "INT_EQUAL": 23,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
       "INT_SCARRY": 6,
-      "INT_SLESS": 9,
-      "INT_SUB": 24,
-      "LOAD": 30,
-      "POPCOUNT": 9,
+      "INT_SLESS": 11,
+      "INT_SUB": 22,
+      "LOAD": 28,
+      "POPCOUNT": 11,
       "RETURN": 2,
       "ROUND": 1,
-      "STORE": 33,
+      "STORE": 31,
       "TRUNC": 1
     },
-    "pcode_op_count": 359
+    "pcode_op_count": 396
   },
   "stack_frame": {
     "frame_size": 8,
@@ -181,24 +167,8 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 18,
-      "match": "CONCAT26",
-      "severity": "mild",
-      "text": "__BITCAST_DOUBLE(CONCAT26((short)((uint)*(uint *)",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Cast to undefined pointer type",
-      "line": 20,
-      "match": "(undefined6 *)",
-      "severity": "moderate",
-      "text": "0x10),*(undefined6 *)&(this_ptr->options).trigger_time))",
-      "type": "undefined_ptr_cast"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 29,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4) =",
@@ -206,7 +176,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 30,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4);",
@@ -214,7 +184,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 34,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr_00,(int)ROUND(ROUND((this_ptr->options).trigger_time)),0);",
@@ -222,7 +192,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 37,
+      "line": 34,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr_00,(int)ROUND(ROUND((this_ptr->options).trigger_time)),0);",

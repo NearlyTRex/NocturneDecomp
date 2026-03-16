@@ -223,30 +223,34 @@ section .text
     MOV dword ptr [ESP + 0x74],EDX      ; 004414f9
     FLD double ptr [ESP + 0x70]         ; 004414fd
     ADD ESP,0x10                        ; 00441501
-    MOV ECX,dword ptr [EBX + 0x402c]    ; 00441504
-    PUSH ECX                            ; 0044150a
-    MOV ESI,dword ptr [EBX + 0x4028]    ; 0044150b
-    PUSH ESI                            ; 00441511
+    SUB ESP,0x8                         ; 00441504
+    FLD double ptr [EBX + 0x4028]       ; 00441507
+    FSTP double ptr [ESP]               ; 0044150d
+    NOP                                 ; 00441510
+    NOP                                 ; 00441511
     FSTP double ptr [EBX + 0x4038]      ; 00441512
-    MOV EDI,dword ptr [EBX + 0x403c]    ; 00441518
-    PUSH EDI                            ; 0044151e
-    MOV EAX,dword ptr [EBX + 0x4038]    ; 0044151f
-    PUSH EAX                            ; 00441525
+    SUB ESP,0x8                         ; 00441518
+    FLD double ptr [EBX + 0x4038]       ; 0044151b
+    FSTP double ptr [ESP]               ; 00441521
+    NOP                                 ; 00441524
+    NOP                                 ; 00441525
     CALL engine_colquant.c_doubleMax_FUN_00441790 ; 00441526
         ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; double engine_colquant.c_doubleMax_FUN_00441790(double a, double b)
     MOV dword ptr [ESP + 0x70],EAX      ; 0044152b
     MOV dword ptr [ESP + 0x74],EDX      ; 0044152f
     FLD double ptr [ESP + 0x70]         ; 00441533
     ADD ESP,0x10                        ; 00441537
-    MOV EDX,dword ptr [EBX + 0x4034]    ; 0044153a
-    PUSH EDX                            ; 00441540
-    MOV ECX,dword ptr [EBX + 0x4030]    ; 00441541
-    PUSH ECX                            ; 00441547
+    SUB ESP,0x8                         ; 0044153a
+    FLD double ptr [EBX + 0x4030]       ; 0044153d
+    FSTP double ptr [ESP]               ; 00441543
+    NOP                                 ; 00441546
+    NOP                                 ; 00441547
     FSTP double ptr [EBX + 0x4038]      ; 00441548
-    MOV ESI,dword ptr [EBX + 0x403c]    ; 0044154e
-    PUSH ESI                            ; 00441554
-    MOV EDI,dword ptr [EBX + 0x4038]    ; 00441555
-    PUSH EDI                            ; 0044155b
+    SUB ESP,0x8                         ; 0044154e
+    FLD double ptr [EBX + 0x4038]       ; 00441551
+    FSTP double ptr [ESP]               ; 00441557
+    NOP                                 ; 0044155a
+    NOP                                 ; 0044155b
     CALL engine_colquant.c_doubleMax_FUN_00441790 ; 0044155c
         ;   XREF to: 00441790 (UNCONDITIONAL_CALL)  ; double engine_colquant.c_doubleMax_FUN_00441790(double a, double b)
     MOV dword ptr [ESP + 0x70],EAX      ; 00441561
