@@ -40,12 +40,12 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
   }
   remove("save\\$$SAVE$$.TMP");
   splitpath
-            (&g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_24c);
+            (g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_24c);
   iVar3 = _stricmp(local_24c,"noc");
   if ((iVar3 == 0) ||
      (iVar3 = _stricmp(local_24c,".noc"), iVar3 == 0)) {
     pcVar6 = local_558;
-    pcVar5 = &g_CurrentSaveFile;
+    pcVar5 = g_CurrentSaveFile;
     do {
       cVar2 = *pcVar5;
       *pcVar6 = cVar2;
@@ -172,7 +172,7 @@ void __cdecl core_game_cpp_CGame_saveGame_FUN_004e0cd0(CGame *this_ptr,char *sav
     crt_fstream_cpp_ifstream_dtor_FUN_005ff856(local_14c,0);
   }
   remove("save\\$$SAVE$$.TMP");
-  pcVar5 = &g_CurrentSaveFile;
+  pcVar5 = g_CurrentSaveFile;
   do {
     cVar2 = *pcVar6;
     *pcVar5 = cVar2;

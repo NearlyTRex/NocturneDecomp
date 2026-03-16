@@ -188,7 +188,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 005c9300
     PUSH EDX                            ; 005c9303
     CALL shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20 ; 005c9304
-        ;   XREF to: 005cbe20 (UNCONDITIONAL_CALL)  ; void shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(CComplexPolygon * this_ptr, SExpandedEdge * edges, int edge_count)
+        ;   XREF to: 005cbe20 (UNCONDITIONAL_CALL)  ; int shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(CComplexPolygon * this_ptr, SExpandedEdge * edges, int edge_count)
     ADD ESP,0xc                         ; 005c9309
     TEST EAX,EAX                        ; 005c930c
     JZ 0x005c9206                       ; 005c930e

@@ -44,7 +44,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
 int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_005606e0(CScript *this_ptr,char *path);
 void __cdecl core_script_cpp_readActorReference_FUN_00560760(_FILE *file_handle,CDemonActor *actor_out);
 void __cdecl core_script_cpp_writeActorReference_FUN_005607e0(_FILE *file_handle,CDemonActor **actor);
-int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *file_handle);
+void __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *file_handle);
 void __cdecl core_script_cpp_CScript_saveState_FUN_00560b50(CScript *this_ptr,_FILE *file_handle);
 uint __cdecl core_script_cpp_CScript_computeChecksum_FUN_00560d80(CScript *this_ptr);
 int __cdecl core_script_cpp_CCmdParm_setTemplateText_FUN_00560de0(CCmdParm *this_ptr,char *template_text,int *parse_cursor);

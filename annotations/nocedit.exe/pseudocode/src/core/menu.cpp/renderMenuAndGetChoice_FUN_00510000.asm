@@ -125,7 +125,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 005100cc
     PUSH EAX                            ; 005100d0
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 005100d1
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 005100d6
     PUSH -0x1                           ; 005100d9
     PUSH 0x7                            ; 005100db
@@ -149,7 +149,7 @@ section .text
     PUSH 0xbb80                         ; 00510104
         ;   Label: LAB_00510104
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 00510109
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 0051010e
     PUSH -0x1                           ; 00510111
     MOV EBX,dword ptr [ESP + 0xc]       ; 00510113
@@ -186,7 +186,7 @@ section .text
     PUSH 0xffff                         ; 00510162
         ;   Label: LAB_00510162
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 00510167
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     MOV ESI,dword ptr [0x02fa8cd0]      ; 0051016c | g_MessageCount
     ADD ESP,0x4                         ; 00510172
     TEST ESI,ESI                        ; 00510175
@@ -222,7 +222,7 @@ section .text
     ADD ESP,0x18                        ; 005101cf
     PUSH 0x8000                         ; 005101d2
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 005101d7
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 005101dc
     PUSH 0x0                            ; 005101df
     PUSH 0xf8                           ; 005101e1
@@ -236,7 +236,7 @@ section .text
     ADD ESP,0x18                        ; 005101fe
     PUSH 0xffff                         ; 00510201
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 00510206
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 0051020b
     PUSH 0x0                            ; 0051020e
     PUSH 0xf8                           ; 00510210

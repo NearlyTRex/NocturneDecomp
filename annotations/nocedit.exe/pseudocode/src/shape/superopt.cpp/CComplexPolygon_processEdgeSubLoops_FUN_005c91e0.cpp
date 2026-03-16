@@ -13,7 +13,6 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_processEdgeSubLoops_FUN_005c91e0(
   int iVar4;
   int iVar5;
   int iVar1;
-  int extraout_EAX;
   uint uVar6;
   CVector3d *pCVar7;
   SExpandedEdge *edges_00;
@@ -59,9 +58,9 @@ int __cdecl shape_superopt_cpp_CComplexPolygon_processEdgeSubLoops_FUN_005c91e0(
       uVar8 = uVar8 + edge_count;
     }
     else {
-      shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20
-                (this_ptr,edges_00,edge_count);
-      if (extraout_EAX == 0) {
+      iVar1 = shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20
+                        (this_ptr,edges_00,edge_count);
+      if (iVar1 == 0) {
         return 0;
       }
       memmove

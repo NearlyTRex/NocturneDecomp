@@ -75,7 +75,7 @@ section .text
     MOV EAX,ESP                         ; 0060f36a
     PUSH EAX                            ; 0060f36c
     CALL crt_string.c_mbtowc_peek_FUN_006059e0 ; 0060f36d
-        ;   XREF to: 006059e0 (UNCONDITIONAL_CALL)  ; wchar_t crt_string.c_mbtowc_peek_FUN_006059e0(char * str)
+        ;   XREF to: 006059e0 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbtowc_peek_FUN_006059e0(char * str)
     ADD ESP,0x4                         ; 0060f372
         ;   Label: LAB_0060f372
     ADD ESP,0x4                         ; 0060f375

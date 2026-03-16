@@ -2,16 +2,15 @@
 // Address: 00560820
 // Address Range: [[00560820, 00560b46]]
 // Convention: __cdecl
-// Signature: int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *file_handle)
+// Signature: void __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *file_handle)
 
 #include "nocturne.h"
 
-int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *file_handle)
+void __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *file_handle)
 
 {
-  uint extraout_EAX;
   uint uVar1;
-  int extraout_EAX_00;
+  uint uVar2;
   int *piVar2;
   int iVar3;
   char local_118 [256];
@@ -53,34 +52,32 @@ int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FI
   _fgets(local_118,0xff,file_handle);
   core_script_cpp_readActorReference_FUN_00560760(file_handle,(CDemonActor *)&this_ptr->focus_actor)
   ;
-  uVar1 = extraout_EAX;
   if (4 < local_18) {
     _fgets(local_118,0xff,file_handle);
-    uVar1 = _fscanf(file_handle,"%d\n",&this_ptr->focus_actor_locked);
+    _fscanf(file_handle,"%d\n",&this_ptr->focus_actor_locked);
   }
   if (3 < local_18) {
     _fgets(local_118,0xff,file_handle);
     iVar3 = 0;
-    uVar1 = _fscanf(file_handle,"%d\n",&this_ptr->call_stack_count);
+    _fscanf(file_handle,"%d\n",&this_ptr->call_stack_count);
     if (0 < this_ptr->call_stack_count) {
       piVar2 = this_ptr->call_stack;
       do {
         iVar3 = iVar3 + 1;
         _fscanf(file_handle,"%d\n",piVar2);
-        uVar1 = this_ptr->call_stack_count;
         piVar2 = piVar2 + 1;
-      } while (iVar3 < (int)uVar1);
+      } while (iVar3 < this_ptr->call_stack_count);
     }
   }
   if (5 < local_18) {
     _fgets(local_118,0xff,file_handle);
     _fscanf(file_handle,"%u\n",&local_14);
-    uVar1 = core_script_cpp_CScript_computeChecksum_FUN_00560d80(this_ptr);
-    if (uVar1 != local_14) {
+    uVar2 = core_script_cpp_CScript_computeChecksum_FUN_00560d80(this_ptr);
+    if (uVar2 != local_14) {
       shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
                 (g_CEditorToolsPtr,"The script you were using when this game was\nsaved is different from the script currently\nin use.  There may be problems running the script.");
-      return extraout_EAX_00;
+      return;
     }
   }
-  return uVar1;
+  return;
 }

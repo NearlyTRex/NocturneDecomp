@@ -335,7 +335,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 0049132e
     ADD EDX,EBP                         ; 00491331
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 00491333 | g_Hardware32BitPalette
-    MOV dword ptr [EDI],EAX             ; 0049133a | DAT_0067241c
+    MOV dword ptr [EDI],EAX             ; 0049133a | g_PerspectiveColorCache[16]
     SUB ESI,0x10000                     ; 0049133c
     JS 0x004915cc                       ; 00491342
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -347,7 +347,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 00491359
     ADD EDX,EBP                         ; 0049135c
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 0049135e | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x4],EAX       ; 00491365 | DAT_00672420
+    MOV dword ptr [EDI + 0x4],EAX       ; 00491365 | g_PerspectiveColorCache[17]
     SUB ESI,0x10000                     ; 00491368
     JS 0x004915cc                       ; 0049136e
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -359,7 +359,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 00491385
     ADD EDX,EBP                         ; 00491388
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 0049138a | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x8],EAX       ; 00491391 | DAT_00672424
+    MOV dword ptr [EDI + 0x8],EAX       ; 00491391 | g_PerspectiveColorCache[18]
     SUB ESI,0x10000                     ; 00491394
     JS 0x004915cc                       ; 0049139a
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -371,7 +371,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 004913b1
     ADD EDX,EBP                         ; 004913b4
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 004913b6 | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0xc],EAX       ; 004913bd | DAT_00672428
+    MOV dword ptr [EDI + 0xc],EAX       ; 004913bd | g_PerspectiveColorCache[19]
     SUB ESI,0x10000                     ; 004913c0
     JS 0x004915cc                       ; 004913c6
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -383,7 +383,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 004913dd
     ADD EDX,EBP                         ; 004913e0
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 004913e2 | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x10],EAX      ; 004913e9 | DAT_0067242c
+    MOV dword ptr [EDI + 0x10],EAX      ; 004913e9 | g_PerspectiveColorCache[20]
     SUB ESI,0x10000                     ; 004913ec
     JS 0x004915cc                       ; 004913f2
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -395,7 +395,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 00491409
     ADD EDX,EBP                         ; 0049140c
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 0049140e | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x14],EAX      ; 00491415 | DAT_00672430
+    MOV dword ptr [EDI + 0x14],EAX      ; 00491415 | g_PerspectiveColorCache[21]
     SUB ESI,0x10000                     ; 00491418
     JS 0x004915cc                       ; 0049141e
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -407,7 +407,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 00491435
     ADD EDX,EBP                         ; 00491438
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 0049143a | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x18],EAX      ; 00491441 | DAT_00672434
+    MOV dword ptr [EDI + 0x18],EAX      ; 00491441 | g_PerspectiveColorCache[22]
     SUB ESI,0x10000                     ; 00491444
     JS 0x004915cc                       ; 0049144a
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -419,7 +419,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 00491461
     ADD EDX,EBP                         ; 00491464
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 00491466 | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x1c],EAX      ; 0049146d | DAT_00672438
+    MOV dword ptr [EDI + 0x1c],EAX      ; 0049146d | g_PerspectiveColorCache[23]
     SUB ESI,0x10000                     ; 00491470
     JS 0x004915cc                       ; 00491476
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -431,7 +431,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 0049148d
     ADD EDX,EBP                         ; 00491490
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 00491492 | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x20],EAX      ; 00491499 | DAT_0067243c
+    MOV dword ptr [EDI + 0x20],EAX      ; 00491499 | g_PerspectiveColorCache[24]
     SUB ESI,0x10000                     ; 0049149c
     JS 0x004915cc                       ; 004914a2
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -443,7 +443,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 004914b9
     ADD EDX,EBP                         ; 004914bc
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 004914be | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x24],EAX      ; 004914c5 | DAT_00672440
+    MOV dword ptr [EDI + 0x24],EAX      ; 004914c5 | g_PerspectiveColorCache[25]
     SUB ESI,0x10000                     ; 004914c8
     JS 0x004915cc                       ; 004914ce
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -455,7 +455,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 004914e5
     ADD EDX,EBP                         ; 004914e8
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 004914ea | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x28],EAX      ; 004914f1 | DAT_00672444
+    MOV dword ptr [EDI + 0x28],EAX      ; 004914f1 | g_PerspectiveColorCache[26]
     SUB ESI,0x10000                     ; 004914f4
     JS 0x004915cc                       ; 004914fa
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -467,7 +467,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 00491511
     ADD EDX,EBP                         ; 00491514
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 00491516 | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x2c],EAX      ; 0049151d | DAT_00672448
+    MOV dword ptr [EDI + 0x2c],EAX      ; 0049151d | g_PerspectiveColorCache[27]
     SUB ESI,0x10000                     ; 00491520
     JS 0x004915cc                       ; 00491526
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -479,7 +479,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 0049153d
     ADD EDX,EBP                         ; 00491540
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 00491542 | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x30],EAX      ; 00491549 | DAT_0067244c
+    MOV dword ptr [EDI + 0x30],EAX      ; 00491549 | g_PerspectiveColorCache[28]
     SUB ESI,0x10000                     ; 0049154c
     JS 0x004915cc                       ; 00491552
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -491,7 +491,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 00491565
     ADD EDX,EBP                         ; 00491568
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 0049156a | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x34],EAX      ; 00491571 | DAT_00672450
+    MOV dword ptr [EDI + 0x34],EAX      ; 00491571 | g_PerspectiveColorCache[29]
     SUB ESI,0x10000                     ; 00491574
     JS 0x004915cc                       ; 0049157a
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -503,7 +503,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 0049158d
     ADD EDX,EBP                         ; 00491590
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 00491592 | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x38],EAX      ; 00491599 | DAT_00672454
+    MOV dword ptr [EDI + 0x38],EAX      ; 00491599 | g_PerspectiveColorCache[30]
     SUB ESI,0x10000                     ; 0049159c
     JS 0x004915cc                       ; 004915a2
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc
@@ -515,7 +515,7 @@ section .text
     MOVZX EAX,byte ptr [EBX]            ; 004915b5
     ADD EDX,EBP                         ; 004915b8
     MOV EAX,dword ptr [EAX*0x4 + 0x2d01924] ; 004915ba | g_Hardware32BitPalette
-    MOV dword ptr [EDI + 0x3c],EAX      ; 004915c1 | DAT_00672458
+    MOV dword ptr [EDI + 0x3c],EAX      ; 004915c1 | g_PerspectiveColorCache[31]
     SUB ESI,0x10000                     ; 004915c4
     JS 0x004915cc                       ; 004915ca
         ;   XREF to: 004915cc (CONDITIONAL_JUMP)  ; LAB_004915cc

@@ -74,9 +74,6 @@ LPCRITICAL_SECTION g_GlobalInitLock = {};
 // LPCRITICAL_SECTION*
 LPCRITICAL_SECTION* g_DynamicCriticalSectionArray = {};
 
-// MessageHandler[4]
-MessageHandler g_WindowMessageHandlers[4] = {};
-
 // PALETTEENTRY[256]
 PALETTEENTRY g_DDPaletteBuffer[256] = {};
 
@@ -86,6 +83,9 @@ ReentrantCriticalSection g_GlobalThreadCriticalSection = {};
 ReentrantCriticalSection g_GlobalMemoryCriticalSection = {};
 ReentrantCriticalSection g_GlobalIoCriticalSection = {};
 ReentrantCriticalSection g_GlobalRuntimeCriticalSection = {};
+
+// SMessageHandler[4]
+SMessageHandler g_WindowMessageHandlers[4] = {};
 
 // SRenderVertex[32]
 SRenderVertex g_ClipVertexBufferStage2[32] = {};
@@ -106,9 +106,6 @@ WCHAR* g_CommandLineW = {};
 _struct_19 g_PerformanceCounter = {};
 _struct_19 g_PerformanceFrequency = {};
 
-// byte
-byte g_CommandLineBuffer = {};
-
 // char*
 char* g_CommandLineA = {};
 
@@ -126,6 +123,7 @@ char g_KeyNameBuffer[200] = {};
 // char[256]
 char g_ModuleFileName[256] = {};
 char g_CurrentDirectory[256] = {};
+char g_CommandLineBuffer[256] = {};
 char g_LeadByteTable[256] = {};
 
 // char[260]
@@ -199,10 +197,6 @@ int g_MessageFlags[513] = {};
 uint UINT_03f96b40 = {};
 
 // undefined1
-undefined1 DAT_03f98ff1 = {};
-undefined1 DAT_03f98ff2 = {};
-undefined1 DAT_03f98ff3 = {};
-undefined1 DAT_03f98ff4 = {};
 undefined1 DAT_03f9b850 = {};
 
 // undefined4

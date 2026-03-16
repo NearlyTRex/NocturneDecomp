@@ -15,7 +15,7 @@
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CNetGame* g_CNetGamePtr = 02f7c740
 ;   CEditorTools g_CEditorToolsInstance
-;   char g_CurrentSaveFile
+;   char[256] g_CurrentSaveFile
 ;   CDemonMission g_CDemonMissionInstance
 ;   CNetGame g_CNetGameInstance
 ;

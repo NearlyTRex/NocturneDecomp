@@ -37,7 +37,7 @@ section .text
     PUSH ECX                            ; 005e1f15 | g_CGroundInstance
     MOV EBX,0x1                         ; 005e1f16
     CALL core_ground.cpp_CGround_load_FUN_004ef030 ; 005e1f1b
-        ;   XREF to: 004ef030 (UNCONDITIONAL_CALL)  ; int core_ground.cpp_CGround_load_FUN_004ef030(CGround * this_ptr, char * filename)
+        ;   XREF to: 004ef030 (UNCONDITIONAL_CALL)  ; void core_ground.cpp_CGround_load_FUN_004ef030(CGround * this_ptr, char * filename)
     ADD ESP,0x8                         ; 005e1f20
     MOV dword ptr [0x03f874a0],EBX      ; 005e1f23 | g_CTerrainInstance.initialized
     POP EBX                             ; 005e1f29

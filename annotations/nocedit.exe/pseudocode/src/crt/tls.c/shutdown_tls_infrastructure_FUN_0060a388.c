@@ -2,21 +2,17 @@
 // Address: 0060a388
 // Address Range: [[0060a388, 0060a393]]
 // Convention: __cdecl
-// Signature: BOOL __cdecl crt_tls_c_shutdown_tls_infrastructure_FUN_0060a388(void)
+// Signature: void __cdecl crt_tls_c_shutdown_tls_infrastructure_FUN_0060a388(void)
 
 #include "nocturne.h"
 
-BOOL __cdecl shutdown_tls_infrastructure(void)
+void __cdecl shutdown_tls_infrastructure(void)
 
 {
-  BOOL extraout_EAX;
-  BOOL BVar1;
-  
   cleanup_thread_tls_data(1);
-  BVar1 = extraout_EAX;
   if (g_TLSIndex != 0xffffffff) {
-    BVar1 = (*g_TlsFreeFunc)(g_TLSIndex);
+    (*g_TlsFreeFunc)(g_TLSIndex);
     g_TLSIndex = 0xffffffff;
   }
-  return BVar1;
+  return;
 }

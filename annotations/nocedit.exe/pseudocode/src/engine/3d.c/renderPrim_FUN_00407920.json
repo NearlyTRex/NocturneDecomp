@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 48,
-        "line": 30,
+        "line": 29,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -13,17 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 47,
+    "complexity_score": 21,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
-    "suspect_count": 2,
-    "suspect_types": [
-      "extra_output"
-    ],
-    "total_lines": 77
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 76
   },
   "cross_references": [],
   "function": {
@@ -36,7 +34,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_3d.c_renderPrim_FUN_00407920",
-    "signature": "SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive *primitive)"
+    "signature": "void __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive *primitive)"
   },
   "function_calls": [
     {
@@ -152,22 +150,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "SMRGLHeaderExtended *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "return extraout_EAX;",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

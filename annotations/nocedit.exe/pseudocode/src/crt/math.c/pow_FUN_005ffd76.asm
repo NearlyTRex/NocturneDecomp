@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float10 __fpustack crt_math_c_pow_FUN_005ffd76(float10 base,float10 exp)
+; float10 __fpustack_safe crt_math_c_pow_FUN_005ffd76(float10 base,float10 exp)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x1c]:8  local_1c
@@ -144,7 +144,7 @@ section .text
     MOV EAX,0xf                         ; 005ffe54
         ;   Label: LAB_005ffe54
     CALL crt_math.c_function_dispatch_FUN_00606a77 ; 005ffe59
-        ;   XREF to: 00606a77 (UNCONDITIONAL_CALL)  ; void crt_math.c_function_dispatch_FUN_00606a77(int function_index)
+        ;   XREF to: 00606a77 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_function_dispatch_FUN_00606a77(int function_index)
     FST double ptr [EBP + -0x8]         ; 005ffe5e
         ;   Label: LAB_005ffe5e
     WAIT                                ; 005ffe61

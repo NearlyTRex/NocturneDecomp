@@ -93,7 +93,7 @@ int __cdecl lockFrame(void);
 
 // Original: wincore_windll.cpp_unlockFrame_FUN_005b7250
 // Address: 005b7250
-void __cdecl unlockFrame(int clear_lock_flag);
+int __cdecl unlockFrame(int clear_lock_flag);
 
 // Original: wincore_windll.cpp_beginScene_FUN_005b7280
 // Address: 005b7280

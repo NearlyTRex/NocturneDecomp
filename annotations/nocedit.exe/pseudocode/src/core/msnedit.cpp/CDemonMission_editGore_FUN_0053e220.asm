@@ -317,7 +317,7 @@ section .text
     MOV EDX,dword ptr [0x0067b9a0]      ; 0053e51e | g_CGoreInstance | g_CGorePtr
     PUSH EDX                            ; 0053e524 | g_CGoreInstance
     CALL core_gore.cpp_CGore_process_FUN_004ed9e0 ; 0053e525
-        ;   XREF to: 004ed9e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_process_FUN_004ed9e0(CGore * this_ptr)
+        ;   XREF to: 004ed9e0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_process_FUN_004ed9e0(CGore * this_ptr)
     ADD ESP,0x4                         ; 0053e52a
     PUSH 0x0                            ; 0053e52d
     MOV ECX,dword ptr [0x00678a60]      ; 0053e52f | g_CEditorToolsInstance | g_CEditorToolsPtr

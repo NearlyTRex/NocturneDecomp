@@ -1,0 +1,23 @@
+#pragma once
+
+// Forward declarations
+struct CSmiley;
+
+// Dependencies
+#include "system/basetypes.h"
+
+// Adjusted pointer: CSmiley_ptr_344
+// Points to CSmiley at offset 0x158 in CSmiley
+// 32-bit pointer to CSmiley
+struct CSmiley_ptr_344 {
+    void *_raw;
+    typedef CSmiley base_type;
+    CSmiley_ptr_344() : _raw(0) {}
+    template<typename T> CSmiley_ptr_344(T* p) : _raw((void*)p) {}
+    template<typename T> CSmiley_ptr_344& operator=(T* p) { _raw = (void*)p; return *this; }
+    CSmiley* operator->() const { return (CSmiley*)_raw; }
+    CSmiley* adj() const { return (CSmiley*)_raw; }
+    template<typename T> operator T*() const { return (T*)_raw; }
+    explicit operator bool() const { return _raw != 0; }
+};
+

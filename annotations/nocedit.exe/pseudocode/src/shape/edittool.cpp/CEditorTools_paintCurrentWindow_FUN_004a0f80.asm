@@ -217,7 +217,7 @@ section .text
     ADD ESP,0x14                        ; 004a1126
     PUSH 0xffff                         ; 004a1129
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004a112e
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 004a1133
     PUSH -0x1                           ; 004a1136
     MOV EAX,[0x02cf2a84]                ; 004a1138 | g_TitleBarColor

@@ -57,7 +57,7 @@ int __cdecl CBloodSplat::save(CBloodSplat *this_ptr,_FILE *file_handle);
 
 // Original: core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40
 // Address: 004ecc40
-void __cdecl CBloodPool::setupRenderState(CBloodPool *this_ptr);
+int __cdecl CBloodPool::setupRenderState(CBloodPool *this_ptr);
 
 // Original: core_gore.cpp_CBloodPool_render_FUN_004ecce0
 // Address: 004ecce0
@@ -109,7 +109,7 @@ void __cdecl CGore::renderDecals(CGore *this_ptr,int render_all,int expire_flag)
 
 // Original: core_gore.cpp_CGore_process_FUN_004ed9e0
 // Address: 004ed9e0
-int __cdecl CGore::process(CGore *this_ptr);
+void __cdecl CGore::process(CGore *this_ptr);
 
 // Original: core_gore.cpp_CGore_spawnBloodParticles_FUN_004edaa0
 // Address: 004edaa0

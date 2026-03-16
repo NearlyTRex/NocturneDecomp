@@ -45,7 +45,7 @@ uint __cdecl engine_font_cpp_packPixelScaled_FUN_004d1110(int red,int green,int 
 uint __cdecl engine_font_cpp_packPixelNative_FUN_004d1170(int red,int green,int blue);
 void __cdecl engine_3d_c_addPolygonEdge_FUN_004d11c0(SRenderVertex *vertex1,SRenderVertex *vertex2);
 SHardwareEdge * __cdecl engine_3d_c_findHardwareEdgeByYMin_FUN_004d1300(int y_min,SHardwareEdge *exclude_edge);
-void __cdecl engine_3d_c_rasterizePolygon_FUN_004d1340(SRenderVertex **vertices,int vertex_count);
+void __cdecl engine_3d_c_rasterizePolygonHardware_FUN_004d1340(SRenderVertex **vertices,int vertex_count);
 void __cdecl core_frankgen_cpp_staticInit_FUN_004d16b0(void);
 CFrankenstienMachine * __cdecl core_frankgen_cpp_factoryFunc_FUN_004d16e0(void);
 CDemonActorType * __cdecl core_frankgen_cpp_CFrankenstienMachine_getActorType_FUN_004d1710(CFrankenstienMachine *this_ptr);

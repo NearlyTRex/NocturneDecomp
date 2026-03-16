@@ -9,12 +9,12 @@
 time_t __cdecl _time(int *time)
 
 {
-  int extraout_EAX;
+  int iVar1;
   time_t tVar1;
   _tm local_28;
   
-  get_local_time(&local_28);
-  if (499 < extraout_EAX) {
+  iVar1 = get_local_time(&local_28);
+  if (499 < iVar1) {
     local_28.tm_sec = local_28.tm_sec + 1;
   }
   tVar1 = _mktime(&local_28);

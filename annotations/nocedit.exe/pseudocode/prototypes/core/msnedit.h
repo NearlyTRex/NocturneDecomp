@@ -189,7 +189,7 @@ CDemonActor * __cdecl CDemonMission::findNextVisibleActor(CDemonMission *this_pt
 
 // Original: core_msnedit.cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80
 // Address: 0053ca80
-void __cdecl CDemonMission::findPrevVisibleActor(CDemonMission *this_ptr,CDemonActor *actor);
+CDemonActor * __cdecl CDemonMission::findPrevVisibleActor(CDemonMission *this_ptr,CDemonActor *actor);
 
 // Original: core_msnedit.cpp_CDemonMission_pickActorDialog_FUN_0053cad0
 // Address: 0053cad0

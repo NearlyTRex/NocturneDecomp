@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(MessageHandler message_handler)
+; void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(SMessageHandler message_handler)
 ;
 ; Parameters:
-; MessageHandler   Stack[0x4]:4   message_handler
+; SMessageHandler  Stack[0x4]:4   message_handler
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_winrun_cpp_00657f4c
@@ -12,7 +12,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   int g_NumWindowMessageHandlers
-;   MessageHandler[4] g_WindowMessageHandlers
+;   SMessageHandler[4] g_WindowMessageHandlers
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10

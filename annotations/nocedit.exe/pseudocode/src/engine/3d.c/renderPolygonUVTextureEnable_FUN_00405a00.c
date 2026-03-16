@@ -26,7 +26,8 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonUVTextureEnable_FUN_00405
   g_RenderStateFlag2 = PREPROCESS_NONE;
   g_RenderStateFlags.dword = RENDER_TEXTURE_ENABLE;
   if (g_BypassClipping != 0) {
-    engine_3d_c_rasterizePolygon_FUN_004d1340((SRenderVertex **)(prim + 1),(prim->base).count);
+    engine_3d_c_rasterizePolygonHardware_FUN_004d1340
+              ((SRenderVertex **)(prim + 1),(prim->base).count);
     return (SMRGLHeaderExtended *)&g_RenderResult;
   }
   engine_clipper_c_clipAndRasterize_FUN_004371b0((prim->base).count,(int *)(prim + 1));

@@ -391,10 +391,10 @@ LAB_004e2376:
   }
   core_event_cpp_CEventList_resetGameFlags_FUN_004b0460(g_CEventListPtr);
   iVar5 = 1;
-  iVar4 = _stricmp(&g_CurrentSaveFile,local_144);
+  iVar4 = _stricmp(g_CurrentSaveFile,local_144);
   if (iVar4 != 0) {
     pcVar8 = local_144;
-    pcVar9 = &g_CurrentSaveFile;
+    pcVar9 = g_CurrentSaveFile;
     do {
       cVar2 = *pcVar8;
       *pcVar9 = cVar2;

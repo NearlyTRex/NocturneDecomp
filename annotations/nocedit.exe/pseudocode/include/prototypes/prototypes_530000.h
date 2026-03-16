@@ -107,7 +107,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_moveActorToViewportCenter_FUN_0053c9
 void __cdecl core_msnedit_cpp_CDemonMission_moveActorToScreenPos_FUN_0053c970(CDemonMission *this_ptr,CDemonActor *actor,int screen_x,int screen_y);
 void __cdecl core_msnedit_cpp_CDemonMission_moveActorToMousePos_FUN_0053ca00(CDemonMission *this_ptr,CDemonActor *actor);
 CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_findNextVisibleActor_FUN_0053ca30(CDemonMission *this_ptr,CDemonActor *actor);
-void __cdecl core_msnedit_cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80(CDemonMission *this_ptr,CDemonActor *actor);
+CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80(CDemonMission *this_ptr,CDemonActor *actor);
 template<typename T_func0>
 inline int core_msnedit_cpp_CDemonMission_pickActorDialog_FUN_0053cad0(CDemonMission *this_ptr,CDemonActor *class_type,char *title,CDemonActor **out_actor,int allow_none,char *class_name,T_func0 filter_func,int preselect) {
     (void)this_ptr; (void)class_type; (void)title; (void)out_actor; (void)allow_none; (void)class_name; (void)filter_func; (void)preselect; return (int)0;

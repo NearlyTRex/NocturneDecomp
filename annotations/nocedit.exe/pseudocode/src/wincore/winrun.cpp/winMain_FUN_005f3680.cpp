@@ -9,19 +9,19 @@
 int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow1,int nCmdShow2)
 
 {
-  char cVar1;
-  byte bVar2;
+  byte *pbVar1;
+  char cVar2;
+  byte bVar3;
   HWND existingWindow;
   HWND activePopup;
-  BOOL BVar3;
+  BOOL BVar4;
   DWORD seed;
-  byte *pbVar4;
-  byte *pbVar5;
+  LPSTR pCVar5;
+  byte *pbVar6;
   HANDLE currentProcess;
-  int iVar6;
-  uint uVar7;
+  int iVar7;
+  uint uVar8;
   WNDCLASSA *stackProbe;
-  byte *pbVar8;
   char *pcVar9;
   byte bVar10;
   WNDCLASSA windowClass;
@@ -36,69 +36,69 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680(HINSTANCE hInstance,HINSTA
       existingWindow = activePopup;
     }
     (*g_BringWindowToTopFunc)(existingWindow);
-    BVar3 = (*g_IsIconicFunc)(existingWindow);
-    if (BVar3 != 0) {
+    BVar4 = (*g_IsIconicFunc)(existingWindow);
+    if (BVar4 != 0) {
       (*g_ShowWindowFunc)(existingWindow,9);
     }
     (*g_SetForegroundWindowFunc)(existingWindow);
     return 0;
   }
   do {
-    iVar6 = *(int *)stackProbe;
+    iVar7 = *(int *)stackProbe;
     stackProbe = (WNDCLASSA *)((int)stackProbe + -0x80);
-  } while (iVar6 < (int)stackProbe);
+  } while (iVar7 < (int)stackProbe);
   seed = (*g_timeGetTimeFunc)();
   srand(seed);
-  pbVar8 = &g_CommandLineBuffer;
-  pbVar4 = (byte *)(*g_GetCommandLineAFunc)();
+  pcVar9 = g_CommandLineBuffer;
+  pCVar5 = (*g_GetCommandLineAFunc)();
   do {
-    bVar2 = *pbVar4;
-    *pbVar8 = bVar2;
-    if (bVar2 == 0) break;
-    bVar2 = pbVar4[1];
-    pbVar4 = pbVar4 + 2;
-    pbVar8[1] = bVar2;
-    pbVar8 = pbVar8 + 2;
-  } while (bVar2 != 0);
-  pbVar4 = &g_CommandLineBuffer;
-  if (g_CommandLineBuffer != 0) {
-    pbVar8 = pbVar4;
-    iVar6 = g_ArgCount << 2;
+    cVar2 = *pCVar5;
+    *pcVar9 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pCVar5[1];
+    pCVar5 = pCVar5 + 2;
+    pcVar9[1] = cVar2;
+    pcVar9 = pcVar9 + 2;
+  } while (cVar2 != '\0');
+  pcVar9 = g_CommandLineBuffer;
+  if (g_CommandLineBuffer[0] != '\0') {
+    pbVar1 = (byte *)pcVar9;
+    iVar7 = g_ArgCount << 2;
     do {
       do {
-        pbVar5 = pbVar8;
-        pbVar8 = pbVar5 + 1;
-      } while (0x20 < *pbVar5);
-      *pbVar5 = 0;
+        pbVar6 = pbVar1;
+        pbVar1 = pbVar6 + 1;
+      } while (0x20 < *pbVar6);
+      *pbVar6 = 0;
       g_ArgCount = g_ArgCount + 1;
-      *(byte **)((int)g_ArgVector + iVar6) = pbVar4;
-      bVar2 = *pbVar8;
-      pbVar4 = pbVar8;
-      while (bVar2 == 0x20) {
-        pbVar8 = pbVar4 + 1;
-        pbVar4 = pbVar4 + 1;
-        bVar2 = *pbVar8;
+      *(char **)((int)g_ArgVector + iVar7) = pcVar9;
+      bVar3 = *pbVar1;
+      pcVar9 = (char *)pbVar1;
+      while (bVar3 == 0x20) {
+        pbVar1 = (byte *)(pcVar9 + 1);
+        pcVar9 = pcVar9 + 1;
+        bVar3 = *pbVar1;
       }
-      pbVar8 = pbVar4;
-      iVar6 = iVar6 + 4;
-    } while (*pbVar4 != 0);
+      pbVar1 = (byte *)pcVar9;
+      iVar7 = iVar7 + 4;
+    } while (*pcVar9 != 0);
   }
   (*g_GetCurrentDirectoryAFunc)(0x100,g_CurrentDirectory);
   (*g_GetModuleFileNameAFunc)(hInstance,g_ModuleFileName,0x100);
-  uVar7 = 0xffffffff;
+  uVar8 = 0xffffffff;
   pcVar9 = g_ModuleFileName;
   do {
-    if (uVar7 == 0) break;
-    uVar7 = uVar7 - 1;
-    cVar1 = *pcVar9;
+    if (uVar8 == 0) break;
+    uVar8 = uVar8 - 1;
+    cVar2 = *pcVar9;
     pcVar9 = pcVar9 + (uint)bVar10 * -2 + 1;
-  } while (cVar1 != '\0');
-  uVar7 = ~uVar7;
+  } while (cVar2 != '\0');
+  uVar8 = ~uVar8;
   do {
-    uVar7 = uVar7 - 1;
-    if ((int)uVar7 < 1) goto LAB_005f37d1;
-  } while (g_ModuleFileName[uVar7] != '\\');
-  g_ModuleFileName[uVar7] = '\0';
+    uVar8 = uVar8 - 1;
+    if ((int)uVar8 < 1) goto LAB_005f37d1;
+  } while (g_ModuleFileName[uVar8] != '\\');
+  g_ModuleFileName[uVar8] = '\0';
 LAB_005f37d1:
   (*g_SetCurrentDirectoryAFunc)(g_ModuleFileName);
   windowClass.lpfnWndProc = wincore_winrun_cpp_mainWindowProc_FUN_005f3150;

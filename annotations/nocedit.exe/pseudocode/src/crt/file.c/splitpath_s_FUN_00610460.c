@@ -11,7 +11,6 @@ void __cdecl splitpath_s(char *path,char *buffer,char *drive,char *dir,char *fna
 {
   char cVar2;
   wchar_t wVar2;
-  ushort extraout_var;
   char *pcVar3;
   char *pcVar4;
   char *str;
@@ -60,9 +59,8 @@ void __cdecl splitpath_s(char *path,char *buffer,char *drive,char *dir,char *fna
     do {
       while( true ) {
         str = pcVar3;
-        wVar2 = mbtowc_peek(str);
-        iVar3 = CONCAT22(extraout_var,wVar2);
-        if (iVar3 == 0) {
+        _wVar2 = mbtowc_peek(str);
+        if (_wVar2 == 0) {
           pcVar3 = extract_path_component
                              ((char **)dir,buffer,pcVar4,buffer_end);
           if (buffer_end_00 == (char *)0x0) {
@@ -73,11 +71,11 @@ void __cdecl splitpath_s(char *path,char *buffer,char *drive,char *dir,char *fna
           extract_path_component((char **)ext,pcVar3,buffer_end_00,str);
           return;
         }
-        if (iVar3 != 0x2e) break;
+        if (_wVar2 != 0x2e) break;
         pcVar3 = str + 1;
         buffer_end_00 = str;
       }
       pcVar3 = mbtowc_next(str);
-    } while ((iVar3 != 0x5c) && (iVar3 != 0x2f));
+    } while ((_wVar2 != 0x5c) && (_wVar2 != 0x2f));
   } while( true );
 }

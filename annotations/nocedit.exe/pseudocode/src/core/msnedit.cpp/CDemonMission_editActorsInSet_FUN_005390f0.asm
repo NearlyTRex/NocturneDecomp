@@ -15,10 +15,7 @@
 ; float[10]        Stack[-0x1e8]:40  local_1e8
 ; CMatrix3x3f      Stack[-0x1c0]:36  local_1c0
 ; CMatrix3x3f      Stack[-0x198]:36  local_198
-; undefined1[16]   Stack[-0x170]:16  local_170
-; float            Stack[-0x160]:4  local_160
-; float            Stack[-0x15c]:4  local_15c
-; float            Stack[-0x158]:4  local_158
+; CSlew            Stack[-0x170]:28  local_170
 ; CBoundingBox3D   Stack[-0x154]:24  local_154
 ; CBoundingBox3D   Stack[-0x13c]:24  local_13c
 ; CBoundingBox3D   Stack[-0x124]:24  local_124
@@ -805,7 +802,7 @@ section .text
     MOV EDX,dword ptr [0x0067b9a0]      ; 0053992d | g_CGoreInstance | g_CGorePtr
     PUSH EDX                            ; 00539933 | g_CGoreInstance
     CALL core_gore.cpp_CGore_process_FUN_004ed9e0 ; 00539934
-        ;   XREF to: 004ed9e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_process_FUN_004ed9e0(CGore * this_ptr)
+        ;   XREF to: 004ed9e0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_process_FUN_004ed9e0(CGore * this_ptr)
     MOV ECX,dword ptr [0x02f7c634]      ; 00539939 | INT_02f7c634
     ADD ESP,0x4                         ; 0053993f
     TEST ECX,ECX                        ; 00539942
@@ -1196,7 +1193,7 @@ section .text
     PUSH EAX                            ; 00539cf0
     MOV EDI,EAX                         ; 00539cf1
     CALL core_msnedit.cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80 ; 00539cf3
-        ;   XREF to: 0053ca80 (UNCONDITIONAL_CALL)  ; void core_msnedit.cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80(CDemonMission * this_ptr, CDemonActor * actor)
+        ;   XREF to: 0053ca80 (UNCONDITIONAL_CALL)  ; CDemonActor * core_msnedit.cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00539cf8
     PUSH EAX                            ; 00539cfb
     MOV EAX,EDI                         ; 00539cfc

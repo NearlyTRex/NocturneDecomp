@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 52,
+    "complexity_score": 78,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 7,
-    "suspect_count": 3,
+    "pseudocode_lines": 8,
+    "suspect_count": 5,
     "suspect_types": [
+      "fpu_register_input",
       "special_crt_function",
       "warning_indirect_jump",
       "warning_jumptable"
     ],
-    "total_lines": 10
+    "total_lines": 11
   },
   "cross_references": [
     {
@@ -39,7 +40,7 @@
     ],
     "convention": "__watcallRegister",
     "name": "crt_math.c_function_dispatch_FUN_00606a77",
-    "signature": "void __watcallRegister crt_math_c_function_dispatch_FUN_00606a77(int function_index)"
+    "signature": "float10 __watcallRegister crt_math_c_function_dispatch_FUN_00606a77(int function_index)"
   },
   "function_calls": [],
   "globals": [
@@ -78,8 +79,16 @@
   },
   "suspects": [
     {
-      "description": "Jump table recovery failed",
+      "description": "FPU register input (calling convention issue)",
       "line": 5,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "float10 in_ST0;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "Jump table recovery failed",
+      "line": 7,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x00606a7a. Too many branches */",
@@ -87,11 +96,19 @@
     },
     {
       "description": "Indirect jump treated as call",
-      "line": 6,
+      "line": 8,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 10,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "return in_ST0;",
+      "type": "fpu_register_input"
     },
     {
       "address": "00606a77",

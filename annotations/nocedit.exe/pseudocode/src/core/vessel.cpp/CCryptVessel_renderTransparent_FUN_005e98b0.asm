@@ -89,7 +89,7 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 005e993c | g_CDemonRendererPtr2
     PUSH EDX                            ; 005e9942 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 005e9943
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 005e9948
     MOV ECX,dword ptr [EBX + 0x3b4]     ; 005e994b
     LEA EAX,[EBX + 0x66c]               ; 005e9951
@@ -179,7 +179,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 005e9a23 | g_CDemonRendererPtr2
     PUSH EAX                            ; 005e9a28 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 005e9a29
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     JMP 0x005e99a9                      ; 005e9a2e
         ;   XREF to: 005e99a9 (UNCONDITIONAL_JUMP)  ; LAB_005e99a9
     FLD float ptr [EBX + 0x7ec]         ; 005e9a33
@@ -204,7 +204,7 @@ section .text
     MOV ESI,dword ptr [0x006703ec]      ; 005e9a69 | g_CDemonRendererPtr2
     PUSH ESI                            ; 005e9a6f | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 005e9a70
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     JMP 0x005e99a9                      ; 005e9a75
         ;   XREF to: 005e99a9 (UNCONDITIONAL_JUMP)  ; LAB_005e99a9
 

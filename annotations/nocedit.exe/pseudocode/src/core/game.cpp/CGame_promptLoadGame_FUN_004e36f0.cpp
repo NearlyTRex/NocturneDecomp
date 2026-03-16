@@ -27,12 +27,12 @@ void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004e36f0(CGame *this_ptr)
   this_ptr->need_chapter_reload = 0;
   this_ptr->chapter_reload_filename[0] = '\0';
   splitpath
-            (&g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_10c);
+            (g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_10c);
   iVar2 = _stricmp(local_10c,"noc");
   if ((iVar2 == 0) ||
      (iVar3 = _stricmp(local_10c,".noc"), iVar3 == 0)) {
     pcVar4 = local_210;
-    pcVar3 = &g_CurrentSaveFile;
+    pcVar3 = g_CurrentSaveFile;
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;

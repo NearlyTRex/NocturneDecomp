@@ -301,7 +301,7 @@ SMRGLHeaderExtended * __cdecl setRenderAlpha(SMRGLHeaderExtended *block);
 
 // Original: engine_3d.c_setRenderAlpha_FUN_00406d80
 // Address: 00406d80
-void __cdecl setRenderAlpha(int alpha_color_value);
+int __cdecl setRenderAlpha(int alpha_color_value);
 
 // Original: engine_3d.c_setBlendMode_FUN_00406dd0
 // Address: 00406dd0
@@ -357,7 +357,7 @@ void __cdecl dispatchMRGLBlockChain(SMRGLHeaderExtended *chain);
 
 // Original: engine_3d.c_renderPrim_FUN_00407920
 // Address: 00407920
-SMRGLHeaderExtended * __cdecl renderPrim(SMRGLHeaderPrimitive *primitive);
+void __cdecl renderPrim(SMRGLHeaderPrimitive *primitive);
 
 // Original: engine_3d.c_addFaceIfVisible_FUN_004079c0
 // Address: 004079c0
@@ -395,9 +395,9 @@ void __cdecl addPolygonEdge(SRenderVertex *vertex1,SRenderVertex *vertex2);
 // Address: 004d1300
 SHardwareEdge * __cdecl findHardwareEdgeByYMin(int y_min,SHardwareEdge *exclude_edge);
 
-// Original: engine_3d.c_rasterizePolygon_FUN_004d1340
+// Original: engine_3d.c_rasterizePolygonHardware_FUN_004d1340
 // Address: 004d1340
-void __cdecl rasterizePolygon(SRenderVertex **vertices,int vertex_count);
+void __cdecl rasterizePolygonHardware(SRenderVertex **vertices,int vertex_count);
 
 // Original: engine_3d.c_addRasterizerEdge_FUN_005fcd20
 // Address: 005fcd20
@@ -415,6 +415,6 @@ SSoftwareEdge * __cdecl findRasterizerEdge(int y_start,SSoftwareEdge *exclude_ed
 // Address: 005fcfc0
 void __cdecl rasterizeTriangle(SRenderVertex *vertex_buffer,int vertex_count);
 
-// Original: engine_3d.c_rasterizePolygon_FUN_005fd4e0
+// Original: engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0
 // Address: 005fd4e0
-void __cdecl rasterizePolygon(SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer);
+void __cdecl rasterizePolygonCustom(SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer);

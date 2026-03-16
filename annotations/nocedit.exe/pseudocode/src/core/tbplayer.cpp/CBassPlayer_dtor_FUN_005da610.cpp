@@ -9,12 +9,13 @@
 CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005da610(CBassPlayer *this_ptr,uint flags)
 
 {
-  CPathMap *pCVar1;
-  CFlame *pCVar2;
-  SFire *pSVar3;
-  CVector3f *pCVar4;
-  CClothList *pCVar5;
-  CDeformableModelInstance *pCVar6;
+  CBassPlayer_ptr_48676 pCVar1;
+  CBassPlayer_ptr_13260 pCVar2;
+  CBassPlayer_ptr_12060 pSVar1;
+  CBassPlayer_ptr_11536 pCVar3;
+  CBassPlayer_ptr_11356 pCVar4;
+  CBassPlayer_ptr_10900 pCVar5;
+  CBassPlayer_ptr_344 pCVar6;
   CBassPlayer *ptr;
   void *ptr_00;
   
@@ -24,18 +25,20 @@ CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005da610(CBassPlaye
     return this_ptr;
   }
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0(&(this_ptr->base).path_map,0);
-  pCVar2 = core_armour_cpp_CFlame_arrdtor_FUN_00412720
-                     ((CFlame *)(pCVar1[-1].height_cache_tags[0xb] + 0x39),0);
-  pSVar3 = core_armour_cpp_SFire_arrdtor_FUN_00412700
-                     ((SFire *)(pCVar2[-2].base.create_event + 0x20),0);
-  pCVar4 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0((CVector3f *)&pSVar3[-0x16].bone_index,0);
-  pCVar4 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0(pCVar4 + -0xf,0);
-  pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80((CClothList *)(pCVar4 + -0x26),0);
+  pCVar2 = (CBassPlayer_ptr_13260)
+           core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar1)->base.base.flames,0);
+  pSVar1 = (CBassPlayer_ptr_12060)
+           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar2)->base.base.fire_effects,0);
+  pCVar3 = (CBassPlayer_ptr_11536)
+           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+                     (ADJ(pSVar1)->base.base.collision_test_normals,0);
+  pCVar4 = (CBassPlayer_ptr_11356)
+           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+                     (ADJ(pCVar3)->base.base.collision_test_points,0);
+  pCVar5 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80(&ADJ(pCVar4)->base.base.cloth_list,0);
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                     ((CDeformableModelInstance *)(pCVar5[-0x18].filenames[2] + 0x10),0);
-  ptr = (CBassPlayer *)
-        core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar6[-1].part_data.visibility_flags + 7),1);
+                     (&ADJ(pCVar5)->base.base.model,0);
+  ptr = (CBassPlayer *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)ADJ(pCVar6),1);
   if ((flags & 2) == 0) {
     return ptr;
   }

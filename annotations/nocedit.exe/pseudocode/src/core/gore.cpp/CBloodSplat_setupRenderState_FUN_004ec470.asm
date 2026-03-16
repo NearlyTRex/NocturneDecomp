@@ -63,7 +63,7 @@ section .text
     MOV dword ptr [0x006880bc],EBP      ; 004ec4dd | g_RenderVertexBuffer[3].u
     MOV dword ptr [0x006880c0],EBP      ; 004ec4e3 | g_RenderVertexBuffer[3].v
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004ec4e9
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004ec4ee
     POP EBP                             ; 004ec4f1
     POP EDI                             ; 004ec4f2

@@ -174,7 +174,7 @@ section .text
     MOV ESI,0x3f95df8                   ; 005ef2e0 | g_WeatherParticlePositions
     XOR EDI,EDI                         ; 005ef2e5
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 005ef2e7
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 005ef2ec
     MOV EBP,dword ptr [0x006703ec]      ; 005ef2ef | g_CDemonRendererPtr2
         ;   Label: LAB_005ef2ef

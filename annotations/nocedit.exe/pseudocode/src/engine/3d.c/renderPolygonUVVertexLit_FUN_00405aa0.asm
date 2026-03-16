@@ -16,7 +16,7 @@
 ;   int g_RenderStateFlag2
 ;
 ; Called Functions:
-;   engine_3d.c_rasterizePolygon_FUN_004d1340
+;   engine_3d.c_rasterizePolygonHardware_FUN_004d1340
 ;   engine_3d.c_setRenderAlpha_FUN_00406d80
 ;   engine_clipper.c_clipAndRasterize_FUN_004371b0
 ;
@@ -45,7 +45,7 @@ section .text
     XOR EBP,EBP                         ; 00405ad2
     MOV dword ptr [0x02d052a0],EDI      ; 00405ad4 | g_RenderStateFlags
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 00405ada
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     MOV EAX,[0x00772a6c]                ; 00405adf | g_BypassClipping
     ADD ESP,0x4                         ; 00405ae4
     MOV dword ptr [0x02d052a4],EBP      ; 00405ae7 | g_RenderStateFlag2
@@ -55,8 +55,8 @@ section .text
     MOV ECX,dword ptr [ESI + 0x4]       ; 00405af1
     PUSH ECX                            ; 00405af4
     PUSH EBX                            ; 00405af5
-    CALL engine_3d.c_rasterizePolygon_FUN_004d1340 ; 00405af6
-        ;   XREF to: 004d1340 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizePolygon_FUN_004d1340(SRenderVertex * * vertices, int vertex_count)
+    CALL engine_3d.c_rasterizePolygonHardware_FUN_004d1340 ; 00405af6
+        ;   XREF to: 004d1340 (UNCONDITIONAL_CALL)  ; void engine_3d.c_rasterizePolygonHardware_FUN_004d1340(SRenderVertex * * vertices, int vertex_count)
     ADD ESP,0x8                         ; 00405afb
     MOV EAX,0x772a84                    ; 00405afe | g_RenderResult
     POP EBP                             ; 00405b03

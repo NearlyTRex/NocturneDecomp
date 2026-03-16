@@ -2142,15 +2142,15 @@ uint g_CPUFeatureFlags = 0x0;
 // uint*
 uint* g_PerspectiveScanlineZPtr = nullptr;
 
-// uint[16]
-uint g_PerspectiveColorCache[16] = {};
-
 // uint[18]
 uint g_MpegBitMaskTableMultiBit[18] = {
     0x00000000, 0x00000001, 0x00000003, 0x00000007, 0x0000000F, 0x0000001F, 0x0000003F, 0x0000007F,
     0x000000FF, 0x000000FF, 0x000000FE, 0x000000FC, 0x000000F8, 0x000000F0, 0x000000E0, 0x000000C0,
     0x00000080, 0x00000000
 };
+
+// uint[640]
+uint g_PerspectiveColorCache[640] = {};
 
 // uint[8]
 uint g_MpegBitMaskTableSingleBit[8] = {0x00000001, 0x00000002, 0x00000004, 0x00000008, 0x00000010, 0x00000020, 0x00000040, 0x00000080};
@@ -2195,22 +2195,6 @@ ulonglong g_ByteFillTable[256] = {
 undefined1 g_MagicNumEFD = 0x45;
 
 // undefined4
-undefined4 DAT_0067241c = 0;
-undefined4 DAT_00672420 = 0;
-undefined4 DAT_00672424 = 0;
-undefined4 DAT_00672428 = 0;
-undefined4 DAT_0067242c = 0;
-undefined4 DAT_00672430 = 0;
-undefined4 DAT_00672434 = 0;
-undefined4 DAT_00672438 = 0;
-undefined4 DAT_0067243c = 0;
-undefined4 DAT_00672440 = 0;
-undefined4 DAT_00672444 = 0;
-undefined4 DAT_00672448 = 0;
-undefined4 DAT_0067244c = 0;
-undefined4 DAT_00672450 = 0;
-undefined4 DAT_00672454 = 0;
-undefined4 DAT_00672458 = 0;
 undefined4 DAT_0067b718 = 0;
 
 // ushort[384]

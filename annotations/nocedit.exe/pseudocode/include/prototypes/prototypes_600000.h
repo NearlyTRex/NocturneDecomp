@@ -52,7 +52,7 @@ DWORD __cdecl engine_dosio_c_setReadonlyAttribute_FUN_00600c30(char *filename,DW
 void __cdecl crt_unknown_c_FUN_00600c80(int param_1,int param_2,SIZE_T param_3);
 int __cdecl crt_io_c_chsize_FUN_00600cf0(int file_handle,long new_size);
 int __cdecl crt_watcom_c__mkdir_FUN_00600e10(char *path);
-int __cdecl crt_stdio_c_fflush_FUN_00600e29(_FILE *stream);
+void __cdecl crt_stdio_c_fflush_FUN_00600e29(_FILE *stream);
 uint __cdecl crt_iostream_cpp_ios_clear_FUN_00600e64(ios *this_ptr,uint state_flags);
 void __cdecl crt_fstream_cpp_openFile_FUN_00600e85(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size);
 _istream * __cdecl crt_fstream_cpp_istream_seekg_FUN_00600ee4(void *this_ptr,int offset);
@@ -140,7 +140,7 @@ char * __cdecl crt_stdio_c_ConvertFormatSpec_FUN_00603238(char *output_buffer,va
 char * __cdecl crt_string_c_strupr_FUN_0060389c(char *string);
 int __watcallStack crt_stdio_c_write_FUN_006038c0(int file_handle_index,void *buffer,int bytes_to_write);
 int __watcallStack crt_stdio_c_fflushInternal_FUN_006039d0(_FILE *file_handle);
-void __watcallRegister crt_memory_c___memfill_FUN_00603b00(void *dest,uint replicated_value,uint count);
+void * __watcallRegister crt_memory_c___memfill_FUN_00603b00(void *dest,uint replicated_value,uint count);
 void __watcallRegister crt_memory_c___stosd_FUN_00603b37(void *dest,uint replicated_value,uint dword_count);
 void __cdecl crt_strtod_c_staticInit_FUN_00603bb0(void);
 void __cdecl crt_unknown_c_FUN_00603bc9(char *str,double *output);
@@ -181,7 +181,7 @@ int __cdecl crt_stdio_c_scanf_getc_with_width_FUN_00605918(scanf_state_t *state)
 void crt_unknown_c_FUN_00605950(void);
 int __watcallStack crt_stdio_c_FlushFilesByMask_FUN_0060595c(uint file_mode_mask);
 int crt_stdio_c_SetupConsoleInputMode_FUN_006059b0(void);
-wchar_t __watcallStack crt_string_c_mbtowc_peek_FUN_006059e0(char *str);
+int __watcallStack crt_string_c_mbtowc_peek_FUN_006059e0(char *str);
 void __watcallStack crt_locale_c_wchar_to_bytes_FUN_00605a20(wchar_t character,char *output_buffer);
 int __watcallStack crt_locale_c_mblen_FUN_00605a40(char *mb_string);
 char * __watcallStack crt_string_c_mbtowc_next_FUN_00605a70(char *str);
@@ -221,9 +221,9 @@ int __watcallStack crt_stdio_c_lseek_FUN_00606690(int file_handle_index,long dis
 long __watcallStack crt_io_c_tell_FUN_00606720(int file_handle_index);
 int __watcallStack crt_iostream_cpp_streambuf_do_sputn_FUN_00606780 (streambuf *buffer,void *input_buffer,SIZE_T bytes_to_write);
 double __cdecl crt_math_c_math_domain_error_FUN_00606832(double x,double y,uchar error_type);
-float10 __fpureg crt_math_c_exp_FUN_006068e2(float10 x);
+float10 __fpureg_safe crt_math_c_exp_FUN_006068e2(float10 x);
 float10 __fpustack_safe crt_math_c_fdiv_FUN_00606960(float10 dividend,float10 divisor);
-void __watcallRegister crt_math_c_function_dispatch_FUN_00606a77(int function_index);
+float10 __watcallRegister crt_math_c_function_dispatch_FUN_00606a77(int function_index);
 float10 __watcallRegister crt_math_c_generate_nan_FUN_00606a81(void);
 void __watcallRegister crt_math_c_fatal_math_error_FUN_00606a87(void);
 float10 __watcallRegister crt_math_c_generate_nan_FUN_00606a8c(void);
@@ -291,8 +291,8 @@ void crt_math_c_FUN_00606eff(void);
 float10 __fpustack_safe crt_math_c_pentiumFdivpWorkaround_FUN_00606f13(float10 dividend,float10 divisor);
 float10 __fpustack crt_math_c_pentiumFdivBugWorkaroundDouble_FUN_00606f98(float10 param0,double param1);
 void crt_unknown_c_FUN_00607080(void *param_1,byte *param_2);
-double __fpureg crt_math_c_sqrt_FUN_0060710c(double value);
-void __watcallStack crt_time_c_get_local_time_FUN_00607150(_tm *tm_output);
+double __fpureg_safe crt_math_c_sqrt_FUN_0060710c(double value);
+int __watcallStack crt_time_c_get_local_time_FUN_00607150(_tm *tm_output);
 void __cdecl crt_time_c_tzset_FUN_006072f8(void);
 char * __cdecl crt_string_c_parse_uint_FUN_00607318(char *str,int *result);
 char * __cdecl crt_time_c_parse_timezone_spec_FUN_00607348(char *tz_string,char *name_buffer,int *offset_seconds);
@@ -384,7 +384,7 @@ void * __cdecl crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(void *pThreadD
 BOOL __cdecl crt_tls_c_allocate_tls_index_FUN_0060a27c(void);
 BOOL __cdecl crt_tls_c_initialize_thread_tls_data_FUN_0060a2d8(void *init_param);
 void __cdecl crt_tls_c_cleanup_thread_tls_data_FUN_0060a334(int shutdownMode);
-BOOL __cdecl crt_tls_c_shutdown_tls_infrastructure_FUN_0060a388(void);
+void __cdecl crt_tls_c_shutdown_tls_infrastructure_FUN_0060a388(void);
 void crt_unknown_c_FUN_0060a394(void);
 void __cdecl crt_tls_c_initialize_tls_infrastructure_FUN_0060a3b4(void);
 void __cdecl crt_unknown_c_staticFinal_FUN_0060a4cc(void);

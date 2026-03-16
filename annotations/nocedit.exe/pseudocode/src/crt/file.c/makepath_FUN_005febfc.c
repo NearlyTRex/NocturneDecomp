@@ -11,15 +11,13 @@ void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filena
 {
   char cVar2;
   wchar_t wVar2;
-  wchar_t wVar3;
   int iVar3;
   byte *pbVar4;
-  ushort extraout_var;
-  int iVar4;
+  uint uVar3;
   uint uVar5;
   char *pcVar6;
   char *pcVar7;
-  wchar_t *preferred_separator;
+  uint *preferred_separator;
   uint local_18;
   char *local_14;
   wchar_t *pwVar8;
@@ -57,9 +55,9 @@ void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filena
   if ((directory != (char *)0x0) && (*directory != '\0')) {
     do {
       pwVar8 = (wchar_t *)&local_18;
-      wVar2 = mbtowc_peek(directory);
-      wVar3 = normalize_path_separator(wVar2,pwVar8);
-      wchar_to_bytes(wVar3,path_buffer);
+      _wVar2 = mbtowc_peek(directory);
+      _wVar2 = normalize_path_separator(_wVar2,(int *)pwVar8);
+      wchar_to_bytes((wchar_t)_wVar2,path_buffer);
       iVar3 = mblen(path_buffer);
       path_buffer[iVar3] = 0;
       path_buffer = mbtowc_next(path_buffer);
@@ -85,18 +83,18 @@ void __cdecl makepath(char *path_buffer,char *drive,char *directory,char *filena
     }
   }
   else {
-    wVar3 = mbtowc_peek(filename);
-    wVar3 = normalize_path_separator(wVar3,(wchar_t *)&local_18);
-    if ((CONCAT22(extraout_var,wVar3) != local_18) && ((byte)*path_buffer == local_18)) {
+    _wVar2 = mbtowc_peek(filename);
+    uVar3 = normalize_path_separator(_wVar2,(int *)&local_18);
+    if ((uVar3 != local_18) && ((byte)*path_buffer == local_18)) {
       path_buffer = path_buffer + 1;
     }
     for (; *filename != '\0'; filename = mbtowc_next(filename)) {
-      preferred_separator = (wchar_t *)&local_18;
-      wVar3 = mbtowc_peek(filename);
-      wVar3 = normalize_path_separator(wVar3,preferred_separator);
-      wchar_to_bytes(wVar3,path_buffer);
-      iVar4 = mblen(path_buffer);
-      path_buffer[iVar4] = 0;
+      preferred_separator = &local_18;
+      _wVar2 = mbtowc_peek(filename);
+      _wVar2 = normalize_path_separator(_wVar2,(int *)preferred_separator);
+      wchar_to_bytes((wchar_t)_wVar2,path_buffer);
+      _wVar2 = mblen(path_buffer);
+      path_buffer[_wVar2] = 0;
       path_buffer = mbtowc_next(path_buffer);
     }
   }

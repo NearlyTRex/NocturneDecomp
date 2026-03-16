@@ -66,7 +66,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90(CDe
   bVar4 = 0;
   if (this_ptr->volumetric_enabled != 0) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-              (g_CDemonRendererPtr2,&local_74.x);
+              (g_CDemonRendererPtr2,&local_74);
     local_74.x = local_74.x - (this_ptr->base).base.position.f.x;
     local_74.y = local_74.y - (this_ptr->base).base.position.f.y;
     local_74.z = local_74.z - (this_ptr->base).base.position.f.z;

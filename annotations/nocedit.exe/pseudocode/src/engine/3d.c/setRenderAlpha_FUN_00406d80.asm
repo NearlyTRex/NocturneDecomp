@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_3d_c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+; int __cdecl engine_3d_c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   alpha_color_value

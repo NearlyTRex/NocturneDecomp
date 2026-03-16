@@ -9,11 +9,12 @@
 CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_005fcc50(CZombie *this_ptr,uint flags)
 
 {
-  CFlame *pCVar1;
-  SFire *pSVar2;
-  CVector3f *pCVar3;
-  CClothList *pCVar4;
-  CDeformableModelInstance *pCVar5;
+  CZombie_ptr_13260 pCVar1;
+  CZombie_ptr_12060 pSVar1;
+  CZombie_ptr_11536 pCVar2;
+  CZombie_ptr_11356 pCVar3;
+  CZombie_ptr_10900 pCVar4;
+  CZombie_ptr_344 pCVar5;
   CZombie *ptr;
   void *ptr_00;
   
@@ -22,17 +23,20 @@ CZombie * __cdecl core_zombie_cpp_CZombie_dtor_FUN_005fcc50(CZombie *this_ptr,ui
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pCVar1 = core_armour_cpp_CFlame_arrdtor_FUN_00412720((this_ptr->base).base.flames,0);
-  pSVar2 = core_armour_cpp_SFire_arrdtor_FUN_00412700
-                     ((SFire *)(pCVar1[-2].base.create_event + 0x20),0);
-  pCVar3 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0((CVector3f *)&pSVar2[-0x16].bone_index,0);
-  pCVar3 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0(pCVar3 + -0xf,0);
-  pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80((CClothList *)(pCVar3 + -0x26),0);
+  pCVar1 = (CZombie_ptr_13260)
+           core_armour_cpp_CFlame_arrdtor_FUN_00412720((this_ptr->base).base.flames,0);
+  pSVar1 = (CZombie_ptr_12060)
+           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar1)->base.base.fire_effects,0);
+  pCVar2 = (CZombie_ptr_11536)
+           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+                     (ADJ(pSVar1)->base.base.collision_test_normals,0);
+  pCVar3 = (CZombie_ptr_11356)
+           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+                     (ADJ(pCVar2)->base.base.collision_test_points,0);
+  pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80(&ADJ(pCVar3)->base.base.cloth_list,0);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                     ((CDeformableModelInstance *)(pCVar4[-0x18].filenames[2] + 0x10),0);
-  ptr = (CZombie *)
-        core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar5[-1].part_data.visibility_flags + 7),1);
+                     (&ADJ(pCVar4)->base.base.model,0);
+  ptr = (CZombie *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)ADJ(pCVar5),1);
   if ((flags & 2) == 0) {
     return ptr;
   }

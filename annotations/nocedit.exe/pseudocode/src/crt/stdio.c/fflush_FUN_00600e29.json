@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 81,
+    "complexity_score": 55,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 16,
-    "suspect_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 3,
     "suspect_types": [
-      "extra_output",
       "pointer_cast",
       "special_crt_function"
     ],
-    "total_lines": 52
+    "total_lines": 51
   },
   "cross_references": [
     {
@@ -45,7 +44,7 @@
     ],
     "convention": "__cdecl",
     "name": "crt_stdio.c_fflush_FUN_00600e29",
-    "signature": "int __cdecl crt_stdio_c_fflush_FUN_00600e29(_FILE *stream)"
+    "signature": "void __cdecl crt_stdio_c_fflush_FUN_00600e29(_FILE *stream)"
   },
   "function_calls": [
     {
@@ -164,16 +163,8 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 9,
+      "line": 8,
       "match": "(FileEmbeddedData *)((int)",
       "severity": "mild",
       "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));",
@@ -181,19 +172,11 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 15,
+      "line": 14,
       "match": "(FileEmbeddedData *)((int)",
       "severity": "mild",
       "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "return extraout_EAX;",
-      "type": "extra_output"
     },
     {
       "address": "00600e29",

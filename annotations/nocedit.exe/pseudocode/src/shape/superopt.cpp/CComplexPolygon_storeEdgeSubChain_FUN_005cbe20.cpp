@@ -2,11 +2,11 @@
 // Address: 005cbe20
 // Address Range: [[005cbe20, 005cbeb2]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)
+// Signature: int __cdecl shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)
 
 #include "nocturne.h"
 
-void __cdecl shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)
+int __cdecl shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count)
 
 {
   void *pvVar1;
@@ -36,8 +36,8 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(C
       }
       *piVar4 = edge_count;
       this_ptr->edge_count = this_ptr->edge_count + 1;
-      return;
+      return 1;
     }
   }
-  return;
+  return 0;
 }

@@ -32422,7 +32422,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60",
-    "ret":"void",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -32457,7 +32457,17 @@
           },
           "type":"int"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -44043,7 +44053,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_gore.cpp_CGore_process_FUN_004ed9e0",
-    "ret":"int",
+    "ret":"void",
     "vars":{
       "params":[
         {
@@ -44062,17 +44072,7 @@
           },
           "type":"CGore*"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -64069,7 +64069,7 @@
               }
             ]
           },
-          "type":"float[3]"
+          "type":"CVector3f"
         },
         {
           "name":"afStack_2c",
@@ -69682,6 +69682,23 @@
     "name":"core_skeleton.cpp_CSkeleton_dtor_FUN_005998e0",
     "ret":"CSkeleton*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSkeleton_ptr_168828",
+          "use":33
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -82649,21 +82666,6 @@
           "use":212
         },
         {
-          "name":"extraout_EAX",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":292
-        },
-        {
           "name":"dVar1",
           "storage":{
             "size":8,
@@ -88418,6 +88420,98 @@
     "name":"core_tvbat.cpp_CTVBat_dtor_FUN_005e5460",
     "ret":"CTVBat*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTVBat_ptr_13260",
+          "use":25
+        },
+        {
+          "name":"pSVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTVBat_ptr_12060",
+          "use":41
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTVBat_ptr_11536",
+          "use":57
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTVBat_ptr_11356",
+          "use":73
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTVBat_ptr_10900",
+          "use":89
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CTVBat_ptr_344",
+          "use":105
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -92404,7 +92498,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_3d.c_rasterizePolygon_FUN_005fd4e0",
+    "name":"engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0",
     "ret":"void",
     "vars":{
       "locals":[
@@ -92612,38 +92706,6 @@
           "use":845
         },
         {
-          "name":"extraout_ESI",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"SHardwareEdge*",
-          "use":1108
-        },
-        {
-          "name":"extraout_EDI",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"SSoftwareEdge*",
-          "use":1108
-        },
-        {
           "name":"local_18",
           "storage":{
             "offset":-24,
@@ -92846,24 +92908,24 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"crt_file.c_normalize_path_separator_FUN_005febe0",
-    "ret":"wchar_t",
+    "ret":"int",
     "vars":{
       "params":[
         {
           "name":"ch",
           "storage":{
             "offset":4,
-            "size":2,
+            "size":4,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
-                "size":2
+                "size":4
               }
             ]
           },
-          "type":"wchar_t"
+          "type":"int"
         },
         {
           "name":"preferred_separator",
@@ -92879,16 +92941,16 @@
               }
             ]
           },
-          "type":"wchar_t*"
+          "type":"int*"
         }
       ],
       "ret_storage":{
-        "reg":"AX",
-        "size":2,
+        "reg":"EAX",
+        "size":4,
         "varnodes":[
           {
             "addr":"register:00000000",
-            "size":2
+            "size":4
           }
         ]
       }
@@ -93209,7 +93271,7 @@
     "conv":"__watcallStack",
     "importable":true,
     "name":"crt_string.c_mbtowc_peek_FUN_006059e0",
-    "ret":"wchar_t",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -93230,12 +93292,12 @@
         }
       ],
       "ret_storage":{
-        "reg":"AX",
-        "size":2,
+        "reg":"EAX",
+        "size":4,
         "varnodes":[
           {
             "addr":"register:00000000",
-            "size":2
+            "size":4
           }
         ]
       }
@@ -94759,21 +94821,6 @@
     "ret":"void",
     "vars":{
       "locals":[
-        {
-          "name":"extraout_var",
-          "storage":{
-            "size":2,
-            "varnodes":[
-              {
-                "addr":"register:00000002",
-                "offset":2,
-                "size":2
-              }
-            ]
-          },
-          "type":"undefined2",
-          "use":185
-        },
         {
           "name":"pcVar4",
           "storage":{

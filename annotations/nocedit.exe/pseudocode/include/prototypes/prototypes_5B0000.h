@@ -149,7 +149,7 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
 int __cdecl wincore_windll_cpp_kill_FUN_005b71e0(void);
 int __cdecl wincore_windll_cpp_isExternalRendererActive_FUN_005b7200(void);
 int __cdecl wincore_windll_cpp_lockFrame_FUN_005b7210(void);
-void __cdecl wincore_windll_cpp_unlockFrame_FUN_005b7250(int clear_lock_flag);
+int __cdecl wincore_windll_cpp_unlockFrame_FUN_005b7250(int clear_lock_flag);
 int __cdecl wincore_windll_cpp_beginScene_FUN_005b7280(void);
 int __cdecl wincore_windll_cpp_endScene_FUN_005b72a0(void);
 int __cdecl wincore_windll_cpp_selectTexture_FUN_005b72b3(SMRGLTextureBasic *texture_info);

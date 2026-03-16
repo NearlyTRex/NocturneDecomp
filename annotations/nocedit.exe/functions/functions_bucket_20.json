@@ -1758,24 +1758,9 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_3d.c_renderPrim_FUN_00407920",
-    "ret":"SMRGLHeaderExtended*",
+    "ret":"void",
     "vars":{
       "locals":[
-        {
-          "name":"extraout_EAX",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SMRGLHeaderExtended*",
-          "use":76
-        },
         {
           "name":"pSVar2",
           "storage":{
@@ -1841,17 +1826,7 @@
           },
           "type":"SMRGLHeaderPrimitive*"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -27256,7 +27231,7 @@
     "vars":{
       "locals":[
         {
-          "name":"in_EAX",
+          "name":"local_e1",
           "storage":{
             "reg":"EAX",
             "size":4,
@@ -27267,11 +27242,11 @@
               }
             ]
           },
-          "type":"int",
+          "type":"undefined4",
           "use":-1
         },
         {
-          "name":"in_EDX",
+          "name":"local_e2",
           "storage":{
             "reg":"EDX",
             "size":4,
@@ -27283,40 +27258,8 @@
               }
             ]
           },
-          "type":"int",
+          "type":"undefined4",
           "use":-1
-        },
-        {
-          "name":"bVar2",
-          "storage":{
-            "reg":"CL",
-            "size":1,
-            "varnodes":[
-              {
-                "addr":"register:00000004",
-                "offset":4,
-                "size":1
-              }
-            ]
-          },
-          "type":"byte",
-          "use":63
-        },
-        {
-          "name":"bVar3",
-          "storage":{
-            "reg":"CL",
-            "size":1,
-            "varnodes":[
-              {
-                "addr":"register:00000004",
-                "offset":4,
-                "size":1
-              }
-            ]
-          },
-          "type":"byte",
-          "use":142
         },
         {
           "name":"iVar4",
@@ -53011,6 +52954,113 @@
     "name":"core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_00508920",
     "ret":"CMansionPuzzleCircle*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMansionPuzzleCircle*",
+          "use":8
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMansionPuzzleCircle_ptr_344",
+          "use":22
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMansionPuzzleCircle_ptr_724",
+          "use":36
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMansionPuzzleCircle_ptr_1104",
+          "use":50
+        },
+        {
+          "name":"pvVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMansionPuzzleCircle_ptr_1520",
+          "use":71
+        },
+        {
+          "name":"pvVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMansionPuzzleCircle_ptr_2720",
+          "use":92
+        },
+        {
+          "name":"pvVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMansionPuzzleCircle_ptr_4928",
+          "use":113
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -69512,24 +69562,9 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_script.cpp_CScript_loadState_FUN_00560820",
-    "ret":"int",
+    "ret":"void",
     "vars":{
       "locals":[
-        {
-          "name":"extraout_EAX",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"uint",
-          "use":492
-        },
         {
           "name":"uVar1",
           "storage":{
@@ -69576,21 +69611,6 @@
           },
           "type":"int*",
           "use":615
-        },
-        {
-          "name":"extraout_EAX_00",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":788
         },
         {
           "name":"local_14",
@@ -69674,17 +69694,7 @@
           },
           "type":"_FILE*"
         }
-      ],
-      "ret_storage":{
-        "reg":"EAX",
-        "size":4,
-        "varnodes":[
-          {
-            "addr":"register:00000000",
-            "size":4
-          }
-        ]
-      }
+      ]
     }
   },
   {
@@ -94120,6 +94130,143 @@
     "name":"core_succubus.cpp_CSuccubus_dtor_FUN_005c7820",
     "ret":"CSuccubus*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSuccubus_ptr_58172",
+          "use":25
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSuccubus_ptr_57712",
+          "use":41
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSuccubus_ptr_48828",
+          "use":57
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSuccubus_ptr_13260",
+          "use":73
+        },
+        {
+          "name":"pSVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSuccubus_ptr_12060",
+          "use":89
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSuccubus_ptr_11536",
+          "use":105
+        },
+        {
+          "name":"pCVar6",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSuccubus_ptr_11356",
+          "use":121
+        },
+        {
+          "name":"pCVar7",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSuccubus_ptr_10900",
+          "use":137
+        },
+        {
+          "name":"pCVar8",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSuccubus_ptr_344",
+          "use":153
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -95967,7 +96114,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20",
-    "ret":"void",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -96018,7 +96165,17 @@
           },
           "type":"int"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -104805,6 +104962,98 @@
     "name":"core_werewolf.cpp_CWerewolf_dtor_FUN_005f2220",
     "ret":"CWerewolf*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWerewolf_ptr_13260",
+          "use":25
+        },
+        {
+          "name":"pSVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWerewolf_ptr_12060",
+          "use":41
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWerewolf_ptr_11536",
+          "use":57
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWerewolf_ptr_11356",
+          "use":73
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWerewolf_ptr_10900",
+          "use":89
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CWerewolf_ptr_344",
+          "use":105
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",

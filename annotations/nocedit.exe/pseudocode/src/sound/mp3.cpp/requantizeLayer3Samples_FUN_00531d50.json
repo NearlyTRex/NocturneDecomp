@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 394,
-    "complexity_score": 347,
+    "complexity_score": 281,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 17,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 177,
-    "suspect_count": 16,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 176,
+    "suspect_count": 10,
     "suspect_types": [
-      "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 571
+    "total_lines": 570
   },
   "cross_references": [
     {
@@ -374,72 +373,24 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
-      "match": "extraout_ST1",
-      "severity": "moderate",
-      "text": "float10 extraout_ST1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
-      "match": "extraout_ST1_00",
-      "severity": "moderate",
-      "text": "float10 extraout_ST1_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 19,
-      "match": "extraout_ST2",
-      "severity": "moderate",
-      "text": "float10 extraout_ST2;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(double *)((int)",
       "severity": "mild",
       "text": "*(double *)((int)g_MpegRequantPowerTable + iVar4) = (double)fVar5;",
       "type": "pointer_cast"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 57,
-      "match": "extraout_ST1",
-      "severity": "moderate",
-      "text": "fVar5 = extraout_ST1;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 67,
       "match": "(double *)((int)",
       "severity": "mild",
-      "text": "*(double *)((int)g_MpegRequantGainTable + iVar3) = (double)fVar5;",
+      "text": "*(double *)((int)g_MpegRequantGainTable + iVar3) = (double)fVar6;",
       "type": "pointer_cast"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 68,
-      "match": "extraout_ST1_00",
-      "severity": "moderate",
-      "text": "fVar5 = extraout_ST1_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 69,
-      "match": "extraout_ST2",
-      "severity": "moderate",
-      "text": "base = extraout_ST2;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 118,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar8 + local_68) == 0) {",
@@ -447,7 +398,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 119,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)output_samples->samples[0] + iVar8 + local_68) = 0;",
@@ -455,7 +406,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 158,
+      "line": 157,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar8 + local_68) < 0) {",
@@ -463,7 +414,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 158,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "*(float *)((int)output_samples->samples[0] + iVar8 + local_68) =",
@@ -471,7 +422,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 159,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "-*(float *)((int)output_samples->samples[0] + iVar8 + local_68);",
@@ -479,7 +430,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 163,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_20 = (float *)((int)local_20 + 1);",
@@ -487,7 +438,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 165,
+      "line": 164,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_38 = (float *)((int)local_38 + 1);",
@@ -495,7 +446,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 170,
       "match": "(float *)((int)",
       "severity": "mild",
       "text": "local_6c = (float *)((int)local_6c + 0x12);",

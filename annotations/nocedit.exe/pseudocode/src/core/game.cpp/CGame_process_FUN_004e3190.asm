@@ -221,7 +221,7 @@ section .text
         ;   Label: LAB_004e33ae
     PUSH EAX                            ; 004e33b3 | g_CGoreInstance
     CALL core_gore.cpp_CGore_process_FUN_004ed9e0 ; 004e33b4
-        ;   XREF to: 004ed9e0 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_process_FUN_004ed9e0(CGore * this_ptr)
+        ;   XREF to: 004ed9e0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_process_FUN_004ed9e0(CGore * this_ptr)
     MOV EAX,[0x0067b654]                ; 004e33b9 | g_CGameInstance | g_CGamePtr
     MOV EDX,dword ptr [EAX + 0x20c]     ; 004e33be | DAT_02d81ca8
     ADD ESP,0x4                         ; 004e33c4

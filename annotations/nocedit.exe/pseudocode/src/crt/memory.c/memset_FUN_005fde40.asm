@@ -39,7 +39,7 @@ section .text
     SHL EDX,0x8                         ; 005fde54
     MOV DL,DH                           ; 005fde57
     CALL crt_memory.c___memfill_FUN_00603b00 ; 005fde59
-        ;   XREF to: 00603b00 (UNCONDITIONAL_CALL)  ; void crt_memory.c___memfill_FUN_00603b00(void * dest, uint replicated_value, uint count)
+        ;   XREF to: 00603b00 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___memfill_FUN_00603b00(void * dest, uint replicated_value, uint count)
     POP EAX                             ; 005fde5e
     RET                                 ; 005fde5f
 

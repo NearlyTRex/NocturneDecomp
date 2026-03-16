@@ -387,22 +387,8 @@
         "is_param": false,
         "name": "local_18",
         "offset": -24,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "local_10",
-        "offset": -16,
-        "size": 4,
-        "type": "float"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
@@ -434,7 +420,7 @@
       "line": 41,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "local_30.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar1) * local_c",
+      "text": "local_30.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar1) * fVar1 *",
       "type": "pointer_cast"
     },
     {
@@ -442,7 +428,7 @@
       "line": 41,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar1) * local_c",
+      "text": "local_30.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar1) * fVar1 *",
       "type": "decompiler_intrinsic"
     },
     {
@@ -450,7 +436,7 @@
       "line": 43,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "local_30.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * local_c",
+      "text": "local_30.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * fVar1 *",
       "type": "pointer_cast"
     },
     {
@@ -458,7 +444,7 @@
       "line": 43,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * local_c",
+      "text": "local_30.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * fVar1 *",
       "type": "decompiler_intrinsic"
     },
     {
@@ -466,7 +452,7 @@
       "line": 45,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "local_30.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * local_c",
+      "text": "local_30.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * fVar1 *",
       "type": "pointer_cast"
     },
     {
@@ -474,7 +460,7 @@
       "line": 45,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_30.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * local_c",
+      "text": "local_30.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * fVar1 *",
       "type": "decompiler_intrinsic"
     },
     {

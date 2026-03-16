@@ -290,7 +290,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 004bf7b4 | g_CDemonRendererPtr2
     PUSH ECX                            ; 004bf7ba | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004bf7bb
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004bf7c0
     PUSH 0x2d12dcc                      ; 004bf7c3 | g_BillboardPrimitive
     MOV EBX,dword ptr [0x006703ec]      ; 004bf7c8 | g_CDemonRendererPtr2

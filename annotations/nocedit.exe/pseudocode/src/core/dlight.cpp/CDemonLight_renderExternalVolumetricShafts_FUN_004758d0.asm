@@ -204,7 +204,7 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 00475a0c | g_CDemonRendererPtr2
     PUSH EDX                            ; 00475a12 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 00475a13
-        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; float * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, float * output)
+        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
     FLD float ptr [EBP + 0xffffff56]    ; 00475a18
     FLD float ptr [EBP + 0xffffff5a]    ; 00475a1e
     FLD float ptr [EBP + 0xffffff5e]    ; 00475a24

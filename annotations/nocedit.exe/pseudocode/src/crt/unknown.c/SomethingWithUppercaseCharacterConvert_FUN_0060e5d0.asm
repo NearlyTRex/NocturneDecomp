@@ -36,7 +36,7 @@ section .text
         ;   XREF to: 0060e62f (CONDITIONAL_JUMP)  ; LAB_0060e62f
     PUSH EBX                            ; 0060e5e8
     CALL crt_string.c_mbtowc_peek_FUN_006059e0 ; 0060e5e9
-        ;   XREF to: 006059e0 (UNCONDITIONAL_CALL)  ; wchar_t crt_string.c_mbtowc_peek_FUN_006059e0(char * str)
+        ;   XREF to: 006059e0 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbtowc_peek_FUN_006059e0(char * str)
     ADD ESP,0x4                         ; 0060e5ee
     PUSH EAX                            ; 0060e5f1
     CALL crt_locale.c_toupper_multibyte_FUN_0060f300 ; 0060e5f2

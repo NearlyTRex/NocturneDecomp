@@ -59,7 +59,7 @@ section .text
     PUSH 0xffff                         ; 0049d9e1
         ;   Label: LAB_0049d9e1
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 0049d9e6
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     MOV ESI,dword ptr [EBX + 0x13c]     ; 0049d9eb
     ADD ESP,0x4                         ; 0049d9f1
     TEST ESI,ESI                        ; 0049d9f4

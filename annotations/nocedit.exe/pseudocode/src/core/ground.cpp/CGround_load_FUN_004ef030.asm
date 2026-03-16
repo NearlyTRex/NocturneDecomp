@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *filename)
+; void __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *filename)
 ;
 ; Parameters:
 ; CGround *        Stack[0x4]:4   this_ptr

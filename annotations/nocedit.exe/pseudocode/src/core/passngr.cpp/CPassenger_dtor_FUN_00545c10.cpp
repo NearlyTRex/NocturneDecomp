@@ -10,13 +10,14 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
 
 {
   CDemonActor *this_ptr_00;
-  CMorph *pCVar1;
-  CPathMap *pCVar2;
-  CFlame *pCVar3;
-  SFire *pSVar4;
-  CVector3f *pCVar5;
-  CClothList *pCVar6;
-  CDeformableModelInstance *pCVar7;
+  CPassenger_ptr_129044 pCVar1;
+  CPassenger_ptr_48676 pCVar2;
+  CPassenger_ptr_13260 pCVar3;
+  CPassenger_ptr_12060 pSVar1;
+  CPassenger_ptr_11536 pCVar4;
+  CPassenger_ptr_11356 pCVar5;
+  CPassenger_ptr_10900 pCVar6;
+  CPassenger_ptr_344 pCVar7;
   CPassenger *ptr;
   void *ptr_00;
   
@@ -33,21 +34,21 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_dtor_FUN_00545c10(CPassenger *t
     (*((this_ptr_00->vtable)._ub)->dtor)(this_ptr_00,2);
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_0052b330(&this_ptr->morph,0);
-  pCVar2 = core_path_cpp_CPathMap_dtor_FUN_005464d0
-                     ((CPathMap *)(pCVar1[-0x1a].models[0].textures[7].textures[1].texture_name + 8)
-                      ,0);
-  pCVar3 = core_armour_cpp_CFlame_arrdtor_FUN_00412720
-                     ((CFlame *)(pCVar2[-1].height_cache_tags[0xb] + 0x39),0);
-  pSVar4 = core_armour_cpp_SFire_arrdtor_FUN_00412700
-                     ((SFire *)(pCVar3[-2].base.create_event + 0x20),0);
-  pCVar5 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0((CVector3f *)&pSVar4[-0x16].bone_index,0);
-  pCVar5 = core_armour_cpp_CVector3f_arrdtor_FUN_004126e0(pCVar5 + -0xf,0);
-  pCVar6 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80((CClothList *)(pCVar5 + -0x26),0);
+  pCVar2 = core_path_cpp_CPathMap_dtor_FUN_005464d0(&ADJ(pCVar1)->base.path_map,0);
+  pCVar3 = (CPassenger_ptr_13260)
+           core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar2)->base.base.flames,0);
+  pSVar1 = (CPassenger_ptr_12060)
+           core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar3)->base.base.fire_effects,0);
+  pCVar4 = (CPassenger_ptr_11536)
+           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+                     (ADJ(pSVar1)->base.base.collision_test_normals,0);
+  pCVar5 = (CPassenger_ptr_11356)
+           core_armour_cpp_CVector3f_arrdtor_FUN_004126e0
+                     (ADJ(pCVar4)->base.base.collision_test_points,0);
+  pCVar6 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80(&ADJ(pCVar5)->base.base.cloth_list,0);
   pCVar7 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                     ((CDeformableModelInstance *)(pCVar6[-0x18].filenames[2] + 0x10),0);
-  ptr = (CPassenger *)
-        core_actor_cpp_CDemonActor_dtor_FUN_00408a30
-                  ((CDemonActor *)(pCVar7[-1].part_data.visibility_flags + 7),1);
+                     (&ADJ(pCVar6)->base.base.model,0);
+  ptr = (CPassenger *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)ADJ(pCVar7),1);
   if ((flags & 2) != 0) {
     shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
     return ptr;

@@ -145,7 +145,7 @@ void __cdecl writeActorReference(_FILE *file_handle,CDemonActor **actor);
 
 // Original: core_script.cpp_CScript_loadState_FUN_00560820
 // Address: 00560820
-int __cdecl CScript::loadState(CScript *this_ptr,_FILE *file_handle);
+void __cdecl CScript::loadState(CScript *this_ptr,_FILE *file_handle);
 
 // Original: core_script.cpp_CScript_saveState_FUN_00560b50
 // Address: 00560b50

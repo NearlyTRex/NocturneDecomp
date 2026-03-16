@@ -135,7 +135,7 @@ section .text
     PUSH 0xffff                         ; 004d810e
     MOV EDI,EAX                         ; 004d8113
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004d8115
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 004d811a
     PUSH 0x2d830a8                      ; 004d811d | g_ChapterDisplayName
     MOV ECX,dword ptr [0x02d831a8]      ; 004d8122 | g_CurrentDisplayText
@@ -361,7 +361,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x15c]     ; 004d8429
     PUSH ECX                            ; 004d8430
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004d8431
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
         ;   Label: LAB_004d8431
     ADD ESP,0x4                         ; 004d8436
     MOV EAX,[0x020a5720]                ; 004d8439 | g_ThemeFont

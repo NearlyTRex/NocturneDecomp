@@ -10,50 +10,50 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_ctor_FUN_005
 
 {
   char cVar1;
-  CDemonActor *pCVar2;
-  CKeyFramedModelInstance *pCVar3;
-  void *pvVar4;
-  char *pcVar5;
-  char *pcVar6;
+  CMansionPuzzleCircle *pCVar2;
+  CMansionPuzzleCircle_ptr_344 pCVar3;
+  CMansionPuzzleCircle_ptr_724 pCVar4;
+  CMansionPuzzleCircle_ptr_1104 pCVar5;
+  CMansionPuzzleCircle_ptr_1520 pvVar2;
+  CMansionPuzzleCircle_ptr_2720 pvVar3;
+  CMansionPuzzleCircle_ptr_4928 pvVar4;
+  char *pcVar2;
+  char *pcVar3;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
-  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
-                     ((CKeyFramedModelInstance *)(pCVar2 + 1));
-  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(pCVar3 + 1);
-  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(pCVar3 + 1);
-  pvVar4 = __arrinit
-                     (pCVar3[1].part_visibility_flags + 9,0xc,&g_SPanelTypeInfo);
-  pvVar4 = __arrinit((void *)((int)pvVar4 + 0x4b0),0xc,&g_SGemTypeInfo);
-  pvVar4 = __arrinit
-                     ((void *)((int)pvVar4 + 0x8a0),2,&g_SReflectorTypeInfo);
-  *(CDemonActor_vtable **)((int)pvVar4 + -0x11ec) = &g_CMansionPuzzleCircleVTable;
+  pCVar2 = (CMansionPuzzleCircle *)core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base);
+  pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&pCVar2->panel_model);
+  pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&ADJ(pCVar3)->gem_model);
+  pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0(&ADJ(pCVar4)->reflector_model);
+  pvVar2 = __arrinit(ADJ(pCVar5)->panels,0xc,&g_SPanelTypeInfo);
+  pvVar3 = __arrinit(ADJ(pvVar2)->gems,0xc,&g_SGemTypeInfo);
+  pvVar4 = __arrinit(ADJ(pvVar3)->reflectors,2,&g_SReflectorTypeInfo);
+  ADJ(pvVar4)->base.vtable._ub = &g_CMansionPuzzleCircleVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)((int)pvVar4 + -0x11e8),"doorpuzz.kfm");
+            (&ADJ(pvVar4)->panel_model,"doorpuzz.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)((int)pvVar4 + -0x106c),"puzz-rec.kfm");
+            (&ADJ(pvVar4)->gem_model,"puzz-rec.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)((int)pvVar4 + -0xef0),"mirrhack.kfm");
-  pcVar5 = "headlite.raw";
-  pcVar6 = (char *)((int)pvVar4 + 0x188);
+            (&ADJ(pvVar4)->reflector_model,"mirrhack.kfm");
+  pcVar2 = "headlite.raw";
+  pcVar3 = (ADJ(pvVar4)->light_texture).textures[0].texture_name;
   do {
-    cVar1 = *pcVar5;
-    *pcVar6 = cVar1;
+    cVar1 = *pcVar2;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
+    cVar1 = pcVar2[1];
+    pcVar2 = pcVar2 + 2;
+    pcVar3[1] = cVar1;
+    pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  *(uint *)((int)pvVar4 + -0xd6c) = 0;
-  *(uint *)((int)pvVar4 + -0xd70) = *(uint *)((int)pvVar4 + -0xd6c);
-  *(uint *)((int)pvVar4 + -0xd74) = *(uint *)((int)pvVar4 + -0xd70);
-  *(uint *)((int)pvVar4 + -0xd60) = 0;
-  *(uint *)((int)pvVar4 + -0xd64) = *(uint *)((int)pvVar4 + -0xd60);
-  *(uint *)((int)pvVar4 + -0xd68) = *(uint *)((int)pvVar4 + -0xd64);
-  *(uint *)((int)pvVar4 + -0xd54) = 0;
-  *(uint *)((int)pvVar4 + -0xd58) = *(uint *)((int)pvVar4 + -0xd54);
-  *(uint *)((int)pvVar4 + -0xd5c) = *(uint *)((int)pvVar4 + -0xd58);
-  core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0
-            ((CMansionPuzzleCircle *)((int)pvVar4 + -0x1340));
-  return (CMansionPuzzleCircle *)((int)pvVar4 + -0x1340);
+  (ADJ(pvVar4)->gem_pos).z = 0.0;
+  (ADJ(pvVar4)->gem_pos).y = (ADJ(pvVar4)->gem_pos).z;
+  (ADJ(pvVar4)->gem_pos).x = (ADJ(pvVar4)->gem_pos).y;
+  (ADJ(pvVar4)->gem_orient).vec.z = 0.0;
+  (ADJ(pvVar4)->gem_orient).vec.y = (ADJ(pvVar4)->gem_orient).vec.z;
+  (ADJ(pvVar4)->gem_orient).vec.x = (ADJ(pvVar4)->gem_orient).vec.y;
+  (ADJ(pvVar4)->emitter_pos).f.z = 0.0;
+  (ADJ(pvVar4)->emitter_pos).f.y = (ADJ(pvVar4)->emitter_pos).f.z;
+  (ADJ(pvVar4)->emitter_pos).f.x = (ADJ(pvVar4)->emitter_pos).f.y;
+  core_manpuz_cpp_CMansionPuzzleCircle_initPuzzleState_FUN_005098f0(ADJ(pvVar4));
+  return ADJ(pvVar4);
 }

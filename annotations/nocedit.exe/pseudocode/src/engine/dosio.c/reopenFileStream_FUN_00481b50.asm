@@ -36,7 +36,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x230]     ; 00481b60
     PUSH EBX                            ; 00481b67
     CALL crt_stdio.c_fflush_FUN_00600e29 ; 00481b68
-        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00600e29(_FILE * stream)
+        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_fflush_FUN_00600e29(_FILE * stream)
     MOV EAX,dword ptr [EBX]             ; 00481b6d
     ADD ESP,0x4                         ; 00481b6f
     MOV EAX,dword ptr [EAX + 0x4]       ; 00481b72

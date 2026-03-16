@@ -103,7 +103,7 @@ section .text
     MOV dword ptr [ESP + 0x38],ESI      ; 0050ff60
     MOV dword ptr [ESP + 0x30],ECX      ; 0050ff64
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0050ff68
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0050ff6d
     PUSH 0x1                            ; 0050ff70
     MOV EDI,dword ptr [0x006703ec]      ; 0050ff72 | g_CDemonRendererPtr2
@@ -147,7 +147,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 0050ffe5 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0050ffeb | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0050ffec
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0050fff1
     POP EBX                             ; 0050fff4
     POP ESI                             ; 0050fff5

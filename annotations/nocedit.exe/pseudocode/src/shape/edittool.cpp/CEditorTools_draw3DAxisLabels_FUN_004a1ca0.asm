@@ -206,7 +206,7 @@ section .text
     ADD ESP,0xc                         ; 004a1e55
     PUSH 0xffff                         ; 004a1e58
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004a1e5d
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 004a1e62
     PUSH -0x1                           ; 004a1e65
     MOV EAX,[0x02cf2ac4]                ; 004a1e67 | g_AxisLabelTextColor

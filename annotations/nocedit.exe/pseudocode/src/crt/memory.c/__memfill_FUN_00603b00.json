@@ -1,13 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 179,
+    "complexity_score": 190,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 13,
+    "pseudocode_lines": 25,
+    "suspect_count": 14,
     "suspect_types": [
       "extra_output",
       "param_count_too_few",
@@ -15,7 +15,7 @@
       "register_param",
       "special_crt_function"
     ],
-    "total_lines": 59
+    "total_lines": 60
   },
   "cross_references": [
     {
@@ -35,7 +35,7 @@
     ],
     "convention": "__watcallRegister",
     "name": "crt_memory.c___memfill_FUN_00603b00",
-    "signature": "void __watcallRegister crt_memory_c___memfill_FUN_00603b00(void *dest,uint replicated_value,uint count)"
+    "signature": "void * __watcallRegister crt_memory_c___memfill_FUN_00603b00(void *dest,uint replicated_value,uint count)"
   },
   "function_calls": [
     {
@@ -172,10 +172,10 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 19,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "*extraout_EAX = (char)replicated_value;",
+      "text": "dest = extraout_EAX;",
       "type": "extra_output"
     },
     {
@@ -183,12 +183,20 @@
       "line": 21,
       "match": "extraout_EAX",
       "severity": "moderate",
-      "text": "if ((uVar1 != 1) && (extraout_EAX[1] = (char)(replicated_value >> 8), uVar1 != 2)) {",
+      "text": "*extraout_EAX = (char)replicated_value;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 22,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "if ((uVar1 != 1) && (extraout_EAX[1] = (char)(replicated_value >> 8), uVar1 != 2)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 23,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "extraout_EAX[2] = (char)replicated_value;",

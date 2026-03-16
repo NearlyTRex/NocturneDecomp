@@ -169,7 +169,7 @@ section .text
     ADD ESP,0x4                         ; 004e415b
     PUSH 0xffff                         ; 004e415e
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004e4163
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     MOV EAX,0x1df                       ; 004e4168
     SUB EAX,EBP                         ; 004e416d
     ADD ESP,0x4                         ; 004e416f

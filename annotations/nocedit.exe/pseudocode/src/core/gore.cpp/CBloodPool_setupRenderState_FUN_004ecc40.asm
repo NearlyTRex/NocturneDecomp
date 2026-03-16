@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool *this_ptr)
+; int __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool *this_ptr)
 ;
 ; Parameters:
 ; CBloodPool *     Stack[0x4]:4   this_ptr
@@ -69,7 +69,7 @@ section .text
     MOV dword ptr [0x02d8337c],ECX      ; 004eccc7 | g_GoreQuadPrimitive.base.surface_normal.D
     MOV dword ptr [0x02d83374],EDX      ; 004ecccd | g_GoreQuadPrimitive.base.surface_normal.B
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004eccd3
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004eccd8
     POP EBP                             ; 004eccdb
     POP EDI                             ; 004eccdc

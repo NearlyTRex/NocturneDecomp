@@ -13,7 +13,7 @@
 ; CVector3i        Stack[-0x7c]:12  local_7c
 ; CVector3f        Stack[-0x70]:12  local_70
 ; CVector3i        Stack[-0x64]:12  local_64
-; float[3]         Stack[-0x58]:12  local_58
+; CVector3f        Stack[-0x58]:12  local_58
 ; CVector3f        Stack[-0x4c]:12  local_4c
 ; float            Stack[-0x40]:4  local_40
 ; float            Stack[-0x3c]:4  local_3c
@@ -172,7 +172,7 @@ section .text
     MOV ESI,dword ptr [0x006703ec]      ; 00473827 | g_CDemonRendererPtr2
     PUSH ESI                            ; 0047382d | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 0047382e
-        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; float * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, float * output)
+        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 00473833
     MOV EDX,dword ptr [EBP + 0x14]      ; 00473836
     FLD float ptr [EAX]                 ; 00473839

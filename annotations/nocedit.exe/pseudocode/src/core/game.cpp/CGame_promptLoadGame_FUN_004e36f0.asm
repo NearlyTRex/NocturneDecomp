@@ -21,10 +21,10 @@
 ;   TerminatedCString s_Select_file_to_load_0062d4d9
 ;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
 ;   CEditorTools g_CEditorToolsInstance
-;   char g_CurrentSaveFile
-;   undefined1 DAT_02d82c81
-;   undefined1 DAT_02d82c82
-;   undefined1 DAT_02d82c83
+;   char[256] g_CurrentSaveFile
+;   undefined4 DAT_02d82c81
+;   undefined4 DAT_02d82c82
+;   undefined4 DAT_02d82c83
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005fe7f0

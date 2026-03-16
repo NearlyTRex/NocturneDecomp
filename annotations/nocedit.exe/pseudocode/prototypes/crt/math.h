@@ -13,7 +13,7 @@ double __crtmath floor(double input_value);
 
 // Original: crt_math.c_pow_FUN_005ffd76
 // Address: 005ffd76
-float10 __fpustack pow(float10 base,float10 exp);
+float10 __fpustack_safe pow(float10 base,float10 exp);
 
 // Original: crt_math.c_integer_power_FUN_005ffeb2
 // Address: 005ffeb2
@@ -57,7 +57,7 @@ double __cdecl math::domain_error(double x,double y,uchar error_type);
 
 // Original: crt_math.c_exp_FUN_006068e2
 // Address: 006068e2
-float10 __fpureg exp(float10 x);
+float10 __fpureg_safe exp(float10 x);
 
 // Original: crt_math.c_fdiv_FUN_00606960
 // Address: 00606960
@@ -65,7 +65,7 @@ float10 __fpustack_safe fdiv(float10 dividend,float10 divisor);
 
 // Original: crt_math.c_function_dispatch_FUN_00606a77
 // Address: 00606a77
-void __watcallRegister function::dispatch(int function_index);
+float10 __watcallRegister function::dispatch(int function_index);
 
 // Original: crt_math.c_generate_nan_FUN_00606a81
 // Address: 00606a81
@@ -333,7 +333,7 @@ float10 __fpustack pentiumFdivBugWorkaroundDouble(float10 param0,double param1);
 
 // Original: crt_math.c_sqrt_FUN_0060710c
 // Address: 0060710c
-double __fpureg sqrt(double value);
+double __fpureg_safe sqrt(double value);
 
 // Original: crt_math.c_atan2_FUN_00608e14
 // Address: 00608e14

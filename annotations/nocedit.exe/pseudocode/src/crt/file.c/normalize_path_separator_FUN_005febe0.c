@@ -2,20 +2,18 @@
 // Address: 005febe0
 // Address Range: [[005febe0, 005febfb]]
 // Convention: __cdecl
-// Signature: wchar_t __cdecl crt_file_c_normalize_path_separator_FUN_005febe0(wchar_t ch,wchar_t *preferred_separator)
+// Signature: int __cdecl crt_file_c_normalize_path_separator_FUN_005febe0(int ch,int *preferred_separator)
 
 #include "nocturne.h"
 
-wchar_t __cdecl normalize_path_separator(wchar_t ch,wchar_t *preferred_separator)
+int __cdecl normalize_path_separator(int ch,int *preferred_separator)
 
 {
-  ushort in_stack_00000006;
-  
-  if ((_ch == 0x5c) || (_ch == 0x2f)) {
-    if (*(int *)preferred_separator == 0) {
-      *(int *)preferred_separator = _ch;
+  if ((ch == 0x5c) || (ch == 0x2f)) {
+    if (*preferred_separator == 0) {
+      *preferred_separator = ch;
     }
-    _ch = *(int *)preferred_separator;
+    ch = *preferred_separator;
   }
-  return (wchar_t)_ch;
+  return ch;
 }

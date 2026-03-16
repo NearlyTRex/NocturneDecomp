@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,float *output)
+; CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,CVector3f *output)
 ;
 ; Parameters:
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
-; float *          Stack[0x8]:4   output
+; CVector3f *      Stack[0x8]:4   output
 ; Local Variables:
 ; CVector3i        Stack[-0x20]:12  local_20
 ;

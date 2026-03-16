@@ -6,7 +6,7 @@
 #include "system/winuser.h"
 #include "types/funcdefs/MessageHandlerFunc.h"
 
-// Typedef: MessageHandler
+// Typedef: SMessageHandler
 // pointer to MessageHandlerFunc
-typedef MessageHandlerFunc* MessageHandler;
+typedef MessageHandlerFunc* SMessageHandler;
 

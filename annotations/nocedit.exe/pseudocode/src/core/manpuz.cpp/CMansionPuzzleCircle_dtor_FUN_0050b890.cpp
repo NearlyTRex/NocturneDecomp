@@ -9,9 +9,9 @@
 CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_0050b890(CMansionPuzzleCircle *this_ptr,uint flags)
 
 {
-  SReflector *pSVar1;
-  SGem *pSVar2;
-  SPanel *pSVar3;
+  CMansionPuzzleCircle_ptr_4928 pSVar1;
+  CMansionPuzzleCircle_ptr_2720 pSVar2;
+  CMansionPuzzleCircle_ptr_1520 pSVar3;
   CMansionPuzzleCircle *ptr;
   void *ptr_00;
   
@@ -20,12 +20,13 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_CMansionPuzzleCircle_dtor_FUN_005
     shape_memdbg_cpp_free_FUN_005fe659(ptr_00);
     return this_ptr;
   }
-  pSVar1 = core_manpuz_cpp_SReflector_arrdtor_FUN_0050bad0(this_ptr->reflectors,0);
-  pSVar2 = core_manpuz_cpp_SGem_arrdtor_FUN_0050bab0((SGem *)(pSVar1 + -0x17),0);
-  pSVar3 = core_manpuz_cpp_SPanel_arrdtor_FUN_0050ba90
-                     ((SPanel *)&pSVar2[-7].collision_tri_a.vertex3.y,0);
-  ptr = (CMansionPuzzleCircle *)
-        core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)&pSVar3[-0x10].color.g,1);
+  pSVar1 = (CMansionPuzzleCircle_ptr_4928)
+           core_manpuz_cpp_SReflector_arrdtor_FUN_0050bad0(this_ptr->reflectors,0);
+  pSVar2 = (CMansionPuzzleCircle_ptr_2720)
+           core_manpuz_cpp_SGem_arrdtor_FUN_0050bab0(ADJ(pSVar1)->gems,0);
+  pSVar3 = (CMansionPuzzleCircle_ptr_1520)
+           core_manpuz_cpp_SPanel_arrdtor_FUN_0050ba90(ADJ(pSVar2)->panels,0);
+  ptr = (CMansionPuzzleCircle *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&ADJ(pSVar3)->base,1);
   if ((flags & 2) == 0) {
     return ptr;
   }

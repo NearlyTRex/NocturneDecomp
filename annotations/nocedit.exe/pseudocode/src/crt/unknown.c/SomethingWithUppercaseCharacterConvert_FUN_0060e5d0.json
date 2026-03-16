@@ -1,23 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 197,
+    "complexity_score": 156,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
-    "suspect_count": 14,
+    "pseudocode_lines": 21,
+    "suspect_count": 11,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_few",
       "special_crt_function",
       "stack_param",
       "stack_ref",
       "unnamed_param"
     ],
-    "total_lines": 76
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -157,14 +155,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_var",
-      "severity": "moderate",
-      "text": "ushort extraout_var;",
-      "type": "extra_output"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_fffffff4",
@@ -182,34 +172,26 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_fffffff4",
       "severity": "moderate",
-      "text": "((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);",
+      "text": "character = toupper_multibyte(mb_char,in_stack_fffffff4);",
       "type": "stack_param"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Direct stack address reference",
       "line": 17,
-      "match": "extraout_var",
+      "match": "&stack0xfffffff4",
       "severity": "moderate",
-      "text": "((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 17,
-      "match": "CONCAT22",
-      "severity": "mild",
-      "text": "((char *)CONCAT22(extraout_var,wVar1),in_stack_fffffff4);",
-      "type": "decompiler_intrinsic"
+      "text": "wchar_to_bytes(character,&stack0xfffffff4);",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 18,
       "match": "&stack0xfffffff4",
       "severity": "moderate",
-      "text": "wchar_to_bytes(wVar1,&stack0xfffffff4);",
+      "text": "iVar1 = mblen(&stack0xfffffff4);",
       "type": "stack_ref"
     },
     {
@@ -217,7 +199,7 @@
       "line": 19,
       "match": "&stack0xfffffff4",
       "severity": "moderate",
-      "text": "iVar2 = mblen(&stack0xfffffff4);",
+      "text": "(&stack0xfffffff4)[iVar1] = 0;",
       "type": "stack_ref"
     },
     {
@@ -225,20 +207,12 @@
       "line": 20,
       "match": "&stack0xfffffff4",
       "severity": "moderate",
-      "text": "(&stack0xfffffff4)[iVar2] = 0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xfffffff4",
-      "severity": "moderate",
       "text": "copyMbChar(str,&stack0xfffffff4);",
       "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "return param_1;",

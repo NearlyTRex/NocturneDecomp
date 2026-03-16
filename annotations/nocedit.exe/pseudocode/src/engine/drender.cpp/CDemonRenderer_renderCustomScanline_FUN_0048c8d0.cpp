@@ -31,7 +31,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
   if (g_ClippedVertexCount < 3) {
     return;
   }
-  engine_3d_c_rasterizePolygon_FUN_005fd4e0
+  engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0
             (g_ClippedVertexBuffer,g_ClippedVertexCount,scanline_renderer);
   return;
 }

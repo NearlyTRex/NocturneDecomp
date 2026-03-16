@@ -41,7 +41,7 @@ void __cdecl CGround::free(CGround *this_ptr);
 
 // Original: core_ground.cpp_CGround_load_FUN_004ef030
 // Address: 004ef030
-int __cdecl CGround::load(CGround *this_ptr,char *filename);
+void __cdecl CGround::load(CGround *this_ptr,char *filename);
 
 // Original: core_ground.cpp_CGround_getVertexIndex_FUN_004ef380
 // Address: 004ef380

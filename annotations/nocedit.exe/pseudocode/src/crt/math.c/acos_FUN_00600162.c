@@ -7,32 +7,24 @@
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
+/* WARNING: Removing unreachable block (ram,0x0060018d) */
 
 double __fpustack_safe acos(double x)
 
 {
-  char extraout_AL;
-  float10 fVar1;
-  float10 fVar2;
-  double dVar3;
+  double dVar1;
   
-  fVar1 = (float10)x;
-  fVar2 = (float10)1 - fVar1 * fVar1;
-  if (fVar2 == (float10)0) {
-    if (fVar1 < fVar2) {
-      fVar2 = (float10)3.141592653589793;
+  dVar1 = 1.0 - x * x;
+  if (dVar1 == 0.0) {
+    if (x < dVar1) {
+      dVar1 = 3.141592653589793;
     }
     else {
-      fVar2 = (float10)0;
+      dVar1 = 0.0;
     }
   }
   else {
-    dVar3 = sqrt((double)fVar2);
-    fVar2 = (float10)dVar3;
-    if (extraout_AL == '\0') {
-      fVar2 = (float10)fpatan(fVar1,fVar2);
-      fVar2 = 1.5707963f - fVar2;
-    }
+    dVar1 = sqrt(dVar1);
   }
-  return (double)fVar2;
+  return dVar1;
 }

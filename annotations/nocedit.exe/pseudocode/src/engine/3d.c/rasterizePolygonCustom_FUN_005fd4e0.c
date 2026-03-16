@@ -1,12 +1,12 @@
-// Name: engine_3d.c_rasterizePolygon_FUN_005fd4e0
+// Name: engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0
 // Address: 005fd4e0
 // Address Range: [[005fd4e0, 005fd985]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer)
+// Signature: void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer)
 
 #include "nocturne.h"
 
-void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer)
+void __cdecl engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,RenderScanlineFunc *scanline_renderer)
 
 {
   int *piVar2;
@@ -26,10 +26,8 @@ void __cdecl engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buf
   SRenderVertex *pSVar10;
   SHardwareEdge *right;
   SHardwareEdge *pSVar11;
-  SHardwareEdge *extraout_ESI;
   int iVar12;
   SRenderVertex *pSVar9;
-  SSoftwareEdge *extraout_EDI;
   SSoftwareEdge *local_18;
   longlong lVar2;
   int *piVar1;
@@ -229,15 +227,10 @@ LAB_005fd6c4:
         *piVar2 = *piVar2 + (pSVar5->base).x_gradient;
         (pSVar5->base).w_current = (pSVar5->base).w_current + (pSVar5->base).w_gradient;
         (pSVar5->base).z_current = (pSVar5->base).z_current + (pSVar5->base).z_gradient;
-        (extraout_EDI->base).x_current =
-             (extraout_EDI->base).x_current + (extraout_EDI->base).x_gradient;
+        (left->base).x_current = (left->base).x_current + (left->base).x_gradient;
         scanline_y = (SSoftwareEdge *)((int)&(local_18->base).y_min + 1);
-        (extraout_EDI->base).w_current =
-             (extraout_EDI->base).w_current + (extraout_EDI->base).w_gradient;
-        (extraout_EDI->base).z_current =
-             (extraout_EDI->base).z_current + (extraout_EDI->base).z_gradient;
-        right = extraout_ESI;
-        left = extraout_EDI;
+        (left->base).w_current = (left->base).w_current + (left->base).w_gradient;
+        (left->base).z_current = (left->base).z_current + (left->base).z_gradient;
         local_18 = scanline_y;
       } while( true );
     }

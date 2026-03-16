@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 84,
+    "complexity_score": 34,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
-    "suspect_count": 4,
-    "suspect_types": [
-      "extra_output"
-    ],
-    "total_lines": 120
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 34,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 115
   },
   "cross_references": [
     {
@@ -49,7 +47,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_gore.cpp_CGore_process_FUN_004ed9e0",
-    "signature": "int __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)"
+    "signature": "void __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)"
   },
   "function_calls": [
     {
@@ -260,38 +258,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EAX_00",
-      "severity": "moderate",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 31,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "iVar1 = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 38,
-      "match": "extraout_EAX_00",
-      "severity": "moderate",
-      "text": "iVar1 = extraout_EAX_00;",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

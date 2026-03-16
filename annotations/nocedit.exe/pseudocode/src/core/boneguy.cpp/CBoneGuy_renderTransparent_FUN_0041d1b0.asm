@@ -74,7 +74,7 @@ section .text
     PUSH EDI                            ; 0041d217 | g_CDemonRendererInstance
     MOV dword ptr [EAX + 0x15ac88],0x1  ; 0041d218 | DAT_0326ef00
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0041d222
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0041d227
     PUSH EBX                            ; 0041d22a
     CALL core_charactr.cpp_CCharacter_renderCharacter_FUN_00429aa0 ; 0041d22b

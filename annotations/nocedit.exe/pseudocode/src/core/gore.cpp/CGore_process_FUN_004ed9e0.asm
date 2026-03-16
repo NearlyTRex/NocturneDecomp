@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)
+; void __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)
 ;
 ; Parameters:
 ; CGore *          Stack[0x4]:4   this_ptr
@@ -80,7 +80,7 @@ section .text
     PUSH 0x2da8724                      ; 004eda40 | g_BloodPools
         ;   Label: LAB_004eda40
     CALL core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40 ; 004eda45
-        ;   XREF to: 004ecc40 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool * this_ptr)
+        ;   XREF to: 004ecc40 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool * this_ptr)
     XOR ESI,ESI                         ; 004eda4a
     MOV EBX,dword ptr [0x02da8720]      ; 004eda4c | g_BloodPoolCount
     ADD ESP,0x4                         ; 004eda52

@@ -11,6 +11,7 @@
 void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *this_ptr)
 
 {
+  float fVar1;
   int iVar3;
   int iVar4;
   int iVar1;
@@ -23,34 +24,33 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_00471400(CDemonGlobe *
   float local_24;
   float local_20;
   float local_1c;
-  float local_18;
-  float local_14;
-  float local_10;
+  CVector3f local_18;
   float local_c;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr1,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
             (g_CDemonRendererPtr2,&local_18);
-  local_24 = local_18 - (this_ptr->position).x;
-  local_20 = local_14 - (this_ptr->position).y;
-  local_1c = local_10 - (this_ptr->position).z;
-  if (&local_18 != &local_24) {
-    local_18 = local_24;
-    local_14 = local_20;
-    local_10 = local_1c;
+  local_24 = local_18.x - (this_ptr->position).x;
+  local_20 = local_18.y - (this_ptr->position).y;
+  local_1c = local_18.z - (this_ptr->position).z;
+  if (&local_18 != (CVector3f *)&local_24) {
+    local_18.x = local_24;
+    local_18.y = local_20;
+    local_18.z = local_1c;
   }
-  if (this_ptr->radius_squared <= local_10 * local_10 + local_18 * local_18 + local_14 * local_14) {
-    local_c = this_ptr->radius * (float)0.00390625;
+  if (this_ptr->radius_squared <=
+      local_18.z * local_18.z + local_18.x * local_18.x + local_18.y * local_18.y) {
+    fVar1 = this_ptr->radius * (float)0.00390625;
     iVar2 = 0;
     iVar1 = 0;
     do {
-      local_30.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar1) * local_c
-                              * 256.0f);
-      local_30.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * local_c
-                              * 256.0f);
-      local_30.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * local_c
-                              * 256.0f);
+      local_30.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar1) * fVar1 *
+                              256.0f);
+      local_30.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar1) * fVar1 *
+                              256.0f);
+      local_30.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar1) * fVar1 *
+                              256.0f);
       iVar1 = iVar1 + 0xc;
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 ((SProjectedVertex *)

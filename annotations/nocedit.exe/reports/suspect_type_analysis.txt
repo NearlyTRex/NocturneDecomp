@@ -4,30 +4,30 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            6985 ( 35.4%)
-  pointer_cast                    5725 ( 29.0%)
-  unknown_field                   1517 (  7.7%)
-  stack_param                      971 (  4.9%)
+  decompiler_intrinsic            7116 ( 36.1%)
+  pointer_cast                    5704 ( 29.0%)
+  unknown_field                   1493 (  7.6%)
+  stack_param                      970 (  4.9%)
   unnamed_param                    698 (  3.5%)
   special_crt_function             636 (  3.2%)
-  fpu_register_input               325 (  1.6%)
+  fpu_register_input               327 (  1.7%)
   unaffected_reg                   314 (  1.6%)
   stack_ref                        289 (  1.5%)
   nonstandard_int                  271 (  1.4%)
-  register_param                   270 (  1.4%)
   warning_inlined_function         264 (  1.3%)
+  register_param                   252 (  1.3%)
   unresolved_funcptr               174 (  0.9%)
   param_count_too_few              157 (  0.8%)
   stack_alignment_array            137 (  0.7%)
-  extra_output                     132 (  0.7%)
   warning_type_propagation         132 (  0.7%)
-  negative_offset                  125 (  0.6%)
   sub84_truncation                 107 (  0.5%)
-  warning_unreachable               79 (  0.4%)
+  negative_offset                   85 (  0.4%)
+  warning_unreachable               84 (  0.4%)
   suspect_float                     57 (  0.3%)
   unknown_type                      53 (  0.3%)
   param_count_too_many              52 (  0.3%)
   undefined_data                    50 (  0.3%)
+  extra_output                      46 (  0.2%)
   mmx_assembly                      34 (  0.2%)
   special_math_intrinsic            24 (  0.1%)
   format_string_mismatch            24 (  0.1%)
@@ -55,19 +55,19 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (6985 occurrences)
+TYPE: decompiler_intrinsic (7116 occurrences)
 ====================================================================================================
 
 Unique patterns:
   2631x  ROUND
-  1411x  ADJ
+  1548x  ADJ
    497x  CONCAT44
    427x  SQRT
    325x  ABS
    159x  CARRY4
    151x  CONCAT11
-   110x  CONCAT22
    107x  SUB84
+   106x  CONCAT22
    106x  fcos
    105x  fsin
     96x  CONCAT12
@@ -97,20 +97,20 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5725 occurrences)
+TYPE: pointer_cast (5704 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2180x  (uint *)((int)
+  2167x  (uint *)((int)
   1296x  (int *)((int)
    325x  (SRenderVertex *)((int)
    295x  (float *)((int)
    289x  (CMatrix3x4f *)((int)
    208x  (double *)((int)
-   195x  (void *)((int)
+   193x  (void *)((int)
    188x  (byte *)((int)
     84x  (ushort *)((int)
-    79x  (char *)((int)
+    78x  (char *)((int)
     61x  (short *)((int)
     34x  (SShapeEditorPolygon *)((int)
     26x  (CMatrix3x3f *)((int)
@@ -135,14 +135,14 @@ Example functions:
     piVar2 = (int *)((int)g_ScreenBufferArray + iVar8);...
 
 ====================================================================================================
-TYPE: unknown_field (1517 occurrences)
+TYPE: unknown_field (1493 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   467x  ._0_4_
-   411x  ._4_4_
-    96x  ._8_4_
-    78x  ._12_4_
+   460x  ._0_4_
+   404x  ._4_4_
+    89x  ._8_4_
+    75x  ._12_4_
     67x  ._16_4_
     49x  ._0_2_
     47x  ._24_4_
@@ -181,7 +181,7 @@ Example functions:
     local_14._0_1_ = '\0';...
 
 ====================================================================================================
-TYPE: stack_param (971 occurrences)
+TYPE: stack_param (970 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -336,13 +336,13 @@ Example functions:
     CRT function (runtime support) at 00608908...
 
 ====================================================================================================
-TYPE: fpu_register_input (325 occurrences)
+TYPE: fpu_register_input (327 occurrences)
 ====================================================================================================
 
 Unique patterns:
    102x  in_ST2
     98x  in_ST3
-    72x  in_ST0
+    74x  in_ST0
     41x  in_ST1
      3x  in_ST7
      3x  in_ST5
@@ -464,29 +464,6 @@ Example functions:
     (uint)*(uint3 *)(g_ThumbnailPalette +...
 
 ====================================================================================================
-TYPE: register_param (270 occurrences)
-====================================================================================================
-
-Unique patterns:
-    83x  in_ECX
-    76x  in_EAX
-    70x  in_EDX
-    20x  in_DS
-    14x  in_AX
-     4x  in_AL
-     3x  in_DX
-
-Example functions:
-  cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_00487e20
-    int in_EAX;...
-  crt_stdlib.c_memory_swap_FUN_005fdf10
-    uint in_ECX;...
-  crt_cpp.c_reportPureVirtualError_FUN_00605b23
-    ushort in_DS;...
-  crt_memory.c___stosd_FUN_00603b37
-    uint in_ECX;...
-
-====================================================================================================
 TYPE: warning_inlined_function (264 occurrences)
 ====================================================================================================
 
@@ -552,6 +529,33 @@ Example functions:
     /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
     /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */...
+
+====================================================================================================
+TYPE: register_param (252 occurrences)
+====================================================================================================
+
+Unique patterns:
+    83x  in_ECX
+    65x  in_EAX
+    63x  in_EDX
+    20x  in_DS
+    14x  in_AX
+     4x  in_AL
+     3x  in_DX
+
+Example functions:
+  crt_stdlib.c_memory_swap_FUN_005fdf10
+    uint in_ECX;...
+  crt_cpp.c_reportPureVirtualError_FUN_00605b23
+    ushort in_DS;...
+  crt_memory.c___stosd_FUN_00603b37
+    uint in_ECX;...
+  crt_memory.c___memfill_FUN_00603b00
+    uint in_ECX;...
+  crt_watcom.c_FUN_004b1b31
+    uint *in_ECX;...
+  crt_watcom.c_FUN_004b1b41
+    ushort *in_ECX;...
 
 ====================================================================================================
 TYPE: unresolved_funcptr (174 occurrences)
@@ -746,54 +750,6 @@ Example functions:
     int aiStackY_10d4 [1015];...
 
 ====================================================================================================
-TYPE: extra_output (132 occurrences)
-====================================================================================================
-
-Unique patterns:
-    38x  extraout_EAX
-    21x  extraout_EDI
-    14x  extraout_EBX
-     8x  extraout_EAX_00
-     8x  extraout_var
-     6x  extraout_AL
-     5x  extraout_ST0_00
-     4x  extraout_ST0
-     4x  extraout_ST1
-     4x  extraout_ST2
-     2x  extraout_EDX
-     2x  extraout_ESI
-     2x  extraout_ST1_00
-     2x  extraout_ST3
-     2x  extraout_EAX_01
-     2x  extraout_EAX_02
-     2x  extraout_EAX_03
-     2x  extraout_EAX_04
-     2x  extraout_EAX_05
-     2x  extraout_EAX_06
-
-Example functions:
-  crt_process.c_spawnvp_FUN_0060f39c
-    char *extraout_EAX;...
-  crt_stdlib.c__qsort_FUN_005fdf38
-    void *extraout_EAX;...
-  crt_fstream.cpp_ifstream_ctor_FUN_005ff664
-    int extraout_EAX;...
-  crt_fstream.cpp_ofstream_ctor_FUN_005ff710
-    int extraout_EAX;...
-  crt_memory.c___memfill_FUN_00603b00
-    byte *extraout_EAX;...
-  crt_math.c_atan2_FUN_0060c440
-    float10 extraout_ST0;...
-  crt_math.c_asin_FUN_00600b94
-    char extraout_AL;...
-  crt_math.c_acos_FUN_00600162
-    char extraout_AL;...
-  crt_math.c_pow_FUN_005ffd76
-    char extraout_AL;...
-  crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388
-    BOOL extraout_EAX;...
-
-====================================================================================================
 TYPE: warning_type_propagation (132 occurrences)
 ====================================================================================================
 
@@ -863,68 +819,6 @@ Example functions:
     /* WARNING: Type propagation algorithm not settling */...
 
 ====================================================================================================
-TYPE: negative_offset (125 occurrences)
-====================================================================================================
-
-Unique patterns:
-     8x  this_ptr[-1].
-     7x  pCVar1[-2].
-     7x  pCVar5[-1].
-     6x  pSVar18[-1].
-     5x  piVar2[-2].
-     5x  pCVar7[-1].
-     4x  piVar4[-2].
-     4x  this_ptr[-2].
-     4x  p_Var1[-2].
-     4x  pCVar1[-1].
-     3x  p_Var3[-2].
-     3x  p_Var3[-1].
-     3x  piVar2[-1].
-     3x  pCVar4[-2].
-     3x  pCVar2[-1].
-     3x  collision_triangle_list[-1].
-     3x  pCVar2[-2].
-     3x  pCVar6[-1].
-     2x  p_Var2[-2].
-     2x  p_Var2[-1].
-
-Example functions:
-  crt_fstream.cpp_ifstream_ctor_FUN_005ff664
-    this_ptr = &piVar4[-2].__tied_stream;...
-  crt_fstream.cpp_fstreambase_ctor_FUN_00606456
-    this_ptr = (fstreambase *)&piVar2[-2].__enabled_exceptions;...
-  crt_fstream.cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e
-    crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(&this_ptr[-2]._ios.__fill_character,d...
-  crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc
-    ((fstreambase *)&p_Var1[-2]._ios.__fill_character,1);...
-  crt_fstream.cpp_ifstream_destructor_thunk_from_istream_FUN_005ff6e2
-    crt_fstream_cpp_ifstream_dtor_FUN_005ff856(&this_ptr[-2]._ios.__i_lock,dtor_flag...
-  crt_fstream.cpp_ifstream_destructor_thunk_from_ios_FUN_005ff6f8
-    ((void *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
-  crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_006064f1
-    ((fstreambase *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
-  crt_fstream.cpp_ofstream_ctor_FUN_005ff710
-    this_ptr = &piVar4[-2].__format_flags;...
-  crt_fstream.cpp_ofstream_ctor_FUN_005ff95c
-    this_ptr = &piVar5[-2].__format_flags;...
-  crt_fstream.cpp_fstreambase_ctor_FUN_0060658f
-    this_ptr = (fstreambase *)&piVar4[-2].__enabled_exceptions;...
-  crt_fstream.cpp_ifstream_dtor_FUN_005ff856
-    ((fstreambase *)&p_Var1[-2]._ios.__i_lock,1);...
-  crt_fstream.cpp_ofstream_destructor_thunk_from_ios_FUN_005ff7a4
-    ((void *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
-  crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0
-    this_ptr = &piVar5[-2].__tied_stream;...
-  crt_fstream.cpp_fstreambase_dtor_FUN_00606509
-    this_ptr = (fstreambase *)(pfVar2[-1].__unbuffered_get_area + 4);...
-  crt_heap.c_InsertHeapBlockInOrder_FUN_006095f0
-    puVar1 = pHVar3[-1].free_list_area + (new_block->size - 0x20);...
-  crt_heap.c_ResizeBlockInPlace_FUN_006097b8
-    ppHVar1 = &in_stack_00000008[-1].next_heap_block;...
-  crt_iostream.cpp_istream_destructor_thunk_from_ios_FUN_006063c9
-    ((_istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
-
-====================================================================================================
 TYPE: sub84_truncation (107 occurrences)
 ====================================================================================================
 
@@ -970,11 +864,73 @@ Example functions:
     SUB84(__BITCAST_UINT64(dVar1),0),...
 
 ====================================================================================================
-TYPE: warning_unreachable (79 occurrences)
+TYPE: negative_offset (85 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    79x  WARNING: Removing unreachable block
+     8x  this_ptr[-1].
+     6x  pSVar18[-1].
+     5x  piVar2[-2].
+     4x  piVar4[-2].
+     4x  this_ptr[-2].
+     4x  p_Var1[-2].
+     3x  p_Var3[-2].
+     3x  p_Var3[-1].
+     3x  piVar2[-1].
+     3x  pCVar7[-1].
+     3x  collision_triangle_list[-1].
+     2x  p_Var2[-2].
+     2x  p_Var2[-1].
+     2x  this_ptr_00[-1].
+     2x  piVar5[-2].
+     2x  pSVar6[-1].
+     2x  local_14[-1].
+     2x  local_188[-1].
+     2x  pCVar12[-1].
+     1x  buffer_ptr[-1].
+
+Example functions:
+  crt_fstream.cpp_ifstream_ctor_FUN_005ff664
+    this_ptr = &piVar4[-2].__tied_stream;...
+  crt_fstream.cpp_fstreambase_ctor_FUN_00606456
+    this_ptr = (fstreambase *)&piVar2[-2].__enabled_exceptions;...
+  crt_fstream.cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e
+    crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(&this_ptr[-2]._ios.__fill_character,d...
+  crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc
+    ((fstreambase *)&p_Var1[-2]._ios.__fill_character,1);...
+  crt_fstream.cpp_ifstream_destructor_thunk_from_istream_FUN_005ff6e2
+    crt_fstream_cpp_ifstream_dtor_FUN_005ff856(&this_ptr[-2]._ios.__i_lock,dtor_flag...
+  crt_fstream.cpp_ifstream_destructor_thunk_from_ios_FUN_005ff6f8
+    ((void *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
+  crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_006064f1
+    ((fstreambase *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
+  crt_fstream.cpp_ofstream_ctor_FUN_005ff710
+    this_ptr = &piVar4[-2].__format_flags;...
+  crt_fstream.cpp_ofstream_ctor_FUN_005ff95c
+    this_ptr = &piVar5[-2].__format_flags;...
+  crt_fstream.cpp_fstreambase_ctor_FUN_0060658f
+    this_ptr = (fstreambase *)&piVar4[-2].__enabled_exceptions;...
+  crt_fstream.cpp_ifstream_dtor_FUN_005ff856
+    ((fstreambase *)&p_Var1[-2]._ios.__i_lock,1);...
+  crt_fstream.cpp_ofstream_destructor_thunk_from_ios_FUN_005ff7a4
+    ((void *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
+  crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0
+    this_ptr = &piVar5[-2].__tied_stream;...
+  crt_fstream.cpp_fstreambase_dtor_FUN_00606509
+    this_ptr = (fstreambase *)(pfVar2[-1].__unbuffered_get_area + 4);...
+  crt_heap.c_InsertHeapBlockInOrder_FUN_006095f0
+    puVar1 = pHVar3[-1].free_list_area + (new_block->size - 0x20);...
+  crt_heap.c_ResizeBlockInPlace_FUN_006097b8
+    ppHVar1 = &in_stack_00000008[-1].next_heap_block;...
+  crt_iostream.cpp_istream_destructor_thunk_from_ios_FUN_006063c9
+    ((_istream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags);...
+
+====================================================================================================
+TYPE: warning_unreachable (84 occurrences)
+====================================================================================================
+
+Unique patterns:
+    84x  WARNING: Removing unreachable block
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
@@ -987,6 +943,12 @@ Example functions:
     /* WARNING: Removing unreachable block (ram,0x005fe232) */...
   crt_math.c_udivmod64_FUN_0060d3ed
     /* WARNING: Removing unreachable block (ram,0x0060d441) */...
+  crt_math.c_asin_FUN_00600b94
+    /* WARNING: Removing unreachable block (ram,0x00600ba7) */...
+  crt_math.c_acos_FUN_00600162
+    /* WARNING: Removing unreachable block (ram,0x0060018d) */...
+  crt_math.c_pow_FUN_005ffd76
+    /* WARNING: Removing unreachable block (ram,0x005ffe9d) */...
   crt_unknown.c_FUN_00600a64
     /* WARNING: Removing unreachable block (ram,0x00600ac1) */...
   crt_exception.c_ExceptionHandler_FUN_0060a9d8
@@ -1019,12 +981,6 @@ Example functions:
     /* WARNING: Removing unreachable block (ram,0x0048e859) */...
   core_inv.cpp_CInventory_clear_FUN_004fd0e0
     /* WARNING: Removing unreachable block (ram,0x004fd155) */...
-  core_zombie.cpp_CZombie_process_FUN_005f9470
-    /* WARNING: Removing unreachable block (ram,0x005faea9) */...
-  core_icepick.cpp_CIcePick_process_FUN_004f80b0
-    /* WARNING: Removing unreachable block (ram,0x004f86be) */...
-  core_script.cpp_clearSelections_FUN_005644e0
-    /* WARNING: Removing unreachable block (ram,0x00564514) */...
 
 ====================================================================================================
 TYPE: suspect_float (57 occurrences)
@@ -1252,6 +1208,43 @@ Example functions:
     while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVa...
   crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0
     if (((DAT_03f9b210 == (Heap *)0x0) ||...
+
+====================================================================================================
+TYPE: extra_output (46 occurrences)
+====================================================================================================
+
+Unique patterns:
+    19x  extraout_EAX
+     6x  extraout_ST0_00
+     4x  extraout_EAX_00
+     3x  extraout_ST0
+     2x  extraout_EDX
+     2x  extraout_EAX_01
+     2x  extraout_EAX_02
+     2x  extraout_EAX_03
+     2x  extraout_EAX_04
+     2x  extraout_EAX_05
+     2x  extraout_EAX_06
+
+Example functions:
+  crt_process.c_spawnvp_FUN_0060f39c
+    char *extraout_EAX;...
+  crt_stdlib.c__qsort_FUN_005fdf38
+    void *extraout_EAX;...
+  crt_fstream.cpp_ifstream_ctor_FUN_005ff664
+    int extraout_EAX;...
+  crt_fstream.cpp_ofstream_ctor_FUN_005ff710
+    int extraout_EAX;...
+  crt_memory.c___memfill_FUN_00603b00
+    byte *extraout_EAX;...
+  crt_math.c_atan2_FUN_0060c440
+    float10 extraout_ST0;...
+  crt_unknown.c_FUN_0060eb4b
+    uint extraout_EAX;...
+  crt_unknown.c_FUN_0060b586
+    uint extraout_EAX;...
+  crt_unknown.c_FUN_0060af5d
+    int extraout_EDX;...
 
 ====================================================================================================
 TYPE: mmx_assembly (34 occurrences)

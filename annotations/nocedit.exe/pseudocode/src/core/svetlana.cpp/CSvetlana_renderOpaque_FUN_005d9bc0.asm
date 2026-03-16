@@ -92,7 +92,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 005d9c89 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 005d9c8e | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 005d9c8f
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 005d9c94
     TEST EBX,EBX                        ; 005d9c97
     JNZ 0x005d9cdc                      ; 005d9c99

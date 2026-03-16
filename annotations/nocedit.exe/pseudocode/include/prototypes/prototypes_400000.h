@@ -204,7 +204,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonExtremeQualityMode_FUN_00
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineDepthLit_FUN_00406be0(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_setRenderAlpha_FUN_00406d60(SMRGLHeaderExtended *block);
-void __cdecl engine_3d_c_setRenderAlpha_FUN_00406d80(int alpha_color_value);
+int __cdecl engine_3d_c_setRenderAlpha_FUN_00406d80(int alpha_color_value);
 void __cdecl engine_3d_c_setBlendMode_FUN_00406dd0(int blend_mode);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSpecialEffectsPlaneMasked_FUN_00406de0(SMRGLHeaderPrimitive *prim);
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonSpecialEffectsAdvanced_FUN_00406f20(SMRGLHeaderPrimitive *prim);
@@ -218,7 +218,7 @@ void __cdecl engine_3d_c_renderPolygonAPIAdaptivePreprocessingWithUV_FUN_0040772
 void __cdecl engine_3d_c_setProcessorType_FUN_00407870(int processor_type);
 void __cdecl engine_3d_c_setRenderingQuality_FUN_00407880(int quality);
 void __cdecl engine_3d_c_dispatchMRGLBlockChain_FUN_00407890(SMRGLHeaderExtended *chain);
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive *primitive);
+void __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive *primitive);
 void __cdecl engine_3d_c_addFaceIfVisible_FUN_004079c0(SMRGLHeaderPrimitive *cull_reference,SMRGLHeaderPrimitive *face_to_queue);
 void __cdecl engine_3d_c_flushRenderQueue_FUN_00407a30(void);
 void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SMRGLHeaderExtended *mrgl);

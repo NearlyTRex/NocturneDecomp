@@ -2,35 +2,90 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals (after filtering): 233
-Clusters detected: 39
-DAT_ globals in clusters: 186
+Total DAT_ globals found: 582
+Filtered out (inside named data): 1177
+Immediate constants (not real globals): 10
+Real globals remaining: 572
+Clusters detected: 79
+DAT_ globals in clusters: 526
 
 Classification summary:
-  unknown              12 clusters
-  char_array           10 clusters
-  struct               9 clusters
-  vector_groups        4 clusters
-  array                3 clusters
-  byte_blob            1 clusters
+  unknown              27 clusters
+  vector_groups        16 clusters
+  struct               15 clusters
+  array                11 clusters
+  char_array           6 clusters
+  byte_blob            2 clusters
+  struct_array         2 clusters
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE (11 clusters)
+LIKELY IMMEDIATE CONSTANTS (10)
+--------------------------------------------------------------------------------
+These DAT_ globals are never dereferenced as memory addresses.
+They appear only as inline constant values (e.g. MOV EDX,0xf80000).
+Consider removing the Ghidra label and leaving the raw number.
+
+  DAT_00b71b00  value=0xB71B00 (12000000)  refs=3
+    configureGraphicsOptions
+      CMP dword ptr [ESP + 0x124],0xb71b00 ; 0051119d | DAT_00b71b00
+
+  DAT_02d13b58  value=0x2D13B58  refs=2
+    loadDebrisAssets
+      PUSH 0x2d13b58                      ; 004c391d | DAT_02d13b58
+
+  DAT_03275924  value=0x3275924  refs=2
+    CDemonMission_editActorsInSet
+      PUSH 0x3275924                      ; 005393ce | DAT_03275924
+    CGame_processFrame
+      PUSH 0x3275924                      ; 004da5b1 | DAT_03275924
+
+  DAT_016e3600  value=0x16E3600  refs=2
+    configureGraphicsOptions
+      CMP dword ptr [ESP + 0x124],0x16e3600 ; 00511179 | DAT_016e3600
+
+  DAT_00766880  value=0x766880 (7760000)  refs=2
+    COptimize_exportOptimizeGeometry
+      PUSH 0x766880                       ; 005d7e07 | DAT_00766880
+    loadS3DModelFile
+      PUSH 0x766880                       ; 004597f7 | DAT_00766880
+
+  DAT_02f7c9f0  value=0x2F7C9F0  refs=1
+    CNetGame_addChatHistory
+      PUSH 0x2f7c9f0                      ; 0054244b | DAT_02f7c9f0
+
+  DAT_00665db8  value=0x665DB8 (6708664)  refs=1
+    ostream_ctor
+      MOV dword ptr [EAX],0x665db8        ; 006061cd | DAT_00665db8
+
+  DAT_00684ff4  value=0x684FF4 (6836212)  refs=1
+    InitializeWinAppRuntime
+      PUSH 0x684ff4                       ; 006026c2 | DAT_00684ff4
+
+  DAT_00665d60  value=0x665D60 (6708576)  refs=1
+    strstreambase_ctor
+      MOV dword ptr [EBX],0x665d60        ; 00606173 | DAT_00665d60
+
+  DAT_00684d12  value=0x684D12 (6835474)  refs=1
+    FUN_00608fdc
+      CMP EAX,0x684d12                    ; 00609020 | DAT_00684d12
+
+--------------------------------------------------------------------------------
+HIGH CONFIDENCE (7 clusters)
 --------------------------------------------------------------------------------
 
-  0x0067241c - 0x00672458  (16 items, 60 bytes span)
+  0x030c3df8 - 0x030c3e24  (12 items, 44 bytes span)
     Classification: array
-    Likely type: int[16]
-    Reason: 16 elements at stride 4
+    Likely type: int[12]
+    Reason: 12 elements at stride 4
     Referenced by: 1 functions
-     near: g_PerspectiveColorCache[15] (undefined4) at +4
-      0x0067241c  DAT_0067241c  undefined4
-      0x00672420  DAT_00672420  undefined4
-      0x00672424  DAT_00672424  undefined4
-      0x00672428  DAT_00672428  undefined4
-      0x0067242c  DAT_0067242c  undefined4
-      0x00672430  DAT_00672430  undefined4
-      ... +10 more
+     near: g_PathfindingQueue[0].z (undefined4) at +4
+      0x030c3df8  DAT_030c3df8  undefined4
+      0x030c3dfc  DAT_030c3dfc  undefined4
+      0x030c3e00  DAT_030c3e00  undefined4
+      0x030c3e04  DAT_030c3e04  undefined4
+      0x030c3e08  DAT_030c3e08  undefined4
+      0x030c3e0c  DAT_030c3e0c  undefined4
+      ... +6 more
 
   0x013da8b7 - 0x013da8ba  (4 items, 3 bytes span)
     Classification: char_array
@@ -43,37 +98,6 @@ HIGH CONFIDENCE (11 clusters)
       0x013da8b9  DAT_013da8b9  undefined4 [byte]
       0x013da8ba  DAT_013da8ba  undefined4
 
-  0x03f98ff1 - 0x03f98ff4  (4 items, 3 bytes span)
-    Classification: char_array
-    Likely type: char[5]
-    Reason: 4 consecutive bytes
-    Referenced by: 1 functions
-     near: g_CommandLineBuffer (byte) at +1
-      0x03f98ff1  DAT_03f98ff1  undefined1 [byte]
-      0x03f98ff2  DAT_03f98ff2  undefined1 [byte]
-      0x03f98ff3  DAT_03f98ff3  undefined1
-      0x03f98ff4  DAT_03f98ff4  undefined1
-
-  0x0067b559 - 0x0067b55b  (3 items, 2 bytes span)
-    Classification: char_array
-    Likely type: char[4]
-    Reason: 3 consecutive bytes
-    Referenced by: 1 functions
-     near: g_TempFilenameBuffer (undefined4) at +1
-      0x0067b559  DAT_0067b559  undefined4 [byte]
-      0x0067b55a  DAT_0067b55a  undefined4
-      0x0067b55b  DAT_0067b55b  undefined4
-
-  0x013ed375 - 0x013ed377  (3 items, 2 bytes span)
-    Classification: char_array
-    Likely type: char[4]
-    Reason: 3 consecutive bytes
-    Referenced by: 2 functions
-     near: g_CameraImageDecompressBuffer (SFogImagePlane[16]) at -3
-      0x013ed375  DAT_013ed375  undefined4
-      0x013ed376  DAT_013ed376  undefined4
-      0x013ed377  DAT_013ed377  undefined4 [byte]
-
   0x03f87364 - 0x03f87366  (3 items, 2 bytes span)
     Classification: char_array
     Likely type: char[4]
@@ -84,32 +108,6 @@ HIGH CONFIDENCE (11 clusters)
       0x03f87365  DAT_03f87365  undefined4 [byte]
       0x03f87366  DAT_03f87366  undefined4
 
-  0x00ba8db8 - 0x00ba8db9  (2 items, 1 bytes span)
-    Classification: char_array
-    Likely type: char[3]
-    Reason: 2 consecutive bytes
-    Referenced by: 4 functions
-     near: g_CoronaBlurOutputBuffer (char[241][320]) at +320
-      0x00ba8db8  DAT_00ba8db8  undefined4 [byte]
-      0x00ba8db9  DAT_00ba8db9  undefined4
-
-  0x00c196fc - 0x00c196fd  (2 items, 1 bytes span)
-    Classification: char_array
-    Likely type: char[3]
-    Reason: 2 consecutive bytes
-    Referenced by: 3 functions
-     near: g_CameraImagePaletteData (SRGBColorPalette) at +4
-      0x00c196fc  DAT_00c196fc  undefined4
-      0x00c196fd  DAT_00c196fd  undefined4
-
-  0x00fdffff - 0x00fe0000  (2 items, 1 bytes span)
-    Classification: char_array
-    Likely type: char[3]
-    Reason: 2 consecutive bytes
-    Referenced by: 5 functions
-      0x00fdffff  DAT_00fdffff  undefined4
-      0x00fe0000  DAT_00fe0000  undefined4
-
   0x00ffffff - 0x01000000  (2 items, 1 bytes span)
     Classification: char_array
     Likely type: char[3]
@@ -117,6 +115,15 @@ HIGH CONFIDENCE (11 clusters)
     Referenced by: 11 functions
       0x00ffffff  DAT_00ffffff  undefined4
       0x01000000  DAT_01000000  undefined4
+
+  0x013da779 - 0x013da77a  (2 items, 1 bytes span)
+    Classification: char_array
+    Likely type: char[3]
+    Reason: 2 consecutive bytes
+    Referenced by: 4 functions
+     near: g_CameraPlaneWorkBuffer (SFogImagePlane) at +1
+      0x013da779  DAT_013da779  undefined4 [byte]
+      0x013da77a  DAT_013da77a  undefined4
 
   0x013da9f8 - 0x013da9f9  (2 items, 1 bytes span)
     Classification: char_array
@@ -127,15 +134,24 @@ HIGH CONFIDENCE (11 clusters)
       0x013da9f8  DAT_013da9f8  undefined4
       0x013da9f9  DAT_013da9f9  undefined4
 
+  0x031101c4 - 0x031101c5  (2 items, 1 bytes span)
+    Classification: char_array
+    Likely type: char[3]
+    Reason: 2 consecutive bytes
+    Referenced by: 1 functions
+     near: g_CurrentLineBuffer (undefined4) at +4
+      0x031101c4  DAT_031101c4  undefined4
+      0x031101c5  DAT_031101c5  undefined4
+
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE (7 clusters)
+MEDIUM CONFIDENCE (30 clusters)
 --------------------------------------------------------------------------------
 
-  0x016e978c - 0x016e9908  (17 items, 380 bytes span)
+  0x016e978c - 0x016e9c0c  (56 items, 1152 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
-    Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 1 functions
+    Reason: 9 groups of 3 consecutive ints found
+    Referenced by: 65 functions
      near: g_PolygonCount (int) at -384
       0x016e978c  DAT_016e978c  undefined4
       0x016e9790  DAT_016e9790  undefined4 [byte]
@@ -143,35 +159,203 @@ MEDIUM CONFIDENCE (7 clusters)
       0x016e9830  DAT_016e9830  undefined4
       0x016e9834  DAT_016e9834  undefined4 [float]
       0x016e9838  DAT_016e9838  undefined4 [float]
-      ... +11 more
+      ... +50 more
 
-  0x0067e6e8 - 0x0067e760  (15 items, 120 bytes span)
+  0x0083c1e0 - 0x0083c29c  (28 items, 188 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
-    Reason: 2 groups of 3 consecutive ints found
-    Referenced by: 3 functions
-     near: g_Layer3BandIndex[0].l[3] (undefined4) at +20
-      0x0067e6e8  DAT_0067e6e8  undefined4
-      0x0067e6f8  DAT_0067e6f8  undefined4
-      0x0067e6fc  DAT_0067e6fc  undefined4
-      0x0067e718  DAT_0067e718  undefined4
-      0x0067e71c  DAT_0067e71c  undefined4
-      0x0067e728  DAT_0067e728  undefined4
-      ... +9 more
+    Reason: 7 groups of 3 consecutive ints found
+    Referenced by: 12 functions
+     near: g_CramSortedTextureEntries (CCramTex[250]) at +4
+      0x0083c1e0  DAT_0083c1e0  undefined4
+      0x0083c208  DAT_0083c208  undefined4
+      0x0083c20c  DAT_0083c20c  undefined4
+      0x0083c210  DAT_0083c210  undefined4
+      0x0083c214  DAT_0083c214  undefined4
+      0x0083c218  DAT_0083c218  undefined4
+      ... +22 more
 
-  0x00684f30 - 0x006850b8  (15 items, 392 bytes span)
+  0x01e8d265 - 0x01e8d4b0  (27 items, 587 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 6 groups of 3 consecutive ints found
+    Referenced by: 4 functions
+     near: g_TextureAtlasEntries (STextureAtlasEntry[250]) at +1
+      0x01e8d265  DAT_01e8d265  undefined4 [byte]
+      0x01e8d266  DAT_01e8d266  undefined4
+      0x01e8d267  DAT_01e8d267  undefined4
+      0x01e8d364  DAT_01e8d364  undefined4 [byte]
+      0x01e8d365  DAT_01e8d365  undefined4 [byte]
+      0x01e8d366  DAT_01e8d366  undefined4
+      ... +21 more
+
+  0x01626410 - 0x01626478  (19 items, 104 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 5 groups of 3 consecutive ints found
+    Referenced by: 60 functions
+     near: g_LoadedVertices (SVertexData[20000]) at +4
+      0x01626410  DAT_01626410  undefined4 [float]
+      0x01626411  DAT_01626410+1  undefined4
+      0x01626418  DAT_01626418  undefined4 [float]
+      0x0162641c  DAT_0162641c  undefined4 [float]
+      0x01626420  DAT_01626420  undefined4 [float]
+      0x01626424  DAT_01626424  undefined4 [float]
+      ... +13 more
+
+  0x00840c18 - 0x00840c64  (18 items, 76 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 6 groups of 3 consecutive ints found
+    Referenced by: 6 functions
+     near: g_CramRectangles (SCramRectangle[50]) at +4
+      0x00840c18  DAT_00840c18  undefined4
+      0x00840c1c  DAT_00840c1c  undefined4
+      0x00840c20  DAT_00840c20  undefined4
+      0x00840c24  DAT_00840c24  undefined4
+      0x00840c28  DAT_00840c28  undefined4
+      0x00840c2c  DAT_00840c2c  undefined4
+      ... +12 more
+
+  0x03261368 - 0x032613d8  (18 items, 112 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 4 groups of 3 consecutive ints found
+    Referenced by: 45 functions
+     near: g_CDemonSetInstance.actor_count (undefined4) at -100
+      0x03261368  DAT_03261368  undefined4
+      0x03261388  DAT_03261388  undefined4 [float]
+      0x0326138c  DAT_0326138c  undefined4 [float]
+      0x03261390  DAT_03261390  undefined4 [float]
+      0x03261394  DAT_03261394  undefined4 [float]
+      0x03261398  DAT_03261398  undefined4 [float]
+      ... +12 more
+
+  0x0326eea8 - 0x0326ef24  (17 items, 124 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 5 groups of 3 consecutive ints found
+    Referenced by: 13 functions
+     near: g_CDemonSetInstance.lighting_quality_mode (undefined4) at -80
+      0x0326eea8  DAT_0326eea8  undefined4
+      0x0326eeac  DAT_0326eeac  undefined4
+      0x0326eeb0  DAT_0326eeb0  undefined4
+      0x0326eeb4  DAT_0326eeb4  undefined4
+      0x0326eeb8  DAT_0326eeb8  undefined4
+      0x0326eebc  DAT_0326eebc  undefined4
+      ... +11 more
+
+  0x02f9c060 - 0x02f9c18c  (13 items, 300 bytes span)
     Classification: vector_groups
     Likely type: likely contains CVector3i/f fields
     Reason: 3 groups of 3 consecutive ints found
-    Referenced by: 5 functions
+    Referenced by: 6 functions
+     near: INT_02f9c0bc (int) at -92
+      0x02f9c060  DAT_02f9c060  undefined4
+      0x02f9c064  DAT_02f9c064  undefined4
+      0x02f9c068  DAT_02f9c068  undefined4
+      0x02f9c0c8  DAT_02f9c0c8  undefined4
+      0x02f9c0cc  DAT_02f9c0cc  undefined4
+      0x02f9c0d0  DAT_02f9c0d0  undefined4
+      ... +7 more
+
+  0x00684f30 - 0x006850b8  (11 items, 392 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 2 groups of 3 consecutive ints found
+    Referenced by: 4 functions
      near: g_SpecialExitHandler (int) at +4
       0x00684f30  DAT_00684f30  int
       0x00684f34  DAT_00684f34  int
       0x00684f38  DAT_00684f38  undefined2 [short]
-      0x00684ff4  DAT_00684ff4  undefined4
       0x00685030  DAT_00685030  undefined4 [byte]
-      0x00685080  DAT_00685080  undefined4
-      ... +9 more
+      0x00685090  DAT_00685090  undefined4
+      0x00685094  DAT_00685094  undefined4
+      ... +5 more
+
+  0x02d873e0 - 0x02d87434  (11 items, 84 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 3 groups of 3 consecutive ints found
+    Referenced by: 5 functions
+     near: g_BloodSplats (CBloodSplat[2000]) at +4
+      0x02d873e0  DAT_02d873e0  undefined4 [float]
+      0x02d873e4  DAT_02d873e4  undefined4 [float]
+      0x02d873e8  DAT_02d873e8  undefined4 [float]
+      0x02d873ec  DAT_02d873ec  undefined4
+      0x02d873f0  DAT_02d873f0  undefined4
+      0x02d87420  DAT_02d87420  undefined4
+      ... +5 more
+
+  0x0326f0c0 - 0x0326f118  (11 items, 88 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 3 groups of 3 consecutive ints found
+    Referenced by: 10 functions
+     near: g_CDemonSetInstance.selected_camera_index (undefined4) at -92
+      0x0326f0c0  DAT_0326f0c0  undefined4
+      0x0326f0e8  DAT_0326f0e8  undefined4
+      0x0326f0ec  DAT_0326f0ec  undefined4
+      0x0326f0f0  DAT_0326f0f0  undefined4
+      0x0326f0f4  DAT_0326f0f4  undefined4
+      0x0326f0f8  DAT_0326f0f8  undefined4
+      ... +5 more
+
+  0x00772b04 - 0x00772c14  (10 items, 272 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 2 groups of 3 consecutive ints found
+    Referenced by: 2 functions
+     near: g_RenderBufferPool (SRenderBufferEntry[256]) at +4
+      0x00772b04  DAT_00772b04  undefined4
+      0x00772b08  DAT_00772b08  undefined4
+      0x00772b0c  DAT_00772b0c  undefined4
+      0x00772b34  DAT_00772b34  undefined4
+      0x00772b3c  DAT_00772b3c  undefined4
+      0x00772bc4  DAT_00772bc4  undefined4
+      ... +4 more
+
+  0x00827504 - 0x00827590  (10 items, 140 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 2 groups of 3 consecutive ints found
+    Referenced by: 1 functions
+     near: g_ClothBackfaceBuffer (SMRGLPrimitiveQuad[1000]) at +4
+      0x00827504  DAT_00827504  undefined4
+      0x00827518  DAT_00827518  undefined4
+      0x0082751c  DAT_0082751c  undefined4
+      0x00827520  DAT_00827520  undefined4
+      0x00827524  DAT_00827524  undefined4
+      0x00827528  DAT_00827528  undefined4
+      ... +4 more
+
+  0x02d53e18 - 0x02d53e80  (10 items, 104 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 2 groups of 3 consecutive ints found
+    Referenced by: 4 functions
+     near: g_SparkPool (CSpark[256]) at +24
+      0x02d53e18  DAT_02d53e18  undefined4 [float]
+      0x02d53e34  DAT_02d53e34  undefined4
+      0x02d53e38  DAT_02d53e38  undefined4
+      0x02d53e3c  DAT_02d53e3c  undefined4
+      0x02d53e40  DAT_02d53e40  undefined4
+      0x02d53e44  DAT_02d53e44  undefined4
+      ... +4 more
+
+  0x02f2a4e0 - 0x02f2a5a0  (9 items, 192 bytes span)
+    Classification: vector_groups
+    Likely type: likely contains CVector3i/f fields
+    Reason: 2 groups of 3 consecutive ints found
+    Referenced by: 1 functions
+     near: g_TempNeighborFaces (CLodFace[200]) at +16
+      0x02f2a4e0  DAT_02f2a4e0  undefined4
+      0x02f2a4e4  DAT_02f2a4e4  undefined4
+      0x02f2a4e8  DAT_02f2a4e8  undefined4
+      0x02f2a514  DAT_02f2a514  undefined4 [float]
+      0x02f2a518  DAT_02f2a518  undefined4 [float]
+      0x02f2a51c  DAT_02f2a51c  undefined4 [float]
+      ... +3 more
 
   0x03f69b44 - 0x03f69b59  (7 items, 21 bytes span)
     Classification: vector_groups
@@ -187,46 +371,214 @@ MEDIUM CONFIDENCE (7 clusters)
       0x03f69b58  DAT_03f69b58  undefined4 [byte]
       ... +1 more
 
-  0x03f48f88 - 0x03f48f9c  (6 items, 20 bytes span)
+  0x006597a1 - 0x006597a7  (6 items, 6 bytes span)
+    Classification: byte_blob
+    Likely type: char[] or byte[]
+    Reason: 4/5 strides are 1 byte
+    Referenced by: 1 functions
+     near: g_ColonChar (char) at +1
+      0x006597a1  DAT_006597a1  undefined1 [byte]
+      0x006597a2  DAT_006597a2  undefined1
+      0x006597a3  DAT_006597a3  undefined1
+      0x006597a5  DAT_006597a5  undefined1 [byte]
+      0x006597a6  DAT_006597a6  undefined1
+      0x006597a7  DAT_006597a7  undefined1
+
+  0x00903e74 - 0x00903e88  (6 items, 20 bytes span)
+    Classification: array
+    Likely type: int[6]
+    Reason: 6 elements at stride 4
+    Referenced by: 3 functions
+      0x00903e74  DAT_00903e74  undefined4
+      0x00903e78  DAT_00903e78  undefined4
+      0x00903e7c  DAT_00903e7c  undefined4
+      0x00903e80  DAT_00903e80  undefined4
+      0x00903e84  DAT_00903e84  undefined4
+      0x00903e88  DAT_00903e88  undefined4
+
+  0x00ac7c74 - 0x00ac7c88  (6 items, 20 bytes span)
     Classification: array
     Likely type: float[6]
     Reason: 6 elements at stride 4
-    Referenced by: 3 functions
-     near: g_CSlewInstance (CSlew) at +4
-      0x03f48f88  DAT_03f48f88  undefined4 [float]
-      0x03f48f8c  DAT_03f48f8c  undefined4 [float]
-      0x03f48f90  DAT_03f48f90  undefined4 [float]
-      0x03f48f94  DAT_03f48f94  undefined4 [float]
-      0x03f48f98  DAT_03f48f98  undefined4 [float]
-      0x03f48f9c  DAT_03f48f9c  undefined4 [float]
+    Referenced by: 2 functions
+      0x00ac7c74  DAT_00ac7c74  undefined4 [float]
+      0x00ac7c78  DAT_00ac7c78  undefined4 [float]
+      0x00ac7c7c  DAT_00ac7c7c  undefined4 [float]
+      0x00ac7c80  DAT_00ac7c80  undefined4 [float]
+      0x00ac7c84  DAT_00ac7c84  undefined4 [float]
+      0x00ac7c88  DAT_00ac7c88  undefined4 [float]
 
-  0x0066ff28 - 0x0066ff38  (5 items, 16 bytes span)
+  0x013ed375 - 0x013ed37a  (5 items, 5 bytes span)
+    Classification: byte_blob
+    Likely type: char[] or byte[]
+    Reason: 3/4 strides are 1 byte
+    Referenced by: 4 functions
+     near: g_CameraImageDecompressBuffer (SFogImagePlane[16]) at -3
+      0x013ed375  DAT_013ed375  undefined4
+      0x013ed376  DAT_013ed376  undefined4
+      0x013ed377  DAT_013ed377  undefined4 [byte]
+      0x013ed379  DAT_013ed379  undefined4 [byte]
+      0x013ed37a  DAT_013ed37a  undefined4
+
+  0x02c14d80 - 0x02c14d90  (5 items, 16 bytes span)
+    Classification: array
+    Likely type: int[5]
+    Reason: 5 elements at stride 4
+    Referenced by: 1 functions
+     near: g_PolyDataConversionBuffer (char[72]) at +80
+      0x02c14d80  DAT_02c14d80  undefined4
+      0x02c14d84  DAT_02c14d84  undefined4
+      0x02c14d88  DAT_02c14d88  undefined4
+      0x02c14d8c  DAT_02c14d8c  undefined4
+      0x02c14d90  DAT_02c14d90  undefined4
+
+  0x02c6d604 - 0x02c6d614  (5 items, 16 bytes span)
     Classification: array
     Likely type: int[5]
     Reason: 5 elements at stride 4
     Referenced by: 2 functions
-     near: g_LightTextures (SMRGLTextureBasic[20]) at +80
-      0x0066ff28  DAT_0066ff28  undefined4
-      0x0066ff2c  DAT_0066ff2c  undefined4
-      0x0066ff30  DAT_0066ff30  undefined4
-      0x0066ff34  DAT_0066ff34  undefined4
-      0x0066ff38  DAT_0066ff38  undefined4
+     near: g_CapturedFaces[0].face_data.vertex_indices.vertex_index_0 (undefined4) at +4
+      0x02c6d604  DAT_02c6d604  undefined4
+      0x02c6d608  DAT_02c6d608  undefined4
+      0x02c6d60c  DAT_02c6d60c  undefined4
+      0x02c6d610  DAT_02c6d610  undefined4
+      0x02c6d614  DAT_02c6d614  undefined4
 
-  0x00823a80 - 0x00823b10  (5 items, 144 bytes span)
-    Classification: byte_blob
-    Likely type: char[] or byte[]
-    Reason: 3/4 strides are 1 byte
+  0x02f3dbb8 - 0x02f3dbc8  (5 items, 16 bytes span)
+    Classification: array
+    Likely type: int[5]
+    Reason: 5 elements at stride 4
+    Referenced by: 1 functions
+     near: g_MorphVertexBuffer (CVector3i[2000]) at +4
+      0x02f3dbb8  DAT_02f3dbb8  undefined4 [float]
+      0x02f3dbbc  DAT_02f3dbbc  undefined4 [float]
+      0x02f3dbc0  DAT_02f3dbc0  undefined4
+      0x02f3dbc4  DAT_02f3dbc4  undefined4
+      0x02f3dbc8  DAT_02f3dbc8  undefined4
+
+  0x032c1cd0 - 0x032c1ce0  (5 items, 16 bytes span)
+    Classification: array
+    Likely type: float[5]
+    Reason: 5 elements at stride 4
+    Referenced by: 1 functions
+     near: g_FaceNormalArray (CVector3f[4000]) at +4
+      0x032c1cd0  DAT_032c1cd0  undefined4 [float]
+      0x032c1cd4  DAT_032c1cd4  undefined4 [float]
+      0x032c1cd8  DAT_032c1cd8  undefined4
+      0x032c1cdc  DAT_032c1cdc  undefined4
+      0x032c1ce0  DAT_032c1ce0  undefined4
+
+  0x033081d0 - 0x033081e0  (5 items, 16 bytes span)
+    Classification: array
+    Likely type: float[5]
+    Reason: 5 elements at stride 4
+    Referenced by: 3 functions
+     near: g_VertexNormalArray (CVector3f[20000]) at +4
+      0x033081d0  DAT_033081d0  undefined4 [float]
+      0x033081d4  DAT_033081d4  undefined4 [float]
+      0x033081d8  DAT_033081d8  undefined4
+      0x033081dc  DAT_033081dc  undefined4
+      0x033081e0  DAT_033081e0  undefined4
+
+  0x03357ab0 - 0x03357ac0  (5 items, 16 bytes span)
+    Classification: array
+    Likely type: int[5]
+    Reason: 5 elements at stride 4
+    Referenced by: 1 functions
+     near: g_VDNearbyActorBoundingBoxes (CBoundingBox3D[2000]) at +4
+      0x03357ab0  DAT_03357ab0  undefined4 [float]
+      0x03357ab4  DAT_03357ab4  undefined4 [float]
+      0x03357ab8  DAT_03357ab8  undefined4
+      0x03357abc  DAT_03357abc  undefined4
+      0x03357ac0  DAT_03357ac0  undefined4
+
+  0x03675180 - 0x03675190  (5 items, 16 bytes span)
+    Classification: array
+    Likely type: int[5]
+    Reason: 5 elements at stride 4
+    Referenced by: 1 functions
+     near: g_FloatVertexArray (CVector3f[5000]) at +4
+      0x03675180  DAT_03675180  undefined4 [float]
+      0x03675184  DAT_03675184  undefined4 [float]
+      0x03675188  DAT_03675188  undefined4
+      0x0367518c  DAT_0367518c  undefined4
+      0x03675190  DAT_03675190  undefined4
+
+  0x03683be4 - 0x03683bf4  (5 items, 16 bytes span)
+    Classification: array
+    Likely type: int[5]
+    Reason: 5 elements at stride 4
+    Referenced by: 1 functions
+     near: g_ShatterVertexArray (CVector3f[3000]) at +4
+      0x03683be4  DAT_03683be4  undefined4 [float]
+      0x03683be8  DAT_03683be8  undefined4 [float]
+      0x03683bec  DAT_03683bec  undefined4
+      0x03683bf0  DAT_03683bf0  undefined4
+      0x03683bf4  DAT_03683bf4  undefined4
+
+  0x02dbabc8 - 0x02dbadc8  (3 items, 512 bytes span)
+    Classification: struct_array
+    Likely type: struct_256bytes[3]
+    Reason: 3 elements at stride 256
+    Referenced by: 3 functions
+     near: g_ItemDefinitionArray (SInventoryItemInfo[100]) at +256
+      0x02dbabc8  DAT_02dbabc8  undefined4
+      0x02dbacc8  DAT_02dbacc8  undefined4
+      0x02dbadc8  DAT_02dbadc8  undefined4
+
+  0x00904d74 - 0x00904d80  (2 items, 12 bytes span)
+    Classification: struct_array
+    Likely type: CVector3f[2] or CVector3i[2]
+    Reason: 2 elements at stride 12 (sizeof CVector3)
     Referenced by: 2 functions
-     near: g_CollisionTexture (SMRGLTextureBasic) at +8
-      0x00823a80  DAT_00823a80  undefined4 [byte]
-      0x00823a81  DAT_00823a81  undefined4 [byte]
-      0x00823a82  DAT_00823a82  undefined4
-      0x00823a83  DAT_00823a83  undefined4
-      0x00823b10  DAT_00823b10  undefined4
+      0x00904d74  DAT_00904d74  undefined4
+      0x00904d80  DAT_00904d80  undefined4
 
 --------------------------------------------------------------------------------
-LOW CONFIDENCE (21 clusters)
+LOW CONFIDENCE (42 clusters)
 --------------------------------------------------------------------------------
+
+  0x02f7c8a8 - 0x02f7c8f3  (12 items, 75 bytes span)
+    Classification: struct
+    Likely type: struct (75 bytes span, 12 fields)
+    Reason: mixed strides, shared by 6 functions
+    Referenced by: 6 functions
+     near: g_LastPingTime (int) at -12
+      0x02f7c8a8  DAT_02f7c8a8  undefined4
+      0x02f7c8ac  DAT_02f7c8ac  undefined4
+      0x02f7c8d4  DAT_02f7c8d4  undefined4 [short]
+      0x02f7c8d8  DAT_02f7c8d8  undefined4
+      0x02f7c8dc  DAT_02f7c8dc  undefined4 [byte]
+      0x02f7c8dd  DAT_02f7c8dd  undefined4 [byte]
+      ... +6 more
+
+  0x02f6828c - 0x02f682ad  (11 items, 33 bytes span)
+    Classification: struct
+    Likely type: struct (33 bytes span, 11 fields)
+    Reason: mixed strides, shared by 3 functions
+    Referenced by: 3 functions
+     near: g_HuffmanTables (SHuffmanTable[34]) at +4
+      0x02f6828c  DAT_02f6828c  undefined4
+      0x02f68290  DAT_02f68290  undefined4
+      0x02f68294  DAT_02f68294  undefined4 [byte]
+      0x02f68298  DAT_02f68298  undefined4
+      0x02f6829c  DAT_02f6829c  undefined4
+      0x02f682a8  DAT_02f682a8  undefined4 [byte]
+      ... +5 more
+
+  0x00688027 - 0x006880a4  (9 items, 125 bytes span)
+    Classification: struct
+    Likely type: struct (125 bytes span, 9 fields)
+    Reason: mixed strides, shared by 13 functions
+    Referenced by: 13 functions
+     near: g_RenderVertexBuffer[0].projected_vertex.screen_y (undefined4) at -1
+      0x00688027  DAT_00688024+3  undefined4 [byte]
+      0x00688044  DAT_00688044  undefined4
+      0x00688048  DAT_00688048  undefined4
+      0x0068804c  DAT_0068804c  undefined4
+      0x00688057  DAT_00688054+3  undefined4 [byte]
+      0x00688058  DAT_00688058  undefined4
+      ... +3 more
 
   0x03f6293c - 0x03f629b0  (7 items, 116 bytes span)
     Classification: struct
@@ -255,6 +607,32 @@ LOW CONFIDENCE (21 clusters)
       0x007725fc  DAT_007725fc  undefined4
       0x00772600  DAT_00772600  undefined4
 
+  0x02d7eb00 - 0x02d7eb33  (6 items, 51 bytes span)
+    Classification: struct
+    Likely type: struct (51 bytes span, 6 fields)
+    Reason: mixed strides, shared by 8 functions
+    Referenced by: 8 functions
+     near: g_CDemonLightInstance.base.base.position+8 (undefined4) at +4
+      0x02d7eb00  DAT_02d7eb00  undefined4
+      0x02d7eb04  DAT_02d7eb04  undefined4
+      0x02d7eb30  DAT_02d7eb30  undefined4 [byte]
+      0x02d7eb31  DAT_02d7eb31  undefined4 [byte]
+      0x02d7eb32  DAT_02d7eb32  undefined4
+      0x02d7eb33  DAT_02d7eb33  undefined4
+
+  0x0334710c - 0x033472e8  (6 items, 476 bytes span)
+    Classification: struct
+    Likely type: struct (476 bytes span, 6 fields)
+    Reason: mixed strides, shared by 4 functions
+    Referenced by: 4 functions
+     near: g_CZThumbPool (CZThumb[1500]) at +4
+      0x0334710c  DAT_0334710c  undefined4
+      0x03347130  DAT_03347130  undefined4
+      0x03347158  DAT_03347158  undefined4
+      0x03347180  DAT_03347180  undefined4
+      0x033471f8  DAT_033471f8  undefined4
+      0x033472e8  DAT_033472e8  undefined4
+
   0x03f62abc - 0x03f62b0c  (6 items, 80 bytes span)
     Classification: struct
     Likely type: struct (80 bytes span, 6 fields)
@@ -268,64 +646,41 @@ LOW CONFIDENCE (21 clusters)
       0x03f62b04  DAT_03f62b04  undefined4
       0x03f62b0c  DAT_03f62b0c  undefined4
 
-  0x006814ec - 0x00681534  (5 items, 72 bytes span)
+  0x00665f28 - 0x00666042  (5 items, 282 bytes span)
     Classification: struct
-    Likely type: struct (72 bytes span, 5 fields)
-    Reason: mixed strides, shared by 1 functions
-    Referenced by: 1 functions
-     near: g_BoundingBoxQuadTemplates (SMRGLPrimitiveQuad[6]) at +24
-      0x006814ec  DAT_006814ec  undefined4
-      0x00681524  DAT_00681524  undefined4
-      0x00681528  DAT_00681528  undefined4
-      0x0068152c  DAT_0068152c  undefined4
-      0x00681534  DAT_00681534  undefined4
-
-  0x00688057 - 0x006880a4  (5 items, 77 bytes span)
-    Classification: struct
-    Likely type: struct (77 bytes span, 5 fields)
-    Reason: mixed strides, shared by 3 functions
-    Referenced by: 3 functions
-     near: g_RenderVertexBuffer[1].projected_vertex.screen_x (undefined4) at +3
-      0x00688057  DAT_00688054+3  undefined4 [byte]
-      0x00688058  DAT_00688058  undefined4
-      0x00688074  DAT_00688074  undefined4
-      0x00688087  DAT_00688084+3  undefined4
-      0x006880a4  DAT_006880a4  undefined4
-
-  0x00825adc - 0x00825b6c  (5 items, 144 bytes span)
-    Classification: struct
-    Likely type: struct (144 bytes span, 5 fields)
-    Reason: mixed strides, shared by 1 functions
-    Referenced by: 1 functions
-     near: g_ClipperTempBuffer[1].projected_vertex.transformed_y (undefined4) at -4
-      0x00825adc  DAT_00825adc  undefined4
-      0x00825b3c  DAT_00825b3c  undefined4
-      0x00825b44  DAT_00825b44  undefined4
-      0x00825b48  DAT_00825b48  undefined4
-      0x00825b6c  DAT_00825b6c  undefined4
-
-  0x0083c1a0 - 0x0083c1b8  (5 items, 24 bytes span)
-    Classification: struct
-    Likely type: struct (24 bytes span, 5 fields)
-    Reason: mixed strides, shared by 4 functions
-    Referenced by: 4 functions
-     near: g_CZombieCowClassInfo (CDemonActorType) at +4
-      0x0083c1a0  DAT_0083c1a0  undefined4
-      0x0083c1ac  DAT_0083c1ac  undefined4
-      0x0083c1b0  DAT_0083c1b0  undefined4
-      0x0083c1b4  DAT_0083c1b4  undefined4
-      0x0083c1b8  DAT_0083c1b8  undefined4
-
-  0x00665f28 - 0x00665f50  (4 items, 40 bytes span)
-    Classification: struct
-    Likely type: struct (40 bytes span, 4 fields)
-    Reason: mixed strides, shared by 4 functions
-    Referenced by: 4 functions
+    Likely type: struct (282 bytes span, 5 fields)
+    Reason: mixed strides, shared by 8 functions
+    Referenced by: 8 functions
      near: g_PositiveInfinity (double) at -8
       0x00665f28  DAT_00665f28  undefined4 [byte]
-      0x00665f36  DAT_00665f34+2  undefined4
       0x00665f3a  DAT_00665f3a  undefined4
       0x00665f50  DAT_00665f50  undefined4
+      0x00666041  DAT_00666041  undefined4 [byte]
+      0x00666042  DAT_00666042  undefined4
+
+  0x02d59150 - 0x02d59208  (5 items, 184 bytes span)
+    Classification: struct
+    Likely type: struct (184 bytes span, 5 fields)
+    Reason: mixed strides, shared by 3 functions
+    Referenced by: 3 functions
+     near: g_GlassParticlePool (CGlassParticle[256]) at +24
+      0x02d59150  DAT_02d59150  undefined4 [float]
+      0x02d5916c  DAT_02d5916c  undefined4
+      0x02d591d4  DAT_02d591d4  undefined4
+      0x02d591ec  DAT_02d591ec  undefined4
+      0x02d59208  DAT_02d59208  undefined4
+
+  0x02d833ec - 0x02d83448  (5 items, 92 bytes span)
+    Classification: struct
+    Likely type: struct (92 bytes span, 5 fields)
+    Reason: mixed strides, shared by 3 functions
+    Referenced by: 3 functions
+     near: g_BloodParticles (CBloodParticle[256]) at +24
+      0x02d833ec  DAT_02d833ec  undefined4 [float]
+      0x02d83408  DAT_02d83408  undefined4
+      0x02d83414  DAT_02d83414  undefined4
+      0x02d8342c  DAT_02d8342c  undefined4
+      0x02d83448  DAT_02d83448  undefined4
 
   0x009e5d74 - 0x009e5d88  (4 items, 20 bytes span)
     Classification: struct
@@ -337,6 +692,59 @@ LOW CONFIDENCE (21 clusters)
       0x009e5d84  DAT_009e5d84  undefined4
       0x009e5d88  DAT_009e5d88  undefined4
 
+  0x02d831d6 - 0x02d831eb  (4 items, 21 bytes span)
+    Classification: struct
+    Likely type: struct (21 bytes span, 4 fields)
+    Reason: mixed strides, shared by 3 functions
+    Referenced by: 3 functions
+     near: g_InputHistory (char[20]) at -1
+      0x02d831d6  DAT_02d831d6  undefined1 [byte]
+      0x02d831e9  DAT_02d831e9  undefined4 [byte]
+      0x02d831ea  DAT_02d831ea  undefined4 [byte]
+      0x02d831eb  DAT_02d831eb  undefined1
+
+  0x032cd850 - 0x032cd864  (4 items, 20 bytes span)
+    Classification: struct
+    Likely type: struct (20 bytes span, 4 fields)
+    Reason: mixed strides, shared by 2 functions
+    Referenced by: 2 functions
+     near: g_TransformedVertexArray (CVector3i[20000]) at +4
+      0x032cd850  DAT_032cd850  undefined4
+      0x032cd854  DAT_032cd854  undefined4
+      0x032cd858  DAT_032cd858  undefined4
+      0x032cd864  DAT_032cd864  undefined4
+
+  0x03f9b850 - 0x03f9b8d0  (4 items, 128 bytes span)
+    Classification: struct
+    Likely type: struct (128 bytes span, 4 fields)
+    Reason: mixed strides, shared by 6 functions
+    Referenced by: 6 functions
+     near: g_EnvironStringArea (char**) at -16
+      0x03f9b850  DAT_03f9b850  undefined1 [byte]
+      0x03f9b851  DAT_03f9b851  undefined4 [byte]
+      0x03f9b874  DAT_03f9b874  undefined4 [byte]
+      0x03f9b8d0  DAT_03f9b8d0  undefined4
+
+  0x00685210 - 0x006852db  (3 items, 203 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 3 items, span=203 bytes
+    Referenced by: 3 functions
+     near: g_MaxHandleCount (uint) at -4
+      0x00685210  DAT_00685210  undefined4
+      0x0068528c  DAT_0068528c  undefined4
+      0x006852db  DAT_006852db  undefined1 [byte]
+
+  0x00902f78 - 0x00902f80  (3 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 3 items, span=8 bytes
+    Referenced by: 1 functions
+     near: g_PrecomputedWorldPositions (CVector3i[15360]) at +4
+      0x00902f78  DAT_00902f78  undefined4
+      0x00902f7c  DAT_00902f7c  undefined4
+      0x00902f80  DAT_00902f80  undefined4
+
   0x0132220c - 0x01322214  (3 items, 8 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -347,24 +755,51 @@ LOW CONFIDENCE (21 clusters)
       0x01322210  DAT_01322210  undefined4
       0x01322214  DAT_01322214  undefined4
 
-  0x03f6b9f8 - 0x03f6ba00  (3 items, 8 bytes span)
+  0x02cb3c30 - 0x02cb3c38  (3 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 3 items, span=8 bytes
+    Referenced by: 3 functions
+     near: g_PVSCubePositions (CVector3f[20000]) at +4
+      0x02cb3c30  DAT_02cb3c30  undefined4
+      0x02cb3c34  DAT_02cb3c34  undefined4
+      0x02cb3c38  DAT_02cb3c38  undefined4
+
+  0x02fec910 - 0x02fec918  (3 items, 8 bytes span)
     Classification: unknown
     Likely type: unknown grouping
     Reason: 3 items, span=8 bytes
     Referenced by: 1 functions
-     near: g_CSpotViewInstance (CSpotView) at +24
-      0x03f6b9f8  DAT_03f6b9f8  undefined4
-      0x03f6b9fc  DAT_03f6b9fc  undefined4
-      0x03f6ba00  DAT_03f6ba00  undefined4
+      0x02fec910  DAT_02fec910  undefined4
+      0x02fec914  DAT_02fec914  undefined4
+      0x02fec918  DAT_02fec918  undefined4
 
-  0x00665d60 - 0x00665db8  (2 items, 88 bytes span)
+  0x030001ec - 0x030001f4  (3 items, 8 bytes span)
     Classification: unknown
     Likely type: unknown grouping
-    Reason: 2 items, span=88 bytes
-    Referenced by: 2 functions
-     near: g_StrStreamBase_Destructor (void*) at -12
-      0x00665d60  DAT_00665d60  WatcomVirtualBaseDescriptor
-      0x00665db8  DAT_00665db8  undefined4
+    Reason: 3 items, span=8 bytes
+    Referenced by: 1 functions
+      0x030001ec  DAT_030001ec  undefined4
+      0x030001f0  DAT_030001f0  undefined4
+      0x030001f4  DAT_030001f4  undefined4
+
+  0x03267198 - 0x032671a0  (3 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 3 items, span=8 bytes
+    Referenced by: 1 functions
+      0x03267198  DAT_03267198  undefined4
+      0x0326719c  DAT_0326719c  undefined4
+      0x032671a0  DAT_032671a0  undefined4
+
+  0x032690dc - 0x032690e4  (3 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 3 items, span=8 bytes
+    Referenced by: 4 functions
+      0x032690dc  DAT_032690dc  undefined4
+      0x032690e0  DAT_032690e0  undefined4
+      0x032690e4  DAT_032690e4  undefined4
 
   0x00679d50 - 0x00679d94  (2 items, 68 bytes span)
     Classification: unknown
@@ -375,6 +810,15 @@ LOW CONFIDENCE (21 clusters)
       0x00679d50  DAT_00679d50  undefined4
       0x00679d94  DAT_00679d94  undefined4
 
+  0x0067b685 - 0x0067b718  (2 items, 147 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=147 bytes
+    Referenced by: 2 functions
+     near: g_MagicNumEFD (undefined1) at +1
+      0x0067b685  DAT_0067b685  undefined1
+      0x0067b718  DAT_0067b718  undefined4
+
   0x0067e180 - 0x0067e184  (2 items, 4 bytes span)
     Classification: unknown
     Likely type: unknown grouping
@@ -383,15 +827,6 @@ LOW CONFIDENCE (21 clusters)
      near: g_MpegSynthesisTableInitialized (int) at +16
       0x0067e180  DAT_0067e180  undefined4
       0x0067e184  DAT_0067e184  undefined4
-
-  0x006874d4 - 0x0068755c  (2 items, 136 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 2 items, span=136 bytes
-    Referenced by: 1 functions
-     near: PTR_FUN_006874e4 (void*) at -16
-      0x006874d4  DAT_006874d4  undefined4 [double]
-      0x0068755c  DAT_0068755c  undefined4 [double]
 
   0x006e6f63 - 0x006e6f69  (2 items, 6 bytes span)
     Classification: unknown
@@ -418,13 +853,111 @@ LOW CONFIDENCE (21 clusters)
       0x01335590  DAT_01335590  undefined4
       0x01335594  DAT_01335594  undefined4
 
-  0x01577c28 - 0x01577c2c  (2 items, 4 bytes span)
+  0x015c48c8 - 0x015c48cc  (2 items, 4 bytes span)
     Classification: unknown
     Likely type: unknown grouping
     Reason: 2 items, span=4 bytes
+    Referenced by: 1 functions
+     near: g_PolygonScreenCache (SPolygonScreenData[20000]) at +4
+      0x015c48c8  DAT_015c48c8  undefined4
+      0x015c48cc  DAT_015c48cc  undefined4
+
+  0x01687e90 - 0x01687e94  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 3 functions
+     near: g_VertexNormals (SVertexData[20000]) at +4
+      0x01687e90  DAT_01687e90  undefined4 [float]
+      0x01687e94  DAT_01687e94  undefined4 [float]
+
+  0x02d2e054 - 0x02d2e05c  (2 items, 8 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=8 bytes
+    Referenced by: 3 functions
+     near: g_StakePool (CStake[256]) at +600
+      0x02d2e054  DAT_02d2e054  undefined4
+      0x02d2e05c  DAT_02d2e05c  undefined4
+
+  0x02d67cb0 - 0x02d67cb4  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 4 functions
+     near: g_TossPool (CToss[20]) at +992
+      0x02d67cb0  DAT_02d67cb0  undefined4
+      0x02d67cb4  DAT_02d67cb4  undefined4
+
+  0x02d807b0 - 0x02d807b4  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 1 functions
+     near: g_CDemonLightInstance.volumetric_enabled (undefined4) at +4
+      0x02d807b0  DAT_02d807b0  undefined4
+      0x02d807b4  DAT_02d807b4  undefined4
+
+  0x02f7c9f4 - 0x02f7c9f8  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 1 functions
+     near: g_ChatHistory (SChatHistory[400]) at +292
+      0x02f7c9f4  DAT_02f7c9f4  undefined4
+      0x02f7c9f8  DAT_02f7c9f8  undefined4
+
+  0x031141bf - 0x0311427c  (2 items, 189 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=189 bytes
     Referenced by: 2 functions
-      0x01577c28  DAT_01577c28  undefined4
-      0x01577c2c  DAT_01577c2c  undefined4
+     near: g_SelectionStartColumn (int) at -1
+      0x031141bf  DAT_031141bf  undefined4
+      0x0311427c  DAT_0311427c  undefined4
+
+  0x031143c8 - 0x03114420  (2 items, 88 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=88 bytes
+    Referenced by: 3 functions
+     near: g_CDemonSetInstance (CDemonSet) at +336
+      0x031143c8  DAT_031143c8  undefined4
+      0x03114420  DAT_03114420  undefined4
+
+  0x0312f540 - 0x0312f544  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 1 functions
+      0x0312f540  DAT_0312f540  undefined4
+      0x0312f544  DAT_0312f544  undefined4
+
+  0x03263318 - 0x0326331c  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 17 functions
+     near: g_CDemonSetInstance.characters[0] (undefined4) at +4
+      0x03263318  DAT_03263318  undefined4
+      0x0326331c  DAT_0326331c  undefined4
+
+  0x03265258 - 0x0326525c  (2 items, 4 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=4 bytes
+    Referenced by: 14 functions
+     near: g_CDemonSetInstance.enemy_count (undefined4) at +4
+      0x03265258  DAT_03265258  undefined4
+      0x0326525c  DAT_0326525c  undefined4
+
+  0x03695850 - 0x036958a0  (2 items, 80 bytes span)
+    Classification: unknown
+    Likely type: unknown grouping
+    Reason: 2 items, span=80 bytes
+    Referenced by: 3 functions
+      0x03695850  DAT_03695850  undefined4
+      0x036958a0  DAT_036958a0  undefined4
 
   0x03f5dc40 - 0x03f5dc44  (2 items, 4 bytes span)
     Classification: unknown
@@ -435,63 +968,1234 @@ LOW CONFIDENCE (21 clusters)
       0x03f5dc40  DAT_03f5dc40  undefined4
       0x03f5dc44  DAT_03f5dc44  undefined4
 
-  0x03f875e4 - 0x03f875e8  (2 items, 4 bytes span)
-    Classification: unknown
-    Likely type: unknown grouping
-    Reason: 2 items, span=4 bytes
-    Referenced by: 3 functions
-     near: g_CWaterInstance (CWater) at +4
-      0x03f875e4  DAT_03f875e4  undefined4 [float]
-      0x03f875e8  DAT_03f875e8  undefined4 [float]
-
 --------------------------------------------------------------------------------
-ISOLATED DAT_ GLOBALS (47 - not part of any cluster)
+ISOLATED DAT_ GLOBALS (46 - not part of any cluster)
 --------------------------------------------------------------------------------
-  DAT_00f80000                    addr=00f80000    type=undefined4      refs=24
   DAT_00002424                    addr=00002424    type=undefined4      refs=21 [likely float]
   DAT_00800000                    addr=00800000    type=undefined4      refs=12
+  DAT_030e5224                    addr=030e5224    type=undefined4      refs=9  near: g_SoftwareEdgeCount(-4)
+  DAT_02db8780.name_hash          addr=02db87b8    type=undefined4      refs=5  near: g_HeroCount(-4)
   DAT_013ed4b8                    addr=013ed4b8    type=undefined4      refs=4
-  DAT_00824e88                    addr=00824e88    type=undefined4      refs=3  near: g_ClippedVertexBuffer[0].projected_vertex.transformed_z(+88)
-  DAT_00feffff                    addr=00feffff    type=undefined4      refs=3  near: g_ColorMagenta(-256)
-  DAT_0066e314                    addr=0066e314    type=undefined4      refs=2  near: SPropertyFlag_ARRAY_0066e30c[0].name(+4)
-  DAT_00ba8ef8                    addr=00ba8ef8    type=undefined4      refs=2
+  DAT_02d14218                    addr=02d14218    type=undefined4      refs=3  near: g_SmokeParticlePool(+44)
+  DAT_02d6cf8c                    addr=02d6cf8c    type=undefined4      refs=3  near: g_GunFlamePool(+36)
+  DAT_032758f8                    addr=032758f8    type=undefined4      refs=3  near: g_CDemonCameraInstance.base.rotation_matrix.m[0].x(+4)
+  DAT_03f48f9c                    addr=03f48f9c    type=undefined4      refs=3 [likely float]  near: INT_03f48fa0(-4)
+  DAT_02f68ab0                    addr=02f68ab0    type=undefined4      refs=3  near: g_HuffmanTables[0].table_size(+4)
   DAT_013fff78                    addr=013fff78    type=undefined4      refs=2
-  DAT_01578128                    addr=01578128    type=undefined4      refs=2
+  DAT_026acb5c                    addr=026acb5c    type=undefined4      refs=2
+  DAT_02ca03b0                    addr=02ca03b0    type=undefined4      refs=2  near: g_PVSCubePointers(+4)
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
+  DAT_02d2e2b4                    addr=02d2e2b4    type=undefined4      refs=2
   DAT_038f60d0                    addr=038f60d0    type=undefined4      refs=2
   DAT_03f9b210                    addr=03f9b210    type=undefined4      refs=2  near: g_FreeListHeadPointer(+12)
-  DAT_00fbffff                    addr=00fbffff    type=undefined4      refs=2
-  DAT_00766880                    addr=00766880    type=undefined4      refs=2
   DAT_00412b41                    addr=00412b41    type=undefined4      refs=1
-  DAT_00bbb9b7                    addr=00bbb9b7    type=undefined4      refs=1 [likely byte]  near: g_CoronaBlurWorkBuffer(-1)
-  DAT_00bbbaf8                    addr=00bbbaf8    type=undefined4      refs=1
-  DAT_00bbbc38                    addr=00bbbc38    type=undefined4      refs=1
-  DAT_013da774+3                  addr=013da777    type=undefined4      refs=1 [likely byte]  near: g_CameraPlaneWorkBuffer(-1)
-  DAT_00fcfcfc                    addr=00fcfcfc    type=undefined4      refs=1
+  DAT_03273954                    addr=03273954    type=undefined4      refs=1
   DAT_009e6c74                    addr=009e6c74    type=undefined4      refs=1
-  DAT_013bc23c                    addr=013bc23c    type=undefined4      refs=1  near: g_CoronaCameraRotationMatrix(+4)
-  DAT_0151bf9e                    addr=0151bf9e    type=undefined4      refs=1 [likely short]  near: g_CameraOutOfBoundsY(+2)
-  DAT_00d00000                    addr=00d00000    type=undefined4      refs=1
-  DAT_00dc0000                    addr=00dc0000    type=undefined4      refs=1
-  DAT_0067ae0c                    addr=0067ae0c    type=undefined4      refs=1  near: g_FireEffectLightningBoltTextures(+24)
+  DAT_00ac8b74                    addr=00ac8b74    type=undefined4      refs=1
+  DAT_02d7b800                    addr=02d7b800    type=undefined4      refs=1  near: g_GabriellaWeaponAimRotationInitFlag(-4)
+  DAT_02d7b9e0                    addr=02d7b9e0    type=undefined4      refs=1  near: g_WrappedTextBuffer(+256)
   DAT_0067b850                    addr=0067b850    type=undefined4      refs=1  near: g_ChapterDisplayTexts(-4)
   DAT_0067cb1c                    addr=0067cb1c    type=undefined4      refs=1  near: FLOAT_0067cb18(+4)
-  DAT_0067b9e0                    addr=0067b9e0    type=undefined4      refs=1  near: g_BloodSplatTextures(+24)
-  DAT_00f00000                    addr=00f00000    type=undefined4      refs=1
-  DAT_020a48c8                    addr=020a48c8    type=undefined4      refs=1  near: CDemonFilter_ARRAY_020a4878[1].size(+4)
+  DAT_02da8c6c                    addr=02da8c6c    type=undefined4      refs=1  near: g_Footsteps(+64)
   DAT_03c00000                    addr=03c00000    type=undefined4      refs=1
   DAT_00747874                    addr=00747874    type=undefined4      refs=1
-  DAT_00b71b00                    addr=00b71b00    type=undefined4      refs=1
-  DAT_016e3600                    addr=016e3600    type=undefined4      refs=1
-  DAT_03f95de4                    addr=03f95de4    type=undefined4      refs=1  near: g_WeatherParticlePositions(-20)
+  DAT_02f0c940                    addr=02f0c940    type=undefined4      refs=1
+  DAT_030f6159                    addr=030f6159    type=undefined4      refs=1 [likely byte]  near: g_RippleBuffer(+1)
+  DAT_03115b10                    addr=03115b10    type=undefined4      refs=1
+  DAT_0327d778                    addr=0327d778    type=undefined4      refs=1  near: g_IntensityToValueLookupTable(-4)
+  DAT_0369e850                    addr=0369e850    type=undefined4      refs=1
   DAT_038f4dac                    addr=038f4dac    type=undefined4      refs=1
   DAT_0391e5d8                    addr=0391e5d8    type=undefined4      refs=1
-  DAT_006852db                    addr=006852db    type=undefined1      refs=1 [likely byte]  near: g_TempDirectoryBuffer(-1)
+  DAT_00681f08                    addr=00681f08    type=undefined4      refs=1  near: PTR_s_GENERIC_00681f0c(-4)
+  DAT_006874d4                    addr=006874d4    type=undefined4      refs=1 [likely double]  near: PTR_FUN_006874e4(-16)
   DAT_03f9c030                    addr=03f9c030    type=undefined4      refs=1 [likely byte]  near: g_LeadByteTable(-1)
   DAT_006855d8                    addr=006855d8    type=undefined4      refs=1  near: PTR_unk_ReturnZero6_FUN_0060e850_0068559c(+60)
+  DAT_0068546c                    addr=0068546c    type=undefined2      refs=1  near: PTR_crt_thread.c_ExitCriticalSection_FUN_0060b180_00685468(+4)
+  DAT_02c946f8                    addr=02c946f8    type=undefined4      refs=1  near: g_CapturedFacePointers(+4)
   DAT_54524143                    addr=54524143    type=undefined4      refs=1
   DAT_01e5017c                    addr=01e5017c    type=undefined4      refs=1  near: g_ModelPartNames(-20)
+  DAT_02cf0df8                    addr=02cf0df8    type=undefined4      refs=1  near: g_TextWrapBuffer(+200)
   DAT_0051a3f4                    addr=0051a3f4    type=undefined4      refs=1  near: PTR_caseD_5_0051a3ec(+8)
-  DAT_0067d9f0                    addr=0067d9f0    type=undefined4      refs=1 [likely float]  near: g_MpegSynthesisWindow(+128)
-  DAT_0067e2d0                    addr=0067e2d0    type=undefined4      refs=1  near: g_MpegBitrateTable(+120)
+  DAT_03f5d97c                    addr=03f5d97c    type=undefined4      refs=1  near: g_SoundTestErrorBuffer(+220)
+
+--------------------------------------------------------------------------------
+FILTERED OUT - INSIDE NAMED DATA (1177)
+--------------------------------------------------------------------------------
+  DAT_00613579                    inside s_none_00613578
+  DAT_0061357a                    inside s_none_00613578
+  DAT_0061357e                    inside s_str_0061357d
+  DAT_0061357f                    inside s_str_0061357d
+  DAT_006144d2                    inside s_TRUE_006144d1
+  DAT_006144d3                    inside s_TRUE_006144d1
+  DAT_006144d4                    inside s_TRUE_006144d1
+  DAT_006144dd                    inside s_none_006144dc
+  DAT_006144de                    inside s_none_006144dc
+  DAT_006144e4                    inside s_none_006144e3
+  DAT_006144e5                    inside s_none_006144e3
+  DAT_00614522                    inside s_none_00614521
+  DAT_00614523                    inside s_none_00614521
+  DAT_00614940                    inside s_CGun_0061493f
+  DAT_00614941                    inside s_CGun_0061493f
+  DAT_00614942                    inside s_CGun_0061493f
+  DAT_006169b0                    inside s_anon_006169af
+  DAT_006176af                    inside s_none_006176ae
+  DAT_006176b0                    inside s_none_006176ae
+  DAT_006176b1                    inside s_none_006176ae
+  DAT_00618ac7                    inside s_cth_00618ac4+2
+  DAT_0061930c                    inside s_pth_0061930b
+  DAT_0061930d                    inside s_pth_0061930b
+  DAT_0061930e                    inside s_pth_0061930b
+  DAT_00619328                    inside s_pth_00619327
+  DAT_00619329                    inside s_pth_00619327
+  DAT_0061932a                    inside s_pth_00619327
+  DAT_00619ece                    inside s_ACT_00619ecd
+  DAT_00619ecf                    inside s_ACT_00619ecd
+  DAT_00619ed0                    inside s_ACT_00619ecd
+  DAT_0061a166                    inside s_ACT_0061a165
+  DAT_0061a167                    inside s_ACT_0061a165
+  DAT_0061a168                    inside s_ACT_0061a165
+  DAT_0061a1c7                    inside s_fog_0061a1c6
+  DAT_0061a1c8                    inside s_fog_0061a1c6
+  DAT_0061a1c9                    inside s_fog_0061a1c6
+  DAT_0061a9cd                    inside s_MDL_0061a9cc
+  DAT_0061a9ce                    inside s_MDL_0061a9cc
+  DAT_0061a9cf                    inside s_MDL_0061a9cc
+  DAT_0061aaeb                    inside s_BODY_0061aaea
+  DAT_0061aaec                    inside s_BODY_0061aaea
+  DAT_0061aaed                    inside s_BODY_0061aaea
+  DAT_0061ac74                    inside s_raw_0061ac73
+  DAT_0061ac75                    inside s_raw_0061ac73
+  DAT_0061ace0                    inside s_TGA_0061acdf
+  DAT_0061ace1                    inside s_TGA_0061acdf
+  DAT_0061ad97                    inside s_MDL_0061ad96
+  DAT_0061ad98                    inside s_MDL_0061ad96
+  DAT_0061ad99                    inside s_MDL_0061ad96
+  DAT_0061af5b                    inside s_ASM_0061af5a
+  DAT_0061af5c                    inside s_ASM_0061af5a
+  DAT_0061af5d                    inside s_ASM_0061af5a
+  DAT_0061af60                    inside s_BIN_0061af5f
+  DAT_0061af61                    inside s_BIN_0061af5f
+  DAT_0061af62                    inside s_BIN_0061af5f
+  DAT_0061d195                    inside s_anon_0061d194
+  DAT_0061d22a                    inside s_MDL_0061d229
+  DAT_0061d22b                    inside s_MDL_0061d229
+  DAT_0061d22c                    inside s_MDL_0061d229
+  DAT_0061d24a                    inside s_MDL_0061d249
+  DAT_0061d24b                    inside s_MDL_0061d249
+  DAT_0061d24c                    inside s_MDL_0061d249
+  DAT_0061d24f                    inside s_MDL_0061d24e
+  DAT_0061d250                    inside s_MDL_0061d24e
+  DAT_0061d251                    inside s_MDL_0061d24e
+  DAT_0061d254                    inside s_TGA_0061d253
+  DAT_0061d255                    inside s_TGA_0061d253
+  DAT_0061d256                    inside s_TGA_0061d253
+  DAT_0061da38                    inside s_s_0061da37
+  DAT_0061da5b                    inside s_s_0061da5a
+  DAT_0061daf0                    inside s_RAW_0061daef
+  DAT_0061daf1                    inside s_RAW_0061daef
+  DAT_0061daf2                    inside s_RAW_0061daef
+  DAT_0061daf5                    inside s_RAW_0061daf4
+  DAT_0061daf6                    inside s_RAW_0061daf4
+  DAT_0061daf7                    inside s_RAW_0061daf4
+  DAT_0061dc3c                    inside s_ACT_0061dc3b
+  DAT_0061dc3d                    inside s_ACT_0061dc3b
+  DAT_0061dc3e                    inside s_ACT_0061dc3b
+  DAT_0061dcae                    inside s_OPA_0061dcad
+  DAT_0061dcaf                    inside s_OPA_0061dcad
+  DAT_0061dcb0                    inside s_OPA_0061dcad
+  DAT_0061dfaf                    inside s_ACT_0061dfae
+  DAT_0061dfb0                    inside s_ACT_0061dfae
+  DAT_0061dfb4                    inside s_ACT_0061dfb3
+  DAT_0061dfb5                    inside s_ACT_0061dfb3
+  DAT_0061dff2                    inside s_ACT_0061dff1
+  DAT_0061dff3                    inside s_ACT_0061dff1
+  DAT_0061dff7                    inside s_ACT_0061dff6
+  DAT_0061dff8                    inside s_ACT_0061dff6
+  DAT_006209be                    inside s_kfm_006209bd
+  DAT_00621250                    inside s_true_0062124f
+  DAT_00621251                    inside s_true_0062124f
+  DAT_00621252                    inside s_true_0062124f
+  DAT_00621348                    inside s_Open_00621347
+  DAT_00621349                    inside s_Open_00621347
+  DAT_0062134a                    inside s_Open_00621347
+  DAT_00621655                    inside s_anon_00621654
+  DAT_006222c2                    inside s_Lava_006222c1
+  DAT_006222c3                    inside s_Lava_006222c1
+  DAT_006222c4                    inside s_Lava_006222c1
+  DAT_006231b0                    inside s_anon_006231af
+  DAT_006231b2                    inside s_d_006231b1
+  DAT_006235ac                    inside g_AxisLabelChars
+  DAT_00628c6a                    inside s_Finding_duplicates_00628c54
+  DAT_00629210                    inside s_DefaultWildcard_0062920f
+  DAT_00629645                    inside s_file_00629644
+  DAT_00629646                    inside s_file_00629644
+  DAT_00629647                    inside s_file_00629644
+  DAT_00629673                    inside s_scr_00629672
+  DAT_00629674                    inside s_scr_00629672
+  DAT_00629675                    inside s_scr_00629672
+  DAT_00629688                    inside s_txt_00629687
+  DAT_00629689                    inside s_txt_00629687
+  DAT_0062968a                    inside s_txt_00629687
+  DAT_0062cab9                    inside s_LZW_0062cab8
+  DAT_0062d2e0                    inside s_act_0062d2df
+  DAT_0062d2e1                    inside s_act_0062d2df
+  DAT_0062d2e2                    inside s_act_0062d2df
+  DAT_0062d4ff                    inside s_anon_0062d4fe
+  DAT_0062d500                    inside s_anon_0062d4fe
+  DAT_0062d51f                    inside s_anon_0062d51e
+  DAT_0062d520                    inside s_anon_0062d51e
+  DAT_0062d57c                    inside s_anon_0062d57b
+  DAT_0062d57d                    inside s_anon_0062d57b
+  DAT_0062d5a2                    inside s_anon_0062d5a1
+  DAT_0062d5a3                    inside s_anon_0062d5a1
+  DAT_0062e28b                    inside s_ACT_0062e28a
+  DAT_0062e28c                    inside s_ACT_0062e28a
+  DAT_0062e28d                    inside s_ACT_0062e28a
+  DAT_0062e2d6                    inside s_ACT_0062e2d5
+  DAT_0062e2d7                    inside s_ACT_0062e2d5
+  DAT_0062e2d8                    inside s_ACT_0062e2d5
+  DAT_0062e749                    inside s_raw_0062e748
+  DAT_0062e74a                    inside s_raw_0062e748
+  DAT_0062e74b                    inside s_raw_0062e748
+  DAT_0062e768                    inside s_clr_0062e767
+  DAT_0062e769                    inside s_clr_0062e767
+  DAT_0062e76a                    inside s_clr_0062e767
+  DAT_00631179                    inside s_Off_00631178
+  DAT_0063117a                    inside s_Off_00631178
+  DAT_0063117b                    inside s_Off_00631178
+  DAT_0063117d                    inside s_On_0063117c
+  DAT_00635429                    inside s_anon_00635428
+  DAT_0063545a                    inside s_anon_00635459
+  DAT_0063548e                    inside s_anon_0063548d
+  DAT_006354aa                    inside s_anon_006354a9
+  DAT_00635508                    inside s_anon_00635507
+  DAT_00635537                    inside s_anon_00635536
+  DAT_006367ac                    inside s_tri3dfx_dll_006367ab
+  DAT_006396d8                    inside s_none_006396d7
+  DAT_006396d9                    inside s_none_006396d7
+  DAT_006396da                    inside s_none_006396d7
+  DAT_0063eb1e                    inside s_RAW_0063eb1d
+  DAT_0063eb1f                    inside s_RAW_0063eb1d
+  DAT_0063eb20                    inside s_RAW_0063eb1d
+  DAT_0063ebad                    inside s_RAW_0063ebac
+  DAT_0063ebae                    inside s_RAW_0063ebac
+  DAT_0063ebaf                    inside s_RAW_0063ebac
+  DAT_0063fab3                    inside s_WTF_0063fab2
+  DAT_006417b6                    inside s_txt_006417b5
+  DAT_006417b7                    inside s_txt_006417b5
+  DAT_006417b8                    inside s_txt_006417b5
+  DAT_00641a76                    inside s_wav_00641a75
+  DAT_00641a77                    inside s_wav_00641a75
+  DAT_00641a78                    inside s_wav_00641a75
+  DAT_00641a85                    inside s_s_0_85_00641a84
+  DAT_00641a86                    inside s_s_0_85_00641a84
+  DAT_00641a87                    inside s_s_0_85_00641a84
+  DAT_00641a94                    inside s_s_0_85_00641a93
+  DAT_00641a95                    inside s_s_0_85_00641a93
+  DAT_00641a96                    inside s_s_0_85_00641a93
+  DAT_00642f53                    inside s_anon_00642f52
+  DAT_00643339                    inside s_anon_00643338
+  DAT_00644178                    inside s_anon_00644177
+  DAT_006459a2                    inside s_none_006459a1
+  DAT_006459a3                    inside s_none_006459a1
+  DAT_006459a4                    inside s_none_006459a1
+  DAT_00645ac1                    inside s_zth_00645ac0
+  DAT_00645ac2                    inside s_zth_00645ac0
+  DAT_00645ac3                    inside s_zth_00645ac0
+  DAT_006466e4                    inside s_thm_006466e3
+  DAT_006466e5                    inside s_thm_006466e3
+  DAT_006466e6                    inside s_thm_006466e3
+  DAT_00647625                    inside s_zth_00647624
+  DAT_00647626                    inside s_zth_00647624
+  DAT_00647627                    inside s_zth_00647624
+  DAT_00647c8b                    inside s_set_00647c8a
+  DAT_00647c8c                    inside s_set_00647c8a
+  DAT_00647c8d                    inside s_set_00647c8a
+  DAT_006481cd                    inside s_set_006481cc
+  DAT_006481ce                    inside s_set_006481cc
+  DAT_006481cf                    inside s_set_006481cc
+  DAT_00648888                    inside s_set_00648887
+  DAT_00648889                    inside s_set_00648887
+  DAT_0064888a                    inside s_set_00648887
+  DAT_00648f9f                    inside s_set_00648f9e
+  DAT_00648fa0                    inside s_set_00648f9e
+  DAT_00648fa1                    inside s_set_00648f9e
+  DAT_00649152                    inside s_art_00649151
+  DAT_00649153                    inside s_art_00649151
+  DAT_00649154                    inside s_art_00649151
+  DAT_00652592                    inside s_wav_00652591
+  DAT_00652593                    inside s_wav_00652591
+  DAT_00652594                    inside s_wav_00652591
+  DAT_00654ef5                    inside s_tex_00654ef4
+  DAT_00654ef6                    inside s_tex_00654ef4
+  DAT_00654ef7                    inside s_tex_00654ef4
+  DAT_00658bf4                    inside s_m_d_y_00658be8
+  DAT_00658c04                    inside s_I_M_S_p_00658bf8
+  DAT_00658c08                    inside s_I_M_S_p_00658bf8
+  DAT_00658c0c                    inside s_I_M_S_p_00658bf8
+  DAT_006590a4                    inside s_con_006590a0
+  DAT_006590a8                    inside s_con_006590a0
+  DAT_00659788                    inside s_bgnthd_00659784
+  DAT_0065978c                    inside s_bgnthd_00659784
+  DAT_00665f34+2                  inside g_PositiveInfinity+4
+  DAT_0066df30                    inside g_ResolutionTable
+  DAT_0066e314                    inside SPropertyFlag_ARRAY_0066e30c
+  DAT_0066e944                    inside g_CourseLastPthPath
+  DAT_0066ea4c                    inside g_CourseLastCrsPath
+  DAT_0066eb54                    inside g_CourseLastBonPath
+  DAT_0066ed14                    inside g_CameraEdgeOffsetX
+  DAT_0066ed34                    inside g_CameraEdgeOffsetY
+  DAT_0066edab                    inside g_LoadedModelName+2
+  DAT_0066eeac                    inside g_PolygonReductionParams
+  DAT_0066ef14                    inside g_OctantRotationAngles
+  DAT_0066efa0                    inside g_GlobalFilters
+  DAT_0066efc0                    inside g_PlayerFilters
+  DAT_0066f018                    inside g_CoronaVertexPositions
+  DAT_0066f01c                    inside g_CoronaVertexPositions
+  DAT_0066f020                    inside g_CoronaVertexPositions
+  DAT_0066f024                    inside g_CoronaVertexPositions
+  DAT_0066f028                    inside g_CoronaVertexPositions
+  DAT_0066f300                    inside g_CoronaFacePrimitives
+  DAT_0066f304                    inside g_CoronaFacePrimitives
+  DAT_0066f308                    inside g_CoronaFacePrimitives
+  DAT_0066f30c                    inside g_CoronaFacePrimitives
+  DAT_0066f310                    inside g_CoronaFacePrimitives
+  DAT_0066f314                    inside g_CoronaFacePrimitives
+  DAT_0066f318                    inside g_CoronaFacePrimitives
+  DAT_0066f31c                    inside g_CoronaFacePrimitives
+  DAT_0066f320                    inside g_CoronaFacePrimitives
+  DAT_0066f324                    inside g_CoronaFacePrimitives
+  DAT_0066f328                    inside g_CoronaFacePrimitives
+  DAT_0066f32c                    inside g_CoronaFacePrimitives
+  DAT_0066f330                    inside g_CoronaFacePrimitives
+  DAT_0066f334                    inside g_CoronaFacePrimitives
+  DAT_0066f338                    inside g_CoronaFacePrimitives
+  DAT_0066f33c                    inside g_CoronaFacePrimitives
+  DAT_0066f340                    inside g_CoronaFacePrimitives
+  DAT_0066fef0                    inside g_LightTextures
+  DAT_0066ff08                    inside g_LightTextures
+  DAT_0066ff24                    inside g_LightTextures
+  DAT_0066ff28                    inside g_LightTextures
+  DAT_0066ff2c                    inside g_LightTextures
+  DAT_0066ff30                    inside g_LightTextures
+  DAT_0066ff34                    inside g_LightTextures
+  DAT_0066ff38                    inside g_LightTextures
+  DAT_006700f4                    inside g_TriangleMatchTableA
+  DAT_00670100                    inside g_TriangleMatchTableB
+  DAT_00670214                    inside g_ModelLastScaleInput
+  DAT_00678a74                    inside g_BrowserLastSelectedFile
+  DAT_00678c84                    inside g_BrowserLastEnteredPath
+  DAT_00678d8c                    inside g_Field1ParseBuffer
+  DAT_00678f8c                    inside g_Field2ParseBuffer
+  DAT_0067918c                    inside g_FilePathBuffer
+  DAT_006793dc                    inside g_DefaultSfxHandleName
+  DAT_006794a4                    inside g_DefaultCommandArg
+  DAT_00679ee4                    inside g_DefaultAuditPath
+  DAT_0067a054                    inside g_DirectoryBufferTemplate
+  DAT_0067a15c                    inside g_FilenameBufferTemplate
+  DAT_0067ae0c                    inside g_FireEffectLightningBoltTextures
+  DAT_0067aebc                    inside g_DefaultRicochetSound
+  DAT_0067b559                    inside g_TempFilenameBuffer
+  DAT_0067b55a                    inside g_TempFilenameBuffer
+  DAT_0067b55b                    inside g_TempFilenameBuffer
+  DAT_0067b9e0                    inside g_BloodSplatTextures
+  DAT_0067ce4c                    inside g_DefaultInventoryKey
+  DAT_0067ceb4                    inside g_DefaultInventoryValue
+  DAT_0067d5c4                    inside g_DefaultMissionActorClass
+  DAT_0067d62c                    inside g_DefaultMissionActorName
+  DAT_0067d9f0                    inside g_MpegSynthesisWindow
+  DAT_0067e1d8                    inside g_Mp3AntiAliasCSSource
+  DAT_0067e2d0                    inside g_MpegBitrateTable
+  DAT_0067e5dc                    inside g_MpegBitMaskTableSingleBit
+  DAT_0067e600                    inside g_MpegBitMaskTableMultiBit
+  DAT_0067e62c                    inside g_Layer3LongBandGroupCounts
+  DAT_0067e630                    inside g_Layer3LongBandGroupCounts
+  DAT_0067e640                    inside g_Layer3ShortBandGroupCounts
+  DAT_0067e644                    inside g_Layer3ShortBandGroupCounts
+  DAT_0067e6dc                    inside g_Layer3BandIndex
+  DAT_0067e6e8                    inside g_Layer3BandIndex
+  DAT_0067e6f8                    inside g_Layer3BandIndex
+  DAT_0067e6fc                    inside g_Layer3BandIndex
+  DAT_0067e718                    inside g_Layer3BandIndex
+  DAT_0067e71c                    inside g_Layer3BandIndex
+  DAT_0067e728                    inside g_Layer3BandIndex
+  DAT_0067e72c                    inside g_Layer3BandIndex
+  DAT_0067e730                    inside g_Layer3BandIndex
+  DAT_0067e734                    inside g_Layer3BandIndex
+  DAT_0067e738                    inside g_Layer3BandIndex
+  DAT_0067e750                    inside g_Layer3BandIndex
+  DAT_0067e754                    inside g_Layer3BandIndex
+  DAT_0067e758                    inside g_Layer3BandIndex
+  DAT_0067e75c                    inside g_Layer3BandIndex
+  DAT_0067e760                    inside g_Layer3BandIndex
+  DAT_00680174                    inside g_HuffmanTableSources
+  DAT_00680178                    inside g_HuffmanTableSources
+  DAT_0068017c                    inside g_HuffmanTableSources
+  DAT_00680180                    inside g_HuffmanTableSources
+  DAT_00680184                    inside g_HuffmanTableSources
+  DAT_00680834                    inside g_MsnEditCameraStatusBuffer
+  DAT_0068090c                    inside g_MsnEditLastSelectedPropertyName
+  DAT_00680974                    inside g_MsnEditImportWildcardPattern
+  DAT_00680bdc                    inside g_PathMapLRUCounters
+  DAT_00680d64                    inside g_ActorRefDefaultBuffer
+  DAT_006810e0                    inside g_LightDebugScreenX
+  DAT_006810e4                    inside g_LightDebugScreenX
+  DAT_00681260                    inside g_LightDebugScreenY
+  DAT_00681264                    inside g_LightDebugScreenY
+  DAT_006814dc                    inside g_BoundingBoxQuadTemplates
+  DAT_006814e0                    inside g_BoundingBoxQuadTemplates
+  DAT_006814e4                    inside g_BoundingBoxQuadTemplates
+  DAT_006814e8                    inside g_BoundingBoxQuadTemplates
+  DAT_006814ec                    inside g_BoundingBoxQuadTemplates
+  DAT_00681524                    inside g_BoundingBoxQuadTemplates
+  DAT_00681528                    inside g_BoundingBoxQuadTemplates
+  DAT_0068152c                    inside g_BoundingBoxQuadTemplates
+  DAT_00681534                    inside g_BoundingBoxQuadTemplates
+  DAT_00681e10                    inside g_WaveInFormatTable
+  DAT_00681e14                    inside g_WaveInFormatTable
+  DAT_00681e18                    inside g_WaveInFormatTable
+  DAT_00681e1c                    inside g_WaveInFormatTable
+  DAT_00681e20                    inside g_WaveInFormatTable
+  DAT_00681e24                    inside g_WaveInFormatTable
+  DAT_00681e28                    inside g_WaveInFormatTable
+  DAT_00681f00                    inside g_SoundModeTable
+  DAT_00681f04                    inside g_SoundModeTable
+  DAT_006820b4                    inside g_SoundResultBufferTemplate
+  DAT_0068211c                    inside g_TrainSoundFilenameTemplate
+  DAT_00684011                    inside g_RendererDllName
+  DAT_00684510                    inside g_WaterTextures
+  DAT_00684cea                    inside g_StdoutLogFile
+  DAT_00685080                    inside g_DstStartRule
+  DAT_00685084                    inside g_DstStartRule
+  DAT_0068508c                    inside g_DstStartRule
+  DAT_0068513c                    inside s_EST_006850bc
+  DAT_006851bd                    inside s_EDT_0068513d
+  DAT_00685219                    inside g_FileDescriptorTable
+  DAT_006852dd                    inside g_TempDirectoryBuffer
+  DAT_006852de                    inside g_TempDirectoryBuffer
+  DAT_0068755c                    inside FLOAT10_00687552
+  DAT_0069ffb8                    inside g_AALineVertex1
+  DAT_0069ffc4+3                  inside g_AALineVertex1
+  DAT_0069ffe8                    inside g_AALineVertex2
+  DAT_0069fff4+3                  inside g_AALineVertex2
+  DAT_0077263c                    inside g_PaletteLuminanceCache
+  DAT_00772a9c                    inside g_ProcessedVertexIndices
+  DAT_00822d0c                    inside g_BugsGroundHeightGridTemp
+  DAT_00822f4c                    inside g_BugsSortedVertexIndices
+  DAT_00822f50                    inside g_BugsSortedVertexIndices
+  DAT_00823a80                    inside g_CollisionTexture
+  DAT_00823a81                    inside g_CollisionTexture
+  DAT_00823a82                    inside g_CollisionTexture
+  DAT_00823a83                    inside g_CollisionTexture
+  DAT_00823b10                    inside CKeyFramedModelInstance_00823a98
+  DAT_00823c58                    inside g_BoneBurnIntensity
+  DAT_00824e2c                    inside g_ClippedVertexBuffer
+  DAT_00824e34                    inside g_ClippedVertexBuffer
+  DAT_00824e38                    inside g_ClippedVertexBuffer
+  DAT_00824e58                    inside g_ClippedVertexBuffer
+  DAT_00824e5c                    inside g_ClippedVertexBuffer
+  DAT_00824e60                    inside g_ClippedVertexBuffer
+  DAT_00824e88                    inside g_ClippedVertexBuffer
+  DAT_008254b8                    inside g_SecondaryClipVertexBuffer
+  DAT_008254bc                    inside g_SecondaryClipVertexBuffer
+  DAT_008254dc                    inside g_SecondaryClipVertexBuffer
+  DAT_008254e0                    inside g_SecondaryClipVertexBuffer
+  DAT_008254e0+4                  inside g_SecondaryClipVertexBuffer
+  DAT_008254e8                    inside g_SecondaryClipVertexBuffer
+  DAT_00825ab0                    inside g_ClipperTempBuffer
+  DAT_00825adc                    inside g_ClipperTempBuffer
+  DAT_00825b3c                    inside g_ClipperTempBuffer
+  DAT_00825b44                    inside g_ClipperTempBuffer
+  DAT_00825b48                    inside g_ClipperTempBuffer
+  DAT_00825b6c                    inside g_ClipperTempBuffer
+  DAT_00825d04                    inside g_ClipperOutputBuffer
+  DAT_00825d38                    inside g_ClipperOutputBuffer
+  DAT_00826304                    inside g_ClipperInputBuffer
+  DAT_00826334                    inside g_ClipperInputBuffer
+  DAT_00826338                    inside g_ClipperInputBuffer
+  DAT_00826908                    inside g_ClipperWorkingBuffer
+  DAT_00826934                    inside g_ClipperWorkingBuffer
+  DAT_00826938                    inside g_ClipperWorkingBuffer
+  DAT_00826f04                    inside g_ClipperIntermediateBuffer
+  DAT_00826f30                    inside g_ClipperIntermediateBuffer
+  DAT_00826f34                    inside g_ClipperIntermediateBuffer
+  DAT_00826f38                    inside g_ClipperIntermediateBuffer
+  DAT_0083c1a0                    inside g_CZombieCowClassInfo
+  DAT_0083c1ac                    inside g_CZombieCowClassInfo
+  DAT_0083c1b0                    inside g_CZombieCowClassInfo
+  DAT_0083c1b4                    inside g_CZombieCowClassInfo
+  DAT_0083c1b8                    inside g_CZombieCowClassInfo
+  DAT_008879c4                    inside CVector3f_ARRAY_008879c0
+  DAT_008879c8                    inside CVector3f_ARRAY_008879c0
+  DAT_00887e88                    inside SCollisionInfo_ARRAY_00887e70
+  DAT_00887e8c                    inside SCollisionInfo_ARRAY_00887e70
+  DAT_00887eb4                    inside SCollisionInfo_ARRAY_00887e70
+  DAT_00ba8db8                    inside g_CoronaBlurOutputBuffer
+  DAT_00ba8db9                    inside g_CoronaBlurOutputBuffer
+  DAT_00ba8ef8                    inside g_CoronaBlurOutputBuffer
+  DAT_00bbb9b7                    inside g_CoronaBlurOutputBuffer
+  DAT_00bbb9b9                    inside g_CoronaBlurWorkBuffer
+  DAT_00bbbaf7                    inside g_CoronaBlurWorkBuffer
+  DAT_00bbbaf8                    inside g_CoronaBlurWorkBuffer
+  DAT_00bbbc38                    inside g_CoronaBlurWorkBuffer
+  DAT_00bcebf8                    inside g_PrecomputedDepthBuffer
+  DAT_00bcebfc                    inside g_PrecomputedDepthBuffer
+  DAT_00bcf0f8                    inside g_PrecomputedDepthBuffer
+  DAT_00bcf0fc                    inside g_PrecomputedDepthBuffer
+  DAT_00c196f9                    inside g_CameraImagePaletteData
+  DAT_00c196fa                    inside g_CameraImagePaletteData
+  DAT_00c196fb                    inside g_CameraImagePaletteData
+  DAT_00c196fc                    inside g_CameraImagePaletteData
+  DAT_00c196fd                    inside g_CameraImagePaletteData
+  DAT_00c19a00                    inside g_CameraConvertedPalette
+  DAT_00d00000                    inside g_LightBufferPool
+  DAT_00dc0000                    inside g_LightBufferPool
+  DAT_00f00000                    inside g_LightBufferPool
+  DAT_00f80000                    inside g_LightBufferPool
+  DAT_00fbffff                    inside g_LightBufferPool
+  DAT_00fcfcfc                    inside g_LightBufferPool
+  DAT_00fdffff                    inside g_LightBufferPool
+  DAT_00fe0000                    inside g_LightBufferPool
+  DAT_00feffff                    inside g_LightBufferPool
+  DAT_013bc23c                    inside g_CoronaCameraRotationMatrix
+  DAT_013bc26c                    inside g_CameraEdgeDetectionResults
+  DAT_013bc270                    inside g_CameraEdgeDetectionResults
+  DAT_013bc274                    inside g_CameraEdgeDetectionResults
+  DAT_013bc278                    inside g_CameraEdgeDetectionResults
+  DAT_013bc27c                    inside g_CameraEdgeDetectionResults
+  DAT_013d9759                    inside g_CameraLookupTable
+  DAT_013da774+3                  inside g_CameraShakeOffsetY
+  DAT_0151a3b4                    inside g_ScanlineSpanLeft
+  DAT_0151a7b4                    inside g_ScanlineSpanRight
+  DAT_0151abc0                    inside g_BackgroundSavedScreenBufferArray
+  DAT_0151bf9a                    inside g_CameraOutOfBoundsCoord
+  DAT_0151bf9e                    inside g_CameraOutOfBoundsY
+  DAT_0151bfa9                    inside g_CameraIndexedImageData
+  DAT_0151bfaa                    inside g_CameraIndexedImageData
+  DAT_0151bfab                    inside g_CameraIndexedImageData
+  DAT_0151c228                    inside g_CameraIndexedImageData
+  DAT_0151c229                    inside g_CameraIndexedImageData
+  DAT_0151c22a                    inside g_CameraIndexedImageData
+  DAT_0151c22b                    inside g_CameraIndexedImageData
+  DAT_0151c4a8                    inside g_CameraIndexedImageData
+  DAT_0151c4a9                    inside g_CameraIndexedImageData
+  DAT_0151c728                    inside g_CameraIndexedImageData
+  DAT_01566fa8+1                  inside g_CameraTextureWorkBuffer
+  DAT_01566fac                    inside g_CameraTextureWorkBuffer
+  DAT_01566fad                    inside g_CameraTextureWorkBuffer
+  DAT_01576fac                    inside g_CoronaLeftExtent
+  DAT_0157736c                    inside g_CoronaRightExtent
+  DAT_0157772c                    inside g_CoronaDepthBuffer
+  DAT_01577c28                    inside g_CoronaDepthBuffer
+  DAT_01577c2c                    inside g_CoronaDepthBuffer
+  DAT_01578128                    inside g_CoronaDepthBuffer
+  DAT_015c4374                    inside g_ClipStageMaxYBuffer
+  DAT_015c437c                    inside g_ClipStageMaxYBuffer
+  DAT_015c4384                    inside g_ClipStageMaxYBuffer
+  DAT_015c4388                    inside g_ClipStageMaxYBuffer
+  DAT_015c4434                    inside g_ClipStageMinYBuffer
+  DAT_015c4438                    inside g_ClipStageMinYBuffer
+  DAT_015c443c                    inside g_ClipStageMinYBuffer
+  DAT_015c4448                    inside g_ClipStageMinYBuffer
+  DAT_015c44f8                    inside g_ClipStageMaxXBuffer
+  DAT_015c44fc                    inside g_ClipStageMaxXBuffer
+  DAT_015c4500                    inside g_ClipStageMaxXBuffer
+  DAT_015c450c                    inside g_ClipStageMaxXBuffer
+  DAT_015c45bc                    inside g_ClipStageMinXBuffer
+  DAT_015c45c0                    inside g_ClipStageMinXBuffer
+  DAT_015c45cc                    inside g_ClipStageMinXBuffer
+  DAT_015c45d0                    inside g_ClipStageMinXBuffer
+  DAT_015c45d8                    inside g_ClipStageMinXBuffer
+  DAT_015c4680                    inside g_ClipStageMinZBuffer
+  DAT_015c4690                    inside g_ClipStageMinZBuffer
+  DAT_015c4694                    inside g_ClipStageMinZBuffer
+  DAT_015c469c                    inside g_ClipStageMinZBuffer
+  DAT_015c4859                    inside g_BackupModelName
+  DAT_015c485a                    inside g_BackupModelName
+  DAT_015c485b                    inside g_BackupModelName
+  DAT_015c4893                    inside g_SavedModelName+2
+  DAT_01626371                    inside g_TempTextureName
+  DAT_01626372                    inside g_TempTextureName
+  DAT_01626373                    inside g_TempTextureName
+  DAT_01e50191                    inside g_ModelPartNames
+  DAT_01e50192                    inside g_ModelPartNames
+  DAT_01e50193                    inside g_ModelPartNames
+  DAT_01eb1491                    inside g_TextureNameArray
+  DAT_01eb1492                    inside g_TextureNameArray
+  DAT_01eb1493                    inside g_TextureNameArray
+  DAT_01eb1769                    inside g_CurrentModelFilename
+  DAT_01eb176a                    inside g_CurrentModelFilename
+  DAT_01eb176b                    inside g_CurrentModelFilename
+  DAT_020a487c                    inside CDemonFilter_ARRAY_020a4878
+  DAT_020a48c8                    inside CDemonFilter_ARRAY_020a4878
+  DAT_026a5818                    inside g_SavedScreenBufferArray
+  DAT_026a5819                    inside g_SavedScreenBufferArray
+  DAT_026a6adc                    inside g_DirtySpanStarts
+  DAT_026a6edc                    inside g_DirtySpanEnds
+  DAT_026a72ec                    inside g_NoiseTable
+  DAT_02c14d34                    inside g_PolyDataConversionBuffer
+  DAT_02c14d38                    inside g_PolyDataConversionBuffer
+  DAT_02c14d3c                    inside g_PolyDataConversionBuffer
+  DAT_02c14d40                    inside g_PolyDataConversionBuffer
+  DAT_02c14d44                    inside g_PolyDataConversionBuffer
+  DAT_02c14d48                    inside g_PolyDataConversionBuffer
+  DAT_02c14d54                    inside g_PolyDataConversionBuffer
+  DAT_02c14d60                    inside g_PolyDataConversionBuffer
+  DAT_02c14d6c                    inside g_PolyDataConversionBuffer
+  DAT_02c6cb78                    inside g_EdgeInterpolationArray
+  DAT_02c6cb7c                    inside g_EdgeInterpolationArray
+  DAT_02c6cb80                    inside g_EdgeInterpolationArray
+  DAT_02c6cb84                    inside g_EdgeInterpolationArray
+  DAT_02c6cb88                    inside g_EdgeInterpolationArray
+  DAT_02c6cb8c                    inside g_EdgeInterpolationArray
+  DAT_02c6cb90                    inside g_EdgeInterpolationArray
+  DAT_02c6cb94                    inside g_EdgeInterpolationArray
+  DAT_02c6cb98                    inside g_EdgeInterpolationArray
+  DAT_02c6cb9c                    inside g_EdgeInterpolationArray
+  DAT_02c6cba0                    inside g_EdgeInterpolationArray
+  DAT_02c6cba4                    inside g_EdgeInterpolationArray
+  DAT_02c6cba8                    inside g_EdgeInterpolationArray
+  DAT_02c6cbac                    inside g_EdgeInterpolationArray
+  DAT_02c6cbb0                    inside g_EdgeInterpolationArray
+  DAT_02c6cbb4                    inside g_EdgeInterpolationArray
+  DAT_02c6cbb8                    inside g_EdgeInterpolationArray
+  DAT_02c6cbbc                    inside g_EdgeInterpolationArray
+  DAT_02c6d110                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d114                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d118                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d11c                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d120                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d124                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d128                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d12c                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d130                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d134                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d138                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d13c                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d140                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d144                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d148                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d14c                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d150                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d154                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d158                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d15c                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d160                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d164                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d168                    inside SFreaky_ARRAY_02c6d0c0
+  DAT_02c6d590                    inside g_CDemonRendererInstance
+  DAT_02c6d598                    inside g_CDemonRendererInstance
+  DAT_02c9951c                    inside g_CapturedTextureArray
+  DAT_02c9951d                    inside g_CapturedTextureArray
+  DAT_02c9951e                    inside g_CapturedTextureArray
+  DAT_02c9951f                    inside g_CapturedTextureArray
+  DAT_02cee5d4                    inside g_ClipInputVertices
+  DAT_02cee6a4                    inside g_ClipBuffer1Vertices
+  DAT_02cee6b0                    inside g_ClipBuffer1Vertices
+  DAT_02cee764                    inside g_ClipBuffer2Vertices
+  DAT_02cee770                    inside g_ClipBuffer2Vertices
+  DAT_02cee828                    inside g_ClipBuffer3Vertices
+  DAT_02cee834                    inside g_ClipBuffer3Vertices
+  DAT_02cee8f4                    inside g_ClipBuffer4Vertices
+  DAT_02cee900                    inside g_ClipBuffer4Vertices
+  DAT_02cee9b8                    inside g_ClipBuffer5Vertices
+  DAT_02cee9c4                    inside g_ClipBuffer5Vertices
+  DAT_02ceea6c                    inside g_ClipOutputVertices
+  DAT_02ceea70                    inside g_ClipOutputVertices
+  DAT_02cf0130                    inside g_ConfirmationMessageBuffer
+  DAT_02cf1ce4                    inside g_WindowStack
+  DAT_02cf1ce8                    inside g_WindowStack
+  DAT_02cf1cec                    inside g_WindowStack
+  DAT_02cf1cf0                    inside g_WindowStack
+  DAT_02cf1cf4                    inside g_WindowStack
+  DAT_02cf1cf8                    inside g_WindowStack
+  DAT_02cf1cfc                    inside g_WindowStack
+  DAT_02cf1d00                    inside g_WindowStack
+  DAT_02cf1d04                    inside g_WindowStack
+  DAT_02cf1d08                    inside g_WindowStack
+  DAT_02cf1d0c                    inside g_WindowStack
+  DAT_02cf1d10                    inside g_WindowStack
+  DAT_02cf1d14                    inside g_WindowStack
+  DAT_02cf1d17                    inside g_WindowStack
+  DAT_02cf1d18                    inside g_WindowStack
+  DAT_02cf1ea8                    inside g_WindowStack
+  DAT_02cf1eac                    inside g_WindowStack
+  DAT_02cf1eb0                    inside g_WindowStack
+  DAT_02cf1eb4                    inside g_WindowStack
+  DAT_02cf1eb8                    inside g_WindowStack
+  DAT_02cf1ebc                    inside g_WindowStack
+  DAT_02cf1ec0                    inside g_WindowStack
+  DAT_02cf1ec4                    inside g_WindowStack
+  DAT_02d01f4e                    inside CHAR_ARRAY_02d01f4d
+  DAT_02d01f4f                    inside CHAR_ARRAY_02d01f4d
+  DAT_02d01f50                    inside CHAR_ARRAY_02d01f4d
+  DAT_02d02584                    inside g_ReciprocalLookupTable
+  DAT_02d02588                    inside g_ReciprocalLookupTable
+  DAT_02d03ee3                    inside CHAR_ARRAY_02d03ee2
+  DAT_02d052a1                    inside g_RenderStateFlags
+  DAT_02d0a463                    inside g_EventErrorMessageBuffer+2
+  DAT_02d0a591                    inside g_FileTransferErrorMessage
+  DAT_02d0a592                    inside g_FileTransferErrorMessage
+  DAT_02d0a593                    inside g_FileTransferErrorMessage
+  DAT_02d12991                    inside g_WorkingDirectoryPath
+  DAT_02d12992                    inside g_WorkingDirectoryPath
+  DAT_02d12993                    inside g_WorkingDirectoryPath
+  DAT_02d12994                    inside g_WorkingDirectoryPath
+  DAT_02d129b9                    inside g_CurrentFilenameBuffer
+  DAT_02d129ba                    inside g_CurrentFilenameBuffer
+  DAT_02d129bb                    inside g_CurrentFilenameBuffer
+  DAT_02d12bd1                    inside g_VersionControlSession
+  DAT_02d12bd2                    inside g_VersionControlSession
+  DAT_02d12bd3                    inside g_VersionControlSession
+  DAT_02d12dbc                    inside g_BillboardCameraRight
+  DAT_02d136e4                    inside g_CFireEffectDebrisModels
+  DAT_02d13860                    inside g_CFireEffectDebrisModels
+  DAT_02d139dc                    inside g_CFireEffectDebrisModels
+  DAT_02d13cdc                    inside g_GunFlameTextures
+  DAT_02d13cf4                    inside g_GunFlameTextures
+  DAT_02d13ebc                    inside g_CharactersOnFire
+  DAT_02d13f88                    inside g_FlameCans
+  DAT_02d2a1f8                    inside g_BulletHolePool
+  DAT_02d2a200                    inside g_BulletHolePool
+  DAT_02d2a204                    inside g_BulletHolePool
+  DAT_02d2a230                    inside g_BulletHolePool
+  DAT_02d2a234                    inside g_BulletHolePool
+  DAT_02d2a238                    inside g_BulletHolePool
+  DAT_02d2a23c                    inside g_BulletHolePool
+  DAT_02d2a240                    inside g_BulletHolePool
+  DAT_02d58a60                    inside g_MuzzleFlashPool
+  DAT_02d58abc                    inside g_MuzzleFlashPool
+  DAT_02d62d5c                    inside g_BulletTrailPool
+  DAT_02d62d60                    inside g_BulletTrailPool
+  DAT_02d62d80                    inside g_BulletTrailPool
+  DAT_02d62ec0                    inside g_FireballPool
+  DAT_02d62edc                    inside g_FireballPool
+  DAT_02d62ee0                    inside g_FireballPool
+  DAT_02d62ee4                    inside g_FireballPool
+  DAT_02d62ee8                    inside g_FireballPool
+  DAT_02d62eec                    inside g_FireballPool
+  DAT_02d62f00                    inside g_FireballPool
+  DAT_02d62f44                    inside g_FireballPool
+  DAT_02d62f5c                    inside g_FireballPool
+  DAT_02d62f78                    inside g_FireballPool
+  DAT_02d655c4                    inside g_RockPool
+  DAT_02d655e0                    inside g_RockPool
+  DAT_02d655f4                    inside g_RockPool
+  DAT_02d6560c                    inside g_RockPool
+  DAT_02d65628                    inside g_RockPool
+  DAT_02d6563c                    inside g_RockPool
+  DAT_02d667f0                    inside g_LaserBeamPool
+  DAT_02d677b8                    inside g_ExplosionPool
+  DAT_02d677bc                    inside g_ExplosionPool
+  DAT_02d677c0                    inside g_ExplosionPool
+  DAT_02d677c4                    inside g_ExplosionPool
+  DAT_02d677c8                    inside g_ExplosionPool
+  DAT_02d677d0                    inside g_ExplosionPool
+  DAT_02d677d4                    inside g_ExplosionPool
+  DAT_02d677d8                    inside g_ExplosionPool
+  DAT_02d677dc                    inside g_ExplosionPool
+  DAT_02d677e0                    inside g_ExplosionPool
+  DAT_02d677e4                    inside g_ExplosionPool
+  DAT_02d6c6a8                    inside g_CraterPool
+  DAT_02d6c714                    inside g_CraterPool
+  DAT_02d6c718                    inside g_CraterPool
+  DAT_02d715e8                    inside g_LightningBoltPool
+  DAT_02d7179c                    inside g_TrailPool
+  DAT_02d725a4                    inside g_ShellPool
+  DAT_02d725c0                    inside g_ShellPool
+  DAT_02d725e4                    inside g_ShellPool
+  DAT_02d725fc                    inside g_ShellPool
+  DAT_02d72618                    inside g_ShellPool
+  DAT_02d736d8                    inside g_PopcornPool
+  DAT_02d736f4                    inside g_PopcornPool
+  DAT_02d736f8                    inside g_PopcornPool
+  DAT_02d73710                    inside g_PopcornPool
+  DAT_02d7372c                    inside g_PopcornPool
+  DAT_02d76edc                    inside g_RainDropPool
+  DAT_02d76ef8                    inside g_RainDropPool
+  DAT_02d76efc                    inside g_RainDropPool
+  DAT_02d76f14                    inside g_RainDropPool
+  DAT_02d76f30                    inside g_RainDropPool
+  DAT_02d76f34                    inside g_RainDropPool
+  DAT_02d7a828                    inside g_SplineBasisTable
+  DAT_02d7afe8                    inside g_SplineBasisTable
+  DAT_02d7b430                    inside g_HardwareEdgeTable
+  DAT_02d7b434                    inside g_HardwareEdgeTable
+  DAT_02d7b438                    inside g_HardwareEdgeTable
+  DAT_02d7b444                    inside g_HardwareEdgeTable
+  DAT_02d7b448                    inside g_HardwareEdgeTable
+  DAT_02d7b44c                    inside g_HardwareEdgeTable
+  DAT_02d7b450                    inside g_HardwareEdgeTable
+  DAT_02d7b464                    inside g_HardwareEdgeTable
+  DAT_02d7b7f8                    inside g_GabriellaWeaponAimRotation
+  DAT_02d7b7fc                    inside g_GabriellaWeaponAimRotation
+  DAT_02d7c3f0                    inside g_ActStatsTextBuffer1
+  DAT_02d7d7f0                    inside g_ActStatsTextBuffer2
+  DAT_02d81aa4                    inside g_CGameInstance
+  DAT_02d81aa8                    inside g_CGameInstance
+  DAT_02d81aac                    inside g_CGameInstance
+  DAT_02d81ab8                    inside g_CGameInstance
+  DAT_02d81abc                    inside g_CGameInstance
+  DAT_02d81ac0                    inside g_CGameInstance
+  DAT_02d81b30                    inside g_CGameInstance
+  DAT_02d81b38                    inside g_CGameInstance
+  DAT_02d81b3c                    inside g_CGameInstance
+  DAT_02d81b44                    inside g_CGameInstance
+  DAT_02d81b48                    inside g_CGameInstance
+  DAT_02d81b4c                    inside g_CGameInstance
+  DAT_02d81b50                    inside g_CGameInstance
+  DAT_02d81b54                    inside g_CGameInstance
+  DAT_02d81b60                    inside g_CGameInstance
+  DAT_02d81b64                    inside g_CGameInstance
+  DAT_02d81b68                    inside g_CGameInstance
+  DAT_02d81c6c                    inside g_CGameInstance
+  DAT_02d81c70                    inside g_CGameInstance
+  DAT_02d81c80                    inside g_CGameInstance
+  DAT_02d81c84                    inside g_CGameInstance
+  DAT_02d81c88                    inside g_CGameInstance
+  DAT_02d81c8c                    inside g_CGameInstance
+  DAT_02d81c90                    inside g_CGameInstance
+  DAT_02d81ca0                    inside g_CGameInstance
+  DAT_02d81ca8                    inside g_CGameInstance
+  DAT_02d81cb0                    inside g_CGameInstance
+  DAT_02d81cb4                    inside g_CGameInstance
+  DAT_02d81cb8                    inside g_CGameInstance
+  DAT_02d81cbc                    inside g_CGameInstance
+  DAT_02d81cc0                    inside g_CGameInstance
+  DAT_02d81cc4                    inside g_CGameInstance
+  DAT_02d81cc8                    inside g_CGameInstance
+  DAT_02d81ccc                    inside g_CGameInstance
+  DAT_02d81cd0                    inside g_CGameInstance
+  DAT_02d81cd4                    inside g_CGameInstance
+  DAT_02d81cd8                    inside g_CGameInstance
+  DAT_02d81cf4                    inside g_CGameInstance
+  DAT_02d82c81                    inside g_CurrentSaveFile
+  DAT_02d82c82                    inside g_CurrentSaveFile
+  DAT_02d82c83                    inside g_CurrentSaveFile
+  DAT_02d82d88                    inside g_MasterLightStateSaveBuffer
+  DAT_02d82d8c                    inside g_MasterLightStateSaveBuffer
+  DAT_02d830a9                    inside g_ChapterDisplayName
+  DAT_02d830aa                    inside g_ChapterDisplayName
+  DAT_02d830ab                    inside g_ChapterDisplayName
+  DAT_02da8728                    inside g_BloodPools
+  DAT_02da872c                    inside g_BloodPools
+  DAT_02da8730                    inside g_BloodPools
+  DAT_02da8734                    inside g_BloodPools
+  DAT_02da874c                    inside g_BloodPools
+  DAT_02da8750                    inside g_BloodPools
+  DAT_02da8754                    inside g_BloodPools
+  DAT_02da8758                    inside g_BloodPools
+  DAT_02da875c                    inside g_BloodPools
+  DAT_02db87c4                    inside g_HeroActors
+  DAT_02db8d70                    inside g_InventoryWrappedTextLines
+  DAT_02db9770                    inside g_InventoryWrappedTextLines2
+  DAT_02dba170                    inside g_InventoryWrappedTextLines3
+  DAT_02f21504                    inside g_MenuBitmaps
+  DAT_02f270d1                    inside g_GraphicsMenuTextBuffers
+  DAT_02f270d2                    inside g_GraphicsMenuTextBuffers
+  DAT_02f270d3                    inside g_GraphicsMenuTextBuffers
+  DAT_02f271d1                    inside g_GraphicsMenuTextBuffers
+  DAT_02f271d2                    inside g_GraphicsMenuTextBuffers
+  DAT_02f271d3                    inside g_GraphicsMenuTextBuffers
+  DAT_02f273d1                    inside g_GraphicsMenuTextBuffers
+  DAT_02f273d2                    inside g_GraphicsMenuTextBuffers
+  DAT_02f273d3                    inside g_GraphicsMenuTextBuffers
+  DAT_02f274d1                    inside g_GraphicsMenuTextBuffers
+  DAT_02f274d2                    inside g_GraphicsMenuTextBuffers
+  DAT_02f274d3                    inside g_GraphicsMenuTextBuffers
+  DAT_02f275d4                    inside g_GraphicsMenuTextPointers
+  DAT_02f27c01                    inside g_ControlsMenuTextBuffers
+  DAT_02f27c02                    inside g_ControlsMenuTextBuffers
+  DAT_02f27c03                    inside g_ControlsMenuTextBuffers
+  DAT_02f27d01                    inside g_ControlsMenuTextBuffers
+  DAT_02f27d02                    inside g_ControlsMenuTextBuffers
+  DAT_02f27d03                    inside g_ControlsMenuTextBuffers
+  DAT_02f28004                    inside g_ControlOptionsMenuPointers
+  DAT_02f28029                    inside g_SoundMenuTextBuffers
+  DAT_02f2802a                    inside g_SoundMenuTextBuffers
+  DAT_02f2802b                    inside g_SoundMenuTextBuffers
+  DAT_02f28a2c                    inside g_SoundOptionsMenuPointers
+  DAT_02f28b50                    inside g_OptionsMenuTextBuffers
+  DAT_02f28c50                    inside g_OptionsMenuTextBuffers
+  DAT_02f28d50                    inside g_OptionsMenuTextBuffers
+  DAT_02f28e54                    inside g_OptionsMenuPointers
+  DAT_02f28e63                    inside g_MainMenuTextBuffers
+  DAT_02f28f63                    inside g_MainMenuTextBuffers
+  DAT_02f29063                    inside g_MainMenuTextBuffers
+  DAT_02f29163                    inside g_MainMenuTextBuffers
+  DAT_02f29264                    inside g_MenuTextPointers
+  DAT_02f292f1                    inside g_CustomKeyNames
+  DAT_02f292f2                    inside g_CustomKeyNames
+  DAT_02f292f3                    inside g_CustomKeyNames
+  DAT_02f2931b                    inside g_CustomKeyNames
+  DAT_02f29343                    inside g_CustomKeyNames
+  DAT_02f2936b                    inside g_CustomKeyNames
+  DAT_02f29393                    inside g_CustomKeyNames
+  DAT_02f293bb                    inside g_CustomKeyNames
+  DAT_02f293e3                    inside g_CustomKeyNames
+  DAT_02f2940b                    inside g_CustomKeyNames
+  DAT_02f29433                    inside g_CustomKeyNames
+  DAT_02f2945b                    inside g_CustomKeyNames
+  DAT_02f29483                    inside g_CustomKeyNames
+  DAT_02f294ab                    inside g_CustomKeyNames
+  DAT_02f294d3                    inside g_CustomKeyNames
+  DAT_02f294fb                    inside g_CustomKeyNames
+  DAT_02f29523                    inside g_CustomKeyNames
+  DAT_02f2954b                    inside g_CustomKeyNames
+  DAT_02f29573                    inside g_CustomKeyNames
+  DAT_02f2959b                    inside g_CustomKeyNames
+  DAT_02f295c3                    inside g_CustomKeyNames
+  DAT_02f295eb                    inside g_CustomKeyNames
+  DAT_02f29613                    inside g_CustomKeyNames
+  DAT_02f2963b                    inside g_CustomKeyNames
+  DAT_02f29663                    inside g_CustomKeyNames
+  DAT_02f2968b                    inside g_CustomKeyNames
+  DAT_02f296b3                    inside g_CustomKeyNames
+  DAT_02f296db                    inside g_CustomKeyNames
+  DAT_02f29703                    inside g_CustomKeyNames
+  DAT_02f297a9                    inside g_StringBuffers
+  DAT_02f297aa                    inside g_StringBuffers
+  DAT_02f297ab                    inside g_StringBuffers
+  DAT_02f2a1b4                    inside g_MaxNeighborVerts
+  DAT_02f31248                    inside g_TempTextureDescriptor
+  DAT_02f31249                    inside g_TempTextureDescriptor
+  DAT_02f3124a                    inside g_TempTextureDescriptor
+  DAT_02f3124b                    inside g_TempTextureDescriptor
+  DAT_02f313fc                    inside g_SamplePointArray
+  DAT_02f31400                    inside g_SamplePointArray
+  DAT_02f31404                    inside g_SamplePointArray
+  DAT_02f31408                    inside g_SamplePointArray
+  DAT_02f3140c                    inside g_SamplePointArray
+  DAT_02f31410                    inside g_SamplePointArray
+  DAT_02f326b0+4                  inside g_SampleDistances
+  DAT_02f326b8                    inside g_SampleDistances
+  DAT_02f326b8+4                  inside g_SampleDistances
+  DAT_02f3340c                    inside g_MirrorInputVertices
+  DAT_02f33410                    inside g_MirrorInputVertices
+  DAT_02f33414                    inside g_MirrorInputVertices
+  DAT_02f33418                    inside g_MirrorInputVertices
+  DAT_02f3341c                    inside g_MirrorInputVertices
+  DAT_02f33590                    inside g_MirrorOutputVertices
+  DAT_02f33594                    inside g_MirrorOutputVertices
+  DAT_02f33598                    inside g_MirrorOutputVertices
+  DAT_02f3359c                    inside g_MirrorOutputVertices
+  DAT_02f335a0                    inside g_MirrorOutputVertices
+  DAT_02f33744                    inside g_CDemonMissionInstance
+  DAT_02f3374c                    inside g_CDemonMissionInstance
+  DAT_02f33760                    inside g_CDemonMissionInstance
+  DAT_02f33768                    inside g_CDemonMissionInstance
+  DAT_02f33780                    inside g_CDemonMissionInstance
+  DAT_02f35f11                    inside g_PendingMissionName
+  DAT_02f35f12                    inside g_PendingMissionName
+  DAT_02f35f13                    inside g_PendingMissionName
+  DAT_02f37f98                    inside g_MoonAnimTextures
+  DAT_02f381f4                    inside g_MoonBatCourses
+  DAT_02f38200                    inside g_MoonBatCourses
+  DAT_02f38210                    inside g_MoonBats
+  DAT_02f38214                    inside g_MoonBats
+  DAT_02f38218                    inside g_MoonBats
+  DAT_02f3821c                    inside g_MoonBats
+  DAT_02f38220                    inside g_MoonBats
+  DAT_02f38224                    inside g_MoonBats
+  DAT_02f38228                    inside g_MoonBats
+  DAT_02f3822c                    inside g_MoonBats
+  DAT_02f43984                    inside g_MpegSynthesisDctTable
+  DAT_02f43a00                    inside g_MpegSynthesisDctTable
+  DAT_02f46610                    inside g_Mp3AntiAliasCS
+  DAT_02f46648+4                  inside g_Mp3AntiAliasCA
+  DAT_02f46650                    inside g_Mp3AntiAliasCA
+  DAT_02f46650+4                  inside g_Mp3AntiAliasCA
+  DAT_02f46690                    inside g_Mp3WindowTables
+  DAT_02f467b0                    inside g_Mp3WindowTables
+  DAT_02f46838                    inside g_Mp3WindowTables
+  DAT_02f4683c                    inside g_Mp3WindowTables
+  DAT_02f46840                    inside g_Mp3WindowTables
+  DAT_02f46844                    inside g_Mp3WindowTables
+  DAT_02f46848                    inside g_Mp3WindowTables
+  DAT_02f46850                    inside g_Mp3WindowTables
+  DAT_02f46898                    inside g_Mp3WindowTables
+  DAT_02f4689c                    inside g_Mp3WindowTables
+  DAT_02f468a0                    inside g_Mp3WindowTables
+  DAT_02f468a4                    inside g_Mp3WindowTables
+  DAT_02f468d0                    inside g_Mp3WindowTables
+  DAT_02f46928                    inside g_Mp3WindowTables
+  DAT_02f4692c                    inside g_Mp3WindowTables
+  DAT_02f46930                    inside g_Mp3WindowTables
+  DAT_02f46934                    inside g_Mp3WindowTables
+  DAT_02f469ec                    inside g_Mp3WindowTables
+  DAT_02f469f0                    inside g_Mp3WindowTables
+  DAT_02f469f4                    inside g_Mp3WindowTables
+  DAT_02f469f8                    inside g_Mp3WindowTables
+  DAT_02f46a00                    inside g_Mp3WindowTables
+  DAT_02f46a48                    inside g_Mp3WindowTables
+  DAT_02f46a4c                    inside g_Mp3WindowTables
+  DAT_02f46a50                    inside g_Mp3WindowTables
+  DAT_02f46a54                    inside g_Mp3WindowTables
+  DAT_02f46a58                    inside g_Mp3WindowTables
+  DAT_02f46a60                    inside g_Mp3WindowTables
+  DAT_02f46b10                    inside g_Mp3DctMatrix
+  DAT_02f46b18                    inside g_Mp3DctMatrix
+  DAT_02f46b20                    inside g_Mp3DctMatrix
+  DAT_02f46b28                    inside g_Mp3DctMatrix
+  DAT_02f46b30                    inside g_Mp3DctMatrix
+  DAT_02f46b38                    inside g_Mp3DctMatrix
+  DAT_02f46b40                    inside g_Mp3DctMatrix
+  DAT_02f46b48                    inside g_Mp3DctMatrix
+  DAT_02f46b50                    inside g_Mp3DctMatrix
+  DAT_02f46b58                    inside g_Mp3DctMatrix
+  DAT_02f46b60                    inside g_Mp3DctMatrix
+  DAT_02f46d50                    inside g_Mp3PolyCoefficients
+  DAT_02f68189                    inside g_CurrentMp3Filename
+  DAT_02f6818a                    inside g_CurrentMp3Filename
+  DAT_02f6818b                    inside g_CurrentMp3Filename
+  DAT_02f7a02c                    inside g_MsnEditPropertyList
+  DAT_02f7a030                    inside g_MsnEditPropertyList
+  DAT_02f7a031                    inside g_MsnEditPropertyList
+  DAT_02f7a032                    inside g_MsnEditPropertyList
+  DAT_02f7a033                    inside g_MsnEditPropertyList
+  DAT_02f7a080                    inside g_MsnEditPropertyList
+  DAT_02f7a094                    inside g_MsnEditPropertyList
+  DAT_02f7a118                    inside g_MsnEditPropertyList
+  DAT_02f7c744                    inside g_CNetGameInstance
+  DAT_02f7c75c                    inside g_CNetGameInstance
+  DAT_02f7c774                    inside g_CNetGameInstance
+  DAT_02f7c778                    inside g_CNetGameInstance
+  DAT_02f7c7ec                    inside g_CNetGameInstance
+  DAT_02f7c854                    inside g_CNetGameInstance
+  DAT_02f98ad4+1                  inside g_ChatOutMessages
+  DAT_02f98ad4+2                  inside g_ChatOutMessages
+  DAT_02f98ad8                    inside g_ChatOutMessages
+  DAT_02f98add                    inside g_ChatOutMessages
+  DAT_02f98ae0                    inside g_ChatOutMessages
+  DAT_02f98ae4                    inside g_ChatOutMessages
+  DAT_02f98ae8                    inside g_ChatOutMessages
+  DAT_02f98ae9                    inside g_ChatOutMessages
+  DAT_02f98aea                    inside g_ChatOutMessages
+  DAT_02f98aeb                    inside g_ChatOutMessages
+  DAT_02f98be8                    inside g_ChatOutMessages
+  DAT_02f98bec                    inside g_ChatOutMessages
+  DAT_02f98bf0                    inside g_ChatOutMessages
+  DAT_02f98d00                    inside g_ChatOutMessages
+  DAT_02fa8ce0                    inside g_MessageKeys
+  DAT_02fa8ce4                    inside g_MessageKeys
+  DAT_02fa94b0                    inside g_MessageTexts
+  DAT_030c3ac0                    inside g_PathMapList
+  DAT_030c3ac4                    inside g_PathMapList
+  DAT_030d2859                    inside g_PathfindingVisited
+  DAT_030d28bc                    inside g_PathfindingVisited
+  DAT_030d5091                    inside g_FileIOBuffer
+  DAT_030d5092                    inside g_FileIOBuffer
+  DAT_030e5230                    inside g_SoftwareEdgeBuffer
+  DAT_030e5234                    inside g_SoftwareEdgeBuffer
+  DAT_030e5238                    inside g_SoftwareEdgeBuffer
+  DAT_030e523c                    inside g_SoftwareEdgeBuffer
+  DAT_030e5240                    inside g_SoftwareEdgeBuffer
+  DAT_030e5244                    inside g_SoftwareEdgeBuffer
+  DAT_030e5248                    inside g_SoftwareEdgeBuffer
+  DAT_030e524c                    inside g_SoftwareEdgeBuffer
+  DAT_030e5250                    inside g_SoftwareEdgeBuffer
+  DAT_030e5254                    inside g_SoftwareEdgeBuffer
+  DAT_030e5258                    inside g_SoftwareEdgeBuffer
+  DAT_030e525c                    inside g_SoftwareEdgeBuffer
+  DAT_030e5260                    inside g_SoftwareEdgeBuffer
+  DAT_030e5274                    inside g_SoftwareEdgeBuffer
+  DAT_031065e8                    inside g_ScriptSubtitleLines
+  DAT_031091e9                    inside g_ScriptLineBuffer
+  DAT_031091ea                    inside g_ScriptLineBuffer
+  DAT_031091eb                    inside g_ScriptLineBuffer
+  DAT_0310a9eb                    inside g_ScriptTempBuffer+2
+  DAT_0310ab1c                    inside CCmdParse_0310aa4c
+  DAT_0310ad74                    inside CCmdParse_0310aa4c
+  DAT_0310cc44                    inside CCmdParse_0310cb74
+  DAT_0310cca8                    inside CCmdParse_0310cb74
+  DAT_0310cca9                    inside CCmdParse_0310cb74
+  DAT_0310ccaa                    inside CCmdParse_0310cb74
+  DAT_0310ccab                    inside CCmdParse_0310cb74
+  DAT_0310eca1                    inside g_ScriptErrorBuffer
+  DAT_0310eca2                    inside g_ScriptErrorBuffer
+  DAT_0310eca3                    inside g_ScriptErrorBuffer
+  DAT_0310f864                    inside g_CScriptInstance
+  DAT_0310f868                    inside g_CScriptInstance
+  DAT_0310f870                    inside g_CScriptInstance
+  DAT_0310fd40+1                  inside g_CursorBlinkTimer
+  DAT_0310fdc1                    inside g_ScriptEditorStatusText
+  DAT_0310fdc2                    inside g_ScriptEditorStatusText
+  DAT_0310fdc3                    inside g_ScriptEditorStatusText
+  DAT_031101c1                    inside g_CurrentLineBuffer
+  DAT_031101c2                    inside g_CurrentLineBuffer
+  DAT_031101c3                    inside g_CurrentLineBuffer
+  DAT_032758e8                    inside g_CDemonCameraInstance
+  DAT_03276db4                    inside g_MasterLightList
+  DAT_03276f38                    inside g_SpotLightList
+  DAT_032770b8                    inside g_SpotLightBounds
+  DAT_032770bc                    inside g_SpotLightBounds
+  DAT_032770c0                    inside g_SpotLightBounds
+  DAT_032776bc                    inside g_DynamicLights
+  DAT_032776d0                    inside g_CoronaGlobes
+  DAT_03277864                    inside g_QueuedCoronaGlobes
+  DAT_032779f4                    inside g_QueuedCoronaGlobeAlphaMasks
+  DAT_03277b88                    inside g_VisibleCoronaGlobes
+  DAT_03277d88                    inside g_OmniLights
+  DAT_032bd778                    inside g_IntensityToValueLookupTable
+  DAT_032bd798                    inside g_ActorProfileTimes
+  DAT_032bf6d8                    inside g_ActorProfileActors
+  DAT_032c161c                    inside g_SecondaryDirectionalLights
+  DAT_032c17a0                    inside g_PrimaryDirectionalLights
+  DAT_032c17b4                    inside g_GlobeLights
+  DAT_032c1948                    inside g_VisibleOmniLights
+  DAT_03342b54                    inside g_SetDisplayListSortBuffer
+  DAT_03342b58                    inside g_SetDisplayListSortBuffer
+  DAT_033469f4                    inside g_RaytraceStateStack
+  DAT_033469f8                    inside g_RaytraceStateStack
+  DAT_033469fc                    inside g_RaytraceStateStack
+  DAT_03346a00                    inside g_RaytraceStateStack
+  DAT_03346a04                    inside g_RaytraceStateStack
+  DAT_03346a08                    inside g_RaytraceStateStack
+  DAT_03346a0c                    inside g_RaytraceStateStack
+  DAT_03346a10                    inside g_RaytraceStateStack
+  DAT_03346a34                    inside g_RaytraceStateStack
+  DAT_03346a38                    inside g_RaytraceStateStack
+  DAT_03346a3c                    inside g_RaytraceStateStack
+  DAT_03346a40                    inside g_RaytraceStateStack
+  DAT_03346a44                    inside g_RaytraceStateStack
+  DAT_03346a48                    inside g_RaytraceStateStack
+  DAT_03346a4c                    inside g_RaytraceStateStack
+  DAT_03346a50                    inside g_RaytraceStateStack
+  DAT_03346a54                    inside g_RaytraceStateStack
+  DAT_03346a58                    inside g_RaytraceStateStack
+  DAT_03346a5c                    inside g_RaytraceStateStack
+  DAT_03346a60                    inside g_RaytraceStateStack
+  DAT_03346a64                    inside g_RaytraceStateStack
+  DAT_03346a68                    inside g_RaytraceStateStack
+  DAT_03346a6c                    inside g_RaytraceStateStack
+  DAT_03346a70                    inside g_RaytraceStateStack
+  DAT_03346a74                    inside g_RaytraceStateStack
+  DAT_03346a78                    inside g_RaytraceStateStack
+  DAT_03346a7c                    inside g_RaytraceStateStack
+  DAT_03346a80                    inside g_RaytraceStateStack
+  DAT_03346a84                    inside g_RaytraceStateStack
+  DAT_03346a88                    inside g_RaytraceStateStack
+  DAT_03346a8c                    inside g_RaytraceStateStack
+  DAT_03346d24                    inside g_VDCameraScores
+  DAT_03363630                    inside g_ZBufferScanlineArrayBackup
+  DAT_033648fc                    inside g_VDCameraSortIndices
+  DAT_03364900                    inside g_VDCameraSortIndices
+  DAT_03365cc4                    inside g_ThumbnailImageBuffer
+  DAT_03365dc0                    inside g_ThumbnailImageBuffer
+  DAT_03365dc4                    inside g_ThumbnailImageBuffer
+  DAT_03653cc1                    inside g_ThumbnailPalette
+  DAT_03653cc2                    inside g_ThumbnailPalette
+  DAT_03654371                    inside g_GroundTextureNames
+  DAT_03654372                    inside g_GroundTextureNames
+  DAT_03654373                    inside g_GroundTextureNames
+  DAT_03654398                    inside g_GroundTextureNames
+  DAT_0365918f                    inside g_GroundTextureNames
+  DAT_03659191                    inside g_GroundTextureTypes
+  DAT_0365938c                    inside g_CameraFogEnabledFlags
+  DAT_03659831                    inside g_BoneNameBuffer
+  DAT_03659832                    inside g_BoneNameBuffer
+  DAT_03659833                    inside g_BoneNameBuffer
+  DAT_0365984e                    inside g_BoneNameBuffer
+  DAT_03670849                    inside g_SkeleditLastPOSImported
+  DAT_03670951                    inside g_SkeleditLastMOTImported
+  DAT_03670a59                    inside g_SkeleditLastTestSkeletonDir
+  DAT_03670b64                    inside g_SkeleditBiasEntries
+  DAT_03670b68                    inside g_SkeleditBiasEntries
+  DAT_03670b70                    inside g_SkeleditBiasEntries
+  DAT_03670b78                    inside g_SkeleditBiasEntries
+  DAT_03671300                    inside g_VertexRemapTable
+  DAT_03f48f88                    inside g_CSlewInstance
+  DAT_03f48f8c                    inside g_CSlewInstance
+  DAT_03f48f90                    inside g_CSlewInstance
+  DAT_03f48f94                    inside g_CSlewInstance
+  DAT_03f48f98                    inside g_CSlewInstance
+  DAT_03f5164c                    inside g_SfxStreamReadBuffer
+  DAT_03f5164d                    inside g_SfxStreamReadBuffer
+  DAT_03f5db14                    inside g_SfxSlots
+  DAT_03f5db1c                    inside g_SfxSlots
+  DAT_03f68990                    inside g_SfxChannelEnabled
+  DAT_03f68994                    inside g_SfxChannelEnabled
+  DAT_03f6a9e8                    inside g_DirectSoundSampleBuffers
+  DAT_03f6a9ec                    inside g_DirectSoundSampleBuffers
+  DAT_03f6aa4c                    inside g_DirectSoundHardwareSfxBuffers
+  DAT_03f6aa50                    inside g_DirectSoundHardwareSfxBuffers
+  DAT_03f6aac4                    inside g_DirectSound3DBufferInterfaces
+  DAT_03f6aac8                    inside g_DirectSound3DBufferInterfaces
+  DAT_03f6ab40                    inside g_DirectSoundBufferMetadata
+  DAT_03f6ab44                    inside g_DirectSoundBufferMetadata
+  DAT_03f6ab48                    inside g_DirectSoundBufferMetadata
+  DAT_03f6ab4c                    inside g_DirectSoundBufferMetadata
+  DAT_03f6ab64                    inside g_DirectSoundBufferMetadata
+  DAT_03f6ab68                    inside g_DirectSoundBufferMetadata
+  DAT_03f6ad3c                    inside g_WaveOutHeaderHandles
+  DAT_03f6ad5c                    inside g_WaveOutHeaders
+  DAT_03f6ad7c                    inside g_WaveOutBufferHandles
+  DAT_03f6ad9c                    inside g_WaveOutBuffers
+  DAT_03f6add4                    inside g_WaveInHeaderHandles
+  DAT_03f6ae24                    inside g_WaveInHeaders
+  DAT_03f6ae74                    inside g_WaveInBufferHandles
+  DAT_03f6aec4                    inside g_WaveInBuffers
+  DAT_03f6b141                    inside g_SoundMatchedFilenames
+  DAT_03f6b142                    inside g_SoundMatchedFilenames
+  DAT_03f6b143                    inside g_SoundMatchedFilenames
+  DAT_03f6b781                    inside g_SoundAmbientSoundName
+  DAT_03f6b782                    inside g_SoundAmbientSoundName
+  DAT_03f6b783                    inside g_SoundAmbientSoundName
+  DAT_03f6b7c8                    inside g_TrainNoiseArray
+  DAT_03f6b7cc                    inside g_TrainNoiseArray
+  DAT_03f6b7d8                    inside g_TrainNoiseArray
+  DAT_03f6b9f8                    inside g_CSpotViewInstance
+  DAT_03f6b9fc                    inside g_CSpotViewInstance
+  DAT_03f6ba00                    inside g_CSpotViewInstance
+  DAT_03f6bbf1                    inside g_TriListTextureNames
+  DAT_03f6bbf2                    inside g_TriListTextureNames
+  DAT_03f6bbf3                    inside g_TriListTextureNames
+  DAT_03f6bc40                    inside g_TriListTextureNames
+  DAT_03f875e4                    inside g_CWaterInstance
+  DAT_03f875e8                    inside g_CWaterInstance
+  DAT_03f8760c                    inside g_VisibleWaterTilesX
+  DAT_03f8b60c                    inside g_VisibleWaterTilesY
+  DAT_03f8f609                    inside g_WaterTileSamples
+  DAT_03f90a8c                    inside g_WaterActorTransformedVertices
+  DAT_03f90a90                    inside g_WaterActorTransformedVertices
+  DAT_03f90a94                    inside g_WaterActorTransformedVertices
+  DAT_03f90a98                    inside g_WaterActorTransformedVertices
+  DAT_03f90a9c                    inside g_WaterActorTransformedVertices
+  DAT_03f939a8                    inside g_WaypointSearchQueue
+  DAT_03f95de4                    inside g_CWeatherInstance
+  DAT_03f95dfc                    inside g_WeatherParticlePositions
+  DAT_03f95e00                    inside g_WeatherParticlePositions
+  DAT_03f95e04                    inside g_WeatherParticlePositions
+  DAT_03f95e08                    inside g_WeatherParticlePositions
+  DAT_03f95e0c                    inside g_WeatherParticlePositions
+  DAT_03f9675c                    inside g_WeatherParticleGroundHeights
+  DAT_03f96a79                    inside g_WeatherParticleHitGround
+  DAT_03f98ff1                    inside g_CommandLineBuffer
+  DAT_03f98ff2                    inside g_CommandLineBuffer
+  DAT_03f98ff3                    inside g_CommandLineBuffer
+  DAT_03f98ff4                    inside g_CommandLineBuffer
+  DAT_03f99528                    inside g_ClipVertexBufferStage2
+  DAT_03f9952c                    inside g_ClipVertexBufferStage2
+  DAT_03f99530                    inside g_ClipVertexBufferStage2
+  DAT_03f99550                    inside g_ClipVertexBufferStage2
+  DAT_03f99558                    inside g_ClipVertexBufferStage2
+  DAT_03f99b28                    inside g_ClipVertexBufferStage1
+  DAT_03f99b2c                    inside g_ClipVertexBufferStage1
+  DAT_03f99b50                    inside g_ClipVertexBufferStage1
+  DAT_03f99b54                    inside g_ClipVertexBufferStage1
+  DAT_03f99b54+4                  inside g_ClipVertexBufferStage1
+  DAT_03f99b5c                    inside g_ClipVertexBufferStage1
+  DAT_03f9a128                    inside g_ClipVertexBufferStage3
+  DAT_03f9a12c                    inside g_ClipVertexBufferStage3
+  DAT_03f9a130                    inside g_ClipVertexBufferStage3
+  DAT_03f9a150                    inside g_ClipVertexBufferStage3
+  DAT_03f9a154                    inside g_ClipVertexBufferStage3
+  DAT_03f9a158                    inside g_ClipVertexBufferStage3
+  DAT_03f9a15c                    inside g_ClipVertexBufferStage3
+  DAT_03f9a728                    inside g_ClipVertexBufferStage4
+  DAT_03f9a72c                    inside g_ClipVertexBufferStage4
+  DAT_03f9a730                    inside g_ClipVertexBufferStage4
+  DAT_03f9a750                    inside g_ClipVertexBufferStage4
+  DAT_03f9a754                    inside g_ClipVertexBufferStage4
+  DAT_03f9a758                    inside g_ClipVertexBufferStage4
 

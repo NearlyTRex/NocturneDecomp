@@ -84,7 +84,7 @@ section .text
     PUSH ESI                            ; 0056fc0f | g_CDemonRendererInstance
     MOV EDI,0xc                         ; 0056fc10
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 0056fc15
-        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; float * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, float * output)
+        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 0056fc1a
     MOV EBP,dword ptr [0x032776b4]      ; 0056fc1d | g_DynamicLightCount
     MOV dword ptr [ESP + 0x60],EDI      ; 0056fc23

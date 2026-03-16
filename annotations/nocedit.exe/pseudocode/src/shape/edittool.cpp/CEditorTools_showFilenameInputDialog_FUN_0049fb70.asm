@@ -198,7 +198,7 @@ section .text
         ;   Label: LAB_0049fcd7
     PUSH 0xffff                         ; 0049fcd8
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 0049fcdd
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 0049fce2
     PUSH -0x1                           ; 0049fce5
     MOV EDX,dword ptr [0x02cf2aac]      ; 0049fce7 | g_DialogTextColor
@@ -222,7 +222,7 @@ section .text
     PUSH 0xffff                         ; 0049fd24
         ;   Label: LAB_0049fd24
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 0049fd29
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 0049fd2e
     PUSH -0x1                           ; 0049fd31
     MOV EAX,[0x02d0255c]                ; 0049fd33 | g_ClipTop

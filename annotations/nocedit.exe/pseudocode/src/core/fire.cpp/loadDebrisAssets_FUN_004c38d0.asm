@@ -34,7 +34,7 @@ section .text
         ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004c38df
     PUSH 0x629d70                       ; 004c38e2 | = "debris02.kfm"
-    PUSH 0x2d136e4                      ; 004c38e7 | DAT_02d136e4
+    PUSH 0x2d136e4                      ; 004c38e7
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0 ; 004c38ec
         ;   XREF to: 00478dd0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 004c38f1

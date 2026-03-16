@@ -10,7 +10,6 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0(CDe
 
 {
   int iVar1;
-  int extraout_EAX;
   
   if (g_WindowHeight < 0x1e1) {
     wincore_windll_cpp_lockFrame_FUN_005b7210();
@@ -25,9 +24,9 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0(CDe
   }
   core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270(this_ptr);
   if (g_WindowHeight < 0x1e1) {
-    wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
+    iVar1 = wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
     if (g_FullscreenMode == 0) {
-      return extraout_EAX;
+      return iVar1;
     }
   }
   else {

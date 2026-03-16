@@ -103,7 +103,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0047
       this_ptr_01 = &(this_ptr->base).base.rotation_matrix;
       core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(this_ptr_01,&local_108,&local_120);
       engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-                (g_CDemonRendererPtr2,&local_138.x);
+                (g_CDemonRendererPtr2,&local_138);
       local_138.x = local_138.x - (this_ptr->base).base.position.f.x;
       local_138.y = local_138.y - (this_ptr->base).base.position.f.y;
       local_138.z = local_138.z - (this_ptr->base).base.position.f.z;

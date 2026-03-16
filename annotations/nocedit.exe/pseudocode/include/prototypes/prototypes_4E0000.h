@@ -151,7 +151,7 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004ec500(CBloodSplat *this_ptr
 void __cdecl core_gore_cpp_CBloodSplat_processAge_FUN_004ecad0(CBloodSplat *this_ptr);
 int __cdecl core_gore_cpp_CBloodSplat_load_FUN_004ecb00(CBloodSplat *this_ptr,_FILE *file_handle);
 int __cdecl core_gore_cpp_CBloodSplat_save_FUN_004ecb90(CBloodSplat *this_ptr,_FILE *file_handle);
-void __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool *this_ptr);
+int __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool *this_ptr);
 void __cdecl core_gore_cpp_CBloodPool_render_FUN_004ecce0(CBloodPool *this_ptr,int expire_flag);
 void __cdecl core_gore_cpp_CBloodPool_processAge_FUN_004ed0a0(CBloodPool *this_ptr);
 void __cdecl core_gore_cpp_CBloodPool_init_FUN_004ed0d0(CBloodPool *this_ptr,CVector3f *position,int blood_type);
@@ -164,7 +164,7 @@ CGore * __cdecl core_gore_cpp_CGore_dtor_FUN_004ed750(CGore *this_ptr,uint flags
 void __cdecl core_gore_cpp_CGore_reset_FUN_004ed760(CGore *this_ptr);
 void __cdecl core_gore_cpp_CGore_renderParticles_FUN_004ed7b0(CGore *this_ptr);
 void __cdecl core_gore_cpp_CGore_renderDecals_FUN_004ed830(CGore *this_ptr,int render_all,int expire_flag);
-int __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr);
+void __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr);
 void __cdecl core_gore_cpp_CGore_spawnBloodParticles_FUN_004edaa0(CGore *this_ptr,CVector3f *position,CVector3f *velocity,int blood_type);
 CBloodSplat * __cdecl core_gore_cpp_CGore_allocateBloodSplat_FUN_004edaf0(CGore *this_ptr);
 void __cdecl core_gore_cpp_CGore_createGroundBloodSplat_FUN_004edb40(CGore *this_ptr,CVector3f *position,int blood_type);
@@ -218,7 +218,7 @@ CGround * __cdecl core_ground_cpp_CGround_ctor_FUN_004eee80(CGround *this_ptr,in
 CGround * __cdecl core_ground_cpp_CGround_dtor_FUN_004eeee0(CGround *this_ptr,uint flags);
 void __cdecl core_ground_cpp_CGround_init_FUN_004eef00(CGround *this_ptr);
 void __cdecl core_ground_cpp_CGround_free_FUN_004eefb0(CGround *this_ptr);
-int __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *filename);
+void __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *filename);
 int __cdecl core_ground_cpp_CGround_getVertexIndex_FUN_004ef380(CGround *this_ptr,int column,int row);
 void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004ef3a0(CGround *this_ptr,int column,int row);
 void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004ef490(CGround *this_ptr);

@@ -2,20 +2,17 @@
 // Address: 004ed9e0
 // Address Range: [[004ed9e0, 004eda95]]
 // Convention: __cdecl
-// Signature: int __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)
+// Signature: void __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)
 
 #include "nocturne.h"
 
-int __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)
+void __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)
 
 {
-  int extraout_EAX;
-  int extraout_EAX_00;
   CBloodParticle *this_ptr_00;
   int iVar1;
   CBloodPool *this_ptr_01;
   CBloodSplat *this_ptr_02;
-  int iVar2;
   
   this_ptr_00 = g_BloodParticles;
   do {
@@ -34,16 +31,14 @@ int __cdecl core_gore_cpp_CGore_process_FUN_004ed9e0(CGore *this_ptr)
     } while (iVar1 < g_BloodSplatCount);
   }
   core_gore_cpp_CBloodPool_setupRenderState_FUN_004ecc40(g_BloodPools);
-  iVar2 = 0;
-  iVar1 = extraout_EAX;
+  iVar1 = 0;
   if (0 < g_BloodPoolCount) {
     this_ptr_01 = g_BloodPools;
     do {
       core_gore_cpp_CBloodPool_processAge_FUN_004ed0a0(this_ptr_01);
-      iVar2 = iVar2 + 1;
+      iVar1 = iVar1 + 1;
       this_ptr_01 = this_ptr_01 + 1;
-      iVar1 = extraout_EAX_00;
-    } while (iVar2 < g_BloodPoolCount);
+    } while (iVar1 < g_BloodPoolCount);
   }
-  return iVar1;
+  return;
 }

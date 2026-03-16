@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 56,
+    "complexity_score": 30,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 2,
-    "suspect_types": [
-      "extra_output"
-    ],
-    "total_lines": 93
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 30,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 92
   },
   "cross_references": [
     {
@@ -177,22 +175,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "return extraout_EAX;",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

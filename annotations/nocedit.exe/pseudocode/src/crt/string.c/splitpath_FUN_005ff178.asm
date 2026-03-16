@@ -74,7 +74,7 @@ section .text
     PUSH EBX                            ; 005ff1bb
         ;   Label: LAB_005ff1bb
     CALL crt_string.c_mbtowc_peek_FUN_006059e0 ; 005ff1bc
-        ;   XREF to: 006059e0 (UNCONDITIONAL_CALL)  ; wchar_t crt_string.c_mbtowc_peek_FUN_006059e0(char * str)
+        ;   XREF to: 006059e0 (UNCONDITIONAL_CALL)  ; int crt_string.c_mbtowc_peek_FUN_006059e0(char * str)
     MOV ESI,EAX                         ; 005ff1c1
     ADD ESP,0x4                         ; 005ff1c3
     CMP EAX,0x2e                        ; 005ff1c6

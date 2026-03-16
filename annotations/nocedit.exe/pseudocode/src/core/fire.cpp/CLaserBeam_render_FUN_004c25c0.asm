@@ -55,7 +55,7 @@
 ; float            Stack[-0x10c]:4  local_10c
 ; CVector3i        Stack[-0x108]:12  local_108
 ; CVector3f        Stack[-0xfc]:12  local_fc
-; float[3]         Stack[-0xf0]:12  local_f0
+; CVector3f        Stack[-0xf0]:12  local_f0
 ; float            Stack[-0xe4]:4  local_e4
 ; float            Stack[-0xe0]:4  local_e0
 ; float            Stack[-0xdc]:4  local_dc
@@ -199,7 +199,7 @@ section .text
     PUSH EBX                            ; 004c2685 | g_CDemonRendererInstance
     MOV dword ptr [ESP + 0x30],ECX      ; 004c2686
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 004c268a
-        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; float * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, float * output)
+        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 004c268f
     MOV EDX,dword ptr [EBP + 0x14]      ; 004c2692
     FLD float ptr [EAX]                 ; 004c2695
@@ -851,7 +851,7 @@ section .text
     MOV EDI,dword ptr [0x006703ec]      ; 004c307a | g_CDemonRendererPtr2
     PUSH EDI                            ; 004c3080 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004c3081
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004c3086
     MOV ESP,EBP                         ; 004c3089
     POP EBP                             ; 004c308b
@@ -874,7 +874,7 @@ section .text
     MOV EDI,dword ptr [0x006703ec]      ; 004c30c7 | g_CDemonRendererPtr2
     PUSH EDI                            ; 004c30cd | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 004c30ce
-        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; float * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, float * output)
+        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 004c30d3
     MOV EAX,dword ptr [EBP + 0x14]      ; 004c30d6
     FLD float ptr [ESP + 0x13c]         ; 004c30d9
@@ -1100,7 +1100,7 @@ section .text
     MOV EDI,dword ptr [0x006703ec]      ; 004c33fb | g_CDemonRendererPtr2
     PUSH EDI                            ; 004c3401 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004c3402
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004c3407
     LEA EAX,[ESP + 0x38]                ; 004c340a
     PUSH EAX                            ; 004c340e
@@ -1375,7 +1375,7 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 004c3834 | g_CDemonRendererPtr2
     PUSH EDX                            ; 004c383a | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004c383b
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004c3840
     LEA EAX,[ESP + 0x80]                ; 004c3843
     PUSH EAX                            ; 004c384a

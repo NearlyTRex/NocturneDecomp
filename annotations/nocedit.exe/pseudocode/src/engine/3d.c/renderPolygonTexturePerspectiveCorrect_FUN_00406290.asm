@@ -60,7 +60,7 @@ section .text
     XOR ESI,ESI                         ; 004062e8
     MOV dword ptr [0x02d052a0],ECX      ; 004062ea | g_RenderStateFlags
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004062f0
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 004062f5
     MOV dword ptr [0x02d052a4],EBX      ; 004062f8 | g_RenderStateFlag2
     MOV ECX,EBP                         ; 004062fe

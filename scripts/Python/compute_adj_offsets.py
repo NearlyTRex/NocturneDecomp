@@ -343,145 +343,18 @@ def main():
         print(f"Error: directory not found: {base_dir}", file=sys.stderr)
         sys.exit(1)
 
-    # Find all ctor/dtor asm files (skip CRT functions)
-    asm_files = []
-    for pattern in ['**/*_ctor_*.asm', '**/*_dtor_*.asm']:
-        for f in glob.glob(os.path.join(base_dir, pattern), recursive=True):
-            if os.sep + 'crt' + os.sep not in f:
-                asm_files.append(f)
-    asm_files.sort()
+    reports_dir = sys.argv[2] if len(sys.argv) > 2 else os.path.join(
+        "annotations", "nocedit.exe", "reports"
+    )
+    os.makedirs(reports_dir, exist_ok=True)
 
-    print(f"Scanning {len(asm_files)} ctor/dtor asm files in {base_dir}...\n")
+    # Use the library implementation
+    from ghidra_annotations.annotations.pseudocode.adj_report import generate_adj_pointer_report
+    total = generate_adj_pointer_report(base_dir, reports_dir)
+    report_path = os.path.join(reports_dir, "adj_pointer_types.txt")
+    print(f"Wrote {report_path} ({total} needed types)")
 
-    # Collect results
-    needed_types = defaultdict(set)  # class_name -> set of offsets
-    unknown_offsets = []  # (filepath, call_name) for manual review
-    details = []  # (filepath, class_name, func_type, calls) for detailed output
-
-    for path in asm_files:
-        class_name, func_type = extract_info(path)
-        if not class_name:
-            continue
-
-        calls = analyze_asm(path)
-
-        has_nonzero = False
-        has_unknown = False
-        for call_name, offset in calls:
-            if offset is not None and offset != 0:
-                needed_types[class_name].add(offset)
-                has_nonzero = True
-            elif offset is None:
-                unknown_offsets.append((path, call_name))
-                has_unknown = True
-
-        if has_nonzero or has_unknown:
-            details.append((path, class_name, func_type, calls))
-
-    # Check which .cpp files still need ADJ() (don't have it yet)
-    unfinished = []  # (path, class_name, func_type, calls) for files missing ADJ
-    finished = []    # same, for files already using ADJ
-
-    for path, class_name, func_type, calls in details:
-        cpp_path = path.replace('.asm', '.cpp')
-        has_adj = False
-        if os.path.isfile(cpp_path):
-            with open(cpp_path) as f:
-                has_adj = 'ADJ(' in f.read()
-
-        nonzero_calls = [(n, o) for n, o in calls if o is not None and o != 0]
-        unknown_calls = [(n, o) for n, o in calls if o is None]
-
-        if has_adj:
-            finished.append((path, class_name, func_type, calls))
-        elif nonzero_calls or unknown_calls:
-            unfinished.append((path, class_name, func_type, calls))
-
-    # ---- Print unfinished section at the top ----
-    print("=" * 70)
-    print(f"UNFINISHED CTORS/DTORS ({len(unfinished)} files still need ADJ)")
-    print("=" * 70)
-
-    # Group by source file (virtual file)
-    by_vfile = defaultdict(list)
-    for path, class_name, func_type, calls in unfinished:
-        # Extract virtual file from path: .../src/core/actor.cpp/ClassName_ctor_...
-        parts = path.split(os.sep)
-        # Find the .cpp directory component
-        vfile = None
-        for j, p in enumerate(parts):
-            if p.endswith('.cpp') and j < len(parts) - 1:
-                vfile = os.path.join(*parts[j-1:j+1])  # e.g. "core/actor.cpp"
-                break
-        if not vfile:
-            vfile = "unknown"
-        by_vfile[vfile].append((path, class_name, func_type, calls))
-
-    for vfile in sorted(by_vfile):
-        entries = by_vfile[vfile]
-        print(f"\n  [{vfile}]")
-        for path, class_name, func_type, calls in entries:
-            basename = os.path.basename(path).replace('.asm', '')
-            nonzero = [(n, o) for n, o in calls if o is not None and o != 0]
-            unknown = [(n, o) for n, o in calls if o is None]
-            print(f"    {basename}:")
-            for call_name, offset in nonzero:
-                short = short_call_name(call_name)
-                print(f"      {short} @ this+0x{offset:x} ({offset}) -> {class_name}_ptr_{offset}")
-            for call_name, _ in unknown:
-                short = short_call_name(call_name)
-                print(f"      {short} @ ??? (UNKNOWN)")
-
-    # ---- Print already-finished section ----
-    if finished:
-        print(f"\n{'=' * 70}")
-        print(f"ALREADY FINISHED ({len(finished)} files have ADJ)")
-        print("=" * 70)
-        for path, class_name, func_type, calls in finished:
-            basename = os.path.basename(path).replace('.asm', '')
-            print(f"  {basename}")
-
-    # ---- Print detailed results ----
-    if '--verbose' in sys.argv or '-v' in sys.argv:
-        print(f"\n{'=' * 70}")
-        print("DETAILED RESULTS")
-        print("=" * 70)
-        for path, class_name, func_type, calls in details:
-            basename = os.path.basename(path)
-            print(f"\n{basename}:")
-            for call_name, offset in calls:
-                short = short_call_name(call_name)
-                if offset == 0:
-                    print(f"  {short} @ this+0x0 (no ADJ needed)")
-                elif offset is None:
-                    print(f"  {short} @ ??? (MANUAL REVIEW)")
-                else:
-                    print(f"  {short} @ this+0x{offset:x} ({offset}) -> {class_name}_ptr_{offset}")
-        print()
-
-    # ---- Print full type summary ----
-    print("=" * 70)
-    print("NEEDED ADJ POINTER TYPES")
-    print("=" * 70)
-    total = 0
-    for cls in sorted(needed_types):
-        for off in sorted(needed_types[cls]):
-            print(f"  {cls}_ptr_{off}  (0x{off:x})")
-            total += 1
-
-    print(f"\nTotal: {total} types across {len(needed_types)} classes")
-
-    # ---- Print unknowns ----
-    if unknown_offsets:
-        print(f"\n{'=' * 70}")
-        print(f"MANUAL REVIEW NEEDED ({len(unknown_offsets)} calls with unknown offset)")
-        print("=" * 70)
-        for path, call_name in unknown_offsets:
-            basename = os.path.basename(path)
-            short = short_call_name(call_name)
-            print(f"  {basename}: {short}")
-
-    return 0 if not unknown_offsets else 1
+    return 0
 
 
 if __name__ == '__main__':

@@ -37,7 +37,7 @@ char * __cdecl ::asctime(_tm *timeptr);
 
 // Original: crt_time.c_get_local_time_FUN_00607150
 // Address: 00607150
-void __watcallStack get::local_time(_tm *tm_output);
+int __watcallStack get::local_time(_tm *tm_output);
 
 // Original: crt_time.c_tzset_FUN_006072f8
 // Address: 006072f8

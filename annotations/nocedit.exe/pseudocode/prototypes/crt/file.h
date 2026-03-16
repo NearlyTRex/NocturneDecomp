@@ -5,7 +5,7 @@
 
 // Original: crt_file.c_normalize_path_separator_FUN_005febe0
 // Address: 005febe0
-wchar_t __cdecl normalize::path_separator(wchar_t ch,wchar_t *preferred_separator);
+int __cdecl normalize::path_separator(int ch,int *preferred_separator);
 
 // Original: crt_file.c_makepath_FUN_005febfc
 // Address: 005febfc

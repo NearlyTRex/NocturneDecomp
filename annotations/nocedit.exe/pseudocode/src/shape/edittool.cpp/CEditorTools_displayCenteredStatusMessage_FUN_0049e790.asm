@@ -83,7 +83,7 @@ section .text
         ;   XREF to: 005b3e70 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_clearScreen_FUN_005b3e70()
     PUSH 0xffff                         ; 0049e7eb
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 0049e7f0
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     MOV EAX,[0x00679398]                ; 0049e7f5 | g_WindowHeight
     MOV EDX,EAX                         ; 0049e7fa
     SAR EDX,0x1f                        ; 0049e7fc

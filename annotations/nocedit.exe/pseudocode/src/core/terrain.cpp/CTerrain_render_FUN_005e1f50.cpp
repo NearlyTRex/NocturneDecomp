@@ -20,7 +20,7 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr)
     return;
   }
   engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-            (g_CDemonRendererPtr2,(float *)&local_30);
+            (g_CDemonRendererPtr2,(CVector3f *)&local_30);
   local_24.x = 0x40800;
   local_24.z = 0;
   iVar1 = core_ground_cpp_CGround_getHeightAtPosition_FUN_004efd30(g_CGroundPtr,0,0x40800);

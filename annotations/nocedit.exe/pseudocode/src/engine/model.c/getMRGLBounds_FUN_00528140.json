@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 52,
-        "line": 100,
+        "line": 99,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       }
     ],
@@ -13,21 +13,20 @@
   },
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 353,
+    "complexity_score": 327,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 188,
-    "suspect_count": 14,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 187,
+    "suspect_count": 12,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "param_count_too_many",
       "pointer_cast",
       "warning_inlined_function"
     ],
-    "total_lines": 527
+    "total_lines": 526
   },
   "cross_references": [
     {
@@ -417,32 +416,16 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
-      "match": "extraout_EDI",
-      "severity": "moderate",
-      "text": "uint *extraout_EDI;",
-      "type": "extra_output"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 64,
       "match": "(SMRGLModelBounds *)((int)",
       "severity": "mild",
       "text": "pSVar13 = (SMRGLModelBounds *)((int)pSVar13 + (uint)bVar15 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 79,
-      "match": "extraout_EDI",
-      "severity": "moderate",
-      "text": "puVar6 = extraout_EDI;",
-      "type": "extra_output"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 149,
+      "line": 148,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar4 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_14 * fVar5));",
@@ -450,7 +433,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 149,
+      "line": 148,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar4 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_14 * fVar5));",
@@ -458,7 +441,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 151,
+      "line": 150,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_18 * fVar5));",
@@ -466,7 +449,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 151,
+      "line": 150,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_18 * fVar5));",
@@ -474,7 +457,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 153,
+      "line": 152,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_1c * fVar5));",
@@ -482,7 +465,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 153,
+      "line": 152,
       "match": "ROUND",
       "severity": "mild",
       "text": "lVar1 = (longlong)iVar4 * (longlong)(int)ROUND(ROUND(local_1c * fVar5));",
@@ -490,7 +473,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
+      "line": 170,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
@@ -498,7 +481,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
+      "line": 170,
       "match": "ROUND",
       "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",
@@ -506,7 +489,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 171,
+      "line": 170,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_84 = (int)ROUND(ROUND(SQRT((float10)local_78 * (float10)local_78 +",

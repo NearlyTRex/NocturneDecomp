@@ -109,7 +109,7 @@ int __cdecl fputc(int character,_FILE *file);
 
 // Original: crt_stdio.c_fflush_FUN_00600e29
 // Address: 00600e29
-int __cdecl fflush(_FILE *stream);
+void __cdecl fflush(_FILE *stream);
 
 // Original: crt_stdio.c_setvbuf_FUN_00601490
 // Address: 00601490

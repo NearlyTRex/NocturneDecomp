@@ -1,13 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 308,
+    "complexity_score": 328,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 23,
+    "suspect_count": 25,
     "suspect_types": [
       "decompiler_intrinsic",
       "extra_output",
@@ -291,6 +291,14 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
+      "line": 27,
+      "match": "extraout_ST0",
+      "severity": "moderate",
+      "text": "extraout_ST0 = function_dispatch(0xf);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 28,
       "match": "extraout_ST0",
       "severity": "moderate",
@@ -304,6 +312,14 @@
       "severity": "mild",
       "text": "iVar1 = (int)ROUND((float10)16.0f * extraout_ST0) << 4;",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 29,
+      "match": "extraout_ST0_00",
+      "severity": "moderate",
+      "text": "extraout_ST0_00 = function_dispatch(0xf);",
+      "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

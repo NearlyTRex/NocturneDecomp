@@ -4,116 +4,32 @@
       {
         "category": "format_error",
         "column": 45,
-        "line": 206,
+        "line": 204,
         "message": "format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]"
       },
       {
-        "category": "other",
-        "column": 20,
-        "line": 211,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 212,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 213,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 233,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
+        "category": "undeclared_identifier",
+        "column": 21,
+        "line": 239,
+        "message": "use of undeclared identifier 'stack0x00000000'"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 241,
+        "line": 250,
         "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "other",
-        "column": 70,
-        "line": 242,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 70,
-        "line": 243,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 70,
-        "line": 244,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 252,
+        "line": 287,
         "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "other",
-        "column": 70,
-        "line": 253,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 70,
-        "line": 254,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 70,
-        "line": 255,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 277,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 278,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 279,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
-      },
-      {
-        "category": "other",
-        "column": 22,
-        "line": 283,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
         "column": 21,
-        "line": 289,
+        "line": 332,
         "message": "use of undeclared identifier 'stack0x00000000'"
-      },
-      {
-        "category": "other",
-        "column": 70,
-        "line": 290,
-        "message": "member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union"
       }
     ],
     "success": false,
@@ -121,21 +37,19 @@
   },
   "complexity": {
     "assembly_lines": 2710,
-    "complexity_score": 1363,
+    "complexity_score": 1090,
     "cross_reference_count": 1,
     "function_call_count": 96,
     "global_count": 107,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1008,
-    "suspect_count": 33,
+    "pseudocode_lines": 1005,
+    "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
-      "extra_output",
       "pointer_cast",
-      "stack_ref",
-      "unknown_field"
+      "stack_ref"
     ],
-    "total_lines": 3718
+    "total_lines": 3715
   },
   "cross_references": [
     {
@@ -1418,29 +1332,8 @@
         "is_param": false,
         "name": "local_170",
         "offset": -368,
-        "size": 16,
-        "type": "undefined1[16]"
-      },
-      {
-        "is_param": false,
-        "name": "local_160",
-        "offset": -352,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "local_15c",
-        "offset": -348,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "local_158",
-        "offset": -344,
-        "size": 4,
-        "type": "float"
+        "size": 28,
+        "type": "CSlew"
       },
       {
         "is_param": false,
@@ -1866,40 +1759,8 @@
   },
   "suspects": [
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "CDemonActor *extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 204,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_170._0_4_ = g_CDemonCameraInstance.base.position.f.x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 205,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_170._4_4_ = *local_54;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 206,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_170._8_4_ = *local_58;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 211,
+      "line": 209,
       "match": "(CMatrix3x3f *)((int)",
       "severity": "mild",
       "text": "pCVar9 = (CMatrix3x3f *)((int)pCVar9 + (uint)bVar14 * -8 + 4);",
@@ -1907,227 +1768,51 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 222,
+      "line": 220,
       "match": "(CMatrix3x3f *)((int)",
       "severity": "mild",
-      "text": "pCVar17 = (CMatrix3x3f *)((int)pCVar17 + ((uint)bVar14 * -2 + 1) * 4);",
+      "text": "pCVar16 = (CMatrix3x3f *)((int)pCVar16 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 226,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "local_170._12_4_ = pCVar8->x;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 234,
+      "line": 232,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
       "type": "stack_ref"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 235,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.x = (float)local_170._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 236,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.y = (float)local_170._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 237,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.z = (float)local_170._8_4_;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 245,
+      "line": 243,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
       "type": "stack_ref"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 246,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.x = (float)local_170._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 247,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.y = (float)local_170._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 248,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.z = (float)local_170._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 270,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_170._0_4_ = local_ac;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 271,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_170._4_4_ = local_a8;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 272,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_170._8_4_ = local_a4;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 276,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "local_170._12_4_ = (pCVar14->orient).vec.x;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 282,
+      "line": 280,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
       "type": "stack_ref"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 283,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.x = (float)local_170._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 284,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.y = (float)local_170._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 285,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.z = (float)local_170._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 295,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "local_170._12_4_ = local_7c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 321,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_170._0_4_ = local_b8;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 322,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_170._4_4_ = local_b4;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 323,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_170._8_4_ = local_b0;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 327,
+      "line": 325,
       "match": "&stack0x00000000",
       "severity": "moderate",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.camera_origin.z) {",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 328,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.x = (float)local_170._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 329,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.y = (float)local_170._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 330,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance.base.position.f.z = (float)local_170._8_4_;",
-      "type": "unknown_field"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 424,
+      "line": 422,
       "match": "SQRT",
       "severity": "mild",
       "text": "local_40 = SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) * (float)0.25;",
       "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 628,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "pCVar14 = extraout_EAX;",
-      "type": "extra_output"
     }
   ]
 }

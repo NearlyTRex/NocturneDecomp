@@ -11,6 +11,7 @@ wchar_t __watcallStack toupper_multibyte(char *mb_char,char *output_buffer)
 {
   wchar_t wVar1;
   int iVar2;
+  int iVar1;
   byte local_c [4];
   
   wchar_to_bytes((wchar_t)mb_char,(char *)local_c);
@@ -22,7 +23,8 @@ wchar_t __watcallStack toupper_multibyte(char *mb_char,char *output_buffer)
   }
   else {
     (*g_CharUpperBuffAFunc)((LPSTR)local_c,1);
-    wVar1 = mbtowc_peek((char *)local_c);
+    iVar1 = mbtowc_peek((char *)local_c);
+    wVar1 = (wchar_t)iVar1;
   }
   return wVar1;
 }

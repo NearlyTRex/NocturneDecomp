@@ -31,7 +31,7 @@
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
-#include "types/typedefs/MessageHandler.h"
+#include "types/typedefs/SMessageHandler.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x5F0000
@@ -75,7 +75,7 @@ void __cdecl wincore_winrun_cpp_plotClippedPixel_FUN_005f2f90(int x_coord,int y_
 void __cdecl wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0(void);
 void __cdecl wincore_winrun_cpp_clearMouseClicks_FUN_005f30c0(void);
 void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_005f30d0(int x,int y);
-void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(MessageHandler message_handler);
+void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(SMessageHandler message_handler);
 LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_005f3150(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam);
 void __cdecl wincore_winrun_cpp_processWindowMessages_FUN_005f35e0(void);
 int __stdcall wincore_winrun_cpp_winMain_FUN_005f3680 (HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow1,int nCmdShow2);
@@ -197,7 +197,7 @@ void __cdecl engine_3d_c_addRasterizerEdgeWithDepth_FUN_005fce40(SRenderVertex *
 SSoftwareEdge * __cdecl engine_3d_c_findRasterizerEdge_FUN_005fcf80(int y_start,SSoftwareEdge *exclude_edge);
 void __cdecl engine_3d_c_rasterizeTriangle_FUN_005fcfc0(SRenderVertex *vertex_buffer,int vertex_count);
 template<typename T_func0>
-inline void engine_3d_c_rasterizePolygon_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,T_func0 scanline_renderer) {
+inline void engine_3d_c_rasterizePolygonCustom_FUN_005fd4e0(SRenderVertex *vertex_buffer,int vertex_count,T_func0 scanline_renderer) {
     (void)vertex_buffer; (void)vertex_count; (void)scanline_renderer;
 }
 SIZE_T __cdecl crt_stdio_c_fread_FUN_005fd990(void *buffer,SIZE_T size,SIZE_T count,_FILE *file);
@@ -238,7 +238,7 @@ uint * __watcallRegister crt_stdlib_c_GetRandomSeedPointer_FUN_005feb50(void);
 int __cdecl crt_stdlib_c_rand_FUN_005feb5c(void);
 void __cdecl crt_stdlib_c_srand_FUN_005feb80(uint seed);
 double __crtmath crt_math_c_floor_FUN_005feb90(double input_value);
-wchar_t __cdecl crt_file_c_normalize_path_separator_FUN_005febe0(wchar_t ch,wchar_t *preferred_separator);
+int __cdecl crt_file_c_normalize_path_separator_FUN_005febe0(int ch,int *preferred_separator);
 void __cdecl crt_file_c_makepath_FUN_005febfc(char *path_buffer,char *drive,char *directory,char *filename,char *extension);
 char * __cdecl crt_string_c_strstr_FUN_005fedd0(char *haystack_str,char *needle_str);
 void __watcallStack crt_cpp_c_pureVirtualStub_FUN_005fee9f(void);
@@ -284,7 +284,7 @@ int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffa70(int offset,_FILE *file);
 int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffa70(_FILE *file);
 int __cdecl crt_stdio_c_fseek_FUN_005ffacc(_FILE *file,long offset,int whence);
 _ostream * __cdecl crt_fstream_cpp_ostream_write_FUN_005ffcb3(_ostream *stream,void *buffer,SIZE_T count);
-float10 __fpustack crt_math_c_pow_FUN_005ffd76(float10 base,float10 exp);
+float10 __fpustack_safe crt_math_c_pow_FUN_005ffd76(float10 base,float10 exp);
 float10 __fpureg crt_math_c_integer_power_FUN_005ffeb2(float10 base,ushort exponent);
 int __cdecl crt_stdlib_c_atoi_FUN_005ffef0(char *string_ptr);
 char * __cdecl crt_string_c_strtok_FUN_005fff50(char *str,char *delimiters);

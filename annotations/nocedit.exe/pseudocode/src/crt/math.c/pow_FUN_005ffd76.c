@@ -1,23 +1,25 @@
 // Name: crt_math.c_pow_FUN_005ffd76
 // Address: 005ffd76
 // Address Range: [[005ffd76, 005ffeb1]]
-// Convention: __fpustack
-// Signature: float10 __fpustack crt_math_c_pow_FUN_005ffd76(float10 base,float10 exp)
+// Convention: __fpustack_safe
+// Signature: float10 __fpustack_safe crt_math_c_pow_FUN_005ffd76(float10 base,float10 exp)
 
 #include "nocturne.h"
 
-float10 __fpustack pow(float10 base,float10 exp)
+/* WARNING: Removing unreachable block (ram,0x005ffe9d) */
+/* WARNING: Removing unreachable block (ram,0x005ffea3) */
+/* WARNING: Removing unreachable block (ram,0x005ffea5) */
+
+float10 __fpustack_safe pow(float10 base,float10 exp)
 
 {
   double dVar2;
   uchar error_type;
-  char extraout_AL;
   byte bVar2;
   ushort exponent;
   float10 fVar3;
   float10 fVar4;
   float10 fVar5;
-  float10 extraout_ST0;
   double dVar5;
   uint in_stack_ffffffe0;
   double dVar6;
@@ -71,8 +73,7 @@ LAB_005ffe01:
             fVar5 = exp;
           }
           else {
-            function_dispatch(0xf);
-            fVar3 = extraout_ST0;
+            fVar3 = function_dispatch(0xf);
           }
         }
         dVar1 = (double)fVar3;
@@ -87,13 +88,7 @@ LAB_005ffe01:
       if (fVar4 == exp) goto LAB_005ffe01;
 LAB_005ffe88:
       in_stack_ffffffe0 = 0x5ffe99;
-      fVar3 = exp((float10)0.6931471805599453 * exp * ABS(base));
-      if (extraout_AL == '\0') {
-        if ((exponent & 0x100) != 0) {
-          fVar3 = -fVar3;
-        }
-        goto LAB_005ffea7;
-      }
+      exp((float10)0.6931471805599453 * exp * ABS(base));
     }
   }
   dVar5 = math_domain_error

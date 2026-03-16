@@ -61,7 +61,7 @@ void * __cdecl ::_arr_op(void *dest,void *source,int count,int element_size,void
 
 // Original: crt_memory.c___memfill_FUN_00603b00
 // Address: 00603b00
-void __watcallRegister ::_memfill(void *dest,uint replicated_value,uint count);
+void * __watcallRegister ::_memfill(void *dest,uint replicated_value,uint count);
 
 // Original: crt_memory.c___stosd_FUN_00603b37
 // Address: 00603b37

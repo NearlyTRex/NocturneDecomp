@@ -2,11 +2,11 @@
 // Address: 00607150
 // Address Range: [[00607150, 006071b4]]
 // Convention: __watcallStack
-// Signature: void __watcallStack crt_time_c_get_local_time_FUN_00607150(_tm *tm_output)
+// Signature: int __watcallStack crt_time_c_get_local_time_FUN_00607150(_tm *tm_output)
 
 #include "nocturne.h"
 
-void __watcallStack get_local_time(_tm *tm_output)
+int __watcallStack get_local_time(_tm *tm_output)
 
 {
   _SYSTEMTIME _Stack_14;
@@ -19,5 +19,5 @@ void __watcallStack get_local_time(_tm *tm_output)
   tm_output->tm_min = (uint)_Stack_14.wMinute;
   tm_output->tm_isdst = -1;
   tm_output->tm_sec = (uint)_Stack_14.wSecond;
-  return;
+  return (uint)_Stack_14.wMilliseconds;
 }

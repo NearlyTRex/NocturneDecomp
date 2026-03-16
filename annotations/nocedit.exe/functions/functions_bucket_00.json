@@ -1438,7 +1438,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_3d.c_setRenderAlpha_FUN_00406d80",
-    "ret":"void",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -1457,7 +1457,17 @@
           },
           "type":"int"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -21720,6 +21730,7 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400",
     "ret":"void",
@@ -21774,52 +21785,20 @@
           "type":"float"
         },
         {
-          "name":"local_10",
-          "storage":{
-            "offset":-16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x10]",
-                "offset":-16,
-                "size":4
-              }
-            ]
-          },
-          "type":"float"
-        },
-        {
-          "name":"local_14",
-          "storage":{
-            "offset":-20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x14]",
-                "offset":-20,
-                "size":4
-              }
-            ]
-          },
-          "type":"float"
-        },
-        {
           "name":"local_18",
           "storage":{
             "offset":-24,
-            "size":4,
+            "size":12,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x18]",
                 "offset":-24,
-                "size":4
+                "size":12
               }
             ]
           },
-          "type":"float"
+          "type":"CVector3f"
         },
         {
           "name":"local_1c",
@@ -24480,7 +24459,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780",
-    "ret":"float*",
+    "ret":"CVector3f*",
     "vars":{
       "locals":[
         {
@@ -24498,22 +24477,6 @@
             ]
           },
           "type":"CVector3i"
-        },
-        {
-          "name":"fVar1",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:6ff2b59a3b9",
-                "offset":7693013722041,
-                "size":4
-              }
-            ]
-          },
-          "type":"float",
-          "use":28
         }
       ],
       "params":[
@@ -24547,7 +24510,7 @@
               }
             ]
           },
-          "type":"float*"
+          "type":"CVector3f*"
         }
       ],
       "ret_storage":{
@@ -47253,6 +47216,113 @@
     "name":"core_npc.cpp_CNPC_dtor_FUN_004f4700",
     "ret":"CNPC*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CNPC_ptr_48676",
+          "use":25
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CNPC_ptr_13260",
+          "use":41
+        },
+        {
+          "name":"pSVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CNPC_ptr_12060",
+          "use":57
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CNPC_ptr_11536",
+          "use":73
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CNPC_ptr_11356",
+          "use":89
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CNPC_ptr_10900",
+          "use":105
+        },
+        {
+          "name":"pCVar6",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CNPC_ptr_344",
+          "use":121
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -62696,7 +62766,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_msnedit.cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80",
-    "ret":"void",
+    "ret":"CDemonActor*",
     "vars":{
       "params":[
         {
@@ -62731,7 +62801,17 @@
           },
           "type":"CDemonActor*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -70439,6 +70519,98 @@
     "name":"core_sentinel.cpp_CSentinel_dtor_FUN_00568f80",
     "ret":"CSentinel*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSentinel_ptr_13260",
+          "use":25
+        },
+        {
+          "name":"pSVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSentinel_ptr_12060",
+          "use":41
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSentinel_ptr_11536",
+          "use":57
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSentinel_ptr_11356",
+          "use":73
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSentinel_ptr_10900",
+          "use":89
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSentinel_ptr_344",
+          "use":105
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -79078,6 +79250,98 @@
     "name":"core_smiley.cpp_CSmiley_dtor_FUN_005a3880",
     "ret":"CSmiley*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSmiley_ptr_13260",
+          "use":25
+        },
+        {
+          "name":"pSVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSmiley_ptr_12060",
+          "use":41
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSmiley_ptr_11536",
+          "use":57
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSmiley_ptr_11356",
+          "use":73
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSmiley_ptr_10900",
+          "use":89
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CSmiley_ptr_344",
+          "use":105
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -95444,6 +95708,173 @@
     "name":"core_vampboss.cpp_CVampireBoss_dtor_FUN_005e7700",
     "ret":"CVampireBoss*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_842948",
+          "use":25
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_581200",
+          "use":41
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_319456",
+          "use":57
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_57712",
+          "use":73
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_48828",
+          "use":89
+        },
+        {
+          "name":"pCVar6",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_13260",
+          "use":105
+        },
+        {
+          "name":"pSVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_12060",
+          "use":121
+        },
+        {
+          "name":"pCVar7",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_11536",
+          "use":137
+        },
+        {
+          "name":"pCVar8",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_11356",
+          "use":153
+        },
+        {
+          "name":"pCVar9",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_10900",
+          "use":169
+        },
+        {
+          "name":"pCVar10",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CVampireBoss_ptr_344",
+          "use":185
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -97689,7 +98120,7 @@
               }
             ]
           },
-          "type":"MessageHandler"
+          "type":"SMessageHandler"
         }
       ]
     }
@@ -100638,10 +101069,9 @@
       }
     ],
     "conv":"__watcallRegister",
-    "custom_storage":true,
     "importable":true,
     "name":"crt_memory.c___memfill_FUN_00603b00",
-    "ret":"void",
+    "ret":"void*",
     "vars":{
       "params":[
         {
@@ -100688,7 +101118,17 @@
           },
           "type":"uint"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {

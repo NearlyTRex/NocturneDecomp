@@ -61,7 +61,7 @@ section .text
     MOV ESI,dword ptr [0x006703ec]      ; 004bfaad | g_CDemonRendererPtr2
     PUSH ESI                            ; 004bfab3 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004bfab4
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004bfab9
     POP EDI                             ; 004bfabc
     POP ESI                             ; 004bfabd

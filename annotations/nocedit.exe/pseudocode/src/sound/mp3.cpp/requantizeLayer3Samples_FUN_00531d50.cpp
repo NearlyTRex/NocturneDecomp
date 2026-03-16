@@ -18,12 +18,11 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuan
   int iVar6;
   int iVar7;
   int iVar8;
-  float10 base;
-  float10 fVar9;
   float10 fVar5;
-  float10 extraout_ST1;
-  float10 extraout_ST1_00;
-  float10 extraout_ST2;
+  float10 base;
+  float10 fVar6;
+  float10 fVar9;
+  float10 fVar7;
   int *local_70;
   float *local_6c;
   int local_68;
@@ -53,27 +52,27 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50(SMpegSubbandQuan
     local_1c = (float *)g_Layer3BandIndex[iVar7].l[1];
   }
   if (g_MpegRequantTablesInitialized == 0) {
-    fVar5 = (float10)1.3333333333333299;
+    fVar7 = (float10)1.3333333333333299;
     iVar3 = 0;
     iVar4 = 0;
     do {
-      fVar5 = pow((float10)iVar3,fVar5);
+      fVar5 = pow((float10)iVar3,fVar7);
       iVar3 = iVar3 + 1;
       *(double *)((int)g_MpegRequantPowerTable + iVar4) = (double)fVar5;
       iVar4 = iVar4 + 8;
-      fVar5 = extraout_ST1;
     } while (iVar3 < 200);
     iVar4 = 0;
     base = (float10)2;
-    fVar5 = (float10)0.25;
+    fVar7 = (float10)0.25;
     iVar3 = 0;
     do {
-      fVar5 = pow(base,(float10)-iVar4 * fVar5);
+      fVar5 = (float10)-iVar4 * fVar7;
+      fVar6 = pow(base,(float10)-iVar4 * fVar7);
+      base = fVar7;
+      fVar7 = fVar5;
       iVar4 = iVar4 + 1;
-      *(double *)((int)g_MpegRequantGainTable + iVar3) = (double)fVar5;
+      *(double *)((int)g_MpegRequantGainTable + iVar3) = (double)fVar6;
       iVar3 = iVar3 + 8;
-      fVar5 = extraout_ST1_00;
-      base = extraout_ST2;
     } while (iVar4 < 200);
     g_MpegRequantTablesInitialized = 1;
   }
@@ -159,8 +158,8 @@ LAB_00531ee0:
           *local_18 = *local_18 * (float)g_MpegRequantPowerTable[iVar3];
         }
         else {
-          fVar5 = pow((float10)iVar3,(float10)1.3333333333333299);
-          *local_1c = (float)(fVar5 * (float10)*local_1c);
+          fVar7 = pow((float10)iVar3,(float10)1.3333333333333299);
+          *local_1c = (float)(fVar7 * (float10)*local_1c);
         }
         if (*(int *)((int)quantized_samples->samples[0] + iVar8 + local_68) < 0) {
           *(float *)((int)output_samples->samples[0] + iVar8 + local_68) =

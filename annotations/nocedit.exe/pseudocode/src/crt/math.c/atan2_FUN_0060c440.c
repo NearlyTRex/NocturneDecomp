@@ -31,9 +31,9 @@ float10 __fpustack atan2(float10 y,float10 x)
      ((((uStack_1c & 0x7fff) != 0 && ((uStack_28 & 0x7fff) != 0x7fff)) &&
       ((uStack_1c & 0x7fff) != 0x7fff)))) {
     uVar2 = (uint)(ABS(y) <= ABS(x));
-    function_dispatch(0xf);
+    extraout_ST0 = function_dispatch(0xf);
     iVar1 = (int)ROUND((float10)16.0f * extraout_ST0) << 4;
-    function_dispatch(0xf);
+    extraout_ST0_00 = function_dispatch(0xf);
     fVar3 = extraout_ST0_00 * extraout_ST0_00;
     fVar4 = fVar3 * fVar3;
     fVar5 = fVar4 * fVar4;

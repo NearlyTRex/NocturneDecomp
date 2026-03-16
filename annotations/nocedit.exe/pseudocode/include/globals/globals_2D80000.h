@@ -39,9 +39,6 @@ extern CPickList g_CPickList;
 extern SMRGLPrimitiveQuadIndex g_GoreQuadPrimitive;
 extern SMRGLPrimitiveQuadIndex g_FootstepPrimitive;
 
-// char
-extern char g_CurrentSaveFile;
-
 // char*
 extern char* g_CurrentDisplayText;
 
@@ -50,6 +47,7 @@ extern char g_InputHistory[20];
 
 // char[256]
 extern char g_ScreenshotFilename[256];
+extern char g_CurrentSaveFile[256];
 extern char g_ChapterDisplayName[256];
 
 // char[600]
@@ -121,9 +119,6 @@ extern int g_BloodSplatCount;
 extern int g_MasterLightStateSaveBuffer[201];
 
 // undefined1
-extern undefined1 DAT_02d82c81;
-extern undefined1 DAT_02d82c82;
-extern undefined1 DAT_02d82c83;
 extern undefined1 DAT_02d831d6;
 extern undefined1 DAT_02d831eb;
 

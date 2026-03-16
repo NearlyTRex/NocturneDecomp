@@ -85,7 +85,7 @@ section .text
         ;   Label: LAB_0060c4d0
     MOV EAX,0xf                         ; 0060c4d1
     CALL crt_math.c_function_dispatch_FUN_00606a77 ; 0060c4d6
-        ;   XREF to: 00606a77 (UNCONDITIONAL_CALL)  ; void crt_math.c_function_dispatch_FUN_00606a77(int function_index)
+        ;   XREF to: 00606a77 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_function_dispatch_FUN_00606a77(int function_index)
     POP EAX                             ; 0060c4db
     FLD float ptr [0x00687518]          ; 0060c4dc | FLOAT_00687518
     FMUL ST1                            ; 0060c4e2
@@ -103,7 +103,7 @@ section .text
     PUSH EAX                            ; 0060c509
     MOV EAX,0xf                         ; 0060c50a
     CALL crt_math.c_function_dispatch_FUN_00606a77 ; 0060c50f
-        ;   XREF to: 00606a77 (UNCONDITIONAL_CALL)  ; void crt_math.c_function_dispatch_FUN_00606a77(int function_index)
+        ;   XREF to: 00606a77 (UNCONDITIONAL_CALL)  ; float10 crt_math.c_function_dispatch_FUN_00606a77(int function_index)
     POP EAX                             ; 0060c514
     FLD ST0                             ; 0060c515
     FMUL ST1                            ; 0060c517

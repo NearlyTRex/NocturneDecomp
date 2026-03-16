@@ -12,7 +12,7 @@ void __esi engine_boss_c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtende
   int iVar1;
   uint *puVar2;
   byte bVar3;
-  uint local_3c [15];
+  uint local_3c [13];
   
   bVar3 = 0;
   g_CurrentFilename = "..\\engine\\boss.c";

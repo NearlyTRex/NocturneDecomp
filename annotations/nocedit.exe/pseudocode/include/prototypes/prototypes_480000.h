@@ -283,7 +283,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0(CD
 void __cdecl engine_drender_cpp_CDemonRenderer_scaleAndSetDirectionalLight_FUN_0048c6e0(CDemonRenderer *this_ptr,CVector3f *light_direction);
 void __cdecl engine_drender_cpp_CDemonRenderer_calculateVertexLight_FUN_0048c740(CDemonRenderer *this_ptr,int vertex_index,CVector3i *vertex_position);
 CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760 (CDemonRenderer *this_ptr,CVector3i *output);
-float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,float *output);
+CVector3f * __cdecl engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer *this_ptr,CVector3f *output);
 CVector3i * __stack_esi engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0 (CDemonRenderer *this_ptr,CVector3i *output);
 float * __cdecl engine_drender_cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800(CDemonRenderer *this_ptr,float *output);
 float __cdecl engine_drender_cpp_CDemonRenderer_calculateProjectionFactor_FUN_0048c870(CDemonRenderer *this_ptr);
@@ -298,7 +298,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(CDemonR
 void __cdecl engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(CDemonRenderer *this_ptr,int enabled);
 void __cdecl engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(CDemonRenderer *this_ptr,int state_flag);
 void __cdecl engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(CDemonRenderer *this_ptr,int blend_mode);
-void __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer *this_ptr,int render_alpha);
+int __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer *this_ptr,int render_alpha);
 void __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70(CDemonRenderer *this_ptr,float render_alpha);
 void __cdecl engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(CDemonRenderer *this_ptr,int enabled);
 void __cdecl engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(CDemonRenderer *this_ptr,int value);

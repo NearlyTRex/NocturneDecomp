@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 29,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
-    "suspect_count": 1,
+    "pseudocode_lines": 13,
+    "suspect_count": 4,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 51
+    "total_lines": 50
   },
   "cross_references": [],
   "function": {
@@ -114,12 +114,36 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 16,
-      "match": "pCVar4[-1].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 12,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "return (CDemonSet *)&pCVar4[-1].enabled;",
-      "type": "negative_offset"
+      "text": "pSVar2 = (CDemonSet_ptr_1420992)core_set_cpp_SRoom_arrdtor_FUN_00571570(ADJ(pSVar1)->rooms,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pCVar1 = (CDemonSet_ptr_105008)core_set_cpp_C3DSLight_arrdtor_FUN_00571550(ADJ(pSVar2)->lights,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pCVar2 = (CDemonSet_ptr_4)core_set_cpp_C3DSCamera_arrdtor_FUN_00571530(ADJ(pCVar1)->cameras,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 15,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "return ADJ(pCVar2);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

@@ -29,9 +29,6 @@ CPickList g_CPickList = {};
 SMRGLPrimitiveQuadIndex g_GoreQuadPrimitive = {};
 SMRGLPrimitiveQuadIndex g_FootstepPrimitive = {};
 
-// char
-char g_CurrentSaveFile = {};
-
 // char*
 char* g_CurrentDisplayText = {};
 
@@ -40,6 +37,7 @@ char g_InputHistory[20] = {};
 
 // char[256]
 char g_ScreenshotFilename[256] = {};
+char g_CurrentSaveFile[256] = {};
 char g_ChapterDisplayName[256] = {};
 
 // char[600]
@@ -111,9 +109,6 @@ int g_BloodSplatCount = {};
 int g_MasterLightStateSaveBuffer[201] = {};
 
 // undefined1
-undefined1 DAT_02d82c81 = {};
-undefined1 DAT_02d82c82 = {};
-undefined1 DAT_02d82c83 = {};
 undefined1 DAT_02d831d6 = {};
 undefined1 DAT_02d831eb = {};
 

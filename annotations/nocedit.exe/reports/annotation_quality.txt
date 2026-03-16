@@ -14,15 +14,15 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,484
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        283 ( 4.4%)
+  Functions with type issues:        281 ( 4.3%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   0
-    Missing register params:           1
+    Missing register params:           0
     Wrong calling convention:          18
-    Undefined types in variables:      235
+    Undefined types in variables:      234
     Unresolved stack params:           47
 
 ====================================================================================================
@@ -58,14 +58,10 @@ Wrong return type (64-bit return via EDX:EAX) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Missing register parameters (likely wrong calling convention) (1)
+Missing register parameters (likely wrong calling convention) (0)
 --------------------------------------------------------------------------------
 
-  CDrawSurface_clipLine
-    Address: 0x00487e20  File: cockpit/drawsurf.cpp
-    Evidence: in_EAX, in_EDX, in_EDX, in_EAX, in_EDX, in_EAX, in_EAX, in_EDX, in_EAX, in_EDX, in_EDX, in_EAX, in_EAX, in_EAX, in_EDX, in_EAX, in_EAX, in_EAX
-    Signature: int __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20(CDrawSurface *this_ptr,int *x1,int *y1,int *x2,int *y2,int clip_left,int clip_top,int clip_right,int clip_bottom)
-    Suggested: Likely register-based calling convention
+  (none)
 
 --------------------------------------------------------------------------------
 Wrong calling convention (unaffected register usage) (18)
@@ -466,7 +462,7 @@ Unresolved stack parameters (missing from signature) (47)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (235)
+Undefined types in variables (234)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -1324,11 +1320,6 @@ Undefined types in variables (235)
     Locals:  local_20 (undefined8 *)
     Suggested: Resolve undefined types to concrete types
 
-  CDemonMission_editActorsInSet
-    Address: 0x005390f0  File: core/msnedit.cpp
-    Locals:  local_170 (undefined1[16])
-    Suggested: Resolve undefined types to concrete types
-
   CDemonMission_editGore
     Address: 0x0053e220  File: core/msnedit.cpp
     Locals:  auStack_94 (undefined1[16])
@@ -1694,7 +1685,7 @@ These were likely renamed or moved and the name suffix was not updated.
     FUN_ says: 0x005aaeb0   actual: 0x005b2d60   file: core/sound.cpp
 
 ====================================================================================================
-DUPLICATE FUNCTION NAMES (75 groups)
+DUPLICATE FUNCTION NAMES (74 groups)
 ====================================================================================================
 
 Functions that share the same base name (ignoring FUN_XXXXXXXX suffix).
@@ -1854,10 +1845,6 @@ Some are legitimate overloads, others may need disambiguating names.
     0x00404420  (SMRGLHeaderExtended *primitive)
     0x00404690  (SMRGLHeaderExtended *primitive)
     0x00404df0  (SMRGLHeaderExtended *primitive)
-
-  engine_3d.c_rasterizePolygon  (2 functions)
-    0x004d1340  (SRenderVertex **vertices,int vertex_count)
-    0x005fd4e0  (SRenderVertex *vertex_buffer,int vertex_count,RenderScanl...)
 
   engine_3d.c_renderPolygonDepthWriteTexturedLit  (2 functions)
     0x00405d80  (SMRGLHeaderPrimitive *prim)

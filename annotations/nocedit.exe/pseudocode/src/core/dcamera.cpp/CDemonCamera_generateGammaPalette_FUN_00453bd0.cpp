@@ -11,14 +11,14 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDemonCamera *this_ptr,int gamma_value)
 
 {
+  float10 fVar1;
+  float10 fVar2;
   int iVar2;
   int iVar3;
   float10 exp;
   float10 fVar4;
-  float10 fVar1;
-  float10 extraout_ST1;
-  float10 extraout_ST2;
-  float10 extraout_ST3;
+  float10 fVar3;
+  float10 fVar5;
   uint uVar1;
   
   iVar3 = 0;
@@ -26,14 +26,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDe
   fVar4 = (float10)0.0039215686274509803;
   iVar2 = 0;
   do {
-    fVar1 = pow((float10)iVar3 * fVar4,exp);
-    uVar1 = (uint)ROUND(ROUND(fVar1 * extraout_ST3));
+    fVar1 = exp;
+    fVar2 = fVar4;
+    fVar5 = exp;
+    fVar3 = pow((float10)iVar3 * fVar4,exp);
+    exp = fVar2;
+    fVar4 = fVar1;
+    uVar1 = (uint)ROUND(ROUND(fVar3 * fVar5));
     iVar3 = iVar3 + 1;
     *(uint *)((int)g_LightmapTexturePalette + iVar2) =
          uVar1 << 0x18 | uVar1 << 0x10 | uVar1 << 8 | uVar1;
     iVar2 = iVar2 + 4;
-    fVar4 = extraout_ST1;
-    exp = extraout_ST2;
   } while (iVar3 < 0x100);
   wincore_windll_cpp_setFogColor_FUN_005b7b80
             (g_LightmapTexturePalette[g_FogColorIndexR] & 0xff,

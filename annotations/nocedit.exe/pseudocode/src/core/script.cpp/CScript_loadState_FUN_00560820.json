@@ -4,7 +4,7 @@
       {
         "category": "other",
         "column": 30,
-        "line": 45,
+        "line": 44,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       }
     ],
@@ -13,17 +13,15 @@
   },
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 121,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 26,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 76,
-    "suspect_count": 4,
-    "suspect_types": [
-      "extra_output"
-    ],
-    "total_lines": 369
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 73,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 366
   },
   "cross_references": [
     {
@@ -43,7 +41,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_script.cpp_CScript_loadState_FUN_00560820",
-    "signature": "int __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *file_handle)"
+    "signature": "void __cdecl core_script_cpp_CScript_loadState_FUN_00560820(CScript *this_ptr,_FILE *file_handle)"
   },
   "function_calls": [
     {
@@ -328,38 +326,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "uint extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_EAX_00",
-      "severity": "moderate",
-      "text": "int extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 49,
-      "match": "extraout_EAX",
-      "severity": "moderate",
-      "text": "uVar1 = extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 75,
-      "match": "extraout_EAX_00",
-      "severity": "moderate",
-      "text": "return extraout_EAX_00;",
-      "type": "extra_output"
-    }
-  ]
+  "suspects": []
 }

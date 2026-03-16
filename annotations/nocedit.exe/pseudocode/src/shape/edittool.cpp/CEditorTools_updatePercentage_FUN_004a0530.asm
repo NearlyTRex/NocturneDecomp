@@ -135,7 +135,7 @@ section .text
     ADD ESP,0x4                         ; 004a05e6
     PUSH 0xffff                         ; 004a05e9
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004a05ee
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 004a05f3
     MOV ESI,dword ptr [ESP + 0x24]      ; 004a05f6
     PUSH ESI                            ; 004a05fa
@@ -303,7 +303,7 @@ section .text
     PUSH 0xffff                         ; 004a07d9
     MOV dword ptr [ESP + 0x1c],EDX      ; 004a07de
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004a07e2
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 004a07e7
     MOV EAX,dword ptr [ESP + 0x28]      ; 004a07ea
     PUSH EAX                            ; 004a07ee

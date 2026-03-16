@@ -380,7 +380,7 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 005ea74c | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 005ea752 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 005ea753
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 005ea758
     PUSH 0x684678                       ; 005ea75b | g_WaterTexturesEnd
     MOV ECX,dword ptr [0x006703ec]      ; 005ea760 | g_CDemonRendererInstance | g_CDemonRendererPtr2

@@ -26,7 +26,6 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
   SMRGLModelBounds *pSVar13;
   int iVar14;
   uint *puVar6;
-  uint *extraout_EDI;
   byte bVar15;
   char local_160 [80];
   uint local_110 [13];
@@ -80,10 +79,10 @@ SMRGLModelBounds * __stack_esi engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHe
     puVar11 = &local_a8;
   }
   else if (iVar4 == 0x26) {
+    puVar6 = local_110;
     engine_boss_c_modelStructNotSupported_FUN_0041dbe0((SMRGLHeaderExtended *)local_dc);
     iVar4 = 0xd;
     puVar11 = local_110 + 0xc;
-    puVar6 = extraout_EDI;
   }
   else {
     local_34 = &mrgl_data[1].child_count;

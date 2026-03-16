@@ -50,7 +50,7 @@ section .text
     PUSH 0xffff                         ; 004060dc
     MOV dword ptr [0x02d052a0],EDI      ; 004060e1 | g_RenderStateFlags
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004060e7
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 004060ec
     MOV EBP,0x1                         ; 004060ef
     PUSH EBX                            ; 004060f4

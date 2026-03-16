@@ -89,7 +89,7 @@ CVector3d * __cdecl CComplexPolygon::computeWindingNormal(CComplexPolygon *this_
 
 // Original: shape_superopt.cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20
 // Address: 005cbe20
-void __cdecl CComplexPolygon::storeEdgeSubChain(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
+int __cdecl CComplexPolygon::storeEdgeSubChain(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
 
 // Original: shape_superopt.cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0
 // Address: 005cbec0

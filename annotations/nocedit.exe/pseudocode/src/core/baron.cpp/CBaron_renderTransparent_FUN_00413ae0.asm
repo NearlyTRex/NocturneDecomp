@@ -98,7 +98,7 @@ section .text
     IDIV ESI                            ; 00413b72
     PUSH EAX                            ; 00413b74
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 00413b75
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 00413b7a
     LEA EAX,[EBX + 0x20]                ; 00413b7d
     PUSH EAX                            ; 00413b80
@@ -160,7 +160,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 00413c1a | g_CDemonRendererPtr2
     PUSH ECX                            ; 00413c20 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 00413c21
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 00413c26
     PUSH 0x1                            ; 00413c29
     MOV ESI,dword ptr [0x006703ec]      ; 00413c2b | g_CDemonRendererPtr2

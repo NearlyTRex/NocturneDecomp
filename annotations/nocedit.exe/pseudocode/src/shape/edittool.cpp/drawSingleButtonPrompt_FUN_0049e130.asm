@@ -223,7 +223,7 @@ section .text
     ADD ESP,0x8                         ; 0049e31b
     PUSH 0xffff                         ; 0049e31e
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 0049e323
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     MOV EDX,dword ptr [0x02d0255c]      ; 0049e328 | g_ClipTop
     MOV ECX,dword ptr [0x02d02564]      ; 0049e32e | g_ClipBottom
     ADD ESP,0x4                         ; 0049e334

@@ -23,8 +23,8 @@ SRenderVertex * __cdecl core_xform_cpp_transformAndClipGeometry_FUN_005f8550(int
   int iVar1;
   int iVar2;
   byte bVar12;
-  uint uVar13;
   byte bVar3;
+  uint uVar13;
   uint uVar4;
   SRenderVertex *extraout_EAX;
   SRenderVertex *extraout_EAX_00;

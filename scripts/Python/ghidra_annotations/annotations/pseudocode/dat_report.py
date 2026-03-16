@@ -1,6 +1,7 @@
 # DAT_ global analysis report
 # Identifies unnamed DAT_ globals and infers likely types from assembly/pseudocode usage
 
+import bisect
 import os
 import re
 from collections import defaultdict
@@ -129,64 +130,276 @@ def find_nearby_named_globals(dat_addr_int, all_globals, range_bytes=256):
     return nearby[:5]
 
 
-def is_inside_named_global(dat_addr_int, all_globals):
+BASE_TYPE_SIZES = {
+    'TerminatedCString': 256,
+    'char': 1, 'byte': 1, 'undefined1': 1,
+    'short': 2, 'ushort': 2, 'undefined2': 2,
+    'int': 4, 'uint': 4, 'undefined4': 4, 'float': 4, 'dword': 4,
+    'longlong': 8, 'ulonglong': 8, 'double': 8, 'undefined8': 8,
+    'pointer': 4, 'void*': 4,
+}
+
+
+def estimate_global_size(gtype):
+    """Estimate the byte size of a global from its type string.
+
+    Returns (size, is_exact) where is_exact indicates if the size is
+    known precisely (primitive/array) vs estimated (struct/unknown).
+    """
+    if not gtype:
+        return 4, False
+
+    # Array types: e.g. "int[100]", "SFogImagePlane[16]", "char[241][320]"
+    # Handle multi-dimensional arrays by multiplying all dimensions
+    dims = re.findall(r'\[(\d+)\]', gtype)
+    if dims:
+        base_type = re.sub(r'\[\d+\]', '', gtype).strip()
+        elem_size = BASE_TYPE_SIZES.get(base_type, 4)
+        total = elem_size
+        for d in dims:
+            total *= int(d)
+        return total, base_type in BASE_TYPE_SIZES
+
+    # String types
+    if 'String' in gtype or gtype.startswith('s_') or gtype.startswith('char['):
+        return 256, False
+
+    # Known primitive types
+    if gtype in BASE_TYPE_SIZES:
+        return BASE_TYPE_SIZES[gtype], True
+
+    # Pointer types
+    if '*' in gtype:
+        return 4, True
+
+    # Unknown struct/class type - return 0 (will use gap-based estimation)
+    return 0, False
+
+
+def _find_base_global_name(name, all_globals):
+    """Find the base global for a sub-reference like g_Foo[0].bar or g_Foo[3].
+
+    Returns the base global name if found, None otherwise.
+    """
+    # Strip trailing field accessors: g_Foo[0].bar.baz -> g_Foo[0]
+    # Strip array indices: g_Foo[0] -> g_Foo
+    candidate = name
+    while True:
+        # Strip trailing .field
+        dot_m = re.match(r'(.+)\.\w+$', candidate)
+        if dot_m:
+            candidate = dot_m.group(1)
+            if candidate in all_globals:
+                return candidate
+            continue
+        # Strip trailing [N]
+        bracket_m = re.match(r'(.+)\[\d+\]$', candidate)
+        if bracket_m:
+            candidate = bracket_m.group(1)
+            if candidate in all_globals:
+                return candidate
+            continue
+        break
+    return None
+
+
+def build_global_address_map(all_globals):
+    """Build a sorted list of (addr, name, type, estimated_size) for all named globals.
+
+    Skips sub-references (array elements, struct fields) when the base global
+    exists, so the map contains only top-level declarations. This ensures
+    gap-based size estimation works against the parent array/struct rather
+    than individual fields.
+    """
+    entries = []
+    for name, info in all_globals.items():
+        if name.startswith('DAT_'):
+            continue
+        # Skip sub-references (g_Foo[3], g_Foo[0].bar, g_Foo.x) when the
+        # base global exists — we only want top-level declarations
+        base = _find_base_global_name(name, all_globals)
+        if base is not None:
+            continue
+        try:
+            addr = int(info['addr'], 16)
+        except (ValueError, KeyError):
+            continue
+        gtype = info.get('type', '')
+        size, is_exact = estimate_global_size(gtype)
+        entries.append((addr, name, gtype, size, is_exact))
+
+    entries.sort()
+    return entries
+
+
+def is_inside_named_global(dat_addr_int, all_globals, global_addr_map=None):
     """Check if a DAT_ address falls within a named (non-DAT_) global's data range.
 
     Returns the containing global's name if found, None otherwise.
     For example, DAT_006169b0 at address 006169b0 is inside the string
     "???" at 006169af (s_anon_006169af), so it's not a real global.
+
+    Uses gap-based size estimation for struct/class types: if a struct global
+    has no known size, the gap to the next named global is used as an upper bound.
     """
-    # Types and their approximate sizes
-    TYPE_SIZES = {
-        'TerminatedCString': 256,  # conservative max; will check actual distance
-        'char': 1, 'byte': 1, 'undefined1': 1,
-        'short': 2, 'ushort': 2, 'undefined2': 2,
-        'int': 4, 'uint': 4, 'undefined4': 4, 'float': 4, 'dword': 4,
-        'longlong': 8, 'ulonglong': 8, 'double': 8, 'undefined8': 8,
-        'pointer': 4, 'void*': 4,
-    }
+    if global_addr_map is None:
+        global_addr_map = build_global_address_map(all_globals)
 
-    for name, info in all_globals.items():
-        if name.startswith('DAT_'):
-            continue
-        try:
-            other_addr = int(info['addr'], 16)
-        except (ValueError, KeyError):
-            continue
+    # Binary search for the global just before this address
+    addrs = [e[0] for e in global_addr_map]
+    idx = bisect.bisect_right(addrs, dat_addr_int) - 1
+    if idx < 0:
+        return None
 
-        offset = dat_addr_int - other_addr
-        if offset <= 0:
-            continue
+    prev_addr, prev_name, prev_type, prev_size, prev_exact = global_addr_map[idx]
+    offset = dat_addr_int - prev_addr
+    if offset <= 0:
+        return None
 
-        gtype = info.get('type', '')
+    # For types with exact known sizes, check bounds directly
+    if prev_exact and prev_size > 0 and offset < prev_size:
+        return prev_name
 
-        # String types: DAT_ within a few hundred bytes after a string start
-        # is likely inside the string data
-        if 'String' in gtype or gtype.startswith('s_') or gtype.startswith('char['):
-            # For strings, use a reasonable max. Most strings are < 256 bytes.
-            if offset < 256:
-                return name
+    # String types with generous bounds
+    if 'String' in prev_type or prev_type.startswith('s_'):
+        if offset < 256:
+            return prev_name
 
-        # Array types: check if offset falls within array bounds
-        # e.g. "int[100]" has size 400
-        arr_m = re.match(r'.*\[(\d+)\]', gtype)
-        if arr_m:
-            # Rough estimate: array element count * 4 (common element size)
-            arr_count = int(arr_m.group(1))
-            # Get base type size
-            base_type = re.sub(r'\[\d+\]', '', gtype).strip()
-            elem_size = TYPE_SIZES.get(base_type, 4)
-            total_size = arr_count * elem_size
-            if offset < total_size:
-                return name
-
-        # Struct types: small offsets (< 4) into a named global are likely
-        # just accessing fields of that global, not separate globals
-        if offset < 4 and gtype not in TYPE_SIZES:
-            # Likely a struct field
-            return name
+    # For types with inexact/unknown size, use gap to next global.
+    # This covers: unknown struct types (size==0), and arrays of unknown
+    # struct types where the element size defaulted to 4 (e.g. SFreaky[6]
+    # estimated as 24 bytes but actually much larger).
+    if not prev_exact and prev_type and prev_type not in BASE_TYPE_SIZES:
+        # Use gap to next named global as size upper bound
+        if idx + 1 < len(global_addr_map):
+            next_addr = global_addr_map[idx + 1][0]
+            gap = next_addr - prev_addr
+            # Only use gap-based estimation if the gap is reasonable (< 16KB)
+            # and the offset is well within the gap (< 75% to avoid boundary ambiguity)
+            if gap < 16384 and offset < gap * 3 // 4:
+                return prev_name
 
     return None
+
+
+# =============================================================================
+# Immediate constant detection
+# =============================================================================
+
+def detect_immediate_references(pseudocode_src_dir, dat_globals):
+    """Detect DAT_ globals that are used only as immediate values, not memory addresses.
+
+    When Ghidra sees `MOV EDX, 0xf80000`, it may create a DAT_ label at address
+    0x00f80000 even though the value is just an inline constant. This function
+    detects such cases by checking if the address always appears outside of
+    square brackets (i.e., never dereferenced as memory).
+
+    Returns dict: dat_name -> {
+        'all_immediate': bool,
+        'references': [(func_display_name, instruction_line), ...],
+        'immediate_count': int,
+        'memory_count': int,
+    }
+    """
+    import glob as glob_mod
+
+    results = {}
+    for name in dat_globals:
+        results[name] = {
+            'all_immediate': True,
+            'references': [],
+            'immediate_count': 0,
+            'memory_count': 0,
+        }
+
+    # Build address patterns for matching in operands
+    # DAT_00f80000 -> addr string "00f80000", match variants like "0xf80000"
+    dat_addr_hex = {}
+    for name, info in dat_globals.items():
+        addr = info['addr'].lower()
+        dat_addr_hex[name] = addr
+
+    asm_pattern = os.path.join(pseudocode_src_dir, '**', '*.asm')
+    for asm_path in sorted(glob_mod.glob(asm_pattern, recursive=True)):
+        if os.path.isdir(asm_path):
+            continue
+
+        # Extract function display name from filename
+        basename = os.path.splitext(os.path.basename(asm_path))[0]
+        # Strip the FUN_xxx suffix for cleaner display
+        func_display = re.sub(r'_FUN_[0-9a-f]+$', '', basename)
+
+        try:
+            with open(asm_path) as f:
+                lines = f.readlines()
+        except IOError:
+            continue
+
+        for line in lines:
+            if 'DAT_' not in line or '|' not in line:
+                continue
+
+            parts = line.split('|')
+            if len(parts) < 2:
+                continue
+
+            # Find all DAT_ references in the comment portion
+            comment_part = parts[1]
+            dat_refs = re.findall(r'(DAT_[0-9a-fA-F]+)', comment_part)
+
+            # Parse the instruction
+            instr_m = re.match(r'\s+(\S+)\s+(.*?)\s*;\s*[0-9a-f]+', line)
+            if not instr_m:
+                continue
+
+            operands = instr_m.group(2).strip()
+
+            for dat_ref in dat_refs:
+                if dat_ref not in results:
+                    continue
+
+                addr_hex = dat_addr_hex.get(dat_ref, '')
+                if not addr_hex:
+                    continue
+
+                # Determine if this is an immediate constant or memory reference.
+                # Build patterns to match: 0x00f80000, 0xf80000, etc.
+                addr_stripped = addr_hex.lstrip('0') or '0'
+                operands_lower = operands.lower()
+
+                # Check if the DAT_ address literal appears in the operand text.
+                # If it doesn't appear at all, Ghidra resolved it from a
+                # register+offset expression (e.g. [EAX + 0x14d144] -> 0x032613bc).
+                # That's a computed struct field access, not an immediate.
+                addr_in_operand = (
+                    ('0x' + addr_stripped) in operands_lower or
+                    ('0x' + addr_hex) in operands_lower or
+                    addr_hex in operands_lower
+                )
+
+                if not addr_in_operand:
+                    # Resolved/computed address — definitely a memory reference
+                    is_memory = True
+                else:
+                    # Address literal is in the operand — check if it's inside
+                    # brackets (memory deref) or bare (immediate)
+                    is_memory = False
+                    bracket_contents = re.findall(r'\[([^\]]*)\]', operands_lower)
+                    for content in bracket_contents:
+                        if addr_stripped in content or addr_hex in content:
+                            is_memory = True
+                            break
+
+                if is_memory:
+                    results[dat_ref]['memory_count'] += 1
+                    results[dat_ref]['all_immediate'] = False
+                else:
+                    results[dat_ref]['immediate_count'] += 1
+
+                results[dat_ref]['references'].append(
+                    (func_display, line.strip()))
+
+    return results
 
 
 # =============================================================================
@@ -241,19 +454,35 @@ def generate_dat_report(pseudocode_src_dir, reports_dir):
         len(dat_globals), len(all_globals)))
 
     # Filter out DAT_ globals that fall inside named globals (strings, arrays, structs)
+    global_addr_map = build_global_address_map(all_globals)
     filtered_out = {}
     for name in list(dat_globals.keys()):
         try:
             dat_addr_int = int(dat_globals[name]['addr'], 16)
         except ValueError:
             continue
-        containing = is_inside_named_global(dat_addr_int, all_globals)
+        containing = is_inside_named_global(dat_addr_int, all_globals, global_addr_map)
         if containing:
             filtered_out[name] = containing
             del dat_globals[name]
 
     log_info("Filtered out %d DAT_ globals inside named data (%d remaining)" % (
         len(filtered_out), len(dat_globals)))
+
+    # Detect immediate constants and remove them from the main analysis
+    imm_results = detect_immediate_references(pseudocode_src_dir, dat_globals)
+    immediate_constants = {}
+    for name, imm_info in imm_results.items():
+        if name not in dat_globals:
+            continue
+        if imm_info['all_immediate'] and imm_info['immediate_count'] > 0:
+            immediate_constants[name] = imm_info
+
+    for name in immediate_constants:
+        del dat_globals[name]
+
+    log_info("Detected %d likely immediate constants (%d real globals remaining)" % (
+        len(immediate_constants), len(dat_globals)))
 
     # Scan assembly files for DAT_ instruction patterns
     asm_pattern = os.path.join(pseudocode_src_dir, '**', '*.asm')
@@ -334,7 +563,11 @@ def generate_dat_report(pseudocode_src_dir, reports_dir):
     report_lines.append("DAT_ GLOBALS ANALYSIS REPORT")
     report_lines.append("=" * 80)
     report_lines.append("")
-    report_lines.append("Total DAT_ globals: %d" % len(dat_globals))
+    total_found = len(dat_globals) + len(filtered_out) + len(immediate_constants)
+    report_lines.append("Total DAT_ globals found: %d" % total_found)
+    report_lines.append("Filtered out (inside named data): %d" % len(filtered_out))
+    report_lines.append("Immediate constants (not real globals): %d" % len(immediate_constants))
+    report_lines.append("Real globals remaining: %d" % len(dat_globals))
     report_lines.append("")
 
     # Type breakdown
@@ -455,6 +688,29 @@ def generate_dat_report(pseudocode_src_dir, reports_dir):
         report_lines.append("  %-30s  addr=%-10s  refs=%-4d  type=%-14s%s%s" % (
             name, info['addr'], ref_count, info['type'], hint_str, nearby_str))
     report_lines.append("")
+
+    # Immediate constants section
+    if immediate_constants:
+        report_lines.append("-" * 80)
+        report_lines.append("IMMEDIATE CONSTANTS - NOT REAL GLOBALS (%d)" % len(immediate_constants))
+        report_lines.append("-" * 80)
+        report_lines.append("These DAT_ globals are never dereferenced as memory addresses.")
+        report_lines.append("They appear only as inline constant values.")
+        report_lines.append("")
+        imm_sorted = sorted(
+            immediate_constants.items(),
+            key=lambda x: -x[1]['immediate_count']
+        )
+        for name, imm_info in imm_sorted:
+            ref_count = imm_info['immediate_count']
+            addr_hex = imm_info.get('references', [('', '')])[0][1]  # just for display
+            try:
+                addr_int = int(name.replace('DAT_', ''), 16)
+                val_str = "0x%X" % addr_int
+            except ValueError:
+                val_str = name
+            report_lines.append("  %-30s  value=%-14s  refs=%d" % (name, val_str, ref_count))
+        report_lines.append("")
 
     # Filtered out section (summary only)
     if filtered_out:
@@ -702,18 +958,40 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
                 dat_globals.setdefault(name, {'addr': addr, 'type': gtype, 'funcs': set()})
                 dat_globals[name]['funcs'].add(func_name)
 
-    # Filter out DAT_ inside named data
+    # Build sorted address map for improved containment checks
+    global_addr_map = build_global_address_map(all_globals)
+
+    # Filter out DAT_ inside named data (using improved gap-based detection)
+    filtered_out = {}
     for name in list(dat_globals.keys()):
         try:
             dat_addr_int = int(dat_globals[name]['addr'], 16)
         except ValueError:
             del dat_globals[name]
             continue
-        containing = is_inside_named_global(dat_addr_int, all_globals)
+        containing = is_inside_named_global(dat_addr_int, all_globals, global_addr_map)
         if containing:
+            filtered_out[name] = containing
             del dat_globals[name]
 
-    # Collect assembly type hints
+    log_info("Filtered out %d DAT_ globals inside named data (%d remaining)" % (
+        len(filtered_out), len(dat_globals)))
+
+    # Detect immediate constants (DAT_ globals used only as inline values)
+    imm_results = detect_immediate_references(pseudocode_src_dir, dat_globals)
+    immediate_constants = {}
+    for name, imm_info in imm_results.items():
+        if name not in dat_globals:
+            continue
+        if imm_info['all_immediate'] and imm_info['immediate_count'] > 0:
+            immediate_constants[name] = imm_info
+
+    log_info("Detected %d likely immediate constants" % len(immediate_constants))
+
+    # Remove immediate constants from the main analysis pool
+    real_dat_globals = {k: v for k, v in dat_globals.items() if k not in immediate_constants}
+
+    # Collect assembly type hints (only for real globals)
     type_hints = defaultdict(list)
     asm_pattern = os.path.join(pseudocode_src_dir, '**', '*.asm')
     for asm_path in sorted(glob.glob(asm_pattern, recursive=True)):
@@ -721,17 +999,17 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
             continue
         try:
             with open(asm_path) as f:
-                lines = f.readlines()
+                asm_lines = f.readlines()
         except IOError:
             continue
-        for line in lines:
+        for line in asm_lines:
             if 'DAT_' not in line or '|' not in line:
                 continue
             parts = line.split('|')
             if len(parts) < 2:
                 continue
             dat_ref = parts[1].strip().split()[0] if parts[1].strip() else ''
-            if not dat_ref.startswith('DAT_') or dat_ref not in dat_globals:
+            if not dat_ref.startswith('DAT_') or dat_ref not in real_dat_globals:
                 continue
             m = re.match(r'\s+(\S+)\s+(.*?)\s*;\s*[0-9a-f]+', line)
             if m:
@@ -739,9 +1017,9 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
                 if hint:
                     type_hints[dat_ref].append((hint, conf))
 
-    # Sort by address and detect clusters
+    # Sort by address and detect clusters (excluding immediates)
     dat_addrs = []
-    for name, info in dat_globals.items():
+    for name, info in real_dat_globals.items():
         try:
             addr_int = int(info['addr'], 16)
             info['_name'] = name
@@ -770,7 +1048,10 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
     lines.append("DAT_ STRUCT/ARRAY DETECTION REPORT")
     lines.append("=" * 80)
     lines.append("")
-    lines.append("Total DAT_ globals (after filtering): %d" % len(dat_globals))
+    lines.append("Total DAT_ globals found: %d" % len(dat_globals))
+    lines.append("Filtered out (inside named data): %d" % len(filtered_out))
+    lines.append("Immediate constants (not real globals): %d" % len(immediate_constants))
+    lines.append("Real globals remaining: %d" % len(real_dat_globals))
     lines.append("Clusters detected: %d" % len(clusters))
     lines.append("DAT_ globals in clusters: %d" % sum(len(c) for c, _, _, _ in classified))
     lines.append("")
@@ -784,7 +1065,56 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
         lines.append("  %-20s %d clusters" % (cls, count))
     lines.append("")
 
-    # Detail sections by confidence
+    # =========================================================================
+    # LIKELY IMMEDIATE CONSTANTS section
+    # =========================================================================
+    if immediate_constants:
+        lines.append("-" * 80)
+        lines.append("LIKELY IMMEDIATE CONSTANTS (%d)" % len(immediate_constants))
+        lines.append("-" * 80)
+        lines.append("These DAT_ globals are never dereferenced as memory addresses.")
+        lines.append("They appear only as inline constant values (e.g. MOV EDX,0xf80000).")
+        lines.append("Consider removing the Ghidra label and leaving the raw number.")
+        lines.append("")
+
+        # Sort by reference count (most referenced first)
+        imm_sorted = sorted(
+            immediate_constants.items(),
+            key=lambda x: -x[1]['immediate_count']
+        )
+
+        for name, imm_info in imm_sorted:
+            info = dat_globals[name]
+            addr_hex = info['addr']
+            ref_count = imm_info['immediate_count']
+
+            # Show the constant value in useful formats
+            try:
+                addr_int = int(addr_hex, 16)
+                val_str = "0x%X" % addr_int
+                # Add decimal if it might be meaningful
+                if addr_int < 0x1000000:
+                    val_str += " (%d)" % addr_int
+            except ValueError:
+                val_str = addr_hex
+
+            lines.append("  %s  value=%s  refs=%d" % (name, val_str, ref_count))
+
+            # Show referencing functions (deduplicated)
+            seen_funcs = {}
+            for func_display, instr_line in imm_info['references']:
+                if func_display not in seen_funcs:
+                    seen_funcs[func_display] = instr_line
+            for func_display, instr_line in sorted(seen_funcs.items()):
+                # Truncate long instruction lines
+                instr_short = instr_line[:100] + '...' if len(instr_line) > 100 else instr_line
+                lines.append("    %s" % func_display)
+                lines.append("      %s" % instr_short)
+            lines.append("")
+
+    # =========================================================================
+    # Detail sections by confidence (real globals only)
+    # =========================================================================
     for conf_level in ['high', 'medium', 'low']:
         matching = [(c, s, cls, d) for c, s, cls, d in classified if d.get('confidence') == conf_level]
         if not matching:
@@ -833,13 +1163,14 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
 
         lines.append("")
 
-    # Isolated DAT_ globals (not in any cluster)
+    # Isolated DAT_ globals (not in any cluster, not immediates)
     clustered_names = set()
     for cluster, _, _, _ in classified:
         for _, name, _ in cluster:
             clustered_names.add(name)
 
-    isolated = [(name, info) for name, info in dat_globals.items() if name not in clustered_names]
+    isolated = [(name, info) for name, info in real_dat_globals.items()
+                if name not in clustered_names]
     isolated.sort(key=lambda x: -len(x[1]['funcs']))
 
     lines.append("-" * 80)
@@ -860,6 +1191,15 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
     if len(isolated) > 50:
         lines.append("  ... +%d more" % (len(isolated) - 50))
     lines.append("")
+
+    # Filtered out section (summary)
+    if filtered_out:
+        lines.append("-" * 80)
+        lines.append("FILTERED OUT - INSIDE NAMED DATA (%d)" % len(filtered_out))
+        lines.append("-" * 80)
+        for name in sorted(filtered_out.keys()):
+            lines.append("  %-30s  inside %s" % (name, filtered_out[name]))
+        lines.append("")
 
     # Write report
     report_path = os.path.join(reports_dir, "dat_struct_detection.txt")

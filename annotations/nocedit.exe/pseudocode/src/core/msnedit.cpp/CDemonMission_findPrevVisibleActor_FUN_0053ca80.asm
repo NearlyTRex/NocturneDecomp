@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_msnedit_cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80(CDemonMission *this_ptr,CDemonActor *actor)
+; CDemonActor * __cdecl core_msnedit_cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80(CDemonMission *this_ptr,CDemonActor *actor)
 ;
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr

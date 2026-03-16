@@ -297,7 +297,7 @@ section .text
     MOV [0x015c4854],EAX                ; 00464bd8 | g_BackupPolygonCount
     PUSH 0x0                            ; 00464bdd
     CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 00464bdf
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 00464be4
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630 ; 00464be7
         ;   XREF to: 005ed630 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630()

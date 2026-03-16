@@ -408,12 +408,12 @@ section .text
     LEA EAX,[ESP + 0x40c]               ; 004e10ac
     PUSH EAX                            ; 004e10b3
     CALL crt_stdio.c_fflush_FUN_00600e29 ; 004e10b4
-        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00600e29(_FILE * stream)
+        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_fflush_FUN_00600e29(_FILE * stream)
     ADD ESP,0x4                         ; 004e10b9
     LEA EAX,[ESP + 0x48c]               ; 004e10bc
     PUSH EAX                            ; 004e10c3
     CALL crt_stdio.c_fflush_FUN_00600e29 ; 004e10c4
-        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00600e29(_FILE * stream)
+        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_fflush_FUN_00600e29(_FILE * stream)
     ADD ESP,0x4                         ; 004e10c9
     PUSH EDI                            ; 004e10cc
     LEA EAX,[ESP + 0x510]               ; 004e10cd

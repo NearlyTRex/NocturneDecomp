@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; double __fpureg crt_math_c_sqrt_FUN_0060710c(double value)
+; double __fpureg_safe crt_math_c_sqrt_FUN_0060710c(double value)
 ;
 ;
 ; XREF[2]:

@@ -102,7 +102,7 @@ section .text
     PUSH 0x1                            ; 004a0e6d
         ;   Label: LAB_004a0e6d
     CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 004a0e6f
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 004a0e74
     POP EBX                             ; 004a0e77
     POP ESI                             ; 004a0e78

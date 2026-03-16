@@ -106,7 +106,7 @@ void __cdecl shape_superopt_cpp_CComplexPolygon_splitEdgesByPlane_FUN_005c9aa0(C
 int __cdecl shape_superopt_cpp_CComplexPolygon_closeSplitBoundary_FUN_005ca590(CComplexPolygon *this_ptr,SExpandedEdge *edges,int *edge_count_ptr,int is_secondary);
 int __cdecl shape_superopt_cpp_CComplexPolygon_isConvex_FUN_005cb3a0(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
 CVector3d * __cdecl shape_superopt_cpp_CComplexPolygon_computeWindingNormal_FUN_005cbb40(CComplexPolygon *this_ptr,CVector3d *output_normal,SExpandedEdge *edges,int edge_count);
-void __cdecl shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
+int __cdecl shape_superopt_cpp_CComplexPolygon_storeEdgeSubChain_FUN_005cbe20(CComplexPolygon *this_ptr,SExpandedEdge *edges,int edge_count);
 void * __cdecl shape_superopt_cpp_CComplexPolygon_getConvexSubChains_FUN_005cbec0(CComplexPolygon *this_ptr,int *out_count);
 int __cdecl shape_superopt_cpp_CComplexPolygon_getExpandedEdgeCount_FUN_005cbee0(CComplexPolygon *this_ptr);
 CVector3d * __cdecl shape_superopt_cpp_CComplexPolygon_getNormal_FUN_005cbef0(CComplexPolygon *this_ptr);

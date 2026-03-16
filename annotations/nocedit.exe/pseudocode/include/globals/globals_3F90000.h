@@ -18,7 +18,7 @@
 #include "types/classes/CWeather.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SSoftwareEdge.h"
-#include "types/typedefs/MessageHandler.h"
+#include "types/typedefs/SMessageHandler.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x3F90000
@@ -94,9 +94,6 @@ extern LPCRITICAL_SECTION g_GlobalInitLock;
 // LPCRITICAL_SECTION*
 extern LPCRITICAL_SECTION* g_DynamicCriticalSectionArray;
 
-// MessageHandler[4]
-extern MessageHandler g_WindowMessageHandlers[4];
-
 // PALETTEENTRY[256]
 extern PALETTEENTRY g_DDPaletteBuffer[256];
 
@@ -106,6 +103,9 @@ extern ReentrantCriticalSection g_GlobalThreadCriticalSection;
 extern ReentrantCriticalSection g_GlobalMemoryCriticalSection;
 extern ReentrantCriticalSection g_GlobalIoCriticalSection;
 extern ReentrantCriticalSection g_GlobalRuntimeCriticalSection;
+
+// SMessageHandler[4]
+extern SMessageHandler g_WindowMessageHandlers[4];
 
 // SRenderVertex[32]
 extern SRenderVertex g_ClipVertexBufferStage2[32];
@@ -126,9 +126,6 @@ extern WCHAR* g_CommandLineW;
 extern _struct_19 g_PerformanceCounter;
 extern _struct_19 g_PerformanceFrequency;
 
-// byte
-extern byte g_CommandLineBuffer;
-
 // char*
 extern char* g_CommandLineA;
 
@@ -146,6 +143,7 @@ extern char g_KeyNameBuffer[200];
 // char[256]
 extern char g_ModuleFileName[256];
 extern char g_CurrentDirectory[256];
+extern char g_CommandLineBuffer[256];
 extern char g_LeadByteTable[256];
 
 // char[260]
@@ -219,10 +217,6 @@ extern int g_MessageFlags[513];
 extern uint UINT_03f96b40;
 
 // undefined1
-extern undefined1 DAT_03f98ff1;
-extern undefined1 DAT_03f98ff2;
-extern undefined1 DAT_03f98ff3;
-extern undefined1 DAT_03f98ff4;
 extern undefined1 DAT_03f9b850;
 
 // undefined4

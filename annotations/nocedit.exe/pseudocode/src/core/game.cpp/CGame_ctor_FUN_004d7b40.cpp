@@ -65,7 +65,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004d7b40(CGame *this_ptr)
   this_ptr->damageable_enemy_count = 0.0;
   this_ptr->game_state_flags = 0;
   this_ptr->act_completion_state = 0;
-  g_CurrentSaveFile = '\0';
+  g_CurrentSaveFile[0] = '\0';
   this_ptr->chapter_reload_filename[0] = '\0';
   return this_ptr;
 }

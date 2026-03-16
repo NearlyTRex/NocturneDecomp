@@ -17431,54 +17431,6 @@
           "use":56
         },
         {
-          "name":"extraout_ST1",
-          "storage":{
-            "reg":"ST1",
-            "size":10,
-            "varnodes":[
-              {
-                "addr":"register:00001110",
-                "offset":4368,
-                "size":10
-              }
-            ]
-          },
-          "type":"float10",
-          "use":56
-        },
-        {
-          "name":"extraout_ST2",
-          "storage":{
-            "reg":"ST2",
-            "size":10,
-            "varnodes":[
-              {
-                "addr":"register:00001120",
-                "offset":4384,
-                "size":10
-              }
-            ]
-          },
-          "type":"float10",
-          "use":56
-        },
-        {
-          "name":"extraout_ST3",
-          "storage":{
-            "reg":"ST3",
-            "size":10,
-            "varnodes":[
-              {
-                "addr":"register:00001130",
-                "offset":4400,
-                "size":10
-              }
-            ]
-          },
-          "type":"float10",
-          "use":56
-        },
-        {
           "name":"uVar1",
           "storage":{
             "size":4,
@@ -64736,22 +64688,6 @@
           "use":262
         },
         {
-          "name":"extraout_ST1",
-          "storage":{
-            "reg":"ST1",
-            "size":10,
-            "varnodes":[
-              {
-                "addr":"register:00001110",
-                "offset":4368,
-                "size":10
-              }
-            ]
-          },
-          "type":"float10",
-          "use":651
-        },
-        {
           "name":"base",
           "storage":{
             "reg":"ST0",
@@ -64766,38 +64702,6 @@
           },
           "type":"float10",
           "use":680
-        },
-        {
-          "name":"extraout_ST1_00",
-          "storage":{
-            "reg":"ST1",
-            "size":10,
-            "varnodes":[
-              {
-                "addr":"register:00001110",
-                "offset":4368,
-                "size":10
-              }
-            ]
-          },
-          "type":"float10",
-          "use":708
-        },
-        {
-          "name":"extraout_ST2",
-          "storage":{
-            "reg":"ST2",
-            "size":10,
-            "varnodes":[
-              {
-                "addr":"register:00001120",
-                "offset":4384,
-                "size":10
-              }
-            ]
-          },
-          "type":"float10",
-          "use":708
         },
         {
           "name":"iVar5",
@@ -72845,6 +72749,68 @@
     "name":"core_set.cpp_CDemonSet_dtor_FUN_00569350",
     "ret":"CDemonSet*",
     "vars":{
+      "locals":[
+        {
+          "name":"pSVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet_ptr_1422356",
+          "use":23
+        },
+        {
+          "name":"pSVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet_ptr_1420992",
+          "use":39
+        },
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet_ptr_105008",
+          "use":55
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDemonSet_ptr_4",
+          "use":71
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -84853,7 +84819,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"wincore_windll.cpp_unlockFrame_FUN_005b7250",
-    "ret":"void",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -84872,7 +84838,17 @@
           },
           "type":"int"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -99423,51 +99399,6 @@
           "use":382
         },
         {
-          "name":"extraout_EAX",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SRenderVertex*",
-          "use":1179
-        },
-        {
-          "name":"extraout_EAX_00",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SRenderVertex*",
-          "use":1292
-        },
-        {
-          "name":"extraout_EAX_01",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SRenderVertex*",
-          "use":1333
-        },
-        {
           "name":"pSVar19",
           "storage":{
             "reg":"ESI",
@@ -99500,66 +99431,6 @@
           "use":1393
         },
         {
-          "name":"extraout_EAX_02",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SRenderVertex*",
-          "use":1446
-        },
-        {
-          "name":"extraout_EAX_03",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SRenderVertex*",
-          "use":1487
-        },
-        {
-          "name":"extraout_EAX_04",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SRenderVertex*",
-          "use":1600
-        },
-        {
-          "name":"extraout_EAX_05",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SRenderVertex*",
-          "use":1641
-        },
-        {
           "name":"pSVar20",
           "storage":{
             "reg":"ESI",
@@ -99574,21 +99445,6 @@
           },
           "type":"SRenderVertex*",
           "use":1701
-        },
-        {
-          "name":"extraout_EAX_06",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"SRenderVertex*",
-          "use":1754
         },
         {
           "name":"iVar17",
@@ -100061,6 +99917,98 @@
     "name":"core_zombie.cpp_CZombie_dtor_FUN_005fcc50",
     "ret":"CZombie*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CZombie_ptr_13260",
+          "use":25
+        },
+        {
+          "name":"pSVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CZombie_ptr_12060",
+          "use":41
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CZombie_ptr_11536",
+          "use":57
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CZombie_ptr_11356",
+          "use":73
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CZombie_ptr_10900",
+          "use":89
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CZombie_ptr_344",
+          "use":105
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -102218,7 +102166,7 @@
     "conv":"__watcallStack",
     "importable":true,
     "name":"crt_time.c_get_local_time_FUN_00607150",
-    "ret":"void",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -102237,7 +102185,17 @@
           },
           "type":"_tm*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {

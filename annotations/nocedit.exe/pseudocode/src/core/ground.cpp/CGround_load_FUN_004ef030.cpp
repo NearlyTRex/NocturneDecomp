@@ -2,11 +2,11 @@
 // Address: 004ef030
 // Address Range: [[004ef030, 004ef370]]
 // Convention: __cdecl
-// Signature: int __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *filename)
+// Signature: void __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *filename)
 
 #include "nocturne.h"
 
-int __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *filename)
+void __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *filename)
 
 {
   char cVar2;
@@ -14,7 +14,6 @@ int __cdecl core_ground_cpp_CGround_load_FUN_004ef030(CGround *this_ptr,char *fi
   uint uVar3;
   _FILE *file_00;
   int iVar4;
-  int extraout_EAX;
   char *pcVar5;
   char *pcVar3;
   char *pcVar6;
@@ -163,5 +162,5 @@ LAB_004ef1f1:
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_00,"..\\core\\ground.cpp",0x10c);
   core_texlist_cpp_CTextureList_load_FUN_005dbe00(this_ptr->texture_list,filename);
-  return extraout_EAX;
+  return;
 }

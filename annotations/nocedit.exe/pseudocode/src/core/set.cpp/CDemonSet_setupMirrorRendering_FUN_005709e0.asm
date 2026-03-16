@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   enable_flag
 ; Local Variables:
 ; float[3]         Stack[-0x2c]:12  afStack_2c
-; float[3]         Stack[-0x20]:12  local_20
+; CVector3f        Stack[-0x20]:12  local_20
 ; float            Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
@@ -55,7 +55,7 @@ section .text
     MOV EDX,dword ptr [0x006703ec]      ; 005709f0 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EDX                            ; 005709f6 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780 ; 005709f7
-        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; float * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, float * output)
+        ;   XREF to: 0048c780 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 005709fc
     CMP EAX,0x33469d0                   ; 005709ff | g_SavedCameraOrigin
     JZ 0x00570a20                       ; 00570a04

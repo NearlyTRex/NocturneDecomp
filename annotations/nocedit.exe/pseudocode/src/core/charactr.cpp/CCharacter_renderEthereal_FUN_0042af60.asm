@@ -61,7 +61,7 @@ section .text
     MOV ECX,dword ptr [0x006703ec]      ; 0042af86 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH ECX                            ; 0042af8c | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0042af8d
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     MOV EAX,[0x02db87d0]                ; 0042af92 | g_LocalHeroIndex
     MOV EBX,dword ptr [EAX*0x4 + 0x2db87c0] ; 0042af97 | g_HeroActors
     ADD ESP,0x8                         ; 0042af9e

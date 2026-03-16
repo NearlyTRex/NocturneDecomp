@@ -417,7 +417,7 @@ section .text
     PUSH 0xffff                         ; 004e3f3b
     MOV dword ptr [ESP + 0x538],EAX     ; 004e3f40
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004e3f47
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 004e3f4c
     PUSH 0xc0                           ; 004e3f4f
     PUSH 0x100                          ; 004e3f54

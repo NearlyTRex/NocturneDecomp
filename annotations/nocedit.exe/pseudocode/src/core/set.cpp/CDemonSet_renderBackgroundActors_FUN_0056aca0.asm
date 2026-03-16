@@ -103,7 +103,7 @@ section .text
     MOV EAX,[0x006703ec]                ; 0056ad53 | g_CDemonRendererInstance | g_CDemonRendererPtr2
     PUSH EAX                            ; 0056ad58 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 0056ad59
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0056ad5e
     MOV EDX,dword ptr [ESP + 0x48]      ; 0056ad61
     PUSH EDX                            ; 0056ad65

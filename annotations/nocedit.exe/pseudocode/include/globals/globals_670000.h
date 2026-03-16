@@ -389,11 +389,11 @@ extern uint g_CPUFeatureFlags;
 // uint*
 extern uint* g_PerspectiveScanlineZPtr;
 
-// uint[16]
-extern uint g_PerspectiveColorCache[16];
-
 // uint[18]
 extern uint g_MpegBitMaskTableMultiBit[18];
+
+// uint[640]
+extern uint g_PerspectiveColorCache[640];
 
 // uint[8]
 extern uint g_MpegBitMaskTableSingleBit[8];
@@ -405,22 +405,6 @@ extern ulonglong g_ByteFillTable[256];
 extern undefined1 g_MagicNumEFD;
 
 // undefined4
-extern undefined4 DAT_0067241c;
-extern undefined4 DAT_00672420;
-extern undefined4 DAT_00672424;
-extern undefined4 DAT_00672428;
-extern undefined4 DAT_0067242c;
-extern undefined4 DAT_00672430;
-extern undefined4 DAT_00672434;
-extern undefined4 DAT_00672438;
-extern undefined4 DAT_0067243c;
-extern undefined4 DAT_00672440;
-extern undefined4 DAT_00672444;
-extern undefined4 DAT_00672448;
-extern undefined4 DAT_0067244c;
-extern undefined4 DAT_00672450;
-extern undefined4 DAT_00672454;
-extern undefined4 DAT_00672458;
 extern undefined4 DAT_0067b718;
 
 // ushort[384]

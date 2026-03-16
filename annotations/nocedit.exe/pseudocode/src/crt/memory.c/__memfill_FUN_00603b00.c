@@ -2,11 +2,11 @@
 // Address: 00603b00
 // Address Range: [[00603b00, 00603b30]]
 // Convention: __watcallRegister
-// Signature: void __watcallRegister crt_memory_c___memfill_FUN_00603b00(void *dest,uint replicated_value,uint count)
+// Signature: void * __watcallRegister crt_memory_c___memfill_FUN_00603b00(void *dest,uint replicated_value,uint count)
 
 #include "nocturne.h"
 
-void __watcallRegister __memfill(void *dest,uint replicated_value,uint count)
+void * __watcallRegister __memfill(void *dest,uint replicated_value,uint count)
 
 {
   byte *extraout_EAX;
@@ -23,6 +23,7 @@ void __watcallRegister __memfill(void *dest,uint replicated_value,uint count)
     } while (in_ECX != 0);
     __stosd(dest,replicated_value,count);
     uVar1 = in_ECX & 3;
+    dest = extraout_EAX;
     if (uVar1 != 0) {
       *extraout_EAX = (char)replicated_value;
       if ((uVar1 != 1) && (extraout_EAX[1] = (char)(replicated_value >> 8), uVar1 != 2)) {
@@ -30,5 +31,5 @@ void __watcallRegister __memfill(void *dest,uint replicated_value,uint count)
       }
     }
   }
-  return;
+  return dest;
 }

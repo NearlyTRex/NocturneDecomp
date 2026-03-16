@@ -2,11 +2,11 @@
 // Address: 005f3100
 // Address Range: [[005f3100, 005f314b]]
 // Convention: __cdecl
-// Signature: void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(MessageHandler message_handler)
+// Signature: void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(SMessageHandler message_handler)
 
 #include "nocturne.h"
 
-void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(MessageHandler message_handler)
+void __cdecl wincore_winrun_cpp_addWindowsMessageHook_FUN_005f3100(SMessageHandler message_handler)
 
 {
   if (2 < g_NumWindowMessageHandlers) {

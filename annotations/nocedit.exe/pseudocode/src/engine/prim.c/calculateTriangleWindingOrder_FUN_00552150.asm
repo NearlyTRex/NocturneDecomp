@@ -14,7 +14,7 @@
 ; int              Stack[-0x18]:4  local_18
 ;
 ; XREF[13]:
-;   engine_3d.c_rasterizePolygon_FUN_005fd4e0 at 005fd743
+;   engine_3d.c_rasterizePolygonCustom_FUN_005fd4e0 at 005fd743
 ;   engine_3d.c_rasterizeTriangle_FUN_005fcfc0 at 005fd281
 ;   engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0 at 00437d5c
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0 at 00436804

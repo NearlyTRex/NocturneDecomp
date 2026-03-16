@@ -51,12 +51,12 @@ void __cdecl core_game_cpp_CGame_loadGame_FUN_004e12b0(CGame *this_ptr,char *sav
   remove("save\\$$SAVE$$.TMP");
   this_ptr->is_loading = 1;
   splitpath
-            (&g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_430);
+            (g_CurrentSaveFile,(char *)0x0,(char *)0x0,(char *)0x0,local_430);
   iVar2 = _stricmp(local_430,"noc");
   if ((iVar2 == 0) ||
      (iVar2 = _stricmp(local_430,".noc"), iVar2 == 0)) {
     pcVar8 = local_638;
-    pcVar6 = &g_CurrentSaveFile;
+    pcVar6 = g_CurrentSaveFile;
     do {
       cVar1 = *pcVar6;
       *pcVar8 = cVar1;
@@ -114,9 +114,9 @@ LAB_004e17ac:
     file_handle = engine_dosio_c_getFile_FUN_00481a50("save",local_638,"rt");
     local_18 = _ftell(file_handle);
     iVar5 = 1;
-    iVar2 = _stricmp(&g_CurrentSaveFile,local_638);
+    iVar2 = _stricmp(g_CurrentSaveFile,local_638);
     if (iVar2 != 0) {
-      pcVar6 = &g_CurrentSaveFile;
+      pcVar6 = g_CurrentSaveFile;
       pcVar8 = local_638;
       do {
         cVar1 = *pcVar8;

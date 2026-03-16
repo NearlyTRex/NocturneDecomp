@@ -34,7 +34,7 @@ section .text
     MOV EAX,ESP                         ; 006001f8
     PUSH EAX                            ; 006001fa
     CALL crt_time.c_get_local_time_FUN_00607150 ; 006001fb
-        ;   XREF to: 00607150 (UNCONDITIONAL_CALL)  ; void crt_time.c_get_local_time_FUN_00607150(_tm * tm_output)
+        ;   XREF to: 00607150 (UNCONDITIONAL_CALL)  ; int crt_time.c_get_local_time_FUN_00607150(_tm * tm_output)
     ADD ESP,0x4                         ; 00600200
     CMP EAX,0x1f4                       ; 00600203
     JL 0x0060020d                       ; 00600208

@@ -29,7 +29,7 @@ void __cdecl cleanup::thread_tls_data(int shutdownMode);
 
 // Original: crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388
 // Address: 0060a388
-BOOL __cdecl shutdown::tls_infrastructure(void);
+void __cdecl shutdown::tls_infrastructure(void);
 
 // Original: crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4
 // Address: 0060a3b4

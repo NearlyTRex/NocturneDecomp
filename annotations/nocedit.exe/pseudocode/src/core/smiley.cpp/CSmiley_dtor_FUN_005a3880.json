@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 56,
+    "complexity_score": 100,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 2,
+    "pseudocode_lines": 35,
+    "suspect_count": 6,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 108
+    "total_lines": 112
   },
   "cross_references": [],
   "function": {
@@ -143,20 +143,52 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 20,
-      "match": "pCVar1[-2].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 22,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "((SFire *)(pCVar1[-2].base.create_event + 0x20),0);",
-      "type": "negative_offset"
+      "text": "core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar1)->base.base.fire_effects,0);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 28,
-      "match": "pCVar5[-1].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 25,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "((CDemonActor *)(pCVar5[-1].part_data.visibility_flags + 7),1);",
-      "type": "negative_offset"
+      "text": "(ADJ(pSVar1)->base.base.collision_test_normals,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 28,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "(ADJ(pCVar2)->base.base.collision_test_points,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 29,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80(&ADJ(pCVar3)->base.base.cloth_list,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "(&ADJ(pCVar4)->base.base.model,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 32,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ptr = (CSmiley *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)ADJ(pCVar5),1);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

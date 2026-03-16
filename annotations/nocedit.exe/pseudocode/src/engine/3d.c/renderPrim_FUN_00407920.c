@@ -2,14 +2,13 @@
 // Address: 00407920
 // Address Range: [[00407920, 004079b4]]
 // Convention: __cdecl
-// Signature: SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive *primitive)
+// Signature: void __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive *primitive)
 
 #include "nocturne.h"
 
-SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive *primitive)
+void __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive *primitive)
 
 {
-  SMRGLHeaderExtended *extraout_EAX;
   SMRGLHeaderExtended *pSVar2;
   char local_104 [256];
   int iVar1;
@@ -21,12 +20,12 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPri
   }
   iVar1 = (primitive->base).type;
   if ((-1 < iVar1) && (iVar1 < 0x43)) {
-    pSVar2 = (*g_MRGLBlockHandlerTable[iVar1])((SMRGLHeaderExtended *)primitive);
-    return pSVar2;
+    (*g_MRGLBlockHandlerTable[iVar1])((SMRGLHeaderExtended *)primitive);
+    return;
   }
   _sprintf(local_104,"Bad prim : %d",iVar1);
   g_CurrentFilename = "..\\engine\\3d.c";
   g_CurrentLineNumber = 0xc8b;
   core_main_c_displayErrorAndQuit_FUN_00506f10(local_104);
-  return extraout_EAX;
+  return;
 }

@@ -201,7 +201,7 @@ CVector3i * __stack_esi CDemonRenderer::getCameraOriginToBuffer(CDemonRenderer *
 
 // Original: engine_drender.cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
 // Address: 0048c780
-float * __cdecl CDemonRenderer::getCameraOriginScaled(CDemonRenderer *this_ptr,float *output);
+CVector3f * __cdecl CDemonRenderer::getCameraOriginScaled(CDemonRenderer *this_ptr,CVector3f *output);
 
 // Original: engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
 // Address: 0048c7e0
@@ -249,7 +249,7 @@ void __cdecl CDemonRenderer::setBlendMode(CDemonRenderer *this_ptr,int blend_mod
 
 // Original: engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
 // Address: 0048ca60
-void __cdecl CDemonRenderer::setRenderAlpha(CDemonRenderer *this_ptr,int render_alpha);
+int __cdecl CDemonRenderer::setRenderAlpha(CDemonRenderer *this_ptr,int render_alpha);
 
 // Original: engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
 // Address: 0048ca70

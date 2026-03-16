@@ -1,12 +1,12 @@
 // Name: crt_math.c_exp_FUN_006068e2
 // Address: 006068e2
 // Address Range: [[006068e2, 0060694a]]
-// Convention: __fpureg
-// Signature: float10 __fpureg crt_math_c_exp_FUN_006068e2(float10 x)
+// Convention: __fpureg_safe
+// Signature: float10 __fpureg_safe crt_math_c_exp_FUN_006068e2(float10 x)
 
 #include "nocturne.h"
 
-float10 __fpureg exp(float10 x)
+float10 __fpureg_safe exp(float10 x)
 
 {
   char in_AL;

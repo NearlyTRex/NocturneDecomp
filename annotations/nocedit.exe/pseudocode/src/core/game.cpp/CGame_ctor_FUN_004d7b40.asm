@@ -10,7 +10,7 @@
 ;   core_game.cpp_staticInit_FUN_004d76d0 at 004d76f9
 ;
 ; Referenced Globals:
-;   char g_CurrentSaveFile
+;   char[256] g_CurrentSaveFile
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0

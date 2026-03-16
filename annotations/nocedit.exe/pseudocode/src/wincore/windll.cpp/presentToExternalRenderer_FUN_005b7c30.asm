@@ -93,7 +93,7 @@ section .text
     PUSH 0x0                            ; 005b7cd0
         ;   Label: LAB_005b7cd0
     CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 005b7cd2
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 005b7cd7
     CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630 ; 005b7cda
         ;   XREF to: 005ed630 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630()

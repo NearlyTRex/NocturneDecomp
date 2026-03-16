@@ -6,15 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 10,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 10,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 32
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
+    "suspect_types": [
+      "decompiler_intrinsic"
+    ],
+    "total_lines": 34
   },
   "cross_references": [
     {
@@ -119,7 +121,24 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 13,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "core_curtain_cpp_CVector3f_arrdtor_FUN_0044baf0(ADJ(pCVar1)->vertex_pool,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 14,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "return ADJ(pCVar2);",
+      "type": "decompiler_intrinsic"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

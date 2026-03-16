@@ -89,7 +89,7 @@ section .text
     PUSH 0x2da8724                      ; 004ed8a0 | g_BloodPools
         ;   Label: LAB_004ed8a0
     CALL core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40 ; 004ed8a5
-        ;   XREF to: 004ecc40 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool * this_ptr)
+        ;   XREF to: 004ecc40 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool * this_ptr)
     ADD ESP,0x4                         ; 004ed8aa
     TEST EBP,EBP                        ; 004ed8ad
     JZ 0x004ed95c                       ; 004ed8af

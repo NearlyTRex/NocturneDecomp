@@ -7,18 +7,13 @@
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_atan2_FUN_006013b1 */
+/* WARNING: Removing unreachable block (ram,0x00600ba7) */
 
 float10 __fpustack_safe asin(float10 sine_value)
 
 {
-  char extraout_AL;
-  float10 fVar1;
-  double dVar2;
+  double dVar1;
   
-  dVar2 = sqrt((double)((float10)1 - sine_value * sine_value));
-  fVar1 = (float10)dVar2;
-  if (extraout_AL == '\0') {
-    fVar1 = (float10)fpatan(sine_value,fVar1);
-  }
-  return fVar1;
+  dVar1 = sqrt((double)((float10)1 - sine_value * sine_value));
+  return (float10)dVar1;
 }

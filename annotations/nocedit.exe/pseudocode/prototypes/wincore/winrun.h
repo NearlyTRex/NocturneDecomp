@@ -61,7 +61,7 @@ void __cdecl setCursorPosition(int x,int y);
 
 // Original: wincore_winrun.cpp_addWindowsMessageHook_FUN_005f3100
 // Address: 005f3100
-void __cdecl addWindowsMessageHook(MessageHandler message_handler);
+void __cdecl addWindowsMessageHook(SMessageHandler message_handler);
 
 // Original: wincore_winrun.cpp_mainWindowProc_FUN_005f3150
 // Address: 005f3150

@@ -321,7 +321,7 @@ section .text
     MOV ESI,dword ptr [0x006703ec]      ; 004da3af | g_CDemonRendererPtr2
     PUSH ESI                            ; 004da3b5 | g_CDemonRendererInstance
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60 ; 004da3b6
-        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
+        ;   XREF to: 0048ca60 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(CDemonRenderer * this_ptr, int render_alpha)
     MOV EAX,dword ptr [EBP + 0x92]      ; 004da3bb
     MOV EDI,dword ptr [EAX + 0x20c]     ; 004da3c1
     ADD ESP,0x8                         ; 004da3c7
@@ -961,7 +961,7 @@ section .text
     PUSH 0x0                            ; 004dab0e
         ;   Label: LAB_004dab0e
     CALL wincore_windll.cpp_unlockFrame_FUN_005b7250 ; 004dab10
-        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; void wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
+        ;   XREF to: 005b7250 (UNCONDITIONAL_CALL)  ; int wincore_windll.cpp_unlockFrame_FUN_005b7250(int clear_lock_flag)
     ADD ESP,0x4                         ; 004dab15
     CMP dword ptr [EBP + 0x4e],0x0      ; 004dab18
         ;   Label: LAB_004dab18

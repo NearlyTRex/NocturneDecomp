@@ -2,13 +2,15 @@
 // Address: 004ecc40
 // Address Range: [[004ecc40, 004eccdf]]
 // Convention: __cdecl
-// Signature: void __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool *this_ptr)
+// Signature: int __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool *this_ptr)
 
 #include "nocturne.h"
 
-void __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool *this_ptr)
+int __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool *this_ptr)
 
 {
+  int iVar1;
+  
   g_GoreQuadPrimitive.base.base.count = 4;
   g_GoreQuadPrimitive.vertices[0] = 0;
   g_GoreQuadPrimitive.vertices[1] = 1;
@@ -26,6 +28,7 @@ void __cdecl core_gore_cpp_CBloodPool_setupRenderState_FUN_004ecc40(CBloodPool *
   g_GoreQuadPrimitive.base.surface_normal.C = 0;
   g_GoreQuadPrimitive.base.surface_normal.D = 0;
   g_GoreQuadPrimitive.base.surface_normal.B = 0xffff;
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff);
-  return;
+  iVar1 = engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr2,0xffff)
+  ;
+  return iVar1;
 }

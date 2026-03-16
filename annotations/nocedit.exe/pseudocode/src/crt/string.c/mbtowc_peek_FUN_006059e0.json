@@ -62,7 +62,7 @@
     ],
     "convention": "__watcallStack",
     "name": "crt_string.c_mbtowc_peek_FUN_006059e0",
-    "signature": "wchar_t __watcallStack crt_string_c_mbtowc_peek_FUN_006059e0(char *str)"
+    "signature": "int __watcallStack crt_string_c_mbtowc_peek_FUN_006059e0(char *str)"
   },
   "function_calls": [],
   "globals": [
@@ -125,7 +125,7 @@
       "line": 6,
       "match": "CONCAT11",
       "severity": "mild",
-      "text": "return CONCAT11(*str,str[1]);",
+      "text": "return (uint)CONCAT11(*str,str[1]);",
       "type": "decompiler_intrinsic"
     },
     {

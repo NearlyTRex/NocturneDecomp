@@ -336,7 +336,7 @@ section .text
         ;   Label: LAB_004a510a
     PUSH 0xffff                         ; 004a510c
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004a5111
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 004a5116
     PUSH -0x1                           ; 004a5119
     MOV ECX,dword ptr [ESP + 0x140]     ; 004a511b

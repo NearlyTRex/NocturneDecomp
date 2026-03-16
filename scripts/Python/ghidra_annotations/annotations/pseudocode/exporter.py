@@ -39,6 +39,7 @@ from ghidra_annotations.annotations.pseudocode.headers import (
 from ghidra_annotations.annotations.pseudocode.output import (
     export_function_prototypes, generate_function_file_contents
 )
+from ghidra_annotations.annotations.pseudocode.adj_report import generate_adj_pointer_report
 from ghidra_annotations.annotations.pseudocode.analysis import generate_analysis_report
 from ghidra_annotations.annotations.pseudocode.dat_report import generate_dat_report, generate_struct_detection_report
 from ghidra_annotations.annotations.pseudocode.cleanup import delete_pseudocode
@@ -1192,6 +1193,11 @@ def export_pseudocode(currentProgram, path, strict=False):
     log_info("Generating DAT_ globals analysis reports...")
     generate_dat_report(pseudocode_src_dir, reports_dir)
     generate_struct_detection_report(pseudocode_src_dir, reports_dir)
+    timer.end_phase()
+
+    # Generate ADJ pointer types report
+    timer.start_phase("Generate ADJ pointer types report")
+    generate_adj_pointer_report(pseudocode_src_dir, reports_dir)
     timer.end_phase()
 
     # Log timing profile

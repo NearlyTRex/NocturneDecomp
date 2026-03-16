@@ -474,7 +474,8 @@
             <register name="EDX" />
         </killedbycall>
     </prototype>
-    <!-- __esi: Register-only convention - single ESI param, returns ESI. -->
+    <!-- __esi: Register-only convention - single ESI param, returns ESI.
+         EBX and EDI are callee-saved (standard Watcom ABI). -->
     <prototype name="__esi" extrapop="0" stackshift="0">
         <input>
             <pentry minsize="1" maxsize="4"><register name="ESI" /></pentry>
@@ -484,18 +485,19 @@
         </output>
         <unaffected>
             <register name="ESP" />
+            <register name="EBX" />
+            <register name="EDI" />
             <register name="EBP" />
         </unaffected>
         <killedbycall>
             <register name="EAX" />
             <register name="ECX" />
             <register name="EDX" />
-            <register name="EBX" />
             <register name="ESI" />
-            <register name="EDI" />
         </killedbycall>
     </prototype>
-    <!-- __edx: Register-only convention - single EDX param, returns EDX. -->
+    <!-- __edx: Register-only convention - single EDX param, returns EDX.
+         EBX, ESI, EDI are callee-saved (standard Watcom ABI). -->
     <prototype name="__edx" extrapop="0" stackshift="0">
         <input>
             <pentry minsize="1" maxsize="4"><register name="EDX" /></pentry>
@@ -505,18 +507,20 @@
         </output>
         <unaffected>
             <register name="ESP" />
+            <register name="EBX" />
+            <register name="ESI" />
+            <register name="EDI" />
             <register name="EBP" />
         </unaffected>
         <killedbycall>
             <register name="EAX" />
             <register name="ECX" />
             <register name="EDX" />
-            <register name="EBX" />
-            <register name="ESI" />
-            <register name="EDI" />
         </killedbycall>
     </prototype>
-    <!-- __edi_esi_ebx: Register-only convention with params in EDI, ESI, EBX. -->
+    <!-- __edi_esi_ebx: Register-only convention with params in EDI, ESI, EBX.
+         EDI and ESI are callee-saved (implementations push/pop them).
+         EBX is consumed and NOT preserved by the callee. -->
     <prototype name="__edi_esi_ebx" extrapop="0" stackshift="0">
         <input>
             <pentry minsize="1" maxsize="4"><register name="EDI" /></pentry>
@@ -529,14 +533,14 @@
         <unaffected>
             <register name="ESP" />
             <register name="EBP" />
+            <register name="EDI" />
+            <register name="ESI" />
         </unaffected>
         <killedbycall>
             <register name="EAX" />
             <register name="ECX" />
             <register name="EDX" />
             <register name="EBX" />
-            <register name="ESI" />
-            <register name="EDI" />
         </killedbycall>
     </prototype>
     <!-- __fastcall: CRT memory intrinsics convention - params in ECX, EDX, then stack.

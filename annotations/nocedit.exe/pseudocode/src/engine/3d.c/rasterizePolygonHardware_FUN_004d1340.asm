@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl engine_3d_c_rasterizePolygon_FUN_004d1340(SRenderVertex **vertices,int vertex_count)
+; void __cdecl engine_3d_c_rasterizePolygonHardware_FUN_004d1340(SRenderVertex **vertices,int vertex_count)
 ;
 ; Parameters:
 ; SRenderVertex * * Stack[0x4]:4   vertices
@@ -39,7 +39,7 @@
 section .text
 
     PUSH EBX                            ; 004d1340
-        ;   Label: engine_3d.c_rasterizePolygon_FUN_004d1340
+        ;   Label: engine_3d.c_rasterizePolygonHardware_FUN_004d1340
     PUSH ESI                            ; 004d1341
     PUSH EDI                            ; 004d1342
     PUSH EBP                            ; 004d1343

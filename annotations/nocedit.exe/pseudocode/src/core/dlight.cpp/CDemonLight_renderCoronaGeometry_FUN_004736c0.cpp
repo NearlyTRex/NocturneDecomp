@@ -30,7 +30,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   CVector3i local_7c;
   CVector3f local_70;
   CVector3i local_64;
-  float local_58 [3];
+  CVector3f local_58;
   CVector3f local_4c;
   float local_40;
   float local_3c;
@@ -80,8 +80,8 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
   this_ptr_00 = g_CDemonRendererPtr2;
   g_CDemonRendererPtr2->vertex_buffer_ptr[0x10].r = 0xffff;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(this_ptr_00,1);
-  pfVar5 = engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-                     (g_CDemonRendererPtr2,local_58);
+  pfVar5 = &engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+                      (g_CDemonRendererPtr2,&local_58)->x;
   local_34[0].x = *pfVar5 - (this_ptr->base).base.position.f.x;
   local_34[0].y = pfVar5[1] - (this_ptr->base).base.position.f.y;
   bVar7 = false;

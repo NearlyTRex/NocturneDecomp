@@ -723,7 +723,7 @@ section .text
         ;   Label: LAB_00500ed8
     PUSH EBX                            ; 00500edf
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 00500ee0
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     MOV EAX,[0x020a5724]                ; 00500ee5 | g_SmallEditorFont
     MOV EDX,dword ptr [0x0067ce44]      ; 00500eea | g_InventoryHeight
     ADD ESP,0x4                         ; 00500ef0

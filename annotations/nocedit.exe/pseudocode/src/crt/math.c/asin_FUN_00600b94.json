@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 83,
+    "complexity_score": 53,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 13,
-    "suspect_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 3,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "extra_output",
       "special_math_intrinsic",
-      "warning_inlined_function"
+      "warning_inlined_function",
+      "warning_unreachable"
     ],
-    "total_lines": 29
+    "total_lines": 24
   },
   "cross_references": [
     {
@@ -124,28 +123,12 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
-      "match": "extraout_AL",
-      "severity": "moderate",
-      "text": "char extraout_AL;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_AL",
-      "severity": "moderate",
-      "text": "if (extraout_AL == '\\0') {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 14,
-      "match": "fpatan",
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
       "severity": "mild",
-      "text": "fVar1 = (float10)fpatan(sine_value,fVar1);",
-      "type": "decompiler_intrinsic"
+      "text": "/* WARNING: Removing unreachable block (ram,0x00600ba7) */",
+      "type": "warning_unreachable"
     },
     {
       "address": "00600b94",

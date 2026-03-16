@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 81,
+    "complexity_score": 133,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
-    "suspect_count": 3,
+    "pseudocode_lines": 48,
+    "suspect_count": 8,
     "suspect_types": [
-      "negative_offset"
+      "decompiler_intrinsic"
     ],
-    "total_lines": 151
+    "total_lines": 153
   },
   "cross_references": [],
   "function": {
@@ -178,28 +178,68 @@
   },
   "suspects": [
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 31,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pCVar2 = core_cloth_cpp_CCloth_dtor_FUN_00438c00(&ADJ(pCVar1)->cloth,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
       "line": 33,
-      "match": "pCVar2[-1].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "((CFlame *)&pCVar2[-1].vertices[0x2cd].locked,0);",
-      "type": "negative_offset"
+      "text": "core_armour_cpp_CFlame_arrdtor_FUN_00412720(ADJ(pCVar2)->base.base.flames,0);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Decompiler intrinsic (not real C)",
       "line": 35,
-      "match": "pCVar3[-2].",
+      "match": "ADJ",
       "severity": "mild",
-      "text": "((SFire *)(pCVar3[-2].base.create_event + 0x20),0);",
-      "type": "negative_offset"
+      "text": "core_armour_cpp_SFire_arrdtor_FUN_00412700(ADJ(pCVar3)->base.base.fire_effects,0);",
+      "type": "decompiler_intrinsic"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 43,
-      "match": "pCVar7[-1].",
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 38,
+      "match": "ADJ",
       "severity": "mild",
-      "text": "((CDemonActor *)(pCVar7[-1].part_data.visibility_flags + 7),1);",
-      "type": "negative_offset"
+      "text": "(ADJ(pSVar1)->base.base.collision_test_normals,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 41,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "(ADJ(pCVar4)->base.base.collision_test_points,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 42,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "pCVar6 = core_cloth_cpp_CClothList_dtor_FUN_0043bf80(&ADJ(pCVar5)->base.base.cloth_list,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 44,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "(&ADJ(pCVar6)->base.base.model,0);",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 45,
+      "match": "ADJ",
+      "severity": "mild",
+      "text": "ptr = (CMimic *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)ADJ(pCVar7),1);",
+      "type": "decompiler_intrinsic"
     }
   ],
   "vtable_info": {

@@ -79,7 +79,7 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1c14]    ; 004d89e0
     PUSH 0xffff                         ; 004d89e7
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004d89ec
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 004d89f1
     PUSH 0x58                           ; 004d89f4
     MOV EDX,dword ptr [0x020a5720]      ; 004d89f6 | g_ThemeFont

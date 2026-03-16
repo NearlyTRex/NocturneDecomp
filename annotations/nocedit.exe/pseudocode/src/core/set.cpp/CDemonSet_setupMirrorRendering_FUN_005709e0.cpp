@@ -12,12 +12,12 @@ void __cdecl core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(CDemonSet 
   UVector3 *pUVar1;
   CVector3f *pCVar2;
   float afStack_2c [3];
-  float local_20 [3];
+  CVector3f local_20;
   float local_14;
   
   pUVar1 = (UVector3 *)
            engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-                     (g_CDemonRendererPtr2,local_20);
+                     (g_CDemonRendererPtr2,&local_20);
   if (pUVar1 != &g_SavedCameraOrigin) {
     g_SavedCameraOrigin.f.x = (pUVar1->f).x;
     g_SavedCameraOrigin.f.z = (pUVar1->f).z;

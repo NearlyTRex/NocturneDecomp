@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[8]:
-;   engine_3d.c_rasterizePolygon_FUN_004d1340 at 004d163f
+;   engine_3d.c_rasterizePolygonHardware_FUN_004d1340 at 004d163f
 ;   engine_3d.c_rasterizeTriangle_FUN_005fcfc0 at 005fd45a
 ;   engine_drender.cpp_renderTriangleSimple_FUN_004839f0 at 00483ce6
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00483370 at 00483624

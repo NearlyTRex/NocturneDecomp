@@ -386,12 +386,12 @@ section .text
     LEA EAX,[ESP + 0x4d0]               ; 004e1638
     PUSH EAX                            ; 004e163f
     CALL crt_stdio.c_fflush_FUN_00600e29 ; 004e1640
-        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00600e29(_FILE * stream)
+        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_fflush_FUN_00600e29(_FILE * stream)
     ADD ESP,0x4                         ; 004e1645
     LEA EAX,[ESP + 0x550]               ; 004e1648
     PUSH EAX                            ; 004e164f
     CALL crt_stdio.c_fflush_FUN_00600e29 ; 004e1650
-        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fflush_FUN_00600e29(_FILE * stream)
+        ;   XREF to: 00600e29 (UNCONDITIONAL_CALL)  ; void crt_stdio.c_fflush_FUN_00600e29(_FILE * stream)
     ADD ESP,0x4                         ; 004e1655
     CMP dword ptr [ESP + 0x608],0x0     ; 004e1658
     JNZ 0x004e1879                      ; 004e1660
@@ -729,7 +729,7 @@ section .text
     MOV EDX,dword ptr [0x00680d50]      ; 004e1a2f | g_CScriptInstance | g_CScriptPtr
     PUSH EDX                            ; 004e1a35 | g_CScriptInstance
     CALL core_script.cpp_CScript_loadState_FUN_00560820 ; 004e1a36
-        ;   XREF to: 00560820 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_loadState_FUN_00560820(CScript * this_ptr, _FILE * file_handle)
+        ;   XREF to: 00560820 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_loadState_FUN_00560820(CScript * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004e1a3b
     MOV ECX,dword ptr [ESP + 0x604]     ; 004e1a3e
     CMP ECX,0x4                         ; 004e1a45

@@ -1,12 +1,12 @@
 // Name: crt_math.c_sqrt_FUN_0060710c
 // Address: 0060710c
 // Address Range: [[0060710c, 00607149]]
-// Convention: __fpureg
-// Signature: double __fpureg crt_math_c_sqrt_FUN_0060710c(double value)
+// Convention: __fpureg_safe
+// Signature: double __fpureg_safe crt_math_c_sqrt_FUN_0060710c(double value)
 
 #include "nocturne.h"
 
-double __fpureg sqrt(double value)
+double __fpureg_safe sqrt(double value)
 
 {
   double dVar1;

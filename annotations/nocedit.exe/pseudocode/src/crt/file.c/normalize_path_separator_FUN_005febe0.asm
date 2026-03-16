@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; wchar_t __cdecl crt_file_c_normalize_path_separator_FUN_005febe0(wchar_t ch,wchar_t *preferred_separator)
+; int __cdecl crt_file_c_normalize_path_separator_FUN_005febe0(int ch,int *preferred_separator)
 ;
 ; Parameters:
-; wchar_t          Stack[0x4]:2   ch
-; wchar_t *        Stack[0x8]:4   preferred_separator
+; int              Stack[0x4]:4   ch
+; int *            Stack[0x8]:4   preferred_separator
 ;
 ; XREF[1]:
 ;   crt_file.c_makepath_FUN_005febfc at 005fed2a

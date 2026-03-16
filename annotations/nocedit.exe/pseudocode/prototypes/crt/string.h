@@ -69,7 +69,7 @@ char * __cdecl strupr(char *string);
 
 // Original: crt_string.c_mbtowc_peek_FUN_006059e0
 // Address: 006059e0
-wchar_t __watcallStack mbtowc::peek(char *str);
+int __watcallStack mbtowc::peek(char *str);
 
 // Original: crt_string.c_mbtowc_next_FUN_00605a70
 // Address: 00605a70

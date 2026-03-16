@@ -25110,7 +25110,7 @@
               }
             ]
           },
-          "type":"float[3]"
+          "type":"CVector3f"
         },
         {
           "name":"local_64",
@@ -43628,7 +43628,7 @@
               }
             ]
           },
-          "type":"float[3]"
+          "type":"CVector3f"
         },
         {
           "name":"local_fc",
@@ -46764,7 +46764,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"engine_3d.c_rasterizePolygon_FUN_004d1340",
+    "name":"engine_3d.c_rasterizePolygonHardware_FUN_004d1340",
     "ret":"void",
     "vars":{
       "locals":[
@@ -52104,7 +52104,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_gore.cpp_CBloodPool_setupRenderState_FUN_004ecc40",
-    "ret":"void",
+    "ret":"int",
     "vars":{
       "params":[
         {
@@ -52123,7 +52123,17 @@
           },
           "type":"CBloodPool*"
         }
-      ]
+      ],
+      "ret_storage":{
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   },
   {
@@ -60899,6 +60909,128 @@
     "name":"core_mimic.cpp_CMimic_dtor_FUN_0051f2c0",
     "ret":"CMimic*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMimic_ptr_310820",
+          "use":95
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMimic_ptr_49028",
+          "use":111
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMimic_ptr_13260",
+          "use":127
+        },
+        {
+          "name":"pSVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMimic_ptr_12060",
+          "use":143
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMimic_ptr_11536",
+          "use":159
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMimic_ptr_11356",
+          "use":175
+        },
+        {
+          "name":"pCVar6",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMimic_ptr_10900",
+          "use":191
+        },
+        {
+          "name":"pCVar7",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CMimic_ptr_344",
+          "use":207
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -86734,6 +86866,23 @@
     "name":"core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40",
     "ret":"CDeformableModelInstance*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDeformableModelInstance_ptr_88",
+          "use":34
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",
@@ -97677,6 +97826,113 @@
     "name":"core_tbplayer.cpp_CDrummer_dtor_FUN_005da540",
     "ret":"CDrummer*",
     "vars":{
+      "locals":[
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDrummer_ptr_48676",
+          "use":25
+        },
+        {
+          "name":"pCVar2",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDrummer_ptr_13260",
+          "use":41
+        },
+        {
+          "name":"pSVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDrummer_ptr_12060",
+          "use":57
+        },
+        {
+          "name":"pCVar3",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDrummer_ptr_11536",
+          "use":73
+        },
+        {
+          "name":"pCVar4",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDrummer_ptr_11356",
+          "use":89
+        },
+        {
+          "name":"pCVar5",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDrummer_ptr_10900",
+          "use":105
+        },
+        {
+          "name":"pCVar6",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CDrummer_ptr_344",
+          "use":121
+        }
+      ],
       "params":[
         {
           "name":"this_ptr",

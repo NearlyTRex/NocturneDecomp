@@ -320,7 +320,7 @@ section .text
     PUSH 0xffff                         ; 004e3ac5
     MOV EBP,dword ptr [0x020a5720]      ; 004e3aca | g_ThemeFont
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 004e3ad0
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 004e3ad5
     PUSH 0xc0                           ; 004e3ad8
     PUSH 0x100                          ; 004e3add

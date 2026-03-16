@@ -33,7 +33,7 @@ section .text
     MOV EDX,dword ptr [ESP]             ; 0048ca85
     PUSH EDX                            ; 0048ca88
     CALL engine_3d.c_setRenderAlpha_FUN_00406d80 ; 0048ca89
-        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
+        ;   XREF to: 00406d80 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00406d80(int alpha_color_value)
     ADD ESP,0x4                         ; 0048ca8e
     ADD ESP,0x4                         ; 0048ca91
     RET                                 ; 0048ca94
