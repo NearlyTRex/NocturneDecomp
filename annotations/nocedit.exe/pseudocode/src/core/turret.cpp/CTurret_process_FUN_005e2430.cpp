@@ -9,8 +9,9 @@
 void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,float delta_time)
 
 {
+  ETurretState EVar1;
   CEventList *this_ptr_00;
-  uint uVar1;
+  uint uVar2;
   float fVar3;
   int iVar4;
   int iVar5;
@@ -42,10 +43,10 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
   UOrientationVector *pUVar1;
   
   bVar9 = 0;
-  iVar5 = this_ptr->state;
-  (this_ptr->base).muzzle_flash_offset.x = -NAN;
-  switch(iVar5) {
-  case 0:
+  EVar1 = this_ptr->state;
+  (this_ptr->base).muzzle_flash_color.r = -1;
+  switch(EVar1) {
+  case TURRET_STATE_IDLE:
     pUVar1 = &(this_ptr->base).base.orient;
     if (pUVar1 != &this_ptr->home_orient) {
       (pUVar1->vec).x = (this_ptr->home_orient).vec.x;
@@ -58,30 +59,30 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
       this_ptr->timer = 0.0;
       break;
     }
-    uVar1 = this_ptr->sfx_handles[1];
-    this_ptr->state = 1;
+    uVar2 = this_ptr->sfx_handles[1];
+    this_ptr->state = TURRET_STATE_CHARGING;
     this_ptr->timer = this_ptr->charge_time;
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar1);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar2);
     sound_name = "turret-ani?.wav";
     goto LAB_005e24c7;
-  case 1:
+  case TURRET_STATE_CHARGING:
     fVar3 = this_ptr->timer - delta_time;
     this_ptr->timer = fVar3;
     if (fVar3 <= 0.0) {
       this_ptr->timer = 0.0;
-      this_ptr->state = 2;
+      this_ptr->state = TURRET_STATE_ACTIVE;
       (this_ptr->base).fire_cooldown_timer = 0.0;
     }
     break;
-  case 2:
-    (this_ptr->base).muzzle_flash_offset.x = 3.57331e-43;
+  case TURRET_STATE_ACTIVE:
+    (this_ptr->base).muzzle_flash_color.r = 0xff;
     pCVar3 = g_CEventListPtr;
-    (this_ptr->base).muzzle_flash_offset.y = 0.0;
-    (this_ptr->base).muzzle_flash_offset.z = 0.0;
+    (this_ptr->base).muzzle_flash_color.g = 0;
+    (this_ptr->base).muzzle_flash_color.b = 0;
     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (pCVar3,this_ptr->activate_event);
     if (iVar5 == 0) {
-      this_ptr->state = 3;
+      this_ptr->state = TURRET_STATE_PATROL;
       this_ptr->timer = this_ptr->patrol_time;
     }
     else {
@@ -89,16 +90,16 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
       this_ptr->timer = 0.0;
     }
     break;
-  case 3:
-    (this_ptr->base).muzzle_flash_offset.x = 0.0;
+  case TURRET_STATE_PATROL:
+    (this_ptr->base).muzzle_flash_color.r = 0;
     this_ptr_00 = g_CEventListPtr;
-    (this_ptr->base).muzzle_flash_offset.y = 3.57331e-43;
-    (this_ptr->base).muzzle_flash_offset.z = 0.0;
+    (this_ptr->base).muzzle_flash_color.g = 0xff;
+    (this_ptr->base).muzzle_flash_color.b = 0;
     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (this_ptr_00,this_ptr->activate_event);
     if (iVar5 != 0) {
       this_ptr->timer = 0.0;
-      this_ptr->state = 2;
+      this_ptr->state = TURRET_STATE_ACTIVE;
       (this_ptr->base).fire_cooldown_timer = 0.0;
       break;
     }
@@ -108,16 +109,16 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr,floa
       core_turret_cpp_CTurret_updatePatrol_FUN_005e3560(this_ptr,delta_time);
       break;
     }
-    uVar1 = this_ptr->sfx_handles[1];
-    this_ptr->state = 4;
+    uVar2 = this_ptr->sfx_handles[1];
+    this_ptr->state = TURRET_STATE_POWERING_DOWN;
     this_ptr->timer = this_ptr->power_down_time;
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar1);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar2);
     sound_name = "turret-ani?.wav";
 LAB_005e24c7:
-    uVar1 = (*((this_ptr->base).base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
-    this_ptr->sfx_handles[1] = uVar1;
+    uVar2 = (*((this_ptr->base).base.vtable._ub)->playSound)((CDemonActor *)this_ptr,sound_name);
+    this_ptr->sfx_handles[1] = uVar2;
     break;
-  case 4:
+  case TURRET_STATE_POWERING_DOWN:
     local_1c = (CVector3f *)&this_ptr->home_orient;
     this_ptr->timer = this_ptr->timer - delta_time;
     local_18 = (CVector3f *)&(this_ptr->base).base.orient;
@@ -161,7 +162,7 @@ LAB_005e24c7:
       core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
     }
     else {
-      this_ptr->state = 0;
+      this_ptr->state = TURRET_STATE_IDLE;
       this_ptr->timer = 0.0;
       if (local_18 != local_1c) {
         local_18->x = local_1c->x;
@@ -175,7 +176,7 @@ LAB_005e24c7:
     g_CurrentLineNumber = 0x15a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTurret::process - invalid state");
   }
-  if (-1 < (int)(this_ptr->base).muzzle_flash_offset.x) {
+  if (-1 < (this_ptr->base).muzzle_flash_color.r) {
     (*(((this_ptr->base).base.vtable._uw)->_uw).fireProjectile)(&this_ptr->base);
   }
   fVar2 = (this_ptr->base).fire_cooldown_timer;

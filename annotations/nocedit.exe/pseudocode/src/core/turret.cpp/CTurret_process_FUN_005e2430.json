@@ -4,13 +4,13 @@
       {
         "category": "other",
         "column": 13,
-        "line": 199,
+        "line": 200,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       },
       {
         "category": "other",
         "column": 32,
-        "line": 201,
+        "line": 202,
         "message": "member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union"
       }
     ],
@@ -19,21 +19,19 @@
   },
   "complexity": {
     "assembly_lines": 379,
-    "complexity_score": 384,
+    "complexity_score": 345,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 199,
-    "suspect_count": 16,
+    "pseudocode_lines": 200,
+    "suspect_count": 13,
     "suspect_types": [
-      "decompiler_intrinsic",
       "pointer_cast",
       "stack_alignment_array",
-      "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 578
+    "total_lines": 579
   },
   "cross_references": [],
   "function": {
@@ -382,39 +380,15 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 17,
+      "line": 18,
       "match": "afStackY_186c",
       "severity": "moderate",
       "text": "float afStackY_186c [1497];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 39,
-      "match": "NAN",
-      "severity": "mild",
-      "text": "(this_ptr->base).muzzle_flash_offset.x = -NAN;",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 70,
-      "match": "3.57331e-43",
-      "severity": "mild",
-      "text": "(this_ptr->base).muzzle_flash_offset.x = 3.57331e-43;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 88,
-      "match": "3.57331e-43",
-      "severity": "mild",
-      "text": "(this_ptr->base).muzzle_flash_offset.y = 3.57331e-43;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 121,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar7 = (uint *)((int)&local_90 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -422,7 +396,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 122,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_90 + (uint)bVar9 * -8 + 4) =",
@@ -430,7 +404,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 131,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar8 = (uint *)((int)&local_50 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -438,7 +412,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 132,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_70 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -446,7 +420,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 133,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_50 + (uint)bVar9 * -8 + 4) =",
@@ -454,7 +428,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 134,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_70 + (uint)bVar9 * -8 + 4);",
@@ -462,7 +436,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 143,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar9 = (uint *)((int)&local_80 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -470,7 +444,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 144,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)&local_60 + (uint)bVar9 * -8 + (uint)bVar9 * -8 + 8);",
@@ -478,7 +452,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 145,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_80 + (uint)bVar9 * -8 + 4) =",
@@ -486,7 +460,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 145,
+      "line": 146,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_60 + (uint)bVar9 * -8 + 4);",
@@ -494,7 +468,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 192,
+      "line": 193,
       "match": "._12_8_",
       "severity": "mild",
       "text": "local_30._12_8_ =",
@@ -502,7 +476,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 194,
+      "line": 195,
       "match": "._12_8_",
       "severity": "mild",
       "text": "if (0.0 <= (double)local_30._12_8_) {",

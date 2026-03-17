@@ -15,7 +15,7 @@ strstreambase * __cdecl crt_strstream_cpp_strstreambase_ctor_FUN_006060fe(strstr
   short *psVar3;
   
   if ((ctor_flags & 1U) == 0) {
-    (this_ptr->_strstreambase_core).layout_info = &DAT_00665d60;
+    (this_ptr->_strstreambase_core).layout_info = &g_Strstream_VirtualLayout;
     piVar2 = crt_iostream_cpp_ios_ctor_FUN_006061fc((ios *)&(this_ptr->_ios).__tied_stream);
     this_ptr = (strstreambase *)&piVar2[-2].__error_state;
   }

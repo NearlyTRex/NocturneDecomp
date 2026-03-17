@@ -26,7 +26,7 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
             (&ADJ(this_ptr_00)->base.model,"gturret_head.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (this_ptr_00,"gturret_tripod.kfm");
-  ADJ(this_ptr_00)->state = 0;
+  ADJ(this_ptr_00)->state = TURRET_STATE_IDLE;
   ADJ(this_ptr_00)->activate_event[0] = '\0';
   ADJ(this_ptr_00)->charge_time = 3.0;
   ADJ(this_ptr_00)->patrol_time = 6.0;

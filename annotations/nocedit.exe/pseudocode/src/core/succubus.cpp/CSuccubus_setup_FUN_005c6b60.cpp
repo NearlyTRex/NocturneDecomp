@@ -83,8 +83,8 @@ void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_005c6b60(CSuccubus *this_ptr)
                            (this_ptr_02,"Bip01 Spine2",1);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_03);
-  (this_ptr->base).base.model.bone_transform.root_position.z =
-       (this_ptr->base).base.model.bone_transform.root_position.z + 0.4f;
+  (this_ptr->base).base.model.bone_transform.pose_data.root_position.z =
+       (this_ptr->base).base.model.bone_transform.pose_data.root_position.z + 0.4f;
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_03);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_00);
   this_ptr_01 = &this_ptr->morph;

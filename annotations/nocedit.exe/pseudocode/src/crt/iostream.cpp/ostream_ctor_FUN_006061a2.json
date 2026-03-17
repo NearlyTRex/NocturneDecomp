@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 62,
+    "complexity_score": 47,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 17,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset",
-      "special_crt_function",
-      "undefined_data"
+      "special_crt_function"
     ],
     "total_lines": 42
   },
@@ -57,8 +56,8 @@
   "globals": [
     {
       "addr": "00665db8",
-      "name": "DAT_00665db8",
-      "type": "undefined4",
+      "name": "g_OStream_InheritanceLayout",
+      "type": "WatcomInheritanceLayout",
       "value": null
     },
     {
@@ -165,14 +164,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_00665db8",
-      "severity": "mild",
-      "text": "(this_ptr->_ostream_core).layout_info = (WatcomInheritanceLayout *)&DAT_00665db8;",
-      "type": "undefined_data"
-    },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 11,

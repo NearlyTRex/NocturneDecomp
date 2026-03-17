@@ -7,6 +7,7 @@
 ; CEventList *     Stack[0x4]:4   this_ptr
 ; char *           Stack[0x8]:4   command_buffer
 ; Local Variables:
+; char[255]        Stack[-0x163c]:255  local_163c
 ; char[200]        Stack[-0x153d]:200  local_153d
 ; char[200]        Stack[-0x1475]:200  local_1475
 ; char[200]        Stack[-0x13ad]:200  local_13ad
@@ -20,8 +21,7 @@
 ; char[200]        Stack[-0xd6d]:200  local_d6d
 ; char[200]        Stack[-0xca5]:200  local_ca5
 ; char[200]        Stack[-0xbdd]:200  local_bdd
-; char[2]          Stack[-0xb15]:2  local_b15
-; undefined4[49]   Stack[-0xb13]:196  local_b13
+; char[200]        Stack[-0xb15]:200  local_b15
 ; char[200]        Stack[-0xa4d]:200  local_a4d
 ; char[200]        Stack[-0x985]:200  local_985
 ; char[201]        Stack[-0x8bd]:201  local_8bd

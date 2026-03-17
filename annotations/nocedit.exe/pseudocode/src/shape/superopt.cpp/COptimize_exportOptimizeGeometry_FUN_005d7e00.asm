@@ -27,7 +27,6 @@
 ;   TerminatedCString s_shape_superopt_cpp_006548a9
 ;   TerminatedCString s_Too_many_polys_006548bf
 ;   double DOUBLE_006548d2 = 256
-;   undefined4 DAT_00766880
 ;   int g_VertexCount
 ;   SVertexData[20000] g_LoadedVertices
 ;   undefined4 DAT_01626410
@@ -37,7 +36,8 @@
 ;   undefined4 DAT_01626428
 ;   int g_PolygonCount
 ;   SShapeEditorPolygon[20000] g_ModelPolygonData
-;   ... and 30 more
+;   undefined4 DAT_016e9914
+;   ... and 29 more
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -56,7 +56,7 @@ section .text
     PUSH EDI                            ; 005d7e02
     PUSH EBP                            ; 005d7e03
     SUB ESP,0x2c                        ; 005d7e04
-    PUSH 0x766880                       ; 005d7e07 | DAT_00766880
+    PUSH 0x766880                       ; 005d7e07
     XOR EDX,EDX                         ; 005d7e0c
     PUSH EDX                            ; 005d7e0e
     PUSH 0x16e9910                      ; 005d7e0f | g_ModelPolygonData

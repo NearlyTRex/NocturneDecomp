@@ -87,7 +87,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
     if (this_ptr->bone_update_mode == 0) {
       if (0 < this_ptr_00->bone_count) {
-        local_2c = (this_ptr->bone_transform).bone_rotations;
+        local_2c = (this_ptr->bone_transform).pose_data.bone_rotations;
         local_34 = this_ptr;
         local_1c = 0;
         do {
@@ -106,7 +106,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
                  (afStack_160 + (uint)bVar22 * -2 + (uint)bVar22 * -2 + 1)[(uint)bVar22 * -2 + 1];
             core_xform_cpp_slerpQuaternion_FUN_005f77e0(local_2c,pCVar8,fVar13,&CStack_154);
             puVar19 = (uint *)((int)local_34 + (uint)bVar22 * -8 + 0x6b4);
-            (local_34->bone_transform).bone_rotations[0].w = CStack_154.w;
+            (local_34->bone_transform).pose_data.bone_rotations[0].w = CStack_154.w;
             puVar20 = puVar19 + (uint)bVar22 * -2 + 1;
             puVar3 = (uint *)((int)&CStack_154 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 8);
             *puVar19 = *(uint *)((int)&CStack_154 + (uint)bVar22 * -8 + 4);
@@ -158,7 +158,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
       }
       local_24 = 0;
       if (0 < this_ptr_00->bone_count) {
-        pCVar8 = (this_ptr->bone_transform).bone_rotations;
+        pCVar8 = (this_ptr->bone_transform).pose_data.bone_rotations;
         local_3c = 0;
         local_38 = this_ptr;
         local_40 = pCVar8;
@@ -201,7 +201,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
             puVar5[(uint)bVar22 * -2 + 1] = puVar3[(uint)bVar22 * -2 + 1];
             core_xform_cpp_slerpQuaternion_FUN_005f77e0(local_40,&local_d4,blend_weight,&local_134);
             puVar5 = (uint *)((int)local_38 + (uint)bVar22 * -8 + 0x6b4);
-            (local_38->bone_transform).bone_rotations[0].w = local_134.w;
+            (local_38->bone_transform).pose_data.bone_rotations[0].w = local_134.w;
             puVar6 = puVar5 + (uint)bVar22 * -2 + 1;
             puVar3 = (uint *)((int)&local_134 + (uint)bVar22 * -8 + (uint)bVar22 * -8 + 8);
             *puVar5 = *(uint *)((int)&local_134 + (uint)bVar22 * -8 + 4);
@@ -233,16 +233,16 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
       fVar6 = (this_ptr->scaled_model_dimensions).z;
       fVar12 = 1.0 - blend_weight;
       pSVar1 = &this_ptr->bone_transform;
-      fVar7 = (this_ptr->bone_transform).root_position.y;
-      fVar8 = (this_ptr->bone_transform).root_position.z;
+      fVar7 = (this_ptr->bone_transform).pose_data.root_position.y;
+      fVar8 = (this_ptr->bone_transform).pose_data.root_position.z;
       if (pSVar1 != (SPose *)afStack_68) {
-        (pSVar1->root_position).x =
-             (pSVar1->root_position).x * fVar12 +
+        (pSVar1->pose_data).root_position.x =
+             (pSVar1->pose_data).root_position.x * fVar12 +
              (pCVar10[local_58[0]].x * fVar11 + pCVar9[local_5c].x * local_938) *
              (this_ptr->scaled_model_dimensions).x * blend_weight;
-        (this_ptr->bone_transform).root_position.y =
+        (this_ptr->bone_transform).pose_data.root_position.y =
              fVar7 * fVar12 + (fVar3 * fVar11 + fVar1 * local_938) * fVar5 * blend_weight;
-        (this_ptr->bone_transform).root_position.z =
+        (this_ptr->bone_transform).pose_data.root_position.z =
              fVar8 * fVar12 + (fVar4 * fVar11 + fVar2 * local_938) * fVar6 * blend_weight;
         return;
       }

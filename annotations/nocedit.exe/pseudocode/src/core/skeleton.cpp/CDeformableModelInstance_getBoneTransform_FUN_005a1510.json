@@ -6,17 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 106,
+    "complexity_score": 114,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 69,
     "suspect_count": 4,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 135
+    "total_lines": 143
   },
   "cross_references": [
     {
@@ -46,7 +46,7 @@
     {
       "addr": "005bf720",
       "from_addr": "005bf7e1",
-      "name": "core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720",
+      "name": "core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -60,7 +60,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance *this_ptr,SPose *bone_transform)"
+    "signature": "SPose * __cdecl core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance *this_ptr,SPose *bone_transform)"
   },
   "function_calls": [
     {
@@ -76,7 +76,7 @@
       {
         "call_addr": "005bf7e1",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720",
+        "caller": "core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -109,7 +109,7 @@
       {
         "call_addr": "005bf73a",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720",
+        "caller": "core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,7 +232,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 42,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar9 = (uint *)((int)bone_transform + (uint)bVar12 * -8 + 0x10);",
@@ -240,7 +240,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
+      "line": 43,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)local_14 + (uint)bVar12 * -8 + 0x6b4);",
@@ -248,7 +248,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 58,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + (uint)bVar12 * -8 + 4);",
@@ -256,7 +256,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 59,
       "match": "(CMatrix3x4f *)((int)",
       "severity": "mild",
       "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + (uint)bVar12 * -8 + 4);",

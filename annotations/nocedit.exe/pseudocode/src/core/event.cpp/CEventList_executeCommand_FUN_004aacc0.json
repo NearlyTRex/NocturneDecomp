@@ -3,116 +3,116 @@
     "errors": [
       {
         "category": "other",
-        "column": 76,
+        "column": 75,
         "line": 183,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 78,
+        "column": 77,
         "line": 225,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 75,
-        "line": 245,
+        "column": 74,
+        "line": 244,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 91,
-        "line": 252,
+        "line": 251,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 266,
+        "line": 265,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 55,
-        "line": 275,
+        "line": 273,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 52,
-        "line": 275,
+        "line": 273,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 277,
+        "line": 275,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 42,
-        "line": 328,
+        "line": 325,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
-        "category": "undeclared_identifier",
-        "column": 65,
-        "line": 397,
-        "message": "use of undeclared identifier 'stack0xffffe9c4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 69,
-        "line": 407,
-        "message": "use of undeclared identifier 'stack0xffffe9c4'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 38,
-        "line": 420,
-        "message": "use of undeclared identifier 'stack0xffffe9c4'"
+        "category": "other",
+        "column": 61,
+        "line": 393,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 433,
+        "line": 428,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 63,
-        "line": 455,
+        "line": 450,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 591,
+        "line": 586,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
-        "column": 73,
-        "line": 664,
+        "column": 72,
+        "line": 659,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 69,
-        "line": 685,
+        "line": 680,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "format_error",
         "column": 56,
-        "line": 741,
+        "line": 736,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 96,
-        "line": 740,
+        "line": 735,
+        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+      },
+      {
+        "category": "format_error",
+        "column": 58,
+        "line": 743,
+        "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
+      },
+      {
+        "category": "other",
+        "column": 94,
+        "line": 742,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -121,18 +121,19 @@
   },
   "complexity": {
     "assembly_lines": 5057,
-    "complexity_score": 2268,
+    "complexity_score": 2362,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 177,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 2188,
-    "suspect_count": 7,
+    "pseudocode_lines": 2187,
+    "suspect_count": 16,
     "suspect_types": [
       "format_string_mismatch",
-      "stack_ref"
+      "unknown_field",
+      "warning_unmapped_variable"
     ],
-    "total_lines": 7245
+    "total_lines": 7244
   },
   "cross_references": [
     {
@@ -1550,12 +1551,19 @@
     "pcode_op_count": 18751
   },
   "stack_frame": {
-    "frame_size": 5449,
-    "local_size": 5441,
+    "frame_size": 5704,
+    "local_size": 5696,
     "param_offset": 4,
     "param_size": 8,
     "return_addr_offset": 0,
     "variables": [
+      {
+        "is_param": false,
+        "name": "local_163c",
+        "offset": -5692,
+        "size": 255,
+        "type": "char[255]"
+      },
       {
         "is_param": false,
         "name": "local_153d",
@@ -1651,15 +1659,8 @@
         "is_param": false,
         "name": "local_b15",
         "offset": -2837,
-        "size": 2,
-        "type": "char[2]"
-      },
-      {
-        "is_param": false,
-        "name": "local_b13",
-        "offset": -2835,
-        "size": 196,
-        "type": "undefined4[49]"
+        "size": 200,
+        "type": "char[200]"
       },
       {
         "is_param": false,
@@ -2225,28 +2226,100 @@
   },
   "suspects": [
     {
-      "description": "Direct stack address reference",
-      "line": 390,
-      "match": "&stack0xffffe9c4",
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
       "severity": "moderate",
-      "text": "((char *)local_ec,\"( %[^ ,], %d, %d )%n\",&stack0xffffe9c4,&local_d8,&local_d4);",
-      "type": "stack_ref"
+      "text": "/* WARNING: Variable defined which should be unmapped: local_163c */",
+      "type": "warning_unmapped_variable"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 400,
-      "match": "&stack0xffffe9c4",
-      "severity": "moderate",
-      "text": "iVar18 = engine_dosio_c_getFileSize_FUN_00481880(\"art\",&stack0xffffe9c4);",
-      "type": "stack_ref"
+      "description": "Unknown/mangled field access",
+      "line": 2136,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_163c._0_4_ =",
+      "type": "unknown_field"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 413,
-      "match": "&stack0xffffe9c4",
-      "severity": "moderate",
-      "text": "(g_CGamePtr,&stack0xffffe9c4,local_d8,local_d4);",
-      "type": "stack_ref"
+      "description": "Unknown/mangled field access",
+      "line": 2140,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "if ((CCharacter *)local_163c._0_4_ !=",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2142,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "(*(((((CCharacter *)local_163c._0_4_)->base).",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2144,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "((CCharacter *)local_163c._0_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2145,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "(*(((((CCharacter *)local_163c._0_4_)->base).",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2147,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "((CCharacter *)local_163c._0_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2149,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_163c._4_4_ = &local_134;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2150,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_163c._0_4_ = &local_11c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2153,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "(pCVar3,(CVector3f *)local_163c._0_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2154,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "(CVector3f *)local_163c._4_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 2191,
+      "match": "._16_4_",
+      "severity": "mild",
+      "text": "local_163c._16_4_ = \"Extra characters found\";",
+      "type": "unknown_field"
     },
     {
       "actual_args": 0,
@@ -2255,7 +2328,7 @@
       "format_string": "Event name %s is too long",
       "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
       "line_number": 176,
-      "match": "iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is too long\");",
+      "match": "iVar8 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is too long\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -2266,7 +2339,7 @@
       "format_string": "Event name %s is not valid",
       "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
       "line_number": 218,
-      "match": "iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is not valid\")",
+      "match": "iVar8 = core_event_cpp_formatEventError_FUN_004aa2a0(\"Event name %s is not valid\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -2276,8 +2349,8 @@
       "expected_args": 1,
       "format_string": "SpotLight %s doesn't exist.",
       "function_name": "core_event_cpp_formatEventError_FUN_004aa2a0",
-      "line_number": 238,
-      "match": "iVar18 = core_event_cpp_formatEventError_FUN_004aa2a0(\"SpotLight %s doesn't exist.\");",
+      "line_number": 237,
+      "match": "iVar8 = core_event_cpp_formatEventError_FUN_004aa2a0(\"SpotLight %s doesn't exist.\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -2287,7 +2360,7 @@
       "expected_args": 1,
       "format_string": "Can't find CDemonLight for light %s in advanceLightFilter meta-command",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 245,
+      "line_number": 244,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't find CDemonLight for light %s in advanceLightFil",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

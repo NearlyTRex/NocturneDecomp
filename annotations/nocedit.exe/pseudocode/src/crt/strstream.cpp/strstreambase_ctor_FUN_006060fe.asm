@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   strstreambuf_vtable g_StrstreambufVTable
-;   WatcomVirtualBaseDescriptor DAT_00665d60
+;   WatcomVirtualBaseDescriptor g_Strstream_VirtualLayout
 ;   void* g_StrStreamBase_Destructor = 006062a6
 ;   void* g_StrStreamBase_IOSDestructor = 0060618a
 ;
@@ -77,7 +77,7 @@ section .text
     POP ESI                             ; 00606170
     POP EBX                             ; 00606171
     RET                                 ; 00606172
-    MOV dword ptr [EBX],0x665d60        ; 00606173 | DAT_00665d60
+    MOV dword ptr [EBX],0x665d60        ; 00606173 | g_Strstream_VirtualLayout
         ;   Label: LAB_00606173
     ADD EBX,0x4c                        ; 00606179
     PUSH EBX                            ; 0060617c

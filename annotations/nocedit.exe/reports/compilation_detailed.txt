@@ -5,23 +5,23 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5865 (90.5%)
-Failed: 619
+Successful: 5866 (90.5%)
+Failed: 618
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1315
-  format_error                     801
-  incompatible_types               205
-  undeclared_identifier            157
+  other                           1304
+  format_error                     802
+  incompatible_types               211
+  undeclared_identifier            149
   syntax_error                      42
   missing_member                    20
+  type_error                        10
   pointer_arithmetic                10
-  type_error                         9
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1315 errors)
+CATEGORY: other (1304 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -72,8 +72,6 @@ CATEGORY: other (1315 errors)
     Line 148: cannot cast from type 'float' to pointer type 'CCharacter *'
   core_gabriela.cpp_CGabriella_process_FUN_004d2ea0
     Line 328: cannot cast from type 'float' to pointer type 'CCharacter_full_vtable *'
-  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
-    Line 153: cannot cast from type 'float' to pointer type 'CDeformableModelInstance *'
   core_msnedit.cpp_buildActorClassHierarchy_FUN_00537330
     Line 33: cannot cast from type 'float' to pointer type 'CDemonActor *'
   core_script.cpp_CScript_step_FUN_0055a810
@@ -335,7 +333,7 @@ CATEGORY: other (1315 errors)
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 481: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
   core_turret.cpp_CTurret_process_FUN_005e2430
-    Line 199: member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union
+    Line 200: member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union
   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
     Line 92: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
   core_course.cpp_CCourse_interpolate_FUN_004427a0
@@ -644,7 +642,7 @@ CATEGORY: other (1315 errors)
     Line 1033: use of undeclared label 'DAT_032758e8'
 
 ====================================================================================================
-CATEGORY: format_error (801 errors)
+CATEGORY: format_error (802 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -690,7 +688,7 @@ CATEGORY: format_error (801 errors)
   core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0
     Line 23: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0
-    Line 34: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
+    Line 36: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_followActor_FUN_0042c5f0
     Line 33: format specifies type 'char *' but the argument has type 'CCharacter *' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
@@ -1056,7 +1054,7 @@ CATEGORY: format_error (801 errors)
   core_actor.cpp_archiveQuaternion_FUN_0040b520
     Line 15: format specifies type 'float *' but the argument has type 'CQuaternion4f *' [-Werror,-Wformat]
   core_event.cpp_CEventList_executeCommand_FUN_004aacc0
-    Line 275: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
+    Line 273: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
   core_event.cpp_parseVectorLocation_FUN_004aa530
     Line 18: format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]
   core_gore.cpp_CBloodPool_load_FUN_004ed160
@@ -1185,7 +1183,7 @@ CATEGORY: format_error (801 errors)
     Line 40: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: incompatible_types (205 errors)
+CATEGORY: incompatible_types (211 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
@@ -1248,22 +1246,14 @@ CATEGORY: incompatible_types (205 errors)
     Line 208: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_colonel.cpp_CColonel_process_FUN_0043fa00
     Line 245: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
-  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
-    Line 294: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_haystack.cpp_CHaystack_process_FUN_004f0e40
     Line 270: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_icepick.cpp_CIcePick_process_FUN_004f80b0
     Line 316: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
-  core_scat.cpp_CScat_blendAimBones_FUN_005584a0
-    Line 153: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_scat.cpp_CScat_process_FUN_005571f0
     Line 310: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
-  core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720
-    Line 38: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
-  core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
-    Line 279: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
-  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
-    Line 631: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
+  core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720
+    Line 39: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0
     Line 289: assigning to 'byte *' (aka 'unsigned char *') from incompatible type 'float (int, int, float, int, CDeformableModelInstance *)'
   cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
@@ -1388,8 +1378,14 @@ CATEGORY: incompatible_types (205 errors)
     Line 21: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
   shape_memdbg.cpp_openFile_FUN_0050f7a0
     Line 33: incompatible pointer types assigning to '_FILE *' from 'FILE *' (aka '_IO_FILE *')
+  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
+    Line 196: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
+  core_scat.cpp_CScat_blendAimBones_FUN_005584a0
+    Line 138: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
     Line 97: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
+  core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
+    Line 164: incompatible pointer types assigning to 'uint *' (aka 'unsigned int *') from 'float *'
   core_frankgen.cpp_CFrankenstienMachine_getPropertyList_FUN_004d2500
     Line 17: invalid conversion specifier '.' [-Werror,-Wformat-invalid-specifier]
   shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
@@ -1430,15 +1426,11 @@ CATEGORY: incompatible_types (205 errors)
     Line 212: no matching function for call to 'sound_sndmain_cpp_parseWavFile_FUN_005a3fe0'
 
 ====================================================================================================
-CATEGORY: undeclared_identifier (157 errors)
+CATEGORY: undeclared_identifier (149 errors)
 ====================================================================================================
 
-  engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40
-    Line 141: use of undeclared identifier 'DAT_00628c6a'
   engine_matrix.c_projectTransformedPoint_FUN_0050cdc0
     Line 24: use of undeclared identifier 'DAT_80000010'
-  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
-    Line 279: use of undeclared identifier 'PTR_03f6baa8'
   core_scat.cpp_CScat_process_FUN_005571f0
     Line 151: use of undeclared identifier 'SUB14'
   core_script.cpp_CScript_step_FUN_0055a810
@@ -1517,8 +1509,6 @@ CATEGORY: undeclared_identifier (157 errors)
     Line 63: use of undeclared identifier 'register0x0000000c'
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
     Line 109: use of undeclared identifier 'register0x00000010'
-  engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850
-    Line 147: use of undeclared identifier 's__0062a892'; did you mean 's_0062a892'?
   core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470
     Line 139: use of undeclared identifier 'stack0x00000000'
   core_msnedit.cpp_CDemonMission_editActorsInSet_FUN_005390f0
@@ -1551,8 +1541,6 @@ CATEGORY: undeclared_identifier (157 errors)
     Line 41: use of undeclared identifier 'stack0x0000002c'
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     Line 500: use of undeclared identifier 'stack0xffffcc64'
-  core_event.cpp_CEventList_executeCommand_FUN_004aacc0
-    Line 397: use of undeclared identifier 'stack0xffffe9c4'
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
     Line 167: use of undeclared identifier 'stack0xffffee80'
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
@@ -1677,6 +1665,31 @@ CATEGORY: missing_member (20 errors)
     Line 20: no member named 'unk15' in 'CDemonActor'
 
 ====================================================================================================
+CATEGORY: type_error (10 errors)
+====================================================================================================
+
+  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
+    Line 88: unknown type name 'code'
+  core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
+    Line 28: unknown type name 'code'
+  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
+    Line 29: unknown type name 'code'
+  core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
+    Line 13: unknown type name 'code'
+  core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
+    Line 41: unknown type name 'code'
+  core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
+    Line 41: unknown type name 'code'
+  core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
+    Line 40: unknown type name 'code'
+  core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520
+    Line 44: unknown type name 'code'
+  engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0
+    Line 13: unknown type name 'code'
+  engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
+    Line 18: unknown type name 'code'
+
+====================================================================================================
 CATEGORY: pointer_arithmetic (10 errors)
 ====================================================================================================
 
@@ -1690,29 +1703,6 @@ CATEGORY: pointer_arithmetic (10 errors)
     Line 50: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
     Line 50: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
-
-====================================================================================================
-CATEGORY: type_error (9 errors)
-====================================================================================================
-
-  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 88: unknown type name 'code'
-  core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
-    Line 28: unknown type name 'code'
-  core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
-    Line 28: unknown type name 'code'
-  core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
-    Line 13: unknown type name 'code'
-  core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
-    Line 41: unknown type name 'code'
-  core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
-    Line 41: unknown type name 'code'
-  core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60
-    Line 39: unknown type name 'code'
-  engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0
-    Line 13: unknown type name 'code'
-  engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80
-    Line 18: unknown type name 'code'
 
 ====================================================================================================
 CATEGORY: pointer_precision (2 errors)

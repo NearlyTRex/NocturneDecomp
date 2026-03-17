@@ -28,7 +28,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_copyBoneRotations_FUN_00
       if (-1 < iVar1) {
         puVar4 = (uint *)((int)this_ptr + (uint)bVar6 * -8 + 0x6b4);
         puVar2 = (uint *)((int)source_quaternions + (uint)bVar6 * -8 + 4);
-        (this_ptr->bone_transform).bone_rotations[0].w = source_quaternions->w;
+        (this_ptr->bone_transform).pose_data.bone_rotations[0].w = source_quaternions->w;
         puVar5 = puVar4 + (uint)bVar6 * -2 + 1;
         puVar3 = puVar2 + (uint)bVar6 * -2 + 1;
         *puVar4 = *puVar2;

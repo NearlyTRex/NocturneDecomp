@@ -10,6 +10,7 @@
 #include "system/winuser.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDirectSoundDevice.h"
+#include "types/classes/CLever.h"
 #include "types/classes/CSfxOptions.h"
 #include "types/classes/CSfxSample.h"
 #include "types/classes/CSound.h"
@@ -222,6 +223,9 @@ extern CDemonActorType g_CTentacleClassInfo;
 // CDirectSoundDevice
 extern CDirectSoundDevice g_CDirectSoundDeviceInstance;
 
+// CLever*
+extern CLever* g_StrangerLeverHandle;
+
 // CSfxOptions[8]
 extern CSfxOptions g_SfxOptions[8];
 
@@ -261,6 +265,7 @@ extern CVector3f g_SoundListenerPrev;
 extern CVector3f CVector3f_03f6af7c;
 extern CVector3f g_SoundListenerOrient;
 extern CVector3f g_TrainVelocityVector;
+extern CVector3f CVector3f_03f6ba9c;
 extern CVector3f CVector3f_03f6bab0;
 extern CVector3f CVector3f_03f6babc;
 
@@ -369,9 +374,6 @@ extern float g_VolumeFadeTimeRemaining;
 extern float g_TrainNoiseCooldown;
 extern float FLOAT_03f6ba1c;
 extern float FLOAT_03f6ba20;
-extern float FLOAT_03f6ba9c;
-extern float FLOAT_03f6baa0;
-extern float FLOAT_03f6baa4;
 
 // float*
 extern float* g_TertiaryMixBuffer;

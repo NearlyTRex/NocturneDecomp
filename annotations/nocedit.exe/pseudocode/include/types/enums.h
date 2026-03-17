@@ -43,6 +43,7 @@
 #include "types/enums/EPlatformType.h"
 #include "types/enums/ETextAlignment.h"
 #include "types/enums/ETriggerEventType.h"
+#include "types/enums/ETurretState.h"
 #include "types/enums/EWeaponState.h"
 #include "types/enums/EWeaponType.h"
 #include "types/enums/EWeatherType.h"

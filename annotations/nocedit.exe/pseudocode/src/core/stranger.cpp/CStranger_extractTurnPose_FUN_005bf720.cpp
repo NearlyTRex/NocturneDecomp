@@ -1,14 +1,14 @@
-// Name: core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720
+// Name: core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720
 // Address: 005bf720
 // Address Range: [[005bf720, 005bf7fe]]
 // Convention: __cdecl
-// Signature: void __cdecl core_stranger_cpp_CStranger_extractTurnPoseData_FUN_005bf720(CStranger *this_ptr,SPoseData *out_pose)
+// Signature: void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_005bf720(CStranger *this_ptr,SPose *out_pose)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void __cdecl core_stranger_cpp_CStranger_extractTurnPoseData_FUN_005bf720(CStranger *this_ptr,SPoseData *out_pose)
+void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_005bf720(CStranger *this_ptr,SPose *out_pose)
 
 {
   CVector3f *pCVar1;
@@ -34,7 +34,8 @@ void __cdecl core_stranger_cpp_CStranger_extractTurnPoseData_FUN_005bf720(CStran
   pCVar1 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                      (&local_1c,
                       (CVector3f *)
-                      ((this_ptr->base).base.model.bone_transform.bone_rotations + INT_03f6bacc));
+                      ((this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
+                      INT_03f6bacc));
   blend_callback = core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0;
   bone_index = -1;
   local_1c.z = -pCVar1->y;
@@ -50,8 +51,7 @@ void __cdecl core_stranger_cpp_CStranger_extractTurnPoseData_FUN_005bf720(CStran
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
             (this_ptr_00,&local_3c,blend_weight,bone_index,
              (CDeformableModel_MotionBlendWeightFunc *)blend_callback);
-  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
-            (this_ptr_00,(SPose *)out_pose);
+  core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(this_ptr_00,out_pose);
   core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0(this_ptr_00,&SStack_1ad8)
   ;
   return;

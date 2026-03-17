@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,484
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        280 ( 4.3%)
+  Functions with type issues:        278 ( 4.3%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -22,7 +22,7 @@ SUMMARY STATISTICS
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
     Wrong calling convention:          18
-    Undefined types in variables:      234
+    Undefined types in variables:      232
     Unresolved stack params:           46
 
 ====================================================================================================
@@ -456,7 +456,7 @@ Unresolved stack parameters (missing from signature) (46)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (234)
+Undefined types in variables (232)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -914,11 +914,6 @@ Undefined types in variables (234)
     Locals:  local_1c (undefined4), local_18 (undefined4), local_14 (undefined4)
     Suggested: Resolve undefined types to concrete types
 
-  CStranger_updateProceduralAnimation
-    Address: 0x005be520  File: core/stranger.cpp
-    Locals:  local_2e0 (undefined1[16]), local_2c0 (undefined1[16]), local_1d0 (undefined1[16])
-    Suggested: Resolve undefined types to concrete types
-
   CTrash_process
     Address: 0x005decf0  File: core/trash.cpp
     Locals:  local_d0 (undefined4), local_cc (undefined4), local_c8 (undefined4)
@@ -1157,11 +1152,6 @@ Undefined types in variables (234)
   CKeyFramedModel_exportToS3D
     Address: 0x00479f30  File: core/dmodel.cpp
     Locals:  local_34 (undefined4)
-    Suggested: Resolve undefined types to concrete types
-
-  CEventList_executeCommand
-    Address: 0x004aacc0  File: core/event.cpp
-    Locals:  local_b13 (undefined4[49])
     Suggested: Resolve undefined types to concrete types
 
   CEventList_updateSfxEntries

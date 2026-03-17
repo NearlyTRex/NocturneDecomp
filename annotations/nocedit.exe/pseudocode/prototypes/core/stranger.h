@@ -71,9 +71,9 @@ CVector3f * __cdecl CStranger::getHandsMidpoint(CStranger *this_ptr,CVector3f *o
 // Address: 005be520
 void __cdecl CStranger::updateProceduralAnimation(CStranger *this_ptr);
 
-// Original: core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720
+// Original: core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720
 // Address: 005bf720
-void __cdecl CStranger::extractTurnPoseData(CStranger *this_ptr,SPoseData *out_pose);
+void __cdecl CStranger::extractTurnPose(CStranger *this_ptr,SPose *out_pose);
 
 // Original: core_stranger.cpp_CStranger_updateTurnBlending_FUN_005bf800
 // Address: 005bf800

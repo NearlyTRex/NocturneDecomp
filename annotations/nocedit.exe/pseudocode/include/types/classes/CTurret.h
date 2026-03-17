@@ -8,6 +8,7 @@ struct CDemonActor;
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWeapon.h"
+#include "types/enums/ETurretState.h"
 #include "types/unions/UOrientationVector.h"
 
 // Structure: CTurret
@@ -16,7 +17,7 @@ typedef struct CTurret {
     CWeapon base; // 0x0
     UOrientationVector home_orient; // 0x578
     CKeyFramedModelInstance model; // 0x584
-    int state; // 0x700
+    ETurretState state; // 0x700
     char activate_event[100]; // 0x704
     float charge_time; // 0x768
     float patrol_time; // 0x76c

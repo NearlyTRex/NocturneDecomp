@@ -17,7 +17,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059
   iVar3 = 0;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   if (0 < pCVar1->bone_count) {
-    quaternion = (this_ptr->bone_transform).bone_rotations;
+    quaternion = (this_ptr->bone_transform).pose_data.bone_rotations;
     pCVar2 = this_ptr;
     do {
       core_xform_cpp_setIdentityQuaternion_FUN_005f7620(quaternion);
@@ -27,8 +27,10 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059
       pCVar2 = (CDeformableModelInstance *)&(pCVar2->motion_controller).current_motion_index;
     } while (iVar3 < pCVar1->bone_count);
   }
-  (this_ptr->bone_transform).root_position.z = 0.0;
-  (this_ptr->bone_transform).root_position.y = (this_ptr->bone_transform).root_position.z;
-  (this_ptr->bone_transform).root_position.x = (this_ptr->bone_transform).root_position.y;
+  (this_ptr->bone_transform).pose_data.root_position.z = 0.0;
+  (this_ptr->bone_transform).pose_data.root_position.y =
+       (this_ptr->bone_transform).pose_data.root_position.z;
+  (this_ptr->bone_transform).pose_data.root_position.x =
+       (this_ptr->bone_transform).pose_data.root_position.y;
   return;
 }

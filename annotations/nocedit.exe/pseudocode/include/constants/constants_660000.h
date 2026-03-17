@@ -3,7 +3,6 @@
 // Dependencies
 #include <math.h>
 #include "system/basetypes.h"
-#include "system/watcom.h"
 
 // =============================================================================
 // CONSTANTS
@@ -84,9 +83,6 @@ static TerminatedCString s_CramTex_II_0066ef30 = "CramTex II";
 static TerminatedCString s_CActorDestination_0066ef44 = "$CActorDestination$$";
 static TerminatedCString s_CFilterFX_0066efd8 = "$CFilterFX$$";
 static TerminatedCString s_CFilterCache_0066efec = "$CFilterCache$$";
-
-// WatcomVirtualBaseDescriptor constants
-static WatcomVirtualBaseDescriptor DAT_00665d60 = {.flags = 0x00000000, .offset_to_vbase = 0x0000004C};
 
 // char*[4] constants
 static char* g_CourseAxisLabels[4] = {nullptr, "x", "y", "z"};

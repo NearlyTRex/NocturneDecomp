@@ -91395,6 +91395,21 @@
           "use":4498
         },
         {
+          "name":"local_res0",
+          "storage":{
+            "offset":0,
+            "size":1,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x0]",
+                "size":1
+              }
+            ]
+          },
+          "type":"char"
+        },
+        {
           "name":"local_18",
           "storage":{
             "offset":-24,
@@ -92240,7 +92255,7 @@
               }
             ]
           },
-          "type":"undefined1[16]"
+          "type":"CQuaternion4f"
         },
         {
           "name":"local_1e0",
@@ -92464,7 +92479,7 @@
               }
             ]
           },
-          "type":"float[3]"
+          "type":"CVector3f"
         },
         {
           "name":"local_2c0",
@@ -92480,7 +92495,7 @@
               }
             ]
           },
-          "type":"undefined1[16]"
+          "type":"CQuaternion4f"
         },
         {
           "name":"local_2d0",
@@ -92496,7 +92511,7 @@
               }
             ]
           },
-          "type":"float[4]"
+          "type":"CQuaternion4f"
         },
         {
           "name":"local_2e0",
@@ -92512,7 +92527,7 @@
               }
             ]
           },
-          "type":"undefined1[16]"
+          "type":"CQuaternion4f"
         },
         {
           "name":"local_2f0",
@@ -92820,7 +92835,7 @@
         },
         {
           "name":"local_1ecc",
-          "type":"SPoseData"
+          "type":"SPose"
         },
         {
           "name":"fStack_1ed8",
@@ -92948,7 +92963,7 @@
               }
             ]
           },
-          "type":"CDeformableModelInstance*"
+          "type":"float"
         },
         {
           "name":"local_1f0c",
@@ -92965,182 +92980,6 @@
             ]
           },
           "type":"float"
-        },
-        {
-          "name":"pCVar1",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27f1b38845d",
-                "offset":2744940790877,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDeformableModelInstance*",
-          "use":128
-        },
-        {
-          "name":"pfVar2",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27f6cc985b3",
-                "offset":2746309248435,
-                "size":4
-              }
-            ]
-          },
-          "type":"float*",
-          "use":262
-        },
-        {
-          "name":"puVar12",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27f9346ad8a",
-                "offset":2746954984842,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4*",
-          "use":629
-        },
-        {
-          "name":"puVar9",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27fae26843a",
-                "offset":2747405861946,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4*",
-          "use":629
-        },
-        {
-          "name":"rotation_quat",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:79f1900d266",
-                "offset":8379900678758,
-                "size":4
-              }
-            ]
-          },
-          "type":"CQuaternion4f*",
-          "use":633
-        },
-        {
-          "name":"blend_callback",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27fea688b5a",
-                "offset":2748416822106,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined1*",
-          "use":713
-        },
-        {
-          "name":"blend_weight",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:3fdd75bcfc",
-                "offset":274298420476,
-                "size":4
-              }
-            ]
-          },
-          "type":"float",
-          "use":732
-        },
-        {
-          "name":"this_ptr_00",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5f96930da3",
-                "offset":410548112803,
-                "size":4
-              }
-            ]
-          },
-          "type":"CLever*",
-          "use":920
-        },
-        {
-          "name":"pCVar3",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5ff7e35f4e",
-                "offset":412180766542,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonActor*",
-          "use":3302
-        },
-        {
-          "name":"iVar18",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:3f10c66b93",
-                "offset":270864378771,
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":4484
-        },
-        {
-          "name":"motion_name",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27fe2a9c6a4",
-                "offset":2748286879396,
-                "size":4
-              }
-            ]
-          },
-          "type":"char*",
-          "use":4486
         }
       ],
       "params":[
@@ -93177,7 +93016,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720",
+    "name":"core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720",
     "ret":"void",
     "vars":{
       "locals":[
@@ -93391,7 +93230,7 @@
               }
             ]
           },
-          "type":"SPoseData*"
+          "type":"SPose*"
         }
       ],
       "storage_conflicts_resolved":[

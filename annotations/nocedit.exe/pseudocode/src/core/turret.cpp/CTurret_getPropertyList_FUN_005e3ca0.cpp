@@ -11,7 +11,7 @@ void __cdecl core_turret_cpp_CTurret_getPropertyList_FUN_005e3ca0(CTurret *this_
 {
   core_weapon_cpp_CWeapon_getPropertyList_FUN_005ee9f0(&this_ptr->base,property_list);
   core_actor_cpp_CActorPropertyList_addEnumPair_FUN_0040e640
-            (property_list,"State",5,g_TurretStateTypePairs,&this_ptr->state);
+            (property_list,"State",5,g_TurretStateTypePairs,(int *)&this_ptr->state);
   core_actor_cpp_CActorPropertyList_addEvent_FUN_0040e460
             (property_list,"Activate event",this_ptr->activate_event);
   core_actor_cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0

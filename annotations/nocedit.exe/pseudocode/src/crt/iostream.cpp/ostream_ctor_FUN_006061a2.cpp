@@ -13,7 +13,7 @@ _ostream * __cdecl crt_iostream_cpp_ostream_ctor_FUN_006061a2(_ostream *this_ptr
   ios *piVar2;
   
   if ((c1 & 1) == 0) {
-    (this_ptr->_ostream_core).layout_info = (WatcomInheritanceLayout *)&DAT_00665db8;
+    (this_ptr->_ostream_core).layout_info = &g_OStream_InheritanceLayout;
     piVar2 = crt_iostream_cpp_ios_ctor_FUN_006061fc(&this_ptr->_ios);
     this_ptr = (_ostream *)&piVar2[-1].__fill_character;
   }

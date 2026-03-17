@@ -393,7 +393,7 @@ void __cdecl CDeformableModelInstance::shatter(CDeformableModelInstance *this_pt
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
 // Address: 005a1510
-void __cdecl CDeformableModelInstance::getBoneTransform(CDeformableModelInstance *this_ptr,SPose *bone_transform);
+SPose * __cdecl CDeformableModelInstance::getBoneTransform(CDeformableModelInstance *this_ptr,SPose *bone_transform);
 
 // Original: core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
 // Address: 005a15e0

@@ -37,19 +37,19 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWor
   bVar6 = 0;
   if (bone_index < 0) {
     core_xform_cpp_setRotationScaleIdentity_FUN_005f5190((CMatrix3x4f *)&local_7c);
-    local_70 = (this_ptr->bone_transform).root_position.x;
-    local_60 = (this_ptr->bone_transform).root_position.y;
-    local_50 = (this_ptr->bone_transform).root_position.z;
+    local_70 = (this_ptr->bone_transform).pose_data.root_position.x;
+    local_60 = (this_ptr->bone_transform).pose_data.root_position.y;
+    local_50 = (this_ptr->bone_transform).pose_data.root_position.z;
   }
   else {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
     iVar1 = pCVar1->bone_list[bone_index].parent_index;
     if (iVar1 < 0) {
-      local_70 = (this_ptr->bone_transform).root_position.x +
+      local_70 = (this_ptr->bone_transform).pose_data.root_position.x +
                  this_ptr->transformed_vertices[bone_index].x;
-      local_60 = (this_ptr->bone_transform).root_position.y +
+      local_60 = (this_ptr->bone_transform).pose_data.root_position.y +
                  this_ptr->transformed_vertices[bone_index].y;
-      local_50 = (this_ptr->bone_transform).root_position.z +
+      local_50 = (this_ptr->bone_transform).pose_data.root_position.z +
                  this_ptr->transformed_vertices[bone_index].z;
     }
     else {
@@ -71,7 +71,8 @@ CMatrix3x4f * __stack2_esi core_skeleton_cpp_CDeformableModelInstance_getBoneWor
       local_50 = local_1c.z;
     }
     core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280
-              ((CMatrix3x3f *)&local_7c,(this_ptr->bone_transform).bone_rotations + bone_index);
+              ((CMatrix3x3f *)&local_7c,
+               (this_ptr->bone_transform).pose_data.bone_rotations + bone_index);
     if ((this_ptr->bone_transform).bone_scales[bone_index] != 1.0) {
       local_7c = (int)((float)local_7c * (this_ptr->bone_transform).bone_scales[bone_index]);
       local_78 = local_78 * (this_ptr->bone_transform).bone_scales[bone_index];

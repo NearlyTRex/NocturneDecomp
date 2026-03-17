@@ -169,10 +169,10 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
          *(uint *)((int)&local_bc + (uint)bVar6 * -8 + 4);
     *puVar6 = *puVar5;
     puVar6[(uint)bVar6 * -2 + 1] = puVar5[(uint)bVar6 * -2 + 1];
-    quat1_in = (this_ptr->base).base.model.bone_transform.bone_rotations + local_24;
+    quat1_in = (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations + local_24;
     core_xform_cpp_slerpQuaternion_FUN_005f77e0(quat1_in,&local_14c,fVar3,&local_6c);
     pcVar5 = (char *)((int)this_ptr + (uint)bVar6 * -8 + local_24 * 0x10 + 0x80c);
-    (this_ptr->base).base.model.bone_transform.bone_rotations[local_24].w = local_6c.w;
+    (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24].w = local_6c.w;
     puVar5 = (uint *)((int)&local_6c + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
     *(uint *)pcVar5 = *(uint *)((int)&local_6c + (uint)bVar6 * -8 + 4);
     *(uint *)(pcVar5 + (uint)bVar6 * -8 + 4) = *puVar5;
@@ -219,7 +219,7 @@ void __cdecl core_stranger_cpp_CStranger_applyArmAimRotation_FUN_005c02b0(CStran
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
                 (quat1_in,&local_10c,this_ptr->arm_recoil_blend,&local_cc);
       puVar6 = (uint *)((int)this_ptr + (uint)bVar6 * -8 + local_24 * 0x10 + 0x80c);
-      (this_ptr->base).base.model.bone_transform.bone_rotations[local_24].w = local_cc.w;
+      (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations[local_24].w = local_cc.w;
       puVar7 = puVar6 + (uint)bVar6 * -2 + 1;
       puVar5 = (uint *)((int)&local_cc + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
       *puVar6 = *(uint *)((int)&local_cc + (uint)bVar6 * -8 + 4);

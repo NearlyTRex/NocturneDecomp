@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 282,
+    "complexity_score": 267,
     "cross_reference_count": 13,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 32,
-    "suspect_count": 24,
+    "suspect_count": 23,
     "suspect_types": [
-      "decompiler_intrinsic",
-      "suspect_float"
+      "decompiler_intrinsic"
     ],
     "total_lines": 79
   },
@@ -432,19 +431,11 @@
       "type": "decompiler_intrinsic"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 27,
-      "match": "3.57331e-43",
-      "severity": "mild",
-      "text": "(ADJ(pCVar3)->muzzle_flash_offset).x = 3.57331e-43;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 27,
       "match": "ADJ",
       "severity": "mild",
-      "text": "(ADJ(pCVar3)->muzzle_flash_offset).x = 3.57331e-43;",
+      "text": "(ADJ(pCVar3)->muzzle_flash_color).r = 0xff;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -452,7 +443,7 @@
       "line": 28,
       "match": "ADJ",
       "severity": "mild",
-      "text": "(ADJ(pCVar3)->muzzle_flash_offset).y = 0.0;",
+      "text": "(ADJ(pCVar3)->muzzle_flash_color).g = 0;",
       "type": "decompiler_intrinsic"
     },
     {
@@ -460,7 +451,7 @@
       "line": 29,
       "match": "ADJ",
       "severity": "mild",
-      "text": "(ADJ(pCVar3)->muzzle_flash_offset).z = 0.0;",
+      "text": "(ADJ(pCVar3)->muzzle_flash_color).b = 0;",
       "type": "decompiler_intrinsic"
     },
     {

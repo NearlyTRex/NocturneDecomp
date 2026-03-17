@@ -2,10 +2,71 @@
 # Identifies unnamed DAT_ globals and infers likely types from assembly/pseudocode usage
 
 import bisect
+import glob as glob_mod
 import os
 import re
 from collections import defaultdict
 from ghidra_annotations.util.log import log_info
+
+
+# =============================================================================
+# Struct/class size cache from data_types.json
+# =============================================================================
+
+_struct_size_cache = None
+
+
+def build_struct_size_cache(pseudocode_src_dir):
+    """Build a cache of struct/class sizes from data_types.json.
+
+    Locates data_types.json relative to pseudocode_src_dir and extracts
+    the 'len' field from each struct/class definition.
+
+    Returns dict: type_name -> size_in_bytes
+    """
+    import json
+
+    global _struct_size_cache
+    if _struct_size_cache is not None:
+        return _struct_size_cache
+
+    # Derive data_types.json path: pseudocode_src_dir is .../pseudocode/src
+    # so we need .../data_types/data_types.json
+    annotations_base = pseudocode_src_dir
+    while annotations_base and os.path.basename(annotations_base) != 'pseudocode':
+        annotations_base = os.path.dirname(annotations_base)
+
+    cache = {}
+    if not annotations_base:
+        log_info("Could not locate pseudocode base dir for struct size cache")
+        _struct_size_cache = cache
+        return cache
+
+    exe_dir = os.path.dirname(annotations_base)
+    data_types_path = os.path.join(exe_dir, 'data_types', 'data_types.json')
+    if not os.path.isfile(data_types_path):
+        log_info("data_types.json not found at %s" % data_types_path)
+        _struct_size_cache = cache
+        return cache
+
+    try:
+        with open(data_types_path) as f:
+            data_types = json.load(f)
+    except (json.JSONDecodeError, IOError) as e:
+        log_info("Failed to load data_types.json: %s" % e)
+        _struct_size_cache = cache
+        return cache
+
+    for entry in data_types.get('apply_order', []):
+        name = entry.get('name', '')
+        size = entry.get('len')
+        if name and size is not None and size > 0:
+            # Later entries (full definitions) overwrite earlier ones (forward decls)
+            cache[name] = size
+
+    _struct_size_cache = cache
+    log_info("Built struct size cache: %d types with known sizes" % len(cache))
+    return cache
 
 
 # =============================================================================
@@ -140,25 +201,33 @@ BASE_TYPE_SIZES = {
 }
 
 
-def estimate_global_size(gtype):
+def estimate_global_size(gtype, struct_sizes=None):
     """Estimate the byte size of a global from its type string.
 
     Returns (size, is_exact) where is_exact indicates if the size is
-    known precisely (primitive/array) vs estimated (struct/unknown).
+    known precisely (primitive/array/known struct) vs estimated (unknown).
+
+    Args:
+        struct_sizes: Optional dict mapping struct/class names to byte sizes
+                      (from build_struct_size_cache).
     """
     if not gtype:
         return 4, False
+
+    if struct_sizes is None:
+        struct_sizes = _struct_size_cache or {}
 
     # Array types: e.g. "int[100]", "SFogImagePlane[16]", "char[241][320]"
     # Handle multi-dimensional arrays by multiplying all dimensions
     dims = re.findall(r'\[(\d+)\]', gtype)
     if dims:
         base_type = re.sub(r'\[\d+\]', '', gtype).strip()
-        elem_size = BASE_TYPE_SIZES.get(base_type, 4)
+        elem_size = BASE_TYPE_SIZES.get(base_type) or struct_sizes.get(base_type) or 4
+        is_known = base_type in BASE_TYPE_SIZES or base_type in struct_sizes
         total = elem_size
         for d in dims:
             total *= int(d)
-        return total, base_type in BASE_TYPE_SIZES
+        return total, is_known
 
     # String types
     if 'String' in gtype or gtype.startswith('s_') or gtype.startswith('char['):
@@ -171,6 +240,10 @@ def estimate_global_size(gtype):
     # Pointer types
     if '*' in gtype:
         return 4, True
+
+    # Known struct/class types from header files
+    if gtype in struct_sizes:
+        return struct_sizes[gtype], True
 
     # Unknown struct/class type - return 0 (will use gap-based estimation)
     return 0, False
@@ -301,8 +374,6 @@ def detect_immediate_references(pseudocode_src_dir, dat_globals):
         'memory_count': int,
     }
     """
-    import glob as glob_mod
-
     results = {}
     for name in dat_globals:
         results[name] = {
@@ -416,6 +487,9 @@ def generate_dat_report(pseudocode_src_dir, reports_dir):
     import glob
 
     log_info("Generating DAT_ globals analysis report...")
+
+    # Build struct size cache from data_types.json
+    build_struct_size_cache(pseudocode_src_dir)
 
     # Collect all globals from function JSONs
     all_globals = {}  # name -> {addr, type, funcs: []}
@@ -930,6 +1004,9 @@ def generate_struct_detection_report(pseudocode_src_dir, reports_dir):
     import glob
 
     log_info("Generating DAT_ struct/array detection report...")
+
+    # Build struct size cache from data_types.json
+    build_struct_size_cache(pseudocode_src_dir)
 
     # Collect all globals and DAT_ globals (same as dat_report)
     all_globals = {}

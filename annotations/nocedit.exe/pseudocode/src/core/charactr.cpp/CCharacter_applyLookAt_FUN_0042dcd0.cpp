@@ -6,6 +6,8 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_0042dcd0(CCharacter *this_ptr)
 
 {
@@ -59,9 +61,10 @@ void __cdecl core_charactr_cpp_CCharacter_applyLookAt_FUN_0042dcd0(CCharacter *t
     *puVar5 = *puVar4;
     puVar5[(uint)bVar4 * -2 + 1] = puVar4[(uint)bVar4 * -2 + 1];
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
-              ((this_ptr->model).bone_transform.bone_rotations + this_ptr->look_at_head_bone,
-               &local_64,this_ptr->look_at_weight,&local_34);
-    pCVar1 = (this_ptr->model).bone_transform.bone_rotations + this_ptr->look_at_head_bone;
+              ((this_ptr->model).bone_transform.pose_data.bone_rotations +
+               this_ptr->look_at_head_bone,&local_64,this_ptr->look_at_weight,&local_34);
+    pCVar1 = (this_ptr->model).bone_transform.pose_data.bone_rotations + this_ptr->look_at_head_bone
+    ;
     puVar2 = (uint *)((int)pCVar1 + ((uint)bVar4 * -2 + 1) * 4);
     pCVar1->w = local_34.w;
     puVar3 = puVar2 + (uint)bVar4 * -2 + 1;

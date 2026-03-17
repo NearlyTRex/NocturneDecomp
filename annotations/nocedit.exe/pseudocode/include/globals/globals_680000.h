@@ -493,6 +493,9 @@ extern uint g_WindowsVersionCombined;
 extern uint g_MaxHandleCount;
 extern uint g_CodePage;
 
+// uint*
+extern uint* g_HeapBound;
+
 // undefined1
 extern undefined1 DAT_006852db;
 

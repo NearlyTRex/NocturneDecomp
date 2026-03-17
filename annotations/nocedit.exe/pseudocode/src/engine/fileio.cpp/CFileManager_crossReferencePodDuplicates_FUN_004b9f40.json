@@ -6,12 +6,6 @@
         "column": 16,
         "line": 86,
         "message": "assigning to 'CPodFile *' from incompatible type 'void *'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 81,
-        "line": 141,
-        "message": "use of undeclared identifier 'DAT_00628c6a'"
       }
     ],
     "success": false,
@@ -19,18 +13,17 @@
   },
   "complexity": {
     "assembly_lines": 462,
-    "complexity_score": 204,
+    "complexity_score": 190,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 26,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 174,
-    "suspect_count": 2,
+    "pseudocode_lines": 175,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "undefined_data"
+      "pointer_cast"
     ],
-    "total_lines": 636
+    "total_lines": 637
   },
   "cross_references": [
     {
@@ -253,9 +246,9 @@
     },
     {
       "addr": "00628c6a",
-      "name": "DAT_00628c6a",
-      "type": "undefined4",
-      "value": null
+      "name": "s_EmptyChar_00628c6a",
+      "type": "char",
+      "value": "\u0000"
     },
     {
       "addr": "00628c6b",
@@ -526,16 +519,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 134,
-      "match": "DAT_00628c6a",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4fc.base,&DAT_00628c6a);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 137,
+      "line": 138,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)&local_40->directory_entries->checksum + local_34)",

@@ -38,7 +38,7 @@
 ;   TerminatedCString s_Can_t_mount_s_00628c30
 ;   TerminatedCString s_engine_fileio_cpp_00628c3f
 ;   TerminatedCString s_Finding_duplicates_00628c54
-;   undefined4 DAT_00628c6a
+;   char s_EmptyChar_00628c6a = \x00
 ;   TerminatedCString s_s_s_08X_00628c6b
 ;   TerminatedCString s_s_08X_00628c76
 ;   TerminatedCString s_engine_fileio_cpp_00628c7f
@@ -437,7 +437,7 @@ section .text
     CMP dword ptr [ESP + 0x4e4],0x0     ; 004ba3d5
     JZ 0x004ba447                       ; 004ba3dd
         ;   XREF to: 004ba447 (CONDITIONAL_JUMP)  ; LAB_004ba447
-    PUSH 0x628c6a                       ; 004ba3df | DAT_00628c6a
+    PUSH 0x628c6a                       ; 004ba3df | s_EmptyChar_00628c6a
     LEA EAX,[ESP + 0x4]                 ; 004ba3e4
     PUSH EAX                            ; 004ba3e8
     CALL shape_edittool.cpp_CStrList_add_FUN_004a2b80 ; 004ba3e9

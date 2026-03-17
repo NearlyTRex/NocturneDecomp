@@ -100,7 +100,7 @@ section .text
     LEA EBX,[ESI + 0x158]               ; 0042b00c
     PUSH EBX                            ; 0042b012
     CALL core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510 ; 0042b013
-        ;   XREF to: 005a1510 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance * this_ptr, SPose * bone_transform)
+        ;   XREF to: 005a1510 (UNCONDITIONAL_CALL)  ; SPose * core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 0042b018
     PUSH -0x1                           ; 0042b01b
     PUSH 0x3f8ccccd                     ; 0042b01d

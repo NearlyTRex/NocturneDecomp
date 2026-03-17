@@ -256,7 +256,7 @@ crt_stub.c_staticInit_FUN_005fde92,005fde92,crt/stub.c,4,1,special_crt_function,
 crt_stub.c_staticFinal_FUN_005fde93,005fde93,crt/stub.c,4,1,special_crt_function,19
 crt_stub.c_staticInit_FUN_005ff9f2,005ff9f2,crt/stub.c,4,1,special_crt_function,19
 crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c,0060a23c,crt/startup.cpp,14,1,special_crt_function,29
-crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8,006026a8,crt/startup.cpp,18,5,param_count_too_few|special_crt_function|stack_param|undefined_data,88
+crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8,006026a8,crt/startup.cpp,18,4,param_count_too_few|special_crt_function|stack_param,73
 crt_startup.cpp_WinMainBootstrap_FUN_00609e70,00609e70,crt/startup.cpp,74,9,pointer_cast|special_crt_function|stack_ref|warning_spacebase,184
 crt_system.c_sleep_FUN_00600790,00600790,crt/system.c,5,1,special_crt_function,20
 crt_stdlib.c_atexitRegisterNode_FUN_00605b89,00605b89,crt/stdlib.c,6,1,special_crt_function,21
@@ -815,7 +815,7 @@ crt_iostream.cpp_doallocate_FUN_0060d677,0060d677,crt/iostream.cpp,10,2,pointer_
 crt_iostream.cpp_streambuf_ctor_FUN_0060b7c2,0060b7c2,crt/iostream.cpp,15,1,special_crt_function,30
 crt_iostream.cpp_istream_ctor_FUN_00606376,00606376,crt/iostream.cpp,22,2,negative_offset|special_crt_function,52
 crt_iostream.cpp_istream_get_FUN_005ff245,005ff245,crt/iostream.cpp,32,2,special_crt_function|unresolved_funcptr,62
-crt_iostream.cpp_ostream_ctor_FUN_006061a2,006061a2,crt/iostream.cpp,17,3,negative_offset|special_crt_function|undefined_data,62
+crt_iostream.cpp_ostream_ctor_FUN_006061a2,006061a2,crt/iostream.cpp,17,2,negative_offset|special_crt_function,47
 crt_iostream.cpp_ostream_put_FUN_005ff2d7,005ff2d7,crt/iostream.cpp,40,2,special_crt_function|unresolved_funcptr,70
 crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815,0060b8da,crt/iostream.cpp,17,1,special_crt_function,32
 crt_iostream.cpp_streambuf_sync_FUN_00610ab6,00610ab6,crt/iostream.cpp,8,1,special_crt_function,23
@@ -844,7 +844,7 @@ crt_strstream.cpp_strstreambase_destructor_thunk_FUN_0060618a,0060618a,crt/strst
 crt_strstream.cpp_istrstream_ctor_FUN_005ff524,005ff524,crt/strstream.cpp,23,4,negative_offset|pointer_cast|special_crt_function,78
 crt_strstream.cpp_strstreambuf_seekoff_FUN_0060ba80,0060ba80,crt/strstream.cpp,46,16,register_param|special_crt_function|unknown_field,221
 crt_strstream.cpp_strstreambuf_underflow_FUN_0060ba25,0060ba25,crt/strstream.cpp,24,1,special_crt_function,39
-crt_strstream.cpp_strstreambase_ctor_FUN_006060fe,006060fe,crt/strstream.cpp,26,6,negative_offset|pointer_cast|special_crt_function|undefined_data,106
+crt_strstream.cpp_strstreambase_ctor_FUN_006060fe,006060fe,crt/strstream.cpp,26,5,negative_offset|pointer_cast|special_crt_function,91
 crt_strstream.cpp_istrstream_destructor_thunk_from_istream_FUN_005ff59c,005ff59c,crt/strstream.cpp,5,2,negative_offset|special_crt_function,35
 crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca,005ff5ca,crt/strstream.cpp,29,4,negative_offset|pointer_cast|special_crt_function,84
 crt_strstream.cpp_strstreambuf_doallocate_FUN_0060bc22,0060bc22,crt/strstream.cpp,104,1,special_crt_function,119
@@ -1582,7 +1582,7 @@ engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950,004b5950,engine/fi
 engine_fileio.cpp_CCheckOutList_findEntry_FUN_004b2e60,004b2e60,engine/fileio.cpp,19,0,,19
 engine_fileio.cpp_CFileManager_freeAuditRecords_FUN_004b5910,004b5910,engine/fileio.cpp,10,0,,10
 engine_fileio.cpp_CFileManager_load_FUN_004b6c00,004b6c00,engine/fileio.cpp,117,0,,117
-engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40,004b9f40,engine/fileio.cpp,174,2,pointer_cast|undefined_data,204
+engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40,004b9f40,engine/fileio.cpp,175,1,pointer_cast,190
 engine_fileio.cpp_trimWhitespace_FUN_004b1d40,004b1d40,engine/fileio.cpp,30,0,,30
 engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030,004b5030,engine/fileio.cpp,101,0,,101
 engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0,004b35a0,engine/fileio.cpp,134,0,,134
@@ -4202,7 +4202,7 @@ core_turret.cpp_CTurret_getBoundingBox_FUN_005e2910,005e2910,core/turret.cpp,72,
 core_turret.cpp_CTurret_getPropertyList_FUN_005e3ca0,005e3ca0,core/turret.cpp,32,0,,32
 core_turret.cpp_CTurret_updateTargeting_FUN_005e2d50,005e2d50,core/turret.cpp,123,2,decompiler_intrinsic,148
 core_turret.cpp_CTurret_updateInteraction_FUN_005e34d0,005e34d0,core/turret.cpp,19,0,,19
-core_turret.cpp_CTurret_process_FUN_005e2430,005e2430,core/turret.cpp,199,16,decompiler_intrinsic|pointer_cast|stack_alignment_array|suspect_float|unknown_field,384
+core_turret.cpp_CTurret_process_FUN_005e2430,005e2430,core/turret.cpp,200,13,pointer_cast|stack_alignment_array|unknown_field,345
 core_turret.cpp_CTurret_setup_FUN_005e2240,005e2240,core/turret.cpp,29,0,,29
 core_turret.cpp_CTurret_stopInteraction_FUN_005e3540,005e3540,core/turret.cpp,8,0,,8
 core_turret.cpp_factoryFunc_FUN_005e20b0,005e20b0,core/turret.cpp,10,0,,10
@@ -4332,7 +4332,7 @@ core_scat.cpp_CScat_isWeaponReady_FUN_00558010,00558010,core/scat.cpp,8,0,,8
 core_scat.cpp_CScat_advanceMotionWithGrabDamage_FUN_00557d20,00557d20,core/scat.cpp,26,0,,26
 core_scat.cpp_CScat_drawWeapon_FUN_00558000,00558000,core/scat.cpp,5,0,,5
 core_scat.cpp_CScat_isWeaponDrawn_FUN_00557ff0,00557ff0,core/scat.cpp,4,0,,4
-core_scat.cpp_CScat_blendAimBones_FUN_005584a0,005584a0,core/scat.cpp,154,44,pointer_cast|stack_alignment_array|warning_type_propagation,609
+core_scat.cpp_CScat_blendAimBones_FUN_005584a0,005584a0,core/scat.cpp,154,43,pointer_cast|stack_alignment_array|warning_type_propagation,599
 core_scat.cpp_CScat_updateAI_FUN_005578e0,005578e0,core/scat.cpp,158,2,decompiler_intrinsic|warning_type_propagation,188
 core_sentinel.cpp_staticInit_FUN_00567d40,00567d40,core/sentinel.cpp,7,0,,7
 core_sentinel.cpp_factoryFunc_FUN_00567d70,00567d70,core/sentinel.cpp,10,0,,10
@@ -4464,16 +4464,16 @@ core_stranger.cpp_CStranger_tryThrowDynamite_FUN_005c5e80,005c5e80,core/stranger
 core_stranger.cpp_CStranger_reset_FUN_005c6750,005c6750,core/stranger.cpp,16,0,,16
 core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960,005c3960,core/stranger.cpp,269,4,decompiler_intrinsic,314
 core_stranger.cpp_CStranger_setup_FUN_005bb4b0,005bb4b0,core/stranger.cpp,107,0,,107
-core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520,005be520,core/stranger.cpp,651,75,decompiler_intrinsic|pointer_cast|stack_ref|unknown_field|warning_inlined_function,1426
+core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520,005be520,core/stranger.cpp,637,77,decompiler_intrinsic|pointer_cast|unresolved_funcptr|warning_inlined_function,1427
 core_stranger.cpp_CStranger_updateTurnBlending_FUN_005bf800,005bf800,core/stranger.cpp,91,2,decompiler_intrinsic,116
 core_stranger.cpp_CStranger_getHandsMidpoint_FUN_005be490,005be490,core/stranger.cpp,27,0,,27
 core_stranger.cpp_staticInit_FUN_005bae80,005bae80,core/stranger.cpp,13,0,,13
 core_stranger.cpp_CStranger_getDeathState_FUN_005c67c0,005c67c0,core/stranger.cpp,12,0,,12
 core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0,005c07b0,core/stranger.cpp,597,40,param_count_too_many|pointer_cast|warning_type_propagation,1012
 core_stranger.cpp_CStranger_dropRightHandObject_FUN_005c1f80,005c1f80,core/stranger.cpp,14,0,,14
+core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720,005bf720,core/stranger.cpp,47,5,pointer_cast|warning_type_propagation,107
 core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0,005c1fe0,core/stranger.cpp,130,5,decompiler_intrinsic|warning_type_propagation,190
-core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60,005bfb60,core/stranger.cpp,299,34,decompiler_intrinsic|pointer_cast|stack_alignment_array|unresolved_funcptr|warning_type_propagation,664
-core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720,005bf720,core/stranger.cpp,47,5,pointer_cast|warning_type_propagation,107
+core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60,005bfb60,core/stranger.cpp,296,28,decompiler_intrinsic|pointer_cast|stack_alignment_array|unresolved_funcptr|warning_type_propagation,601
 core_stranger.cpp_setWindVelocity_FUN_005c6970,005c6970,core/stranger.cpp,10,0,,10
 core_stranger.cpp_setMatrixTranslation_FUN_005c6930,005c6930,core/stranger.cpp,7,0,,7
 core_stranger.cpp_calculateAimAnglesWithOffset_FUN_005c37e0,005c37e0,core/stranger.cpp,46,3,decompiler_intrinsic,81
@@ -4642,8 +4642,8 @@ core_weapon.cpp_CWeapon_getMuzzlePoint_FUN_005ee670,005ee670,core/weapon.cpp,13,
 core_weapon.cpp_CWeapon_fire_FUN_005ee6e0,005ee6e0,core/weapon.cpp,8,0,,8
 core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0,005ee4a0,core/weapon.cpp,47,7,stack_param|unaffected_reg,127
 core_weapon.cpp_CDemonGlobe_ctor_FUN_005eea80,005eea80,core/weapon.cpp,4,0,,4
-core_weapon.cpp_CWeapon_ctor_FUN_005ede70,005ede70,core/weapon.cpp,32,24,decompiler_intrinsic|suspect_float,282
-core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830,005ee830,core/weapon.cpp,64,0,,64
+core_weapon.cpp_CWeapon_ctor_FUN_005ede70,005ede70,core/weapon.cpp,32,23,decompiler_intrinsic,267
+core_weapon.cpp_CWeapon_fireProjectile_FUN_005ee830,005ee830,core/weapon.cpp,63,0,,63
 core_weapon.cpp_CWeapon_dtor_FUN_005edf80,005edf80,core/weapon.cpp,19,1,decompiler_intrinsic,34
 core_weapon.cpp_staticInit_FUN_005ede40,005ede40,core/weapon.cpp,7,0,,7
 core_weapon.cpp_CWeapon_getCarrier_FUN_005ee490,005ee490,core/weapon.cpp,4,0,,4
@@ -4859,7 +4859,7 @@ core_skeleton.cpp_CDeformableModel_initVertexWRecip_FUN_0059ab90,0059ab90,core/s
 core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_005a14b0,005a14b0,core/skeleton.cpp,22,2,unaffected_reg,47
 core_skeleton.cpp_distancePointToLineSegment_FUN_005996e0,005996e0,core/skeleton.cpp,44,3,decompiler_intrinsic,79
 core_skeleton.cpp_CDeformableModel_getVertexPoolPtr_FUN_0059a860,0059a860,core/skeleton.cpp,4,0,,4
-core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0,0059e0a0,core/skeleton.cpp,471,80,pointer_cast|stack_alignment_array,1281
+core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0,0059e0a0,core/skeleton.cpp,472,80,pointer_cast|stack_alignment_array,1282
 core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210,005a0210,core/skeleton.cpp,12,0,,12
 core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0,0059f6e0,core/skeleton.cpp,33,2,pointer_cast,58
 core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0,005a10e0,core/skeleton.cpp,24,0,,24
@@ -4867,7 +4867,7 @@ core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750,0059f
 core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0,0059dca0,core/skeleton.cpp,49,2,pointer_cast,74
 core_skeleton.cpp_CDeformableModelInstance_renderSkeleton_FUN_005a17b0,005a17b0,core/skeleton.cpp,10,0,,10
 core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450,005a0450,core/skeleton.cpp,7,0,,7
-core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0,005a15e0,core/skeleton.cpp,64,4,pointer_cast,109
+core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0,005a15e0,core/skeleton.cpp,68,4,pointer_cast,113
 core_skeleton.cpp_CDeformableModel_captureTextures_FUN_0059a780,0059a780,core/skeleton.cpp,29,0,,29
 core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0,0059b5a0,core/skeleton.cpp,27,6,pointer_cast,92
 core_skeleton.cpp_CDeformableModel_renderBones_FUN_0059b800,0059b800,core/skeleton.cpp,33,3,decompiler_intrinsic,68
@@ -4890,7 +4890,7 @@ core_skeleton.cpp_CSkeleton_arrdtor_FUN_005a1fb0,005a1fb0,core/skeleton.cpp,6,0,
 core_skeleton.cpp_CDeformableModelInstance_blendWithPoseData_FUN_0059f230,0059f230,core/skeleton.cpp,7,0,,7
 core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150,005a0150,core/skeleton.cpp,23,0,,23
 core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480,005a0480,core/skeleton.cpp,57,0,,57
-core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820,0059f820,core/skeleton.cpp,86,4,param_count_too_many|pointer_cast,136
+core_skeleton.cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820,0059f820,core/skeleton.cpp,87,4,param_count_too_many|pointer_cast,137
 core_skeleton.cpp_CDeformableModelInstance_offsetAllBonePositions_FUN_0059fd60,0059fd60,core/skeleton.cpp,23,0,,23
 core_skeleton.cpp_CDeformableModel_arrdtor_FUN_005a1fd0,005a1fd0,core/skeleton.cpp,6,0,,6
 core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800,005a1800,core/skeleton.cpp,72,8,decompiler_intrinsic|pointer_cast|warning_inlined_function,167
@@ -4921,7 +4921,7 @@ core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0,0059c2f0
 core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0,005a07a0,core/skeleton.cpp,16,0,,16
 core_skeleton.cpp_getDeformableModel_FUN_005a1cf0,005a1cf0,core/skeleton.cpp,30,0,,30
 core_skeleton.cpp_CSkeleton_dtor_FUN_005998e0,005998e0,core/skeleton.cpp,8,1,decompiler_intrinsic,23
-core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260,0059f260,core/skeleton.cpp,157,17,pointer_cast|stack_alignment_array,337
+core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260,0059f260,core/skeleton.cpp,159,17,pointer_cast|stack_alignment_array,339
 core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020,0059e020,core/skeleton.cpp,15,0,,15
 core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100,0059a100,core/skeleton.cpp,16,0,,16
 core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000,0059e000,core/skeleton.cpp,6,0,,6
@@ -4930,7 +4930,7 @@ core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20,005
 core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00,0059fb00,core/skeleton.cpp,7,0,,7
 core_skeleton.cpp_CDeformableModel_free_FUN_0059a2b0,0059a2b0,core/skeleton.cpp,40,0,,40
 core_skeleton.cpp_CDeformableModel_dismember_FUN_0059c5e0,0059c5e0,core/skeleton.cpp,201,14,pointer_cast,346
-core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80,0059df80,core/skeleton.cpp,24,0,,24
+core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80,0059df80,core/skeleton.cpp,26,0,,26
 core_skeleton.cpp_CSkeleton_load_FUN_00599b10,00599b10,core/skeleton.cpp,27,0,,27
 core_skeleton.cpp_CDeformableModel_getPartPtr_FUN_0059c220,0059c220,core/skeleton.cpp,4,0,,4
 core_skeleton.cpp_skipToEndOfLine_FUN_005996c0,005996c0,core/skeleton.cpp,11,0,,11
@@ -4939,7 +4939,7 @@ core_skeleton.cpp_CVector3f_arrdtor_FUN_005a2010,005a2010,core/skeleton.cpp,6,0,
 core_skeleton.cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0,005a03b0,core/skeleton.cpp,14,0,,14
 core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040,005a1040,core/skeleton.cpp,25,0,,25
 core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00,0059aa00,core/skeleton.cpp,47,0,,47
-core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510,005a1510,core/skeleton.cpp,61,4,pointer_cast,106
+core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510,005a1510,core/skeleton.cpp,69,4,pointer_cast,114
 core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0,0059cba0,core/skeleton.cpp,86,4,pointer_cast|stack_ref,136
 core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0,0059ddc0,core/skeleton.cpp,19,13,decompiler_intrinsic,154
 core_skeleton.cpp_CDeformableModel_getBonePart_FUN_0059c2d0,0059c2d0,core/skeleton.cpp,7,0,,7
@@ -5029,7 +5029,7 @@ core_event.cpp_parseDamageType_FUN_004aa960,004aa960,core/event.cpp,40,0,,40
 core_event.cpp_CEventList_evaluateLogicalExpr_FUN_004b0270,004b0270,core/event.cpp,52,0,,52
 core_event.cpp_CEventList_getSfxHandle_FUN_004b0c40,004b0c40,core/event.cpp,10,0,,10
 core_event.cpp_CEventList_findTimer_FUN_004b0900,004b0900,core/event.cpp,19,0,,19
-core_event.cpp_CEventList_executeCommand_FUN_004aacc0,004aacc0,core/event.cpp,2188,7,format_string_mismatch|stack_ref,2268
+core_event.cpp_CEventList_executeCommand_FUN_004aacc0,004aacc0,core/event.cpp,2187,16,format_string_mismatch|unknown_field|warning_unmapped_variable,2362
 core_event.cpp_CRuleList_remove_FUN_004b17c0,004b17c0,core/event.cpp,17,0,,17
 core_event.cpp_isCharacterSpeaking_FUN_004b1980,004b1980,core/event.cpp,7,0,,7
 core_event.cpp_parseIntOrCounter_FUN_004aa3c0,004aa3c0,core/event.cpp,12,0,,12
@@ -5198,7 +5198,7 @@ core_charactr.cpp_CCharacter_attractActorToward_FUN_0042c010,0042c010,core/chara
 core_charactr.cpp_copyFloat_FUN_0042faf0,0042faf0,core/charactr.cpp,5,0,,5
 core_charactr.cpp_setActorXPos_FUN_0042f920,0042f920,core/charactr.cpp,5,0,,5
 core_charactr.cpp_CCharacter_getGrabber_FUN_0042bf80,0042bf80,core/charactr.cpp,4,0,,4
-core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0,0042dcd0,core/charactr.cpp,64,16,pointer_cast|stack_alignment_array,234
+core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0,0042dcd0,core/charactr.cpp,66,17,pointer_cast|stack_alignment_array|warning_type_propagation,251
 core_charactr.cpp_copyFloat_FUN_0042fae0,0042fae0,core/charactr.cpp,5,0,,5
 core_charactr.cpp_CCharacter_applyDamage_FUN_00428ee0,00428ee0,core/charactr.cpp,14,0,,14
 core_charactr.cpp_getActorCreateEvent_FUN_0042f9d0,0042f9d0,core/charactr.cpp,4,0,,4
@@ -6031,7 +6031,7 @@ core_mimic.cpp_factoryFunc_FUN_0051f190,0051f190,core/mimic.cpp,10,0,,10
 core_mimic.cpp_CMimic_dtor_FUN_0051f2c0,0051f2c0,core/mimic.cpp,48,8,decompiler_intrinsic,133
 core_mimic.cpp_CMimic_process_FUN_0051f780,0051f780,core/mimic.cpp,65,0,,65
 core_mimic.cpp_CMimic_onActorDeleted_FUN_00520da0,00520da0,core/mimic.cpp,8,0,,8
-core_mimic.cpp_CMimic_updatePose_FUN_0051f930,0051f930,core/mimic.cpp,194,21,pointer_cast|warning_type_propagation,414
+core_mimic.cpp_CMimic_updatePose_FUN_0051f930,0051f930,core/mimic.cpp,195,21,pointer_cast|warning_type_propagation,415
 core_mimic.cpp_CMimic_getPropertyList_FUN_00520d10,00520d10,core/mimic.cpp,18,0,,18
 core_mimic.cpp_CMimic_getCollisionType_FUN_00520a00,00520a00,core/mimic.cpp,23,1,warning_type_propagation,38
 core_mimic.cpp_mirrorXTransform_FUN_0051f130,0051f130,core/mimic.cpp,10,0,,10
@@ -6074,7 +6074,7 @@ core_gabriela.cpp_CGabriella_processAI_FUN_004d4190,004d4190,core/gabriela.cpp,2
 core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_004d4c90,004d4c90,core/gabriela.cpp,14,0,,14
 core_gabriela.cpp_CGabriella_dtor_FUN_004d7660,004d7660,core/gabriela.cpp,18,1,decompiler_intrinsic,33
 core_gabriela.cpp_CGabriella_processDamage_FUN_004d6b30,004d6b30,core/gabriela.cpp,69,1,decompiler_intrinsic,84
-core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80,004d4d80,core/gabriela.cpp,338,52,pointer_cast|stack_alignment_array|unresolved_funcptr|warning_type_propagation,878
+core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80,004d4d80,core/gabriela.cpp,337,50,pointer_cast|stack_alignment_array|unresolved_funcptr|warning_type_propagation,857
 core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004d5c60,004d5c60,core/gabriela.cpp,113,7,decompiler_intrinsic|warning_type_propagation,193
 core_gabriela.cpp_CGabriella_process_FUN_004d2ea0,004d2ea0,core/gabriela.cpp,688,4,decompiler_intrinsic|pointer_cast|warning_type_propagation,743
 core_gabriela.cpp_flashlightBlendWeightCallback_FUN_004d2a30,004d2a30,core/gabriela.cpp,12,0,,12

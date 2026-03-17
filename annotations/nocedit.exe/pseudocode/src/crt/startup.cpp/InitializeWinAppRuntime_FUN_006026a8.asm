@@ -11,7 +11,7 @@
 ;   GET_MODULE_HANDLE_A_FUNC* g_GetModuleHandleAFunc = 00211f6e
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_00602458_00684f24 = 00602458
-;   undefined4 DAT_00684ff4
+;   uint* g_HeapBound = 00000000
 ;
 ; Called Functions:
 ;   crt_exception.c_installExceptionHandler_FUN_0060aba8
@@ -37,7 +37,7 @@ section .text
     CALL crt_startup.c_initialize_runtime_FUN_0060245c ; 006026ba
         ;   XREF to: 0060245c (UNCONDITIONAL_CALL)  ; void crt_startup.c_initialize_runtime_FUN_0060245c(HMODULE hModule, void * pThreadParam, int unused)
     ADD ESP,0xc                         ; 006026bf
-    PUSH 0x684ff4                       ; 006026c2 | DAT_00684ff4
+    PUSH 0x684ff4                       ; 006026c2 | g_HeapBound
     CALL dword ptr [0x00684ee4]         ; 006026c7 | PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4
     PUSH EAX                            ; 006026cd
     CALL crt_memory.c___GetStackLimits_FUN_0060a6a0 ; 006026ce

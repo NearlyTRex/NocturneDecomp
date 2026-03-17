@@ -3068,6 +3068,7 @@ static char s_EmptyChar_006238a5 = '\0';
 static char s_EmptyChar_00623fa1 = '\0';
 static char s_EmptyChar_0062460c = '\0';
 static char s_EmptyChar_00627d0c = '\0';
+static char s_EmptyChar_00628c6a = '\0';
 static char s_EmptyChar_006295ce = '\0';
 static char s_EmptyChar_006295ed = '\0';
 static char s_BackspaceChar_0062a766 = 0x08;
@@ -3077,7 +3078,7 @@ static char s_EmptyChar_0062ca5b = '\0';
 static char s_EmptyChar_0062cc98 = '\0';
 
 // char[11] constants
-static char s_0062a892[] = " ";
+static char s_anon_0062a892[] = " ";
 
 // char[14] constants
 static char s_A_a_0062a86f[] = "Aa  \177";

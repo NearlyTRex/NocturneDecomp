@@ -152,6 +152,9 @@ CDemonActorType g_CTentacleClassInfo = {};
 // CDirectSoundDevice
 CDirectSoundDevice g_CDirectSoundDeviceInstance = {};
 
+// CLever*
+CLever* g_StrangerLeverHandle = {};
+
 // CSfxOptions[8]
 CSfxOptions g_SfxOptions[8] = {};
 
@@ -191,6 +194,7 @@ CVector3f g_SoundListenerPrev = {};
 CVector3f CVector3f_03f6af7c = {};
 CVector3f g_SoundListenerOrient = {};
 CVector3f g_TrainVelocityVector = {};
+CVector3f CVector3f_03f6ba9c = {};
 CVector3f CVector3f_03f6bab0 = {};
 CVector3f CVector3f_03f6babc = {};
 
@@ -299,9 +303,6 @@ float g_VolumeFadeTimeRemaining = {};
 float g_TrainNoiseCooldown = {};
 float FLOAT_03f6ba1c = {};
 float FLOAT_03f6ba20 = {};
-float FLOAT_03f6ba9c = {};
-float FLOAT_03f6baa0 = {};
-float FLOAT_03f6baa4 = {};
 
 // float*
 float* g_TertiaryMixBuffer = {};

@@ -28,9 +28,12 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005
   
   bVar13 = 0;
   if (&this_ptr->bone_transform != bone_transform) {
-    (this_ptr->bone_transform).root_position.x = (bone_transform->root_position).x;
-    (this_ptr->bone_transform).root_position.y = (bone_transform->root_position).y;
-    (this_ptr->bone_transform).root_position.z = (bone_transform->root_position).z;
+    (this_ptr->bone_transform).pose_data.root_position.x =
+         (bone_transform->pose_data).root_position.x;
+    (this_ptr->bone_transform).pose_data.root_position.y =
+         (bone_transform->pose_data).root_position.y;
+    (this_ptr->bone_transform).pose_data.root_position.z =
+         (bone_transform->pose_data).root_position.z;
   }
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   iVar1 = pCVar2->bone_count;
@@ -44,14 +47,15 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005
     do {
       puVar10 = (uint *)((int)pCVar6 + (uint)bVar13 * -8 + 0x6b4);
       puVar7 = (uint *)((int)local_14 + (uint)bVar13 * -8 + 0x10);
-      (pCVar6->bone_transform).bone_rotations[0].w = local_14->bone_rotations[0].w;
+      (pCVar6->bone_transform).pose_data.bone_rotations[0].w =
+           (local_14->pose_data).bone_rotations[0].w;
       puVar11 = puVar10 + (uint)bVar13 * -2 + 1;
       puVar8 = puVar7 + (uint)bVar13 * -2 + 1;
       *puVar10 = *puVar7;
       *puVar11 = *puVar8;
       puVar11[(uint)bVar13 * -2 + 1] = puVar8[(uint)bVar13 * -2 + 1];
       (local_c->bone_transform).bone_scales[0] = bone_transform->bone_scales[0];
-      bone_transform = (SPose *)&(bone_transform->root_position).y;
+      bone_transform = (SPose *)&(bone_transform->pose_data).root_position.y;
       pCVar6 = (CDeformableModelInstance *)&(pCVar6->motion_controller).tween_speed;
       pCVar9 = local_10->bone_world_matrices;
       pCVar12 = (pCVar3->bone_transform).bone_world_matrices;
@@ -63,9 +67,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005
         pCVar12 = pCVar12;
       }
       iVar5 = iVar5 + 1;
-      local_10 = (SPose *)&local_10->bone_rotations[2].x;
+      local_10 = (SPose *)&(local_10->pose_data).bone_rotations[2].x;
       local_c = (CDeformableModelInstance *)&(local_c->motion_controller).current_motion_index;
-      local_14 = (SPose *)&local_14->bone_rotations[0].x;
+      local_14 = (SPose *)&(local_14->pose_data).bone_rotations[0].x;
       pCVar3 = (CDeformableModelInstance *)(pCVar3->motion_controller).current_motion_name;
     } while (iVar5 < iVar1);
   }

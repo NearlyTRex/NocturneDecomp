@@ -72,10 +72,11 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
   local_14 = this_ptr;
   pCVar15 = this_ptr;
   for (iVar7 = 0; iVar5 = g_LocalHeroIndex, iVar7 < iVar1; iVar7 = iVar7 + 1) {
-    pCVar1 = (g_HeroActors[g_LocalHeroIndex]->base).model.bone_transform.bone_rotations + iVar7;
+    pCVar1 = (g_HeroActors[g_LocalHeroIndex]->base).model.bone_transform.pose_data.bone_rotations +
+             iVar7;
     puVar23 = (uint *)((int)pCVar15 + (uint)bVar26 * -8 + 0x80c);
     puVar17 = (uint *)((int)pCVar1 + ((uint)bVar26 * -2 + 1) * 4);
-    (pCVar15->base).base.model.bone_transform.bone_rotations[0].w = pCVar1->w;
+    (pCVar15->base).base.model.bone_transform.pose_data.bone_rotations[0].w = pCVar1->w;
     puVar24 = puVar23 + (uint)bVar26 * -2 + 1;
     puVar18 = puVar17 + (uint)bVar26 * -2 + 1;
     *puVar23 = *puVar17;
@@ -102,11 +103,11 @@ void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_0051f930(CMimic *this_ptr)
   pSVar8 = &(this_ptr->base).base.model.bone_transform;
   pSVar13 = &(pCVar2->base).model.bone_transform;
   if (pSVar8 != pSVar13) {
-    (pSVar8->root_position).x = (pSVar13->root_position).x;
-    (this_ptr->base).base.model.bone_transform.root_position.y =
-         (pCVar2->base).model.bone_transform.root_position.y;
-    (this_ptr->base).base.model.bone_transform.root_position.z =
-         (pCVar2->base).model.bone_transform.root_position.z;
+    (pSVar8->pose_data).root_position.x = (pSVar13->pose_data).root_position.x;
+    (this_ptr->base).base.model.bone_transform.pose_data.root_position.y =
+         (pCVar2->base).model.bone_transform.pose_data.root_position.y;
+    (this_ptr->base).base.model.bone_transform.pose_data.root_position.z =
+         (pCVar2->base).model.bone_transform.pose_data.root_position.z;
   }
   (this_ptr->base).base.model.cached_skinned_lod_index = -1;
   pCVar3 = (g_HeroActors[g_LocalHeroIndex]->base).cloth_list.cloths[0];

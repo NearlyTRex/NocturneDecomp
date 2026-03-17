@@ -138,7 +138,8 @@ void __cdecl engine_fileio_cpp_CFileManager_crossReferencePodDuplicates_FUN_004b
                  -1 < iVar10)) {
                 if (iVar5 < local_1c) break;
                 if (bVar3) {
-                  shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_4fc.base,&DAT_00628c6a);
+                  shape_edittool_cpp_CStrList_add_FUN_004a2b80
+                            (&local_4fc.base,&s_EmptyChar_00628c6a);
                   _sprintf
                             (local_154,"%s\t%s\t%08X",pcVar8,local_40->filename,
                              *(uint *)((int)&local_40->directory_entries->checksum + local_34)

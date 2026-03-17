@@ -33,7 +33,7 @@
 #include "types/structs/SIntersectXZCylinder.h"
 #include "types/structs/SMRGLPrimitiveTriangle.h"
 #include "types/structs/SMRGLTextureBasic.h"
-#include "types/structs/SPoseData.h"
+#include "types/structs/SPose.h"
 #include "types/structs/SProjectedVertex.h"
 #include "types/structs/SRGBColorPalette.h"
 #include "types/structs/SRecordingDeviceInfo.h"
@@ -273,7 +273,7 @@ float __cdecl core_stranger_cpp_CStranger_getCarryLightIntensity_FUN_005be430(CS
 float __cdecl core_stranger_cpp_getDefaultAimPitch_FUN_005be480(void);
 CVector3f * __cdecl core_stranger_cpp_CStranger_getHandsMidpoint_FUN_005be490(CStranger *this_ptr,CVector3f *out_position);
 void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(CStranger *this_ptr);
-void __cdecl core_stranger_cpp_CStranger_extractTurnPoseData_FUN_005bf720(CStranger *this_ptr,SPoseData *out_pose);
+void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_005bf720(CStranger *this_ptr,SPose *out_pose);
 void __cdecl core_stranger_cpp_CStranger_updateTurnBlending_FUN_005bf800(CStranger *this_ptr,float delta_time);
 void __cdecl core_stranger_cpp_CStranger_setPositionAndOrientation_FUN_005bfb10(CStranger *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_005bfb60(CStranger *this_ptr);

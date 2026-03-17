@@ -45,15 +45,15 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
                 (pCVar8,bone_index,(int)local_28,(int)local_24[0],local_60);
       bone_index = bone_index + 1;
       puVar9 = (uint *)((int)local_18 + (uint)bVar11 * -8 + 0x10);
-      local_18->bone_rotations[0].w = local_5c;
+      (local_18->pose_data).bone_rotations[0].w = local_5c;
       puVar10 = puVar9 + (uint)bVar11 * -2 + 1;
       *puVar9 = auStack_58[(uint)bVar11 * -2];
       *puVar10 = auStack_58[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1];
       puVar10[(uint)bVar11 * -2 + 1] =
            (auStack_58 + (uint)bVar11 * -2 + (uint)bVar11 * -2 + 1)[(uint)bVar11 * -2 + 1];
       local_14->bone_scales[0] = 1.0;
-      local_18 = (SPose *)&local_18->bone_rotations[0].x;
-      local_14 = (SPose *)&(local_14->root_position).y;
+      local_18 = (SPose *)&(local_18->pose_data).bone_rotations[0].x;
+      local_14 = (SPose *)&(local_14->pose_data).root_position.y;
     } while (bone_index < pCVar8->bone_count);
   }
   pCVar5 = pCVar8->frame_positions_1;
@@ -64,16 +64,16 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsFor
   fVar3 = pCVar6[(int)local_28].y;
   fVar4 = pCVar6[(int)local_28].z;
   if ((SPose *)(auStack_58 + 6) != output_bone_data) {
-    (output_bone_data->root_position).x =
+    (output_bone_data->pose_data).root_position.x =
          pCVar6[(int)local_28].x * fVar7 + pCVar5[(int)local_24[0]].x * local_60;
-    (output_bone_data->root_position).y = fVar3 * fVar7 + fVar1 * local_60;
-    (output_bone_data->root_position).z = fVar4 * fVar7 + fVar2 * local_60;
+    (output_bone_data->pose_data).root_position.y = fVar3 * fVar7 + fVar1 * local_60;
+    (output_bone_data->pose_data).root_position.z = fVar4 * fVar7 + fVar2 * local_60;
   }
-  (output_bone_data->root_position).x =
-       (this_ptr->scaled_model_dimensions).x * (output_bone_data->root_position).x;
-  (output_bone_data->root_position).y =
-       (this_ptr->scaled_model_dimensions).y * (output_bone_data->root_position).y;
-  (output_bone_data->root_position).z =
-       (this_ptr->scaled_model_dimensions).z * (output_bone_data->root_position).z;
+  (output_bone_data->pose_data).root_position.x =
+       (this_ptr->scaled_model_dimensions).x * (output_bone_data->pose_data).root_position.x;
+  (output_bone_data->pose_data).root_position.y =
+       (this_ptr->scaled_model_dimensions).y * (output_bone_data->pose_data).root_position.y;
+  (output_bone_data->pose_data).root_position.z =
+       (this_ptr->scaled_model_dimensions).z * (output_bone_data->pose_data).root_position.z;
   return;
 }

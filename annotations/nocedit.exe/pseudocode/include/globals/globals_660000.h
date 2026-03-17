@@ -307,6 +307,7 @@ extern WatcomDestructorCall WatcomDestructorCall_00664600;
 extern WatcomDestructorCall WatcomDestructorCall_006652c0;
 
 // WatcomInheritanceLayout
+extern WatcomInheritanceLayout g_OStream_InheritanceLayout;
 extern WatcomInheritanceLayout WatcomInheritanceLayout_00665e68;
 
 // WatcomStaticDestructorNode
@@ -448,6 +449,7 @@ extern WatcomVirtualBaseDescriptor g_IFStream_LayoutInfo;
 extern WatcomVirtualBaseDescriptor g_IFStream_IStreamSubobjectLayout;
 extern WatcomVirtualBaseDescriptor g_OFStream_VirtualBaseLayout;
 extern WatcomVirtualBaseDescriptor g_OFStream_OStreamSubobjectLayout;
+extern WatcomVirtualBaseDescriptor g_Strstream_VirtualLayout;
 extern WatcomVirtualBaseDescriptor g_FStreamBase_VirtualBaseLayout;
 
 // char[104]

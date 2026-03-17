@@ -12,7 +12,7 @@ void __cdecl core_turret_cpp_CTurret_archive_FUN_005e2c40(CTurret *this_ptr)
   core_weapon_cpp_CWeapon_archive_FUN_005ee250(&this_ptr->base);
   core_actor_cpp_archiveOrientation_FUN_0040b3e0
             (&(this_ptr->home_orient).orient,"homeOrient");
-  core_actor_cpp_archiveInteger_FUN_0040b7f0(&this_ptr->state,"state");
+  core_actor_cpp_archiveInteger_FUN_0040b7f0((int *)&this_ptr->state,"state");
   core_actor_cpp_archiveString_FUN_0040b5c0(this_ptr->activate_event,"activateEvent");
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->charge_time,"chargeTime");
   core_actor_cpp_archiveFloat_FUN_0040b770(&this_ptr->patrol_time,"patrolTime");

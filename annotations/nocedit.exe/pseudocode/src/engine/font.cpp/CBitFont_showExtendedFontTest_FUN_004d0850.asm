@@ -21,7 +21,7 @@
 ; Referenced Globals:
 ;   char[14] s_A_a_0062a86f
 ;   char[21] s_anon_0062a87d
-;   char[11] s__0062a892
+;   char[11] s_anon_0062a892
 ;   TerminatedCString s_maxCharHght_d_0062a89d
 ;   char s_MaxChar_0062a8ad = \xff
 ;   int g_ClipLeft
@@ -346,7 +346,7 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 004d0b3f
     SHR EAX,0x1                         ; 004d0b42
     PUSH EAX                            ; 004d0b44
-    PUSH 0x62a892                       ; 004d0b45 | s__0062a892
+    PUSH 0x62a892                       ; 004d0b45 | s_anon_0062a892
     PUSH ESI                            ; 004d0b4a
     CALL engine_font.cpp_CBitFont_drawText_FUN_004cda80 ; 004d0b4b
         ;   XREF to: 004cda80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004cda80(CBitFont * this_ptr, char * text, int x, int y, ...)

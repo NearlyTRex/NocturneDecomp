@@ -30,7 +30,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
     if (0 < this_ptr_00->bone_count) {
       local_18 = this_ptr;
-      quat1_in = (this_ptr->bone_transform).bone_rotations;
+      quat1_in = (this_ptr->bone_transform).pose_data.bone_rotations;
       do {
         hierarchy_distance =
              core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100
@@ -40,7 +40,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0
                                );
           core_xform_cpp_slerpQuaternion_FUN_005f77e0(quat1_in,source_quaternions,t,&CStack_2c);
           puVar2 = (uint *)((int)local_18 + (uint)bVar4 * -8 + 0x6b4);
-          (local_18->bone_transform).bone_rotations[0].w = CStack_2c.w;
+          (local_18->bone_transform).pose_data.bone_rotations[0].w = CStack_2c.w;
           puVar3 = puVar2 + (uint)bVar4 * -2 + 1;
           puVar1 = (uint *)((int)&CStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
           *puVar2 = *(uint *)((int)&CStack_2c + (uint)bVar4 * -8 + 4);

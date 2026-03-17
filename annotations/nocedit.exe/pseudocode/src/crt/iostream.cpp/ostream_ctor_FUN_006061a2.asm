@@ -13,7 +13,7 @@
 ;   crt_strstream.cpp_ostrstream_ctor_FUN_005ff384 at 005ff3d1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00665db8
+;   WatcomInheritanceLayout g_OStream_InheritanceLayout
 ;   void* g_OStream_Destructor = 00606231
 ;   void* g_OStream_IOSDestructor = 006061e4
 ;
@@ -39,7 +39,7 @@ section .text
     MOV EDX,dword ptr [EDX + 0x4]       ; 006061c1
     MOV dword ptr [EDX + EAX*0x1 + 0x28],0x665dcc ; 006061c4 | g_OStream_IOSDestructor
     RET                                 ; 006061cc
-    MOV dword ptr [EAX],0x665db8        ; 006061cd | DAT_00665db8
+    MOV dword ptr [EAX],0x665db8        ; 006061cd | g_OStream_InheritanceLayout
         ;   Label: LAB_006061cd
     ADD EAX,0xc                         ; 006061d3
     PUSH EAX                            ; 006061d6

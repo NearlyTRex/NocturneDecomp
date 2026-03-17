@@ -3,9 +3,9 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "types/classes/CBox.h"
+#include "types/classes/CColor3i.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CKeyFramedModelInstance.h"
-#include "types/classes/CVector3f.h"
 
 // Structure: CWeapon
 // Ghidra size: 0x578 (1400 bytes)
@@ -20,7 +20,7 @@ typedef struct CWeapon {
     float bolt_velocity; // 0x2e8
     float fire_cooldown; // 0x2ec
     int can_attach_light; // 0x2f0
-    CVector3f muzzle_flash_offset; // 0x2f4
+    CColor3i muzzle_flash_color; // 0x2f4
     float fire_cooldown_timer; // 0x300
     struct CDemonActor* carried_by_actor; // 0x304
     CBox physics_box; // 0x308

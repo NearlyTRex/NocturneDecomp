@@ -2373,6 +2373,10 @@
       "type":"enum"
     },
     {
+      "name":"ETurretState",
+      "type":"enum"
+    },
+    {
       "name":"EWeaponState",
       "type":"enum"
     },
@@ -4497,11 +4501,11 @@
       "type":"struct"
     },
     {
-      "name":"SPose",
+      "name":"SPoseData",
       "type":"struct"
     },
     {
-      "name":"SPoseData",
+      "name":"SPose",
       "type":"struct"
     },
     {
@@ -9867,6 +9871,34 @@
         {
           "name":"TRIGGER_EVENT_ON_EXIT",
           "val":3
+        }
+      ]
+    },
+    {
+      "cat":"/Nocturne/Enum/Game",
+      "importable":true,
+      "name":"ETurretState",
+      "type":"enum",
+      "values":[
+        {
+          "name":"TURRET_STATE_IDLE",
+          "val":0
+        },
+        {
+          "name":"TURRET_STATE_CHARGING",
+          "val":1
+        },
+        {
+          "name":"TURRET_STATE_ACTIVE",
+          "val":2
+        },
+        {
+          "name":"TURRET_STATE_PATROL",
+          "val":3
+        },
+        {
+          "name":"TURRET_STATE_POWERING_DOWN",
+          "val":4
         }
       ]
     },
@@ -46339,7 +46371,7 @@
           "len":4,
           "name":"state",
           "offset":1792,
-          "type":"int"
+          "type":"ETurretState"
         },
         {
           "len":100,
@@ -47543,9 +47575,9 @@
         },
         {
           "len":12,
-          "name":"muzzle_flash_offset",
+          "name":"muzzle_flash_color",
           "offset":756,
-          "type":"CVector3f"
+          "type":"CColor3i"
         },
         {
           "len":4,
@@ -58375,16 +58407,10 @@
       "desc":"",
       "fields":[
         {
-          "len":12,
-          "name":"root_position",
+          "len":1612,
+          "name":"pose_data",
           "offset":0,
-          "type":"CVector3f"
-        },
-        {
-          "len":1600,
-          "name":"bone_rotations",
-          "offset":12,
-          "type":"CQuaternion4f[100]"
+          "type":"SPoseData"
         },
         {
           "len":400,

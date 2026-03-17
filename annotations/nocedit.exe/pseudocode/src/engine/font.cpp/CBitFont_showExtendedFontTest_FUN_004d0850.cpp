@@ -144,7 +144,7 @@ void __cdecl engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850(CBitFont
   } while (iVar7 < 0xb0);
   iVar8 = iVar8 + iVar4;
   engine_font_cpp_CBitFont_drawText_FUN_004cda80
-            (this_ptr,s__0062a892,(uint)screen_width >> 1,iVar8 - iVar4,6,-1);
+            (this_ptr,s_anon_0062a892,(uint)screen_width >> 1,iVar8 - iVar4,6,-1);
   if ((uint)(this_ptr->max_char_height + iVar8) < (uint)screen_height) {
     iVar11 = screen_width + -1;
     g_ActiveRenderColor = 4;

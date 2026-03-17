@@ -27,7 +27,7 @@ void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SPose *bone
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(instance_ptr);
   local_14 = 0;
   if (0 < pCVar1->bone_count) {
-    local_18 = bone_data->bone_rotations;
+    local_18 = (bone_data->pose_data).bone_rotations;
     iVar3 = 0;
     pSVar2 = bone_data;
     pSVar4 = bone_data;
@@ -59,13 +59,13 @@ void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SPose *bone
       if (iVar1 < 0) {
         pSVar4->bone_world_matrices[0].m[0].z =
              *(float *)((int)&instance_ptr->transformed_vertices[0].x + iVar3) +
-             (bone_data->root_position).x;
+             (bone_data->pose_data).root_position.x;
         pSVar4->bone_world_matrices[0].m[1].z =
              *(float *)((int)&instance_ptr->transformed_vertices[0].y + iVar3) +
-             (bone_data->root_position).y;
+             (bone_data->pose_data).root_position.y;
         pSVar4->bone_world_matrices[0].m[2].z =
              *(float *)((int)&instance_ptr->transformed_vertices[0].z + iVar3) +
-             (bone_data->root_position).z;
+             (bone_data->pose_data).root_position.z;
       }
       else {
         core_xform_cpp_transformVector3x4_FUN_005f4dc0
@@ -75,8 +75,8 @@ void __cdecl core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(SPose *bone
         pSVar4->bone_world_matrices[0].m[1].z = local_3c.y;
         pSVar4->bone_world_matrices[0].m[2].z = local_3c.z;
       }
-      pSVar2 = (SPose *)&(pSVar2->root_position).y;
-      pSVar4 = (SPose *)&pSVar4->bone_rotations[2].x;
+      pSVar2 = (SPose *)&(pSVar2->pose_data).root_position.y;
+      pSVar4 = (SPose *)&(pSVar4->pose_data).bone_rotations[2].x;
       iVar3 = iVar3 + 0xc;
       local_1c = local_1c + 1;
       local_18 = local_18 + 1;

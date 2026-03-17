@@ -2,9 +2,9 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 578
-Filtered out (inside named data): 1176
-Immediate constants (not real globals): 10
+Total DAT_ globals found: 575
+Filtered out (inside named data): 1175
+Immediate constants (not real globals): 7
 Real globals remaining: 568
 Clusters detected: 78
 DAT_ globals in clusters: 522
@@ -19,7 +19,7 @@ Classification summary:
   struct_array         2 clusters
 
 --------------------------------------------------------------------------------
-LIKELY IMMEDIATE CONSTANTS (10)
+LIKELY IMMEDIATE CONSTANTS (7)
 --------------------------------------------------------------------------------
 These DAT_ globals are never dereferenced as memory addresses.
 They appear only as inline constant values (e.g. MOV EDX,0xf80000).
@@ -43,31 +43,17 @@ Consider removing the Ghidra label and leaving the raw number.
     configureGraphicsOptions
       CMP dword ptr [ESP + 0x124],0x16e3600 ; 00511179 | DAT_016e3600
 
-  DAT_00766880  value=0x766880 (7760000)  refs=2
-    COptimize_exportOptimizeGeometry
-      PUSH 0x766880                       ; 005d7e07 | DAT_00766880
-    loadS3DModelFile
-      PUSH 0x766880                       ; 004597f7 | DAT_00766880
-
   DAT_02f7c9f0  value=0x2F7C9F0  refs=1
     CNetGame_addChatHistory
       PUSH 0x2f7c9f0                      ; 0054244b | DAT_02f7c9f0
 
-  DAT_00665db8  value=0x665DB8 (6708664)  refs=1
-    ostream_ctor
-      MOV dword ptr [EAX],0x665db8        ; 006061cd | DAT_00665db8
-
-  DAT_00684ff4  value=0x684FF4 (6836212)  refs=1
-    InitializeWinAppRuntime
-      PUSH 0x684ff4                       ; 006026c2 | DAT_00684ff4
-
-  DAT_00665d60  value=0x665D60 (6708576)  refs=1
-    strstreambase_ctor
-      MOV dword ptr [EBX],0x665d60        ; 00606173 | DAT_00665d60
-
   DAT_00684d12  value=0x684D12 (6835474)  refs=1
     FUN_00608fdc
       CMP EAX,0x684d12                    ; 00609020 | DAT_00684d12
+
+  DAT_00766880  value=0x766880 (7760000)  refs=1
+    loadS3DModelFile
+      PUSH 0x766880                       ; 004597f7 | DAT_00766880
 
 --------------------------------------------------------------------------------
 HIGH CONFIDENCE (7 clusters)
@@ -1008,7 +994,7 @@ ISOLATED DAT_ GLOBALS (46 - not part of any cluster)
   DAT_03f5d97c                    addr=03f5d97c    type=undefined4      refs=1  near: g_SoundTestErrorBuffer(+220)
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (1176)
+FILTERED OUT - INSIDE NAMED DATA (1175)
 --------------------------------------------------------------------------------
   DAT_00613579                    inside s_none_00613578
   DAT_0061357a                    inside s_none_00613578
@@ -1114,7 +1100,6 @@ FILTERED OUT - INSIDE NAMED DATA (1176)
   DAT_006231b0                    inside s_anon_006231af
   DAT_006231b2                    inside s_d_006231b1
   DAT_006235ac                    inside g_AxisLabelChars
-  DAT_00628c6a                    inside s_Finding_duplicates_00628c54
   DAT_00629210                    inside s_DefaultWildcard_0062920f
   DAT_00629645                    inside s_file_00629644
   DAT_00629646                    inside s_file_00629644

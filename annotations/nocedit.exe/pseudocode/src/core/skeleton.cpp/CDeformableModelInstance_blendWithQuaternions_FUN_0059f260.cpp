@@ -54,7 +54,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
   bVar13 = 0;
   if ((float)0.001 < blend_weight) {
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
-    local_2c = (this_ptr->bone_transform).bone_rotations;
+    local_2c = (this_ptr->bone_transform).pose_data.bone_rotations;
     if (this_ptr->bone_update_mode == 0) {
       iVar8 = 0;
       if (0 < this_ptr_00->bone_count) {
@@ -68,7 +68,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
             t = (*blend_callback)(iVar8,bone_index,blend_weight,hierarchy_distance,this_ptr);
             core_xform_cpp_slerpQuaternion_FUN_005f77e0(local_2c,local_1c,t,&CStack_e8);
             puVar11 = (uint *)((int)local_24 + (uint)bVar13 * -8 + 0x6b4);
-            (local_24->bone_transform).bone_rotations[0].w = CStack_e8.w;
+            (local_24->bone_transform).pose_data.bone_rotations[0].w = CStack_e8.w;
             puVar12 = puVar11 + (uint)bVar13 * -2 + 1;
             puVar2 = (uint *)((int)&CStack_e8 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8);
             *puVar11 = *(uint *)((int)&CStack_e8 + (uint)bVar13 * -8 + 4);
@@ -125,7 +125,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
             puVar2[(uint)bVar13 * -2 + 1] = (puVar9 + (uint)bVar13 * -2 + 1)[(uint)bVar13 * -2 + 1];
             core_xform_cpp_slerpQuaternion_FUN_005f77e0(local_30,&local_d8,blend_weight,&local_88);
             puVar3 = (uint *)((int)local_28 + (uint)bVar13 * -8 + 0x6b4);
-            (local_28->bone_transform).bone_rotations[0].w = local_88.w;
+            (local_28->bone_transform).pose_data.bone_rotations[0].w = local_88.w;
             puVar4 = puVar3 + (uint)bVar13 * -2 + 1;
             puVar2 = (uint *)((int)local_78 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + -8);
             *puVar3 = *(uint *)((int)local_78 + (uint)bVar13 * -8 + -0xc);
@@ -151,14 +151,16 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
       fVar1 = source_position->y;
       fVar2 = source_position->z;
       fVar7 = 1.0 - blend_weight;
-      fVar3 = (this_ptr->bone_transform).root_position.y;
-      fVar4 = (this_ptr->bone_transform).root_position.z;
+      fVar3 = (this_ptr->bone_transform).pose_data.root_position.y;
+      fVar4 = (this_ptr->bone_transform).pose_data.root_position.z;
       if (&this_ptr->bone_transform != (SPose *)afStack_44) {
-        (this_ptr->bone_transform).root_position.x =
-             (this_ptr->bone_transform).root_position.x * fVar7 +
+        (this_ptr->bone_transform).pose_data.root_position.x =
+             (this_ptr->bone_transform).pose_data.root_position.x * fVar7 +
              (this_ptr->scaled_model_dimensions).x * source_position->x * blend_weight;
-        (this_ptr->bone_transform).root_position.y = fVar3 * fVar7 + fVar5 * fVar1 * blend_weight;
-        (this_ptr->bone_transform).root_position.z = fVar4 * fVar7 + fVar6 * fVar2 * blend_weight;
+        (this_ptr->bone_transform).pose_data.root_position.y =
+             fVar3 * fVar7 + fVar5 * fVar1 * blend_weight;
+        (this_ptr->bone_transform).pose_data.root_position.z =
+             fVar4 * fVar7 + fVar6 * fVar2 * blend_weight;
         return;
       }
     }

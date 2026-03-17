@@ -31,9 +31,9 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_005ede70(CWeapon *this_ptr)
   ADJ(pCVar3)->bolt_velocity = 200.0;
   ADJ(pCVar3)->fire_cooldown = 0.0;
   ADJ(pCVar3)->can_attach_light = 1;
-  (ADJ(pCVar3)->muzzle_flash_offset).x = 3.57331e-43;
-  (ADJ(pCVar3)->muzzle_flash_offset).y = 0.0;
-  (ADJ(pCVar3)->muzzle_flash_offset).z = 0.0;
+  (ADJ(pCVar3)->muzzle_flash_color).r = 0xff;
+  (ADJ(pCVar3)->muzzle_flash_color).g = 0;
+  (ADJ(pCVar3)->muzzle_flash_color).b = 0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&ADJ(pCVar3)->model,"gat.kfm");
   ADJ(pCVar3)->sim_timer = 0.0;

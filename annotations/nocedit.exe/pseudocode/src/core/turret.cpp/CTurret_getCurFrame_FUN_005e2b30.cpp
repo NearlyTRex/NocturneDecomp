@@ -16,18 +16,18 @@ float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30(CTurret *this_ptr
   
   local_18 = 0.0;
   switch(this_ptr->state) {
-  case 0:
+  case TURRET_STATE_IDLE:
     break;
-  case 1:
+  case TURRET_STATE_CHARGING:
     if (0.0 < this_ptr->charge_time) {
       local_18 = 1.0 - this_ptr->timer / this_ptr->charge_time;
     }
     break;
-  case 2:
-  case 3:
+  case TURRET_STATE_ACTIVE:
+  case TURRET_STATE_PATROL:
     local_18 = 1.0;
     break;
-  case 4:
+  case TURRET_STATE_POWERING_DOWN:
     if (0.0 < this_ptr->power_down_time) {
       local_18 = this_ptr->timer / this_ptr->power_down_time;
     }

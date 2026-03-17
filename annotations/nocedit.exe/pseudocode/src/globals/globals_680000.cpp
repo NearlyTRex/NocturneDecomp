@@ -4014,6 +4014,9 @@ uint g_WindowsVersionCombined = 0x0;
 uint g_MaxHandleCount = 0x14;
 uint g_CodePage = 0x1;
 
+// uint*
+uint* g_HeapBound = nullptr;
+
 // undefined1
 undefined1 DAT_006852db = 0;
 

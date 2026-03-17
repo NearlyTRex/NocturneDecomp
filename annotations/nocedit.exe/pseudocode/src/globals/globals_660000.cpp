@@ -6717,6 +6717,7 @@ WatcomDestructorCall WatcomDestructorCall_006652c0 = {
 };
 
 // WatcomInheritanceLayout
+WatcomInheritanceLayout g_OStream_InheritanceLayout = {.base_type = nullptr, .offset_to_base = 0x0000000C};
 WatcomInheritanceLayout WatcomInheritanceLayout_00665e68 = {.base_type = nullptr, .offset_to_base = 0x00000010};
 
 // WatcomStaticDestructorNode
@@ -7710,6 +7711,7 @@ WatcomVirtualBaseDescriptor g_IFStream_LayoutInfo = {.flags = 0x00000000, .offse
 WatcomVirtualBaseDescriptor g_IFStream_IStreamSubobjectLayout = {.flags = 0x00000044, .offset_to_vbase = 0x00000010};
 WatcomVirtualBaseDescriptor g_OFStream_VirtualBaseLayout = {.flags = 0x00000000, .offset_to_vbase = 0x00000050};
 WatcomVirtualBaseDescriptor g_OFStream_OStreamSubobjectLayout = {.flags = 0x00000044, .offset_to_vbase = 0x0000000C};
+WatcomVirtualBaseDescriptor g_Strstream_VirtualLayout = {.flags = 0x00000000, .offset_to_vbase = 0x0000004C};
 WatcomVirtualBaseDescriptor g_FStreamBase_VirtualBaseLayout = {.flags = 0x00000000, .offset_to_vbase = 0x00000048};
 
 // char[104]

@@ -39,12 +39,12 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *re
     blend_weight = 1.0;
   }
   fVar1 = 1.0 - blend_weight;
-  local_44.x = (bone_data_out->root_position).x * fVar1 +
-               (bone_data_in->root_position).x * blend_weight;
-  local_44.y = (bone_data_out->root_position).y * fVar1 +
-               (bone_data_in->root_position).y * blend_weight;
-  local_44.z = (bone_data_out->root_position).z * fVar1 +
-               (bone_data_in->root_position).z * blend_weight;
+  local_44.x = (bone_data_out->pose_data).root_position.x * fVar1 +
+               (bone_data_in->pose_data).root_position.x * blend_weight;
+  local_44.y = (bone_data_out->pose_data).root_position.y * fVar1 +
+               (bone_data_in->pose_data).root_position.y * blend_weight;
+  local_44.z = (bone_data_out->pose_data).root_position.z * fVar1 +
+               (bone_data_in->pose_data).root_position.z * blend_weight;
   if (&local_44 != result_root_pos) {
     result_root_pos->x = local_44.x;
     result_root_pos->y = local_44.y;
@@ -53,8 +53,8 @@ void __cdecl core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70(CVector3f *re
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(instance_ptr);
   iVar2 = 0;
   if (0 < pCVar2->bone_count) {
-    local_14 = bone_data_out->bone_rotations;
-    local_18 = bone_data_in->bone_rotations;
+    local_14 = (bone_data_out->pose_data).bone_rotations;
+    local_18 = (bone_data_in->pose_data).bone_rotations;
     pCVar1 = result_root_pos;
     do {
       core_xform_cpp_slerpQuaternion_FUN_005f77e0(local_14,local_18,blend_weight,&local_54);

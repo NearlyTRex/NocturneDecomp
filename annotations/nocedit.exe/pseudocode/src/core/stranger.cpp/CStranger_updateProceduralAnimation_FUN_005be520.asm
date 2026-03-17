@@ -4,10 +4,11 @@
 ; void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(CStranger *this_ptr)
 ;
 ; Parameters:
+; char             Stack[0x0]:1   local_res0
 ; CStranger *      Stack[0x4]:4   this_ptr
 ; Local Variables:
 ; float            Stack[-0x1f0c]:4  local_1f0c
-; CDeformableModelInstance * Stack[-0x1f08]:4  local_1f08
+; float            Stack[-0x1f08]:4  local_1f08
 ; float            Stack[-0x1f04]:4  local_1f04
 ; float            Stack[-0x1ef8]:4  local_1ef8
 ; float            Stack[-0x1ef4]:4  local_1ef4
@@ -15,7 +16,7 @@
 ; float            Stack[-0x1ee0]:4  local_1ee0
 ; float            Stack[-0x1edc]:4  local_1edc
 ; float            Stack[-0x1ed8]:4  fStack_1ed8
-; SPoseData        Stack[-0x1ecc]:1612  local_1ecc
+; SPose            Stack[-0x1ecc]:6812  local_1ecc
 ; CMatrix3x3f      Stack[-0x430]:36  local_430
 ; CBoundingBox3D   Stack[-0x408]:24  local_408
 ; CQuaternion4f    Stack[-0x3f0]:16  local_3f0
@@ -35,10 +36,10 @@
 ; CQuaternion4f    Stack[-0x310]:16  local_310
 ; CQuaternion4f    Stack[-0x300]:16  local_300
 ; CQuaternion4f    Stack[-0x2f0]:16  local_2f0
-; undefined1[16]   Stack[-0x2e0]:16  local_2e0
-; float[4]         Stack[-0x2d0]:16  local_2d0
-; undefined1[16]   Stack[-0x2c0]:16  local_2c0
-; float[3]         Stack[-0x2b0]:12  local_2b0
+; CQuaternion4f    Stack[-0x2e0]:16  local_2e0
+; CQuaternion4f    Stack[-0x2d0]:16  local_2d0
+; CQuaternion4f    Stack[-0x2c0]:16  local_2c0
+; CVector3f        Stack[-0x2b0]:12  local_2b0
 ; CQuaternion4f    Stack[-0x2a4]:16  CStack_2a4
 ; CQuaternion4f    Stack[-0x290]:16  local_290
 ; CQuaternion4f    Stack[-0x280]:16  CStack_280
@@ -52,7 +53,7 @@
 ; CQuaternion4f    Stack[-0x200]:16  local_200
 ; CQuaternion4f    Stack[-0x1f0]:16  local_1f0
 ; CQuaternion4f    Stack[-0x1e0]:16  local_1e0
-; undefined1[16]   Stack[-0x1d0]:16  local_1d0
+; CQuaternion4f    Stack[-0x1d0]:16  local_1d0
 ; float[4]         Stack[-0x1c0]:16  local_1c0
 ; CQuaternion4f    Stack[-0x1b0]:16  CStack_1b0
 ; CQuaternion4f    Stack[-0x1a0]:16  local_1a0
@@ -212,8 +213,8 @@ section .text
     LEA EAX,[ESP + 0x84]                ; 005be5c5
     PUSH EAX                            ; 005be5cc
     PUSH EBX                            ; 005be5cd
-    CALL core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720 ; 005be5ce
-        ;   XREF to: 005bf720 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_extractTurnPoseData_FUN_005bf720(CStranger * this_ptr, SPoseData * out_pose)
+    CALL core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720 ; 005be5ce
+        ;   XREF to: 005bf720 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_extractTurnPose_FUN_005bf720(CStranger * this_ptr, SPose * out_pose)
     ADD ESP,0x8                         ; 005be5d3
     XOR EAX,EAX                         ; 005be5d6
     PUSH 0x59ddb0                       ; 005be5d8
@@ -457,7 +458,7 @@ section .text
     MOV dword ptr [ESI + 0x8],EDX       ; 005be8fa
     MOV EAX,dword ptr [EBX + 0x1fba8]   ; 005be8fd
         ;   Label: LAB_005be8fd
-    MOV [0x03f6baa8],EAX                ; 005be903 | PTR_03f6baa8
+    MOV [0x03f6baa8],EAX                ; 005be903 | g_StrangerLeverHandle
     LEA ESI,[EBX + 0x1fc98]             ; 005be908
         ;   Label: LAB_005be908
     MOV EAX,dword ptr [ESI]             ; 005be90e
@@ -788,16 +789,16 @@ section .text
     FXCH                                ; 005bedd3
     FSTP float ptr [ESP + 0x1ddc]       ; 005bedd5
     FSTP float ptr [ESP + 0x1de0]       ; 005beddc
-    CMP EAX,0x3f6ba9c                   ; 005bede3 | FLOAT_03f6ba9c
+    CMP EAX,0x3f6ba9c                   ; 005bede3 | CVector3f_03f6ba9c
     JZ 0x005bee0e                       ; 005bede8
         ;   XREF to: 005bee0e (CONDITIONAL_JUMP)  ; LAB_005bee0e
     MOV EAX,dword ptr [ESP + 0x1dd8]    ; 005bedea
-    MOV [0x03f6ba9c],EAX                ; 005bedf1 | FLOAT_03f6ba9c
+    MOV [0x03f6ba9c],EAX                ; 005bedf1 | CVector3f_03f6ba9c
     MOV EAX,dword ptr [ESP + 0x1ddc]    ; 005bedf6
-    MOV [0x03f6baa0],EAX                ; 005bedfd | FLOAT_03f6baa0
+    MOV [0x03f6baa0],EAX                ; 005bedfd | CVector3f_03f6ba9c.y
     MOV EAX,dword ptr [ESP + 0x1de0]    ; 005bee02
-    MOV [0x03f6baa4],EAX                ; 005bee09 | FLOAT_03f6baa4
-    PUSH 0x3f6ba9c                      ; 005bee0e | FLOAT_03f6ba9c
+    MOV [0x03f6baa4],EAX                ; 005bee09 | CVector3f_03f6ba9c.z
+    PUSH 0x3f6ba9c                      ; 005bee0e | CVector3f_03f6ba9c
         ;   Label: LAB_005bee0e
     LEA EAX,[ESP + 0x1ef0]              ; 005bee13
     PUSH EAX                            ; 005bee1a
@@ -937,7 +938,7 @@ section .text
     LEA EAX,[ESP + 0x1e44]              ; 005bf003
         ;   Label: LAB_005bf003
     PUSH EAX                            ; 005bf00a
-    MOV EAX,[0x03f6baa8]                ; 005bf00b | PTR_03f6baa8
+    MOV EAX,[0x03f6baa8]                ; 005bf00b | g_StrangerLeverHandle
     PUSH EAX                            ; 005bf010
     CALL core_lever.cpp_CLever_getHandlePosition_FUN_00504dd0 ; 005bf011
         ;   XREF to: 00504dd0 (UNCONDITIONAL_CALL)  ; CVector3f * core_lever.cpp_CLever_getHandlePosition_FUN_00504dd0(CLever * this_ptr, CVector3f * out_position)
