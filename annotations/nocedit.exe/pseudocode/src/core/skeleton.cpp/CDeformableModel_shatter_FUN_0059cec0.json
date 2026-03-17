@@ -6,15 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 249,
+    "complexity_score": 234,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 15,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 179,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
-      "param_count_too_many",
       "pointer_cast"
     ],
     "total_lines": 570
@@ -37,7 +36,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0",
-    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformableModel *this_ptr,CVector3f *center_position,CVector3f *orientation_vector,int lod_index,CVector3i *skinned_vertices,int *part_visibility_flags,int *texture_set_indices,int particle_lifetime)"
+    "signature": "void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0(CDeformableModel *this_ptr,CVector3f *center_position,CVector3f *orientation_vector,int lod_index,CVector3i *skinned_vertices,int *part_visibility_flags,int *texture_set_indices)"
   },
   "function_calls": [
     {
@@ -173,9 +172,9 @@
         "stack_params": 7
       }
     ],
-    "confidence": "low",
-    "declared_params": 8,
-    "declared_stack_bytes": 32,
+    "confidence": "medium",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
     "estimated_params": 7
   },
   "pcode_summary": {
@@ -216,10 +215,10 @@
     "pcode_op_count": 1931
   },
   "stack_frame": {
-    "frame_size": 260,
+    "frame_size": 256,
     "local_size": 228,
     "param_offset": 4,
-    "param_size": 32,
+    "param_size": 28,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -459,13 +458,6 @@
         "offset": 28,
         "size": 4,
         "type": "int *"
-      },
-      {
-        "is_param": true,
-        "name": "particle_lifetime",
-        "offset": 32,
-        "size": 4,
-        "type": "int"
       }
     ]
   },
@@ -509,17 +501,6 @@
       "severity": "mild",
       "text": "[*(int *)((int)this_ptr->index_data_ptr[lod_index] + local_14)].textures,",
       "type": "pointer_cast"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 8,
-      "description": "Signature has too many params - likely wrong calling convention",
-      "estimated_params": 7,
-      "fix_type": "remove_params",
-      "match": "declared:8 vs estimated:7",
-      "param_delta": -1,
-      "text": "Function declares 8 params but call sites push 7 (1 extra)",
-      "type": "param_count_too_many"
     }
   ]
 }

@@ -125,4 +125,4 @@ void __cdecl blendLightmapToTextureMMX(ulonglong *output_buffer,ulonglong *textu
 
 // Original: core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
 // Address: 004940e9
-void __cdecl renderPerspectiveTexturedScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx renderPerspectiveTexturedScanline(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);

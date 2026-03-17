@@ -63,7 +63,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
           if (uVar3 < 0x32) {
             iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                               (g_CEditorToolsPtr,"Load set","models",
-                               "*.set",(int)local_68,0);
+                               "*.set",local_68,0);
             if (iVar3 != 0) {
               core_set_cpp_CDemonSet_load_FUN_00569410(this_ptr,local_68);
             }

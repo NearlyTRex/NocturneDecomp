@@ -4,25 +4,25 @@
       {
         "category": "other",
         "column": 11,
-        "line": 57,
+        "line": 53,
         "message": "statement requires expression of integer type ('float' invalid)"
       },
       {
         "category": "other",
         "column": 16,
-        "line": 61,
+        "line": 57,
         "message": "conversion from 'double' to 'int' is not allowed in a converted constant expression"
       },
       {
         "category": "other",
         "column": 80,
-        "line": 90,
+        "line": 86,
         "message": "C-style cast from 'CMotionController *' to 'float' is not allowed"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 104,
+        "line": 100,
         "message": "C-style cast from 'CMotionController *' to 'float' is not allowed"
       }
     ],
@@ -30,19 +30,18 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 243,
-    "complexity_score": 212,
+    "assembly_lines": 255,
+    "complexity_score": 172,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 112,
-    "suspect_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 107,
+    "suspect_count": 6,
     "suspect_types": [
-      "suspect_float",
-      "unaffected_reg"
+      "suspect_float"
     ],
-    "total_lines": 355
+    "total_lines": 362
   },
   "cross_references": [
     {
@@ -121,8 +120,8 @@
     "estimated_params": 2
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.686046511627907,
-    "instruction_count": 172,
+    "avg_pcode_per_instr": 4.336956521739131,
+    "instruction_count": 184,
     "opcode_distribution": {
       "BOOL_NEGATE": 15,
       "BOOL_OR": 2,
@@ -131,16 +130,16 @@
       "CALL": 8,
       "CALLIND": 2,
       "CBRANCH": 29,
-      "COPY": 166,
+      "COPY": 164,
       "FLOAT2FLOAT": 1,
       "FLOAT_EQUAL": 1,
       "FLOAT_LESS": 1,
       "FLOAT_NAN": 2,
       "INT2FLOAT": 1,
-      "INT_ADD": 64,
-      "INT_AND": 105,
+      "INT_ADD": 65,
+      "INT_AND": 102,
       "INT_CARRY": 10,
-      "INT_EQUAL": 90,
+      "INT_EQUAL": 88,
       "INT_LEFT": 4,
       "INT_LESS": 18,
       "INT_MULT": 1,
@@ -148,16 +147,16 @@
       "INT_OR": 5,
       "INT_SBORROW": 18,
       "INT_SCARRY": 11,
-      "INT_SLESS": 45,
+      "INT_SLESS": 44,
       "INT_SUB": 51,
       "INT_XOR": 6,
       "INT_ZEXT": 4,
       "LOAD": 41,
-      "POPCOUNT": 45,
+      "POPCOUNT": 44,
       "RETURN": 2,
       "STORE": 41
     },
-    "pcode_op_count": 806
+    "pcode_op_count": 798
   },
   "stack_frame": {
     "frame_size": 12,
@@ -182,43 +181,18 @@
       }
     ]
   },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "00558069",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "CMotionController *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 32,
+      "line": 28,
       "match": "1.12104e-44",
       "severity": "mild",
-      "text": "((pCVar7->model).transformed_vertices[0x19].y == 1.12104e-44)) {",
+      "text": "((pCVar5->model).transformed_vertices[0x19].y == 1.12104e-44)) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 54,
+      "line": 50,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "case 1.12104e-44:",
@@ -226,7 +200,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 61,
+      "line": 57,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "((this_ptr_00->model).transformed_vertices[0x19].y != 1.12104e-44)) {",
@@ -234,7 +208,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 67,
+      "line": 63,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "if ((pCVar5->model).transformed_vertices[0x19].y != 1.12104e-44) goto LAB_00558263;",
@@ -242,7 +216,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 80,
+      "line": 76,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "((CVector3f *)(uint)((pCVar2->model).transformed_vertices[0x19].y != 1.12104e-44) ==",
@@ -250,27 +224,11 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 88,
+      "line": 84,
       "match": "1.12104e-44",
       "severity": "mild",
       "text": "((this_ptr_00->model).transformed_vertices[0x19].y == 1.12104e-44)) {",
       "type": "suspect_float"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 100,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "this_ptr_01 = unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 101,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(unaff_EDI,6,1);",
-      "type": "unaffected_reg"
     }
   ]
 }

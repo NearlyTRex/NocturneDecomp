@@ -9,16 +9,18 @@
 void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_ptr)
 
 {
+  float fVar1;
   CVector3f *input_local_point;
-  CDemonActor *pCVar1;
-  float unaff_EBP;
-  CVector3f *unaff_ESI;
+  CDemonActor *actor_ptr;
+  CHero *pCVar1;
+  float local_e2;
+  CVector3f *local_e1;
   char local_res0;
   uint in_stack_ffffffc8;
   CVector3f CStack_2c;
   CVector3f local_20;
   
-  input_local_point = (*(((this_ptr->base).vtable._uw)->_uw).getMuzzlePoint)(this_ptr,unaff_ESI);
+  input_local_point = (*(((this_ptr->base).vtable._uw)->_uw).getMuzzlePoint)(this_ptr,local_e1);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
             (&this_ptr->base,&local_20,input_local_point);
   g_CDemonLightInstance.light_enabled_flag = 1;
@@ -36,22 +38,22 @@ void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_p
   g_CDemonLightInstance.base.max_distance = 32.0;
   g_CDemonLightInstance.base.base.focal_length = 32.0;
   g_CDemonLightInstance.antialiasing_enabled = 1;
-  pCVar1 = (*((this_ptr->base).vtable._ub)->getCarrier)(&this_ptr->base);
-  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar1,in_stack_ffffffc8);
-  if ((pCVar1 != (CDemonActor *)0x0) &&
-     (*(float *)(pCVar1[0x176].create_event + 0x30) < 15.0f)) {
-    unaff_EBP = *(float *)(pCVar1[0x176].create_event + 0x30) * 0.06666667f;
+  actor_ptr = (*((this_ptr->base).vtable._ub)->getCarrier)(&this_ptr->base);
+  pCVar1 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,in_stack_ffffffc8);
+  if ((pCVar1 != (CHero *)0x0) &&
+     (fVar1 = (pCVar1->inventory).battery_charge, fVar1 < 15.0f)) {
+    local_e2 = fVar1 * 0.06666667f;
   }
-  core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,unaff_EBP);
+  core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(&g_CDemonLightInstance,local_e2);
   if (g_CGamePtr->auto_save_blocked == 0) {
     return;
   }
   core_dglobe_cpp_CDemonGlobe_setPosition_FUN_00471310
-            (&CDemonGlobe_03f95d7c,(CVector3f *)&local_20.y);
-  CDemonGlobe_03f95d7c.intensity_multiplier = 0x8000;
-  CDemonGlobe_03f95d7c.intensity.bytes[0] = ' ';
-  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(&CDemonGlobe_03f95d7c,3.0);
-  CDemonGlobe_03f95d7c.corona_mode = 0;
-  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0056d110(g_CDemonSetPtr,&CDemonGlobe_03f95d7c);
+            (&g_WeaponCoronaGlobe,(CVector3f *)&local_20.y);
+  g_WeaponCoronaGlobe.intensity_multiplier = 0x8000;
+  g_WeaponCoronaGlobe.intensity.bytes[0] = ' ';
+  core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(&g_WeaponCoronaGlobe,3.0);
+  g_WeaponCoronaGlobe.corona_mode = 0;
+  core_set_cpp_CDemonSet_addCoronaGlobe_FUN_0056d110(g_CDemonSetPtr,&g_WeaponCoronaGlobe);
   return;
 }

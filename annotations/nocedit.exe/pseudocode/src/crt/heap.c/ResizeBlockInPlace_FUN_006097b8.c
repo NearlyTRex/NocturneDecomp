@@ -69,7 +69,7 @@ int __watcallRegister ResizeBlockInPlace(ushort segment,void *ptr,ulong new_size
           *(uint **)(uVar2 + 8) = puVar5;
           *(uint **)(uVar3 + 4) = puVar5;
           *ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + *in_stack_00000010);
-          DAT_03f9b851 = 0;
+          CHAR_ARRAY_03f9b850[1] = '\0';
           goto LAB_00609968;
         }
       }
@@ -78,7 +78,7 @@ int __watcallRegister ResizeBlockInPlace(ushort segment,void *ptr,ulong new_size
       *ppHVar1 = (Heap *)((int)&(*ppHVar1)->heap_size + uVar1);
       ((Heap *)(new_size + 0x18))->heap_base =
            (void *)((int)((Heap *)(new_size + 0x18))->heap_base + -1);
-      DAT_03f9b851 = 0;
+      CHAR_ARRAY_03f9b850[1] = '\0';
       if (*in_stack_00000010 <= uVar1) goto LAB_00609968;
       *in_stack_00000010 = *in_stack_00000010 - uVar1;
     }

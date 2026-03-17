@@ -58,7 +58,7 @@ void __cdecl core_dstrender_cpp_blendBilerpTextureWithLightmapMMX_FUN_00493450(u
 void __cdecl core_dstrender_cpp_blendSinglePixelLightmapMMX_FUN_004937b6(ushort *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index);
 void __cdecl core_dstrender_cpp_blendTextureWithLightmapMMX_FUN_00493860(uint *output_buffer,uint *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
 void __cdecl core_dstrender_cpp_blendLightmapToTextureMMX_FUN_00493dc4(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices, byte *lightmap_indices,int pixel_count);
-void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
+void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9 (SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y);
 void __cdecl core_dtrace_cpp_staticInit_FUN_004941e0(void);
 CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_ctor_FUN_00494200(CDemonRaytrace *this_ptr);
 CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_dtor_FUN_00494240(CDemonRaytrace *this_ptr,uint flags);
@@ -184,7 +184,7 @@ int __cdecl shape_edittool_cpp_showMultiChoiceDialog_FUN_0049e9d0(CStrList *str_
 int __cdecl shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 int __cdecl shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0(CEditorTools *this_ptr,char *format_string,...) __attribute__((format(printf, 2, 3)));
 int __cdecl shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f180(CEditorTools *this_ptr,char *format,...) __attribute__((format(printf, 2, 3)));
-int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename, int auto_select_flag,uint unknown);
+int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern, char *output_filename,uint flags);
 int __cdecl shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420(CEditorTools *this_ptr,char *title_text,char *search_pattern,char *initial_path, uint flags);
 int __cdecl shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70(CEditorTools *this_ptr,char *dialog_title,char *directory_path,char *file_extension, char *output_buffer,uint flags);
 

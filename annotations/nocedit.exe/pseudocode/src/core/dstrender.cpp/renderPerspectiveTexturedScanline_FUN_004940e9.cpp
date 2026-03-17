@@ -1,47 +1,44 @@
 // Name: core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
 // Address: 004940e9
 // Address Range: [[004940e9, 004941c2] [004941d0, 004941d5]]
-// Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+// Convention: __edi_esi_ebx
+// Signature: void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
   uint uVar1;
   int iVar2;
   uint uVar3;
   uint uVar4;
-  int unaff_EBX;
-  int unaff_ESI;
-  int iVar5;
-  int unaff_EDI;
+  SSoftwareEdge *pSVar5;
   
-  uVar3 = *(uint *)(unaff_ESI + 8);
-  uVar4 = *(uint *)(unaff_EDI + 8);
+  uVar3 = (right_edge->base).x_current;
+  uVar4 = (left_edge->base).x_current;
   uVar1 = uVar3;
-  iVar5 = unaff_ESI;
+  pSVar5 = right_edge;
   if (uVar4 < uVar3) {
     uVar1 = uVar4;
     uVar4 = uVar3;
-    iVar5 = unaff_EDI;
-    unaff_EDI = unaff_ESI;
+    pSVar5 = left_edge;
+    left_edge = right_edge;
   }
   uVar1 = uVar1 >> 0x10;
   iVar2 = (uVar4 >> 0x10) - uVar1;
   if (iVar2 != 0 && uVar1 <= uVar4 >> 0x10) {
-    g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[unaff_EBX] + uVar1 * 4);
+    g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);
     g_PerspectiveScanlinePixelCount = iVar2 * 4;
-    uVar3 = *(uint *)(iVar5 + 0x18);
+    uVar3 = (pSVar5->base).u_current;
     g_DeltaTextureU =
          (int)((ulonglong)
-               ((longlong)(int)(*(int *)(unaff_EDI + 0x18) - uVar3) *
+               ((longlong)(int)((left_edge->base).u_current - uVar3) *
                (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
-    uVar4 = *(uint *)(iVar5 + 0x20);
+    uVar4 = (pSVar5->base).v_current;
     g_DeltaTextureV =
          (int)((ulonglong)
-               ((longlong)(int)(*(int *)(unaff_EDI + 0x20) - uVar4) *
+               ((longlong)(int)((left_edge->base).v_current - uVar4) *
                (longlong)(int)g_ReciprocalLookupTable[iVar2 + 1]) >> 0x20);
     uVar1 = 0;
     g_PerspectiveNextU = uVar3;

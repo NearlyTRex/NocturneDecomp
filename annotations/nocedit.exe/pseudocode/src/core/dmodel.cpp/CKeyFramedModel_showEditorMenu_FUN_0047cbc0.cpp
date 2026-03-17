@@ -461,8 +461,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
               if ((local_84 == 0x31) &&
                  (iVar18 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                                      (g_CEditorToolsPtr,"Load Keyframed model",
-                                      "models","*.kfm",(int)local_408,0),
-                 iVar18 != 0)) {
+                                      "models","*.kfm",local_408,0), iVar18 != 0)) {
                 core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(this_ptr,local_408);
                 bVar2 = true;
               }
@@ -700,7 +699,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
           if (local_84 < 0x44) {
             iVar18 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                                (g_CEditorToolsPtr,"Reorient using course","data",
-                                "*.pth",(int)local_340,0);
+                                "*.pth",local_340,0);
             if (iVar18 != 0) {
               core_course_cpp_CCourse_ctor_FUN_004424c0(&local_f0);
               core_course_cpp_CCourse_load_FUN_00442580(&local_f0,local_340);

@@ -12,7 +12,7 @@
 ;   undefined4 DAT_00684cea
 ;   undefined4 g_StderrLogFile._flag+1
 ;   FileListNode* g_AllocatedListHead
-;   undefined4 g_FreeListHeadPointer
+;   FileListNode* g_FreeListHeadPointer
 ;
 ; Called Functions:
 ;   crt_heap.c_InternalHeapAlloc_FUN_00601bc0

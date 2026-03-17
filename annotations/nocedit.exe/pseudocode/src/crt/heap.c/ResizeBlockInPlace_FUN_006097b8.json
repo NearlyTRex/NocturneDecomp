@@ -1,21 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 504,
+    "complexity_score": 479,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 99,
-    "suspect_count": 37,
+    "suspect_count": 35,
     "suspect_types": [
       "negative_offset",
       "param_count_too_few",
       "pointer_cast",
       "register_param",
       "special_crt_function",
-      "stack_param",
-      "undefined_data"
+      "stack_param"
     ],
     "total_lines": 300
   },
@@ -336,14 +335,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 65,
-      "match": "DAT_03f9b851",
-      "severity": "mild",
-      "text": "DAT_03f9b851 = 0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 71,
       "match": "(Heap *)((int)",
@@ -358,14 +349,6 @@
       "severity": "mild",
       "text": "(void *)((int)((Heap *)(new_size + 0x18))->heap_base + -1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 74,
-      "match": "DAT_03f9b851",
-      "severity": "mild",
-      "text": "DAT_03f9b851 = 0;",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved stack parameter",

@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 69,
+    "complexity_score": 34,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 19,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "special_crt_function",
-      "undefined_data"
+      "special_crt_function"
     ],
     "total_lines": 61
   },
@@ -68,8 +67,8 @@
     },
     {
       "addr": "03f9b210",
-      "name": "DAT_03f9b210",
-      "type": "undefined4",
+      "name": "INT_03f9b210",
+      "type": "int",
       "value": null
     }
   ],
@@ -134,30 +133,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_03f9b210",
-      "severity": "mild",
-      "text": "if (block == DAT_03f9b210) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_03f9b210",
-      "severity": "mild",
-      "text": "DAT_03f9b210 = (HeapBlock *)((uint)block ^ (uint)DAT_03f9b210);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_03f9b210",
-      "severity": "mild",
-      "text": "DAT_03f9b210 = (HeapBlock *)((uint)block ^ (uint)DAT_03f9b210);",
-      "type": "undefined_data"
-    },
     {
       "address": "0060c95c",
       "crt_type": "runtime support",

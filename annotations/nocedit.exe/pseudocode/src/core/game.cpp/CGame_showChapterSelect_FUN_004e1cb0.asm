@@ -1146,7 +1146,7 @@ section .text
     MOV EDI,dword ptr [0x00678a60]      ; 004e284f | g_CEditorToolsPtr
     PUSH EDI                            ; 004e2855 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 004e2856
-        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
+        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
     ADD ESP,0x18                        ; 004e285b
     TEST EAX,EAX                        ; 004e285e
     JZ 0x004e208f                       ; 004e2860

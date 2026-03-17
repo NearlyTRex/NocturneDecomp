@@ -402,9 +402,6 @@ extern uint g_MpegBitMaskTableSingleBit[8];
 // ulonglong[256]
 extern ulonglong g_ByteFillTable[256];
 
-// undefined1
-extern undefined1 g_MagicNumEFD;
-
 // undefined4
 extern undefined4 DAT_0067b718;
 

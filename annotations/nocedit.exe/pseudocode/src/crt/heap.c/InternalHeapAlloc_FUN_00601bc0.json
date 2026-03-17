@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 112,
+    "complexity_score": 97,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 57,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "register_param",
-      "special_crt_function",
-      "undefined_data"
+      "special_crt_function"
     ],
     "total_lines": 179
   },
@@ -114,8 +113,8 @@
     },
     {
       "addr": "03f9b850",
-      "name": "DAT_03f9b850",
-      "type": "undefined1",
+      "name": "CHAR_ARRAY_03f9b850",
+      "type": "char[16]",
       "value": null
     }
   ],
@@ -272,14 +271,6 @@
       "severity": "mild",
       "text": "(size,(HeapBlock *)(uint)in_DS,(ushort)pvVar6), pvVar6 != (void *)0x0",
       "type": "register_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 57,
-      "match": "DAT_03f9b850",
-      "severity": "mild",
-      "text": "DAT_03f9b850 = 0;",
-      "type": "undefined_data"
     },
     {
       "address": "00601bc0",

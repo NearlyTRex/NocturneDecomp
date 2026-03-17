@@ -4,55 +4,37 @@
       {
         "category": "format_error",
         "column": 46,
-        "line": 44,
+        "line": 40,
         "message": "format specifies type 'float *' but the argument has type 'CMatrix3x3f *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 24,
-        "line": 45,
+        "line": 41,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
-        "category": "format_error",
-        "column": 113,
-        "line": 52,
-        "message": "format specifies type 'int' but the argument has type 'float' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 86,
-        "line": 54,
-        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
-      },
-      {
         "category": "other",
-        "column": 31,
-        "line": 55,
+        "column": 40,
+        "line": 51,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
         "column": 67,
-        "line": 57,
+        "line": 53,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "format_error",
-        "column": 82,
-        "line": 57,
-        "message": "format specifies type 'float *' but the argument has type 'byte *' (aka 'unsigned char *') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 28,
-        "line": 58,
+        "line": 54,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
       },
       {
         "category": "format_error",
         "column": 48,
-        "line": 60,
+        "line": 56,
         "message": "format specifies type 'float *' but the argument has type 'CVector3f *' [-Werror,-Wformat]"
       }
     ],
@@ -61,19 +43,18 @@
   },
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 209,
+    "complexity_score": 120,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 74,
-    "suspect_count": 12,
+    "pseudocode_lines": 70,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "stack_alignment_array",
-      "unaffected_reg"
+      "stack_alignment_array"
     ],
-    "total_lines": 234
+    "total_lines": 230
   },
   "cross_references": [
     {
@@ -259,19 +240,12 @@
     "pcode_op_count": 688
   },
   "stack_frame": {
-    "frame_size": 6164,
-    "local_size": 6152,
+    "frame_size": 104,
+    "local_size": 92,
     "param_offset": 4,
     "param_size": 12,
     "return_addr_offset": 0,
     "variables": [
-      {
-        "is_param": false,
-        "name": "auStackY_1804",
-        "offset": -6148,
-        "size": 6032,
-        "type": "undefined4[1508]"
-      },
       {
         "is_param": false,
         "name": "local_58",
@@ -284,14 +258,14 @@
         "name": "local_34",
         "offset": -52,
         "size": 4,
-        "type": "undefined1[4]"
+        "type": "float"
       },
       {
         "is_param": false,
         "name": "local_30",
         "offset": -48,
         "size": 4,
-        "type": "undefined1[4]"
+        "type": "float"
       },
       {
         "is_param": false,
@@ -311,22 +285,8 @@
         "is_param": false,
         "name": "local_18",
         "offset": -24,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "local_10",
-        "offset": -16,
-        "size": 4,
-        "type": "float"
+        "size": 12,
+        "type": "CVector3f"
       },
       {
         "is_param": false,
@@ -360,22 +320,6 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uint unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "uint unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 15,
       "match": "auStackY_1804",
@@ -384,56 +328,8 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 38,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 38,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "unaff_ESI,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": ",unaff_ESI,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": ",unaff_ESI,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 51,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_ESI,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 51,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "unaff_ESI,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 64,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar6 = (uint *)((int)pCVar1 + ((uint)bVar8 * -2 + 1) * 4);",
@@ -441,7 +337,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 67,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "puVar5 = (uint *)((int)&local_28 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);",
@@ -449,7 +345,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 68,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*puVar6 = *(uint *)((int)&local_28 + (uint)bVar8 * -8 + 4);",

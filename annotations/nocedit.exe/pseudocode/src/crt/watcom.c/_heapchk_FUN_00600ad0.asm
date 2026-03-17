@@ -11,7 +11,7 @@
 ;   Heap* g_MainHeap = 00000000
 ;   void* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00 = 00602434
 ;   void* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08 = 00602434
-;   undefined1 DAT_03f9b850
+;   char[16] CHAR_ARRAY_03f9b850
 ;
 ; Called Functions:
 ;   crt_heap.c_heapWalk_FUN_006012d0
@@ -27,7 +27,7 @@ section .text
         ;   Label: crt_watcom.c__heapchk_FUN_00600ad0
     SUB ESP,0x14                        ; 00600ad1
     CALL dword ptr [0x00684f00]         ; 00600ad4 | PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00
-    CMP byte ptr [0x03f9b850],0x0       ; 00600ada | DAT_03f9b850
+    CMP byte ptr [0x03f9b850],0x0       ; 00600ada | CHAR_ARRAY_03f9b850
     JZ 0x00600af0                       ; 00600ae1
         ;   XREF to: 00600af0 (CONDITIONAL_JUMP)  ; LAB_00600af0
     CALL dword ptr [0x00684f08]         ; 00600ae3 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08
@@ -104,7 +104,7 @@ section .text
         ;   Label: LAB_00600b7c
     JNZ 0x00600b87                      ; 00600b7e
         ;   XREF to: 00600b87 (CONDITIONAL_JUMP)  ; LAB_00600b87
-    MOV byte ptr [0x03f9b850],0x1       ; 00600b80 | DAT_03f9b850
+    MOV byte ptr [0x03f9b850],0x1       ; 00600b80 | CHAR_ARRAY_03f9b850
         ;   Label: LAB_00600b80
     CALL dword ptr [0x00684f08]         ; 00600b87 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08
         ;   Label: LAB_00600b87

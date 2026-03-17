@@ -65,6 +65,7 @@ static TerminatedCString s_CART_Precision_Racing_v1_0067b568 = "CART Precision R
 static TerminatedCString s_CFrankenstienMachine_0067b58c = "$CFrankenstienMachine$$";
 static TerminatedCString s_CGabriella_0067b5ac = "$CGabriella$$";
 static TerminatedCString s_save_SAVE_TMP_0067b670 = "save\\$$SAVE$$.TMP";
+static TerminatedCString s_EFD_0067b684 = "EFD";
 static TerminatedCString s_file_corrupt_0067b688 = "(file corrupt)";
 static TerminatedCString s_s_10_0_0_105_0067b868 = "10.0.0.105";
 static TerminatedCString s_CAlphaBitmap_0067b8d4 = "$CAlphaBitmap$$";
@@ -1130,9 +1131,6 @@ static uchar g_LightmapColorTables[4][256][4] = {
 
 // uchar[8] constants
 static uchar g_VoxelYBitMasks[8] = {0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80};
-
-// undefined1 constants
-static undefined1 DAT_0067b685 = 0x46;
 
 // void* constants
 static void* DAT_00679D14 = (void*)0x004B1A38; // caseD_1

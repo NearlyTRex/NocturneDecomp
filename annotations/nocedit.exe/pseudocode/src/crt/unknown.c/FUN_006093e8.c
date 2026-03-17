@@ -9,12 +9,12 @@
 void FUN_006093e8(void)
 
 {
-  uint *puVar1;
+  FileListNode *pFVar1;
   
-  while (g_FreeListHeadPointer != (uint *)0x0) {
-    puVar1 = (uint *)*g_FreeListHeadPointer;
+  while (g_FreeListHeadPointer != (FileListNode *)0x0) {
+    pFVar1 = g_FreeListHeadPointer->next;
     free(g_FreeListHeadPointer);
-    g_FreeListHeadPointer = puVar1;
+    g_FreeListHeadPointer = pFVar1;
   }
   return;
 }

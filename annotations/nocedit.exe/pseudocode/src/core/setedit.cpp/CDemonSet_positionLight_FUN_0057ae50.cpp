@@ -12,26 +12,17 @@ int __cdecl core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(CDemonSet *thi
 
 {
   char cVar1;
-  CSlew *pCVar2;
-  int iVar3;
-  int unaff_EBX;
-  int unaff_ESI;
-  char *pcVar4;
-  int unaff_EDI;
+  float fVar2;
+  CSlew *pCVar3;
+  int iVar4;
   char *pcVar5;
-  int unaff_retaddr;
-  float in_stack_0000000c;
-  int in_stack_00000010;
-  char acStack_84 [20];
-  char acStack_70 [24];
-  char acStack_58 [16];
-  char acStack_48 [40];
-  float local_20;
-  uint local_1c;
-  uint local_18;
+  char *pcVar6;
+  char local_84 [100];
+  int local_1c;
+  int local_18;
   int local_14;
   
-  local_20 = light->on_time;
+  fVar2 = light->on_time;
   local_18 = 1;
   local_14 = 0;
   local_1c = 0;
@@ -39,33 +30,33 @@ int __cdecl core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(CDemonSet *thi
   core_dlight_cpp_CDemonLight_init_FUN_004727c0(&g_CDemonLightInstance);
   g_CDemonLightInstance.base.max_distance = 255.0;
   core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,0);
-  pCVar2 = g_CSlewPtr;
+  pCVar3 = g_CSlewPtr;
   this_ptr->actor_count = 0;
-  core_slew_cpp_CSlew_init_FUN_005a2060(pCVar2);
+  core_slew_cpp_CSlew_init_FUN_005a2060(pCVar3);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
-  pCVar2 = g_CSlewPtr;
+  pCVar3 = g_CSlewPtr;
   if (g_CSlewPtr != (CSlew *)&light->pos) {
     (g_CSlewPtr->position).x = (light->pos).x;
-    (pCVar2->position).y = (light->pos).y;
-    (pCVar2->position).z = (light->pos).z;
+    (pCVar3->position).y = (light->pos).y;
+    (pCVar3->position).z = (light->pos).z;
   }
-  pCVar2 = g_CSlewPtr;
+  pCVar3 = g_CSlewPtr;
   if ((CVector3f *)&g_CSlewPtr->pitch != &light->orient) {
     g_CSlewPtr->pitch = (light->orient).x;
-    pCVar2->yaw = (light->orient).y;
-    pCVar2->roll = (light->orient).z;
+    pCVar3->yaw = (light->orient).y;
+    pCVar3->roll = (light->orient).z;
   }
-  pcVar5 = acStack_84;
-  pcVar4 = light->name;
+  pcVar6 = local_84;
+  pcVar5 = light->name;
   g_CSlewPtr->slew_rate = light->fov;
   do {
-    cVar1 = *pcVar4;
-    *pcVar5 = cVar1;
+    cVar1 = *pcVar5;
+    *pcVar6 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar1;
+    cVar1 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
+    pcVar6[1] = cVar1;
+    pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
   if (0x1df < g_WindowHeight) {
     core_set_cpp_CDemonSet_reinitCamera_FUN_0056b7e0(this_ptr,0,0,0xf0);
@@ -76,7 +67,7 @@ LAB_0057af67:
   }
   (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
   core_slew_cpp_CSlew_processInput_FUN_005a20b0(g_CSlewPtr);
-  if (local_14 != 0) {
+  if (local_18 != 0) {
     if (g_CSlewPtr != (CSlew *)&g_CDemonLightInstance.base.base.position) {
       g_CDemonLightInstance.base.base.position.f.x = (g_CSlewPtr->position).x;
       g_CDemonLightInstance.base.base.position.f.z = (g_CSlewPtr->position).z;
@@ -92,29 +83,29 @@ LAB_0057af67:
     g_CDemonLightInstance.base.max_distance = 255.0;
     g_CDemonLightInstance.light_enabled_flag = 1;
     core_set_cpp_CDemonSet_renderScene_FUN_0056c1a0(this_ptr,0);
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
-    if (iVar3 != 0) {
-      unaff_ESI = unaff_ESI + 1;
-      if (this_ptr->camera_count <= unaff_ESI) {
-        unaff_ESI = 0;
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_C);
+    if (iVar4 != 0) {
+      local_14 = local_14 + 1;
+      if (this_ptr->camera_count <= local_14) {
+        local_14 = 0;
       }
-      core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,unaff_ESI);
+      core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,local_14);
     }
   }
-  if ((unaff_EDI == 0) || (0xf0 < g_WindowHeight)) {
+  if ((local_18 == 0) || (0xf0 < g_WindowHeight)) {
     core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390
               (&g_CDemonLightInstance,0x180,0,0x100);
   }
-  iVar3 = core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(this_ptr,(int *)0x0);
-  if (iVar3 != -1) {
-    core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,iVar3);
+  iVar4 = core_setedit_cpp_CDemonSet_drawCameraThumbnailBar_FUN_00577af0(this_ptr,(int *)0x0);
+  if (iVar4 != -1) {
+    core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,iVar4);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M);
-  if ((iVar3 != 0) && (unaff_EBX = 1 - unaff_EBX, unaff_EBX != 0)) {
-    core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,unaff_retaddr);
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_M);
+  if ((iVar4 != 0) && (local_18 = 1 - local_18, local_18 != 0)) {
+    core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,local_14);
   }
   engine_2d_c_drawText_FUN_00401fd0("Position light.  Press SPACE when done",0,0);
-  engine_2d_c_drawText_FUN_00401fd0(acStack_70,0,0xb);
+  engine_2d_c_drawText_FUN_00401fd0(local_84,0,0xb);
   _sprintf
             (&stack0xfffffe90,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
   engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe90,0,g_WindowHeight + -0xb);
@@ -129,58 +120,58 @@ LAB_0057af67:
   wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   core_game_cpp_CGame_updateDT_FUN_004d7d90(g_CGamePtr);
-  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
-  if (iVar3 != 0) goto LAB_0057b3c9;
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_SPACE);
-  if ((iVar3 != 0) ||
-     (iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN), iVar3 != 0)) {
-    pCVar2 = g_CSlewPtr;
+  iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_ESCAPE);
+  if (iVar4 != 0) goto LAB_0057b3c9;
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_SPACE);
+  if ((iVar4 != 0) ||
+     (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_RETURN), iVar4 != 0)) {
+    pCVar3 = g_CSlewPtr;
     if (g_SpotLightCount != 0x5f) goto LAB_0057b341;
     engine_2d_c_drawText_FUN_00401fd0("Too many visible lights in view!",0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     engine_2d_c_clearInputAndWait_FUN_00403260();
     engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F);
-  if (iVar3 != 0) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F);
+  if (iVar4 != 0) {
     shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
               (g_CEditorToolsPtr,"Edit FOV",&g_CSlewPtr->slew_rate,1,0.0,100.0,1);
   }
-  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_N);
-  if (iVar3 != 0) {
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_N);
+  if (iVar4 != 0) {
     shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-              (g_CEditorToolsPtr,"Edit light name",acStack_48,100,1);
+              (g_CEditorToolsPtr,"Edit light name",local_84,100,1);
   }
   goto LAB_0057af67;
 LAB_0057b341:
   if ((CSlew *)&light->pos != g_CSlewPtr) {
     (light->pos).x = (g_CSlewPtr->position).x;
-    (light->pos).y = (pCVar2->position).y;
-    (light->pos).z = (pCVar2->position).z;
+    (light->pos).y = (pCVar3->position).y;
+    (light->pos).z = (pCVar3->position).z;
   }
-  pCVar2 = g_CSlewPtr;
+  pCVar3 = g_CSlewPtr;
   if (&light->orient != (CVector3f *)&g_CSlewPtr->pitch) {
     (light->orient).x = g_CSlewPtr->pitch;
-    (light->orient).y = pCVar2->yaw;
-    (light->orient).z = pCVar2->roll;
+    (light->orient).y = pCVar3->yaw;
+    (light->orient).z = pCVar3->roll;
   }
-  pcVar5 = acStack_58;
-  in_stack_00000010 = 1;
-  pcVar4 = light->name;
+  pcVar6 = local_84;
+  local_1c = 1;
+  pcVar5 = light->name;
   light->fov = g_CSlewPtr->slew_rate;
   do {
-    cVar1 = *pcVar5;
-    *pcVar4 = cVar1;
+    cVar1 = *pcVar6;
+    *pcVar5 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
+    cVar1 = pcVar6[1];
+    pcVar6 = pcVar6 + 2;
+    pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
 LAB_0057b3c9:
   core_slew_cpp_CSlew_free_FUN_005a20a0(g_CSlewPtr);
   engine_2d_c_clearInputAndWait_FUN_00403260();
   g_CDemonLightInstance.light_enabled_flag = 0;
-  light->on_time = in_stack_0000000c;
-  return in_stack_00000010;
+  light->on_time = fVar2;
+  return local_1c;
 }

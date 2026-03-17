@@ -460,7 +460,7 @@ LAB_0057eb3b:
     case 0x37:
       iVar11 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                          (g_CEditorToolsPtr,"Merge .LC","models","*.lc",
-                          (int)local_9bc,0);
+                          local_9bc,0);
       if (iVar11 != 0) {
         p_Var13 = engine_dosio_c_getFile_FUN_00481a50("models",local_9bc,"rt");
         if (p_Var13 == (_FILE *)0x0) {
@@ -549,7 +549,7 @@ LAB_0057eb3b:
     case 0x39:
       iVar11 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                          (g_CEditorToolsPtr,"Merge2 .LC","models","*.lc",
-                          (int)local_2bc,0);
+                          local_2bc,0);
       if (iVar11 != 0) {
         local_58 = engine_dosio_c_getFile_FUN_00481a50("models",local_2bc,"rt");
         if (local_58 == (_FILE *)0x0) {

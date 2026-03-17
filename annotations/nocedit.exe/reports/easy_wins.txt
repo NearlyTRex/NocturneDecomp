@@ -54,10 +54,6 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_filmreel.cpp_CFilmProjector_archive_FUN_004beb40
       Suspects: stack_param, stack_param, stack_param, stack_param
 
-  core/shotgun.cpp (1 remaining of 10)
-    - core_shotgun.cpp_CShotgun_process_FUN_00587f70
-      Suspects: unaffected_reg, unaffected_reg
-
   core/dimage.cpp (1 remaining of 6)
     - core_dimage.cpp_CDemonImage_load_FUN_00471ad0
       Suspects: stack_param, stack_param, stack_param, stack_param, stack_param, stack_param
@@ -78,10 +74,6 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_particle.cpp_CParticle_process_FUN_00545760
       Suspects: stack_alignment_array, unknown_field, pointer_cast, pointer_cast, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field
 
-  core/elephant.cpp (1 remaining of 10)
-    - core_elephant.cpp_CElephantGun_process_FUN_004a7070
-      Suspects: unaffected_reg, unaffected_reg
-
   core/conveyor.cpp (1 remaining of 20)
     - core_conveyor.cpp_CConveyor_setup_FUN_00441d60
       Suspects: stack_alignment_array, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast
@@ -92,7 +84,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/weapon.cpp (1 remaining of 27)
     - core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0
-      Suspects: unaffected_reg, unaffected_reg, stack_param, unaffected_reg, stack_param, unaffected_reg, unaffected_reg
+      Suspects: stack_param, stack_param
 
   core/larva.cpp (1 remaining of 13)
     - core_larva.cpp_CLarva_process_FUN_00503080
@@ -298,7 +290,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [pointer_cast] - 72 functions
+  [pointer_cast] - 73 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360                        (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0                         (  5 lines)
     shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0                   ( 10 lines)
@@ -359,6 +351,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_colquant.c_partitionByRed_FUN_00440b40                          ( 41 lines)
     wincore_windll.cpp_clearScreen_FUN_005b3f37                            ( 41 lines)
     core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_005bb010          ( 42 lines)
+    core_setedit.cpp_CDemonSet_editSpotLight_FUN_0057b500                  ( 44 lines)
     core_script.cpp_CScript_collectSoundReferences_FUN_00567bc0            ( 44 lines)
     engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550    ( 45 lines)
     core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970                 ( 45 lines)
@@ -542,8 +535,8 @@ PRIORITY 3: Files at 90%+ (finish them off!)
 
   core/weapon.cpp (96.3% complete)
     1 functions remaining:
-      core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0 (47 lines)
-        Types: ['stack_param', 'unaffected_reg']
+      core_weapon.cpp_CWeapon_updateLighting_FUN_005ee4a0 (49 lines)
+        Types: ['stack_param']
 
   core/trigger.cpp (95.7% complete)
     1 functions remaining:
@@ -766,22 +759,12 @@ PRIORITY 3: Files at 90%+ (finish them off!)
       core_vehicle.cpp_CVehicle_getPropertyList_FUN_005e8ba0 (40 lines)
         Types: ['pointer_cast']
 
-  core/shotgun.cpp (90.0% complete)
-    1 functions remaining:
-      core_shotgun.cpp_CShotgun_process_FUN_00587f70 (30 lines)
-        Types: ['unaffected_reg']
-
   core/vessel.cpp (90.0% complete)
     2 functions remaining:
       core_vessel.cpp_CCryptVessel_renderOpaque_FUN_005e9750 (41 lines)
         Types: ['decompiler_intrinsic', 'warning_inlined_function']
       core_vessel.cpp_CCryptVessel_renderTransparent_FUN_005e98b0 (67 lines)
         Types: ['decompiler_intrinsic', 'warning_inlined_function']
-
-  core/elephant.cpp (90.0% complete)
-    1 functions remaining:
-      core_elephant.cpp_CElephantGun_process_FUN_004a7070 (31 lines)
-        Types: ['unaffected_reg']
 
   core/box.cpp (90.0% complete)
     3 functions remaining:
@@ -857,10 +840,10 @@ ALL REMAINING FILES
   core/ground.cpp                                               75.0%  (15/20 clean, 5 remaining)
   core/game.cpp                                                 73.9%  (51/69 clean, 18 remaining)
   core/gabriela.cpp                                             73.7%  (28/38 clean, 10 remaining)
+  core/skeleton.cpp                                             73.5%  (86/117 clean, 31 remaining)
   core/netgame.cpp                                              73.4%  (47/64 clean, 17 remaining)
   core/tentacle.cpp                                             73.3%  (11/15 clean, 4 remaining)
   engine/fileio.cpp                                             73.2%  (52/71 clean, 19 remaining)
-  core/skeleton.cpp                                             72.6%  (85/117 clean, 32 remaining)
   core/zombie.cpp                                               71.9%  (23/32 clean, 9 remaining)
   core/dcube.cpp                                                71.8%  (28/39 clean, 11 remaining)
   core/moon.cpp                                                 71.4%  (10/14 clean, 4 remaining)

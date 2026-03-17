@@ -4,31 +4,31 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  decompiler_intrinsic            7088 ( 36.1%)
-  pointer_cast                    5703 ( 29.1%)
-  unknown_field                   1467 (  7.5%)
-  stack_param                      962 (  4.9%)
+  decompiler_intrinsic            7087 ( 36.4%)
+  pointer_cast                    5701 ( 29.3%)
+  unknown_field                   1438 (  7.4%)
+  stack_param                      935 (  4.8%)
   unnamed_param                    698 (  3.6%)
-  special_crt_function             636 (  3.2%)
+  special_crt_function             636 (  3.3%)
   fpu_register_input               327 (  1.7%)
-  unaffected_reg                   314 (  1.6%)
   stack_ref                        282 (  1.4%)
   nonstandard_int                  270 (  1.4%)
-  warning_inlined_function         264 (  1.3%)
+  warning_inlined_function         264 (  1.4%)
   register_param                   252 (  1.3%)
-  unresolved_funcptr               175 (  0.9%)
+  unaffected_reg                   239 (  1.2%)
+  unresolved_funcptr               171 (  0.9%)
   param_count_too_few              157 (  0.8%)
   stack_alignment_array            137 (  0.7%)
   warning_type_propagation         133 (  0.7%)
   sub84_truncation                 107 (  0.5%)
   negative_offset                   85 (  0.4%)
   warning_unreachable               84 (  0.4%)
-  suspect_float                     54 (  0.3%)
-  param_count_too_many              52 (  0.3%)
   unknown_type                      52 (  0.3%)
-  undefined_data                    48 (  0.2%)
+  param_count_too_many              51 (  0.3%)
+  suspect_float                     50 (  0.3%)
   extra_output                      46 (  0.2%)
   mmx_assembly                      34 (  0.2%)
+  undefined_data                    31 (  0.2%)
   special_math_intrinsic            24 (  0.1%)
   format_string_mismatch            24 (  0.1%)
   undefined_ram                     24 (  0.1%)
@@ -55,7 +55,7 @@ SUSPECT TYPE COUNTS
   special_entry_point                1 (  0.0%)
 
 ====================================================================================================
-TYPE: decompiler_intrinsic (7088 occurrences)
+TYPE: decompiler_intrinsic (7087 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -97,17 +97,17 @@ Example functions:
     ROUND(ROUND((float)(byte)g_SourcePaletteData[iVar3] * fVar2 +...
 
 ====================================================================================================
-TYPE: pointer_cast (5703 occurrences)
+TYPE: pointer_cast (5701 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  2152x  (uint *)((int)
-  1295x  (int *)((int)
+  2159x  (uint *)((int)
+  1293x  (int *)((int)
    325x  (SRenderVertex *)((int)
-   306x  (float *)((int)
+   301x  (float *)((int)
    289x  (CMatrix3x4f *)((int)
    208x  (double *)((int)
-   193x  (void *)((int)
+   192x  (void *)((int)
    188x  (byte *)((int)
     84x  (ushort *)((int)
     78x  (char *)((int)
@@ -135,19 +135,19 @@ Example functions:
     piVar2 = (int *)((int)g_ScreenBufferArray + iVar8);...
 
 ====================================================================================================
-TYPE: unknown_field (1467 occurrences)
+TYPE: unknown_field (1438 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   451x  ._0_4_
-   389x  ._4_4_
-    89x  ._8_4_
-    72x  ._12_4_
-    68x  ._16_4_
+   446x  ._0_4_
+   384x  ._4_4_
+    82x  ._8_4_
+    68x  ._12_4_
+    66x  ._16_4_
     49x  ._0_2_
     47x  ._24_4_
-    45x  ._20_4_
     44x  ._2_2_
+    43x  ._20_4_
     40x  ._0_24_
     31x  ._0_1_
     30x  ._28_4_
@@ -158,7 +158,7 @@ Unique patterns:
     10x  ._32_4_
      6x  ._36_4_
      5x  ._40_4_
-     4x  ._24_8_
+     4x  ._44_4_
 
 Example functions:
   cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
@@ -181,17 +181,17 @@ Example functions:
     local_14._0_1_ = '\0';...
 
 ====================================================================================================
-TYPE: stack_param (962 occurrences)
+TYPE: stack_param (935 occurrences)
 ====================================================================================================
 
 Unique patterns:
    102x  in_stack_00000008
-    76x  in_stack_0000000c
+    74x  in_stack_0000000c
     61x  in_stack_fffffd64
     46x  in_stack_00000004
     46x  in_stack_fffffc88
     39x  in_stack_ffffff54
-    35x  in_stack_00000010
+    30x  in_stack_00000010
     25x  in_stack_fffffd80
     19x  in_stack_fffffd7c
     16x  in_stack_fffffd78
@@ -366,27 +366,6 @@ Example functions:
     float10 in_ST0;...
 
 ====================================================================================================
-TYPE: unaffected_reg (314 occurrences)
-====================================================================================================
-
-Unique patterns:
-    96x  unaff_ESI
-    79x  unaff_EBX
-    71x  unaff_EBP
-    64x  unaff_EDI
-     4x  unaff_EAX
-
-Example functions:
-  crt_io.c_chsize_FUN_00600cf0
-    HANDLE unaff_EBP;...
-  crt_io.c_close_FUN_00609bd0
-    HANDLE unaff_ESI;...
-  crt_stdlib.c_memory_swap_FUN_005fdf10
-    uint *unaff_ESI;...
-  crt_stdlib.c__fullpath_FUN_00601140
-    char (*unaff_EBP) [4];...
-
-====================================================================================================
 TYPE: stack_ref (282 occurrences)
 ====================================================================================================
 
@@ -558,12 +537,33 @@ Example functions:
     ushort *in_ECX;...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (175 occurrences)
+TYPE: unaffected_reg (239 occurrences)
+====================================================================================================
+
+Unique patterns:
+    69x  unaff_EBX
+    66x  unaff_ESI
+    60x  unaff_EBP
+    40x  unaff_EDI
+     4x  unaff_EAX
+
+Example functions:
+  crt_io.c_chsize_FUN_00600cf0
+    HANDLE unaff_EBP;...
+  crt_io.c_close_FUN_00609bd0
+    HANDLE unaff_ESI;...
+  crt_stdlib.c_memory_swap_FUN_005fdf10
+    uint *unaff_ESI;...
+  crt_stdlib.c__fullpath_FUN_00601140
+    char (*unaff_EBP) [4];...
+
+====================================================================================================
+TYPE: unresolved_funcptr (171 occurrences)
 ====================================================================================================
 
 Unique patterns:
    119x  code *
-    56x  code
+    52x  code
 
 Example functions:
   crt_fstream.cpp_istream_seekg_FUN_00600ee4
@@ -711,7 +711,7 @@ Unique patterns:
      2x  aiStackY_101c
      2x  aiStackY_10d8
      2x  afStackY_1040
-     2x  afStackY_1850
+     1x  aiStackY_1818
 
 Example functions:
   cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
@@ -983,68 +983,47 @@ Example functions:
     /* WARNING: Removing unreachable block (ram,0x004fd155) */...
 
 ====================================================================================================
-TYPE: suspect_float (54 occurrences)
+TYPE: unknown_type (52 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    15x  1.4013e-45
-     8x  1.12104e-44
-     5x  2.8026e-45
-     4x  2.10195e-44
-     3x  1.26117e-44
-     3x  1.82169e-44
-     2x  2.24208e-44
-     2x  3.58732e-43
-     2x  3.57331e-43
-     1x  8.106091e-39
-     1x  8.106946e-39
-     1x  8.107024e-39
-     1x  9.80909e-45
-     1x  1.4013e-44
-     1x  1.54143e-44
-     1x  1.68156e-44
-     1x  1.96182e-44
-     1x  4.2039e-45
-     1x  5.60519e-45
+    31x  unkuint10
+    21x  unkbyte10
 
 Example functions:
-  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
-    local_1c = 1.4013e-45;...
-  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
-    local_2c = 1.4013e-45;...
-  core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
-    if ((pCVar4 != (CDemonActor *)0x0) && (pCVar4[2].location.position.y != 2.8026e-...
-  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
-    in_stack_fffffdc0 = 8.106091e-39;...
-  core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640
-    triangle->area = 1.4013e-45;...
-  core_dtri.cpp_rayTriangleIntersection_FUN_0049a800
-    if (fVar2 == 2.8026e-45) {...
-  core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90
-    (pCVar2->base).fire_cooldown = 1.4013e-45;...
-  core_fire.cpp_CLaserBeam_render_FUN_004c25c0
-    local_24 = 1.12104e-44;...
-  core_set.cpp_CDemonSet_setGamma_FUN_00570d60
-    local_18 = 3.58732e-43;...
-  core_scat.cpp_CScat_updateWeaponState_FUN_00558060
-    ((pCVar7->model).transformed_vertices[0x19].y == 1.12104e-44)) {...
-  core_stranger.cpp_CStranger_processDamage_FUN_005c48b0
-    force_immediate = 1.4013e-45;...
-  core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370
-    (g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);...
-  core_stranger.cpp_CStranger_processFrame_FUN_005bb960
-    UStack_84.vec.y = 1.4013e-45;...
+  crt_math.c_fdiv_thunk_FUN_00606d6b
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_thunk_FUN_00606bb3
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_FUN_00606960
+    in_stack_00000008 = (uint)((unkuint10)fVar2 >> 0x20);...
+  crt_math.c_fdiv_thunk_FUN_00606aeb
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_thunk_FUN_00606e0f
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_thunk_FUN_00606b7f
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_thunk_FUN_00606cc7
+    unkbyte10 in_ST0;...
+  crt_math.c_atan2_FUN_0060c440
+    uStack_20 = (uint)((unkuint10)y >> 0x20);...
+  crt_math.c_fdiv_thunk_FUN_00606ee7
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_thunk_FUN_00606d9f
+    unkbyte10 in_ST0;...
+  crt_math.c_fdiv_thunk_FUN_00606b17
+    unkbyte10 in_ST0;...
 
 ====================================================================================================
-TYPE: param_count_too_many (52 occurrences)
+TYPE: param_count_too_many (51 occurrences)
 ====================================================================================================
 
 Unique patterns:
     23x  declared:2 vs estimated:1
     15x  declared:3 vs estimated:2
      6x  declared:4 vs estimated:3
-     2x  declared:8 vs estimated:7
      1x  declared:6 vs estimated:3
+     1x  declared:8 vs estimated:7
      1x  declared:6 vs estimated:5
      1x  declared:1 vs estimated:0
      1x  declared:2 vs estimated:0
@@ -1114,98 +1093,55 @@ Example functions:
     Function declares 2 params but call sites push 1 (1 extra)...
 
 ====================================================================================================
-TYPE: unknown_type (52 occurrences)
+TYPE: suspect_float (50 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    31x  unkuint10
-    21x  unkbyte10
+    12x  1.4013e-45
+     8x  1.12104e-44
+     4x  2.8026e-45
+     4x  2.10195e-44
+     3x  1.26117e-44
+     3x  1.82169e-44
+     2x  2.24208e-44
+     2x  3.58732e-43
+     2x  3.57331e-43
+     1x  8.106091e-39
+     1x  8.106946e-39
+     1x  8.107024e-39
+     1x  9.80909e-45
+     1x  1.4013e-44
+     1x  1.54143e-44
+     1x  1.68156e-44
+     1x  1.96182e-44
+     1x  4.2039e-45
+     1x  5.60519e-45
 
 Example functions:
-  crt_math.c_fdiv_thunk_FUN_00606d6b
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_thunk_FUN_00606bb3
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_FUN_00606960
-    in_stack_00000008 = (uint)((unkuint10)fVar2 >> 0x20);...
-  crt_math.c_fdiv_thunk_FUN_00606aeb
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_thunk_FUN_00606e0f
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_thunk_FUN_00606b7f
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_thunk_FUN_00606cc7
-    unkbyte10 in_ST0;...
-  crt_math.c_atan2_FUN_0060c440
-    uStack_20 = (uint)((unkuint10)y >> 0x20);...
-  crt_math.c_fdiv_thunk_FUN_00606ee7
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_thunk_FUN_00606d9f
-    unkbyte10 in_ST0;...
-  crt_math.c_fdiv_thunk_FUN_00606b17
-    unkbyte10 in_ST0;...
-
-====================================================================================================
-TYPE: undefined_data (48 occurrences)
-====================================================================================================
-
-Unique patterns:
-    11x  DAT_03f9b210
-     5x  DAT_00679d94
-     4x  DAT_03f9b850
-     3x  DAT_03f9c030
-     3x  DAT_00665f28
-     2x  DAT_00665f50
-     2x  DAT_03f9b874
-     2x  DAT_00685030
-     2x  DAT_03f9b851
-     2x  DAT_0068528c
-     1x  DAT_006852db
-     1x  DAT_00679d50
-     1x  DAT_0068755c
-     1x  DAT_0068513c
-     1x  DAT_006851bd
-     1x  DAT_00658bf4
-     1x  DAT_00658c04
-     1x  DAT_00658c08
-     1x  DAT_00658c0c
-     1x  DAT_00684f30
-
-Example functions:
-  crt_io.c_getTempDirectory_FUN_00609afc
-    (&DAT_006852db)[uVar3] = 0x5c;...
-  crt_watcom.c__heapchk_FUN_00600ad0
-    if (DAT_03f9b850 != '\0') {...
-  crt_watcom.c__memset_FUN_004b19d0
-    (**(code **)(&DAT_00679d50 + uVar3 * 4))();...
-  crt_watcom.c__memcpy_FUN_004b1a78
-    (**(code **)(&DAT_00679d94 + uVar2 * 4))();...
-  crt_math.c_atan2_FUN_0060c440
-    fVar1 = *(float10 *)(&DAT_0068755c + iVar1) +...
-  crt_startup.c_FUN_0060d230
-    memset(&DAT_03f9c030,0,0x101);...
-  crt_time.c_tzset_FUN_006072f8
-    DAT_0068513c = 0;...
-  crt_time.c__strftime_FUN_006002d4
-    pacVar6 = (char (*) [4])&DAT_00658bf4;...
-  crt_time.c_determine_dst_status_FUN_006079b4
-    iVar1 = *(int *)(&DAT_00665f50 + iVar9 * 2);...
-  crt_unknown.c_FUN_00603c74
-    piVar1 = &DAT_00684f30;...
-  crt_unknown.c_FUN_00607858
-    iVar2 = *(int *)(&DAT_00665f50 + *(int *)(param_1 + 0x10) * 2);...
-  crt_unknown.c_staticInit_FUN_0060240e
-    DAT_03f9b874 = DAT_03f9b874 | 2;...
-  crt_unknown.c_FUN_00607080
-    *(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) | (&DAT_00665f28)[bVar1 & 7];...
-  crt_unknown.c_FUN_00608fdc
-    if (file_handle < (_FILE *)&DAT_00684d12) {...
-  crt_unknown.c_FUN_0060501c
-    *pbVar1 = *pbVar1 | (&DAT_00685030)[uVar2 & 7];...
-  crt_string.c_strtok_FUN_005fff50
-    while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVa...
-  crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0
-    if (((DAT_03f9b210 == (Heap *)0x0) ||...
+  core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0
+    local_1c = 1.4013e-45;...
+  core_inv.cpp_CInventory_updateInventory_FUN_004ffad0
+    if ((pCVar4 != (CDemonActor *)0x0) && (pCVar4[2].location.position.y != 2.8026e-...
+  core_setedit.cpp_CDemonSet_showVdirBoxEditor_FUN_00583170
+    in_stack_fffffdc0 = 8.106091e-39;...
+  core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640
+    triangle->area = 1.4013e-45;...
+  core_dtri.cpp_rayTriangleIntersection_FUN_0049a800
+    if (fVar2 == 2.8026e-45) {...
+  core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90
+    (pCVar2->base).fire_cooldown = 1.4013e-45;...
+  core_fire.cpp_CLaserBeam_render_FUN_004c25c0
+    local_24 = 1.12104e-44;...
+  core_set.cpp_CDemonSet_setGamma_FUN_00570d60
+    local_18 = 3.58732e-43;...
+  core_scat.cpp_CScat_updateWeaponState_FUN_00558060
+    ((pCVar5->model).transformed_vertices[0x19].y == 1.12104e-44)) {...
+  core_stranger.cpp_CStranger_processDamage_FUN_005c48b0
+    force_immediate = 1.4013e-45;...
+  core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370
+    (g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);...
+  core_stranger.cpp_CStranger_processFrame_FUN_005bb960
+    UStack_84.vec.y = 1.4013e-45;...
 
 ====================================================================================================
 TYPE: extra_output (46 occurrences)
@@ -1324,6 +1260,67 @@ Example functions:
     Function uses MMX instructions...
   wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
     Function uses MMX instructions...
+
+====================================================================================================
+TYPE: undefined_data (31 occurrences)
+====================================================================================================
+
+Unique patterns:
+     5x  DAT_00679d94
+     3x  DAT_03f9c030
+     3x  DAT_00665f28
+     2x  DAT_00665f50
+     2x  DAT_03f9b874
+     2x  DAT_00685030
+     2x  DAT_0068528c
+     1x  DAT_006852db
+     1x  DAT_00679d50
+     1x  DAT_0068755c
+     1x  DAT_0068513c
+     1x  DAT_006851bd
+     1x  DAT_00658bf4
+     1x  DAT_00658c04
+     1x  DAT_00658c08
+     1x  DAT_00658c0c
+     1x  DAT_00684f30
+     1x  DAT_00684d12
+     1x  DAT_80000010
+
+Example functions:
+  crt_io.c_getTempDirectory_FUN_00609afc
+    (&DAT_006852db)[uVar3] = 0x5c;...
+  crt_watcom.c__memset_FUN_004b19d0
+    (**(code **)(&DAT_00679d50 + uVar3 * 4))();...
+  crt_watcom.c__memcpy_FUN_004b1a78
+    (**(code **)(&DAT_00679d94 + uVar2 * 4))();...
+  crt_math.c_atan2_FUN_0060c440
+    fVar1 = *(float10 *)(&DAT_0068755c + iVar1) +...
+  crt_startup.c_FUN_0060d230
+    memset(&DAT_03f9c030,0,0x101);...
+  crt_time.c_tzset_FUN_006072f8
+    DAT_0068513c = 0;...
+  crt_time.c__strftime_FUN_006002d4
+    pacVar6 = (char (*) [4])&DAT_00658bf4;...
+  crt_time.c_determine_dst_status_FUN_006079b4
+    iVar1 = *(int *)(&DAT_00665f50 + iVar9 * 2);...
+  crt_unknown.c_FUN_00603c74
+    piVar1 = &DAT_00684f30;...
+  crt_unknown.c_FUN_00607858
+    iVar2 = *(int *)(&DAT_00665f50 + *(int *)(param_1 + 0x10) * 2);...
+  crt_unknown.c_staticInit_FUN_0060240e
+    DAT_03f9b874 = DAT_03f9b874 | 2;...
+  crt_unknown.c_FUN_00607080
+    *(byte *)(((int)(uint)bVar1 >> 3) + (int)param_1) | (&DAT_00665f28)[bVar1 & 7];...
+  crt_unknown.c_FUN_00608fdc
+    if (file_handle < (_FILE *)&DAT_00684d12) {...
+  crt_unknown.c_FUN_0060501c
+    *pbVar1 = *pbVar1 | (&DAT_00685030)[uVar2 & 7];...
+  crt_string.c_strtok_FUN_005fff50
+    while ((bVar1 = *str, bVar1 != 0 && ((local_28[bVar1 >> 3] & (&DAT_00665f28)[bVa...
+  crt_stdio.c_scanf_scanset_FUN_00605064
+    if ((((&DAT_00685030)[character & 7] & abStack_40[(int)character >> 3]) == 0) !=...
+  crt_stdio.c_CreateFileImpl_FUN_006090a0
+    if ((DAT_0068528c == (code *)0x0) ||...
 
 ====================================================================================================
 TYPE: special_math_intrinsic (24 occurrences)

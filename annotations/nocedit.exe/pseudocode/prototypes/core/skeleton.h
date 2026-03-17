@@ -173,7 +173,7 @@ int __cdecl CDeformableModel::selectLOD(CDeformableModel *this_ptr,CBoundingBox3
 
 // Original: core_skeleton.cpp_CDeformableModel_shatter_FUN_0059cec0
 // Address: 0059cec0
-void __cdecl CDeformableModel::shatter(CDeformableModel *this_ptr,CVector3f *center_position,CVector3f *orientation_vector,int lod_index,CVector3i *skinned_vertices,int *part_visibility_flags,int *texture_set_indices,int particle_lifetime);
+void __cdecl CDeformableModel::shatter(CDeformableModel *this_ptr,CVector3f *center_position,CVector3f *orientation_vector,int lod_index,CVector3i *skinned_vertices,int *part_visibility_flags,int *texture_set_indices);
 
 // Original: core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460
 // Address: 0059d460

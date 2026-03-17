@@ -10,43 +10,43 @@
       {
         "category": "undeclared_identifier",
         "column": 29,
-        "line": 539,
+        "line": 538,
         "message": "use of undeclared identifier 'stack0xfffff150'"
       },
       {
         "category": "undeclared_identifier",
         "column": 82,
-        "line": 540,
+        "line": 539,
         "message": "use of undeclared identifier 'stack0xfffff150'"
       },
       {
         "category": "undeclared_identifier",
         "column": 74,
-        "line": 542,
+        "line": 541,
         "message": "use of undeclared identifier 'stack0xfffff150'"
       },
       {
         "category": "other",
         "column": 50,
-        "line": 566,
+        "line": 565,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 691,
+        "line": 690,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 64,
-        "line": 797,
+        "line": 796,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 45,
-        "line": 808,
+        "line": 807,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -55,12 +55,12 @@
   },
   "complexity": {
     "assembly_lines": 2429,
-    "complexity_score": 1302,
+    "complexity_score": 1301,
     "cross_reference_count": 2,
     "function_call_count": 71,
     "global_count": 126,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 857,
+    "pseudocode_lines": 856,
     "suspect_count": 42,
     "suspect_types": [
       "decompiler_intrinsic",
@@ -69,7 +69,7 @@
       "stack_ref",
       "warning_inlined_function"
     ],
-    "total_lines": 3286
+    "total_lines": 3285
   },
   "cross_references": [
     {
@@ -2157,7 +2157,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 508,
+      "line": 507,
       "match": "(CKeyFramedModel *)((int)",
       "severity": "mild",
       "text": "pCVar13 = (CKeyFramedModel *)((int)pCVar13 + (uint)bVar15 * -2 + 1);",
@@ -2165,7 +2165,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 512,
+      "line": 511,
       "match": "pCVar13[-1].",
       "severity": "mild",
       "text": "pcVar20 = (char *)((int)&pCVar13[-1].dead + 3);",
@@ -2173,7 +2173,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 512,
+      "line": 511,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar20 = (char *)((int)&pCVar13[-1].dead + 3);",
@@ -2181,7 +2181,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 532,
+      "line": 531,
       "match": "&stack0xfffff150",
       "severity": "moderate",
       "text": "(&stack0xfffff150,(char *)0x0,\"models\",local_698,local_b98);",
@@ -2189,7 +2189,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 533,
+      "line": 532,
       "match": "&stack0xfffff150",
       "severity": "moderate",
       "text": "iVar18 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);",
@@ -2197,7 +2197,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 535,
+      "line": 534,
       "match": "&stack0xfffff150",
       "severity": "moderate",
       "text": "iVar18 = core_dmodel_cpp_copyFile_FUN_0047c930(\"t:\\\\\",&stack0xfffff150,1);",
@@ -2205,7 +2205,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 706,
+      "line": 705,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_108.x = (float)*(int *)((int)&this_ptr->vertex_list->x + iVar18) * fVar3;",
@@ -2213,7 +2213,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 707,
+      "line": 706,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_108.y = (float)*(int *)((int)&this_ptr->vertex_list->y + iVar18) * fVar3;",
@@ -2221,7 +2221,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 708,
+      "line": 707,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "local_108.z = (float)*(int *)((int)&this_ptr->vertex_list->z + iVar18) * fVar3;",
@@ -2229,7 +2229,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 717,
+      "line": 716,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->x + iVar18) =",
@@ -2237,7 +2237,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 718,
+      "line": 717,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(local_108.x * fVar5));",
@@ -2245,7 +2245,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 718,
+      "line": 717,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(local_108.x * fVar5));",
@@ -2253,7 +2253,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 719,
+      "line": 718,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->y + iVar18) =",
@@ -2261,7 +2261,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 720,
+      "line": 719,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(local_108.y * fVar5));",
@@ -2269,7 +2269,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 720,
+      "line": 719,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(local_108.y * fVar5));",
@@ -2277,7 +2277,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 721,
+      "line": 720,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(int *)((int)&this_ptr->vertex_list->z + iVar18) =",
@@ -2285,7 +2285,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 722,
+      "line": 721,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(fVar5 * local_108.z));",
@@ -2293,7 +2293,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 722,
+      "line": 721,
       "match": "ROUND",
       "severity": "mild",
       "text": "(int)ROUND(ROUND(fVar5 * local_108.z));",
@@ -2301,7 +2301,7 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 748,
+      "line": 747,
       "match": "collision_triangle_list[-1].",
       "severity": "mild",
       "text": "shape_memdbg_cpp_free_FUN_005fe659(&this_ptr->collision_triangle_list[-1].area);",
@@ -2309,7 +2309,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 760,
+      "line": 759,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr,(int)ROUND(ROUND(local_70)));",
@@ -2317,7 +2317,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 760,
+      "line": 759,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr,(int)ROUND(ROUND(local_70)));",
@@ -2325,7 +2325,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 782,
+      "line": 781,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr,(int)ROUND(ROUND(local_70)));",
@@ -2333,7 +2333,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 782,
+      "line": 781,
       "match": "ROUND",
       "severity": "mild",
       "text": "(this_ptr,(int)ROUND(ROUND(local_70)));",

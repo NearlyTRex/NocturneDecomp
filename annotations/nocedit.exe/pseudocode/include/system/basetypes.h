@@ -24,6 +24,7 @@
 // Calling conventions from x86watcom.cspec
 #define __watcallRegister
 #define __watcallStack
+#define __cdecl_scratch
 #define __cdecl0
 #define __cdecl4
 #define __cdecl8

@@ -14,7 +14,7 @@
 ;   Heap* g_MainHeap = 00000000
 ;   Heap* g_SecondaryHeap = 00000000
 ;   int INT_00684edc = 0x0
-;   undefined4 DAT_03f9b210
+;   int INT_03f9b210
 ;
 ; Called Functions:
 ;   VirtualFree
@@ -53,13 +53,13 @@ section .text
         ;   Label: LAB_0060c994
     MOV dword ptr [0x00684edc],EBX      ; 0060c999 | INT_00684edc
     MOV [0x00684ed8],EAX                ; 0060c99f | g_SecondaryHeap
-    MOV ECX,dword ptr [0x03f9b210]      ; 0060c9a4 | DAT_03f9b210
+    MOV ECX,dword ptr [0x03f9b210]      ; 0060c9a4 | INT_03f9b210
         ;   Label: LAB_0060c9a4
     CMP ESI,ECX                         ; 0060c9aa
     JNZ 0x0060c9b6                      ; 0060c9ac
         ;   XREF to: 0060c9b6 (CONDITIONAL_JUMP)  ; LAB_0060c9b6
     XOR ESI,ECX                         ; 0060c9ae
-    MOV dword ptr [0x03f9b210],ESI      ; 0060c9b0 | DAT_03f9b210
+    MOV dword ptr [0x03f9b210],ESI      ; 0060c9b0 | INT_03f9b210
     XOR EAX,EAX                         ; 0060c9b6
         ;   Label: LAB_0060c9b6
     POP ESI                             ; 0060c9b8

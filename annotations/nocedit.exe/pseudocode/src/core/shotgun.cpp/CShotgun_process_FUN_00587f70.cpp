@@ -10,14 +10,14 @@ void __cdecl core_shotgun_cpp_CShotgun_process_FUN_00587f70(CShotgun *this_ptr,f
 
 {
   CVector3f *input_local_point;
-  CVector3f *unaff_ESI;
+  CVector3f *local_e1;
   char local_res0;
   CVector3f aCStack_20 [2];
   
   if (this_ptr->muzzle_flash_active != 0) {
     g_CDemonLightInstance.light_enabled_flag = 1;
     input_local_point =
-         (*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,unaff_ESI);
+         (*(((this_ptr->base).base.vtable._uw)->_uw).getMuzzlePoint)(&this_ptr->base,local_e1);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)this_ptr,aCStack_20,input_local_point);
     g_CDemonLightInstance.volumetric_enabled = 0;

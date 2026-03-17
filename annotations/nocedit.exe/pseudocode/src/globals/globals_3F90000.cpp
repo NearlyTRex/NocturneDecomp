@@ -18,7 +18,7 @@ CDemonActorType g_CWerewolfClassInfo = {};
 CDemonActorType g_CZombieClassInfo = {};
 
 // CDemonGlobe
-CDemonGlobe CDemonGlobe_03f95d7c = {};
+CDemonGlobe g_WeaponCoronaGlobe = {};
 
 // CRITICAL_SECTION[64]
 CRITICAL_SECTION g_StaticCriticalSectionArray[64] = {};
@@ -47,6 +47,7 @@ DWORD g_DynamicCriticalSectionCounter = {};
 
 // FileListNode*
 FileListNode* g_AllocatedListHead = {};
+FileListNode* g_FreeListHeadPointer = {};
 
 // HMODULE
 HMODULE g_WinmmDll = {};
@@ -116,6 +117,9 @@ char** g_EnvironmentBlock = {};
 // char*[128]
 char* g_ArgVector[128] = {};
 
+// char[16]
+char CHAR_ARRAY_03f9b850[16] = {};
+
 // char[200]
 char g_WeatherParticleHitGround[200] = {};
 char g_KeyNameBuffer[200] = {};
@@ -130,8 +134,8 @@ char g_LeadByteTable[256] = {};
 char g_ExeFileNameBuffer_A[260] = {};
 char g_DllFileNameBuffer_A[260] = {};
 
-// char[512]
-char g_ErrorMessageBuffer_03f96c30[512] = {};
+// char[6000]
+char g_ErrorMessageBuffer_03f96c30[6000] = {};
 
 // double
 double g_TimerCalibration = {};
@@ -178,6 +182,7 @@ int g_RasterizerEdgeCount = {};
 int g_RasterizerMinY = {};
 int g_RasterizerMaxY = {};
 int INT_03f9b1f0 = {};
+int INT_03f9b210 = {};
 int g_EmergencyExitFlag = {};
 int g_EnvironInitialized = {};
 int INT_03f9bfd4 = {};
@@ -195,13 +200,6 @@ int g_MessageFlags[513] = {};
 
 // uint
 uint UINT_03f96b40 = {};
-
-// undefined1
-undefined1 DAT_03f9b850 = {};
-
-// undefined4
-undefined4 g_FreeListHeadPointer = {};
-undefined4 DAT_03f9b210 = {};
 
 // void*
 void* g_SoftwareFrameBuffer = {};

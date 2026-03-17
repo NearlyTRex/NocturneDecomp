@@ -8,15 +8,12 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ; int              Stack[0xc]:4   count
 ; Local Variables:
-; undefined4[1508] Stack[-0x1804]:6032  auStackY_1804
 ; CMatrix3x3f      Stack[-0x58]:36  local_58
-; undefined1[4]    Stack[-0x34]:4  local_34
-; undefined1[4]    Stack[-0x30]:4  local_30
+; float            Stack[-0x34]:4  local_34
+; float            Stack[-0x30]:4  local_30
 ; float            Stack[-0x2c]:4  local_2c
 ; CQuaternion4f    Stack[-0x28]:16  local_28
-; float            Stack[-0x18]:4  local_18
-; float            Stack[-0x14]:4  local_14
-; float            Stack[-0x10]:4  local_10
+; CVector3f        Stack[-0x18]:12  local_18
 ; float            Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:

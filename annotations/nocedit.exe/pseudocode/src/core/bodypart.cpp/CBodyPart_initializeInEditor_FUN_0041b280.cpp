@@ -28,7 +28,7 @@ int __cdecl core_bodypart_cpp_CBodyPart_initializeInEditor_FUN_0041b280(CBodyPar
   
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                     (g_CEditorToolsPtr,"Select model to dismember","models",
-                     "*.dfm",(int)local_1e4,0);
+                     "*.dfm",local_1e4,0);
   if (iVar2 == 0) {
     return 0;
   }

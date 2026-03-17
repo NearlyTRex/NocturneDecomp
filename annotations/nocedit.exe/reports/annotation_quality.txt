@@ -14,16 +14,16 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,484
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        278 ( 4.3%)
+  Functions with type issues:        269 ( 4.1%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   0
     Missing register params:           0
-    Wrong calling convention:          18
-    Undefined types in variables:      232
-    Unresolved stack params:           46
+    Wrong calling convention:          7
+    Undefined types in variables:      228
+    Unresolved stack params:           45
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -64,67 +64,13 @@ Missing register parameters (likely wrong calling convention) (0)
   (none)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (18)
+Wrong calling convention (unaffected register usage) (7)
 --------------------------------------------------------------------------------
-
-  CCloth_boneEditor
-    Address: 0x0043c880  File: core/cloth.cpp
-    Evidence: unaff_EBP, unaff_ESI, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI
-    Signature: void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CShotgun_process
-    Address: 0x00587f70  File: core/shotgun.cpp
-    Evidence: unaff_ESI, unaff_ESI
-    Signature: void __cdecl core_shotgun_cpp_CShotgun_process_FUN_00587f70(CShotgun *this_ptr,float delta_time)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDemonSet_editSpotLight
-    Address: 0x0057b500  File: core/setedit.cpp
-    Evidence: unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_EDI
-    Signature: void __cdecl core_setedit_cpp_CDemonSet_editSpotLight_FUN_0057b500(CDemonSet *this_ptr,int light_index)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDemonSet_positionLight
-    Address: 0x0057ae50  File: core/setedit.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_ESI, unaff_EDI, unaff_EBX, unaff_EBX, unaff_EBX
-    Signature: int __cdecl core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(CDemonSet *this_ptr,C3DSLight *light)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CDemonSet_editCameraPosition
-    Address: 0x0057d660  File: core/setedit.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_ESI, unaff_EBX, unaff_EBX, unaff_ESI, unaff_EBX, unaff_ESI, unaff_EDI
-    Signature: int __cdecl core_setedit_cpp_CDemonSet_editCameraPosition_FUN_0057d660(CDemonSet *this_ptr,int camera_index)
-    Suggested: Calling convention may be wrong (preserved registers being used)
 
   CDemonSet_showScenePreview
     Address: 0x0057a940  File: core/setedit.cpp
     Evidence: unaff_EBP, unaff_EBP
     Signature: void __cdecl core_setedit_cpp_CDemonSet_showScenePreview_FUN_0057a940(CDemonSet *this_ptr)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  renderPerspectiveTexturedScanline
-    Address: 0x004940e9  File: core/dstrender.cpp
-    Evidence: unaff_EBX, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_EDI, unaff_ESI, unaff_EBX, unaff_EDI, unaff_EDI
-    Signature: void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CElephantGun_process
-    Address: 0x004a7070  File: core/elephant.cpp
-    Evidence: unaff_ESI, unaff_ESI
-    Signature: void __cdecl core_elephant_cpp_CElephantGun_process_FUN_004a7070(CElephantGun *this_ptr,float delta_time)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CScat_updateWeaponState
-    Address: 0x00558060  File: core/scat.cpp
-    Evidence: unaff_EDI, unaff_EDI, unaff_EDI
-    Signature: void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00558060(CScat *this_ptr,float delta_time)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CWeapon_updateLighting
-    Address: 0x005ee4a0  File: core/weapon.cpp
-    Evidence: unaff_EBP, unaff_ESI, unaff_ESI, unaff_EBP, unaff_EBP
-    Signature: void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005ee4a0(CWeapon *this_ptr)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CSkeleton_getBoneAngleInterpolated
@@ -133,22 +79,10 @@ Wrong calling convention (unaffected register usage) (18)
     Signature: CQuaternion4f * __cdecl core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton *this_ptr,int bone_index,int frame_index_1,int frame_index_2,float interpolation)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
-  CDeformableModelInstance_shatter
-    Address: 0x005a14b0  File: core/skeleton.cpp
-    Evidence: unaff_EBP, unaff_EBP
-    Signature: void __cdecl core_skeleton_cpp_CDeformableModelInstance_shatter_FUN_005a14b0(CDeformableModelInstance *this_ptr,CVector3f *center_position,CVector3f *orientation_vector,int desired_lod_index)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
   CCharacter_updateCarriedObjects
     Address: 0x0042d090  File: core/charactr.cpp
     Evidence: unaff_EBP, unaff_EBP, unaff_EBP, unaff_EBP
     Signature: void __cdecl core_charactr_cpp_CCharacter_updateCarriedObjects_FUN_0042d090(CCharacter *this_ptr,float delta_time)
-    Suggested: Calling convention may be wrong (preserved registers being used)
-
-  CCourse_importMatrices
-    Address: 0x00442ea0  File: core/course.cpp
-    Evidence: unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI, unaff_ESI, unaff_EDI
-    Signature: void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_ptr,_FILE *file_handle,int count)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   CColorQuantizer_mapScanlineToPalette
@@ -176,7 +110,7 @@ Wrong calling convention (unaffected register usage) (18)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (46)
+Unresolved stack parameters (missing from signature) (45)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
@@ -241,7 +175,7 @@ Unresolved stack parameters (missing from signature) (46)
 
   CCloth_boneEditor
     Address: 0x0043c880  File: core/cloth.cpp
-    Evidence: in_stack_00000010, in_stack_00000020, in_stack_00000028, in_stack_0000002c, in_stack_00000034, in_stack_0000003c, in_stack_00000054, in_stack_fffffac4, in_stack_fffffac4, in_stack_fffffac4, in_stack_00000028, in_stack_0000002c, in_stack_0000002c, in_stack_0000002c, in_stack_00000010, in_stack_0000003c, in_stack_00000020, in_stack_0000003c, in_stack_00000020, in_stack_0000003c, in_stack_00000054, in_stack_00000034, in_stack_00000034, in_stack_00000034, in_stack_00000034
+    Evidence: in_stack_fffffac8, in_stack_fffffac8, in_stack_fffffac8
     Signature: void __cdecl core_cloth_cpp_CCloth_boneEditor_FUN_0043c880(CCloth *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
@@ -291,12 +225,6 @@ Unresolved stack parameters (missing from signature) (46)
     Address: 0x00582930  File: core/setedit.cpp
     Evidence: in_stack_ffffff24, in_stack_ffffff54, in_stack_ffffff74, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24, in_stack_ffffff74, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff54, in_stack_ffffff24
     Signature: void __cdecl core_setedit_cpp_drawCameraFrustum_FUN_00582930(int color,int use_3d_lines)
-    Suggested: Signature is missing stack parameters entirely
-
-  CDemonSet_positionLight
-    Address: 0x0057ae50  File: core/setedit.cpp
-    Evidence: in_stack_0000000c, in_stack_00000010, in_stack_00000010, in_stack_0000000c, in_stack_00000010
-    Signature: int __cdecl core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(CDemonSet *this_ptr,C3DSLight *light)
     Suggested: Signature is missing stack parameters entirely
 
   CDemonSet_showVdirBoxEditor
@@ -403,7 +331,7 @@ Unresolved stack parameters (missing from signature) (46)
 
   CCourse_preview
     Address: 0x00443bc0  File: core/course.cpp
-    Evidence: in_stack_fffffe8c, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffeb8, in_stack_fffffea8, in_stack_fffffea0, in_stack_fffffeb0, in_stack_fffffe98, in_stack_fffffe70, in_stack_fffffe8c, in_stack_fffffe70, in_stack_fffffe70, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffe98, in_stack_fffffea8, in_stack_fffffea0, in_stack_fffffeb0, in_stack_fffffeb8, in_stack_fffffeb0, in_stack_fffffea8, in_stack_fffffea0, in_stack_fffffe98, in_stack_fffffe94, in_stack_fffffe90, in_stack_fffffe8c, in_stack_fffffe90, in_stack_fffffeb8, in_stack_fffffeb8
+    Evidence: in_stack_fffffe70, in_stack_fffffe8c, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffe98, in_stack_fffffea0, in_stack_fffffea8, in_stack_fffffeb0, in_stack_fffffeb8, in_stack_fffffe8c, in_stack_fffffe70, in_stack_fffffe70, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffe98, in_stack_fffffea8, in_stack_fffffea0, in_stack_fffffeb0, in_stack_fffffeb8, in_stack_fffffeb0, in_stack_fffffea8, in_stack_fffffea0, in_stack_fffffe98, in_stack_fffffe94, in_stack_fffffe90, in_stack_fffffe8c, in_stack_fffffe90, in_stack_fffffeb8, in_stack_fffffeb8
     Signature: void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *model_ptr)
     Suggested: Signature is missing stack parameters entirely
 
@@ -456,7 +384,7 @@ Unresolved stack parameters (missing from signature) (46)
     Suggested: Signature is missing stack parameters entirely
 
 --------------------------------------------------------------------------------
-Undefined types in variables (232)
+Undefined types in variables (228)
 --------------------------------------------------------------------------------
 
   CSkeleton_importSkeletonFile
@@ -859,11 +787,6 @@ Undefined types in variables (232)
     Locals:  local_e8 (undefined8), auStack_cc (undefined1[56]), auStack_60 (undefined1[52])
     Suggested: Resolve undefined types to concrete types
 
-  CCourse_importMatrices
-    Address: 0x00442ea0  File: core/course.cpp
-    Locals:  auStackY_1804 (undefined4[1508]), local_34 (undefined1[4]), local_30 (undefined1[4])
-    Suggested: Resolve undefined types to concrete types
-
   CDemonRaytrace_renderFrustumCubes
     Address: 0x00497e50  File: core/dtrace.cpp
     Locals:  local_168 (undefined4), local_164 (undefined4), local_160 (undefined4)
@@ -1119,19 +1042,9 @@ Undefined types in variables (232)
     Locals:  local_14 (undefined1[4])
     Suggested: Resolve undefined types to concrete types
 
-  CCourse_interpolate
-    Address: 0x004427a0  File: core/course.cpp
-    Locals:  local_3c (undefined1[32])
-    Suggested: Resolve undefined types to concrete types
-
   CCourse_load
     Address: 0x00442580  File: core/course.cpp
     Locals:  auStack_18 (undefined1[4])
-    Suggested: Resolve undefined types to concrete types
-
-  CCourse_preview
-    Address: 0x00443bc0  File: core/course.cpp
-    Locals:  local_cc (undefined1[16])
     Suggested: Resolve undefined types to concrete types
 
   CDemonCamera_precomputeLight
@@ -1387,11 +1300,6 @@ Undefined types in variables (232)
   CBoneStructure_readBONheader
     Address: 0x0058a4a0  File: core/skeledit.cpp
     Locals:  local_b8 (undefined4[8])
-    Suggested: Resolve undefined types to concrete types
-
-  CDeformableModelInstance_viewModel
-    Address: 0x005968b0  File: core/skeledit.cpp
-    Locals:  local_200 (undefined1[16])
     Suggested: Resolve undefined types to concrete types
 
   CDeformableModel_extractBoneScales

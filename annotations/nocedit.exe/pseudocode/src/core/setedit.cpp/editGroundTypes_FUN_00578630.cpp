@@ -96,7 +96,7 @@ void __cdecl core_setedit_cpp_editGroundTypes_FUN_00578630(char *filename)
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_834,0);
     }
-    shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_bdc.base,(int)local_6c,pcVar5,0);
+    shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_bdc.base,local_6c,(int)pcVar5,0);
     iVar5 = 0;
     engine_dosio_c_splitPath_FUN_00481f20(local_6c,(char *)0x0,(char *)0x0,local_16c,(char *)0x0);
     if (0 < g_GroundTextureCount) {

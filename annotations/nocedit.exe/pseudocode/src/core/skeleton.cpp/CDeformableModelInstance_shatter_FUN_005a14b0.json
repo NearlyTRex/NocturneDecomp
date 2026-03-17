@@ -6,17 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 47,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 22,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 66
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 65
   },
   "cross_references": [
     {
@@ -138,22 +136,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 23,
-      "match": "unaff_EBP",
-      "severity": "moderate",
-      "text": "part_visibility_flags->visibility_flags,texture_set_indices,unaff_EBP);",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

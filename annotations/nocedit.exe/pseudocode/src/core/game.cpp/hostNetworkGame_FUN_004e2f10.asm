@@ -52,7 +52,7 @@ section .text
     MOV ESI,dword ptr [0x00678a60]      ; 004e2f42 | g_CEditorToolsPtr
     PUSH ESI                            ; 004e2f48 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 004e2f49
-        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
+        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
     ADD ESP,0x18                        ; 004e2f4e
     TEST EAX,EAX                        ; 004e2f51
     JZ 0x004e2fab                       ; 004e2f53

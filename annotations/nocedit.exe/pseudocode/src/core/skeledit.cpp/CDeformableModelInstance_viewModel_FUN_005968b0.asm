@@ -28,9 +28,7 @@
 ; CMatrix3x4f      Stack[-0x290]:48  local_290
 ; CMatrix3x4f      Stack[-0x260]:48  local_260
 ; CMatrix3x4f      Stack[-0x230]:48  local_230
-; undefined1[16]   Stack[-0x200]:16  local_200
-; float            Stack[-0x1f0]:4  local_1f0
-; float            Stack[-0x1ec]:4  local_1ec
+; CSlew            Stack[-0x200]:28  local_200
 ; CBoundingBox3D   Stack[-0x1e4]:24  local_1e4
 ; float            Stack[-0x1cc]:4  local_1cc
 ; float            Stack[-0x1c8]:4  local_1c8
@@ -2600,7 +2598,7 @@ section .text
     MOV EDI,dword ptr [0x00678a60]      ; 00598409 | g_CEditorToolsPtr
     PUSH EDI                            ; 0059840f | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 00598410
-        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
+        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
     ADD ESP,0x18                        ; 00598415
     TEST EAX,EAX                        ; 00598418
     JZ 0x00598847                       ; 0059841a

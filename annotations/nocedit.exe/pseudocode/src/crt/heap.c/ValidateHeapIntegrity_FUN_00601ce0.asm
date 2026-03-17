@@ -19,8 +19,8 @@
 ;   int INT_00684edc = 0x0
 ;   void* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00 = 00602434
 ;   void* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08 = 00602434
-;   undefined4 DAT_03f9b210
-;   undefined1 DAT_03f9b850
+;   int INT_03f9b210
+;   char[16] CHAR_ARRAY_03f9b850
 ;
 ; Called Functions:
 ;   crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0
@@ -39,7 +39,7 @@ section .text
     JZ 0x00601de2                       ; 00601ce9
         ;   XREF to: 00601de2 (CONDITIONAL_JUMP)  ; LAB_00601de2
     CALL dword ptr [0x00684f00]         ; 00601cef | PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00
-    MOV ESI,dword ptr [0x03f9b210]      ; 00601cf5 | DAT_03f9b210
+    MOV ESI,dword ptr [0x03f9b210]      ; 00601cf5 | INT_03f9b210
     TEST ESI,ESI                        ; 00601cfb
     JZ 0x00601d3f                       ; 00601cfd
         ;   XREF to: 00601d3f (CONDITIONAL_JUMP)  ; LAB_00601d3f
@@ -148,7 +148,7 @@ section .text
     CALL crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0 ; 00601dad
         ;   XREF to: 006094c0 (UNCONDITIONAL_CALL)  ; void crt_heap.c_CoalesceAndAddFreeBlock_FUN_006094c0(void * ptr, HeapBlock * heap_block, ushort segment)
     MOV EDX,dword ptr [0x00684ed8]      ; 00601db2 | g_SecondaryHeap
-    MOV dword ptr [0x03f9b210],ESI      ; 00601db8 | DAT_03f9b210
+    MOV dword ptr [0x03f9b210],ESI      ; 00601db8 | INT_03f9b210
     CMP ESI,EDX                         ; 00601dbe
     JNC 0x00601dd4                      ; 00601dc0
         ;   XREF to: 00601dd4 (CONDITIONAL_JUMP)  ; LAB_00601dd4
@@ -160,7 +160,7 @@ section .text
     MOV [0x00684edc],EAX                ; 00601dcf | INT_00684edc
     XOR AH,AH                           ; 00601dd4
         ;   Label: LAB_00601dd4
-    MOV byte ptr [0x03f9b850],AH        ; 00601dd6 | DAT_03f9b850
+    MOV byte ptr [0x03f9b850],AH        ; 00601dd6 | CHAR_ARRAY_03f9b850
     CALL dword ptr [0x00684f08]         ; 00601ddc | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08
         ;   Label: LAB_00601ddc
     POP EDI                             ; 00601de2

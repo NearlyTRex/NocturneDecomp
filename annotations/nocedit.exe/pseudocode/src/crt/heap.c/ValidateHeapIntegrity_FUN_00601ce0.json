@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 253,
+    "complexity_score": 147,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 43,
-    "suspect_count": 19,
+    "pseudocode_lines": 42,
+    "suspect_count": 9,
     "suspect_types": [
       "pointer_cast",
       "register_param",
-      "special_crt_function",
-      "undefined_data"
+      "special_crt_function"
     ],
-    "total_lines": 181
+    "total_lines": 180
   },
   "cross_references": [
     {
@@ -105,14 +104,14 @@
     },
     {
       "addr": "03f9b210",
-      "name": "DAT_03f9b210",
-      "type": "undefined4",
+      "name": "INT_03f9b210",
+      "type": "int",
       "value": null
     },
     {
       "addr": "03f9b850",
-      "name": "DAT_03f9b850",
-      "type": "undefined1",
+      "name": "CHAR_ARRAY_03f9b850",
+      "type": "char[16]",
       "value": null
     }
   ],
@@ -256,80 +255,16 @@
       "type": "register_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_03f9b210",
-      "severity": "mild",
-      "text": "if (((DAT_03f9b210 == (Heap *)0x0) ||",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_03f9b210",
-      "severity": "mild",
-      "text": "((((ptr < DAT_03f9b210 ||",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_03f9b210",
-      "severity": "mild",
-      "text": "(pHVar2 = DAT_03f9b210,",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 14,
-      "match": "(void *)((int)",
-      "severity": "mild",
-      "text": "(void *)((int)&DAT_03f9b210->heap_size + DAT_03f9b210->heap_size) <= ptr)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_03f9b210",
-      "severity": "mild",
-      "text": "(void *)((int)&DAT_03f9b210->heap_size + DAT_03f9b210->heap_size) <= ptr)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_03f9b210",
-      "severity": "mild",
-      "text": "(void *)((int)&DAT_03f9b210->heap_size + DAT_03f9b210->heap_size) <= ptr)) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 15,
-      "match": "DAT_03f9b210",
-      "severity": "mild",
-      "text": "((pHVar2 = DAT_03f9b210->heap_base, pHVar2 == (Heap *)0x0 ||",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_03f9b210",
-      "severity": "mild",
-      "text": "((pHVar2 = DAT_03f9b210->next_heap_block, pHVar2 == (Heap *)0x0 ||",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 17,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))))) &&",
@@ -337,7 +272,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 21,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "(void *)((int)&g_SecondaryHeap->heap_size + g_SecondaryHeap->heap_size) <= ptr)) &&",
@@ -345,7 +280,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 23,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&",
@@ -353,7 +288,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr))))))))))",
@@ -361,7 +296,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 28,
       "match": "(void *)((int)",
       "severity": "mild",
       "text": "if ((pHVar2 <= ptr) && (ptr < (void *)((int)&pHVar2->heap_size + pHVar2->heap_size)))",
@@ -369,27 +304,11 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 36,
+      "line": 35,
       "match": "in_DS",
       "severity": "mild",
       "text": "CoalesceAndAddFreeBlock(ptr,(HeapBlock *)(uint)in_DS,(ushort)pHVar2);",
       "type": "register_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_03f9b850",
-      "severity": "mild",
-      "text": "DAT_03f9b850 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_03f9b210",
-      "severity": "mild",
-      "text": "DAT_03f9b210 = pHVar2;",
-      "type": "undefined_data"
     },
     {
       "address": "00601ce0",

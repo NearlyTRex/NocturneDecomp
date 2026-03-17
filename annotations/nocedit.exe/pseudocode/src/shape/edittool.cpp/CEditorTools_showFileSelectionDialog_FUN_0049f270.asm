@@ -1,15 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename,int auto_select_flag,uint unknown)
+; int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
-; char *           Stack[0x8]:4   search_pattern
-; char *           Stack[0xc]:4   directory
-; char *           Stack[0x10]:4   target_filename
-; int              Stack[0x14]:4   auto_select_flag
-; uint             Stack[0x18]:4   unknown
+; char *           Stack[0x8]:4   dialog_title
+; char *           Stack[0xc]:4   search_directory
+; char *           Stack[0x10]:4   file_pattern
+; char *           Stack[0x14]:4   output_filename
+; uint             Stack[0x18]:4   flags
 ; Local Variables:
 ; CPickList        Stack[-0x8bc]:936  local_8bc
 ; char[512]        Stack[-0x514]:512  local_514
@@ -95,7 +95,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0049f2e3
     PUSH EAX                            ; 0049f2e7
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80 ; 0049f2e8
-        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, int string_index, char * output_buffer, int field_number)
+        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 0049f2ed
     PUSH 0x1                            ; 0049f2f0
     PUSH EBX                            ; 0049f2f2
@@ -104,7 +104,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0049f2fb
     PUSH EAX                            ; 0049f2ff
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80 ; 0049f300
-        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, int string_index, char * output_buffer, int field_number)
+        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 0049f305
     LEA EAX,[ESP + 0x3a8]               ; 0049f308
     PUSH EAX                            ; 0049f30f
@@ -148,7 +148,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0049f374
     PUSH EAX                            ; 0049f378
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80 ; 0049f379
-        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, int string_index, char * output_buffer, int field_number)
+        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 0049f37e
     PUSH 0x1                            ; 0049f381
     PUSH EBX                            ; 0049f383
@@ -157,7 +157,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 0049f38c
     PUSH EAX                            ; 0049f390
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80 ; 0049f391
-        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, int string_index, char * output_buffer, int field_number)
+        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 0049f396
     LEA EAX,[ESP + 0x3a8]               ; 0049f399
     PUSH EAX                            ; 0049f3a0

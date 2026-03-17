@@ -148,7 +148,7 @@ LAB_00599119:
     if ((iVar6 == 0x33) &&
        (iVar5 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                           (g_CEditorToolsPtr,"Select model to view","models",
-                           "*.dfm",(int)local_118,0), iVar5 != 0)) {
+                           "*.dfm",local_118,0), iVar5 != 0)) {
       this_ptr = (CDeformableModelInstance *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
                            (0x22b4,"..\\core\\skeledit.cpp",0x1b79);
       this_ptr_00 = (CDeformableModelInstance *)0x0;

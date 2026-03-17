@@ -6401,7 +6401,7 @@ SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0066e6b0[6] = {
 };
 
 // SPropertyFlag[2]
-SPropertyFlag SPropertyFlag_ARRAY_0066e30c[2] = {
+SPropertyFlag g_PropertyFlagDefinitions[2] = {
     {.mask = 0x00000001, .name = (char *)s_thrust_006146f5},
     {.mask = 0x00000002, .name = (char *)s_swing_006146fc}
 };

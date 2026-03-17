@@ -1,12 +1,8 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+; void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 ;
-; Parameters:
-; SSoftwareEdge *  Stack[0x4]:4   left_edge
-; SSoftwareEdge *  Stack[0x8]:4   right_edge
-; int              Stack[0xc]:4   scanline_y
 ;
 ; XREF[1]:
 ;   engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90 at 0048adf2

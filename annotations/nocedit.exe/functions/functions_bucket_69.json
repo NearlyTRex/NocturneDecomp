@@ -76,7 +76,7 @@
         "start":"004941d0"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__edi_esi_ebx",
     "importable":true,
     "name":"core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9",
     "ret":"void",
@@ -85,13 +85,12 @@
         {
           "name":"left_edge",
           "storage":{
-            "offset":4,
+            "reg":"EDI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x4]",
-                "offset":4,
+                "addr":"register:0000001c",
+                "offset":28,
                 "size":4
               }
             ]
@@ -101,13 +100,12 @@
         {
           "name":"right_edge",
           "storage":{
-            "offset":8,
+            "reg":"ESI",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x8]",
-                "offset":8,
+                "addr":"register:00000018",
+                "offset":24,
                 "size":4
               }
             ]
@@ -117,12 +115,11 @@
         {
           "name":"scanline_y",
           "storage":{
-            "offset":12,
+            "reg":"EBX",
             "size":4,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
+                "addr":"register:0000000c",
                 "offset":12,
                 "size":4
               }

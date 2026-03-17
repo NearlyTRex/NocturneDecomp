@@ -4,43 +4,43 @@
       {
         "category": "format_error",
         "column": 32,
-        "line": 135,
+        "line": 125,
         "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
         "column": 34,
-        "line": 145,
+        "line": 135,
         "message": "format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 167,
+        "line": 157,
         "message": "use of undeclared identifier 'stack0xffffee80'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 308,
+        "line": 298,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 113,
-        "line": 313,
+        "line": 303,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 92,
-        "line": 320,
+        "line": 310,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "undeclared_identifier",
         "column": 36,
-        "line": 344,
+        "line": 334,
         "message": "use of undeclared identifier 'stack0xffffee8c'"
       }
     ],
@@ -49,19 +49,18 @@
   },
   "complexity": {
     "assembly_lines": 1112,
-    "complexity_score": 616,
+    "complexity_score": 471,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 75,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 421,
-    "suspect_count": 18,
+    "pseudocode_lines": 411,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "stack_ref",
-      "unaffected_reg"
+      "stack_ref"
     ],
-    "total_lines": 1533
+    "total_lines": 1523
   },
   "cross_references": [
     {
@@ -1120,128 +1119,32 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 23,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 27,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "char *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "CKeyFramedModel *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 158,
+      "line": 148,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)auStack_d80 + iVar10) = uVar12 | uVar11;",
+      "text": "*(uint *)((int)auStack_d80 + iVar20) = uVar16 | uVar12;",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 160,
+      "line": 150,
       "match": "&stack0xffffee80",
       "severity": "moderate",
-      "text": "*(int *)(&stack0xffffee80 + iVar10) = (int)uVar7 / 3 + (int)fStack_50 + iStack_4c;",
+      "text": "*(int *)(&stack0xffffee80 + iVar20) = (int)uVar11 / 3 + (int)fStack_50 + iStack_4c;",
       "type": "stack_ref"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 260,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "if (unaff_EDI != (CKeyFramedModel *)0x0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 261,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "ptr = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00476d90(unaff_EDI,0);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 267,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "if (unaff_ESI != (char *)0x0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 268,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "shape_memdbg_cpp_debugFree_FUN_0050f460(unaff_ESI,\"..\\\\core\\\\setedit.cpp\",0xd8c);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 277,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "unaff_EBX = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 280,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "if (unaff_EBX == 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 282,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "(this_ptr,unaff_ESI,camera_index);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 283,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "unaff_EBX = 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 285,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "core_setedit_cpp_CDemonSet_drawCameraCoverageMap_FUN_0057ff70(this_ptr,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 292,
+      "line": 282,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "piVar1 = (int *)((int)auStack_96c + iVar12);",
+      "text": "piVar1 = (int *)((int)auStack_96c + iVar13);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 304,
+      "line": 294,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)pvStack_1c + 0x144) == 0) {",
@@ -1249,19 +1152,11 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 337,
+      "line": 327,
       "match": "&stack0xffffee8c",
       "severity": "moderate",
-      "text": "uStack_38 = *(uint *)(&stack0xffffee8c + (uint)*pbVar14 * 4);",
+      "text": "uStack_38 = *(uint *)(&stack0xffffee8c + (uint)*pbVar18 * 4);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 397,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "if (*(int *)unaff_EDI->texture_list[0].textures[1].texture_name == 0) {",
-      "type": "unaffected_reg"
     }
   ]
 }

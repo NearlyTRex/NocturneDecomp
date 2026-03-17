@@ -7,10 +7,10 @@ These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
 SUMMARY
 --------------------------------------------------
-Functions with stack patterns: 715 / 7145
+Functions with stack patterns: 712 / 7145
 
 Pattern type counts:
-  stack_alignment                  540
+  stack_alignment                  537
   alt_frame_pointer                449
   dynamic_alloca                     6
   pushf                              3
@@ -286,7 +286,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0048c808: AND ESP,0xfffffff8
     - [alt_frame_pointer] at 0048c80e: MOV ESI,ESP
 
-  ... and 660 more functions
+  ... and 657 more functions
 
 ====================================================================================================
 CORRELATION: Stack patterns vs suspect counts
@@ -294,5 +294,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 9.6 suspects/function
+  With stack patterns:    avg 9.4 suspects/function
   Without stack patterns: avg 2.0 suspects/function

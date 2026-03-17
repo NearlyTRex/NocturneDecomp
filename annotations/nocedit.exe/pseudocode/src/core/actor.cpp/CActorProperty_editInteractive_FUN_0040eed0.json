@@ -4,7 +4,7 @@
       {
         "category": "type_error",
         "column": 3,
-        "line": 88,
+        "line": 13,
         "message": "unknown type name 'code'"
       },
       {
@@ -18,30 +18,6 @@
         "column": 15,
         "line": 157,
         "message": "assigning to 'char *' from incompatible type 'byte[300]' (aka 'unsigned char[300]')"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 160,
-        "message": "cast from pointer to smaller type 'char' loses information"
-      },
-      {
-        "category": "other",
-        "column": 15,
-        "line": 163,
-        "message": "subscript of pointer to function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
-      },
-      {
-        "category": "pointer_arithmetic",
-        "column": 25,
-        "line": 164,
-        "message": "arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 24,
-        "line": 167,
-        "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "incompatible_types",
@@ -94,26 +70,50 @@
       {
         "category": "other",
         "column": 23,
-        "line": 248,
+        "line": 245,
         "message": "member reference base type 'EActorPropertyType' (aka 'int') is not a structure or union"
       },
       {
         "category": "format_error",
         "column": 77,
-        "line": 261,
+        "line": 258,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 23,
-        "line": 298,
+        "line": 292,
         "message": "member reference base type 'EActorPropertyType' (aka 'int') is not a structure or union"
       },
       {
         "category": "incompatible_types",
         "column": 15,
-        "line": 333,
+        "line": 327,
         "message": "assigning to 'char *' from incompatible type 'byte[260]' (aka 'unsigned char[260]')"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 9,
+        "line": 355,
+        "message": "no matching function for call to 'makepath'"
+      },
+      {
+        "category": "incompatible_types",
+        "column": 15,
+        "line": 364,
+        "message": "assigning to 'char *' from incompatible type 'byte[260]' (aka 'unsigned char[260]')"
+      },
+      {
+        "category": "other",
+        "column": 18,
+        "line": 368,
+        "message": "C-style cast from 'char' to 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)') is not allowed"
+      },
+      {
+        "category": "undeclared_identifier",
+        "column": 16,
+        "line": 370,
+        "message": "use of undeclared identifier 'code'"
       }
     ],
     "success": false,
@@ -121,20 +121,20 @@
   },
   "complexity": {
     "assembly_lines": 2062,
-    "complexity_score": 1350,
+    "complexity_score": 1301,
     "cross_reference_count": 3,
     "function_call_count": 31,
     "global_count": 44,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 770,
-    "suspect_count": 56,
+    "pseudocode_lines": 761,
+    "suspect_count": 52,
     "suspect_types": [
       "pointer_cast",
       "unknown_field",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 2832
+    "total_lines": 2823
   },
   "cross_references": [
     {
@@ -514,13 +514,13 @@
     },
     {
       "addr": "0066e30c",
-      "name": "SPropertyFlag_ARRAY_0066e30c",
+      "name": "g_PropertyFlagDefinitions",
       "type": "SPropertyFlag[2]",
       "value": null
     },
     {
       "addr": "0066e310",
-      "name": "SPropertyFlag_ARRAY_0066e30c[0].name",
+      "name": "g_PropertyFlagDefinitions[0].name",
       "type": "undefined4",
       "value": null
     },
@@ -998,10 +998,10 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 81,
+      "line": 6,
       "match": "code",
       "severity": "moderate",
-      "text": "code cVar2;",
+      "text": "code cVar4;",
       "type": "unresolved_funcptr"
     },
     {
@@ -1053,14 +1053,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 160,
-      "match": "code",
-      "severity": "moderate",
-      "text": "} while (cVar2 != (code)0x0);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 163,
       "match": "param3",
@@ -1073,7 +1065,7 @@
       "line": 176,
       "match": "code",
       "severity": "moderate",
-      "text": "cVar2 = (code)pcVar14[1];",
+      "text": "cVar4 = (code)pcVar14[1];",
       "type": "unresolved_funcptr"
     },
     {
@@ -1081,7 +1073,7 @@
       "line": 180,
       "match": "code",
       "severity": "moderate",
-      "text": "} while (cVar2 != (code)0x0);",
+      "text": "} while (cVar4 != (code)0x0);",
       "type": "unresolved_funcptr"
     },
     {
@@ -1121,12 +1113,12 @@
       "line": 231,
       "match": "param1",
       "severity": "mild",
-      "text": "if (((this_ptr->param1).v_int == 0) || (pcVar14 != (char *)(local_37ec.base.item_count + -1)))",
+      "text": "if (((this_ptr->param1).v_int == 0) || (iVar7 != local_37ec.base.item_count + -1)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 241,
+      "line": 238,
       "match": "._0_1_",
       "severity": "mild",
       "text": "local_854.type._0_1_ = PROP_INT;",
@@ -1134,7 +1126,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 264,
+      "line": 261,
       "match": "(byte *)((int)",
       "severity": "mild",
       "text": "*(byte *)((int)&pCVar14->type + 1) = bVar1;",
@@ -1142,7 +1134,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 265,
+      "line": 262,
       "match": "(CActorProperty *)((int)",
       "severity": "mild",
       "text": "pCVar14 = (CActorProperty *)((int)&pCVar14->type + 2);",
@@ -1150,7 +1142,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 271,
+      "line": 268,
       "match": "param1",
       "severity": "mild",
       "text": "if ((this_ptr->param1).v_int != 0) {",
@@ -1158,31 +1150,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 281,
+      "line": 278,
       "match": "param1",
       "severity": "mild",
-      "text": "if (((this_ptr->param1).v_int == 0) || (pcVar14 != (char *)(local_2cf4.base.item_count + -1)))",
+      "text": "if (((this_ptr->param1).v_int == 0) || (iVar7 != local_2cf4.base.item_count + -1)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 291,
+      "line": 285,
       "match": "._0_1_",
       "severity": "mild",
       "text": "local_548.type._0_1_ = PROP_INT;",
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 336,
-      "match": "code",
-      "severity": "moderate",
-      "text": "} while (cVar2 != (code)0x0);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 341,
+      "line": 335,
       "match": "param1",
       "severity": "mild",
       "text": "if ((this_ptr->param1).v_int != 0) {",
@@ -1190,79 +1174,63 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 351,
+      "line": 345,
       "match": "param1",
       "severity": "mild",
-      "text": "if (((this_ptr->param1).v_int == 0) || (pcVar14 != (char *)(local_309c.base.item_count + -1)))",
+      "text": "if (((this_ptr->param1).v_int == 0) || (iVar7 != local_309c.base.item_count + -1)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 372,
+      "line": 363,
       "match": "code",
       "severity": "moderate",
-      "text": "cVar2 = (code)pcVar14[1];",
+      "text": "cVar4 = (code)pcVar14[1];",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 376,
+      "line": 367,
       "match": "code",
       "severity": "moderate",
-      "text": "} while (cVar2 != (code)0x0);",
+      "text": "} while (cVar4 != (code)0x0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 393,
+      "line": 401,
       "match": "code",
       "severity": "moderate",
-      "text": "} while (cVar2 != (code)0x0);",
+      "text": "cVar4 = (code)pcVar14[1];",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 410,
+      "line": 405,
       "match": "code",
       "severity": "moderate",
-      "text": "cVar2 = (code)pcVar14[1];",
+      "text": "} while (cVar4 != (code)0x0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 414,
+      "line": 438,
       "match": "code",
       "severity": "moderate",
-      "text": "} while (cVar2 != (code)0x0);",
+      "text": "cVar4 = (code)pcVar14[1];",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 430,
+      "line": 442,
       "match": "code",
       "severity": "moderate",
-      "text": "} while (cVar2 != (code)0x0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 447,
-      "match": "code",
-      "severity": "moderate",
-      "text": "cVar2 = (code)pcVar14[1];",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 451,
-      "match": "code",
-      "severity": "moderate",
-      "text": "} while (cVar2 != (code)0x0);",
+      "text": "} while (cVar4 != (code)0x0);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 498,
+      "line": 489,
       "match": "param1",
       "severity": "mild",
       "text": "if ((this_ptr->param1).v_int < ((this_ptr->data).v_kfm_ptr)->part_visibility_flags[0]) {",
@@ -1270,7 +1238,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 502,
+      "line": 493,
       "match": "param1",
       "severity": "mild",
       "text": "(this_ptr->param1).v_int * 10 + 1);",
@@ -1278,7 +1246,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 518,
+      "line": 509,
       "match": "param1",
       "severity": "mild",
       "text": "if ((this_ptr->param1).v_int < this_ptr_00->count) {",
@@ -1286,7 +1254,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 520,
+      "line": 511,
       "match": "param1",
       "severity": "mild",
       "text": "core_cloth_cpp_CClothList_remove_FUN_0043c170(this_ptr_00,(this_ptr->param1).v_int);",
@@ -1294,7 +1262,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 524,
+      "line": 515,
       "match": "param1",
       "severity": "mild",
       "text": "pacVar16 = this_ptr_00->filenames + (this_ptr->param1).v_int;",
@@ -1302,7 +1270,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 546,
+      "line": 537,
       "match": "param1",
       "severity": "mild",
       "text": "if (0 < (this_ptr->param1).v_int) {",
@@ -1310,7 +1278,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 550,
+      "line": 541,
       "match": "param2",
       "severity": "mild",
       "text": "(&local_1e54.base,*(char **)(iVar19 + (int)(this_ptr->param2).v_ptr));",
@@ -1318,7 +1286,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 551,
+      "line": 542,
       "match": "param2",
       "severity": "mild",
       "text": "if (*(this_ptr->data).v_int_ptr == *(int *)((this_ptr->param2).v_int + 4 + iVar19)) {",
@@ -1326,7 +1294,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 556,
+      "line": 547,
       "match": "param1",
       "severity": "mild",
       "text": "} while (iVar10 < (this_ptr->param1).v_int);",
@@ -1334,7 +1302,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 558,
+      "line": 549,
       "match": "param1",
       "severity": "mild",
       "text": "if (((this_ptr->param1).v_int == 2) && (-1 < iVar7)) {",
@@ -1342,7 +1310,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 559,
+      "line": 550,
       "match": "param2",
       "severity": "mild",
       "text": "pvVar10 = (this_ptr->param2).v_ptr;",
@@ -1350,7 +1318,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 567,
+      "line": 558,
       "match": "param2",
       "severity": "mild",
       "text": "pvVar10 = (this_ptr->param2).v_ptr;",
@@ -1358,7 +1326,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 569,
+      "line": 560,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "*(this_ptr->data).v_int_ptr = *(int *)((int)pvVar10 + iVar7 + 4);",
@@ -1366,7 +1334,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 575,
+      "line": 566,
       "match": "param1",
       "severity": "mild",
       "text": "iVar7 = (this_ptr->param1).v_int;",
@@ -1374,7 +1342,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 598,
+      "line": 589,
       "match": "param1",
       "severity": "mild",
       "text": "if ((this_ptr->param1).v_int < ((this_ptr->data).v_rulelist_ptr)->list_size) {",
@@ -1382,7 +1350,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 600,
+      "line": 591,
       "match": "param1",
       "severity": "mild",
       "text": "((this_ptr->data).v_rulelist_ptr,(this_ptr->param1).v_int);",
@@ -1390,7 +1358,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 685,
+      "line": 676,
       "match": "param1",
       "severity": "mild",
       "text": "if (this_ptr_01->list_size <= (this_ptr->param1).v_int) {",
@@ -1398,7 +1366,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 687,
+      "line": 678,
       "match": "param1",
       "severity": "mild",
       "text": "(this_ptr_01,(this_ptr->param1).v_int,acStack_1d9 + 1,local_175 + 1);",
@@ -1406,7 +1374,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 690,
+      "line": 681,
       "match": "param1",
       "severity": "mild",
       "text": "pacVar18 = this_ptr_01->conditions + (this_ptr->param1).v_int;",
@@ -1414,23 +1382,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 721,
+      "line": 712,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&SPropertyFlag_ARRAY_0066e30c[0].mask + iVar20)) != 0) {",
+      "text": "*(uint *)((int)&g_PropertyFlagDefinitions[0].mask + iVar20)) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 726,
+      "line": 717,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&SPropertyFlag_ARRAY_0066e30c[0].name + iVar20),pcVar14);",
+      "text": "*(uint *)((int)&g_PropertyFlagDefinitions[0].name + iVar20),pcVar14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 759,
+      "line": 750,
       "match": "(char *)((int)",
       "severity": "mild",
       "text": "pcVar15 = (char *)((int)((this_ptr->data).v_dfm_ptr)->transformed_vertices +",
@@ -1438,7 +1406,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 760,
+      "line": 751,
       "match": "param1",
       "severity": "mild",
       "text": "(this_ptr->param1).v_int * 100 + 0x1a0);",

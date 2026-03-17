@@ -21,7 +21,7 @@
 ;   int INT_00684edc = 0x0
 ;   void* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00 = 00602434
 ;   void* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08 = 00602434
-;   undefined1 DAT_03f9b850
+;   char[16] CHAR_ARRAY_03f9b850
 ;
 ; Called Functions:
 ;   crt_heap.c_AllocateFromFreeList_FUN_00609410
@@ -142,7 +142,7 @@ section .text
         ;   XREF to: 00601c07 (UNCONDITIONAL_JUMP)  ; LAB_00601c07
     XOR BH,BH                           ; 00601cb0
         ;   Label: LAB_00601cb0
-    MOV byte ptr [0x03f9b850],BH        ; 00601cb2 | DAT_03f9b850
+    MOV byte ptr [0x03f9b850],BH        ; 00601cb2 | CHAR_ARRAY_03f9b850
     CALL dword ptr [0x00684f08]         ; 00601cb8 | PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08
     MOV EAX,dword ptr [ESP]             ; 00601cbe
     ADD ESP,0xc                         ; 00601cc1

@@ -149,7 +149,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270",
-    "signature": "int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename,int auto_select_flag,uint unknown)"
+    "signature": "int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags)"
   },
   "function_calls": [
     {
@@ -402,35 +402,35 @@
       },
       {
         "is_param": true,
-        "name": "search_pattern",
+        "name": "dialog_title",
         "offset": 8,
         "size": 4,
         "type": "char *"
       },
       {
         "is_param": true,
-        "name": "directory",
+        "name": "search_directory",
         "offset": 12,
         "size": 4,
         "type": "char *"
       },
       {
         "is_param": true,
-        "name": "target_filename",
+        "name": "file_pattern",
         "offset": 16,
         "size": 4,
         "type": "char *"
       },
       {
         "is_param": true,
-        "name": "auto_select_flag",
+        "name": "output_filename",
         "offset": 20,
         "size": 4,
-        "type": "int"
+        "type": "char *"
       },
       {
         "is_param": true,
-        "name": "unknown",
+        "name": "flags",
         "offset": 24,
         "size": 4,
         "type": "uint"

@@ -11,10 +11,9 @@ void __cdecl core_setedit_cpp_CDemonSet_editSpotLight_FUN_0057b500(CDemonSet *th
 {
   C3DSLight *light;
   int iVar1;
-  int iVar4;
   int iVar2;
   int iVar3;
-  int unaff_EDI;
+  int local_e1;
   
   if ((-1 < light_index) && (light_index < this_ptr->light_count)) {
     light = this_ptr->lights + light_index;
@@ -23,23 +22,23 @@ void __cdecl core_setedit_cpp_CDemonSet_editSpotLight_FUN_0057b500(CDemonSet *th
       if (0 < g_MasterLightCount) {
         iVar2 = 0;
         do {
-          unaff_EDI = *(int *)((int)g_MasterLightList + iVar2);
-          iVar1 = _strcmp(light->name,(char *)(unaff_EDI + 0x40));
+          local_e1 = *(int *)((int)g_MasterLightList + iVar2);
+          iVar1 = _strcmp(light->name,(char *)(local_e1 + 0x40));
           if (iVar1 == 0) {
-            *(uint *)(unaff_EDI + 0x1cb4) = 0;
+            *(uint *)(local_e1 + 0x1cb4) = 0;
             break;
           }
           iVar3 = iVar3 + 1;
           iVar2 = iVar2 + 4;
         } while (iVar3 < g_MasterLightCount);
       }
-      iVar4 = core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(this_ptr,light);
-      *(uint *)(unaff_EDI + 0x1cb4) = 1;
-      if (iVar4 != 0) {
+      iVar3 = core_setedit_cpp_CDemonSet_positionLight_FUN_0057ae50(this_ptr,light);
+      *(uint *)(local_e1 + 0x1cb4) = 1;
+      if (iVar3 != 0) {
         core_set_cpp_CDemonSet_clearLights_FUN_0056d2d0(this_ptr);
-        iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+        iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                           (g_CEditorToolsPtr,"Precompute light visibility?");
-        if (iVar4 != 0) {
+        if (iVar3 != 0) {
           core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(this_ptr,light_index);
         }
         core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);

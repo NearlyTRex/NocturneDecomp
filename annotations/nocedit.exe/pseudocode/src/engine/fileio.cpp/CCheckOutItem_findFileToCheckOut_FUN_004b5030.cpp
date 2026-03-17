@@ -88,7 +88,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030(CChe
       return 0;
     }
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-              (&local_86c.base,(int)output_filename_buffer,pcVar5,0);
+              (&local_86c.base,output_filename_buffer,(int)pcVar5,0);
     iVar4 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60(&local_1c,output_filename_buffer)
     ;
     if (iVar4 < 0) break;

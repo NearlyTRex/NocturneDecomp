@@ -6,18 +6,17 @@
   },
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 115,
+    "complexity_score": 59,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 7,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
-    "suspect_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 44,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 157
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -207,52 +206,12 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "unaff_EDI = *(int *)((int)g_MasterLightList + iVar2);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 18,
       "match": "(int *)((int)",
       "severity": "mild",
-      "text": "unaff_EDI = *(int *)((int)g_MasterLightList + iVar2);",
+      "text": "local_e1 = *(int *)((int)g_MasterLightList + iVar2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "iVar1 = _strcmp(light->name,(char *)(unaff_EDI + 0x40));",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 22,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "*(uint *)(unaff_EDI + 0x1cb4) = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "*(uint *)(unaff_EDI + 0x1cb4) = 1;",
-      "type": "unaffected_reg"
     }
   ]
 }

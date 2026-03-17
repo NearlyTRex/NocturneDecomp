@@ -13839,105 +13839,12 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_course.cpp_CCourse_interpolate_FUN_004427a0",
     "ret":"void",
     "vars":{
       "locals":[
-        {
-          "name":"bVar7",
-          "storage":{
-            "reg":"DF",
-            "size":1,
-            "varnodes":[
-              {
-                "addr":"register:0000020a",
-                "offset":522,
-                "size":1
-              }
-            ]
-          },
-          "type":"byte"
-        },
-        {
-          "name":"iVar5",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":56
-        },
-        {
-          "name":"pCVar2",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CCourseFrame*",
-          "use":116
-        },
-        {
-          "name":"pCVar3",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"CQuaternion4f*",
-          "use":337
-        },
-        {
-          "name":"puVar4",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4*",
-          "use":338
-        },
-        {
-          "name":"puVar6",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4*",
-          "use":360
-        },
         {
           "name":"local_14",
           "storage":{
@@ -13987,20 +13894,68 @@
           "type":"float"
         },
         {
+          "name":"local_20",
+          "storage":{
+            "offset":-32,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0x20]",
+                "offset":-32,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"local_24",
+          "storage":{
+            "offset":-36,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0x24]",
+                "offset":-36,
+                "size":4
+              }
+            ]
+          },
+          "type":"float"
+        },
+        {
+          "name":"local_30",
+          "storage":{
+            "offset":-48,
+            "size":12,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0x30]",
+                "offset":-48,
+                "size":12
+              }
+            ]
+          },
+          "type":"CVector3f"
+        },
+        {
           "name":"local_3c",
           "storage":{
             "offset":-60,
-            "size":32,
+            "size":12,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x3c]",
                 "offset":-60,
-                "size":32
+                "size":12
               }
             ]
           },
-          "type":"undefined1[32]"
+          "type":"CVector3f"
         },
         {
           "name":"local_40",
@@ -14115,6 +14070,22 @@
           "type":"CQuaternion4f"
         },
         {
+          "name":"local_74",
+          "storage":{
+            "offset":-116,
+            "size":16,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0x74]",
+                "offset":-116,
+                "size":16
+              }
+            ]
+          },
+          "type":"CQuaternion4f"
+        },
+        {
           "name":"local_78",
           "storage":{
             "offset":-120,
@@ -14147,24 +14118,20 @@
           "type":"float"
         },
         {
-          "name":"afStackY_1850",
-          "type":"float[1517]"
-        },
-        {
-          "name":"fVar1",
+          "name":"local_90",
           "storage":{
-            "size":4,
-            "unassigned":true,
+            "offset":-144,
+            "size":8,
+            "stack":true,
             "varnodes":[
               {
-                "addr":"HASH:5f1a87cf6b",
-                "offset":408467001195,
-                "size":4
+                "addr":"Stack[-0x90]",
+                "offset":-144,
+                "size":8
               }
             ]
           },
-          "type":"float",
-          "use":337
+          "type":"double"
         }
       ],
       "params":[
@@ -14232,9 +14199,6 @@
           },
           "type":"CQuaternion4f*"
         }
-      ],
-      "storage_conflicts_resolved":[
-        "afStackY_1850"
       ]
     }
   },
@@ -14248,28 +14212,14 @@
       }
     ],
     "conv":"__cdecl",
+    "custom_storage":true,
     "importable":true,
     "name":"core_course.cpp_CCourse_importMatrices_FUN_00442ea0",
     "ret":"void",
     "vars":{
       "locals":[
         {
-          "name":"bVar8",
-          "storage":{
-            "reg":"DF",
-            "size":1,
-            "varnodes":[
-              {
-                "addr":"register:0000020a",
-                "offset":522,
-                "size":1
-              }
-            ]
-          },
-          "type":"byte"
-        },
-        {
-          "name":"unaff_ESI",
+          "name":"local_e1",
           "storage":{
             "reg":"ESI",
             "size":4,
@@ -14277,78 +14227,15 @@
               {
                 "addr":"register:00000018",
                 "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4",
-          "use":-1
-        },
-        {
-          "name":"unaff_EDI",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4",
-          "use":-1
-        },
-        {
-          "name":"fVar4",
-          "storage":{
-            "reg":"EBX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000000c",
-                "offset":12,
                 "size":4
               }
             ]
           },
           "type":"float",
-          "use":15
+          "use":-1
         },
         {
-          "name":"iVar2",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":101
-        },
-        {
-          "name":"pCVar3",
-          "storage":{
-            "reg":"EDX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000008",
-                "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"CCourseFrame*",
-          "use":319
-        },
-        {
-          "name":"puVar6",
+          "name":"local_e2",
           "storage":{
             "reg":"EDI",
             "size":4,
@@ -14360,40 +14247,8 @@
               }
             ]
           },
-          "type":"undefined4*",
-          "use":392
-        },
-        {
-          "name":"puVar5",
-          "storage":{
-            "reg":"ESI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000018",
-                "offset":24,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4*",
-          "use":393
-        },
-        {
-          "name":"puVar7",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"undefined4*",
-          "use":393
+          "type":"float",
+          "use":-1
         },
         {
           "name":"local_c",
@@ -14412,52 +14267,20 @@
           "type":"float"
         },
         {
-          "name":"local_10",
-          "storage":{
-            "offset":-16,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x10]",
-                "offset":-16,
-                "size":4
-              }
-            ]
-          },
-          "type":"float"
-        },
-        {
-          "name":"local_14",
-          "storage":{
-            "offset":-20,
-            "size":4,
-            "stack":true,
-            "varnodes":[
-              {
-                "addr":"Stack[-0x14]",
-                "offset":-20,
-                "size":4
-              }
-            ]
-          },
-          "type":"float"
-        },
-        {
           "name":"local_18",
           "storage":{
             "offset":-24,
-            "size":4,
+            "size":12,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[-0x18]",
                 "offset":-24,
-                "size":4
+                "size":12
               }
             ]
           },
-          "type":"float"
+          "type":"CVector3f"
         },
         {
           "name":"local_28",
@@ -14505,7 +14328,7 @@
               }
             ]
           },
-          "type":"undefined1[4]"
+          "type":"float"
         },
         {
           "name":"local_34",
@@ -14521,7 +14344,7 @@
               }
             ]
           },
-          "type":"undefined1[4]"
+          "type":"float"
         },
         {
           "name":"local_58",
@@ -14538,26 +14361,6 @@
             ]
           },
           "type":"CMatrix3x3f"
-        },
-        {
-          "name":"auStackY_1804",
-          "type":"undefined4[1508]"
-        },
-        {
-          "name":"pCVar1",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:27f798cafda",
-                "offset":2746523365338,
-                "size":4
-              }
-            ]
-          },
-          "type":"CQuaternion4f*",
-          "use":384
         }
       ],
       "params":[
@@ -14609,9 +14412,6 @@
           },
           "type":"int"
         }
-      ],
-      "storage_conflicts_resolved":[
-        "auStackY_1804"
       ]
     }
   },
@@ -104434,6 +104234,53 @@
     "ret":"void",
     "vars":{
       "locals":[
+        {
+          "name":"local_e2",
+          "storage":{
+            "reg":"EBP",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000014",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"undefined4",
+          "use":-1
+        },
+        {
+          "name":"local_e1",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"undefined4",
+          "use":-1
+        },
+        {
+          "name":"pCVar1",
+          "storage":{
+            "reg":"EAX",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"CHero*",
+          "use":219
+        },
         {
           "name":"local_res0",
           "storage":{

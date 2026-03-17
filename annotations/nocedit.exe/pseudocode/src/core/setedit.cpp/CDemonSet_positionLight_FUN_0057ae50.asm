@@ -7,6 +7,7 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ; C3DSLight *      Stack[0x8]:4   light
 ; Local Variables:
+; char[100]        Stack[-0x84]:100  local_84
 ; undefined4       Stack[-0x20]:4  local_20
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
@@ -64,17 +65,35 @@ section .text
     PUSH EBP                            ; 0057ae53
     MOV EBP,ESP                         ; 0057ae54
     SUB ESP,0x178                       ; 0057ae56
-    AND ESP,0xfffffff8                  ; 0057ae5c
+    NOP                                 ; 0057ae5c
+    NOP                                 ; 0057ae5d
+    NOP                                 ; 0057ae5e
     MOV EAX,dword ptr [EBP + 0x18]      ; 0057ae5f
     MOV EDX,0x1                         ; 0057ae62
     PUSH 0x2d7eaf0                      ; 0057ae67 | g_CDemonLightInstance
     XOR ECX,ECX                         ; 0057ae6c
     MOV EAX,dword ptr [EAX + 0x11e0]    ; 0057ae6e
-    MOV dword ptr [ESP + 0x174],EDX     ; 0057ae74
-    MOV dword ptr [ESP + 0x16c],EAX     ; 0057ae7b
+    MOV dword ptr [EBP + -0x8],EDX      ; 0057ae74
+    NOP                                 ; 0057ae77
+    NOP                                 ; 0057ae78
+    NOP                                 ; 0057ae79
+    NOP                                 ; 0057ae7a
+    MOV dword ptr [EBP + -0x10],EAX     ; 0057ae7b
+    NOP                                 ; 0057ae7e
+    NOP                                 ; 0057ae7f
+    NOP                                 ; 0057ae80
+    NOP                                 ; 0057ae81
     MOV EAX,dword ptr [EBP + 0x18]      ; 0057ae82
-    MOV dword ptr [ESP + 0x178],ECX     ; 0057ae85
-    MOV dword ptr [ESP + 0x170],ECX     ; 0057ae8c
+    MOV dword ptr [EBP + -0x4],ECX      ; 0057ae85
+    NOP                                 ; 0057ae88
+    NOP                                 ; 0057ae89
+    NOP                                 ; 0057ae8a
+    NOP                                 ; 0057ae8b
+    MOV dword ptr [EBP + -0xc],ECX      ; 0057ae8c
+    NOP                                 ; 0057ae8f
+    NOP                                 ; 0057ae90
+    NOP                                 ; 0057ae91
+    NOP                                 ; 0057ae92
     MOV dword ptr [EAX + 0x11e0],0x0    ; 0057ae93
     CALL core_dlight.cpp_CDemonLight_init_FUN_004727c0 ; 0057ae9d
         ;   XREF to: 004727c0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_init_FUN_004727c0(CDemonLight * this_ptr)
@@ -121,7 +140,11 @@ section .text
     MOV dword ptr [EDX + 0x8],ECX       ; 0057af1a | DAT_03f48f98
     MOV EDX,dword ptr [EBP + 0x18]      ; 0057af1d
         ;   Label: LAB_0057af1d
-    LEA EDI,[ESP + 0x104]               ; 0057af20
+    LEA EDI,[EBP + -0x74]               ; 0057af20
+    NOP                                 ; 0057af23
+    NOP                                 ; 0057af24
+    NOP                                 ; 0057af25
+    NOP                                 ; 0057af26
     MOV EAX,[0x00681ab8]                ; 0057af27 | g_CSlewPtr
     FLD float ptr [EDX + 0x11c]         ; 0057af2c
     LEA ESI,[EDX + 0x4]                 ; 0057af32
@@ -164,7 +187,11 @@ section .text
     CALL core_slew.cpp_CSlew_processInput_FUN_005a20b0 ; 0057af8c
         ;   XREF to: 005a20b0 (UNCONDITIONAL_CALL)  ; void core_slew.cpp_CSlew_processInput_FUN_005a20b0(CSlew * this_ptr)
     ADD ESP,0x4                         ; 0057af91
-    CMP dword ptr [ESP + 0x170],0x0     ; 0057af94
+    CMP dword ptr [EBP + -0x8],0x0      ; 0057af94
+    NOP                                 ; 0057af98
+    NOP                                 ; 0057af99
+    NOP                                 ; 0057af9a
+    NOP                                 ; 0057af9b
     JZ 0x0057b081                       ; 0057af9c
         ;   XREF to: 0057b081 (CONDITIONAL_JUMP)  ; LAB_0057b081
     MOV EAX,[0x00681ab8]                ; 0057afa2 | g_CSlewPtr
@@ -219,25 +246,45 @@ section .text
     TEST EAX,EAX                        ; 0057b04b
     JZ 0x0057b081                       ; 0057b04d
         ;   XREF to: 0057b081 (CONDITIONAL_JUMP)  ; LAB_0057b081
-    MOV EDX,dword ptr [ESP + 0x174]     ; 0057b04f
+    MOV EDX,dword ptr [EBP + -0x4]      ; 0057b04f
+    NOP                                 ; 0057b052
+    NOP                                 ; 0057b053
+    NOP                                 ; 0057b054
+    NOP                                 ; 0057b055
     INC EDX                             ; 0057b056
     MOV EAX,dword ptr [ESI]             ; 0057b057
-    MOV dword ptr [ESP + 0x174],EDX     ; 0057b059
+    MOV dword ptr [EBP + -0x4],EDX      ; 0057b059
+    NOP                                 ; 0057b05c
+    NOP                                 ; 0057b05d
+    NOP                                 ; 0057b05e
+    NOP                                 ; 0057b05f
     CMP EAX,EDX                         ; 0057b060
     JG 0x0057b06d                       ; 0057b062
         ;   XREF to: 0057b06d (CONDITIONAL_JUMP)  ; LAB_0057b06d
     XOR EBX,EBX                         ; 0057b064
-    MOV dword ptr [ESP + 0x174],EBX     ; 0057b066
-    MOV ESI,dword ptr [ESP + 0x174]     ; 0057b06d
+    MOV dword ptr [EBP + -0x4],EBX      ; 0057b066
+    NOP                                 ; 0057b069
+    NOP                                 ; 0057b06a
+    NOP                                 ; 0057b06b
+    NOP                                 ; 0057b06c
+    MOV ESI,dword ptr [EBP + -0x4]      ; 0057b06d
         ;   Label: LAB_0057b06d
+    NOP                                 ; 0057b070
+    NOP                                 ; 0057b071
+    NOP                                 ; 0057b072
+    NOP                                 ; 0057b073
     PUSH ESI                            ; 0057b074
     MOV EAX,dword ptr [EBP + 0x14]      ; 0057b075
     PUSH EAX                            ; 0057b078
     CALL core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 ; 0057b079
         ;   XREF to: 0056ae50 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50(CDemonSet * this_ptr, int index)
     ADD ESP,0x8                         ; 0057b07e
-    CMP dword ptr [ESP + 0x170],0x0     ; 0057b081
+    CMP dword ptr [EBP + -0x8],0x0      ; 0057b081
         ;   Label: LAB_0057b081
+    NOP                                 ; 0057b085
+    NOP                                 ; 0057b086
+    NOP                                 ; 0057b087
+    NOP                                 ; 0057b088
     JNZ 0x0057b30f                      ; 0057b089
         ;   XREF to: 0057b30f (CONDITIONAL_JUMP)  ; LAB_0057b30f
     PUSH 0x100                          ; 0057b08f
@@ -274,12 +321,24 @@ section .text
     JZ 0x0057b100                       ; 0057b0d3
         ;   XREF to: 0057b100 (CONDITIONAL_JUMP)  ; LAB_0057b100
     MOV EAX,0x1                         ; 0057b0d5
-    MOV EDX,dword ptr [ESP + 0x170]     ; 0057b0da
+    MOV EDX,dword ptr [EBP + -0x8]      ; 0057b0da
+    NOP                                 ; 0057b0dd
+    NOP                                 ; 0057b0de
+    NOP                                 ; 0057b0df
+    NOP                                 ; 0057b0e0
     SUB EAX,EDX                         ; 0057b0e1
-    MOV dword ptr [ESP + 0x170],EAX     ; 0057b0e3
+    MOV dword ptr [EBP + -0x8],EAX      ; 0057b0e3
+    NOP                                 ; 0057b0e6
+    NOP                                 ; 0057b0e7
+    NOP                                 ; 0057b0e8
+    NOP                                 ; 0057b0e9
     JZ 0x0057b100                       ; 0057b0ea
         ;   XREF to: 0057b100 (CONDITIONAL_JUMP)  ; LAB_0057b100
-    MOV EBX,dword ptr [ESP + 0x174]     ; 0057b0ec
+    MOV EBX,dword ptr [EBP + -0x4]      ; 0057b0ec
+    NOP                                 ; 0057b0ef
+    NOP                                 ; 0057b0f0
+    NOP                                 ; 0057b0f1
+    NOP                                 ; 0057b0f2
     PUSH EBX                            ; 0057b0f3
     MOV ESI,dword ptr [EBP + 0x14]      ; 0057b0f4
     PUSH ESI                            ; 0057b0f7
@@ -295,7 +354,11 @@ section .text
     ADD ESP,0xc                         ; 0057b10e
     PUSH 0xb                            ; 0057b111
     PUSH 0x0                            ; 0057b113
-    LEA EAX,[ESP + 0x10c]               ; 0057b115
+    LEA EAX,[EBP + -0x74]               ; 0057b115
+    NOP                                 ; 0057b118
+    NOP                                 ; 0057b119
+    NOP                                 ; 0057b11a
+    NOP                                 ; 0057b11b
     PUSH EAX                            ; 0057b11c
     CALL engine_2d.c_drawText_FUN_00401fd0 ; 0057b11d
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
@@ -448,7 +511,11 @@ section .text
         ;   XREF to: 0057af67 (CONDITIONAL_JUMP)  ; LAB_0057af67
     PUSH 0x1                            ; 0057b2bc
     PUSH 0x64                           ; 0057b2be
-    LEA EAX,[ESP + 0x10c]               ; 0057b2c0
+    LEA EAX,[EBP + -0x74]               ; 0057b2c0
+    NOP                                 ; 0057b2c3
+    NOP                                 ; 0057b2c4
+    NOP                                 ; 0057b2c5
+    NOP                                 ; 0057b2c6
     PUSH EAX                            ; 0057b2c7
     PUSH 0x647769                       ; 0057b2c8 | = "Edit light name"
     MOV EAX,[0x00678a60]                ; 0057b2cd | g_CEditorToolsInstance | g_CEditorToolsPtr
@@ -525,11 +592,19 @@ section .text
     MOV dword ptr [EAX + 0x8],ECX       ; 0057b385
     MOV EAX,[0x00681ab8]                ; 0057b388 | g_CSlewPtr
         ;   Label: LAB_0057b388
-    LEA ESI,[ESP + 0x104]               ; 0057b38d
+    LEA ESI,[EBP + -0x74]               ; 0057b38d
+    NOP                                 ; 0057b390
+    NOP                                 ; 0057b391
+    NOP                                 ; 0057b392
+    NOP                                 ; 0057b393
     MOV ECX,0x1                         ; 0057b394
     FLD float ptr [EAX + 0x18]          ; 0057b399 | DAT_03f48f9c
     MOV EAX,dword ptr [EBP + 0x18]      ; 0057b39c
-    MOV dword ptr [ESP + 0x16c],ECX     ; 0057b39f
+    MOV dword ptr [EBP + -0xc],ECX      ; 0057b39f
+    NOP                                 ; 0057b3a2
+    NOP                                 ; 0057b3a3
+    NOP                                 ; 0057b3a4
+    NOP                                 ; 0057b3a5
     LEA EDI,[EAX + 0x4]                 ; 0057b3a6
     FSTP float ptr [EAX + 0x11c]        ; 0057b3a9
     PUSH EDI                            ; 0057b3af
@@ -558,10 +633,18 @@ section .text
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     MOV EDX,dword ptr [EBP + 0x18]      ; 0057b3dd
     XOR ECX,ECX                         ; 0057b3e0
-    MOV EAX,dword ptr [ESP + 0x168]     ; 0057b3e2
+    MOV EAX,dword ptr [EBP + -0x10]     ; 0057b3e2
+    NOP                                 ; 0057b3e5
+    NOP                                 ; 0057b3e6
+    NOP                                 ; 0057b3e7
+    NOP                                 ; 0057b3e8
     MOV dword ptr [0x02d807a4],ECX      ; 0057b3e9 | g_CDemonLightInstance.light_enabled_flag
     MOV dword ptr [EDX + 0x11e0],EAX    ; 0057b3ef
-    MOV EAX,dword ptr [ESP + 0x16c]     ; 0057b3f5
+    MOV EAX,dword ptr [EBP + -0xc]      ; 0057b3f5
+    NOP                                 ; 0057b3f8
+    NOP                                 ; 0057b3f9
+    NOP                                 ; 0057b3fa
+    NOP                                 ; 0057b3fb
     MOV ESP,EBP                         ; 0057b3fc
     POP EBP                             ; 0057b3fe
     POP EDI                             ; 0057b3ff

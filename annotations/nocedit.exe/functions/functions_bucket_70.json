@@ -38586,7 +38586,7 @@
           "type":"CEditorTools*"
         },
         {
-          "name":"search_pattern",
+          "name":"dialog_title",
           "storage":{
             "offset":8,
             "size":4,
@@ -38602,7 +38602,7 @@
           "type":"char*"
         },
         {
-          "name":"directory",
+          "name":"search_directory",
           "storage":{
             "offset":12,
             "size":4,
@@ -38618,7 +38618,7 @@
           "type":"char*"
         },
         {
-          "name":"target_filename",
+          "name":"file_pattern",
           "storage":{
             "offset":16,
             "size":4,
@@ -38634,7 +38634,7 @@
           "type":"char*"
         },
         {
-          "name":"auto_select_flag",
+          "name":"output_filename",
           "storage":{
             "offset":20,
             "size":4,
@@ -38647,10 +38647,10 @@
               }
             ]
           },
-          "type":"int"
+          "type":"char*"
         },
         {
-          "name":"unknown",
+          "name":"flags",
           "storage":{
             "offset":24,
             "size":4,
@@ -41010,6 +41010,22 @@
     "ret":"void",
     "vars":{
       "locals":[
+        {
+          "name":"local_e1",
+          "storage":{
+            "reg":"ESI",
+            "size":4,
+            "varnodes":[
+              {
+                "addr":"register:00000018",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"undefined4",
+          "use":-1
+        },
         {
           "name":"local_res0",
           "storage":{
@@ -91023,7 +91039,7 @@
     "vars":{
       "locals":[
         {
-          "name":"unaff_ESI",
+          "name":"local_e1",
           "storage":{
             "reg":"ESI",
             "size":4,

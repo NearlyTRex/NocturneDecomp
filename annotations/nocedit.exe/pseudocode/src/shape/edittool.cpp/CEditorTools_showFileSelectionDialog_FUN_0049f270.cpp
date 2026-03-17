@@ -2,11 +2,11 @@
 // Address: 0049f270
 // Address Range: [[0049f270, 0049f41a]]
 // Convention: __cdecl
-// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename,int auto_select_flag,uint unknown)
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags)
 
 #include "nocturne.h"
 
-int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename,int auto_select_flag,uint unknown)
+int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags)
 
 {
   int iVar1;
@@ -22,7 +22,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
   
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_8bc);
   shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
-            (&local_8bc.base,directory,target_filename);
+            (&local_8bc.base,search_directory,file_pattern);
   if (local_8bc.base.item_count < 1) {
     pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("No files found");
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(this_ptr,pcVar1);
@@ -32,14 +32,14 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
     shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_8bc.base);
     pcVar3 = (char *)0xffffffff;
     pcVar1 = pcVar3;
-    if (((unknown & 1) != 0) && (output_buffer = (char *)0x0, 0 < local_8bc.base.item_count)) {
+    if (((flags & 1) != 0) && (output_buffer = (char *)0x0, 0 < local_8bc.base.item_count)) {
       do {
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-                  (&local_8bc.base,(int)local_314,output_buffer,0);
+                  (&local_8bc.base,local_314,(int)output_buffer,0);
         shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-                  (&local_8bc.base,(int)local_514,output_buffer,1);
+                  (&local_8bc.base,local_514,(int)output_buffer,1);
         engine_dosio_c_makePath_FUN_00481f50(local_114,(char *)0x0,(char *)0x0,local_314,local_514);
-        iVar1 = _stricmp(local_114,(char *)auto_select_flag);
+        iVar1 = _stricmp(local_114,output_filename);
         pcVar1 = output_buffer;
         if (iVar1 == 0) break;
         output_buffer = output_buffer + 1;
@@ -47,15 +47,15 @@ int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
       } while ((int)output_buffer < local_8bc.base.item_count);
     }
     pcVar2 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                               (&local_8bc,search_pattern,(int)pcVar1,0);
+                               (&local_8bc,dialog_title,(int)pcVar1,0);
     if ((int)pcVar2 < 0) {
       iVar2 = 0;
     }
     else {
-      shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_8bc.base,(int)local_314,pcVar2,0);
-      shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_8bc.base,(int)local_514,pcVar2,1);
+      shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_8bc.base,local_314,(int)pcVar2,0);
+      shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_8bc.base,local_514,(int)pcVar2,1);
       engine_dosio_c_makePath_FUN_00481f50
-                ((char *)auto_select_flag,(char *)0x0,(char *)0x0,local_314,local_514);
+                (output_filename,(char *)0x0,(char *)0x0,local_314,local_514);
       iVar2 = 1;
     }
   }

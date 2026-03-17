@@ -13,19 +13,18 @@
   },
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 217,
+    "complexity_score": 89,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 13,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 15,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 49,
+    "suspect_count": 3,
     "suspect_types": [
       "mmx_assembly",
-      "pointer_cast",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 120
+    "total_lines": 117
   },
   "cross_references": [
     {
@@ -47,9 +46,9 @@
         "004941d5"
       ]
     ],
-    "convention": "__cdecl",
+    "convention": "__edi_esi_ebx",
     "name": "core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9",
-    "signature": "void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)"
+    "signature": "void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)"
   },
   "function_calls": [],
   "globals": [
@@ -137,7 +136,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 3,
-    "declared_stack_bytes": 12,
+    "declared_stack_bytes": 0,
     "estimated_params": 3
   },
   "pcode_summary": {
@@ -175,143 +174,25 @@
     "pcode_op_count": 352
   },
   "stack_frame": {
-    "frame_size": 16,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 12,
+    "frame_size": 0,
+    "local_size": 0,
+    "param_offset": 0,
+    "param_size": 0,
     "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": true,
-        "name": "left_edge",
-        "offset": 4,
-        "size": 4,
-        "type": "SSoftwareEdge *"
-      },
-      {
-        "is_param": true,
-        "name": "right_edge",
-        "offset": 8,
-        "size": 4,
-        "type": "SSoftwareEdge *"
-      },
-      {
-        "is_param": true,
-        "name": "scanline_y",
-        "offset": 12,
-        "size": 4,
-        "type": "int"
-      }
-    ]
+    "variables": []
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "uVar3 = *(uint *)(unaff_ESI + 8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "uVar4 = *(uint *)(unaff_EDI + 8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "iVar5 = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 21,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "iVar5 = unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 22,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "unaff_EDI = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 22,
-      "match": "unaff_ESI",
-      "severity": "moderate",
-      "text": "unaff_EDI = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 27,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[unaff_EBX] + uVar1 * 4);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 27,
+      "line": 24,
       "match": "(void *)((int)",
       "severity": "mild",
-      "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[unaff_EBX] + uVar1 * 4);",
+      "text": "g_PerspectiveScanlineColorPtr = (void *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x18) - uVar3) *",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_EDI",
-      "severity": "moderate",
-      "text": "((longlong)(int)(*(int *)(unaff_EDI + 0x20) - uVar4) *",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 40,
       "match": "(uint *)((int)",
       "severity": "mild",
       "text": "*(uint *)((int)g_PerspectiveScanlineColorPtr + uVar1) =",

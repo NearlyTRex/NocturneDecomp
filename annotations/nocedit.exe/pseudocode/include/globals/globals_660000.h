@@ -240,7 +240,7 @@ extern SMRGLTextureBasic g_LightTextures[20];
 extern SMRGLTextureBasic SMRGLTextureBasic_ARRAY_0066e6b0[6];
 
 // SPropertyFlag[2]
-extern SPropertyFlag SPropertyFlag_ARRAY_0066e30c[2];
+extern SPropertyFlag g_PropertyFlagDefinitions[2];
 
 // SResolutionEntry[9]
 extern SResolutionEntry g_ResolutionTable[9];

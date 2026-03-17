@@ -257,14 +257,14 @@ section .text
     MOV EDX,dword ptr [ESP + 0x624]     ; 004e14a0
     PUSH EDX                            ; 004e14a7
     PUSH EBX                            ; 004e14a8
-    MOV EDI,0x67b684                    ; 004e14a9 | g_MagicNumEFD
+    MOV EDI,0x67b684                    ; 004e14a9 | = "EFD"
     CALL crt_stdio.c_fseek_FUN_005ffacc ; 004e14ae
         ;   XREF to: 005ffacc (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_005ffacc(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 004e14b3
     LEA ESI,[ESP + 0x600]               ; 004e14b6
     MOV ECX,0x4                         ; 004e14bd
     XOR EAX,EAX                         ; 004e14c2
-    CMPSB.REPE ES:EDI,ESI               ; 004e14c4 | g_MagicNumEFD | DAT_0067b685
+    CMPSB.REPE ES:EDI,ESI               ; 004e14c4 | = "EFD" | DAT_0067b685
     JZ 0x004e14cd                       ; 004e14c6
         ;   XREF to: 004e14cd (CONDITIONAL_JUMP)  ; LAB_004e14cd
     SBB EAX,EAX                         ; 004e14c8
@@ -500,7 +500,7 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 004e1795 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 004e179b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 004e179c
-        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
+        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
     ADD ESP,0x18                        ; 004e17a1
     TEST EAX,EAX                        ; 004e17a4
     JNZ 0x004e13f1                      ; 004e17a6

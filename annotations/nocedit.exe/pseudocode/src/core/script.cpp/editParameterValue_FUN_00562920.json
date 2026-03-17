@@ -28,43 +28,43 @@
       {
         "category": "format_error",
         "column": 39,
-        "line": 485,
+        "line": 484,
         "message": "format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 485,
+        "line": 484,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 47,
-        "line": 553,
+        "line": 551,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 76,
-        "line": 646,
+        "line": 644,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       },
       {
         "category": "other",
         "column": 38,
-        "line": 656,
+        "line": 654,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "format_error",
         "column": 39,
-        "line": 667,
+        "line": 665,
         "message": "format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 36,
-        "line": 667,
+        "line": 665,
         "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
       }
     ],
@@ -73,18 +73,18 @@
   },
   "complexity": {
     "assembly_lines": 2421,
-    "complexity_score": 786,
+    "complexity_score": 784,
     "cross_reference_count": 1,
     "function_call_count": 33,
     "global_count": 85,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 756,
+    "pseudocode_lines": 754,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast",
       "unresolved_funcptr"
     ],
-    "total_lines": 3177
+    "total_lines": 3175
   },
   "cross_references": [
     {
@@ -1116,7 +1116,7 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 639,
+      "line": 637,
       "match": "code",
       "severity": "moderate",
       "text": "(g_CEditorToolsPtr,\"WARNING! chooseParm - unknown parm type %d (code needs to be updated)\");",
@@ -1124,7 +1124,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 685,
+      "line": 683,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "if (*(int *)((int)local_a8 + local_14) != 0) {",

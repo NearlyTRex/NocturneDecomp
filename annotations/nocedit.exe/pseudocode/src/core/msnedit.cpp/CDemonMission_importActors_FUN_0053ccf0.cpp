@@ -36,12 +36,12 @@ void __cdecl core_msnedit_cpp_CDemonMission_importActors_FUN_0053ccf0(CDemonMiss
   if (iVar2 == 0) {
     iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,"Select mission file to import actors from","world",
-                       "*.msn",(int)local_3c,0);
+                       "*.msn",local_3c,0);
   }
   else {
     iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,"Select mission file to import actors from","save",
-                       "*.noc",(int)local_3c,0);
+                       "*.noc",local_3c,0);
   }
   if (iVar3 == 0) {
     return;

@@ -10,7 +10,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_shatter_FUN_005a14b0(CDe
 
 {
   CDeformableModel *this_ptr_00;
-  int unaff_EBP;
   int lod_index;
   CVector3i *skinned_vertices;
   SPartInstanceData *part_visibility_flags;
@@ -27,6 +26,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_shatter_FUN_005a14b0(CDe
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
   core_skeleton_cpp_CDeformableModel_shatter_FUN_0059cec0
             (this_ptr_00,center_position,orientation_vector,lod_index,skinned_vertices,
-             part_visibility_flags->visibility_flags,texture_set_indices,unaff_EBP);
+             part_visibility_flags->visibility_flags,texture_set_indices);
   return;
 }

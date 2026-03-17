@@ -141,7 +141,7 @@ int __cdecl CEditorTools::showConfirmationDialog(CEditorTools *this_ptr,char *fo
 
 // Original: shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
 // Address: 0049f270
-int __cdecl CEditorTools::showFileSelectionDialog(CEditorTools *this_ptr,char *search_pattern,char *directory,char *target_filename,int auto_select_flag,uint unknown);
+int __cdecl CEditorTools::showFileSelectionDialog(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags);
 
 // Original: shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
 // Address: 0049f420
@@ -325,7 +325,7 @@ char * __cdecl CStrList::getStringAt(CStrList *this_ptr,int index);
 
 // Original: shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80
 // Address: 004a2f80
-void __cdecl CStrList::getFieldAt(CStrList *this_ptr,int string_index,char *output_buffer,int field_number);
+void __cdecl CStrList::getFieldAt(CStrList *this_ptr,char *output_buffer,int string_index,int field_number);
 
 // Original: shape_edittool.cpp_CStrList_findString_FUN_004a3030
 // Address: 004a3030

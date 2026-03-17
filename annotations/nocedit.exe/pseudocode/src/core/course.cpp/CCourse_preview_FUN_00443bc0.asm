@@ -7,9 +7,7 @@
 ; CCourse *        Stack[0x4]:4   this_ptr
 ; CKeyFramedModel * Stack[0x8]:4   model_ptr
 ; Local Variables:
-; undefined1[16]   Stack[-0xcc]:16  local_cc
-; float            Stack[-0xbc]:4  local_bc
-; float            Stack[-0xb8]:4  local_b8
+; CSlew            Stack[-0xcc]:28  local_cc
 ; CVector3f        Stack[-0xb0]:12  local_b0
 ; CVector3f        Stack[-0xa4]:12  local_a4
 ; CVector3f        Stack[-0x98]:12  local_98

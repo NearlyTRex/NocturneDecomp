@@ -14,7 +14,7 @@ _FILE * __cdecl __allocfp(int unused_param)
   uint uVar2;
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ef8)();
-  if (g_FreeListHeadPointer == (streambuf *)0x0) {
+  if (g_FreeListHeadPointer == (FileListNode *)0x0) {
     dest = &g_StaticFilePoolStart;
     do {
       if ((((_FILE *)dest)->_flag & 3) == 0) {
@@ -36,10 +36,10 @@ LAB_00609398:
     dest = (_FILE **)((int)&psVar1->__put_end + 1);
   }
   else {
-    dest = (_FILE **)g_FreeListHeadPointer->__reserve_base;
+    dest = (_FILE **)g_FreeListHeadPointer->file_struct;
     uVar2 = (uint)((ushort)((_FILE *)dest)->_flag & 0x4003 | 3);
-    psVar1 = g_FreeListHeadPointer;
-    g_FreeListHeadPointer = g_FreeListHeadPointer->__b_lock;
+    psVar1 = (streambuf *)g_FreeListHeadPointer;
+    g_FreeListHeadPointer = g_FreeListHeadPointer->next;
   }
 LAB_00609369:
   memset(dest,0,0x1a);

@@ -57,12 +57,12 @@ def build_struct_size_cache(pseudocode_src_dir):
         _struct_size_cache = cache
         return cache
 
-    for entry in data_types.get('apply_order', []):
-        name = entry.get('name', '')
-        size = entry.get('len')
-        if name and size is not None and size > 0:
-            # Later entries (full definitions) overwrite earlier ones (forward decls)
-            cache[name] = size
+    for section in ('structs', 'unions'):
+        for entry in data_types.get(section, []):
+            name = entry.get('name', '')
+            size = entry.get('len')
+            if name and size is not None and size > 0:
+                cache[name] = size
 
     _struct_size_cache = cache
     log_info("Built struct size cache: %d types with known sizes" % len(cache))

@@ -369,7 +369,7 @@ section .text
     JNZ 0x004e1273                      ; 004e1028
         ;   XREF to: 004e1273 (CONDITIONAL_JUMP)  ; LAB_004e1273
     PUSH 0x4                            ; 004e102e
-    PUSH 0x67b684                       ; 004e1030 | g_MagicNumEFD
+    PUSH 0x67b684                       ; 004e1030 | = "EFD"
     LEA EAX,[ESP + 0x4d8]               ; 004e1035
     PUSH EAX                            ; 004e103c
     CALL crt_fstream.cpp_ostream_write_FUN_005ffcb3 ; 004e103d

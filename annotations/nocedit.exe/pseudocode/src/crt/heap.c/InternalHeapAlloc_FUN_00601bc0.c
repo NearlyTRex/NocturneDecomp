@@ -61,7 +61,7 @@ void * __cdecl InternalHeapAlloc(ulong size)
     bVar2 = false;
   }
 LAB_00601cb0:
-  DAT_03f9b850 = 0;
+  CHAR_ARRAY_03f9b850[0] = '\0';
   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
   return pvVar6;
 }

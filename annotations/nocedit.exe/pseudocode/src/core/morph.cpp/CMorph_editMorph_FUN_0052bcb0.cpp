@@ -112,12 +112,12 @@ void __cdecl core_morph_cpp_CMorph_editMorph_FUN_0052bcb0(CMorph *morph)
   __arrinit(local_4db8,2,&g_CDeformableModelInstanceTypeInfo);
   iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                     (g_CEditorToolsPtr,"Select 1st model file","models",
-                     "*.dfm",(int)local_228,0);
+                     "*.dfm",local_228,0);
   if (iVar3 != 0) {
     core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(local_4db8,local_228);
     iVar5 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,"Select 2nd model file","models",
-                       "*.dfm",(int)local_228,0);
+                       "*.dfm",local_228,0);
     if (iVar5 != 0) {
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(local_4db8 + 1,local_228);
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790

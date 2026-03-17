@@ -31,7 +31,9 @@ section .text
     PUSH EBP                            ; 00558063
     MOV EBP,ESP                         ; 00558064
     SUB ESP,0x10                        ; 00558066
-    AND ESP,0xfffffff8                  ; 00558069
+    NOP                                 ; 00558069
+    NOP                                 ; 0055806a
+    NOP                                 ; 0055806b
     MOV EBX,dword ptr [EBP + 0x14]      ; 0055806c
     LEA ESI,[EBX + 0x158]               ; 0055806f
     PUSH ESI                            ; 00558075
@@ -72,8 +74,10 @@ section .text
     XOR ECX,ECX                         ; 005580c6
         ;   Label: LAB_005580c6
     LEA EAX,[EBX + 0x158]               ; 005580c8
-    MOV dword ptr [ESP + 0xc],ECX       ; 005580ce
-    MOV dword ptr [ESP + 0x4],EAX       ; 005580d2
+    MOV dword ptr [EBP + -0x4],ECX      ; 005580ce
+    NOP                                 ; 005580d1
+    MOV dword ptr [EBP + -0xc],EAX      ; 005580d2
+    NOP                                 ; 005580d5
     FLD float ptr [EBP + 0x18]          ; 005580d6
         ;   Label: LAB_005580d6
     FLDZ                                ; 005580d9
@@ -104,15 +108,18 @@ section .text
     PUSH EBX                            ; 00558110
     CALL core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370 ; 00558111
         ;   XREF to: 0042e370 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharacter * this_ptr, float * remaining_time, int target_bone_index)
-    MOV dword ptr [ESP + 0xc],EAX       ; 00558116
+    MOV dword ptr [EBP + -0x10],EAX     ; 00558116
+    NOP                                 ; 00558119
     ADD ESP,0xc                         ; 0055811a
-    MOV dword ptr [ESP + 0x8],EAX       ; 0055811d
-    MOV EAX,dword ptr [ESP + 0x4]       ; 00558121
+    MOV dword ptr [EBP + -0x8],EAX      ; 0055811d
+    NOP                                 ; 00558120
+    MOV EAX,dword ptr [EBP + -0xc]      ; 00558121
+    NOP                                 ; 00558124
     PUSH EAX                            ; 00558125
     CALL core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0 ; 00558126
         ;   XREF to: 0052dce0 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 0055812b
-    CMP dword ptr [ESP],0x0             ; 0055812e
+    CMP dword ptr [EBP + -0x10],0x0     ; 0055812e
     JL 0x005581db                       ; 00558132
         ;   XREF to: 005581db (CONDITIONAL_JUMP)  ; LAB_005581db
     MOV ECX,dword ptr [EBX + 0x1fbe8]   ; 00558138
@@ -125,8 +132,9 @@ section .text
     MOV EAX,ECX                         ; 0055814a
     JNZ 0x00558285                      ; 0055814c
         ;   XREF to: 00558285 (CONDITIONAL_JUMP)  ; LAB_00558285
-    CMP EAX,dword ptr [ESP + 0x8]       ; 00558152
+    CMP EAX,dword ptr [EBP + -0x8]      ; 00558152
         ;   Label: LAB_00558152
+    NOP                                 ; 00558155
     JNZ 0x0055817a                      ; 00558156
         ;   XREF to: 0055817a (CONDITIONAL_JUMP)  ; LAB_0055817a
     PUSH 0x1                            ; 00558158
@@ -145,8 +153,9 @@ section .text
         ;   XREF to: 0055829f (CONDITIONAL_JUMP)  ; LAB_0055829f
     XOR EAX,EAX                         ; 0055818b
         ;   Label: LAB_0055818b
-    CMP EAX,dword ptr [ESP + 0x8]       ; 0055818d
+    CMP EAX,dword ptr [EBP + -0x8]      ; 0055818d
         ;   Label: LAB_0055818d
+    NOP                                 ; 00558190
     JNZ 0x005581d1                      ; 00558191
         ;   XREF to: 005581d1 (CONDITIONAL_JUMP)  ; LAB_005581d1
     MOV dword ptr [EBX + 0x1fbe8],ESI   ; 00558193
@@ -165,7 +174,8 @@ section .text
         ;   XREF to: 005581d1 (CONDITIONAL_JUMP)  ; LAB_005581d1
     PUSH 0x1                            ; 005581c0
     PUSH 0x6                            ; 005581c2
-    MOV ECX,dword ptr [ESP + 0xc]       ; 005581c4
+    MOV ECX,dword ptr [EBP + -0xc]      ; 005581c4
+    NOP                                 ; 005581c7
     PUSH ECX                            ; 005581c8
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 005581c9
         ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)  ; void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
@@ -176,10 +186,12 @@ section .text
     CALL core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0 ; 005581d3
         ;   XREF to: 0042e8c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCharacter * this_ptr, int layer_action_index)
     ADD ESP,0x8                         ; 005581d8
-    MOV EDI,dword ptr [ESP + 0xc]       ; 005581db
+    MOV EDI,dword ptr [EBP + -0x4]      ; 005581db
         ;   Label: LAB_005581db
+    NOP                                 ; 005581de
     INC EDI                             ; 005581df
-    MOV dword ptr [ESP + 0xc],EDI       ; 005581e0
+    MOV dword ptr [EBP + -0x4],EDI      ; 005581e0
+    NOP                                 ; 005581e3
     CMP EDI,0x2                         ; 005581e4
     JL 0x005580d6                       ; 005581e7
         ;   XREF to: 005580d6 (CONDITIONAL_JUMP)  ; LAB_005580d6

@@ -39,7 +39,7 @@ void __cdecl core_fileman_cpp_CDemonFileManager_createPodFromDirectory_FUN_004bd
   bVar8 = 0;
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                     (g_CEditorToolsPtr,"Select response file.",&s_EmptyChar_006295ce,
-                     "*.vox",(int)local_598,0);
+                     "*.vox",local_598,0);
   if (iVar2 != 0) {
     splitpath(local_598,(char *)0x0,(char *)0x0,local_1a4,(char *)0x0);
     makepath(local_140,(char *)0x0,(char *)0x0,local_1a4,"pod");

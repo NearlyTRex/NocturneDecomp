@@ -153,7 +153,7 @@ section .text
     MOV EBX,dword ptr [0x00678a60]      ; 0054e663 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0054e669 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0054e66a
-        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
+        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
     ADD ESP,0x18                        ; 0054e66f
     PUSH 0x0                            ; 0054e672
     MOV EBX,EAX                         ; 0054e674
@@ -199,7 +199,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 0054e6d6 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 0054e6dc | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0054e6dd
-        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
+        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
     ADD ESP,0x18                        ; 0054e6e2
     MOV EBX,EAX                         ; 0054e6e5
     MOV EAX,EBX                         ; 0054e6e7

@@ -5,23 +5,23 @@ FUNCTION COMPILATION DETAILED ERRORS
 SUMMARY
 --------------------------------------------------
 Total functions compiled: 6484
-Successful: 5866 (90.5%)
-Failed: 618
+Successful: 5867 (90.5%)
+Failed: 617
 
 ERROR CATEGORIES
 --------------------------------------------------
-  other                           1304
-  format_error                     802
-  incompatible_types               211
+  other                           1273
+  format_error                     799
+  incompatible_types               214
   undeclared_identifier            149
   syntax_error                      42
   missing_member                    20
   type_error                        10
-  pointer_arithmetic                10
+  pointer_arithmetic                 9
   pointer_precision                  2
 
 ====================================================================================================
-CATEGORY: other (1304 errors)
+CATEGORY: other (1273 errors)
 ====================================================================================================
 
   core_imp.cpp_CImp_process_FUN_004f9c30
@@ -42,10 +42,10 @@ CATEGORY: other (1304 errors)
     Line 321: C-style cast from 'CVector3f *' to 'float' is not allowed
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0
     Line 399: C-style cast from 'CWeapon *' to 'float' is not allowed
-  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
-    Line 73: C-style cast from 'SClothBone *' to 'float' is not allowed
   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_0042d090
     Line 45: C-style cast from 'UOrientationVector *' to 'float' is not allowed
+  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
+    Line 181: C-style cast from 'char' to 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)') is not allowed
   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210
     Line 113: C-style cast from 'float *' to 'float' is not allowed
   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004f33b0
@@ -102,8 +102,6 @@ CATEGORY: other (1304 errors)
     Line 44: cannot initialize a parameter of type 'void **' with an rvalue of type 'void ***'
   core_ground.cpp_getGroundTypeName_FUN_004eed80
     Line 14: cannot initialize return object of type 'char *' with an rvalue of type 'const char *'
-  core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 160: cast from pointer to smaller type 'char' loses information
   core_dmodel.cpp_CKeyFramedModel_mergeTrianglesToQuads_FUN_0047b1e0
     Line 126: cast from pointer to smaller type 'char' loses information
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0
@@ -125,7 +123,7 @@ CATEGORY: other (1304 errors)
   cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
     Line 37: comparison of distinct pointer types ('ushort *' (aka 'unsigned short *') and 'char *')
   core_course.cpp_CCourse_importMatrices_FUN_00442ea0
-    Line 45: data argument not used by format string [-Werror,-Wformat-extra-args]
+    Line 41: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_dmodel.cpp_CKeyFramedModel_exportToS3D_FUN_00479f30
     Line 111: data argument not used by format string [-Werror,-Wformat-extra-args]
   core_event.cpp_CEventList_setTimerEvent_FUN_004b05a0
@@ -197,7 +195,7 @@ CATEGORY: other (1304 errors)
   core_dpart.cpp_CDemonPart_importTriangleMesh_FUN_00482a10
     Line 40: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_game.cpp_CGame_loadGame_FUN_004e12b0
-    Line 168: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
+    Line 169: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_game.cpp_CGame_processHotkeys_FUN_004dcee0
     Line 153: format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]
   core_game.cpp_CGame_runGameSession_FUN_004daf80
@@ -330,14 +328,10 @@ CATEGORY: other (1304 errors)
     Line 119: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
   core_setedit.cpp_CDemonSet_showRoomEditor_FUN_00581aa0
     Line 95: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
-  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 481: member reference base type 'byte[16]' (aka 'unsigned char[16]') is not a structure or union
   core_turret.cpp_CTurret_process_FUN_005e2430
     Line 200: member reference base type 'byte[20]' (aka 'unsigned char[20]') is not a structure or union
   sound_sndmain.cpp_nextMixingBuffer_FUN_005a59c0
     Line 92: member reference base type 'byte[28]' (aka 'unsigned char[28]') is not a structure or union
-  core_course.cpp_CCourse_interpolate_FUN_004427a0
-    Line 64: member reference base type 'byte[32]' (aka 'unsigned char[32]') is not a structure or union
   sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
     Line 36: member reference base type 'byte[44]' (aka 'unsigned char[44]') is not a structure or union
   core_boxactor.cpp_CBoxActor_process_FUN_004219e0
@@ -480,6 +474,8 @@ CATEGORY: other (1304 errors)
     Line 15: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_box.cpp_CBox_saveToFile_FUN_00420020
     Line 12: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
+    Line 204: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_cloth.cpp_CCloth_save_FUN_00439260
     Line 24: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_course.cpp_CCourse_save_FUN_00442a90
@@ -515,7 +511,7 @@ CATEGORY: other (1304 errors)
   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470
     Line 133: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
-    Line 308: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+    Line 298: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_setedit.cpp_CDemonSet_save_FUN_0057a2a0
     Line 45: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_setedit.cpp_CDemonSet_showFogEditor_FUN_00580730
@@ -530,6 +526,8 @@ CATEGORY: other (1304 errors)
     Line 13: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_setutil.cpp_C3DSLight_save_FUN_00587090
     Line 18: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
+  core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
+    Line 499: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810
     Line 286: more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]
   core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
@@ -617,7 +615,7 @@ CATEGORY: other (1304 errors)
   engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
     Line 27: no matching conversion for C-style cast from 'int' to '_BIT_INTEGER32'
   core_scat.cpp_CScat_updateWeaponState_FUN_00558060
-    Line 57: statement requires expression of integer type ('float' invalid)
+    Line 53: statement requires expression of integer type ('float' invalid)
   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_004d4890
     Line 77: too few arguments to function call, expected 4, have 3
   core_stranger.cpp_CStranger_processMotionEvents_FUN_005bdd20
@@ -642,7 +640,7 @@ CATEGORY: other (1304 errors)
     Line 1033: use of undeclared label 'DAT_032758e8'
 
 ====================================================================================================
-CATEGORY: format_error (802 errors)
+CATEGORY: format_error (799 errors)
 ====================================================================================================
 
   core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50
@@ -650,7 +648,7 @@ CATEGORY: format_error (802 errors)
   core_setedit.cpp_CDemonSet_computeCameraFog_FUN_00581320
     Line 24: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
-    Line 135: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
+    Line 125: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setedit.cpp_CDemonSet_rebuildAllFogAndPVS_FUN_005805a0
     Line 28: format specifies type 'char *' but the argument has type 'C3DSCamera *' [-Werror,-Wformat]
   core_setedit.cpp_CDemonSet_renderCameraBackdrop_FUN_0057d340
@@ -732,9 +730,9 @@ CATEGORY: format_error (802 errors)
   core_msnedit.cpp_CDemonMission_deleteActorWithConfirm_FUN_0053bc80
     Line 17: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_editActorAtIndex_FUN_0053b030
-    Line 106: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+    Line 105: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510
-    Line 106: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
+    Line 105: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0
     Line 127: format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_showDifficultyStats_FUN_0053d3b0
@@ -919,12 +917,14 @@ CATEGORY: format_error (802 errors)
     Line 17: format specifies type 'char *' but the argument has type 'SModelPartName *' [-Werror,-Wformat]
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     Line 174: format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]
+  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
+    Line 204: format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]
   core_motion.cpp_CMotionController_save_FUN_0052e670
     Line 23: format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]
   core_msnedit.cpp_drawMotionBar_FUN_00536e20
     Line 48: format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]
   core_script.cpp_editParameterValue_FUN_00562920
-    Line 485: format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]
+    Line 484: format specifies type 'char *' but the argument has type 'SMotion *' [-Werror,-Wformat]
   core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280
     Line 62: format specifies type 'char *' but the argument has type 'SPart *' [-Werror,-Wformat]
   sound_sndmain.cpp_logSoundError_FUN_005adba0
@@ -965,8 +965,6 @@ CATEGORY: format_error (802 errors)
     Line 110: format specifies type 'char *' but the argument has type 'char (*)[50]' [-Werror,-Wformat]
   engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550
     Line 60: format specifies type 'char *' but the argument has type 'char (*)[80]' [-Werror,-Wformat]
-  core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
-    Line 205: format specifies type 'char *' but the argument has type 'float' [-Werror,-Wformat]
   core_charactr.cpp_CCharacter_propertyDisplayCallback_FUN_0042f340
     Line 44: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   core_msnedit.cpp_CDemonMission_editActorPropertiesDialog_FUN_0053c730
@@ -1048,7 +1046,7 @@ CATEGORY: format_error (802 errors)
   core_inv.cpp_CInventory_load_FUN_004ff400
     Line 45: format specifies type 'float *' but the argument has type 'CInventory *' [-Werror,-Wformat]
   core_course.cpp_CCourse_importMatrices_FUN_00442ea0
-    Line 44: format specifies type 'float *' but the argument has type 'CMatrix3x3f *' [-Werror,-Wformat]
+    Line 40: format specifies type 'float *' but the argument has type 'CMatrix3x3f *' [-Werror,-Wformat]
   core_skeledit.cpp_CBoneStructure_readBONframe_FUN_0058aa10
     Line 22: format specifies type 'float *' but the argument has type 'CMatrix3x4f *' [-Werror,-Wformat]
   core_actor.cpp_archiveQuaternion_FUN_0040b520
@@ -1132,7 +1130,7 @@ CATEGORY: format_error (802 errors)
   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110
     Line 108: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
   core_game.cpp_CGame_loadGame_FUN_004e12b0
-    Line 307: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
+    Line 308: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
   core_setutil.cpp_C3DSCamera_loadPVS_FUN_005857b0
     Line 35: format specifies type 'int *' but the argument has type 'int' [-Werror,-Wformat]
   shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0
@@ -1183,7 +1181,7 @@ CATEGORY: format_error (802 errors)
     Line 40: format specifies type 'unsigned long' but the argument has type 'int' [-Werror,-Wformat]
 
 ====================================================================================================
-CATEGORY: incompatible_types (211 errors)
+CATEGORY: incompatible_types (214 errors)
 ====================================================================================================
 
   shape_quantize.cpp_CColorQuantizer_reset_FUN_00554d40
@@ -1399,7 +1397,7 @@ CATEGORY: incompatible_types (211 errors)
   core_sound.cpp_playSfxInternal_FUN_005b1fd0
     Line 162: invalid operands to binary expression ('float' and 'int')
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 455: no matching function for call to '_sprintf'
+    Line 440: no matching function for call to '_sprintf'
   core_script.cpp_CCmdParm_setTemplateText_FUN_00560de0
     Line 47: no matching function for call to '_strnicmp'
   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50
@@ -1408,6 +1406,8 @@ CATEGORY: incompatible_types (211 errors)
     Line 26: no matching function for call to 'core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0'
   core_script.cpp_CScript_processEditorInput_FUN_00565130
     Line 247: no matching function for call to 'core_script_cpp_CScript_screenToScriptPosition_FUN_00566c20'
+  core_game.cpp_CGame_saveGame_FUN_004e0cd0
+    Line 161: no matching function for call to 'crt_fstream_cpp_ostream_write_FUN_005ffcb3'
   engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
     Line 101: no matching function for call to 'engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60'
   shape_design.c_embedCopyrightWatermark_FUN_0046b9a0
@@ -1436,7 +1436,7 @@ CATEGORY: undeclared_identifier (149 errors)
   core_script.cpp_CScript_step_FUN_0055a810
     Line 1564: use of undeclared identifier 'SUB14'
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 167: use of undeclared identifier 'code'
+    Line 183: use of undeclared identifier 'code'
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     Line 59: use of undeclared identifier 'code'
   core_curtain.cpp_CCurtain_process_FUN_0044a920
@@ -1540,17 +1540,17 @@ CATEGORY: undeclared_identifier (149 errors)
   engine_fileio.cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     Line 41: use of undeclared identifier 'stack0x0000002c'
   core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0
-    Line 500: use of undeclared identifier 'stack0xffffcc64'
+    Line 485: use of undeclared identifier 'stack0xffffcc64'
   core_setedit.cpp_CDemonSet_editCameraPosition_FUN_0057d660
-    Line 167: use of undeclared identifier 'stack0xffffee80'
+    Line 157: use of undeclared identifier 'stack0xffffee80'
   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
-    Line 539: use of undeclared identifier 'stack0xfffff150'
+    Line 538: use of undeclared identifier 'stack0xfffff150'
   engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10
     Line 73: use of undeclared identifier 'stack0xfffff17c'
   engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740
     Line 112: use of undeclared identifier 'stack0xfffff964'
   core_cloth.cpp_CCloth_boneEditor_FUN_0043c880
-    Line 210: use of undeclared identifier 'stack0xfffffac0'
+    Line 208: use of undeclared identifier 'stack0xfffffac4'
   core_setedit.cpp_CDemonSet_showScenePreview_FUN_0057a940
     Line 96: use of undeclared identifier 'stack0xfffffae0'
   core_werewolf.cpp_CWerewolf_process_FUN_005efde0
@@ -1564,7 +1564,7 @@ CATEGORY: undeclared_identifier (149 errors)
   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
     Line 105: use of undeclared identifier 'stack0xfffffe8c'
   core_setedit.cpp_CDemonSet_positionLight_FUN_0057ae50
-    Line 119: use of undeclared identifier 'stack0xfffffe90'
+    Line 110: use of undeclared identifier 'stack0xfffffe90'
   core_motion.cpp_CMotionController_render_FUN_0052e700
     Line 46: use of undeclared identifier 'stack0xffffff58'
   core_set.cpp_CDemonSet_processActors_FUN_0056b810
@@ -1669,7 +1669,7 @@ CATEGORY: type_error (10 errors)
 ====================================================================================================
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 88: unknown type name 'code'
+    Line 13: unknown type name 'code'
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     Line 28: unknown type name 'code'
   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004d4d80
@@ -1690,11 +1690,11 @@ CATEGORY: type_error (10 errors)
     Line 18: unknown type name 'code'
 
 ====================================================================================================
-CATEGORY: pointer_arithmetic (10 errors)
+CATEGORY: pointer_arithmetic (9 errors)
 ====================================================================================================
 
   core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0
-    Line 164: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
+    Line 186: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
   core_actor.cpp_CActorProperty_renderValue_FUN_0040ea50
     Line 56: arithmetic on a pointer to the function type 'CActorPropertyActionFunc' (aka 'int (struct CDemonActor *, struct CActorProperty *)')
   core_msnedit.cpp_CDemonMission_changeActorType_FUN_0053d8b0

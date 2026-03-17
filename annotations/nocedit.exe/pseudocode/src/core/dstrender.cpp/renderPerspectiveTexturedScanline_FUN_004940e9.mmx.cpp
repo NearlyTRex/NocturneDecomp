@@ -1,12 +1,12 @@
 // Name: core_dstrender.cpp_renderPerspectiveTexturedScanline_FUN_004940e9
 // Address: 004940e9
 // Address Range: [[004940e9, 004941c2] [004941d0, 004941d5]]
-// Convention: __cdecl
-// Signature: void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+// Convention: __edi_esi_ebx
+// Signature: void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 #include "nocturne.h"
 
-void __cdecl core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
+void __edi_esi_ebx core_dstrender_cpp_renderPerspectiveTexturedScanline_FUN_004940e9(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 {
 __asm {
         mov EAX,dword ptr [ESI + 0x8]

@@ -17,7 +17,7 @@
 ;   char* g_ApplicationTitle = 006581a7
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   char[512] g_ErrorMessageBuffer_03f96c30
+;   char[6000] g_ErrorMessageBuffer_03f96c30
 ;   HWND g_MainWindowHandle
 ;
 ; Called Functions:

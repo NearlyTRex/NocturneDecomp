@@ -185,7 +185,7 @@ section .text
     LEA EAX,[ESP + 0x840]               ; 004b782f
     PUSH EAX                            ; 004b7836
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80 ; 004b7837
-        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, int string_index, char * output_buffer, int field_number)
+        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 004b783c
     LEA EAX,[ESP + 0xff0]               ; 004b783f
     PUSH EAX                            ; 004b7846

@@ -269,7 +269,7 @@ void __cdecl core_actor_cpp_CActorProperty_renderValue_FUN_0040ea50(CActorProper
     pcVar7 = output_buffer;
     do {
       if ((*(this_ptr->data).v_uint_ptr &
-          *(uint *)((int)&SPropertyFlag_ARRAY_0066e30c[0].mask + iVar13)) != 0) {
+          *(uint *)((int)&g_PropertyFlagDefinitions[0].mask + iVar13)) != 0) {
         if (output_buffer < pcVar7) {
           iVar7 = _sprintf(pcVar7,", ");
           pcVar7 = pcVar7 + iVar7;

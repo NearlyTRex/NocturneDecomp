@@ -207,7 +207,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0049f579
     PUSH EAX                            ; 0049f57d
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80 ; 0049f57e
-        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, int string_index, char * output_buffer, int field_number)
+        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 0049f583
     PUSH 0x1                            ; 0049f586
     PUSH ESI                            ; 0049f588
@@ -216,7 +216,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0049f591
     PUSH EAX                            ; 0049f595
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80 ; 0049f596
-        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, int string_index, char * output_buffer, int field_number)
+        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 0049f59b
     LEA EAX,[ESP + 0x190c]              ; 0049f59e
     PUSH EAX                            ; 0049f5a5
@@ -610,7 +610,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0049fa12
     PUSH EAX                            ; 0049fa16
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80 ; 0049fa17
-        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, int string_index, char * output_buffer, int field_number)
+        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 0049fa1c
     PUSH 0x1                            ; 0049fa1f
     PUSH ESI                            ; 0049fa21
@@ -619,7 +619,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0049fa2a
     PUSH EAX                            ; 0049fa2e
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80 ; 0049fa2f
-        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, int string_index, char * output_buffer, int field_number)
+        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 0049fa34
     LEA EAX,[ESP + 0xd0c]               ; 0049fa37
     PUSH EAX                            ; 0049fa3e
@@ -684,7 +684,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0049faf6
     PUSH EAX                            ; 0049fafa
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80 ; 0049fafb
-        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, int string_index, char * output_buffer, int field_number)
+        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 0049fb00
     PUSH 0x1                            ; 0049fb03
     PUSH ESI                            ; 0049fb05
@@ -693,7 +693,7 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 0049fb0e
     PUSH EAX                            ; 0049fb12
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80 ; 0049fb13
-        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, int string_index, char * output_buffer, int field_number)
+        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 0049fb18
     LEA EAX,[ESP + 0x1c0c]              ; 0049fb1b
     PUSH EAX                            ; 0049fb22

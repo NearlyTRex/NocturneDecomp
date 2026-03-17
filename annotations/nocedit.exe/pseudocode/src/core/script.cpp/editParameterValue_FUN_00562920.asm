@@ -1151,7 +1151,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 00563355 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 0056335b | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 0056335c
-        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
+        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
     ADD ESP,0x18                        ; 00563361
     TEST EAX,EAX                        ; 00563364
     JZ 0x005629b2                       ; 00563366
@@ -1371,7 +1371,7 @@ section .text
     MOV ECX,dword ptr [0x00678a60]      ; 0056356c | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH ECX                            ; 00563572 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270 ; 00563573
-        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * search_pattern, char * directory, char * target_filename, ...)
+        ;   XREF to: 0049f270 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
     ADD ESP,0x18                        ; 00563578
     TEST EAX,EAX                        ; 0056357b
     JZ 0x005629b2                       ; 0056357d
@@ -1763,7 +1763,7 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 0056390c
     PUSH EAX                            ; 00563910
     CALL shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80 ; 00563911
-        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, int string_index, char * output_buffer, int field_number)
+        ;   XREF to: 004a2f80 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList * this_ptr, char * output_buffer, int string_index, int field_number)
     ADD ESP,0x10                        ; 00563916
     PUSH 0x0                            ; 00563919
     LEA EAX,[ESP + 0x8]                 ; 0056391b

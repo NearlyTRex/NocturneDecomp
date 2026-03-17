@@ -82,7 +82,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CStrList_getFieldAt_FUN_004a2f80",
-    "signature": "void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,int string_index,char *output_buffer,int field_number)"
+    "signature": "void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,char *output_buffer,int string_index,int field_number)"
   },
   "function_calls": [
     {
@@ -261,17 +261,17 @@
       },
       {
         "is_param": true,
-        "name": "string_index",
+        "name": "output_buffer",
         "offset": 8,
         "size": 4,
-        "type": "int"
+        "type": "char *"
       },
       {
         "is_param": true,
-        "name": "output_buffer",
+        "name": "string_index",
         "offset": 12,
         "size": 4,
-        "type": "char *"
+        "type": "int"
       },
       {
         "is_param": true,

@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   FileListNode* g_AllocatedListHead
-;   undefined4 g_FreeListHeadPointer
+;   FileListNode* g_FreeListHeadPointer
 ;
 ; *****************************************************************************
 

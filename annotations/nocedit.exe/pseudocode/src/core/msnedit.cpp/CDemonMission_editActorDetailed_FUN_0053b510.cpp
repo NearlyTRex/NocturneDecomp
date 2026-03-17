@@ -13,8 +13,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
   byte bVar2;
   CDemonActor *this_ptr_00;
   int iVar5;
-  char *pcVar3;
-  int iVar4;
+  char *str1;
+  int iVar3;
   CDemonActor *actor;
   char *str2;
   int iVar6;
@@ -63,7 +63,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
       *pcVar7 = '\0';
       iVar5 = _stricmp(local_110,"none");
       if ((iVar5 != 0) &&
-         (iVar4 = _stricmp(local_110,"true"), iVar4 != 0)) {
+         (iVar3 = _stricmp(local_110,"true"), iVar3 != 0)) {
         shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_38,local_110);
       }
     }
@@ -82,11 +82,10 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
         shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_6ac.base);
         _sprintf
                   (acStack_304,"Actors relevent to \"%s\"",property->name);
-        pcVar3 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                                   (&local_6ac,acStack_304,-1,0);
-        if (-1 < (int)pcVar3) {
-          shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-                    (&local_6ac.base,(int)acStack_304,pcVar3,0);
+        iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                          (&local_6ac,acStack_304,-1,0);
+        if (-1 < iVar3) {
+          shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_6ac.base,acStack_304,iVar3,0);
           actor = core_mission_cpp_CDemonMission_findActorByName_FUN_00524030(this_ptr,acStack_304);
           core_msnedit_cpp_CDemonMission_selectActor_FUN_0053c140(this_ptr,actor);
         }
@@ -100,9 +99,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
     iStack_1c = 0;
     if (0 < local_38.item_count) {
       do {
-        pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_38,iStack_1c);
-        iVar4 = _stricmp(pcVar3,this_ptr_00->actor_name);
-        if (iVar4 == 0) {
+        str1 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_38,iStack_1c);
+        iVar3 = _stricmp(str1,this_ptr_00->actor_name);
+        if (iVar3 == 0) {
           _sprintf(acStack_304,"%s\tReferenced by name",this_ptr_00)
           ;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ac.base,acStack_304);
@@ -133,29 +132,29 @@ void __cdecl core_msnedit_cpp_CDemonMission_editActorDetailed_FUN_0053b510(CDemo
                     } while ((g_CharacterClassificationTable[(byte)(bVar2 + 1)] & 0xe0) != 0);
                   } while ((bVar2 == 0x2d) || (bVar2 == 0x5f));
                   *pcVar8 = '\0';
-                  iVar4 = _stricmp(acStack_1d8,"none");
-                  if ((iVar4 != 0) &&
-                     (iVar4 = _stricmp(acStack_1d8,"true"),
-                     iVar4 != 0)) {
+                  iVar3 = _stricmp(acStack_1d8,"none");
+                  if ((iVar3 != 0) &&
+                     (iVar3 = _stricmp(acStack_1d8,"true"),
+                     iVar3 != 0)) {
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_48,acStack_1d8);
                   }
                 }
                 cVar4 = *pcVar10;
               }
-              iVar4 = 0;
+              iVar3 = 0;
               if (0 < CStack_48.item_count) {
                 do {
-                  str2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_48,iVar4);
-                  iVar6 = _stricmp(pcVar3,str2);
+                  str2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_48,iVar3);
+                  iVar6 = _stricmp(str1,str2);
                   if (iVar6 == 0) {
                     _sprintf
-                              (acStack_304,"%s\tChecks for \"%s\" in \"%s\"",this_ptr_00,pcVar3,
+                              (acStack_304,"%s\tChecks for \"%s\" in \"%s\"",this_ptr_00,str1,
                                pcStack_24);
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_6ac.base,acStack_304);
                     break;
                   }
-                  iVar4 = iVar4 + 1;
-                } while (iVar4 < CStack_48.item_count);
+                  iVar3 = iVar3 + 1;
+                } while (iVar3 < CStack_48.item_count);
               }
               shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&CStack_48,0);
             }

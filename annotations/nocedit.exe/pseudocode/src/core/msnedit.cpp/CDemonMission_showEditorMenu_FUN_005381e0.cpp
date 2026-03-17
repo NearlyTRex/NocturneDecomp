@@ -105,7 +105,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
           if ((uVar2 == 0x31) &&
              (iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                                 (g_CEditorToolsPtr,"Load mission","world",
-                                 "*.msn",(int)local_320,0), iVar3 != 0)) {
+                                 "*.msn",local_320,0), iVar3 != 0)) {
             core_mission_cpp_CDemonMission_load_FUN_00522d90(this_ptr,local_320,0);
             core_mission_cpp_CDemonMission_loadScript_FUN_005235b0(this_ptr,1);
           }
@@ -130,7 +130,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
           if ((iVar3 != 0) &&
              (iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                                 (g_CEditorToolsPtr,"Enter set name","models",
-                                 "*.set",(int)local_320,0), iVar3 != 0)) {
+                                 "*.set",local_320,0), iVar3 != 0)) {
             core_mission_cpp_CDemonMission_createFromSingleSet_FUN_005243a0(this_ptr,local_320);
           }
         }
@@ -138,7 +138,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       else if (uVar2 < 0x35) {
         iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                           (g_CEditorToolsPtr,"Enter set name to add","models",
-                           "*.set",(int)local_320,0);
+                           "*.set",local_320,0);
         if (iVar3 != 0) {
           core_msnedit_cpp_CDemonMission_addSet_FUN_00538d60(this_ptr,local_320);
         }

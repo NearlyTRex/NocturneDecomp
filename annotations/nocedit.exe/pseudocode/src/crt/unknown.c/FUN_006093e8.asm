@@ -8,7 +8,7 @@
 ;   crt_unknown.c_staticFinal_FUN_00608fc0 at 00608fca
 ;
 ; Referenced Globals:
-;   undefined4 g_FreeListHeadPointer
+;   FileListNode* g_FreeListHeadPointer
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_00601cd0

@@ -15,13 +15,12 @@ void __cdecl ValidateHeapIntegrity(void *ptr)
   
   if (ptr != (void *)0x0) {
     (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
-    if (((DAT_03f9b210 == (Heap *)0x0) ||
-        ((((ptr < DAT_03f9b210 ||
-           (pHVar2 = DAT_03f9b210,
-           (void *)((int)&DAT_03f9b210->heap_size + DAT_03f9b210->heap_size) <= ptr)) &&
-          ((pHVar2 = DAT_03f9b210->heap_base, pHVar2 == (Heap *)0x0 ||
+    if (((INT_03f9b210 == 0) ||
+        ((((ptr < (uint)INT_03f9b210 ||
+           (pHVar2 = (Heap *)INT_03f9b210, (void *)(*(int *)INT_03f9b210 + INT_03f9b210) <= ptr)) &&
+          ((pHVar2 = *(Heap **)(INT_03f9b210 + 4), pHVar2 == (Heap *)0x0 ||
            ((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))) &&
-         ((pHVar2 = DAT_03f9b210->next_heap_block, pHVar2 == (Heap *)0x0 ||
+         ((pHVar2 = *(Heap **)(INT_03f9b210 + 8), pHVar2 == (Heap *)0x0 ||
           ((ptr < pHVar2 || ((void *)((int)&pHVar2->heap_size + pHVar2->heap_size) <= ptr)))))))) &&
        ((pHVar1 = g_MainHeap, g_SecondaryHeap == (Heap *)0x0 ||
         ((((ptr < g_SecondaryHeap ||
@@ -44,8 +43,8 @@ LAB_00601d9c:
       if ((pHVar2 < g_SecondaryHeap) && ((uint)INT_00684edc < pHVar2[1].next_heap_block)) {
         INT_00684edc = (int)pHVar2[1].next_heap_block;
       }
-      DAT_03f9b850 = 0;
-      DAT_03f9b210 = pHVar2;
+      CHAR_ARRAY_03f9b850[0] = '\0';
+      INT_03f9b210 = (int)pHVar2;
     }
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
   }

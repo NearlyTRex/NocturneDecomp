@@ -327,8 +327,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
     break;
   case 0xd:
     iVar5 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-                      (g_CEditorToolsPtr,local_7cc,"sound","*.wav",(int)value_buffer
-                       ,1);
+                      (g_CEditorToolsPtr,local_7cc,"sound","*.wav",value_buffer,1);
     if (iVar5 != 0) {
       return 1;
     }
@@ -388,7 +387,7 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
               (param_info->modifier_string,(char *)0x0,local_370,local_470,local_270);
     makepath(local_574,(char *)0x0,(char *)0x0,local_470,local_270);
     iVar5 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
-                      (g_CEditorToolsPtr,local_7cc,local_370,local_574,(int)value_buffer,1);
+                      (g_CEditorToolsPtr,local_7cc,local_370,local_574,value_buffer,1);
     if (iVar5 != 0) {
       return 1;
     }
@@ -492,11 +491,10 @@ int __cdecl core_script_cpp_editParameterValue_FUN_00562920(char *value_buffer,i
           iVar5 = iVar5 + 1;
         } while (iVar5 < local_2c->motion_count);
       }
-      pcVar9 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                                 (&local_3754,local_7cc,local_28,0);
-      if (-1 < (int)pcVar9) {
-        shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-                  (&local_3754.base,(int)value_buffer,pcVar9,0);
+      iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                        (&local_3754,local_7cc,local_28,0);
+      if (-1 < iVar5) {
+        shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(&local_3754.base,value_buffer,iVar5,0);
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_3754,0);
         return 1;
       }

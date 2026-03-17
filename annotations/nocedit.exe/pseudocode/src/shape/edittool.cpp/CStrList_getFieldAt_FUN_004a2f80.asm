@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,int string_index,char *output_buffer,int field_number)
+; void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,char *output_buffer,int string_index,int field_number)
 ;
 ; Parameters:
 ; CStrList *       Stack[0x4]:4   this_ptr
-; int              Stack[0x8]:4   string_index
-; char *           Stack[0xc]:4   output_buffer
+; char *           Stack[0x8]:4   output_buffer
+; int              Stack[0xc]:4   string_index
 ; int              Stack[0x10]:4   field_number
 ; Local Variables:
 ; char[300]        Stack[-0x134]:300  local_134

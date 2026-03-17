@@ -2,11 +2,11 @@
 // Address: 004a2f80
 // Address Range: [[004a2f80, 004a3022]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,int string_index,char *output_buffer,int field_number)
+// Signature: void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,char *output_buffer,int string_index,int field_number)
 
 #include "nocturne.h"
 
-void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,int string_index,char *output_buffer,int field_number)
+void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,char *output_buffer,int string_index,int field_number)
 
 {
   char cVar2;
@@ -16,7 +16,7 @@ void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_
   char cVar1;
   char *pcVar2;
   
-  pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,(int)output_buffer);
+  pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,string_index);
   for (; (pcVar3 != (char *)0x0 && (0 < field_number)); field_number = field_number + -1) {
     cVar1 = *pcVar3;
     pcVar4 = local_134;
@@ -34,13 +34,13 @@ void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_
     while ((cVar2 != '\0' && (*pcVar3 != '\t'))) {
       cVar2 = *pcVar3;
       pcVar3 = pcVar3 + 1;
-      *(char *)string_index = cVar2;
+      *output_buffer = cVar2;
       cVar2 = *pcVar3;
-      string_index = string_index + 1;
+      output_buffer = output_buffer + 1;
     }
-    *(char *)string_index = '\0';
+    *output_buffer = '\0';
     return;
   }
-  *(byte *)string_index = 0;
+  *output_buffer = '\0';
   return;
 }

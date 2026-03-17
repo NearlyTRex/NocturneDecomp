@@ -14,7 +14,7 @@ int __cdecl _heapchk(void)
   int iStack_8;
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684f00)();
-  if (DAT_03f9b850 != '\0') {
+  if (CHAR_ARRAY_03f9b850[0] != '\0') {
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684f08)();
     return 0;
   }
@@ -40,7 +40,7 @@ int __cdecl _heapchk(void)
         iVar1 = 0;
       }
       else if (iVar1 != 0) goto LAB_00600b87;
-      DAT_03f9b850 = '\x01';
+      CHAR_ARRAY_03f9b850[0] = '\x01';
     }
     else {
       iVar1 = 3;

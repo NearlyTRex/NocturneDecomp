@@ -11,7 +11,7 @@
 ;   ENTER_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ef8 = 00602434
 ;   EXIT_THREAD_CRITICAL_SECTION_FUNC* PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684efc = 00602434
 ;   FileListNode* g_AllocatedListHead
-;   undefined4 g_FreeListHeadPointer
+;   FileListNode* g_FreeListHeadPointer
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00602790

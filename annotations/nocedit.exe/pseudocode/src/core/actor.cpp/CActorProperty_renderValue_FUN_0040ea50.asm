@@ -543,7 +543,7 @@ section .text
     XOR EDI,EBP                         ; 0040eda7
     MOV EAX,dword ptr [EBX + 0x68]      ; 0040eda9
         ;   Label: LAB_0040eda9
-    MOV EDX,dword ptr [EDI + 0x66e30c]  ; 0040edac | SPropertyFlag_ARRAY_0066e30c | DAT_0066e314
+    MOV EDX,dword ptr [EDI + 0x66e30c]  ; 0040edac | g_PropertyFlagDefinitions | DAT_0066e314
     TEST dword ptr [EAX],EDX            ; 0040edb2
     JZ 0x0040ede1                       ; 0040edb4
         ;   XREF to: 0040ede1 (CONDITIONAL_JUMP)  ; LAB_0040ede1
@@ -556,7 +556,7 @@ section .text
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0040edc5
     ADD ESI,EAX                         ; 0040edc8
-    MOV ECX,dword ptr [EDI + 0x66e310]  ; 0040edca | SPropertyFlag_ARRAY_0066e30c[0].name | PTR_s_swing_0066e318
+    MOV ECX,dword ptr [EDI + 0x66e310]  ; 0040edca | g_PropertyFlagDefinitions[0].name | PTR_s_swing_0066e318
         ;   Label: LAB_0040edca
     PUSH ECX                            ; 0040edd0
     PUSH 0x61452b                       ; 0040edd1 | = "%s"

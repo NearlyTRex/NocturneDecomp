@@ -92,7 +92,7 @@ void __cdecl engine_fileio_cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0
     if ((int)output_buffer < 0) break;
     this_ptr_01 = &local_8dc;
     shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-              (&this_ptr_01->base,(int)local_120,output_buffer,0);
+              (&this_ptr_01->base,local_120,(int)output_buffer,0);
     this_ptr_02 = &local_1108;
     file_offset = 0x4b7851;
     iVar4 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(this_ptr_02,local_120);

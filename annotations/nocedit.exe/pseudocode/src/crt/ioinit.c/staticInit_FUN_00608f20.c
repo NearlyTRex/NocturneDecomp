@@ -34,6 +34,6 @@ void __cdecl staticInit(void)
     g_AllocatedListHead = (FileListNode *)psVar3;
     iVar1 = *(int *)((int)&p_Var2->_link + 2);
   }
-  g_FreeListHeadPointer = 0;
+  g_FreeListHeadPointer = (FileListNode *)0x0;
   return;
 }

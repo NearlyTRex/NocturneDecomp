@@ -24,7 +24,7 @@ int __cdecl core_platfrm_cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530(C
     _sprintf(local_d4,"Select a course for platform %s",this_ptr);
     iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                       (g_CEditorToolsPtr,local_d4,"data","*.pth",
-                       (int)pCVar1->course_filename,0);
+                       pCVar1->course_filename,0);
     return iVar2;
   }
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_544);
@@ -51,7 +51,7 @@ int __cdecl core_platfrm_cpp_CPlatform_propertyActionTypeCallback_FUN_0054e530(C
   }
   iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                     (g_CEditorToolsPtr,local_19c,"data","*.pth",
-                     (int)pCVar1->course_filename,0);
+                     pCVar1->course_filename,0);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80(&local_544,0);
   return iVar2;
 }

@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 97,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 42,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "special_crt_function",
-      "undefined_data"
+      "special_crt_function"
     ],
     "total_lines": 131
   },
@@ -78,8 +77,8 @@
     },
     {
       "addr": "03f9b850",
-      "name": "DAT_03f9b850",
-      "type": "undefined1",
+      "name": "CHAR_ARRAY_03f9b850",
+      "type": "char[16]",
       "value": null
     }
   ],
@@ -139,22 +138,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_03f9b850",
-      "severity": "mild",
-      "text": "if (DAT_03f9b850 != '\\0') {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_03f9b850",
-      "severity": "mild",
-      "text": "DAT_03f9b850 = '\\x01';",
-      "type": "undefined_data"
-    },
     {
       "call_site_count": 1,
       "declared_params": 0,

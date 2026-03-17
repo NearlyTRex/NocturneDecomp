@@ -74,7 +74,7 @@ void __cdecl shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(CStrList *this_ptr);
 int __cdecl shape_edittool_cpp_CStrList_qsortByString_FUN_004a2ee0(char *a,char *b);
 void __cdecl shape_edittool_cpp_CStrList_sort_FUN_004a2f00(CStrList *this_ptr,int sort_type,int sort_order);
 char * __cdecl shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(CStrList *this_ptr,int index);
-void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,int string_index,char *output_buffer,int field_number);
+void __cdecl shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80(CStrList *this_ptr,char *output_buffer,int string_index,int field_number);
 int __cdecl shape_edittool_cpp_CStrList_findString_FUN_004a3030(CStrList *this_ptr,char *search_string);
 int __cdecl shape_edittool_cpp_CStrList_findByFirstField_FUN_004a3070(CStrList *this_ptr,char *search_field);
 void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_004a3120(CStrList *this_ptr,int index,char *new_string);

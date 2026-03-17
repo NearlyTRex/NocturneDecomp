@@ -9,43 +9,39 @@
 void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_00558060(CScat *this_ptr,float delta_time)
 
 {
-  CDeformableModelInstance *pCVar3;
-  CCharacter *pCVar7;
+  CDeformableModelInstance *pCVar1;
+  CCharacter *pCVar2;
   SMotion *pSVar3;
-  SMotion *pSVar8;
+  CVector3f *damage_direction;
   CVector3f *pCVar4;
   CCharacter *this_ptr_00;
-  CMotionController *unaff_EDI;
   CCharacter *pCVar5;
-  CDeformableModelInstance *pCVar1;
-  CVector3f *damage_direction;
-  CCharacter *pCVar2;
   CMotionController *this_ptr_01;
   CVector3f *pCVar6;
   int iVar7;
   
-  pCVar3 = &(this_ptr->base).base.model;
+  pCVar1 = &(this_ptr->base).base.model;
   pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     (&pCVar3->motion_controller);
+                     (&pCVar1->motion_controller);
   if ((pSVar3->state_index != 0xc) &&
-     (pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                         (&pCVar3->motion_controller), pSVar8->state_index != 0xd)) {
+     (pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                         (&pCVar1->motion_controller), pSVar3->state_index != 0xd)) {
     this_ptr_00 = (CCharacter *)(this_ptr->base).inventory.selected_weapon;
     if (this_ptr->guns_drawn == 0) {
       this_ptr_00 = (CCharacter *)0x0;
     }
-    pCVar7 = (CCharacter *)this_ptr->weapon_actor;
-    if (((pCVar7 != (CCharacter *)0x0) && (this_ptr_00 != pCVar7)) &&
-       ((pCVar7->model).transformed_vertices[0x19].y == 1.12104e-44)) {
-      pCVar3 = &(this_ptr->base).base.model;
-      pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                         (&pCVar3->motion_controller);
-      if (pSVar8->state_index == 0) {
+    pCVar5 = (CCharacter *)this_ptr->weapon_actor;
+    if (((pCVar5 != (CCharacter *)0x0) && (this_ptr_00 != pCVar5)) &&
+       ((pCVar5->model).transformed_vertices[0x19].y == 1.12104e-44)) {
+      pCVar1 = &(this_ptr->base).base.model;
+      pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                         (&pCVar1->motion_controller);
+      if (pSVar3->state_index == 0) {
         this_ptr->weapon_actor = (CWeapon *)0x0;
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&pCVar3->motion_controller,0,1);
+                  (&pCVar1->motion_controller,0,1);
       }
     }
     this_ptr_01 = &(this_ptr->base).base.model.motion_controller;
@@ -104,8 +100,7 @@ LAB_00558263:
                              (this_ptr_00,2,damage_direction,(float)this_ptr_01),
                   this_ptr->weapon_actor->weapon_type == 8)) {
               iVar7 = 1;
-              this_ptr_01 = unaff_EDI;
-              core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(unaff_EDI,6,1);
+              core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr_01,6,1);
             }
           }
         }
