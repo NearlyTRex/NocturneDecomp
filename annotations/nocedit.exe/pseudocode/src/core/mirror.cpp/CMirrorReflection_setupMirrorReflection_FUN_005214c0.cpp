@@ -41,9 +41,7 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
   CMatrix3x4f local_234;
   CMatrix3x4f local_204;
   CMatrix3x4f local_1d4;
-  char local_1a4;
-  float local_1a0;
-  float local_19c;
+  SClipPlane local_1a4;
   float local_194;
   float local_190;
   float local_18c;
@@ -96,9 +94,11 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
   
   bVar9 = 0;
   core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0
-            ((SClipPlane *)&local_1a4,&this_ptr->corner1,&this_ptr->corner2,&this_ptr->corner3);
-  if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {
-    if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {
+            (&local_1a4,&this_ptr->corner1,&this_ptr->corner2,&this_ptr->corner3);
+  if ((ABS((float)local_1a4.A) <= ABS((float)local_1a4.B)) ||
+     (ABS((float)local_1a4.A) <= ABS((float)local_1a4.C))) {
+    if ((ABS((float)local_1a4.B) <= ABS((float)local_1a4.A)) ||
+       (ABS((float)local_1a4.B) <= ABS((float)local_1a4.C))) {
       local_160 = 1.0;
       local_15c = 0.0;
     }
@@ -112,12 +112,12 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
     local_15c = 0.0;
   }
   local_164 = 0.0;
-  local_14c = _local_1a4;
-  local_148 = local_1a0;
-  local_b0 = local_160 * local_19c - local_15c * local_1a0;
-  local_ac = local_15c * _local_1a4 - local_19c * 0.0;
-  local_a8 = local_1a0 * 0.0 - local_160 * _local_1a4;
-  local_144 = local_19c;
+  local_14c = (float)local_1a4.A;
+  local_148 = (float)local_1a4.B;
+  local_b0 = local_160 * (float)local_1a4.C - local_15c * (float)local_1a4.B;
+  local_ac = local_15c * (float)local_1a4.A - (float)local_1a4.C * 0.0;
+  local_a8 = (float)local_1a4.B * 0.0 - local_160 * (float)local_1a4.A;
+  local_144 = (float)local_1a4.C;
   if (&local_194 != &local_b0) {
     local_194 = local_b0;
     local_190 = local_ac;
@@ -135,9 +135,9 @@ void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_005214c
     local_190 = local_190 * fVar2;
     local_18c = local_18c * fVar2;
   }
-  local_158 = local_1a0 * local_18c - local_19c * local_190;
-  local_154 = local_19c * local_194 - _local_1a4 * local_18c;
-  local_150 = _local_1a4 * local_190 - local_1a0 * local_194;
+  local_158 = (float)local_1a4.B * local_18c - (float)local_1a4.C * local_190;
+  local_154 = (float)local_1a4.C * local_194 - (float)local_1a4.A * local_18c;
+  local_150 = (float)local_1a4.A * local_190 - (float)local_1a4.B * local_194;
   if (&local_164 != &local_158) {
     local_164 = local_158;
     local_160 = local_154;

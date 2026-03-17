@@ -27,7 +27,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap *th
   engine_alphabit_cpp_CAlphaBitmap_free_FUN_00410560(this_ptr);
   this_ptr->width = width;
   this_ptr->height = height;
-  pcVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+  pcVar1 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                      (width * height,"..\\engine\\alphabit.cpp",0x52);
   this_ptr->raw = pcVar1;
   if (pcVar1 == (char *)0x0) {
@@ -35,7 +35,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(CAlphaBitmap *th
     g_CurrentLineNumber = 0x53;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CAlphaBitmap::load - Out of memory");
   }
-  pcVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+  pcVar2 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                      (width * height,"..\\engine\\alphabit.cpp",0x55);
   this_ptr->opa = pcVar2;
   if (pcVar2 == (char *)0x0) {

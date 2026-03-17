@@ -48,7 +48,7 @@ int __cdecl engine_palette_cpp_CPaletteManager_createOutputPalette_FUN_00545180(
     g_CurrentLineNumber = 0xb6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::createOutputPalette - Unable to create mapper");
   }
-  color_data = shape_memdbg_cpp_debugCalloc_FUN_0050f350
+  color_data = (char *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
                          (this_ptr->max_pixel_count,4,"..\\engine\\palette.cpp",0xbb);
   iVar4 = 0;
   if (color_data != (char *)0x0) {

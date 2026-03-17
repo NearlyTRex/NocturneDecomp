@@ -17,7 +17,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
   int iVar5;
   int local_14;
   
-  pSVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+  pSVar1 = (SSpatialGrid *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->spatial_grid_ptr,0x4004,"..\\shape\\meshlod.cpp",0x146f);
   this_ptr->spatial_grid_ptr = pSVar1;
   if (pSVar1 == (SSpatialGrid *)0x0) {
@@ -37,7 +37,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
     iVar4 = iVar4 + 4;
     _fscanf(file_handle,"%d\n",iVar1);
   } while (iVar4 != 0x4004);
-  piVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+  piVar2 = (int *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->spatial_grid_data,this_ptr->spatial_grid_ptr->triangle_count << 2,
                       "..\\shape\\meshlod.cpp",0x147a);
   this_ptr->spatial_grid_data = piVar2;

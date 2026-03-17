@@ -22,6 +22,7 @@
 // CDemonActor*
 extern CDemonActor* g_CurrentProcessingActor;
 extern CDemonActor* g_CurrentActorBeingProcessed;
+extern CDemonActor* g_LastCollisionActor;
 
 // CDemonActorType
 extern CDemonActorType g_CDemonActorClassInfo;

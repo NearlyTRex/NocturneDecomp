@@ -17,7 +17,7 @@ void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00456840(CDemonCu
   SVoxelGrid *pSVar6;
   
   fVar1 = (float)this_ptr->vertex_count;
-  pCVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  pCVar2 = (CVector3f *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      ((int)fVar1 * 0xc + 4,"..\\core\\dcube.cpp",0x5ff);
   pCVar3 = pCVar2;
   if (pCVar2 != (CVector3f *)0x0) {
@@ -30,7 +30,7 @@ void __cdecl core_dcube_cpp_CDemonCube_allocGeometryMemory_FUN_00456840(CDemonCu
     g_CurrentLineNumber = 0x600;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonCube::allocMemory - Out of vertex memory");
   }
-  pCVar4 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  pCVar4 = (CDemonCubeTriangle *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      (this_ptr->triangle_count << 5,"..\\core\\dcube.cpp",0x601);
   this_ptr->triangle_buffer = pCVar4;
   if (pCVar4 == (CDemonCubeTriangle *)0x0) {

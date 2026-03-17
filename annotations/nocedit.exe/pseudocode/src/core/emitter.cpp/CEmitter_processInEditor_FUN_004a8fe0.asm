@@ -14,10 +14,10 @@
 ;   CVector3f g_EmitterTarget
 ;   undefined4 g_EmitterTarget.y
 ;   undefined4 g_EmitterTarget.z
-;   UOrientationVector UNION_UOrientationVector_02cf2b6c
-;   undefined4 UNION_UOrientationVector_02cf2b6c+4
-;   undefined4 UNION_UOrientationVector_02cf2b6c+8
-;   CEmitter* PTR_02cf2b78
+;   UOrientationVector g_EmitterEditorOrientation
+;   undefined4 g_EmitterEditorOrientation+4
+;   undefined4 g_EmitterEditorOrientation+8
+;   CEmitter* g_EditorSelectedEmitter
 ;   undefined4 g_CGameInstance.delta_time_float
 ;   CKeys g_CKeysInstance
 ;
@@ -46,7 +46,7 @@ section .text
         ;   XREF to: 004a9009 (CONDITIONAL_JUMP)  ; LAB_004a9009
     XOR EDI,EDI                         ; 004a9001
         ;   Label: LAB_004a9001
-    MOV dword ptr [0x02cf2b78],EDI      ; 004a9003 | PTR_02cf2b78
+    MOV dword ptr [0x02cf2b78],EDI      ; 004a9003 | g_EditorSelectedEmitter
     PUSH 0x1d                           ; 004a9009
         ;   Label: LAB_004a9009
     MOV EAX,[0x0067cf44]                ; 004a900b | g_CKeysPtr
@@ -186,7 +186,7 @@ section .text
         ;   Label: LAB_004a916f
     JZ 0x004a933f                       ; 004a9176
         ;   XREF to: 004a933f (CONDITIONAL_JUMP)  ; LAB_004a933f
-    CMP EBX,dword ptr [0x02cf2b78]      ; 004a917c | PTR_02cf2b78
+    CMP EBX,dword ptr [0x02cf2b78]      ; 004a917c | g_EditorSelectedEmitter
     JNZ 0x004a92c5                      ; 004a9182
         ;   XREF to: 004a92c5 (CONDITIONAL_JUMP)  ; LAB_004a92c5
     LEA ECX,[EBX + 0x20]                ; 004a9188
@@ -214,14 +214,14 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 004a91ca
     MOV EAX,[0x02cf2b68]                ; 004a91cd | g_EmitterTarget.z
     MOV dword ptr [ECX + 0x8],EAX       ; 004a91d2
-    CMP EDX,0x2cf2b6c                   ; 004a91d5 | UNION_UOrientationVector_02cf2b6c
+    CMP EDX,0x2cf2b6c                   ; 004a91d5 | g_EmitterEditorOrientation
     JZ 0x004a91f4                       ; 004a91db
         ;   XREF to: 004a91f4 (CONDITIONAL_JUMP)  ; LAB_004a91f4
-    MOV EAX,[0x02cf2b6c]                ; 004a91dd | UNION_UOrientationVector_02cf2b6c
+    MOV EAX,[0x02cf2b6c]                ; 004a91dd | g_EmitterEditorOrientation
     MOV dword ptr [EDX],EAX             ; 004a91e2
-    MOV EAX,[0x02cf2b70]                ; 004a91e4 | UNION_UOrientationVector_02cf2b6c+4
+    MOV EAX,[0x02cf2b70]                ; 004a91e4 | g_EmitterEditorOrientation+4
     MOV dword ptr [EDX + 0x4],EAX       ; 004a91e9
-    MOV EAX,[0x02cf2b74]                ; 004a91ec | UNION_UOrientationVector_02cf2b6c+8
+    MOV EAX,[0x02cf2b74]                ; 004a91ec | g_EmitterEditorOrientation+8
     MOV dword ptr [EDX + 0x8],EAX       ; 004a91f1
     PUSH EBX                            ; 004a91f4
         ;   Label: LAB_004a91f4
@@ -244,15 +244,15 @@ section .text
     FSTP float ptr [0x02cf2b60]         ; 004a9224 | g_EmitterTarget
     LEA EAX,[EBX + 0x30]                ; 004a922a
         ;   Label: LAB_004a922a
-    CMP EAX,0x2cf2b6c                   ; 004a922d | UNION_UOrientationVector_02cf2b6c
+    CMP EAX,0x2cf2b6c                   ; 004a922d | g_EmitterEditorOrientation
     JZ 0x004a924e                       ; 004a9232
         ;   XREF to: 004a924e (CONDITIONAL_JUMP)  ; LAB_004a924e
     FLD float ptr [EAX]                 ; 004a9234
     FLD float ptr [EAX + 0x8]           ; 004a9236
     MOV EDX,dword ptr [EAX + 0x4]       ; 004a9239
-    MOV dword ptr [0x02cf2b70],EDX      ; 004a923c | UNION_UOrientationVector_02cf2b6c+4
-    FSTP float ptr [0x02cf2b74]         ; 004a9242 | UNION_UOrientationVector_02cf2b6c+8
-    FSTP float ptr [0x02cf2b6c]         ; 004a9248 | UNION_UOrientationVector_02cf2b6c
+    MOV dword ptr [0x02cf2b70],EDX      ; 004a923c | g_EmitterEditorOrientation+4
+    FSTP float ptr [0x02cf2b74]         ; 004a9242 | g_EmitterEditorOrientation+8
+    FSTP float ptr [0x02cf2b6c]         ; 004a9248 | g_EmitterEditorOrientation
     LEA EDX,[EBX + 0x20]                ; 004a924e
         ;   Label: LAB_004a924e
     MOV EAX,dword ptr [ESP + 0xc]       ; 004a9251
@@ -306,7 +306,7 @@ section .text
     LEA EAX,[ESP + 0x34]                ; 004a92cf
     XOR EDX,EDX                         ; 004a92d3
     PUSH EAX                            ; 004a92d5
-    MOV dword ptr [0x02cf2b78],EBX      ; 004a92d6 | PTR_02cf2b78
+    MOV dword ptr [0x02cf2b78],EBX      ; 004a92d6 | g_EditorSelectedEmitter
     MOV dword ptr [ESP + 0x20],EDX      ; 004a92dc
     PUSH EBX                            ; 004a92e0
     MOV dword ptr [ESP + 0x28],EDX      ; 004a92e1
@@ -325,15 +325,15 @@ section .text
     FSTP float ptr [0x02cf2b60]         ; 004a930c | g_EmitterTarget
     LEA EAX,[EBX + 0x30]                ; 004a9312
         ;   Label: LAB_004a9312
-    CMP EAX,0x2cf2b6c                   ; 004a9315 | UNION_UOrientationVector_02cf2b6c
+    CMP EAX,0x2cf2b6c                   ; 004a9315 | g_EmitterEditorOrientation
     JZ 0x004a9188                       ; 004a931a
         ;   XREF to: 004a9188 (CONDITIONAL_JUMP)  ; LAB_004a9188
     FLD float ptr [EAX]                 ; 004a9320
     FLD float ptr [EAX + 0x8]           ; 004a9322
     MOV EDX,dword ptr [EAX + 0x4]       ; 004a9325
-    MOV dword ptr [0x02cf2b70],EDX      ; 004a9328 | UNION_UOrientationVector_02cf2b6c+4
-    FSTP float ptr [0x02cf2b74]         ; 004a932e | UNION_UOrientationVector_02cf2b6c+8
-    FSTP float ptr [0x02cf2b6c]         ; 004a9334 | UNION_UOrientationVector_02cf2b6c
+    MOV dword ptr [0x02cf2b70],EDX      ; 004a9328 | g_EmitterEditorOrientation+4
+    FSTP float ptr [0x02cf2b74]         ; 004a932e | g_EmitterEditorOrientation+8
+    FSTP float ptr [0x02cf2b6c]         ; 004a9334 | g_EmitterEditorOrientation
     JMP 0x004a9188                      ; 004a933a
         ;   XREF to: 004a9188 (UNCONDITIONAL_JUMP)  ; LAB_004a9188
     PUSH EBX                            ; 004a933f

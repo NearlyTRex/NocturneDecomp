@@ -25,6 +25,9 @@ CDemonMission g_CDemonMissionInstance = {};
 // CKeyFramedModel
 CKeyFramedModel g_MoonBatModel = {};
 
+// CQuaternion4f*
+CQuaternion4f* g_LodMeshHighlightVertices = {};
+
 // CVector3f[32]
 CVector3f g_MirrorInputVertices[32] = {};
 CVector3f g_MirrorOutputVertices[32] = {};

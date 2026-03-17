@@ -199,7 +199,7 @@
 ;   TerminatedCString s_buy_fly_today_wav_4_0_0062ba78
 ;   char[52] g_CheatStr_ShowFPS
 ;   TerminatedCString s_FPS_3_2lf_0062bac4
-;   ... and 185 more
+;   ... and 182 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c790
@@ -300,8 +300,8 @@ section .text
     MOV AH,AL                           ; 004ddbc0
     DEC EBX                             ; 004ddbc2
         ;   Label: LAB_004ddbc2
-    MOV AL,byte ptr [EBX + 0x2d831d8]   ; 004ddbc3 | DAT_02d831e9 | DAT_02d831ea
-    MOV byte ptr [EBX + 0x2d831d9],AL   ; 004ddbc9 | DAT_02d831ea | DAT_02d831eb
+    MOV CL,byte ptr [EBX + 0x2d831d8]   ; 004ddbc3
+    MOV byte ptr [EBX + 0x2d831d9],CL   ; 004ddbc9
     TEST EBX,EBX                        ; 004ddbcf
     JG 0x004ddbc2                       ; 004ddbd1
         ;   XREF to: 004ddbc2 (CONDITIONAL_JUMP)  ; LAB_004ddbc2

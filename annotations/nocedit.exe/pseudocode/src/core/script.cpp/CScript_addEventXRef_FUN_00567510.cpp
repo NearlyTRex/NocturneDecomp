@@ -14,7 +14,7 @@ void __cdecl core_script_cpp_CScript_addEventXRef_FUN_00567510(CScript *this_ptr
   byte bVar3;
   
   bVar3 = 0;
-  pSVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+  pSVar1 = (SScriptXRef *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->xref_entries,(this_ptr->xref_count + 1) * 0x114,
                       "..\\core\\script.cpp",0x1d37);
   this_ptr->xref_entries = pSVar1;

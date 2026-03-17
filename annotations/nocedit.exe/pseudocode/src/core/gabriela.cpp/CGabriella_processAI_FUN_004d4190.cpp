@@ -120,7 +120,7 @@ void __cdecl core_gabriela_cpp_CGabriella_processAI_FUN_004d4190(CGabriella *thi
       EVar2 = (this_ptr->base).ai_task;
       this_ptr_01 = (CEnemy *)0x0;
       if ((EVar2 == HERO_TASK_KILL) || (EVar2 == HERO_TASK_GUARD)) {
-        this_ptr_01 = core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(&this_ptr->base,&local_11c);
+        this_ptr_01 = core_hero_cpp_CHero_closestEnemy_FUN_004f3960(&this_ptr->base,&local_11c);
       }
       if ((this_ptr_01 == (CEnemy *)0x0) || ((float)30 <= local_11c)) {
         if (this_ptr->weapon_state_flags != 0) {

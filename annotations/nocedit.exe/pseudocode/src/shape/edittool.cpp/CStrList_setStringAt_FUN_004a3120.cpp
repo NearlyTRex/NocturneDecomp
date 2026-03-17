@@ -31,7 +31,7 @@ void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_004a3120(CStrList *this
     cVar1 = *pcVar2;
     pcVar2 = pcVar2 + (uint)bVar4 * -2 + 1;
   } while (cVar1 != '\0');
-  pcVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+  pcVar2 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->data_array[index],~uVar3,"..\\shape\\edittool.cpp",0xc1b);
   this_ptr->data_array[index] = pcVar2;
   if (this_ptr->data_array[index] == (char *)0x0) {

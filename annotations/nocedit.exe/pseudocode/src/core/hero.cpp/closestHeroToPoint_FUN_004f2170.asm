@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(CLocation *location)
+; CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(CLocation *location)
 ;
 ; Parameters:
 ; CLocation *      Stack[0x4]:4   location

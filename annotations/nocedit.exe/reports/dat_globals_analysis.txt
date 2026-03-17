@@ -2,18 +2,18 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 1759
-Filtered out (inside named data): 1177
+Total DAT_ globals found: 1754
+Filtered out (inside named data): 1176
 Immediate constants (not real globals): 10
-Real globals remaining: 572
+Real globals remaining: 568
 
 Current type breakdown:
-  undefined4                     557
-  undefined1                     11
+  undefined4                     554
+  undefined1                     10
   int                            2
   undefined2                     2
 
-DAT_ globals with type hints: 131 / 572
+DAT_ globals with type hints: 129 / 568
 
 --------------------------------------------------------------------------------
 HIGH CONFIDENCE INFERENCES (88)
@@ -174,7 +174,7 @@ HIGH CONFIDENCE INFERENCES (88)
     nearby: g_FreeListHeadPointer (undefined4) at offset +12
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE INFERENCES (43)
+MEDIUM CONFIDENCE INFERENCES (41)
 --------------------------------------------------------------------------------
   DAT_006597a1                    addr=006597a1    current=undefined1      likely=byte            refs=1
     nearby: g_ColonChar (char) at offset +1
@@ -219,10 +219,6 @@ MEDIUM CONFIDENCE INFERENCES (43)
     nearby: g_CDemonLightInstance.base.base.focal_length (undefined4) at offset +8
   DAT_02d7eb31                    addr=02d7eb31    current=undefined4      likely=byte            refs=1
     nearby: g_CDemonLightInstance.base.base.focal_length (undefined4) at offset +9
-  DAT_02d831e9                    addr=02d831e9    current=undefined4      likely=byte            refs=1
-    nearby: g_IrisFadeType (int) at offset -3
-  DAT_02d831ea                    addr=02d831ea    current=undefined4      likely=byte            refs=1
-    nearby: g_IrisFadeType (int) at offset -2
   DAT_02f68294                    addr=02f68294    current=undefined4      likely=byte            refs=3
     nearby: g_HuffmanTables (SHuffmanTable[34]) at offset +12
   DAT_02f682a8                    addr=02f682a8    current=undefined4      likely=byte            refs=3
@@ -263,7 +259,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (441)
+NO TYPE HINTS (439)
 --------------------------------------------------------------------------------
   DAT_00412b41                    addr=00412b41    type=undefined4      refs=1
   DAT_0051a3f4                    addr=0051a3f4    type=undefined4      refs=1  nearby: PTR_caseD_5_0051a3ec at +8
@@ -279,7 +275,6 @@ NO TYPE HINTS (441)
   DAT_0067b685                    addr=0067b685    type=undefined1      refs=1  nearby: g_MagicNumEFD at +1
   DAT_0067b718                    addr=0067b718    type=undefined4      refs=1  nearby: g_ChapterMissionFiles at -56
   DAT_0067b850                    addr=0067b850    type=undefined4      refs=1  nearby: g_ChapterDisplayTexts at -4
-  DAT_0067cb1c                    addr=0067cb1c    type=undefined4      refs=1  nearby: FLOAT_0067cb18 at +4
   DAT_0067e180                    addr=0067e180    type=undefined4      refs=1  nearby: g_MpegSynthesisTableInitialized at +16
   DAT_0067e184                    addr=0067e184    type=undefined4      refs=1  nearby: g_MpegSynthesisTableInitialized at +20
   DAT_00681f08                    addr=00681f08    type=undefined4      refs=1  nearby: PTR_s_GENERIC_00681f0c at -4
@@ -519,7 +514,6 @@ NO TYPE HINTS (441)
   DAT_02d7eb33                    addr=02d7eb33    type=undefined4      refs=1  nearby: g_CDemonLightInstance.base.base.focal_length at +11
   DAT_02d807b0                    addr=02d807b0    type=undefined4      refs=1  nearby: g_CDemonLightInstance.volumetric_enabled at +4
   DAT_02d807b4                    addr=02d807b4    type=undefined4      refs=1  nearby: g_CDemonLightInstance.volumetric_enabled at +8
-  DAT_02d831eb                    addr=02d831eb    type=undefined1      refs=1  nearby: g_IrisFadeType at -1
   DAT_02d83408                    addr=02d83408    type=undefined4      refs=2  nearby: g_BloodParticles at +52
   DAT_02d83414                    addr=02d83414    type=undefined4      refs=2  nearby: g_BloodParticles at +64
   DAT_02d8342c                    addr=02d8342c    type=undefined4      refs=3  nearby: g_BloodParticles at +88
@@ -779,7 +773,7 @@ They appear only as inline constant values.
   DAT_00684d12                    value=0x684D12        refs=1
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (1177)
+FILTERED OUT - INSIDE NAMED DATA (1176)
 --------------------------------------------------------------------------------
 These DAT_ globals fall within the address range of a named
 string, array, or struct and are not standalone globals.
@@ -1062,6 +1056,7 @@ string, array, or struct and are not standalone globals.
   DAT_0067b55a                    inside g_TempFilenameBuffer
   DAT_0067b55b                    inside g_TempFilenameBuffer
   DAT_0067b9e0                    inside g_BloodSplatTextures
+  DAT_0067cb1c                    inside g_FootstepCornerMultipliers
   DAT_0067ce4c                    inside g_DefaultInventoryKey
   DAT_0067ceb4                    inside g_DefaultInventoryValue
   DAT_0067d5c4                    inside g_DefaultMissionActorClass
@@ -1846,8 +1841,6 @@ string, array, or struct and are not standalone globals.
   DAT_03365cc4                    inside g_ThumbnailImageBuffer
   DAT_03365dc0                    inside g_ThumbnailImageBuffer
   DAT_03365dc4                    inside g_ThumbnailImageBuffer
-  DAT_03653cc1                    inside g_ThumbnailPalette
-  DAT_03653cc2                    inside g_ThumbnailPalette
   DAT_03654371                    inside g_GroundTextureNames
   DAT_03654372                    inside g_GroundTextureNames
   DAT_03654373                    inside g_GroundTextureNames

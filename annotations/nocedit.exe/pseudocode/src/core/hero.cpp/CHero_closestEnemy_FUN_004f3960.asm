@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CEnemy * __cdecl core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(CHero *this_ptr,float *out_distance)
+; CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004f3960(CHero *this_ptr,float *out_distance)
 ;
 ; Parameters:
 ; CHero *          Stack[0x4]:4   this_ptr
@@ -42,7 +42,7 @@
 section .text
 
     PUSH EBX                            ; 004f3960
-        ;   Label: core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960
+        ;   Label: core_hero.cpp_CHero_closestEnemy_FUN_004f3960
     PUSH ESI                            ; 004f3961
     PUSH EDI                            ; 004f3962
     PUSH EBP                            ; 004f3963

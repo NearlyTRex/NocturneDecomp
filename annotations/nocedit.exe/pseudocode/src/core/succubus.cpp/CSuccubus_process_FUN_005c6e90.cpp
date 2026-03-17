@@ -239,7 +239,7 @@ LAB_005c6fd0:
   if ((this_ptr->morph_started != 0) &&
      (fVar4 = this_ptr->morph_timer + delta_time, this_ptr->morph_timer = fVar4,
      4.0f < fVar4)) {
-    this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
+    this_ptr_00 = (CHotDemon *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
                             (0xbef0,"..\\core\\succubus.cpp",0x16c);
     pCVar11 = (CHotDemon *)0x0;
     if (this_ptr_00 != (CHotDemon *)0x0) {

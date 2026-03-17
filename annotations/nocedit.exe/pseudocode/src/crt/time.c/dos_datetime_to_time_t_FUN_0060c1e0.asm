@@ -10,7 +10,7 @@
 ; _tm              Stack[-0x28]:36  local_28
 ;
 ; XREF[1]:
-;   crt_io.c_stat_FUN_00607e64 at 00608100
+;   crt_io.c_getFileStat_FUN_00607e64 at 00608100
 ;
 ; Called Functions:
 ;   crt_time.c__mktime_FUN_00600f80

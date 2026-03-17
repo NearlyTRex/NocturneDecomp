@@ -62,8 +62,7 @@ void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004f13f0(CHaystack *this_p
        ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
     {
       local_88 = 9999.9;
-      pCVar5 = (CHero *)core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(&this_ptr->base,&local_88)
-      ;
+      pCVar5 = (CHero *)core_hero_cpp_CHero_closestEnemy_FUN_004f3960(&this_ptr->base,&local_88);
       if ((pCVar5 == (CHero *)0x0) || ((float)20 <= local_88)) {
         if (this_ptr->guns_drawn != 0) {
           (this_ptr->base).player_control.action_states[6] = 1;

@@ -59,7 +59,7 @@ void __cdecl core_colonel_cpp_CColonel_processAI_FUN_0043ff20(CColonel *this_ptr
          (SQRT(local_54.z * local_54.z + local_54.x * local_54.x + local_54.y * local_54.y) <
           20.0f)) &&
         ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
-       && ((pCVar5 = (CHero *)core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960
+       && ((pCVar5 = (CHero *)core_hero_cpp_CHero_closestEnemy_FUN_004f3960
                                         (&this_ptr->base,&local_88), pCVar5 != (CHero *)0x0 &&
            (local_88 < (float)20)))) {
       bVar3 = true;

@@ -81,7 +81,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690(CPacked
             _fseek(file_handle,(long)size,1);
             return;
           }
-          buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+          buffer = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                              ((int)size,"..\\cockpit\\pkbitmap.cpp",0x4de);
           this_ptr->packed_data = buffer;
           if (buffer == (char *)0x0) goto LAB_0054b6fd;

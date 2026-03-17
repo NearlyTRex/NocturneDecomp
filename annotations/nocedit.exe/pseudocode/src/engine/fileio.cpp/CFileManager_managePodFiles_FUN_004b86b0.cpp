@@ -824,7 +824,7 @@ LAB_004b9af4:
                   }
                   break;
                 }
-                piVar8 = (int *)_errno();
+                piVar8 = _errno();
                 if (*piVar8 != 6) break;
                 iVar2 = iVar2 + 1;
                 (*g_SleepFunc)(500);

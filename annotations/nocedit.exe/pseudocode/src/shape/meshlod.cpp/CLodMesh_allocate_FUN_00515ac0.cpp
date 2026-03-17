@@ -19,13 +19,13 @@ void __cdecl shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(CLodMesh *this_ptr
   this_ptr->max_tri_count = tri_count;
   this_ptr->tri_count = tri_count;
   this_ptr->lod_texture_count = lod_texture_count;
-  pCVar1 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
+  pCVar1 = (CLodVert *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (this_ptr->max_vertex_count,0x4c4,"..\\shape\\meshlod.cpp",0x231);
   this_ptr->vertex_data = pCVar1;
-  pCVar2 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
+  pCVar2 = (CLodFace *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (this_ptr->max_tri_count,0x8c,"..\\shape\\meshlod.cpp",0x232);
   this_ptr->tri_data = pCVar2;
-  pSVar3 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
+  pSVar3 = (SMRGLTextureLod *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (this_ptr->lod_texture_count,0x48,"..\\shape\\meshlod.cpp",0x233);
   this_ptr->lod_textures = pSVar3;
   if ((((this_ptr->max_vertex_count < 1) || (this_ptr->vertex_data != (CLodVert *)0x0)) &&

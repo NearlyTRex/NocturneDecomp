@@ -18,6 +18,9 @@ CDemonActorType g_CEnemyClassInfo = {};
 // CEditorTools
 CEditorTools g_CEditorToolsInstance = {};
 
+// CEmitter*
+CEmitter* g_EditorSelectedEmitter = {};
+
 // CVector3f
 CVector3f g_EmitterTarget = {};
 
@@ -25,7 +28,7 @@ CVector3f g_EmitterTarget = {};
 SWindow g_WindowStack[5] = {};
 
 // UOrientationVector
-UOrientationVector UNION_UOrientationVector_02cf2b6c = {};
+UOrientationVector g_EmitterEditorOrientation = {};
 
 // _BIT_INTEGER32
 _BIT_INTEGER32 g_MouseButtonFlags = {};

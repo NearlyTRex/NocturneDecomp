@@ -15,7 +15,7 @@ void __cdecl wincore_winrun_cpp_getRegistryStringValue_FUN_005f4210(char *key_pa
   DWORD DStack_8;
   
   *output_buffer = '\0';
-  LVar1 = (*g_RegOpenKeyExAFunc)((HKEY)&DAT_80000002,key_path,0,1,&pHStack_10);
+  LVar1 = (*g_RegOpenKeyExAFunc)(HKEY_LOCAL_MACHINE,key_path,0,1,&pHStack_10);
   if (LVar1 != 0) {
     return;
   }

@@ -57,7 +57,7 @@ section .text
     PUSH 0x1ae                          ; 0052360b
     PUSH 0x638e50                       ; 00523610 | = "..\\core\\mission.cpp"
     CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 00523615
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * filename, int context)
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     MOV EDX,dword ptr [EBX + 0x884]     ; 0052361a
     ADD ESP,0x8                         ; 00523620
     TEST EDX,EDX                        ; 00523623

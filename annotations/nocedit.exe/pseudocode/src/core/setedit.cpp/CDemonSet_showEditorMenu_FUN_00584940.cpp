@@ -51,7 +51,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
     engine_2d_c_drawText_FUN_00401fd0("F.  Export lights/cameras to .LC file",0,0xb0);
     engine_2d_c_drawText_FUN_00401fd0("G.  Virtual director box editor",0,0xbb);
     _sprintf
-              (local_68,"H.  Weather: %s",(&PTR_s_None_006817f0)[this_ptr->weather_type]);
+              (local_68,"H.  Weather: %s",g_WeatherTypeNames[this_ptr->weather_type]);
     engine_2d_c_drawText_FUN_00401fd0(local_68,0,0xc6);
     engine_2d_c_drawText_FUN_00401fd0("I.  Edit ground types",0,0xd1);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

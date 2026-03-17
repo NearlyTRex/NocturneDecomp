@@ -36,8 +36,7 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(CGhoul *this_pt
                                g_CWayPointClassInfo.name_hash);
       if ((this_ptr_00 != (CDemonActor *)0x0) &&
          (iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                            (PTR_s_darkPoint_0062df3e_0067b930,this_ptr_00->actor_name,0),
-         iVar2 != 0)) {
+                            (g_GhoulWayPointTypes[0],this_ptr_00->actor_name,0), iVar2 != 0)) {
         iVar3 = 0;
         for (iVar4 = 0; iVar4 < g_CDemonSetPtr->enemy_count; iVar4 = iVar4 + 1) {
           pCVar3 = (CGhoul *)

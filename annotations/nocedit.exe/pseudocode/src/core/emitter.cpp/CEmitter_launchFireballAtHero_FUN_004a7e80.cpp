@@ -11,7 +11,7 @@
 void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004a7e80(CEmitter *this_ptr)
 
 {
-  int iVar2;
+  CHero *iVar2;
   float fVar2;
   CLocation *location;
   float10 fVar3;
@@ -19,7 +19,7 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004a7e80(CEmitte
   float10 fVar5;
   float10 fVar6;
   float10 fVar7;
-  unkbyte10 Var8;
+  float10 fVar9;
   float10 fVar8;
   float local_6c;
   float local_68;
@@ -37,9 +37,9 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004a7e80(CEmitte
   
   location = &(this_ptr->base).location;
   iVar2 = core_hero_cpp_closestHeroToPoint_FUN_004f2170(location);
-  local_60 = *(float *)(iVar2 + 0x20) - (location->position).x;
-  local_5c = *(float *)(iVar2 + 0x24) - (this_ptr->base).location.position.y;
-  local_58 = *(float *)(iVar2 + 0x28) - (this_ptr->base).location.position.z;
+  local_60 = (iVar2->base).base.location.position.x - (location->position).x;
+  local_5c = (iVar2->base).base.location.position.y - (this_ptr->base).location.position.y;
+  local_58 = (iVar2->base).base.location.position.z - (this_ptr->base).location.position.z;
   if (&local_6c != &local_60) {
     local_6c = local_60;
     local_68 = local_5c;
@@ -53,11 +53,11 @@ void __cdecl core_emitter_cpp_CEmitter_launchFireballAtHero_FUN_004a7e80(CEmitte
   fVar4 = (float10)fptan((float10)1.30899693895833);
   fVar8 = (float10)local_64;
   local_64 = (float)((float10)fVar2 + fVar8);
-  Var8 = fpatan((float10)local_6c,(float10)fVar2 + fVar8);
+  fVar9 = (float10)fpatan((float10)local_6c,(float10)fVar2 + fVar8);
   fVar2 = SQRT(local_6c * local_6c + local_64 * local_64);
   fVar5 = (float10)fcos((float10)-1.30899693895833);
-  fVar6 = (float10)fsin(Var8);
-  fVar7 = (float10)fcos(Var8);
+  fVar6 = (float10)fsin(fVar9);
+  fVar7 = (float10)fcos(fVar9);
   fVar8 = fVar5 * (float10)2.0f * fVar5 * (fVar4 * (float10)fVar2 - (float10)local_68);
   local_48.y = (float)-fVar3;
   local_48.x = (float)(fVar6 * fVar5);

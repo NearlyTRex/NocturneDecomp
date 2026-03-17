@@ -66,11 +66,11 @@ LAB_0051d5ec:
     if (-1 < INT_0067d390) {
       shape_meshlod_cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0(this_ptr,INT_0067d390);
     }
-    if (PTR_02f313e8 != (CQuaternion4f *)0x0) {
+    if (g_LodMeshHighlightVertices != (CQuaternion4f *)0x0) {
       g_ActiveRenderColor =
            shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
       shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
-                (g_CEditorToolsPtr,PTR_02f313e8,4);
+                (g_CEditorToolsPtr,g_LodMeshHighlightVertices,4);
     }
     if ((INT_02f31238 != 0) && (this_ptr->next_lod != (CLodMesh *)0x0)) {
       shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0(this_ptr->next_lod);

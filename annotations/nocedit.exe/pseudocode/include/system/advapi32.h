@@ -24,10 +24,10 @@ typedef BOOL LOGON_USER_A_FUNC(LPCSTR lpszUsername, LPCSTR lpszDomain, LPCSTR lp
 typedef LSTATUS REG_CLOSE_KEY_FUNC(HKEY hKey);
 
 // Function Definition: REG_CREATE_KEY_EX_A_FUNC
-typedef LSTATUS REG_CREATE_KEY_EX_A_FUNC(HKEY hKey, LPCSTR lpSubKey, DWORD Reserved, LPSTR lpClass, DWORD dwOptions, REGSAM samDesired, LPSECURITY_ATTRIBUTES lpSecurityAttributes, PHKEY phkResult, LPDWORD lpdwDisposition);
+typedef LSTATUS REG_CREATE_KEY_EX_A_FUNC(ULONG hKey, LPCSTR lpSubKey, DWORD Reserved, LPSTR lpClass, DWORD dwOptions, REGSAM samDesired, LPSECURITY_ATTRIBUTES lpSecurityAttributes, PHKEY phkResult, LPDWORD lpdwDisposition);
 
 // Function Definition: REG_OPEN_KEY_EX_A_FUNC
-typedef LSTATUS REG_OPEN_KEY_EX_A_FUNC(HKEY hKey, LPCSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult);
+typedef LSTATUS REG_OPEN_KEY_EX_A_FUNC(ULONG hKey, LPCSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult);
 
 // Function Definition: REG_QUERY_VALUE_EX_A_FUNC
 typedef LSTATUS REG_QUERY_VALUE_EX_A_FUNC(HKEY hKey, LPCSTR lpValueName, LPDWORD lpReserved, LPDWORD lpType, LPBYTE lpData, LPDWORD lpcbData);

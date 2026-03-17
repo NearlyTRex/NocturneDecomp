@@ -157,7 +157,7 @@ LAB_004ba93f:
           _setvbuf((_FILE *)stream_ptr,(char *)0x0,0,0x400);
           goto LAB_004baa09;
         }
-        piVar5 = (int *)_errno();
+        piVar5 = _errno();
         if (*piVar5 != 6) break;
         iVar4 = iVar4 + 1;
         (*g_SleepFunc)(500);

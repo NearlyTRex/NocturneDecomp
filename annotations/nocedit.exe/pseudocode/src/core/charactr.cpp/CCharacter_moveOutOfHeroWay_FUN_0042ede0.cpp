@@ -16,7 +16,7 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacte
   bool bVar3;
   float fVar4;
   int iVar3;
-  CEnemy *pCVar4;
+  CHero *pCVar4;
   CVector3f *pCVar5;
   CVector3f *pCVar7;
   int iVar8;
@@ -52,7 +52,7 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacte
   
   if (0.0 <= this_ptr->hero_proximity_timer) {
     location_00 = &(this_ptr->base).location;
-    pCVar4 = (CEnemy *)core_hero_cpp_closestHeroToPoint_FUN_004f2170(location_00);
+    pCVar4 = core_hero_cpp_closestHeroToPoint_FUN_004f2170(location_00);
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
               ((CDemonActor *)pCVar4,&local_a4,&location_00->position);
     pCVar5 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_bc,&local_a4);
@@ -62,7 +62,7 @@ int __cdecl core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0(CCharacte
     local_44.z = (this_ptr->base).location.position.z - (pCVar4->base).base.location.position.z;
     pCVar7 = core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_8c,&local_44);
     fVar2 = pCVar7->y;
-    iVar8 = (*(((pCVar4->base).base.vtable._ue)->_ue).randomize)(pCVar4);
+    iVar8 = (*(((pCVar4->base).base.vtable._uh)->_uh).isWeaponDrawn)(pCVar4);
     if ((iVar8 != 0) && (ABS(fVar1) < (float)0.78539816337500001)) {
       bVar3 = local_a4.x < 0.0;
       pCVar7 = &this_ptr->move_away_target;

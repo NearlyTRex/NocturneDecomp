@@ -1298,7 +1298,7 @@ section .text
     JMP 0x004bb847                      ; 004bbc99
         ;   XREF to: 004bb847 (UNCONDITIONAL_JUMP)  ; LAB_004bb847
     CALL crt_errno.c__errno_FUN_00601450 ; 004bbc9e
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; int * crt_errno.c__errno_FUN_00601450()
         ;   Label: LAB_004bbc9e
     CMP dword ptr [EAX],0x6             ; 004bbca3
     JNZ 0x004bbcbe                      ; 004bbca6
@@ -1508,7 +1508,7 @@ section .text
     JMP 0x004bb847                      ; 004bbf06
         ;   XREF to: 004bb847 (UNCONDITIONAL_JUMP)  ; LAB_004bb847
     CALL crt_errno.c__errno_FUN_00601450 ; 004bbf0b
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; int * crt_errno.c__errno_FUN_00601450()
         ;   Label: LAB_004bbf0b
     CMP dword ptr [EAX],0x6             ; 004bbf10
     JNZ 0x004bbf2b                      ; 004bbf13

@@ -43,13 +43,13 @@
 ; Called Functions:
 ;   core_sound.cpp_CSound_dtor_FUN_005aaeb0
 ;   crt_errno.c__errno_FUN_00601450
-;   crt_startup.c_notifyAbnormalTermination_FUN_00601620
 ;   crt_stdio.c__vsprintf_FUN_005fdba8
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_string.c_strerror_FUN_00601470
 ;   crt_time.c__asctime_FUN_00601768
 ;   crt_time.c__localtime_FUN_00600288
 ;   crt_time.c__time_FUN_006001f0
+;   crt_watcom.c_notifyAbnormalTermination_FUN_00601620
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_005ecd90
 ;   shape_memdbg.cpp_closeFile_FUN_0050f9b0
 ;   shape_memdbg.cpp_openFile_FUN_0050f7a0
@@ -159,8 +159,8 @@ section .text
     CALL shape_memdbg.cpp_closeFile_FUN_0050f9b0 ; 00506fd9
         ;   XREF to: 0050f9b0 (UNCONDITIONAL_CALL)  ; int shape_memdbg.cpp_closeFile_FUN_0050f9b0(_FILE * file_ptr, char * source_file, int line_number)
     ADD ESP,0xc                         ; 00506fde
-    CALL crt_startup.c_notifyAbnormalTermination_FUN_00601620 ; 00506fe1
-        ;   XREF to: 00601620 (UNCONDITIONAL_CALL)  ; void crt_startup.c_notifyAbnormalTermination_FUN_00601620()
+    CALL crt_watcom.c_notifyAbnormalTermination_FUN_00601620 ; 00506fe1
+        ;   XREF to: 00601620 (UNCONDITIONAL_CALL)  ; void crt_watcom.c_notifyAbnormalTermination_FUN_00601620()
         ;   Label: LAB_00506fe1
     JMP 0x00506f23                      ; 00506fe6
         ;   XREF to: 00506f23 (UNCONDITIONAL_JUMP)  ; LAB_00506f23
@@ -233,7 +233,7 @@ section .text
         ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005fe6d0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 005070a8
     CALL crt_errno.c__errno_FUN_00601450 ; 005070ab
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; int * crt_errno.c__errno_FUN_00601450()
     MOV EDX,dword ptr [EAX]             ; 005070b0
     PUSH EDX                            ; 005070b2
     CALL crt_string.c_strerror_FUN_00601470 ; 005070b3
@@ -241,7 +241,7 @@ section .text
     ADD ESP,0x4                         ; 005070b8
     PUSH EAX                            ; 005070bb
     CALL crt_errno.c__errno_FUN_00601450 ; 005070bc
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; int * crt_errno.c__errno_FUN_00601450()
     MOV ECX,dword ptr [EAX]             ; 005070c1
     PUSH ECX                            ; 005070c3
     PUSH 0x63167a                       ; 005070c4 | = "errno = %d (%s)\n"

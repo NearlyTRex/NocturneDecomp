@@ -140,7 +140,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/emitter.cpp (1 remaining of 20)
     - core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80
-      Suspects: warning_inlined_function, unknown_type, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
+      Suspects: warning_inlined_function, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic, decompiler_intrinsic
 
   core/level.cpp (1 remaining of 6)
     - core_level.cpp_CLevelLoader_update_FUN_00504160
@@ -300,7 +300,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [pointer_cast] - 73 functions
+  [pointer_cast] - 72 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360                        (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0                         (  5 lines)
     shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0                   ( 10 lines)
@@ -354,7 +354,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     sound_mp3.cpp_applyScalefactorsToSubbands_FUN_005302f0                 ( 33 lines)
     engine_2d.c_initGraphicsSystem_FUN_00401010                            ( 34 lines)
     core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00453c90 ( 35 lines)
-    core_hero.cpp_closestHeroToPoint_FUN_004f2170                          ( 35 lines)
     core_ground.cpp_CGround_transformAndStoreVertex_FUN_004ef3a0           ( 35 lines)
     engine_3d.c_renderOverlayTextureEnable_FUN_00404020                    ( 36 lines)
     core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00453160              ( 37 lines)
@@ -507,11 +506,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_mmx.c_detectCPUFeatures_FUN_00524f10                              (  9 lines)
     core_mmx.c_getCPUInfo_FUN_0052500f                                     ( 13 lines)
 
-  [undefined_data] - 3 functions
-    wincore_winrun.cpp_getRegistryStringValue_FUN_005f4210                 ( 19 lines)
-    wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290                 ( 29 lines)
-    engine_matrix.c_projectTransformedPoint_FUN_0050cdc0                   ( 38 lines)
-
   [suspect_float] - 3 functions
     core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90                          ( 21 lines)
     core_flamegun.cpp_CFlameThrower_ctor_FUN_004cb880                      ( 22 lines)
@@ -530,6 +524,9 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
 
   [warning_unmapped_variable] - 1 functions
     cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30                ( 24 lines)
+
+  [undefined_data] - 1 functions
+    engine_matrix.c_projectTransformedPoint_FUN_0050cdc0                   ( 38 lines)
 
 ====================================================================================================
 PRIORITY 3: Files at 90%+ (finish them off!)
@@ -573,7 +570,7 @@ PRIORITY 3: Files at 90%+ (finish them off!)
   core/emitter.cpp (95.0% complete)
     1 functions remaining:
       core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80 (68 lines)
-        Types: ['decompiler_intrinsic', 'unknown_type', 'warning_inlined_function']
+        Types: ['decompiler_intrinsic', 'warning_inlined_function']
 
   core/bat.cpp (94.7% complete)
     1 functions remaining:
@@ -589,6 +586,15 @@ PRIORITY 3: Files at 90%+ (finish them off!)
     1 functions remaining:
       core_grave.cpp_CGrave_getBoundingBox_FUN_004ee8f0 (38 lines)
         Types: ['decompiler_intrinsic', 'warning_inlined_function']
+
+  core/hero.cpp (93.8% complete)
+    3 functions remaining:
+      core_hero.cpp_CHero_dtor_FUN_004f2470 (33 lines)
+        Types: ['decompiler_intrinsic', 'negative_offset', 'pointer_cast']
+      core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 (24 lines)
+        Types: ['pointer_cast']
+      core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0 (24 lines)
+        Types: ['decompiler_intrinsic', 'pointer_cast']
 
   core/boxactor.cpp (93.5% complete)
     3 functions remaining:
@@ -664,17 +670,6 @@ PRIORITY 3: Files at 90%+ (finish them off!)
         Types: ['warning_type_propagation']
       core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (759 lines)
         Types: ['decompiler_intrinsic', 'warning_inlined_function', 'warning_type_propagation']
-
-  core/hero.cpp (91.7% complete)
-    4 functions remaining:
-      core_hero.cpp_CHero_dtor_FUN_004f2470 (33 lines)
-        Types: ['decompiler_intrinsic', 'negative_offset', 'pointer_cast']
-      core_hero.cpp_closestHeroToPoint_FUN_004f2170 (35 lines)
-        Types: ['pointer_cast']
-      core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 (24 lines)
-        Types: ['pointer_cast']
-      core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0 (24 lines)
-        Types: ['decompiler_intrinsic', 'pointer_cast']
 
   core/turret.cpp (91.7% complete)
     2 functions remaining:
@@ -848,6 +843,7 @@ ALL REMAINING FILES
   core/sound.cpp                                                80.5%  (33/41 clean, 8 remaining)
   engine/2d.c                                                   80.3%  (61/76 clean, 15 remaining)
   core/ladder.cpp                                               78.9%  (15/19 clean, 4 remaining)
+  wincore/winrun.cpp                                            78.8%  (26/33 clean, 7 remaining)
   cockpit/drawsurf.cpp                                          78.5%  (73/93 clean, 20 remaining)
   core/icepick.cpp                                              78.3%  (18/23 clean, 5 remaining)
   sound/snddx.cpp                                               78.1%  (25/32 clean, 7 remaining)
@@ -876,7 +872,6 @@ ALL REMAINING FILES
   core/bugs.cpp                                                 70.5%  (31/44 clean, 13 remaining)
   engine/3d.c                                                   70.2%  (73/104 clean, 31 remaining)
   core/weather.cpp                                              70.0%  (7/10 clean, 3 remaining)
-  wincore/winrun.cpp                                            69.7%  (23/33 clean, 10 remaining)
   sound/sndmain.cpp                                             69.4%  (134/193 clean, 59 remaining)
   shape/design.c                                                68.7%  (112/163 clean, 51 remaining)
   engine/alphabit.cpp                                           66.7%  (6/9 clean, 3 remaining)

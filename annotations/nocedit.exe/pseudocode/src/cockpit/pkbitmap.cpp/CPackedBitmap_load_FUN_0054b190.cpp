@@ -56,7 +56,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
   do {
     *(int *)((int)this_ptr->row_pointers + local_28) = new_size;
     if (this_ptr->height <= local_24) {
-      pcVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+      pcVar1 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                          (this_ptr->packed_data,new_size,"..\\cockpit\\pkbitmap.cpp",0x3d6);
       this_ptr->packed_data = pcVar1;
       return;
@@ -81,7 +81,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_0054b190(CPackedBitmap 
           new_size = iVar4 + 4;
           if (local_18 < new_size) {
             local_18 = iVar4 + 0x4004;
-            pcVar5 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+            pcVar5 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                                (this_ptr->packed_data,local_18,"..\\cockpit\\pkbitmap.cpp",0x3ac
                                );
             this_ptr->packed_data = pcVar5;

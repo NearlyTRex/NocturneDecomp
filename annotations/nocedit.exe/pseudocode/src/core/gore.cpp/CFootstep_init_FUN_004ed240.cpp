@@ -29,11 +29,12 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004ed240(CFootstep *this_ptr,CVect
     fVar6 = (float10)fcos((float10)(orientation->vec).y);
     fVar3 = fVar5 * (float10)0.5;
     fVar4 = fVar6 * (float10)0.5;
-    local_40.x = (float)(fVar3 * (float10)*(float *)((int)&1.0f + iVar2) +
-                         -fVar4 * (float10)*(float *)((int)&1.0f + iVar2) +
+    local_40.x = (float)(fVar3 * (float10)*(float *)((int)g_FootstepCornerMultipliers[1] + iVar2) +
+                         -fVar4 * (float10)*(float *)((int)g_FootstepCornerMultipliers[0] + iVar2) +
                         (float10)position->x);
-    local_40.z = (float)(fVar4 * (float10)*(float *)((int)&1.0f + iVar2) +
-                        fVar3 * (float10)*(float *)((int)&1.0f + iVar2)) + position->z;
+    local_40.z = (float)(fVar4 * (float10)*(float *)((int)g_FootstepCornerMultipliers[1] + iVar2) +
+                        fVar3 * (float10)*(float *)((int)g_FootstepCornerMultipliers[0] + iVar2)) +
+                 position->z;
     if (local_34 != &local_40) {
       local_34[0].x = local_40.x;
       local_34[0].y = position->y;

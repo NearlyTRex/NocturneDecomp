@@ -33,7 +33,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0(CLodMesh *t
   if (create_if_missing == 0) {
     return -1;
   }
-  pCVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+  pCVar1 = (CLodEdge *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->edges_ptr,(this_ptr->edge_count + 1) * 0xf0,
                       "..\\shape\\meshlod.cpp",0x325);
   this_ptr->edges_ptr = pCVar1;

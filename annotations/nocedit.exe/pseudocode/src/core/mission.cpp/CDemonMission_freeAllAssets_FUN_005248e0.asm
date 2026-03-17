@@ -29,7 +29,7 @@ section .text
         ;   Label: core_mission.cpp_CDemonMission_freeAllAssets_FUN_005248e0
     PUSH 0x639394                       ; 005248e5 | = "..\\core\\mission.cpp"
     CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 005248ea
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * filename, int context)
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     ADD ESP,0x8                         ; 005248ef
     CALL engine_texture.cpp_clearTextureCache_FUN_005dd8e0 ; 005248f2
         ;   XREF to: 005dd8e0 (UNCONDITIONAL_CALL)  ; void engine_texture.cpp_clearTextureCache_FUN_005dd8e0()
@@ -42,7 +42,7 @@ section .text
     PUSH 0x5e2                          ; 00524906
     PUSH 0x6393a8                       ; 0052490b | = "..\\core\\mission.cpp"
     CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 00524910
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * filename, int context)
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     ADD ESP,0x8                         ; 00524915
     RET                                 ; 00524918
 

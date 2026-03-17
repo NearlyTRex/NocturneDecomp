@@ -6,16 +6,14 @@
   },
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 50,
+    "complexity_score": 35,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 35,
-    "suspect_count": 1,
-    "suspect_types": [
-      "pointer_cast"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 114
   },
   "cross_references": [
@@ -42,7 +40,7 @@
     ],
     "convention": "__cdecl",
     "name": "core_hero.cpp_closestHeroToPoint_FUN_004f2170",
-    "signature": "int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(CLocation *location)"
+    "signature": "CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(CLocation *location)"
   },
   "function_calls": [
     {
@@ -188,14 +186,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(int *)((int)",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)((int)g_HeroActors + iVar5);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

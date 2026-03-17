@@ -11,7 +11,7 @@
 ; XREF[9]:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10 at 0050704f
 ;   core_sound.cpp_playSfxInternal_FUN_005b1fd0 at 005b24c6
-;   crt_io.c_utime_FUN_00608160 at 006081cc
+;   crt_io.c__utime_FUN_00608160 at 006081cc
 ;   engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220 at 004b4e5f
 ;   engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 at 004bbf34
 ;   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 at 004b5be9

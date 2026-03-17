@@ -9,7 +9,7 @@
 ; XREF[11]:
 ;   crt_file.c_makepath_FUN_005febfc at 005fed88
 ;   crt_file.c_splitpath_s_FUN_00610460 at 006104a6
-;   crt_io.c_stat_FUN_00607e64 at 00607fb2
+;   crt_io.c_getFileStat_FUN_00607e64 at 00607fb2
 ;   crt_string.c__mbstrnicmp_FUN_00608e50 at 00608e91
 ;   crt_string.c_char_in_set_FUN_0060e340 at 0060e386
 ;   crt_string.c_mbstrnbytes_FUN_00605ec0 at 00605f0d

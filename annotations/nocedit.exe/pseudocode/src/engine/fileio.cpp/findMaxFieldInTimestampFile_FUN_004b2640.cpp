@@ -26,7 +26,7 @@ int __cdecl engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640(char *dir
       _setvbuf(local_18,(char *)0x0,0,0x400);
       goto LAB_004b2681;
     }
-    piVar1 = (int *)_errno();
+    piVar1 = _errno();
     if (*piVar1 != 6) break;
     iVar4 = iVar4 + 1;
     (*g_SleepFunc)(500);

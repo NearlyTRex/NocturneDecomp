@@ -20,8 +20,8 @@
 ;   TerminatedCString s_Course_name_00656fa0
 ;   TerminatedCString s_Left_front_00656fb5
 ;   TerminatedCString s_Right_front_00656fc0
-;   void* PTR_s_Left_front_00684480 = 00656fb5
-;   void* PTR_s_Right_front_00684484 = 00656fc0
+;   char*[4] g_VehicleWheelLocationNames
+;   undefined4 PTR_s_Right_front_00684484
 ;
 ; Called Functions:
 ;   core_actor.cpp_CActorPropertyList_addFloat_FUN_0040e160
@@ -68,7 +68,7 @@ section .text
     XOR EDI,EDI                         ; 005e8c02
     ADD ESI,0x950                       ; 005e8c04
     MOV dword ptr [ESP + 0x10c],EAX     ; 005e8c0a
-    MOV EAX,dword ptr [EDI + 0x684480]  ; 005e8c11 | PTR_s_Left_front_00684480 | PTR_s_Right_front_00684484
+    MOV EAX,dword ptr [EDI + 0x684480]  ; 005e8c11 | g_VehicleWheelLocationNames | PTR_s_Right_front_00684484
         ;   Label: LAB_005e8c11
     PUSH EAX                            ; 005e8c17 | = "Left front" | s_Right_front_00656fc0
     PUSH 0x656f7b                       ; 005e8c18 | = "%s tire"

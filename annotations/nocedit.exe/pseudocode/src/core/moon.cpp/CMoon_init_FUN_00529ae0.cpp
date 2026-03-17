@@ -33,7 +33,7 @@ void __cdecl core_moon_cpp_CMoon_init_FUN_00529ae0(CMoon *this_ptr)
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
               (&g_MoonCloudTexture,"menucld2",0x100,0x100);
     do {
-      puVar1 = (uint *)((int)PTR_s_noc00000_0067d758 + iVar5);
+      puVar1 = (uint *)((int)g_MoonNocStrings + iVar5);
       iVar5 = iVar5 + 4;
       engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(this_ptr_00,(char *)*puVar1,0x280,0x116);
       this_ptr_00 = this_ptr_00 + 1;

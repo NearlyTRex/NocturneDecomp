@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_io_c_utime_FUN_00608160(char *filename,utimbuf *timestamps)
+; int __cdecl crt_io_c__utime_FUN_00608160(char *filename,_utimbuf *timestamps)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
-; utimbuf *        Stack[0x8]:4   timestamps
+; _utimbuf *       Stack[0x8]:4   timestamps
 ;
 ; XREF[1]:
-;   crt_io.c_utime_00600c1e at 00600c1e
+;   crt_io.c__utime_00600c1e at 00600c1e
 ;
 ; Referenced Globals:
 ;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38
@@ -34,7 +34,7 @@
 section .text
 
     PUSH EBX                            ; 00608160
-        ;   Label: crt_io.c_utime_FUN_00608160
+        ;   Label: crt_io.c__utime_FUN_00608160
     PUSH ESI                            ; 00608161
     PUSH EDI                            ; 00608162
     SUB ESP,0x48                        ; 00608163

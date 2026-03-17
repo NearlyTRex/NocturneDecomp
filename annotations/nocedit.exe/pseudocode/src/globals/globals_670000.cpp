@@ -1938,6 +1938,7 @@ byte g_CPUInfoIntelCPU = 0x0;
 byte g_CPUInfoMMXSupported = 0x0;
 
 // char*
+char* g_MemCheckLastFile = (char*)s_none_00636540;
 char* g_CurrentDebugFilename = (char*)s_unknown_0067d200;
 
 // char[100]

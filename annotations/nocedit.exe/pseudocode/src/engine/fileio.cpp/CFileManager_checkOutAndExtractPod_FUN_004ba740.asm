@@ -431,7 +431,7 @@ section .text
     JMP 0x004ba954                      ; 004bab0d
         ;   XREF to: 004ba954 (UNCONDITIONAL_JUMP)  ; LAB_004ba954
     CALL crt_errno.c__errno_FUN_00601450 ; 004bab12
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; int * crt_errno.c__errno_FUN_00601450()
         ;   Label: LAB_004bab12
     CMP dword ptr [EAX],0x6             ; 004bab17
     JNZ 0x004bab32                      ; 004bab1a

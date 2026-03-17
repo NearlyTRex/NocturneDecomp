@@ -39,7 +39,7 @@ int __cdecl determine_dst_status(_tm *timeptr)
   iVar2 = is_leap_year(timeptr->tm_year + 0x76c);
   if (iVar2 == 0) {
     iVar8 = *(int *)(&g_DaysInMonth_Normal + iVar9);
-    iVar1 = *(int *)((int)&INFINITY + iVar9 * 2 + 6);
+    iVar1 = *(int *)((int)&g_PositiveInfinity + iVar9 * 2 + 6);
   }
   else {
     iVar8 = *(int *)(&g_DaysInMonth_Leap + iVar9);

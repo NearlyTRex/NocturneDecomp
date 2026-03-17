@@ -40,7 +40,7 @@ section .text
     PUSH 0xb0                           ; 00522e32
     PUSH 0x638a30                       ; 00522e37 | = "..\\core\\mission.cpp"
     CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 00522e3c
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * filename, int context)
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     ADD ESP,0x8                         ; 00522e41
     PUSH 0x638a44                       ; 00522e44 | = "wt"
     MOV EDX,dword ptr [ESP + 0x14]      ; 00522e49

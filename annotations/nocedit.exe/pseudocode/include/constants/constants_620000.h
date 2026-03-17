@@ -3083,7 +3083,7 @@ static char s_0062a892[] = " ";
 static char s_A_a_0062a86f[] = "Aa  \177";
 
 // char[21] constants
-static char s_0062a87d[] = "  ?! ";
+static char s_anon_0062a87d[] = "  ?! ";
 
 // char[50] constants
 static char g_CheatStr_AutoAim[50] = {

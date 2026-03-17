@@ -30,7 +30,7 @@ void __cdecl core_dlight_cpp_CDemonLight_init_FUN_004727c0(CDemonLight *this_ptr
   this_ptr->shadow_depth_buffer = (ushort *)((int)this_ptr->shadow_buffer_raw + 0x10U & 0xfffffff0);
   iVar4 = this_ptr->shadow_map_width * this_ptr->shadow_map_height;
   iVar5 = iVar4 >> 0x1f;
-  puVar3 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+  puVar3 = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                      ((int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3,
                       "..\\core\\dlight.cpp",0x71);
   fVar1 = (float)7;

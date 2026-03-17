@@ -1,12 +1,12 @@
-// Name: crt_io.c_utime_FUN_00608160
+// Name: crt_io.c__utime_FUN_00608160
 // Address: 00608160
 // Address Range: [[00608160, 006082d5]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_io_c_utime_FUN_00608160(char *filename,utimbuf *timestamps)
+// Signature: int __cdecl crt_io_c__utime_FUN_00608160(char *filename,_utimbuf *timestamps)
 
 #include "nocturne.h"
 
-int __cdecl utime(char *filename,utimbuf *timestamps)
+int __cdecl _utime(char *filename,_utimbuf *timestamps)
 
 {
   HANDLE hFile;
@@ -18,7 +18,7 @@ int __cdecl utime(char *filename,utimbuf *timestamps)
   _FILETIME _Stack_34;
   _FILETIME _Stack_2c;
   _FILETIME _Stack_24;
-  utimbuf uStack_1c;
+  _utimbuf _Stack_1c;
   _FILETIME _Stack_14;
   
   hFile = (*g_CreateFileAFunc)(filename,0xc0000000,0,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
@@ -32,10 +32,10 @@ int __cdecl utime(char *filename,utimbuf *timestamps)
       DVar1 = __set_errno();
       return DVar1;
     }
-    if (timestamps == (utimbuf *)0x0) {
-      uStack_1c.actime = _time((int *)0x0);
-      timestamps = &uStack_1c;
-      uStack_1c.modtime = uStack_1c.actime;
+    if (timestamps == (_utimbuf *)0x0) {
+      _Stack_1c.actime = _time((int *)0x0);
+      timestamps = &_Stack_1c;
+      _Stack_1c.modtime = _Stack_1c.actime;
     }
     p_Var3 = _localtime(&timestamps->modtime);
     SStack_54.wYear = (short)p_Var3->tm_year + 0x76c;

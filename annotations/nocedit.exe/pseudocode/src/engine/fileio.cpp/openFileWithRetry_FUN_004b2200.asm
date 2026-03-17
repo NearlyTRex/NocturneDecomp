@@ -42,7 +42,7 @@ section .text
     JNZ 0x004b224d                      ; 004b2228
         ;   XREF to: 004b224d (CONDITIONAL_JUMP)  ; LAB_004b224d
     CALL crt_errno.c__errno_FUN_00601450 ; 004b222a
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; int * crt_errno.c__errno_FUN_00601450()
     CMP dword ptr [EAX],0x6             ; 004b222f
     JNZ 0x004b2246                      ; 004b2232
         ;   XREF to: 004b2246 (CONDITIONAL_JUMP)  ; LAB_004b2246

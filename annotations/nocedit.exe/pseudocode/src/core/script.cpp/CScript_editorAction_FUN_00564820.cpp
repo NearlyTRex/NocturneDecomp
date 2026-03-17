@@ -153,7 +153,7 @@ void __cdecl core_script_cpp_CScript_editorAction_FUN_00564820(CScript *this_ptr
           local_28 = ~uVar9 - 1;
         }
         local_20 = ((local_28 + iVar12) - local_2c) + 1;
-        local_14 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+        local_14 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                              (local_14,local_20,"..\\core\\script.cpp",0x172e);
         if (local_14 == (char *)0x0) {
           g_CurrentFilename = "..\\core\\script.cpp";

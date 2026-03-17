@@ -375,14 +375,14 @@ POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
 INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 
-@004ddbc3 [ESP:-1116]~  # MOV AL, byte ptr [EBX + 0x2d831d8]
+@004ddbc3 [ESP:-1116]~  # MOV CL, byte ptr [EBX + 0x2d831d8]
 INT_ADD (unique,0x6800,4) = (register,0xc,4) /* EBX */, (const,0x2d831d8,4)
 LOAD (unique,0x17000,1) = (const,0x1a1,4), (unique,0x6800,4)
-COPY (register,0x0,1) = (unique,0x17000,1)
+COPY (register,0x4,1) = (unique,0x17000,1)
 
-@004ddbc9 [ESP:-1116]~  # MOV byte ptr [EBX + 0x2d831d9], AL
+@004ddbc9 [ESP:-1116]~  # MOV byte ptr [EBX + 0x2d831d9], CL
 INT_ADD (unique,0x6800,4) = (register,0xc,4) /* EBX */, (const,0x2d831d9,4)
-COPY (unique,0xa100,1) = (register,0x0,1)
+COPY (unique,0xa100,1) = (register,0x4,1)
 STORE (const,0x1a1,4), (unique,0x6800,4), (unique,0xa100,1)
 
 @004ddbcf [ESP:-1116]~  # TEST EBX, EBX

@@ -57,7 +57,7 @@ void __cdecl core_scat_cpp_CScat_updateAI_FUN_005578e0(CScat *this_ptr,float del
       (pCVar2 = (this_ptr->base).inventory.selected_weapon, pCVar2 != (CWeapon *)0x0)) &&
      (0 < pCVar2->ammo_count)) {
     local_30 = 9999.9;
-    pCVar4 = (CHero *)core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(&this_ptr->base,&local_30);
+    pCVar4 = (CHero *)core_hero_cpp_CHero_closestEnemy_FUN_004f3960(&this_ptr->base,&local_30);
     if ((pCVar4 != (CHero *)0x0) && ((int)local_30 < 0x41f00000)) {
       iVar7 = 1;
       this_ptr_01 = pCVar4;

@@ -20,7 +20,7 @@ int FUN_00607858(int param_1,int param_2)
     iVar1 = is_leap_year(param_2 + 0x76c);
     if (iVar1 == 0) {
       iVar5 = *(int *)(&g_DaysInMonth_Normal + *(int *)(param_1 + 0x10));
-      iVar2 = *(int *)((int)&INFINITY + *(int *)(param_1 + 0x10) * 2 + 6);
+      iVar2 = *(int *)((int)&g_PositiveInfinity + *(int *)(param_1 + 0x10) * 2 + 6);
     }
     else {
       iVar5 = *(int *)(&g_DaysInMonth_Leap + *(int *)(param_1 + 0x10));

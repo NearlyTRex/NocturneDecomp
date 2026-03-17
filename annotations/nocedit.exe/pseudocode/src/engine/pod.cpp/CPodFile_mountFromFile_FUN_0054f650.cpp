@@ -112,7 +112,7 @@ LAB_0054f786:
       pcVar11[1] = cVar2;
       pcVar11 = pcVar11 + 2;
     } while (cVar2 != '\0');
-    pCVar4 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+    pCVar4 = (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                        (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x16c);
     this_ptr->directory_entries = pCVar4;
     if (pCVar4 == (CPodDirectoryEntry *)0x0) {
@@ -143,7 +143,7 @@ LAB_0054f6fe:
         local_384 = size + ~uVar6;
         if (local_2c < (int)local_384) {
           local_2c = (this_ptr->file_count - local_28) * 0x30 + local_384;
-          pcVar11 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+          pcVar11 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                               (this_ptr->file_data_buffer,local_2c,"..\\engine\\pod.cpp",0x17b);
           this_ptr->file_data_buffer = pcVar11;
           if (pcVar11 == (char *)0x0) {
@@ -222,7 +222,7 @@ LAB_0054f6fe:
       this_ptr->audit_count = local_378;
       this_ptr->dependency_count = local_380;
       this_ptr->mount_priority = local_388;
-      pCVar5 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+      pCVar5 = (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                          (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x1ab);
       this_ptr->directory_entries = pCVar5;
       if (pCVar5 != (CPodDirectoryEntry *)0x0) {
@@ -232,7 +232,7 @@ LAB_0054f6fe:
         if ((p_Var3->_flag & 0x20) == 0) {
           if ((this_ptr->file_count <= (int)local_384) &&
              ((int)local_384 <= this_ptr->file_count * 0x100)) {
-            pcVar11 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+            pcVar11 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                                 (local_384,"..\\engine\\pod.cpp",0x1ba);
             this_ptr->file_data_buffer = pcVar11;
             if (pcVar11 == (char *)0x0) {
@@ -270,7 +270,7 @@ LAB_0054f6fe:
       } while (cVar2 != '\0');
       this_ptr->file_count = local_108;
       this_ptr->audit_count = local_104;
-      pCVar5 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+      pCVar5 = (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                          (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x1da);
       this_ptr->directory_entries = pCVar5;
       if (pCVar5 != (CPodDirectoryEntry *)0x0) {
@@ -278,7 +278,7 @@ LAB_0054f6fe:
         iVar4 = this_ptr->file_count;
         local_384 = (this_ptr->directory_entries->offset - 0x60) + iVar4 * -0x14;
         if (((int)local_384 < iVar4) || (iVar4 * 0x100 < (int)local_384)) goto LAB_0054f6fe;
-        pcVar11 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+        pcVar11 = (char *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                             (local_384,"..\\engine\\pod.cpp",0x1e7);
         this_ptr->file_data_buffer = pcVar11;
         if (pcVar11 == (char *)0x0) {
@@ -309,7 +309,7 @@ LAB_0054f6fe:
       pcVar11[1] = cVar2;
       pcVar11 = pcVar11 + 2;
     } while (cVar2 != '\0');
-    pCVar5 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+    pCVar5 = (CPodDirectoryEntry *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                        (this_ptr->file_count * 0x14,"..\\engine\\pod.cpp",0x20a);
     this_ptr->directory_entries = pCVar5;
     if (pCVar5 == (CPodDirectoryEntry *)0x0) goto LAB_0054f6fe;
@@ -332,7 +332,7 @@ LAB_0054f6fe:
         local_384 = local_384 + ~uVar7;
         if (local_1c < (int)local_384) {
           local_1c = (this_ptr->file_count - local_24) * 0x30 + local_384;
-          pcVar11 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+          pcVar11 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                               (this_ptr->file_data_buffer,local_1c,"..\\engine\\pod.cpp",0x219);
           this_ptr->file_data_buffer = pcVar11;
           if (pcVar11 == (char *)0x0) {
@@ -371,7 +371,7 @@ LAB_0054f6fe:
 LAB_0054f9a8:
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_20,"..\\engine\\pod.cpp",0x22d);
   if (bVar3) {
-    pcVar11 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+    pcVar11 = (char *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                         (this_ptr->file_data_buffer,local_384,"..\\engine\\pod.cpp",0x233);
     this_ptr->file_data_buffer = pcVar11;
     if (pcVar11 == (char *)0x0) {

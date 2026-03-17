@@ -55,7 +55,7 @@ section .text
     JNZ 0x004b2740                      ; 004b266b
         ;   XREF to: 004b2740 (CONDITIONAL_JUMP)  ; LAB_004b2740
     CALL crt_errno.c__errno_FUN_00601450 ; 004b2671
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; int * crt_errno.c__errno_FUN_00601450()
     CMP dword ptr [EAX],0x6             ; 004b2676
     JZ 0x004b2725                       ; 004b2679
         ;   XREF to: 004b2725 (CONDITIONAL_JUMP)  ; LAB_004b2725

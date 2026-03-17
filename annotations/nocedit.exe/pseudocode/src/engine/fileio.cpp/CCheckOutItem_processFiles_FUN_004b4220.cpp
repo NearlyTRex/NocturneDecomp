@@ -294,7 +294,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220(CCheckOutI
             _setvbuf(p_Var6,(char *)0x0,0,0x400);
             goto LAB_004b4ad9;
           }
-          piVar5 = (int *)_errno();
+          piVar5 = _errno();
           if (*piVar5 != 6) break;
           iVar4 = iVar4 + 1;
           (*g_SleepFunc)(500);
@@ -395,7 +395,7 @@ LAB_004b4980:
                 _setvbuf(p_Var6,(char *)0x0,0,0x400);
                 goto LAB_004b4d50;
               }
-              piVar4 = (int *)_errno();
+              piVar4 = _errno();
               if (*piVar4 != 6) break;
               iVar4 = iVar4 + 1;
               (*g_SleepFunc)(500);

@@ -41,7 +41,7 @@ void __cdecl core_emitter_cpp_CEmitter_getPropertyList_FUN_004a8db0(CEmitter *th
                (CActorPropertyValidatorFunc *)0x0);
     core_actor_cpp_CActorPropertyList_addBool_FUN_0040e330
               (property_list,"Slew target mode",&g_SlewTargetMode);
-    if ((g_SlewTargetMode != 0) && (this_ptr == PTR_02cf2b78)) {
+    if ((g_SlewTargetMode != 0) && (this_ptr == g_EditorSelectedEmitter)) {
       core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260
                 (property_list,"Target",&g_EmitterTarget,(CActorPropertyValidatorFunc *)0x0
                 );

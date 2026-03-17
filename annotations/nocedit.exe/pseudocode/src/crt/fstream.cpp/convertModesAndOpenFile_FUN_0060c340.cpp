@@ -44,7 +44,7 @@ int __cdecl crt_fstream_cpp_convertModesAndOpenFile_FUN_0060c340(char *filename,
     uVar3 = uVar3 | 0x200;
   }
   if ((((uVar2 & 0x40) != 0) && ((uVar3 | 0x20) != 0)) &&
-     (iVar1 = stat(filename,&_Stack_50), iVar1 != -1)) {
+     (iVar1 = getFileStat(filename,&_Stack_50), iVar1 != -1)) {
     return -1;
   }
   uVar2 = permissions & 0x7000;

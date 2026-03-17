@@ -63,7 +63,7 @@ int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *thi
       _setvbuf(local_18,(char *)0x0,0,0x400);
       goto LAB_004b295b;
     }
-    piVar3 = (int *)_errno();
+    piVar3 = _errno();
     if (*piVar3 != 6) break;
     iVar4 = iVar4 + 1;
     (*g_SleepFunc)(500);
@@ -77,7 +77,7 @@ LAB_004b295b:
     }
     return iVar4;
   }
-  piVar2 = (int *)_errno();
+  piVar2 = _errno();
   if (*piVar2 != 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Can't access %s.",local_21c);

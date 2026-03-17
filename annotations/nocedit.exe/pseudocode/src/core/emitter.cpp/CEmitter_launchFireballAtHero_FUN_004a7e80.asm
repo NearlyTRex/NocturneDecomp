@@ -43,7 +43,7 @@ section .text
     ADD EBX,0x20                        ; 004a7e8d
     PUSH EBX                            ; 004a7e90
     CALL core_hero.cpp_closestHeroToPoint_FUN_004f2170 ; 004a7e91
-        ;   XREF to: 004f2170 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_closestHeroToPoint_FUN_004f2170(CLocation * location)
+        ;   XREF to: 004f2170 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_closestHeroToPoint_FUN_004f2170(CLocation * location)
     FLD float ptr [EAX + 0x20]          ; 004a7e96
     FSUB float ptr [EBX]                ; 004a7e99
     ADD ESP,0x4                         ; 004a7e9b

@@ -35,7 +35,7 @@ void __cdecl core_baron_cpp_CBaron_performLightningAttack_FUN_004136b0(CBaron *t
   float local_14;
   CLocation *start_position;
   
-  this_ptr_00 = core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(&this_ptr->base,&local_1c);
+  this_ptr_00 = core_hero_cpp_CHero_closestEnemy_FUN_004f3960(&this_ptr->base,&local_1c);
   if (this_ptr_00 == (CEnemy *)0x0) {
     return;
   }

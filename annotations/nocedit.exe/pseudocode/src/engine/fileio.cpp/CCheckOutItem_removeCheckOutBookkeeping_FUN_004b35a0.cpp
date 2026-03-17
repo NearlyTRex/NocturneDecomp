@@ -78,7 +78,7 @@ int __cdecl engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35
       _setvbuf(stream_ptr,(char *)0x0,0,0x400);
       goto LAB_004b36b4;
     }
-    piVar3 = (int *)_errno();
+    piVar3 = _errno();
     if (*piVar3 != 6) break;
     iVar3 = iVar3 + 1;
     (*g_SleepFunc)(500);

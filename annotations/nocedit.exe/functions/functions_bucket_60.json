@@ -11870,7 +11870,7 @@
               }
             ]
           },
-          "type":"CEnemy*",
+          "type":"CHero*",
           "use":135
         },
         {
@@ -12317,6 +12317,22 @@
           },
           "type":"float",
           "use":182
+        },
+        {
+          "name":"unionfacet4_42eeef",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041b1b988f0",
+                "offset":70650898778352,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":271
         },
         {
           "name":"pCVar2",
@@ -44778,7 +44794,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960",
+    "name":"core_hero.cpp_CHero_closestEnemy_FUN_004f3960",
     "ret":"CEnemy*",
     "vars":{
       "locals":[
@@ -48706,7 +48722,7 @@
     "vars":{
       "params":[
         {
-          "name":"filename",
+          "name":"source_filename",
           "storage":{
             "offset":4,
             "size":4,
@@ -48722,7 +48738,7 @@
           "type":"char*"
         },
         {
-          "name":"context",
+          "name":"source_line",
           "storage":{
             "offset":8,
             "size":4,
@@ -55968,68 +55984,7 @@
     "vars":{
       "locals":[
         {
-          "name":"initial_selected_index",
-          "storage":{
-            "reg":"EDI",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:0000001c",
-                "offset":28,
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":17
-        },
-        {
-          "name":"this_ptr_00",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CEnemy*",
-          "use":131
-        },
-        {
-          "name":"iVar3",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"int",
-          "use":243
-        },
-        {
-          "name":"actor_ptr",
-          "storage":{
-            "reg":"EAX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000000",
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonActor*",
-          "use":590
-        },
-        {
-          "name":"fStack_14",
+          "name":"local_14",
           "storage":{
             "offset":-20,
             "size":4,
@@ -56042,18 +55997,34 @@
               }
             ]
           },
+          "type":"int"
+        },
+        {
+          "name":"local_18",
+          "storage":{
+            "offset":-24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[-0x18]",
+                "offset":-24,
+                "size":4
+              }
+            ]
+          },
           "type":"float"
         },
         {
-          "name":"acStack_dc",
+          "name":"local_e0",
           "storage":{
-            "offset":-220,
+            "offset":-224,
             "size":200,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[-0xdc]",
-                "offset":-220,
+                "addr":"Stack[-0xe0]",
+                "offset":-224,
                 "size":200
               }
             ]
@@ -56061,15 +56032,15 @@
           "type":"char[200]"
         },
         {
-          "name":"acStack_204",
+          "name":"local_208",
           "storage":{
-            "offset":-516,
+            "offset":-520,
             "size":296,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[-0x204]",
-                "offset":-516,
+                "addr":"Stack[-0x208]",
+                "offset":-520,
                 "size":296
               }
             ]
@@ -56093,7 +56064,7 @@
           "type":"CPickList"
         },
         {
-          "name":"CStack_958",
+          "name":"local_958",
           "storage":{
             "offset":-2392,
             "size":936,
@@ -56109,100 +56080,20 @@
           "type":"CPickList"
         },
         {
-          "name":"aCStack_cfc",
+          "name":"local_d00",
           "storage":{
-            "offset":-3324,
-            "size":928,
+            "offset":-3328,
+            "size":936,
             "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[-0xcfc]",
-                "offset":-3324,
-                "size":928
+                "addr":"Stack[-0xd00]",
+                "offset":-3328,
+                "size":936
               }
             ]
           },
-          "type":"CStrList[58]"
-        },
-        {
-          "name":"in_stack_fffff2fc",
-          "storage":{
-            "size":8,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:780121e5284",
-                "offset":8246641185412,
-                "size":8
-              }
-            ]
-          },
-          "type":"ulonglong",
-          "use":19
-        },
-        {
-          "name":"string_data",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:7ff63a2a85b",
-                "offset":8793469659227,
-                "size":4
-              }
-            ]
-          },
-          "type":"CEnemy*",
-          "use":26
-        },
-        {
-          "name":"pCVar1",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5f302d25c4",
-                "offset":408830158276,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonActor*",
-          "use":113
-        },
-        {
-          "name":"uVar4",
-          "storage":{
-            "size":8,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:41f4a38c89f",
-                "offset":4532435732639,
-                "size":8
-              }
-            ]
-          },
-          "type":"ulonglong",
-          "use":683
-        },
-        {
-          "name":"pCVar2",
-          "storage":{
-            "size":4,
-            "unassigned":true,
-            "varnodes":[
-              {
-                "addr":"HASH:5f8aeb8179",
-                "offset":410352583033,
-                "size":4
-              }
-            ]
-          },
-          "type":"CDemonActor_vtable*",
-          "use":817
+          "type":"CPickList"
         }
       ],
       "params":[
@@ -86644,6 +86535,22 @@
           "type":"float"
         },
         {
+          "name":"unionfacet4_5d932c",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:404144323c85",
+                "offset":70649061194885,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":204
+        },
+        {
           "name":"EVar2",
           "storage":{
             "size":4,
@@ -86706,6 +86613,38 @@
           },
           "type":"float",
           "use":670
+        },
+        {
+          "name":"unionfacet4_5d9731",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:4041e1481b1b",
+                "offset":70651696651035,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1233
+        },
+        {
+          "name":"unionfacet4_5d97d2",
+          "storage":{
+            "size":4,
+            "unassigned":true,
+            "varnodes":[
+              {
+                "addr":"HASH:40412582f5cd",
+                "offset":70648546391501,
+                "size":4
+              }
+            ]
+          },
+          "type":"UActorVTable*",
+          "use":1394
         },
         {
           "name":"fVar4",
@@ -93459,7 +93398,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"crt_io.c_utime_FUN_00608160",
+    "name":"crt_io.c__utime_FUN_00608160",
     "ret":"int",
     "vars":{
       "params":[
@@ -93493,7 +93432,7 @@
               }
             ]
           },
-          "type":"utimbuf*"
+          "type":"_utimbuf*"
         }
       ],
       "ret_storage":{

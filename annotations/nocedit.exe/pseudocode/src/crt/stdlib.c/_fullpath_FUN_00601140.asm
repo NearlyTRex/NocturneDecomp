@@ -9,8 +9,8 @@
 ; SIZE_T           Stack[0xc]:4   buffer_size
 ;
 ; XREF[3]:
+;   crt_io.c_getFileStat_FUN_00607e64 at 00607ecd
 ;   crt_io.c_getTempDirectory_FUN_00609afc at 00609b47
-;   crt_io.c_stat_FUN_00607e64 at 00607ecd
 ;   engine_dosio.c_getFullPath_FUN_004820c0 at 004820d1
 ;
 ; Referenced Globals:

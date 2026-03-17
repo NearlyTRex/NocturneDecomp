@@ -34,10 +34,10 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_0052a580(CMorphMo
   this_ptr->parts[this_ptr->part_count].face_count = iVar5;
   this_ptr->num_points = this_ptr->num_points + this_ptr->parts[this_ptr->part_count].vertex_count;
   this_ptr->num_faces = this_ptr->num_faces + this_ptr->parts[this_ptr->part_count].face_count;
-  pSVar3 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+  pSVar3 = (SMorphPoint *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->points,this_ptr->num_points << 4,"..\\core\\morph.cpp",0x89);
   this_ptr->points = pSVar3;
-  pSVar4 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+  pSVar4 = (SMRGLPrimitiveTriangle *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->faces,this_ptr->num_faces * 0x3c,"..\\core\\morph.cpp",0x8a);
   this_ptr->faces = pSVar4;
   this_ptr->part_count = this_ptr->part_count + 1;

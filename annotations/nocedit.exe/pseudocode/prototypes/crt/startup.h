@@ -3,10 +3,6 @@
 // Function prototypes for crt/startup.cpp
 // Generated from Ghidra function signatures
 
-// Original: crt_startup.c_notifyAbnormalTermination_FUN_00601620
-// Address: 00601620
-void __watcallRegister notifyAbnormalTermination(void);
-
 // Original: crt_startup.c_reportAbnormalTermination_FUN_00601628
 // Address: 00601628
 void __watcallRegister reportAbnormalTermination(void);

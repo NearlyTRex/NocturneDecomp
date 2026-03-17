@@ -62,7 +62,7 @@ section .text
     CMP EBP,0x14                        ; 005f2ede
     JGE 0x005f2ee9                      ; 005f2ee1
         ;   XREF to: 005f2ee9 (CONDITIONAL_JUMP)  ; LAB_005f2ee9
-    MOV AL,BL                           ; 005f2ee3
+    MOV EAX,EBX                         ; 005f2ee3
         ;   Label: LAB_005f2ee3
     POP EBP                             ; 005f2ee5
     POP EDI                             ; 005f2ee6
@@ -71,7 +71,7 @@ section .text
     XOR EDX,EDX                         ; 005f2ee9
         ;   Label: LAB_005f2ee9
     MOV dword ptr [0x03f96c18],EDX      ; 005f2eeb | g_InputReadIndex
-    MOV AL,BL                           ; 005f2ef1
+    MOV EAX,EBX                         ; 005f2ef1
     POP EBP                             ; 005f2ef3
     POP EDI                             ; 005f2ef4
     POP EBX                             ; 005f2ef5

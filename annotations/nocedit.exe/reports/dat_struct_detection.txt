@@ -2,17 +2,17 @@
 DAT_ STRUCT/ARRAY DETECTION REPORT
 ================================================================================
 
-Total DAT_ globals found: 582
-Filtered out (inside named data): 1177
+Total DAT_ globals found: 578
+Filtered out (inside named data): 1176
 Immediate constants (not real globals): 10
-Real globals remaining: 572
-Clusters detected: 79
-DAT_ globals in clusters: 526
+Real globals remaining: 568
+Clusters detected: 78
+DAT_ globals in clusters: 522
 
 Classification summary:
   unknown              27 clusters
   vector_groups        16 clusters
-  struct               15 clusters
+  struct               14 clusters
   array                11 clusters
   char_array           6 clusters
   byte_blob            2 clusters
@@ -535,7 +535,7 @@ MEDIUM CONFIDENCE (30 clusters)
       0x00904d80  DAT_00904d80  undefined4
 
 --------------------------------------------------------------------------------
-LOW CONFIDENCE (42 clusters)
+LOW CONFIDENCE (41 clusters)
 --------------------------------------------------------------------------------
 
   0x02f7c8a8 - 0x02f7c8f3  (12 items, 75 bytes span)
@@ -691,17 +691,6 @@ LOW CONFIDENCE (42 clusters)
       0x009e5d80  DAT_009e5d80  undefined4
       0x009e5d84  DAT_009e5d84  undefined4
       0x009e5d88  DAT_009e5d88  undefined4
-
-  0x02d831d6 - 0x02d831eb  (4 items, 21 bytes span)
-    Classification: struct
-    Likely type: struct (21 bytes span, 4 fields)
-    Reason: mixed strides, shared by 3 functions
-    Referenced by: 3 functions
-     near: g_InputHistory (char[20]) at -1
-      0x02d831d6  DAT_02d831d6  undefined1 [byte]
-      0x02d831e9  DAT_02d831e9  undefined4 [byte]
-      0x02d831ea  DAT_02d831ea  undefined4 [byte]
-      0x02d831eb  DAT_02d831eb  undefined1
 
   0x032cd850 - 0x032cd864  (4 items, 20 bytes span)
     Classification: struct
@@ -978,6 +967,7 @@ ISOLATED DAT_ GLOBALS (46 - not part of any cluster)
   DAT_013ed4b8                    addr=013ed4b8    type=undefined4      refs=4
   DAT_02d14218                    addr=02d14218    type=undefined4      refs=3  near: g_SmokeParticlePool(+44)
   DAT_02d6cf8c                    addr=02d6cf8c    type=undefined4      refs=3  near: g_GunFlamePool(+36)
+  DAT_02d831d6                    addr=02d831d6    type=undefined1      refs=3 [likely byte]  near: g_InputHistory(-1)
   DAT_032758f8                    addr=032758f8    type=undefined4      refs=3  near: g_CDemonCameraInstance.base.rotation_matrix.m[0].x(+4)
   DAT_03f48f9c                    addr=03f48f9c    type=undefined4      refs=3 [likely float]  near: INT_03f48fa0(-4)
   DAT_02f68ab0                    addr=02f68ab0    type=undefined4      refs=3  near: g_HuffmanTables[0].table_size(+4)
@@ -995,7 +985,6 @@ ISOLATED DAT_ GLOBALS (46 - not part of any cluster)
   DAT_02d7b800                    addr=02d7b800    type=undefined4      refs=1  near: g_GabriellaWeaponAimRotationInitFlag(-4)
   DAT_02d7b9e0                    addr=02d7b9e0    type=undefined4      refs=1  near: g_WrappedTextBuffer(+256)
   DAT_0067b850                    addr=0067b850    type=undefined4      refs=1  near: g_ChapterDisplayTexts(-4)
-  DAT_0067cb1c                    addr=0067cb1c    type=undefined4      refs=1  near: FLOAT_0067cb18(+4)
   DAT_02da8c6c                    addr=02da8c6c    type=undefined4      refs=1  near: g_Footsteps(+64)
   DAT_03c00000                    addr=03c00000    type=undefined4      refs=1
   DAT_00747874                    addr=00747874    type=undefined4      refs=1
@@ -1019,7 +1008,7 @@ ISOLATED DAT_ GLOBALS (46 - not part of any cluster)
   DAT_03f5d97c                    addr=03f5d97c    type=undefined4      refs=1  near: g_SoundTestErrorBuffer(+220)
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (1177)
+FILTERED OUT - INSIDE NAMED DATA (1176)
 --------------------------------------------------------------------------------
   DAT_00613579                    inside s_none_00613578
   DAT_0061357a                    inside s_none_00613578
@@ -1299,6 +1288,7 @@ FILTERED OUT - INSIDE NAMED DATA (1177)
   DAT_0067b55a                    inside g_TempFilenameBuffer
   DAT_0067b55b                    inside g_TempFilenameBuffer
   DAT_0067b9e0                    inside g_BloodSplatTextures
+  DAT_0067cb1c                    inside g_FootstepCornerMultipliers
   DAT_0067ce4c                    inside g_DefaultInventoryKey
   DAT_0067ceb4                    inside g_DefaultInventoryValue
   DAT_0067d5c4                    inside g_DefaultMissionActorClass
@@ -2083,8 +2073,6 @@ FILTERED OUT - INSIDE NAMED DATA (1177)
   DAT_03365cc4                    inside g_ThumbnailImageBuffer
   DAT_03365dc0                    inside g_ThumbnailImageBuffer
   DAT_03365dc4                    inside g_ThumbnailImageBuffer
-  DAT_03653cc1                    inside g_ThumbnailPalette
-  DAT_03653cc2                    inside g_ThumbnailPalette
   DAT_03654371                    inside g_GroundTextureNames
   DAT_03654372                    inside g_GroundTextureNames
   DAT_03654373                    inside g_GroundTextureNames

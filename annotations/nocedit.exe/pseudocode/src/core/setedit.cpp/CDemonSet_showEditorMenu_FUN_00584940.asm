@@ -160,7 +160,7 @@ section .text
         ;   XREF to: 00401fd0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fd0(char * text, int x, int y)
     MOV EAX,dword ptr [EBP + 0x161668]  ; 00584a7d
     ADD ESP,0xc                         ; 00584a83
-    MOV ESI,dword ptr [EAX*0x4 + 0x6817f0] ; 00584a86 | PTR_s_None_006817f0
+    MOV ESI,dword ptr [EAX*0x4 + 0x6817f0] ; 00584a86 | g_WeatherTypeNames
     PUSH ESI                            ; 00584a8d
     PUSH 0x648f62                       ; 00584a8e | = "H.  Weather: %s"
     LEA EAX,[ESP + 0x6b4]               ; 00584a93

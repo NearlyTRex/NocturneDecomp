@@ -66,8 +66,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
       local_30 = 0.0;
     }
     local_28 = 20.0;
-    iVar5 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ue)->_ue).randomize)
-                      ((CEnemy *)g_HeroActors[g_LocalHeroIndex]);
+    iVar5 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uh)->_uh).isWeaponDrawn)
+                      (g_HeroActors[g_LocalHeroIndex]);
     if (iVar5 != 0) {
       local_28 = 30.0;
     }
@@ -75,8 +75,7 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
        ((EVar2 = (this_ptr->base).ai_task, EVar2 == HERO_TASK_KILL || (EVar2 == HERO_TASK_GUARD))))
     {
       fStack_3c = 9999.9;
-      pCVar6 = (CHero *)core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960
-                                  (&this_ptr->base,&fStack_3c);
+      pCVar6 = (CHero *)core_hero_cpp_CHero_closestEnemy_FUN_004f3960(&this_ptr->base,&fStack_3c);
       if ((pCVar6 == (CHero *)0x0) || (local_28 <= fStack_3c)) {
         if (this_ptr->blades_drawn != 0) {
           (this_ptr->base).player_control.action_states[6] = 1;
@@ -109,8 +108,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
       else {
         pCStack_20 = (*((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ub)->getPathMap)
                                ((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
-        iVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ue)->_ue).randomize)
-                          ((CEnemy *)g_HeroActors[g_LocalHeroIndex]);
+        iVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uh)->_uh).isWeaponDrawn)
+                          (g_HeroActors[g_LocalHeroIndex]);
         if ((iVar6 == 0) &&
            (uVar7 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                               ((CCharacter *)this_ptr,delta_time), uVar7 != 0)) {
@@ -171,8 +170,8 @@ void __cdecl core_svetlana_cpp_CSvetlana_processAI_FUN_005d9260(CSvetlana *this_
         if ((pSVar5->state_index == 10) && (this_ptr->blades_drawn != 0)) {
           (this_ptr->base).player_control.action_states[6] = 1;
         }
-        iVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._ue)->_ue).randomize)
-                          ((CEnemy *)g_HeroActors[g_LocalHeroIndex]);
+        iVar6 = (*(((g_HeroActors[g_LocalHeroIndex]->base).base.vtable._uh)->_uh).isWeaponDrawn)
+                          (g_HeroActors[g_LocalHeroIndex]);
         if ((iVar6 == 0) &&
            (uVar9 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                               ((CCharacter *)this_ptr,delta_time), uVar9 != 0)) {

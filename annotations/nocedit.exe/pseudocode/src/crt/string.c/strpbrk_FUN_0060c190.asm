@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   char_set
 ;
 ; XREF[1]:
-;   crt_io.c_stat_FUN_00607e64 at 00607e8a
+;   crt_io.c_getFileStat_FUN_00607e64 at 00607e8a
 ;
 ; Called Functions:
 ;   crt_string.c_char_in_set_FUN_0060e340

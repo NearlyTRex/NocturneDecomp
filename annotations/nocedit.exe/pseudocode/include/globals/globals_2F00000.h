@@ -53,6 +53,7 @@ extern int g_PixelAspectCorrection;
 extern int g_MatrixStackIndex;
 extern int g_ViewportStackIndex;
 extern int g_IsDestroyingLeakChecker;
+extern int g_MemCheckLastLine;
 extern int g_CurrentDebugLine;
 extern int g_OpenFileCount;
 
@@ -99,7 +100,4 @@ extern int g_CosTable[257];
 extern uint g_SavedRotationX;
 extern uint g_SavedRotationY;
 extern uint g_SavedRotationZ;
-
-// void*
-extern void* g_DebugContext;
 

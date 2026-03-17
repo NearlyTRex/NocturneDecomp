@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0(char *filename,int context)
+; void __cdecl shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0(char *source_filename,int source_line)
 ;
 ; Parameters:
-; char *           Stack[0x4]:4   filename
-; int              Stack[0x8]:4   context
+; char *           Stack[0x4]:4   source_filename
+; int              Stack[0x8]:4   source_line
 ;
 ; XREF[9]:
 ;   core_game.cpp_CGame_runGameSession_FUN_004daf80 at 004db328
@@ -19,9 +19,9 @@
 ;   core_mission.cpp_CDemonMission_writeFile_FUN_00523600 at 00523615
 ;
 ; Referenced Globals:
-;   void* PTR_s_none_00636540_0067d1fc = 00636540
+;   char* g_MemCheckLastFile = 00636540
 ;   SMemHead* g_MemoryListHead
-;   void* g_DebugContext
+;   int g_MemCheckLastLine
 ;
 ; Called Functions:
 ;   shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020
@@ -53,9 +53,9 @@ section .text
         ;   XREF to: 0050eff5 (CONDITIONAL_JUMP)  ; LAB_0050eff5
     LEA EAX,[EAX]                       ; 0050f007
     LEA EDX,[EDX]                       ; 0050f00d
-    MOV dword ptr [0x02f0d940],EDI      ; 0050f010 | g_DebugContext
+    MOV dword ptr [0x02f0d940],EDI      ; 0050f010 | g_MemCheckLastLine
         ;   Label: LAB_0050f010
-    MOV dword ptr [0x0067d1fc],ESI      ; 0050f016 | PTR_s_none_00636540_0067d1fc
+    MOV dword ptr [0x0067d1fc],ESI      ; 0050f016 | g_MemCheckLastFile
     POP EDI                             ; 0050f01c
     POP ESI                             ; 0050f01d
     POP EBX                             ; 0050f01e

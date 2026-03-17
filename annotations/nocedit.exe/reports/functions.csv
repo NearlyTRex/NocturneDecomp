@@ -207,6 +207,7 @@ crt_io.c_getFileTypeFlags_FUN_006088b0,006088b0,crt/io.c,19,1,special_crt_functi
 crt_io.c_tell_FUN_00606720,00606720,crt/io.c,17,1,special_crt_function,32
 crt_io.c_get_handle_FUN_006109f0,006109f0,crt/io.c,8,1,special_crt_function,23
 crt_io.c_register_handle_wrapper_FUN_0060a144,0060a144,crt/io.c,6,1,special_crt_function,21
+crt_io.c_getFileStat_FUN_00600c18,00600c18,crt/io.c,6,1,special_crt_function,21
 crt_io.c_analyze_file_type_FUN_00607d50,00607d50,crt/io.c,67,1,special_crt_function,82
 crt_io.c_IsSpecialDevice_FUN_0060c270,0060c270,crt/io.c,20,1,special_crt_function,35
 crt_io.c_ConvertCreationDisposition_FUN_0060c894,0060c894,crt/io.c,36,1,special_crt_function,51
@@ -225,11 +226,11 @@ crt_io.c__findnext_FUN_00602300,00602300,crt/io.c,21,1,special_crt_function,36
 crt_io.c__findclose_FUN_00602380,00602380,crt/io.c,6,1,special_crt_function,21
 crt_io.c_invalidate_handle_FUN_00608af4,00608af4,crt/io.c,9,1,special_crt_function,24
 crt_io.c_exists_FUN_0060f380,0060f380,crt/io.c,6,1,special_crt_function,21
-crt_io.c_utime_FUN_00608160,00608160,crt/io.c,59,1,special_crt_function,74
+crt_io.c__utime_FUN_00608160,00608160,crt/io.c,59,1,special_crt_function,74
+crt_io.c_getFileStat_FUN_00607e64,00607e64,crt/io.c,110,1,special_crt_function,125
 crt_io.c_CheckFileHandleAvailability_FUN_00608940,00608940,crt/io.c,20,3,param_count_too_few|pointer_cast|special_crt_function,65
 crt_io.c_write_FUN_006084ec,006084ec,crt/io.c,168,20,pointer_cast|special_crt_function|stack_ref|warning_noreturn,388
 crt_io.c_register_handle_FUN_00608990,00608990,crt/io.c,29,2,pointer_cast|special_crt_function,59
-crt_io.c_stat_FUN_00607e64,00607e64,crt/io.c,110,1,special_crt_function,125
 crt_io.c_setFileDescriptorFlags_FUN_00608908,00608908,crt/io.c,14,1,special_crt_function,29
 crt_io.c_getTempDirectory_FUN_00609afc,00609afc,crt/io.c,56,2,special_crt_function|undefined_data,86
 crt_io.c_parseFileInfo_FUN_0060e3b0,0060e3b0,crt/io.c,67,1,special_crt_function,82
@@ -237,8 +238,7 @@ crt_io.c_register_handler_wrapper_FUN_00602438,00602438,crt/io.c,6,1,special_crt
 crt_io.c_InitializeStandardHandles_FUN_00608b20,00608b20,crt/io.c,21,1,special_crt_function,36
 crt_io.c_findNextWithAttributes_FUN_00609d5c,00609d5c,crt/io.c,15,1,special_crt_function,30
 crt_io.c_CreateFallbackHandle_FUN_00608b88,00608b88,crt/io.c,10,1,special_crt_function,25
-crt_io.c_stat_00600c18,00600c18,crt/io.c/stat,6,1,special_crt_function,21
-crt_io.c_utime_00600c1e,00600c1e,crt/io.c/utime,6,1,special_crt_function,21
+crt_io.c__utime_00600c1e,00600c1e,crt/io.c/utime,6,1,special_crt_function,21
 crt_windows.c_has_active_window_FUN_0060a710,0060a710,crt/windows.c,16,3,param_count_too_few|special_crt_function|warning_max_restarts,61
 crt_process.c_spawnCommand_FUN_00609c90,00609c90,crt/process.c,6,2,param_count_too_many|special_crt_function,36
 crt_process.c_build_cmdline_FUN_00610258,00610258,crt/process.c,78,2,param_count_too_many|special_crt_function,108
@@ -358,6 +358,7 @@ crt_watcom.c_FUN_004b1b31,004b1b31,crt/watcom.c,8,7,register_param|special_crt_f
 crt_watcom.c_FUN_004b1b41,004b1b41,crt/watcom.c,8,7,register_param|special_crt_function,88
 crt_watcom.c_FUN_004b1a59,004b1a59,crt/watcom.c,9,9,register_param|special_crt_function,109
 crt_watcom.c_FUN_004b19b1,004b19b1,crt/watcom.c,6,5,register_param|special_crt_function|unnamed_param,71
+crt_watcom.c_notifyAbnormalTermination_FUN_00601620,00601620,crt/watcom.c,6,1,special_crt_function,21
 crt_watcom.c_FUN_004b1b1c,004b1b1c,crt/watcom.c,9,11,pointer_cast|register_param|special_crt_function,134
 crt_watcom.c_FUN_004b1a49,004b1a49,crt/watcom.c,8,7,register_param|special_crt_function,88
 crt_watcom.c__mkdir_FUN_00600e10,00600e10,crt/watcom.c,13,1,special_crt_function,28
@@ -504,7 +505,6 @@ crt_tls.c_leave_critical_section_by_index_FUN_0060a128,0060a128,crt/tls.c,6,1,sp
 crt_tls.c_enter_critical_section_by_index_FUN_0060a10c,0060a10c,crt/tls.c,6,1,special_crt_function,21
 crt_startup.c_ExitApplication_FUN_0060b534,0060b534,crt/startup.c,9,1,special_crt_function,24
 crt_startup.c_reportAbnormalTermination_FUN_00601628,00601628,crt/startup.c,5,1,special_crt_function,20
-crt_startup.c_notifyAbnormalTermination_FUN_00601620,00601620,crt/startup.c,6,1,special_crt_function,21
 crt_startup.c_WriteErrorAndExit_FUN_00606620,00606620,crt/startup.c,16,5,special_crt_function|stack_param|stack_ref|warning_noreturn,86
 crt_startup.c_staticInit_FUN_0060aef4,0060aef4,crt/startup.c,5,1,special_crt_function,20
 crt_startup.c_GetModuleFileNameCompat_FUN_0060a560,0060a560,crt/startup.c,28,1,special_crt_function,43
@@ -542,7 +542,7 @@ crt_time.c_filetime_to_dos_datetime_FUN_00609cb0,00609cb0,crt/time.c,7,1,special
 crt_time.c__localtime_FUN_00600288,00600288,crt/time.c,8,1,special_crt_function,23
 crt_time.c_parse_dst_rule_FUN_00607464,00607464,crt/time.c,51,1,special_crt_function,66
 crt_time.c_is_leap_year_FUN_00607820,00607820,crt/time.c,12,1,special_crt_function,27
-crt_time.c__strftime_FUN_006002d4,006002d4,crt/time.c,238,1,special_crt_function,253
+crt_time.c__strftime_FUN_006002d4,006002d4,crt/time.c,238,5,special_crt_function|undefined_data,298
 crt_time.c_localtime_r_FUN_00600230,00600230,crt/time.c,13,1,special_crt_function,28
 crt_time.c_determine_dst_status_FUN_006079b4,006079b4,crt/time.c,125,5,pointer_cast|special_crt_function|undefined_data,190
 crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0,0060c1e0,crt/time.c,14,1,special_crt_function,29
@@ -974,7 +974,7 @@ engine_pcx.c_saveScreenshotGeneral_FUN_005490c0,005490c0,engine/pcx.c,106,4,poin
 engine_dosio.c_changeFileExtension_FUN_00482050,00482050,engine/dosio.c,9,1,param_count_too_many,24
 engine_dosio.c_getFullPath_FUN_004820c0,004820c0,engine/dosio.c,21,0,,21
 engine_dosio.c_splitPath_FUN_00481f20,00481f20,engine/dosio.c,5,0,,5
-engine_dosio.c_findFileNormally_FUN_004817c0,004817c0,engine/dosio.c,34,0,,34
+engine_dosio.c_findFileNormally_FUN_004817c0,004817c0,engine/dosio.c,35,0,,35
 engine_dosio.c_CFileFinder_ctor_FUN_00481c30,00481c30,engine/dosio.c,6,0,,6
 engine_dosio.c_CFileFinder_reset_FUN_00481db0,00481db0,engine/dosio.c,5,0,,5
 engine_dosio.c_reopenFileStream_FUN_00481b50,00481b50,engine/dosio.c,30,1,pointer_cast,45
@@ -1018,7 +1018,7 @@ engine_pod.cpp_findFileInPod_FUN_00551960,00551960,engine/pod.cpp,9,0,,9
 engine_pod.cpp_CPod_remount_FUN_00550af0,00550af0,engine/pod.cpp,37,0,,37
 engine_pod.cpp_CPodFile_findFileIndex_FUN_00550140,00550140,engine/pod.cpp,28,0,,28
 engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230,00550230,engine/pod.cpp,120,2,pointer_cast,145
-engine_pod.cpp_CPod_init_FUN_00550c30,00550c30,engine/pod.cpp,16,0,,16
+engine_pod.cpp_CPod_init_FUN_00550c30,00550c30,engine/pod.cpp,14,0,,14
 engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650,0054f650,engine/pod.cpp,388,15,decompiler_intrinsic|pointer_cast,548
 engine_pod.cpp_crc32ComputeFileRange_FUN_0054f490,0054f490,engine/pod.cpp,43,0,,43
 engine_pod.cpp_CPodFile_computeFileCRC_FUN_005507f0,005507f0,engine/pod.cpp,52,0,,52
@@ -2399,7 +2399,7 @@ core_icepick.cpp_CIcePick_drawWeapon_FUN_004f9770,004f9770,core/icepick.cpp,5,0,
 core_icepick.cpp_CIcePick_processDamage_FUN_004f95b0,004f95b0,core/icepick.cpp,65,1,decompiler_intrinsic,80
 core_icepick.cpp_CIcePick_processMotionEvents_FUN_004f93a0,004f93a0,core/icepick.cpp,49,0,,49
 core_icepick.cpp_setEulerAngles_FUN_004f8b00,004f8b00,core/icepick.cpp,7,0,,7
-core_icepick.cpp_CIcePick_processAI_FUN_004f8c70,004f8c70,core/icepick.cpp,244,3,decompiler_intrinsic|warning_type_propagation,284
+core_icepick.cpp_CIcePick_processAI_FUN_004f8c70,004f8c70,core/icepick.cpp,243,3,decompiler_intrinsic|warning_type_propagation,283
 core_icepick.cpp_CIcePick_onActorDeleted_FUN_004f9780,004f9780,core/icepick.cpp,5,0,,5
 core_icepick.cpp_CIcePick_setup_FUN_004f7e80,004f7e80,core/icepick.cpp,58,0,,58
 core_bugs.cpp_CBugs_ctor_FUN_00424cb0,00424cb0,core/bugs.cpp,70,23,decompiler_intrinsic,305
@@ -2482,7 +2482,7 @@ core_gore.cpp_CGore_ctor_FUN_004ed730,004ed730,core/gore.cpp,5,0,,5
 core_gore.cpp_CBloodParticle_setup_FUN_004eb9a0,004eb9a0,core/gore.cpp,9,0,,9
 core_gore.cpp_CBloodParticle_dtor_FUN_004ee410,004ee410,core/gore.cpp,6,0,,6
 core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004ee0f0,004ee0f0,core/gore.cpp,36,6,decompiler_intrinsic,101
-core_gore.cpp_CFootstep_init_FUN_004ed240,004ed240,core/gore.cpp,57,7,decompiler_intrinsic|pointer_cast,137
+core_gore.cpp_CFootstep_init_FUN_004ed240,004ed240,core/gore.cpp,58,7,decompiler_intrinsic|pointer_cast,138
 core_gore.cpp_CBloodSplat_initGroundSplat_FUN_004ec2f0,004ec2f0,core/gore.cpp,25,3,decompiler_intrinsic,60
 core_gore.cpp_CGore_spawnFlies_FUN_004edf30,004edf30,core/gore.cpp,36,0,,36
 core_gore.cpp_CBloodSplat_ctor_FUN_004ee3d0,004ee3d0,core/gore.cpp,4,0,,4
@@ -3145,7 +3145,7 @@ core_hero.cpp_CHero_tryInteract_FUN_004f2af0,004f2af0,core/hero.cpp,48,0,,48
 core_hero.cpp_CHeroPlaceholder_getBoundingBox_FUN_004f3d20,004f3d20,core/hero.cpp,10,0,,10
 core_hero.cpp_CHero_addFilesToExtract_FUN_004f3fa0,004f3fa0,core/hero.cpp,11,0,,11
 core_hero.cpp_CHero_tryPullLever_FUN_004f2f50,004f2f50,core/hero.cpp,54,4,decompiler_intrinsic,99
-core_hero.cpp_closestHeroToPoint_FUN_004f2170,004f2170,core/hero.cpp,35,1,pointer_cast,50
+core_hero.cpp_closestHeroToPoint_FUN_004f2170,004f2170,core/hero.cpp,35,0,,35
 core_hero.cpp_CHero_tryOpenDoor_FUN_004f2ed0,004f2ed0,core/hero.cpp,17,0,,17
 core_hero.cpp_CHeroPlaceholder_renderTransparent_FUN_004f3c90,004f3c90,core/hero.cpp,22,0,,22
 core_hero.cpp_CHero_archive_FUN_004f2610,004f2610,core/hero.cpp,75,0,,75
@@ -3163,6 +3163,7 @@ core_hero.cpp_CHero_tryOpenNearbyDoor_FUN_004f2d70,004f2d70,core/hero.cpp,53,2,d
 core_hero.cpp_CHero_releaseFromGrab_FUN_004f29b0,004f29b0,core/hero.cpp,30,0,,30
 core_hero.cpp_CHero_canBeGrabbed_FUN_004f2890,004f2890,core/hero.cpp,17,0,,17
 core_hero.cpp_staticInit_FUN_004f2120,004f2120,core/hero.cpp,11,0,,11
+core_hero.cpp_CHero_closestEnemy_FUN_004f3960,004f3960,core/hero.cpp,66,1,decompiler_intrinsic,81
 core_hero.cpp_CHero_testCylinderCollision_FUN_004f2580,004f2580,core/hero.cpp,10,1,decompiler_intrinsic,25
 core_hero.cpp_CHeroPlaceholder_ctor_FUN_004f3c00,004f3c00,core/hero.cpp,9,0,,9
 core_hero.cpp_CHeroPlaceholder_archive_FUN_004f3ef0,004f3ef0,core/hero.cpp,6,0,,6
@@ -3173,7 +3174,6 @@ core_hero.cpp_CHero_testLineIntersection_FUN_004f25c0,004f25c0,core/hero.cpp,10,
 core_hero.cpp_CHero_reset_FUN_004f3b20,004f3b20,core/hero.cpp,22,0,,22
 core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80,004f3d80,core/hero.cpp,64,0,,64
 core_hero.cpp_CHero_canLookAt_FUN_004f37d0,004f37d0,core/hero.cpp,24,3,decompiler_intrinsic,59
-core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960,004f3960,core/hero.cpp,66,1,decompiler_intrinsic,81
 core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0,004f22a0,core/hero.cpp,24,2,decompiler_intrinsic|pointer_cast,54
 core_hero.cpp_CHero_executeLeverPull_FUN_004f30f0,004f30f0,core/hero.cpp,9,0,,9
 core_hero.cpp_CHero_setup_FUN_004f2540,004f2540,core/hero.cpp,8,0,,8
@@ -3551,7 +3551,7 @@ core_actor.cpp_archiveDescription_FUN_0040b290,0040b290,core/actor.cpp,30,0,,30
 core_actor.cpp_CActorPropertyList_addFloatRange_FUN_0040e1a0,0040e1a0,core/actor.cpp,11,4,unnamed_param,56
 core_actor.cpp_CDemonActor_setup_FUN_00408bb0,00408bb0,core/actor.cpp,14,0,,14
 core_actor.cpp_CDemonActor_drop_FUN_00409080,00409080,core/actor.cpp,6,0,,6
-core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10,0040ca10,core/actor.cpp,53,0,,53
+core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10,0040ca10,core/actor.cpp,54,0,,54
 core_actor.cpp_CDemonActor_archive_FUN_0040c1c0,0040c1c0,core/actor.cpp,20,0,,20
 core_actor.cpp_skipWhitespace_FUN_0040c4d0,0040c4d0,core/actor.cpp,7,0,,7
 core_actor.cpp_CDemonActor_startInteraction_FUN_0040a090,0040a090,core/actor.cpp,6,0,,6
@@ -3999,7 +3999,7 @@ core_msnedit.cpp_isWordSeparator_FUN_00536bc0,00536bc0,core/msnedit.cpp,8,0,,8
 core_msnedit.cpp_CDemonMission_deleteMultipleActorsMenu_FUN_0053df90,0053df90,core/msnedit.cpp,88,0,,88
 core_msnedit.cpp_CDemonMission_pickActorDialog_FUN_0053cad0,0053cad0,core/msnedit.cpp,44,0,,44
 core_msnedit.cpp_tokenizeWords_FUN_00536bf0,00536bf0,core/msnedit.cpp,43,0,,43
-core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0,005379e0,core/msnedit.cpp,141,11,stack_param|stack_ref,261
+core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0,005379e0,core/msnedit.cpp,151,12,pointer_cast|unknown_field|unresolved_register|warning_unmapped_variable,291
 core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0,00538ba0,core/msnedit.cpp,52,6,unknown_field,117
 core_msnedit.cpp_getEmptyString_FUN_0053d3a0,0053d3a0,core/msnedit.cpp,4,0,,4
 core_msnedit.cpp_CDemonMission_findPrevVisibleActor_FUN_0053ca80,0053ca80,core/msnedit.cpp,30,0,,30
@@ -4211,7 +4211,7 @@ core_turret.cpp_staticInit_FUN_005e2080,005e2080,core/turret.cpp,7,0,,7
 core_turret.cpp_CTurret_getCurFrame_FUN_005e2b30,005e2b30,core/turret.cpp,47,0,,47
 core_turret.cpp_CTurret_getActorType_FUN_005e20e0,005e20e0,core/turret.cpp,4,0,,4
 core_haystack.cpp_CHaystack_isWeaponDrawn_FUN_004f1c90,004f1c90,core/haystack.cpp,4,0,,4
-core_haystack.cpp_CHaystack_updateAI_FUN_004f13f0,004f13f0,core/haystack.cpp,186,3,decompiler_intrinsic|warning_type_propagation,226
+core_haystack.cpp_CHaystack_updateAI_FUN_004f13f0,004f13f0,core/haystack.cpp,185,3,decompiler_intrinsic|warning_type_propagation,225
 core_haystack.cpp_CHaystack_ctor_FUN_004f0c10,004f0c10,core/haystack.cpp,15,0,,15
 core_haystack.cpp_CHaystack_process_FUN_004f0e40,004f0e40,core/haystack.cpp,279,5,pointer_cast|stack_alignment_array,339
 core_haystack.cpp_CHaystack_getActorType_FUN_004f0c00,004f0c00,core/haystack.cpp,4,0,,4
@@ -4464,7 +4464,7 @@ core_stranger.cpp_CStranger_tryThrowDynamite_FUN_005c5e80,005c5e80,core/stranger
 core_stranger.cpp_CStranger_reset_FUN_005c6750,005c6750,core/stranger.cpp,16,0,,16
 core_stranger.cpp_CStranger_autoAimAtThreat_FUN_005c3960,005c3960,core/stranger.cpp,269,4,decompiler_intrinsic,314
 core_stranger.cpp_CStranger_setup_FUN_005bb4b0,005bb4b0,core/stranger.cpp,107,0,,107
-core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520,005be520,core/stranger.cpp,652,75,decompiler_intrinsic|pointer_cast|stack_ref|unknown_field|warning_inlined_function,1427
+core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520,005be520,core/stranger.cpp,651,75,decompiler_intrinsic|pointer_cast|stack_ref|unknown_field|warning_inlined_function,1426
 core_stranger.cpp_CStranger_updateTurnBlending_FUN_005bf800,005bf800,core/stranger.cpp,91,2,decompiler_intrinsic,116
 core_stranger.cpp_CStranger_getHandsMidpoint_FUN_005be490,005be490,core/stranger.cpp,27,0,,27
 core_stranger.cpp_staticInit_FUN_005bae80,005bae80,core/stranger.cpp,13,0,,13
@@ -4599,7 +4599,7 @@ core_ghoul.cpp_CGhoul_archive_FUN_004e81c0,004e81c0,core/ghoul.cpp,28,0,,28
 core_ghoul.cpp_CGhoul_processDismemberment_FUN_004e8520,004e8520,core/ghoul.cpp,103,1,warning_type_propagation,118
 core_ghoul.cpp_CGhoul_addFilesToExtract_FUN_004e8ee0,004e8ee0,core/ghoul.cpp,7,0,,7
 core_ghoul.cpp_CGhoul_renderBackground_FUN_004e8190,004e8190,core/ghoul.cpp,8,0,,8
-core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0,004e63d0,core/ghoul.cpp,65,0,,65
+core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0,004e63d0,core/ghoul.cpp,64,0,,64
 core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004e84a0,004e84a0,core/ghoul.cpp,27,2,pointer_cast,52
 core_ghoul.cpp_CGhoul_randomize_FUN_004e8e40,004e8e40,core/ghoul.cpp,29,0,,29
 core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004e8bc0,004e8bc0,core/ghoul.cpp,91,1,warning_type_propagation,106
@@ -5675,7 +5675,7 @@ core_svetlana.cpp_CSvetlana_getGrabbed_FUN_005d9ec0,005d9ec0,core/svetlana.cpp,4
 core_svetlana.cpp_CSvetlana_dtor_FUN_005d9f50,005d9f50,core/svetlana.cpp,20,2,decompiler_intrinsic,45
 core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_005d9a10,005d9a10,core/svetlana.cpp,86,0,,86
 core_svetlana.cpp_CSvetlana_advanceMotion_FUN_005d9970,005d9970,core/svetlana.cpp,32,0,,32
-core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260,005d9260,core/svetlana.cpp,244,3,decompiler_intrinsic|warning_type_propagation,284
+core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260,005d9260,core/svetlana.cpp,243,3,decompiler_intrinsic|warning_type_propagation,283
 core_svetlana.cpp_CSvetlana_getPropertyList_FUN_005d9f10,005d9f10,core/svetlana.cpp,5,0,,5
 core_svetlana.cpp_CSVetlana_archive_FUN_005d9bb0,005d9bb0,core/svetlana.cpp,5,0,,5
 core_svetlana.cpp_CSvetlana_drawWeapon_FUN_005d9ee0,005d9ee0,core/svetlana.cpp,5,0,,5
@@ -6014,7 +6014,7 @@ core_emitter.cpp_CEmitter_setup_FUN_004a7e00,004a7e00,core/emitter.cpp,15,0,,15
 core_emitter.cpp_CEmitter_dtor_FUN_004a93c0,004a93c0,core/emitter.cpp,16,0,,16
 core_emitter.cpp_CEmitter_getCollisionType_FUN_004a8d10,004a8d10,core/emitter.cpp,4,0,,4
 core_emitter.cpp_staticInit_FUN_004a7c30,004a7c30,core/emitter.cpp,7,0,,7
-core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80,004a7e80,core/emitter.cpp,68,10,decompiler_intrinsic|unknown_type|warning_inlined_function,183
+core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80,004a7e80,core/emitter.cpp,68,9,decompiler_intrinsic|warning_inlined_function,168
 core_emitter.cpp_CEmitter_renderOpaque_FUN_004a8860,004a8860,core/emitter.cpp,79,0,,79
 core_emitter.cpp_CEmitter_getActorType_FUN_004a7c90,004a7c90,core/emitter.cpp,4,0,,4
 core_emitter.cpp_CEmitter_process_FUN_004a8070,004a8070,core/emitter.cpp,253,5,decompiler_intrinsic,308
@@ -6170,7 +6170,7 @@ core_game.cpp_beginProfileTimer_FUN_004e30f0,004e30f0,core/game.cpp,8,0,,8
 core_game.cpp_captureDebugMovieFrame_FUN_004d7810,004d7810,core/game.cpp,104,1,pointer_cast,119
 core_game.cpp_CGame_loadAssets_FUN_004e07a0,004e07a0,core/game.cpp,8,0,,8
 core_game.cpp_giveHeroWeaponAmmo_FUN_004dd930,004dd930,core/game.cpp,20,0,,20
-core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0,004ddaf0,core/game.cpp,1728,10,decompiler_intrinsic|nonstandard_int|pointer_cast|sub84_truncation|unresolved_funcptr,1853
+core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0,004ddaf0,core/game.cpp,1725,8,decompiler_intrinsic|pointer_cast|sub84_truncation|unresolved_funcptr,1825
 core_game.cpp_copyInt_FUN_004e4440,004e4440,core/game.cpp,5,0,,5
 core_game.cpp_CGame_displayBitmap_FUN_004e2890,004e2890,core/game.cpp,24,0,,24
 core_game.cpp_CGame_process_FUN_004e3190,004e3190,core/game.cpp,130,0,,130
@@ -6343,7 +6343,7 @@ shape_memdbg.cpp_CLeakChecker_dtor_FUN_0050fbc0,0050fbc0,shape/memdbg.cpp,61,0,,
 shape_memdbg.cpp_debugFree_FUN_0050f460,0050f460,shape/memdbg.cpp,26,1,pointer_cast,41
 shape_memdbg.cpp_debugAlloc_FUN_0050f1f0,0050f1f0,shape/memdbg.cpp,6,0,,6
 shape_memdbg.cpp_debugAlloc_FUN_0050f1b0,0050f1b0,shape/memdbg.cpp,6,0,,6
-shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020,0050f020,shape/memdbg.cpp,43,0,,43
+shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020,0050f020,shape/memdbg.cpp,41,0,,41
 shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0,0050efa0,shape/memdbg.cpp,10,1,pointer_cast,25
 shape_memdbg.cpp_debugMalloc_FUN_0050f250,0050f250,shape/memdbg.cpp,38,0,,38
 shape_memdbg.cpp_SMemHead_add_FUN_0050eef0,0050eef0,shape/memdbg.cpp,15,0,,15
@@ -7124,11 +7124,11 @@ wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005f3920,005f3920,wincore/winrun
 wincore_winrun.cpp_releaseMutex_FUN_005f4050,005f4050,wincore/winrun.cpp,8,0,,8
 wincore_winrun.cpp_mainWindowProc_FUN_005f3150,005f3150,wincore/winrun.cpp,172,1,unresolved_funcptr,187
 wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010,005f4010,wincore/winrun.cpp,12,4,decompiler_intrinsic|param_count_too_few|warning_inlined_function,67
-wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290,005f4290,wincore/winrun.cpp,29,1,undefined_data,44
+wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290,005f4290,wincore/winrun.cpp,29,0,,29
 wincore_winrun.cpp_createMutex_FUN_005f3fe0,005f3fe0,wincore/winrun.cpp,6,0,,6
 wincore_winrun.cpp_getJoystickState_FUN_005f43a0,005f43a0,wincore/winrun.cpp,60,1,param_count_too_few,75
-wincore_winrun.cpp_getNextKeypress_FUN_005f2e90,005f2e90,wincore/winrun.cpp,24,3,decompiler_intrinsic|undefined_type,64
-wincore_winrun.cpp_getRegistryStringValue_FUN_005f4210,005f4210,wincore/winrun.cpp,19,1,undefined_data,34
+wincore_winrun.cpp_getNextKeypress_FUN_005f2e90,005f2e90,wincore/winrun.cpp,22,0,,22
+wincore_winrun.cpp_getRegistryStringValue_FUN_005f4210,005f4210,wincore/winrun.cpp,19,0,,19
 wincore_winrun.cpp_waitForMutex_FUN_005f3ff0,005f3ff0,wincore/winrun.cpp,9,0,,9
 wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0,005f30c0,wincore/winrun.cpp,5,0,,5
 wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0,005f2fd0,wincore/winrun.cpp,40,0,,40

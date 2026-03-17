@@ -20,7 +20,8 @@ int __cdecl engine_dosio_c_findFileNormally_FUN_004817c0(SFoundFileInfo *info)
   
   if ((info != (SFoundFileInfo *)0x0) && (info->found_path[0] != '\0')) {
     iVar2 = engine_dosio_c_getFullPath_FUN_004820c0(local_14c,info->found_path);
-    if ((iVar2 != 0) && (iVar3 = stat_00600c18(local_14c,&local_4c), iVar3 == 0)) {
+    if ((iVar2 != 0) && (iVar3 = getFileStat(local_14c,&local_4c), iVar3 == 0)
+       ) {
       info->file_size = local_4c._st_size;
       info->file_offset = 0;
       pcVar3 = local_14c;

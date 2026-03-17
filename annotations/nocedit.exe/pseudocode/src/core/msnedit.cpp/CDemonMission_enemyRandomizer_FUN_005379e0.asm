@@ -6,12 +6,13 @@
 ; Parameters:
 ; CDemonMission *  Stack[0x4]:4   this_ptr
 ; Local Variables:
-; CStrList[58]     Stack[-0xcfc]:928  aCStack_cfc
-; CPickList        Stack[-0x958]:936  CStack_958
+; CPickList        Stack[-0xd00]:936  local_d00
+; CPickList        Stack[-0x958]:936  local_958
 ; CPickList        Stack[-0x5b0]:936  local_5b0
-; char[296]        Stack[-0x204]:296  acStack_204
-; char[200]        Stack[-0xdc]:200  acStack_dc
-; float            Stack[-0x14]:4  fStack_14
+; char[296]        Stack[-0x208]:296  local_208
+; char[200]        Stack[-0xe0]:200  local_e0
+; float            Stack[-0x18]:4  local_18
+; int              Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
 ;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 00538820

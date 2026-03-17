@@ -64,7 +64,7 @@ int __cdecl engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *bas
       _setvbuf(stream_ptr,(char *)0x0,0,0x400);
       goto LAB_004b32cc;
     }
-    piVar2 = (int *)_errno();
+    piVar2 = _errno();
     if (*piVar2 != 6) break;
     iVar3 = iVar3 + 1;
     (*g_SleepFunc)(500);

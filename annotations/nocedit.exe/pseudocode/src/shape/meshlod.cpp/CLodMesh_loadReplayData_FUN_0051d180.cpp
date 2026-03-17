@@ -19,7 +19,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_loadReplayData_FUN_0051d180(CLodMesh *th
               (this_ptr->lod_levels_ptr,"..\\shape\\meshlod.cpp",0x1441);
   }
   _fscanf(file_handle,"%d\n",&this_ptr->lod_level_count);
-  pCVar1 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
+  pCVar1 = (CLodEdge *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (this_ptr->lod_level_count,0xf0,"..\\shape\\meshlod.cpp",0x1446);
   this_ptr->lod_levels_ptr = pCVar1;
   if (pCVar1 == (CLodEdge *)0x0) {

@@ -1,16 +1,16 @@
-// Name: crt_io.c_stat_00600c18
+// Name: crt_io.c__stat_00600c18
 // Address: 00600c18
 // Address Range: [[00600c18, 00600c1c]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_io_c_stat_00600c18(char *filename,_stat *file_info)
+// Signature: int __cdecl crt_io_c__stat_00600c18(char *filename,_stat *file_info)
 
 #include "nocturne.h"
 
-int __cdecl stat_00600c18(char *filename,_stat *file_info)
+int __cdecl _stat(char *filename,_stat *file_info)
 
 {
   int iVar1;
   
-  iVar1 = stat(filename,file_info);
+  iVar1 = _stat(filename,file_info);
   return iVar1;
 }

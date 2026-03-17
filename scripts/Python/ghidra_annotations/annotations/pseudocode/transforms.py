@@ -393,7 +393,11 @@ CRT_STANDARD_FUNCTIONS = {
         'open', 'close', 'read', 'write', 'lseek',
         'access', 'chmod', 'unlink', 'dup', 'dup2',
         'isatty', 'filelength', 'tell', 'eof',
-        'getcwd',
+        'getcwd', 'stat', 'utime',
+    },
+    # startup / internal CRT
+    'startup': {
+        'notifyAbnormalTermination',
     },
 }
 
@@ -424,7 +428,10 @@ def transform_crt_functions(code):
     # Categories may contain digits (e.g., wsock32, ddraw) and the _FUN_ suffix
     # is absent on DLL import functions (wsock32, ddraw, dsound, etc.)
     # The funcname capture uses *? (non-greedy) so _FUN_ suffix is matched separately
-    pattern = r'\bcrt_[a-z0-9]+_c_([a-zA-Z_][a-zA-Z0-9_]*?)(?:_FUN_[0-9a-fA-F]+)?\b'
+    # Match _FUN_HEXADDR suffix, or bare _HEXADDR (8 hex digits) for thunks/imports.
+    # The (?<!FUN) lookbehind prevents matching _HEXADDR when the captured name is "FUN",
+    # which would incorrectly strip the address from unnamed functions like FUN_0060fa90.
+    pattern = r'\bcrt_[a-z0-9]+_c_([a-zA-Z_][a-zA-Z0-9_]*?)(?:_FUN_[0-9a-fA-F]+|(?<!FUN)_[0-9a-fA-F]{8})?\b'
 
     def replace_crt_call(match):
         func_name = match.group(1)
@@ -581,7 +588,7 @@ def transform_variadic_functions(code):
 _ALLOCATOR_FUNC_RE = re.compile(
     r'(?:shape_memdbg_cpp_debug(?:Alloc|Malloc|Calloc|Realloc)_FUN_[0-9a-f]+'
     r'|__arrfini'
-    r')\s*\('
+    r')'
 )
 
 # Regex for castToClassHash calls

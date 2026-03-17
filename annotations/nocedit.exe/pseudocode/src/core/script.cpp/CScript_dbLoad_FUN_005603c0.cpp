@@ -113,7 +113,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_005603c0(CScript *this_ptr,char 
     }
     iVar6 = this_ptr->dialog_entry_count + 1;
     this_ptr->dialog_entry_count = iVar6;
-    pSVar4 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+    pSVar4 = (SDialogEntry *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                        (this_ptr->dialog_entries,iVar6 * 0x226,"..\\core\\script.cpp",0xefa);
     this_ptr->dialog_entries = pSVar4;
     if (pSVar4 == (SDialogEntry *)0x0) {

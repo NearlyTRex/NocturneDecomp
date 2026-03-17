@@ -92,7 +92,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
     pCVar14->x = (this_ptr->base).platform_orientation_delta.y;
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base);
   }
-  PTR_00823c50 = (CDemonActor *)0x0;
+  g_LastCollisionActor = (CDemonActor *)0x0;
   if ((((ABS(velocity->z) == 0.0) && (ABS(velocity->x) == 0.0)) && (velocity->y <= 0.0)) &&
      (((this_ptr->base).standing_platform == (CPlatform *)0x0 &&
       ((this_ptr->base).location.position.y == this_ptr->closest_distance_threshold)))) {
@@ -182,8 +182,8 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40(CCharacter
                           this_ptr->collision_cylinder_bottom * this_ptr->size_scale +
                           (this_ptr->base).location.position.y,
                           (this_ptr->base).location.position.y + local_34);
-    if (PTR_00823c50 == (CDemonActor *)0x0) {
-      PTR_00823c50 = g_CDemonSetPtr->collision_actor;
+    if (g_LastCollisionActor == (CDemonActor *)0x0) {
+      g_LastCollisionActor = g_CDemonSetPtr->collision_actor;
     }
     pCVar8 = this_ptr->collision_test_points + local_38 * 3;
     if (pCVar8 != &g_TempNormal0) {

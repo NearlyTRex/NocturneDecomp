@@ -14,7 +14,7 @@ void __cdecl core_game_cpp_setupMovieRecording_FUN_004d7730(void)
   g_MovieRecordingActive = 0;
   g_MovieRecordingFrameCounter = 0;
   iVar1 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                    (g_CEditorToolsPtr,"Enter Movie FPS",&30.0f,1,0.25,
+                    (g_CEditorToolsPtr,"Enter Movie FPS",&g_MovieRecordingTargetFPS,1,0.25,
                      240.0,1);
   if (iVar1 != 0) {
     iVar1 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020

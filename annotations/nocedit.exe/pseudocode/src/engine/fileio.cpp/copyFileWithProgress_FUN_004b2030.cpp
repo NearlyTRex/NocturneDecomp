@@ -43,7 +43,7 @@ char * __cdecl engine_fileio_cpp_copyFileWithProgress_FUN_004b2030(_FILE *source
       if (SVar2 != count) {
         _sprintf
                   (g_FileTransferErrorMessage,"Error reading %s",source_filename);
-        piVar3 = (int *)_errno();
+        piVar3 = _errno();
         errnum = *piVar3;
 LAB_004b20b4:
         pcVar4 = strerror(errnum);
@@ -57,7 +57,7 @@ LAB_004b20b4:
       if (SVar1 != count) {
         _sprintf
                   (g_FileTransferErrorMessage,"Error writing %s",dest_filename);
-        piVar2 = (int *)_errno();
+        piVar2 = _errno();
         errnum = *piVar2;
         goto LAB_004b20b4;
       }

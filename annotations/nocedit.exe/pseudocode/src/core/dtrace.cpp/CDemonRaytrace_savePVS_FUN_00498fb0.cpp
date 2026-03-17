@@ -24,7 +24,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00498fb0(CDemonRaytrace 
   }
   iVar5 = g_PVSDrawnCubeCount;
   *output_count = g_PVSDrawnCubeCount;
-  piVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+  piVar2 = (int *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (*input_indices_array,iVar5 << 2,"..\\core\\dtrace.cpp",0x8f2);
   *input_indices_array = piVar2;
   if (*output_count < 1) {

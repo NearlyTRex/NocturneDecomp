@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6484
-Clean functions: 5036 (77.7%)
+Clean functions: 5040 (77.7%)
 Files at 100%: 43
 Files at 90%+: 82
 Files at 50%+: 202
@@ -93,7 +93,7 @@ FILES AT 90-99% (ALMOST COMPLETE)
 
    95.0% | core/emitter.cpp
          19/20 clean, 1 remaining
-           - core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80 (68 lines) [decompiler_intrinsic, unknown_type, warning_inlined_function]
+           - core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004a7e80 (68 lines) [decompiler_intrinsic, warning_inlined_function]
 
    94.7% | core/bat.cpp
          18/19 clean, 1 remaining
@@ -106,6 +106,12 @@ FILES AT 90-99% (ALMOST COMPLETE)
    94.1% | core/trap.cpp
          16/17 clean, 1 remaining
            - core_trap.cpp_CTrap_process_FUN_005de770 (60 lines) [warning_type_propagation]
+
+   93.8% | core/hero.cpp
+         45/48 clean, 3 remaining
+           - core_hero.cpp_CHero_dtor_FUN_004f2470 (33 lines) [decompiler_intrinsic, negative_offset, pointer_cast]
+           - core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 (24 lines) [pointer_cast]
+           - core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0 (24 lines) [decompiler_intrinsic, pointer_cast]
 
    93.5% | core/boxactor.cpp
          43/46 clean, 3 remaining
@@ -163,13 +169,6 @@ FILES AT 90-99% (ALMOST COMPLETE)
          23/25 clean, 2 remaining
            - core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_00485b20 (22 lines) [warning_type_propagation]
            - core_dracbrid.cpp_CDraculaBride_process_FUN_00484410 (759 lines) [decompiler_intrinsic, warning_inlined_function, warning_type_propagation]
-
-   91.7% | core/hero.cpp
-         44/48 clean, 4 remaining
-           - core_hero.cpp_CHero_dtor_FUN_004f2470 (33 lines) [decompiler_intrinsic, negative_offset, pointer_cast]
-           - core_hero.cpp_closestHeroToPoint_FUN_004f2170 (35 lines) [pointer_cast]
-           - core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220 (24 lines) [pointer_cast]
-           - core_hero.cpp_isAnyHeroWithinCylinder_FUN_004f22a0 (24 lines) [decompiler_intrinsic, pointer_cast]
 
    91.7% | core/turret.cpp
          22/24 clean, 2 remaining
@@ -431,7 +430,7 @@ FILES AT 50-89%
    84.2% | core/svetlana.cpp
          16/19 clean, 3 remaining
            - core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0 (304 lines) [pointer_cast, stack_alignment_array, warning_type_propagation]
-           - core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260 (244 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_svetlana.cpp_CSvetlana_processAI_FUN_005d9260 (243 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_svetlana.cpp_CSvetlana_renderOpaque_FUN_005d9bc0 (62 lines) [warning_type_propagation]
    84.2% | core/actor.cpp
          154/183 clean, 29 remaining
@@ -517,7 +516,7 @@ FILES AT 50-89%
    83.3% | core/gore.cpp
          45/54 clean, 9 remaining
            - core_gore.cpp_CBloodParticle_setupRenderState_FUN_004eb9d0 (56 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array, warning_inlined_function]
-           - core_gore.cpp_CFootstep_init_FUN_004ed240 (57 lines) [decompiler_intrinsic, pointer_cast]
+           - core_gore.cpp_CFootstep_init_FUN_004ed240 (58 lines) [decompiler_intrinsic, pointer_cast]
            - core_gore.cpp_CBloodParticle_render_FUN_004ebac0 (196 lines) [decompiler_intrinsic, pointer_cast]
            - core_gore.cpp_CBloodPool_render_FUN_004ecce0 (111 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_gore.cpp_CBloodPool_save_FUN_004ed1c0 (16 lines) [decompiler_intrinsic, sub84_truncation]
@@ -527,7 +526,7 @@ FILES AT 50-89%
            - core_gore.cpp_CGore_renderDecals_FUN_004ed830 (89 lines) [pointer_cast]
    83.3% | core/haystack.cpp
          15/18 clean, 3 remaining
-           - core_haystack.cpp_CHaystack_updateAI_FUN_004f13f0 (186 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_haystack.cpp_CHaystack_updateAI_FUN_004f13f0 (185 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_haystack.cpp_CHaystack_process_FUN_004f0e40 (279 lines) [pointer_cast, stack_alignment_array]
            - core_haystack.cpp_CHaystack_advanceMotion_FUN_004f1970 (51 lines) [warning_type_propagation]
    83.3% | core/hostage.cpp
@@ -667,6 +666,15 @@ FILES AT 50-89%
            - core_ladder.cpp_CLadder_cacheRelativePosition_FUN_00502b80 (50 lines) [pointer_cast]
            - core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 (166 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
            - core_ladder.cpp_CLadder_processInEditor_FUN_00502d00 (42 lines) [stack_param]
+   78.8% | wincore/winrun.cpp
+         26/33 clean, 7 remaining
+           - wincore_winrun.cpp_winMain_FUN_005f3680 (125 lines) [param_count_too_many, pointer_cast]
+           - wincore_winrun.cpp_processWindowMessages_FUN_005f35e0 (26 lines) [pointer_cast]
+           - wincore_winrun.cpp_getTime_FUN_005f2dc0 (20 lines) [decompiler_intrinsic, warning_inlined_function]
+           - wincore_winrun.cpp_mainWindowProc_FUN_005f3150 (172 lines) [unresolved_funcptr]
+           - wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010 (12 lines) [decompiler_intrinsic, param_count_too_few, warning_inlined_function]
+           - wincore_winrun.cpp_getJoystickState_FUN_005f43a0 (60 lines) [param_count_too_few]
+           - wincore_winrun.cpp_sleep_FUN_005f40e0 (12 lines) [decompiler_intrinsic, param_count_too_few, warning_inlined_function]
    78.5% | cockpit/drawsurf.cpp
          73/93 clean, 20 remaining
            - cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010 (53 lines) [warning_unreachable]
@@ -695,7 +703,7 @@ FILES AT 50-89%
            - core_icepick.cpp_CIcePick_findAndPickupGun_FUN_004f8970 (54 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_icepick.cpp_CIcePick_updateShootBlend_FUN_004f8810 (67 lines) [pointer_cast, stack_alignment_array]
            - core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f8b20 (51 lines) [pointer_cast, warning_type_propagation]
-           - core_icepick.cpp_CIcePick_processAI_FUN_004f8c70 (244 lines) [decompiler_intrinsic, warning_type_propagation]
+           - core_icepick.cpp_CIcePick_processAI_FUN_004f8c70 (243 lines) [decompiler_intrinsic, warning_type_propagation]
    78.1% | sound/snddx.cpp
          25/32 clean, 7 remaining
            - sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750 (188 lines) [decompiler_intrinsic, warning_inlined_function]
@@ -712,7 +720,7 @@ FILES AT 50-89%
            - core_msnedit.cpp_CDemonMission_editActorDetailed_FUN_0053b510 (161 lines) [unresolved_funcptr]
            - core_msnedit.cpp_CDemonMission_pickActorByName_FUN_0053c210 (49 lines) [pointer_cast]
            - core_msnedit.cpp_CDemonMission_replicateActor_FUN_0053bd80 (141 lines) [unknown_field]
-           - core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 (141 lines) [stack_param, stack_ref]
+           - core_msnedit.cpp_CDemonMission_enemyRandomizer_FUN_005379e0 (151 lines) [pointer_cast, unknown_field, unresolved_register, warning_unmapped_variable]
            - core_msnedit.cpp_CDemonMission_playMission_FUN_00538ba0 (52 lines) [unknown_field]
            - core_msnedit.cpp_CDemonMission_rebuildWaypointConnectivity_FUN_0053d7b0 (30 lines) [pointer_cast]
            - core_msnedit.cpp_drawMotionBar_FUN_00536e20 (105 lines) [param_count_too_few]
@@ -863,7 +871,7 @@ FILES AT 50-89%
            - core_game.cpp_CGame_displayActStats_FUN_004e3800 (207 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_game.cpp_CGame_updateDT_FUN_004d7d90 (27 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_game.cpp_captureDebugMovieFrame_FUN_004d7810 (104 lines) [pointer_cast]
-           - core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (1728 lines) [decompiler_intrinsic, nonstandard_int, pointer_cast, sub84_truncation, unresolved_funcptr]
+           - core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (1725 lines) [decompiler_intrinsic, pointer_cast, sub84_truncation, unresolved_funcptr]
            - core_game.cpp_CGame_renderIrisFade_FUN_004e0aa0 (42 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_game.cpp_CGame_slamDT_FUN_004e3080 (13 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_game.cpp_CGame_saveGame_FUN_004e0cd0 (178 lines) [pointer_cast]
@@ -999,7 +1007,7 @@ FILES AT 50-89%
            - core_stranger.cpp_CStranger_handleFireButton_FUN_005c5f10 (137 lines) [param_count_too_few]
            - core_stranger.cpp_CStranger_processDamage_FUN_005c48b0 (121 lines) [suspect_float]
            - core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370 (129 lines) [decompiler_intrinsic, suspect_float]
-           - core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (652 lines) [decompiler_intrinsic, pointer_cast, stack_ref, unknown_field, warning_inlined_function]
+           - core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_005be520 (651 lines) [decompiler_intrinsic, pointer_cast, stack_ref, unknown_field, warning_inlined_function]
            - core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_005c07b0 (597 lines) [param_count_too_many, pointer_cast, warning_type_propagation]
            - core_stranger.cpp_CStranger_tryClimbLadder_FUN_005c1fe0 (130 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_stranger.cpp_CStranger_makeDrawDecision_FUN_005bfb60 (299 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array, unresolved_funcptr, warning_type_propagation]
@@ -1065,18 +1073,6 @@ FILES AT 50-89%
            - core_weather.cpp_CWeather_renderParticles_FUN_005ef190 (205 lines) [decompiler_intrinsic, pointer_cast]
            - core_weather.cpp_CWeather_update_FUN_005eeaf0 (140 lines) [pointer_cast]
            - core_weather.cpp_CWeather_setOriginAndRotation_FUN_005ef940 (69 lines) [decompiler_intrinsic, pointer_cast]
-   69.7% | wincore/winrun.cpp
-         23/33 clean, 10 remaining
-           - wincore_winrun.cpp_winMain_FUN_005f3680 (125 lines) [param_count_too_many, pointer_cast]
-           - wincore_winrun.cpp_processWindowMessages_FUN_005f35e0 (26 lines) [pointer_cast]
-           - wincore_winrun.cpp_getTime_FUN_005f2dc0 (20 lines) [decompiler_intrinsic, warning_inlined_function]
-           - wincore_winrun.cpp_mainWindowProc_FUN_005f3150 (172 lines) [unresolved_funcptr]
-           - wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010 (12 lines) [decompiler_intrinsic, param_count_too_few, warning_inlined_function]
-           - wincore_winrun.cpp_setRegistryStringValue_FUN_005f4290 (29 lines) [undefined_data]
-           - wincore_winrun.cpp_getJoystickState_FUN_005f43a0 (60 lines) [param_count_too_few]
-           - wincore_winrun.cpp_getNextKeypress_FUN_005f2e90 (24 lines) [decompiler_intrinsic, undefined_type]
-           - wincore_winrun.cpp_getRegistryStringValue_FUN_005f4210 (19 lines) [undefined_data]
-           - wincore_winrun.cpp_sleep_FUN_005f40e0 (12 lines) [decompiler_intrinsic, param_count_too_few, warning_inlined_function]
    69.4% | sound/sndmain.cpp
          134/193 clean, 59 remaining
            - sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400 (174 lines) [decompiler_intrinsic, warning_inlined_function, warning_unreachable]

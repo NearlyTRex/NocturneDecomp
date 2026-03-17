@@ -8,9 +8,9 @@
 // UTIME - System Header
 // =============================================================================
 
-// Structure: utimbuf
-typedef struct utimbuf {
+// Structure: _utimbuf
+typedef struct _utimbuf {
     time_t actime;
     time_t modtime;
-} utimbuf;
+} _utimbuf;
 

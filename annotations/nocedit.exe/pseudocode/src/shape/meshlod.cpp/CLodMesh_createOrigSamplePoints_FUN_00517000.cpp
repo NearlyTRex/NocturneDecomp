@@ -48,7 +48,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_createOrigSamplePoints_FUN_00517000(CLod
   pCVar1 = this_ptr->next_lod;
   iVar7 = pCVar1->vertex_count + pCVar1->edge_count + pCVar1->tri_count;
   this_ptr->sample_point_count = iVar7;
-  piVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  piVar2 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                      (iVar7 * 0x1c + 4,"..\\shape\\meshlod.cpp",0x577);
   pSVar3 = (SLodSamplePoint *)piVar2;
   if (piVar2 != (int *)0x0) {

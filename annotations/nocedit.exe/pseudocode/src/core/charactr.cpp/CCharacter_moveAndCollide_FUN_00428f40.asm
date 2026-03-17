@@ -65,7 +65,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CDemonSet* g_CDemonSetPtr = 03114278
 ;   undefined4 DAT_006e6f69
-;   CDemonActor* PTR_00823c50
+;   CDemonActor* g_LastCollisionActor
 ;   CVector3f g_TempNormal0
 ;   undefined4 g_TempNormal0.y
 ;   undefined4 g_TempNormal0.z
@@ -110,7 +110,7 @@ section .text
         ;   Label: LAB_00428f72
     XOR ESI,ESI                         ; 00428f75
     MOV EDI,dword ptr [EAX + 0x8]       ; 00428f77
-    MOV dword ptr [0x00823c50],ESI      ; 00428f7a | PTR_00823c50
+    MOV dword ptr [0x00823c50],ESI      ; 00428f7a | g_LastCollisionActor
     TEST EDI,0x7fffffff                 ; 00428f80
     JNZ 0x00428fb7                      ; 00428f86
         ;   XREF to: 00428fb7 (CONDITIONAL_JUMP)  ; LAB_00428fb7
@@ -269,14 +269,14 @@ section .text
     MOV dword ptr [ESP + 0xdc],EAX      ; 004291c1
     FLD float ptr [ESP + 0xdc]          ; 004291c8
     ADD ESP,0x20                        ; 004291cf
-    MOV ECX,dword ptr [0x00823c50]      ; 004291d2 | PTR_00823c50
+    MOV ECX,dword ptr [0x00823c50]      ; 004291d2 | g_LastCollisionActor
     FSTP float ptr [ESP + 0x10]         ; 004291d8
     TEST ECX,ECX                        ; 004291dc
     JNZ 0x004291f0                      ; 004291de
         ;   XREF to: 004291f0 (CONDITIONAL_JUMP)  ; LAB_004291f0
     MOV EAX,[0x006810c8]                ; 004291e0 | g_CDemonSetPtr
     MOV EAX,dword ptr [EAX + 0x14d144]  ; 004291e5 | DAT_032613bc
-    MOV [0x00823c50],EAX                ; 004291eb | PTR_00823c50
+    MOV [0x00823c50],EAX                ; 004291eb | g_LastCollisionActor
     IMUL EAX,dword ptr [ESP + 0x98],0x24 ; 004291f0
         ;   Label: LAB_004291f0
     ADD EAX,dword ptr [ESP + 0xb4]      ; 004291f8

@@ -30,7 +30,7 @@ section .text
     PUSH 0x84                           ; 00522d35
     PUSH 0x63899d                       ; 00522d3a | = "..\\core\\mission.cpp"
     CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 00522d3f
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * filename, int context)
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     ADD ESP,0x8                         ; 00522d44
     PUSH EBX                            ; 00522d47
     CALL core_mission.cpp_CDemonMission_removeAllActors_FUN_00523f50 ; 00522d48
@@ -44,7 +44,7 @@ section .text
     PUSH 0x6389b1                       ; 00522d74 | = "..\\core\\mission.cpp"
     MOV dword ptr [EBX + 0x88c],0x0     ; 00522d79
     CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 00522d83
-        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * filename, int context)
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)  ; void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * source_filename, int source_line)
     ADD ESP,0x8                         ; 00522d88
     POP EBX                             ; 00522d8b
     RET                                 ; 00522d8c

@@ -1,12 +1,12 @@
 // Name: crt_errno.c__errno_FUN_00601450
 // Address: 00601450
 // Address Range: [[00601450, 00601459]]
-// Convention: unknown
-// Signature: int * crt_errno_c__errno_FUN_00601450(void)
+// Convention: __cdecl
+// Signature: int * __cdecl crt_errno_c__errno_FUN_00601450(void)
 
 #include "nocturne.h"
 
-int * _errno(void)
+int * __cdecl _errno(void)
 
 {
   ThreadData *pTVar1;

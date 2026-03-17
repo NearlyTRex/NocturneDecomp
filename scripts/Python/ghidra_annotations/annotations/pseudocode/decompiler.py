@@ -224,7 +224,8 @@ def replace_constants_in_code(decompiled_code, constants_map):
         # Build and cache the pattern
         sorted_names = sorted(constants_map.keys(), key=len, reverse=True)
         escaped_names = [re.escape(name) for name in sorted_names]
-        combined_pattern = r'\b(' + '|'.join(escaped_names) + r')\b'
+        # Negative lookbehind: don't replace constants preceded by & (address-of)
+        combined_pattern = r'(?<!&)\b(' + '|'.join(escaped_names) + r')\b'
         _constants_pattern_cache['pattern'] = re.compile(combined_pattern)
         _constants_pattern_cache['constants'] = constants_map
         _constants_pattern_cache['map_id'] = map_id

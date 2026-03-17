@@ -72,9 +72,9 @@ int __cdecl core_emitter_cpp_CEmitter_renderOpaque_FUN_004a8860(CEmitter *this_p
       if (iVar2 == 0) {
         core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(&this_ptr->base,0xfb);
         if ((((this_ptr->emitter_type == 3) && (g_SlewTargetMode != 0)) &&
-            (this_ptr == PTR_02cf2b78)) &&
-           (PTR_02cf2b78 == (CEmitter *)g_CDemonMissionPtr->selected_actor)) {
-          orientation = &UNION_UOrientationVector_02cf2b6c;
+            (this_ptr == g_EditorSelectedEmitter)) &&
+           (g_EditorSelectedEmitter == (CEmitter *)g_CDemonMissionPtr->selected_actor)) {
+          orientation = &g_EmitterEditorOrientation;
           pCVar2 = &g_EmitterTarget;
           text_color = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                                  (g_CEditorToolsPtr);

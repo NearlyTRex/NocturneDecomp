@@ -311,7 +311,7 @@ void __cdecl engine_fileio_cpp_CFileManager_rebuildLastPod_FUN_004b5a50(CFileMan
           } while (local_40 < local_1838.file_count);
         }
       }
-      ptr = shape_memdbg_cpp_debugCalloc_FUN_0050f350
+      ptr = (SIZE_T *)shape_memdbg_cpp_debugCalloc_FUN_0050f350
                       (this_ptr->tracked_file_count,0x14,"..\\engine\\fileio.cpp",0x825);
       if (ptr == (SIZE_T *)0x0) {
         g_CurrentFilename = "..\\engine\\fileio.cpp";

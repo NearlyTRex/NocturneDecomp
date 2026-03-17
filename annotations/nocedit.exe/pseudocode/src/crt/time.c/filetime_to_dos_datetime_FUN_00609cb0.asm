@@ -9,7 +9,7 @@
 ; WORD *           Stack[0xc]:4   dos_time
 ;
 ; XREF[1]:
-;   crt_io.c_stat_FUN_00607e64 at 00608056
+;   crt_io.c_getFileStat_FUN_00607e64 at 00608056
 ;
 ; Referenced Globals:
 ;   FILE_TIME_TO_DOS_DATE_TIME_FUNC* g_FileTimeToDosDateTimeFunc = 00211d2e

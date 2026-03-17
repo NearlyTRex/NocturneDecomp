@@ -71,6 +71,10 @@ int __cdecl ::mkdir(char *path);
 // Address: 0060128c
 char * __cdecl ::getcwd(char *buffer,SIZE_T size);
 
+// Original: crt_watcom.c_notifyAbnormalTermination_FUN_00601620
+// Address: 00601620
+void __cdecl notifyAbnormalTermination(void);
+
 // Original: crt_watcom.c_getcwd_FUN_00608d20
 // Address: 00608d20
 char * __cdecl getcwd(char *buffer,SIZE_T size);

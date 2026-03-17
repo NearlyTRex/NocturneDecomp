@@ -17,7 +17,7 @@ void __cdecl shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(CPickList *thi
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPickList::enableItem - invalid index");
   }
   if (this_ptr->enabled_capacity <= item_index) {
-    piVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+    piVar1 = (int *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                        (this_ptr->enabled_array,(this_ptr->base).item_count << 2,
                         "..\\shape\\edittool.cpp",0x102b);
     this_ptr->enabled_array = piVar1;

@@ -55,7 +55,7 @@ void __cdecl cockpit_ckptutil_c_loadEdgeListFile_FUN_004331f0(char *filename,SEd
       }
       if (0 < edge_lists->edge_count) {
         SVar2 = edge_lists->edge_count * 8;
-        pSVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+        pSVar2 = (SEdge *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                            (SVar2,"..\\cockpit\\ckptutil.c",0x4d2);
         edge_lists->edge_data = pSVar2;
         if (pSVar2 == (SEdge *)0x0) {

@@ -21,7 +21,7 @@
 ;   TerminatedCString s_noc00000_00639fd1
 ;   TerminatedCString s_noc00001_00639fda
 ;   CGame* g_CGamePtr = 02d81a9c
-;   char*[30] PTR_s_noc00000_0067d758
+;   char*[30] g_MoonNocStrings
 ;   undefined4 PTR_s_noc00001_0067d75c
 ;   undefined4 DAT_02d81cb0
 ;   CAlphaBitmap g_MoonCloudTexture
@@ -102,7 +102,7 @@ section .text
     PUSH 0x116                          ; 00529c5d
         ;   Label: LAB_00529c5d
     PUSH 0x280                          ; 00529c62
-    MOV EBP,dword ptr [EBX + 0x67d758]  ; 00529c67 | PTR_s_noc00000_0067d758 | PTR_s_noc00001_0067d75c
+    MOV EBP,dword ptr [EBX + 0x67d758]  ; 00529c67 | g_MoonNocStrings | PTR_s_noc00001_0067d75c
     PUSH EBP                            ; 00529c6d | = "noc00000" | s_noc00001_00639fda
     PUSH ESI                            ; 00529c6e | g_MoonAnimTextures | DAT_02f37f98
     ADD EBX,0x4                         ; 00529c6f

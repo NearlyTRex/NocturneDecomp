@@ -29,7 +29,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_findOrAddLodTexture_FUN_00518790(CLodMesh
       iVar5 = iVar5 + 0x48;
     } while (iVar4 < this_ptr->lod_texture_count);
   }
-  pSVar3 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+  pSVar3 = (SMRGLTextureLod *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->lod_textures,(this_ptr->lod_texture_count + 1) * 0x48,
                       "..\\shape\\meshlod.cpp",0xb6d);
   this_ptr->lod_textures = pSVar3;

@@ -46,9 +46,8 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(
   float local_1ee0;
   float local_1edc;
   float fStack_1ed8;
-  char local_1ecc;
-  float local_1ec4;
-  float afStack_1bcc [1511];
+  SPoseData local_1ecc;
+  float afStack_13d8 [1002];
   CMatrix3x3f local_430;
   CBoundingBox3D local_408;
   CQuaternion4f local_3f0;
@@ -165,11 +164,11 @@ void __cdecl core_stranger_cpp_CStranger_updateProceduralAnimation_FUN_005be520(
   pCVar1 = &(this_ptr->base).base.model;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(pCVar1);
   if ((0.0 < (float)local_1f08) && (-1 < this_ptr->turn_motion_index)) {
-    core_stranger_cpp_CStranger_extractTurnPoseData_FUN_005bf720(this_ptr,(SPoseData *)&local_1ecc);
-    _local_1ecc = 0.0;
-    local_1ec4 = 0.0;
+    core_stranger_cpp_CStranger_extractTurnPoseData_FUN_005bf720(this_ptr,&local_1ecc);
+    local_1ecc.root_position.x = 0.0;
+    local_1ecc.root_position.z = 0.0;
     core_skeleton_cpp_CDeformableModelInstance_blendWithPoseData_FUN_0059f230
-              (pCVar1,(SPoseData *)&local_1ecc,(float)local_1f08,-1,
+              (pCVar1,&local_1ecc,(float)local_1f08,-1,
                core_skeleton_cpp_blendWeightCallback_FUN_0059ddb0);
   }
   core_stranger_cpp_CStranger_makeDrawDecision_FUN_005bfb60(this_ptr);

@@ -261,16 +261,13 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       iVar6 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
       if (iVar6 == 0) break;
       uVar11 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
-      iVar6 = (uVar11 & 0xff) << 8;
+      g_InputHistory[1] = (char)uVar11;
       iVar19 = 0x13;
       do {
-        iVar12 = iVar6;
         iVar19 = iVar19 + -1;
         g_InputHistory[iVar19 + 1] = g_InputHistory[iVar19];
-        iVar6 = CONCAT31((int3)((uint)iVar12 >> 8),g_InputHistory[iVar19]);
         iVar19 = iVar19;
       } while (0 < iVar19);
-      g_InputHistory[1] = (char)((uint)iVar12 >> 8);
       pbVar13 = (byte *)support_newmsg_cpp_decryptMessage_FUN_00544270(g_CheatStr_DebugMode);
       uVar10 = 0xffffffff;
       pbVar9 = pbVar13;
@@ -564,7 +561,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           g_MovieRecordingActive = 0;
           g_MovieRecordingFrameCounter = 0;
           iVar6 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                            (g_CEditorToolsPtr,"Enter Movie FPS",&30.0f
+                            (g_CEditorToolsPtr,"Enter Movie FPS",&g_MovieRecordingTargetFPS
                              ,1,0.25,240.0,1);
           if ((((iVar6 != 0) &&
                (iVar6 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020

@@ -19,7 +19,7 @@ void __cdecl wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290(char *key_pa
   
   bVar5 = 0;
   LVar2 = (*g_RegCreateKeyExAFunc)
-                    ((HKEY)&DAT_80000002,key_path,0,"suck",0,0x20006,
+                    (HKEY_LOCAL_MACHINE,key_path,0,"suck",0,0x20006,
                      (LPSECURITY_ATTRIBUTES)0x0,&local_c,&local_8);
   if (LVar2 != 0) {
     return;

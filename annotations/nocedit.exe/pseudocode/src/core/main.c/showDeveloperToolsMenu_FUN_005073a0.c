@@ -119,7 +119,7 @@ LAB_0050740e:
                       (&g_CDemonFileManagerInstance);
           }
           else if (uVar1 == 0x42) {
-            this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
+            this_ptr_00 = (CMorph *)shape_memdbg_cpp_debugAlloc_FUN_0050f1b0
                                     (0xc2c,"..\\core\\main.c",0x292);
             morph = (CMorph *)0x0;
             if (this_ptr_00 != (CMorph *)0x0) {

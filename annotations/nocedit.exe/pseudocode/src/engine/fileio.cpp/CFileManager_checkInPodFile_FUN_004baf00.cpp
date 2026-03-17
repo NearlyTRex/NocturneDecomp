@@ -386,7 +386,7 @@ LAB_004bb83f:
           _setvbuf(p_Var6,(char *)0x0,0,0x400);
           goto LAB_004bbc40;
         }
-        piVar7 = (int *)_errno();
+        piVar7 = _errno();
         if (*piVar7 != 6) break;
         iVar3 = iVar3 + 1;
         (*g_SleepFunc)(500);
@@ -487,7 +487,7 @@ LAB_004bba53:
               _setvbuf(p_Var6,(char *)0x0,0,0x400);
               goto LAB_004bbb45;
             }
-            piVar4 = (int *)_errno();
+            piVar4 = _errno();
             if (*piVar4 != 6) break;
             iVar3 = iVar3 + 1;
             (*g_SleepFunc)(500);

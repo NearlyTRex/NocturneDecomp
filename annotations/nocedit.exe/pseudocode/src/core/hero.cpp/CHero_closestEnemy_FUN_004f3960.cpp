@@ -1,12 +1,12 @@
-// Name: core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960
+// Name: core_hero.cpp_CHero_closestEnemy_FUN_004f3960
 // Address: 004f3960
 // Address Range: [[004f3960, 004f3ae7]]
 // Convention: __cdecl
-// Signature: CEnemy * __cdecl core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(CHero *this_ptr,float *out_distance)
+// Signature: CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004f3960(CHero *this_ptr,float *out_distance)
 
 #include "nocturne.h"
 
-CEnemy * __cdecl core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(CHero *this_ptr,float *out_distance)
+CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004f3960(CHero *this_ptr,float *out_distance)
 
 {
   CEnemy *this_ptr_01;

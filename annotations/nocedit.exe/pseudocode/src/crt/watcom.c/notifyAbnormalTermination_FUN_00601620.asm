@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __watcallRegister crt_startup_c_notifyAbnormalTermination_FUN_00601620(void)
+; void __cdecl crt_watcom_c_notifyAbnormalTermination_FUN_00601620(void)
 ;
 ;
 ; XREF[1]:
@@ -18,6 +18,6 @@
 section .text
 
     CALL dword ptr [0x00684c84]         ; 00601620 | PTR_crt_startup.c_reportAbnormalTermination_FUN_00684c84
-        ;   Label: crt_startup.c_notifyAbnormalTermination_FUN_00601620
+        ;   Label: crt_watcom.c_notifyAbnormalTermination_FUN_00601620
     MOV EAX,EAX                         ; 00601626
 

@@ -53,7 +53,7 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
     piVar7 = piVar7 + 1;
   }
   local_14 = (int *)0x0;
-  local_14 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+  local_14 = (int *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                        (g_PolygonCount * 0xc,"..\\shape\\design.c",0x1921);
   if (local_14 == (int *)0x0) {
     g_CurrentFilename = "..\\shape\\design.c";

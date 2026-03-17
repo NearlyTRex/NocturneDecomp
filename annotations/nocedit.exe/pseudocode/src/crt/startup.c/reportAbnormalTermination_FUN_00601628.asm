@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   crt_signal.c_processSignal_FUN_0060d128 at 0060d160
-;   crt_startup.c_notifyAbnormalTermination_FUN_00601620 at 00601620
+;   crt_watcom.c_notifyAbnormalTermination_FUN_00601620 at 00601620
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ABNORMAL_TERMINATION_00658f98

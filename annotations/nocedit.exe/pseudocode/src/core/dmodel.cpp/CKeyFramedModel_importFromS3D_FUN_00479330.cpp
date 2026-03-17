@@ -411,7 +411,7 @@ LAB_00479c73:
       local_1c = (int)ROUND(ROUND(local_2c * 255.0f));
       auStack_8dc[iVar8] = (uchar)local_1c;
     }
-    puVar9 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+    puVar9 = (uchar *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                        (this_ptr->poly_count,"..\\core\\dmodel.cpp",0x725);
     this_ptr->env_map_opac_list = puVar9;
     if (puVar9 == (uchar *)0x0) {

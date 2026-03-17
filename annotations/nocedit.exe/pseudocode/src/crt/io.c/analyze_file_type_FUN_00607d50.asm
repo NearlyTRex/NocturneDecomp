@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   filename
 ;
 ; XREF[1]:
-;   crt_io.c_stat_FUN_00607e64 at 00607ff7
+;   crt_io.c_getFileStat_FUN_00607e64 at 00607ff7
 ;
 ; Referenced Globals:
 ;   CLOSE_HANDLE_FUNC* g_CloseHandleFunc = 00211c38

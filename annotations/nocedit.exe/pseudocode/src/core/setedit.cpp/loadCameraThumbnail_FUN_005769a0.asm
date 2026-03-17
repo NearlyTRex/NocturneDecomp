@@ -40,7 +40,7 @@
 ;   TerminatedCString s_rb_00646606
 ;   TerminatedCString s_backdrop_00646609
 ;   TerminatedCString s_core_setedit_cpp_00646612
-;   ... and 22 more
+;   ... and 20 more
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -275,10 +275,10 @@ section .text
     MOV AL,byte ptr [EAX]               ; 00576c09
     AND EAX,0xff                        ; 00576c0b
     LEA EAX,[EAX + EAX*0x2]             ; 00576c10
-    XOR EDX,EDX                         ; 00576c13
-    MOVZX EDI,byte ptr [EAX + 0x3653cc0] ; 00576c15 | g_ThumbnailPalette
-    MOV DL,byte ptr [EAX + 0x3653cc1]   ; 00576c1c | DAT_03653cc1
-    MOVZX ESI,byte ptr [EAX + 0x3653cc2] ; 00576c22 | DAT_03653cc2
+    MOVZX EDI,byte ptr [EAX + 0x3653cc0] ; 00576c13
+    MOVZX EDX,byte ptr [EAX + 0x3653cc1] ; 00576c1a
+    MOVZX ESI,byte ptr [EAX + 0x3653cc2] ; 00576c21
+    NOP                                 ; 00576c28
     MOV EAX,EDX                         ; 00576c29
     MOV EDX,ESI                         ; 00576c2b
     SHL EAX,0x8                         ; 00576c2d

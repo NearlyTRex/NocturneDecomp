@@ -3,12 +3,6 @@
     "errors": [
       {
         "category": "undeclared_identifier",
-        "column": 5,
-        "line": 30,
-        "message": "use of undeclared identifier 'notifyAbnormalTermination'"
-      },
-      {
-        "category": "undeclared_identifier",
         "column": 15,
         "line": 32,
         "message": "use of undeclared identifier 'stack0x00000008'"
@@ -20,16 +14,10 @@
         "message": "no matching conversion for C-style cast from 'byte **' (aka 'unsigned char **') to 'va_list_t'"
       },
       {
-        "category": "incompatible_types",
-        "column": 28,
-        "line": 62,
-        "message": "no matching function for call to '_errno'"
-      },
-      {
         "category": "other",
-        "column": 41,
-        "line": 63,
-        "message": "more '%' conversions than data arguments [-Werror,-Wformat-insufficient-args]"
+        "column": 20,
+        "line": 62,
+        "message": "assigning to 'uint *' (aka 'unsigned int *') from 'int *' converts between pointers to integer types with different sign"
       }
     ],
     "success": false,
@@ -4526,11 +4514,6 @@
       "name": "crt_errno.c__errno_FUN_00601450"
     },
     {
-      "addr": "00601620",
-      "is_variadic": false,
-      "name": "crt_startup.c_notifyAbnormalTermination_FUN_00601620"
-    },
-    {
       "addr": "005fdba8",
       "is_variadic": false,
       "name": "crt_stdio.c__vsprintf_FUN_005fdba8"
@@ -4559,6 +4542,11 @@
       "addr": "006001f0",
       "is_variadic": false,
       "name": "crt_time.c__time_FUN_006001f0"
+    },
+    {
+      "addr": "00601620",
+      "is_variadic": false,
+      "name": "crt_watcom.c_notifyAbnormalTermination_FUN_00601620"
     },
     {
       "addr": "00401130",

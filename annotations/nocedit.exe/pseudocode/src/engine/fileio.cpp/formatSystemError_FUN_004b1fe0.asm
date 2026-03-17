@@ -22,7 +22,7 @@ section .text
         ;   Label: engine_fileio.cpp_formatSystemError_FUN_004b1fe0
     MOV ESI,dword ptr [ESP + 0x8]       ; 004b1fe1
     CALL crt_errno.c__errno_FUN_00601450 ; 004b1fe5
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; int * crt_errno.c__errno_FUN_00601450()
     MOV EDX,dword ptr [EAX]             ; 004b1fea
     PUSH EDX                            ; 004b1fec
     CALL crt_string.c_strerror_FUN_00601470 ; 004b1fed

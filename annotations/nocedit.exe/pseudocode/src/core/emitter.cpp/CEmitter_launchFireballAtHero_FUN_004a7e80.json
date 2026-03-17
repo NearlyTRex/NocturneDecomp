@@ -6,16 +6,15 @@
   },
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 183,
+    "complexity_score": 168,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 68,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
       "decompiler_intrinsic",
-      "unknown_type",
       "warning_inlined_function"
     ],
     "total_lines": 108
@@ -233,14 +232,6 @@
       "type": "warning_inlined_function"
     },
     {
-      "description": "Unknown/unresolved type",
-      "line": 15,
-      "match": "unkbyte10",
-      "severity": "mild",
-      "text": "unkbyte10 Var8;",
-      "type": "unknown_type"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
       "line": 45,
       "match": "fsin",
@@ -261,7 +252,7 @@
       "line": 49,
       "match": "fpatan",
       "severity": "mild",
-      "text": "Var8 = fpatan((float10)local_6c,(float10)fVar2 + fVar8);",
+      "text": "fVar9 = (float10)fpatan((float10)local_6c,(float10)fVar2 + fVar8);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -285,7 +276,7 @@
       "line": 52,
       "match": "fsin",
       "severity": "mild",
-      "text": "fVar6 = (float10)fsin(Var8);",
+      "text": "fVar6 = (float10)fsin(fVar9);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -293,7 +284,7 @@
       "line": 53,
       "match": "fcos",
       "severity": "mild",
-      "text": "fVar7 = (float10)fcos(Var8);",
+      "text": "fVar7 = (float10)fcos(fVar9);",
       "type": "decompiler_intrinsic"
     },
     {

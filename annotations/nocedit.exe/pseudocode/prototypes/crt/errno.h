@@ -5,7 +5,7 @@
 
 // Original: crt_errno.c__errno_FUN_00601450
 // Address: 00601450
-int * ::errno(void);
+int * __cdecl ::errno(void);
 
 // Original: crt_errno.c_setErrno_FUN_00602790
 // Address: 00602790

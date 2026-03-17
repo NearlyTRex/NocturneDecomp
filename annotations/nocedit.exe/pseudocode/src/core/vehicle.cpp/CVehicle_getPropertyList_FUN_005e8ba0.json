@@ -6,12 +6,6 @@
         "column": 18,
         "line": 29,
         "message": "format specifies type 'char *' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 34,
-        "line": 29,
-        "message": "use of undeclared identifier 'PTR_s_Left_front_00684480'; did you mean 's_Left_front_00656fb5'?"
       }
     ],
     "success": false,
@@ -127,15 +121,15 @@
     },
     {
       "addr": "00684480",
-      "name": "PTR_s_Left_front_00684480",
-      "type": "void*",
-      "value": "00656fb5"
+      "name": "g_VehicleWheelLocationNames",
+      "type": "char*[4]",
+      "value": null
     },
     {
       "addr": "00684484",
       "name": "PTR_s_Right_front_00684484",
-      "type": "void*",
-      "value": "00656fc0"
+      "type": "undefined4",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -225,7 +219,7 @@
       "line": 22,
       "match": "(uint *)((int)",
       "severity": "mild",
-      "text": "*(uint *)((int)&PTR_s_Left_front_00684480 + iVar2));",
+      "text": "*(uint *)((int)g_VehicleWheelLocationNames + iVar2));",
       "type": "pointer_cast"
     }
   ],

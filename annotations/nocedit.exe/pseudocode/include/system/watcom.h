@@ -259,6 +259,13 @@ inline void __memfill(void* dest, unsigned int value, unsigned int count) {
     for (unsigned int i = 0; i < count; i++) *p++ = (unsigned char)value;
 }
 
+// ---------------------------------------------------------------------------
+// Watcom CRT Internal Functions
+// ---------------------------------------------------------------------------
+
+// notifyAbnormalTermination - Called by error handlers before abort
+void notifyAbnormalTermination();
+
 // __stosd - Bulk DWORD store (unrolled for performance)
 inline void __stosd(void* dest, unsigned int value, unsigned int dword_count) {
     unsigned int* p = (unsigned int*)dest;

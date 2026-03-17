@@ -26,7 +26,7 @@ void __cdecl core_vehicle_cpp_CVehicle_getPropertyList_FUN_005e8ba0(CVehicle *th
     do {
       _sprintf
                 (local_110,"%s tire",
-                 *(uint *)((int)&PTR_s_Left_front_00684480 + iVar2));
+                 *(uint *)((int)g_VehicleWheelLocationNames + iVar2));
       core_actor_cpp_CActorPropertyList_addModelKFM_FUN_0040e3b0(property_list,local_110,data_ptr,0)
       ;
       core_actor_cpp_CActorPropertyList_addVector_FUN_0040e260

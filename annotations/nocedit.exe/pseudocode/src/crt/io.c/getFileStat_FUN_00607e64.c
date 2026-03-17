@@ -1,12 +1,12 @@
-// Name: crt_io.c_stat_FUN_00607e64
+// Name: crt_io.c_getFileStat_FUN_00607e64
 // Address: 00607e64
 // Address Range: [[00607e64, 0060815f]]
 // Convention: __cdecl
-// Signature: int __cdecl crt_io_c_stat_FUN_00607e64(char *filename,_stat *file_info)
+// Signature: int __cdecl crt_io_c_getFileStat_FUN_00607e64(char *filename,_stat *file_info)
 
 #include "nocturne.h"
 
-int __cdecl stat(char *filename,_stat *file_info)
+int __cdecl getFileStat(char *filename,_stat *file_info)
 
 {
   int iVar1;

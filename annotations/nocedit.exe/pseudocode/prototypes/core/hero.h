@@ -9,7 +9,7 @@ void __cdecl staticInit(void);
 
 // Original: core_hero.cpp_closestHeroToPoint_FUN_004f2170
 // Address: 004f2170
-int __cdecl closestHeroToPoint(CLocation *location);
+CHero * __cdecl closestHeroToPoint(CLocation *location);
 
 // Original: core_hero.cpp_isAnyHeroWithinRadius_FUN_004f2220
 // Address: 004f2220
@@ -139,9 +139,9 @@ void __cdecl CHero::removeMatchingKeys(CHero *this_ptr,uint key_mask);
 // Address: 004f3930
 void __cdecl CHero::setAiTask(CHero *this_ptr,int ai_task);
 
-// Original: core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960
+// Original: core_hero.cpp_CHero_closestEnemy_FUN_004f3960
 // Address: 004f3960
-CEnemy * __cdecl CHero::findNearestEnemy(CHero *this_ptr,float *out_distance);
+CEnemy * __cdecl CHero::closestEnemy(CHero *this_ptr,float *out_distance);
 
 // Original: core_hero.cpp_CHero_kill_FUN_004f3af0
 // Address: 004f3af0

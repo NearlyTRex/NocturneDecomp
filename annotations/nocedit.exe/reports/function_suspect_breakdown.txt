@@ -4,19 +4,19 @@ FUNCTION SUSPECT BREAKDOWN
 
 SUSPECT COUNT DISTRIBUTION
 --------------------------------------------------
-  0 suspects: 4662 functions
-  1 suspects: 758 functions
+  0 suspects: 4666 functions
+  1 suspects: 754 functions
   2 suspects: 324 functions
-  3 suspects: 244 functions
+  3 suspects: 243 functions
   4 suspects: 166 functions
-  5 suspects: 147 functions
+  5 suspects: 148 functions
   6 suspects: 121 functions
   7 suspects: 102 functions
-  8 suspects: 60 functions
-  9 suspects: 62 functions
-  10 suspects: 25 functions
-  11 suspects: 44 functions
-  12 suspects: 38 functions
+  8 suspects: 61 functions
+  9 suspects: 63 functions
+  10 suspects: 23 functions
+  11 suspects: 43 functions
+  12 suspects: 39 functions
   13 suspects: 26 functions
   14 suspects: 38 functions
   15 suspects: 29 functions
@@ -97,7 +97,7 @@ SUSPECT COUNT DISTRIBUTION
 EASY WINS: FUNCTIONS WITH 1 SUSPECT
 ========================================================================================================================
 
-  [special_crt_function] (301 functions)
+  [special_crt_function] (300 functions)
   ------------------------------------------------------------
     crt_stub.c_staticInit_FUN_005fde92                 (  4 lines)
       CRT function (runtime support) at 005fde92...
@@ -139,9 +139,9 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       CRT function (runtime support) at 00602448...
     crt_system.c_sleep_FUN_00600790                    (  5 lines)
       CRT function (runtime support) at 00600790...
-    ... and 281 more
+    ... and 280 more
 
-  [pointer_cast] (136 functions)
+  [pointer_cast] (135 functions)
   ------------------------------------------------------------
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360    (  5 lines)
       *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
@@ -183,7 +183,7 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
       uVar1 = *(uint *)((int)this_ptr->framebuffer_aligned +...
     shape_meshlod.cpp_CLodMesh_gridSave_FUN_0051d420   ( 22 lines)
       puVar1 = (uint *)((int)this_ptr->spatial_grid_ptr->cell_star...
-    ... and 116 more
+    ... and 115 more
 
   [decompiler_intrinsic] (133 functions)
   ------------------------------------------------------------
@@ -507,15 +507,6 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
     core_mmx.c_getCPUInfo_FUN_0052500f                 ( 13 lines)
       CPU detection function at 0052500f...
 
-  [undefined_data] (3 functions)
-  ------------------------------------------------------------
-    wincore_winrun.cpp_getRegistryStringValue_FUN_005f ( 19 lines)
-      LVar1 = (*g_RegOpenKeyExAFunc)((HKEY)&DAT_80000002,key_path,...
-    wincore_winrun.cpp_setRegistryStringValue_FUN_005f ( 29 lines)
-      ((HKEY)&DAT_80000002,key_path,0,"suck",0,0x20006,...
-    engine_matrix.c_projectTransformedPoint_FUN_0050cd ( 38 lines)
-      point->screen_x = (int)&DAT_80000010;...
-
   [special_math_intrinsic] (2 functions)
   ------------------------------------------------------------
     crt_math.c_pentiumFdivpWorkaround_FUN_00606f13     (  6 lines)
@@ -534,6 +525,11 @@ EASY WINS: FUNCTIONS WITH 1 SUSPECT
   ------------------------------------------------------------
     cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_004 ( 24 lines)
       /* WARNING: Variable defined which should be unmapped: local...
+
+  [undefined_data] (1 functions)
+  ------------------------------------------------------------
+    engine_matrix.c_projectTransformedPoint_FUN_0050cd ( 38 lines)
+      point->screen_x = (int)&DAT_80000010;...
 
 ========================================================================================================================
 FUNCTIONS WITH 2-3 SUSPECTS
@@ -639,4 +635,4 @@ FUNCTIONS WITH 2-3 SUSPECTS
   crt_stack.c_ProbeStackSpace_FUN_005ffa2f
     File: crt/stack.c, Lines: 15, Types: ['special_crt_function', 'stack_ref']
 
-  ... and 518 more
+  ... and 517 more

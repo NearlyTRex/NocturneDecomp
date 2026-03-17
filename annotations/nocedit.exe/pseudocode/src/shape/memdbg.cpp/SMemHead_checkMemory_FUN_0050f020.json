@@ -2,12 +2,6 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 19,
-        "message": "use of undeclared identifier 'PTR_s_none_00636540_0067d1fc'"
-      },
-      {
         "category": "format_error",
         "column": 163,
         "line": 27,
@@ -15,27 +9,15 @@
       },
       {
         "category": "format_error",
-        "column": 37,
-        "line": 28,
-        "message": "format specifies type 'char *' but the argument has type 'void *' [-Werror,-Wformat]"
+        "column": 174,
+        "line": 34,
+        "message": "format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]"
       },
       {
         "category": "format_error",
-        "column": 44,
-        "line": 28,
-        "message": "format specifies type 'int' but the argument has type 'void *' [-Werror,-Wformat]"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 57,
-        "line": 35,
-        "message": "use of undeclared identifier 'PTR_s_none_00636540_0067d1fc'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 57,
-        "line": 48,
-        "message": "use of undeclared identifier 'PTR_s_none_00636540_0067d1fc'"
+        "column": 174,
+        "line": 46,
+        "message": "format specifies type 'unsigned int' but the argument has type 'SMemHead *' [-Werror,-Wformat]"
       }
     ],
     "success": false,
@@ -43,15 +25,15 @@
   },
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 43,
+    "complexity_score": 41,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 12,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 43,
+    "pseudocode_lines": 41,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 158
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -138,8 +120,8 @@
     },
     {
       "addr": "0067d1fc",
-      "name": "PTR_s_none_00636540_0067d1fc",
-      "type": "void*",
+      "name": "g_MemCheckLastFile",
+      "type": "char*",
       "value": "00636540"
     },
     {
@@ -162,8 +144,8 @@
     },
     {
       "addr": "02f0d940",
-      "name": "g_DebugContext",
-      "type": "void*",
+      "name": "g_MemCheckLastLine",
+      "type": "int",
       "value": null
     }
   ],

@@ -7,6 +7,7 @@
 // CDemonActor*
 CDemonActor* g_CurrentProcessingActor = {};
 CDemonActor* g_CurrentActorBeingProcessed = {};
+CDemonActor* g_LastCollisionActor = {};
 
 // CDemonActorType
 CDemonActorType g_CDemonActorClassInfo = {};

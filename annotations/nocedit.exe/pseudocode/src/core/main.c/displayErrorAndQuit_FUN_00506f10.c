@@ -57,10 +57,10 @@ LAB_00506f71:
           timeptr = _localtime(&local_10);
           pcVar1 = _asctime(timeptr);
           _fprintf(p_Var1,"Time: %s",pcVar1);
-          piVar2 = (int *)_errno();
+          piVar2 = _errno();
           pcVar1 = strerror(*piVar2);
-          puVar3 = (uint *)_errno(pcVar1);
-          _fprintf(p_Var1,"errno = %d (%s)\n",*puVar3);
+          puVar3 = _errno();
+          _fprintf(p_Var1,"errno = %d (%s)\n",*puVar3,pcVar1);
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(p_Var1,"..\\core\\main.c",0xad);
         }
         core_sound_cpp_CSound_dtor_FUN_005aaeb0();

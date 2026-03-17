@@ -8,8 +8,8 @@
 ; SIZE_T           Stack[0x8]:4   size
 ;
 ; XREF[4]:
+;   crt_io.c_getFileStat_FUN_00607e64 at 00607eb7
 ;   crt_io.c_getTempDirectory_FUN_00609afc at 00609b68
-;   crt_io.c_stat_FUN_00607e64 at 00607eb7
 ;   crt_stdlib.c__fullpath_FUN_00601140 at 00601189
 ;   crt_watcom.c__getcwd_FUN_00608d20 at 0060128c
 ;

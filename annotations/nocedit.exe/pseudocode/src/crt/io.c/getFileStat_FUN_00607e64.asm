@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int __cdecl crt_io_c_stat_FUN_00607e64(char *filename,_stat *file_info)
+; int __cdecl crt_io_c_getFileStat_FUN_00607e64(char *filename,_stat *file_info)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   filename
@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340 at 0060c3b4
-;   crt_io.c_stat_00600c18 at 00600c18
+;   crt_io.c_getFileStat_FUN_00600c18 at 00600c18
 ;
 ; Referenced Globals:
 ;   FIND_CLOSE_FUNC* g_FindCloseFunc = 00211d78
@@ -38,7 +38,7 @@
 section .text
 
     PUSH EBX                            ; 00607e64
-        ;   Label: crt_io.c_stat_FUN_00607e64
+        ;   Label: crt_io.c_getFileStat_FUN_00607e64
     PUSH ESI                            ; 00607e65
     PUSH EDI                            ; 00607e66
     PUSH EBP                            ; 00607e67

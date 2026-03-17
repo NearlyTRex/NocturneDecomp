@@ -12,7 +12,7 @@
 ;   crt_fstream.cpp_filebuf_open_FUN_00608c15 at 00608c75
 ;
 ; Called Functions:
-;   crt_io.c_stat_FUN_00607e64
+;   crt_io.c_getFileStat_FUN_00607e64
 ;   crt_stdio.c_CreateFileVariadic_FUN_00609074
 ;
 ; *****************************************************************************
@@ -89,8 +89,8 @@ section .text
     PUSH EAX                            ; 0060c3ae
     MOV EDX,dword ptr [ESP + 0x58]      ; 0060c3af
     PUSH EDX                            ; 0060c3b3
-    CALL crt_io.c_stat_FUN_00607e64     ; 0060c3b4
-        ;   XREF to: 00607e64 (UNCONDITIONAL_CALL)  ; int crt_io.c_stat_FUN_00607e64(char * filename, _stat * file_info)
+    CALL crt_io.c_getFileStat_FUN_00607e64 ; 0060c3b4
+        ;   XREF to: 00607e64 (UNCONDITIONAL_CALL)  ; int crt_io.c_getFileStat_FUN_00607e64(char * filename, _stat * file_info)
     ADD ESP,0x8                         ; 0060c3b9
     CMP EAX,-0x1                        ; 0060c3bc
     JZ 0x0060c3cc                       ; 0060c3bf

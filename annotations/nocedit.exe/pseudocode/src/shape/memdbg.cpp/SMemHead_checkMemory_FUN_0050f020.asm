@@ -21,11 +21,11 @@
 ;   TerminatedCString s_shape_memdbg_cpp_00635f95
 ;   TerminatedCString s_List_memory_corruption_d_00635fa9
 ;   TerminatedCString s_none_00636540
-;   void* PTR_s_none_00636540_0067d1fc = 00636540
+;   char* g_MemCheckLastFile = 00636540
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   SMemHead* g_MemoryListHead
-;   void* g_DebugContext
+;   int g_MemCheckLastLine
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_00506f10
@@ -53,11 +53,11 @@ section .text
     JZ 0x0050f08a                       ; 0050f049
         ;   XREF to: 0050f08a (CONDITIONAL_JUMP)  ; LAB_0050f08a
     MOV dword ptr [0x02f0ca48],0x635ef8 ; 0050f04b | g_CurrentFilename | = "..\\shape\\memdbg.cpp"
-    MOV EDX,dword ptr [0x02f0d940]      ; 0050f055 | g_DebugContext
+    MOV EDX,dword ptr [0x02f0d940]      ; 0050f055 | g_MemCheckLastLine
     MOV ECX,0xb2                        ; 0050f05b
     PUSH EDX                            ; 0050f060
     MOV dword ptr [0x02f0ca4c],ECX      ; 0050f061 | g_CurrentLineNumber
-    MOV ECX,dword ptr [0x0067d1fc]      ; 0050f067 | PTR_s_none_00636540_0067d1fc
+    MOV ECX,dword ptr [0x0067d1fc]      ; 0050f067 | g_MemCheckLastFile
     PUSH ECX                            ; 0050f06d | = "(none)"
     PUSH ESI                            ; 0050f06e
     PUSH EDI                            ; 0050f06f
@@ -80,12 +80,12 @@ section .text
     CMP EBX,dword ptr [0x02f0d938]      ; 0050f094 | g_MemoryListHead
     JZ 0x0050f0dd                       ; 0050f09a
         ;   XREF to: 0050f0dd (CONDITIONAL_JUMP)  ; LAB_0050f0dd
-    MOV ECX,dword ptr [0x02f0d940]      ; 0050f09c | g_DebugContext
+    MOV ECX,dword ptr [0x02f0d940]      ; 0050f09c | g_MemCheckLastLine
         ;   Label: LAB_0050f09c
     MOV EAX,0x635f95                    ; 0050f0a2 | = "..\\shape\\memdbg.cpp"
     PUSH ECX                            ; 0050f0a7
     MOV [0x02f0ca48],EAX                ; 0050f0a8 | g_CurrentFilename
-    MOV EAX,[0x0067d1fc]                ; 0050f0ad | PTR_s_none_00636540_0067d1fc
+    MOV EAX,[0x0067d1fc]                ; 0050f0ad | g_MemCheckLastFile
     PUSH EAX                            ; 0050f0b2 | = "(none)"
     PUSH ESI                            ; 0050f0b3
     MOV EDX,0xb8                        ; 0050f0b4
@@ -117,12 +117,12 @@ section .text
     POP ESI                             ; 0050f0ea
     POP EBX                             ; 0050f0eb
     RET                                 ; 0050f0ec
-    MOV EDX,dword ptr [0x02f0d940]      ; 0050f0ed | g_DebugContext
+    MOV EDX,dword ptr [0x02f0d940]      ; 0050f0ed | g_MemCheckLastLine
         ;   Label: LAB_0050f0ed
     MOV ECX,0x635e5a                    ; 0050f0f3 | = "..\\shape\\memdbg.cpp"
     PUSH EDX                            ; 0050f0f8
     MOV dword ptr [0x02f0ca48],ECX      ; 0050f0f9 | g_CurrentFilename
-    MOV ECX,dword ptr [0x0067d1fc]      ; 0050f0ff | = "(none)" | PTR_s_none_00636540_0067d1fc
+    MOV ECX,dword ptr [0x0067d1fc]      ; 0050f0ff | = "(none)" | g_MemCheckLastFile
     PUSH ECX                            ; 0050f105 | = "(none)"
     PUSH ESI                            ; 0050f106
     MOV EAX,0xaf                        ; 0050f107

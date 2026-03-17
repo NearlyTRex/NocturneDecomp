@@ -42,11 +42,8 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 00550c5b
         ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
     ADD ESP,0x4                         ; 00550c60
-    CMP dword ptr [EBX],0x0             ; 00550c63
-    JZ 0x00550c6a                       ; 00550c66
-        ;   XREF to: 00550c6a (CONDITIONAL_JUMP)  ; LAB_00550c6a
-    POP EBX                             ; 00550c68
-    RET                                 ; 00550c69
+    POP EBX                             ; 00550c63
+    RET                                 ; 00550c64
     PUSH EBX                            ; 00550c6a
         ;   Label: LAB_00550c6a
     MOV EAX,dword ptr [EBX + 0x194]     ; 00550c6b

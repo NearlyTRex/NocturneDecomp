@@ -56,7 +56,7 @@ int __cdecl shape_quantize_cpp_CColorQuantizer_errorDiffusionBuffers_FUN_0055550
         ;
         this_ptr->error_buffer_i = pfVar1;
         if (pfVar1 != (float *)0x0) {
-          puVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+          puVar2 = (uchar *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                              (num_entries,"..\\shape\\quantize.cpp",0x299);
           this_ptr->flags_buffer = puVar2;
           if (puVar2 != (uchar *)0x0) {

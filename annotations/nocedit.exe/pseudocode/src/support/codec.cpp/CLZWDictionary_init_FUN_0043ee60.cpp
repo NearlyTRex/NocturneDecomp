@@ -14,7 +14,7 @@ void __cdecl support_codec_cpp_CLZWDictionary_init_FUN_0043ee60(CLZWDictionary *
   if ((new_dict_size != this_ptr->table_capacity) ||
      (this_ptr->node_table == (CLZWDictionaryNode *)0x0)) {
     this_ptr->table_capacity = new_dict_size;
-    pCVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+    pCVar1 = (CLZWDictionaryNode *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                        (this_ptr->node_table,new_dict_size << 4,"..\\support\\codec.cpp",0x2c6);
     this_ptr->node_table = pCVar1;
     if (pCVar1 == (CLZWDictionaryNode *)0x0) {

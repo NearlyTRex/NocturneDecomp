@@ -77,7 +77,7 @@ LAB_004b246f:
       pSVar6->filename[1] = cVar2;
       pSVar6 = (STimestampRecord *)(pSVar6->filename + 2);
     } while (cVar2 != '\0');
-    pSVar4 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+    pSVar4 = (STimestampRecord *)shape_memdbg_cpp_debugRealloc_FUN_0050f540
                        (*records,new_size,"..\\engine\\fileio.cpp",0x1c2);
     *records = pSVar4;
     if (pSVar4 == (STimestampRecord *)0x0) {

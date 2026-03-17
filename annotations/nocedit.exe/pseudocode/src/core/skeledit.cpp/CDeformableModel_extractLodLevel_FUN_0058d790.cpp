@@ -150,7 +150,7 @@ void __cdecl core_skeledit_cpp_CDeformableModel_extractLodLevel_FUN_0058d790(CDe
         core_main_c_displayErrorAndQuit_FUN_00506f10("BUG! Count mismatch!!");
       }
       if (0 < this_ptr->cap_tri_count[lod_index]) {
-        piVar9 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+        piVar9 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                            (this_ptr->cap_tri_count[lod_index] * 4,"..\\core\\skeledit.cpp",
                             0x8a1);
         this_ptr->cap_index_ptr[lod_index] = piVar9;

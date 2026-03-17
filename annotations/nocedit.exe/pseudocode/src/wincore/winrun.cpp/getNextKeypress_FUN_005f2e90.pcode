@@ -153,8 +153,8 @@ INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 INT_EQUAL (unique,0x18900,1) = (register,0x20b,1), (register,0x207,1)
 CBRANCH (ram,0x5f2ee9,4), (unique,0x18900,1)
 
-@005f2ee3 [ESP:-12]  # MOV AL, BL
-COPY (register,0x0,1) = (register,0xc,1)
+@005f2ee3 [ESP:-12]  # MOV EAX, EBX
+COPY (register,0x0,4) /* EAX */ = (register,0xc,4) /* EBX */
 
 @005f2ee5 [ESP:-8](+4)  # POP EBP
 COPY (unique,0x87300,4) = (const,0x0,4)
@@ -193,8 +193,8 @@ INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
 @005f2eeb [ESP:-12]~  # MOV dword ptr [0x03f96c18], EDX
 COPY (ram,0x3f96c18,4) = (register,0x8,4) /* EDX */
 
-@005f2ef1 [ESP:-12]~  # MOV AL, BL
-COPY (register,0x0,1) = (register,0xc,1)
+@005f2ef1 [ESP:-12]~  # MOV EAX, EBX
+COPY (register,0x0,4) /* EAX */ = (register,0xc,4) /* EBX */
 
 @005f2ef3 [ESP:-8](+4)~  # POP EBP
 COPY (unique,0x87300,4) = (const,0x0,4)

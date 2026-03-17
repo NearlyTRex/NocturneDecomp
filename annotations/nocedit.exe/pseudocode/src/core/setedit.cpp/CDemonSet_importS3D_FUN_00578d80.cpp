@@ -363,7 +363,7 @@ LAB_0057911a:
     this_ptr->set_scale_factor = 1.0;
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (this_ptr_00,"Reading vertices");
-    piVar5 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+    piVar5 = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                        (local_50 * 0xc + 4,"..\\core\\setedit.cpp",0x547);
     local_38 = piVar5;
     if (piVar5 != (int *)0x0) {

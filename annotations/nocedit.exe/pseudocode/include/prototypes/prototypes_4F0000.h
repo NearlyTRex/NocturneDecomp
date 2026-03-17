@@ -85,7 +85,7 @@ void __cdecl core_health_cpp_CHealthItem_getPropertyList_FUN_004f2040(CHealthIte
 void __cdecl core_health_cpp_CHealthItem_addFilesToExtract_FUN_004f20b0(CHealthItem *this_ptr,_FILE *file_handle);
 CHealthItem * __cdecl core_health_cpp_CHealthItem_dtor_FUN_004f20d0(CHealthItem *this_ptr,uint flags);
 void __cdecl core_hero_cpp_staticInit_FUN_004f2120(void);
-int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(CLocation *location);
+CHero * __cdecl core_hero_cpp_closestHeroToPoint_FUN_004f2170(CLocation *location);
 int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004f2220(CVector3f *point,float radius);
 int __cdecl core_hero_cpp_isAnyHeroWithinCylinder_FUN_004f22a0(CVector3f *point,float horizontal_radius,float vertical_tolerance);
 CHero * __cdecl core_hero_cpp_CHero_ctor_FUN_004f2340(CHero *this_ptr);
@@ -118,7 +118,7 @@ void __cdecl core_hero_cpp_CHero_executeObjectPickup_FUN_004f3890(CHero *this_pt
 void __cdecl core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004f38d0(CHero *this_ptr,int hand_index);
 void __cdecl core_hero_cpp_CHero_removeMatchingKeys_FUN_004f3910(CHero *this_ptr,uint key_mask);
 void __cdecl core_hero_cpp_CHero_setAiTask_FUN_004f3930(CHero *this_ptr,int ai_task);
-CEnemy * __cdecl core_hero_cpp_CHero_findNearestEnemy_FUN_004f3960(CHero *this_ptr,float *out_distance);
+CEnemy * __cdecl core_hero_cpp_CHero_closestEnemy_FUN_004f3960(CHero *this_ptr,float *out_distance);
 void __cdecl core_hero_cpp_CHero_kill_FUN_004f3af0(CHero *this_ptr,int damage_type,CVector3f *damage_direction,float impact_force);
 void __cdecl core_hero_cpp_CHero_reset_FUN_004f3b20(CHero *this_ptr);
 CHeroPlaceholder * __cdecl core_hero_cpp_factoryFunc_FUN_004f3bc0(void);

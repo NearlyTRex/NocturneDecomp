@@ -7,6 +7,7 @@
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CEditorTools.h"
+#include "types/classes/CEmitter.h"
 #include "types/classes/CVector3f.h"
 #include "types/structs/SWindow.h"
 #include "types/unions/UOrientationVector.h"
@@ -29,6 +30,9 @@ extern CDemonActorType g_CEnemyClassInfo;
 // CEditorTools
 extern CEditorTools g_CEditorToolsInstance;
 
+// CEmitter*
+extern CEmitter* g_EditorSelectedEmitter;
+
 // CVector3f
 extern CVector3f g_EmitterTarget;
 
@@ -36,7 +40,7 @@ extern CVector3f g_EmitterTarget;
 extern SWindow g_WindowStack[5];
 
 // UOrientationVector
-extern UOrientationVector UNION_UOrientationVector_02cf2b6c;
+extern UOrientationVector g_EmitterEditorOrientation;
 
 // _BIT_INTEGER32
 extern _BIT_INTEGER32 g_MouseButtonFlags;

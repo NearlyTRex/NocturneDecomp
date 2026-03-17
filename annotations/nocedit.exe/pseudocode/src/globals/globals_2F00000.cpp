@@ -44,6 +44,7 @@ int g_PixelAspectCorrection = {};
 int g_MatrixStackIndex = {};
 int g_ViewportStackIndex = {};
 int g_IsDestroyingLeakChecker = {};
+int g_MemCheckLastLine = {};
 int g_CurrentDebugLine = {};
 int g_OpenFileCount = {};
 
@@ -90,7 +91,4 @@ int g_CosTable[257] = {};
 uint g_SavedRotationX = {};
 uint g_SavedRotationY = {};
 uint g_SavedRotationZ = {};
-
-// void*
-void* g_DebugContext = {};
 

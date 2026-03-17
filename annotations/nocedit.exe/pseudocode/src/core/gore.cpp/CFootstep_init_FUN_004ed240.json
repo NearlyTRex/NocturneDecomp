@@ -1,48 +1,23 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "lvalue_required",
-        "column": 59,
-        "line": 32,
-        "message": "cannot take the address of an rvalue of type 'float'"
-      },
-      {
-        "category": "lvalue_required",
-        "column": 60,
-        "line": 33,
-        "message": "cannot take the address of an rvalue of type 'float'"
-      },
-      {
-        "category": "lvalue_required",
-        "column": 59,
-        "line": 35,
-        "message": "cannot take the address of an rvalue of type 'float'"
-      },
-      {
-        "category": "lvalue_required",
-        "column": 58,
-        "line": 36,
-        "message": "cannot take the address of an rvalue of type 'float'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 137,
+    "complexity_score": 138,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 58,
     "suspect_count": 7,
     "suspect_types": [
       "decompiler_intrinsic",
       "pointer_cast"
     ],
-    "total_lines": 196
+    "total_lines": 197
   },
   "cross_references": [
     {
@@ -99,21 +74,21 @@
     },
     {
       "addr": "0067cb08",
-      "name": "FLOAT_0067cb08",
-      "type": "float",
-      "value": "1"
+      "name": "g_FootstepCornerMultipliers",
+      "type": "float[2][4]",
+      "value": null
     },
     {
       "addr": "0067cb0c",
-      "name": "FLOAT_0067cb0c",
-      "type": "float",
-      "value": "-1"
+      "name": "g_FootstepCornerMultipliers[0][1]",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "0067cb18",
-      "name": "FLOAT_0067cb18",
-      "type": "float",
-      "value": "1"
+      "name": "g_FootstepCornerMultipliers[1][0]",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "0067cb1c",
@@ -300,7 +275,7 @@
       "line": 25,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_40.x = (float)(fVar3 * (float10)*(float *)((int)&1.0f + iVar2) +",
+      "text": "local_40.x = (float)(fVar3 * (float10)*(float *)((int)g_FootstepCornerMultipliers[1] + iVar2) +",
       "type": "pointer_cast"
     },
     {
@@ -308,7 +283,7 @@
       "line": 26,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "-fVar4 * (float10)*(float *)((int)&1.0f + iVar2) +",
+      "text": "-fVar4 * (float10)*(float *)((int)g_FootstepCornerMultipliers[0] + iVar2) +",
       "type": "pointer_cast"
     },
     {
@@ -316,7 +291,7 @@
       "line": 28,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "local_40.z = (float)(fVar4 * (float10)*(float *)((int)&1.0f + iVar2) +",
+      "text": "local_40.z = (float)(fVar4 * (float10)*(float *)((int)g_FootstepCornerMultipliers[1] + iVar2) +",
       "type": "pointer_cast"
     },
     {
@@ -324,12 +299,12 @@
       "line": 29,
       "match": "(float *)((int)",
       "severity": "mild",
-      "text": "fVar3 * (float10)*(float *)((int)&1.0f + iVar2)) + position->z;",
+      "text": "fVar3 * (float10)*(float *)((int)g_FootstepCornerMultipliers[0] + iVar2)) +",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 50,
+      "line": 51,
       "match": "ABS",
       "severity": "mild",
       "text": "if ((float)0.5 < ABS(this_ptr->corners[0].y - pfVar3[3])) {",

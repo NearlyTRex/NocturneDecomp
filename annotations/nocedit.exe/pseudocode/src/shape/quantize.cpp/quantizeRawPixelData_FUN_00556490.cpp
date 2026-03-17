@@ -117,7 +117,7 @@ LAB_00556524:
       engine_2d_c_drawText_FUN_00401fd0("                                    ",0,(line_number + 4) * 0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     }
-    puVar4 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+    puVar4 = (uchar *)shape_memdbg_cpp_debugMalloc_FUN_0050f250
                        (width * height,"..\\shape\\quantize.cpp",0x431);
     *out_pixel_data = puVar4;
     if (puVar4 == (uchar *)0x0) {

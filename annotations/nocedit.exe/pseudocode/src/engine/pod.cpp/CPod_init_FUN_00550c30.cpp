@@ -13,11 +13,9 @@ void __cdecl engine_pod_cpp_CPod_init_FUN_00550c30(CPod *this_ptr)
     g_CurrentFilename = "..\\engine\\pod.cpp";
     g_CurrentLineNumber = 0x3e1;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPod::init - No .POD to init!");
-    if (iRam00000000 != 0) {
-      return;
-    }
+    return;
   }
-  else if (this_ptr->pod_file_count != 0) {
+  if (this_ptr->pod_file_count != 0) {
     return;
   }
   (*this_ptr->vtable->load)(this_ptr);

@@ -329,7 +329,7 @@ void __cdecl shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(SMemHead *h
 void __cdecl shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(SMemHead *header);
 void __cdecl shape_memdbg_cpp_SMemHead_remove_FUN_0050ef20(SMemHead *header);
 SMemHead * __cdecl shape_memdbg_cpp_getMemoryHeaderFromPtr_FUN_0050efa0(void *user_ptr);
-void __cdecl shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0(char *filename,int context);
+void __cdecl shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0(char *source_filename,int source_line);
 void __cdecl shape_memdbg_cpp_SMemHead_checkMemory_FUN_0050f020(SMemHead *header,char *filename,int line_number);
 void __cdecl shape_memdbg_cpp_traceMemory_FUN_0050f150(char *format,...) __attribute__((format(printf, 1, 2)));
 void __cdecl shape_memdbg_cpp_traceFile_FUN_0050f180(char *format,...) __attribute__((format(printf, 1, 2)));

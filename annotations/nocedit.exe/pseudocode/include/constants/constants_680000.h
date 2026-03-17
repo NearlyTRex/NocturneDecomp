@@ -2,7 +2,6 @@
 
 // Dependencies
 #include "system/basetypes.h"
-#include "globals.h"
 #include "constants.h"
 #include "prototypes/prototypes_600000.h"
 
@@ -191,6 +190,9 @@ static char* g_MathFunctionNames[24] = {
     "y1", "yn", "mod", "cotan"
 };
 
+// char*[3] constants
+static char* g_WeatherTypeNames[3] = {"None", "Rain & Lightning", "Snow"};
+
 // char*[41] constants
 static char* g_ErrorMessageTable[41] = {
     "No error", "No such file or directory", "Arg list too big", "Exec format error",
@@ -205,6 +207,9 @@ static char* g_ErrorMessageTable[41] = {
     "No such device", "No locks available in system", "Unknown system call", "Directory not empty",
     "Illegal multibyte sequence"
 };
+
+// char*[4] constants
+static char* g_VehicleWheelLocationNames[4] = {"Left front", "Right front", "Left rear", "Right rear"};
 
 // char*[7] constants
 static char* g_WeekdayNamesLong[7] = {
@@ -434,12 +439,9 @@ static undefined4 DAT_006855d8 = 0x0FFFFFFF;
 // void* constants
 static void* DAT_006817E8 = (void*)s_Off_00649199;
 static void* DAT_006817EC = (void*)s_On_0064919d;
-static void* DAT_006817F4 = (void*)s_Rain_Lightning_006491a5;
-static void* DAT_006817F8 = (void*)s_Snow_006491b6;
 static void* DAT_00681B04 = (void*)s_anon_0065153f;
 static void* DAT_00681B08 = (void*)s_anon_00651541;
 static void* DAT_00681B0C = (void*)s_anon_00651542;
-static void* DAT_0068448C = (void*)s_Right_rear_00656fd6;
 static void* DAT_006873D8 = (void*)crt_math_c_fatal_math_error_FUN_00606a87;
 static void* DAT_006873DC = (void*)crt_math_c_generate_nan_FUN_00606a8c;
 static void* DAT_006873E0 = (void*)crt_math_c_fatal_math_error_FUN_00606a92;

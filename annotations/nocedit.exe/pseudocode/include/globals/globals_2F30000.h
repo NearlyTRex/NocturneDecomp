@@ -7,6 +7,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonMission.h"
 #include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/structs/SBat.h"
@@ -37,6 +38,9 @@ extern CDemonMission g_CDemonMissionInstance;
 
 // CKeyFramedModel
 extern CKeyFramedModel g_MoonBatModel;
+
+// CQuaternion4f*
+extern CQuaternion4f* g_LodMeshHighlightVertices;
 
 // CVector3f[32]
 extern CVector3f g_MirrorInputVertices[32];

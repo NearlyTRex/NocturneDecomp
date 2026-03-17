@@ -210,6 +210,7 @@ extern byte g_CPUInfoIntelCPU;
 extern byte g_CPUInfoMMXSupported;
 
 // char*
+extern char* g_MemCheckLastFile;
 extern char* g_CurrentDebugFilename;
 
 // char[100]

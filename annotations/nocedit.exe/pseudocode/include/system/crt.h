@@ -268,3 +268,19 @@ inline void _qsort(void* base, size_t num, size_t size, CompFunc compar) {
     (void)base; (void)num; (void)size; (void)compar;
 }
 
+// ---------------------------------------------------------------------------
+// File Status / Timestamps
+// ---------------------------------------------------------------------------
+
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <utime.h>
+
+inline int getFileStat(const char* path, struct _stat* buf) {
+    return stat(path, (struct stat*)buf);
+}
+
+inline int _utime(const char* path, void* times) {
+    return utime(path, (struct utimbuf*)times);
+}
+

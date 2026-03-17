@@ -1,20 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 19,
-        "message": "use of undeclared identifier 'stat_00600c18'"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 11,
-        "line": 23,
-        "message": "use of undeclared identifier 'utime_00600c1e'"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -87,14 +74,14 @@
   },
   "function_calls": [
     {
-      "addr": "00600c18",
-      "is_variadic": false,
-      "name": "crt_io.c_stat_00600c18"
-    },
-    {
       "addr": "00600c1e",
       "is_variadic": false,
-      "name": "crt_io.c_utime_00600c1e"
+      "name": "crt_io.c__utime_00600c1e"
+    },
+    {
+      "addr": "00600c18",
+      "is_variadic": false,
+      "name": "crt_io.c_getFileStat_FUN_00600c18"
     }
   ],
   "globals": [],
@@ -227,7 +214,7 @@
         "name": "local_8",
         "offset": -8,
         "size": 8,
-        "type": "utimbuf"
+        "type": "_utimbuf"
       },
       {
         "is_param": true,

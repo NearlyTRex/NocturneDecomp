@@ -31,7 +31,7 @@ void __cdecl cockpit_ckptutil_c_generateScrollHeightMap_FUN_00432df0(void *bitma
       g_CurrentLineNumber = 0x3f8;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid height array size.");
     }
-    ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+    ptr = (int *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                     (bitmap_height * 4,"..\\cockpit\\ckptutil.c",0x3fc);
     if (ptr == (int *)0x0) {
       g_CurrentFilename = "..\\cockpit\\ckptutil.c";

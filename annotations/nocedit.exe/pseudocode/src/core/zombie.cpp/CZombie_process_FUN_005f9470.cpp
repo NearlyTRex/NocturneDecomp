@@ -945,7 +945,7 @@ LAB_005fa14f:
         core_charactr_cpp_CCharacter_moveAndCollide_FUN_00428f40((CCharacter *)this_ptr,&local_284);
         if ((iVar6 == 1) &&
            (this_ptr_00 = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c790
-                                             (PTR_00823c50,g_CDoorClassInfo.name_hash),
+                                             (g_LastCollisionActor,g_CDoorClassInfo.name_hash),
            local_58 = this_ptr_00, this_ptr_00 != (CDoor *)0x0)) {
           pCVar13 = (*((this_ptr_00->base).vtable._ub)->getBoundingBox)
                               ((CDemonActor *)this_ptr_00,&local_2b4);

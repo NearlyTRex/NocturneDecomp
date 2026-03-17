@@ -161,7 +161,7 @@ section .text
     CALL shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0 ; 0051d629
         ;   XREF to: 0051ecd0 (UNCONDITIONAL_CALL)  ; void shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0(CLodMesh * this_ptr, int vertex_index)
     ADD ESP,0x8                         ; 0051d62e
-    CMP dword ptr [0x02f313e8],0x0      ; 0051d631 | PTR_02f313e8
+    CMP dword ptr [0x02f313e8],0x0      ; 0051d631 | g_LodMeshHighlightVertices
         ;   Label: LAB_0051d631
     JZ 0x0051d666                       ; 0051d638
         ;   XREF to: 0051d666 (CONDITIONAL_JUMP)  ; LAB_0051d666
@@ -171,7 +171,7 @@ section .text
         ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 0051d646
     PUSH 0x4                            ; 0051d649
-    MOV ECX,dword ptr [0x02f313e8]      ; 0051d64b | PTR_02f313e8
+    MOV ECX,dword ptr [0x02f313e8]      ; 0051d64b | g_LodMeshHighlightVertices
     PUSH ECX                            ; 0051d651
     MOV EBX,dword ptr [0x00678a60]      ; 0051d652 | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EBX                            ; 0051d658 | g_CEditorToolsInstance

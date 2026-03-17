@@ -1,92 +1,7 @@
 {
   "compilation_status": {
-    "errors": [
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 100,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 100,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 12,
-        "line": 100,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 100,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 100,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 51,
-        "line": 100,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 101,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 101,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 32,
-        "line": 101,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 115,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 26,
-        "line": 118,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 44,
-        "line": 119,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 39,
-        "line": 139,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      },
-      {
-        "category": "undeclared_identifier",
-        "column": 15,
-        "line": 140,
-        "message": "use of undeclared identifier '_local_1a4'; did you mean 'local_1a4'?"
-      }
-    ],
-    "success": false,
+    "errors": [],
+    "success": true,
     "warnings": []
   },
   "complexity": {
@@ -411,22 +326,8 @@
         "is_param": false,
         "name": "local_1a4",
         "offset": -420,
-        "size": 1,
-        "type": "char"
-      },
-      {
-        "is_param": false,
-        "name": "local_1a0",
-        "offset": -416,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": false,
-        "name": "local_19c",
-        "offset": -412,
-        "size": 4,
-        "type": "float"
+        "size": 16,
+        "type": "SClipPlane"
       },
       {
         "is_param": false,
@@ -814,10 +715,34 @@
   "suspects": [
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 91,
       "match": "ABS",
       "severity": "mild",
-      "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
+      "text": "if ((ABS((float)local_1a4.A) <= ABS((float)local_1a4.B)) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 91,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "if ((ABS((float)local_1a4.A) <= ABS((float)local_1a4.B)) ||",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 92,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "(ABS((float)local_1a4.A) <= ABS((float)local_1a4.C))) {",
+      "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Decompiler intrinsic (not real C)",
+      "line": 92,
+      "match": "ABS",
+      "severity": "mild",
+      "text": "(ABS((float)local_1a4.A) <= ABS((float)local_1a4.C))) {",
       "type": "decompiler_intrinsic"
     },
     {
@@ -825,7 +750,7 @@
       "line": 93,
       "match": "ABS",
       "severity": "mild",
-      "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
+      "text": "if ((ABS((float)local_1a4.B) <= ABS((float)local_1a4.A)) ||",
       "type": "decompiler_intrinsic"
     },
     {
@@ -833,15 +758,7 @@
       "line": 93,
       "match": "ABS",
       "severity": "mild",
-      "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(_local_1a4) <= ABS(local_1a0)) || (ABS(_local_1a4) <= ABS(local_19c))) {",
+      "text": "if ((ABS((float)local_1a4.B) <= ABS((float)local_1a4.A)) ||",
       "type": "decompiler_intrinsic"
     },
     {
@@ -849,7 +766,7 @@
       "line": 94,
       "match": "ABS",
       "severity": "mild",
-      "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
+      "text": "(ABS((float)local_1a4.B) <= ABS((float)local_1a4.C))) {",
       "type": "decompiler_intrinsic"
     },
     {
@@ -857,23 +774,7 @@
       "line": 94,
       "match": "ABS",
       "severity": "mild",
-      "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 94,
-      "match": "ABS",
-      "severity": "mild",
-      "text": "if ((ABS(local_1a0) <= ABS(_local_1a4)) || (ABS(local_1a0) <= ABS(local_19c))) {",
+      "text": "(ABS((float)local_1a4.B) <= ABS((float)local_1a4.C))) {",
       "type": "decompiler_intrinsic"
     },
     {

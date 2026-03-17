@@ -2,45 +2,33 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "undeclared_identifier",
-        "column": 27,
-        "line": 270,
-        "message": "use of undeclared identifier 'int3'; did you mean 'int'?"
-      },
-      {
         "category": "format_error",
         "column": 44,
-        "line": 337,
+        "line": 334,
         "message": "format specifies type 'double' but the argument has type 'uint' (aka 'unsigned int') [-Werror,-Wformat]"
       },
       {
         "category": "other",
         "column": 54,
-        "line": 337,
+        "line": 334,
         "message": "data argument not used by format string [-Werror,-Wformat-extra-args]"
-      },
-      {
-        "category": "lvalue_required",
-        "column": 66,
-        "line": 567,
-        "message": "cannot take the address of an rvalue of type 'float'"
       },
       {
         "category": "other",
         "column": 84,
-        "line": 1057,
+        "line": 1054,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "undeclared_identifier",
         "column": 17,
-        "line": 1093,
+        "line": 1090,
         "message": "use of undeclared identifier 'code'"
       },
       {
         "category": "syntax_error",
         "column": 24,
-        "line": 1093,
+        "line": 1090,
         "message": "expected expression"
       }
     ],
@@ -49,21 +37,20 @@
   },
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 1853,
+    "complexity_score": 1825,
     "cross_reference_count": 1,
     "function_call_count": 39,
-    "global_count": 200,
+    "global_count": 197,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1728,
-    "suspect_count": 10,
+    "pseudocode_lines": 1725,
+    "suspect_count": 8,
     "suspect_types": [
       "decompiler_intrinsic",
-      "nonstandard_int",
       "pointer_cast",
       "sub84_truncation",
       "unresolved_funcptr"
     ],
-    "total_lines": 5675
+    "total_lines": 5672
   },
   "cross_references": [
     {
@@ -1368,24 +1355,6 @@
       "addr": "02d831d8",
       "name": "g_InputHistory+1",
       "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "02d831e9",
-      "name": "DAT_02d831e9",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "02d831ea",
-      "name": "DAT_02d831ea",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "02d831eb",
-      "name": "DAT_02d831eb",
-      "type": "undefined1",
       "value": null
     },
     {
@@ -2805,24 +2774,8 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Decompiler intrinsic (not real C)",
-      "line": 263,
-      "match": "CONCAT31",
-      "severity": "mild",
-      "text": "iVar6 = CONCAT31((int3)((uint)iVar12 >> 8),g_InputHistory[iVar19]);",
-      "type": "decompiler_intrinsic"
-    },
-    {
-      "description": "Non-standard integer size (decompiler artifact)",
-      "line": 263,
-      "match": "int3",
-      "severity": "mild",
-      "text": "iVar6 = CONCAT31((int3)((uint)iVar12 >> 8),g_InputHistory[iVar19]);",
-      "type": "nonstandard_int"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 329,
+      "line": 326,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_2b4 = SUB84(__BITCAST_UINT64(dVar3),0);",
@@ -2830,7 +2783,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 329,
+      "line": 326,
       "match": "SUB84",
       "severity": "mild",
       "text": "local_2b4 = SUB84(__BITCAST_UINT64(dVar3),0);",
@@ -2838,7 +2791,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 628,
+      "line": 625,
       "match": "NAN",
       "severity": "mild",
       "text": "this_ptr_01[2].location.position.y = -NAN;",
@@ -2846,7 +2799,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1078,
+      "line": 1075,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar11 = *(int *)((int)g_CDemonSetPtr->enemies + iStack_74);",
@@ -2854,7 +2807,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 1083,
+      "line": 1080,
       "match": "SQRT",
       "severity": "mild",
       "text": "if (SQRT(fVar5 * fVar5 + fVar15 * fVar15 + fVar4 * fVar4) <= (float)50) {",
@@ -2862,7 +2815,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1086,
+      "line": 1083,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar11 + 0x154) + 0x11c))(iVar11,&SStack_2fc);",
@@ -2870,7 +2823,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 1444,
+      "line": 1441,
       "match": "(int *)((int)",
       "severity": "mild",
       "text": "iVar6 = *(int *)((int)g_CDemonSetPtr->characters + iStack_40);",

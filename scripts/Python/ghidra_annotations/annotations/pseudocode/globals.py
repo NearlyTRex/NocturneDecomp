@@ -2947,6 +2947,24 @@ def generate_crt_header(functions_to_process):
     lines.append("}")
     lines.append("")
 
+    # Add stat/utime headers (functions use _stat/_utime names from Watcom CRT)
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("// File Status / Timestamps")
+    lines.append("// ---------------------------------------------------------------------------")
+    lines.append("")
+    lines.append("#include <sys/stat.h>")
+    lines.append("#include <sys/types.h>")
+    lines.append("#include <utime.h>")
+    lines.append("")
+    lines.append("inline int getFileStat(const char* path, struct _stat* buf) {")
+    lines.append("    return stat(path, (struct stat*)buf);")
+    lines.append("}")
+    lines.append("")
+    lines.append("inline int _utime(const char* path, void* times) {")
+    lines.append("    return utime(path, (struct utimbuf*)times);")
+    lines.append("}")
+    lines.append("")
+
     log_info("Generated CRT header with %d includes for %d categories" % (
         len(headers_to_include), len(categories_used)))
 

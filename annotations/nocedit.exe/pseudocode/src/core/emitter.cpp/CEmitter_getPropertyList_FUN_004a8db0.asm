@@ -142,7 +142,7 @@ section .text
     TEST EDI,EDI                        ; 004a8eca
     JZ 0x004a8eeb                       ; 004a8ecc
         ;   XREF to: 004a8eeb (CONDITIONAL_JUMP)  ; LAB_004a8eeb
-    CMP EBX,dword ptr [0x02cf2b78]      ; 004a8ece | PTR_02cf2b78
+    CMP EBX,dword ptr [0x02cf2b78]      ; 004a8ece | g_EditorSelectedEmitter
     JNZ 0x004a8eeb                      ; 004a8ed4
         ;   XREF to: 004a8eeb (CONDITIONAL_JUMP)  ; LAB_004a8eeb
     PUSH 0x0                            ; 004a8ed6

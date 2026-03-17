@@ -13,7 +13,7 @@ void __cdecl engine_fileio_cpp_formatSystemError_FUN_004b1fe0(char *dest_buffer)
   char *pcVar2;
   char *buffer;
   
-  piVar1 = (int *)_errno();
+  piVar1 = _errno();
   pcVar2 = strerror(*piVar1);
   if (pcVar2 == (char *)0x0) {
     return;

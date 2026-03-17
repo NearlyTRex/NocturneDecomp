@@ -10,25 +10,23 @@ int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_005f2e90(void)
 
 {
   int iVar1;
-  undefined3 uVar2;
-  byte uVar3;
+  int iVar2;
   
-  uVar3 = 0;
+  iVar2 = 0;
   if (g_InputReadIndex == g_InputWriteIndex) {
     do {
       if (g_InputDisabled != 0) break;
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     } while (g_InputReadIndex == g_InputWriteIndex);
   }
-  uVar2 = (undefined3)((uint)g_InputReadIndex >> 8);
   if (g_InputReadIndex != g_InputWriteIndex) {
     iVar1 = g_InputReadIndex + 1;
-    uVar3 = (byte)g_InputBuffer[g_InputReadIndex];
+    iVar2 = g_InputBuffer[g_InputReadIndex];
     g_InputReadIndex = iVar1;
     if (0x13 < iVar1) {
       g_InputReadIndex = 0;
-      return CONCAT31(uVar2,uVar3);
+      return iVar2;
     }
   }
-  return CONCAT31(uVar2,uVar3);
+  return iVar2;
 }

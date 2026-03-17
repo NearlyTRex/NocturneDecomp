@@ -2,46 +2,52 @@
   "compilation_status": {
     "errors": [
       {
-        "category": "lvalue_required",
-        "column": 73,
-        "line": 83,
-        "message": "cannot take the address of an rvalue of type 'float'"
-      },
-      {
-        "category": "lvalue_required",
-        "column": 75,
-        "line": 91,
-        "message": "cannot take the address of an rvalue of type 'float'"
+        "category": "other",
+        "column": 23,
+        "line": 54,
+        "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
-        "column": 74,
-        "line": 107,
-        "message": "use of undeclared identifier 'stack0xfffff300'"
+        "column": 43,
+        "line": 109,
+        "message": "use of undeclared identifier 'register0x00000010'"
+      },
+      {
+        "category": "other",
+        "column": 27,
+        "line": 122,
+        "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "format_error",
-        "column": 52,
-        "line": 123,
+        "column": 54,
+        "line": 127,
         "message": "format specifies type 'char *' but the argument has type 'CDemonActor *' [-Werror,-Wformat]"
       },
       {
-        "category": "format_error",
-        "column": 66,
-        "line": 135,
-        "message": "format specifies type 'int' but the argument has type 'CEnemy *' [-Werror,-Wformat]"
+        "category": "undeclared_identifier",
+        "column": 50,
+        "line": 131,
+        "message": "use of undeclared identifier 'register0x00000010'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 136,
+        "message": "member reference base type 'double' is not a structure or union"
       },
       {
         "category": "undeclared_identifier",
-        "column": 40,
-        "line": 137,
-        "message": "use of undeclared identifier 'stack0xfffff300'"
+        "column": 45,
+        "line": 146,
+        "message": "use of undeclared identifier 'register0x00000010'"
       },
       {
         "category": "undeclared_identifier",
-        "column": 74,
-        "line": 139,
-        "message": "use of undeclared identifier 'stack0xfffff300'"
+        "column": 43,
+        "line": 150,
+        "message": "use of undeclared identifier 'register0x00000010'"
       }
     ],
     "success": false,
@@ -49,18 +55,20 @@
   },
   "complexity": {
     "assembly_lines": 333,
-    "complexity_score": 261,
+    "complexity_score": 291,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 141,
-    "suspect_count": 11,
+    "pseudocode_lines": 151,
+    "suspect_count": 12,
     "suspect_types": [
-      "stack_param",
-      "stack_ref"
+      "pointer_cast",
+      "unknown_field",
+      "unresolved_register",
+      "warning_unmapped_variable"
     ],
-    "total_lines": 474
+    "total_lines": 484
   },
   "cross_references": [
     {
@@ -319,22 +327,22 @@
     "pcode_op_count": 1004
   },
   "stack_frame": {
-    "frame_size": 3332,
-    "local_size": 3328,
+    "frame_size": 3336,
+    "local_size": 3332,
     "param_offset": 4,
     "param_size": 4,
     "return_addr_offset": 0,
     "variables": [
       {
         "is_param": false,
-        "name": "aCStack_cfc",
-        "offset": -3324,
-        "size": 928,
-        "type": "CStrList[58]"
+        "name": "local_d00",
+        "offset": -3328,
+        "size": 936,
+        "type": "CPickList"
       },
       {
         "is_param": false,
-        "name": "CStack_958",
+        "name": "local_958",
         "offset": -2392,
         "size": 936,
         "type": "CPickList"
@@ -348,24 +356,31 @@
       },
       {
         "is_param": false,
-        "name": "acStack_204",
-        "offset": -516,
+        "name": "local_208",
+        "offset": -520,
         "size": 296,
         "type": "char[296]"
       },
       {
         "is_param": false,
-        "name": "acStack_dc",
-        "offset": -220,
+        "name": "local_e0",
+        "offset": -224,
         "size": 200,
         "type": "char[200]"
       },
       {
         "is_param": false,
-        "name": "fStack_14",
-        "offset": -20,
+        "name": "local_18",
+        "offset": -24,
         "size": 4,
         "type": "float"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "int"
       },
       {
         "is_param": true,
@@ -378,92 +393,100 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_fffff2fc",
+      "description": "Variable defined which should be unmapped",
+      "line": 2,
+      "match": "WARNING: Variable defined which should be unmapped",
       "severity": "moderate",
-      "text": "ulonglong in_stack_fffff2fc;",
-      "type": "stack_param"
+      "text": "/* WARNING: Variable defined which should be unmapped: local_d00 */",
+      "type": "warning_unmapped_variable"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "string_data = (CEnemy *)(in_stack_fffff2fc >> 0x20);",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 47,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "dStack_d04._0_4_ = this_ptr_00;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 102,
+      "match": "(CPickList *)((int)",
+      "severity": "mild",
+      "text": "((CPickList *)((int)register0x00000010 + -0xd00));",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
-      "type": "stack_param"
+      "description": "Unresolved register reference",
+      "line": 102,
+      "match": "register0x00000010",
+      "severity": "mild",
+      "text": "((CPickList *)((int)register0x00000010 + -0xd00));",
+      "type": "unresolved_register"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 71,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 115,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "dStack_d04._0_4_ = actor_ptr;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(CPickList *)((int)",
+      "severity": "mild",
+      "text": "&(((CPickList *)((int)register0x00000010 + -0xd00))->base).capacity,",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "in_stack_fffff2fc = ZEXT48(string_data) << 0x20;",
-      "type": "stack_param"
+      "description": "Unresolved register reference",
+      "line": 124,
+      "match": "register0x00000010",
+      "severity": "mild",
+      "text": "&(((CPickList *)((int)register0x00000010 + -0xd00))->base).capacity,",
+      "type": "unresolved_register"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 100,
-      "match": "&stack0xfffff300",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff300);",
-      "type": "stack_ref"
+      "description": "Unknown/mangled field access",
+      "line": 129,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "dStack_d04._0_4_ = \"No enemies matched criteria, no speeds randomized.\";",
+      "type": "unknown_field"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 130,
-      "match": "&stack0xfffff300",
-      "severity": "moderate",
-      "text": "((CPickList *)&stack0xfffff300,acStack_dc,-1,0);",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 139,
+      "match": "(CPickList *)((int)",
+      "severity": "mild",
+      "text": "((CPickList *)((int)register0x00000010 + -0xd00),local_e0 + 4,-1,0);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 132,
-      "match": "&stack0xfffff300",
-      "severity": "moderate",
-      "text": "shape_edittool_cpp_CPickList_dtor_FUN_004a3c80((CPickList *)&stack0xfffff300,0);",
-      "type": "stack_ref"
+      "description": "Unresolved register reference",
+      "line": 139,
+      "match": "register0x00000010",
+      "severity": "mild",
+      "text": "((CPickList *)((int)register0x00000010 + -0xd00),local_e0 + 4,-1,0);",
+      "type": "unresolved_register"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 138,
-      "match": "in_stack_fffff2fc",
-      "severity": "moderate",
-      "text": "in_stack_fffff2fc = uVar4 & 0xffffffff00000000;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 143,
+      "match": "(CPickList *)((int)",
+      "severity": "mild",
+      "text": "((CPickList *)((int)register0x00000010 + -0xd00),0);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved register reference",
+      "line": 143,
+      "match": "register0x00000010",
+      "severity": "mild",
+      "text": "((CPickList *)((int)register0x00000010 + -0xd00),0);",
+      "type": "unresolved_register"
     }
   ]
 }

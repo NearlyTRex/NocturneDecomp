@@ -92,7 +92,7 @@ section .text
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b20a9
     CALL crt_errno.c__errno_FUN_00601450 ; 004b20ac
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; int * crt_errno.c__errno_FUN_00601450()
     MOV EDX,dword ptr [EAX]             ; 004b20b1
     PUSH EDX                            ; 004b20b3
     CALL crt_string.c_strerror_FUN_00601470 ; 004b20b4
@@ -216,7 +216,7 @@ section .text
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b21d7
     CALL crt_errno.c__errno_FUN_00601450 ; 004b21da
-        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; undefined crt_errno.c__errno_FUN_00601450()
+        ;   XREF to: 00601450 (UNCONDITIONAL_CALL)  ; int * crt_errno.c__errno_FUN_00601450()
     MOV ESI,dword ptr [EAX]             ; 004b21df
     PUSH ESI                            ; 004b21e1
     JMP 0x004b20b4                      ; 004b21e2

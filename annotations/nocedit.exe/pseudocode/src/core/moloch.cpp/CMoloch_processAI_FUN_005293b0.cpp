@@ -59,8 +59,8 @@ void __cdecl core_moloch_cpp_CMoloch_processAI_FUN_005293b0(CMoloch *this_ptr,fl
     (this_ptr->base).base.turn_angle_accumulator = 0.0;
     if (SQRT(local_74.z * local_74.z + local_74.x * local_74.x + local_74.y * local_74.y) <=
         (float)6) {
-      iVar2 = (*(((g_HeroActors[iVar2]->base).base.vtable._ue)->_ue).randomize)
-                        ((CEnemy *)g_HeroActors[iVar2]);
+      iVar2 = (*(((g_HeroActors[iVar2]->base).base.vtable._uh)->_uh).isWeaponDrawn)
+                        (g_HeroActors[iVar2]);
       if ((iVar2 == 0) &&
          (uVar8 = core_charactr_cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
                             ((CCharacter *)this_ptr,delta_time), uVar8 != 0)) {

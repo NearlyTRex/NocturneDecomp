@@ -21,7 +21,7 @@ _FILE * __cdecl engine_fileio_cpp_openFileWithRetry_FUN_004b2200(char *filename,
       _setvbuf(stream_ptr,(char *)0x0,0,0x400);
       return stream_ptr;
     }
-    piVar1 = (int *)_errno();
+    piVar1 = _errno();
     if (*piVar1 != 6) break;
     iVar2 = iVar2 + 1;
     (*g_SleepFunc)(500);

@@ -44,7 +44,7 @@
 ; Called Functions:
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
 ;   core_charactr.cpp_CCharacter_moveOutOfHeroWay_FUN_0042ede0
-;   core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960
+;   core_hero.cpp_CHero_closestEnemy_FUN_004f3960
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00
 ;   core_path.cpp_getPathMap_FUN_00548500
@@ -137,8 +137,8 @@ section .text
     MOV EDX,0x461c3f9a                  ; 004f8d81
     PUSH EBX                            ; 004f8d86
     MOV dword ptr [ESP + 0x84],EDX      ; 004f8d87
-    CALL core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960 ; 004f8d8e
-        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; CEnemy * core_hero.cpp_CHero_findNearestEnemy_FUN_004f3960(CHero * this_ptr, float * out_distance)
+    CALL core_hero.cpp_CHero_closestEnemy_FUN_004f3960 ; 004f8d8e
+        ;   XREF to: 004f3960 (UNCONDITIONAL_CALL)  ; CEnemy * core_hero.cpp_CHero_closestEnemy_FUN_004f3960(CHero * this_ptr, float * out_distance)
     MOV EDX,EAX                         ; 004f8d93
     ADD ESP,0x8                         ; 004f8d95
     TEST EAX,EAX                        ; 004f8d98
