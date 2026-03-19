@@ -4,39 +4,38 @@
       {
         "category": "other",
         "column": 46,
-        "line": 153,
+        "line": 152,
         "message": "format string is not a string literal (potentially insecure) [-Werror,-Wformat-security]"
       },
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 229,
-        "message": "use of undeclared identifier 'stack0xfffffe54'"
+        "line": 228,
+        "message": "use of undeclared identifier 'stack0xfffffe58'"
       },
       {
         "category": "undeclared_identifier",
         "column": 65,
-        "line": 230,
-        "message": "use of undeclared identifier 'stack0xfffffe54'"
+        "line": 229,
+        "message": "use of undeclared identifier 'stack0xfffffe58'"
       }
     ],
     "success": false,
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 864,
-    "complexity_score": 311,
+    "assembly_lines": 885,
+    "complexity_score": 274,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 38,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 251,
-    "suspect_count": 5,
+    "pseudocode_lines": 249,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 1115
+    "total_lines": 1134
   },
   "cross_references": [
     {
@@ -407,8 +406,8 @@
     "estimated_params": 1
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.3753709198813056,
-    "instruction_count": 674,
+    "avg_pcode_per_instr": 4.231654676258993,
+    "instruction_count": 695,
     "opcode_distribution": {
       "BOOL_NEGATE": 10,
       "BOOL_OR": 4,
@@ -416,7 +415,7 @@
       "CALL": 33,
       "CALLIND": 36,
       "CBRANCH": 77,
-      "COPY": 614,
+      "COPY": 612,
       "FLOAT2FLOAT": 8,
       "FLOAT_ADD": 1,
       "FLOAT_EQUAL": 2,
@@ -424,26 +423,26 @@
       "FLOAT_MULT": 3,
       "FLOAT_NAN": 4,
       "INT2FLOAT": 5,
-      "INT_ADD": 172,
-      "INT_AND": 396,
+      "INT_ADD": 173,
+      "INT_AND": 393,
       "INT_CARRY": 69,
-      "INT_EQUAL": 337,
+      "INT_EQUAL": 335,
       "INT_LEFT": 8,
       "INT_LESS": 39,
       "INT_NOTEQUAL": 14,
       "INT_OR": 10,
       "INT_SBORROW": 41,
       "INT_SCARRY": 71,
-      "INT_SLESS": 167,
+      "INT_SLESS": 166,
       "INT_SUB": 254,
       "INT_XOR": 3,
       "INT_ZEXT": 8,
       "LOAD": 126,
-      "POPCOUNT": 167,
+      "POPCOUNT": 166,
       "RETURN": 1,
       "STORE": 247
     },
-    "pcode_op_count": 2949
+    "pcode_op_count": 2941
   },
   "stack_frame": {
     "frame_size": 8,
@@ -461,63 +460,22 @@
       }
     ]
   },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "004dceec",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000080",
+      "description": "Direct stack address reference",
+      "line": 221,
+      "match": "&stack0xfffffe58",
       "severity": "moderate",
-      "text": "float in_stack_00000080;",
-      "type": "stack_param"
+      "text": "(&stack0xfffffe58,\"Gamma : %f\",(double)this_ptr->gamma * 1.52587890625e-05);",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 222,
-      "match": "&stack0xfffffe54",
+      "match": "&stack0xfffffe58",
       "severity": "moderate",
-      "text": "(&stack0xfffffe54,\"Gamma : %f\",(double)this_ptr->gamma * 1.52587890625e-05);",
+      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffe58,1.0);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 223,
-      "match": "&stack0xfffffe54",
-      "severity": "moderate",
-      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffe54,1.0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 237,
-      "match": "in_stack_00000080",
-      "severity": "moderate",
-      "text": "in_stack_00000080 = -0.02;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 241,
-      "match": "in_stack_00000080",
-      "severity": "moderate",
-      "text": "in_stack_00000080;",
-      "type": "stack_param"
     }
   ]
 }

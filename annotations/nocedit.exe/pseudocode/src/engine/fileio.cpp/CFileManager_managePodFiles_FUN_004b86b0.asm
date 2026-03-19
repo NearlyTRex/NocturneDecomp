@@ -283,7 +283,7 @@ section .text
     FSTP float ptr [ESP]                ; 004b88fb
     PUSH EBP                            ; 004b88fe | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 004b88ff
-        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
+        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 004b8904
     MOV EAX,dword ptr [ESP + 0x22d4]    ; 004b8907
     IMUL EBX,EAX,0x39c                  ; 004b890e

@@ -184,7 +184,7 @@ section .text
     MOV EDX,dword ptr [0x00678a60]      ; 0048093f | g_CEditorToolsInstance | g_CEditorToolsPtr
     PUSH EDX                            ; 00480945 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0 ; 00480946
-        ;   XREF to: 004a28a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools * this_ptr, CQuaternion4f * world_point, int line_length)
+        ;   XREF to: 004a28a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools * this_ptr, CVector3f * world_point, int line_length)
     ADD ESP,0xc                         ; 0048094b
     PUSH EBX                            ; 0048094e
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 0048094f
@@ -214,7 +214,7 @@ section .text
     MOV ESI,dword ptr [0x00678a60]      ; 00480992 | g_CEditorToolsPtr
     PUSH ESI                            ; 00480998 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0 ; 00480999
-        ;   XREF to: 004a28a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools * this_ptr, CQuaternion4f * world_point, int line_length)
+        ;   XREF to: 004a28a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools * this_ptr, CVector3f * world_point, int line_length)
     ADD ESP,0xc                         ; 0048099e
     PUSH EBX                            ; 004809a1
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40 ; 004809a2

@@ -181,7 +181,7 @@ void __cdecl CEditorTools::showCenteredProgressDialog(CEditorTools *this_ptr,cha
 
 // Original: shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
 // Address: 004a0530
-void __cdecl CEditorTools::updatePercentage(CEditorTools *this_ptr,float progress_min,float progress_max);
+void __cdecl CEditorTools::updatePercentage(CEditorTools *this_ptr,float current_progress,float total_progress);
 
 // Original: shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890
 // Address: 004a0890
@@ -253,7 +253,7 @@ void __cdecl CEditorTools::drawPixelLine(CEditorTools *this_ptr,int start_x,int 
 
 // Original: shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
 // Address: 004a28a0
-void __cdecl CEditorTools::draw3DProjectedLine(CEditorTools *this_ptr,CQuaternion4f *world_point,int line_length);
+void __cdecl CEditorTools::draw3DProjectedLine(CEditorTools *this_ptr,CVector3f *world_point,int line_length);
 
 // Original: shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920
 // Address: 004a2920

@@ -17,13 +17,12 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
   _FILE *file_ptr;
   char *pcVar6;
   char *pcVar7;
-  uint uStack00000078;
-  int iStack0000007c;
-  float in_stack_00000080;
   uint clear_enabled;
   float fVar8;
-  float fStack_188;
-  char acStack_b4 [164];
+  float fStack_184;
+  char acStack_118 [232];
+  int iStack_30;
+  float fStack_2c;
   
   if (g_CheatSystemEnabled == 0) {
     if (this_ptr->cutscene_skippable == 0) {
@@ -214,8 +213,8 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
         this_ptr->gamma = 0x8000;
       }
       _sprintf
-                (acStack_b4,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
-      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,acStack_b4,1.0);
+                (acStack_118,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
+      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,acStack_118,1.0);
       core_set_cpp_CDemonSet_setGamma_FUN_00570d60(g_CDemonSetPtr,this_ptr->gamma);
     }
     iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_F12);
@@ -226,8 +225,8 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
         this_ptr->gamma = 0x10000;
       }
       _sprintf
-                (&stack0xfffffe54,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
-      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffe54,1.0);
+                (&stack0xfffffe58,"Gamma : %f",(double)this_ptr->gamma * 1.52587890625e-05);
+      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffe58,1.0);
       core_set_cpp_CDemonSet_setGamma_FUN_00570d60(g_CDemonSetPtr,this_ptr->gamma);
     }
     if (((this_ptr->velocity_debug_enabled != 0) &&
@@ -238,22 +237,21 @@ void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
     if (((this_ptr->velocity_debug_enabled != 0) &&
         (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LMENU), iVar4 != 0)) &&
        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,DIK_A), iVar4 != 0)) {
-      uStack00000078 = 0x3ca3d70a;
+      fStack_2c = 0.02;
       iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,DIK_LSHIFT);
       if (iVar4 != 0) {
-        in_stack_00000080 = -0.02;
+        fStack_2c = -0.02;
       }
-      iStack0000007c = g_CDemonCameraInstance.corona_blend_factor;
-      fStack_188 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)1.5259021896696401e-05 +
-                   in_stack_00000080;
-      if (fStack_188 < 0.0) {
-        fStack_188 = 0.0;
+      iStack_30 = g_CDemonCameraInstance.corona_blend_factor;
+      if ((float)g_CDemonCameraInstance.corona_blend_factor * (float)1.5259021896696401e-05 + fStack_2c <
+          0.0) {
+        fStack_184 = 0.0;
       }
-      if (1.0 < fStack_188) {
-        fStack_188 = 1.0;
+      if (1.0 < fStack_184) {
+        fStack_184 = 1.0;
       }
       for (iVar4 = 0; iVar4 < g_CDemonSetPtr->camera_count; iVar4 = iVar4 + 1) {
-        core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20(g_CDemonSetPtr,iVar4,fStack_188);
+        core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_00570e20(g_CDemonSetPtr,iVar4,fStack_184);
       }
     }
   }

@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 9,
+    "complexity_score": 24,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 9,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "displaced_global_access"
+    ],
     "total_lines": 26
   },
   "cross_references": [
@@ -196,5 +198,19 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x32776c8] lands in g_CoronaGlobeCount but intended target is g_CoronaGlobes at 0x32776cc (displaced by 4 bytes)",
+      "displaced_from": "g_CoronaGlobeCount",
+      "displacement": "0x32776c8",
+      "instruction_address": "",
+      "intended_global": "g_CoronaGlobes",
+      "line": 15,
+      "match": "0x32776c8",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 0056d130: MOV dword ptr [EDX*0x4 + 0x32776c8],ECX  ; g_CoronaGlobeCount",
+      "type": "displaced_global_access"
+    }
+  ]
 }

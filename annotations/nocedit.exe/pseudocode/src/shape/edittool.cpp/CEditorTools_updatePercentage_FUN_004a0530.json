@@ -182,7 +182,7 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530",
-    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float progress_min,float progress_max)"
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float current_progress,float total_progress)"
   },
   "function_calls": [
     {
@@ -589,14 +589,14 @@
       },
       {
         "is_param": true,
-        "name": "progress_min",
+        "name": "current_progress",
         "offset": 8,
         "size": 4,
         "type": "float"
       },
       {
         "is_param": true,
-        "name": "progress_max",
+        "name": "total_progress",
         "offset": 12,
         "size": 4,
         "type": "float"
@@ -666,7 +666,7 @@
       "line": 71,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar2 = (int)ROUND(ROUND(((progress_max - progress_min) * fVar2) / progress_min +",
+      "text": "iVar2 = (int)ROUND(ROUND(((total_progress - current_progress) * fVar2) / current_progress +",
       "type": "decompiler_intrinsic"
     },
     {
@@ -674,7 +674,7 @@
       "line": 71,
       "match": "ROUND",
       "severity": "mild",
-      "text": "iVar2 = (int)ROUND(ROUND(((progress_max - progress_min) * fVar2) / progress_min +",
+      "text": "iVar2 = (int)ROUND(ROUND(((total_progress - current_progress) * fVar2) / current_progress +",
       "type": "decompiler_intrinsic"
     },
     {

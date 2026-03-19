@@ -177,7 +177,7 @@ section .text
     PUSH EBX                            ; 0051d658 | g_CEditorToolsInstance
     MOV [0x02d02570],EAX                ; 0051d659 | g_ActiveRenderColor
     CALL shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0 ; 0051d65e
-        ;   XREF to: 004a28a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools * this_ptr, CQuaternion4f * world_point, int line_length)
+        ;   XREF to: 004a28a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools * this_ptr, CVector3f * world_point, int line_length)
     ADD ESP,0xc                         ; 0051d663
     CMP dword ptr [0x02f31238],0x0      ; 0051d666 | INT_02f31238
         ;   Label: LAB_0051d666

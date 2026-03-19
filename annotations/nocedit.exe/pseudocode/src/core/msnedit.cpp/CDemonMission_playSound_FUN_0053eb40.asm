@@ -117,7 +117,7 @@ section .text
     PUSH dword ptr [ESP + 0x4]          ; 0053ebfc
     PUSH EAX                            ; 0053ec00 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 0053ec01
-        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
+        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 0053ec06
     MOV EAX,[0x0067cf44]                ; 0053ec09 | g_CKeysPtr
     PUSH 0x1                            ; 0053ec0e

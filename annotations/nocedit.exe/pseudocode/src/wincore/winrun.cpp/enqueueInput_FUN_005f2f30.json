@@ -6,14 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 13,
+    "complexity_score": 28,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 13,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "displaced_global_access"
+    ],
     "total_lines": 38
   },
   "cross_references": [
@@ -135,5 +137,19 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x3f96bc4] lands in g_UseMultimediaTimer but intended target is g_InputBuffer at 0x3f96bc8 (displaced by 4 bytes)",
+      "displaced_from": "g_UseMultimediaTimer",
+      "displacement": "0x3f96bc4",
+      "instruction_address": "",
+      "intended_global": "g_InputBuffer",
+      "line": 7,
+      "match": "0x3f96bc4",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 005f2f42: MOV dword ptr [EDX*0x4 + 0x3f96bc4],EBX  ; g_UseMultimediaTimer",
+      "type": "displaced_global_access"
+    }
+  ]
 }

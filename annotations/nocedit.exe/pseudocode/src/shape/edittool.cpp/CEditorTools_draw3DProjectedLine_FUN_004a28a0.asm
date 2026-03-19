@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools *this_ptr,CQuaternion4f *world_point,int line_length)
+; void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools *this_ptr,CVector3f *world_point,int line_length)
 ;
 ; Parameters:
 ; CEditorTools *   Stack[0x4]:4   this_ptr
-; CQuaternion4f *  Stack[0x8]:4   world_point
+; CVector3f *      Stack[0x8]:4   world_point
 ; int              Stack[0xc]:4   line_length
 ; Local Variables:
 ; SProjectedVertex[2] Stack[-0x40]:48  local_40

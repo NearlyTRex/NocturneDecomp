@@ -4,7 +4,7 @@
       {
         "category": "undeclared_identifier",
         "column": 19,
-        "line": 139,
+        "line": 145,
         "message": "use of undeclared identifier 'stack0x00000000'"
       }
     ],
@@ -12,20 +12,19 @@
     "warnings": []
   },
   "complexity": {
-    "assembly_lines": 343,
-    "complexity_score": 238,
+    "assembly_lines": 473,
+    "complexity_score": 209,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 143,
-    "suspect_count": 8,
+    "pseudocode_lines": 149,
+    "suspect_count": 5,
     "suspect_types": [
       "decompiler_intrinsic",
-      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 486
+    "total_lines": 622
   },
   "cross_references": [
     {
@@ -249,8 +248,8 @@
     "estimated_params": 7
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.658450704225352,
-    "instruction_count": 284,
+    "avg_pcode_per_instr": 3.1739130434782608,
+    "instruction_count": 414,
     "opcode_distribution": {
       "BOOL_NEGATE": 10,
       "BOOL_OR": 10,
@@ -258,7 +257,7 @@
       "CALL": 15,
       "CALLIND": 2,
       "CBRANCH": 21,
-      "COPY": 449,
+      "COPY": 447,
       "FLOAT2FLOAT": 25,
       "FLOAT_ADD": 3,
       "FLOAT_EQUAL": 6,
@@ -266,24 +265,24 @@
       "FLOAT_NAN": 12,
       "INT2FLOAT": 6,
       "INT_ADD": 130,
-      "INT_AND": 99,
+      "INT_AND": 96,
       "INT_CARRY": 15,
-      "INT_EQUAL": 62,
+      "INT_EQUAL": 60,
       "INT_LEFT": 24,
       "INT_LESS": 9,
       "INT_NOTEQUAL": 30,
       "INT_OR": 30,
       "INT_SBORROW": 9,
       "INT_SCARRY": 15,
-      "INT_SLESS": 31,
+      "INT_SLESS": 30,
       "INT_SUB": 77,
       "INT_ZEXT": 24,
       "LOAD": 62,
-      "POPCOUNT": 31,
+      "POPCOUNT": 30,
       "RETURN": 2,
       "STORE": 102
     },
-    "pcode_op_count": 1323
+    "pcode_op_count": 1314
   },
   "stack_frame": {
     "frame_size": 192,
@@ -413,51 +412,10 @@
       }
     ]
   },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "0040947c",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_ffffff48",
-      "severity": "moderate",
-      "text": "ulonglong in_stack_ffffff48;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_ffffff48",
-      "severity": "moderate",
-      "text": "(this_ptr_00,pCVar2,(CVector3f *)in_stack_ffffff48,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_ffffff48",
-      "severity": "moderate",
-      "text": "(CVector3f *)((ulonglong)in_stack_ffffff48 >> 0x20));",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 89,
+      "line": 92,
       "match": "NAN",
       "severity": "mild",
       "text": "out_hit_normal[1].y = -NAN;",
@@ -465,7 +423,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 90,
+      "line": 93,
       "match": "NAN",
       "severity": "mild",
       "text": "out_hit_normal[1].z = -NAN;",
@@ -473,7 +431,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 91,
+      "line": 94,
       "match": "NAN",
       "severity": "mild",
       "text": "out_hit_normal[2].x = -NAN;",
@@ -481,7 +439,7 @@
     },
     {
       "description": "Decompiler intrinsic (not real C)",
-      "line": 93,
+      "line": 96,
       "match": "NAN",
       "severity": "mild",
       "text": "out_hit_normal[1].x = -NAN;",
@@ -489,10 +447,10 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 132,
+      "line": 138,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if ((int *)&stack0x00000000 != &g_DeformableModelPool[0].lod_info[2].shadow_only_flag) {",
+      "text": "if ((int *)&stack0x00000000 != g_DeformableModelPool[0].vertex_count + 3) {",
       "type": "stack_ref"
     }
   ]

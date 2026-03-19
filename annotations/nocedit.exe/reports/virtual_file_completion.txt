@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 214
 Total functions: 6484
-Clean functions: 5044 (77.8%)
+Clean functions: 5041 (77.7%)
 Files at 100%: 45
 Files at 90%+: 82
 Files at 50%+: 202
@@ -452,7 +452,7 @@ FILES AT 50-89%
            - core_actor.cpp_generateRandomValue_FUN_0040cba0 (5 lines) [param_count_too_few]
            - core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0 (17 lines) [pointer_cast]
            - core_actor.cpp_CActorPropertyList_addClothList_FUN_0040e500 (27 lines) [unnamed_param]
-           - core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 (143 lines) [decompiler_intrinsic, stack_param, stack_ref]
+           - core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470 (149 lines) [decompiler_intrinsic, stack_ref]
            - core_actor.cpp_CDemonActor_renderBoundingBoxSolid_FUN_0040dec0 (57 lines) [decompiler_intrinsic, pointer_cast]
            - core_actor.cpp_CActorPropertyList_addVector_FUN_0040e260 (8 lines) [unnamed_param]
            - core_actor.cpp_drawBoundingBox_FUN_0040d470 (240 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
@@ -659,15 +659,6 @@ FILES AT 50-89%
            - core_ladder.cpp_CLadder_cacheRelativePosition_FUN_00502b80 (50 lines) [pointer_cast]
            - core_ladder.cpp_CLadder_renderOpaque_FUN_00502620 (166 lines) [byvalue_struct_passing, decompiler_intrinsic, pointer_cast, stack_param, stack_ref, unknown_field]
            - core_ladder.cpp_CLadder_processInEditor_FUN_00502d00 (42 lines) [stack_param]
-   78.8% | wincore/winrun.cpp
-         26/33 clean, 7 remaining
-           - wincore_winrun.cpp_winMain_FUN_005f3680 (125 lines) [param_count_too_many, pointer_cast]
-           - wincore_winrun.cpp_processWindowMessages_FUN_005f35e0 (26 lines) [pointer_cast]
-           - wincore_winrun.cpp_getTime_FUN_005f2dc0 (20 lines) [decompiler_intrinsic, warning_inlined_function]
-           - wincore_winrun.cpp_mainWindowProc_FUN_005f3150 (172 lines) [unresolved_funcptr]
-           - wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010 (12 lines) [decompiler_intrinsic, param_count_too_few, warning_inlined_function]
-           - wincore_winrun.cpp_getJoystickState_FUN_005f43a0 (60 lines) [param_count_too_few]
-           - wincore_winrun.cpp_sleep_FUN_005f40e0 (12 lines) [decompiler_intrinsic, param_count_too_few, warning_inlined_function]
    78.5% | cockpit/drawsurf.cpp
          73/93 clean, 20 remaining
            - cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010 (53 lines) [warning_unreachable]
@@ -761,29 +752,6 @@ FILES AT 50-89%
            - core_scat.cpp_CScat_scoreAimTarget_FUN_00558cf0 (83 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_scat.cpp_CScat_blendAimBones_FUN_005584a0 (154 lines) [pointer_cast, stack_alignment_array, warning_type_propagation]
            - core_scat.cpp_CScat_updateAI_FUN_005578e0 (158 lines) [decompiler_intrinsic, warning_type_propagation]
-   75.9% | core/set.cpp
-         66/87 clean, 21 remaining
-           - core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 (117 lines) [decompiler_intrinsic, stack_ref, warning_type_propagation]
-           - core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (602 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
-           - core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 (296 lines) [pointer_cast]
-           - core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380 (51 lines) [pointer_cast]
-           - core_set.cpp_CDemonSet_renderTransparentActors_FUN_0056cf00 (71 lines) [negative_offset]
-           - core_set.cpp_CDemonSet_initScene_FUN_0056aa10 (104 lines) [pointer_cast]
-           - core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 (115 lines) [decompiler_intrinsic, pointer_cast]
-           - core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0 (146 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
-           - core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 (36 lines) [pointer_cast, unresolved_funcptr]
-           - core_set.cpp_CDemonSet_processActors_FUN_0056b810 (273 lines) [decompiler_intrinsic, fnstsw_flag_artifact, nan_function_artifact, pointer_cast, stack_ref]
-           - core_set.cpp_CDemonSet_load_FUN_00569410 (424 lines) [pointer_cast]
-           - core_set.cpp_CDemonSet_setGamma_FUN_00570d60 (24 lines) [decompiler_intrinsic, pointer_cast, suspect_float, warning_inlined_function]
-           - core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0 (166 lines) [stack_ref]
-           - core_set.cpp_CDemonSet_renderLightDebugView_FUN_0056d190 (51 lines) [pointer_cast]
-           - core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80 (132 lines) [pointer_cast, stack_alignment_array]
-           - core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0 (53 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
-           - core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0 (261 lines) [decompiler_intrinsic, pointer_cast]
-           - core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 (166 lines) [pointer_cast, stack_alignment_array]
-           - core_set.cpp_transformToWorldSpace_FUN_0056e890 (38 lines) [param_count_too_many]
-           - core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 (310 lines) [decompiler_intrinsic, pointer_cast]
-           - core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60 (72 lines) [negative_offset]
    75.8% | cockpit/pkbitmap.cpp
          25/33 clean, 8 remaining
            - cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0 (47 lines) [pointer_cast]
@@ -794,6 +762,16 @@ FILES AT 50-89%
            - cockpit_pkbitmap.cpp_CPackedBitmap_getPixelValue_FUN_0054a9b0 (16 lines) [pointer_cast]
            - cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0 (36 lines) [pointer_cast]
            - cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440 (26 lines) [pointer_cast]
+   75.8% | wincore/winrun.cpp
+         25/33 clean, 8 remaining
+           - wincore_winrun.cpp_winMain_FUN_005f3680 (125 lines) [param_count_too_many, pointer_cast]
+           - wincore_winrun.cpp_enqueueInput_FUN_005f2f30 (13 lines) [displaced_global_access]
+           - wincore_winrun.cpp_processWindowMessages_FUN_005f35e0 (26 lines) [pointer_cast]
+           - wincore_winrun.cpp_getTime_FUN_005f2dc0 (20 lines) [decompiler_intrinsic, warning_inlined_function]
+           - wincore_winrun.cpp_mainWindowProc_FUN_005f3150 (172 lines) [unresolved_funcptr]
+           - wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010 (12 lines) [decompiler_intrinsic, param_count_too_few, warning_inlined_function]
+           - wincore_winrun.cpp_getJoystickState_FUN_005f43a0 (60 lines) [param_count_too_few]
+           - wincore_winrun.cpp_sleep_FUN_005f40e0 (12 lines) [decompiler_intrinsic, param_count_too_few, warning_inlined_function]
    75.0% | core/boneguy.cpp
          21/28 clean, 7 remaining
            - core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041cc40 (162 lines) [decompiler_intrinsic, warning_type_propagation]
@@ -853,7 +831,7 @@ FILES AT 50-89%
            - support_trisock.cpp_bindSocketWrapper_FUN_005e1af0 (5 lines) [param_count_too_few]
    73.9% | core/game.cpp
          51/69 clean, 18 remaining
-           - core_game.cpp_CGame_processHotkeys_FUN_004dcee0 (251 lines) [stack_param, stack_ref]
+           - core_game.cpp_CGame_processHotkeys_FUN_004dcee0 (249 lines) [stack_ref]
            - core_game.cpp_CGame_beginFadeOut_FUN_004e0960 (57 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
            - core_game.cpp_CGame_renderOverlay_FUN_004d8040 (139 lines) [decompiler_intrinsic, warning_inlined_function]
            - core_game.cpp_calculateIrisFadeCenter_FUN_004e09a0 (53 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
@@ -883,6 +861,31 @@ FILES AT 50-89%
            - core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004d6260 (84 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004d5870 (142 lines) [decompiler_intrinsic, warning_type_propagation]
            - core_gabriela.cpp_CGabriella_binarySearchClavicleBlend_FUN_004d6f80 (70 lines) [pointer_cast]
+   73.6% | core/set.cpp
+         64/87 clean, 23 remaining
+           - core_set.cpp_CDemonSet_renderFlashlightShadow_FUN_0056c990 (117 lines) [decompiler_intrinsic, stack_ref, warning_type_propagation]
+           - core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0 (602 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
+           - core_set.cpp_CDemonSet_renderScene_FUN_0056c1a0 (296 lines) [pointer_cast]
+           - core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090 (23 lines) [displaced_global_access]
+           - core_set.cpp_CDemonSet_setLightingParameters_FUN_0056d380 (51 lines) [pointer_cast]
+           - core_set.cpp_CDemonSet_renderTransparentActors_FUN_0056cf00 (71 lines) [negative_offset]
+           - core_set.cpp_CDemonSet_initScene_FUN_0056aa10 (104 lines) [pointer_cast]
+           - core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00570040 (115 lines) [decompiler_intrinsic, pointer_cast]
+           - core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_005702b0 (146 lines) [decompiler_intrinsic, pointer_cast, stack_alignment_array]
+           - core_set.cpp_CDemonSet_clearLights_FUN_0056d2d0 (36 lines) [pointer_cast, unresolved_funcptr]
+           - core_set.cpp_CDemonSet_processActors_FUN_0056b810 (273 lines) [decompiler_intrinsic, fnstsw_flag_artifact, nan_function_artifact, pointer_cast, stack_ref]
+           - core_set.cpp_CDemonSet_load_FUN_00569410 (424 lines) [pointer_cast]
+           - core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110 (9 lines) [displaced_global_access]
+           - core_set.cpp_CDemonSet_setGamma_FUN_00570d60 (24 lines) [decompiler_intrinsic, pointer_cast, suspect_float, warning_inlined_function]
+           - core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0 (166 lines) [displaced_global_access, stack_ref]
+           - core_set.cpp_CDemonSet_renderLightDebugView_FUN_0056d190 (51 lines) [pointer_cast]
+           - core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80 (132 lines) [pointer_cast, stack_alignment_array]
+           - core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0056e3e0 (53 lines) [decompiler_intrinsic, pointer_cast, warning_inlined_function]
+           - core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0 (261 lines) [decompiler_intrinsic, displaced_global_access, pointer_cast]
+           - core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 (166 lines) [pointer_cast, stack_alignment_array]
+           - core_set.cpp_transformToWorldSpace_FUN_0056e890 (38 lines) [param_count_too_many]
+           - core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50 (310 lines) [decompiler_intrinsic, pointer_cast]
+           - core_set.cpp_CDemonSet_renderOpaqueActors_FUN_0056cd60 (72 lines) [negative_offset]
    73.5% | core/skeleton.cpp
          86/117 clean, 31 remaining
            - core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0 (71 lines) [pointer_cast, stack_alignment_array]

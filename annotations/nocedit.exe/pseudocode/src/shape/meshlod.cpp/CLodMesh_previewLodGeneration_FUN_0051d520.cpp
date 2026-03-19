@@ -70,7 +70,7 @@ LAB_0051d5ec:
       g_ActiveRenderColor =
            shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr);
       shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
-                (g_CEditorToolsPtr,g_LodMeshHighlightVertices,4);
+                (g_CEditorToolsPtr,(CVector3f *)g_LodMeshHighlightVertices,4);
     }
     if ((INT_02f31238 != 0) && (this_ptr->next_lod != (CLodMesh *)0x0)) {
       shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0(this_ptr->next_lod);

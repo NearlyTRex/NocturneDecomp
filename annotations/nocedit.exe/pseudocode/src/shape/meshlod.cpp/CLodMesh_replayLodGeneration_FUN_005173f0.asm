@@ -118,7 +118,7 @@ section .text
     PUSH EAX                            ; 005174ad | g_CEditorToolsInstance
     ADD EDI,0xf0                        ; 005174ae
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 005174b4
-        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
+        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float current_progress, float total_progress)
     MOV EDX,dword ptr [EBX + 0x4c]      ; 005174b9
     ADD ESP,0xc                         ; 005174bc
     CMP ESI,EDX                         ; 005174bf

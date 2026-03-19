@@ -2,13 +2,13 @@
 // Address: 004a0530
 // Address Range: [[004a0530, 004a088c]]
 // Convention: __cdecl
-// Signature: void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float progress_min,float progress_max)
+// Signature: void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float current_progress,float total_progress)
 
 #include "nocturne.h"
 
 /* WARNING: Inlined function: crt_math.c_round_FUN_005fe6b0 */
 
-void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float progress_min,float progress_max)
+void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float current_progress,float total_progress)
 
 {
   int iVar2;
@@ -31,14 +31,14 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEdit
     core_main_c_displayErrorAndQuit_FUN_00506f10("CEditorTools::updatePercentageWindow - no window open!");
   }
   local_34 = 0.0;
-  if (0.0 < progress_max) {
-    if (progress_min < 0.0) {
-      progress_min = 0.0;
+  if (0.0 < total_progress) {
+    if (current_progress < 0.0) {
+      current_progress = 0.0;
     }
-    if (progress_max < progress_min) {
-      progress_min = progress_max;
+    if (total_progress < current_progress) {
+      current_progress = total_progress;
     }
-    local_34 = progress_min / progress_max;
+    local_34 = current_progress / total_progress;
   }
   iVar1 = (int)ROUND(ROUND(local_34 * (float)100 +
                            (float)0.5));
@@ -75,7 +75,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEdit
       fVar2 = (float)(iVar6 - g_WindowStack[g_WindowStackCount + -1].progress_start_time) *
               (float)8.4771050347222196e-07;
       if ((float)5 < fVar2) {
-        iVar2 = (int)ROUND(ROUND(((progress_max - progress_min) * fVar2) / progress_min +
+        iVar2 = (int)ROUND(ROUND(((total_progress - current_progress) * fVar2) / current_progress +
                                  (float)0.5));
         if (0 < iVar2) {
           dVar3 = (double)fVar2 + 0.5;

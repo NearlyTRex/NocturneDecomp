@@ -18,7 +18,6 @@
 #include "types/classes/CEnemy.h"
 #include "types/classes/CEventList.h"
 #include "types/classes/CPickList.h"
-#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CStrList.h"
 #include "types/classes/CVector3f.h"
 #include "types/enums/ECollisionType.h"
@@ -38,7 +37,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300(CE
 int __cdecl shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size, int dialog_flags);
 int __cdecl shape_edittool_cpp_CEditorTools_showCheatInputDialog_FUN_004a0400(CEditorTools *this_ptr,char *prompt_text,char *input_buffer,int buffer_size, int dialog_flags);
 void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430(CEditorTools *this_ptr,char *message_text);
-void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float progress_min,float progress_max);
+void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools *this_ptr,float current_progress,float total_progress);
 void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890(CEditorTools *this_ptr,int min_width,int min_height,char *text_content, uint window_flags);
 void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970(CEditorTools *this_ptr,int left,int top,int right,int bottom,char *text_content, uint window_flags);
 void __cdecl shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTools *this_ptr);
@@ -56,7 +55,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050(CE
 void __cdecl shape_edittool_cpp_CEditorTools_drawCenteredWireframeCube_FUN_004a2510(CEditorTools *this_ptr,CVector3f *dimensions,int color_value);
 void __cdecl shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590(CEditorTools *this_ptr,char *output_buffer);
 void __cdecl shape_edittool_cpp_CEditorTools_drawPixelLine_FUN_004a2660(CEditorTools *this_ptr,int start_x,int start_y,int length);
-void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools *this_ptr,CQuaternion4f *world_point,int line_length);
+void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools *this_ptr,CVector3f *world_point,int line_length);
 void __cdecl shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools *this_ptr,int cursor_type,int width,int height);
 CStrList * __cdecl shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(CStrList *this_ptr);
 CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_ptr,uint flags);

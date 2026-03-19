@@ -6,15 +6,16 @@
   },
   "complexity": {
     "assembly_lines": 562,
-    "complexity_score": 451,
+    "complexity_score": 466,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 34,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 261,
-    "suspect_count": 18,
+    "suspect_count": 19,
     "suspect_types": [
       "decompiler_intrinsic",
+      "displaced_global_access",
       "pointer_cast"
     ],
     "total_lines": 823
@@ -676,6 +677,19 @@
       "severity": "mild",
       "text": "iVar7 = (int)ROUND(local_80 * 256.0f) + local_74;",
       "type": "decompiler_intrinsic"
+    },
+    {
+      "description": "Compiler displaced index base: [reg*4 + 0x32c17ac] lands in g_GlobeLightCount but intended target is g_GlobeLights at 0x32c17b0 (displaced by 4 bytes)",
+      "displaced_from": "g_GlobeLightCount",
+      "displacement": "0x32c17ac",
+      "instruction_address": "",
+      "intended_global": "g_GlobeLights",
+      "line": 313,
+      "match": "0x32c17ac",
+      "scale": 4,
+      "severity": "moderate",
+      "text": "// 0056d820: MOV dword ptr [EDX*0x4 + 0x32c17ac],EAX  ; DAT_032c17b4",
+      "type": "displaced_global_access"
     }
   ]
 }

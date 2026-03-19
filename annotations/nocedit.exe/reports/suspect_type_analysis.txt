@@ -7,7 +7,7 @@ SUSPECT TYPE COUNTS
   decompiler_intrinsic            7087 ( 36.4%)
   pointer_cast                    5701 ( 29.3%)
   unknown_field                   1438 (  7.4%)
-  stack_param                      935 (  4.8%)
+  stack_param                      929 (  4.8%)
   unnamed_param                    698 (  3.6%)
   special_crt_function             636 (  3.3%)
   fpu_register_input               327 (  1.7%)
@@ -39,6 +39,7 @@ SUSPECT TYPE COUNTS
   warning_indirect_jump             10 (  0.1%)
   nan_function_artifact              9 (  0.0%)
   undefined_ptr_cast                 6 (  0.0%)
+  displaced_global_access            6 (  0.0%)
   unresolved_register                5 (  0.0%)
   warning_noreturn                   4 (  0.0%)
   warning_max_restarts               4 (  0.0%)
@@ -181,7 +182,7 @@ Example functions:
     local_14._0_1_ = '\0';...
 
 ====================================================================================================
-TYPE: stack_param (935 occurrences)
+TYPE: stack_param (929 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1672,6 +1673,30 @@ Example functions:
     pfVar6 = (float *)*(undefined6 *)pcVar2;...
   crt_stdio.c_scanf_string_FUN_00604e4c
     unaff_EDI = (char *)*(undefined6 *)pcVar2;...
+
+====================================================================================================
+TYPE: displaced_global_access (6 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  0x32776b4
+     1x  0x32776c8
+     1x  0x3342b48
+     1x  0x3342b4c
+     1x  0x32c17ac
+     1x  0x3f96bc4
+
+Example functions:
+  core_set.cpp_CDemonSet_addDynamicLight_FUN_0056d090
+    // 0056d0d3: MOV dword ptr [ESI*0x4 + 0x32776b4],EBX  ; g_DynamicLightCount...
+  core_set.cpp_CDemonSet_addCoronaGlobe_FUN_0056d110
+    // 0056d130: MOV dword ptr [EDX*0x4 + 0x32776c8],ECX  ; g_CoronaGlobeCount...
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0056fbd0
+    // 0056fe49: MOV dword ptr [EAX*0x8 + 0x3342b48],EBX  ; g_SetDisplayListSortBuff...
+  core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0056d4a0
+    // 0056d820: MOV dword ptr [EDX*0x4 + 0x32c17ac],EAX  ; DAT_032c17b4...
+  wincore_winrun.cpp_enqueueInput_FUN_005f2f30
+    // 005f2f42: MOV dword ptr [EDX*0x4 + 0x3f96bc4],EBX  ; g_UseMultimediaTimer...
 
 ====================================================================================================
 TYPE: unresolved_register (5 occurrences)

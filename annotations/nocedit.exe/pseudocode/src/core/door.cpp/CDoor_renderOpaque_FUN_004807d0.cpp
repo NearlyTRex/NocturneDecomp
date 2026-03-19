@@ -15,7 +15,7 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor *this_ptr)
   CBoundingBox3D *this_ptr_01;
   int iVar1;
   CQuaternion4f *pCVar5;
-  CQuaternion4f *world_point;
+  CVector3f *world_point;
   CBoundingBox3D local_5c;
   CBoundingBox3D CStack_44;
   CVector3f CStack_2c;
@@ -67,15 +67,14 @@ LAB_0048085a:
                core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                          (&this_ptr->base,&CStack_2c,&this_ptr->open_position);
       shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
-                (g_CEditorToolsPtr,pCVar5,iVar1);
+                (g_CEditorToolsPtr,(CVector3f *)pCVar5,iVar1);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base);
       this_ptr->param = this_ptr->max_param;
       core_door_cpp_CDoor_reposition_FUN_0047fd20(this_ptr);
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
       iVar1 = 2;
       g_ActiveRenderColor = 1;
-      world_point = (CQuaternion4f *)
-                    core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+      world_point = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                               (&this_ptr->base,&CStack_20,&this_ptr->open_position);
       shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
                 (g_CEditorToolsPtr,world_point,iVar1);

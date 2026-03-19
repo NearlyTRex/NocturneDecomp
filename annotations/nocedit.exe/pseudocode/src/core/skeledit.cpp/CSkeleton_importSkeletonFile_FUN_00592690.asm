@@ -751,7 +751,7 @@ section .text
     FSTP float ptr [ESP]                ; 00592c22
     PUSH EDI                            ; 00592c25 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00592c26
-        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
+        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float current_progress, float total_progress)
     MOV EDI,dword ptr [EBP + 0xffffff6e] ; 00592c2b
     ADD ESP,0xc                         ; 00592c31
     PUSH 0x1                            ; 00592c34
@@ -4502,7 +4502,7 @@ section .text
     FSTP float ptr [ESP]                ; 0059545e
     PUSH EDI                            ; 00595461 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 00595462
-        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
+        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float current_progress, float total_progress)
     MOV EAX,dword ptr [EBP + -0x2e]     ; 00595467
     ADD ESP,0xc                         ; 0059546a
     TEST EAX,EAX                        ; 0059546d

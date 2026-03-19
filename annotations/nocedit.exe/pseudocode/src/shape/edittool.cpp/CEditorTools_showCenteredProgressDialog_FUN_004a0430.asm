@@ -113,7 +113,7 @@ section .text
     PUSH ECX                            ; 004a04ed
     MOV dword ptr [EAX*0x8 + 0x2cf1ec0],EDX ; 004a04ee | DAT_02cf1ec0
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 004a04f5
-        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
+        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 004a04fa
     POP EBP                             ; 004a04fd
     POP EDI                             ; 004a04fe

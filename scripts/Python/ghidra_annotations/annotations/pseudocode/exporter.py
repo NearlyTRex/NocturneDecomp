@@ -64,7 +64,8 @@ from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_pcode_suspects, identify_param_count_mismatch, identify_variadic_calls,
     identify_format_string_mismatch, identify_stack_align_anchor,
     identify_direct_call_esp_uncertainty, identify_lea_esp_stack_addr,
-    identify_special_functions
+    identify_special_functions, identify_displaced_global_access,
+    build_global_interval_map
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -317,7 +318,8 @@ def build_prototypes_from_decompile_results(decompile_results, functions_to_proc
     return functions_list
 
 
-def process_decompile_result(result, pseudocode_src_dir, constants_map):
+def process_decompile_result(result, pseudocode_src_dir, constants_map,
+                             global_interval_map=None):
     """Process a decompilation result in the main thread.
 
     This function does Python-only processing (transforms, suspect detection,
@@ -327,6 +329,8 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         result: DecompileResult from worker (contains all Java-computed data)
         pseudocode_src_dir: Output directory for source files
         constants_map: Map of constant names to values
+        global_interval_map: Optional sorted interval map for displaced global
+                             access detection (from build_global_interval_map)
 
     Returns:
         Dictionary with processed result data
@@ -490,6 +494,10 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
     # Identify special functions (entry point, CRT, math intrinsics)
     special_suspects = identify_special_functions(partial_json_data, func_addr)
     suspects.extend(special_suspects)
+
+    # Identify displaced global access (compiler-optimized SIB addressing crossing global boundaries)
+    displaced_suspects = identify_displaced_global_access(result.assembly_code, global_interval_map)
+    suspects.extend(displaced_suspects)
 
     # Filter out suspect types that are no longer useful
     suspects = [s for s in suspects if s.get('type') not in OMIT_SUSPECT_TYPES]
@@ -998,11 +1006,15 @@ def export_pseudocode(currentProgram, path, strict=False):
     total_transform_time = 0.0
     total_output_time = 0.0
 
+    # Build global interval map for displaced access detection
+    global_interval_map = build_global_interval_map(globals_list)
+    log_info("Built global interval map with %d entries for displaced access detection" % len(global_interval_map))
+
     process_start = time.time()
     for i, result in enumerate(decompile_results):
         try:
             processed = process_decompile_result(
-                result, pseudocode_src_dir, constants_map)
+                result, pseudocode_src_dir, constants_map, global_interval_map)
 
             # Collect timing data
             function_timings.append((

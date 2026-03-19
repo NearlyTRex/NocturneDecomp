@@ -14,7 +14,7 @@ SUMMARY STATISTICS
   Total functions analyzed:          6,484
   Unnamed functions (FUN_):          0 ( 0.0%)
   Functions with unnamed params:     0 ( 0.0%)
-  Functions with type issues:        269 ( 4.1%)
+  Functions with type issues:        267 ( 4.1%)
   (Name/address mismatches and duplicate names are reported at the end)
 
   Type issue breakdown:
@@ -23,7 +23,7 @@ SUMMARY STATISTICS
     Missing register params:           0
     Wrong calling convention:          7
     Undefined types in variables:      228
-    Unresolved stack params:           45
+    Unresolved stack params:           43
 
 ====================================================================================================
 UNNAMED FUNCTIONS (still using FUN_XXXXXXXX or ClassName_FUN_XXXXXXXX)
@@ -110,7 +110,7 @@ Wrong calling convention (unaffected register usage) (7)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
 --------------------------------------------------------------------------------
-Unresolved stack parameters (missing from signature) (45)
+Unresolved stack parameters (missing from signature) (43)
 --------------------------------------------------------------------------------
 
   CWinFont_setColorAndDrawText
@@ -251,12 +251,6 @@ Unresolved stack parameters (missing from signature) (45)
     Signature: void __cdecl core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor *this_ptr,uint32_t color)
     Suggested: Signature is missing stack parameters entirely
 
-  CDemonActor_rayIntersect
-    Address: 0x00409470  File: core/actor.cpp
-    Evidence: in_stack_ffffff48, in_stack_ffffff48, in_stack_ffffff48
-    Signature: float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_hit_normal,SCollisionInfo *collision_info,int bbox_type,CBoundingBox3D *ray_bbox)
-    Suggested: Signature is missing stack parameters entirely
-
   drawBoundingBox
     Address: 0x0040d470  File: core/actor.cpp
     Evidence: in_stack_fffffe70, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffe70, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffe70, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffea0, in_stack_fffffe70
@@ -333,12 +327,6 @@ Unresolved stack parameters (missing from signature) (45)
     Address: 0x00443bc0  File: core/course.cpp
     Evidence: in_stack_fffffe70, in_stack_fffffe8c, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffe98, in_stack_fffffea0, in_stack_fffffea8, in_stack_fffffeb0, in_stack_fffffeb8, in_stack_fffffe8c, in_stack_fffffe70, in_stack_fffffe70, in_stack_fffffe90, in_stack_fffffe94, in_stack_fffffe98, in_stack_fffffea8, in_stack_fffffea0, in_stack_fffffeb0, in_stack_fffffeb8, in_stack_fffffeb0, in_stack_fffffea8, in_stack_fffffea0, in_stack_fffffe98, in_stack_fffffe94, in_stack_fffffe90, in_stack_fffffe8c, in_stack_fffffe90, in_stack_fffffeb8, in_stack_fffffeb8
     Signature: void __cdecl core_course_cpp_CCourse_preview_FUN_00443bc0(CCourse *this_ptr,CKeyFramedModel *model_ptr)
-    Suggested: Signature is missing stack parameters entirely
-
-  CGame_processHotkeys
-    Address: 0x004dcee0  File: core/game.cpp
-    Evidence: in_stack_00000080, in_stack_00000080, in_stack_00000080
-    Signature: void __cdecl core_game_cpp_CGame_processHotkeys_FUN_004dcee0(CGame *this_ptr)
     Suggested: Signature is missing stack parameters entirely
 
   dampControlAxis

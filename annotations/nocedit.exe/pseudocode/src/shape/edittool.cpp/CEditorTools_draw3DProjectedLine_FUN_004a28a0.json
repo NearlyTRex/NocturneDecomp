@@ -42,7 +42,7 @@
     ],
     "convention": "__cdecl",
     "name": "shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0",
-    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools *this_ptr,CQuaternion4f *world_point,int line_length)"
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0(CEditorTools *this_ptr,CVector3f *world_point,int line_length)"
   },
   "function_calls": [
     {
@@ -170,7 +170,7 @@
         "name": "world_point",
         "offset": 8,
         "size": 4,
-        "type": "CQuaternion4f *"
+        "type": "CVector3f *"
       },
       {
         "is_param": true,
@@ -187,7 +187,7 @@
       "line": 8,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_10.x = (int)ROUND(world_point->w * 256.0f);",
+      "text": "local_10.x = (int)ROUND(world_point->x * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -195,7 +195,7 @@
       "line": 9,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_10.y = (int)ROUND(world_point->x * 256.0f);",
+      "text": "local_10.y = (int)ROUND(world_point->y * 256.0f);",
       "type": "decompiler_intrinsic"
     },
     {
@@ -203,7 +203,7 @@
       "line": 10,
       "match": "ROUND",
       "severity": "mild",
-      "text": "local_10.z = (int)ROUND(world_point->y * 256.0f);",
+      "text": "local_10.z = (int)ROUND(world_point->z * 256.0f);",
       "type": "decompiler_intrinsic"
     }
   ]

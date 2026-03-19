@@ -15,6 +15,8 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *
   CKeyFramedModel *this_ptr_01;
   CDeformableModel *this_ptr_02;
   float fVar4;
+  CVector3f *ray_origin_01;
+  CVector3f *ray_direction_00;
   CVector3f *pCVar2;
   int lod_level;
   float local_a0;
@@ -32,7 +34,6 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *
   CVector3f *ray_origin_00;
   int triangle_index;
   CDemonSet *pCVar1;
-  ulonglong in_stack_ffffff48;
   
   if (bbox_type == 0) {
     return 2.0;
@@ -67,10 +68,11 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *
   if ((uint)bbox_type < 2) {
     if (bbox_type == 1) {
       pCVar2 = &local_30;
+      ray_direction_00 = &local_54;
+      ray_origin_01 = &local_3c;
       this_ptr_00 = (*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,&local_84);
       local_a0 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                           (this_ptr_00,pCVar2,(CVector3f *)in_stack_ffffff48,
-                            (CVector3f *)((ulonglong)in_stack_ffffff48 >> 0x20));
+                           (this_ptr_00,ray_origin_01,ray_direction_00,pCVar2);
       goto LAB_004095c9;
     }
   }
@@ -82,7 +84,8 @@ float __cdecl core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470(CDemonActor *
     }
     if (bbox_type == 3) {
       local_a0 = (*((this_ptr->vtable)._ub)->customRayIntersect)
-                           (this_ptr,&local_3c,&local_54,&local_30);
+                           (this_ptr,(CVector3f *)&local_54.z,(CVector3f *)&local_6c.min.z,
+                            (CVector3f *)&local_48.z);
       goto LAB_004095c9;
     }
   }
@@ -102,9 +105,9 @@ LAB_004095c9:
     frame_index = collision_info->deformable_model;
     if (frame_index == (CDeformableModelInstance *)0x0) {
       if (collision_info->keyframed_model != (CKeyFramedModelInstance *)0x0) {
-        output_normal = &local_30;
-        pCVar2 = &local_54;
-        ray_origin_00 = &local_3c;
+        output_normal = (CVector3f *)&local_54.y;
+        pCVar2 = (CVector3f *)&local_84.max.y;
+        ray_origin_00 = (CVector3f *)&local_6c.max.y;
         this_ptr_01 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                                 (collision_info->keyframed_model);
         local_a0 = core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
@@ -112,6 +115,7 @@ LAB_004095c9:
         if (local_a0 < 0.0) {
           return 2.0;
         }
+        local_3c.z = local_a0;
         if (1.0 < local_a0) {
           return 2.0;
         }
@@ -119,7 +123,8 @@ LAB_004095c9:
     }
     else {
       local_a0 = core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0
-                           (collision_info->deformable_model,&local_3c,&local_54);
+                           (collision_info->deformable_model,(CVector3f *)&local_6c.max.y,
+                            (CVector3f *)&local_84.max.y);
       if (local_a0 < 0.0) {
         return 2.0;
       }
@@ -131,15 +136,16 @@ LAB_004095c9:
       triangle_index = g_DeformableModelRayHitTriangleIndex;
       lod_level = g_DeformableModelRayHitLodIndex;
       out_hit_normal[1].z = (float)g_DeformableModelRayHitTriangleIndex;
+      local_3c.z = local_a0;
       this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                               (collision_info->deformable_model);
       fVar4 = (float)core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0
                                (this_ptr_02,lod_level,triangle_index);
       out_hit_normal[2].x = fVar4;
-      if ((int *)&stack0x00000000 != &g_DeformableModelPool[0].lod_info[2].shadow_only_flag) {
-        local_30.x = g_DeformableModelRayHitNormal.x;
-        local_30.y = g_DeformableModelRayHitNormal.y;
-        local_30.z = g_DeformableModelRayHitNormal.z;
+      if ((int *)&stack0x00000000 != g_DeformableModelPool[0].vertex_count + 3) {
+        local_54.y = g_DeformableModelRayHitNormal.x;
+        local_54.z = g_DeformableModelRayHitNormal.y;
+        local_48.x = g_DeformableModelRayHitNormal.z;
       }
     }
   }

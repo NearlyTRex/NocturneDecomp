@@ -56,7 +56,9 @@ section .text
     PUSH EBP                            ; 004dcee3
     MOV EBP,ESP                         ; 004dcee4
     SUB ESP,0x20c                       ; 004dcee6
-    AND ESP,0xfffffff8                  ; 004dceec
+    NOP                                 ; 004dceec
+    NOP                                 ; 004dceed
+    NOP                                 ; 004dceee
     MOV EBX,dword ptr [EBP + 0x14]      ; 004dceef
     CMP dword ptr [0x02d828d0],0x0      ; 004dcef2 | g_CheatSystemEnabled
     JNZ 0x004dd33f                      ; 004dcef9
@@ -364,12 +366,14 @@ section .text
     SUB ESP,0x8                         ; 004dd214
     FSTP double ptr [ESP]               ; 004dd217
     PUSH 0x62b968                       ; 004dd21a | = "Gamma : %f"
-    LEA EAX,[ESP + 0x110]               ; 004dd21f
+    LEA EAX,[EBP + 0xfffffef8]          ; 004dd21f
+    NOP                                 ; 004dd225
     PUSH EAX                            ; 004dd226
     CALL crt_stdio.c__sprintf_FUN_005fdbd0 ; 004dd227
         ;   XREF to: 005fdbd0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c__sprintf_FUN_005fdbd0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004dd22c
-    LEA EAX,[ESP + 0x104]               ; 004dd22f
+    LEA EAX,[EBP + 0xfffffef8]          ; 004dd22f
+    NOP                                 ; 004dd235
     PUSH 0x3f800000                     ; 004dd236
     PUSH EAX                            ; 004dd23b
     PUSH EBX                            ; 004dd23c
@@ -859,7 +863,11 @@ section .text
     MOV EAX,[0x0067cf44]                ; 004dd757 | g_CKeysPtr
     MOV EBX,0x3ca3d70a                  ; 004dd75c
     PUSH EAX                            ; 004dd761 | g_CKeysInstance
-    MOV dword ptr [ESP + 0x210],EBX     ; 004dd762
+    MOV dword ptr [EBP + -0x1c],EBX     ; 004dd762
+    NOP                                 ; 004dd765
+    NOP                                 ; 004dd766
+    NOP                                 ; 004dd767
+    NOP                                 ; 004dd768
     MOV EBX,dword ptr [EAX]             ; 004dd769 | g_CKeysInstance
     CALL dword ptr [EBX]                ; 004dd76b
     ADD ESP,0x8                         ; 004dd76d
@@ -868,11 +876,20 @@ section .text
         ;   XREF to: 004dd7d0 (CONDITIONAL_JUMP)  ; LAB_004dd7d0
     MOV EAX,[0x03276acc]                ; 004dd774 | g_CDemonCameraInstance.corona_blend_factor
         ;   Label: LAB_004dd774
-    MOV dword ptr [ESP + 0x204],EAX     ; 004dd779
-    FILD dword ptr [ESP + 0x204]        ; 004dd780
+    MOV dword ptr [EBP + -0x20],EAX     ; 004dd779
+    NOP                                 ; 004dd77c
+    NOP                                 ; 004dd77d
+    NOP                                 ; 004dd77e
+    NOP                                 ; 004dd77f
+    FILD dword ptr [EBP + -0x20]        ; 004dd780
+    NOP                                 ; 004dd783
+    NOP                                 ; 004dd784
+    NOP                                 ; 004dd785
+    NOP                                 ; 004dd786
     FMUL double ptr [0x0062b98d]        ; 004dd787 | DOUBLE_0062b98d
-    FADD float ptr [ESP + 0x208]        ; 004dd78d
-    FST float ptr [ESP]                 ; 004dd794
+    FADD float ptr [EBP + -0x1c]        ; 004dd78d
+    FST float ptr [EBP + 0xfffffddc]    ; 004dd790
+    NOP                                 ; 004dd796
     FLDZ                                ; 004dd797
     FCOMPP                              ; 004dd799
     FNSTSW AX                           ; 004dd79b
@@ -905,8 +922,12 @@ section .text
     ADD ESP,0xc                         ; 004dd7cb
     JMP 0x004dd7b3                      ; 004dd7ce
         ;   XREF to: 004dd7b3 (UNCONDITIONAL_JUMP)  ; LAB_004dd7b3
-    MOV dword ptr [ESP + 0x208],0xbca3d70a ; 004dd7d0
+    MOV dword ptr [EBP + -0x1c],0xbca3d70a ; 004dd7d0
         ;   Label: LAB_004dd7d0
+    NOP                                 ; 004dd7d7
+    NOP                                 ; 004dd7d8
+    NOP                                 ; 004dd7d9
+    NOP                                 ; 004dd7da
     JMP 0x004dd774                      ; 004dd7db
         ;   XREF to: 004dd774 (UNCONDITIONAL_JUMP)  ; LAB_004dd774
     MOV dword ptr [ESP],0x3f800000      ; 004dd7dd

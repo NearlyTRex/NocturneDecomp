@@ -1,6 +1,7 @@
 # Suspect pattern detection for pseudocode export
 # Identifies problematic patterns in decompiled code that may need manual review
 
+import bisect
 import re
 from collections import defaultdict
 
@@ -68,6 +69,7 @@ SUSPECT_SEVERITY = {
     'pointer_cast': 'mild',
     'suspect_float': 'mild',
     'nonstandard_int': 'mild',
+    'displaced_global_access': 'moderate',
 }
 
 
@@ -378,6 +380,203 @@ def identify_assembly_suspects(assembly_code, func_calls=None):
                 'match': ', '.join(sorted(set(matched_callees))),
                 'text': 'Function calls by-value struct passing functions',
                 'description': 'Calls %s - decompiler cannot recognize by-value pattern' % ', '.join(sorted(set(matched_callees)))
+            })
+
+    return suspects
+
+
+# SIB addressing pattern: [REG*SCALE + 0xADDRESS] in assembly
+# Captures: (1) scale factor and (2) hex displacement address
+# Matches patterns like: [EAX*0x8 + 0x3342b48], [EBX*0x4 + 0x2d01924]
+_SIB_PATTERN = re.compile(
+    r'\[\w+\*(?:0x)?([0-9a-fA-F]+)\s*\+\s*(?:0x)?([0-9a-fA-F]{6,8})\]'
+)
+
+
+def build_global_interval_map(globals_list):
+    """Build a sorted interval map from a globals list for displaced access detection.
+
+    Args:
+        globals_list: List of global dicts with 'name', 'address', 'size', and 'type' keys.
+                      Typically from extract_globals_and_constants().
+
+    Returns:
+        A sorted list of (start_addr_int, end_addr_int, name, type) tuples.
+    """
+    intervals = []
+    for g in globals_list:
+        name = g.get('name', '')
+        addr_str = g.get('address', '')
+        size = g.get('size', 0)
+        gtype = g.get('type', '')
+        if not addr_str or size <= 0:
+            continue
+        try:
+            addr_int = int(addr_str.replace('0x', ''), 16)
+        except (ValueError, AttributeError):
+            continue
+        intervals.append((addr_int, addr_int + size, name, gtype))
+
+    intervals.sort()
+    return intervals
+
+
+def _find_global_at(addr_int, global_interval_map):
+    """Find which global (if any) contains the given address.
+
+    Returns (name, type, start_addr) or None.
+    """
+    # Binary search for the interval that might contain addr_int
+    starts = [iv[0] for iv in global_interval_map]
+    idx = bisect.bisect_right(starts, addr_int) - 1
+    if idx < 0:
+        return None
+    start, end, name, gtype = global_interval_map[idx]
+    if start <= addr_int < end:
+        return (name, gtype, start)
+    return None
+
+
+def _find_global_in_range(low, high, global_interval_map, exclude_name=None):
+    """Find a global that starts within (low, high] exclusive of low.
+
+    Returns (name, type, start_addr) or None.
+    """
+    starts = [iv[0] for iv in global_interval_map]
+    # Find first global starting after low
+    idx = bisect.bisect_right(starts, low)
+    while idx < len(global_interval_map):
+        start = global_interval_map[idx][0]
+        if start > high:
+            break
+        name = global_interval_map[idx][2]
+        if name != exclude_name:
+            return (name, global_interval_map[idx][3], start)
+        idx += 1
+    return None
+
+
+def identify_displaced_global_access(assembly_code, global_interval_map=None):
+    """Detect compiler-displaced scaled index addressing in assembly.
+
+    When the compiler optimizes scaled index addressing (e.g. [EAX*8 + base]),
+    it may fold a register increment into the displacement, shifting the base
+    address by one scale factor. If this shifted address lands inside an
+    adjacent global's memory range, Ghidra misresolves the access through
+    the wrong global.
+
+    Detection: scan assembly for [REG*SCALE + DISP] patterns where:
+    1. DISP falls inside global A's range (but NOT at A's start address,
+       since that would be a normal array access into A)
+    2. A different global B starts within (DISP, DISP+SCALE] — meaning the
+       scaled access crosses from A into B's territory
+
+    Args:
+        assembly_code: The assembly code as a string
+        global_interval_map: Sorted interval map from build_global_interval_map().
+                             If None, detection is skipped.
+
+    Returns:
+        A list of suspect dictionaries
+    """
+    suspects = []
+
+    if not assembly_code or not global_interval_map:
+        return suspects
+
+    lines = assembly_code.split('\n')
+    seen = set()  # Deduplicate by (address, displacement)
+
+    for line_num, line in enumerate(lines, 1):
+        line_stripped = line.strip()
+        if not line_stripped or line_stripped.startswith(';'):
+            continue
+
+        # Extract instruction address if present (format: "INSTR ... ; 0xADDR")
+        instr_addr = ''
+        semi_idx = line.rfind(';')
+        if semi_idx >= 0:
+            addr_part = line[semi_idx + 1:].strip().split()[0] if line[semi_idx + 1:].strip() else ''
+            if addr_part and all(c in '0123456789abcdefABCDEF' for c in addr_part):
+                instr_addr = addr_part
+
+        for m in _SIB_PATTERN.finditer(line):
+            scale_str, disp_str = m.group(1), m.group(2)
+            try:
+                scale = int(scale_str, 16)
+                disp = int(disp_str, 16)
+            except ValueError:
+                continue
+
+            # Skip tiny scales (not array indexing) or unreasonable ones
+            if scale < 2 or scale > 64:
+                continue
+
+            dedup_key = (instr_addr, disp)
+            if dedup_key in seen:
+                continue
+
+            # Check: does disp fall inside global A (but NOT at its start)?
+            containing = _find_global_at(disp, global_interval_map)
+            if containing is None:
+                continue
+
+            container_name, container_type, container_start = containing
+
+            # Look up the interval to get the size of the containing global
+            starts = [iv[0] for iv in global_interval_map]
+            c_idx = bisect.bisect_right(starts, disp) - 1
+            container_end = global_interval_map[c_idx][1]
+            container_size = container_end - container_start
+
+            # If disp is at the start of a global that is large enough for the
+            # scale factor, this is a normal array access (e.g. [EAX*4 + g_Array])
+            if disp == container_start and container_size >= scale * 2:
+                continue
+
+            # Check: is there a different global B starting within (disp, disp+scale]?
+            # This means the access crosses from A into B's territory
+            target = _find_global_in_range(disp, disp + scale, global_interval_map, container_name)
+
+            if target is None:
+                continue
+
+            target_name, target_type, target_start = target
+
+            # Skip if the target is a sub-element of the container
+            # (e.g. g_Array[1] inside g_Array, or DAT_ inside a named global)
+            if (target_name.startswith(container_name + '[') or
+                    target_name.startswith(container_name + '.')):
+                continue
+            # Skip DAT_ targets that are inside the container's range
+            # (these are unnamed sub-references, not real separate globals)
+            if target_name.startswith('DAT_') and target_start < container_start + container_size:
+                continue
+            # Skip switch table data (not real globals)
+            if (container_name.startswith('switchdata') or
+                    container_name.startswith('PTR_case') or
+                    target_name.startswith('switchdata') or
+                    target_name.startswith('PTR_case')):
+                continue
+
+            seen.add(dedup_key)
+
+            suspects.append({
+                'line': line_num,
+                'type': 'displaced_global_access',
+                'match': '0x%x' % disp,
+                'text': line_stripped,
+                'description': (
+                    'Compiler displaced index base: [reg*%d + 0x%x] lands in %s '
+                    'but intended target is %s at 0x%x (displaced by %d bytes)'
+                    % (scale, disp, container_name,
+                       target_name, target_start, target_start - disp)),
+                'severity': SUSPECT_SEVERITY.get('displaced_global_access', 'moderate'),
+                'displaced_from': container_name,
+                'intended_global': target_name,
+                'displacement': '0x%x' % disp,
+                'scale': scale,
+                'instruction_address': instr_addr,
             })
 
     return suspects

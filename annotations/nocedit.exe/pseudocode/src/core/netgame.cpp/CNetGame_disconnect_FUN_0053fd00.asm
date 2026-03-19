@@ -206,7 +206,7 @@ section .text
     FSTP float ptr [ESP]                ; 0053feb5
     PUSH ECX                            ; 0053feb8 | g_CEditorToolsInstance
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 0053feb9
-        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
+        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 0053febe
     MOV EAX,[0x02f7c8b8]                ; 0053fec1 | g_CurrentGameTime
         ;   Label: LAB_0053fec1
@@ -408,7 +408,7 @@ section .text
     PUSH EAX                            ; 005400da | g_CEditorToolsInstance
     MOV EDI,0x20000                     ; 005400db
     CALL shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530 ; 005400e0
-        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float progress_min, float progress_max)
+        ;   XREF to: 004a0530 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530(CEditorTools * this_ptr, float current_progress, float total_progress)
     ADD ESP,0xc                         ; 005400e5
     MOV EAX,[0x02f7c8b8]                ; 005400e8 | g_CurrentGameTime
         ;   Label: LAB_005400e8
